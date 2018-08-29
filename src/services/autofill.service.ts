@@ -439,7 +439,8 @@ export default class AutofillService implements AutofillServiceInterface {
                     ['exp-month', 'cc-exp-month', 'cc-month', 'card-month', 'cc-mo', 'card-mo', 'exp-mo',
                         'card-exp-mo', 'cc-exp-mo', 'card-expiration-month', 'expiration-month',
                         'cc-mm', 'cc-m', 'card-mm', 'card-m', 'card-exp-mm', 'cc-exp-mm', 'exp-mm', 'exp-m',
-                        'expire-month', 'expire-mo', 'card-expire-month', 'card-expire-mo', 'mois-validite',
+                        'expire-month', 'expire-mo', 'expiry-month', 'expiry-mo', 'card-expire-month',
+                        'card-expire-mo', 'card-expiry-month', 'card-expiry-mo', 'mois-validite',
                         'mois-expiration', 'm-validite', 'm-expiration', 'expiry-date-field-month',
                         'expiration-date-month', 'expiration-date-mm', 'exp-mon'])) {
                     fillFields.expMonth = f;
@@ -449,7 +450,8 @@ export default class AutofillService implements AutofillServiceInterface {
                         'card-exp-yr', 'cc-exp-yr', 'card-expiration-year', 'expiration-year',
                         'cc-yy', 'cc-y', 'card-yy', 'card-y', 'card-exp-yy', 'cc-exp-yy', 'exp-yy', 'exp-y',
                         'cc-yyyy', 'card-yyyy', 'card-exp-yyyy', 'cc-exp-yyyy', 'expire-year', 'expire-yr',
-                        'card-expire-year', 'card-expire-yr', 'an-validite', 'an-expiration', 'annee-validite',
+                        'expiry-year', 'expiry-yr', 'card-expire-year', 'card-expire-yr', 'card-expiry-year',
+                        'card-expiry-yr', 'an-validite', 'an-expiration', 'annee-validite',
                         'annee-expiration', 'expiry-date-field-year', 'expiration-date-year',
                         'expiration-date-yy', 'expiration-date-yyyy'])) {
                     fillFields.expYear = f;
