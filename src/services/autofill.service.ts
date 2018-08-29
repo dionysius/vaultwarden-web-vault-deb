@@ -429,8 +429,9 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.number = f;
                     break;
                 } else if (!fillFields.exp && this.isFieldMatch(f[attr],
-                    ['cc-exp', 'card-exp', 'cc-expiration', 'card-expiration', 'cc-ex', 'card-ex', 'card-expire',
-                        'validite', 'expiration', 'mm-yy', 'mm-yyyy', 'yy-mm', 'yyyy-mm', 'expiration-date'],
+                    ['cc-exp', 'card-exp', 'cc-expiration', 'card-expiration', 'cc-ex', 'card-ex',
+                        'card-expire', 'card-expiry', 'validite', 'expiration', 'expiry', 'mm-yy',
+                        'mm-yyyy', 'yy-mm', 'yyyy-mm', 'expiration-date'],
                     ['mm-yy', 'mm-yyyy', 'yy-mm', 'yyyy-mm', 'expiration-date'])) {
                     fillFields.exp = f;
                     break;
