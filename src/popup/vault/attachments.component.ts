@@ -9,7 +9,7 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { TokenService } from 'jslib/abstractions/token.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 import { AttachmentsComponent as BaseAttachmentsComponent } from 'jslib/angular/components/attachments.component';
 
@@ -20,10 +20,10 @@ import { AttachmentsComponent as BaseAttachmentsComponent } from 'jslib/angular/
 export class AttachmentsComponent extends BaseAttachmentsComponent {
     constructor(cipherService: CipherService, analytics: Angulartics2,
         toasterService: ToasterService, i18nService: I18nService,
-        cryptoService: CryptoService, tokenService: TokenService,
+        cryptoService: CryptoService, userService: UserService,
         platformUtilsService: PlatformUtilsService, private location: Location,
         private route: ActivatedRoute) {
-        super(cipherService, analytics, toasterService, i18nService, cryptoService, tokenService,
+        super(cipherService, analytics, toasterService, i18nService, cryptoService, userService,
             platformUtilsService, window);
     }
 
