@@ -13,8 +13,8 @@ import { AutofillService as AutofillServiceInterface } from './abstractions/auto
 
 import {
     CipherService,
-    TokenService,
     TotpService,
+    UserService,
 } from 'jslib/abstractions';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
@@ -103,7 +103,7 @@ var IsoProvinces: { [id: string]: string; } = {
 /* tslint:enable */
 
 export default class AutofillService implements AutofillServiceInterface {
-    constructor(private cipherService: CipherService, private tokenService: TokenService,
+    constructor(private cipherService: CipherService, private userService: UserService,
         private totpService: TotpService) { }
 
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
@@ -145,6 +145,7 @@ export default class AutofillService implements AutofillServiceInterface {
             throw new Error('Nothing to auto-fill.');
         }
 
+        const canAccessPremium = await this.userService.canAccessPremium();
         let didAutofill = false;
         options.pageDetails.forEach((pd: any) => {
             // make sure we're still on correct tab
@@ -174,7 +175,7 @@ export default class AutofillService implements AutofillServiceInterface {
             }, { frameId: pd.frameId });
 
             if (options.cipher.type !== CipherType.Login || totpPromise || options.skipTotp ||
-                !options.cipher.login.totp || !this.tokenService.getPremium()) {
+                !options.cipher.login.totp || !canAccessPremium) {
                 return;
             }
 

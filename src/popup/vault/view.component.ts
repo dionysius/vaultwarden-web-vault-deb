@@ -19,6 +19,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
@@ -38,9 +39,9 @@ export class ViewComponent extends BaseViewComponent {
         auditService: AuditService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         broadcasterService: BroadcasterService, ngZone: NgZone,
-        changeDetectorRef: ChangeDetectorRef) {
+        changeDetectorRef: ChangeDetectorRef, userService: UserService) {
         super(cipherService, totpService, tokenService, toasterService, cryptoService, platformUtilsService,
-            i18nService, analytics, auditService, window, broadcasterService, ngZone, changeDetectorRef);
+            i18nService, analytics, auditService, window, broadcasterService, ngZone, changeDetectorRef, userService);
     }
 
     ngOnInit() {

@@ -155,8 +155,7 @@ export default class MainBackground {
             this.storageService, this.messagingService, async (expired: boolean) => await this.logout(expired));
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
         this.totpService = new TotpService(this.storageService, cryptoFunctionService);
-        this.autofillService = new AutofillService(this.cipherService, this.tokenService,
-            this.totpService);
+        this.autofillService = new AutofillService(this.cipherService, this.userService, this.totpService);
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
         this.auditService = new AuditService(cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
