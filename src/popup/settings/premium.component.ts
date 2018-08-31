@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { ToasterService } from 'angular2-toaster';
@@ -19,13 +20,15 @@ export class PremiumComponent extends BasePremiumComponent {
 
     constructor(analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
-        tokenService: TokenService, apiService: ApiService) {
+        tokenService: TokenService, apiService: ApiService,
+        private currencyPipe: CurrencyPipe) {
         super(analytics, toasterService, i18nService, platformUtilsService, tokenService, apiService);
 
         // Support old price string. Can be removed in future once all translations are properly updated.
-        this.priceString = i18nService.t('premiumPrice', this.price);
+        const thePrice = this.currencyPipe.transform(this.price, '$');
+        this.priceString = i18nService.t('premiumPrice', thePrice);
         if (this.priceString.indexOf('%price%') > -1) {
-            this.priceString = this.priceString.replace('%price%', this.price);
+            this.priceString = this.priceString.replace('%price%', thePrice);
         }
     }
 }
