@@ -153,7 +153,7 @@ export default class RuntimeBackground {
                             tab: msg.tab,
                             details: msg.details,
                         }], msg.sender === 'autofill_cmd');
-                        if (totpCode !== null) {
+                        if (totpCode != null) {
                             this.platformUtilsService.copyToClipboard(totpCode, { window: window });
                         }
                         break;
@@ -181,7 +181,7 @@ export default class RuntimeBackground {
             pageDetails: this.pageDetailsToAutoFill,
         });
 
-        if (totpCode !== null) {
+        if (totpCode != null) {
             this.platformUtilsService.copyToClipboard(totpCode, { window: window });
         }
 

@@ -21,7 +21,7 @@ export default class BrowserStorageService implements StorageService {
                 const json = this.safariStorageApi.getItem(key);
                 if (json) {
                     const obj = JSON.parse(json);
-                    if (obj && (typeof obj[key] !== 'undefined') && obj[key] !== null) {
+                    if (obj != null && obj[key] != null) {
                         resolve(obj[key] as T);
                         return;
                     }
@@ -31,7 +31,7 @@ export default class BrowserStorageService implements StorageService {
         } else {
             return new Promise((resolve) => {
                 this.chromeStorageApi.get(key, (obj: any) => {
-                    if (obj && (typeof obj[key] !== 'undefined') && obj[key] !== null) {
+                    if (obj != null && obj[key] != null) {
                         resolve(obj[key] as T);
                         return;
                     }
