@@ -61,7 +61,10 @@ import { PopOutComponent } from './components/pop-out.component';
 
 import { IconComponent } from 'jslib/angular/components/icon.component';
 
-import { registerLocaleData } from '@angular/common';
+import {
+    CurrencyPipe,
+    registerLocaleData,
+} from '@angular/common';
 import localeBg from '@angular/common/locales/bg';
 import localeCs from '@angular/common/locales/cs';
 import localeDa from '@angular/common/locales/da';
@@ -184,7 +187,9 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ViewComponent,
     ],
     entryComponents: [],
-    providers: [],
+    providers: [
+        CurrencyPipe,
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule { }
