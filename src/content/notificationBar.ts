@@ -351,6 +351,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                 let curPass: string = null;
                 let newPass: string = null;
+                let newPassOnly = false;
                 if (formData[i].passwordEls.length === 3 && passwords.length === 3) {
                     newPass = passwords[1];
                     if (passwords[0] !== newPass && newPass === passwords[2]) {
@@ -359,16 +360,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         curPass = passwords[2];
                     }
                 } else if (formData[i].passwordEls.length === 2 && passwords.length === 2) {
-                    const buttonText = getButtonText(getSubmitButton(form, changePasswordButtonNames));
-                    const matches = Array.from(changePasswordButtonContainsNames)
-                        .filter((n) => buttonText.indexOf(n) > -1);
-                    if (matches.length > 0) {
-                        curPass = passwords[0];
-                        newPass = passwords[1];
+                    if (passwords[0] === passwords[1]) {
+                        newPassOnly = true;
+                        newPass = passwords[0];
+                        curPass = null;
+                    } else {
+                        const buttonText = getButtonText(getSubmitButton(form, changePasswordButtonNames));
+                        const matches = Array.from(changePasswordButtonContainsNames)
+                            .filter((n) => buttonText.indexOf(n) > -1);
+                        if (matches.length > 0) {
+                            curPass = passwords[0];
+                            newPass = passwords[1];
+                        }
                     }
                 }
 
-                if (newPass != null && curPass != null) {
+                if (newPass != null && curPass != null || (newPassOnly && newPass != null)) {
                     processedForm(form);
                     sendPlatformMessage({
                         command: 'bgChangedPassword',

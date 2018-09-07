@@ -316,10 +316,18 @@ export default class RuntimeBackground {
             return;
         }
 
+        let id: string = null;
         const ciphers = await this.cipherService.getAllDecryptedForUrl(changeData.url);
-        const passwordMatches = ciphers.filter((c) => c.login.password === changeData.currentPassword);
-        if (passwordMatches.length === 1) {
-            this.addChangedPasswordToQueue(passwordMatches[0].id, loginDomain, changeData.newPassword, tab);
+        if (changeData.currentPassword != null) {
+            const passwordMatches = ciphers.filter((c) => c.login.password === changeData.currentPassword);
+            if (passwordMatches.length === 1) {
+                id = passwordMatches[0].id;
+            }
+        } else if (ciphers.length === 1) {
+            id = ciphers[0].id;
+        }
+        if (id != null) {
+            this.addChangedPasswordToQueue(id, loginDomain, changeData.newPassword, tab);
         }
     }
 
