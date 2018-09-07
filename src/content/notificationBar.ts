@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
             if (!disabledChangedPasswordNotification && formData[i].passwordEls != null) {
-                const passwords = formData[i].passwordEls
+                const passwords: string[] = formData[i].passwordEls
                     .filter((el: HTMLInputElement) => el.value != null && el.value !== '')
                     .map((el: HTMLInputElement) => el.value);
 
