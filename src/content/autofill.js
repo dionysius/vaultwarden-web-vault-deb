@@ -37,6 +37,7 @@
     4. Remove unnecessary input types from getFormElements query selector and limit number of elements returned.
     5. Remove fakeTested prop.
     6. Rename com.agilebits.* stuff to com.bitwarden.*
+    7. Remove "some useful globals" on window
     */
 
     function collect(document, undefined) {
@@ -399,15 +400,6 @@
                 quebo.srcElement = kedol, quebo.target = kedol);
             return quebo;
         }
-
-        // some useful globals
-        window.LOGIN_TITLES = [/^\\W*log\\W*[oi]n\\W*$/i, /log\\W*[oi]n (?:securely|now)/i, /^\\W*sign\\W*[oi]n\\W*$/i, 'continue', 'submit', 'weiter', 'accès', 'вход', 'connexion', 'entrar', 'anmelden', 'accedi', 'valider', '登录', 'लॉग इन करें', 'change password'];
-        window.LOGIN_RED_HERRING_TITLES = ['already have an account', 'sign in with'];
-        window.REGISTER_TITLES = 'register;sign up;signup;join;create my account;регистрация;inscription;regístrate;cadastre-se;registrieren;registrazione;注册;साइन अप करें'.split(';');
-        window.SEARCH_TITLES = 'search find поиск найти искать recherche suchen buscar suche ricerca procurar 検索'.split(' ');
-        window.FORGOT_PASSWORD_TITLES = 'forgot geändert vergessen hilfe changeemail español'.split(' ');
-        window.REMEMBER_ME_TITLES = ['remember me', 'rememberme', 'keep me signed in'];
-        window.BACK_TITLES = ['back', 'назад'];
 
         // clean up the text
         function cleanText(s) {
@@ -911,15 +903,6 @@
                 setValueForElementByEvent(el);
             });
         }
-
-        // some useful globals
-        window.LOGIN_TITLES = [/^\\W*log\\W*[oi]n\\W*$/i, /log\\W*[oi]n (?:securely|now)/i, /^\\W*sign\\W*[oi]n\\W*$/i, 'continue', 'submit', 'weiter', 'accès', 'вход', 'connexion', 'entrar', 'anmelden', 'accedi', 'valider', '登录', 'लॉग इन करें', 'change password'];
-        window.LOGIN_RED_HERRING_TITLES = ['already have an account', 'sign in with'];
-        window.REGISTER_TITLES = 'register;sign up;signup;join;create my account;регистрация;inscription;regístrate;cadastre-se;registrieren;registrazione;注册;साइन अप करें'.split(';');
-        window.SEARCH_TITLES = 'search find поиск найти искать recherche suchen buscar suche ricerca procurar 検索'.split(' ');
-        window.FORGOT_PASSWORD_TITLES = 'forgot geändert vergessen hilfe changeemail español'.split(' ');
-        window.REMEMBER_ME_TITLES = ['remember me', 'rememberme', 'keep me signed in'];
-        window.BACK_TITLES = ['back', 'назад'];
 
         // can we see the element to apply some styling?
         function canSeeElementToStyle(el) {
