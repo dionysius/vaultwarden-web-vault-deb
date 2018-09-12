@@ -139,7 +139,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
                 clearQueryParams: true,
             },
         }),
-        ToasterModule,
+        ToasterModule.forRoot(),
         InfiniteScrollModule,
     ],
     declarations: [

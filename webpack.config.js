@@ -11,13 +11,6 @@ if (process.env.NODE_ENV == null) {
 }
 const ENV = process.env.ENV = process.env.NODE_ENV;
 
-const isVendorModule = (module) => {
-    if (!module.context) {
-        return false;
-    }
-    return module.context.indexOf('node_modules') !== -1;
-};
-
 const extractCss = new ExtractTextPlugin({
     filename: '[name].css',
     disable: false,
@@ -72,6 +65,11 @@ const moduleRules = [
             publicPath: '../',
         }),
     },
+    // Hide System.import warnings. ref: https://github.com/angular/angular/issues/21560
+    {
+        test: /[\/\\]@angular[\/\\].+\.js$/,
+        parser: { system: true },
+    },
 ];
 
 const plugins = [
@@ -79,18 +77,8 @@ const plugins = [
         path.resolve(__dirname, 'build/*'),
     ]),
     // ref: https://github.com/angular/angular/issues/20357
-    new webpack.ContextReplacementPlugin(/\@angular(\\|\/)core(\\|\/)esm5/,
+    new webpack.ContextReplacementPlugin(/\@angular(\\|\/)core(\\|\/)fesm5/,
         path.resolve(__dirname, './src')),
-    new webpack.optimize.CommonsChunkPlugin({
-        name: 'popup/vendor',
-        chunks: ['popup/main'],
-        minChunks: isVendorModule,
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        chunks: ['background'],
-        minChunks: isVendorModule,
-    }),
     new HtmlWebpackPlugin({
         template: './src/popup/index.html',
         filename: 'popup/index.html',
@@ -156,6 +144,7 @@ if (ENV === 'production') {
 }
 
 const config = {
+    mode: ENV,
     entry: {
         'popup/main': './src/popup/main.ts',
         'background': './src/background.ts',
@@ -166,6 +155,26 @@ const config = {
         'notification/bar': './src/notification/bar.js',
         'downloader/downloader': './src/downloader/downloader.ts',
         '2fa/2fa': './src/2fa/2fa.ts',
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'popup/vendor',
+                    chunks: (chunk) => {
+                        return chunk.name === 'popup/main';
+                    },
+                },
+                commons2: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: (chunk) => {
+                        return chunk.name === 'background';
+                    },
+                },
+            },
+        },
     },
     resolve: {
         extensions: ['.ts', '.js'],
