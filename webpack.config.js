@@ -157,6 +157,7 @@ const config = {
         '2fa/2fa': './src/2fa/2fa.ts',
     },
     optimization: {
+        minimize: false,
         splitChunks: {
             cacheGroups: {
                 commons: {
