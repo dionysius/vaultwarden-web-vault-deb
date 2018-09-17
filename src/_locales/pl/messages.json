@@ -385,7 +385,7 @@
     "message": "Nazwa jest wymagana."
   },
   "addedFolder": {
-    "message": "Dodany folder"
+    "message": "Folder dodany"
   },
   "changeMasterPass": {
     "message": "Zmień Hasło Główne"
@@ -437,7 +437,7 @@
     "message": "Nowy URI"
   },
   "addedItem": {
-    "message": "Dodany element"
+    "message": "Element dodany"
   },
   "editedItem": {
     "message": "Edytowany element"
@@ -486,16 +486,16 @@
     "message": "Nigdy dla tej strony"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Wyłącz powiadomienie o zmianie hasła"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "\"Powiadomienie o zmianie hasła\" automatycznie pyta Cię o zaktualizowanie hasła w Twoim sejfie za każdym razem, gdy wykryje zmianę hasła na danej stronie."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Czy chcesz zaktualizować to hasło w Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Tak, zaktualizuj teraz"
   },
   "disableContextMenuItem": {
     "message": "Wyłącz opcje menu kontekstowego"
@@ -766,6 +766,9 @@
   },
   "identityUrl": {
     "message": "URL serwera tożsamości"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "URL serwera ikon"

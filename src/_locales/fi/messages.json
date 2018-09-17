@@ -486,7 +486,7 @@
     "message": "Ei koskaan tälle sivustolle"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Älä ilmoita salasanan vaihdosta"
   },
   "disableChangedPasswordNotificationDesc": {
     "message": "\"Vaihdettu salasana ilmoitus\" kehottaa automaattisesti päivittämään kirjautumissalasanasi holvissasi, kun se havaitsee, että olet vaihtanut sen verkkosivulla."
@@ -766,6 +766,9 @@
   },
   "identityUrl": {
     "message": "Identiteettipalvelimen URL"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "Kuvakepalvelimen URL"

@@ -315,7 +315,7 @@
     "message": "Al Blocco del Computer"
   },
   "onRestart": {
-    "message": "Al Riavvio"
+    "message": "Al Riavvio del browser"
   },
   "never": {
     "message": "Mai"
@@ -489,7 +489,7 @@
     "message": "Disabilita Notifica di Modifica Password"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "La \"notifica di Password cambiata\" richiederà automaticamente di aggiornare la password di un account di accesso nel tuo vault ogni volta che rileva che è stato modificato su un sito Web."
   },
   "notificationChangeDesc": {
     "message": "Vuoi aggiornare questa password in Bitwarden?"
@@ -766,6 +766,9 @@
   },
   "identityUrl": {
     "message": "URL del Server di Identità"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "URL del Server di Icone"

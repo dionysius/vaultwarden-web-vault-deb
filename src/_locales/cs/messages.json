@@ -486,16 +486,16 @@
     "message": "Nikdy pro tuto stránku"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Vypnout oznámení o změněném heslu"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "„Oznámení o změněném heslu“ vás automaticky požádá o potvrzení uložení aktualizovaného hesla v případě, že aplikace rozpozná vámi provedenou změnu hesla na webu."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Chcete aktualizovat toto heslo v Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Ano, aktualizovat"
   },
   "disableContextMenuItem": {
     "message": "Zakázat kontextové menu"
@@ -766,6 +766,9 @@
   },
   "identityUrl": {
     "message": "URL serveru identity"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "URL serveru ikonek"

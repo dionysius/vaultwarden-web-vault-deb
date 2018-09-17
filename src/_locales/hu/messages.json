@@ -486,16 +486,16 @@
     "message": "Ezen az weboldalon soha"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Értesítés letiltása jelszó változása esetén"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "Amikor a \"Jelszó megváltozott értesítés\" jelszó változást észlel egy webhelyen, automatikusan kéri, hogy módosítsd a webhelyhez tartozó jelszót a széfedben is."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Szeretnéd frisíteni a jelszót a Bitwarden-ben?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Igen, frissítsd"
   },
   "disableContextMenuItem": {
     "message": "Helyi menü opciók kikapcsolása"
@@ -766,6 +766,9 @@
   },
   "identityUrl": {
     "message": "Identitás szerver URL"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "Ikonok kiszolgáló URL-címe"
@@ -1067,11 +1070,11 @@
     "message": "Alapértelmezett"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Frissítve",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Jelszó frissítve",
     "description": "ex. Date this password was updated"
   }
 }

@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Gratis adgangskode manager",
+    "message": "Bitwarden - Gratis adgangskodemanager",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "En sikker og gratis adgangskode manager til alle dine enheder.",
+    "message": "En sikker og gratis adgangskodemanager til alle dine enheder.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -161,13 +161,13 @@
     "message": "Hjælp & Feedback"
   },
   "sync": {
-    "message": "Synkroniser"
+    "message": "Synkronisér"
   },
   "syncVaultNow": {
-    "message": "Synkroniser boks nu"
+    "message": "Synkronisér boks nu"
   },
   "lastSync": {
-    "message": "Sidst synkroniseret:"
+    "message": "Seneste synkronisering:"
   },
   "passGen": {
     "message": "Adgangskodegenerator"
@@ -261,7 +261,7 @@
     "message": "Slå synlighed til\/fra"
   },
   "manage": {
-    "message": "Administrér"
+    "message": "Håndtér"
   },
   "other": {
     "message": "Andre"
@@ -518,7 +518,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Eksporter boks"
+    "message": "Eksportér boks"
   },
   "warning": {
     "message": "ADVARSEL",
@@ -591,10 +591,10 @@
     "message": "Premium-medlemskab"
   },
   "premiumManage": {
-    "message": "Administrér medlemsskab"
+    "message": "Håndtér medlemsskab"
   },
   "premiumManageAlert": {
-    "message": "Du kan administrere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+    "message": "Du kan håndtere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "premiumRefresh": {
     "message": "Opdater medlemskab"
@@ -766,6 +766,9 @@
   },
   "identityUrl": {
     "message": "Identitets-server URL"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "Ikonserver URL"
