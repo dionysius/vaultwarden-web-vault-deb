@@ -418,7 +418,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
                 if (!fillFields.cardholderName && this.isFieldMatch(f[attr],
                     ['cc-name', 'card-name', 'cardholder-name', 'cardholder', 'name', 'nom'],
-                    ['cc-name', 'card-name', 'cardholder-name', 'cardholder'])) {
+                    ['cc-name', 'card-name', 'cardholder-name', 'cardholder', 'tbName'])) {
                     fillFields.cardholderName = f;
                     break;
                 } else if (!fillFields.number && this.isFieldMatch(f[attr],
@@ -444,7 +444,7 @@ export default class AutofillService implements AutofillServiceInterface {
                         'expire-month', 'expire-mo', 'expiry-month', 'expiry-mo', 'card-expire-month',
                         'card-expire-mo', 'card-expiry-month', 'card-expiry-mo', 'mois-validite',
                         'mois-expiration', 'm-validite', 'm-expiration', 'expiry-date-field-month',
-                        'expiration-date-month', 'expiration-date-mm', 'exp-mon'])) {
+                        'expiration-date-month', 'expiration-date-mm', 'exp-mon', 'validity-mo'])) {
                     fillFields.expMonth = f;
                     break;
                 } else if (!fillFields.expYear && this.isFieldMatch(f[attr],
@@ -455,12 +455,12 @@ export default class AutofillService implements AutofillServiceInterface {
                         'expiry-year', 'expiry-yr', 'card-expire-year', 'card-expire-yr', 'card-expiry-year',
                         'card-expiry-yr', 'an-validite', 'an-expiration', 'annee-validite',
                         'annee-expiration', 'expiry-date-field-year', 'expiration-date-year',
-                        'expiration-date-yy', 'expiration-date-yyyy'])) {
+                        'expiration-date-yy', 'expiration-date-yyyy', 'validity-year'])) {
                     fillFields.expYear = f;
                     break;
                 } else if (!fillFields.code && this.isFieldMatch(f[attr],
                     ['cvv', 'cvc', 'cvv2', 'cc-csc', 'cc-cvv', 'card-csc', 'card-cvv', 'cvd', 'cid', 'cvc2', 'cnv',
-                        'cvn2', 'cc-code', 'card-code', 'code-securite', 'security-code'])) {
+                        'cvn2', 'cc-code', 'card-code', 'code-securite', 'security-code', 'crypto'])) {
                     fillFields.code = f;
                     break;
                 } else if (!fillFields.brand && this.isFieldMatch(f[attr],
