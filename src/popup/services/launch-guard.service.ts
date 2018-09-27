@@ -14,8 +14,6 @@ export class LaunchGuardService implements CanActivate {
     constructor(private cryptoService: CryptoService, private userService: UserService, private router: Router) { }
 
     async canActivate() {
-        console.log('bg:');
-        console.log(BrowserApi.getBackgroundPage());
         if (BrowserApi.getBackgroundPage() == null) {
             this.router.navigate(['private-mode']);
             return false;
