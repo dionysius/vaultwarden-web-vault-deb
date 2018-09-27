@@ -120,6 +120,10 @@ export class BrowserApi {
                 delete obj.tab.safariTab;
             }
 
+            if (options != null && options.frameId != null && obj.bitwardenFrameId == null) {
+                obj.bitwardenFrameId = options.frameId;
+            }
+
             if (t.page) {
                 t.page.dispatchMessage('bitwarden', obj);
             }
@@ -199,7 +203,8 @@ export class BrowserApi {
             safari.application.addEventListener('message', async (msgEvent: any) => {
                 callback(msgEvent.message, {
                     tab: BrowserApi.makeTabObject(msgEvent.target),
-                    frameId: null,
+                    frameId: msgEvent.message != null && msgEvent.message.bitwardenFrameId != null ?
+                        msgEvent.message.bitwardenFrameId : null,
                 }, () => { /* No responses in Safari */ });
             }, false);
         }
