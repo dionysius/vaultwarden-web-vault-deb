@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let disabledChangedPasswordNotification = false;
 
     if (isSafari) {
+        if ((window as any).__bitwardenFrameId == null) {
+            (window as any).__bitwardenFrameId = Math.floor(Math.random() * Math.floor(99999999));
+        }
         if (inIframe) {
             return;
         }
@@ -32,9 +35,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         safari.self.tab.dispatchMessage('bitwarden', {
             command: 'bgGetDataForTab',
             responseCommand: responseCommand,
+            bitwardenFrameId: (window as any).__bitwardenFrameId,
         });
         safari.self.addEventListener('message', (msgEvent: any) => {
             const msg = msgEvent.message;
+            if (msg.bitwardenFrameId != null && (window as any).__bitwardenFrameId !== msg.bitwardenFrameId) {
+                return;
+            }
             if (msg.command === responseCommand && msg.data) {
                 notificationBarData = msg.data;
                 if (notificationBarData.neverDomains &&
@@ -562,6 +569,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function sendPlatformMessage(msg: any) {
         if (isSafari) {
+            msg.bitwardenFrameId = (window as any).__bitwardenFrameId;
             safari.self.tab.dispatchMessage('bitwarden', msg);
         } else {
             chrome.runtime.sendMessage(msg);

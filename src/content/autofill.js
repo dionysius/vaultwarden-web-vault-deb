@@ -991,7 +991,7 @@
         }
         safari.self.addEventListener('message', function (msgEvent) {
             var msg = msgEvent.message;
-            if(msg.bitwardenFrameId != null && window.__bitwardenFrameId !== msg.bitwardenFrameId) {
+            if (msg.bitwardenFrameId != null && window.__bitwardenFrameId !== msg.bitwardenFrameId) {
                 return;
             }
 

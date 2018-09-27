@@ -7,13 +7,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         navigator.userAgent.indexOf('Chrome') === -1;
 
     if (isSafari) {
+        if ((window as any).__bitwardenFrameId == null) {
+            (window as any).__bitwardenFrameId = Math.floor(Math.random() * Math.floor(99999999));
+        }
         const responseCommand = 'autofillerAutofillOnPageLoadEnabledResponse';
         safari.self.tab.dispatchMessage('bitwarden', {
             command: 'bgGetDataForTab',
             responseCommand: responseCommand,
+            bitwardenFrameId: (window as any).__bitwardenFrameId,
         });
         safari.self.addEventListener('message', (msgEvent: any) => {
             const msg = msgEvent.message;
+            if (msg.bitwardenFrameId != null && (window as any).__bitwardenFrameId !== msg.bitwardenFrameId) {
+                return;
+            }
             if (msg.command === responseCommand && msg.data.autofillEnabled === true) {
                 setInterval(() => doFillIfNeeded(), 500);
             } else if (msg.command === 'fillForm' && pageHref === msg.url) {
@@ -52,12 +59,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
 
             pageHref = window.location.href;
-            const msg = {
+            const msg: any = {
                 command: 'bgCollectPageDetails',
                 sender: 'autofiller',
             };
 
             if (isSafari) {
+                msg.bitwardenFrameId = (window as any).__bitwardenFrameId;
                 safari.self.tab.dispatchMessage('bitwarden', msg);
             } else {
                 chrome.runtime.sendMessage(msg);
