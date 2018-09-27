@@ -196,6 +196,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         }
 
         this.hostname = Utils.getHostname(this.url);
+        this.pageDetails = [];
         BrowserApi.tabSendMessage(tab, {
             command: 'collectPageDetails',
             tab: tab,
