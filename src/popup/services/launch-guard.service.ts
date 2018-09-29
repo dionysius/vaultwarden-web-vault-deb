@@ -16,10 +16,17 @@ export class LaunchGuardService implements CanActivate {
     async canActivate() {
         const bg = BrowserApi.getBackgroundPage();
         if (bg == null) {
-            // tslint:disable-next-line
-            console.log('Background page is null.');
-            // tslint:disable-next-line
-            console.log(bg);
+            if (window.navigator.userAgent.indexOf(' Edge/') !== -1) {
+                // tslint:disable-next-line
+                console.log('Background page is null.');
+                // tslint:disable-next-line
+                console.log(bg);
+                window.setTimeout(() => {
+                    // tslint:disable-next-line
+                    console.log('Reload page for Edge.');
+                    window.location.reload();
+                }, 1000);
+            }
             this.router.navigate(['private-mode']);
             return false;
         }
