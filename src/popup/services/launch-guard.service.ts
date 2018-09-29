@@ -14,7 +14,12 @@ export class LaunchGuardService implements CanActivate {
     constructor(private cryptoService: CryptoService, private userService: UserService, private router: Router) { }
 
     async canActivate() {
-        if (BrowserApi.getBackgroundPage() == null) {
+        const bg = BrowserApi.getBackgroundPage();
+        if (bg == null) {
+            // tslint:disable-next-line
+            console.log('Background page is null.');
+            // tslint:disable-next-line
+            console.log(bg);
             this.router.navigate(['private-mode']);
             return false;
         }
