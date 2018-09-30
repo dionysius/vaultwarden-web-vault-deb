@@ -14,19 +14,7 @@ export class LaunchGuardService implements CanActivate {
     constructor(private cryptoService: CryptoService, private userService: UserService, private router: Router) { }
 
     async canActivate() {
-        const bg = BrowserApi.getBackgroundPage();
-        if (bg == null) {
-            if (window.navigator.userAgent.indexOf(' Edge/') !== -1) {
-                // tslint:disable-next-line
-                console.log('Background page is null.');
-                // tslint:disable-next-line
-                console.log(bg);
-                window.setTimeout(() => {
-                    // tslint:disable-next-line
-                    console.log('Reload page for Edge.');
-                    window.location.reload();
-                }, 1000);
-            }
+        if (BrowserApi.getBackgroundPage() == null) {
             this.router.navigate(['private-mode']);
             return false;
         }

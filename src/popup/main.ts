@@ -5,10 +5,40 @@ import 'web-animations-js';
 // tslint:disable-next-line
 require('./scss/popup.scss');
 
+import { BrowserApi } from '../browser/browserApi';
 import { AppModule } from './app.module';
 
 if (process.env.ENV === 'production') {
     enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule, { preserveWhitespaces: true });
+function bootstrapModule() {
+    platformBrowserDynamic().bootstrapModule(AppModule, { preserveWhitespaces: true });
+}
+
+// Bug in Edge 18 has null getBackgroundPage() result initially. Can be removed in future.
+if (BrowserApi.getBackgroundPage() == null && window.navigator.userAgent.indexOf(' Edge/18.') !== -1) {
+    const sleep = (time: number) => new Promise((resolve) => window.setTimeout(resolve, time));
+    const bootstrapForEdge18 = async () => {
+        let bgAttempts = 1;
+        while (BrowserApi.getBackgroundPage() == null) {
+            if (bgAttempts > 30) {
+                break;
+            }
+            // tslint:disable-next-line
+            console.log('Waiting for background page to not be null. Attempt #' + bgAttempts);
+            await sleep(200);
+            bgAttempts++;
+        }
+        if (BrowserApi.getBackgroundPage() == null) {
+            // tslint:disable-next-line
+            console.log('Reload page.');
+            window.location.reload();
+        } else {
+            bootstrapModule();
+        }
+    };
+    bootstrapForEdge18();
+} else {
+    bootstrapModule();
+}
