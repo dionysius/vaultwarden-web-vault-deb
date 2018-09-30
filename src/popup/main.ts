@@ -17,7 +17,7 @@ function bootstrapModule() {
 }
 
 // Bug in Edge 18 has null getBackgroundPage() result initially. Can be removed in future.
-if (BrowserApi.getBackgroundPage() == null && window.navigator.userAgent.indexOf(' Edge/18.') !== -1) {
+if (BrowserApi.getBackgroundPage() == null && BrowserApi.isEdge18) {
     const sleep = (time: number) => new Promise((resolve) => window.setTimeout(resolve, time));
     const bootstrapForEdge18 = async () => {
         let bgAttempts = 1;
@@ -40,5 +40,9 @@ if (BrowserApi.getBackgroundPage() == null && window.navigator.userAgent.indexOf
     };
     bootstrapForEdge18();
 } else {
+    if (BrowserApi.isEdge18) {
+        // tslint:disable-next-line
+        console.log('Normal bootstrap.');
+    }
     bootstrapModule();
 }
