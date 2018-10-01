@@ -12,37 +12,24 @@ if (process.env.ENV === 'production') {
     enableProdMode();
 }
 
-function bootstrapModule() {
+function init() {
+    if (BrowserApi.isEdge18) {
+        const inPopup = window.location.search === '' || window.location.search.indexOf('uilocation=') === -1 ||
+            window.location.search.indexOf('uilocation=popup') > -1;
+        if (inPopup) {
+            const bodyRect = document.querySelector('body').getBoundingClientRect();
+            chrome.windows.create({
+                url: 'popup/index.html?uilocation=popout',
+                type: 'popup',
+                width: bodyRect.width + 60,
+                height: bodyRect.height,
+            });
+            BrowserApi.closePopup(window);
+            return;
+        }
+    }
+
     platformBrowserDynamic().bootstrapModule(AppModule, { preserveWhitespaces: true });
 }
 
-// Bug in Edge 18 has null getBackgroundPage() result initially. Can be removed in future.
-if (BrowserApi.getBackgroundPage() == null && BrowserApi.isEdge18) {
-    const sleep = (time: number) => new Promise((resolve) => window.setTimeout(resolve, time));
-    const bootstrapForEdge18 = async () => {
-        let bgAttempts = 1;
-        while (BrowserApi.getBackgroundPage() == null) {
-            if (bgAttempts > 30) {
-                break;
-            }
-            // tslint:disable-next-line
-            console.log('Waiting for background page to not be null. Attempt #' + bgAttempts);
-            await sleep(200);
-            bgAttempts++;
-        }
-        if (BrowserApi.getBackgroundPage() == null) {
-            // tslint:disable-next-line
-            console.log('Reload page.');
-            window.location.reload();
-        } else {
-            bootstrapModule();
-        }
-    };
-    bootstrapForEdge18();
-} else {
-    if (BrowserApi.isEdge18) {
-        // tslint:disable-next-line
-        console.log('Normal bootstrap.');
-    }
-    bootstrapModule();
-}
+init();
