@@ -105,8 +105,8 @@ export class AppComponent implements OnInit {
             } else if (msg.command === 'showDialog') {
                 await this.showDialog(msg);
             } else if (msg.command === 'showToast') {
-                this.ngZone.run(async () => {
-                    await this.showToast(msg);
+                this.ngZone.run(() => {
+                    this.showToast(msg);
                 });
             } else if (msg.command === 'analyticsEventTrack') {
                 this.analytics.eventTrack.next({
@@ -150,7 +150,7 @@ export class AppComponent implements OnInit {
         this.storageService.save(ConstantsService.lastActiveKey, now);
     }
 
-    private async showToast(msg: any) {
+    private showToast(msg: any) {
         const toast: Toast = {
             type: msg.type,
             title: msg.title,
