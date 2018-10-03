@@ -1,5 +1,3 @@
-import { Angulartics2 } from 'angulartics2';
-
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
@@ -21,10 +19,10 @@ import {
 export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
     private cipherState: CipherView;
 
-    constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,
-        platformUtilsService: PlatformUtilsService, i18nService: I18nService,
-        private stateService: StateService, private location: Location) {
-        super(passwordGenerationService, analytics, platformUtilsService, i18nService, window);
+    constructor(passwordGenerationService: PasswordGenerationService, platformUtilsService: PlatformUtilsService,
+        i18nService: I18nService, private stateService: StateService,
+        private location: Location) {
+        super(passwordGenerationService, platformUtilsService, i18nService, window);
     }
 
     async ngOnInit() {

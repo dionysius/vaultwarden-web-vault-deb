@@ -8,8 +8,6 @@ import {
     Router,
 } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
-
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
@@ -28,12 +26,10 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
 
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
-        analytics: Angulartics2,
         auditService: AuditService, stateService: StateService,
         private route: ActivatedRoute, private router: Router,
         private location: Location) {
-        super(cipherService, folderService, i18nService, platformUtilsService, analytics,
-            auditService, stateService);
+        super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService);
     }
 
     ngOnInit() {

@@ -1,5 +1,3 @@
-import { Angulartics2 } from 'angulartics2';
-
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -17,10 +15,10 @@ import {
     templateUrl: 'password-history.component.html',
 })
 export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
-    constructor(cipherService: CipherService, analytics: Angulartics2,
-        platformUtilsService: PlatformUtilsService, i18nService: I18nService,
-        private location: Location, private route: ActivatedRoute) {
-        super(cipherService, analytics, platformUtilsService, i18nService, window);
+    constructor(cipherService: CipherService, platformUtilsService: PlatformUtilsService,
+        i18nService: I18nService, private location: Location,
+        private route: ActivatedRoute) {
+        super(cipherService, platformUtilsService, i18nService, window);
     }
 
     async ngOnInit() {

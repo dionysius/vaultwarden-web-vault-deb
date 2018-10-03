@@ -109,6 +109,11 @@ export class AppComponent implements OnInit {
                     await this.showToast(msg);
                     this.changeDetectorRef.detectChanges();
                 });
+            } else if (msg.command === 'analyticsEventTrack') {
+                this.analytics.eventTrack.next({
+                    action: msg.action,
+                    properties: { label: msg.label },
+                });
             } else {
                 msg.webExtSender = sender;
                 this.broadcasterService.send(msg);

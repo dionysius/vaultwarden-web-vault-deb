@@ -4,8 +4,6 @@ import {
     Router,
 } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
-
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -20,10 +18,9 @@ import {
 })
 export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     constructor(folderService: FolderService, i18nService: I18nService,
-        analytics: Angulartics2,
         platformUtilsService: PlatformUtilsService, private router: Router,
         private route: ActivatedRoute) {
-        super(folderService, i18nService, analytics, platformUtilsService);
+        super(folderService, i18nService, platformUtilsService);
     }
 
     async ngOnInit() {

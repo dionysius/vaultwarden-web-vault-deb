@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
-
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -17,9 +15,9 @@ import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/l
 })
 export class LoginComponent extends BaseLoginComponent {
     constructor(authService: AuthService, router: Router,
-        analytics: Angulartics2, platformUtilsService: PlatformUtilsService,
-        i18nService: I18nService, syncService: SyncService, storageService: StorageService) {
-        super(authService, router, analytics, platformUtilsService, i18nService, storageService);
+        platformUtilsService: PlatformUtilsService, i18nService: I18nService,
+        syncService: SyncService, storageService: StorageService) {
+        super(authService, router, platformUtilsService, i18nService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };

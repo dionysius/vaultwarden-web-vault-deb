@@ -1,4 +1,3 @@
-import { ToasterService } from 'angular2-toaster';
 import * as tldjs from 'tldjs';
 
 import { BrowserApi } from '../browser/browserApi';
@@ -200,6 +199,14 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         });
         return new Promise<boolean>((resolve) => {
             this.showDialogResolves.set(dialogId, { resolve: resolve, date: new Date() });
+        });
+    }
+
+    eventTrack(action: string, label?: string, options?: any) {
+        this.messagingService.send('analyticsEventTrack', {
+            action: action,
+            label: label,
+            options: options,
         });
     }
 
