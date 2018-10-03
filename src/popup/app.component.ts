@@ -107,7 +107,6 @@ export class AppComponent implements OnInit {
             } else if (msg.command === 'showToast') {
                 this.ngZone.run(async () => {
                     await this.showToast(msg);
-                    this.changeDetectorRef.detectChanges();
                 });
             } else if (msg.command === 'analyticsEventTrack') {
                 this.analytics.eventTrack.next({

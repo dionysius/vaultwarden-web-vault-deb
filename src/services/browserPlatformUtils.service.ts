@@ -178,7 +178,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return true;
     }
 
-    showToast(type: 'error' | 'success' | 'warning' | 'info', title: string, text: string, options?: any): void {
+    showToast(type: 'error' | 'success' | 'warning' | 'info', title: string, text: string | string[],
+        options?: any): void {
         this.messagingService.send('showToast', {
             text: text,
             title: title,
