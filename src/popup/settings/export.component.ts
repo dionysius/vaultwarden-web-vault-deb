@@ -1,4 +1,3 @@
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { Component } from '@angular/core';
@@ -16,12 +15,11 @@ import { ExportComponent as BaseExportComponent } from 'jslib/angular/components
     templateUrl: 'export.component.html',
 })
 export class ExportComponent extends BaseExportComponent {
-    constructor(analytics: Angulartics2, toasterService: ToasterService,
+    constructor(analytics: Angulartics2,
         cryptoService: CryptoService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, exportService: ExportService,
         private router: Router) {
-        super(analytics, toasterService, cryptoService, i18nService, platformUtilsService,
-            exportService, window);
+        super(analytics, cryptoService, i18nService, platformUtilsService, exportService, window);
     }
 
     protected saved() {

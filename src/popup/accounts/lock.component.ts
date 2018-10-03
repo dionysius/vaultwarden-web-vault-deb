@@ -4,7 +4,6 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -21,11 +20,10 @@ import { LockComponent as BaseLockComponent } from 'jslib/angular/components/loc
 })
 export class LockComponent extends BaseLockComponent implements OnInit {
     constructor(router: Router, analytics: Angulartics2,
-        toasterService: ToasterService, i18nService: I18nService,
+        i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
         userService: UserService, cryptoService: CryptoService) {
-        super(router, analytics, toasterService, i18nService, platformUtilsService,
-            messagingService, userService, cryptoService);
+        super(router, analytics, i18nService, platformUtilsService, messagingService, userService, cryptoService);
         this.successRoute = '/tabs/current';
     }
 

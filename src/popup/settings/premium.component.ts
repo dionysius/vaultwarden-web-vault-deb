@@ -1,7 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { ApiService } from 'jslib/abstractions/api.service';
@@ -18,11 +17,11 @@ import { PremiumComponent as BasePremiumComponent } from 'jslib/angular/componen
 export class PremiumComponent extends BasePremiumComponent {
     priceString: string;
 
-    constructor(analytics: Angulartics2, toasterService: ToasterService,
+    constructor(analytics: Angulartics2,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         tokenService: TokenService, apiService: ApiService,
         private currencyPipe: CurrencyPipe) {
-        super(analytics, toasterService, i18nService, platformUtilsService, tokenService, apiService);
+        super(analytics, i18nService, platformUtilsService, tokenService, apiService);
 
         // Support old price string. Can be removed in future once all translations are properly updated.
         const thePrice = this.currencyPipe.transform(this.price, '$');

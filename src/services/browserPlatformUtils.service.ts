@@ -1,3 +1,4 @@
+import { ToasterService } from 'angular2-toaster';
 import * as tldjs from 'tldjs';
 
 import { BrowserApi } from '../browser/browserApi';
@@ -178,8 +179,13 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return true;
     }
 
-    showToast(type: 'error' | 'success' | 'warning' | 'info', title: string, text: string, global?: any): void {
-        throw new Error('showToast not implemented');
+    showToast(type: 'error' | 'success' | 'warning' | 'info', title: string, text: string, options?: any): void {
+        this.messagingService.send('showToast', {
+            text: text,
+            title: title,
+            type: type,
+            options: options,
+        });
     }
 
     showDialog(text: string, title?: string, confirmText?: string, cancelText?: string, type?: string) {

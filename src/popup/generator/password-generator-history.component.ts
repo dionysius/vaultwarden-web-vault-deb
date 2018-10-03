@@ -1,4 +1,3 @@
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { Location } from '@angular/common';
@@ -19,8 +18,8 @@ import {
 export class PasswordGeneratorHistoryComponent extends BasePasswordGeneratorHistoryComponent {
     constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,
         platformUtilsService: PlatformUtilsService, i18nService: I18nService,
-        toasterService: ToasterService, private location: Location) {
-        super(passwordGenerationService, analytics, platformUtilsService, i18nService, toasterService, window);
+        private location: Location) {
+        super(passwordGenerationService, analytics, platformUtilsService, i18nService, window);
     }
 
     close() {

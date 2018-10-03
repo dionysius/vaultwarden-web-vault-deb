@@ -8,10 +8,7 @@ import {
     Router,
 } from '@angular/router';
 
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
-
-import { CipherType } from 'jslib/enums/cipherType';
 
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
@@ -31,12 +28,12 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
 
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
-        analytics: Angulartics2, toasterService: ToasterService,
+        analytics: Angulartics2,
         auditService: AuditService, stateService: StateService,
         private route: ActivatedRoute, private router: Router,
         private location: Location) {
         super(cipherService, folderService, i18nService, platformUtilsService, analytics,
-            toasterService, auditService, stateService);
+            auditService, stateService);
     }
 
     ngOnInit() {

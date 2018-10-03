@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import { EnvironmentComponent as BaseEnvironmentComponent } from 'jslib/angular/components/environment.component';
 
@@ -14,10 +14,10 @@ import { EnvironmentComponent as BaseEnvironmentComponent } from 'jslib/angular/
     templateUrl: 'environment.component.html',
 })
 export class EnvironmentComponent extends BaseEnvironmentComponent {
-    constructor(analytics: Angulartics2, toasterService: ToasterService,
+    constructor(analytics: Angulartics2, platformUtilsService: PlatformUtilsService,
         environmentService: EnvironmentService, i18nService: I18nService,
         private router: Router) {
-        super(analytics, toasterService, environmentService, i18nService);
+        super(analytics, platformUtilsService, environmentService, i18nService);
         this.showCustom = true;
     }
 

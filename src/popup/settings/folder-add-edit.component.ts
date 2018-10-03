@@ -4,7 +4,6 @@ import {
     Router,
 } from '@angular/router';
 
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { FolderService } from 'jslib/abstractions/folder.service';
@@ -21,10 +20,10 @@ import {
 })
 export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     constructor(folderService: FolderService, i18nService: I18nService,
-        analytics: Angulartics2, toasterService: ToasterService,
+        analytics: Angulartics2,
         platformUtilsService: PlatformUtilsService, private router: Router,
         private route: ActivatedRoute) {
-        super(folderService, i18nService, analytics, toasterService, platformUtilsService);
+        super(folderService, i18nService, analytics, platformUtilsService);
     }
 
     async ngOnInit() {

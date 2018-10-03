@@ -9,7 +9,6 @@ import {
     Router,
 } from '@angular/router';
 
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { AuditService } from 'jslib/abstractions/audit.service';
@@ -33,14 +32,14 @@ export class ViewComponent extends BaseViewComponent {
     showAttachments = true;
 
     constructor(cipherService: CipherService, totpService: TotpService,
-        tokenService: TokenService, toasterService: ToasterService,
+        tokenService: TokenService,
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
         i18nService: I18nService, analytics: Angulartics2,
         auditService: AuditService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         broadcasterService: BroadcasterService, ngZone: NgZone,
         changeDetectorRef: ChangeDetectorRef, userService: UserService) {
-        super(cipherService, totpService, tokenService, toasterService, cryptoService, platformUtilsService,
+        super(cipherService, totpService, tokenService, cryptoService, platformUtilsService,
             i18nService, analytics, auditService, window, broadcasterService, ngZone, changeDetectorRef, userService);
     }
 

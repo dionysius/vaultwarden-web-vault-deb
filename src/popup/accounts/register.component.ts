@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { ApiService } from 'jslib/abstractions/api.service';
@@ -19,11 +18,11 @@ import { RegisterComponent as BaseRegisterComponent } from 'jslib/angular/compon
 })
 export class RegisterComponent extends BaseRegisterComponent {
     constructor(authService: AuthService, router: Router,
-        analytics: Angulartics2, toasterService: ToasterService,
+        analytics: Angulartics2,
         i18nService: I18nService, cryptoService: CryptoService,
         apiService: ApiService, stateService: StateService,
         platformUtilsService: PlatformUtilsService) {
-        super(authService, router, analytics, toasterService, i18nService, cryptoService, apiService, stateService,
+        super(authService, router, analytics, i18nService, cryptoService, apiService, stateService,
             platformUtilsService);
     }
 }
