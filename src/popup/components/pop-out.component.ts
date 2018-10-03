@@ -56,8 +56,8 @@ export class PopOutComponent implements OnInit {
             chrome.windows.create({
                 url: href,
                 type: 'popup',
-                width: bodyRect.width + 60,
-                height: bodyRect.height,
+                width: bodyRect.width ? bodyRect.width + 60 : 375,
+                height: bodyRect.height || 600,
             });
 
             if (this.popupUtilsService.inPopup(window)) {

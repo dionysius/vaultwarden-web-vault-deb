@@ -138,7 +138,7 @@ export class AppComponent implements OnInit {
     }
 
     getState(outlet: RouterOutlet) {
-        return outlet.activatedRouteData.state;
+        return BrowserApi.isEdge18 ? null : outlet.activatedRouteData.state;
     }
 
     private async recordActivity() {

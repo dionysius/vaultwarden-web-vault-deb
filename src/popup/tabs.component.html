@@ -1,8 +1,8 @@
 <div class="tab-page">
     <router-outlet></router-outlet>
-    <nav class="tabs">
+    <nav class="tabs" [ngClass]="{'tabs-3': !showCurrentTab}">
         <ul>
-            <li routerLinkActive="active">
+            <li routerLinkActive="active" *ngIf="showCurrentTab">
                 <a routerLink="current" title="{{'currentTab' | i18n}}">
                     <i class="fa fa-folder fa-2x"></i>{{'tab' | i18n}}
                 </a>

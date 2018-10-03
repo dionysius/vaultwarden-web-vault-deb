@@ -329,6 +329,12 @@ header {
             }
         }
     }
+
+    &.tabs-3 {
+        ul li {
+            width: 33.33%;
+        }
+    }
 }
 
 app-root {
