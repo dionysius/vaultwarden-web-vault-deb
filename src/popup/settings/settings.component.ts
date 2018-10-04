@@ -3,7 +3,9 @@ import swal from 'sweetalert';
 
 import {
     Component,
+    ElementRef,
     OnInit,
+    ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -40,8 +42,10 @@ const RateUrls = {
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
+    @ViewChild('lockOptionsSelect', { read: ElementRef }) lockOptionsSelectRef: ElementRef;
     lockOptions: any[];
     lockOption: number = null;
+    previousLockOption: number = null;
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
         private analytics: Angulartics2, private lockService: LockService,
@@ -79,10 +83,29 @@ export class SettingsComponent implements OnInit {
             }
             this.lockOption = option;
         }
+        this.previousLockOption = this.lockOption;
     }
 
-    async saveLockOption() {
+    async saveLockOption(newValue: number) {
+        if (newValue == null) {
+            const confirmed = await this.platformUtilsService.showDialog(
+                this.i18nService.t('neverLockWarning'), null,
+                this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');
+            if (!confirmed) {
+                this.lockOptions.forEach((option: any, i) => {
+                    if (option.value === this.lockOption) {
+                        this.lockOptionsSelectRef.nativeElement.value = i + ': ' + this.lockOption;
+                    }
+                });
+                return;
+            }
+        }
+        this.previousLockOption = this.lockOption;
+        this.lockOption = newValue;
         await this.lockService.setLockOption(this.lockOption != null ? this.lockOption : null);
+        if (this.previousLockOption == null) {
+            this.messagingService.send('bgReseedStorage');
+        }
     }
 
     async lock() {

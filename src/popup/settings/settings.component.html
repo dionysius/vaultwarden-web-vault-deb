@@ -26,7 +26,8 @@
         <div class="box-content single-line">
             <div class="box-content-row display-block" appBoxRow>
                 <label for="lockOption">{{'lockOptions' | i18n}}</label>
-                <select id="lockOption" name="LockOptions" [(ngModel)]="lockOption" (change)="saveLockOption()">
+                <select #lockOptionsSelect id="lockOption" name="LockOptions" [ngModel]="lockOption"
+                        (ngModelChange)="saveLockOption($event)">
                     <option *ngFor="let o of lockOptions" [ngValue]="o.value">{{o.name}}</option>
                 </select>
             </div>

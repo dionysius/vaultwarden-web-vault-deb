@@ -137,6 +137,9 @@ export default class RuntimeBackground {
             case 'bgUpdateContextMenu':
                 await this.main.refreshBadgeAndMenu();
                 break;
+            case 'bgReseedStorage':
+                await this.reseedStorage();
+                break;
             case 'collectPageDetailsResponse':
                 switch (msg.sender) {
                     case 'notificationBar':
@@ -373,8 +376,6 @@ export default class RuntimeBackground {
                 if (this.onInstalledReason === 'install') {
                     BrowserApi.createNewTab('https://bitwarden.com/browser-start/');
                     await this.setDefaultSettings();
-                } else if (this.onInstalledReason === 'update') {
-                    await this.reseedStorage();
                 }
 
                 this.analytics.ga('send', {
@@ -397,12 +398,6 @@ export default class RuntimeBackground {
             return;
         }
 
-        const reseed124Key = 'reseededStorage124';
-        const reseeded124 = await this.storageService.get<boolean>(reseed124Key);
-        if (reseeded124) {
-            return;
-        }
-
         const getStorage = (): Promise<any> => new Promise((resolve) => {
             chrome.storage.local.get(null, (o: any) => resolve(o));
         });
@@ -418,11 +413,8 @@ export default class RuntimeBackground {
             if (!storage.hasOwnProperty(key)) {
                 continue;
             }
-
             await this.storageService.save(key, storage[key]);
         }
-
-        await this.storageService.save(reseed124Key, true);
     }
 
     private async setDefaultSettings() {
