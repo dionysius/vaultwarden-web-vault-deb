@@ -489,7 +489,7 @@
     "message": "غیر فعال کردن اعلان تغییر رمز عبور"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "\"اعلانیه رمزعبور تغییر کرده\" بصورت خودکار شما را از بروزرسانی رمزعبور در گاوصندوق مطلع میکند هر زمان که شما آن را در یک وبسایت تغییر داده باشید."
   },
   "notificationChangeDesc": {
     "message": "آیا مایل به بروزرسانی این پسورد در Bitwarden هستید؟"
@@ -768,7 +768,7 @@
     "message": "آدرس سرور شناسایی"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "اعلانهای آدرس سرور"
   },
   "iconsUrl": {
     "message": "آدرس سرور آیکون ها"
@@ -1076,5 +1076,8 @@
   "datePasswordUpdated": {
     "message": "گذرواژه بروز رسانی شد",
     "description": "ex. Date this password was updated"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

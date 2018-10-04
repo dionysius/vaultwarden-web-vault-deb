@@ -768,7 +768,7 @@
     "message": "URL du serveur d'identification"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "URL du serveur de notifications"
   },
   "iconsUrl": {
     "message": "URL du serveur d’icônes"
@@ -1076,5 +1076,8 @@
   "datePasswordUpdated": {
     "message": "Mot de passe mis à jour",
     "description": "ex. Date this password was updated"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

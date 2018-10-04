@@ -486,16 +486,16 @@
     "message": "Aldri for dette nettstedet"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Deaktiver endret passordvarsling"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "\"Endret passord meldingen\" automatisk ber deg om å oppdatere et påloggingspassord i hvelvet din når den oppdager at du har endret det på et webområde."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Vil du oppdatere dette passordet i Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Ja, Oppdater nå"
   },
   "disableContextMenuItem": {
     "message": "Deaktiver sammenhengsmeny-innstillinger"
@@ -768,7 +768,7 @@
     "message": "Identitetstjenerens nettadresse"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Varsler Server URL"
   },
   "iconsUrl": {
     "message": "Ikonenes tjenernettadresse"
@@ -1076,5 +1076,8 @@
   "datePasswordUpdated": {
     "message": "Passordet ble oppdatert den",
     "description": "ex. Date this password was updated"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

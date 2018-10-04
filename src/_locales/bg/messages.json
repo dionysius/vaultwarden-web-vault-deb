@@ -273,10 +273,10 @@
     "message": "Оценяване на разширението"
   },
   "rateExtensionDesc": {
-    "message": "Please consider helping us out with a good review!"
+    "message": "Моля, помогнете ни, като оставите положителен отзив!"
   },
   "browserNotSupportClipboard": {
-    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message": "Четецът ви не поддържа копиране в буфера, затова го копирайте на ръка."
   },
   "verifyMasterPassword": {
     "message": "Потвърждаване на главната парола"
@@ -495,7 +495,7 @@
     "message": "Do you want to update this password in Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Да, нека се обнови сега"
   },
   "disableContextMenuItem": {
     "message": "Disable Context Menu Options"
@@ -585,7 +585,7 @@
     "message": "Функцията е недостъпна"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Не можете да използвате функцията, докато не обновите шифровъчния си ключ."
   },
   "premiumMembership": {
     "message": "Премийно членство"
@@ -630,7 +630,7 @@
     "message": "Имате премийно членство!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting Bitwarden."
+    "message": "Благодарим ви за подкрепата на програмата."
   },
   "premiumPrice": {
     "message": "All for just %price% \/year!",
@@ -657,10 +657,10 @@
     "message": "A premium membership is required to use this feature."
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Въведете шест-цифреният код за потвърждение от приложението за удостоверяване."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to",
+    "message": "Въведете шест-цифреният код за потвърждение, който е бил изпратен на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -762,13 +762,13 @@
     "message": "Адрес на ППИ-сървъра"
   },
   "webVaultUrl": {
-    "message": "Адрес на сървъра за уеб трезора"
+    "message": "Адрес на сървъра за интернетния трезор"
   },
   "identityUrl": {
     "message": "Адрес на сървъра със самоличности"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Адрес на сървъра за уведомления"
   },
   "iconsUrl": {
     "message": "Адрес на сървъра с иконки"
@@ -777,7 +777,7 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load"
+    "message": "Включване на автоматичното попълване"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
@@ -789,7 +789,7 @@
     "message": "Автоматично попълване на последно използвания запис в текущия сайт."
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard."
+    "message": "Създаване и копиране на нова случайна парола в буфера."
   },
   "privateModeMessage": {
     "message": "Unfortunately this window is not available in private mode for this browser."
@@ -1005,13 +1005,13 @@
     "message": "Изчистване"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Завършете двустепенното удостоверяване в новия раздел."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Проверка дали паролата е разкрита."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "Паролата е била разкрита $VALUE$ път\/и в пробиви. Непременно я сменете.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1020,7 +1020,7 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Паролата не е била разкрита в известните пробиви. Можете да продължите да я използвате."
   },
   "baseDomain": {
     "message": "Основен домейн"
@@ -1070,11 +1070,14 @@
     "message": "По подразбиране"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Обновено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Паролата е обновена",
     "description": "ex. Date this password was updated"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

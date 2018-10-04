@@ -768,7 +768,7 @@
     "message": "Identitetsserver-URL"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "URL för notifieringsserver"
   },
   "iconsUrl": {
     "message": "Ikoner Server-URL"
@@ -1076,5 +1076,8 @@
   "datePasswordUpdated": {
     "message": "Lösenord uppdaterat",
     "description": "ex. Date this password was updated"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }
