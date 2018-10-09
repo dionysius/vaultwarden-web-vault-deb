@@ -200,6 +200,12 @@
   "length": {
     "message": "Längd"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Minst antal nummer"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Lösenord"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Favorit"
@@ -1078,6 +1087,6 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Är du säker på att du vill använda alternativet ”Aldrig”? Att ställa in låsnings-alternativet till ”Aldrig” lagrar valvets krypteringsnyckel på datorn. Om du använder det här alternativet bör du se till att du håller datorn ordentligt skyddad."
   }
 }

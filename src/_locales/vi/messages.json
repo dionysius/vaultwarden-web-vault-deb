@@ -200,6 +200,12 @@
   "length": {
     "message": "Độ dài"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Số chữ số tối thiểu"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Mật khẩu"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Yêu thích"

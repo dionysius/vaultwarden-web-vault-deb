@@ -200,6 +200,12 @@
   "length": {
     "message": "Comprimento"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Números mínimos"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Palavra-passe"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Favorito"
@@ -1078,6 +1087,6 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Tem a certeza de que pretende utilizar a opção \"Nunca\"? Definir as suas opções de bloqueio para \"Nunca\" armazena a chave de encriptação do seu cofre no seu dispositivo. Se utilizar esta opção deve assegurar-se de que mantém o seu dispositivo devidamente protegido."
   }
 }

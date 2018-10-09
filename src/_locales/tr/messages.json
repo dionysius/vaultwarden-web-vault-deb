@@ -200,6 +200,12 @@
   "length": {
     "message": "Uzunluk"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "En Az Rakam"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Parola"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Favori"

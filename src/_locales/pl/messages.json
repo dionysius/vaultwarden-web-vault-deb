@@ -200,6 +200,12 @@
   "length": {
     "message": "Długość"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Min. liczba znaków"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Hasło"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Ulubione"
@@ -1078,6 +1087,6 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Czy na pewno chcesz użyć opcji \"Nigdy\"? Ustawienie opcji blokady na \"Nigdy\" przechowuje klucz szyfrowania Twojego sejfu na urządzeniu. Jeśli używasz tej opcji upewnij się, że odpowiednio zabezpieczasz swoje urządzenie."
   }
 }

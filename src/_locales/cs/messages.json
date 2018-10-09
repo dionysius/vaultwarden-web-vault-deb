@@ -200,6 +200,12 @@
   "length": {
     "message": "Délka"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Minimální počet čísel"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Heslo"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Oblíbené"

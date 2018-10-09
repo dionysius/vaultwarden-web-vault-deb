@@ -7,7 +7,7 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "Bitwarden - безопасный и бесплатный менеджер паролей для всех ваших устройств.",
+    "message": "Безопасный и бесплатный менеджер паролей для всех ваших устройств.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -200,6 +200,12 @@
   "length": {
     "message": "Длина"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Мин. кол-во цифр"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Пароль"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Избранный"
@@ -1078,6 +1087,6 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Вы действительно хотите отключить блокировку хранилища? В этом случае ключ шифрования вашего хранилища будет сохранен на вашем устройстве. Отключая блокировку, вы должны убедиться, что ваше устройство надежно защищено."
   }
 }

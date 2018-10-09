@@ -200,6 +200,12 @@
   "length": {
     "message": "Length"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Minimum Numbers"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "รหัสผ่าน"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "รายการโปรด"

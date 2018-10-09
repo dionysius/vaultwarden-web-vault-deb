@@ -200,6 +200,12 @@
   "length": {
     "message": "Lengde"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Minst antall numre"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Passord"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Favoritt"
@@ -1078,6 +1087,6 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Er du sikker på at du vil bruke alternativet \"Aldri\"? Ved å angi låsemulighetene til \"Aldri\" lagres hvelvens krypteringsnøkkel på enheten. Hvis du bruker dette alternativet, bør du sørge for at du holder enheten forsvarlig beskyttet."
   }
 }

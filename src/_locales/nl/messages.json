@@ -200,6 +200,12 @@
   "length": {
     "message": "Lengte"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "minNumbers": {
     "message": "Minimum Aantal Getallen"
   },
@@ -229,6 +235,9 @@
   },
   "password": {
     "message": "Wachtwoord"
+  },
+  "passphrase": {
+    "message": "Passphrase"
   },
   "favorite": {
     "message": "Favoriet"
@@ -1078,6 +1087,6 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Weet u zeker dat u de optie \"Nooit\" wilt gebruiken? Met de vergrendelingsoptie \"Nooit\" wordt de coderingssleutel van uw safe opgeslagen op uw apparaat. Als u deze optie gebruikt, moet u ervoor zorgen dat u uw apparaat naar behoren beschermd houdt."
   }
 }
