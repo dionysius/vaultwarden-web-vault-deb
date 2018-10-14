@@ -200,7 +200,7 @@ export default class RuntimeBackground {
                 continue;
             }
 
-            const tabDomain = this.platformUtilsService.getDomain(tab.url);
+            const tabDomain = Utils.getDomain(tab.url);
             if (tabDomain != null && tabDomain !== queueMessage.domain) {
                 continue;
             }
@@ -235,7 +235,7 @@ export default class RuntimeBackground {
                 continue;
             }
 
-            const tabDomain = this.platformUtilsService.getDomain(tab.url);
+            const tabDomain = Utils.getDomain(tab.url);
             if (tabDomain != null && tabDomain !== queueMessage.domain) {
                 continue;
             }
@@ -264,7 +264,7 @@ export default class RuntimeBackground {
                 continue;
             }
 
-            const tabDomain = this.platformUtilsService.getDomain(tab.url);
+            const tabDomain = Utils.getDomain(tab.url);
             if (tabDomain != null && tabDomain !== queueMessage.domain) {
                 continue;
             }
@@ -278,7 +278,7 @@ export default class RuntimeBackground {
     }
 
     private async addLogin(loginInfo: any, tab: any) {
-        const loginDomain = this.platformUtilsService.getDomain(loginInfo.url);
+        const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
         }
@@ -314,7 +314,7 @@ export default class RuntimeBackground {
     }
 
     private async changedPassword(changeData: any, tab: any) {
-        const loginDomain = this.platformUtilsService.getDomain(changeData.url);
+        const loginDomain = Utils.getDomain(changeData.url);
         if (loginDomain == null) {
             return;
         }

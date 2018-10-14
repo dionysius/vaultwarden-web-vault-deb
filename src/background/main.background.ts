@@ -50,6 +50,7 @@ import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/a
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
 
 import { Analytics } from 'jslib/misc';
+import { Utils } from 'jslib/misc/utils';
 
 import { BrowserApi } from '../browser/browserApi';
 
@@ -134,8 +135,7 @@ export default class MainBackground {
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.storageService, this.i18nService, this.platformUtilsService,
-            () => this.searchService);
+            this.apiService, this.storageService, this.i18nService, () => this.searchService);
         this.folderService = new FolderService(this.cryptoService, this.userService, this.apiService,
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
@@ -156,7 +156,7 @@ export default class MainBackground {
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
         this.totpService = new TotpService(this.storageService, cryptoFunctionService);
         this.autofillService = new AutofillService(this.cipherService, this.userService, this.totpService);
-        this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
+        this.containerService = new ContainerService(this.cryptoService);
         this.auditService = new AuditService(cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
         this.notificationsService = new NotificationsService(this.userService, this.syncService, this.appIdService,
@@ -529,7 +529,7 @@ export default class MainBackground {
             return;
         }
 
-        const tabDomain = this.platformUtilsService.getDomain(tab.url);
+        const tabDomain = Utils.getDomain(tab.url);
         if (tabDomain == null) {
             return;
         }
