@@ -201,10 +201,10 @@
     "message": "Uzunluk"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Kelime Sayısı"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Kelime Ayracı"
   },
   "minNumbers": {
     "message": "En Az Rakam"
@@ -237,7 +237,7 @@
     "message": "Parola"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Parola"
   },
   "favorite": {
     "message": "Favori"
@@ -495,16 +495,16 @@
     "message": "Bu site için asla"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Değiştirilmiş Parola Bildirimlerini Devre Dışı Bırak"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "\"Değiştirilmiş Parola Bildirimleri\" bir web sitesindeki hesabınızda parolanızı değiştirdiğinizde otomatik olarak parolanızı güncellemenizi sağlar."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Bu parolayı Bitwarden kasanızda güncellemek ister misiniz?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Evet, şimdi güncelle"
   },
   "disableContextMenuItem": {
     "message": "Sağtık Menü Seçeneklerini Kapat"
@@ -777,7 +777,7 @@
     "message": "Kimlik Sunucu URL"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Bildirim Sunucu URL'si"
   },
   "iconsUrl": {
     "message": "Sunucu URL simgeleri"
@@ -1079,14 +1079,14 @@
     "message": "Varsayılan"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Güncellendi",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Parola Güncellendi",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "\"Asla\" seçeneğini kullanmak istediğinize emin misiniz? Kilit seçeneğinizi \"Asla\" olarak ayarlarsanız, kasanın şifreleme anahtarı cihazınızda saklanacaktır. Bu seçeneği kullanırsanız, cihazınızın düzgün bir şekilde korumalı ve güvende tutmalısınız."
   }
 }
