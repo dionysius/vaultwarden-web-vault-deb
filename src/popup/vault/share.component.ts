@@ -1,6 +1,9 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {
+    ActivatedRoute,
+    Router,
+} from '@angular/router';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
@@ -18,11 +21,14 @@ export class ShareComponent extends BaseShareComponent {
     constructor(collectionService: CollectionService, platformUtilsService: PlatformUtilsService,
         i18nService: I18nService, userService: UserService,
         cipherService: CipherService, private route: ActivatedRoute,
-        private location: Location) {
+        private location: Location, private router: Router) {
         super(collectionService, platformUtilsService, i18nService, userService, cipherService);
     }
 
     async ngOnInit() {
+        this.onSharedCipher.subscribe(() => {
+            this.router.navigate(['view-cipher', { cipherId: this.cipherId }]);
+        });
         this.route.queryParams.subscribe(async (params) => {
             this.cipherId = params.cipherId;
             await super.ngOnInit();
