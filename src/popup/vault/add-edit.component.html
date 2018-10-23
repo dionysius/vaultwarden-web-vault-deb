@@ -318,7 +318,8 @@
         </div>
         <div class="box list" *ngIf="editMode">
             <div class="box-content single-line">
-                <a class="box-content-row" href="#" appStopClick appBlurClick (click)="share()">
+                <a class="box-content-row" href="#" appStopClick appBlurClick (click)="share()"
+                    *ngIf="!cipher.organizationId">
                     <div class="row-main text-primary">
                         <div class="icon text-primary">
                             <i class="fa fa-share-alt fa-lg fa-fw"></i>
