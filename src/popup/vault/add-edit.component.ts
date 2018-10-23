@@ -91,6 +91,12 @@ export class AddEditComponent extends BaseAddEditComponent {
         }
     }
 
+    editCollections() {
+        if (this.cipher.organizationId != null) {
+            this.router.navigate(['/collections'], { queryParams: { cipherId: this.cipher.id } });
+        }
+    }
+
     cancel() {
         super.cancel();
         this.location.back();

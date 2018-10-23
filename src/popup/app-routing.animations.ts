@@ -123,8 +123,8 @@ export const routerTransition = trigger('routerTransition', [
     transition('edit-cipher => share-cipher', inSlideUp),
     transition('share-cipher => edit-cipher', outSlideDown),
 
-    transition('edit-cipher => attachments', inSlideLeft),
-    transition('attachments => edit-cipher', outSlideRight),
+    transition('edit-cipher => attachments, edit-cipher => collections', inSlideLeft),
+    transition('attachments => edit-cipher, collections => edit-cipher', outSlideRight),
 
     transition('tabs => export', inSlideLeft),
     transition('export => tabs', outSlideRight),

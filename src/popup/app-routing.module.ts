@@ -30,6 +30,7 @@ import { TabsComponent } from './tabs.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
+import { CollectionsComponent } from './vault/collections.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
@@ -129,6 +130,12 @@ const routes: Routes = [
         component: ShareComponent,
         canActivate: [AuthGuardService],
         data: { state: 'share-cipher' },
+    },
+    {
+        path: 'collections',
+        component: CollectionsComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'collections' },
     },
     {
         path: 'attachments',
