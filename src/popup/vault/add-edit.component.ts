@@ -83,6 +83,10 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
         this.router.navigate(['/attachments'], { queryParams: { cipherId: this.cipher.id } });
     }
 
+    share() {
+        this.router.navigate(['/share'], { queryParams: { cipherId: this.cipher.id } });
+    }
+
     cancel() {
         super.cancel();
         this.location.back();

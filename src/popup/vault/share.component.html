@@ -1,0 +1,63 @@
+<form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+    <header>
+        <div class="left">
+            <button type="button" appBlurClick (click)="cancel()">{{'cancel' | i18n}}</button>
+        </div>
+        <div class="center">
+            <span class="title">{{'share' | i18n}}</span>
+        </div>
+        <div class="right">
+            <button type="submit" appBlurClick [disabled]="form.loading || !canSave" *ngIf="organizations && organizations.length">
+                <span [hidden]="form.loading">{{'save' | i18n}}</span>
+                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading"></i>
+            </button>
+        </div>
+    </header>
+    <content *ngIf="cipher">
+        <div class="box">
+            <div class="box-header">
+                {{'itemInformation' | i18n}}
+            </div>
+            <div class="box-content">
+                <div class="box-content">
+                    <div class="box-content-row" appBoxRow>
+                        <label for="name">{{'name' | i18n}}</label>
+                        <input id="name" type="text" name="Name" [(ngModel)]="cipher.name">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                {{'organization' | i18n}}
+            </div>
+            <div class="box-content" *ngIf="!organizations || !organizations.length">
+                {{'noOrganizationsList' | i18n}}
+            </div>
+            <div class="box-content" *ngIf="organizations && organizations.length">
+                <p>{{'shareDesc' | i18n}}</p>
+                <div class="box-content-row" appBoxRow>
+                    <select id="organization" name="OrganizationId" [(ngModel)]="organizationId" (change)="filterCollections()">
+                        <option *ngFor="let o of organizations" [ngValue]="o.id">{{o.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                {{'collections' | i18n}}
+            </div>
+            <div class="box-content" *ngIf="!collections || !collections.length">
+                {{'noCollectionsInList' | i18n}}
+            </div>
+            <div class="box-content" *ngIf="collections && collections.length">
+                <div *ngFor="let c of collections; let i = index" (click)="check(c)">
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="collection">{{c.name}}</label>
+                        <input id="collection" type="checkbox" [(ngModel)]="c.checked" name="Collection[{{i}}].Checked">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content>
+</form>

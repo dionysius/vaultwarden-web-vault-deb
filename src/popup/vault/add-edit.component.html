@@ -319,6 +319,20 @@
         <div class="box list" *ngIf="editMode">
             <div class="box-content single-line">
                 <a class="box-content-row" href="#" appStopClick appBlurClick
+                   (click)="share()" #shareBtn>
+                    <div class="row-main">
+                        <div class="icon">
+                            <i class="fa fa-share fa-lg fa-fw" [hidden]="shareBtn.loading"></i>
+                            <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!shareBtn.loading"></i>
+                        </div>
+                        <span>{{'shareItem' | i18n}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="box list" *ngIf="editMode">
+            <div class="box-content single-line">
+                <a class="box-content-row" href="#" appStopClick appBlurClick
                    (click)="delete()" [appApiAction]="deletePromise" #deleteBtn>
                     <div class="row-main text-danger">
                         <div class="icon text-danger">
