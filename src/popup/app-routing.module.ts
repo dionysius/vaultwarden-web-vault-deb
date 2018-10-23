@@ -29,11 +29,11 @@ import { SyncComponent } from './settings/sync.component';
 import { TabsComponent } from './tabs.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
-import { ShareComponent } from './vault/share.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
+import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
 
 const routes: Routes = [
@@ -125,10 +125,10 @@ const routes: Routes = [
         data: { state: 'edit-cipher' },
     },
     {
-        path: 'share',
+        path: 'share-cipher',
         component: ShareComponent,
         canActivate: [AuthGuardService],
-        data: { state: 'share' },
+        data: { state: 'share-cipher' },
     },
     {
         path: 'attachments',

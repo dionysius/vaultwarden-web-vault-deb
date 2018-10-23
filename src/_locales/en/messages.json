@@ -554,6 +554,9 @@
   "sharedItem": {
     "message": "Shared Item"
   },
+  "shareDesc": {
+    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  },
   "learnMore": {
     "message": "Learn more"
   },
@@ -1094,5 +1097,11 @@
   },
   "neverLockWarning": {
     "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+  },
+  "noOrganizationsList": {
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+  },
+  "noCollectionsInList": {
+    "message": "There are no collections to list."
   }
 }

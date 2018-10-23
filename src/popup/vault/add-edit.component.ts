@@ -1,8 +1,5 @@
 import { Location } from '@angular/common';
-import {
-    Component,
-    OnInit,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import {
     ActivatedRoute,
     Router,
@@ -10,10 +7,12 @@ import {
 
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
 
@@ -21,18 +20,21 @@ import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/componen
     selector: 'app-vault-add-edit',
     templateUrl: 'add-edit.component.html',
 })
-export class AddEditComponent extends BaseAddEditComponent implements OnInit {
+export class AddEditComponent extends BaseAddEditComponent {
     showAttachments = true;
 
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
+        userService: UserService, collectionService: CollectionService,
         private route: ActivatedRoute, private router: Router,
         private location: Location) {
-        super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService);
+        super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
+            userService, collectionService);
     }
 
-    ngOnInit() {
+    async ngOnInit() {
+        await super.ngOnInit();
         this.showAttachments = !this.platformUtilsService.isEdge();
         this.route.queryParams.subscribe(async (params) => {
             if (params.cipherId) {
@@ -84,7 +86,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
     }
 
     share() {
-        this.router.navigate(['/share'], { queryParams: { cipherId: this.cipher.id } });
+        this.router.navigate(['/share-cipher'], { queryParams: { cipherId: this.cipher.id } });
     }
 
     cancel() {
