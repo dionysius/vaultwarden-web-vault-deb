@@ -86,12 +86,14 @@ export class AddEditComponent extends BaseAddEditComponent {
     }
 
     share() {
+        super.share();
         if (this.cipher.organizationId == null) {
             this.router.navigate(['/share-cipher'], { queryParams: { cipherId: this.cipher.id } });
         }
     }
 
     editCollections() {
+        super.editCollections();
         if (this.cipher.organizationId != null) {
             this.router.navigate(['/collections'], { queryParams: { cipherId: this.cipher.id } });
         }
