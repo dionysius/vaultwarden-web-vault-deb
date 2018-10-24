@@ -237,7 +237,7 @@
     "message": "Passord"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Passfrase"
   },
   "favorite": {
     "message": "Favoritt"
@@ -547,6 +547,18 @@
   },
   "shareVaultConfirmation": {
     "message": "Bitwarden lar deg dele hvelvet ditt med andre ved å bruke en organisasjonskonto. Vil du besøke bitwarden.com-nettstedet for å lære mer?"
+  },
+  "shareItem": {
+    "message": "Share Item"
+  },
+  "share": {
+    "message": "Share"
+  },
+  "sharedItem": {
+    "message": "Shared Item"
+  },
+  "shareDesc": {
+    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
   },
   "learnMore": {
     "message": "Lær mer"
@@ -1088,5 +1100,17 @@
   },
   "neverLockWarning": {
     "message": "Er du sikker på at du vil bruke alternativet \"Aldri\"? Ved å angi låsemulighetene til \"Aldri\" lagres hvelvens krypteringsnøkkel på enheten. Hvis du bruker dette alternativet, bør du sørge for at du holder enheten forsvarlig beskyttet."
+  },
+  "noOrganizationsList": {
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+  },
+  "noCollectionsInList": {
+    "message": "There are no collections to list."
+  },
+  "ownership": {
+    "message": "Ownership"
+  },
+  "whoOwnsThisItem": {
+    "message": "Who owns this item?"
   }
 }

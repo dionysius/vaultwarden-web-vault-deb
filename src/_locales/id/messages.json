@@ -201,10 +201,10 @@
     "message": "Panjang"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Jumlah kata"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Pemisah kata"
   },
   "minNumbers": {
     "message": "Angka Minimum"
@@ -237,7 +237,7 @@
     "message": "Kata Sandi"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Frasa sandi"
   },
   "favorite": {
     "message": "Favorit"
@@ -267,7 +267,7 @@
     "message": "Situs Web"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Ubah Visibilitas"
   },
   "manage": {
     "message": "Kelola"
@@ -504,7 +504,7 @@
     "message": "Do you want to update this password in Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Ya, Perbarui sekarang"
   },
   "disableContextMenuItem": {
     "message": "Nonaktifkan Pilihan Menu Konteks"
@@ -547,6 +547,18 @@
   },
   "shareVaultConfirmation": {
     "message": "Bitwarden memungkinkan Anda berbagi brankas Anda dengan orang lain menggunakan akun organisasi. Anda ingin mengunjungi btiwarden.com untuk memperlajari lebih lanjut?"
+  },
+  "shareItem": {
+    "message": "Share Item"
+  },
+  "share": {
+    "message": "Share"
+  },
+  "sharedItem": {
+    "message": "Shared Item"
+  },
+  "shareDesc": {
+    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
   },
   "learnMore": {
     "message": "Pelajari lebih lanjut"
@@ -642,7 +654,7 @@
     "message": "Terima kasih telah mendukung Bitwarden."
   },
   "premiumPrice": {
-    "message": "Semua untuk hanya %price% \/tahun!",
+    "message": "Semua itu hanya $PRICE$\/tahun!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -777,7 +789,7 @@
     "message": "URL Server Identitas"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Pemberitahuan URL Server"
   },
   "iconsUrl": {
     "message": "URL Server Ikon"
@@ -1079,14 +1091,26 @@
     "message": "Bawaan"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Di perbarui",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Kata Sandi Diperbarui",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
     "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+  },
+  "noOrganizationsList": {
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+  },
+  "noCollectionsInList": {
+    "message": "There are no collections to list."
+  },
+  "ownership": {
+    "message": "Ownership"
+  },
+  "whoOwnsThisItem": {
+    "message": "Who owns this item?"
   }
 }

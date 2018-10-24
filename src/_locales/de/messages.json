@@ -201,10 +201,10 @@
     "message": "Länge"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Wortanzahl"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Trennungszeichen"
   },
   "minNumbers": {
     "message": "Mindestanzahl Zahlen"
@@ -548,6 +548,18 @@
   "shareVaultConfirmation": {
     "message": "Bitwarden erlaubt es dir deinen Tresor mit anderen zu teilen wenn du einen Organisations Account hast. Möchtest du bitwarden.com besuchen um mehr zu erfahren?"
   },
+  "shareItem": {
+    "message": "Share Item"
+  },
+  "share": {
+    "message": "Share"
+  },
+  "sharedItem": {
+    "message": "Shared Item"
+  },
+  "shareDesc": {
+    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  },
   "learnMore": {
     "message": "Erfahre mehr"
   },
@@ -777,7 +789,7 @@
     "message": "URL des Identitätsservers"
   },
   "notificationsUrl": {
-    "message": "Benachrichtigungs Server URL"
+    "message": "URL des Benachrichtigungsserver"
   },
   "iconsUrl": {
     "message": "Icons Server URL"
@@ -1087,6 +1099,18 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Sind Sie sich sicher das Ihr Tresor nicht automatisch gesperrt werden soll? Dadurch wird der Verschlüsselungsschlüssel auf Ihrem Gerät gespeichert. Wenn Sie diese Option verwenden, sollten Sie darauf achten das ihr Gerät ausreichend geschützt ist."
+  },
+  "noOrganizationsList": {
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+  },
+  "noCollectionsInList": {
+    "message": "There are no collections to list."
+  },
+  "ownership": {
+    "message": "Ownership"
+  },
+  "whoOwnsThisItem": {
+    "message": "Who owns this item?"
   }
 }
