@@ -137,7 +137,15 @@ export class AppComponent implements OnInit {
     }
 
     getState(outlet: RouterOutlet) {
-        return BrowserApi.isEdge18 ? null : outlet.activatedRouteData.state;
+        if (BrowserApi.isEdge18) {
+            return null;
+        } else if (outlet.activatedRouteData.state === 'ciphers') {
+            return 'ciphers_direction=' + (outlet.activatedRoute.queryParams as any).value.direction + '_' +
+                (outlet.activatedRoute.queryParams as any).value.folderId + '_' +
+                (outlet.activatedRoute.queryParams as any).value.collectionId;
+        } else {
+            return outlet.activatedRouteData.state;
+        }
     }
 
     private async recordActivity() {

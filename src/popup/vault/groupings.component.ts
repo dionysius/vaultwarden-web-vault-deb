@@ -82,7 +82,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     get folderCount(): number {
-        return this.folders.length - (this.showNoFolderCiphers ? 0 : 1);
+        return this.nestedFolders.length - (this.showNoFolderCiphers ? 0 : 1);
     }
 
     async ngOnInit() {
@@ -242,12 +242,12 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
     async selectFolder(folder: FolderView) {
         super.selectFolder(folder);
-        this.router.navigate(['/ciphers'], { queryParams: { folderId: folder.id || 'none' } });
+        this.router.navigate(['/ciphers'], { queryParams: { folderId: folder.id || 'none', direction: 'f' } });
     }
 
     async selectCollection(collection: CollectionView) {
         super.selectCollection(collection);
-        this.router.navigate(['/ciphers'], { queryParams: { collectionId: collection.id } });
+        this.router.navigate(['/ciphers'], { queryParams: { collectionId: collection.id, direction: 'f' } });
     }
 
     async selectCipher(cipher: CipherView) {

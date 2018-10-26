@@ -102,17 +102,41 @@ export const routerTransition = trigger('routerTransition', [
     transition('2fa-options => 2fa', outSlideDown),
     transition('2fa => tabs', inSlideLeft),
 
-    transition('tabs => ciphers', inSlideLeft),
-    transition('ciphers => tabs', outSlideRight),
+    transition((fromState, toState) => {
+        if (fromState == null || toState === null || toState.indexOf('ciphers_') !== 0) {
+            return false;
+        }
+        return fromState.indexOf('ciphers_direction=f') === 0 || fromState === 'tabs';
+    }, inSlideLeft),
+    transition((fromState, toState) => {
+        if (fromState == null || toState === null || fromState.indexOf('ciphers_') !== 0) {
+            return false;
+        }
+        return (fromState.indexOf('ciphers_') === 0 && fromState.indexOf('ciphers_direction=f') === -1) ||
+            toState === 'tabs';
+    }, outSlideRight),
 
-    transition('tabs => view-cipher, ciphers => view-cipher', inSlideUp),
-    transition('view-cipher => tabs, view-cipher => ciphers', outSlideDown),
+    transition((fromState, toState) => {
+        if (fromState == null || toState === null) {
+            return false;
+        }
+        return fromState.indexOf('ciphers_') === 0 && (toState === 'view-cipher' || toState === 'add-cipher');
+    }, inSlideUp),
+    transition((fromState, toState) => {
+        if (fromState == null || toState === null) {
+            return false;
+        }
+        return (fromState === 'view-cipher' || fromState === 'add-cipher') && toState.indexOf('ciphers_') === 0;
+    }, outSlideDown),
+
+    transition('tabs => view-cipher', inSlideUp),
+    transition('view-cipher => tabs', outSlideDown),
 
     transition('view-cipher => edit-cipher, view-cipher => cipher-password-history', inSlideUp),
     transition('edit-cipher => view-cipher, cipher-password-history => view-cipher, edit-cipher => tabs', outSlideDown),
 
-    transition('tabs => add-cipher, ciphers => add-cipher', inSlideUp),
-    transition('add-cipher => tabs, add-cipher => ciphers', outSlideDown),
+    transition('tabs => add-cipher', inSlideUp),
+    transition('add-cipher => tabs', outSlideDown),
 
     transition('generator => generator-history, tabs => generator-history', inSlideLeft),
     transition('generator-history => generator, generator-history => tabs', outSlideRight),

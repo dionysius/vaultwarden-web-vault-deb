@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import {
+    ActivatedRouteSnapshot,
+    RouteReuseStrategy,
     RouterModule,
     Routes,
 } from '@angular/router';
@@ -240,11 +242,34 @@ const routes: Routes = [
     },
 ];
 
+export class NoRouteReuseStrategy implements RouteReuseStrategy {
+    shouldDetach(route: ActivatedRouteSnapshot) {
+        return false;
+    }
+
+    store(route: ActivatedRouteSnapshot, handle: {}) { /* Nothing */ }
+
+    shouldAttach(route: ActivatedRouteSnapshot) {
+        return false;
+    }
+
+    retrieve(route: ActivatedRouteSnapshot): any {
+        return null;
+    }
+
+    shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot) {
+        return false;
+    }
+}
+
 @NgModule({
     imports: [RouterModule.forRoot(routes, {
         useHash: true,
         /*enableTracing: true,*/
     })],
     exports: [RouterModule],
+    providers: [
+        { provide: RouteReuseStrategy, useClass: NoRouteReuseStrategy },
+    ],
 })
 export class AppRoutingModule { }
