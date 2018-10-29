@@ -132,6 +132,13 @@ export class AppComponent implements OnInit {
                     this.stateService.remove('addEditCipher');
                 }
                 this.previousUrl = url;
+
+                // Clear route direction after animation (400ms)
+                if ((window as any).routeDirection != null) {
+                    window.setTimeout(() => {
+                        (window as any).routeDirection = null;
+                    }, 400);
+                }
             }
         });
     }
@@ -140,7 +147,8 @@ export class AppComponent implements OnInit {
         if (BrowserApi.isEdge18) {
             return null;
         } else if (outlet.activatedRouteData.state === 'ciphers') {
-            return 'ciphers_direction=' + (outlet.activatedRoute.queryParams as any).value.direction + '_' +
+            const routeDirection = (window as any).routeDirection != null ? (window as any).routeDirection : '';
+            return 'ciphers_direction=' + routeDirection + '_' +
                 (outlet.activatedRoute.queryParams as any).value.folderId + '_' +
                 (outlet.activatedRoute.queryParams as any).value.collectionId;
         } else {

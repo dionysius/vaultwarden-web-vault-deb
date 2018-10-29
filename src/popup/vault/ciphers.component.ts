@@ -125,16 +125,6 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 this.searchText = this.state.searchText;
             }
             window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
-
-            // TODO: This is pushing a new page onto the browser navigation history. Figure out how to now do that
-            // so that we don't have to hit back button twice
-            const newUrl = this.router.createUrlTree([], {
-                queryParams: { direction: null },
-                queryParamsHandling: 'merge',
-                preserveFragment: true,
-                replaceUrl: true,
-            }).toString();
-            this.location.go(newUrl);
         });
 
         this.broadcasterService.subscribe(ComponentId, (message: any) => {
@@ -173,12 +163,12 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
 
     selectFolder(folder: FolderView) {
         if (folder.id != null) {
-            this.router.navigate(['/ciphers'], { queryParams: { folderId: folder.id, direction: 'f' } });
+            this.router.navigate(['/ciphers'], { queryParams: { folderId: folder.id } });
         }
     }
 
     selectCollection(collection: CollectionView) {
-        this.router.navigate(['/ciphers'], { queryParams: { collectionId: collection.id, direction: 'f' } });
+        this.router.navigate(['/ciphers'], { queryParams: { collectionId: collection.id } });
     }
 
     async launchCipher(cipher: CipherView) {
@@ -203,6 +193,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     back() {
+        (window as any).routeDirection = 'b';
         this.location.back();
     }
 
@@ -228,10 +219,6 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
             this.resetPaging();
         }
         return !searching && this.ciphers.length > this.pageSize;
-    }
-
-    routerCanReuse() {
-        return false;
     }
 
     async resetPaging() {

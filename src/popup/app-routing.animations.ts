@@ -103,17 +103,17 @@ export const routerTransition = trigger('routerTransition', [
     transition('2fa => tabs', inSlideLeft),
 
     transition((fromState, toState) => {
-        if (fromState == null || toState === null || toState.indexOf('ciphers_') !== 0) {
+        if (fromState == null || toState === null || toState.indexOf('ciphers_') === -1) {
             return false;
         }
-        return fromState.indexOf('ciphers_direction=f') === 0 || fromState === 'tabs';
+        return (fromState.indexOf('ciphers_') === 0 && fromState.indexOf('ciphers_direction=b') === -1) ||
+            fromState === 'tabs';
     }, inSlideLeft),
     transition((fromState, toState) => {
-        if (fromState == null || toState === null || fromState.indexOf('ciphers_') !== 0) {
+        if (fromState == null || toState === null || fromState.indexOf('ciphers_') === -1) {
             return false;
         }
-        return (fromState.indexOf('ciphers_') === 0 && fromState.indexOf('ciphers_direction=f') === -1) ||
-            toState === 'tabs';
+        return toState.indexOf('ciphers_direction=b') === 0 || toState === 'tabs';
     }, outSlideRight),
 
     transition((fromState, toState) => {
