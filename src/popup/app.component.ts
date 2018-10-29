@@ -59,7 +59,6 @@ export class AppComponent implements OnInit {
     });
 
     private lastActivity: number = null;
-    private previousUrl: string = '';
 
     constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics, private analytics: Angulartics2,
         private toasterService: ToasterService, private storageService: StorageService,
@@ -124,14 +123,15 @@ export class AppComponent implements OnInit {
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 const url = event.urlAfterRedirects || event.url || '';
-                if (url.startsWith('/tabs/') && this.previousUrl.startsWith('/tabs/')) {
+                if (url.startsWith('/tabs/') && (window as any).previousPopupUrl != null &&
+                    (window as any).previousPopupUrl.startsWith('/tabs/')) {
                     this.stateService.remove('GroupingsComponent');
                     this.stateService.remove('CiphersComponent');
                 }
                 if (url.startsWith('/tabs/')) {
                     this.stateService.remove('addEditCipher');
                 }
-                this.previousUrl = url;
+                (window as any).previousPopupUrl = url;
 
                 // Clear route direction after animation (400ms)
                 if ((window as any).routeDirection != null) {

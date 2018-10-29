@@ -56,6 +56,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     private selectedTimeout: number;
     private preventSelected = false;
     private pageSize = 100;
+    private applySavedState = true;
 
     constructor(searchService: SearchService, private route: ActivatedRoute,
         private router: Router, private location: Location,
@@ -66,6 +67,8 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService) {
         super(searchService);
         this.pageSize = platformUtilsService.isEdge() ? 25 : 100;
+        this.applySavedState = (window as any).previousPopupUrl != null &&
+            !(window as any).previousPopupUrl.startsWith('/ciphers');
     }
 
     async ngOnInit() {
@@ -120,11 +123,14 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
             }
 
             this.loadMore();
-            this.state = (await this.stateService.get<any>(ComponentId)) || {};
-            if (this.state.searchText) {
-                this.searchText = this.state.searchText;
+            if (this.applySavedState) {
+                this.state = (await this.stateService.get<any>(ComponentId)) || {};
+                if (this.state.searchText) {
+                    this.searchText = this.state.searchText;
+                }
+                window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             }
-            window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
+            this.stateService.remove(ComponentId);
         });
 
         this.broadcasterService.subscribe(ComponentId, (message: any) => {
@@ -207,6 +213,12 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
             this.pagedCiphers = this.pagedCiphers.concat(this.ciphers.slice(pagedLength, pagedLength + this.pageSize));
         }
         this.didScroll = this.pagedCiphers.length > this.pageSize;
+    }
+
+    showGroupings() {
+        return !this.isSearching() &&
+            ((this.nestedFolders && this.nestedFolders.length) ||
+                (this.nestedCollections && this.nestedCollections.length));
     }
 
     isSearching() {
