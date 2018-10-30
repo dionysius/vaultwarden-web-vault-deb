@@ -45,8 +45,8 @@ const ComponentId = 'CiphersComponent';
 export class CiphersComponent extends BaseCiphersComponent implements OnInit, OnDestroy {
     groupingTitle: string;
     state: any;
-    showAdd = true;
     folderId: string = null;
+    collectionId: string = null;
     type: CipherType = null;
     pagedCiphers: CipherView[] = [];
     nestedFolders: Array<TreeNode<FolderView>>;
@@ -108,15 +108,15 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 }
                 await super.load((c) => c.folderId === this.folderId);
             } else if (params.collectionId) {
-                this.showAdd = false;
+                this.collectionId = params.collectionId;
                 this.searchPlaceholder = this.i18nService.t('searchCollection');
-                const collectionNode = await this.collectionService.getNested(params.collectionId);
+                const collectionNode = await this.collectionService.getNested(this.collectionId);
                 if (collectionNode != null && collectionNode.node != null) {
                     this.groupingTitle = collectionNode.node.name;
                     this.nestedCollections = collectionNode.children != null && collectionNode.children.length > 0 ?
                         collectionNode.children : null;
                 }
-                await super.load((c) => c.collectionIds != null && c.collectionIds.indexOf(params.collectionId) > -1);
+                await super.load((c) => c.collectionIds != null && c.collectionIds.indexOf(this.collectionId) > -1);
             } else {
                 this.groupingTitle = this.i18nService.t('allItems');
                 await super.load();
@@ -195,7 +195,13 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
 
     addCipher() {
         super.addCipher();
-        this.router.navigate(['/add-cipher'], { queryParams: { folderId: this.folderId, type: this.type } });
+        this.router.navigate(['/add-cipher'], {
+            queryParams: {
+                folderId: this.folderId,
+                type: this.type,
+                collectionId: this.collectionId,
+            },
+        });
     }
 
     back() {

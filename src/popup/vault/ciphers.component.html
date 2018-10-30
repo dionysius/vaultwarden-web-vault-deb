@@ -10,7 +10,7 @@
                [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
-    <div class="right" *ngIf="showAdd">
+    <div class="right">
         <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
             <i class="fa fa-plus fa-lg fa-fw"></i>
         </button>
@@ -57,7 +57,7 @@
             <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
             <ng-container *ngIf="loaded">
                 <p>{{'noItemsInList' | i18n}}</p>
-                <button (click)="addCipher()" class="btn block primary link" *ngIf="showAdd">
+                <button (click)="addCipher()" class="btn block primary link">
                     {{'addItem' | i18n}}
                 </button>
             </ng-container>
