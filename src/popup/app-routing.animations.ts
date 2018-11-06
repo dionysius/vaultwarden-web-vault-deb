@@ -85,6 +85,35 @@ const outSlideUp = [
     ]),
 ];
 
+export function tabsToCiphers(fromState: string, toState: string) {
+    if (fromState == null || toState === null || toState.indexOf('ciphers_') === -1) {
+        return false;
+    }
+    return (fromState.indexOf('ciphers_') === 0 && fromState.indexOf('ciphers_direction=b') === -1) ||
+        fromState === 'tabs';
+}
+
+export function ciphersToTabs(fromState: string, toState: string) {
+    if (fromState == null || toState === null || fromState.indexOf('ciphers_') === -1) {
+        return false;
+    }
+    return toState.indexOf('ciphers_direction=b') === 0 || toState === 'tabs';
+}
+
+export function ciphersToView(fromState: string, toState: string) {
+    if (fromState == null || toState === null) {
+        return false;
+    }
+    return fromState.indexOf('ciphers_') === 0 && (toState === 'view-cipher' || toState === 'add-cipher');
+}
+
+export function viewToCiphers(fromState: string, toState: string) {
+    if (fromState == null || toState === null) {
+        return false;
+    }
+    return (fromState === 'view-cipher' || fromState === 'add-cipher') && toState.indexOf('ciphers_') === 0;
+}
+
 export const routerTransition = trigger('routerTransition', [
     transition('void => home', inSlideLeft),
     transition('void => tabs', inSlideLeft),
@@ -102,32 +131,11 @@ export const routerTransition = trigger('routerTransition', [
     transition('2fa-options => 2fa', outSlideDown),
     transition('2fa => tabs', inSlideLeft),
 
-    transition((fromState, toState) => {
-        if (fromState == null || toState === null || toState.indexOf('ciphers_') === -1) {
-            return false;
-        }
-        return (fromState.indexOf('ciphers_') === 0 && fromState.indexOf('ciphers_direction=b') === -1) ||
-            fromState === 'tabs';
-    }, inSlideLeft),
-    transition((fromState, toState) => {
-        if (fromState == null || toState === null || fromState.indexOf('ciphers_') === -1) {
-            return false;
-        }
-        return toState.indexOf('ciphers_direction=b') === 0 || toState === 'tabs';
-    }, outSlideRight),
+    transition(tabsToCiphers, inSlideLeft),
+    transition(ciphersToTabs, outSlideRight),
 
-    transition((fromState, toState) => {
-        if (fromState == null || toState === null) {
-            return false;
-        }
-        return fromState.indexOf('ciphers_') === 0 && (toState === 'view-cipher' || toState === 'add-cipher');
-    }, inSlideUp),
-    transition((fromState, toState) => {
-        if (fromState == null || toState === null) {
-            return false;
-        }
-        return (fromState === 'view-cipher' || fromState === 'add-cipher') && toState.indexOf('ciphers_') === 0;
-    }, outSlideDown),
+    transition(ciphersToView, inSlideUp),
+    transition(viewToCiphers, outSlideDown),
 
     transition('tabs => view-cipher', inSlideUp),
     transition('view-cipher => tabs', outSlideDown),
