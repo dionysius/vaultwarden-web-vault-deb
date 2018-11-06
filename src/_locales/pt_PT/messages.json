@@ -549,16 +549,16 @@
     "message": "O Bitwarden permite-lhe partilhar o seu cofre com outros ao utilizar uma conta de organização. Gostaria de visitar o website bitwarden.com para saber mais?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Partilhar item"
   },
   "share": {
-    "message": "Share"
+    "message": "Partilhar"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Item partilhado"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Escolha uma organização com que queira partilhar este item. Partilhar transfere a propriedade do item para a organização. Uma vez transferido já não será o proprietário direto deste item."
   },
   "learnMore": {
     "message": "Saber mais"
@@ -1102,15 +1102,15 @@
     "message": "Tem a certeza de que pretende utilizar a opção \"Nunca\"? Definir as suas opções de bloqueio para \"Nunca\" armazena a chave de encriptação do seu cofre no seu dispositivo. Se utilizar esta opção deve assegurar-se de que mantém o seu dispositivo devidamente protegido."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Você não pertence a nenhuma organização. Organizações permitem-lhe partilhar itens em segurança com outros utilizadores."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Não existem coleções para exibir."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Propriedade"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Quem é dono deste item?"
   }
 }

@@ -549,16 +549,16 @@
     "message": "Bitwardenでは、組織アカウントを使用して保管庫を他の人と共有できます。 詳細はbitwarden.comのウェブサイトをご覧ください。"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "アイテムを共有する"
   },
   "share": {
-    "message": "Share"
+    "message": "共有"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "共有されたアイテム"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "このアイテムを共有する組織を選択してください。共有するとアイテムの所有権は組織に移行し、あなたはもはやこのアイテムの直接のオーナーではなくなります。"
   },
   "learnMore": {
     "message": "さらに詳しく"
@@ -1102,15 +1102,15 @@
     "message": "ロックオプションを「なし」に設定してもよろしいですか？　ロックオプションを「なし」に設定すると、保管庫の暗号化キーが端末に保存されます。 このオプションを使用する場合は、端末を適切に保護しておく必要があります。"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "あなたはどの組織にも属していません。組織では他のユーザーとアイテムを安全に共有できます。"
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "表示するコレクションがありません"
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "所有者"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "このアイテムは誰が所有していますか？"
   }
 }

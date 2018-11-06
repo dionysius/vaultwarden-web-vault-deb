@@ -549,16 +549,16 @@
     "message": "Bitwarden 允许您使用组织帐户与他人共享您的存储库。您想访问 bitwarden.com 网站以了解更多内容吗？"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "共享项目"
   },
   "share": {
-    "message": "Share"
+    "message": "共享"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "已共享的项目"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "选择您希望与之共享此项目的组织。共享操作将会把项目的所有权转移到该组织。一旦共享，您将不再是此项目的直接所有者。"
   },
   "learnMore": {
     "message": "进一步了解"
@@ -1102,15 +1102,15 @@
     "message": "您确定要使用 “从不” 选项吗？将锁定选项设置为 “从不” 表示在该设备从不锁定密码库。如果使用此选项，您必须确保您的设备安全。"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "您没有加入任何组织。同一组织的用户可以安全地共享密钥等内容。"
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "目前还没有可以显示的集合。"
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "所有权"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "谁拥有这个项目？"
   }
 }

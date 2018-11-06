@@ -549,16 +549,16 @@
     "message": "Bitwarden 允許您使用組織帳戶與他人共享您的密碼庫。您想造訪 bitwarden.com 網站以了解更多內容嗎？"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "分享項目"
   },
   "share": {
-    "message": "Share"
+    "message": "分享"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "已分享項目"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "選擇您希望分享這個項目的組織。項目的擁有權將會轉移到組織。一經分享，您將不再是此項目的直接擁有者。"
   },
   "learnMore": {
     "message": "了解更多"
@@ -1102,15 +1102,15 @@
     "message": "您確定要使用“永不”選項嗎？將鎖定選項設定為“永不”會將密碼庫的加密金鑰儲存在您的裝置上。如果使用此選項，應確保您的裝置是安全的。"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "您沒有加入任何組織。同一組織的使用者可以安全地分享登入帳密等資料。"
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "沒有可顯示的收藏。"
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "所有權"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "誰擁有這個項目？"
   }
 }

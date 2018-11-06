@@ -549,16 +549,16 @@
     "message": "Met een organisatie-account kunt u een Bitwarden-kluis met anderen delen. Wilt u op de website bitwarden.com meer informatie lezen?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Object delen"
   },
   "share": {
-    "message": "Share"
+    "message": "Delen"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Gedeeld object"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Kies een organisatie waarmee u dit item wil delen. Door het delen krijgt de organisatie de eigendomsrechten van het item. U bent niet langer meer de directe eigenaar van het item wanneer u deze deelt."
   },
   "learnMore": {
     "message": "Meer informatie"
@@ -1102,15 +1102,15 @@
     "message": "Weet u zeker dat u de optie \"Nooit\" wilt gebruiken? Met de vergrendelingsoptie \"Nooit\" wordt de coderingssleutel van uw safe opgeslagen op uw apparaat. Als u deze optie gebruikt, moet u ervoor zorgen dat u uw apparaat naar behoren beschermd houdt."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "U behoort niet tot een organisatie. Organisaties geven de mogelijkheid om op een veilige manier items te delen met andere gebruikers."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Er zijn geen verzamelingen om weer te geven."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Eigendom"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Wie is eigenaar van dit object?"
   }
 }
