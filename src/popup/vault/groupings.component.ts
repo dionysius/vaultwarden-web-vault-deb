@@ -27,7 +27,9 @@ import { FolderService } from 'jslib/abstractions/folder.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SearchService } from 'jslib/abstractions/search.service';
 import { StateService } from 'jslib/abstractions/state.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
@@ -65,6 +67,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     private allCiphers: CipherView[] = null;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
+        storageService: StorageService, userService: UserService,
         private cipherService: CipherService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute,
@@ -72,7 +75,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         private syncService: SyncService, private analytics: Angulartics2,
         private platformUtilsService: PlatformUtilsService, private searchService: SearchService,
         private location: Location) {
-        super(collectionService, folderService);
+        super(collectionService, folderService, storageService, userService);
         this.noFolderListSize = platformUtilsService.isEdge() ? 25 : 100;
     }
 
