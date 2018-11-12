@@ -215,7 +215,11 @@ export default class RuntimeBackground {
             loginModel.username = queueMessage.username;
             loginModel.password = queueMessage.password;
             const model = new CipherView();
-            model.name = Utils.getHostname(queueMessage.uri) || queueMessage.domain;
+
+            let name = Utils.getHostname(queueMessage.uri) || queueMessage.domain;
+            name = name.replace(/^www./, '');
+
+            model.name = name;
             model.type = CipherType.Login;
             model.login = loginModel;
 
