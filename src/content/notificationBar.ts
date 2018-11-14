@@ -402,33 +402,44 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (wrappingEl == null) {
             return null;
         }
+
+        const wrappingElIsForm = wrappingEl.tagName.toLowerCase() === 'form';
+
         let submitButton = wrappingEl.querySelector('input[type="submit"], input[type="image"], ' +
-            'button[type="submit"], button:not([type])') as HTMLElement;
-        if (submitButton != null && submitButton.getAttribute('type') == null) {
-            const buttonText = getButtonText(submitButton);
-            if (buttonText != null && cancelButtonNames.has(buttonText.trim().toLowerCase())) {
-                submitButton = null;
+            'button[type="submit"]') as HTMLElement;
+        if (submitButton == null && wrappingElIsForm) {
+            submitButton = wrappingEl.querySelector('button:not([type])');
+            if (submitButton != null) {
+                const buttonText = getButtonText(submitButton);
+                if (buttonText != null && cancelButtonNames.has(buttonText.trim().toLowerCase())) {
+                    submitButton = null;
+                }
             }
         }
         if (submitButton == null) {
             const possibleSubmitButtons = Array.from(wrappingEl.querySelectorAll('a, span, button[type="button"], ' +
                 'input[type="button"], button:not([type])')) as HTMLElement[];
+            let typelessButton: HTMLElement = null;
             possibleSubmitButtons.forEach((button) => {
                 if (submitButton != null || button == null || button.tagName == null) {
                     return;
                 }
                 const buttonText = getButtonText(button);
                 if (buttonText != null) {
-                    if (button.tagName.toLowerCase() === 'button' && button.getAttribute('type') == null &&
+                    if (typelessButton != null && button.tagName.toLowerCase() === 'button' &&
+                        button.getAttribute('type') == null &&
                         !cancelButtonNames.has(buttonText.trim().toLowerCase())) {
-                        submitButton = button;
+                        typelessButton = button;
                     } else if (buttonNames.has(buttonText.trim().toLowerCase())) {
                         submitButton = button;
                     }
                 }
             });
+            if (submitButton == null && typelessButton != null) {
+                submitButton = typelessButton;
+            }
         }
-        if (submitButton == null && wrappingEl.tagName.toLowerCase() === 'form') {
+        if (submitButton == null && wrappingElIsForm) {
             // Maybe it's in a modal?
             const parentModal = wrappingEl.closest('div.modal') as HTMLElement;
             if (parentModal != null) {
