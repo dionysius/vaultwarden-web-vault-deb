@@ -111,8 +111,8 @@
                 flex-grow: 1;
             }
 
-            &.box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
-            &.box-content-row-slider, &.box-content-row-multi {
+            &.box-content-row-flex, .box-content-row-flex, &.box-content-row-checkbox,
+            &.box-content-row-input, &.box-content-row-slider, &.box-content-row-multi {
                 display: flex;
                 align-items: center;
                 word-break: break-all;
@@ -312,7 +312,6 @@
                 }
             }
 
-
             &.totp {
                 .totp-code {
                     font-family: $font-family-monospace;
@@ -372,6 +371,27 @@
                         }
                     }
                 }
+            }
+
+            .progress {
+                display: flex;
+                height: 5px;
+                overflow: hidden; // force rounded corners by cropping it
+                font-size: $font-size-small;
+                margin: 10px -15px -10px;
+
+                @include themify($themes) {
+                    background-color: themed('borderColor');
+                }
+            }
+              
+            .progress-bar {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                white-space: nowrap;
+                background-color: $brand-primary;
             }
         }
 
