@@ -24,10 +24,16 @@
                 <div class="box-content-row" appBoxRow>
                     <div class="box-content-row-flex">
                         <div class="row-main">
-                            <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                            <label for="masterPassword">
+                                {{'masterPass' | i18n}}
+                                <strong class="sub-label text-{{masterPasswordScoreColor}}"
+                                        *ngIf="masterPasswordScoreText">
+                                    {{masterPasswordScoreText}}
+                                </strong>
+                            </label>
                             <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}"
                                     name="MasterPassword" class="monospaced" [(ngModel)]="masterPassword" required
-                                    [appAutofocus]="email !== ''" appInputVerbatim  (input)="updatePasswordStrength()">
+                                    [appAutofocus]="email !== ''" appInputVerbatim (input)="updatePasswordStrength()">
                         </div>
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appBlurClick
@@ -38,7 +44,7 @@
                         </div>
                     </div>
                     <div class="progress">
-                        <div class="progress-bar {{masterPasswordScoreColor}}" role="progressbar" aria-valuenow="0"
+                        <div class="progress-bar bg-{{masterPasswordScoreColor}}" role="progressbar" aria-valuenow="0"
                             aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: (masterPasswordScoreWidth + '%')}"
                             attr.aria-valuenow="{{masterPasswordScoreWidth}}"></div>
                     </div>

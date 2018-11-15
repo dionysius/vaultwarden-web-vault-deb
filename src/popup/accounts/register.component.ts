@@ -23,21 +23,4 @@ export class RegisterComponent extends BaseRegisterComponent {
         super(authService, router, i18nService, cryptoService, apiService, stateService, platformUtilsService,
             passwordGenerationService);
     }
-
-    get masterPasswordScoreWidth() {
-        return this.masterPasswordScore == null ? 0 : (this.masterPasswordScore + 1) * 20;
-    }
-
-    get masterPasswordScoreColor() {
-        switch (this.masterPasswordScore) {
-            case 4:
-                return 'bg-success';
-            case 3:
-                return 'bg-primary';
-            case 2:
-                return 'bg-warning';
-            default:
-                return 'bg-danger';
-        }
-    }
 }

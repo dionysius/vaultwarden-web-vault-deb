@@ -84,6 +84,10 @@
                 @include themify($themes) {
                     color: themed('mutedColor');
                 }
+
+                .sub-label {
+                    margin-left: 10px;
+                }
             }
 
             .text, .detail {
@@ -376,22 +380,16 @@
             .progress {
                 display: flex;
                 height: 5px;
-                overflow: hidden; // force rounded corners by cropping it
-                font-size: $font-size-small;
-                margin: 10px -15px -10px;
+                overflow: hidden;
+                margin: 5px -15px -10px;
 
-                @include themify($themes) {
-                    background-color: themed('borderColor');
+                .progress-bar {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    white-space: nowrap;
+                    background-color: $brand-primary;
                 }
-            }
-              
-            .progress-bar {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                white-space: nowrap;
-                background-color: $brand-primary;
             }
         }
 
