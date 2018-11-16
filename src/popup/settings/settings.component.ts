@@ -219,7 +219,7 @@ export class SettingsComponent implements OnInit {
         });
 
         if (result) {
-            this.platformUtilsService.launchUri('https://help.bitwarden.com');
+            this.platformUtilsService.launchUri('https://help.bitwarden.com/article/fingerprint-phrase/');
         }
     }
 
