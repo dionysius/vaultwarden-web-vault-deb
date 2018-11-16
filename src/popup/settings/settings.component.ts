@@ -15,12 +15,14 @@ import { DeviceType } from 'jslib/enums/deviceType';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 const RateUrls = {
     [DeviceType.ChromeExtension]:
@@ -50,7 +52,8 @@ export class SettingsComponent implements OnInit {
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
         private analytics: Angulartics2, private lockService: LockService,
         private storageService: StorageService, public messagingService: MessagingService,
-        private router: Router, private environmentService: EnvironmentService) {
+        private router: Router, private environmentService: EnvironmentService,
+        private cryptoService: CryptoService, private userService: UserService) {
     }
 
     async ngOnInit() {
@@ -196,6 +199,28 @@ export class SettingsComponent implements OnInit {
             content: { element: div },
             buttons: [this.i18nService.t('close'), false],
         });
+    }
+
+    async fingerprint() {
+        this.analytics.eventTrack.next({ action: 'Clicked Fingerprint' });
+
+        const fingerprint = await this.cryptoService.getFingerprint(await this.userService.getUserId());
+        const p = document.createElement('p');
+        p.innerText = this.i18nService.t('yourAccountsFingerprint') + ':';
+        const p2 = document.createElement('p');
+        p2.innerText = fingerprint.join('-');
+        const div = document.createElement('div');
+        div.appendChild(p);
+        div.appendChild(p2);
+
+        const result = await swal({
+            content: { element: div },
+            buttons: [this.i18nService.t('close'), this.i18nService.t('learnMore')],
+        });
+
+        if (result) {
+            this.platformUtilsService.launchUri('https://help.bitwarden.com');
+        }
     }
 
     rate() {
