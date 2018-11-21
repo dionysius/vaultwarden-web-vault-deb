@@ -121,8 +121,13 @@
   "changeMasterPassword": {
     "message": "Cambia Password Principale"
   },
-  "changeEmail": {
-    "message": "Cambia indirizzo Email"
+  "fingerprintPhrase": {
+    "message": "Fingerprint Phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "yourAccountsFingerprint": {
+    "message": "Your account's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
     "message": "Verifica in due passaggi"
@@ -201,10 +206,10 @@
     "message": "Lunghezza"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Numero di parole"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Separatore parole"
   },
   "minNumbers": {
     "message": "Minimo di Numeri"
@@ -237,7 +242,7 @@
     "message": "Password"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Frase segreta"
   },
   "favorite": {
     "message": "Preferito"
@@ -549,16 +554,16 @@
     "message": "Bitwarden ti permette di condividere la tua cassaforte con altri usando un account societario. Vuoi visitare il sito bitwarden.com per saperne di più?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Condividi elemento"
   },
   "share": {
-    "message": "Share"
+    "message": "Condividi"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Elemento condiviso"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Scegli un'organizzazione con cui desideri condividere questo elemento. La condivisione trasferisce la proprietà dell'articolo all'organizzazione. Non sarai più il proprietario diretto di questo oggetto una volta che sarà condiviso."
   },
   "learnMore": {
     "message": "Per saperne di più"
@@ -1099,18 +1104,36 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostando le opzioni di blocco su \"Mai\", la chiave di crittografia del caveau verrà archiviata sul tuo dispositivo. Se utilizzi questa opzione, è necessario assicurarsi di mantenere il dispositivo adeguatamente protetto."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Non appartieni ad alcuna organizzazione. Le organizzazioni ti consentono di condividere oggetti in modo sicuro con altri utenti."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Nessuna collezione da visualizzare."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Proprietà"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "A chi appartiene questo elemento?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }

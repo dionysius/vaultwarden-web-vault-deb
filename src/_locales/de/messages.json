@@ -121,8 +121,13 @@
   "changeMasterPassword": {
     "message": "Masterpasswort ändern"
   },
-  "changeEmail": {
-    "message": "E-Mail Adresse ändern"
+  "fingerprintPhrase": {
+    "message": "Fingerprint Phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "yourAccountsFingerprint": {
+    "message": "Your account's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
     "message": "Zwei-Faktor Authentifizierung"
@@ -201,7 +206,7 @@
     "message": "Länge"
   },
   "numWords": {
-    "message": "Wortanzahl"
+    "message": "Anzahl der Wörter"
   },
   "wordSeparator": {
     "message": "Trennungszeichen"
@@ -549,16 +554,16 @@
     "message": "Bitwarden erlaubt es dir deinen Tresor mit anderen zu teilen wenn du einen Organisations Account hast. Möchtest du bitwarden.com besuchen um mehr zu erfahren?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Eintrag teilen"
   },
   "share": {
-    "message": "Share"
+    "message": "Teilen"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Geteilter Eintrag"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Wähle eine Organisation aus, für die du diesen Eintrag freigeben möchtest. Die gemeinsame Nutzung überträgt das Eigentum an dem Eintrag auf diese Organisation. Du bist dann nicht mehr der direkte Besitzer dieses Eintrags, sobald er geteilt wurde."
   },
   "learnMore": {
     "message": "Erfahre mehr"
@@ -1099,18 +1104,36 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Sind Sie sich sicher das Ihr Tresor nicht automatisch gesperrt werden soll? Dadurch wird der Verschlüsselungsschlüssel auf Ihrem Gerät gespeichert. Wenn Sie diese Option verwenden, sollten Sie darauf achten das ihr Gerät ausreichend geschützt ist."
+    "message": "Bist du sicher das dein Tresor nicht automatisch gesperrt werden soll? Dadurch wird der Verschlüsselungsschlüssel auf dem Gerät gespeichert. Wenn du diese Option verwendest, solltest du darauf achten das dein Gerät ausreichend geschützt ist."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Du bist kein Mitglied einer Organisation. Organisationen erlauben es dir Passwörter sicher mit anderen Nutzern zu teilen."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Keine Sammlungen vorhanden."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Besitzer"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Wem gehört dieser Eintrag?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }

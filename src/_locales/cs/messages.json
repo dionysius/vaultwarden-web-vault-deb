@@ -107,7 +107,7 @@
     "message": "Zadejte e-mailovou adresu pro zaslání nápovědy k hlavnímu heslu."
   },
   "getMasterPasswordHint": {
-    "message": "Získat nápovědu pro hlavní heslo"
+    "message": "Zaslat nápovědu k hlavnímu heslu"
   },
   "continue": {
     "message": "Pokračovat"
@@ -121,8 +121,13 @@
   "changeMasterPassword": {
     "message": "Změnit hlavní heslo"
   },
-  "changeEmail": {
-    "message": "Změnit e-mail"
+  "fingerprintPhrase": {
+    "message": "Fingerprint Phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "yourAccountsFingerprint": {
+    "message": "Your account's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
     "message": "Dvoufázové přihlášení"
@@ -201,10 +206,10 @@
     "message": "Délka"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Počet slov"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Oddělovač slov"
   },
   "minNumbers": {
     "message": "Minimální počet čísel"
@@ -237,7 +242,7 @@
     "message": "Heslo"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Heslová fráze"
   },
   "favorite": {
     "message": "Oblíbené"
@@ -483,7 +488,7 @@
     "message": "Zakázat oznámení Přidat přihlašovací údaje"
   },
   "addLoginNotificationDesc": {
-    "message": "Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
+    "message": "Oznámení „Přidat přihlašovací údaje“ automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi přihlašujete poprvé."
   },
   "notificationAddDesc": {
     "message": "Má si pro vás Bitwarden toto heslo pamatovat?"
@@ -549,16 +554,16 @@
     "message": "Bitwarden umožňuje sdílet váš trezor s ostatními prostřednictvím účtu organizace. Chcete přejít na bitwarden.com a dozvědět se víc?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Sdílet položku"
   },
   "share": {
-    "message": "Share"
+    "message": "Sdílet"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Položka byla sdílena"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Vyberte organizaci se kterou chcete tuto položku sdílet. Sdílením přenese vlastnictví položky na organizaci a již nadále nebudete přímým vlastníkem."
   },
   "learnMore": {
     "message": "Dozvědět se více"
@@ -702,7 +707,7 @@
     "message": "Pamatuj si mě"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Zaslat znovu ověřovací kód na e-mail"
+    "message": "Znovu zaslat ověřovací kód na e-mail"
   },
   "useAnotherTwoStepMethod": {
     "message": "Použít jinou metodu dvoufázového přihlášení"
@@ -789,7 +794,7 @@
     "message": "URL serveru identity"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "URL serveru pro oznámení"
   },
   "iconsUrl": {
     "message": "URL serveru ikonek"
@@ -1099,18 +1104,36 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Jste si jisti, že chcete použít možnost \"Nikdy\"? Nastavením možností uzamčení na \"Nikdy\" se šifrovací klíč k trezoru ukládá přímo na vaše zařízení. Pokud tuto možnost použijete, měli byste vaše zařízení řádně zabezpečit a chránit."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Nepatříte do žádné organizace. Organizace umožňují bezpečné sdílení položek s ostatními uživateli."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Žádné kolekce k zobrazení."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Vlastnictví"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Kdo vlastní tuto položku?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }
