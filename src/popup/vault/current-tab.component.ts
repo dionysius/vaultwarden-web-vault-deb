@@ -22,7 +22,10 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SearchService } from 'jslib/abstractions/search.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
+
+import { ConstantsService } from 'jslib/services/constants.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
 
@@ -59,7 +62,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
-        private searchService: SearchService) { }
+        private searchService: SearchService, private storageService: StorageService) { }
 
     async ngOnInit() {
         this.showLeftHeader = !this.platformUtilsService.isSafari();
@@ -203,10 +206,19 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             sender: BroadcasterSubscriptionId,
         });
 
-        const ciphers = await this.cipherService.getAllDecryptedForUrl(this.url, [
-            CipherType.Card,
-            CipherType.Identity,
-        ]);
+        const otherTypes: CipherType[] = [];
+        const dontShowCards = await this.storageService.get<boolean>(ConstantsService.dontShowCardsCurrentTab);
+        const dontShowIdentities = await this.storageService.get<boolean>(
+            ConstantsService.dontShowIdentitiesCurrentTab);
+        if (!dontShowCards) {
+            otherTypes.push(CipherType.Card);
+        }
+        if (!dontShowIdentities) {
+            otherTypes.push(CipherType.Identity);
+        }
+
+        const ciphers = await this.cipherService.getAllDecryptedForUrl(this.url,
+            otherTypes.length > 0 ? otherTypes : null);
 
         this.loginCiphers = [];
         this.cardCiphers = [];

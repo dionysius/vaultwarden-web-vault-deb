@@ -36,6 +36,25 @@
     <div class="box">
         <div class="box-content">
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                <label for="dontShowCards">{{'dontShowCardsCurrentTab' | i18n}}</label>
+                <input id="dontShowCards" type="checkbox" (change)="updateShowCards()" [(ngModel)]="dontShowCards">
+            </div>
+        </div>
+        <div class="box-footer">{{'dontShowCardsCurrentTabDesc' | i18n}}</div>
+    </div>
+    <div class="box">
+        <div class="box-content">
+            <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                <label for="dontShowIdentities">{{'dontShowIdentitiesCurrentTab' | i18n}}</label>
+                <input id="dontShowIdentities" type="checkbox" (change)="updateShowIdentities()"
+                       [(ngModel)]="dontShowIdentities">
+            </div>
+        </div>
+        <div class="box-footer">{{'dontShowIdentitiesCurrentTabDesc' | i18n}}</div>
+    </div>
+    <div class="box">
+        <div class="box-content">
+            <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="ga">{{'disableGa' | i18n}}</label>
                 <input id="ga" type="checkbox" (change)="saveGa()" [(ngModel)]="disableGa">
             </div>

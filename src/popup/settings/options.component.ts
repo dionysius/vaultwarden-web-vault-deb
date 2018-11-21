@@ -25,6 +25,8 @@ export class OptionsComponent implements OnInit {
     disableContextMenuItem = false;
     disableAddLoginNotification = false;
     disableChangedPasswordNotification = false;
+    dontShowCards = false;
+    dontShowIdentities = false;
     showDisableContextMenu = true;
     disableGa = false;
     theme: string;
@@ -59,6 +61,9 @@ export class OptionsComponent implements OnInit {
 
         this.disableContextMenuItem = await this.storageService.get<boolean>(
             ConstantsService.disableContextMenuItemKey);
+
+        this.dontShowCards = await this.storageService.get<boolean>(ConstantsService.dontShowCardsCurrentTab);
+        this.dontShowIdentities = await this.storageService.get<boolean>(ConstantsService.dontShowIdentitiesCurrentTab);
 
         this.disableAutoTotpCopy = !await this.totpService.isAutoCopyEnabled();
 
@@ -110,6 +115,18 @@ export class OptionsComponent implements OnInit {
         await this.storageService.save(ConstantsService.disableFaviconKey, this.disableFavicon);
         await this.stateService.save(ConstantsService.disableFaviconKey, this.disableFavicon);
         this.callAnalytics('Favicon', !this.disableFavicon);
+    }
+
+    async updateShowCards() {
+        await this.storageService.save(ConstantsService.dontShowCardsCurrentTab, this.dontShowCards);
+        await this.stateService.save(ConstantsService.dontShowCardsCurrentTab, this.dontShowCards);
+        this.callAnalytics('Show Cards on Current Tab', !this.dontShowCards);
+    }
+
+    async updateShowIdentities() {
+        await this.storageService.save(ConstantsService.dontShowIdentitiesCurrentTab, this.dontShowIdentities);
+        await this.stateService.save(ConstantsService.dontShowIdentitiesCurrentTab, this.dontShowIdentities);
+        this.callAnalytics('Show Identities on Current Tab', !this.dontShowIdentities);
     }
 
     async saveTheme() {
