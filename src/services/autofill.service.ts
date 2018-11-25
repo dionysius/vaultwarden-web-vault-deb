@@ -860,6 +860,9 @@ export default class AutofillService implements AutofillServiceInterface {
             if (this.fieldPropertyIsMatch(field, 'label-tag', names[i])) {
                 return i;
             }
+            if (this.fieldPropertyIsMatch(field, 'label-aria', names[i])) {
+                return i;
+            }
             if (this.fieldPropertyIsMatch(field, 'placeholder', names[i])) {
                 return i;
             }
@@ -917,6 +920,9 @@ export default class AutofillService implements AutofillServiceInterface {
             return true;
         }
         if (this.hasValue(field['label-top']) && this.fuzzyMatch(names, field['label-top'])) {
+            return true;
+        }
+        if (this.hasValue(field['label-aria']) && this.fuzzyMatch(names, field['label-aria'])) {
             return true;
         }
 
