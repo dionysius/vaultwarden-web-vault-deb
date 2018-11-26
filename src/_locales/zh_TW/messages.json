@@ -490,6 +490,18 @@
   "addLoginNotificationDesc": {
     "message": "當您首次登入時，\"新增登入資料提示\" 會自動提醒您在密碼庫中新增登入資料。"
   },
+  "dontShowCardsCurrentTab": {
+    "message": "Don't Show Cards on Tab Page"
+  },
+  "dontShowCardsCurrentTabDesc": {
+    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  },
+  "dontShowIdentitiesCurrentTab": {
+    "message": "Don't Show Identities on Tab Page"
+  },
+  "dontShowIdentitiesCurrentTabDesc": {
+    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  },
   "notificationAddDesc": {
     "message": "希望 Bitwarden 幫您儲存這個密碼嗎？"
   },

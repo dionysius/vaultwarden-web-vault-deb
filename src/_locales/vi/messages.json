@@ -490,6 +490,18 @@
   "addLoginNotificationDesc": {
     "message": "'Thông báo Thêm đăng nhập' sẽ nhắc bạn lưu thông tin đăng nhập mới vào kho mật khẩu của bạn mỗi khi bạn đăng nhập lần đầu vào một trang web mới."
   },
+  "dontShowCardsCurrentTab": {
+    "message": "Don't Show Cards on Tab Page"
+  },
+  "dontShowCardsCurrentTabDesc": {
+    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  },
+  "dontShowIdentitiesCurrentTab": {
+    "message": "Don't Show Identities on Tab Page"
+  },
+  "dontShowIdentitiesCurrentTabDesc": {
+    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  },
   "notificationAddDesc": {
     "message": "Bạn có cần Bitwarden nhớ giúp bạn mật khẩu này không?"
   },

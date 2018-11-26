@@ -490,6 +490,18 @@
   "addLoginNotificationDesc": {
     "message": "Az \"add hozzá a bejelentkezést\" automatikusan felajánlja neked neked a bejelentkezésed mentését a széfbe első bejelentkezéskor."
   },
+  "dontShowCardsCurrentTab": {
+    "message": "Don't Show Cards on Tab Page"
+  },
+  "dontShowCardsCurrentTabDesc": {
+    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  },
+  "dontShowIdentitiesCurrentTab": {
+    "message": "Don't Show Identities on Tab Page"
+  },
+  "dontShowIdentitiesCurrentTabDesc": {
+    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  },
   "notificationAddDesc": {
     "message": "Akarod hogy a bitwarden megjegyezze ezt a jelszót?"
   },
