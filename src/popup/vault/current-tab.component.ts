@@ -87,11 +87,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                             });
                         }
                         break;
-                    case 'syncCompleted':
-                        if (message.successfully) {
-                            await this.load();
-                        }
-                        break;
                     default:
                         break;
                 }
