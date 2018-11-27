@@ -60,18 +60,16 @@ function dist(browserName, manifest) {
         .pipe(gulp.dest(paths.dist));
 }
 
-gulp.task('dist', ['dist:firefox', 'dist:chrome', 'dist:opera', 'dist:edge', 'dist:safari']);
-
-gulp.task('dist:firefox', (cb) => {
+function distFirefox() {
     return dist('firefox', (manifest) => {
         delete manifest['-ms-preload'];
         delete manifest.content_security_policy;
         removeShortcuts(manifest);
         return manifest;
     });
-});
+}
 
-gulp.task('dist:opera', (cb) => {
+function distOpera() {
     return dist('opera', (manifest) => {
         delete manifest['-ms-preload'];
         delete manifest.applications;
@@ -79,9 +77,9 @@ gulp.task('dist:opera', (cb) => {
         removeShortcuts(manifest);
         return manifest;
     });
-});
+}
 
-gulp.task('dist:chrome', (cb) => {
+function distChrome() {
     return dist('chrome', (manifest) => {
         delete manifest['-ms-preload'];
         delete manifest.applications;
@@ -90,7 +88,7 @@ gulp.task('dist:chrome', (cb) => {
         delete manifest.commands._execute_sidebar_action;
         return manifest;
     });
-});
+}
 
 function removeShortcuts(manifest) {
     if (manifest.content_scripts && manifest.content_scripts.length > 1) {
@@ -102,7 +100,7 @@ function removeShortcuts(manifest) {
 }
 
 // Since Edge extensions require makeappx to be run we temporarily store it in a folder.
-gulp.task('dist:edge', (cb) => {
+function distEdge(cb) {
     const edgePath = paths.dist + 'Edge/';
     const extensionPath = edgePath + 'Extension/';
     const fileName = distFileName('edge', 'appx');
@@ -118,7 +116,7 @@ gulp.task('dist:edge', (cb) => {
         }, () => {
             return cb;
         });
-});
+}
 
 function edgeCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
@@ -156,7 +154,7 @@ function edgeCopyAssets(source, dest) {
     });
 }
 
-gulp.task('dist:safari', (cb) => {
+function distSafari(cb) {
     const buildPath = paths.dist + 'Safari/';
     const extBuildPath = buildPath + 'bitwarden.safariextension/';
     const extAssetsBuildPath = extBuildPath + 'safari/';
@@ -171,7 +169,7 @@ gulp.task('dist:safari', (cb) => {
         }, () => {
             return cb;
         });
-});
+}
 
 function safariCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
@@ -194,25 +192,21 @@ function safariZip(buildPath) {
     });
 }
 
-gulp.task('build', ['webfonts']);
-
-gulp.task('webfonts', () => {
+function webfonts() {
     return gulp.src('./webfonts.list')
         .pipe(googleWebFonts({
             fontsDir: 'webfonts',
             cssFilename: 'webfonts.css'
         }))
         .pipe(gulp.dest(paths.cssDir));
-});
+}
 
-gulp.task('ci', ['ci:coverage']);
-
-gulp.task('ci:coverage', (cb) => {
+function ciCoverage(cb) {
     return gulp.src(paths.coverage + '**/*')
         .pipe(filter(['**', '!coverage/coverage*.zip']))
         .pipe(zip(`coverage${buildString()}.zip`))
         .pipe(gulp.dest(paths.coverage));
-});
+}
 
 function copy(source, dest) {
     return new Promise((resolve, reject) => {
@@ -222,3 +216,14 @@ function copy(source, dest) {
             .on('end', resolve);
     });
 }
+
+exports['dist:firefox'] = distFirefox;
+exports['dist:chrome'] = distChrome;
+exports['dist:opera'] = distOpera;
+exports['dist:edge'] = distEdge;
+exports['dist:safari'] = distSafari;
+exports.dist = gulp.parallel(distFirefox, distChrome, distOpera, distEdge, distSafari);
+exports['ci:coverage'] = ciCoverage;
+exports.ci = ciCoverage;
+exports.webfonts = webfonts;
+exports.build = webfonts;
