@@ -21,8 +21,8 @@ function init() {
             chrome.windows.create({
                 url: 'popup/index.html?uilocation=popout',
                 type: 'popup',
-                width: bodyRect.width + 60,
-                height: bodyRect.height,
+                width: Math.round(bodyRect.width + 60),
+                height: Math.round(bodyRect.height),
             });
             BrowserApi.closePopup(window);
             return;
