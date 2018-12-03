@@ -21,6 +21,8 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib/angular/components/two-factor.component';
 
+import { PopupUtilsService } from '../services/popup-utils.service';
+
 const BroadcasterSubscriptionId = 'TwoFactorComponent';
 
 @Component({
@@ -34,7 +36,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
         environmentService: EnvironmentService, private ngZone: NgZone,
-        private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef) {
+        private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
+        private popupUtilsService: PopupUtilsService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
@@ -59,16 +62,26 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             });
         });
 
-        this.showNewWindowMessage = this.platformUtilsService.isSafari();
+        const isSafari = this.platformUtilsService.isSafari();
+        this.showNewWindowMessage = isSafari;
         await super.ngOnInit();
 
         if (this.selectedProviderType == null) {
             return;
         }
 
+        if (!isSafari && this.selectedProviderType === TwoFactorProviderType.Email &&
+            this.popupUtilsService.inPopup(window)) {
+            const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popup2faCloseMessage'),
+                null, this.i18nService.t('yes'), this.i18nService.t('no'));
+            if (confirmed) {
+                this.popupUtilsService.popOut(window);
+            }
+        }
+
         const isDuo = this.selectedProviderType === TwoFactorProviderType.Duo ||
             this.selectedProviderType === TwoFactorProviderType.OrganizationDuo;
-        if (!this.platformUtilsService.isSafari() || !isDuo) {
+        if (!isSafari || !isDuo) {
             return;
         }
 
