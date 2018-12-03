@@ -25,6 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        window.close();
+        window.setTimeout(() => window.close(), 1500);
     }
 });
