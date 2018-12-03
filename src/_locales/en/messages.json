@@ -411,7 +411,7 @@
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "editedFolder": {
-    "message": "Edited Folder"
+    "message": "Edited folder"
   },
   "deleteFolderConfirmation": {
     "message": "Are you sure you want to delete this folder?"
@@ -551,7 +551,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Enter your master password to export your vault data."
