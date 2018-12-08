@@ -79,6 +79,8 @@ $themes: (
         infoColor: $brand-info,
         warningColor: $brand-warning,
         logoSuffix: 'dark',
+        passwordNumberColor: #007fde,
+        passwordSpecialColor: #c40800,
     ),
     dark: (
         textColor: #ffffff,
@@ -123,6 +125,8 @@ $themes: (
         infoColor: $brand-info,
         warningColor: $brand-warning,
         logoSuffix: 'white',
+        passwordNumberColor: #52bdfb,
+        passwordSpecialColor: #ff7c70,
     ),
 );
 

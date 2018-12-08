@@ -112,10 +112,6 @@ p.lead {
     padding-bottom: 0 !important;
 }
 
-[hidden] {
-    display: none !important;
-}
-
 .display-block {
     display: block !important;
 }
@@ -134,10 +130,6 @@ p.lead {
     border-radius: 6px;
 }
 
-input[type="search"] {
-    -webkit-appearance: textfield;
-}
-
 .sr-only {
     position: absolute !important;
     width: 1px !important;
@@ -147,6 +139,23 @@ input[type="search"] {
     overflow: hidden !important;
     clip: rect(0, 0, 0, 0) !important;
     border: 0 !important;
+}
+
+.password-wrapper {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.password-number {
+    @include themify($themes) {
+        color: themed('passwordNumberColor');
+    }
+}
+
+.password-special {
+    @include themify($themes) {
+        color: themed('passwordSpecialColor');
+    }
 }
 
 #duo-frame {
@@ -199,4 +208,8 @@ app-vault-icon {
         height: 43px;
         background-size: 284px 43px;
     }
+}
+
+[hidden] {
+    display: none !important;
 }
