@@ -491,16 +491,16 @@
     "message": "\"Aggiungi Notifica di Login\" richiede automaticamente di salvare i nuovi login nella tua cassaforte ogni volta che ti ci connetti per la prima volta."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Non mostrare le carte nella pagina delle schede"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Gli elementi della scheda della tua cassaforte sono elencati nella pagina \"Scheda corrente\" per un facile accesso al riempimento automatico."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Non mostrare le identità nella pagina delle schede"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Gli elementi di identità della tua cassaforte sono elencati nella pagina \"Scheda Corrente\" per un facile accesso al riempimento automatico."
   },
   "notificationAddDesc": {
     "message": "Vuoi che Bitwarden ricordi questa password per te?"
@@ -648,6 +648,9 @@
   },
   "ppremiumSignUpTwoStep": {
     "message": "Opzioni addizionali di login in due passaggi come YubiKey, FIDO U2F, e Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."

@@ -649,6 +649,9 @@
   "ppremiumSignUpTwoStep": {
     "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
   },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+  },
   "ppremiumSignUpTotp": {
     "message": "TOTP verification code (2FA) generator for logins in your vault."
   },

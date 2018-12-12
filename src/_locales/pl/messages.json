@@ -491,16 +491,16 @@
     "message": "\"Dodaj powiadomienia logowania\" automatycznie wyświetla monit o zapisanie nowych danych logowania do sejfu przy każdym pierwszym logowaniu."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Nie pokazuj Kart w zakładce \"Bieżąca karta\""
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Karty zapisane w Twoim sejfie są wyświetlane w zakładce \"Bieżąca karta\" dla łatwiejszego autouzupełniania."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Nie pokazuj Tożsamości w zakładce \"Bieżąca karta\""
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Tożsamości zapisane w Twoim sejfie są wyświetlane w zakładce \"Bieżąca karta\" dla łatwiejszego autouzupełniania."
   },
   "notificationAddDesc": {
     "message": "Czy Bitwarden powinien zapisać dla Ciebie to hasło?"
@@ -648,6 +648,9 @@
   },
   "ppremiumSignUpTwoStep": {
     "message": "Dodatkowe opcje dwustopniowego logowania, takie jak YubiKey, FIDO U2F i Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "Generator kodów weryfikacyjnych TOTP (2FA) dla danych logowania w Twoim sejfie."

@@ -491,16 +491,16 @@
     "message": "Уведомление о добавлении логина автоматически предложит вам сохранить новые логины в хранилище."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Не показывать карты на вкладке"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Карты из вашего хранилища перечислены на 'Текущей вкладке' для упрощения доступа к автозаполнению."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Не показывать Личности на вкладке"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Личности из вашего хранилища перечислены на 'Текущей вкладке' для упрощения доступа к автозаполнению."
   },
   "notificationAddDesc": {
     "message": "Должен ли Bitwarden запомнить этот пароль?"
@@ -648,6 +648,9 @@
   },
   "ppremiumSignUpTwoStep": {
     "message": "Дополнительные варианты двухфакторной аутентификации, такие как YubiKey, FIDO U2F и Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "Генератор кода подтверждения TOTP для входа в ваше хранилище."

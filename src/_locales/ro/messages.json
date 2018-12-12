@@ -551,7 +551,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Acest export conține datele dvs. necriptate în format .csv. Nu trebuie să le stocați sau să le trimiteți pe canale nesigure (cum ar fi e-mailuri). Ștergeți-le imediat după ce ați terminat utilizarea lor."
+    "message": "Fișierul exportat conține datele dvs. de autentificare necriptate, în format .csv. Nu trebuie să stocați sau să trimiteți acest fișier pe canale nesigure (cum ar fi e-mail). Ștergeți-l imediat după ce l-ați folosit."
   },
   "exportMasterPassword": {
     "message": "Introduceţi parola principală pentru a exporta datele din seif."
@@ -644,10 +644,13 @@
     "message": "Înscrieţi-vă pentru un abonament premium şi obţineţi:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB pentru stocarea fişierelor criptate."
+    "message": "1 GB spațiu de stocare a fișierelor criptate."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Opțiuni adiţionale de conectare în doi pași, cum ar fi YubiKey, FIDO U2F şi Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "Generatorul codului de verificare TOTP (2FA) pentru autentificările din seif."

@@ -491,16 +491,16 @@
     "message": "Oznámení „Přidat přihlašovací údaje“ automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi přihlašujete poprvé."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Nezobrazovat karty na stránce Karta"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Položky karet jsou zobrazovány na stránce „Karta“ pro usnadnění automatického vyplňování."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Nezobrazovat identity na stránce Karta"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Položky identit jsou zobrazovány na stránce „Karta“ pro usnadnění automatického vyplňování."
   },
   "notificationAddDesc": {
     "message": "Má si pro vás Bitwarden toto heslo pamatovat?"
@@ -551,7 +551,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Soubor exportu obsahuje nezašifrovaná data ve formátu .csv. Neměli byste ho ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Smažte jej okamžitě po jeho použití."
+    "message": "Tento export obsahuje nezašifrované data ve formátu .csv. Neměli byste je ukládat ani odesílat přes nezabezpečené kanály jakým je například email. Smažte jej okamžitě po jeho použití."
   },
   "exportMasterPassword": {
     "message": "Zadejte své hlavní heslo pro export dat."
@@ -575,7 +575,7 @@
     "message": "Položka byla sdílena"
   },
   "shareDesc": {
-    "message": "Vyberte organizaci se kterou chcete tuto položku sdílet. Sdílením přenese vlastnictví položky na organizaci a již nadále nebudete přímým vlastníkem."
+    "message": "Vyberte organizaci se kterou chcete tuto položku sdílet. Sdílením bude vlastnictví položky přeneseno na organizaci a již nadále nebudete jejím přímým vlastníkem."
   },
   "learnMore": {
     "message": "Dozvědět se více"
@@ -648,6 +648,9 @@
   },
   "ppremiumSignUpTwoStep": {
     "message": "Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."
@@ -1116,7 +1119,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Jste si jisti, že chcete použít možnost \"Nikdy\"? Nastavením možností uzamčení na \"Nikdy\" se šifrovací klíč k trezoru ukládá přímo na vaše zařízení. Pokud tuto možnost použijete, měli byste vaše zařízení řádně zabezpečit a chránit."
+    "message": "Opravdu chcete použít možnost „Nikdy“? Nastavením možností uzamčení na „Nikdy“ bude šifrovací klíč k trezoru uložen přímo ve vašem zařízení. Pokud tuto možnost použijete, měli byste vaše zařízení řádně zabezpečit a chránit."
   },
   "noOrganizationsList": {
     "message": "Nepatříte do žádné organizace. Organizace umožňují bezpečné sdílení položek s ostatními uživateli."
@@ -1146,6 +1149,6 @@
     "message": "Slabé hlavní heslo"
   },
   "weakMasterPasswordDesc": {
-    "message": "Hlavní heslo, které jste si vybrali, je slabé. Pro správnou ochranu účtu Bitwarden byste měli použít silné hlavní heslo (nebo heslovou frázi). Opravdu chcete toto heslo použít?"
+    "message": "Zvolené hlavní heslo je slabé. Pro správnou ochranu účtu Bitwarden byste měli použít silné hlavní heslo (nebo heslovou frázi). Opravdu chcete toto heslo použít?"
   }
 }

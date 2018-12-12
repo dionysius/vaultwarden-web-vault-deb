@@ -491,16 +491,16 @@
     "message": "A \"Notificação de Adicionar Credencial\" pede para salvar automaticamente novas credenciais para o seu cofre quando você iniciar uma sessão em um site pela primeira vez."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Não Mostrar Cartões na Página \"Aba\""
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Os itens de cartão do seu cofre estão listados na página \"Aba Atual\" para facilitar o acesso ao preenchimento automático."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Não Mostrar Identidades na Página \"Aba\""
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Os itens de identidade do seu cofre estão listados na página \"Aba Atual\" para facilitar o acesso ao preenchimento automático."
   },
   "notificationAddDesc": {
     "message": "O Bitwarden deve lembrar esta senha para você?"
@@ -648,6 +648,9 @@
   },
   "ppremiumSignUpTwoStep": {
     "message": "Opções de autenticação de duas etapas adicionais como YubiKey, FIDO U2F, e Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "Gerador de códigos de verificação TOTP (2FA) para credenciais no seu cofre."

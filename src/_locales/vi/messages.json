@@ -551,7 +551,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Bản xuất ra này chứa dữ liệu không được mã hóa của bạn ở định dạng .csv. Bạn không nên lưu trữ hoặc gửi qua kênh không an toàn (chẳng hạn như email). Xóa nó ngay lập tức sau khi bạn dùng xong nó."
+    "message": "Bản xuất ra này chứa dữ liệu không được mã hóa của bạn ở định dạng .csv. Bạn không nên lưu trữ hoặc gửi qua kênh không an toàn (chẳng hạn như email). Xóa nó ngay lập tức sau khi bạn sử dụng nó xong."
   },
   "exportMasterPassword": {
     "message": "Nhập mật khẩu chủ để xuất kho dữ liệu của bạn."
@@ -648,6 +648,9 @@
   },
   "ppremiumSignUpTwoStep": {
     "message": "Các tùy chọn xác thực hai lớp bổ sung như YubiKey, FIDO U2F và Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "Mã xác nhận TOTP (2FA) để đăng nhập vào kho mật khẩu của bạn."

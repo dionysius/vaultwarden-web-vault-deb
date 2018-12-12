@@ -491,16 +491,16 @@
     "message": "La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres guardar nuevas entradas en tu caja fuerte cuando te identificas en un sitio web por primera vez."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "No mostrar tarjetas en la página de ficha"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Elementos de la tarjeta de su bóveda están listados en la página 'Ficha Actual' para el acceso fácil del auto-rellenado."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "No mostrar las identidades en la página de ficha"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Elementos de identidad de su bóveda están listados en la página 'Ficha Actual' para el acceso fácil del auto-rellenado."
   },
   "notificationAddDesc": {
     "message": "¿Debería Bitwarden recordar esta contraseña por ti?"
@@ -648,6 +648,9 @@
   },
   "ppremiumSignUpTwoStep": {
     "message": "Métodos de autenticación en dos pasos adicionales como YubiKey, FIDO U2F y Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "Generación de códigos TOTP (2FA) para registros de tu caja fuerte."

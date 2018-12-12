@@ -644,10 +644,13 @@
     "message": "Ryhdy premium-jäseneksi saadaksesi"
   },
   "ppremiumSignUpStorage": {
-    "message": "yhden gigatavun salattua tallennustilaa"
+    "message": "1 Gt salattua tallennustilaa."
   },
   "ppremiumSignUpTwoStep": {
     "message": "lisävaihtoehtoja kaksivaiheiselle kirjautumiselle, kuten YubiKey, FIDO U2F ja Duo"
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP-vahvistuskoodigeneraattorin (2FA) holvisi käyttäjätunnuksille"
