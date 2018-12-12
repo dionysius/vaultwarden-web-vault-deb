@@ -644,10 +644,13 @@
     "message": "Sign up for a premium membership and get:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB encrypted storage for file attachments."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "ppremiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP verification code (2FA) generator for logins in your vault."
