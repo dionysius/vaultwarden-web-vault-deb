@@ -362,8 +362,8 @@ export default class MainBackground {
             title: this.i18nService.t('autoFill'),
         });
 
-        // Firefox & Edge do not support writing to the clipboard from background
-        if (!this.platformUtilsService.isFirefox() && !this.platformUtilsService.isEdge()) {
+        // Edge does not support writing to the clipboard from background
+        if (!this.platformUtilsService.isEdge()) {
             await this.contextMenusCreate({
                 type: 'normal',
                 id: 'copy-username',
@@ -487,11 +487,6 @@ export default class MainBackground {
                 contexts: ['all'],
                 title: title,
             });
-        }
-
-        if (this.platformUtilsService.isFirefox()) {
-            // Firefox does not support writing to the clipboard from background
-            return;
         }
 
         if (cipher == null || (cipher.login.username && cipher.login.username !== '')) {
