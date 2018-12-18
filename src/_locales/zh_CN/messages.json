@@ -411,7 +411,7 @@
     "message": "两步登录使您在登录时需要输入一个从认证应用获取的安全码，这能使您的账户更加安全。两步登录可以在 bitwarden.com 网页版启用。现在要访问吗？"
   },
   "editedFolder": {
-    "message": "已编辑文件夹"
+    "message": "已编辑的文件夹"
   },
   "deleteFolderConfirmation": {
     "message": "您确定要删除此文件夹吗？"
@@ -546,12 +546,15 @@
   "exportVault": {
     "message": "导出密码库"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "本次导出将你的数据未经加密存为 .csv 文件。你应该不应该保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。"
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "导出密码库需要输入主密码。"
@@ -650,7 +653,7 @@
     "message": "YubiKey、FIDO U2F 和 Duo 作为两步验证登录选项。"
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "密码健康、账户体检以及数据泄露报告，保障您的密码库安全。"
   },
   "ppremiumSignUpTotp": {
     "message": "为您的密码库登录采用 TOTP 验证码（两步验证）生成器。"

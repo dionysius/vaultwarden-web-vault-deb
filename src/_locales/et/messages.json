@@ -185,7 +185,7 @@
     "message": "Loo oma kontodele tugevaid ja unikaalseid paroole."
   },
   "bitWebVault": {
-    "message": "bitwardeni Veebihoidla"
+    "message": "Bitwardeni Veebihoidla"
   },
   "importItems": {
     "message": "Impordi andmed"
@@ -488,7 +488,7 @@
     "message": "Keela \"Lisa konto andmed\" märguanne"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Lisa konto andmed\" märguanne ilmub pärast esimest sisselogimist ning võimaldab Sul kontoandmeid automaatselt bitwardenisse lisada."
+    "message": "\"Lisa konto andmed\" märguanne ilmub pärast esimest sisselogimist ning võimaldab Sul kontoandmeid automaatselt Bitwardenisse lisada."
   },
   "dontShowCardsCurrentTab": {
     "message": "Ära kuva \"Kaart\" vaates krediitkaardi andmeid"
@@ -546,12 +546,15 @@
   "exportVault": {
     "message": "Ekspordi hoidla"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "HOIATUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Ekspordi tulemusena luuakse ilma krüpteringuta .csv formaadis fail. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
@@ -563,7 +566,7 @@
     "message": "Jaga oma hoidlat"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwardeniga saad oma hoidlat teistega jagada, kasutades seleks organisatsiooni kontot. Kas soovid selle kohta lisateavet ja avada bitwarden.com veebilehe?"
+    "message": "Bitwardeniga saad oma hoidlat teistega jagada, kasutades selleks organisatsiooni kontot. Kas soovid selle kohta lisateavet ja avada bitwarden.com veebilehe?"
   },
   "shareItem": {
     "message": "Jaga kirjet"
@@ -626,22 +629,22 @@
     "message": "Seda funktsiooni ei saa enne krüpteerimise võtme uuendamist kasutada."
   },
   "premiumMembership": {
-    "message": "Preemium versioon"
+    "message": "Premium versioon"
   },
   "premiumManage": {
-    "message": "Halda Preemium versiooni"
+    "message": "Halda Premium versiooni"
   },
   "premiumManageAlert": {
-    "message": "Saad Preemium versiooni hallata bitwarden.com veebihoidlas. Soovid seda kohe teha?"
+    "message": "Saad Premium versiooni hallata bitwarden.com veebihoidlas. Soovid seda kohe teha?"
   },
   "premiumRefresh": {
     "message": "Uuenda staatust"
   },
   "premiumNotCurrentMember": {
-    "message": "Sa ei ole hetkel preemium versiooni kasutaja."
+    "message": "Sa ei ole hetkel premium versiooni kasutaja."
   },
   "premiumSignUpAndGet": {
-    "message": "Preemium versiooni lisab järgmised eelised:"
+    "message": "Premium versiooni lisab järgmised eelised:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 GB ulatuses krüpteeritud salvestusruum."
@@ -650,7 +653,7 @@
     "message": "Lisavõimalused kaheastmeliseks kinnitamiseks, näiteks YubiKey, FIDO U2F ja Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Parooli hügieen, konto seisukord ja andmelekete raportid aitavad hoidlat turvalisena hoida."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP kinnituskoodide (2FA) genereeria hoidlas olevatele kasutajakontodele."
@@ -659,19 +662,19 @@
     "message": "Kiirema kasutajatoe."
   },
   "ppremiumSignUpFuture": {
-    "message": "Tulevased preemium funktsioonid - tasuta!"
+    "message": "Tulevased premium funktsioonid - tasuta!"
   },
   "premiumPurchase": {
-    "message": "Osta Preemium"
+    "message": "Osta Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Bitwardeni preemium versiooni saab osta bitwarden.com veebihoidlas. Avan veebihoidla?"
+    "message": "Bitwardeni premium versiooni saab osta bitwarden.com veebihoidlas. Avan veebihoidla?"
   },
   "premiumCurrentMember": {
-    "message": "Oled preemium kasutaja!"
+    "message": "Oled premium kasutaja!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Täname, et toetad bitwardenit."
+    "message": "Täname, et toetad Bitwardenit."
   },
   "premiumPrice": {
     "message": "Kõik see ainult %price% aastas!",
@@ -692,7 +695,7 @@
     "message": "Kui sinu sisselogimise andmetele on juurde lisatud autentiseerimise võti, kopeeritakse TOTP kood automaatse täitmise kasutamisel lõikepuhvrisse."
   },
   "premiumRequired": {
-    "message": "Vajalik on Preemium versioon"
+    "message": "Vajalik on Premium versioon"
   },
   "premiumRequiredDesc": {
     "message": "Selle funktsiooni kasutamiseks on vajalik tasulist kontot omada."
@@ -788,7 +791,7 @@
     "message": "Self-hosted Environment"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
   },
   "customEnvironment": {
     "message": "Kohandatud keskkond"
@@ -803,7 +806,7 @@
     "message": "API serveri URL"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "Veebihoidla serveri URL"
   },
   "identityUrl": {
     "message": "Identity Server URL"

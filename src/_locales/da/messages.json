@@ -546,12 +546,15 @@
   "exportVault": {
     "message": "Eksportér boks"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. email). Slet den umiddelbart efter at du er færdig med at bruge den."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
@@ -644,13 +647,13 @@
     "message": "Tilmeld dig et premium-medlemskab og få:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB krypteret fil-opbevaring."
+    "message": "1 GB krypteret lager til vedhæftede filer."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Yderligere to-trins login muligheder såsom YubiKey, FIDO U2F og Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Adgangskodehygiejne, kontosundhed og rapporter om datalæk til at holde din boks sikker."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP verifikationskode (2FA) generator til logins i din boks."

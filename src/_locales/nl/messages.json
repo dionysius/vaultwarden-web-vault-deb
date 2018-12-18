@@ -65,7 +65,7 @@
     "message": "Kopieer Wachtwoord"
   },
   "copyNote": {
-    "message": "Kopieer Notitie"
+    "message": "Notitie kopiëren"
   },
   "copyUri": {
     "message": "URI kopiëren"
@@ -546,12 +546,15 @@
   "exportVault": {
     "message": "Exporteer Kluis"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "WAARSCHUWING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Deze export bevat niet-versleutelde gegevens in CSV-indeling. Deze dient niet te worden opgeslagen of over onveilige kanalen (zoals e-mail) verstuurd te worden. Verwijder het zodra het niet meer nodig is."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Voer uw hoofdwachtwoord om de gegevens in de kluis te exporteren."
@@ -650,7 +653,7 @@
     "message": "Extra tweestapsinlogopties zoals YubiKey, FIDO U2F en Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Wachtwoordhygiëne, gezondheid van uw account en gegevensinbreuk om uw kluis om veilig te houden."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP-verificatiecodegenerator (2FA) voor inlogitems in uw kluis."
@@ -1004,7 +1007,7 @@
     "message": "Logins"
   },
   "typeSecureNote": {
-    "message": "Veilige notitie"
+    "message": "Veilige notities"
   },
   "typeCard": {
     "message": "Kaart"

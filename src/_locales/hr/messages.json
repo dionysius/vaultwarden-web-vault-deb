@@ -122,11 +122,11 @@
     "message": "Promjena glavne lozinke"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Jedinstveni izraz",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Jedinstveni izraz Vašeg računa",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -206,10 +206,10 @@
     "message": "Dužina"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Broj riječi"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Razdjelitelj riječi"
   },
   "minNumbers": {
     "message": "Najmanje brojeva"
@@ -242,7 +242,7 @@
     "message": "Lozinka"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Lozinka"
   },
   "favorite": {
     "message": "Favorit"
@@ -491,16 +491,16 @@
     "message": "\"Obavijest o dodavanju prijave\" automatski vas traži da spremite nove prijave u svoj trezor kad god se prvi put prijavite na njih."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Nemoj prikazivati Kartice na stranici Kartice"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Stavke kartica iz Vašeg trezora navedene su na stranici \"Trenutačna kartica\" radi lakšeg automatskog popunjavanja pristupa."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Nemoj prikazivati identitete na stranici Kartice"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Stavke identiteta iz Vašeg trezora navedene su na stranici \"Trenutačna kartica\" za jednostavan pristup automatskom popunjavanju."
   },
   "notificationAddDesc": {
     "message": "Treba li Bitwarden zapamtiti ovu lozinku?"
@@ -546,12 +546,15 @@
   "exportVault": {
     "message": "Izvoz trezora"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "UPOZORENJE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Ovaj izvoz sadrži vaše nešifirane podatke u .csv formatu. Ne biste ga trebali spremati ili poslati preko nesigurnih kanala (kao što je e-pošta). Obrišite ga odmah nakon što ste završili s upotrebom."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."
@@ -566,16 +569,16 @@
     "message": "Bitwarden omogućuje dijeljenje trezora s drugima pomoću računa organizacije. Želite li posjetiti web stranicu bitwarden.com da biste saznali više?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Podijeli stavku"
   },
   "share": {
-    "message": "Share"
+    "message": "Podijeli"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Podijeljene stavka"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Odaberite organizaciju s kojom želite podijeliti ovu stavku. Dijeljenje prenosi vlasništvo stavke na organizaciju. Više nećete biti izravni vlasnik ove stavke jednom kada je podijelite."
   },
   "learnMore": {
     "message": "Saznaj više"
@@ -650,7 +653,7 @@
     "message": "Dodatne mogućnosti za prijavu u dva koraka kao što su YubiKey, FIDO U2F i Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Higijena lozinki, zdravlje računa i izvještaji o kršenju sigurnosti podataka radi zaštite Vašeg trezora."
   },
   "ppremiumSignUpTotp": {
     "message": "Generator TOTP kontrolnog koda (2FA) za prijave u vašem trezoru."
@@ -1119,36 +1122,36 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Jeste li sigurni da želite koristiti opciju \"Nikada\"? Postavljanje opcija zaključavanja na \"Nikad\" ne pohranjuje šifru Vašeg trezora na Vašem uređaju. Ako koristite ovu opciju, trebali biste osigurati da uređaj bude pravilno zaštićen."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Ne pripadate ni jednoj organizaciji. Organizacije Vam omogućuju sigurno dijeljenje stavki s drugim korisnicima."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Nema kolekcija za prikaz."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Vlasništvo"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Tko je vlasnik ove stavke?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Jako",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Dobro",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Slabo",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Slaba Glavna Lozinka"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Glavna lozinka koju ste odabrali je slaba. Trebate koristiti jaču glavnu lozinku (ili frazu) da bi ste pravilno zaštitili Vaš Bitwarden račun. Jeste li sigurni da želite koristiti ovu glavnu lozinku?"
   }
 }
