@@ -1,4 +1,4 @@
-import * as DuoWebSDK from 'jslib/misc/duo';
+import * as DuoWebSDK from 'duo_web_sdk';
 
 document.addEventListener('DOMContentLoaded', () => {
     const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
