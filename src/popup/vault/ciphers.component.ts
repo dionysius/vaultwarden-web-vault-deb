@@ -72,7 +72,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     async ngOnInit() {
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             if (params.type) {
                 this.searchPlaceholder = this.i18nService.t('searchType');
                 this.type = parseInt(params.type, null);
@@ -131,6 +131,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             }
             this.stateService.remove(ComponentId);
+            queryParamsSub.unsubscribe();
         });
 
         this.broadcasterService.subscribe(ComponentId, (message: any) => {

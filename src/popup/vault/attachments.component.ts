@@ -23,9 +23,10 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
     }
 
     async ngOnInit() {
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             this.cipherId = params.cipherId;
             await super.ngOnInit();
+            queryParamsSub.unsubscribe();
         });
     }
 

@@ -110,7 +110,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         });
 
         const restoredScopeState = await this.restoreState();
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             this.state = (await this.stateService.get<any>(ComponentId)) || {};
             if (this.state.searchText) {
                 this.searchText = this.state.searchText;
@@ -132,6 +132,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             if (!this.syncService.syncInProgress || restoredScopeState) {
                 window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             }
+            queryParamsSub.unsubscribe();
         });
     }
 

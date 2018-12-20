@@ -24,9 +24,10 @@ export class CollectionsComponent extends BaseCollectionsComponent {
         this.onSavedCollections.subscribe(() => {
             this.back();
         });
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             this.cipherId = params.cipherId;
             await super.ngOnInit();
+            queryParamsSub.unsubscribe();
         });
     }
 

@@ -42,7 +42,7 @@ export class ViewComponent extends BaseViewComponent {
 
     ngOnInit() {
         this.showAttachments = !this.platformUtilsService.isEdge();
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
             } else {
@@ -50,6 +50,7 @@ export class ViewComponent extends BaseViewComponent {
             }
 
             await this.load();
+            queryParamsSub.unsubscribe();
         });
         super.ngOnInit();
     }

@@ -29,9 +29,10 @@ export class ShareComponent extends BaseShareComponent {
         this.onSharedCipher.subscribe(() => {
             this.router.navigate(['view-cipher', { cipherId: this.cipherId }]);
         });
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             this.cipherId = params.cipherId;
             await super.ngOnInit();
+            queryParamsSub.unsubscribe();
         });
     }
 

@@ -36,7 +36,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     async ngOnInit() {
         await super.ngOnInit();
         this.showAttachments = !this.platformUtilsService.isEdge();
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
             }
@@ -65,6 +65,7 @@ export class AddEditComponent extends BaseAddEditComponent {
                     this.cipher.login.uris[0].uri = params.uri;
                 }
             }
+            queryParamsSub.unsubscribe();
         });
 
         window.setTimeout(() => {

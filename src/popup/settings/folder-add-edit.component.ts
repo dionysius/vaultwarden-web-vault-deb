@@ -24,11 +24,12 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     }
 
     async ngOnInit() {
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             if (params.folderId) {
                 this.folderId = params.folderId;
             }
             await super.ngOnInit();
+            queryParamsSub.unsubscribe();
         });
     }
 
