@@ -120,6 +120,10 @@ p.lead {
     font-family: $font-family-monospace;
 }
 
+.show-whitespace {
+    white-space: pre-wrap;
+}
+
 .img-responsive {
     display: block;
     max-width: 100%;
@@ -144,6 +148,10 @@ p.lead {
 .password-wrapper {
     display: flex !important;
     flex-wrap: wrap;
+
+    span {
+        white-space: pre;
+    }
 }
 
 .password-number {
