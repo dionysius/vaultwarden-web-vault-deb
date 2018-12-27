@@ -547,14 +547,14 @@
     "message": "Eksporter hvelvet"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Filformat"
   },
   "warning": {
     "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Eksporten inneholder dine hvelvdataer i et ukryptert format. Du burde ikke lagre eller sende den eksporterte filen over usikre tjenester (f.eks. E-post). Slett det umiddelbart etter at du er ferdig med å bruke dem."
   },
   "exportMasterPassword": {
     "message": "Skriv inn ditt superpassord for å eksportere dine hvelvdataer."
@@ -647,13 +647,13 @@
     "message": "Skriv deg opp på et Premium-medlemskap og få:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB med kryptert fillagring."
+    "message": "1 GB med kryptert fillagring for filvedlegg."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Ytterligere 2-trinnsinnloggingsmuligheter, slik som YubiKey, FIDO U2F, og Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Passordhygiene, kontohelse, og databruddsrapporter som holder hvelvet ditt trygt."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP-verifiseringskodegenerator (2FA) for innlogginger i ditt hvelv."

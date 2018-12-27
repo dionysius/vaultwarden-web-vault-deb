@@ -242,7 +242,7 @@
     "message": "Hasło"
   },
   "passphrase": {
-    "message": "Hasło"
+    "message": "Hasło (wyrazowe)"
   },
   "favorite": {
     "message": "Ulubione"
@@ -469,7 +469,7 @@
     "message": "Czy na pewno chcesz zastąpić bieżące hasło?"
   },
   "searchFolder": {
-    "message": "Szukaj folderu"
+    "message": "Szukaj w folderze"
   },
   "searchCollection": {
     "message": "Przeszukaj kolekcje"
@@ -547,14 +547,14 @@
     "message": "Eksportuj dane skarbca"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Format pliku"
   },
   "warning": {
     "message": "UWAGA",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Ten plik eksportu zawiera Twoje dane w niezaszyfrowanym formacie. Nie powinieneś go przechowywać ani przesyłać poprzez niezabezpieczone kanały (takie jak e-mail). Skasuj go natychmiast po użyciu."
   },
   "exportMasterPassword": {
     "message": "Wprowadź hasło główne, aby wyeksportować dane z sejfu."
@@ -653,7 +653,7 @@
     "message": "Dodatkowe opcje dwustopniowego logowania, takie jak YubiKey, FIDO U2F i Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Higiena haseł, zdrowie konta i raporty dotyczące naruszenia danych, aby chronić Twój sejf."
   },
   "ppremiumSignUpTotp": {
     "message": "Generator kodów weryfikacyjnych TOTP (2FA) dla danych logowania w Twoim sejfie."

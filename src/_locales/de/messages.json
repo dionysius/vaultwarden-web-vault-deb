@@ -547,14 +547,14 @@
     "message": "Tresor exportieren"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Dateiformat"
   },
   "warning": {
     "message": "ACHTUNG",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Dieser Export enthält ihre unverschlüsselten Daten im CSV-Format. Sie sollten ihn nicht speichern oder über unsichere Kanäle (z. B. E-Mail) versenden. Löschen sie ihn sofort nach seiner Verwendung."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -647,13 +647,13 @@
     "message": "Werde Premium-Mitglied und erhalte dafür:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB verschlüsselter Speicherplatz."
+    "message": "1 GB verschlüsselter Speicherplatz für Dateianhänge."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Zusätzliche Zweifaktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Passworthygiene, Accountzustand und Datenpannenbericht um deinen Tresor sicher zu halten."
+    "message": "Berichte über Kennworthygiene, Kontostatus und Datenschutzverletzungen, um Ihren Tresor sicher zu halten."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP Prüfcode (2FA) Generator für Anmeldungen in Ihrem Tresor."
