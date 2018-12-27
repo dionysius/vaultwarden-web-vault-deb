@@ -28,7 +28,7 @@ const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlNa
 const UsernameFieldNames: string[] = [
     // English
     'username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address', 'userid', 'user id',
-    'customer id',
+    'customer id', 'login id',
     // German
     'benutzername', 'benutzer name', 'email adresse', 'e-mail adresse', 'benutzerid', 'benutzer id'];
 
