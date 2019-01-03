@@ -135,6 +135,8 @@ export default class RuntimeBackground {
                 await this.saveNever(sender.tab);
                 break;
             case 'bgUpdateContextMenu':
+            case 'editedCipher':
+            case 'addedCipher':
                 await this.main.refreshBadgeAndMenu();
                 break;
             case 'bgReseedStorage':
