@@ -188,7 +188,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         }
         this.preventSelected = true;
         this.analytics.eventTrack.next({ action: 'Launched URI From Listing' });
-        BrowserApi.createNewTab(cipher.login.uri);
+        BrowserApi.createNewTab(cipher.login.launchUri);
         if (this.popupUtils.inPopup(window)) {
             BrowserApi.closePopup(window);
         }

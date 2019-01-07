@@ -40,7 +40,7 @@ export class ActionButtonsComponent {
         }
 
         this.analytics.eventTrack.next({ action: 'Launched URI From Listing' });
-        BrowserApi.createNewTab(this.cipher.login.uri);
+        BrowserApi.createNewTab(this.cipher.login.launchUri);
         if (this.popupUtilsService.inPopup(window)) {
             BrowserApi.closePopup(window);
         }
