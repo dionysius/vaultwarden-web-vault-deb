@@ -5,7 +5,7 @@
             <span class="title">{{'verifyMasterPassword' | i18n}}</span>
         </div>
         <div class="right">
-            <button type="submit" appBlurClick>{{'submit' | i18n}}</button>
+            <button type="submit" appBlurClick>{{'unlock' | i18n}}</button>
         </div>
     </header>
     <content>
@@ -25,6 +25,10 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="box-footer">
+                <p>{{'yourVaultIsLocked' | i18n}}</p>
+                {{'loggedInAs' | i18n : email}}
             </div>
         </div>
         <p class="text-center">
