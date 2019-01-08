@@ -302,7 +302,7 @@
     "message": "Unlock"
   },
   "loggedInAs": {
-    "message": "Currently logged in as $EMAIL$.",
+    "message": "Logged in as $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
