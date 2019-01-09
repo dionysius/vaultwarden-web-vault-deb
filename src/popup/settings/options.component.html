@@ -26,6 +26,18 @@
     </div>
     <div class="box">
         <div class="box-content">
+            <div class="box-content-row" appBoxRow>
+                <label for="defaultUriMatch">{{'defaultUriMatchDetection' | i18n}}</label>
+                <select id="defaultUriMatch" name="DefaultUriMatch" [(ngModel)]="defaultUriMatch"
+                        (change)="saveDefaultUriMatch()">
+                    <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{o.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="box-footer">{{'defaultUriMatchDetectionDesc' | i18n}}</div>
+    </div>
+    <div class="box">
+        <div class="box-content">
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="totp">{{'disableAutoTotpCopy' | i18n}}</label>
                 <input id="totp" type="checkbox" (change)="updateAutoTotpCopy()" [(ngModel)]="disableAutoTotpCopy">

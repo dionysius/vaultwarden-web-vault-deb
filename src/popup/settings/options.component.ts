@@ -5,6 +5,8 @@ import {
 
 import { Angulartics2 } from 'angulartics2';
 
+import { UriMatchType } from 'jslib/enums/uriMatchType';
+
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -31,15 +33,25 @@ export class OptionsComponent implements OnInit {
     disableGa = false;
     theme: string;
     themeOptions: any[];
+    defaultUriMatch = UriMatchType.Domain;
+    uriMatchOptions: any[];
 
     constructor(private analytics: Angulartics2, private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private storageService: StorageService,
         private stateService: StateService, private totpService: TotpService,
-        private i18nService: I18nService) {
+        i18nService: I18nService) {
         this.themeOptions = [
             { name: i18nService.t('default'), value: null },
             { name: i18nService.t('light'), value: 'light' },
             { name: i18nService.t('dark'), value: 'dark' },
+        ];
+        this.uriMatchOptions = [
+            { name: i18nService.t('baseDomain'), value: UriMatchType.Domain },
+            { name: i18nService.t('host'), value: UriMatchType.Host },
+            { name: i18nService.t('startsWith'), value: UriMatchType.StartsWith },
+            { name: i18nService.t('regEx'), value: UriMatchType.RegularExpression },
+            { name: i18nService.t('exact'), value: UriMatchType.Exact },
+            { name: i18nService.t('never'), value: UriMatchType.Never },
         ];
     }
 
@@ -70,6 +82,9 @@ export class OptionsComponent implements OnInit {
         this.disableFavicon = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
 
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
+
+        const defaultUriMatch = await this.storageService.get<UriMatchType>(ConstantsService.defaultUriMatch);
+        this.defaultUriMatch = defaultUriMatch == null ? UriMatchType.Domain : defaultUriMatch;
     }
 
     async saveGa() {
@@ -133,6 +148,11 @@ export class OptionsComponent implements OnInit {
         await this.storageService.save(ConstantsService.themeKey, this.theme);
         this.analytics.eventTrack.next({ action: 'Set Theme ' + this.theme });
         window.setTimeout(() => window.location.reload(), 200);
+    }
+
+    async saveDefaultUriMatch() {
+        await this.storageService.save(ConstantsService.defaultUriMatch, this.defaultUriMatch);
+        this.analytics.eventTrack.next({ action: 'Set Default URI Match ' + this.defaultUriMatch });
     }
 
     private callAnalytics(name: string, enabled: boolean) {
