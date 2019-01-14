@@ -446,7 +446,7 @@ export default class AutofillService implements AutofillServiceInterface {
                         'card-expire-mo', 'card-expiry-month', 'card-expiry-mo', 'mois-validite',
                         'mois-expiration', 'm-validite', 'm-expiration', 'expiry-date-field-month',
                         'expiration-date-month', 'expiration-date-mm', 'exp-mon', 'validity-mo',
-                        'exp-date-mo', 'cb-date-mois'])) {
+                        'exp-date-mo', 'cb-date-mois', 'date-m'])) {
                     fillFields.expMonth = f;
                     break;
                 } else if (!fillFields.expYear && this.isFieldMatch(f[attr],
@@ -457,7 +457,7 @@ export default class AutofillService implements AutofillServiceInterface {
                         'expiry-year', 'expiry-yr', 'card-expire-year', 'card-expire-yr', 'card-expiry-year',
                         'card-expiry-yr', 'an-validite', 'an-expiration', 'annee-validite',
                         'annee-expiration', 'expiry-date-field-year', 'expiration-date-year', 'cb-date-ann',
-                        'expiration-date-yy', 'expiration-date-yyyy', 'validity-year', 'exp-date-year'])) {
+                        'expiration-date-yy', 'expiration-date-yyyy', 'validity-year', 'exp-date-year', 'date-y'])) {
                     fillFields.expYear = f;
                     break;
                 } else if (!fillFields.code && this.isFieldMatch(f[attr],
@@ -477,12 +477,11 @@ export default class AutofillService implements AutofillServiceInterface {
         const card = options.cipher.card;
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'cardholderName');
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'number');
-        this.makeScriptAction(fillScript, card, fillFields, filledFields, 'expYear');
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'code');
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'brand');
 
         if (fillFields.expMonth && this.hasValue(card.expMonth)) {
-            let expMonth = card.expMonth;
+            let expMonth: string = card.expMonth;
 
             if (fillFields.expMonth.selectInfo && fillFields.expMonth.selectInfo.options) {
                 let index: number = null;
@@ -498,11 +497,30 @@ export default class AutofillService implements AutofillServiceInterface {
                         expMonth = option[1];
                     }
                 }
+            } else if (this.fieldAttrsContain(fillFields.expMonth, 'mm') && expMonth.length === 1) {
+                expMonth = '0' + expMonth;
             }
 
             filledFields[fillFields.expMonth.opid] = fillFields.expMonth;
             fillScript.script.push(['click_on_opid', fillFields.expMonth.opid]);
             fillScript.script.push(['fill_by_opid', fillFields.expMonth.opid, expMonth]);
+        }
+
+        if (fillFields.expYear && this.hasValue(card.expYear)) {
+            let expYear: string = card.expYear;
+            if (this.fieldAttrsContain(fillFields.expYear, 'yyyy')) {
+                if (expYear.length === 2) {
+                    expYear = '20' + expYear;
+                }
+            } else if (this.fieldAttrsContain(fillFields.expYear, 'yy')) {
+                if (expYear.length === 4) {
+                    expYear = expYear.substr(2);
+                }
+            }
+
+            filledFields[fillFields.expYear.opid] = fillFields.expYear;
+            fillScript.script.push(['click_on_opid', fillFields.expYear.opid]);
+            fillScript.script.push(['fill_by_opid', fillFields.expYear.opid, expYear]);
         }
 
         if (fillFields.exp && this.hasValue(card.expMonth) && this.hasValue(card.expYear)) {
