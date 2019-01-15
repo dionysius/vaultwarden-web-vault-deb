@@ -497,7 +497,8 @@ export default class AutofillService implements AutofillServiceInterface {
                         expMonth = option[1];
                     }
                 }
-            } else if (this.fieldAttrsContain(fillFields.expMonth, 'mm') && expMonth.length === 1) {
+            } else if ((this.fieldAttrsContain(fillFields.expMonth, 'mm') || fillFields.expMonth.maxLength === 2)
+                && expMonth.length === 1) {
                 expMonth = '0' + expMonth;
             }
 
@@ -508,11 +509,11 @@ export default class AutofillService implements AutofillServiceInterface {
 
         if (fillFields.expYear && this.hasValue(card.expYear)) {
             let expYear: string = card.expYear;
-            if (this.fieldAttrsContain(fillFields.expYear, 'yyyy')) {
+            if (this.fieldAttrsContain(fillFields.expYear, 'yyyy') || fillFields.expYear.maxLength === 4) {
                 if (expYear.length === 2) {
                     expYear = '20' + expYear;
                 }
-            } else if (this.fieldAttrsContain(fillFields.expYear, 'yy')) {
+            } else if (this.fieldAttrsContain(fillFields.expYear, 'yy') || fillFields.expYear.maxLength === 2) {
                 if (expYear.length === 4) {
                     expYear = expYear.substr(2);
                 }

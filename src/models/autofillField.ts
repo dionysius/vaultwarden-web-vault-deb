@@ -20,4 +20,5 @@ export default class AutofillField {
     form: string;
     autoCompleteType: string;
     selectInfo: any;
+    maxLength: number;
 }
