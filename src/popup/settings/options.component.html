@@ -67,15 +67,6 @@
     <div class="box">
         <div class="box-content">
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="ga">{{'disableGa' | i18n}}</label>
-                <input id="ga" type="checkbox" (change)="saveGa()" [(ngModel)]="disableGa">
-            </div>
-        </div>
-        <div class="box-footer">{{'gaDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="addlogin-notification-bar">{{'disableAddLoginNotification' | i18n}}</label>
                 <input id="addlogin-notification-bar" type="checkbox" (change)="updateAddLoginNotification()"
                        [(ngModel)]="disableAddLoginNotification">

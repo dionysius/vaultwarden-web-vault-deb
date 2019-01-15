@@ -30,7 +30,6 @@ export class OptionsComponent implements OnInit {
     dontShowCards = false;
     dontShowIdentities = false;
     showDisableContextMenu = true;
-    disableGa = false;
     theme: string;
     themeOptions: any[];
     defaultUriMatch = UriMatchType.Domain;
@@ -61,10 +60,6 @@ export class OptionsComponent implements OnInit {
         this.enableAutoFillOnPageLoad = await this.storageService.get<boolean>(
             ConstantsService.enableAutoFillOnPageLoadKey);
 
-        const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
-        const disableGaByDefault = this.platformUtilsService.isFirefox();
-        this.disableGa = disableGa || (disableGa == null && disableGaByDefault);
-
         this.disableAddLoginNotification = await this.storageService.get<boolean>(
             ConstantsService.disableAddLoginNotificationKey);
 
@@ -85,16 +80,6 @@ export class OptionsComponent implements OnInit {
 
         const defaultUriMatch = await this.storageService.get<UriMatchType>(ConstantsService.defaultUriMatch);
         this.defaultUriMatch = defaultUriMatch == null ? UriMatchType.Domain : defaultUriMatch;
-    }
-
-    async saveGa() {
-        if (this.disableGa) {
-            this.callAnalytics('Analytics', !this.disableGa);
-        }
-        await this.storageService.save(ConstantsService.disableGaKey, this.disableGa);
-        if (!this.disableGa) {
-            this.callAnalytics('Analytics', !this.disableGa);
-        }
     }
 
     async updateAddLoginNotification() {
