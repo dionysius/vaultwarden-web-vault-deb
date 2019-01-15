@@ -280,9 +280,6 @@
   "other": {
     "message": "Annat"
   },
-  "disableGa": {
-    "message": "Inaktivera Analytics"
-  },
   "rateExtension": {
     "message": "Betygsätt tillägget"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Verifiera huvudlösenord"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Felaktigt huvudlösenord"
@@ -481,9 +493,6 @@
     "message": "Ingen mapp",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Vi använder analytics för att bättre förstå hur tillägget används så att vi kan göra förbättringar. All datainsamling är helt anonym."
-  },
   "disableAddLoginNotification": {
     "message": "Inaktivera aviseringar för nya inloggningar"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Innehållsmenyn (högerklick) ger dig snabbare åtkomst för att skapa ett slumpmässigt lösenord, och för att fylla i en inloggning i den nuvarande fliken."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"

@@ -280,9 +280,6 @@
   "other": {
     "message": "Muut"
   },
-  "disableGa": {
-    "message": "Älä osallistu tiedonkeruuseen"
-  },
   "rateExtension": {
     "message": "Arvostele laajennus"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Varmista pääsalasana"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Virheellinen pääsalasana"
@@ -481,9 +493,6 @@
     "message": "Ei kansiota",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Hyödynnämme analytiikkaa saadaksemme tietoa siitä, kuinka lisäosaa käytetään. Näin voimme kehittää sitä paremmaksi. Kaikki tiedonkeruu on täysin nimetöntä."
-  },
   "disableAddLoginNotification": {
     "message": "Älä näytä tallennuskehotetta"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Hiiren oikealla painikkeella ilmestyvän pikavalikon toiminnoilla voit nopeasti luoda itsellesi salasanan tai täyttää kirjautumiskentät nykyiselle välilehdelle."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Teema"

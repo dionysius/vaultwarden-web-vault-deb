@@ -280,9 +280,6 @@
   "other": {
     "message": "Ostatní"
   },
-  "disableGa": {
-    "message": "Zakázat analytiku"
-  },
   "rateExtension": {
     "message": "Ohodnotit rozšíření"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Ověření hlavního hesla"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Chybné hlavní heslo"
@@ -481,9 +493,6 @@
     "message": "Žádná složka",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Používáme analytiku ke sběru informací jakým způsobem je rozšíření používáno, abychom jej mohli i nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
-  },
   "disableAddLoginNotification": {
     "message": "Zakázat oznámení Přidat přihlašovací údaje"
   },
@@ -529,6 +538,13 @@
   "disableContextMenuItemDesc": {
     "message": "Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
   },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+  },
   "theme": {
     "message": "Motiv"
   },
@@ -547,14 +563,14 @@
     "message": "Exportovat přihlašovací údaje"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Formát souboru"
   },
   "warning": {
     "message": "VAROVÁNÍ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Tento export obsahuje data vašeho trezoru v nezašifrovaném formátu. Soubor exportu byste neměli ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Odstraňte jej okamžitě po jeho použití."
   },
   "exportMasterPassword": {
     "message": "Zadejte své hlavní heslo pro export dat."
@@ -647,13 +663,13 @@
     "message": "Přihlaste se k prémiovému členství a získejte:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB šifrovaného uložiště."
+    "message": "1 GB šifrovaného úložiště pro přílohy."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Reporty o hygieně vašich hesel, zdraví účtu a narušeních bezpečnosti."
   },
   "ppremiumSignUpTotp": {
     "message": "Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."

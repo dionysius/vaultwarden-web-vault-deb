@@ -280,9 +280,6 @@
   "other": {
     "message": "Autre"
   },
-  "disableGa": {
-    "message": "Désactiver les outils d'analyse"
-  },
   "rateExtension": {
     "message": "Noter l'extension"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Vérifiez votre mot de passe maître"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Mot de passe maître invalide"
@@ -481,9 +493,6 @@
     "message": "Pas de dossier",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Nous utilisons des outils d'analyse pour mieux apprendre comment l'extension est utilisée et ainsi, la rendre meilleure. Toutes les données récoltées sont complètement anonymes."
-  },
   "disableAddLoginNotification": {
     "message": "Désactiver la notification de demande d'ajout d'identifiant"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Les options du menu contextuel permettent un accès rapide à la génération de mots de passe et aux identifiants enregistrés pour le site web de l'onglet actuel."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Thème"

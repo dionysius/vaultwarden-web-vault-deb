@@ -280,9 +280,6 @@
   "other": {
     "message": "อื่น ๆ"
   },
-  "disableGa": {
-    "message": "Disable Analytics"
-  },
   "rateExtension": {
     "message": "Rate the Extension"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Verify Master Password"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Invalid master password"
@@ -481,9 +493,6 @@
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
-  },
   "disableAddLoginNotification": {
     "message": "Disable Add Login Notification"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Theme"

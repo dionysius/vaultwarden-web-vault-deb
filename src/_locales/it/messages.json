@@ -280,9 +280,6 @@
   "other": {
     "message": "Altro"
   },
-  "disableGa": {
-    "message": "Disabilita Analytics"
-  },
   "rateExtension": {
     "message": "Vota l'Estensione"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Verifica Password Principale"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Password principale errata"
@@ -481,9 +493,6 @@
     "message": "No cartella",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Usiamo analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi."
-  },
   "disableAddLoginNotification": {
     "message": "Disabilita Notifica di Aggiunta Login"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "il menu contestuale di bitwarden fornisce l'accesso rapido ai login per la tab corrente."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"

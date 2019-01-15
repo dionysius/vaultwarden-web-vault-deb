@@ -280,9 +280,6 @@
   "other": {
     "message": "Outros"
   },
-  "disableGa": {
-    "message": "Desativar analítica"
-  },
   "rateExtension": {
     "message": "Avaliar a extensão"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Verificar palavra-passe mestra"
+  },
+  "yourVaultIsLocked": {
+    "message": "O seu cofre está bloqueado. Verifique a sua palavra-passe mestra para continuar."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Palavra-passe mestra inválida"
@@ -481,9 +493,6 @@
     "message": "Nenhuma pasta",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Utilizamos analítica para aprender melhor como a extensão está a ser utilizada para que possamos torná-la melhor. Toda a recolha de dados é completamente anónima."
-  },
   "disableAddLoginNotification": {
     "message": "Desativar notificação de adicionar credencial"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "As opções do menu de contexto providenciam acesso rápido à geração de palavras-passe e credenciais para o website no seu separador atual."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"

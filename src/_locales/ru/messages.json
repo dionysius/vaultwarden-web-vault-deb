@@ -280,9 +280,6 @@
   "other": {
     "message": "Прочее"
   },
-  "disableGa": {
-    "message": "Отключить аналитику"
-  },
   "rateExtension": {
     "message": "Оценить расширение"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Проверка мастер-пароля"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Неверный мастер-пароль"
@@ -481,9 +493,6 @@
     "message": "Без папки",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Мы используем аналитику для понимания как используется приложение, чтобы сделать его лучше. Все собираемые данные полностью анонимны."
-  },
   "disableAddLoginNotification": {
     "message": "Отключить уведомление о добавлении логина"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта на текущей вкладке."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Тема"

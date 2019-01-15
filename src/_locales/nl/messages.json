@@ -280,9 +280,6 @@
   "other": {
     "message": "Anders"
   },
-  "disableGa": {
-    "message": "Zet Analytics Uit"
-  },
   "rateExtension": {
     "message": "Beoordeel de Extensie"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Verifieer Hoofdwachtwoord"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Ongeldig hoofdwachtwoord"
@@ -481,9 +493,6 @@
     "message": "Geen map",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "We gebruiken analytics om te weten te komen hoe de extensie gebruikt wordt, zodat we deze kunnen verbeteren. Alle verzamelde data is anoniem."
-  },
   "disableAddLoginNotification": {
     "message": "Zet Notificatie bij Nieuwe Site Uit"
   },
@@ -529,6 +538,13 @@
   "disableContextMenuItemDesc": {
     "message": "Context menu-opties bieden snelle toegang tot wachtwoordgeneratie en logins voor de website in de huidige tab."
   },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+  },
   "theme": {
     "message": "Thema"
   },
@@ -547,14 +563,14 @@
     "message": "Exporteer Kluis"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Bestandsindeling"
   },
   "warning": {
     "message": "WAARSCHUWING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Deze export bevat uw gegevens in niet-versleutelde indeling. Deze dient niet te worden opgeslagen of verstuurd over onveilige kanalen (zoals e-mail). Verwijder de export zodra deze niet meer nodig is."
   },
   "exportMasterPassword": {
     "message": "Voer uw hoofdwachtwoord om de gegevens in de kluis te exporteren."

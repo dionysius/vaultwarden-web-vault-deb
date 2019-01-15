@@ -280,9 +280,6 @@
   "other": {
     "message": "Outros"
   },
-  "disableGa": {
-    "message": "Desativar Analytics"
-  },
   "rateExtension": {
     "message": "Avaliar a Extensão"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Verificar Senha Mestra"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Senha mestra inválida"
@@ -448,7 +460,7 @@
     }
   },
   "newUri": {
-    "message": "Nova URI"
+    "message": "Novo URI"
   },
   "addedItem": {
     "message": "Item adicionado"
@@ -480,9 +492,6 @@
   "noneFolder": {
     "message": "Nenhuma Pasta",
     "description": "This is the folder for uncategorized items"
-  },
-  "gaDesc": {
-    "message": "Nós utilizamos o analytics para aprender melhor como a extensão está sendo utilizada, para que possamos torná-la melhor. Todos os dados são coletados de forma anônima."
   },
   "disableAddLoginNotification": {
     "message": "Desativar Notificação de Adicionar Credencial"
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "As opções do menu de contexto providenciam acesso rápido à geração de senha e credenciais para o site na sua aba atual."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"
@@ -641,7 +657,7 @@
     "message": "Atualizar Assinatura"
   },
   "premiumNotCurrentMember": {
-    "message": "Você não é atualmente um membro premium."
+    "message": "Você não é um membro premium atualmente."
   },
   "premiumSignUpAndGet": {
     "message": "Registre-se para uma assinatura premium e obtenha:"
@@ -959,7 +975,7 @@
     "message": "Empresa"
   },
   "ssn": {
-    "message": "Número de Segurança Social"
+    "message": "Cadastro de Pessoas Físicas (CPF)"
   },
   "passportNumber": {
     "message": "Número do Passaporte"

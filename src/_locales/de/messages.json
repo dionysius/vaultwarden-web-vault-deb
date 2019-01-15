@@ -280,9 +280,6 @@
   "other": {
     "message": "Sonstige"
   },
-  "disableGa": {
-    "message": "Analytics Deaktivieren"
-  },
   "rateExtension": {
     "message": "Bewerte die Erweiterung"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Master-Passwort Verifizieren"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Ungültiges Master-Passwort"
@@ -481,9 +493,6 @@
     "message": "Kein Ordner",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Wir verwenden Analytics, um zu erfahren, wie die Erweiterung genutzt wird, sodass wir sie verbessern können. Alle gesammelten Daten sind völlig anonym."
-  },
   "disableAddLoginNotification": {
     "message": "\"Login hinzufügen\" Benachrichtigung deaktivieren"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Kontextmenü-Optionen bieten schnellen Zugriff auf die Passwortgenerierung und Zugangsdaten für die Webseite in Ihrem aktuellen Tab."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Design"

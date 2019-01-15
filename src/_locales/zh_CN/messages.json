@@ -280,9 +280,6 @@
   "other": {
     "message": "其他"
   },
-  "disableGa": {
-    "message": "禁用 Analytics"
-  },
   "rateExtension": {
     "message": "为本扩展打分"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "验证主密码"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "无效的主密码"
@@ -481,9 +493,6 @@
     "message": "没有文件夹",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "我们使用 analytics 来帮助分析扩展的使用情况，以便我们改进扩展。所有的数据收集完全是匿名的。"
-  },
   "disableAddLoginNotification": {
     "message": "禁止添加登录提醒"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "上下文菜单选项可以让您快速访问密码生成器，也可以登陆当前标签的网站。"
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "主题"
