@@ -29,7 +29,7 @@
     "message": "提交"
   },
   "emailAddress": {
-    "message": "电子邮件地址"
+    "message": "Email 地址"
   },
   "masterPass": {
     "message": "主密码"
@@ -59,7 +59,7 @@
     "message": "设置"
   },
   "currentTab": {
-    "message": "当前标签"
+    "message": "当前标签页"
   },
   "copyPassword": {
     "message": "复制密码"
@@ -83,7 +83,7 @@
     "message": "自动填写"
   },
   "generatePasswordCopied": {
-    "message": "生成密码 (并复制)"
+    "message": "生成并复制密码"
   },
   "noMatchingLogins": {
     "message": "没有匹配的网站。"
@@ -95,7 +95,7 @@
     "message": "当前浏览器标签页中没有可以自动填写的登录项目。"
   },
   "addLogin": {
-    "message": "添加网站"
+    "message": "添加登录项目"
   },
   "addItem": {
     "message": "添加项目"
@@ -185,7 +185,7 @@
     "message": "自动生成安全可靠唯一的登录密码。"
   },
   "bitWebVault": {
-    "message": "bitwarden 网页版"
+    "message": "Bitwarden 网页版"
   },
   "importItems": {
     "message": "导入项目"
@@ -212,7 +212,7 @@
     "message": "单词分隔符"
   },
   "minNumbers": {
-    "message": "最小位数"
+    "message": "数字"
   },
   "minSpecial": {
     "message": "符号"
@@ -494,10 +494,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "禁用添加登录项的提醒"
+    "message": "禁止添加登录提醒"
   },
   "addLoginNotificationDesc": {
-    "message": "当您第一次登录时，\"添加登录提醒\" 会自动提醒您在密码库里保存新的登录信息。"
+    "message": "当您第一次登录时，\"添加登录提醒\" 会自动提醒您在密码库里保存新的登录项目。"
   },
   "dontShowCardsCurrentTab": {
     "message": "不要在标签页上显示卡片"

@@ -293,13 +293,13 @@
     "message": "Verificar contraseña maestra"
   },
   "yourVaultIsLocked": {
-    "message": "Su caja fuerte está bloqueada. Verifique su contraseña maestra para continuar."
+    "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "Desbloquear"
+    "message": "Unlock"
   },
   "loggedInAs": {
-    "message": "Sesión iniciada como $EMAIL$.",
+    "message": "Logged in as $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "Las opciones del menú contextual permiten un acceso rápido al generador de contraseñas y a las entradas para el sitio abierto en tu pestaña actual."
   },
   "defaultUriMatchDetection": {
-    "message": "Detección por defecto de coincidencia de URI",
+    "message": "Default URI Match Detection",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Elija el método de detección por defecto de coincidencia de URI que se utilizará para acciones de inicio de sesión como autorrellenado."
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"
@@ -645,16 +645,16 @@
     "message": "No puedes usar esta característica hasta que actualices tu clave de cifrado."
   },
   "premiumMembership": {
-    "message": "Membrasía Premium"
+    "message": "Membresía Premium"
   },
   "premiumManage": {
-    "message": "Gestionar membrasía"
+    "message": "Gestionar membresía"
   },
   "premiumManageAlert": {
     "message": "Puedes gestionar tu membresía en la caja fuerte web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "premiumRefresh": {
-    "message": "Actualizar membrasía"
+    "message": "Actualizar membresía"
   },
   "premiumNotCurrentMember": {
     "message": "Actualmente no eres un miembro premium."
@@ -837,7 +837,7 @@
     "message": "Las URLs del entorno han sido guardadas."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Habilitar autorrellenar al cargar la página"
+    "message": "Habilitar autorellenar al cargar la página"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Si se detecta un formulario, realizar automáticamente un autorellenado cuando la web cargue."

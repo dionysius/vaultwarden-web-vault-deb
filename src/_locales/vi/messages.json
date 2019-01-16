@@ -29,10 +29,10 @@
     "message": "Gửi"
   },
   "emailAddress": {
-    "message": "Địa chỉ Email"
+    "message": "Địa chỉ email"
   },
   "masterPass": {
-    "message": "Mật khẩu chính"
+    "message": "Mật khẩu chủ"
   },
   "masterPassDesc": {
     "message": "Mật khẩu chủ là mật khẩu bạn sử dụng để truy cập kho mật khẩu của bạn. Nó rất quan trọng nên bạn không được quên mật khẩu chủ của mình. Không thể khôi phục lại mật khẩu chủ nếu bạn quên nó."
@@ -41,16 +41,16 @@
     "message": "Một gợi ý mật khẩu có thể giúp bạn nhớ lại mật khẩu chủ của bạn nếu bạn quên nó."
   },
   "reTypeMasterPass": {
-    "message": "Nhập lại mật khẩu chính"
+    "message": "Nhập lại mật khẩu chủ"
   },
   "masterPassHint": {
-    "message": "Gợi ý mật khẩu chính (tùy chọn)"
+    "message": "Gợi ý mật khẩu chủ (tùy chọn)"
   },
   "tab": {
     "message": "Thẻ"
   },
   "myVault": {
-    "message": "Hầm của tôi"
+    "message": "Kho của tôi"
   },
   "tools": {
     "message": "Công cụ"
@@ -62,7 +62,7 @@
     "message": "Thẻ hiện tại"
   },
   "copyPassword": {
-    "message": "Sao chép Mật khẩu"
+    "message": "Sao chép mật khẩu"
   },
   "copyNote": {
     "message": "Sao chép ghi chú"
@@ -71,7 +71,7 @@
     "message": "Sao chép URL"
   },
   "copyUsername": {
-    "message": "Sao chép Tên đăng nhập"
+    "message": "Sao chép tên đăng nhập"
   },
   "copyNumber": {
     "message": "Sao chép Số"
@@ -95,7 +95,7 @@
     "message": "Không có thông tin đăng nhập nào sẵn có để tự động điền vào tab hiện tại."
   },
   "addLogin": {
-    "message": "Thêm một Đăng nhập"
+    "message": "Thêm mục đăng nhập"
   },
   "addItem": {
     "message": "Thêm Mục"
@@ -119,7 +119,7 @@
     "message": "Tài khoản"
   },
   "changeMasterPassword": {
-    "message": "Thay đổi mật khẩu chính"
+    "message": "Thay đổi mật khẩu chủ"
   },
   "fingerprintPhrase": {
     "message": "Fingerprint Phrase",
@@ -169,7 +169,7 @@
     "message": "Đồng bộ"
   },
   "syncVaultNow": {
-    "message": "Đồng bộ Kho mật khẩu ngay"
+    "message": "Đồng bộ kho mật khẩu ngay"
   },
   "lastSync": {
     "message": "Lần đồng bộ gần nhất:"
@@ -185,7 +185,7 @@
     "message": "Tự động tạo mật khẩu mạnh mẽ, duy nhất cho đăng nhập của bạn."
   },
   "bitWebVault": {
-    "message": "Hầm bitwarden trên Web"
+    "message": "Trang web Bitwarden"
   },
   "importItems": {
     "message": "Nhập mục"
@@ -212,7 +212,7 @@
     "message": "Word Separator"
   },
   "minNumbers": {
-    "message": "Số kí tự tối thiểu"
+    "message": "Số chữ số tối thiểu"
   },
   "minSpecial": {
     "message": "Số kí tự đặc biệt tối thiểu"
@@ -233,7 +233,7 @@
     "message": "Không có mục nào để liệt kê."
   },
   "itemInformation": {
-    "message": "Mục thông tin"
+    "message": "Thông tin mục"
   },
   "username": {
     "message": "Tên người dùng"
@@ -281,7 +281,7 @@
     "message": "Khác"
   },
   "rateExtension": {
-    "message": "Đánh giá tiện ích mở rộng"
+    "message": "Đánh giá Tiện ích mở rộng"
   },
   "rateExtensionDesc": {
     "message": "Xin hãy nhìn nhận và đánh giá tốt cho chúng tôi!"
@@ -290,7 +290,7 @@
     "message": "Trình duyệt web của bạn không hỗ trợ dễ dàng sao chép bộ nhớ tạm. Bạn có thể sao chép nó theo cách thủ công để thay thế."
   },
   "verifyMasterPassword": {
-    "message": "Nhập lại mật khẩu chính"
+    "message": "Nhập lại mật khẩu chủ"
   },
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your master password to continue."
@@ -311,7 +311,7 @@
     "message": "Mật khẩu chủ không hợp lệ"
   },
   "lockOptions": {
-    "message": "Tùy chọn Khóa"
+    "message": "Khóa lại sau"
   },
   "lockNow": {
     "message": "Khóa ngay"
@@ -338,7 +338,7 @@
     "message": "4 giờ"
   },
   "onLocked": {
-    "message": "Mỗi khi khóa"
+    "message": "Mỗi khi khóa máy"
   },
   "onRestart": {
     "message": "Mỗi khi khởi động lại trình duyệt"
@@ -414,7 +414,7 @@
     "message": "Thêm thư mục"
   },
   "changeMasterPass": {
-    "message": "Thay đổi mật khẩu chính"
+    "message": "Thay đổi mật khẩu chủ"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Bạn có thể thay đổi mật khẩu chủ trong trang web Bitwarden. Bạn có muốn truy cập bitwarden.com bây giờ?"
@@ -490,14 +490,14 @@
     "message": "Tìm mục"
   },
   "noneFolder": {
-    "message": "Không có thư mục",
+    "message": "Không được phân loại",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
     "message": "Vô hiệu thông báo Thêm đăng nhập"
   },
   "addLoginNotificationDesc": {
-    "message": "'Thông báo Thêm đăng nhập' sẽ tự động nhắc bạn lưu các đăng nhập mới vào hầm an toàn của bạn bất cứ khi nào bạn đăng nhập trang web lần đầu tiên."
+    "message": "'Thông báo Thêm đăng nhập' sẽ nhắc bạn lưu thông tin đăng nhập mới vào kho mật khẩu của bạn mỗi khi bạn đăng nhập lần đầu vào một trang web mới."
   },
   "dontShowCardsCurrentTab": {
     "message": "Don't Show Cards on Tab Page"
@@ -533,7 +533,7 @@
     "message": "Yes, Update Now"
   },
   "disableContextMenuItem": {
-    "message": "Tắt tuỳ chọn trong Menu Ngữ Cảnh"
+    "message": "Tắt tuỳ chọn trong Menu ngữ cảnh"
   },
   "disableContextMenuItemDesc": {
     "message": "Tùy chọn menu ngữ cảnh giúp bạn truy cập nhanh thông tin đăng nhập và tạo mật khẩu cho trang web trong tab mà bạn đang mở."
@@ -560,7 +560,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Xuất Kho"
+    "message": "Xuất kho"
   },
   "fileFormat": {
     "message": "File Format"
@@ -822,7 +822,7 @@
     "message": "Địa chỉ API máy chủ"
   },
   "webVaultUrl": {
-    "message": "Địa chỉ máy chủ kho web"
+    "message": "URL máy chủ lưu trữ web"
   },
   "identityUrl": {
     "message": "Địa chỉ nhận dạng máy chủ"
@@ -837,7 +837,7 @@
     "message": "Địa chỉ môi trường đã được lưu."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Bật Tự động điền vào Tải trang"
+    "message": "Bật Tự động điền khi tải xong trang"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Nếu có một biểu mẫu đăng nhập được phát hiện, thực hiện tự động điền khi trang web tải xong."
@@ -969,7 +969,7 @@
     "message": "Họ"
   },
   "identityName": {
-    "message": "Tên nhận dạng"
+    "message": "Tên đầy đủ"
   },
   "company": {
     "message": "Công ty"
@@ -1023,7 +1023,7 @@
     "message": "Đăng nhập"
   },
   "typeSecureNote": {
-    "message": "Lưu ý an toàn"
+    "message": "Ghi chú bảo mật"
   },
   "typeCard": {
     "message": "Thẻ"
@@ -1032,7 +1032,7 @@
     "message": "Danh tính"
   },
   "passwordHistory": {
-    "message": "Lịch sử Mật khẩu"
+    "message": "Lịch sử tạo mật khẩu"
   },
   "back": {
     "message": "Quay lại"

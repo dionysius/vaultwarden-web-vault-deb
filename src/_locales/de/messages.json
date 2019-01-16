@@ -14,7 +14,7 @@
     "message": "Du musst dich anmelden oder einen neuen Account erstellen, um auf den Tresor zugreifen zu können."
   },
   "createAccount": {
-    "message": "Konto erstellen"
+    "message": "Account erstellen"
   },
   "login": {
     "message": "Anmelden"
@@ -44,13 +44,13 @@
     "message": "Masterpasswort wiederholen"
   },
   "masterPassHint": {
-    "message": "Hinweis zum Masterpasswort (optional)"
+    "message": "Masterpassworthinweis (optional)"
   },
   "tab": {
     "message": "Tab"
   },
   "myVault": {
-    "message": "Mein Datenspeicher"
+    "message": "Mein Tresor"
   },
   "tools": {
     "message": "Werkzeuge"
@@ -71,10 +71,10 @@
     "message": "URI kopieren"
   },
   "copyUsername": {
-    "message": "Nutzernamen Kopieren"
+    "message": "Nutzernamen kopieren"
   },
   "copyNumber": {
-    "message": "Telefonnummer kopieren"
+    "message": "Nummer kopieren"
   },
   "copySecurityCode": {
     "message": "Sicherheitscode kopieren"
@@ -101,7 +101,7 @@
     "message": "Neuer Eintrag"
   },
   "passwordHint": {
-    "message": "Hinweis zum Passwort"
+    "message": "Passworthinweis"
   },
   "enterEmailToGetHint": {
     "message": "Gebe die E-Mail Adresse deines Kontos ein, um den Hinweis für dein Master-Passwort zu erhalten."
@@ -163,13 +163,13 @@
     "message": "Es gibt keine Ordner zum Anzeigen."
   },
   "helpFeedback": {
-    "message": "Hilfe & Rückmeldung"
+    "message": "Hilfe & Feedback"
   },
   "sync": {
     "message": "Synchronisierung"
   },
   "syncVaultNow": {
-    "message": "Datenspeicher jetzt synchronisieren"
+    "message": "Tresor jetzt synchronisieren"
   },
   "lastSync": {
     "message": "Zuletzt synchronisiert:"
@@ -185,7 +185,7 @@
     "message": "Generiert automatisch ein starkes und einzigartiges Passwort."
   },
   "bitWebVault": {
-    "message": "Bitwarden Web-Datenspeicher"
+    "message": "Bitwarden Web-Tresor"
   },
   "importItems": {
     "message": "Einträge importieren"
@@ -233,7 +233,7 @@
     "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "itemInformation": {
-    "message": "Anmeldedaten Information"
+    "message": "Eintrags-Information"
   },
   "username": {
     "message": "Nutzername"
@@ -245,7 +245,7 @@
     "message": "Passphrase"
   },
   "favorite": {
-    "message": "Favoriten"
+    "message": "Favorisieren"
   },
   "notes": {
     "message": "Notizen"
@@ -290,7 +290,7 @@
     "message": "Den Browser unterstützt das einfache Kopieren nicht. Bitte kopiere es manuell."
   },
   "verifyMasterPassword": {
-    "message": "Masterpasswort überprüfen"
+    "message": "Master-Passwort Verifizieren"
   },
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your master password to continue."
@@ -497,7 +497,7 @@
     "message": "\"Login hinzufügen\" Benachrichtigung deaktivieren"
   },
   "addLoginNotificationDesc": {
-    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt Sie automatisch, ob Sie neue Zugangsdaten im Tresor speichern möchten, wenn Sie sich erstmals mit ihnen anmelden."
+    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt dich automatisch ob du neue Zugangsdaten im Tresor speichern möchtest wenn du dich zum ersten mal mit ihnen anmeldest."
   },
   "dontShowCardsCurrentTab": {
     "message": "Zeige keine Karten auf der Tab Seite"

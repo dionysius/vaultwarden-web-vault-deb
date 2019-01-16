@@ -59,7 +59,7 @@
     "message": "Setări"
   },
   "currentTab": {
-    "message": "Pagina curentă"
+    "message": "Fila curentă"
   },
   "copyPassword": {
     "message": "Copiere parolă"
@@ -169,7 +169,7 @@
     "message": "Sincronizare"
   },
   "syncVaultNow": {
-    "message": "Sincronizați seiful imediat"
+    "message": "Sincronizaţi seiful acum"
   },
   "lastSync": {
     "message": "Ultima sincronizare:"
@@ -212,13 +212,13 @@
     "message": "Word Separator"
   },
   "minNumbers": {
-    "message": "Număr minim de caractere"
+    "message": "Număr minim"
   },
   "minSpecial": {
-    "message": "Număr minim de caractere speciale"
+    "message": "Minim special"
   },
   "avoidAmbChar": {
-    "message": "Evitare caractere ambigue"
+    "message": "Evitați caracterele ambigue"
   },
   "searchVault": {
     "message": "Căutaţi în seif"
@@ -290,7 +290,7 @@
     "message": "Browserul dvs. web nu acceptă copierea ușoară în clipboard. Copiați manual."
   },
   "verifyMasterPassword": {
-    "message": "Verificare parolă principală"
+    "message": "Verificaţi parola principală"
   },
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your master password to continue."
@@ -311,10 +311,10 @@
     "message": "Parola principală este incorectă"
   },
   "lockOptions": {
-    "message": "Opțiuni de blocare"
+    "message": "Blocare"
   },
   "lockNow": {
-    "message": "Blocare imediată"
+    "message": "Blocați acum"
   },
   "immediately": {
     "message": "Imediat"
@@ -432,7 +432,7 @@
     "message": "Dosar şters"
   },
   "gettingStartedTutorial": {
-    "message": "Noțiuni de bază"
+    "message": "Introducere"
   },
   "gettingStartedTutorialVideo": {
     "message": "Urmăriți introducerea noastră pentru a începe să învățați cum să beneficiați cât mai mult de extensia browserului."
@@ -475,7 +475,7 @@
     "message": "Articol șters"
   },
   "overwritePassword": {
-    "message": "Modificare parolă"
+    "message": "Suprascrie parola"
   },
   "overwritePasswordConfirmation": {
     "message": "Sunteţi sigur că doriţi să suprascrieţi parola curentă?"
@@ -494,10 +494,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Dezactivare \"Notificare de adăugare a datelor de autentificare\""
+    "message": "Dezactivați notificarea de adăugare a datelor de autentificare"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Notificarea de adăugare a datelor de autentificare\" vă solicită automat salvarea noilor conturi în seiful dvs. de fiecare dată când vă conectați pentru prima dată cu conturile respective."
+    "message": "\"Notificarea de adăugare a datelor de autentificare\" vă solicită automat salvarea de noi conturi în seiful dvs. de fiecare dată când vă conectați pentru prima dată."
   },
   "dontShowCardsCurrentTab": {
     "message": "Don't Show Cards on Tab Page"
@@ -533,7 +533,7 @@
     "message": "Yes, Update Now"
   },
   "disableContextMenuItem": {
-    "message": "Dezactivare opțiuni meniu contextual"
+    "message": "Dezactivare opţiuni meniu contextual"
   },
   "disableContextMenuItemDesc": {
     "message": "Opțiunile meniului contextual oferă acces rapid la generarea de parole și la autentificările pentru site-ul web din fila curentă."
@@ -579,7 +579,7 @@
     "message": "Partajate"
   },
   "shareVault": {
-    "message": "Partajare seif"
+    "message": "Partajaţi seiful"
   },
   "shareVaultConfirmation": {
     "message": "Bitwarden vă permite să vă împărtășiți seiful cu alte persoane utilizând un cont pentru organizații. Doriți să vizitați site-ul bitwarden.com pentru a afla mai multe?"
@@ -606,7 +606,7 @@
     "message": "Cod de verificare (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copiere cod de verificare"
+    "message": "Copiaţi codul de verificare"
   },
   "attachments": {
     "message": "Ataşamente"
@@ -621,7 +621,7 @@
     "message": "Ataşament şters"
   },
   "newAttachment": {
-    "message": "Adăugare atașament"
+    "message": "Adăugaţi un nou ataşament"
   },
   "noAttachments": {
     "message": "Niciun ataşament."
@@ -648,13 +648,13 @@
     "message": "Membru Premium"
   },
   "premiumManage": {
-    "message": "Gestionare statut"
+    "message": "Administrare abonament"
   },
   "premiumManageAlert": {
     "message": "Puteţi gestiona apartenenţa pe site-ul web bitwarden.com. Doriţi să vizitaţi site-ul acum?"
   },
   "premiumRefresh": {
-    "message": "Actualizare statut"
+    "message": "Reîmprospătare apartenență"
   },
   "premiumNotCurrentMember": {
     "message": "Nu sunteţi în prezent un membru premium."
@@ -681,7 +681,7 @@
     "message": "Toate caracteristicile premium viitoare. Mai multe în curând!"
   },
   "premiumPurchase": {
-    "message": "Achiziționați un abonament Premium"
+    "message": "Procuraţi un abonament premium"
   },
   "premiumPurchaseAlert": {
     "message": "Puteţi procura un abonament premium pe site-ul web bitwarden.com. Doriţi să vizitaţi site-ul acum?"
@@ -705,13 +705,13 @@
     "message": "Reîmprospătare completă"
   },
   "disableAutoTotpCopy": {
-    "message": "Dezactivare copiere automată a codului TOTP"
+    "message": "Dezactivare copiere automată TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Dacă datele dvs. de conectare au o cheie de autentificare atașată, codul de verificare TOTP este copiat automat în clipboard de fiecare dată când efectuați automat completarea datelor de conectare."
   },
   "premiumRequired": {
-    "message": "Este necesară versiunea Premium"
+    "message": "Este necesar premium"
   },
   "premiumRequiredDesc": {
     "message": "Un abonament premium este necesar pentru a utiliza această caracteristică."
@@ -753,16 +753,16 @@
     "message": "Introduceți cheia de securitate în portul USB al computerului. Dacă are un buton, atingeți-l."
   },
   "loginUnavailable": {
-    "message": "Autentificare indisponibilă"
+    "message": "Login indisponibil"
   },
   "noTwoStepProviders": {
-    "message": "Acest cont are activată autentificarea în două etape, dar niciunul dintre furnizorii configurați pentru aceasta nu este acceptat de acest navigator web."
+    "message": "Acest cont are activată autentificarea în doi pași, dar niciunul dintre furnizorii configurați în doi pași nu este acceptat de acest browser web."
   },
   "noTwoStepProviders2": {
     "message": "Utilizați un browser web acceptat (cum ar fi Chrome) și\/sau adăugați furnizori suplimentari care sunt mai bine susținuți în browserele web (cum ar fi o aplicație de autentificare)."
   },
   "twoStepOptions": {
-    "message": "Opțiuni de autentificare în două etape"
+    "message": "Opţiuni autentificare în două etape"
   },
   "recoveryCodeDesc": {
     "message": "Ai pierdut accesul la toți furnizorii de autentificare în doi paşi? Utilizați codul de recuperare pentru a dezactiva toți furnizorii de autentificare în doi paşi din contul dvs."
@@ -771,7 +771,7 @@
     "message": "Cod de recuperare"
   },
   "authenticatorAppTitle": {
-    "message": "Aplicație de autentificare"
+    "message": "Aplicaţie de autentificare"
   },
   "authenticatorAppDesc": {
     "message": "Utilizaţi o aplicaţie de autentificare (cum ar fi Authy sau Google Authenticator) pentru a genera codurile de verificare bazate de timp.",

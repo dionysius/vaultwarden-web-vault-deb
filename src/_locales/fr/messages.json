@@ -98,7 +98,7 @@
     "message": "Ajouter un site"
   },
   "addItem": {
-    "message": "Ajouter un élément"
+    "message": "Ajouter un identifiant"
   },
   "passwordHint": {
     "message": "Indice mot de passe"
@@ -185,7 +185,7 @@
     "message": "Générer automatiquement des mots de passe forts et uniques pour vos identifiants."
   },
   "bitWebVault": {
-    "message": "Coffre en ligne de bitwarden"
+    "message": "Coffre en ligne de Bitwarden"
   },
   "importItems": {
     "message": "Importer des identifiants"
@@ -497,7 +497,7 @@
     "message": "Désactiver la notification de demande d'ajout d'identifiant"
   },
   "addLoginNotificationDesc": {
-    "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
+    "message": "La \"Notification de demande d'ajout d'identifiant\" apparaît automatiquement pour vous proposer d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
   },
   "dontShowCardsCurrentTab": {
     "message": "Ne pas afficher les cartes sur la page Onglet"
@@ -837,7 +837,7 @@
     "message": "Les URLs d'environnement ont été enregistrées."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load."
+    "message": "Activer l’auto-complétion au chargement de la page"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Si un formulaire de connexion est détecté, compléter automatiquement les champs au chargement de la page web."
@@ -882,7 +882,7 @@
     "message": "Désactiver les icônes des sites web"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
   },
   "cardholderName": {
     "message": "Nom du titulaire de la carte"
@@ -1108,7 +1108,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Options de basculement"
+    "message": "Afficher\/masquer les options"
   },
   "organization": {
     "message": "Organisation",

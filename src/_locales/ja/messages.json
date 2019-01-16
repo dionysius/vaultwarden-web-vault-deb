@@ -41,7 +41,7 @@
     "message": "マスターパスワードのヒントは、パスワードを忘れた場合に役立ちます。"
   },
   "reTypeMasterPass": {
-    "message": "新しいパスワードを再入力"
+    "message": "マスターパスワードを再入力"
   },
   "masterPassHint": {
     "message": "マスターパスワードのヒント (省略可能)"
@@ -74,7 +74,7 @@
     "message": "ユーザー名をコピー"
   },
   "copyNumber": {
-    "message": "番号のコピー"
+    "message": "番号をコピー"
   },
   "copySecurityCode": {
     "message": "セキュリティコードをコピー"
@@ -83,7 +83,7 @@
     "message": "自動入力"
   },
   "generatePasswordCopied": {
-    "message": "パスワードを生成 (コピーしました)"
+    "message": "パスワードを生成してコピー"
   },
   "noMatchingLogins": {
     "message": "一致するログインがありません。"
@@ -122,7 +122,7 @@
     "message": "マスターパスワードの変更"
   },
   "fingerprintPhrase": {
-    "message": "指紋フレーズ",
+    "message": "指紋認証用フレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -490,7 +490,7 @@
     "message": "検索の種類"
   },
   "noneFolder": {
-    "message": "フォルダなし",
+    "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
