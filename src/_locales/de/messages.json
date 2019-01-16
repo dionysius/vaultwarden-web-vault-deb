@@ -14,7 +14,7 @@
     "message": "Du musst dich anmelden oder einen neuen Account erstellen, um auf den Tresor zugreifen zu können."
   },
   "createAccount": {
-    "message": "Account erstellen"
+    "message": "Konto erstellen"
   },
   "login": {
     "message": "Anmelden"
@@ -44,13 +44,13 @@
     "message": "Masterpasswort wiederholen"
   },
   "masterPassHint": {
-    "message": "Masterpassworthinweis (optional)"
+    "message": "Hinweis zum Masterpasswort (optional)"
   },
   "tab": {
     "message": "Tab"
   },
   "myVault": {
-    "message": "Mein Tresor"
+    "message": "Mein Datenspeicher"
   },
   "tools": {
     "message": "Werkzeuge"
@@ -71,10 +71,10 @@
     "message": "URI kopieren"
   },
   "copyUsername": {
-    "message": "Nutzernamen kopieren"
+    "message": "Nutzernamen Kopieren"
   },
   "copyNumber": {
-    "message": "Nummer kopieren"
+    "message": "Telefonnummer kopieren"
   },
   "copySecurityCode": {
     "message": "Sicherheitscode kopieren"
@@ -101,7 +101,7 @@
     "message": "Neuer Eintrag"
   },
   "passwordHint": {
-    "message": "Passworthinweis"
+    "message": "Hinweis zum Passwort"
   },
   "enterEmailToGetHint": {
     "message": "Gebe die E-Mail Adresse deines Kontos ein, um den Hinweis für dein Master-Passwort zu erhalten."
@@ -163,13 +163,13 @@
     "message": "Es gibt keine Ordner zum Anzeigen."
   },
   "helpFeedback": {
-    "message": "Hilfe & Feedback"
+    "message": "Hilfe & Rückmeldung"
   },
   "sync": {
     "message": "Synchronisierung"
   },
   "syncVaultNow": {
-    "message": "Tresor jetzt synchronisieren"
+    "message": "Datenspeicher jetzt synchronisieren"
   },
   "lastSync": {
     "message": "Zuletzt synchronisiert:"
@@ -185,7 +185,7 @@
     "message": "Generiert automatisch ein starkes und einzigartiges Passwort."
   },
   "bitWebVault": {
-    "message": "Bitwarden Web-Tresor"
+    "message": "Bitwarden Web-Datenspeicher"
   },
   "importItems": {
     "message": "Einträge importieren"
@@ -233,7 +233,7 @@
     "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "itemInformation": {
-    "message": "Eintrags-Information"
+    "message": "Anmeldedaten Information"
   },
   "username": {
     "message": "Nutzername"
@@ -245,7 +245,7 @@
     "message": "Passphrase"
   },
   "favorite": {
-    "message": "Favorisieren"
+    "message": "Favoriten"
   },
   "notes": {
     "message": "Notizen"
@@ -280,9 +280,6 @@
   "other": {
     "message": "Sonstige"
   },
-  "disableGa": {
-    "message": "Analytics Deaktivieren"
-  },
   "rateExtension": {
     "message": "Bewerte die Erweiterung"
   },
@@ -293,7 +290,22 @@
     "message": "Den Browser unterstützt das einfache Kopieren nicht. Bitte kopiere es manuell."
   },
   "verifyMasterPassword": {
-    "message": "Master-Passwort Verifizieren"
+    "message": "Masterpasswort überprüfen"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Ungültiges Master-Passwort"
@@ -481,14 +493,11 @@
     "message": "Kein Ordner",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Wir verwenden Analytics, um zu erfahren, wie die Erweiterung genutzt wird, sodass wir sie verbessern können. Alle gesammelten Daten sind völlig anonym."
-  },
   "disableAddLoginNotification": {
     "message": "\"Login hinzufügen\" Benachrichtigung deaktivieren"
   },
   "addLoginNotificationDesc": {
-    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt dich automatisch ob du neue Zugangsdaten im Tresor speichern möchtest wenn du dich zum ersten mal mit ihnen anmeldest."
+    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt Sie automatisch, ob Sie neue Zugangsdaten im Tresor speichern möchten, wenn Sie sich erstmals mit ihnen anmelden."
   },
   "dontShowCardsCurrentTab": {
     "message": "Zeige keine Karten auf der Tab Seite"
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Kontextmenü-Optionen bieten schnellen Zugriff auf die Passwortgenerierung und Zugangsdaten für die Webseite in Ihrem aktuellen Tab."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Design"

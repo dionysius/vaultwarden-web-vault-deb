@@ -280,9 +280,6 @@
   "other": {
     "message": "Diğer"
   },
-  "disableGa": {
-    "message": "Analitikleri Devre Dışı Bırak"
-  },
   "rateExtension": {
     "message": "Eklentiyi Değerlendir"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Ana Parolayı Doğrula"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Geçersiz ana parola"
@@ -481,9 +493,6 @@
     "message": "Klasör yok",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Uzantının nasıl kullanıldığını daha iyi öğrenmek için analitikleri kullanırız, böylece onu daha iyi hale getirebiliriz. Tüm veri toplama işlemi tamamen anonimdir."
-  },
   "disableAddLoginNotification": {
     "message": "Hesap Ekle Bildirimlerini Kapat"
   },
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Sağtık menü seçenekleri, internet siteleri için geçerli sekmenizde şifre oluşturma ve oturum açma işlemlerine hızlı erişim sağlar."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"

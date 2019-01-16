@@ -59,7 +59,7 @@
     "message": "Setări"
   },
   "currentTab": {
-    "message": "Fila curentă"
+    "message": "Pagina curentă"
   },
   "copyPassword": {
     "message": "Copiere parolă"
@@ -169,7 +169,7 @@
     "message": "Sincronizare"
   },
   "syncVaultNow": {
-    "message": "Sincronizaţi seiful acum"
+    "message": "Sincronizați seiful imediat"
   },
   "lastSync": {
     "message": "Ultima sincronizare:"
@@ -212,13 +212,13 @@
     "message": "Word Separator"
   },
   "minNumbers": {
-    "message": "Număr minim"
+    "message": "Număr minim de caractere"
   },
   "minSpecial": {
-    "message": "Minim special"
+    "message": "Număr minim de caractere speciale"
   },
   "avoidAmbChar": {
-    "message": "Evitați caracterele ambigue"
+    "message": "Evitare caractere ambigue"
   },
   "searchVault": {
     "message": "Căutaţi în seif"
@@ -280,9 +280,6 @@
   "other": {
     "message": "Altele"
   },
-  "disableGa": {
-    "message": "Dezactivaţi datele analitice"
-  },
   "rateExtension": {
     "message": "Evaluare extensie"
   },
@@ -293,16 +290,31 @@
     "message": "Browserul dvs. web nu acceptă copierea ușoară în clipboard. Copiați manual."
   },
   "verifyMasterPassword": {
-    "message": "Verificaţi parola principală"
+    "message": "Verificare parolă principală"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Parola principală este incorectă"
   },
   "lockOptions": {
-    "message": "Blocare"
+    "message": "Opțiuni de blocare"
   },
   "lockNow": {
-    "message": "Blocați acum"
+    "message": "Blocare imediată"
   },
   "immediately": {
     "message": "Imediat"
@@ -420,7 +432,7 @@
     "message": "Dosar şters"
   },
   "gettingStartedTutorial": {
-    "message": "Introducere"
+    "message": "Noțiuni de bază"
   },
   "gettingStartedTutorialVideo": {
     "message": "Urmăriți introducerea noastră pentru a începe să învățați cum să beneficiați cât mai mult de extensia browserului."
@@ -463,7 +475,7 @@
     "message": "Articol șters"
   },
   "overwritePassword": {
-    "message": "Suprascrie parola"
+    "message": "Modificare parolă"
   },
   "overwritePasswordConfirmation": {
     "message": "Sunteţi sigur că doriţi să suprascrieţi parola curentă?"
@@ -481,14 +493,11 @@
     "message": "Niciun dosar",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Utilizăm datele analitice pentru a afla mai bine modul în care este folosită extensia, astfel încât s-o putem face mai bună. Toate colectările de date sunt complet anonime."
-  },
   "disableAddLoginNotification": {
-    "message": "Dezactivați notificarea de adăugare a datelor de autentificare"
+    "message": "Dezactivare \"Notificare de adăugare a datelor de autentificare\""
   },
   "addLoginNotificationDesc": {
-    "message": "\"Notificarea de adăugare a datelor de autentificare\" vă solicită automat salvarea de noi conturi în seiful dvs. de fiecare dată când vă conectați pentru prima dată."
+    "message": "\"Notificarea de adăugare a datelor de autentificare\" vă solicită automat salvarea noilor conturi în seiful dvs. de fiecare dată când vă conectați pentru prima dată cu conturile respective."
   },
   "dontShowCardsCurrentTab": {
     "message": "Don't Show Cards on Tab Page"
@@ -524,10 +533,17 @@
     "message": "Yes, Update Now"
   },
   "disableContextMenuItem": {
-    "message": "Dezactivare opţiuni meniu contextual"
+    "message": "Dezactivare opțiuni meniu contextual"
   },
   "disableContextMenuItemDesc": {
     "message": "Opțiunile meniului contextual oferă acces rapid la generarea de parole și la autentificările pentru site-ul web din fila curentă."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Temă"
@@ -563,7 +579,7 @@
     "message": "Partajate"
   },
   "shareVault": {
-    "message": "Partajaţi seiful"
+    "message": "Partajare seif"
   },
   "shareVaultConfirmation": {
     "message": "Bitwarden vă permite să vă împărtășiți seiful cu alte persoane utilizând un cont pentru organizații. Doriți să vizitați site-ul bitwarden.com pentru a afla mai multe?"
@@ -590,7 +606,7 @@
     "message": "Cod de verificare (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copiaţi codul de verificare"
+    "message": "Copiere cod de verificare"
   },
   "attachments": {
     "message": "Ataşamente"
@@ -605,7 +621,7 @@
     "message": "Ataşament şters"
   },
   "newAttachment": {
-    "message": "Adăugaţi un nou ataşament"
+    "message": "Adăugare atașament"
   },
   "noAttachments": {
     "message": "Niciun ataşament."
@@ -632,13 +648,13 @@
     "message": "Membru Premium"
   },
   "premiumManage": {
-    "message": "Administrare abonament"
+    "message": "Gestionare statut"
   },
   "premiumManageAlert": {
     "message": "Puteţi gestiona apartenenţa pe site-ul web bitwarden.com. Doriţi să vizitaţi site-ul acum?"
   },
   "premiumRefresh": {
-    "message": "Reîmprospătare apartenență"
+    "message": "Actualizare statut"
   },
   "premiumNotCurrentMember": {
     "message": "Nu sunteţi în prezent un membru premium."
@@ -665,7 +681,7 @@
     "message": "Toate caracteristicile premium viitoare. Mai multe în curând!"
   },
   "premiumPurchase": {
-    "message": "Procuraţi un abonament premium"
+    "message": "Achiziționați un abonament Premium"
   },
   "premiumPurchaseAlert": {
     "message": "Puteţi procura un abonament premium pe site-ul web bitwarden.com. Doriţi să vizitaţi site-ul acum?"
@@ -689,13 +705,13 @@
     "message": "Reîmprospătare completă"
   },
   "disableAutoTotpCopy": {
-    "message": "Dezactivare copiere automată TOTP"
+    "message": "Dezactivare copiere automată a codului TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Dacă datele dvs. de conectare au o cheie de autentificare atașată, codul de verificare TOTP este copiat automat în clipboard de fiecare dată când efectuați automat completarea datelor de conectare."
   },
   "premiumRequired": {
-    "message": "Este necesar premium"
+    "message": "Este necesară versiunea Premium"
   },
   "premiumRequiredDesc": {
     "message": "Un abonament premium este necesar pentru a utiliza această caracteristică."
@@ -737,16 +753,16 @@
     "message": "Introduceți cheia de securitate în portul USB al computerului. Dacă are un buton, atingeți-l."
   },
   "loginUnavailable": {
-    "message": "Login indisponibil"
+    "message": "Autentificare indisponibilă"
   },
   "noTwoStepProviders": {
-    "message": "Acest cont are activată autentificarea în doi pași, dar niciunul dintre furnizorii configurați în doi pași nu este acceptat de acest browser web."
+    "message": "Acest cont are activată autentificarea în două etape, dar niciunul dintre furnizorii configurați pentru aceasta nu este acceptat de acest navigator web."
   },
   "noTwoStepProviders2": {
     "message": "Utilizați un browser web acceptat (cum ar fi Chrome) și\/sau adăugați furnizori suplimentari care sunt mai bine susținuți în browserele web (cum ar fi o aplicație de autentificare)."
   },
   "twoStepOptions": {
-    "message": "Opţiuni autentificare în două etape"
+    "message": "Opțiuni de autentificare în două etape"
   },
   "recoveryCodeDesc": {
     "message": "Ai pierdut accesul la toți furnizorii de autentificare în doi paşi? Utilizați codul de recuperare pentru a dezactiva toți furnizorii de autentificare în doi paşi din contul dvs."
@@ -755,7 +771,7 @@
     "message": "Cod de recuperare"
   },
   "authenticatorAppTitle": {
-    "message": "Aplicaţie de autentificare"
+    "message": "Aplicație de autentificare"
   },
   "authenticatorAppDesc": {
     "message": "Utilizaţi o aplicaţie de autentificare (cum ar fi Authy sau Google Authenticator) pentru a genera codurile de verificare bazate de timp.",

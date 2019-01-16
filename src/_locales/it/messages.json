@@ -280,9 +280,6 @@
   "other": {
     "message": "Altro"
   },
-  "disableGa": {
-    "message": "Disabilita Analytics"
-  },
   "rateExtension": {
     "message": "Vota l'Estensione"
   },
@@ -295,6 +292,21 @@
   "verifyMasterPassword": {
     "message": "Verifica Password Principale"
   },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Password principale errata"
   },
@@ -302,7 +314,7 @@
     "message": "Impostazioni di Chiusura Automatica"
   },
   "lockNow": {
-    "message": "Blocca Ora"
+    "message": "Blocca ora"
   },
   "immediately": {
     "message": "Immediatamente"
@@ -326,7 +338,7 @@
     "message": "4 ore"
   },
   "onLocked": {
-    "message": "Al Blocco del Computer"
+    "message": "Al Blocco Computer"
   },
   "onRestart": {
     "message": "Al Riavvio del browser"
@@ -478,11 +490,8 @@
     "message": "Cerca in questo tipo"
   },
   "noneFolder": {
-    "message": "No cartella",
+    "message": "Nessuna Cartella",
     "description": "This is the folder for uncategorized items"
-  },
-  "gaDesc": {
-    "message": "Usiamo analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi."
   },
   "disableAddLoginNotification": {
     "message": "Disabilita Notifica di Aggiunta Login"
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "il menu contestuale di bitwarden fornisce l'accesso rapido ai login per la tab corrente."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"
@@ -605,7 +621,7 @@
     "message": "Allegato eliminato"
   },
   "newAttachment": {
-    "message": "Aggiungi Nuovo Allegato"
+    "message": "Aggiungi nuovo allegato"
   },
   "noAttachments": {
     "message": "Nessun allegato."
@@ -821,7 +837,7 @@
     "message": "Gli URL dell'ambiente sono stati salvati."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Abilita l'auto-completamento al caricamento della pagina"
+    "message": "Enable Auto-fill On Page Load."
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se viene rilevato un form di login, effettua un auto-completamento quando la pagina web si carica."

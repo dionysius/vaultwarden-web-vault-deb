@@ -98,7 +98,7 @@
     "message": "Ajouter un site"
   },
   "addItem": {
-    "message": "Ajouter un identifiant"
+    "message": "Ajouter un élément"
   },
   "passwordHint": {
     "message": "Indice mot de passe"
@@ -185,7 +185,7 @@
     "message": "Générer automatiquement des mots de passe forts et uniques pour vos identifiants."
   },
   "bitWebVault": {
-    "message": "Coffre en ligne de Bitwarden"
+    "message": "Coffre en ligne de bitwarden"
   },
   "importItems": {
     "message": "Importer des identifiants"
@@ -280,9 +280,6 @@
   "other": {
     "message": "Autre"
   },
-  "disableGa": {
-    "message": "Désactiver les outils d'analyse"
-  },
   "rateExtension": {
     "message": "Noter l'extension"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Vérifiez votre mot de passe maître"
+  },
+  "yourVaultIsLocked": {
+    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer."
+  },
+  "unlock": {
+    "message": "Déverrouiller"
+  },
+  "loggedInAs": {
+    "message": "Connecté en tant que $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Mot de passe maître invalide"
@@ -481,14 +493,11 @@
     "message": "Pas de dossier",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Nous utilisons des outils d'analyse pour mieux apprendre comment l'extension est utilisée et ainsi, la rendre meilleure. Toutes les données récoltées sont complètement anonymes."
-  },
   "disableAddLoginNotification": {
     "message": "Désactiver la notification de demande d'ajout d'identifiant"
   },
   "addLoginNotificationDesc": {
-    "message": "La \"Notification de demande d'ajout d'identifiant\" apparaît automatiquement pour vous proposer d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
+    "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
   },
   "dontShowCardsCurrentTab": {
     "message": "Ne pas afficher les cartes sur la page Onglet"
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Les options du menu contextuel permettent un accès rapide à la génération de mots de passe et aux identifiants enregistrés pour le site web de l'onglet actuel."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Détection de correspondance URI par défaut",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choisissez le mode de traitement par défaut de la détection de correspondance URI, pour les connexions lors de l'exécution d'actions telles que le remplissage automatique."
   },
   "theme": {
     "message": "Thème"
@@ -821,7 +837,7 @@
     "message": "Les URLs d'environnement ont été enregistrées."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Activer l’auto-complétion au chargement de la page"
+    "message": "Enable Auto-fill On Page Load."
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Si un formulaire de connexion est détecté, compléter automatiquement les champs au chargement de la page web."
@@ -866,7 +882,7 @@
     "message": "Désactiver les icônes des sites web"
   },
   "disableFaviconDesc": {
-    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
   "cardholderName": {
     "message": "Nom du titulaire de la carte"
@@ -1092,7 +1108,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Afficher\/masquer les options"
+    "message": "Options de basculement"
   },
   "organization": {
     "message": "Organisation",

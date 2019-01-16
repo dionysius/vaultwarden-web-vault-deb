@@ -185,7 +185,7 @@
     "message": "Automatski generirajte jake, jedinstvene zaporke za prijavu."
   },
   "bitWebVault": {
-    "message": "bitwarden Web trezor"
+    "message": "Bitwarden Web trezor"
   },
   "importItems": {
     "message": "Uvoz stavki"
@@ -280,9 +280,6 @@
   "other": {
     "message": "Ostalo"
   },
-  "disableGa": {
-    "message": "Onemogućite uslugu Google Analytics"
-  },
   "rateExtension": {
     "message": "Ocijenite ovo proširenje"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Potvrdite glavnu lozinku"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Nevažeća glavna lozinka"
@@ -481,9 +493,6 @@
     "message": "Nema mape",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Koristimo Google Analytics kako bismo saznali na koji način se proširenje upotrebljava kako bismo ga mogli poboljšati. Svako prikupljanje podataka potpuno je anonimno."
-  },
   "disableAddLoginNotification": {
     "message": "Onemogući obavijest o dodavanju prijave"
   },
@@ -529,6 +538,13 @@
   "disableContextMenuItemDesc": {
     "message": "Opcije kontekstnog izbotnika omogućuju brzi pristup generiranju lozinke i prijavama za web stranicu na vašoj trenutačnoj kartici."
   },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+  },
   "theme": {
     "message": "Tema"
   },
@@ -547,14 +563,14 @@
     "message": "Izvoz trezora"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Format datoteke"
   },
   "warning": {
     "message": "UPOZORENJE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Ovaj izvoz sadrži podatke trezora u nešifriranom obliku. Izvezenu datoteku ne smijete pohranjivati ili slati preko nesigurnih kanala (kao što je e-pošta). Izbrišite je odmah nakon završetka korištenja."
   },
   "exportMasterPassword": {
     "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."
@@ -665,7 +681,7 @@
     "message": "Sve buduće vrhunske značajke. Uskoro više!"
   },
   "premiumPurchase": {
-    "message": "Kupi Premium članstvo"
+    "message": "Kupi Premium"
   },
   "premiumPurchaseAlert": {
     "message": "Možete kupiti premium članstvo na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
@@ -866,7 +882,7 @@
     "message": "Onemogući ikone web mjesta"
   },
   "disableFaviconDesc": {
-    "message": "Ikone web mjesta nude prepoznatljivu ikonu pokraj svake stavke za prijavu u vašem trezoru."
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
   "cardholderName": {
     "message": "Ime vlasnika kartice"

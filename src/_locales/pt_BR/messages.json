@@ -44,7 +44,7 @@
     "message": "Digite Novamente a Senha Mestra"
   },
   "masterPassHint": {
-    "message": "Dica da Senha Mestra (opcional)"
+    "message": "Dica de Senha Mestra (opcional)"
   },
   "tab": {
     "message": "Aba"
@@ -95,7 +95,7 @@
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
   },
   "addLogin": {
-    "message": "Adicionar uma Credencial"
+    "message": "Adicionar um Login"
   },
   "addItem": {
     "message": "Adicionar Item"
@@ -122,7 +122,7 @@
     "message": "Alterar Senha Mestra"
   },
   "fingerprintPhrase": {
-    "message": "Frase Biométrica",
+    "message": "Frase de Biometria",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -263,7 +263,7 @@
     "message": "Excluir Item"
   },
   "viewItem": {
-    "message": "Ver Item"
+    "message": "Visualizar Item"
   },
   "launch": {
     "message": "Abrir"
@@ -280,9 +280,6 @@
   "other": {
     "message": "Outros"
   },
-  "disableGa": {
-    "message": "Desativar Analytics"
-  },
   "rateExtension": {
     "message": "Avaliar a Extensão"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Verificar Senha Mestra"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Senha mestra inválida"
@@ -326,7 +338,7 @@
     "message": "4 horas"
   },
   "onLocked": {
-    "message": "Quando o Sistema for Bloqueado"
+    "message": "No bloqueio"
   },
   "onRestart": {
     "message": "Ao Reiniciar"
@@ -448,7 +460,7 @@
     }
   },
   "newUri": {
-    "message": "Nova URI"
+    "message": "Novo URI"
   },
   "addedItem": {
     "message": "Item adicionado"
@@ -463,7 +475,7 @@
     "message": "Item excluído"
   },
   "overwritePassword": {
-    "message": "Substituir Senha"
+    "message": "Sobrescrever Senha"
   },
   "overwritePasswordConfirmation": {
     "message": "Você tem certeza que deseja substituir a senha atual?"
@@ -481,14 +493,11 @@
     "message": "Nenhuma Pasta",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Nós utilizamos o analytics para aprender melhor como a extensão está sendo utilizada, para que possamos torná-la melhor. Todos os dados são coletados de forma anônima."
-  },
   "disableAddLoginNotification": {
     "message": "Desativar Notificação de Adicionar Credencial"
   },
   "addLoginNotificationDesc": {
-    "message": "A \"Notificação de Adicionar Credencial\" pede para salvar automaticamente novas credenciais para o seu cofre quando você iniciar uma sessão em um site pela primeira vez."
+    "message": "A \"Notificação de Adicionar Login\" pede para salvar automaticamente novas logins para o seu cofre quando você inicia uma sessão em um site pela primeira vez."
   },
   "dontShowCardsCurrentTab": {
     "message": "Não Mostrar Cartões na Página \"Aba\""
@@ -512,7 +521,7 @@
     "message": "Nunca para este site"
   },
   "disableChangedPasswordNotification": {
-    "message": "Desativar Notificação de Alteração da Senha"
+    "message": "Desativar a notificação de alteração de senha"
   },
   "disableChangedPasswordNotificationDesc": {
     "message": "A \"Notificação de Alteração da Senha\" solicita automaticamente que você atualize a senha de uma credencial no seu cofre quando detecta que você a alterou em um site."
@@ -521,13 +530,20 @@
     "message": "Você quer atualizar esta senha no Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Sim, Atualizar Agora"
+    "message": "Sim, atualizar agora"
   },
   "disableContextMenuItem": {
     "message": "Desativar Opções do Menu de Contexto"
   },
   "disableContextMenuItemDesc": {
     "message": "As opções do menu de contexto providenciam acesso rápido à geração de senha e credenciais para o site na sua aba atual."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"
@@ -641,7 +657,7 @@
     "message": "Atualizar Assinatura"
   },
   "premiumNotCurrentMember": {
-    "message": "Você não é atualmente um membro premium."
+    "message": "Você não é um membro premium atualmente."
   },
   "premiumSignUpAndGet": {
     "message": "Registre-se para uma assinatura premium e obtenha:"
@@ -740,7 +756,7 @@
     "message": "Sessão Indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem a verificação em duas etapas ativada, no entanto, nenhum dos provedores de verificação em duas etapas configurados são suportados por este navegador web."
+    "message": "Esta conta tem a verificação de duas etapas ativado, no entanto, nenhum dos provedores de verificação de duas etapas configurados são suportados por este navegador web."
   },
   "noTwoStepProviders2": {
     "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e\/ou inclua provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
@@ -821,7 +837,7 @@
     "message": "As URLs do ambiente foram salvas."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Habilitar o Autopreenchimento ao Carregar a Página"
+    "message": "Habilitar o Auto-preencher ao Carregar a Página"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se um formulário de login for detectado, realize automaticamente um autopreenchimento quando a página web carregar."

@@ -163,7 +163,7 @@
     "message": "Нет папок для отображения."
   },
   "helpFeedback": {
-    "message": "Помощь и обратная связь"
+    "message": "Помощь и отзывы"
   },
   "sync": {
     "message": "Синхронизация"
@@ -212,7 +212,7 @@
     "message": "Разделитель слов"
   },
   "minNumbers": {
-    "message": "Мин. кол-во цифр"
+    "message": "Минимальное количество цифр"
   },
   "minSpecial": {
     "message": "Мин. кол-во символов"
@@ -254,13 +254,13 @@
     "message": "Заметка"
   },
   "editItem": {
-    "message": "Изменение элемента"
+    "message": "Изменить элемент"
   },
   "folder": {
     "message": "Папка"
   },
   "deleteItem": {
-    "message": "Удалить элемент"
+    "message": "Удаление элемента"
   },
   "viewItem": {
     "message": "Просмотр элемента"
@@ -280,9 +280,6 @@
   "other": {
     "message": "Прочее"
   },
-  "disableGa": {
-    "message": "Отключить аналитику"
-  },
   "rateExtension": {
     "message": "Оценить расширение"
   },
@@ -294,6 +291,21 @@
   },
   "verifyMasterPassword": {
     "message": "Проверка мастер-пароля"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Неверный мастер-пароль"
@@ -481,9 +493,6 @@
     "message": "Без папки",
     "description": "This is the folder for uncategorized items"
   },
-  "gaDesc": {
-    "message": "Мы используем аналитику для понимания как используется приложение, чтобы сделать его лучше. Все собираемые данные полностью анонимны."
-  },
   "disableAddLoginNotification": {
     "message": "Отключить уведомление о добавлении логина"
   },
@@ -515,7 +524,7 @@
     "message": "Отключить уведомление об изменении пароля"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "Уведомление об изменении пароля автоматически предложит вам обновить пароль входа в хранилище, когда обнаружит, что вы изменили его на веб-сайте."
+    "message": "\"Уведомление об изменении пароля\" автоматически предложит вам обновить пароль входа в хранилище, когда обнаружит, что вы изменили его на веб-сайте."
   },
   "notificationChangeDesc": {
     "message": "Вы хотите обновить этот пароль в Bitwarden?"
@@ -528,6 +537,13 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта на текущей вкладке."
+  },
+  "defaultUriMatchDetection": {
+    "message": "Default URI Match Detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "defaultUriMatchDetectionDesc": {
+    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Тема"
@@ -544,7 +560,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Экспорт хранилища"
+    "message": "Экспортировать хранилище"
   },
   "fileFormat": {
     "message": "Формат файла"
@@ -629,16 +645,16 @@
     "message": "Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования."
   },
   "premiumMembership": {
-    "message": "Премиум"
+    "message": "Премиум-статус"
   },
   "premiumManage": {
-    "message": "Управление Премиум"
+    "message": "Управление статусом"
   },
   "premiumManageAlert": {
     "message": "Вы можете управлять Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumRefresh": {
-    "message": "Обновить Премиум"
+    "message": "Обновить статус"
   },
   "premiumNotCurrentMember": {
     "message": "На текущий момент у вас отсутствует Премиум."
@@ -695,7 +711,7 @@
     "message": "Если к вашему логину прикреплен ключ аутентификации, то код подтверждения TOTP будет скопирован при автозаполнении логина."
   },
   "premiumRequired": {
-    "message": "Необходим Премиум"
+    "message": "Необходим премиум-статус"
   },
   "premiumRequiredDesc": {
     "message": "Для использования этой функции требуется Премиум."
@@ -953,7 +969,7 @@
     "message": "Фамилия"
   },
   "identityName": {
-    "message": "Имя"
+    "message": "Имя по паспорту"
   },
   "company": {
     "message": "Компания"
@@ -989,7 +1005,7 @@
     "message": "Город \/ Поселок"
   },
   "stateProvince": {
-    "message": "Регион \/ Область"
+    "message": "Страна \/ Область"
   },
   "zipPostalCode": {
     "message": "Почтовый индекс"
