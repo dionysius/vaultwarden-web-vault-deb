@@ -14,10 +14,10 @@
     "message": "Log in of maak een account om toegang te krijgen tot je beveiligde kluis."
   },
   "createAccount": {
-    "message": "Maak Account"
+    "message": "Account creëren"
   },
   "login": {
-    "message": "Login"
+    "message": "Inloggen"
   },
   "cancel": {
     "message": "Annuleer"
@@ -41,7 +41,7 @@
     "message": "Een geheugensteuntje voor je hoofdwachtwoord, indien je deze vergeet."
   },
   "reTypeMasterPass": {
-    "message": "Herhaal je hoofdwachtwoord"
+    "message": "Hoofdwachtwoord herhalen"
   },
   "masterPassHint": {
     "message": "Hint voor hoofdwachtwoord (optioneel)"
@@ -50,7 +50,7 @@
     "message": "Tab"
   },
   "myVault": {
-    "message": "Mijn Kluis"
+    "message": "Mijn kluis"
   },
   "tools": {
     "message": "Gereedschap"
@@ -59,10 +59,10 @@
     "message": "Instellingen"
   },
   "currentTab": {
-    "message": "Huidige Tab"
+    "message": "Huidig tabblad"
   },
   "copyPassword": {
-    "message": "Kopieer Wachtwoord"
+    "message": "Wachtwoord kopiëren"
   },
   "copyNote": {
     "message": "Notitie kopiëren"
@@ -71,7 +71,7 @@
     "message": "URI kopiëren"
   },
   "copyUsername": {
-    "message": "Kopieer Gebruikersnaam"
+    "message": "Gebruikersnaam kopiëren"
   },
   "copyNumber": {
     "message": "Nummer kopiëren"
@@ -83,7 +83,7 @@
     "message": "Auto-invullen"
   },
   "generatePasswordCopied": {
-    "message": "Genereer Wachtwoord (gekopieerd)"
+    "message": "Wachtwoord genereren (gekopieerd)"
   },
   "noMatchingLogins": {
     "message": "Geen corresponderende websites.."
@@ -95,7 +95,7 @@
     "message": "Er zijn geen beschikbare websites om het huidge browser-tabblad automatisch in te vullen."
   },
   "addLogin": {
-    "message": "Voeg een website toe"
+    "message": "Login toevoegen"
   },
   "addItem": {
     "message": "Item toevoegen"
@@ -119,7 +119,7 @@
     "message": "Account"
   },
   "changeMasterPassword": {
-    "message": "Wijzig Hoofdwachtwoord"
+    "message": "Hoofdwachtwoord wijzigen"
   },
   "fingerprintPhrase": {
     "message": "Vingerafdrukfrase",
@@ -130,10 +130,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Tweestaps-login"
+    "message": "Tweestapslogin"
   },
   "logOut": {
-    "message": "Log Uit"
+    "message": "Uitloggen"
   },
   "about": {
     "message": "Over"
@@ -145,16 +145,16 @@
     "message": "Opslaan"
   },
   "addFolder": {
-    "message": "Nieuwe Map"
+    "message": "Map toevoegen"
   },
   "name": {
     "message": "Naam"
   },
   "editFolder": {
-    "message": "Bewerk Map"
+    "message": "Map bewerken"
   },
   "deleteFolder": {
-    "message": "Verwijder Map"
+    "message": "Map verwijderen"
   },
   "folders": {
     "message": "Mappen"
@@ -163,16 +163,16 @@
     "message": "Er zijn geen mappen."
   },
   "helpFeedback": {
-    "message": "Hulp & Feedback"
+    "message": "Hulp & Reacties"
   },
   "sync": {
     "message": "Sync"
   },
   "syncVaultNow": {
-    "message": "Sync Kluis Nu"
+    "message": "Kluis nu synchroniseren"
   },
   "lastSync": {
-    "message": "Laatste Sync:"
+    "message": "Laatste synchronisatie:"
   },
   "passGen": {
     "message": "Wachtwoordgenerator"
@@ -194,10 +194,10 @@
     "message": "Selecteer"
   },
   "generatePassword": {
-    "message": "Genereer Wachtwoord"
+    "message": "Wachtwoord genereren"
   },
   "regeneratePassword": {
-    "message": "Hergenereer Wachtwoord"
+    "message": "Wachtwoord opnieuw genereren"
   },
   "options": {
     "message": "Opties"
@@ -212,13 +212,13 @@
     "message": "Woordscheidingsteken"
   },
   "minNumbers": {
-    "message": "Minimum Aantal Getallen"
+    "message": "Minimum aantal getallen"
   },
   "minSpecial": {
-    "message": "Minimum Aantal Speciale Karakters"
+    "message": "Minimum aantal speciale tekens"
   },
   "avoidAmbChar": {
-    "message": "Vermijd Ambigue Karakters"
+    "message": "Dubbelzinnige tekens vermijden"
   },
   "searchVault": {
     "message": "Doorzoek kluis"
@@ -281,7 +281,7 @@
     "message": "Anders"
   },
   "rateExtension": {
-    "message": "Beoordeel de Extensie"
+    "message": "Extensie beoordelen"
   },
   "rateExtensionDesc": {
     "message": "Je kunt ons helpen door een goede recensie achter te laten!"
@@ -290,7 +290,7 @@
     "message": "Je browser ondersteunt geen kopiëren naar plakbord. Kopieer handmatig."
   },
   "verifyMasterPassword": {
-    "message": "Verifieer Hoofdwachtwoord"
+    "message": "Hoofdwachtwoord verifiëren"
   },
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your master password to continue."
@@ -311,7 +311,7 @@
     "message": "Ongeldig hoofdwachtwoord"
   },
   "lockOptions": {
-    "message": "Versleutel"
+    "message": "Vergrendeling"
   },
   "lockNow": {
     "message": "Nu vergrendelen"
@@ -414,7 +414,7 @@
     "message": "Map toegevoegd"
   },
   "changeMasterPass": {
-    "message": "Verander hoofdwachtwoord"
+    "message": "Hoofdwachtwoord wijzigen"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Je kunt je hoofdwachtwoord veranderen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
@@ -475,7 +475,7 @@
     "message": "Item is verwijderd"
   },
   "overwritePassword": {
-    "message": "Overschrijf Wachtwoord"
+    "message": "Wachtwoord overschrijven"
   },
   "overwritePasswordConfirmation": {
     "message": "Weet je zeker dat je het huidige wachtwoord wilt overschrijven?"
@@ -494,10 +494,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Zet Notificatie bij Nieuwe Site Uit"
+    "message": "Melding uitschakelen bij toevoegen van login"
   },
   "addLoginNotificationDesc": {
-    "message": "De \"Notificatie bij Nieuwe Site\" vraagt automatisch om nieuwe sites op te slaan in je kluis wanneer je voor de eerste keer inlogt."
+    "message": "\"Melding bij toevoegen van login\" vraagt automatisch om nieuwe sites op te slaan in uw kluis wanneer u voor de eerste keer inlogt."
   },
   "dontShowCardsCurrentTab": {
     "message": "Kaarten niet weergegeven op tabbladpagina"
@@ -515,7 +515,7 @@
     "message": "Moet Bitwarden dit wachtwoord onthouden?"
   },
   "notificationAddSave": {
-    "message": "Ja, sla nu op"
+    "message": "Ja, nu opslaan"
   },
   "notificationNeverSave": {
     "message": "Nooit voor deze website"
@@ -533,7 +533,7 @@
     "message": "Ja, nu bijwerken"
   },
   "disableContextMenuItem": {
-    "message": "Context Menu-opties uitschakelen"
+    "message": "Rechtermuisknopmenu-opties uitschakelen"
   },
   "disableContextMenuItemDesc": {
     "message": "Context menu-opties bieden snelle toegang tot wachtwoordgeneratie en logins voor de website in de huidige tab."
@@ -560,7 +560,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Exporteer Kluis"
+    "message": "Kluis exporteren"
   },
   "fileFormat": {
     "message": "Bestandsindeling"
@@ -579,7 +579,7 @@
     "message": "Gedeeld"
   },
   "shareVault": {
-    "message": "Deel uw kluis"
+    "message": "Uw kluis delen"
   },
   "shareVaultConfirmation": {
     "message": "Met een organisatie-account kunt u een Bitwarden-kluis met anderen delen. Wilt u op de website bitwarden.com meer informatie lezen?"

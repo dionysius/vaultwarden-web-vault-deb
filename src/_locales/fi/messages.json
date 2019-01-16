@@ -17,7 +17,7 @@
     "message": "Luo tili"
   },
   "login": {
-    "message": "Kirjaudu sisään"
+    "message": "Kirjaudu"
   },
   "cancel": {
     "message": "Peruuta"
@@ -83,7 +83,7 @@
     "message": "Täytä automaattisesti"
   },
   "generatePasswordCopied": {
-    "message": "Luo salasana (leikepöydälle)"
+    "message": "Luo salasana (kopioitu)"
   },
   "noMatchingLogins": {
     "message": "Ei täsmääviä käyttäjätunnuksia."
@@ -95,7 +95,7 @@
     "message": "Selaimen nykyiselle välilehdelle ei ole automaattisesti täytettäviä käyttäjätunnuksia."
   },
   "addLogin": {
-    "message": "Lisää käyttäjätunnus"
+    "message": "Lisää kohde"
   },
   "addItem": {
     "message": "Lisää kohde"
@@ -113,7 +113,7 @@
     "message": "Jatka"
   },
   "verificationCode": {
-    "message": "Vahvistuskoodi"
+    "message": "Tunnistautumiskoodi"
   },
   "account": {
     "message": "Tili"
@@ -185,7 +185,7 @@
     "message": "Luo automaattisesti vahvoja, sivustokohtaisia salasanoja kirjautumisiasi varten."
   },
   "bitWebVault": {
-    "message": "Bitwardenin verkkoholvi"
+    "message": "bitwardenin verkkoholvi"
   },
   "importItems": {
     "message": "Tuo kohteita"
@@ -338,10 +338,10 @@
     "message": "4 tuntia"
   },
   "onLocked": {
-    "message": "Järjestelmän lukitsemisen yhteydessä"
+    "message": "Tietokoneen lukitsemisen yhteydessä"
   },
   "onRestart": {
-    "message": "Selaimen käynnistyksen yhteydessä"
+    "message": "Tietokoneen käynnistyksen yhteydessä"
   },
   "never": {
     "message": "Ei koskaan"
@@ -490,14 +490,14 @@
     "message": "Hae tämän tyypin kohteista"
   },
   "noneFolder": {
-    "message": "Ei kansiota",
+    "message": "Ei kansioa",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
     "message": "Älä näytä tallennuskehotetta"
   },
   "addLoginNotificationDesc": {
-    "message": "Tallennuskehote kysyy, haluatko tallentaa käyttäjätunnuksen holviisi, kun kirjaudut sivustoille ensimmäistä kertaa."
+    "message": "Tallennuskehote kysyy, haluatko tallentaa kirjautumistiedot holviisi, kun kirjaudut sivustoille ensimmäistä kertaa."
   },
   "dontShowCardsCurrentTab": {
     "message": "Don't Show Cards on Tab Page"
@@ -705,7 +705,7 @@
     "message": "Päivitys valmis"
   },
   "disableAutoTotpCopy": {
-    "message": "Älä kopioi TOTP-koodia automaattisesti"
+    "message": "Älä käytä automaattista TOTP-kopiointia"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Jos käyttäjätunnukseesi on liitetty todennusavain, TOTP-vahvistuskoodi kopioidaan automaattisesti leikepöydällesi tehdessäsi kohteella automaattisen täytön."

@@ -154,7 +154,7 @@
     "message": "Upravit složku"
   },
   "deleteFolder": {
-    "message": "Smazat složku"
+    "message": "Odstranit složku"
   },
   "folders": {
     "message": "Složky"
@@ -338,7 +338,7 @@
     "message": "Po 4 hodinách"
   },
   "onLocked": {
-    "message": "Při uzamknutí systému"
+    "message": "Při uzamčení"
   },
   "onRestart": {
     "message": "Při restartu prohlížeče"
@@ -494,10 +494,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Zakázat oznámení Přidat přihlašovací údaje"
+    "message": "Vypnout notifikaci Přidat přihlašovací údaje"
   },
   "addLoginNotificationDesc": {
-    "message": "Oznámení „Přidat přihlašovací údaje“ automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi přihlašujete poprvé."
+    "message": "Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
   },
   "dontShowCardsCurrentTab": {
     "message": "Nezobrazovat karty na stránce Karta"
@@ -533,7 +533,7 @@
     "message": "Ano, aktualizovat"
   },
   "disableContextMenuItem": {
-    "message": "Zakázat kontextové menu"
+    "message": "Vypnout kontextové menu"
   },
   "disableContextMenuItemDesc": {
     "message": "Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
@@ -705,7 +705,7 @@
     "message": "Obnova je dokončena"
   },
   "disableAutoTotpCopy": {
-    "message": "Zakázat automatické kopírování TOTP kódu"
+    "message": "Vypnout automatické kopírování kódu TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Pokud mají vaše přihlašovací údaje přidán autentizační klíč pro TOTP, vygenerovaný ověřovací kód (TOTP) se automaticky zkopíruje do schránky při každém automatickém vyplnění přihlašovacích údajů."
@@ -837,7 +837,7 @@
     "message": "URL adresy vlastního prostředí byly uloženy"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Povolit automatické vyplnění při načtení stránky"
+    "message": "Automaticky vyplnit údaje při načtení stránky"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Pokud je zjištěn přihlašovací formulář, automaticky se při načítání webové stránky vyplní přihlašovací údaje."
@@ -882,7 +882,7 @@
     "message": "Zakázat ikonky webových stránek"
   },
   "disableFaviconDesc": {
-    "message": "Ikonky webových stránek zobrazí snadno rozeznatelný obrázek vedle každé položky ve vašem trezoru."
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
   "cardholderName": {
     "message": "Jméno držitele karty"
@@ -981,7 +981,7 @@
     "message": "Číslo cestovního pasu"
   },
   "licenseNumber": {
-    "message": "Číslo dokladu totožnosti"
+    "message": "Licenční číslo"
   },
   "email": {
     "message": "E-mail"

@@ -44,7 +44,7 @@
     "message": "重新輸入主密碼"
   },
   "masterPassHint": {
-    "message": "主密碼提示 (選用)"
+    "message": "主密碼提示 (選填)"
   },
   "tab": {
     "message": "分頁"
@@ -490,7 +490,7 @@
     "message": "搜尋類型"
   },
   "noneFolder": {
-    "message": "（未分類）",
+    "message": "沒有資料夾",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
@@ -756,7 +756,7 @@
     "message": "無法登入"
   },
   "noTwoStepProviders": {
-    "message": "此帳戶已啟用兩步驟登入，但是本瀏覽器不支援已設定的兩步驟登入方式。"
+    "message": "此帳號已啟用兩步驟登入，但是本瀏覽器不支援已設定的兩步驟登入方式。"
   },
   "noTwoStepProviders2": {
     "message": "請使用已支援的瀏覽器（例如 Chrome ），及／或新增可以更好地跨瀏覽器的兩步驟登入方法（例如驗證器應用程式）。"
@@ -768,7 +768,7 @@
     "message": "無法使用任何兩步驟登入方式？用復原碼停用所有兩步驟登入方式。"
   },
   "recoveryCodeTitle": {
-    "message": "復原碼"
+    "message": "復原代碼"
   },
   "authenticatorAppTitle": {
     "message": "驗證器應用程式"
@@ -804,7 +804,7 @@
     "message": "驗證碼將使用電子郵件傳送給您。"
   },
   "selfHostedEnvironment": {
-    "message": "自我託管環境"
+    "message": "自我託管的環境"
   },
   "selfHostedEnvironmentFooter": {
     "message": "指定自己設定、管理的 Bitwarden 環境之基礎 URL。"
@@ -819,10 +819,10 @@
     "message": "伺服器 URL"
   },
   "apiUrl": {
-    "message": "API 伺服器 URL"
+    "message": "API 伺服器網址"
   },
   "webVaultUrl": {
-    "message": "網頁版密碼庫伺服器 URL"
+    "message": "網路版密碼庫伺服器 URL"
   },
   "identityUrl": {
     "message": "身分伺服器 URL"
