@@ -280,6 +280,9 @@
   "other": {
     "message": "Lainnya"
   },
+  "disableGa": {
+    "message": "Nonaktifkan Analitik"
+  },
   "rateExtension": {
     "message": "Nilai Ekstensi"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Verifikasi Kata Sandi Utama"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Sandi utama tidak valid"
@@ -493,6 +481,9 @@
     "message": "Tidak Ada Folder",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Kami menggunakan analitik untuk mempelajari lebih baik bagaimana ekstensi sedang digunakan sehingga kami dapat membuatnya lebih baik. Semua pengumpulan data benar-benar anonim."
+  },
   "disableAddLoginNotification": {
     "message": "Nonaktifkan Pemberitahuan Penambahan Info Masuk"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Pilihan menu konteks menyediakan akses cepat ke pembuat sandi dan info masuk untuk situs web di tab Anda saat ini."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"

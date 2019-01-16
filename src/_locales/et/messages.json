@@ -280,6 +280,9 @@
   "other": {
     "message": "Muu"
   },
+  "disableGa": {
+    "message": "Keela analüütika"
+  },
   "rateExtension": {
     "message": "Hinda seda laiendust"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Kinnita ülemparooliga"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Vale ülemparool"
@@ -493,6 +481,9 @@
     "message": "Kaust puudub",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Kasutame analüütikat, et brauserilisa kasutamist paremini mõista ja seda paremaks muuta. Kogu andmekorje on anonüümne."
+  },
   "disableAddLoginNotification": {
     "message": "Keela \"Lisa konto andmed\" märguanne"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Parema kliki menüü abil saad kiiresti parooli genereerida ja konkreetse veebilehe kasutajakonto andmeid sisestada."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Teema"

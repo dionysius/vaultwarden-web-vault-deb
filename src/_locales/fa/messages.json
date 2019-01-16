@@ -280,6 +280,9 @@
   "other": {
     "message": "ساير"
   },
+  "disableGa": {
+    "message": "غیرفعال سازی آنالیزها"
+  },
   "rateExtension": {
     "message": "به این افزونه امتیاز دهید"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "تایید گذرواژه اصلی"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "گذرواژه اصلی نامعتبر است"
@@ -493,6 +481,9 @@
     "message": "بدون پوشه",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "ما از آنالیز استفاده می کنیم تا بهتر بفهمیم که چگونه برنامه استفاده می شود تا بتوانیم آن را بهتر کنیم. تمام جمع آوری داده ها کاملا ناشناس است."
+  },
   "disableAddLoginNotification": {
     "message": "غیرفعال کردن اعلانیه اضافه کردن ورودی"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "گزینه های منوی متن دسترسی سریع به ساخت رمز عبور و ورود به سیستم برای وبسایت در برگه فعلی را برای شما فراهم میکند."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "پوسته"

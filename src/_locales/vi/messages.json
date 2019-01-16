@@ -280,6 +280,9 @@
   "other": {
     "message": "Khác"
   },
+  "disableGa": {
+    "message": "Vô hiệu hóa phân tích"
+  },
   "rateExtension": {
     "message": "Đánh giá Tiện ích mở rộng"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Nhập lại mật khẩu chủ"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Mật khẩu chủ không hợp lệ"
@@ -493,6 +481,9 @@
     "message": "Không được phân loại",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Chúng tôi sử dụng phân tích để hiểu rõ hơn cách bạn sử dụng tiện ích mở rộng, nó chúng tôi cải thiện ứng dụng ngày càng tốt hơn. Tất cả dữ liệu sẽ được thu thập ẩn danh."
+  },
   "disableAddLoginNotification": {
     "message": "Vô hiệu thông báo Thêm đăng nhập"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Tùy chọn menu ngữ cảnh giúp bạn truy cập nhanh thông tin đăng nhập và tạo mật khẩu cho trang web trong tab mà bạn đang mở."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Giao diện"

@@ -280,6 +280,9 @@
   "other": {
     "message": "Altele"
   },
+  "disableGa": {
+    "message": "Dezactivaţi datele analitice"
+  },
   "rateExtension": {
     "message": "Evaluare extensie"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Verificaţi parola principală"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Parola principală este incorectă"
@@ -493,6 +481,9 @@
     "message": "Niciun dosar",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Utilizăm datele analitice pentru a afla mai bine modul în care este folosită extensia, astfel încât s-o putem face mai bună. Toate colectările de date sunt complet anonime."
+  },
   "disableAddLoginNotification": {
     "message": "Dezactivați notificarea de adăugare a datelor de autentificare"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Opțiunile meniului contextual oferă acces rapid la generarea de parole și la autentificările pentru site-ul web din fila curentă."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Temă"

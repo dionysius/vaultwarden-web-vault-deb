@@ -280,6 +280,9 @@
   "other": {
     "message": "Otros"
   },
+  "disableGa": {
+    "message": "Deshabilitar análisis"
+  },
   "rateExtension": {
     "message": "Valora la extensión"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Verificar contraseña maestra"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Contraseña maestra no válida"
@@ -493,6 +481,9 @@
     "message": "Sin carpeta",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Realizamos análisis para aprender de cómo se utiliza la extensión para poder mejorarla. Toda la información recogida es completamente anónima."
+  },
   "disableAddLoginNotification": {
     "message": "Deshabilitar notificación para añadir entradas"
   },
@@ -503,13 +494,13 @@
     "message": "No mostrar tarjetas en la página de ficha"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Elementos de la tarjeta de su caja fuerte están listados en la página 'Ficha Actual' para el acceso fácil del autorellenado."
+    "message": "Elementos de la tarjeta de su bóveda están listados en la página 'Ficha Actual' para el acceso fácil del auto-rellenado."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "No mostrar las identidades en la página de ficha"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Elementos de identidad de su caja fuerte están listados en la página 'Ficha Actual' para el acceso fácil del autorellenado."
+    "message": "Elementos de identidad de su bóveda están listados en la página 'Ficha Actual' para el acceso fácil del auto-rellenado."
   },
   "notificationAddDesc": {
     "message": "¿Debería Bitwarden recordar esta contraseña por ti?"
@@ -538,13 +529,6 @@
   "disableContextMenuItemDesc": {
     "message": "Las opciones del menú contextual permiten un acceso rápido al generador de contraseñas y a las entradas para el sitio abierto en tu pestaña actual."
   },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
-  },
   "theme": {
     "message": "Tema"
   },
@@ -570,7 +554,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Esta exportación contiene los datos de tu caja fuerte en un formato no cifrado. No deberías almacenar o enviar el archivo exportado por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
+    "message": "Esta exportación contiene tus datos de la bóveda en un formato no cifrado. No deberías almacenar o enviar el archivo exportado por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
   },
   "exportMasterPassword": {
     "message": "Introduce tu contraseña maestra para exportar la información de tu caja fuerte."
@@ -663,13 +647,13 @@
     "message": "Registrate como miembro Premium y obtén:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1GB de espacio cifrado en disco para adjuntos."
+    "message": "1GB de espacio en disco cifrado."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Métodos de autenticación en dos pasos adicionales como YubiKey, FIDO U2F y Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Higiene de contraseña, salud de la cuenta e informes de violaciones de datos para mantener su caja fuerte segura."
+    "message": "Higiene de contraseña, salud de la cuenta e informes de violaciones de datos para mantener su bóveda segura."
   },
   "ppremiumSignUpTotp": {
     "message": "Generación de códigos TOTP (2FA) para registros de tu caja fuerte."

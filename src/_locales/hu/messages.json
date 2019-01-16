@@ -280,6 +280,9 @@
   "other": {
     "message": "Egyéb"
   },
+  "disableGa": {
+    "message": "Analitika kikapcsolása"
+  },
   "rateExtension": {
     "message": "Bővítmény értékelése"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Hitelesítsd mesterjelszavad"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Hibás mesterjelszó"
@@ -493,6 +481,9 @@
     "message": "Nincs mappa",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Mi analitikát használunk, hogy megtudjunk többet arról, hogy hogyan használod a kiterjesztést, hogy jobbá tudjuk tenni. Az összes adat gyűjtés teljesen névtelen."
+  },
   "disableAddLoginNotification": {
     "message": "Add hozzá a bejelentkezést értesítések kikapcsolása"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Helyi menü opciók gyors hozzáférést biztosít jelszó generáláshoz és bejelentkezésekhez a weboldalhoz amin éppen vagy."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Téma"

@@ -77,7 +77,7 @@
     "message": "Skopiuj numer"
   },
   "copySecurityCode": {
-    "message": "Skopiuj kod CVV\/CVC"
+    "message": "Skopiuj kod zabezpieczający"
   },
   "autoFill": {
     "message": "Automatyczne wypełnianie"
@@ -122,11 +122,11 @@
     "message": "Zmień Hasło Główne"
   },
   "fingerprintPhrase": {
-    "message": "Unikalny identyfikator konta",
+    "message": "Hasło szyfrujące",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Unikalny identyfikator dla Twojego konta",
+    "message": "Hasło szyfrujące dla Twojego konta",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -197,7 +197,7 @@
     "message": "Wygeneruj Hasło"
   },
   "regeneratePassword": {
-    "message": "Wygeneruj hasło"
+    "message": "Odtwórz hasło"
   },
   "options": {
     "message": "Opcje"
@@ -221,7 +221,7 @@
     "message": "Unikaj niejednoznacznych znaków"
   },
   "searchVault": {
-    "message": "Szukaj w sejfie"
+    "message": "Znajdź w sejfie"
   },
   "edit": {
     "message": "Edytuj"
@@ -230,7 +230,7 @@
     "message": "Widok"
   },
   "noItemsInList": {
-    "message": "Brak elementów."
+    "message": "Brak elementów do wyświetlenia."
   },
   "itemInformation": {
     "message": "Informacje o elemencie"
@@ -280,6 +280,9 @@
   "other": {
     "message": "Inne"
   },
+  "disableGa": {
+    "message": "Wyłącz Analitykę"
+  },
   "rateExtension": {
     "message": "Oceń nasze rozszerzenie"
   },
@@ -292,26 +295,11 @@
   "verifyMasterPassword": {
     "message": "Sprawdź Hasło Główne"
   },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "Nieprawidłowe hasło główne"
   },
   "lockOptions": {
-    "message": "Czas automatycznego blokowania"
+    "message": "Opcje blokowania"
   },
   "lockNow": {
     "message": "Zablokuj teraz"
@@ -320,25 +308,25 @@
     "message": "Natychmiast"
   },
   "oneMinute": {
-    "message": "po 1 minucie"
+    "message": "1 minuta"
   },
   "fiveMinutes": {
-    "message": "po 5 minutach"
+    "message": "5 minut"
   },
   "fifteenMinutes": {
-    "message": "po 15 minutach"
+    "message": "15 minut"
   },
   "thirtyMinutes": {
-    "message": "po 30 minutach"
+    "message": "30 minut"
   },
   "oneHour": {
-    "message": "po 1 godzinie"
+    "message": "1 godzina"
   },
   "fourHours": {
-    "message": "po 4 godzinach"
+    "message": "4 godziny"
   },
   "onLocked": {
-    "message": "Gdy zablokujesz komputer"
+    "message": "Po zablokowaniu ekranu"
   },
   "onRestart": {
     "message": "Po restarcie przeglądarki"
@@ -417,13 +405,13 @@
     "message": "Zmień Hasło Główne"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Swoje hasło główne możesz zmienić na stronie sejfu bitwarden.com. Czy chcesz teraz przejść do tej strony?"
+    "message": "Swoje hasło główne możesz zmienić w sejfie internetowym bitwarden.com. Czy chcesz teraz przejść do tej strony?"
   },
   "twoStepLoginConfirmation": {
     "message": "Dwustopniowe logowanie sprawia, że Twoje konto jest bardziej bezpieczne poprzez wymuszenie potwierdzenia logowania z innego urządzenia, takiego jak klucz bezpieczeństwa, aplikacja uwierzytelniająca, SMS, telefon lub e-mail. Dwustopniowe logowanie można włączyć w internetowym sejfie bitwarden.com. Czy chcesz teraz przejść do tej strony?"
   },
   "editedFolder": {
-    "message": "Folder zaktualizowany"
+    "message": "Edyowany Folder"
   },
   "deleteFolderConfirmation": {
     "message": "Czy na pewno chcesz usunąć ten folder?"
@@ -487,11 +475,14 @@
     "message": "Przeszukaj kolekcje"
   },
   "searchType": {
-    "message": "Szukaj elementów wybranego rodzaju"
+    "message": "Typ wyszukiwania"
   },
   "noneFolder": {
-    "message": "Nieprzypisane",
+    "message": "Brak folderu",
     "description": "This is the folder for uncategorized items"
+  },
+  "gaDesc": {
+    "message": "Korzystamy z Analytics, aby lepiej dowiedzieć się, jak nasze rozszerzenie jest używane i nieustannie je ulepszać. Wszystkie zebrane dane są całkowicie anonimowe."
   },
   "disableAddLoginNotification": {
     "message": "Wyłącz powiadomienia automatycznego logowania"
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Opcje menu kontekstowego zapewniają szybki dostęp do generowania haseł oraz do danych logowania dla bieżącej karty."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Motyw"
@@ -594,7 +578,7 @@
     "message": "Element udostępniony"
   },
   "shareDesc": {
-    "message": "Wybierz organizację, której chcesz udostępnić ten element. Udostępnianie przenosi własność elementu do wybranej organizacji. Nie będziesz już bezpośrednim właścicielem tej pozycji, gdy zostanie on udostępniony."
+    "message": "Wybierz organizację, której chcesz udostępnić ten element. Udostępnianie przenosi właścicielstwo elementu do organizacji. Nie będziesz już bezpośrednim właścicielem tej pozycji, gdy zostanie on udostępniony."
   },
   "learnMore": {
     "message": "Dowiedz się więcej"
@@ -621,7 +605,7 @@
     "message": "Usunięty załącznik"
   },
   "newAttachment": {
-    "message": "Dodaj załącznik"
+    "message": "Dodaj nowy załącznik"
   },
   "noAttachments": {
     "message": "Brak załączników."
@@ -645,31 +629,31 @@
     "message": "Nie możesz używać tej funkcji, dopóki nie zaktualizujesz klucza szyfrowania."
   },
   "premiumMembership": {
-    "message": "Konto Premium"
+    "message": "Członkostwo premium"
   },
   "premiumManage": {
-    "message": "Zarządzaj kontem Premium"
+    "message": "Zarządzaj członkostwem"
   },
   "premiumManageAlert": {
-    "message": "Swoim kontem Premium możesz zarządzać na stronie sejfu bitwarden.com. Czy chcesz teraz otworzyć tą stronę?"
+    "message": "Swoim członkostwem możesz zarządzać w sejfie internetowym bitwarden.com. Czy chcesz teraz przejść do tej strony?"
   },
   "premiumRefresh": {
-    "message": "Przedłuż konto Premium"
+    "message": "Odśwież członkostwo"
   },
   "premiumNotCurrentMember": {
-    "message": "Nie masz aktualnie konta Premium."
+    "message": "Nie jesteś obecnie członkiem premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Zarejestruj konto Premium, aby otrzymać:"
+    "message": "Zarejestruj się jako członek premium i uzyskaj:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB miejsca na zaszyfrowane załączniki."
+    "message": "1 GB miejsca na zaszyfrowane pliki."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Dodatkowe opcje dwustopniowego logowania, takie jak YubiKey, FIDO U2F i Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Raporty bezpieczeństwa haseł, stanu konta i dotyczące wykradzionych haseł, aby Twoje dane były bezpieczne."
+    "message": "Higiena haseł, zdrowie konta i raporty dotyczące naruszenia danych, aby chronić Twój sejf."
   },
   "ppremiumSignUpTotp": {
     "message": "Generator kodów weryfikacyjnych TOTP (2FA) dla danych logowania w Twoim sejfie."
@@ -681,13 +665,13 @@
     "message": "Wszystkie przyszłe funkcje premium. Więcej już wkrótce!"
   },
   "premiumPurchase": {
-    "message": "Zamów konto Premium"
+    "message": "Kup Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Konto Premium możesz zakupić na stronie sejfu bitwarden.com. Czy chcesz teraz otworzyć tą stronę?"
+    "message": "Członkostwo premium możesz zakupić w sejfie internetowym bitwarden.com. Czy chcesz teraz przejść do tej strony?"
   },
   "premiumCurrentMember": {
-    "message": "Posiadasz konto Premium!"
+    "message": "Jesteś członkiem premium!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Dziękujemy za wspieranie Bitwarden."
@@ -702,7 +686,7 @@
     }
   },
   "refreshComplete": {
-    "message": "Odnowienie zakończone"
+    "message": "Odświeżanie ukończone"
   },
   "disableAutoTotpCopy": {
     "message": "Wyłącz automatyczne kopiowanie TOTP"
@@ -711,10 +695,10 @@
     "message": "Jeśli Twoje dane logowania mają dołączony do nich klucz uwierzytelniający, kod weryfikacyjny TOTP jest automatycznie kopiowany do schowka przy każdym automatycznym wypełnianiu danych logowania."
   },
   "premiumRequired": {
-    "message": "Wymagane konto Premium"
+    "message": "Wymagane konto premium"
   },
   "premiumRequiredDesc": {
-    "message": "Musisz posiadać konto Premium, aby skorzystać z tej funkcji."
+    "message": "Członkostwo premium jest wymagane do korzystania z tej funkcji."
   },
   "enterVerificationCodeApp": {
     "message": "Wprowadź 6-cyfrowy kod weryfikacyjny z Twojej aplikacji uwierzytelniającej."
@@ -756,7 +740,7 @@
     "message": "Dane logowania niedostępne"
   },
   "noTwoStepProviders": {
-    "message": "Dla tego konta aktywowano dwustopniowe logowanie, jednak ta przeglądarka nie wspiera żadnego ze skonfigurowanych mechanizmów dwustopniowej autoryzacji."
+    "message": "Dla tego konta aktywowano dwustopniowe logowanie, jednak ta przeglądarka nie wspiera żadnego ze skonfigurowanych dostawców dwustopniowej autoryzacji."
   },
   "noTwoStepProviders2": {
     "message": "Proszę użyć obsługiwanej przeglądarki (takiej jak Chrome) i\/lub dodać dodatkowych dostawców, którzy są lepiej wspierani przez przeglądarki internetowe (np. aplikacja uwierzytelniająca)."
@@ -765,7 +749,7 @@
     "message": "Opcje logowania dwustopniowego"
   },
   "recoveryCodeDesc": {
-    "message": "Utraciłeś dostęp do wszystkich swoich mechanizmów dwustopniowego logowania? Użyj kodów odzyskiwania, aby wyłączyć dwustopniowe logowanie na Twoim koncie."
+    "message": "Utraciłeś dostęp do wszystkich swoich dostawców dwustopniowego logowania? Użyj kodów odzyskiwania, aby wyłączyć dwustopniowego logowanie na Twoim koncie."
   },
   "recoveryCodeTitle": {
     "message": "Kod odzyskiwania"
@@ -870,7 +854,7 @@
     "message": "Tekst"
   },
   "cfTypeHidden": {
-    "message": "Pole maskowane"
+    "message": "Ukryty"
   },
   "cfTypeBoolean": {
     "message": "Wartość logiczna"
@@ -882,7 +866,7 @@
     "message": "Wyłącz ikony stron"
   },
   "disableFaviconDesc": {
-    "message": "Możesz wyświetlać rozpoznawalną ikonę serwisu obok danych logowania w Twoim sejfie."
+    "message": "Ikony stron internetowych wstawiają charakterystyczny obrazek obok danych logowania w Twoim sejfie."
   },
   "cardholderName": {
     "message": "Imię i nazwisko posiadacza karty"
@@ -975,7 +959,7 @@
     "message": "Firma"
   },
   "ssn": {
-    "message": "PESEL"
+    "message": "Numer ubezpieczenia społecznego"
   },
   "passportNumber": {
     "message": "Numer paszportu"
@@ -1083,14 +1067,14 @@
     "message": "To hasło nie znajduje się w żadnej znanej wykradzionej bazie danych. Powinno być bezpieczne w użyciu."
   },
   "baseDomain": {
-    "message": "Domena nadrzędna"
+    "message": "Domena podstawowa"
   },
   "host": {
-    "message": "Nazwa domeny",
+    "message": "Serwer",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Dokładnie"
+    "message": "Dokładny"
   },
   "startsWith": {
     "message": "Zaczyna się od"
@@ -1108,7 +1092,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Zmień opcje"
+    "message": "Przełącz opcje"
   },
   "organization": {
     "message": "Organizacja",
@@ -1121,7 +1105,7 @@
     "message": "Wszystkie elementy"
   },
   "noPasswordsInList": {
-    "message": "Brak haseł."
+    "message": "Brak haseł do wyświetlenia."
   },
   "remove": {
     "message": "Usuń"
@@ -1141,13 +1125,13 @@
     "message": "Czy na pewno chcesz użyć opcji \"Nigdy\"? Ustawienie opcji blokady na \"Nigdy\" przechowuje klucz szyfrowania Twojego sejfu na urządzeniu. Jeśli używasz tej opcji upewnij się, że odpowiednio zabezpieczasz swoje urządzenie."
   },
   "noOrganizationsList": {
-    "message": "Nie należysz do żadnej organizacji. Organizacje pozwalają na bezpieczne udostępnianie elementów innym użytkownikom."
+    "message": "Nie należysz do żadnych organizacji. Organizacje pozwalają na bezpieczne udostępnianie elementów innym użytkownikom."
   },
   "noCollectionsInList": {
     "message": "Brak kolekcji do wyświetlenia."
   },
   "ownership": {
-    "message": "Właściciel"
+    "message": "Własność"
   },
   "whoOwnsThisItem": {
     "message": "Kto jest właścicielem tego elementu?"

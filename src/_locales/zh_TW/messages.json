@@ -280,6 +280,9 @@
   "other": {
     "message": "其他"
   },
+  "disableGa": {
+    "message": "停用 Analytics"
+  },
   "rateExtension": {
     "message": "為本擴充套件評分"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "驗證主密碼"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "無效的主密碼"
@@ -493,6 +481,9 @@
     "message": "（未分類）",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "我们使用 analytics 協助分析擴充套件的使用情況，以便我們改善程式。所有資料均為匿名收集。"
+  },
   "disableAddLoginNotification": {
     "message": "停用新增登入資料提示"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "右鍵選單選項幫您快速使用密碼產生器，也可以登入目前分頁開啟的網站。"
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "主題"
@@ -879,7 +863,7 @@
     "message": "如果您點選彈出式視窗外的任意區域，將導致彈出式視窗關閉。您想在新視窗中開啟此彈出式視窗，以讓它不關閉嗎？"
   },
   "disableFavicon": {
-    "message": "停用網站圖示顯示功能"
+    "message": "停用網站圖示"
   },
   "disableFaviconDesc": {
     "message": "在您密碼庫的每個登入資料旁顯示一個可辨識圖示。"

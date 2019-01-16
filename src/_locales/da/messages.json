@@ -280,6 +280,9 @@
   "other": {
     "message": "Andre"
   },
+  "disableGa": {
+    "message": "Deaktivér Analytics"
+  },
   "rateExtension": {
     "message": "Bedøm udvidelsen"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Bekræft hovedadgangskode"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Ugyldig hovedadgangskode"
@@ -493,6 +481,9 @@
     "message": "Ingen mappe",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Vi bruger Analytics for bedre at lære hvordan udvidelsen benyttes, så vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
+  },
   "disableAddLoginNotification": {
     "message": "Deaktivér Tilføj login notifikation"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Kontekst-menu valgmuligheder giver hurtig adgang til adgangskode generering og login til hjemmesiden i din aktuelle fane."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"

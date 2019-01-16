@@ -280,6 +280,9 @@
   "other": {
     "message": "Annet"
   },
+  "disableGa": {
+    "message": "Deaktiver analyser"
+  },
   "rateExtension": {
     "message": "Gi utvidelsen en rangering"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Verifiser superpassordet"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Ugyldig superpassord"
@@ -493,6 +481,9 @@
     "message": "Ingen mappe",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Vi bruker analytikere for å bedre lære om hvordan utvidelsen blir brukt, sånn at vi kan gjøre den bedre. All datainnsamling er fullstendig anonymt."
+  },
   "disableAddLoginNotification": {
     "message": "Deaktiver «Legg til innlogging»-beskjedene"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Sammenhengsmeny-alternativer sørger for rask tilgang til passordgenerering og innlogginger for nettstedet i din nåværende fane."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Tema"

@@ -280,6 +280,9 @@
   "other": {
     "message": "Ostatné"
   },
+  "disableGa": {
+    "message": "Vypnúť analytiku"
+  },
   "rateExtension": {
     "message": "Ohodnotiť rozšírenie"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "Overenie hlavného hesla"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "Neplatné hlavné heslo"
@@ -493,6 +481,9 @@
     "message": "Žiadny priečinok",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "Používame analytiku, aby sme zistili, ako je rozšírenie používané, aby sme ho mohli vylepšiť. Všetky zhromaždené údaje sú kompletne anonymné."
+  },
   "disableAddLoginNotification": {
     "message": "Vypnúť notifikáciu Pridať prihlasovacie údaje"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Možnosti kontextového menu ponúkajú rýchly prístup k prihlasovacím údajom a generovaniu hesiel pre stránku vo vašej aktuálnej karte."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "Motív"

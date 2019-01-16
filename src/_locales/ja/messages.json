@@ -280,6 +280,9 @@
   "other": {
     "message": "その他"
   },
+  "disableGa": {
+    "message": "解析の無効化"
+  },
   "rateExtension": {
     "message": "拡張機能の評価"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "マスターパスワードの確認"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "マスターパスワードが間違っています"
@@ -493,6 +481,9 @@
     "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "拡張機能の使われ方を解析することでより使いやすくなるよう開発しています。収集されるデータはすべて匿名です。"
+  },
   "disableAddLoginNotification": {
     "message": "ログイン情報追加の通知を無効化"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "コンテキストメニューのオプションで、現在のタブのウェブサイトのログイン情報やパスワード生成に素早くアクセスできます。"
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "テーマ"

@@ -280,6 +280,9 @@
   "other": {
     "message": "기타"
   },
+  "disableGa": {
+    "message": "분석 사용 안 함"
+  },
   "rateExtension": {
     "message": "확장 프로그램 평가"
   },
@@ -291,21 +294,6 @@
   },
   "verifyMasterPassword": {
     "message": "마스터 비밀번호 확인"
-  },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
-  },
-  "unlock": {
-    "message": "Unlock"
-  },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
   },
   "invalidMasterPassword": {
     "message": "잘못된 마스터 비밀번호"
@@ -493,6 +481,9 @@
     "message": "폴더 없음",
     "description": "This is the folder for uncategorized items"
   },
+  "gaDesc": {
+    "message": "저희는 확장 프로그램이 어떻게 사용되고 있는지 확인하여 개선하기 위해 분석 자료를 사용합니다. 자료는 완전한 익명으로 수집됩니다."
+  },
   "disableAddLoginNotification": {
     "message": "로그인 추가 알림 사용 안 함"
   },
@@ -537,13 +528,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "오른쪽 클릭 메뉴 옵션을 사용하면 비밀번호 생성이나 현재 탭 웹 사이트의 로그인에 빠르게 접근할 수 있습니다."
-  },
-  "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
-    "description": "Default URI match detection for auto-fill."
-  },
-  "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
     "message": "테마"
