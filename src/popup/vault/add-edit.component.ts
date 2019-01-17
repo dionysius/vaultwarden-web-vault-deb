@@ -66,7 +66,9 @@ export class AddEditComponent extends BaseAddEditComponent {
                     this.cipher.login.uris[0].uri = params.uri;
                 }
             }
-            queryParamsSub.unsubscribe();
+            if (queryParamsSub != null) {
+                queryParamsSub.unsubscribe();
+            }
         });
 
         window.setTimeout(() => {

@@ -132,7 +132,9 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             if (!this.syncService.syncInProgress || restoredScopeState) {
                 window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             }
-            queryParamsSub.unsubscribe();
+            if (queryParamsSub != null) {
+                queryParamsSub.unsubscribe();
+            }
         });
     }
 

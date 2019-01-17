@@ -131,7 +131,9 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             }
             this.stateService.remove(ComponentId);
-            queryParamsSub.unsubscribe();
+            if (queryParamsSub != null) {
+                queryParamsSub.unsubscribe();
+            }
         });
 
         this.broadcasterService.subscribe(ComponentId, (message: any) => {

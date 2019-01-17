@@ -50,7 +50,9 @@ export class ViewComponent extends BaseViewComponent {
             }
 
             await this.load();
-            queryParamsSub.unsubscribe();
+            if (queryParamsSub != null) {
+                queryParamsSub.unsubscribe();
+            }
         });
         super.ngOnInit();
     }
