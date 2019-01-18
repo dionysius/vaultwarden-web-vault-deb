@@ -293,13 +293,13 @@
     "message": "Kinnita ülemparooliga"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Hoidla on lukus. Jätkamiseks sisesta ülemparool."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Lukusta lahti"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Sisse logitud kasutajaga $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "Parema kliki menüü abil saad kiiresti parooli genereerida ja konkreetse veebilehe kasutajakonto andmeid sisestada."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Vaikse URL-i sobivuse tuvastamine",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Vali vaikeviis, kuidas kirje ja URL-i sobivus tuvastatakse. Seda kasutatakse näiteks siis, kui lehele üritatakse automaatselt andmeid sisestada."
   },
   "theme": {
     "message": "Teema"

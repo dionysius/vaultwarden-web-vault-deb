@@ -293,13 +293,13 @@
     "message": "Verifica Password Principale"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "La tua cassaforte è bloccata. Verifica la tua password principale per continuare."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Sblocca"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Registrato come $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "il menu contestuale di bitwarden fornisce l'accesso rapido ai login per la tab corrente."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Rilevamento corrispondenza URI di default",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Scegli il modo predefinito in cui il rilevamento della corrispondenza URI viene gestito per gli accessi quando si eseguono azioni come il riempimento automatico."
   },
   "theme": {
     "message": "Tema"

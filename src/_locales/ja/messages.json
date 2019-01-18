@@ -293,13 +293,13 @@
     "message": "マスターパスワードの確認"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "保管庫がロックされています。開くにはマスターパスワードを入力してください。"
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "ロック解除"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "$EMAIL$ としてログインしました",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "コンテキストメニューのオプションで、現在のタブのウェブサイトのログイン情報やパスワード生成に素早くアクセスできます。"
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "デフォルトの URI 一致検出方法",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "自動入力などのアクションをする時に、デフォルトでどの方法で URI の一致を検出するか選択します。"
   },
   "theme": {
     "message": "テーマ"

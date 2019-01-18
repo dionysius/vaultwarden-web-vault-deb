@@ -293,13 +293,13 @@
     "message": "Potvrdite glavnu lozinku"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Vaš trezor je zaključan. Potvrdite glavnu lozinku da biste nastavili."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Otključaj"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Prijavljen kao $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "Opcije kontekstnog izbotnika omogućuju brzi pristup generiranju lozinke i prijavama za web stranicu na vašoj trenutačnoj kartici."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Zadano otkrivanje URL podudaranja",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Odaberite zadani način na koji će se otkrivanje URL-a za prijave rješavati, prilikom izvođenja radnji kao što je automatsko ispunjavanje."
   },
   "theme": {
     "message": "Tema"

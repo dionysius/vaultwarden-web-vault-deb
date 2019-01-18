@@ -32,7 +32,7 @@
     "message": "E-Mail Adresse"
   },
   "masterPass": {
-    "message": "Masterpasswort"
+    "message": "Master-Passwort"
   },
   "masterPassDesc": {
     "message": "Das Master-Passwort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass du das Passwort nicht vergisst, da es keine Möglichkeit gibt es zurückzusetzen."
@@ -41,16 +41,16 @@
     "message": "Ein Master-Passwort-Hinweis kann dir helfen, dich an das Passwort zu erinnern, solltest du es vergessen."
   },
   "reTypeMasterPass": {
-    "message": "Masterpasswort wiederholen"
+    "message": "Master-Passwort wiederholen"
   },
   "masterPassHint": {
-    "message": "Hinweis zum Masterpasswort (optional)"
+    "message": "Master-Passwort-Hinweis (optional)"
   },
   "tab": {
     "message": "Tab"
   },
   "myVault": {
-    "message": "Mein Datenspeicher"
+    "message": "Mein Tresor"
   },
   "tools": {
     "message": "Werkzeuge"
@@ -74,7 +74,7 @@
     "message": "Nutzernamen Kopieren"
   },
   "copyNumber": {
-    "message": "Telefonnummer kopieren"
+    "message": "Nummer kopieren"
   },
   "copySecurityCode": {
     "message": "Sicherheitscode kopieren"
@@ -101,7 +101,7 @@
     "message": "Neuer Eintrag"
   },
   "passwordHint": {
-    "message": "Hinweis zum Passwort"
+    "message": "Passwort-Hinweis"
   },
   "enterEmailToGetHint": {
     "message": "Gebe die E-Mail Adresse deines Kontos ein, um den Hinweis für dein Master-Passwort zu erhalten."
@@ -119,7 +119,7 @@
     "message": "Konto"
   },
   "changeMasterPassword": {
-    "message": "Masterpasswort ändern"
+    "message": "Master-Passwort ändern"
   },
   "fingerprintPhrase": {
     "message": "Prüfschlüssel",
@@ -163,19 +163,19 @@
     "message": "Es gibt keine Ordner zum Anzeigen."
   },
   "helpFeedback": {
-    "message": "Hilfe & Rückmeldung"
+    "message": "Hilfe & Feedback"
   },
   "sync": {
     "message": "Synchronisierung"
   },
   "syncVaultNow": {
-    "message": "Datenspeicher jetzt synchronisieren"
+    "message": "Tresor jetzt synchronisieren"
   },
   "lastSync": {
-    "message": "Zuletzt synchronisiert:"
+    "message": "Letzte Synchronisation:"
   },
   "passGen": {
-    "message": "Passwortgenerator"
+    "message": "Passwort-Generator"
   },
   "generator": {
     "message": "Generator",
@@ -185,7 +185,7 @@
     "message": "Generiert automatisch ein starkes und einzigartiges Passwort."
   },
   "bitWebVault": {
-    "message": "Bitwarden Web-Datenspeicher"
+    "message": "Bitwarden Web-Tresor"
   },
   "importItems": {
     "message": "Einträge importieren"
@@ -209,7 +209,7 @@
     "message": "Anzahl der Wörter"
   },
   "wordSeparator": {
-    "message": "Trennungszeichen"
+    "message": "Trennzeichen"
   },
   "minNumbers": {
     "message": "Mindestanzahl Zahlen"
@@ -233,7 +233,7 @@
     "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "itemInformation": {
-    "message": "Anmeldedaten Information"
+    "message": "Eintrags-Information"
   },
   "username": {
     "message": "Nutzername"
@@ -290,16 +290,16 @@
     "message": "Den Browser unterstützt das einfache Kopieren nicht. Bitte kopiere es manuell."
   },
   "verifyMasterPassword": {
-    "message": "Masterpasswort überprüfen"
+    "message": "Master-Passwort verifizieren"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Dein Tresor ist gesperrt. Überprüfe dein Master-Passwort um fortzufahren."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Entsperren"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Als $EMAIL$ angemeldet.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -338,7 +338,7 @@
     "message": "4 Stunde"
   },
   "onLocked": {
-    "message": "Bei Abmeldung"
+    "message": "Wenn System gesperrt"
   },
   "onRestart": {
     "message": "Bei Browser-Neustart"
@@ -414,7 +414,7 @@
     "message": "Ordner hinzugefügt"
   },
   "changeMasterPass": {
-    "message": "Master-Passwort Ändern"
+    "message": "Master-Passwort ändern"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Du kannst dein Master-Passwort im Bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
@@ -475,7 +475,7 @@
     "message": "Eintrag gelöscht"
   },
   "overwritePassword": {
-    "message": "Passwort Ersetzen"
+    "message": "Passwort ersetzen"
   },
   "overwritePasswordConfirmation": {
     "message": "Sind Sie sicher, dass Sie das aktuelle Passwort ersetzen möchten?"
@@ -497,7 +497,7 @@
     "message": "\"Login hinzufügen\" Benachrichtigung deaktivieren"
   },
   "addLoginNotificationDesc": {
-    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt Sie automatisch, ob Sie neue Zugangsdaten im Tresor speichern möchten, wenn Sie sich erstmals mit ihnen anmelden."
+    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt dich automatisch ob du neue Zugangsdaten im Tresor speichern möchtest wenn du dich zum ersten mal mit ihnen anmeldest."
   },
   "dontShowCardsCurrentTab": {
     "message": "Zeige keine Karten auf der Tab Seite"
@@ -524,7 +524,7 @@
     "message": "Passwort geändert Benachrichtigung deaktivieren"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "Die \"Passwort geändert Benachrichtigung\" fragt automatisch danach ein Passwort in deinem Vault zu aktualisieren, sobald erkannt wurde das du es auf einer Webseite geändert hast."
+    "message": "Die \"Passwort geändert Benachrichtigung\" fragt automatisch nach, ein Passwort in deinem Tressor zu aktualisieren, sobald erkannt wurde das du es auf einer Webseite geändert hast."
   },
   "notificationChangeDesc": {
     "message": "Möchtest du dieses Passwort in Bitwarden aktualisieren?"
@@ -539,11 +539,11 @@
     "message": "Kontextmenü-Optionen bieten schnellen Zugriff auf die Passwortgenerierung und Zugangsdaten für die Webseite in Ihrem aktuellen Tab."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Standard-URI-Match-Erkennung",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Wähle die Standardmethode, mit der die URI-Match-Erkennung für Anmeldungen bei Aktionen wie dem automatischen Ausfüllen behandelt wird."
   },
   "theme": {
     "message": "Design"
@@ -570,7 +570,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Dieser Export enthält ihre unverschlüsselten Daten im CSV-Format. Sie sollten ihn nicht speichern oder über unsichere Kanäle (z. B. E-Mail) versenden. Löschen sie ihn sofort nach seiner Verwendung."
+    "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -639,7 +639,7 @@
     "message": "Die maximale Dateigröße beträgt 100 MB."
   },
   "featureUnavailable": {
-    "message": "Eigenschaft nicht verfügbar"
+    "message": "Funktion nicht verfügbar"
   },
   "updateKey": {
     "message": "Du kannst diese Funktion nicht nutzen, solange du deinen Verschlüsselungsschlüssel nicht aktualisiert hast."
@@ -669,7 +669,7 @@
     "message": "Zusätzliche Zweifaktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Berichte über Kennworthygiene, Kontostatus und Datenschutzverletzungen, um Ihren Tresor sicher zu halten."
+    "message": "Berichte über Kennworthygiene, Kontostatus und Datenschutzverletzungen, um deinen Tresor sicher zu halten."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP Prüfcode (2FA) Generator für Anmeldungen in Ihrem Tresor."
@@ -711,7 +711,7 @@
     "message": "Ist ein Authentifizierungsschlüssel mit deinen Zugangsdaten verknüpft, wird der TOTP Bestätigungscode automatisch in die Zwischenablage kopiert, wenn du die Zugangsdaten einfügen lässt."
   },
   "premiumRequired": {
-    "message": "Erweiterte Mitgliedschaft wird benötigt"
+    "message": "Premium-Mitgliedschaft wird benötigt"
   },
   "premiumRequiredDesc": {
     "message": "Eine Premium-Mitgliedschaft ist für diese Funktion notwendig."
@@ -837,7 +837,7 @@
     "message": "Die URLs der Umgebung wurden gespeichert."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load."
+    "message": "Aktiviere automatisches ausfüllen beim laden der Seite"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
@@ -858,7 +858,7 @@
     "message": "Benutzerdefinierte Felder"
   },
   "copyValue": {
-    "message": "Inhalt kopieren"
+    "message": "Wert kopieren"
   },
   "value": {
     "message": "Inhalt"
@@ -882,7 +882,7 @@
     "message": "Icons der Website deaktivieren"
   },
   "disableFaviconDesc": {
-    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Eintrag in Ihrem Tresor."
+    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"
@@ -1165,7 +1165,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Schwaches Haupt-Passwort"
+    "message": "Schwaches Master-Passwort"
   },
   "weakMasterPasswordDesc": {
     "message": "Das Haupt-Passwort, das du gewählt hast ist schwach. Du solltest ein starkes Haupt-Passwort auswählen, um dein Bitwarden-Konto richtig zu schützen. Bist du sicher, dass du dieses Haupt-Passwort verwenden sollen?"

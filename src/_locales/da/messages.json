@@ -44,7 +44,7 @@
     "message": "Bekræft hovedadgangskode"
   },
   "masterPassHint": {
-    "message": "Hovedadgangskode tip (valgfri)"
+    "message": "Hovedadgangskodetip (valgfrit)"
   },
   "tab": {
     "message": "Fane"
@@ -62,7 +62,7 @@
     "message": "Aktuel fane"
   },
   "copyPassword": {
-    "message": "Kopier adgangskode"
+    "message": "Kopiér adgangskode"
   },
   "copyNote": {
     "message": "Kopiér note"
@@ -74,10 +74,10 @@
     "message": "Kopiér brugernavn"
   },
   "copyNumber": {
-    "message": "Kopier nummer"
+    "message": "Kopiér nummer"
   },
   "copySecurityCode": {
-    "message": "Kopier sikkerhedskode"
+    "message": "Kopiér sikkerhedskode"
   },
   "autoFill": {
     "message": "Auto-udfyld"
@@ -163,7 +163,7 @@
     "message": "Der er ingen mapper at vise."
   },
   "helpFeedback": {
-    "message": "Hjælp & Feedback"
+    "message": "Hjælp & feedback"
   },
   "sync": {
     "message": "Synkronisér"
@@ -188,7 +188,7 @@
     "message": "Bitwarden web-boks"
   },
   "importItems": {
-    "message": "Importer elementer"
+    "message": "Importér elementer"
   },
   "select": {
     "message": "Vælg"
@@ -212,10 +212,10 @@
     "message": "Ordseparator"
   },
   "minNumbers": {
-    "message": "Minimum tal"
+    "message": "Mindste antal cifre"
   },
   "minSpecial": {
-    "message": "Minimum specialtegn"
+    "message": "Mindste antal specialtegn"
   },
   "avoidAmbChar": {
     "message": "Undgå tvetydige tegn"
@@ -254,7 +254,7 @@
     "message": "Note"
   },
   "editItem": {
-    "message": "Rediger element"
+    "message": "Redigér element"
   },
   "folder": {
     "message": "Mappe"
@@ -293,13 +293,13 @@
     "message": "Bekræft hovedadgangskode"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Din boks er låst. Bekræft din hovedadgangskode for at fortsætte."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Lås op"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Logget ind som $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -414,7 +414,7 @@
     "message": "Tilføjede mappe"
   },
   "changeMasterPass": {
-    "message": "Ændre hovedadgangskode"
+    "message": "Skift hovedadgangskode"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Du kan ændre din hovedadgangskode i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
@@ -524,13 +524,13 @@
     "message": "Deaktivér besked om ændret adgangskode"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "\"Besked om ændret kodeord\" beder dig automatisk om at opdatere en adgangskode i din boks, når det opdager, at du har ændret den på en hjemmeside."
+    "message": "\"Besked om ændret adgangskode\" beder dig automatisk om at opdatere en adgangskode i din boks, når det opdager, at du har ændret den på en hjemmeside."
   },
   "notificationChangeDesc": {
     "message": "Vil du opdatere denne adgangskode i Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Ja, opdater nu"
+    "message": "Ja, opdatér nu"
   },
   "disableContextMenuItem": {
     "message": "Deaktivér Kontekst-menu valgmuligheder"
@@ -539,11 +539,11 @@
     "message": "Kontekst-menu valgmuligheder giver hurtig adgang til adgangskode generering og login til hjemmesiden i din aktuelle fane."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Standard URI matchmetode",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Vælg den standard måde, som URI matchmetode håndteres til logins, når du udfører handlinger som f.eks. Auto-udfyld."
   },
   "theme": {
     "message": "Tema"
@@ -654,7 +654,7 @@
     "message": "Du kan håndtere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "premiumRefresh": {
-    "message": "Opdater medlemskab"
+    "message": "Opdatér medlemskab"
   },
   "premiumNotCurrentMember": {
     "message": "Du er i øjeblikket ikke premium-medlem."

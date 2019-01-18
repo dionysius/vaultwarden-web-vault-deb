@@ -154,7 +154,7 @@
     "message": "Upravit složku"
   },
   "deleteFolder": {
-    "message": "Odstranit složku"
+    "message": "Smazat složku"
   },
   "folders": {
     "message": "Složky"
@@ -293,13 +293,13 @@
     "message": "Ověření hlavního hesla"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat hlavní heslo."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Odemknout"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Přihlášen jako $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -338,7 +338,7 @@
     "message": "Po 4 hodinách"
   },
   "onLocked": {
-    "message": "Při uzamčení"
+    "message": "Při uzamknutí systému"
   },
   "onRestart": {
     "message": "Při restartu prohlížeče"
@@ -494,10 +494,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Vypnout notifikaci Přidat přihlašovací údaje"
+    "message": "Zakázat oznámení Přidat přihlašovací údaje"
   },
   "addLoginNotificationDesc": {
-    "message": "Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
+    "message": "Oznámení „Přidat přihlašovací údaje“ automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi přihlašujete poprvé."
   },
   "dontShowCardsCurrentTab": {
     "message": "Nezobrazovat karty na stránce Karta"
@@ -539,7 +539,7 @@
     "message": "Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Výchozí zjišťování shody URI",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -560,7 +560,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Exportovat přihlašovací údaje"
+    "message": "Exportovat trezor"
   },
   "fileFormat": {
     "message": "Formát souboru"
@@ -882,7 +882,7 @@
     "message": "Zakázat ikonky webových stránek"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Ikonky webových stránek zobrazí snadno rozeznatelný obrázek vedle každé položky ve vašem trezoru."
   },
   "cardholderName": {
     "message": "Jméno držitele karty"
@@ -981,7 +981,7 @@
     "message": "Číslo cestovního pasu"
   },
   "licenseNumber": {
-    "message": "Licenční číslo"
+    "message": "Číslo dokladu totožnosti"
   },
   "email": {
     "message": "E-mail"
@@ -1059,7 +1059,7 @@
     "message": "Přihlašovací údaje"
   },
   "secureNotes": {
-    "message": "Zabezpečené poznámky"
+    "message": "Poznámky"
   },
   "clear": {
     "message": "Vymazat"

@@ -293,13 +293,13 @@
     "message": "Sprawdź Hasło Główne"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Twój sejf jest zablokowany. Wprowadź swoje hasło główne, aby kontynuować."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Odblokuj"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Zalogowany jako $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "Opcje menu kontekstowego zapewniają szybki dostęp do generowania haseł oraz do danych logowania dla bieżącej karty."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Domyślna metoda dopasowania adresu",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Wybierz domyślny sposób dopasowania adresów dla akcji takich, jak automatyczne wypełnianie."
   },
   "theme": {
     "message": "Motyw"

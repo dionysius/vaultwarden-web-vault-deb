@@ -293,13 +293,13 @@
     "message": "Overenie hlavného hesla"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Váš trezor je uzamknutý. Overte sa hlavným heslom ak chcete pokračovať."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Odomknúť"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Prihlásený ako $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "Možnosti kontextového menu ponúkajú rýchly prístup k prihlasovacím údajom a generovaniu hesiel pre stránku vo vašej aktuálnej karte."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Predvolené mapovanie",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Vyberte si predvolený spôsob mapovania, ktorý bude použitý pre prihlasovacie údaje pri využití funkcí ako je napríklad automatické vypĺňanie hesiel."
   },
   "theme": {
     "message": "Motív"

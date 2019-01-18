@@ -293,13 +293,13 @@
     "message": "验证主密码"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "您的密码库已锁定，请先验证您的主密码。"
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "解锁"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "已登录为 $EMAIL$。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "上下文菜单选项可以让您快速访问密码生成器，也可以登陆当前标签的网站。"
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "默认的 URI 匹配检测方式",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "选择在处理登录项的自动填写等操作时 URI 匹配检测的方式。"
   },
   "theme": {
     "message": "主题"

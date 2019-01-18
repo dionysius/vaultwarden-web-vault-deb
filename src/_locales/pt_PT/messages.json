@@ -17,7 +17,7 @@
     "message": "Criar conta"
   },
   "login": {
-    "message": "Iniciar Sessão"
+    "message": "Iniciar sessão"
   },
   "cancel": {
     "message": "Cancelar"
@@ -29,10 +29,10 @@
     "message": "Submeter"
   },
   "emailAddress": {
-    "message": "Endereço de Email"
+    "message": "Endereço de email"
   },
   "masterPass": {
-    "message": "Palavra-passe Mestra"
+    "message": "Palavra-passe mestra"
   },
   "masterPassDesc": {
     "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não existe maneira de recuperar a palavra-passe no caso de a esquecer."
@@ -41,16 +41,16 @@
     "message": "Uma dica da palavra-passe mestra pode ajudar a lembrar-se da sua palavra-passe se a esquecer."
   },
   "reTypeMasterPass": {
-    "message": "Re-digite a palavra-passe mestra"
+    "message": "Reescreva a palavra-passe mestra"
   },
   "masterPassHint": {
-    "message": "Dica da Palavra-passe Mestra (opcional)"
+    "message": "Dica da palavra-passe mestra (opcional)"
   },
   "tab": {
     "message": "Separador"
   },
   "myVault": {
-    "message": "Meu Cofre"
+    "message": "Meu cofre"
   },
   "tools": {
     "message": "Ferramentas"
@@ -59,10 +59,10 @@
     "message": "Definições"
   },
   "currentTab": {
-    "message": "Separador Atual"
+    "message": "Separador atual"
   },
   "copyPassword": {
-    "message": "Copiar Palavra-passe"
+    "message": "Copiar palavra-passe"
   },
   "copyNote": {
     "message": "Copiar nota"
@@ -71,10 +71,10 @@
     "message": "Copiar URI"
   },
   "copyUsername": {
-    "message": "Copiar Nome de Utilizador"
+    "message": "Copiar nome de utilizador"
   },
   "copyNumber": {
-    "message": "Copiar Número"
+    "message": "Copiar número"
   },
   "copySecurityCode": {
     "message": "Copiar código de segurança"
@@ -83,7 +83,7 @@
     "message": "Auto-preencher"
   },
   "generatePasswordCopied": {
-    "message": "Gerar Palavra-passe (copiada)"
+    "message": "Gerar palavra-passe (copiada)"
   },
   "noMatchingLogins": {
     "message": "Sem credencias correspondidas."
@@ -95,10 +95,10 @@
     "message": "Não existem credenciais disponíveis para auto-preencher para o separador de navegador atual."
   },
   "addLogin": {
-    "message": "Adicionar um Login"
+    "message": "Adicionar uma credencial"
   },
   "addItem": {
-    "message": "Adicionar Item"
+    "message": "Adicionar item"
   },
   "passwordHint": {
     "message": "Dica da palavra-passe"
@@ -113,13 +113,13 @@
     "message": "Continuar"
   },
   "verificationCode": {
-    "message": "Código de Verificação"
+    "message": "Código de verificação"
   },
   "account": {
     "message": "Conta"
   },
   "changeMasterPassword": {
-    "message": "Alterar Palavra-passe Mestra"
+    "message": "Alterar palavra-passe mestra"
   },
   "fingerprintPhrase": {
     "message": "Frase de impressão digital",
@@ -130,10 +130,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Início de Sessão de Dois Passos"
+    "message": "Início de sessão de dois passos"
   },
   "logOut": {
-    "message": "Terminar Sessão"
+    "message": "Terminar sessão"
   },
   "about": {
     "message": "Acerca"
@@ -145,13 +145,13 @@
     "message": "Guardar"
   },
   "addFolder": {
-    "message": "Adicionar Pasta"
+    "message": "Adicionar pasta"
   },
   "name": {
     "message": "Nome"
   },
   "editFolder": {
-    "message": "Editar Pasta"
+    "message": "Editar pasta"
   },
   "deleteFolder": {
     "message": "Eliminar pasta"
@@ -215,7 +215,7 @@
     "message": "Números mínimos"
   },
   "minSpecial": {
-    "message": "Especiais minímos"
+    "message": "Especiais mínimos"
   },
   "avoidAmbChar": {
     "message": "Evitar caracteres ambíguos"
@@ -260,7 +260,7 @@
     "message": "Pasta"
   },
   "deleteItem": {
-    "message": "Apagar item"
+    "message": "Eliminar item"
   },
   "viewItem": {
     "message": "Ver item"
@@ -341,7 +341,7 @@
     "message": "Quando o sistema está bloqueado"
   },
   "onRestart": {
-    "message": "Ao reiniciar o sistema"
+    "message": "Quando reiniciar o navegador"
   },
   "never": {
     "message": "Nunca"
@@ -579,7 +579,7 @@
     "message": "Partilhado"
   },
   "shareVault": {
-    "message": "Partilhe o seu cofre"
+    "message": "Partilhar o seu cofre"
   },
   "shareVaultConfirmation": {
     "message": "O Bitwarden permite-lhe partilhar o seu cofre com outros ao utilizar uma conta de organização. Gostaria de visitar o website bitwarden.com para saber mais?"

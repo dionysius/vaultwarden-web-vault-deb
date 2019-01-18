@@ -68,7 +68,7 @@
     "message": "Copiar Nota"
   },
   "copyUri": {
-    "message": "Copiar URL"
+    "message": "Copiar URI"
   },
   "copyUsername": {
     "message": "Copiar Nome de Usuário"
@@ -95,7 +95,7 @@
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
   },
   "addLogin": {
-    "message": "Adicionar um Login"
+    "message": "Adicionar uma Credencial"
   },
   "addItem": {
     "message": "Adicionar Item"
@@ -212,10 +212,10 @@
     "message": "Separador de Palavra"
   },
   "minNumbers": {
-    "message": "Números Mínimos"
+    "message": "Mínimo de Números"
   },
   "minSpecial": {
-    "message": "Especiais Mínimos"
+    "message": "Mínimo Especial"
   },
   "avoidAmbChar": {
     "message": "Evitar Caracteres Ambíguos"
@@ -293,13 +293,13 @@
     "message": "Verificar Senha Mestra"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "O seu cofre está bloqueado. Verifique a sua senha mestra para continuar."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Desbloquear"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Sessão iniciada como $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -338,7 +338,7 @@
     "message": "4 horas"
   },
   "onLocked": {
-    "message": "No bloqueio"
+    "message": "Quando o Sistema for Bloqueado"
   },
   "onRestart": {
     "message": "Ao Reiniciar"
@@ -521,7 +521,7 @@
     "message": "Nunca para este site"
   },
   "disableChangedPasswordNotification": {
-    "message": "Desativar a notificação de alteração de senha"
+    "message": "Desativar Notificação de Alteração da Senha"
   },
   "disableChangedPasswordNotificationDesc": {
     "message": "A \"Notificação de Alteração da Senha\" solicita automaticamente que você atualize a senha de uma credencial no seu cofre quando detecta que você a alterou em um site."
@@ -530,7 +530,7 @@
     "message": "Você quer atualizar esta senha no Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Sim, atualizar agora"
+    "message": "Sim, Atualizar Agora"
   },
   "disableContextMenuItem": {
     "message": "Desativar Opções do Menu de Contexto"
@@ -539,11 +539,11 @@
     "message": "As opções do menu de contexto providenciam acesso rápido à geração de senha e credenciais para o site na sua aba atual."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Detecção de Correspondência de URI Padrão",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Escolha a maneira padrão pela qual a detecção de correspondência de URI é manipulada para logins ao executar ações como preenchimento automático."
   },
   "theme": {
     "message": "Tema"
@@ -570,7 +570,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Esta exportação contém os dados do seu cofre em um formato não criptografado. Você não deve armazenar ou enviar o arquivo exportado por canais inseguros (como e-mail). Exclua imediatamente após terminar de usá-lo."
+    "message": "Esta exportação contém os dados do seu cofre em um formato não criptografado. Você não deve armazenar ou enviar o arquivo exportado por canais inseguros (como e-mail). Exclua o arquivo imediatamente após terminar de usá-lo."
   },
   "exportMasterPassword": {
     "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
@@ -756,7 +756,7 @@
     "message": "Sessão Indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem a verificação de duas etapas ativado, no entanto, nenhum dos provedores de verificação de duas etapas configurados são suportados por este navegador web."
+    "message": "Esta conta tem a verificação em duas etapas ativado, no entanto, nenhum dos provedores de verificação em duas etapas configurados são suportados por este navegador web."
   },
   "noTwoStepProviders2": {
     "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e\/ou inclua provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
@@ -966,7 +966,7 @@
     "message": "Nome do Meio"
   },
   "lastName": {
-    "message": "Último Nome"
+    "message": "Sobrenome"
   },
   "identityName": {
     "message": "Nome de Identidade"
@@ -975,7 +975,7 @@
     "message": "Empresa"
   },
   "ssn": {
-    "message": "Número de Segurança Social"
+    "message": "Cadastro de Pessoas Físicas (CPF)"
   },
   "passportNumber": {
     "message": "Número do Passaporte"
@@ -1108,7 +1108,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Opções de Alternância"
+    "message": "Alternar Opções"
   },
   "organization": {
     "message": "Organização",

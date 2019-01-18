@@ -7,11 +7,11 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "Безопасный и бесплатный менеджер паролей для всех ваших устройств.",
+    "message": "Защищенный и бесплатный менеджер паролей для всех ваших устройств.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Войдите или создайте новый аккаунт для доступа к вашему безопасному хранилищу."
+    "message": "Войдите или создайте новый аккаунт для доступа к вашему защищенному хранилищу."
   },
   "createAccount": {
     "message": "Создать аккаунт"
@@ -44,7 +44,7 @@
     "message": "Введите мастер-пароль повторно"
   },
   "masterPassHint": {
-    "message": "Подсказка к мастер-паролю (опционально)"
+    "message": "Подсказка к мастер-паролю (необяз.)"
   },
   "tab": {
     "message": "Вкладка"
@@ -163,7 +163,7 @@
     "message": "Нет папок для отображения."
   },
   "helpFeedback": {
-    "message": "Помощь и отзывы"
+    "message": "Помощь и обратная связь"
   },
   "sync": {
     "message": "Синхронизация"
@@ -212,7 +212,7 @@
     "message": "Разделитель слов"
   },
   "minNumbers": {
-    "message": "Минимальное количество цифр"
+    "message": "Мин. кол-во цифр"
   },
   "minSpecial": {
     "message": "Мин. кол-во символов"
@@ -254,13 +254,13 @@
     "message": "Заметка"
   },
   "editItem": {
-    "message": "Изменить элемент"
+    "message": "Изменение элемента"
   },
   "folder": {
     "message": "Папка"
   },
   "deleteItem": {
-    "message": "Удаление элемента"
+    "message": "Удалить элемент"
   },
   "viewItem": {
     "message": "Просмотр элемента"
@@ -293,13 +293,13 @@
     "message": "Проверка мастер-пароля"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Хранилище заблокировано. Введите мастер-пароль для продолжения."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Разблокировать"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Вы вошли как $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -338,7 +338,7 @@
     "message": "Через 4 часа"
   },
   "onLocked": {
-    "message": "Вместе с компьютером"
+    "message": "При блокировке"
   },
   "onRestart": {
     "message": "При перезапуске"
@@ -432,7 +432,7 @@
     "message": "Папка удалена"
   },
   "gettingStartedTutorial": {
-    "message": "Гид по bitwarden"
+    "message": "Учебник по началу работы"
   },
   "gettingStartedTutorialVideo": {
     "message": "Посмотрите небольшой обучающий материал, чтобы узнать, как получить максимальную отдачу от расширения браузера."
@@ -524,13 +524,13 @@
     "message": "Отключить уведомление об изменении пароля"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "\"Уведомление об изменении пароля\" автоматически предложит вам обновить пароль входа в хранилище, когда обнаружит, что вы изменили его на веб-сайте."
+    "message": "Уведомление об изменении пароля автоматически предложит вам обновить пароль входа в хранилище, когда обнаружит, что вы изменили его на веб-сайте."
   },
   "notificationChangeDesc": {
     "message": "Вы хотите обновить этот пароль в Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Да, обновить сейчас"
+    "message": "Да, обновить"
   },
   "disableContextMenuItem": {
     "message": "Отключить опции контекстного меню"
@@ -539,11 +539,11 @@
     "message": "Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта на текущей вкладке."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Обнаружение совпадения URI по умолчанию",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Выберите способ по умолчанию, используемый при определении соответствия URI для логинов при выполнении таких действий, как автоматическое заполнение."
   },
   "theme": {
     "message": "Тема"
@@ -560,7 +560,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Экспортировать хранилище"
+    "message": "Экспорт хранилища"
   },
   "fileFormat": {
     "message": "Формат файла"
@@ -600,7 +600,7 @@
     "message": "Подробнее"
   },
   "authenticatorKeyTotp": {
-    "message": "Ключ проверки подлинности (TOTP)"
+    "message": "Ключ аутентификатора (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Код подтверждения (TOTP)"
@@ -645,16 +645,16 @@
     "message": "Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования."
   },
   "premiumMembership": {
-    "message": "Премиум-статус"
+    "message": "Премиум"
   },
   "premiumManage": {
-    "message": "Управление статусом"
+    "message": "Управление Премиум"
   },
   "premiumManageAlert": {
     "message": "Вы можете управлять Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumRefresh": {
-    "message": "Обновить статус"
+    "message": "Обновить Премиум"
   },
   "premiumNotCurrentMember": {
     "message": "На текущий момент у вас отсутствует Премиум."
@@ -705,13 +705,13 @@
     "message": "Обновление завершено"
   },
   "disableAutoTotpCopy": {
-    "message": "Отключить копирование TOTP"
+    "message": "Отключить автоматическое копирование TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Если к вашему логину прикреплен ключ аутентификации, то код подтверждения TOTP будет скопирован при автозаполнении логина."
   },
   "premiumRequired": {
-    "message": "Необходим премиум-статус"
+    "message": "Необходим Премиум"
   },
   "premiumRequiredDesc": {
     "message": "Для использования этой функции требуется Премиум."
@@ -969,7 +969,7 @@
     "message": "Фамилия"
   },
   "identityName": {
-    "message": "Имя по паспорту"
+    "message": "Имя"
   },
   "company": {
     "message": "Компания"
@@ -1005,7 +1005,7 @@
     "message": "Город \/ Поселок"
   },
   "stateProvince": {
-    "message": "Страна \/ Область"
+    "message": "Регион \/ Область"
   },
   "zipPostalCode": {
     "message": "Почтовый индекс"
@@ -1108,7 +1108,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Настройки перебора"
+    "message": "Переключить настройки"
   },
   "organization": {
     "message": "Организация",

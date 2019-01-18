@@ -17,7 +17,7 @@
     "message": "Créer un compte"
   },
   "login": {
-    "message": "S'identifier"
+    "message": "Se connecter"
   },
   "cancel": {
     "message": "Annuler"
@@ -41,7 +41,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Re-tapez votre mot de passe maître"
+    "message": "Saisir à nouveau le mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -50,7 +50,7 @@
     "message": "Onglet"
   },
   "myVault": {
-    "message": "Mon coffre"
+    "message": "Mon Coffre"
   },
   "tools": {
     "message": "Outils"
@@ -543,7 +543,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choisissez le mode de traitement par défaut de la détection de correspondance URI, pour les connexions lors de l'exécution d'actions telles que le remplissage automatique."
+    "message": "Choisissez la manière par défaut dont la détection de correspondance URI est gérée pour les connexions lors de l'exécution d'actions telles que le remplissage automatique."
   },
   "theme": {
     "message": "Thème"
@@ -981,7 +981,7 @@
     "message": "Numéro de passeport"
   },
   "licenseNumber": {
-    "message": "Numéro de permis"
+    "message": "Numéro de permis de Conduire"
   },
   "email": {
     "message": "E-mail"
