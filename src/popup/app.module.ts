@@ -69,6 +69,7 @@ import {
     registerLocaleData,
 } from '@angular/common';
 import localeBg from '@angular/common/locales/bg';
+import localeCa from '@angular/common/locales/ca';
 import localeCs from '@angular/common/locales/cs';
 import localeDa from '@angular/common/locales/da';
 import localeDe from '@angular/common/locales/de';
@@ -101,6 +102,7 @@ import localeZhCn from '@angular/common/locales/zh-Hans';
 import localeZhTw from '@angular/common/locales/zh-Hant';
 
 registerLocaleData(localeBg, 'bg');
+registerLocaleData(localeCa, 'ca');
 registerLocaleData(localeCs, 'cs');
 registerLocaleData(localeDa, 'da');
 registerLocaleData(localeDe, 'de');
