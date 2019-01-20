@@ -870,6 +870,24 @@ export default class AutofillService implements AutofillServiceInterface {
 
     private findMatchingFieldIndex(field: AutofillField, names: string[]): number {
         for (let i = 0; i < names.length; i++) {
+            if (names[i].indexOf('=') > -1) {
+                if (this.fieldPropertyIsPrefixMatch(field, 'htmlID', names[i], 'id')) {
+                    return i;
+                }
+                if (this.fieldPropertyIsPrefixMatch(field, 'htmlName', names[i], 'name')) {
+                    return i;
+                }
+                if (this.fieldPropertyIsPrefixMatch(field, 'label-tag', names[i], 'label')) {
+                    return i;
+                }
+                if (this.fieldPropertyIsPrefixMatch(field, 'label-aria', names[i], 'label')) {
+                    return i;
+                }
+                if (this.fieldPropertyIsPrefixMatch(field, 'placeholder', names[i], 'placeholder')) {
+                    return i;
+                }
+            }
+
             if (this.fieldPropertyIsMatch(field, 'htmlID', names[i])) {
                 return i;
             }
@@ -888,6 +906,16 @@ export default class AutofillService implements AutofillServiceInterface {
         }
 
         return -1;
+    }
+
+    private fieldPropertyIsPrefixMatch(field: any, property: string, name: string, prefix: string,
+        separator = '='): boolean {
+        if (name.indexOf(prefix + separator) === 0) {
+            const sepIndex = name.indexOf(separator);
+            const val = name.substring(sepIndex + 1);
+            return val != null && this.fieldPropertyIsMatch(field, property, val);
+        }
+        return false;
     }
 
     private fieldPropertyIsMatch(field: any, property: string, name: string): boolean {
