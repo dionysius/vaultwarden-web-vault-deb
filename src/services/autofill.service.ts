@@ -509,7 +509,23 @@ export default class AutofillService implements AutofillServiceInterface {
 
         if (fillFields.expYear && this.hasValue(card.expYear)) {
             let expYear: string = card.expYear;
-            if (this.fieldAttrsContain(fillFields.expYear, 'yyyy') || fillFields.expYear.maxLength === 4) {
+            if (fillFields.expYear.selectInfo && fillFields.expYear.selectInfo.options) {
+                for (let i = 0; i < fillFields.expYear.selectInfo.options.length; i++) {
+                    const o: [string, string] = fillFields.expYear.selectInfo.options[i];
+                    if (o[0] === card.expYear) {
+                        expYear = o[1];
+                        break;
+                    }
+                    const colonIndex = o[1].indexOf(':');
+                    if (colonIndex > -1 && o[1].length > colonIndex + 1) {
+                        const val = o[1].substring(colonIndex + 2);
+                        if (val != null && val.trim() !== '' && val === card.expYear) {
+                            expYear = o[1];
+                            break;
+                        }
+                    }
+                }
+            } else if (this.fieldAttrsContain(fillFields.expYear, 'yyyy') || fillFields.expYear.maxLength === 4) {
                 if (expYear.length === 2) {
                     expYear = '20' + expYear;
                 }
