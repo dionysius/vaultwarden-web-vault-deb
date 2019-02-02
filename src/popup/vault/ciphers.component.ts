@@ -92,7 +92,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                     default:
                         break;
                 }
-                await super.load((c) => c.type === this.type);
+                await this.load((c) => c.type === this.type);
             } else if (params.folderId) {
                 this.folderId = params.folderId === 'none' ? null : params.folderId;
                 this.searchPlaceholder = this.i18nService.t('searchFolder');
@@ -106,7 +106,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 } else {
                     this.groupingTitle = this.i18nService.t('noneFolder');
                 }
-                await super.load((c) => c.folderId === this.folderId);
+                await this.load((c) => c.folderId === this.folderId);
             } else if (params.collectionId) {
                 this.collectionId = params.collectionId;
                 this.searchPlaceholder = this.i18nService.t('searchCollection');
@@ -116,10 +116,10 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                     this.nestedCollections = collectionNode.children != null && collectionNode.children.length > 0 ?
                         collectionNode.children : null;
                 }
-                await super.load((c) => c.collectionIds != null && c.collectionIds.indexOf(this.collectionId) > -1);
+                await this.load((c) => c.collectionIds != null && c.collectionIds.indexOf(this.collectionId) > -1);
             } else {
                 this.groupingTitle = this.i18nService.t('allItems');
-                await super.load();
+                await this.load();
             }
 
             this.loadMore();
