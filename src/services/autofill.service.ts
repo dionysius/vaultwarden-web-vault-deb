@@ -463,7 +463,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 } else if (!fillFields.code && this.isFieldMatch(f[attr],
                     ['cvv', 'cvc', 'cvv2', 'cc-csc', 'cc-cvv', 'card-csc', 'card-cvv', 'cvd', 'cid', 'cvc2',
                         'cnv', 'cvn2', 'cc-code', 'card-code', 'code-securite', 'security-code', 'crypto',
-                        'card-verif', 'verification-code'])) {
+                        'card-verif', 'verification-code', 'csc', 'ccv'])) {
                     fillFields.code = f;
                     break;
                 } else if (!fillFields.brand && this.isFieldMatch(f[attr],
@@ -512,7 +512,11 @@ export default class AutofillService implements AutofillServiceInterface {
             if (fillFields.expYear.selectInfo && fillFields.expYear.selectInfo.options) {
                 for (let i = 0; i < fillFields.expYear.selectInfo.options.length; i++) {
                     const o: [string, string] = fillFields.expYear.selectInfo.options[i];
-                    if (o[0] === card.expYear) {
+                    if (o[0] === card.expYear || o[1] === card.expYear) {
+                        expYear = o[1];
+                        break;
+                    }
+                    if (o[1].length === 2 && card.expYear.length === 4 && o[1] === card.expYear.substring(2)) {
                         expYear = o[1];
                         break;
                     }
