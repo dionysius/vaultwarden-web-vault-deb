@@ -122,7 +122,10 @@ export class SettingsComponent implements OnInit {
                 buttons: [this.i18nService.t('cancel'), this.i18nService.t('submit')],
             });
             if (pin != null && pin.trim() !== '') {
-                const pinKey = await this.cryptoService.makePinKey(pin, await this.userService.getEmail());
+                const kdf = await this.userService.getKdf();
+                const kdfIterations = await this.userService.getKdfIterations();
+                const email = await this.userService.getEmail();
+                const pinKey = await this.cryptoService.makePinKey(pin, email, kdf, kdfIterations);
                 const key = await this.cryptoService.getKey();
                 const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
                 await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
