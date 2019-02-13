@@ -280,6 +280,7 @@ export default class MainBackground {
 
         await this.setIcon();
         await this.refreshBadgeAndMenu();
+        await this.reseedStorage();
         this.notificationsService.updateConnection(false);
     }
 
@@ -336,6 +337,36 @@ export default class MainBackground {
 
         if (activeToolBars && activeToolBars.length) {
             activeToolBars[0].showPopover();
+        }
+    }
+
+    async reseedStorage() {
+        if (!this.platformUtilsService.isChrome() && !this.platformUtilsService.isVivaldi() &&
+            !this.platformUtilsService.isOpera()) {
+            return;
+        }
+
+        const currentLockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
+        if (currentLockOption == null) {
+            return;
+        }
+
+        const getStorage = (): Promise<any> => new Promise((resolve) => {
+            chrome.storage.local.get(null, (o: any) => resolve(o));
+        });
+
+        const clearStorage = (): Promise<void> => new Promise((resolve) => {
+            chrome.storage.local.clear(() => resolve());
+        });
+
+        const storage = await getStorage();
+        await clearStorage();
+
+        for (const key in storage) {
+            if (!storage.hasOwnProperty(key)) {
+                continue;
+            }
+            await this.storageService.save(key, storage[key]);
         }
     }
 

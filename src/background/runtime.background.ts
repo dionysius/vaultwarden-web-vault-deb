@@ -140,7 +140,7 @@ export default class RuntimeBackground {
                 await this.main.refreshBadgeAndMenu();
                 break;
             case 'bgReseedStorage':
-                await this.reseedStorage();
+                await this.main.reseedStorage();
                 break;
             case 'collectPageDetailsResponse':
                 switch (msg.sender) {
@@ -388,36 +388,6 @@ export default class RuntimeBackground {
                 this.onInstalledReason = null;
             }
         }, 100);
-    }
-
-    private async reseedStorage() {
-        if (!this.platformUtilsService.isChrome() && !this.platformUtilsService.isVivaldi() &&
-            !this.platformUtilsService.isOpera()) {
-            return;
-        }
-
-        const currentLockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
-        if (currentLockOption == null) {
-            return;
-        }
-
-        const getStorage = (): Promise<any> => new Promise((resolve) => {
-            chrome.storage.local.get(null, (o: any) => resolve(o));
-        });
-
-        const clearStorage = (): Promise<void> => new Promise((resolve) => {
-            chrome.storage.local.clear(() => resolve());
-        });
-
-        const storage = await getStorage();
-        await clearStorage();
-
-        for (const key in storage) {
-            if (!storage.hasOwnProperty(key)) {
-                continue;
-            }
-            await this.storageService.save(key, storage[key]);
-        }
     }
 
     private async setDefaultSettings() {
