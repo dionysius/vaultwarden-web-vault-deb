@@ -47,6 +47,7 @@ export class SettingsComponent implements OnInit {
     @ViewChild('lockOptionsSelect', { read: ElementRef }) lockOptionsSelectRef: ElementRef;
     lockOptions: any[];
     lockOption: number = null;
+    pin: boolean = null;
     previousLockOption: number = null;
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
@@ -87,6 +88,8 @@ export class SettingsComponent implements OnInit {
             this.lockOption = option;
         }
         this.previousLockOption = this.lockOption;
+
+        this.pin = await this.lockService.isPinLockSet();
     }
 
     async saveLockOption(newValue: number) {
@@ -108,6 +111,27 @@ export class SettingsComponent implements OnInit {
         await this.lockService.setLockOption(this.lockOption != null ? this.lockOption : null);
         if (this.previousLockOption == null) {
             this.messagingService.send('bgReseedStorage');
+        }
+    }
+
+    async updatePin() {
+        if (this.pin) {
+            const pin = await swal({
+                text: this.i18nService.t('setYourPinCode'),
+                content: { element: 'input' },
+                buttons: [this.i18nService.t('cancel'), this.i18nService.t('submit')],
+            });
+            if (pin != null && pin.trim() !== '') {
+                const pinKey = await this.cryptoService.makePinKey(pin, await this.userService.getEmail());
+                const key = await this.cryptoService.getKey();
+                const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
+                await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
+            } else {
+                this.pin = false;
+            }
+        }
+        if (!this.pin) {
+            await this.storageService.remove(ConstantsService.pinProtectedKey);
         }
     }
 

@@ -31,6 +31,10 @@
                     <option *ngFor="let o of lockOptions" [ngValue]="o.value">{{o.name}}</option>
                 </select>
             </div>
+            <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                <label for="pin">{{'unlockWithPin' | i18n}}</label>
+                <input id="pin" type="checkbox" (change)="updatePin()" [(ngModel)]="pin">
+            </div>
             <a class="box-content-row box-content-row-flex text-default" href="#"
                appStopClick appBlurClick (click)="lock()">
                 <div class="row-main">{{'lockNow' | i18n}}</div>
