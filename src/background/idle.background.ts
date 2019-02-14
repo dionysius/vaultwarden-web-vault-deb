@@ -42,7 +42,7 @@ export default class IdleBackground {
                 if (newState === 'locked') {
                     const lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
                     if (lockOption === -2) {
-                        this.lockService.lock();
+                        this.lockService.lock(true);
                     }
                 }
             });

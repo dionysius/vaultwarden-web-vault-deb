@@ -121,6 +121,7 @@ $fa-font-path: "~font-awesome/fonts";
     .swal-content {
         margin: 15px 0 0 0;
         padding: 0 10px;
+        font-size: $font-size-base;
 
         .swal-text {
             &:last-child {
@@ -131,6 +132,17 @@ $fa-font-path: "~font-awesome/fonts";
         .swal-title, .swal-text {
             padding-left: 0;
             padding-right: 0;
+        }
+
+        label.checkbox {
+            margin-top: 10px;
+            display: flex;
+            text-align: left;
+            align-items: top;
+
+            input {
+                margin: 3px 5px 0 1px;
+            }
         }
     }
 

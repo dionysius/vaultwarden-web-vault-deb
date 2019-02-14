@@ -1191,5 +1191,8 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on browser restart"
   }
 }

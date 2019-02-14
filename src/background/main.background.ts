@@ -160,7 +160,7 @@ export default class MainBackground {
         this.auditService = new AuditService(cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
         this.notificationsService = new NotificationsService(this.userService, this.syncService, this.appIdService,
-            this.apiService, this.cryptoService, () => this.logout(true));
+            this.apiService, this.lockService, () => this.logout(true));
         this.environmentService = new EnvironmentService(this.apiService, this.storageService,
             this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
@@ -223,12 +223,12 @@ export default class MainBackground {
         }
 
         const isAuthenticated = await this.userService.isAuthenticated();
-        const hasKey = await this.cryptoService.hasKey();
+        const locked = await this.lockService.isLocked();
 
         let suffix = '';
         if (!isAuthenticated) {
             suffix = '_gray';
-        } else if (!hasKey) {
+        } else if (locked) {
             suffix = '_locked';
         }
 
@@ -273,8 +273,10 @@ export default class MainBackground {
             this.folderService.clear(userId),
             this.collectionService.clear(userId),
             this.passwordGenerationService.clear(),
+            this.lockService.clear(),
         ]);
 
+        this.lockService.pinLocked = false;
         this.searchService.clearIndex();
         this.messagingService.send('doneLoggingOut', { expired: expired });
 

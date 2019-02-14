@@ -6,12 +6,12 @@ import {
     Router,
 } from '@angular/router';
 
-import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { LockService } from 'jslib/abstractions/lock.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
 @Injectable()
 export class LaunchGuardService implements CanActivate {
-    constructor(private cryptoService: CryptoService, private userService: UserService, private router: Router) { }
+    constructor(private lockService: LockService, private userService: UserService, private router: Router) { }
 
     async canActivate() {
         if (BrowserApi.getBackgroundPage() == null) {
@@ -28,8 +28,8 @@ export class LaunchGuardService implements CanActivate {
             return true;
         }
 
-        const hasKey = await this.cryptoService.hasKey();
-        if (!hasKey) {
+        const locked = await this.lockService.isLocked();
+        if (locked) {
             this.router.navigate(['lock']);
         } else {
             this.router.navigate(['tabs/current']);
