@@ -293,13 +293,13 @@
     "message": "Hoofdwachtwoord verifiëren"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Uw kluis is vergrendeld. Controleer uw hoofdwachtwoord om door te gaan."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Ontgrendelen"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Ingelogd als $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "Context menu-opties bieden snelle toegang tot wachtwoordgeneratie en logins voor de website in de huidige tab."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Standaard URI Overeenkomst Detectie",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Kies de standaardmethode voor detectie van URI-overeenkomsten voor aanmeldingen, voor acties zoals automatisch aanvullen."
   },
   "theme": {
     "message": "Thema"
@@ -1023,7 +1023,7 @@
     "message": "Logins"
   },
   "typeSecureNote": {
-    "message": "Veilige notities"
+    "message": "Veilige notitie"
   },
   "typeCard": {
     "message": "Kaart"
@@ -1169,5 +1169,30 @@
   },
   "weakMasterPasswordDesc": {
     "message": "U hebt een zwak hoofdwachtwoord gekozen. Om uw Bitwarden account goed te beschermen zou u een sterk hoofdwachtwoord (of wachtwoordzin) moeten gebruiken. Weet u zeker dat u dit hoofdwachtwoord wilt gebruiken?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "verifyPin": {
+    "message": "Verify PIN"
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on browser restart"
   }
 }

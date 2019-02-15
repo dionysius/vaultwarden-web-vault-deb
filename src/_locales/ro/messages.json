@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
     "message": "Bitwarden - Manager de parole gratuit",
@@ -122,15 +122,15 @@
     "message": "Schimbare parolă principală"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Frază amprentă",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Fraza amprentă a contului",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Autentificare în două etape"
+    "message": "Autentificare în doi pași"
   },
   "logOut": {
     "message": "Deconectare"
@@ -188,7 +188,7 @@
     "message": "Seif bitwarden Web"
   },
   "importItems": {
-    "message": "Import articole"
+    "message": "Import elemente"
   },
   "select": {
     "message": "Selectare"
@@ -230,7 +230,7 @@
     "message": "Vizualizare"
   },
   "noItemsInList": {
-    "message": "Nu există niciun articol de afișat."
+    "message": "Nu există niciun element de afișat."
   },
   "itemInformation": {
     "message": "Informații de autentificare"
@@ -242,7 +242,7 @@
     "message": "Parolă"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Frază de acces"
   },
   "favorite": {
     "message": "Favorit"
@@ -293,13 +293,13 @@
     "message": "Verificare parolă principală"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Seiful dvs. este blocat. Verificaţi parola principală pentru a continua."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Deblochează"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Logat ca $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -405,7 +405,7 @@
     "message": "Nu"
   },
   "unexpectedError": {
-    "message": "S-a produs o eroare neașteptată."
+    "message": "A apărut o eroare neașteptată."
   },
   "nameRequired": {
     "message": "Numele este obligatoriu."
@@ -463,16 +463,16 @@
     "message": "URI nou"
   },
   "addedItem": {
-    "message": "Articol adăugat"
+    "message": "Element adăugat"
   },
   "editedItem": {
-    "message": "Articol editat"
+    "message": "Element editat"
   },
   "deleteItemConfirmation": {
     "message": "Sigur ștergeți acest articol?"
   },
   "deletedItem": {
-    "message": "Articol șters"
+    "message": "Element șters"
   },
   "overwritePassword": {
     "message": "Modificare parolă"
@@ -503,7 +503,7 @@
     "message": "Don't Show Cards on Tab Page"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Elementele dvs. de tip card din seif sunt listate în pagina 'Tab-ul curent' pentru acces ușor la auto-completare."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "Don't Show Identities on Tab Page"
@@ -527,7 +527,7 @@
     "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Doriţi să actualizaţi această parolă în Bitwarden?"
   },
   "notificationChangeSave": {
     "message": "Yes, Update Now"
@@ -539,11 +539,11 @@
     "message": "Opțiunile meniului contextual oferă acces rapid la generarea de parole și la autentificările pentru site-ul web din fila curentă."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Detectare de potrivire URI implicită",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Alege modul în care se gestionează detectarea de potrivire de URI pentru autentificări la acțiuni precum cea de auto-completare."
   },
   "theme": {
     "message": "Temă"
@@ -585,13 +585,13 @@
     "message": "Bitwarden vă permite să vă împărtășiți seiful cu alte persoane utilizând un cont pentru organizații. Doriți să vizitați site-ul bitwarden.com pentru a afla mai multe?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Distribuie element"
   },
   "share": {
-    "message": "Share"
+    "message": "Distribuie"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Element distribuit"
   },
   "shareDesc": {
     "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
@@ -669,7 +669,7 @@
     "message": "Opțiuni adiţionale de conectare în doi pași, cum ar fi YubiKey, FIDO U2F şi Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Igiena parolelor, sănătate cont, și raporturi de breșe de date pentru a vă păstra seiful în siguranță."
   },
   "ppremiumSignUpTotp": {
     "message": "Generatorul codului de verificare TOTP (2FA) pentru autentificările din seif."
@@ -1130,7 +1130,7 @@
     "message": "Implicit"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Actualizat",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1138,36 +1138,61 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Sunteți sigur că doriți folosirea opțiunii \"Niciodată\"? Setarea opțiunii de blocare pe \"Niciodată\" salvează cheia de criptare pe dispozitivul dumneavoastră. Dacă folosiți această opțiune ar trebui să vă asigurați că vă păstrați dispozitivul protejat corespunzător."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Nu aparțineti niciunei organizații. Organizațiile vă permit să distribuiți elemente cu alți utilizatori."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Nu există colecții în listă."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Proprietar"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Cine deține acest element?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Puternică",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Bună",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Slabă",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
     "message": "Weak Master Password"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Parola principală aleasă este slabă. Ar trebui folosită o parolă (sau o frază de access) principală puternică pentru a vă proteja corespunzător contul Bitwarden. Sunteți sigur că doriți să folosiți această parola principală?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "verifyPin": {
+    "message": "Verify PIN"
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on browser restart"
   }
 }

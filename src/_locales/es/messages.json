@@ -645,16 +645,16 @@
     "message": "No puedes usar esta característica hasta que actualices tu clave de cifrado."
   },
   "premiumMembership": {
-    "message": "Membrasía Premium"
+    "message": "Membresía Premium"
   },
   "premiumManage": {
-    "message": "Gestionar membrasía"
+    "message": "Gestionar membresía"
   },
   "premiumManageAlert": {
     "message": "Puedes gestionar tu membresía en la caja fuerte web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "premiumRefresh": {
-    "message": "Actualizar membrasía"
+    "message": "Actualizar membresía"
   },
   "premiumNotCurrentMember": {
     "message": "Actualmente no eres un miembro premium."
@@ -1169,5 +1169,30 @@
   },
   "weakMasterPasswordDesc": {
     "message": "La contraseña maestra que ha elegido es débil. Debe usar una contraseña maestra fuerte (o una frase de contraseña) para proteger adecuadamente su cuenta de Bitwarden. ¿Está seguro de que desea utilizar esta contraseña maestra?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "verifyPin": {
+    "message": "Verify PIN"
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on browser restart"
   }
 }

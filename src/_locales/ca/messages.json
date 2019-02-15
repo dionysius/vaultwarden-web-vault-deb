@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Inicieu sessió o creeu un compte nou per accedir al dipòsit segur."
+    "message": "Inicieu sessió o creeu un compte nou per accedir a la caixa forta."
   },
   "createAccount": {
     "message": "Crea un compte"
@@ -35,10 +35,10 @@
     "message": "Contrasenya mestra"
   },
   "masterPassDesc": {
-    "message": "La contrasenya mestra és la que utilitzeu per accedir al vostre dipòsit. És molt important que no la oblideu. No hi ha manera de recuperar-la en cas de perdre-la."
+    "message": "La contrasenya mestra és la que utilitzeu per accedir a la vostra caixa forta. És molt important que no la oblideu. No hi ha manera de recuperar-la en cas de perdre-la."
   },
   "masterPassHintDesc": {
-    "message": "Un suggeriment de contrasenya mestra pot ajudar-vos a recordar-la si la oblideu."
+    "message": "Una pista de contrasenya mestra us pot ajudar a recordar-la si l'oblideu."
   },
   "reTypeMasterPass": {
     "message": "Torneu a escriure la contrasenya mestra"
@@ -50,7 +50,7 @@
     "message": "Pestanya"
   },
   "myVault": {
-    "message": "El meu dipòsit"
+    "message": "La meua caixa forta"
   },
   "tools": {
     "message": "Eines"
@@ -89,7 +89,7 @@
     "message": "No hi ha inicis de sessió coincidents."
   },
   "vaultLocked": {
-    "message": "El dipòsit està bloquejat."
+    "message": "La caixa forta està bloquejada."
   },
   "autoFillInfo": {
     "message": "No hi ha cap inici de sessió disponible per omplir automàticament la pestanya del navegador actual."
@@ -101,13 +101,13 @@
     "message": "Afegeix element"
   },
   "passwordHint": {
-    "message": "Suggeriment de contrasenya"
+    "message": "Pista de la contrasenya"
   },
   "enterEmailToGetHint": {
     "message": "Introduïu l'adreça electrònica del vostre compte per rebre la contrasenya mestra."
   },
   "getMasterPasswordHint": {
-    "message": "Obteniu el suggeriment de contrasenya mestra"
+    "message": "Obteniu la pista de la contrasenya mestra"
   },
   "continue": {
     "message": "Continua"
@@ -169,7 +169,7 @@
     "message": "Sincronització"
   },
   "syncVaultNow": {
-    "message": "Sincronitza el dipòsit ara"
+    "message": "Sincronitza la caixa forta ara"
   },
   "lastSync": {
     "message": "Última sincronització:"
@@ -185,7 +185,7 @@
     "message": "Genera automàticament contrasenyes fortes i úniques per als vostres inicis de sessió."
   },
   "bitWebVault": {
-    "message": "Dipòsit web de Bitwarden"
+    "message": "Caixa forta web de Bitwarden"
   },
   "importItems": {
     "message": "Importa elements"
@@ -212,22 +212,22 @@
     "message": "Separador de paraules"
   },
   "minNumbers": {
-    "message": "Mínim de números"
+    "message": "Mínim de caràcters númerics"
   },
   "minSpecial": {
-    "message": "Mínim d'especials"
+    "message": "Mínim de caràcters especials"
   },
   "avoidAmbChar": {
     "message": "Eviteu caràcters ambigus"
   },
   "searchVault": {
-    "message": "Cerca en el dipòsit"
+    "message": "Cerca en la caixa forta"
   },
   "edit": {
     "message": "Edita"
   },
   "view": {
-    "message": "Mostra"
+    "message": "Visualitza"
   },
   "noItemsInList": {
     "message": "No hi ha cap element a llistar."
@@ -284,7 +284,7 @@
     "message": "Valora aquesta extensió"
   },
   "rateExtensionDesc": {
-    "message": "Considera ajudar-nos amb una bona revisió!"
+    "message": "Considereu ajudar-nos amb una bona valoració!"
   },
   "browserNotSupportClipboard": {
     "message": "El vostre navegador web no admet la còpia fàcil del porta-retalls. Copieu-ho manualment."
@@ -293,7 +293,7 @@
     "message": "Verifica la contrasenya mestra"
   },
   "yourVaultIsLocked": {
-    "message": "El dipòsit està tancat. Verifiqueu la contrasenya mestra per continuar."
+    "message": "La caixa forta està bloquejada. Comproveu la contrasenya mestra per continuar."
   },
   "unlock": {
     "message": "Desbloqueja"
@@ -341,7 +341,7 @@
     "message": "En bloquejar el sistema"
   },
   "onRestart": {
-    "message": "En reprendre navegador"
+    "message": "En reiniciar el navegador"
   },
   "never": {
     "message": "Mai"
@@ -359,16 +359,16 @@
     "message": "L'adreça de correu electrònic no és vàlida."
   },
   "masterPassRequired": {
-    "message": "La contrasenya és obligatòria."
+    "message": "La contrasenya mestra és obligatòria."
   },
   "masterPassLength": {
-    "message": "La contrasenya ha de contenir almenys 8 caràcters."
+    "message": "La contrasenya mestra ha de contenir almenys 8 caràcters."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmació de la contrasenya mestra no coincideix."
   },
   "newAccountCreated": {
-    "message": "El vostre compte s'ha creat correctament. Ara ja podeu entrar."
+    "message": "El vostre compte s'ha creat correctament. Ara ja podeu iniciar sessió."
   },
   "masterPassSent": {
     "message": "Hem enviat un correu electrònic amb la vostra contrasenya mestra."
@@ -390,7 +390,7 @@
     "message": "No es pot omplir automàticament l'element seleccionat en aquesta pàgina. Com a alternativa, copieu i enganxeu la informació."
   },
   "loggedOut": {
-    "message": "Desconnectar-se"
+    "message": "Sessió tancada"
   },
   "loginExpired": {
     "message": "La vostra sessió ha caducat."
@@ -417,10 +417,10 @@
     "message": "Canvia la contrasenya mestra"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Podeu canviar la contrasenya mestra al dipòsit web de bitwarden.com. Voleu visitar el lloc web ara?"
+    "message": "Podeu canviar la contrasenya mestra a la caixa forta web de bitwarden.com. Voleu visitar el lloc web ara?"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'inici de sessió en dues passes fa que el vostre compte siga més segur, ja que obliga a verificar el vostre inici de sessió amb un altre dispositiu, com ara una clau de seguretat, una aplicació autenticadora, un SMS, una trucada telefònica o un correu electrònic. Es pot habilitar l'inici de sessió en dues passes al dipòsit web de bitwarden.com. Voleu visitar el lloc web ara?"
+    "message": "L'inici de sessió en dues passes fa que el vostre compte siga més segur, ja que obliga a verificar el vostre inici de sessió amb un altre dispositiu, com ara una clau de seguretat, una aplicació autenticadora, un SMS, una trucada telefònica o un correu electrònic. Es pot habilitar l'inici de sessió en dues passes a la caixa forta web de bitwarden.com. Voleu visitar el lloc web ara?"
   },
   "editedFolder": {
     "message": "Carpeta editada"
@@ -444,7 +444,7 @@
     "message": "Ha fallat la sincronització"
   },
   "passwordCopied": {
-    "message": "Contrasenya de copiada"
+    "message": "S'ha copiat la contrasenya"
   },
   "uri": {
     "message": "URI"
@@ -497,22 +497,22 @@
     "message": "Deshabilita la notificació per afegir inicis de sessió"
   },
   "addLoginNotificationDesc": {
-    "message": "La \"Notificació per afegir inicis de sessió\" demana automàticament que guardeu els nous inicis de sessió al vostre dipòsit quan inicieu la sessió per primera vegada."
+    "message": "La \"Notificació per afegir inicis de sessió\" demana automàticament que guardeu els nous inicis de sessió a la vostra caixa forta quan inicieu la sessió per primera vegada."
   },
   "dontShowCardsCurrentTab": {
     "message": "No mostres les targetes a la pàgina de la pestanya"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Els elements de la targeta del vostre dipòsit es detallen a la pàgina \"Pestanya actual\" per obtenir un fàcil accés d'ompliment automàtic."
+    "message": "Els elements de targeta de la vostra caixa forta es detallen a la pàgina \"Fitxa actual\" per obtenir un fàcil accés amb l'emplenat automàtic."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "No mostres les identitats a la pàgina de la pestanya"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Els elements de la targeta del vostre dipòsit es detallen a la pàgina \"Pestanya actual\" per obtenir un fàcil accés d'ompliment automàtic."
+    "message": "Els elements d'identitat de la vostra caixa forta es detallen a la pàgina \"Fitxa actual\" per obtenir un fàcil accés amb l'emplenat automàtic."
   },
   "notificationAddDesc": {
-    "message": "Bitwarden ha de recordar aquesta contrasenya per a vostè?"
+    "message": "Bitwarden ha de recordar aquesta contrasenya per a vosaltres?"
   },
   "notificationAddSave": {
     "message": "Sí, guarda-la ara"
@@ -524,7 +524,7 @@
     "message": "Deshabilita la notificació de contrasenya modificada"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "La \"Notificació de contrasenya modificada\" demana automàticament que actualitzeu la contrasenya d'inici de sessió al vostre dipòsit cada vegada que detecte que s'ha canviat en un lloc web."
+    "message": "La \"Notificació de contrasenya modificada\" us demanarà automàticament que actualitzeu la contrasenya d'inici de sessió a la vostra caixa forta cada vegada que detecte que s'ha canviat en un lloc web."
   },
   "notificationChangeDesc": {
     "message": "Voleu actualitzar aquesta contrasenya a Bitwarden?"
@@ -533,7 +533,7 @@
     "message": "Sí, actualitza-la ara"
   },
   "disableContextMenuItem": {
-    "message": "Deshabilita opcions del menú contextual"
+    "message": "Inhabilita opcions del menú contextual"
   },
   "disableContextMenuItemDesc": {
     "message": "Les opcions del menú contextual proporcionen accés ràpid a la generació de contrasenyes i inici de sessió al lloc web en la vostra pestanya actual."
@@ -560,7 +560,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Exporta dipòsit"
+    "message": "Exporta caixa forta"
   },
   "fileFormat": {
     "message": "Format de fitxer"
@@ -570,19 +570,19 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Aquesta exportació conté les dades del vostre dipòsit en un format no xifrat. No hauríeu d'emmagatzemar o enviar el fitxer exportat a través de canals no segurs (com ara el correu electrònic). Elimineu-lo immediatament després d'haver acabat d'usar-lo."
+    "message": "Aquesta exportació conté les dades de la vostra caixa forta en un format no xifrat. No hauríeu d'emmagatzemar o enviar el fitxer exportat a través de canals no segurs (com ara el correu electrònic). Elimineu-lo immediatament després d'haver acabat d'usar-lo."
   },
   "exportMasterPassword": {
-    "message": "Introduïu la contrasenya mestra per exportar les dades del dipòsit."
+    "message": "Introduïu la contrasenya mestra per exportar les dades de la caixa forta."
   },
   "shared": {
     "message": "Compartit"
   },
   "shareVault": {
-    "message": "Comparteix el vostre dipòsit"
+    "message": "Comparteix la vostra caixa forta"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden us permet compartir el vostre dipòsit amb altres usuaris mitjançant un compte d'organització. Voleu visitar el lloc web de bitwarden.com per obtenir més informació?"
+    "message": "Bitwarden us permet compartir la vostra caixa forta amb altres usuaris mitjançant un compte d'organització. Voleu visitar el lloc web de bitwarden.com per obtenir més informació?"
   },
   "shareItem": {
     "message": "Comparteix element"
@@ -612,7 +612,7 @@
     "message": "Adjunts"
   },
   "deleteAttachment": {
-    "message": "Suprimeix adjunt"
+    "message": "Suprimeix l'adjunt"
   },
   "deleteAttachmentConfirmation": {
     "message": "Esteu segur que voleu suprimir aquest adjunt?"
@@ -621,7 +621,7 @@
     "message": "Adjunt suprimit"
   },
   "newAttachment": {
-    "message": "Afegeix un nou adjunt"
+    "message": "Afegeix un adjunt nou"
   },
   "noAttachments": {
     "message": "No hi ha cap adjunt."
@@ -651,7 +651,7 @@
     "message": "Administra la subscripció"
   },
   "premiumManageAlert": {
-    "message": "Podeu administrar la vostra subscripció al dipòsit web de bitwarden.com. Voleu visitar el lloc web ara?"
+    "message": "Podeu administrar la vostra subscripció a la caixa forta web de bitwarden.com. Voleu visitar el lloc web ara?"
   },
   "premiumRefresh": {
     "message": "Actualitza la subscripció"
@@ -669,10 +669,10 @@
     "message": "Opcions addicionals d'inici de sessió en dues passes com ara YubiKey, FIDO U2F i Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Requisits d'higiene de la contrasenya, salut del compte i informe d'infraccions de dades per mantenir la seguretat del vostre dipòsit."
+    "message": "Requisits d'higiene de la contrasenya, salut del compte i informe d'infraccions de dades per mantenir la seguretat de la vostra caixa forta."
   },
   "ppremiumSignUpTotp": {
-    "message": "Generador de codi de verificació TOTP (2FA) per a inici de sessió al vostre dipòsit."
+    "message": "Generador de codi de verificació TOTP (2FA) per a inici de sessió a la vostra caixa forta."
   },
   "ppremiumSignUpSupport": {
     "message": "Prioritat d'atenció al client."
@@ -684,7 +684,7 @@
     "message": "Compra Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Podeu comprar la vostra subscripció al dipòsit web de bitwarden.com. Voleu visitar el lloc web ara?"
+    "message": "Podeu comprar la vostra subscripció a la caixa forta web de bitwarden.com. Voleu visitar el lloc web ara?"
   },
   "premiumCurrentMember": {
     "message": "Sou un membre premium!"
@@ -714,7 +714,7 @@
     "message": "Premium requerit"
   },
   "premiumRequiredDesc": {
-    "message": "Cal una subscripció premium per utilitzar aquesta funció."
+    "message": "Cal una subscripció premium per utilitzar aquesta característica."
   },
   "enterVerificationCodeApp": {
     "message": "Introduïu el codi de verificació de 6 dígits de l'aplicació autenticadora."
@@ -747,7 +747,7 @@
     "message": "Utilitzeu un altre mètode d'inici de sessió en dues passes"
   },
   "insertYubiKey": {
-    "message": "Introduïu el vostre YubiKey al port USB de l'ordinador i, a continuació, premeu el seu botó."
+    "message": "Introduïu la vostra YubiKey al port USB de l'ordinador i, a continuació, premeu el seu botó."
   },
   "insertU2f": {
     "message": "Introduïu la vostra clau de seguretat al port USB de l'ordinador. Si té un botó, premeu-lo."
@@ -807,7 +807,7 @@
     "message": "Entorn d'allotjament propi"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifiqueu l'URL base de la vostra instal·lació Bitwarden allotjada en entorn propi."
+    "message": "Especifiqueu l'URL base de la vostra instal·lació de Bitwarden allotjada en un entorn propi."
   },
   "customEnvironment": {
     "message": "Entorn personalitzat"
@@ -822,7 +822,7 @@
     "message": "URL del servidor API"
   },
   "webVaultUrl": {
-    "message": "URL del servidor del dipòsit web"
+    "message": "URL del servidor de la caixa forta web"
   },
   "identityUrl": {
     "message": "URL del servidor d'identitat"
@@ -840,7 +840,7 @@
     "message": "Habilita l'emplenament automàtic en carregar la pàgina"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Si es detecta un formulari d'inici de sessió, realitza automàticament un emplenament automàtic quan es carrega la pàgina web."
+    "message": "Si es detecta un formulari d'inici de sessió, es realitza automàticament un emplenament automàtic quan es carrega la pàgina web."
   },
   "experimentalFeature": {
     "message": "Actualment és una característica experimental. Utilitzeu sota el vostre propi risc."
@@ -864,7 +864,7 @@
     "message": "Valor"
   },
   "newCustomField": {
-    "message": "Nou camp personalitzat"
+    "message": "Camp nou personalitzat"
   },
   "cfTypeText": {
     "message": "Text"
@@ -876,13 +876,13 @@
     "message": "Booleà"
   },
   "popup2faCloseMessage": {
-    "message": "Si feu clic a l'exterior de la finestra emergent per comprovar el vostre correu electrònic amb el codi de verificació, es tancarà aquesta finestra emergent. Voleu obrir aquesta finestra emergent en una finestra nova perquè no es tanque?"
+    "message": "Si feu clic a l'exterior de la finestra emergent per comprovar el vostre correu electrònic amb el codi de verificació, es tancarà aquesta finestra. Voleu obrir aquesta finestra emergent en una finestra nova perquè no es tanque?"
   },
   "disableFavicon": {
     "message": "Deshabilitar icones del lloc web"
   },
   "disableFaviconDesc": {
-    "message": "Les icones del lloc web proporcionen una imatge que es pot reconèixer al costat de cada element d'inici de sessió al vostre dipòsit."
+    "message": "Les icones del lloc web proporcionen una imatge que es pot reconèixer al costat de cada element d'inici de sessió a la vostra caixa forta."
   },
   "cardholderName": {
     "message": "Nom del titular de la targeta"
@@ -954,7 +954,7 @@
     "message": "Sra."
   },
   "ms": {
-    "message": "Sra."
+    "message": "Srta."
   },
   "dr": {
     "message": "Dr."
@@ -1005,7 +1005,7 @@
     "message": "Localitat"
   },
   "stateProvince": {
-    "message": "Estat \/ província"
+    "message": "Estat\/província"
   },
   "zipPostalCode": {
     "message": "Codi postal"
@@ -1138,7 +1138,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Esteu segur que voleu utilitzar l'opció \"Mai\"? En configurar les opcions de bloqueig a \"Mai\" s'emmagatzema la clau de xifratge del vostre dipòsit al vostre dispositiu. Si utilitzeu aquesta opció, heu d'assegurar-vos que conserveu el dispositiu degudament protegit."
+    "message": "Esteu segur que voleu utilitzar l'opció \"Mai\"? En configurar les opcions de bloqueig a \"Mai\" s'emmagatzema la clau de xifratge de la vostra caixa forta al vostre dispositiu. Si utilitzeu aquesta opció, heu d'assegurar-vos que conserveu el dispositiu degudament protegit."
   },
   "noOrganizationsList": {
     "message": "No pertanyeu a cap organització. Les organitzacions permeten compartir elements amb seguretat amb altres usuaris."
@@ -1168,6 +1168,31 @@
     "message": "Contrasenya mestra poc segura"
   },
   "weakMasterPasswordDesc": {
-    "message": "La contrasenya mestra que heu triat és poc segura. Heu d'utilitzar una contrasenya mestra segura (o una frase de pas) per protegir correctament el vostre compte Bitwarden. Esteu segur que voleu utilitzar aquesta contrasenya mestra?"
+    "message": "La contrasenya mestra que heu triat és poc segura. Heu d'utilitzar una contrasenya mestra segura (o una frase de pas) per protegir correctament el vostre compte de Bitwarden. Esteu segur que voleu utilitzar aquesta contrasenya mestra?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "verifyPin": {
+    "message": "Verify PIN"
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on browser restart"
   }
 }

@@ -293,13 +293,13 @@
     "message": "Перевірка головного пароля"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Сховище заблоковано. Введіть головний пароль для продовження."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Розблокувати"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Ви увійшли як $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,11 +539,11 @@
     "message": "Можливості контекстного меню забезпечують швидкий доступ до генерування пароля й входу для веб-сайту поточної вкладки."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Типове виявлення збігів URI",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Оберіть типовий спосіб виявлення збігів URI для виконання автозаповнення під час входу."
   },
   "theme": {
     "message": "Тема"
@@ -1169,5 +1169,30 @@
   },
   "weakMasterPasswordDesc": {
     "message": "Обраний вами головний пароль є слабким. Для належного захисту свого облікового запису Bitwarden, вам слід використовувати надійний головний пароль (або парольну фразу). Ви впевнені, що хочете використати цей пароль?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "verifyPin": {
+    "message": "Verify PIN"
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on browser restart"
   }
 }
