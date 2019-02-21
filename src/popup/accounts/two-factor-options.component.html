@@ -10,8 +10,7 @@
 <content>
     <div class="box">
         <div class="box-content">
-            <a href="#" appStopClick *ngFor="let p of providers" class="box-content-row"
-               (click)="choose(p)">
+            <a href="#" appStopClick *ngFor="let p of providers" class="box-content-row" (click)="choose(p)">
                 <span class="text">{{p.name}}</span>
                 <span class="detail">{{p.description}}</span>
             </a>

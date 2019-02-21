@@ -7,8 +7,7 @@
             <span class="title">{{title}}</span>
         </div>
         <div class="right">
-            <button type="submit" appBlurClick [disabled]="form.loading"
-                    *ngIf="selectedProviderType != null && selectedProviderType !== providerType.Duo &&
+            <button type="submit" appBlurClick [disabled]="form.loading" *ngIf="selectedProviderType != null && selectedProviderType !== providerType.Duo &&
                         selectedProviderType !== providerType.OrganizationDuo &&
                         (selectedProviderType !== providerType.U2f || form.loading)">
                 <span [hidden]="form.loading">{{'continue' | i18n}}</span>
@@ -32,7 +31,7 @@
                     <div class="box-content-row" appBoxRow>
                         <label for="code">{{'verificationCode' | i18n}}</label>
                         <input id="code" type="text" name="Code" [(ngModel)]="token" required appAutofocus
-                               inputmode="tel" appInputVerbatim>
+                            inputmode="tel" appInputVerbatim>
                     </div>
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="remember">{{'rememberMe' | i18n}}</label>
@@ -51,7 +50,7 @@
                     <div class="box-content-row" appBoxRow>
                         <label for="code" class="sr-only">{{'verificationCode' | i18n}}</label>
                         <input id="code" type="password" name="Code" [(ngModel)]="token" required appAutofocus
-                               appInputVerbatim>
+                            appInputVerbatim>
                     </div>
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="remember">{{'rememberMe' | i18n}}</label>

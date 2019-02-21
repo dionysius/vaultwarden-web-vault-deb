@@ -3,8 +3,8 @@
         <app-pop-out></app-pop-out>
     </div>
     <div class="search">
-        <input type="search" placeholder="{{'searchVault' | i18n}}" id="search"
-               [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
+        <input type="search" placeholder="{{'searchVault' | i18n}}" id="search" [(ngModel)]="searchText"
+            (input)="search(200)" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
@@ -30,8 +30,7 @@
             </div>
             <div class="box-content">
                 <app-ciphers-list [ciphers]="favoriteCiphers" title="{{'viewItem' | i18n}}"
-                                  (onSelected)="selectCipher($event)"
-                                  (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
+                    (onSelected)="selectCipher($event)" (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
         <div class="box list">
@@ -40,8 +39,7 @@
                 <span class="flex-right">4</span>
             </div>
             <div class="box-content single-line">
-                <a href="#" class="box-content-row" appStopClick appBlurClick
-                   (click)="selectType(cipherType.Login)">
+                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Login)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-globe"></i></div>
                         <span class="text">{{'typeLogin' | i18n}}</span>
@@ -49,8 +47,7 @@
                     <span class="row-sub-label">{{typeCounts.get(cipherType.Login) || 0}}</span>
                     <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
-                <a href="#" class="box-content-row" appStopClick appBlurClick
-                   (click)="selectType(cipherType.Card)">
+                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Card)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-credit-card"></i></div>
                         <span class="text">{{'typeCard' | i18n}}</span>
@@ -58,8 +55,7 @@
                     <span class="row-sub-label">{{typeCounts.get(cipherType.Card) || 0}}</span>
                     <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
-                <a href="#" class="box-content-row" appStopClick appBlurClick
-                   (click)="selectType(cipherType.Identity)">
+                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Identity)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-id-card-o"></i></div>
                         <span class="text">{{'typeIdentity' | i18n}}</span>
@@ -68,7 +64,7 @@
                     <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
                 <a href="#" class="box-content-row" appStopClick appBlurClick
-                   (click)="selectType(cipherType.SecureNote)">
+                    (click)="selectType(cipherType.SecureNote)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-sticky-note-o"></i></div>
                         <span class="text">{{'typeSecureNote' | i18n}}</span>
@@ -84,12 +80,12 @@
                 <span class="flex-right">{{folderCount}}</span>
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let f of nestedFolders" href="#" class="box-content-row"
-                   appStopClick appBlurClick (click)="selectFolder(f.node)">
+                <a *ngFor="let f of nestedFolders" href="#" class="box-content-row" appStopClick appBlurClick
+                    (click)="selectFolder(f.node)">
                     <div class="row-main">
                         <div class="icon">
                             <i class="fa fa-fw fa-lg"
-                               [ngClass]="{'fa-folder-open': f.node.id, 'fa-folder-open-o': !f.node.id}"></i>
+                                [ngClass]="{'fa-folder-open': f.node.id, 'fa-folder-open-o': !f.node.id}"></i>
                         </div>
                         <span class="text">{{f.node.name}}</span>
                     </div>
@@ -104,8 +100,8 @@
                 <span class="flex-right">{{nestedCollections.length}}</span>
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let c of nestedCollections" href="#" class="box-content-row"
-                   appStopClick appBlurClick (click)="selectCollection(c.node)">
+                <a *ngFor="let c of nestedCollections" href="#" class="box-content-row" appStopClick appBlurClick
+                    (click)="selectCollection(c.node)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-cube"></i></div>
                         <span class="text">{{c.node.name}}</span>
@@ -122,8 +118,7 @@
             </div>
             <div class="box-content">
                 <app-ciphers-list [ciphers]="noFolderCiphers" title="{{'viewItem' | i18n}}"
-                                  (onSelected)="selectCipher($event)"
-                                  (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
+                    (onSelected)="selectCipher($event)" (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
     </ng-container>
@@ -133,9 +128,8 @@
         </div>
         <div class="box list full-list" *ngIf="ciphers && ciphers.length > 0">
             <div class="box-content">
-                <app-ciphers-list [ciphers]="ciphers" title="{{'viewItem' | i18n}}"
-                                  (onSelected)="selectCipher($event)"
-                                  (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
+                <app-ciphers-list [ciphers]="ciphers" title="{{'viewItem' | i18n}}" (onSelected)="selectCipher($event)"
+                    (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
     </ng-container>

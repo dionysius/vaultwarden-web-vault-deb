@@ -7,7 +7,7 @@
     </div>
     <div class="search">
         <input type="search" placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search"
-               [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
+            [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
@@ -23,8 +23,8 @@
                 {{'folders' | i18n}}
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let f of nestedFolders" href="#" class="box-content-row"
-                    appStopClick appBlurClick (click)="selectFolder(f.node)">
+                <a *ngFor="let f of nestedFolders" href="#" class="box-content-row" appStopClick appBlurClick
+                    (click)="selectFolder(f.node)">
                     <div class="row-main">
                         <div class="icon">
                             <i class="fa fa-fw fa-lg"
@@ -41,8 +41,8 @@
                 {{'collections' | i18n}}
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let c of nestedCollections" href="#" class="box-content-row"
-                appStopClick appBlurClick (click)="selectCollection(c.node)">
+                <a *ngFor="let c of nestedCollections" href="#" class="box-content-row" appStopClick appBlurClick
+                    (click)="selectCollection(c.node)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-cube"></i></div>
                         <span class="text">{{c.node.name}}</span>
@@ -62,17 +62,16 @@
                 </button>
             </ng-container>
         </div>
-        <div class="box list only-list" *ngIf="filteredCiphers.length > 0"
-            infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollContainer]="'content'" [fromRoot]="true"
-            [infiniteScrollDisabled]="!isPaging()" (scrolled)="loadMore()">
+        <div class="box list only-list" *ngIf="filteredCiphers.length > 0" infiniteScroll [infiniteScrollDistance]="1"
+            [infiniteScrollContainer]="'content'" [fromRoot]="true" [infiniteScrollDisabled]="!isPaging()"
+            (scrolled)="loadMore()">
             <div class="box-header">
                 {{groupingTitle}}
                 <span class="flex-right">{{isSearching() ? filteredCiphers.length : ciphers.length}}</span>
             </div>
             <div class="box-content">
                 <app-ciphers-list [ciphers]="filteredCiphers" title="{{'viewItem' | i18n}}"
-                                  (onSelected)="selectCipher($event)"
-                                  (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
+                    (onSelected)="selectCipher($event)" (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
     </ng-container>

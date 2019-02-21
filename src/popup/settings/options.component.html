@@ -16,7 +16,7 @@
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="autofill">{{'enableAutoFillOnPageLoad' | i18n}}</label>
                 <input id="autofill" type="checkbox" (change)="updateAutoFillOnPageLoad()"
-                       [(ngModel)]="enableAutoFillOnPageLoad">
+                    [(ngModel)]="enableAutoFillOnPageLoad">
             </div>
         </div>
         <div class="box-footer">
@@ -29,7 +29,7 @@
             <div class="box-content-row" appBoxRow>
                 <label for="defaultUriMatch">{{'defaultUriMatchDetection' | i18n}}</label>
                 <select id="defaultUriMatch" name="DefaultUriMatch" [(ngModel)]="defaultUriMatch"
-                        (change)="saveDefaultUriMatch()">
+                    (change)="saveDefaultUriMatch()">
                     <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{o.name}}</option>
                 </select>
             </div>
@@ -59,7 +59,7 @@
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="dontShowIdentities">{{'dontShowIdentitiesCurrentTab' | i18n}}</label>
                 <input id="dontShowIdentities" type="checkbox" (change)="updateShowIdentities()"
-                       [(ngModel)]="dontShowIdentities">
+                    [(ngModel)]="dontShowIdentities">
             </div>
         </div>
         <div class="box-footer">{{'dontShowIdentitiesCurrentTabDesc' | i18n}}</div>
@@ -69,7 +69,7 @@
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="addlogin-notification-bar">{{'disableAddLoginNotification' | i18n}}</label>
                 <input id="addlogin-notification-bar" type="checkbox" (change)="updateAddLoginNotification()"
-                       [(ngModel)]="disableAddLoginNotification">
+                    [(ngModel)]="disableAddLoginNotification">
             </div>
         </div>
         <div class="box-footer">{{'addLoginNotificationDesc' | i18n}}</div>
@@ -79,7 +79,7 @@
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="changedpass-notification-bar">{{'disableChangedPasswordNotification' | i18n}}</label>
                 <input id="changedpass-notification-bar" type="checkbox" (change)="updateChangedPasswordNotification()"
-                       [(ngModel)]="disableChangedPasswordNotification">
+                    [(ngModel)]="disableChangedPasswordNotification">
             </div>
         </div>
         <div class="box-footer">{{'disableChangedPasswordNotificationDesc' | i18n}}</div>
@@ -89,7 +89,7 @@
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="context-menu">{{'disableContextMenuItem' | i18n}}</label>
                 <input id="context-menu" type="checkbox" (change)="updateDisableContextMenuItem()"
-                       [(ngModel)]="disableContextMenuItem">
+                    [(ngModel)]="disableContextMenuItem">
             </div>
         </div>
         <div class="box-footer">{{'disableContextMenuItemDesc' | i18n}}</div>

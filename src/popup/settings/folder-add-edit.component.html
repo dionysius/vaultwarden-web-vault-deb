@@ -18,15 +18,14 @@
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="name">{{'name' | i18n}}</label>
-                    <input id="name" type="text" name="Name" [(ngModel)]="folder.name"
-                           [appAutofocus]="!editMode">
+                    <input id="name" type="text" name="Name" [(ngModel)]="folder.name" [appAutofocus]="!editMode">
                 </div>
             </div>
         </div>
         <div class="box list" *ngIf="editMode">
             <div class="box-content single-line">
-                <a class="box-content-row" href="#" appStopClick appBlurClick
-                   (click)="delete()" [appApiAction]="deletePromise" #deleteBtn>
+                <a class="box-content-row" href="#" appStopClick appBlurClick (click)="delete()"
+                    [appApiAction]="deletePromise" #deleteBtn>
                     <div class="row-main text-danger">
                         <div class="icon text-danger">
                             <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>

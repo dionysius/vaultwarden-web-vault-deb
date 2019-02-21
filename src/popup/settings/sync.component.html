@@ -12,8 +12,8 @@
 </header>
 <content>
     <div class="content center-content">
-        <button type="button" class="btn block primary" (click)="sync()" #syncBtn
-                [disabled]="syncBtn.loading" [appApiAction]="syncPromise">
+        <button type="button" class="btn block primary" (click)="sync()" #syncBtn [disabled]="syncBtn.loading"
+            [appApiAction]="syncPromise">
             <span [hidden]="syncBtn.loading">{{'syncVaultNow' | i18n}}</span>
             <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!syncBtn.loading"></i>
         </button>

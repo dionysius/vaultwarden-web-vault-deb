@@ -46,7 +46,7 @@
                 <b>{{'premiumPurchase' | i18n}}</b>
             </button>
             <button #refreshBtn type="button" appBlurClick (click)="refresh()" [disabled]="refreshBtn.loading"
-                    [appApiAction]="refreshPromise" class="btn link block">
+                [appApiAction]="refreshPromise" class="btn link block">
                 <span [hidden]="refreshBtn.loading">{{'premiumRefresh' | i18n}}</span>
                 <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!refreshBtn.loading"></i>
             </button>

@@ -18,7 +18,7 @@
     <div class="box list full-list" *ngIf="folders && folders.length">
         <div class="box-content">
             <a href="#" appStopClick (click)="folderSelected(f)" class="box-content-row padded"
-               *ngFor="let f of folders">{{f.name}}</a>
+                *ngFor="let f of folders">{{f.name}}</a>
         </div>
     </div>
     <div class="no-items" *ngIf="!folders || !folders.length">
