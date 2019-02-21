@@ -124,30 +124,30 @@
     <value>Administrador de contrasenyes segur i gratuït per a tots els vostres dispositius</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden és la forma més senzilla i segura d'emmagatzemar tots els inicis de sessió i contrasenyes, mantenint-los convenientment sincronitzats entre tots els vostres dispositius.
+    <value>Bitwarden és la manera més senzilla i segura d'emmagatzemar tots els vostres usuaris i contrasenyes mentre es mantenen sincronitzats entre tots els vostres dispositius.
 
-El robatori de contrasenyes és un problema greu. Els llocs web i les aplicacions que utilitzeu estan sota atac cada dia. Es produeixen filtracions de seguretat i es roben les contrasenyes. Quan reutilitzeu les mateixes contrasenyes a les aplicacions, els pirates de llocs web poden accedir fàcilment al vostre correu electrònic, bancs i altres comptes importants.
+El robatori de la contrasenya és un problema greu. Els llocs web i les aplicacions que utilitzeu estan sota atac cada dia. Hi ha filtracions de seguretat i les vostres contrasenyes es roben. Quan reutilitzeu les mateixes contrasenyes en aplicacions i llocs web, els pirates informàtics poden accedir fàcilment al vostre correu electrònic, banc i altres comptes importants.
 
-Els experts en seguretat recomanen que utilitzeu una contrasenya diferent, generada aleatòriament per a cada compte que creeu. Però, com gestioneu totes aquestes contrasenyes? Bitwarden facilita la creació, emmagatzemament i accés a les vostres contrasenyes.
+Els experts en seguretat recomanen que utilitzeu una contrasenya diferent, generada aleatòriament per a cada compte que creeu. Però, com gestioneu totes aquestes contrasenyes? Bitwarden us facilita la seua creació, emmagatzemament i accés.
 
-Bitwarden emmagatzema tots els inicis de sessió en un dipòsit xifrat que es sincronitza a tots els dispositius. Ja que està totalment encriptat abans d'eixir del vostre dispositiu, només vosaltres tindreu accés a les dades. Ni tan sols l'equip de Bitwarden pot llegir les vostres dades, fins i tot si volguérem. Les vostres dades estan segellades amb encriptació AES de 256 bits, _salted hashing_ y PBKDF2 SHA-256.
+Bitwarden emmagatzema tots els inicis de sessió en una caixa forta xifrada que sincronitza tots els dispositius. Com que està totalment xifrada abans de deixar el vostre dispositiu, només vosaltres tindreu accés a les dades. Ni tan sols l'equip de Bitwarden pot llegir-les, fins i tot si volguérem. Les vostres dades estan segellades amb encriptació AES de 256 bits, amb llavor i PBKDF2 SHA-256.
 
-Bitwarden és programari 100% de codi obert. El codi font de Bitwarden està allotjat a GitHub i tothom el pot revisar, auditar i contribuir a la base de codis Bitwarden.</value>
+Bitwarden és programari 100% de codi obert. El codi font de Bitwarden està allotjat a GitHub i tothom pot revisar, auditar i contribuir a la base de codis Bitwarden.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Administrador de contrasenyes segur i gratuït per a tots els vostres dispositius</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sincronitzeu i accediu al vostre dipòsit des de diversos dispositius</value>
+    <value>Sincronitzeu i accediu a la vostra caixa forta des de diversos dispositius</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Administreu tots els inicis de sessió i contrasenyes des d'un dipòsit segur</value>
+    <value>Administreu tots els inicis de sessió i contrasenyes des d'una caixa forta segura</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
     <value>Ompli automàticament les vostres credencials d'inici de sessió a qualsevol lloc web que visiteu</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>El vostre dipòsit també es pot accedir des del menú del botó dret</value>
+    <value>La vostra caixa forta també es pot accedir des del menú del botó dret</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
     <value>Genera automàticament contrasenyes fortes, aleatòries i segures</value>

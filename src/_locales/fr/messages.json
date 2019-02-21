@@ -50,7 +50,7 @@
     "message": "Onglet"
   },
   "myVault": {
-    "message": "Mon Coffre"
+    "message": "Mon coffre"
   },
   "tools": {
     "message": "Outils"
@@ -95,13 +95,13 @@
     "message": "Il n'existe aucun site disponible pour le remplissage automatique pour l'onglet actuel du navigateur."
   },
   "addLogin": {
-    "message": "Ajouter un site"
+    "message": "Ajouter un identifiant"
   },
   "addItem": {
     "message": "Ajouter un élément"
   },
   "passwordHint": {
-    "message": "Indice mot de passe"
+    "message": "Indice du mot de passe"
   },
   "enterEmailToGetHint": {
     "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
@@ -130,10 +130,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Identification à deux facteurs"
+    "message": "Identification en deux étapes"
   },
   "logOut": {
-    "message": "Déconnexion"
+    "message": "Se déconnecter"
   },
   "about": {
     "message": "À propos"
@@ -185,10 +185,10 @@
     "message": "Générer automatiquement des mots de passe forts et uniques pour vos identifiants."
   },
   "bitWebVault": {
-    "message": "Coffre en ligne de bitwarden"
+    "message": "Coffre en ligne de Bitwarden"
   },
   "importItems": {
-    "message": "Importer des identifiants"
+    "message": "Importer des éléments"
   },
   "select": {
     "message": "Sélectionner"
@@ -197,7 +197,7 @@
     "message": "Générer un mot de passe"
   },
   "regeneratePassword": {
-    "message": "Re-générer un mot de passe"
+    "message": "Générer un nouveau mot de passe"
   },
   "options": {
     "message": "Options"
@@ -233,7 +233,7 @@
     "message": "Aucun identifiant à afficher."
   },
   "itemInformation": {
-    "message": "Information sur l'identifiant"
+    "message": "Information sur l'élément"
   },
   "username": {
     "message": "Nom d'utilisateur"
@@ -254,16 +254,16 @@
     "message": "Note"
   },
   "editItem": {
-    "message": "Modifier l'identifiant"
+    "message": "Modifier l'élément"
   },
   "folder": {
     "message": "Dossier"
   },
   "deleteItem": {
-    "message": "Supprimer l'identifiant"
+    "message": "Supprimer l'élément"
   },
   "viewItem": {
-    "message": "Voir l'identifiant"
+    "message": "Voir l'élément"
   },
   "launch": {
     "message": "Démarrer"
@@ -338,7 +338,7 @@
     "message": "4 heures"
   },
   "onLocked": {
-    "message": "Au verrouillage"
+    "message": "Au verrouillage du système"
   },
   "onRestart": {
     "message": "Au redémarrage du navigateur"
@@ -420,7 +420,7 @@
     "message": "Vous pouvez modifier votre mot de passe maître depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'authentification à double facteurs rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'authentification à double facteurs peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
+    "message": "L'identification en deux étapes rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'identification en deux étapes peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
   "editedFolder": {
     "message": "Dossier modifié"
@@ -432,7 +432,7 @@
     "message": "Dossier supprimé"
   },
   "gettingStartedTutorial": {
-    "message": "Didacticiel"
+    "message": "Tutoriel"
   },
   "gettingStartedTutorialVideo": {
     "message": "Regardez notre didacticiel pour savoir comment parfaitement utiliser l'extension du navigateur."
@@ -494,19 +494,19 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Désactiver la notification de demande d'ajout d'identifiant"
+    "message": "Désactiver la notification d'ajout d'identifiant"
   },
   "addLoginNotificationDesc": {
-    "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
+    "message": "La \"Notification de demande d'ajout d'identifiant\" apparaît automatiquement pour vous proposer d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Ne pas afficher les cartes sur la page Onglet"
+    "message": "Ne pas afficher les cartes sur la page Onglet courant"
   },
   "dontShowCardsCurrentTabDesc": {
     "message": "Les cartes stockées dans votre coffre sont listées sur la page \"Onglet courant\" pour un accès facile lors du remplissage automatique."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Ne pas afficher les identités sur la page Onglet"
+    "message": "Ne pas afficher les identités sur la page Onglet courant"
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Les identités stockées dans votre coffre sont listées sur la page \"Onglet courant\" pour un accès facile lors du remplissage automatique."
@@ -524,7 +524,7 @@
     "message": "Désactiver la notification de changement de mot de passe"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "La \"Notification de changement de mot de passe\" vous demande automatiquement de mettre à jour un mot de passe dans votre coffre lorsqu'il est changé sur un site web."
+    "message": "La \"Notification de changement de mot de passe\" vous propose automatiquement de mettre à jour un mot de passe dans votre coffre lorsqu'il est changé sur un site web."
   },
   "notificationChangeDesc": {
     "message": "Souhaitez-vous mettre à jour ce mot de passe dans Bitwarden ?"
@@ -533,7 +533,7 @@
     "message": "Oui, mettre à jour maintenant"
   },
   "disableContextMenuItem": {
-    "message": "Désactiver les options de menu contextuelles"
+    "message": "Désactiver les options de menu contextuel"
   },
   "disableContextMenuItemDesc": {
     "message": "Les options du menu contextuel permettent un accès rapide à la génération de mots de passe et aux identifiants enregistrés pour le site web de l'onglet actuel."
@@ -549,7 +549,7 @@
     "message": "Thème"
   },
   "themeDesc": {
-    "message": "Modifier la couleur du thème de l'application."
+    "message": "Modifier le thème de couleur de l'application."
   },
   "dark": {
     "message": "Sombre",
@@ -666,7 +666,7 @@
     "message": "1 Go de stockage de fichiers chiffrés."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "Options d'identification à double facteurs additionnelles comme YubiKey, FIDO U2F et Duo."
+    "message": "Options d'identification en deux étapes additionnelles comme YubiKey, FIDO U2F et Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
@@ -681,7 +681,7 @@
     "message": "Toutes les futures options premium. Prochainement !"
   },
   "premiumPurchase": {
-    "message": "Achat Premium"
+    "message": "Acheter Premium"
   },
   "premiumPurchaseAlert": {
     "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?"
@@ -744,7 +744,7 @@
     "message": "Envoyer à nouveau l'e-mail du code de vérification"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utiliser une autre méthode d'identification à double facteurs"
+    "message": "Utiliser une autre méthode d'identification en deux étapes"
   },
   "insertYubiKey": {
     "message": "Insérez votre YubiKey dans le port USB de votre ordinateur puis appuyez sur son bouton."
@@ -753,16 +753,16 @@
     "message": "Insérez votre clé de sécurité dans le port USB de votre ordinateur. S'il dispose d'un bouton, appuyez dessus."
   },
   "loginUnavailable": {
-    "message": "Identifiant non disponible"
+    "message": "Connexion impossible"
   },
   "noTwoStepProviders": {
-    "message": "Ce compte dispose d'une authentification à double facteurs, cependant, aucun service d'authentification à double facteurs n'est supporté par ce navigateur web."
+    "message": "Ce compte dispose d'une identification en deux étapes. Cependant, aucun service d'identification en deux étapes n'est supporté par ce navigateur web."
   },
   "noTwoStepProviders2": {
-    "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et\/ou d'ajouter des services additionnels de double authentifications qui supportent davantage les navigateurs web (telle qu'une application d'authentification)."
+    "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et\/ou d'ajouter des services additionnels d'identification en deux étapes qui sont mieux supportés par les navigateurs web (comme par exemple une application d'authentification)."
   },
   "twoStepOptions": {
-    "message": "Options d'identification à double facteurs"
+    "message": "Options d'identification en deux étapes"
   },
   "recoveryCodeDesc": {
     "message": "Accès perdu à tous vos services d'authentification à double facteurs ? Utilisez votre code de récupération pour désactiver tous les services de double authentifications sur votre compte."
@@ -837,7 +837,7 @@
     "message": "Les URLs d'environnement ont été enregistrées."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load."
+    "message": "Activer l’auto-complétion au chargement de la page"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Si un formulaire de connexion est détecté, compléter automatiquement les champs au chargement de la page web."
@@ -882,7 +882,7 @@
     "message": "Désactiver les icônes des sites web"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
   },
   "cardholderName": {
     "message": "Nom du titulaire de la carte"
@@ -981,7 +981,7 @@
     "message": "Numéro de passeport"
   },
   "licenseNumber": {
-    "message": "Numéro de permis de Conduire"
+    "message": "Numéro de permis"
   },
   "email": {
     "message": "E-mail"
@@ -1005,7 +1005,7 @@
     "message": "Ville"
   },
   "stateProvince": {
-    "message": "Dept. \/ Province"
+    "message": "État \/ Région"
   },
   "zipPostalCode": {
     "message": "Code postal"
@@ -1065,7 +1065,7 @@
     "message": "Effacer"
   },
   "twoStepNewWindowMessage": {
-    "message": "Terminez votre demande d'authentification à deux étapes en utilisant le nouvel onglet."
+    "message": "Terminez votre demande d'identification en deux étapes en utilisant le nouvel onglet."
   },
   "checkPassword": {
     "message": "Vérifier si le mot de passe a été exposé."
@@ -1108,7 +1108,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Options de basculement"
+    "message": "Afficher\/masquer les options"
   },
   "organization": {
     "message": "Organisation",
@@ -1169,5 +1169,30 @@
   },
   "weakMasterPasswordDesc": {
     "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "verifyPin": {
+    "message": "Verify PIN"
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on browser restart"
   }
 }

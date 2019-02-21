@@ -293,13 +293,13 @@
     "message": "Verifiser superpassordet"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Hvelvet ditt er låst. Kontroller superpassordet ditt for å fortsette."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Lås opp"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Logget på som $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1169,5 +1169,30 @@
   },
   "weakMasterPasswordDesc": {
     "message": "Superpassordet du har valgt er svakt. Du bør bruke et sterkt superpassord (eller en passordfrase) for å sikre Bitwarden-kontoen din på en forsvarlig måte. Er du sikker på at du vil bruke dette superpassordet?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "verifyPin": {
+    "message": "Verify PIN"
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on browser restart"
   }
 }
