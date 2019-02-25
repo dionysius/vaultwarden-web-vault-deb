@@ -12,6 +12,7 @@ import { Analytics } from 'jslib/misc';
 
 import {
     CipherService,
+    LockService,
     StorageService,
 } from 'jslib/abstractions';
 
@@ -36,7 +37,8 @@ export default class RuntimeBackground {
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
-        private analytics: Analytics, private notificationsService: NotificationsService) {
+        private analytics: Analytics, private notificationsService: NotificationsService,
+        private lockService: LockService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
 
@@ -81,10 +83,10 @@ export default class RuntimeBackground {
         switch (msg.command) {
             case 'loggedIn':
             case 'unlocked':
-            case 'locked':
                 await this.main.setIcon();
-                await this.main.refreshBadgeAndMenu(msg.command === 'locked');
+                await this.main.refreshBadgeAndMenu(false);
                 this.notificationsService.updateConnection(msg.command === 'unlocked');
+                this.lockService.cancelLockReload();
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);

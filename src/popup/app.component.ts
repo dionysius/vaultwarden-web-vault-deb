@@ -112,7 +112,9 @@ export class AppComponent implements OnInit {
                     action: msg.action,
                     properties: { label: msg.label },
                 });
-            } else {
+            } else if (msg.command === 'reloadProcess') {
+                window.location.reload(true);
+            }  else {
                 msg.webExtSender = sender;
                 this.broadcasterService.send(msg);
             }

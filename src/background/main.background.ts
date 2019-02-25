@@ -149,6 +149,10 @@ export default class MainBackground {
                 }
                 await this.setIcon();
                 await this.refreshBadgeAndMenu(true);
+                this.lockService.startLockReload();
+            }, () => {
+                window.location.reload(true);
+                return Promise.resolve();
             });
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
@@ -174,7 +178,7 @@ export default class MainBackground {
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.analytics, this.notificationsService);
+            this.analytics, this.notificationsService, this.lockService);
         this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics);
@@ -284,6 +288,7 @@ export default class MainBackground {
         await this.refreshBadgeAndMenu();
         await this.reseedStorage();
         this.notificationsService.updateConnection(false);
+        this.lockService.startLockReload();
     }
 
     collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
