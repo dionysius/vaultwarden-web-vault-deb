@@ -156,7 +156,7 @@ export class OptionsComponent implements OnInit {
     async saveClearClipboard() {
         await this.storageService.save(ConstantsService.clearClipboardKey, this.clearClipboard);
         this.analytics.eventTrack.next({
-            action: 'Set Clear Clipboard ' + (this.clearClipboard == null ? 'disabled' : this.clearClipboard),
+            action: 'Set Clear Clipboard ' + (this.clearClipboard == null ? 'Disabled' : this.clearClipboard),
         });
     }
 
