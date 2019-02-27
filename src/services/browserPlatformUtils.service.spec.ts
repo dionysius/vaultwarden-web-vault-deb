@@ -27,7 +27,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'
             });
 
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.ChromeExtension);
         });
 
@@ -37,7 +37,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0'
             });
 
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.FirefoxExtension);
         });
 
@@ -52,7 +52,7 @@ describe('Browser Utils Service', () => {
                 value: {}
             });
 
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.OperaExtension);
         });
 
@@ -62,7 +62,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; ServiceUI 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063'
             });
 
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.EdgeExtension);
         });
 
@@ -77,7 +77,7 @@ describe('Browser Utils Service', () => {
                 value: {}
             });
 
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.SafariExtension);
         });
 
@@ -87,7 +87,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.97 Safari/537.36 Vivaldi/1.94.1008.40'
             });
 
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.VivaldiExtension);
         });
     });

@@ -16,7 +16,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
 
-    constructor(private messagingService: MessagingService) { }
+    constructor(private messagingService: MessagingService,
+        private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void) { }
 
     getDevice(): DeviceType {
         if (this.deviceCache) {
@@ -185,14 +186,22 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         } else if (options && options.doc) {
             doc = options.doc;
         }
+        const clearMs: number = options && options.clearMs ? options.clearMs : null;
         if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.writeText) {
-            (win as any).navigator.clipboard.writeText(text);
+            (win as any).navigator.clipboard.writeText(text).then(() => {
+                if (this.clipboardWriteCallback != null) {
+                    this.clipboardWriteCallback(text, clearMs);
+                }
+            });
         } else if ((win as any).clipboardData && (win as any).clipboardData.setData) {
             // IE specific code path to prevent textarea being shown while dialog is visible.
             (win as any).clipboardData.setData('Text', text);
+            if (this.clipboardWriteCallback != null) {
+                this.clipboardWriteCallback(text, clearMs);
+            }
         } else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
             const textarea = doc.createElement('textarea');
-            textarea.textContent = text;
+            textarea.textContent = text == null || text === '' ? ' ' : text;
             // Prevent scrolling to bottom of page in MS Edge.
             textarea.style.position = 'fixed';
             doc.body.appendChild(textarea);
@@ -200,7 +209,9 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
             try {
                 // Security exception may be thrown by some browsers.
-                doc.execCommand('copy');
+                if (doc.execCommand('copy') && this.clipboardWriteCallback != null) {
+                    this.clipboardWriteCallback(text, clearMs);
+                }
             } catch (e) {
                 // tslint:disable-next-line
                 console.warn('Copy to clipboard failed.', e);

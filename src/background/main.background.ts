@@ -22,6 +22,7 @@ import {
 import { ExportService } from 'jslib/services/export.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { SearchService } from 'jslib/services/search.service';
+import { SystemService } from 'jslib/services/system.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import {
@@ -48,6 +49,7 @@ import {
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
+import { SystemService as SystemServiceAbstraction } from 'jslib/abstractions/system.service';
 
 import { Analytics } from 'jslib/misc';
 import { Utils } from 'jslib/misc/utils';
@@ -97,6 +99,7 @@ export default class MainBackground {
     exportService: ExportServiceAbstraction;
     searchService: SearchServiceAbstraction;
     notificationsService: NotificationsServiceAbstraction;
+    systemService: SystemServiceAbstraction;
     analytics: Analytics;
 
     onUpdatedRan: boolean;
@@ -121,7 +124,12 @@ export default class MainBackground {
     constructor() {
         // Services
         this.messagingService = new BrowserMessagingService();
-        this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService);
+        this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService,
+            (clipboardValue, clearMs) => {
+                if (this.systemService != null) {
+                    this.systemService.clearClipboard(clipboardValue, clearMs);
+                }
+            });
         this.storageService = new BrowserStorageService(this.platformUtilsService, false);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window),
@@ -149,10 +157,9 @@ export default class MainBackground {
                 }
                 await this.setIcon();
                 await this.refreshBadgeAndMenu(true);
-                this.lockService.startLockReload();
-            }, () => {
-                window.location.reload(true);
-                return Promise.resolve();
+                if (this.systemService != null) {
+                    this.systemService.startProcessReload();
+                }
             });
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
@@ -169,6 +176,11 @@ export default class MainBackground {
             this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
+        this.systemService = new SystemService(this.storageService, this.lockService,
+            this.messagingService, this.platformUtilsService, () => {
+                window.location.reload(true);
+                return Promise.resolve();
+            });
 
         // Other fields
         this.isSafari = this.platformUtilsService.isSafari();
@@ -178,7 +190,7 @@ export default class MainBackground {
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.analytics, this.notificationsService, this.lockService);
+            this.analytics, this.notificationsService, this.systemService);
         this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics);
@@ -288,7 +300,7 @@ export default class MainBackground {
         await this.refreshBadgeAndMenu();
         await this.reseedStorage();
         this.notificationsService.updateConnection(false);
-        this.lockService.startLockReload();
+        this.systemService.startProcessReload();
     }
 
     collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {

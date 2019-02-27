@@ -12,9 +12,9 @@ import { Analytics } from 'jslib/misc';
 
 import {
     CipherService,
-    LockService,
     StorageService,
 } from 'jslib/abstractions';
+import { SystemService } from 'jslib/abstractions/system.service';
 
 import { BrowserApi } from '../browser/browserApi';
 
@@ -38,7 +38,7 @@ export default class RuntimeBackground {
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
         private analytics: Analytics, private notificationsService: NotificationsService,
-        private lockService: LockService) {
+        private systemService: SystemService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
 
@@ -86,7 +86,7 @@ export default class RuntimeBackground {
                 await this.main.setIcon();
                 await this.main.refreshBadgeAndMenu(false);
                 this.notificationsService.updateConnection(msg.command === 'unlocked');
-                this.lockService.cancelLockReload();
+                this.systemService.cancelProcessReload();
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);
