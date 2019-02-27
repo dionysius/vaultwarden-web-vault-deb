@@ -210,6 +210,39 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         }
     }
 
+    async readFromClipboard(options?: any): Promise<string> {
+        let win = window;
+        let doc = window.document;
+        if (options && (options.window || options.win)) {
+            win = options.window || options.win;
+            doc = win.document;
+        } else if (options && options.doc) {
+            doc = options.doc;
+        }
+
+        if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.readText) {
+            return await (win as any).navigator.clipboard.readText();
+        } else if (doc.queryCommandSupported && doc.queryCommandSupported('paste')) {
+            const textarea = doc.createElement('textarea');
+            // Prevent scrolling to bottom of page in MS Edge.
+            textarea.style.position = 'fixed';
+            doc.body.appendChild(textarea);
+            textarea.focus();
+            try {
+                // Security exception may be thrown by some browsers.
+                if (doc.execCommand('paste')) {
+                    return textarea.value;
+                }
+            } catch (e) {
+                // tslint:disable-next-line
+                console.warn('Read from clipboard failed.', e);
+            } finally {
+                doc.body.removeChild(textarea);
+            }
+        }
+        return null;
+    }
+
     resolveDialogPromise(dialogId: number, confirmed: boolean) {
         if (this.showDialogResolves.has(dialogId)) {
             const resolveObj = this.showDialogResolves.get(dialogId);
