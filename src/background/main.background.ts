@@ -159,6 +159,7 @@ export default class MainBackground {
                 await this.refreshBadgeAndMenu(true);
                 if (this.systemService != null) {
                     this.systemService.startProcessReload();
+                    await this.systemService.clearPendingClipboard();
                 }
             });
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
@@ -301,6 +302,7 @@ export default class MainBackground {
         await this.reseedStorage();
         this.notificationsService.updateConnection(false);
         this.systemService.startProcessReload();
+        await this.systemService.clearPendingClipboard();
     }
 
     collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
