@@ -34,6 +34,8 @@ export class OptionsComponent implements OnInit {
     themeOptions: any[];
     defaultUriMatch = UriMatchType.Domain;
     uriMatchOptions: any[];
+    clearClipboard: number;
+    clearClipboardOptions: any[];
 
     constructor(private analytics: Angulartics2, private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private storageService: StorageService,
@@ -51,6 +53,15 @@ export class OptionsComponent implements OnInit {
             { name: i18nService.t('regEx'), value: UriMatchType.RegularExpression },
             { name: i18nService.t('exact'), value: UriMatchType.Exact },
             { name: i18nService.t('never'), value: UriMatchType.Never },
+        ];
+        this.clearClipboardOptions = [
+            { name: i18nService.t('never'), value: null },
+            { name: i18nService.t('tenSeconds'), value: 10 },
+            { name: i18nService.t('twentySeconds'), value: 20 },
+            { name: i18nService.t('thirtySeconds'), value: 30 },
+            { name: i18nService.t('oneMinute'), value: 60 },
+            { name: i18nService.t('twoMinutes'), value: 120 },
+            { name: i18nService.t('fiveMinutes'), value: 300 },
         ];
     }
 
@@ -80,6 +91,8 @@ export class OptionsComponent implements OnInit {
 
         const defaultUriMatch = await this.storageService.get<UriMatchType>(ConstantsService.defaultUriMatch);
         this.defaultUriMatch = defaultUriMatch == null ? UriMatchType.Domain : defaultUriMatch;
+
+        this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
     }
 
     async updateAddLoginNotification() {
@@ -138,6 +151,13 @@ export class OptionsComponent implements OnInit {
     async saveDefaultUriMatch() {
         await this.storageService.save(ConstantsService.defaultUriMatch, this.defaultUriMatch);
         this.analytics.eventTrack.next({ action: 'Set Default URI Match ' + this.defaultUriMatch });
+    }
+
+    async saveClearClipboard() {
+        await this.storageService.save(ConstantsService.clearClipboardKey, this.clearClipboard);
+        this.analytics.eventTrack.next({
+            action: 'Set Clear Clipboard ' + (this.clearClipboard == null ? 'disabled' : this.clearClipboard),
+        });
     }
 
     private callAnalytics(name: string, enabled: boolean) {

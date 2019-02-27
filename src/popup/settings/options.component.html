@@ -38,6 +38,18 @@
     </div>
     <div class="box">
         <div class="box-content">
+            <div class="box-content-row" appBoxRow>
+                <label for="clearClipboard">{{'clearClipboard' | i18n}}</label>
+                <select id="clearClipboard" name="ClearClipboard" [(ngModel)]="clearClipboard"
+                    (change)="saveClearClipboard()">
+                    <option *ngFor="let o of clearClipboardOptions" [ngValue]="o.value">{{o.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="box-footer">{{'clearClipboardDesc' | i18n}}</div>
+    </div>
+    <div class="box">
+        <div class="box-content">
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
                 <label for="totp">{{'disableAutoTotpCopy' | i18n}}</label>
                 <input id="totp" type="checkbox" (change)="updateAutoTotpCopy()" [(ngModel)]="disableAutoTotpCopy">
