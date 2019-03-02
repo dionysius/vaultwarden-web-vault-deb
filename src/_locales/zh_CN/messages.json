@@ -319,8 +319,20 @@
   "immediately": {
     "message": "立即"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1 分钟"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 分钟"
@@ -510,6 +522,14 @@
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "密码库中的标示列在 \"当前标签\" 页面上，以便于自动填充访问。"
+  },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "希望 Bitwarden 为您保存这个密码吗？"
@@ -1171,28 +1191,28 @@
     "message": "您选择的主密码较弱。您应该使用强密码（或密码短语）来正确保护您的 Bitwarden 账户。仍要使用此主密码吗？"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN 码",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "使用 PIN 解锁"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "设定您用来解锁 Bitwarden 的 PIN 码。您的 PIN 设置将在您完全退出本应用程序时被重置。"
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "需要 PIN 码。"
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "无效 PIN 码。"
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "验证 PIN 码"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "您的密码库已锁定。请输入您的 PIN 码以继续。"
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "浏览器重启后改用主密码锁定"
   }
 }

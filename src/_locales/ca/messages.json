@@ -319,8 +319,20 @@
   "immediately": {
     "message": "Immediatament"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1 minut"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 Minuts"
@@ -510,6 +522,14 @@
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Els elements d'identitat de la vostra caixa forta es detallen a la pàgina \"Fitxa actual\" per obtenir un fàcil accés amb l'emplenat automàtic."
+  },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Bitwarden ha de recordar aquesta contrasenya per a vosaltres?"
@@ -1175,24 +1195,24 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Desbloqueja amb codi PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Configureu el vostre codi PIN per desbloquejar Bitwarden. La configuració del PIN es restablirà si tanqueu la sessió definitivament."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Es necessita el codi PIN."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "El codi PIN no és vàlid."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "Verifica el PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "La caixa forta està bloquejada. Verifiqueu El codi PIN per continuar."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "Bloqueja amb la contrasenya mestra en reiniciar el navegador"
   }
 }

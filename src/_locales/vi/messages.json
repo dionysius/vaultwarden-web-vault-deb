@@ -319,8 +319,20 @@
   "immediately": {
     "message": "Tức thì"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1 phút"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 phút"
@@ -510,6 +522,14 @@
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Bạn có cần Bitwarden nhớ giúp bạn mật khẩu này không?"

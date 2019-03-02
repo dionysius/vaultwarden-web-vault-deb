@@ -319,8 +319,20 @@
   "immediately": {
     "message": "Omedelbart"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1 minut"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 minuter"
@@ -510,6 +522,14 @@
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Ska Bitwarden komma ihåg det här lösenordet åt dig?"
@@ -1171,17 +1191,17 @@
     "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-kod",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Lås upp med PIN-kod"
   },
   "setYourPinCode": {
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN-kod behövs."
   },
   "invalidPin": {
     "message": "Invalid PIN code."

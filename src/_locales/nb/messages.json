@@ -319,8 +319,20 @@
   "immediately": {
     "message": "Umiddelbart"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1 minutt"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 minutter"
@@ -510,6 +522,14 @@
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Identitetsgjenstander fra hvelvet ditt er listet opp på «Nåværende fane»-siden for enkel autoutfyllingstilgang."
+  },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Skal Bitwarden huske på dette passordet for deg?"
@@ -1181,18 +1201,18 @@
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN-kode er påkrevd."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Ugyldig PIN-kode."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "Verifiser PIN-koden"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Hvelvet ditt er låst. Kontroller PIN-koden din for å fortsette."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "Lås med hovedpassord når du starter nettleseren på nytt"
   }
 }

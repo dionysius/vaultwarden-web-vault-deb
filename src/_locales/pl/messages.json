@@ -319,8 +319,20 @@
   "immediately": {
     "message": "Natychmiast"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "po 1 minucie"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "po 5 minutach"
@@ -510,6 +522,14 @@
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Tożsamości zapisane w Twoim sejfie są wyświetlane w zakładce \"Bieżąca karta\" dla łatwiejszego autouzupełniania."
+  },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Czy Bitwarden powinien zapisać dla Ciebie to hasło?"
@@ -1175,24 +1195,24 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Odblokuj kodem PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Ustaw kod PIN do odblokowania sejfu. Ustawienia odblokowania kodem PIN zostaną zresetowane po pełnym wylogowaniu."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Wymagany jest kod PIN."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Nieprawidłowy kod PIN."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "Sprawdź kod PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Twój sejf jest zablokowany. Wprowadź swój kod PIN, aby kontynuować."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "Zablokuj hasłem głównym po restarcie przeglądarki"
   }
 }
