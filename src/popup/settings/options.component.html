@@ -36,7 +36,7 @@
         </div>
         <div class="box-footer">{{'defaultUriMatchDetectionDesc' | i18n}}</div>
     </div>
-    <div class="box">
+    <div class="box" *ngIf="showClearClipboard">
         <div class="box-content">
             <div class="box-content-row" appBoxRow>
                 <label for="clearClipboard">{{'clearClipboard' | i18n}}</label>

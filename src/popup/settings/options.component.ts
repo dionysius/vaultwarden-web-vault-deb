@@ -30,6 +30,7 @@ export class OptionsComponent implements OnInit {
     dontShowCards = false;
     dontShowIdentities = false;
     showDisableContextMenu = true;
+    showClearClipboard = true;
     theme: string;
     themeOptions: any[];
     defaultUriMatch = UriMatchType.Domain;
@@ -66,7 +67,7 @@ export class OptionsComponent implements OnInit {
     }
 
     async ngOnInit() {
-        this.showDisableContextMenu = !this.platformUtilsService.isSafari();
+        this.showDisableContextMenu = this.showClearClipboard = !this.platformUtilsService.isSafari();
 
         this.enableAutoFillOnPageLoad = await this.storageService.get<boolean>(
             ConstantsService.enableAutoFillOnPageLoadKey);
