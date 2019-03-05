@@ -179,7 +179,7 @@ export default class MainBackground {
             this.storageService, this.appIdService);
         this.systemService = new SystemService(this.storageService, this.lockService,
             this.messagingService, this.platformUtilsService, () => {
-                window.location.reload(true);
+                BrowserApi.reloadExtension(window, false);
                 return Promise.resolve();
             });
 

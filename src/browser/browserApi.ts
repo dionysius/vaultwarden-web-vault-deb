@@ -287,4 +287,12 @@ export class BrowserApi {
             return chrome.i18n.getUILanguage();
         }
     }
+
+    static reloadExtension(win: Window, popupWindow: boolean) {
+        if (BrowserApi.isSafariApi) {
+            return win.location.reload(true);
+        } else if (!popupWindow) {
+            return chrome.runtime.reload();
+        }
+    }
 }

@@ -113,8 +113,8 @@ export class AppComponent implements OnInit {
                     properties: { label: msg.label },
                 });
             } else if (msg.command === 'reloadProcess') {
-                window.location.reload(true);
-            }  else {
+                BrowserApi.reloadExtension(window, true);
+            } else {
                 msg.webExtSender = sender;
                 this.broadcasterService.send(msg);
             }
