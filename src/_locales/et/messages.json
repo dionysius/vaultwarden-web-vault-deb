@@ -320,28 +320,28 @@
     "message": "Koheselt"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekundi pärast"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekundi pärast"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekundi pärast"
   },
   "oneMinute": {
     "message": "1 minuti pärast"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minuti pärast"
   },
   "fiveMinutes": {
-    "message": "15 minuti pärast"
+    "message": "5 minuti pärast"
   },
   "fifteenMinutes": {
     "message": "15 minuti pärast"
   },
   "thirtyMinutes": {
-    "message": "15 minuti pärast"
+    "message": "30 minuti pärast"
   },
   "oneHour": {
     "message": "1 tunni pärast"
@@ -524,11 +524,11 @@
     "message": "Identiteediandmeid kuvatakse vaikeseadena \"Kaart\" vaates, et neid oleks lihtsam sisestada."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Lõikelaua puhastamine",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Puhastab automaatselt lõikelauale kopeeritud sisu.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -1170,7 +1170,7 @@
     "message": "Omanik"
   },
   "whoOwnsThisItem": {
-    "message": "Kes seda kirjet omab?"
+    "message": "Kes on selle kirje omanik?"
   },
   "strong": {
     "message": "Tugev",

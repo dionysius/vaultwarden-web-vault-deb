@@ -320,19 +320,19 @@
     "message": "Немедленно"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 секунд"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 секунд"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 секунд"
   },
   "oneMinute": {
     "message": "Через 1 минуту"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 минуты"
   },
   "fiveMinutes": {
     "message": "Через 5 минут"
@@ -389,7 +389,7 @@
     "message": "Необходим код подтверждения."
   },
   "valueCopied": {
-    "message": "$VALUE$ скопирован",
+    "message": "$VALUE$ скопировано",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -524,11 +524,11 @@
     "message": "Личности из вашего хранилища перечислены на 'Текущей вкладке' для упрощения доступа к автозаполнению."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Очистить буфер обмена",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Автоматически очищать скопированные значения в вашем буфере обмена.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {

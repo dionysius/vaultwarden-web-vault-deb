@@ -320,19 +320,19 @@
     "message": "Sofort"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 Sekunden"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 Sekunden"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 Sekunden"
   },
   "oneMinute": {
     "message": "1 Minute"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 Minuten"
   },
   "fiveMinutes": {
     "message": "5 Minuten"
@@ -524,11 +524,11 @@
     "message": "Identitäts Daten aus deinem Tresors werden unter 'Tab' aufgeführt um automatisches ausfüllen zu vereinfachen."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Zwischenablage leeren",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Kopierte Werte automatisch aus der Zwischenablage löschen.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -1210,9 +1210,9 @@
     "message": "PIN bestätigen"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Ihr Tresor ist gesperrt. Bestätigen sie ihren PIN Code um fortzufahren."
+    "message": "Ihr Tresor ist gesperrt. Geben sie ihren PIN-Code ein um fortzufahren."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Beim Browser neustart mit Master Passwort sperren"
+    "message": "Beim Browser Neustart mit Master Passwort sperren"
   }
 }

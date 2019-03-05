@@ -320,19 +320,19 @@
     "message": "Umiddelbart"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekunder"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekunder"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekunder"
   },
   "oneMinute": {
     "message": "1 minutt"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minutter"
   },
   "fiveMinutes": {
     "message": "5 minutter"
@@ -1195,7 +1195,7 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Lås opp med PIN"
   },
   "setYourPinCode": {
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
