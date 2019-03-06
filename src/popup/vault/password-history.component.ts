@@ -28,8 +28,7 @@ export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
             } else {
                 this.close();
             }
-
-            await super.ngOnInit();
+            await this.init();
             if (queryParamsSub != null) {
                 queryParamsSub.unsubscribe();
             }

@@ -26,7 +26,7 @@ export class CollectionsComponent extends BaseCollectionsComponent {
         });
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             this.cipherId = params.cipherId;
-            await super.ngOnInit();
+            await this.load();
             if (queryParamsSub != null) {
                 queryParamsSub.unsubscribe();
             }

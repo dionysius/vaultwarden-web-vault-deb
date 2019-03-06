@@ -28,7 +28,7 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
             if (params.folderId) {
                 this.folderId = params.folderId;
             }
-            await super.ngOnInit();
+            await this.init();
             if (queryParamsSub != null) {
                 queryParamsSub.unsubscribe();
             }
