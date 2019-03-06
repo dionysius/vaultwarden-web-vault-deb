@@ -524,11 +524,11 @@
     "message": "Identiteediandmeid kuvatakse vaikeseadena \"Kaart\" vaates, et neid oleks lihtsam sisestada."
   },
   "clearClipboard": {
-    "message": "Lõikelaua puhastamine",
+    "message": "Lõikelaua sisu kustutamine",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Puhastab automaatselt lõikelauale kopeeritud sisu.",
+    "message": "Kustutab automaatselt lõikelauale kopeeritud sisu.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -1213,6 +1213,6 @@
     "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lukusta ülemparooliga, kui brauser taaskäivitatakse"
+    "message": "Nõua ülemparooli, kui brauser taaskäivitatakse"
   }
 }
