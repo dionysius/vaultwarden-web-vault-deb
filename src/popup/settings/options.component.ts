@@ -16,6 +16,8 @@ import { TotpService } from 'jslib/abstractions/totp.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import { BrowserApi } from '../../browser/browserApi';
+
 @Component({
     selector: 'app-options',
     templateUrl: 'options.component.html',
@@ -35,6 +37,7 @@ export class OptionsComponent implements OnInit {
     themeOptions: any[];
     defaultUriMatch = UriMatchType.Domain;
     uriMatchOptions: any[];
+    clearClipboardOriginalValue: number;
     clearClipboard: number;
     clearClipboardOptions: any[];
 
@@ -94,6 +97,7 @@ export class OptionsComponent implements OnInit {
         this.defaultUriMatch = defaultUriMatch == null ? UriMatchType.Domain : defaultUriMatch;
 
         this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
+        this.clearClipboardOriginalValue = this.clearClipboard;
     }
 
     async updateAddLoginNotification() {
@@ -155,10 +159,22 @@ export class OptionsComponent implements OnInit {
     }
 
     async saveClearClipboard() {
-        await this.storageService.save(ConstantsService.clearClipboardKey, this.clearClipboard);
-        this.analytics.eventTrack.next({
-            action: 'Set Clear Clipboard ' + (this.clearClipboard == null ? 'Disabled' : this.clearClipboard),
-        });
+        if (!this.showClearClipboard) {
+            return;
+        }
+        let hasClipboardPermission = await BrowserApi.hasPermission('clipboardRead');
+        if (!hasClipboardPermission) {
+            hasClipboardPermission = await BrowserApi.requestPermission('clipboardRead');
+        }
+        if (hasClipboardPermission) {
+            this.clearClipboardOriginalValue = this.clearClipboard;
+            await this.storageService.save(ConstantsService.clearClipboardKey, this.clearClipboard);
+            this.analytics.eventTrack.next({
+                action: 'Set Clear Clipboard ' + (this.clearClipboard == null ? 'Disabled' : this.clearClipboard),
+            });
+        } else {
+            this.clearClipboard = this.clearClipboardOriginalValue;
+        }
     }
 
     private callAnalytics(name: string, enabled: boolean) {
