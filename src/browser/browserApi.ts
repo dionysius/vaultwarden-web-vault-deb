@@ -298,7 +298,7 @@ export class BrowserApi {
 
     static hasPermission(permissionName: string): Promise<boolean> {
         return new Promise((resolve) => {
-            if (BrowserApi.isSafariApi) {
+            if (BrowserApi.isSafariApi || !chrome.permissions || !chrome.permissions.contains) {
                 resolve(true);
             } else {
                 chrome.permissions.contains({
@@ -312,7 +312,7 @@ export class BrowserApi {
 
     static requestPermission(permissionName: string): Promise<boolean> {
         return new Promise((resolve) => {
-            if (BrowserApi.isSafariApi) {
+            if (BrowserApi.isSafariApi || !chrome.permissions || !chrome.permissions.request) {
                 resolve(true);
             } else {
                 chrome.permissions.request({
