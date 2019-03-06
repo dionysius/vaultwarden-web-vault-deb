@@ -4,10 +4,9 @@ import MainBackground from './main.background';
 
 import { Analytics } from 'jslib/misc';
 
-import {
-    PasswordGenerationService,
-    PlatformUtilsService,
-} from 'jslib/abstractions';
+import { LockService } from 'jslib/abstractions/lock.service';
+import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export default class CommandsBackground {
     private commands: any;
@@ -16,7 +15,8 @@ export default class CommandsBackground {
     private isVivaldi: boolean;
 
     constructor(private main: MainBackground, private passwordGenerationService: PasswordGenerationService,
-        private platformUtilsService: PlatformUtilsService, private analytics: Analytics) {
+        private platformUtilsService: PlatformUtilsService, private analytics: Analytics,
+        private lockService: LockService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.isEdge = this.platformUtilsService.isEdge();
         this.isVivaldi = this.platformUtilsService.isVivaldi();
@@ -63,6 +63,10 @@ export default class CommandsBackground {
             return;
         }
 
+        if (await this.lockService.isLocked()) {
+            return;
+        }
+
         const options = await this.passwordGenerationService.getOptions();
         const password = await this.passwordGenerationService.generatePassword(options);
         this.platformUtilsService.copyToClipboard(password, { window: window });
@@ -75,6 +79,10 @@ export default class CommandsBackground {
     }
 
     private async autoFillLogin(tab?: any) {
+        if (await this.lockService.isLocked()) {
+            return;
+        }
+
         if (!tab) {
             tab = await BrowserApi.getTabFromCurrentWindowId();
         }
@@ -83,7 +91,7 @@ export default class CommandsBackground {
             return;
         }
 
-        this.main.collectPageDetailsForContentScript(tab, 'autofill_cmd');
+        await this.main.collectPageDetailsForContentScript(tab, 'autofill_cmd');
 
         this.analytics.ga('send', {
             hitType: 'event',

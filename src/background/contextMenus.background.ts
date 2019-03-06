@@ -4,18 +4,17 @@ import MainBackground from './main.background';
 
 import { Analytics } from 'jslib/misc';
 
-import {
-    CipherService,
-    PasswordGenerationService,
-    PlatformUtilsService,
-} from 'jslib/abstractions';
+import { CipherService } from 'jslib/abstractions/cipher.service';
+import { LockService } from 'jslib/abstractions/lock.service';
+import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export default class ContextMenusBackground {
     private contextMenus: any;
 
     constructor(private main: MainBackground, private cipherService: CipherService,
         private passwordGenerationService: PasswordGenerationService, private analytics: Analytics,
-        private platformUtilsService: PlatformUtilsService) {
+        private platformUtilsService: PlatformUtilsService, private lockService: LockService) {
         this.contextMenus = chrome.contextMenus;
     }
 
@@ -35,6 +34,10 @@ export default class ContextMenusBackground {
     }
 
     private async generatePasswordToClipboard() {
+        if (await this.lockService.isLocked()) {
+            return;
+        }
+
         const options = await this.passwordGenerationService.getOptions();
         const password = await this.passwordGenerationService.generatePassword(options);
         this.platformUtilsService.copyToClipboard(password, { window: window });
@@ -55,34 +58,34 @@ export default class ContextMenusBackground {
             return;
         }
 
+        if (await this.lockService.isLocked()) {
+            return;
+        }
+
         const ciphers = await this.cipherService.getAllDecrypted();
-        for (let i = 0; i < ciphers.length; i++) {
-            const cipher = ciphers[i];
-            if (cipher.id !== id) {
-                continue;
-            }
+        const cipher = ciphers.find((c) => c.id === id);
+        if (cipher == null) {
+            return;
+        }
 
-            if (info.parentMenuItemId === 'autofill') {
-                this.analytics.ga('send', {
-                    hitType: 'event',
-                    eventAction: 'Autofilled From Context Menu',
-                });
-                await this.startAutofillPage(cipher);
-            } else if (info.parentMenuItemId === 'copy-username') {
-                this.analytics.ga('send', {
-                    hitType: 'event',
-                    eventAction: 'Copied Username From Context Menu',
-                });
-                this.platformUtilsService.copyToClipboard(cipher.login.username, { window: window });
-            } else if (info.parentMenuItemId === 'copy-password') {
-                this.analytics.ga('send', {
-                    hitType: 'event',
-                    eventAction: 'Copied Password From Context Menu',
-                });
-                this.platformUtilsService.copyToClipboard(cipher.login.password, { window: window });
-            }
-
-            break;
+        if (info.parentMenuItemId === 'autofill') {
+            this.analytics.ga('send', {
+                hitType: 'event',
+                eventAction: 'Autofilled From Context Menu',
+            });
+            await this.startAutofillPage(cipher);
+        } else if (info.parentMenuItemId === 'copy-username') {
+            this.analytics.ga('send', {
+                hitType: 'event',
+                eventAction: 'Copied Username From Context Menu',
+            });
+            this.platformUtilsService.copyToClipboard(cipher.login.username, { window: window });
+        } else if (info.parentMenuItemId === 'copy-password') {
+            this.analytics.ga('send', {
+                hitType: 'event',
+                eventAction: 'Copied Password From Context Menu',
+            });
+            this.platformUtilsService.copyToClipboard(cipher.login.password, { window: window });
         }
     }
 

@@ -1,15 +1,14 @@
-import {
-    CipherService,
-    PlatformUtilsService,
-} from 'jslib/abstractions';
+import { CipherService } from 'jslib/abstractions/cipher.service';
+import { LockService } from 'jslib/abstractions/lock.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export default class WebRequestBackground {
     private pendingAuthRequests: any[] = [];
     private webRequest: any;
     private isFirefox: boolean;
 
-    constructor(private platformUtilsService: PlatformUtilsService,
-        private cipherService: CipherService) {
+    constructor(platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
+        private lockService: LockService) {
         this.webRequest = (window as any).chrome.webRequest;
         this.isFirefox = platformUtilsService.isFirefox();
     }
@@ -45,6 +44,11 @@ export default class WebRequestBackground {
     }
 
     private async resolveAuthCredentials(domain: string, success: Function, error: Function) {
+        if (await this.lockService.isLocked()) {
+            error();
+            return;
+        }
+
         try {
             const ciphers = await this.cipherService.getAllDecryptedForUrl(domain);
             if (ciphers == null || ciphers.length !== 1) {

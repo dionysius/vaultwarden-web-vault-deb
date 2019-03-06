@@ -10,10 +10,9 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 
 import { Analytics } from 'jslib/misc';
 
-import {
-    CipherService,
-    StorageService,
-} from 'jslib/abstractions';
+import { CipherService } from 'jslib/abstractions/cipher.service';
+import { LockService } from 'jslib/abstractions/lock.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 import { SystemService } from 'jslib/abstractions/system.service';
 
 import { BrowserApi } from '../browser/browserApi';
@@ -38,7 +37,7 @@ export default class RuntimeBackground {
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
         private analytics: Analytics, private notificationsService: NotificationsService,
-        private systemService: SystemService) {
+        private systemService: SystemService, private lockService: LockService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
 
@@ -115,7 +114,7 @@ export default class RuntimeBackground {
                 await BrowserApi.tabSendMessageData(sender.tab, 'adjustNotificationBar', msg.data);
                 break;
             case 'bgCollectPageDetails':
-                this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
+                await this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
                 break;
             case 'bgAddLogin':
                 await this.addLogin(msg.login, sender.tab);
@@ -146,6 +145,9 @@ export default class RuntimeBackground {
                 await this.main.reseedStorage();
                 break;
             case 'collectPageDetailsResponse':
+                if (await this.lockService.isLocked()) {
+                    return;
+                }
                 switch (msg.sender) {
                     case 'notificationBar':
                         const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
@@ -199,6 +201,10 @@ export default class RuntimeBackground {
     }
 
     private async saveAddLogin(tab: any) {
+        if (await this.lockService.isLocked()) {
+            return;
+        }
+
         for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.main.notificationQueue[i];
             if (queueMessage.tabId !== tab.id || queueMessage.type !== 'addLogin') {
@@ -235,6 +241,10 @@ export default class RuntimeBackground {
     }
 
     private async saveChangePassword(tab: any) {
+        if (await this.lockService.isLocked()) {
+            return;
+        }
+
         for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.main.notificationQueue[i];
             if (queueMessage.tabId !== tab.id || queueMessage.type !== 'changePassword') {
@@ -284,6 +294,10 @@ export default class RuntimeBackground {
     }
 
     private async addLogin(loginInfo: any, tab: any) {
+        if (await this.lockService.isLocked()) {
+            return;
+        }
+
         const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
@@ -320,6 +334,10 @@ export default class RuntimeBackground {
     }
 
     private async changedPassword(changeData: any, tab: any) {
+        if (await this.lockService.isLocked()) {
+            return;
+        }
+
         const loginDomain = Utils.getDomain(changeData.url);
         if (loginDomain == null) {
             return;

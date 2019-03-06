@@ -191,16 +191,17 @@ export default class MainBackground {
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.analytics, this.notificationsService, this.systemService);
+            this.analytics, this.notificationsService, this.systemService, this.lockService);
         this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
-            this.platformUtilsService, this.analytics);
+            this.platformUtilsService, this.analytics, this.lockService);
 
         if (!this.isSafari) {
             this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
-                this.passwordGenerationService, this.analytics, this.platformUtilsService);
+                this.passwordGenerationService, this.analytics, this.platformUtilsService, this.lockService);
             this.idleBackground = new IdleBackground(this.lockService, this.storageService, this.notificationsService);
-            this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService);
+            this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService,
+                this.lockService);
             this.windowsBackground = new WindowsBackground(this);
         }
     }
@@ -305,8 +306,12 @@ export default class MainBackground {
         await this.systemService.clearPendingClipboard();
     }
 
-    collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
+    async collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
         if (tab == null || !tab.id) {
+            return;
+        }
+
+        if (await this.lockService.isLocked()) {
             return;
         }
 
@@ -463,32 +468,36 @@ export default class MainBackground {
         this.actionSetBadgeBackgroundColor(this.sidebarAction);
 
         this.menuOptionsLoaded = [];
-        try {
-            const ciphers = await this.cipherService.getAllDecryptedForUrl(url);
-            ciphers.sort((a, b) => this.cipherService.sortCiphersByLastUsedThenName(a, b));
+        const locked = await this.lockService.isLocked();
+        if (!locked) {
+            try {
+                const ciphers = await this.cipherService.getAllDecryptedForUrl(url);
+                ciphers.sort((a, b) => this.cipherService.sortCiphersByLastUsedThenName(a, b));
 
-            if (contextMenuEnabled) {
-                ciphers.forEach((cipher) => {
-                    this.loadLoginContextMenuOptions(cipher);
-                });
-            }
-
-            let theText = '';
-            if (ciphers.length > 0 && ciphers.length < 9) {
-                theText = ciphers.length.toString();
-            } else if (ciphers.length > 0) {
-                theText = '9+';
-            } else {
                 if (contextMenuEnabled) {
-                    await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
+                    ciphers.forEach((cipher) => {
+                        this.loadLoginContextMenuOptions(cipher);
+                    });
                 }
-            }
 
-            this.browserActionSetBadgeText(theText, tabId);
-            this.sidebarActionSetBadgeText(theText, tabId);
-        } catch (e) {
-            await this.loadMenuAndUpdateBadgeForLockedState(contextMenuEnabled);
+                let theText = '';
+                if (ciphers.length > 0 && ciphers.length < 9) {
+                    theText = ciphers.length.toString();
+                } else if (ciphers.length > 0) {
+                    theText = '9+';
+                } else {
+                    if (contextMenuEnabled) {
+                        await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
+                    }
+                }
+
+                this.browserActionSetBadgeText(theText, tabId);
+                this.sidebarActionSetBadgeText(theText, tabId);
+                return;
+            } catch { }
         }
+
+        await this.loadMenuAndUpdateBadgeForLockedState(contextMenuEnabled);
     }
 
     private async loadMenuAndUpdateBadgeForLockedState(contextMenuEnabled: boolean) {
