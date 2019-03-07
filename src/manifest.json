@@ -71,15 +71,13 @@
     "contextMenus",
     "storage",
     "unlimitedStorage",
+    "clipboardRead",
     "clipboardWrite",
     "idle",
     "http://*/*",
     "https://*/*",
     "webRequest",
     "webRequestBlocking"
-  ],
-  "optional_permissions": [
-    "clipboardRead"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "commands": {

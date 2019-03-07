@@ -295,32 +295,4 @@ export class BrowserApi {
             return chrome.runtime.reload();
         }
     }
-
-    static hasPermission(permissionName: string): Promise<boolean> {
-        return new Promise((resolve) => {
-            if (BrowserApi.isSafariApi) {
-                resolve(true);
-            } else {
-                chrome.permissions.contains({
-                    permissions: [permissionName],
-                }, (granted: boolean) => {
-                    resolve(granted);
-                });
-            }
-        });
-    }
-
-    static requestPermission(permissionName: string): Promise<boolean> {
-        return new Promise((resolve) => {
-            if (BrowserApi.isSafariApi) {
-                resolve(true);
-            } else {
-                chrome.permissions.request({
-                    permissions: [permissionName],
-                }, (granted: boolean) => {
-                    resolve(granted);
-                });
-            }
-        });
-    }
 }
