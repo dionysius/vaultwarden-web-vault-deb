@@ -122,11 +122,11 @@
     "message": "Ana Parolayı Değiştir"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Özgün Cümle",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Hesabının özgün cümlesi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -242,7 +242,7 @@
     "message": "Parola"
   },
   "passphrase": {
-    "message": "Parola"
+    "message": "Cümle Parola"
   },
   "favorite": {
     "message": "Favori"
@@ -293,13 +293,13 @@
     "message": "Ana Parolayı Doğrula"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Kasan kilitlendi. Devam etmek için ana parolanı doğrula."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Kilidi Aç"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "$EMAIL$ olarak giriş yaptınız.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -320,19 +320,19 @@
     "message": "Hemen"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 saniye"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 saniye"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 saniye"
   },
   "oneMinute": {
     "message": "1 dakika"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 dakika"
   },
   "fiveMinutes": {
     "message": "5 dakika"
@@ -502,7 +502,7 @@
     "message": "Arama türü"
   },
   "noneFolder": {
-    "message": "Klasör yok",
+    "message": "Klasör Yok",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
@@ -524,11 +524,11 @@
     "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Panoyu Temizle",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Panodan kopyalanan değerleri otomatik olarak temizle.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -559,7 +559,7 @@
     "message": "Sağtık menü seçenekleri, internet siteleri için geçerli sekmenizde şifre oluşturma ve oturum açma işlemlerine hızlı erişim sağlar."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Varsayılan Eşleşen URI Tespiti",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -608,7 +608,7 @@
     "message": "Share Item"
   },
   "share": {
-    "message": "Share"
+    "message": "Paylaş"
   },
   "sharedItem": {
     "message": "Shared Item"
@@ -689,7 +689,7 @@
     "message": "İki adımlı oturum açma seçenekleri YubiKey, FIDO U2F ve Duo gibi."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Kasanızı güvende tutmak için veri ihlali, hesap ve parola sağlığı raporları."
   },
   "ppremiumSignUpTotp": {
     "message": "Kasanızdaki giriş bilgileriniz için TOTP doğrulama kodu (2FA) oluşturucu."
@@ -1052,7 +1052,7 @@
     "message": "Kimlik"
   },
   "passwordHistory": {
-    "message": "Paeola Geçmişi"
+    "message": "Parola Geçmişi"
   },
   "back": {
     "message": "Geri"
@@ -1164,55 +1164,55 @@
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Listelenecek koleksiyon yok."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Sahiplik"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Bu öğenin sahibi kim?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Güçlü",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "İyi",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Zayıf",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Zayıf Ana Parola"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Seçtiğiniz ana parola kolayca tahmin edilebilir. Bitwarden hesabınızı korumak istiyorsanız daha güçlü bir ana parola (veya şifre) seçmelisiniz. Bu ana parolayı kullanmak istediğinizden emin misiniz?"
   },
   "pin": {
     "message": "PIN",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "PIN kodu ile kilidi aç"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Bitwarden'ı açmak için bir PIN kodu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN kodu gerekli."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "PIN kodu geçersiz."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "PIN'i doğrula"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Kasan kilitlendi. Devam etmek için PIN kodunu doğrula."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "Tarayıcı yeniden başlatıldığında ana şifre ile kilitle"
   }
 }

@@ -528,7 +528,7 @@
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Kopierte Werte automatisch aus der Zwischenablage löschen.",
+    "message": "Kopierten Inhalt automatisch aus der Zwischenablage löschen.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -1195,10 +1195,10 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Mit PIN Code entsperren"
+    "message": "Mit PIN-Code entsperren"
   },
   "setYourPinCode": {
-    "message": "Legen Sie Ihren PIN-Code für das Entsperren von Bitwarden fest. Ihre PIN-Einstellungen werden zurückgesetzt, wenn Sie sich vollständig von der Anwendung abmelden."
+    "message": "Gebe deinen PIN-Code für das Entsperren von Bitwarden ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmelden."
   },
   "pinRequired": {
     "message": "PIN-Code ist erforderlich."
@@ -1210,9 +1210,9 @@
     "message": "PIN bestätigen"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Ihr Tresor ist gesperrt. Geben sie ihren PIN-Code ein um fortzufahren."
+    "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Beim Browser Neustart mit Master Passwort sperren"
+    "message": "Bei Neustart des Browsers mit Master-Passwort sperren"
   }
 }
