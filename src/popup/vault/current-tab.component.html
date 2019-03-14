@@ -6,8 +6,8 @@
         </button>
     </div>
     <div class="search">
-        <input type="search" placeholder="{{'searchVault' | i18n}}" id="search" [(ngModel)]="searchText"
-            (input)="searchVault()">
+        <input type="{{searchTypeSearch ? 'search' : 'text'}}" placeholder="{{'searchVault' | i18n}}" id="search"
+            [(ngModel)]="searchText" (input)="searchVault()">
         <i class="fa fa-search"></i>
     </div>
     <div class="right">

@@ -49,6 +49,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     searchText: string;
     inSidebar = false;
     showLeftHeader = false;
+    searchTypeSearch = false;
     loaded = false;
 
     private totpCode: string;
@@ -65,7 +66,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private searchService: SearchService, private storageService: StorageService) { }
 
     async ngOnInit() {
-        this.showLeftHeader = !this.platformUtilsService.isSafari();
+        this.showLeftHeader = this.searchTypeSearch = !this.platformUtilsService.isSafari();
         this.inSidebar = this.popupUtilsService.inSidebar(window);
 
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {

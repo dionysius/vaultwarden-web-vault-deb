@@ -51,6 +51,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     pagedCiphers: CipherView[] = [];
     nestedFolders: Array<TreeNode<FolderView>>;
     nestedCollections: Array<TreeNode<CollectionView>>;
+    searchTypeSearch = false;
 
     private didScroll = false;
     private selectedTimeout: number;
@@ -72,6 +73,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     async ngOnInit() {
+        this.searchTypeSearch = !this.platformUtilsService.isSafari();
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             if (params.type) {
                 this.searchPlaceholder = this.i18nService.t('searchType');

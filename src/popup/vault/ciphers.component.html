@@ -6,8 +6,9 @@
         </button>
     </div>
     <div class="search">
-        <input type="search" placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search"
-            [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
+        <input type="{{searchTypeSearch ? 'search' : 'text'}}"
+            placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search" [(ngModel)]="searchText"
+            (input)="search(200)" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
