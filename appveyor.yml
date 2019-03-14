@@ -14,6 +14,7 @@ init:
     SET REPO_URL=https://github.com/%APPVEYOR_REPO_NAME%.git
 
 install:
+- ps: npm install -g gulp
 - ps: choco install cloc --no-progress
 - ps: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
@@ -37,3 +38,12 @@ build_script:
     DEL /S/Q "%DIST_SRC_DIR%.git\objects\pack\*"
     CALL 7z a browser-source-%APPVEYOR_BUILD_NUMBER%.zip "%DIST_SRC_DIR%\*"
     cd %APPVEYOR_BUILD_FOLDER%
+
+artifacts:
+- path: dist/dist-opera-%APPVEYOR_BUILD_NUMBER%.zip
+- path: dist/dist-chrome-%APPVEYOR_BUILD_NUMBER%.zip
+- path: dist/dist-firefox-%APPVEYOR_BUILD_NUMBER%.zip
+- path: dist/dist-edge-%APPVEYOR_BUILD_NUMBER%.appx
+- path: dist/dist-safari-%APPVEYOR_BUILD_NUMBER%.zip
+- path: dist/browser-source-%APPVEYOR_BUILD_NUMBER%.zip
+- path: coverage/coverage-%APPVEYOR_BUILD_NUMBER%.zip
