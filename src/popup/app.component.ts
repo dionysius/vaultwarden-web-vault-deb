@@ -113,7 +113,8 @@ export class AppComponent implements OnInit {
                     properties: { label: msg.label },
                 });
             } else if (msg.command === 'reloadProcess') {
-                BrowserApi.reloadExtension(window, true);
+                // Wait to make sure background has reloaded first.
+                window.setTimeout(() => BrowserApi.reloadExtension(window, true), 2000);
             } else {
                 msg.webExtSender = sender;
                 this.broadcasterService.send(msg);
