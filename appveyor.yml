@@ -14,20 +14,20 @@ init:
     SET REPO_URL=https://github.com/%APPVEYOR_REPO_NAME%.git
 
 install:
-- npm install -g gulp
+- cmd: npm install -g gulp
 - ps: choco install cloc --no-progress
 - ps: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
 before_build:
-- node --version
-- npm --version
+- cmd: node --version
+- cmd: npm --version
 
 build_script:
-- npm install
+- cmd: npm install
 # Do normal build
-- npm run dist
-- npm run test
-- gulp ci
+- cmd: npm run dist
+- cmd: npm run test
+- cmd: gulp ci
 # Build sources for reviewers
 - cmd: |
     CALL git clone --branch=%APPVEYOR_REPO_BRANCH% %REPO_URL% %DIST_SRC_DIR%
