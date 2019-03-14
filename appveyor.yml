@@ -14,7 +14,8 @@ init:
     $env:REPO_URL = "https://github.com/${env:APPVEYOR_REPO_NAME}.git"
     $env:RELEASE_NAME = ""
     if($env:APPVEYOR_REPO_TAG -eq "true") {
-      $env:RELEASE_NAME = "Version ${env:APPVEYOR_REPO_TAG_NAME.TrimStart("v")}"
+      $tagName = $env:APPVEYOR_REPO_TAG_NAME.TrimStart("v")
+      $env:RELEASE_NAME = "Version ${tagName}"
     }
 
 install:
