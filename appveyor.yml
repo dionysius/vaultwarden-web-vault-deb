@@ -1,0 +1,39 @@
+image:
+- Visual Studio 2017
+
+branches:
+  except:
+    - l10n_master
+
+init:
+- ps: Install-Product node 10
+- cmd: |
+    SET PATH=C:\Program Files (x86)\Windows Kits\10\bin\10.0.15063.0\x64\;%PATH%
+    SET DIST_DIR=%APPVEYOR_BUILD_FOLDER%\dist\
+    SET DIST_SRC_DIR=%DIST_DIR%Source\
+    SET REPO_URL=https://github.com/%APPVEYOR_REPO_NAME%.git
+
+install:
+- ps: choco install cloc --no-progress
+- ps: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+
+before_build:
+- node --version
+- npm --version
+
+build_script:
+- cmd: npm install
+# Do normal build
+- cmd: npm run dist
+- cmd: npm run test
+- cmd: gulp ci
+# Build sources for reviewers
+- cmd: |
+    CALL git clone --branch=%APPVEYOR_REPO_BRANCH% %REPO_URL% %DIST_SRC_DIR%
+    cd %DIST_SRC_DIR%
+    CALL git checkout %APPVEYOR_REPO_COMMIT%
+    CALL git submodule update --init --recursive
+    cd %DIST_DIR%
+    DEL /S/Q "%DIST_SRC_DIR%.git\objects\pack\*"
+    CALL 7z a browser-source-%APPVEYOR_BUILD_NUMBER%.zip "%DIST_SRC_DIR%\*"
+    cd %APPVEYOR_BUILD_FOLDER%
