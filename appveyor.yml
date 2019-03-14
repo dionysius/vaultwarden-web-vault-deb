@@ -49,8 +49,6 @@ artifacts:
 - path: coverage/coverage-%APPVEYOR_BUILD_NUMBER%.zip
 
 deploy:
-  release: $(APPVEYOR_REPO_TAG_NAME)
-  description: 'Release description'
   provider: GitHub
   auth_token: $(GH_TOKEN)
   artifact: /.*/
