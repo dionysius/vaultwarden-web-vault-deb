@@ -47,3 +47,14 @@ artifacts:
 - path: dist/dist-safari-%APPVEYOR_BUILD_NUMBER%.zip
 - path: dist/browser-source-%APPVEYOR_BUILD_NUMBER%.zip
 - path: coverage/coverage-%APPVEYOR_BUILD_NUMBER%.zip
+
+deploy:
+  release: $(APPVEYOR_REPO_TAG_NAME)
+  description: 'Release description'
+  provider: GitHub
+  auth_token: $(GH_TOKEN)
+  artifact: /.*/
+  force_update: true
+  on:
+    branch: master
+    APPVEYOR_REPO_TAG: true
