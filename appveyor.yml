@@ -6,6 +6,11 @@ branches:
     - l10n_master
 
 init:
+- ps: |
+    if($isWindows -and $env:DEBUG_RDP -eq "true") {
+      iex ((new-object net.webclient).DownloadString(`
+        'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+    }
 - ps: Install-Product node 10
 - ps: |
     $env:PATH = "C:\Program Files (x86)\Windows Kits\10\bin\10.0.15063.0\x64\;${env:PATH}"
@@ -38,6 +43,14 @@ build_script:
     del /S/Q "%DIST_SRC_DIR%.git\objects\pack\*"
     call 7z a browser-source-%APPVEYOR_BUILD_NUMBER%.zip "%DIST_SRC_DIR%\*"
     cd %APPVEYOR_BUILD_FOLDER%
+
+on_finish:
+  - ps: |
+      if($isWindows -and $env:DEBUG_RDP -eq "true") {
+        $blockRdp = $true
+        iex ((new-object net.webclient).DownloadString(`
+          'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+      }
 
 artifacts:
 - path: dist/dist-opera-%APPVEYOR_BUILD_NUMBER%.zip
