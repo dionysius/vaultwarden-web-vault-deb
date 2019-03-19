@@ -48,15 +48,12 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     folderId: string = null;
     collectionId: string = null;
     type: CipherType = null;
-    pagedCiphers: CipherView[] = [];
     nestedFolders: Array<TreeNode<FolderView>>;
     nestedCollections: Array<TreeNode<CollectionView>>;
     searchTypeSearch = false;
 
-    private didScroll = false;
     private selectedTimeout: number;
     private preventSelected = false;
-    private pageSize = 100;
     private applySavedState = true;
 
     constructor(searchService: SearchService, private route: ActivatedRoute,
@@ -67,7 +64,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         private folderService: FolderService, private collectionService: CollectionService,
         private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService) {
         super(searchService);
-        this.pageSize = platformUtilsService.isEdge() ? 25 : 100;
+        this.pageSize = platformUtilsService.isEdge() ? 25 : 10;
         this.applySavedState = (window as any).previousPopupUrl != null &&
             !(window as any).previousPopupUrl.startsWith('/ciphers');
     }
@@ -124,7 +121,6 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 await this.load();
             }
 
-            this.loadMore();
             if (this.applySavedState) {
                 this.state = (await this.stateService.get<any>(ComponentId)) || {};
                 if (this.state.searchText) {
@@ -214,39 +210,10 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         this.location.back();
     }
 
-    loadMore() {
-        if (this.ciphers.length <= this.pageSize) {
-            return;
-        }
-
-        const pagedLength = this.pagedCiphers.length;
-        if (this.ciphers.length > pagedLength) {
-            this.pagedCiphers = this.pagedCiphers.concat(this.ciphers.slice(pagedLength, pagedLength + this.pageSize));
-        }
-        this.didScroll = this.pagedCiphers.length > this.pageSize;
-    }
-
     showGroupings() {
         return !this.isSearching() &&
             ((this.nestedFolders && this.nestedFolders.length) ||
                 (this.nestedCollections && this.nestedCollections.length));
-    }
-
-    isSearching() {
-        return !this.searchPending && this.searchService.isSearchable(this.searchText);
-    }
-
-    isPaging() {
-        const searching = this.isSearching();
-        if (searching && this.didScroll) {
-            this.resetPaging();
-        }
-        return !searching && this.ciphers.length > this.pageSize;
-    }
-
-    async resetPaging() {
-        this.pagedCiphers = [];
-        this.loadMore();
     }
 
     private async saveState() {

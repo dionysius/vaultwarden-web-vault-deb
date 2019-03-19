@@ -53,7 +53,7 @@
             </div>
         </div>
     </ng-container>
-    <ng-container *ngIf="(!isPaging() ? ciphers : pagedCiphers) as filteredCiphers">
+    <ng-container *ngIf="(isPaging() ? pagedCiphers : ciphers) as filteredCiphers">
         <div class="no-items" *ngIf="!filteredCiphers.length">
             <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
             <ng-container *ngIf="loaded">
@@ -63,7 +63,7 @@
                 </button>
             </ng-container>
         </div>
-        <div class="box list only-list" *ngIf="filteredCiphers.length > 0" infiniteScroll [infiniteScrollDistance]="1"
+        <div class="box list only-list" *ngIf="filteredCiphers.length" infiniteScroll [infiniteScrollDistance]="1"
             [infiniteScrollContainer]="'content'" [fromRoot]="true" [infiniteScrollDisabled]="!isPaging()"
             (scrolled)="loadMore()">
             <div class="box-header">
