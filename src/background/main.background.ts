@@ -151,7 +151,7 @@ export default class MainBackground {
         this.searchService = new SearchService(this.cipherService, this.platformUtilsService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
             this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService,
-            this.searchService, async () => {
+            this.searchService, this.userService, async () => {
                 if (this.notificationsService != null) {
                     this.notificationsService.updateConnection(false);
                 }

@@ -101,6 +101,9 @@ export class AppComponent implements OnInit {
                 });
             } else if (msg.command === 'locked') {
                 this.stateService.purge();
+                this.ngZone.run(() => {
+                    this.router.navigate(['lock']);
+                });
             } else if (msg.command === 'showDialog') {
                 await this.showDialog(msg);
             } else if (msg.command === 'showToast') {

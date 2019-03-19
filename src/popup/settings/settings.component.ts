@@ -167,7 +167,6 @@ export class SettingsComponent implements OnInit {
     async lock() {
         this.analytics.eventTrack.next({ action: 'Lock Now' });
         await this.lockService.lock(true);
-        this.router.navigate(['lock']);
     }
 
     async logOut() {
