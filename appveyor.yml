@@ -17,6 +17,10 @@ init:
     $env:DIST_DIR = "${env:APPVEYOR_BUILD_FOLDER}\dist\"
     $env:DIST_SRC_DIR = "${env:DIST_DIR}Source\"
     $env:REPO_URL = "https://github.com/${env:APPVEYOR_REPO_NAME}.git"
+    if($env:APPVEYOR_REPO_TAG -eq "true") {
+      $tagName = $env:APPVEYOR_REPO_TAG_NAME.TrimStart("v")
+      $env:RELEASE_NAME = "Version ${tagName}"
+    }
 
 install:
 - cmd: npm install -g gulp
@@ -62,6 +66,8 @@ artifacts:
 - path: coverage/coverage-%APPVEYOR_BUILD_NUMBER%.zip
 
 deploy:
+  tag: $(APPVEYOR_REPO_TAG_NAME)
+  release: $(RELEASE_NAME)
   provider: GitHub
   auth_token: $(GH_TOKEN)
   artifact: /.*/
