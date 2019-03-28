@@ -1,6 +1,7 @@
 import 'core-js';
 import 'zone.js/dist/zone';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ToasterModule } from 'angular2-toaster';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
@@ -149,6 +150,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         }),
         ToasterModule.forRoot(),
         InfiniteScrollModule,
+        DragDropModule,
     ],
     declarations: [
         ActionButtonsComponent,
