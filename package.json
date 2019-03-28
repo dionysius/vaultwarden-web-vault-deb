@@ -21,7 +21,7 @@
     "test:watch": "karma start"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^7.2.11",
+    "@angular/compiler-cli": "^7.2.1",
     "@ngtools/webpack": "^7.2.2",
     "@types/chrome": "^0.0.73",
     "@types/jasmine": "^2.8.8",
