@@ -5,6 +5,8 @@
 
 trigger:
   branches:
+    include:
+    - '*'
     exclude:
     - l10n_master
 
