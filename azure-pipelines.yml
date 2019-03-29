@@ -13,7 +13,7 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 
-name: $(Rev:.r)
+name: $(Rev:r)
 
 steps:
 - task: NodeTool@0
