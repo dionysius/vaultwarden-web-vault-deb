@@ -4,10 +4,14 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  branches:
+    exclude:
+    - l10n_master
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'vs2017-win2016'
+
+name: $(Rev:.r)
 
 steps:
 - task: NodeTool@0
@@ -15,7 +19,22 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- script: npm install -g gulp
+
+- powershell: |
+    choco install cloc --no-progress
+    cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+
 - script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    node --version
+    npm --version
+
+- script: npm install
+
+- script: npm run dist
+
+- script: gulp ci
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: dist/dist-opera-$(Build.BuildId).zip
