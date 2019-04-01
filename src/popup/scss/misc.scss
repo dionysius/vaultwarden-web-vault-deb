@@ -148,6 +148,7 @@ p.lead {
 .password-wrapper {
     word-break: break-all;
     white-space: pre-wrap;
+    min-width: 0;
 }
 
 .password-number {
