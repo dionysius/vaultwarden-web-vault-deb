@@ -146,12 +146,8 @@ p.lead {
 }
 
 .password-wrapper {
-    display: flex !important;
-    flex-wrap: wrap;
-
-    span {
-        white-space: pre;
-    }
+    word-break: break-all;
+    white-space: pre-wrap;
 }
 
 .password-number {

@@ -50,8 +50,8 @@ import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive
 import { BlurClickDirective } from 'jslib/angular/directives/blur-click.directive';
 import { BoxRowDirective } from 'jslib/angular/directives/box-row.directive';
 import { FallbackSrcDirective } from 'jslib/angular/directives/fallback-src.directive';
-import { FlexCopyDirective } from 'jslib/angular/directives/flex-copy.directive';
 import { InputVerbatimDirective } from 'jslib/angular/directives/input-verbatim.directive';
+import { SelectCopyDirective } from 'jslib/angular/directives/select-copy.directive';
 import { StopClickDirective } from 'jslib/angular/directives/stop-click.directive';
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 import { TrueFalseValueDirective } from 'jslib/angular/directives/true-false-value.directive';
@@ -169,7 +169,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         EnvironmentComponent,
         ExportComponent,
         FallbackSrcDirective,
-        FlexCopyDirective,
         FolderAddEditComponent,
         FoldersComponent,
         GroupingsComponent,
@@ -189,6 +188,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PrivateModeComponent,
         RegisterComponent,
         SearchCiphersPipe,
+        SelectCopyDirective,
         SettingsComponent,
         ShareComponent,
         StopClickDirective,
