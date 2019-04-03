@@ -3,7 +3,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Observable, switchMap } from "rxjs";
+import { Observable, of } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -40,15 +40,14 @@ export class UserLayoutComponent implements OnInit {
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private accountService: AccountService,
   ) {
-    this.showSubscription$ = this.accountService.activeAccount$.pipe(
-      switchMap((account) =>
-        this.billingAccountProfileStateService.canViewSubscription$(account.id),
-      ),
-    );
+    this.showSubscription$ = of(false); // always hide subscriptions in Vaultwarden
   }
 
   async ngOnInit() {
     document.body.classList.remove("layout_frontend");
     await this.syncService.fullSync(false);
+
+    this.hasFamilySponsorshipAvailable$ = of(false); // disable family Sponsorships in Vaultwarden
+    this.showSponsoredFamilies$ = of(false); // disable family Sponsorships in Vaultwarden
   }
 }
