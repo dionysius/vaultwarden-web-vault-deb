@@ -4,7 +4,7 @@ import { CommonModule } from "@angular/common";
 import { Component, OnInit, Signal } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { RouterModule } from "@angular/router";
-import { combineLatest, map, Observable, switchMap } from "rxjs";
+import { combineLatest, map, Observable, of, switchMap } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PasswordManagerLogo } from "@bitwarden/assets/svg";
@@ -51,11 +51,7 @@ export class UserLayoutComponent implements OnInit {
     private policyService: PolicyService,
     private configService: ConfigService,
   ) {
-    this.showSubscription$ = this.accountService.activeAccount$.pipe(
-      switchMap((account) =>
-        this.billingAccountProfileStateService.canViewSubscription$(account.id),
-      ),
-    );
+    this.showSubscription$ = of(false); // always hide subscriptions in Vaultwarden
 
     this.showEmergencyAccess = toSignal(
       combineLatest([
@@ -84,5 +80,8 @@ export class UserLayoutComponent implements OnInit {
   async ngOnInit() {
     document.body.classList.remove("layout_frontend");
     await this.syncService.fullSync(false);
+
+    this.hasFamilySponsorshipAvailable$ = of(false); // disable family Sponsorships in Vaultwarden
+    this.showSponsoredFamilies$ = of(false); // disable family Sponsorships in Vaultwarden
   }
 }
