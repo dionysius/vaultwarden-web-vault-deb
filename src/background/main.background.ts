@@ -179,7 +179,9 @@ export default class MainBackground {
             this.storageService, this.appIdService);
         this.systemService = new SystemService(this.storageService, this.lockService,
             this.messagingService, this.platformUtilsService, () => {
-                BrowserApi.reloadExtension(window, false);
+                const forceWindowReload = this.platformUtilsService.isSafari() ||
+                    this.platformUtilsService.isFirefox() || this.platformUtilsService.isOpera();
+                BrowserApi.reloadExtension(forceWindowReload ? window : null);
                 return Promise.resolve();
             });
 

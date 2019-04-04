@@ -288,10 +288,10 @@ export class BrowserApi {
         }
     }
 
-    static reloadExtension(win: Window, popupWindow: boolean) {
-        if (BrowserApi.isSafariApi) {
+    static reloadExtension(win: Window) {
+        if (win != null) {
             return win.location.reload(true);
-        } else if (!popupWindow) {
+        } else if (!BrowserApi.isSafariApi) {
             return chrome.runtime.reload();
         }
     }

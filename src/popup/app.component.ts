@@ -31,6 +31,7 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
@@ -66,7 +67,7 @@ export class AppComponent implements OnInit {
         private i18nService: I18nService, private router: Router,
         private stateService: StateService, private messagingService: MessagingService,
         private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone,
-        private sanitizer: DomSanitizer) { }
+        private sanitizer: DomSanitizer, private platformUtilsService: PlatformUtilsService) { }
 
     ngOnInit() {
         if (BrowserApi.getBackgroundPage() == null) {
@@ -116,8 +117,12 @@ export class AppComponent implements OnInit {
                     properties: { label: msg.label },
                 });
             } else if (msg.command === 'reloadProcess') {
-                // Wait to make sure background has reloaded first.
-                window.setTimeout(() => BrowserApi.reloadExtension(window, true), 2000);
+                const windowReload = this.platformUtilsService.isSafari() ||
+                    this.platformUtilsService.isFirefox() || this.platformUtilsService.isOpera();
+                if (windowReload) {
+                    // Wait to make sure background has reloaded first.
+                    window.setTimeout(() => BrowserApi.reloadExtension(window), 2000);
+                }
             } else {
                 msg.webExtSender = sender;
                 this.broadcasterService.send(msg);
