@@ -110,7 +110,7 @@ export default class AutofillService implements AutofillServiceInterface {
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
         const formData: any[] = [];
 
-        const passwordFields = this.loadPasswordFields(pageDetails, true);
+        const passwordFields = this.loadPasswordFields(pageDetails, true, true);
         if (passwordFields.length === 0) {
             return formData;
         }
@@ -122,10 +122,10 @@ export default class AutofillService implements AutofillServiceInterface {
 
             const formPasswordFields = passwordFields.filter((pf) => formKey === pf.form);
             if (formPasswordFields.length > 0) {
-                let uf = this.findUsernameField(pageDetails, formPasswordFields[0], false, false);
+                let uf = this.findUsernameField(pageDetails, formPasswordFields[0], false, false, false);
                 if (uf == null) {
                     // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                    uf = this.findUsernameField(pageDetails, formPasswordFields[0], true, false);
+                    uf = this.findUsernameField(pageDetails, formPasswordFields[0], true, true, false);
                 }
                 formData.push({
                     form: pageDetails.forms[formKey],
@@ -264,6 +264,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
                     filledFields[field.opid] = field;
                     fillScript.script.push(['click_on_opid', field.opid]);
+                    fillScript.script.push(['focus_by_opid', field.opid]);
                     fillScript.script.push(['fill_by_opid', field.opid, val]);
                 }
             });
@@ -304,10 +305,10 @@ export default class AutofillService implements AutofillServiceInterface {
             return fillScript;
         }
 
-        let passwordFields = this.loadPasswordFields(pageDetails, false);
+        let passwordFields = this.loadPasswordFields(pageDetails, false, false);
         if (!passwordFields.length && !options.onlyVisibleFields) {
             // not able to find any viewable password fields. maybe there are some "hidden" ones?
-            passwordFields = this.loadPasswordFields(pageDetails, true);
+            passwordFields = this.loadPasswordFields(pageDetails, true, true);
         }
 
         for (const formKey in pageDetails.forms) {
@@ -327,11 +328,11 @@ export default class AutofillService implements AutofillServiceInterface {
                 passwords.push(pf);
 
                 if (login.username) {
-                    username = this.findUsernameField(pageDetails, pf, false, false);
+                    username = this.findUsernameField(pageDetails, pf, false, false, false);
 
                     if (!username && !options.onlyVisibleFields) {
                         // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                        username = this.findUsernameField(pageDetails, pf, true, false);
+                        username = this.findUsernameField(pageDetails, pf, true, true, false);
                     }
 
                     if (username) {
@@ -349,11 +350,11 @@ export default class AutofillService implements AutofillServiceInterface {
             passwords.push(pf);
 
             if (login.username && pf.elementNumber > 0) {
-                username = this.findUsernameField(pageDetails, pf, false, true);
+                username = this.findUsernameField(pageDetails, pf, false, false, true);
 
                 if (!username && !options.onlyVisibleFields) {
                     // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                    username = this.findUsernameField(pageDetails, pf, true, true);
+                    username = this.findUsernameField(pageDetails, pf, true, true, true);
                 }
 
                 if (username) {
@@ -379,6 +380,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
             filledFields[u.opid] = u;
             fillScript.script.push(['click_on_opid', u.opid]);
+            fillScript.script.push(['focus_by_opid', u.opid]);
             fillScript.script.push(['fill_by_opid', u.opid, login.username]);
         });
 
@@ -389,6 +391,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
             filledFields[p.opid] = p;
             fillScript.script.push(['click_on_opid', p.opid]);
+            fillScript.script.push(['focus_by_opid', p.opid]);
             fillScript.script.push(['fill_by_opid', p.opid, login.password]);
         });
 
@@ -504,6 +507,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
             filledFields[fillFields.expMonth.opid] = fillFields.expMonth;
             fillScript.script.push(['click_on_opid', fillFields.expMonth.opid]);
+            fillScript.script.push(['focus_by_opid', fillFields.expMonth.opid]);
             fillScript.script.push(['fill_by_opid', fillFields.expMonth.opid, expMonth]);
         }
 
@@ -541,6 +545,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
             filledFields[fillFields.expYear.opid] = fillFields.expYear;
             fillScript.script.push(['click_on_opid', fillFields.expYear.opid]);
+            fillScript.script.push(['focus_by_opid', fillFields.expYear.opid]);
             fillScript.script.push(['fill_by_opid', fillFields.expYear.opid, expYear]);
         }
 
@@ -847,18 +852,21 @@ export default class AutofillService implements AutofillServiceInterface {
         if (doFill) {
             filledFields[field.opid] = field;
             fillScript.script.push(['click_on_opid', field.opid]);
+            fillScript.script.push(['focus_by_opid', field.opid]);
             fillScript.script.push(['fill_by_opid', field.opid, dataValue]);
         }
     }
 
-    private loadPasswordFields(pageDetails: AutofillPageDetails, canBeHidden: boolean) {
+    private loadPasswordFields(pageDetails: AutofillPageDetails, canBeHidden: boolean, canBeReadOnly: boolean) {
         const arr: AutofillField[] = [];
         pageDetails.fields.forEach((f) => {
             const isPassword = f.type === 'password';
-            const isLikePassword = f.type === 'text' && ((f.htmlID != null && f.htmlID.toLowerCase() === 'password') ||
-                (f.htmlName != null && f.htmlName.toLowerCase() === 'password') ||
-                (f.placeholder != null && f.placeholder.toLowerCase() === 'password'));
-            if (!f.disabled && !f.readonly && (isPassword || isLikePassword) && (canBeHidden || f.viewable)) {
+            const isLikePassword = () => f.type === 'text' &&
+                ((f.htmlID != null && f.htmlID.toLowerCase().indexOf('password') > 0) ||
+                (f.htmlName != null && f.htmlName.toLowerCase().indexOf('password') > 0) ||
+                (f.placeholder != null && f.placeholder.toLowerCase().indexOf('password') > 0));
+            if (!f.disabled && (canBeReadOnly || !f.readonly) && (isPassword || isLikePassword())
+                && (canBeHidden || f.viewable)) {
                 arr.push(f);
             }
         });
@@ -866,7 +874,7 @@ export default class AutofillService implements AutofillServiceInterface {
     }
 
     private findUsernameField(pageDetails: AutofillPageDetails, passwordField: AutofillField, canBeHidden: boolean,
-        withoutForm: boolean) {
+        canBeReadOnly: boolean, withoutForm: boolean) {
         let usernameField: AutofillField = null;
         for (let i = 0; i < pageDetails.fields.length; i++) {
             const f = pageDetails.fields[i];
@@ -874,7 +882,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 break;
             }
 
-            if (!f.disabled && !f.readonly &&
+            if (!f.disabled && (canBeReadOnly || !f.readonly) &&
                 (withoutForm || f.form === passwordField.form) && (canBeHidden || f.viewable) &&
                 (f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
                 usernameField = f;
