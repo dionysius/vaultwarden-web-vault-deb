@@ -100,6 +100,10 @@ export class AppComponent implements OnInit {
                     });
                     this.changeDetectorRef.detectChanges();
                 });
+            }  else if (msg.command === 'authBlocked') {
+                this.ngZone.run(() => {
+                    this.router.navigate(['home']);
+                });
             } else if (msg.command === 'locked') {
                 this.stateService.purge();
                 this.ngZone.run(() => {
