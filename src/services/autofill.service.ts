@@ -263,9 +263,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     }
 
                     filledFields[field.opid] = field;
-                    fillScript.script.push(['click_on_opid', field.opid]);
-                    fillScript.script.push(['focus_by_opid', field.opid]);
-                    fillScript.script.push(['fill_by_opid', field.opid, val]);
+                    this.fillByOpid(fillScript, field, val);
                 }
             });
         }
@@ -379,9 +377,7 @@ export default class AutofillService implements AutofillServiceInterface {
             }
 
             filledFields[u.opid] = u;
-            fillScript.script.push(['click_on_opid', u.opid]);
-            fillScript.script.push(['focus_by_opid', u.opid]);
-            fillScript.script.push(['fill_by_opid', u.opid, login.username]);
+            this.fillByOpid(fillScript, u, login.username);
         });
 
         passwords.forEach((p) => {
@@ -390,10 +386,7 @@ export default class AutofillService implements AutofillServiceInterface {
             }
 
             filledFields[p.opid] = p;
-            fillScript.script.push(['click_on_opid', p.opid]);
-            fillScript.script.push(['focus_by_opid', p.opid]);
-            const passwordLength: number = p.maxLength && p.maxLength > 0 ? p.maxLength : login.password.length;
-            fillScript.script.push(['fill_by_opid', p.opid, login.password.substring(0, passwordLength)]);
+            this.fillByOpid(fillScript, p, login.password);
         });
 
         fillScript = this.setFillScriptForFocus(filledFields, fillScript);
@@ -507,9 +500,7 @@ export default class AutofillService implements AutofillServiceInterface {
             }
 
             filledFields[fillFields.expMonth.opid] = fillFields.expMonth;
-            fillScript.script.push(['click_on_opid', fillFields.expMonth.opid]);
-            fillScript.script.push(['focus_by_opid', fillFields.expMonth.opid]);
-            fillScript.script.push(['fill_by_opid', fillFields.expMonth.opid, expMonth]);
+            this.fillByOpid(fillScript, fillFields.expMonth, expMonth);
         }
 
         if (fillFields.expYear && this.hasValue(card.expYear)) {
@@ -545,9 +536,7 @@ export default class AutofillService implements AutofillServiceInterface {
             }
 
             filledFields[fillFields.expYear.opid] = fillFields.expYear;
-            fillScript.script.push(['click_on_opid', fillFields.expYear.opid]);
-            fillScript.script.push(['focus_by_opid', fillFields.expYear.opid]);
-            fillScript.script.push(['fill_by_opid', fillFields.expYear.opid, expYear]);
+            this.fillByOpid(fillScript, fillFields.expYear, expYear);
         }
 
         if (fillFields.exp && this.hasValue(card.expMonth) && this.hasValue(card.expYear)) {
@@ -852,9 +841,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
         if (doFill) {
             filledFields[field.opid] = field;
-            fillScript.script.push(['click_on_opid', field.opid]);
-            fillScript.script.push(['focus_by_opid', field.opid]);
-            fillScript.script.push(['fill_by_opid', field.opid, dataValue]);
+            this.fillByOpid(fillScript, field, dataValue);
         }
     }
 
@@ -864,8 +851,8 @@ export default class AutofillService implements AutofillServiceInterface {
             const isPassword = f.type === 'password';
             const isLikePassword = () => f.type === 'text' &&
                 ((f.htmlID != null && f.htmlID.toLowerCase().indexOf('password') > 0) ||
-                (f.htmlName != null && f.htmlName.toLowerCase().indexOf('password') > 0) ||
-                (f.placeholder != null && f.placeholder.toLowerCase().indexOf('password') > 0));
+                    (f.htmlName != null && f.htmlName.toLowerCase().indexOf('password') > 0) ||
+                    (f.placeholder != null && f.placeholder.toLowerCase().indexOf('password') > 0));
             if (!f.disabled && (canBeReadOnly || !f.readonly) && (isPassword || isLikePassword())
                 && (canBeHidden || f.viewable)) {
                 arr.push(f);
@@ -1049,5 +1036,14 @@ export default class AutofillService implements AutofillServiceInterface {
         }
 
         return fillScript;
+    }
+
+    private fillByOpid(fillScript: AutofillScript, field: AutofillField, value: string): void {
+        if (field.maxLength && value.length > field.maxLength) {
+            value = value.substr(0, value.length);
+        }
+        fillScript.script.push(['click_on_opid', field.opid]);
+        fillScript.script.push(['focus_by_opid', field.opid]);
+        fillScript.script.push(['fill_by_opid', field.opid, value]);
     }
 }
