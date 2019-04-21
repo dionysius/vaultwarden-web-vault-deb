@@ -392,7 +392,8 @@ export default class AutofillService implements AutofillServiceInterface {
             filledFields[p.opid] = p;
             fillScript.script.push(['click_on_opid', p.opid]);
             fillScript.script.push(['focus_by_opid', p.opid]);
-            fillScript.script.push(['fill_by_opid', p.opid, login.password]);
+            const passwordLength: number = p.maxLength && p.maxLength > 0 ? p.maxLength : login.password.length;
+            fillScript.script.push(['fill_by_opid', p.opid, login.password.substring(0, passwordLength)]);
         });
 
         fillScript = this.setFillScriptForFocus(filledFields, fillScript);
