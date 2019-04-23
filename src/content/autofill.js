@@ -486,7 +486,7 @@
             var theDoc = el.ownerDocument.documentElement,
                 rect = el.getBoundingClientRect(),
                 docScrollWidth = theDoc.scrollWidth,
-                kosri = theDoc.scrollHeight,
+                docScrollHeight = theDoc.scrollHeight,
                 leftOffset = rect.left - theDoc.clientLeft,
                 topOffset = rect.top - theDoc.clientTop,
                 theRect;
@@ -506,7 +506,7 @@
                 }
             }
 
-            if (0 > leftOffset || leftOffset > docScrollWidth || 0 > topOffset || topOffset > kosri) {
+            if (0 > leftOffset || leftOffset > docScrollWidth || 0 > topOffset || topOffset > docScrollHeight) {
                 return false;
             }
 
