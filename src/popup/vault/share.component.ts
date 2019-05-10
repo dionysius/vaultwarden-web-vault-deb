@@ -38,6 +38,14 @@ export class ShareComponent extends BaseShareComponent {
         });
     }
 
+    async submit(): Promise<boolean> {
+        const success = await super.submit();
+        if (success) {
+            this.location.back();
+        }
+        return success;
+    }
+
     cancel() {
         this.location.back();
     }
