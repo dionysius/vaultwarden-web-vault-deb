@@ -64,7 +64,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         private folderService: FolderService, private collectionService: CollectionService,
         private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService) {
         super(searchService);
-        this.pageSize = platformUtilsService.isEdge() ? 25 : 10;
+        this.pageSize = platformUtilsService.isEdge() ? 25 : 100;
         this.applySavedState = (window as any).previousPopupUrl != null &&
             !(window as any).previousPopupUrl.startsWith('/ciphers');
     }
