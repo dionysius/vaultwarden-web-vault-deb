@@ -85,7 +85,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             return;
         }
 
-        const params = this.authService.twoFactorProviders.get(this.selectedProviderType);
+        const params = this.authService.twoFactorProvidersData.get(this.selectedProviderType);
         const tab = BrowserApi.createNewTab(BrowserApi.getAssetUrl('2fa/index.html'));
         const tabToSend = BrowserApi.makeTabObject(tab);
         window.setTimeout(() => {
