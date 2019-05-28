@@ -176,7 +176,7 @@ export default class AutofillService implements AutofillServiceInterface {
             }, { frameId: pd.frameId });
 
             if (options.cipher.type !== CipherType.Login || totpPromise || options.skipTotp ||
-                !options.cipher.login.totp || !canAccessPremium) {
+                !options.cipher.login.totp || (!canAccessPremium && !options.cipher.organizationUseTotp)) {
                 return;
             }
 
