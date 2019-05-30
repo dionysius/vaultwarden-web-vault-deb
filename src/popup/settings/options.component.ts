@@ -84,7 +84,7 @@ export class OptionsComponent implements OnInit {
         this.dontShowCards = await this.storageService.get<boolean>(ConstantsService.dontShowCardsCurrentTab);
         this.dontShowIdentities = await this.storageService.get<boolean>(ConstantsService.dontShowIdentitiesCurrentTab);
 
-        this.disableAutoTotpCopy = !await this.totpService.isAutoCopyEnabled();
+        this.disableAutoTotpCopy = !(await this.totpService.isAutoCopyEnabled());
 
         this.disableFavicon = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
 

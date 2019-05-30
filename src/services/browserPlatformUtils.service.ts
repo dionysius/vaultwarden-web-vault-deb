@@ -186,17 +186,18 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         } else if (options && options.doc) {
             doc = options.doc;
         }
+        const clearing = options ? !!options.clearing : false;
         const clearMs: number = options && options.clearMs ? options.clearMs : null;
         if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.writeText) {
             (win as any).navigator.clipboard.writeText(text).then(() => {
-                if (this.clipboardWriteCallback != null) {
+                if (!clearing && this.clipboardWriteCallback != null) {
                     this.clipboardWriteCallback(text, clearMs);
                 }
             });
         } else if ((win as any).clipboardData && (win as any).clipboardData.setData) {
             // IE specific code path to prevent textarea being shown while dialog is visible.
             (win as any).clipboardData.setData('Text', text);
-            if (this.clipboardWriteCallback != null) {
+            if (!clearing && this.clipboardWriteCallback != null) {
                 this.clipboardWriteCallback(text, clearMs);
             }
         } else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
@@ -209,7 +210,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
             try {
                 // Security exception may be thrown by some browsers.
-                if (doc.execCommand('copy') && this.clipboardWriteCallback != null) {
+                if (doc.execCommand('copy') && !clearing &&  this.clipboardWriteCallback != null) {
                     this.clipboardWriteCallback(text, clearMs);
                 }
             } catch (e) {
