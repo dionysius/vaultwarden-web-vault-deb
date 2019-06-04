@@ -298,12 +298,16 @@
   "unlock": {
     "message": "Unlock"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },

@@ -32,7 +32,7 @@
             </div>
             <div class="box-footer">
                 <p>{{(pinLock ? 'yourVaultIsLockedPinCode' : 'yourVaultIsLocked') | i18n}}</p>
-                {{'loggedInAs' | i18n : email}}
+                {{'loggedInAsOn' | i18n : email : webVaultHostname}}
             </div>
         </div>
         <p class="text-center">
