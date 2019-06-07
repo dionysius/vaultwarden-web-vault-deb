@@ -154,9 +154,9 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     async load() {
         await super.load(false);
         await this.loadCiphers();
-        if (this.showNoFolderCiphers && this.folders.length > 0) {
+        if (this.showNoFolderCiphers && this.nestedFolders.length > 0) {
             // Remove "No Folder" from folder listing
-            this.folders = this.folders.slice(0, this.folders.length - 1);
+            this.nestedFolders = this.nestedFolders.slice(0, this.nestedFolders.length - 1);
         }
 
         super.loaded = true;
