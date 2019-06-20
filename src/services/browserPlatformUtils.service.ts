@@ -129,7 +129,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             return true;
         }
 
-        return this.isChrome() || this.isOpera();
+        return this.isChrome() || this.isOpera() || this.isVivaldi();
     }
 
     supportsDuo(): boolean {
