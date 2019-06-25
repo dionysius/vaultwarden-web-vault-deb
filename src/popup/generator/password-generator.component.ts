@@ -27,7 +27,10 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
 
     async ngOnInit() {
         await super.ngOnInit();
-        this.cipherState = await this.stateService.get<CipherView>('addEditCipher');
+        const addEditCipherInfo = await this.stateService.get<any>('addEditCipherInfo');
+        if (addEditCipherInfo != null) {
+            this.cipherState = addEditCipherInfo.cipher;
+        }
         this.showSelect = this.cipherState != null;
     }
 

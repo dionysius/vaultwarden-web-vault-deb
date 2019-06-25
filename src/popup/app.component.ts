@@ -144,7 +144,7 @@ export class AppComponent implements OnInit {
                     this.stateService.remove('CiphersComponent');
                 }
                 if (url.startsWith('/tabs/')) {
-                    this.stateService.remove('addEditCipher');
+                    this.stateService.remove('addEditCipherInfo');
                 }
                 (window as any).previousPopupUrl = url;
 

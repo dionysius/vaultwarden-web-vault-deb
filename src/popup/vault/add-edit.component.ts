@@ -118,7 +118,11 @@ export class AddEditComponent extends BaseAddEditComponent {
     async generatePassword(): Promise<boolean> {
         const confirmed = await super.generatePassword();
         if (confirmed) {
-            this.stateService.save('addEditCipher', this.cipher);
+            this.stateService.save('addEditCipherInfo', {
+                cipher: this.cipher,
+                collectionIds: this.collections == null ? [] :
+                    this.collections.filter((c) => (c as any).checked).map((c) => c.id),
+            });
             this.router.navigate(['generator']);
         }
         return confirmed;
