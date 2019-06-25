@@ -337,7 +337,9 @@
                 {{'collections' | i18n}}
             </div>
             <div class="box-content" *ngIf="!collections || !collections.length">
-                {{'noCollectionsInList' | i18n}}
+                <div class="box-content-row padded no-hover">
+                    {{'noCollectionsInList' | i18n}}
+                </div>
             </div>
             <div class="box-content" *ngIf="collections && collections.length">
                 <div class="box-content-row box-content-row-checkbox" *ngFor="let c of collections; let i = index"
