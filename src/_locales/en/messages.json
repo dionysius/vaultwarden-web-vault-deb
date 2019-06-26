@@ -1222,5 +1222,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on browser restart"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
