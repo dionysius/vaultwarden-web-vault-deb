@@ -15,7 +15,7 @@ export default class IdleBackground {
 
     constructor(private lockService: LockService, private storageService: StorageService,
         private notificationsService: NotificationsService) {
-        this.idle = chrome.idle || (browser && browser.idle);
+        this.idle = chrome.idle || (browser != null ? browser.idle : null);
     }
 
     async init() {
