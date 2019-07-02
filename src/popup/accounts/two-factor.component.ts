@@ -15,6 +15,8 @@ import { AuthService } from 'jslib/abstractions/auth.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { StateService } from 'jslib/abstractions/state.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
@@ -37,8 +39,10 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
         environmentService: EnvironmentService, private ngZone: NgZone,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
-        private popupUtilsService: PopupUtilsService) {
-        super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService);
+        private popupUtilsService: PopupUtilsService, stateService: StateService,
+        storageService: StorageService) {
+        super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
+            stateService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
