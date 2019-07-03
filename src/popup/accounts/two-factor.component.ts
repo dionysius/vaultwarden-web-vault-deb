@@ -66,8 +66,15 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             });
         });
 
+        const isFirefox = this.platformUtilsService.isFirefox();
+        if (this.popupUtilsService.inPopup(window) && isFirefox &&
+            this.win.navigator.userAgent.indexOf('Windows NT 10.0;') > -1) {
+            // ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1562620
+            this.initU2f = false;
+        }
         const isSafari = this.platformUtilsService.isSafari();
         this.showNewWindowMessage = isSafari;
+
         await super.ngOnInit();
 
         if (this.selectedProviderType == null) {
@@ -77,6 +84,15 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         if (!isSafari && this.selectedProviderType === TwoFactorProviderType.Email &&
             this.popupUtilsService.inPopup(window)) {
             const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popup2faCloseMessage'),
+                null, this.i18nService.t('yes'), this.i18nService.t('no'));
+            if (confirmed) {
+                this.popupUtilsService.popOut(window);
+            }
+        }
+
+        if (!this.initU2f && this.selectedProviderType === TwoFactorProviderType.U2f &&
+            this.popupUtilsService.inPopup(window)) {
+            const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popupU2fCloseMessage'),
                 null, this.i18nService.t('yes'), this.i18nService.t('no'));
             if (confirmed) {
                 this.popupUtilsService.popOut(window);
