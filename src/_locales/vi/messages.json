@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Word Separator"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Số kí tự tối thiểu"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Unlock"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -827,7 +838,7 @@
     "message": "Môi trường độc lập"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Chỉ định URL cơ sở on-premise của bạn để cài đặt máy chủ Bitwarden."
+    "message": "Chỉ định liên kết cơ bản của cài đặt bitwarden tại chỗ của bạn."
   },
   "customEnvironment": {
     "message": "Môi trường tùy chỉnh"
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Trường tùy chỉnh mới"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Văn bản"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Nhấp bên ngoài popup để xem mã xác thực trong email của bạn sẽ làm cho popup này đóng lại. Bạn có muốn mở popup này trong một cửa sổ mới để nó không bị đóng?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Vô hiệu hoá biểu tượng trang web"
@@ -1082,7 +1099,8 @@
     "message": "Ghi chú bảo mật"
   },
   "clear": {
-    "message": "Xoá"
+    "message": "Xoá",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Hoàn tất yêu cầu đăng nhập hai bước của bạn bằng cách sử dụng tab mới."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on browser restart"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

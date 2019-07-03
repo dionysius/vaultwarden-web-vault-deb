@@ -65,7 +65,7 @@
     "message": "Kopiér adgangskode"
   },
   "copyNote": {
-    "message": "Kopiér note"
+    "message": "Kopiér notat"
   },
   "copyUri": {
     "message": "Kopiér URI"
@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Ordseparator"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Mindste antal cifre"
   },
@@ -248,10 +255,10 @@
     "message": "Favorit"
   },
   "notes": {
-    "message": "Noter"
+    "message": "Notater"
   },
   "note": {
-    "message": "Note"
+    "message": "Notat"
   },
   "editItem": {
     "message": "Redigér element"
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Lås op"
   },
-  "loggedInAs": {
-    "message": "Logget ind som $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nyt brugerdefineret felt"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Tekst"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Ved at klikke uden for pop-up-vinduet for at tjekke din e-mail for din bekræftelseskode vil få denne popup til at lukke. Vil du åbne denne popup i et nyt vindue, så det ikke lukker?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Slå webikoner fra"
@@ -1043,7 +1060,7 @@
     "message": "Logins"
   },
   "typeSecureNote": {
-    "message": "Sikker note"
+    "message": "Sikret notat"
   },
   "typeCard": {
     "message": "Kort"
@@ -1079,10 +1096,11 @@
     "message": "Logins"
   },
   "secureNotes": {
-    "message": "Sikre noter"
+    "message": "Sikre notater"
   },
   "clear": {
-    "message": "Ryd"
+    "message": "Ryd",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Fuldfør din to-trins loginanmodning ved hjælp af den nye fane."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedadgangskode ved genstart af browseren"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

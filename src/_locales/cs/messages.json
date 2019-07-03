@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Oddělovač slov"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Minimální počet čísel"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Odemknout"
   },
-  "loggedInAs": {
-    "message": "Přihlášen jako $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -320,19 +331,19 @@
     "message": "Okamžitě"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekund"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekund"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekund"
   },
   "oneMinute": {
     "message": "Po 1 minutě"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minuty"
   },
   "fiveMinutes": {
     "message": "Po 5 minutách"
@@ -524,11 +535,11 @@
     "message": "Položky identit jsou zobrazovány na stránce „Karta“ pro usnadnění automatického vyplňování."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Vyčistit schránku",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Automaticky vymazat zkopírované hodnoty z vaší schránky.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -737,7 +748,7 @@
     "message": "Pro použití této funkce je potřebné prémiové členství."
   },
   "enterVerificationCodeApp": {
-    "message": "Zadejte 6-místný kód z ověřovací aplikace."
+    "message": "Zadejte 6místný kód z ověřovací aplikace."
   },
   "enterVerificationCodeEmail": {
     "message": "Zadejte 6místný kód z e-mailu, který byl zaslán na $EMAIL$.",
@@ -827,7 +838,7 @@
     "message": "Vlastnoručně hostované prostředí"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace Bitwarden."
+    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace bitwarden."
   },
   "customEnvironment": {
     "message": "Vlastní prostředí"
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nové vlastní pole"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Klepnutím mimo vyskakovací okno při zjišťování ověřovacího kódu zaslaného na e-mail bude vyskakovací okno zavřeno. Chcete otevřít toto vyskakovací okno v novém okně, aby se nezavřelo?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Vypnout ikonky webových stránek"
@@ -1082,7 +1099,8 @@
     "message": "Poznámky"
   },
   "clear": {
-    "message": "Vymazat"
+    "message": "Vymazat",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Dokončete dvoufázové přihlášení pomocí nové karty."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu prohlížeče pomocí hlavního hesla"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

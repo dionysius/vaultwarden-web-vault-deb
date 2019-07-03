@@ -122,11 +122,11 @@
     "message": "マスターパスワードの変更"
   },
   "fingerprintPhrase": {
-    "message": "指紋フレーズ",
+    "message": "パスフレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "アカウントの指紋認証用フレーズ",
+    "message": "アカウントのパスフレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -210,6 +210,13 @@
   },
   "wordSeparator": {
     "message": "単語の区切り"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "minNumbers": {
     "message": "数字の最小数"
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "ロック解除"
   },
-  "loggedInAs": {
-    "message": "$EMAIL$ としてログインしました",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "新規カスタムフィールド"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "テキスト"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "認証コードを確認するためにポップアップの外をクリックすると、このポップアップが閉じてしまいます。閉じてしまわないよう、新しいウインドウでこのポップアップを開きますか？"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "ウェブサイトアイコンの無効化"
@@ -1082,7 +1099,8 @@
     "message": "セキュアメモ"
   },
   "clear": {
-    "message": "消去する"
+    "message": "消去する",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "新しいタブで2段階認証ログイン要求を完了してください。"
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "ブラウザー再起動時にマスターパスワードでロック"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

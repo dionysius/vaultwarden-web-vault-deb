@@ -83,7 +83,7 @@
     "message": "Automatyczne wypełnianie"
   },
   "generatePasswordCopied": {
-    "message": "Wygeneruj hasło (skopiowane)"
+    "message": "Wygeneruj hasło (do schowka)"
   },
   "noMatchingLogins": {
     "message": "Brak pasujących danych logowania."
@@ -194,7 +194,7 @@
     "message": "Wybierz"
   },
   "generatePassword": {
-    "message": "Wygeneruj Hasło"
+    "message": "Wygeneruj hasło"
   },
   "regeneratePassword": {
     "message": "Wygeneruj hasło"
@@ -210,6 +210,13 @@
   },
   "wordSeparator": {
     "message": "Separator wyrazów"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "minNumbers": {
     "message": "Min. liczba znaków"
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Odblokuj"
   },
-  "loggedInAs": {
-    "message": "Zalogowany jako $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nowe pole niestandardowe"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Tekst"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Kliknięcie poza okienko podręczne w celu sprawdzenia e-maila z kodem weryfikacyjnym spowoduje, że zostanie ono zamknięte. Czy chcesz otworzyć to okienko w nowym oknie tak, aby się nie zamknęło?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Wyłącz ikony stron"
@@ -1082,7 +1099,8 @@
     "message": "Bezpieczne notatki"
   },
   "clear": {
-    "message": "Wyczyść"
+    "message": "Wyczyść",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Dokończ uwierzytelnianie dwustopniowe używając nowej karty."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po restarcie przeglądarki"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Trennzeichen"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Mindestanzahl Zahlen"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Entsperren"
   },
-  "loggedInAs": {
-    "message": "Als $EMAIL$ angemeldet.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Neues benutzerdefiniertes Feld"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Dieses Pop-up Fenster wird geschlossen, wenn du außerhalb des Fensters klickst um in deinen E-Mails nach dem Verifizierungscode zu suchen. Möchtest du, dass dieses Pop-up in einem separaten Fenster geöffnet wird, damit es nicht geschlossen wird?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Icons der Website deaktivieren"
@@ -1082,7 +1099,8 @@
     "message": "Sichere Notiz"
   },
   "clear": {
-    "message": "Löschen"
+    "message": "Löschen",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Schließe deine Zwei-Faktor Authentifizierung im neuen Tab ab."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bei Neustart des Browsers mit Master-Passwort sperren"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

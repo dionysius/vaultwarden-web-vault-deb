@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Separador de palavras"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Números mínimos"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Desbloquear"
   },
-  "loggedInAs": {
-    "message": "Sessão iniciada como $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Novo campo personalizado"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Texto"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Clicar fora da janela popup para verificar o seu email pelo código de verificação irá causar com que este popup feche. Deseja abrir este popup numa nova janela para que este não se feche?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Desativar ícones de websites"
@@ -1082,7 +1099,8 @@
     "message": "Notas seguras"
   },
   "clear": {
-    "message": "Limpar"
+    "message": "Limpar",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Complete o seu pedido de início de sessão de dois passos utilizando o novo separador."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com palavra-passe mestra quando reiniciar o navegador"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

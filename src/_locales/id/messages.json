@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Pemisah kata"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Angka Minimum"
   },
@@ -293,17 +300,21 @@
     "message": "Verifikasi Kata Sandi Utama"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Brankas Anda terkunci. Verifikasi kata sandi utama Anda untuk melanjutkan."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Membuka kunci"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -320,19 +331,19 @@
     "message": "Segera"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 detik"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 detik"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 detik"
   },
   "oneMinute": {
     "message": "1 menit"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 menit"
   },
   "fiveMinutes": {
     "message": "5 menit"
@@ -524,11 +535,11 @@
     "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Hapus Clipboard",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Secara otomatis menghapus nilai yang disalin dari clipboard Anda.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -689,7 +700,7 @@
     "message": "Pilihan info masuk dua langkah tambahan seperti YubiKey, FIDO U2F, dan Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Kebersihan kata sandi, kesehatan akun, dan laporan pelanggaran data untuk menjaga keamanan brankas Anda."
   },
   "ppremiumSignUpTotp": {
     "message": "Pembuat kode verifikasi TOTP (2FA) untuk masuk di brankas anda."
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Kolom Ubahsuai Baru"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Teks"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Dengan meng-klik jendela luar pop-up untuk mengecek email Anda yang digunakan sebagai kode verifikasi ini akan mengakibatkan jendela pop-up tertutup. Apakah Anda ingin membuka jendela pop-up di window baru sehingga tidak tertutup?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Nonaktifkan Ikon Situs Web"
@@ -1082,7 +1099,8 @@
     "message": "Catatan Aman"
   },
   "clear": {
-    "message": "Bersihkan"
+    "message": "Bersihkan",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Selesaikan permintaan masuk dua langkah Anda menggunakan tab baru."
@@ -1195,24 +1213,27 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Buka kunci dengan PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Setel kode PIN Anda untuk membuka kunci Bitwarden. Pengaturan PIN Anda akan diatur ulang jika Anda pernah keluar sepenuhnya dari aplikasi."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Diperlukan kode PIN."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Kode PIN tidak valid."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "Verifikasi PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Brankas Anda terkunci. Verifikasi kode PIN Anda untuk melanjutkan."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "Kunci dengan kata sandi utama saat browser dihidupkan ulang"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Oddeľovač slov"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Minimum číslic"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Odomknúť"
   },
-  "loggedInAs": {
-    "message": "Prihlásený ako $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nové vlastné pole"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Kliknutie mimo popup okna na prezretie vášho emailu pre overovací kód spôsobí zavretie tohto popupu. Chcete otvoriť tento popup v novom okne tak, aby sa nezavrel?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Nezobrazovať ikony stránok"
@@ -1082,7 +1099,8 @@
     "message": "Zabezpečené poznámky"
   },
   "clear": {
-    "message": "Vyčistiť"
+    "message": "Vyčistiť",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Dokončite dvojsrupňové prihlásenie v novej záložke."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte prehliadača zamknúť s hlavným heslom"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

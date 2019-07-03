@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Razdjelitelj riječi"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Najmanje brojeva"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Otključaj"
   },
-  "loggedInAs": {
-    "message": "Prijavljen kao $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -827,7 +838,7 @@
     "message": "Vlastito hosting okruženje"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Navedite osnovni URL Vaše lokalno hostirane bitwarden instalacije."
+    "message": "Navedite osnovni URL Vaše lokalno hostirane Bitwarden instalacije."
   },
   "customEnvironment": {
     "message": "Prilagođeno okruženje"
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Novo prilagođeno polje"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Tekst"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Ako dodirnete izvan popup prozora za provjeru e-pošte za vaš kontrolni kôd, skočni prozor će biti zatvoren. Želite li otvoriti ovaj skočni prozor u novom prozoru tako da se ne zatvori?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Onemogući ikone web mjesta"
@@ -1082,7 +1099,8 @@
     "message": "Sigurna bilješka"
   },
   "clear": {
-    "message": "Očisti"
+    "message": "Očisti",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Dovršite zahtjev za prijavu u dva koraka pomoću nove kartice."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on browser restart"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "文字分隔字元"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "最少數字位數"
   },
@@ -242,7 +249,7 @@
     "message": "密碼"
   },
   "passphrase": {
-    "message": "密碼"
+    "message": "密碼短語"
   },
   "favorite": {
     "message": "我的最愛"
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "解鎖"
   },
-  "loggedInAs": {
-    "message": "已登入為 $EMAIL$",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "新增自訂欄位"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "文字"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "如果您點選彈出式視窗外的任意區域，將導致彈出式視窗關閉。您想在新視窗中開啟此彈出式視窗，以讓它不關閉嗎？"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "停用網站圖示顯示功能"
@@ -1082,7 +1099,8 @@
     "message": "安全筆記"
   },
   "clear": {
-    "message": "清除"
+    "message": "清除",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "使用新分頁完成您的兩步驟登入要求。"
@@ -1188,7 +1206,7 @@
     "message": "主密碼強度太弱"
   },
   "weakMasterPasswordDesc": {
-    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼 (複雜密碼) 來正確保護您的 bitwarden 帳戶。仍要使用此密碼嗎？"
+    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼 (或密碼短語) 來正確保護您的 bitwarden 帳戶。仍要使用這組主密碼嗎？"
   },
   "pin": {
     "message": "PIN",
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "瀏覽器重啟後使用主密碼鎖定"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

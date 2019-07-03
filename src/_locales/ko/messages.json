@@ -122,11 +122,11 @@
     "message": "마스터 비밀번호 변경"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "지문 구문",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "계정 지문 구절",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -206,10 +206,17 @@
     "message": "길이"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "단어 수"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "구분 기호"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "minNumbers": {
     "message": "숫자 최소 개수"
@@ -242,7 +249,7 @@
     "message": "비밀번호"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "패스프레이즈"
   },
   "favorite": {
     "message": "즐겨찾기"
@@ -293,17 +300,21 @@
     "message": "마스터 비밀번호 확인"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "보관함이 잠겨 있습니다. 마스터 비밀번호를 입력하여 계속하세요."
   },
   "unlock": {
     "message": "잠금 해제"
   },
-  "loggedInAs": {
-    "message": "$EMAIL$로 로그인.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -320,19 +331,19 @@
     "message": "즉시"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10초"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20초"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30초"
   },
   "oneMinute": {
     "message": "1분"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2분"
   },
   "fiveMinutes": {
     "message": "5분"
@@ -512,23 +523,23 @@
     "message": "\"로그인 추가 알림\"을 사용하면 새 로그인을 사용할 때마다 보관함에 그 로그인을 추가할 것인지 물어봅니다."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "탭 페이지에 카드 표시 안 함"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "보관함의 카드 항목은 '현재 탭' 페이지에 나열되어있어 쉽게 자동 완성할 수 있습니다."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "탭 페이지에 신원 표시 안 함"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "보관함의 신원 항목은 '현재 탭' 페이지에 나열되어있어 쉽게 자동 완성할 수 있습니다."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "클립보드 비우기",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "자동으로 클립보드에 복사된 값을 제거합니다.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -559,11 +570,11 @@
     "message": "오른쪽 클릭 메뉴 옵션을 사용하면 비밀번호 생성이나 현재 탭 웹 사이트의 로그인에 빠르게 접근할 수 있습니다."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "기본 URI 일치 인식",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "자동 완성같은 작업을 수행할 때 로그인에 대해 URI 일치 감지가 처리되는 기본 방법을 선택하십시오."
   },
   "theme": {
     "message": "테마"
@@ -583,14 +594,14 @@
     "message": "보관함 내보내기"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "파일 형식"
   },
   "warning": {
     "message": "경고",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "내보내기는 보관함 데이터가 암호화되지 않은 형식으로 포함됩니다. 내보낸 파일을 안전하지 않은 채널(예: 이메일)을 통해 저장하거나 보내지 마십시오. 사용이 끝난 후에는 즉시 삭제하십시오."
   },
   "exportMasterPassword": {
     "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
@@ -605,16 +616,16 @@
     "message": "Bitwarden은 조직용 계정을 사용하면 사용자의 보관함을 타인에게 공유할 수 있습니다. bitwarden.com 웹 사이트를 방문하여 더 자세히 알아보시겠습니까?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "항목 공유"
   },
   "share": {
     "message": "공유"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "항목 공유함"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "이 항목을 공유할 조직을 선택하십시오. 항목이 공유되면 소유권이 조직으로 이전됩니다. 일단 공유가 되면, 더는 항목의 직접적인 소유자가 아니게 됩니다."
   },
   "learnMore": {
     "message": "더 알아보기"
@@ -689,7 +700,7 @@
     "message": "YubiKey나 FIDO U2F, Duo 등의 추가적인 2단계 인증 옵션."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "보관함을 안전하게 유지하기 위한 암호 위생, 계정 상태, 데이터 유출 보고서"
   },
   "ppremiumSignUpTotp": {
     "message": "보관함에 등록된 로그인 항목을 위한 TOTP 인증 코드(2FA) 생성기."
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "새 사용자 지정 필드"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "텍스트"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "인증 코드가 담긴 이메일을 확인하기 위해 팝업 창의 바깥쪽을 누르면 이 팝업이 닫힙니다. 팝업 창이 닫히는 것을 방지하기 위해 이 팝업을 새 창에서 다시 여시겠습니까?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "웹 사이트 아이콘 사용 안 함"
@@ -1082,7 +1099,8 @@
     "message": "보안 메모"
   },
   "clear": {
-    "message": "삭제"
+    "message": "삭제",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "새 탭을 사용하여 2단계 인증을 완료하세요."
@@ -1161,16 +1179,16 @@
     "message": "정말 \"잠그지 않음\" 옵션을 사용하시겠습니까? 잠금 옵션을 \"잠그지 않음\"으로 설정하면 사용자 보관함의 암호화 키를 사용자의 기기에 보관합니다. 이 옵션을 사용하기 전에 사용자의 기기가 잘 보호되어 있는 상태인지 확인하십시오."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "당신은 어떤 조직에도 속해있지 않습니다. 조직은 다른 사용자들과 안전하게 항목을 공유할 수 있게 해줍니다."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "콜렉션이 없습니다."
   },
   "ownership": {
     "message": "소유자"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "이 항목의 소유자는 누구입니까?"
   },
   "strong": {
     "message": "강함",
@@ -1185,10 +1203,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "취약한 마스터 비밀번호"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "선택된 마스터 비밀번호는 취약합니다. Bitwarden 계정을 제대로 보호하기 위해서는 강력한 마스터 비밀번호(혹은 패스프레이즈)를 사용해야 합니다. 정말 마스터 비밀번호로 사용하시겠습니까?"
   },
   "pin": {
     "message": "PIN",
@@ -1198,21 +1216,24 @@
     "message": "PIN 코드로 잠금 해제"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Bitwarden 잠금해제에 사용될 PIN 코드를 설정합니다. 이 애플리케이션에서 완전히 로그아웃할 경우 PIN 설정이 초기화됩니다."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN 코드가 필요합니다."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "잘못된 PIN 코드입니다."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "PIN 확인"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "보관함이 잠겨 있습니다. PIN 코드를 를 입력하여 계속하세요."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "브라우저 다시 시작 시 마스터 비밀번호로 잠금"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

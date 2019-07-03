@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Separatore parole"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Minimo di Numeri"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Sblocca"
   },
-  "loggedInAs": {
-    "message": "Registrato come $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -827,7 +838,7 @@
     "message": "Ambiente Self-Hosted"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specifica l'URL principale della tua installazione Bitwarden self-hosted."
+    "message": "Specifica l'URL principale della tua installazione bitwarden self-hosted."
   },
   "customEnvironment": {
     "message": "Ambiente Personalizzato"
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nuovo campo personalizzato"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Testo"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Facendo clic all'esterno della finestra popup per controllare la mail con il codice di verifica chiuderà la finestra di popup. Vuoi aprire questo popup in una nuova finestra?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Disabilita Icone dei Siti Web"
@@ -1082,7 +1099,8 @@
     "message": "Note sicure"
   },
   "clear": {
-    "message": "Elimina tutto"
+    "message": "Elimina tutto",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Completa la richiesta di accesso in due passaggi utilizzando la nuova scheda."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio del browser"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

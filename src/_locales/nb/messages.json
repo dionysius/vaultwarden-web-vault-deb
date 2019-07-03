@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Ordadskiller"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Minst antall numre"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Lås opp"
   },
-  "loggedInAs": {
-    "message": "Logget på som $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -524,11 +535,11 @@
     "message": "Identitetsgjenstander fra hvelvet ditt er listet opp på «Nåværende fane»-siden for enkel autoutfyllingstilgang."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Tøm utklippstavlen",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Slett automatisk kopierte verdier fra utklippstavlen.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nytt egendefinert felt"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Tekst"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Å klikke utenfor dette oppsprettsvinduet for å sjekke E-postinnboksen din for en verifiseringskoden, vil lukke denne oppspretten. Vil du åpne oppsprettet i et nytt vindu sånn at den ikke lukkes?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Skru av nettstedsikoner"
@@ -1082,7 +1099,8 @@
     "message": "Sikre notiser"
   },
   "clear": {
-    "message": "Tøm"
+    "message": "Tøm",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Fullfør din 2-trinnsinnloggingsforespørsel i den nye fanen."
@@ -1198,7 +1216,7 @@
     "message": "Lås opp med PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Angi PIN-koden din for å låse opp Bitwarden. PIN-innstillingene tilbakestilles hvis du logger deg helt ut av programmet."
   },
   "pinRequired": {
     "message": "PIN-kode er påkrevd."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedpassord når du starter nettleseren på nytt"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

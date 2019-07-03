@@ -41,7 +41,7 @@
     "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt lösenord om du glömmer bort det."
   },
   "reTypeMasterPass": {
-    "message": "Skriv in huvudlösenordet igen"
+    "message": "Ange huvudlösenordet igen"
   },
   "masterPassHint": {
     "message": "Huvudlösenordsledtråd (frivillig)"
@@ -122,11 +122,11 @@
     "message": "Ändra huvudlösenord"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Fingeravtrycksfras",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Ditt kontos fingeravtrycksfras",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -163,7 +163,7 @@
     "message": "Det finns inga mappar att lista."
   },
   "helpFeedback": {
-    "message": "Hjälp"
+    "message": "Hjälp & återkoppling"
   },
   "sync": {
     "message": "Synkronisera"
@@ -185,7 +185,7 @@
     "message": "Skapa starka och unika lösenord automatiskt för dina inloggningar."
   },
   "bitWebVault": {
-    "message": "Bitwarden webbvalv"
+    "message": "Bitwardens webbvalv"
   },
   "importItems": {
     "message": "Importera objekt"
@@ -206,10 +206,17 @@
     "message": "Längd"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Antal ord"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Ordseparator"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "minNumbers": {
     "message": "Minst antal nummer"
@@ -242,7 +249,7 @@
     "message": "Lösenord"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Lösenordsfras"
   },
   "favorite": {
     "message": "Favorit"
@@ -293,17 +300,21 @@
     "message": "Verifiera huvudlösenord"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Valvet är låst. Kontrollera ditt huvudlösenord för att fortsätta."
   },
   "unlock": {
     "message": "Lås upp"
   },
-  "loggedInAs": {
-    "message": "Inloggad som $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -512,23 +523,23 @@
     "message": "Aviseringar för nya inloggningar frågar dig om du vill lägga till en inloggning automatiskt till ditt valv, när du använder en inloggning som inte redan finns i ditt valv."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Visa inte kort på fliksida"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Kortobjekt från ditt valv listas på 'nuvarande flik'-sidan för enkel automatisk ifyllnad."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Visa inte identiteter på fliksidan"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Identitetsobjekt från ditt valv listas på 'nuvarande flik'-sidan för enkel automatisk ifyllnad."
   },
   "clearClipboard": {
     "message": "Rensa urklipp",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Rensa automatiskt kopierade värden från urklipp.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -559,11 +570,11 @@
     "message": "Innehållsmenyn (högerklick) ger dig snabbare åtkomst för att skapa ett slumpmässigt lösenord, och för att fylla i en inloggning i den nuvarande fliken."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Standardmatchning för URI",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Välj standardalternativet för hur matchning av URI är hanterat för inloggningar när du utför operationer såsom automatisk ifyllnad."
   },
   "theme": {
     "message": "Tema"
@@ -583,14 +594,14 @@
     "message": "Exportera valv"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Filformat"
   },
   "warning": {
     "message": "VARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Den här exporten innehåller ditt valvs okrypterade data i .csv-format. Du bör inte lagra eller skicka filen över osäkra anslutningar (genom t.ex. mejl). Radera filen efter du är färdig med den."
   },
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera ditt valv."
@@ -605,16 +616,16 @@
     "message": "Bitwarden gör det möjligt för dig att dela ditt valv med andra genom att använda ett organisationskonto. Vill du besöka bitwarden.com för att lära dig mer?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Dela objekt"
   },
   "share": {
     "message": "Dela"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Delat objekt"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Välj en organisation som du vill dela detta objekt med. Delning överför ägandet av objektet till organisationen. Du kommer inte längre att vara direkt ägare till detta objekt när det har delats."
   },
   "learnMore": {
     "message": "Läs mer"
@@ -689,7 +700,7 @@
     "message": "Ytterligare alternativ för tvåstegsverifiering såsom YubiKey, FIDO U2F och Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Lösenordshygien, kontohälsa och dataintrångsrapporter för att hålla ditt valv säkert."
   },
   "ppremiumSignUpTotp": {
     "message": "TOTP verifieringskod-generator (2FA) för inloggningar i ditt valv."
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nytt anpassat fält"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Om du klickar utanför popup-fönstret för att kontrollera din email efter din verifieringskod så stängs popup-fönstret. Vill du öppna popup-fönstret i ett nytt fönster, så att det inte stängs?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Inaktivera webbplatsikoner"
@@ -1082,7 +1099,8 @@
     "message": "Säkra anteckningar"
   },
   "clear": {
-    "message": "Rensa"
+    "message": "Rensa",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Slutför din inloggningsförfrågan för tvåstegsverifiering med den nya fliken."
@@ -1161,16 +1179,16 @@
     "message": "Är du säker på att du vill använda alternativet ”Aldrig”? Att ställa in låsnings-alternativet till ”Aldrig” lagrar valvets krypteringsnyckel på datorn. Om du använder det här alternativet bör du se till att du håller datorn ordentligt skyddad."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Du tillhör inte någon organisation. Organisationer möjliggör säker delning av objekt med andra användare."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Det finns inga samlingar att visa."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Ägarskap"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Vem äger detta objekt?"
   },
   "strong": {
     "message": "Starkt",
@@ -1185,10 +1203,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Svagt huvudlösenord"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Huvudlösenordet du har valt är svagt. Du bör använda ett starkt huvudlösenord (eller en lösenfras) för att skydda ditt Bitwarden-konto ordentligt. Är du säker på att du vill använda detta huvudlösenord?"
   },
   "pin": {
     "message": "PIN-kod",
@@ -1198,21 +1216,24 @@
     "message": "Lås upp med PIN-kod"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Ange en PIN-kod för att låsa upp Bitwarden. Dina PIN-inställningar återställs om du någonsin loggar ut helt från programmet."
   },
   "pinRequired": {
     "message": "PIN-kod behövs."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Ogiltig PIN-kod."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "Verifiera PIN-kod"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Valvet är låst. Kontrollera din PIN-kod för att fortsätta."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "Lås med huvudlösenordet vid omstart av webbläsaren"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

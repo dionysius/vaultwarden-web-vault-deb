@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "单词分隔符"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "最小位数"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "解锁"
   },
-  "loggedInAs": {
-    "message": "已登录为 $EMAIL$。",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "新建自定义字段"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "文本"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "如果您点击弹窗外的任何区域，将导致弹窗关闭。您想在新窗口中打开此弹窗，以便它不会关闭吗？"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "禁用网站图标"
@@ -1082,7 +1099,8 @@
     "message": "安全笔记"
   },
   "clear": {
-    "message": "清除"
+    "message": "清除",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "使用新的标签页完成您的两步登录请求。"
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "浏览器重启后改用主密码锁定"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

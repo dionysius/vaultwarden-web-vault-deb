@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "کلمه جداکننده"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "حداقل اعداد"
   },
@@ -293,17 +300,21 @@
     "message": "تایید گذرواژه اصلی"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "صندوق شما قفل است. برای ادامه رمزعبور اصلی خود را وارد کنید."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "بازکردن"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -320,19 +331,19 @@
     "message": "بلافاصله"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "۱۰ ثانیه"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "۲۰ ثانیه"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "۳۰ ثانیه"
   },
   "oneMinute": {
     "message": "۱ دقیقه"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "۲ دقیقه"
   },
   "fiveMinutes": {
     "message": "۵ دقیقه"
@@ -524,11 +535,11 @@
     "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "پاک‌سازی کلیپ‌ برد",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "مقدار های کپی شده را به صورت خودکار از کلیپ برد خود پاک کنید.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -559,11 +570,11 @@
     "message": "گزینه های منوی متن دسترسی سریع به ساخت رمز عبور و ورود به سیستم برای وبسایت در برگه فعلی را برای شما فراهم میکند."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "بازرسی تطابق URL پیشفرض",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "روش پیش فرض اعمال بازرسی تطابق ‌‌URL را هنگامی که عملی را مثل پر کردن خودکار انتخاب کنید."
   },
   "theme": {
     "message": "پوسته"
@@ -689,7 +700,7 @@
     "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey, FIDO U2F و Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "بهداشت رمزعبور، سلامت اکانت و گزارش های نقض اطلاعات تا صندوق شما امن نگه داشته شود."
   },
   "ppremiumSignUpTotp": {
     "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورود به گاوصندوقتان."
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "فیلد سفارشی جدید"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "متن"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "در خارج از پنجره پاپ آپ کلیک کنید که ایملیتان بررسی شود برای کد تأییدیه که باعث میشود این پنجره بسته شود. آیا می خواهید این پاپ آپ را در یک پنجره جدید باز کنید تا آن را نبندید؟"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "غیرفعال سازی آیکون های وبسایت"
@@ -1082,7 +1099,8 @@
     "message": "یادداشت های امن"
   },
   "clear": {
-    "message": "پاک کردن"
+    "message": "پاک کردن",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "درخواست ورود دو مرحله ای خود را با استفاده از برگه جدید تکمیل کنید."
@@ -1188,31 +1206,34 @@
     "message": "گذرواژه اصلی ضعیف"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "رمز عبور اصلی که شما انتخاب کرده اید ضعیف است. شما باید یک رمز عبور اصلی قوی انتخاب کنید ( یا یک عبارت عبور) تا به درستی از اکانت بیت واردن خود محافظت کنید. آیا مطمعن هستید می‌خواهید از این رمز عبور اصلی استفاده کنید؟ "
   },
   "pin": {
-    "message": "PIN",
+    "message": "پین",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "بازکردن با پین"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "پین کد خود را برای باز کردن بیت واردن خود استفاده کنید. اگر به صورت کامل از حساب خود خارج شوید تنظیمات پین شما ریست می شود."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "کد پین الزامیست."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "کد پین معتبر نیست. "
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "تأیید پین"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "گاوصندوق شما قفل شده است. برای ادامه کد پین خود را تایید کنید."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "در زمان شروع مجدد مرورگر، با رمز اصلی قفل کن"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

@@ -122,11 +122,11 @@
     "message": "Ana Parolayı Değiştir"
   },
   "fingerprintPhrase": {
-    "message": "Özgün Cümle",
+    "message": "Parmak izi şifresi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Hesabının özgün cümlesi",
+    "message": "Hesabınızın parmak izi şifresi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -210,6 +210,13 @@
   },
   "wordSeparator": {
     "message": "Kelime Ayracı"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "minNumbers": {
     "message": "En Az Rakam"
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Kilidi Aç"
   },
-  "loggedInAs": {
-    "message": "$EMAIL$ olarak giriş yaptınız.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -350,10 +361,10 @@
     "message": "4 saat"
   },
   "onLocked": {
-    "message": "Kiltiliyken"
+    "message": "Sistem Kilitliyken"
   },
   "onRestart": {
-    "message": "Tarayıcıda Yeniden Başlatma"
+    "message": "Tarayıcıda Yeniden Başlatılırken"
   },
   "never": {
     "message": "Asla"
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Yeni Özel Alan"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Metin"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Onay kodunuzu alacağınız e-postanızı kontrol etmek için açılan pencerenin dışına tıklamanız bu açılır pencerenin kapanmasına neden olacaktır. Bu açılır pencereyi kapatmamak için yeni bir pencerede açmak istiyor musunuz?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Site simgelerini devre sışı bırak"
@@ -1082,7 +1099,8 @@
     "message": "Güvenli Notlar"
   },
   "clear": {
-    "message": "Temizle"
+    "message": "Temizle",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Yeni sekmeyi kullanarak iki adımlı giriş talebinizi tamamlayın."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Tarayıcı yeniden başlatıldığında ana şifre ile kilitle"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

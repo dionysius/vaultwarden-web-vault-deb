@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Word Separator"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Minimum Numbers"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Unlock"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "New Custom Field"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Disable Website Icons"
@@ -1082,7 +1099,8 @@
     "message": "Secure Notes"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Clear",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Complete your two-step login request using the new tab."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on browser restart"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

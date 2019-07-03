@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Woordscheidingsteken"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Minimum aantal getallen"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Ontgrendelen"
   },
-  "loggedInAs": {
-    "message": "Ingelogd als $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nieuw aangepast veld"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Tekst"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Als u buiten het pop-upvenster klikt om uw e-mail te controleren op een verificatiecode, dan zal de pop-up sluiten. Wilt u het pop-upvenster openen in een nieuw scherm, zodat het niet wordt gesloten?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Websitepictogrammen uitschakelen"
@@ -911,7 +928,7 @@
     "message": "Nummer"
   },
   "brand": {
-    "message": "Merk"
+    "message": "Soort"
   },
   "expirationMonth": {
     "message": "Vervalmaand"
@@ -1046,7 +1063,7 @@
     "message": "Veilige notitie"
   },
   "typeCard": {
-    "message": "Kaart"
+    "message": "Creditkaart"
   },
   "typeIdentity": {
     "message": "Identiteit"
@@ -1070,7 +1087,7 @@
     "message": "Verversen"
   },
   "cards": {
-    "message": "Kaarten"
+    "message": "Creditkaarten"
   },
   "identities": {
     "message": "Identiteiten"
@@ -1082,7 +1099,8 @@
     "message": "Beveiligde notities"
   },
   "clear": {
-    "message": "Wissen"
+    "message": "Wissen",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Voltooi uw tweestapsloginaanvraag middels het nieuwe tabblad."
@@ -1135,7 +1153,7 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Typen"
   },
   "allItems": {
     "message": "Alle Items"
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Vergrendelen met hoofdwachtwoord bij herstart browser"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

@@ -17,7 +17,7 @@
     "message": "Створити обліковий запис"
   },
   "login": {
-    "message": "Вхід"
+    "message": "Увійти"
   },
   "cancel": {
     "message": "Скасувати"
@@ -126,7 +126,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Фраза відбитку пальця облікового запису",
+    "message": "Фраза відбитку вашого облікового запису",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -210,6 +210,13 @@
   },
   "wordSeparator": {
     "message": "Розділювач слів"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "minNumbers": {
     "message": "Мінімум цифр"
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Розблокувати"
   },
-  "loggedInAs": {
-    "message": "Ви увійшли як $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Нове власне поле"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Текст"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Натискання поза межами спливаючого вікна для перевірки коду підтвердження в пошті спричинить його закриття. Хочете відкрити його в новому вікні, щоб воно не закрилося?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Вимкнути піктограми веб-сайтів"
@@ -1082,7 +1099,8 @@
     "message": "Захищені нотатки"
   },
   "clear": {
-    "message": "Стерти"
+    "message": "Стерти",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Завершіть запит двохетапної перевірки на новій вкладці."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску браузера"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

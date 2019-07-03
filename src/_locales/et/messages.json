@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Sõna eraldaja"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Vähim arv numbreid"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Lukusta lahti"
   },
-  "loggedInAs": {
-    "message": "Sisse logitud kasutajaga $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -389,7 +400,7 @@
     "message": "Nõuatav on kontrollkood."
   },
   "valueCopied": {
-    "message": " on kopeeritud",
+    "message": "$VALUE$ on kopeeritud",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Uus kohandatud väli"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Tekst"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "See aken sulgub, kui klikid oma e-posti aknale, et sealt kinnituskoodi vaadata. Soovid selle hüpikakna uues aknas avada, et seda ei juhtuks?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Keela veebilehel ikoonid"
@@ -1082,7 +1099,8 @@
     "message": "Turvalised märkmed"
   },
   "clear": {
-    "message": "Tühjenda"
+    "message": "Tühjenda",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Kasuta uut akent ja vii oma kaheastmeline sisselogimine lõpuni."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Nõua ülemparooli, kui brauser taaskäivitatakse"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

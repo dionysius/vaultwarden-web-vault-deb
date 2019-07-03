@@ -35,7 +35,7 @@
     "message": "Мастер-пароль"
   },
   "masterPassDesc": {
-    "message": "Мастер-пароль - ключ к вашему безопасному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
+    "message": "Мастер-пароль - ключ к вашему защищенному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
   },
   "masterPassHintDesc": {
     "message": "Подсказка к мастер-паролю может помочь вам его вспомнить."
@@ -136,7 +136,7 @@
     "message": "Выйти"
   },
   "about": {
-    "message": "О нас"
+    "message": "О Bitwarden"
   },
   "version": {
     "message": "Версия"
@@ -210,6 +210,13 @@
   },
   "wordSeparator": {
     "message": "Разделитель слов"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "minNumbers": {
     "message": "Мин. кол-во цифр"
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Разблокировать"
   },
-  "loggedInAs": {
-    "message": "Вы вошли как $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -311,7 +322,7 @@
     "message": "Неверный мастер-пароль"
   },
   "lockOptions": {
-    "message": "Параметры блокировки"
+    "message": "Настройки блокировки"
   },
   "lockNow": {
     "message": "Заблокировать"
@@ -493,7 +504,7 @@
     "message": "Вы хотите перезаписать текущий пароль?"
   },
   "searchFolder": {
-    "message": "Поиск папки"
+    "message": "Поиск в папке"
   },
   "searchCollection": {
     "message": "Поиск в коллекции"
@@ -521,10 +532,10 @@
     "message": "Не показывать Личности на вкладке"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Личности из вашего хранилища перечислены на 'Текущей вкладке' для упрощения доступа к автозаполнению."
+    "message": "Элементы личных данных из вашего хранилища перечислены на 'Текущей вкладке' для упрощения доступа к автозаполнению."
   },
   "clearClipboard": {
-    "message": "Очистить буфер обмена",
+    "message": "Очистка буфера обмена",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -782,7 +793,7 @@
     "message": "Используйте поддерживаемый веб-браузер (например, Chrome) и\/или добавьте дополнительные варианты аутентификации, которые поддерживаются в веб-браузерах (например, приложение-аутентификатор)."
   },
   "twoStepOptions": {
-    "message": "Параметры двухфакторной аутентификации"
+    "message": "Настройки двухфакторной аутентификации"
   },
   "recoveryCodeDesc": {
     "message": "Потеряли доступ ко всем вариантам двухфакторной аутентификации? Используйте код восстановления, чтобы отключить двухфакторную аутентификацию для вашей учетной записи."
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Новое пользовательское поле"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Текстовое"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Щелчок за пределами этого окна для просмотра кода проверки из электронной почты приведет к его закрытию. Открыть bitwarden в новом окне?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Отключить значки веб-сайтов"
@@ -1073,7 +1090,7 @@
     "message": "Карты"
   },
   "identities": {
-    "message": "Личность"
+    "message": "Личные данные"
   },
   "logins": {
     "message": "Логины"
@@ -1082,7 +1099,8 @@
     "message": "Защищенные заметки"
   },
   "clear": {
-    "message": "Очистить"
+    "message": "Очистить",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Завершите двухфакторную аутентификацию на новой вкладке."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске браузера"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

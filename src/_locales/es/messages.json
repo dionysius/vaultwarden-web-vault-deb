@@ -211,14 +211,21 @@
   "wordSeparator": {
     "message": "Separador de palabras"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
-    "message": "Mínimo de caracteres numéricos"
+    "message": "Mínimo de números"
   },
   "minSpecial": {
-    "message": "Mínimo de caracteres especiales"
+    "message": "Mínimo de carácteres especiales"
   },
   "avoidAmbChar": {
-    "message": "Evitar caracteres ambiguos"
+    "message": "Evitar carácteres ambiguos"
   },
   "searchVault": {
     "message": "Buscar en caja fuerte"
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Desbloquear"
   },
-  "loggedInAs": {
-    "message": "Sesión iniciada como $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -353,7 +364,7 @@
     "message": "Al bloquear el sistema"
   },
   "onRestart": {
-    "message": "Al reiniciar el sistema"
+    "message": "Al reiniciar el navegador"
   },
   "never": {
     "message": "Nunca"
@@ -426,7 +437,7 @@
     "message": "Carpeta añadida"
   },
   "changeMasterPass": {
-    "message": "Cambiar contraseña maestra"
+    "message": "Cambiar la contraseña maestra"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Puedes cambiar tu contraseña maestra en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nuevo campo personalizado"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Texto"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Pulsar fuera de la ventana emergente para comprobar tu correo de verificación, hará que esta se cierre. ¿Quieres abrir esta ventana emergente en una nueva ventana para evitar su cierre?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Deshabilitar iconos del sitio web"
@@ -1082,7 +1099,8 @@
     "message": "Notas seguras"
   },
   "clear": {
-    "message": "Limpiar"
+    "message": "Limpiar",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Completa tu solicitud de identificación en dos pasos usando la nueva pestaña."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear con contraseña maestra al reiniciar el navegador"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

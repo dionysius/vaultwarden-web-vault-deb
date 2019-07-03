@@ -211,6 +211,13 @@
   "wordSeparator": {
     "message": "Séparateur de mots"
   },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
+  },
   "minNumbers": {
     "message": "Nombre minimum de chiffres"
   },
@@ -298,12 +305,16 @@
   "unlock": {
     "message": "Déverrouiller"
   },
-  "loggedInAs": {
-    "message": "Connecté en tant que $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -499,7 +510,7 @@
     "message": "Rechercher dans la collection"
   },
   "searchType": {
-    "message": "Type de recherche"
+    "message": "Rechercher dans le type"
   },
   "noneFolder": {
     "message": "Pas de dossier",
@@ -827,7 +838,7 @@
     "message": "Environnement auto-hébergé"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Spécifiez l'URL de base de votre installation de Bitwarden hébergée en interne."
+    "message": "Spécifiez l'URL de base de votre installation de Bitwarden auto-hébergée."
   },
   "customEnvironment": {
     "message": "Environnement personnalisé"
@@ -886,6 +897,9 @@
   "newCustomField": {
     "message": "Nouveau champ personnalisé"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Texte"
   },
@@ -897,6 +911,9 @@
   },
   "popup2faCloseMessage": {
     "message": "Le fait de cliquer à l'extérieur de la fenêtre pop-up pour vérifier votre e-mail avec votre code de vérification fermera cette pop-up. Voulez-vous ouvrir cette pop-up dans une nouvelle fenêtre pour qu'elle ne soit pas fermée ?"
+  },
+  "popupU2fCloseMessage": {
+    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Désactiver les icônes des sites web"
@@ -1082,7 +1099,8 @@
     "message": "Notes sécurisées"
   },
   "clear": {
-    "message": "Effacer"
+    "message": "Effacer",
+    "description": "To clear something out. example: To clear browser history."
   },
   "twoStepNewWindowMessage": {
     "message": "Terminez votre demande d'identification en deux étapes en utilisant le nouvel onglet."
@@ -1214,5 +1232,8 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
