@@ -212,11 +212,11 @@
     "message": "Separatore parole"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Rendi maiuscolo",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Includi numero"
   },
   "minNumbers": {
     "message": "Minimo di Numeri"
@@ -306,7 +306,7 @@
     "message": "Sblocca"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Accesso effettuato come $EMAIL$ su $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Nuovo campo personalizzato"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Trascina per ordinare"
   },
   "cfTypeText": {
     "message": "Testo"
@@ -913,7 +913,7 @@
     "message": "Facendo clic all'esterno della finestra popup per controllare la mail con il codice di verifica chiuderà la finestra di popup. Vuoi aprire questo popup in una nuova finestra?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Questo browser non può elaborare richieste U2F in questa finestra popup. Vuoi aprire questo popup in una nuova finestra in modo da poter accedere usando U2F?"
   },
   "disableFavicon": {
     "message": "Disabilita Icone dei Siti Web"
@@ -1234,6 +1234,6 @@
     "message": "Blocca con la password principale al riavvio del browser"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Devi selezionare almeno una categoria."
   }
 }

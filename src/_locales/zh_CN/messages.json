@@ -212,11 +212,11 @@
     "message": "单词分隔符"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "大写",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "包含数字"
   },
   "minNumbers": {
     "message": "最小位数"
@@ -306,7 +306,7 @@
     "message": "解锁"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "以 $EMAIL$ 在 $HOSTNAME$ 上登录。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "新建自定义字段"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "拖动排序"
   },
   "cfTypeText": {
     "message": "文本"
@@ -913,7 +913,7 @@
     "message": "如果您点击弹窗外的任何区域，将导致弹窗关闭。您想在新窗口中打开此弹窗，以便它不会关闭吗？"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "此浏览器无法处理此弹出窗口中的 U2F 请求。您想要在新窗口中打开此弹出窗口吗？"
   },
   "disableFavicon": {
     "message": "禁用网站图标"
@@ -1234,6 +1234,6 @@
     "message": "浏览器重启后改用主密码锁定"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "您必须选择至少一个收藏。"
   }
 }

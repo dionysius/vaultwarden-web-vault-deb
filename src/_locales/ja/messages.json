@@ -212,11 +212,11 @@
     "message": "単語の区切り"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "先頭を大文字",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "数字を含む"
   },
   "minNumbers": {
     "message": "数字の最小数"
@@ -306,7 +306,7 @@
     "message": "ロック解除"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$HOSTNAME$ の $EMAIL$ としてログインしました。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "新規カスタムフィールド"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "ドラッグして並べ替え"
   },
   "cfTypeText": {
     "message": "テキスト"
@@ -913,7 +913,7 @@
     "message": "認証コードを確認するためにポップアップの外をクリックすると、このポップアップが閉じてしまいます。閉じてしまわないよう、新しいウインドウでこのポップアップを開きますか？"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "このブラウザーでは U2F 要求をポップアップウインドウでは実行できません。U2F でログインできるよう、新しいウインドウで開き直しますか？"
   },
   "disableFavicon": {
     "message": "ウェブサイトアイコンの無効化"
@@ -1234,6 +1234,6 @@
     "message": "ブラウザー再起動時にマスターパスワードでロック"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "最低でも一つのコレクションを選んでください。"
   }
 }

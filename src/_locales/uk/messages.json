@@ -212,11 +212,11 @@
     "message": "Розділювач слів"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Великі літери",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Включити число"
   },
   "minNumbers": {
     "message": "Мінімум цифр"
@@ -306,7 +306,7 @@
     "message": "Розблокувати"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Ви увійшли як $EMAIL$ на $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Нове власне поле"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Перетягніть, щоб відсортувати"
   },
   "cfTypeText": {
     "message": "Текст"
@@ -913,7 +913,7 @@
     "message": "Натискання поза межами спливаючого вікна для перевірки коду підтвердження в пошті спричинить його закриття. Хочете відкрити його в новому вікні, щоб воно не закрилося?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Цей браузер не може обробити U2F запити в цьому виринаючому вікні. Хочете відкрити його у новому вікні, щоб ви змогли увійти з використанням U2F?"
   },
   "disableFavicon": {
     "message": "Вимкнути піктограми веб-сайтів"
@@ -1234,6 +1234,6 @@
     "message": "Блокувати головним паролем при перезапуску браузера"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Ви повинні обрати принаймні одну збірку."
   }
 }

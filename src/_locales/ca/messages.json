@@ -212,11 +212,11 @@
     "message": "Separador de paraules"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Majúscules inicials",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Inclou número"
   },
   "minNumbers": {
     "message": "Mínim de caràcters númerics"
@@ -306,7 +306,7 @@
     "message": "Desbloqueja"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Heu iniciat sessió com a $EMAIL$ en $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Camp nou personalitzat"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Arrossega per ordenar"
   },
   "cfTypeText": {
     "message": "Text"
@@ -913,7 +913,7 @@
     "message": "Si feu clic a l'exterior de la finestra emergent per comprovar el vostre correu electrònic amb el codi de verificació, es tancarà aquesta finestra. Voleu obrir aquesta finestra emergent en una finestra nova perquè no es tanque?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Aquest navegador no pot processar sol·licituds U2F en aquesta finestra emergent. Voleu obrir l'emergent en una finestra nova per poder iniciar la sessió mitjançant U2F?"
   },
   "disableFavicon": {
     "message": "Deshabilitar icones del lloc web"
@@ -1234,6 +1234,6 @@
     "message": "Bloqueja amb la contrasenya mestra en reiniciar el navegador"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Heu d'escollir com a mínim una col·lecció."
   }
 }

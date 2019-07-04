@@ -212,11 +212,11 @@
     "message": "Woordscheidingsteken"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Beginhoofdletters",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Nummer opnemen"
   },
   "minNumbers": {
     "message": "Minimum aantal getallen"
@@ -306,7 +306,7 @@
     "message": "Ontgrendelen"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Ingelogd als $EMAIL$ op $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Nieuw aangepast veld"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Sleep om te sorteren"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -913,7 +913,7 @@
     "message": "Als u buiten het pop-upvenster klikt om uw e-mail te controleren op een verificatiecode, dan zal de pop-up sluiten. Wilt u het pop-upvenster openen in een nieuw scherm, zodat het niet wordt gesloten?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Deze browser kan U2F-verzoeken niet verwerken in dit popupvenster. Wilt u deze popup openen in een nieuw venster zodat u kunt inloggen met U2F?"
   },
   "disableFavicon": {
     "message": "Websitepictogrammen uitschakelen"
@@ -1234,6 +1234,6 @@
     "message": "Vergrendelen met hoofdwachtwoord bij herstart browser"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "U moet tenminste één collectie selecteren."
   }
 }

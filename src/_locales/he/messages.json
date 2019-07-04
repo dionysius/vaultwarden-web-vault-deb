@@ -154,31 +154,31 @@
     "message": "ערוך תיקייה"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "מחק תיקייה"
   },
   "folders": {
-    "message": "Folders"
+    "message": "תיקיות"
   },
   "noFolders": {
-    "message": "There are no folders to list."
+    "message": "אין תיקיות להצגה."
   },
   "helpFeedback": {
-    "message": "Help & Feedback"
+    "message": "עזרה ומשוב"
   },
   "sync": {
-    "message": "Sync"
+    "message": "סנכרן"
   },
   "syncVaultNow": {
-    "message": "Sync Vault Now"
+    "message": "סנכרן את הכספת עכשיו"
   },
   "lastSync": {
-    "message": "Last Sync:"
+    "message": "סנכרון אחרון:"
   },
   "passGen": {
-    "message": "Password Generator"
+    "message": "מחולל סיסמאות"
   },
   "generator": {
-    "message": "Generator",
+    "message": "מחולל",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -188,25 +188,25 @@
     "message": "Bitwarden Web Vault"
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "יבא פריטים"
   },
   "select": {
-    "message": "Select"
+    "message": "בחר"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "צור סיסמה"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "יצירת ססמה חדשה"
   },
   "options": {
-    "message": "Options"
+    "message": "אפשרויות"
   },
   "length": {
-    "message": "Length"
+    "message": "אורך"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "מספר מילים"
   },
   "wordSeparator": {
     "message": "Word Separator"
@@ -219,55 +219,55 @@
     "message": "Include Number"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "מינימום ספרות"
   },
   "minSpecial": {
-    "message": "Minimum Special"
+    "message": "מינימום תוים מיוחדים"
   },
   "avoidAmbChar": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "המנע מאותיות ותוים דומים"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "חיפוש בכספת"
   },
   "edit": {
-    "message": "Edit"
+    "message": "ערוך"
   },
   "view": {
     "message": "View"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "אין פריטים להצגה."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "מידע על הפריט"
   },
   "username": {
-    "message": "Username"
+    "message": "שם משתמש"
   },
   "password": {
-    "message": "Password"
+    "message": "סיסמה"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "סיסמה (מילות מפתח)"
   },
   "favorite": {
     "message": "Favorite"
   },
   "notes": {
-    "message": "Notes"
+    "message": "פתקים"
   },
   "note": {
-    "message": "Note"
+    "message": "פתק"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "ערוך פריט"
   },
   "folder": {
-    "message": "Folder"
+    "message": "תיקייה"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "מחק פריט"
   },
   "viewItem": {
     "message": "View Item"
@@ -276,16 +276,16 @@
     "message": "Launch"
   },
   "website": {
-    "message": "Website"
+    "message": "אתר"
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
   },
   "manage": {
-    "message": "Manage"
+    "message": "נהל"
   },
   "other": {
-    "message": "Other"
+    "message": "אחר"
   },
   "rateExtension": {
     "message": "Rate the Extension"
@@ -300,13 +300,13 @@
     "message": "Verify Master Password"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "הכספת שלך נעולה. הזן את הסיסמה הראשית שלך כדי להמשיך."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "בטל נעילה"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "מחובר בתור $EMAIL$ באתר $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -715,16 +715,16 @@
     "message": "רכוש פרימיום"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "באפשרותך לרכוש מנוי פרימיום בכספת באתר bitwarden.com. האם ברצונך לפתוח את האתר כעת?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "אתה מנוי פרימיום!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting Bitwarden."
+    "message": "תודה על כך שתמכת בBitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "הכל רק ב$PRICE$ לשנה!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -739,19 +739,19 @@
     "message": "Disable Automatic TOTP Copy"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message": "אם פרטי הכניסה שלך מקושרים לאפליקציית אימות, קוד האימות TOTP מועתק אוטומטית ללוח שלך ברגע שמתבצעת ההשלמה האוטומטית לטופס הכניסה."
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "נדרש חשבון פרימיום"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "בכדי להשתמש ביכולת זו יש צורך בחשבון פרימיום."
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "הכנס את קוד האימות בן 6 הספרות מאפליקציית האימות שלך."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "הכנס את קוד האימות בן 6 הספרות שנשלח ל-$EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -760,7 +760,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "מייל אימות נשלח לכתובת $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -769,19 +769,19 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "זכור אותי"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "שלח שוב קוד אימות לאימייל"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "השתמש בשיטה אחרת עבור כניסה דו שלבית"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "הכנס את ה-YubiKey אל כניסת ה-USB במחשבך, ואז גע בכפתור שלו."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "הכנס את מפתח האבטחה שלך אל כניסת ה-USB במחשבך. אם יש לו כפתור, לחץ עליו."
   },
   "loginUnavailable": {
     "message": "Login Unavailable"

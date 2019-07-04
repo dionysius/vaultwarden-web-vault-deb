@@ -212,11 +212,11 @@
     "message": "文字分隔字元"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "大寫",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "包含數字"
   },
   "minNumbers": {
     "message": "最少數字位數"
@@ -306,7 +306,7 @@
     "message": "解鎖"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "已經在 $HOSTNAME$ 使用 $EMAIL$ 身份登入。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "新增自訂欄位"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "透過拖曳來排序"
   },
   "cfTypeText": {
     "message": "文字"
@@ -913,7 +913,7 @@
     "message": "如果您點選彈出式視窗外的任意區域，將導致彈出式視窗關閉。您想在新視窗中開啟此彈出式視窗，以讓它不關閉嗎？"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "此瀏覽器不能在此彈出視窗處理 U2F 請求。是否在新視窗開啟此對話框，以讓你能夠使用 U2F 登入？"
   },
   "disableFavicon": {
     "message": "停用網站圖示顯示功能"
@@ -1234,6 +1234,6 @@
     "message": "瀏覽器重啟後使用主密碼鎖定"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "您必須至少選擇一個收藏。"
   }
 }

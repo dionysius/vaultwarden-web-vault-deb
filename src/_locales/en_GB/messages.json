@@ -212,11 +212,11 @@
     "message": "Word separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Capitalise",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Include number"
   },
   "minNumbers": {
     "message": "Minimum numbers"
@@ -913,7 +913,7 @@
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "This browser cannot process U2F requests in this pop-up window. Do you want to open this pop-up in a new window so that you can log in using U2F?"
   },
   "disableFavicon": {
     "message": "Disable website icons"

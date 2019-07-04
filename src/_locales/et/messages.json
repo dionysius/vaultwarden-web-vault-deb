@@ -212,11 +212,11 @@
     "message": "Sõna eraldaja"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Suurtäht",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Lisa number"
   },
   "minNumbers": {
     "message": "Vähim arv numbreid"
@@ -306,7 +306,7 @@
     "message": "Lukusta lahti"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Sisse logitud kontoga $EMAIL$ aadressil $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Uus kohandatud väli"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Lohista sorteerimiseks"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -913,7 +913,7 @@
     "message": "See aken sulgub, kui klikid oma e-posti aknale, et sealt kinnituskoodi vaadata. Soovid selle hüpikakna uues aknas avada, et seda ei juhtuks?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Kasutatav brauser ei suuda selles aknas U2F päringuid töödelda. Kas avan uue akna, et saaksid U2F abil sisse logida?"
   },
   "disableFavicon": {
     "message": "Keela veebilehel ikoonid"
@@ -1234,6 +1234,6 @@
     "message": "Nõua ülemparooli, kui brauser taaskäivitatakse"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Pead valima vähemalt ühe kogumiku."
   }
 }
