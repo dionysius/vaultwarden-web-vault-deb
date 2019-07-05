@@ -212,11 +212,11 @@
     "message": "Разделитель слов"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "С заглавной буквы",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Включить цифру"
   },
   "minNumbers": {
     "message": "Мин. кол-во цифр"
@@ -306,7 +306,7 @@
     "message": "Разблокировать"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Выполнен вход как $EMAIL$ на $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Новое пользовательское поле"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Перетащите для сортировки"
   },
   "cfTypeText": {
     "message": "Текстовое"
@@ -913,7 +913,7 @@
     "message": "Щелчок за пределами этого окна для просмотра кода проверки из электронной почты приведет к его закрытию. Открыть bitwarden в новом окне?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Этот браузер не может обрабатывать запросы U2F в этом всплывающем окне. Вы хотите открыть это всплывающее окно в новом окне, чтобы иметь возможность войти в систему, используя U2F?"
   },
   "disableFavicon": {
     "message": "Отключить значки веб-сайтов"
@@ -1234,6 +1234,6 @@
     "message": "Блокировать мастер-паролем при перезапуске браузера"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Необходимо выбрать хотя бы одну коллекцию."
   }
 }

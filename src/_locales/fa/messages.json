@@ -212,11 +212,11 @@
     "message": "کلمه جداکننده"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "بزرگ کردن",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "شامل عدد"
   },
   "minNumbers": {
     "message": "حداقل اعداد"
@@ -306,7 +306,7 @@
     "message": "بازکردن"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "وارد شده با $EMAIL$ در $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "فیلد سفارشی جدید"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "برای مرتب سازی بکشید"
   },
   "cfTypeText": {
     "message": "متن"
@@ -913,7 +913,7 @@
     "message": "در خارج از پنجره پاپ آپ کلیک کنید که ایملیتان بررسی شود برای کد تأییدیه که باعث میشود این پنجره بسته شود. آیا می خواهید این پاپ آپ را در یک پنجره جدید باز کنید تا آن را نبندید؟"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "این مرورگر نمیتواند درخواستهای U2F را در این پنجره پاپ آپ پردازش کند. آیا می خواهید این پنجره را در یک پنجره جدید باز کنید تا بتوانید با استفاده از U2F وارد شوید؟"
   },
   "disableFavicon": {
     "message": "غیرفعال سازی آیکون های وبسایت"
@@ -1234,6 +1234,6 @@
     "message": "در زمان شروع مجدد مرورگر، با رمز اصلی قفل کن"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "شما باید حداقل یک مجموعه را انتخاب کنید."
   }
 }
