@@ -19,6 +19,7 @@ import {
     TotpService,
     UserService,
 } from 'jslib/services';
+import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { SearchService } from 'jslib/services/search.service';
@@ -46,6 +47,7 @@ import {
     TotpService as TotpServiceAbstraction,
     UserService as UserServiceAbstraction,
 } from 'jslib/abstractions';
+import { EventService as EventServiceAbstraction } from 'jslib/abstractions/event.service';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
@@ -100,6 +102,7 @@ export default class MainBackground {
     searchService: SearchServiceAbstraction;
     notificationsService: NotificationsServiceAbstraction;
     systemService: SystemServiceAbstraction;
+    eventService: EventServiceAbstraction;
     analytics: Analytics;
 
     onUpdatedRan: boolean;
@@ -177,6 +180,8 @@ export default class MainBackground {
             this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
+        this.eventService = new EventService(this.storageService, this.apiService, this.userService,
+            this.cipherService);
         this.systemService = new SystemService(this.storageService, this.lockService,
             this.messagingService, this.platformUtilsService, () => {
                 const forceWindowReload = this.platformUtilsService.isSafari() ||
@@ -214,6 +219,7 @@ export default class MainBackground {
 
         await (this.lockService as LockService).init(true);
         await (this.i18nService as I18nService).init();
+        await (this.eventService as EventService).init(true);
         await this.runtimeBackground.init();
         await this.tabsBackground.init();
         await this.commandsBackground.init();
@@ -281,9 +287,11 @@ export default class MainBackground {
     }
 
     async logout(expired: boolean) {
+        await this.eventService.uploadEvents();
         const userId = await this.userService.getUserId();
 
         await Promise.all([
+            this.eventService.clearEvents(),
             this.syncService.setLastSync(new Date(0)),
             this.tokenService.clearToken(),
             this.cryptoService.clearKeys(),
