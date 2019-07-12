@@ -11,9 +11,11 @@ import { Angulartics2 } from 'angulartics2';
 import { BrowserApi } from '../../browser/browserApi';
 
 import { CipherType } from 'jslib/enums/cipherType';
+import { EventType } from 'jslib/enums/eventType';
 
 import { CipherView } from 'jslib/models/view/cipherView';
 
+import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
@@ -32,7 +34,7 @@ export class ActionButtonsComponent {
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
-        private popupUtilsService: PopupUtilsService) { }
+        private popupUtilsService: PopupUtilsService, private eventService: EventService) { }
 
     launch() {
         if (this.cipher.type !== CipherType.Login || !this.cipher.login.canLaunch) {
@@ -46,7 +48,7 @@ export class ActionButtonsComponent {
         }
     }
 
-    copy(value: string, typeI18nKey: string, aType: string) {
+    copy(cipher: CipherView, value: string, typeI18nKey: string, aType: string) {
         if (value == null) {
             return;
         }
@@ -55,6 +57,12 @@ export class ActionButtonsComponent {
         this.platformUtilsService.copyToClipboard(value, { window: window });
         this.toasterService.popAsync('info', null,
             this.i18nService.t('valueCopied', this.i18nService.t(typeI18nKey)));
+
+        if (typeI18nKey === 'password') {
+            this.eventService.collect(EventType.Cipher_ClientToggledHiddenFieldVisible, cipher.id);
+        } else if (typeI18nKey === 'securityCode') {
+            this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
+        }
     }
 
     view() {
