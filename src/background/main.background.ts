@@ -168,9 +168,12 @@ export default class MainBackground {
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
             this.storageService, this.messagingService, async (expired: boolean) => await this.logout(expired));
+        this.eventService = new EventService(this.storageService, this.apiService, this.userService,
+            this.cipherService);
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
         this.totpService = new TotpService(this.storageService, cryptoFunctionService);
-        this.autofillService = new AutofillService(this.cipherService, this.userService, this.totpService);
+        this.autofillService = new AutofillService(this.cipherService, this.userService, this.totpService,
+            this.eventService);
         this.containerService = new ContainerService(this.cryptoService);
         this.auditService = new AuditService(cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
@@ -180,8 +183,6 @@ export default class MainBackground {
             this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
-        this.eventService = new EventService(this.storageService, this.apiService, this.userService,
-            this.cipherService);
         this.systemService = new SystemService(this.storageService, this.lockService,
             this.messagingService, this.platformUtilsService, () => {
                 const forceWindowReload = this.platformUtilsService.isSafari() ||

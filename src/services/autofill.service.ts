@@ -17,6 +17,9 @@ import {
     UserService,
 } from 'jslib/abstractions';
 
+import { EventService } from 'jslib/abstractions/event.service';
+import { EventType } from 'jslib/enums/eventType';
+
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top'];
 
@@ -105,7 +108,7 @@ var IsoProvinces: { [id: string]: string; } = {
 
 export default class AutofillService implements AutofillServiceInterface {
     constructor(private cipherService: CipherService, private userService: UserService,
-        private totpService: TotpService) { }
+        private totpService: TotpService, private eventService: EventService) { }
 
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
         const formData: any[] = [];
@@ -189,6 +192,7 @@ export default class AutofillService implements AutofillServiceInterface {
         });
 
         if (didAutofill) {
+            this.eventService.collect(EventType.Cipher_ClientAutofilled, options.cipher.id);
             if (totpPromise != null) {
                 return await totpPromise;
             } else {
