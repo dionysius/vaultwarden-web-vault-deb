@@ -5,16 +5,19 @@ import MainBackground from './main.background';
 import { Analytics } from 'jslib/misc';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { EventService } from 'jslib/abstractions/event.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { EventType } from 'jslib/enums/eventType';
 
 export default class ContextMenusBackground {
     private contextMenus: any;
 
     constructor(private main: MainBackground, private cipherService: CipherService,
         private passwordGenerationService: PasswordGenerationService, private analytics: Analytics,
-        private platformUtilsService: PlatformUtilsService, private lockService: LockService) {
+        private platformUtilsService: PlatformUtilsService, private lockService: LockService,
+        private eventService: EventService) {
         this.contextMenus = chrome.contextMenus;
     }
 
@@ -86,6 +89,7 @@ export default class ContextMenusBackground {
                 eventAction: 'Copied Password From Context Menu',
             });
             this.platformUtilsService.copyToClipboard(cipher.login.password, { window: window });
+            this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
         }
     }
 
