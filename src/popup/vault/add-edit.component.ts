@@ -8,6 +8,7 @@ import {
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
+import { EventService } from 'jslib/abstractions/event.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
@@ -29,9 +30,10 @@ export class AddEditComponent extends BaseAddEditComponent {
         auditService: AuditService, stateService: StateService,
         userService: UserService, collectionService: CollectionService,
         messagingService: MessagingService, private route: ActivatedRoute,
-        private router: Router, private location: Location) {
+        private router: Router, private location: Location,
+        eventService: EventService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
-            userService, collectionService, messagingService);
+            userService, collectionService, messagingService, eventService);
     }
 
     async ngOnInit() {
