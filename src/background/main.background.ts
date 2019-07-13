@@ -206,7 +206,7 @@ export default class MainBackground {
 
         if (!this.isSafari) {
             this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
-                this.passwordGenerationService, this.analytics, this.platformUtilsService, this.lockService);
+                this.passwordGenerationService, this.analytics, this.platformUtilsService, this.lockService, this.eventService);
             this.idleBackground = new IdleBackground(this.lockService, this.storageService, this.notificationsService);
             this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService,
                 this.lockService);
