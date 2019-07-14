@@ -261,7 +261,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function locateFields(formDataObj: any) {
         const inputs = Array.from(document.getElementsByTagName('input'));
         formDataObj.usernameEl = locateField(formDataObj.formEl, formDataObj.data.username, inputs);
-        if (formDataObj.usernameEl != null && formDataObj.usernameEl.value.length < 2) {
+        if (formDataObj.usernameEl != null && formDataObj.usernameEl.value.length > 0 &&
+            formDataObj.usernameEl.value.length < 2) {
             formDataObj.usernameEl = null;
         }
         if (formDataObj.usernameEl != null && formDataObj.data.password != null) {
