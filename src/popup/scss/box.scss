@@ -324,7 +324,7 @@
     input:not([type="checkbox"]), textarea {
         border: none;
         width: 100%;
-        background-color: transparent;
+        background-color: transparent !important;
 
         &::-webkit-input-placeholder {
             @include themify($themes) {
