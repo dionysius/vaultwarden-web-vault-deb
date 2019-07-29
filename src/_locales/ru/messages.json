@@ -300,13 +300,13 @@
     "message": "Проверка мастер-пароля"
   },
   "yourVaultIsLocked": {
-    "message": "Хранилище заблокировано. Введите мастер-пароль для продолжения."
+    "message": "Ваше хранилище заблокировано. Для продолжения введите мастер-пароль."
   },
   "unlock": {
     "message": "Разблокировать"
   },
   "loggedInAsOn": {
-    "message": "Выполнен вход как $EMAIL$ на $HOSTNAME$.",
+    "message": "Выполнен вход на $HOSTNAME$ как $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -340,25 +340,25 @@
     "message": "30 секунд"
   },
   "oneMinute": {
-    "message": "Через 1 минуту"
+    "message": "1 минута"
   },
   "twoMinutes": {
     "message": "2 минуты"
   },
   "fiveMinutes": {
-    "message": "Через 5 минут"
+    "message": "5 минут"
   },
   "fifteenMinutes": {
-    "message": "Через 15 минут"
+    "message": "15 минут"
   },
   "thirtyMinutes": {
-    "message": "Через 30 минут"
+    "message": "30 минут"
   },
   "oneHour": {
-    "message": "Через 1 час"
+    "message": "1 час"
   },
   "fourHours": {
-    "message": "Через 4 часа"
+    "message": "4 часа"
   },
   "onLocked": {
     "message": "При блокировке"
@@ -631,7 +631,7 @@
     "message": "Подробнее"
   },
   "authenticatorKeyTotp": {
-    "message": "Ключ аутентификатора (TOTP)"
+    "message": "Ключ проверки подлинности (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Код подтверждения (TOTP)"
@@ -739,7 +739,7 @@
     "message": "Отключить автоматическое копирование TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Если к вашему логину прикреплен ключ аутентификации, то код подтверждения TOTP будет скопирован при автозаполнении логина."
+    "message": "Если к вашему логину прикреплен ключ проверки подлинности, то код подтверждения TOTP будет скопирован при автозаполнении логина."
   },
   "premiumRequired": {
     "message": "Необходим Премиум"
@@ -1109,7 +1109,7 @@
     "message": "Проверьте, не скомпрометирован ли пароль."
   },
   "passwordExposed": {
-    "message": "Этот пароль был скомпрометирован $VALUE$ раз(а). Вы должны изменить его.",
+    "message": "Этот пароль был скомпрометирован $VALUE$ раз(-а). Вы должны изменить его.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1228,7 +1228,7 @@
     "message": "Подтвердить PIN-код"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Ваше хранилище заблокировано. Подтвердите свой PIN-код, чтобы продолжить."
+    "message": "Ваше хранилище заблокировано. Для продолжения введите PIN-код."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске браузера"

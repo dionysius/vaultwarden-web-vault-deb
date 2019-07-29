@@ -212,11 +212,11 @@
     "message": "Ordseparator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Stort begyndelsesbogstav",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Inkludér ciffer"
   },
   "minNumbers": {
     "message": "Mindste antal cifre"
@@ -306,7 +306,7 @@
     "message": "Lås op"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Logget ind som $EMAIL$ på $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Nyt brugerdefineret felt"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Træk for at sortere"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -913,7 +913,7 @@
     "message": "Ved at klikke uden for pop-up-vinduet for at tjekke din e-mail for din bekræftelseskode vil få denne popup til at lukke. Vil du åbne denne popup i et nyt vindue, så det ikke lukker?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Denne browser kan ikke behandle U2F-anmodninger i dette popup-vindue. Vil du åbne denne popup i et nyt vindue, så du kan logge ind ved hjælp af U2F?"
   },
   "disableFavicon": {
     "message": "Slå webikoner fra"
@@ -1234,6 +1234,6 @@
     "message": "Lås med hovedadgangskode ved genstart af browseren"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Du skal vælge minimum én samling."
   }
 }

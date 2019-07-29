@@ -212,11 +212,11 @@
     "message": "Oddělovač slov"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Velká písmena na začátku slova",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Zahrnout číslo"
   },
   "minNumbers": {
     "message": "Minimální počet čísel"
@@ -306,7 +306,7 @@
     "message": "Odemknout"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Přihlášen jako $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Nové vlastní pole"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Přetáhnutím seřadíte"
   },
   "cfTypeText": {
     "message": "Text"
@@ -913,7 +913,7 @@
     "message": "Klepnutím mimo vyskakovací okno při zjišťování ověřovacího kódu zaslaného na e-mail bude vyskakovací okno zavřeno. Chcete otevřít toto vyskakovací okno v novém okně, aby se nezavřelo?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Tento prohlížeč nemůže zpracovat U2F požadavky ve vyskakovacím okně. Chcete otevřít toto vyskakovací okno v novém okně, abyste se mohli přihlásit pomocí U2F?"
   },
   "disableFavicon": {
     "message": "Vypnout ikonky webových stránek"
