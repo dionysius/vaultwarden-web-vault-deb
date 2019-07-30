@@ -37,6 +37,12 @@ const UsernameFieldNames: string[] = [
 
 const ExcludedAutofillTypes: string[] = ['radio', 'checkbox', 'hidden', 'file', 'button', 'image', 'reset', 'search'];
 
+// Each index represents a language. These three arrays should all be the same length.
+// 0: English, 1: Danish, 2: German/Dutch, 3: French/Spanish/Italian, 4: Russian, 5: Portuguese
+const MonthAbbr = ['mm', 'mm', 'mm', 'mm', 'mm', 'mm'];
+const YearAbbrShort = ['yy', 'åå', 'jj', 'aa', 'гг', 'rr'];
+const YearAbbrLong = ['yyyy', 'åååå', 'jjjj', 'aa', 'гггг', 'rrrr'];
+
 /* tslint:disable */
 const IsoCountries: { [id: string]: string; } = {
     afghanistan: "AF", "aland islands": "AX", albania: "AL", algeria: "DZ", "american samoa": "AS", andorra: "AD",
@@ -555,30 +561,46 @@ export default class AutofillService implements AutofillServiceInterface {
                 partYear = fullYear.substr(2, 2);
             }
 
-            let exp: string;
-            if (this.fieldAttrsContain(fillFields.exp, 'mm/yy') && partYear != null) {
-                exp = fullMonth + '/' + partYear;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'mm/yyyy')) {
-                exp = fullMonth + '/' + fullYear;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'yy/mm') && partYear != null) {
-                exp = partYear + '/' + fullMonth;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'yyyy/mm')) {
-                exp = fullYear + '/' + fullMonth;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'mm-yy') && partYear != null) {
-                exp = fullMonth + '-' + partYear;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'mm-yyyy')) {
-                exp = fullMonth + '-' + fullYear;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'yy-mm') && partYear != null) {
-                exp = partYear + '-' + fullMonth;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'yymm') && partYear != null) {
-                exp = partYear + fullMonth;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'yyyymm')) {
-                exp = fullYear + fullMonth;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'mmyy') && partYear != null) {
-                exp = fullMonth + partYear;
-            } else if (this.fieldAttrsContain(fillFields.exp, 'mmyyyy')) {
-                exp = fullMonth + fullYear;
-            } else {
+            let exp: string = null;
+            for (let i = 0; i < MonthAbbr.length; i++) {
+                if (this.fieldAttrsContain(fillFields.exp, MonthAbbr[i] + '/' + YearAbbrShort[i]) &&
+                    partYear != null) {
+                    exp = fullMonth + '/' + partYear;
+                } else if (this.fieldAttrsContain(fillFields.exp, MonthAbbr[i] + '/' + YearAbbrLong[i])) {
+                    exp = fullMonth + '/' + fullYear;
+                } else if (this.fieldAttrsContain(fillFields.exp, YearAbbrShort[i] + '/' + MonthAbbr[i]) &&
+                    partYear != null) {
+                    exp = partYear + '/' + fullMonth;
+                } else if (this.fieldAttrsContain(fillFields.exp, YearAbbrLong[i] + '/' + MonthAbbr[i])) {
+                    exp = fullYear + '/' + fullMonth;
+                } else if (this.fieldAttrsContain(fillFields.exp, MonthAbbr[i] + '-' + YearAbbrShort[i]) &&
+                    partYear != null) {
+                    exp = fullMonth + '-' + partYear;
+                } else if (this.fieldAttrsContain(fillFields.exp, MonthAbbr[i] + '-' + YearAbbrLong[i])) {
+                    exp = fullMonth + '-' + fullYear;
+                } else if (this.fieldAttrsContain(fillFields.exp, YearAbbrShort[i] + '-' + MonthAbbr[i]) &&
+                    partYear != null) {
+                    exp = partYear + '-' + fullMonth;
+                } else if (this.fieldAttrsContain(fillFields.exp, YearAbbrLong[i] + '-' + MonthAbbr[i])) {
+                    exp = fullYear + '-' + fullMonth;
+                } else if (this.fieldAttrsContain(fillFields.exp, YearAbbrShort[i] + MonthAbbr[i]) &&
+                    partYear != null) {
+                    exp = partYear + fullMonth;
+                } else if (this.fieldAttrsContain(fillFields.exp, YearAbbrLong[i] + MonthAbbr[i])) {
+                    exp = fullYear + fullMonth;
+                } else if (this.fieldAttrsContain(fillFields.exp, MonthAbbr[i] + YearAbbrShort[i]) &&
+                    partYear != null) {
+                    exp = fullMonth + partYear;
+                } else if (this.fieldAttrsContain(fillFields.exp, MonthAbbr[i] + YearAbbrLong[i])) {
+                    exp = fullMonth + fullYear;
+                }
+
+                if (exp != null) {
+                    break;
+                }
+            }
+
+            if (exp == null) {
                 exp = fullYear + '-' + fullMonth;
             }
 
