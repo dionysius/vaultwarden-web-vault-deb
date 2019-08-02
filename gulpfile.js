@@ -37,7 +37,11 @@ const filters = {
     ],
     edge: [
         '!build/edge/**/*'
-    ]
+    ],
+    nonSafariApp: [
+        '!build/background.html',
+        '!build/popup/index.html'
+    ],
 };
 
 function buildString() {
@@ -193,6 +197,32 @@ function safariZip(buildPath) {
     });
 }
 
+function distSafariApp(cb) {
+    const buildPath = paths.dist + 'Safari/';
+    const extBuildPath = buildPath + 'app_extension/';
+    const appPath = './src/safari/app/desktop/'
+
+    return del([buildPath + '**/*'])
+        .then(() => copy(appPath + '**/*', extBuildPath))
+        .then(() => safariAppCopyBuild(paths.build + '**/*', extBuildPath + 'safari/app'))
+        .then(() => {
+            return cb;
+        }, () => {
+            return cb;
+        });
+}
+
+function safariAppCopyBuild(source, dest) {
+    return new Promise((resolve, reject) => {
+        gulp.src(source)
+            .on('error', reject)
+            .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.safari)
+                .concat(filters.webExt).concat(filters.nonSafariApp)))
+            .pipe(gulp.dest(dest))
+            .on('end', resolve);
+    });
+}
+
 function webfonts() {
     return gulp.src('./webfonts.list')
         .pipe(googleWebFonts({
@@ -230,6 +260,7 @@ exports['dist:chrome'] = distChrome;
 exports['dist:opera'] = distOpera;
 exports['dist:edge'] = distEdge;
 exports['dist:safari'] = distSafari;
+exports['dist:safariApp'] = distSafariApp;
 exports.dist = gulp.parallel(distFirefox, distChrome, distOpera, distEdge, distSafari);
 exports['ci:coverage'] = ciCoverage;
 exports.ci = ciCoverage;
