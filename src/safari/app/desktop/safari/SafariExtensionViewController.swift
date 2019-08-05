@@ -26,7 +26,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         let bundleURL = Bundle.main.resourceURL!.absoluteURL
         let html = bundleURL.appendingPathComponent("app/popup/index.html")
         webViewConfig.preferences.setValue(true, forKey: "developerExtrasEnabled")
-        webViewConfig.userContentController.add(self, name: "webViewOnLoad")
+        webViewConfig.userContentController.add(self, name: "bitwardenMessage")
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: parentWidth, height: parentHeight), configuration: webViewConfig)
         webView.navigationDelegate = self
         webView.allowsLinkPreview = false
@@ -50,7 +50,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "webViewOnLoad" {
+        if message.name == "bitwardenMessage" {
             
         }
     }

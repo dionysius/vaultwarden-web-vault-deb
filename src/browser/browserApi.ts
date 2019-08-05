@@ -1,7 +1,6 @@
 export class BrowserApi {
     static isWebExtensionsApi: boolean = (typeof browser !== 'undefined');
-    static isSafariApi: boolean = (typeof safari !== 'undefined') &&
-        navigator.userAgent.indexOf(' Safari/') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
+    static isSafariApi: boolean = (window as any).safariAppExtension === true;
     static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
     static isFirefoxOnAndroid: boolean = navigator.userAgent.indexOf('Firefox/') !== -1 &&
         navigator.userAgent.indexOf('Android') !== -1;
@@ -40,6 +39,8 @@ export class BrowserApi {
             });
         } else if (BrowserApi.isSafariApi) {
             let wins: any[] = [];
+            // TODO
+            /*
             if (options.currentWindow) {
                 if (safari.application.activeBrowserWindow) {
                     wins.push(safari.application.activeBrowserWindow);
@@ -64,6 +65,8 @@ export class BrowserApi {
             });
 
             return Promise.resolve(returnedTabs);
+            */
+            return Promise.resolve([]);
         }
     }
 
@@ -103,6 +106,8 @@ export class BrowserApi {
                 });
             });
         } else if (BrowserApi.isSafariApi) {
+            // TODO
+            /*
             let t = tab.safariTab;
             if (!t || !t.page) {
                 const win = safari.application.activeBrowserWindow;
@@ -128,6 +133,7 @@ export class BrowserApi {
             if (t.page) {
                 t.page.dispatchMessage('bitwarden', obj);
             }
+            */
 
             return Promise.resolve();
         }
@@ -137,7 +143,7 @@ export class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.extension.getBackgroundPage();
         } else if (BrowserApi.isSafariApi) {
-            return safari.extension.globalPage.contentWindow;
+            return window;
         } else {
             return null;
         }
@@ -147,7 +153,8 @@ export class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.runtime.getManifest().version;
         } else if (BrowserApi.isSafariApi) {
-            return safari.extension.displayVersion;
+            // TODO
+            return null;
         } else {
             return null;
         }
@@ -157,8 +164,8 @@ export class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.extension.getViews({ type: 'popup' }).length > 0;
         } else if (BrowserApi.isSafariApi) {
-            return safari.extension.popovers && safari.extension.popovers.length &&
-                safari.extension.popovers[0].visible;
+            // TODO
+            return true;
         } else {
             return null;
         }
@@ -169,14 +176,8 @@ export class BrowserApi {
             chrome.tabs.create({ url: url });
             return null;
         } else if (BrowserApi.isSafariApi) {
-            if (extensionPage && url.indexOf('/') === 0) {
-                url = BrowserApi.getAssetUrl(url);
-            }
-            const tab = safari.application.activeBrowserWindow.openTab();
-            if (tab) {
-                tab.url = url;
-            }
-            return tab;
+            // TODO
+            return;
         } else {
             return;
         }
@@ -186,10 +187,8 @@ export class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.extension.getURL(path);
         } else if (BrowserApi.isSafariApi) {
-            if (path.indexOf('/') === 0) {
-                path = path.substr(1);
-            }
-            return safari.extension.baseURI + path;
+            // TODO
+            return null;
         } else {
             return null;
         }
@@ -201,13 +200,16 @@ export class BrowserApi {
                 callback(msg, sender, response);
             });
         } else if (BrowserApi.isSafariApi) {
+            // TODO
+            /*
             safari.application.addEventListener('message', async (msgEvent: any) => {
                 callback(msgEvent.message, {
                     tab: BrowserApi.makeTabObject(msgEvent.target),
                     frameId: msgEvent.message != null && msgEvent.message.bitwardenFrameId != null ?
                         msgEvent.message.bitwardenFrameId : null,
-                }, () => { /* No responses in Safari */ });
+                }, () => {  });
             }, false);
+            */
         }
     }
 
@@ -220,24 +222,13 @@ export class BrowserApi {
         } else if (BrowserApi.isWebExtensionsApi || BrowserApi.isChromeApi) {
             win.close();
         } else if (BrowserApi.isSafariApi && safari.extension.popovers && safari.extension.popovers.length > 0) {
-            safari.extension.popovers[0].hide();
+            BrowserApi.sendSafariMessageToApp({ command: 'hideWindow' });
         }
     }
 
     static downloadFile(win: Window, blobData: any, blobOptions: any, fileName: string) {
         if (BrowserApi.isSafariApi) {
-            const tab = BrowserApi.createNewTab(BrowserApi.getAssetUrl('downloader/index.html'));
-            const tabToSend = BrowserApi.makeTabObject(tab);
-            setTimeout(async () => {
-                BrowserApi.tabSendMessage(tabToSend, {
-                    command: 'downloaderPageData',
-                    data: {
-                        blobData: blobData,
-                        blobOptions: blobOptions,
-                        fileName: fileName,
-                    },
-                });
-            }, 1000);
+            // TODO
         } else {
             const blob = new Blob([blobData], blobOptions);
             if (navigator.msSaveOrOpenBlob) {
@@ -262,6 +253,9 @@ export class BrowserApi {
             return {};
         }
 
+        // TODO
+        return {};
+        /*
         const winIndex = safari.application.browserWindows.indexOf(tab.browserWindow);
         const tabIndex = tab.browserWindow.tabs.indexOf(tab);
         return {
@@ -273,11 +267,11 @@ export class BrowserApi {
             url: tab.url || 'about:blank',
             safariTab: tab,
         };
+        */
     }
 
     static gaFilter() {
-        return process.env.ENV !== 'production' ||
-            (BrowserApi.isSafariApi && safari.application.activeBrowserWindow.activeTab.private);
+        return process.env.ENV !== 'production';
     }
 
     static getUILanguage(win: Window) {
@@ -291,8 +285,16 @@ export class BrowserApi {
     static reloadExtension(win: Window) {
         if (win != null) {
             return win.location.reload(true);
+        } else if (BrowserApi.isSafariApi) {
+            BrowserApi.sendSafariMessageToApp({ command: 'reloadWindow' });
         } else if (!BrowserApi.isSafariApi) {
             return chrome.runtime.reload();
+        }
+    }
+
+    static sendSafariMessageToApp(message: any, response: (data: any) => {} = null) {
+        if (this.isSafariApi) {
+            (window as any).webkit.messageHandlers.bitwardenApp.postMessage(message);
         }
     }
 }
