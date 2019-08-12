@@ -1067,7 +1067,7 @@ export default class AutofillService implements AutofillServiceInterface {
     }
 
     private fillByOpid(fillScript: AutofillScript, field: AutofillField, value: string): void {
-        if (field.maxLength && value.length > field.maxLength) {
+        if (field.maxLength && value && value.length > field.maxLength) {
             value = value.substr(0, value.length);
         }
         fillScript.script.push(['click_on_opid', field.opid]);
