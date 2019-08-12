@@ -57,6 +57,7 @@ import { Analytics } from 'jslib/misc';
 import { Utils } from 'jslib/misc/utils';
 
 import { BrowserApi } from '../browser/browserApi';
+import { SafariApp } from '../browser/safariApp';
 
 import CommandsBackground from './commands.background';
 import ContextMenusBackground from './contextMenus.background';
@@ -216,6 +217,7 @@ export default class MainBackground {
     }
 
     async bootstrap() {
+        SafariApp.init();
         this.analytics.ga('send', 'pageview', '/background.html');
         this.containerService.attachToWindow(window);
 

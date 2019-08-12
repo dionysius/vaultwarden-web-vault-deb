@@ -154,7 +154,7 @@ export class BrowserApi {
             return chrome.runtime.getManifest().version;
         } else if (BrowserApi.isSafariApi) {
             // TODO
-            return null;
+            return 'TODO';
         } else {
             return null;
         }
@@ -289,12 +289,6 @@ export class BrowserApi {
             BrowserApi.sendSafariMessageToApp({ command: 'reloadWindow' });
         } else if (!BrowserApi.isSafariApi) {
             return chrome.runtime.reload();
-        }
-    }
-
-    static sendSafariMessageToApp(message: any, response: (data: any) => {} = null) {
-        if (this.isSafariApi) {
-            (window as any).webkit.messageHandlers.bitwardenApp.postMessage(message);
         }
     }
 }
