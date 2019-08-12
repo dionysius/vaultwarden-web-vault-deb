@@ -4,7 +4,7 @@ export class SafariApp {
     static init() {
         if (BrowserApi.isSafariApi) {
             (window as any).bitwardenSafariAppMessageReceiver = (message: any) =>
-                SafariApp.receiveMessageFromApp(message);
+                SafariApp.receiveMessageFromApp(message == null ? null : JSON.parse(message));
         }
     }
 
@@ -13,17 +13,18 @@ export class SafariApp {
             return Promise.resolve(null);
         }
         return new Promise((resolve) => {
-            const messageId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
-            (window as any).webkit.messageHandlers.bitwardenApp.postMessage({
+            const now = new Date();
+            const messageId = now.getTime().toString() + '_' + Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+            (window as any).webkit.messageHandlers.bitwardenApp.postMessage(JSON.stringify({
                 id: messageId,
                 command: command,
                 data: data,
-            });
-            SafariApp.requests.set(messageId, { resolve: resolve, date: new Date() });
+            }));
+            SafariApp.requests.set(messageId, { resolve: resolve, date: now });
         });
     }
 
-    private static requests = new Map<number, { resolve: (value?: unknown) => void, date: Date }>();
+    private static requests = new Map<string, { resolve: (value?: unknown) => void, date: Date }>();
 
     private static receiveMessageFromApp(message: any) {
         if (message == null || message.id == null || !SafariApp.requests.has(message.id)) {
