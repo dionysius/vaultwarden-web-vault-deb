@@ -1,14 +1,14 @@
 import { BrowserApi } from '../browser/browserApi';
+import { SafariApp } from '../browser/safariApp';
 
-import { MessagingService } from 'jslib/abstractions';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 
 export default class BrowserMessagingService implements MessagingService {
     send(subscriber: string, arg: any = {}) {
-        const message = Object.assign({}, { command: subscriber }, arg);
-
         if (BrowserApi.isSafariApi) {
-            BrowserApi.sendSafariMessageToApp(message);
+            SafariApp.sendMessageToApp(subscriber, arg);
         } else {
+            const message = Object.assign({}, { command: subscriber }, arg);
             chrome.runtime.sendMessage(message);
         }
     }

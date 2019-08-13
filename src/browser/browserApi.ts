@@ -1,3 +1,5 @@
+import { SafariApp } from './safariApp';
+
 export class BrowserApi {
     static isWebExtensionsApi: boolean = (typeof browser !== 'undefined');
     static isSafariApi: boolean = (window as any).safariAppExtension === true;
@@ -222,7 +224,7 @@ export class BrowserApi {
         } else if (BrowserApi.isWebExtensionsApi || BrowserApi.isChromeApi) {
             win.close();
         } else if (BrowserApi.isSafariApi && safari.extension.popovers && safari.extension.popovers.length > 0) {
-            BrowserApi.sendSafariMessageToApp({ command: 'hideWindow' });
+            SafariApp.sendMessageToApp('hideWindow');
         }
     }
 
@@ -286,7 +288,7 @@ export class BrowserApi {
         if (win != null) {
             return win.location.reload(true);
         } else if (BrowserApi.isSafariApi) {
-            BrowserApi.sendSafariMessageToApp({ command: 'reloadWindow' });
+            SafariApp.sendMessageToApp('reloadWindow');
         } else if (!BrowserApi.isSafariApi) {
             return chrome.runtime.reload();
         }
