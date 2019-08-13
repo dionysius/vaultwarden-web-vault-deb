@@ -134,8 +134,8 @@ export default class MainBackground {
                     this.systemService.clearClipboard(clipboardValue, clearMs);
                 }
             });
-        this.storageService = new BrowserStorageService(this.platformUtilsService, false);
-        this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
+        this.storageService = new BrowserStorageService(this.platformUtilsService);
+        this.secureStorageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window),
             BrowserApi.isSafariApi ? './_locales/' : null);
         const cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
