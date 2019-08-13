@@ -19,7 +19,7 @@ export default class BrowserStorageService implements StorageService {
     async get<T>(key: string): Promise<T> {
         if (this.isSafari) {
             const obj = await SafariApp.sendMessageToApp('storage_get', key);
-            return obj as T;
+            return JSON.parse(obj) as T;
         } else {
             return new Promise((resolve) => {
                 this.chromeStorageApi.get(key, (obj: any) => {
@@ -38,7 +38,7 @@ export default class BrowserStorageService implements StorageService {
         if (this.isSafari) {
             await SafariApp.sendMessageToApp('storage_save', {
                 key: key,
-                obj: obj,
+                obj: JSON.stringify(obj),
             });
         } else {
             return new Promise((resolve) => {
