@@ -5,19 +5,19 @@ import { DeviceType } from 'jslib/enums';
 describe('Browser Utils Service', () => {
     describe('getBrowser', () => {
         const originalUserAgent = navigator.userAgent;
-        const originalSafari = (window as any).safari;
+        const originalSafariAppExtension = (window as any).safariAppExtension;
         const originalOpr = (window as any).opr;
 
         // Reset the userAgent.
         afterAll(() => {
             Object.defineProperty(navigator, 'userAgent', {
-                value: originalUserAgent
+                value: originalUserAgent,
             });
             Object.defineProperty(window, 'safari', {
-                value: originalSafari
+                value: originalSafariAppExtension,
             });
             Object.defineProperty(window, 'opr', {
-                value: originalOpr
+                value: originalOpr,
             });
         });
 
@@ -72,9 +72,9 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8'
             });
 
-            Object.defineProperty(window, 'safari', {
+            Object.defineProperty(window, 'safariAppExtension', {
                 configurable: true,
-                value: {}
+                value: true,
             });
 
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null);
