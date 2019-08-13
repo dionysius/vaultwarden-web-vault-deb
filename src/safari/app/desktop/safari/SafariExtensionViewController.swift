@@ -26,7 +26,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         let bundleURL = Bundle.main.resourceURL!.absoluteURL
         let html = bundleURL.appendingPathComponent("app/popup/index.html")
         webViewConfig.preferences.setValue(true, forKey: "developerExtrasEnabled")
-        webViewConfig.userContentController.add(self, name: "bitwardenMessage")
+        webViewConfig.userContentController.add(self, name: "bitwardenApp")
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: parentWidth, height: parentHeight), configuration: webViewConfig)
         webView.navigationDelegate = self
         webView.allowsLinkPreview = false
@@ -50,9 +50,50 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "bitwardenMessage" {
-            
+        if message.name == "bitwardenApp" {
+            let messageBody = message.body as! String;
+            print(messageBody)
+            let m : AppMessage? = jsonDeserialize(json: messageBody)
+            if(m == nil) {
+                print("m is nil")
+            } else {
+                let command = m?.command ?? "\"null\""
+                print(command)
+                replyMessage(message: m!)
+            }
         }
     }
+    
+    func replyMessage(message: AppMessage) {
+        let json = jsonSerialize(obj: message) ?? "\"null\""
+        webView.evaluateJavaScript("bitwardenSafariAppMessageReceiver('\(json)');", completionHandler: nil)
+    }
 
+}
+
+func jsonSerialize<T: Encodable>(obj: T) -> String? {
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+    do {
+        let data = try encoder.encode(obj)
+        return String(data: data, encoding: .utf8)!
+    } catch _ {
+        return nil
+    }
+}
+
+func jsonDeserialize<T: Decodable>(json: String) -> T? {
+    let decoder = JSONDecoder()
+    do {
+        let obj = try decoder.decode(T.self, from: json.data(using: .utf8)!)
+        return obj
+    } catch _ {
+        return nil
+    }
+}
+
+class AppMessage : Decodable, Encodable {
+    var id: String
+    var command: String
+    var data: String
 }
