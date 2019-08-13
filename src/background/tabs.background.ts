@@ -8,7 +8,7 @@ export default class TabsBackground {
 
     constructor(private main: MainBackground, private platformUtilsService: PlatformUtilsService) {
         this.isSafari = this.platformUtilsService.isSafari();
-        this.tabs = this.isSafari ? safari.application : chrome.tabs;
+        this.tabs = this.isSafari ? null : chrome.tabs;
     }
 
     async init() {
@@ -17,6 +17,7 @@ export default class TabsBackground {
         }
 
         if (this.isSafari) {
+            /*
             this.tabs.addEventListener('activate', async (ev: any) => {
                 await this.main.refreshBadgeAndMenu();
             }, true);
@@ -25,6 +26,7 @@ export default class TabsBackground {
                 await this.main.checkNotificationQueue();
                 await this.main.refreshBadgeAndMenu();
             }, true);
+            */
 
             return;
         }

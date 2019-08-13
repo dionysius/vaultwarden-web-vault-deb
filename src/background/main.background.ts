@@ -367,6 +367,10 @@ export default class MainBackground {
 
     async openPopup() {
         // Chrome APIs cannot open popup
+
+        // TODO: Do we need to open this popup?
+
+        /*
         if (!this.isSafari || !safari.extension.toolbarItems || !safari.extension.toolbarItems.length) {
             return;
         }
@@ -378,6 +382,7 @@ export default class MainBackground {
         if (activeToolBars && activeToolBars.length) {
             activeToolBars[0].showPopover();
         }
+        */
     }
 
     async reseedStorage() {

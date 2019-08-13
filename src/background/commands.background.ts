@@ -9,7 +9,6 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export default class CommandsBackground {
-    private commands: any;
     private isSafari: boolean;
     private isEdge: boolean;
     private isVivaldi: boolean;
@@ -20,22 +19,17 @@ export default class CommandsBackground {
         this.isSafari = this.platformUtilsService.isSafari();
         this.isEdge = this.platformUtilsService.isEdge();
         this.isVivaldi = this.platformUtilsService.isVivaldi();
-        this.commands = this.isSafari ? safari.application : chrome.commands;
     }
 
     async init() {
-        if (!this.commands && !this.isEdge) {
-            return;
-        }
-
         if (this.isSafari || this.isEdge || this.isVivaldi) {
             BrowserApi.messageListener(async (msg: any, sender: any, sendResponse: any) => {
                 if (msg.command === 'keyboardShortcutTriggered' && msg.shortcut) {
                     await this.processCommand(msg.shortcut, sender);
                 }
             });
-        } else {
-            this.commands.onCommand.addListener(async (command: any) => {
+        } else if (chrome && chrome.commands && !this.isEdge) {
+            chrome.commands.onCommand.addListener(async (command: any) => {
                 await this.processCommand(command);
             });
         }

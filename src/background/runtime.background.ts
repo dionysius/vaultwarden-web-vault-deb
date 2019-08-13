@@ -39,7 +39,7 @@ export default class RuntimeBackground {
         private analytics: Analytics, private notificationsService: NotificationsService,
         private systemService: SystemService, private lockService: LockService) {
         this.isSafari = this.platformUtilsService.isSafari();
-        this.runtime = this.isSafari ? safari.application : chrome.runtime;
+        this.runtime = this.isSafari ? {} : chrome.runtime;
 
         // onInstalled listener must be wired up before anything else, so we do it in the ctor
         if (!this.isSafari) {
@@ -56,6 +56,8 @@ export default class RuntimeBackground {
 
         if (this.isSafari) {
             // Reload the popup when it's opened
+            // TODO
+            /*
             this.runtime.addEventListener('popover', (event: any) => {
                 const win: Window = event.target.contentWindow;
                 let href = win.location.href;
@@ -69,6 +71,7 @@ export default class RuntimeBackground {
                     win.location.href = href;
                 }
             }, true);
+            */
         }
 
         await this.checkOnInstalled();
