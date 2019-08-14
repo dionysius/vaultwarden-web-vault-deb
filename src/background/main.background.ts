@@ -136,8 +136,7 @@ export default class MainBackground {
             });
         this.storageService = new BrowserStorageService(this.platformUtilsService);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService);
-        this.i18nService = new I18nService(BrowserApi.getUILanguage(window),
-            BrowserApi.isSafariApi ? './_locales/' : null);
+        this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
         const cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
         this.cryptoService = new CryptoService(this.storageService, this.secureStorageService, cryptoFunctionService);
         this.tokenService = new TokenService(this.storageService);
