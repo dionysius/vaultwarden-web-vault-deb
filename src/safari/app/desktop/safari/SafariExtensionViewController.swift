@@ -59,33 +59,52 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             } else {
                 let command = m?.command ?? "\"null\""
                 print(command)
-                replyMessage(message: m!)
+                if(command == "storage_get") {
+                    let obj = UserDefaults.standard.string(forKey: m!.data!) ?? "null"
+                    m!.data = obj
+                    replyMessage(message: m!)
+                } else if(command == "storage_save") {
+                    let data : StorageData? = jsonDeserialize(json: m!.data)
+                    if(data?.obj == nil) {
+                        UserDefaults.standard.removeObject(forKey: data!.key)
+                    } else {
+                        UserDefaults.standard.set(data?.obj, forKey: data!.key)
+                    }
+                    m!.data = nil
+                    replyMessage(message: m!)
+                } else if(command == "storage_remove") {
+                    UserDefaults.standard.removeObject(forKey: m!.data!)
+                    m!.data = nil
+                    replyMessage(message: m!)
+                }
             }
         }
     }
     
     func replyMessage(message: AppMessage) {
         let json = jsonSerialize(obj: message) ?? "\"null\""
-        webView.evaluateJavaScript("bitwardenSafariAppMessageReceiver('\(json)');", completionHandler: nil)
+        webView.evaluateJavaScript("window.bitwardenSafariAppMessageReceiver('\(json)');", completionHandler: nil)
     }
 
 }
 
-func jsonSerialize<T: Encodable>(obj: T) -> String? {
+func jsonSerialize<T: Encodable>(obj: T?) -> String? {
     let encoder = JSONEncoder()
-    encoder.outputFormatting = .prettyPrinted
     do {
         let data = try encoder.encode(obj)
-        return String(data: data, encoding: .utf8)!
+        return String(data: data, encoding: .utf8) ?? "null"
     } catch _ {
-        return nil
+        return "null"
     }
 }
 
-func jsonDeserialize<T: Decodable>(json: String) -> T? {
+func jsonDeserialize<T: Decodable>(json: String?) -> T? {
+    if(json == nil) {
+        return nil;
+    }
     let decoder = JSONDecoder()
     do {
-        let obj = try decoder.decode(T.self, from: json.data(using: .utf8)!)
+        let obj = try decoder.decode(T.self, from: json!.data(using: .utf8)!)
         return obj
     } catch _ {
         return nil
@@ -95,5 +114,10 @@ func jsonDeserialize<T: Decodable>(json: String) -> T? {
 class AppMessage : Decodable, Encodable {
     var id: String
     var command: String
-    var data: String
+    var data: String?
+}
+
+class StorageData : Decodable, Encodable {
+    var key: String
+    var obj: String?
 }
