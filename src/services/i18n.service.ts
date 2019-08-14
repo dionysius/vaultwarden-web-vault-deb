@@ -1,10 +1,19 @@
 import { I18nService as BaseI18nService } from 'jslib/services/i18n.service';
 
+import { BrowserApi } from '../browser/browserApi';
+import { SafariApp } from '../browser/safariApp';
+
 export default class I18nService extends BaseI18nService {
-    constructor(systemLanguage: string, localesDirectory: string) {
-        super(systemLanguage, localesDirectory, async (formattedLocale: string) => {
-            const file = await fetch(localesDirectory + formattedLocale + '/messages.json');
-            return await file.json();
+    constructor(systemLanguage: string) {
+        super(systemLanguage, BrowserApi.isSafariApi ? 'safari' : null, async (formattedLocale: string) => {
+            if (BrowserApi.isSafariApi) {
+                const localeJson = await SafariApp.sendMessageToApp('getLocaleStrings', formattedLocale);
+                return JSON.parse(localeJson);
+            } else {
+                // Deprecated
+                const file = await fetch(this.localesDirectory + formattedLocale + '/messages.json');
+                return await file.json();
+            }
         });
 
         this.supportedTranslationLocales = [
