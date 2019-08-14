@@ -76,6 +76,19 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     UserDefaults.standard.removeObject(forKey: m!.data!)
                     m!.data = nil
                     replyMessage(message: m!)
+                } else if(command == "getLocaleStrings") {
+                    let language = String(describing: m!.data)
+                    m!.data = nil
+                    if let path = Bundle.main.path(forResource: "app/_locales/\(language)/messages", ofType: "json") {
+                        do {
+                            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                            let json = String(data: data, encoding: .utf8)
+                            m!.data = json
+                        } catch {
+                        
+                        }
+                    }
+                    replyMessage(message: m!)
                 }
             }
         }
