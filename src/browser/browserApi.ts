@@ -156,7 +156,7 @@ export class BrowserApi {
             return chrome.runtime.getManifest().version;
         } else if (BrowserApi.isSafariApi) {
             // TODO
-            return 'TODO';
+            return null;
         } else {
             return null;
         }

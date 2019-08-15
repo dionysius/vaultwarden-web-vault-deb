@@ -3,8 +3,11 @@ import { BrowserApi } from './browserApi';
 export class SafariApp {
     static init() {
         if (BrowserApi.isSafariApi) {
-            (window as any).bitwardenSafariAppMessageReceiver = (message: any) =>
+            (window as any).bitwardenSafariAppMessageReceiver = (message: any) => {
+                // tslint:disable-next-line
+                console.log(message);
                 SafariApp.receiveMessageFromApp(message == null ? null : JSON.parse(message));
+            };
         }
     }
 
@@ -19,6 +22,7 @@ export class SafariApp {
                 id: messageId,
                 command: command,
                 data: data,
+                responseData: null,
             }));
             SafariApp.requests.set(messageId, { resolve: resolve, date: now });
         });
@@ -31,6 +35,6 @@ export class SafariApp {
             return;
         }
         const p = SafariApp.requests.get(message.id);
-        p.resolve(message.data);
+        p.resolve(message.responseData);
     }
 }
