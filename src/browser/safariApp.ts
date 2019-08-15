@@ -4,8 +4,6 @@ export class SafariApp {
     static init() {
         if (BrowserApi.isSafariApi) {
             (window as any).bitwardenSafariAppMessageReceiver = (message: any) => {
-                // tslint:disable-next-line
-                console.log(message);
                 SafariApp.receiveMessageFromApp(message);
             };
         }
