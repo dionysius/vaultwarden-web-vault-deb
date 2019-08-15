@@ -133,7 +133,7 @@ export class AppComponent implements OnInit {
             }
         };
 
-        BrowserApi.messageListener((window as any).bitwardenPopupMainMessageListener);
+        BrowserApi.messageListener('app.component', (window as any).bitwardenPopupMainMessageListener);
 
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {

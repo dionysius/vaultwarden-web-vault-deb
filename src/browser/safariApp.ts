@@ -26,7 +26,16 @@ export class SafariApp {
         });
     }
 
+    static addMessageListener(name: string, callback: (message: any, sender: any, response: any) => void) {
+        SafariApp.messageListeners.set(name, callback);
+    }
+
+    static sendMessageToListeners(message: any, sender: any, response: any) {
+        SafariApp.messageListeners.forEach((f) => f(message, sender, response));
+    }
+
     private static requests = new Map<string, { resolve: (value?: unknown) => void, date: Date }>();
+    private static messageListeners = new Map<string, (message: any, sender: any, response: any) => void>();
 
     private static receiveMessageFromApp(message: any) {
         if (message == null || message.id == null || !SafariApp.requests.has(message.id)) {

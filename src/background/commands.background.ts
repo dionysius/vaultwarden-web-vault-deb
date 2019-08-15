@@ -23,7 +23,7 @@ export default class CommandsBackground {
 
     async init() {
         if (this.isSafari || this.isEdge || this.isVivaldi) {
-            BrowserApi.messageListener(async (msg: any, sender: any, sendResponse: any) => {
+            BrowserApi.messageListener('commands.background', async (msg: any, sender: any, sendResponse: any) => {
                 if (msg.command === 'keyboardShortcutTriggered' && msg.shortcut) {
                     await this.processCommand(msg.shortcut, sender);
                 }
