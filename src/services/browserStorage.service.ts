@@ -19,7 +19,7 @@ export default class BrowserStorageService implements StorageService {
     async get<T>(key: string): Promise<T> {
         if (this.isSafari) {
             const obj = await SafariApp.sendMessageToApp('storage_get', key);
-            return JSON.parse(obj) as T;
+            return obj == null ? null : JSON.parse(obj) as T;
         } else {
             return new Promise((resolve) => {
                 this.chromeStorageApi.get(key, (obj: any) => {

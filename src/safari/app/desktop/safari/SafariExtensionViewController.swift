@@ -25,12 +25,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         let webViewConfig = WKWebViewConfiguration()
         let bundleURL = Bundle.main.resourceURL!.absoluteURL
         let html = bundleURL.appendingPathComponent("app/popup/index.html")
+        webViewConfig.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webViewConfig.preferences.setValue(true, forKey: "developerExtrasEnabled")
         webViewConfig.userContentController.add(self, name: "bitwardenApp")
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: parentWidth, height: parentHeight), configuration: webViewConfig)
         webView.navigationDelegate = self
         webView.allowsLinkPreview = false
-        webView.loadFileURL(html, allowingReadAccessTo:bundleURL)
+        webView.loadFileURL(html, allowingReadAccessTo: bundleURL)
         webView.alphaValue = 0.0;
         self.view.addSubview(webView)
     }
@@ -57,11 +58,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             if(m == nil) {
                 print("m is nil")
             } else {
-                let command = m?.command ?? "\"null\""
+                let command = m?.command ?? "null"
                 print(command)
                 if(command == "storage_get") {
-                    let obj = UserDefaults.standard.string(forKey: m!.data!) ?? "null"
-                    m!.data = obj
+                    let obj = UserDefaults.standard.string(forKey: m!.data!)
+                    m!.responseData = obj
                     replyMessage(message: m!)
                 } else if(command == "storage_save") {
                     let data : StorageData? = jsonDeserialize(json: m!.data)
@@ -70,21 +71,17 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     } else {
                         UserDefaults.standard.set(data?.obj, forKey: data!.key)
                     }
-                    m!.data = nil
                     replyMessage(message: m!)
                 } else if(command == "storage_remove") {
                     UserDefaults.standard.removeObject(forKey: m!.data!)
-                    m!.data = nil
                     replyMessage(message: m!)
                 } else if(command == "getLocaleStrings") {
                     let language = m!.data
-                    m!.data = nil
                     let bundleURL = Bundle.main.resourceURL!.absoluteURL
                     let messagesUrl = bundleURL.appendingPathComponent("app/_locales/en/messages.json")
                     do {
                         let json = try String(contentsOf: messagesUrl, encoding: .utf8)
                         webView.evaluateJavaScript("window.bitwardenLocaleStrings = \(json);", completionHandler: nil)
-                        m!.data = nil
                     } catch { }
                     replyMessage(message: m!)
                 }
@@ -93,8 +90,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
     
     func replyMessage(message: AppMessage) {
-        let json = (jsonSerialize(obj: message) ?? "\"null\"").replacingOccurrences(of: "`", with: "\\`")
-        webView.evaluateJavaScript("window.bitwardenSafariAppMessageReceiver(`\(json)`);", completionHandler: nil)
+        let json = (jsonSerialize(obj: message) ?? "null")
+        webView.evaluateJavaScript("window.bitwardenSafariAppMessageReceiver(\(json));", completionHandler: nil)
     }
 
 }
@@ -126,6 +123,7 @@ class AppMessage : Decodable, Encodable {
     var id: String
     var command: String
     var data: String?
+    var responseData: String?
 }
 
 class StorageData : Decodable, Encodable {
