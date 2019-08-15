@@ -77,17 +77,15 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     m!.data = nil
                     replyMessage(message: m!)
                 } else if(command == "getLocaleStrings") {
-                    let language = String(describing: m!.data)
+                    let language = m!.data
                     m!.data = nil
-                    if let path = Bundle.main.path(forResource: "app/_locales/\(language)/messages", ofType: "json") {
-                        do {
-                            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                            let json = String(data: data, encoding: .utf8)
-                            m!.data = json
-                        } catch {
-                        
-                        }
-                    }
+                    let bundleURL = Bundle.main.resourceURL!.absoluteURL
+                    let messagesUrl = bundleURL.appendingPathComponent("app/_locales/en/messages.json")
+                    do {
+                        let json = try String(contentsOf: messagesUrl, encoding: .utf8)
+                        webView.evaluateJavaScript("window.bitwardenLocaleStrings = \(json);", completionHandler: nil)
+                        m!.data = nil
+                    } catch { }
                     replyMessage(message: m!)
                 }
             }
@@ -95,8 +93,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
     
     func replyMessage(message: AppMessage) {
-        let json = jsonSerialize(obj: message) ?? "\"null\""
-        webView.evaluateJavaScript("window.bitwardenSafariAppMessageReceiver('\(json)');", completionHandler: nil)
+        let json = (jsonSerialize(obj: message) ?? "\"null\"").replacingOccurrences(of: "`", with: "\\`")
+        webView.evaluateJavaScript("window.bitwardenSafariAppMessageReceiver(`\(json)`);", completionHandler: nil)
     }
 
 }
