@@ -6,6 +6,7 @@ export class SafariApp {
             (window as any).bitwardenSafariAppMessageReceiver = (message: any) => {
                 // tslint:disable-next-line
                 console.log(message);
+                message.data = null;
                 SafariApp.receiveMessageFromApp(message == null ? null : JSON.parse(message));
             };
         }
