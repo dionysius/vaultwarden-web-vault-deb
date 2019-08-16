@@ -39,10 +39,17 @@ export class SafariApp {
     }
 
     private static receiveMessageFromApp(message: any) {
-        if (message == null || message.id == null || !(window as any).bitwardenSafariAppRequests.has(message.id)) {
+        if (message == null) {
             return;
         }
-        const p = (window as any).bitwardenSafariAppRequests.get(message.id);
-        p.resolve(message.responseData);
+        if (message.id == null && message.command === 'cs_message') {
+            try {
+                const msg = JSON.parse(message.data);
+                SafariApp.sendMessageToListeners(msg, 'cs_message', null);
+            } catch { }
+        } else if (message.id != null && (window as any).bitwardenSafariAppRequests.has(message.id)) {
+            const p = (window as any).bitwardenSafariAppRequests.get(message.id);
+            p.resolve(message.responseData);
+        }
     }
 }
