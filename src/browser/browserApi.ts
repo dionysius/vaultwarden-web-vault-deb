@@ -93,7 +93,7 @@ export class BrowserApi {
         return BrowserApi.tabSendMessage(tab, obj);
     }
 
-    static tabSendMessage(tab: any, obj: any, options: any = null): Promise<any> {
+    static async tabSendMessage(tab: any, obj: any, options: any = null): Promise<any> {
         if (!tab || !tab.id) {
             return;
         }
@@ -108,6 +108,8 @@ export class BrowserApi {
                 });
             });
         } else if (BrowserApi.isSafariApi) {
+            const tabs = await SafariApp.sendMessageToApp('tabs_query', JSON.stringify(options));
+            return tabs;
             // TODO
             /*
             let t = tab.safariTab;
@@ -136,8 +138,6 @@ export class BrowserApi {
                 t.page.dispatchMessage('bitwarden', obj);
             }
             */
-
-            return Promise.resolve();
         }
     }
 
