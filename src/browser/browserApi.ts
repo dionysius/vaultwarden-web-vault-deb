@@ -109,7 +109,7 @@ export class BrowserApi {
         } else if (BrowserApi.isSafariApi) {
             await SafariApp.sendMessageToApp('tabs_message', JSON.stringify({
                 tab: tab,
-                obj: obj,
+                obj: JSON.stringify(obj),
                 options: options,
             }));
             /*
