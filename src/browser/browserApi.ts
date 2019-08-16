@@ -41,7 +41,7 @@ export class BrowserApi {
             });
         } else if (BrowserApi.isSafariApi) {
             const tabs = await SafariApp.sendMessageToApp('tabs_query', JSON.stringify(options));
-            return tabs;
+            return tabs != null ? JSON.parse(tabs) : null;
             // TODO
             /*
             if (options.currentWindow) {

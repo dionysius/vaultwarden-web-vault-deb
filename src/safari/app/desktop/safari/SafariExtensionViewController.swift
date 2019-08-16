@@ -90,7 +90,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                         SFSafariApplication.getActiveWindow { (win) in
                             processWindowsForTabs(wins: [win!], options: options
                                 , complete: { (tabs) in
-                                    m!.data = jsonSerialize(obj: tabs)
+                                    m!.responseData = jsonSerialize(obj: tabs)
                                     self.replyMessage(message: m!)
                             })
                         }
@@ -98,7 +98,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                         SFSafariApplication.getAllWindows { (wins) in
                             processWindowsForTabs(wins: wins, options: options
                                 , complete: { (tabs) in
-                                    m!.data = jsonSerialize(obj: tabs)
+                                    m!.responseData = jsonSerialize(obj: tabs)
                                     self.replyMessage(message: m!)
                             })
                         }
@@ -133,7 +133,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
 }
 
-func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, complete: ([Tab]) -> Void) {
+func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, complete: @escaping ([Tab]) -> Void) {
     if(wins.count == 0) {
         complete([])
         return
@@ -155,6 +155,8 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
                                 newTabs.append(t)
                                 tabGroup.leave()
                             })
+                        } else {
+                            tabGroup.leave()
                         }
                     } else {
                         makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { (t) in
@@ -164,14 +166,16 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
                     }
                     tabIndex = tabIndex + 1
                 }
-                tabGroup.wait()
-                winGroup.leave()
+                tabGroup.notify(queue: .main){
+                    winGroup.leave()
+                }
             }
         }
         windowIndex = windowIndex + 1
     }
-    winGroup.wait()
-    complete(newTabs)
+    winGroup.notify(queue: .main){
+        complete(newTabs)
+    }
 }
 
 func makeTabObject(tab: SFSafariTab, activeTab: SFSafariTab?, windowIndex: Int, tabIndex: Int, complete: @escaping (Tab) -> Void) {
