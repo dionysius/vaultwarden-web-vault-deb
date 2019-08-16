@@ -998,7 +998,7 @@
             if (msg.command === 'collectPageDetails') {
                 var pageDetails = collect(document);
                 var pageDetailsObj = JSON.parse(pageDetails);
-                safari.self.tab.dispatchMessage('bitwarden', {
+                safari.extension.dispatchMessage('bitwarden', {
                     command: 'collectPageDetailsResponse',
                     tab: msg.tab,
                     details: pageDetailsObj,

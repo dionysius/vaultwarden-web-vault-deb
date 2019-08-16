@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
 
         const responseCommand = 'notificationBarDataResponse';
-        safari.self.tab.dispatchMessage('bitwarden', {
+        safari.extension.dispatchMessage('bitwarden', {
             command: 'bgGetDataForTab',
             responseCommand: responseCommand,
             bitwardenFrameId: (window as any).__bitwardenFrameId,
@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function sendPlatformMessage(msg: any) {
         if (isSafari) {
             msg.bitwardenFrameId = (window as any).__bitwardenFrameId;
-            safari.self.tab.dispatchMessage('bitwarden', msg);
+            safari.extension.dispatchMessage('bitwarden', msg);
         } else {
             chrome.runtime.sendMessage(msg);
         }

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         if (isSafari) {
             msg.bitwardenFrameId = (window as any).__bitwardenFrameId;
-            safari.self.tab.dispatchMessage('bitwarden', msg);
+            safari.extension.dispatchMessage('bitwarden', msg);
         } else {
             chrome.runtime.sendMessage(msg);
         }
