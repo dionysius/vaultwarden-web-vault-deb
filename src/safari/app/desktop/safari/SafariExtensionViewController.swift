@@ -84,6 +84,26 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                         webView.evaluateJavaScript("window.bitwardenLocaleStrings = \(json);", completionHandler: nil)
                     } catch { }
                     replyMessage(message: m!)
+                } else if(command == "tabs_query") {
+                    let options : TabQueryOptions? = jsonDeserialize(json: m!.data)
+                    if(options?.currentWindow ?? false) {
+                        SFSafariApplication.getActiveWindow { (win) in
+                            processWindowsForTabs(wins: [win!], options: options
+                                , complete: { (tabs) in
+                                    m!.data = jsonSerialize(obj: tabs)
+                                    self.replyMessage(message: m!)
+                            })
+                        }
+                    } else {
+                        SFSafariApplication.getAllWindows { (wins) in
+                            processWindowsForTabs(wins: wins, options: options
+                                , complete: { (tabs) in
+                                    m!.data = jsonSerialize(obj: tabs)
+                                    self.replyMessage(message: m!)
+                            })
+                        }
+                    }
+                    // SFSafariApplication.
                 }
             }
         }
@@ -110,6 +130,66 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             print("error converting to json: \(error)")
         }
         replyMessage(message: newMsg)
+    }
+}
+
+func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, complete: ([Tab]) -> Void) {
+    if(wins.count == 0) {
+        complete([])
+        return
+    }
+    var newTabs: [Tab] = []
+    let winGroup = DispatchGroup()
+    var windowIndex = 0
+    for win in wins {
+        winGroup.enter()
+        win.getActiveTab { (activeTab) in
+            win.getAllTabs { (allTabs) in
+                let tabGroup = DispatchGroup()
+                var tabIndex = 0
+                for tab in allTabs {
+                    tabGroup.enter()
+                    if(options?.active ?? false) {
+                        if(activeTab != nil && activeTab == tab) {
+                            makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { (t) in
+                                newTabs.append(t)
+                                tabGroup.leave()
+                            })
+                        }
+                    } else {
+                        makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { (t) in
+                            newTabs.append(t)
+                            tabGroup.leave()
+                        })
+                    }
+                    tabIndex = tabIndex + 1
+                }
+                tabGroup.wait()
+                winGroup.leave()
+            }
+        }
+        windowIndex = windowIndex + 1
+    }
+    winGroup.wait()
+    complete(newTabs)
+}
+
+func makeTabObject(tab: SFSafariTab, activeTab: SFSafariTab?, windowIndex: Int, tabIndex: Int, complete: @escaping (Tab) -> Void) {
+    let t = Tab()
+    t.active = activeTab != nil && tab == activeTab
+    t.windowId = windowIndex
+    t.index = tabIndex
+    t.id = "\(windowIndex)_\(tabIndex)"
+    tab.getActivePage { (page) in
+        if(page == nil) {
+            complete(t)
+        } else {
+            page!.getPropertiesWithCompletionHandler({ (props) in
+                t.title = props?.title
+                t.url = props?.url?.absoluteString
+                complete(t)
+            })
+        }
     }
 }
 
@@ -152,4 +232,27 @@ class AppMessage : Decodable, Encodable {
 class StorageData : Decodable, Encodable {
     var key: String
     var obj: String?
+}
+
+class TabQueryOptions : Decodable, Encodable {
+    var currentWindow: Bool?
+    var active: Bool?
+}
+
+class Tab : Decodable, Encodable {
+    init() {
+        id = ""
+        index = -1
+        windowId = -100
+        title = ""
+        active = false
+        url = ""
+    }
+    
+    var id: String
+    var index: Int
+    var windowId: Int
+    var title: String?
+    var active: Bool
+    var url: String?
 }
