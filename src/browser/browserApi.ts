@@ -92,7 +92,7 @@ export class BrowserApi {
         return BrowserApi.tabSendMessage(tab, obj);
     }
 
-    static tabSendMessage(tab: any, obj: any, options: any = null): Promise<any> {
+    static async tabSendMessage(tab: any, obj: any, options: any = null): Promise<any> {
         if (!tab || !tab.id) {
             return;
         }
@@ -107,7 +107,11 @@ export class BrowserApi {
                 });
             });
         } else if (BrowserApi.isSafariApi) {
-            // TODO
+            await SafariApp.sendMessageToApp('tabs_message', JSON.stringify({
+                tab: tab,
+                obj: obj,
+                options: options,
+            }));
             /*
             let t = tab.safariTab;
             if (!t || !t.page) {
