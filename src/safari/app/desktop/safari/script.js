@@ -1,3 +1,8 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    safari.extension.dispatchMessage("Hello World!");
+document.addEventListener("DOMContentLoaded", (event) => {
+                          safari.extension.dispatchMessage("Hello World!", { key: "value2" });
+                          
+                          safari.self.addEventListener("message", (e) => {
+                                                       console.log(e);
+                                                       
+                                                       });
 });
