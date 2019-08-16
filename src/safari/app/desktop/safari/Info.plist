@@ -28,11 +28,22 @@
 		<string>com.apple.Safari.extension</string>
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).SafariExtensionHandler</string>
+		<key>SFSafariStyleSheet</key>
+		<array>
+			<dict>
+				<key>Style Sheet</key>
+				<string>app/content/autofill.css</string>
+			</dict>
+		</array>
 		<key>SFSafariContentScript</key>
 		<array>
 			<dict>
 				<key>Script</key>
 				<string>script.js</string>
+			</dict>
+			<dict>
+				<key>Script</key>
+				<string>app/content/autofill.js</string>
 			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
