@@ -107,6 +107,9 @@ export class BrowserApi {
                 });
             });
         } else if (BrowserApi.isSafariApi) {
+            if (options != null && options.frameId != null && obj.bitwardenFrameId == null) {
+                obj.bitwardenFrameId = options.frameId;
+            }
             await SafariApp.sendMessageToApp('tabs_message', JSON.stringify({
                 tab: tab,
                 obj: JSON.stringify(obj),
