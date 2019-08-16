@@ -24,7 +24,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             return this.deviceCache;
         }
 
-        if (BrowserApi.isSafariApi) {
+        if ((window as any).safariAppExtension === true) {
             this.deviceCache = DeviceType.SafariExtension;
         } else if (navigator.userAgent.indexOf(' Firefox/') !== -1 || navigator.userAgent.indexOf(' Gecko/') !== -1) {
             this.deviceCache = DeviceType.FirefoxExtension;

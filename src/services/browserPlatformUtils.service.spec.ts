@@ -79,6 +79,11 @@ describe('Browser Utils Service', () => {
 
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.SafariExtension);
+
+            Object.defineProperty(window, 'safariAppExtension', {
+                configurable: true,
+                value: false,
+            });
         });
 
         it('should detect vivaldi', () => {
