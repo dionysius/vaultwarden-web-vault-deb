@@ -103,7 +103,43 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                             })
                         }
                     }
-                    // SFSafariApplication.
+                } else if(command == "tabs_message") {
+                    let tabMsg: TabMessage? = jsonDeserialize(json: m!.data)
+                    SFSafariApplication.getAllWindows { (wins) in
+                        var theWin: SFSafariWindow?
+                        var winIndex = 0
+                        for win in wins {
+                            if(tabMsg?.tab.windowId == winIndex) {
+                                theWin = win
+                                break
+                            }
+                            winIndex = winIndex + 1
+                        }
+                        if(theWin == nil) {
+                            // TODO: error
+                        } else {
+                            var theTab: SFSafariTab?
+                            theWin!.getAllTabs { (tabs) in
+                                var tabIndex = 0
+                                for tab in tabs {
+                                    if(tabMsg?.tab.index == tabIndex) {
+                                        theTab = tab
+                                        break
+                                    }
+                                    tabIndex = tabIndex + 1
+                                }
+                                if(theTab == nil) {
+                                    // TODO: error
+                                } else {
+                                    theTab!.getActivePage { (activePage) in
+                                        if(activePage != nil) {
+                                            activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": tabMsg!.obj])
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -153,25 +189,27 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
                         if(activeTab != nil && activeTab == tab) {
                             makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { (t) in
                                 newTabs.append(t)
+                                tabIndex = tabIndex + 1
                                 tabGroup.leave()
                             })
                         } else {
+                            tabIndex = tabIndex + 1
                             tabGroup.leave()
                         }
                     } else {
                         makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { (t) in
                             newTabs.append(t)
+                            tabIndex = tabIndex + 1
                             tabGroup.leave()
                         })
                     }
-                    tabIndex = tabIndex + 1
                 }
                 tabGroup.notify(queue: .main){
+                    windowIndex = windowIndex + 1
                     winGroup.leave()
                 }
             }
         }
-        windowIndex = windowIndex + 1
     }
     winGroup.notify(queue: .main){
         complete(newTabs)
@@ -259,4 +297,14 @@ class Tab : Decodable, Encodable {
     var title: String?
     var active: Bool
     var url: String?
+}
+
+class TabMessage: Decodable, Encodable {
+    var tab: Tab
+    var obj: String
+    var options: TabMessageOptions?
+}
+
+class TabMessageOptions: Decodable, Encodable {
+    var frameId: Int?
 }

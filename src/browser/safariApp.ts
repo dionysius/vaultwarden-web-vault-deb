@@ -42,7 +42,7 @@ export class SafariApp {
         if (message == null) {
             return;
         }
-        if (message.id == null && message.command === 'cs_message') {
+        if ((message.id == null || message.id === '') && message.command === 'cs_message') {
             try {
                 const msg = JSON.parse(message.data);
                 SafariApp.sendMessageToListeners(msg, 'cs_message', null);
