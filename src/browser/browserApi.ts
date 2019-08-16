@@ -42,7 +42,6 @@ export class BrowserApi {
         } else if (BrowserApi.isSafariApi) {
             const tabs = await SafariApp.sendMessageToApp('tabs_query', JSON.stringify(options));
             return tabs != null ? JSON.parse(tabs) : null;
-            // TODO
             /*
             if (options.currentWindow) {
                 if (safari.application.activeBrowserWindow) {
@@ -203,7 +202,6 @@ export class BrowserApi {
             });
         } else if (BrowserApi.isSafariApi) {
             SafariApp.addMessageListener(name, callback);
-            // TODO
             /*
             safari.application.addEventListener('message', async (msgEvent: any) => {
                 callback(msgEvent.message, {
