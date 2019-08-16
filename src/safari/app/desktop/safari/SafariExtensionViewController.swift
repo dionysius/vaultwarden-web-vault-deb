@@ -90,10 +90,27 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
     
     func replyMessage(message: AppMessage) {
+        if(webView == nil) {
+            return;
+        }
         let json = (jsonSerialize(obj: message) ?? "null")
         webView.evaluateJavaScript("window.bitwardenSafariAppMessageReceiver(\(json));", completionHandler: nil)
     }
-
+    
+    func replyMessageFromScript(msg: [String : Any]?) {
+        if(webView == nil) {
+            return;
+        }
+        let newMsg = AppMessage()
+        newMsg.command = "cs_message"
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: msg as Any, options: [])
+            newMsg.data = String(data: jsonData, encoding: .utf8)
+        } catch let error {
+            print("error converting to json: \(error)")
+        }
+        replyMessage(message: newMsg)
+    }
 }
 
 func jsonSerialize<T: Encodable>(obj: T?) -> String? {
@@ -120,6 +137,12 @@ func jsonDeserialize<T: Decodable>(json: String?) -> T? {
 }
 
 class AppMessage : Decodable, Encodable {
+    init() {
+        id = ""
+        command = ""
+        data = nil
+        responseData = nil
+    }
     var id: String
     var command: String
     var data: String?

@@ -12,11 +12,19 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
-        page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
+        
+        if(messageName == "bitwarden") {
+            page.getPropertiesWithCompletionHandler { properties in
+                NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
+                
+                DispatchQueue.main.async {
+                    SafariExtensionViewController.shared.replyMessageFromScript(msg: userInfo)
+                }
+                
+            }
         }
         
-        page.dispatchMessageToScript(withName: "getInfo", userInfo: ["hello": "world", "foo": "bar"])
+        // page.dispatchMessageToScript(withName: "getInfo", userInfo: ["hello": "world", "foo": "bar"])
     }
     
     override func toolbarItemClicked(in window: SFSafariWindow) {
