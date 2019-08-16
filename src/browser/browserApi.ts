@@ -261,7 +261,6 @@ export class BrowserApi {
             return {};
         }
 
-        // TODO
         return {};
         /*
         const winIndex = safari.application.browserWindows.indexOf(tab.browserWindow);
