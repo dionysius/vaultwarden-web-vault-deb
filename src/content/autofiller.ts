@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             (window as any).__bitwardenFrameId = Math.floor(Math.random() * Math.floor(99999999));
         }
         const responseCommand = 'autofillerAutofillOnPageLoadEnabledResponse';
-        safari.self.tab.dispatchMessage('bitwarden', {
+        safari.extension.dispatchMessage('bitwarden', {
             command: 'bgGetDataForTab',
             responseCommand: responseCommand,
             bitwardenFrameId: (window as any).__bitwardenFrameId,
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if (isSafari) {
                 msg.bitwardenFrameId = (window as any).__bitwardenFrameId;
-                safari.self.tab.dispatchMessage('bitwarden', msg);
+                safari.extension.dispatchMessage('bitwarden', msg);
             } else {
                 chrome.runtime.sendMessage(msg);
             }

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submit_callback: (theForm: Document) => {
                     const sigElement = theForm.querySelector('input[name="sig_response"]') as HTMLInputElement;
                     if (sigElement) {
-                        safari.self.tab.dispatchMessage('bitwarden', {
+                        safari.extension.dispatchMessage('bitwarden', {
                             command: '2faPageResponse',
                             type: 'duo',
                             data: {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
             });
         } else if (msg.data.type === 'success') {
-            safari.self.tab.dispatchMessage('bitwarden', {
+            safari.extension.dispatchMessage('bitwarden', {
                 command: 'openPopup',
             });
 
