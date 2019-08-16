@@ -990,7 +990,7 @@
             window.__bitwardenFrameId = Math.floor(Math.random() * Math.floor(99999999));
         }
         safari.self.addEventListener('message', function (msgEvent) {
-            var msg = JSON.parse(msgEvent.message);
+            var msg = JSON.parse(msgEvent.message.msg);
             if (msg.bitwardenFrameId != null && window.__bitwardenFrameId !== msg.bitwardenFrameId) {
                 return;
             }
