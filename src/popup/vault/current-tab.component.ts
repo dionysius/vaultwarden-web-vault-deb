@@ -70,18 +70,18 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
         private searchService: SearchService, private storageService: StorageService,
         route: ActivatedRoute) {
-        route.params.subscribe((val) => {
+        route.params.subscribe(async (val) => {
             console.log('route.params.subscribe');
             if (platformUtilsService.getDevice() === DeviceType.SafariExtension) {
                 console.log(val);
-                this.init();
+                await this.init();
             }
         });
     }
 
     async ngOnInit() {
         console.log('ngOnInit');
-        this.init();
+        await this.init();
     }
 
     ngOnDestroy() {
@@ -157,7 +157,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         }, 200);
     }
 
-    private init() {
+    private async init() {
         this.showLeftHeader = this.searchTypeSearch = !this.platformUtilsService.isSafari();
         this.inSidebar = this.popupUtilsService.inSidebar(window);
 
