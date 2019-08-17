@@ -70,11 +70,11 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
         private searchService: SearchService, private storageService: StorageService,
         route: ActivatedRoute) {
-        route.params.subscribe(async (val) => {
+        route.params.subscribe((val) => {
             console.log('route.params.subscribe');
             if (platformUtilsService.getDevice() === DeviceType.SafariExtension) {
                 console.log(val);
-                await this.init();
+                this.init();
             }
         });
     }
