@@ -5,7 +5,11 @@ import {
     OnDestroy,
     OnInit,
 } from '@angular/core';
-import { Router } from '@angular/router';
+
+import {
+    ActivatedRoute,
+    Router,
+} from '@angular/router';
 
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
@@ -15,6 +19,7 @@ import { BrowserApi } from '../../browser/browserApi';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { CipherType } from 'jslib/enums/cipherType';
+import { DeviceType } from 'jslib/enums/deviceType';
 
 import { CipherView } from 'jslib/models/view/cipherView';
 
@@ -63,52 +68,20 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
-        private searchService: SearchService, private storageService: StorageService) { }
+        private searchService: SearchService, private storageService: StorageService,
+        route: ActivatedRoute) {
+        route.params.subscribe((val) => {
+            console.log('route.params.subscribe');
+            if (platformUtilsService.getDevice() === DeviceType.SafariExtension) {
+                console.log(val);
+                this.init();
+            }
+        });
+    }
 
     async ngOnInit() {
-        this.showLeftHeader = this.searchTypeSearch = !this.platformUtilsService.isSafari();
-        this.inSidebar = this.popupUtilsService.inSidebar(window);
-
-        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
-            this.ngZone.run(async () => {
-                switch (message.command) {
-                    case 'syncCompleted':
-                        if (this.loaded) {
-                            window.setTimeout(() => {
-                                this.load();
-                            }, 500);
-                        }
-                        break;
-                    case 'collectPageDetailsResponse':
-                        if (message.sender === BroadcasterSubscriptionId) {
-                            this.pageDetails.push({
-                                frameId: message.webExtSender.frameId,
-                                tab: message.tab,
-                                details: message.details,
-                            });
-                        }
-                        break;
-                    default:
-                        break;
-                }
-
-                this.changeDetectorRef.detectChanges();
-            });
-        });
-
-        if (!this.syncService.syncInProgress) {
-            await this.load();
-        } else {
-            this.loadedTimeout = window.setTimeout(async () => {
-                if (!this.loaded) {
-                    await this.load();
-                }
-            }, 5000);
-        }
-
-        window.setTimeout(() => {
-            document.getElementById('search').focus();
-        }, 100);
+        console.log('ngOnInit');
+        this.init();
     }
 
     ngOnDestroy() {
@@ -182,6 +155,52 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         this.searchTimeout = window.setTimeout(async () => {
             this.router.navigate(['/tabs/vault'], { queryParams: { searchText: this.searchText } });
         }, 200);
+    }
+
+    private init() {
+        this.showLeftHeader = this.searchTypeSearch = !this.platformUtilsService.isSafari();
+        this.inSidebar = this.popupUtilsService.inSidebar(window);
+
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+            this.ngZone.run(async () => {
+                switch (message.command) {
+                    case 'syncCompleted':
+                        if (this.loaded) {
+                            window.setTimeout(() => {
+                                this.load();
+                            }, 500);
+                        }
+                        break;
+                    case 'collectPageDetailsResponse':
+                        if (message.sender === BroadcasterSubscriptionId) {
+                            this.pageDetails.push({
+                                frameId: message.webExtSender.frameId,
+                                tab: message.tab,
+                                details: message.details,
+                            });
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                this.changeDetectorRef.detectChanges();
+            });
+        });
+
+        if (!this.syncService.syncInProgress) {
+            await this.load();
+        } else {
+            this.loadedTimeout = window.setTimeout(async () => {
+                if (!this.loaded) {
+                    await this.load();
+                }
+            }, 5000);
+        }
+
+        window.setTimeout(() => {
+            document.getElementById('search').focus();
+        }, 100);
     }
 
     private async load() {

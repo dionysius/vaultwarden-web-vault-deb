@@ -129,7 +129,7 @@ export class AppComponent implements OnInit {
                 }
             } else if (msg.command === 'reloadPopup') {
                 this.ngZone.run(() => {
-                    this.router.navigate(['/']);
+                    this.router.navigate(['/', { queryParams: { reload: true } }]);
                 });
             } else {
                 msg.webExtSender = sender;
