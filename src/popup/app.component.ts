@@ -127,6 +127,8 @@ export class AppComponent implements OnInit {
                     // Wait to make sure background has reloaded first.
                     window.setTimeout(() => BrowserApi.reloadExtension(window), 2000);
                 }
+            } else if (msg.command === 'reloadPopup') {
+                this.router.navigate(['/']);
             } else {
                 msg.webExtSender = sender;
                 this.broadcasterService.send(msg);

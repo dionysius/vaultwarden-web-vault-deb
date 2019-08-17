@@ -42,10 +42,10 @@ export class SafariApp {
         if (message == null) {
             return;
         }
-        if ((message.id == null || message.id === '') && message.command === 'cs_message') {
+        if ((message.id == null || message.id === '') && message.command === 'app_message') {
             try {
                 const msg = JSON.parse(message.data);
-                SafariApp.sendMessageToListeners(msg, 'cs_message', null);
+                SafariApp.sendMessageToListeners(msg, 'app_message', null);
             } catch { }
         } else if (message.id != null && (window as any).bitwardenSafariAppRequests.has(message.id)) {
             const p = (window as any).bitwardenSafariAppRequests.get(message.id);

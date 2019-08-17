@@ -153,12 +153,12 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         webView.evaluateJavaScript("window.bitwardenSafariAppMessageReceiver(\(json));", completionHandler: nil)
     }
     
-    func replyMessageFromScript(msg: [String : Any]?) {
+    func sendMessage(msg: [String : Any]?) {
         if(webView == nil) {
             return;
         }
         let newMsg = AppMessage()
-        newMsg.command = "cs_message"
+        newMsg.command = "app_message"
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: msg as Any, options: [])
             newMsg.data = String(data: jsonData, encoding: .utf8)

@@ -16,7 +16,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             page.getPropertiesWithCompletionHandler { properties in
                 // NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
                 DispatchQueue.main.async {
-                    SafariExtensionViewController.shared.replyMessageFromScript(msg: userInfo)
+                    SafariExtensionViewController.shared.sendMessage(msg: userInfo)
                 }
             }
         }
@@ -34,6 +34,12 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     
     override func popoverViewController() -> SFSafariExtensionViewController {
         return SafariExtensionViewController.shared
+    }
+    
+    override func popoverWillShow(in window: SFSafariWindow) {
+        DispatchQueue.main.async {
+            SafariExtensionViewController.shared.sendMessage(msg: ["command": "reloadPopup"])
+        }
     }
 
 }
