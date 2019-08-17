@@ -8,7 +8,7 @@ export default class TabsBackground {
 
     constructor(private main: MainBackground, private platformUtilsService: PlatformUtilsService) {
         this.isSafari = this.platformUtilsService.isSafari();
-        this.tabs = this.isSafari ? null : chrome.tabs;
+        this.tabs = this.isSafari ? {} : chrome.tabs;
     }
 
     async init() {
