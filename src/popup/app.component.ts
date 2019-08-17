@@ -100,7 +100,7 @@ export class AppComponent implements OnInit {
                     });
                     this.changeDetectorRef.detectChanges();
                 });
-            }  else if (msg.command === 'authBlocked') {
+            } else if (msg.command === 'authBlocked') {
                 this.ngZone.run(() => {
                     this.router.navigate(['home']);
                 });
@@ -128,7 +128,9 @@ export class AppComponent implements OnInit {
                     window.setTimeout(() => BrowserApi.reloadExtension(window), 2000);
                 }
             } else if (msg.command === 'reloadPopup') {
-                this.router.navigate(['/']);
+                this.ngZone.run(() => {
+                    this.router.navigate(['/']);
+                });
             } else {
                 msg.webExtSender = sender;
                 this.broadcasterService.send(msg);

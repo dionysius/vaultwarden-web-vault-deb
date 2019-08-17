@@ -56,7 +56,6 @@ export default class RuntimeBackground {
 
         if (this.isSafari) {
             // Reload the popup when it's opened
-            // TODO
             /*
             this.runtime.addEventListener('popover', (event: any) => {
                 const win: Window = event.target.contentWindow;
