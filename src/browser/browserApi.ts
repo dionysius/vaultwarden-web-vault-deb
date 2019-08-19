@@ -229,7 +229,7 @@ export class BrowserApi {
             browser.tabs.update({ active: true }).finally(win.close);
         } else if (BrowserApi.isWebExtensionsApi || BrowserApi.isChromeApi) {
             win.close();
-        } else if (BrowserApi.isSafariApi && safari.extension.popovers && safari.extension.popovers.length > 0) {
+        } else if (BrowserApi.isSafariApi) {
             SafariApp.sendMessageToApp('hideWindow');
         }
     }

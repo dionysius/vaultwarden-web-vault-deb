@@ -130,7 +130,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
     }
 
-    fillCipher(cipher: CipherView) {
+    async fillCipher(cipher: CipherView) {
         this.totpCode = null;
         if (this.totpTimeout != null) {
             window.clearTimeout(this.totpTimeout);
@@ -142,27 +142,26 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             return;
         }
 
-        this.autofillService.doAutoFill({
-            cipher: cipher,
-            pageDetails: this.pageDetails,
-            doc: window.document,
-        }).then((totpCode) => {
-            this.totpCode = totpCode;
+        try {
+            this.totpCode = await this.autofillService.doAutoFill({
+                cipher: cipher,
+                pageDetails: this.pageDetails,
+                doc: window.document,
+            });
             this.analytics.eventTrack.next({ action: 'Autofilled' });
-            if (totpCode != null && !this.platformUtilsService.isSafari()) {
-                this.platformUtilsService.copyToClipboard(totpCode, { window: window });
+            if (this.totpCode != null && !this.platformUtilsService.isSafari()) {
+                this.platformUtilsService.copyToClipboard(this.totpCode, { window: window });
             }
-
             if (this.popupUtilsService.inPopup(window)) {
                 BrowserApi.closePopup(window);
             }
-        }).catch(() => {
+        } catch {
             this.ngZone.run(() => {
                 this.analytics.eventTrack.next({ action: 'Autofilled Error' });
                 this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
                 this.changeDetectorRef.detectChanges();
             });
-        });
+        }
 
         // Weird bug in Safari won't allow clipboard copying after a promise call, so we have this workaround
         if (cipher.type === CipherType.Login && this.platformUtilsService.isSafari()) {
