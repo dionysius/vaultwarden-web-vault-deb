@@ -75,9 +75,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     UserDefaults.standard.removeObject(forKey: m!.data!)
                     replyMessage(message: m!)
                 } else if command == "getLocaleStrings" {
-                    let language = m!.data
+                    let language = m!.data ?? "en"
                     let bundleURL = Bundle.main.resourceURL!.absoluteURL
-                    let messagesUrl = bundleURL.appendingPathComponent("app/_locales/en/messages.json")
+                    let messagesUrl = bundleURL.appendingPathComponent("app/_locales/\(language)/messages.json")
                     do {
                         let json = try String(contentsOf: messagesUrl, encoding: .utf8)
                         webView.evaluateJavaScript("window.bitwardenLocaleStrings = \(json);", completionHandler: nil)
