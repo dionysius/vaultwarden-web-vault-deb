@@ -1,19 +1,26 @@
 import { BrowserApi } from './browserApi';
 
 export class SafariApp {
+    static inited = false;
+
     static init() {
+        if (SafariApp.inited) {
+            return;
+        }
+        SafariApp.inited = true;
         if (BrowserApi.isSafariApi) {
             (window as any).bitwardenSafariAppRequests =
-                new Map<string, { resolve: (value?: unknown) => void, date: Date }>();
+                new Map<string, { resolve: (value?: unknown) => void, timeoutDate: Date }>();
             (window as any).bitwardenSafariAppMessageListeners =
-                new Map<string, { resolve: (value?: unknown) => void, date: Date }>();
+                new Map<string, (message: any, sender: any, response: any) => void>();
             (window as any).bitwardenSafariAppMessageReceiver = (message: any) => {
                 SafariApp.receiveMessageFromApp(message);
             };
+            setInterval(() => SafariApp.cleanupOldRequests(), 5 * 60000);
         }
     }
 
-    static sendMessageToApp(command: string, data: any = null): Promise<any> {
+    static sendMessageToApp(command: string, data: any = null, resolveNow = false): Promise<any> {
         if (!BrowserApi.isSafariApi) {
             return Promise.resolve(null);
         }
@@ -26,7 +33,14 @@ export class SafariApp {
                 data: data,
                 responseData: null,
             }));
-            (window as any).bitwardenSafariAppRequests.set(messageId, { resolve: resolve, date: now });
+            if (resolveNow) {
+                resolve();
+            } else {
+                (window as any).bitwardenSafariAppRequests.set(messageId, {
+                    resolve: resolve,
+                    timeoutDate: new Date(now.getTime() + 5 * 60000),
+                });
+            }
         });
     }
 
@@ -50,6 +64,21 @@ export class SafariApp {
         } else if (message.id != null && (window as any).bitwardenSafariAppRequests.has(message.id)) {
             const p = (window as any).bitwardenSafariAppRequests.get(message.id);
             p.resolve(message.responseData);
+            (window as any).bitwardenSafariAppRequests.delete(message.id);
         }
+    }
+
+    private static cleanupOldRequests() {
+        const remoteIds: string[] = [];
+        ((window as any).bitwardenSafariAppRequests as
+            Map<string, { resolve: (value?: unknown) => void, timeoutDate: Date }>)
+            .forEach((v, key) => {
+                if (v.timeoutDate < new Date()) {
+                    remoteIds.push(key);
+                }
+            });
+        remoteIds.forEach((id) => {
+            (window as any).bitwardenSafariAppRequests.delete(id);
+        });
     }
 }

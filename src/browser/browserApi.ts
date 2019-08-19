@@ -114,7 +114,7 @@ export class BrowserApi {
                 tab: tab,
                 obj: JSON.stringify(obj),
                 options: options,
-            }));
+            }), true);
             /*
             let t = tab.safariTab;
             if (!t || !t.page) {
