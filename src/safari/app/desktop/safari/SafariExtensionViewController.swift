@@ -139,6 +139,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                             }
                         }
                     }
+                } else if command == "hideWindow" {
+                    dismissPopover()
                 }
             }
         }
