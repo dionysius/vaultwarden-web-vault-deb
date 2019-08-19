@@ -149,7 +149,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 doc: window.document,
             });
             this.analytics.eventTrack.next({ action: 'Autofilled' });
-            if (this.totpCode != null && !this.platformUtilsService.isSafari()) {
+            if (this.totpCode != null) {
                 this.platformUtilsService.copyToClipboard(this.totpCode, { window: window });
             }
             if (this.popupUtilsService.inPopup(window)) {
@@ -161,15 +161,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
                 this.changeDetectorRef.detectChanges();
             });
-        }
-
-        // Weird bug in Safari won't allow clipboard copying after a promise call, so we have this workaround
-        if (cipher.type === CipherType.Login && this.platformUtilsService.isSafari()) {
-            this.totpTimeout = window.setTimeout(() => {
-                if (this.totpCode != null) {
-                    this.platformUtilsService.copyToClipboard(this.totpCode, { window: window });
-                }
-            }, 500);
         }
     }
 
