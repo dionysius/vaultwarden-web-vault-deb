@@ -1,4 +1,5 @@
 import { BrowserApi } from '../browser/browserApi';
+import { SafariApp } from '../browser/safariApp';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
@@ -24,7 +25,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             return this.deviceCache;
         }
 
-        if ((window as any).safariAppExtension === true) {
+        if (this.isSafariExtension()) {
             this.deviceCache = DeviceType.SafariExtension;
         } else if (navigator.userAgent.indexOf(' Firefox/') !== -1 || navigator.userAgent.indexOf(' Gecko/') !== -1) {
             this.deviceCache = DeviceType.FirefoxExtension;
@@ -187,7 +188,13 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         }
         const clearing = options ? !!options.clearing : false;
         const clearMs: number = options && options.clearMs ? options.clearMs : null;
-        if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.writeText) {
+        if (this.isSafariExtension()) {
+            SafariApp.sendMessageToApp('copyToClipboard', text).then(() => {
+                if (!clearing && this.clipboardWriteCallback != null) {
+                    this.clipboardWriteCallback(text, clearMs);
+                }
+            });
+        } else if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.writeText) {
             (win as any).navigator.clipboard.writeText(text).then(() => {
                 if (!clearing && this.clipboardWriteCallback != null) {
                     this.clipboardWriteCallback(text, clearMs);
@@ -231,7 +238,9 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             doc = options.doc;
         }
 
-        if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.readText) {
+        if (this.isSafariExtension()) {
+            return await SafariApp.sendMessageToApp('readFromClipboard');
+        } else if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.readText) {
             return await (win as any).navigator.clipboard.readText();
         } else if (doc.queryCommandSupported && doc.queryCommandSupported('paste')) {
             const textarea = doc.createElement('textarea');
@@ -282,5 +291,9 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         }
 
         return null;
+    }
+
+    private isSafariExtension(): boolean {
+        return (window as any).safariAppExtension === true;
     }
 }
