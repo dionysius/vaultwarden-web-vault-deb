@@ -115,7 +115,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                             winIndex = winIndex + 1
                         }
                         if theWin == nil {
-                            // TODO: error
+                            m!.responseError = true
+                            self.replyMessage(message: m!)
                         } else {
                             var theTab: SFSafariTab?
                             theWin!.getAllTabs { tabs in
@@ -128,11 +129,16 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                                     tabIndex = tabIndex + 1
                                 }
                                 if theTab == nil {
-                                    // TODO: error
+                                    m!.responseError = true
+                                    self.replyMessage(message: m!)
                                 } else {
                                     theTab!.getActivePage { activePage in
                                         if activePage != nil {
                                             activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": tabMsg!.obj])
+                                            self.replyMessage(message: m!)
+                                        } else {
+                                            m!.responseError = true
+                                            self.replyMessage(message: m!)
                                         }
                                     }
                                 }
@@ -141,6 +147,16 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     }
                 } else if command == "hideWindow" {
                     dismissPopover()
+                    replyMessage(message: m!)
+                } else if command == "copyToClipboard" {
+                    let pasteboard = NSPasteboard.general
+                    pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+                    pasteboard.setString(m!.data ?? "", forType: NSPasteboard.PasteboardType.string)
+                    replyMessage(message: m!)
+                } else if command == "readFromClipboard" {
+                    let pasteboard = NSPasteboard.general
+                    m?.responseData = pasteboard.pasteboardItems?.first?.string(forType: .string)
+                    replyMessage(message: m!)
                 }
             }
         }
@@ -265,12 +281,14 @@ class AppMessage: Decodable, Encodable {
         command = ""
         data = nil
         responseData = nil
+        responseError = nil
     }
 
     var id: String
     var command: String
     var data: String?
     var responseData: String?
+    var responseError: Bool?
 }
 
 class StorageData: Decodable, Encodable {
