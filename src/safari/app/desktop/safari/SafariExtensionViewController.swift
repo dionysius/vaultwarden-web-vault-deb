@@ -114,10 +114,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                             }
                             winIndex = winIndex + 1
                         }
-                        if theWin == nil {
-                            m!.responseError = true
-                            self.replyMessage(message: m!)
-                        } else {
+                        if theWin != nil {
                             var theTab: SFSafariTab?
                             theWin!.getAllTabs { tabs in
                                 var tabIndex = 0
@@ -128,17 +125,10 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                                     }
                                     tabIndex = tabIndex + 1
                                 }
-                                if theTab == nil {
-                                    m!.responseError = true
-                                    self.replyMessage(message: m!)
-                                } else {
+                                if theTab != nil {
                                     theTab!.getActivePage { activePage in
                                         if activePage != nil {
                                             activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": tabMsg!.obj])
-                                            self.replyMessage(message: m!)
-                                        } else {
-                                            m!.responseError = true
-                                            self.replyMessage(message: m!)
                                         }
                                     }
                                 }
