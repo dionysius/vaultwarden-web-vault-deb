@@ -69,15 +69,15 @@ export class SafariApp {
     }
 
     private static cleanupOldRequests() {
-        const remoteIds: string[] = [];
+        const removeIds: string[] = [];
         ((window as any).bitwardenSafariAppRequests as
             Map<string, { resolve: (value?: unknown) => void, timeoutDate: Date }>)
             .forEach((v, key) => {
                 if (v.timeoutDate < new Date()) {
-                    remoteIds.push(key);
+                    removeIds.push(key);
                 }
             });
-        remoteIds.forEach((id) => {
+        removeIds.forEach((id) => {
             (window as any).bitwardenSafariAppRequests.delete(id);
         });
     }
