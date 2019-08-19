@@ -219,6 +219,7 @@ const routes: Routes = [
                 component: CurrentTabComponent,
                 canActivate: [AuthGuardService],
                 data: { state: 'tabs_current' },
+                runGuardsAndResolvers: 'always',
             },
             {
                 path: 'vault',
@@ -265,6 +266,7 @@ export class NoRouteReuseStrategy implements RouteReuseStrategy {
 @NgModule({
     imports: [RouterModule.forRoot(routes, {
         useHash: true,
+        onSameUrlNavigation: 'reload',
         /*enableTracing: true,*/
     })],
     exports: [RouterModule],

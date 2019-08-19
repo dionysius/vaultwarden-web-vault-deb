@@ -8,8 +8,11 @@ import {
 
 import {
     ActivatedRoute,
+    NavigationEnd,
     Router,
 } from '@angular/router';
+
+import { Subscription } from 'rxjs';
 
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
@@ -61,6 +64,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     private totpTimeout: number;
     private loadedTimeout: number;
     private searchTimeout: number;
+    private navSubscription: Subscription;
 
     constructor(private platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
         private popupUtilsService: PopupUtilsService, private autofillService: AutofillService,
@@ -68,25 +72,27 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
-        private searchService: SearchService, private storageService: StorageService,
-        route: ActivatedRoute) {
-        route.params.subscribe((val) => {
-            console.log('route.params.subscribe');
-            if (platformUtilsService.getDevice() === DeviceType.SafariExtension) {
-                console.log(val);
-                this.init();
+        private searchService: SearchService, private storageService: StorageService) {
+        this.navSubscription = this.router.events.subscribe(async (e: any) => {
+            // If it is a NavigationEnd event re-initialize the component
+            if (e instanceof NavigationEnd) {
+                console.log('nav end');
+                console.log(e);
+                await this.init();
             }
         });
     }
 
     async ngOnInit() {
         console.log('ngOnInit');
-        await this.init();
     }
 
     ngOnDestroy() {
         window.clearTimeout(this.loadedTimeout);
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+        if (this.navSubscription != null) {
+            this.navSubscription.unsubscribe();
+        }
     }
 
     async refresh() {
