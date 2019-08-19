@@ -94,7 +94,7 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveLockOption(newValue: number) {
-        if (newValue == null && !this.platformUtilsService.isSafari()) {
+        if (newValue == null) {
             const confirmed = await this.platformUtilsService.showDialog(
                 this.i18nService.t('neverLockWarning'), null,
                 this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');

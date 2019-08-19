@@ -230,7 +230,7 @@ export class BrowserApi {
         } else if (BrowserApi.isWebExtensionsApi || BrowserApi.isChromeApi) {
             win.close();
         } else if (BrowserApi.isSafariApi) {
-            SafariApp.sendMessageToApp('hideWindow');
+            SafariApp.sendMessageToApp('hidePopover');
         }
     }
 
@@ -293,7 +293,7 @@ export class BrowserApi {
         if (win != null) {
             return win.location.reload(true);
         } else if (BrowserApi.isSafariApi) {
-            SafariApp.sendMessageToApp('reloadWindow');
+            SafariApp.sendMessageToApp('reloadExtension');
         } else if (!BrowserApi.isSafariApi) {
             return chrome.runtime.reload();
         }

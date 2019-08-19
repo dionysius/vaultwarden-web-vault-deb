@@ -95,6 +95,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         }
 
         if (this.isSafari()) {
+            // TODO
             return false;
         }
 

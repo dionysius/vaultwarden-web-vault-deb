@@ -368,6 +368,10 @@ export default class MainBackground {
         // Chrome APIs cannot open popup
 
         // TODO: Do we need to open this popup?
+        if (!this.isSafari) {
+            return;
+        }
+        await SafariApp.sendMessageToApp('showPopover');
 
         /*
         if (!this.isSafari || !safari.extension.toolbarItems || !safari.extension.toolbarItems.length) {

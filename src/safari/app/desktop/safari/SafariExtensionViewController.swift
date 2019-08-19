@@ -135,8 +135,14 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                             }
                         }
                     }
-                } else if command == "hideWindow" {
+                } else if command == "hidePopover" {
                     dismissPopover()
+                    replyMessage(message: m!)
+                } else if command == "showPopover" {
+                    // TODO
+                    replyMessage(message: m!)
+                } else if command == "reloadExtension" {
+                    // TODO
                     replyMessage(message: m!)
                 } else if command == "copyToClipboard" {
                     let pasteboard = NSPasteboard.general
