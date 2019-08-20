@@ -50,111 +50,110 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
 
     func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "bitwardenApp" {
-            let messageBody = message.body as! String
-            print(messageBody)
-            let m: AppMessage? = jsonDeserialize(json: messageBody)
-            if m == nil {
-                print("m is nil")
+        if message.name != "bitwardenApp" {
+            return
+        }
+        let messageBody = message.body as! String
+        // print(messageBody)
+        let m: AppMessage? = jsonDeserialize(json: messageBody)
+        if m == nil {
+            // print("m is nil")
+            return
+        }
+        let command = m!.command
+        // print(command)
+        if command == "storage_get" {
+            let obj = UserDefaults.standard.string(forKey: m!.data!)
+            m!.responseData = obj
+            replyMessage(message: m!)
+        } else if command == "storage_save" {
+            let data: StorageData? = jsonDeserialize(json: m!.data)
+            if data?.obj == nil {
+                UserDefaults.standard.removeObject(forKey: data!.key)
             } else {
-                let command = m?.command ?? "null"
-                print(command)
-                if command == "storage_get" {
-                    let obj = UserDefaults.standard.string(forKey: m!.data!)
-                    m!.responseData = obj
-                    replyMessage(message: m!)
-                } else if command == "storage_save" {
-                    let data: StorageData? = jsonDeserialize(json: m!.data)
-                    if data?.obj == nil {
-                        UserDefaults.standard.removeObject(forKey: data!.key)
-                    } else {
-                        UserDefaults.standard.set(data?.obj, forKey: data!.key)
-                    }
-                    replyMessage(message: m!)
-                } else if command == "storage_remove" {
-                    UserDefaults.standard.removeObject(forKey: m!.data!)
-                    replyMessage(message: m!)
-                } else if command == "getLocaleStrings" {
-                    let language = m!.data ?? "en"
-                    let bundleURL = Bundle.main.resourceURL!.absoluteURL
-                    let messagesUrl = bundleURL.appendingPathComponent("app/_locales/\(language)/messages.json")
-                    do {
-                        let json = try String(contentsOf: messagesUrl, encoding: .utf8)
-                        webView.evaluateJavaScript("window.bitwardenLocaleStrings = \(json);", completionHandler: nil)
-                    } catch {}
-                    replyMessage(message: m!)
-                } else if command == "tabs_query" {
-                    let options: TabQueryOptions? = jsonDeserialize(json: m!.data)
-                    if options?.currentWindow ?? false {
-                        SFSafariApplication.getActiveWindow { win in
-                            processWindowsForTabs(wins: [win!], options: options
-                                                  , complete: { tabs in
-                                                      m!.responseData = jsonSerialize(obj: tabs)
-                                                      self.replyMessage(message: m!)
-                            })
-                        }
-                    } else {
-                        SFSafariApplication.getAllWindows { wins in
-                            processWindowsForTabs(wins: wins, options: options
-                                                  , complete: { tabs in
-                                                      m!.responseData = jsonSerialize(obj: tabs)
-                                                      self.replyMessage(message: m!)
-                            })
-                        }
-                    }
-                } else if command == "tabs_message" {
-                    let tabMsg: TabMessage? = jsonDeserialize(json: m!.data)
-                    SFSafariApplication.getAllWindows { wins in
-                        var theWin: SFSafariWindow?
-                        var winIndex = 0
-                        for win in wins {
-                            if tabMsg?.tab.windowId == winIndex {
-                                theWin = win
-                                break
-                            }
-                            winIndex = winIndex + 1
-                        }
-                        if theWin != nil {
-                            var theTab: SFSafariTab?
-                            theWin!.getAllTabs { tabs in
-                                var tabIndex = 0
-                                for tab in tabs {
-                                    if tabMsg?.tab.index == tabIndex {
-                                        theTab = tab
-                                        break
-                                    }
-                                    tabIndex = tabIndex + 1
-                                }
-                                if theTab != nil {
-                                    theTab!.getActivePage { activePage in
-                                        if activePage != nil {
-                                            activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": tabMsg!.obj])
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                } else if command == "hidePopover" {
-                    dismissPopover()
-                    replyMessage(message: m!)
-                } else if command == "showPopover" {
-                    // TODO
-                    replyMessage(message: m!)
-                } else if command == "reloadExtension" {
-                    // TODO
-                    replyMessage(message: m!)
-                } else if command == "copyToClipboard" {
-                    let pasteboard = NSPasteboard.general
-                    pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-                    pasteboard.setString(m!.data ?? "", forType: NSPasteboard.PasteboardType.string)
-                    replyMessage(message: m!)
-                } else if command == "readFromClipboard" {
-                    let pasteboard = NSPasteboard.general
-                    m?.responseData = pasteboard.pasteboardItems?.first?.string(forType: .string)
-                    replyMessage(message: m!)
+                UserDefaults.standard.set(data?.obj, forKey: data!.key)
+            }
+            replyMessage(message: m!)
+        } else if command == "storage_remove" {
+            UserDefaults.standard.removeObject(forKey: m!.data!)
+            replyMessage(message: m!)
+        } else if command == "getLocaleStrings" {
+            let language = m!.data ?? "en"
+            let bundleURL = Bundle.main.resourceURL!.absoluteURL
+            let messagesUrl = bundleURL.appendingPathComponent("app/_locales/\(language)/messages.json")
+            do {
+                let json = try String(contentsOf: messagesUrl, encoding: .utf8)
+                webView.evaluateJavaScript("window.bitwardenLocaleStrings = \(json);", completionHandler: nil)
+            } catch {}
+            replyMessage(message: m!)
+        } else if command == "tabs_query" {
+            let options: TabQueryOptions? = jsonDeserialize(json: m!.data)
+            if options?.currentWindow ?? false {
+                SFSafariApplication.getActiveWindow { win in
+                    processWindowsForTabs(wins: [win!], options: options
+                                          , complete: { tabs in
+                                              m!.responseData = jsonSerialize(obj: tabs)
+                                              self.replyMessage(message: m!)
+                    })
+                }
+            } else {
+                SFSafariApplication.getAllWindows { wins in
+                    processWindowsForTabs(wins: wins, options: options
+                                          , complete: { tabs in
+                                              m!.responseData = jsonSerialize(obj: tabs)
+                                              self.replyMessage(message: m!)
+                    })
                 }
             }
+        } else if command == "tabs_message" {
+            let tabMsg: TabMessage? = jsonDeserialize(json: m!.data)
+            SFSafariApplication.getAllWindows { wins in
+                var theWin: SFSafariWindow?
+                var winIndex = 0
+                for win in wins {
+                    if tabMsg?.tab.windowId == winIndex {
+                        theWin = win
+                        break
+                    }
+                    winIndex = winIndex + 1
+                }
+                var theTab: SFSafariTab?
+                theWin?.getAllTabs { tabs in
+                    var tabIndex = 0
+                    for tab in tabs {
+                        if tabMsg?.tab.index == tabIndex {
+                            theTab = tab
+                            break
+                        }
+                        tabIndex = tabIndex + 1
+                    }
+                    theTab?.getActivePage { activePage in
+                        activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": tabMsg!.obj])
+                    }
+                }
+            }
+        } else if command == "hidePopover" {
+            dismissPopover()
+            replyMessage(message: m!)
+        } else if command == "showPopover" {
+            SFSafariApplication.getActiveWindow { win in
+                win?.getToolbarItem(completionHandler: { item in
+                    item?.showPopover()
+                    self.replyMessage(message: m!)
+                })
+            }
+        } else if command == "reloadExtension" {
+            webView?.reload()
+            replyMessage(message: m!)
+        } else if command == "copyToClipboard" {
+            let pasteboard = NSPasteboard.general
+            pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+            pasteboard.setString(m!.data ?? "", forType: NSPasteboard.PasteboardType.string)
+            replyMessage(message: m!)
+        } else if command == "readFromClipboard" {
+            let pasteboard = NSPasteboard.general
+            m?.responseData = pasteboard.pasteboardItems?.first?.string(forType: .string)
+            replyMessage(message: m!)
         }
     }
 
