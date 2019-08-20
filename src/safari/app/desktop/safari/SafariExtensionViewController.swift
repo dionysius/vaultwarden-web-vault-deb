@@ -151,6 +151,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         } else if command == "isPopoverOpen" {
             m!.responseData = popoverOpenCount > 0 ? "true" : "false";
             replyMessage(message: m!)
+        } else if command == "createNewTab" {
+            // TODO
+            replyMessage(message: m!)
         } else if command == "reloadExtension" {
             webView?.reload()
             replyMessage(message: m!)

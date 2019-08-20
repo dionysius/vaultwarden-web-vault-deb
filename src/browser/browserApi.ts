@@ -184,7 +184,7 @@ export class BrowserApi {
             chrome.tabs.create({ url: url });
             return null;
         } else if (BrowserApi.isSafariApi) {
-            // TODO
+            SafariApp.sendMessageToApp('createNewTab', url, true);
             return;
         } else {
             return;
