@@ -12,6 +12,7 @@ import WebKit
 class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMessageHandler, WKNavigationDelegate {
     var webView: WKWebView!
     var initedWebView: Bool = false
+    var popoverOpenCount: Int = 0
 
     static let shared: SafariExtensionViewController = {
         let shared = SafariExtensionViewController()
@@ -148,7 +149,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                 })
             }
         } else if command == "isPopoverOpen" {
-            m!.responseData = "true";
+            m!.responseData = popoverOpenCount > 0 ? "true" : "false";
             replyMessage(message: m!)
         } else if command == "reloadExtension" {
             webView?.reload()

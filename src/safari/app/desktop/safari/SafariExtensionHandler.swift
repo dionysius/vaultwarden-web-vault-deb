@@ -43,9 +43,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
 
     override func popoverWillShow(in _: SFSafariWindow) {
+        SafariExtensionViewController.shared.popoverOpenCount += 1
         DispatchQueue.main.async {
             self.sendMessage(msg: ["command": "reloadPopup"], sender: nil)
         }
+    }
+    
+    override func popoverDidClose(in _: SFSafariWindow) {
+        SafariExtensionViewController.shared.popoverOpenCount -= 1
     }
     
     func sendMessage(msg: [String: Any]?, sender: Tab? = nil) {
