@@ -178,36 +178,34 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
     }
     var newTabs: [Tab] = []
     let winGroup = DispatchGroup()
-    var windowIndex = 0
     for win in wins {
         winGroup.enter()
         win.getActiveTab { activeTab in
             win.getAllTabs { allTabs in
                 let tabGroup = DispatchGroup()
-                var tabIndex = 0
                 for tab in allTabs {
                     tabGroup.enter()
                     if options?.active ?? false {
                         if activeTab != nil && activeTab == tab {
+                            let windowIndex = wins.firstIndex(of: win) ?? -100
+                            let tabIndex = allTabs.firstIndex(of: tab) ?? -1
                             makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { t in
                                 newTabs.append(t)
-                                tabIndex = tabIndex + 1
                                 tabGroup.leave()
                             })
                         } else {
-                            tabIndex = tabIndex + 1
                             tabGroup.leave()
                         }
                     } else {
+                        let windowIndex = wins.firstIndex(of: win) ?? -100
+                        let tabIndex = allTabs.firstIndex(of: tab) ?? -1
                         makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { t in
                             newTabs.append(t)
-                            tabIndex = tabIndex + 1
                             tabGroup.leave()
                         })
                     }
                 }
                 tabGroup.notify(queue: .main) {
-                    windowIndex = windowIndex + 1
                     winGroup.leave()
                 }
             }
