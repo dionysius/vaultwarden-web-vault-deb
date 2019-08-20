@@ -208,7 +208,14 @@ export class BrowserApi {
                 callback(msg, sender, response);
             });
         } else if (BrowserApi.isSafariApi) {
-            SafariApp.addMessageListener(name, callback);
+            SafariApp.addMessageListener(name, (message: any, sender: any, response: any) => {
+                if (message.bitwardenFrameId != null) {
+                    if (sender != null && typeof (sender) === 'object' && sender.frameId == null) {
+                        sender.frameId = message.bitwardenFrameId;
+                    }
+                }
+                callback(message, sender, response);
+            });
             /*
             safari.application.addEventListener('message', async (msgEvent: any) => {
                 callback(msgEvent.message, {
