@@ -152,8 +152,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             m!.responseData = popoverOpenCount > 0 ? "true" : "false";
             replyMessage(message: m!)
         } else if command == "createNewTab" {
-            // TODO
-            replyMessage(message: m!)
+            if m!.data != nil {
+                SFSafariApplication.getActiveWindow { win in
+                    win?.openTab(with: URL(string: m!.data!)!, makeActiveIfPossible: true, completionHandler: { _ in
+                        // Tab opened
+                    })
+                }
+            }
         } else if command == "reloadExtension" {
             webView?.reload()
             replyMessage(message: m!)
