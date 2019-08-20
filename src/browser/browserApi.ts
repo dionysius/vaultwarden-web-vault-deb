@@ -161,8 +161,7 @@ export class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.runtime.getManifest().version;
         } else if (BrowserApi.isSafariApi) {
-            // TODO
-            return null;
+            return (window as any).bitwardenApplicationVersion;
         } else {
             return null;
         }
