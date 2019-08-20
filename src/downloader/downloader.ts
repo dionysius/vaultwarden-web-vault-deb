@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     safari.self.addEventListener('message', (msgEvent: any) => {
-        doDownload(msgEvent.message);
+        doDownload(JSON.parse(msgEvent.message.msg));
     }, false);
 
     function doDownload(msg: any) {

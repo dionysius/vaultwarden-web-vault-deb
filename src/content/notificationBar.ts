@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             bitwardenFrameId: (window as any).__bitwardenFrameId,
         });
         safari.self.addEventListener('message', (msgEvent: any) => {
-            const msg = msgEvent.message;
+            const msg = JSON.parse(msgEvent.message.msg);
             if (msg.bitwardenFrameId != null && (window as any).__bitwardenFrameId !== msg.bitwardenFrameId) {
                 return;
             }

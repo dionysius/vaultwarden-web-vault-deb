@@ -169,21 +169,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         let json = (jsonSerialize(obj: message) ?? "null")
         webView.evaluateJavaScript("window.bitwardenSafariAppMessageReceiver(\(json));", completionHandler: nil)
     }
-
-    func sendMessage(msg: [String: Any]?) {
-        if webView == nil {
-            return
-        }
-        let newMsg = AppMessage()
-        newMsg.command = "app_message"
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: msg as Any, options: [])
-            newMsg.data = String(data: jsonData, encoding: .utf8)
-        } catch let error {
-            print("error converting to json: \(error)")
-        }
-        replyMessage(message: newMsg)
-    }
 }
 
 func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, complete: @escaping ([Tab]) -> Void) {
@@ -289,6 +274,7 @@ class AppMessage: Decodable, Encodable {
     var data: String?
     var responseData: String?
     var responseError: Bool?
+    var senderTab: Tab?
 }
 
 class StorageData: Decodable, Encodable {

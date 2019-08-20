@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     safari.self.addEventListener('message', (msgEvent: any) => {
-        init2fa(msgEvent.message);
+        init2fa(JSON.parse(msgEvent.message.msg));
     }, false);
 
     function init2fa(msg: any) {

@@ -59,7 +59,10 @@ export class SafariApp {
         if ((message.id == null || message.id === '') && message.command === 'app_message') {
             try {
                 const msg = JSON.parse(message.data);
-                SafariApp.sendMessageToListeners(msg, 'app_message', null);
+                SafariApp.sendMessageToListeners(msg, {
+                    id: 'app_message',
+                    tab: message.senderTab,
+                }, null);
             } catch { }
         } else if (message.id != null && (window as any).bitwardenSafariAppRequests.has(message.id)) {
             const p = (window as any).bitwardenSafariAppRequests.get(message.id);

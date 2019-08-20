@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             responseCommand: responseCommand
         });
         safari.self.addEventListener('message', (msgEvent) => {
-            const msg = msgEvent.message;
+            const msg = JSON.parse(msgEvent.message.msg);
             if (msg.command === responseCommand && msg.data) {
                 i18n = msg.data.i18n;
                 load();
