@@ -9,6 +9,11 @@
 import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
+    override init() {
+        super.init()
+        SafariExtensionViewController.shared.initWebView()
+    }
+    
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String: Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         if messageName == "bitwarden" {

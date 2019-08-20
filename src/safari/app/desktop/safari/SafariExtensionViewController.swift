@@ -11,6 +11,7 @@ import WebKit
 
 class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMessageHandler, WKNavigationDelegate {
     var webView: WKWebView!
+    var initedWebView: Bool = false
 
     static let shared: SafariExtensionViewController = {
         let shared = SafariExtensionViewController()
@@ -19,6 +20,10 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }()
 
     func initWebView() {
+        if initedWebView {
+            return
+        }
+        initedWebView = true
         let parentHeight = SafariExtensionViewController.shared.preferredContentSize.height
         let parentWidth = SafariExtensionViewController.shared.preferredContentSize.width
         let webViewConfig = WKWebViewConfiguration()
