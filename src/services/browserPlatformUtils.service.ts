@@ -89,23 +89,23 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return this.analyticsIdCache;
     }
 
-    isViewOpen(): Promise<boolean> {
-        if (BrowserApi.isPopupOpen()) {
-            return Promise.resolve(true);
+    async isViewOpen(): Promise<boolean> {
+        if (await BrowserApi.isPopupOpen()) {
+            return true;
         }
 
         if (this.isSafari()) {
-            return Promise.resolve(false);
+            return false;
         }
 
         const sidebarView = this.sidebarViewName();
         const sidebarOpen = sidebarView != null && chrome.extension.getViews({ type: sidebarView }).length > 0;
         if (sidebarOpen) {
-            return Promise.resolve(true);
+            return true;
         }
 
         const tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
-        return Promise.resolve(tabOpen);
+        return tabOpen;
     }
 
     lockTimeout(): number {

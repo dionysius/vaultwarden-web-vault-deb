@@ -168,14 +168,14 @@ export class BrowserApi {
         }
     }
 
-    static isPopupOpen(): boolean {
+    static async isPopupOpen(): Promise<boolean> {
         if (BrowserApi.isChromeApi) {
-            return chrome.extension.getViews({ type: 'popup' }).length > 0;
+            return Promise.resolve(chrome.extension.getViews({ type: 'popup' }).length > 0);
         } else if (BrowserApi.isSafariApi) {
-            // TODO
-            return true;
+            const open = await SafariApp.sendMessageToApp('isPopoverOpen');
+            return open === 'true';
         } else {
-            return null;
+            return Promise.resolve(false);
         }
     }
 

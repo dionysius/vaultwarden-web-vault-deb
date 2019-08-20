@@ -147,6 +147,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     self.replyMessage(message: m!)
                 })
             }
+        } else if command == "isPopoverOpen" {
+            m!.responseData = "true";
+            replyMessage(message: m!)
         } else if command == "reloadExtension" {
             webView?.reload()
             replyMessage(message: m!)
