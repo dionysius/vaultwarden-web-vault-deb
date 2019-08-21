@@ -1,5 +1,7 @@
 import { SafariApp } from './safariApp';
 
+import { Utils } from 'jslib/misc/utils';
+
 export class BrowserApi {
     static isWebExtensionsApi: boolean = (typeof browser !== 'undefined');
     static isSafariApi: boolean = (window as any).safariAppExtension === true;
@@ -178,7 +180,18 @@ export class BrowserApi {
 
     static downloadFile(win: Window, blobData: any, blobOptions: any, fileName: string) {
         if (BrowserApi.isSafariApi) {
-            // TODO
+            const type = blobOptions != null ? blobOptions.type : null;
+            let data: string = null;
+            if (type === 'text/plain' && typeof (blobData) === 'string') {
+                data = blobData;
+            } else {
+                data = Utils.fromBufferToB64(blobData);
+            }
+            SafariApp.sendMessageToApp('downloadFile', {
+                data: data,
+                type: type,
+                fileName: fileName,
+            }, true);
         } else {
             const blob = new Blob([blobData], blobOptions);
             if (navigator.msSaveOrOpenBlob) {
