@@ -54,27 +54,7 @@ export default class RuntimeBackground {
             return;
         }
 
-        if (this.isSafari) {
-            // Reload the popup when it's opened
-            /*
-            this.runtime.addEventListener('popover', (event: any) => {
-                const win: Window = event.target.contentWindow;
-                let href = win.location.href;
-                if (href.indexOf('#') > -1) {
-                    href = href.substr(0, href.indexOf('#'));
-                }
-
-                if (win.location.toString() === href) {
-                    win.location.reload();
-                } else {
-                    win.location.href = href;
-                }
-            }, true);
-            */
-        }
-
         await this.checkOnInstalled();
-
         BrowserApi.messageListener('runtime.background', async (msg: any, sender: any, sendResponse: any) => {
             await this.processMessage(msg, sender, sendResponse);
         });

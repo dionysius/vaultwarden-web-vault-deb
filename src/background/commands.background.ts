@@ -53,7 +53,7 @@ export default class CommandsBackground {
 
     private async generatePasswordToClipboard() {
         if (this.isEdge) {
-            // Safari does not support access to clipboard from background
+            // Edge does not support access to clipboard from background
             return;
         }
 

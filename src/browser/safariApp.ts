@@ -1,13 +1,11 @@
 import { BrowserApi } from './browserApi';
 
 export class SafariApp {
-    static inited = false;
-
     static init() {
-        if (SafariApp.inited) {
+        if ((window as any).bitwardenSafariAppInited) {
             return;
         }
-        SafariApp.inited = true;
+        (window as any).bitwardenSafariAppInited = true;
         if (BrowserApi.isSafariApi) {
             (window as any).bitwardenSafariAppRequests =
                 new Map<string, { resolve: (value?: unknown) => void, timeoutDate: Date }>();
@@ -16,7 +14,7 @@ export class SafariApp {
             (window as any).bitwardenSafariAppMessageReceiver = (message: any) => {
                 SafariApp.receiveMessageFromApp(message);
             };
-            setInterval(() => SafariApp.cleanupOldRequests(), 5 * 60000);
+            setInterval(() => SafariApp.cleanupOldRequests(), 5 * 60000); // every 5 mins
         }
     }
 

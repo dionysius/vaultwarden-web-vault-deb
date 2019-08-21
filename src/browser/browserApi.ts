@@ -42,32 +42,6 @@ export class BrowserApi {
         } else if (BrowserApi.isSafariApi) {
             const tabs = await SafariApp.sendMessageToApp('tabs_query', JSON.stringify(options));
             return tabs != null ? JSON.parse(tabs) : null;
-            /*
-            if (options.currentWindow) {
-                if (safari.application.activeBrowserWindow) {
-                    wins.push(safari.application.activeBrowserWindow);
-                }
-            } else {
-                wins = safari.application.browserWindows;
-            }
-
-            const returnedTabs: any[] = [];
-            wins.forEach((win: any) => {
-                if (!win.tabs) {
-                    return;
-                }
-
-                if (options.active && win.activeTab) {
-                    returnedTabs.push(BrowserApi.makeTabObject(win.activeTab));
-                } else if (!options.active) {
-                    win.tabs.forEach((tab: any) => {
-                        returnedTabs.push(BrowserApi.makeTabObject(tab));
-                    });
-                }
-            });
-
-            return Promise.resolve(returnedTabs);
-            */
         }
     }
 
@@ -115,35 +89,6 @@ export class BrowserApi {
                 obj: JSON.stringify(obj),
                 options: options,
             }), true);
-            /*
-            let t = tab.safariTab;
-            if (!t || !t.page) {
-                const win = safari.application.activeBrowserWindow;
-                if (safari.application.browserWindows.indexOf(win) !== tab.windowId) {
-                    return Promise.reject('Window not found.');
-                }
-
-                if (win.tabs.length < tab.index + 1) {
-                    return Promise.reject('Tab not found.');
-                }
-
-                t = win.tabs[tab.index];
-            }
-
-            if (obj.tab && obj.tab.safariTab) {
-                delete obj.tab.safariTab;
-            }
-
-            if (options != null && options.frameId != null && obj.bitwardenFrameId == null) {
-                obj.bitwardenFrameId = options.frameId;
-            }
-
-            if (t.page) {
-                t.page.dispatchMessage('bitwarden', obj);
-            }
-            */
-
-            return Promise.resolve();
         }
     }
 
@@ -215,15 +160,6 @@ export class BrowserApi {
                 }
                 callback(message, sender, response);
             });
-            /*
-            safari.application.addEventListener('message', async (msgEvent: any) => {
-                callback(msgEvent.message, {
-                    tab: BrowserApi.makeTabObject(msgEvent.target),
-                    frameId: msgEvent.message != null && msgEvent.message.bitwardenFrameId != null ?
-                        msgEvent.message.bitwardenFrameId : null,
-                }, () => {  });
-            }, false);
-            */
         }
     }
 
@@ -256,31 +192,6 @@ export class BrowserApi {
                 win.document.body.removeChild(a);
             }
         }
-    }
-
-    static makeTabObject(tab: any): any {
-        if (BrowserApi.isChromeApi) {
-            return tab;
-        }
-
-        if (!tab.browserWindow) {
-            return {};
-        }
-
-        return {};
-        /*
-        const winIndex = safari.application.browserWindows.indexOf(tab.browserWindow);
-        const tabIndex = tab.browserWindow.tabs.indexOf(tab);
-        return {
-            id: winIndex + '_' + tabIndex,
-            index: tabIndex,
-            windowId: winIndex,
-            title: tab.title,
-            active: tab === tab.browserWindow.activeTab,
-            url: tab.url || 'about:blank',
-            safariTab: tab,
-        };
-        */
     }
 
     static gaFilter() {

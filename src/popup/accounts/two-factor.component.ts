@@ -50,6 +50,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     }
 
     async ngOnInit() {
+        /*
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
@@ -65,6 +66,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
                 this.changeDetectorRef.detectChanges();
             });
         });
+        */
 
         const isFirefox = this.platformUtilsService.isFirefox();
         if (this.popupUtilsService.inPopup(window) && isFirefox &&
@@ -72,8 +74,10 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             // ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1562620
             this.initU2f = false;
         }
+        /*
         const isSafari = this.platformUtilsService.isSafari();
         this.showNewWindowMessage = isSafari;
+        */
 
         await super.ngOnInit();
 
@@ -81,7 +85,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             return;
         }
 
-        if (!isSafari && this.selectedProviderType === TwoFactorProviderType.Email &&
+        if (/*!isSafari && */this.selectedProviderType === TwoFactorProviderType.Email &&
             this.popupUtilsService.inPopup(window)) {
             const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popup2faCloseMessage'),
                 null, this.i18nService.t('yes'), this.i18nService.t('no'));
@@ -99,6 +103,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             }
         }
 
+        /*
         const isDuo = this.selectedProviderType === TwoFactorProviderType.Duo ||
             this.selectedProviderType === TwoFactorProviderType.OrganizationDuo;
         if (!isSafari || !isDuo) {
@@ -118,6 +123,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
                 },
             });
         }, 500);
+        */
     }
 
     ngOnDestroy() {

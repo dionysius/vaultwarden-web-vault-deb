@@ -200,11 +200,11 @@ export default class MainBackground {
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
             this.analytics, this.notificationsService, this.systemService, this.lockService);
-        this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics, this.lockService);
 
         if (!this.isSafari) {
+            this.tabsBackground = new TabsBackground(this);
             this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
                 this.passwordGenerationService, this.analytics, this.platformUtilsService, this.lockService,
                 this.eventService);
@@ -224,10 +224,10 @@ export default class MainBackground {
         await (this.i18nService as I18nService).init();
         await (this.eventService as EventService).init(true);
         await this.runtimeBackground.init();
-        await this.tabsBackground.init();
         await this.commandsBackground.init();
 
         if (!this.isSafari) {
+            await this.tabsBackground.init();
             await this.contextMenusBackground.init();
             await this.idleBackground.init();
             await this.webRequestBackground.init();
@@ -364,20 +364,6 @@ export default class MainBackground {
             return;
         }
         await SafariApp.sendMessageToApp('showPopover');
-
-        /*
-        if (!this.isSafari || !safari.extension.toolbarItems || !safari.extension.toolbarItems.length) {
-            return;
-        }
-
-        const activeToolBars = safari.extension.toolbarItems.filter((tb: any) => {
-            return tb.browserWindow === safari.application.activeBrowserWindow;
-        });
-
-        if (activeToolBars && activeToolBars.length) {
-            activeToolBars[0].showPopover();
-        }
-        */
     }
 
     async reseedStorage() {
