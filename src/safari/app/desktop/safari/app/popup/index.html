@@ -14,15 +14,10 @@
         <div id="loading"><i class="fa fa-spinner fa-spin fa-3x"></i></div>
     </app-root>
     <script type="text/javascript">
+        const urlParams = new URLSearchParams(window.location.search);
         window.safariAppExtension = true;
         window.bitwardenLocaleStrings = null;
-        window.bitwardenApplicationVersion = null;
-        document.addEventListener('DOMContentLoaded', (event) => {
-            window.webkit.messageHandlers.bitwardenApp.postMessage(JSON.stringify({
-                id: '123',
-                command: 'windowLoaded'
-            }));
-        });
+        window.bitwardenApplicationVersion = urlParams.get('appVersion');
     </script>
     <script type="text/javascript" src="../vendor.js"></script>
     <script type="text/javascript" src="../background.js"></script>

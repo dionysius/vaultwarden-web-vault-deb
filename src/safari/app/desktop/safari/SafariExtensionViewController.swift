@@ -69,11 +69,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         }
         let command = m!.command
         // print(command)
-        if command == "windowLoaded" {
-            // let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-            // webView.evaluateJavaScript("window.bitwardenApplicationVersion = '\(version!)';", completionHandler: nil)
-            // Set things
-        } else if command == "storage_get" {
+        if command == "storage_get" {
             let obj = UserDefaults.standard.string(forKey: m!.data!)
             m!.responseData = obj
             replyMessage(message: m!)
