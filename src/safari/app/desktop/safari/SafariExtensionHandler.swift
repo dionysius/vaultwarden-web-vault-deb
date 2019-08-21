@@ -13,7 +13,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         super.init()
         SafariExtensionViewController.shared.initWebView()
     }
-    
+
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String: Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         if messageName == "bitwarden" {
@@ -48,11 +48,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             self.sendMessage(msg: ["command": "reloadPopup"], sender: nil)
         }
     }
-    
+
     override func popoverDidClose(in _: SFSafariWindow) {
         SafariExtensionViewController.shared.popoverOpenCount -= 1
     }
-    
+
     func sendMessage(msg: [String: Any]?, sender: Tab? = nil) {
         if SafariExtensionViewController.shared.webView == nil {
             return
