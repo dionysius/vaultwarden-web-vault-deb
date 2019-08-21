@@ -145,6 +145,7 @@ const config = {
         'background': './src/background.ts',
         'content/autofill': './src/content/autofill.js',
         'content/autofiller': './src/content/autofiller.ts',
+        'content/downloader': './src/content/downloader.ts',
         'content/notificationBar': './src/content/notificationBar.ts',
         'content/shortcuts': './src/content/shortcuts.ts',
         'notification/bar': './src/notification/bar.js',

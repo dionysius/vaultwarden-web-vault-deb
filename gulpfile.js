@@ -31,6 +31,9 @@ const filters = {
         '!build/safari/**/*',
         '!build/downloader/**/*'
     ],
+    safariDir: [
+        '!build/safari/**/*'
+    ],
     webExt: [
         '!build/manifest.json'
     ],
@@ -215,7 +218,7 @@ function safariAppCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
-            .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.safari)
+            .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.safariDir)
                 .concat(filters.webExt).concat(filters.nonSafariApp)))
             .pipe(gulp.dest(dest))
             .on('end', resolve);
