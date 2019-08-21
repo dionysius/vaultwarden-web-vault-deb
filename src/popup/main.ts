@@ -8,6 +8,7 @@ import 'web-animations-js';
 require('./scss/popup.scss');
 
 import { BrowserApi } from '../browser/browserApi';
+
 import { AppModule } from './app.module';
 
 if (process.env.ENV === 'production') {
