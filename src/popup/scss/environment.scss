@@ -14,9 +14,13 @@ html.browser_safari {
     app-root {
         border-width: 1px;
         border-style: solid;
+        border-color: #000000;
         
-        @include themify($themes) {
-            border-color: themed('borderColor');
+        &.theme_light {
+            border-color: #777;
+        }
+        &.theme_nord {
+            border-color: #2e3440;
         }
     }
 }
