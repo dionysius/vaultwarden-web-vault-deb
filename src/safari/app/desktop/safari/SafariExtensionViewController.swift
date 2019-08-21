@@ -30,14 +30,15 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         let parentWidth = SafariExtensionViewController.shared.preferredContentSize.width
         let webViewConfig = WKWebViewConfiguration()
         let bundleURL = Bundle.main.resourceURL!.absoluteURL
-        let html = bundleURL.appendingPathComponent("app/popup/index.html?appVersion=\(version!)")
+        let html = bundleURL.appendingPathComponent("app/popup/index.html")
+        let url = URL(string: "\(html.absoluteString)?appVersion=\(version!)")
         webViewConfig.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webViewConfig.preferences.setValue(true, forKey: "developerExtrasEnabled")
         webViewConfig.userContentController.add(self, name: "bitwardenApp")
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: parentWidth, height: parentHeight), configuration: webViewConfig)
         webView.navigationDelegate = self
         webView.allowsLinkPreview = false
-        webView.loadFileURL(html, allowingReadAccessTo: bundleURL)
+        webView.loadFileURL(url!, allowingReadAccessTo: bundleURL)
         webView.alphaValue = 0.0
         view.addSubview(webView)
     }
