@@ -6,6 +6,7 @@ import {
     transition,
     trigger,
 } from '@angular/animations';
+import { BrowserApi } from 'src/browser/browserApi';
 
 const queryShown = query(':enter, :leave', [
     style({ position: 'fixed', width: '100%', height: '100%' }),
@@ -167,8 +168,6 @@ export const routerTransition = trigger('routerTransition', [
     transition('folders => edit-folder, folders => add-folder', inSlideUp),
     transition('edit-folder => folders, add-folder => folders', outSlideDown),
 
-    transition('tabs => lock', inSlideDown),
-
     transition('tabs => sync', inSlideLeft),
     transition('sync => tabs', outSlideRight),
 
@@ -178,3 +177,7 @@ export const routerTransition = trigger('routerTransition', [
     transition('tabs => premium', inSlideLeft),
     transition('premium => tabs', outSlideRight),
 ]);
+
+if (!BrowserApi.isSafariApi) {
+    routerTransition.definitions.push(transition('tabs => lock', inSlideDown));
+}
