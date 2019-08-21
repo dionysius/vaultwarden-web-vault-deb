@@ -99,11 +99,6 @@ const plugins = [
         filename: 'downloader/index.html',
         chunks: ['downloader/downloader'],
     }),
-    new HtmlWebpackPlugin({
-        template: './src/2fa/index.html',
-        filename: '2fa/index.html',
-        chunks: ['2fa/2fa'],
-    }),
     new CopyWebpackPlugin([
         './src/manifest.json',
         { from: './src/_locales', to: '_locales' },
@@ -154,7 +149,6 @@ const config = {
         'content/shortcuts': './src/content/shortcuts.ts',
         'notification/bar': './src/notification/bar.js',
         'downloader/downloader': './src/downloader/downloader.ts',
-        '2fa/2fa': './src/2fa/2fa.ts',
     },
     optimization: {
         minimize: false,

@@ -36,7 +36,7 @@ const RateUrls = {
     [DeviceType.VivaldiExtension]:
         'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
     [DeviceType.SafariExtension]:
-        'https://itunes.apple.com/app/bitwarden-password-manager/id1137397744',
+        'https://apps.apple.com/app/bitwarden/id1352778147',
 };
 
 @Component({

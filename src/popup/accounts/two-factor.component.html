@@ -78,8 +78,7 @@
         </ng-container>
         <ng-container *ngIf="selectedProviderType === providerType.Duo ||
                         selectedProviderType === providerType.OrganizationDuo">
-            <div id="duo-frame" *ngIf="!showNewWindowMessage"><iframe id="duo_iframe"></iframe></div>
-            <div *ngIf="showNewWindowMessage" class="content text-center">{{'twoStepNewWindowMessage' | i18n}}</div>
+            <div id="duo-frame"><iframe id="duo_iframe"></iframe></div>
             <div class="box">
                 <div class="box-content">
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>

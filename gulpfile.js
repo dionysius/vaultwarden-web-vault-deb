@@ -29,8 +29,7 @@ const filters = {
     ],
     safari: [
         '!build/safari/**/*',
-        '!build/downloader/**/*',
-        '!build/2fa/**/*'
+        '!build/downloader/**/*'
     ],
     webExt: [
         '!build/manifest.json'
