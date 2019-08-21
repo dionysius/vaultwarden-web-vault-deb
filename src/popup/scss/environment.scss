@@ -10,4 +10,13 @@ html.browser_safari {
             left: 10px;
         }
     }
+
+    app-root {
+        border-width: 1px;
+        border-style: solid;
+        
+        @include themify($themes) {
+            border-color: themed('borderColor');
+        }
+    }
 }
