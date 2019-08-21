@@ -24,12 +24,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         if initedWebView {
             return
         }
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         initedWebView = true
         let parentHeight = SafariExtensionViewController.shared.preferredContentSize.height
         let parentWidth = SafariExtensionViewController.shared.preferredContentSize.width
         let webViewConfig = WKWebViewConfiguration()
         let bundleURL = Bundle.main.resourceURL!.absoluteURL
-        let html = bundleURL.appendingPathComponent("app/popup/index.html")
+        let html = bundleURL.appendingPathComponent("app/popup/index.html?appVersion=\(version!)")
         webViewConfig.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webViewConfig.preferences.setValue(true, forKey: "developerExtrasEnabled")
         webViewConfig.userContentController.add(self, name: "bitwardenApp")
@@ -69,8 +70,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         let command = m!.command
         // print(command)
         if command == "windowLoaded" {
-            let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-            webView.evaluateJavaScript("window.bitwardenApplicationVersion = '\(version)';", completionHandler: nil)
+            // let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+            // webView.evaluateJavaScript("window.bitwardenApplicationVersion = '\(version!)';", completionHandler: nil)
+            // Set things
         } else if command == "storage_get" {
             let obj = UserDefaults.standard.string(forKey: m!.data!)
             m!.responseData = obj
