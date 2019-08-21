@@ -6,7 +6,8 @@ import {
     transition,
     trigger,
 } from '@angular/animations';
-import { BrowserApi } from 'src/browser/browserApi';
+
+import { BrowserApi } from '../browser/browserApi';
 
 const queryShown = query(':enter, :leave', [
     style({ position: 'fixed', width: '100%', height: '100%' }),
