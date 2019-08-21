@@ -15,12 +15,13 @@ html.browser_safari {
         border-width: 1px;
         border-style: solid;
         border-color: #000000;
-        
-        &.theme_light {
-            border-color: #777;
-        }
-        &.theme_nord {
-            border-color: #2e3440;
-        }
+    }
+
+    &.theme_light app-root {
+        border-color: #777;
+    }
+
+    &.theme_nord app-root {
+        border-color: #2e3440;
     }
 }
