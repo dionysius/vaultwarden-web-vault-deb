@@ -19,6 +19,7 @@
         window.bitwardenApplicationVersion = null;
         document.addEventListener('DOMContentLoaded', (event) => {
             window.webkit.messageHandlers.bitwardenApp.postMessage(JSON.stringify({
+                id: '123',
                 command: 'windowLoaded'
             }));
         });
