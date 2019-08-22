@@ -177,7 +177,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             SFSafariApplication.getActiveWindow { win in
                 win?.getActiveTab(completionHandler: { tab in
                     tab?.getActivePage { activePage in
-                        activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": m!.data])
+                        activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": m!.data!])
                     }
                 })
             }
