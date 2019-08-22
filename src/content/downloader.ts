@@ -9,7 +9,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     safari.self.addEventListener('message', (msgEvent: any) => {
         const msg = JSON.parse(msgEvent.message.msg);
         if (msg.command === 'downloaderPageData') {
-            const blob = new Blob([msg.data.blobData], msg.data.blobOptions);
+            let data: any = msg.data.blobData;
+            if (msg.data.blobOptions == null || msg.data.blobOptions.type !== 'text/plain') {
+                const binaryString = window.atob(msg.data.blobData);
+                const bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++) {
+                    bytes[i] = binaryString.charCodeAt(i);
+                }
+                data = bytes.buffer;
+            }
+            const blob = new Blob([data], msg.data.blobOptions);
             if (navigator.msSaveOrOpenBlob) {
                 navigator.msSaveBlob(blob, msg.data.fileName);
             } else {
@@ -20,7 +29,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 a.click();
                 document.body.removeChild(a);
             }
-            window.setTimeout(() => window.close(), 1500);
         }
     }, false);
 });

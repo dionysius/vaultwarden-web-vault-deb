@@ -141,7 +141,8 @@ export class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.extension.getURL(path);
         } else if (BrowserApi.isSafariApi) {
-            // TODO
+            // TODO: promisify
+            SafariApp.sendMessageToApp('getAppPath');
             return null;
         } else {
             return null;
@@ -188,9 +189,12 @@ export class BrowserApi {
                 data = Utils.fromBufferToB64(blobData);
             }
             SafariApp.sendMessageToApp('downloadFile', JSON.stringify({
-                data: data,
-                type: type,
-                fileName: fileName,
+                command: 'downloaderPageData',
+                data: {
+                    blobData: data,
+                    blobOptions: blobOptions,
+                    fileName: fileName,
+                },
             }), true);
         } else {
             const blob = new Blob([blobData], blobOptions);

@@ -173,6 +173,21 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             let pasteboard = NSPasteboard.general
             m?.responseData = pasteboard.pasteboardItems?.first?.string(forType: .string)
             replyMessage(message: m!)
+        } else if command == "downloadFile" {
+            SFSafariApplication.getActiveWindow { win in
+                win?.getActiveTab(completionHandler: { tab in
+                    tab?.getActivePage { activePage in
+                        activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": m!.data])
+                    }
+                })
+            }
+        } else if command == "getAppPath" {
+            SFSafariExtension.getBaseURI(completionHandler: { uri in
+                if uri != nil {
+                    m!.responseData = uri!.absoluteString
+                    self.replyMessage(message: m!)
+                }
+            })
         }
     }
 
@@ -325,4 +340,10 @@ class TabMessage: Decodable, Encodable {
 
 class TabMessageOptions: Decodable, Encodable {
     var frameId: Int?
+}
+
+class DownloadFileMessage: Decodable, Encodable {
+    var fileName: String
+    var data: String?
+    var type: String?
 }
