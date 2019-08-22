@@ -1,11 +1,3 @@
-//
-//  SafariExtensionViewController.swift
-//  safari
-//
-//  Created by Kyle Spearrin on 8/1/19.
-//  Copyright © 2019 8bit Solutions LLC. All rights reserved.
-//
-
 import SafariServices
 import WebKit
 
@@ -35,7 +27,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         webViewConfig.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webViewConfig.preferences.setValue(true, forKey: "developerExtrasEnabled")
         webViewConfig.userContentController.add(self, name: "bitwardenApp")
-        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: parentWidth, height: parentHeight), configuration: webViewConfig)
+        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: parentWidth, height: parentHeight),
+            configuration: webViewConfig)
         webView.navigationDelegate = self
         webView.allowsLinkPreview = false
         webView.loadFileURL(url!, allowingReadAccessTo: bundleURL)
@@ -65,7 +58,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         // print(messageBody)
         let m: AppMessage? = jsonDeserialize(json: messageBody)
         if m == nil {
-            // print("m is nil")
             return
         }
         let command = m!.command
@@ -216,7 +208,8 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
                         if activeTab != nil && activeTab == tab {
                             let windowIndex = wins.firstIndex(of: win) ?? -100
                             let tabIndex = allTabs.firstIndex(of: tab) ?? -1
-                            makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { t in
+                            makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex,
+                                tabIndex: tabIndex, complete: { t in
                                 newTabs.append(t)
                                 tabGroup.leave()
                             })
@@ -226,7 +219,8 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
                     } else {
                         let windowIndex = wins.firstIndex(of: win) ?? -100
                         let tabIndex = allTabs.firstIndex(of: tab) ?? -1
-                        makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex, tabIndex: tabIndex, complete: { t in
+                        makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex,
+                            tabIndex: tabIndex, complete: { t in
                             newTabs.append(t)
                             tabGroup.leave()
                         })
@@ -243,7 +237,8 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
     }
 }
 
-func makeTabObject(tab: SFSafariTab, activeTab: SFSafariTab?, windowIndex: Int, tabIndex: Int, complete: @escaping (Tab) -> Void) {
+func makeTabObject(tab: SFSafariTab, activeTab: SFSafariTab?, windowIndex: Int, tabIndex: Int,
+    complete: @escaping (Tab) -> Void) {
     let t = Tab()
     t.active = activeTab != nil && tab == activeTab
     t.windowId = windowIndex
