@@ -162,13 +162,23 @@ function distSafari(cb) {
     const buildPath = paths.dist + 'Safari/';
 
     return del([buildPath + '**/*'])
-        .then(() => copy(paths.safari + '**/*', buildPath))
+        .then(() => safariCopyAssets(paths.safari + '**/*', buildPath))
         .then(() => safariCopyBuild(paths.build + '**/*', buildPath + 'safari/app'))
         .then(() => {
             return cb;
         }, () => {
             return cb;
         });
+}
+
+function safariCopyAssets(source, dest) {
+    return new Promise((resolve, reject) => {
+        gulp.src(source)
+            .on('error', reject)
+            .pipe(gulpif('safari/Info.plist', replace('0.0.1', manifest.version)))
+            .pipe(gulp.dest(dest))
+            .on('end', resolve);
+    });
 }
 
 function safariCopyBuild(source, dest) {
