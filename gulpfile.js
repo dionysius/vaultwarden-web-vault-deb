@@ -17,7 +17,8 @@ const paths = {
     coverage: './coverage/',
     node_modules: './node_modules/',
     popupDir: './src/popup/',
-    cssDir: './src/popup/css/'
+    cssDir: './src/popup/css/',
+    safari: './src/safari/'
 };
 
 const filters = {
@@ -28,10 +29,6 @@ const filters = {
         'build/popup/fonts/fontawesome*.woff'
     ],
     safari: [
-        '!build/safari/**/*',
-        '!build/downloader/**/*'
-    ],
-    safariDir: [
         '!build/safari/**/*'
     ],
     webExt: [
@@ -163,14 +160,10 @@ function edgeCopyAssets(source, dest) {
 
 function distSafari(cb) {
     const buildPath = paths.dist + 'Safari/';
-    const extBuildPath = buildPath + 'bitwarden.safariextension/';
-    const extAssetsBuildPath = extBuildPath + 'safari/';
 
     return del([buildPath + '**/*'])
-        .then(() => safariCopyBuild(paths.build + '**/*', extBuildPath))
-        .then(() => copy(extAssetsBuildPath + '**/*', extBuildPath))
-        .then(() => del([extAssetsBuildPath]))
-        .then(() => safariZip(buildPath))
+        .then(() => copy(paths.safari + '**/*', buildPath))
+        .then(() => safariCopyBuild(paths.build + '**/*', buildPath + 'safari/app'))
         .then(() => {
             return cb;
         }, () => {
@@ -182,43 +175,7 @@ function safariCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
-            .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.webExt)))
-            .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'browser_safari')))
-            .pipe(gulp.dest(dest))
-            .on('end', resolve);
-    });
-}
-
-function safariZip(buildPath) {
-    return new Promise((resolve, reject) => {
-        gulp.src(buildPath + '**/*')
-            .on('error', reject)
-            .pipe(zip(distFileName('safari', 'zip')))
-            .pipe(gulp.dest(paths.dist))
-            .on('end', resolve);
-    });
-}
-
-function distSafariApp(cb) {
-    const buildPath = paths.dist + 'Safari/';
-    const extBuildPath = buildPath + 'app_extension/';
-    const appPath = './src/safari/app/desktop/'
-
-    return del([buildPath + '**/*'])
-        .then(() => copy(appPath + '**/*', extBuildPath))
-        .then(() => safariAppCopyBuild(paths.build + '**/*', extBuildPath + 'safari/app'))
-        .then(() => {
-            return cb;
-        }, () => {
-            return cb;
-        });
-}
-
-function safariAppCopyBuild(source, dest) {
-    return new Promise((resolve, reject) => {
-        gulp.src(source)
-            .on('error', reject)
-            .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.safariDir)
+            .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts)
                 .concat(filters.webExt).concat(filters.nonSafariApp)))
             .pipe(gulp.dest(dest))
             .on('end', resolve);
@@ -262,7 +219,6 @@ exports['dist:chrome'] = distChrome;
 exports['dist:opera'] = distOpera;
 exports['dist:edge'] = distEdge;
 exports['dist:safari'] = distSafari;
-exports['dist:safariApp'] = distSafariApp;
 exports.dist = gulp.parallel(distFirefox, distChrome, distOpera, distEdge, distSafari);
 exports['ci:coverage'] = ciCoverage;
 exports.ci = ciCoverage;
