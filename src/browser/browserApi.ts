@@ -187,11 +187,11 @@ export class BrowserApi {
             } else {
                 data = Utils.fromBufferToB64(blobData);
             }
-            SafariApp.sendMessageToApp('downloadFile', {
+            SafariApp.sendMessageToApp('downloadFile', JSON.stringify({
                 data: data,
                 type: type,
                 fileName: fileName,
-            }, true);
+            }), true);
         } else {
             const blob = new Blob([blobData], blobOptions);
             if (navigator.msSaveOrOpenBlob) {
