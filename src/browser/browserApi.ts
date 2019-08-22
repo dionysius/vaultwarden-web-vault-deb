@@ -125,27 +125,21 @@ export class BrowserApi {
         }
     }
 
-    static createNewTab(url: string, extensionPage: boolean = false): any {
+    static createNewTab(url: string, extensionPage: boolean = false) {
         if (BrowserApi.isChromeApi) {
             chrome.tabs.create({ url: url });
-            return null;
         } else if (BrowserApi.isSafariApi) {
             SafariApp.sendMessageToApp('createNewTab', url, true);
-            return;
-        } else {
-            return;
         }
     }
 
-    static getAssetUrl(path: string): string {
+    static getAssetUrl(path: string): Promise<string> {
         if (BrowserApi.isChromeApi) {
-            return chrome.extension.getURL(path);
+            return Promise.resolve(chrome.extension.getURL(path));
         } else if (BrowserApi.isSafariApi) {
-            // TODO: promisify
-            SafariApp.sendMessageToApp('getAppPath');
-            return null;
+            return SafariApp.sendMessageToApp('getAppPath');
         } else {
-            return null;
+            return Promise.resolve(null);
         }
     }
 
