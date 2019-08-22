@@ -98,18 +98,16 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             let options: TabQueryOptions? = jsonDeserialize(json: m!.data)
             if options?.currentWindow ?? false {
                 SFSafariApplication.getActiveWindow { win in
-                    processWindowsForTabs(wins: [win!], options: options
-                                          , complete: { tabs in
-                                              m!.responseData = jsonSerialize(obj: tabs)
-                                              self.replyMessage(message: m!)
+                    processWindowsForTabs(wins: [win!], options: options, complete: { tabs in
+                        m!.responseData = jsonSerialize(obj: tabs)
+                        self.replyMessage(message: m!)
                     })
                 }
             } else {
                 SFSafariApplication.getAllWindows { wins in
-                    processWindowsForTabs(wins: wins, options: options
-                                          , complete: { tabs in
-                                              m!.responseData = jsonSerialize(obj: tabs)
-                                              self.replyMessage(message: m!)
+                    processWindowsForTabs(wins: wins, options: options, complete: { tabs in
+                        m!.responseData = jsonSerialize(obj: tabs)
+                        self.replyMessage(message: m!)
                     })
                 }
             }
@@ -340,10 +338,4 @@ class TabMessage: Decodable, Encodable {
 
 class TabMessageOptions: Decodable, Encodable {
     var frameId: Int?
-}
-
-class DownloadFileMessage: Decodable, Encodable {
-    var fileName: String
-    var data: String?
-    var type: String?
 }
