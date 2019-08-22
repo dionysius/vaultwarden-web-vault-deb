@@ -74,6 +74,10 @@
 			<key>Level</key>
 			<string>All</string>
 		</dict>
+		<key>SFSafariExtensionBundleIdentifiersToUninstall</key>
+		<array>
+			<string>com.bitwarden.safari</string>
+		</array>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 8bit Solutions LLC. All rights reserved.</string>
