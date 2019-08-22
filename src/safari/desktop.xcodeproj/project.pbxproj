@@ -15,7 +15,6 @@
 		27E5E9A622F3D5FE005EA1D9 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E5E9A522F3D5FE005EA1D9 /* SafariExtensionHandler.swift */; };
 		27E5E9A822F3D5FE005EA1D9 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E5E9A722F3D5FE005EA1D9 /* SafariExtensionViewController.swift */; };
 		27E5E9AB22F3D5FE005EA1D9 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E5E9A922F3D5FE005EA1D9 /* SafariExtensionViewController.xib */; };
-		27E5E9AE22F3D5FE005EA1D9 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 27E5E9AD22F3D5FE005EA1D9 /* script.js */; };
 		27E5E9B022F3D5FE005EA1D9 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 27E5E9AF22F3D5FE005EA1D9 /* ToolbarItemIcon.pdf */; };
 		27E5E9B422F3D5FE005EA1D9 /* safari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 27E5E9A022F3D5FE005EA1D9 /* safari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		27E5E9BC22F4B9D5005EA1D9 /* app in Resources */ = {isa = PBXBuildFile; fileRef = 27E5E9BB22F4B9D5005EA1D9 /* app */; };
@@ -59,7 +58,6 @@
 		27E5E9A722F3D5FE005EA1D9 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		27E5E9AA22F3D5FE005EA1D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		27E5E9AC22F3D5FE005EA1D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27E5E9AD22F3D5FE005EA1D9 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		27E5E9AF22F3D5FE005EA1D9 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		27E5E9B122F3D5FE005EA1D9 /* safari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = safari.entitlements; sourceTree = "<group>"; };
 		27E5E9BB22F4B9D5005EA1D9 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				27E5E9A722F3D5FE005EA1D9 /* SafariExtensionViewController.swift */,
 				27E5E9A922F3D5FE005EA1D9 /* SafariExtensionViewController.xib */,
 				27E5E9AC22F3D5FE005EA1D9 /* Info.plist */,
-				27E5E9AD22F3D5FE005EA1D9 /* script.js */,
 				27E5E9AF22F3D5FE005EA1D9 /* ToolbarItemIcon.pdf */,
 				27E5E9B122F3D5FE005EA1D9 /* safari.entitlements */,
 			);
@@ -237,7 +234,6 @@
 				27E5E9BC22F4B9D5005EA1D9 /* app in Resources */,
 				27E5E9B022F3D5FE005EA1D9 /* ToolbarItemIcon.pdf in Resources */,
 				27E5E9AB22F3D5FE005EA1D9 /* SafariExtensionViewController.xib in Resources */,
-				27E5E9AE22F3D5FE005EA1D9 /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
