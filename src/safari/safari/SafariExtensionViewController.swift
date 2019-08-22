@@ -28,7 +28,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         webViewConfig.preferences.setValue(true, forKey: "developerExtrasEnabled")
         webViewConfig.userContentController.add(self, name: "bitwardenApp")
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: parentWidth, height: parentHeight),
-            configuration: webViewConfig)
+                            configuration: webViewConfig)
         webView.navigationDelegate = self
         webView.allowsLinkPreview = false
         webView.loadFileURL(url!, allowingReadAccessTo: bundleURL)
@@ -209,9 +209,9 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
                             let windowIndex = wins.firstIndex(of: win) ?? -100
                             let tabIndex = allTabs.firstIndex(of: tab) ?? -1
                             makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex,
-                                tabIndex: tabIndex, complete: { t in
-                                newTabs.append(t)
-                                tabGroup.leave()
+                                          tabIndex: tabIndex, complete: { t in
+                                              newTabs.append(t)
+                                              tabGroup.leave()
                             })
                         } else {
                             tabGroup.leave()
@@ -220,9 +220,9 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
                         let windowIndex = wins.firstIndex(of: win) ?? -100
                         let tabIndex = allTabs.firstIndex(of: tab) ?? -1
                         makeTabObject(tab: tab, activeTab: activeTab, windowIndex: windowIndex,
-                            tabIndex: tabIndex, complete: { t in
-                            newTabs.append(t)
-                            tabGroup.leave()
+                                      tabIndex: tabIndex, complete: { t in
+                                          newTabs.append(t)
+                                          tabGroup.leave()
                         })
                     }
                 }
@@ -238,7 +238,7 @@ func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, co
 }
 
 func makeTabObject(tab: SFSafariTab, activeTab: SFSafariTab?, windowIndex: Int, tabIndex: Int,
-    complete: @escaping (Tab) -> Void) {
+                   complete: @escaping (Tab) -> Void) {
     let t = Tab()
     t.active = activeTab != nil && tab == activeTab
     t.windowId = windowIndex
