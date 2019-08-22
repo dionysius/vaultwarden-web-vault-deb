@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.41.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.41.0</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSExtension</key>
@@ -78,6 +78,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 8bit Solutions LLC. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>This is a Safari Extension. You should tell us what your extension does here.</string>
+	<string>A secure and free password manager for all of your devices.</string>
 </dict>
 </plist>
