@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function closeExistingAndOpenBar(type: string, typeData: any) {
-        let barPage = 'notification/bar.html';
+        let barPage = (isSafari ? 'app/' : '') + 'notification/bar.html';
         switch (type) {
             case 'info':
                 barPage = barPage + '?info=' + typeData.text;
