@@ -33,6 +33,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         webView.allowsLinkPreview = false
         webView.loadFileURL(url!, allowingReadAccessTo: bundleURL)
         webView.alphaValue = 0.0
+        webView.uiDelegate = self
         view.addSubview(webView)
     }
 
@@ -164,12 +165,35 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             m?.responseData = pasteboard.pasteboardItems?.first?.string(forType: .string)
             replyMessage(message: m!)
         } else if command == "downloadFile" {
-            SFSafariApplication.getActiveWindow { win in
-                win?.getActiveTab(completionHandler: { tab in
-                    tab?.getActivePage { activePage in
-                        activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": m!.data!])
+            if m!.data != nil {
+                if let dlMsg: DownloadFileMessage = jsonDeserialize(json: m!.data) {
+                    var data: Data?
+                    if dlMsg.blobOptions?.type == "text/plain" {
+                        data = dlMsg.blobData?.data(using: .utf8)
+                    } else {
+                        data = Data(base64Encoded: dlMsg.blobData!)
                     }
-                })
+                    if data != nil {
+                        let panel = NSSavePanel()
+                        panel.canCreateDirectories = true
+                        panel.nameFieldStringValue = dlMsg.fileName
+                        panel.begin { response in
+                            if response == NSApplication.ModalResponse.OK {
+                                if let url = panel.url {
+                                    do {
+                                        let fileManager = FileManager.default
+                                        if !fileManager.fileExists(atPath: url.absoluteString) {
+                                            fileManager.createFile(atPath: url.absoluteString, contents: Data(), attributes: nil)
+                                        }
+                                        try data!.write(to: url)
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         } else if command == "getAppPath" {
             SFSafariExtension.getBaseURI(completionHandler: { uri in
@@ -191,7 +215,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
 }
 
 extension SafariExtensionViewController: WKUIDelegate {
-    func webView(_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
+    func webView(_: WKWebView, runOpenPanelWith _: WKOpenPanelParameters, initiatedByFrame _: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
         let openPanel = NSOpenPanel()
         openPanel.canChooseFiles = true
         openPanel.begin { result in
@@ -347,4 +371,14 @@ class TabMessage: Decodable, Encodable {
 
 class TabMessageOptions: Decodable, Encodable {
     var frameId: Int?
+}
+
+class DownloadFileMessage: Decodable, Encodable {
+    var fileName: String
+    var blobData: String?
+    var blobOptions: DownloadFileMessageBlobOptions?
+}
+
+class DownloadFileMessageBlobOptions: Decodable, Encodable {
+    var type: String?
 }
