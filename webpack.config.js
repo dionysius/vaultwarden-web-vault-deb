@@ -94,11 +94,6 @@ const plugins = [
         filename: 'notification/bar.html',
         chunks: ['notification/bar']
     }),
-    new HtmlWebpackPlugin({
-        template: './src/downloader/index.html',
-        filename: 'downloader/index.html',
-        chunks: ['downloader/downloader'],
-    }),
     new CopyWebpackPlugin([
         './src/manifest.json',
         { from: './src/_locales', to: '_locales' },
@@ -145,11 +140,9 @@ const config = {
         'background': './src/background.ts',
         'content/autofill': './src/content/autofill.js',
         'content/autofiller': './src/content/autofiller.ts',
-        'content/downloader': './src/content/downloader.ts',
         'content/notificationBar': './src/content/notificationBar.ts',
         'content/shortcuts': './src/content/shortcuts.ts',
         'notification/bar': './src/notification/bar.js',
-        'downloader/downloader': './src/downloader/downloader.ts',
     },
     optimization: {
         minimize: false,
