@@ -412,6 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LTZ2PFU5D6;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = desktop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,6 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LTZ2PFU5D6;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = desktop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,6 +451,7 @@
 				CODE_SIGN_ENTITLEMENTS = safari/safari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LTZ2PFU5D6;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = safari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,6 +471,7 @@
 				CODE_SIGN_ENTITLEMENTS = safari/safari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LTZ2PFU5D6;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = safari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
