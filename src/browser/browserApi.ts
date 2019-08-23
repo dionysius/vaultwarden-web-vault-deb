@@ -183,12 +183,9 @@ export class BrowserApi {
                 data = Utils.fromBufferToB64(blobData);
             }
             SafariApp.sendMessageToApp('downloadFile', JSON.stringify({
-                command: 'downloaderPageData',
-                data: {
-                    blobData: data,
-                    blobOptions: blobOptions,
-                    fileName: fileName,
-                },
+                blobData: data,
+                blobOptions: blobOptions,
+                fileName: fileName,
             }), true);
         } else {
             const blob = new Blob([blobData], blobOptions);
