@@ -190,6 +190,20 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
 }
 
+extension SafariExtensionViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseFiles = true
+        openPanel.begin { result in
+            if result == NSApplication.ModalResponse.OK && openPanel.url != nil {
+                completionHandler([openPanel.url!])
+            } else {
+                completionHandler(nil)
+            }
+        }
+    }
+}
+
 func processWindowsForTabs(wins: [SFSafariWindow], options: TabQueryOptions?, complete: @escaping ([Tab]) -> Void) {
     if wins.count == 0 {
         complete([])
