@@ -115,7 +115,17 @@ function distEdge(cb) {
         .then(() => edgeCopyAssets('./store/windows/**/*', edgePath))
         .then(() => {
             // makeappx.exe must be in your system's path already
-            child.spawn('makeappx.exe', ['pack', '/h', 'SHA256', '/d', edgePath, '/p', appxPath]);
+            const proc = child.spawn('makeappx.exe', [
+                'pack',
+                '/h',
+                'SHA256',
+                '/d',
+                edgePath,
+                '/p',
+                appxPath]);
+            stdOutProc(proc);
+            return new Promise((resolve) => proc.on('close', resolve));
+        }).then(() => {
             return cb;
         }, () => {
             return cb;
@@ -168,11 +178,26 @@ function distSafari(cb) {
         .then(() => safariCopyAssets(paths.safari + '**/*', buildPath))
         .then(() => safariCopyBuild(paths.build + '**/*', buildPath + 'safari/app'))
         .then(() => {
-            const proc = child.spawn('xcodebuild', ['-project', buildPath + 'desktop.xcodeproj', '-target', 'safari', '-configuration', 'Release']);
+            const proc = child.spawn('xcodebuild', [
+                '-project',
+                buildPath + 'desktop.xcodeproj',
+                '-target',
+                'safari',
+                '-configuration',
+                'Release']);
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
-            const proc = child.spawn('codesign', ['--verbose', '--force', '-o', 'runtime', '--sign', devId, '--entitlements', entitlementsPath, builtAppexPath]);
+            const proc = child.spawn('codesign', [
+                '--verbose',
+                '--force',
+                '-o',
+                'runtime',
+                '--sign',
+                devId,
+                '--entitlements',
+                entitlementsPath,
+                builtAppexPath]);
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
@@ -205,7 +230,8 @@ function safariCopyBuild(source, dest) {
 
 function stdOutProc(proc) {
     proc.stdout.on('data', (data) => console.log(data.toString()));
-    proc.stderr.on('data', (data) => console.error(data.toString()));}
+    proc.stderr.on('data', (data) => console.error(data.toString()));
+}
 
 function webfonts() {
     return gulp.src('./webfonts.list')
