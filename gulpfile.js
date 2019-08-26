@@ -160,11 +160,22 @@ function edgeCopyAssets(source, dest) {
 
 function distSafari(cb) {
     const buildPath = paths.dist + 'Safari/';
+    const builtAppexPath = buildPath + 'build/Release/safari.appex';
+    const entitlementsPath = paths.safari + 'safari/safari.entitlements';
+    const devId = 'Developer ID Application: 8bit Solutions LLC';
 
     return del([buildPath + '**/*'])
         .then(() => safariCopyAssets(paths.safari + '**/*', buildPath))
         .then(() => safariCopyBuild(paths.build + '**/*', buildPath + 'safari/app'))
         .then(() => {
+            const proc = child.spawn('xcodebuild', ['-project', buildPath + 'desktop.xcodeproj', '-target', 'safari', '-configuration', 'Release']);
+            stdOutProc(proc);
+            return new Promise((resolve) => proc.on('close', resolve));
+        }).then(() => {
+            const proc = child.spawn('codesign', ['--verbose', '--force', '-o', 'runtime', '--sign', devId, '--entitlements', entitlementsPath, builtAppexPath]);
+            stdOutProc(proc);
+            return new Promise((resolve) => proc.on('close', resolve));
+        }).then(() => {
             return cb;
         }, () => {
             return cb;
@@ -191,6 +202,10 @@ function safariCopyBuild(source, dest) {
             .on('end', resolve);
     });
 }
+
+function stdOutProc(proc) {
+    proc.stdout.on('data', (data) => console.log(data.toString()));
+    proc.stderr.on('data', (data) => console.error(data.toString()));}
 
 function webfonts() {
     return gulp.src('./webfonts.list')
