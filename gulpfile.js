@@ -181,8 +181,7 @@ function distSafari(cb) {
             const proc = child.spawn('xcodebuild', [
                 '-project',
                 buildPath + 'desktop.xcodeproj',
-                '-target',
-                'safari',
+                '-alltargets',
                 '-configuration',
                 'Release']);
             stdOutProc(proc);
