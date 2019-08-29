@@ -307,7 +307,6 @@ export default class MainBackground {
             this.lockService.clear(),
         ]);
 
-        this.lockService.pinLocked = false;
         this.searchService.clearIndex();
         this.messagingService.send('doneLoggingOut', { expired: expired });
 
