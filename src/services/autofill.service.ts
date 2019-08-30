@@ -875,12 +875,34 @@ export default class AutofillService implements AutofillServiceInterface {
         const arr: AutofillField[] = [];
         pageDetails.fields.forEach((f) => {
             const isPassword = f.type === 'password';
-            const isLikePassword = () => f.type === 'text' &&
-                (
-                    (f.htmlID != null && f.htmlID.toLowerCase().indexOf('password') > 0) ||
-                    (f.htmlName != null && f.htmlName.toLowerCase().indexOf('password') > 0) ||
-                    (f.placeholder != null && f.placeholder.toLowerCase().indexOf('password') > 0)
-                );
+            const valueIsLikePassword = (value: string) => {
+                if (value == null) {
+                    return false;
+                }
+                const lowerValue = value.toLowerCase();
+                if (lowerValue.indexOf('password') < 0) {
+                    return false;
+                }
+                if (lowerValue.indexOf('captcha') >= 0) {
+                    return false;
+                }
+                return true;
+            };
+            const isLikePassword = () => {
+                if (f.type !== 'text') {
+                    return false;
+                }
+                if (valueIsLikePassword(f.htmlID)) {
+                    return true;
+                }
+                if (valueIsLikePassword(f.htmlName)) {
+                    return true;
+                }
+                if (valueIsLikePassword(f.placeholder)) {
+                    return true;
+                }
+                return false;
+            };
             if (!f.disabled && (canBeReadOnly || !f.readonly) && (isPassword || isLikePassword())
                 && (canBeHidden || f.viewable)) {
                 arr.push(f);
