@@ -13,7 +13,9 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             page.getPropertiesWithCompletionHandler { properties in
                 DispatchQueue.main.async {
                     makeSenderTabObject(page: page, props: properties, complete: { senderTab in
-                        self.sendMessage(msg: userInfo, sender: senderTab)
+                        DispatchQueue.main.async {
+                            self.sendMessage(msg: userInfo, sender: senderTab)
+                        }
                     })
                 }
             }
@@ -72,15 +74,8 @@ func makeSenderTabObject(page: SFSafariPage, props: SFSafariPageProperties?, com
                 t.active = activeTab != nil && tab == activeTab
                 SFSafariApplication.getAllWindows(completionHandler: { allWins in
                     t.windowId = allWins.firstIndex(of: win!) ?? -100
-                    let winGroup = DispatchGroup()
-                    for allWin in allWins {
-                        winGroup.enter()
-                        allWin.getAllTabs { allWinTabs in
-                            t.index = allWinTabs.firstIndex(of: tab) ?? -1
-                            winGroup.leave()
-                        }
-                    }
-                    winGroup.notify(queue: .main) {
+                    win!.getAllTabs { allWinTabs in
+                        t.index = allWinTabs.firstIndex(of: tab) ?? -1
                         t.id = "\(t.windowId)_\(t.index)"
                         complete(t)
                     }
