@@ -480,7 +480,7 @@ export default class MainBackground {
                 }
 
                 let theText = '';
-                if (ciphers.length > 0 && ciphers.length < 9) {
+                if (ciphers.length > 0 && ciphers.length <= 9) {
                     theText = ciphers.length.toString();
                 } else if (ciphers.length > 0) {
                     theText = '9+';
