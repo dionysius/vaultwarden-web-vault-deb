@@ -171,6 +171,7 @@ function edgeCopyAssets(source, dest) {
 function distSafari(cb) {
     const buildPath = paths.dist + 'Safari/';
     const builtAppexPath = buildPath + 'build/Release/safari.appex';
+    const builtSafariCodeSigPath = builtAppexPath + '/Contents/_CodeSignature';
     const builtSafariExecutablePath = builtAppexPath + '/Contents/MacOS/safari';
     const entitlementsPath = paths.safari + 'safari/safari.entitlements';
     const devId = 'Developer ID Application: 8bit Solutions LLC';
@@ -185,6 +186,12 @@ function distSafari(cb) {
                 '-alltargets',
                 '-configuration',
                 'Release']);
+            stdOutProc(proc);
+            return new Promise((resolve) => proc.on('close', resolve));
+        }).then(() => {
+            const proc = child.spawn('rm', [
+                '-rf',
+                builtSafariCodeSigPath]);
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
