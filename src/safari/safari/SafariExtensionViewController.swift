@@ -183,7 +183,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                                     do {
                                         let fileManager = FileManager.default
                                         if !fileManager.fileExists(atPath: url.absoluteString) {
-                                            fileManager.createFile(atPath: url.absoluteString, contents: Data(), attributes: nil)
+                                            fileManager.createFile(atPath: url.absoluteString, contents: Data(),
+                                                attributes: nil)
                                         }
                                         try data!.write(to: url)
                                     } catch {
@@ -215,7 +216,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
 }
 
 extension SafariExtensionViewController: WKUIDelegate {
-    func webView(_: WKWebView, runOpenPanelWith _: WKOpenPanelParameters, initiatedByFrame _: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
+    func webView(_: WKWebView, runOpenPanelWith _: WKOpenPanelParameters, initiatedByFrame _: WKFrameInfo,
+        completionHandler: @escaping ([URL]?) -> Void) {
         let openPanel = NSOpenPanel()
         openPanel.canChooseFiles = true
         openPanel.begin { result in
