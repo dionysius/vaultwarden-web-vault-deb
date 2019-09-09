@@ -171,7 +171,7 @@ function edgeCopyAssets(source, dest) {
 function distSafari(cb) {
     const buildPath = paths.dist + 'Safari/';
     const builtAppexPath = buildPath + 'build/Release/safari.appex';
-    const builtSafariExecutablePath = builtAppexPath + '/Contents/MacOs/safari';
+    const builtSafariExecutablePath = builtAppexPath + '/Contents/MacOS/safari';
     const entitlementsPath = paths.safari + 'safari/safari.entitlements';
     const devId = 'Developer ID Application: 8bit Solutions LLC';
 
