@@ -168,13 +168,18 @@ function edgeCopyAssets(source, dest) {
     });
 }
 
-function distSafari(cb) {
-    const buildPath = paths.dist + 'Safari/';
+function distSafariMas(cb) {
+    return distSafariApp(cb, 'mas', '3rd Party Mac Developer Application: 8bit Solutions LLC');
+}
+
+function distSafariDmg(cb) {
+    return distSafariApp(cb, 'dmg', 'Developer ID Application: 8bit Solutions LLC');
+}
+
+function distSafariApp(cb, subBuildPath, devId) {
+    const buildPath = paths.dist + 'Safari/' + subBuildPath + '/';
     const builtAppexPath = buildPath + 'build/Release/safari.appex';
-    const builtSafariCodeSigPath = builtAppexPath + '/Contents/_CodeSignature';
-    const builtSafariExecutablePath = builtAppexPath + '/Contents/MacOS/safari';
     const entitlementsPath = paths.safari + 'safari/safari.entitlements';
-    const devId = 'Developer ID Application: 8bit Solutions LLC';
 
     return del([buildPath + '**/*'])
         .then(() => safariCopyAssets(paths.safari + '**/*', buildPath))
@@ -186,25 +191,6 @@ function distSafari(cb) {
                 '-alltargets',
                 '-configuration',
                 'Release']);
-            stdOutProc(proc);
-            return new Promise((resolve) => proc.on('close', resolve));
-        }).then(() => {
-            const proc = child.spawn('rm', [
-                '-rf',
-                builtSafariCodeSigPath]);
-            stdOutProc(proc);
-            return new Promise((resolve) => proc.on('close', resolve));
-        }).then(() => {
-            const proc = child.spawn('codesign', [
-                '--verbose',
-                '--force',
-                '-o',
-                'runtime',
-                '--sign',
-                devId,
-                '--entitlements',
-                entitlementsPath,
-                builtSafariExecutablePath]);
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
@@ -289,7 +275,7 @@ exports['dist:firefox'] = distFirefox;
 exports['dist:chrome'] = distChrome;
 exports['dist:opera'] = distOpera;
 exports['dist:edge'] = distEdge;
-exports['dist:safari'] = distSafari;
+exports['dist:safari'] = gulp.parallel(distSafariMas, distSafariDmg);
 exports.dist = gulp.parallel(distFirefox, distChrome, distOpera, distEdge);
 exports['ci:coverage'] = ciCoverage;
 exports.ci = ciCoverage;
