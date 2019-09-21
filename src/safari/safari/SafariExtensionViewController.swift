@@ -138,7 +138,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             SFSafariApplication.getActiveWindow { win in
                 win?.getToolbarItem(completionHandler: { item in
                     item?.showPopover()
-                    self.replyMessage(message: m!)
                 })
             }
         } else if command == "isPopoverOpen" {
