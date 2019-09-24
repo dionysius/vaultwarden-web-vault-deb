@@ -197,7 +197,7 @@ function distSafariApp(cb, subBuildPath, devId) {
         }).then(() => {
             const libs = fs.readdirSync(builtAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
                 .map((p) => builtAppexFrameworkPath + p);
-            const allItems = [].concat([builtAppexPath]);
+            const allItems = libs.concat([builtAppexPath]);
             const promises = [];
             allItems.forEach ((i) => {
                 const proc = child.spawn('codesign', [
