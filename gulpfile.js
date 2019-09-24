@@ -195,7 +195,8 @@ function distSafariApp(cb, subBuildPath, devId) {
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
-            const libs = fs.readdirSync(builtAppexFrameworkPath).filter((p) => p.endsWith('.dylib'));
+            const libs = fs.readdirSync(builtAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
+                .map((p) => builtAppexFrameworkPath + p);
             const allItems = libs.concat([builtAppexPath]);
             const promises = [];
             allItems.forEach ((i) => {
