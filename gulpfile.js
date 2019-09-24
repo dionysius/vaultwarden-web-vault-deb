@@ -179,6 +179,7 @@ function distSafariDmg(cb) {
 function distSafariApp(cb, subBuildPath, devId) {
     const buildPath = paths.dist + 'Safari/' + subBuildPath + '/';
     const builtAppexPath = buildPath + 'build/Release/safari.appex';
+    const builtAppexFrameworkPath = buildPath + 'build/Release/safari.appex/Contents/Frameworks/';
     const entitlementsPath = paths.safari + 'safari/safari.entitlements';
 
     return del([buildPath + '**/*'])
@@ -194,18 +195,24 @@ function distSafariApp(cb, subBuildPath, devId) {
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
-            const proc = child.spawn('codesign', [
-                '--verbose',
-                '--force',
-                '-o',
-                'runtime',
-                '--sign',
-                devId,
-                '--entitlements',
-                entitlementsPath,
-                builtAppexPath]);
-            stdOutProc(proc);
-            return new Promise((resolve) => proc.on('close', resolve));
+            const libs = fs.readdirSync(builtAppexFrameworkPath).filter((p) => p.endsWith('.dylib'));
+            const allItems = libs.concat([builtAppexPath]);
+            const promises = [];
+            allItems.forEach ((i) => {
+                const proc = child.spawn('codesign', [
+                    '--verbose',
+                    '--force',
+                    '-o',
+                    'runtime',
+                    '--sign',
+                    devId,
+                    '--entitlements',
+                    entitlementsPath,
+                    i]);
+                stdOutProc(proc);
+                promises.push(new Promise((resolve) => proc.on('close', resolve)));
+            });
+            return Promise.all(promises);
         }).then(() => {
             return cb;
         }, () => {
