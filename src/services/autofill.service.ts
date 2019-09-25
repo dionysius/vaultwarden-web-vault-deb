@@ -119,7 +119,7 @@ export default class AutofillService implements AutofillServiceInterface {
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
         const formData: any[] = [];
 
-        const passwordFields = this.loadPasswordFields(pageDetails, true, true);
+        const passwordFields = this.loadPasswordFields(pageDetails, true, true, false);
         if (passwordFields.length === 0) {
             return formData;
         }
@@ -165,6 +165,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
             const fillScript = this.generateFillScript(pd.details, {
                 skipUsernameOnlyFill: options.skipUsernameOnlyFill || false,
+                onlyEmptyFields: options.onlyEmptyFields || false,
                 onlyVisibleFields: options.onlyVisibleFields || false,
                 cipher: options.cipher,
             });
@@ -227,6 +228,7 @@ export default class AutofillService implements AutofillServiceInterface {
             skipTotp: !fromCommand,
             skipLastUsed: true,
             skipUsernameOnlyFill: !fromCommand,
+            onlyEmptyFields: !fromCommand,
             onlyVisibleFields: !fromCommand,
         });
     }
@@ -313,10 +315,10 @@ export default class AutofillService implements AutofillServiceInterface {
             return fillScript;
         }
 
-        let passwordFields = this.loadPasswordFields(pageDetails, false, false);
+        let passwordFields = this.loadPasswordFields(pageDetails, false, false, options.onlyEmptyFields);
         if (!passwordFields.length && !options.onlyVisibleFields) {
             // not able to find any viewable password fields. maybe there are some "hidden" ones?
-            passwordFields = this.loadPasswordFields(pageDetails, true, true);
+            passwordFields = this.loadPasswordFields(pageDetails, true, true, options.onlyEmptyFields);
         }
 
         for (const formKey in pageDetails.forms) {
@@ -871,7 +873,8 @@ export default class AutofillService implements AutofillServiceInterface {
         }
     }
 
-    private loadPasswordFields(pageDetails: AutofillPageDetails, canBeHidden: boolean, canBeReadOnly: boolean) {
+    private loadPasswordFields(pageDetails: AutofillPageDetails, canBeHidden: boolean, canBeReadOnly: boolean,
+        mustBeEmpty: boolean) {
         const arr: AutofillField[] = [];
         pageDetails.fields.forEach((f) => {
             const isPassword = f.type === 'password';
@@ -904,7 +907,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 return false;
             };
             if (!f.disabled && (canBeReadOnly || !f.readonly) && (isPassword || isLikePassword())
-                && (canBeHidden || f.viewable)) {
+                && (canBeHidden || f.viewable) && (!mustBeEmpty || f.value == null || f.value.trim() === '')) {
                 arr.push(f);
             }
         });
