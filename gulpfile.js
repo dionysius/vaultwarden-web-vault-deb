@@ -197,19 +197,28 @@ function distSafariApp(cb, subBuildPath, devId) {
         }).then(() => {
             const libs = fs.readdirSync(builtAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
                 .map((p) => builtAppexFrameworkPath + p);
-            const allItems = [].concat([builtAppexPath]);
+            const allItems = libs.concat([builtAppexPath]);
             const promises = [];
-            allItems.forEach ((i) => {
-                const proc = child.spawn('codesign', [
+            allItems.forEach((i) => {
+                const args1 = [
                     '--verbose',
-                    '--force',
+                    '--force'];
+                const argsHardRuntime = [
                     '-o',
-                    'runtime',
+                    'runtime'];
+                const args2 = [
                     '--sign',
                     devId,
                     '--entitlements',
                     entitlementsPath,
-                    i]);
+                    i];
+                let args = [];
+                if (subBuildPath == 'mas') {
+                    args = [...args1, ...args2];
+                } else {
+                    args = [...args1, ...argsHardRuntime, ...args2];
+                }
+                const proc = child.spawn('codesign', args);
                 stdOutProc(proc);
                 promises.push(new Promise((resolve) => proc.on('close', resolve)));
             });
