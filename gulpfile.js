@@ -195,9 +195,10 @@ function distSafariApp(cb, subBuildPath, devId) {
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
+            const isMas = subBuildPath == 'mas';
             const libs = fs.readdirSync(builtAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
                 .map((p) => builtAppexFrameworkPath + p);
-            const allItems = libs.concat([builtAppexPath]);
+            const allItems = isMas ? [builtAppexPath] : [...builtAppexPath, ...libs];
             const promises = [];
             allItems.forEach((i) => {
                 const args1 = [
@@ -213,7 +214,7 @@ function distSafariApp(cb, subBuildPath, devId) {
                     entitlementsPath,
                     i];
                 let args = [];
-                if (subBuildPath == 'mas') {
+                if (isMas) {
                     args = [...args1, ...args2];
                 } else {
                     args = [...args1, ...argsHardRuntime, ...args2];
