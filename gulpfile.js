@@ -168,7 +168,74 @@ function edgeCopyAssets(source, dest) {
     });
 }
 
-function distSafariApp(cb) {
+function distSafariMas(cb) {
+    return distSafariApp(cb, 'mas');
+}
+
+function distSafariDmg(cb) {
+    return distSafariApp(cb, 'dmg');
+}
+
+function distSafariApp(cb, subBuildPath) {
+    const buildPath = paths.dist + 'Safari/' + subBuildPath + '/';
+    const builtAppexPath = buildPath + 'build/Release/safari.appex';
+    const builtAppexFrameworkPath = buildPath + 'build/Release/safari.appex/Contents/Frameworks/';
+    const entitlementsPath = paths.safari + 'safari/safari.entitlements';
+    var args = subBuildPath === 'mas' ?
+        [
+            '--verbose',
+            '--force',
+            '--sign',
+            '3rd Party Mac Developer Application: 8bit Solutions LLC',
+            '--entitlements',
+            entitlementsPath
+        ] :
+        [
+            '--verbose',
+            '--force',
+            '-o',
+            'runtime',
+            '--sign',
+            'Developer ID Application: 8bit Solutions LLC',
+            '--entitlements',
+            entitlementsPath
+        ];
+
+    return del([buildPath + '**/*'])
+        .then(() => safariCopyAssets(paths.safari + '**/*', buildPath))
+        .then(() => safariCopyBuild(paths.build + '**/*', buildPath + 'safari/app'))
+        .then(() => {
+            const proc = child.spawn('xcodebuild', [
+                '-project',
+                buildPath + 'desktop.xcodeproj',
+                '-alltargets',
+                '-configuration',
+                'Release']);
+            stdOutProc(proc);
+            return new Promise((resolve) => proc.on('close', resolve));
+        }).then(() => {
+            const libs = fs.readdirSync(builtAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
+                .map((p) => builtAppexFrameworkPath + p);
+            const libPromises = [];
+            libs.forEach((i) => {
+                const proc = child.spawn('codesign', args.concat([i]));
+                stdOutProc(proc);
+                libPromises.push(new Promise((resolve) => proc.on('close', resolve)));
+            });
+            return Promise.all(libPromises);
+        }).then(() => {
+            const proc = child.spawn('codesign', args.concat([builtAppexPath]));
+            stdOutProc(proc);
+            return new Promise((resolve) => proc.on('close', resolve));
+        }).then(() => {
+            return cb;
+        }, () => {
+            return cb;
+        });
+}
+
+
+function distSafariApp_old(cb) {
     const buildPath = paths.dist + 'Safari/';
 
     return del([buildPath + '**/*'])
@@ -252,7 +319,7 @@ exports['dist:firefox'] = distFirefox;
 exports['dist:chrome'] = distChrome;
 exports['dist:opera'] = distOpera;
 exports['dist:edge'] = distEdge;
-exports['dist:safari'] = distSafariApp;
+exports['dist:safari'] = gulp.parallel(distSafariMas, distSafariDmg);;
 exports.dist = gulp.parallel(distFirefox, distChrome, distOpera, distEdge);
 exports['ci:coverage'] = ciCoverage;
 exports.ci = ciCoverage;
