@@ -212,11 +212,11 @@
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Majuscule",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Include număr"
   },
   "minNumbers": {
     "message": "Număr minim de caractere"
@@ -306,7 +306,7 @@
     "message": "Deblochează"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Autentificat ca $EMAIL$ în $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Nu se pot completa automat datele de autentificare selectate în această pagină. În schimb, puteți copia și lipi numele de utilizator și\/sau parola."
+    "message": "Nu se pot completa automat datele de autentificare selectate în această pagină. În schimb, puteți copia și lipi numele de utilizator și/sau parola."
   },
   "loggedOut": {
     "message": "Deconectat"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Goliţi Clipboardul",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Şterge automat valorile copiate din clipboard.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Ar trebui ca bitwarden să memoreze această parolă pentru dvs.?"
@@ -724,7 +724,7 @@
     "message": "Vă mulțumim pentru susținerea bitwarden."
   },
   "premiumPrice": {
-    "message": "Totul pentru doar %price% \/ an!",
+    "message": "Totul pentru doar %price% / an!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Acest cont are activată autentificarea în două etape, dar niciunul dintre furnizorii configurați pentru aceasta nu este acceptat de acest navigator web."
   },
   "noTwoStepProviders2": {
-    "message": "Utilizați un browser web acceptat (cum ar fi Chrome) și\/sau adăugați furnizori suplimentari care sunt mai bine susținuți în browserele web (cum ar fi o aplicație de autentificare)."
+    "message": "Utilizați un browser web acceptat (cum ar fi Chrome) și/sau adăugați furnizori suplimentari care sunt mai bine susținuți în browserele web (cum ar fi o aplicație de autentificare)."
   },
   "twoStepOptions": {
     "message": "Opțiuni de autentificare în două etape"
@@ -898,7 +898,7 @@
     "message": "Câmp nou"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Trageţi pentru sortare"
   },
   "cfTypeText": {
     "message": "Text"
@@ -907,13 +907,13 @@
     "message": "Text cu caractere ascunse"
   },
   "cfTypeBoolean": {
-    "message": "Bifat\/Nebifat, Da\/Nu"
+    "message": "Bifat/Nebifat, Da/Nu"
   },
   "popup2faCloseMessage": {
     "message": "Dacă dați clic pentru a verifica e-mailul în afara acestei casete, aceasta se va închide. Doriți să afișați aceste informații într-o filă nouă, astfel încât aceasta să nu se închidă?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Acest browser nu poate prelucra cererile U2F în această fereastră pop-up. Doriți să deschideți această fereastră într-o fereastră nouă, astfel încât să vă puteți autentifica folosind U2F?"
   },
   "disableFavicon": {
     "message": "Dezactivare pictograme"
@@ -976,7 +976,7 @@
     "message": "decembrie"
   },
   "securityCode": {
-    "message": "Cod CVV2\/CVC2"
+    "message": "Cod CVV2/CVC2"
   },
   "ex": {
     "message": "ex."
@@ -1015,7 +1015,7 @@
     "message": "CNP"
   },
   "passportNumber": {
-    "message": "Număr CI\/pașaport"
+    "message": "Număr CI/pașaport"
   },
   "licenseNumber": {
     "message": "Număr licență"
@@ -1102,9 +1102,6 @@
     "message": "Ştergere",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Finalizați solicitarea de conectare în doi pași utilizând o filă nouă."
-  },
   "checkPassword": {
     "message": "Verifică dacă parola a fost dezvăluită."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Gazdă",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
@@ -1146,7 +1143,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Activare\/dezactivare opțiuni"
+    "message": "Activare/dezactivare opțiuni"
   },
   "organization": {
     "message": "Organizație",
@@ -1234,6 +1231,6 @@
     "message": "Blocare cu parola principală după ce browserul repornește,"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Este nevoie să alegeți măcar o colecție."
   }
 }

@@ -400,7 +400,7 @@
     "message": "El codi de verificació és obligatori."
   },
   "valueCopied": {
-    "message": "$VALUE$ copiat",
+    "message": "S'ha copiat $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Neteja el porta-retalls",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Esborra automàticament els valors copiats del porta-retalls.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Bitwarden ha de recordar aquesta contrasenya per a vosaltres?"
@@ -724,7 +724,7 @@
     "message": "Gràcies per donar suport a Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tot per només $PRICE$ \/ any!",
+    "message": "Tot per només $PRICE$ / any!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1042,7 +1042,7 @@
     "message": "Localitat"
   },
   "stateProvince": {
-    "message": "Estat\/província"
+    "message": "Estat/província"
   },
   "zipPostalCode": {
     "message": "Codi postal"
@@ -1102,9 +1102,6 @@
     "message": "Esborra",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Completeu la vostra sol·licitud d'inici de sessió en dues passes a la nova pestanya."
-  },
   "checkPassword": {
     "message": "Comprova si la contrasenya ha estat exposada."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Amfitrió",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exacte"

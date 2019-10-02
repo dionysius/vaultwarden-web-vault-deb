@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Vyčistit schránku",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automaticky vymazat zkopírované hodnoty z vaší schránky.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Má si pro vás Bitwarden toto heslo pamatovat?"
@@ -907,7 +907,7 @@
     "message": "Skryté"
   },
   "cfTypeBoolean": {
-    "message": "Ano\/Ne"
+    "message": "Ano/Ne"
   },
   "popup2faCloseMessage": {
     "message": "Klepnutím mimo vyskakovací okno při zjišťování ověřovacího kódu zaslaného na e-mail bude vyskakovací okno zavřeno. Chcete otevřít toto vyskakovací okno v novém okně, aby se nezavřelo?"
@@ -1042,7 +1042,7 @@
     "message": "Město"
   },
   "stateProvince": {
-    "message": "Kraj \/ Provincie"
+    "message": "Kraj / Provincie"
   },
   "zipPostalCode": {
     "message": "PSČ"
@@ -1102,9 +1102,6 @@
     "message": "Vymazat",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Dokončete dvoufázové přihlášení pomocí nové karty."
-  },
   "checkPassword": {
     "message": "Zkontrolujte, zda nedošlo k úniku hesla."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Host",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Přesně"

@@ -212,11 +212,11 @@
     "message": "Razdjelitelj riječi"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Pretvori u velika početna slova",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Uključi broj"
   },
   "minNumbers": {
     "message": "Najmanje brojeva"
@@ -306,7 +306,7 @@
     "message": "Otključaj"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Prijavljen kao $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -331,19 +331,19 @@
     "message": "Odmah"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekundi"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekundi"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekundi"
   },
   "oneMinute": {
     "message": "1 minuta"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minute"
   },
   "fiveMinutes": {
     "message": "5 minuta"
@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Nije moguće automatski ispuniti odabranu prijavu na ovoj stranici. Umjesto toga kopirajte\/zalijepite korisničko ime i\/ili zaporku."
+    "message": "Nije moguće automatski ispuniti odabranu prijavu na ovoj stranici. Umjesto toga kopirajte/zalijepite korisničko ime i/ili zaporku."
   },
   "loggedOut": {
     "message": "Odjavljen"
@@ -535,12 +535,12 @@
     "message": "Stavke identiteta iz Vašeg trezora navedene su na stranici \"Trenutačna kartica\" za jednostavan pristup automatskom popunjavanju."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "message": "Očisti međuspremnik",
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "message": "Automatski očisti kopirane vrijednosti iz Vašeg međuspremnika.",
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Treba li Bitwarden zapamtiti ovu lozinku?"
@@ -724,7 +724,7 @@
     "message": "Hvala Vam što podupirete Bitwarden."
   },
   "premiumPrice": {
-    "message": "Sve samo za %price% \/godišnje!",
+    "message": "Sve samo za %price% /godišnje!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Ovaj račun ima omogućenu prijavu u dva koraka, međutim, niti jedan od konfiguriranih pružatelja u dva koraka ne podržava ovaj web-preglednik."
   },
   "noTwoStepProviders2": {
-    "message": "Koristite podržani web-preglednik (kao što je Chrome) i\/ili dodajte dodatne usluge koje su bolje podržane u web preglednicima (kao što je aplikacija autentifikatora)."
+    "message": "Koristite podržani web-preglednik (kao što je Chrome) i/ili dodajte dodatne usluge koje su bolje podržane u web preglednicima (kao što je aplikacija autentifikatora)."
   },
   "twoStepOptions": {
     "message": "Mogućnosti prijave u dva koraka"
@@ -898,7 +898,7 @@
     "message": "Novo prilagođeno polje"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Povucite za sortiranje"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -913,7 +913,7 @@
     "message": "Ako dodirnete izvan popup prozora za provjeru e-pošte za vaš kontrolni kôd, skočni prozor će biti zatvoren. Želite li otvoriti ovaj skočni prozor u novom prozoru tako da se ne zatvori?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Ovaj preglednik ne može obraditi U2F zahtjeve u ovom skočnom prozoru. Želite li otvoriti ovaj skočni prozor u novom prozoru kako biste se mogli prijaviti pomoću U2F?"
   },
   "disableFavicon": {
     "message": "Onemogući ikone web mjesta"
@@ -1039,10 +1039,10 @@
     "message": "Adresa 3"
   },
   "cityTown": {
-    "message": "Grad \/ Mjesto"
+    "message": "Grad / Mjesto"
   },
   "stateProvince": {
-    "message": "Država \/ Pokrajina"
+    "message": "Država / Pokrajina"
   },
   "zipPostalCode": {
     "message": "Poštanski broj"
@@ -1102,9 +1102,6 @@
     "message": "Očisti",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Dovršite zahtjev za prijavu u dva koraka pomoću nove kartice."
-  },
   "checkPassword": {
     "message": "Provjerite je li lozinka kompromitirana."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Domaćin",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Točno"
@@ -1146,7 +1143,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Uključi\/isključi opcije"
+    "message": "Uključi/isključi opcije"
   },
   "organization": {
     "message": "Organizacija",
@@ -1213,27 +1210,27 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Otključaj s PIN-om"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Postavite Vaš PIN kod za otključavanje Bitwardena. Vaše postavke PIN-a će biti resetirane ako se ikada potpuno odjavite iz aplikacije."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Potreban je PIN kod."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Nevažeći PIN kod."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "Potvrdite PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Vaš trezor je zaključan. Potvrdite Vaš PIN da biste nastavili."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "Zaključaj s glavnom lozinkom kod ponovnog pokretanja preglednika"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Morate odabrati barem jednu zbirku."
   }
 }

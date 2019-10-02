@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Не вдається заповнити пароль на цій сторінці. Скопіюйте і вставте ім'я користувача та\/або пароль."
+    "message": "Не вдається заповнити пароль на цій сторінці. Скопіюйте і вставте ім'я користувача та/або пароль."
   },
   "loggedOut": {
     "message": "Ви вийшли"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Очистити буфер обміну",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Автоматично очищати скопійовані значення з буфера обміну.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Чи повинен Bitwarden зберегти цей пароль?"
@@ -724,7 +724,7 @@
     "message": "Дякуємо за підтримку Bitwarden."
   },
   "premiumPrice": {
-    "message": "Всього лише $PRICE$ \/ за рік!",
+    "message": "Всього лише $PRICE$ / за рік!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Для цього облікового запису увімкнено двохетапну перевірку. Однак, жоден з налаштованих провайдерів двохетапної перевірки не підтримується цим веб-браузером."
   },
   "noTwoStepProviders2": {
-    "message": "Будь ласка, скористайтеся підтримуваним веб-браузером (наприклад, Chrome) та\/або іншими провайдерами, що краще підтримуються веб-браузерами (наприклад, програма авторизації)."
+    "message": "Будь ласка, скористайтеся підтримуваним веб-браузером (наприклад, Chrome) та/або іншими провайдерами, що краще підтримуються веб-браузерами (наприклад, програма авторизації)."
   },
   "twoStepOptions": {
     "message": "Налаштування двохетапної перевірки"
@@ -1039,10 +1039,10 @@
     "message": "Адреса 3"
   },
   "cityTown": {
-    "message": "Місто \/ Селище"
+    "message": "Місто / Селище"
   },
   "stateProvince": {
-    "message": "Штат \/ Область"
+    "message": "Штат / Область"
   },
   "zipPostalCode": {
     "message": "Поштовий індекс"
@@ -1102,9 +1102,6 @@
     "message": "Стерти",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Завершіть запит двохетапної перевірки на новій вкладці."
-  },
   "checkPassword": {
     "message": "Перевірити чи пароль було викрито."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Вузол",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Точно"

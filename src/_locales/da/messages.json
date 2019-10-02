@@ -279,7 +279,7 @@
     "message": "Hjemmeside"
   },
   "toggleVisibility": {
-    "message": "Slå synlighed til\/fra"
+    "message": "Slå synlighed til/fra"
   },
   "manage": {
     "message": "Håndtér"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Ryd udklipsholder",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Fjern automatisk kopierede data fra din udklipsholder.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Skal Bitwarden huske denne adgangskode for dig?"
@@ -724,7 +724,7 @@
     "message": "Tak fordi du støtter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Alt dette for kun $PRICE$ \/år!",
+    "message": "Alt dette for kun $PRICE$ /år!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Denne konto har to-trins login aktiveret, men ingen af de konfigurerede to-trins udbydere understøttes af denne webbrowser."
   },
   "noTwoStepProviders2": {
-    "message": "Du skal bruge en understøttet webbrowser (såsom Chrome) og\/eller tilføje ekstra udbydere, der understøttes bedre på tværs af webbrowsere (f.eks. en autentificering app)."
+    "message": "Du skal bruge en understøttet webbrowser (såsom Chrome) og/eller tilføje ekstra udbydere, der understøttes bedre på tværs af webbrowsere (f.eks. en autentificering app)."
   },
   "twoStepOptions": {
     "message": "To-trins login muligheder"
@@ -1102,9 +1102,6 @@
     "message": "Ryd",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Fuldfør din to-trins loginanmodning ved hjælp af den nye fane."
-  },
   "checkPassword": {
     "message": "Undersøg om adgangskoden er blevet afsløret."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Vært",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Nøjagtig"

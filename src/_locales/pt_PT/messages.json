@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Limpar área de transferência",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Limpar automaticamente valores copiados da sua área de transferência.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Deve o Bitwarden memorizar esta palavra-passe para si?"
@@ -724,7 +724,7 @@
     "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tudo por apenas $PRICE$ \/ano!",
+    "message": "Tudo por apenas $PRICE$ /ano!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Esta conta tem o início de sessão de dois passos ativado, no entanto, nenhum dos provedores de início de sessão de dois passos configurados são suportados por este navegador web."
   },
   "noTwoStepProviders2": {
-    "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e\/ou adicione provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicação de autenticador)."
+    "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e/ou adicione provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicação de autenticador)."
   },
   "twoStepOptions": {
     "message": "Opções de início de sessão de dois passos"
@@ -1039,10 +1039,10 @@
     "message": "Endereço 3"
   },
   "cityTown": {
-    "message": "Cidade \/ localidade"
+    "message": "Cidade / localidade"
   },
   "stateProvince": {
-    "message": "Estado \/ província"
+    "message": "Estado / província"
   },
   "zipPostalCode": {
     "message": "Código postal"
@@ -1102,9 +1102,6 @@
     "message": "Limpar",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Complete o seu pedido de início de sessão de dois passos utilizando o novo separador."
-  },
   "checkPassword": {
     "message": "Verifica se a palavra-passe foi exposta."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Servidor",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exato"

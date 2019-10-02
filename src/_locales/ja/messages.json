@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "クリップボードの消去",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "選択した時間が経過した後、自動的にクリップボードを消去します。",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "このパスワードを Bitwarden に保存しますか？"
@@ -724,7 +724,7 @@
     "message": "Bitwarden を支援いただき、ありがとうございます。"
   },
   "premiumPrice": {
-    "message": "全部でなんと$PRICE$\/年だけ！",
+    "message": "全部でなんと$PRICE$/年だけ！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1102,9 +1102,6 @@
     "message": "消去する",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "新しいタブで2段階認証ログイン要求を完了してください。"
-  },
   "checkPassword": {
     "message": "パスワードが漏洩していないか確認する"
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "ホスト",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "完全一致"

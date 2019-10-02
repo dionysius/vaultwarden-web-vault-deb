@@ -279,7 +279,7 @@
     "message": "Trang web"
   },
   "toggleVisibility": {
-    "message": "Bật\/tắt khả năng hiển thị"
+    "message": "Bật/tắt khả năng hiển thị"
   },
   "manage": {
     "message": "Quản lý"
@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Tự động điền thông tin đăng nhập trong hoạt động trên trang này. Bạn có thể thực hiện thủ công bằng cách sao chép\/dán thông tin đăng nhập."
+    "message": "Tự động điền thông tin đăng nhập trong hoạt động trên trang này. Bạn có thể thực hiện thủ công bằng cách sao chép/dán thông tin đăng nhập."
   },
   "loggedOut": {
     "message": "Đăng xuất"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Clear Clipboard",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automatically clear copied values from your clipboard.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Bạn có cần Bitwarden nhớ giúp bạn mật khẩu này không?"
@@ -724,7 +724,7 @@
     "message": "Cảm ơn bạn đã hỗ trợ Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tất cả chỉ với $PRICE$ \/năm!",
+    "message": "Tất cả chỉ với $PRICE$ /năm!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Tài khoản này đã kích hoạt xác thực hai lớp, tuy nhiên, trình duyệt này không hỗ trợ cấu hình dịch vụ xác thực hai lớp đang sử dụng."
   },
   "noTwoStepProviders2": {
-    "message": "Vui lòng sử dụng trình duyệt web được hỗ trợ (chẳng hạn như Chrome) và\/hoặc thêm dịch vụ bổ sung được hỗ trợ tốt hơn trên các trình duyệt web (chẳng hạn như một ứng dụng xác thực)."
+    "message": "Vui lòng sử dụng trình duyệt web được hỗ trợ (chẳng hạn như Chrome) và/hoặc thêm dịch vụ bổ sung được hỗ trợ tốt hơn trên các trình duyệt web (chẳng hạn như một ứng dụng xác thực)."
   },
   "twoStepOptions": {
     "message": "Tùy chọn xác thực hai lớp"
@@ -907,7 +907,7 @@
     "message": "Ẩn"
   },
   "cfTypeBoolean": {
-    "message": "Đúng\/Sai"
+    "message": "Đúng/Sai"
   },
   "popup2faCloseMessage": {
     "message": "Nhấp bên ngoài popup để xem mã xác thực trong email của bạn sẽ làm cho popup này đóng lại. Bạn có muốn mở popup này trong một cửa sổ mới để nó không bị đóng?"
@@ -1039,10 +1039,10 @@
     "message": "Địa chỉ 3"
   },
   "cityTown": {
-    "message": "Quận\/Huyện\/Thị trấn"
+    "message": "Quận/Huyện/Thị trấn"
   },
   "stateProvince": {
-    "message": "Tỉnh\/Thành Phố"
+    "message": "Tỉnh/Thành Phố"
   },
   "zipPostalCode": {
     "message": "Mã bưu chính"
@@ -1102,9 +1102,6 @@
     "message": "Xoá",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Hoàn tất yêu cầu đăng nhập hai bước của bạn bằng cách sử dụng tab mới."
-  },
   "checkPassword": {
     "message": "Kiểm tra xem mật khẩu có bị lộ không."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Máy chủ",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Chính xác"
@@ -1146,7 +1143,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Bật\/tắt tùy chọn"
+    "message": "Bật/tắt tùy chọn"
   },
   "organization": {
     "message": "Tổ chức",

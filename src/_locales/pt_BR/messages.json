@@ -212,7 +212,7 @@
     "message": "Separador de Palavra"
   },
   "capitalize": {
-    "message": "Letras Iniciais em Maiúsculas",
+    "message": "Iniciais em Maiúsculas",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Limpar Área de Transferência",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Limpar automaticamente os valores copiados da sua área de transferência.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "O Bitwarden deve lembrar esta senha para você?"
@@ -724,7 +724,7 @@
     "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tudo por apenas %price% \/ano!",
+    "message": "Tudo por apenas %price% /ano!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Esta conta tem a verificação em duas etapas ativado, no entanto, nenhum dos provedores de verificação em duas etapas configurados são suportados por este navegador web."
   },
   "noTwoStepProviders2": {
-    "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e\/ou inclua provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
+    "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e/ou inclua provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
   },
   "twoStepOptions": {
     "message": "Opções de Login em Duas Etapas"
@@ -1039,13 +1039,13 @@
     "message": "Endereço 3"
   },
   "cityTown": {
-    "message": "Cidade \/ Localidade"
+    "message": "Cidade / Localidade"
   },
   "stateProvince": {
-    "message": "Estado \/ Província"
+    "message": "Estado / Província"
   },
   "zipPostalCode": {
-    "message": "CEP \/ Código Postal"
+    "message": "CEP / Código Postal"
   },
   "country": {
     "message": "País"
@@ -1102,9 +1102,6 @@
     "message": "Limpar",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Complete o seu pedido de início de sessão em duas etapas utilizando a nova aba."
-  },
   "checkPassword": {
     "message": "Verifique se a senha foi exposta."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Servidor",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exato"

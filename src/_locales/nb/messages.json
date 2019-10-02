@@ -212,11 +212,11 @@
     "message": "Ordadskiller"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Stor forbokstav",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Inkluder nummer"
   },
   "minNumbers": {
     "message": "Minst antall numre"
@@ -306,7 +306,7 @@
     "message": "Lås opp"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Logget inn som $EMAIL$ på $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Tøm utklippstavlen",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Slett automatisk kopierte verdier fra utklippstavlen.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Skal Bitwarden huske på dette passordet for deg?"
@@ -570,7 +570,7 @@
     "message": "Sammenhengsmeny-alternativer sørger for rask tilgang til passordgenerering og innlogginger for nettstedet i din nåværende fane."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Standard URI-samsvarsgjenkjenning",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -724,7 +724,7 @@
     "message": "Takk for at du støtter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Og alt det for %price%\/år!",
+    "message": "Og alt det for %price%/år!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Denne kontoen har aktiver 2-trinnsinnlogging, men ingen av de oppsatte 2-trinnsleverandørene er støttet av denne nettleseren."
   },
   "noTwoStepProviders2": {
-    "message": "Vennligst bruk en støttet nettleser (f.eks. Chrome) og\/eller legg til flere leverandører som er bedre støttet mellom flere nettlesere (slik som en autentiseringsapp)."
+    "message": "Vennligst bruk en støttet nettleser (f.eks. Chrome) og/eller legg til flere leverandører som er bedre støttet mellom flere nettlesere (slik som en autentiseringsapp)."
   },
   "twoStepOptions": {
     "message": "2-trinnsinnloggingsalternativer"
@@ -898,7 +898,7 @@
     "message": "Nytt egendefinert felt"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Dra for å sortere"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -913,7 +913,7 @@
     "message": "Å klikke utenfor dette oppsprettsvinduet for å sjekke E-postinnboksen din for en verifiseringskoden, vil lukke denne oppspretten. Vil du åpne oppsprettet i et nytt vindu sånn at den ikke lukkes?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Denne nettleseren kan ikke behandle U2F-forespørsler i dette popup-vinduet. Vil du åpne denne popupen i et nytt vindu, slik at du kan logge deg på med U2F?"
   },
   "disableFavicon": {
     "message": "Skru av nettstedsikoner"
@@ -1039,10 +1039,10 @@
     "message": "Adresse 3"
   },
   "cityTown": {
-    "message": "By \/ Tettsted"
+    "message": "By / Tettsted"
   },
   "stateProvince": {
-    "message": "Fylke \/ Region"
+    "message": "Fylke / Region"
   },
   "zipPostalCode": {
     "message": "Postnummer"
@@ -1102,9 +1102,6 @@
     "message": "Tøm",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Fullfør din 2-trinnsinnloggingsforespørsel i den nye fanen."
-  },
   "checkPassword": {
     "message": "Sjekk om passordet har blitt utsatt."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Vert",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Nøyaktig"
@@ -1234,6 +1231,6 @@
     "message": "Lås med hovedpassord når du starter nettleseren på nytt"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Du må velge minst én samling."
   }
 }

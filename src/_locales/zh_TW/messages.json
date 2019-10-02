@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "清除剪貼簿",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "自動清除剪貼簿中複製的值。",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "希望 Bitwarden 幫您儲存這個密碼嗎？"
@@ -913,7 +913,7 @@
     "message": "如果您點選彈出式視窗外的任意區域，將導致彈出式視窗關閉。您想在新視窗中開啟此彈出式視窗，以讓它不關閉嗎？"
   },
   "popupU2fCloseMessage": {
-    "message": "此瀏覽器不能在此彈出視窗處理 U2F 請求。是否在新視窗開啟此對話框，以讓你能夠使用 U2F 登入？"
+    "message": "此瀏覽器不能在彈出式視窗中處理 U2F 要求。是否在新視窗開啟此對話方塊，以便您能夠使用 U2F 登入？"
   },
   "disableFavicon": {
     "message": "停用網站圖示顯示功能"
@@ -1039,10 +1039,10 @@
     "message": "地址 3"
   },
   "cityTown": {
-    "message": "市\/鎮"
+    "message": "市/鎮"
   },
   "stateProvince": {
-    "message": "州\/省"
+    "message": "州/省"
   },
   "zipPostalCode": {
     "message": "郵遞區號"
@@ -1102,9 +1102,6 @@
     "message": "清除",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "使用新分頁完成您的兩步驟登入要求。"
-  },
   "checkPassword": {
     "message": "檢查密碼是否已外洩。"
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "主機",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "完全相符"

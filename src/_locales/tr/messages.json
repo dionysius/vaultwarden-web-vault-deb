@@ -212,11 +212,11 @@
     "message": "Kelime Ayracı"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "İlk harfi büyük yap",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Sayı Ekle"
   },
   "minNumbers": {
     "message": "En Az Rakam"
@@ -279,7 +279,7 @@
     "message": "Websitesi"
   },
   "toggleVisibility": {
-    "message": "Görünürlüğünü aç\/kapat"
+    "message": "Görünürlüğünü aç/kapat"
   },
   "manage": {
     "message": "Yönet"
@@ -306,7 +306,7 @@
     "message": "Kilidi Aç"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$HOSTNAME$ 'a $EMAIL$ olarak giriş yapıldı.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Bu sayfada seçilen giriş bilgileri otomatik doldurulamıyor. Kullanıcı adınızı kopyala\/yapıştırın ve ya parolanızı kopyala\/yapıştırın."
+    "message": "Bu sayfada seçilen giriş bilgileri otomatik doldurulamıyor. Kullanıcı adınızı kopyala/yapıştırın ve ya parolanızı kopyala/yapıştırın."
   },
   "loggedOut": {
     "message": "Çıkış yapıldı"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Panoyu Temizle",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Panodan kopyalanan değerleri otomatik olarak temizle.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Bitwarden bu parolayı sizin için hatırlamalı mı?"
@@ -574,7 +574,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Otomatik doldurma gibi eylemler gerçekleştirirken oturum açma işlemleri için URI eşleme algılamasının varsayılan biçimini seçiniz."
   },
   "theme": {
     "message": "Tema"
@@ -724,7 +724,7 @@
     "message": "Bitwarden'ı desteklediğiniz için teşekkür ederiz."
   },
   "premiumPrice": {
-    "message": "Bunların hepsi sadece %price% \/yıl!",
+    "message": "Bunların hepsi sadece %price% /yıl!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -898,7 +898,7 @@
     "message": "Yeni Özel Alan"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Sıralamak için sürükleyin"
   },
   "cfTypeText": {
     "message": "Metin"
@@ -913,7 +913,7 @@
     "message": "Onay kodunuzu alacağınız e-postanızı kontrol etmek için açılan pencerenin dışına tıklamanız bu açılır pencerenin kapanmasına neden olacaktır. Bu açılır pencereyi kapatmamak için yeni bir pencerede açmak istiyor musunuz?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Bu tarayıcı bu açılır pencerede U2F isteklerini işleyemez. U2F kullanarak giriş yapmak için bu açılır pencereyi yeni bir pencerede açmak ister misiniz?"
   },
   "disableFavicon": {
     "message": "Site simgelerini devre sışı bırak"
@@ -1039,10 +1039,10 @@
     "message": "Adres 3"
   },
   "cityTown": {
-    "message": "Kent \/ Şehir"
+    "message": "Kent / Şehir"
   },
   "stateProvince": {
-    "message": "Eyalet \/ İl"
+    "message": "Eyalet / İl"
   },
   "zipPostalCode": {
     "message": "Posta Kodu"
@@ -1102,9 +1102,6 @@
     "message": "Temizle",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Yeni sekmeyi kullanarak iki adımlı giriş talebinizi tamamlayın."
-  },
   "checkPassword": {
     "message": "Parolanız herhangi bir saldırı sonucu açığa çıkmış mı kontrol edin."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Sunucu alanadı",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Tam"
@@ -1146,7 +1143,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Aç\/Kapa Seçenekleri"
+    "message": "Aç/Kapa Seçenekleri"
   },
   "organization": {
     "message": "Kuruluş",
@@ -1234,6 +1231,6 @@
     "message": "Tarayıcı yeniden başlatıldığında ana şifre ile kilitle"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "En az bir koleksiyon seçmelisiniz."
   }
 }

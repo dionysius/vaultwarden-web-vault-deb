@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Hapus Clipboard",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Secara otomatis menghapus nilai yang disalin dari clipboard Anda.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Haruskah Bitwarden mengingat sandi ini untuk Anda?"
@@ -724,7 +724,7 @@
     "message": "Terima kasih telah mendukung Bitwarden."
   },
   "premiumPrice": {
-    "message": "Semua itu hanya $PRICE$\/tahun!",
+    "message": "Semua itu hanya $PRICE$/tahun!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Akun ini mengaktifkan info masuk dua langkah, namun, tidak satupun dari penyedia dua langkah yang dikonfigurasi didukung oleh peramban web ini."
   },
   "noTwoStepProviders2": {
-    "message": "Silakan gunakan peramban web yang didukung (seperti Chrome) dan\/atau tambahkan penyedia tambahan yang didukung di semua peramban web (seperti aplikasi autentikasi)."
+    "message": "Silakan gunakan peramban web yang didukung (seperti Chrome) dan/atau tambahkan penyedia tambahan yang didukung di semua peramban web (seperti aplikasi autentikasi)."
   },
   "twoStepOptions": {
     "message": "Pilihan Info Masuk Dua Langkah"
@@ -1039,10 +1039,10 @@
     "message": "Alamat 3"
   },
   "cityTown": {
-    "message": "Kota \/ Kabupaten"
+    "message": "Kota / Kabupaten"
   },
   "stateProvince": {
-    "message": "Negara Bagian \/ Provinsi"
+    "message": "Negara Bagian / Provinsi"
   },
   "zipPostalCode": {
     "message": "Kode Pos"
@@ -1102,9 +1102,6 @@
     "message": "Bersihkan",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Selesaikan permintaan masuk dua langkah Anda menggunakan tab baru."
-  },
   "checkPassword": {
     "message": "Periksalah jika kata sandi telah terpapar."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Host",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Tepat"

@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "无法在此页面自动填写所选择的网站。请手工 复制\/粘贴 您的用户名、密码。"
+    "message": "无法在此页面自动填写所选择的网站。请手工 复制/粘贴 您的用户名、密码。"
   },
   "loggedOut": {
     "message": "已登出"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "清除剪贴板",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "自动清除复制到剪贴板的值。",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "希望 Bitwarden 为您保存这个密码吗？"
@@ -724,7 +724,7 @@
     "message": "感谢您支持 Bitwarden。"
   },
   "premiumPrice": {
-    "message": "只需 %price% \/每年！",
+    "message": "只需 %price% /每年！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "此账户已启用两步登录，但此浏览器不支持任何已配置的两步登录方法。"
   },
   "noTwoStepProviders2": {
-    "message": "请使用支持的网页浏览器（例如 Chrome）和\/或添加其他支持更广泛的验证方法（例如验证器应用）。"
+    "message": "请使用支持的网页浏览器（例如 Chrome）和/或添加其他支持更广泛的验证方法（例如验证器应用）。"
   },
   "twoStepOptions": {
     "message": "两步登录选项"
@@ -838,7 +838,7 @@
     "message": "自我托管环境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己配置、托管的 Bitwarden 环境的基础 URL。"
+    "message": "指定一个基础 URL，由您自己配置、托管 Bitwarden 环境。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -1039,13 +1039,13 @@
     "message": "地址 3"
   },
   "cityTown": {
-    "message": "市 \/ 镇"
+    "message": "市 / 镇"
   },
   "stateProvince": {
-    "message": "州 \/ 省"
+    "message": "州 / 省"
   },
   "zipPostalCode": {
-    "message": "邮编 \/ 邮政代码"
+    "message": "邮编 / 邮政代码"
   },
   "country": {
     "message": "国家"
@@ -1102,9 +1102,6 @@
     "message": "清除",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "使用新的标签页完成您的两步登录请求。"
-  },
   "checkPassword": {
     "message": "检查密码是否已经泄露。"
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "主机",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "精确"

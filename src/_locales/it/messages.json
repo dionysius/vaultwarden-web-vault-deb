@@ -279,7 +279,7 @@
     "message": "Sito"
   },
   "toggleVisibility": {
-    "message": "Mostra\/Nascondi"
+    "message": "Mostra/Nascondi"
   },
   "manage": {
     "message": "Gestisci"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Cancella appunti",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Cancella automaticamente dagli appunti i valori copiati.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Vuoi che Bitwarden ricordi questa password per te?"
@@ -790,7 +790,7 @@
     "message": "Questo account ha abilitato il login in due passaggi, ma nessuno dei provider configurati è supportato da questo browser web."
   },
   "noTwoStepProviders2": {
-    "message": "Utilizzare un browser web supportato (come Chrome) e\/o aggiungere altri provider che sono supportati meglio da tutti i browser web (ad esempio un'app di autenticazione)."
+    "message": "Utilizzare un browser web supportato (come Chrome) e/o aggiungere altri provider che sono supportati meglio da tutti i browser web (ad esempio un'app di autenticazione)."
   },
   "twoStepOptions": {
     "message": "Opzioni di login in due passaggi"
@@ -1012,7 +1012,7 @@
     "message": "Azienda"
   },
   "ssn": {
-    "message": "Numero di previdenza sociale\/Codice Fiscale"
+    "message": "Numero di previdenza sociale/Codice Fiscale"
   },
   "passportNumber": {
     "message": "Numero del passaporto"
@@ -1042,7 +1042,7 @@
     "message": "Città o comune"
   },
   "stateProvince": {
-    "message": "Stato \/ Provincia"
+    "message": "Stato / Provincia"
   },
   "zipPostalCode": {
     "message": "CAP"
@@ -1102,9 +1102,6 @@
     "message": "Elimina tutto",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Completa la richiesta di accesso in due passaggi utilizzando la nuova scheda."
-  },
   "checkPassword": {
     "message": "Verifica se la password è stata esposta."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Host",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Esatto"
@@ -1146,7 +1143,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Attiva\/Disattiva opzioni"
+    "message": "Attiva/Disattiva opzioni"
   },
   "organization": {
     "message": "Società",

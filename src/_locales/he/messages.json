@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "נקה לוח העתקות",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "נקה אוטומטית ערכים שהועתקו ללוח ההעתקות (clipboard).",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "האם ברצונך שתוכנת Bitwarden תזכור סיסמה זו עבורך?"
@@ -700,10 +700,10 @@
     "message": "אפשרויות כניסה דו שלבית מתקדמות כמו YubiKey, FIDO U2F, וגם Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "היגיינת סיסמאות, מצב בריאות החשבון, ופריצות מפורסמות ידווחו ישירות לכספת שלך."
+    "message": "היגיינת סיסמאות, מצב בריאות החשבון, ודיווחים מעודכנים על פרצות חדשות בכדי לשמור על הכספת שלך בטוחה."
   },
   "ppremiumSignUpTotp": {
-    "message": "קוד אימות TOTP לייצור סיסמאות עבור כניסה דו-שלבית (2FA) בכספת שלך."
+    "message": "מייצר קודי אימות TOTP עבור כניסות דו-שלביות (2FA) בכספת שלך."
   },
   "ppremiumSignUpSupport": {
     "message": "קדימות בתמיכה הטכנית."
@@ -1102,9 +1102,6 @@
     "message": "נקה",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "השלם את הכניסה הדו-שלבית בטאב חדש."
-  },
   "checkPassword": {
     "message": "בדוק אם הסיסמה נחשפה."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "שרת",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "מדויק"

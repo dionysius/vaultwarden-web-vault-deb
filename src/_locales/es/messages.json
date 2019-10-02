@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "No se ha podido autorellenar la entrada seleccionada en esta página. Copia\/pega tu usuario y\/o contraseña."
+    "message": "No se ha podido autorellenar la entrada seleccionada en esta página. Copia/pega tu usuario y/o contraseña."
   },
   "loggedOut": {
     "message": "Sesión terminada"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Limpiar el Portapapeles",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Borrar automáticamente los valores copiados de su portapapeles.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "¿Debería Bitwarden recordar esta contraseña por ti?"
@@ -724,7 +724,7 @@
     "message": "Gracias por apoyar el desarrollo de Bitwarden."
   },
   "premiumPrice": {
-    "message": "¡Todo por solo %price% \/año!",
+    "message": "¡Todo por solo %price% /año!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Esta cuenta tiene autenticación en dos pasos habilitado, pero ninguno de lo métodos configurados es soportado por este navegador web."
   },
   "noTwoStepProviders2": {
-    "message": "Por favor, utiliza un navegador soportado (como Chrome) y\/o añade métodos de autenticación adicionales que tengan mejor soporte en diferentes navegadores web (como una aplicación de autenticación)."
+    "message": "Por favor, utiliza un navegador soportado (como Chrome) y/o añade métodos de autenticación adicionales que tengan mejor soporte en diferentes navegadores web (como una aplicación de autenticación)."
   },
   "twoStepOptions": {
     "message": "Opciones de la autenticación en dos pasos"
@@ -1039,10 +1039,10 @@
     "message": "Dirección 3"
   },
   "cityTown": {
-    "message": "Ciudad \/ Pueblo"
+    "message": "Ciudad / Pueblo"
   },
   "stateProvince": {
-    "message": "Estado \/ Provincia"
+    "message": "Estado / Provincia"
   },
   "zipPostalCode": {
     "message": "Código postal"
@@ -1102,14 +1102,11 @@
     "message": "Limpiar",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Completa tu solicitud de identificación en dos pasos usando la nueva pestaña."
-  },
   "checkPassword": {
     "message": "Comprobar si la contraseña está comprometida."
   },
   "passwordExposed": {
-    "message": "Esta contraseña fue encontrada $VALUE$ vez\/veces en filtraciones de datos. Deberías cambiarla.",
+    "message": "Esta contraseña fue encontrada $VALUE$ vez/veces en filtraciones de datos. Deberías cambiarla.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Servidor",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exacta"

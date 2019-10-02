@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Lõikelaua sisu kustutamine",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Kustutab automaatselt lõikelauale kopeeritud sisu.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Kas bitwarden peaks seda parooli meeles pidama?"
@@ -790,7 +790,7 @@
     "message": "Sellel kontol on aktiveeritud kaheastmeline kinnitus. Siiski ei toeta konkreetne brauser ühtegi aktiveeritud kaheastmelise kinnitamise teenust."
   },
   "noTwoStepProviders2": {
-    "message": "Palun kasuta ühilduvat brauserit (näiteks Chrome) ja\/või lisa uus kaheastmelise teenuse pakkuja, mis töötab rohkemates brauserites (näiteks mõni autentiseerimise rakendus)."
+    "message": "Palun kasuta ühilduvat brauserit (näiteks Chrome) ja/või lisa uus kaheastmelise teenuse pakkuja, mis töötab rohkemates brauserites (näiteks mõni autentiseerimise rakendus)."
   },
   "twoStepOptions": {
     "message": "Kaheastmelise sisselogimise valikud"
@@ -1039,10 +1039,10 @@
     "message": "Aadress 3"
   },
   "cityTown": {
-    "message": "Linn \/ asula"
+    "message": "Linn / asula"
   },
   "stateProvince": {
-    "message": "Maakond \/ vald"
+    "message": "Maakond / vald"
   },
   "zipPostalCode": {
     "message": "Postiindeks"
@@ -1102,9 +1102,6 @@
     "message": "Tühjenda",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Kasuta uut akent ja vii oma kaheastmeline sisselogimine lõpuni."
-  },
   "checkPassword": {
     "message": "Vaata, kas parool on lekkinud."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Host",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Täpne"

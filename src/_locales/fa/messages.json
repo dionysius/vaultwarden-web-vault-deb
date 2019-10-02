@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "پاک‌سازی کلیپ‌ برد",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "مقدار های کپی شده را به صورت خودکار از کلیپ برد خود پاک کنید.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "آیا Bitwarden باید این رمز عبور را برایتان بخاطر بسپرد؟"
@@ -790,7 +790,7 @@
     "message": "این حساب با سیستم دو مرحله ورود فعال است، با این حال، هیچ یک از ارائه دهندگان دو مرحله ای پیکربندی شده توسط این مرورگر وب پشتیبانی نمی شوند."
   },
   "noTwoStepProviders2": {
-    "message": "لطفا از یک مرورگر وب پشتیبانی شده (مانند کروم) استفاده کنید و \/ یا ارائه دهندگان اضافی را که در مرورگر وب بهتر پشتیانی میکنند را اضافه کنید (مانند یک برنامه تأیید کننده هویت)."
+    "message": "لطفا از یک مرورگر وب پشتیبانی شده (مانند کروم) استفاده کنید و / یا ارائه دهندگان اضافی را که در مرورگر وب بهتر پشتیانی میکنند را اضافه کنید (مانند یک برنامه تأیید کننده هویت)."
   },
   "twoStepOptions": {
     "message": "گزینه های ورود دو مرحله ای"
@@ -1039,10 +1039,10 @@
     "message": "نشانی ۳"
   },
   "cityTown": {
-    "message": "شهر \/ شهرک"
+    "message": "شهر / شهرک"
   },
   "stateProvince": {
-    "message": "ایالت \/ استان"
+    "message": "ایالت / استان"
   },
   "zipPostalCode": {
     "message": "کد پستی"
@@ -1102,9 +1102,6 @@
     "message": "پاک کردن",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "درخواست ورود دو مرحله ای خود را با استفاده از برگه جدید تکمیل کنید."
-  },
   "checkPassword": {
     "message": "بررسی کنید که آیا رمز عبور افشا شده است."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "میزبان",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "دقیق"

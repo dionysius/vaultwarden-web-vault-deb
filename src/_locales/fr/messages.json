@@ -279,7 +279,7 @@
     "message": "Site web"
   },
   "toggleVisibility": {
-    "message": "Afficher\/Masquer"
+    "message": "Afficher/Masquer"
   },
   "manage": {
     "message": "Gérer"
@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Impossible de remplir automatiquement le site sélectionné sur cette page. Copiez\/collez plutôt votre nom d'utilisateur et\/ou votre mot de passe."
+    "message": "Impossible de remplir automatiquement le site sélectionné sur cette page. Copiez/collez plutôt votre nom d'utilisateur et/ou votre mot de passe."
   },
   "loggedOut": {
     "message": "Déconnecté"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Effacer le presse-papiers",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Effacer automatiquement de votre presse-papiers les valeurs copiées.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Est-ce que Bitwarden doit se souvenir de ce mot de passe pour vous ?"
@@ -703,7 +703,7 @@
     "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
   },
   "ppremiumSignUpTotp": {
-    "message": "La génération d'un code de vérification TOTP (double facteurs \/ 2FA) pour les identifiants de votre coffre."
+    "message": "La génération d'un code de vérification TOTP (double facteurs / 2FA) pour les identifiants de votre coffre."
   },
   "ppremiumSignUpSupport": {
     "message": "Support client prioritaire."
@@ -724,7 +724,7 @@
     "message": "Merci de supporter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tout pour seulement $PRICE$ \/an !",
+    "message": "Tout pour seulement $PRICE$ /an !",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Ce compte dispose d'une identification en deux étapes. Cependant, aucun service d'identification en deux étapes n'est supporté par ce navigateur web."
   },
   "noTwoStepProviders2": {
-    "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et\/ou d'ajouter des services additionnels d'identification en deux étapes qui sont mieux supportés par les navigateurs web (comme par exemple une application d'authentification)."
+    "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et/ou d'ajouter des services additionnels d'identification en deux étapes qui sont mieux supportés par les navigateurs web (comme par exemple une application d'authentification)."
   },
   "twoStepOptions": {
     "message": "Options d'identification en deux étapes"
@@ -1042,7 +1042,7 @@
     "message": "Ville"
   },
   "stateProvince": {
-    "message": "État \/ Région"
+    "message": "État / Région"
   },
   "zipPostalCode": {
     "message": "Code postal"
@@ -1102,9 +1102,6 @@
     "message": "Effacer",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Terminez votre demande d'identification en deux étapes en utilisant le nouvel onglet."
-  },
   "checkPassword": {
     "message": "Vérifier si le mot de passe a été exposé."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Hôte",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
@@ -1146,7 +1143,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Afficher\/masquer les options"
+    "message": "Afficher/masquer les options"
   },
   "organization": {
     "message": "Organisation",

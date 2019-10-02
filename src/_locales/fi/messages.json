@@ -279,7 +279,7 @@
     "message": "Sivusto"
   },
   "toggleVisibility": {
-    "message": "Näytä\/piilota"
+    "message": "Näytä/piilota"
   },
   "manage": {
     "message": "Hallinta"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Tyhjennä leikepöytä",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Poista kopioidut tekstit leikepöydältä automaattisesti.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Haluatko, että Bitwarden muistaa tämän salasanan puolestasi?"
@@ -724,7 +724,7 @@
     "message": "Kiitos, että tuet Bitwardenin toimintaa."
   },
   "premiumPrice": {
-    "message": "Kaikki nämä vain $PRICE$ \/ vuosi!",
+    "message": "Kaikki nämä vain $PRICE$ / vuosi!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Tällä tilillä on kaksivaiheinen kirjautuminen käytössä, mutta tämä selain ei tue yhtäkään määritetyistä kaksivaihekirjautumisen menetelmistä."
   },
   "noTwoStepProviders2": {
-    "message": "Käytä tuettua selainta (kuten Chromea) ja\/tai ota käyttöön paremmin tuettu todennusmenetelmä (kuten todennussovellus)."
+    "message": "Käytä tuettua selainta (kuten Chromea) ja/tai ota käyttöön paremmin tuettu todennusmenetelmä (kuten todennussovellus)."
   },
   "twoStepOptions": {
     "message": "Kaksivaiheisen kirjautumisen asetukset"
@@ -1042,7 +1042,7 @@
     "message": "Paikkakunta"
   },
   "stateProvince": {
-    "message": "Osavaltio\/maakunta"
+    "message": "Osavaltio/maakunta"
   },
   "zipPostalCode": {
     "message": "Postinumero"
@@ -1102,9 +1102,6 @@
     "message": "Tyhjennä",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Suorita kaksivaihekirjautumisesi loppuun uudella uudellavälilehdellä."
-  },
   "checkPassword": {
     "message": "Tarkista, onko salasana vuotanut."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Osoite",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Täsmälleen…"
@@ -1146,7 +1143,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Näytä\/piilota asetukset"
+    "message": "Näytä/piilota asetukset"
   },
   "organization": {
     "message": "Organisaatio",

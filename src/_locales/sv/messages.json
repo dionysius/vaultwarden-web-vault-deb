@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Kunde inte automatiskt fylla i det valda objektet på den här webbsidan. Klipp\/klistra informationen istället."
+    "message": "Kunde inte automatiskt fylla i det valda objektet på den här webbsidan. Klipp/klistra informationen istället."
   },
   "loggedOut": {
     "message": "Loggade ut"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Rensa urklipp",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Rensa automatiskt kopierade värden från urklipp.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Ska Bitwarden komma ihåg det här lösenordet åt dig?"
@@ -724,7 +724,7 @@
     "message": "Tack för att du stödjer Bitwarden."
   },
   "premiumPrice": {
-    "message": "Allt för endast $PRICE$\/år!",
+    "message": "Allt för endast $PRICE$/år!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Detta konto har tvåstegsverifiering aktiverat, men inget av de aktiverade alternativen stöds av den här webbläsaren."
   },
   "noTwoStepProviders2": {
-    "message": "Vänligen använd en webbläsare som stöds (till exempel Chrome) och\/eller lägg till fler alternativ som stöds bättre över webbläsare (till exempel en autentiseringsapp)."
+    "message": "Vänligen använd en webbläsare som stöds (till exempel Chrome) och/eller lägg till fler alternativ som stöds bättre över webbläsare (till exempel en autentiseringsapp)."
   },
   "twoStepOptions": {
     "message": "Alternativ för tvåstegsverifiering"
@@ -1102,9 +1102,6 @@
     "message": "Rensa",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Slutför din inloggningsförfrågan för tvåstegsverifiering med den nya fliken."
-  },
   "checkPassword": {
     "message": "Kontrollera om lösenord har avslöjats."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Värd",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exakt"

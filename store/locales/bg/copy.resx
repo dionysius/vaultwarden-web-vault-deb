@@ -118,41 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – безплатен управител на пароли</value>
+    <value>Bitwarden — безплатен управител на пароли</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Сигурен и свободен управител на пароли за всички устройства</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
-
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
-
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? Bitwarden makes it easy for you to create, store, and access your passwords.
-
-Bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at Bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.
-
-Bitwarden is 100% open source software. The source code for Bitwarden is hosted on GitHub and everyone is free to review, audit, and contribute to the Bitwarden codebase.</value>
+    <value>Bitwarden е най-лесният и надежден начин да съхранявате регистрации и пароли като ги синхронизирате на всички свои устройства.
+Кражбата на пароли е тежък проблем. Сайтовете в Интернет, програмите и мобилните приложения биват атакувани всеки ден. Пробивите в сигурността са факт и паролите биват откраднати. Ако използвате една и съща парола в много програми или сайтове, злонамерени лица могат лесно да достъпят вашата е-поща, електронно банкиране и други важни регистрации.
+Експертите по сигурността препоръчват да ползвате различна, случайно генерирана парола за всяка отделна регистрация. Как да управлявате всичките тези пароли? Bitwarden ви позволява лесно да ги създавате, съхранявате и ползвате.
+Bitwarden съхранява всички данни в шифриран трезор, който се синхронизира на всички устройства, които ползвате. Шифрирането се извършва преди данните да напуснат устройството ви — така само вие имате достъп до тях. Дори и екипът на Bitwarden не може да прочете данните, дори и да се опита. Данните са защитени чрез AES с 256-битов ключ, контролни суми с добавени случайни данни и удължаване на ключа с PBKDF2 SHA-256.
+Bitwarden е със 100% отворен код! Изходният код е наличен в сайта GitHub и всеки може да го преглежда, извърши одит и даже да допринесе за Bitwarden.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Сигурен и свободен управител на пароли за всички устройства</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>Удобен достъп до трезора, който се синхронизира от всички устройства</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Управление на всички регистрации и пароли чрез защитен трезор</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>Бързо автоматично попълване на данни и пароли във всички сайтове</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Your vault is also conveniently accessible from the right-click menu</value>
+    <value>Трезорът е достъпен и от контекстното меню при щракване с дясното копче на мишката</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Автоматично създаване на силни, сигурни, случайни пароли</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>Надеждно съхраняване на данните чрез шифроване с AES-256</value>
   </data>
 </root>

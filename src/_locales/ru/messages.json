@@ -322,7 +322,7 @@
     "message": "Неверный мастер-пароль"
   },
   "lockOptions": {
-    "message": "Настройки блокировки"
+    "message": "Параметры блокировки"
   },
   "lockNow": {
     "message": "Заблокировать"
@@ -361,7 +361,7 @@
     "message": "4 часа"
   },
   "onLocked": {
-    "message": "При блокировке"
+    "message": "Вместе с компьютером"
   },
   "onRestart": {
     "message": "При перезапуске"
@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Не получается автоматически заполнить выбранный элемент на этой странице. Скопируйте и вставьте логин\/пароль напрямую из своего хранилища."
+    "message": "Не получается автоматически заполнить выбранный элемент на этой странице. Скопируйте и вставьте логин/пароль напрямую из своего хранилища."
   },
   "loggedOut": {
     "message": "Вы вышли из хранилища"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Очистка буфера обмена",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Автоматически очищать скопированные значения в вашем буфере обмена.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Должен ли Bitwarden запомнить этот пароль?"
@@ -724,7 +724,7 @@
     "message": "Благодарим вас за поддержку Bitwarden."
   },
   "premiumPrice": {
-    "message": "Всего лишь $PRICE$ \/в год!",
+    "message": "Всего лишь $PRICE$ /в год!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "У этой учетной записи включена двухфакторная аутентификация, однако ни один из настроенных вариантов не поддерживается этим веб-браузером."
   },
   "noTwoStepProviders2": {
-    "message": "Используйте поддерживаемый веб-браузер (например, Chrome) и\/или добавьте дополнительные варианты аутентификации, которые поддерживаются в веб-браузерах (например, приложение-аутентификатор)."
+    "message": "Используйте поддерживаемый веб-браузер (например, Chrome) и/или добавьте дополнительные варианты аутентификации, которые поддерживаются в веб-браузерах (например, приложение-аутентификатор)."
   },
   "twoStepOptions": {
     "message": "Настройки двухфакторной аутентификации"
@@ -1039,10 +1039,10 @@
     "message": "Строка адреса 3"
   },
   "cityTown": {
-    "message": "Город \/ Поселок"
+    "message": "Город / Поселок"
   },
   "stateProvince": {
-    "message": "Регион \/ Область"
+    "message": "Регион / Область"
   },
   "zipPostalCode": {
     "message": "Почтовый индекс"
@@ -1102,9 +1102,6 @@
     "message": "Очистить",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Завершите двухфакторную аутентификацию на новой вкладке."
-  },
   "checkPassword": {
     "message": "Проверьте, не скомпрометирован ли пароль."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Хост",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Точно"

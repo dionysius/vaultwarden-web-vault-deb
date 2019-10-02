@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
+    "message": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "Logged out"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Clear Clipboard",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automatically clear copied values from your clipboard.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Should bitwarden remember this password for you?"
@@ -724,7 +724,7 @@
     "message": "Thank you for supporting bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just %price% \/year!",
+    "message": "All for just %price% /year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
   },
   "twoStepOptions": {
     "message": "Two-step Login Options"
@@ -1039,13 +1039,13 @@
     "message": "Address 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "City / Town"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "State / Province"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Zip / Postal Code"
   },
   "country": {
     "message": "Country"
@@ -1102,9 +1102,6 @@
     "message": "Clear",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
-  },
   "checkPassword": {
     "message": "Check if password has been exposed."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Host",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"

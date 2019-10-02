@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Die Felder dieser Seite konnten nicht automatisch ausgefüllt werden. Bitte Nutzernamen und\/oder Passwort manuell kopieren."
+    "message": "Die Felder dieser Seite konnten nicht automatisch ausgefüllt werden. Bitte Nutzernamen und/oder Passwort manuell kopieren."
   },
   "loggedOut": {
     "message": "Ausgeloggt"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Zwischenablage leeren",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Kopierten Inhalt automatisch aus der Zwischenablage löschen.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Soll Bitwarden sich dieses Passwort merken?"
@@ -790,7 +790,7 @@
     "message": "Dieses Konto hat eine aktive Zwei-Faktor Authentifizierung, allerdings wird keiner der konfigurierten Zwei-Faktor Anbieter von diesem Browser unterstützt."
   },
   "noTwoStepProviders2": {
-    "message": "Bitte benutze einen unterstützten Browser (z.B. Chrome) und \/ oder füge zusätzliche Anbieter hinzu, die von mehr Browsern unterstützt werden (wie eine Authentifizierungs-App)."
+    "message": "Bitte benutze einen unterstützten Browser (z.B. Chrome) und / oder füge zusätzliche Anbieter hinzu, die von mehr Browsern unterstützt werden (wie eine Authentifizierungs-App)."
   },
   "twoStepOptions": {
     "message": "Optionen für Zwei-Faktor Authentifizierung"
@@ -838,7 +838,7 @@
     "message": "Selbstgehostete Umgebung"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Bitte geben Sie die Basis-URL Ihrer vor Ort gehosteten Bitwarden-Installation an."
+    "message": "Bitte geben Sie die Basis-URL Ihrer selbst gehosteten Bitwarden-Installation an."
   },
   "customEnvironment": {
     "message": "Benutzerdefinierte Umgebung"
@@ -868,7 +868,7 @@
     "message": "Die URLs der Umgebung wurden gespeichert."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Aktiviere automatisches ausfüllen beim laden der Seite"
+    "message": "Aktiviere automatisches Ausfüllen beim Laden der Seite"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
@@ -907,7 +907,7 @@
     "message": "Versteckt"
   },
   "cfTypeBoolean": {
-    "message": "Ja\/Nein"
+    "message": "Ja/Nein"
   },
   "popup2faCloseMessage": {
     "message": "Dieses Pop-up Fenster wird geschlossen, wenn du außerhalb des Fensters klickst um in deinen E-Mails nach dem Verifizierungscode zu suchen. Möchtest du, dass dieses Pop-up in einem separaten Fenster geöffnet wird, damit es nicht geschlossen wird?"
@@ -1102,9 +1102,6 @@
     "message": "Löschen",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Schließe deine Zwei-Faktor Authentifizierung im neuen Tab ab."
-  },
   "checkPassword": {
     "message": "Überprüfe ob dein Kennwort kompromittiert ist."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Server",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exakt"

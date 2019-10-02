@@ -77,7 +77,7 @@
     "message": "Skopiuj numer"
   },
   "copySecurityCode": {
-    "message": "Skopiuj kod CVV\/CVC"
+    "message": "Skopiuj kod CVV/CVC"
   },
   "autoFill": {
     "message": "Automatyczne wypełnianie"
@@ -279,7 +279,7 @@
     "message": "Strona"
   },
   "toggleVisibility": {
-    "message": "Pokaż \/ Ukryj"
+    "message": "Pokaż / Ukryj"
   },
   "manage": {
     "message": "Zarządzaj"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Wyczyść schowek",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automatycznie czyść wartości skopiowane ze schowka.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Czy Bitwarden powinien zapisać dla Ciebie to hasło?"
@@ -724,7 +724,7 @@
     "message": "Dziękujemy za wspieranie Bitwarden."
   },
   "premiumPrice": {
-    "message": "Wszystko to jedynie za $PRICE$ \/rok!",
+    "message": "Wszystko to jedynie za $PRICE$ /rok!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Dla tego konta aktywowano dwustopniowe logowanie, jednak ta przeglądarka nie wspiera żadnego ze skonfigurowanych mechanizmów dwustopniowej autoryzacji."
   },
   "noTwoStepProviders2": {
-    "message": "Proszę użyć obsługiwanej przeglądarki (takiej jak Chrome) i\/lub dodać dodatkowych dostawców, którzy są lepiej wspierani przez przeglądarki internetowe (np. aplikacja uwierzytelniająca)."
+    "message": "Proszę użyć obsługiwanej przeglądarki (takiej jak Chrome) i/lub dodać dodatkowych dostawców, którzy są lepiej wspierani przez przeglądarki internetowe (np. aplikacja uwierzytelniająca)."
   },
   "twoStepOptions": {
     "message": "Opcje logowania dwustopniowego"
@@ -1102,9 +1102,6 @@
     "message": "Wyczyść",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Dokończ uwierzytelnianie dwustopniowe używając nowej karty."
-  },
   "checkPassword": {
     "message": "Sprawdź, czy hasło zostało ujawnione."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Nazwa domeny",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Dokładnie"

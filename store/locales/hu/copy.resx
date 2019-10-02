@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – Ingyenes Jelszó Kezelő</value>
+    <value>Bitwarden - Ingyenes jelszókezelő</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Egy biztonságos és ingyenes jelszó kezelő az összes eszközödre</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden a legkönnyebb és legbiztonságosabb módja a bejelentkezéseid és jelszavaid tárolására miközben szinkronba tarja ezeket az összes készülékeden.
+    <value>A Bitwarden a legkönnyebb és legbiztonságosabb módja a bejelentkezések és jelszavak tárolására miközben szinkronba tarja ezeket az összes eszközön.
 
-Jelszó lopás egy komoly probléma. A weboldalak és alkalmazások amiket használsz támadás alatt állnak minden nap. Biztonsági jogsértések történnek és már el is lopták a jelszavaid. Amikor ugyan azt a jelszót használod több weboldalon, alkalmazáson akkor a hekkerek könnyen hozzá férhetnek az e-mailedhez, banki fiókodhoz és egyéb fontos felhasználódhoz.
+A jelszólopás egy komoly probléma. A használt webhelyek és alkalmazások támadás alatt állnak minden nap. Biztonsági jogsértések történnek és ellopják a jelszavakat. Amikor ugyanazt a jelszót használjuk több webhelyen, alkalmazáson, akkor a hackerek könnyen hozzáférhetnek az emailfiókhoz, banki fiókhoz és egyéb fontos bejelentkezéshez
 
-Biztonság szakértők azt javasolják, hogy használj különböző véletlenszerű jelszavakat minden felhasználódhoz. De hogyan tartsd észbe ez az összes jelszót? bitwarden könnyűvé teszi jelszavaid létrehozását, tárolását és elérését.
+A biztonság szakértők azt javasolják, hogy használjunk különböző véletlenszerű jelszavakat minden bejelentkezésnél. De hogyan tartható észben az összes jelszó? A Bitwarden megkönnyíti a jelszavak létrehozását, tárolását és elérését.
 
-bitwarden egy titkosított széfben tárolja az összes bejelentkezésed és szinkronizálja őket az összes eszközödön. Mivel ezek az adatok teljesen titkosítva vannak még mielőtt elhagynák az eszközödet, így csak te tudod elérni őket. Még maga a bitwarden csapata se tudja elolvasni az adataid, még ha akarnák se. Adataid védve vannak AES-256 bites titkosítással, salted hasinggal és PBKDF2 SHA-256-al.</value>
+A Bitwarden egy titkosított széfben tárolja az összes bejelentkezés és szinkronizálja őket az összes eszközön. Mivel ezek az adatok teljesen titkosítva vannak még az eszköz elhagyása előtt, így csak a tulajdonos érheti el ezeket. Még maga a Bitwarden csapata se tudja elolvasni az adatokat, még ha akarnák, akkor sem. Az adatok AES-256 bites titkosítással, egy úgynevezett 'salted hasing' módszerrel és  PBKDF2 SHA-256 titkosítással vannak védve.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Egy biztonságos és ingyenes jelszó kezelő az összes eszközödre</value>

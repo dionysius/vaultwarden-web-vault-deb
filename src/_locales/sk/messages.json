@@ -410,7 +410,7 @@
     }
   },
   "autofillError": {
-    "message": "Na tejto stránke sa nedajú automaticky vyplniť prihlasovacie údaje. Namiesto toho skopírujte\/vložte prihlasovacie údaje manuálne."
+    "message": "Na tejto stránke sa nedajú automaticky vyplniť prihlasovacie údaje. Namiesto toho skopírujte/vložte prihlasovacie údaje manuálne."
   },
   "loggedOut": {
     "message": "Odhlásený"
@@ -536,11 +536,11 @@
   },
   "clearClipboard": {
     "message": "Vymazať schránku",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automaticky vymazať skopírované hodnoty zo schránky.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
     "message": "Má si bitwarden zapamätať toto heslo?"
@@ -724,7 +724,7 @@
     "message": "Ďakujeme, že podporujete bitwarden."
   },
   "premiumPrice": {
-    "message": "Všetko len za %price% \/rok!",
+    "message": "Všetko len za %price% /rok!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -790,7 +790,7 @@
     "message": "Tento účet má povolené dvojstupňové prihlásenie, ale žiadny z nakonfigurovaných poskytovateľov nie je podporovaný týmto prehliadačom."
   },
   "noTwoStepProviders2": {
-    "message": "Prosím, použite podporovaný prehliadač (napríklad Chrome) a\/alebo pridajte iných poskytovateľov, ktorí sú lepšie podporovaní prehliadačmi (ako napríklad overovacia aplikácia)."
+    "message": "Prosím, použite podporovaný prehliadač (napríklad Chrome) a/alebo pridajte iných poskytovateľov, ktorí sú lepšie podporovaní prehliadačmi (ako napríklad overovacia aplikácia)."
   },
   "twoStepOptions": {
     "message": "Možnosti dvojstupňového prihlásenia"
@@ -1102,9 +1102,6 @@
     "message": "Vyčistiť",
     "description": "To clear something out. example: To clear browser history."
   },
-  "twoStepNewWindowMessage": {
-    "message": "Dokončite dvojsrupňové prihlásenie v novej záložke."
-  },
   "checkPassword": {
     "message": "Overiť či došlo k úniku hesla."
   },
@@ -1125,7 +1122,7 @@
   },
   "host": {
     "message": "Hostiteľ",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Presný"
