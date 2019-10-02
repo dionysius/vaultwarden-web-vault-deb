@@ -234,29 +234,6 @@ function distSafariApp(cb, subBuildPath) {
         });
 }
 
-
-function distSafariApp_old(cb) {
-    const buildPath = paths.dist + 'Safari/';
-
-    return del([buildPath + '**/*'])
-        .then(() => safariCopyAssets(paths.safari + '**/*', buildPath))
-        .then(() => safariCopyBuild(paths.build + '**/*', buildPath + 'safari/app'))
-        .then(() => {
-            const proc = child.spawn('xcodebuild', [
-                '-project',
-                buildPath + 'desktop.xcodeproj',
-                '-alltargets',
-                '-configuration',
-                'Release']);
-            stdOutProc(proc);
-            return new Promise((resolve) => proc.on('close', resolve));
-        }).then(() => {
-            return cb;
-        }, () => {
-            return cb;
-        });
-}
-
 function safariCopyAssets(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
