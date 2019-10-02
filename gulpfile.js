@@ -172,6 +172,10 @@ function distSafariMas(cb) {
     return distSafariApp(cb, 'mas');
 }
 
+function distSafariMasDev(cb) {
+    return distSafariApp(cb, 'masdev');
+}
+
 function distSafariDmg(cb) {
     return distSafariApp(cb, 'dmg');
 }
@@ -181,25 +185,27 @@ function distSafariApp(cb, subBuildPath) {
     const builtAppexPath = buildPath + 'build/Release/safari.appex';
     const builtAppexFrameworkPath = buildPath + 'build/Release/safari.appex/Contents/Frameworks/';
     const entitlementsPath = paths.safari + 'safari/safari.entitlements';
-    var args = subBuildPath === 'mas' ?
-        [
+    var args = [
+        '--verbose',
+        '--force',
+        '-o',
+        'runtime',
+        '--sign',
+        'Developer ID Application: 8bit Solutions LLC',
+        '--entitlements',
+        entitlementsPath
+    ];
+    if (subBuildPath !== 'dmg') {
+        args = [
             '--verbose',
             '--force',
             '--sign',
-            '3rd Party Mac Developer Application: 8bit Solutions LLC',
-            '--entitlements',
-            entitlementsPath
-        ] :
-        [
-            '--verbose',
-            '--force',
-            '-o',
-            'runtime',
-            '--sign',
-            'Developer ID Application: 8bit Solutions LLC',
+            subBuildPath === 'mas' ? '3rd Party Mac Developer Application: 8bit Solutions LLC' :
+                'C12A12E8595453C8B57028790FADB6AD426165AE',
             '--entitlements',
             entitlementsPath
         ];
+    }
 
     return del([buildPath + '**/*'])
         .then(() => safariCopyAssets(paths.safari + '**/*', buildPath))
@@ -276,15 +282,6 @@ function ciCoverage(cb) {
         .pipe(gulp.dest(paths.coverage));
 }
 
-function copy(source, dest) {
-    return new Promise((resolve, reject) => {
-        gulp.src(source)
-            .on('error', reject)
-            .pipe(gulp.dest(dest))
-            .on('end', resolve);
-    });
-}
-
 // ref: https://github.com/t4t5/sweetalert/issues/890
 function fixSweetAlert(cb) {
     fs.writeFileSync(paths.node_modules + 'sweetalert/typings/sweetalert.d.ts',
@@ -296,7 +293,7 @@ exports['dist:firefox'] = distFirefox;
 exports['dist:chrome'] = distChrome;
 exports['dist:opera'] = distOpera;
 exports['dist:edge'] = distEdge;
-exports['dist:safari'] = gulp.parallel(distSafariMas, distSafariDmg);;
+exports['dist:safari'] = gulp.parallel(distSafariMas, distSafariMasDev, distSafariDmg);;
 exports.dist = gulp.parallel(distFirefox, distChrome, distOpera, distEdge);
 exports['ci:coverage'] = ciCoverage;
 exports.ci = ciCoverage;
