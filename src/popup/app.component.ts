@@ -44,7 +44,7 @@ import { routerTransition } from './app-routing.animations';
     styles: [],
     animations: [routerTransition],
     template: `
-        <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
+        <toaster-container [toasterconfig]="toasterConfig" aria-live="polite"></toaster-container>
         <main [@routerTransition]="getState(o)">
             <router-outlet #o="outlet"></router-outlet>
         </main>`,
