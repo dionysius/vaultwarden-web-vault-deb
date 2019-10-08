@@ -185,28 +185,21 @@ function distSafariApp(cb, subBuildPath) {
     const builtAppexPath = buildPath + 'build/Release/safari.appex';
     const builtAppexFrameworkPath = buildPath + 'build/Release/safari.appex/Contents/Frameworks/';
     const entitlementsPath = paths.safari + 'safari/safari.entitlements';
-    var args = [
+    let devId = 'Developer ID Application: 8bit Solutions LLC';
+    if (subBuildPath !== 'dmg') {
+        devId = subBuildPath === 'mas' ? '3rd Party Mac Developer Application: 8bit Solutions LLC' :
+            'C12A12E8595453C8B57028790FADB6AD426165AE';
+    }
+    var signArgs = [
         '--verbose',
         '--force',
         '-o',
         'runtime',
         '--sign',
-        'Developer ID Application: 8bit Solutions LLC',
+        devId,
         '--entitlements',
         entitlementsPath
     ];
-    if (subBuildPath !== 'dmg') {
-        args = [
-            '--verbose',
-            '--force',
-            '--sign',
-            subBuildPath === 'mas' ? '3rd Party Mac Developer Application: 8bit Solutions LLC' :
-                'C12A12E8595453C8B57028790FADB6AD426165AE',
-            '--entitlements',
-            entitlementsPath
-        ];
-    }
-
     return del([buildPath + '**/*'])
         .then(() => safariCopyAssets(paths.safari + '**/*', buildPath))
         .then(() => safariCopyBuild(paths.build + '**/*', buildPath + 'safari/app'))
@@ -224,13 +217,13 @@ function distSafariApp(cb, subBuildPath) {
                 .map((p) => builtAppexFrameworkPath + p);
             const libPromises = [];
             libs.forEach((i) => {
-                const proc = child.spawn('codesign', args.concat([i]));
+                const proc = child.spawn('codesign', signArgs.concat([i]));
                 stdOutProc(proc);
                 libPromises.push(new Promise((resolve) => proc.on('close', resolve)));
             });
             return Promise.all(libPromises);
         }).then(() => {
-            const proc = child.spawn('codesign', args.concat([builtAppexPath]));
+            const proc = child.spawn('codesign', signArgs.concat([builtAppexPath]));
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
