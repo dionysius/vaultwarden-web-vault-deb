@@ -9,7 +9,7 @@
         <div class="right">
             <button type="submit" appBlurClick [disabled]="form.loading">
                 <span [hidden]="form.loading">{{'submit' | i18n}}</span>
-                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading"></i>
+                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
         </div>
     </header>
@@ -36,9 +36,9 @@
                                 [appAutofocus]="email !== ''" appInputVerbatim (input)="updatePasswordStrength()">
                         </div>
                         <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick appBlurClick title="{{'toggleVisibility' | i18n}}"
-                                (click)="togglePassword(false)">
-                                <i class="fa fa-lg"
+                            <a class="row-btn" href="#" appStopClick appBlurClick
+                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword(false)">
+                                <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
                         </div>
@@ -64,9 +64,10 @@
                             appInputVerbatim>
                     </div>
                     <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appBlurClick title="{{'toggleVisibility' | i18n}}"
-                            (click)="togglePassword(true)">
-                            <i class="fa fa-lg" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                        <a class="row-btn" href="#" appStopClick appBlurClick
+                            appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword(true)">
+                            <i class="fa fa-lg" aria-hidden="true"
+                                [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                         </a>
                     </div>
                 </div>

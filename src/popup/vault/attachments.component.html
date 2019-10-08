@@ -2,7 +2,7 @@
     <header>
         <div class="left">
             <button type="button" appBlurClick (click)="back()">
-                <span class="header-icon"><i class="fa fa-chevron-left"></i></span>
+                <span class="header-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
                 <span>{{'back' | i18n}}</span>
             </button>
         </div>
@@ -12,7 +12,7 @@
         <div class="right">
             <button type="submit" appBlurClick [disabled]="form.loading">
                 <span [hidden]="form.loading">{{'save' | i18n}}</span>
-                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading"></i>
+                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
         </div>
     </header>
@@ -26,10 +26,11 @@
                     <small class="row-sub-label">{{a.sizeName}}</small>
                     <div class="action-buttons no-pad">
                         <button class="row-btn btn" type="button" appStopClick appBlurClick
-                            title="{{'deleteAttachment' | i18n}}" (click)="delete(a)" #deleteBtn
+                            appA11yTitle="{{'deleteAttachment' | i18n}}" (click)="delete(a)" #deleteBtn
                             [appApiAction]="deletePromises[a.id]" [disabled]="deleteBtn.loading">
-                            <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
-                            <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
+                            <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
+                            <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"
+                                aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>

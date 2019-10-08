@@ -1,7 +1,7 @@
 <header>
     <div class="left">
         <a routerLink="/tabs/settings">
-            <span class="header-icon"><i class="fa fa-chevron-left"></i></span>
+            <span class="header-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
             <span>{{'back' | i18n}}</span>
         </a>
     </div>
@@ -9,8 +9,8 @@
         <span class="title">{{'folders' | i18n}}</span>
     </div>
     <div class="right">
-        <button appBlurClick (click)="addFolder()" title="{{'addFolder' | i18n}}">
-            <i class="fa fa-plus fa-lg fa-fw"></i>
+        <button appBlurClick (click)="addFolder()" appA11yTitle="{{'addFolder' | i18n}}">
+            <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
         </button>
     </div>
 </header>

@@ -10,7 +10,7 @@
             <button type="submit" appBlurClick [disabled]="form.loading || !canSave"
                 *ngIf="organizations && organizations.length">
                 <span [hidden]="form.loading">{{'save' | i18n}}</span>
-                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading"></i>
+                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
         </div>
     </header>

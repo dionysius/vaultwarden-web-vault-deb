@@ -1,7 +1,7 @@
 <header>
     <div class="left">
         <button type="button" appBlurClick (click)="back()">
-            <span class="header-icon"><i class="fa fa-chevron-left"></i></span>
+            <span class="header-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
             <span>{{'back' | i18n}}</span>
         </button>
     </div>
@@ -9,11 +9,11 @@
         <input type="{{searchTypeSearch ? 'search' : 'text'}}"
             placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search" [(ngModel)]="searchText"
             (input)="search(200)" appAutofocus>
-        <i class="fa fa-search"></i>
+        <i class="fa fa-search" aria-hidden="true"></i>
     </div>
     <div class="right">
-        <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
-            <i class="fa fa-plus fa-lg fa-fw"></i>
+        <button type="button" appBlurClick (click)="addCipher()" appA11yTitle="{{'addItem' | i18n}}">
+            <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
         </button>
     </div>
 </header>
@@ -28,12 +28,12 @@
                     (click)="selectFolder(f.node)">
                     <div class="row-main">
                         <div class="icon">
-                            <i class="fa fa-fw fa-lg"
+                            <i class="fa fa-fw fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-folder-open': f.node.id, 'fa-folder-open-o': !f.node.id}"></i>
                         </div>
                         <span class="text">{{f.node.name}}</span>
                     </div>
-                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i></span>
                 </a>
             </div>
         </div>
@@ -45,17 +45,17 @@
                 <a *ngFor="let c of nestedCollections" href="#" class="box-content-row" appStopClick appBlurClick
                     (click)="selectCollection(c.node)">
                     <div class="row-main">
-                        <div class="icon"><i class="fa fa-fw fa-lg fa-cube"></i></div>
+                        <div class="icon"><i class="fa fa-fw fa-lg fa-cube" aria-hidden="true"></i></div>
                         <span class="text">{{c.node.name}}</span>
                     </div>
-                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i></span>
                 </a>
             </div>
         </div>
     </ng-container>
     <ng-container *ngIf="(isPaging() ? pagedCiphers : ciphers) as filteredCiphers">
         <div class="no-items" *ngIf="!filteredCiphers.length">
-            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
+            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
             <ng-container *ngIf="loaded">
                 <p>{{'noItemsInList' | i18n}}</p>
                 <button (click)="addCipher()" class="btn block primary link">

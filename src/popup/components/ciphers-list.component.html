@@ -5,8 +5,14 @@
         <div class="row-main-content">
             <span class="text">
                 {{c.name}}
-                <i class="fa fa-share-alt text-muted" *ngIf="c.organizationId" title="{{'shared' | i18n}}"></i>
-                <i class="fa fa-paperclip text-muted" *ngIf="c.hasAttachments" title="{{'attachments' | i18n}}"></i>
+                <ng-container *ngIf="c.organizationId">
+                    <i class="fa fa-share-alt text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
+                    <span class="sr-only">{{'shared' | i18n}}</span>
+                </ng-container>
+                <ng-container *ngIf="c.hasAttachments">
+                    <i class="fa fa-paperclip text-muted" title="{{'attachments' | i18n}}" aria-hidden="true"></i>
+                    <span class="sr-only">{{'attachments' | i18n}}</span>
+                </ng-container>
             </span>
             <span class="detail">{{c.subTitle}}</span>
         </div>

@@ -9,7 +9,7 @@
         <div class="right">
             <button type="submit" appBlurClick [disabled]="form.loading">
                 <span [hidden]="form.loading">{{'save' | i18n}}</span>
-                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading"></i>
+                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
         </div>
     </header>
@@ -22,7 +22,7 @@
                 <div class="box-content-row" appBoxRow>
                     <label for="baseUrl">{{'baseUrl' | i18n}}</label>
                     <input id="baseUrl" type="text" name="BaseUrl" [(ngModel)]="baseUrl"
-                           placeholder="ex. https://bitwarden.company.com" appInputVerbatim>
+                        placeholder="ex. https://bitwarden.company.com" appInputVerbatim>
                 </div>
             </div>
             <div class="box-footer">
@@ -37,7 +37,7 @@
                 <div class="box-content-row" appBoxRow>
                     <label for="webVaultUrl">{{'webVaultUrl' | i18n}}</label>
                     <input id="webVaultUrl" type="text" name="WebVaultUrl" [(ngModel)]="webVaultUrl" inputmode="url"
-                           appInputVerbatim>
+                        appInputVerbatim>
                 </div>
                 <div class="box-content-row" appBoxRow>
                     <label for="apiUrl">{{'apiUrl' | i18n}}</label>
@@ -46,17 +46,17 @@
                 <div class="box-content-row" appBoxRow>
                     <label for="identityUrl">{{'identityUrl' | i18n}}</label>
                     <input id="identityUrl" type="text" name="IdentityUrl" [(ngModel)]="identityUrl" inputmode="url"
-                           appInputVerbatim>
+                        appInputVerbatim>
                 </div>
                 <div class="box-content-row" appBoxRow>
                     <label for="notificationsUrl">{{'notificationsUrl' | i18n}}</label>
                     <input id="notificationsUrl" type="text" name="NotificationsUrl" inputmode="url"
-                           [(ngModel)]="notificationsUrl" appInputVerbatim>
+                        [(ngModel)]="notificationsUrl" appInputVerbatim>
                 </div>
                 <div class="box-content-row" appBoxRow>
                     <label for="iconsUrl">{{'iconsUrl' | i18n}}</label>
                     <input id="iconsUrl" type="text" name="IconsUrl" [(ngModel)]="iconsUrl" inputmode="url"
-                           appInputVerbatim>
+                        appInputVerbatim>
                 </div>
             </div>
             <div class="box-footer" [hidden]="!showCustom">

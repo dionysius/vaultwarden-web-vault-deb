@@ -8,8 +8,8 @@
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <button appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
-            <i class="fa fa-plus fa-lg fa-fw"></i>
+        <button appBlurClick (click)="addCipher()" appA11yTitle="{{'addItem' | i18n}}">
+            <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
         </button>
     </div>
 </header>

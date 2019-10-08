@@ -1,24 +1,24 @@
 <header>
     <div class="left" *ngIf="showLeftHeader">
         <app-pop-out [show]="!inSidebar"></app-pop-out>
-        <button type="button" appBlurClick (click)="refresh()" title="{{'refresh' | i18n}}" *ngIf="inSidebar">
-            <i class="fa fa-retweet fa-lg fa-fw"></i>
+        <button type="button" appBlurClick (click)="refresh()" appA11yTitle="{{'refresh' | i18n}}" *ngIf="inSidebar">
+            <i class="fa fa-retweet fa-lg fa-fw" aria-hidden="true"></i>
         </button>
     </div>
     <div class="search">
         <input type="{{searchTypeSearch ? 'search' : 'text'}}" placeholder="{{'searchVault' | i18n}}" id="search"
             [(ngModel)]="searchText" (input)="searchVault()">
-        <i class="fa fa-search"></i>
+        <i class="fa fa-search" aria-hidden="true"></i>
     </div>
     <div class="right">
-        <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
-            <i class="fa fa-plus fa-lg fa-fw"></i>
+        <button type="button" appBlurClick (click)="addCipher()" appA11yTitle="{{'addItem' | i18n}}">
+            <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
         </button>
     </div>
 </header>
 <content>
     <div class="no-items" *ngIf="!loaded">
-        <i class="fa fa-spinner fa-spin fa-3x"></i>
+        <i class="fa fa-spinner fa-spin fa-3x" aria-hidden="true"></i>
     </div>
     <ng-container *ngIf="loaded">
         <div class="box list" *ngIf="loginCiphers">

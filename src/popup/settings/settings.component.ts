@@ -244,7 +244,7 @@ export class SettingsComponent implements OnInit {
         const versionText = document.createTextNode(
             this.i18nService.t('version') + ': ' + BrowserApi.getApplicationVersion());
         const div = document.createElement('div');
-        div.innerHTML = `<p class="text-center"><i class="fa fa-shield fa-3x"></i></p>
+        div.innerHTML = `<p class="text-center"><i class="fa fa-shield fa-3x" aria-hidden="true"></i></p>
             <p class="text-center"><b>Bitwarden</b><br>&copy; 8bit Solutions LLC 2015-` + year + `</p>`;
         div.appendChild(versionText);
 

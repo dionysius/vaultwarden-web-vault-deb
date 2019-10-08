@@ -9,7 +9,7 @@
         <div class="right">
             <button type="submit" appBlurClick [disabled]="form.loading">
                 <span [hidden]="form.loading">{{'save' | i18n}}</span>
-                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading"></i>
+                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
         </div>
     </header>
@@ -27,7 +27,7 @@
                 <a class="box-content-row" href="#" appStopClick appBlurClick (click)="delete()"
                     [appApiAction]="deletePromise" #deleteBtn>
                     <div class="row-main text-danger">
-                        <div class="icon text-danger">
+                        <div class="icon text-danger" aria-hidden="true">
                             <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
                             <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
                         </div>
