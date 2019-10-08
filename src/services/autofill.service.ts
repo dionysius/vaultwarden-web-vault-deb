@@ -21,12 +21,12 @@ import { EventService } from 'jslib/abstractions/event.service';
 import { EventType } from 'jslib/enums/eventType';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
-    'placeholder', 'label-left', 'label-top'];
+    'placeholder', 'label-left', 'label-top', 'data-recurly'];
 
 const CardAttributesExtended: string[] = [...CardAttributes, 'label-right'];
 
 const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
-    'placeholder', 'label-left', 'label-top'];
+    'placeholder', 'label-left', 'label-top', 'data-recurly'];
 
 const UsernameFieldNames: string[] = [
     // English
