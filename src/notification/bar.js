@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('logo-link').title = i18n.appName;
         closeButton.title = i18n.close;
+        closeButton.setAttribute('aria-label', i18n.close);
 
         if (bodyRect.width < 768) {
             document.querySelector('#template-add .add-save').textContent = i18n.yes;

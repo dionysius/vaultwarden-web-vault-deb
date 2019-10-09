@@ -517,6 +517,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         iframe.id = 'bit-notification-bar-iframe';
 
         const frameDiv = document.createElement('div');
+        frameDiv.setAttribute('aria-live', 'polite');
         frameDiv.id = 'bit-notification-bar';
         frameDiv.style.cssText = 'height: 42px; width: 100%; top: 0; left: 0; padding: 0; position: fixed; ' +
             'z-index: 2147483647; visibility: visible;';
