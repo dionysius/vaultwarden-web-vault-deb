@@ -494,14 +494,20 @@ export default class AutofillService implements AutofillServiceInterface {
 
             if (fillFields.expMonth.selectInfo && fillFields.expMonth.selectInfo.options) {
                 let index: number = null;
-                if (fillFields.expMonth.selectInfo.options.length === 12) {
+                const siOptions = fillFields.expMonth.selectInfo.options;
+                if (siOptions.length === 12) {
                     index = parseInt(card.expMonth, null) - 1;
-                } else if (fillFields.expMonth.selectInfo.options.length === 13) {
-                    index = parseInt(card.expMonth, null);
+                } else if (siOptions.length === 13) {
+                    if (siOptions[0][0] != null && siOptions[0][0] !== '' &&
+                        (siOptions[12][0] == null || siOptions[12][0] === '')) {
+                        index = parseInt(card.expMonth, null) - 1;
+                    } else {
+                        index = parseInt(card.expMonth, null);
+                    }
                 }
 
                 if (index != null) {
-                    const option = fillFields.expMonth.selectInfo.options[index];
+                    const option = siOptions[index];
                     if (option.length > 1) {
                         expMonth = option[1];
                     }
