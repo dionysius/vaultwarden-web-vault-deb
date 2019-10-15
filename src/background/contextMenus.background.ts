@@ -37,10 +37,6 @@ export default class ContextMenusBackground {
     }
 
     private async generatePasswordToClipboard() {
-        if (await this.lockService.isLocked()) {
-            return;
-        }
-
         const options = await this.passwordGenerationService.getOptions();
         const password = await this.passwordGenerationService.generatePassword(options);
         this.platformUtilsService.copyToClipboard(password, { window: window });

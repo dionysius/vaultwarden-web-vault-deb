@@ -57,10 +57,6 @@ export default class CommandsBackground {
             return;
         }
 
-        if (await this.lockService.isLocked()) {
-            return;
-        }
-
         const options = await this.passwordGenerationService.getOptions();
         const password = await this.passwordGenerationService.generatePassword(options);
         this.platformUtilsService.copyToClipboard(password, { window: window });
