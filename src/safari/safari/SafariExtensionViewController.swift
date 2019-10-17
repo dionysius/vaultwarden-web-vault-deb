@@ -38,10 +38,14 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
     }
 
     func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
-        NSAnimationContext.runAnimationGroup({ _ in
-            NSAnimationContext.current.duration = 0.35
-            webView.animator().alphaValue = 1.0
-        })
+        if #available(OSXApplicationExtension 10.12, *) {
+            NSAnimationContext.runAnimationGroup({ _ in
+                NSAnimationContext.current.duration = 0.35
+                webView.animator().alphaValue = 1.0
+            })
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     override func viewDidLoad() {
@@ -215,6 +219,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
 }
 
 extension SafariExtensionViewController: WKUIDelegate {
+    @available(OSXApplicationExtension 10.12, *)
     func webView(_: WKWebView, runOpenPanelWith _: WKOpenPanelParameters, initiatedByFrame _: WKFrameInfo,
                  completionHandler: @escaping ([URL]?) -> Void) {
         let openPanel = NSOpenPanel()
