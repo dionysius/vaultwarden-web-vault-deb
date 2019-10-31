@@ -90,3 +90,9 @@ body[class*='lang-en'] .add-buttons {
         width: 320px;
     }
 }
+
+@media (print) {
+    body {
+        display: none;
+    }
+}
