@@ -72,6 +72,13 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     async ngOnInit() {
         this.searchTypeSearch = !this.platformUtilsService.isSafari();
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+            if (this.applySavedState) {
+                this.state = (await this.stateService.get<any>(ComponentId)) || {};
+                if (this.state.searchText) {
+                    this.searchText = this.state.searchText;
+                }
+            }
+
             if (params.type) {
                 this.searchPlaceholder = this.i18nService.t('searchType');
                 this.type = parseInt(params.type, null);
@@ -121,11 +128,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 await this.load();
             }
 
-            if (this.applySavedState) {
-                this.state = (await this.stateService.get<any>(ComponentId)) || {};
-                if (this.state.searchText) {
-                    this.searchText = this.state.searchText;
-                }
+            if (this.applySavedState && this.state != null) {
                 window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             }
             this.stateService.remove(ComponentId);
