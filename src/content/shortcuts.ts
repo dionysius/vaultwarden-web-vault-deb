@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         return false;
     };
 
-    const autofillCommand = isSafari || isEdge ? 'mod+\\' : 'mod+shift+l';
+    const autofillCommand = isSafari || isEdge ? ['mod+\\', 'mod+9'] : ['mod+shift+l'];
     Mousetrap.bind(autofillCommand, () => {
         sendMessage('autofill_login');
     });
