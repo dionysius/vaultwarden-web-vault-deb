@@ -285,8 +285,13 @@ export default class RuntimeBackground {
             return;
         }
 
+        if (loginInfo.username != null) {
+            loginInfo.username = loginInfo.username.toLowerCase();
+        }
+
         const ciphers = await this.cipherService.getAllDecryptedForUrl(loginInfo.url);
-        const usernameMatches = ciphers.filter((c) => c.login.username === loginInfo.username);
+        const usernameMatches = ciphers.filter((c) =>
+            c.login.username != null && c.login.username.toLowerCase() === loginInfo.username);
         if (usernameMatches.length === 0) {
             const disabledAddLogin = await this.storageService.get<boolean>(
                 ConstantsService.disableAddLoginNotificationKey);
