@@ -876,11 +876,17 @@
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website."
+    "message": "Auto-fill the last used login for the current website"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard."
+    "message": "Generate and copy a new random password to the clipboard"
   },
   "privateModeMessage": {
     "message": "Unfortunately this window is not available in private mode for this browser."
