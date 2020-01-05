@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extName__",
   "short_name": "__MSG_appName__",
-  "version": "1.42.2",
+  "version": "1.42.3",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "author": "8bit Solutions LLC",
@@ -81,6 +81,20 @@
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "linux": "Ctrl+Shift+U"
+      },
+      "description": "__MSG_commandOpenPopup__"
+    },
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+Y",
+        "linux": "Alt+Shift+U"
+      },
+      "description": "__MSG_commandOpenSidebar__"
+    },
     "autofill_login": {
       "suggested_key": {
         "default": "Ctrl+Shift+L"
@@ -92,19 +106,6 @@
         "default": "Ctrl+Shift+9"
       },
       "description": "__MSG_commandGeneratePasswordDesc__"
-    },
-    "_execute_browser_action": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+Y",
-        "linux": "Ctrl+Shift+U"
-      }
-    },
-    "_execute_sidebar_action": {
-      "suggested_key": {
-        "default": "Alt+Shift+Y",
-        "linux": "Alt+Shift+U"
-      },
-      "description": " "
     }
   },
   "web_accessible_resources": [
