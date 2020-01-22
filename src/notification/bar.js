@@ -2,6 +2,7 @@ require('./bar.scss');
 
 document.addEventListener('DOMContentLoaded', () => {
     var i18n = {};
+    var lang = window.navigator.language;
     if (typeof safari !== 'undefined') {
         const responseCommand = 'notificationBarFrameDataResponse';
         sendPlatformMessage({
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         i18n.notificationAddDesc = chrome.i18n.getMessage('notificationAddDesc');
         i18n.notificationChangeSave = chrome.i18n.getMessage('notificationChangeSave');
         i18n.notificationChangeDesc = chrome.i18n.getMessage('notificationChangeDesc');
+        lang = chrome.i18n.getUILanguage();
 
         // delay 50ms so that we get proper body dimensions
         setTimeout(load, 50);
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bodyRect = body.getBoundingClientRect();
 
         // i18n
-        body.classList.add('lang-' + window.navigator.language.slice(0, 2));
+        body.classList.add('lang-' + lang.slice(0, 2));
 
         document.getElementById('logo-link').title = i18n.appName;
         closeButton.title = i18n.close;
