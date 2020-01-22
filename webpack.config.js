@@ -103,7 +103,6 @@ const plugins = [
         { from: './src/content/autofill.css', to: 'content' },
     ]),
     new webpack.SourceMapDevToolPlugin({
-        filename: '[name].js.map',
         include: ['popup/main.js', 'background.js'],
     }),
     extractCss,
@@ -134,6 +133,7 @@ if (ENV === 'production') {
 
 const config = {
     mode: ENV,
+    devtool: false,
     entry: {
         'popup/main': './src/popup/main.ts',
         'background': './src/background.ts',
