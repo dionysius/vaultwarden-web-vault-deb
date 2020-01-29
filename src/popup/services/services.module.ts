@@ -31,6 +31,7 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { NotificationsService } from 'jslib/abstractions/notifications.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StateService as StateServiceAbstraction } from 'jslib/abstractions/state.service';
@@ -130,6 +131,7 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: I18nService, useFactory: getBgService<I18nService>('i18nService'), deps: [] },
         { provide: CryptoService, useFactory: getBgService<CryptoService>('cryptoService'), deps: [] },
         { provide: EventService, useFactory: getBgService<EventService>('eventService'), deps: [] },
+        { provide: PolicyService, useFactory: getBgService<PolicyService>('policyService'), deps: [] },
         {
             provide: PlatformUtilsService,
             useFactory: getBgService<PlatformUtilsService>('platformUtilsService'),
