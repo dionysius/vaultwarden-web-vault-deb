@@ -22,6 +22,7 @@ import {
 import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
+import { PolicyService } from 'jslib/services/policy.service';
 import { SearchService } from 'jslib/services/search.service';
 import { SystemService } from 'jslib/services/system.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
@@ -50,6 +51,7 @@ import {
 import { EventService as EventServiceAbstraction } from 'jslib/abstractions/event.service';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
+import { PolicyService as PolicyServiceAbstraction } from 'jslib/abstractions/policy.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
 import { SystemService as SystemServiceAbstraction } from 'jslib/abstractions/system.service';
 
@@ -104,6 +106,7 @@ export default class MainBackground {
     notificationsService: NotificationsServiceAbstraction;
     systemService: SystemServiceAbstraction;
     eventService: EventServiceAbstraction;
+    policyService: PolicyServiceAbstraction;
     analytics: Analytics;
 
     onUpdatedRan: boolean;
@@ -152,6 +155,7 @@ export default class MainBackground {
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18nService);
         this.searchService = new SearchService(this.cipherService, this.platformUtilsService);
+        this.policyService = new PolicyService(this.userService, this.storageService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
             this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService,
             this.searchService, this.userService, async () => {
@@ -167,7 +171,8 @@ export default class MainBackground {
             });
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
-            this.storageService, this.messagingService, async (expired: boolean) => await this.logout(expired));
+            this.storageService, this.messagingService, this.policyService,
+            async (expired: boolean) => await this.logout(expired));
         this.eventService = new EventService(this.storageService, this.apiService, this.userService,
             this.cipherService);
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
@@ -303,6 +308,7 @@ export default class MainBackground {
             this.cipherService.clear(userId),
             this.folderService.clear(userId),
             this.collectionService.clear(userId),
+            this.policyService.clear(userId),
             this.passwordGenerationService.clear(),
             this.lockService.clear(),
         ]);
