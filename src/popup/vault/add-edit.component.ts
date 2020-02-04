@@ -58,6 +58,10 @@ export class AddEditComponent extends BaseAddEditComponent {
                 this.type = type;
             }
             this.editMode = !params.cipherId;
+
+            if (params.cloneMode != null) {
+                this.cloneMode = params.cloneMode === true;
+            }
             await this.load();
 
             if (!this.editMode) {
@@ -86,7 +90,11 @@ export class AddEditComponent extends BaseAddEditComponent {
 
     async submit(): Promise<boolean> {
         if (await super.submit()) {
-            this.location.back();
+            if (this.cloneMode) {
+                this.router.navigate(['/tabs/vault']);
+            } else {
+                this.location.back();
+            }
             return true;
         }
 

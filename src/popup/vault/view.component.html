@@ -259,6 +259,18 @@
             </a>
         </div>
     </div>
+    <div class="box list" *ngIf="!cipher.organizationId">
+        <div class="box-content single-line">
+            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="clone()">
+                <div class="row-main text-primary">
+                    <div class="icon text-primary" aria-hidden="true">
+                        <i class="fa fa-clone fa-lg fa-fw"></i>
+                    </div>
+                    <span>{{'cloneItem' | i18n}}</span>
+                </div>
+            </a>
+        </div>
+    </div>
     <div class="box">
         <div class="box-footer">
             <div>
