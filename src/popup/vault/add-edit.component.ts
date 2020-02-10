@@ -60,7 +60,7 @@ export class AddEditComponent extends BaseAddEditComponent {
             this.editMode = !params.cipherId;
 
             if (params.cloneMode != null) {
-                this.cloneMode = params.cloneMode === true;
+                this.cloneMode = params.cloneMode === 'true';
             }
             await this.load();
 
