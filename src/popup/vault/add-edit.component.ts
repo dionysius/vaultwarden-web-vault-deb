@@ -64,7 +64,7 @@ export class AddEditComponent extends BaseAddEditComponent {
             }
             await this.load();
 
-            if (!this.editMode) {
+            if (!this.editMode || this.cloneMode) {
                 if (params.name && (this.cipher.name == null || this.cipher.name === '')) {
                     this.cipher.name = params.name;
                 }
