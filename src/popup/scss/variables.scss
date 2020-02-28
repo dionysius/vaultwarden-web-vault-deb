@@ -83,6 +83,8 @@ $themes: (
         logoSuffix: 'dark',
         passwordNumberColor: #007fde,
         passwordSpecialColor: #c40800,
+        calloutBorderColor: $border-color-dark,
+        calloutBackgroundColor: $box-background-color,
     ),
     dark: (
         textColor: #ffffff,
@@ -129,6 +131,8 @@ $themes: (
         logoSuffix: 'white',
         passwordNumberColor: #52bdfb,
         passwordSpecialColor: #ff7c70,
+        calloutBorderColor: #111111,
+        calloutBackgroundColor: #3d3d3d,
     ),
     nord: (
         textColor: $nord5,
@@ -175,6 +179,8 @@ $themes: (
         logoSuffix: 'white',
         passwordNumberColor: $nord8,
         passwordSpecialColor: $nord12,
+        calloutBorderColor: $nord0,
+        calloutBackgroundColor: $nord2,
     ),
 );
 
