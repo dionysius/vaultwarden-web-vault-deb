@@ -175,7 +175,8 @@ export default class MainBackground {
             async (expired: boolean) => await this.logout(expired));
         this.eventService = new EventService(this.storageService, this.apiService, this.userService,
             this.cipherService);
-        this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
+        this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService,
+            this.policyService);
         this.totpService = new TotpService(this.storageService, cryptoFunctionService);
         this.autofillService = new AutofillService(this.cipherService, this.userService, this.totpService,
             this.eventService);
