@@ -32,7 +32,7 @@ const RateUrls = {
     [DeviceType.OperaExtension]:
         'https://addons.opera.com/en/extensions/details/bitwarden-free-password-manager/#feedback-container',
     [DeviceType.EdgeExtension]:
-        'https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl',
+        'https://microsoftedge.microsoft.com/addons/detail/jbkfoedolllekgbhcbcoahefnbanhhlh',
     [DeviceType.VivaldiExtension]:
         'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
     [DeviceType.SafariExtension]:
@@ -278,6 +278,10 @@ export class SettingsComponent implements OnInit {
 
     rate() {
         this.analytics.eventTrack.next({ action: 'Rate Extension' });
-        BrowserApi.createNewTab((RateUrls as any)[this.platformUtilsService.getDevice()]);
+        let deviceType = this.platformUtilsService.getDevice();
+        if (window.navigator.userAgent.indexOf('Edg/') > -1) {
+            deviceType = DeviceType.EdgeExtension;
+        }
+        BrowserApi.createNewTab((RateUrls as any)[deviceType]);
     }
 }
