@@ -4,12 +4,13 @@ import MainBackground from './main.background';
 
 import { Analytics } from 'jslib/misc';
 
-import { TotpService } from 'jslib/abstractions';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { TotpService } from 'jslib/abstractions/totp.service';
+
 import { EventType } from 'jslib/enums/eventType';
 
 export default class ContextMenusBackground {
@@ -31,9 +32,9 @@ export default class ContextMenusBackground {
             if (info.menuItemId === 'generate-password') {
                 await this.generatePasswordToClipboard();
             } else if (info.parentMenuItemId === 'autofill' ||
-                    info.parentMenuItemId === 'copy-username' ||
-                    info.parentMenuItemId === 'copy-password' ||
-                    info.parentMenuItemId === 'copy-totp') {
+                info.parentMenuItemId === 'copy-username' ||
+                info.parentMenuItemId === 'copy-password' ||
+                info.parentMenuItemId === 'copy-totp') {
                 await this.cipherAction(info);
             }
         });
