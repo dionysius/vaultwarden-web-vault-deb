@@ -213,7 +213,7 @@ export default class MainBackground {
             this.tabsBackground = new TabsBackground(this);
             this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
                 this.passwordGenerationService, this.analytics, this.platformUtilsService, this.lockService,
-                this.eventService);
+                this.eventService, this.totpService);
             this.idleBackground = new IdleBackground(this.lockService, this.storageService, this.notificationsService);
             this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService,
                 this.lockService);
@@ -444,6 +444,14 @@ export default class MainBackground {
             });
 
             await this.contextMenusCreate({
+                type: 'normal',
+                id: 'copy-totp',
+                parentId: 'root',
+                contexts: ['all'],
+                title: this.i18nService.t('copyVerificationCode'),
+            });
+
+            await this.contextMenusCreate({
                 type: 'separator',
                 parentId: 'root',
             });
@@ -571,6 +579,16 @@ export default class MainBackground {
                 type: 'normal',
                 id: 'copy-password_' + idSuffix,
                 parentId: 'copy-password',
+                contexts: ['all'],
+                title: title,
+            });
+        }
+
+        if (cipher == null || (cipher.login.totp && cipher.login.totp !== '')) {
+            await this.contextMenusCreate({
+                type: 'normal',
+                id: 'copy-totp_' + idSuffix,
+                parentId: 'copy-totp',
                 contexts: ['all'],
                 title: title,
             });

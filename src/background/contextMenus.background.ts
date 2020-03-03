@@ -4,6 +4,7 @@ import MainBackground from './main.background';
 
 import { Analytics } from 'jslib/misc';
 
+import { TotpService } from 'jslib/abstractions';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { LockService } from 'jslib/abstractions/lock.service';
@@ -17,7 +18,7 @@ export default class ContextMenusBackground {
     constructor(private main: MainBackground, private cipherService: CipherService,
         private passwordGenerationService: PasswordGenerationService, private analytics: Analytics,
         private platformUtilsService: PlatformUtilsService, private lockService: LockService,
-        private eventService: EventService) {
+        private eventService: EventService, private totpService: TotpService) {
         this.contextMenus = chrome.contextMenus;
     }
 
@@ -29,8 +30,10 @@ export default class ContextMenusBackground {
         this.contextMenus.onClicked.addListener(async (info: any, tab: any) => {
             if (info.menuItemId === 'generate-password') {
                 await this.generatePasswordToClipboard();
-            } else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
-                info.parentMenuItemId === 'copy-password') {
+            } else if (info.parentMenuItemId === 'autofill' ||
+                    info.parentMenuItemId === 'copy-username' ||
+                    info.parentMenuItemId === 'copy-password' ||
+                    info.parentMenuItemId === 'copy-totp') {
                 await this.cipherAction(info);
             }
         });
@@ -86,6 +89,13 @@ export default class ContextMenusBackground {
             });
             this.platformUtilsService.copyToClipboard(cipher.login.password, { window: window });
             this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+        } else if (info.parentMenuItemId === 'copy-totp') {
+            this.analytics.ga('send', {
+                hitType: 'event',
+                eventAction: 'Copied Totp From Context Menu',
+            });
+            const totpValue = await this.totpService.getCode(cipher.login.totp);
+            this.platformUtilsService.copyToClipboard(totpValue, { window: window });
         }
     }
 
