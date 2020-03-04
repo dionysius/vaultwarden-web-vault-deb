@@ -108,9 +108,10 @@ $fa-font-path: "~font-awesome/fonts";
 // SweetAlert
 
 .swal2-popup {
-    padding: 15px 15px;
+    padding: 15px;
     border-radius: $border-radius;
-    width: 34em; // slightly bigger than the hardcoded 478px in v1.
+    width: 34em;
+
     @include themify($themes) {
         background-color: themed('backgroundColorAlt');
         color: themed('textColor');
