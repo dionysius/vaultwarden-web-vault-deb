@@ -1,5 +1,5 @@
 import { Angulartics2 } from 'angulartics2';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2/src/sweetalert2.js';
 
 import {
     Component,
@@ -125,19 +125,28 @@ export class SettingsComponent implements OnInit {
             checkboxText.appendChild(restartText);
             label.innerHTML = '<input type="checkbox" id="master-pass-restart" checked>';
             label.appendChild(checkboxText);
-            div.innerHTML = '<input type="text" class="swal-content__input" id="pin-val" autocomplete="off" ' +
+
+            div.innerHTML =
+                `<div class="swal2-text">${this.i18nService.t('setYourPinCode')}</div>` +
+                '<input type="text" class="swal2-input" id="pin-val" autocomplete="off" ' +
                 'autocapitalize="none" autocorrect="none" spellcheck="false" inputmode="verbatim">';
+
             (div.querySelector('#pin-val') as HTMLInputElement).placeholder = this.i18nService.t('pin');
             div.appendChild(label);
 
-            const submitted = await swal({
-                text: this.i18nService.t('setYourPinCode'),
-                content: { element: div },
-                buttons: [this.i18nService.t('cancel'), this.i18nService.t('submit')],
+            const submitted = await Swal.fire({
+                heightAuto: false,
+                buttonsStyling: false,
+                html: div,
+                showCancelButton: true,
+                cancelButtonText: this.i18nService.t('cancel'),
+                showConfirmButton: true,
+                confirmButtonText: this.i18nService.t('submit'),
             });
+
             let pin: string = null;
             let masterPassOnRestart: boolean = null;
-            if (submitted) {
+            if (submitted.value) {
                 pin = (document.getElementById('pin-val') as HTMLInputElement).value;
                 masterPassOnRestart = (document.getElementById('master-pass-restart') as HTMLInputElement).checked;
             }
@@ -248,9 +257,13 @@ export class SettingsComponent implements OnInit {
             <p class="text-center"><b>Bitwarden</b><br>&copy; Bitwarden Inc. 2015-` + year + `</p>`;
         div.appendChild(versionText);
 
-        swal({
-            content: { element: div },
-            buttons: [this.i18nService.t('close'), false],
+        Swal.fire({
+            heightAuto: false,
+            buttonsStyling: false,
+            html: div,
+            showConfirmButton: false,
+            showCancelButton: true,
+            cancelButtonText: this.i18nService.t('close'),
         });
     }
 
@@ -266,12 +279,17 @@ export class SettingsComponent implements OnInit {
         div.appendChild(p);
         div.appendChild(p2);
 
-        const result = await swal({
-            content: { element: div },
-            buttons: [this.i18nService.t('close'), this.i18nService.t('learnMore')],
+        const result = await Swal.fire({
+            heightAuto: false,
+            buttonsStyling: false,
+            html: div,
+            showCancelButton: true,
+            cancelButtonText: this.i18nService.t('close'),
+            showConfirmButton: true,
+            confirmButtonText: this.i18nService.t('learnMore'),
         });
 
-        if (result) {
+        if (result.value) {
             this.platformUtilsService.launchUri('https://help.bitwarden.com/article/fingerprint-phrase/');
         }
     }

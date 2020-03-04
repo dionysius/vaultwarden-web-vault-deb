@@ -282,13 +282,6 @@ function ciCoverage(cb) {
         .pipe(gulp.dest(paths.coverage));
 }
 
-// ref: https://github.com/t4t5/sweetalert/issues/890
-function fixSweetAlert(cb) {
-    fs.writeFileSync(paths.node_modules + 'sweetalert/typings/sweetalert.d.ts',
-        'import swal, { SweetAlert } from "./core";export default swal;export as namespace swal;');
-    cb();
-}
-
 exports['dist:firefox'] = distFirefox;
 exports['dist:chrome'] = distChrome;
 exports['dist:opera'] = distOpera;
@@ -299,5 +292,3 @@ exports['ci:coverage'] = ciCoverage;
 exports.ci = ciCoverage;
 exports.webfonts = webfonts;
 exports.build = webfonts;
-exports.fixSweetAlert = fixSweetAlert;
-exports.postinstall = fixSweetAlert;

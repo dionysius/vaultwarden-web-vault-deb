@@ -1,6 +1,7 @@
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
 @import "~angular2-toaster/toaster";
+@import "~sweetalert2/src/sweetalert2.scss";
 
 @import "variables.scss";
 @import "buttons.scss";
@@ -106,32 +107,27 @@ $fa-font-path: "~font-awesome/fonts";
 
 // SweetAlert
 
-.swal-modal {
+.swal2-popup {
+    padding: 0;
     border-radius: $border-radius;
-
+    width: 34em; // slightly bigger than the hardcoded 478px in v1.
     @include themify($themes) {
         background-color: themed('backgroundColorAlt');
         color: themed('textColor');
     }
 
-    .swal-icon {
+    .swal2-icon {
         margin: 15px auto 0 auto;
+        width: auto;
+        height: auto;
+        border: none;
     }
 
-    .swal-content {
-        margin: 15px 0 0 0;
-        padding: 0 10px;
+    .swal2-content {
+        padding: 20px 20px 15px;
         font-size: $font-size-base;
-
-        .swal-text {
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        .swal-title, .swal-text {
-            padding-left: 0;
-            padding-right: 0;
+        @include themify($themes) {
+            color: themed('textColor');
         }
 
         label.checkbox {
@@ -144,6 +140,30 @@ $fa-font-path: "~font-awesome/fonts";
                 margin: 3px 5px 0 1px;
             }
         }
+
+        .swal2-input, .swal2-textarea {
+            border: 1px solid #000000;
+            border-radius: $border-radius;
+            margin-bottom: 0;
+            box-shadow: none;
+            // Inherit theme font-size
+            font-size: inherit;
+
+            // Sweetalert 1 did not have box-shadow
+            &:focus {
+                box-shadow: none;
+            }
+            @include themify($themes) {
+                border-color: themed('inputBorderColor');
+                color: themed('textColor');
+                background-color: themed('inputBackgroundColor');
+            }
+            &::-webkit-input-placeholder {
+                @include themify($themes) {
+                    color: themed('inputPlaceholderColor');
+                }
+            }
+        }
     }
 
     i.swal-custom-icon {
@@ -152,7 +172,7 @@ $fa-font-path: "~font-awesome/fonts";
         font-size: 35px;
     }
 
-    .swal-title {
+    .swal2-title {
         padding: 10px 10px 15px 10px;
         margin: 0;
         font-size: $font-size-large;
@@ -162,7 +182,8 @@ $fa-font-path: "~font-awesome/fonts";
         }
     }
 
-    .swal-text {
+    .swal2-text {
+        text-align: left; // sweetalert1 behaviour
         font-size: $font-size-base;
 
         @include themify($themes) {
@@ -170,39 +191,23 @@ $fa-font-path: "~font-awesome/fonts";
         }
     }
 
-    > .swal-text:first-child {
+    > .swal2-text:first-child {
         margin-top: 20px;
     }
 
-    .swal-content__input, .swal-content__textarea {
-        border: 1px solid #000000;
-        border-radius: $border-radius;
-        @include themify($themes) {
-            border-color: themed('inputBorderColor');
-            color: themed('textColor');
-            background-color: themed('inputBackgroundColor');
-        }
-        &::-webkit-input-placeholder {
-            @include themify($themes) {
-                color: themed('inputPlaceholderColor');
-            }
-        }
-    }
-
-    .swal-footer {
-        padding: 15px 10px 10px 10px;
+    .swal2-actions {
+        padding: 0 10px 10px 10px; // 0 due to padding to content being 15px
         margin: 0;
+        justify-content: flex-end;
 
-        .swal-button {
+        button {
+            margin-left: 10px;
             @extend .btn;
 
-            &:focus {
-                box-shadow: none;
+            &.swal2-confirm {
+                @extend .btn.primary;
+                font-weight: bold;
             }
-        }
-
-        .swal-button--confirm {
-            @extend .btn.primary;
         }
     }
 }

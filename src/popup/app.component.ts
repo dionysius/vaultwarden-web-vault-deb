@@ -8,7 +8,7 @@ import {
     ToasterService,
 } from 'angular2-toaster';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
-import swal from 'sweetalert';
+import Swal, { SweetAlertIcon } from 'sweetalert2/src/sweetalert2.js';
 
 import {
     ChangeDetectorRef,
@@ -213,59 +213,47 @@ export class AppComponent implements OnInit {
     }
 
     private async showDialog(msg: any) {
-        const buttons = [msg.confirmText == null ? this.i18nService.t('ok') : msg.confirmText];
-        if (msg.cancelText != null) {
-            buttons.unshift(msg.cancelText);
-        }
-
-        const contentDiv = document.createElement('div');
-        if (msg.type != null) {
-            const icon = document.createElement('i');
-            icon.classList.add('swal-custom-icon');
-            switch (msg.type) {
+        let iconClasses = null;
+        const type = msg.type;
+        if (type != null) {
+            // If you add custom types to this part, the type to SweetAlertIcon cast below needs to be changed.
+            switch (type) {
                 case 'success':
-                    icon.classList.add('fa', 'fa-check', 'text-success');
+                    iconClasses = 'fa-check text-success';
                     break;
                 case 'warning':
-                    icon.classList.add('fa', 'fa-warning', 'text-warning');
+                    iconClasses = 'fa-warning text-warning';
                     break;
                 case 'error':
-                    icon.classList.add('fa', 'fa-bolt', 'text-danger');
+                    iconClasses = 'fa-bolt text-danger';
                     break;
                 case 'info':
-                    icon.classList.add('fa', 'fa-info-circle', 'text-info');
+                    iconClasses = 'fa-info-circle text-info';
                     break;
                 default:
                     break;
             }
-            if (icon.classList.contains('fa')) {
-                contentDiv.appendChild(icon);
-            }
         }
 
-        if (msg.title != null) {
-            const titleDiv = document.createElement('div');
-            titleDiv.classList.add('swal-title');
-            titleDiv.appendChild(document.createTextNode(msg.title));
-            contentDiv.appendChild(titleDiv);
-        }
-
-        if (msg.text != null) {
-            const textDiv = document.createElement('div');
-            textDiv.classList.add('swal-text');
-            textDiv.appendChild(document.createTextNode(msg.text));
-            contentDiv.appendChild(textDiv);
-        }
-
-        const confirmed = await swal({
-            content: { element: contentDiv },
-            buttons: buttons,
-            timer: 300000, // 5 minute timeout
+        const cancelText = msg.cancelText;
+        const confirmText = msg.confirmText;
+        const confirmed = await Swal.fire({
+            heightAuto: false,
+            buttonsStyling: false,
+            icon: type as SweetAlertIcon, // required to be any of the SweetAlertIcons to output the iconHtml.
+            iconHtml: iconClasses != null ? `<i class="swal-custom-icon fa ${iconClasses}"></i>` : undefined,
+            text: msg.text,
+            title: msg.title,
+            showCancelButton: (cancelText != null),
+            cancelButtonText: cancelText,
+            showConfirmButton: true,
+            confirmButtonText: confirmText == null ? this.i18nService.t('ok') : confirmText,
+            timer: 300000,
         });
 
         this.messagingService.send('showDialogResolve', {
             dialogId: msg.dialogId,
-            confirmed: confirmed,
+            confirmed: confirmed.value,
         });
     }
 }
