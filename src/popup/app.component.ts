@@ -213,7 +213,7 @@ export class AppComponent implements OnInit {
     }
 
     private async showDialog(msg: any) {
-        let iconClasses = null;
+        let iconClasses: string = null;
         const type = msg.type;
         if (type != null) {
             // If you add custom types to this part, the type to SweetAlertIcon cast below needs to be changed.
