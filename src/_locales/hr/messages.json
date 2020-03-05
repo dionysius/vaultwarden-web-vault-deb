@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Ovo je trenutno eksperimentalna značajka. Koristite na vlastitu odgovornost."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Automatski popunite zadnje korištenu prijavu za trenutačnu web stranicu."
   },
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Morate odabrati barem jednu zbirku."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

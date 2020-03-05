@@ -876,8 +876,14 @@
   "experimentalFeature": {
     "message": "Atualmente, este é um recurso experimental. Utilize por sua conta e risco."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
-    "message": "Autopreencher o último login utilizado para o site atual."
+    "message": "Auto-preencher o último login utilizado para o site atual."
   },
   "commandGeneratePasswordDesc": {
     "message": "Gerar e copiar uma nova senha aleatória para a área de transferência."
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Você deve selecionar pelo menos uma coleção."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

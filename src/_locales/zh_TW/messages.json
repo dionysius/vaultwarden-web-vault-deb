@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "目前這是一項實驗性功能。要使用需自行承擔風險。"
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "自動使用最後一次登入的帳戶填入目前網站"
   },
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "您必須至少選擇一個收藏。"
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

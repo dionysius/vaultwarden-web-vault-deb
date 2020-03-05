@@ -122,7 +122,7 @@
     "message": "마스터 비밀번호 변경"
   },
   "fingerprintPhrase": {
-    "message": "지문 구문",
+    "message": "지문 구절",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -212,11 +212,11 @@
     "message": "구분 기호"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "첫 글자를 대문자로",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "숫자 포함"
   },
   "minNumbers": {
     "message": "숫자 최소 개수"
@@ -306,7 +306,7 @@
     "message": "잠금 해제"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$EMAIL$로 $HOSTNAME$에 로그인 되었습니다.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "현재 실험 중인 기능입니다. 위험을 감수하여 사용하세요."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "현재 웹사이트에서 최근에 사용했던 로그인을 자동 완성합니다."
   },
@@ -898,7 +904,7 @@
     "message": "새 사용자 지정 필드"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "드래그하여 정렬"
   },
   "cfTypeText": {
     "message": "텍스트"
@@ -913,7 +919,7 @@
     "message": "인증 코드가 담긴 이메일을 확인하기 위해 팝업 창의 바깥쪽을 누르면 이 팝업이 닫힙니다. 팝업 창이 닫히는 것을 방지하기 위해 이 팝업을 새 창에서 다시 여시겠습니까?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "이 브라우저의 팝업 창에서는 U2F 요청을 처리할 수 없습니다. U2F로 로그인할 수 있도록 이 창을 새 창에서 열까요?"
   },
   "disableFavicon": {
     "message": "웹 사이트 아이콘 사용 안 함"
@@ -1231,6 +1237,15 @@
     "message": "브라우저 다시 시작 시 마스터 비밀번호로 잠금"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "반드시 하나 이상의 모음을 선택해야 합니다."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

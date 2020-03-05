@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Saat ini Anda pada lingkungan sementara. Gunakanlah dengan resiko yang ditanggung sendiri."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Isi otomatis info masuk yang digunakan terakhir untuk situs ini."
   },
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

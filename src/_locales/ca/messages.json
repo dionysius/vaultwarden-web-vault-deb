@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Actualment és una característica experimental. Utilitzeu sota el vostre propi risc."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Ompliu automàticament amb l'últim accés utilitzat per al lloc web actual."
   },
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Heu d'escollir com a mínim una col·lecció."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

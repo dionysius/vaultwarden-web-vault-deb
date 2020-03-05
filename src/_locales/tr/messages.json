@@ -249,7 +249,7 @@
     "message": "Parola"
   },
   "passphrase": {
-    "message": "Cümle Parola"
+    "message": "Kelimelerden Oluşan Parola"
   },
   "favorite": {
     "message": "Favori"
@@ -261,16 +261,16 @@
     "message": "Not"
   },
   "editItem": {
-    "message": "Hesabı düzenle"
+    "message": "Ögeyi Düzenle"
   },
   "folder": {
     "message": "Klasör"
   },
   "deleteItem": {
-    "message": "Hesabı Sil"
+    "message": "Ögeyi Sil"
   },
   "viewItem": {
-    "message": "Hesabı Görüntüle"
+    "message": "Ögeyi Göster"
   },
   "launch": {
     "message": "Başlat"
@@ -300,7 +300,7 @@
     "message": "Ana Parolayı Doğrula"
   },
   "yourVaultIsLocked": {
-    "message": "Kasan kilitlendi. Devam etmek için ana parolanı doğrula."
+    "message": "Kasan kilitli. Devam etmek için ana parolanı doğrula."
   },
   "unlock": {
     "message": "Kilidi Aç"
@@ -364,7 +364,7 @@
     "message": "Sistem Kilitliyken"
   },
   "onRestart": {
-    "message": "Tarayıcıda Yeniden Başlatılırken"
+    "message": "Tarayıcı Yeniden Başlatıldığında"
   },
   "never": {
     "message": "Asla"
@@ -455,7 +455,7 @@
     "message": "Klasör silindi"
   },
   "gettingStartedTutorial": {
-    "message": "Başlangıç Öğreticileri"
+    "message": "Başlangıç Turu"
   },
   "gettingStartedTutorialVideo": {
     "message": "Tarayıcı uzantısından en iyi şekilde nasıl yararlanabileceğinizi öğrenmek için başlangıç eğitimimizi izleyin."
@@ -523,16 +523,16 @@
     "message": "\"Hesap Ekle Bildirimi\" otomatik olarak, ilk kez oturum açtığınız hesabınızı kasanıza kaydetmeniz için uyarı verir."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Sekme Sayfasında Kartları Gösterme"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Kasanızdaki kart öğeleri, otomatik doldurma erişiminin kolay olması için 'Geçerli Sekme' sayfasında listelenmiştir."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Sekme Sayfasında Kimlikleri Gösterme"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Kasanızdaki kimlik öğeleri, otomatik doldurma erişiminin kolay olması için 'Geçerli Sekme' sayfasında listelenmiştir."
   },
   "clearClipboard": {
     "message": "Panoyu Temizle",
@@ -558,7 +558,7 @@
     "message": "\"Değiştirilmiş Parola Bildirimleri\" bir web sitesindeki hesabınızda parolanızı değiştirdiğinizde otomatik olarak parolanızı güncellemenizi sağlar."
   },
   "notificationChangeDesc": {
-    "message": "Bu parolayı Bitwarden kasanızda güncellemek ister misiniz?"
+    "message": "Bu parolayı Bitwarden'da güncellemek ister misiniz?"
   },
   "notificationChangeSave": {
     "message": "Evet, şimdi güncelle"
@@ -594,7 +594,7 @@
     "message": "Kasayı Dışa Aktar"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Dosya Biçimi"
   },
   "warning": {
     "message": "UYARI",
@@ -616,16 +616,16 @@
     "message": "Bitwarden bir kuruluş hesabı kullanarak başkalarıyla kasanızı paylaşmanızı sağlar. Daha fazla bilgi için bitwarden.com sitesini ziyaret etmek ister misiniz?"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Öge Paylaş"
   },
   "share": {
     "message": "Paylaş"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Öge Paylaşıldı"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Bu ögeyi paylaşmak istediğiniz organizasyonu seçin. Paylaşım, ögenin sahipliğini kuruluşa aktarır. Paylaşıldıktan sonra artık bu ögenin doğrudan sahibi olmayacaksınız."
   },
   "learnMore": {
     "message": "Daha fazla bilgi edinin"
@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Bu şu anda deneysel bir özelliktir. Kullanımı sizin sorumluluğunuzdadır."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Geçerli site için son kullanılan giriş verisini otomatik doldur."
   },
@@ -1045,7 +1051,7 @@
     "message": "Eyalet / İl"
   },
   "zipPostalCode": {
-    "message": "Posta Kodu"
+    "message": "Zip / Posta Kodu"
   },
   "country": {
     "message": "Ülke"
@@ -1096,7 +1102,7 @@
     "message": "Girişler"
   },
   "secureNotes": {
-    "message": "Güvenli Notlar"
+    "message": "Güvenlikli Notlar"
   },
   "clear": {
     "message": "Temizle",
@@ -1153,7 +1159,7 @@
     "message": "Türler"
   },
   "allItems": {
-    "message": "Tüm öğeler"
+    "message": "Tüm ögeler"
   },
   "noPasswordsInList": {
     "message": "Listelenecek parola yok."
@@ -1176,7 +1182,7 @@
     "message": "\"Asla\" seçeneğini kullanmak istediğinize emin misiniz? Kilit seçeneğinizi \"Asla\" olarak ayarlarsanız, kasanın şifreleme anahtarı cihazınızda saklanacaktır. Bu seçeneği kullanırsanız, cihazınızın düzgün bir şekilde korumalı ve güvende tutmalısınız."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Hiçbir topluluğa ait değilsiniz. Topluluk diğer kullanıcılar ile güvenli öğe paylaşımına izin verir."
   },
   "noCollectionsInList": {
     "message": "Listelenecek koleksiyon yok."
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "En az bir koleksiyon seçmelisiniz."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

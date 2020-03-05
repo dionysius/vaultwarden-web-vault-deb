@@ -222,10 +222,10 @@
     "message": "Mínimo de números"
   },
   "minSpecial": {
-    "message": "Mínimo de carácteres especiales"
+    "message": "Mínimo de caracteres especiales"
   },
   "avoidAmbChar": {
-    "message": "Evitar carácteres ambiguos"
+    "message": "Evitar caracteres ambiguos"
   },
   "searchVault": {
     "message": "Buscar en caja fuerte"
@@ -437,7 +437,7 @@
     "message": "Carpeta añadida"
   },
   "changeMasterPass": {
-    "message": "Cambiar la contraseña maestra"
+    "message": "Cambiar contraseña maestra"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Puedes cambiar tu contraseña maestra en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
@@ -523,7 +523,7 @@
     "message": "La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres guardar nuevas entradas en tu caja fuerte cuando te identificas en un sitio web por primera vez."
   },
   "dontShowCardsCurrentTab": {
-    "message": "No mostrar tarjetas en la página de ficha"
+    "message": "No mostrar tarjetas en la pestaña"
   },
   "dontShowCardsCurrentTabDesc": {
     "message": "Elementos de la tarjeta de su caja fuerte están listados en la página 'Ficha Actual' para el acceso fácil del autorellenado."
@@ -876,8 +876,14 @@
   "experimentalFeature": {
     "message": "Esta es una característica experimental. Úsala bajo tu propio riesgo."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
-    "message": "Autorellenar la última entrada utilizada para la página actual."
+    "message": "Autorrellenar la última entrada utilizada para la página actual."
   },
   "commandGeneratePasswordDesc": {
     "message": "Generar y copiar una nueva contraseña aleatoria al portapapeles."
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Debes seleccionar al menos una colección."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

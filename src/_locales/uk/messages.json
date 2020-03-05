@@ -838,7 +838,7 @@
     "message": "Середовище власного хостингу"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення Bitwarden."
+    "message": "Вкажіть основну URL-адресу Bitwarden на вашому сервері."
   },
   "customEnvironment": {
     "message": "Власне середовище"
@@ -875,6 +875,12 @@
   },
   "experimentalFeature": {
     "message": "Це експериментальна функція. При її використанні ви берете ризик на себе."
+  },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
   },
   "commandAutofillDesc": {
     "message": "Автозаповнення останнього використаного запису для цього веб-сайту."
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Ви повинні обрати принаймні одну збірку."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

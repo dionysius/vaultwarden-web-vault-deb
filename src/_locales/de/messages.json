@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
   },
+  "commandOpenPopup": {
+    "message": "Tresor-Popup öffnen"
+  },
+  "commandOpenSidebar": {
+    "message": "Tresor in der Seitenleiste öffnen"
+  },
   "commandAutofillDesc": {
     "message": "Den zuletzt verwendeten Login für die aktuelle Webseite automatisch ausfüllen lassen."
   },
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Sie müssen mindestens eine Sammlung auswählen."
+  },
+  "cloneItem": {
+    "message": "Element duplizieren"
+  },
+  "clone": {
+    "message": "Duplizieren"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen Ihre Generator-Einstellungen."
   }
 }

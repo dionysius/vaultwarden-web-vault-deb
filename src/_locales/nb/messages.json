@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Dette er for øyeblikket en eksperimentell egenskap. Bruk det på din egen risiko."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Auto-utfyll den senest brukte innloggingen til den nåværende nettsiden."
   },
@@ -1143,7 +1149,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Veksle Alternativer"
+    "message": "Skru av/på innstillinger"
   },
   "organization": {
     "message": "Organisasjon",
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Du må velge minst én samling."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

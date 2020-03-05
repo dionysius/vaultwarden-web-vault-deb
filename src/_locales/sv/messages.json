@@ -212,11 +212,11 @@
     "message": "Ordseparator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Versalisera",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Inkludera siffra"
   },
   "minNumbers": {
     "message": "Minst antal nummer"
@@ -306,7 +306,7 @@
     "message": "Lås upp"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Inloggad som $EMAIL$ på $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Detta är för närvarande en experimentell funktion. Använd på egen risk."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Fyll automatiskt i den senast använda inloggningen för aktuell sida."
   },
@@ -913,7 +919,7 @@
     "message": "Om du klickar utanför popup-fönstret för att kontrollera din email efter din verifieringskod så stängs popup-fönstret. Vill du öppna popup-fönstret i ett nytt fönster, så att det inte stängs?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Den här webbläsaren kan inte bearbeta U2F-förfrågningar i detta popup-fönster. Vill du öppna ett nytt fönster så att du kan logga in med U2F?"
   },
   "disableFavicon": {
     "message": "Inaktivera webbplatsikoner"
@@ -1216,7 +1222,7 @@
     "message": "Ange en PIN-kod för att låsa upp Bitwarden. Dina PIN-inställningar återställs om du någonsin loggar ut helt från programmet."
   },
   "pinRequired": {
-    "message": "PIN-kod behövs."
+    "message": "PIN-kod krävs."
   },
   "invalidPin": {
     "message": "Ogiltig PIN-kod."
@@ -1231,6 +1237,15 @@
     "message": "Lås med huvudlösenordet vid omstart av webbläsaren"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Du måste markera minst en samling."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

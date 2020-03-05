@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "În acest moment, aceasta funcțiune este experimentală. O puteți folosi pe propria răspundere."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Completare automată a ultimelor date de autentificare utilizate pentru saitul web curent."
   },
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Este nevoie să alegeți măcar o colecție."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

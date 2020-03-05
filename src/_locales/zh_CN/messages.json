@@ -736,7 +736,7 @@
     "message": "刷新完成"
   },
   "disableAutoTotpCopy": {
-    "message": "禁用自动 TOTP 备份"
+    "message": "禁止自动复制 TOTP 验证码"
   },
   "disableAutoTotpCopyDesc": {
     "message": "如果您的登录信息包含一个验证密钥，当自动填写该登录项目时，TOTP 验证码将会自动复制到剪贴板。"
@@ -868,13 +868,19 @@
     "message": "各环境 URL 已保存。"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load."
+    "message": "当页面加载时自动填充用户信息"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "如果网页加载时检测到登录表单，自动进行表单填写。"
   },
   "experimentalFeature": {
     "message": "目前这是一项实验功能。使用需自担风险。"
+  },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
   },
   "commandAutofillDesc": {
     "message": "自动用最后一次登录填写当前网站"
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "您必须选择至少一个收藏。"
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

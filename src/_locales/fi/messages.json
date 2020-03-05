@@ -216,7 +216,7 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Sisällytä numero"
   },
   "minNumbers": {
     "message": "Numeroja vähintään"
@@ -306,7 +306,7 @@
     "message": "Avaa"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Kirjautuneena käyttäjänä $EMAIL$ palvelimelle $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Tämä on vielä kokeellinen toiminto. Käytä omalla vastuullasi."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Täytä automaattisesti tällä sivustolla viimeksi käytetty käyttäjätunnus."
   },
@@ -898,7 +904,7 @@
     "message": "Uusi lisäkenttä"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Lajittele vetämällä"
   },
   "cfTypeText": {
     "message": "Teksti"
@@ -913,7 +919,7 @@
     "message": "Kun napsautat ponnahdusikkunan ulkopuolelta tarkistaaksesi vahvistuskoodin sähköpostistasi, näkymä sulkeutuu. Haluatko avata tämän näkymän uuteen ikkunaan, jotta se ei sulkeutuisi?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Tämä selain ei mahdollista U2F:n käyttämistä tässä ponnahdusikkunassa. Haluatko avata tämän näkymän uuteen ikkunaan, jotta voit kirjautua U2F-todennuslaitteella?"
   },
   "disableFavicon": {
     "message": "Älä näytä sivustokuvakkeita"
@@ -1231,6 +1237,15 @@
     "message": "Lukitse pääsalasanalla uudelleenkäynnistyksen yhteydessä"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Valitse vähintään yksi kokoelma."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

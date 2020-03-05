@@ -486,16 +486,16 @@
     "message": "新しい URI"
   },
   "addedItem": {
-    "message": "追加されたアイテム"
+    "message": "追加しました"
   },
   "editedItem": {
-    "message": "編集されたアイテム"
+    "message": "編集しました"
   },
   "deleteItemConfirmation": {
     "message": "このアイテムを削除しますか？"
   },
   "deletedItem": {
-    "message": "削除済みのアイテム"
+    "message": "削除しました"
   },
   "overwritePassword": {
     "message": "パスワードを上書き"
@@ -513,7 +513,7 @@
     "message": "検索の種類"
   },
   "noneFolder": {
-    "message": "フォルダなし",
+    "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
@@ -622,7 +622,7 @@
     "message": "共有"
   },
   "sharedItem": {
-    "message": "共有されたアイテム"
+    "message": "共有しました"
   },
   "shareDesc": {
     "message": "このアイテムを共有する組織を選択してください。共有するとアイテムの所有権は組織に移行し、あなたはもはやこのアイテムの直接のオーナーではなくなります。"
@@ -875,6 +875,12 @@
   },
   "experimentalFeature": {
     "message": "これは現在、実験的な機能です。自己責任で使用してください。"
+  },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
   },
   "commandAutofillDesc": {
     "message": "現在のウェブサイトで前回使用されたログイン情報を自動入力します。"
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "最低でも一つのコレクションを選んでください。"
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

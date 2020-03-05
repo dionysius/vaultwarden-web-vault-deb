@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "S'identifier ou créer un nouveau compte pour accéder à votre coffre sécurisé."
+    "message": "Identifiez-vous ou créez un nouveau compte pour accéder à votre coffre sécurisé."
   },
   "createAccount": {
     "message": "Créer un compte"
@@ -41,7 +41,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Saisir à nouveau le mot de passe maître"
+    "message": "Saisissez à nouveau le mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -80,7 +80,7 @@
     "message": "Copier le code de sécurité"
   },
   "autoFill": {
-    "message": "Auto-remplissage"
+    "message": "Remplissage automatique"
   },
   "generatePasswordCopied": {
     "message": "Générer un mot de passe (copié)"
@@ -240,7 +240,7 @@
     "message": "Aucun identifiant à afficher."
   },
   "itemInformation": {
-    "message": "Information sur l'élément"
+    "message": "Informations sur l'élément"
   },
   "username": {
     "message": "Nom d'utilisateur"
@@ -270,10 +270,10 @@
     "message": "Supprimer l'élément"
   },
   "viewItem": {
-    "message": "Voir l'élément"
+    "message": "Afficher l'élément"
   },
   "launch": {
-    "message": "Démarrer"
+    "message": "Ouvrir"
   },
   "website": {
     "message": "Site web"
@@ -294,13 +294,13 @@
     "message": "Merci de nous aider en mettant une bonne note !"
   },
   "browserNotSupportClipboard": {
-    "message": "Votre navigateur web ne supporte pas la copie facilitée du presse-papier. Copiez-le manuellement à la place."
+    "message": "Votre navigateur web ne supporte pas la copie rapide depuis le presse-papier. Copiez-le manuellement à la place."
   },
   "verifyMasterPassword": {
-    "message": "Vérifiez votre mot de passe maître"
+    "message": "S'authentifier avec le mot de passe maître"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Saisissez votre mot de passe maître pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -443,7 +443,7 @@
     "message": "Vous pouvez modifier votre mot de passe maître depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'identification en deux étapes rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'identification en deux étapes peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
+    "message": "L'identification en deux étapes sécurise davantage votre compte en vous demandant à chaque connexion de saisir un code de sécurité obtenu depuis un autre appareil, via une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique, ou un e-mail. L'identification en deux étapes peut être activée depuis le coffre web sur bitwarden.com. Voulez-vous vous visiter le site web maintenant ?"
   },
   "editedFolder": {
     "message": "Dossier modifié"
@@ -504,7 +504,7 @@
     "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
   },
   "searchFolder": {
-    "message": "Recherche dossier"
+    "message": "Rechercher dans le dossier"
   },
   "searchCollection": {
     "message": "Rechercher dans la collection"
@@ -646,7 +646,7 @@
     "message": "Supprimer la pièce jointe"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Êtes-vous sûr⋅e de vouloir supprimer cette pièce jointe ?"
+    "message": "Êtes-vous sûr(e) de vouloir supprimer cette pièce jointe ?"
   },
   "deletedAttachment": {
     "message": "Pièce jointe supprimée"
@@ -682,7 +682,7 @@
     "message": "Gérer l'adhésion"
   },
   "premiumManageAlert": {
-    "message": "Vous pouvez gérer votre adhésion depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?"
+    "message": "Vous pouvez gérer votre adhésion depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site web maintenant ?"
   },
   "premiumRefresh": {
     "message": "Actualiser l'adhésion"
@@ -703,19 +703,19 @@
     "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
   },
   "ppremiumSignUpTotp": {
-    "message": "La génération d'un code de vérification TOTP (double facteurs / 2FA) pour les identifiants de votre coffre."
+    "message": "Génération d'un code de vérification TOTP (2FA) pour les identifiants de votre coffre."
   },
   "ppremiumSignUpSupport": {
     "message": "Support client prioritaire."
   },
   "ppremiumSignUpFuture": {
-    "message": "Toutes les futures options premium. Prochainement !"
+    "message": "Toutes les futures options premium. D'autres suivront prochainement !"
   },
   "premiumPurchase": {
     "message": "Acheter Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?"
+    "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site web maintenant ?"
   },
   "premiumCurrentMember": {
     "message": "Vous êtes un adhérent premium !"
@@ -742,7 +742,7 @@
     "message": "Si une clé d'authentification est rattachée à votre identifiant, alors le code de vérification TOTP est automatiquement copié dans le presse-papiers lorsque vous renseignez l'identifiant."
   },
   "premiumRequired": {
-    "message": "Version Premium requise"
+    "message": "Adhésion Premium requise"
   },
   "premiumRequiredDesc": {
     "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
@@ -815,7 +815,7 @@
     "message": "Utiliser une YubiKey pour accéder à votre compte. Fonctionne avec les appareils YubiKey 4, 4 Nano, 4C et NEO."
   },
   "duoDesc": {
-    "message": "Vérifier avec Duo Security via l'application Duo Mobile, SMS, appel vocal ou une clé de sécurité U2F.",
+    "message": "S'authentifier avec Duo Security via l'application Duo Mobile, un SMS, un appel téléphonique, ou une clé de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -868,13 +868,19 @@
     "message": "Les URLs d'environnement ont été enregistrées."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Activer l’auto-complétion au chargement de la page"
+    "message": "Activer le remplissage automatique au chargement de la page"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Si un formulaire de connexion est détecté, compléter automatiquement les champs au chargement de la page web."
+    "message": "Si un formulaire de connexion est détecté, remplir automatiquement les champs au chargement de la page web."
   },
   "experimentalFeature": {
     "message": "Ceci est actuellement une fonctionnalité expérimentale. À utiliser avec prudence."
+  },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
   },
   "commandAutofillDesc": {
     "message": "Remplir automatiquement le dernier identifiant utilisé pour le site web actuel."
@@ -925,7 +931,7 @@
     "message": "Nom du titulaire de la carte"
   },
   "number": {
-    "message": "Nombre"
+    "message": "Numéro"
   },
   "brand": {
     "message": "Réseau de paiement"
@@ -1051,7 +1057,7 @@
     "message": "Pays"
   },
   "type": {
-    "message": "Format"
+    "message": "Type"
   },
   "typeLogin": {
     "message": "Identifiant"
@@ -1203,7 +1209,7 @@
     "message": "Mot de passe maître faible"
   },
   "weakMasterPasswordDesc": {
-    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
+    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr(e) de vouloir utiliser ce mot de passe maître ?"
   },
   "pin": {
     "message": "Code PIN",
@@ -1222,15 +1228,24 @@
     "message": "Code PIN invalide."
   },
   "verifyPin": {
-    "message": "S'authentifier avec un code PIN"
+    "message": "S'authentifier avec le code PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Votre coffre est verrouillé. Vérifiez votre code PIN pour continuer."
+    "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
   },
   "selectOneCollection": {
     "message": "Vous devez sélectionner au moins une collection."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

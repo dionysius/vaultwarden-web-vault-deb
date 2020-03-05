@@ -876,11 +876,17 @@
   "experimentalFeature": {
     "message": "Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
-    "message": "Automatikusan töltse ki az utólag használt bejelentkezést ezen a weboldalon."
+    "message": "Az aktuális webhelynél az utoljára használt bejelentkezés automatikus kitöltése."
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generálj és másolj egy új véletlenszerű jelszót a vágólapra."
+    "message": "Új véletlenszerű jelszó generálása ás másolása a vágólapra."
   },
   "privateModeMessage": {
     "message": "Ebben a böngészőben ez az ablak sajnos nem érhető el privát módban."
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Legalább egy gyűjteményt ki kell választani."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

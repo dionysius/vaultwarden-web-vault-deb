@@ -876,8 +876,14 @@
   "experimentalFeature": {
     "message": "Toto je momentálně experimentální funkce. Použijte na vlastní riziko."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
-    "message": "Automaticky vyplnit poslední použité přihlašovací údaje pro tuto stránku."
+    "message": "Automaticky vyplnit poslední použité přihlašovací údaje pro aktuální web."
   },
   "commandGeneratePasswordDesc": {
     "message": "Vygenerovat a zkopírovat nové náhodné heslo do schránky."
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Musíte vybrat alespoň jednu kolekci."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

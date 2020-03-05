@@ -71,7 +71,7 @@
     "message": "Sao chép URL"
   },
   "copyUsername": {
-    "message": "Sao chép Tên đăng nhập"
+    "message": "Sao chép tên đăng nhập"
   },
   "copyNumber": {
     "message": "Sao chép Số"
@@ -126,7 +126,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Cụm từ mật khẩu của tài khoản của bạn",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -212,11 +212,11 @@
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Viết hoa",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Bao gồm cả số"
   },
   "minNumbers": {
     "message": "Số kí tự tối thiểu"
@@ -249,7 +249,7 @@
     "message": "Mật khẩu"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Cụm từ mật khẩu"
   },
   "favorite": {
     "message": "Yêu thích"
@@ -300,13 +300,13 @@
     "message": "Nhập lại mật khẩu chính"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Kho của bạn đã bị khóa. Xác minh mật khẩu chính của bạn để mở."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Mở khóa"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Đã đăng nhập là $EMAIL$ trên $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -331,19 +331,19 @@
     "message": "Tức thì"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 giây"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 giây"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 giây"
   },
   "oneMinute": {
     "message": "1 phút"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 phút"
   },
   "fiveMinutes": {
     "message": "5 phút"
@@ -535,11 +535,11 @@
     "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Dọn dẹp khay nhớ tạm",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Tự động dọn dẹp giá trị được sao chép khỏi khay nhớ tạm của bạn.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -558,7 +558,7 @@
     "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Bạn có muốn cập nhật mật khẩu này trên Bitwarden không?"
   },
   "notificationChangeSave": {
     "message": "Yes, Update Now"
@@ -619,7 +619,7 @@
     "message": "Share Item"
   },
   "share": {
-    "message": "Share"
+    "message": "Chia sẻ"
   },
   "sharedItem": {
     "message": "Shared Item"
@@ -875,6 +875,12 @@
   },
   "experimentalFeature": {
     "message": "Đây là một tính năng thử nghiệm. Sử dụng nó có thể gây ra rủi ro cho bạn."
+  },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
   },
   "commandAutofillDesc": {
     "message": "Tự động điền thông tin đăng nhập người dùng cho trang web hiện tại."
@@ -1165,7 +1171,7 @@
     "message": "Mặc định"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Ngày cập nhật",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1182,21 +1188,21 @@
     "message": "There are no collections to list."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Quyền sở hữu"
   },
   "whoOwnsThisItem": {
     "message": "Who owns this item?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Mạnh",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Tốt",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Yếu",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

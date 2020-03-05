@@ -83,7 +83,7 @@
     "message": "Auto-invullen"
   },
   "generatePasswordCopied": {
-    "message": "Wachtwoord genereren (gekopieerd)"
+    "message": "Wachtwoord genereren (op klembord)"
   },
   "noMatchingLogins": {
     "message": "Geen overeenkomstige logins."
@@ -92,7 +92,7 @@
     "message": "Kluis is vergrendeld."
   },
   "autoFillInfo": {
-    "message": "Er zijn geen logins beschikbaar om op het huidige browser-tabblad automatisch in te vullen."
+    "message": "Er zijn geen logins beschikbaar om op het huidige browser-tabblad in te vullen."
   },
   "addLogin": {
     "message": "Login toevoegen"
@@ -163,10 +163,10 @@
     "message": "Er zijn geen mappen om weer te geven."
   },
   "helpFeedback": {
-    "message": "Help & reacties"
+    "message": "Hulp en reacties"
   },
   "sync": {
-    "message": "Synchronisatie"
+    "message": "Synchroniseren"
   },
   "syncVaultNow": {
     "message": "Kluis nu synchroniseren"
@@ -197,7 +197,7 @@
     "message": "Wachtwoord genereren"
   },
   "regeneratePassword": {
-    "message": "Wachtwoord opnieuw genereren"
+    "message": "Opnieuw genereren"
   },
   "options": {
     "message": "Opties"
@@ -240,7 +240,7 @@
     "message": "Er zijn geen items om weer te geven."
   },
   "itemInformation": {
-    "message": "Item-informatie"
+    "message": "Item"
   },
   "username": {
     "message": "Gebruikersnaam"
@@ -288,7 +288,7 @@
     "message": "Overig"
   },
   "rateExtension": {
-    "message": "Extensie beoordelen"
+    "message": "Deze extensie beoordelen"
   },
   "rateExtensionDesc": {
     "message": "Je kunt ons helpen door een goede recensie achter te laten!"
@@ -297,7 +297,7 @@
     "message": "Je webbrowser ondersteunt kopiëren naar plakbord niet. Kopieer handmatig."
   },
   "verifyMasterPassword": {
-    "message": "Hoofdwachtwoord verifiëren"
+    "message": "Hoofdwachtwoord invoeren"
   },
   "yourVaultIsLocked": {
     "message": "Je kluis is vergrendeld. Voer je hoofdwachtwoord in om door te gaan."
@@ -443,7 +443,7 @@
     "message": "Je kunt je hoofdwachtwoord wijzigen in de kluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Tweestapsaanmelding beschermt je account door je inlogpoging te bevestigen met een ander apparaat zoals een beveiligingssleutel, authenticatie-app, SMS, spraakoproep of e-mail. Je kunt Tweestapsaanmelding inschakelen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
+    "message": "Tweestapsaanmelding beschermt je account door je inlogpoging te bevestigen met een ander apparaat zoals een beveiligingscode, authenticatie-app, SMS, spraakoproep of e-mail. Je kunt Tweestapsaanmelding inschakelen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "editedFolder": {
     "message": "Map is bewerkt"
@@ -510,7 +510,7 @@
     "message": "Verzameling doorzoeken"
   },
   "searchType": {
-    "message": "Type doorzoeken"
+    "message": "Categorie doorzoeken"
   },
   "noneFolder": {
     "message": "Geen map",
@@ -539,7 +539,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatisch gekopieerde waarden van je klembord wissen.",
+    "message": "Gekopieerde waarden automatisch van het klembord wissen.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -552,10 +552,10 @@
     "message": "Nooit voor deze website"
   },
   "disableChangedPasswordNotification": {
-    "message": "Melding van gewijzigd wachtwoord uitschakelen"
+    "message": "Melding gewijzigd wachtwoord uitschakelen"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "De \"Melding van gewijzigd wachtwoord\" stelt automatisch voor om een wachtwoord in je kluis bij te werken wanneer het op een website is gewijzigd."
+    "message": "De \"Melding gewijzigd wachtwoord\" stelt automatisch voor om een wachtwoord in je kluis bij te werken wanneer het op een website is gewijzigd."
   },
   "notificationChangeDesc": {
     "message": "Wilt je dit wachtwoord in Bitwarden bijwerken?"
@@ -610,7 +610,7 @@
     "message": "Gedeeld"
   },
   "shareVault": {
-    "message": "Je kluis delen"
+    "message": "Kluis delen"
   },
   "shareVaultConfirmation": {
     "message": "Met een organisatie-account kunt je jeBitwarden-kluis delen met anderen. Wil je de website bitwarden.com bezoeken voor meer informatie?"
@@ -622,7 +622,7 @@
     "message": "Delen"
   },
   "sharedItem": {
-    "message": "Gedeeld item"
+    "message": "Item gedeeld"
   },
   "shareDesc": {
     "message": "Kies een organisatie waarmee je dit item wilt delen. Door het delen draag je het eigendom van dit item over aan de organisatie. Je bent niet langer de directe eigenaar van het item wanneer deze is gedeeld."
@@ -631,7 +631,7 @@
     "message": "Meer informatie"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticatiesleutel (TOTP)"
+    "message": "Authenticatiecode (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Verificatiecode (TOTP)"
@@ -739,7 +739,7 @@
     "message": "TOTP automatisch kopiëren uitschakelen"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Als aan je login een authenticatorsleutel is gekoppeld, wordt de TOTP-verificatiecode automatisch gekopieerd naar je klembord wanneer je de login automatisch invult."
+    "message": "Als je login gekoppeld is met een authenticatiecode, wordt de TOTP-verificatiecode automatisch naar het klembord gekopieerd bij het automatisch invullen van de login."
   },
   "premiumRequired": {
     "message": "Premium is vereist"
@@ -784,7 +784,7 @@
     "message": "Plaats je beveilingssleutel in de USB-poort van je computer. Als het een knop heeft, druk deze dan in."
   },
   "loginUnavailable": {
-    "message": "Inloggen niet beschikbaar"
+    "message": "Login niet beschikbaar"
   },
   "noTwoStepProviders": {
     "message": "Dit account heeft tweestapsaanmelding ingeschakeld, maar deze webbrowser ondersteunt geen van de geconfigureerde aanbieders."
@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Dit is momenteel een experimentele functie; gebruik hiervan is op eigen risico."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Vul automatisch de laatst gebruikte inloggegevens voor de huidige website in."
   },
@@ -925,7 +931,7 @@
     "message": "Naam kaarthouder"
   },
   "number": {
-    "message": "Nummer"
+    "message": "Kaartummer"
   },
   "brand": {
     "message": "Merk"
@@ -982,7 +988,7 @@
     "message": "bijv."
   },
   "title": {
-    "message": "Titel"
+    "message": "Aanhef"
   },
   "mr": {
     "message": "Dhr."
@@ -1000,7 +1006,7 @@
     "message": "Voornaam"
   },
   "middleName": {
-    "message": "Tussenvoegsel"
+    "message": "Tweede naam"
   },
   "lastName": {
     "message": "Achternaam"
@@ -1051,7 +1057,7 @@
     "message": "Land"
   },
   "type": {
-    "message": "Type"
+    "message": "Categorie"
   },
   "typeLogin": {
     "message": "Login"
@@ -1069,7 +1075,7 @@
     "message": "Identiteit"
   },
   "passwordHistory": {
-    "message": "Wachtwoordgeschiedenis"
+    "message": "Geschiedenis"
   },
   "back": {
     "message": "Terug"
@@ -1150,7 +1156,7 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Typen"
+    "message": "Categorieën"
   },
   "allItems": {
     "message": "Alle items"
@@ -1206,11 +1212,11 @@
     "message": "Je hebt een zwak hoofdwachtwoord gekozen. Gebruik een sterk hoofdwachtwoord (of wachtwoordzin) om jouw Bitwarden-account goed te beschermen. Weet je zeker dat je dit hoofdwachtwoord wilt gebruiken?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-code",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Met PIN ontgrendelen"
+    "message": "Ontgrendelen met PIN"
   },
   "setYourPinCode": {
     "message": "Stel je PIN-code in voor het ontgrendelen van Bitwarden. Je PIN-code wordt opnieuw ingesteld als je je ooit volledig afmeldt bij de applicatie."
@@ -1222,7 +1228,7 @@
     "message": "Ongeldige PIN-code."
   },
   "verifyPin": {
-    "message": "PIN-code verifiëren"
+    "message": "PIN-code invoeren"
   },
   "yourVaultIsLockedPinCode": {
     "message": "Je kluis is vergrendeld. Voer je PIN-code in om door te gaan."
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Je moet tenminste één verzameling selecteren."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

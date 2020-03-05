@@ -212,11 +212,11 @@
     "message": "Oddeľovač slov"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Prvé písmeno veľkým",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Zahrnúť číslo"
   },
   "minNumbers": {
     "message": "Minimum číslic"
@@ -306,7 +306,7 @@
     "message": "Odomknúť"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Prihlásený ako $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "Toto je zatiaľ experimentálna funkcia. Použite na vlastné riziko."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "Automaticky vyplniť naposledy použité prihlasovacie údaje pre túto stránku."
   },
@@ -898,7 +904,7 @@
     "message": "Nové vlastné pole"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Zoradiť presúvaním"
   },
   "cfTypeText": {
     "message": "Text"
@@ -913,7 +919,7 @@
     "message": "Kliknutie mimo popup okna na prezretie vášho emailu pre overovací kód spôsobí zavretie tohto popupu. Chcete otvoriť tento popup v novom okne tak, aby sa nezavrel?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Tento prehliadač nedokáže spracovať U2F požiadavku v popup okne. Chcete ho otvoriť v novom okne aby ste sa mohli prihlásiť pomocou U2F?"
   },
   "disableFavicon": {
     "message": "Nezobrazovať ikony stránok"
@@ -1231,6 +1237,15 @@
     "message": "Pri reštarte prehliadača zamknúť s hlavným heslom"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Musíte vybrať aspoň jednu zbierku."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

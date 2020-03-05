@@ -876,6 +876,12 @@
   "experimentalFeature": {
     "message": "זוהי אופציה נסיונית. השימוש באופציה זו על אחריותך."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
     "message": "השתמש בהשלמה-האוטומטית האחרונה שבוצעה באתר זה."
   },
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "עליך לבחור לפחות אוסף אחד."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

@@ -876,8 +876,14 @@
   "experimentalFeature": {
     "message": "Это экспериментальная функция. Используйте на свой страх и риск."
   },
+  "commandOpenPopup": {
+    "message": "Open vault popup"
+  },
+  "commandOpenSidebar": {
+    "message": "Open vault in sidebar"
+  },
   "commandAutofillDesc": {
-    "message": "Автозаполнение последнего использованного логина для текущего веб-сайта."
+    "message": "Автозаполнение последнего использованного логина для текущего сайта."
   },
   "commandGeneratePasswordDesc": {
     "message": "Создавать и копировать новый случайный пароль в буфер обмена."
@@ -1232,5 +1238,14 @@
   },
   "selectOneCollection": {
     "message": "Необходимо выбрать хотя бы одну коллекцию."
+  },
+  "cloneItem": {
+    "message": "Clone Item"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }
