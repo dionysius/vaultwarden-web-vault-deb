@@ -7,7 +7,6 @@ const gulp = require('gulp'),
     child = require('child_process'),
     zip = require('gulp-zip'),
     manifest = require('./src/manifest.json'),
-    xmlpoke = require('gulp-xmlpoke'),
     del = require('del'),
     fs = require('fs');
 
@@ -34,9 +33,6 @@ const filters = {
     webExt: [
         '!build/manifest.json'
     ],
-    edge: [
-        '!build/edge/**/*'
-    ],
     nonSafariApp: [
         '!build/background.html',
         '!build/popup/index.html'
@@ -57,7 +53,7 @@ function distFileName(browserName, ext) {
 
 function dist(browserName, manifest) {
     return gulp.src(paths.build + '**/*')
-        .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.safari)))
+        .pipe(filter(['**'].concat(filters.fonts).concat(filters.safari)))
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'browser_' + browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
         .pipe(zip(distFileName(browserName, 'zip')))
@@ -66,7 +62,6 @@ function dist(browserName, manifest) {
 
 function distFirefox() {
     return dist('firefox', (manifest) => {
-        delete manifest['-ms-preload'];
         delete manifest.content_security_policy;
         removeShortcuts(manifest);
         return manifest;
@@ -75,7 +70,6 @@ function distFirefox() {
 
 function distOpera() {
     return dist('opera', (manifest) => {
-        delete manifest['-ms-preload'];
         delete manifest.applications;
         delete manifest.content_security_policy;
         removeShortcuts(manifest);
@@ -85,7 +79,16 @@ function distOpera() {
 
 function distChrome() {
     return dist('chrome', (manifest) => {
-        delete manifest['-ms-preload'];
+        delete manifest.applications;
+        delete manifest.content_security_policy;
+        delete manifest.sidebar_action;
+        delete manifest.commands._execute_sidebar_action;
+        return manifest;
+    });
+}
+
+function distEdge() {
+    return dist('edge', (manifest) => {
         delete manifest.applications;
         delete manifest.content_security_policy;
         delete manifest.sidebar_action;
@@ -101,71 +104,6 @@ function removeShortcuts(manifest) {
             manifest.content_scripts.splice(1, 1);
         }
     }
-}
-
-// Since Edge extensions require makeappx to be run we temporarily store it in a folder.
-function distEdge(cb) {
-    const edgePath = paths.dist + 'Edge/';
-    const extensionPath = edgePath + 'Extension/';
-    const fileName = distFileName('edge', 'appx');
-    const appxPath = paths.dist + fileName;
-
-    return del([edgePath, appxPath])
-        .then(() => edgeCopyBuild(paths.build + '**/*', extensionPath))
-        .then(() => edgeCopyAssets('./store/windows/**/*', edgePath))
-        .then(() => {
-            // makeappx.exe must be in your system's path already
-            const proc = child.spawn('makeappx.exe', [
-                'pack',
-                '/h',
-                'SHA256',
-                '/d',
-                edgePath,
-                '/p',
-                appxPath]);
-            stdOutProc(proc);
-            return new Promise((resolve) => proc.on('close', resolve));
-        }).then(() => {
-            return cb;
-        }, () => {
-            return cb;
-        });
-}
-
-function edgeCopyBuild(source, dest) {
-    return new Promise((resolve, reject) => {
-        gulp.src(source)
-            .on('error', reject)
-            .pipe(filter(['**'].concat(filters.fonts).concat(filters.safari)))
-            .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'browser_edge')))
-            .pipe(gulpif('manifest.json', jeditor((manifest) => {
-                delete manifest.applications;
-                delete manifest.sidebar_action;
-                delete manifest.commands._execute_sidebar_action;
-                delete manifest.content_security_policy;
-                return manifest;
-            })))
-            .pipe(gulp.dest(dest))
-            .on('end', resolve);
-    });
-}
-
-function edgeCopyAssets(source, dest) {
-    return new Promise((resolve, reject) => {
-        gulp.src(source)
-            .on('error', reject)
-            .pipe(gulpif('AppxManifest.xml', xmlpoke({
-                replacements: [{
-                    xpath: '/p:Package/p:Identity/@Version',
-                    value: manifest.version + '.0',
-                    namespaces: {
-                        'p': 'http://schemas.microsoft.com/appx/manifest/foundation/windows10'
-                    }
-                }]
-            })))
-            .pipe(gulp.dest(dest))
-            .on('end', resolve);
-    });
 }
 
 function distSafariMas(cb) {
@@ -254,7 +192,7 @@ function safariCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
-            .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts)
+            .pipe(filter(['**'].concat(filters.fonts)
                 .concat(filters.webExt).concat(filters.nonSafariApp)))
             .pipe(gulp.dest(dest))
             .on('end', resolve);

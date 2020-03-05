@@ -60,7 +60,7 @@ artifacts:
 - path: dist/dist-opera-%APPVEYOR_BUILD_NUMBER%.zip
 - path: dist/dist-chrome-%APPVEYOR_BUILD_NUMBER%.zip
 - path: dist/dist-firefox-%APPVEYOR_BUILD_NUMBER%.zip
-- path: dist/dist-edge-%APPVEYOR_BUILD_NUMBER%.appx
+- path: dist/dist-edge-%APPVEYOR_BUILD_NUMBER%.zip
 #- path: dist/dist-safari-%APPVEYOR_BUILD_NUMBER%.zip
 - path: dist/browser-source-%APPVEYOR_BUILD_NUMBER%.zip
 - path: coverage/coverage-%APPVEYOR_BUILD_NUMBER%.zip
