@@ -877,10 +877,10 @@
     "message": "Obecnie jest to funkcja eksperymentalna. Używaj na własne ryzyko."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Otwórz sejf w oknie"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Otwórz sejf na pasku bocznym"
   },
   "commandAutofillDesc": {
     "message": "Autouzupełnianie korzysta z ostatnio używanych danych logowania na tej stronie."
@@ -916,10 +916,10 @@
     "message": "Wartość logiczna"
   },
   "popup2faCloseMessage": {
-    "message": "Kliknięcie poza okienko podręczne w celu sprawdzenia e-maila z kodem weryfikacyjnym spowoduje, że zostanie ono zamknięte. Czy chcesz otworzyć to okienko w nowym oknie tak, aby się nie zamknęło?"
+    "message": "Kliknięcie poza okno, w celu sprawdzenia wiadomość z kodem weryfikacyjnym spowoduje, że zostanie ono zamknięte. Czy chcesz otworzyć nowe okno tak, aby się nie zamknęło?"
   },
   "popupU2fCloseMessage": {
-    "message": "Ta przeglądarka nie może przetworzyć żądania U2F w wyskakującym oknie. Czy chcesz otworzyć nowe okno przeglądarki, aby zalogować się przy pomocy klucza U2F?"
+    "message": "Ta przeglądarka nie może przetworzyć żądania U2F w tym oknie. Czy chcesz otworzyć nowe okno przeglądarki, aby zalogować się przy pomocy klucza U2F?"
   },
   "disableFavicon": {
     "message": "Wyłącz ikony stron"
@@ -1240,12 +1240,12 @@
     "message": "Musisz wybrać co najmniej jedną kolekcję."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Klonuj element"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klonuj"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia generatora."
   }
 }

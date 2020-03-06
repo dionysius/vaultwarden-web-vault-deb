@@ -877,10 +877,10 @@
     "message": "Това все още е в експериментална фаза, ползвате го на собствена глава."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Отваряне на трезора в изскачащ прозорец"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Отваряне на трезора в страничната лента"
   },
   "commandAutofillDesc": {
     "message": "Автоматично попълване на последно използвания запис в текущия сайт."
@@ -1240,12 +1240,12 @@
     "message": "Изберете поне една колекция."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Дублирате на елемент"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Дублиране"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Поне една политика на организация влияе на настройките на генерирането на паролите."
   }
 }

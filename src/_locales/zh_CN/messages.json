@@ -601,7 +601,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "本次导出会将你的数据未经加密存为 .csv 文件。你不应该长期保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。"
+    "message": "本次导出会将你的数据存为未经加密的文件。你不应该长期保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。"
   },
   "exportMasterPassword": {
     "message": "导出密码库需要输入主密码。"
@@ -877,16 +877,16 @@
     "message": "目前这是一项实验功能。使用需自担风险。"
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "在弹出框中打开保险库"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "在侧边栏中打开保险库"
   },
   "commandAutofillDesc": {
-    "message": "自动用最后一次登录填写当前网站"
+    "message": "自动用最后一次的登录信息填写当前网站"
   },
   "commandGeneratePasswordDesc": {
-    "message": "生成并将一个新的随机密码复制到剪贴板中。"
+    "message": "生成一个新的随机密码并将其复制到剪贴板中。"
   },
   "privateModeMessage": {
     "message": "非常不幸，本窗口不能用在本浏览器的隐私模式中。"
@@ -1240,12 +1240,12 @@
     "message": "您必须选择至少一个收藏。"
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "复制项"
   },
   "clone": {
-    "message": "Clone"
+    "message": "克隆"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "一个或多个组织策略正在影响您的生成器设置。"
   }
 }

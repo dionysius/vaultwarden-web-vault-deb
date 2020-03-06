@@ -877,10 +877,10 @@
     "message": "これは現在、実験的な機能です。自己責任で使用してください。"
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "ポップアップで保管庫を開く"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "サイドバーで保管庫を開く"
   },
   "commandAutofillDesc": {
     "message": "現在のウェブサイトで前回使用されたログイン情報を自動入力します。"
@@ -1240,12 +1240,12 @@
     "message": "最低でも一つのコレクションを選んでください。"
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "アイテムを複製"
   },
   "clone": {
-    "message": "Clone"
+    "message": "複製"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "一つ以上の組織のポリシーがパスワード生成の設定に影響しています。"
   }
 }

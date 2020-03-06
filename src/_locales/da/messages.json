@@ -877,16 +877,16 @@
     "message": "Dette er i øjeblikket en eksperimentel funktion. Brug på egen risiko."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Åbn boks popup"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Åbn boks i sidebjælken"
   },
   "commandAutofillDesc": {
-    "message": "Auto-udfyld det sidste anvendte login for den aktuelle hjemmeside."
+    "message": "Auto-udfyld det sidste anvendte login for den aktuelle hjemmeside"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generér og kopiér en ny tilfældig adgangskode til udklipsholderen."
+    "message": "Generér en ny tilfældig adgangskode og kopiér den til udklipsholderen"
   },
   "privateModeMessage": {
     "message": "Desværre er dette vindue ikke tilgængelig i privat modus i denne browser."
@@ -1240,12 +1240,12 @@
     "message": "Du skal vælge minimum én samling."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Klon element"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klon"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Én eller flere organisationspolitikker påvirker dine generatorindstillinger."
   }
 }

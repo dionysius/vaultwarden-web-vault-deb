@@ -877,13 +877,13 @@
     "message": "Detta är för närvarande en experimentell funktion. Använd på egen risk."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Öppna valvet i ett popupfönster"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Öppna valvet i sidofältet"
   },
   "commandAutofillDesc": {
-    "message": "Fyll automatiskt i den senast använda inloggningen för aktuell sida."
+    "message": "Fyll automatiskt i den senast använda inloggningen för den aktuella webbsidan"
   },
   "commandGeneratePasswordDesc": {
     "message": "Generera och kopiera ett nytt slumpmässigt lösenord till Urklipp."
@@ -1240,12 +1240,12 @@
     "message": "Du måste markera minst en samling."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Klona objekt"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klona"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "En eller flera organisationspolicyer påverkar dina generatorinställningar."
   }
 }
