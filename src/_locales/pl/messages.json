@@ -68,13 +68,13 @@
     "message": "Kopiuj notatkę"
   },
   "copyUri": {
-    "message": "Skopiuj URI"
+    "message": "Kopiuj URI"
   },
   "copyUsername": {
     "message": "Kopiuj nazwę użytkownika"
   },
   "copyNumber": {
-    "message": "Kopiuj numer"
+    "message": "Kopiuj numer karty"
   },
   "copySecurityCode": {
     "message": "Kopiuj kod zabezpieczający"
@@ -126,7 +126,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Unikalny identyfikator dla Twojego konta",
+    "message": "Unikalny identyfikator Twojego konta",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -297,7 +297,7 @@
     "message": "Przeglądarka nie obsługuje łatwego kopiowania schowka. Skopiuj element ręcznie."
   },
   "verifyMasterPassword": {
-    "message": "Sprawdź hasło główne"
+    "message": "Zweryfikuj hasło główne"
   },
   "yourVaultIsLocked": {
     "message": "Sejf jest zablokowany. Wpisz hasło główne, aby kontynuować."
@@ -340,31 +340,31 @@
     "message": "30 sekund"
   },
   "oneMinute": {
-    "message": "po 1 minucie"
+    "message": "1 minuta"
   },
   "twoMinutes": {
     "message": "2 minuty"
   },
   "fiveMinutes": {
-    "message": "po 5 minutach"
+    "message": "5 minut"
   },
   "fifteenMinutes": {
-    "message": "po 15 minutach"
+    "message": "15 minut"
   },
   "thirtyMinutes": {
-    "message": "po 30 minutach"
+    "message": "30 minut"
   },
   "oneHour": {
-    "message": "po 1 godzinie"
+    "message": "1 godzina"
   },
   "fourHours": {
-    "message": "po 4 godzinach"
+    "message": "4 godziny"
   },
   "onLocked": {
-    "message": "Gdy zablokujesz komputer"
+    "message": "Po zablokowaniu komputera"
   },
   "onRestart": {
-    "message": "Po uruchomieniu przeglądarki"
+    "message": "Po restarcie przeglądarki"
   },
   "never": {
     "message": "Nigdy"
@@ -510,7 +510,7 @@
     "message": "Przeszukaj kolekcje"
   },
   "searchType": {
-    "message": "Typ wyszukiwania"
+    "message": "Szukaj elementu"
   },
   "noneFolder": {
     "message": "Nieprzypisane",
@@ -685,7 +685,7 @@
     "message": "Kontem Premium możesz zarządzać na stronie sejfu bitwarden.com. Czy chcesz otworzyć tę stronę?"
   },
   "premiumRefresh": {
-    "message": "Przedłuż konto Premium"
+    "message": "Odśwież konto Premium"
   },
   "premiumNotCurrentMember": {
     "message": "Nie masz aktualnie konta Premium."
@@ -760,7 +760,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Kod weryfikacyjny został przesłany do $EMAIL$.",
+    "message": "Kod weryfikacyjny został wysłany na adres $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -829,10 +829,10 @@
     "message": "Klucz bezpieczeństwa FIDO U2F"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "Adres e-mail"
   },
   "emailDesc": {
-    "message": "Kody weryfikacyjne zostaną wysłane do Ciebie e-mailem."
+    "message": "Kody weryfikacyjne zostaną wysłane do Ciebie wiadomością e-mail."
   },
   "selfHostedEnvironment": {
     "message": "Samodzielnie hostowane środowisko"
@@ -847,7 +847,7 @@
     "message": "Dla zaawansowanych użytkowników. Możesz wpisać podstawowy adres URL niezależnie dla każdej usługi."
   },
   "baseUrl": {
-    "message": "URL serwera"
+    "message": "Adres URL serwera"
   },
   "apiUrl": {
     "message": "Adres URL serwera API"
@@ -934,7 +934,7 @@
     "message": "Numer"
   },
   "brand": {
-    "message": "Marka"
+    "message": "Wydawca"
   },
   "expirationMonth": {
     "message": "Miesiąc wygaśnięcia"
@@ -943,7 +943,7 @@
     "message": "Rok wygaśnięcia"
   },
   "expiration": {
-    "message": "Wygaśnięcie"
+    "message": "Data wygaśnięcia"
   },
   "january": {
     "message": "Styczeń"
@@ -1018,7 +1018,7 @@
     "message": "Firma"
   },
   "ssn": {
-    "message": "PESEL"
+    "message": "Numer PESEL"
   },
   "passportNumber": {
     "message": "Numer paszportu"
@@ -1027,7 +1027,7 @@
     "message": "Numer prawa jazdy"
   },
   "email": {
-    "message": "Email"
+    "message": "Adres e-mail"
   },
   "phone": {
     "message": "Telefon"

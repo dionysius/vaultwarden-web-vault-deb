@@ -877,13 +877,13 @@
     "message": "Dit is momenteel een experimentele functie; gebruik hiervan is op eigen risico."
   },
   "commandOpenPopup": {
-    "message": "Kluis in pop-up openen"
+    "message": "Open kluis in pop-up"
   },
   "commandOpenSidebar": {
-    "message": "Kluis in zijbalk openen"
+    "message": "Open kluis in zijbalk"
   },
   "commandAutofillDesc": {
-    "message": "Vul automatisch de laatst gebruikte inloggegevens voor de huidige website in."
+    "message": "Vul automatisch de laatst gebruikte login in voor de huidige website"
   },
   "commandGeneratePasswordDesc": {
     "message": "Genereer en kopieer een nieuw willekeurig wachtwoord naar het klembord."
@@ -1240,12 +1240,12 @@
     "message": "Je moet tenminste één verzameling selecteren."
   },
   "cloneItem": {
-    "message": "Item kopiëren"
+    "message": "Item dupliceren"
   },
   "clone": {
-    "message": "Kopiëren"
+    "message": "Dupliceren"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Een of meer beleidseisen van organisaties hebben invloed op de instellingen van je generator."
+    "message": "Een of meer organisatiebeleidseisen heeft invloed op de instellingen van je generator."
   }
 }
