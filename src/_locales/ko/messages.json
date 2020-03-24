@@ -306,7 +306,7 @@
     "message": "잠금 해제"
   },
   "loggedInAsOn": {
-    "message": "$EMAIL$로 $HOSTNAME$에 로그인 되었습니다.",
+    "message": "$HOSTNAME$ 에 $EMAIL$ 로 로그인했습니다.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -880,7 +880,7 @@
     "message": "보관함 팝업 열기"
   },
   "commandOpenSidebar": {
-    "message": "사이드바에서 보관함 팝업 열기"
+    "message": "사이드바에서 보관함 열기"
   },
   "commandAutofillDesc": {
     "message": "현재 웹사이트에서 최근에 사용했던 로그인을 자동 완성합니다."
@@ -919,7 +919,7 @@
     "message": "인증 코드가 담긴 이메일을 확인하기 위해 팝업 창의 바깥쪽을 누르면 이 팝업이 닫힙니다. 팝업 창이 닫히는 것을 방지하기 위해 이 팝업을 새 창에서 다시 여시겠습니까?"
   },
   "popupU2fCloseMessage": {
-    "message": "이 브라우저의 팝업 창에서는 U2F 요청을 처리할 수 없습니다. U2F로 로그인할 수 있도록 이 창을 새 창에서 열까요?"
+    "message": "이 브라우저의 팝업 창에서는 U2F 요청을 처리할 수 없습니다. U2F로 로그인할 수 있도록 이 창을 새 창에서 여시겠습니까?"
   },
   "disableFavicon": {
     "message": "웹 사이트 아이콘 사용 안 함"
@@ -1209,7 +1209,7 @@
     "message": "취약한 마스터 비밀번호"
   },
   "weakMasterPasswordDesc": {
-    "message": "선택된 마스터 비밀번호는 취약합니다. Bitwarden 계정을 제대로 보호하기 위해서는 강력한 마스터 비밀번호(혹은 패스프레이즈)를 사용해야 합니다. 정말 마스터 비밀번호로 사용하시겠습니까?"
+    "message": "선택한 마스터 비밀번호는 취약합니다. Bitwarden 계정을 확실히 보호하려면 강력한 마스터 비밀번호(혹은 패스프레이즈)를 사용해야 합니다. 정말 이 마스터 비밀번호를 사용하시겠습니까?"
   },
   "pin": {
     "message": "PIN",
@@ -1231,7 +1231,7 @@
     "message": "PIN 확인"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "보관함이 잠겨 있습니다. PIN 코드를 를 입력하여 계속하세요."
+    "message": "보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요."
   },
   "lockWithMasterPassOnRestart": {
     "message": "브라우저 다시 시작 시 마스터 비밀번호로 잠금"

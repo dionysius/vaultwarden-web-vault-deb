@@ -118,41 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – Free Password Manager</value>
+    <value>Bitwarden – Δωρεάν Διαχειριστής Κωδικών</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Ένας ασφαλής και δωρεάν διαχειριστής κωδικών για όλες τις συσκευές σας</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
+    <value>Το Bitwarden είναι ο ευκολότερος και ασφαλέστερος τρόπος για να αποθηκεύσετε όλες τις συνδέσεις και τους κωδικούς πρόσβασης σας, διατηρώντας παράλληλα το συγχρονισμό μεταξύ όλων των συσκευών σας. Η επέκταση της εφαρμογής Bitwarden σας επιτρέπει να συνδεθείτε γρήγορα σε οποιαδήποτε ιστοσελίδα μέσω του Safari ή του Chrome και υποστηρίζεται από εκατοντάδες άλλες δημοφιλείς εφαρμογές.
 
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites, hackers can easily access your email, bank, and other important accounts.
+Η κλοπή κωδικού πρόσβασης είναι ένα σοβαρό πρόβλημα. Οι ιστοσελίδες και οι εφαρμογές που χρησιμοποιείτε υποβάλλονται σε επίθεση κάθε μέρα. Παραβιάσεις ασφαλείας συμβαίνουν και οι κωδικοί ίσως κλαπούν. Όταν επαναχρησιμοποιείτε τους ίδιους κωδικούς πρόσβασης σε εφαρμογές και ιστοσελίδες, οι χάκερ μπορούν εύκολα να έχουν πρόσβαση στο ηλεκτρονικό σας ταχυδρομείο, στην τράπεζα σας και σε άλλους σημαντικούς λογαριασμούς.
 
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? Bitwarden makes it easy for you to create, store, and access your passwords.
+Οι ειδικοί ασφαλείας συστήνουν να χρησιμοποιείτε διαφορετικό, τυχαία δημιουργημένο κωδικό πρόσβασης για κάθε λογαριασμό που δημιουργείτε. Αλλά πώς διαχειρίζεστε όλους αυτούς τους κωδικούς πρόσβασης; Το Bitwarden σας διευκολύνει να δημιουργείτε, να αποθηκεύετε και να έχετε πρόσβαση στους κωδικούς πρόσβασης σας.
 
-Bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at Bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.
+Το Bitwarden αποθηκεύει όλες τις συνδέσεις σας σε κρυπτογραφημένη μορφή που συγχρονίζεται σε όλες τις συσκευές σας. Δεδομένου ότι είναι πλήρως κρυπτογραφημένο, μόνο εσείς έχετε πρόσβαση στα δεδομένα σας. Ούτε η ομάδα του Bitwarden μπορεί να διαβάσει τα δεδομένα σας, ακόμα κι αν θέλουμε. Τα δεδομένα σας είναι σφραγισμένα με κρυπτογράφηση AES-256 bit, salted hashing και PBKDF2 SHA-256.
 
-Bitwarden is 100% open source software. The source code for Bitwarden is hosted on GitHub and everyone is free to review, audit, and contribute to the Bitwarden codebase.</value>
+Το Bitwarden είναι 100% λογισμικό ανοικτού κώδικα. Ο πηγαίος κώδικας για το Bitwarden φιλοξενείται στο GitHub και ο καθένας είναι ελεύθερος να επανεξετάσει, να ελέγξει και να συνεισφέρει στον κώδικα βάσης του Bitwarden.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Ένας ασφαλής και δωρεάν διαχειριστής κωδικών για όλες τις συσκευές σας</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>Συγχρονίστε και αποκτήστε πρόσβαση στο vault σας, από πολλές συσκευές</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Διαχειριστείτε όλες τις συνδέσεις και τους κωδικούς σας με ασφάλεια</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>Συμπληρώστε γρήγορα και αυτόματα, τα διαπιστευτήρια της σύνδεσης σας, σε οποιονδήποτε ιστότοπο επισκέπτεστε</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Your vault is also conveniently accessible from the right-click menu</value>
+    <value>Το vault σας είναι επίσης εύκολα προσβάσιμο, με το μενού που ανοίγει με δεξί-κλικ</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Δημιουργήστε αυτόματα ισχυρούς, τυχαίους και ασφαλείς κωδικούς</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>Οι πληροφορίες σας διαχειρίζονται με ασφάλεια χρησιμοποιώντας κρυπτογράφηση AES-256 bit</value>
   </data>
 </root>
