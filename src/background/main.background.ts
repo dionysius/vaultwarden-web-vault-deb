@@ -560,7 +560,7 @@ export default class MainBackground {
                 id: 'autofill_' + idSuffix,
                 parentId: 'autofill',
                 contexts: ['all'],
-                title: title,
+                title: this.sanitizeContextMenuTitle(title),
             });
         }
 
@@ -570,7 +570,7 @@ export default class MainBackground {
                 id: 'copy-username_' + idSuffix,
                 parentId: 'copy-username',
                 contexts: ['all'],
-                title: title,
+                title: this.sanitizeContextMenuTitle(title),
             });
         }
 
@@ -580,7 +580,7 @@ export default class MainBackground {
                 id: 'copy-password_' + idSuffix,
                 parentId: 'copy-password',
                 contexts: ['all'],
-                title: title,
+                title: this.sanitizeContextMenuTitle(title),
             });
         }
 
@@ -590,9 +590,13 @@ export default class MainBackground {
                 id: 'copy-totp_' + idSuffix,
                 parentId: 'copy-totp',
                 contexts: ['all'],
-                title: title,
+                title: this.sanitizeContextMenuTitle(title),
             });
         }
+    }
+
+    private sanitizeContextMenuTitle(title: string): string {
+        return title.replace(/&/g, '&&');
     }
 
     private cleanupNotificationQueue() {
