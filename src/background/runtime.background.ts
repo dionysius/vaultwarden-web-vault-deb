@@ -11,9 +11,9 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { Analytics } from 'jslib/misc';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
-import { LockService } from 'jslib/abstractions/lock.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SystemService } from 'jslib/abstractions/system.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { BrowserApi } from '../browser/browserApi';
 
@@ -37,7 +37,7 @@ export default class RuntimeBackground {
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
         private analytics: Analytics, private notificationsService: NotificationsService,
-        private systemService: SystemService, private lockService: LockService) {
+        private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? {} : chrome.runtime;
 
@@ -127,7 +127,7 @@ export default class RuntimeBackground {
                 await this.main.reseedStorage();
                 break;
             case 'collectPageDetailsResponse':
-                if (await this.lockService.isLocked()) {
+                if (await this.vaultTimeoutService.isLocked()) {
                     return;
                 }
                 switch (msg.sender) {
@@ -183,7 +183,7 @@ export default class RuntimeBackground {
     }
 
     private async saveAddLogin(tab: any) {
-        if (await this.lockService.isLocked()) {
+        if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
 
@@ -223,7 +223,7 @@ export default class RuntimeBackground {
     }
 
     private async saveChangePassword(tab: any) {
-        if (await this.lockService.isLocked()) {
+        if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
 
@@ -276,7 +276,7 @@ export default class RuntimeBackground {
     }
 
     private async addLogin(loginInfo: any, tab: any) {
-        if (await this.lockService.isLocked()) {
+        if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
 
@@ -322,7 +322,7 @@ export default class RuntimeBackground {
     }
 
     private async changedPassword(changeData: any, tab: any) {
-        if (await this.lockService.isLocked()) {
+        if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
 
@@ -400,10 +400,16 @@ export default class RuntimeBackground {
     }
 
     private async setDefaultSettings() {
-        // Default lock options to "on restart".
-        const currentLockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
-        if (currentLockOption == null) {
-            await this.storageService.save(ConstantsService.lockOptionKey, -1);
+        // Default timeout option to "on restart".
+        const currentVaultTimeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
+        if (currentVaultTimeout == null) {
+            await this.storageService.save(ConstantsService.vaultTimeoutKey, -1);
+        }
+
+        // Default action to "lock".
+        const currentVaultTimeoutAction = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
+        if (currentVaultTimeoutAction == null) {
+            await this.storageService.save(ConstantsService.vaultTimeoutActionKey, 'lock');
         }
     }
 

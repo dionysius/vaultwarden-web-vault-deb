@@ -6,10 +6,10 @@ import { Analytics } from 'jslib/misc';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { EventService } from 'jslib/abstractions/event.service';
-import { LockService } from 'jslib/abstractions/lock.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { EventType } from 'jslib/enums/eventType';
 
@@ -18,7 +18,7 @@ export default class ContextMenusBackground {
 
     constructor(private main: MainBackground, private cipherService: CipherService,
         private passwordGenerationService: PasswordGenerationService, private analytics: Analytics,
-        private platformUtilsService: PlatformUtilsService, private lockService: LockService,
+        private platformUtilsService: PlatformUtilsService, private vaultTimeoutService: VaultTimeoutService,
         private eventService: EventService, private totpService: TotpService) {
         this.contextMenus = chrome.contextMenus;
     }
@@ -61,7 +61,7 @@ export default class ContextMenusBackground {
             return;
         }
 
-        if (await this.lockService.isLocked()) {
+        if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
 

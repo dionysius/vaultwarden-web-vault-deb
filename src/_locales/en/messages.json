@@ -321,8 +321,8 @@
   "invalidMasterPassword": {
     "message": "Invalid master password"
   },
-  "lockOptions": {
-    "message": "Lock Options"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "Lock Now"
@@ -1247,5 +1247,12 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "One or more organization policies are affecting your generator settings."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
   }
 }

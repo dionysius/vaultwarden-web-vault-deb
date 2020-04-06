@@ -4,9 +4,9 @@ import MainBackground from './main.background';
 
 import { Analytics } from 'jslib/misc';
 
-import { LockService } from 'jslib/abstractions/lock.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 export default class CommandsBackground {
     private isSafari: boolean;
@@ -15,7 +15,7 @@ export default class CommandsBackground {
 
     constructor(private main: MainBackground, private passwordGenerationService: PasswordGenerationService,
         private platformUtilsService: PlatformUtilsService, private analytics: Analytics,
-        private lockService: LockService) {
+        private vaultTimeoutService: VaultTimeoutService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.isEdge = this.platformUtilsService.isEdge();
         this.isVivaldi = this.platformUtilsService.isVivaldi();
@@ -69,7 +69,7 @@ export default class CommandsBackground {
     }
 
     private async autoFillLogin(tab?: any) {
-        if (await this.lockService.isLocked()) {
+        if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
 

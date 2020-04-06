@@ -1,6 +1,6 @@
 import { CipherService } from 'jslib/abstractions/cipher.service';
-import { LockService } from 'jslib/abstractions/lock.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 export default class WebRequestBackground {
     private pendingAuthRequests: any[] = [];
@@ -8,7 +8,7 @@ export default class WebRequestBackground {
     private isFirefox: boolean;
 
     constructor(platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
-        private lockService: LockService) {
+        private vaultTimeoutService: VaultTimeoutService) {
         this.webRequest = (window as any).chrome.webRequest;
         this.isFirefox = platformUtilsService.isFirefox();
     }
@@ -44,7 +44,7 @@ export default class WebRequestBackground {
     }
 
     private async resolveAuthCredentials(domain: string, success: Function, error: Function) {
-        if (await this.lockService.isLocked()) {
+        if (await this.vaultTimeoutService.isLocked()) {
             error();
             return;
         }

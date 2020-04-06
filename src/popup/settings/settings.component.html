@@ -25,10 +25,17 @@
         <div class="box-header">{{'security' | i18n}}</div>
         <div class="box-content single-line">
             <div class="box-content-row display-block" appBoxRow>
-                <label for="lockOption">{{'lockOptions' | i18n}}</label>
-                <select #lockOptionsSelect id="lockOption" name="LockOptions" [ngModel]="lockOption"
-                    (ngModelChange)="saveLockOption($event)">
-                    <option *ngFor="let o of lockOptions" [ngValue]="o.value">{{o.name}}</option>
+                <label for="vaultTimeout">{{'vaultTimeout' | i18n}}</label>
+                <select #vaultTimeoutSelect id="vaultTimeout" name="VaultTimeouts" [ngModel]="vaultTimeout"
+                    (ngModelChange)="saveVaultTimeout($event)">
+                    <option *ngFor="let o of vaultTimeouts" [ngValue]="o.value">{{o.name}}</option>
+                </select>
+            </div>
+            <div class="box-content-row display-block" appBoxRow>
+                <label for="vaultTimeoutAction">{{'vaultTimeoutAction' | i18n}}</label>
+                <select id="vaultTimeoutAction" name="VaultTimeoutActions" [ngModel]="vaultTimeoutAction"
+                    (ngModelChange)="saveVaultTimeoutAction($event)">
+                    <option *ngFor="let o of vaultTimeoutActions" [ngValue]="o.value">{{o.name}}</option>
                 </select>
             </div>
             <div class="box-content-row box-content-row-checkbox" appBoxRow>

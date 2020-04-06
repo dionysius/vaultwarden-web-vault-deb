@@ -18,11 +18,11 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
-import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 const RateUrls = {
     [DeviceType.ChromeExtension]:
@@ -44,14 +44,16 @@ const RateUrls = {
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
-    @ViewChild('lockOptionsSelect', { read: ElementRef }) lockOptionsSelectRef: ElementRef;
-    lockOptions: any[];
-    lockOption: number = null;
+    @ViewChild('vaultTimeoutSelect', { read: ElementRef }) vaultTimeoutSelectRef: ElementRef;
+    vaultTimeouts: any[];
+    vaultTimeout: number = null;
+    vaultTimeoutActions: any[];
+    vaultTimeoutAction: string;
     pin: boolean = null;
-    previousLockOption: number = null;
+    previousVaultTimeout: number = null;
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
-        private analytics: Angulartics2, private lockService: LockService,
+        private analytics: Angulartics2, private vaultTimeoutService: VaultTimeoutService,
         private storageService: StorageService, public messagingService: MessagingService,
         private router: Router, private environmentService: EnvironmentService,
         private cryptoService: CryptoService, private userService: UserService) {
@@ -61,7 +63,7 @@ export class SettingsComponent implements OnInit {
         const showOnLocked = !this.platformUtilsService.isFirefox() && !this.platformUtilsService.isEdge()
             && !this.platformUtilsService.isSafari();
 
-        this.lockOptions = [
+        this.vaultTimeouts = [
             { name: this.i18nService.t('immediately'), value: 0 },
             { name: this.i18nService.t('oneMinute'), value: 1 },
             { name: this.i18nService.t('fiveMinutes'), value: 5 },
@@ -74,45 +76,59 @@ export class SettingsComponent implements OnInit {
         ];
 
         if (showOnLocked) {
-            this.lockOptions.push({ name: this.i18nService.t('onLocked'), value: -2 });
+            this.vaultTimeouts.push({ name: this.i18nService.t('onLocked'), value: -2 });
         }
 
-        this.lockOptions.push({ name: this.i18nService.t('onRestart'), value: -1 });
-        this.lockOptions.push({ name: this.i18nService.t('never'), value: null });
+        this.vaultTimeouts.push({ name: this.i18nService.t('onRestart'), value: -1 });
+        this.vaultTimeouts.push({ name: this.i18nService.t('never'), value: null });
 
-        let option = await this.storageService.get<number>(ConstantsService.lockOptionKey);
-        if (option != null) {
-            if (option === -2 && !showOnLocked) {
-                option = -1;
+        this.vaultTimeoutActions = [
+            { name: this.i18nService.t('lock'), value: 'lock' },
+            { name: this.i18nService.t('logOut'), value: 'logOut' },
+        ];
+
+        let timeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
+        if (timeout != null) {
+            if (timeout === -2 && !showOnLocked) {
+                timeout = -1;
             }
-            this.lockOption = option;
+            this.vaultTimeout = timeout;
         }
-        this.previousLockOption = this.lockOption;
+        this.previousVaultTimeout = this.vaultTimeout;
+        const action = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
+        this.vaultTimeoutAction = action == null ? 'lock' : action;
 
-        const pinSet = await this.lockService.isPinLockSet();
+        const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
     }
 
-    async saveLockOption(newValue: number) {
+    async saveVaultTimeout(newValue: number) {
         if (newValue == null) {
             const confirmed = await this.platformUtilsService.showDialog(
                 this.i18nService.t('neverLockWarning'), null,
                 this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');
             if (!confirmed) {
-                this.lockOptions.forEach((option: any, i) => {
-                    if (option.value === this.lockOption) {
-                        this.lockOptionsSelectRef.nativeElement.value = i + ': ' + this.lockOption;
+                this.vaultTimeouts.forEach((option: any, i) => {
+                    if (option.value === this.vaultTimeout) {
+                        this.vaultTimeoutSelectRef.nativeElement.value = i + ': ' + this.vaultTimeout;
                     }
                 });
                 return;
             }
         }
-        this.previousLockOption = this.lockOption;
-        this.lockOption = newValue;
-        await this.lockService.setLockOption(this.lockOption != null ? this.lockOption : null);
-        if (this.previousLockOption == null) {
+        this.previousVaultTimeout = this.vaultTimeout;
+        this.vaultTimeout = newValue;
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
+            this.vaultTimeoutAction);
+        if (this.previousVaultTimeout == null) {
             this.messagingService.send('bgReseedStorage');
         }
+    }
+
+    async saveVaultTimeoutAction(newValue: string) {
+        this.vaultTimeoutAction = newValue;
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
+            this.vaultTimeoutAction);
     }
 
     async updatePin() {
@@ -160,7 +176,7 @@ export class SettingsComponent implements OnInit {
                 if (masterPassOnRestart) {
                     const encPin = await this.cryptoService.encrypt(pin);
                     await this.storageService.save(ConstantsService.protectedPin, encPin.encryptedString);
-                    this.lockService.pinProtectedKey = pinProtectedKey;
+                    this.vaultTimeoutService.pinProtectedKey = pinProtectedKey;
                 } else {
                     await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
                 }
@@ -170,13 +186,13 @@ export class SettingsComponent implements OnInit {
         }
         if (!this.pin) {
             await this.cryptoService.clearPinProtectedKey();
-            await this.lockService.clear();
+            await this.vaultTimeoutService.clear();
         }
     }
 
     async lock() {
         this.analytics.eventTrack.next({ action: 'Lock Now' });
-        await this.lockService.lock(true);
+        await this.vaultTimeoutService.lock(true);
     }
 
     async logOut() {
