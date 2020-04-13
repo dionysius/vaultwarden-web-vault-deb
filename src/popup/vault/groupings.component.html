@@ -121,6 +121,23 @@
                     (onSelected)="selectCipher($event)" (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
+        <div class="box list" *ngIf="deletedCount">
+            <div class="box-header">
+                {{'trash' | i18n}}
+                <span class="flex-right">{{deletedCount}}</span>
+            </div>
+            <div class="box-content single-line">
+                <a href="#" class="box-content-row" appStopClick appBlurClick
+                    (click)="selectTrash()">
+                    <div class="row-main">
+                        <div class="icon"><i class="fa fa-fw fa-lg fa-trash-o"></i></div>
+                        <span class="text">{{'trash' | i18n}}</span>
+                    </div>
+                    <span class="row-sub-label">{{deletedCount}}</span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
+                </a>
+            </div>
+        </div>
     </ng-container>
     <ng-container *ngIf="showSearching()">
         <div class="no-items" *ngIf="!ciphers || !ciphers.length">
