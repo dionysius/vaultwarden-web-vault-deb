@@ -260,8 +260,9 @@
         </div>
     </div>
     <div class="box list">
-        <div class="box-content single-line" *ngIf="!cipher.organizationId && !cipher.isDeleted">
-            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="clone()">
+        <div class="box-content single-line">
+            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="clone()" 
+                *ngIf="!cipher.organizationId && !cipher.isDeleted">
                 <div class="row-main text-primary">
                     <div class="icon text-primary" aria-hidden="true">
                         <i class="fa fa-clone fa-lg fa-fw"></i>
@@ -269,9 +270,7 @@
                     <span>{{'cloneItem' | i18n}}</span>
                 </div>
             </a>
-        </div>
-        <div class="box-content single-line" *ngIf="cipher.isDeleted">
-            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="restore()">
+            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="restore()" *ngIf="cipher.isDeleted">
                 <div class="row-main text-primary">
                     <div class="icon text-primary" aria-hidden="true">
                         <i class="fa fa-undo fa-lg fa-fw"></i>
@@ -279,8 +278,6 @@
                     <span>{{'restoreItem' | i18n}}</span>
                 </div>
             </a>
-        </div>
-        <div class="box-content single-line">
             <a class="box-content-row" href="#" appStopClick appBlurClick (click)="delete()">
                 <div class="row-main text-danger">
                     <div class="icon text-danger" aria-hidden="true">
