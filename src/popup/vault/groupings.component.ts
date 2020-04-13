@@ -57,7 +57,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     showLeftHeader = true;
     searchPending = false;
     searchTypeSearch = false;
-    deletedCount: number = 0;
+    deletedCount = 0;
 
     private loadedTimeout: number;
     private selectedTimeout: number;
