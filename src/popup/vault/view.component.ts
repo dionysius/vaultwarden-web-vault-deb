@@ -60,11 +60,17 @@ export class ViewComponent extends BaseViewComponent {
     }
 
     edit() {
+        if (this.cipher.isDeleted) {
+            return false;
+        }
         super.edit();
         this.router.navigate(['/edit-cipher'], { queryParams: { cipherId: this.cipher.id } });
     }
 
     clone() {
+        if (this.cipher.isDeleted) {
+            return false;
+        }
         super.clone();
         this.router.navigate(['/clone-cipher'], {
             queryParams: {
@@ -72,6 +78,25 @@ export class ViewComponent extends BaseViewComponent {
                 cipherId: this.cipher.id,
             },
         });
+    }
+
+    async restore() {
+        if (!this.cipher.isDeleted) {
+            return false;
+        }
+        if (await super.restore()) {
+            this.close();
+            return true;
+        }
+        return false;
+    }
+
+    async delete() {
+        if (await super.delete()) {
+            this.close();
+            return true;
+        }
+        return false;
     }
 
     close() {

@@ -79,7 +79,11 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 }
             }
 
-            if (params.type) {
+            if (params.deleted) {
+                this.groupingTitle = this.i18nService.t('trash');
+                this.searchPlaceholder = this.i18nService.t('searchTrash');
+                await this.load(null, true);
+            } else if (params.type) {
                 this.searchPlaceholder = this.i18nService.t('searchType');
                 this.type = parseInt(params.type, null);
                 switch (this.type) {
@@ -198,6 +202,9 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     addCipher() {
+        if (this.deleted) {
+            return false;
+        }
         super.addCipher();
         this.router.navigate(['/add-cipher'], {
             queryParams: {

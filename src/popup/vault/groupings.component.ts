@@ -57,6 +57,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     showLeftHeader = true;
     searchPending = false;
     searchTypeSearch = false;
+    deletedCount = 0;
 
     private loadedTimeout: number;
     private selectedTimeout: number;
@@ -167,6 +168,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         if (!this.hasLoadedAllCiphers) {
             this.hasLoadedAllCiphers = !this.searchService.isSearchable(this.searchText);
         }
+        this.deletedCount = this.allCiphers.filter((c) => c.isDeleted).length;
         await this.search(null);
         let favoriteCiphers: CipherView[] = null;
         let noFolderCiphers: CipherView[] = null;
@@ -175,6 +177,9 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         const typeCounts = new Map<CipherType, number>();
 
         this.ciphers.forEach((c) => {
+            if (c.isDeleted) {
+                return;
+            }
             if (c.favorite) {
                 if (favoriteCiphers == null) {
                     favoriteCiphers = [];
@@ -224,9 +229,10 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         if (this.searchTimeout != null) {
             clearTimeout(this.searchTimeout);
         }
+        const filterDeleted = (c: CipherView) => !c.isDeleted;
         if (timeout == null) {
             this.hasSearched = this.searchService.isSearchable(this.searchText);
-            this.ciphers = await this.searchService.searchCiphers(this.searchText, null, this.allCiphers);
+            this.ciphers = await this.searchService.searchCiphers(this.searchText, filterDeleted, this.allCiphers);
             return;
         }
         this.searchPending = true;
@@ -235,7 +241,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             if (!this.hasLoadedAllCiphers && !this.hasSearched) {
                 await this.loadCiphers();
             } else {
-                this.ciphers = await this.searchService.searchCiphers(this.searchText, null, this.allCiphers);
+                this.ciphers = await this.searchService.searchCiphers(this.searchText, filterDeleted, this.allCiphers);
             }
             this.searchPending = false;
         }, timeout);
@@ -254,6 +260,11 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     async selectCollection(collection: CollectionView) {
         super.selectCollection(collection);
         this.router.navigate(['/ciphers'], { queryParams: { collectionId: collection.id } });
+    }
+
+    async selectTrash() {
+        super.selectTrash();
+        this.router.navigate(['/ciphers'], { queryParams: { deleted: true } });
     }
 
     async selectCipher(cipher: CipherView) {
@@ -305,6 +316,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             typeCounts: this.typeCounts,
             folders: this.folders,
             collections: this.collections,
+            deletedCount: this.deletedCount,
         };
         await this.stateService.save(ScopeStateId, this.scopeState);
     }
@@ -338,6 +350,9 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         }
         if (this.scopeState.collections != null) {
             this.collections = this.scopeState.collections;
+        }
+        if (this.scopeState.deletedCiphers != null) {
+            this.deletedCount = this.scopeState.deletedCount;
         }
 
         return true;
