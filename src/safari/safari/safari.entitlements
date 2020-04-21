@@ -12,5 +12,7 @@
 	<true/>
 	<key>com.apple.security.automation.apple-events</key>
 	<true/>
+	<key>com.apple.private.tcc.manager.check-by-audit-token</key>
+	<true/>
 </dict>
 </plist>
