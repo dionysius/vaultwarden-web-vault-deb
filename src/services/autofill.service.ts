@@ -43,6 +43,10 @@ const MonthAbbr = ['mm', 'mm', 'mm', 'mm', 'mm', 'mm'];
 const YearAbbrShort = ['yy', 'åå', 'jj', 'aa', 'гг', 'rr'];
 const YearAbbrLong = ['yyyy', 'åååå', 'jjjj', 'aa', 'гггг', 'rrrr'];
 
+const OperationDelays = new Map<string, number>([
+    ['buzzsprout.com', 100],
+]);
+
 /* tslint:disable */
 const IsoCountries: { [id: string]: string; } = {
     afghanistan: "AF", "aland islands": "AX", albania: "AL", algeria: "DZ", "american samoa": "AS", andorra: "AD",
@@ -173,6 +177,9 @@ export default class AutofillService implements AutofillServiceInterface {
             if (!fillScript || !fillScript.script || !fillScript.script.length) {
                 return;
             }
+
+            // Add a small delay between operations
+            fillScript.properties.delay_between_operations = 20;
 
             didAutofill = true;
             if (!options.skipLastUsed) {

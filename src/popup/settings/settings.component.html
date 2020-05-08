@@ -33,8 +33,8 @@
             </div>
             <div class="box-content-row display-block" appBoxRow>
                 <label for="vaultTimeoutAction">{{'vaultTimeoutAction' | i18n}}</label>
-                <select id="vaultTimeoutAction" name="VaultTimeoutActions" [ngModel]="vaultTimeoutAction"
-                    (ngModelChange)="saveVaultTimeoutAction($event)">
+                <select #vaultTimeoutActionSelect id="vaultTimeoutAction" name="VaultTimeoutActions"
+                    [ngModel]="vaultTimeoutAction" (ngModelChange)="saveVaultTimeoutAction($event)">
                     <option *ngFor="let o of vaultTimeoutActions" [ngValue]="o.value">{{o.name}}</option>
                 </select>
             </div>

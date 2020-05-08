@@ -15,7 +15,7 @@ table {
 
 .outter-table > tbody > tr > td {
     padding: 0 0 0 10px;
-    border-bottom: 2px solid #3c8dbc;
+    border-bottom: 2px solid #175DDC;
     height: 40px;
 }
 
@@ -56,7 +56,7 @@ img {
 }
 
 button:not(.link) {
-    background-color: #3c8dbc;
+    background-color: #175DDC;
     padding: 5px 15px;
     border-radius: 3px;
     color: #ffffff;
@@ -65,13 +65,13 @@ button:not(.link) {
 
     button:not(.link):hover {
         cursor: pointer;
-        background-color: #3681ad;
+        background-color: #1751bd;
     }
 
 button.link {
     background: none;
     padding: 5px 15px;
-    color: #3c8dbc;
+    color: #175DDC;
     border: 0;
 }
 

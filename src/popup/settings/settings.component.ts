@@ -45,6 +45,7 @@ const RateUrls = {
 })
 export class SettingsComponent implements OnInit {
     @ViewChild('vaultTimeoutSelect', { read: ElementRef }) vaultTimeoutSelectRef: ElementRef;
+    @ViewChild('vaultTimeoutActionSelect', { read: ElementRef }) vaultTimeoutActionSelectRef: ElementRef;
     vaultTimeouts: any[];
     vaultTimeout: number = null;
     vaultTimeoutActions: any[];
@@ -126,6 +127,20 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveVaultTimeoutAction(newValue: string) {
+        if (newValue === 'logOut') {
+            const confirmed = await this.platformUtilsService.showDialog(
+                this.i18nService.t('vaultTimeoutLogOutConfirmation'),
+                this.i18nService.t('vaultTimeoutLogOutConfirmationTitle'),
+                this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');
+            if (!confirmed) {
+                this.vaultTimeoutActions.forEach((option: any, i) => {
+                    if (option.value === this.vaultTimeoutAction) {
+                        this.vaultTimeoutActionSelectRef.nativeElement.value = i + ': ' + this.vaultTimeoutAction;
+                    }
+                });
+                return;
+            }
+        }
         this.vaultTimeoutAction = newValue;
         await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
             this.vaultTimeoutAction);
