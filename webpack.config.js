@@ -3,19 +3,13 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 
 if (process.env.NODE_ENV == null) {
     process.env.NODE_ENV = 'development';
 }
 const ENV = process.env.ENV = process.env.NODE_ENV;
-
-const extractCss = new ExtractTextPlugin({
-    filename: '[name].css',
-    disable: false,
-    allChunks: true,
-});
 
 const moduleRules = [
     {
@@ -53,17 +47,16 @@ const moduleRules = [
     },
     {
         test: /\.scss$/,
-        use: extractCss.extract({
-            use: [
-                {
-                    loader: 'css-loader',
-                },
-                {
-                    loader: 'sass-loader',
-                },
-            ],
-            publicPath: '../',
-        }),
+        use: [
+            {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                    publicPath: '../',
+                }
+            },
+            'css-loader',
+            'sass-loader'
+        ],
     },
     // Hide System.import warnings. ref: https://github.com/angular/angular/issues/21560
     {
@@ -104,7 +97,10 @@ const plugins = [
     new webpack.SourceMapDevToolPlugin({
         include: ['popup/main.js', 'background.js'],
     }),
-    extractCss,
+    new MiniCssExtractPlugin({
+        filename: '[name].[hash].css',
+        chunkFilename: '[id].[hash].css'
+    }),
     new webpack.DefinePlugin({
         'process.env': {
             'ENV': JSON.stringify(ENV)
