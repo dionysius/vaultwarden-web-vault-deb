@@ -60,28 +60,34 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             return
         }
         let messageBody = message.body as! String
-        // print(messageBody)
+        // NSLog("MESSAGE: \(messageBody)")
         let m: AppMessage? = jsonDeserialize(json: messageBody)
         if m == nil {
             return
         }
         let command = m!.command
-        // print(command)
+        NSLog("Command: \(command)")
         if command == "storage_get" {
-            let obj = UserDefaults.standard.string(forKey: m!.data!)
-            m!.responseData = obj
-            replyMessage(message: m!)
+            if m!.data != nil {
+                let obj = UserDefaults.standard.string(forKey: m!.data!)
+                m!.responseData = obj
+                replyMessage(message: m!)
+            }
         } else if command == "storage_save" {
             let data: StorageData? = jsonDeserialize(json: m!.data)
-            if data?.obj == nil {
-                UserDefaults.standard.removeObject(forKey: data!.key)
-            } else {
-                UserDefaults.standard.set(data?.obj, forKey: data!.key)
+            if data?.key != nil {
+                if data?.obj == nil {
+                    UserDefaults.standard.removeObject(forKey: data!.key)
+                } else {
+                    UserDefaults.standard.set(data?.obj, forKey: data!.key)
+                }
+                replyMessage(message: m!)
             }
-            replyMessage(message: m!)
         } else if command == "storage_remove" {
-            UserDefaults.standard.removeObject(forKey: m!.data!)
-            replyMessage(message: m!)
+            if m!.data != nil {
+                UserDefaults.standard.removeObject(forKey: m!.data!)
+                replyMessage(message: m!)
+            }
         } else if command == "getLocaleStrings" {
             let language = m!.data ?? "en"
             let bundleURL = Bundle.main.resourceURL!.absoluteURL
@@ -165,7 +171,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             replyMessage(message: m!)
         } else if command == "readFromClipboard" {
             let pasteboard = NSPasteboard.general
-            m?.responseData = pasteboard.pasteboardItems?.first?.string(forType: .string)
+            m!.responseData = pasteboard.pasteboardItems?.first?.string(forType: .string)
             replyMessage(message: m!)
         } else if command == "downloadFile" {
             if m!.data != nil {
@@ -173,7 +179,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     var data: Data?
                     if dlMsg.blobOptions?.type == "text/plain" {
                         data = dlMsg.blobData?.data(using: .utf8)
-                    } else {
+                    } else if dlMsg.blobData != nil {
                         data = Data(base64Encoded: dlMsg.blobData!)
                     }
                     if data != nil {
@@ -199,13 +205,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     }
                 }
             }
-        } else if command == "getAppPath" {
-            SFSafariExtension.getBaseURI(completionHandler: { uri in
-                if uri != nil {
-                    m!.responseData = uri!.absoluteString
-                    self.replyMessage(message: m!)
-                }
-            })
         }
     }
 
