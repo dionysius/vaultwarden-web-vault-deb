@@ -205,6 +205,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                     }
                 }
             }
+        } else if command == "getAppPath" {
+            SFSafariExtension.getBaseURI(completionHandler: { uri in
+                if uri != nil {
+                    m!.responseData = uri!.absoluteString
+                    self.replyMessage(message: m!)
+                }
+            })
         }
     }
 
