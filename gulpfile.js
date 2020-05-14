@@ -129,7 +129,7 @@ function distSafariApp(cb, subBuildPath) {
         '-o',
         'runtime',
         '--sign',
-        'Developer ID Application: 8bit Solutions LLC',
+        'C1921E2FC7B9C2E9F1EAD9BD249CB1507505A862',
         '--entitlements',
         entitlementsPath
     ];
