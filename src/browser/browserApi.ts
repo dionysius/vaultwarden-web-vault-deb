@@ -133,6 +133,16 @@ export class BrowserApi {
         }
     }
 
+    static getAssetUrl(path: string): Promise<string> {
+        if (BrowserApi.isChromeApi) {
+            return Promise.resolve(chrome.extension.getURL(path));
+        } else if (BrowserApi.isSafariApi) {
+            return SafariApp.sendMessageToApp('getAppPath');
+        } else {
+            return Promise.resolve(null);
+        }
+    }
+
     static messageListener(name: string, callback: (message: any, sender: any, response: any) => void) {
         if (BrowserApi.isChromeApi) {
             chrome.runtime.onMessage.addListener((msg: any, sender: any, response: any) => {
