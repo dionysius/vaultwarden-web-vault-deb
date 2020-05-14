@@ -131,7 +131,7 @@ function distSafariApp(cb, subBuildPath) {
         '--sign',
         'C1921E2FC7B9C2E9F1EAD9BD249CB1507505A862',
         '--entitlements',
-        entitlementsPath,
+        entitlementsPath
     ];
     if (subBuildPath !== 'dmg') {
         args = [
