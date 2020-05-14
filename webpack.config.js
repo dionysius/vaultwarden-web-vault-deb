@@ -98,8 +98,8 @@ const plugins = [
         include: ['popup/main.js', 'background.js'],
     }),
     new MiniCssExtractPlugin({
-        filename: '[name].[hash].css',
-        chunkFilename: '[id].[hash].css',
+        filename: '[name].css',
+        chunkFilename: 'chunk-[id].css',
     }),
     new webpack.DefinePlugin({
         'process.env': {
