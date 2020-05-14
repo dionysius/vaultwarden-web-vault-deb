@@ -124,13 +124,13 @@ function distSafariApp(cb, subBuildPath) {
     const builtAppexFrameworkPath = buildPath + 'build/Release/safari.appex/Contents/Frameworks/';
     const entitlementsPath = paths.safari + 'safari/safari.entitlements';
     var args = [
-        "--verbose",
-        "--force",
-        "-o",
-        "runtime",
-        "--sign",
-        "C1921E2FC7B9C2E9F1EAD9BD249CB1507505A862",
-        "--entitlements",
+        '--verbose',
+        '--force',
+        '-o',
+        'runtime',
+        '--sign',
+        'C1921E2FC7B9C2E9F1EAD9BD249CB1507505A862',
+        '--entitlements',
         entitlementsPath,
     ];
     if (subBuildPath !== 'dmg') {
