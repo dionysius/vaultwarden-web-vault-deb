@@ -91,6 +91,9 @@
   "vaultLocked": {
     "message": "A széf zárolva van."
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "Nincsenek elérhető bejelentkezések ehhez a fülhöz ezért az automatikus kitöltés nem működik."
   },
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "Hibás mesterjelszó"
   },
-  "lockOptions": {
-    "message": "Zárolási opciók"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "Zárolás most"
@@ -495,7 +498,7 @@
     "message": "Biztosan törlöd ezt az elemet?"
   },
   "deletedItem": {
-    "message": "Törölt elem"
+    "message": "Az elem törlésre került."
   },
   "overwritePassword": {
     "message": "Jelszó felülírása"
@@ -877,10 +880,10 @@
     "message": "Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Széf megnyitása ablakban"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Széf megnyitása oldalsávon"
   },
   "commandAutofillDesc": {
     "message": "Az aktuális webhelynél az utoljára használt bejelentkezés automatikus kitöltése."
@@ -1240,12 +1243,50 @@
     "message": "Legalább egy gyűjteményt ki kell választani."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Tétel klónozása"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klónozás"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Egy vagy több szervezeti szabály érinti a generátor beállításokat."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

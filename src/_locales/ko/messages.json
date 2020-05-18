@@ -91,6 +91,9 @@
   "vaultLocked": {
     "message": "보관함이 잠겨 있습니다."
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "이 탭의 자동 완성에 사용할 수 있는 로그인이 없습니다."
   },
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "잘못된 마스터 비밀번호"
   },
-  "lockOptions": {
-    "message": "잠금 옵션"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "지금 잠그기"
@@ -526,13 +529,13 @@
     "message": "탭 페이지에 카드 표시 안 함"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "보관함의 카드 항목은 '현재 탭' 페이지에 나열되어있어 쉽게 자동 완성할 수 있습니다."
+    "message": "보관함의 카드 항목은 쉽게 자동 완성할 수 있게끔 '현재 탭' 페이지에 나열되어 있습니다."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "탭 페이지에 신원 표시 안 함"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "보관함의 신원 항목은 '현재 탭' 페이지에 나열되어있어 쉽게 자동 완성할 수 있습니다."
+    "message": "보관함의 신원 항목은 쉽게 자동 완성할 수 있게끔 '현재 탭' 페이지에 나열되어 있습니다."
   },
   "clearClipboard": {
     "message": "클립보드 비우기",
@@ -1185,7 +1188,7 @@
     "message": "당신은 어떤 조직에도 속해있지 않습니다. 조직은 다른 사용자들과 안전하게 항목을 공유할 수 있게 해줍니다."
   },
   "noCollectionsInList": {
-    "message": "콜렉션이 없습니다."
+    "message": "컬렉션이 없습니다."
   },
   "ownership": {
     "message": "소유자"
@@ -1237,7 +1240,7 @@
     "message": "브라우저 다시 시작 시 마스터 비밀번호로 잠금"
   },
   "selectOneCollection": {
-    "message": "반드시 하나 이상의 모음을 선택해야 합니다."
+    "message": "반드시 하나 이상의 컬렉션을 선택해야 합니다."
   },
   "cloneItem": {
     "message": "항목 복제"
@@ -1247,5 +1250,43 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "하나 이상의 단체 정책이 생성기 규칙에 영항을 미치고 있습니다."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

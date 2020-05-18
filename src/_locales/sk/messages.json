@@ -91,6 +91,9 @@
   "vaultLocked": {
     "message": "Trezor je zamknutý."
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "Nie sú prístupné žiadne prihlasovacie údaje na automatické vyplnenie pre aktuálnu kartu."
   },
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "Neplatné hlavné heslo"
   },
-  "lockOptions": {
-    "message": "Možnosti uzamknutia"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "Uzamknúť teraz"
@@ -495,7 +498,7 @@
     "message": "Naozaj chcete odstrániť túto položku?"
   },
   "deletedItem": {
-    "message": "Položka odstránená"
+    "message": "Odstránená položka"
   },
   "overwritePassword": {
     "message": "Prepísať heslo"
@@ -877,16 +880,16 @@
     "message": "Toto je zatiaľ experimentálna funkcia. Použite na vlastné riziko."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Otvoriť vyskakovacie okno trezora"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Otvoriť trezor v bočnom paneli"
   },
   "commandAutofillDesc": {
-    "message": "Automaticky vyplniť naposledy použité prihlasovacie údaje pre túto stránku."
+    "message": "Automaticky vyplniť naposledy použité prihlasovacie údaje pre túto stránku"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Vygenerovať a skopírovať nové náhodné heslo do schránky."
+    "message": "Vygenerovať a skopírovať nové náhodné heslo do schránky"
   },
   "privateModeMessage": {
     "message": "Bohužiaľ, toto okno nie je dostupné v privátnom režime prehliadača."
@@ -1240,12 +1243,50 @@
     "message": "Musíte vybrať aspoň jednu zbierku."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Klonovať položku"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klonovať"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Jedno alebo viac nastavení organizácie ovplyvňujú vaše nastavenia generátora."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

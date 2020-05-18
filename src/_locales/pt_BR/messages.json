@@ -91,6 +91,9 @@
   "vaultLocked": {
     "message": "O cofre está trancado."
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
   },
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "Senha mestra inválida"
   },
-  "lockOptions": {
-    "message": "Opções de Bloqueio"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "Bloquear Agora"
@@ -877,13 +880,13 @@
     "message": "Atualmente, este é um recurso experimental. Utilize por sua conta e risco."
   },
   "commandOpenPopup": {
-    "message": "Abrir popup do cofre"
+    "message": "Abrir pop-up do cofre"
   },
   "commandOpenSidebar": {
     "message": "Abrir cofre na barra lateral"
   },
   "commandAutofillDesc": {
-    "message": "Auto-preencher o último login utilizado para o site atual."
+    "message": "Autopreencher o último login utilizado para o site atual."
   },
   "commandGeneratePasswordDesc": {
     "message": "Gerar e copiar uma nova senha aleatória para a área de transferência."
@@ -1247,5 +1250,43 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Uma ou mais políticas da organização estão afetando as suas configurações do gerador."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

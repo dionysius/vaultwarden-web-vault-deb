@@ -91,6 +91,9 @@
   "vaultLocked": {
     "message": "密碼庫已鎖定"
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "目前瀏覽器分頁中沒有可以自動填入登入資料的位置。"
   },
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "無效的主密碼"
   },
-  "lockOptions": {
-    "message": "自動鎖定時間"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "立即鎖定"
@@ -877,16 +880,16 @@
     "message": "目前這是一項實驗性功能。要使用需自行承擔風險。"
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "在彈出式視窗中開啟密碼庫"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "在側邊欄中開啟密碼庫"
   },
   "commandAutofillDesc": {
     "message": "自動使用最後一次登入的帳戶填入目前網站"
   },
   "commandGeneratePasswordDesc": {
-    "message": "產生並將一個新的隨機密碼複製到剪貼簿中。"
+    "message": "產生一組新的隨機密碼並將它複製到剪貼簿中。"
   },
   "privateModeMessage": {
     "message": "很遺憾，在瀏覽器的隱私模式下，此視窗無法使用。"
@@ -1240,12 +1243,50 @@
     "message": "您必須至少選擇一個收藏。"
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "複製項目"
   },
   "clone": {
     "message": "複製"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "密碼產生器設定受一組以上組織原則影響。"
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

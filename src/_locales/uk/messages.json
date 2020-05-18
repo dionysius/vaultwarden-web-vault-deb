@@ -91,6 +91,9 @@
   "vaultLocked": {
     "message": "Сховище заблоковано."
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "Для поточної вкладки браузера немає записів автозаповнення."
   },
@@ -130,7 +133,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Двохетапна перевірка"
+    "message": "Двоетапна перевірка"
   },
   "logOut": {
     "message": "Вихід"
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "Неправильний головний пароль"
   },
-  "lockOptions": {
-    "message": "Час блокування"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "Заблокувати зараз"
@@ -443,7 +446,7 @@
     "message": "Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Двохетапна перевірка робить ваш обліковий запис більш захищеним, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете увімкнути двохетапну перевірку в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+    "message": "Двоетапна перевірка робить ваш обліковий запис більш захищеним, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете увімкнути двоетапну перевірку в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "editedFolder": {
     "message": "Тека змінена"
@@ -697,7 +700,7 @@
     "message": "1 ГБ зашифрованого сховища для файлів."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "Додаткові можливості двохетапної перевірки, наприклад, YubiKey, FIDO U2F та Duo."
+    "message": "Додаткові можливості двоетапної перевірки, наприклад, YubiKey, FIDO U2F та Duo."
   },
   "ppremiumSignUpReports": {
     "message": "Гігієна паролів, здоров'я облікового запису, а також звіти про вразливості даних, щоб зберігати ваше сховище в безпеці."
@@ -775,7 +778,7 @@
     "message": "Надіслати код підтвердження ще раз"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Інший спосіб двохетапної перевірки"
+    "message": "Інший спосіб двоетапної перевірки"
   },
   "insertYubiKey": {
     "message": "Вставте свій YubiKey в USB порт комп'ютера, потім торкніться цієї кнопки."
@@ -787,16 +790,16 @@
     "message": "Вхід недоступний"
   },
   "noTwoStepProviders": {
-    "message": "Для цього облікового запису увімкнено двохетапну перевірку. Однак, жоден з налаштованих провайдерів двохетапної перевірки не підтримується цим веб-браузером."
+    "message": "Для цього облікового запису увімкнено двоетапну перевірку. Однак, жоден з налаштованих провайдерів двоетапної перевірки не підтримується цим веб-браузером."
   },
   "noTwoStepProviders2": {
     "message": "Будь ласка, скористайтеся підтримуваним веб-браузером (наприклад, Chrome) та/або іншими провайдерами, що краще підтримуються веб-браузерами (наприклад, програма авторизації)."
   },
   "twoStepOptions": {
-    "message": "Налаштування двохетапної перевірки"
+    "message": "Налаштування двоетапної перевірки"
   },
   "recoveryCodeDesc": {
-    "message": "Втратили доступ до всіх провайдерів двохетапної перевірки? Скористайтеся кодом відновлення, щоб вимкнути двохетапну перевірку для свого облікового запису."
+    "message": "Втратили доступ до всіх провайдерів двоетапної перевірки? Скористайтеся кодом відновлення, щоб вимкнути двоетапну перевірку для свого облікового запису."
   },
   "recoveryCodeTitle": {
     "message": "Код відновлення"
@@ -1247,5 +1250,43 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Політика однієї або декількох організацій впливає на ваші параметри генерування."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "Битуорден"
+    "message": "Битуорден (Bitwarden)"
   },
   "extName": {
     "message": "Bitwarden — безплатен управител на пароли",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "Безопасно и безплатно управление за всички ваши устройства.",
+    "message": "Безопасно и безплатно управление за всичките ви устройства.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -53,7 +53,7 @@
     "message": "Моят трезор"
   },
   "tools": {
-    "message": "Инструменти"
+    "message": "Средства"
   },
   "settings": {
     "message": "Настройки"
@@ -83,13 +83,16 @@
     "message": "Автоматично попълване"
   },
   "generatePasswordCopied": {
-    "message": "Нова парола (и копиране)"
+    "message": "Генериране на парола (копирана)"
   },
   "noMatchingLogins": {
     "message": "Няма съвпадащи записи."
   },
   "vaultLocked": {
     "message": "Трезорът е заключен."
+  },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
   },
   "autoFillInfo": {
     "message": "В текущия раздел няма записи, които да бъдат попълнени."
@@ -104,7 +107,7 @@
     "message": "Подсказка за паролата"
   },
   "enterEmailToGetHint": {
-    "message": "Въведете адреса на е-пощата си, за да получите подсказка за главната парола."
+    "message": "Въведете адреса на имейла си, за да получите подсказка за главната си парола."
   },
   "getMasterPasswordHint": {
     "message": "Подсказка за главната парола"
@@ -148,7 +151,7 @@
     "message": "Добавяне на папка"
   },
   "name": {
-    "message": "Наименование"
+    "message": "Име"
   },
   "editFolder": {
     "message": "Редактиране на папка"
@@ -175,7 +178,7 @@
     "message": "Последно синхронизиране:"
   },
   "passGen": {
-    "message": "Създаване на пароли"
+    "message": "Генератор на пароли"
   },
   "generator": {
     "message": "Генератор",
@@ -185,7 +188,7 @@
     "message": "Автоматично създаване на силни и неповторими пароли."
   },
   "bitWebVault": {
-    "message": "Интернетен трезор"
+    "message": "Уебтрезорът на Bitwarden"
   },
   "importItems": {
     "message": "Внасяне на елементи"
@@ -194,13 +197,13 @@
     "message": "Избор"
   },
   "generatePassword": {
-    "message": "Нова парола"
+    "message": "Генериране на парола"
   },
   "regeneratePassword": {
-    "message": "Друга парола"
+    "message": "Регенериране на паролата"
   },
   "options": {
-    "message": "Настройки"
+    "message": "Опции"
   },
   "length": {
     "message": "Дължина"
@@ -249,7 +252,7 @@
     "message": "Парола"
   },
   "passphrase": {
-    "message": "Парола-фраза"
+    "message": "Парола за преминаване"
   },
   "favorite": {
     "message": "Любими"
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "Грешна главна парола"
   },
-  "lockOptions": {
-    "message": "Заключване"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "Заключване сега"
@@ -331,19 +334,19 @@
     "message": "Незабавно"
   },
   "tenSeconds": {
-    "message": "10 сек."
+    "message": "10 секунди"
   },
   "twentySeconds": {
-    "message": "20 сек."
+    "message": "20 секунди"
   },
   "thirtySeconds": {
-    "message": "30 сек."
+    "message": "30 секунди"
   },
   "oneMinute": {
     "message": "1 минута"
   },
   "twoMinutes": {
-    "message": "2 мин."
+    "message": "2 минути"
   },
   "fiveMinutes": {
     "message": "5 минути"
@@ -431,7 +434,7 @@
     "message": "Възникна неочаквана грешка."
   },
   "nameRequired": {
-    "message": "Името е задължително."
+    "message": "Изисква се име."
   },
   "addedFolder": {
     "message": "Добавена папка"
@@ -464,7 +467,7 @@
     "message": "Синхронизацията завърши"
   },
   "syncingFailed": {
-    "message": "Неуспешна синхронизация"
+    "message": "Неуспешно синхронизиране"
   },
   "passwordCopied": {
     "message": "Копирана парола"
@@ -492,7 +495,7 @@
     "message": "Елементът е редактиран"
   },
   "deleteItemConfirmation": {
-    "message": "Сигурни ли сте, че искате да изтриете елемента?"
+    "message": "Наистина ли искате да изтриете елемента?"
   },
   "deletedItem": {
     "message": "Елементът е изтрит"
@@ -501,7 +504,7 @@
     "message": "Презаписване на паролата"
   },
   "overwritePasswordConfirmation": {
-    "message": "Сигурни ли сте, че искате да обновите текущата парола?"
+    "message": "Наистина ли искате да презапишете текущата парола?"
   },
   "searchFolder": {
     "message": "Търсене в папката"
@@ -640,7 +643,7 @@
     "message": "Копиране на кода за потвърждаване"
   },
   "attachments": {
-    "message": "Прикачени файлове"
+    "message": "Прикачвания"
   },
   "deleteAttachment": {
     "message": "Изтриване на прикачения файл"
@@ -988,7 +991,7 @@
     "message": "напр."
   },
   "title": {
-    "message": "Обръщение"
+    "message": "Заглавие"
   },
   "mr": {
     "message": "Г-н"
@@ -1048,7 +1051,7 @@
     "message": "Населено място"
   },
   "stateProvince": {
-    "message": "Област"
+    "message": "Област / щат / провинция"
   },
   "zipPostalCode": {
     "message": "Пощенски код"
@@ -1171,7 +1174,7 @@
     "message": "Стандартно"
   },
   "dateUpdated": {
-    "message": "Обновено",
+    "message": "Осъвременено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1243,9 +1246,47 @@
     "message": "Дублирате на елемент"
   },
   "clone": {
-    "message": "Дублиране"
+    "message": "Клониране"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Поне една политика на организация влияе на настройките на генерирането на паролите."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

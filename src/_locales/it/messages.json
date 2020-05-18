@@ -14,10 +14,10 @@
     "message": "Fai il log in o crea un nuovo account per accedere alla tua cassaforte di sicurezza."
   },
   "createAccount": {
-    "message": "Crea Account"
+    "message": "Crea account"
   },
   "login": {
-    "message": "Log In"
+    "message": "Accedi"
   },
   "cancel": {
     "message": "Annulla"
@@ -32,7 +32,7 @@
     "message": "Indirizzo Email"
   },
   "masterPass": {
-    "message": "Password Principale"
+    "message": "Password principale"
   },
   "masterPassDesc": {
     "message": "La password principale è la password che utilizzi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è modo di recuperare questa password nel caso che tu la dimenticassi."
@@ -41,10 +41,10 @@
     "message": "Un indizio per la password principale può aiutarti a ricordarla nel caso te la dimenticassi."
   },
   "reTypeMasterPass": {
-    "message": "Ri-digita la Password Principale"
+    "message": "Ri-digita la password principale"
   },
   "masterPassHint": {
-    "message": "Indizio per la Password Principale (opzionale)"
+    "message": "Suggerimento password principale (facoltativo)"
   },
   "tab": {
     "message": "Pagina"
@@ -59,22 +59,22 @@
     "message": "Impostazioni"
   },
   "currentTab": {
-    "message": "Pagina Corrente"
+    "message": "Scheda corrente"
   },
   "copyPassword": {
-    "message": "Copia Password"
+    "message": "Copia password"
   },
   "copyNote": {
-    "message": "Copia Nota"
+    "message": "Copia nota"
   },
   "copyUri": {
     "message": "Copia URI"
   },
   "copyUsername": {
-    "message": "Copia Nome Utente"
+    "message": "Copia nome utente"
   },
   "copyNumber": {
-    "message": "Copia Numero"
+    "message": "Copia numero"
   },
   "copySecurityCode": {
     "message": "Copia il codice di sicurezza"
@@ -83,7 +83,7 @@
     "message": "Auto-riempimento"
   },
   "generatePasswordCopied": {
-    "message": "Genera Password (copiata)"
+    "message": "Genera password (copiata)"
   },
   "noMatchingLogins": {
     "message": "Nessun login corrispondente."
@@ -91,17 +91,20 @@
   "vaultLocked": {
     "message": "Cassaforte bloccata."
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "Non ci sono login disponibili per completare la tab del browser corrente."
   },
   "addLogin": {
-    "message": "Aggiungi un Login"
+    "message": "Aggiungi un login"
   },
   "addItem": {
-    "message": "Aggiungi Elemento"
+    "message": "Aggiungi elemento"
   },
   "passwordHint": {
-    "message": "Indizio Password"
+    "message": "Suggerimento password"
   },
   "enterEmailToGetHint": {
     "message": "Inserisci l'indirizzo email del tuo account per ricevere l'indizio della Password Principale"
@@ -113,13 +116,13 @@
     "message": "Continua"
   },
   "verificationCode": {
-    "message": "Codice di Verifica"
+    "message": "Codice di verifica"
   },
   "account": {
     "message": "Account"
   },
   "changeMasterPassword": {
-    "message": "Cambia Password Principale"
+    "message": "Modifica password principale"
   },
   "fingerprintPhrase": {
     "message": "Frase dell'impronta digitale",
@@ -145,16 +148,16 @@
     "message": "Salva"
   },
   "addFolder": {
-    "message": "Aggiungi Cartella"
+    "message": "Aggiungi cartella"
   },
   "name": {
     "message": "Nome"
   },
   "editFolder": {
-    "message": "Modifica Cartella"
+    "message": "Modifica cartella"
   },
   "deleteFolder": {
-    "message": "Cancella Cartella"
+    "message": "Elimina cartella"
   },
   "folders": {
     "message": "Cartelle"
@@ -163,19 +166,19 @@
     "message": "Non ci sono cartelle da mostrare."
   },
   "helpFeedback": {
-    "message": "Aiuto & Feedback"
+    "message": "Aiuto e suggerimenti"
   },
   "sync": {
     "message": "Sincronizza"
   },
   "syncVaultNow": {
-    "message": "Sincronizza Ora La Tua Cassaforte"
+    "message": "Sincronizza cassaforte ora"
   },
   "lastSync": {
-    "message": "Ultima Sincronizzazione:"
+    "message": "Ultima sincronizzazione:"
   },
   "passGen": {
-    "message": "Generatore di Password"
+    "message": "Generatore di password"
   },
   "generator": {
     "message": "Generatore",
@@ -188,16 +191,16 @@
     "message": "Cassaforte Web Bitwarden"
   },
   "importItems": {
-    "message": "Importa Elementi"
+    "message": "Importa elementi"
   },
   "select": {
     "message": "Seleziona"
   },
   "generatePassword": {
-    "message": "Genera Password"
+    "message": "Genera password"
   },
   "regeneratePassword": {
-    "message": "Rigenera Password"
+    "message": "Rigenera password"
   },
   "options": {
     "message": "Opzioni"
@@ -219,13 +222,13 @@
     "message": "Includi numero"
   },
   "minNumbers": {
-    "message": "Minimo di Numeri"
+    "message": "Minimo numeri"
   },
   "minSpecial": {
-    "message": "Minimo di Speciali"
+    "message": "Minimo caratteri speciali"
   },
   "avoidAmbChar": {
-    "message": "Evita Caratteri Ambigui"
+    "message": "Evita caratteri ambigui"
   },
   "searchVault": {
     "message": "Cerca nella cassaforte"
@@ -261,7 +264,7 @@
     "message": "Nota"
   },
   "editItem": {
-    "message": "Modifica Elemento"
+    "message": "Modifica elemento"
   },
   "folder": {
     "message": "Cartella"
@@ -270,7 +273,7 @@
     "message": "Elimina elemento"
   },
   "viewItem": {
-    "message": "Mostra Elemento"
+    "message": "Visualizza elemento"
   },
   "launch": {
     "message": "Avvia"
@@ -288,7 +291,7 @@
     "message": "Altro"
   },
   "rateExtension": {
-    "message": "Vota l'Estensione"
+    "message": "Vota l'estensione"
   },
   "rateExtensionDesc": {
     "message": "Per favore prendi in considerazione l'idea di lasciarci una buona recensione!"
@@ -297,10 +300,10 @@
     "message": "Il tuo browser non supporta la copia dalla clipboard. Copiala manualmente."
   },
   "verifyMasterPassword": {
-    "message": "Verifica Password Principale"
+    "message": "Verifica password principale"
   },
   "yourVaultIsLocked": {
-    "message": "La tua cassaforte è bloccata. Verifica la tua password principale per continuare."
+    "message": "La tua cassaforte è bloccata. Inserisci la tua password principale per continuare."
   },
   "unlock": {
     "message": "Sblocca"
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "Password principale errata"
   },
-  "lockOptions": {
-    "message": "Impostazioni di Chiusura Automatica"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "Blocca ora"
@@ -343,7 +346,7 @@
     "message": "1 minuto"
   },
   "twoMinutes": {
-    "message": "2 Minuti"
+    "message": "2 minuti"
   },
   "fiveMinutes": {
     "message": "5 minuti"
@@ -364,7 +367,7 @@
     "message": "Al Blocco Computer"
   },
   "onRestart": {
-    "message": "Al Riavvio del browser"
+    "message": "Al riavvio del browser"
   },
   "never": {
     "message": "Mai"
@@ -437,7 +440,7 @@
     "message": "Aggiungi cartella"
   },
   "changeMasterPass": {
-    "message": "Cambia Password Principale"
+    "message": "Modifica password principale"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Puoi cambiare la tua password principale sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
@@ -446,7 +449,7 @@
     "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una security key, app di autenticazione, SMS, telefonata o email. Può essere abilitata sulla cassaforte online di bitwarden.com. Vuoi visitare il sito ora?"
   },
   "editedFolder": {
-    "message": "Cartelle Modificate"
+    "message": "Cartella modificata"
   },
   "deleteFolderConfirmation": {
     "message": "Sei sicuro di voler modificare questa cartella?"
@@ -455,7 +458,7 @@
     "message": "Cartella cancellata"
   },
   "gettingStartedTutorial": {
-    "message": "Tutorial per Iniziare"
+    "message": "Tutorial per iniziare"
   },
   "gettingStartedTutorialVideo": {
     "message": "Guarda il nostro tutorial iniziale per capire come ottenere il massimo dall'estensione del browser."
@@ -495,10 +498,10 @@
     "message": "Sei sicuro di voler eliminare questo elemento?"
   },
   "deletedItem": {
-    "message": "Oggetto eliminato"
+    "message": "Elemento eliminato"
   },
   "overwritePassword": {
-    "message": "Sovrascrivi Password"
+    "message": "Sovrascrivi password"
   },
   "overwritePasswordConfirmation": {
     "message": "Sei sicuro di voler sovrascrivere la password corrente?"
@@ -517,7 +520,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Disabilita Notifica di Aggiunta Login"
+    "message": "Disabilita notifica di aggiunta login"
   },
   "addLoginNotificationDesc": {
     "message": "\"Aggiungi Notifica di Login\" richiede automaticamente di salvare i nuovi login nella tua cassaforte ogni volta che ti ci connetti per la prima volta."
@@ -877,7 +880,7 @@
     "message": "Al momento questa funzionalità è sperimentale. Usala tuo rischio e pericolo."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Apri popup cassaforte"
   },
   "commandOpenSidebar": {
     "message": "Apri cassaforte nella barra laterale"
@@ -1185,7 +1188,7 @@
     "message": "Non appartieni ad alcuna organizzazione. Le organizzazioni ti consentono di condividere oggetti in modo sicuro con altri utenti."
   },
   "noCollectionsInList": {
-    "message": "Nessuna collezione da visualizzare."
+    "message": "Nessuna raccolta da visualizzare."
   },
   "ownership": {
     "message": "Proprietà"
@@ -1231,7 +1234,7 @@
     "message": "Verifica PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "La tua cassaforte è bloccata. Verifica il tuo codice PIN per continuare."
+    "message": "La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio del browser"
@@ -1247,5 +1250,43 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

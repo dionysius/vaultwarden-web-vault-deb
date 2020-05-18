@@ -91,6 +91,9 @@
   "vaultLocked": {
     "message": "Sejf jest zablokowany."
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "Brak dostępnych danych logowania do autouzupełnienia dla obecnej karty przeglądarki."
   },
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "Hasło główne jest nieprawidłowe"
   },
-  "lockOptions": {
-    "message": "Czas automatycznego blokowania"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "Zablokuj"
@@ -787,7 +790,7 @@
     "message": "Logowanie jest niedostępne"
   },
   "noTwoStepProviders": {
-    "message": "Konto ma włączoną opcję logowania dwustopniowego, jednak ta przeglądarka nie wspiera żadnego ze skonfigurowanych mechanizmów autoryzacji dwustopniowej."
+    "message": "Konto posiada włączoną opcję logowania dwustopniowego, jednak ta przeglądarka nie wspiera żadnego ze skonfigurowanych mechanizmów autoryzacji dwustopniowej."
   },
   "noTwoStepProviders2": {
     "message": "Proszę użyć obsługiwanej przeglądarki (takiej jak Chrome) i/lub dodać dodatkowych dostawców, którzy są lepiej wspierani przez przeglądarki internetowe (np. aplikacja uwierzytelniająca)."
@@ -865,7 +868,7 @@
     "message": "Adres URL serwera ikon"
   },
   "environmentSaved": {
-    "message": "URLe środowiska zostały zapisane."
+    "message": "Adresy URL środowiska zostały zapisane."
   },
   "enableAutoFillOnPageLoad": {
     "message": "Włącz autouzupełnianie po załadowaniu strony"
@@ -1127,7 +1130,7 @@
     "message": "Domena podstawowa"
   },
   "host": {
-    "message": "Domena",
+    "message": "Host",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
@@ -1247,5 +1250,43 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia generatora."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

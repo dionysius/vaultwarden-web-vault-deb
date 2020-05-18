@@ -91,6 +91,9 @@
   "vaultLocked": {
     "message": "הכספת נעולה."
   },
+  "vaultLoggedOut": {
+    "message": "Vault is logged out."
+  },
   "autoFillInfo": {
     "message": "לא נמצאו פרטי כניסה להשלמה אוטומטית בלשונית הנוכחית בדפדפן."
   },
@@ -145,7 +148,7 @@
     "message": "שמור"
   },
   "addFolder": {
-    "message": "הוסף תיקיה"
+    "message": "הוסף תיקייה"
   },
   "name": {
     "message": "שם"
@@ -321,8 +324,8 @@
   "invalidMasterPassword": {
     "message": "סיסמה ראשית שגויה"
   },
-  "lockOptions": {
-    "message": "אפשרויות נעילה"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
   "lockNow": {
     "message": "נעל עכשיו"
@@ -434,7 +437,7 @@
     "message": "דרוש שם."
   },
   "addedFolder": {
-    "message": "נוספה תיקיה"
+    "message": "נוספה תיקייה"
   },
   "changeMasterPass": {
     "message": "החלף סיסמה ראשית"
@@ -446,13 +449,13 @@
     "message": "התחברות בשני-שלבים הופכת את החשבון שלך למאובטח יותר בכך שאתה נדרש לוודא בכל כניסה בעזרת מכשיר אחר כדוגמת מפתח אבטחה, תוכנת אימות, SMS, שיחת טלפון, או אימייל. ניתן להפעיל את \"התחברות בשני-שלבים\" בכספת שבאתר bitwarden.com. האם ברצונך לפתוח את האתר כעת?"
   },
   "editedFolder": {
-    "message": "תיקיה שנערכה"
+    "message": "תיקייה שנערכה"
   },
   "deleteFolderConfirmation": {
     "message": "האם אתה בטוח שברצונך למחוק את התיקייה?"
   },
   "deletedFolder": {
-    "message": "תיקיה שנמחקה"
+    "message": "תיקייה שנמחקה"
   },
   "gettingStartedTutorial": {
     "message": "מדריך שימוש ראשוני"
@@ -513,7 +516,7 @@
     "message": "חפש סוג"
   },
   "noneFolder": {
-    "message": "ללא תיקיה",
+    "message": "ללא תיקייה",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
@@ -877,7 +880,7 @@
     "message": "זוהי אופציה נסיונית. השימוש באופציה זו על אחריותך."
   },
   "commandOpenPopup": {
-    "message": "פתיחת חלונית כספת"
+    "message": "פתיחת כספת בחלונית צפה"
   },
   "commandOpenSidebar": {
     "message": "פתיחת כספת בסרגל צד"
@@ -916,7 +919,7 @@
     "message": "אמת או שקר"
   },
   "popup2faCloseMessage": {
-    "message": "לחיצה מחוץ לחלון שנפתח בכדי לבדוק את פרטי האימות תגרום לחלון שנפתח, להסגר. האם ברצונך להציג את המידע בחלון חדש שאינו נסגר?"
+    "message": "לחיצה מחוץ לחלונית הצפה שנפתחה בכדי לבדוק את פרטי האימות תגרום לחלונית שנפתחה, להסגר. האם ברצונך להציג את המידע בחלון שאינו נסגר?"
   },
   "popupU2fCloseMessage": {
     "message": "דפדפן זה לא יכול לעבד בקשות U2F בחלון צף זה. האם ברצונך לפתוח את החלון הצף כחלון חדש רגיל כדי שתוכל להכנס באמצעות U2F?"
@@ -1247,5 +1250,43 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "מדיניות ארגונית אחת או יותר משפיעה על הגדרות המחולל שלך."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }
