@@ -101,10 +101,19 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             let options: TabQueryOptions? = jsonDeserialize(json: m!.data)
             if options?.currentWindow ?? false {
                 SFSafariApplication.getActiveWindow { win in
-                    processWindowsForTabs(wins: [win!], options: options, complete: { tabs in
-                        m!.responseData = jsonSerialize(obj: tabs)
-                        self.replyMessage(message: m!)
-                    })
+                    if win != nil {
+                        processWindowsForTabs(wins: [win!], options: options, complete: { tabs in
+                            m!.responseData = jsonSerialize(obj: tabs)
+                            self.replyMessage(message: m!)
+                        })
+                    } else {
+                        SFSafariApplication.getAllWindows { wins in
+                            processWindowsForTabs(wins: wins, options: options, complete: { tabs in
+                                m!.responseData = jsonSerialize(obj: tabs)
+                                self.replyMessage(message: m!)
+                            })
+                        }
+                    }
                 }
             } else {
                 SFSafariApplication.getAllWindows { wins in
@@ -145,10 +154,12 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             dismissPopover()
             replyMessage(message: m!)
         } else if command == "showPopover" {
-            SFSafariApplication.getActiveWindow { win in
-                win?.getToolbarItem(completionHandler: { item in
-                    item?.showPopover()
-                })
+            if popoverOpenCount <= 0 {
+                SFSafariApplication.getActiveWindow { win in
+                    win?.getToolbarItem(completionHandler: { item in
+                        item?.showPopover()
+                    })
+                }
             }
         } else if command == "isPopoverOpen" {
             m!.responseData = popoverOpenCount > 0 ? "true" : "false"
