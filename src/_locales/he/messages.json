@@ -92,7 +92,7 @@
     "message": "הכספת נעולה."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "בוצעה יציאה מהכספת."
   },
   "autoFillInfo": {
     "message": "לא נמצאו פרטי כניסה להשלמה אוטומטית בלשונית הנוכחית בדפדפן."
@@ -325,7 +325,7 @@
     "message": "סיסמה ראשית שגויה"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "משך זמן מירבי עבור חיבור לכספת"
   },
   "lockNow": {
     "message": "נעל עכשיו"
@@ -498,7 +498,7 @@
     "message": "האם אתה בטוח שברצונך למחוק פריט זה?"
   },
   "deletedItem": {
-    "message": "פריט שנמחק"
+    "message": "פריט נשלח לסל המחזור"
   },
   "overwritePassword": {
     "message": "דרוס סיסמה"
@@ -1252,41 +1252,41 @@
     "message": "מדיניות ארגונית אחת או יותר משפיעה על הגדרות המחולל שלך."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "פעולה לביצוע בכספת בתום זמן החיבור"
   },
   "lock": {
-    "message": "Lock",
+    "message": "נעילה",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "סל המחזור",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "חפש בסל המחזור"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "מחק לצמיתות פריט שנבחר"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "האם אתה בטוח שברצונך למחוק את הפריט הזה?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "פריט שנמחק לצמיתות"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "שחזר פריט"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "האם אתה בטוח שברצונך לשחזר פריט זה?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "פריט ששוחזר"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "יציאה מהחשבון תסיר את כל הגישה לכספת ויידרש אימות מקוון לאחר משך הזמן שהוקצב. האם אתה בטוח שברצונך להשתמש בהגדרה זו?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "אישור פעולת אימות לאחר חוסר פעילות"
   }
 }

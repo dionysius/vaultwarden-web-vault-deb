@@ -92,7 +92,7 @@
     "message": "La caja fuerte está bloqueada."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "La bóveda está desconectada."
   },
   "autoFillInfo": {
     "message": "No hay entradas disponibles para autorellenar en la pestaña actual del navegador."
@@ -325,7 +325,7 @@
     "message": "Contraseña maestra no válida"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Tiempo de espera de la bóveda"
   },
   "lockNow": {
     "message": "Bloquear"
@@ -1252,39 +1252,39 @@
     "message": "Una o más políticas de la organización están afectando la configuración del generador"
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Acción de tiempo de espera de bóveda"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Bloquear",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Papelera",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Buscar en la Papelera"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Eliminar elemento de forma permanente"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "¿Estás seguro de eliminar de forma permanente este elemento?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Elemento eliminado de forma permanente"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Restaurar elemento"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "¿Estás seguro de que quieres restaurar este elemento?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Elemento restaurado"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Cerrar sesión eliminará todo el acceso a su bóveda y requiere autenticación en línea después del período de espera. ¿Estás seguro de que quieres usar esta configuración?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Timeout Action Confirmation"

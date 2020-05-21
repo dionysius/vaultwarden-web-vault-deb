@@ -92,7 +92,7 @@
     "message": "A széf zárolva van."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "A széf kijelentkezésre került."
   },
   "autoFillInfo": {
     "message": "Nincsenek elérhető bejelentkezések ehhez a fülhöz ezért az automatikus kitöltés nem működik."
@@ -325,7 +325,7 @@
     "message": "Hibás mesterjelszó"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Széf időkifutás"
   },
   "lockNow": {
     "message": "Zárolás most"
@@ -1252,41 +1252,41 @@
     "message": "Egy vagy több szervezeti szabály érinti a generátor beállításokat."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Széf időkifutás művelet"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Lezárás",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Lomtár",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Keresés a lomtárban"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Az elem végleges törlése"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Biztosan véglegesen törlésre kerüljön ez az elem?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Véglegesen törölt elem"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Elem visszaállítása"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Biztosan visszaállításra kerüljön ezt az elem?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Visszaállított elem"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Kijelentkezve az összes széf elérés eltávolításra kerül és webes hitelesítésre van szükség az időkifutás után. Biztosan szeretnénk használni ezt a beállítást?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Időkifutás művelet megerősítés"
   }
 }

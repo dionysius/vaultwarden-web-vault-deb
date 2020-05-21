@@ -92,7 +92,7 @@
     "message": "Το Vault είναι κλειδωμένο."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Το Vault έχει αποσυνδεθεί."
   },
   "autoFillInfo": {
     "message": "Δεν υπάρχουν διαθέσιμες συνδέσεις για την αυτόματη συμπλήρωση, στην τρέχουσα καρτέλα του προγράμματος περιήγησης."
@@ -325,7 +325,7 @@
     "message": "Μη έγκυρος κύριος κωδικός πρόσβασης"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Χρόνος Λήξης Vault"
   },
   "lockNow": {
     "message": "Κλείδωμα Τώρα"
@@ -1252,41 +1252,41 @@
     "message": "Μία ή περισσότερες πολιτικές του οργανισμού επηρεάζουν τις ρυθμίσεις της γεννήτριας."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Ενέργεια Χρόνου Λήξης Vault"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Κλείδωμα",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Κάδος Απορριμάτων",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Αναζήτηση Κάδου"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Μόνιμη Διαγραφή Αντικειμένου"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα αυτό το στοιχείο;"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Μόνιμα Διεγραμμένο Στοιχείο"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Ανάκτηση Στοιχείου"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Είστε βέβαιοι ότι θέλετε να ανακτήσετε αυτό το στοιχείο;"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Στοιχείο που έχει Ανακτηθεί"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Η αποσύνδεση θα καταργήσει όλη την πρόσβαση στο vault σας και απαιτεί online έλεγχο ταυτότητας μετά το χρονικό όριο λήξης. Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε αυτήν τη ρύθμιση;"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Επιβεβαίωση Ενέργειας Χρονικού Ορίου"
   }
 }

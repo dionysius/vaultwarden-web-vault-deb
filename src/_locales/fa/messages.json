@@ -92,7 +92,7 @@
     "message": "گاوصندوق قفل شد."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "گاوصندوق خارج شده است."
   },
   "autoFillInfo": {
     "message": "پرکردن خودکار برای برگه فعلی مرورگر در دسترس نیست."
@@ -325,7 +325,7 @@
     "message": "گذرواژه اصلی نامعتبر است"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "متوقف شدن گاو‌صندوق"
   },
   "lockNow": {
     "message": "الان قفل شود"
@@ -1252,41 +1252,41 @@
     "message": "یک یا چند خط مشی سازمان بر تنظیمات تولیدکننده شما تأثیر می گذارد."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "عمل متوقف شدن گاو‌صندوق"
   },
   "lock": {
-    "message": "Lock",
+    "message": "قفل",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "زباله ها",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "جستجوی زباله ها"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "حذف دائمی مورد"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "آیا مطمئن هستید که می خواهید این مورد را برای همیشه حذف کنید؟"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "مورد برای همیشه حذف شد"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "بازیابی مورد"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "آیا مطمئن هستید می خواهید این مورد را بازیابی کنید؟"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "مورد بازیابی شد"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "خروج از سیستم تمام دسترسی ها به گاو‌صندوق شما را از بین می برد و نیاز به احراز هویت آنلاین پس از مدت زمان توقف دارد. آیا مطمئن هستید که می خواهید از این تنظیمات استفاده کنید؟"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "تایید عمل توقف"
   }
 }

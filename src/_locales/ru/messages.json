@@ -92,7 +92,7 @@
     "message": "Хранилище заблокировано."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Хранилище отключено."
   },
   "autoFillInfo": {
     "message": "Нет доступных логинов для автозаполнения на текущей вкладке браузера."
@@ -325,7 +325,7 @@
     "message": "Неверный мастер-пароль"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Таймаут хранения"
   },
   "lockNow": {
     "message": "Заблокировать"
@@ -1048,7 +1048,7 @@
     "message": "Строка адреса 3"
   },
   "cityTown": {
-    "message": "Город / Поселок"
+    "message": "Город/Поселок"
   },
   "stateProvince": {
     "message": "Регион / Область"
@@ -1252,41 +1252,41 @@
     "message": "На настройки генератора влияют одна или несколько политик организации."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Действие при таймауте"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Заблокировать",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Корзина",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Поиск в корзине"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Окончательно удалить элемент"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Вы действительно хотите окончательно удалить этот элемент?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Окончательно удалённый элемент"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Восстановить элемент"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Вы действительно хотите восстановить этот элемент?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Восстановленный элемент"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Выход из системы удалит доступ к хранилищу и потребует онлайн-аутентификацию по истечении периода ожидания. Вы действительно хотите использовать эту настройку?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Подтверждение действия таймаута"
   }
 }

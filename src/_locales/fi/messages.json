@@ -92,7 +92,7 @@
     "message": "Holvi on lukittu."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Holvista on kirjauduttu ulos."
   },
   "autoFillInfo": {
     "message": "Selaimen nykyiselle välilehdelle ei ole automaattisesti täytettäviä käyttäjätunnuksia."
@@ -166,7 +166,7 @@
     "message": "Ei kansioita näytettäväksi."
   },
   "helpFeedback": {
-    "message": "Tuki & palaute"
+    "message": "Tuki ja palaute"
   },
   "sync": {
     "message": "Synkronointi"
@@ -325,7 +325,7 @@
     "message": "Virheellinen pääsalasana"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Holvin aikakatkaisu"
   },
   "lockNow": {
     "message": "Lukitse nyt"
@@ -364,10 +364,10 @@
     "message": "4 tuntia"
   },
   "onLocked": {
-    "message": "Järjestelmän lukitsemisen yhteydessä"
+    "message": "Järjestelmän lukittuessa"
   },
   "onRestart": {
-    "message": "Selaimen käynnistyksen yhteydessä"
+    "message": "Selainta uudelleenkäynnistettäessä"
   },
   "never": {
     "message": "Ei koskaan"
@@ -498,7 +498,7 @@
     "message": "Haluatko varmasti poistaa tämän kohteen?"
   },
   "deletedItem": {
-    "message": "Kohde poistettu"
+    "message": "Kohde lähetetty roskakoriin"
   },
   "overwritePassword": {
     "message": "Korvaa salasana"
@@ -555,7 +555,7 @@
     "message": "Ei koskaan tälle sivustolle"
   },
   "disableChangedPasswordNotification": {
-    "message": "Älä näytä ilmoitusta salasanan muutoksesta"
+    "message": "Älä näytä salasanan muutosilmoitusta"
   },
   "disableChangedPasswordNotificationDesc": {
     "message": "\"Vaihdettu salasana\" -ilmoitus kehottaa automaattisesti sinua päivittämään holvissasi olevan käyttäjätunnuksen salasanan, kun se havaitsee, että olet muuttanut sitä verkkosivulla."
@@ -628,7 +628,7 @@
     "message": "Jaettu kohde"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Valitse organisaatio, jonka kanssa haluat jakaa tämän kohteen. Jakaminen siirtää kohteen omistajuuden organisaatiolle. Et enää ole tämän kohteen suora omistaja, kun se on jaettu."
   },
   "learnMore": {
     "message": "Lue lisää"
@@ -745,7 +745,7 @@
     "message": "Jos käyttäjätunnukseesi on liitetty todennusavain, TOTP-vahvistuskoodi kopioidaan automaattisesti leikepöydällesi tehdessäsi kohteella automaattisen täytön."
   },
   "premiumRequired": {
-    "message": "Premium-jäsenyys vaaditaan"
+    "message": "Premium vaaditaan"
   },
   "premiumRequiredDesc": {
     "message": "Tarvitset premium-jäsenyyden tämän toiminnon käyttämiseen."
@@ -841,7 +841,7 @@
     "message": "Itse ylläpidetty ohjelmistoympäristö"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Syötä omalla palvelimella ylläpitämäsi bitwarden-asennuksen kanta-URL."
+    "message": "Syötä omalla palvelimella ylläpitämäsi Bitwarden-asennuksen kanta-URL."
   },
   "customEnvironment": {
     "message": "Mukautettu ohjelmistoympäristö"
@@ -1009,13 +1009,13 @@
     "message": "Etunimi"
   },
   "middleName": {
-    "message": "Välinimi"
+    "message": "Toinen nimi"
   },
   "lastName": {
     "message": "Sukunimi"
   },
   "identityName": {
-    "message": "Henkilöllisyys"
+    "message": "Henkilöllisyyden nimi"
   },
   "company": {
     "message": "Yhtiö"
@@ -1185,10 +1185,10 @@
     "message": "Oletko varma, että haluat käyttää asetusta \"ei koskaan\"? Tämä valinta tallentaa holvisi salausavaimen laitteellesi. Jos käytät tätä asetusta, varmista että laitteesi on hyvin suojattu."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Et kuulu mihinkään organisaatioon. Organisaatioiden avulla voit jakaa kohteita turvallisesti muiden käyttäjien kanssa."
   },
   "noCollectionsInList": {
-    "message": "Ei kokoelmia listattavaksi."
+    "message": "Ei näytettäviä kokoelmia."
   },
   "ownership": {
     "message": "Omistajuus"
@@ -1209,13 +1209,13 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Heikko pääsalasana"
   },
   "weakMasterPasswordDesc": {
     "message": "Valitsemasi pääsalasana on heikko. Sinun kannattaa käyttää vahvaa pääsalasanaa (tai ‑salalauseketta) suojataksesi Bitwarden-tilisi kunnolla. Haluatko varmasti käyttää tätä pääsalasanaa?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-koodi",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
@@ -1231,13 +1231,13 @@
     "message": "Virheellinen PIN-koodi."
   },
   "verifyPin": {
-    "message": "Varmista PIN"
+    "message": "Vahvista PIN-koodi"
   },
   "yourVaultIsLockedPinCode": {
     "message": "Holvisi on lukittu. Vahvista PIN-koodisi jatkaaksesi."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lukitse pääsalasanalla uudelleenkäynnistyksen yhteydessä"
+    "message": "Lukitse pääsalasanalla selainta uudelleenkäynnistettäessä"
   },
   "selectOneCollection": {
     "message": "Valitse vähintään yksi kokoelma."
@@ -1249,44 +1249,44 @@
     "message": "Kloonaa"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Yksi tai useampi organisaatiosi politiikka vaikuttaa generaattorin asetuksiin"
+    "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa generaattorisi asetuksiin."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Holvin aikakatkaisun toiminto"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Lukitse",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Roskakori",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Hae roskakorista"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Poista kohde pysyvästi"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Haluatko varmasti poistaa tämän kohteen pysyvästi?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Kohde poistettu pysyvästi"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Palauta kohde"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Haluatko varmasti palauttaa tämän kohteen?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Kohde palautettu"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Uloskirjautuminen poistaa kaiken pääsyn holviisi ja vaatii online-todennuksen aikakatkaisuajan jälkeen. Haluatko varmasti käyttää tätä asetusta?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Aikakatkaisun toiminnon vahvistus"
   }
 }
