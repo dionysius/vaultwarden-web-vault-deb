@@ -65,223 +65,141 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
             return
         }
         let command = m!.command
-        log("Command: \(command)")
+        NSLog("Command: \(command)")
         if command == "storage_get" {
             if m!.data != nil {
-                log("DEBUG - 1, \(m!.data!)")
                 let obj = UserDefaults.standard.string(forKey: m!.data!)
-                log("DEBUG - 2")
                 m!.responseData = obj
                 replyMessage(message: m!)
-                log("DEBUG - 3")
             }
         } else if command == "storage_save" {
             let data: StorageData? = jsonDeserialize(json: m!.data)
-            log("DEBUG - 4")
             if data?.key != nil {
-                log("DEBUG - 5")
                 if data?.obj == nil {
-                    log("DEBUG - 6, \(data!.key)")
                     UserDefaults.standard.removeObject(forKey: data!.key)
-                    log("DEBUG - 7")
                 } else {
-                    log("DEBUG - 8, \(data!.key)")
                     UserDefaults.standard.set(data?.obj, forKey: data!.key)
-                    log("DEBUG - 9")
                 }
                 replyMessage(message: m!)
-                log("DEBUG - 10")
             }
         } else if command == "storage_remove" {
             if m!.data != nil {
-                log("DEBUG - 11, \(m!.data!)")
                 UserDefaults.standard.removeObject(forKey: m!.data!)
-                log("DEBUG - 12")
                 replyMessage(message: m!)
-                log("DEBUG - 13")
             }
         } else if command == "getLocaleStrings" {
             let language = m!.data ?? "en"
-            log("DEBUG - 14, \(language)")
             let bundleURL = Bundle.main.resourceURL!.absoluteURL
-            log("DEBUG - 15, \(bundleURL)")
             let messagesUrl = bundleURL.appendingPathComponent("app/_locales/\(language)/messages.json")
-            log("DEBUG - 16, \(messagesUrl)")
             do {
                 let json = try String(contentsOf: messagesUrl, encoding: .utf8)
-                log("DEBUG - 17")
                 webView.evaluateJavaScript("window.bitwardenLocaleStrings = \(json);", completionHandler: nil)
-                log("DEBUG - 18")
             } catch {
-                log("DEBUG - 19, \(error)")
+                NSLog("ERROR on getLocaleStrings, \(error)")
             }
             replyMessage(message: m!)
-            log("DEBUG - 20")
         } else if command == "tabs_query" {
             let options: TabQueryOptions? = jsonDeserialize(json: m!.data)
-            log("DEBUG - 21")
             if options?.currentWindow ?? false {
-                log("DEBUG - 22")
                 SFSafariApplication.getActiveWindow { win in
                     if win != nil {
-                        log("DEBUG - 23")
                         processWindowsForTabs(wins: [win!], options: options, complete: { tabs in
-                        log("DEBUG - 24")
                             m!.responseData = jsonSerialize(obj: tabs)
-                            log("DEBUG - 25")
                             self.replyMessage(message: m!)
-                            log("DEBUG - 26")
                         })
                     } else {
-                        log("DEBUG - 27")
                         SFSafariApplication.getAllWindows { wins in
-                            log("DEBUG - 28")
                             processWindowsForTabs(wins: wins, options: options, complete: { tabs in
-                                log("DEBUG - 29")
                                 m!.responseData = jsonSerialize(obj: tabs)
-                                log("DEBUG - 30")
                                 self.replyMessage(message: m!)
-                                log("DEBUG - 31")
                             })
                         }
-                        log("DEBUG - 32")
                     }
                 }
             } else {
-                log("DEBUG - 33")
                 SFSafariApplication.getAllWindows { wins in
-                    log("DEBUG - 34")
                     processWindowsForTabs(wins: wins, options: options, complete: { tabs in
-                        log("DEBUG - 35")
                         m!.responseData = jsonSerialize(obj: tabs)
-                        log("DEBUG - 36")
                         self.replyMessage(message: m!)
-                        log("DEBUG - 37")
                     })
                 }
             }
         } else if command == "tabs_message" {
             let tabMsg: TabMessage? = jsonDeserialize(json: m!.data)
-            log("DEBUG - 38")
             SFSafariApplication.getAllWindows { wins in
-                log("DEBUG - 39")
                 var theWin: SFSafariWindow?
                 var winIndex = 0
-                log("DEBUG - 40")
                 for win in wins {
-                    log("DEBUG - 40.a")
                     if tabMsg?.tab.windowId == winIndex {
-                        log("DEBUG - 40.b")
                         theWin = win
                         break
                     }
                     winIndex = winIndex + 1
                 }
-                log("DEBUG - 41")
                 var theTab: SFSafariTab?
                 theWin?.getAllTabs { tabs in
-                    log("DEBUG - 42")
                     var tabIndex = 0
                     for tab in tabs {
-                        log("DEBUG - 43")
                         if tabMsg?.tab.index == tabIndex {
-                            log("DEBUG - 43.a")
                             theTab = tab
                             break
                         }
                         tabIndex = tabIndex + 1
                     }
-                    log("DEBUG - 44")
                     theTab?.getActivePage { activePage in
-                        log("DEBUG - 45")
                         activePage?.dispatchMessageToScript(withName: "bitwarden", userInfo: ["msg": tabMsg!.obj])
-                        log("DEBUG - 46")
                     }
-                    log("DEBUG - 47")
                 }
             }
         } else if command == "hidePopover" {
             dismissPopover()
-            log("DEBUG - 48")
             replyMessage(message: m!)
-            log("DEBUG - 49")
         } else if command == "showPopover" {
             if popoverOpenCount <= 0 {
-                log("DEBUG - 50")
                 SFSafariApplication.getActiveWindow { win in
-                    log("DEBUG - 51")
                     win?.getToolbarItem(completionHandler: { item in
-                        log("DEBUG - 52")
                         item?.showPopover()
-                        log("DEBUG - 53")
                     })
                 }
-                log("DEBUG - 54")
             }
         } else if command == "isPopoverOpen" {
             m!.responseData = popoverOpenCount > 0 ? "true" : "false"
-            log("DEBUG - 55")
             replyMessage(message: m!)
-            log("DEBUG - 56")
         } else if command == "createNewTab" {
             if m!.data != nil {
-                log("DEBUG - 57")
                 SFSafariApplication.getActiveWindow { win in
-                    log("DEBUG - 58")
                     win?.openTab(with: URL(string: m!.data!)!, makeActiveIfPossible: true, completionHandler: { _ in
-                        log("DEBUG - 59")
                         // Tab opened
                     })
-                    log("DEBUG - 60")
                 }
-                log("DEBUG - 61")
             }
         } else if command == "reloadExtension" {
             webView?.reload()
-            log("DEBUG - 62")
             replyMessage(message: m!)
-            log("DEBUG - 63")
         } else if command == "copyToClipboard" {
             let pasteboard = NSPasteboard.general
-            log("DEBUG - 64")
             pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-            log("DEBUG - 65")
             pasteboard.setString(m!.data ?? "", forType: NSPasteboard.PasteboardType.string)
-            log("DEBUG - 66")
             replyMessage(message: m!)
-            log("DEBUG - 67")
         } else if command == "readFromClipboard" {
             let pasteboard = NSPasteboard.general
-            log("DEBUG - 68")
             m!.responseData = pasteboard.pasteboardItems?.first?.string(forType: .string)
-            log("DEBUG - 69")
             replyMessage(message: m!)
-            log("DEBUG - 70")
         } else if command == "downloadFile" {
             if m!.data != nil {
-                log("DEBUG - 71")
                 if let dlMsg: DownloadFileMessage = jsonDeserialize(json: m!.data) {
-                    log("DEBUG - 72")
                     var data: Data?
                     if dlMsg.blobOptions?.type == "text/plain" {
-                        log("DEBUG - 73")
                         data = dlMsg.blobData?.data(using: .utf8)
-                        log("DEBUG - 74")
                     } else if dlMsg.blobData != nil {
-                        log("DEBUG - 75")
                         data = Data(base64Encoded: dlMsg.blobData!)
-                        log("DEBUG - 76")
                     }
                     if data != nil {
-                        log("DEBUG - 76")
                         let panel = NSSavePanel()
                         panel.canCreateDirectories = true
                         panel.nameFieldStringValue = dlMsg.fileName
-                        log("DEBUG - 77")
                         panel.begin { response in
-                            log("DEBUG - 78")
                             if response == NSApplication.ModalResponse.OK {
-                                log("DEBUG - 79")
                                 if let url = panel.url {
                                     do {
                                         let fileManager = FileManager.default
@@ -290,15 +208,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
                                                                    attributes: nil)
                                         }
                                         try data!.write(to: url)
-                                        log("DEBUG - 80")
                                     } catch {
                                         print(error)
-                                        log("DEBUG - 81, \(error)")
+                                        NSLog("ERROR in downloadFile, \(error)")
                                     }
                                 }
                             }
                         }
-                        log("DEBUG - 82")
                     }
                 }
             }
@@ -418,10 +334,6 @@ func jsonDeserialize<T: Decodable>(json: String?) -> T? {
     } catch _ {
         return nil
     }
-}
-
-func log(_ message: String) {
-    NSLog("com.bitwarden.desktop.safari: \(message)")
 }
 
 class AppMessage: Decodable, Encodable {
