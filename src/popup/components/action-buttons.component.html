@@ -13,7 +13,7 @@
     </span>
     <span class="row-btn" appStopClick appStopProp appA11yTitle="{{'copyPassword' | i18n}}"
         (click)="copy(cipher, cipher.login.password, 'password', 'Password')"
-        [ngClass]="{disabled: !cipher.login.password}">
+        [ngClass]="{disabled: (!cipher.login.password || !cipher.viewPassword)}">
         <i class="fa fa-lg fa-key" aria-hidden="true"></i>
     </span>
 </ng-container>

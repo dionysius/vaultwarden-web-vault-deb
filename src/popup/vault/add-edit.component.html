@@ -40,24 +40,28 @@
                         <div class="row-main">
                             <label for="loginPassword">{{'password' | i18n}}</label>
                             <input id="loginPassword" class="monospaced" type="{{showPassword ? 'text' : 'password'}}"
-                                name="Login.Password" [(ngModel)]="cipher.login.password" appInputVerbatim>
+                                name="Login.Password" [(ngModel)]="cipher.login.password" appInputVerbatim
+                                [disabled]="!cipher.viewPassword">
                         </div>
                         <div class="action-buttons">
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
                                 appA11yTitle="{{'checkPassword' | i18n}}" (click)="checkPassword()"
-                                [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
+                                [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading"
+                                *ngIf="cipher.viewPassword">
                                 <i class="fa fa-lg fa-check-circle" [hidden]="checkPasswordBtn.loading"
                                     aria-hidden="true"></i>
                                 <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"
                                     aria-hidden="true"></i>
                             </button>
                             <a class="row-btn" href="#" appStopClick appBlurClick
-                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
+                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()"
+                                *ngIf="cipher.viewPassword">
                                 <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
                             <a class="row-btn" href="#" appStopClick appBlurClick
-                                appA11yTitle="{{'generatePassword' | i18n}}" (click)="generatePassword()">
+                                appA11yTitle="{{'generatePassword' | i18n}}" (click)="generatePassword()"
+                                *ngIf="cipher.viewPassword">
                                 <i class="fa fa-lg fa-refresh" aria-hidden="true"></i>
                             </a>
                         </div>

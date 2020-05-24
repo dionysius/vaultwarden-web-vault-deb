@@ -577,7 +577,7 @@ export default class MainBackground {
             });
         }
 
-        if (cipher == null || (cipher.login.password && cipher.login.password !== '')) {
+        if (cipher == null || (cipher.login.password && cipher.login.password !== '' && cipher.viewPassword)) {
             await this.contextMenusCreate({
                 type: 'normal',
                 id: 'copy-password_' + idSuffix,
