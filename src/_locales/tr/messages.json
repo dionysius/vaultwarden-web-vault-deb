@@ -92,7 +92,7 @@
     "message": "Kasa kilitlendi."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Kasanın oturumu kapatıldı."
   },
   "autoFillInfo": {
     "message": "Mevcut sekme için otomatik doldurulacak giriş bilgisi bulunmuyor."
@@ -325,7 +325,7 @@
     "message": "Geçersiz ana parola"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Kasa Zaman Aşımı"
   },
   "lockNow": {
     "message": "Şimdi Kilitle"
@@ -1252,18 +1252,18 @@
     "message": "Bir ya da daha fazla organizasyon ilkesi oluşturucu ayarlarınızı etkiliyor."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Kasa Zaman Aşımı Eylemi"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Kilitle",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Çöp Kutusu",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Çöplerde ara"
   },
   "permanentlyDeleteItem": {
     "message": "Öğeyi Kalıcı Olarak Sil"
@@ -1275,7 +1275,7 @@
     "message": "Kalıcı Olarak Silinmiş Öğe"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Ögeyi Geri Yükle"
   },
   "restoreItemConfirmation": {
     "message": "Bu öğeyi geri yüklemek istediğinizden emin misiniz?"
@@ -1287,6 +1287,6 @@
     "message": "Oturumu kapatmak kasanıza olan tüm erişiminizi kaldırır ve zaman aşımından sonra çevrimiçi kimlik doğrulaması gerektirir. Bu ayarı kullanmak istediğinizden emin misiniz?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Zaman Aşımı Eylem Onayı"
   }
 }
