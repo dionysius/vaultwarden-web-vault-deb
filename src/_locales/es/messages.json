@@ -92,7 +92,7 @@
     "message": "La caja fuerte está bloqueada."
   },
   "vaultLoggedOut": {
-    "message": "La bóveda está desconectada."
+    "message": "La caja fuerte está desconectada."
   },
   "autoFillInfo": {
     "message": "No hay entradas disponibles para autorellenar en la pestaña actual del navegador."
@@ -325,7 +325,7 @@
     "message": "Contraseña maestra no válida"
   },
   "vaultTimeout": {
-    "message": "Tiempo de espera de la bóveda"
+    "message": "Tiempo de espera de la caja fuerte"
   },
   "lockNow": {
     "message": "Bloquear"
@@ -880,7 +880,7 @@
     "message": "Esta es una característica experimental. Úsala bajo tu propio riesgo."
   },
   "commandOpenPopup": {
-    "message": "Abrir ventana emergente de caja de seguridad"
+    "message": "Abrir ventana emergente de caja de la caja fuerte"
   },
   "commandOpenSidebar": {
     "message": "Abrir caja fuerte en la barra lateral"
@@ -1252,7 +1252,7 @@
     "message": "Una o más políticas de la organización están afectando la configuración del generador"
   },
   "vaultTimeoutAction": {
-    "message": "Acción de tiempo de espera de bóveda"
+    "message": "Acción de tiempo de espera de la caja fuerte"
   },
   "lock": {
     "message": "Bloquear",
@@ -1284,9 +1284,9 @@
     "message": "Elemento restaurado"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Cerrar sesión eliminará todo el acceso a su bóveda y requiere autenticación en línea después del período de espera. ¿Estás seguro de que quieres usar esta configuración?"
+    "message": "Cerrar sesión eliminará todo el acceso a tu caja fuerte y requerirá autenticación en línea después del tiempo de espera. ¿Estás seguro de que quieres usar esta configuración?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Confirmación de la acción del tiempo de espera"
   }
 }

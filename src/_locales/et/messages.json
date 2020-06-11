@@ -7,11 +7,11 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "Turvaline ja tasuta paroolihaldur kõikidele Sinu seadmetele.",
+    "message": "Turvaline ja tasuta paroolihaldur kõikidele sinu seadmetele.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Logi sisse või loo konto, et pääseda oma turvalisse hoidlasse."
+    "message": "Logi oma olemasolevasse kontosse sisse või loo uus konto."
   },
   "createAccount": {
     "message": "Loo konto"
@@ -35,7 +35,7 @@
     "message": "Ülemparool"
   },
   "masterPassDesc": {
-    "message": "Ülemparool on parool, millega pääsed oma kontole ligi. See on väga oluline, et sa oma ülemparooli ei unustaks. Selle parooli taastamine ei ole mitte mingil moel võimalik."
+    "message": "Ülemparool on parool, millega pääsed oma kontole ligi. On äärmiselt tähtis, et ülemparool ei ununeks. Selle parooli taastamine ei ole mingil moel võimalik."
   },
   "masterPassHintDesc": {
     "message": "Vihje võib abiks olla olukorras, kui oled ülemparooli unustanud."
@@ -44,7 +44,7 @@
     "message": "Sisesta ülemparool uuesti"
   },
   "masterPassHint": {
-    "message": "Ülemparooli vihje (ei ole kohutuslik)"
+    "message": "Ülemparooli vihje (ei ole kohustuslik)"
   },
   "tab": {
     "message": "Kaart"
@@ -68,7 +68,7 @@
     "message": "Kopeeri märkus"
   },
   "copyUri": {
-    "message": "Kopeeri URL"
+    "message": "Kopeeri URI"
   },
   "copyUsername": {
     "message": "Kopeeri kasutajanimi"
@@ -110,7 +110,7 @@
     "message": "Ülemparooli vihje saamiseks sisesta oma konto e-posti aadress."
   },
   "getMasterPasswordHint": {
-    "message": "Tuleta ülemparooli vihjega meelde"
+    "message": "Tuleta ülemparool vihjega meelde"
   },
   "continue": {
     "message": "Jätka"
@@ -394,13 +394,13 @@
     "message": "Ülemparoolid ei ühti."
   },
   "newAccountCreated": {
-    "message": "Sinu konto on loodud! Võid nüüd sisse logida."
+    "message": "Konto on loodud! Võid nüüd sisse logida."
   },
   "masterPassSent": {
-    "message": "Ülemparooli vihje saadeti Sinu e-postile."
+    "message": "Ülemparooli vihje saadeti sinu e-postile."
   },
   "verificationCodeRequired": {
-    "message": "Nõuatav on kontrollkood."
+    "message": "Nõuatav on kinnituskood."
   },
   "valueCopied": {
     "message": "$VALUE$ on kopeeritud",
@@ -449,19 +449,19 @@
     "message": "Kaheastmeline kinnitamine aitab konto turvalisust tõsta. Lisaks paroolile pead kontole ligipääsemiseks kinnitama sisselogimise päringu SMS-ga, telefonikõnega, autentimise rakendusega või e-postiga. Kaheastmelist kinnitust saab sisse lülitada bitwarden.com veebihoidlas. Soovid seda kohe avada?"
   },
   "editedFolder": {
-    "message": "Kaust muudetud"
+    "message": "Kaust on muudetud"
   },
   "deleteFolderConfirmation": {
     "message": "Oled kindel, et soovid seda kausta kustutada?"
   },
   "deletedFolder": {
-    "message": "Kaust kustutatud"
+    "message": "Kaust on kustutatud"
   },
   "gettingStartedTutorial": {
     "message": "Alustamise juhend"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Vaata meie alustamise juhendit, et meie brauseri lisa kohta rohkem teavet saada."
+    "message": "Vaata meie alustamise juhendit, et brauseri lisa kohta rohkem teavet saada."
   },
   "syncingComplete": {
     "message": "Sünkroniseerimine on lõpetatud"
@@ -473,10 +473,10 @@
     "message": "Parool on kopeeritud"
   },
   "uri": {
-    "message": "URL"
+    "message": "URI"
   },
   "uriPosition": {
-    "message": "URL $POSITION$",
+    "message": "URI $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -486,7 +486,7 @@
     }
   },
   "newUri": {
-    "message": "Uus URL"
+    "message": "Uus URI"
   },
   "addedItem": {
     "message": "Kirje on lisatud"
@@ -688,7 +688,7 @@
     "message": "Saad Premium versiooni hallata bitwarden.com veebihoidlas. Soovid seda kohe teha?"
   },
   "premiumRefresh": {
-    "message": "Uuenda staatust"
+    "message": "Uuenda tellimust"
   },
   "premiumNotCurrentMember": {
     "message": "Sa ei ole hetkel premium versiooni kasutaja."

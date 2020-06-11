@@ -92,7 +92,7 @@
     "message": "Сховішча заблакіравана."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Вы выйшлі са сховішча."
   },
   "autoFillInfo": {
     "message": "Няма імён карыстальніка, даступных для аўтазапаўнення ў бягучую ўкладку браўзера."
@@ -325,7 +325,7 @@
     "message": "Памылковы майстар-пароль"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Таймаўт сховішча"
   },
   "lockNow": {
     "message": "Заблакіраваць зараз"
@@ -880,10 +880,10 @@
     "message": "Гэта эксперыментальная функцыя. Выкарыстоўвайце на свой страх і рызыку."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Адчыніць сховішча ва ўсплываючым акне"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Адчыніць сховішча ў бакавой панэлі"
   },
   "commandAutofillDesc": {
     "message": "Аўтазапаўненне апошняга скарыстанага імя карыстальніка для бягучага вэб-сайта."
@@ -1243,50 +1243,50 @@
     "message": "Вы павінны выбраць прынамсі адну калекцыю."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Кланіраваць элемент"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Кланіраваць"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "На налады генератара ўплываюць адна або некалькі палітык арганізацый."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Дзеянне пры таймаўце"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Заблакіраваць",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Сметніца",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Пошук у сметніцы"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Выдаліць назаўсёды"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Вы ўпэўнены, што хочаце назаўсёды выдаліць гэты элемент?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Выдаленны назаўсёды элемент"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Аднавіць элемент"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Вы сапраўды жадаеце аднавіць гэты запіс?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Элемент адноўлены"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Выхад з сістэмы выдаліць доступ да сховішча і патрабуе анлайн-аутэнтыфікацію па заканчэнні перыяду чакання. Вы сапраўды жадаеце ўключыць гэтую наладу?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Пацвярджэнне дзеяння для таймаута"
   }
 }

@@ -325,7 +325,7 @@
     "message": "Password principale errata"
   },
   "vaultTimeout": {
-    "message": "Timeout Della Cassaforte"
+    "message": "Timeout Cassaforte"
   },
   "lockNow": {
     "message": "Blocca ora"
@@ -1252,7 +1252,7 @@
     "message": "Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore."
   },
   "vaultTimeoutAction": {
-    "message": "Azione Timeout Della Cassaforte"
+    "message": "Azione Timeout Cassaforte"
   },
   "lock": {
     "message": "Blocca",
@@ -1284,9 +1284,9 @@
     "message": "Elemento Ripristinato"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "La disconnessione rimuoverà tutti gli accessi alla tua cassaforte e richiede l'autenticazione online dopo il periodo di timeout. Sei sicuro di voler utilizzare questa impostazione?"
+    "message": "La disconnessione rimuove tutti gli accessi alla tua cassaforte e richiede l'autenticazione online dopo il periodo di timeout. Sei sicuro di voler utilizzare questa impostazione?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Conferma Azione Di Timeout"
+    "message": "Conferma Azione di Timeout"
   }
 }

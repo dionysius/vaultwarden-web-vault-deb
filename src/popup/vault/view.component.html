@@ -5,7 +5,7 @@
     <div class="center">
         <span class="title">{{'viewItem' | i18n}}</span>
     </div>
-    <div class="right">
+    <div class="right" *ngIf="cipher">
         <button type="button" appBlurClick (click)="edit()" *ngIf="!cipher.isDeleted">{{'edit' | i18n}}</button>
     </div>
 </header>
