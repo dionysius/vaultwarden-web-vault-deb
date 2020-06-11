@@ -53,6 +53,10 @@ export class ActionButtonsComponent {
             return;
         }
 
+        if (!cipher.viewPassword) {
+            return;
+        }
+
         this.analytics.eventTrack.next({ action: 'Copied ' + aType });
         this.platformUtilsService.copyToClipboard(value, { window: window });
         this.toasterService.popAsync('info', null,
