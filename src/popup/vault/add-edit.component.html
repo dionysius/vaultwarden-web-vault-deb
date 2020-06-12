@@ -69,7 +69,8 @@
                     <div class="box-content-row" appBoxRow>
                         <label for="loginTotp">{{'authenticatorKeyTotp' | i18n}}</label>
                         <input id="loginTotp" type="{{cipher.viewPassword ? 'text' : 'password'}}" name="Login.Totp"
-                            class="monospaced" [(ngModel)]="cipher.login.totp" appInputVerbatim [disabled]="!cipher.viewPassword">
+                            class="monospaced" [(ngModel)]="cipher.login.totp" appInputVerbatim
+                            [disabled]="!cipher.viewPassword">
                     </div>
                 </div>
                 <!-- Card -->
@@ -218,12 +219,15 @@
                         <div class="row-main">
                             <label for="loginUri{{i}}">{{'uriPosition' | i18n : (i + 1)}}</label>
                             <input id="loginUri{{i}}" type="text" name="Login.Uris[{{i}}].Uri" [(ngModel)]="u.uri"
-                                [hidden]="u.showUriOptionsInput === true" placeholder="{{'ex' | i18n}} https://google.com"
-                                inputmode="url" appInputVerbatim>
-                            <select *ngIf="uriOptions != null && uriOptions.length"
-                                id="loginUriOptions{{i}}" name="Login.Uris[{{i}}].Options" [(ngModel)]="u.uri"
-                                [hidden]="u.showUriOptionsInput === false || u.showUriOptionsInput == null || uriOptions == null">
-                                <option *ngFor="let o of uriOptions" [ngValue]="o.url">{{o.url}}</option>
+                                [hidden]="u.showUriOptionsInput === true"
+                                placeholder="{{'ex' | i18n}} https://google.com" inputmode="url" appInputVerbatim>
+                            <label for="loginUriMatch{{i}}" class="sr-only">
+                                {{'currentUri' | i18n}} {{(i + 1)}}
+                            </label>
+                            <select *ngIf="currentUris && currentUris.length" id="currentUris{{i}}"
+                                name="Login.Uris[{{i}}].CurrentUris" [(ngModel)]="u.uri" [hidden]="!u.showCurrentUris">
+                                <option [ngValue]="null">-- {{'select' | i18n}} --</option>
+                                <option *ngFor="let u of currentUris" [ngValue]="u">{{u}}</option>
                             </select>
                             <label for="loginUriMatch{{i}}" class="sr-only">
                                 {{'matchDetection' | i18n}} {{(i + 1)}}
@@ -235,10 +239,9 @@
                             </select>
                         </div>
                         <div class="action-buttons">
-                            <a *ngIf="uriOptions != null && uriOptions.length" class="row-btn" href="#" appStopClick appBlurClick
-                                appA11yTitle="{{'Toggle Input Mode'}}" (click)="toggleUriInput(u)">
-                                <i aria-hidden="true" class="fa fa-lg"
-                                [ngClass]="u.showUriOptionsInput ? 'fa-edit' : 'fa-list'"></i>
+                            <a *ngIf="currentUris && currentUris.length" class="row-btn" href="#" appStopClick
+                                appBlurClick appA11yTitle="{{'toggleCurrentUris' | i18n}}" (click)="toggleUriInput(u)">
+                                <i aria-hidden="true" class="fa fa-lg fa-list"></i>
                             </a>
                             <a class="row-btn" href="#" appStopClick appBlurClick
                                 appA11yTitle="{{'toggleOptions' | i18n}}" (click)="toggleUriOptions(u)">
