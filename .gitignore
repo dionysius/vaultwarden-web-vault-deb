@@ -15,3 +15,5 @@ build.safariextension/
 coverage/
 xcuserdata/
 *.hmap
+!src/safari/safari/app/popup/index.html
+src/safari/safari/app/
