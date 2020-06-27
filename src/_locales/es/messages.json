@@ -880,7 +880,7 @@
     "message": "Esta es una característica experimental. Úsala bajo tu propio riesgo."
   },
   "commandOpenPopup": {
-    "message": "Abrir ventana emergente de caja de la caja fuerte"
+    "message": "Abrir ventana emergente de la caja fuerte"
   },
   "commandOpenSidebar": {
     "message": "Abrir caja fuerte en la barra lateral"
@@ -1153,6 +1153,14 @@
   },
   "toggleOptions": {
     "message": "Alternar opciones"
+  },
+  "toggleCurrentUris": {
+    "message": "Toggle Current URIs",
+    "description": "Toggle the display of the URIs of the currently open tabs in the browser."
+  },
+  "currentUri": {
+    "message": "Current URI",
+    "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
     "message": "Organización",

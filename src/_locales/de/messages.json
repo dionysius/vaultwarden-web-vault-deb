@@ -498,7 +498,7 @@
     "message": "Soll dieser Eintrag wirklich gelöscht werden?"
   },
   "deletedItem": {
-    "message": "Eintrag in den Papierkorb verschieben"
+    "message": "Eintrag in Papierkorb legen"
   },
   "overwritePassword": {
     "message": "Passwort ersetzen"
@@ -886,10 +886,10 @@
     "message": "Tresor in der Seitenleiste öffnen"
   },
   "commandAutofillDesc": {
-    "message": "Das zuletzt verwendeten Login für die aktuelle Webseite automatisch ausfüllen lassen."
+    "message": "Die zuletzt verwendeten Zugangsdaten für die aktuelle Website automatisch ausfüllen lassen"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generieren ein neues zufälliges Passwort und kopiere es in die Zwischenablage"
+    "message": "Ein neues zufälliges Passwort generieren und in die Zwischenablage kopieren"
   },
   "privateModeMessage": {
     "message": "Leider ist dieses Fenster nicht im privaten Modus für diesen Browser verfügbar."
@@ -1153,6 +1153,14 @@
   },
   "toggleOptions": {
     "message": "Umschaltoptionen"
+  },
+  "toggleCurrentUris": {
+    "message": "Toggle Current URIs",
+    "description": "Toggle the display of the URIs of the currently open tabs in the browser."
+  },
+  "currentUri": {
+    "message": "Current URI",
+    "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
     "message": "Organisation",

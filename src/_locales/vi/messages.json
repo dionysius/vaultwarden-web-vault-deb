@@ -92,7 +92,7 @@
     "message": "Kho bị khóa."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Kho đã bị đăng xuất."
   },
   "autoFillInfo": {
     "message": "Không có thông tin đăng nhập nào sẵn có để tự động điền vào tab hiện tại."
@@ -325,7 +325,7 @@
     "message": "Mật khẩu chủ không hợp lệ"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Thời Gian Chờ Của Kho"
   },
   "lockNow": {
     "message": "Khóa ngay"
@@ -573,11 +573,11 @@
     "message": "Tùy chọn menu ngữ cảnh giúp bạn truy cập nhanh thông tin đăng nhập và tạo mật khẩu cho trang web trong tab mà bạn đang mở."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Phương thức kiểm tra URI mặc định",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Chọn phương thức mặc định để kiểm tra so sánh URI cho các đăng nhập khi xử lí các hành động như là tự động điền."
   },
   "theme": {
     "message": "Giao diện"
@@ -703,7 +703,7 @@
     "message": "Các tùy chọn xác thực hai lớp bổ sung như YubiKey, FIDO U2F và Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Thanh lọc mật khẩu, kiểm tra an toàn tài khoản và các báo cáo rò rĩ dữ liệu là để giữ cho kho của bạn an toàn."
   },
   "ppremiumSignUpTotp": {
     "message": "Mã xác nhận TOTP (2FA) để đăng nhập vào kho mật khẩu của bạn."
@@ -880,10 +880,10 @@
     "message": "Đây là một tính năng thử nghiệm. Sử dụng nó có thể gây ra rủi ro cho bạn."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Mở popup kho"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Mở kho ở thanh bên"
   },
   "commandAutofillDesc": {
     "message": "Tự động điền thông tin đăng nhập người dùng cho trang web hiện tại."
@@ -907,7 +907,7 @@
     "message": "Trường tùy chỉnh mới"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Kéo để sắp xếp"
   },
   "cfTypeText": {
     "message": "Văn bản"
@@ -922,7 +922,7 @@
     "message": "Nhấp bên ngoài popup để xem mã xác thực trong email của bạn sẽ làm cho popup này đóng lại. Bạn có muốn mở popup này trong một cửa sổ mới để nó không bị đóng?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Trình duyệt này không thể xử lý các yêu cầu U2F trong cửa sổ popup này. Bạn có muốn mở popup này trong cửa sổ mới để bạn có thể đăng nhập thông qua U2F?"
   },
   "disableFavicon": {
     "message": "Vô hiệu hoá biểu tượng trang web"
@@ -1154,6 +1154,14 @@
   "toggleOptions": {
     "message": "Bật/tắt tùy chọn"
   },
+  "toggleCurrentUris": {
+    "message": "Toggle Current URIs",
+    "description": "Toggle the display of the URIs of the currently open tabs in the browser."
+  },
+  "currentUri": {
+    "message": "Current URI",
+    "description": "The URI of one of the current open tabs in the browser."
+  },
   "organization": {
     "message": "Tổ chức",
     "description": "An entity of multiple related people (ex. a team or business organization)."
@@ -1182,19 +1190,19 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Bạn có chắc bạn muốn sử dụng tùy chọn \"Không bao giờ\"? Đặt các tùy chọn khóa về \"Không bao giờ\" sẽ lưu key mã hóa kho của ngay trên thiết bị của bạn. Nếu bạn sử dụng tùy chọn này, bạn nên chắc chắn là thiết bị bạn đang được bảo vệ."
   },
   "noOrganizationsList": {
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Không có bộ sưu tập nào để liệt kê."
   },
   "ownership": {
     "message": "Quyền sở hữu"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Ai sở hữu mục này?"
   },
   "strong": {
     "message": "Mạnh",
@@ -1212,81 +1220,81 @@
     "message": "Weak Master Password"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Mật khẩu chính bạn vừa chọn có vẻ yếu. Bạn nên chọn mật khẩu chính (hoặc cụm từ mật khẩu) mạnh để bảo vệ đúng cách tài khoản Bitwarden của bạn. Bạn có thực sự muốn dùng mật khẩu chính này?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "Mã PIN",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Mở khóa với mã PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Đặt mã PIN của bạn để mở khóa Bitwarden. Cài đặt mã PIN của bạn sẽ bị xóa nếu bạn hoàn toàn đăng xuất khỏi ứng dụng."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Mã PIN là bắt buộc."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Mã PIN không hợp lệ."
   },
   "verifyPin": {
-    "message": "Verify PIN"
+    "message": "Xác thực mã PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Kho của bạn đã bị khóa. Xác minh mã PIN của bạn để mở."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on browser restart"
+    "message": "Khóa với mật khẩu chính khi trình duyệt khởi động lại"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Bạn phải chọn ít nhất một bộ sưu tập."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Tại bản sao của mục"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Tạo bản sao"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Có một hoặc vài chính sách của tổ chức đang làm ảnh hưởng đến cài đặt tạo mật khẩu của bạn."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Hành Động Khi Hết Thời Gian Chờ"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Khóa",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Thùng rác",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Tìm kiếm thùng rác"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Xoá vĩnh viễn mục"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Bạn có chắc chắn muốn xóa vĩnh viễn mục này không?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Đã xóa vĩnh viễn mục"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Khôi phục mục"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Bạn có chắc chắn muốn khôi phục mục này không?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Mục đã được khôi phục"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Đăng xuất sẽ xóa tất các truy cập vào kho của bạn và yêu cầu xác thực trực tuyến sau khi khoảng thời gian chờ hết. Bạn có chắc bạn muốn dùng cài đặt này?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Xác nhận hành động khi hết thời gian chờ"
   }
 }

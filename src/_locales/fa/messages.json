@@ -7,7 +7,7 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "یک مدیریت کننده رمز عبور رایگان برای تمامی دستگاههایتان.",
+    "message": "یک مدیریت کننده کلمه عبور رایگان برای تمامی دستگاههایتان.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -32,16 +32,16 @@
     "message": "آدرس ایمیل"
   },
   "masterPass": {
-    "message": "گذرواژه‌ ی اصلی"
+    "message": "کلمه عبور اصلی"
   },
   "masterPassDesc": {
-    "message": "گذرواژه اصلی رمز عبوری است که شما برای دسترسی به گاوصندوق خود استفاده میکنید. بیاد داشتن گذرواژه اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
+    "message": "کلمه عبور اصلی کلمه عبوری است که شما برای دسترسی به گاوصندوق خود استفاده میکنید. بیاد داشتن کلمه عبور اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
   },
   "masterPassHintDesc": {
-    "message": "راهنمای گذرواژه اصلی می تواند در صورت فراموشی آن را بیاد بیارید."
+    "message": "راهنمای کلمه عبور اصلی می تواند در صورت فراموشی آن را بیاد بیارید."
   },
   "reTypeMasterPass": {
-    "message": "تایپ دوباره گذرواژه اصلی"
+    "message": "تایپ دوباره کلمه عبور اصلی"
   },
   "masterPassHint": {
     "message": "راهنمای گذرواژه اصلی (اختیاری)"
@@ -62,7 +62,7 @@
     "message": "زبانه فعلی"
   },
   "copyPassword": {
-    "message": "کپی رمز عبور"
+    "message": "رونوشت کلمه عبور"
   },
   "copyNote": {
     "message": "کپی یادداشت"
@@ -83,7 +83,7 @@
     "message": "پر کردن خودکار"
   },
   "generatePasswordCopied": {
-    "message": "ساخت رمز عبور (کپی شد)"
+    "message": "ساخت کلمه عبور (کپی شد)"
   },
   "noMatchingLogins": {
     "message": "ورودیها منتطبق نیست."
@@ -104,13 +104,13 @@
     "message": "افزودن مورد"
   },
   "passwordHint": {
-    "message": "راهنمای گذرواژه"
+    "message": "راهنمای کلمه عبور"
   },
   "enterEmailToGetHint": {
-    "message": "برای دریافت راهنمایی گذرواژه اصلی خود آدرس ایملیتان را وارد کنید."
+    "message": "برای دریافت راهنمایی کلمه عبور اصلی خود آدرس ایملیتان را وارد کنید."
   },
   "getMasterPasswordHint": {
-    "message": "دریافت راهنمای گذرواژه اصلی"
+    "message": "دریافت راهنمای کلمه عبور اصلی"
   },
   "continue": {
     "message": "ادامه"
@@ -122,7 +122,7 @@
     "message": "حساب"
   },
   "changeMasterPassword": {
-    "message": "تغییر گذرواژه اصلی"
+    "message": "تغییر کلمه عبور اصلی"
   },
   "fingerprintPhrase": {
     "message": "عبارت اثر انگشت",
@@ -178,14 +178,14 @@
     "message": "آخرین همگام سازی:"
   },
   "passGen": {
-    "message": "تولید رمز عبور"
+    "message": "تولید کلمه عبور"
   },
   "generator": {
     "message": "تولید کننده",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "به طور خودکار رمزهای عبور قوی و منحصر به فرد برای ورود به سیستم خود ایجاد کنید."
+    "message": "به طور خودکار کلمه های عبور قوی و منحصر به فرد برای ورود به سیستم خود ایجاد کنید."
   },
   "bitWebVault": {
     "message": "گاوصندوق وب Bitwarden"
@@ -197,10 +197,10 @@
     "message": "انتخاب"
   },
   "generatePassword": {
-    "message": "تولید رمز عبور"
+    "message": "تولید کلمه عبور"
   },
   "regeneratePassword": {
-    "message": "تولید رمز عبور"
+    "message": "تولید مجدد کلمه عبور"
   },
   "options": {
     "message": "گزینه ها"
@@ -300,10 +300,10 @@
     "message": "مرورگر شما از کپی کلیپ بورد آسان پشتیبانی نمی کند. به جای آن به صورت دستی کپی کنید."
   },
   "verifyMasterPassword": {
-    "message": "تایید گذرواژه اصلی"
+    "message": "تایید کلمه عبور اصلی"
   },
   "yourVaultIsLocked": {
-    "message": "صندوق شما قفل است. برای ادامه رمزعبور اصلی خود را وارد کنید."
+    "message": "صندوق شما قفل است. برای ادامه کلمه عبور اصلی خود را وارد کنید."
   },
   "unlock": {
     "message": "بازکردن"
@@ -322,7 +322,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "گذرواژه اصلی نامعتبر است"
+    "message": "کلمه عبور اصلی نامعتبر است"
   },
   "vaultTimeout": {
     "message": "متوقف شدن گاو‌صندوق"
@@ -385,19 +385,19 @@
     "message": "آدرس ایمیل نامعتبر است."
   },
   "masterPassRequired": {
-    "message": "گذرواژه اصلی ضروری است."
+    "message": "کلمه عبور اصلی ضروری است."
   },
   "masterPassLength": {
-    "message": "طول گذرواژه اصلی باید حداقل ۸ کاراکتر باشد."
+    "message": "طول کلمه عبور اصلی باید حداقل ۸ کاراکتر باشد."
   },
   "masterPassDoesntMatch": {
-    "message": "گذرواژه اصلی با تکرار گذرواژه اصلی مطابقت ندارد."
+    "message": "کلمه عبور اصلی با تکرار کلمه عبور اصلی مطابقت ندارد."
   },
   "newAccountCreated": {
     "message": "حساب شما ساختته شد! حالا میتوانید وارد شوید."
   },
   "masterPassSent": {
-    "message": "ما یک ایمیل همراه با راهنمای گذرواژه اصلی برایتان ارسال کردیم."
+    "message": "ما یک ایمیل همراه با راهنمای کلمه عبور اصلی برایتان ارسال کردیم."
   },
   "verificationCodeRequired": {
     "message": "کد تایید مورد نیاز است."
@@ -440,10 +440,10 @@
     "message": "پوشه اضافه شده"
   },
   "changeMasterPass": {
-    "message": "تغییر گذرواژه اصلی"
+    "message": "تغییر کلمه عبور اصلی"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "شما می توانید رمز عبور اصلی خود را در bitwarden.com تغییر دهید. آیا می خواهید از سایت بازدید کنید؟"
+    "message": "شما می‌توانید کلمه عبور اصلی خود را در bitwarden.com تغییر دهید. آیا می‌خواهید از سایت بازدید کنید؟"
   },
   "twoStepLoginConfirmation": {
     "message": "ورودی دو مرحله ای باعث می شود که حساب کاربری شما با استفاده از یک دستگاه دیگر مانند کلید امنیتی، برنامه تأیید هویت، پیامک، تماس تلفنی و یا ایمیل، اعتبار خود را با ایمنی بیشتر ثابت کند. ورودی دو مرحله ای می تواند در bitwarden.com فعال شود. آیا می خواهید از سایت بازدید کنید؟"
@@ -470,7 +470,7 @@
     "message": "همگام سازی شکست خورد"
   },
   "passwordCopied": {
-    "message": "رمز عبور کپی شد"
+    "message": "کلمه عبور کپی شد"
   },
   "uri": {
     "message": "نشانی اینترنتی"
@@ -501,7 +501,7 @@
     "message": "مورد حذف شده"
   },
   "overwritePassword": {
-    "message": "بازنویسی رمز عبور"
+    "message": "بازنویسی کلمه عبور"
   },
   "overwritePasswordConfirmation": {
     "message": "آیا از بازنویسی بر روی پسورد فعلی مطمئن هستید؟"
@@ -546,7 +546,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "آیا Bitwarden باید این رمز عبور را برایتان بخاطر بسپرد؟"
+    "message": "آیا Bitwarden باید این کلمه عبور را برایتان بخاطر بسپارد؟"
   },
   "notificationAddSave": {
     "message": "بله، ذخیره کن"
@@ -555,10 +555,10 @@
     "message": "برای اين سایت هرگز"
   },
   "disableChangedPasswordNotification": {
-    "message": "غیر فعال کردن اعلان تغییر رمز عبور"
+    "message": "غیر فعال کردن اعلان تغییر کلمه عبور"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "\"اعلانیه رمزعبور تغییر کرده\" بصورت خودکار شما را از بروزرسانی رمزعبور در گاوصندوق مطلع میکند هر زمان که شما آن را در یک وبسایت تغییر داده باشید."
+    "message": "\"اعلانیه کلمه عبور تغییر کرده\" بصورت خودکار شما را از بروزرسانی کلمه عبور در گاوصندوق مطلع میکند هر زمان که شما آن را در یک وبسایت تغییر داده باشید."
   },
   "notificationChangeDesc": {
     "message": "آیا مایل به بروزرسانی این پسورد در Bitwarden هستید؟"
@@ -570,7 +570,7 @@
     "message": "غیر فعال کردن گزینه های منوی متن"
   },
   "disableContextMenuItemDesc": {
-    "message": "گزینه های منوی متن دسترسی سریع به ساخت رمز عبور و ورود به سیستم برای وبسایت در برگه فعلی را برای شما فراهم میکند."
+    "message": "گزینه های منوی متن دسترسی سریع به ساخت کلمه عبور و ورود به سیستم برای وبسایت در برگه فعلی را برای شما فراهم میکند."
   },
   "defaultUriMatchDetection": {
     "message": "بازرسی تطابق URL پیشفرض",
@@ -607,7 +607,7 @@
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
-    "message": "گذرواژه اصلی خود را برای صادرات داده ها از گاوصندوقتان وارد کنید."
+    "message": "کلمه عبور اصلی خود را برای صادرات داده ها از گاوصندوقتان وارد کنید."
   },
   "shared": {
     "message": "اشتراک گذاری شد"
@@ -703,7 +703,7 @@
     "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey, FIDO U2F و Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "بهداشت رمزعبور، سلامت اکانت و گزارش های نقض اطلاعات تا صندوق شما امن نگه داشته شود."
+    "message": "بهداشت کلمه عبور، سلامت اکانت و گزارش های نقض اطلاعات تا صندوق شما امن نگه داشته شود."
   },
   "ppremiumSignUpTotp": {
     "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورود به گاوصندوقتان."
@@ -1078,7 +1078,7 @@
     "message": "مشخصات"
   },
   "passwordHistory": {
-    "message": "تاریخچه رمز عبور"
+    "message": "تاریخچه کلمه عبور"
   },
   "back": {
     "message": "بازگشت"
@@ -1112,7 +1112,7 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {
-    "message": "بررسی کنید که آیا رمز عبور افشا شده است."
+    "message": "بررسی اینکه که آیا کلمه عبور افشا شده است."
   },
   "passwordExposed": {
     "message": "This password has been exposed in data breaches. You should change it.",
@@ -1124,7 +1124,7 @@
     }
   },
   "passwordSafe": {
-    "message": "این رمز عبور در هیچ رخنه داده ای شناخته نشده است. باید برای امنیت از آن استفاده کنید."
+    "message": "این کلمه عبور در هیچ رخنه داده ای شناخته نشده است. باید برای امنیت از آن استفاده کنید."
   },
   "baseDomain": {
     "message": "دامنه پایه"
@@ -1154,6 +1154,14 @@
   "toggleOptions": {
     "message": "گزینه های تبدیل"
   },
+  "toggleCurrentUris": {
+    "message": "Toggle Current URIs",
+    "description": "Toggle the display of the URIs of the currently open tabs in the browser."
+  },
+  "currentUri": {
+    "message": "Current URI",
+    "description": "The URI of one of the current open tabs in the browser."
+  },
   "organization": {
     "message": "سازماندهی",
     "description": "An entity of multiple related people (ex. a team or business organization)."
@@ -1165,7 +1173,7 @@
     "message": "تمام موارد"
   },
   "noPasswordsInList": {
-    "message": "هیچ رمز عبوری در لیست وجود ندارد."
+    "message": "هیچ کلمه عبوری در لیست وجود ندارد."
   },
   "remove": {
     "message": "حذف"
@@ -1178,7 +1186,7 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "گذرواژه بروز رسانی شد",
+    "message": "کلمه عبور بروزرسانی شد",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
@@ -1209,10 +1217,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "گذرواژه اصلی ضعیف"
+    "message": "کلمه عبور اصلی ضعیف"
   },
   "weakMasterPasswordDesc": {
-    "message": "رمز عبور اصلی که شما انتخاب کرده اید ضعیف است. شما باید یک رمز عبور اصلی قوی انتخاب کنید ( یا یک عبارت عبور) تا به درستی از اکانت بیت واردن خود محافظت کنید. آیا مطمعن هستید می‌خواهید از این رمز عبور اصلی استفاده کنید؟ "
+    "message": "کلمه عبور اصلی که شما انتخاب کرده اید ضعیف است. شما باید یک کلمه عبور اصلی قوی انتخاب کنید (یا یک عبارت عبور) تا به درستی از اکانت Bitwarden خود محافظت کنید. آیا مطمعن هستید می‌خواهید از این کلمه عبور اصلی استفاده کنید؟ "
   },
   "pin": {
     "message": "پین",

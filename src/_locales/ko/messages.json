@@ -1154,6 +1154,14 @@
   "toggleOptions": {
     "message": "표시 / 숨기기"
   },
+  "toggleCurrentUris": {
+    "message": "Toggle Current URIs",
+    "description": "Toggle the display of the URIs of the currently open tabs in the browser."
+  },
+  "currentUri": {
+    "message": "Current URI",
+    "description": "The URI of one of the current open tabs in the browser."
+  },
   "organization": {
     "message": "조직",
     "description": "An entity of multiple related people (ex. a team or business organization)."

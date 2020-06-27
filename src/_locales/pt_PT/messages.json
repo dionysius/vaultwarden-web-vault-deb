@@ -92,7 +92,7 @@
     "message": "O cofre está bloqueado."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Sessão terminada no cofre."
   },
   "autoFillInfo": {
     "message": "Não existem credenciais disponíveis para auto-preencher para o separador de navegador atual."
@@ -325,7 +325,7 @@
     "message": "Palavra-passe mestra inválida"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Expiração do cofre"
   },
   "lockNow": {
     "message": "Bloquear agora"
@@ -1154,6 +1154,14 @@
   "toggleOptions": {
     "message": "Alternar opções"
   },
+  "toggleCurrentUris": {
+    "message": "Toggle Current URIs",
+    "description": "Toggle the display of the URIs of the currently open tabs in the browser."
+  },
+  "currentUri": {
+    "message": "Current URI",
+    "description": "The URI of one of the current open tabs in the browser."
+  },
   "organization": {
     "message": "Organização",
     "description": "An entity of multiple related people (ex. a team or business organization)."
@@ -1252,7 +1260,7 @@
     "message": "Uma ou mais políticas de organização estão a afetar as suas definições do gerador."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Ação de expiração do cofre"
   },
   "lock": {
     "message": "Bloquear",
@@ -1284,9 +1292,9 @@
     "message": "Item restaurado"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Terminar sessão irá remover todos os acessos ao seu cofre e requer autenticação online após o período de espera. Tem a certeza de que pretende utilizar esta definição?"
+    "message": "Terminar sessão irá remover todos os acessos ao seu cofre e requer autenticação online após o período de expiração. Tem a certeza de que pretende utilizar esta definição?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Confirmação de expiração do cofre"
   }
 }
