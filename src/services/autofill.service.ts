@@ -896,7 +896,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     return false;
                 }
                 const lowerValue = value.toLowerCase();
-                if (lowerValue.indexOf('onetimepassword') >= 0 {
+                if (lowerValue.indexOf('onetimepassword') >= 0) {
                     return false;
                 }
                 if (lowerValue.indexOf('password') < 0) {
