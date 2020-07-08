@@ -17,7 +17,7 @@
         <div class="box-content">
             <div class="box-content-row">
                 <span class="row-label">{{'name' | i18n}}</span>
-                <input type="text" [value]="cipher.name" disabled/>
+                <input type="text" [value]="cipher.name" readonly aria-readonly="true"/>
             </div>
             <!-- Login -->
             <div *ngIf="cipher.login">
@@ -26,7 +26,7 @@
                         <span class="row-label draggable" draggable="true"
                             (dragstart)="setTextDataOnDrag($event, cipher.login.username)">{{'username' | i18n}}
                         </span>
-                        <input type="text" [value]="cipher.login.username" disabled />
+                        <input type="text" [value]="cipher.login.username" readonly aria-readonly="true" />
                     </div>
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUsername' | i18n}}"
@@ -189,7 +189,7 @@
                     <span class="row-label" *ngIf="!u.isWebsite">{{'uri' | i18n}}</span>
                     <span class="row-label" *ngIf="u.isWebsite">{{'website' | i18n}}</span>
                     <span title="{{u.uri}}">
-                        <input type="text" [value]="u.hostnameOrUri" disabled />
+                        <input type="text" [value]="u.hostnameOrUri" readonly aria-readonly="true" />
                     </span>
                 </div>
                 <div class="action-buttons">
@@ -211,7 +211,7 @@
         </div>
         <div class="box-content">
             <div class="box-content-row">
-                <textarea [value]="cipher.notes" rows="6" disabled></textarea>
+                <textarea [value]="cipher.notes" rows="6" readonly aria-readonly="true"></textarea>
             </div>
         </div>
     </div>
