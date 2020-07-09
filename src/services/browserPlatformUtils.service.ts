@@ -207,7 +207,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
                 this.clipboardWriteCallback(text, clearMs);
             }
         } else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
-            if(this.isChrome() && text === '') {
+            if (this.isChrome() && text === '') {
                 text = '\u0000';
             }
             
