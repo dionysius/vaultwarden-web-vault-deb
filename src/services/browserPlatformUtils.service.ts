@@ -283,6 +283,14 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         });
     }
 
+    supportsBiometric() {
+        return Promise.resolve(false);
+    }
+
+    authenticateBiometric() {
+        return Promise.resolve(false);
+    }
+
     private sidebarViewName(): string {
         if ((window as any).chrome.sidebarAction && this.isFirefox()) {
             return 'sidebar';
