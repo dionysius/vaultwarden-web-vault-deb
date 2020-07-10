@@ -303,3 +303,7 @@ app-vault-icon {
         }
     }
 }
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
