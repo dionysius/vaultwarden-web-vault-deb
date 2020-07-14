@@ -189,7 +189,7 @@
                     <span class="row-label" *ngIf="!u.isWebsite">{{'uri' | i18n}}</span>
                     <span class="row-label" *ngIf="u.isWebsite">{{'website' | i18n}}</span>
                     <span title="{{u.uri}}">
-                        <input type="text" [value]="u.hostnameOrUri" readonly aria-readonly="true" />
+                        <input type="text" [value]="u.hostOrUri" readonly aria-readonly="true" />
                     </span>
                 </div>
                 <div class="action-buttons">
