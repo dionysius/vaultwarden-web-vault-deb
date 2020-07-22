@@ -175,7 +175,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController, WKScriptMe
         } else if command == "createNewTab" {
             if let data = m.data, let url = URL(string: data) {
                 SFSafariApplication.getActiveWindow { win in
-                    win?.openTab(with: url, makeActiveIfPossible: true, completionHandler: nil)
+                    win?.openTab(with: url, makeActiveIfPossible: true, completionHandler: { _ in
+                        // Tab opened
+                    })
                 }
             }
         } else if command == "reloadExtension" {
