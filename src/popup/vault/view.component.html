@@ -31,7 +31,7 @@
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUsername' | i18n}}"
                             (click)="copy(cipher.login.username, 'username', 'Username')">
-                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyPassword' | i18n}}"
                             (click)="copy(cipher.login.password, 'password', 'Password')"
                             *ngIf="cipher.viewPassword">
-                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyVerificationCode' | i18n}}"
                             (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')">
-                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyNumber' | i18n}}"
                             (click)="copy(cipher.card.number, 'number', 'Number')">
-                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                         </a>
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copySecurityCode' | i18n}}"
                             (click)="copy(cipher.card.code, 'securityCode', 'Security Code')">
-                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -199,7 +199,7 @@
                     </a>
                     <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUri' | i18n}}"
                         (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')">
-                        <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                        <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -245,7 +245,7 @@
                     <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
                         *ngIf="field.value && field.type !== fieldType.Boolean && !(field.type === fieldType.Hidden && !cipher.viewPassword)"
                         (click)="copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')">
-                        <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                        <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -272,7 +272,7 @@
                 *ngIf="!cipher.organizationId && !cipher.isDeleted">
                 <div class="row-main text-primary">
                     <div class="icon text-primary" aria-hidden="true">
-                        <i class="fa fa-clone fa-lg fa-fw"></i>
+                        <i class="fa fa-files-o fa-lg fa-fw"></i>
                     </div>
                     <span>{{'cloneItem' | i18n}}</span>
                 </div>
