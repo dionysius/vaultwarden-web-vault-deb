@@ -75,14 +75,14 @@ export default class RuntimeBackground {
 
                 if (request.type == "AUTH_RESULT") {
                     try {
-                        this.logIn(request.code, request.codeVerifier);
+                        this.initiateLogIn(request.code, request.codeVerifier);
                     }
                     catch { }
                 }
             });
     }
 
-    async logIn(code: string, codeVerifier: string) {
+    async initiateLogIn(code: string, codeVerifier: string) {
         this.loggingIn = true;
         try {
             this.formPromise = this.authService.logInSso(code, codeVerifier, this.redirectUri);
@@ -98,7 +98,7 @@ export default class RuntimeBackground {
                     sidebarWindows[0].location.reload();
                 }
             }
-        } catch(error) { console.log(error); }
+        } catch(error) { }
 
         this.loggingIn = false;
     }
