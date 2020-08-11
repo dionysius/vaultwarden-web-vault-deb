@@ -4,14 +4,18 @@ import { CipherView } from 'jslib/models/view/cipherView';
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 import { LoginView } from 'jslib/models/view/loginView';
 
-import { ConstantsService } from 'jslib/services/constants.service';
-
-import { I18nService } from 'jslib/abstractions/i18n.service';
-
-import { Analytics } from 'jslib/misc';
-
+import { AuthResult } from 'jslib/models/domain/authResult';
+import { AuthService } from 'jslib/abstractions/auth.service';
+import { AutofillService } from '../services/abstractions/autofill.service';
+import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { ConstantsService } from 'jslib/services/constants.service';
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
+import { NotificationsService } from 'jslib/abstractions/notifications.service';
+import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
+import { SyncService } from 'jslib/abstractions/sync.service';
 import { SystemService } from 'jslib/abstractions/system.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
@@ -19,11 +23,7 @@ import { BrowserApi } from '../browser/browserApi';
 
 import MainBackground from './main.background';
 
-import { AutofillService } from '../services/abstractions/autofill.service';
-import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
-
-import { NotificationsService } from 'jslib/abstractions/notifications.service';
-
+import { Analytics } from 'jslib/misc';
 import { Utils } from 'jslib/misc/utils';
 
 export default class RuntimeBackground {
@@ -33,11 +33,19 @@ export default class RuntimeBackground {
     private isSafari: boolean;
     private onInstalledReason: string = null;
 
+    formPromise: Promise<AuthResult>;
+    onSuccessfulLoginNavigate: () => Promise<any>;
+    onSuccessfulLoginTwoFactorNavigate: () => Promise<any>;
+    loggingIn = false;
+    private redirectUri = 'https://localhost:8080/sso-connector.html';
+
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
         private analytics: Analytics, private notificationsService: NotificationsService,
-        private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService) {
+        private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService,
+        private syncService: SyncService, private authService: AuthService, private stateService: StateService,
+        private environmentService: EnvironmentService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? {} : chrome.runtime;
 
@@ -47,6 +55,52 @@ export default class RuntimeBackground {
                 this.onInstalledReason = details.reason;
             });
         }
+
+        chrome.runtime.onMessage.addListener(
+            (request: any) => {
+                
+                var vaultUrl = environmentService.webVaultUrl;
+                if(!vaultUrl) {
+                    vaultUrl = 'https://vault.bitwarden.com';
+                    // vaultUrl = 'https://localhost:8080';
+                }
+
+                if(!request.referrer) {
+                    return;
+                }
+
+                if(!vaultUrl.includes(request.referrer)) {
+                    return;
+                }
+
+                if (request.type == "AUTH_RESULT") {
+                    try {
+                        this.logIn(request.code, request.codeVerifier);
+                    }
+                    catch { }
+                }
+            });
+    }
+
+    async logIn(code: string, codeVerifier: string) {
+        this.loggingIn = true;
+        try {
+            this.formPromise = this.authService.logInSso(code, codeVerifier, this.redirectUri);
+            const response = await this.formPromise;
+
+            if (response) {
+                this.syncService.fullSync(true);
+                this.main.openPopup();
+                
+                var sidebarName : string = this.platformUtilsService.sidebarViewName();
+                var sidebarWindows = chrome.extension.getViews({ type: sidebarName });
+                if(sidebarWindows && sidebarWindows.length > 0) {
+                    sidebarWindows[0].location.reload();
+                }
+            }
+        } catch(error) { console.log(error); }
+
+        this.loggingIn = false;
     }
 
     async init() {

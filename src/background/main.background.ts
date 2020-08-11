@@ -4,6 +4,7 @@ import {
     ApiService,
     AppIdService,
     AuditService,
+    AuthService,
     CipherService,
     CollectionService,
     ConstantsService,
@@ -13,6 +14,7 @@ import {
     FolderService,
     PasswordGenerationService,
     SettingsService,
+    StateService,
     SyncService,
     TokenService,
     TotpService,
@@ -31,6 +33,7 @@ import {
     ApiService as ApiServiceAbstraction,
     AppIdService as AppIdServiceAbstraction,
     AuditService as AuditServiceAbstraction,
+    AuthService as AuthServiceAbstraction,
     CipherService as CipherServiceAbstraction,
     CollectionService as CollectionServiceAbstraction,
     CryptoService as CryptoServiceAbstraction,
@@ -41,6 +44,7 @@ import {
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
     PlatformUtilsService as PlatformUtilsServiceAbstraction,
     SettingsService as SettingsServiceAbstraction,
+    StateService as StateServiceAbstraction,
     StorageService as StorageServiceAbstraction,
     SyncService as SyncServiceAbstraction,
     TokenService as TokenServiceAbstraction,
@@ -101,9 +105,11 @@ export default class MainBackground {
     autofillService: AutofillServiceAbstraction;
     containerService: ContainerService;
     auditService: AuditServiceAbstraction;
+    authService: AuthServiceAbstraction;
     exportService: ExportServiceAbstraction;
     searchService: SearchServiceAbstraction;
     notificationsService: NotificationsServiceAbstraction;
+    stateService: StateServiceAbstraction;
     systemService: SystemServiceAbstraction;
     eventService: EventServiceAbstraction;
     policyService: PolicyServiceAbstraction;
@@ -147,6 +153,9 @@ export default class MainBackground {
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
             (expired: boolean) => this.logout(expired));
         this.userService = new UserService(this.tokenService, this.storageService);
+        this.authService = new AuthService(this.cryptoService, this.apiService, this.userService,
+            this.tokenService, this.appIdService, this.i18nService, this.platformUtilsService,
+            this.messagingService, this.vaultTimeoutService, null);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
             this.apiService, this.storageService, this.i18nService, () => this.searchService);
@@ -155,6 +164,7 @@ export default class MainBackground {
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18nService);
         this.searchService = new SearchService(this.cipherService, this.platformUtilsService);
+        this.stateService = new StateService();
         this.policyService = new PolicyService(this.userService, this.storageService);
         this.vaultTimeoutService = new VaultTimeoutService(this.cipherService, this.folderService,
             this.collectionService, this.cryptoService, this.platformUtilsService, this.storageService,
@@ -206,7 +216,8 @@ export default class MainBackground {
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService);
+            this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService, this.syncService,
+            this.authService, this.stateService, this.environmentService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics, this.vaultTimeoutService);
 
