@@ -48,8 +48,8 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     folderId: string = null;
     collectionId: string = null;
     type: CipherType = null;
-    nestedFolders: Array<TreeNode<FolderView>>;
-    nestedCollections: Array<TreeNode<CollectionView>>;
+    nestedFolders: TreeNode<FolderView>[];
+    nestedCollections: TreeNode<CollectionView>[];
     searchTypeSearch = false;
 
     private selectedTimeout: number;
