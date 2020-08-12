@@ -3,6 +3,8 @@ import {
     FieldType,
 } from 'jslib/enums';
 
+import { CipherView } from 'jslib/models/view';
+
 import AutofillField from '../models/autofillField';
 import AutofillPageDetails from '../models/autofillPageDetails';
 import AutofillScript from '../models/autofillScript';
@@ -117,6 +119,7 @@ var IsoProvinces: { [id: string]: string; } = {
 /* tslint:enable */
 
 export default class AutofillService implements AutofillServiceInterface {
+
     constructor(private cipherService: CipherService, private userService: UserService,
         private totpService: TotpService, private eventService: EventService) { }
 
@@ -217,23 +220,24 @@ export default class AutofillService implements AutofillServiceInterface {
         }
     }
 
-    async doAutoFillForLastUsedLogin(pageDetails: any, fromCommand: boolean) {
+    async doAutoFillActiveTab(pageDetails: any, fromCommand: boolean) {
         const tab = await this.getActiveTab();
         if (!tab || !tab.url) {
             return;
         }
 
-        const lastUsedCipher = await this.cipherService.getLastUsedForUrl(tab.url);
-        if (!lastUsedCipher) {
-            return;
+        let cipher: CipherView;
+        if (fromCommand) {
+            cipher = await this.cipherService.getNextCipherForUrl(tab.url);
+        } else {
+            cipher = await this.cipherService.getLastUsedForUrl(tab.url);
         }
 
         return await this.doAutoFill({
-            cipher: lastUsedCipher,
-            // tslint:disable-next-line
+            cipher: cipher,
             pageDetails: pageDetails,
             skipTotp: !fromCommand,
-            skipLastUsed: true,
+            skipLastUsed: !fromCommand,
             skipUsernameOnlyFill: !fromCommand,
             onlyEmptyFields: !fromCommand,
             onlyVisibleFields: !fromCommand,

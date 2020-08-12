@@ -140,7 +140,7 @@ export default class RuntimeBackground {
                         break;
                     case 'autofiller':
                     case 'autofill_cmd':
-                        const totpCode = await this.autofillService.doAutoFillForLastUsedLogin([{
+                        const totpCode = await this.autofillService.doAutoFillActiveTab([{
                             frameId: sender.frameId,
                             tab: msg.tab,
                             details: msg.details,
