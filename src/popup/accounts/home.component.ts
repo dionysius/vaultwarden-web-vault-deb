@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
+import { ConstantsService } from 'jslib/services/constants.service'
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
-import { PlatformUtilsService } from '../../../jslib/src/abstractions/platformUtils.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { Utils } from 'jslib/misc/utils';
 
@@ -13,8 +15,11 @@ import { Utils } from 'jslib/misc/utils';
 })
 export class HomeComponent { 
     constructor(
-        protected platformUtilsService: PlatformUtilsService, private passwordGenerationService : PasswordGenerationService,
-        private cryptoFunctionService: CryptoFunctionService, private environmentService: EnvironmentService) { }
+        protected platformUtilsService: PlatformUtilsService, 
+        private passwordGenerationService : PasswordGenerationService,
+        private cryptoFunctionService: CryptoFunctionService, 
+        private environmentService: EnvironmentService,
+        private storageService : StorageService) { }
 
         async launchSsoBrowser() {
             // Generate necessary sso params
@@ -28,18 +33,24 @@ export class HomeComponent {
             };
 
             const state = await this.passwordGenerationService.generatePassword(passwordOptions);
-            let ssoCodeVerifier = await this.passwordGenerationService.generatePassword(passwordOptions);
-            const codeVerifierHash = await this.cryptoFunctionService.hash(ssoCodeVerifier, 'sha256');
+            let codeVerifier = await this.passwordGenerationService.generatePassword(passwordOptions);
+            const codeVerifierHash = await this.cryptoFunctionService.hash(codeVerifier, 'sha256');
             const codeChallenge = Utils.fromBufferToUrlB64(codeVerifierHash);
     
-            const webUrl = 'https://localhost:8080';
-            const clientId = 'browser';
-            const ssoRedirectUri = 'https://localhost:8080/sso-connector.html';
+            await this.storageService.save(ConstantsService.ssoCodeVerifierKey, codeVerifier);
+            await this.storageService.save(ConstantsService.ssoStateKey, state);
+            await this.storageService.save(ConstantsService.ssoClientId, ConstantsService.webClientId);
+
+            let url = this.environmentService.getWebVaultUrl();
+            if (url == null) {
+                url = 'https://vault.bitwarden.com';
+            }
+
+            const ssoRedirectUri = url + '/sso-connector.html';
     
             // Launch browser
-            this.platformUtilsService.launchUri(webUrl + '/#/sso?clientId=' + clientId +
+            this.platformUtilsService.launchUri(url + '/#/sso?clientId=' + ConstantsService.webClientId +
                 '&redirectUri=' + encodeURIComponent(ssoRedirectUri) +
-                '&state=' + state + '&codeChallenge=' + codeChallenge +
-                '&codeVerifier=' + ssoCodeVerifier);
+                '&state=' + state + '&codeChallenge=' + codeChallenge);
         }   
 }
