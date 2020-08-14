@@ -13,6 +13,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { NotificationsService } from 'jslib/abstractions/notifications.service';
+import { PopupUtilsService } from '../popup/services/popup-utils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
@@ -33,19 +34,13 @@ export default class RuntimeBackground {
     private isSafari: boolean;
     private onInstalledReason: string = null;
 
-    formPromise: Promise<AuthResult>;
-    onSuccessfulLoginNavigate: () => Promise<any>;
-    onSuccessfulLoginTwoFactorNavigate: () => Promise<any>;
-    loggingIn = false;
-    private redirectUri = 'https://localhost:8080/sso-connector.html';
-
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
         private analytics: Analytics, private notificationsService: NotificationsService,
         private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService,
         private syncService: SyncService, private authService: AuthService, private stateService: StateService,
-        private environmentService: EnvironmentService) {
+        private environmentService: EnvironmentService, private popupUtilsService : PopupUtilsService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? {} : chrome.runtime;
 
@@ -62,7 +57,6 @@ export default class RuntimeBackground {
                 var vaultUrl = environmentService.webVaultUrl;
                 if(!vaultUrl) {
                     vaultUrl = 'https://vault.bitwarden.com';
-                    // vaultUrl = 'https://localhost:8080';
                 }
 
                 if(!request.referrer) {
@@ -75,32 +69,11 @@ export default class RuntimeBackground {
 
                 if (request.type == "AUTH_RESULT") {
                     try {
-                        this.initiateLogIn(request.code, request.codeVerifier);
+                        popupUtilsService.ProcessSso(request.code, request.state);
                     }
-                    catch { }
+                    catch (error) { }
                 }
             });
-    }
-
-    async initiateLogIn(code: string, codeVerifier: string) {
-        this.loggingIn = true;
-        try {
-            this.formPromise = this.authService.logInSso(code, codeVerifier, this.redirectUri);
-            const response = await this.formPromise;
-
-            if (response) {
-                this.syncService.fullSync(true);
-                this.main.openPopup();
-                
-                var sidebarName : string = this.platformUtilsService.sidebarViewName();
-                var sidebarWindows = chrome.extension.getViews({ type: sidebarName });
-                if(sidebarWindows && sidebarWindows.length > 0) {
-                    sidebarWindows[0].location.reload();
-                }
-            }
-        } catch(error) { }
-
-        this.loggingIn = false;
     }
 
     async init() {

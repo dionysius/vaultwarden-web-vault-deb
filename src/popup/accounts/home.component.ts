@@ -32,25 +32,24 @@ export class HomeComponent {
                 special: false,
             };
 
-            const state = await this.passwordGenerationService.generatePassword(passwordOptions);
+            const state = (await this.passwordGenerationService.generatePassword(passwordOptions)) + ':clientId=browser';
             let codeVerifier = await this.passwordGenerationService.generatePassword(passwordOptions);
             const codeVerifierHash = await this.cryptoFunctionService.hash(codeVerifier, 'sha256');
             const codeChallenge = Utils.fromBufferToUrlB64(codeVerifierHash);
     
             await this.storageService.save(ConstantsService.ssoCodeVerifierKey, codeVerifier);
             await this.storageService.save(ConstantsService.ssoStateKey, state);
-            await this.storageService.save(ConstantsService.ssoClientId, ConstantsService.webClientId);
 
             let url = this.environmentService.getWebVaultUrl();
             if (url == null) {
                 url = 'https://vault.bitwarden.com';
             }
 
-            const ssoRedirectUri = url + '/sso-connector.html';
+            const redirectUri = url + '/sso-connector.html';
     
             // Launch browser
-            this.platformUtilsService.launchUri(url + '/#/sso?clientId=' + ConstantsService.webClientId +
-                '&redirectUri=' + encodeURIComponent(ssoRedirectUri) +
+            window.open(url + '/#/sso?clientId=browser' +
+                '&redirectUri=' + encodeURIComponent(redirectUri) +
                 '&state=' + state + '&codeChallenge=' + codeChallenge);
         }   
 }

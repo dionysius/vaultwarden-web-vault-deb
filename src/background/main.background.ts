@@ -78,6 +78,7 @@ import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
 import I18nService from '../services/i18n.service';
+import { PopupUtilsService } from '../popup/services/popup-utils.service';
 
 import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
@@ -114,6 +115,7 @@ export default class MainBackground {
     eventService: EventServiceAbstraction;
     policyService: PolicyServiceAbstraction;
     analytics: Analytics;
+    popupUtilsService: PopupUtilsService;
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
@@ -200,6 +202,7 @@ export default class MainBackground {
             this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
+        this.popupUtilsService = new PopupUtilsService(this.platformUtilsService);
         this.systemService = new SystemService(this.storageService, this.vaultTimeoutService,
             this.messagingService, this.platformUtilsService, () => {
                 const forceWindowReload = this.platformUtilsService.isSafari() ||
@@ -217,7 +220,7 @@ export default class MainBackground {
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
             this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService, this.syncService,
-            this.authService, this.stateService, this.environmentService);
+            this.authService, this.stateService, this.environmentService, this.popupUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics, this.vaultTimeoutService);
 

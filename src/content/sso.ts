@@ -6,7 +6,7 @@ window.addEventListener("message", function(event) {
         chrome.runtime.sendMessage({
             type: event.data.type,
             code: event.data.code,
-            codeVerifier: event.data.codeVerifier,
+            state: event.data.state,
             referrer: event.source.location.hostname
         });
     }
