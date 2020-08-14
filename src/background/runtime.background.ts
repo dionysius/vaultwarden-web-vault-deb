@@ -4,7 +4,6 @@ import { CipherView } from 'jslib/models/view/cipherView';
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 import { LoginView } from 'jslib/models/view/loginView';
 
-import { AuthResult } from 'jslib/models/domain/authResult';
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { AutofillService } from '../services/abstractions/autofill.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
@@ -50,30 +49,6 @@ export default class RuntimeBackground {
                 this.onInstalledReason = details.reason;
             });
         }
-
-        chrome.runtime.onMessage.addListener(
-            (request: any) => {
-                
-                var vaultUrl = environmentService.webVaultUrl;
-                if(!vaultUrl) {
-                    vaultUrl = 'https://vault.bitwarden.com';
-                }
-
-                if(!request.referrer) {
-                    return;
-                }
-
-                if(!vaultUrl.includes(request.referrer)) {
-                    return;
-                }
-
-                if (request.type == "AUTH_RESULT") {
-                    try {
-                        popupUtilsService.ProcessSso(request.code, request.state);
-                    }
-                    catch (error) { }
-                }
-            });
     }
 
     async init() {
@@ -188,6 +163,27 @@ export default class RuntimeBackground {
                     default:
                         break;
                 }
+                break;
+            case 'authResult':
+                    var vaultUrl = this.environmentService.webVaultUrl;
+                    if(!vaultUrl) {
+                        vaultUrl = 'https://vault.bitwarden.com';
+                    }
+
+                    if(!msg.referrer) {
+                        return;
+                    }
+        
+                    if(!vaultUrl.includes(msg.referrer)) {
+                        return;
+                    }
+    
+                    try {
+                        chrome.tabs.create({
+                            url: 'popup/index.html?uilocation=popout#/sso?code=' + msg.code + '&state=' + msg.state
+                        });
+                    }
+                    catch { }
                 break;
             default:
                 break;

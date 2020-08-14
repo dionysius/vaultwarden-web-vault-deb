@@ -78,12 +78,4 @@ export class PopupUtilsService {
             // Safari can't open popup in full page tab :(
         }
     }
-
-    ProcessSso(code: string, state: string)
-    {
-        // Redirect to SSO token validation.
-        chrome.tabs.create({
-                url: 'popup/index.html?uilocation=popout#/sso?code=' + code + '&state=' + state
-            });
-    }
 }
