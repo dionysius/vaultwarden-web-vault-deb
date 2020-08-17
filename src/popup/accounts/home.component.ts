@@ -48,7 +48,7 @@ export class HomeComponent {
             const redirectUri = url + '/sso-connector.html';
     
             // Launch browser
-            window.open(url + '/#/sso?clientId=browser' +
+            this.platformUtilsService.launchUri(url + '/#/sso?clientId=browser' +
                 '&redirectUri=' + encodeURIComponent(redirectUri) +
                 '&state=' + state + '&codeChallenge=' + codeChallenge);
         }   
