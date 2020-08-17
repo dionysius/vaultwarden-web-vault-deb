@@ -7,7 +7,6 @@ import {
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
-import BrowserPlatformUtilsService from '../../services/browserPlatformUtils.service';
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -18,6 +17,7 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { SsoComponent as BaseSsoComponent } from 'jslib/angular/components/sso.component';
+import { BrowserApi } from '../../browser/browserApi';
 
 @Component({
     selector: 'app-sso',
@@ -42,6 +42,9 @@ export class SsoComponent extends BaseSsoComponent {
         this.clientId = 'browser';
         
         super.onSuccessfulLogin = () => {
+                BrowserApi.reloadOpenWindows();
+                const thisWindow = window.open('', '_self');
+                thisWindow.close();
                 return syncService.fullSync(true);
         };
     }
