@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import {
     ActivatedRouteSnapshot,
     RouteReuseStrategy,
@@ -249,6 +249,7 @@ const routes: Routes = [
     },
 ];
 
+@Injectable()
 export class NoRouteReuseStrategy implements RouteReuseStrategy {
     shouldDetach(route: ActivatedRouteSnapshot) {
         return false;

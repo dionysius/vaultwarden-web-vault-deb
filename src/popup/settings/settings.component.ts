@@ -44,8 +44,8 @@ const RateUrls = {
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
-    @ViewChild('vaultTimeoutSelect', { read: ElementRef }) vaultTimeoutSelectRef: ElementRef;
-    @ViewChild('vaultTimeoutActionSelect', { read: ElementRef }) vaultTimeoutActionSelectRef: ElementRef;
+    @ViewChild('vaultTimeoutSelect', { read: ElementRef, static: true }) vaultTimeoutSelectRef: ElementRef;
+    @ViewChild('vaultTimeoutActionSelect', { read: ElementRef, static: true }) vaultTimeoutActionSelectRef: ElementRef;
     vaultTimeouts: any[];
     vaultTimeout: number = null;
     vaultTimeoutActions: any[];
