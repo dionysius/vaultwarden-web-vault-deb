@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let autofillCommand = ['mod+shift+l'];
     if (isSafari) {
-        autofillCommand = ['mod+\\', 'mod+8'];
+        autofillCommand = ['mod+\\', 'mod+8', 'mod+shift+p'];
     } else if (isEdge) {
         autofillCommand = ['mod+\\', 'mod+9'];
     }

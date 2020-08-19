@@ -210,7 +210,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             if (this.isChrome() && text === '') {
                 text = '\u0000';
             }
-            
+
             const textarea = doc.createElement('textarea');
             textarea.textContent = text == null || text === '' ? ' ' : text;
             // Prevent scrolling to bottom of page in MS Edge.

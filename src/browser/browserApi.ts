@@ -183,7 +183,7 @@ export class BrowserApi {
                 navigator.msSaveBlob(blob, fileName);
             } else {
                 const a = win.document.createElement('a');
-                a.href = win.URL.createObjectURL(blob);
+                a.href = URL.createObjectURL(blob);
                 a.download = fileName;
                 win.document.body.appendChild(a);
                 a.click();
