@@ -136,6 +136,7 @@ const config = {
         'content/autofiller': './src/content/autofiller.ts',
         'content/notificationBar': './src/content/notificationBar.ts',
         'content/shortcuts': './src/content/shortcuts.ts',
+        'content/sso': './src/content/sso.ts',
         'notification/bar': './src/notification/bar.js',
     },
     optimization: {

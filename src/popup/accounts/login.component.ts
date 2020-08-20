@@ -19,13 +19,12 @@ import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/l
 })
 export class LoginComponent extends BaseLoginComponent {
     constructor(authService: AuthService, router: Router,
-        platformUtilsService: PlatformUtilsService, i18nService: I18nService,
-        syncService: SyncService, storageService: StorageService,
-        stateService: StateService, environmentService: EnvironmentService,
-        passwordGenerationService: PasswordGenerationService,
-        cryptoFunctionService: CryptoFunctionService) {
-        super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
-            passwordGenerationService, cryptoFunctionService, storageService);
+        protected platformUtilsService: PlatformUtilsService, protected i18nService: I18nService,
+        protected stateService: StateService, protected environmentService: EnvironmentService,
+        protected passwordGenerationService: PasswordGenerationService,
+        protected cryptoFunctionService: CryptoFunctionService, 
+        storageService: StorageService, syncService : SyncService) {
+        super(authService, router, platformUtilsService, i18nService, stateService, environmentService, passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };

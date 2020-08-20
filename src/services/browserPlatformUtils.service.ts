@@ -295,7 +295,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return Promise.resolve(false);
     }
 
-    private sidebarViewName(): string {
+    sidebarViewName(): string {
         if ((window as any).chrome.sidebarAction && this.isFirefox()) {
             return 'sidebar';
         } else if (this.isOpera() && (typeof opr !== 'undefined') && opr.sidebarAction) {

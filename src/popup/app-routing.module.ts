@@ -18,6 +18,7 @@ import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { SsoComponent } from './accounts/sso.component';
 import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
 import { PasswordGeneratorComponent } from './generator/password-generator.component';
 import { PrivateModeComponent } from './private-mode.component';
@@ -78,6 +79,12 @@ const routes: Routes = [
         component: TwoFactorOptionsComponent,
         canActivate: [LaunchGuardService],
         data: { state: '2fa-options' },
+    },
+    {
+        path: 'sso',
+        component: SsoComponent,
+        canActivate: [LaunchGuardService],
+        data: { state: 'sso' },
     },
     {
         path: 'register',

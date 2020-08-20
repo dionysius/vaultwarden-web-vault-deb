@@ -213,4 +213,15 @@ export class BrowserApi {
             return chrome.runtime.reload();
         }
     }
+
+    static reloadOpenWindows() {
+        if(!BrowserApi.isSafariApi)
+        {
+            var sidebarName : string = 'sidebar';
+            var sidebarWindows = chrome.extension.getViews({ type: sidebarName });
+            if(sidebarWindows && sidebarWindows.length > 0) {
+                sidebarWindows[0].location.reload();
+            }
+        }
+    }
 }

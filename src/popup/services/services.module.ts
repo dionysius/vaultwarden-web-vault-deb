@@ -41,6 +41,7 @@ import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
 import BrowserMessagingService from '../../services/browserMessaging.service';
@@ -68,9 +69,11 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
     getBgService<ApiService>('apiService')(), getBgService<UserService>('userService')(),
     getBgService<TokenService>('tokenService')(), getBgService<AppIdService>('appIdService')(),
     getBgService<I18nService>('i18nService')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
-    messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')());
+    messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')(), null);
 export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
     getBgService<CipherService>('cipherService')(), getBgService<PlatformUtilsService>('platformUtilsService')());
+export const cryptoFunctionService: CryptoFunctionService = new WebCryptoFunctionService(window,
+    getBgService<PlatformUtilsService>('platformUtilsService')());
 
 export function initFactory(i18nService: I18nService, storageService: StorageService,
     popupUtilsService: PopupUtilsService): Function {
@@ -122,6 +125,7 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: StateServiceAbstraction, useValue: stateService },
         { provide: SearchServiceAbstraction, useValue: searchService },
+        { provide: CryptoFunctionService, useValue: cryptoFunctionService },
         { provide: AuditService, useFactory: getBgService<AuditService>('auditService'), deps: [] },
         { provide: CipherService, useFactory: getBgService<CipherService>('cipherService'), deps: [] },
         { provide: FolderService, useFactory: getBgService<FolderService>('folderService'), deps: [] },
