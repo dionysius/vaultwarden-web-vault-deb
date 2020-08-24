@@ -29,23 +29,23 @@ export class SsoComponent extends BaseSsoComponent {
         storageService: StorageService, stateService: StateService,
         platformUtilsService: PlatformUtilsService, apiService: ApiService,
         cryptoFunctionService: CryptoFunctionService, passwordGenerationService: PasswordGenerationService,
-        syncService: SyncService, private environmentService: EnvironmentService  ) {
+        syncService: SyncService, private environmentService: EnvironmentService) {
         super(authService, router, i18nService, route, storageService, stateService, platformUtilsService,
             apiService, cryptoFunctionService, passwordGenerationService);
-            
+
         let url = this.environmentService.getWebVaultUrl();
         if (url == null) {
             url = 'https://vault.bitwarden.com';
         }
-            
+
         this.redirectUri = url + '/sso-connector.html';
         this.clientId = 'browser';
-        
+
         super.onSuccessfulLogin = () => {
-                BrowserApi.reloadOpenWindows();
-                const thisWindow = window.open('', '_self');
-                thisWindow.close();
-                return syncService.fullSync(true);
+            BrowserApi.reloadOpenWindows();
+            const thisWindow = window.open('', '_self');
+            thisWindow.close();
+            return syncService.fullSync(true);
         };
     }
 }

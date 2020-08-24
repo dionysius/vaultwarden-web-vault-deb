@@ -215,11 +215,9 @@ export class BrowserApi {
     }
 
     static reloadOpenWindows() {
-        if(!BrowserApi.isSafariApi)
-        {
-            var sidebarName : string = 'sidebar';
-            var sidebarWindows = chrome.extension.getViews({ type: sidebarName });
-            if(sidebarWindows && sidebarWindows.length > 0) {
+        if (!BrowserApi.isSafariApi) {
+            const sidebarWindows = chrome.extension.getViews({ type: 'sidebar' });
+            if (sidebarWindows && sidebarWindows.length > 0) {
                 sidebarWindows[0].location.reload();
             }
         }
