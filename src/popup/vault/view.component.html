@@ -268,6 +268,24 @@
     </div>
     <div class="box list">
         <div class="box-content single-line">
+            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="fillCipher()" 
+                *ngIf="!cipher.isDeleted && !inPopout">
+                <div class="row-main text-primary">
+                    <div class="icon text-primary" aria-hidden="true">
+                        <i class="fa fa-pencil-square-o fa-lg fa-fw"></i>
+                    </div>
+                    <span>{{'autoFill' | i18n}}</span>
+                </div>
+            </a>
+            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="fillCipherAndSave()" 
+                *ngIf="!cipher.isDeleted && !inPopout">
+                <div class="row-main text-primary">
+                    <div class="icon text-primary" aria-hidden="true">
+                        <i class="fa fa-bookmark fa-lg fa-fw"></i>
+                    </div>
+                    <span>{{'autoFillAndSave' | i18n}}</span>
+                </div>
+            </a>
             <a class="box-content-row" href="#" appStopClick appBlurClick (click)="clone()" 
                 *ngIf="!cipher.organizationId && !cipher.isDeleted">
                 <div class="row-main text-primary">
