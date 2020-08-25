@@ -21,6 +21,7 @@ import { HomeComponent } from './accounts/home.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
+import { SetPasswordComponent } from './accounts/set-password.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { SsoComponent } from './accounts/sso.component';
@@ -45,7 +46,6 @@ import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
-import { SetPasswordComponent } from './accounts/set-password.component';
 
 import { A11yTitleDirective } from 'jslib/angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
