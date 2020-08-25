@@ -45,6 +45,7 @@ import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
+import { SetPasswordComponent } from './accounts/set-password.component';
 
 import { A11yTitleDirective } from 'jslib/angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
@@ -209,6 +210,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorComponent,
         SsoComponent,
         ViewComponent,
+        SetPasswordComponent
     ],
     entryComponents: [],
     providers: [

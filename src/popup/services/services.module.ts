@@ -21,7 +21,7 @@ import { AuthService as AuthServiceAbstraction } from 'jslib/abstractions/auth.s
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
+import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { ExportService } from 'jslib/abstractions/export.service';
@@ -41,7 +41,6 @@ import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
-import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
 import BrowserMessagingService from '../../services/browserMessaging.service';
@@ -50,6 +49,7 @@ import { AuthService } from 'jslib/services/auth.service';
 import { ConstantsService } from 'jslib/services/constants.service';
 import { SearchService } from 'jslib/services/search.service';
 import { StateService } from 'jslib/services/state.service';
+import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import { Analytics } from 'jslib/misc/analytics';
 
@@ -72,7 +72,7 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
     messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')(), null);
 export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
     getBgService<CipherService>('cipherService')(), getBgService<PlatformUtilsService>('platformUtilsService')());
-export const cryptoFunctionService: CryptoFunctionService = new WebCryptoFunctionService(window,
+export const cryptoFunctionService = new WebCryptoFunctionService(window,
     getBgService<PlatformUtilsService>('platformUtilsService')());
 
 export function initFactory(i18nService: I18nService, storageService: StorageService,
@@ -125,7 +125,7 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: StateServiceAbstraction, useValue: stateService },
         { provide: SearchServiceAbstraction, useValue: searchService },
-        { provide: CryptoFunctionService, useValue: cryptoFunctionService },
+        { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: AuditService, useFactory: getBgService<AuditService>('auditService'), deps: [] },
         { provide: CipherService, useFactory: getBgService<CipherService>('cipherService'), deps: [] },
         { provide: FolderService, useFactory: getBgService<FolderService>('folderService'), deps: [] },
@@ -135,11 +135,6 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: TokenService, useFactory: getBgService<TokenService>('tokenService'), deps: [] },
         { provide: I18nService, useFactory: getBgService<I18nService>('i18nService'), deps: [] },
         { provide: CryptoService, useFactory: getBgService<CryptoService>('cryptoService'), deps: [] },
-        {
-            provide: CryptoFunctionService,
-            useFactory: getBgService<CryptoFunctionService>('cryptoFunctionService'),
-            deps: [],
-        },
         { provide: EventService, useFactory: getBgService<EventService>('eventService'), deps: [] },
         { provide: PolicyService, useFactory: getBgService<PolicyService>('policyService'), deps: [] },
         {

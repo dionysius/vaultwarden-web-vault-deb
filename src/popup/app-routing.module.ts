@@ -39,6 +39,7 @@ import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
+import { SetPasswordComponent } from './accounts/set-password.component';
 
 const routes: Routes = [
     {
@@ -85,6 +86,11 @@ const routes: Routes = [
         component: SsoComponent,
         canActivate: [LaunchGuardService],
         data: { state: 'sso' },
+    },
+    {
+        path: 'set-password',
+        component: SetPasswordComponent,
+        data: { state: 'set-password' },
     },
     {
         path: 'register',
