@@ -22,8 +22,8 @@ export class LoginComponent extends BaseLoginComponent {
         protected platformUtilsService: PlatformUtilsService, protected i18nService: I18nService,
         protected stateService: StateService, protected environmentService: EnvironmentService,
         protected passwordGenerationService: PasswordGenerationService,
-        protected cryptoFunctionService: CryptoFunctionService, 
-        storageService: StorageService, syncService : SyncService) {
+        protected cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
+        syncService: SyncService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService, passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);

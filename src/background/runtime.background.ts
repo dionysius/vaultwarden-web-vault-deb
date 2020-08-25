@@ -38,8 +38,7 @@ export default class RuntimeBackground {
         private storageService: StorageService, private i18nService: I18nService,
         private analytics: Analytics, private notificationsService: NotificationsService,
         private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService,
-        private syncService: SyncService, private authService: AuthService, private stateService: StateService,
-        private environmentService: EnvironmentService, private popupUtilsService : PopupUtilsService) {
+        private environmentService: EnvironmentService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? {} : chrome.runtime;
 
@@ -165,25 +164,21 @@ export default class RuntimeBackground {
                 }
                 break;
             case 'authResult':
-                    var vaultUrl = this.environmentService.webVaultUrl;
-                    if(!vaultUrl) {
-                        vaultUrl = 'https://vault.bitwarden.com';
-                    }
+                let vaultUrl = this.environmentService.webVaultUrl;
+                if (vaultUrl == null) {
+                    vaultUrl = 'https://vault.bitwarden.com';
+                }
 
-                    if(!msg.referrer) {
-                        return;
-                    }
-        
-                    if(!vaultUrl.includes(msg.referrer)) {
-                        return;
-                    }
-    
-                    try {
-                        chrome.tabs.create({
-                            url: 'popup/index.html?uilocation=popout#/sso?code=' + msg.code + '&state=' + msg.state
-                        });
-                    }
-                    catch { }
+                if (msg.referrer == null || Utils.getHostname(vaultUrl) !== msg.referrer) {
+                    return;
+                }
+
+                try {
+                    chrome.tabs.create({
+                        url: 'popup/index.html?uilocation=popout#/sso?code=' + msg.code + '&state=' + msg.state
+                    });
+                }
+                catch { }
                 break;
             default:
                 break;

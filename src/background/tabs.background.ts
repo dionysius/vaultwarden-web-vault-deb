@@ -14,6 +14,8 @@ export default class TabsBackground {
 
         this.tabs.onActivated.addListener(async (activeInfo: any) => {
             await this.main.refreshBadgeAndMenu();
+            this.main.messagingService.send('tabActivated');
+            this.main.messagingService.send('tabChanged');
         });
 
         this.tabs.onReplaced.addListener(async (addedTabId: any, removedTabId: any) => {
@@ -23,6 +25,8 @@ export default class TabsBackground {
             this.main.onReplacedRan = true;
             await this.main.checkNotificationQueue();
             await this.main.refreshBadgeAndMenu();
+            this.main.messagingService.send('tabReplaced');
+            this.main.messagingService.send('tabChanged');
         });
 
         this.tabs.onUpdated.addListener(async (tabId: any, changeInfo: any, tab: any) => {
@@ -32,6 +36,8 @@ export default class TabsBackground {
             this.main.onUpdatedRan = true;
             await this.main.checkNotificationQueue();
             await this.main.refreshBadgeAndMenu();
+            this.main.messagingService.send('tabUpdated');
+            this.main.messagingService.send('tabChanged');
         });
     }
 }

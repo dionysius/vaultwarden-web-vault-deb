@@ -18,6 +18,8 @@ export default class WindowsBackground {
             }
 
             await this.main.refreshBadgeAndMenu();
+            this.main.messagingService.send('windowFocused');
+            this.main.messagingService.send('windowChanged');
         });
     }
 }

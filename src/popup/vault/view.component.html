@@ -17,7 +17,7 @@
         <div class="box-content">
             <div class="box-content-row">
                 <span class="row-label">{{'name' | i18n}}</span>
-                <input type="text" [value]="cipher.name" readonly aria-readonly="true"/>
+                <input type="text" [value]="cipher.name" readonly aria-readonly="true" />
             </div>
             <!-- Login -->
             <div *ngIf="cipher.login">
@@ -60,8 +60,7 @@
                                 [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                         </a>
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyPassword' | i18n}}"
-                            (click)="copy(cipher.login.password, 'password', 'Password')"
-                            *ngIf="cipher.viewPassword">
+                            (click)="copy(cipher.login.password, 'password', 'Password')" *ngIf="cipher.viewPassword">
                             <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -238,7 +237,8 @@
                 </div>
                 <div class="action-buttons">
                     <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
-                        *ngIf="field.type === fieldType.Hidden && cipher.viewPassword" (click)="toggleFieldValue(field)">
+                        *ngIf="field.type === fieldType.Hidden && cipher.viewPassword"
+                        (click)="toggleFieldValue(field)">
                         <i class="fa fa-lg" aria-hidden="true"
                             [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                     </a>
@@ -268,7 +268,25 @@
     </div>
     <div class="box list">
         <div class="box-content single-line">
-            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="clone()" 
+            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="fillCipher()"
+                *ngIf="!cipher.isDeleted && !inPopout">
+                <div class="row-main text-primary">
+                    <div class="icon text-primary" aria-hidden="true">
+                        <i class="fa fa-pencil-square-o fa-lg fa-fw"></i>
+                    </div>
+                    <span>{{'autoFill' | i18n}}</span>
+                </div>
+            </a>
+            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="fillCipherAndSave()"
+                *ngIf="!cipher.isDeleted && !inPopout">
+                <div class="row-main text-primary">
+                    <div class="icon text-primary" aria-hidden="true">
+                        <i class="fa fa-bookmark fa-lg fa-fw"></i>
+                    </div>
+                    <span>{{'autoFillAndSave' | i18n}}</span>
+                </div>
+            </a>
+            <a class="box-content-row" href="#" appStopClick appBlurClick (click)="clone()"
                 *ngIf="!cipher.organizationId && !cipher.isDeleted">
                 <div class="row-main text-primary">
                     <div class="icon text-primary" aria-hidden="true">

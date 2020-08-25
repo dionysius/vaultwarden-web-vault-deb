@@ -7,7 +7,7 @@ window.addEventListener('message', (event) => {
             command: event.data.command,
             code: event.data.code,
             state: event.data.state,
-            referrer: event.source.location.hostname
+            referrer: event.source.location.hostname,
         });
     }
 }, false)
