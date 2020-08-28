@@ -16,6 +16,7 @@ import { HomeComponent } from './accounts/home.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
+import { SetPasswordComponent } from './accounts/set-password.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { SsoComponent } from './accounts/sso.component';
@@ -85,6 +86,11 @@ const routes: Routes = [
         component: SsoComponent,
         canActivate: [LaunchGuardService],
         data: { state: 'sso' },
+    },
+    {
+        path: 'set-password',
+        component: SetPasswordComponent,
+        data: { state: 'set-password' },
     },
     {
         path: 'register',
