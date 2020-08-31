@@ -368,7 +368,7 @@ content {
     }
 }
 
-.center-content, .no-items {
+.center-content, .no-items, .full-loading-spinner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -377,7 +377,7 @@ content {
     flex-grow: 1;
 }
 
-.no-items {
+.no-items, .full-loading-spinner {
     text-align: center;
 
     .fa {
