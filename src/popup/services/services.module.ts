@@ -72,7 +72,7 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
 export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
     getBgService<CipherService>('cipherService')(), getBgService<PlatformUtilsService>('platformUtilsService')());
 
-export function initFactory(i18nService: I18nService, storageService: StorageService,
+export function initFactory(platformUtilsService: PlatformUtilsService, i18nService: I18nService, storageService: StorageService,
     popupUtilsService: PopupUtilsService): Function {
     return async () => {
         if (!popupUtilsService.inPopup(window)) {
@@ -89,7 +89,12 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
 
             let theme = await storageService.get<string>(ConstantsService.themeKey);
             if (theme == null) {
-                theme = 'light';
+                theme = platformUtilsService.getDefaultSystemTheme();
+
+                platformUtilsService.onDefaultSystemThemeChange(theme => {
+                    window.document.documentElement.classList.remove('theme_light', 'theme_dark');
+                    window.document.documentElement.classList.add('theme_' + theme);
+                });
             }
             window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
             window.document.documentElement.classList.add('theme_' + theme);
@@ -169,7 +174,7 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
-            deps: [I18nService, StorageService, PopupUtilsService],
+            deps: [PlatformUtilsService, I18nService, StorageService, PopupUtilsService],
             multi: true,
         },
         {
