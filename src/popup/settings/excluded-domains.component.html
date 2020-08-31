@@ -1,0 +1,53 @@
+<form #form (ngSubmit)="submit()">
+    <header>
+        <div class="left">
+            <a routerLink="/tabs/settings">{{'cancel' | i18n}}</a>
+        </div>
+        <div class="center">
+            <span class="title">{{'excludedDomains' | i18n}}</span>
+        </div>
+        <div class="right">
+            <button type="submit" appBlurClick>{{'save' | i18n}}</button>
+        </div>
+    </header>
+    <content>
+        <div class="box">
+            <div class="box-content">
+                <ng-container *ngIf="excludedDomains">
+                    <div class="box-content-row box-content-row-multi" appBoxRow
+                        *ngFor="let domain of excludedDomains; let i = index; trackBy:trackByFunction">
+                        <a href="#" appStopClick (click)="removeUri(i)" appA11yTitle="{{'remove' | i18n}}">
+                            <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
+                        </a>
+                        <div class="row-main">
+                            <label for="excludedDomain{{i}}">{{'uriPosition' | i18n : (i + 1)}}</label>
+                            <input id="excludedDomain{{i}}" name="excludedDomain{{i}}" type="text" [(ngModel)]="domain.uri"
+                                placeholder="{{'ex' | i18n}} https://google.com" inputmode="url" appInputVerbatim>
+                            <label for="currentUris{{i}}" class="sr-only">
+                                {{'currentUri' | i18n}} {{(i + 1)}}
+                            </label>
+                            <select *ngIf="currentUris && currentUris.length" id="currentUris{{i}}"
+                                name="currentUris{{i}}" [(ngModel)]="domain.uri" [hidden]="!domain.showCurrentUris">
+                                <option [ngValue]="null">-- {{'select' | i18n}} --</option>
+                                <option *ngFor="let u of currentUris" [ngValue]="u">{{u}}</option>
+                            </select>
+                        </div>
+                        <div class="action-buttons">
+                            <a *ngIf="currentUris && currentUris.length" class="row-btn" href="#" appStopClick
+                                appBlurClick appA11yTitle="{{'toggleCurrentUris' | i18n}}" (click)="toggleUriInput(domain)">
+                                <i aria-hidden="true" class="fa fa-lg fa-list"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-container>
+                <a href="#" appStopClick appBlurClick (click)="addUri()"
+                    class="box-content-row box-content-row-newmulti">
+                    <i class="fa fa-plus-circle fa-fw fa-lg" aria-hidden="true"></i> {{'newUri' | i18n}}
+                </a>
+            </div>
+            <div class="box-footer">
+                {{'excludedDomainsDesc' | i18n}}
+            </div>
+        </div>
+    </content>
+</form>

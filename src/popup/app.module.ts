@@ -46,6 +46,7 @@ import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
+import { ExcludedDomainsComponent } from './settings/excluded-domains.component';
 
 import { A11yTitleDirective } from 'jslib/angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
@@ -181,6 +182,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ColorPasswordPipe,
         CurrentTabComponent,
         EnvironmentComponent,
+        ExcludedDomainsComponent,
         ExportComponent,
         FallbackSrcDirective,
         FolderAddEditComponent,

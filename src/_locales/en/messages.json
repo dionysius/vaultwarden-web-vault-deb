@@ -1437,5 +1437,14 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "An organization policy is affecting your ownership options."
+  },
+  "excludedDomains": {
+    "message": "Excluded Domains"
+  },
+  "excludedDomainsDesc": {
+    "message": "Bitwarden will not ask to save login details for these domains."
+  },
+  "excludedDomainsInvalidDomain": {
+    "message": " is not a valid domain"
   }
 }

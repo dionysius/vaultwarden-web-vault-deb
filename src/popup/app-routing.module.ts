@@ -40,6 +40,7 @@ import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
+import { ExcludedDomainsComponent } from './settings/excluded-domains.component';
 
 const routes: Routes = [
     {
@@ -199,6 +200,12 @@ const routes: Routes = [
         component: SyncComponent,
         canActivate: [AuthGuardService],
         data: { state: 'sync' },
+    },
+    {
+        path: 'excluded-domains',
+        component: ExcludedDomainsComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'excluded-domains' },
     },
     {
         path: 'premium',
