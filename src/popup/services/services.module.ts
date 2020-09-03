@@ -91,7 +91,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
             if (theme == null) {
                 theme = platformUtilsService.getDefaultSystemTheme();
 
-                platformUtilsService.onDefaultSystemThemeChange(theme => {
+                platformUtilsService.onDefaultSystemThemeChange((theme) => {
                     window.document.documentElement.classList.remove('theme_light', 'theme_dark');
                     window.document.documentElement.classList.add('theme_' + theme);
                 });
