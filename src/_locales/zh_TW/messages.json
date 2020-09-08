@@ -19,6 +19,9 @@
   "login": {
     "message": "登入"
   },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
   "cancel": {
     "message": "取消"
   },
@@ -92,7 +95,7 @@
     "message": "密碼庫已鎖定"
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "密碼庫已登出。"
   },
   "autoFillInfo": {
     "message": "目前瀏覽器分頁中沒有可以自動填入登入資料的位置。"
@@ -325,7 +328,7 @@
     "message": "無效的主密碼"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "密碼庫逾時"
   },
   "lockNow": {
     "message": "立即鎖定"
@@ -1260,7 +1263,7 @@
     "message": "密碼產生器設定受一組以上組織原則影響。"
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "密碼庫逾時動作"
   },
   "lock": {
     "message": "鎖定",
@@ -1295,6 +1298,60 @@
     "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "逾時動作確認"
+  },
+  "autoFillAndSave": {
+    "message": "Auto-fill and Save"
+  },
+  "autoFillSuccessAndSavedUri": {
+    "message": "Auto-filled Item and Saved URI"
+  },
+  "autoFillSuccess": {
+    "message": "Auto-filled Item"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }

@@ -118,39 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden - Trình quản lý mật khẩu miễn phí</value>
+    <value>Bitwarden – Bezmaksas Paroļu Pārvaldnieks</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Một trình quản lý mật khẩu an toàn và miễn phí cho mọi thiết bị của bạn</value>
+    <value>Drošs un bezmaksas paroļu pārvaldnieks priekš visām jūsu ierīcēm.</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden là cách dễ dàng và an toàn nhất để lưu trữ tất cả các thông tin đăng nhập và mật khẩu của bạn và giữ chúng được đồng bộ giữa tất cả các thiết bị của bạn.
+    <value>Bitwarden ir vieglākais un drošākais veids kā saglabāt visus jūsu loginus un paroles, ērti tos uzturot sinhronizētus starp visām jūsu ierīcēm.
 
-Rò rỉ mật khẩu là một vấn đề rất nghiêm trọng. Các trang web và ứng dụng mà bạn sử dụng đang bị tấn công mỗi ngày. Vi phạm an ninh mạng xảy ra khiến mật khẩu của bạn bị đánh cắp. Khi bạn sử dụng cùng một mật khẩu trên nhiều ứng dụng và trang web, tin tặc có thể dễ dàng truy cập vào email, tài khoản ngân hàng và các tài khoản quan trọng khác của bạn.
+Paroļu zagšana ir nopietna problēma. Tīmekļa vietnes un lietotnes ko jūs izmantojat ikdienā tiek pakļautas uzbrukumiem katru dienu. Notiek datu noplūdes un jūsu paroles tiek nozagtas. Kad jūs izmantojiet vienas un tās pašas paroles vairākās vietnēs vai lietotnēs hakeri var viegli piekļūt jūsu e-pastam, bankai un citiem svarīgiem kontiem.
 
-Các chuyên gia bảo mật khuyên bạn nên sử dụng một mật khẩu được tạo ngẫu nhiên cho mỗi tài khoản của bạn. Nhưng làm thế nào để bạn quản lý tất cả những mật khẩu đó? bitwarden giúp bạn tạo, lưu trữ và truy cập tất cả mật khẩu một cách dễ dàng.
+Drošības eksperti iesaka izmantot drošu, nejauši ģenerētu paroli katram izveidotajam kontam. Bet kā lai visas šīs paroles pārvalda? Bitwarden padara paroļu veidošanu, uzglabāšanu un piekļuvi vienkāršu.
 
-Bitwarden lưu trữ tất cả các thông tin đăng nhập của bạn trong một hầm được mã hóa và đồng bộ trên tất cả các thiết bị của bạn. Vì nó được mã hóa đầy đủ trước khi nó rời khỏi thiết bị của bạn nên chỉ có bạn mới có thể truy cập vào dữ liệu của mình. Ngay cả nhóm nghiên cứu tại bitwarden cũng không thể đọc được dữ liệu của bạn khi hộ muốn. Dữ liệu của bạn được bảo vệ bằng mã hóa AES-256 bit, hàm băm và PBKDF2 SHA-256.</value>
+Bitwarden glabā visus jūsu loginus šifrētā seifā, kas tiek sinhronizēts starp visām jūsu ierīcēm. Tā kā tas ir pilnībā šifrēts pirms tas atstāj jūsu ierīci, tikai jums ir piekļuve jūsu datiem. Pat Bitwarden komanda nespētu nolasīt jūsu datus, ja mēs to gribētu. Jūsu dati tiek aizsargāti ar AES-256 bitu šifrēšanu, salītu hešošanu un PBKDF2 SHA-256.
+
+Bitwarden ir 100% atvērta pirmkoda programmatūra. Bitwarden pirmkods atrodas GitHub un visiem ir ļauts pārskatīt, auditēt un dot ieguldījumu Bitwarden koda bāzei. </value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Một trình quản lý mật khẩu an toàn và miễn phí cho mọi thiết bị của bạn</value>
+    <value>Drošs un bezmaksas paroļu pārvaldnieks priekš visām jūsu ierīcēm.</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Đồng bộ hóa và truy cập vào kho mật khẩu của bạn từ nhiều thiết bị</value>
+    <value>Sinhronizē un piekļūsti savam seifam no vairākām ierīcēm</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Quản lý tất cả đăng nhập và mật khẩu của bạn từ một kho mật khẩu an toàn</value>
+    <value>Pārvaldi visus savus kontus un paroles no droša seifa</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Nhanh chóng tự động điền thông tin đăng nhập của bạn vào bất kỳ trang web nào mà bạn truy cập</value>
+    <value>Ātri automātiski aizpildi loginus jebkurā lapā, ko apmeklē</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Dễ dàng truy cập kho mật khẩu của bạn từ menu chuột phải</value>
+    <value>Jūsu seifs ir arī ērti pieejams no labā klikšķa izvēles</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Tự động tạo mật khẩu mạnh, ngẫu nhiên và an toàn</value>
+    <value>Automātiski ģenerē stipras, sarežģītas un drošas paroles</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Thông tin của bạn được quản lý một cách an toàn bằng cách sử dụng mã hóa AES-256 bit</value>
+    <value>Jūsu informācija ir droši pārvaldīta izmantojot AES-256 bitu šifrēšanu</value>
   </data>
 </root>

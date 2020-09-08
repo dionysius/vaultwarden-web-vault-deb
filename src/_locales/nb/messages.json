@@ -19,6 +19,9 @@
   "login": {
     "message": "Logg på"
   },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
   "cancel": {
     "message": "Lukk"
   },
@@ -32,7 +35,7 @@
     "message": "E-postadresse"
   },
   "masterPass": {
-    "message": "Superpassord"
+    "message": "Hovedpassord"
   },
   "masterPassDesc": {
     "message": "Superpassordet er passordet du bruker for å få tilgang til hvelvet ditt. Det er veldig viktig at du aldri glemmer ditt superpassord. Det er ingen måter å få tilbake passordet på dersom du noensinne skulle klare å glemme det."
@@ -41,10 +44,10 @@
     "message": "Et hint for superpassordet kan hjelpe deg med å huske på passordet dersom du skulle glemme det."
   },
   "reTypeMasterPass": {
-    "message": "Skriv inn superpassordet på nytt"
+    "message": "Skriv inn hovedpassordet på nytt"
   },
   "masterPassHint": {
-    "message": "Et hint for superpassordet (valgfritt)"
+    "message": "Et hint for hovedpassordet (valgfritt)"
   },
   "tab": {
     "message": "Fane"
@@ -65,7 +68,7 @@
     "message": "Kopier passordet"
   },
   "copyNote": {
-    "message": "Kopier notat"
+    "message": "Kopier notatet"
   },
   "copyUri": {
     "message": "Kopier URIen"
@@ -83,7 +86,7 @@
     "message": "Auto-utfylling"
   },
   "generatePasswordCopied": {
-    "message": "Generer et passord (Kopiert)"
+    "message": "Generer et passord (kopiert)"
   },
   "noMatchingLogins": {
     "message": "Ingen samsvarende innlogginger."
@@ -101,7 +104,7 @@
     "message": "Legg til en innlogging"
   },
   "addItem": {
-    "message": "Legg til en gjenstand"
+    "message": "Legg til et objekt"
   },
   "passwordHint": {
     "message": "Passordhint"
@@ -122,7 +125,7 @@
     "message": "Konto"
   },
   "changeMasterPassword": {
-    "message": "Endre superpassordet"
+    "message": "Endre hovedpassordet"
   },
   "fingerprintPhrase": {
     "message": "Fingeravtrykksfrase",
@@ -188,10 +191,10 @@
     "message": "Generer automatisk sterke og unike passord for dine innlogginger."
   },
   "bitWebVault": {
-    "message": "Bitwarden Netthvelv"
+    "message": "Bitwarden netthvelv"
   },
   "importItems": {
-    "message": "Importer gjenstander"
+    "message": "Importer objekter"
   },
   "select": {
     "message": "Velg"
@@ -222,13 +225,13 @@
     "message": "Inkluder nummer"
   },
   "minNumbers": {
-    "message": "Minst antall numre"
+    "message": "Minste antall numre"
   },
   "minSpecial": {
-    "message": "Minst antall spesialtegn"
+    "message": "Minste antall spesialtegn"
   },
   "avoidAmbChar": {
-    "message": "Unngå forvekslingsbare tegn"
+    "message": "Unngå tegn som kan forveksles"
   },
   "searchVault": {
     "message": "Søk i hvelvet"
@@ -243,7 +246,7 @@
     "message": "Det er ingen gjenstander å liste opp."
   },
   "itemInformation": {
-    "message": "Gjenstandsinformasjon"
+    "message": "Objektinformasjon"
   },
   "username": {
     "message": "Brukernavn"
@@ -264,16 +267,16 @@
     "message": "Notat"
   },
   "editItem": {
-    "message": "Rediger gjenstanden"
+    "message": "Rediger objektet"
   },
   "folder": {
     "message": "Mappe"
   },
   "deleteItem": {
-    "message": "Slett gjenstanden"
+    "message": "Slett objektet"
   },
   "viewItem": {
-    "message": "Vis gjenstanden"
+    "message": "Vis objektet"
   },
   "launch": {
     "message": "Åpne"
@@ -291,7 +294,7 @@
     "message": "Annet"
   },
   "rateExtension": {
-    "message": "Gi utvidelsen en rangering"
+    "message": "Gi denne utvidelsen en vurdering"
   },
   "rateExtensionDesc": {
     "message": "Tenk gjerne på om du vil skrive en anmeldelse om oss!"
@@ -300,7 +303,7 @@
     "message": "Nettleseren din støtter ikke kopiering til utklippstavlen på noe enkelt vis. Prøv å kopiere det manuelt i stedet."
   },
   "verifyMasterPassword": {
-    "message": "Verifiser superpassordet"
+    "message": "Verifiser hovedpassordet"
   },
   "yourVaultIsLocked": {
     "message": "Hvelvet ditt er låst. Kontroller superpassordet ditt for å fortsette."
@@ -440,7 +443,7 @@
     "message": "La til en mappe"
   },
   "changeMasterPass": {
-    "message": "Endre superpassordet"
+    "message": "Endre hovedpassordet"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Du kan endre superpassordet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
@@ -498,7 +501,7 @@
     "message": "Er du sikker på at du vil slette denne gjenstanden?"
   },
   "deletedItem": {
-    "message": "Slettet gjenstanden"
+    "message": "Slettet objektet"
   },
   "overwritePassword": {
     "message": "Overskriv passordet"
@@ -529,13 +532,13 @@
     "message": "Ikke vis kort på fanesiden"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Kortgjenstander fra hvelvet ditt er listet opp på «Nåværende fane»-siden for enkel autoutfyllingstilgang."
+    "message": "Kortene fra hvelvet ditt er listet opp på «Nåværende fane»-siden for enkel tilgang til autoutfylling."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "Ikke vis identiteter på fanesiden"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identitetsgjenstander fra hvelvet ditt er listet opp på «Nåværende fane»-siden for enkel autoutfyllingstilgang."
+    "message": "Identitetene fra hvelvet ditt er listet opp på «Nåværende fane»-siden for enkel autoutfyllingstilgang."
   },
   "clearClipboard": {
     "message": "Tøm utklippstavlen",
@@ -619,13 +622,13 @@
     "message": "Bitwarden lar deg dele hvelvet ditt med andre ved å bruke en organisasjonskonto. Vil du besøke bitwarden.com-nettstedet for å lære mer?"
   },
   "shareItem": {
-    "message": "Del element"
+    "message": "Del objektet"
   },
   "share": {
     "message": "Del"
   },
   "sharedItem": {
-    "message": "Delte elementet"
+    "message": "Delte objektet"
   },
   "shareDesc": {
     "message": "Velg en organisasjon som du ønsker å dele denne gjenstanden med. Deling overfører gjenstandens eierskap til organisasjonen. Du vil ikke lenger være den direkte eieren av denne gjenstanden når den først har blitt delt."
@@ -688,7 +691,7 @@
     "message": "Du kan behandle medlemskapet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
   "premiumRefresh": {
-    "message": "Oppfrisk medlemsskapet"
+    "message": "Oppdater medlemskapet"
   },
   "premiumNotCurrentMember": {
     "message": "Du er ikke for øyeblikket et Premium-medlem."
@@ -790,13 +793,13 @@
     "message": "Innloggingen er utilgjengelig"
   },
   "noTwoStepProviders": {
-    "message": "Denne kontoen har aktiver 2-trinnsinnlogging, men ingen av de oppsatte 2-trinnsleverandørene er støttet av denne nettleseren."
+    "message": "Denne kontoen har aktivert 2-trinnsinnlogging, men ingen av de oppsatte 2-trinnsleverandørene er støttet av denne nettleseren."
   },
   "noTwoStepProviders2": {
     "message": "Vennligst bruk en støttet nettleser (f.eks. Chrome) og/eller legg til flere leverandører som er bedre støttet mellom flere nettlesere (slik som en autentiseringsapp)."
   },
   "twoStepOptions": {
-    "message": "2-trinnsinnloggingsalternativer"
+    "message": "Alternativer for 2-trinnsinnlogging"
   },
   "recoveryCodeDesc": {
     "message": "Har du mistet tilgang til alle dine 2-trinnsleverandører? Bruk din gjenopprettingskode til å fjerne alle 2-trinnsleverandører fra din konto."
@@ -1021,10 +1024,10 @@
     "message": "Firma"
   },
   "ssn": {
-    "message": "Nummer for sosial stønad"
+    "message": "Personnummer"
   },
   "passportNumber": {
-    "message": "Pass-nummer"
+    "message": "Passnummer"
   },
   "licenseNumber": {
     "message": "Lisensnummer"
@@ -1155,11 +1158,11 @@
     "message": "Skru av/på innstillinger"
   },
   "toggleCurrentUris": {
-    "message": "Toggle Current URIs",
+    "message": "Veksle nåværende URI-er",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "Gjeldende URI",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1170,7 +1173,7 @@
     "message": "Typer"
   },
   "allItems": {
-    "message": "Alle gjenstander"
+    "message": "Alle objekter"
   },
   "noPasswordsInList": {
     "message": "Det er ingen passord å liste opp."
@@ -1193,7 +1196,7 @@
     "message": "Er du sikker på at du vil bruke alternativet «Aldri»? Ved å angi låsemulighetene til «Aldri» lagres hvelvets krypteringsnøkkel på enheten. Hvis du bruker dette alternativet, bør du sørge for at du holder enheten forsvarlig beskyttet."
   },
   "noOrganizationsList": {
-    "message": "Du tilhører ikke noen organisasjoner. Organisasjoner gjør det mulig for deg å sikkert dele gjenstander med andre brukere."
+    "message": "Du tilhører ikke noen organisasjoner. Organisasjoner gjør det mulig for deg å sikkert dele objekter med andre brukere."
   },
   "noCollectionsInList": {
     "message": "Det er ingen samlinger å liste opp."
@@ -1217,7 +1220,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Svakt superpassord"
+    "message": "Svakt hovedpassord"
   },
   "weakMasterPasswordDesc": {
     "message": "Superpassordet du har valgt er svakt. Du bør bruke et sterkt superpassord (eller en passordfrase) for å sikre Bitwarden-kontoen din på en forsvarlig måte. Er du sikker på at du vil bruke dette superpassordet?"
@@ -1245,13 +1248,13 @@
     "message": "Hvelvet ditt er låst. Kontroller PIN-koden din for å fortsette."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lås med hovedpassord når du starter nettleseren på nytt"
+    "message": "Lås med hovedpassordet når du starter nettleseren på nytt"
   },
   "selectOneCollection": {
     "message": "Du må velge minst én samling."
   },
   "cloneItem": {
-    "message": "Klon element"
+    "message": "Klon objektet"
   },
   "clone": {
     "message": "Klon"
@@ -1260,7 +1263,7 @@
     "message": "En eller flere av organisasjonens vilkår påvirker generatorinnstillingene dine."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Handling ved tidsavbrudd i hvelvet"
   },
   "lock": {
     "message": "Lås",
@@ -1274,27 +1277,81 @@
     "message": "Søk i papirkurven"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Slett objektet permanent"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Er du sikker på at du vil slette dette elementet permanent?"
+    "message": "Er du sikker på at du vil slette dette objektet permanent?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Slettet objektet permanent"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Gjenopprett objekt"
   },
   "restoreItemConfirmation": {
-    "message": "Er du sikker på at du vil gjenopprette denne gjenstanden?"
+    "message": "Er du sikker på at du vil gjenopprette dette objektet?"
   },
   "restoredItem": {
-    "message": "Gjenopprettet element"
+    "message": "Gjenopprettet objekt"
   },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Hvis du logger ut, fjerner du all tilgang til hvelvet ditt og krever online godkjenning etter tidsavbrudd. Er du sikker på at du vil bruke denne innstillingen?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Bekreftelse på handling ved tidsavbrudd"
+  },
+  "autoFillAndSave": {
+    "message": "Auto-fill and Save"
+  },
+  "autoFillSuccessAndSavedUri": {
+    "message": "Auto-filled Item and Saved URI"
+  },
+  "autoFillSuccess": {
+    "message": "Auto-filled Item"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }

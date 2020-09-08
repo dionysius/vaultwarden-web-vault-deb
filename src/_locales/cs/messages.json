@@ -19,6 +19,9 @@
   "login": {
     "message": "Přihlásit se"
   },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
   "cancel": {
     "message": "Zrušit"
   },
@@ -1155,11 +1158,11 @@
     "message": "Přepnout možnosti"
   },
   "toggleCurrentUris": {
-    "message": "Toggle Current URIs",
+    "message": "Přepnout zobrazení aktuálních URI",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "Aktuální URI",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1296,5 +1299,59 @@
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Potvrzení akce při vypršení časového limitu"
+  },
+  "autoFillAndSave": {
+    "message": "Auto-fill and Save"
+  },
+  "autoFillSuccessAndSavedUri": {
+    "message": "Auto-filled Item and Saved URI"
+  },
+  "autoFillSuccess": {
+    "message": "Auto-filled Item"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }

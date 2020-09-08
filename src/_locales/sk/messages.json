@@ -19,6 +19,9 @@
   "login": {
     "message": "Prihlásiť sa"
   },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
   "cancel": {
     "message": "Zrušiť"
   },
@@ -92,7 +95,7 @@
     "message": "Trezor je zamknutý."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Trezor je odhlásený"
   },
   "autoFillInfo": {
     "message": "Nie sú prístupné žiadne prihlasovacie údaje na automatické vyplnenie pre aktuálnu kartu."
@@ -325,7 +328,7 @@
     "message": "Neplatné hlavné heslo"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Časový limit pre trezor vypršal"
   },
   "lockNow": {
     "message": "Uzamknúť teraz"
@@ -498,7 +501,7 @@
     "message": "Naozaj chcete odstrániť túto položku?"
   },
   "deletedItem": {
-    "message": "Odstránená položka"
+    "message": "Položka odstránená do koša"
   },
   "overwritePassword": {
     "message": "Prepísať heslo"
@@ -1155,11 +1158,11 @@
     "message": "Voľby prepínača"
   },
   "toggleCurrentUris": {
-    "message": "Toggle Current URIs",
+    "message": "Prepnúť zobrazovanie aktuálnej URI",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "Aktuálna URI",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1260,7 +1263,7 @@
     "message": "Jedno alebo viac nastavení organizácie ovplyvňujú vaše nastavenia generátora."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Akcia pri vypršaní času pre trezor"
   },
   "lock": {
     "message": "Uzamknúť",
@@ -1277,7 +1280,7 @@
     "message": "Natrvalo odstrániť položku"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Naozaj chcete narvalo odstrániť túto položku?"
   },
   "permanentlyDeletedItem": {
     "message": "Natrvalo odstrániť položku"
@@ -1286,15 +1289,69 @@
     "message": "Obnoviť položku"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Naozaj chcete obnoviť túto položku?"
   },
   "restoredItem": {
     "message": "Obnovená položka"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Odhlásenie bude vyžadovať online prihlásenie po vypršaní časového limitu. Naozaj chcete použiť toto nastavenie?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Potvrdenie akcie pre vypršaný časový limit"
+  },
+  "autoFillAndSave": {
+    "message": "Auto-fill and Save"
+  },
+  "autoFillSuccessAndSavedUri": {
+    "message": "Auto-filled Item and Saved URI"
+  },
+  "autoFillSuccess": {
+    "message": "Auto-filled Item"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }

@@ -19,6 +19,9 @@
   "login": {
     "message": "Logga in"
   },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
   "cancel": {
     "message": "Avbryt"
   },
@@ -694,7 +697,7 @@
     "message": "Du är för närvarande inte en premium-medlem."
   },
   "premiumSignUpAndGet": {
-    "message": "Registrera dig för premium-medlemskap och få:"
+    "message": "Registrera dig för ett premium-medlemskap och få:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 GB lagring av krypterade filer."
@@ -889,7 +892,7 @@
     "message": "Fyll automatiskt i den senast använda inloggningen för den aktuella webbsidan"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generera och kopiera ett nytt slumpmässigt lösenord till Urklipp."
+    "message": "Skapa och kopiera ett nytt slumpmässigt lösenord till urklipp."
   },
   "privateModeMessage": {
     "message": "Det här fönstret är tyvärr inte tillgängligt i privat läge för denna webbläsare."
@@ -1296,5 +1299,59 @@
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Bekräftelse av åtgärd när valvets tidsgräns överskrids"
+  },
+  "autoFillAndSave": {
+    "message": "Auto-fill and Save"
+  },
+  "autoFillSuccessAndSavedUri": {
+    "message": "Auto-filled Item and Saved URI"
+  },
+  "autoFillSuccess": {
+    "message": "Auto-filled Item"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }

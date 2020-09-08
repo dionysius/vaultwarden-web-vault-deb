@@ -19,6 +19,9 @@
   "login": {
     "message": "登录"
   },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
   "cancel": {
     "message": "取消"
   },
@@ -526,13 +529,13 @@
     "message": "当您第一次登录时，\"添加登录提醒\" 会自动提醒您在密码库里保存新的登录信息。"
   },
   "dontShowCardsCurrentTab": {
-    "message": "不要在标签页上显示卡片项目"
+    "message": "在标签页上不显示卡片"
   },
   "dontShowCardsCurrentTabDesc": {
     "message": "密码库中的卡片项目列在 \"当前标签\" 页面上，以便于自动填充访问。"
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "不在标签页上显示身份项目"
+    "message": "在标签页上不显示身份"
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "密码库中的身份项目列在 \"当前标签\" 页面上，以便于自动填充访问。"
@@ -610,10 +613,10 @@
     "message": "输入主密码来导出你的密码库。"
   },
   "shared": {
-    "message": "分享"
+    "message": "已共享"
   },
   "shareVault": {
-    "message": "分享你的密码库"
+    "message": "共享你的密码库"
   },
   "shareVaultConfirmation": {
     "message": "Bitwarden 允许您使用组织帐户与他人共享您的密码库。您想访问 bitwarden.com 网站以了解更多内容吗？"
@@ -1296,5 +1299,59 @@
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "超时动作确认"
+  },
+  "autoFillAndSave": {
+    "message": "Auto-fill and Save"
+  },
+  "autoFillSuccessAndSavedUri": {
+    "message": "Auto-filled Item and Saved URI"
+  },
+  "autoFillSuccess": {
+    "message": "Auto-filled Item"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }

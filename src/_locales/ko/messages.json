@@ -19,6 +19,9 @@
   "login": {
     "message": "로그인"
   },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
   "cancel": {
     "message": "취소"
   },
@@ -1155,11 +1158,11 @@
     "message": "표시 / 숨기기"
   },
   "toggleCurrentUris": {
-    "message": "Toggle Current URIs",
+    "message": "현재 URI 전환",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "현재 URI",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1283,18 +1286,72 @@
     "message": "영구적으로 삭제된 항목"
   },
   "restoreItem": {
-    "message": "항목 복구"
+    "message": "항목 복원"
   },
   "restoreItemConfirmation": {
-    "message": "정말로 이 항목을 복구하시겠습니까?"
+    "message": "정말로 이 항목을 복원하시겠습니까?"
   },
   "restoredItem": {
-    "message": "복구된 항목"
+    "message": "복원된 항목"
   },
   "vaultTimeoutLogOutConfirmation": {
     "message": "로그아웃하면 보관함에 대한 모든 접근이 제거되며 시간 제한을 초과하면 온라인 인증을 요구합니다. 정말로 이 설정을 사용하시겠습니까?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "시간 제한 초과시 동작 확인"
+  },
+  "autoFillAndSave": {
+    "message": "Auto-fill and Save"
+  },
+  "autoFillSuccessAndSavedUri": {
+    "message": "Auto-filled Item and Saved URI"
+  },
+  "autoFillSuccess": {
+    "message": "Auto-filled Item"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }
