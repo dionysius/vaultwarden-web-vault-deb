@@ -1301,22 +1301,22 @@
     "message": "Bestätigung der Timeout-Aktion"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Automatisch ausfüllen und speichern"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Auto-Ausgefüllter Eintrag und gespeicherte URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Auto-Ausgefüllter Eintrag"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Masterpasswort festlegen"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Eine oder mehrere Organisationsrichtlinien erfordern, dass Ihr Masterpasswort die folgenden Anforderungen erfüllt:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Kleinster Komplexitätsgrad von $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Mindestlänge von $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Enthält einen oder mehrere Großbuchstaben"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Enthält einen oder mehrere Kleinbuchstaben"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Enthält eine oder mehrere Zahlen"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Enthält eines oder mehrere der folgenden Sonderzeichen $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ihr neues Master-Passwort entspricht nicht den Anforderungen der Richtlinie."
   }
 }

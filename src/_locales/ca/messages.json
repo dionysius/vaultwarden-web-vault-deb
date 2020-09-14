@@ -20,7 +20,7 @@
     "message": "Inicia sessió"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Inici de sessió únic d'empresa"
   },
   "cancel": {
     "message": "Cancel·la"
@@ -1301,22 +1301,22 @@
     "message": "Confirmació de l’acció de temps d'espera de la caixa forta"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Ompli automàticament i guarda"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Element emplenat automàticament i URI guardat"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Element emplenat automàticament "
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Estableix la contrasenya mestra"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Una o més polítiques d’organització requereixen que la vostra contrasenya principal complisca els requisits següents:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Puntuació mínima de complexitat de $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Longitud mínima de $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Conté un o més caràcters en majúscula"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Conté un o més caràcters en minúscula"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Conté un o més números"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Conté un o més dels següents caràcters especials $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "La nova contrasenya principal no compleix els requisits de la política."
   }
 }

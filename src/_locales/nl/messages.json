@@ -1301,22 +1301,22 @@
     "message": "Bevestiging actie bij time-out"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Automatisch invullen en opslaan"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Automatisch gevuld item en opgeslagen URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Automatisch gevuld item"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Hoofdwachtwoord instellen"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Een of meer organisatiebeleidseisen verlangen dat je hoofdwachtwoord voldoet aan:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimale complexiteitsscore van $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimale lengte van $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Bevat een of meer hoofdletters"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Bevat een of meer kleine letters"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Bevat een of meer cijfers"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Bevat een of meer van de volgende speciale tekens $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Je nieuwe hoofdwachtwoord voldoet niet aan de beleidseisen."
   }
 }

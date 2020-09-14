@@ -20,7 +20,7 @@
     "message": "ログイン"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "組織のシングルサインオン"
   },
   "cancel": {
     "message": "キャンセル"
@@ -1301,22 +1301,22 @@
     "message": "タイムアウトアクションの確認"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "自動入力して保存"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "アイテムを自動入力して URI を保存しました"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "アイテムを自動入力しました"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "マスターパスワードを設定"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "組織が求めるマスターパスワードの要件："
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "複雑度は最低$SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "長さは最低$LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "大文字が最低１つ必要"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "小文字が最低１つ必要"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "数字が最低１つ必要"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "次の記号から１つ以上：$CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "新しいマスターパスワードは最低要件を満たしていません。"
   }
 }

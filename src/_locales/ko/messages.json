@@ -1230,7 +1230,7 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "PIN 코드로 잠금 해제"
+    "message": "PIN 코드를 사용하여 잠금 해제"
   },
   "setYourPinCode": {
     "message": "Bitwarden 잠금해제에 사용될 PIN 코드를 설정합니다. 이 애플리케이션에서 완전히 로그아웃할 경우 PIN 설정이 초기화됩니다."
@@ -1289,7 +1289,7 @@
     "message": "항목 복원"
   },
   "restoreItemConfirmation": {
-    "message": "정말로 이 항목을 복원하시겠습니까?"
+    "message": "정말 이 항목을 복원하시겠습니까?"
   },
   "restoredItem": {
     "message": "복원된 항목"
@@ -1301,22 +1301,22 @@
     "message": "시간 제한 초과시 동작 확인"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "자동 완성 및 저장"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "항목을 자동 완성하고 URI를 저장함"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "항목을 자동 완성함"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "마스터 비밀번호 설정"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "하나 이상의 단체 정책이 마스터 비밀번호가 다음 사항을 따르도록 요구합니다:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "최소 복잡도 점수 $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1334,13 +1334,13 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "하나 이상의 대문자 포함"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "하나 이상의 소문자 포함"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "하나 이상의 숫자 포함"
   },
   "policyInEffectSpecial": {
     "message": "Contain one or more of the following special characters $CHARS$",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "새 마스터 비밀번호가 정책 요구 사항을 따르지 않습니다."
   }
 }

@@ -20,7 +20,7 @@
     "message": "Войти"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Единая корпоративная авторизация (SSO)"
   },
   "cancel": {
     "message": "Отмена"
@@ -1301,22 +1301,22 @@
     "message": "Подтверждение действия по таймауту"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Заполнить и сохранить"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Автозаполненный элемент и сохраненный URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Автозаполненный элемент"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Задать мастер-пароль"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Согласно одной или нескольким политикам организации необходимо, чтобы ваш мастер-пароль отвечал следующим требованиям:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Минимальный уровень сложности $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Минимальная длина $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Содержать хотя бы одну заглавную букву"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Содержать хотя бы одну строчную букву"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Содержать хотя бы одну цифру"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Содержать хотя бы один из следующих специальных символов $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ваш новый мастер-пароль не соответствует требованиям политики."
   }
 }

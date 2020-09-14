@@ -20,7 +20,7 @@
     "message": "Увійти"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Єдиний корпоративний вхід (SSO)"
   },
   "cancel": {
     "message": "Скасувати"
@@ -1301,22 +1301,22 @@
     "message": "Підтвердження дії часу очікування"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Заповнити і зберегти"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Запис заповнено і збережено"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Запис заповнено"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Встановити головний пароль"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Одна або декілька політик організації зобов'язують дотримання таких вимог для головного пароля:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Мінімальний рівень складності $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Мінімальна довжина $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Наявність одного чи більше символів верхнього регістру"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Наявність одного чи більше символів нижнього регістру"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Наявність однієї чи більше цифр"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Наявність одного чи більше таких спеціальних символів: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ваш новий головний пароль не задовольняє вимоги політики."
   }
 }

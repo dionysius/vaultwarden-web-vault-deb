@@ -20,7 +20,7 @@
     "message": "Logga in"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Single Sign-On för företag"
   },
   "cancel": {
     "message": "Avbryt"
@@ -1301,22 +1301,22 @@
     "message": "Bekräftelse av åtgärd när valvets tidsgräns överskrids"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Fyll i automatiskt och spara"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Fyllde i objektet automatiskt och sparade URI:n"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Fyllde i objektet automatiskt"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Ange huvudlösenord"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "En eller flera organisationspolicyer kräver att ditt huvudlösenord uppfyller följande krav:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minsta komplexitetspoäng på $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minsta längd på $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Innehålla en eller flera versaler"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Innehålla en eller flera gemener"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Innehålla en eller flera siffror"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Innehålla ett eller flera av följande specialtecken: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ditt nya huvudlösenord uppfyller inte kraven i policyn."
   }
 }

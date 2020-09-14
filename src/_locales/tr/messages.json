@@ -20,7 +20,7 @@
     "message": "Giriş Yap"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Kurumsal Tek Oturum Açma"
   },
   "cancel": {
     "message": "İptal"
@@ -501,10 +501,10 @@
     "message": "Bu hesap bilgilerini silmek istediğinizden emin misiniz?"
   },
   "deletedItem": {
-    "message": "Hesap bilgileri silindi"
+    "message": "Öğe çöp kutusuna gönderildi"
   },
   "overwritePassword": {
-    "message": "Parola Üzerine Yaz"
+    "message": "Parolanın Üzerine Yaz"
   },
   "overwritePasswordConfirmation": {
     "message": "Mevcut parolanın üzerine kaydetmek istediğinize emin misiniz?"
@@ -523,7 +523,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Hesap Ekle Bildirimlerini Kapat"
+    "message": "Giriş Ekleme Bildirimlerini Kapat"
   },
   "addLoginNotificationDesc": {
     "message": "\"Hesap Ekle Bildirimi\" otomatik olarak, ilk kez oturum açtığınız hesabınızı kasanıza kaydetmeniz için uyarı verir."
@@ -570,13 +570,13 @@
     "message": "Evet, şimdi güncelle"
   },
   "disableContextMenuItem": {
-    "message": "Sağtık Menü Seçeneklerini Kapat"
+    "message": "Bağlam Menüsü Seçeneklerini Kapat"
   },
   "disableContextMenuItemDesc": {
     "message": "Sağtık menü seçenekleri, internet siteleri için geçerli sekmenizde şifre oluşturma ve oturum açma işlemlerine hızlı erişim sağlar."
   },
   "defaultUriMatchDetection": {
-    "message": "Varsayılan Eşleşen URI Tespiti",
+    "message": "Varsayılan URI Eşleme Tespiti",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -1301,22 +1301,22 @@
     "message": "Zaman Aşımı Eylem Onayı"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Otomatik doldur ve kaydet"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Otomatik Doldurulmuş Öğe ve Kayıtlı URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Otomatik Doldurulmuş Öğe"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Ana Parolayı Belirle"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Bir veya daha fazla kuruluş ilkesi, aşağıdaki gereksinimleri karşılamak için ana parolanızı gerektirir:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimum karmaşıklık puanı {0}",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimum uzunluk $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Bir veya daha fazla büyük harfli karakter içermeli"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Bir veya daha fazla küçük harfli karakter içermeli"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Bir veya daha fazla rakam içermeli"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Aşağıdaki özel karakterlerden birini veya daha fazlasını içermeli $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Yeni ana parolanız ilke gereksinimlerini karşılamıyor."
   }
 }

@@ -20,7 +20,7 @@
     "message": "Accedi"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Accesso con il portale dell'organizzazione (Single Sign-On)"
   },
   "cancel": {
     "message": "Annulla"
@@ -1301,22 +1301,22 @@
     "message": "Conferma Azione di Timeout"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Riempi automaticamente e salva"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Elemento riempito automaticamente e URI salvato"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Elemento Riempito Automaticamente"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Impostare la password principale"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "La password principale deve avere i seguenti requisiti, stabiliti da una o più regole dell'organizzazione:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Punteggio minimo di complessità $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Lunghezza minima $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Contiene almeno un carattere maiuscolo"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Contiene almeno un carattere minuscolo"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Contiene almeno una cifra"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Contiene almeno uno dei seguenti caratteri speciali $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "La tua nuova password principale non soddisfa i requisiti di sicurezza."
   }
 }

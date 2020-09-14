@@ -20,7 +20,7 @@
     "message": "登录"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "企业单点登录（SSO）"
   },
   "cancel": {
     "message": "取消"
@@ -1301,22 +1301,22 @@
     "message": "超时动作确认"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "自动填写并保存"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "项目已自动填写且 URI 已保存"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "项目已自动填写"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "设置主密码"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "一个或多个组织策略要求您的主密码满足下列要求："
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "最小复杂度为 $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "最小长度为 $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "至少包含一个大写字符"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "至少包含一个小写字符"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "至少包含一个数字"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "至少包含一个下列的特殊字符：$CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "您的新主密码不符合策略要求。"
   }
 }

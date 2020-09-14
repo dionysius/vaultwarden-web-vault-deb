@@ -20,7 +20,7 @@
     "message": "Identificarse"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Inicio de sesión único empresarial"
   },
   "cancel": {
     "message": "Cancelar"
@@ -1301,22 +1301,22 @@
     "message": "Confirmación de la acción del tiempo de espera"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Autorellenar y guardar"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Objeto autorellenado y URI guardada"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Objeto autorellenado"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Establecer contraseña maestra"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Una o más políticas de la organización requieren que su contraseña maestra cumpla con los siguientes requisitos:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Puntuación mínima de complejidad de $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Longitud mínima de $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Contiene uno o más caracteres en mayúsculas"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Contiene uno o más caracteres en minúsculas"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Contiene uno o más números"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Contiene uno o más de los siguientes caracteres especiales $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Su nueva contraseña maestra no cumple con los requisitos de la política."
   }
 }
