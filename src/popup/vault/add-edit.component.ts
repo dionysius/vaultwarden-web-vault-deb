@@ -43,7 +43,7 @@ export class AddEditComponent extends BaseAddEditComponent {
 
     async ngOnInit() {
         await super.ngOnInit();
-        this.showAttachments = !this.platformUtilsService.isEdge();
+
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;

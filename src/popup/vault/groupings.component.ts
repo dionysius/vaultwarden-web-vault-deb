@@ -78,7 +78,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         private platformUtilsService: PlatformUtilsService, private searchService: SearchService,
         private location: Location) {
         super(collectionService, folderService, storageService, userService);
-        this.noFolderListSize = platformUtilsService.isEdge() ? 25 : 100;
+        this.noFolderListSize = 100;
     }
 
     get showNoFolderCiphers(): boolean {

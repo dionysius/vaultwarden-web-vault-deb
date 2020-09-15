@@ -8,7 +8,6 @@ export class BrowserApi {
     static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
     static isFirefoxOnAndroid: boolean = navigator.userAgent.indexOf('Firefox/') !== -1 &&
         navigator.userAgent.indexOf('Android') !== -1;
-    static isEdge18: boolean = navigator.userAgent.indexOf(' Edge/18.') !== -1;
 
     static async getTabFromCurrentWindowId(): Promise<any> {
         if (BrowserApi.isChromeApi) {

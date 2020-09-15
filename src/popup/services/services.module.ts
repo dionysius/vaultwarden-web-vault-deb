@@ -70,7 +70,7 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
     getBgService<I18nService>('i18nService')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
     messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')(), null);
 export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
-    getBgService<CipherService>('cipherService')(), getBgService<PlatformUtilsService>('platformUtilsService')());
+    getBgService<CipherService>('cipherService')());
 
 export function initFactory(i18nService: I18nService, storageService: StorageService,
     popupUtilsService: PopupUtilsService): Function {

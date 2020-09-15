@@ -39,12 +39,6 @@ export class PopupUtilsService {
 
     popOut(win: Window): void {
         let href = win.location.href;
-        if (this.platformUtilsService.isEdge()) {
-            const popupIndex = href.indexOf('/popup/');
-            if (popupIndex > -1) {
-                href = href.substring(popupIndex);
-            }
-        }
 
         if ((typeof chrome !== 'undefined') && chrome.windows && chrome.windows.create) {
             if (href.indexOf('?uilocation=') > -1) {
