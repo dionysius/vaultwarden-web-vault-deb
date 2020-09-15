@@ -20,7 +20,7 @@
     "message": "Вписване"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Еднократна идентификация (SSO)"
   },
   "cancel": {
     "message": "Отказ"
@@ -1301,22 +1301,22 @@
     "message": "Потвърждаване на действието"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Дописване и обновяване"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Автоматично дописан запис и адрес"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Автоматично дописан запис"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Задаване на главна парола"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Поне една политика на организация има следните изисквания към главната ви парола:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Минимална сложност от $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Минимална дължина: $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Поне една главна буква"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Поне една малка буква"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Поне една цифра"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Поне един от следните специални знаци: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Паролата ви не отговаря на политиките."
   }
 }
