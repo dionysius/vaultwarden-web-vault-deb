@@ -157,7 +157,7 @@ export default class MainBackground {
         this.userService = new UserService(this.tokenService, this.storageService);
         this.authService = new AuthService(this.cryptoService, this.apiService, this.userService,
             this.tokenService, this.appIdService, this.i18nService, this.platformUtilsService,
-            this.messagingService, this.vaultTimeoutService, null);
+            this.messagingService, this.vaultTimeoutService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
             this.apiService, this.storageService, this.i18nService, () => this.searchService);

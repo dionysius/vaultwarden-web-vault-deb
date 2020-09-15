@@ -68,7 +68,7 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
     getBgService<ApiService>('apiService')(), getBgService<UserService>('userService')(),
     getBgService<TokenService>('tokenService')(), getBgService<AppIdService>('appIdService')(),
     getBgService<I18nService>('i18nService')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
-    messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')(), null);
+    messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')());
 export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
     getBgService<CipherService>('cipherService')());
 
