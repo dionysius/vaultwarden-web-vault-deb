@@ -75,7 +75,7 @@ const plugins = [
     new HtmlWebpackPlugin({
         template: './src/popup/index.html',
         filename: 'popup/index.html',
-        chunks: ['popup/vendor', 'popup/main'],
+        chunks: ['popup/vendor-angular', 'popup/vendor', 'popup/main'],
     }),
     new HtmlWebpackPlugin({
         template: './src/background.html',
@@ -144,8 +144,22 @@ const config = {
         splitChunks: {
             cacheGroups: {
                 commons: {
-                    test: /[\\/]node_modules[\\/]/,
+                    test(module, chunks) {
+                        return module.resource != null &&
+                            module.resource.includes(`${path.sep}node_modules${path.sep}`) &&
+                            !module.resource.includes(`${path.sep}node_modules${path.sep}@angular${path.sep}`);
+                    },
                     name: 'popup/vendor',
+                    chunks: (chunk) => {
+                        return chunk.name === 'popup/main';
+                    },
+                },
+                angular: {
+                    test(module, chunks) {
+                        return module.resource != null &&
+                            module.resource.includes(`${path.sep}node_modules${path.sep}@angular${path.sep}`);
+                    },
+                    name: 'popup/vendor-angular',
                     chunks: (chunk) => {
                         return chunk.name === 'popup/main';
                     },
