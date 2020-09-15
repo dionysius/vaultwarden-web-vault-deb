@@ -74,6 +74,7 @@ import {
     CurrencyPipe,
     registerLocaleData,
 } from '@angular/common';
+import localeBe from '@angular/common/locales/be';
 import localeBg from '@angular/common/locales/bg';
 import localeCa from '@angular/common/locales/ca';
 import localeCs from '@angular/common/locales/cs';
@@ -109,6 +110,7 @@ import localeVi from '@angular/common/locales/vi';
 import localeZhCn from '@angular/common/locales/zh-Hans';
 import localeZhTw from '@angular/common/locales/zh-Hant';
 
+registerLocaleData(localeBe, 'be');
 registerLocaleData(localeBg, 'bg');
 registerLocaleData(localeCa, 'ca');
 registerLocaleData(localeCs, 'cs');
