@@ -16,10 +16,6 @@ export class LaunchGuardService implements CanActivate {
 
     async canActivate() {
         if (BrowserApi.getBackgroundPage() == null) {
-            if (BrowserApi.isEdge18) {
-                // tslint:disable-next-line
-                console.log('getBackgroundPage is null from launch guard.');
-            }
             this.router.navigate(['private-mode']);
             return false;
         }

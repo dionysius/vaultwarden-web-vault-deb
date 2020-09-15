@@ -56,7 +56,6 @@ export class ViewComponent extends BaseViewComponent {
     }
 
     ngOnInit() {
-        this.showAttachments = !this.platformUtilsService.isEdge();
         this.inPopout = this.popupUtilsService.inPopout(window);
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             if (params.cipherId) {

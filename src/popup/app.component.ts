@@ -163,9 +163,7 @@ export class AppComponent implements OnInit {
     }
 
     getState(outlet: RouterOutlet) {
-        if (BrowserApi.isEdge18) {
-            return null;
-        } else if (outlet.activatedRouteData.state === 'ciphers') {
+        if (outlet.activatedRouteData.state === 'ciphers') {
             const routeDirection = (window as any).routeDirection != null ? (window as any).routeDirection : '';
             return 'ciphers_direction=' + routeDirection + '_' +
                 (outlet.activatedRoute.queryParams as any).value.folderId + '_' +

@@ -165,7 +165,7 @@ export default class MainBackground {
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18nService);
-        this.searchService = new SearchService(this.cipherService, this.platformUtilsService);
+        this.searchService = new SearchService(this.cipherService);
         this.stateService = new StateService();
         this.policyService = new PolicyService(this.userService, this.storageService);
         this.vaultTimeoutService = new VaultTimeoutService(this.cipherService, this.folderService,
@@ -441,47 +441,44 @@ export default class MainBackground {
             title: this.i18nService.t('autoFill'),
         });
 
-        // Edge does not support writing to the clipboard from background
-        if (!this.platformUtilsService.isEdge()) {
+        await this.contextMenusCreate({
+            type: 'normal',
+            id: 'copy-username',
+            parentId: 'root',
+            contexts: ['all'],
+            title: this.i18nService.t('copyUsername'),
+        });
+
+        await this.contextMenusCreate({
+            type: 'normal',
+            id: 'copy-password',
+            parentId: 'root',
+            contexts: ['all'],
+            title: this.i18nService.t('copyPassword'),
+        });
+
+        if (await this.userService.canAccessPremium()) {
             await this.contextMenusCreate({
                 type: 'normal',
-                id: 'copy-username',
+                id: 'copy-totp',
                 parentId: 'root',
                 contexts: ['all'],
-                title: this.i18nService.t('copyUsername'),
-            });
-
-            await this.contextMenusCreate({
-                type: 'normal',
-                id: 'copy-password',
-                parentId: 'root',
-                contexts: ['all'],
-                title: this.i18nService.t('copyPassword'),
-            });
-
-            if (await this.userService.canAccessPremium()) {
-                await this.contextMenusCreate({
-                    type: 'normal',
-                    id: 'copy-totp',
-                    parentId: 'root',
-                    contexts: ['all'],
-                    title: this.i18nService.t('copyVerificationCode'),
-                });
-            }
-
-            await this.contextMenusCreate({
-                type: 'separator',
-                parentId: 'root',
-            });
-
-            await this.contextMenusCreate({
-                type: 'normal',
-                id: 'generate-password',
-                parentId: 'root',
-                contexts: ['all'],
-                title: this.i18nService.t('generatePasswordCopied'),
+                title: this.i18nService.t('copyVerificationCode'),
             });
         }
+
+        await this.contextMenusCreate({
+            type: 'separator',
+            parentId: 'root',
+        });
+
+        await this.contextMenusCreate({
+            type: 'normal',
+            id: 'generate-password',
+            parentId: 'root',
+            contexts: ['all'],
+            title: this.i18nService.t('generatePasswordCopied'),
+        });
 
         this.buildingContextMenu = false;
     }

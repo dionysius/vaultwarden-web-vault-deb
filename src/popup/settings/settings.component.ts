@@ -61,8 +61,7 @@ export class SettingsComponent implements OnInit {
     }
 
     async ngOnInit() {
-        const showOnLocked = !this.platformUtilsService.isFirefox() && !this.platformUtilsService.isEdge()
-            && !this.platformUtilsService.isSafari();
+        const showOnLocked = !this.platformUtilsService.isFirefox() && !this.platformUtilsService.isSafari();
 
         this.vaultTimeouts = [
             { name: this.i18nService.t('immediately'), value: 0 },
@@ -264,11 +263,6 @@ export class SettingsComponent implements OnInit {
     }
 
     export() {
-        if (this.platformUtilsService.isEdge()) {
-            BrowserApi.createNewTab('https://help.bitwarden.com/article/export-your-data/');
-            return;
-        }
-
         this.router.navigate(['/export']);
     }
 
@@ -327,10 +321,7 @@ export class SettingsComponent implements OnInit {
 
     rate() {
         this.analytics.eventTrack.next({ action: 'Rate Extension' });
-        let deviceType = this.platformUtilsService.getDevice();
-        if (window.navigator.userAgent.indexOf('Edg/') > -1) {
-            deviceType = DeviceType.EdgeExtension;
-        }
+        const deviceType = this.platformUtilsService.getDevice();
         BrowserApi.createNewTab((RateUrls as any)[deviceType]);
     }
 }
