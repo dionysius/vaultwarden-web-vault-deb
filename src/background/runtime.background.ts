@@ -174,9 +174,8 @@ export default class RuntimeBackground {
                 }
 
                 try {
-                    chrome.tabs.create({
-                        url: 'popup/index.html?uilocation=popout#/sso?code=' + msg.code + '&state=' + msg.state
-                    });
+                    BrowserApi.createNewTab('popup/index.html?uilocation=popout#/sso?code=' +
+                        msg.code + '&state=' + msg.state);
                 }
                 catch { }
                 break;

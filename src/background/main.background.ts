@@ -52,6 +52,7 @@ import {
     UserService as UserServiceAbstraction,
     VaultTimeoutService as VaultTimeoutServiceAbstraction,
 } from 'jslib/abstractions';
+import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 import { EventService as EventServiceAbstraction } from 'jslib/abstractions/event.service';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
@@ -90,6 +91,7 @@ export default class MainBackground {
     platformUtilsService: PlatformUtilsServiceAbstraction;
     constantsService: ConstantsService;
     cryptoService: CryptoServiceAbstraction;
+    cryptoFunctionService: CryptoFunctionServiceAbstraction;
     tokenService: TokenServiceAbstraction;
     appIdService: AppIdServiceAbstraction;
     apiService: ApiServiceAbstraction;
@@ -148,8 +150,9 @@ export default class MainBackground {
         this.storageService = new BrowserStorageService(this.platformUtilsService);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
-        const cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
-        this.cryptoService = new CryptoService(this.storageService, this.secureStorageService, cryptoFunctionService);
+        this.cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
+        this.cryptoService = new CryptoService(this.storageService, this.secureStorageService,
+            this.cryptoFunctionService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
@@ -190,11 +193,11 @@ export default class MainBackground {
             this.cipherService);
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService,
             this.policyService);
-        this.totpService = new TotpService(this.storageService, cryptoFunctionService);
+        this.totpService = new TotpService(this.storageService, this.cryptoFunctionService);
         this.autofillService = new AutofillService(this.cipherService, this.userService, this.totpService,
             this.eventService);
         this.containerService = new ContainerService(this.cryptoService);
-        this.auditService = new AuditService(cryptoFunctionService, this.apiService);
+        this.auditService = new AuditService(this.cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
         this.notificationsService = new NotificationsService(this.userService, this.syncService, this.appIdService,
             this.apiService, this.vaultTimeoutService, () => this.logout(true));

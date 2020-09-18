@@ -215,10 +215,10 @@ export class BrowserApi {
 
     static reloadOpenWindows() {
         if (!BrowserApi.isSafariApi) {
-            const sidebarWindows = chrome.extension.getViews({ type: 'sidebar' });
-            if (sidebarWindows && sidebarWindows.length > 0) {
-                sidebarWindows[0].location.reload();
-            }
+            const views = chrome.extension.getViews() as Window[];
+            views.filter((w) => w.location.href != null).forEach((w) => {
+                w.location.reload();
+            });
         }
     }
 }
