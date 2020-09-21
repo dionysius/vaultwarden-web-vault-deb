@@ -70,11 +70,26 @@ func makeSenderTabObject(page: SFSafariPage, props: SFSafariPageProperties?, com
     t.url = props?.url?.absoluteString
     page.getContainingTab { tab in
         tab.getContainingWindow(completionHandler: { win in
-            win?.getActiveTab(completionHandler: { activeTab in
+            guard let window = win else {
+                t.active = false;
+                t.windowId = -100
+                SFSafariApplication.getAllWindows(completionHandler: { allWins in
+                    if (allWins.count == 0) {
+                        return
+                    }
+                    allWins[0].getAllTabs { allWinTabs in
+                        t.index = allWinTabs.firstIndex(of: tab) ?? -1
+                        t.id = "\(t.windowId)_\(t.index)"
+                        complete(t)
+                    }
+                })
+                return
+            }
+            window.getActiveTab(completionHandler: { activeTab in
                 t.active = activeTab != nil && tab == activeTab
                 SFSafariApplication.getAllWindows(completionHandler: { allWins in
-                    t.windowId = allWins.firstIndex(of: win!) ?? -100
-                    win!.getAllTabs { allWinTabs in
+                    t.windowId = allWins.firstIndex(of: window) ?? -100
+                    window.getAllTabs { allWinTabs in
                         t.index = allWinTabs.firstIndex(of: tab) ?? -1
                         t.id = "\(t.windowId)_\(t.index)"
                         complete(t)
