@@ -2,6 +2,8 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
+import { UriMatchType } from 'jslib/enums';
+
 export default class WebRequestBackground {
     private pendingAuthRequests: any[] = [];
     private webRequest: any;
@@ -50,7 +52,7 @@ export default class WebRequestBackground {
         }
 
         try {
-            const ciphers = await this.cipherService.getAllDecryptedForUrl(domain);
+            const ciphers = await this.cipherService.getAllDecryptedForUrl(domain, null, UriMatchType.Host);
             if (ciphers == null || ciphers.length !== 1) {
                 error();
                 return;
