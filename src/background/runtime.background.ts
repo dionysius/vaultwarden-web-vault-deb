@@ -188,6 +188,7 @@ export default class RuntimeBackground {
         const totpCode = await this.autofillService.doAutoFill({
             cipher: this.main.loginToAutoFill,
             pageDetails: this.pageDetailsToAutoFill,
+            fillNewPassword: true
         });
 
         if (totpCode != null) {
