@@ -147,6 +147,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 cipher: cipher,
                 pageDetails: this.pageDetails,
                 doc: window.document,
+                fillNewPassword: true,
             });
             this.analytics.eventTrack.next({ action: 'Autofilled' });
             if (this.totpCode != null) {

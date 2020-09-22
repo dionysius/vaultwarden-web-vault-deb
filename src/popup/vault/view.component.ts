@@ -220,6 +220,7 @@ export class ViewComponent extends BaseViewComponent {
                 cipher: this.cipher,
                 pageDetails: this.pageDetails,
                 doc: window.document,
+                fillNewPassword: true,
             });
             if (this.totpCode != null) {
                 this.platformUtilsService.copyToClipboard(this.totpCode, { window: window });
