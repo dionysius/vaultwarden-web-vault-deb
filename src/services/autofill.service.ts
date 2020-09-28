@@ -904,7 +904,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     return false;
                 }
                 // Removes all whitespace, _ and - characters
-                const cleanedValue = value.toLowerCase().replace(/[\s_-]/g, '');
+                const cleanedValue = value.toLowerCase().replace(/[\s_\-]/g, '');
 
                 if (cleanedValue.indexOf('password') < 0) {
                     return false;
