@@ -903,16 +903,18 @@ export default class AutofillService implements AutofillServiceInterface {
                 if (value == null) {
                     return false;
                 }
-                const lowerValue = value.toLowerCase();
-                if (lowerValue.indexOf('onetimepassword') >= 0) {
+                // Removes all whitespace, _ and - characters
+                const cleanedValue = value.toLowerCase().replace(/[\s_\-]/g, '');
+
+                if (cleanedValue.indexOf('password') < 0) {
                     return false;
                 }
-                if (lowerValue.indexOf('password') < 0) {
+
+                const ignoreList = ['onetimepassword', 'captcha', 'findanything'];
+                if (ignoreList.some((i) => cleanedValue.indexOf(i) > -1)) {
                     return false;
                 }
-                if (lowerValue.indexOf('captcha') >= 0) {
-                    return false;
-                }
+
                 return true;
             };
             const isLikePassword = () => {
