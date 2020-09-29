@@ -20,7 +20,7 @@
     "message": "Ieiet"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Uzņēmuma Vienotā Pierakstīšanās"
   },
   "cancel": {
     "message": "Atcelt"
@@ -62,7 +62,7 @@
     "message": "Iestatījumi"
   },
   "currentTab": {
-    "message": "Current Tab"
+    "message": "Šī Cilne"
   },
   "copyPassword": {
     "message": "Kopēt Paroli"
@@ -98,10 +98,10 @@
     "message": "No seifa ir iziets."
   },
   "autoFillInfo": {
-    "message": "There are no logins available to auto-fill for the current browser tab."
+    "message": "Nav piekļuves datu, kurus automātiski aizpildīt šajā pārlūka cilnē."
   },
   "addLogin": {
-    "message": "Add a Login"
+    "message": "Pievienot Piekļuves Datus"
   },
   "addItem": {
     "message": "Pievienot Vienumu"
@@ -790,19 +790,19 @@
     "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Ieeja Nav Pieejama"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message": "Šim kontam ir iespējota divpakāpju piekļuve, bet šis pārlūks neatbalsta nevienu no uzstādītajiem divpakāpju verifikācijas nodrošinātājiem."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "Lūdzu izmantojiet atbalstītu tīmekļa pārlūku (piemēram Chrome) un/vai pievienojiet papildus nodrošinātājus kas ir labāk atbalstīti visos pārlūkos (piemēram autentifikatora lietotni)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Divpakāpju Piekļuves Iestatījumi"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Zaudēji piekļuvi visiem divpakāpju nodrošinātājiem? Izmanto atjaunošanas kodus lai atspējotu visus divpakāpju nodrošinātājus no sava konta."
   },
   "recoveryCodeTitle": {
     "message": "Atjaunošanas Kods"
@@ -818,10 +818,10 @@
     "message": "YubiKey OTP Drošības Atslēga"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Izmanto YubiKey lai piekļūtu savam kontam. Strādā ar YubiKey 4, 4 Nano, 4C un NEO ierīcēm."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verificē izmantojot Duo Sercurity izmantojot Duo Mobile lietotni, SMS, telefona zvanu vai U2F drošības atslēgu.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -832,13 +832,13 @@
     "message": "Use any FIDO U2F enabled security key to access your account."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F Drošības Atslēga"
   },
   "emailTitle": {
     "message": "E-pasts"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Verifikācijas kodi tiks nosūtīti uz jūsu E-pastu."
   },
   "selfHostedEnvironment": {
     "message": "Pašuzturēta Vide"

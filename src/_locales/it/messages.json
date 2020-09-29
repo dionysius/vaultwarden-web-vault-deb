@@ -53,7 +53,7 @@
     "message": "Pagina"
   },
   "myVault": {
-    "message": "Cassaforte"
+    "message": "Portachiavi"
   },
   "tools": {
     "message": "Strumenti"
@@ -95,7 +95,7 @@
     "message": "Cassaforte bloccata."
   },
   "vaultLoggedOut": {
-    "message": "Cassaforte bloccata."
+    "message": "Portachiavi bloccato."
   },
   "autoFillInfo": {
     "message": "Non ci sono login disponibili per completare la tab del browser corrente."
@@ -175,7 +175,7 @@
     "message": "Sincronizza"
   },
   "syncVaultNow": {
-    "message": "Sincronizza cassaforte ora"
+    "message": "Sincronizza portachiavi ora"
   },
   "lastSync": {
     "message": "Ultima sincronizzazione:"
@@ -191,7 +191,7 @@
     "message": "Genera automaticamente password complesse e uniche per i tuoi login."
   },
   "bitWebVault": {
-    "message": "Cassaforte Web Bitwarden"
+    "message": "Portachiavi Web Bitwarden"
   },
   "importItems": {
     "message": "Importa elementi"
@@ -306,7 +306,7 @@
     "message": "Verifica password principale"
   },
   "yourVaultIsLocked": {
-    "message": "La tua cassaforte è bloccata. Inserisci la tua password principale per continuare."
+    "message": "Il tuo portachiavi è bloccato. Inserisci la tua password principale per continuare."
   },
   "unlock": {
     "message": "Sblocca"
@@ -328,7 +328,7 @@
     "message": "Password principale errata"
   },
   "vaultTimeout": {
-    "message": "Timeout Cassaforte"
+    "message": "Timeout Portachiavi"
   },
   "lockNow": {
     "message": "Blocca ora"
@@ -526,19 +526,19 @@
     "message": "Disabilita notifica di aggiunta login"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Aggiungi Notifica di Login\" richiede automaticamente di salvare i nuovi login nella tua cassaforte ogni volta che ti ci connetti per la prima volta."
+    "message": "La \"Notifica di Aggiunta Login\" chiede automaticamente di salvare i nuovi login nel tuo portachiavi ogni volta che utilizzi un'account per il primo accesso."
   },
   "dontShowCardsCurrentTab": {
     "message": "Non mostrare le carte nella pagina delle schede"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Gli elementi della scheda della tua cassaforte sono elencati nella pagina \"Scheda corrente\" per un facile accesso al riempimento automatico."
+    "message": "I dati della carta del tuo portachiavi sono elencati nella sezione \"Scheda corrente\" per facilitare il riempimento automatico."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "Non mostrare le identità nella pagina delle schede"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Gli elementi di identità della tua cassaforte sono elencati nella pagina \"Scheda Corrente\" per un facile accesso al riempimento automatico."
+    "message": "Gli account del tuo portachiavi sono elencati nella sezione \"Scheda corrente\" per facilitare il riempimento automatico."
   },
   "clearClipboard": {
     "message": "Cancella appunti",
@@ -561,7 +561,7 @@
     "message": "Disabilita Notifica di Modifica Password"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "La \"notifica di Password cambiata\" richiederà automaticamente di aggiornare la password di un account di accesso nel tuo vault ogni volta che rileva che è stato modificato su un sito Web."
+    "message": "La \"notifica di cambio password\" chiede automaticamente di aggiornare la password di un account nel tuo portachiavi ogni qualvolta viene su un sito web."
   },
   "notificationChangeDesc": {
     "message": "Vuoi aggiornare questa password in Bitwarden?"
@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Esporta cassaforte"
+    "message": "Esporta portachiavi"
   },
   "fileFormat": {
     "message": "Formato file"
@@ -607,7 +607,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Questa esportazione contiene i dati della cassaforte in un formato non criptato. Non archiviare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
+    "message": "Questa esportazione contiene i dati del tuo portachiavi in un formato non criptato. Non salvare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati della tua cassaforte."
@@ -616,10 +616,10 @@
     "message": "Condiviso"
   },
   "shareVault": {
-    "message": "Condividi La Tua Cassaforte"
+    "message": "Condividi Il Tuo Portachiavi"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden ti permette di condividere la tua cassaforte con altri usando un account societario. Vuoi visitare il sito bitwarden.com per saperne di più?"
+    "message": "Bitwarden ti permette di condividere il tuo portachiavi con altri usando un account societario. Vuoi visitare il sito bitwarden.com per saperne di più?"
   },
   "shareItem": {
     "message": "Condividi elemento"
@@ -706,7 +706,7 @@
     "message": "Opzioni addizionali di login in due passaggi come YubiKey, FIDO U2F, e Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Sicurezza delle password, integrità dell'account, e rapporti sulla violazione dei dati per mantenere sicura la tua cassaforte."
+    "message": "Sicurezza delle password, integrità dell'account e rapporti sulla violazione di dati per mantenere sicuro il tuo portachiavi."
   },
   "ppremiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
@@ -859,7 +859,7 @@
     "message": "URL del Server API"
   },
   "webVaultUrl": {
-    "message": "URL della Cassaforte Online"
+    "message": "URL del Portachiavi Online"
   },
   "identityUrl": {
     "message": "URL del Server di Identità"
@@ -883,10 +883,10 @@
     "message": "Al momento questa funzionalità è sperimentale. Usala tuo rischio e pericolo."
   },
   "commandOpenPopup": {
-    "message": "Apri popup cassaforte"
+    "message": "Apri popup portachiavi"
   },
   "commandOpenSidebar": {
-    "message": "Apri cassaforte nella barra laterale"
+    "message": "Apri il portachiavi nella barra laterale"
   },
   "commandAutofillDesc": {
     "message": "Auto-completa con l'ultimo login utilizzato sul sito corrente."
@@ -931,7 +931,7 @@
     "message": "Disabilita Icone dei Siti Web"
   },
   "disableFaviconDesc": {
-    "message": "Le icone del Sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login nella tua Cassaforte."
+    "message": "Le icone del sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login nella tuo portachiavi."
   },
   "cardholderName": {
     "message": "Titolare della Carta"
@@ -1193,7 +1193,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostando le opzioni di blocco su \"Mai\", la chiave di crittografia del caveau verrà archiviata sul tuo dispositivo. Se utilizzi questa opzione, è necessario assicurarsi di mantenere il dispositivo adeguatamente protetto."
+    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostando le opzioni di blocco su \"Mai\" la chiave di crittografia del tuo portachiavi verrà salvata sul tuo dispositivo. Se scegli questa opzione è importante che tu sia sicuro di mantenere il tuo dispositivo adeguatamente protetto."
   },
   "noOrganizationsList": {
     "message": "Non appartieni ad alcuna organizzazione. Le organizzazioni ti consentono di condividere oggetti in modo sicuro con altri utenti."
@@ -1245,7 +1245,7 @@
     "message": "Verifica PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare."
+    "message": "Il tuo portachiavi è bloccato. Inserisci il tuo codice PIN per continuare."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio del browser"
@@ -1263,7 +1263,7 @@
     "message": "Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore."
   },
   "vaultTimeoutAction": {
-    "message": "Azione Timeout Cassaforte"
+    "message": "Azione Timeout Portachiavi"
   },
   "lock": {
     "message": "Blocca",
@@ -1295,7 +1295,7 @@
     "message": "Elemento Ripristinato"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "La disconnessione rimuove tutti gli accessi alla tua cassaforte e richiede l'autenticazione online dopo il periodo di timeout. Sei sicuro di voler utilizzare questa impostazione?"
+    "message": "La disconnessione rimuove tutti gli accessi al tuo portachiavi e richiede l'autenticazione online dopo il periodo di timeout. Sei sicuro di voler utilizzare questa impostazione?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Conferma Azione di Timeout"

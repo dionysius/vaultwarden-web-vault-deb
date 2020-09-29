@@ -118,39 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>बिटवार्डन - नि: शुल्क पासवर्ड प्रबंधक</value>
+    <value>Bitwarden – Free Password Manager</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>आपके सभी उपकरणों के लिए एक सुरक्षित और नि: शुल्क पासवर्ड प्रबंधक</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
+    <value>Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
 
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
+Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites, hackers can easily access your email, bank, and other important accounts.
 
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? bitwarden makes it easy for you to create, store, and access your passwords.
+Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? Bitwarden makes it easy for you to create, store, and access your passwords.
 
-bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.</value>
+Bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at Bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.
+
+Bitwarden is 100% open source software. The source code for Bitwarden is hosted on GitHub and everyone is free to review, audit, and contribute to the Bitwarden codebase.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>आपके सभी उपकरणों के लिए एक सुरक्षित और नि: शुल्क पासवर्ड प्रबंधक</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>अनेक उपकरणों से अपने तिजोरी सिंक और एक्सेस करें</value>
+    <value>Sync and access your vault from multiple devices</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>एक सुरक्षित तिजोरी से अपने सभी लॉगिन डाटा और पासवर्ड प्रबंधित करें</value>
+    <value>Manage all your logins and passwords from a secure vault</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>आप गए हुए किसी भी वेबसाइट में अपने लॉगिन क्रेडेंशियल को जल्दी से ऑटोमैटिक भरें </value>
+    <value>Quickly auto-fill your login credentials into any website that you visit</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>आपका तिजोरी भी राइट-क्लिक मेनू  मे सुलभ और आसानी से उपलब्ध है</value>
+    <value>Your vault is also conveniently accessible from the right-click menu</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>स्वचालित रूप से मजबूत, यादृच्छिक, सुरक्षित पासवर्ड उत्पन्न करते हैं</value>
+    <value>Automatically generate strong, random, and secure passwords</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>AES-256 बिट एन्क्रिप्शन का उपयोग करके आपकी जानकारी सुरक्षित रूप से प्रबंधित की जाती है</value>
+    <value>Your information is managed securely using AES-256 bit encryption</value>
   </data>
 </root>

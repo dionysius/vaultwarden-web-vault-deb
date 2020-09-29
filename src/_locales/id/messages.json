@@ -20,7 +20,7 @@
     "message": "Masuk"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Sistem Masuk Tunggal Perusahaan"
   },
   "cancel": {
     "message": "Batal"
@@ -95,7 +95,7 @@
     "message": "Brankas terkunci."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Berangkas terkunci."
   },
   "autoFillInfo": {
     "message": "Tidak ada info masuk yang tersedia untuk mengisi secara otomatis tab peramban saat ini."
@@ -218,11 +218,11 @@
     "message": "Pemisah kata"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Gunakan Huruf Besar",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Sertakan Digit"
   },
   "minNumbers": {
     "message": "Angka Minimum"
@@ -312,7 +312,7 @@
     "message": "Membuka kunci"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Telah log in sebagai $EMAIL$ di $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -328,7 +328,7 @@
     "message": "Sandi utama tidak valid"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Batas Waktu Brankas"
   },
   "lockNow": {
     "message": "Kunci Sekarang"
@@ -576,11 +576,11 @@
     "message": "Pilihan menu konteks menyediakan akses cepat ke pembuat sandi dan info masuk untuk situs web di tab Anda saat ini."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Deteksi Kecocokan URI Default",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Pilih cara default penanganan pencocokan URI untuk login saat melakukan tindakan seperti pengisian otomatis."
   },
   "theme": {
     "message": "Tema"
@@ -883,10 +883,10 @@
     "message": "Saat ini Anda pada lingkungan sementara. Gunakanlah dengan resiko yang ditanggung sendiri."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Buka popup vault"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Buka lemari besi di sidebar"
   },
   "commandAutofillDesc": {
     "message": "Isi otomatis info masuk yang digunakan terakhir untuk situs ini."
@@ -910,7 +910,7 @@
     "message": "Kolom Ubahsuai Baru"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Tarik untuk mengurutkan"
   },
   "cfTypeText": {
     "message": "Teks"
@@ -925,7 +925,7 @@
     "message": "Dengan meng-klik jendela luar pop-up untuk mengecek email Anda yang digunakan sebagai kode verifikasi ini akan mengakibatkan jendela pop-up tertutup. Apakah Anda ingin membuka jendela pop-up di window baru sehingga tidak tertutup?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Browser ini tidak dapat memproses permintaan U2F di jendela popup ini. Apakah Anda ingin membuka popup ini di jendela baru sehingga Anda dapat masuk menggunakan U2F?"
   },
   "disableFavicon": {
     "message": "Nonaktifkan Ikon Situs Web"
@@ -1158,11 +1158,11 @@
     "message": "Ubah Opsi"
   },
   "toggleCurrentUris": {
-    "message": "Toggle Current URIs",
+    "message": "Alihkan URI Saat Ini",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "URI saat ini",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1251,72 +1251,72 @@
     "message": "Kunci dengan kata sandi utama saat browser dihidupkan ulang"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Anda harus memilih setidaknya satu koleksi."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Item Klon"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klon"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Satu atau lebih kebijakan organisasi mempengaruhi pengaturan generator anda."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Aksi Batas Waktu Penyimpanan"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Kunci",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Sampah",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Cari di sampah"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Hapus Item Secara Permanen"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Apakah Anda yakin ingin menghapus item ini secara permanen?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Hapus Item Secara Permanen"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Pulihkan Item"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Apakah Anda yakin ingin memulihkan item ini?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Item Yang Dipulihkan"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Keluar akan menghapus semua akses ke lemari besi Anda dan memerlukan otentikasi online setelah periode batas waktu. Anda yakin ingin menggunakan pengaturan ini?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Konfirmasi Aksi Batas Waktu"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Isi otomatis dan simpan"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Item yang Diisi Otomatis dan URI Tersimpan"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Item Isi Otomatis"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Atur Kata Sandi Utama"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Satu atau lebih kebijakan organisasi memerlukan kata sandi utama Anda untuk memenuhi persyaratan berikut:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Skor kompleksitas minimum $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1325,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Panjang minimum $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1334,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Berisi satu atau lebih karakter huruf besar"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Berisi satu atau lebih karakter huruf kecil"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Berisi satu atau lebih angka"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Berisi satu atau lebih karakter khusus berikut $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1352,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Kata sandi utama Anda yang baru tidak memenuhi persyaratan kebijakan."
   }
 }

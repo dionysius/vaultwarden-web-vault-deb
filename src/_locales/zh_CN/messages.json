@@ -501,7 +501,7 @@
     "message": "您确定要删除此项目吗?"
   },
   "deletedItem": {
-    "message": "项目已删除"
+    "message": "项目已发送到回收站"
   },
   "overwritePassword": {
     "message": "覆盖密码"
@@ -519,7 +519,7 @@
     "message": "搜索类型"
   },
   "noneFolder": {
-    "message": "没有文件夹",
+    "message": "默认文件夹",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
@@ -529,16 +529,16 @@
     "message": "当您第一次登录时，\"添加登录提醒\" 会自动提醒您在密码库里保存新的登录信息。"
   },
   "dontShowCardsCurrentTab": {
-    "message": "在标签页上不显示卡片"
+    "message": "标签页上不显示卡片"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "密码库中的卡片项目列在 \"当前标签\" 页面上，以便于自动填充访问。"
+    "message": "密码库中的卡片项目会在 \"当前标签\" 页面列出，以便于自动填写。"
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "在标签页上不显示身份"
+    "message": "标签页上不显示身份"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "密码库中的身份项目列在 \"当前标签\" 页面上，以便于自动填充访问。"
+    "message": "密码库中的身份项目会在 \"当前标签\" 页面列出，以便于自动填写。"
   },
   "clearClipboard": {
     "message": "清除剪贴板",
@@ -781,7 +781,7 @@
     "message": "再次发送验证码电子邮件"
   },
   "useAnotherTwoStepMethod": {
-    "message": "使用其他两步登录方法"
+    "message": "使用其他两步登录方式"
   },
   "insertYubiKey": {
     "message": "将您的 YubiKey 插入计算机的 USB 端口，然后按下按钮。"

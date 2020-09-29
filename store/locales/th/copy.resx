@@ -121,34 +121,36 @@
     <value>Bitwarden – โปรแกรมจัดการรหัสผ่านฟรี</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>โปรแกรมจัดการรหัสผ่านที่ปลอดภัย และฟรีสำหรับทุกอุปกรณ์ของคุณ</value>
+    <value>โปรแกรมจัดการรหัสผ่านที่ปลอดภัยและฟรี สำหรับอุปกรณ์ทั้งหมดของคุณ</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
+    <value>Bitwarden เป็นวิธีที่ง่ายสุดและปลอดภัยที่สุดในการจัดเก็บล็อกอินและรหัสผ่านทั้งหมดของคุณ และยังช่วยซิงก์ข้อมูลระหว่างอุปกรณ์ทั้งหมดของคุณอีกด้วย
 
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
+การขโมยรหัสผ่านเป็นปัญหาที่ร้ายแรง เว็บไซต์และแอปต่างๆ ที่คุณใช้งานนั้นถูกโจมตีอยู่ตลอดทุกวัน เมื่อระบบรักษาความปลอดภัยถูกเจาะอาจทำให้รหัสผ่านของคุณถูกขโมย หากคุณใช้รหัสผ่านเดียวกันในหลายแอปและเว็บไซต์จะทำให้แฮกเกอร์สามารถเข้าถึงบัญชีอีเมล บัญชีธนาคาร และบัญชีสำคัญต่างๆ ของคุณอย่างง่ายดาย
 
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? bitwarden makes it easy for you to create, store, and access your passwords.
+ผู้เชี่ยวชาญด้านความปลอดภัยแนะนำว่า คุณควรใช้รหัสผ่านที่สร้างขึ้นแบบสุ่มและไม่ซ้ำกันในทุกๆ บัญชีที่คุณสร้างขึ้น แล้วคุณจะจัดการกับรหัสผ่านเหล่านั้นอย่างไรดีล่ะ? Bitwarden เป็นเครื่องมือที่ช่วยให้คุณสร้าง จัดเก็บ และเข้าถึงรหัสผ่านของคุณได้โดยง่าย
 
-bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.</value>
+Bitwarden จัดเก็บข้อมูลล็อกอินทั้งหมดของคุณในตู้นิรภัยที่มีการเข้ารหัส และซิงก์ไปยังอุปกรณ์ทั้งหมดของคุณ ข้อมูลเหล่านั้นมีการเข้ารหัสก่อนที่จะถูกส่งออกจากอุปกรณ์ของคุณ จึงมีเพียงคุณคนเดียวที่จะเข้าถึงข้อมูลได้ แม้แต่ทีมงาน Bitwarden ก็ไม่สามารถเปิดอ่านข้อมูลของคุณได้ ถึงแม้เราจะอยากทำก็ทำไม่ได้ ข้อมูลของคุณจะถูกเข้ารหัสด้วยอัลกอริทึม AES 256 บิต, แฮชแบบเติมค่าสุ่ม, และ PBKDF2 SHA-256.
+
+Bitwarden เป็นซอฟต์แวร์แบบเปิด 100% ซอร์สโค้ดของ Bitwarden ถูกจัดเก็บอยู่บน GitHub และทุกคนสามารถตรวจทาน, ตรวจสอบ, และร่วมเขียนโค้ด Bitwarden ได้โดยเสรี</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>โปรแกรมจัดการรหัสผ่านที่ปลอดภัย และฟรีสำหรับทุกอุปกรณ์ของคุณ</value>
+    <value>โปรแกรมจัดการรหัสผ่านที่ปลอดภัยและฟรี สำหรับอุปกรณ์ทั้งหมดของคุณ</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>ซิงค์และเข้าถึงตู้นิรภัยของคุณจากหลายอุปกรณ์</value>
+    <value>ซิงก์และเข้าถึงตู้นิรภัยของคุณจากหลายอุปกรณ์</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
     <value>จัดการล็อกอินและรหัสผ่านทั้งหมดของคุณจากตู้นิรภัยที่ปลอดภัย</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>กรอกข้อมูลล็อกอินโดยอัตโนมัติบนทุกเว็บไซต์ที่คุณใช้งานได้อย่างรวดเร็ว</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Your vault is also conveniently accessible from the right-click menu</value>
+    <value>ตู้นิรภัยของคุณยังสามารถเข้าถึงได้โดยสะดวกผ่านเมนูคลิกขวา</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>สร้างรหัสผ่านที่แข็งแกร่ง สุ่ม และปลอดภัยโดยอัตโนมัติ</value>
+    <value>สร้างรหัสผ่านแบบสุ่มที่แข็งแกร่งและปลอดภัยโดยอัตโนมัติ</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
     <value>ข้อมูลของคุณได้รับการจัดการอย่างปลอดภัยโดยใช้การเข้ารหัส AES 256 บิต</value>
