@@ -1,5 +1,6 @@
 import { BrowserApi } from '../browser/browserApi';
 import { SafariApp } from '../browser/safariApp';
+import { NativeMessagingBackground } from '../background/nativeMessaging.background';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
@@ -18,7 +19,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     private analyticsIdCache: string = null;
 
     constructor(private messagingService: MessagingService,
-        private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void) { }
+        private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void,
+        private nativeMessagingBackground: NativeMessagingBackground) { }
 
     getDevice(): DeviceType {
         if (this.deviceCache) {
@@ -288,13 +290,18 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     supportsBiometric() {
-        return Promise.resolve(false);
+        return Promise.resolve(true);
     }
 
-    authenticateBiometric() {
-        return Promise.resolve(false);
-    }
+    async authenticateBiometric() {
+        const responsePromise = this.nativeMessagingBackground.await();
+        this.nativeMessagingBackground.send({'command': 'biometricUnlock'});
 
+        const response = await responsePromise;
+
+        return response.response == 'unlocked';
+    }
+    
     sidebarViewName(): string {
         if ((window as any).chrome.sidebarAction && this.isFirefox()) {
             return 'sidebar';

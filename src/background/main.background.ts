@@ -82,6 +82,7 @@ import I18nService from '../services/i18n.service';
 import { PopupUtilsService } from '../popup/services/popup-utils.service';
 
 import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
+import { NativeMessagingBackground } from './nativeMessaging.background';
 
 export default class MainBackground {
     messagingService: MessagingServiceAbstraction;
@@ -137,8 +138,11 @@ export default class MainBackground {
     private menuOptionsLoaded: any[] = [];
     private syncTimeout: any;
     private isSafari: boolean;
+    nativeMessagingBackground: NativeMessagingBackground;
 
     constructor() {
+        this.nativeMessagingBackground = new NativeMessagingBackground();
+
         // Services
         this.messagingService = new BrowserMessagingService();
         this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService,
@@ -146,7 +150,7 @@ export default class MainBackground {
                 if (this.systemService != null) {
                     this.systemService.clearClipboard(clipboardValue, clearMs);
                 }
-            });
+            }, this.nativeMessagingBackground);
         this.storageService = new BrowserStorageService(this.platformUtilsService);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window));

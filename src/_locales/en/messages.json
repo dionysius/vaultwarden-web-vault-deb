@@ -1247,6 +1247,12 @@
   "yourVaultIsLockedPinCode": {
     "message": "Your vault is locked. Verify your PIN code to continue."
   },
+  "unlockWithBiometric": {
+    "message": "Unlock with biometric"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting biometric confirmation from desktop application."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on browser restart"
   },

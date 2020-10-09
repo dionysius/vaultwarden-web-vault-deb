@@ -51,6 +51,7 @@ export class SettingsComponent implements OnInit {
     vaultTimeoutActions: any[];
     vaultTimeoutAction: string;
     pin: boolean = null;
+    biometric: boolean = null;
     previousVaultTimeout: number = null;
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
@@ -100,6 +101,7 @@ export class SettingsComponent implements OnInit {
 
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
+        this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
     }
 
     async saveVaultTimeout(newValue: number) {
@@ -202,6 +204,43 @@ export class SettingsComponent implements OnInit {
             await this.cryptoService.clearPinProtectedKey();
             await this.vaultTimeoutService.clear();
         }
+    }
+
+    async updateBiometric() {
+        const current = this.biometric;
+        if (this.biometric) {
+            this.biometric = false;
+        } else {
+            const div = document.createElement('div');
+            div.innerHTML = `<div class="swal2-text">${this.i18nService.t('awaitDesktop')}</div>`;
+
+            const submitted = Swal.fire({
+                heightAuto: false,
+                buttonsStyling: false,
+                html: div,
+                showCancelButton: true,
+                cancelButtonText: this.i18nService.t('cancel'),
+                showConfirmButton: false,
+            });
+
+            // TODO: Show waiting message
+            this.biometric = await this.platformUtilsService.authenticateBiometric();
+            Swal.close();
+
+            if (this.biometric == false) {
+                this.platformUtilsService.showToast("error", "Unable to enable biometrics", "Ensure the desktop application is running, and browser integration is enabled.");
+            }
+        }
+        if (this.biometric === current) {
+            return;
+        }
+        if (this.biometric) {
+            await this.storageService.save(ConstantsService.biometricUnlockKey, true);
+        } else {
+            await this.storageService.remove(ConstantsService.biometricUnlockKey);
+        }
+        this.vaultTimeoutService.biometricLocked = false;
+        await this.cryptoService.toggleKey();
     }
 
     async lock() {

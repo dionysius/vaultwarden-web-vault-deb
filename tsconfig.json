@@ -10,7 +10,9 @@
     "sourceMap": true,
     "types": [
       "jasmine",
-      "sweetalert2"
+      "sweetalert2",
+      "@types/chrome",
+      "@types/firefox-webext-browser"
     ],
     "baseUrl": ".",
     "paths": {
