@@ -234,7 +234,7 @@ export default class AutofillService implements AutofillServiceInterface {
             cipher = await this.cipherService.getLastUsedForUrl(tab.url);
         }
 
-        return await this.doAutoFill({
+        const autoFillResponse = await this.doAutoFill({
             cipher: cipher,
             pageDetails: pageDetails,
             skipTotp: !fromCommand,
@@ -244,6 +244,13 @@ export default class AutofillService implements AutofillServiceInterface {
             onlyVisibleFields: !fromCommand,
             fillNewPassword: fromCommand,
         });
+
+        // Only update last used index if doAutoFill didn't throw an exception
+        if (fromCommand) {
+            this.cipherService.updateLastUsedIndexForUrl(tab.url);
+        }
+
+        return autoFillResponse;
     }
 
     // Helpers
