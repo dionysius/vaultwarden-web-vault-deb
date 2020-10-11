@@ -299,9 +299,9 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
         const response = await responsePromise;
 
-        return response.response == 'unlocked';
+        return response.response === 'unlocked';
     }
-    
+
     sidebarViewName(): string {
         if ((window as any).chrome.sidebarAction && this.isFirefox()) {
             return 'sidebar';

@@ -1,4 +1,4 @@
-import { BrowserApi } from "../browser/browserApi";
+import { BrowserApi } from '../browser/browserApi';
 
 export class NativeMessagingBackground {
     private connected = false;
@@ -7,19 +7,19 @@ export class NativeMessagingBackground {
     private resolver: any = null;
 
     connect() {
-        this.port = BrowserApi.connectNative("com.8bit.bitwarden");
+        this.port = BrowserApi.connectNative('com.8bit.bitwarden');
 
         this.connected = true;
         this.port.onMessage.addListener((msg: any) => {
             if (this.resolver) {
                 this.resolver(msg);
             } else {
+                // tslint:disable-next-line
                 console.error('NO RESOLVER');
             }
         });
         this.port.onDisconnect.addListener(() => {
             this.connected = false;
-            console.log('Disconnected');
         });
     }
 

@@ -138,7 +138,7 @@ export default class MainBackground {
     private menuOptionsLoaded: any[] = [];
     private syncTimeout: any;
     private isSafari: boolean;
-    nativeMessagingBackground: NativeMessagingBackground;
+    private nativeMessagingBackground: NativeMessagingBackground;
 
     constructor() {
         this.nativeMessagingBackground = new NativeMessagingBackground();

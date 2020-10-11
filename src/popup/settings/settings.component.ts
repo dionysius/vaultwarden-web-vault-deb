@@ -227,8 +227,8 @@ export class SettingsComponent implements OnInit {
             this.biometric = await this.platformUtilsService.authenticateBiometric();
             Swal.close();
 
-            if (this.biometric == false) {
-                this.platformUtilsService.showToast("error", "Unable to enable biometrics", "Ensure the desktop application is running, and browser integration is enabled.");
+            if (this.biometric === false) {
+                this.platformUtilsService.showToast('error', 'Unable to enable biometrics', 'Ensure the desktop application is running, and browser integration is enabled.');
             }
         }
         if (this.biometric === current) {
