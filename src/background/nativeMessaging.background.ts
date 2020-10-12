@@ -25,13 +25,16 @@ export class NativeMessagingBackground {
         });
     }
 
-    send(message: object) {
+    async send(message: any) {
         // If not connected, try to connect
         if (!this.connected) {
             this.connect();
         }
 
-        this.port.postMessage(message);
+        message.timestamp = Date.now();
+
+        const encrypted = await this.cryptoService.encrypt(JSON.stringify(message));
+        this.port.postMessage(encrypted);
     }
 
     await(): Promise<any> {
@@ -40,14 +43,21 @@ export class NativeMessagingBackground {
         });
     }
 
-    private async onMessage(msg: any) {
-        switch(msg.command) {
+    private async onMessage(rawMessage: any) {
+        const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage));
+
+        if (Math.abs(message.timestamp - Date.now()) > 10*1000) {
+            console.error("MESSAGE IS TO OLD");
+            return;
+        }
+
+        switch(message.command) {
             case 'biometricUnlock': {
                 await this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
 
                 const enabled = await this.storageService.get(ConstantsService.biometricUnlockKey);
                 if (enabled === null || enabled === false) {
-                    if (msg.response === 'unlocked') {
+                    if (message.response === 'unlocked') {
                         await this.storageService.save(ConstantsService.biometricUnlockKey, true);
                     }
     
@@ -62,7 +72,7 @@ export class NativeMessagingBackground {
         }
 
         if (this.resolver) {
-            this.resolver(msg);
+            this.resolver(message);
         }
     }
 }
