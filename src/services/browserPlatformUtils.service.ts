@@ -20,7 +20,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
     constructor(private messagingService: MessagingService,
         private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void,
-        private nativeMessagingBackground: NativeMessagingBackground) { }
+        private biometricCallback: () => Promise<boolean>) { }
 
     getDevice(): DeviceType {
         if (this.deviceCache) {
@@ -293,13 +293,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return Promise.resolve(true);
     }
 
-    async authenticateBiometric() {
-        const responsePromise = this.nativeMessagingBackground.await();
-        this.nativeMessagingBackground.send({'command': 'biometricUnlock'});
-
-        const response = await responsePromise;
-
-        return response.response === 'unlocked';
+    authenticateBiometric() {
+        return this.biometricCallback();
     }
 
     sidebarViewName(): string {

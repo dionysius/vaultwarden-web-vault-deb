@@ -1251,7 +1251,10 @@
     "message": "Unlock with biometric"
   },
   "awaitDesktop": {
-    "message": "Awaiting biometric confirmation from desktop application."
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden desktop application to enable biometrics for browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on browser restart"

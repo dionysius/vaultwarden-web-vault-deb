@@ -22,6 +22,7 @@ import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 import { BrowserApi } from '../browser/browserApi';
 
 import MainBackground from './main.background';
+import { NativeMessagingBackground } from './nativeMessaging.background';
 
 import { Analytics } from 'jslib/misc';
 import { Utils } from 'jslib/misc/utils';

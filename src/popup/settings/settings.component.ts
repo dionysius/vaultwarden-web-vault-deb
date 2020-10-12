@@ -51,7 +51,7 @@ export class SettingsComponent implements OnInit {
     vaultTimeoutActions: any[];
     vaultTimeoutAction: string;
     pin: boolean = null;
-    biometric: boolean = null;
+    biometric: boolean = false;
     previousVaultTimeout: number = null;
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
@@ -207,40 +207,45 @@ export class SettingsComponent implements OnInit {
     }
 
     async updateBiometric() {
-        const current = this.biometric;
         if (this.biometric) {
             this.biometric = false;
+            // TODO: Remove biometric stuff
+            await this.storageService.remove(ConstantsService.biometricUnlockKey);
+            this.vaultTimeoutService.biometricLocked = false;
         } else {
-            const div = document.createElement('div');
-            div.innerHTML = `<div class="swal2-text">${this.i18nService.t('awaitDesktop')}</div>`;
-
             const submitted = Swal.fire({
                 heightAuto: false,
                 buttonsStyling: false,
-                html: div,
+                title: this.i18nService.t('awaitDesktop'),
+                text: this.i18nService.t('awaitDesktopDesc'),
+                icon: 'info',
+                iconHtml: '<i class="swal-custom-icon fa fa-info-circle text-info"></i>',
                 showCancelButton: true,
                 cancelButtonText: this.i18nService.t('cancel'),
                 showConfirmButton: false,
+                allowOutsideClick: false,
             });
 
-            // TODO: Show waiting message
-            this.biometric = await this.platformUtilsService.authenticateBiometric();
-            Swal.close();
+            await this.storageService.save(ConstantsService.biometricAwaitingAcceptance, true);
+            await this.cryptoService.toggleKey();
 
-            if (this.biometric === false) {
-                this.platformUtilsService.showToast('error', 'Unable to enable biometrics', 'Ensure the desktop application is running, and browser integration is enabled.');
-            }
+            await Promise.race([
+                submitted.then((result) => {
+                    if (result.dismiss === Swal.DismissReason.cancel) {
+                        this.biometric = false;
+                        this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
+                    }
+                }),
+                this.platformUtilsService.authenticateBiometric().then((result) => {
+                    this.biometric = result;
+
+                    Swal.close();
+                    if (this.biometric === false) {
+                        this.platformUtilsService.showToast('error', 'Unable to enable biometrics', 'Ensure the desktop application is running, and browser integration is enabled.');
+                    }
+                })
+            ]);
         }
-        if (this.biometric === current) {
-            return;
-        }
-        if (this.biometric) {
-            await this.storageService.save(ConstantsService.biometricUnlockKey, true);
-        } else {
-            await this.storageService.remove(ConstantsService.biometricUnlockKey);
-        }
-        this.vaultTimeoutService.biometricLocked = false;
-        await this.cryptoService.toggleKey();
     }
 
     async lock() {

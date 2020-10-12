@@ -141,8 +141,6 @@ export default class MainBackground {
     private nativeMessagingBackground: NativeMessagingBackground;
 
     constructor() {
-        this.nativeMessagingBackground = new NativeMessagingBackground();
-
         // Services
         this.messagingService = new BrowserMessagingService();
         this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService,
@@ -150,7 +148,14 @@ export default class MainBackground {
                 if (this.systemService != null) {
                     this.systemService.clearClipboard(clipboardValue, clearMs);
                 }
-            }, this.nativeMessagingBackground);
+            },
+            () => {
+                if (this.nativeMessagingBackground != null) {
+                    const promise = this.nativeMessagingBackground.await();
+                    this.nativeMessagingBackground.send({command: 'biometricUnlock'})
+                    return promise.then((result) => result.response === 'unlocked');
+                }
+            });
         this.storageService = new BrowserStorageService(this.platformUtilsService);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
@@ -228,6 +233,7 @@ export default class MainBackground {
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
             this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService,
             this.environmentService);
+        this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.vaultTimeoutService, this.runtimeBackground);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics, this.vaultTimeoutService);
 
