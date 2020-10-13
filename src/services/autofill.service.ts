@@ -231,7 +231,13 @@ export default class AutofillService implements AutofillServiceInterface {
         if (fromCommand) {
             cipher = await this.cipherService.getNextCipherForUrl(tab.url);
         } else {
-            cipher = await this.cipherService.getLastUsedForUrl(tab.url);
+            const lastLaunchedCipher = await this.cipherService.getLastLaunchedForUrl(tab.url);
+            if (lastLaunchedCipher && Date.now().valueOf() - lastLaunchedCipher.localData?.lastLaunched?.valueOf() < 30000) {
+                cipher = lastLaunchedCipher;
+            }
+            else {
+                cipher = await this.cipherService.getLastUsedForUrl(tab.url);
+            }
         }
 
         const autoFillResponse = await this.doAutoFill({
