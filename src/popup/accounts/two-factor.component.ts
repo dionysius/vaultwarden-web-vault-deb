@@ -4,7 +4,10 @@ import {
     NgZone,
 } from '@angular/core';
 
-import { Router } from '@angular/router';
+import {
+    ActivatedRoute,
+    Router,
+} from '@angular/router';
 
 import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
 
@@ -38,9 +41,9 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         environmentService: EnvironmentService, private ngZone: NgZone,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private popupUtilsService: PopupUtilsService, stateService: StateService,
-        storageService: StorageService) {
+        storageService: StorageService, route: ActivatedRoute) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
-            stateService, storageService);
+            stateService, storageService, route);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
