@@ -1,19 +1,27 @@
 import { CryptoService, LogService, VaultTimeoutService } from 'jslib/abstractions';
+import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
+import { Utils } from 'jslib/misc/utils';
 import { ConstantsService } from 'jslib/services';
 import { BrowserApi } from '../browser/browserApi';
 import RuntimeBackground from './runtime.background';
 
 const MessageValidTimeout = 10 * 1000;
+const EncryptionAlgorithm = 'sha256';
 
 export class NativeMessagingBackground {
     private connected = false;
     private port: browser.runtime.Port | chrome.runtime.Port;
 
     private resolver: any = null;
+    publicKey: ArrayBuffer;
+    privateKey: ArrayBuffer;
+    private secureSetupResolve: any = null;
+    remotePublicKey: ArrayBufferLike;
 
     constructor(private storageService: StorageService, private cryptoService: CryptoService,
-        private vaultTimeoutService: VaultTimeoutService, private runtimeBackground: RuntimeBackground) {}
+        private cryptoFunctionService: CryptoFunctionService, private vaultTimeoutService: VaultTimeoutService,
+        private runtimeBackground: RuntimeBackground) {}
 
     connect() {
         this.port = BrowserApi.connectNative('com.8bit.bitwarden');
@@ -33,9 +41,13 @@ export class NativeMessagingBackground {
             this.connect();
         }
 
+        if (this.publicKey == null) {
+            await this.secureCommunication();
+        }
+
         message.timestamp = Date.now();
 
-        const encrypted = await this.cryptoService.encrypt(JSON.stringify(message));
+        const encrypted = await this.cryptoFunctionService.rsaEncrypt(Buffer.from(JSON.stringify(message)), this.remotePublicKey, EncryptionAlgorithm);
         this.port.postMessage(encrypted);
     }
 
@@ -55,7 +67,11 @@ export class NativeMessagingBackground {
         }
 
         switch (message.command) {
-            case 'biometricUnlock': {
+            case 'setupEncryption':
+                this.remotePublicKey = Utils.fromB64ToArray(message.publicKey).buffer;
+                this.secureSetupResolve();
+                break;
+            case 'biometricUnlock':
                 await this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
 
                 const enabled = await this.storageService.get(ConstantsService.biometricUnlockKey);
@@ -71,7 +87,7 @@ export class NativeMessagingBackground {
                     this.runtimeBackground.processMessage({command: 'unlocked'}, null, null);
                     this.vaultTimeoutService.biometricLocked = false;
                 }
-            }
+                break;
             default:
                 // tslint:disable-next-line
                 console.error('NativeMessage, got unknown command.');
@@ -80,5 +96,25 @@ export class NativeMessagingBackground {
         if (this.resolver) {
             this.resolver(message);
         }
+    }
+
+    private async secureCommunication() {
+        // Using crypto function service directly since we cannot encrypt the private key as
+        // master key might not be available
+        [this.publicKey, this.privateKey] = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
+
+        this.sendUnencrypted({command: 'setupEncryption', publicKey: Utils.fromBufferToB64(this.publicKey)});
+
+        return new Promise((resolve, reject) => this.secureSetupResolve = resolve);
+    }
+
+    private async sendUnencrypted(message: any) {
+        if (!this.connected) {
+            this.connect();
+        }
+
+        message.timestamp = Date.now();
+
+        this.port.postMessage(message);
     }
 }
