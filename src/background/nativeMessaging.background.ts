@@ -1,8 +1,10 @@
-import { CryptoService, VaultTimeoutService } from 'jslib/abstractions';
+import { CryptoService, LogService, VaultTimeoutService } from 'jslib/abstractions';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { ConstantsService } from 'jslib/services';
 import { BrowserApi } from '../browser/browserApi';
 import RuntimeBackground from './runtime.background';
+
+const MessageValidTimeout = 10 * 1000;
 
 export class NativeMessagingBackground {
     private connected = false;
@@ -19,7 +21,7 @@ export class NativeMessagingBackground {
         this.connected = true;
 
         this.port.onMessage.addListener((msg) => this.onMessage(msg));
-        
+
         this.port.onDisconnect.addListener(() => {
             this.connected = false;
         });
@@ -46,12 +48,13 @@ export class NativeMessagingBackground {
     private async onMessage(rawMessage: any) {
         const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage));
 
-        if (Math.abs(message.timestamp - Date.now()) > 10*1000) {
-            console.error("MESSAGE IS TO OLD");
+        if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
+            // tslint:disable-next-line
+            console.error('NativeMessage is to old, ignoring.');
             return;
         }
 
-        switch(message.command) {
+        switch (message.command) {
             case 'biometricUnlock': {
                 await this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
 
@@ -60,7 +63,7 @@ export class NativeMessagingBackground {
                     if (message.response === 'unlocked') {
                         await this.storageService.save(ConstantsService.biometricUnlockKey, true);
                     }
-    
+
                     await this.cryptoService.toggleKey();
                 }
 
@@ -69,6 +72,9 @@ export class NativeMessagingBackground {
                     this.vaultTimeoutService.biometricLocked = false;
                 }
             }
+            default:
+                // tslint:disable-next-line
+                console.error('NativeMessage, got unknown command.');
         }
 
         if (this.resolver) {
