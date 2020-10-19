@@ -2,22 +2,23 @@ import { CryptoService, LogService, VaultTimeoutService } from 'jslib/abstractio
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { Utils } from 'jslib/misc/utils';
+import { SymmetricCryptoKey } from 'jslib/models/domain';
 import { ConstantsService } from 'jslib/services';
 import { BrowserApi } from '../browser/browserApi';
 import RuntimeBackground from './runtime.background';
 
 const MessageValidTimeout = 10 * 1000;
-const EncryptionAlgorithm = 'sha256';
+const EncryptionAlgorithm = 'sha1';
 
 export class NativeMessagingBackground {
     private connected = false;
     private port: browser.runtime.Port | chrome.runtime.Port;
 
     private resolver: any = null;
-    publicKey: ArrayBuffer;
-    privateKey: ArrayBuffer;
+    private publicKey: ArrayBuffer;
+    private privateKey: ArrayBuffer = null;
     private secureSetupResolve: any = null;
-    remotePublicKey: ArrayBufferLike;
+    private sharedSecret: SymmetricCryptoKey;
 
     constructor(private storageService: StorageService, private cryptoService: CryptoService,
         private cryptoFunctionService: CryptoFunctionService, private vaultTimeoutService: VaultTimeoutService,
@@ -41,13 +42,13 @@ export class NativeMessagingBackground {
             this.connect();
         }
 
-        if (this.publicKey == null) {
+        if (this.sharedSecret == null) {
             await this.secureCommunication();
         }
 
         message.timestamp = Date.now();
 
-        const encrypted = await this.cryptoFunctionService.rsaEncrypt(Buffer.from(JSON.stringify(message)), this.remotePublicKey, EncryptionAlgorithm);
+        const encrypted = await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecret);
         this.port.postMessage(encrypted);
     }
 
@@ -58,7 +59,15 @@ export class NativeMessagingBackground {
     }
 
     private async onMessage(rawMessage: any) {
-        const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage));
+        if (rawMessage.command === 'setupEncryption') {
+            const encrypted = Utils.fromB64ToArray(rawMessage.sharedSecret);
+            const decrypted = await this.cryptoFunctionService.rsaDecrypt(encrypted.buffer, this.privateKey, EncryptionAlgorithm);
+
+            this.sharedSecret = new SymmetricCryptoKey(decrypted);
+            this.secureSetupResolve();
+            return;
+        }
+        const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecret));
 
         if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
             // tslint:disable-next-line
@@ -67,10 +76,6 @@ export class NativeMessagingBackground {
         }
 
         switch (message.command) {
-            case 'setupEncryption':
-                this.remotePublicKey = Utils.fromB64ToArray(message.publicKey).buffer;
-                this.secureSetupResolve();
-                break;
             case 'biometricUnlock':
                 await this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
 
