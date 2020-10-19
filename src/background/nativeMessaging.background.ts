@@ -94,8 +94,9 @@ export class NativeMessagingBackground {
                 }
 
                 if (this.vaultTimeoutService.biometricLocked) {
-                    this.runtimeBackground.processMessage({command: 'unlocked'}, null, null);
+                    this.cryptoService.setKey(new SymmetricCryptoKey(Utils.fromB64ToArray(message.keyB64).buffer));
                     this.vaultTimeoutService.biometricLocked = false;
+                    this.runtimeBackground.processMessage({command: 'unlocked'}, null, null);
                 }
                 break;
             default:
