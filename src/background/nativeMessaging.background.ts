@@ -1,4 +1,6 @@
-import { CryptoService, LogService, VaultTimeoutService } from 'jslib/abstractions';
+import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { Utils } from 'jslib/misc/utils';
@@ -6,6 +8,8 @@ import { SymmetricCryptoKey } from 'jslib/models/domain';
 import { ConstantsService } from 'jslib/services';
 import { BrowserApi } from '../browser/browserApi';
 import RuntimeBackground from './runtime.background';
+import { UserService } from 'jslib/abstractions/user.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = 'sha1';
@@ -22,7 +26,8 @@ export class NativeMessagingBackground {
 
     constructor(private storageService: StorageService, private cryptoService: CryptoService,
         private cryptoFunctionService: CryptoFunctionService, private vaultTimeoutService: VaultTimeoutService,
-        private runtimeBackground: RuntimeBackground) {}
+        private runtimeBackground: RuntimeBackground, private i18nService: I18nService, private userService: UserService,
+        private messagingService: MessagingService) {}
 
     connect() {
         this.port = BrowserApi.connectNative('com.8bit.bitwarden');
@@ -109,6 +114,14 @@ export class NativeMessagingBackground {
         [this.publicKey, this.privateKey] = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
 
         this.sendUnencrypted({command: 'setupEncryption', publicKey: Utils.fromBufferToB64(this.publicKey)});
+        const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), this.publicKey)).join(' ');
+
+        this.messagingService.send('showDialog', {
+            html: `${this.i18nService.t('desktopIntegrationVerificationText')}<br><br><strong>${fingerprint}</strong>.`,
+            title: this.i18nService.t('desktopSyncVerificationTitle'),
+            confirmText: this.i18nService.t('ok'),
+            type: 'warning',
+        });
 
         return new Promise((resolve, reject) => this.secureSetupResolve = resolve);
     }
