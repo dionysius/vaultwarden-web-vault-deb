@@ -68,7 +68,8 @@ export class NativeMessagingBackground {
             });
 
             this.port.onDisconnect.addListener(() => {
-                if (BrowserApi.runtimeLastError().message === 'Specified native messaging host not found.') {
+                const error = BrowserApi.runtimeLastError().message;
+                if (error === 'Specified native messaging host not found.' || error === 'Access to the specified native messaging host is forbidden.') {
                     this.messagingService.send('showDialog', {
                         text: this.i18nService.t('desktopIntegrationDisabledDesc'),
                         title: this.i18nService.t('desktopIntegrationDisabledTitle'),
