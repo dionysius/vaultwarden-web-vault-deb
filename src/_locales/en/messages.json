@@ -1371,5 +1371,17 @@
   },
   "desktopIntegrationVerificationText": {
     "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop Application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop Application"
+  },
+  "startDesktopDesc": {
+    "message": "The bitwarden desktop application needs to be started before this function can be used."
   }
 }

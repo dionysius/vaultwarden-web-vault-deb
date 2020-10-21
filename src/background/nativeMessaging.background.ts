@@ -16,6 +16,7 @@ const EncryptionAlgorithm = 'sha1';
 
 export class NativeMessagingBackground {
     private connected = false;
+    private connecting: boolean;
     private port: browser.runtime.Port | chrome.runtime.Port;
 
     private resolver: any = null;
@@ -29,22 +30,54 @@ export class NativeMessagingBackground {
         private runtimeBackground: RuntimeBackground, private i18nService: I18nService, private userService: UserService,
         private messagingService: MessagingService) {}
 
-    connect() {
-        this.port = BrowserApi.connectNative('com.8bit.bitwarden');
+    async connect() {
+        return new Promise((resolve, reject) => {
+            this.port = BrowserApi.connectNative('com.8bit.bitwarden');
 
-        this.connected = true;
+            this.connecting = true;
 
-        this.port.onMessage.addListener((msg) => this.onMessage(msg));
+            this.port.onMessage.addListener((message: any) => {
+                if (message.command === 'connected') {
+                    this.connected = true;
+                    this.connecting = false;
+                    resolve();
+                } else if (message.command === 'disconnected') {
+                    if (this.connecting) {
+                        this.messagingService.send('showDialog', {
+                            text: this.i18nService.t('startDesktopDesc'),
+                            title: this.i18nService.t('startDesktopTitle'),
+                            confirmText: this.i18nService.t('ok'),
+                            type: 'error',
+                        });
+                        reject();
+                    }
+                    this.connected = false;
+                    this.port.disconnect();
+                    return;
+                }
 
-        this.port.onDisconnect.addListener(() => {
-            this.connected = false;
+                this.onMessage(message);
+            });
+
+            this.port.onDisconnect.addListener(() => {
+                if (BrowserApi.runtimeLastError().message === 'Specified native messaging host not found.') {
+                    this.messagingService.send('showDialog', {
+                        text: this.i18nService.t('desktopIntegrationDisabledDesc'),
+                        title: this.i18nService.t('desktopIntegrationDisabledTitle'),
+                        confirmText: this.i18nService.t('ok'),
+                        type: 'error',
+                    });
+                }
+                this.connected = false;
+                reject();
+            });
         });
     }
 
     async send(message: any) {
         // If not connected, try to connect
         if (!this.connected) {
-            this.connect();
+            await this.connect();
         }
 
         if (this.sharedSecret == null) {
@@ -118,7 +151,7 @@ export class NativeMessagingBackground {
         const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), this.publicKey)).join(' ');
 
         this.messagingService.send('showDialog', {
-            html: `${this.i18nService.t('desktopIntegrationVerificationText')}<br><br><strong>${fingerprint}</strong>.`,
+            html: `${this.i18nService.t('desktopIntegrationVerificationText')}<br><br><strong>${fingerprint}</strong>`,
             title: this.i18nService.t('desktopSyncVerificationTitle'),
             confirmText: this.i18nService.t('ok'),
             type: 'warning',
@@ -129,7 +162,7 @@ export class NativeMessagingBackground {
 
     private async sendUnencrypted(message: any) {
         if (!this.connected) {
-            this.connect();
+            await this.connect();
         }
 
         message.timestamp = Date.now();

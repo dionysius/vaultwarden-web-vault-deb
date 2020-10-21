@@ -229,4 +229,12 @@ export class BrowserApi {
             return chrome.runtime.connectNative(application);
         }
     }
+
+    static runtimeLastError(): browser.runtime._LastError | chrome.runtime.LastError {
+        if (BrowserApi.isWebExtensionsApi) {
+            return browser.runtime.lastError;
+        } else if (BrowserApi.isChromeApi) {
+            return chrome.runtime.lastError;
+        }
+    }
 }
