@@ -151,7 +151,7 @@ export default class MainBackground {
             },
             () => {
                 if (this.nativeMessagingBackground != null) {
-                    const promise = this.nativeMessagingBackground.await();
+                    const promise = this.nativeMessagingBackground.getResponse();
                     this.nativeMessagingBackground.send({command: 'biometricUnlock'})
                     return promise.then((result) => result.response === 'unlocked');
                 }

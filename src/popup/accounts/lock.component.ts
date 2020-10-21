@@ -46,7 +46,7 @@ export class LockComponent extends BaseLockComponent {
         const div = document.createElement('div');
         div.innerHTML = `<div class="swal2-text">${this.i18nService.t('awaitDesktop')}</div>`;
 
-        const submitted = Swal.fire({
+        Swal.fire({
             heightAuto: false,
             buttonsStyling: false,
             html: div,

@@ -209,7 +209,6 @@ export class SettingsComponent implements OnInit {
     async updateBiometric() {
         if (this.biometric) {
             this.biometric = false;
-            // TODO: Remove biometric stuff
             await this.storageService.remove(ConstantsService.biometricUnlockKey);
             this.vaultTimeoutService.biometricLocked = false;
         } else {
@@ -241,7 +240,7 @@ export class SettingsComponent implements OnInit {
 
                     Swal.close();
                     if (this.biometric === false) {
-                        this.platformUtilsService.showToast('error', 'Unable to enable biometrics', 'Ensure the desktop application is running, and browser integration is enabled.');
+                        this.platformUtilsService.showToast('error', this.i18nService.t('errorEnableBiometricTitle'), this.i18nService.t('errorEnableBiometricDesc'));
                     }
                 })
             ]);

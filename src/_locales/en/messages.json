@@ -1383,5 +1383,11 @@
   },
   "startDesktopDesc": {
     "message": "The bitwarden desktop application needs to be started before this function can be used."
-  }
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceld by the desktop applicaiton."
+  } 
 }

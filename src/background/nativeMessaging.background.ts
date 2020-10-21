@@ -20,7 +20,6 @@ export class NativeMessagingBackground {
     private port: browser.runtime.Port | chrome.runtime.Port;
 
     private resolver: any = null;
-    private publicKey: ArrayBuffer;
     private privateKey: ArrayBuffer = null;
     private secureSetupResolve: any = null;
     private sharedSecret: SymmetricCryptoKey;
@@ -36,27 +35,36 @@ export class NativeMessagingBackground {
 
             this.connecting = true;
 
-            this.port.onMessage.addListener((message: any) => {
-                if (message.command === 'connected') {
-                    this.connected = true;
-                    this.connecting = false;
-                    resolve();
-                } else if (message.command === 'disconnected') {
-                    if (this.connecting) {
-                        this.messagingService.send('showDialog', {
-                            text: this.i18nService.t('startDesktopDesc'),
-                            title: this.i18nService.t('startDesktopTitle'),
-                            confirmText: this.i18nService.t('ok'),
-                            type: 'error',
-                        });
-                        reject();
-                    }
-                    this.connected = false;
-                    this.port.disconnect();
-                    return;
-                }
+            this.port.onMessage.addListener(async (message: any) => {
+                switch (message.command) {
+                    case 'connected':
+                        this.connected = true;
+                        this.connecting = false;
+                        resolve();
+                        break;
+                    case 'disconnected':
+                        if (this.connecting) {
+                            this.messagingService.send('showDialog', {
+                                text: this.i18nService.t('startDesktopDesc'),
+                                title: this.i18nService.t('startDesktopTitle'),
+                                confirmText: this.i18nService.t('ok'),
+                                type: 'error',
+                            });
+                            reject();
+                        }
+                        this.connected = false;
+                        this.port.disconnect();
+                        break;
+                    case 'setupEncryption':
+                        const encrypted = Utils.fromB64ToArray(message.sharedSecret);
+                        const decrypted = await this.cryptoFunctionService.rsaDecrypt(encrypted.buffer, this.privateKey, EncryptionAlgorithm);
 
-                this.onMessage(message);
+                        this.sharedSecret = new SymmetricCryptoKey(decrypted);
+                        this.secureSetupResolve();
+                        break;
+                    default:
+                        this.onMessage(message);
+                }
             });
 
             this.port.onDisconnect.addListener(() => {
@@ -75,7 +83,6 @@ export class NativeMessagingBackground {
     }
 
     async send(message: any) {
-        // If not connected, try to connect
         if (!this.connected) {
             await this.connect();
         }
@@ -90,21 +97,13 @@ export class NativeMessagingBackground {
         this.port.postMessage(encrypted);
     }
 
-    await(): Promise<any> {
+    getResponse(): Promise<any> {
         return new Promise((resolve, reject) => {
             this.resolver = resolve;
         });
     }
 
     private async onMessage(rawMessage: any) {
-        if (rawMessage.command === 'setupEncryption') {
-            const encrypted = Utils.fromB64ToArray(rawMessage.sharedSecret);
-            const decrypted = await this.cryptoFunctionService.rsaDecrypt(encrypted.buffer, this.privateKey, EncryptionAlgorithm);
-
-            this.sharedSecret = new SymmetricCryptoKey(decrypted);
-            this.secureSetupResolve();
-            return;
-        }
         const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecret));
 
         if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
@@ -122,11 +121,15 @@ export class NativeMessagingBackground {
                     if (message.response === 'unlocked') {
                         await this.storageService.save(ConstantsService.biometricUnlockKey, true);
                     }
-
-                    await this.cryptoService.toggleKey();
+                    break;
                 }
 
-                if (this.vaultTimeoutService.biometricLocked) {
+                // Ignore unlock if already unlockeded
+                if (!this.vaultTimeoutService.biometricLocked) {
+                    break;
+                }
+
+                if (message.response === 'unlocked') {
                     this.cryptoService.setKey(new SymmetricCryptoKey(Utils.fromB64ToArray(message.keyB64).buffer));
                     this.vaultTimeoutService.biometricLocked = false;
                     this.runtimeBackground.processMessage({command: 'unlocked'}, null, null);
@@ -143,12 +146,11 @@ export class NativeMessagingBackground {
     }
 
     private async secureCommunication() {
-        // Using crypto function service directly since we cannot encrypt the private key as
-        // master key might not be available
-        [this.publicKey, this.privateKey] = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
+        const [publicKey, privateKey] = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
+        this.privateKey = privateKey;
 
-        this.sendUnencrypted({command: 'setupEncryption', publicKey: Utils.fromBufferToB64(this.publicKey)});
-        const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), this.publicKey)).join(' ');
+        this.sendUnencrypted({command: 'setupEncryption', publicKey: Utils.fromBufferToB64(publicKey)});
+        const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), publicKey)).join(' ');
 
         this.messagingService.send('showDialog', {
             html: `${this.i18nService.t('desktopIntegrationVerificationText')}<br><br><strong>${fingerprint}</strong>`,
