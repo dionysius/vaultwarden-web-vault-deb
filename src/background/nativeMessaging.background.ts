@@ -67,9 +67,15 @@ export class NativeMessagingBackground {
                 }
             });
 
-            this.port.onDisconnect.addListener(() => {
-                const error = BrowserApi.runtimeLastError().message;
-                if (error === 'Specified native messaging host not found.' || error === 'Access to the specified native messaging host is forbidden.') {
+            this.port.onDisconnect.addListener((p: any) => {
+                let error;
+                if (BrowserApi.isWebExtensionsApi) {
+                    error = p.error.message;
+                } else {
+                    error = chrome.runtime.lastError.message;
+                }
+
+                if (error === 'Specified native messaging host not found.' || error === 'Access to the specified native messaging host is forbidden.' || error === 'An unexpected error occurred') {
                     this.messagingService.send('showDialog', {
                         text: this.i18nService.t('desktopIntegrationDisabledDesc'),
                         title: this.i18nService.t('desktopIntegrationDisabledTitle'),
