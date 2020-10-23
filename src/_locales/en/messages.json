@@ -1389,5 +1389,11 @@
   },
   "errorEnableBiometricDesc": {
     "message": "Action was canceld by the desktop applicaiton."
-  } 
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interupted"
+  }
 }

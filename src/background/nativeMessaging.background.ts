@@ -62,6 +62,17 @@ export class NativeMessagingBackground {
                         this.sharedSecret = new SymmetricCryptoKey(decrypted);
                         this.secureSetupResolve();
                         break;
+                    case 'invalidateEncryption':
+                        this.sharedSecret = null;
+                        this.privateKey = null;
+                        this.connected = false;
+                        
+                        this.messagingService.send('showDialog', {
+                            text: this.i18nService.t('nativeMessagingInvalidEncryptionDesc'),
+                            title: this.i18nService.t('nativeMessagingInvalidEncryptionTitle'),
+                            confirmText: this.i18nService.t('ok'),
+                            type: 'error',
+                        });
                     default:
                         this.onMessage(message);
                 }
@@ -83,6 +94,8 @@ export class NativeMessagingBackground {
                         type: 'error',
                     });
                 }
+                this.sharedSecret = null;
+                this.privateKey = null;
                 this.connected = false;
                 reject();
             });
