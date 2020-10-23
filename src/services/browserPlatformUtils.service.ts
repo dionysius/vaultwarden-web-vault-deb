@@ -307,6 +307,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return null;
     }
 
+    supportsSecureStorage(): boolean {
+        return false;
+    }
+
     private isSafariExtension(): boolean {
         return (window as any).safariAppExtension === true;
     }
