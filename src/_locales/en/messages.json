@@ -886,10 +886,7 @@
     "message": "Enable Auto-fill On Page Load"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
-  },
-  "autoFillOnPageLoad": {
-    "message": "Auto-fill On Page Load"
+    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads. This is a global setting which may be overridden by individual logins."
   },
   "autoFillOnPageLoadUseGlobalSettings": {
     "message": "Use Global Settings"
