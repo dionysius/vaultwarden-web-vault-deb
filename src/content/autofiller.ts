@@ -3,12 +3,8 @@ document.addEventListener('DOMContentLoaded', event => {
     let filledThisHref = false;
     let delayFillTimeout: number;
 
-    const enabledKey = 'enableAutoFillOnPageLoad';
-    chrome.storage.local.get(enabledKey, (obj: any) => {
-        if (obj != null && obj[enabledKey] === true) {
-            setInterval(() => doFillIfNeeded(), 500);
-        }
-    });
+    setInterval(() => doFillIfNeeded(), 500);
+    
     chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: Function) => {
         if (msg.command === 'fillForm' && pageHref === msg.url) {
             filledThisHref = true;
