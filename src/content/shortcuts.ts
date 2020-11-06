@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
+    Mousetrap.bind('mod+shift+s', () => {
+        sendMessage('lock_vault');
+    });
+
     function sendMessage(shortcut: string) {
         const msg: any = {
             command: 'keyboardShortcutTriggered',

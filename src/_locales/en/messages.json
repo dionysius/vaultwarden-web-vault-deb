@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Generate and copy a new random password to the clipboard"
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "Unfortunately this window is not available in private mode for this browser."
   },

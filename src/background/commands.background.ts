@@ -44,6 +44,9 @@ export default class CommandsBackground {
             case 'open_popup':
                 await this.openPopup();
                 break;
+            case 'lock_vault':
+                await this.vaultTimeoutService.lock(true);
+                break;
             default:
                 break;
         }
