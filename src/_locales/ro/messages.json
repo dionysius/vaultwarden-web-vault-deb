@@ -20,7 +20,7 @@
     "message": "Autentificare"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Identificare unică antrepriză (SSO)"
   },
   "cancel": {
     "message": "Anulare"
@@ -95,7 +95,7 @@
     "message": "Seiful este blocat."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Seiful este deconectat."
   },
   "autoFillInfo": {
     "message": "Nu sunt disponibile autentificări pentru completarea automată în pagina curentă."
@@ -328,7 +328,7 @@
     "message": "Parola principală este incorectă"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Expirarea seifului"
   },
   "lockNow": {
     "message": "Blocare imediată"
@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Generare parolă aleatorie și copiere în clipboard."
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "Din păcate această fereastră nu este disponibilă în modul de navigare privat pentru acest navigator."
   },
@@ -1257,7 +1260,7 @@
     "message": "Clone Item"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Clonare"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "One or more organization policies are affecting your generator settings."
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Your new master password does not meet the policy requirements."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

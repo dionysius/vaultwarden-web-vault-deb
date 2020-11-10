@@ -118,45 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>ബിറ്റ്വാർഡൻ - സൗജന്യമായി പാസ്‌വേഡ് മാനേജർ</value>
+    <value>Bitwarden - Бесплатни Менаџер Лозинке</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>നിങ്ങളുടെ എല്ലാ ഉപകരണങ്ങൾക്കും സുരക്ഷിതവും സൗജന്യവുമായ പാസ്‌വേഡ് മാനേജർ.</value>
+    <value>Сигурни и бесплатни менаџер лозинке за сва Ваша уређаја</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>നിങ്ങളുടെ എല്ലാ ലോഗിനുകളും പാസ്‌വേഡുകളും സംഭരിക്കുന്നതിനുള്ള ഏറ്റവും എളുപ്പവും സുരക്ഷിതവുമായ മാർഗ്ഗമാണ് Bitwarden, ഒപ്പം നിങ്ങളുടെ എല്ലാ ഉപകരണങ്ങളും തമ്മിൽ സമന്വയിപ്പിക്കുകയും ചെയ്യുന്നു.
+    <value>Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
 
-പാസ്‌വേഡ് മോഷണം ഗുരുതരമായ പ്രശ്‌നമാണ്. നിങ്ങൾ ഉപയോഗിക്കുന്ന വെബ്‌സൈറ്റുകളും അപ്ലിക്കേഷനുകളും എല്ലാ ദിവസവും ആക്രമണത്തിലാണ്. സുരക്ഷാ ലംഘനങ്ങൾ സംഭവിക്കുകയും നിങ്ങളുടെ പാസ്‌വേഡുകൾ മോഷ്‌ടിക്കപ്പെടുകയും ചെയ്യുന്നു. അപ്ലിക്കേഷനുകളിലും വെബ്‌സൈറ്റുകളിലും ഉടനീളം സമാന പാസ്‌വേഡുകൾ നിങ്ങൾ വീണ്ടും ഉപയോഗിക്കുമ്പോൾ ഹാക്കർമാർക്ക് നിങ്ങളുടെ ഇമെയിൽ, ബാങ്ക്, മറ്റ് പ്രധാനപ്പെട്ട അക്കൗണ്ടുകൾ എന്നിവ എളുപ്പത്തിൽ ആക്‌സസ്സുചെയ്യാനാകും.
+Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
 
-നിങ്ങളുടെ എല്ലാ ഉപകരണങ്ങളിലും സമന്വയിപ്പിക്കുന്ന ഒരു എൻ‌ക്രിപ്റ്റ് ചെയ്ത വാൾട്ടിൽ  Bitwarden  നിങ്ങളുടെ എല്ലാ ലോഗിനുകളും സംഭരിക്കുന്നു. നിങ്ങളുടെ ഉപകരണം വിടുന്നതിനുമുമ്പ് ഇത് പൂർണ്ണമായും എൻ‌ക്രിപ്റ്റ് ചെയ്‌തിരിക്കുന്നതിനാൽ, നിങ്ങളുടെ ഡാറ്റ നിങ്ങൾക്ക് മാത്രമേ ആക്‌സസ് ചെയ്യാൻ കഴിയൂ .  Bitwarden ടീമിന് പോലും നിങ്ങളുടെ ഡാറ്റ വായിക്കാൻ കഴിയില്ല. നിങ്ങളുടെ ഡാറ്റ AES-256 ബിറ്റ് എൻ‌ക്രിപ്ഷൻ, സാൾട്ടിങ് ഹാഷിംഗ്, PBKDF2 SHA-256 എന്നിവ ഉപയോഗിച്ച് അടച്ചിരിക്കുന്നു.
+Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? Bitwarden makes it easy for you to create, store, and access your passwords.
 
-100% ഓപ്പൺ സോഴ്‌സ് സോഫ്റ്റ്വെയറാണ് Bitwarden . Bitwarden സോഴ്‌സ് കോഡ് GitHub- ൽ ഹോസ്റ്റുചെയ്‌തിരിക്കുന്നു, മാത്രമല്ല എല്ലാവർക്കും ഇത് അവലോകനം ചെയ്യാനും ഓഡിറ്റുചെയ്യാനും ബിറ്റ് വാർഡൻ കോഡ്ബേസിലേക്ക് സംഭാവന ചെയ്യാനും സ്വാതന്ത്ര്യമുണ്ട്.
+Bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at Bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.
 
-
-
-
-</value>
+Bitwarden is 100% open source software. The source code for Bitwarden is hosted on GitHub and everyone is free to review, audit, and contribute to the Bitwarden codebase.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>നിങ്ങളുടെ എല്ലാ ഉപകരണങ്ങൾക്കും സുരക്ഷിതവും സൗജന്യവുമായ പാസ്‌വേഡ് മാനേജർ.</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>ഒന്നിലധികം ഉപകരണങ്ങളിൽ നിന്ന് നിങ്ങളുടെ വാൾട്  സമന്വയിപ്പിച്ച് ആക്‌സസ്സുചെയ്യുക
-</value>
+    <value>Sync and access your vault from multiple devices</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>നിങ്ങളുടെ എല്ലാ ലോഗിനുകളും പാസ്‌വേഡുകളും സുരക്ഷിത വാൾട്ടിൽ  നിന്ന് കൈകാര്യം ചെയ്യുക</value>
+    <value>Manage all your logins and passwords from a secure vault</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>നിങ്ങൾ സന്ദർശിക്കുന്ന ഏത് വെബ്‌സൈറ്റിലേക്കും നിങ്ങളുടെ ലോഗിൻ ക്രെഡൻഷ്യലുകൾ വേഗത്തിൽ യാന്ത്രികമായി പൂരിപ്പിക്കുക</value>
+    <value>Quickly auto-fill your login credentials into any website that you visit</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>വലത്-ക്ലിക്ക് മെനുവിൽ നിന്ന് നിങ്ങളുടെ നിലവറയും സ access കര്യപ്രദമായി ആക്സസ് ചെയ്യാൻ കഴിയും.</value>
+    <value>Your vault is also conveniently accessible from the right-click menu</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>ശക്തവും ക്രമരഹിതവും സുരക്ഷിതവുമായ പാസ്‌വേഡുകൾ യാന്ത്രികമായി സൃഷ്‌ടിക്കുക</value>
+    <value>Automatically generate strong, random, and secure passwords</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>AES-256 ബിറ്റ് എൻ‌ക്രിപ്ഷൻ ഉപയോഗിച്ച് നിങ്ങളുടെ വിവരങ്ങൾ സുരക്ഷിതമായി കൈകാര്യം ചെയ്യുന്നു</value>
+    <value>Your information is managed securely using AES-256 bit encryption</value>
   </data>
 </root>
