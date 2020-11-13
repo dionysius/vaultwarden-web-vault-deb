@@ -293,6 +293,14 @@
         }
     }
 
+    &.box-content-row-checkbox-left {
+        justify-content: flex-start;
+
+        > input {
+            margin: 0 15px 0 0;
+        }
+    }
+
     &.box-content-row-input {
         label {
             white-space: nowrap;
