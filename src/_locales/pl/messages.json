@@ -20,7 +20,7 @@
     "message": "Zaloguj się"
   },
   "enterpriseSingleSignOn": {
-    "message": "Logowanie jednokrotne przedsiębiorstwa"
+    "message": "Logowanie jednokrotne"
   },
   "cancel": {
     "message": "Anuluj"
@@ -856,7 +856,7 @@
     "message": "Adres URL serwera"
   },
   "apiUrl": {
-    "message": "Adres URL serwera API"
+    "message": "Adres URL serwera interfejsu API"
   },
   "webVaultUrl": {
     "message": "Adres URL serwera sejfu internetowego"
@@ -895,7 +895,7 @@
     "message": "Wygeneruj nowe losowe hasło i skopiuj je do schowka."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Zablokuj sejf"
   },
   "privateModeMessage": {
     "message": "Niestety to okno nie jest dostępne w trybie prywatnym tej przeglądarki."
@@ -1358,15 +1358,15 @@
     "message": "Nowe hasło główne nie spełnia wymaganych zasad."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Zaznaczając tę opcję, akceptujesz:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Nie zaakceptowałeś regulaminu i polityki prywatności."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Regulamin"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Polityka prywatności"
   }
 }

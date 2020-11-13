@@ -895,7 +895,7 @@
     "message": "ക്ലിപ്പ്ബോർഡിലേക്ക് ഒരു പുതിയ റാൻഡം പാസ്‌വേഡ് സൃഷ്ടിച്ച് പകർത്തുക"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "നിലവറ പൂട്ടുക"
   },
   "privateModeMessage": {
     "message": "നിർഭാഗ്യവശാൽ ഈ വിൻഡോ ബ്രൗസറിന്റെ സ്വകാര്യ മോഡിൽ ലഭ്യമല്ല."
@@ -1358,15 +1358,15 @@
     "message": "നിങ്ങളുടെ പുതിയ മാസ്റ്റർ പാസ്‌വേഡ് നയ ആവശ്യകതകൾ നിറവേറ്റുന്നില്ല."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "ഈ ബോക്സ് ചെക്കുചെയ്യുന്നതിലൂടെ നിങ്ങൾ ഇനിപ്പറയുന്നവ അംഗീകരിക്കുന്നു:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "സേവന നിബന്ധനകളും സ്വകാര്യതാ നയവും അംഗീകരിച്ചിട്ടില്ല."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "സേവന നിബന്ധനകൾ"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "സ്വകാര്യതാനയം"
   }
 }

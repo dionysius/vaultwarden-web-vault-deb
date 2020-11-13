@@ -1,9 +1,9 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Bezplatný správca hesiel",
+    "message": "Bitwarden - Bezplatný správca hesiel",
     "description": "Extension name"
   },
   "extDesc": {
@@ -895,7 +895,7 @@
     "message": "Vygenerovať a skopírovať nové náhodné heslo do schránky"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Zamknúť trezor"
   },
   "privateModeMessage": {
     "message": "Bohužiaľ, toto okno nie je dostupné v privátnom režime prehliadača."
@@ -1358,15 +1358,15 @@
     "message": "Vaše nové heslo nespĺňa pravidlá."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Označením tohto políčka súhlasíte s nasledovným:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Neboli akceptované Podmienky používania a zásady Ochrany osobných údajov."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Podmienky používania"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Zásady ochrany osobných údajov"
   }
 }

@@ -895,7 +895,7 @@
     "message": "Új véletlenszerű jelszó generálása ás másolása a vágólapra."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "A széf zárolása"
   },
   "privateModeMessage": {
     "message": "Ebben a böngészőben ez az ablak sajnos nem érhető el privát módban."
@@ -1358,15 +1358,15 @@
     "message": "Az új mesterjelszó nem felel meg a szabály követelményeknek."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "A doboz bejelölésével elfogadjuk a következőket:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Szolgáltatási feltételek"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Adatvédelem"
   }
 }

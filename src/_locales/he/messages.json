@@ -895,7 +895,7 @@
     "message": "צור והעתק סיסמה רנדומלית חדשה."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "נעילת הכספת"
   },
   "privateModeMessage": {
     "message": "לצערנו חלון זה אינו זמין במצב גלישה פרטית בדפדפן זה."
@@ -1358,15 +1358,15 @@
     "message": "הסיסמה הראשית החדשה השלך לא עומדת בדרישות המדיניות."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "סימון התיבה הזאת מהווה את הסכמתך לתנאים הבאים:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "לא הסכמת לתנאי השירות ומדיניות הפרטיות."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "תנאי השירות"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "מדיניות הפרטיות"
   }
 }

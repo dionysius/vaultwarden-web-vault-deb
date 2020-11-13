@@ -895,7 +895,7 @@
     "message": "Gerar e copiar uma nova senha aleatória para a área de transferência."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Bloquear o cofre"
   },
   "privateModeMessage": {
     "message": "Infelizmente esta janela não está disponível no modo privado para este navegador."
@@ -1358,15 +1358,15 @@
     "message": "A sua nova senha mestra não cumpre aos requisitos da política."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Ao marcar esta caixa, você concorda com o seguinte:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Termos de Serviço"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Política de Privacidade"
   }
 }

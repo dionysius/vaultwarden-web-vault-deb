@@ -895,7 +895,7 @@
     "message": "Générer et copier un nouveau mot de passe aléatoire dans le presse-papiers."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Verrouiller le coffre"
   },
   "privateModeMessage": {
     "message": "Malheureusement cette fenêtre n'est pas disponible en navigation privée pour ce navigateur."
@@ -1358,15 +1358,15 @@
     "message": "Votre nouveau mot de passe maître ne répond pas aux exigences de la politique."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "En cochant cette case, vous acceptez les éléments suivants :"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Conditions d'utilisation"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Politique de confidentialité"
   }
 }

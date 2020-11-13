@@ -895,7 +895,7 @@
     "message": "Генерувати і копіювати новий випадковий пароль в буфер обміну"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Заблокувати сховище"
   },
   "privateModeMessage": {
     "message": "Шкода, але це вікно недоступне в приватному режимі для цього браузера."
@@ -1358,15 +1358,15 @@
     "message": "Ваш новий головний пароль не задовольняє вимоги політики."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Позначивши цей прапорець, ви погоджуєтеся з:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Умови користування та політика приватності не погоджені."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Умови користування"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Політика приватності"
   }
 }
