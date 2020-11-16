@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Buat dan salin sandi acak baru ke clipboard."
   },
+  "commandLockVaultDesc": {
+    "message": "Kunci brankas"
+  },
   "privateModeMessage": {
     "message": "Sayangnya jendela ini tidak tersedia di mode pribadi untuk peramban ini."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Kata sandi utama Anda yang baru tidak memenuhi persyaratan kebijakan."
+  },
+  "acceptPolicies": {
+    "message": "Dengan mencentang kotak ini, anda menyetujui yang berikut:"
+  },
+  "acceptPoliciesError": {
+    "message": "Persyaratan Layanan dan Kebijakan Privasi belum diakui."
+  },
+  "termsOfService": {
+    "message": "Persyaratan Layanan"
+  },
+  "privacyPolicy": {
+    "message": "Kebijakan Privasi"
   }
 }

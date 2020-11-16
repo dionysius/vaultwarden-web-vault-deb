@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Genereer en kopieer een nieuw willekeurig wachtwoord naar het klembord."
   },
+  "commandLockVaultDesc": {
+    "message": "Kluis vergrendelen"
+  },
   "privateModeMessage": {
     "message": "Dit scherm is helaas niet beschikbaar in het privévenster van deze browser."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Je nieuwe hoofdwachtwoord voldoet niet aan de beleidseisen."
+  },
+  "acceptPolicies": {
+    "message": "Door dit vakje aan te vinken, ga je akkoord met het volgende:"
+  },
+  "acceptPoliciesError": {
+    "message": "Algemene voorwaarden en privacybeleid zijn nog niet erkend."
+  },
+  "termsOfService": {
+    "message": "Algemene voorwaarden"
+  },
+  "privacyPolicy": {
+    "message": "Privacybeleid"
   }
 }

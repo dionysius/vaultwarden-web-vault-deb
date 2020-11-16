@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "ランダムなパスワードを生成してクリップボードにコピーします。"
   },
+  "commandLockVaultDesc": {
+    "message": "保管庫をロック"
+  },
   "privateModeMessage": {
     "message": "このウインドウはこのブラウザのプライベートモードでは使用できません。"
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "新しいマスターパスワードは最低要件を満たしていません。"
+  },
+  "acceptPolicies": {
+    "message": "以下に同意しチェックします:"
+  },
+  "acceptPoliciesError": {
+    "message": "利用規約とプライバシーポリシーを確認してください。"
+  },
+  "termsOfService": {
+    "message": "サービス利用規約"
+  },
+  "privacyPolicy": {
+    "message": "プライバシーポリシー"
   }
 }

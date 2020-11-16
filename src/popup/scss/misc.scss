@@ -307,3 +307,19 @@ app-vault-icon {
 input[type="password"]::-ms-reveal {
     display: none;
 }
+
+.checkbox {
+        position: relative;
+        display: block;
+        padding-left: 18px;
+
+        label {
+            margin-bottom: 0;
+        }
+
+        input[type="checkbox"] {
+            position: absolute;
+            margin-top: 4px;
+            margin-left: -18px;
+        }
+    }

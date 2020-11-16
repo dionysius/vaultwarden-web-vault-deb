@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Ein neues zufälliges Passwort generieren und in die Zwischenablage kopieren"
   },
+  "commandLockVaultDesc": {
+    "message": "Den Tresor sperren"
+  },
   "privateModeMessage": {
     "message": "Leider ist dieses Fenster nicht im privaten Modus für diesen Browser verfügbar."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ihr neues Master-Passwort entspricht nicht den Anforderungen der Richtlinie."
+  },
+  "acceptPolicies": {
+    "message": "Durch Anwählen dieses Kästchens erklären Sie sich mit folgendem einverstanden:"
+  },
+  "acceptPoliciesError": {
+    "message": "Die Nutzungsbedingungen und Datenschutzerklärung wurden nicht akzeptiert."
+  },
+  "termsOfService": {
+    "message": "Nutzungsbedingungen"
+  },
+  "privacyPolicy": {
+    "message": "Datenschutzbestimmungen"
   }
 }

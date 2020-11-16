@@ -20,7 +20,7 @@
     "message": "Autentificare"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Identificare unică antrepriză (SSO)"
   },
   "cancel": {
     "message": "Anulare"
@@ -95,7 +95,7 @@
     "message": "Seiful este blocat."
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "Seiful este deconectat."
   },
   "autoFillInfo": {
     "message": "Nu sunt disponibile autentificări pentru completarea automată în pagina curentă."
@@ -328,7 +328,7 @@
     "message": "Parola principală este incorectă"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Expirarea seifului"
   },
   "lockNow": {
     "message": "Blocare imediată"
@@ -516,7 +516,7 @@
     "message": "Căutare colecție"
   },
   "searchType": {
-    "message": "Tipul de căutare"
+    "message": "Scrieți ca să căutați"
   },
   "noneFolder": {
     "message": "Niciun dosar",
@@ -541,11 +541,11 @@
     "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
   },
   "clearClipboard": {
-    "message": "Goliţi Clipboardul",
+    "message": "Goliți Clipboard-ul",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Şterge automat valorile copiate din clipboard.",
+    "message": "Șterge automat valorile copiate din clipboard.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
@@ -883,16 +883,19 @@
     "message": "În acest moment, aceasta funcțiune este experimentală. O puteți folosi pe propria răspundere."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Deschide seiful pop-up"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Deschide seiful în bara laterală"
   },
   "commandAutofillDesc": {
     "message": "Completare automată a ultimelor date de autentificare utilizate pentru saitul web curent."
   },
   "commandGeneratePasswordDesc": {
     "message": "Generare parolă aleatorie și copiere în clipboard."
+  },
+  "commandLockVaultDesc": {
+    "message": "Blochează seiful"
   },
   "privateModeMessage": {
     "message": "Din păcate această fereastră nu este disponibilă în modul de navigare privat pentru acest navigator."
@@ -1158,11 +1161,11 @@
     "message": "Activare/dezactivare opțiuni"
   },
   "toggleCurrentUris": {
-    "message": "Toggle Current URIs",
+    "message": "Comută URI-urile curente",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "URI-ul actual",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1233,7 +1236,7 @@
     "message": "Deblocare cu codul PIN"
   },
   "setYourPinCode": {
-    "message": "Setaţi codul PIN de deblocare Bitwarden. Setările codului PIN vor fi resetate dacă vă deconectaţi vreodată din aplicație."
+    "message": "Setați codul PIN de deblocare Bitwarden. Setările codului PIN vor fi resetate dacă vă deconectați vreodată din aplicație."
   },
   "pinRequired": {
     "message": "Codul PIN este necesar."
@@ -1245,7 +1248,7 @@
     "message": "Verificaţi codul PIN"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Seiful dvs. este blocat. Verificaţi codul PIN pentru a continua."
+    "message": "Seiful dvs. este blocat. Verificați codul PIN pentru a continua."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocare cu parola principală după ce browserul repornește,"
@@ -1254,19 +1257,19 @@
     "message": "Este nevoie să alegeți măcar o colecție."
   },
   "cloneItem": {
-    "message": "Clone Item"
+    "message": "Clonează articolul"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Clonare"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Una sau mai multe politici organizaționale vă afectează setările generatorului."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Acțiune la expirarea seifului"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Blocare",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
@@ -1274,49 +1277,49 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Căutați în trash"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Șterge permanent elementul"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Sigur doriți să ștergeți permanent acest articol?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Articol șters permanent"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Restabiliți articolul"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Sigur doriți să restaurați acest articol?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Articol restaurat"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Deconectarea va elimina accesul la seiful dvs. și necesită autentificare online după perioada de expirare. Sunteți sigur că doriți să utilizați această setare?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Confirmare acțiune la expirare"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Auto-completare și Salvare"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Articol cu Auto-completare și URl Salvat"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Articol cu Auto-completare"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Setați parola principală"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Una sau mai multe politici ale organizației necesită ca parola principală să îndeplinească următoarele cerințe:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Scor minim de complexitate de $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1328,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Lungime minimă de $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1337,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Conține unul sau mai multe caractere majuscule"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Conține unul sau mai multe caractere minuscule"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Conține unul sau mai multe numere"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Conține unul sau mai multe din următoarele caractere: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1355,18 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Noua dvs. parolă principală nu îndeplinește cerințele politicii."
+  },
+  "acceptPolicies": {
+    "message": "Bifând această casetă sunteți de acord cu următoarele:"
+  },
+  "acceptPoliciesError": {
+    "message": "Termenii Serviciului și Politica Intimității nu au fost recunoscute."
+  },
+  "termsOfService": {
+    "message": "Termenii Serviciului"
+  },
+  "privacyPolicy": {
+    "message": "Politica Intimității"
   }
 }

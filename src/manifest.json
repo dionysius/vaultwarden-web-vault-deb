@@ -119,6 +119,9 @@
         "default": "Ctrl+Shift+9"
       },
       "description": "__MSG_commandGeneratePasswordDesc__"
+    },
+    "lock_vault": {
+      "description": "__MSG_commandLockVaultDesc__"
     }
   },
   "web_accessible_resources": [

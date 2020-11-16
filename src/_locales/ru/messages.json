@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Сгенерировать и скопировать новый случайный пароль в буфер обмена."
   },
+  "commandLockVaultDesc": {
+    "message": "Заблокировать хранилище"
+  },
   "privateModeMessage": {
     "message": "К сожалению, это окно недоступно в приватном режиме этого браузера."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ваш новый мастер-пароль не соответствует требованиям политики."
+  },
+  "acceptPolicies": {
+    "message": "Устанавливая этот флажок, вы соглашаетесь со следующим:"
+  },
+  "acceptPoliciesError": {
+    "message": "Условия предоставления услуг и Политика конфиденциальности не были подтверждены."
+  },
+  "termsOfService": {
+    "message": "Условия предоставления услуг"
+  },
+  "privacyPolicy": {
+    "message": "Политика конфиденциальности"
   }
 }

@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Generér en ny tilfældig adgangskode og kopiér den til udklipsholderen"
   },
+  "commandLockVaultDesc": {
+    "message": "Lås boksen"
+  },
   "privateModeMessage": {
     "message": "Desværre er dette vindue ikke tilgængelig i privat modus i denne browser."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Din nye hovedadgangskode opfylder ikke politikkravene."
+  },
+  "acceptPolicies": {
+    "message": "Ved at markere dette felt accepterer du følgende:"
+  },
+  "acceptPoliciesError": {
+    "message": "Servicevilkår og fortrolighedspolitik er ikke blevet bekræftet."
+  },
+  "termsOfService": {
+    "message": "Servicevilkår"
+  },
+  "privacyPolicy": {
+    "message": "Fortrolighedspolitik"
   }
 }

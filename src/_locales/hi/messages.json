@@ -425,19 +425,19 @@
     "message": "Your login session has expired."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "क्या आप वाकई लॉग आउट करना चाहते हैं?"
   },
   "yes": {
-    "message": "Yes"
+    "message": "हाँ"
   },
   "no": {
-    "message": "No"
+    "message": "नहीं"
   },
   "unexpectedError": {
     "message": "An unexpected error has occured."
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "नाम आवश्यक है"
   },
   "addedFolder": {
     "message": "Added folder"
@@ -893,6 +893,9 @@
   },
   "commandGeneratePasswordDesc": {
     "message": "Generate and copy a new random password to the clipboard."
+  },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
   },
   "privateModeMessage": {
     "message": "Unfortunately this window is not available in private mode for this browser."
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Your new master password does not meet the policy requirements."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

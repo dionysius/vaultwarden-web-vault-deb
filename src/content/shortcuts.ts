@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         Mousetrap.bind('mod+shift+y', () => {
             sendMessage('open_popup');
         });
+
+        Mousetrap.bind('mod+shift+s', () => {
+            sendMessage('lock_vault');
+        });
     } else {
         Mousetrap.bind('mod+shift+9', () => {
             sendMessage('generate_password');

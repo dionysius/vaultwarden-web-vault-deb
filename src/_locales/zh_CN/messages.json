@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "生成一个新的随机密码并将其复制到剪贴板中。"
   },
+  "commandLockVaultDesc": {
+    "message": "锁定密码库"
+  },
   "privateModeMessage": {
     "message": "非常不幸，此窗口在这个浏览器的隐私模式中不可用。"
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "您的新主密码不符合策略要求。"
+  },
+  "acceptPolicies": {
+    "message": "选中此框表示您同意："
+  },
+  "acceptPoliciesError": {
+    "message": "尚未同意服务条款和隐私政策。"
+  },
+  "termsOfService": {
+    "message": "服务条款"
+  },
+  "privacyPolicy": {
+    "message": "隐私政策"
   }
 }

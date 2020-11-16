@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Skapa och kopiera ett nytt slumpmässigt lösenord till urklipp."
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "Det här fönstret är tyvärr inte tillgängligt i privat läge för denna webbläsare."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ditt nya huvudlösenord uppfyller inte kraven i policyn."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

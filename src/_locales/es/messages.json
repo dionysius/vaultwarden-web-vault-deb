@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Generar y copiar una nueva contraseña aleatoria al portapapeles."
   },
+  "commandLockVaultDesc": {
+    "message": "Bloquear la caja fuerte"
+  },
   "privateModeMessage": {
     "message": "Lamentablemente esta ventana no está disponible en el modo privado de este navegador."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Su nueva contraseña maestra no cumple con los requisitos de la política."
+  },
+  "acceptPolicies": {
+    "message": "Al seleccionar esta casilla, acepta lo siguiente:"
+  },
+  "acceptPoliciesError": {
+    "message": "Todavía no has aceptado los términos del servicio y la política de privacidad."
+  },
+  "termsOfService": {
+    "message": "Términos y condiciones del servicio"
+  },
+  "privacyPolicy": {
+    "message": "Política de privacidad"
   }
 }

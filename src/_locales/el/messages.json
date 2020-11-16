@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Δημιουργήστε και αντιγράψτε έναν νέο τυχαίο κωδικό πρόσβασης στο πρόχειρο"
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "Δυστυχώς, αυτό το παράθυρο δεν είναι διαθέσιμο σε ιδιωτική λειτουργία για αυτό το πρόγραμμα περιήγησης."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Your new master password does not meet the policy requirements."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

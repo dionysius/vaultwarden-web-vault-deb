@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "צור והעתק סיסמה רנדומלית חדשה."
   },
+  "commandLockVaultDesc": {
+    "message": "נעילת הכספת"
+  },
   "privateModeMessage": {
     "message": "לצערנו חלון זה אינו זמין במצב גלישה פרטית בדפדפן זה."
   },
@@ -1158,7 +1161,7 @@
     "message": "הצגה\\הסתרה של אפשרויות"
   },
   "toggleCurrentUris": {
-    "message": "החלפת הכתובות המלאות הנוכחיות",
+    "message": "שנה מצב הצגת כתובות URI",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
@@ -1301,22 +1304,22 @@
     "message": "אישור פעולת אימות לאחר חוסר פעילות"
   },
   "autoFillAndSave": {
-    "message": "השלמה אוטומטית ושמירה"
+    "message": "בצע השלמה אוטומטית ושמור"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "פריט שמולא אוטומטית וכתובת מלאה שנשמרה"
+    "message": "בוצעה השלמה אוטומטית והכתובת נשמרה"
   },
   "autoFillSuccess": {
-    "message": "פריט שמולא אוטומטית"
+    "message": "בוצעה השלמה אוטומטית"
   },
   "setMasterPassword": {
-    "message": "הגדרת סיסמה ראשית"
+    "message": "הגדר סיסמה ראשית"
   },
   "masterPasswordPolicyInEffect": {
     "message": "אחד או יותר מאילוצי המדיניות של הארגון דורשים שהסיסמה הראשית שלך תעמוד בדרישות הבאות:"
   },
   "policyInEffectMinComplexity": {
-    "message": "ניקוד מורכבות מזערי של $SCORE$",
+    "message": "ניקוד מורכבות הסיסמה צריך להיות לפחות {0}",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1328,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "אורך מזערי של $LENGTH$",
+    "message": "אורך מינימלי של $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1337,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "תכיל אות גדולה אחת או יותר"
+    "message": "מכילה אות גדולה אחת או יותר"
   },
   "policyInEffectLowercase": {
-    "message": "תכיל אות קטנה אחת או יותר"
+    "message": "מכילה אות קטנה אחת או יותר"
   },
   "policyInEffectNumbers": {
-    "message": "תכיל ספרה אחת או יותר"
+    "message": "מכילה ספרה אחת או יותר"
   },
   "policyInEffectSpecial": {
-    "message": "תכיל תו מיוחד אחד או יותר מבין התווים האלו $CHARS$",
+    "message": "מכילה תו אחד או יותר מהתווים הבאים: {0}",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "הסיסמה הראשית החדשה השלך לא עומדת בדרישות המדיניות."
+  },
+  "acceptPolicies": {
+    "message": "סימון התיבה הזאת מהווה את הסכמתך לתנאים הבאים:"
+  },
+  "acceptPoliciesError": {
+    "message": "לא הסכמת לתנאי השירות ומדיניות הפרטיות."
+  },
+  "termsOfService": {
+    "message": "תנאי השירות"
+  },
+  "privacyPolicy": {
+    "message": "מדיניות הפרטיות"
   }
 }

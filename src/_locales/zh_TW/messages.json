@@ -20,7 +20,7 @@
     "message": "登入"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "企業單一登入（SSO）"
   },
   "cancel": {
     "message": "取消"
@@ -501,7 +501,7 @@
     "message": "確定要刪除此項目嗎?"
   },
   "deletedItem": {
-    "message": "已刪除項目"
+    "message": "已刪除的項目"
   },
   "overwritePassword": {
     "message": "覆寫密碼"
@@ -874,7 +874,7 @@
     "message": "環境 URL 已儲存。"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "啟用頁面載入時自動填入表單"
+    "message": "當頁面載入時自動填入表單"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "如果網頁載入時偵測到登入表單，則自動執行表單填入。"
@@ -893,6 +893,9 @@
   },
   "commandGeneratePasswordDesc": {
     "message": "產生一組新的隨機密碼並將它複製到剪貼簿中。"
+  },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
   },
   "privateModeMessage": {
     "message": "很遺憾，在瀏覽器的隱私模式下，此視窗無法使用。"
@@ -1280,43 +1283,43 @@
     "message": "永久刪除項目"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "您確定要永久刪除此項目嗎？"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "已永久刪除的項目"
   },
   "restoreItem": {
     "message": "恢復項目"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "您確定要恢復此項目嗎？"
   },
   "restoredItem": {
     "message": "恢復的項目"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "選擇登出將會在密碼庫逾時後移除所有密碼庫存取權，重新認證時需要連線網路。確定要登出嗎？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "逾時動作確認"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "自動填入並儲存"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "項目已自動填入並且已儲存 URL"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "項目已自動填入"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "設定主密碼"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "有一組以上組織原則要求您的主密碼須符合下列條件："
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "最小複雜度分數 $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1328,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "最小長度為 $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1337,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "至少包含一個大寫字元"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "至少包含一個小寫字元"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "至少包含一個數字"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "至少包含一個下列的特殊字元：$CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1355,18 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "您新的主密碼不符合原則需求。"
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

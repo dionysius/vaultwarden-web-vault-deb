@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "یک کلمه عبور تصادفی جدید ایجاد کنید و آن را در کلیپ بورد کپی کنید."
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "متأسفانه این پنجره در حالت خصوصی برای این مرورگر در دسترس نیست."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "کلمه عبور اصلی جدید شما از شرایط سیاست پپیروی نمی کند."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

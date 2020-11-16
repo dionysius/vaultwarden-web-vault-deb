@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Genera i copia una nova contrasenya aleatòria al porta-retalls."
   },
+  "commandLockVaultDesc": {
+    "message": "Tanca la caixa forta"
+  },
   "privateModeMessage": {
     "message": "Malauradament, aquesta finestra no està disponible en el mode privat d'aquest navegador."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "La nova contrasenya principal no compleix els requisits de la política."
+  },
+  "acceptPolicies": {
+    "message": "Si activeu aquesta casella, indiqueu que esteu d’acord amb el següent:"
+  },
+  "acceptPoliciesError": {
+    "message": "No s’han reconegut les condicions del servei i la declaració de privadesa."
+  },
+  "termsOfService": {
+    "message": "Condicions del servei"
+  },
+  "privacyPolicy": {
+    "message": "Declaració de privadesa"
   }
 }

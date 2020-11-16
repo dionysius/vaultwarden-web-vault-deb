@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Generer og kopier et nytt tilfeldig passord til utklippstavlen."
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "Dessverre er dette vinduet ikke tilgjengelig i privat modus for denne nettleseren."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Your new master password does not meet the policy requirements."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

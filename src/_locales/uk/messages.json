@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Генерувати і копіювати новий випадковий пароль в буфер обміну"
   },
+  "commandLockVaultDesc": {
+    "message": "Заблокувати сховище"
+  },
   "privateModeMessage": {
     "message": "Шкода, але це вікно недоступне в приватному режимі для цього браузера."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ваш новий головний пароль не задовольняє вимоги політики."
+  },
+  "acceptPolicies": {
+    "message": "Позначивши цей прапорець, ви погоджуєтеся з:"
+  },
+  "acceptPoliciesError": {
+    "message": "Умови користування та політика приватності не погоджені."
+  },
+  "termsOfService": {
+    "message": "Умови користування"
+  },
+  "privacyPolicy": {
+    "message": "Політика приватності"
   }
 }

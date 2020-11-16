@@ -20,7 +20,7 @@
     "message": "로그인"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "엔터프라이즈 통합 인증 (SSO)"
   },
   "cancel": {
     "message": "취소"
@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "새 무작위 비밀번호를 만들고 클립보드에 복사합니다."
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "죄송합니다. 이 브라우저에서는 시크릿 창에서 이 창을 사용할 수 없습니다."
   },
@@ -1325,7 +1328,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "최소 길이 $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1343,7 +1346,7 @@
     "message": "하나 이상의 숫자 포함"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "하나 이상의 특수문자 포함 $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "새 마스터 비밀번호가 정책 요구 사항을 따르지 않습니다."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

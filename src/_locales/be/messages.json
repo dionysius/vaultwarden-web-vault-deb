@@ -35,19 +35,19 @@
     "message": "Адрас эл. пошты"
   },
   "masterPass": {
-    "message": "Майстар-пароль"
+    "message": "Асноўны пароль"
   },
   "masterPassDesc": {
-    "message": "Майстар-пароль — ключ да вашага бяспечнага сховішча. Ён вельмі важны, таму не забывайце яго. Аднавіць майстар-пароль немагчыма."
+    "message": "Асноўны пароль — ключ да вашага бяспечнага сховішча. Ён вельмі важны, таму не забывайце яго. Аднавіць асноўны пароль немагчыма."
   },
   "masterPassHintDesc": {
-    "message": "Падказка да майстра-пароля можа дапамагчы вам яго ўспомніць."
+    "message": "Падказка да асноўнага пароля можа дапамагчы вам яго ўспомніць."
   },
   "reTypeMasterPass": {
-    "message": "Увядзіце майстар-пароль паўторна"
+    "message": "Увядзіце асноўны пароль паўторна"
   },
   "masterPassHint": {
-    "message": "Падказка да майстра-пароля (неабавязкова)"
+    "message": "Падказка да асноўнага пароля (неабавязкова)"
   },
   "tab": {
     "message": "Укладка"
@@ -110,10 +110,10 @@
     "message": "Падказка да пароля"
   },
   "enterEmailToGetHint": {
-    "message": "Увядзіце адрас электроннай пошты ўліковага запісу для атрымання падказкі для пароля."
+    "message": "Увядзіце адрас электроннай пошты ўліковага запісу для атрымання падказкі для асноўнага пароля."
   },
   "getMasterPasswordHint": {
-    "message": "Атрымаць падказку для майстра-пароля"
+    "message": "Атрымаць падказку для асноўнага пароля"
   },
   "continue": {
     "message": "Працягнуць"
@@ -125,7 +125,7 @@
     "message": "Уліковы запіс"
   },
   "changeMasterPassword": {
-    "message": "Змяніць майстар-пароль"
+    "message": "Змяніць асноўны пароль"
   },
   "fingerprintPhrase": {
     "message": "Фраза адбітка пальца",
@@ -303,10 +303,10 @@
     "message": "Ваш вэб-браўзер не падтрымлівае капіяванне даных у буфер абмену. Скапіюйце іх уручную."
   },
   "verifyMasterPassword": {
-    "message": "Праверыць майстар-пароль"
+    "message": "Праверыць асноўны пароль"
   },
   "yourVaultIsLocked": {
-    "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце майстар-пароль."
+    "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце асноўны пароль."
   },
   "unlock": {
     "message": "Разблакіраваць"
@@ -325,7 +325,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Памылковы майстар-пароль"
+    "message": "Памылковы асноўны пароль"
   },
   "vaultTimeout": {
     "message": "Таймаўт сховішча"
@@ -388,19 +388,19 @@
     "message": "Памылковы адрас электроннай пошты."
   },
   "masterPassRequired": {
-    "message": "Патрабуецца майстар-пароль."
+    "message": "Патрабуецца асноўны пароль."
   },
   "masterPassLength": {
-    "message": "Майстар-пароль павінен быць даўжынёй не менш за 8 сімвалаў."
+    "message": "Асноўны пароль павінен быць даўжынёй не менш за 8 сімвалаў."
   },
   "masterPassDoesntMatch": {
-    "message": "Майстры-паролі не супадаюць."
+    "message": "Асноўныя паролі не супадаюць."
   },
   "newAccountCreated": {
     "message": "Ваш уліковы запіс створаны! Вы можаце ўвайсці."
   },
   "masterPassSent": {
-    "message": "Мы адправілі вам на электронную пошту падказку для майстра-пароля."
+    "message": "Мы адправілі вам на электронную пошту падказку для асноўнага пароля."
   },
   "verificationCodeRequired": {
     "message": "Патрабуецца код праверкі."
@@ -443,10 +443,10 @@
     "message": "Папка дададзена"
   },
   "changeMasterPass": {
-    "message": "Змяніць майстар-пароль"
+    "message": "Змяніць асноўны пароль"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Вы можаце змяніць свой майстар-пароль на bitwarden.com. Перайсці на сайт зараз?"
+    "message": "Вы можаце змяніць свой асноўны пароль на bitwarden.com. Перайсці на сайт зараз?"
   },
   "twoStepLoginConfirmation": {
     "message": "Двухэтапны ўваход робіць ваш уліковы запіс больш бяспечным, патрабуючы пацвярджэння ўваходу на іншай прыладзе, напрыклад, ключом бяспекі, праграмай для праверкі бяспекі, SMS, тэлефонным выклікам або электроннай поштай. Двухэтапны ўваход уключаецца на bitwarden.com. Перайсці на сайт зараз?"
@@ -610,7 +610,7 @@
     "message": "Экспартуемы файл утрымлівае даныя вашага сховішча ў незашыфраваным фармаце. Яго не варта захоўваць ці адпраўляць па небяспечным каналам (напрыклад, па электроннай пошце). Выдаліце яго адразу пасля выкарыстання."
   },
   "exportMasterPassword": {
-    "message": "Увядзіце ваш майстар-пароль для экспарту даных са сховішча."
+    "message": "Увядзіце ваш асноўны пароль для экспарту даных са сховішча."
   },
   "shared": {
     "message": "Абагуленыя"
@@ -893,6 +893,9 @@
   },
   "commandGeneratePasswordDesc": {
     "message": "Стварыць і капіяваць новы выпадковы парольу буфер абмену."
+  },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
   },
   "privateModeMessage": {
     "message": "На жаль, гэта акно недаступна ў прыватным акне гэтага браўзара."
@@ -1220,10 +1223,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Слабы майстар-пароль"
+    "message": "Слабы асноўны пароль"
   },
   "weakMasterPasswordDesc": {
-    "message": "Майстар-пароль, выбраны вамі, з'яўляецца слабым. Для належнай абароны ўліковага запісу Bitwarden, вам належыць выкарыстоўваць моцны майстар-пароль (або парольную фразу). Вы ўпэўнены, што хочаце выкарыстоўваць гэты майстар-пароль?"
+    "message": "Асноўны пароль, выбраны вамі, з'яўляецца слабым. Для належнай абароны ўліковага запісу Bitwarden, вы павінны выкарыстоўваць моцны асноўны пароль (або парольную фразу). Вы ўпэўнены, што хочаце выкарыстоўваць гэты асноўны пароль?"
   },
   "pin": {
     "message": "PIN-код",
@@ -1248,7 +1251,7 @@
     "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце PIN-код."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Блакіраваць майстрам-паролем пры перазапуску браўзера"
+    "message": "Блакіраваць асноўным паролем пры перазапуску браўзера"
   },
   "selectOneCollection": {
     "message": "Вы павінны выбраць прынамсі адну калекцыю."
@@ -1301,7 +1304,7 @@
     "message": "Пацвярджэнне дзеяння для таймаута"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Запоўніць і захаваць"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Auto-filled Item and Saved URI"
@@ -1310,10 +1313,10 @@
     "message": "Auto-filled Item"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Задаць асноўны пароль"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Згодна з адной або некалькімі палітыкамі арганізацыі неабходна, каб ваш асноўны пароль адказваў наступным патрабаванням:"
   },
   "policyInEffectMinComplexity": {
     "message": "Minimum complexity score of $SCORE$",
@@ -1352,6 +1355,18 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ваш новы асноўны пароль не адпавядае патрабаванням палітыкі арганізацыі."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

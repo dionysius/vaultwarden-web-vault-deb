@@ -416,7 +416,7 @@
     }
   },
   "autofillError": {
-    "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
+    "message": "ഈ പേജിൽ തിരഞ്ഞെടുത്ത ഇനം യാന്ത്രികമായി പൂരിപ്പിക്കാൻ കഴിയില്ല. പകരം വിവരങ്ങൾ പകർത്തി ഒട്ടിക്കുക."
   },
   "loggedOut": {
     "message": "ലോഗേഡ് ഔട്ട്"
@@ -532,55 +532,55 @@
     "message": "ടാബ് പേജിൽ കാർഡുകൾ കാണിക്കരുത്"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "സ്വപ്രേരിതമായി പൂരിപ്പിക്കുന്നതിന് നിങ്ങളുടെ നിലവറയിൽ നിന്നുള്ള കാർഡ് ഇനങ്ങൾ 'നിലവിലെ ടാബ്' പേജിൽ പട്ടികപ്പെടുത്തിയിട്ടുണ്ട്."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "ടാബ് പേജിൽ ഐഡന്റിറ്റികൾ കാണിക്കരുത്"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "സ്വയമേവ എളുപ്പത്തിൽ പൂരിപ്പിക്കുന്നതിന് നിങ്ങളുടെ നിലവറയിൽ നിന്നുള്ള ഐഡന്റിറ്റി ഇനങ്ങൾ 'നിലവിലെ ടാബ്' പേജിൽ പട്ടികപ്പെടുത്തിയിട്ടുണ്ട്."
   },
   "clearClipboard": {
     "message": "ക്ലിപ്ബോര്‍ഡ് മായ്ക്കുക",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "നിങ്ങളുടെ ക്ലിപ്പ്ബോർഡിൽ നിന്ന് പകർത്തിയ മൂല്യങ്ങൾ യാന്ത്രികമായി മായ്‌ക്കുക.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Should Bitwarden remember this password for you?"
+    "message": "നിങ്ങൾ‌ക്കായി ഈ പാസ്‌വേഡ് ബിറ്റ്‌വർ‌ഡൻ‌ ഓർത്തിരിക്കണോ?"
   },
   "notificationAddSave": {
     "message": "ശരി, ഇപ്പോൾ സംരക്ഷിക്കുക"
   },
   "notificationNeverSave": {
-    "message": "Never for this website"
+    "message": "ഈ വെബ്‌സൈറ്റിനായി ഒരിക്കലും"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "മാറ്റിയ പാസ്‌വേഡ് അറിയിപ്പ് പ്രവർത്തനരഹിതമാക്കുക"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "ഒരു വെബ്‌സൈറ്റിൽ നിങ്ങൾ അത് മാറ്റിയതായി കണ്ടെത്തുമ്പോഴെല്ലാം നിങ്ങളുടെ നിലവറയിൽ ഒരു ലോഗിൻ പാസ്‌വേഡ് അപ്‌ഡേറ്റുചെയ്യാൻ \"മാറ്റിയ പാസ്‌വേഡ് അറിയിപ്പ്\" യാന്ത്രികമായി ആവശ്യപ്പെടുന്നു."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "ബിറ്റ്വാർഡനിൽ ഈ പാസ്‌വേഡ് അപ്‌ഡേറ്റ് ചെയ്യാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?"
   },
   "notificationChangeSave": {
     "message": "ശരി, ഇപ്പോൾ അപ്ഡേറ്റ് ചെയ്യുക"
   },
   "disableContextMenuItem": {
-    "message": "Disable Context Menu Options"
+    "message": "സന്ദർഭ മെനു ഓപ്ഷനുകൾ അപ്രാപ്തമാക്കുക"
   },
   "disableContextMenuItemDesc": {
-    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "message": "നിങ്ങളുടെ നിലവിലെ ടാബിലെ വെബ്‌സൈറ്റിനായുള്ള പാസ്‌വേഡ് ജനറേഷനിലേക്കും ലോഗിനുകളിലേക്കും സന്ദർഭ മെനു ഓപ്ഷനുകൾ ദ്രുത പ്രവേശനം നൽകുന്നു."
   },
   "defaultUriMatchDetection": {
     "message": "സാധാരണ URI പൊരുത്തം കണ്ടെത്തൽ",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "യാന്ത്രിക പൂരിപ്പിക്കൽ പോലുള്ള പ്രവർത്തനങ്ങൾ നടത്തുമ്പോൾ ലോഗിനുകൾക്കായി യുആർഐ മാച്ച് ഡിറ്റക്ഷൻ കൈകാര്യം ചെയ്യുന്ന സ്ഥിരസ്ഥിതി മാർഗം തിരഞ്ഞെടുക്കുക."
   },
   "theme": {
     "message": "തീം"
@@ -664,7 +664,7 @@
     "message": "അറ്റാച്ചുമെന്റുകൾ ഇല്ല."
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "അറ്റാച്ചുമെന്റ് സംരക്ഷിച്ചു."
   },
   "file": {
     "message": "ഫയൽ"
@@ -703,13 +703,13 @@
     "message": "ഫയൽ അറ്റാച്ചുമെന്റുകൾക്കായി 1 ജിബി എൻക്രിപ്റ്റുചെയ്‌ത സംഭരണം."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "രണ്ട്-ഘട്ട പ്രവേശന ഓപ്ഷനുകളായ Yubikey, FIDO U2F, Duo."
   },
   "ppremiumSignUpReports": {
     "message": "നിങ്ങളുടെ വാൾട് സൂക്ഷിക്കുന്നതിന്. പാസ്‌വേഡ് ശുചിത്വം, അക്കൗണ്ട് ആരോഗ്യം, ഡാറ്റ ലംഘന റിപ്പോർട്ടുകൾ."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "നിങ്ങളുടെ വാൾട്ടിലെ പ്രവേശനങ്ങൾക്കായി TOTP പരിശോധന കോഡ് (2FA) സൃഷ്ടാവ്."
   },
   "ppremiumSignUpSupport": {
     "message": "മുൻ‌ഗണന ഉപഭോക്തൃ പിന്തുണ."
@@ -793,16 +793,16 @@
     "message": "പ്രവേശനം ലഭ്യമല്ല"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message": "ഈ അക്കൗണ്ടിന് രണ്ട്-ഘട്ട പ്രവേശനം പ്രാപ്തമാക്കിയിട്ടുണ്ട്, എന്നിരുന്നാലും, ക്രമീകരിച്ച രണ്ട്-ഘട്ട ദാതാക്കളെയൊന്നും ഈ ഉപകരണം പിന്തുണയ്ക്കുന്നില്ല."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "മികച്ച പിന്തുണയുള്ള, കൂടുതൽ ദാതാക്കളെ ദയവായി ചേർക്കുക (ഒരു ഓതന്റിക്കേറ്റർ അപ്ലിക്കേഷൻ പോലുള്ളവ)."
   },
   "twoStepOptions": {
     "message": "രണ്ട്-ഘട്ട പ്രവേശനം ഓപ്ഷനുകൾ"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "നിങ്ങളുടെ രണ്ട്-ഘടക ദാതാക്കളിലേക്കുള്ള ആക്‌സസ്സ് നഷ്‌ടപ്പെട്ടോ? നിങ്ങളുടെ അക്കൗണ്ടിൽ നിന്ന് രണ്ട്-ഘടക ദാതാക്കളെ പ്രവർത്തനരഹിതമാക്കാൻ നിങ്ങളുടെ റിക്കവറി കോഡ് ഉപയോഗിക്കുക."
   },
   "recoveryCodeTitle": {
     "message": "റിക്കവറി കോഡ്"
@@ -811,25 +811,25 @@
     "message": "ഓതന്റിക്കേറ്റർ ആപ്പ്"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "സമയ-അടിസ്ഥാന പരിശോധന കോഡുകൾ സൃഷ്ടിക്കുന്നതിന് ഒരു ഓതന്റിക്കേറ്റർ അപ്ലിക്കേഷൻ (ഓത്തി അല്ലെങ്കിൽ Google ഓതന്റിക്കേറ്റർ പോലുള്ളവ) ഉപയോഗിക്കുക.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP സുരക്ഷാ കീ"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "നിങ്ങളുടെ അക്കൗണ്ട് ആക്സസ് ചെയ്യുന്നതിന് ഒരു യൂബിക്കി ഉപയോഗിക്കുക. YubiKey 4, 4 Nano, 4C, NEO ഉപകരണങ്ങളിൽ പ്രവർത്തിക്കുന്നു."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Duo Mobile അപ്ലിക്കേഷൻ, എസ്എംഎസ്, ഫോൺ കോൾ അല്ലെങ്കിൽ യു 2 എഫ് സുരക്ഷാ കീ ഉപയോഗിച്ച് Duoസെക്യൂരിറ്റി ഉപയോഗിച്ച് പരിശോധിക്കുക.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Duo Mobile, എസ്എംഎസ്, ഫോൺ കോൾ അല്ലെങ്കിൽ യു 2 എഫ് സുരക്ഷാ കീ ഉപയോഗിച്ച് നിങ്ങളുടെ ഓർഗനൈസേഷനെ ഡ്യുവോ സെക്യൂരിറ്റി ഉപയോഗിച്ച് പരിശോധിക്കുക.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "നിങ്ങളുടെ അക്കൗണ്ട് ആക്സസ് ചെയ്യുന്നതിന് ഏതെങ്കിലും FIDO U2F പ്രാപ്തമാക്കിയ സുരക്ഷാ കീ ഉപയോഗിക്കുക."
   },
   "u2fTitle": {
     "message": "FIDO U2F സുരക്ഷാ കീ"
@@ -838,7 +838,7 @@
     "message": "ഇമെയിൽ"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "സ്ഥിരീകരണ കോഡുകൾ നിങ്ങൾക്ക് ഇമെയിൽ ചെയ്യും."
   },
   "selfHostedEnvironment": {
     "message": "സ്വയം ഹോസ്റ്റുചെയ്‌ത എൻവിയോണ്മെന്റ്"
@@ -874,25 +874,28 @@
     "message": "എന്വിയാണമെന്റ് URL സംരക്ഷിച്ചു."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load"
+    "message": "പേജ് ലോഡിൽ യാന്ത്രിക-പൂരിപ്പിക്കൽ പ്രവർത്തനക്ഷമമാക്കുക"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message": "ഒരു ലോഗിൻ ഫോം കണ്ടെത്തിയാൽ, വെബ് പേജ് ലോഡുചെയ്യുമ്പോൾ യാന്ത്രികമായി ഒരു സ്വയം പൂരിപ്പിക്കൽ നടത്തുക."
   },
   "experimentalFeature": {
-    "message": "This is currently an experimental feature. Use at your own risk."
+    "message": "ഇത് നിലവിൽ ഒരു പരീക്ഷണാത്മക സവിശേഷതയാണ്. നിങ്ങളുടെ സ്വന്തം ഉത്തരവാദിത്വത്തിൽ ഉപയോഗിക്കുക."
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "വോൾട്ട് പോപ്പ്അപ്പ് തുറക്കുക"
   },
   "commandOpenSidebar": {
     "message": "വാൾട് സൈഡ്ബാറിൽ തുറക്കുക"
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website"
+    "message": "നിലവിലെ വെബ്‌സൈറ്റിനായി അവസാനമായി ഉപയോഗിച്ച ലോഗിൻ യാന്ത്രികമായി പൂരിപ്പിക്കുക"
   },
   "commandGeneratePasswordDesc": {
     "message": "ക്ലിപ്പ്ബോർഡിലേക്ക് ഒരു പുതിയ റാൻഡം പാസ്‌വേഡ് സൃഷ്ടിച്ച് പകർത്തുക"
+  },
+  "commandLockVaultDesc": {
+    "message": "നിലവറ പൂട്ടുക"
   },
   "privateModeMessage": {
     "message": "നിർഭാഗ്യവശാൽ ഈ വിൻഡോ ബ്രൗസറിന്റെ സ്വകാര്യ മോഡിൽ ലഭ്യമല്ല."
@@ -922,10 +925,10 @@
     "message": "ബൂളിയൻ"
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "നിങ്ങളുടെ സ്ഥിരീകരണ കോഡിനായി നിങ്ങളുടെ ഇമെയിൽ പരിശോധിക്കുന്നതിന് പോപ്പ്അപ്പ് വിൻഡോയ്ക്ക് പുറത്ത് ക്ലിക്കുചെയ്യുന്നത് ഈ പോപ്പ്അപ്പ് അടയ്‌ക്കുന്നതിന് കാരണമാകും. ഈ പോപ്പ്അപ്പ് അടയ്‌ക്കാത്തവിധം ഒരു പുതിയ വിൻ‌ഡോയിൽ‌ തുറക്കാൻ‌ നിങ്ങൾ‌ താൽ‌പ്പര്യപ്പെടുന്നോ?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "ഈ ബ്ര pop സറിന് ഈ പോപ്പ്അപ്പ് വിൻഡോയിൽ U2F അഭ്യർത്ഥനകൾ പ്രോസസ്സ് ചെയ്യാൻ കഴിയില്ല. യു 2 എഫ് ഉപയോഗിച്ച് ലോഗിൻ ചെയ്യാൻ ഈ പോപ്പ്അപ്പ് ഒരു പുതിയ വിൻഡോയിൽ തുറക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?"
   },
   "disableFavicon": {
     "message": "വെബ്‌സൈറ്റ് ഐക്കണുകൾ പ്രവർത്തനരഹിതമാക്കുക"
@@ -1093,7 +1096,7 @@
     "message": "പ്രിയങ്കരങ്ങള്‍"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "ഒരു പുതിയ വിൻ‌ഡോയിലേക്ക് പോപ്പ് out ട്ട് ചെയ്യുക"
   },
   "refresh": {
     "message": "റിഫ്രഷ് ചെയ്യുക"
@@ -1147,11 +1150,11 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "പൊരുത്തം കണ്ടെത്തൽ",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "സ്ഥിരസ്ഥിതി പൊരുത്ത കണ്ടെത്തൽ",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
@@ -1193,7 +1196,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "\"ഒരിക്കലും\" ഓപ്ഷൻ ഉപയോഗിക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ? നിങ്ങളുടെ ലോക്ക് ഓപ്ഷനുകൾ \"ഒരിക്കലും\" എന്ന് സജ്ജമാക്കുന്നത് നിങ്ങളുടെ ഉപകരണത്തിൽ നിലവറയുടെ എൻക്രിപ്ഷൻ കീ സംഭരിക്കുന്നു. നിങ്ങൾ ഈ ഓപ്‌ഷൻ ഉപയോഗിക്കുകയാണെങ്കിൽ, നിങ്ങളുടെ ഉപകരണം ശരിയായി പരിരക്ഷിച്ചിട്ടുണ്ടെന്ന് ഉറപ്പാക്കണം."
   },
   "noOrganizationsList": {
     "message": "താങ്കൾ ഒരു സംഘടനയുടെയും അംഗമല്ല. മറ്റ് ഉപയോക്താക്കളുമായി ഇനങ്ങൾ സുരക്ഷിതമായി പങ്കിടാൻ ഓർഗനൈസേഷനുകൾ നിങ്ങളെ അനുവദിക്കുന്നു."
@@ -1301,22 +1304,22 @@
     "message": "ടൈംഔട് ആക്ഷൻ സ്ഥിരീകരണം"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "യാന്ത്രികമായി പൂരിപ്പിച്ച് സംരക്ഷിക്കുക"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "യാന്ത്രികമായി പൂരിപ്പിച്ച ഇനവും സംരക്ഷിച്ച URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "യാന്ത്രികമായി പൂരിപ്പിച്ച ഇനം"
   },
   "setMasterPassword": {
     "message": "പ്രാഥമിക പാസ്‌വേഡ് സജ്ജമാക്കുക"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "ഒന്നോ അതിലധികമോ ഓർഗനൈസേഷൻ നയങ്ങൾക്ക് ഇനിപ്പറയുന്ന ആവശ്യകതകൾ നിറവേറ്റുന്നതിന് നിങ്ങളുടെ മാസ്റ്റർ പാസ്‌വേഡ് ആവശ്യമാണ്:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "സങ്കീർണ്ണതയുടെ കുറഞ്ഞ സ്കോർ$SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1325,7 +1328,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "കുറഞ്ഞ ദൈർഘ്യം $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1334,16 +1337,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "ഒന്നോ അതിലധികമോ വലിയക്ഷരങ്ങൾ അടങ്ങിയിരിക്കുന്ന"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "ഒന്നോ അതിലധികമോ ചെറിയക്ഷരങ്ങൾ അടങ്ങിയിരിക്കുന്ന"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "ഒന്നോ അതിലധികമോ അക്കങ്ങൾ അടങ്ങിയിരിക്കുന്ന"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "ഇനിപ്പറയുന്ന ഒന്നോ അതിലധികമോ പ്രത്യേക പ്രതീകങ്ങൾ അടങ്ങിയിരിക്കണം:$CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1352,6 +1355,18 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "നിങ്ങളുടെ പുതിയ മാസ്റ്റർ പാസ്‌വേഡ് നയ ആവശ്യകതകൾ നിറവേറ്റുന്നില്ല."
+  },
+  "acceptPolicies": {
+    "message": "ഈ ബോക്സ് ചെക്കുചെയ്യുന്നതിലൂടെ നിങ്ങൾ ഇനിപ്പറയുന്നവ അംഗീകരിക്കുന്നു:"
+  },
+  "acceptPoliciesError": {
+    "message": "സേവന നിബന്ധനകളും സ്വകാര്യതാ നയവും അംഗീകരിച്ചിട്ടില്ല."
+  },
+  "termsOfService": {
+    "message": "സേവന നിബന്ധനകൾ"
+  },
+  "privacyPolicy": {
+    "message": "സ്വകാര്യതാനയം"
   }
 }

@@ -20,7 +20,7 @@
     "message": "Iniciar Sessão"
   },
   "enterpriseSingleSignOn": {
-    "message": "Início de Sessão Único Empresarial"
+    "message": "Início de sessão empresarial"
   },
   "cancel": {
     "message": "Cancelar"
@@ -95,7 +95,7 @@
     "message": "O cofre está trancado."
   },
   "vaultLoggedOut": {
-    "message": "O cofre está encerrado."
+    "message": "O cofre foi fechado."
   },
   "autoFillInfo": {
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
@@ -328,7 +328,7 @@
     "message": "Senha mestra inválida"
   },
   "vaultTimeout": {
-    "message": "Tempo Limite do Cofre"
+    "message": "Tempo limite do cofre."
   },
   "lockNow": {
     "message": "Bloquear Agora"
@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Gerar e copiar uma nova senha aleatória para a área de transferência."
   },
+  "commandLockVaultDesc": {
+    "message": "Bloquear o cofre"
+  },
   "privateModeMessage": {
     "message": "Infelizmente esta janela não está disponível no modo privado para este navegador."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "A sua nova senha mestra não cumpre aos requisitos da política."
+  },
+  "acceptPolicies": {
+    "message": "Ao marcar esta caixa, você concorda com o seguinte:"
+  },
+  "acceptPoliciesError": {
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
+  },
+  "termsOfService": {
+    "message": "Termos de Serviço"
+  },
+  "privacyPolicy": {
+    "message": "Política de Privacidade"
   }
 }

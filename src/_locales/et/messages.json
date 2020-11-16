@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Loo ja kopeeri uus juhuslikult koostatud parool lõikepuhvrisse."
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "Kahjuks ei toeta kasutatav brauser seda akent privaatses režiimis."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Uus ülemparool ei vasta eeskirjades väljatoodud tingimustele."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

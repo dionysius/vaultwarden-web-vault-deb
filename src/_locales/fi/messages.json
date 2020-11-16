@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Luo uusi satunnainen salasana ja kopioi se leikepöydälle."
   },
+  "commandLockVaultDesc": {
+    "message": "Lukitse holvi"
+  },
   "privateModeMessage": {
     "message": "Valitettavasti tämä ikkuna ei ole saatavilla tämän selaimen yksityisyystilassa."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Uusi pääsalasanasi ei täytä käytäntövaatimuksia."
+  },
+  "acceptPolicies": {
+    "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
+  },
+  "acceptPoliciesError": {
+    "message": "Palvelu- ja tietosuojakäytäntöä ei ole vahvistettu."
+  },
+  "termsOfService": {
+    "message": "Käyttöehdot"
+  },
+  "privacyPolicy": {
+    "message": "Tietosuojakäytäntö"
   }
 }

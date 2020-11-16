@@ -37,6 +37,20 @@ const UsernameFieldNames: string[] = [
     // German
     'benutzername', 'benutzer name', 'email adresse', 'e-mail adresse', 'benutzerid', 'benutzer id'];
 
+const FirstnameFieldNames: string[] = [
+    // English
+    'f-name', 'first-name', 'given-name', 'first-n',
+    // German
+    'vorname'
+]
+
+const LastnameFieldNames: string[] = [
+    // English
+    'l-name', 'last-name', 's-name', 'surname', 'family-name', 'family-n', 'last-n',
+    // German
+    'nachname', 'familienname'
+]
+
 const ExcludedAutofillTypes: string[] = ['radio', 'checkbox', 'hidden', 'file', 'button', 'image', 'reset', 'search'];
 
 // Each index represents a language. These three arrays should all be the same length.
@@ -231,10 +245,16 @@ export default class AutofillService implements AutofillServiceInterface {
         if (fromCommand) {
             cipher = await this.cipherService.getNextCipherForUrl(tab.url);
         } else {
-            cipher = await this.cipherService.getLastUsedForUrl(tab.url);
+            const lastLaunchedCipher = await this.cipherService.getLastLaunchedForUrl(tab.url);
+            if (lastLaunchedCipher && Date.now().valueOf() - lastLaunchedCipher.localData?.lastLaunched?.valueOf() < 30000) {
+                cipher = lastLaunchedCipher;
+            }
+            else {
+                cipher = await this.cipherService.getLastUsedForUrl(tab.url);
+            }
         }
 
-        return await this.doAutoFill({
+        const autoFillResponse = await this.doAutoFill({
             cipher: cipher,
             pageDetails: pageDetails,
             skipTotp: !fromCommand,
@@ -244,6 +264,13 @@ export default class AutofillService implements AutofillServiceInterface {
             onlyVisibleFields: !fromCommand,
             fillNewPassword: fromCommand,
         });
+
+        // Only update last used index if doAutoFill didn't throw an exception
+        if (fromCommand) {
+            this.cipherService.updateLastUsedIndexForUrl(tab.url);
+        }
+
+        return autoFillResponse;
     }
 
     // Helpers
@@ -678,7 +705,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.name = f;
                     break;
                 } else if (!fillFields.firstName && this.isFieldMatch(f[attr],
-                    ['f-name', 'first-name', 'given-name', 'first-n'])) {
+                    FirstnameFieldNames)) {
                     fillFields.firstName = f;
                     break;
                 } else if (!fillFields.middleName && this.isFieldMatch(f[attr],
@@ -686,7 +713,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.middleName = f;
                     break;
                 } else if (!fillFields.lastName && this.isFieldMatch(f[attr],
-                    ['l-name', 'last-name', 's-name', 'surname', 'family-name', 'family-n', 'last-n'])) {
+                    LastnameFieldNames)) {
                     fillFields.lastName = f;
                     break;
                 } else if (!fillFields.title && this.isFieldMatch(f[attr],

@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Új véletlenszerű jelszó generálása ás másolása a vágólapra."
   },
+  "commandLockVaultDesc": {
+    "message": "A széf zárolása"
+  },
   "privateModeMessage": {
     "message": "Ebben a böngészőben ez az ablak sajnos nem érhető el privát módban."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Az új mesterjelszó nem felel meg a szabály követelményeknek."
+  },
+  "acceptPolicies": {
+    "message": "A doboz bejelölésével elfogadjuk a következőket:"
+  },
+  "acceptPoliciesError": {
+    "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
+  },
+  "termsOfService": {
+    "message": "Szolgáltatási feltételek"
+  },
+  "privacyPolicy": {
+    "message": "Adatvédelem"
   }
 }

@@ -894,6 +894,9 @@
   "commandGeneratePasswordDesc": {
     "message": "Gerar e copiar uma nova palavra-passe aleatória para a área de transferência"
   },
+  "commandLockVaultDesc": {
+    "message": "Lock the vault"
+  },
   "privateModeMessage": {
     "message": "Infelizmente esta janela não está disponível no modo privado para este navegador."
   },
@@ -1353,5 +1356,17 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "A sua nova palavra-passe mestra não cumpre os requisitos da política."
+  },
+  "acceptPolicies": {
+    "message": "Ao marcar esta caixa concorda com o seguinte:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "termsOfService": {
+    "message": "Termos de serviço"
+  },
+  "privacyPolicy": {
+    "message": "Política de privacidade"
   }
 }
