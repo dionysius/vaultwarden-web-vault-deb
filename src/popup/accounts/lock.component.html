@@ -38,7 +38,7 @@
         </div>
         <div class="box" *ngIf="biometricLock">
             <div class="box-footer">
-                <a class="btn primary block" (click)="unlockBiometric()">Unlock with biometry</a>
+                <a class="btn primary block" (click)="unlockBiometric()">{{'unlockWithBiometrics' | i18n}}</a>
             </div>
         </div>
         <p class="text-center">

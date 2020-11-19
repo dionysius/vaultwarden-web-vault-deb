@@ -66,7 +66,7 @@ export class NativeMessagingBackground {
                         this.sharedSecret = null;
                         this.privateKey = null;
                         this.connected = false;
-                        
+
                         this.messagingService.send('showDialog', {
                             text: this.i18nService.t('nativeMessagingInvalidEncryptionDesc'),
                             title: this.i18nService.t('nativeMessagingInvalidEncryptionTitle'),
@@ -86,7 +86,9 @@ export class NativeMessagingBackground {
                     error = chrome.runtime.lastError.message;
                 }
 
-                if (error === 'Specified native messaging host not found.' || error === 'Access to the specified native messaging host is forbidden.' || error === 'An unexpected error occurred') {
+                if (error === 'Specified native messaging host not found.' ||
+                    error === 'Access to the specified native messaging host is forbidden.' ||
+                    error === 'An unexpected error occurred') {
                     this.messagingService.send('showDialog', {
                         text: this.i18nService.t('desktopIntegrationDisabledDesc'),
                         title: this.i18nService.t('desktopIntegrationDisabledTitle'),
@@ -157,7 +159,7 @@ export class NativeMessagingBackground {
                 break;
             default:
                 // tslint:disable-next-line
-                console.error('NativeMessage, got unknown command.');
+                console.error('NativeMessage, got unknown command: ', message.command);
         }
 
         if (this.resolver) {
