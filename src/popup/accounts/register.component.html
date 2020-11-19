@@ -82,7 +82,7 @@
         </div>
         <div class="box last" *ngIf="showTerms">
             <div class="box-content">
-                <div class="box-footer box-content-row checkbox">
+                <div class="box-content-row box-content-row-checkbox box-content-row-checkbox-left" appBoxRow>
                     <input type="checkbox" id="acceptPolicies" [(ngModel)]="acceptPolicies" name="AcceptPolicies">
                     <label for="acceptPolicies">
                         {{'acceptPolicies' | i18n}}<br>
