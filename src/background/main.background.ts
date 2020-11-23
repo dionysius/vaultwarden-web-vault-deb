@@ -71,6 +71,7 @@ import { SafariApp } from '../browser/safariApp';
 import CommandsBackground from './commands.background';
 import ContextMenusBackground from './contextMenus.background';
 import IdleBackground from './idle.background';
+import { NativeMessagingBackground } from './nativeMessaging.background';
 import RuntimeBackground from './runtime.background';
 import TabsBackground from './tabs.background';
 import WebRequestBackground from './webRequest.background';
@@ -84,7 +85,6 @@ import I18nService from '../services/i18n.service';
 import { PopupUtilsService } from '../popup/services/popup-utils.service';
 
 import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
-import { NativeMessagingBackground } from './nativeMessaging.background';
 
 export default class MainBackground {
     messagingService: MessagingServiceAbstraction;

@@ -1,6 +1,5 @@
 import { BrowserApi } from '../browser/browserApi';
 import { SafariApp } from '../browser/safariApp';
-import { NativeMessagingBackground } from '../background/nativeMessaging.background';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
