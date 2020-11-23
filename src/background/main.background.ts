@@ -155,7 +155,7 @@ export default class MainBackground {
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
         this.cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
         this.cryptoService = new CryptoService(this.storageService, this.secureStorageService,
-            this.cryptoFunctionService);
+            this.cryptoFunctionService, this.platformUtilsService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
