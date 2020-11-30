@@ -164,7 +164,7 @@ export default class RuntimeBackground {
                 }
                 break;
             case 'authResult':
-                let vaultUrl = this.environmentService.webVaultUrl;
+                let vaultUrl = this.environmentService.getWebVaultUrl();
                 if (vaultUrl == null) {
                     vaultUrl = 'https://vault.bitwarden.com';
                 }
