@@ -152,10 +152,16 @@ export default class MainBackground {
                     this.systemService.clearClipboard(clipboardValue, clearMs);
                 }
             },
-            () => {
+            async () => {
                 if (this.nativeMessagingBackground != null) {
                     const promise = this.nativeMessagingBackground.getResponse();
-                    this.nativeMessagingBackground.send({command: 'biometricUnlock'})
+                    
+                    try {
+                        await this.nativeMessagingBackground.send({command: 'biometricUnlock'});
+                    } catch (e) {
+                        return Promise.reject(e);
+                    }
+
                     return promise.then((result) => result.response === 'unlocked');
                 }
             });

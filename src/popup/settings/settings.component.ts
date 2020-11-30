@@ -208,10 +208,6 @@ export class SettingsComponent implements OnInit {
 
     async updateBiometric() {
         if (this.biometric) {
-            this.biometric = false;
-            await this.storageService.remove(ConstantsService.biometricUnlockKey);
-            this.vaultTimeoutService.biometricLocked = false;
-        } else {
             const submitted = Swal.fire({
                 heightAuto: false,
                 buttonsStyling: false,
@@ -242,8 +238,14 @@ export class SettingsComponent implements OnInit {
                     if (this.biometric === false) {
                         this.platformUtilsService.showToast('error', this.i18nService.t('errorEnableBiometricTitle'), this.i18nService.t('errorEnableBiometricDesc'));
                     }
+                }).catch((e) => {
+                    // Handle connection errors
+                    this.biometric = false;
                 })
             ]);
+        } else {
+            await this.storageService.remove(ConstantsService.biometricUnlockKey);
+            this.vaultTimeoutService.biometricLocked = false;
         }
     }
 
