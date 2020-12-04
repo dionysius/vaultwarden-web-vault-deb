@@ -18,7 +18,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     private analyticsIdCache: string = null;
 
     constructor(private messagingService: MessagingService,
-        private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void) { }
+        private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void,
+        private biometricCallback: () => Promise<boolean>) { }
 
     getDevice(): DeviceType {
         if (this.deviceCache) {
@@ -288,11 +289,11 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     supportsBiometric() {
-        return Promise.resolve(false);
+        return Promise.resolve(true);
     }
 
     authenticateBiometric() {
-        return Promise.resolve(false);
+        return this.biometricCallback();
     }
 
     sidebarViewName(): string {

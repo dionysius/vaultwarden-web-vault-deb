@@ -71,6 +71,7 @@ import { SafariApp } from '../browser/safariApp';
 import CommandsBackground from './commands.background';
 import ContextMenusBackground from './contextMenus.background';
 import IdleBackground from './idle.background';
+import { NativeMessagingBackground } from './nativeMessaging.background';
 import RuntimeBackground from './runtime.background';
 import TabsBackground from './tabs.background';
 import WebRequestBackground from './webRequest.background';
@@ -140,6 +141,7 @@ export default class MainBackground {
     private menuOptionsLoaded: any[] = [];
     private syncTimeout: any;
     private isSafari: boolean;
+    private nativeMessagingBackground: NativeMessagingBackground;
 
     constructor() {
         // Services
@@ -148,6 +150,19 @@ export default class MainBackground {
             (clipboardValue, clearMs) => {
                 if (this.systemService != null) {
                     this.systemService.clearClipboard(clipboardValue, clearMs);
+                }
+            },
+            async () => {
+                if (this.nativeMessagingBackground != null) {
+                    const promise = this.nativeMessagingBackground.getResponse();
+                    
+                    try {
+                        await this.nativeMessagingBackground.send({command: 'biometricUnlock'});
+                    } catch (e) {
+                        return Promise.reject(e);
+                    }
+
+                    return promise.then((result) => result.response === 'unlocked');
                 }
             });
         this.storageService = new BrowserStorageService(this.platformUtilsService);
@@ -229,6 +244,8 @@ export default class MainBackground {
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
             this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService,
             this.environmentService);
+        this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.cryptoFunctionService,
+            this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics, this.vaultTimeoutService);
 

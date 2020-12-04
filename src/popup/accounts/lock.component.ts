@@ -13,6 +13,7 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib/angular/components/lock.component';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-lock',
@@ -35,5 +36,27 @@ export class LockComponent extends BaseLockComponent {
         window.setTimeout(() => {
             document.getElementById(this.pinLock ? 'pin' : 'masterPassword').focus();
         }, 100);
+    }
+
+    async unlockBiometric() {
+        if (!this.biometricLock) {
+            return;
+        }
+
+        const div = document.createElement('div');
+        div.innerHTML = `<div class="swal2-text">${this.i18nService.t('awaitDesktop')}</div>`;
+
+        Swal.fire({
+            heightAuto: false,
+            buttonsStyling: false,
+            html: div,
+            showCancelButton: true,
+            cancelButtonText: this.i18nService.t('cancel'),
+            showConfirmButton: false,
+        });
+
+        await super.unlockBiometric();
+
+        Swal.close();
     }
 }

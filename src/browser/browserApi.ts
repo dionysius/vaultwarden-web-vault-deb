@@ -221,4 +221,12 @@ export class BrowserApi {
             });
         }
     }
+
+    static connectNative(application: string): browser.runtime.Port | chrome.runtime.Port {
+        if (BrowserApi.isWebExtensionsApi) {
+            return browser.runtime.connectNative(application);
+        } else if (BrowserApi.isChromeApi) {
+            return chrome.runtime.connectNative(application);
+        }
+    }
 }
