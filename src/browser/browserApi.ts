@@ -4,20 +4,16 @@ import { Utils } from 'jslib/misc/utils';
 
 export class BrowserApi {
     static isWebExtensionsApi: boolean = (typeof browser !== 'undefined');
-    static isSafariApi: boolean = (window as any).safariAppExtension === true;
+    static isSafariApi: boolean = true;
     static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
     static isFirefoxOnAndroid: boolean = navigator.userAgent.indexOf('Firefox/') !== -1 &&
         navigator.userAgent.indexOf('Android') !== -1;
 
     static async getTabFromCurrentWindowId(): Promise<any> {
-        if (BrowserApi.isChromeApi) {
-            return await BrowserApi.tabsQueryFirst({
-                active: true,
-                windowId: chrome.windows.WINDOW_ID_CURRENT,
-            });
-        } else if (BrowserApi.isSafariApi) {
-            return await BrowserApi.getTabFromCurrentWindow();
-        }
+        return await BrowserApi.tabsQueryFirst({
+            active: true,
+            windowId: chrome.windows.WINDOW_ID_CURRENT,
+        });
     }
 
     static async getTabFromCurrentWindow(): Promise<any> {
@@ -34,16 +30,11 @@ export class BrowserApi {
     }
 
     static async tabsQuery(options: any): Promise<any[]> {
-        if (BrowserApi.isChromeApi) {
-            return new Promise((resolve) => {
-                chrome.tabs.query(options, (tabs: any[]) => {
-                    resolve(tabs);
-                });
+        return new Promise((resolve) => {
+            chrome.tabs.query(options, (tabs: any[]) => {
+                resolve(tabs);
             });
-        } else if (BrowserApi.isSafariApi) {
-            const tabs = await SafariApp.sendMessageToApp('tabs_query', JSON.stringify(options));
-            return tabs != null ? JSON.parse(tabs) : null;
-        }
+        });
     }
 
     static async tabsQueryFirst(options: any): Promise<any> {
@@ -72,81 +63,36 @@ export class BrowserApi {
             return;
         }
 
-        if (BrowserApi.isChromeApi) {
-            return new Promise((resolve) => {
-                chrome.tabs.sendMessage(tab.id, obj, options, () => {
-                    if (chrome.runtime.lastError) {
-                        // Some error happened
-                    }
-                    resolve();
-                });
+        return new Promise((resolve) => {
+            chrome.tabs.sendMessage(tab.id, obj, options, () => {
+                if (chrome.runtime.lastError) {
+                    // Some error happened
+                }
+                resolve();
             });
-        } else if (BrowserApi.isSafariApi) {
-            if (options != null && options.frameId != null && obj.bitwardenFrameId == null) {
-                obj.bitwardenFrameId = options.frameId;
-            }
-            await SafariApp.sendMessageToApp('tabs_message', JSON.stringify({
-                tab: tab,
-                obj: JSON.stringify(obj),
-                options: options,
-            }), true);
-        }
+        });
     }
 
     static getBackgroundPage(): any {
-        if (BrowserApi.isChromeApi) {
-            return chrome.extension.getBackgroundPage();
-        } else if (BrowserApi.isSafariApi) {
-            return window;
-        } else {
-            return null;
-        }
+        return chrome.extension.getBackgroundPage();
     }
 
     static getApplicationVersion(): string {
-        if (BrowserApi.isChromeApi) {
-            return chrome.runtime.getManifest().version;
-        } else if (BrowserApi.isSafariApi) {
-            return (window as any).bitwardenApplicationVersion;
-        } else {
-            return null;
-        }
+        return chrome.runtime.getManifest().version;
     }
 
     static async isPopupOpen(): Promise<boolean> {
-        if (BrowserApi.isChromeApi) {
-            return Promise.resolve(chrome.extension.getViews({ type: 'popup' }).length > 0);
-        } else if (BrowserApi.isSafariApi) {
-            const open = await SafariApp.sendMessageToApp('isPopoverOpen');
-            return open === 'true';
-        } else {
-            return Promise.resolve(false);
-        }
+        return Promise.resolve(chrome.extension.getViews({ type: 'popup' }).length > 0);
     }
 
     static createNewTab(url: string, extensionPage: boolean = false) {
-        if (BrowserApi.isChromeApi) {
-            chrome.tabs.create({ url: url });
-        } else if (BrowserApi.isSafariApi) {
-            SafariApp.sendMessageToApp('createNewTab', url, true);
-        }
+        chrome.tabs.create({ url: url });
     }
 
     static messageListener(name: string, callback: (message: any, sender: any, response: any) => void) {
-        if (BrowserApi.isChromeApi) {
-            chrome.runtime.onMessage.addListener((msg: any, sender: any, response: any) => {
-                callback(msg, sender, response);
-            });
-        } else if (BrowserApi.isSafariApi) {
-            SafariApp.addMessageListener(name, (message: any, sender: any, response: any) => {
-                if (message.bitwardenFrameId != null) {
-                    if (sender != null && typeof (sender) === 'object' && sender.frameId == null) {
-                        sender.frameId = message.bitwardenFrameId;
-                    }
-                }
-                callback(message, sender, response);
-            });
-        }
+        chrome.runtime.onMessage.addListener((msg: any, sender: any, response: any) => {
+            callback(msg, sender, response);
+        });
     }
 
     static closePopup(win: Window) {
@@ -155,10 +101,8 @@ export class BrowserApi {
             // condition is only called if the popup wasn't already dismissed (future proofing).
             // ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1433604
             browser.tabs.update({ active: true }).finally(win.close);
-        } else if (BrowserApi.isWebExtensionsApi || BrowserApi.isChromeApi) {
+        } else {
             win.close();
-        } else if (BrowserApi.isSafariApi) {
-            SafariApp.sendMessageToApp('hidePopover');
         }
     }
 
@@ -196,30 +140,22 @@ export class BrowserApi {
     }
 
     static getUILanguage(win: Window) {
-        if (BrowserApi.isSafariApi) {
-            return win.navigator.language;
-        } else {
-            return chrome.i18n.getUILanguage();
-        }
+        return chrome.i18n.getUILanguage();
     }
 
     static reloadExtension(win: Window) {
         if (win != null) {
             return win.location.reload(true);
-        } else if (BrowserApi.isSafariApi) {
-            SafariApp.sendMessageToApp('reloadExtension');
-        } else if (!BrowserApi.isSafariApi) {
+        } else {
             return chrome.runtime.reload();
         }
     }
 
     static reloadOpenWindows() {
-        if (!BrowserApi.isSafariApi) {
-            const views = chrome.extension.getViews() as Window[];
-            views.filter((w) => w.location.href != null).forEach((w) => {
-                w.location.reload();
-            });
-        }
+        const views = chrome.extension.getViews() as Window[];
+        views.filter((w) => w.location.href != null).forEach((w) => {
+            w.location.reload();
+        });
     }
 
     static connectNative(application: string): browser.runtime.Port | chrome.runtime.Port {

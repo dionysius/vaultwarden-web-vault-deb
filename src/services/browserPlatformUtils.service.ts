@@ -189,13 +189,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         }
         const clearing = options ? !!options.clearing : false;
         const clearMs: number = options && options.clearMs ? options.clearMs : null;
-        if (this.isSafariExtension()) {
-            SafariApp.sendMessageToApp('copyToClipboard', text).then(() => {
-                if (!clearing && this.clipboardWriteCallback != null) {
-                    this.clipboardWriteCallback(text, clearMs);
-                }
-            });
-        } else if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.writeText) {
+        if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.writeText) {
             (win as any).navigator.clipboard.writeText(text).then(() => {
                 if (!clearing && this.clipboardWriteCallback != null) {
                     this.clipboardWriteCallback(text, clearMs);
@@ -311,6 +305,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     private isSafariExtension(): boolean {
-        return (window as any).safariAppExtension === true;
+        return navigator.userAgent.indexOf(' Safari/') !== -1;
     }
 }

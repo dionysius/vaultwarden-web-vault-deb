@@ -3,61 +3,39 @@ import {
     StorageService,
 } from 'jslib/abstractions';
 
-import { SafariApp } from '../browser/safariApp';
-
 export default class BrowserStorageService implements StorageService {
     private chromeStorageApi: any;
-    private isSafari: boolean;
 
-    constructor(platformUtilsService: PlatformUtilsService) {
-        this.isSafari = platformUtilsService.isSafari();
-        if (!this.isSafari) {
-            this.chromeStorageApi = chrome.storage.local;
-        }
+    constructor() {
+        this.chromeStorageApi = chrome.storage.local;
     }
 
     async get<T>(key: string): Promise<T> {
-        if (this.isSafari) {
-            const obj = await SafariApp.sendMessageToApp('storage_get', key);
-            return obj == null ? null : JSON.parse(obj) as T;
-        } else {
-            return new Promise((resolve) => {
-                this.chromeStorageApi.get(key, (obj: any) => {
-                    if (obj != null && obj[key] != null) {
-                        resolve(obj[key] as T);
-                        return;
-                    }
-                    resolve(null);
-                });
+        return new Promise((resolve) => {
+            this.chromeStorageApi.get(key, (obj: any) => {
+                if (obj != null && obj[key] != null) {
+                    resolve(obj[key] as T);
+                    return;
+                }
+                resolve(null);
             });
-        }
+        });
     }
 
     async save(key: string, obj: any): Promise<any> {
         const keyedObj = { [key]: obj };
-        if (this.isSafari) {
-            await SafariApp.sendMessageToApp('storage_save', JSON.stringify({
-                key: key,
-                obj: JSON.stringify(obj),
-            }));
-        } else {
-            return new Promise((resolve) => {
-                this.chromeStorageApi.set(keyedObj, () => {
-                    resolve();
-                });
+        return new Promise((resolve) => {
+            this.chromeStorageApi.set(keyedObj, () => {
+                resolve();
             });
-        }
+        });
     }
 
     async remove(key: string): Promise<any> {
-        if (this.isSafari) {
-            await SafariApp.sendMessageToApp('storage_remove', key);
-        } else {
-            return new Promise((resolve) => {
-                this.chromeStorageApi.remove(key, () => {
-                    resolve();
-                });
+        return new Promise((resolve) => {
+            this.chromeStorageApi.remove(key, () => {
+                resolve();
             });
-        }
+        });
     }
 }
