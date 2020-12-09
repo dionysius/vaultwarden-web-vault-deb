@@ -30,13 +30,6 @@ const filters = {
     safari: [
         '!build/safari/**/*'
     ],
-    webExt: [
-        '!build/manifest.json'
-    ],
-    nonSafariApp: [
-        '!build/background.html',
-        '!build/popup/index.html'
-    ],
 };
 
 function buildString() {
@@ -186,6 +179,7 @@ function safariCopyAssets(source, dest) {
             .on('error', reject)
             .pipe(gulpif('safari/Info.plist', replace('0.0.1', manifest.version)))
             .pipe(gulpif('safari/Info.plist', replace('0.0.2', process.env.BUILD_NUMBER || manifest.version)))
+            .pipe(gulpif('desktop.xcodeproj/project.pbxproj', replace('../../../build', '../safari/app')))
             .pipe(gulp.dest(dest))
             .on('end', resolve);
     });
@@ -195,8 +189,7 @@ function safariCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
-            .pipe(filter(['**'].concat(filters.fonts)
-                .concat(filters.webExt).concat(filters.nonSafariApp)))
+            .pipe(filter(['**'].concat(filters.fonts)))
             .pipe(gulp.dest(dest))
             .on('end', resolve);
     });
