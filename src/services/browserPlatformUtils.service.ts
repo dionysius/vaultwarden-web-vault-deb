@@ -26,7 +26,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             return this.deviceCache;
         }
 
-        if (this.isSafariExtension()) {
+        if (navigator.userAgent.indexOf(' Safari/') !== -1) {
             this.deviceCache = DeviceType.SafariExtension;
         } else if (navigator.userAgent.indexOf(' Firefox/') !== -1 || navigator.userAgent.indexOf(' Gecko/') !== -1) {
             this.deviceCache = DeviceType.FirefoxExtension;
@@ -237,7 +237,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             doc = options.doc;
         }
 
-        if (this.isSafariExtension()) {
+        if (this.isSafari()) {
             return await SafariApp.sendMessageToApp('readFromClipboard');
         } else if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.readText) {
             return await (win as any).navigator.clipboard.readText();
@@ -302,9 +302,5 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
     supportsSecureStorage(): boolean {
         return false;
-    }
-
-    private isSafariExtension(): boolean {
-        return navigator.userAgent.indexOf(' Safari/') !== -1;
     }
 }
