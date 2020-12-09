@@ -19,14 +19,13 @@ export class SafariApp {
     }
 
     static sendMessageToApp(command: string, data: any = null, resolveNow = false): Promise<any> {
-        debugger;
         if (!BrowserApi.isSafariApi) {
             return Promise.resolve(null);
         }
         return new Promise((resolve) => {
             const now = new Date();
             const messageId = now.getTime().toString() + '_' + Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
-            (browser as any).runtime.sendNativeMessage("com.bitwarden.desktop", {
+            (browser as any).runtime.sendNativeMessage('com.bitwarden.desktop', {
                 id: messageId,
                 command: command,
                 data: data,
@@ -51,7 +50,6 @@ export class SafariApp {
         }
         if ((message.id == null || message.id === '') && message.command === 'app_message') {
             try {
-                debugger;
                 const msg = JSON.parse(message.data);
                 SafariApp.sendMessageToListeners(msg, {
                     id: 'app_message',

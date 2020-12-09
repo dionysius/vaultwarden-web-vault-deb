@@ -4,7 +4,6 @@ import { CipherView } from 'jslib/models/view/cipherView';
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 import { LoginView } from 'jslib/models/view/loginView';
 
-import { AuthService } from 'jslib/abstractions/auth.service';
 import { AutofillService } from '../services/abstractions/autofill.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
@@ -12,17 +11,13 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { NotificationsService } from 'jslib/abstractions/notifications.service';
-import { PopupUtilsService } from '../popup/services/popup-utils.service';
-import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
-import { SyncService } from 'jslib/abstractions/sync.service';
 import { SystemService } from 'jslib/abstractions/system.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { BrowserApi } from '../browser/browserApi';
 
 import MainBackground from './main.background';
-import { NativeMessagingBackground } from './nativeMessaging.background';
 
 import { Analytics } from 'jslib/misc';
 import { Utils } from 'jslib/misc/utils';
@@ -31,7 +26,6 @@ export default class RuntimeBackground {
     private runtime: any;
     private autofillTimeout: any;
     private pageDetailsToAutoFill: any[] = [];
-    private isSafari: boolean;
     private onInstalledReason: string = null;
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
@@ -40,15 +34,12 @@ export default class RuntimeBackground {
         private analytics: Analytics, private notificationsService: NotificationsService,
         private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService,
         private environmentService: EnvironmentService) {
-        this.isSafari = this.platformUtilsService.isSafari();
-        this.runtime = this.isSafari ? {} : chrome.runtime;
+        this.runtime = chrome.runtime;
 
         // onInstalled listener must be wired up before anything else, so we do it in the ctor
-        if (!this.isSafari) {
-            this.runtime.onInstalled.addListener((details: any) => {
-                this.onInstalledReason = details.reason;
-            });
-        }
+        this.runtime.onInstalled.addListener((details: any) => {
+            this.onInstalledReason = details.reason;
+        });
     }
 
     async init() {
@@ -388,20 +379,6 @@ export default class RuntimeBackground {
     }
 
     private async checkOnInstalled() {
-        if (this.isSafari) {
-            const installedVersion = await this.storageService.get<string>(ConstantsService.installedVersionKey);
-            if (installedVersion == null) {
-                this.onInstalledReason = 'install';
-            } else if (BrowserApi.getApplicationVersion() !== installedVersion) {
-                this.onInstalledReason = 'update';
-            }
-
-            if (this.onInstalledReason != null) {
-                await this.storageService.save(ConstantsService.installedVersionKey,
-                    BrowserApi.getApplicationVersion());
-            }
-        }
-
         setTimeout(async () => {
             if (this.onInstalledReason != null) {
                 if (this.onInstalledReason === 'install') {

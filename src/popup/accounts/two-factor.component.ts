@@ -63,7 +63,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             return;
         }
 
-        if (!isSafari && this.selectedProviderType === TwoFactorProviderType.Email &&
+        if (this.selectedProviderType === TwoFactorProviderType.Email &&
             this.popupUtilsService.inPopup(window)) {
             const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popup2faCloseMessage'),
                 null, this.i18nService.t('yes'), this.i18nService.t('no'));

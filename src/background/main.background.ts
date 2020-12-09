@@ -155,7 +155,7 @@ export default class MainBackground {
             async () => {
                 if (this.nativeMessagingBackground != null) {
                     const promise = this.nativeMessagingBackground.getResponse();
-                    
+
                     try {
                         await this.nativeMessagingBackground.send({command: 'biometricUnlock'});
                     } catch (e) {
