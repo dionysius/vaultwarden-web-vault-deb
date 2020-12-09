@@ -10,4 +10,4 @@ window.addEventListener('message', (event) => {
             referrer: event.source.location.hostname,
         });
     }
-}, false)
+}, false);

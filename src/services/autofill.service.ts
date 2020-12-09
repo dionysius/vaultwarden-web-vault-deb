@@ -42,14 +42,14 @@ const FirstnameFieldNames: string[] = [
     'f-name', 'first-name', 'given-name', 'first-n',
     // German
     'vorname'
-]
+];
 
 const LastnameFieldNames: string[] = [
     // English
     'l-name', 'last-name', 's-name', 'surname', 'family-name', 'family-n', 'last-n',
     // German
     'nachname', 'familienname'
-]
+];
 
 const ExcludedAutofillTypes: string[] = ['radio', 'checkbox', 'hidden', 'file', 'button', 'image', 'reset', 'search'];
 
