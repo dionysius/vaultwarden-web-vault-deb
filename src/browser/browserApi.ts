@@ -4,7 +4,7 @@ import { Utils } from 'jslib/misc/utils';
 
 export class BrowserApi {
     static isWebExtensionsApi: boolean = (typeof browser !== 'undefined');
-    static isSafariApi: boolean = true;
+    static isSafariApi: boolean = navigator.userAgent.indexOf(' Safari/') !== -1;
     static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
     static isFirefoxOnAndroid: boolean = navigator.userAgent.indexOf('Firefox/') !== -1 &&
         navigator.userAgent.indexOf('Android') !== -1;
