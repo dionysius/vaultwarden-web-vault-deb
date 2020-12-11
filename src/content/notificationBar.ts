@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let disabledAddLoginNotification = false;
     let disabledChangedPasswordNotification = false;
 
-    
     chrome.storage.local.get('neverDomains', (ndObj: any) => {
         const domains = ndObj.neverDomains;
         if (domains != null && domains.hasOwnProperty(window.location.hostname)) {
