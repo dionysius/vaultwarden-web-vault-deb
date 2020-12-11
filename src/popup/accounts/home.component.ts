@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ConstantsService } from 'jslib/services/constants.service'
+import { ConstantsService } from 'jslib/services/constants.service';
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';

@@ -15,6 +15,7 @@ import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { PolicyService } from 'jslib/abstractions/policy.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
@@ -36,9 +37,9 @@ export class AddEditComponent extends BaseAddEditComponent {
         userService: UserService, collectionService: CollectionService,
         messagingService: MessagingService, private route: ActivatedRoute,
         private router: Router, private location: Location,
-        eventService: EventService) {
+        eventService: EventService, policyService: PolicyService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
-            userService, collectionService, messagingService, eventService);
+            userService, collectionService, messagingService, eventService, policyService);
     }
 
     async ngOnInit() {
@@ -160,5 +161,10 @@ export class AddEditComponent extends BaseAddEditComponent {
     toggleUriInput(uri: LoginUriView) {
         const u = (uri as any);
         u.showCurrentUris = !u.showCurrentUris;
+    }
+
+    allowOwnershipOptions(): boolean {
+        return (!this.editMode || this.cloneMode) && this.ownershipOptions
+            && (this.ownershipOptions.length > 1 || !this.allowPersonal);
     }
 }

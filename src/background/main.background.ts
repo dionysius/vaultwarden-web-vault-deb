@@ -157,7 +157,7 @@ export default class MainBackground {
                     const promise = this.nativeMessagingBackground.getResponse();
 
                     try {
-                        await this.nativeMessagingBackground.send({command: 'biometricUnlock'});
+                        await this.nativeMessagingBackground.send({ command: 'biometricUnlock' });
                     } catch (e) {
                         return Promise.reject(e);
                     }
@@ -243,7 +243,7 @@ export default class MainBackground {
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
             this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService,
-            this.environmentService);
+            this.environmentService, this.policyService, this.userService);
         this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.cryptoFunctionService,
             this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
@@ -290,7 +290,7 @@ export default class MainBackground {
     }
 
     async setIcon() {
-        if ((!chrome.browserAction && !this.sidebarAction)) {
+        if (!chrome.browserAction && !this.sidebarAction) {
             return;
         }
 
