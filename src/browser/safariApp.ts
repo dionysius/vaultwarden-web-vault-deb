@@ -1,23 +1,6 @@
 import { BrowserApi } from './browserApi';
 
 export class SafariApp {
-    static init() {
-        if ((window as any).bitwardenSafariAppInited) {
-            return;
-        }
-        (window as any).bitwardenSafariAppInited = true;
-
-        if (BrowserApi.isSafariApi) {
-            (window as any).bitwardenSafariAppRequests =
-                new Map<string, { resolve: (value?: unknown) => void, timeoutDate: Date }>();
-            (window as any).bitwardenSafariAppMessageListeners =
-                new Map<string, (message: any, sender: any, response: any) => void>();
-            (window as any).bitwardenSafariAppMessageReceiver = (message: any) => {
-                SafariApp.receiveMessageFromApp(message);
-            };
-        }
-    }
-
     static sendMessageToApp(command: string, data: any = null, resolveNow = false): Promise<any> {
         if (!BrowserApi.isSafariApi) {
             return Promise.resolve(null);
@@ -34,28 +17,5 @@ export class SafariApp {
                 resolve(response);
             });
         });
-    }
-
-    static addMessageListener(name: string, callback: (message: any, sender: any, response: any) => void) {
-        (window as any).bitwardenSafariAppMessageListeners.set(name, callback);
-    }
-
-    static sendMessageToListeners(message: any, sender: any, response: any) {
-        (window as any).bitwardenSafariAppMessageListeners.forEach((f: any) => f(message, sender, response));
-    }
-
-    private static receiveMessageFromApp(message: any) {
-        if (message == null) {
-            return;
-        }
-        if ((message.id == null || message.id === '') && message.command === 'app_message') {
-            try {
-                const msg = JSON.parse(message.data);
-                SafariApp.sendMessageToListeners(msg, {
-                    id: 'app_message',
-                    tab: message.senderTab,
-                }, null);
-            } catch { }
-        }
     }
 }

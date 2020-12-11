@@ -58,7 +58,6 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             // ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1562620
             this.initU2f = false;
         }
-        const isSafari = this.platformUtilsService.isSafari();
         await super.ngOnInit();
         if (this.selectedProviderType == null) {
             return;

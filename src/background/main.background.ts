@@ -261,7 +261,6 @@ export default class MainBackground {
     }
 
     async bootstrap() {
-        SafariApp.init();
         this.analytics.ga('send', 'pageview', '/background.html');
         this.containerService.attachToWindow(window);
 
