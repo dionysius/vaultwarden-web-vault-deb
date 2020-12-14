@@ -40,16 +40,15 @@ export default class RuntimeBackground {
         private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService,
         private environmentService: EnvironmentService, private policyService: PolicyService,
         private userService: UserService) {
-        this.runtime = chrome.runtime;
 
         // onInstalled listener must be wired up before anything else, so we do it in the ctor
-        this.runtime.onInstalled.addListener((details: any) => {
+        chrome.runtime.onInstalled.addListener((details: any) => {
             this.onInstalledReason = details.reason;
         });
     }
 
     async init() {
-        if (!this.runtime) {
+        if (!chrome.runtime) {
             return;
         }
 
