@@ -21,6 +21,7 @@ import {
     UserService,
     VaultTimeoutService,
 } from 'jslib/services';
+import { ConsoleLogService } from 'jslib/services/consoleLog.service';
 import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
@@ -93,6 +94,7 @@ export default class MainBackground {
     i18nService: I18nServiceAbstraction;
     platformUtilsService: PlatformUtilsServiceAbstraction;
     constantsService: ConstantsService;
+    consoleLogService: ConsoleLogService;
     cryptoService: CryptoServiceAbstraction;
     cryptoFunctionService: CryptoFunctionServiceAbstraction;
     tokenService: TokenServiceAbstraction;
@@ -169,8 +171,9 @@ export default class MainBackground {
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
         this.cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
+        this.consoleLogService = new ConsoleLogService(false);
         this.cryptoService = new CryptoService(this.storageService, this.secureStorageService,
-            this.cryptoFunctionService, this.platformUtilsService);
+            this.cryptoFunctionService, this.platformUtilsService, this.consoleLogService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
@@ -178,7 +181,7 @@ export default class MainBackground {
         this.userService = new UserService(this.tokenService, this.storageService);
         this.authService = new AuthService(this.cryptoService, this.apiService, this.userService,
             this.tokenService, this.appIdService, this.i18nService, this.platformUtilsService,
-            this.messagingService, this.vaultTimeoutService);
+            this.messagingService, this.vaultTimeoutService, this.consoleLogService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
             this.apiService, this.storageService, this.i18nService, () => this.searchService);
@@ -186,7 +189,7 @@ export default class MainBackground {
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18nService);
-        this.searchService = new SearchService(this.cipherService);
+        this.searchService = new SearchService(this.cipherService, this.consoleLogService);
         this.sendService = new SendService(this.cryptoService, this.userService, this.apiService, this.storageService,
             this.i18nService, this.cryptoFunctionService);
         this.stateService = new StateService();
@@ -220,7 +223,7 @@ export default class MainBackground {
         this.auditService = new AuditService(this.cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
         this.notificationsService = new NotificationsService(this.userService, this.syncService, this.appIdService,
-            this.apiService, this.vaultTimeoutService, () => this.logout(true));
+            this.apiService, this.vaultTimeoutService, () => this.logout(true), this.consoleLogService);
         this.environmentService = new EnvironmentService(this.apiService, this.storageService,
             this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,

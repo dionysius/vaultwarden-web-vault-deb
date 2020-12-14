@@ -50,6 +50,7 @@ import { AuthService } from 'jslib/services/auth.service';
 import { ConstantsService } from 'jslib/services/constants.service';
 import { SearchService } from 'jslib/services/search.service';
 import { StateService } from 'jslib/services/state.service';
+import { ConsoleLogService } from 'jslib/services/consoleLog.service';
 
 import { Analytics } from 'jslib/misc/analytics';
 
@@ -69,9 +70,9 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
     getBgService<ApiService>('apiService')(), getBgService<UserService>('userService')(),
     getBgService<TokenService>('tokenService')(), getBgService<AppIdService>('appIdService')(),
     getBgService<I18nService>('i18nService')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
-    messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')());
+    messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')(), getBgService<ConsoleLogService>('consoleLogService')());
 export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
-    getBgService<CipherService>('cipherService')());
+    getBgService<CipherService>('cipherService')(), getBgService<ConsoleLogService>('consoleLogService')());
 
 export function initFactory(i18nService: I18nService, storageService: StorageService,
     popupUtilsService: PopupUtilsService): Function {

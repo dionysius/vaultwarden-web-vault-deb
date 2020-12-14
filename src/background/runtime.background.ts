@@ -479,7 +479,7 @@ export default class RuntimeBackground {
                 if (policy.enabled) {
                     const org = await this.userService.getOrganization(policy.organizationId);
                     if (org != null && org.enabled && org.usePolicies && !org.isAdmin
-                        && org.status == OrganizationUserStatusType.Confirmed) {
+                        && org.status === OrganizationUserStatusType.Confirmed) {
                         return false;
                     }
                 }
