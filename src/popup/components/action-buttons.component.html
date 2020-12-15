@@ -16,6 +16,11 @@
         [ngClass]="{disabled: (!cipher.login.password || !cipher.viewPassword)}">
         <i class="fa fa-lg fa-key" aria-hidden="true"></i>
     </span>
+    <span class="row-btn" appStopClick appStopProp appA11yTitle="{{'copyVerificationCode' | i18n}}"
+        (click)="copy(cipher, cipher.login.totp, 'verificationCodeTotp', 'TOTP')"
+        [ngClass]="{disabled: (!displayTotpCopyButton(cipher))}">
+        <i class="fa fa-lg fa-clock-o" aria-hidden="true"></i>
+    </span>
 </ng-container>
 <ng-container *ngIf="cipher.type === cipherType.Card">
     <span class="row-btn" appStopClick appStopProp appA11yTitle="{{'copyNumber' | i18n}}"
