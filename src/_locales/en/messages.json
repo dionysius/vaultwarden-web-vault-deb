@@ -1415,19 +1415,19 @@
     "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interupted"
+    "message": "Desktop communication interrupted"
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not enabled"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometric requires desktop biometric to be enabled in the settings first."
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometrics not supported"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometric is not supported on this device."
+    "message": "Browser biometrics is not supported on this device."
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."

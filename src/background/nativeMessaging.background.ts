@@ -1,4 +1,5 @@
 import { ConstantsService } from 'jslib/services/constants.service';
+import { AppIdService } from 'jslib/abstractions/appId.service';
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -12,7 +13,6 @@ import { SymmetricCryptoKey } from 'jslib/models/domain';
 
 import { BrowserApi } from '../browser/browserApi';
 import RuntimeBackground from './runtime.background';
-import { AppIdService } from 'jslib/abstractions';
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = 'sha1';
