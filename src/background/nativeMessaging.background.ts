@@ -12,6 +12,7 @@ import { SymmetricCryptoKey } from 'jslib/models/domain';
 
 import { BrowserApi } from '../browser/browserApi';
 import RuntimeBackground from './runtime.background';
+import { AppIdService } from 'jslib/abstractions';
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = 'sha1';
@@ -25,13 +26,16 @@ export class NativeMessagingBackground {
     private privateKey: ArrayBuffer = null;
     private secureSetupResolve: any = null;
     private sharedSecret: SymmetricCryptoKey;
+    private appId: string;
 
     constructor(private storageService: StorageService, private cryptoService: CryptoService,
         private cryptoFunctionService: CryptoFunctionService, private vaultTimeoutService: VaultTimeoutService,
         private runtimeBackground: RuntimeBackground, private i18nService: I18nService, private userService: UserService,
-        private messagingService: MessagingService) {}
+        private messagingService: MessagingService, private appIdService: AppIdService) {}
 
     async connect() {
+        this.appId = await this.appIdService.getAppId();
+
         return new Promise((resolve, reject) => {
             this.port = BrowserApi.connectNative('com.8bit.bitwarden');
 
@@ -58,6 +62,11 @@ export class NativeMessagingBackground {
                         this.port.disconnect();
                         break;
                     case 'setupEncryption':
+                        // Ignore since it belongs to another device
+                        if (message.appId !== this.appId) {
+                            return;
+                        }
+
                         const encrypted = Utils.fromB64ToArray(message.sharedSecret);
                         const decrypted = await this.cryptoFunctionService.rsaDecrypt(encrypted.buffer, this.privateKey, EncryptionAlgorithm);
 
@@ -65,6 +74,11 @@ export class NativeMessagingBackground {
                         this.secureSetupResolve();
                         break;
                     case 'invalidateEncryption':
+                        // Ignore since it belongs to another device
+                        if (message.appId !== this.appId) {
+                            return;
+                        }
+
                         this.sharedSecret = null;
                         this.privateKey = null;
                         this.connected = false;
@@ -76,7 +90,12 @@ export class NativeMessagingBackground {
                             type: 'error',
                         });
                     default:
-                        this.onMessage(message);
+                        // Ignore since it belongs to another device
+                        if (message.appId !== this.appId) {
+                            return;
+                        }
+
+                        this.onMessage(message.message);
                 }
             });
 
@@ -118,7 +137,7 @@ export class NativeMessagingBackground {
         message.timestamp = Date.now();
 
         const encrypted = await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecret);
-        this.port.postMessage(encrypted);
+        this.port.postMessage({appId: this.appId, message: encrypted});
     }
 
     getResponse(): Promise<any> {
@@ -193,6 +212,6 @@ export class NativeMessagingBackground {
 
         message.timestamp = Date.now();
 
-        this.port.postMessage(message);
+        this.port.postMessage({appId: this.appId, message: message});
     }
 }
