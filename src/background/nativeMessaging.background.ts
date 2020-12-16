@@ -159,6 +159,24 @@ export class NativeMessagingBackground {
             case 'biometricUnlock':
                 await this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
 
+                if (message.response === 'not enabled') {
+                    this.messagingService.send('showDialog', {
+                        text: this.i18nService.t('biometricsNotEnabledDesc'),
+                        title: this.i18nService.t('biometricsNotEnabledTitle'),
+                        confirmText: this.i18nService.t('ok'),
+                        type: 'error',
+                    });
+                    break;
+                } else if (message.response === 'not supported') {
+                    this.messagingService.send('showDialog', {
+                        text: this.i18nService.t('biometricsNotSupportedDesc'),
+                        title: this.i18nService.t('biometricsNotSupportedTitle'),
+                        confirmText: this.i18nService.t('ok'),
+                        type: 'error',
+                    });
+                    break;
+                }
+
                 const enabled = await this.storageService.get(ConstantsService.biometricUnlockKey);
                 if (enabled === null || enabled === false) {
                     if (message.response === 'unlocked') {
