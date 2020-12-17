@@ -150,6 +150,9 @@ export const routerTransition = trigger('routerTransition', [
     transition('view-cipher => clone-cipher', inSlideUp),
     transition('clone-cipher => view-cipher, clone-cipher => tabs', outSlideDown),
 
+    transition('view-cipher => share-cipher', inSlideUp),
+    transition('share-cipher => view-cipher', outSlideDown),
+
     transition('tabs => add-cipher', inSlideUp),
     transition('add-cipher => tabs', outSlideDown),
 
@@ -158,9 +161,6 @@ export const routerTransition = trigger('routerTransition', [
 
     transition('add-cipher => generator, edit-cipher => generator, clone-cipher => generator', inSlideUp),
     transition('generator => add-cipher, generator => edit-cipher, generator => clone-cipher', outSlideDown),
-
-    transition('edit-cipher => share-cipher', inSlideUp),
-    transition('share-cipher => edit-cipher, share-cipher => view-cipher', outSlideDown),
 
     transition('edit-cipher => attachments, edit-cipher => collections', inSlideLeft),
     transition('attachments => edit-cipher, collections => edit-cipher', outSlideRight),

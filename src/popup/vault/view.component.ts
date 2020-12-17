@@ -129,6 +129,13 @@ export class ViewComponent extends BaseViewComponent {
         });
     }
 
+    share() {
+        super.share();
+        if (this.cipher.organizationId == null) {
+            this.router.navigate(['/share-cipher'], { replaceUrl: true, queryParams: { cipherId: this.cipher.id } });
+        }
+    }
+
     async fillCipher() {
         const didAutofill = await this.doAutofill();
         if (didAutofill) {

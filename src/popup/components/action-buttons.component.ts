@@ -43,7 +43,7 @@ export class ActionButtonsComponent {
     async ngOnInit() {
         this.userHasPremiumAccess = await this.userService.canAccessPremium();
     }
-    
+
     launch() {
         if (this.cipher.type !== CipherType.Login || !this.cipher.login.canLaunch) {
             return;

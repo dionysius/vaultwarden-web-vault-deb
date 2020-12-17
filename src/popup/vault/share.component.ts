@@ -41,14 +41,12 @@ export class ShareComponent extends BaseShareComponent {
     async submit(): Promise<boolean> {
         const success = await super.submit();
         if (success) {
-            window.setTimeout(() => {
-                this.location.back();
-            }, 200);
+            this.cancel();
         }
         return success;
     }
 
     cancel() {
-        this.location.back();
+        this.router.navigate(['/view-cipher'], { replaceUrl: true, queryParams: { cipherId: this.cipher.id } });
     }
 }
