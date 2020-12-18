@@ -24,6 +24,7 @@ export class NativeMessagingBackground {
 
     private resolver: any = null;
     private privateKey: ArrayBuffer = null;
+    private publicKey: ArrayBuffer = null;
     private secureSetupResolve: any = null;
     private sharedSecret: SymmetricCryptoKey;
     private appId: string;
@@ -89,6 +90,12 @@ export class NativeMessagingBackground {
                             confirmText: this.i18nService.t('ok'),
                             type: 'error',
                         });
+                    case 'verifyFingerprint': {
+                        if (this.sharedSecret == null) {
+                            this.showFingerprintDialog();
+                        }
+                        return;
+                    }
                     default:
                         // Ignore since it belongs to another device
                         if (message.appId !== this.appId) {
@@ -208,17 +215,10 @@ export class NativeMessagingBackground {
 
     private async secureCommunication() {
         const [publicKey, privateKey] = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
+        this.publicKey = publicKey;
         this.privateKey = privateKey;
 
         this.sendUnencrypted({command: 'setupEncryption', publicKey: Utils.fromBufferToB64(publicKey)});
-        const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), publicKey)).join(' ');
-
-        this.messagingService.send('showDialog', {
-            html: `${this.i18nService.t('desktopIntegrationVerificationText')}<br><br><strong>${fingerprint}</strong>`,
-            title: this.i18nService.t('desktopSyncVerificationTitle'),
-            confirmText: this.i18nService.t('ok'),
-            type: 'warning',
-        });
 
         return new Promise((resolve, reject) => this.secureSetupResolve = resolve);
     }
@@ -231,5 +231,16 @@ export class NativeMessagingBackground {
         message.timestamp = Date.now();
 
         this.port.postMessage({appId: this.appId, message: message});
+    }
+
+    private async showFingerprintDialog() {
+        const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), this.publicKey)).join(' ');
+
+        this.messagingService.send('showDialog', {
+            html: `${this.i18nService.t('desktopIntegrationVerificationText')}<br><br><strong>${fingerprint}</strong>`,
+            title: this.i18nService.t('desktopSyncVerificationTitle'),
+            confirmText: this.i18nService.t('ok'),
+            type: 'warning',
+        });
     }
 }
