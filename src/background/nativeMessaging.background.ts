@@ -1,4 +1,5 @@
 import { ConstantsService } from 'jslib/services/constants.service';
+import { AppIdService } from 'jslib/abstractions/appId.service';
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -23,15 +24,19 @@ export class NativeMessagingBackground {
 
     private resolver: any = null;
     private privateKey: ArrayBuffer = null;
+    private publicKey: ArrayBuffer = null;
     private secureSetupResolve: any = null;
     private sharedSecret: SymmetricCryptoKey;
+    private appId: string;
 
     constructor(private storageService: StorageService, private cryptoService: CryptoService,
         private cryptoFunctionService: CryptoFunctionService, private vaultTimeoutService: VaultTimeoutService,
         private runtimeBackground: RuntimeBackground, private i18nService: I18nService, private userService: UserService,
-        private messagingService: MessagingService) {}
+        private messagingService: MessagingService, private appIdService: AppIdService) {}
 
     async connect() {
+        this.appId = await this.appIdService.getAppId();
+
         return new Promise((resolve, reject) => {
             this.port = BrowserApi.connectNative('com.8bit.bitwarden');
 
@@ -58,6 +63,11 @@ export class NativeMessagingBackground {
                         this.port.disconnect();
                         break;
                     case 'setupEncryption':
+                        // Ignore since it belongs to another device
+                        if (message.appId !== this.appId) {
+                            return;
+                        }
+
                         const encrypted = Utils.fromB64ToArray(message.sharedSecret);
                         const decrypted = await this.cryptoFunctionService.rsaDecrypt(encrypted.buffer, this.privateKey, EncryptionAlgorithm);
 
@@ -65,6 +75,11 @@ export class NativeMessagingBackground {
                         this.secureSetupResolve();
                         break;
                     case 'invalidateEncryption':
+                        // Ignore since it belongs to another device
+                        if (message.appId !== this.appId) {
+                            return;
+                        }
+
                         this.sharedSecret = null;
                         this.privateKey = null;
                         this.connected = false;
@@ -75,8 +90,19 @@ export class NativeMessagingBackground {
                             confirmText: this.i18nService.t('ok'),
                             type: 'error',
                         });
+                    case 'verifyFingerprint': {
+                        if (this.sharedSecret == null) {
+                            this.showFingerprintDialog();
+                        }
+                        return;
+                    }
                     default:
-                        this.onMessage(message);
+                        // Ignore since it belongs to another device
+                        if (message.appId !== this.appId) {
+                            return;
+                        }
+
+                        this.onMessage(message.message);
                 }
             });
 
@@ -118,7 +144,7 @@ export class NativeMessagingBackground {
         message.timestamp = Date.now();
 
         const encrypted = await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecret);
-        this.port.postMessage(encrypted);
+        this.port.postMessage({appId: this.appId, message: encrypted});
     }
 
     getResponse(): Promise<any> {
@@ -139,6 +165,24 @@ export class NativeMessagingBackground {
         switch (message.command) {
             case 'biometricUnlock':
                 await this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
+
+                if (message.response === 'not enabled') {
+                    this.messagingService.send('showDialog', {
+                        text: this.i18nService.t('biometricsNotEnabledDesc'),
+                        title: this.i18nService.t('biometricsNotEnabledTitle'),
+                        confirmText: this.i18nService.t('ok'),
+                        type: 'error',
+                    });
+                    break;
+                } else if (message.response === 'not supported') {
+                    this.messagingService.send('showDialog', {
+                        text: this.i18nService.t('biometricsNotSupportedDesc'),
+                        title: this.i18nService.t('biometricsNotSupportedTitle'),
+                        confirmText: this.i18nService.t('ok'),
+                        type: 'error',
+                    });
+                    break;
+                }
 
                 const enabled = await this.storageService.get(ConstantsService.biometricUnlockKey);
                 if (enabled === null || enabled === false) {
@@ -171,17 +215,10 @@ export class NativeMessagingBackground {
 
     private async secureCommunication() {
         const [publicKey, privateKey] = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
+        this.publicKey = publicKey;
         this.privateKey = privateKey;
 
         this.sendUnencrypted({command: 'setupEncryption', publicKey: Utils.fromBufferToB64(publicKey)});
-        const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), publicKey)).join(' ');
-
-        this.messagingService.send('showDialog', {
-            html: `${this.i18nService.t('desktopIntegrationVerificationText')}<br><br><strong>${fingerprint}</strong>`,
-            title: this.i18nService.t('desktopSyncVerificationTitle'),
-            confirmText: this.i18nService.t('ok'),
-            type: 'warning',
-        });
 
         return new Promise((resolve, reject) => this.secureSetupResolve = resolve);
     }
@@ -193,6 +230,17 @@ export class NativeMessagingBackground {
 
         message.timestamp = Date.now();
 
-        this.port.postMessage(message);
+        this.port.postMessage({appId: this.appId, message: message});
+    }
+
+    private async showFingerprintDialog() {
+        const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), this.publicKey)).join(' ');
+
+        this.messagingService.send('showDialog', {
+            html: `${this.i18nService.t('desktopIntegrationVerificationText')}<br><br><strong>${fingerprint}</strong>`,
+            title: this.i18nService.t('desktopSyncVerificationTitle'),
+            confirmText: this.i18nService.t('ok'),
+            type: 'warning',
+        });
     }
 }
