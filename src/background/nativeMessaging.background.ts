@@ -90,11 +90,12 @@ export class NativeMessagingBackground {
                             confirmText: this.i18nService.t('ok'),
                             type: 'error',
                         });
+                        break;
                     case 'verifyFingerprint': {
                         if (this.sharedSecret == null) {
                             this.showFingerprintDialog();
                         }
-                        return;
+                        break;
                     }
                     default:
                         // Ignore since it belongs to another device
