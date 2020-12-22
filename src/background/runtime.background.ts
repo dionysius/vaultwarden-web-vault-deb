@@ -478,7 +478,7 @@ export default class RuntimeBackground {
             for (const policy of personalOwnershipPolicies) {
                 if (policy.enabled) {
                     const org = await this.userService.getOrganization(policy.organizationId);
-                    if (org != null && org.enabled && org.usePolicies && !org.isAdmin
+                    if (org != null && org.enabled && org.usePolicies && !org.canManagePolicies
                         && org.status === OrganizationUserStatusType.Confirmed) {
                         return false;
                     }
