@@ -25,12 +25,20 @@ export class SafariApp {
         return new Promise((resolve) => {
             const now = new Date();
             const messageId = now.getTime().toString() + '_' + Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
-            (window as any).webkit.messageHandlers.bitwardenApp.postMessage(JSON.stringify({
-                id: messageId,
-                command: command,
-                data: data,
-                responseData: null,
-            }));
+            if (typeof safari === typeof undefined) {
+                (window as any).webkit.messageHandlers.bitwardenApp.postMessage(JSON.stringify({
+                    id: messageId,
+                    command: command,
+                    data: data,
+                    responseData: null,
+                }));
+            } else {
+                safari.extension.dispatchMessage('bitwarden', {
+                    command: command,
+                    data: data,
+                    responseData: null,
+                });
+            }
             if (resolveNow) {
                 resolve();
             } else {
