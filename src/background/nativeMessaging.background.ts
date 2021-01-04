@@ -115,9 +115,7 @@ export class NativeMessagingBackground {
                     error = chrome.runtime.lastError.message;
                 }
 
-                if (error === 'Specified native messaging host not found.' ||
-                    error === 'Access to the specified native messaging host is forbidden.' ||
-                    error === 'An unexpected error occurred') {
+                if (error != null) {
                     this.messagingService.send('showDialog', {
                         text: this.i18nService.t('desktopIntegrationDisabledDesc'),
                         title: this.i18nService.t('desktopIntegrationDisabledTitle'),
