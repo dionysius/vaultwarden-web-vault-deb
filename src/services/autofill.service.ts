@@ -254,7 +254,7 @@ export default class AutofillService implements AutofillServiceInterface {
             }
         }
 
-        const autoFillResponse = await this.doAutoFill({
+        const totpCode = await this.doAutoFill({
             cipher: cipher,
             pageDetails: pageDetails,
             skipTotp: !fromCommand,
@@ -265,12 +265,12 @@ export default class AutofillService implements AutofillServiceInterface {
             fillNewPassword: fromCommand,
         });
 
-        // Only update last used index if doAutoFill didn't throw an exception
+        // Update last used index as autofill has succeed
         if (fromCommand) {
             this.cipherService.updateLastUsedIndexForUrl(tab.url);
         }
 
-        return autoFillResponse;
+        return totpCode;
     }
 
     // Helpers
