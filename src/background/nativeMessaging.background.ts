@@ -143,13 +143,34 @@ export class NativeMessagingBackground {
         message.timestamp = Date.now();
 
         const encrypted = await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecret);
-        this.port.postMessage({appId: this.appId, message: encrypted});
+        this.postMessage({appId: this.appId, message: encrypted});
     }
 
     getResponse(): Promise<any> {
         return new Promise((resolve, reject) => {
             this.resolver = resolve;
         });
+    }
+
+    private postMessage(message: any) {
+        // Wrap in try-catch to when the port disconnected without triggering `onDisconnect`.
+        try {
+            this.port.postMessage(message);
+        } catch (e) {
+            // tslint:disable-next-line
+            console.error("NativeMessaging port disconnected, disconnecting.");
+
+            this.sharedSecret = null;
+            this.privateKey = null;
+            this.connected = false;
+
+            this.messagingService.send('showDialog', {
+                text: this.i18nService.t('nativeMessagingInvalidEncryptionDesc'),
+                title: this.i18nService.t('nativeMessagingInvalidEncryptionTitle'),
+                confirmText: this.i18nService.t('ok'),
+                type: 'error',
+            });
+        }
     }
 
     private async onMessage(rawMessage: any) {
@@ -229,7 +250,7 @@ export class NativeMessagingBackground {
 
         message.timestamp = Date.now();
 
-        this.port.postMessage({appId: this.appId, message: message});
+        this.postMessage({appId: this.appId, message: message});
     }
 
     private async showFingerprintDialog() {
