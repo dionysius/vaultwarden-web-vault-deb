@@ -1434,5 +1434,8 @@
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

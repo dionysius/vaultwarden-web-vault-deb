@@ -14,6 +14,9 @@
         </div>
     </header>
     <content *ngIf="cipher">
+        <app-callout type="info" *ngIf="allowOwnershipOptions() && !allowPersonal">
+            {{'personalOwnershipPolicyInEffect' | i18n}}
+        </app-callout>
         <div class="box">
             <div class="box-header">
                 {{'itemInformation' | i18n}}
