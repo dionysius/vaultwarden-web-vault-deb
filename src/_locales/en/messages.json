@@ -606,6 +606,9 @@
     "message": "WARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
@@ -1381,6 +1384,9 @@
   "privacyPolicy": {
     "message": "Privacy Policy"
   },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
   "ok": {
     "message": "Ok"
   },
@@ -1412,9 +1418,24 @@
     "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interupted"
+    "message": "Desktop communication interrupted"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

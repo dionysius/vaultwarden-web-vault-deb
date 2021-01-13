@@ -41,11 +41,11 @@ export class SsoComponent extends BaseSsoComponent {
         this.redirectUri = url + '/sso-connector.html';
         this.clientId = 'browser';
 
-        super.onSuccessfulLogin = () => {
+        super.onSuccessfulLogin = async () => {
+            await syncService.fullSync(true);
             BrowserApi.reloadOpenWindows();
             const thisWindow = window.open('', '_self');
             thisWindow.close();
-            return syncService.fullSync(true);
         };
     }
 }

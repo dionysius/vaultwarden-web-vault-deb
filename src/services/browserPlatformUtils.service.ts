@@ -16,6 +16,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     private showDialogResolves = new Map<number, { resolve: (value: boolean) => void, date: Date }>();
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
+    private prefersColorSchemeDark = window.matchMedia('(prefers-color-scheme: dark)');
 
     constructor(private messagingService: MessagingService,
         private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void,
@@ -302,5 +303,15 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
     supportsSecureStorage(): boolean {
         return false;
+    }
+
+    getDefaultSystemTheme() {
+        return this.prefersColorSchemeDark.matches ? 'dark' : 'light';
+    }
+
+    onDefaultSystemThemeChange(callback: ((theme: 'light' | 'dark') => unknown)) {
+        this.prefersColorSchemeDark.addListener(({ matches }) => {
+            callback(matches ? 'dark' : 'light');
+        });
     }
 }
