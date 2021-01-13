@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -18,7 +18,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
     constructor(cipherService: CipherService, i18nService: I18nService,
         cryptoService: CryptoService, userService: UserService,
         platformUtilsService: PlatformUtilsService, private location: Location,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute, private router: Router) {
         super(cipherService, i18nService, cryptoService, userService, platformUtilsService, window);
     }
 
@@ -33,6 +33,10 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
     }
 
     back() {
-        this.location.back();
+        if (document.referrer === "") {
+            this.router.navigate(['/edit-cipher'], { queryParams: { cipherId: this.cipher.id } });
+        } else {
+            this.location.back();
+        }
     }
 }

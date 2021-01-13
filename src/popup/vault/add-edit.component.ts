@@ -7,6 +7,7 @@ import {
 
 import { BrowserApi } from '../../browser/browserApi';
 
+import { PopupUtilsService } from '../services/popup-utils.service';
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
@@ -37,7 +38,8 @@ export class AddEditComponent extends BaseAddEditComponent {
         userService: UserService, collectionService: CollectionService,
         messagingService: MessagingService, private route: ActivatedRoute,
         private router: Router, private location: Location,
-        eventService: EventService, policyService: PolicyService) {
+        eventService: EventService, policyService: PolicyService,
+        private popupUtilsService: PopupUtilsService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
             userService, collectionService, messagingService, eventService, policyService);
     }
@@ -115,7 +117,14 @@ export class AddEditComponent extends BaseAddEditComponent {
 
     attachments() {
         super.attachments();
-        this.router.navigate(['/attachments'], { queryParams: { cipherId: this.cipher.id } });
+
+        if (this.openAttachmentsInPopup()) {
+            let destinationUrl = this.router.createUrlTree(['/attachments'], { queryParams: { cipherId: this.cipher.id } }).toString();
+            let currentBaseUrl = window.location.href.replace(this.router.url, '');
+            this.popupUtilsService.popOut(window, currentBaseUrl + destinationUrl);
+        } else {
+            this.router.navigate(['/attachments'], { queryParams: { cipherId: this.cipher.id } });
+        }
     }
 
 
@@ -160,5 +169,9 @@ export class AddEditComponent extends BaseAddEditComponent {
     allowOwnershipOptions(): boolean {
         return (!this.editMode || this.cloneMode) && this.ownershipOptions
             && (this.ownershipOptions.length > 1 || !this.allowPersonal);
+    }
+
+    openAttachmentsInPopup(): boolean {
+        return this.popupUtilsService.inPopup(window) && !this.platformUtilsService.isChrome();
     }
 }
