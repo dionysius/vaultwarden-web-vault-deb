@@ -185,6 +185,8 @@ export const routerTransition = trigger('routerTransition', [
 
     transition('tabs => premium', inSlideLeft),
     transition('premium => tabs', outSlideRight),
-
-    transition('tabs => lock', inSlideDown),
 ]);
+
+if (!BrowserApi.isSafariApi) {
+    routerTransition.definitions.push(transition('tabs => lock', inSlideDown));
+}

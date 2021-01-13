@@ -29,6 +29,7 @@ export class OptionsComponent implements OnInit {
     disableChangedPasswordNotification = false;
     dontShowCards = false;
     dontShowIdentities = false;
+    showDisableContextMenu = true;
     showClearClipboard = true;
     theme: string;
     themeOptions: any[];
@@ -67,6 +68,8 @@ export class OptionsComponent implements OnInit {
     }
 
     async ngOnInit() {
+        this.showDisableContextMenu = !this.platformUtilsService.isSafari();
+
         this.enableAutoFillOnPageLoad = await this.storageService.get<boolean>(
             ConstantsService.enableAutoFillOnPageLoadKey);
 

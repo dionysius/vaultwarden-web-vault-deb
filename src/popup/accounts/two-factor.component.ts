@@ -58,12 +58,13 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             // ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1562620
             this.initU2f = false;
         }
+        const isSafari = this.platformUtilsService.isSafari();
         await super.ngOnInit();
         if (this.selectedProviderType == null) {
             return;
         }
 
-        if (this.selectedProviderType === TwoFactorProviderType.Email &&
+        if (!isSafari && this.selectedProviderType === TwoFactorProviderType.Email &&
             this.popupUtilsService.inPopup(window)) {
             const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popup2faCloseMessage'),
                 null, this.i18nService.t('yes'), this.i18nService.t('no'));
