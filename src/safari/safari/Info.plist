@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SFSafariAppExtensionBundleIdentifiersToReplace</key>
-	<string>com.bitwarden.desktop.safari</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -35,5 +33,9 @@
 	<string>Copyright © 2020 Bitwarden Inc. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
 	<string>A secure and free password manager for all of your devices.</string>
+	<key>SFSafariAppExtensionBundleIdentifiersToReplace</key>
+	<array>
+		<string>com.bitwarden.desktop.safari</string>
+	</array>
 </dict>
 </plist>
