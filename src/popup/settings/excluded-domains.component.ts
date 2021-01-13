@@ -1,18 +1,19 @@
 import {
     Component,
+    OnDestroy,
     OnInit,
-    NgZone,
-    OnDestroy
+    NgZone
 } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { ConstantsService } from 'jslib/services/constants.service';
-import { BrowserApi } from '../../browser/browserApi';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
+import { BrowserApi } from '../../browser/browserApi';
 import { Utils } from 'jslib/misc/utils';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 interface ExcludedDomain {
     uri: string,
@@ -40,7 +41,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
         const savedDomains = await this.storageService.get<any>(ConstantsService.neverDomainsKey);
         if (savedDomains) {
             for (const uri of Object.keys(savedDomains)) {
-                this.excludedDomains.push({uri: uri, showCurrentUris: false})
+                this.excludedDomains.push({ uri: uri, showCurrentUris: false })
             }
         }
 
@@ -68,7 +69,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     }
 
     async addUri() {
-        this.excludedDomains.push({uri: '', showCurrentUris: false})
+        this.excludedDomains.push({ uri: '', showCurrentUris: false })
     }
 
     async removeUri(i: number) {
@@ -76,7 +77,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     }
 
     async submit() {
-        const savedDomains: {[name: string]: null} = {};
+        const savedDomains: { [name: string]: null } = {};
         for (const domain of this.excludedDomains) {
             if (domain.uri && domain.uri !== '') {
                 const validDomain = Utils.getHostname(domain.uri);
