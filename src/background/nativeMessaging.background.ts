@@ -28,14 +28,18 @@ export class NativeMessagingBackground {
     private secureSetupResolve: any = null;
     private sharedSecret: SymmetricCryptoKey;
     private appId: string;
+    private validatingFingerprint: boolean;
 
     constructor(private storageService: StorageService, private cryptoService: CryptoService,
         private cryptoFunctionService: CryptoFunctionService, private vaultTimeoutService: VaultTimeoutService,
         private runtimeBackground: RuntimeBackground, private i18nService: I18nService, private userService: UserService,
-        private messagingService: MessagingService, private appIdService: AppIdService) {}
+        private messagingService: MessagingService, private appIdService: AppIdService) {
+            this.storageService.save(ConstantsService.biometricFingerprintValidated, false);
+        }
 
     async connect() {
         this.appId = await this.appIdService.getAppId();
+        this.storageService.save(ConstantsService.biometricFingerprintValidated, false);
 
         return new Promise((resolve, reject) => {
             this.port = BrowserApi.connectNative('com.8bit.bitwarden');
@@ -71,6 +75,10 @@ export class NativeMessagingBackground {
                         const encrypted = Utils.fromB64ToArray(message.sharedSecret);
                         const decrypted = await this.cryptoFunctionService.rsaDecrypt(encrypted.buffer, this.privateKey, EncryptionAlgorithm);
 
+                        if (this.validatingFingerprint) {
+                            this.validatingFingerprint = false;
+                            this.storageService.save(ConstantsService.biometricFingerprintValidated, true);
+                        }
                         this.sharedSecret = new SymmetricCryptoKey(decrypted);
                         this.secureSetupResolve();
                         break;
@@ -93,6 +101,7 @@ export class NativeMessagingBackground {
                         break;
                     case 'verifyFingerprint': {
                         if (this.sharedSecret == null) {
+                            this.validatingFingerprint = true;
                             this.showFingerprintDialog();
                         }
                         break;
