@@ -45,11 +45,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             shortcut: shortcut,
         };
 
-        if (isSafari) {
-            msg.bitwardenFrameId = (window as any).__bitwardenFrameId;
-            safari.extension.dispatchMessage('bitwarden', msg);
-        } else {
-            chrome.runtime.sendMessage(msg);
-        }
+        chrome.runtime.sendMessage(msg);
     }
 });
