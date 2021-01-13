@@ -17,30 +17,71 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const logInButtonNames = new Set(['log in', 'sign in', 'login', 'go', 'submit', 'continue', 'next']);
     const changePasswordButtonNames = new Set(['save password', 'update password', 'change password', 'change']);
     const changePasswordButtonContainsNames = new Set(['pass', 'change', 'contras', 'senha']);
+    let notificationBarData = null;
+    const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
+        navigator.userAgent.indexOf('Chrome') === -1;
     let disabledAddLoginNotification = false;
     let disabledChangedPasswordNotification = false;
 
-    chrome.storage.local.get('neverDomains', (ndObj: any) => {
-        const domains = ndObj.neverDomains;
-        if (domains != null && domains.hasOwnProperty(window.location.hostname)) {
+    if (isSafari) {
+        if ((window as any).__bitwardenFrameId == null) {
+            (window as any).__bitwardenFrameId = Math.floor(Math.random() * Math.floor(99999999));
+        }
+        if (inIframe) {
             return;
         }
 
-        chrome.storage.local.get('disableAddLoginNotification', (disAddObj: any) => {
-            disabledAddLoginNotification = disAddObj != null && disAddObj.disableAddLoginNotification === true;
-            chrome.storage.local.get('disableChangedPasswordNotification', (disChangedObj: any) => {
-                disabledChangedPasswordNotification = disChangedObj != null &&
-                    disChangedObj.disableChangedPasswordNotification === true;
+        const responseCommand = 'notificationBarDataResponse';
+        safari.extension.dispatchMessage('bitwarden', {
+            command: 'bgGetDataForTab',
+            responseCommand: responseCommand,
+            bitwardenFrameId: (window as any).__bitwardenFrameId,
+        });
+        safari.self.addEventListener('message', (msgEvent: any) => {
+            const msg = JSON.parse(msgEvent.message.msg);
+            if (msg.bitwardenFrameId != null && (window as any).__bitwardenFrameId !== msg.bitwardenFrameId) {
+                return;
+            }
+            if (msg.command === responseCommand && msg.data) {
+                notificationBarData = msg.data;
+                if (notificationBarData.neverDomains &&
+                    notificationBarData.neverDomains.hasOwnProperty(window.location.hostname)) {
+                    return;
+                }
+
+                disabledAddLoginNotification = notificationBarData.disabledAddLoginNotification === true;
+                disabledChangedPasswordNotification = notificationBarData.disabledChangedPasswordNotification === true;
                 if (!disabledAddLoginNotification || !disabledChangedPasswordNotification) {
                     collectIfNeededWithTimeout();
                 }
+            }
+
+            processMessages(msg, () => { /* do nothing on send response for Safari */ });
+        }, false);
+        return;
+    } else {
+        chrome.storage.local.get('neverDomains', (ndObj: any) => {
+            const domains = ndObj.neverDomains;
+            if (domains != null && domains.hasOwnProperty(window.location.hostname)) {
+                return;
+            }
+
+            chrome.storage.local.get('disableAddLoginNotification', (disAddObj: any) => {
+                disabledAddLoginNotification = disAddObj != null && disAddObj.disableAddLoginNotification === true;
+                chrome.storage.local.get('disableChangedPasswordNotification', (disChangedObj: any) => {
+                    disabledChangedPasswordNotification = disChangedObj != null &&
+                        disChangedObj.disableChangedPasswordNotification === true;
+                    if (!disabledAddLoginNotification || !disabledChangedPasswordNotification) {
+                        collectIfNeededWithTimeout();
+                    }
+                });
             });
         });
-    });
 
-    chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: Function) => {
-        processMessages(msg, sendResponse);
-    });
+        chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: Function) => {
+            processMessages(msg, sendResponse);
+        });
+    }
 
     function processMessages(msg: any, sendResponse: Function) {
         if (msg.command === 'openNotificationBar') {
@@ -429,7 +470,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function closeExistingAndOpenBar(type: string, typeData: any) {
-        let barPage = 'notification/bar.html';
+        let barPage = (isSafari ? 'app/' : '') + 'notification/bar.html';
         switch (type) {
             case 'info':
                 barPage = barPage + '?info=' + typeData.text;
@@ -469,7 +510,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
 
-        const barPageUrl: string = chrome.extension.getURL(barPage);
+        const barPageUrl: string = isSafari ? (safari.extension.baseURI + barPage) : chrome.extension.getURL(barPage);
 
         const iframe = document.createElement('iframe');
         iframe.style.cssText = 'height: 42px; width: 100%; border: 0; min-height: initial;';
@@ -539,6 +580,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function sendPlatformMessage(msg: any) {
-        chrome.runtime.sendMessage(msg);
+        if (isSafari) {
+            msg.bitwardenFrameId = (window as any).__bitwardenFrameId;
+            safari.extension.dispatchMessage('bitwarden', msg);
+        } else {
+            chrome.runtime.sendMessage(msg);
+        }
     }
 });

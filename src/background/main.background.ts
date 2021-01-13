@@ -167,8 +167,8 @@ export default class MainBackground {
                     return promise.then((result) => result.response === 'unlocked');
                 }
             });
-        this.storageService = new BrowserStorageService();
-        this.secureStorageService = new BrowserStorageService();
+        this.storageService = new BrowserStorageService(this.platformUtilsService);
+        this.secureStorageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
         this.cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
         this.consoleLogService = new ConsoleLogService(false);
@@ -252,18 +252,21 @@ export default class MainBackground {
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics, this.vaultTimeoutService);
 
-        this.tabsBackground = new TabsBackground(this);
-        this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
-            this.passwordGenerationService, this.analytics, this.platformUtilsService, this.vaultTimeoutService,
-            this.eventService, this.totpService);
-        this.idleBackground = new IdleBackground(this.vaultTimeoutService, this.storageService,
-            this.notificationsService);
-        this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService,
-            this.vaultTimeoutService);
-        this.windowsBackground = new WindowsBackground(this);
+        if (!this.isSafari) {
+            this.tabsBackground = new TabsBackground(this);
+            this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
+                this.passwordGenerationService, this.analytics, this.platformUtilsService, this.vaultTimeoutService,
+                this.eventService, this.totpService);
+            this.idleBackground = new IdleBackground(this.vaultTimeoutService, this.storageService,
+                this.notificationsService);
+            this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService,
+                this.vaultTimeoutService);
+            this.windowsBackground = new WindowsBackground(this);
+        }
     }
 
     async bootstrap() {
+        SafariApp.init();
         this.analytics.ga('send', 'pageview', '/background.html');
         this.containerService.attachToWindow(window);
 
@@ -273,11 +276,13 @@ export default class MainBackground {
         await this.runtimeBackground.init();
         await this.commandsBackground.init();
 
-        await this.tabsBackground.init();
-        await this.contextMenusBackground.init();
-        await this.idleBackground.init();
-        await this.webRequestBackground.init();
-        await this.windowsBackground.init();
+        if (!this.isSafari) {
+            await this.tabsBackground.init();
+            await this.contextMenusBackground.init();
+            await this.idleBackground.init();
+            await this.webRequestBackground.init();
+            await this.windowsBackground.init();
+        }
 
         return new Promise((resolve) => {
             setTimeout(async () => {
@@ -292,7 +297,7 @@ export default class MainBackground {
     }
 
     async setIcon() {
-        if (!chrome.browserAction && !this.sidebarAction) {
+        if (this.isSafari || (!chrome.browserAction && !this.sidebarAction)) {
             return;
         }
 
@@ -311,7 +316,7 @@ export default class MainBackground {
     }
 
     async refreshBadgeAndMenu(forLocked: boolean = false) {
-        if (!chrome.windows || !chrome.contextMenus) {
+        if (this.isSafari || !chrome.windows || !chrome.contextMenus) {
             return;
         }
 
@@ -442,7 +447,7 @@ export default class MainBackground {
     }
 
     private async buildContextMenu() {
-        if (!chrome.contextMenus || this.buildingContextMenu) {
+        if (this.isSafari || !chrome.contextMenus || this.buildingContextMenu) {
             return;
         }
 

@@ -92,7 +92,8 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
     async ngOnInit() {
         this.searchTypeSearch = !this.platformUtilsService.isSafari();
-        this.showLeftHeader = !(this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox());
+        this.showLeftHeader = !this.platformUtilsService.isSafari() &&
+            !(this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox());
         this.stateService.remove('CiphersComponent');
 
         this.broadcasterService.subscribe(ComponentId, (message: any) => {

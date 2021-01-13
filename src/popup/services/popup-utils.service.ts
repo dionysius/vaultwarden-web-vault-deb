@@ -68,6 +68,8 @@ export class PopupUtilsService {
             chrome.tabs.create({
                 url: href,
             });
+        } else if ((typeof safari !== 'undefined')) {
+            // Safari can't open popup in full page tab :(
         }
     }
 }
