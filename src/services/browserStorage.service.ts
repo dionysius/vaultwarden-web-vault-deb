@@ -20,6 +20,15 @@ export default class BrowserStorageService implements StorageService {
     }
 
     async save(key: string, obj: any): Promise<any> {
+        if (obj == null) {
+            // Fix safari not liking null in set
+            return new Promise((resolve) => {
+                this.chromeStorageApi.remove(key, () => {
+                    resolve();
+                });
+            });
+        }
+
         const keyedObj = { [key]: obj };
         return new Promise((resolve) => {
             this.chromeStorageApi.set(keyedObj, () => {
