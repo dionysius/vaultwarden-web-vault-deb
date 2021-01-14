@@ -16,8 +16,8 @@ import { BrowserApi } from '../../browser/browserApi';
 import { Utils } from 'jslib/misc/utils';
 
 interface ExcludedDomain {
-    uri: string,
-    showCurrentUris: boolean
+    uri: string;
+    showCurrentUris: boolean;
 }
 
 const BroadcasterSubscriptionId = 'excludedDomains';
@@ -41,11 +41,11 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
         const savedDomains = await this.storageService.get<any>(ConstantsService.neverDomainsKey);
         if (savedDomains) {
             for (const uri of Object.keys(savedDomains)) {
-                this.excludedDomains.push({ uri: uri, showCurrentUris: false })
+                this.excludedDomains.push({ uri: uri, showCurrentUris: false });
             }
         }
 
-        this.loadCurrentUris();
+        await this.loadCurrentUris();
 
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
@@ -55,7 +55,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
                         if (this.loadCurrentUrisTimeout != null) {
                             window.clearTimeout(this.loadCurrentUrisTimeout);
                         }
-                        this.loadCurrentUrisTimeout = window.setTimeout(() => this.loadCurrentUris(), 500);
+                        this.loadCurrentUrisTimeout = window.setTimeout(async () => await this.loadCurrentUris(), 500);
                         break;
                     default:
                         break;
@@ -69,7 +69,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     }
 
     async addUri() {
-        this.excludedDomains.push({ uri: '', showCurrentUris: false })
+        this.excludedDomains.push({ uri: '', showCurrentUris: false });
     }
 
     async removeUri(i: number) {
@@ -83,10 +83,10 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
                 const validDomain = Utils.getHostname(domain.uri);
                 if (!validDomain) {
                     this.platformUtilsService.showToast('error', null,
-                        '\'' + domain.uri + '\'' + this.i18nService.t('excludedDomainsInvalidDomain'));
+                        this.i18nService.t('excludedDomainsInvalidDomain', domain.uri));
                     return;
                 }
-                savedDomains[validDomain] = null
+                savedDomains[validDomain] = null;
             }
         }
         await this.storageService.save(ConstantsService.neverDomainsKey, savedDomains);
