@@ -15,6 +15,8 @@ import { AttachmentsComponent as BaseAttachmentsComponent } from 'jslib/angular/
     templateUrl: 'attachments.component.html',
 })
 export class AttachmentsComponent extends BaseAttachmentsComponent {
+    openedAttachmentsInPopup: boolean;
+
     constructor(cipherService: CipherService, i18nService: I18nService,
         cryptoService: CryptoService, userService: UserService,
         platformUtilsService: PlatformUtilsService, private location: Location,
@@ -30,13 +32,15 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
                 queryParamsSub.unsubscribe();
             }
         });
+
+        this.openedAttachmentsInPopup = history.length === 1;
     }
 
     back() {
-        if (document.referrer === "") {
-            this.router.navigate(['/edit-cipher'], { queryParams: { cipherId: this.cipher.id } });
-        } else {
-            this.location.back();
-        }
+        this.location.back();
+    }
+
+    close() {
+        window.close();
     }
 }

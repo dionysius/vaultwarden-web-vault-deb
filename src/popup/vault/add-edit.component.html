@@ -274,9 +274,8 @@
                 <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                     (click)="attachments()" *ngIf="editMode && showAttachments && !cloneMode">
                     <div class="row-main">{{'attachments' | i18n}}</div>
-                    <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"
-                        *ngIf="!openAttachmentsInPopup()"></i>
-                    <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true" *ngIf="openAttachmentsInPopup()"></i>
+                    <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true" *ngIf="openAttachmentsInPopup"></i>
+                    <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true" *ngIf="!openAttachmentsInPopup"></i>
                 </a>
                 <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                     (click)="editCollections()" *ngIf="editMode && cipher.organizationId && !cloneMode">
