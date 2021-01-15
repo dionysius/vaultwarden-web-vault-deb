@@ -1420,6 +1420,12 @@
   "nativeMessagingInvalidEncryptionTitle": {
     "message": "Desktop communication interrupted"
   },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not enabled"
   },
