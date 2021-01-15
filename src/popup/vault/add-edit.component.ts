@@ -172,6 +172,6 @@ export class AddEditComponent extends BaseAddEditComponent {
     }
 
     openAttachmentsInPopup(): boolean {
-        return this.popupUtilsService.inPopup(window) && !this.platformUtilsService.isChrome();
+        return this.popupUtilsService.inPopup(window);
     }
 }
