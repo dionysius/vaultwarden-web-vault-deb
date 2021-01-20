@@ -191,7 +191,7 @@
     "message": "Automaticky generovať silné a unikátne heslá k prihlasovacím údajom."
   },
   "bitWebVault": {
-    "message": "bitwarden webový trezor"
+    "message": "Webový trezor Bitwarden"
   },
   "importItems": {
     "message": "Importovať položky"
@@ -549,7 +549,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Má si bitwarden zapamätať toto heslo?"
+    "message": "Má si pre vás Bitwarden zapamätať toto heslo?"
   },
   "notificationAddSave": {
     "message": "Áno, uložiť teraz"
@@ -606,8 +606,14 @@
     "message": "UPOZORNENIE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Tento export obsahuje vaše dáta v nešifrovanom formáte. Nemali by ste ich ukladať, ani posielať cez nezabezpečené kanály (napr. email). Okamžite ho odstráňte, keď ho prestanete používať."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Zadajte vaše hlavné heslo pre export údajov trezoru."
@@ -619,7 +625,7 @@
     "message": "Zdieľať trezor"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden vám umožňuje zdieľať váš trezor s ostatnými ak používate konto v Organizácii. Chcete navštíviť stránku bitwarden.com a dozvedieť sa viac?"
+    "message": "Bitwarden vám umožňuje zdieľať váš trezor s ostatnými použitím konta v organizácii. Chcete navštíviť stránku bitwarden.com a dozvedieť sa viac?"
   },
   "shareItem": {
     "message": "Zdieľať položku"
@@ -727,7 +733,7 @@
     "message": "Ste prémiovým členom!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Ďakujeme, že podporujete bitwarden."
+    "message": "Ďakujeme, že podporujete Bitwarden."
   },
   "premiumPrice": {
     "message": "Všetko len za %price% /rok!",
@@ -844,7 +850,7 @@
     "message": "Sebou hosťované prostredie"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Špecifikujte základnú URL lokálne hosťovanej inštalácie bitwarden."
+    "message": "Zadajte základnú URL adresu lokálne hosťovanej inštalácie Bitwarden."
   },
   "customEnvironment": {
     "message": "Vlastné prostredie"
@@ -1226,7 +1232,7 @@
     "message": "Slabé hlavné heslo"
   },
   "weakMasterPasswordDesc": {
-    "message": "Hlavné heslo ktoré ste zadali je slabé. Mali by ste použiť silné heslo (alebo frázu) aby ste spoľahlivo ochránili váš Bitwarden účet. Naozaj chcete použiť toto heslo?"
+    "message": "Hlavné heslo, ktoré ste zadali, je slabé. Mali by ste použiť silné heslo (alebo frázu), aby ste spoľahlivo ochránili váš Bitwarden účet. Naozaj chcete použiť toto heslo?"
   },
   "pin": {
     "message": "PIN",
@@ -1236,7 +1242,7 @@
     "message": "Odomknúť s PIN"
   },
   "setYourPinCode": {
-    "message": "Nastaviť kód PIN na odomknutie Bitwarden. Nastavenie PIN sa vynuluje, ak úplne odhlásite z aplikácie."
+    "message": "Nastaviť kód PIN na odomykanie Bitwardenu. Nastavenie PIN sa vynuluje, ak sa úplne odhlásite z aplikácie."
   },
   "pinRequired": {
     "message": "Kód PIN je povinný."
@@ -1249,6 +1255,15 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Váš trezor je uzamknutý. Overte sa PIN kódom ak chcete pokračovať."
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte prehliadača zamknúť s hlavným heslom"
@@ -1368,5 +1383,65 @@
   },
   "privacyPolicy": {
     "message": "Zásady ochrany osobných údajov"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }
