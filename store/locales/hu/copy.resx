@@ -121,7 +121,7 @@
     <value>Bitwarden - Ingyenes jelszókezelő</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Egy biztonságos és ingyenes jelszó kezelő az összes eszközödre</value>
+    <value>Egy biztonságos és ingyenes jelszókezelő az összes eszközre.</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>A Bitwarden a legkönnyebb és legbiztonságosabb módja a bejelentkezések és jelszavak tárolására miközben szinkronba tarja ezeket az összes eszközön.
@@ -133,24 +133,24 @@ A biztonság szakértők azt javasolják, hogy használjunk különböző vélet
 A Bitwarden egy titkosított széfben tárolja az összes bejelentkezés és szinkronizálja őket az összes eszközön. Mivel ezek az adatok teljesen titkosítva vannak még az eszköz elhagyása előtt, így csak a tulajdonos érheti el ezeket. Még maga a Bitwarden csapata se tudja elolvasni az adatokat, még ha akarnák, akkor sem. Az adatok AES-256 bites titkosítással, egy úgynevezett 'salted hasing' módszerrel és  PBKDF2 SHA-256 titkosítással vannak védve.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Egy biztonságos és ingyenes jelszó kezelő az összes eszközödre</value>
+    <value>Egy biztonságos és ingyenes jelszókezelő az összes eszközre</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Szinkronizáld és érd el a széfedet több eszközről is</value>
+    <value>A széf szinkronizálása és elérése több eszközön.</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Kezeld az összes bejelentkezésed és jelszavad egy biztonságos széfből</value>
+    <value>Az összes bejelentkezés és jelszó kezelése egy biztonságos széfben.</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Gyorsan és automatikusan töltsd ki a bejelentkezési hitelesítő adatokat bármely weboldalon</value>
+    <value>A hitelesítő adatok gyors és automatikus kitöltése bármelyik felkeresett webhelyen.</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>A széfed szintén könnyen elérhető a jobb kattintás menüből</value>
+    <value>A széf kényelmesen elérhető a jobb egérkattintásos menüből.</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatikuson generálj erős, véletlenszerű és biztonságos jelszavakat</value>
+    <value>Erős, véletlenszerű és biztonságos jelszavak generálása automatikusan.</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Adataid biztonságos AES-256 bites titkosítással van kezelve</value>
+    <value>Az információ biztonsággal kezelhető az AES-256 bit titkosítása.</value>
   </data>
 </root>
