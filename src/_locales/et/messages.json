@@ -246,7 +246,7 @@
     "message": "Puuduvad kirjed, mida kuvada."
   },
   "itemInformation": {
-    "message": "Kirje informatsioon"
+    "message": "Kirje andmed"
   },
   "username": {
     "message": "Kasutajanimi"
@@ -403,7 +403,7 @@
     "message": "Ülemparooli vihje saadeti sinu e-postile."
   },
   "verificationCodeRequired": {
-    "message": "Nõuatav on kinnituskood."
+    "message": "Nõutav on kinnituskood."
   },
   "valueCopied": {
     "message": "$VALUE$ on kopeeritud",
@@ -576,11 +576,11 @@
     "message": "Parema kliki menüü abil saad kiiresti parooli genereerida ja konkreetse veebilehe kasutajakonto andmeid sisestada."
   },
   "defaultUriMatchDetection": {
-    "message": "Vaikse URL-i sobivuse tuvastamine",
+    "message": "Vaikse URI sobivuse tuvastamine",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Vali vaikeviis, kuidas kirje ja URL-i sobivus tuvastatakse. Seda kasutatakse näiteks siis, kui lehele üritatakse automaatselt andmeid sisestada."
+    "message": "Vali vaikeviis, kuidas kirje ja URI sobivus tuvastatakse. Seda kasutatakse näiteks siis, kui lehele üritatakse automaatselt andmeid sisestada."
   },
   "theme": {
     "message": "Teema"
@@ -606,8 +606,14 @@
     "message": "HOIATUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Eksporditav fail sisaldab hoidla sisu, mis on krüpteeringuta. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
@@ -709,7 +715,7 @@
     "message": "Parooli hügieen, konto seisukord ja andmelekete raportid aitavad hoidlat turvalisena hoida."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP kinnituskoodide (2FA) genereeria hoidlas olevatele kasutajakontodele."
+    "message": "TOTP kinnituskoodide (2FA) genereerija hoidlas olevatele kasutajakontodele."
   },
   "ppremiumSignUpSupport": {
     "message": "Kiirema kasutajatoe."
@@ -895,7 +901,7 @@
     "message": "Loo ja kopeeri uus juhuslikult koostatud parool lõikepuhvrisse."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Lukusta hoidla"
   },
   "privateModeMessage": {
     "message": "Kahjuks ei toeta kasutatav brauser seda akent privaatses režiimis."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Nõua ülemparooli, kui brauser taaskäivitatakse"
   },
@@ -1358,15 +1373,75 @@
     "message": "Uus ülemparool ei vasta eeskirjades väljatoodud tingimustele."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Märkeruudu markeerimisel nõustud järgnevaga:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Kasutustingimuste ja Privaatsuspoliitikaga pole nõustutud."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Kasutustingimused"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privaatsuspoliitika"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

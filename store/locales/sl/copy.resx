@@ -118,39 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden - Ingyenes jelszókezelő</value>
+    <value>Bitwarden – Free Password Manager</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Egy biztonságos és ingyenes jelszókezelő az összes eszközre.</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>A Bitwarden a legkönnyebb és legbiztonságosabb módja a bejelentkezések és jelszavak tárolására miközben szinkronba tarja ezeket az összes eszközön.
+    <value>Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
 
-A jelszólopás egy komoly probléma. A használt webhelyek és alkalmazások támadás alatt állnak minden nap. Biztonsági jogsértések történnek és ellopják a jelszavakat. Amikor ugyanazt a jelszót használjuk több webhelyen, alkalmazáson, akkor a hackerek könnyen hozzáférhetnek az emailfiókhoz, banki fiókhoz és egyéb fontos bejelentkezéshez
+Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
 
-A biztonság szakértők azt javasolják, hogy használjunk különböző véletlenszerű jelszavakat minden bejelentkezésnél. De hogyan tartható észben az összes jelszó? A Bitwarden megkönnyíti a jelszavak létrehozását, tárolását és elérését.
+Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? Bitwarden makes it easy for you to create, store, and access your passwords.
 
-A Bitwarden egy titkosított széfben tárolja az összes bejelentkezés és szinkronizálja őket az összes eszközön. Mivel ezek az adatok teljesen titkosítva vannak még az eszköz elhagyása előtt, így csak a tulajdonos érheti el ezeket. Még maga a Bitwarden csapata se tudja elolvasni az adatokat, még ha akarnák, akkor sem. Az adatok AES-256 bites titkosítással, egy úgynevezett 'salted hasing' módszerrel és  PBKDF2 SHA-256 titkosítással vannak védve.</value>
+Bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at Bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.
+
+Bitwarden is 100% open source software. The source code for Bitwarden is hosted on GitHub and everyone is free to review, audit, and contribute to the Bitwarden codebase.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Egy biztonságos és ingyenes jelszókezelő az összes eszközre</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>A széf szinkronizálása és elérése több eszközön.</value>
+    <value>Sync and access your vault from multiple devices</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Az összes bejelentkezés és jelszó kezelése egy biztonságos széfben.</value>
+    <value>Manage all your logins and passwords from a secure vault</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>A hitelesítő adatok gyors és automatikus kitöltése bármelyik felkeresett webhelyen.</value>
+    <value>Quickly auto-fill your login credentials into any website that you visit</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>A széf kényelmesen elérhető a jobb egérkattintásos menüből.</value>
+    <value>Your vault is also conveniently accessible from the right-click menu</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Erős, véletlenszerű és biztonságos jelszavak generálása automatikusan.</value>
+    <value>Automatically generate strong, random, and secure passwords</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Az információ biztonsággal kezelhető az AES-256 bit titkosítása.</value>
+    <value>Your information is managed securely using AES-256 bit encryption</value>
   </data>
 </root>

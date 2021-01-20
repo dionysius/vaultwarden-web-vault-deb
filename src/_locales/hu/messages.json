@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Jelentkezz be vagy készíts új felhasználót a biztonsági széfed eléréshez."
+    "message": "Bejelentkezés vagy új fiók létrehozása a biztonsági széf eléréséhez."
   },
   "createAccount": {
     "message": "Fiók létrehozása"
@@ -498,7 +498,7 @@
     "message": "Elem szerkesztve"
   },
   "deleteItemConfirmation": {
-    "message": "Biztosan törlöd ezt az elemet?"
+    "message": "Biztosan törlésre kerüljön ezt az elem?"
   },
   "deletedItem": {
     "message": "Az elem törlésre került."
@@ -606,8 +606,14 @@
     "message": "FIGYELEM",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
-    "message": "Ez az exportálás titkosítás nélkül tartalmazza a széfadatokat.Nem célszerű az exportált fájlt nem biztonságos csatornákon tárolni és továbbküldeni (például emailben). A felhasználás után erősen ajánlott a törlés."
+    "message": "Ez az exportálás titkosítás nélkül tartalmazza a széfadatokat. Nem célszerű az exportált fájlt nem biztonságos csatornákon tárolni és tovább küldeni (például emailben). A felhasználás után erősen ajánlott a törlés."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Add meg a jelszavad a széf adataid exportálásához."
@@ -847,7 +853,7 @@
     "message": "A helyileg működtetett Bitwarden telepítés alap webcímének megadása."
   },
   "customEnvironment": {
-    "message": "Egyéni környezet"
+    "message": "Egyedi környezet"
   },
   "customEnvironmentFooter": {
     "message": "Haladó felhasználóknak. Minden egyes szolgáltatás alap URL-jét külön megadhatod."
@@ -991,10 +997,10 @@
     "message": "December"
   },
   "securityCode": {
-    "message": "Biztonsági Kód"
+    "message": "Biztonsági kód"
   },
   "ex": {
-    "message": "pl."
+    "message": "példa:"
   },
   "title": {
     "message": "Titulus"
@@ -1136,7 +1142,7 @@
     "message": "Alap domain"
   },
   "host": {
-    "message": "Gazdagép",
+    "message": "Kiszolgáló",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
@@ -1245,10 +1251,19 @@
     "message": "A pinkód érvénytelen."
   },
   "verifyPin": {
-    "message": "Pnkód ellenőrzése"
+    "message": "Pinkód ellenőrzése"
   },
   "yourVaultIsLockedPinCode": {
     "message": "A széf zárolásra került. A folytatáshoz meg kell adni a pinkódot."
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval a böngésző újraindításakor"
@@ -1368,5 +1383,65 @@
   },
   "privacyPolicy": {
     "message": "Adatvédelem"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

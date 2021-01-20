@@ -166,7 +166,7 @@
     "message": "Теки"
   },
   "noFolders": {
-    "message": "Немає тек для відображення."
+    "message": "Немає тек."
   },
   "helpFeedback": {
     "message": "Допомога і зворотній зв'язок"
@@ -243,7 +243,7 @@
     "message": "Перегляд"
   },
   "noItemsInList": {
-    "message": "Немає записів для відображення."
+    "message": "Немає записів."
   },
   "itemInformation": {
     "message": "Інформація про запис"
@@ -516,14 +516,14 @@
     "message": "Пошук в збірках"
   },
   "searchType": {
-    "message": "Типу пошуку"
+    "message": "Пошук за типом"
   },
   "noneFolder": {
     "message": "Без теки",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Вимкнути сповіщення про додавання запису"
+    "message": "Вимкнути сповіщення про новий запис"
   },
   "addLoginNotificationDesc": {
     "message": "Сповіщення про додавання пароля автоматично пропонує зберегти нові паролі у вашому сховищі під час першого входу."
@@ -558,10 +558,10 @@
     "message": "Ніколи для цього сайту"
   },
   "disableChangedPasswordNotification": {
-    "message": "Вимкнути сповіщення про змінений пароль"
+    "message": "Вимкнути сповіщення зміненого пароля"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "\"Сповіщення про змінений пароль\" автоматично запитує вас про оновлення пароля у вашому сховищі, коли виявлено зміну пароля на вебсайті."
+    "message": "Сповіщення зміненого пароля автоматично запитує вас про оновлення пароля у сховищі, коли виявлено його зміну на вебсайті."
   },
   "notificationChangeDesc": {
     "message": "Ви хочете оновити цей пароль в Bitwarden?"
@@ -606,8 +606,14 @@
     "message": "ПОПЕРЕДЖЕННЯ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Експортовані дані вашого сховища знаходяться в незашифрованому вигляді. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Введіть головний пароль, щоб експортувати дані сховища."
@@ -874,7 +880,7 @@
     "message": "URL-адреси середовища збережено."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Автозаповнення при завантаженні сторінки"
+    "message": "Автозаповнення на сторінці"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "При виявленні форми входу виконувати автоматичне її заповнення під час завантаження сторінки."
@@ -1102,7 +1108,7 @@
     "message": "Оновити"
   },
   "cards": {
-    "message": "Карти"
+    "message": "Картки"
   },
   "identities": {
     "message": "Особисті дані"
@@ -1179,7 +1185,7 @@
     "message": "Всі елементи"
   },
   "noPasswordsInList": {
-    "message": "Немає паролів для відображення."
+    "message": "Немає паролів."
   },
   "remove": {
     "message": "Вилучити"
@@ -1202,7 +1208,7 @@
     "message": "Ви не входите до жодної організації. Організації дозволяють безпечно обмінюватися елементами з іншими користувачами."
   },
   "noCollectionsInList": {
-    "message": "Немає збірок для відображення."
+    "message": "Немає збірок."
   },
   "ownership": {
     "message": "Власник"
@@ -1249,6 +1255,15 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Ваше сховище заблоковане. Для продовження підтвердьте свій PIN-код."
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску браузера"
@@ -1368,5 +1383,65 @@
   },
   "privacyPolicy": {
     "message": "Політика приватності"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

@@ -3,15 +3,15 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden – Ilmainen salasananhallinta",
+    "message": "Bitwarden - Ilmainen salasanojen hallinta",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "Bitwarden on turvallinen ja ilmainen salasananhallintapalvelu kaikille laitteillesi.",
+    "message": "Turvallinen ja ilmainen salasanojen hallintapalvelu kaikille laitteillesi.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Kirjaudu sisään tai luo tili päästäksesi salattuun holviisi."
+    "message": "Kirjaudu sisään tai luo uusi tili päästäksesi salattuun holviisi."
   },
   "createAccount": {
     "message": "Luo tili"
@@ -20,7 +20,7 @@
     "message": "Kirjaudu sisään"
   },
   "enterpriseSingleSignOn": {
-    "message": "Yrityksen kertakirjautuminen [SSO]"
+    "message": "Yrityksen kertakirjautuminen (SSO)"
   },
   "cancel": {
     "message": "Peruuta"
@@ -38,10 +38,10 @@
     "message": "Pääsalasana"
   },
   "masterPassDesc": {
-    "message": "Pääsalasanalla pääset käsiksi holviisi. On hyvin tärkeää, että et unohda pääsalasanaasi. Sitä ei voida palauttaa mitenkään, jos satut unohtamaan sen."
+    "message": "Pääsalasanalla pääset käsiksi holviisi. On erittäin tärkeää, että muistat pääsalasanasi, koska sen palautus ei ole mahdollista, jos unohdat sen."
   },
   "masterPassHintDesc": {
-    "message": "Salasanavihje voi auttaa sinua muistamaan pääsalasanasi, jos satut unohtamaan sen."
+    "message": "Pääsalasanan vihje voi auttaa sinua muistamaan unohtamasi salasanan."
   },
   "reTypeMasterPass": {
     "message": "Syötä pääsalasana uudelleen"
@@ -53,7 +53,7 @@
     "message": "Välilehti"
   },
   "myVault": {
-    "message": "Minun holvini"
+    "message": "Oma holvi"
   },
   "tools": {
     "message": "Työkalut"
@@ -68,13 +68,13 @@
     "message": "Kopioi salasana"
   },
   "copyNote": {
-    "message": "Kopioi muistiinpano"
+    "message": "Kopioi muistio"
   },
   "copyUri": {
     "message": "Kopioi URI"
   },
   "copyUsername": {
-    "message": "Kopioi käyttäjänimi"
+    "message": "Kopioi käyttäjätunnus"
   },
   "copyNumber": {
     "message": "Kopioi numero"
@@ -83,13 +83,13 @@
     "message": "Kopioi turvakoodi"
   },
   "autoFill": {
-    "message": "Täytä automaattisesti"
+    "message": "Automaattinen täyttö"
   },
   "generatePasswordCopied": {
     "message": "Luo salasana (leikepöydälle)"
   },
   "noMatchingLogins": {
-    "message": "Ei täsmääviä käyttäjätunnuksia."
+    "message": "Ei tunnistettuja kirjautumistietoja."
   },
   "vaultLocked": {
     "message": "Holvi on lukittu."
@@ -98,10 +98,10 @@
     "message": "Holvista on kirjauduttu ulos."
   },
   "autoFillInfo": {
-    "message": "Selaimen nykyiselle välilehdelle ei ole automaattisesti täytettäviä käyttäjätunnuksia."
+    "message": "Nykyiselle selaimen välilehdelle ei ole automaattisesti täytettäviä kirjautumistietoja."
   },
   "addLogin": {
-    "message": "Lisää käyttäjätunnus"
+    "message": "Lisää kirjautumistieto"
   },
   "addItem": {
     "message": "Lisää kohde"
@@ -113,16 +113,16 @@
     "message": "Syötä tilisi sähköpostiosoite saadaksesi pääsalasanan vihjeen."
   },
   "getMasterPasswordHint": {
-    "message": "Pyydä salasanavihjettä"
+    "message": "Pyydä pääsalasanan vihjettä"
   },
   "continue": {
     "message": "Jatka"
   },
   "verificationCode": {
-    "message": "Vahvistuskoodi"
+    "message": "Todennuskoodi"
   },
   "account": {
-    "message": "Tili"
+    "message": "Käyttäjätili"
   },
   "changeMasterPassword": {
     "message": "Vaihda pääsalasana"
@@ -166,7 +166,7 @@
     "message": "Kansiot"
   },
   "noFolders": {
-    "message": "Ei kansioita näytettäväksi."
+    "message": "Ei näytettäviä kansioita."
   },
   "helpFeedback": {
     "message": "Tuki ja palaute"
@@ -188,7 +188,7 @@
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Luo automaattisesti vahvoja, sivustokohtaisia salasanoja kirjautumisiasi varten."
+    "message": "Luo kirjautumistiedoillesi automaattisesti vahvoja, ainutlaatuisia salasanoja."
   },
   "bitWebVault": {
     "message": "Bitwardenin verkkoholvi"
@@ -206,7 +206,7 @@
     "message": "Luo uusi salasana"
   },
   "options": {
-    "message": "Asetukset"
+    "message": "Lisäasetukset"
   },
   "length": {
     "message": "Pituus"
@@ -215,10 +215,10 @@
     "message": "Sanojen määrä"
   },
   "wordSeparator": {
-    "message": "Sanaerotin"
+    "message": "Sanojen erotin"
   },
   "capitalize": {
-    "message": "Jokainen sana isolla alkukirjaimella",
+    "message": "Sanat isoilla alkukirjaimilla",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -249,13 +249,13 @@
     "message": "Kohteen tiedot"
   },
   "username": {
-    "message": "Käyttäjänimi"
+    "message": "Käyttäjätunnus"
   },
   "password": {
     "message": "Salasana"
   },
   "passphrase": {
-    "message": "Tunnuslause"
+    "message": "Salauslauseke"
   },
   "favorite": {
     "message": "Suosikki"
@@ -264,7 +264,7 @@
     "message": "Merkinnät"
   },
   "note": {
-    "message": "Muistiinpano"
+    "message": "Merkintä"
   },
   "editItem": {
     "message": "Muokkaa kohdetta"
@@ -282,10 +282,10 @@
     "message": "Avaa"
   },
   "website": {
-    "message": "Sivusto"
+    "message": "Verkkosivusto"
   },
   "toggleVisibility": {
-    "message": "Näytä/piilota"
+    "message": "Näytä tai piilota"
   },
   "manage": {
     "message": "Hallinta"
@@ -294,10 +294,10 @@
     "message": "Muut"
   },
   "rateExtension": {
-    "message": "Arvostele laajennus"
+    "message": "Arvioi laajennus"
   },
   "rateExtensionDesc": {
-    "message": "Autathan meitä jättämällä hyvän arvostelun!"
+    "message": "Harkitse tukemistamme hyvällä arvostelulla!"
   },
   "browserNotSupportClipboard": {
     "message": "Selaimesi ei tue helppoa leikepöydälle kopiointia. Kopioi kohde manuaalisesti."
@@ -306,13 +306,13 @@
     "message": "Vahvista pääsalasana"
   },
   "yourVaultIsLocked": {
-    "message": "Holvisi on lukittu. Vahvista pääsalasanasi jatkaaksesi."
+    "message": "Holvisi on lukittu. Syötä pääsalasana jatkaaksesi."
   },
   "unlock": {
-    "message": "Avaa"
+    "message": "Avaa lukitus"
   },
   "loggedInAsOn": {
-    "message": "Kirjautuneena käyttäjänä $EMAIL$ palvelimelle $HOSTNAME$.",
+    "message": "Kirjautuneena tunnuksella $EMAIL$ palveluun $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -367,46 +367,46 @@
     "message": "4 tuntia"
   },
   "onLocked": {
-    "message": "Järjestelmän lukittuessa"
+    "message": "Kun järjestelmän lukitaan"
   },
   "onRestart": {
-    "message": "Selainta uudelleenkäynnistettäessä"
+    "message": "Kun selain käynnistetään uudelleen"
   },
   "never": {
     "message": "Ei koskaan"
   },
   "security": {
-    "message": "Turvallisuus"
+    "message": "Suojaus"
   },
   "errorOccurred": {
     "message": "Tapahtui virhe"
   },
   "emailRequired": {
-    "message": "Sähköpostiosoite on pakollinen."
+    "message": "Sähköpostiosoite vaaditaan."
   },
   "invalidEmail": {
     "message": "Virheellinen sähköpostiosoite."
   },
   "masterPassRequired": {
-    "message": "Pääsalasana on pakollinen."
+    "message": "Pääsalasana vaaditaan."
   },
   "masterPassLength": {
     "message": "Pääsalasanan on oltava vähintään 8 merkkiä pitkä."
   },
   "masterPassDoesntMatch": {
-    "message": "Pääsalasanan varmistus ei täsmää."
+    "message": "Pääsalasanan vahvistus ei täsmää."
   },
   "newAccountCreated": {
-    "message": "Uusi tilisi on luotu! Voit nyt kirjautua sisään."
+    "message": "Uusi käyttäjätilisi on luotu! Voit nyt kirjautua sisään."
   },
   "masterPassSent": {
-    "message": "Lähetimme sinulle sähköpostilla pääsalasanasi vihjeen."
+    "message": "Lähetimme pääsalasanasi vihjeen sähköpostitse."
   },
   "verificationCodeRequired": {
-    "message": "Vahvistuskoodi vaaditaan."
+    "message": "Todennuskoodi vaaditaan."
   },
   "valueCopied": {
-    "message": "$VALUE$ kopioitu",
+    "message": "$VALUE$ kopioitiin",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -416,13 +416,13 @@
     }
   },
   "autofillError": {
-    "message": "Valitun kohteen automaattinen täyttö tälle sivulle ei onnistu. Kopioi ja liitä kohde manuaalisesti."
+    "message": "Valitun kohteen automaattinen täyttö tälle sivulle ei onnistu. Kopioi ja liitä tiedot sen sijaan."
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos"
   },
   "loginExpired": {
-    "message": "Kirjautumisistuntosi on vanhentunut."
+    "message": "Kirjautumisesi on vanhentunut."
   },
   "logOutConfirmation": {
     "message": "Haluatko varmasti kirjautua ulos?"
@@ -440,7 +440,7 @@
     "message": "Nimi vaaditaan."
   },
   "addedFolder": {
-    "message": "Kansio lisätty"
+    "message": "Lisättiin kansio"
   },
   "changeMasterPass": {
     "message": "Vaihda pääsalasana"
@@ -449,31 +449,31 @@
     "message": "Voit vaihtaa pääsalasanasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä sinulta kirjautumisvahvistuksen todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko käydä sivustolla nyt?"
+    "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä salasanan lisäksi kirjautumisen lisätodennusta todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "editedFolder": {
-    "message": "Kansiota muokattu"
+    "message": "Muokattiin kansiota"
   },
   "deleteFolderConfirmation": {
-    "message": "Haluatko varmasti poistaa tämän kansion?"
+    "message": "Haluatko varmasti poistaa kansion?"
   },
   "deletedFolder": {
-    "message": "Kansio poistettu"
+    "message": "Poistettiin kansio"
   },
   "gettingStartedTutorial": {
-    "message": "Käytön aloittaminen"
+    "message": "Aloitusopas"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Ota kaikki irti selainlaajennuksesta katsomalla video-ohjeemme."
+    "message": "Ota selainlaajennuksesta kaikki irti katsomalla video-oppaamme."
   },
   "syncingComplete": {
-    "message": "Synkronointi valmis"
+    "message": "Synkronointi on valmis"
   },
   "syncingFailed": {
     "message": "Synkronointi epäonnistui"
   },
   "passwordCopied": {
-    "message": "Salasana kopioitu"
+    "message": "Salasana kopioitiin"
   },
   "uri": {
     "message": "URI"
@@ -492,53 +492,53 @@
     "message": "Uusi URI"
   },
   "addedItem": {
-    "message": "Kohde lisätty"
+    "message": "Lisättiin kohde"
   },
   "editedItem": {
-    "message": "Kohdetta muokattu"
+    "message": "Muokattiin kohdetta"
   },
   "deleteItemConfirmation": {
     "message": "Haluatko varmasti poistaa tämän kohteen?"
   },
   "deletedItem": {
-    "message": "Kohde lähetetty roskakoriin"
+    "message": "Siirrettiin kohde roskakoriin"
   },
   "overwritePassword": {
     "message": "Korvaa salasana"
   },
   "overwritePasswordConfirmation": {
-    "message": "Haluatko varmasti korvata nykyisen salasanasi?"
+    "message": "Haluatko varmasti korvata nykyisen salasanan?"
   },
   "searchFolder": {
     "message": "Hae kansiosta"
   },
   "searchCollection": {
-    "message": "Hae valikoimasta"
+    "message": "Hae kokoelmasta"
   },
   "searchType": {
-    "message": "Hae tämän tyypin kohteista"
+    "message": "Hae tyypeistä"
   },
   "noneFolder": {
     "message": "Ei kansiota",
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Älä näytä tallennuskehotetta"
+    "message": "Älä käytä \"Lisää kirjautumistieto\" -kehotetta"
   },
   "addLoginNotificationDesc": {
-    "message": "Tallennuskehote kysyy, haluatko tallentaa kirjautumistiedot holviisi, kun kirjaudut sivustoille ensimmäistä kertaa."
+    "message": "\"Lisää kirjautumistieto\" -kehote kysyy, haluatko tallentaa kirjautumistiedot holviisi kun kirjaudut niillä ensimmäistä kertaa."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Älä näytä kortteja Välilehti-sivulla"
+    "message": "Älä näytä välilehtikohtaisia korttiehdotuksia"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Holvissasi olevat kortit näytetään 'Nykyinen välilehti' -sivulla, jotta automaattinen täyttö on helppoa."
+    "message": "Holvissasi olevat kortit tunnistetaan ja näytetään selaimen avoimelle välilehdelle, jotta niiden valinta täyttöä varten on helppoa."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Älä näytä henkilöllisyyksiä Välilehti-sivulla"
+    "message": "Älä näytä välilehtikohtaisia henkilöllisyysehdotuksia"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Holvissasi olevat henkilöllisyydet näytetään 'Nykyinen välilehti' -sivulla, jotta automaattinen täyttö on helppoa."
+    "message": "Holvissasi olevat henkilöllisyydet tunnistetaan ja näytetään selaimen avoimelle välilehdelle, jotta niiden valinta täyttöä varten on helppoa."
   },
   "clearClipboard": {
     "message": "Tyhjennä leikepöytä",
@@ -549,7 +549,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Haluatko, että Bitwarden muistaa tämän salasanan puolestasi?"
+    "message": "Haluatko, että Bitwarden muistaa salasanan puolestasi?"
   },
   "notificationAddSave": {
     "message": "Kyllä, tallenna nyt"
@@ -558,35 +558,35 @@
     "message": "Ei koskaan tälle sivustolle"
   },
   "disableChangedPasswordNotification": {
-    "message": "Älä näytä salasanan muutosilmoitusta"
+    "message": "Älä näytä \"Salasana vaihdettu\" -ilmoitusta"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "\"Vaihdettu salasana\" -ilmoitus kehottaa automaattisesti sinua päivittämään holvissasi olevan käyttäjätunnuksen salasanan, kun se havaitsee, että olet muuttanut sitä verkkosivulla."
+    "message": "\"Salasana vaihdettu\" -kehote ehdottaa holviisi tallennetun salasanan automaattista päivitystä kun se havaitsee, että olet vaihtanut sen verkkosivustolla."
   },
   "notificationChangeDesc": {
-    "message": "Haluatko päivittää tämän salasanan Bitwardenissa?"
+    "message": "Haluatko päivittää salasanan Bitwardeniin?"
   },
   "notificationChangeSave": {
     "message": "Kyllä, päivitä nyt"
   },
   "disableContextMenuItem": {
-    "message": "Älä näytä toimintoja pikavalikossa"
+    "message": "Älä käytä hiiren kakkospainikkeen pikavalikon toimintoja"
   },
   "disableContextMenuItemDesc": {
-    "message": "Hiiren oikealla painikkeella ilmestyvän pikavalikon toiminnoilla voit nopeasti luoda itsellesi salasanan tai täyttää kirjautumiskentät nykyiselle välilehdelle."
+    "message": "Hiiren kakkospainikkeen pikavalikon kautta pääset nopeasti käsiksi salasanojen luontiin ja nykyisellä välilehdellä auki olevan sivuston kirjautumisteitoihin."
   },
   "defaultUriMatchDetection": {
-    "message": "URIn oletustunnistustapa",
+    "message": "URI:n tunnistuksen oletustapa",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Valitse oletustapa, jolla URIen tunnistaminen tehdään esimerkiksi automaattisen täytön yhteydessä."
+    "message": "Valitse oletustapa, jolla URI tunnistetaan esimerkiksi automaattisen täytön yhteydessä."
   },
   "theme": {
     "message": "Teema"
   },
   "themeDesc": {
-    "message": "Vaihda sovelluksen väriteema."
+    "message": "Vaihda sovelluksen väriteemaa."
   },
   "dark": {
     "message": "Tumma",
@@ -606,11 +606,17 @@
     "message": "VAROITUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Tämä vienti sisältää holvisi tiedot salaamattomassa muodossa. Sinun ei tulisi säilyttää tai lähettää vietyä tiedostoa suojaamattomien kanavien (kuten sähköpostin) välityksellä. Poista se välittömästi kun sille ei enää ole käyttöä."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
-    "message": "Syötä pääsalasanasi viedäksesi holvisi tiedot."
+    "message": "Syötä pääsalasana viedäksesi holvisi tiedot."
   },
   "shared": {
     "message": "Jaettu"
@@ -619,7 +625,7 @@
     "message": "Jaa holvisi"
   },
   "shareVaultConfirmation": {
-    "message": "Voit jakaa Bitwardenilla holvisi sisällön muiden kanssa käyttämällä organisaatiotiliä. Haluatko käydä bitwarden.com-sivustolla lukemassa lisää?"
+    "message": "Bitwardenin avulla voit jakaa holvisi sisältöä muiden kanssa organisaatiotiliä käyttäen. Haluatko lukea bitwarden.com-sivustolta lisää?"
   },
   "shareItem": {
     "message": "Jaa kohde"
@@ -631,19 +637,19 @@
     "message": "Jaettu kohde"
   },
   "shareDesc": {
-    "message": "Valitse organisaatio, jonka kanssa haluat jakaa tämän kohteen. Jakaminen siirtää kohteen omistajuuden organisaatiolle. Et enää ole tämän kohteen suora omistaja, kun se on jaettu."
+    "message": "Valitse organisaatio, jonka kanssa haluat jakaa kohteen. Jako siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
   },
   "learnMore": {
     "message": "Lue lisää"
   },
   "authenticatorKeyTotp": {
-    "message": "Todennusavain (TOTP)"
+    "message": "Todennusmenetelmän avain (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Vahvistuskoodi (TOTP)"
+    "message": "Todennuskoodi (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Kopioi vahvistuskoodi"
+    "message": "Kopioi todennuskoodi"
   },
   "attachments": {
     "message": "Liitteet"
@@ -655,16 +661,16 @@
     "message": "Haluatko varmasti poistaa liitteen?"
   },
   "deletedAttachment": {
-    "message": "Liite poistettu"
+    "message": "Poistettiin liite"
   },
   "newAttachment": {
     "message": "Lisää uusi liite"
   },
   "noAttachments": {
-    "message": "Ei liitteitä."
+    "message": "Liitteitä ei ole."
   },
   "attachmentSaved": {
-    "message": "Liite tallennettu."
+    "message": "Liite on tallennettiin."
   },
   "file": {
     "message": "Tiedosto"
@@ -673,7 +679,7 @@
     "message": "Valitse tiedosto."
   },
   "maxFileSize": {
-    "message": "Tiedoston enimmäiskoko on 100 MB."
+    "message": "Tiedoston enimmäiskoko on 100 Mt."
   },
   "featureUnavailable": {
     "message": "Toiminto ei ole käytettävissä"
@@ -694,43 +700,43 @@
     "message": "Päivitä jäsenyys"
   },
   "premiumNotCurrentMember": {
-    "message": "Et ole tällä hetkellä premium-jäsen."
+    "message": "Et ole tällä hetkellä Premium-jäsen."
   },
   "premiumSignUpAndGet": {
-    "message": "Ryhdy premium-jäseneksi saadaksesi"
+    "message": "Ryhdy Premium-jäseneksi saadaksesi:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
+    "message": "1 Gt salattua tallennustilaa liitetiedostoille."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "lisävaihtoehtoja kaksivaiheiselle kirjautumiselle, kuten YubiKey, FIDO U2F ja Duo"
+    "message": "Muita kaksivaiheisen kirjautumisen todennusmenetelmiä kuten YubiKey, FIDO U2F ja Duo Security."
   },
   "ppremiumSignUpReports": {
-    "message": "Salasanahygienia-, tiliturvallisuus- ja tietovuotoraportit pitävät holvisi turvassa."
+    "message": "Salasanahygienian, tilin terveyden ja tietovuotojen raportointitoiminnot pitävät holvisi turvassa."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP-vahvistuskoodigeneraattorin (2FA) holvisi käyttäjätunnuksille"
+    "message": "Kaksivaiheisen kirjautumisen (2FA) TOTP-todennuskoodien generaattori holvisi kirjautumistiedoille."
   },
   "ppremiumSignUpSupport": {
-    "message": "etusijan asiakastuessa"
+    "message": "Ensisijainen asiakastuki."
   },
   "ppremiumSignUpFuture": {
-    "message": "kaikki tulevat premium-ominaisuudet. Lisää tulossa pian!"
+    "message": "Kaikki tulossa olevat Premium-toiminnot. Lisää tulossa pian!"
   },
   "premiumPurchase": {
-    "message": "Osta premium-jäsenyys"
+    "message": "Osta Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Voit ostaa premium-jäsenyyden bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
+    "message": "Voit ostaa Premium-jäsenyyden bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "premiumCurrentMember": {
-    "message": "Olet premium-jäsen!"
+    "message": "Olet Premium-jäsen!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Kiitos, että tuet Bitwardenin toimintaa."
+    "message": "Kiitos kun tuet Bitwardenia."
   },
   "premiumPrice": {
-    "message": "Kaikki nämä vain $PRICE$ / vuosi!",
+    "message": "Kaikki tämä vain $PRICE$/vuosi!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -739,25 +745,25 @@
     }
   },
   "refreshComplete": {
-    "message": "Päivitys valmis"
+    "message": "Päivitys on valmis"
   },
   "disableAutoTotpCopy": {
-    "message": "Älä kopioi TOTP-koodeja automaattisesti"
+    "message": "Älä kopioi TOTP-todennuskoodeja automaattisesti"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Jos käyttäjätunnukseesi on liitetty todennusavain, TOTP-vahvistuskoodi kopioidaan automaattisesti leikepöydällesi tehdessäsi kohteella automaattisen täytön."
+    "message": "Jos kirjautumistietoosi on liitetty kaksivaiheisen todennusmenetelmän avain, kopioidaan kaksivaiheisen kirjautumisen TOTP-todennuskoodi automaattisesti leikepöydälle kun suoritat kohteen automaattisen täytön."
   },
   "premiumRequired": {
     "message": "Premium vaaditaan"
   },
   "premiumRequiredDesc": {
-    "message": "Tarvitset premium-jäsenyyden tämän toiminnon käyttämiseen."
+    "message": "Käyttääksesi tätä toimintoa tarvitset Premium-jäsenyyden."
   },
   "enterVerificationCodeApp": {
-    "message": "Syötä 6-numeroinen vahvistuskoodi todennussovelluksestasi."
+    "message": "Syötä 6-numeroinen todennuskoodi todennussovelluksestasi."
   },
   "enterVerificationCodeEmail": {
-    "message": "Syötä 6-numeroinen vahvistuskoodi, joka lähetettiin osoitteeseen $EMAIL$.",
+    "message": "Syötä 6-numeroinen todennuskoodi, joka lähetettiin sähköpostitse osoitteeseen $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -766,7 +772,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Vahvistussähköposti lähetettiin osoitteeseen $EMAIL$.",
+    "message": "Todennussähköposti lähetettiin osoitteeseen $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -778,31 +784,31 @@
     "message": "Muista minut"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Lähetä vahvistuskoodisähköposti uudestaan"
+    "message": "Lähetä todennuskoodi sähköpostitse uudelleen"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Käytä toista menetelmää kaksivaiheiseen kirjautumiseen"
+    "message": "Käytä eri kaksivaiheisen kirjautumisen todennusmenetelmää"
   },
   "insertYubiKey": {
-    "message": "Kytke YubiKey-laitteesi tietokoneesi USB-porttiin ja paina sen nappia."
+    "message": "Kytke YubiKey-todennuslaitteesi tietokoneesi USB-porttiin ja paina sen painiketta."
   },
   "insertU2f": {
-    "message": "Kytke todennuslaitteesi tietokoneesi USB-porttiin. Jos laitteessa on painike, paina sitä."
+    "message": "Kytke todennuslaitteesi tietokoneen USB-porttiin. Jos laitteessa on painike, paina sitä."
   },
   "loginUnavailable": {
-    "message": "Kirjautuminen epäonnistui"
+    "message": "Kirjautuminen ei ole käytettävissä"
   },
   "noTwoStepProviders": {
-    "message": "Tällä tilillä on kaksivaiheinen kirjautuminen käytössä, mutta tämä selain ei tue yhtäkään määritetyistä kaksivaihekirjautumisen menetelmistä."
+    "message": "Tilillä on käytössä kaksivaiheinen kirjautuminen, mutta tämä selain ei tue käytettävissä olevia todennusmenetelmiä."
   },
   "noTwoStepProviders2": {
-    "message": "Käytä tuettua selainta (kuten Chromea) ja/tai ota käyttöön paremmin tuettu todennusmenetelmä (kuten todennussovellus)."
+    "message": "Käytä tuettua selainta (kuten Chrome) ja/tai ota käyttöön laajemmin tuettu todennusmenetelmä (kuten todennussovellus)."
   },
   "twoStepOptions": {
     "message": "Kaksivaiheisen kirjautumisen asetukset"
   },
   "recoveryCodeDesc": {
-    "message": "Etkö pysty käyttämään mitään kaksivaihemenetelmistäsi? Käytä palautuskoodiasi poistaaksesi käytöstä kaikki kaksivaiheisen todennuksen menetelmät tililtäsi."
+    "message": "Etkö pysty käyttämään kaksivaiheisen kirjautumisen todennusmenetelmiäsi? Poista kaikki menetelmät käytöstä tililtäsi palautuskoodillasi."
   },
   "recoveryCodeTitle": {
     "message": "Palautuskoodi"
@@ -811,25 +817,25 @@
     "message": "Todennussovellus"
   },
   "authenticatorAppDesc": {
-    "message": "Käytä todennussovellusta (Kuten Authya tai Google Authenticatoria) luodaksesi aikarajallisia vahvistuskoodeja.",
+    "message": "Käytä todennussovellusta (kuten Authy tai Google Authenticator) luodaksesi aikarajallisia todennuskoodeja.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP -todennuslaite"
   },
   "yubiKeyDesc": {
-    "message": "Käytä YubiKeytä päästäksesi käsiksi tiliisi. Toimii seuraavien YubiKey-mallien kanssa: 4, 4 Nano, 4C ja NEO."
+    "message": "Käytä YubiKey-todennuslaitetta tilisi avaukseen. Toimii YubiKey 4, 4 Nano, 4C sekä NEO -laitteiden kanssa."
   },
   "duoDesc": {
-    "message": "Vahvista kirjautumisesi Duo Securityn kautta käyttämällä Duo Mobile -sovellusta, tekstiviestiä, puhelua tai U2F-todennuslaitetta.",
+    "message": "Vahvista Duo Securityn avulla käyttäen Duo Mobile ‑sovellusta, tekstiviestiä, puhelua tai U2F-todennuslaitetta.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Vahvista organisaatiosi kirjautumiset Duo Securityn kautta käyttämällä Duo Mobile ‑sovellusta, tekstiviestiä, puhelua tai U2F-todennuslaitetta.",
+    "message": "Vahvista organisaatiollesi Duo Securityn avulla käyttäen Duo Mobile ‑sovellusta, tekstiviestiä, puhelua tai U2F-todennuslaitetta.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Käytä mitä tahansa FIDO U2F ‑yhteensopivaa todennuslaitetta päästäksesi käsiksi tiliisi."
+    "message": "Käytä tilisi avaukseen mitä tahansa FIDO U2F ‑yhteensopivaa todennuslaitetta."
   },
   "u2fTitle": {
     "message": "FIDO U2F ‑todennuslaite"
@@ -838,19 +844,19 @@
     "message": "Sähköposti"
   },
   "emailDesc": {
-    "message": "Vahvistuskoodit lähetetään sinulle sähköpostilla."
+    "message": "Todennuskoodit lähetetään sinulle sähköpostitse."
   },
   "selfHostedEnvironment": {
-    "message": "Itse ylläpidetty ohjelmistoympäristö"
+    "message": "Oma palvelinympäristö"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Syötä omalla palvelimella ylläpitämäsi Bitwarden-asennuksen kanta-URL."
+    "message": "Määritä omassa palvelinympäristössäsi suoritettavan Bitwarden-asennuksen pääverkkotunnus."
   },
   "customEnvironment": {
-    "message": "Mukautettu ohjelmistoympäristö"
+    "message": "Mukautettu palvelinympäristö"
   },
   "customEnvironmentFooter": {
-    "message": "Edistyneille käyttäjille. Voit syöttää jokaisen palvelun kanta-URL:n erikseen."
+    "message": "Edistyneille käyttäjille. Voit määrittää jokaiselle palvelulle oman pääverkkotunnuksen."
   },
   "baseUrl": {
     "message": "Palvelimen URL"
@@ -862,7 +868,7 @@
     "message": "Verkkoholvipalvelimen URL"
   },
   "identityUrl": {
-    "message": "Identiteettipalvelimen URL"
+    "message": "Henkilöllisyyspalvelimen URL"
   },
   "notificationsUrl": {
     "message": "Ilmoituspalvelimen URL"
@@ -871,13 +877,13 @@
     "message": "Kuvakepalvelimen URL"
   },
   "environmentSaved": {
-    "message": "Ohjelmistoympäristön URL:t tallennettu."
+    "message": "Palvelinten URL-osoitteet tallennettiin."
   },
   "enableAutoFillOnPageLoad": {
     "message": "Täytä automaattisesti sivun latautuessa"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Tiedot täytetään automaattisesti, jos sivun latautuessa havaitaan kirjautumislomake."
+    "message": "Jos sivulla havaitaan kirjautumislomake, täytetään kirjautumistiedot automaattisesti sivua ladattaessa."
   },
   "experimentalFeature": {
     "message": "Tämä on vielä kokeellinen toiminto. Käytä omalla vastuullasi."
@@ -889,7 +895,7 @@
     "message": "Avaa holvi sivupalkissa"
   },
   "commandAutofillDesc": {
-    "message": "Täytä automaattisesti tällä sivustolla viimeksi käytetty käyttäjätunnus."
+    "message": "Täytä automaattisesti viimeisin nykyisellä sivustolla käytetty kirjautumistieto"
   },
   "commandGeneratePasswordDesc": {
     "message": "Luo uusi satunnainen salasana ja kopioi se leikepöydälle."
@@ -913,28 +919,28 @@
     "message": "Uusi lisäkenttä"
   },
   "dragToSort": {
-    "message": "Lajittele vetämällä"
+    "message": "Järjestä raahaamalla"
   },
   "cfTypeText": {
     "message": "Teksti"
   },
   "cfTypeHidden": {
-    "message": "Piilotettu teksti"
+    "message": "Piilotettu"
   },
   "cfTypeBoolean": {
-    "message": "Valintaruutu"
+    "message": "Totuusarvo"
   },
   "popup2faCloseMessage": {
-    "message": "Kun napsautat ponnahdusikkunan ulkopuolelta tarkistaaksesi vahvistuskoodin sähköpostistasi, näkymä sulkeutuu. Haluatko avata tämän näkymän uuteen ikkunaan, jotta se ei sulkeutuisi?"
+    "message": "Klikkaus ponnahdusikkunan ulkopuolelle todennuskoodin sähköpostista noutoa varten sulkee ikkunan. Haluatko avata näkymän uuteen ikkunaan, jotta se pysyy avoinna?"
   },
   "popupU2fCloseMessage": {
-    "message": "Tämä selain ei mahdollista U2F:n käyttämistä tässä ponnahdusikkunassa. Haluatko avata tämän näkymän uuteen ikkunaan, jotta voit kirjautua U2F-todennuslaitteella?"
+    "message": "Tämä selain ei voi käsitellä U2F-pyyntöjä tässä ponnahdusikkunassa. Haluatko avata näkymän uuteen ikkunaan, jotta voit vahvistaa kirjautumisen U2F-todennuslaitteella?"
   },
   "disableFavicon": {
-    "message": "Älä näytä sivustokuvakkeita"
+    "message": "Älä näytä sivustojen kuvakkeita"
   },
   "disableFaviconDesc": {
-    "message": "Holvisi käyttäjätunnuslistassa näytettävät sivustokuvakkeet helpottavat kohteiden tunnistamista."
+    "message": "Kirjautumistietojen vieressä näytettävät sivustojen kuvakkeet helpottavat kohteiden tunnistusta."
   },
   "cardholderName": {
     "message": "Kortinhaltijan nimi"
@@ -991,7 +997,7 @@
     "message": "Joulukuu"
   },
   "securityCode": {
-    "message": "Turvakoodi"
+    "message": "Turvakoodi (CVV)"
   },
   "ex": {
     "message": "esim."
@@ -1024,7 +1030,7 @@
     "message": "Henkilöllisyyden nimi"
   },
   "company": {
-    "message": "Yhtiö"
+    "message": "Yritys"
   },
   "ssn": {
     "message": "Henkilötunnus"
@@ -1033,10 +1039,10 @@
     "message": "Passin numero"
   },
   "licenseNumber": {
-    "message": "Rekisterinumero"
+    "message": "Ajokortin numero"
   },
   "email": {
-    "message": "Sähköpostiosoite"
+    "message": "Sähköposti"
   },
   "phone": {
     "message": "Puhelinnumero"
@@ -1069,13 +1075,13 @@
     "message": "Tyyppi"
   },
   "typeLogin": {
-    "message": "Käyttäjätunnus"
+    "message": "Kirjautumistieto"
   },
   "typeLogins": {
-    "message": "Käyttäjätunnukset"
+    "message": "Kirjautumistiedot"
   },
   "typeSecureNote": {
-    "message": "Salattu muistiinpano"
+    "message": "Salattu muistio"
   },
   "typeCard": {
     "message": "Kortti"
@@ -1090,7 +1096,7 @@
     "message": "Takaisin"
   },
   "collections": {
-    "message": "Valikoimat"
+    "message": "Kokoelmat"
   },
   "favorites": {
     "message": "Suosikit"
@@ -1108,10 +1114,10 @@
     "message": "Henkilöllisyydet"
   },
   "logins": {
-    "message": "Käyttäjätunnukset"
+    "message": "Kirjautumistiedot"
   },
   "secureNotes": {
-    "message": "Salatut muistiinpanot"
+    "message": "Salatut muistiot"
   },
   "clear": {
     "message": "Tyhjennä",
@@ -1121,7 +1127,7 @@
     "message": "Tarkista, onko salasana vuotanut."
   },
   "passwordExposed": {
-    "message": "Tämä salasana on paljastunut $VALUE$ tietovuodossa. Sinun kannattaa vaihtaa se.",
+    "message": "Salasana on paljastunut $VALUE$ tietovuodossa. Se tulisi vaihtaa.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1136,14 +1142,14 @@
     "message": "Pääverkkotunnus"
   },
   "host": {
-    "message": "Osoite",
+    "message": "Isäntä",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Täsmälleen…"
+    "message": "Tarkka"
   },
   "startsWith": {
-    "message": "Alkaa…"
+    "message": "Alkaa"
   },
   "regEx": {
     "message": "Säännöllinen lauseke",
@@ -1154,11 +1160,11 @@
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Oletustunnistustapa",
+    "message": "Tunnistuksen oletustapa",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Näytä/piilota asetukset"
+    "message": "Näytä tai piilota asetukset"
   },
   "toggleCurrentUris": {
     "message": "Näytä/piilota nykyiset URI:t",
@@ -1179,7 +1185,7 @@
     "message": "Kaikki kohteet"
   },
   "noPasswordsInList": {
-    "message": "Ei salasanoja näytettäväksi."
+    "message": "Ei näytettäviä salasanoja."
   },
   "remove": {
     "message": "Poista"
@@ -1192,11 +1198,11 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Salasana päivitetty",
+    "message": "Salasana päivitettiin",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Oletko varma, että haluat käyttää asetusta \"ei koskaan\"? Tämä valinta tallentaa holvisi salausavaimen laitteellesi. Jos käytät tätä asetusta, varmista että laitteesi on hyvin suojattu."
+    "message": "Oletko varma, että haluat käyttää asetusta \"Ei koskaan\"? Tämä valinta tallentaa holvisi salausavaimen laitteellesi. Jos käytät asetusta, varmista että laitteesi on hyvin suojattu."
   },
   "noOrganizationsList": {
     "message": "Et kuulu mihinkään organisaatioon. Organisaatioiden avulla voit jakaa kohteita turvallisesti muiden käyttäjien kanssa."
@@ -1205,7 +1211,7 @@
     "message": "Ei näytettäviä kokoelmia."
   },
   "ownership": {
-    "message": "Omistajuus"
+    "message": "Omistus"
   },
   "whoOwnsThisItem": {
     "message": "Kuka omistaa tämän kohteen?"
@@ -1226,17 +1232,17 @@
     "message": "Heikko pääsalasana"
   },
   "weakMasterPasswordDesc": {
-    "message": "Valitsemasi pääsalasana on heikko. Sinun kannattaa käyttää vahvaa pääsalasanaa (tai ‑salalauseketta) suojataksesi Bitwarden-tilisi kunnolla. Haluatko varmasti käyttää tätä pääsalasanaa?"
+    "message": "Valitsemasi pääsalasana on heikko. Sinun tulisi käyttää vahvaa pääsalasanaa (tai salauslauseketta) suojataksesi Bitwarden-tilisi kunnolla. Haluatko varmasti käyttää tätä pääsalasanaa?"
   },
   "pin": {
-    "message": "PIN-koodi",
+    "message": "PIN",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Avaa PIN-koodilla"
+    "message": "Avaa lukitus PIN-koodilla"
   },
   "setYourPinCode": {
-    "message": "Aseta PIN-koodi Bitwardenin avaamista varten. PIN-asetukset nollautuvat, jos kirjaudut täysin ulos sovelluksesta."
+    "message": "Aseta PIN-koodisi Bitwardenin avausta varten. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos sovelluksesta."
   },
   "pinRequired": {
     "message": "PIN-koodi vaaditaan."
@@ -1250,11 +1256,20 @@
   "yourVaultIsLockedPinCode": {
     "message": "Holvisi on lukittu. Vahvista PIN-koodisi jatkaaksesi."
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+  },
   "lockWithMasterPassOnRestart": {
-    "message": "Lukitse pääsalasanalla selainta uudelleenkäynnistettäessä"
+    "message": "Lukitse pääsalasanalla kun selain käynnistetään uudelleen"
   },
   "selectOneCollection": {
-    "message": "Valitse vähintään yksi kokoelma."
+    "message": "Valitse ainakin yksi kokoelma."
   },
   "cloneItem": {
     "message": "Kloonaa kohde"
@@ -1263,7 +1278,7 @@
     "message": "Kloonaa"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa generaattorisi asetuksiin."
+    "message": "Yksi tai useampi organisaation käytäntö vaikuttaa generaattorisi asetuksiin."
   },
   "vaultTimeoutAction": {
     "message": "Holvin aikakatkaisun toiminto"
@@ -1283,22 +1298,22 @@
     "message": "Poista kohde pysyvästi"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Haluatko varmasti poistaa tämän kohteen pysyvästi?"
+    "message": "Haluatko varmasti poistaa kohteen pysyvästi?"
   },
   "permanentlyDeletedItem": {
-    "message": "Kohde poistettu pysyvästi"
+    "message": "Poistettiin kohde pysyvästi"
   },
   "restoreItem": {
     "message": "Palauta kohde"
   },
   "restoreItemConfirmation": {
-    "message": "Haluatko varmasti palauttaa tämän kohteen?"
+    "message": "Haluatko varmasti palauttaa kohteen?"
   },
   "restoredItem": {
-    "message": "Kohde palautettu"
+    "message": "Kohde palautettiin"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Uloskirjautuminen poistaa kaiken pääsyn holviisi ja vaatii online-todennuksen aikakatkaisuajan jälkeen. Haluatko varmasti käyttää tätä asetusta?"
+    "message": "Uloskirjautuminen estää pääsyn holviisi ja vaatii ajan umpeuduttua todennuksen internet-yhteyden välityksellä. Haluatko varmasti käyttää tätä asetusta?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Aikakatkaisun toiminnon vahvistus"
@@ -1307,16 +1322,16 @@
     "message": "Täytä automaattisesti ja tallenna"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Kohde täytettiin automaattisesti ja URI tallennettiin"
+    "message": "Täytettiin kohde automaattisesti ja URI tallennettiin"
   },
   "autoFillSuccess": {
-    "message": "Kohde täytettiin automaattisesti"
+    "message": "Täytettiin kohde automaattisesti"
   },
   "setMasterPassword": {
     "message": "Aseta pääsalasana"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Yksi tai useampi organisaatiokäytäntö edellyttää, että pääsalasanasi täyttää seuraavat vaatimukset:"
+    "message": "Yksi tai useampi organisaation käytäntö edellyttää, että pääsalasanasi täyttää seuraavat vaatimukset:"
   },
   "policyInEffectMinComplexity": {
     "message": "Monimutkaisuuden vähimmäispistemäärä on $SCORE$",
@@ -1355,18 +1370,78 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Uusi pääsalasanasi ei täytä käytäntövaatimuksia."
+    "message": "Uusi pääsalasanasi ei täytä käytännön vaatimuksia."
   },
   "acceptPolicies": {
     "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
   },
   "acceptPoliciesError": {
-    "message": "Palvelu- ja tietosuojakäytäntöä ei ole vahvistettu."
+    "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "termsOfService": {
     "message": "Käyttöehdot"
   },
   "privacyPolicy": {
     "message": "Tietosuojakäytäntö"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }
