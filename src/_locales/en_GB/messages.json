@@ -1388,7 +1388,7 @@
     "message": "Your password hint cannot be the same as your password."
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "desktopSyncVerificationTitle": {
     "message": "Desktop sync verification"
@@ -1412,7 +1412,7 @@
     "message": "Unable to enable biometrics"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Action was cancelled by the desktop application"
   },
   "nativeMessagingInvalidEncryptionDesc": {
     "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
@@ -1424,7 +1424,7 @@
     "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "Account mismatch"
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not enabled"
@@ -1439,9 +1439,9 @@
     "message": "Browser biometrics is not supported on this device."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organisation and choose from available Collections."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "An organisation policy is affecting your ownership options."
   }
 }

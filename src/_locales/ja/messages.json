@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "保管庫のエクスポートの確認"
   },
   "exportWarningDesc": {
     "message": "このエクスポートデータは暗号化されていない形式の保管庫データを含んでいます。メールなどのセキュリティ保護されていない方法で共有したり保管したりしないでください。使用した後はすぐに削除してください。"
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "このエクスポートは、アカウントの暗号化キーを使用してデータを暗号化します。 暗号化キーをローテーションした場合は、このエクスポートファイルを復号することはできなくなるので、もう一度エクスポートする必要があります。"
   },
   "exportMasterPassword": {
     "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
@@ -1257,13 +1257,13 @@
     "message": "保管庫がロックされています。PIN コードで認証してください。"
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "生体認証でロック解除"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "デスクトップからの確認待ち"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "ブラウザの生体認証を有効にするには、Bitwarden デスクトップアプリの生体認証を使用してください。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "ブラウザー再起動時にマスターパスワードでロック"
@@ -1385,63 +1385,63 @@
     "message": "プライバシーポリシー"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "パスワードのヒントをパスワードと同じにすることはできません。"
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "デスクトップ同期の検証"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "デスクトップアプリにこの指紋が表示されていることを確認してください: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "ブラウザ統合が有効になっていません"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "Bitwarden デスクトップアプリでブラウザ統合が有効になっていません。デスクトップアプリの設定で有効にしてください。"
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Bitwarden デスクトップアプリを起動"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "この機能を使用するには、Bitwarden デスクトップアプリを起動してください。"
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "生体認証を有効にできません"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "デスクトップアプリによってアクションがキャンセルされました"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "デスクトップアプリが安全な通信チャネルを無効にしました。操作をやり直してください。"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "デスクトップ通信が中断されました"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "デスクトップアプリは別のアカウントにログインしています。両方のアプリが同じアカウントにログインしているか確認してください。"
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "アカウントが一致しません"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "生体認証が有効になっていません"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "ブラウザ生体認証を利用するには、まず設定でデスクトップ生体認証を有効にする必要があります。"
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "生体認証に対応していません"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "このデバイスではブラウザの生体認証に対応していません。"
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "組織のポリシーにより、個人の保管庫へのアイテムの保存が制限されています。 所有権を組織に変更し、利用可能なコレクションから選択してください。"
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "組織のポリシーが所有者のオプションに影響を与えています。"
   }
 }

@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Konfirmasi Ekspor Vault"
   },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Ekspor ini mengenkripsi data Anda menggunakan kunci enkripsi akun Anda. Jika Anda pernah merotasi kunci enkripsi akun Anda, Anda harus mengekspor lagi karena Anda tidak akan dapat mendekripsi file ekspor ini."
   },
   "exportMasterPassword": {
     "message": "Masukkan sandi utama Anda untuk mengekspor data brankas Anda."
@@ -1257,13 +1257,13 @@
     "message": "Brankas Anda terkunci. Verifikasi kode PIN Anda untuk melanjutkan."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Buka kunci dengan biometrik"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "Menunggu konfirmasi dari desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Harap konfirmasi menggunakan biometrik di aplikasi Bitwarden Desktop untuk mengaktifkan biometrik untuk browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Kunci dengan kata sandi utama saat browser dihidupkan ulang"
@@ -1385,63 +1385,63 @@
     "message": "Kebijakan Privasi"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Petunjuk kata sandi Anda tidak boleh sama dengan kata sandi Anda."
   },
   "ok": {
     "message": "Ok"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "Verifikasi sinkronisasi desktop"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Harap verifikasi bahwa aplikasi desktop menunjukkan sidik jari ini:"
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "Integrasi browser tidak diaktifkan"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "Integrasi browser tidak diaktifkan di aplikasi Bitwarden Desktop. Harap aktifkan di pengaturan dalam aplikasi desktop."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Jalankan aplikasi Bitwarden Desktop"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "Aplikasi Bitwarden Desktop harus dijalankan sebelum fungsi ini dapat digunakan."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "Tidak dapat mengaktifkan biometrik"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Tindakan dibatalkan oleh aplikasi desktop"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "Aplikasi desktop membatalkan saluran komunikasi aman. Silakan coba lagi operasi ini"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "Komunikasi desktop terputus"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "Aplikasi desktop masuk ke akun yang berbeda. Harap pastikan kedua aplikasi masuk ke akun yang sama."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "Akun tidak cocok"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometrik tidak diaktifkan"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Biometrik browser mengharuskan biometrik desktop diaktifkan di pengaturan terlebih dahulu."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "Biometrik tidak didukung"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "Biometrik browser tidak didukung di perangkat ini."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Karena Kebijakan Perusahaan, Anda dilarang menyimpan item ke lemari besi pribadi Anda. Ubah opsi Kepemilikan ke organisasi dan pilih dari Koleksi yang tersedia."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Kebijakan organisasi memengaruhi opsi kepemilikan Anda."
   }
 }

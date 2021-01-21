@@ -498,7 +498,7 @@
     "message": "Eintrag bearbeitet"
   },
   "deleteItemConfirmation": {
-    "message": "Soll dieser Eintrag wirklich gelöscht werden?"
+    "message": "Soll dieser Eintrag wirklich in den Papierkorb verschoben werden?"
   },
   "deletedItem": {
     "message": "Eintrag in Papierkorb legen"
@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Tresor-Export bestätigen"
   },
   "exportWarningDesc": {
     "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Dieser Export verschlüsselt Ihre Daten mit dem Verschlüsselungscode Ihres Kontos. Falls Sie Ihren Verschlüsselungscode erneuern, sollten Sie den Export erneut durchführen, da Sie die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln können."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -1257,13 +1257,13 @@
     "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Mit Biometrie entsperren"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "Warte auf Bestätigung vom Desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Bitte bestätigen Sie die Verwendung von Biometrie in der Bitwarden Desktop-Anwendung, um Biometrie für den Browser zu aktivieren."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bei Neustart des Browsers mit Master-Passwort sperren"
@@ -1385,63 +1385,63 @@
     "message": "Datenschutzbestimmungen"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Ihr Passwort-Hinweis darf nicht identisch mit Ihrem Passwort sein."
   },
   "ok": {
     "message": "Ok"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "Desktop-Sync-Überprüfung"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Bitte bestätigen Sie, dass die Desktop-Anwendung diesen Prüfschlüssel anzeigt: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "Browser-Einbindung ist nicht aktiviert"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktivieren Sie diese in den Einstellungen innerhalb der Desktop-Anwendung."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Bitwarden Desktop-Anwendung starten"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "Die Bitwarden Desktop-Anwendung muss gestartet werden, bevor diese Funktion verwendet werden kann."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "Biometrie kann nicht aktiviert werden"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Die Aktion wurde von der Desktop-Anwendung abgebrochen"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "Die Desktop-Anwendung hat den sicheren Kommunikationskanal für ungültig erklärt. Bitte starten Sie den Vorgang erneut"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "Desktop-Kommunikation unterbrochen"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "Die Desktop-Anwendung ist in ein anderes Konto eingeloggt. Bitte stellen Sie sicher, dass beide Anwendungen mit demselben Konto angemeldet sind."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "Konten stimmen nicht überein"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometrie ist nicht aktiviert"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert ist."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "Biometrie wird nicht unterstützt"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "Biometrie im Browser wird auf diesem Gerät nicht unterstützt."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Aufgrund einer Unternehmensrichtlinie dürfen Sie keine Einträge in Ihrem persönlichen Tresor speichern. Ändern Sie die Eigentümer-Option in eine Organisation und wählen Sie aus den verfügbaren Sammlungen."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Eine Organisationsrichtlinie beeinflusst Ihre Eigentümer-Optionen."
   }
 }

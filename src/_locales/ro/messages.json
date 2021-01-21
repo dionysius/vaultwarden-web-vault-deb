@@ -498,7 +498,7 @@
     "message": "Articol editat"
   },
   "deleteItemConfirmation": {
-    "message": "Sigur doriți să ștergeți acest articol?"
+    "message": "Sigur doriți să trimiteți în coșul de reciclare?"
   },
   "deletedItem": {
     "message": "Articolul a fost trimis în coșul de reciclare"
@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Confirmare export seif"
   },
   "exportWarningDesc": {
     "message": "Acest export conține datele dvs. din seif în format necriptat. Nu ar trebui să stocați sau să trimiteți fișierul pe canale nesecurizate (cum ar fi e-mail). Ștergeți-l imediat după ce nu îl mai folosiți."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Acest export criptează datele folosind cheia de criptare a contului. Dacă schimbați vreodată cheia de criptare a contului, ar trebui să o exportați din nou, deoarece nu veți putea decripta acest fișier exportat."
   },
   "exportMasterPassword": {
     "message": "Introduceți parola principală pentru a exporta datele din seif."
@@ -1257,13 +1257,13 @@
     "message": "Seiful dvs. este blocat. Verificați codul PIN pentru a continua."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Deblocare folosind biometria"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "Se așteaptă confirmarea de la desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Vă rugăm să confirmați utilizarea biometriei în aplicația Bitwarden Desktop pentru a activa biometria pentru browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocare cu parola principală la repornirea browserului"
@@ -1385,63 +1385,63 @@
     "message": "Politică de confidențialitate"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Indiciul dvs. de parolă nu poate fi același cu parola dvs."
   },
   "ok": {
     "message": "Ok"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "Verificare sincronizare desktop"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Verificați dacă aplicația desktop afișează această amprentă digitală:"
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "Integrarea browserului nu este activată"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "Integrarea browserului nu este activată în aplicația Bitwarden Desktop. Vă rugăm să o activați în setările din aplicația desktop."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Porniți aplicația Bitwarden Desktop"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "Aplicația Bitwarden Desktop trebuie pornită înainte de a putea utiliza această funcție."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "Nu se poate activa biometria"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Acțiunea a fost anulată de aplicația desktop"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "Aplicația desktop a invalidat canalul de comunicare securizată. Reîncercați această operație"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "Comunicare desktop întreruptă"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "Aplicația desktop este conectată la un alt cont. Vă rugăm să vă asigurați că ambele aplicații sunt înregistrate în același cont."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "Eroare de cont"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometria nu a fost activată"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Biometria browserului necesită activarea mai întâi a biometriei de pe desktop în setări."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "Biometria nu este acceptată"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "Biometria browserului nu este acceptată pe acest dispozitiv."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Datorită unei politici pentru întreprinderi, vă este restricționată salvarea de elemente în seiful dvs. personal. Schimbați opțiunea de proprietate la o organizație și alegeți dintre colecțiile disponibile."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "O politică de organizație vă afectează opțiunile de proprietate."
   }
 }

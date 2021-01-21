@@ -498,7 +498,7 @@
     "message": "Muokattiin kohdetta"
   },
   "deleteItemConfirmation": {
-    "message": "Haluatko varmasti poistaa tämän kohteen?"
+    "message": "Haluatko varmasti siirtää roskakoriin?"
   },
   "deletedItem": {
     "message": "Siirrettiin kohde roskakoriin"
@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Vahvista holvin vienti"
   },
   "exportWarningDesc": {
     "message": "Tämä vienti sisältää holvisi tiedot salaamattomassa muodossa. Sinun ei tulisi säilyttää tai lähettää vietyä tiedostoa suojaamattomien kanavien (kuten sähköpostin) välityksellä. Poista se välittömästi kun sille ei enää ole käyttöä."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Tämä vienti salaa tietosi käyttäen käyttäjätilisi salausavainta. Jos joskus uudistat tilisi salausavaimen, tulee sinun viedä tiedot uudelleen, koska et voi enää purkaa nyt viedyn tiedoston salausta."
   },
   "exportMasterPassword": {
     "message": "Syötä pääsalasana viedäksesi holvisi tiedot."
@@ -1257,13 +1257,13 @@
     "message": "Holvisi on lukittu. Vahvista PIN-koodisi jatkaaksesi."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Avaa käyttäen biometriaa"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "Odottaa vahvistusta työpöydältä"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Vahvista biometrian käyttö Bitwardenin työpöytäsovelluksessa käyttääksesi sitä selaimessa."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukitse pääsalasanalla kun selain käynnistetään uudelleen"
@@ -1385,63 +1385,63 @@
     "message": "Tietosuojakäytäntö"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Salasanavihjeesi ei voi olla sama kuin salasanasi."
   },
   "ok": {
     "message": "Ok"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "Työpöytäsynkronoinnin vahvistus"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Varmista, että työpöytäsovellus näyttää tämän tunnistelausekkeen:"
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "Selainintegrointi ei ole käytössä"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "Selainintegrointi ei ole käytössä Bitwardenin työpöytäsovelluksessa. Ota se käyttöön työpöytäsovelluksen asetuksista."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Käynnistä Bitwardenin työpöytäsovellus"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "Bitwardenin työpöytäsovellus on käynnistettävä ennen kuin tätä toimintoa voidaan käyttää."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "Biometrian käyttöönotto ei onnistu"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Toiminto peruttiin työpöytäsovelluksen toimesta"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "Työpöytäsovellus hyläsi suojatun viestintäväylän. Yritä toimintoa uudelleen"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "Työpöytäyhteys keskeytyi"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "Työpöytäsovellus on kirjautuneena eri tilille. Varmista, että molemmat sovellukset ovat kirjautuneet samalle tilille."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "Tili ei täsmää"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometria ei ole käytössä"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Käyttääksesi biometriaa selaimessa, on biometria otettava käyttöön työpöytäsovelluksen asetuksista."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "Biometriaa ei tueta"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "Selaimen biometriaa ei tueta tällä laitteella."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Yrityksen asettaman käytännön johdosta kohteiden tallennus omaan holviisi ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Organisaatiokäytäntö vaikuttaa omistajuusvalintoihisi."
   }
 }

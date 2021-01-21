@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "صادرات گاوصندوق را تأیید کنید"
   },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "این صادرات با استفاده از کلید رمزگذاری حساب شما ، اطلاعات شما را رمزگذاری می کند. اگر حتی کلید رمزگذاری حساب خود را بچرخانید ، باید دوباره صادر کنید چون قادر به رمزگشایی این پرونده صادراتی نخواهید بود."
   },
   "exportMasterPassword": {
     "message": "کلمه عبور اصلی خود را برای صادرات داده ها از گاوصندوقتان وارد کنید."
@@ -1257,13 +1257,13 @@
     "message": "گاوصندوق شما قفل شده است. برای ادامه کد پین خود را تایید کنید."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "با استفاده از بیومتریک باز کنید"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "در انتظار تأیید از دسکتاپ"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "لطفاً استفاده از بیومتریک را در برنامه دسکتاپ Bitwarden تأیید کنید تا بیومتریک را برای مرورگر فعال کنید."
   },
   "lockWithMasterPassOnRestart": {
     "message": "در زمان شروع مجدد مرورگر، با رمز اصلی قفل کن"
@@ -1385,63 +1385,63 @@
     "message": "سیاست حفظ حریم خصوصی"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "نکته رمز عبور شما نمی تواند همان رمز عبور شما باشد."
   },
   "ok": {
-    "message": "Ok"
+    "message": "تایید"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "تأیید همگام سازی دسکتاپ"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "لطفاً تأیید کنید که برنامه دسکتاپ این اثر انگشت را نشان می دهد:"
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "ادغام مرورگر فعال نیست"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "ادغام مرورگر در برنامه دسکتاپ Bitwarden فعال نیست. لطفاً آن را در تنظیمات موجود در برنامه دسکتاپ فعال کنید."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "برنامه دسکتاپ Bitwarden را شروع کنید"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "قبل از استفاده از این عملکرد، برنامه دسکتاپ Bitwarden باید شروع شود."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "بیومتریک فعال نیست"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "فعالیت توسط برنامه دسکتاپ لغو شد"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "برنامه دسکتاپ کانال ارتباط امن را نامعتبر کرد. لطفاً این عملیات را دوباره امتحان کنید"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "ارتباط دسکتاپ قطع شد"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "برنامه دسکتاپ به یک حساب دیگر وارد شده است. لطفاً اطمینان حاصل کنید که هر دو برنامه به یک حساب وارد شده اند."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "عدم تطابق حساب"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "بیومتریک فعال نیست"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "بیومتریک مرورگر ابتدا نیاز به فعالسازی بیومتریک دسکتاپ در تنظیمات دارد."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "بیومتریک پشتیبانی نمی شود"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی شود."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "به دلیل خط مشی Enterprise ، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "خط مشی سازمانی بر تنظیمات مالکیت شما تأثیر می گذارد."
   }
 }
