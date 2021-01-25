@@ -23,7 +23,6 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
-import { resolve } from '@angular/compiler-cli/src/ngtsc/file_system';
 
 const RateUrls = {
     [DeviceType.ChromeExtension]:
@@ -52,6 +51,7 @@ export class SettingsComponent implements OnInit {
     vaultTimeoutActions: any[];
     vaultTimeoutAction: string;
     pin: boolean = null;
+    supportsBiometric: boolean;
     biometric: boolean = false;
     previousVaultTimeout: number = null;
 
@@ -102,6 +102,8 @@ export class SettingsComponent implements OnInit {
 
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
+
+        this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
         this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
     }
 
@@ -208,16 +210,14 @@ export class SettingsComponent implements OnInit {
     }
 
     async updateBiometric() {
-        if (this.biometric) {
+        if (this.biometric && this.supportsBiometric) {
 
             // Request permission to use the optional permission for nativeMessaging
             if (!this.platformUtilsService.isFirefox()) {
                 const granted = await new Promise((resolve, reject) => {
-                    chrome.permissions.request({permissions: ['nativeMessaging']}, function(granted) {
-                        resolve(granted);
-                    });
+                    chrome.permissions.request({permissions: ['nativeMessaging']}, resolve);
                 });
-                
+
                 if (!granted) {
                     await this.platformUtilsService.showDialog(
                         this.i18nService.t('nativeMessaginPermissionErrorDesc'), this.i18nService.t('nativeMessaginPermissionErrorTitle'),
