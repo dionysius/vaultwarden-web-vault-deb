@@ -125,7 +125,7 @@
     "message": "Налог"
   },
   "changeMasterPassword": {
-    "message": "Промени Главну Лозинку"
+    "message": "Промени главну лозинку"
   },
   "fingerprintPhrase": {
     "message": "Сигурносна Фраза Сефа",
@@ -303,10 +303,10 @@
     "message": "Ваш прегледач не подржава једноставно копирање клипборда. Уместо тога копирајте га ручно."
   },
   "verifyMasterPassword": {
-    "message": "Проверити Главну Лозинку"
+    "message": "Верификујте Главну Лозинку"
   },
   "yourVaultIsLocked": {
-    "message": "Сеф је блокиран. Проверити главну лозинку за наставак."
+    "message": "Сеф је блокиран. Унесите главну лозинку за наставак."
   },
   "unlock": {
     "message": "Откључај"
@@ -443,7 +443,7 @@
     "message": "Фасцикла додата"
   },
   "changeMasterPass": {
-    "message": "Промени Главну Лозинку"
+    "message": "Промени главну лозинку"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Можете променити главну лозинку у Вашем сефу на bitwarden.com. Да ли желите да посетите веб страницу сада?"
@@ -649,7 +649,7 @@
     "message": "Једнократни код"
   },
   "copyVerificationCode": {
-    "message": "Копирај Верификациони код"
+    "message": "Копирај верификациони код"
   },
   "attachments": {
     "message": "Прилози"
@@ -1194,7 +1194,7 @@
     "message": "Подразумевано"
   },
   "dateUpdated": {
-    "message": "Ажурирано",
+    "message": "Промењено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1437,6 +1437,12 @@
   },
   "biometricsNotSupportedDesc": {
     "message": "Биометрија прегледача није подржана на овом уређају."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "personalOwnershipSubmitError": {
     "message": "Због смерница за предузећа, ограничено вам је чување предмета у вашем личном трезору. Промените опцију власништва у организацију и изаберите из доступних колекција."

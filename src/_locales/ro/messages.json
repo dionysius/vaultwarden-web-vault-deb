@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometria browserului nu este acceptată pe acest dispozitiv."
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
   "personalOwnershipSubmitError": {
     "message": "Datorită unei politici pentru întreprinderi, vă este restricționată salvarea de elemente în seiful dvs. personal. Schimbați opțiunea de proprietate la o organizație și alegeți dintre colecțiile disponibile."
   },

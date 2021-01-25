@@ -501,7 +501,7 @@
     "message": "Sei sicuro di voler eliminare questo elemento?"
   },
   "deletedItem": {
-    "message": "Elemento eliminato"
+    "message": "Elemento spostato nel cestino"
   },
   "overwritePassword": {
     "message": "Sovrascrivi password"
@@ -613,7 +613,7 @@
     "message": "Questa esportazione contiene i dati del tuo portachiavi in un formato non criptato. Non salvare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
   },
   "encExportWarningDesc": {
-    "message": "Questa esportazione crittografa i tuoi dati utilizzando la chiave di crittografia del tuo account. Se dovessi cambiare la chiave di crittografia del tuo account, dovresti esportare di nuovo poiché non sarai in grado di decifrare questo file di esportazione."
+    "message": "Questa esportazione cifra i tuoi dati utilizzando la chiave di crittografia del tuo account. Se cambi la chiave di crittografia del tuo account, non sarai più in grado di decifrare il file esportato e sarà necessario eseguire nuovo export."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati della tua cassaforte."
@@ -1257,7 +1257,7 @@
     "message": "Il tuo portachiavi è bloccato. Inserisci il tuo codice PIN per continuare."
   },
   "unlockWithBiometrics": {
-    "message": "Sblocca utilizzando i dati biometrici"
+    "message": "Sblocca utilizzando l'autenticazione biometrica"
   },
   "awaitDesktop": {
     "message": "In attesa di conferma dal desktop"
@@ -1278,7 +1278,7 @@
     "message": "Clona"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore."
+    "message": "Una o più policy dell'organizzazione controllano le impostazioni del tuo generatore."
   },
   "vaultTimeoutAction": {
     "message": "Azione Timeout Portachiavi"
@@ -1415,7 +1415,7 @@
     "message": "L'azione è stata annullata dall'applicazione desktop"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "L'applicazione desktop ha invalidato il canale di comunicazione sicuro. Riprova questa operazione"
+    "message": "L'applicazione desktop ha invalidato il canale di comunicazione sicuro. Ritenta l'operazione"
   },
   "nativeMessagingInvalidEncryptionTitle": {
     "message": "Comunicazione desktop interrotta"
@@ -1430,7 +1430,7 @@
     "message": "Autenticazione biometrica non abilitata"
   },
   "biometricsNotEnabledDesc": {
-    "message": "L'autenticazione biometrica del browser richiede che il desktop sia abilitato prima nelle impostazioni."
+    "message": "L'autenticazione biometrica del browser richiede che l'autenticazione biometrica del desktop sia prima abilitata  nelle impostazioni."
   },
   "biometricsNotSupportedTitle": {
     "message": "Autenticazione biometrica non supportata"
@@ -1438,10 +1438,16 @@
   "biometricsNotSupportedDesc": {
     "message": "L'autenticazione biometrica del browser non è supportata su questo dispositivo."
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permesso non concesso"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Senza l'autorizzazione per comunicare con l'applicazione Bitwarden Desktop non è possibile fornire l'autenticazione biometrica nell'estensione del browser.\nRiprova di nuovo."
+  },
   "personalOwnershipSubmitError": {
-    "message": "A causa di una politica aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione Proprietà in un'organizzazione e scegli tra le Collezioni disponibili."
+    "message": "A causa di una policy aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione proprietà in un'organizzazione e scegli tra le raccolte disponibili."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "Una politica dell'organizzazione sta influenzando le opzioni di proprietà."
+    "message": "Una policy dell'organizzazione controlla le opzioni di proprietà."
   }
 }

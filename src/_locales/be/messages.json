@@ -1388,7 +1388,7 @@
     "message": "Your password hint cannot be the same as your password."
   },
   "ok": {
-    "message": "Ok"
+    "message": "ОК"
   },
   "desktopSyncVerificationTitle": {
     "message": "Desktop sync verification"
@@ -1437,6 +1437,12 @@
   },
   "biometricsNotSupportedDesc": {
     "message": "Browser biometrics is not supported on this device."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."

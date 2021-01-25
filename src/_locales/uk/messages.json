@@ -1257,13 +1257,13 @@
     "message": "Ваше сховище заблоковане. Для продовження підтвердьте свій PIN-код."
   },
   "unlockWithBiometrics": {
-    "message": "Розблокувати з біометрикою"
+    "message": "Розблокувати з біометрією"
   },
   "awaitDesktop": {
     "message": "Очікується підтвердження з комп'ютера"
   },
   "awaitDesktopDesc": {
-    "message": "Для увімкнення біометрики у браузері, будь ласка, підтвердьте це у програмі Bitwarden на комп'ютері."
+    "message": "Для увімкнення біометрії в браузері, будь ласка, підтвердьте це у програмі Bitwarden на комп'ютері."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску браузера"
@@ -1409,7 +1409,7 @@
     "message": "Для використання цієї функції необхідно запустити програму Bitwarden на комп'ютері."
   },
   "errorEnableBiometricTitle": {
-    "message": "Не вдається увімкнути біометрику"
+    "message": "Не вдається увімкнути біометрію"
   },
   "errorEnableBiometricDesc": {
     "message": "Дію було скасовано програмою на комп'ютері"
@@ -1437,6 +1437,12 @@
   },
   "biometricsNotSupportedDesc": {
     "message": "Біометрія в браузері не підтримується на цьому пристрої."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "personalOwnershipSubmitError": {
     "message": "У зв'язку з корпоративною політикою, вам не дозволено зберігати записи до особистого сховища. Змініть налаштування власності на організацію та виберіть серед доступних збірок."

@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "このデバイスではブラウザの生体認証に対応していません。"
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
   "personalOwnershipSubmitError": {
     "message": "組織のポリシーにより、個人の保管庫へのアイテムの保存が制限されています。 所有権を組織に変更し、利用可能なコレクションから選択してください。"
   },

@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Bekräfta export av valv"
   },
   "exportWarningDesc": {
     "message": "Den här exporten innehåller ditt valvs okrypterade data i .csv-format. Du bör inte lagra eller skicka filen över osäkra anslutningar (genom t.ex. mejl). Radera filen efter du är färdig med den."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Denna export krypterar dina data med kontots krypteringsnyckel. Om du någonsin roterar kontots krypteringsnyckel bör du exportera igen eftersom du inte kommer att kunna dekryptera denna exportfil."
   },
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera ditt valv."
@@ -1257,13 +1257,13 @@
     "message": "Valvet är låst. Kontrollera din PIN-kod för att fortsätta."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Lås upp med biometri"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "Väntar på bekräftelse från skrivbordsprogrammet"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Säkerställ att du använder biometri i Bitwardens skrivbordsprogram för att aktivera biometri för webbläsaren."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med huvudlösenordet vid omstart av webbläsaren"
@@ -1385,63 +1385,69 @@
     "message": "Integritetspolicy"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Din lösenordsledtråd får inte vara samma som ditt lösenord."
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "Verifiering av synkronisering med skrivbordsprogrammet"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Vänligen bekräfta att skrivbordsprogrammet visar det här fingeravtrycket: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "Webbläsarintegration är inte aktiverad"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "Webbläsarintegration är inte aktiverad i Bitwardens skrivbordsprogram. Aktivera det i inställningarna i skrivbordsprogrammet."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Starta Bitwardens skrivbordsprogram"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "Bitwardens skrivbordsprogram måste köras innan denna funktion kan användas."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "Det gick inte att aktivera biometri"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Åtgärden avbröts av skrivbordsprogrammet"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "Skrivbordsprogrammet ogiltigförklarade den säkra kommunikationskanalen. Försök igen"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "Kommunikationen med skrivbordsprogrammet avbröts"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "Skrivbordsprogrammet är inloggat på ett annat konto. Se till att båda applikationerna är inloggade på samma konto."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "Kontoavvikelse"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometri är inte aktiverat"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Biometri i webbläsaren kräver att biometri på skrivbordet aktiveras i inställningarna först."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "Biometri stöds inte"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "Biometri i webbläsaren stöds inte på den här enheten."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "På grund av en av företagets policyer är du begränsad från att spara objekt till ditt personliga valv. Ändra ägarskap till en organisation och välj från tillgängliga samlingar."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "En organisationspolicy påverkar dina ägarskapsalternativ."
   }
 }

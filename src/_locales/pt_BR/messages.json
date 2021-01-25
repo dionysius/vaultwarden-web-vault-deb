@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Confirmar Exportação do Cofre"
   },
   "exportWarningDesc": {
     "message": "Esta exportação contém os dados do seu cofre em um formato não criptografado. Você não deve armazenar ou enviar o arquivo exportado por canais inseguros (como e-mail). Exclua o arquivo imediatamente após terminar de usá-lo."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Esta exportação criptografa seus dados usando a chave de criptografia da sua conta. Se você rotacionar a chave de criptografia da sua conta, você deve exportar novamente, já que você não será capaz de descriptografar este arquivo de exportação."
   },
   "exportMasterPassword": {
     "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
@@ -1257,13 +1257,13 @@
     "message": "O seu cofre está bloqueado. Verifique o seu PIN para continuar."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Desbloquear com a biometria"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "Aguardando confirmação do desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Por favor, confirme o uso de dados biométricos no aplicativo Bitwarden Desktop para habilitar os dados biométricos para o navegador."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar o navegador"
@@ -1385,63 +1385,69 @@
     "message": "Política de Privacidade"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Sua dica de senha senha não pode ser a mesma que a sua senha."
   },
   "ok": {
     "message": "Ok"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "Verificação de sincronização do Desktop"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Por favor, verifique se o aplicativo desktop mostra esta impressão digital: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "A integração com o navegador não está ativada"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "A integração com o navegador não está habilitada no aplicativo Bitwarden Desktop. Por favor, habilite-a nas configurações do aplicativo desktop."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Iniciar o aplicativo Bitwarden Desktop"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "O aplicativo Bitwarden Desktop precisa ser iniciado antes que esta função possa ser usada."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "Não foi possível ativar os dados biométricos"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Ação foi cancelada pelo desktop"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "O aplicativo desktop invalidou o canal de comunicação seguro. Por favor, tente esta operação novamente"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "Comunicação com o desktop interrompida"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "O aplicativo de desktop está conectado em uma conta diferente. Por favor, certifique-se de que ambos os aplicativos estejam conectados na mesma conta."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "A conta não confere"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometria não habilitada"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "A biometria com o navegador requer que a biometria de desktop seja ativada nas configurações primeiro."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "Biometria não suportada"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "A biometria com o navegador não é suportada neste dispositivo."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Devido a uma Política Empresarial, você está restrito de salvar itens para seu cofre pessoal. Altere a opção de Propriedade para uma organização e escolha entre as Coleções disponíveis."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Uma política de organização está afetando suas opções de propriedade."
   }
 }

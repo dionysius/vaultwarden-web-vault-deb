@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "이 기기에서는 생체 인식이 지원되지 않습니다."
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
   "personalOwnershipSubmitError": {
     "message": "엔터프라이즈 정책으로 인해 개인 보관함에 항목을 저장할 수 없습니다. 조직에서 소유권 설정을 변경한 다음, 사용 가능한 컬렉션 중에서 선택해주세요."
   },

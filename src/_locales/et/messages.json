@@ -331,7 +331,7 @@
     "message": "Hoidla ajalõpp"
   },
   "lockNow": {
-    "message": "Kliki paroolihoidla lukustamiseks"
+    "message": "Lukusta paroolihoidla"
   },
   "immediately": {
     "message": "Koheselt"
@@ -535,7 +535,7 @@
     "message": "Krediit- ja teiste kaartide andmed kuvatakse vaikeseadena \"Kaart\" vaates, et neid oleks lihtsam sisestada."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Ära kuva \"Kaart\" vaates Identiteete"
+    "message": "Ära kuva \"Kaart\" vaates identiteete"
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Identiteediandmeid kuvatakse vaikeseadena \"Kaart\" vaates, et neid oleks lihtsam sisestada."
@@ -1437,6 +1437,12 @@
   },
   "biometricsNotSupportedDesc": {
     "message": "Brauseri biomeetria ei ole selles seadmes toetatud"
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "personalOwnershipSubmitError": {
     "message": "Ettevõtte poliitika tõttu ei saa sa andmeid oma personaalsesse Hoidlasse salvestada. Vali Omanikuks organisatsioon ja vali mõni saadavaolevatest Kogumikest."

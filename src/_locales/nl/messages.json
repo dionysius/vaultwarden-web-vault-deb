@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Dit apparaat ondersteunt geen browserbiometrie."
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Toestemming niet verleend"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Zonder toestemming om te communiceren met de Bitwarden Desktop-applicatie, kunnen we biometrisch inloggen in de browserextensie niet leveren. Probeer het opnieuw."
+  },
   "personalOwnershipSubmitError": {
     "message": "Wegens bedrijfsbeleid mag je geen wachtwoorden opslaan in je persoonlijke kluis. Verander het eigenaarschap naar een organisatie en kies uit een van de beschikbare collecties."
   },

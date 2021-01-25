@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "此设备不支持浏览器生物识别。"
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
   "personalOwnershipSubmitError": {
     "message": "由于企业策略，您被限制为保存项目到您的个人密码库。将所有权选项更改为组织，并从可用的集合中选择。"
   },

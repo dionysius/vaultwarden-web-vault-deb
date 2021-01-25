@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Ilmainen salasanojen hallinta",
+    "message": "Bitwarden – Ilmainen salasanojen hallinta",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "Turvallinen ja ilmainen salasanojen hallintapalvelu kaikille laitteillesi.",
+    "message": "Turvallinen ja ilmainen salasanojen hallinta kaikille laitteillesi.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -98,7 +98,7 @@
     "message": "Holvista on kirjauduttu ulos."
   },
   "autoFillInfo": {
-    "message": "Nykyiselle selaimen välilehdelle ei ole automaattisesti täytettäviä kirjautumistietoja."
+    "message": "Selaimen avoimelle välilehdelle ei ole automaattisesti täytettäviä kirjautumistietoja."
   },
   "addLogin": {
     "message": "Lisää kirjautumistieto"
@@ -561,7 +561,7 @@
     "message": "Älä näytä \"Salasana vaihdettu\" -ilmoitusta"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "\"Salasana vaihdettu\" -kehote ehdottaa holviisi tallennetun salasanan automaattista päivitystä kun se havaitsee, että olet vaihtanut sen verkkosivustolla."
+    "message": "\"Salasana vaihdettu\" -ilmoitus ehdottaa holviisi tallennetun salasanan automaattista päivitystä kun se havaitsee, että olet vaihtanut sen verkkosivustolla."
   },
   "notificationChangeDesc": {
     "message": "Haluatko päivittää salasanan Bitwardeniin?"
@@ -613,7 +613,7 @@
     "message": "Tämä vienti sisältää holvisi tiedot salaamattomassa muodossa. Sinun ei tulisi säilyttää tai lähettää vietyä tiedostoa suojaamattomien kanavien (kuten sähköpostin) välityksellä. Poista se välittömästi kun sille ei enää ole käyttöä."
   },
   "encExportWarningDesc": {
-    "message": "Tämä vienti salaa tietosi käyttäen käyttäjätilisi salausavainta. Jos joskus uudistat tilisi salausavaimen, tulee sinun viedä tiedot uudelleen, koska et voi enää purkaa nyt viedyn tiedoston salausta."
+    "message": "Tämä vienti salaa tietosi käyttäjätilisi salausavaimella. Jos joskus uudistat tilisi salausavaimen, on teitojen vienti tehtävä uudelleen, koska et voi enää purkaa nyt viedyn tiedoston salausta."
   },
   "exportMasterPassword": {
     "message": "Syötä pääsalasana viedäksesi holvisi tiedot."
@@ -655,22 +655,22 @@
     "message": "Liitteet"
   },
   "deleteAttachment": {
-    "message": "Poista liite"
+    "message": "Poista tiedostoliite"
   },
   "deleteAttachmentConfirmation": {
     "message": "Haluatko varmasti poistaa liitteen?"
   },
   "deletedAttachment": {
-    "message": "Poistettiin liite"
+    "message": "Poistettiin tiedostoliite"
   },
   "newAttachment": {
-    "message": "Lisää uusi liite"
+    "message": "Lisää uusi tiedostoliite"
   },
   "noAttachments": {
     "message": "Liitteitä ei ole."
   },
   "attachmentSaved": {
-    "message": "Liite on tallennettiin."
+    "message": "Tiedostoliite tallennettiin."
   },
   "file": {
     "message": "Tiedosto"
@@ -706,7 +706,7 @@
     "message": "Ryhdy Premium-jäseneksi saadaksesi:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 Gt salattua tallennustilaa liitetiedostoille."
+    "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Muita kaksivaiheisen kirjautumisen todennusmenetelmiä kuten YubiKey, FIDO U2F ja Duo Security."
@@ -790,7 +790,7 @@
     "message": "Käytä eri kaksivaiheisen kirjautumisen todennusmenetelmää"
   },
   "insertYubiKey": {
-    "message": "Kytke YubiKey-todennuslaitteesi tietokoneesi USB-porttiin ja paina sen painiketta."
+    "message": "Kytke YubiKey-todennuslaitteesi tietokoneen USB-porttiin ja paina sen painiketta."
   },
   "insertU2f": {
     "message": "Kytke todennuslaitteesi tietokoneen USB-porttiin. Jos laitteessa on painike, paina sitä."
@@ -904,7 +904,7 @@
     "message": "Lukitse holvi"
   },
   "privateModeMessage": {
-    "message": "Valitettavasti tämä ikkuna ei ole saatavilla tämän selaimen yksityisyystilassa."
+    "message": "Valitettavasti tämä ikkuna ei ole käytettävissä tämän selaimen yksityisessä selaustilassa."
   },
   "customFields": {
     "message": "Lisäkentät"
@@ -913,7 +913,7 @@
     "message": "Kopioi arvo"
   },
   "value": {
-    "message": "Teksti"
+    "message": "Arvo"
   },
   "newCustomField": {
     "message": "Uusi lisäkenttä"
@@ -997,7 +997,7 @@
     "message": "Joulukuu"
   },
   "securityCode": {
-    "message": "Turvakoodi (CVV)"
+    "message": "Turvakoodi (CVC/CVV)"
   },
   "ex": {
     "message": "esim."
@@ -1124,7 +1124,7 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {
-    "message": "Tarkista, onko salasana vuotanut."
+    "message": "Tarkasta, onko salasana vuotanut."
   },
   "passwordExposed": {
     "message": "Salasana on paljastunut $VALUE$ tietovuodossa. Se tulisi vaihtaa.",
@@ -1167,7 +1167,7 @@
     "message": "Näytä tai piilota asetukset"
   },
   "toggleCurrentUris": {
-    "message": "Näytä/piilota nykyiset URI:t",
+    "message": "Näytä tai piilota nykyiset URI:t",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
@@ -1257,7 +1257,7 @@
     "message": "Holvisi on lukittu. Vahvista PIN-koodisi jatkaaksesi."
   },
   "unlockWithBiometrics": {
-    "message": "Avaa käyttäen biometriaa"
+    "message": "Avaa biometrialla"
   },
   "awaitDesktop": {
     "message": "Odottaa vahvistusta työpöydältä"
@@ -1278,7 +1278,7 @@
     "message": "Kloonaa"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Yksi tai useampi organisaation käytäntö vaikuttaa generaattorisi asetuksiin."
+    "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa generaattorisi asetuksiin."
   },
   "vaultTimeoutAction": {
     "message": "Holvin aikakatkaisun toiminto"
@@ -1322,16 +1322,16 @@
     "message": "Täytä automaattisesti ja tallenna"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Täytettiin kohde automaattisesti ja URI tallennettiin"
+    "message": "Kohde täytettiin automaattisesti ja URI tallennettiin"
   },
   "autoFillSuccess": {
-    "message": "Täytettiin kohde automaattisesti"
+    "message": "Kohde täytettiin automaattisesti"
   },
   "setMasterPassword": {
     "message": "Aseta pääsalasana"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Yksi tai useampi organisaation käytäntö edellyttää, että pääsalasanasi täyttää seuraavat vaatimukset:"
+    "message": "Yksi tai useampi organisaatiokäytäntö edellyttää, että pääsalasanasi täyttää seuraavat vaatimukset:"
   },
   "policyInEffectMinComplexity": {
     "message": "Monimutkaisuuden vähimmäispistemäärä on $SCORE$",
@@ -1370,7 +1370,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Uusi pääsalasanasi ei täytä käytännön vaatimuksia."
+    "message": "Uusi pääsalasanasi ei täytä käytännön määrittämiä vaatimuksia."
   },
   "acceptPolicies": {
     "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
@@ -1437,6 +1437,12 @@
   },
   "biometricsNotSupportedDesc": {
     "message": "Selaimen biometriaa ei tueta tällä laitteella."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "personalOwnershipSubmitError": {
     "message": "Yrityksen asettaman käytännön johdosta kohteiden tallennus omaan holviisi ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."

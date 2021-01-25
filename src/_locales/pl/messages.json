@@ -1260,10 +1260,10 @@
     "message": "Odblokuj danymi biometrycznymi"
   },
   "awaitDesktop": {
-    "message": "Oczekiwanie na potwierdzenie z aplikacji"
+    "message": "Oczekiwanie na potwierdzenie z aplikacji desktopowej"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Włącz dane biometryczne w aplikacji desktopowej Bitwarden, aby włączyć tę samą funkcję w przeglądarce."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu przeglądarki"
@@ -1385,43 +1385,43 @@
     "message": "Polityka prywatności"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Podpowiedź do hasła nie może być taka sama jak hasło."
   },
   "ok": {
     "message": "Ok"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Weryfikacja synchronizacji z aplikacją"
+    "message": "Weryfikacja synchronizacji z aplikacją desktopową"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Zweryfikuj aplikację desktopową z wyświetlonym identyfikatorem: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Integracja z przeglądarką jest wyłączona"
+    "message": "Połączenie z przeglądarką jest wyłączone"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Integracja z przeglądarką jest wyłączona. Włącz funkcję w ustawieniach aplikacji Bitwarden."
+    "message": "Połączenie z przeglądarką jest wyłączone. Włącz funkcję w ustawieniach aplikacji desktopowej Bitwarden."
   },
   "startDesktopTitle": {
-    "message": "Uruchom aplikację Bitwarden"
+    "message": "Uruchom aplikację desktopową Bitwarden"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "Aplikacja desktopowa Bitwarden musi zostać uruchomiona przed użyciem tej funkcji."
   },
   "errorEnableBiometricTitle": {
     "message": "Nie można włączyć danych biometrycznych"
   },
   "errorEnableBiometricDesc": {
-    "message": "Operacja została anulowana przez aplikację"
+    "message": "Operacja została anulowana przez aplikację desktopową"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "Aplikacja desktopowa unieważniła bezpieczny kanał komunikacji. Spróbuj ponownie wykonać tę operację"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Komunikacja z aplikacją została przerwana"
+    "message": "Komunikacja z aplikacją desktopową została przerwana"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "W aplikacji desktopowej jesteś zalogowany na inne konto. Upewnij się, że w obu aplikacjach jesteś zalogowany na te same konto."
   },
   "nativeMessagingWrongUserTitle": {
     "message": "Konto jest niezgodne"
@@ -1430,13 +1430,19 @@
     "message": "Dane biometryczne są wyłączone"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Aby włączyć dane biometryczne w przeglądarce, musisz włączyć tę samą funkcję w ustawianiach aplikacji desktopowej."
   },
   "biometricsNotSupportedTitle": {
     "message": "Dane biometryczne nie są obsługiwane"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "Dane biometryczne przeglądarki nie są obsługiwane na tym urządzenie."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Uprawnienie nie zostało przyznane"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Bez uprawnienia do komunikowania się z aplikacją desktopową Bitwarden nie możemy dostarczyć obsługi danych biometrycznych w rozszerzeniu przeglądarki. Spróbuj ponownie."
   },
   "personalOwnershipSubmitError": {
     "message": "Ze względu na zasadę przedsiębiorstwa nie możesz zapisywać elementów w osobistym sejfie. Zmień właściciela elementu na organizację i wybierz jedną z dostępnych kolekcji."

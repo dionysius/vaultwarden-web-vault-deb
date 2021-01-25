@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی شود."
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "مجوز ارائه نشده است"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "بدون اجازه ارتباط با برنامه دسکتاپ Bitwarden ، نمی توانیم بیومتریک را در افزونه مرورگر ارائه دهیم. لطفا دوباره تلاش کنید."
+  },
   "personalOwnershipSubmitError": {
     "message": "به دلیل خط مشی Enterprise ، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
   },

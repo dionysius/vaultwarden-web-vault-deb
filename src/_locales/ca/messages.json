@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "La biometria del navegador no és compatible amb aquest dispositiu."
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
   "personalOwnershipSubmitError": {
     "message": "A causa d'una política empresarial, no podeu guardar elements a la vostra caixa forta personal. Canvieu l'opció Propietat en organització i trieu entre les col·leccions disponibles."
   },

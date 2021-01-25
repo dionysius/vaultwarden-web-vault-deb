@@ -498,7 +498,7 @@
     "message": "Redigerede element"
   },
   "deleteItemConfirmation": {
-    "message": "Er du sikker på, at du vil slette dette element?"
+    "message": "Er du sikker på, at du sende til papirkurven?"
   },
   "deletedItem": {
     "message": "Element sendt til papirkurven"
@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Bekræft eksport af boks"
   },
   "exportWarningDesc": {
     "message": "Denne eksport indeholder dine boksdata i ukrypteret form. Du bør ikke gemme eller sende den eksporterede fil over usikre kanaler (f.eks. e-mail). Slet den straks efter at du er færdig med at bruge den."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Denne eksport krypterer dine data vha. din kontos krypteringsnøgle. Roterer du på et tidspunkt denne krypteringsnøgle, skal du eksportere igen, da du ellers ikke vil kunne dekryptere denne eksportfil."
   },
   "exportMasterPassword": {
     "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
@@ -1257,7 +1257,7 @@
     "message": "Din boks er låst. Bekræft din pinkode for at fortsætte."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Lås op med biometri"
   },
   "awaitDesktop": {
     "message": "Awaiting confirmation from desktop"
@@ -1437,6 +1437,12 @@
   },
   "biometricsNotSupportedDesc": {
     "message": "Browser biometrics is not supported on this device."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."

@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Τα βιομετρικά στοιχεία του προγράμματος περιήγησης δεν υποστηρίζονται σε αυτήν τη συσκευή."
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
   "personalOwnershipSubmitError": {
     "message": "Λόγω μιας Πολιτικής Επιχειρήσεων, δεν επιτρέπεται η αποθήκευση στοιχείων στο προσωπικό σας vault. Αλλάξτε την επιλογή Ιδιοκτησίας σε έναν οργανισμό και επιλέξτε από τις διαθέσιμες Συλλογές."
   },

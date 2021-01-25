@@ -1438,6 +1438,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometrik browser tidak didukung di perangkat ini."
   },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
   "personalOwnershipSubmitError": {
     "message": "Karena Kebijakan Perusahaan, Anda dilarang menyimpan item ke lemari besi pribadi Anda. Ubah opsi Kepemilikan ke organisasi dan pilih dari Koleksi yang tersedia."
   },

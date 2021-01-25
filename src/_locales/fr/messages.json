@@ -607,13 +607,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Confirmer l'export du coffre"
   },
   "exportWarningDesc": {
     "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
   },
   "exportMasterPassword": {
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
@@ -1257,13 +1257,13 @@
     "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Déverrouiller par biométrie"
   },
   "awaitDesktop": {
-    "message": "Awaiting confirmation from desktop"
+    "message": "En attente de confirmation de l'application de bureau"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Veuillez confirmer l'utilisation de la biométrie dans l'application Bitwarden de bureau pour activer la biométrie dans le navigateur."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
@@ -1385,63 +1385,69 @@
     "message": "Politique de confidentialité"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Votre indice de mot de passe ne peut pas être identique à votre mot de passe."
   },
   "ok": {
     "message": "Ok"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "Vérification de la synchronisation avec l'application de bureau"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "Veuillez vérifier que l'application de bureau affiche cette phrase d'empreinte : "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "L'intégration avec le navigateur n'est pas activée"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "L'intégration avec le navigateur n'est pas activée dans l'application de bureau Bitwarden. Veuillez l'activer dans les paramètres de l'application de bureau."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Démarrer l'application de bureau Bitwarden."
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "L'application de bureau Bitwarden doit être démarrée avant que cette fonction puisse être utilisée."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "Impossible d'activer la biométrie"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "L'action a été annulée par l'application de bureau"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+    "message": "L'application de bureau a invalidé le canal de communication sécurisé. Veuillez réessayer cette opération"
   },
   "nativeMessagingInvalidEncryptionTitle": {
-    "message": "Desktop communication interrupted"
+    "message": "Communication interrompue avec l'application de bureau"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+    "message": "L'application de bureau est connectée à un autre compte. Veuillez vous assurer que les deux applications sont connectées au même compte."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "Erreur de correspondance entre les comptes"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Le déverrouillage biométrique n'est pas activé"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Les options de biométrie dans le navigateur nécessitent au préalable l'activation des options de biométrie dans l'application de bureau."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "Le déverrouillage biométrique n'est pas pris en charge"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "Le déverrouillage biométrique dans le navigateur n’est pas pris en charge sur cet appareil"
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission non accordée"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Sans la permission de communiquer avec l'application de bureau Bitwarden, nous ne pouvons pas activer le déverrouillage biométrique dans l'extension navigateur. Veuillez réessayer."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "En raison d'une politique d'entreprise, il vous est interdit d'enregistrer des éléments dans votre coffre personnel. Sélectionnez une organisation dans l'option Propriété et choisissez parmi les collections disponibles."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Une politique d'organisation affecte vos options de propriété."
   }
 }
