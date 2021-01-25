@@ -23,6 +23,7 @@ import { SsoComponent } from './accounts/sso.component';
 import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
 import { PasswordGeneratorComponent } from './generator/password-generator.component';
 import { PrivateModeComponent } from './private-mode.component';
+import { ExcludedDomainsComponent } from './settings/excluded-domains.component';
 import { ExportComponent } from './settings/export.component';
 import { FolderAddEditComponent } from './settings/folder-add-edit.component';
 import { FoldersComponent } from './settings/folders.component';
@@ -199,6 +200,12 @@ const routes: Routes = [
         component: SyncComponent,
         canActivate: [AuthGuardService],
         data: { state: 'sync' },
+    },
+    {
+        path: 'excluded-domains',
+        component: ExcludedDomainsComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'excluded-domains' },
     },
     {
         path: 'premium',

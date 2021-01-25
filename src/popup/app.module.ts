@@ -29,6 +29,7 @@ import { AppComponent } from './app.component';
 import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
 import { PasswordGeneratorComponent } from './generator/password-generator.component';
 import { PrivateModeComponent } from './private-mode.component';
+import { ExcludedDomainsComponent } from './settings/excluded-domains.component';
 import { ExportComponent } from './settings/export.component';
 import { FolderAddEditComponent } from './settings/folder-add-edit.component';
 import { FoldersComponent } from './settings/folders.component';
@@ -181,6 +182,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ColorPasswordPipe,
         CurrentTabComponent,
         EnvironmentComponent,
+        ExcludedDomainsComponent,
         ExportComponent,
         FallbackSrcDirective,
         FolderAddEditComponent,
