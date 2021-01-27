@@ -72,7 +72,7 @@
             </div>
             <div class="box-content">
                 <app-ciphers-list [ciphers]="filteredCiphers" title="{{'viewItem' | i18n}}"
-                    (onSelected)="selectCipher($event)" (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
+                    (onSelected)="selectCipher($event)" (launchEvent)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
     </ng-container>

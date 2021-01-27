@@ -29,7 +29,7 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 })
 export class ActionButtonsComponent {
     @Output() onView = new EventEmitter<CipherView>();
-    @Output() onLaunch = new EventEmitter<CipherView>();
+    @Output() launchEvent = new EventEmitter<CipherView>();
     @Input() cipher: CipherView;
     @Input() showView = false;
 
@@ -45,8 +45,8 @@ export class ActionButtonsComponent {
         this.userHasPremiumAccess = await this.userService.canAccessPremium();
     }
 
-    launch() {
-        this.onLaunch.emit(this.cipher);
+    launchCipher() {
+        this.launchEvent.emit(this.cipher);
     }
 
     async copy(cipher: CipherView, value: string, typeI18nKey: string, aType: string) {
