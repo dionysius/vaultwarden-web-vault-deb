@@ -29,6 +29,7 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 })
 export class ActionButtonsComponent {
     @Output() onView = new EventEmitter<CipherView>();
+    @Output() onLaunch = new EventEmitter<CipherView>();
     @Input() cipher: CipherView;
     @Input() showView = false;
 
@@ -45,15 +46,7 @@ export class ActionButtonsComponent {
     }
 
     launch() {
-        if (this.cipher.type !== CipherType.Login || !this.cipher.login.canLaunch) {
-            return;
-        }
-
-        this.analytics.eventTrack.next({ action: 'Launched URI From Listing' });
-        BrowserApi.createNewTab(this.cipher.login.launchUri);
-        if (this.popupUtilsService.inPopup(window)) {
-            BrowserApi.closePopup(window);
-        }
+        this.onLaunch.emit(this.cipher);
     }
 
     async copy(cipher: CipherView, value: string, typeI18nKey: string, aType: string) {

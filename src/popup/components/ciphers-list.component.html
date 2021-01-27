@@ -17,6 +17,7 @@
             <span class="detail">{{c.subTitle}}</span>
         </div>
     </div>
-    <app-action-buttons [cipher]="c" [showView]="showView" (onView)="viewCipher(c)" class="action-buttons">
+    <app-action-buttons [cipher]="c" [showView]="showView" (onView)="viewCipher(c)" (onLaunch)="doubleSelectCipher(c)" 
+        class="action-buttons">
     </app-action-buttons>
 </a>
