@@ -1,4 +1,4 @@
-<a *ngFor="let c of ciphers" (click)="selectCipher(c)" (dblclick)="doubleSelectCipher(c)" href="#" appStopClick
+<a *ngFor="let c of ciphers" (click)="selectCipher(c)" (dblclick)="launchCipher(c)" href="#" appStopClick
     title="{{title}} - {{c.name}}" class="box-content-row box-content-row-flex">
     <div class="row-main">
         <app-vault-icon [cipher]="c"></app-vault-icon>
@@ -17,6 +17,7 @@
             <span class="detail">{{c.subTitle}}</span>
         </div>
     </div>
-    <app-action-buttons [cipher]="c" [showView]="showView" (onView)="viewCipher(c)" class="action-buttons">
+    <app-action-buttons [cipher]="c" [showView]="showView" (onView)="viewCipher(c)" (launchEvent)="launchCipher(c)" 
+        class="action-buttons">
     </app-action-buttons>
 </a>
