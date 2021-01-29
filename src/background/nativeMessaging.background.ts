@@ -36,10 +36,12 @@ export class NativeMessagingBackground {
         private messagingService: MessagingService, private appIdService: AppIdService) {
             this.storageService.save(ConstantsService.biometricFingerprintValidated, false);
 
-            // Reload extension to activate nativeMessaging
-            chrome.permissions.onAdded.addListener((permissions) => {
-                BrowserApi.reloadExtension(null);
-            });
+            if (BrowserApi.isChromeApi) {
+                // Reload extension to activate nativeMessaging
+                chrome.permissions.onAdded.addListener((permissions) => {
+                    BrowserApi.reloadExtension(null);
+                });
+            }
         }
 
     async connect() {
