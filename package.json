@@ -13,6 +13,7 @@
     "build:watch": "gulp build && webpack --watch",
     "build:prod": "gulp build && cross-env NODE_ENV=production webpack",
     "build:prod:watch": "gulp build && cross-env NODE_ENV=production webpack --watch",
+    "build:xcode": "npm run build && rsync -av build/./ src/safari/safari/app --exclude popup/index.html",
     "clean:l10n": "git push origin --delete l10n_master",
     "dist": "npm run build:prod && gulp dist",
     "dist:firefox": "npm run build:prod && gulp dist:firefox",
