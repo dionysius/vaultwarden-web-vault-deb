@@ -68,8 +68,8 @@ jobs:
           node --version
           npm --version
 
-      - name: Install Gulp
-        run: npm install -g gulp
+      #- name: Install Gulp
+      #  run: npm install -g gulp
 
       - name: npm setup & test
         run: |
