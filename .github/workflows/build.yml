@@ -1,0 +1,132 @@
+name: Build
+
+on:
+  push:
+    branches-ignore:
+      - 'l10n_master'
+  workflow_dispatch:
+    inputs:
+
+
+jobs:
+  cloc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up cloc
+        run: |
+          sudo apt update
+          sudo apt -y install cloc
+      - name: Print lines of code
+        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+
+
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      package_version: ${{ steps.gen_vars.outputs.package_version }}
+      repo_url: ${{ steps.gen_vars.outputs.repo_url }}
+      adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Get Package Version
+        id: gen_vars
+        shell: pwsh
+        run: |
+          $env:pkgVersion = (Get-Content -Raw -Path ./src/package.json | ConvertFrom-Json).version
+          $env:repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
+          $env:bulid_num = ${env:GITHUB_RUN_NUBMER} + 3000
+
+          echo "::set-output name=package_version::$env:pkgVersion" 
+          echo "::set-output name=repo_url::$env:repo_url" 
+          echo "::set-output name=adj_build_number::$env:build_num" 
+
+
+  cli:
+    runs-on: windows-latest
+    needs: setup
+    env:
+      PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
+      REPO_URL: ${{ needs.setup.outputs.repo_url }}
+      BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup Windows builder
+        run: |
+          choco install checksum --no-progress
+          choco install reshack --no-progress
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+
+      - name: Install Gulp
+        run: npm install -g gulp
+
+      - name: npm setup & test
+        run: |
+          npm install
+          npm run dist
+          npm run test
+
+      - name: gulp
+        run: gulp ci
+
+      - name: Build sources for reviewers
+        run: |
+          mkdir dist\Source
+          call git clone --branch=%GITHUB_REF% %REPO_URL% dist\Source
+          cd dist\Source
+          call git checkout %GITHUB_SHA%
+          call git submodule update --init --recursive
+          cd ../
+          del /S/Q "Source\.git\objects\pack\*"
+          call 7z a browser-source-%RUN_NUMBER%.zip "Source\*"
+
+      - name: Upload opera artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-opera-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-opera-${{ env.BUILD_NUMBER}}.zip
+
+      - name: Upload chrome artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-chrome-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-chrome-${{ env.BUILD_NUMBER }}.zip
+
+      - name: Upload firefox artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-firefox-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-firefox-${{ env.BUILD_NUMBER }}.zip
+
+      - name: Upload edge artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-edge-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-edge-${{ env.BUILD_NUMBER }}.zip
+
+      - name: Upload source artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-source-${{ env.BUILD_NUMBER }}.zip
+          path: dist/browser-source-${{ env.BUILD_NUMBER }}.zip
+
+      - name: Upload opera artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-${{ env.BUILD_NUMBER }}.zip
+          path: coverage/coverage-${{ env.BUILD_NUMBER }}.zip
