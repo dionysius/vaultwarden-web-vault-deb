@@ -81,6 +81,7 @@ jobs:
         run: gulp ci
 
       - name: Build sources for reviewers
+        shell: cmd
         run: |
           mkdir dist\Source
           call git clone --branch=%GITHUB_REF% %REPO_URL% dist\Source
