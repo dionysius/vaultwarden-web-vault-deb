@@ -26,7 +26,6 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     outputs:
-      package_version: ${{ steps.gen_vars.outputs.package_version }}
       repo_url: ${{ steps.gen_vars.outputs.repo_url }}
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
     steps:
@@ -37,11 +36,9 @@ jobs:
         id: gen_vars
         shell: pwsh
         run: |
-          $env:pkgVersion = (Get-Content -Raw -Path ./src/package.json | ConvertFrom-Json).version
           $env:repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
           $env:bulid_num = ${env:GITHUB_RUN_NUBMER} + 3000
 
-          echo "::set-output name=package_version::$env:pkgVersion" 
           echo "::set-output name=repo_url::$env:repo_url" 
           echo "::set-output name=adj_build_number::$env:build_num" 
 
@@ -50,7 +47,6 @@ jobs:
     runs-on: windows-latest
     needs: setup
     env:
-      PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       REPO_URL: ${{ needs.setup.outputs.repo_url }}
       BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
     steps:
