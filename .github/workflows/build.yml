@@ -80,6 +80,9 @@ jobs:
       - name: gulp
         run: gulp ci
 
+      - name: test dist
+        run: ls dist
+
       - name: Build sources for reviewers
         shell: cmd
         run: |
