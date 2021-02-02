@@ -81,9 +81,6 @@ jobs:
       - name: gulp
         run: gulp ci
 
-      - name: test dist
-        run: ls dist
-
       - name: Build sources for reviewers
         shell: cmd
         run: |
@@ -95,6 +92,9 @@ jobs:
           cd ../
           del /S/Q "Source\.git\objects\pack\*"
           call 7z a browser-source-%RUN_NUMBER%.zip "Source\*"
+
+      - name: test dist
+        run: ls dist
 
       - name: Upload opera artifact
         uses: actions/upload-artifact@v2
