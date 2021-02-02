@@ -37,7 +37,7 @@ jobs:
         shell: pwsh
         run: |
           $env:repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
-          $env:bulid_num = $env:GITHUB_RUN_NUBMER + 3000
+          $env:bulid_num = $env:GITHUB_RUN_NUMBER + 3000
 
           echo "::set-output name=repo_url::$env:repo_url" 
           echo "::set-output name=adj_build_number::$env:build_num" 
@@ -99,25 +99,25 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dist-opera-${{ env.BUILD_NUMBER }}.zip
-          path: dist/dist-opera-${{ env.BUILD_NUMBER}}.zip
+          path: dist/dist-opera.zip
 
       - name: Upload chrome artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist-chrome-${{ env.BUILD_NUMBER }}.zip
-          path: dist/dist-chrome-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-chrome.zip
 
       - name: Upload firefox artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist-firefox-${{ env.BUILD_NUMBER }}.zip
-          path: dist/dist-firefox-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-firefox.zip
 
       - name: Upload edge artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist-edge-${{ env.BUILD_NUMBER }}.zip
-          path: dist/dist-edge-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-edge.zip
 
       - name: Upload source artifact
         uses: actions/upload-artifact@v2
