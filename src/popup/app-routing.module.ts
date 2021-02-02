@@ -20,9 +20,13 @@ import { SetPasswordComponent } from './accounts/set-password.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { SsoComponent } from './accounts/sso.component';
-import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
+
 import { PasswordGeneratorComponent } from './generator/password-generator.component';
+import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
+
 import { PrivateModeComponent } from './private-mode.component';
+import { TabsComponent } from './tabs.component';
+
 import { ExcludedDomainsComponent } from './settings/excluded-domains.component';
 import { ExportComponent } from './settings/export.component';
 import { FolderAddEditComponent } from './settings/folder-add-edit.component';
@@ -31,7 +35,7 @@ import { OptionsComponent } from './settings/options.component';
 import { PremiumComponent } from './settings/premium.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SyncComponent } from './settings/sync.component';
-import { TabsComponent } from './tabs.component';
+
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
@@ -41,6 +45,8 @@ import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
+
+import { SendComponent } from './send/send.component';
 
 const routes: Routes = [
     {
@@ -264,6 +270,12 @@ const routes: Routes = [
                 component: SettingsComponent,
                 canActivate: [AuthGuardService],
                 data: { state: 'tabs_settings' },
+            },
+            {
+                path: 'send',
+                component: SendComponent,
+                canActivate: [AuthGuardService],
+                data: { state: 'tabs_send' },
             },
         ],
     },

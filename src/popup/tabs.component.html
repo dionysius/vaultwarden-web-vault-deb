@@ -1,6 +1,6 @@
 <div class="tab-page">
     <router-outlet></router-outlet>
-    <nav class="tabs" [ngClass]="{'tabs-3': !showCurrentTab}">
+    <nav class="tabs">
         <ul>
             <li routerLinkActive="active" *ngIf="showCurrentTab">
                 <a routerLink="current" appA11yTitle="{{'currentTab' | i18n}}">
@@ -10,6 +10,11 @@
             <li routerLinkActive="active">
                 <a routerLink="vault" appA11yTitle="{{'myVault' | i18n}}">
                     <i class="fa fa-lock fa-2x" aria-hidden="true"></i>{{'myVault' | i18n}}
+                </a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="send" appA11yTitle="{{'send' | i18n}}">
+                    <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>{{'send' | i18n}}
                 </a>
             </li>
             <li routerLinkActive="active">
