@@ -37,7 +37,7 @@ jobs:
         shell: pwsh
         run: |
           $repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
-          $bulid_num = $env:GITHUB_RUN_NUMBER
+          $bulid_num = $GITHUB_RUN_NUMBER
           $adj_build_num = $buildnum+3000
 
           Write-Host "RUN NUMBER: $env:GITHUB_RUN_NUMBER"
