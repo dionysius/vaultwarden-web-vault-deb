@@ -39,6 +39,8 @@ jobs:
           $env:repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
           $env:bulid_num = $env:GITHUB_RUN_NUMBER + 3000
 
+        Write-Host $env:build_num
+
           echo "::set-output name=repo_url::$env:repo_url" 
           echo "::set-output name=adj_build_number::$env:build_num" 
 
