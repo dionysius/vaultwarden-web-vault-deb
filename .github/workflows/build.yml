@@ -34,10 +34,9 @@ jobs:
 
       - name: Get Package Version
         id: gen_vars
-        shell: pwsh
         run: |
-          $repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
-          $adj_build_num = "${env:GITHUB_SHA}"
+          $repo_url = "https://github.com/$GITHUB_REPOSITORY.git"
+          $adj_build_num = "${GITHUB_SHA:0:7}"
 
           echo "::set-output name=repo_url::$repo_url" 
           echo "::set-output name=adj_build_number::$adj_build_num" 
