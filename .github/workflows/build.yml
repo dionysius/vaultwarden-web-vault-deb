@@ -91,7 +91,7 @@ jobs:
           call git submodule update --init --recursive
           cd ../
           del /S/Q "Source\.git\objects\pack\*"
-          call 7z a browser-source-%RUN_NUMBER%.zip "Source\*"
+          call 7z a browser-source-%BUILD_NUMBER%.zip "Source\*"
 
       - name: test dist
         run: ls dist
