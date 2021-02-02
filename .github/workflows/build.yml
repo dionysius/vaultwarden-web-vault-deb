@@ -38,7 +38,7 @@ jobs:
         run: |
           $repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
           $build_num = [int]$env:GITHUB_RUN_NUMBER
-          $adj_build_num = $buildnum + 3000
+          $adj_build_num = $build_num + 3000
 
           Write-Host "RUN NUMBER: $env:GITHUB_RUN_NUMBER"
           Write-Host "BUILD NUMBER: $build_num"
