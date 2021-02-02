@@ -37,8 +37,7 @@ jobs:
         shell: pwsh
         run: |
           $repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
-          $build_num = [int]$env:GITHUB_RUN_NUMBER
-          $adj_build_num = $build_num + 3000
+          $adj_build_num = "latest"
 
           echo "::set-output name=repo_url::$repo_url" 
           echo "::set-output name=adj_build_number::$adj_build_num" 
@@ -69,9 +68,6 @@ jobs:
           node --version
           npm --version
 
-      #- name: Install Gulp
-      #  run: npm install -g gulp
-
       - name: npm setup & test
         run: |
           npm install
@@ -80,19 +76,6 @@ jobs:
 
       - name: gulp
         run: gulp ci
-
-      - name: Build sources for reviewers
-        shell: cmd
-        run: |
-          mkdir dist\Source
-          call git clone --branch=%GITHUB_REF% %REPO_URL% dist\Source
-          cd dist\Source
-          call git checkout %GITHUB_SHA%
-          call git submodule update --init --recursive
-          cd ../
-          del /S/Q "Source\.git\objects\pack\*"
-          call 7z a browser-source-%BUILD_NUMBER%.zip "Source\*"
-
       - name: test dist
         run: ls dist
 
@@ -120,13 +103,7 @@ jobs:
           name: dist-edge-${{ env.BUILD_NUMBER }}.zip
           path: dist/dist-edge-${{ env.BUILD_NUMBER }}.zip
 
-      - name: Upload source artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist-source-${{ env.BUILD_NUMBER }}.zip
-          path: dist/browser-source-${{ env.BUILD_NUMBER }}.zip
-
-      - name: Upload opera artifact
+      - name: Upload coverage artifact
         uses: actions/upload-artifact@v2
         with:
           name: coverage-${{ env.BUILD_NUMBER }}.zip
