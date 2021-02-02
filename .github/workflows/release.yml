@@ -173,7 +173,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
-          asset_name: dist-source-${{ env.BUILD_NUMBER }}.zip
+          asset_name: browser-source-${{ env.BUILD_NUMBER }}.zip
           asset_path: dist/browser-source-${{ env.BUILD_NUMBER }}.zip
           asset_content_type: application/zip
 
