@@ -37,15 +37,18 @@ jobs:
         shell: pwsh
         run: |
           $repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
-          $bulid_num = [int]$env:GITHUB_RUN_NUMBER + 3000
+          $bulid_num = [int]$env:GITHUB_RUN_NUMBER
+          $adj_build_num = $buildnum+3000
 
           Write-Host "RUN NUMBER: $env:GITHUB_RUN_NUMBER"
           Write-Host "BUILD NUMBER: $build_num"
+          Write-Host "ADJUSTED BUILD NUMBER: $adj_build_num"
           Write-Host "============================"
-          [int]$env:GITHUB_RUN_NUMBER.gettype()
+          $build_num.gettype()
+          $adj_build_num.gettype()
 
           echo "::set-output name=repo_url::$repo_url" 
-          echo "::set-output name=adj_build_number::$build_num" 
+          echo "::set-output name=adj_build_number::$adj_build_num" 
 
           exit 1
 
