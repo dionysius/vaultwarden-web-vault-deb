@@ -100,25 +100,25 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dist-opera-${{ env.BUILD_NUMBER }}.zip
-          path: dist/dist-opera.zip
+          path: dist/dist-opera-${{ env.BUILD_NUMBER }}.zip
 
       - name: Upload chrome artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist-chrome-${{ env.BUILD_NUMBER }}.zip
-          path: dist/dist-chrome.zip
+          path: dist/dist-chrome-${{ env.BUILD_NUMBER }}.zip
 
       - name: Upload firefox artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist-firefox-${{ env.BUILD_NUMBER }}.zip
-          path: dist/dist-firefox.zip
+          path: dist/dist-firefox-${{ env.BUILD_NUMBER }}.zip
 
       - name: Upload edge artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist-edge-${{ env.BUILD_NUMBER }}.zip
-          path: dist/dist-edge.zip
+          path: dist/dist-edge-${{ env.BUILD_NUMBER }}.zip
 
       - name: Upload source artifact
         uses: actions/upload-artifact@v2
