@@ -40,17 +40,8 @@ jobs:
           $build_num = [int]$env:GITHUB_RUN_NUMBER
           $adj_build_num = $build_num + 3000
 
-          Write-Host "RUN NUMBER: $env:GITHUB_RUN_NUMBER"
-          Write-Host "BUILD NUMBER: $build_num"
-          Write-Host "ADJUSTED BUILD NUMBER: $adj_build_num"
-          Write-Host "============================"
-          $build_num.gettype()
-          $adj_build_num.gettype()
-
           echo "::set-output name=repo_url::$repo_url" 
           echo "::set-output name=adj_build_number::$adj_build_num" 
-
-          exit 1
 
 
   cli:
