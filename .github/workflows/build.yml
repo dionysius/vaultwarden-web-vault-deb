@@ -36,14 +36,14 @@ jobs:
         id: gen_vars
         shell: pwsh
         run: |
-          $env:repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
-          $env:bulid_num = [int]$env:GITHUB_RUN_NUMBER + 3000
+          $repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
+          $bulid_num = [int]$env:GITHUB_RUN_NUMBER + 3000
 
           Write-Host "RUN NUMBER: $env:GITHUB_RUN_NUMBER"
           Write-Host "BUILD NUMBER: $build_num"
 
-          echo "::set-output name=repo_url::$env:repo_url" 
-          echo "::set-output name=adj_build_number::$env:build_num" 
+          echo "::set-output name=repo_url::$repo_url" 
+          echo "::set-output name=adj_build_number::$build_num" 
 
           exit 1
 
