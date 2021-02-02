@@ -34,12 +34,14 @@ jobs:
 
       - name: Get Package Version
         id: gen_vars
+        shell: pwsh
         run: |
-          repo_url="https://github.com/${{ env.GITHUB_REPOSITORY }}.git"
-          build_num=$(expr ${{ env.GITHUB_RUN_NUMBER }} + 3000) 
+          $repo_url = "https://github.com/${env:GITHUB_REPOSITORY}.git"
+          $build_num = [int]$env:GITHUB_RUN_NUMBER
+          $adj_build_num = $build_num + 3000
 
           echo "::set-output name=repo_url::$repo_url" 
-          echo "::set-output name=adj_build_number::$build_num" 
+          echo "::set-output name=adj_build_number::$adj_build_num" 
 
 
   cli:
