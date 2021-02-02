@@ -42,7 +42,7 @@ jobs:
           Write-Host "RUN NUMBER: $env:GITHUB_RUN_NUMBER"
           Write-Host "BUILD NUMBER: $build_num"
           Write-Host "============================"
-          $env:GITHUB_RUN_NUMBER.gettype()
+          [int]$env:GITHUB_RUN_NUMBER.gettype()
 
           echo "::set-output name=repo_url::$repo_url" 
           echo "::set-output name=adj_build_number::$build_num" 
