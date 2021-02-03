@@ -989,35 +989,6 @@
     End 1Password Extension
     */
 
-    if ((typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
-        navigator.userAgent.indexOf('Chrome') === -1) {
-        if (window.__bitwardenFrameId == null) {
-            window.__bitwardenFrameId = Math.floor(Math.random() * Math.floor(99999999));
-        }
-        safari.self.addEventListener('message', function (msgEvent) {
-            var msg = JSON.parse(msgEvent.message.msg);
-            if (msg.bitwardenFrameId != null && window.__bitwardenFrameId !== msg.bitwardenFrameId) {
-                return;
-            }
-
-            if (msg.command === 'collectPageDetails') {
-                var pageDetails = collect(document);
-                var pageDetailsObj = JSON.parse(pageDetails);
-                safari.extension.dispatchMessage('bitwarden', {
-                    command: 'collectPageDetailsResponse',
-                    tab: msg.tab,
-                    details: pageDetailsObj,
-                    sender: msg.sender,
-                    bitwardenFrameId: window.__bitwardenFrameId
-                });
-            }
-            else if (msg.command === 'fillForm') {
-                fill(document, msg.fillScript);
-            }
-        }, false);
-        return;
-    }
-
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'collectPageDetails') {
             var pageDetails = collect(document);
