@@ -78,7 +78,7 @@ jobs:
           prerelease: false
 
 
-  cli:
+  browser:
     runs-on: windows-latest
     needs: setup
     env:
@@ -87,11 +87,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-
-      - name: Setup Windows builder
-        run: |
-          choco install checksum --no-progress
-          choco install reshack --no-progress
 
       - name: Set up Node
         uses: actions/setup-node@v1
