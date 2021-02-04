@@ -498,7 +498,7 @@
     "message": "Identifiant modifié"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer cet identifiant ?"
+    "message": "Êtes-vous sûr•e de vouloir supprimer cet identifiant ?"
   },
   "deletedItem": {
     "message": "L'élément a été envoyé dans la corbeille"
@@ -606,8 +606,14 @@
     "message": "AVERTISSEMENT",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirmer l'export du coffre"
+  },
   "exportWarningDesc": {
     "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé."
+  },
+  "encExportWarningDesc": {
+    "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
   },
   "exportMasterPassword": {
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
   },
+  "unlockWithBiometrics": {
+    "message": "Déverrouiller par biométrie"
+  },
+  "awaitDesktop": {
+    "message": "En attente de confirmation de l'application de bureau"
+  },
+  "awaitDesktopDesc": {
+    "message": "Veuillez confirmer l'utilisation de la biométrie dans l'application Bitwarden de bureau pour activer la biométrie dans le navigateur."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "Politique de confidentialité"
+  },
+  "hintEqualsPassword": {
+    "message": "Votre indice de mot de passe ne peut pas être identique à votre mot de passe."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Vérification de la synchronisation avec l'application de bureau"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Veuillez vérifier que l'application de bureau affiche cette phrase d'empreinte : "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "L'intégration avec le navigateur n'est pas activée"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "L'intégration avec le navigateur n'est pas activée dans l'application de bureau Bitwarden. Veuillez l'activer dans les paramètres de l'application de bureau."
+  },
+  "startDesktopTitle": {
+    "message": "Démarrer l'application de bureau Bitwarden."
+  },
+  "startDesktopDesc": {
+    "message": "L'application de bureau Bitwarden doit être démarrée avant que cette fonction puisse être utilisée."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Impossible d'activer la biométrie"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "L'action a été annulée par l'application de bureau"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "L'application de bureau a invalidé le canal de communication sécurisé. Veuillez réessayer cette opération"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Communication interrompue avec l'application de bureau"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "L'application de bureau est connectée à un autre compte. Veuillez vous assurer que les deux applications sont connectées au même compte."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Erreur de correspondance entre les comptes"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Le déverrouillage biométrique n'est pas activé"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Les options de biométrie dans le navigateur nécessitent au préalable l'activation des options de biométrie dans l'application de bureau."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Le déverrouillage biométrique n'est pas pris en charge"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Le déverrouillage biométrique dans le navigateur n’est pas pris en charge sur cet appareil"
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission non accordée"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Sans la permission de communiquer avec l'application de bureau Bitwarden, nous ne pouvons pas activer le déverrouillage biométrique dans l'extension navigateur. Veuillez réessayer."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "En raison d'une politique d'entreprise, il vous est interdit d'enregistrer des éléments dans votre coffre personnel. Sélectionnez une organisation dans l'option Propriété et choisissez parmi les collections disponibles."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Une politique d'organisation affecte vos options de propriété."
   }
 }

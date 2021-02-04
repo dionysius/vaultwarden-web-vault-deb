@@ -606,8 +606,14 @@
     "message": "മുന്നറിയിപ്പ്",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "ഈ എക്‌സ്‌പോർട്ടിൽ എൻക്രിപ്റ്റ് ചെയ്യാത്ത ഫോർമാറ്റിൽ നിങ്ങളുടെ വാൾട് ഡാറ്റ അടങ്ങിയിരിക്കുന്നു. എക്‌സ്‌പോർട് ചെയ്ത ഫയൽ സുരക്ഷിതമല്ലാത്ത ചാനലുകളിൽ (ഇമെയിൽ പോലുള്ളവ) നിങ്ങൾ സംഭരിക്കുകയോ അയയ്ക്കുകയോ ചെയ്യരുത്. നിങ്ങൾ ഇത് ഉപയോഗിച്ചുകഴിഞ്ഞാലുടൻ അത് മായ്ച്ചുകളയണം."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "നിങ്ങളുടെ വാൾട് ഡാറ്റ എക്‌സ്‌പോർട്ടുചെയ്യാൻ പ്രാഥമിക പാസ്‌വേഡ് നൽകുക."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "നിങ്ങളുടെ വാൾട് പൂട്ടിയിരിക്കുന്നു. തുടരാൻ പിൻ കോഡ് സ്ഥിരീകരിക്കുക."
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "ബ്രൌസർ പുനരാരംഭത്തിൽ പ്രാഥമിക പാസ്‌വേഡ് ഉപയോഗിച്ച് ലോക്ക് ചെയ്യുക"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "സ്വകാര്യതാനയം"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

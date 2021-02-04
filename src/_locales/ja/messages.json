@@ -606,8 +606,14 @@
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "保管庫のエクスポートの確認"
+  },
   "exportWarningDesc": {
     "message": "このエクスポートデータは暗号化されていない形式の保管庫データを含んでいます。メールなどのセキュリティ保護されていない方法で共有したり保管したりしないでください。使用した後はすぐに削除してください。"
+  },
+  "encExportWarningDesc": {
+    "message": "このエクスポートは、アカウントの暗号化キーを使用してデータを暗号化します。 暗号化キーをローテーションした場合は、このエクスポートファイルを復号することはできなくなるので、もう一度エクスポートする必要があります。"
   },
   "exportMasterPassword": {
     "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "保管庫がロックされています。PIN コードで認証してください。"
   },
+  "unlockWithBiometrics": {
+    "message": "生体認証でロック解除"
+  },
+  "awaitDesktop": {
+    "message": "デスクトップからの確認待ち"
+  },
+  "awaitDesktopDesc": {
+    "message": "ブラウザの生体認証を有効にするには、Bitwarden デスクトップアプリの生体認証を使用してください。"
+  },
   "lockWithMasterPassOnRestart": {
     "message": "ブラウザー再起動時にマスターパスワードでロック"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "プライバシーポリシー"
+  },
+  "hintEqualsPassword": {
+    "message": "パスワードのヒントをパスワードと同じにすることはできません。"
+  },
+  "ok": {
+    "message": "OK"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "デスクトップ同期の検証"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "デスクトップアプリにこの指紋が表示されていることを確認してください: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "ブラウザ統合が有効になっていません"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Bitwarden デスクトップアプリでブラウザ統合が有効になっていません。デスクトップアプリの設定で有効にしてください。"
+  },
+  "startDesktopTitle": {
+    "message": "Bitwarden デスクトップアプリを起動"
+  },
+  "startDesktopDesc": {
+    "message": "この機能を使用するには、Bitwarden デスクトップアプリを起動してください。"
+  },
+  "errorEnableBiometricTitle": {
+    "message": "生体認証を有効にできません"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "デスクトップアプリによってアクションがキャンセルされました"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "デスクトップアプリが安全な通信チャネルを無効にしました。操作をやり直してください。"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "デスクトップ通信が中断されました"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "デスクトップアプリは別のアカウントにログインしています。両方のアプリが同じアカウントにログインしているか確認してください。"
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "アカウントが一致しません"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "生体認証が有効になっていません"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "ブラウザ生体認証を利用するには、まず設定でデスクトップ生体認証を有効にする必要があります。"
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "生体認証に対応していません"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "このデバイスではブラウザの生体認証に対応していません。"
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "組織のポリシーにより、個人の保管庫へのアイテムの保存が制限されています。 所有権を組織に変更し、利用可能なコレクションから選択してください。"
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "組織のポリシーが所有者のオプションに影響を与えています。"
   }
 }

@@ -118,39 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – Ilmainen salasananhallinta</value>
+    <value>Bitwarden – Ilmainen salasanojen hallinta</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Turvallinen ja ilmainen salasananhallintapalvelu kaikille laitteillesi</value>
+    <value>Turvallinen ja ilmainen salasanojen hallinta kaikille laitteillesi</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden on helpoin ja turvallisin tapa säilyttää kaikki käyttäjänimesi ja salasanasi, kätevästi synkronoituna kaikille laitteillesi.
+    <value>Bitwarden on helpoin ja turvallisin tapa säilyttää käyttäjätunnuksesi ja salasanasi, samalla pitäen ne synkronoituna laitteidesi välillä.
 
-Salasanavarkaudet ovat vakava ongelma. Käyttämäsi verkkosivustot ja sovellukset ovat hyökkäyksen kohteena päivittäin. Tietoturvavuotoja tapahtuu ja salasanoja varastetaan. Jos käytät samoja salasanoja eri sivustoilla ja sovelluksissa, hakkerit voivat helposti päästä käsiksi sähköpostiisi, pankkiisi ja muihin tärkeisiin tileihisi.
+Salasanavarkaudet ovat vakava ongelma ja monet käyttämäsi sivustot ja sovellukset ovat päivittäisten hyökkäysten kohteina. Tietoturvavuotoja tapahtuu ja salasanoja varastetaan. Jos käytät samoja salasanoja uudelleen eri sivustoilla ja sovelluksissa, saattavat hakkerit päästä helposti käsiksi sähköpostiisi, pankkiisi tai muihin tärkeisiin käyttäjätileihisi.
 
-Tietoturva-asiantuntijat suosittelevat erilaisten, satunnaisesti luotujen salasanojen käyttämistä kaikilla tileilläsi. Mutta kuinka hallitset kaikkia näitä salasanoja? Bitwarden tekee salasanojen luomisesta, säilyttämisestä ja käyttämisestä helppoa.
+Tietoturva-asiantuntijat suosittelevat ainutlaatuisten, satunnaisesti luotujen salasanojen käyttöä kaikilla käyttäjätileilläsi. Mutta kuinka sitten hallitset näitä kaikkia erilaisia salasanoja? Bitwarden tekee laadukkaiden ja ainutlaatuisten salasanojen luonnista, säilytyksestä ja käytöstä helppoa.
 
-Bitwarden säilöö kaikki kirjautumistietosi salattuun holviin, joka synkronoidaan kaikille laitteillesi. Koska tietosi ovat täysin salattuja jo ennen kuin ne lähtevät laitteeltasi, vain sinä pääset käsiksi niihin. Edes Bitwardenin kehitystiimi ei voi lukea tietojasi, vaikka haluaisi. Tietosi suojataan 256-bittisellä AES-salauksella, suolatulla tiivistyksellä sekä PBKDF2- ja SHA-256-menetelmillä.!</value>
+Bitwarden säilyttää kaikki kirjautumistietosi salattussa holvissa, joka synkronoidaan laitteidesi välillä. Koska tietosi ovat täysin salattuja jo ennen kuin ne edes lähtevät laitteeltasi, vain sinä pääset niihin käsiksi. Edes Bitwardenin kehittäjät eivät voi lukea tietojasi, vaikka haluaisivat. Tietosi suojataan 256-bittisellä AES-salauksella, suolatulla hajautuksella sekä PBKDF2 ja SHA-256 -menetelmillä.
+
+Bitwarden on 100% avointa lähdekoodia. Bitwardenin lähdekoodi on esillä GitHubissa ja kuka tahansa voi tutkia ja tarkastella sitä sekä osallistua Bitwardenin kehitykseen.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Turvallinen ja ilmainen salasananhallintapalvelu kaikille laitteillesi</value>
+    <value>Turvallinen ja ilmainen salasanojen hallinta kaikille laitteillesi</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Synkronoi ja hallitse holviasi eri laitteilla</value>
+    <value>Synkronoi ja hallitse holviasi useilla laitteilla</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Hallitse kirjautumistietojasi suojatusta holvista</value>
+    <value>Hallitse käyttäjätunnuksiasi ja salasanojasi suojatussa holvissa</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Käytä automaattista kirjautumistietojen täydennystä millä tahansa sivustolla</value>
+    <value>Täytä kirjautumistietosi automaattisesti ja nopeasti millä tähänsä sivustolla</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Pääse käsiksi holvisi tietoihin suoraan selaimesi kontekstivalikosta</value>
+    <value>Pääse käsiksi holviisi myös suoraan hiiren kakkospainikkeen pikavalikosta</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Luo automaattiseti vahvoja, satunnaisia ja turvallisia salasanoja</value>
+    <value>Luo automaattisesti vahvoja, satunnaisia ja turvallisia salasanoja</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Käsittele AES-256-salauksella suojattuja tietojasi turvallisesti</value>
+    <value>Käsittele 256-bittisellä AES-salauksella suojattuja tietojasi turvallisesti</value>
   </data>
 </root>

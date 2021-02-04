@@ -281,14 +281,13 @@ header {
     }
 
     ul {
-        width: 100%;
+        display: flex;
         list-style: none;
         padding: 0;
         margin: 0;
 
         li {
-            width: 25%;
-            float: left;
+            flex: 1;
             display: inline-block;
             padding: 0;
             margin: 0;
@@ -329,12 +328,6 @@ header {
             }
         }
     }
-
-    &.tabs-3 {
-        ul li {
-            width: 33.33%;
-        }
-    }
 }
 
 app-root {
@@ -342,6 +335,9 @@ app-root {
     width: 100%;
     height: 100%;
     z-index: 980;
+    @include themify($themes) {
+        background-color: themed('backgroundColor');
+    }
 }
 
 content {

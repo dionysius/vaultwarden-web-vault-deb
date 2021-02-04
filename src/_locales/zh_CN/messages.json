@@ -606,8 +606,14 @@
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "确认密码库导出"
+  },
   "exportWarningDesc": {
     "message": "导出的密码库数据包含未加密格式。您不应该通过不安全的渠道（例如电子邮件）来存储或发送导出的文件。用完后请立即将其删除。"
+  },
+  "encExportWarningDesc": {
+    "message": "此导出将使用您账户的加密密钥来加密您的数据。 如果您曾经轮换过账户的加密密钥，您应将其重新导出，否则您将无法解密导出的文件。"
   },
   "exportMasterPassword": {
     "message": "输入主密码来导出你的密码库。"
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "您的密码库已锁定。请验证您的 PIN 码以继续。"
   },
+  "unlockWithBiometrics": {
+    "message": "使用生物识别解锁"
+  },
+  "awaitDesktop": {
+    "message": "等待来自桌面应用程序的确认"
+  },
+  "awaitDesktopDesc": {
+    "message": "请确认在 Bitwarden 桌面应用程序中使用了生物识别以启用浏览器的生物识别。"
+  },
   "lockWithMasterPassOnRestart": {
     "message": "浏览器重启后使用主密码锁定"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "隐私政策"
+  },
+  "hintEqualsPassword": {
+    "message": "您的密码提示不能与您的密码相同。"
+  },
+  "ok": {
+    "message": "确定"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "桌面同步验证"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "请确认桌面应用程序显示此指纹： "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "浏览器集成未启用"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "浏览器集成在 Bitwarden 桌面应用程序中未启用。请在桌面应用程序的设置中启用它。"
+  },
+  "startDesktopTitle": {
+    "message": "启动 Bitwarden 桌面应用程序"
+  },
+  "startDesktopDesc": {
+    "message": "Bitwarden 桌面应用程序需要以运行才能使用此功能。"
+  },
+  "errorEnableBiometricTitle": {
+    "message": "无法启用生物识别"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "操作被桌面应用程序取消"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "桌面应用程序使安全通道无效。请重试此操作"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "桌面通信已中断"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "桌面应用程序登录到了不同的帐户。请确保两个应用程序都登录到同一个帐户。"
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "账户不匹配"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "生物识别未启用"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "需要首先在桌面应用程序的设置中启用生物识别才能使用浏览器的生物识别。"
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "不支持生物识别"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "此设备不支持浏览器生物识别。"
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "由于企业策略，您被限制为保存项目到您的个人密码库。将所有权选项更改为组织，并从可用的集合中选择。"
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "一个组织策略正影响您的所有权选项。"
   }
 }

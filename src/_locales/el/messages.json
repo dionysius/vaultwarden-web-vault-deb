@@ -20,7 +20,7 @@
     "message": "Σύνδεση"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Ενιαία είσοδος για επιχειρήσεις"
   },
   "cancel": {
     "message": "Ακύρωση"
@@ -606,8 +606,14 @@
     "message": "ΠΡΟΕΙΔΟΠΟΙΗΣΗ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Επιβεβαίωση εξαγωγής Vault"
+  },
   "exportWarningDesc": {
     "message": "Αυτή η εξαγωγή περιέχει τα δεδομένα σε μη κρυπτογραφημένη μορφή. Δεν πρέπει να αποθηκεύετε ή να στείλετε το εξαγόμενο αρχείο μέσω μη ασφαλών τρόπων (όπως μέσω email). Διαγράψτε το αμέσως μόλις τελειώσετε με τη χρήση του."
+  },
+  "encExportWarningDesc": {
+    "message": "Αυτή η εξαγωγή κρυπτογραφεί τα δεδομένα σας χρησιμοποιώντας το κλειδί κρυπτογράφησης του λογαριασμού σας. Εάν ποτέ περιστρέψετε το κλειδί κρυπτογράφησης του λογαριασμού σας, θα πρέπει να κάνετε εξαγωγή ξανά, καθώς δεν θα μπορείτε να αποκρυπτογραφήσετε αυτό το αρχείο εξαγωγής."
   },
   "exportMasterPassword": {
     "message": "Πληκτρολογήστε τον κύριο κωδικό για εξαγωγή δεδομένων vault."
@@ -895,7 +901,7 @@
     "message": "Δημιουργήστε και αντιγράψτε έναν νέο τυχαίο κωδικό πρόσβασης στο πρόχειρο"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Κλειδώστε το vault"
   },
   "privateModeMessage": {
     "message": "Δυστυχώς, αυτό το παράθυρο δεν είναι διαθέσιμο σε ιδιωτική λειτουργία για αυτό το πρόγραμμα περιήγησης."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κωδικό PIN για να συνεχίσετε."
   },
+  "unlockWithBiometrics": {
+    "message": "Ξεκλείδωμα με βιομετρικά στοιχεία"
+  },
+  "awaitDesktop": {
+    "message": "Αναμονή επιβεβαίωσης από την επιφάνεια εργασίας"
+  },
+  "awaitDesktopDesc": {
+    "message": "Παρακαλώ επιβεβαιώστε τη χρήση βιομετρικών στοιχείων στην εφαρμογή Bitwarden Desktop για να ενεργοποιήσετε τα βιομετρικά στοιχεία για το πρόγραμμα περιήγησης."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Κλείδωμα με κύριο κωδικό πρόσβασης στην επανεκκίνηση του προγράμματος περιήγησης"
   },
@@ -1304,22 +1319,22 @@
     "message": "Επιβεβαίωση Ενέργειας Χρονικού Ορίου"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Αυτόματη συμπλήρωση και αποθήκευση"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Αυτόματη συμπλήρωση στοιχείου και αποθηκευμένο URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Αυτόματη συμπλήρωση αντικειμένου"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Ορισμός Κύριου Κωδικού"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Σε μία ή περισσότερες πολιτικές του οργανισμού απαιτείται ο κύριος κωδικός να πληρεί τις ακόλουθες απαιτήσεις:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Ελάχιστος βαθμός πολυπλοκότητας: $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1328,7 +1343,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Ελάχιστο μήκος: $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1337,16 +1352,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Να περιέχει έναν ή περισσότερους κεφαλαίους χαρακτήρες"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Να περιέχει έναν ή περισσότερους πεζούς χαρακτήρες"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Να περιέχει έναν ή περισσότερους αριθμούς"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Να περιέχει έναν ή περισσότερους από τους ακόλουθους ειδικούς χαρακτήρες $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1355,18 +1370,84 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ο νέος κύριος κωδικός δεν πληροί τις απαιτήσεις πολιτικής."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Επιλέγοντας αυτό το πλαίσιο, συμφωνείτε με τα εξής:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Οι Όροι Παροχής Υπηρεσιών και η Πολιτική Απορρήτου δεν έχουν αναγνωριστεί."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Όροι Χρήσης"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Πολιτική Απορρήτου"
+  },
+  "hintEqualsPassword": {
+    "message": "Η υπόδειξη κωδικού πρόσβασης, δεν μπορεί να είναι η ίδια με τον κωδικό πρόσβασης σας."
+  },
+  "ok": {
+    "message": "Οκ"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Επιβεβαίωση συγχρονισμού επιφάνειας εργασίας"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Παρακαλώ επιβεβαιώστε ότι η εφαρμογή επιφάνειας εργασίας εμφανίζει αυτό το αποτύπωμα: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Η ενσωμάτωση του περιηγητή δεν είναι ενεργοποιημένη"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Η ενσωμάτωση του προγράμματος περιήγησης δεν είναι ενεργοποιημένη στην εφαρμογή Bitwarden Desktop. Παρακαλώ ενεργοποιήστε την στις ρυθμίσεις της εφαρμογής desktop."
+  },
+  "startDesktopTitle": {
+    "message": "Ξεκινήστε την εφαρμογή Bitwarden Επιφάνεια εργασίας"
+  },
+  "startDesktopDesc": {
+    "message": "Η εφαρμογή Bitwarden Desktop πρέπει να ξεκινήσει για να μπορεί να χρησιμοποιηθεί αυτή η λειτουργία."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Αδυναμία ενεργοποίησης βιομετρικών στοιχείων"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Η ενέργεια ακυρώθηκε από την εφαρμογή επιφάνειας εργασίας"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Η εφαρμογή επιφάνειας εργασίας ακυρώνει το ασφαλές κανάλι επικοινωνίας. Παρακαλώ δοκιμάστε ξανά αυτή τη λειτουργία"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Η επικοινωνία επιφάνειας εργασίας διακόπηκε"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "Η εφαρμογή επιφάνειας εργασίας είναι συνδεδεμένη σε διαφορετικό λογαριασμό. Παρακαλώ βεβαιωθείτε ότι και οι δύο εφαρμογές είναι συνδεδεμένες στον ίδιο λογαριασμό."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Απόρριψη λογαριασμού"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Η βιομετρική δεν είναι ενεργοποιημένη"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Τα βιομετρικά στοιχεία του προγράμματος περιήγησης απαιτούν την ενεργοποίηση της βιομετρικής επιφάνειας εργασίας στις ρυθμίσεις πρώτα."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Δεν υποστηρίζεται η βιομετρική"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Τα βιομετρικά στοιχεία του προγράμματος περιήγησης δεν υποστηρίζονται σε αυτήν τη συσκευή."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Λόγω μιας Πολιτικής Επιχειρήσεων, δεν επιτρέπεται η αποθήκευση στοιχείων στο προσωπικό σας vault. Αλλάξτε την επιλογή Ιδιοκτησίας σε έναν οργανισμό και επιλέξτε από τις διαθέσιμες Συλλογές."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Μια πολιτική του οργανισμού, επηρεάζει τις επιλογές ιδιοκτησίας σας."
   }
 }

@@ -498,7 +498,7 @@
     "message": "Item editado"
   },
   "deleteItemConfirmation": {
-    "message": "Tem a certeza de que pretende eliminar este item?"
+    "message": "Tem a certeza de que pretende apagar este item?"
   },
   "deletedItem": {
     "message": "Item enviado para o lixo"
@@ -606,8 +606,14 @@
     "message": "AVISO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Esta exportação contém os seus dados do cofre num formato desencriptado. Não deve armazenar ou enviar o ficheiro exportado através de canais inseguros (como email). Apague-a imediatamente após a utilizar."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Introduza a sua palavra-passe mestra para exportar os dados do seu cofre."
@@ -895,7 +901,7 @@
     "message": "Gerar e copiar uma nova palavra-passe aleatória para a área de transferência"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Bloquear o cofre"
   },
   "privateModeMessage": {
     "message": "Infelizmente esta janela não está disponível no modo privado para este navegador."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "O seu cofre está bloqueado. Verifique o seu PIN para continuar."
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com palavra-passe mestra quando reiniciar o navegador"
   },
@@ -1361,12 +1376,78 @@
     "message": "Ao marcar esta caixa concorda com o seguinte:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram aceites."
   },
   "termsOfService": {
     "message": "Termos de serviço"
   },
   "privacyPolicy": {
     "message": "Política de privacidade"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

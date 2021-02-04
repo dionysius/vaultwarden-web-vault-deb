@@ -1,5 +1,5 @@
 <header>
-    <div class="left" *ngIf="showLeftHeader">
+    <div class="left">
         <app-pop-out></app-pop-out>
     </div>
     <div class="search">
@@ -30,7 +30,7 @@
             </div>
             <div class="box-content">
                 <app-ciphers-list [ciphers]="favoriteCiphers" title="{{'viewItem' | i18n}}"
-                    (onSelected)="selectCipher($event)" (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
+                    (onSelected)="selectCipher($event)" (launchEvent)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
         <div class="box list">
@@ -118,7 +118,7 @@
             </div>
             <div class="box-content">
                 <app-ciphers-list [ciphers]="noFolderCiphers" title="{{'viewItem' | i18n}}"
-                    (onSelected)="selectCipher($event)" (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
+                    (onSelected)="selectCipher($event)" (launchEvent)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
         <div class="box list" *ngIf="deletedCount">
@@ -146,7 +146,7 @@
         <div class="box list full-list" *ngIf="ciphers && ciphers.length > 0">
             <div class="box-content">
                 <app-ciphers-list [ciphers]="ciphers" title="{{'viewItem' | i18n}}" (onSelected)="selectCipher($event)"
-                    (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
+                    (launchEvent)="launchCipher($event)"></app-ciphers-list>
             </div>
         </div>
     </ng-container>

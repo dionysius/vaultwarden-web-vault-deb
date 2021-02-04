@@ -1420,6 +1420,12 @@
   "nativeMessagingInvalidEncryptionTitle": {
     "message": "Desktop communication interrupted"
   },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not enabled"
   },
@@ -1432,10 +1438,41 @@
   "biometricsNotSupportedDesc": {
     "message": "Browser biometrics is not supported on this device."
   },
+  "nativeMessagingPermissionPromptTitle": {
+    "message": "Additional Permission required"
+  },
+  "nativeMessagingPermissionPromptDesc": {
+    "message": "To enable browser biometrics we need to request an additional permission. Once allowed, the browser extension will reload and you may need to unlock your vault again."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "An organization policy is affecting your ownership options."
+  },
+  "excludedDomains": {
+    "message": "Excluded Domains"
+  },
+  "excludedDomainsDesc": {
+    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+  },
+  "excludedDomainsInvalidDomain": {
+    "message": "$DOMAIN$ is not a valid domain",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "googlecom"
+      }
+    }
+  },
+  "send": {
+    "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   }
 }

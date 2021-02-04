@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Jelentkezz be vagy készíts új felhasználót a biztonsági széfed eléréshez."
+    "message": "Bejelentkezés vagy új fiók létrehozása a biztonsági széf eléréséhez."
   },
   "createAccount": {
     "message": "Fiók létrehozása"
@@ -498,7 +498,7 @@
     "message": "Elem szerkesztve"
   },
   "deleteItemConfirmation": {
-    "message": "Biztosan törlöd ezt az elemet?"
+    "message": "Biztosan törlésre kerüljön ezt az elem?"
   },
   "deletedItem": {
     "message": "Az elem törlésre került."
@@ -606,8 +606,14 @@
     "message": "FIGYELEM",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Széf exportálás megerősítése"
+  },
   "exportWarningDesc": {
-    "message": "Ez az exportálás titkosítás nélkül tartalmazza a széfadatokat.Nem célszerű az exportált fájlt nem biztonságos csatornákon tárolni és továbbküldeni (például emailben). A felhasználás után erősen ajánlott a törlés."
+    "message": "Ez az exportálás titkosítás nélkül tartalmazza a széfadatokat. Nem célszerű az exportált fájlt nem biztonságos csatornákon tárolni és tovább küldeni (például emailben). A felhasználás után erősen ajánlott a törlés."
+  },
+  "encExportWarningDesc": {
+    "message": "Ez az exportálás titkosítja az adatokat a fiók titkosítási kulcsával. Ha valaha a fiók forgatási kulcsa más lesz, akkor újra exportálni kell, mert nem lehet visszafejteni ezt az exportálási fájlt."
   },
   "exportMasterPassword": {
     "message": "Add meg a jelszavad a széf adataid exportálásához."
@@ -847,7 +853,7 @@
     "message": "A helyileg működtetett Bitwarden telepítés alap webcímének megadása."
   },
   "customEnvironment": {
-    "message": "Egyéni környezet"
+    "message": "Egyedi környezet"
   },
   "customEnvironmentFooter": {
     "message": "Haladó felhasználóknak. Minden egyes szolgáltatás alap URL-jét külön megadhatod."
@@ -991,10 +997,10 @@
     "message": "December"
   },
   "securityCode": {
-    "message": "Biztonsági Kód"
+    "message": "Biztonsági kód"
   },
   "ex": {
-    "message": "pl."
+    "message": "példa:"
   },
   "title": {
     "message": "Titulus"
@@ -1136,7 +1142,7 @@
     "message": "Alap domain"
   },
   "host": {
-    "message": "Gazdagép",
+    "message": "Kiszolgáló",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
@@ -1245,10 +1251,19 @@
     "message": "A pinkód érvénytelen."
   },
   "verifyPin": {
-    "message": "Pnkód ellenőrzése"
+    "message": "Pinkód ellenőrzése"
   },
   "yourVaultIsLockedPinCode": {
     "message": "A széf zárolásra került. A folytatáshoz meg kell adni a pinkódot."
+  },
+  "unlockWithBiometrics": {
+    "message": "Biometrikus feloldás"
+  },
+  "awaitDesktop": {
+    "message": "Várakozás megerősítésre az asztali alkalmazásból"
+  },
+  "awaitDesktopDesc": {
+    "message": "Erősítsük meg a biometrikus adatok használatát a Bitwarden asztali alkalmazásban a biometrikus adatok engedélyezéséhez a böngészőben."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval a böngésző újraindításakor"
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "Adatvédelem"
+  },
+  "hintEqualsPassword": {
+    "message": "A jelszavas tipp nem lehet azonos a jelszóval."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Asztali szinkronizálás ellenőrzés"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Ellenőrizzük, hogy az asztali alkalmazás megjeleníti-e ezt az ujjlenyomatot: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "A böngésző integráció nem engedélyezett."
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "A böngésző integráció nincs engedélyezve a Bitwarden asztali alkalmazásban. Engedélyezzük az asztali alkalmazás beállításai között."
+  },
+  "startDesktopTitle": {
+    "message": "A Bitwarden asztali alkalmazás indítása"
+  },
+  "startDesktopDesc": {
+    "message": "A funkció használatához el kell indítani a Bitwarden asztali alkalmazást."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Nem lehet engedélyezni a biometrikus adatokat."
+  },
+  "errorEnableBiometricDesc": {
+    "message": "A műveletet az asztali alkalmazás törölte."
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Az asztali alkalmazás érvénytelenítette a biztonságos kommunikációs csatornát. Próbálkozzunk újra ezzel a művelettel"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Az asztali kommunikáció megszakadt."
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "Az asztali alkalmazás egy másik fiókba van bejelentkezve. Ellenőrizzük, hogy mindkét alkalmazást azonos fiókba van bejelentkezve."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "A fiók nem egyezik."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "A biometrikus adatok nincsenek engedélyezve."
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "A böngésző biometrikus adataihoz először az asztali biometrikus adatokat kell engedélyezni a beállításokban."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "A biometrikus adatok nem támogatottak."
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "A böngésző biometrikus adatait ez az eszköz nem támogatja."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "A jogosultság nincs megadva."
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "A Bitwarden Desktop alkalmazással való kommunikáció engedélye nélkül nem adhatunk meg biometrikus adatokat a böngésző kiterjesztésében. Próbáljuk újra."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Egy vállalati házirend miatt korlátozásra került az elemek személyes tárolóba történő mentése. Módosítsuk a Tulajdon opciót egy szervezetre és válasszunk az elérhető gyűjtemények közül."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "A szervezeti házirend befolyásolja a tulajdonosi opciókat."
   }
 }

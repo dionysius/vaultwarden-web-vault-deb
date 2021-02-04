@@ -501,7 +501,7 @@
     "message": "Sei sicuro di voler eliminare questo elemento?"
   },
   "deletedItem": {
-    "message": "Elemento eliminato"
+    "message": "Elemento spostato nel cestino"
   },
   "overwritePassword": {
     "message": "Sovrascrivi password"
@@ -606,8 +606,14 @@
     "message": "ATTENZIONE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Conferma esportazione della Cassaforte"
+  },
   "exportWarningDesc": {
     "message": "Questa esportazione contiene i dati del tuo portachiavi in un formato non criptato. Non salvare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
+  },
+  "encExportWarningDesc": {
+    "message": "Questa esportazione cifra i tuoi dati utilizzando la chiave di crittografia del tuo account. Se cambi la chiave di crittografia del tuo account, non sarai più in grado di decifrare il file esportato e sarà necessario eseguire nuovo export."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati della tua cassaforte."
@@ -895,7 +901,7 @@
     "message": "Genera e copia una nuova password casuale negli appunti."
   },
   "commandLockVaultDesc": {
-    "message": "Blocca il portachiavi"
+    "message": "Blocca la cassaforte"
   },
   "privateModeMessage": {
     "message": "Purtroppo questa finestra non è disponibile nella modalità anonima per questo browser."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Il tuo portachiavi è bloccato. Inserisci il tuo codice PIN per continuare."
   },
+  "unlockWithBiometrics": {
+    "message": "Sblocca utilizzando l'autenticazione biometrica"
+  },
+  "awaitDesktop": {
+    "message": "In attesa di conferma dal desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Si prega di confermare utilizzando l'autenticazione biometrica nell'applicazione Bitwarden Desktop per abilitare l'autenticazione biometrica per il browser."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio del browser"
   },
@@ -1263,7 +1278,7 @@
     "message": "Clona"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore."
+    "message": "Una o più policy dell'organizzazione controllano le impostazioni del tuo generatore."
   },
   "vaultTimeoutAction": {
     "message": "Azione Timeout Portachiavi"
@@ -1358,7 +1373,7 @@
     "message": "La tua nuova password principale non soddisfa i requisiti di sicurezza."
   },
   "acceptPolicies": {
-    "message": "Selezionando questa casella accetti quanto segue:"
+    "message": "Selezionando la casella accetti quanto segue:"
   },
   "acceptPoliciesError": {
     "message": "I Termini di Servizio e l'Informativa sulla Privacy non sono stati accettati."
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "Informativa sulla privacy"
+  },
+  "hintEqualsPassword": {
+    "message": "Il suggerimento password non può essere uguale alla password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Verifica sincronizzazione desktop"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Verifica che l'applicazione desktop mostri questa impronta digitale: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "L'integrazione del browser non è abilitata"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "L'integrazione del browser non è abilitata nell'applicazione Bitwarden Desktop. Si prega di attivarla nelle impostazioni all'interno dell'applicazione desktop."
+  },
+  "startDesktopTitle": {
+    "message": "Avvia l'applicazione desktop Bitwarden"
+  },
+  "startDesktopDesc": {
+    "message": "L'applicazione Bitwarden Desktop deve essere avviata prima che questa funzione possa essere utilizzata."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Impossibile abilitare l'autenticazione biometrica"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "L'azione è stata annullata dall'applicazione desktop"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "L'applicazione desktop ha invalidato il canale di comunicazione sicuro. Ritenta l'operazione"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Comunicazione desktop interrotta"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "L'applicazione desktop è collegata a un account diverso. Assicurarsi che entrambe le applicazioni siano collegate allo stesso account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account non corrispondente"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Autenticazione biometrica non abilitata"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "L'autenticazione biometrica del browser richiede che l'autenticazione biometrica del desktop sia prima abilitata  nelle impostazioni."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Autenticazione biometrica non supportata"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "L'autenticazione biometrica del browser non è supportata su questo dispositivo."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permesso non concesso"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Senza l'autorizzazione per comunicare con l'applicazione Bitwarden Desktop non è possibile fornire l'autenticazione biometrica nell'estensione del browser.\nRiprova di nuovo."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "A causa di una policy aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione proprietà in un'organizzazione e scegli tra le raccolte disponibili."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Una policy dell'organizzazione controlla le opzioni di proprietà."
   }
 }

@@ -1,19 +1,11 @@
 import { I18nService as BaseI18nService } from 'jslib/services/i18n.service';
 
-import { BrowserApi } from '../browser/browserApi';
-import { SafariApp } from '../browser/safariApp';
-
 export default class I18nService extends BaseI18nService {
     constructor(systemLanguage: string) {
-        super(systemLanguage, BrowserApi.isSafariApi ? 'safari' : null, async (formattedLocale: string) => {
-            if (BrowserApi.isSafariApi) {
-                await SafariApp.sendMessageToApp('getLocaleStrings', formattedLocale);
-                return (window as any).bitwardenLocaleStrings;
-            } else {
-                // Deprecated
-                const file = await fetch(this.localesDirectory + formattedLocale + '/messages.json');
-                return await file.json();
-            }
+        super(systemLanguage, null, async (formattedLocale: string) => {
+            // Deprecated
+            const file = await fetch(this.localesDirectory + formattedLocale + '/messages.json');
+            return await file.json();
         });
 
         this.supportedTranslationLocales = [

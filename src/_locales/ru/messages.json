@@ -498,7 +498,7 @@
     "message": "Элемент изменен"
   },
   "deleteItemConfirmation": {
-    "message": "Вы действительно хотите удалить этот элемент?"
+    "message": "Вы действительно хотите отправить в корзину?"
   },
   "deletedItem": {
     "message": "Элемент отправлен в корзину"
@@ -606,8 +606,14 @@
     "message": "ВНИМАНИЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Подтвердить экспорт хранилища"
+  },
   "exportWarningDesc": {
     "message": "Экспортируемый файл содержит данные вашего хранилища в незашифрованном формате. Его не следует хранить или отправлять по небезопасным каналам (например, по электронной почте). Удалите его сразу после использования."
+  },
+  "encExportWarningDesc": {
+    "message": "При экспорте данные шифруются с помощью ключа шифрования учетной записи. Если вы когда-либо повернете ключ шифрования учетной записи, вам следует экспортировать данные повторно, поскольку вы не сможете расшифровать этот файл экспорта."
   },
   "exportMasterPassword": {
     "message": "Для экспорта данных из хранилища введите мастер-пароль."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Ваше хранилище заблокировано. Для продолжения введите PIN-код."
   },
+  "unlockWithBiometrics": {
+    "message": "Разблокировать с помощью биометрии"
+  },
+  "awaitDesktop": {
+    "message": "Ожидание подтверждения с компьютера"
+  },
+  "awaitDesktopDesc": {
+    "message": "Для включения биометрии в браузере, подтвердите это в приложении Bitwarden для компьютера."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске браузера"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "Политика конфиденциальности"
+  },
+  "hintEqualsPassword": {
+    "message": "Подсказка для пароля не может совпадать с паролем."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Проверка синхронизации на компьютере"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Пожалуйста, убедитесь, что приложение для компьютера отображает этот отпечаток: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Интеграция с браузером не включена"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Интеграция браузера не включена в приложении Bitwarden для компьютера. Пожалуйста, включите ее в настройках приложения для компьютера."
+  },
+  "startDesktopTitle": {
+    "message": "Запустить приложение Bitwarden для компьютера"
+  },
+  "startDesktopDesc": {
+    "message": "Перед использованием этой функции необходимо запустить приложение Bitwarden для компьютера."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Не удается включить биометрию"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Действие было отменено приложением для компьютера"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Приложению для компьютера не удалось создать защищенный канал подключения. Пожалуйста, попробуйте еще раз"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Соединение с приложением для компьютера прервано"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "Приложение для компьютера авторизовано под другим аккаунтом. Необходимо чтобы оба приложения были авторизованы под одной учетной записью."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Несоответствие аккаунта"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Биометрия не включена"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Для активации биометрии в браузере сначала необходимо включить биометрию в приложении для компьютера."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Биометрия не поддерживается"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Биометрия в браузере не поддерживается этом устройстве."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Разрешение не представлено"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Без разрешения на взаимодействие с Bitwarden для компьютера биометрия в расширении браузера работать не сможет. Попробуйте еще раз."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "В соответствии с корпоративной политикой вам запрещено сохранять элементы в личном хранилище. Измените владельца на организацию и выберите из доступных Коллекций."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Политика организации влияет на ваши варианты владения."
   }
 }

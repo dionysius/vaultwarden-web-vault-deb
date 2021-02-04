@@ -606,8 +606,14 @@
     "message": "אזהרה",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "אישור ייצוא כספת"
+  },
   "exportWarningDesc": {
     "message": "הקובץ מכיל את פרטי הכספת שלך בפורמט לא מוצפן. מומלץ להעביר את הקובץ רק בדרכים מוצפנות, ומאוד לא מומלץ לשמור או לשלוח את הקובץ הזה בדרכים לא מוצפנות (כדוגמת סתם אימייל). מחק את הקובץ מיד לאחר שסיימת את השימוש בו."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "הזן את הסיסמה הראשית שלך עבור יצוא המידע מהכספת."
@@ -895,7 +901,7 @@
     "message": "צור והעתק סיסמה רנדומלית חדשה."
   },
   "commandLockVaultDesc": {
-    "message": "נעילת הכספת"
+    "message": "נעל את הכספת"
   },
   "privateModeMessage": {
     "message": "לצערנו חלון זה אינו זמין במצב גלישה פרטית בדפדפן זה."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "הכספת שלך נעולה. הזן את קוד הPIN שלך כדי להמשיך."
   },
+  "unlockWithBiometrics": {
+    "message": "ביטול נעילה עם זיהוי ביומטרי"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "נעל בעזרת הסיסמה הראשית בהפעלת הדפדפן מחדש"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "מדיניות הפרטיות"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "אוקי"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "אינטרציית דפדפן לא מאופשרת"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "לא ניתן להפעיל זיהוי ביומטרי"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "זיהוי בימוטרי לא מאופשר."
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "אין תמיכה באמצעי זיהוי ביומטרים"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "אין תמיכה בזיהוי ביומטרי בדפדפן במכשיר זה."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

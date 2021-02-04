@@ -9,7 +9,8 @@ $text-color: #000000;
 $border-color: #f0f0f0;
 $border-color-dark: #ddd;
 $list-item-hover: #fbfbfb;
-$list-icon-color: #c7c7cd;
+$list-icon-color: #767679;
+$disabled-box-opacity: 1;
 $border-radius: 3px;
 $line-height-base: 1.42857143;
 
@@ -59,6 +60,7 @@ $themes: (
         headerInputPlaceholderColor: lighten($brand-primary, 35%),
         listItemBackgroundHoverColor: $list-item-hover,
         disabledIconColor: $list-icon-color,
+        disabledBoxOpacity: $disabled-box-opacity,
         headingColor: $gray-light,
         labelColor: $gray-light,
         mutedColor: $text-muted,
@@ -106,7 +108,8 @@ $themes: (
         headerInputColor: #ffffff,
         headerInputPlaceholderColor: #707070,
         listItemBackgroundHoverColor: #3c3c3c,
-        disabledIconColor: #c7c7cd,
+        disabledIconColor: #cacaca,
+        disabledBoxOpacity: 0.5,
         headingColor: #a3a3a3,
         labelColor: #a3a3a3,
         mutedColor: #a3a3a3,
@@ -154,7 +157,8 @@ $themes: (
         headerInputColor: $nord2,
         headerInputPlaceholderColor: $nord3,
         listItemBackgroundHoverColor: $nord3,
-        disabledIconColor: $nord5,
+        disabledIconColor: $nord4,
+        disabledBoxOpacity: 0.5,
         headingColor: $nord4,
         labelColor: $nord4,
         mutedColor: $nord4,

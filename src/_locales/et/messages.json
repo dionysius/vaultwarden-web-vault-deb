@@ -246,7 +246,7 @@
     "message": "Puuduvad kirjed, mida kuvada."
   },
   "itemInformation": {
-    "message": "Kirje informatsioon"
+    "message": "Kirje andmed"
   },
   "username": {
     "message": "Kasutajanimi"
@@ -331,7 +331,7 @@
     "message": "Hoidla ajalõpp"
   },
   "lockNow": {
-    "message": "Kliki paroolihoidla lukustamiseks"
+    "message": "Lukusta paroolihoidla"
   },
   "immediately": {
     "message": "Koheselt"
@@ -403,7 +403,7 @@
     "message": "Ülemparooli vihje saadeti sinu e-postile."
   },
   "verificationCodeRequired": {
-    "message": "Nõuatav on kinnituskood."
+    "message": "Nõutav on kinnituskood."
   },
   "valueCopied": {
     "message": "$VALUE$ on kopeeritud",
@@ -535,7 +535,7 @@
     "message": "Krediit- ja teiste kaartide andmed kuvatakse vaikeseadena \"Kaart\" vaates, et neid oleks lihtsam sisestada."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Ära kuva \"Kaart\" vaates Identiteete"
+    "message": "Ära kuva \"Kaart\" vaates identiteete"
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Identiteediandmeid kuvatakse vaikeseadena \"Kaart\" vaates, et neid oleks lihtsam sisestada."
@@ -576,11 +576,11 @@
     "message": "Parema kliki menüü abil saad kiiresti parooli genereerida ja konkreetse veebilehe kasutajakonto andmeid sisestada."
   },
   "defaultUriMatchDetection": {
-    "message": "Vaikse URL-i sobivuse tuvastamine",
+    "message": "Vaikse URI sobivuse tuvastamine",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Vali vaikeviis, kuidas kirje ja URL-i sobivus tuvastatakse. Seda kasutatakse näiteks siis, kui lehele üritatakse automaatselt andmeid sisestada."
+    "message": "Vali vaikeviis, kuidas kirje ja URI sobivus tuvastatakse. Seda kasutatakse näiteks siis, kui lehele üritatakse automaatselt andmeid sisestada."
   },
   "theme": {
     "message": "Teema"
@@ -606,8 +606,14 @@
     "message": "HOIATUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Hoidla eksportimise kinnitamine"
+  },
   "exportWarningDesc": {
     "message": "Eksporditav fail sisaldab hoidla sisu, mis on krüpteeringuta. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
+  },
+  "encExportWarningDesc": {
+    "message": "Eksporditavate andmete krüpteerimiseks kasutatakse kontol olevat krüpteerimisvõtit. Kui sa peaksid seda krüpteerimise võtit roteerima, ei saa sa järgnevalt eksporditavaid andmeid enam dekrüpteerida."
   },
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
@@ -709,7 +715,7 @@
     "message": "Parooli hügieen, konto seisukord ja andmelekete raportid aitavad hoidlat turvalisena hoida."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP kinnituskoodide (2FA) genereeria hoidlas olevatele kasutajakontodele."
+    "message": "TOTP kinnituskoodide (2FA) genereerija hoidlas olevatele kasutajakontodele."
   },
   "ppremiumSignUpSupport": {
     "message": "Kiirema kasutajatoe."
@@ -895,7 +901,7 @@
     "message": "Loo ja kopeeri uus juhuslikult koostatud parool lõikepuhvrisse."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Lukusta hoidla"
   },
   "privateModeMessage": {
     "message": "Kahjuks ei toeta kasutatav brauser seda akent privaatses režiimis."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
   },
+  "unlockWithBiometrics": {
+    "message": "Ava biomeetriaga"
+  },
+  "awaitDesktop": {
+    "message": "Kinnituse ootamine töölaua rakenduselt"
+  },
+  "awaitDesktopDesc": {
+    "message": "Kinnitamiseks kasuta biomeetrilist lahtilukustamist Bitwardeni töölaua rakenduses."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Nõua ülemparooli, kui brauser taaskäivitatakse"
   },
@@ -1358,15 +1373,81 @@
     "message": "Uus ülemparool ei vasta eeskirjades väljatoodud tingimustele."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Märkeruudu markeerimisel nõustud järgnevaga:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Kasutustingimuste ja Privaatsuspoliitikaga pole nõustutud."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Kasutustingimused"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privaatsuspoliitika"
+  },
+  "hintEqualsPassword": {
+    "message": "Parooli vihje ei saa olla sama mis parool ise."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Töölaua sünkroonimise kinnitamine"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Veendu, et töölaua rakendus kuvab järgnevat sõrmejälge: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Brauseri integratsioon ei ole sisse lülitatud"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Brauseri integratsioon ei ole Bitwardeni töölaua rakenduses sisse lülitatud. Palun lülita see töölaua rakenduse seadetes sisse."
+  },
+  "startDesktopTitle": {
+    "message": "Käivita Bitwardeni töölaua rakendus"
+  },
+  "startDesktopDesc": {
+    "message": "Enne selle funktsiooni sisselülitamist peab käivitama Bitwardeni töölaua rakenduse."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Biomeetria sisselülitamine nurjus"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Töölaua rakendus tühistas tegevuse"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Töölaua rakendusel ei õnnestunud turvalist ühenduskanalit luua. Palun proovi uuesti"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Suhtlus töölaua rakendusega katkes"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "Töölaua rakenduses on sisse logitud teise kasutajaga. Veendu, et oled mõlemas rakenduses sisse loginud ühe ja sama kontoga."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Kontod ei ühti"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biomeetria ei ole sisse lülitatud"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Biomeetria kasutamiseks brauseris peab esmalt Bitwardeni töölaua rakenduse seadetes biomeetria lubama."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biomeetriat ei toetata"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Brauseri biomeetria ei ole selles seadmes toetatud"
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Ettevõtte poliitika tõttu ei saa sa andmeid oma personaalsesse Hoidlasse salvestada. Vali Omanikuks organisatsioon ja vali mõni saadavaolevatest Kogumikest."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Organisatsiooni poliitika on seadnud omaniku valikutele piirangu."
   }
 }

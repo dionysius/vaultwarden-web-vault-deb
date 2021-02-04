@@ -606,8 +606,14 @@
     "message": "UWAGA",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Potwierdź eksportowanie sejfu"
+  },
   "exportWarningDesc": {
     "message": "Plik zawiera dane sejfu w niezaszyfrowanym formacie. Nie powinieneś go przechowywać, ani przesyłać poprzez niezabezpieczone kanały (takie jak poczta e-mail). Skasuj go natychmiast po użyciu."
+  },
+  "encExportWarningDesc": {
+    "message": "Dane eksportu zostaną zaszyfrowane za pomocą klucza szyfrowania konta. Jeśli kiedykolwiek zmienisz ten klucz, wyeksportuj dane ponownie, ponieważ nie będziesz w stanie odszyfrować tego pliku."
   },
   "exportMasterPassword": {
     "message": "Wpisz hasło główne, aby wyeksportować dane z sejfu."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Sejf jest zablokowany. Wpisz kod PIN, aby kontynuować."
   },
+  "unlockWithBiometrics": {
+    "message": "Odblokuj danymi biometrycznymi"
+  },
+  "awaitDesktop": {
+    "message": "Oczekiwanie na potwierdzenie z aplikacji desktopowej"
+  },
+  "awaitDesktopDesc": {
+    "message": "Włącz dane biometryczne w aplikacji desktopowej Bitwarden, aby włączyć tę samą funkcję w przeglądarce."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu przeglądarki"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "Polityka prywatności"
+  },
+  "hintEqualsPassword": {
+    "message": "Podpowiedź do hasła nie może być taka sama jak hasło."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Weryfikacja synchronizacji z aplikacją desktopową"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Zweryfikuj aplikację desktopową z wyświetlonym identyfikatorem: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Połączenie z przeglądarką jest wyłączone"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Połączenie z przeglądarką jest wyłączone. Włącz funkcję w ustawieniach aplikacji desktopowej Bitwarden."
+  },
+  "startDesktopTitle": {
+    "message": "Uruchom aplikację desktopową Bitwarden"
+  },
+  "startDesktopDesc": {
+    "message": "Aplikacja desktopowa Bitwarden musi zostać uruchomiona przed użyciem tej funkcji."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Nie można włączyć danych biometrycznych"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Operacja została anulowana przez aplikację desktopową"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Aplikacja desktopowa unieważniła bezpieczny kanał komunikacji. Spróbuj ponownie wykonać tę operację"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Komunikacja z aplikacją desktopową została przerwana"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "W aplikacji desktopowej jesteś zalogowany na inne konto. Upewnij się, że w obu aplikacjach jesteś zalogowany na te same konto."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Konto jest niezgodne"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Dane biometryczne są wyłączone"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Aby włączyć dane biometryczne w przeglądarce, musisz włączyć tę samą funkcję w ustawianiach aplikacji desktopowej."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Dane biometryczne nie są obsługiwane"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Dane biometryczne przeglądarki nie są obsługiwane na tym urządzenie."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Uprawnienie nie zostało przyznane"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Bez uprawnienia do komunikowania się z aplikacją desktopową Bitwarden nie możemy dostarczyć obsługi danych biometrycznych w rozszerzeniu przeglądarki. Spróbuj ponownie."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Ze względu na zasadę przedsiębiorstwa nie możesz zapisywać elementów w osobistym sejfie. Zmień właściciela elementu na organizację i wybierz jedną z dostępnych kolekcji."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Zasada organizacji ma wpływ na opcję własności elementów."
   }
 }

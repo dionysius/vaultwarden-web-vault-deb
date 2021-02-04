@@ -606,8 +606,14 @@
     "message": "ADVERTIMENT",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirma l'exportació de la Caixa forta"
+  },
   "exportWarningDesc": {
     "message": "Aquesta exportació conté les dades de la vostra caixa forta en un format no xifrat. No hauríeu d'emmagatzemar o enviar el fitxer exportat a través de canals no segurs (com ara el correu electrònic). Elimineu-lo immediatament després d'haver acabat d'usar-lo."
+  },
+  "encExportWarningDesc": {
+    "message": "Aquesta exportació xifra les vostres dades mitjançant la vostra clau de xifratge. Si alguna vegada gireu eixa clau, hauríeu d'exportar de nou, ja que no podreu desxifrar aquest fitxer d'exportació."
   },
   "exportMasterPassword": {
     "message": "Introduïu la contrasenya mestra per exportar les dades de la caixa forta."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "La caixa forta està bloquejada. Verifiqueu El codi PIN per continuar."
   },
+  "unlockWithBiometrics": {
+    "message": "Desbloqueja amb biomètrica"
+  },
+  "awaitDesktop": {
+    "message": "S’espera confirmació des de l’escriptori"
+  },
+  "awaitDesktopDesc": {
+    "message": "Confirmeu que utilitzeu la biomètrica a l'aplicació Bitwarden Desktop per habilitar la biomètrica per al navegador."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar el navegador"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "Declaració de privadesa"
+  },
+  "hintEqualsPassword": {
+    "message": "El vostre suggeriment de contrasenya no pot ser el mateix que la vostra contrasenya."
+  },
+  "ok": {
+    "message": "D’acord"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Verificació de sincronització d'escriptori"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Verifiqueu que l'aplicació d'escriptori mostre aquesta empremta digital:"
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "La integració en el navegador no està habilitada"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "La integració del navegador no està habilitada a l'aplicació Bitwarden Desktop. Activeu-la a la configuració de l'aplicació d'escriptori."
+  },
+  "startDesktopTitle": {
+    "message": "Inicia l'aplicació Bitwarden Desktop"
+  },
+  "startDesktopDesc": {
+    "message": "Per poder utilitzar aquesta funció, cal iniciar l'aplicació Bitwarden Desktop."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "No es pot habilitar la biomètrica"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "L'aplicació d'escriptori ha cancel·lat l'acció"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "L'aplicació d'escriptori ha invalidat el canal de comunicació segur. Torneu a provar aquesta operació"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "S'ha interromput la comunicació d'escriptori"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "L'aplicació d'escriptori està iniciada en un compte diferent. Assegureu-vos que totes dues aplicacions estiguen connectades al mateix compte."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "El compte no coincideix"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "La biomètrica no està habilitada"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "La biometria del navegador primer necessita habilitar la biomètrica d’escriptori a la configuració."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "La biomètrica no és compatible"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "La biometria del navegador no és compatible amb aquest dispositiu."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "A causa d'una política empresarial, no podeu guardar elements a la vostra caixa forta personal. Canvieu l'opció Propietat en organització i trieu entre les col·leccions disponibles."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Una política d’organització afecta les vostres opcions de propietat."
   }
 }

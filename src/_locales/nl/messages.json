@@ -312,7 +312,7 @@
     "message": "Ontgrendelen"
   },
   "loggedInAsOn": {
-    "message": "Ingelogd als $EMAIL$ op $HOSTNAME$.",
+    "message": "Aangemeld als $EMAIL$ op $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -606,8 +606,14 @@
     "message": "WAARSCHUWING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Kluisexport bevestigen"
+  },
   "exportWarningDesc": {
     "message": "Deze export bevat jouw kluisgegevens in een niet-versleutelde opmaak. Je moet het geëxporteerde bestand niet opslaan of verzenden over onbeveiligde kanalen (zoals e-mail). Verwijder het exportbestand direct na gebruik."
+  },
+  "encExportWarningDesc": {
+    "message": "Deze export versleutelt je gegevens met de encryptiesleutel van je account. Als je je encryptiesleutel verandert moet je opnieuw exporteren, omdat je deze export dan niet meer kunt ontcijferen."
   },
   "exportMasterPassword": {
     "message": "Voer je hoofdwachtwoord in om de kluisgegevens te exporteren."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Je kluis is vergrendeld. Voer je PIN-code in om door te gaan."
   },
+  "unlockWithBiometrics": {
+    "message": "Biometrisch ontgrendelen"
+  },
+  "awaitDesktop": {
+    "message": "Wacht op bevestiging van de desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Bevestig het gebruik van biometrie in de Bitwarden-desktopapplicatie om biometrie voor de browser in te schakelen."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Vergrendelen met hoofdwachtwoord bij herstart browser"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "Privacybeleid"
+  },
+  "hintEqualsPassword": {
+    "message": "Je wachtwoordhint moet anders zijn dan je wachtwoord."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktopsynchronisatieverificatie"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Controleer of de desktopapplicatie deze vingerafdruk weergeeft: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browserintegratie is niet ingeschakeld"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browserintegratie is niet ingeschakeld in de Bitwarden-desktopapplicatie. Schakel deze optie in de instellingen binnen de desktop-applicatie in."
+  },
+  "startDesktopTitle": {
+    "message": "Bitwarden-desktopapplicatie opstarten"
+  },
+  "startDesktopDesc": {
+    "message": "Je moet de Bitwarden-desktopapplicatie starten om deze functie te gebruiken."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Kon biometrie niet inschakelen"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Actie is geannuleerd door de desktopapplicatie"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "De desktopapplicatie heeft het beveiligde communicatiekanaal ongeldig verklaard. Probeer het opnieuw"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktopcommunicatie onderbroken"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "De desktopapplicatie is aangemeld bij een ander account. Zorg ervoor dat beide applicaties op hetzelfde account zijn aangemeld."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Accounts komt niet overeen"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrie niet ingeschakeld"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Voor browserbiometrie moet je eerst desktopbiometrie inschakelen in de instellingen."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrie niet ondersteund"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Dit apparaat ondersteunt geen browserbiometrie."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Toestemming niet verleend"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Zonder toestemming om te communiceren met de Bitwarden Desktop-applicatie, kunnen we biometrisch inloggen in de browserextensie niet leveren. Probeer het opnieuw."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Wegens bedrijfsbeleid mag je geen wachtwoorden opslaan in je persoonlijke kluis. Verander het eigenaarschap naar een organisatie en kies uit een van de beschikbare collecties."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Een organisatiebeleid heeft invloed op je eigendomsopties."
   }
 }

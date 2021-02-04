@@ -51,6 +51,7 @@ export class SettingsComponent implements OnInit {
     vaultTimeoutActions: any[];
     vaultTimeoutAction: string;
     pin: boolean = null;
+    supportsBiometric: boolean;
     biometric: boolean = false;
     previousVaultTimeout: number = null;
 
@@ -101,6 +102,8 @@ export class SettingsComponent implements OnInit {
 
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
+
+        this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
         this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
     }
 
@@ -207,7 +210,33 @@ export class SettingsComponent implements OnInit {
     }
 
     async updateBiometric() {
-        if (this.biometric) {
+        if (this.biometric && this.supportsBiometric) {
+
+            // Request permission to use the optional permission for nativeMessaging
+            if (!this.platformUtilsService.isFirefox()) {
+                const hasPermission = await new Promise((resolve) => {
+                    chrome.permissions.contains({permissions: ['nativeMessaging']}, resolve);
+                });
+
+                if (!hasPermission) {
+                    await this.platformUtilsService.showDialog(
+                        this.i18nService.t('nativeMessagingPermissionPromptDesc'), this.i18nService.t('nativeMessagingPermissionPromptTitle'),
+                        this.i18nService.t('ok'), null);
+
+                    const granted = await new Promise((resolve, reject) => {
+                        chrome.permissions.request({permissions: ['nativeMessaging']}, resolve);
+                    });
+    
+                    if (!granted) {
+                        await this.platformUtilsService.showDialog(
+                            this.i18nService.t('nativeMessaginPermissionErrorDesc'), this.i18nService.t('nativeMessaginPermissionErrorTitle'),
+                            this.i18nService.t('ok'), null);
+                        this.biometric = false;
+                        return;
+                    }
+                }
+            }
+
             const submitted = Swal.fire({
                 heightAuto: false,
                 buttonsStyling: false,

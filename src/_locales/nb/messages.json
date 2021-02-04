@@ -17,10 +17,10 @@
     "message": "Opprett en konto"
   },
   "login": {
-    "message": "Logg på"
+    "message": "Logg inn"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Bedriftsinnlogging (SSO)"
   },
   "cancel": {
     "message": "Lukk"
@@ -104,7 +104,7 @@
     "message": "Legg til en innlogging"
   },
   "addItem": {
-    "message": "Legg til et objekt"
+    "message": "Legg til en gjenstand"
   },
   "passwordHint": {
     "message": "Passordhint"
@@ -139,7 +139,7 @@
     "message": "2-trinnsinnlogging"
   },
   "logOut": {
-    "message": "Logg av"
+    "message": "Logg ut"
   },
   "about": {
     "message": "Om"
@@ -194,7 +194,7 @@
     "message": "Bitwarden netthvelv"
   },
   "importItems": {
-    "message": "Importer objekter"
+    "message": "Importer gjenstander"
   },
   "select": {
     "message": "Velg"
@@ -231,7 +231,7 @@
     "message": "Minste antall spesialtegn"
   },
   "avoidAmbChar": {
-    "message": "Unngå tegn som kan forveksles"
+    "message": "Unngå tvetydige tegn"
   },
   "searchVault": {
     "message": "Søk i hvelvet"
@@ -246,7 +246,7 @@
     "message": "Det er ingen gjenstander å liste opp."
   },
   "itemInformation": {
-    "message": "Objektinformasjon"
+    "message": "Gjenstandsinformasjon"
   },
   "username": {
     "message": "Brukernavn"
@@ -306,7 +306,7 @@
     "message": "Verifiser hovedpassordet"
   },
   "yourVaultIsLocked": {
-    "message": "Hvelvet ditt er låst. Kontroller superpassordet ditt for å fortsette."
+    "message": "Hvelvet ditt er låst. Kontroller hovedpassordet ditt for å fortsette."
   },
   "unlock": {
     "message": "Lås opp"
@@ -498,7 +498,7 @@
     "message": "Redigerte gjenstanden"
   },
   "deleteItemConfirmation": {
-    "message": "Er du sikker på at du vil slette denne gjenstanden?"
+    "message": "Er du sikker på at du vil slette dette objektet?"
   },
   "deletedItem": {
     "message": "Slettet objektet"
@@ -606,8 +606,14 @@
     "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Eksporten inneholder dine hvelvdataer i et ukryptert format. Du burde ikke lagre eller sende den eksporterte filen over usikre tjenester (f.eks. E-post). Slett det umiddelbart etter at du er ferdig med å bruke dem."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Skriv inn ditt superpassord for å eksportere dine hvelvdataer."
@@ -895,7 +901,7 @@
     "message": "Generer og kopier et nytt tilfeldig passord til utklippstavlen."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Lås hvelvet"
   },
   "privateModeMessage": {
     "message": "Dessverre er dette vinduet ikke tilgjengelig i privat modus for denne nettleseren."
@@ -1233,7 +1239,7 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Lås opp med PIN"
+    "message": "Lås opp med PIN-kode"
   },
   "setYourPinCode": {
     "message": "Angi PIN-koden din for å låse opp Bitwarden. PIN-innstillingene tilbakestilles hvis du logger deg helt ut av programmet."
@@ -1249,6 +1255,15 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Hvelvet ditt er låst. Kontroller PIN-koden din for å fortsette."
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedpassordet når du starter nettleseren på nytt"
@@ -1304,22 +1319,22 @@
     "message": "Bekreftelse på handling ved tidsavbrudd"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Autofyll og lagre"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Autoutfylt element og lagret URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Autoutfylt gjenstand"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Angi hovedpassord"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Ett eller flere av organisasjonens vilkår krever at hovedpassordet oppfyller følgende krav:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimumspoengsum for kompleksistet er $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1328,7 +1343,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimumslengde på $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1337,16 +1352,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Inneholde én eller flere store bokstaver"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Inneholde én eller flere små bokstaver"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Inneholde ett eller flere tall"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Inneholde ett eller flere av følgende spesialtegn $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1355,18 +1370,84 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Det nye hovedpassordet ditt oppfyller ikke vilkårene."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Ved å merke av denne boksen sier du deg enig i følgende:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Vilkårene for bruk og personvernerklæring er ikke akseptert."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Vilkår for bruk"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Personvernerklæring"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

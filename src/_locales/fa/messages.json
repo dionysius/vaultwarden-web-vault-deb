@@ -606,8 +606,14 @@
     "message": "اخطار",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "صادرات گاوصندوق را تأیید کنید"
+  },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+  },
+  "encExportWarningDesc": {
+    "message": "این صادرات با استفاده از کلید رمزگذاری حساب شما ، اطلاعات شما را رمزگذاری می کند. اگر حتی کلید رمزگذاری حساب خود را بچرخانید ، باید دوباره صادر کنید چون قادر به رمزگشایی این پرونده صادراتی نخواهید بود."
   },
   "exportMasterPassword": {
     "message": "کلمه عبور اصلی خود را برای صادرات داده ها از گاوصندوقتان وارد کنید."
@@ -895,7 +901,7 @@
     "message": "یک کلمه عبور تصادفی جدید ایجاد کنید و آن را در کلیپ بورد کپی کنید."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "قفل گاوصندوق"
   },
   "privateModeMessage": {
     "message": "متأسفانه این پنجره در حالت خصوصی برای این مرورگر در دسترس نیست."
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "گاوصندوق شما قفل شده است. برای ادامه کد پین خود را تایید کنید."
   },
+  "unlockWithBiometrics": {
+    "message": "با استفاده از بیومتریک باز کنید"
+  },
+  "awaitDesktop": {
+    "message": "در انتظار تأیید از دسکتاپ"
+  },
+  "awaitDesktopDesc": {
+    "message": "لطفاً استفاده از بیومتریک را در برنامه دسکتاپ Bitwarden تأیید کنید تا بیومتریک را برای مرورگر فعال کنید."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "در زمان شروع مجدد مرورگر، با رمز اصلی قفل کن"
   },
@@ -1358,15 +1373,81 @@
     "message": "کلمه عبور اصلی جدید شما از شرایط سیاست پپیروی نمی کند."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "با علامت زدن این کادر با موارد زیر موافقت می کنید:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "شرایط خدمات و سیاست حفظ حریم خصوصی تأیید نشده است."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "شرایط استفاده از خدمات"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "سیاست حفظ حریم خصوصی"
+  },
+  "hintEqualsPassword": {
+    "message": "نکته رمز عبور شما نمی تواند همان رمز عبور شما باشد."
+  },
+  "ok": {
+    "message": "تایید"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "تأیید همگام سازی دسکتاپ"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "لطفاً تأیید کنید که برنامه دسکتاپ این اثر انگشت را نشان می دهد:"
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "ادغام مرورگر فعال نیست"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "ادغام مرورگر در برنامه دسکتاپ Bitwarden فعال نیست. لطفاً آن را در تنظیمات موجود در برنامه دسکتاپ فعال کنید."
+  },
+  "startDesktopTitle": {
+    "message": "برنامه دسکتاپ Bitwarden را شروع کنید"
+  },
+  "startDesktopDesc": {
+    "message": "قبل از استفاده از این عملکرد، برنامه دسکتاپ Bitwarden باید شروع شود."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "بیومتریک فعال نیست"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "فعالیت توسط برنامه دسکتاپ لغو شد"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "برنامه دسکتاپ کانال ارتباط امن را نامعتبر کرد. لطفاً این عملیات را دوباره امتحان کنید"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "ارتباط دسکتاپ قطع شد"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "برنامه دسکتاپ به یک حساب دیگر وارد شده است. لطفاً اطمینان حاصل کنید که هر دو برنامه به یک حساب وارد شده اند."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "عدم تطابق حساب"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "بیومتریک فعال نیست"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "بیومتریک مرورگر ابتدا نیاز به فعالسازی بیومتریک دسکتاپ در تنظیمات دارد."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "بیومتریک پشتیبانی نمی شود"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی شود."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "مجوز ارائه نشده است"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "بدون اجازه ارتباط با برنامه دسکتاپ Bitwarden ، نمی توانیم بیومتریک را در افزونه مرورگر ارائه دهیم. لطفا دوباره تلاش کنید."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "به دلیل خط مشی Enterprise ، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "خط مشی سازمانی بر تنظیمات مالکیت شما تأثیر می گذارد."
   }
 }

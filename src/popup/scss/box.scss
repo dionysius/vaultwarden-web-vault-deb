@@ -378,11 +378,13 @@
             &.disabled {
                 @include themify($themes) {
                     color: themed('disabledIconColor');
+                    opacity: themed('disabledBoxOpacity');
                 }
 
                 &:hover {
                     @include themify($themes) {
                         color: themed('disabledIconColor');
+                        opacity: themed('disabledBoxOpacity');
                     }
                 }
             }

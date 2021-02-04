@@ -498,7 +498,7 @@
     "message": "Eintrag bearbeitet"
   },
   "deleteItemConfirmation": {
-    "message": "Soll dieser Eintrag wirklich gelöscht werden?"
+    "message": "Soll dieser Eintrag wirklich in den Papierkorb verschoben werden?"
   },
   "deletedItem": {
     "message": "Eintrag in Papierkorb legen"
@@ -606,8 +606,14 @@
     "message": "ACHTUNG",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Tresor-Export bestätigen"
+  },
   "exportWarningDesc": {
     "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
+  },
+  "encExportWarningDesc": {
+    "message": "Dieser Export verschlüsselt Ihre Daten mit dem Verschlüsselungscode Ihres Kontos. Falls Sie Ihren Verschlüsselungscode erneuern, sollten Sie den Export erneut durchführen, da Sie die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln können."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -1099,7 +1105,7 @@
     "message": "In einem neuen Fenster öffnen"
   },
   "refresh": {
-    "message": "Aktuaklisieren"
+    "message": "Aktualisieren"
   },
   "cards": {
     "message": "Karten"
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
+  "unlockWithBiometrics": {
+    "message": "Mit Biometrie entsperren"
+  },
+  "awaitDesktop": {
+    "message": "Warte auf Bestätigung vom Desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Bitte bestätigen Sie die Verwendung von Biometrie in der Bitwarden Desktop-Anwendung, um Biometrie für den Browser zu aktivieren."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Bei Neustart des Browsers mit Master-Passwort sperren"
   },
@@ -1368,5 +1383,71 @@
   },
   "privacyPolicy": {
     "message": "Datenschutzbestimmungen"
+  },
+  "hintEqualsPassword": {
+    "message": "Ihr Passwort-Hinweis darf nicht identisch mit Ihrem Passwort sein."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop-Sync-Überprüfung"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Bitte bestätigen Sie, dass die Desktop-Anwendung diesen Prüfschlüssel anzeigt: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser-Einbindung ist nicht aktiviert"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktivieren Sie diese in den Einstellungen innerhalb der Desktop-Anwendung."
+  },
+  "startDesktopTitle": {
+    "message": "Bitwarden Desktop-Anwendung starten"
+  },
+  "startDesktopDesc": {
+    "message": "Die Bitwarden Desktop-Anwendung muss gestartet werden, bevor diese Funktion verwendet werden kann."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Biometrie kann nicht aktiviert werden"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Die Aktion wurde von der Desktop-Anwendung abgebrochen"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Die Desktop-Anwendung hat den sicheren Kommunikationskanal für ungültig erklärt. Bitte starten Sie den Vorgang erneut"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop-Kommunikation unterbrochen"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "Die Desktop-Anwendung ist in ein anderes Konto eingeloggt. Bitte stellen Sie sicher, dass beide Anwendungen mit demselben Konto angemeldet sind."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Konten stimmen nicht überein"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrie ist nicht aktiviert"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert ist."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrie wird nicht unterstützt"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Biometrie im Browser wird auf diesem Gerät nicht unterstützt."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Berechtigung nicht erteilt"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Ohne die Berechtigung zur Kommunikation mit der Bitwarden Desktop-Anwendung können wir keine Biometrie in der Browser-Erweiterung anbieten. Bitte versuchen Sie es erneut."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Aufgrund einer Unternehmensrichtlinie dürfen Sie keine Einträge in Ihrem persönlichen Tresor speichern. Ändern Sie die Eigentümer-Option in eine Organisation und wählen Sie aus den verfügbaren Sammlungen."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Eine Organisationsrichtlinie beeinflusst Ihre Eigentümer-Optionen."
   }
 }

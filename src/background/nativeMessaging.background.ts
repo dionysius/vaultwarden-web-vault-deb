@@ -35,6 +35,13 @@ export class NativeMessagingBackground {
         private runtimeBackground: RuntimeBackground, private i18nService: I18nService, private userService: UserService,
         private messagingService: MessagingService, private appIdService: AppIdService) {
             this.storageService.save(ConstantsService.biometricFingerprintValidated, false);
+
+            if (BrowserApi.isChromeApi) {
+                // Reload extension to activate nativeMessaging
+                chrome.permissions.onAdded.addListener((permissions) => {
+                    BrowserApi.reloadExtension(null);
+                });
+            }
         }
 
     async connect() {
@@ -106,6 +113,13 @@ export class NativeMessagingBackground {
                         }
                         break;
                     }
+                    case 'wrongUserId':
+                        this.messagingService.send('showDialog', {
+                            text: this.i18nService.t('nativeMessagingWrongUserDesc'),
+                            title: this.i18nService.t('nativeMessagingWrongUserTitle'),
+                            confirmText: this.i18nService.t('ok'),
+                            type: 'error',
+                        });
                     default:
                         // Ignore since it belongs to another device
                         if (message.appId !== this.appId) {
@@ -247,7 +261,11 @@ export class NativeMessagingBackground {
         this.publicKey = publicKey;
         this.privateKey = privateKey;
 
-        this.sendUnencrypted({command: 'setupEncryption', publicKey: Utils.fromBufferToB64(publicKey)});
+        this.sendUnencrypted({
+            command: 'setupEncryption',
+            publicKey: Utils.fromBufferToB64(publicKey),
+            userId: await this.userService.getUserId()
+        });
 
         return new Promise((resolve, reject) => this.secureSetupResolve = resolve);
     }

@@ -20,7 +20,7 @@
     "message": "Увайсці"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Адзіны ўваход у карпаратыўную сістэму (SSO)."
   },
   "cancel": {
     "message": "Скасаваць"
@@ -89,7 +89,7 @@
     "message": "Стварыць пароль (з капіяваннем)"
   },
   "noMatchingLogins": {
-    "message": "Няма падыходных імён карыстальнікаў."
+    "message": "Няма падыходных уліковых даных."
   },
   "vaultLocked": {
     "message": "Сховішча заблакіравана."
@@ -98,10 +98,10 @@
     "message": "Вы выйшлі са сховішча."
   },
   "autoFillInfo": {
-    "message": "Няма імён карыстальніка, даступных для аўтазапаўнення ў бягучую ўкладку браўзера."
+    "message": "Няма ўліковых даных, даступных для аўтазапаўнення ў бягучую ўкладку браўзера."
   },
   "addLogin": {
-    "message": "Дадаць імя карыстальніка"
+    "message": "Дадаць ўліковыя даныя"
   },
   "addItem": {
     "message": "Дадаць элемент"
@@ -188,7 +188,7 @@
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Аўтаматычна ствараць моцныя, унікальныя паролі для вашых імён карыстальніка."
+    "message": "Аўтаматычна ствараць моцныя, унікальныя паролі для вашых уліковых даных."
   },
   "bitWebVault": {
     "message": "Вэб-сховішча Bitwarden"
@@ -328,7 +328,7 @@
     "message": "Памылковы асноўны пароль"
   },
   "vaultTimeout": {
-    "message": "Таймаўт сховішча"
+    "message": "Тайм-аўт сховішча"
   },
   "lockNow": {
     "message": "Заблакіраваць зараз"
@@ -523,10 +523,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Адключыць апавяшчэнне аб даданні імя карыстальніка"
+    "message": "Адключыць апавяшчэнне аб даданні ўліковых даных"
   },
   "addLoginNotificationDesc": {
-    "message": "Апавяшчэнне аб даданні імя карыстальніка аўтаматычна прапануе вам захаваць новыя імёны карыстальніка ў сховішчы."
+    "message": "Апавяшчэнне аб даданні ўліковых даных аўтаматычна прапануе вам захаваць новыя ўліковыя даныя ў сховішчы."
   },
   "dontShowCardsCurrentTab": {
     "message": "Не паказваць карткі на панэлі ўкладак"
@@ -573,14 +573,14 @@
     "message": "Адключыць параметры кантэкстнага меню"
   },
   "disableContextMenuItemDesc": {
-    "message": "Параметры кантэкстнага меню забяспечваюць хуткі доступ да генератара пароляў і імёнам карыстальніка для сайта на бягучай укладцы."
+    "message": "Параметры кантэкстнага меню забяспечваюць хуткі доступ да генератара пароляў і ўліковых даных для сайта на бягучай укладцы."
   },
   "defaultUriMatchDetection": {
     "message": "Выяўленне супадзення URI па змаўчанні",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Абярыце спосаб па змаўчанні, які выкарыстоўваецца пры вызначэнні адпаведнасці URI для імён карыстальніка пры выкананні такіх дзеянняў, як аўтаматычнае запаўненне."
+    "message": "Выберыце спосаб па змаўчанні, які выкарыстоўваецца пры вызначэнні адпаведнасці URI для ўліковых даных пры выкананні такіх дзеянняў, як аўтаматычнае запаўненне."
   },
   "theme": {
     "message": "Тэма"
@@ -606,8 +606,14 @@
     "message": "УВАГА",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Экспартуемы файл утрымлівае даныя вашага сховішча ў незашыфраваным фармаце. Яго не варта захоўваць ці адпраўляць па небяспечным каналам (напрыклад, па электроннай пошце). Выдаліце яго адразу пасля выкарыстання."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Увядзіце ваш асноўны пароль для экспарту даных са сховішча."
@@ -709,7 +715,7 @@
     "message": "Гігіена пароляў, здароўе ўліковага запісу і справаздачы аб уцечках даных для забеспячэння бяспекі вашага сховішча."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP-генератар кодаў (2ФА) для імён карыстальнікаў вашага сховішча."
+    "message": "TOTP-генератар кодаў (2ФА) для ўліковых даных вашага сховішча."
   },
   "ppremiumSignUpSupport": {
     "message": "Прыярытэтная падтрымка."
@@ -745,7 +751,7 @@
     "message": "Адключыць аўтаматычнае капіяванне TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Калі да вашага імя карыстальніка прымацаваны ключ праверкі сапраўднасці, то код пацвярджэння TOTP будзе скапіяваны пры аўтазапаўненні імені карыстальніка."
+    "message": "Калі да вашых уліковых даных прымацаваны ключ праверкі сапраўднасці, то код пацвярджэння TOTP будзе скапіяваны пры аўтазапаўненні ўліковых даных."
   },
   "premiumRequired": {
     "message": "Патрабуецца прэміяльны статус"
@@ -796,7 +802,7 @@
     "message": "У гэтага ўліковага запісу ўключаны двухэтапны ўваход, аднак ні адзін з наладжаных варыянтаў не падтрымліваецца гэтым вэб-браўзерам."
   },
   "noTwoStepProviders2": {
-    "message": "Выкарыстоўвайце актуальын вэб-браўзар (напрыклад, Chrome) і/або дадайце дадатковыя варыянты праверкі сапраўднасці, якія падтрымліваюцца ў вэб-браўзерах (напрыклад, праграма для праверкі сапраўднасці)."
+    "message": "Выкарыстоўвайце актуальны вэб-браўзер (напрыклад, Chrome) і/або дадайце дадатковыя варыянты праверкі сапраўднасці, якія падтрымліваюцца ў вэб-браўзерах (напрыклад, праграма для праверкі сапраўднасці)."
   },
   "twoStepOptions": {
     "message": "Параметры двухэтапнага ўваходу"
@@ -883,19 +889,19 @@
     "message": "Гэта эксперыментальная функцыя. Выкарыстоўвайце на свой страх і рызыку."
   },
   "commandOpenPopup": {
-    "message": "Адчыніць сховішча ва ўсплываючым акне"
+    "message": "Адкрыць сховішча ва ўсплывальным акне"
   },
   "commandOpenSidebar": {
-    "message": "Адчыніць сховішча ў бакавой панэлі"
+    "message": "Адкрыць сховішча ў бакавой панэлі"
   },
   "commandAutofillDesc": {
-    "message": "Аўтазапаўненне апошняга скарыстанага імя карыстальніка для бягучага вэб-сайта."
+    "message": "Аўтазапаўненне апошніх скарыстаных уліковых даных для бягучага вэб-сайта."
   },
   "commandGeneratePasswordDesc": {
     "message": "Стварыць і капіяваць новы выпадковы парольу буфер абмену."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Заблакіраваць сховішча"
   },
   "privateModeMessage": {
     "message": "На жаль, гэта акно недаступна ў прыватным акне гэтага браўзара."
@@ -1069,10 +1075,10 @@
     "message": "Тып"
   },
   "typeLogin": {
-    "message": "Імя карыстальніка"
+    "message": "Уліковыя даныя"
   },
   "typeLogins": {
-    "message": "Імёны карыстальніка"
+    "message": "Уліковыя даныя"
   },
   "typeSecureNote": {
     "message": "Бяспечныя нататкі"
@@ -1108,7 +1114,7 @@
     "message": "Пасведчанні"
   },
   "logins": {
-    "message": "Імёны карыстальніка"
+    "message": "Уліковыя даныя"
   },
   "secureNotes": {
     "message": "Бяспечныя нататкі"
@@ -1250,6 +1256,15 @@
   "yourVaultIsLockedPinCode": {
     "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце PIN-код."
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "awaitDesktop": {
+    "message": "Awaiting confirmation from desktop"
+  },
+  "awaitDesktopDesc": {
+    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Блакіраваць асноўным паролем пры перазапуску браўзера"
   },
@@ -1266,7 +1281,7 @@
     "message": "На налады генератара ўплываюць адна або некалькі палітык арганізацый."
   },
   "vaultTimeoutAction": {
-    "message": "Дзеянне пры таймаўце"
+    "message": "Дзеянне пры тайм-аўце"
   },
   "lock": {
     "message": "Заблакіраваць",
@@ -1292,25 +1307,25 @@
     "message": "Аднавіць элемент"
   },
   "restoreItemConfirmation": {
-    "message": "Вы сапраўды жадаеце аднавіць гэты запіс?"
+    "message": "Вы сапраўды жадаеце аднавіць гэты элемент?"
   },
   "restoredItem": {
     "message": "Элемент адноўлены"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Выхад з сістэмы выдаліць доступ да сховішча і патрабуе анлайн-аутэнтыфікацію па заканчэнні перыяду чакання. Вы сапраўды жадаеце ўключыць гэтую наладу?"
+    "message": "Выхад з сістэмы выдаліць доступ да сховішча і спатрабуе праверку сапраўднасці анлайн па заканчэнні перыяду чакання. Вы сапраўды жадаеце ўключыць гэтую наладу?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Пацвярджэнне дзеяння для таймаута"
+    "message": "Пацвярджэнне дзеяння для тайм-аута"
   },
   "autoFillAndSave": {
     "message": "Запоўніць і захаваць"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Аўтазапоўнены элемент і захаваны URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Аўтазапоўнены элемент"
   },
   "setMasterPassword": {
     "message": "Задаць асноўны пароль"
@@ -1319,7 +1334,7 @@
     "message": "Згодна з адной або некалькімі палітыкамі арганізацыі неабходна, каб ваш асноўны пароль адказваў наступным патрабаванням:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Мінімальны ўзровень складанасці $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1328,7 +1343,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Мінімальная даўжыня $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1337,16 +1352,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Уключыць адну ці больш прапісных літар"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Уключыць адну ці больш малых літар"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Уключыць адну ці больш лічбаў"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Уключаць хаця б адзін з наступных спецыяльных сімвалаў $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1358,15 +1373,81 @@
     "message": "Ваш новы асноўны пароль не адпавядае патрабаванням палітыкі арганізацыі."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Ставіўшы гэты сцяжок вы пагаджаецеся з наступным:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Умовы выкарыстання і Палітыка прыватнасці не былі пацверджаны."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Умовы выкарыстання"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Палітыка прыватнасці"
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "ok": {
+    "message": "ОК"
+  },
+  "desktopSyncVerificationTitle": {
+    "message": "Desktop sync verification"
+  },
+  "desktopIntegrationVerificationText": {
+    "message": "Please verify that the desktop application shows this fingerprint: "
+  },
+  "desktopIntegrationDisabledTitle": {
+    "message": "Browser integration is not enabled"
+  },
+  "desktopIntegrationDisabledDesc": {
+    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+  },
+  "startDesktopTitle": {
+    "message": "Start the Bitwarden Desktop application"
+  },
+  "startDesktopDesc": {
+    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+  },
+  "errorEnableBiometricTitle": {
+    "message": "Unable to enable biometrics"
+  },
+  "errorEnableBiometricDesc": {
+    "message": "Action was canceled by the desktop application"
+  },
+  "nativeMessagingInvalidEncryptionDesc": {
+    "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
+  },
+  "nativeMessagingInvalidEncryptionTitle": {
+    "message": "Desktop communication interrupted"
+  },
+  "nativeMessagingWrongUserDesc": {
+    "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
+  },
+  "nativeMessagingWrongUserTitle": {
+    "message": "Account missmatch"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+  },
+  "biometricsNotSupportedTitle": {
+    "message": "Biometrics not supported"
+  },
+  "biometricsNotSupportedDesc": {
+    "message": "Browser biometrics is not supported on this device."
+  },
+  "nativeMessaginPermissionErrorTitle": {
+    "message": "Permission not provided"
+  },
+  "nativeMessaginPermissionErrorDesc": {
+    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }
