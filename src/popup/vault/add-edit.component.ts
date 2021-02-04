@@ -7,7 +7,6 @@ import {
 
 import { BrowserApi } from '../../browser/browserApi';
 
-import { PopupUtilsService } from '../services/popup-utils.service';
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
@@ -19,6 +18,8 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { UserService } from 'jslib/abstractions/user.service';
+
+import { PopupUtilsService } from '../services/popup-utils.service';
 
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 
