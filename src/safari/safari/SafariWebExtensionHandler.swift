@@ -21,6 +21,13 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             let pasteboard = NSPasteboard.general
             response.userInfo = [ SFExtensionMessageKey: pasteboard.pasteboardItems?.first?.string(forType: .string) as Any ]
             break
+        case "copyToClipboard":
+            guard let msg = message?["data"] as? String else {
+                return
+            }
+            let pasteboard = NSPasteboard.general
+            pasteboard.clearContents()
+            pasteboard.setString(msg, forType: .string)
         case "showPopover":
             SFSafariApplication.getActiveWindow { win in
                 win?.getToolbarItem(completionHandler: { item in
