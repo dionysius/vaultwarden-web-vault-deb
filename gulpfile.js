@@ -192,6 +192,11 @@ function safariCopyBuild(source, dest) {
             .on('error', reject)
             .pipe(filter(['**'].concat(filters.fonts)))
             .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'browser_safari')))
+            .pipe(gulpif('manifest.json', jeditor((manifest) => {
+                delete manifest.optional_permissions;
+                manifest.permissions.push("nativeMessaging");
+                return manifest;
+            })))
             .pipe(gulp.dest(dest))
             .on('end', resolve);
     });
