@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -15,10 +15,12 @@ import { AttachmentsComponent as BaseAttachmentsComponent } from 'jslib/angular/
     templateUrl: 'attachments.component.html',
 })
 export class AttachmentsComponent extends BaseAttachmentsComponent {
+    openedAttachmentsInPopup: boolean;
+
     constructor(cipherService: CipherService, i18nService: I18nService,
         cryptoService: CryptoService, userService: UserService,
         platformUtilsService: PlatformUtilsService, private location: Location,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute, private router: Router) {
         super(cipherService, i18nService, cryptoService, userService, platformUtilsService, window);
     }
 
@@ -30,9 +32,15 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
                 queryParamsSub.unsubscribe();
             }
         });
+
+        this.openedAttachmentsInPopup = history.length === 1;
     }
 
     back() {
         this.location.back();
+    }
+
+    close() {
+        window.close();
     }
 }

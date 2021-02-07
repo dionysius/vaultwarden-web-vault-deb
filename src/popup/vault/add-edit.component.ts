@@ -19,6 +19,8 @@ import { PolicyService } from 'jslib/abstractions/policy.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
+import { PopupUtilsService } from '../services/popup-utils.service';
+
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
@@ -30,6 +32,7 @@ import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/componen
 export class AddEditComponent extends BaseAddEditComponent {
     currentUris: string[];
     showAttachments = true;
+    openAttachmentsInPopup: boolean;
 
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
@@ -37,7 +40,8 @@ export class AddEditComponent extends BaseAddEditComponent {
         userService: UserService, collectionService: CollectionService,
         messagingService: MessagingService, private route: ActivatedRoute,
         private router: Router, private location: Location,
-        eventService: EventService, policyService: PolicyService) {
+        eventService: EventService, policyService: PolicyService,
+        private popupUtilsService: PopupUtilsService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
             userService, collectionService, messagingService, eventService, policyService);
     }
@@ -81,6 +85,8 @@ export class AddEditComponent extends BaseAddEditComponent {
             if (queryParamsSub != null) {
                 queryParamsSub.unsubscribe();
             }
+
+            this.openAttachmentsInPopup = this.popupUtilsService.inPopup(window);
         });
 
         if (!this.editMode) {
@@ -115,7 +121,14 @@ export class AddEditComponent extends BaseAddEditComponent {
 
     attachments() {
         super.attachments();
-        this.router.navigate(['/attachments'], { queryParams: { cipherId: this.cipher.id } });
+
+        if (this.openAttachmentsInPopup) {
+            const destinationUrl = this.router.createUrlTree(['/attachments'], { queryParams: { cipherId: this.cipher.id } }).toString();
+            const currentBaseUrl = window.location.href.replace(this.router.url, '');
+            this.popupUtilsService.popOut(window, currentBaseUrl + destinationUrl);
+        } else {
+            this.router.navigate(['/attachments'], { queryParams: { cipherId: this.cipher.id } });
+        }
     }
 
 
