@@ -52,6 +52,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 return
             }
             let panel = NSSavePanel()
+            panel.isFloatingPanel = true
             panel.canCreateDirectories = true
             panel.nameFieldStringValue = dlMsg.fileName
             panel.begin { response in
