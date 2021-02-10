@@ -46,7 +46,7 @@ import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
 
-import { SendComponent } from './send/send.component';
+import { SendGroupingsComponent } from './send/send-groupings.component';
 
 const routes: Routes = [
     {
@@ -273,7 +273,7 @@ const routes: Routes = [
             },
             {
                 path: 'send',
-                component: SendComponent,
+                component: SendGroupingsComponent,
                 canActivate: [AuthGuardService],
                 data: { state: 'tabs_send' },
             },

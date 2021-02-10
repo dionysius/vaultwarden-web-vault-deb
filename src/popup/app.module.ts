@@ -52,7 +52,7 @@ import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
 
-import { SendComponent } from './send/send.component';
+import { SendGroupingsComponent } from './send/send-groupings.component';
 
 import { A11yTitleDirective } from 'jslib/angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
@@ -73,6 +73,7 @@ import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
 import { ActionButtonsComponent } from './components/action-buttons.component';
 import { CiphersListComponent } from './components/ciphers-list.component';
 import { PopOutComponent } from './components/pop-out.component';
+import { SendListComponent } from './components/send-list.component';
 
 import { CalloutComponent } from 'jslib/angular/components/callout.component';
 import { IconComponent } from 'jslib/angular/components/icon.component';
@@ -211,7 +212,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
-        SendComponent,
+        SendGroupingsComponent,
+        SendListComponent,
         SettingsComponent,
         ShareComponent,
         StopClickDirective,

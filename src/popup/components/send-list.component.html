@@ -1,0 +1,51 @@
+<a *ngFor="let s of sends" (click)="selectSend(s)" href="#" appStopClick title="{{title}} - {{s.name}}"
+    class="box-content-row box-content-row-flex">
+    <div class="row-main">
+        <div class="app-vault-icon">
+            <div class="icon" aria-hidden="true">
+                <i class="fa fa-fw fa-lg fa-file-text-o" *ngIf="s.type === sendType.Text"></i>
+                <i class="fa fa-fw fa-lg fa-file-o" *ngIf="s.type === sendType.File"></i>
+            </div>
+        </div>
+        <div class="row-main-content">
+            <span class="text">
+                {{s.name}}
+                <ng-container *ngIf="s.disabled">
+                    <i class="fa fa-ban text-muted" title="{{'disabled' | i18n}}" aria-hidden="true"></i>
+                    <span class="sr-only">{{'disabled' | i18n}}</span>
+                </ng-container>
+                <ng-container *ngIf="s.password">
+                    <i class="fa fa-key text-muted" title="{{'passwordProtected' | i18n}}" aria-hidden="true"></i>
+                    <span class="sr-only">{{'passwordProtected' | i18n}}</span>
+                </ng-container>
+                <ng-container *ngIf="s.maxAccessCountReached">
+                    <i class="fa fa-warning text-muted" title="{{'maxAccessCountReached' | i18n}}"
+                        aria-hidden="true"></i>
+                    <span class="sr-only">{{'maxAccessCountReached' | i18n}}</span>
+                </ng-container>
+                <ng-container *ngIf="s.expired">
+                    <i class="fa fa-clock-o text-muted" title="{{'expired' | i18n}}" aria-hidden="true"></i>
+                    <span class="sr-only">{{'expired' | i18n}}</span>
+                </ng-container>
+                <ng-container *ngIf="s.pendingDelete">
+                    <i class="fa fa-trash text-muted" title="{{'pendingDeletion' | i18n}}" aria-hidden="true"></i>
+                    <span class="sr-only">{{'pendingDeletion' | i18n}}</span>
+                </ng-container>
+            </span>
+            <span class="detail">{{s.deletionDate | date:'medium'}}</span>
+        </div>
+    </div>
+    <div class="action-buttons">
+        <span class="row-btn" appStopClick appStopProp appA11yTitle="{{'copySendLink' | i18n}}"
+            (click)="copySendLink(s)">
+            <i class="fa fa-lg fa-copy" aria-hidden="true"></i>
+        </span>
+        <span class="row-btn" appStopClick appStopProp appA11yTitle="{{'removePassword' | i18n}}"
+            (click)="removePassword(s)" *ngIf="s.password">
+            <i class="fa fa-lg fa-undo" aria-hidden="true"></i>
+        </span>
+        <span class="row-btn" appStopClick appStopProp appA11yTitle="{{'delete' | i18n}}" (click)="delete(s)">
+            <i class="fa fa-lg fa-trash-o" aria-hidden="true"></i>
+        </span>
+    </div>
+</a>
