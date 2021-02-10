@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', event => {
     let pageHref: string = null;
     let filledThisHref = false;
     let delayFillTimeout: number;

@@ -78,12 +78,12 @@ import TabsBackground from './tabs.background';
 import WebRequestBackground from './webRequest.background';
 import WindowsBackground from './windows.background';
 
+import { PopupUtilsService } from '../popup/services/popup-utils.service';
 import AutofillService from '../services/autofill.service';
 import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
 import I18nService from '../services/i18n.service';
-import { PopupUtilsService } from '../popup/services/popup-utils.service';
 
 import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
@@ -164,7 +164,7 @@ export default class MainBackground {
                         return Promise.reject(e);
                     }
 
-                    return promise.then((result) => result.response === 'unlocked');
+                    return promise.then(result => result.response === 'unlocked');
                 }
             });
         this.storageService = new BrowserStorageService();
@@ -279,7 +279,7 @@ export default class MainBackground {
         await this.webRequestBackground.init();
         await this.windowsBackground.init();
 
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             setTimeout(async () => {
                 await this.environmentService.setUrlsFromStorage();
                 await this.setIcon();
@@ -422,11 +422,11 @@ export default class MainBackground {
             return;
         }
 
-        const getStorage = (): Promise<any> => new Promise((resolve) => {
+        const getStorage = (): Promise<any> => new Promise(resolve => {
             chrome.storage.local.get(null, (o: any) => resolve(o));
         });
 
-        const clearStorage = (): Promise<void> => new Promise((resolve) => {
+        const clearStorage = (): Promise<void> => new Promise(resolve => {
             chrome.storage.local.clear(() => resolve());
         });
 
@@ -527,7 +527,7 @@ export default class MainBackground {
                 ciphers.sort((a, b) => this.cipherService.sortCiphersByLastUsedThenName(a, b));
 
                 if (contextMenuEnabled) {
-                    ciphers.forEach((cipher) => {
+                    ciphers.forEach(cipher => {
                         this.loadLoginContextMenuOptions(cipher);
                     });
                 }
@@ -560,7 +560,7 @@ export default class MainBackground {
 
         const tabs = await BrowserApi.getActiveTabs();
         if (tabs != null) {
-            tabs.forEach((tab) => {
+            tabs.forEach(tab => {
                 if (tab.id != null) {
                     this.browserActionSetBadgeText('', tab.id);
                     this.sidebarActionSetBadgeText('', tab.id);
@@ -703,7 +703,7 @@ export default class MainBackground {
     // Browser API Helpers
 
     private contextMenusRemoveAll() {
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             chrome.contextMenus.removeAll(() => {
                 resolve();
                 if (chrome.runtime.lastError) {
@@ -714,7 +714,7 @@ export default class MainBackground {
     }
 
     private contextMenusCreate(options: any) {
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             chrome.contextMenus.create(options, () => {
                 resolve();
                 if (chrome.runtime.lastError) {
@@ -739,7 +739,7 @@ export default class MainBackground {
         if (this.platformUtilsService.isFirefox()) {
             await theAction.setIcon(options);
         } else {
-            return new Promise((resolve) => {
+            return new Promise(resolve => {
                 theAction.setIcon(options, () => resolve());
             });
         }

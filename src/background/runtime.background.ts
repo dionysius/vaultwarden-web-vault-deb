@@ -4,10 +4,7 @@ import { CipherView } from 'jslib/models/view/cipherView';
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 import { LoginView } from 'jslib/models/view/loginView';
 
-import { AutofillService } from '../services/abstractions/autofill.service';
-import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
-import { ConstantsService } from 'jslib/services/constants.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { NotificationsService } from 'jslib/abstractions/notifications.service';
@@ -16,6 +13,9 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 import { SystemService } from 'jslib/abstractions/system.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { ConstantsService } from 'jslib/services/constants.service';
+import { AutofillService } from '../services/abstractions/autofill.service';
+import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 
 import { BrowserApi } from '../browser/browserApi';
 
@@ -185,7 +185,7 @@ export default class RuntimeBackground {
         const totpCode = await this.autofillService.doAutoFill({
             cipher: this.main.loginToAutoFill,
             pageDetails: this.pageDetailsToAutoFill,
-            fillNewPassword: true
+            fillNewPassword: true,
         });
 
         if (totpCode != null) {
@@ -306,7 +306,7 @@ export default class RuntimeBackground {
         }
 
         const ciphers = await this.cipherService.getAllDecryptedForUrl(loginInfo.url);
-        const usernameMatches = ciphers.filter((c) =>
+        const usernameMatches = ciphers.filter(c =>
             c.login.username != null && c.login.username.toLowerCase() === normalizedUsername);
         if (usernameMatches.length === 0) {
             const disabledAddLogin = await this.storageService.get<boolean>(
@@ -354,7 +354,7 @@ export default class RuntimeBackground {
         let id: string = null;
         const ciphers = await this.cipherService.getAllDecryptedForUrl(changeData.url);
         if (changeData.currentPassword != null) {
-            const passwordMatches = ciphers.filter((c) => c.login.password === changeData.currentPassword);
+            const passwordMatches = ciphers.filter(c => c.login.password === changeData.currentPassword);
             if (passwordMatches.length === 1) {
                 id = passwordMatches[0].id;
             }

@@ -1,4 +1,4 @@
-import { NgModule, Injectable } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import {
     ActivatedRouteSnapshot,
     RouteReuseStrategy,
@@ -17,12 +17,12 @@ import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { SetPasswordComponent } from './accounts/set-password.component';
+import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
-import { SsoComponent } from './accounts/sso.component';
 
-import { PasswordGeneratorComponent } from './generator/password-generator.component';
 import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
+import { PasswordGeneratorComponent } from './generator/password-generator.component';
 
 import { PrivateModeComponent } from './private-mode.component';
 import { TabsComponent } from './tabs.component';

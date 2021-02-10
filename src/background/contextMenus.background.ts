@@ -66,7 +66,7 @@ export default class ContextMenusBackground {
         }
 
         const ciphers = await this.cipherService.getAllDecrypted();
-        const cipher = ciphers.find((c) => c.id === id);
+        const cipher = ciphers.find(c => c.id === id);
         if (cipher == null) {
             return;
         }

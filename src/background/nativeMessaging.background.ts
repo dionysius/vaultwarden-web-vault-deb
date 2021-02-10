@@ -1,12 +1,12 @@
-import { ConstantsService } from 'jslib/services/constants.service';
 import { AppIdService } from 'jslib/abstractions/appId.service';
-import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { ConstantsService } from 'jslib/services/constants.service';
 
 import { Utils } from 'jslib/misc/utils';
 import { SymmetricCryptoKey } from 'jslib/models/domain';
@@ -38,7 +38,7 @@ export class NativeMessagingBackground {
 
             if (BrowserApi.isChromeApi) {
                 // Reload extension to activate nativeMessaging
-                chrome.permissions.onAdded.addListener((permissions) => {
+                chrome.permissions.onAdded.addListener(permissions => {
                     BrowserApi.reloadExtension(null);
                 });
             }
@@ -264,7 +264,7 @@ export class NativeMessagingBackground {
         this.sendUnencrypted({
             command: 'setupEncryption',
             publicKey: Utils.fromBufferToB64(publicKey),
-            userId: await this.userService.getUserId()
+            userId: await this.userService.getUserId(),
         });
 
         return new Promise((resolve, reject) => this.secureSetupResolve = resolve);

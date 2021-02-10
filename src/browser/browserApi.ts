@@ -32,7 +32,7 @@ export class BrowserApi {
     }
 
     static async tabsQuery(options: any): Promise<any[]> {
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             chrome.tabs.query(options, (tabs: any[]) => {
                 resolve(tabs);
             });
@@ -65,7 +65,7 @@ export class BrowserApi {
             return;
         }
 
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             chrome.tabs.sendMessage(tab.id, obj, options, () => {
                 if (chrome.runtime.lastError) {
                     // Some error happened
@@ -155,7 +155,7 @@ export class BrowserApi {
 
     static reloadOpenWindows() {
         const views = chrome.extension.getViews() as Window[];
-        views.filter((w) => w.location.href != null).forEach((w) => {
+        views.filter(w => w.location.href != null).forEach(w => {
             w.location.reload();
         });
     }

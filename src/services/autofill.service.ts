@@ -41,14 +41,14 @@ const FirstnameFieldNames: string[] = [
     // English
     'f-name', 'first-name', 'given-name', 'first-n',
     // German
-    'vorname'
+    'vorname',
 ];
 
 const LastnameFieldNames: string[] = [
     // English
     'l-name', 'last-name', 's-name', 'surname', 'family-name', 'family-n', 'last-n',
     // German
-    'nachname', 'familienname'
+    'nachname', 'familienname',
 ];
 
 const ExcludedAutofillTypes: string[] = ['radio', 'checkbox', 'hidden', 'file', 'button', 'image', 'reset', 'search'];
@@ -150,7 +150,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 continue;
             }
 
-            const formPasswordFields = passwordFields.filter((pf) => formKey === pf.form);
+            const formPasswordFields = passwordFields.filter(pf => formKey === pf.form);
             if (formPasswordFields.length > 0) {
                 let uf = this.findUsernameField(pageDetails, formPasswordFields[0], false, false, false);
                 if (uf == null) {
@@ -215,7 +215,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 return;
             }
 
-            totpPromise = this.totpService.isAutoCopyEnabled().then((enabled) => {
+            totpPromise = this.totpService.isAutoCopyEnabled().then(enabled => {
                 if (enabled) {
                     return this.totpService.getCode(options.cipher.login.totp);
                 }
@@ -369,13 +369,13 @@ export default class AutofillService implements AutofillServiceInterface {
             }
 
             const passwordFieldsForForm: AutofillField[] = [];
-            passwordFields.forEach((passField) => {
+            passwordFields.forEach(passField => {
                 if (formKey === passField.form) {
                     passwordFieldsForForm.push(passField);
                 }
             });
 
-            passwordFields.forEach((passField) => {
+            passwordFields.forEach(passField => {
                 pf = passField;
                 passwords.push(pf);
 
@@ -425,7 +425,7 @@ export default class AutofillService implements AutofillServiceInterface {
             });
         }
 
-        usernames.forEach((u) => {
+        usernames.forEach(u => {
             if (filledFields.hasOwnProperty(u.opid)) {
                 return;
             }
@@ -434,7 +434,7 @@ export default class AutofillService implements AutofillServiceInterface {
             this.fillByOpid(fillScript, u, login.username);
         });
 
-        passwords.forEach((p) => {
+        passwords.forEach(p => {
             if (filledFields.hasOwnProperty(p.opid)) {
                 return;
             }
@@ -666,7 +666,7 @@ export default class AutofillService implements AutofillServiceInterface {
         }
 
         let doesContain = false;
-        CardAttributesExtended.forEach((attr) => {
+        CardAttributesExtended.forEach(attr => {
             if (doesContain || !field.hasOwnProperty(attr) || !field[attr]) {
                 return;
             }
@@ -924,7 +924,7 @@ export default class AutofillService implements AutofillServiceInterface {
     private loadPasswordFields(pageDetails: AutofillPageDetails, canBeHidden: boolean, canBeReadOnly: boolean,
         mustBeEmpty: boolean, fillNewPassword: boolean) {
         const arr: AutofillField[] = [];
-        pageDetails.fields.forEach((f) => {
+        pageDetails.fields.forEach(f => {
             const isPassword = f.type === 'password';
             const valueIsLikePassword = (value: string) => {
                 if (value == null) {
@@ -938,7 +938,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 }
 
                 const ignoreList = ['onetimepassword', 'captcha', 'findanything'];
-                if (ignoreList.some((i) => cleanedValue.indexOf(i) > -1)) {
+                if (ignoreList.some(i => cleanedValue.indexOf(i) > -1)) {
                     return false;
                 }
 

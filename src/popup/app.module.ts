@@ -22,9 +22,9 @@ import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { SetPasswordComponent } from './accounts/set-password.component';
+import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
-import { SsoComponent } from './accounts/sso.component';
 
 import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
 import { PasswordGeneratorComponent } from './generator/password-generator.component';
@@ -223,7 +223,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorComponent,
         SsoComponent,
         ViewComponent,
-        SetPasswordComponent
+        SetPasswordComponent,
     ],
     entryComponents: [],
     providers: [

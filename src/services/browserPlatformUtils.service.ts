@@ -158,7 +158,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             type: type,
             dialogId: dialogId,
         });
-        return new Promise<boolean>((resolve) => {
+        return new Promise<boolean>(resolve => {
             this.showDialogResolves.set(dialogId, { resolve: resolve, date: new Date() });
         });
     }
@@ -190,7 +190,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         }
         const clearing = options ? !!options.clearing : false;
         const clearMs: number = options && options.clearMs ? options.clearMs : null;
-        
+
         if (this.isSafari()) {
             SafariApp.sendMessageToApp('copyToClipboard', text).then(() => {
                 if (!clearing && this.clipboardWriteCallback != null) {
@@ -285,7 +285,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
                 deleteIds.push(key);
             }
         });
-        deleteIds.forEach((id) => {
+        deleteIds.forEach(id => {
             this.showDialogResolves.delete(id);
         });
     }

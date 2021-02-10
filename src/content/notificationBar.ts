@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', event => {
     if (window.location.hostname.indexOf('vault.bitwarden.com') > -1) {
         return;
     }
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function observeDom() {
         const bodies = document.querySelectorAll('body');
         if (bodies && bodies.length > 0) {
-            observer = new MutationObserver((mutations) => {
+            observer = new MutationObserver(mutations => {
                 if (mutations == null || mutations.length === 0 || pageHref !== window.location.href) {
                     return;
                 }
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     } else {
                         const buttonText = getButtonText(getSubmitButton(form, changePasswordButtonNames));
                         const matches = Array.from(changePasswordButtonContainsNames)
-                            .filter((n) => buttonText.indexOf(n) > -1);
+                            .filter(n => buttonText.indexOf(n) > -1);
                         if (matches.length > 0) {
                             curPass = passwords[0];
                             newPass = passwords[1];
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const possibleSubmitButtons = Array.from(wrappingEl.querySelectorAll('a, span, button[type="button"], ' +
                 'input[type="button"], button:not([type])')) as HTMLElement[];
             let typelessButton: HTMLElement = null;
-            possibleSubmitButtons.forEach((button) => {
+            possibleSubmitButtons.forEach(button => {
                 if (submitButton != null || button == null || button.tagName == null) {
                     return;
                 }

@@ -139,7 +139,7 @@ export class AppComponent implements OnInit {
 
         BrowserApi.messageListener('app.component', (window as any).bitwardenPopupMainMessageListener);
 
-        this.router.events.subscribe((event) => {
+        this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
                 const url = event.urlAfterRedirects || event.url || '';
                 if (url.startsWith('/tabs/') && (window as any).previousPopupUrl != null &&
