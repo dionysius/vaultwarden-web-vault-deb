@@ -1,4 +1,5 @@
 import {
+    ChangeDetectorRef,
     Component,
     NgZone,
 } from '@angular/core';
@@ -46,21 +47,24 @@ export class SendGroupingsComponent extends BaseSendComponent {
     private loadedTimeout: number;
 
     constructor(sendService: SendService, i18nService: I18nService,
-        platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService,
-        broadcasterService: BroadcasterService, ngZone: NgZone, policyService: PolicyService,
-        userService: UserService, searchService: SearchService,
+        platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService, ngZone: NgZone,
+        policyService: PolicyService, userService: UserService, searchService: SearchService,
         private popupUtils: PopupUtilsService, private stateService: StateService,
-        private route: ActivatedRoute, private router: Router, private syncService: SyncService) {
-        super(sendService, i18nService, platformUtilsService, environmentService, broadcasterService, ngZone,
-            searchService, policyService, userService);
+        private route: ActivatedRoute, private router: Router, private syncService: SyncService,
+        private changeDetectorRef: ChangeDetectorRef, private broadcasterService: BroadcasterService) {
+        super(sendService, i18nService, platformUtilsService, environmentService, ngZone, searchService,
+            policyService, userService);
         super.onSuccessfulLoad = async () => {
             this.calculateTypeCounts();
+            this.selectAll();
         };
     }
 
     async ngOnInit() {
         // Determine Header details
         this.showLeftHeader = !(this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox());
+        // Clear state of Send Type Component
+        this.stateService.remove('SendTypeComponent');
         // Let super class finish
         await super.ngOnInit();
         // Handle State Restore if necessary
@@ -83,6 +87,23 @@ export class SendGroupingsComponent extends BaseSendComponent {
         if (!this.syncService.syncInProgress || restoredScopeState) {
             window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
         }
+
+        // Load all sends if sync completed in background
+        this.broadcasterService.subscribe(ComponentId, (message: any) => {
+            this.ngZone.run(async () => {
+                switch (message.command) {
+                    case 'syncCompleted':
+                        window.setTimeout(() => {
+                            this.load();
+                        }, 500);
+                        break;
+                    default:
+                        break;
+                }
+
+                this.changeDetectorRef.detectChanges();
+            });
+        });
     }
 
     ngOnDestroy() {
@@ -92,12 +113,12 @@ export class SendGroupingsComponent extends BaseSendComponent {
         }
         // Save state
         this.saveState();
-        // Allow super to finish
-        super.ngOnDestroy();
+        // Unsubscribe
+        this.broadcasterService.unsubscribe(ComponentId);
     }
 
     async selectType(type: SendType) {
-        // TODO this.router.navigate(['/send-type-list'], { queryParams: { type: type } });
+        this.router.navigate(['/send-type'], { queryParams: { type: type } });
     }
 
     async selectSend(s: SendView) {
@@ -115,7 +136,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
     private calculateTypeCounts() {
         // Create type counts
         const typeCounts = new Map<SendType, number>();
-        this.sends.forEach((s) => {
+        this.sends.forEach(s => {
             if (typeCounts.has(s.type)) {
                 typeCounts.set(s.type, typeCounts.get(s.type) + 1);
             } else {

@@ -47,6 +47,7 @@ import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
 
 import { SendGroupingsComponent } from './send/send-groupings.component';
+import { SendTypeComponent } from './send/send-type.component';
 
 const routes: Routes = [
     {
@@ -235,6 +236,12 @@ const routes: Routes = [
         component: AddEditComponent,
         canActivate: [AuthGuardService],
         data: { state: 'clone-cipher' },
+    },
+    {
+        path: 'send-type',
+        component: SendTypeComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'send-type' },
     },
     {
         path: 'tabs',

@@ -187,4 +187,7 @@ export const routerTransition = trigger('routerTransition', [
     transition('premium => tabs', outSlideRight),
 
     transition('tabs => lock', inSlideDown),
+
+    transition('tabs => send-type', inSlideLeft),
+    transition('send-type => tabs', outSlideRight),
 ]);

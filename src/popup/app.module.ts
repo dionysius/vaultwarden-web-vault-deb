@@ -53,6 +53,7 @@ import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
 
 import { SendGroupingsComponent } from './send/send-groupings.component';
+import { SendTypeComponent } from './send/send-type.component';
 
 import { A11yTitleDirective } from 'jslib/angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
@@ -214,6 +215,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         SelectCopyDirective,
         SendGroupingsComponent,
         SendListComponent,
+        SendTypeComponent,
         SettingsComponent,
         ShareComponent,
         StopClickDirective,
