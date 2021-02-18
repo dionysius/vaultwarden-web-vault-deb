@@ -357,4 +357,11 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
         return true;
     }
+
+    closeOnEsc(e: KeyboardEvent) {
+        // If input not empty, use browser default behavior of clearing input instead
+		if (e.key === 'Escape' && (this.searchText == null || this.searchText === '')) {
+            BrowserApi.closePopup(window);
+        }
+    }
 }
