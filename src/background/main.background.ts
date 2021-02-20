@@ -19,7 +19,6 @@ import {
     TokenService,
     TotpService,
     UserService,
-    VaultTimeoutService,
 } from 'jslib/services';
 import { ConsoleLogService } from 'jslib/services/consoleLog.service';
 import { EventService } from 'jslib/services/event.service';
@@ -84,6 +83,7 @@ import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
 import I18nService from '../services/i18n.service';
+import VaultTimeoutService from '../services/vaultTimeout.service';
 
 import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 

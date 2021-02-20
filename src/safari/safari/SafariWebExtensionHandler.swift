@@ -73,6 +73,11 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 }
             }
             break
+        case "sleep":
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                context.completeRequest(returningItems: [response], completionHandler: nil)
+            }
+            return
 
         default:
             return
