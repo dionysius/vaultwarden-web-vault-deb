@@ -254,10 +254,12 @@ export default class AutofillService implements AutofillServiceInterface {
             }
         }
 
+        const shouldCopyTotpOnAutoFill = await this.totpService.isAutoCopyOnAutoFillEnabled();
+
         const totpCode = await this.doAutoFill({
             cipher: cipher,
             pageDetails: pageDetails,
-            skipTotp: !fromCommand,
+            skipTotp: !fromCommand && !shouldCopyTotpOnAutoFill,
             skipLastUsed: !fromCommand,
             skipUsernameOnlyFill: !fromCommand,
             onlyEmptyFields: !fromCommand,
