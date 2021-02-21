@@ -22,6 +22,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 })
 export class OptionsComponent implements OnInit {
     disableFavicon = false;
+    disableBadgeCounter = false;
     enableAutoFillOnPageLoad = false;
     disableAutoTotpCopy = false;
     disableContextMenuItem = false;
@@ -86,6 +87,8 @@ export class OptionsComponent implements OnInit {
 
         this.disableFavicon = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
 
+        this.disableBadgeCounter = await this.storageService.get<boolean>(ConstantsService.disableBadgeCounterKey);
+
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
 
         const defaultUriMatch = await this.storageService.get<UriMatchType>(ConstantsService.defaultUriMatch);
@@ -127,6 +130,12 @@ export class OptionsComponent implements OnInit {
         await this.storageService.save(ConstantsService.disableFaviconKey, this.disableFavicon);
         await this.stateService.save(ConstantsService.disableFaviconKey, this.disableFavicon);
         this.callAnalytics('Favicon', !this.disableFavicon);
+    }
+
+    async updateDisableBadgeCounter() {
+        await this.storageService.save(ConstantsService.disableBadgeCounterKey, this.disableBadgeCounter);
+        await this.stateService.save(ConstantsService.disableBadgeCounterKey, this.disableBadgeCounter);
+        this.callAnalytics('Badge Counter', !this.disableBadgeCounter);
     }
 
     async updateShowCards() {

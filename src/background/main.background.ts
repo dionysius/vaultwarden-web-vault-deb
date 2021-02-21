@@ -543,8 +543,12 @@ export default class MainBackground {
                     }
                 }
 
-                this.browserActionSetBadgeText(theText, tabId);
-                this.sidebarActionSetBadgeText(theText, tabId);
+                const disableBadgeCounter = await this.storageService.get<boolean>(ConstantsService.disableBadgeCounterKey);
+                if (!disableBadgeCounter) {
+                    this.sidebarActionSetBadgeText(theText, tabId);
+                    this.browserActionSetBadgeText(theText, tabId);
+                }
+
                 return;
             } catch { }
         }

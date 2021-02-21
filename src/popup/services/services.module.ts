@@ -86,8 +86,11 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
         }
 
         if (BrowserApi.getBackgroundPage() != null) {
-            stateService.save(ConstantsService.disableFaviconKey,
+            await stateService.save(ConstantsService.disableFaviconKey,
                 await storageService.get<boolean>(ConstantsService.disableFaviconKey));
+
+            await stateService.save(ConstantsService.disableBadgeCounterKey,
+                await storageService.get<boolean>(ConstantsService.disableBadgeCounterKey));
 
             let theme = await storageService.get<string>(ConstantsService.themeKey);
             if (theme == null) {
