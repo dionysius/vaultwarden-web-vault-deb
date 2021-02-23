@@ -5,7 +5,6 @@ import {
 } from '@angular/core';
 
 import {
-    ActivatedRoute,
     Router,
 } from '@angular/router';
 
@@ -50,7 +49,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
         platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService, ngZone: NgZone,
         policyService: PolicyService, userService: UserService, searchService: SearchService,
         private popupUtils: PopupUtilsService, private stateService: StateService,
-        private route: ActivatedRoute, private router: Router, private syncService: SyncService,
+        private router: Router, private syncService: SyncService,
         private changeDetectorRef: ChangeDetectorRef, private broadcasterService: BroadcasterService) {
         super(sendService, i18nService, platformUtilsService, environmentService, ngZone, searchService,
             policyService, userService);
@@ -122,11 +121,11 @@ export class SendGroupingsComponent extends BaseSendComponent {
     }
 
     async selectSend(s: SendView) {
-        // TODO -> Route to edit send
+        this.router.navigate(['/edit-send'], { queryParams: { sendId: s.id } });
     }
 
     async addSend() {
-        // TODO -> Route to create send
+        this.router.navigate(['/add-send']);
     }
 
     showSearching() {

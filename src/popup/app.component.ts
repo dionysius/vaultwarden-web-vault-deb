@@ -145,6 +145,7 @@ export class AppComponent implements OnInit {
                 if (url.startsWith('/tabs/') && (window as any).previousPopupUrl != null &&
                     (window as any).previousPopupUrl.startsWith('/tabs/')) {
                     this.stateService.remove('GroupingsComponent');
+                    this.stateService.remove('GroupingsComponentScope');
                     this.stateService.remove('CiphersComponent');
                     this.stateService.remove('SendGroupingsComponent');
                     this.stateService.remove('SendGroupingsComponentScope');
@@ -152,7 +153,6 @@ export class AppComponent implements OnInit {
                 }
                 if (url.startsWith('/tabs/')) {
                     this.stateService.remove('addEditCipherInfo');
-                    // TODO Remove any Send add/edit state information (?)
                 }
                 (window as any).previousPopupUrl = url;
 

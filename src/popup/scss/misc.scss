@@ -302,6 +302,14 @@ app-vault-icon {
             }
         }
     }
+
+    &.clickable {
+        &:hover, &:focus, &.active {
+            @include themify($themes) {
+                background-color: themed('boxBackgroundHoverColor');
+            }
+        }
+    }
 }
 
 input[type="password"]::-ms-reveal {

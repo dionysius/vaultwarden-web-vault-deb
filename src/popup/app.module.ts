@@ -52,6 +52,7 @@ import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
 
+import { SendAddEditComponent } from './send/send-add-edit.component';
 import { SendGroupingsComponent } from './send/send-groupings.component';
 import { SendTypeComponent } from './send/send-type.component';
 
@@ -81,6 +82,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
 
 import {
     CurrencyPipe,
+    DatePipe,
     registerLocaleData,
 } from '@angular/common';
 import localeBe from '@angular/common/locales/be';
@@ -213,6 +215,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
+        SendAddEditComponent,
         SendGroupingsComponent,
         SendListComponent,
         SendTypeComponent,
@@ -232,6 +235,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
     entryComponents: [],
     providers: [
         CurrencyPipe,
+        DatePipe,
     ],
     bootstrap: [AppComponent],
 })
