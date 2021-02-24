@@ -132,7 +132,17 @@ export class SendTypeComponent extends BaseSendComponent {
     }
 
     async addSend() {
+        if (this.disableSend) {
+            return;
+        }
         this.router.navigate(['/add-send'], { queryParams: { type: this.type } });
+    }
+
+    async removePassword(s: SendView): Promise<boolean> {
+        if (this.disableSend) {
+            return;
+        }
+        super.removePassword(s);
     }
 
     back() {

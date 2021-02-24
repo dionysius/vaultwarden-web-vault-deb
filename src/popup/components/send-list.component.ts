@@ -16,6 +16,7 @@ import { SendType } from 'jslib/enums/sendType';
 export class SendListComponent {
     @Input() sends: SendView[];
     @Input() title: string;
+    @Input() disabledByPolicy = false;
     @Output() onSelected = new EventEmitter<SendView>();
     @Output() onCopySendLink = new EventEmitter<SendView>();
     @Output() onRemovePassword = new EventEmitter<SendView>();

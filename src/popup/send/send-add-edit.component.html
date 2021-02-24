@@ -7,17 +7,21 @@
             <span class="title">{{title}}</span>
         </div>
         <div class="right">
-            <button type="submit" appBlurClick [disabled]="form.loading">
+            <button type="submit" appBlurClick [disabled]="form.loading || disableSend">
                 <span [hidden]="form.loading">{{'save' | i18n}}</span>
                 <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
         </div>
     </header>
     <content *ngIf="send">
+        <!-- Policy Banner -->
+        <app-callout type="warning" title="{{'sendDisabled' | i18n}}" *ngIf="disableSend">
+            {{'sendDisabledWarning' | i18n}}
+        </app-callout>
         <!-- File Warning -->
         <app-callout type="warning" icon="fa fa-external-link fa-rotate-270 fa-fw" [clickable]="true"
-            title="{{'sendFileCalloutHeader' | i18n}}" *ngIf="showFilePopoutMessage && send.type === sendType.File"
-            (click)="popOutWindow()">
+            title="{{'sendFileCalloutHeader' | i18n}}"
+            *ngIf="showFilePopoutMessage && send.type === sendType.File && !disableSend" (click)="popOutWindow()">
             <div *ngIf="showFirefoxFileWarning">{{'sendFirefoxFileWarning' | i18n}}</div>
             <div *ngIf="showSafariFileWarning">{{'sendSafariFileWarning' | i18n}}</div>
         </app-callout>
@@ -26,7 +30,7 @@
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="name">{{'name' | i18n}}</label>
-                    <input id="name" type="text" name="Name" [(ngModel)]="send.name">
+                    <input id="name" type="text" name="Name" [(ngModel)]="send.name" [readonly]="disableSend">
                 </div>
             </div>
             <div class="box-footer">
@@ -41,7 +45,8 @@
                     <div class="radio-group text-default" appBoxRow name="SendTypeOptions"
                         *ngFor="let o of typeOptions">
                         <input type="radio" [(ngModel)]="send.type" name="Type_{{o.value}}" id="type_{{o.value}}"
-                            [value]="o.value" (change)="typeChanged()" [checked]="send.type === o.value">
+                            [value]="o.value" (change)="typeChanged()" [checked]="send.type === o.value"
+                            [readonly]="disableSend">
                         <label for="type_{{o.value}}">
                             {{o.name}}
                         </label>
@@ -58,7 +63,7 @@
                 </div>
                 <div class="box-content-row" *ngIf="showFileSelector">
                     <label for="file">{{'file' | i18n}}</label>
-                    <input type="file" id="file" name="file" required>
+                    <input type="file" id="file" name="file" required [readonly]="disableSend">
                 </div>
             </div>
             <div class="box-footer" *ngIf="showFileSelector">
@@ -70,7 +75,8 @@
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="text">{{'sendTypeText' | i18n}}</label>
-                    <textarea id="text" name="Text" rows="6" [(ngModel)]="send.text.text"></textarea>
+                    <textarea id="text" name="Text" rows="6" [(ngModel)]="send.text.text"
+                        [readonly]="disableSend"></textarea>
                 </div>
             </div>
             <div class="box-footer">
@@ -79,7 +85,8 @@
             <div class="box-content">
                 <div class="box-content-row box-content-row-checkbox" appBoxRow>
                     <label for="hideText">{{'sendHideText' | i18n}}</label>
-                    <input id="hideText" type="checkbox" name="HideText" [(ngModel)]="send.text.hidden">
+                    <input id="hideText" type="checkbox" name="HideText" [(ngModel)]="send.text.hidden"
+                        [disabled]="disableSend">
                 </div>
             </div>
         </div>
@@ -92,7 +99,8 @@
                 <!-- Copy Link on Save -->
                 <div class="box-content-row box-content-row-checkbox" appBoxRow>
                     <label for="copyOnSave">{{'sendShareDesc' | i18n}}</label>
-                    <input id="copyOnSave" type="checkbox" name="CopyOnSave" [(ngModel)]="copyLink">
+                    <input id="copyOnSave" type="checkbox" name="CopyOnSave" [(ngModel)]="copyLink"
+                        [disabled]="disableSend">
                 </div>
             </div>
         </div>
@@ -122,7 +130,8 @@
                     <div class="box-content-row" *ngIf="editMode" appBoxRow>
                         <label for="editDeletionDate">{{'deletionDate' | i18n}}</label>
                         <input id="editDeletionDate" type="datetime-local" name="EditDeletionDate"
-                            [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
+                            [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM"
+                            [readonly]="disableSend">
                     </div>
                 </div>
                 <div class="box-footer">
@@ -147,12 +156,12 @@
                     <div class="box-content-row" *ngIf="editMode" appBoxRow>
                         <div class="flex-label">
                             <label for="editExpirationDate">{{'expirationDate' | i18n}}</label>
-                            <a href="#" appStopClick (click)="clearExpiration()">
+                            <a *ngIf="!disableSend" href="#" appStopClick (click)="clearExpiration()">
                                 {{'clear' | i18n}}
                             </a>
                         </div>
                         <input id="editExpirationDate" type="datetime-local" name="EditExpirationDate"
-                            [(ngModel)]="expirationDate" placeholder="MM/DD/YYYY HH:MM AM/PM">
+                            [(ngModel)]="expirationDate" placeholder="MM/DD/YYYY HH:MM AM/PM" [readonly]="disableSend">
                     </div>
                 </div>
                 <div class="box-footer">
@@ -165,7 +174,7 @@
                     <div class="box-content-row" appBoxRow>
                         <label for="maximumAccessCount">{{'maximumAccessCount' | i18n}}</label>
                         <input id="maximumAccessCount" min="1" type="number" name="MaximumAccessCount"
-                            [(ngModel)]="send.maxAccessCount">
+                            [(ngModel)]="send.maxAccessCount" [readonly]="disableSend">
                     </div>
                 </div>
                 <div class="box-footer">
@@ -190,9 +199,9 @@
                             <label for="password" *ngIf="hasPassword">{{'newPassword' | i18n}}</label>
                             <label for="password" *ngIf="!hasPassword">{{'password' | i18n}}</label>
                             <input id="password" type="{{showPassword ? 'text' : 'password'}}" name="Password"
-                                class="monospaced" [(ngModel)]="password" appInputVerbatim>
+                                class="monospaced" [(ngModel)]="password" appInputVerbatim [readonly]="disableSend">
                         </div>
-                        <div class="action-buttons">
+                        <div class="action-buttons" *ngIf="!disableSend">
                             <a class="row-btn" href="#" appStopClick appBlurClick
                                 appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePasswordVisible()">
                                 <i class="fa fa-lg" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"
@@ -210,7 +219,8 @@
                 <div class="box-content">
                     <div class="box-content-row" appBoxRow>
                         <label for="notes">{{'notes' | i18n}}</label>
-                        <textarea id="notes" name="Notes" rows="6" [(ngModel)]="send.notes"></textarea>
+                        <textarea id="notes" name="Notes" rows="6" [(ngModel)]="send.notes"
+                            [readonly]="disableSend"></textarea>
                     </div>
                 </div>
                 <div class="box-footer">
@@ -222,7 +232,8 @@
                 <div class="box-content">
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="disableSend">{{'sendDisableDesc' | i18n}}</label>
-                        <input id="disableSend" type="checkbox" name="DisableSend" [(ngModel)]="send.disabled">
+                        <input id="disableSend" type="checkbox" name="DisableSend" [(ngModel)]="send.disabled"
+                            [disabled]="disableSend">
                     </div>
                 </div>
             </div>

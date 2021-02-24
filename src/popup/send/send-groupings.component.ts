@@ -125,7 +125,17 @@ export class SendGroupingsComponent extends BaseSendComponent {
     }
 
     async addSend() {
+        if (this.disableSend) {
+            return;
+        }
         this.router.navigate(['/add-send']);
+    }
+
+    async removePassword(s: SendView): Promise<boolean> {
+        if (this.disableSend) {
+            return;
+        }
+        super.removePassword(s);
     }
 
     showSearching() {

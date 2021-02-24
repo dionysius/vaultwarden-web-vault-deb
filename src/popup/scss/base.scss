@@ -356,6 +356,16 @@ content {
     &.no-header {
         top: 0;
     }
+
+    &.flex {
+        display: flex;
+        flex-flow: column;
+        height: calc(100% - 44px);
+
+        &.tab-page {
+            height: calc(100% - 99px);
+        }
+    }
 }
 
 .tab-page {
