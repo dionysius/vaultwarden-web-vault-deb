@@ -135,7 +135,6 @@ export class OptionsComponent implements OnInit {
     async updateDisableBadgeCounter() {
         await this.storageService.save(ConstantsService.disableBadgeCounterKey, this.disableBadgeCounter);
         await this.stateService.save(ConstantsService.disableBadgeCounterKey, this.disableBadgeCounter);
-        this.callAnalytics('Badge Counter', !this.disableBadgeCounter);
     }
 
     async updateShowCards() {
