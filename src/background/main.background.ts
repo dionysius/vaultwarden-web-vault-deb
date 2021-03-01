@@ -738,6 +738,10 @@ export default class MainBackground {
 
         if (this.platformUtilsService.isFirefox()) {
             await theAction.setIcon(options);
+        } else if (this.platformUtilsService.isSafari()) {
+            // Workaround since Safari 14.0.3 returns a pending promise
+            // which doesn't resolve within a reasonable time.
+            theAction.setIcon(options);
         } else {
             return new Promise(resolve => {
                 theAction.setIcon(options, () => resolve());
