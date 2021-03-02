@@ -57,7 +57,7 @@ export class ViewComponent extends BaseViewComponent {
 
     ngOnInit() {
         this.inPopout = this.popupUtilsService.inPopout(window);
-        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async params => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
             } else {
@@ -155,7 +155,7 @@ export class ViewComponent extends BaseViewComponent {
             if (this.cipher.login.uris == null) {
                 this.cipher.login.uris = [];
             } else {
-                if (this.cipher.login.uris.some((uri) => uri.uri === this.tab.url)) {
+                if (this.cipher.login.uris.some(uri => uri.uri === this.tab.url)) {
                     this.platformUtilsService.showToast('success', null,
                         this.i18nService.t('autoFillSuccessAndSavedUri'));
                     return;

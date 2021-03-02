@@ -20,8 +20,8 @@ import { AuditService } from 'jslib/abstractions/audit.service';
 import { AuthService as AuthServiceAbstraction } from 'jslib/abstractions/auth.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
-import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { ExportService } from 'jslib/abstractions/export.service';
@@ -47,10 +47,10 @@ import { AutofillService } from '../../services/abstractions/autofill.service';
 import BrowserMessagingService from '../../services/browserMessaging.service';
 
 import { AuthService } from 'jslib/services/auth.service';
+import { ConsoleLogService } from 'jslib/services/consoleLog.service';
 import { ConstantsService } from 'jslib/services/constants.service';
 import { SearchService } from 'jslib/services/search.service';
 import { StateService } from 'jslib/services/state.service';
-import { ConsoleLogService } from 'jslib/services/consoleLog.service';
 
 import { Analytics } from 'jslib/misc/analytics';
 
@@ -93,9 +93,9 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
             if (theme == null) {
                 theme = platformUtilsService.getDefaultSystemTheme();
 
-                platformUtilsService.onDefaultSystemThemeChange((theme) => {
+                platformUtilsService.onDefaultSystemThemeChange(sysTheme => {
                     window.document.documentElement.classList.remove('theme_light', 'theme_dark');
-                    window.document.documentElement.classList.add('theme_' + theme);
+                    window.document.documentElement.classList.add('theme_' + sysTheme);
                 });
             }
             window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);

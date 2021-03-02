@@ -112,7 +112,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         });
 
         const restoredScopeState = await this.restoreState();
-        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async params => {
             this.state = (await this.stateService.get<any>(ComponentId)) || {};
             if (this.state.searchText) {
                 this.searchText = this.state.searchText;
@@ -167,7 +167,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         if (!this.hasLoadedAllCiphers) {
             this.hasLoadedAllCiphers = !this.searchService.isSearchable(this.searchText);
         }
-        this.deletedCount = this.allCiphers.filter((c) => c.isDeleted).length;
+        this.deletedCount = this.allCiphers.filter(c => c.isDeleted).length;
         await this.search(null);
         let favoriteCiphers: CipherView[] = null;
         let noFolderCiphers: CipherView[] = null;
@@ -175,7 +175,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         const collectionCounts = new Map<string, number>();
         const typeCounts = new Map<CipherType, number>();
 
-        this.ciphers.forEach((c) => {
+        this.ciphers.forEach(c => {
             if (c.isDeleted) {
                 return;
             }
@@ -206,7 +206,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             }
 
             if (c.collectionIds != null) {
-                c.collectionIds.forEach((colId) => {
+                c.collectionIds.forEach(colId => {
                     if (collectionCounts.has(colId)) {
                         collectionCounts.set(colId, collectionCounts.get(colId) + 1);
                     } else {

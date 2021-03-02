@@ -1,18 +1,22 @@
 import {
     Component,
+    NgZone,
     OnDestroy,
     OnInit,
-    NgZone
 } from '@angular/core';
+
 import { Router } from '@angular/router';
+
+import { ConstantsService } from 'jslib/services/constants.service';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
-import { ConstantsService } from 'jslib/services/constants.service';
+
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { BrowserApi } from '../../browser/browserApi';
+
 import { Utils } from 'jslib/misc/utils';
 
 interface ExcludedDomain {
@@ -104,7 +108,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     async loadCurrentUris() {
         const tabs = await BrowserApi.tabsQuery({ windowType: 'normal' });
         if (tabs) {
-            const uriSet = new Set(tabs.map((tab) => Utils.getHostname(tab.url)));
+            const uriSet = new Set(tabs.map(tab => Utils.getHostname(tab.url)));
             uriSet.delete(null);
             this.currentUris = Array.from(uriSet);
         }

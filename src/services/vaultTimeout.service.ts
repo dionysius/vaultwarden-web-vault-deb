@@ -16,12 +16,13 @@ export default class VaultTimeoutService extends BaseVaultTimeoutService {
     //  setIntervals. It works by calling the native extension which sleeps for 10s,
     //  efficiently replicating setInterval.
     async checkSafari() {
-        while(true) {
+        while (true) {
             try {
                 await SafariApp.sendMessageToApp('sleep');
                 this.checkVaultTimeout();
-            } catch(e) {
-                console.log("Exception Safari VaultTimeout", e);
+            } catch (e) {
+                // tslint:disable-next-line
+                console.log('Exception Safari VaultTimeout', e);
             }
         }
     }

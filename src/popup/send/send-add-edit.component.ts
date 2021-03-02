@@ -73,7 +73,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
         this.inPopout = this.popupUtilsService.inPopout(window);
         this.inSidebar = this.popupUtilsService.inSidebar(window);
 
-        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async params => {
             if (params.sendId) {
                 this.sendId = params.sendId;
             }

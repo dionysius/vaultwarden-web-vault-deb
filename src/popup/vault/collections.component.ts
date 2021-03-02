@@ -24,7 +24,7 @@ export class CollectionsComponent extends BaseCollectionsComponent {
         this.onSavedCollections.subscribe(() => {
             this.back();
         });
-        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async params => {
             this.cipherId = params.cipherId;
             await this.load();
             if (queryParamsSub != null) {

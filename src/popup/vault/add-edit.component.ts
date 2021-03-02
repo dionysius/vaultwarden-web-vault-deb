@@ -49,7 +49,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     async ngOnInit() {
         await super.ngOnInit();
 
-        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async params => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
             }
@@ -57,7 +57,7 @@ export class AddEditComponent extends BaseAddEditComponent {
                 this.folderId = params.folderId;
             }
             if (params.collectionId) {
-                const collection = this.writeableCollections.find((c) => c.id === params.collectionId);
+                const collection = this.writeableCollections.find(c => c.id === params.collectionId);
                 if (collection != null) {
                     this.collectionIds = [collection.id];
                     this.organizationId = collection.organizationId;
@@ -92,7 +92,7 @@ export class AddEditComponent extends BaseAddEditComponent {
         if (!this.editMode) {
             const tabs = await BrowserApi.tabsQuery({ windowType: 'normal' });
             this.currentUris = tabs == null ? null :
-                tabs.filter((tab) => tab.url != null && tab.url !== '').map((tab) => tab.url);
+                tabs.filter(tab => tab.url != null && tab.url !== '').map(tab => tab.url);
         }
 
         window.setTimeout(() => {
@@ -150,7 +150,7 @@ export class AddEditComponent extends BaseAddEditComponent {
             this.stateService.save('addEditCipherInfo', {
                 cipher: this.cipher,
                 collectionIds: this.collections == null ? [] :
-                    this.collections.filter((c) => (c as any).checked).map((c) => c.id),
+                    this.collections.filter(c => (c as any).checked).map(c => c.id),
             });
             this.router.navigate(['generator']);
         }

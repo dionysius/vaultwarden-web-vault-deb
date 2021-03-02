@@ -22,7 +22,7 @@ export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
     }
 
     async ngOnInit() {
-        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async params => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
             } else {

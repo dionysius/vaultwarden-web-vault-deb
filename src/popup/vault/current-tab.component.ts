@@ -212,7 +212,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         this.cardCiphers = [];
         this.identityCiphers = [];
 
-        ciphers.forEach((c) => {
+        ciphers.forEach(c => {
             switch (c.type) {
                 case CipherType.Login:
                     this.loginCiphers.push(c);
