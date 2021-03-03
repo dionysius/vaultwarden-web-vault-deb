@@ -315,3 +315,13 @@ app-vault-icon {
 input[type="password"]::-ms-reveal {
     display: none;
 }
+
+.flex {
+    display: flex;
+
+    &.flex-grow {
+        > * {
+            flex: 1;
+        }
+    }
+}
