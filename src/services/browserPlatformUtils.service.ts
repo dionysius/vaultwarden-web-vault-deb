@@ -148,10 +148,12 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         });
     }
 
-    showDialog(text: string, title?: string, confirmText?: string, cancelText?: string, type?: string) {
+    showDialog(body: string, title?: string, confirmText?: string, cancelText?: string, type?: string,
+        bodyIsHtml: boolean = false) {
         const dialogId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
         this.messagingService.send('showDialog', {
-            text: text,
+            text: bodyIsHtml ? null : body,
+            html: bodyIsHtml ? body : null,
             title: title,
             confirmText: confirmText,
             cancelText: cancelText,
