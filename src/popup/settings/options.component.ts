@@ -123,18 +123,11 @@ export class OptionsComponent implements OnInit {
 
     async updateAutoFillOnPageLoad() {
         await this.storageService.save(ConstantsService.enableAutoFillOnPageLoadKey, this.enableAutoFillOnPageLoad);
-        if (!this.enableAutoFillOnPageLoad) {
-            // If we disable Auto Fill on Page Load, also disable Copying of TOTP
-            await this.storageService.save(ConstantsService.enableAutoTotpCopyOnAutoFill, false);
-            // TODO the below reloads the entire extension, I just want to reload the current view, or at least the enable auto totp copy checkbox
-            window.setTimeout(() => window.location.reload(), 200);
-        }
         this.callAnalytics('Auto-fill Page Load', this.enableAutoFillOnPageLoad);
     }
 
     async updateAutoTotpCopyOnAutoFill() {
-        await this.storageService.save(ConstantsService.enableAutoTotpCopyOnAutoFill, this.enableAutoTotpCopyOnAutoFill);
-        this.callAnalytics('Auto Copy TOTP on Page Load', this.enableAutoTotpCopyOnAutoFill);
+        await this.storageService.save(ConstantsService.enableAutoTotpCopyOnAutoFillKey, this.enableAutoTotpCopyOnAutoFill);
     }
 
     async updateDisableFavicon() {

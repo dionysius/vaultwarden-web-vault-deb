@@ -886,10 +886,7 @@
     "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Enable Copy to Clipboard of TOTP On Page Auto-fill"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If login auto-fills on page load and TOTP exists for this login, copy to clipboard without prompt"
+    "message": "Enable Copy to Clipboard of TOTP"
   },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
