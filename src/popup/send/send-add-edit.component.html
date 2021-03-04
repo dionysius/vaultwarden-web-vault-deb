@@ -121,7 +121,7 @@
                             <input id="deletionDateCustom" type="datetime-local" name="DeletionDate"
                                 [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
                         </ng-container>
-                        <div class="flex flex-grow"*ngIf="!isDateTimeLocalSupported">
+                        <div class="flex flex-grow" *ngIf="!isDateTimeLocalSupported">
                             <input id="deletionDateCustomFallback" type="date"
                                 name="DeletionDateFallback" [(ngModel)]="deletionDateFallback" required
                                 placeholder="MM/DD/YYYY" [readOnly]="disableSend">
@@ -138,7 +138,9 @@
                         </select>
                     </div>
                     <ng-container *ngIf="deletionDateSelect === 0 && !editMode">
-                        <ng-container *ngTemplateOutlet="deletionDateCustom"></ng-container>
+                        <div class="box-content-row">
+                            <ng-container *ngTemplateOutlet="deletionDateCustom"></ng-container>
+                        </div>
                     </ng-container>
                     <ng-container *ngIf="editMode" appBoxRow>
                         <div class="box-content-row">
@@ -156,15 +158,15 @@
                 <div class="box-content">
                     <ng-template #expirationDateCustom>
                         <ng-container *ngIf="isDateTimeLocalSupported">
-                            <input id="expirationDateCustom" class="form-control mt-1" type="datetime-local"
+                            <input id="expirationDateCustom" type="datetime-local"
                                 name="ExpirationDate" [(ngModel)]="expirationDate" required
                                 placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
                         </ng-container>
                         <div class="flex flex-grow" *ngIf="!isDateTimeLocalSupported">
-                            <input id="expirationDateCustomFallback" class="form-control mt-1" type="date"
+                            <input id="expirationDateCustomFallback" type="date"
                                 name="ExpirationDateFallback" [(ngModel)]="expirationDateFallback" [required]="!editMode"
                                 placeholder="MM/DD/YYYY" [readOnly]="disableSend">
-                            <input id="expirationTimeCustomFallback" class="form-control mt-1 ml-1" type="time"
+                            <input id="expirationTimeCustomFallback" type="time"
                                 name="ExpirationTimeFallback" [(ngModel)]="expirationTimeFallback" [required]="!editMode"
                                 placeholder="HH:MM AM/PM" [readOnly]="disableSend">
                         </div>
