@@ -70,8 +70,6 @@ jobs:
 
       - name: gulp
         run: gulp ci
-      - name: test dist
-        run: ls dist
 
       - name: Upload opera artifact
         uses: actions/upload-artifact@v2

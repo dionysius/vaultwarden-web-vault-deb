@@ -9,20 +9,6 @@ on:
 
 
 jobs:
-  cloc:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Set up cloc
-        run: |
-          sudo apt update
-          sudo apt -y install cloc
-      - name: Print lines of code
-        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
-
-
   setup:
     runs-on: ubuntu-latest
     outputs:
@@ -118,9 +104,6 @@ jobs:
           cd ../
           del /S/Q "Source\.git\objects\pack\*"
           call 7z a browser-source-%BUILD_NUMBER%.zip "Source\*"
-
-      - name: test dist
-        run: ls dist
 
       - name: Upload opera release asset
         uses: actions/upload-release-asset@v1
