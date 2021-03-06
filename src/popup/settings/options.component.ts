@@ -135,6 +135,7 @@ export class OptionsComponent implements OnInit {
     async updateDisableBadgeCounter() {
         await this.storageService.save(ConstantsService.disableBadgeCounterKey, this.disableBadgeCounter);
         await this.stateService.save(ConstantsService.disableBadgeCounterKey, this.disableBadgeCounter);
+        this.messagingService.send('bgUpdateContextMenu');
     }
 
     async updateShowCards() {
