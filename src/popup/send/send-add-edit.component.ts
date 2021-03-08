@@ -21,7 +21,6 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { PopupUtilsService } from '../services/popup-utils.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/send/add-edit.component';
-// require('date-input-polyfill');
 
 @Component({
     selector: 'app-send-add-edit',
