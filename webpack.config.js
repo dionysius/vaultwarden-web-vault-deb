@@ -75,7 +75,7 @@ const plugins = [
     new HtmlWebpackPlugin({
         template: './src/popup/index.html',
         filename: 'popup/index.html',
-        chunks: ['popup/vendor-angular', 'popup/vendor', 'popup/main'],
+        chunks: ['popup/polyfills', 'popup/vendor-angular', 'popup/vendor', 'popup/main'],
     }),
     new HtmlWebpackPlugin({
         template: './src/background.html',
@@ -130,6 +130,7 @@ const config = {
     mode: ENV,
     devtool: false,
     entry: {
+        'popup/polyfills': './src/popup/polyfills.ts',
         'popup/main': './src/popup/main.ts',
         'background': './src/background.ts',
         'content/autofill': './src/content/autofill.js',
