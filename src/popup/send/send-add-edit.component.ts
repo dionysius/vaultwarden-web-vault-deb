@@ -31,7 +31,6 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     showOptions = false;
     // File visibility
     isFirefox = false;
-    isSafari = false;
     inPopout = false;
     inSidebar = false;
 
@@ -69,7 +68,6 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     async ngOnInit() {
         // File visilibity
         this.isFirefox = this.platformUtilsService.isFirefox();
-        this.isSafari = this.platformUtilsService.isSafari();
         this.inPopout = this.popupUtilsService.inPopout(window);
         this.inSidebar = this.popupUtilsService.inSidebar(window);
 
