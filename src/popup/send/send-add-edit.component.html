@@ -154,7 +154,7 @@
                 </div>
                 <div class="box-footer">
                     {{'deletionDateDesc' | i18n}}
-                    <ng-container *ngIf="isFirefox && (this.editMode || (deletionDateSelect === 0 && !editMode))">
+                    <ng-container *ngIf="(!inPopout && isFirefox) && (this.editMode || (deletionDateSelect === 0 && !editMode))">
                         <br>{{'sendFirefoxCustomDatePopoutMessage1' | i18n}} <a (click)="popOutWindow()">{{'sendFirefoxCustomDatePopoutMessage2' | i18n}}</a> {{'sendFirefoxCustomDatePopoutMessage3' | i18n}}
                     </ng-container>
                 </div>
@@ -203,7 +203,7 @@
                 </div>
                 <div class="box-footer">
                     {{'expirationDateDesc' | i18n}}
-                    <ng-container *ngIf="isFirefox && (this.editMode || (deletionDateSelect === 0 && !editMode))">
+                    <ng-container *ngIf="(!inPopout && isFirefox) && (this.editMode || (deletionDateSelect === 0 && !editMode))">
                         <br>{{'sendFirefoxCustomDatePopoutMessage1' | i18n}} <a (click)="popOutWindow()">{{'sendFirefoxCustomDatePopoutMessage2' | i18n}}</a> {{'sendFirefoxCustomDatePopoutMessage3' | i18n}}
                     </ng-container>
                 </div>
