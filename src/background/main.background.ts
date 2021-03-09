@@ -540,11 +540,11 @@ export default class MainBackground {
                         theText = ciphers.length.toString();
                     } else if (ciphers.length > 0) {
                         theText = '9+';
-                    } else {
-                        if (contextMenuEnabled) {
-                            await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
-                        }
                     }
+                }
+
+                if (contextMenuEnabled && ciphers.length === 0) {
+                    await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
                 }
 
                 this.sidebarActionSetBadgeText(theText, tabId);
