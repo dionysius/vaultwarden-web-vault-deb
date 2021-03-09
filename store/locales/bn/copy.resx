@@ -118,41 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden - Ücretsiz Parola Yöneticisi</value>
+    <value>Bitwarden – বিনামূল্যের পাসওয়ার্ড ব্যবস্থাপক</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Tüm aygıtlarınız için güvenli ve ücretsiz bir parola yöneticisi</value>
+    <value>আপনার সমস্ত ডিভাইসের জন্য একটি সুরক্ষিত এবং বিনামূল্যের পাসওয়ার্ড ব্যবস্থাপক</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden, tüm kullanıcı adı ve parolalarınızı saklamanın, bunları tüm cihazlarınız arasında senkronize etmenin en kolay ve en güvenli yolu.
-
-Parola hırsızlığı ciddi bir sorun. Kullandığınız web siteleri ve uygulamalar sürekli saldırı altında. Güvenlik ihlalleri yaşanıyor ve parolalarınız çalınabiliyor. Farklı uygulamalarda ve web sitelerinde hep aynı parolaları kullanırsanız hacker’lar e-postalarınıza, banka hesabınıza ve diğer önemli hesaplarınıza kolayca erişebiliyor.
-
-Güvenlik uzmanları, oluşturduğunuz her hesap için farklı, rastgele bir parola kullanmanızı öneriyor. Peki, tüm bu parolaları nasıl yöneteceksiniz? Bitwarden, parolalarınızı oluşturmanızı, saklamanızı ve onlara erişmenizi kolaylaştırıyor.
-
-Bitwarden, tüm hesaplarınızı şifrelenmiş bir kasada saklayarak tüm cihazlarınız arasında senkronize edebilir. Verileriniz kendi cihazınız üzerinde şifrelendiği için verilerinize yalnızca siz erişebilirsiniz, Bitwarden ekibi bile verilerinizi okuyamaz. Verileriniz AES-256 bit şifreleme, salted hash ve PBKDF2 SHA-256 ile korunur.
-
-Bitwarden %100 açık kaynaklı bir yazılımdır. GitHub’da barındırdığımız Bitwarden kaynak kodlarını herkes inceleyebilir ve kodlarımıza katkıda bulunabilir.</value>
+    <value>বিটওয়ার্ডেন আপনার সমস্ত লগইন এবং পাসওয়ার্ডগুলি সহজেই আপনার সমস্ত ডিভাইসের সাথে সিঙ্ক করার সময় সংরক্ষণ করার সবচেয়ে সহজ এবং নিরাপদ উপায়।
+পাসওয়ার্ড চুরি একটি গুরুতর সমস্যা। আপনি যে ওয়েবসাইটগুলি এবং অ্যাপ্লিকেশনগুলি ব্যবহার করেন সেগুলি প্রতিদিন আক্রমণের শিকার হয়। সুরক্ষা লঙ্ঘন ঘটে এবং আপনার পাসওয়ার্ডগুলি চুরি হয়ে যায়। আপনি যখন অ্যাপ্লিকেশন এবং ওয়েবসাইট জুড়ে একই পাসওয়ার্ডগুলি পুনরায় ব্যবহার করেন হ্যাকাররা সহজেই আপনার ইমেল, ব্যাংক এবং অন্যান্য গুরুত্বপূর্ণ অ্যাকাউন্টগুলিতে ব্যাবহার করতে পারে।
+সুরক্ষা বিশেষজ্ঞরা আপনার তৈরি প্রতিটি অ্যাকাউন্টের জন্য একটি পৃথক, এলোমেলোভাবে উৎপন্ন পাসওয়ার্ড ব্যবহার করার পরামর্শ দেয়। কিন্তু আপনি কীভাবে এই সমস্ত পাসওয়ার্ড পরিচালনা করবেন? Bitwarden আপনার পাসওয়ার্ডগুলি তৈরি, সঞ্চয় এবং ব্যাবহার করা আপনার পক্ষে সহজ করে তোলে।
+Bitwarden আপনার সমস্ত লগইন একটি এনক্রিপ্ট করা ভল্টে সঞ্চয় করে যা আপনার সমস্ত ডিভাইস জুড়ে সিঙ্ক করে। যেহেতু আপনার ডিভাইসটি ছাড়ার আগে এটি সম্পূর্ণরূপে এনক্রিপ্ট করা হয়েছে, শুধুমাত্র আপনারই ডেটাতে ব্যাবহারাধিকার রয়েছে। এমনকি আমরা Bitwarden এর দল চাইলেও আপনার তথ্যগুলি পড়তে পারব না। আপনার ডেটা AES-256 বিট এনক্রিপশন, সল্টেড হ্যাশিং এবং PBKDF2 SHA-256 দিয়ে নামমুদ্রাম্কিত করা হয়েছে।
+Bitwarden ১০০% মুক্ত সফ্টওয়্যার। Bitwarden এর উৎস কোডটি গিটহাবটিতে হোস্ট করা হয়েছে এবং Bitwarden কোডবেস সকলের পর্যালোচনা, নিরীক্ষণ এবং অবদানের জন্য মুক্ত।</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Tüm cihazarınız için güvenli ve ücretsiz bir parola yöneticisi</value>
+    <value>আপনার সমস্ত ডিভাইসের জন্য একটি সুরক্ষিত এবং বিনামূল্যের পাসওয়ার্ড ব্যবস্থাপক</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Hesabınızı senkronize ederek kasanıza tüm cihazlarınızdan ulaşın</value>
+    <value>একাধিক ডিভাইস থেকে আপনার ভল্ট সিঙ্ক এবং ব্যাবহার করুন</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Tüm giriş bilgilerinizi ve parolalarınızı güvenli bir kasadan yönetin</value>
+    <value>সুরক্ষিত ভল্ট থেকে আপনার সমস্ত লগইন এবং পাসওয়ার্ড পরিচালনা করুন</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Ziyaret ettiğiniz web sitelerindeki giriş bilgilerinizi otomatik olarak anında doldurun</value>
+    <value>যে কোনও ওয়েবসাইটে দ্রুত আপনার লগইন শংসাপত্রগুলি স্বয়ংক্রিয়ভাবে পূরণ করুন</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Kasanıza sağ tıklama menüsünden de rahatlıkla erişebilirsiniz</value>
+    <value>আপনার ভল্টটি ডান ক্লিক মেনু থেকে সুবিধামত ব্যাবহারযোগ্য</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Otomatik olarak güçlü, rastgele ve güvenli parolalar oluşturun</value>
+    <value>স্বয়ংক্রিয়ভাবে শক্তিশালী, এলোমেলো এবং সুরক্ষিত পাসওয়ার্ড তৈরি করুন</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Bilgileriniz AES-256 bit şifreleme kullanılarak güvenle yönetilir</value>
+    <value>আপনার তথ্য AES-256 বিট এনক্রিপশন ব্যবহার করে সুরক্ষিতভাবে পরিচালিত হয়</value>
   </data>
 </root>
