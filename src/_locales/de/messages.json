@@ -613,10 +613,10 @@
     "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Dieser Export verschlüsselt Ihre Daten mit dem Verschlüsselungscode Ihres Kontos. Falls Sie Ihren Verschlüsselungscode erneuern, sollten Sie den Export erneut durchführen, da Sie die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln können."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Die Verschlüsselungscodes eines Kontos sind für jedes Bitwarden Benutzerkonto einzigartig, deshalb können Sie keinen verschlüsselten Export in ein anderes Konto importieren."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -1442,10 +1442,10 @@
     "message": "Biometrie im Browser wird auf diesem Gerät nicht unterstützt."
   },
   "nativeMessagingPermissionPromptTitle": {
-    "message": "Additional Permission required"
+    "message": "Zusätzliche Berechtigung erforderlich"
   },
   "nativeMessagingPermissionPromptDesc": {
-    "message": "To enable browser biometrics we need to request an additional permission. Once allowed, the browser extension will reload and you may need to unlock your vault again."
+    "message": "Um Biometrie im Browser zu aktivieren, benötigen wir eine zusätzliche Berechtigung. Einmal erlaubt, wird die Browser-Erweiterung neu geladen und Sie müssen Ihren Tresor eventuell wieder entsperren."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Berechtigung nicht erteilt"
@@ -1460,13 +1460,13 @@
     "message": "Eine Organisationsrichtlinie beeinflusst deine Eigentümer-Optionen."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Ausgeschlossene Domänen"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+    "message": "Bitwarden wird keine Login-Daten für diese Domäne speichern. Sie müssen die Seite aktualisieren, damit die Änderungen wirksam werden."
   },
   "excludedDomainsInvalidDomain": {
-    "message": "$DOMAIN$ is not a valid domain",
+    "message": "$DOMAIN$ ist keine gültige Domäne",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1479,104 +1479,104 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Sends suchen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "addSend": {
-    "message": "Add Send",
+    "message": "Send hinzufügen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Text"
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Datei"
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Alle Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Maximale Zugriffsanzahl erreicht"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Abgelaufen"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Ausstehende Löschung"
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "passwortgeschützt"
   },
   "copySendLink": {
-    "message": "Copy Send link",
+    "message": "Send-Link kopieren",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "Remove Password"
+    "message": "Passwort entfernen"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Löschen"
   },
   "removedPassword": {
-    "message": "Removed Password"
+    "message": "Passwort entfernt"
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Gelöschtes Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Send-Link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Deaktiviert"
   },
   "removePasswordConfirmation": {
-    "message": "Are you sure you want to remove the password?"
+    "message": "Sind Sie sicher, dass Sie das Passwort entfernen möchten?"
   },
   "deleteSend": {
-    "message": "Delete Send",
+    "message": "Send löschen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Sind Sie sicher, dass Sie dieses Send löschen möchten?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Send bearbeiten",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeHeader": {
-    "message": "What type of Send is this?",
+    "message": "Welche Art von Send ist das?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "A friendly name to describe this Send.",
+    "message": "Ein freundlicher Name um dieses Send zu beschreiben.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Die Datei, die Sie senden möchten."
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Löschdatum"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Das Send wird am angegebenen Datum und Uhrzeit dauerhaft gelöscht.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Ablaufdatum"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Falls aktiviert, verfällt der Zugriff auf dieses Send am angegebenen Datum zur angegebenen Uhrzeit.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 Tag"
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ Tage",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1585,98 +1585,98 @@
     }
   },
   "custom": {
-    "message": "Custom"
+    "message": "Benutzerdefiniert"
   },
   "maximumAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Maximale Zugriffsanzahl"
   },
   "maximumAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Falls aktiviert, können Benutzer nicht mehr auf dieses Send zugreifen, sobald die maximale Zugriffsanzahl erreicht ist.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Optional ein Passwort verlangen, damit Benutzer auf dieses Send zugreifen können.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Private Notizen zu diesem Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Dieses Send deaktivieren, damit niemand darauf zugreifen kann.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Copy this Send's link to clipboard upon save.",
+    "message": "Kopiere den Send-Link beim Speichern in die Zwischenablage.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Der Text, den Sie senden möchten."
   },
   "sendHideText": {
-    "message": "Hide this Send's text by default.",
+    "message": "Send-Text standardmäßig ausblenden.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Aktuelle Zugriffsanzahl"
   },
   "createSend": {
-    "message": "Create New Send",
+    "message": "Neues Send erstellen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Neues Passwort"
   },
   "sendDisabled": {
-    "message": "Send Disabled",
+    "message": "Send deaktiviert",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Aufgrund einer Unternehmensrichtlinie können Sie nur ein bestehendes Send löschen.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send erstellt",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Bearbeitetes Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFirefoxFileWarning": {
-    "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
+    "message": "Um eine Datei mit Firefox auszuwählen, öffnen Sie die Erweiterung in der Sidebar oder öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
   },
   "sendSafariFileWarning": {
-    "message": "In order to choose a file using Safari, pop out to a new window by clicking this banner."
+    "message": "Um eine Datei mit Safari auszuwählen, öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
   },
   "sendFileCalloutHeader": {
-    "message": "Before you start"
+    "message": "Bevor Sie beginnen"
   },
   "sendFirefoxCustomDatePopoutMessage1": {
-    "message": "To use a calendar style date picker",
+    "message": "Um eine kalenderähnliche Datums-Auswahl zu verwenden",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
-    "message": "click here",
+    "message": "hier klicken",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
-    "message": "to pop out your window.",
+    "message": "zum Öffnen in einem neuen Fenster.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
-    "message": "The expiration date provided is not valid."
+    "message": "Das angegebene Verfallsdatum ist nicht gültig."
   },
   "deletionDateIsInvalid": {
-    "message": "The deletion date provided is not valid."
+    "message": "Das angegebene Löschdatum ist nicht gültig."
   },
   "expirationDateAndTimeRequired": {
-    "message": "An expiration date and time are required."
+    "message": "Ein Ablaufdatum und eine Zeit sind erforderlich."
   },
   "deletionDateAndTimeRequired": {
-    "message": "A deletion date and time are required."
+    "message": "Ein Löschdatum und eine Zeit sind erforderlich."
   },
   "dateParsingError": {
-    "message": "There was an error saving your deletion and expiration dates."
+    "message": "Es gab einen Fehler beim Speichern Ihrer Lösch- und Verfallsdaten."
   }
 }

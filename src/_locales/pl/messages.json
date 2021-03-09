@@ -1442,7 +1442,7 @@
     "message": "Dane biometryczne przeglądarki nie są obsługiwane na tym urządzeniu."
   },
   "nativeMessagingPermissionPromptTitle": {
-    "message": "Additional Permission required"
+    "message": "Wymagane dodatkowe uprawnienia"
   },
   "nativeMessagingPermissionPromptDesc": {
     "message": "To enable browser biometrics we need to request an additional permission. Once allowed, the browser extension will reload and you may need to unlock your vault again."
@@ -1475,7 +1475,7 @@
     }
   },
   "send": {
-    "message": "Send",
+    "message": "Wyślij",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -1490,7 +1490,7 @@
     "message": "Text"
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Plik"
   },
   "allSends": {
     "message": "All Sends",
