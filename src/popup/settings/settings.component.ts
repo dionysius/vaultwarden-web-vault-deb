@@ -23,6 +23,7 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { PopupUtilsService } from '../services/popup-utils.service';
 
 const RateUrls = {
     [DeviceType.ChromeExtension]:
@@ -59,7 +60,8 @@ export class SettingsComponent implements OnInit {
         private analytics: Angulartics2, private vaultTimeoutService: VaultTimeoutService,
         private storageService: StorageService, public messagingService: MessagingService,
         private router: Router, private environmentService: EnvironmentService,
-        private cryptoService: CryptoService, private userService: UserService) {
+        private cryptoService: CryptoService, private userService: UserService,
+        private popupUtilsService: PopupUtilsService) {
     }
 
     async ngOnInit() {
@@ -212,29 +214,28 @@ export class SettingsComponent implements OnInit {
     async updateBiometric() {
         if (this.biometric && this.supportsBiometric) {
 
-            // Request permission to use the optional permission for nativeMessaging
-            if (!this.platformUtilsService.isFirefox()) {
-                const hasPermission = await new Promise(resolve => {
-                    chrome.permissions.contains({ permissions: ['nativeMessaging'] }, resolve);
-                });
+            let granted;
+            try {
+                granted = await BrowserApi.requestPermission({ permissions: ['nativeMessaging'] });
+            } catch (e) {
+                // tslint:disable-next-line
+                console.error(e);
 
-                if (!hasPermission) {
+                if (this.platformUtilsService.isFirefox() && this.popupUtilsService.inSidebar(window)) {
                     await this.platformUtilsService.showDialog(
-                        this.i18nService.t('nativeMessagingPermissionPromptDesc'), this.i18nService.t('nativeMessagingPermissionPromptTitle'),
+                        this.i18nService.t('nativeMessaginPermissionSidebarDesc'), this.i18nService.t('nativeMessaginPermissionSidebarTitle'),
                         this.i18nService.t('ok'), null);
-
-                    const granted = await new Promise((resolve, reject) => {
-                        chrome.permissions.request({ permissions: ['nativeMessaging'] }, resolve);
-                    });
-
-                    if (!granted) {
-                        await this.platformUtilsService.showDialog(
-                            this.i18nService.t('nativeMessaginPermissionErrorDesc'), this.i18nService.t('nativeMessaginPermissionErrorTitle'),
-                            this.i18nService.t('ok'), null);
-                        this.biometric = false;
-                        return;
-                    }
+                    this.biometric = false;
+                    return;
                 }
+            }
+
+            if (!granted) {
+                await this.platformUtilsService.showDialog(
+                    this.i18nService.t('nativeMessaginPermissionErrorDesc'), this.i18nService.t('nativeMessaginPermissionErrorTitle'),
+                    this.i18nService.t('ok'), null);
+                this.biometric = false;
+                return;
             }
 
             const submitted = Swal.fire({

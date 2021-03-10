@@ -167,4 +167,13 @@ export class BrowserApi {
             return chrome.runtime.connectNative(application);
         }
     }
+
+    static requestPermission(permission: any) {
+        if (BrowserApi.isWebExtensionsApi) {
+            return browser.permissions.request(permission);
+        }
+        return new Promise((resolve, reject) => {
+            chrome.permissions.request(permission, resolve);
+        });
+    }
 }

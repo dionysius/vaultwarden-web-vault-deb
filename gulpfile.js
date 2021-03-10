@@ -58,7 +58,6 @@ function dist(browserName, manifest) {
 function distFirefox() {
     return dist('firefox', (manifest) => {
         delete manifest.content_security_policy;
-        delete manifest.optional_permissions;
         removeShortcuts(manifest);
         return manifest;
     });
