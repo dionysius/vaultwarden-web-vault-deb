@@ -613,10 +613,10 @@
     "message": "Den här exporten innehåller ditt valvs okrypterade data i .csv-format. Du bör inte lagra eller skicka filen över osäkra anslutningar (genom t.ex. mejl). Radera filen efter du är färdig med den."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Denna export krypterar din data med ditt kontos krypteringnyckel. Om du återställer kontots krypteringsnyckel måste du exportera igen eftersom du inte kommer att kunna avkryptera denna fil."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Kypteringnycklar är unika för varje Bitwarden-konto, så du kan inte importera en krypterad export till ett annat konto."
   },
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera ditt valv."
@@ -1441,17 +1441,17 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometri i webbläsaren stöds inte på den här enheten."
   },
-  "nativeMessagingPermissionPromptTitle": {
-    "message": "Additional Permission required"
-  },
-  "nativeMessagingPermissionPromptDesc": {
-    "message": "To enable browser biometrics we need to request an additional permission. Once allowed, the browser extension will reload and you may need to unlock your vault again."
-  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Behörighet ej beviljad"
   },
   "nativeMessaginPermissionErrorDesc": {
     "message": "Utan behörighet att kommunicera med Bitwardens skrivbordsprogram kan vi inte tillhandahålla biometri i webbläsartillägget. Försök igen."
+  },
+  "nativeMessaginPermissionSidebarTitle": {
+    "message": "Permission request error"
+  },
+  "nativeMessaginPermissionSidebarDesc": {
+    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
     "message": "På grund av en av företagets policyer är du begränsad från att spara objekt till ditt personliga valv. Ändra ägarskap till en organisation och välj från tillgängliga samlingar."
@@ -1460,13 +1460,13 @@
     "message": "En organisationspolicy påverkar dina ägarskapsalternativ."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Exkluderade domäner"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+    "message": "Bitwarden kommer inte att be om att spara inloggningsuppgifter för dessa domäner. Du måste uppdatera sidan för att ändringarna ska träda i kraft."
   },
   "excludedDomainsInvalidDomain": {
-    "message": "$DOMAIN$ is not a valid domain",
+    "message": "$DOMAIN$ är inte en giltig domän",
     "placeholders": {
       "domain": {
         "content": "$1",
