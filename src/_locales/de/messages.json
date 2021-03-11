@@ -1441,17 +1441,17 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometrie im Browser wird auf diesem Gerät nicht unterstützt."
   },
-  "nativeMessagingPermissionPromptTitle": {
-    "message": "Zusätzliche Berechtigung erforderlich"
-  },
-  "nativeMessagingPermissionPromptDesc": {
-    "message": "Um Biometrie im Browser zu aktivieren, benötigen wir eine zusätzliche Berechtigung. Einmal erlaubt, wird die Browser-Erweiterung neu geladen und Sie müssen Ihren Tresor eventuell wieder entsperren."
-  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Berechtigung nicht erteilt"
   },
   "nativeMessaginPermissionErrorDesc": {
     "message": "Ohne die Berechtigung zur Kommunikation mit der Bitwarden Desktop-Anwendung können wir keine Biometrie in der Browser-Erweiterung anbieten. Bitte versuche es erneut."
+  },
+  "nativeMessaginPermissionSidebarTitle": {
+    "message": "Permission request error"
+  },
+  "nativeMessaginPermissionSidebarDesc": {
+    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
     "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
@@ -1506,7 +1506,7 @@
     "message": "Ausstehende Löschung"
   },
   "passwordProtected": {
-    "message": "passwortgeschützt"
+    "message": "Passwortgeschützt"
   },
   "copySendLink": {
     "message": "Send-Link kopieren",
@@ -1522,7 +1522,7 @@
     "message": "Passwort entfernt"
   },
   "deletedSend": {
-    "message": "Gelöschtes Send",
+    "message": "Send gelöscht",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1552,7 +1552,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "Ein freundlicher Name um dieses Send zu beschreiben.",
+    "message": "Ein eigener Name, um dieses Send zu beschreiben.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
@@ -1562,7 +1562,7 @@
     "message": "Löschdatum"
   },
   "deletionDateDesc": {
-    "message": "Das Send wird am angegebenen Datum und Uhrzeit dauerhaft gelöscht.",
+    "message": "Das Send wird am angegebenen Datum zur angegebenen Uhrzeit dauerhaft gelöscht.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -1671,7 +1671,7 @@
     "message": "Das angegebene Löschdatum ist nicht gültig."
   },
   "expirationDateAndTimeRequired": {
-    "message": "Ein Ablaufdatum und eine Zeit sind erforderlich."
+    "message": "Ein Verfallsdatum und eine Zeit sind erforderlich."
   },
   "deletionDateAndTimeRequired": {
     "message": "Ein Löschdatum und eine Zeit sind erforderlich."
