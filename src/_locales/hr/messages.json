@@ -1441,17 +1441,17 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometrija preglednika nije podržana na ovom uređaju."
   },
-  "nativeMessagingPermissionPromptTitle": {
-    "message": "Additional Permission required"
-  },
-  "nativeMessagingPermissionPromptDesc": {
-    "message": "To enable browser biometrics we need to request an additional permission. Once allowed, the browser extension will reload and you may need to unlock your vault again."
-  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Dopuštenje nije dano"
   },
   "nativeMessaginPermissionErrorDesc": {
     "message": "Bez odobrenja za komunikaciju s Bitwarden Desktop aplikacijom nije moguće korištenje biometrije u proširenju preglednika."
+  },
+  "nativeMessaginPermissionSidebarTitle": {
+    "message": "Permission request error"
+  },
+  "nativeMessaginPermissionSidebarDesc": {
+    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
     "message": "Pravila tvrtke onemogućuju spremanje stavki u osobni trezor. Promijeni vlasništvo stavke na tvrtku i odaberi dostupnu Zbirku."
