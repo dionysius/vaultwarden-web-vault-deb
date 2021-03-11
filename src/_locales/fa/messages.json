@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - مدیریت گذرواژه رایگان",
+    "message": "Bitwarden - مدیریت کلمه عبور رایگان",
     "description": "Extension name"
   },
   "extDesc": {
@@ -47,7 +47,7 @@
     "message": "تایپ دوباره کلمه عبور اصلی"
   },
   "masterPassHint": {
-    "message": "راهنمای گذرواژه اصلی (اختیاری)"
+    "message": "راهنمای کلمه عبور اصلی (اختیاری)"
   },
   "tab": {
     "message": "زبانه"
@@ -65,7 +65,7 @@
     "message": "زبانه فعلی"
   },
   "copyPassword": {
-    "message": "رونوشت کلمه عبور"
+    "message": "کپی رمز عبور"
   },
   "copyNote": {
     "message": "کپی یادداشت"
@@ -175,7 +175,7 @@
     "message": "همگام سازی"
   },
   "syncVaultNow": {
-    "message": "همگام سازی گاو صندوق"
+    "message": "همگام سازی گاوصندوق"
   },
   "lastSync": {
     "message": "آخرین همگام سازی:"
@@ -306,7 +306,7 @@
     "message": "تایید کلمه عبور اصلی"
   },
   "yourVaultIsLocked": {
-    "message": "صندوق شما قفل است. برای ادامه کلمه عبور اصلی خود را وارد کنید."
+    "message": "گاوصندوق شما قفل است. برای ادامه کلمه عبور اصلی خود را وارد کنید."
   },
   "unlock": {
     "message": "بازکردن"
@@ -1235,7 +1235,7 @@
     "message": "کلمه عبور اصلی ضعیف"
   },
   "weakMasterPasswordDesc": {
-    "message": "کلمه عبور اصلی که شما انتخاب کرده اید ضعیف است. شما باید یک کلمه عبور اصلی قوی انتخاب کنید (یا یک عبارت عبور) تا به درستی از اکانت Bitwarden خود محافظت کنید. آیا مطمعن هستید می‌خواهید از این کلمه عبور اصلی استفاده کنید؟ "
+    "message": "کلمه عبور اصلی که شما انتخاب کرده اید ضعیف است. شما باید یک کلمه عبور اصلی قوی انتخاب کنید (یا یک عبارت عبور) تا به درستی از اکانت Bitwarden خود محافظت کنید. آیا مطمئن هستید می‌خواهید از این کلمه عبور اصلی استفاده کنید؟ "
   },
   "pin": {
     "message": "پین",
@@ -1291,11 +1291,11 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "زباله ها",
+    "message": "زباله‌ها",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "جستجوی زباله ها"
+    "message": "جستجوی زباله‌ها"
   },
   "permanentlyDeleteItem": {
     "message": "حذف دائمی مورد"
@@ -1334,7 +1334,7 @@
     "message": "تنظیم کلمه عبور اصلی"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "یک یا چند سیاست سازمانی برای تأمین شرایط زیر به گذرواژه اصلی شما احتیاج دارد:"
+    "message": "یک یا چند سیاست سازمانی برای تأمین شرایط زیر به کلمه عبور اصلی شما احتیاج دارد:"
   },
   "policyInEffectMinComplexity": {
     "message": "حداقل نمره پیچیدگی $SCORE$",
@@ -1388,7 +1388,7 @@
     "message": "سیاست حفظ حریم خصوصی"
   },
   "hintEqualsPassword": {
-    "message": "نکته رمز عبور شما نمی تواند همان رمز عبور شما باشد."
+    "message": "نکته کلمه عبور شما نمی تواند همان کلمه عبور شما باشد."
   },
   "ok": {
     "message": "تایید"
@@ -1441,17 +1441,17 @@
   "biometricsNotSupportedDesc": {
     "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی شود."
   },
-  "nativeMessagingPermissionPromptTitle": {
-    "message": "مجوز اضافی مورد نیاز است"
-  },
-  "nativeMessagingPermissionPromptDesc": {
-    "message": "برای فعال کردن بیومتریک مرورگر نیاز به مجوز اضافی داریم. پس از مجاز شدن، افزونه مرورگر مجدداً بارگیری می شود و ممکن است لازم باشد دوباره قفل گاوصندوق خود را باز کنید."
-  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "مجوز ارائه نشده است"
   },
   "nativeMessaginPermissionErrorDesc": {
     "message": "بدون اجازه ارتباط با برنامه دسکتاپ Bitwarden ، نمی توانیم بیومتریک را در افزونه مرورگر ارائه دهیم. لطفا دوباره تلاش کنید."
+  },
+  "nativeMessaginPermissionSidebarTitle": {
+    "message": "Permission request error"
+  },
+  "nativeMessaginPermissionSidebarDesc": {
+    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
     "message": "به دلیل خط مشی Enterprise ، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
@@ -1506,20 +1506,20 @@
     "message": "در انتظار حذف"
   },
   "passwordProtected": {
-    "message": "محافظت ‌شده با رمز عبور"
+    "message": "محافظت ‌شده با کلمه عبور"
   },
   "copySendLink": {
     "message": "پیوند ارسال را کپی کن",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "حذف رمز عبور"
+    "message": "حذف کلمه عبور"
   },
   "delete": {
     "message": "حذف"
   },
   "removedPassword": {
-    "message": "حذف رمز عبور"
+    "message": "کلمه عبور حذف شد"
   },
   "deletedSend": {
     "message": "ارسال پاک شد",
@@ -1533,7 +1533,7 @@
     "message": "غیرفعال شد"
   },
   "removePasswordConfirmation": {
-    "message": "مطمئنید می‌خواهید این رمز عبور حذف شود؟"
+    "message": "مطمئنید می‌خواهید این کلمه عبور حذف شود؟"
   },
   "deleteSend": {
     "message": "ارسال پاک شد",
@@ -1595,7 +1595,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "به صورت اختیاری برای دسترسی کاربران به این ارسال به یک رمز عبور نیاز دارید.",
+    "message": "به صورت اختیاری برای دسترسی کاربران به این ارسال به یک کلمه عبور نیاز دارید.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1625,7 +1625,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "رمز عبور جدید"
+    "message": "کلمه عبور جدید"
   },
   "sendDisabled": {
     "message": "ارسال غیرفعال شد",
