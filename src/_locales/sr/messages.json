@@ -1441,17 +1441,17 @@
   "biometricsNotSupportedDesc": {
     "message": "Биометрија прегледача није подржана на овом уређају."
   },
-  "nativeMessagingPermissionPromptTitle": {
-    "message": "Потребна је додатна дозвола"
-  },
-  "nativeMessagingPermissionPromptDesc": {
-    "message": "Да бисмо омогућили биометрију прегледача, морамо затражити додатну дозволу. Једном када се дозволи, екстензија прегледача ће се поново учитати и можда ћете морати поново откључати сеф."
-  },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Дозвола није дата"
   },
   "nativeMessaginPermissionErrorDesc": {
     "message": "Без дозволе за комуникацију са Bitwarden Desktop апликацијом, не можемо пружити биометријске податке у екстензији прегледача. Молим вас, покушајте поново."
+  },
+  "nativeMessaginPermissionSidebarTitle": {
+    "message": "Permission request error"
+  },
+  "nativeMessaginPermissionSidebarDesc": {
+    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
     "message": "Због смерница за предузећа, ограничено вам је чување предмета у вашем личном трезору. Промените опцију власништва у организацију и изаберите из доступних колекција."
@@ -1644,16 +1644,16 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFirefoxFileWarning": {
-    "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
+    "message": "Да бисте изабрали датотеку са Firefox-ом, отворите екстензију на бочној траци или отворите у нови прозор кликом на овај банер."
   },
   "sendSafariFileWarning": {
-    "message": "In order to choose a file using Safari, pop out to a new window by clicking this banner."
+    "message": "Да бисте изабрали датотеку са Safari-ом, отворите у нови прозор кликом на овај банер."
   },
   "sendFileCalloutHeader": {
     "message": "Пре него што почнеш"
   },
   "sendFirefoxCustomDatePopoutMessage1": {
-    "message": "To use a calendar style date picker",
+    "message": "Да би користио бирање датума кроз календар",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
@@ -1661,7 +1661,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
-    "message": "to pop out your window.",
+    "message": "да би отворили ван ваш прозор.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
