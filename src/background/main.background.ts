@@ -532,19 +532,24 @@ export default class MainBackground {
                     });
                 }
 
+                const disableBadgeCounter = await this.storageService.get<boolean>(ConstantsService.disableBadgeCounterKey);
                 let theText = '';
-                if (ciphers.length > 0 && ciphers.length <= 9) {
-                    theText = ciphers.length.toString();
-                } else if (ciphers.length > 0) {
-                    theText = '9+';
-                } else {
-                    if (contextMenuEnabled) {
-                        await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
+
+                if (!disableBadgeCounter) {
+                    if (ciphers.length > 0 && ciphers.length <= 9) {
+                        theText = ciphers.length.toString();
+                    } else if (ciphers.length > 0) {
+                        theText = '9+';
                     }
                 }
 
-                this.browserActionSetBadgeText(theText, tabId);
+                if (contextMenuEnabled && ciphers.length === 0) {
+                    await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
+                }
+
                 this.sidebarActionSetBadgeText(theText, tabId);
+                this.browserActionSetBadgeText(theText, tabId);
+
                 return;
             } catch { }
         }
