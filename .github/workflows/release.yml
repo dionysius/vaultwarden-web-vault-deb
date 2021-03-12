@@ -93,11 +93,17 @@ jobs:
       - name: gulp
         run: gulp ci
 
+      - name: make source directory
+        run: mkdir dist/Source
+
+      - name: checkout repo
+        uses: actions/checkout@v2
+        with: 
+          path: 'dist/Source'
+
       - name: Build sources for reviewers
         shell: cmd
         run: |
-          mkdir dist\Source
-          call git clone --branch=%GITHUB_REF% %REPO_URL% dist\Source
           cd dist\Source
           call git checkout %GITHUB_SHA%
           call git submodule update --init --recursive
@@ -105,7 +111,7 @@ jobs:
           del /S/Q "Source\.git\objects\pack\*"
           call 7z a browser-source-%BUILD_NUMBER%.zip "Source\*"
 
-      - name: Upload opera release asset
+      - name: upload opera release asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
