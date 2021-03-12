@@ -79,10 +79,14 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
     return async () => {
         if (!popupUtilsService.inPopup(window)) {
             window.document.body.classList.add('body-full');
-        } else if (window.screen.availHeight < 600) {
-            window.document.body.classList.add('body-xs');
-        } else if (window.screen.availHeight <= 800) {
-            window.document.body.classList.add('body-sm');
+        } else {
+            if (window.screen.availHeight < 600) {
+                window.document.body.classList.add('body-xs');
+            } else if (window.screen.availHeight <= 800) {
+                window.document.body.classList.add('body-sm');
+            }
+
+            document.body.style.setProperty('height',`${window.innerHeight}px`,'important');
         }
 
         if (BrowserApi.getBackgroundPage() != null) {
