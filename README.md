@@ -36,7 +36,7 @@ You can now load the extension into your browser through the browser's extension
 
 - Chrome/Opera:
   1. Type `chrome://extensions` in your address bar to bring up the extensions page.
-  2. Enable developer mode (slider)
+  2. Enable developer mode (toggle switch)
   3. Click the "Load unpacked extension" button, navigate to the `build` folder of your local extension instance, and click "Ok".
 - Firefox
   1. Type `about:debugging` in your address bar to bring up the add-ons page.
