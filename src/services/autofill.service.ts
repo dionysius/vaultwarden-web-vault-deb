@@ -253,7 +253,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 cipher = await this.cipherService.getLastUsedForUrl(tab.url, true);
             }
 
-            if (cipher === null) {
+            if (cipher == null) {
                 return null;
             }
         }

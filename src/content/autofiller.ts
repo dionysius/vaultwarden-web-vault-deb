@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', event => {
     let delayFillTimeout: number;
 
     setInterval(() => doFillIfNeeded(), 500);
-    
+
     chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: Function) => {
         if (msg.command === 'fillForm' && pageHref === msg.url) {
             filledThisHref = true;
