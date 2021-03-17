@@ -87,8 +87,8 @@ export class BrowserApi {
         return Promise.resolve(chrome.extension.getViews({ type: 'popup' }).length > 0);
     }
 
-    static createNewTab(url: string, extensionPage: boolean = false) {
-        chrome.tabs.create({ url: url });
+    static createNewTab(url: string, extensionPage: boolean = false, active: boolean = true) {
+        chrome.tabs.create({ url: url, active: active });
     }
 
     static messageListener(name: string, callback: (message: any, sender: any, response: any) => void) {

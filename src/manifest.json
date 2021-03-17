@@ -44,7 +44,7 @@
     {
       "all_frames": false,
       "js": [
-        "content/sso.js"
+        "content/message_handler.js"
       ],
       "matches": [
         "http://*/*",

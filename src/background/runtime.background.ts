@@ -7,6 +7,7 @@ import { LoginView } from 'jslib/models/view/loginView';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { NotificationsService } from 'jslib/abstractions/notifications.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -39,7 +40,7 @@ export default class RuntimeBackground {
         private analytics: Analytics, private notificationsService: NotificationsService,
         private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService,
         private environmentService: EnvironmentService, private policyService: PolicyService,
-        private userService: UserService) {
+        private userService: UserService, private messagingService: MessagingService) {
 
         // onInstalled listener must be wired up before anything else, so we do it in the ctor
         chrome.runtime.onInstalled.addListener((details: any) => {
@@ -175,6 +176,22 @@ export default class RuntimeBackground {
                         msg.code + '&state=' + msg.state);
                 }
                 catch { }
+                break;
+            case 'webAuthnResult':
+                let vaultUrl2 = this.environmentService.getWebVaultUrl();
+                if (vaultUrl2 == null) {
+                    vaultUrl2 = 'https://vault.bitwarden.com';
+                }
+
+                if (msg.referrer == null || Utils.getHostname(vaultUrl2) !== msg.referrer) {
+                    return;
+                }
+
+                const params = `webAuthnResponse=${encodeURIComponent(msg.data)};remember=${msg.remember}`;
+                BrowserApi.createNewTab(`popup/index.html?uilocation=popout#/2fa;${params}`, undefined, false);
+                break;
+            case 'reloadPopup':
+                this.messagingService.send('reloadPopup');
                 break;
             default:
                 break;

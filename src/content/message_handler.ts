@@ -10,4 +10,13 @@ window.addEventListener('message', event => {
             referrer: event.source.location.hostname,
         });
     }
+
+    if (event.data.command && (event.data.command === 'webAuthnResult')) {
+        chrome.runtime.sendMessage({
+            command: event.data.command,
+            data: event.data.data,
+            remember: event.data.remember,
+            referrer: event.source.location.hostname,
+        });
+    }
 }, false);

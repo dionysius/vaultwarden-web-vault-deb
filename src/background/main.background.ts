@@ -179,9 +179,6 @@ export default class MainBackground {
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
             (expired: boolean) => this.logout(expired));
         this.userService = new UserService(this.tokenService, this.storageService);
-        this.authService = new AuthService(this.cryptoService, this.apiService, this.userService,
-            this.tokenService, this.appIdService, this.i18nService, this.platformUtilsService,
-            this.messagingService, this.vaultTimeoutService, this.consoleLogService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
             this.apiService, this.storageService, this.i18nService, () => this.searchService);
@@ -246,7 +243,7 @@ export default class MainBackground {
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
             this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService,
-            this.environmentService, this.policyService, this.userService);
+            this.environmentService, this.policyService, this.userService, this.messagingService);
         this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.cryptoFunctionService,
             this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService, this.appIdService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
@@ -261,12 +258,24 @@ export default class MainBackground {
         this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService,
             this.vaultTimeoutService);
         this.windowsBackground = new WindowsBackground(this);
+
+        const that = this;
+        this.authService = new AuthService(this.cryptoService, this.apiService, this.userService,
+            this.tokenService, this.appIdService, this.i18nService, this.platformUtilsService,
+            new class extends MessagingServiceAbstraction {
+                // AuthService should send the messages to the background not popup.
+                send = (subscriber: string, arg: any = {}) => {
+                    const message = Object.assign({}, { command: subscriber }, arg);
+                    that.runtimeBackground.processMessage(message, that, null);
+                }
+            }(), this.vaultTimeoutService, this.consoleLogService);
     }
 
     async bootstrap() {
         this.analytics.ga('send', 'pageview', '/background.html');
         this.containerService.attachToWindow(window);
 
+        (this.authService as AuthService).init();
         await (this.vaultTimeoutService as VaultTimeoutService).init(true);
         await (this.i18nService as I18nService).init();
         await (this.eventService as EventService).init(true);

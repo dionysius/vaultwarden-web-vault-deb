@@ -126,12 +126,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return BrowserApi.getApplicationVersion();
     }
 
-    supportsU2f(win: Window): boolean {
-        if (win != null && (win as any).u2f != null) {
-            return true;
-        }
-
-        return this.isChrome() || this.isOpera() || this.isVivaldi() || this.isEdge();
+    supportsWebAuthn(win: Window): boolean {
+        return (typeof(PublicKeyCredential) !== 'undefined');
     }
 
     supportsDuo(): boolean {

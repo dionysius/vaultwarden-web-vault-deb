@@ -66,11 +66,6 @@ function getBgService<T>(service: string) {
 
 export const stateService = new StateService();
 export const messagingService = new BrowserMessagingService();
-export const authService = new AuthService(getBgService<CryptoService>('cryptoService')(),
-    getBgService<ApiService>('apiService')(), getBgService<UserService>('userService')(),
-    getBgService<TokenService>('tokenService')(), getBgService<AppIdService>('appIdService')(),
-    getBgService<I18nService>('i18nService')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
-    messagingService, getBgService<VaultTimeoutService>('vaultTimeoutService')(), getBgService<ConsoleLogService>('consoleLogService')());
 export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
     getBgService<CipherService>('cipherService')(), getBgService<ConsoleLogService>('consoleLogService')());
 
@@ -86,7 +81,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
                 window.document.body.classList.add('body-sm');
             }
 
-            document.body.style.setProperty('height',`${window.innerHeight}px`,'important');
+            document.body.style.setProperty('height', `${window.innerHeight}px`, 'important');
         }
 
         if (BrowserApi.getBackgroundPage() != null) {
@@ -107,8 +102,6 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
             }
             window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
             window.document.documentElement.classList.add('theme_' + theme);
-
-            authService.init();
 
             const analytics = new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {
                 const bgPage = BrowserApi.getBackgroundPage();
@@ -133,7 +126,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
         PopupUtilsService,
         BroadcasterService,
         { provide: MessagingService, useValue: messagingService },
-        { provide: AuthServiceAbstraction, useValue: authService },
+        { provide: AuthServiceAbstraction, useFactory: getBgService<AuthService>('authService'), deps: [] },
         { provide: StateServiceAbstraction, useValue: stateService },
         { provide: SearchServiceAbstraction, useValue: searchService },
         { provide: AuditService, useFactory: getBgService<AuditService>('auditService'), deps: [] },
