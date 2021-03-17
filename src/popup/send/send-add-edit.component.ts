@@ -33,6 +33,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     isFirefox = false;
     inPopout = false;
     inSidebar = false;
+    isLinux = false;
 
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         userService: UserService, messagingService: MessagingService, policyService: PolicyService,
@@ -44,13 +45,14 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     }
 
     get showFileSelector(): boolean {
-        return !this.editMode && (!this.isFirefox && !this.isSafari) ||
+        return !this.editMode && (!this.isFirefox && !this.isSafari && !this.isLinux) ||
             (this.isFirefox && (this.inSidebar || this.inPopout)) ||
-            (this.isSafari && this.inPopout);
+            (this.isSafari && this.inPopout) ||
+            (this.isLinux && !this.isFirefox && (this.inSidebar || this.inPopout));
     }
 
     get showFilePopoutMessage(): boolean {
-        return !this.editMode && (this.showFirefoxFileWarning || this.showSafariFileWarning);
+        return !this.editMode && (this.showFirefoxFileWarning || this.showSafariFileWarning || this.showLinuxChromiumFileWarning);
     }
 
     get showFirefoxFileWarning(): boolean {
@@ -59,6 +61,11 @@ export class SendAddEditComponent extends BaseAddEditComponent {
 
     get showSafariFileWarning(): boolean {
         return this.isSafari && !this.inPopout;
+    }
+
+    // Only show this for Chromium based browsers in Linux
+    get showLinuxChromiumFileWarning(): boolean {
+        return this.isLinux && !this.isFirefox && !(this.inSidebar || this.inPopout);
     }
 
     popOutWindow() {
@@ -70,6 +77,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
         this.isFirefox = this.platformUtilsService.isFirefox();
         this.inPopout = this.popupUtilsService.inPopout(window);
         this.inSidebar = this.popupUtilsService.inSidebar(window);
+        this.isLinux = window?.navigator?.userAgent.indexOf('Linux') !== -1;
 
         const queryParamsSub = this.route.queryParams.subscribe(async params => {
             if (params.sendId) {

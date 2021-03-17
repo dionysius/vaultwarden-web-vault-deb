@@ -22,6 +22,7 @@
         <app-callout type="warning" icon="fa fa-external-link fa-rotate-270 fa-fw" [clickable]="true"
             title="{{'sendFileCalloutHeader' | i18n}}"
             *ngIf="showFilePopoutMessage && send.type === sendType.File && !disableSend" (click)="popOutWindow()">
+            <div *ngIf="showLinuxChromiumFileWarning">{{'sendLinuxChromiumFileWarning' | i18n}}</div>
             <div *ngIf="showFirefoxFileWarning">{{'sendFirefoxFileWarning' | i18n}}</div>
             <div *ngIf="showSafariFileWarning">{{'sendSafariFileWarning' | i18n}}</div>
         </app-callout>
@@ -122,15 +123,16 @@
                                 [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
                         </ng-container>
                         <div class="flex flex-grow" *ngIf="!isDateTimeLocalSupported">
-                            <input id="deletionDateCustomFallback" type="date"
-                                name="DeletionDateFallback" [(ngModel)]="deletionDateFallback" required
-                                placeholder="MM/DD/YYYY" [readOnly]="disableSend"
-                                data-date-format="mm/dd/yyyy" >
-                            <input *ngIf="!isSafari" id="deletionTimeCustomFallback" type="time"
-                                name="DeletionTimeDate" [(ngModel)]="deletionTimeFallback" required
-                                placeholder="HH:MM AM/PM" [readOnly]="disableSend">
-                            <select *ngIf="isSafari" id="deletionTimeCustomFallback" [(ngModel)]="safariDeletionTime" name="SafariDeletionTime">
-                                <option *ngFor="let o of safariDeletionTimeOptions" [value]="o.military">{{o.standard}}</option>
+                            <input id="deletionDateCustomFallback" type="date" name="DeletionDateFallback"
+                                [(ngModel)]="deletionDateFallback" required placeholder="MM/DD/YYYY"
+                                [readOnly]="disableSend" data-date-format="mm/dd/yyyy">
+                            <input *ngIf="!isSafari" id="deletionTimeCustomFallback" type="time" name="DeletionTimeDate"
+                                [(ngModel)]="deletionTimeFallback" required placeholder="HH:MM AM/PM"
+                                [readOnly]="disableSend">
+                            <select *ngIf="isSafari" id="deletionTimeCustomFallback" [(ngModel)]="safariDeletionTime"
+                                name="SafariDeletionTime">
+                                <option *ngFor="let o of safariDeletionTimeOptions" [value]="o.military">{{o.standard}}
+                                </option>
                             </select>
                         </div>
                     </ng-template>
@@ -155,8 +157,11 @@
                 </div>
                 <div class="box-footer">
                     {{'deletionDateDesc' | i18n}}
-                    <ng-container *ngIf="(!inPopout && isFirefox) && (this.editMode || (deletionDateSelect === 0 && !editMode))">
-                        <br>{{'sendFirefoxCustomDatePopoutMessage1' | i18n}} <a (click)="popOutWindow()">{{'sendFirefoxCustomDatePopoutMessage2' | i18n}}</a> {{'sendFirefoxCustomDatePopoutMessage3' | i18n}}
+                    <ng-container
+                        *ngIf="(!inPopout && isFirefox) && (this.editMode || (deletionDateSelect === 0 && !editMode))">
+                        <br>{{'sendFirefoxCustomDatePopoutMessage1' | i18n}} <a
+                            (click)="popOutWindow()">{{'sendFirefoxCustomDatePopoutMessage2' | i18n}}</a>
+                        {{'sendFirefoxCustomDatePopoutMessage3' | i18n}}
                     </ng-container>
                 </div>
             </div>
@@ -165,20 +170,22 @@
                 <div class="box-content">
                     <ng-template #expirationDateCustom>
                         <ng-container *ngIf="isDateTimeLocalSupported">
-                            <input id="expirationDateCustom" type="datetime-local"
-                                name="ExpirationDate" [(ngModel)]="expirationDate" required
-                                placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
+                            <input id="expirationDateCustom" type="datetime-local" name="ExpirationDate"
+                                [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM"
+                                [readOnly]="disableSend">
                         </ng-container>
                         <div class="flex flex-grow" *ngIf="!isDateTimeLocalSupported">
-                            <input id="expirationDateCustomFallback" type="date"
-                                name="ExpirationDateFallback" [(ngModel)]="expirationDateFallback" [required]="!editMode"
-                                placeholder="MM/DD/YYYY" [readOnly]="disableSend" (change)="expirationDateFallbackChanged()"
-                                data-date-format="mm/dd/yyyy" >
+                            <input id="expirationDateCustomFallback" type="date" name="ExpirationDateFallback"
+                                [(ngModel)]="expirationDateFallback" [required]="!editMode" placeholder="MM/DD/YYYY"
+                                [readOnly]="disableSend" (change)="expirationDateFallbackChanged()"
+                                data-date-format="mm/dd/yyyy">
                             <input *ngIf="!isSafari" id="expirationTimeCustomFallback" type="time"
-                                name="ExpirationTimeFallback" [(ngModel)]="expirationTimeFallback" [required]="!editMode"
-                                placeholder="HH:MM AM/PM" [readOnly]="disableSend">
-                            <select *ngIf="isSafari" id="expirationTimeCustomFallback" [(ngModel)]="safariExpirationTime" name="SafariExpirationTime">
-                                <option *ngFor="let o of safariExpirationTimeOptions" [value]="o.military">{{o.standard}}</option>
+                                name="ExpirationTimeFallback" [(ngModel)]="expirationTimeFallback"
+                                [required]="!editMode" placeholder="HH:MM AM/PM" [readOnly]="disableSend">
+                            <select *ngIf="isSafari" id="expirationTimeCustomFallback"
+                                [(ngModel)]="safariExpirationTime" name="SafariExpirationTime">
+                                <option *ngFor="let o of safariExpirationTimeOptions" [value]="o.military">
+                                    {{o.standard}}</option>
                             </select>
                         </div>
                     </ng-template>
@@ -205,8 +212,11 @@
                 </div>
                 <div class="box-footer">
                     {{'expirationDateDesc' | i18n}}
-                    <ng-container *ngIf="(!inPopout && isFirefox) && (this.editMode || (deletionDateSelect === 0 && !editMode))">
-                        <br>{{'sendFirefoxCustomDatePopoutMessage1' | i18n}} <a (click)="popOutWindow()">{{'sendFirefoxCustomDatePopoutMessage2' | i18n}}</a> {{'sendFirefoxCustomDatePopoutMessage3' | i18n}}
+                    <ng-container
+                        *ngIf="(!inPopout && isFirefox) && (this.editMode || (deletionDateSelect === 0 && !editMode))">
+                        <br>{{'sendFirefoxCustomDatePopoutMessage1' | i18n}} <a
+                            (click)="popOutWindow()">{{'sendFirefoxCustomDatePopoutMessage2' | i18n}}</a>
+                        {{'sendFirefoxCustomDatePopoutMessage3' | i18n}}
                     </ng-container>
                 </div>
             </div>
