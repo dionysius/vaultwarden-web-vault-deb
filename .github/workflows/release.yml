@@ -93,17 +93,11 @@ jobs:
       - name: gulp
         run: gulp ci
 
-      - name: make source directory
-        run: mkdir dist/Source
-
-      - name: checkout repo
-        uses: actions/checkout@v2
-        with: 
-          path: 'dist/Source'
-
       - name: Build sources for reviewers
         shell: cmd
         run: |
+          mkdir dist\Source
+          call git clone %REPO_URL% dist\Source
           cd dist\Source
           call git checkout %GITHUB_SHA%
           call git submodule update --init --recursive
