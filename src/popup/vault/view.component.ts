@@ -29,6 +29,8 @@ import { BrowserApi } from '../../browser/browserApi';
 import { AutofillService } from '../../services/abstractions/autofill.service';
 import { PopupUtilsService } from '../services/popup-utils.service';
 
+import { CipherType } from 'jslib/enums';
+
 const BroadcasterSubscriptionId = 'ChildViewComponent';
 
 @Component({
@@ -41,6 +43,7 @@ export class ViewComponent extends BaseViewComponent {
     tab: any;
     loadPageDetailsTimeout: number;
     inPopout = false;
+    cipherType = CipherType;
 
     constructor(cipherService: CipherService, totpService: TotpService,
         tokenService: TokenService, i18nService: I18nService,
