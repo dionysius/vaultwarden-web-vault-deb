@@ -7,7 +7,7 @@
     </div>
     <div class="search">
         <input type="{{searchTypeSearch ? 'search' : 'text'}}" placeholder="{{'searchVault' | i18n}}" id="search"
-            [(ngModel)]="searchText" (input)="searchVault()" autocomplete="off">
+            [(ngModel)]="searchText" (input)="searchVault()" autocomplete="off" (keydown)="closeOnEsc($event)">
         <i class="fa fa-search" aria-hidden="true"></i>
     </div>
     <div class="right">
