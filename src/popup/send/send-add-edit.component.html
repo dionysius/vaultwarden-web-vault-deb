@@ -148,8 +148,8 @@
                             <ng-container *ngTemplateOutlet="deletionDateCustom"></ng-container>
                         </div>
                     </ng-container>
-                    <ng-container *ngIf="editMode" appBoxRow>
-                        <div class="box-content-row">
+                    <ng-container *ngIf="editMode">
+                        <div class="box-content-row" appBoxRow>
                             <label for="editDeletionDate">{{'deletionDate' | i18n}}</label>
                             <ng-container *ngTemplateOutlet="deletionDateCustom"></ng-container>
                         </div>
