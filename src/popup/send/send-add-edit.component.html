@@ -18,6 +18,9 @@
         <app-callout type="warning" title="{{'sendDisabled' | i18n}}" *ngIf="disableSend">
             {{'sendDisabledWarning' | i18n}}
         </app-callout>
+        <app-callout type="info" *ngIf="disableHideEmail && !disableSend">
+            {{'sendOptionsPolicyInEffect' | i18n}}
+        </app-callout>
         <!-- File Warning -->
         <app-callout type="warning" icon="fa fa-external-link fa-rotate-270 fa-fw" [clickable]="true"
             title="{{'sendFileCalloutHeader' | i18n}}"
@@ -277,6 +280,16 @@
                 </div>
                 <div class="box-footer">
                     {{'sendNotesDesc' | i18n}}
+                </div>
+            </div>
+            <!-- Hide Email -->
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="hideEmail">{{'hideEmail' | i18n}}</label>
+                        <input id="hideEmail" type="checkbox" name="HideEmail" [(ngModel)]="send.hideEmail"
+                            [disabled]="(disableHideEmail && !send.hideEmail) || disableSend">
+                    </div>
                 </div>
             </div>
             <!-- Disable Send -->
