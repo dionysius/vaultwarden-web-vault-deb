@@ -23,6 +23,7 @@ import {
 import { ConsoleLogService } from 'jslib/services/consoleLog.service';
 import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
+import { FileUploadService } from 'jslib/services/fileUpload.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { PolicyService } from 'jslib/services/policy.service';
 import { SearchService } from 'jslib/services/search.service';
@@ -56,6 +57,7 @@ import {
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 import { EventService as EventServiceAbstraction } from 'jslib/abstractions/event.service';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
+import { FileUploadService as FileUploadServiceAbstraction } from 'jslib/abstractions/fileUpload.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
 import { PolicyService as PolicyServiceAbstraction } from 'jslib/abstractions/policy.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
@@ -124,6 +126,7 @@ export default class MainBackground {
     analytics: Analytics;
     popupUtilsService: PopupUtilsService;
     sendService: SendServiceAbstraction;
+    fileUploadService: FileUploadServiceAbstraction
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
@@ -180,15 +183,16 @@ export default class MainBackground {
             (expired: boolean) => this.logout(expired));
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
+        this.fileUploadService = new FileUploadService(this.consoleLogService, this.apiService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.storageService, this.i18nService, () => this.searchService);
+            this.apiService, this.fileUploadService, this.storageService, this.i18nService, () => this.searchService);
         this.folderService = new FolderService(this.cryptoService, this.userService, this.apiService,
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18nService);
         this.searchService = new SearchService(this.cipherService, this.consoleLogService);
-        this.sendService = new SendService(this.cryptoService, this.userService, this.apiService, this.storageService,
-            this.i18nService, this.cryptoFunctionService);
+        this.sendService = new SendService(this.cryptoService, this.userService, this.apiService, this.fileUploadService,
+            this.storageService, this.i18nService, this.cryptoFunctionService);
         this.stateService = new StateService();
         this.policyService = new PolicyService(this.userService, this.storageService);
         this.vaultTimeoutService = new VaultTimeoutService(this.cipherService, this.folderService,
@@ -288,7 +292,7 @@ export default class MainBackground {
         await this.webRequestBackground.init();
         await this.windowsBackground.init();
 
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             setTimeout(async () => {
                 await this.environmentService.setUrlsFromStorage();
                 await this.setIcon();
@@ -717,7 +721,7 @@ export default class MainBackground {
     // Browser API Helpers
 
     private contextMenusRemoveAll() {
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             chrome.contextMenus.removeAll(() => {
                 resolve();
                 if (chrome.runtime.lastError) {
@@ -728,7 +732,7 @@ export default class MainBackground {
     }
 
     private contextMenusCreate(options: any) {
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             chrome.contextMenus.create(options, () => {
                 resolve();
                 if (chrome.runtime.lastError) {
@@ -757,7 +761,7 @@ export default class MainBackground {
             // which doesn't resolve within a reasonable time.
             theAction.setIcon(options);
         } else {
-            return new Promise(resolve => {
+            return new Promise<void>(resolve => {
                 theAction.setIcon(options, () => resolve());
             });
         }
