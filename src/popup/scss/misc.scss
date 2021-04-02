@@ -339,8 +339,8 @@ input[type="password"]::-ms-reveal {
     }
 }
 
-// Workaround for rendering error in Firefox sidebar when in dark mode
+// Workaround for rendering error in Firefox sidebar
 // option elements will not render background-color correctly if identical to parent background-color
-html.theme_dark select option {
+html.theme_dark select option, html.theme_nord select option {
     background-color: adjust-color(map-get(map-get($themes, dark), inputBackgroundColor), +1);
 }
