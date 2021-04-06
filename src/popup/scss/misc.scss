@@ -189,6 +189,16 @@ p.lead {
     }
 }
 
+body.linux-webauthn {
+    width: 485px !important;
+    #web-authn-frame {
+        iframe {
+            width: 375px;
+            margin: 0 55px;
+        }
+    }
+}
+
 app-root > #loading {
     display: flex;
     text-align: center;

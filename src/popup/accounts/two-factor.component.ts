@@ -74,6 +74,12 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             return;
         }
 
+        // WebAuthn prompt appears inside the popup on linux, and requires a larger popup width
+        // than usual to avoid cutting off the dialog.
+        if (this.selectedProviderType === TwoFactorProviderType.WebAuthn && await this.isLinux()) {
+            document.body.classList.add('linux-webauthn');
+        }
+
         if (this.selectedProviderType === TwoFactorProviderType.Email &&
             this.popupUtilsService.inPopup(window)) {
             const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popup2faCloseMessage'),
@@ -98,12 +104,20 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         });
     }
 
-    ngOnDestroy() {
+    async ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+
+        if (this.selectedProviderType === TwoFactorProviderType.WebAuthn && await this.isLinux()) {
+            document.body.classList.remove('linux-webauthn');
+        }
         super.ngOnDestroy();
     }
 
     anotherMethod() {
         this.router.navigate(['2fa-options']);
+    }
+
+    async isLinux() {
+        return (await BrowserApi.getPlatformInfo()).os === "linux";
     }
 }

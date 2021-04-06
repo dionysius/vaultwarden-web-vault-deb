@@ -176,4 +176,13 @@ export class BrowserApi {
             chrome.permissions.request(permission, resolve);
         });
     }
+
+    static getPlatformInfo(): Promise<browser.runtime.PlatformInfo | chrome.runtime.PlatformInfo> {
+        if (BrowserApi.isWebExtensionsApi) {
+            return browser.runtime.getPlatformInfo();
+        }
+        return new Promise((resolve) => {
+            chrome.runtime.getPlatformInfo(resolve);
+        });
+    }
 }
