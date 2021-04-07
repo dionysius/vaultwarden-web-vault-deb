@@ -886,19 +886,31 @@
     "message": "Enable Auto-fill On Page Load"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads. This is a global setting which may be overridden by individual logins."
-  },
-  "autoFillOnPageLoadUseGlobalSettings": {
-    "message": "Use Global Settings"
-  },
-  "autoFillOnPageLoadAlways": {
-    "message": "Always"
-  },
-  "autoFillOnPageLoadNever": {
-    "message": "Never"
+    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
   },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default auto-fill on page load setting"
+  },
+  "globalAutoFillOnPageLoadAlways": {
+    "message": "Always auto-fill"
+  },
+  "globalAutoFillOnPageLoadNever": {
+    "message": "Never auto-fill"
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill On Page Load (if enabled)"
+  },
+  "itemAutoFillOnPageLoadUseGlobal": {
+    "message": "Use default setting"
+  },
+  "itemAutoFillOnPageLoadAlways": {
+    "message": "Always auto-fill this login"
+  },
+  "itemAutoFillOnPageLoadNever": {
+    "message": "Never auto-fill this login"
   },
   "commandOpenPopup": {
     "message": "Open vault popup"

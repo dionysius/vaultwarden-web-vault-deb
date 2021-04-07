@@ -77,6 +77,21 @@
         @include themify($themes) {
             color: themed('mutedColor');
         }
+
+        .sub-option {
+            margin-right: 5px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            select {
+                border: 1px solid #000000;
+                border-radius: $border-radius;
+                @include themify($themes) {
+                    border-color: themed('boxBackgroundColor');
+                }
+            }
+        }
     }
 
     &.list {

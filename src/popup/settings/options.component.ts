@@ -23,6 +23,8 @@ import { ConstantsService } from 'jslib/services/constants.service';
 export class OptionsComponent implements OnInit {
     disableFavicon = false;
     enableAutoFillOnPageLoad = false;
+    autoFillOnPageLoadDefault = false;
+    autoFillOnPageLoadOptions: any[];
     disableAutoTotpCopy = false;
     disableContextMenuItem = false;
     disableAddLoginNotification = false;
@@ -64,6 +66,10 @@ export class OptionsComponent implements OnInit {
             { name: i18nService.t('twoMinutes'), value: 120 },
             { name: i18nService.t('fiveMinutes'), value: 300 },
         ];
+        this.autoFillOnPageLoadOptions = [
+            { name: i18nService.t('globalAutoFillOnPageLoadAlways'), value: true },
+            { name: i18nService.t('globalAutoFillOnPageLoadNever'), value: false },
+        ]
     }
 
     async ngOnInit() {

@@ -22,6 +22,13 @@
         <div class="box-footer">
             {{'enableAutoFillOnPageLoadDesc' | i18n}}
             <b>{{'warning' | i18n}}</b>: {{'experimentalFeature' | i18n}}
+            <div class="sub-option">
+                <label for="defaultAutofill">{{'defaultAutoFillOnPageLoad' | i18n}}</label>
+                <select id="defaultAutofill" name="DefaultAutofill" [(ngModel)]="autoFillOnPageLoadDefault"
+                    [disabled]="!enableAutoFillOnPageLoad">
+                    <option *ngFor="let o of autoFillOnPageLoadOptions" [ngValue]="o.value">{{o.name}}</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="box">
