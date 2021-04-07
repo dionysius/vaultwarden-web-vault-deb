@@ -1,7 +1,9 @@
 import SafariServices
 import os.log
+import LocalAuthentication
 
 let SFExtensionMessageKey = "message"
+let ServiceName = "Bitwarden"
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
@@ -78,14 +80,68 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 context.completeRequest(returningItems: [response], completionHandler: nil)
             }
             return
+        case "biometricUnlock":
+            
+            var error: NSError?
+            let laContext = LAContext()
+            
+            guard laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+                response.userInfo = [
+                    SFExtensionMessageKey: [
+                        "message": [
+                            "command": "biometricUnlock",
+                            "response": "not supported",
+                            "timestamp": Int64(NSDate().timeIntervalSince1970 * 1000),
+                        ],
+                    ],
+                ]
+                break;
+            }
 
+            laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Bitwarden Safari Extension") { (success, error) in
+                if success {
+                    let passwordName = "key"
+                    var passwordLength: UInt32 = 0
+                    var passwordPtr: UnsafeMutableRawPointer? = nil
+                    
+                    let status = SecKeychainFindGenericPassword(nil, UInt32(ServiceName.utf8.count), ServiceName, UInt32(passwordName.utf8.count), passwordName, &passwordLength, &passwordPtr, nil)
+                    
+                    if status == errSecSuccess {
+                        let result = NSString(bytes: passwordPtr!, length: Int(passwordLength), encoding: String.Encoding.utf8.rawValue) as String?
+                                    SecKeychainItemFreeContent(nil, passwordPtr)
+                        
+                        response.userInfo = [ SFExtensionMessageKey: [
+                            "message": [
+                                "command": "biometricUnlock",
+                                "response": "unlocked",
+                                "timestamp": Int64(NSDate().timeIntervalSince1970 * 1000),
+                                "keyB64": result!.replacingOccurrences(of: "\"", with: ""),
+                            ],
+                        ]]
+                    } else {
+                        response.userInfo = [
+                            SFExtensionMessageKey: [
+                                "message": [
+                                    "command": "biometricUnlock",
+                                    "response": "not enabled",
+                                    "timestamp": Int64(NSDate().timeIntervalSince1970 * 1000),
+                                ],
+                            ],
+                        ]
+                    }
+                }
+                
+                context.completeRequest(returningItems: [response], completionHandler: nil)
+            }
+            
+            return;
         default:
             return
         }
 
         context.completeRequest(returningItems: [response], completionHandler: nil)
     }
-    
+
 }
 
 func jsonSerialize<T: Encodable>(obj: T?) -> String? {
