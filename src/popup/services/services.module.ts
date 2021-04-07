@@ -68,7 +68,8 @@ function getBgService<T>(service: string) {
 export const stateService = new StateService();
 export const messagingService = new BrowserMessagingService();
 export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
-    getBgService<CipherService>('cipherService')(), getBgService<ConsoleLogService>('consoleLogService')());
+    getBgService<CipherService>('cipherService')(), getBgService<ConsoleLogService>('consoleLogService')(),
+    getBgService<I18nService>('i18nService')());
 
 export function initFactory(platformUtilsService: PlatformUtilsService, i18nService: I18nService, storageService: StorageService,
     popupUtilsService: PopupUtilsService): Function {
@@ -90,7 +91,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
 
             let theme = await storageService.get<string>(ConstantsService.themeKey);
             if (theme == null) {
-                theme = platformUtilsService.getDefaultSystemTheme();
+                theme = await platformUtilsService.getDefaultSystemTheme();
 
                 platformUtilsService.onDefaultSystemThemeChange(sysTheme => {
                     window.document.documentElement.classList.remove('theme_light', 'theme_dark');
