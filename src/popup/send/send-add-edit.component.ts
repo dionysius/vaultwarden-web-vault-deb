@@ -35,6 +35,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     inPopout = false;
     inSidebar = false;
     isLinux = false;
+    isUnsupportedMac = false;
 
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         userService: UserService, messagingService: MessagingService, policyService: PolicyService,
@@ -46,14 +47,14 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     }
 
     get showFileSelector(): boolean {
-        return !this.editMode && (!this.isFirefox && !this.isSafari && !this.isLinux) ||
+        return !this.editMode && (!this.isFirefox && !this.isSafari && !this.isLinux && !this.isUnsupportedMac) ||
             (this.isFirefox && (this.inSidebar || this.inPopout)) ||
             (this.isSafari && this.inPopout) ||
-            (this.isLinux && !this.isFirefox && (this.inSidebar || this.inPopout));
+            ((this.isLinux || this.isUnsupportedMac) && !this.isFirefox && (this.inSidebar || this.inPopout));
     }
 
     get showFilePopoutMessage(): boolean {
-        return !this.editMode && (this.showFirefoxFileWarning || this.showSafariFileWarning || this.showLinuxChromiumFileWarning);
+        return !this.editMode && (this.showFirefoxFileWarning || this.showSafariFileWarning || this.showChromiumFileWarning);
     }
 
     get showFirefoxFileWarning(): boolean {
@@ -64,9 +65,9 @@ export class SendAddEditComponent extends BaseAddEditComponent {
         return this.isSafari && !this.inPopout;
     }
 
-    // Only show this for Chromium based browsers in Linux
-    get showLinuxChromiumFileWarning(): boolean {
-        return this.isLinux && !this.isFirefox && !(this.inSidebar || this.inPopout);
+    // Only show this for Chromium based browsers in Linux and Mac > Big Sur
+    get showChromiumFileWarning(): boolean {
+        return (this.isLinux || this.isUnsupportedMac) && !this.isFirefox && !(this.inSidebar || this.inPopout);
     }
 
     popOutWindow() {
@@ -79,6 +80,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
         this.inPopout = this.popupUtilsService.inPopout(window);
         this.inSidebar = this.popupUtilsService.inSidebar(window);
         this.isLinux = window?.navigator?.userAgent.indexOf('Linux') !== -1;
+        this.isUnsupportedMac = this.platformUtilsService.isChrome() && window?.navigator?.appVersion.includes('Mac OS X 11');
 
         const queryParamsSub = this.route.queryParams.subscribe(async params => {
             if (params.sendId) {

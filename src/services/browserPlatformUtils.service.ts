@@ -122,8 +122,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         BrowserApi.downloadFile(win, blobData, blobOptions, fileName);
     }
 
-    getApplicationVersion(): string {
-        return BrowserApi.getApplicationVersion();
+    getApplicationVersion(): Promise<string> {
+        return Promise.resolve(BrowserApi.getApplicationVersion());
     }
 
     supportsWebAuthn(win: Window): boolean {
@@ -289,8 +289,11 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     async supportsBiometric() {
-        const isUnsuportedFirefox = this.isFirefox() && parseInt((await browser.runtime.getBrowserInfo()).version.split('.')[0], 10) < 87;
-        return !isUnsuportedFirefox && !this.isSafari();
+        if (this.isFirefox()) {
+            return parseInt((await browser.runtime.getBrowserInfo()).version.split('.')[0], 10) >= 87;
+        }
+
+        return true;
     }
 
     authenticateBiometric() {
@@ -311,8 +314,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return false;
     }
 
-    getDefaultSystemTheme() {
-        return this.prefersColorSchemeDark.matches ? 'dark' : 'light';
+    getDefaultSystemTheme(): Promise<'light' | 'dark'> {
+        return Promise.resolve(this.prefersColorSchemeDark.matches ? 'dark' : 'light');
     }
 
     onDefaultSystemThemeChange(callback: ((theme: 'light' | 'dark') => unknown)) {

@@ -25,7 +25,7 @@
         <app-callout type="warning" icon="fa fa-external-link fa-rotate-270 fa-fw" [clickable]="true"
             title="{{'sendFileCalloutHeader' | i18n}}"
             *ngIf="showFilePopoutMessage && send.type === sendType.File && !disableSend" (click)="popOutWindow()">
-            <div *ngIf="showLinuxChromiumFileWarning">{{'sendLinuxChromiumFileWarning' | i18n}}</div>
+            <div *ngIf="showChromiumFileWarning">{{'sendLinuxChromiumFileWarning' | i18n}}</div>
             <div *ngIf="showFirefoxFileWarning">{{'sendFirefoxFileWarning' | i18n}}</div>
             <div *ngIf="showSafariFileWarning">{{'sendSafariFileWarning' | i18n}}</div>
         </app-callout>

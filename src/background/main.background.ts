@@ -126,7 +126,7 @@ export default class MainBackground {
     analytics: Analytics;
     popupUtilsService: PopupUtilsService;
     sendService: SendServiceAbstraction;
-    fileUploadService: FileUploadServiceAbstraction
+    fileUploadService: FileUploadServiceAbstraction;
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
@@ -190,7 +190,7 @@ export default class MainBackground {
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18nService);
-        this.searchService = new SearchService(this.cipherService, this.consoleLogService);
+        this.searchService = new SearchService(this.cipherService, this.consoleLogService, this.i18nService);
         this.sendService = new SendService(this.cryptoService, this.userService, this.apiService, this.fileUploadService,
             this.storageService, this.i18nService, this.cryptoFunctionService);
         this.stateService = new StateService();
@@ -249,7 +249,8 @@ export default class MainBackground {
             this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService,
             this.environmentService, this.policyService, this.userService, this.messagingService);
         this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.cryptoFunctionService,
-            this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService, this.appIdService);
+            this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService, this.appIdService,
+            this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics, this.vaultTimeoutService);
 
