@@ -348,3 +348,11 @@ input[type="password"]::-ms-reveal {
         }
     }
 }
+
+// Workaround for rendering error in Firefox sidebar
+// option elements will not render background-color correctly if identical to parent background-color
+select option {
+    @include themify($themes) {
+        background-color: adjust-color(themed('inputBackgroundColor'), +1);
+    }
+}
