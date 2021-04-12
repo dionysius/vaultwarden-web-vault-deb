@@ -47,10 +47,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     }
 
     get showFileSelector(): boolean {
-        return !this.editMode && (!this.isFirefox && !this.isSafari && !this.isLinux && !this.isUnsupportedMac) ||
-            (this.isFirefox && (this.inSidebar || this.inPopout)) ||
-            (this.isSafari && this.inPopout) ||
-            ((this.isLinux || this.isUnsupportedMac) && !this.isFirefox && (this.inSidebar || this.inPopout));
+        return !(this.editMode || this.showFilePopoutMessage);
     }
 
     get showFilePopoutMessage(): boolean {
