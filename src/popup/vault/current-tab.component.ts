@@ -9,7 +9,6 @@ import {
 import { Router } from '@angular/router';
 
 import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
 
 import { BrowserApi } from '../../browser/browserApi';
 
@@ -59,8 +58,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
     constructor(private platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
         private popupUtilsService: PopupUtilsService, private autofillService: AutofillService,
-        private analytics: Angulartics2, private toasterService: ToasterService,
-        private i18nService: I18nService, private router: Router,
+        private toasterService: ToasterService, private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
         private searchService: SearchService, private storageService: StorageService) {
@@ -136,7 +134,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         }
 
         if (this.pageDetails == null || this.pageDetails.length === 0) {
-            this.analytics.eventTrack.next({ action: 'Autofilled Error' });
             this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
             return;
         }
@@ -148,7 +145,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 doc: window.document,
                 fillNewPassword: true,
             });
-            this.analytics.eventTrack.next({ action: 'Autofilled' });
             if (this.totpCode != null) {
                 this.platformUtilsService.copyToClipboard(this.totpCode, { window: window });
             }
@@ -157,7 +153,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             }
         } catch {
             this.ngZone.run(() => {
-                this.analytics.eventTrack.next({ action: 'Autofilled Error' });
                 this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
                 this.changeDetectorRef.detectChanges();
             });

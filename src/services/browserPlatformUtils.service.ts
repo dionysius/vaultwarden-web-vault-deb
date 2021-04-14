@@ -6,8 +6,6 @@ import { DeviceType } from 'jslib/enums/deviceType';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
-import { AnalyticsIds } from 'jslib/misc/analytics';
-
 const DialogPromiseExpiration = 600000; // 10 minutes
 
 export default class BrowserPlatformUtilsService implements PlatformUtilsService {
@@ -15,7 +13,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
     private showDialogResolves = new Map<number, { resolve: (value: boolean) => void, date: Date }>();
     private deviceCache: DeviceType = null;
-    private analyticsIdCache: string = null;
     private prefersColorSchemeDark = window.matchMedia('(prefers-color-scheme: dark)');
 
     constructor(private messagingService: MessagingService,
@@ -80,15 +77,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
     isMacAppStore(): boolean {
         return false;
-    }
-
-    analyticsId(): string {
-        if (this.analyticsIdCache) {
-            return this.analyticsIdCache;
-        }
-
-        this.analyticsIdCache = (AnalyticsIds as any)[this.getDevice()];
-        return this.analyticsIdCache;
     }
 
     async isViewOpen(): Promise<boolean> {
@@ -158,14 +146,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         });
         return new Promise<boolean>(resolve => {
             this.showDialogResolves.set(dialogId, { resolve: resolve, date: new Date() });
-        });
-    }
-
-    eventTrack(action: string, label?: string, options?: any) {
-        this.messagingService.send('analyticsEventTrack', {
-            action: action,
-            label: label,
-            options: options,
         });
     }
 

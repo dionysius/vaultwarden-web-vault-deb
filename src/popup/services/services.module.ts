@@ -53,8 +53,6 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { SearchService } from 'jslib/services/search.service';
 import { StateService } from 'jslib/services/state.service';
 
-import { Analytics } from 'jslib/misc/analytics';
-
 import { PopupSearchService } from './popup-search.service';
 import { PopupUtilsService } from './popup-utils.service';
 
@@ -100,14 +98,6 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
             }
             window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
             window.document.documentElement.classList.add('theme_' + theme);
-
-            const analytics = new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {
-                const bgPage = BrowserApi.getBackgroundPage();
-                if (bgPage == null || bgPage.bitwardenMain == null) {
-                    throw new Error('Cannot resolve background page main.');
-                }
-                return bgPage.bitwardenMain;
-            });
         }
     };
 }

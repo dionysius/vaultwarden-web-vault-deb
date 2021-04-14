@@ -1,4 +1,3 @@
-import { Angulartics2 } from 'angulartics2';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 
 import {
@@ -57,11 +56,10 @@ export class SettingsComponent implements OnInit {
     previousVaultTimeout: number = null;
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
-        private analytics: Angulartics2, private vaultTimeoutService: VaultTimeoutService,
-        private storageService: StorageService, public messagingService: MessagingService,
-        private router: Router, private environmentService: EnvironmentService,
-        private cryptoService: CryptoService, private userService: UserService,
-        private popupUtilsService: PopupUtilsService) {
+        private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
+        public messagingService: MessagingService, private router: Router,
+        private environmentService: EnvironmentService, private cryptoService: CryptoService,
+        private userService: UserService, private popupUtilsService: PopupUtilsService) {
     }
 
     async ngOnInit() {
@@ -280,7 +278,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async lock() {
-        this.analytics.eventTrack.next({ action: 'Lock Now' });
         await this.vaultTimeoutService.lock(true);
     }
 
@@ -294,7 +291,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async changePassword() {
-        this.analytics.eventTrack.next({ action: 'Clicked Change Password' });
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('changeMasterPasswordConfirmation'), this.i18nService.t('changeMasterPassword'),
             this.i18nService.t('yes'), this.i18nService.t('cancel'));
@@ -304,7 +300,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async twoStep() {
-        this.analytics.eventTrack.next({ action: 'Clicked Two-step Login' });
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('twoStepLoginConfirmation'), this.i18nService.t('twoStepLogin'),
             this.i18nService.t('yes'), this.i18nService.t('cancel'));
@@ -314,7 +309,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async share() {
-        this.analytics.eventTrack.next({ action: 'Clicked Share Vault' });
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('shareVaultConfirmation'), this.i18nService.t('shareVault'),
             this.i18nService.t('yes'), this.i18nService.t('cancel'));
@@ -324,7 +318,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async webVault() {
-        this.analytics.eventTrack.next({ action: 'Clicked Web Vault' });
         let url = this.environmentService.getWebVaultUrl();
         if (url == null) {
             url = 'https://vault.bitwarden.com';
@@ -333,7 +326,6 @@ export class SettingsComponent implements OnInit {
     }
 
     import() {
-        this.analytics.eventTrack.next({ action: 'Clicked Import Items' });
         BrowserApi.createNewTab('https://help.bitwarden.com/article/import-data/');
     }
 
@@ -342,13 +334,10 @@ export class SettingsComponent implements OnInit {
     }
 
     help() {
-        this.analytics.eventTrack.next({ action: 'Clicked Help and Feedback' });
         BrowserApi.createNewTab('https://help.bitwarden.com/');
     }
 
     about() {
-        this.analytics.eventTrack.next({ action: 'Clicked About' });
-
         const year = (new Date()).getFullYear();
         const versionText = document.createTextNode(
             this.i18nService.t('version') + ': ' + BrowserApi.getApplicationVersion());
@@ -368,8 +357,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async fingerprint() {
-        this.analytics.eventTrack.next({ action: 'Clicked Fingerprint' });
-
         const fingerprint = await this.cryptoService.getFingerprint(await this.userService.getUserId());
         const p = document.createElement('p');
         p.innerText = this.i18nService.t('yourAccountsFingerprint') + ':';
@@ -395,7 +382,6 @@ export class SettingsComponent implements OnInit {
     }
 
     rate() {
-        this.analytics.eventTrack.next({ action: 'Rate Extension' });
         const deviceType = this.platformUtilsService.getDevice();
         BrowserApi.createNewTab((RateUrls as any)[deviceType]);
     }

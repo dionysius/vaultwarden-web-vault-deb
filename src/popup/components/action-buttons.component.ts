@@ -6,9 +6,6 @@ import {
 } from '@angular/core';
 
 import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
-
-import { BrowserApi } from '../../browser/browserApi';
 
 import { CipherType } from 'jslib/enums/cipherType';
 import { EventType } from 'jslib/enums/eventType';
@@ -36,9 +33,8 @@ export class ActionButtonsComponent {
     cipherType = CipherType;
     userHasPremiumAccess = false;
 
-    constructor(private analytics: Angulartics2, private toasterService: ToasterService,
-        private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
-        private popupUtilsService: PopupUtilsService, private eventService: EventService,
+    constructor(private toasterService: ToasterService, private i18nService: I18nService,
+        private platformUtilsService: PlatformUtilsService, private eventService: EventService,
         private totpService: TotpService, private userService: UserService) { }
 
     async ngOnInit() {
@@ -60,7 +56,6 @@ export class ActionButtonsComponent {
             return;
         }
 
-        this.analytics.eventTrack.next({ action: 'Copied ' + aType });
         this.platformUtilsService.copyToClipboard(value, { window: window });
         this.toasterService.popAsync('info', null,
             this.i18nService.t('valueCopied', this.i18nService.t(typeI18nKey)));

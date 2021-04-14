@@ -4,10 +4,8 @@ import {
     BodyOutputType,
     Toast,
     ToasterConfig,
-    ToasterContainerComponent,
     ToasterService,
 } from 'angular2-toaster';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import Swal, { SweetAlertIcon } from 'sweetalert2/src/sweetalert2.js';
 
 import {
@@ -23,8 +21,6 @@ import {
     Router,
     RouterOutlet,
 } from '@angular/router';
-
-import { Angulartics2 } from 'angulartics2';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
@@ -61,8 +57,7 @@ export class AppComponent implements OnInit {
 
     private lastActivity: number = null;
 
-    constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics, private analytics: Angulartics2,
-        private toasterService: ToasterService, private storageService: StorageService,
+    constructor(private toasterService: ToasterService, private storageService: StorageService,
         private broadcasterService: BroadcasterService, private authService: AuthService,
         private i18nService: I18nService, private router: Router,
         private stateService: StateService, private messagingService: MessagingService,
@@ -87,7 +82,6 @@ export class AppComponent implements OnInit {
             if (msg.command === 'doneLoggingOut') {
                 this.ngZone.run(async () => {
                     this.authService.logOut(() => {
-                        this.analytics.eventTrack.next({ action: 'Logged Out' });
                         if (msg.expired) {
                             this.showToast({
                                 type: 'warning',
@@ -114,11 +108,6 @@ export class AppComponent implements OnInit {
             } else if (msg.command === 'showToast') {
                 this.ngZone.run(() => {
                     this.showToast(msg);
-                });
-            } else if (msg.command === 'analyticsEventTrack') {
-                this.analytics.eventTrack.next({
-                    action: msg.action,
-                    properties: { label: msg.label },
                 });
             } else if (msg.command === 'reloadProcess') {
                 const windowReload = this.platformUtilsService.isSafari() ||

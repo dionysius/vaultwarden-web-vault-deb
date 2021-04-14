@@ -64,7 +64,6 @@ import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/se
 import { SendService as SendServiceAbstraction } from 'jslib/abstractions/send.service';
 import { SystemService as SystemServiceAbstraction } from 'jslib/abstractions/system.service';
 
-import { Analytics } from 'jslib/misc';
 import { Utils } from 'jslib/misc/utils';
 
 import { BrowserApi } from '../browser/browserApi';
@@ -123,7 +122,6 @@ export default class MainBackground {
     systemService: SystemServiceAbstraction;
     eventService: EventServiceAbstraction;
     policyService: PolicyServiceAbstraction;
-    analytics: Analytics;
     popupUtilsService: PopupUtilsService;
     sendService: SendServiceAbstraction;
     fileUploadService: FileUploadServiceAbstraction;
@@ -227,8 +225,6 @@ export default class MainBackground {
             this.apiService, this.vaultTimeoutService, () => this.logout(true), this.consoleLogService);
         this.environmentService = new EnvironmentService(this.apiService, this.storageService,
             this.notificationsService);
-        this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
-            this.storageService, this.appIdService);
         this.popupUtilsService = new PopupUtilsService(this.platformUtilsService);
         this.systemService = new SystemService(this.storageService, this.vaultTimeoutService,
             this.messagingService, this.platformUtilsService, () => {
@@ -246,18 +242,17 @@ export default class MainBackground {
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService,
+            this.notificationsService, this.systemService, this.vaultTimeoutService,
             this.environmentService, this.policyService, this.userService, this.messagingService);
         this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.cryptoFunctionService,
             this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService, this.appIdService,
             this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
-            this.platformUtilsService, this.analytics, this.vaultTimeoutService);
+            this.platformUtilsService, this.vaultTimeoutService);
 
         this.tabsBackground = new TabsBackground(this);
-        this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
-            this.passwordGenerationService, this.analytics, this.platformUtilsService, this.vaultTimeoutService,
-            this.eventService, this.totpService);
+        this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService, this.passwordGenerationService,
+            this.platformUtilsService, this.vaultTimeoutService, this.eventService, this.totpService);
         this.idleBackground = new IdleBackground(this.vaultTimeoutService, this.storageService,
             this.notificationsService);
         this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService,
@@ -277,7 +272,6 @@ export default class MainBackground {
     }
 
     async bootstrap() {
-        this.analytics.ga('send', 'pageview', '/background.html');
         this.containerService.attachToWindow(window);
 
         (this.authService as AuthService).init();

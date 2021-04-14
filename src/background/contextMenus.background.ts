@@ -2,8 +2,6 @@ import { BrowserApi } from '../browser/browserApi';
 
 import MainBackground from './main.background';
 
-import { Analytics } from 'jslib/misc';
-
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
@@ -17,7 +15,7 @@ export default class ContextMenusBackground {
     private contextMenus: any;
 
     constructor(private main: MainBackground, private cipherService: CipherService,
-        private passwordGenerationService: PasswordGenerationService, private analytics: Analytics,
+        private passwordGenerationService: PasswordGenerationService,
         private platformUtilsService: PlatformUtilsService, private vaultTimeoutService: VaultTimeoutService,
         private eventService: EventService, private totpService: TotpService) {
         this.contextMenus = chrome.contextMenus;
@@ -45,11 +43,6 @@ export default class ContextMenusBackground {
         const password = await this.passwordGenerationService.generatePassword(options);
         this.platformUtilsService.copyToClipboard(password, { window: window });
         this.passwordGenerationService.addHistory(password);
-
-        this.analytics.ga('send', {
-            hitType: 'event',
-            eventAction: 'Generated Password From Context Menu',
-        });
     }
 
     private async cipherAction(info: any) {
@@ -72,29 +65,13 @@ export default class ContextMenusBackground {
         }
 
         if (info.parentMenuItemId === 'autofill') {
-            this.analytics.ga('send', {
-                hitType: 'event',
-                eventAction: 'Autofilled From Context Menu',
-            });
             await this.startAutofillPage(cipher);
         } else if (info.parentMenuItemId === 'copy-username') {
-            this.analytics.ga('send', {
-                hitType: 'event',
-                eventAction: 'Copied Username From Context Menu',
-            });
             this.platformUtilsService.copyToClipboard(cipher.login.username, { window: window });
         } else if (info.parentMenuItemId === 'copy-password') {
-            this.analytics.ga('send', {
-                hitType: 'event',
-                eventAction: 'Copied Password From Context Menu',
-            });
             this.platformUtilsService.copyToClipboard(cipher.login.password, { window: window });
             this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
         } else if (info.parentMenuItemId === 'copy-totp') {
-            this.analytics.ga('send', {
-                hitType: 'event',
-                eventAction: 'Copied Totp From Context Menu',
-            });
             const totpValue = await this.totpService.getCode(cipher.login.totp);
             this.platformUtilsService.copyToClipboard(totpValue, { window: window });
         }
