@@ -16,7 +16,6 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SendService } from 'jslib/abstractions/send.service';
-import { TokenService } from 'jslib/abstractions/token.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
@@ -41,9 +40,9 @@ export class SendAddEditComponent extends BaseAddEditComponent {
         userService: UserService, messagingService: MessagingService, policyService: PolicyService,
         environmentService: EnvironmentService, datePipe: DatePipe, sendService: SendService,
         private route: ActivatedRoute, private router: Router, private location: Location,
-        private popupUtilsService: PopupUtilsService, tokenService: TokenService) {
+        private popupUtilsService: PopupUtilsService) {
         super(i18nService, platformUtilsService, environmentService, datePipe, sendService, userService,
-            messagingService, policyService, tokenService);
+            messagingService, policyService);
     }
 
     get showFileSelector(): boolean {
