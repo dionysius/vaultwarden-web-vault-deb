@@ -892,25 +892,19 @@
     "message": "This is currently an experimental feature. Use at your own risk."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default auto-fill on page load setting"
-  },
-  "globalAutoFillOnPageLoadAlways": {
-    "message": "Always auto-fill"
-  },
-  "globalAutoFillOnPageLoadNever": {
-    "message": "Never auto-fill"
+    "message": "Default login setting"
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill On Page Load (if enabled)"
+    "message": "Auto-fill On Page Load (if enabled in Options)"
   },
-  "itemAutoFillOnPageLoadUseGlobal": {
+  "autoFillOnPageLoadUseDefault": {
     "message": "Use default setting"
   },
-  "itemAutoFillOnPageLoadAlways": {
-    "message": "Always auto-fill this login"
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill"
   },
-  "itemAutoFillOnPageLoadNever": {
-    "message": "Never auto-fill this login"
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill"
   },
   "commandOpenPopup": {
     "message": "Open vault popup"

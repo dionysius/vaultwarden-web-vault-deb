@@ -67,14 +67,17 @@ export class OptionsComponent implements OnInit {
             { name: i18nService.t('fiveMinutes'), value: 300 },
         ];
         this.autoFillOnPageLoadOptions = [
-            { name: i18nService.t('globalAutoFillOnPageLoadAlways'), value: true },
-            { name: i18nService.t('globalAutoFillOnPageLoadNever'), value: false },
+            { name: i18nService.t('autoFillOnPageLoadYes'), value: true },
+            { name: i18nService.t('autoFillOnPageLoadNo'), value: false },
         ]
     }
 
     async ngOnInit() {
         this.enableAutoFillOnPageLoad = await this.storageService.get<boolean>(
             ConstantsService.enableAutoFillOnPageLoadKey);
+        
+        this.autoFillOnPageLoadDefault = await this.storageService.get<boolean>(
+            ConstantsService.autoFillOnPageLoadDefaultKey) ?? false;
 
         this.disableAddLoginNotification = await this.storageService.get<boolean>(
             ConstantsService.disableAddLoginNotificationKey);
@@ -127,6 +130,10 @@ export class OptionsComponent implements OnInit {
     async updateAutoFillOnPageLoad() {
         await this.storageService.save(ConstantsService.enableAutoFillOnPageLoadKey, this.enableAutoFillOnPageLoad);
         this.callAnalytics('Auto-fill Page Load', this.enableAutoFillOnPageLoad);
+    }
+
+    async updateAutoFillOnPageLoadDefault() {
+        await this.storageService.save(ConstantsService.autoFillOnPageLoadDefaultKey, this.autoFillOnPageLoadDefault);
     }
 
     async updateDisableFavicon() {

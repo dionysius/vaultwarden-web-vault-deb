@@ -25,7 +25,7 @@
             <div class="sub-option">
                 <label for="defaultAutofill">{{'defaultAutoFillOnPageLoad' | i18n}}</label>
                 <select id="defaultAutofill" name="DefaultAutofill" [(ngModel)]="autoFillOnPageLoadDefault"
-                    [disabled]="!enableAutoFillOnPageLoad">
+                    (change)="updateAutoFillOnPageLoadDefault()" [disabled]="!enableAutoFillOnPageLoad">
                     <option *ngFor="let o of autoFillOnPageLoadOptions" [ngValue]="o.value">{{o.name}}</option>
                 </select>
             </div>
