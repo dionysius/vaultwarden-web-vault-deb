@@ -9,6 +9,7 @@ import {
     Router,
 } from '@angular/router';
 
+import { ApiService } from 'jslib/abstractions/api.service';
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -52,10 +53,10 @@ export class ViewComponent extends BaseViewComponent {
         private router: Router, private location: Location,
         broadcasterService: BroadcasterService, ngZone: NgZone,
         changeDetectorRef: ChangeDetectorRef, userService: UserService,
-        eventService: EventService, private autofillService: AutofillService,
+        eventService: EventService, private autofillService: AutofillService, apiService: ApiService,
         private messagingService: MessagingService, private popupUtilsService: PopupUtilsService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
-            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService);
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService, apiService);
     }
 
     ngOnInit() {
