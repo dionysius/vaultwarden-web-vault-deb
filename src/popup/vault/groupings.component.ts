@@ -43,6 +43,15 @@ const ScopeStateId = ComponentId + 'Scope';
     templateUrl: 'groupings.component.html',
 })
 export class GroupingsComponent extends BaseGroupingsComponent implements OnInit, OnDestroy {
+
+    get showNoFolderCiphers(): boolean {
+        return this.noFolderCiphers != null && this.noFolderCiphers.length < this.noFolderListSize &&
+            this.collections.length === 0;
+    }
+
+    get folderCount(): number {
+        return this.nestedFolders.length - (this.showNoFolderCiphers ? 0 : 1);
+    }
     ciphers: CipherView[];
     favoriteCiphers: CipherView[];
     noFolderCiphers: CipherView[];
@@ -76,15 +85,6 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         private searchService: SearchService, private location: Location) {
         super(collectionService, folderService, storageService, userService);
         this.noFolderListSize = 100;
-    }
-
-    get showNoFolderCiphers(): boolean {
-        return this.noFolderCiphers != null && this.noFolderCiphers.length < this.noFolderListSize &&
-            this.collections.length === 0;
-    }
-
-    get folderCount(): number {
-        return this.nestedFolders.length - (this.showNoFolderCiphers ? 0 : 1);
     }
 
     async ngOnInit() {
@@ -296,6 +296,13 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         return this.hasSearched || (!this.searchPending && this.searchService.isSearchable(this.searchText));
     }
 
+    closeOnEsc(e: KeyboardEvent) {
+        // If input not empty, use browser default behavior of clearing input instead
+		if (e.key === 'Escape' && (this.searchText == null || this.searchText === '')) {
+            BrowserApi.closePopup(window);
+        }
+    }
+
     private async saveState() {
         this.state = {
             scrollY: this.popupUtils.getContentScrollY(window),
@@ -352,12 +359,5 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         }
 
         return true;
-    }
-
-    closeOnEsc(e: KeyboardEvent) {
-        // If input not empty, use browser default behavior of clearing input instead
-		if (e.key === 'Escape' && (this.searchText == null || this.searchText === '')) {
-            BrowserApi.closePopup(window);
-        }
     }
 }

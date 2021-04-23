@@ -1,6 +1,3 @@
-import 'core-js';
-import 'zone.js/dist/zone';
-
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ToasterModule } from 'angular2-toaster';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';

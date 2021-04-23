@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = function(config) {
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -5,35 +7,26 @@ module.exports = function(config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine', 'karma-typescript'],
+        frameworks: ['jasmine'],
 
         // list of files / patterns to load in the browser
         files: [
-            'jslib/src/abstractions/**/*.ts',
-            'jslib/src/enums/**/*.ts',
-            'jslib/src/models/**/*.ts',
-            'jslib/src/services/**/*.ts',
-            'jslib/src/misc/**/*.ts',
-            'src/browser/**/*.ts',
-            'src/services/**/*.ts'
+            { pattern: 'src/**/*.spec.ts', watch: false },
         ],
 
-        // list of files to exclude
         exclude: [
-            "jslib/src/services/nodeApi.service.ts",
-            "jslib/src/services/lowdbStorage.service.ts"
         ],
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            '**/*.ts': 'karma-typescript'
+            'src/**/*.ts': 'webpack'
         },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'karma-typescript', 'kjhtml'],
+        reporters: ['progress', 'kjhtml'],
 
         // web server port
         port: 9876,
@@ -57,14 +50,26 @@ module.exports = function(config) {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
         },
 
-        karmaTypescriptConfig: {
-            tsconfig: './tsconfig.json',
-            compilerOptions: {
-                module: 'CommonJS'
+        webpack: {
+            mode: 'production',
+            resolve: {
+                extensions: ['.js', '.ts', '.tsx'],
+                alias: {
+                    jslib: path.join(__dirname, 'jslib/src'),
+                },
             },
-            bundlerOptions: {
-                entrypoints: /\.spec\.ts$/
-            }
+            module: {
+                rules: [
+                    {test: /\.tsx?$/, loader: 'ts-loader'}
+                ]
+            },
+            stats: {
+                colors: true,
+                modules: true,
+                reasons: true,
+                errorDetails: true
+            },
+            devtool: 'inline-source-map',
         },
     })
 }

@@ -171,6 +171,13 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         }, 200);
     }
 
+    closeOnEsc(e: KeyboardEvent) {
+        // If input not empty, use browser default behavior of clearing input instead
+        if (e.key === 'Escape' && (this.searchText == null || this.searchText === '')) {
+            BrowserApi.closePopup(window);
+        }
+    }
+
     private async load() {
         const tab = await BrowserApi.getTabFromCurrentWindow();
         if (tab != null) {
@@ -225,12 +232,5 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
         this.loginCiphers = this.loginCiphers.sort((a, b) => this.cipherService.sortCiphersByLastUsedThenName(a, b));
         this.loaded = true;
-    }
-
-    closeOnEsc(e: KeyboardEvent) {
-        // If input not empty, use browser default behavior of clearing input instead
-        if (e.key === 'Escape' && (this.searchText == null || this.searchText === '')) {
-            BrowserApi.closePopup(window);
-        }
     }
 }

@@ -118,6 +118,6 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     }
 
     async isLinux() {
-        return (await BrowserApi.getPlatformInfo()).os === "linux";
+        return (await BrowserApi.getPlatformInfo()).os === 'linux';
     }
 }

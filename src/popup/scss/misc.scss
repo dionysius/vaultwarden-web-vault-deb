@@ -353,6 +353,6 @@ input[type="password"]::-ms-reveal {
 // option elements will not render background-color correctly if identical to parent background-color
 select option {
     @include themify($themes) {
-        background-color: adjust-color(themed('inputBackgroundColor'), +1);
+        background-color: darken(themed('inputBackgroundColor'), +1);
     }
 }
