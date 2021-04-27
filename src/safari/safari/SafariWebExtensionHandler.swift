@@ -85,7 +85,9 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             var error: NSError?
             let laContext = LAContext()
             
-            guard laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
+            
+            if let e = error, e.code != kLAErrorBiometryLockout {
                 response.userInfo = [
                     SFExtensionMessageKey: [
                         "message": [
@@ -95,10 +97,22 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                         ],
                     ],
                 ]
-                break;
+                break
             }
 
-            laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Bitwarden Safari Extension") { (success, error) in
+            guard let accessControl = SecAccessControlCreateWithFlags(nil, kSecAttrAccessibleWhenUnlockedThisDeviceOnly, [.privateKeyUsage, .userPresence], nil) else {
+                response.userInfo = [
+                    SFExtensionMessageKey: [
+                        "message": [
+                            "command": "biometricUnlock",
+                            "response": "not supported",
+                            "timestamp": Int64(NSDate().timeIntervalSince1970 * 1000),
+                        ],
+                    ],
+                ]
+                break
+            }
+            laContext.evaluateAccessControl(accessControl, operation: .useKeySign, localizedReason: "Bitwarden Safari Extension") { (success, error) in
                 if success {
                     let passwordName = "key"
                     var passwordLength: UInt32 = 0
@@ -134,7 +148,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 context.completeRequest(returningItems: [response], completionHandler: nil)
             }
             
-            return;
+            return
         default:
             return
         }
