@@ -43,7 +43,7 @@ export class OptionsComponent implements OnInit {
             { name: i18nService.t('light'), value: 'light' },
             { name: i18nService.t('dark'), value: 'dark' },
             { name: 'Nord', value: 'nord' },
-            { name: 'Solarized Dark', value: 'solarizedDark' },
+            { name: i18nService.t('solarizedDark'), value: 'solarizedDark' },
         ];
         this.uriMatchOptions = [
             { name: i18nService.t('baseDomain'), value: UriMatchType.Domain },
