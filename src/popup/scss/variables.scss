@@ -1,5 +1,4 @@
 ﻿@import '~nord/src/sass/nord.scss';
-@import './solarized.scss';
 
 $font-family-sans-serif: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -37,6 +36,23 @@ $button-background-color: white;
 $button-color: lighten($text-color, 40%);
 $button-color-primary: darken($brand-primary, 8%);
 $button-color-danger: darken($brand-danger, 10%);
+
+$solarizedDarkBase03:    #002b36;
+$solarizedDarkBase02:    #073642;
+$solarizedDarkBase01:    #586e75;
+$solarizedDarkBase00:    #657b83;
+$solarizedDarkBase0:     #839496;
+$solarizedDarkBase1:     #93a1a1;
+$solarizedDarkBase2:     #eee8d5;
+$solarizedDarkBase3:     #fdf6e3;
+$solarizedDarkYellow:    #b58900;
+$solarizedDarkOrange:    #cb4b16;
+$solarizedDarkRed:       #dc322f;
+$solarizedDarkMagenta:   #d33682;
+$solarizedDarkViolet:    #6c71c4;
+$solarizedDarkBlue:      #268bd2;
+$solarizedDarkCyan:      #2aa198;
+$solarizedDarkGreen:     #859900;
 
 $themes: (
     light: (
