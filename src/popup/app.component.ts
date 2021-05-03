@@ -33,6 +33,7 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import BrowserPlatformUtilsService from 'src/services/browserPlatformUtils.service';
 import { routerTransition } from './app-routing.animations';
 
 @Component({
@@ -105,6 +106,8 @@ export class AppComponent implements OnInit {
                 });
             } else if (msg.command === 'showDialog') {
                 await this.showDialog(msg);
+            } else if (msg.command === 'showPasswordDialog') {
+                await this.showPasswordDialog(msg);
             } else if (msg.command === 'showToast') {
                 this.ngZone.run(() => {
                     this.showToast(msg);
@@ -247,5 +250,31 @@ export class AppComponent implements OnInit {
             dialogId: msg.dialogId,
             confirmed: confirmed.value,
         });
+    }
+
+    private async showPasswordDialog(msg: any) {
+        const platformUtils = this.platformUtilsService as BrowserPlatformUtilsService;
+        const result = await Swal.fire({
+            heightAuto: false,
+            title: msg.title,
+            input: 'password',
+            text: msg.body,
+            confirmButtonText: this.i18nService.t('ok'),
+            showCancelButton: true,
+            cancelButtonText: this.i18nService.t('cancel'),
+            inputAttributes: {
+                autocapitalize: 'off',
+                autocorrect: 'off',
+            },
+            inputValidator: async (value: string): Promise<any> => {
+                if (await platformUtils.resolvePasswordDialogPromise(msg.dialogId, false, value)) {
+                    return false;
+                }
+
+                return this.i18nService.t('invalidMasterPassword');
+            },
+        });
+
+        platformUtils.resolvePasswordDialogPromise(msg.dialogId, true, null);
     }
 }

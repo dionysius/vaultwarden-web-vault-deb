@@ -16,6 +16,7 @@ import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
@@ -53,10 +54,12 @@ export class ViewComponent extends BaseViewComponent {
         private router: Router, private location: Location,
         broadcasterService: BroadcasterService, ngZone: NgZone,
         changeDetectorRef: ChangeDetectorRef, userService: UserService,
-        eventService: EventService, private autofillService: AutofillService, apiService: ApiService,
-        private messagingService: MessagingService, private popupUtilsService: PopupUtilsService) {
+        eventService: EventService, private autofillService: AutofillService,
+        private messagingService: MessagingService, private popupUtilsService: PopupUtilsService,
+        apiService: ApiService, passwordRepromptService: PasswordRepromptService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
-            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService, apiService);
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService,
+            apiService, passwordRepromptService);
     }
 
     ngOnInit() {
@@ -112,32 +115,45 @@ export class ViewComponent extends BaseViewComponent {
         await this.loadPageDetails();
     }
 
-    edit() {
+    async edit() {
         if (this.cipher.isDeleted) {
             return false;
         }
-        super.edit();
+        if (!await super.edit()) {
+            return false;
+        }
+
         this.router.navigate(['/edit-cipher'], { queryParams: { cipherId: this.cipher.id } });
+        return true;
     }
 
-    clone() {
+    async clone() {
         if (this.cipher.isDeleted) {
             return false;
         }
-        super.clone();
+
+        if (!await super.clone()) {
+            return false;
+        }
+
         this.router.navigate(['/clone-cipher'], {
             queryParams: {
                 cloneMode: true,
                 cipherId: this.cipher.id,
             },
         });
+        return true;
     }
 
-    share() {
-        super.share();
+    async share() {
+        if (!await super.share()) {
+            return false;
+        }
+
         if (this.cipher.organizationId == null) {
             this.router.navigate(['/share-cipher'], { replaceUrl: true, queryParams: { cipherId: this.cipher.id } });
         }
+        return true;
     }
 
     async fillCipher() {
@@ -220,6 +236,10 @@ export class ViewComponent extends BaseViewComponent {
     }
 
     private async doAutofill() {
+        if (!await this.promptPassword()) {
+            return false;
+        }
+
         if (this.pageDetails == null || this.pageDetails.length === 0) {
             this.platformUtilsService.showToast('error', null,
                 this.i18nService.t('autofillError'));

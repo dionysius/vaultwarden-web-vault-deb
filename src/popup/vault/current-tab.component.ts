@@ -14,12 +14,14 @@ import { BrowserApi } from '../../browser/browserApi';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
+import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
 import { CipherType } from 'jslib/enums/cipherType';
 
 import { CipherView } from 'jslib/models/view/cipherView';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SearchService } from 'jslib/abstractions/search.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -61,7 +63,8 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private toasterService: ToasterService, private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
-        private searchService: SearchService, private storageService: StorageService) {
+        private searchService: SearchService, private storageService: StorageService,
+        private passwordRepromptService: PasswordRepromptService) {
     }
 
     async ngOnInit() {
@@ -128,6 +131,10 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     async fillCipher(cipher: CipherView) {
+        if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
+            return;
+        }
+
         this.totpCode = null;
         if (this.totpTimeout != null) {
             window.clearTimeout(this.totpTimeout);

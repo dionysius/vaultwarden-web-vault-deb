@@ -16,6 +16,7 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SendService } from 'jslib/abstractions/send.service';
+import { TokenService } from 'jslib/abstractions/token.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';

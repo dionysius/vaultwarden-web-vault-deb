@@ -1,4 +1,5 @@
 import { CipherType } from 'jslib/enums';
+import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
 
 import {
     ApiService,
@@ -63,6 +64,7 @@ import { PolicyService as PolicyServiceAbstraction } from 'jslib/abstractions/po
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
 import { SendService as SendServiceAbstraction } from 'jslib/abstractions/send.service';
 import { SystemService as SystemServiceAbstraction } from 'jslib/abstractions/system.service';
+import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
 import { Utils } from 'jslib/misc/utils';
 
@@ -85,8 +87,6 @@ import BrowserPlatformUtilsService from '../services/browserPlatformUtils.servic
 import BrowserStorageService from '../services/browserStorage.service';
 import I18nService from '../services/i18n.service';
 import VaultTimeoutService from '../services/vaultTimeout.service';
-
-import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
 export default class MainBackground {
     messagingService: MessagingServiceAbstraction;
@@ -583,7 +583,7 @@ export default class MainBackground {
     }
 
     private async loadLoginContextMenuOptions(cipher: any) {
-        if (cipher == null || cipher.type !== CipherType.Login) {
+        if (cipher == null || cipher.type !== CipherType.Login || cipher.reprompt !== CipherRepromptType.None) {
             return;
         }
 
