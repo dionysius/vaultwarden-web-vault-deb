@@ -7,6 +7,7 @@ import {
 
 import { ToasterService } from 'angular2-toaster';
 
+import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
 import { CipherType } from 'jslib/enums/cipherType';
 import { EventType } from 'jslib/enums/eventType';
 
@@ -46,7 +47,8 @@ export class ActionButtonsComponent {
     }
 
     async copy(cipher: CipherView, value: string, typeI18nKey: string, aType: string) {
-        if (this.passwordRepromptService.protectedFields().includes(aType) && !await this.passwordRepromptService.showPasswordPrompt()) {
+        if (this.cipher.reprompt !== CipherRepromptType.None && this.passwordRepromptService.protectedFields().includes(aType) &&
+            !await this.passwordRepromptService.showPasswordPrompt()) {
             return;
         }
 
