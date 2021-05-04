@@ -76,10 +76,21 @@ export class AddEditComponent extends BaseAddEditComponent {
 
             if (!this.editMode || this.cloneMode) {
                 if (params.name && (this.cipher.name == null || this.cipher.name === '')) {
-                    this.cipher.name = params.name;
+                    if (this.popupUtilsService.inPopout(window)) {
+                        this.cipher.name = '';
+                    }
+                    else {
+                        this.cipher.name = params.name;
+                    }
+
                 }
                 if (params.uri && (this.cipher.login.uris[0].uri == null || this.cipher.login.uris[0].uri === '')) {
-                    this.cipher.login.uris[0].uri = params.uri;
+                    if (this.popupUtilsService.inPopout(window)) {
+                        this.cipher.login.uris[0].uri = '';
+                    }
+                    else {
+                        this.cipher.login.uris[0].uri = params.uri;
+                    }
                 }
             }
             if (queryParamsSub != null) {
