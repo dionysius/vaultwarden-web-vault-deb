@@ -898,6 +898,12 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
   },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, and your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard after loading the web page."
+  },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
   },
