@@ -36,6 +36,9 @@ export class OptionsComponent implements OnInit {
     uriMatchOptions: any[];
     clearClipboard: number;
     clearClipboardOptions: any[];
+    showGeneral: boolean = true;
+    showAutofill: boolean = true;
+    showDisplay: boolean = true;
 
     constructor(private messagingService: MessagingService, private storageService: StorageService,
         private stateService: StateService, private totpService: TotpService, i18nService: I18nService) {
