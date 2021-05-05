@@ -12,139 +12,166 @@
 </header>
 <content>
     <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="autofill">{{'enableAutoFillOnPageLoad' | i18n}}</label>
-                <input id="autofill" type="checkbox" (change)="updateAutoFillOnPageLoad()"
-                    [(ngModel)]="enableAutoFillOnPageLoad">
-            </div>
-        </div>
-        <div class="box-footer">
-            {{'enableAutoFillOnPageLoadDesc' | i18n}}
-            <b>{{'warning' | i18n}}</b>: {{'experimentalFeature' | i18n}}
+        <div class="box-header-expandable" (click)="showGeneral = !showGeneral">
+            General
+            <i *ngIf="!showGeneral" class="fa fa-chevron-down fa-sm icon"></i>
+            <i *ngIf="showGeneral" class="fa fa-chevron-up fa-sm icon"></i>
         </div>
     </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="autoCopyTotp">{{'enableAutoTotpCopyOnAutoFill' | i18n}}</label>
-                <input id="autoCopyTotp" type="checkbox" (change)="updateAutoTotpCopyOnAutoFill()"
-                    [(ngModel)]="enableAutoTotpCopyOnAutoFill" [disabled]="!enableAutoFillOnPageLoad">
+    <ng-container *ngIf="showGeneral">
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row" appBoxRow>
+                    <label for="defaultUriMatch">{{'defaultUriMatchDetection' | i18n}}</label>
+                    <select id="defaultUriMatch" name="DefaultUriMatch" [(ngModel)]="defaultUriMatch"
+                        (change)="saveDefaultUriMatch()">
+                        <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{o.name}}</option>
+                    </select>
+                </div>
             </div>
+            <div class="box-footer">{{'defaultUriMatchDetectionDesc' | i18n}}</div>
         </div>
-        <div class="box-footer">
-            {{'enableAutoTotpCopyOnAutoFillDesc' | i18n}}
+        <div class="box" *ngIf="showClearClipboard">
+            <div class="box-content">
+                <div class="box-content-row" appBoxRow>
+                    <label for="clearClipboard">{{'clearClipboard' | i18n}}</label>
+                    <select id="clearClipboard" name="ClearClipboard" [(ngModel)]="clearClipboard"
+                        (change)="saveClearClipboard()">
+                        <option *ngFor="let o of clearClipboardOptions" [ngValue]="o.value">{{o.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="box-footer">{{'clearClipboardDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="totp">{{'disableAutoTotpCopy' | i18n}}</label>
+                    <input id="totp" type="checkbox" (change)="updateAutoTotpCopy()" [(ngModel)]="disableAutoTotpCopy">
+                </div>
+            </div>
+            <div class="box-footer">{{'disableAutoTotpCopyDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="addlogin-notification-bar">{{'disableAddLoginNotification' | i18n}}</label>
+                    <input id="addlogin-notification-bar" type="checkbox" (change)="updateAddLoginNotification()"
+                        [(ngModel)]="disableAddLoginNotification">
+                </div>
+            </div>
+            <div class="box-footer">{{'addLoginNotificationDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="changedpass-notification-bar">{{'disableChangedPasswordNotification' | i18n}}</label>
+                    <input id="changedpass-notification-bar" type="checkbox" (change)="updateChangedPasswordNotification()"
+                        [(ngModel)]="disableChangedPasswordNotification">
+                </div>
+            </div>
+            <div class="box-footer">{{'disableChangedPasswordNotificationDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="context-menu">{{'disableContextMenuItem' | i18n}}</label>
+                    <input id="context-menu" type="checkbox" (change)="updateDisableContextMenuItem()"
+                        [(ngModel)]="disableContextMenuItem">
+                </div>
+            </div>
+            <div class="box-footer">{{'disableContextMenuItemDesc' | i18n}}</div>
+        </div>
+    </ng-container>
+    <div class="box box-section-divider">
+        <div class="box-header-expandable" (click)="showDisplay = !showDisplay">
+            Display
+            <i *ngIf="!showDisplay" class="fa fa-chevron-down fa-sm icon"></i>
+            <i *ngIf="showDisplay" class="fa fa-chevron-up fa-sm icon"></i>
         </div>
     </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row" appBoxRow>
-                <label for="defaultUriMatch">{{'defaultUriMatchDetection' | i18n}}</label>
-                <select id="defaultUriMatch" name="DefaultUriMatch" [(ngModel)]="defaultUriMatch"
-                    (change)="saveDefaultUriMatch()">
-                    <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{o.name}}</option>
-                </select>
+    <ng-container *ngIf="showDisplay">
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="dontShowCards">{{'dontShowCardsCurrentTab' | i18n}}</label>
+                    <input id="dontShowCards" type="checkbox" (change)="updateShowCards()" [(ngModel)]="dontShowCards">
+                </div>
+            </div>
+            <div class="box-footer">{{'dontShowCardsCurrentTabDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="dontShowIdentities">{{'dontShowIdentitiesCurrentTab' | i18n}}</label>
+                    <input id="dontShowIdentities" type="checkbox" (change)="updateShowIdentities()"
+                        [(ngModel)]="dontShowIdentities">
+                </div>
+            </div>
+            <div class="box-footer">{{'dontShowIdentitiesCurrentTabDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="favicon">{{'disableFavicon' | i18n}}</label>
+                    <input id="favicon" type="checkbox" (change)="updateDisableFavicon()" [(ngModel)]="disableFavicon">
+                </div>
+            </div>
+            <div class="box-footer">{{'disableFaviconDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="badge">{{'disableBadgeCounter' | i18n}}</label>
+                    <input id="badge" type="checkbox" (change)="updateDisableBadgeCounter()" [(ngModel)]="disableBadgeCounter">
+                </div>
+            </div>
+            <div class="box-footer">{{'disableBadgeCounterDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row" appBoxRow>
+                    <label for="theme">{{'theme' | i18n}}</label>
+                    <select id="theme" name="Theme" [(ngModel)]="theme" (change)="saveTheme()">
+                        <option *ngFor="let o of themeOptions" [ngValue]="o.value">{{o.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="box-footer">{{'themeDesc' | i18n}}</div>
+        </div>
+    </ng-container>
+    <div class="box box-section-divider">
+        <div class="box-header-expandable" (click)="showAutofill = !showAutofill">
+            Autofill
+            <i *ngIf="!showAutofill" class="fa fa-chevron-down fa-sm icon"></i>
+            <i *ngIf="showAutofill" class="fa fa-chevron-up fa-sm icon"></i>
+        </div>
+    </div>
+    <ng-container *ngIf="showAutofill">
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="autofill">{{'enableAutoFillOnPageLoad' | i18n}}</label>
+                    <input id="autofill" type="checkbox" (change)="updateAutoFillOnPageLoad()"
+                        [(ngModel)]="enableAutoFillOnPageLoad">
+                </div>
+            </div>
+            <div class="box-footer">
+                {{'enableAutoFillOnPageLoadDesc' | i18n}}
+                <b>{{'warning' | i18n}}</b>: {{'experimentalFeature' | i18n}}
             </div>
         </div>
-        <div class="box-footer">{{'defaultUriMatchDetectionDesc' | i18n}}</div>
-    </div>
-    <div class="box" *ngIf="showClearClipboard">
-        <div class="box-content">
-            <div class="box-content-row" appBoxRow>
-                <label for="clearClipboard">{{'clearClipboard' | i18n}}</label>
-                <select id="clearClipboard" name="ClearClipboard" [(ngModel)]="clearClipboard"
-                    (change)="saveClearClipboard()">
-                    <option *ngFor="let o of clearClipboardOptions" [ngValue]="o.value">{{o.name}}</option>
-                </select>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="autoCopyTotp">{{'enableAutoTotpCopyOnAutoFill' | i18n}}</label>
+                    <input id="autoCopyTotp" type="checkbox" (change)="updateAutoTotpCopyOnAutoFill()"
+                        [(ngModel)]="enableAutoTotpCopyOnAutoFill" [disabled]="!enableAutoFillOnPageLoad">
+                </div>
+            </div>
+            <div class="box-footer">
+                {{'enableAutoTotpCopyOnAutoFillDesc' | i18n}}
             </div>
         </div>
-        <div class="box-footer">{{'clearClipboardDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="totp">{{'disableAutoTotpCopy' | i18n}}</label>
-                <input id="totp" type="checkbox" (change)="updateAutoTotpCopy()" [(ngModel)]="disableAutoTotpCopy">
-            </div>
-        </div>
-        <div class="box-footer">{{'disableAutoTotpCopyDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="dontShowCards">{{'dontShowCardsCurrentTab' | i18n}}</label>
-                <input id="dontShowCards" type="checkbox" (change)="updateShowCards()" [(ngModel)]="dontShowCards">
-            </div>
-        </div>
-        <div class="box-footer">{{'dontShowCardsCurrentTabDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="dontShowIdentities">{{'dontShowIdentitiesCurrentTab' | i18n}}</label>
-                <input id="dontShowIdentities" type="checkbox" (change)="updateShowIdentities()"
-                    [(ngModel)]="dontShowIdentities">
-            </div>
-        </div>
-        <div class="box-footer">{{'dontShowIdentitiesCurrentTabDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="addlogin-notification-bar">{{'disableAddLoginNotification' | i18n}}</label>
-                <input id="addlogin-notification-bar" type="checkbox" (change)="updateAddLoginNotification()"
-                    [(ngModel)]="disableAddLoginNotification">
-            </div>
-        </div>
-        <div class="box-footer">{{'addLoginNotificationDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="changedpass-notification-bar">{{'disableChangedPasswordNotification' | i18n}}</label>
-                <input id="changedpass-notification-bar" type="checkbox" (change)="updateChangedPasswordNotification()"
-                    [(ngModel)]="disableChangedPasswordNotification">
-            </div>
-        </div>
-        <div class="box-footer">{{'disableChangedPasswordNotificationDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="context-menu">{{'disableContextMenuItem' | i18n}}</label>
-                <input id="context-menu" type="checkbox" (change)="updateDisableContextMenuItem()"
-                    [(ngModel)]="disableContextMenuItem">
-            </div>
-        </div>
-        <div class="box-footer">{{'disableContextMenuItemDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="favicon">{{'disableFavicon' | i18n}}</label>
-                <input id="favicon" type="checkbox" (change)="updateDisableFavicon()" [(ngModel)]="disableFavicon">
-            </div>
-        </div>
-        <div class="box-footer">{{'disableFaviconDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="badge">{{'disableBadgeCounter' | i18n}}</label>
-                <input id="badge" type="checkbox" (change)="updateDisableBadgeCounter()" [(ngModel)]="disableBadgeCounter">
-            </div>
-        </div>
-        <div class="box-footer">{{'disableBadgeCounterDesc' | i18n}}</div>
-    </div>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row" appBoxRow>
-                <label for="theme">{{'theme' | i18n}}</label>
-                <select id="theme" name="Theme" [(ngModel)]="theme" (change)="saveTheme()">
-                    <option *ngFor="let o of themeOptions" [ngValue]="o.value">{{o.name}}</option>
-                </select>
-            </div>
-        </div>
-        <div class="box-footer">{{'themeDesc' | i18n}}</div>
-    </div>
+    </ng-container>
 </content>
