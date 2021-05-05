@@ -1,0 +1,102 @@
+name: Build
+
+on:
+  push:
+    branches-ignore:
+      - 'l10n_master'
+  workflow_dispatch:
+    inputs:
+
+
+jobs:
+  cloc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up cloc
+        run: |
+          sudo apt update
+          sudo apt -y install cloc
+      - name: Print lines of code
+        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+
+
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      repo_url: ${{ steps.gen_vars.outputs.repo_url }}
+      adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Get Package Version
+        id: gen_vars
+        run: |
+          repo_url=https://github.com/$GITHUB_REPOSITORY.git
+          adj_build_num=${GITHUB_SHA:0:7}
+
+          echo "::set-output name=repo_url::$repo_url" 
+          echo "::set-output name=adj_build_number::$adj_build_num" 
+
+
+  browser:
+    runs-on: windows-latest
+    needs: setup
+    env:
+      REPO_URL: ${{ needs.setup.outputs.repo_url }}
+      BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+
+      - name: npm setup & test
+        run: |
+          npm install
+          npm run dist
+          npm run test
+
+      - name: gulp
+        run: gulp ci
+
+      - name: Upload opera artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-opera-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-opera-${{ env.BUILD_NUMBER }}.zip
+
+      - name: Upload chrome artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-chrome-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-chrome-${{ env.BUILD_NUMBER }}.zip
+
+      - name: Upload firefox artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-firefox-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-firefox-${{ env.BUILD_NUMBER }}.zip
+
+      - name: Upload edge artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-edge-${{ env.BUILD_NUMBER }}.zip
+          path: dist/dist-edge-${{ env.BUILD_NUMBER }}.zip
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-${{ env.BUILD_NUMBER }}.zip
+          path: coverage/coverage-${{ env.BUILD_NUMBER }}.zip

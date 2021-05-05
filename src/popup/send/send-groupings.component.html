@@ -8,18 +8,22 @@
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <button appBlurClick (click)="addSend()" appA11yTitle="{{'addSend' | i18n}}">
+        <button appBlurClick (click)="addSend()" appA11yTitle="{{'addSend' | i18n}}" [disabled]="disableSend">
             <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
         </button>
     </div>
 </header>
-<content>
+<content [ngClass]="{'flex' : disableSend, 'tab-page' : disableSend}">
+    <app-callout type="warning" title="{{'sendDisabled' | i18n}}" *ngIf="disableSend">
+        {{'sendDisabledWarning' | i18n}}
+    </app-callout>
     <div class="no-items" *ngIf="(!sends || !sends.length) && !showSearching()">
         <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
         <ng-container *ngIf="loaded">
             <i class="fa fa-frown-o fa-4x"></i>
             <p>{{'noItemsInList' | i18n}}</p>
-            <button (click)="addSend()" class="btn block primary link">{{'addSend' | i18n}}</button>
+            <button (click)="addSend()" class="btn block primary link"
+                [disabled]="disableSend">{{'addSend' | i18n}}</button>
         </ng-container>
     </div>
     <ng-container *ngIf="sends && sends.length && !showSearching()">
@@ -52,9 +56,9 @@
                 <div class="flex-right">{{sends.length}}</div>
             </div>
             <div class="box-content">
-                <app-send-list [sends]="sends" title="{{'editItem' | i18n}}" (onSelected)="selectSend($event)"
-                    (onCopySendLink)="copy($event)" (onRemovePassword)="removePassword($event)"
-                    (onDeleteSend)="delete($event)"></app-send-list>
+                <app-send-list [sends]="sends" title="{{'editItem' | i18n}}" [disabledByPolicy]="disableSend"
+                    (onSelected)="selectSend($event)" (onCopySendLink)="copy($event)"
+                    (onRemovePassword)="removePassword($event)" (onDeleteSend)="delete($event)"></app-send-list>
             </div>
         </div>
     </ng-container>
@@ -64,9 +68,9 @@
         </div>
         <div class="box list full-list" *ngIf="filteredSends && filteredSends.length > 0">
             <div class="box-content">
-                <app-send-list [sends]="filteredSends" title="{{'editItem' | i18n}}" (onSelected)="selectSend($event)"
-                    (onCopySendLink)="copy($event)" (onRemovePassword)="removePassword($event)"
-                    (onDeleteSend)="delete($event)">
+                <app-send-list [sends]="filteredSends" title="{{'editItem' | i18n}}" [disabledByPolicy]="disableSend"
+                    (onSelected)="selectSend($event)" (onCopySendLink)="copy($event)"
+                    (onRemovePassword)="removePassword($event)" (onDeleteSend)="delete($event)">
                 </app-send-list>
             </div>
         </div>

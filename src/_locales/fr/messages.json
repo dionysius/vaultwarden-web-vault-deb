@@ -425,7 +425,7 @@
     "message": "Votre session a expiré."
   },
   "logOutConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir vous déconnecter ?"
+    "message": "Êtes-vous sûr de vouloir vous déconnecter ?"
   },
   "yes": {
     "message": "Oui"
@@ -455,7 +455,7 @@
     "message": "Dossier modifié"
   },
   "deleteFolderConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer ce dossier ?"
+    "message": "Êtes-vous sûr de vouloir supprimer ce dossier ?"
   },
   "deletedFolder": {
     "message": "Dossier supprimé"
@@ -498,7 +498,7 @@
     "message": "Identifiant modifié"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr•e de vouloir supprimer cet identifiant ?"
+    "message": "Êtes-vous sûr de vouloir supprimer cet identifiant ?"
   },
   "deletedItem": {
     "message": "L'élément a été envoyé dans la corbeille"
@@ -507,7 +507,7 @@
     "message": "Écraser le mot de passe"
   },
   "overwritePasswordConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
+    "message": "Êtes-vous sûr de vouloir écraser le mot de passe actuel ?"
   },
   "searchFolder": {
     "message": "Rechercher dans le dossier"
@@ -612,8 +612,11 @@
   "exportWarningDesc": {
     "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Les clés de chiffrement du compte sont spécifiques à chaque utilisateur Bitwarden. Vous ne pouvez donc pas importer d'export chiffré dans un compte différent."
   },
   "exportMasterPassword": {
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
@@ -658,7 +661,7 @@
     "message": "Supprimer la pièce jointe"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer cette pièce jointe ?"
+    "message": "Êtes-vous sûr de vouloir supprimer cette pièce jointe ?"
   },
   "deletedAttachment": {
     "message": "Pièce jointe supprimée"
@@ -700,10 +703,10 @@
     "message": "Actualiser l'adhésion"
   },
   "premiumNotCurrentMember": {
-    "message": "Vous n'êtes actuellement pas un(e) membre premium."
+    "message": "Vous n'êtes actuellement pas un membre premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Devenez un(e) membre premium et obtenez :"
+    "message": "Devenez un membre premium et obtenez :"
   },
   "ppremiumSignUpStorage": {
     "message": "1 Go de stockage de fichiers chiffrés."
@@ -1202,7 +1205,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Êtes-vous sûr(e) de vouloir utiliser l'option \"Jamais\" ? Définir votre option de verrouillage sur \"Jamais\" stocke la clé de chiffrement de votre coffre sur votre appareil. Si vous utilisez cette option, vous devez vous assurer de correctement protéger votre appareil."
+    "message": "Êtes-vous sûr de vouloir utiliser l'option \"Jamais\" ? Définir le verrouillage sur \"Jamais\" stocke la clé de chiffrement de votre coffre sur votre appareil. Si vous utilisez cette option, vous devez vous assurer de correctement protéger votre appareil."
   },
   "noOrganizationsList": {
     "message": "Vous ne faites partie d'aucune organisation. Les organisations vous permettent de partager des éléments de façon sécurisée avec d'autres utilisateurs."
@@ -1232,7 +1235,7 @@
     "message": "Mot de passe maître faible"
   },
   "weakMasterPasswordDesc": {
-    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr(e) de vouloir utiliser ce mot de passe maître ?"
+    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr de vouloir utiliser ce mot de passe maître ?"
   },
   "pin": {
     "message": "Code PIN",
@@ -1298,7 +1301,7 @@
     "message": "Supprimer définitivement l'élément"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer définitivement cet élément ?"
+    "message": "Êtes-vous sûr de vouloir supprimer définitivement cet élément ?"
   },
   "permanentlyDeletedItem": {
     "message": "Élément supprimé définitivement"
@@ -1307,7 +1310,7 @@
     "message": "Restaurer l'élément"
   },
   "restoreItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir restaurer cet élément ?"
+    "message": "Êtes-vous sûr de vouloir restaurer cet élément ?"
   },
   "restoredItem": {
     "message": "Élément restauré"
@@ -1444,10 +1447,236 @@
   "nativeMessaginPermissionErrorDesc": {
     "message": "Sans la permission de communiquer avec l'application de bureau Bitwarden, nous ne pouvons pas activer le déverrouillage biométrique dans l'extension navigateur. Veuillez réessayer."
   },
+  "nativeMessaginPermissionSidebarTitle": {
+    "message": "Permission request error"
+  },
+  "nativeMessaginPermissionSidebarDesc": {
+    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+  },
   "personalOwnershipSubmitError": {
     "message": "En raison d'une politique d'entreprise, il vous est interdit d'enregistrer des éléments dans votre coffre personnel. Sélectionnez une organisation dans l'option Propriété et choisissez parmi les collections disponibles."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Une politique d'organisation affecte vos options de propriété."
+  },
+  "excludedDomains": {
+    "message": "Domaines exclus"
+  },
+  "excludedDomainsDesc": {
+    "message": "Bitwarden ne proposera pas d'enregistrer les informations de connexion pour ces domaines. Vous devez actualiser la page pour que les modifications prennent effet."
+  },
+  "excludedDomainsInvalidDomain": {
+    "message": "$DOMAIN$ n'est pas un domaine valide",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "googlecom"
+      }
+    }
+  },
+  "send": {
+    "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "searchSends": {
+    "message": "Rechercher dans les Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "addSend": {
+    "message": "Ajouter un Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeText": {
+    "message": "Texte"
+  },
+  "sendTypeFile": {
+    "message": "Fichier"
+  },
+  "allSends": {
+    "message": "Tous les Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCountReached": {
+    "message": "Nombre maximum d'accès atteint"
+  },
+  "expired": {
+    "message": "Expiré"
+  },
+  "pendingDeletion": {
+    "message": "En attente de suppression"
+  },
+  "passwordProtected": {
+    "message": "Protégé par un mot de passe"
+  },
+  "copySendLink": {
+    "message": "Copier le lien du Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "removePassword": {
+    "message": "Supprimer le mot de passe"
+  },
+  "delete": {
+    "message": "Supprimer"
+  },
+  "removedPassword": {
+    "message": "Mot de passe supprimé"
+  },
+  "deletedSend": {
+    "message": "Send supprimé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Lien du Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "disabled": {
+    "message": "Désactivé"
+  },
+  "removePasswordConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer le mot de passe ?"
+  },
+  "deleteSend": {
+    "message": "Supprimer le Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deleteSendConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer ce Send ?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Modifier le Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeHeader": {
+    "message": "De quel type de Send s'agit-il ?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNameDesc": {
+    "message": "Un nom convivial pour décrire ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFileDesc": {
+    "message": "Le fichier que vous voulez envoyer."
+  },
+  "deletionDate": {
+    "message": "Date de suppression"
+  },
+  "deletionDateDesc": {
+    "message": "Le Send sera définitivement supprimé à la date et heure spécifiées.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Date d'expiration"
+  },
+  "expirationDateDesc": {
+    "message": "Si défini, l'accès à ce Send expirera à la date et heure spécifiées.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "oneDay": {
+    "message": "1 jour"
+  },
+  "days": {
+    "message": "$DAYS$ jours",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "custom": {
+    "message": "Personnalisé"
+  },
+  "maximumAccessCount": {
+    "message": "Nombre maximum d'accès"
+  },
+  "maximumAccessCountDesc": {
+    "message": "Si défini, les utilisateurs ne seront plus en mesure d'accéder à ce Send une fois que le nombre maximum d'accès sera atteint.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Vous pouvez, si vous le souhaitez, exiger un mot de passe pour accéder à ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Notes privées à propos de ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisableDesc": {
+    "message": "Désactiver ce Send pour que personne ne puisse y accéder.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendShareDesc": {
+    "message": "Copier dans le presse-papiers le lien de ce Send lors de l'enregistrement.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Le texte que vous voulez envoyer."
+  },
+  "sendHideText": {
+    "message": "Cacher par défaut le texte de ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Nombre d'accès actuel"
+  },
+  "createSend": {
+    "message": "Créer un nouveau Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Nouveau mot de passe"
+  },
+  "sendDisabled": {
+    "message": "Send désactivé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "En raison d'une politique d'entreprise, vous ne pouvez que supprimer un Send existant.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send créé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send modifié",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFirefoxFileWarning": {
+    "message": "Afin de choisir un fichier en utilisant Firefox, ouvrez l'extension dans la barre latérale ou ouvrez une nouvelle fenêtre en cliquant sur cette bannière."
+  },
+  "sendSafariFileWarning": {
+    "message": "Pour choisir un fichier avec Safari, ouvrez une nouvelle fenêtre en cliquant sur cette bannière."
+  },
+  "sendFileCalloutHeader": {
+    "message": "Avant de commencer"
+  },
+  "sendFirefoxCustomDatePopoutMessage1": {
+    "message": "Pour utiliser un sélecteur de date en forme de calendrier,",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
+  },
+  "sendFirefoxCustomDatePopoutMessage2": {
+    "message": "cliquez ici",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
+  },
+  "sendFirefoxCustomDatePopoutMessage3": {
+    "message": "pour ouvrir une nouvelle fenêtre.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
+  },
+  "expirationDateIsInvalid": {
+    "message": "La date d'expiration indiquée n'est pas valide."
+  },
+  "deletionDateIsInvalid": {
+    "message": "La date de suppression indiquée n'est pas valide."
+  },
+  "expirationDateAndTimeRequired": {
+    "message": "Une date et une heure d'expiration sont requises."
+  },
+  "deletionDateAndTimeRequired": {
+    "message": "Une date et une heure de suppression sont requises."
+  },
+  "dateParsingError": {
+    "message": "Une erreur s'est produite lors de l'enregistrement de vos dates de suppression et d'expiration."
   }
 }

@@ -39,8 +39,8 @@
             (click)="copySendLink(s)">
             <i class="fa fa-lg fa-copy" aria-hidden="true"></i>
         </span>
-        <span class="row-btn" appStopClick appStopProp appA11yTitle="{{'removePassword' | i18n}}"
-            (click)="removePassword(s)" *ngIf="s.password">
+        <span class="row-btn" [ngClass]="{'disabled' : disabledByPolicy}" appStopClick appStopProp
+            appA11yTitle="{{'removePassword' | i18n}}" (click)="removePassword(s)" *ngIf="s.password">
             <i class="fa fa-lg fa-undo" aria-hidden="true"></i>
         </span>
         <span class="row-btn" appStopClick appStopProp appA11yTitle="{{'delete' | i18n}}" (click)="delete(s)">

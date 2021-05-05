@@ -1,0 +1,322 @@
+<form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+    <header>
+        <div class="left">
+            <button type="button" appBlurClick (click)="cancel()">{{'cancel' | i18n}}</button>
+        </div>
+        <div class="center">
+            <span class="title">{{title}}</span>
+        </div>
+        <div class="right">
+            <button type="submit" appBlurClick [disabled]="form.loading || disableSend">
+                <span [hidden]="form.loading">{{'save' | i18n}}</span>
+                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+    <content *ngIf="send">
+        <!-- Policy Banner -->
+        <app-callout type="warning" title="{{'sendDisabled' | i18n}}" *ngIf="disableSend">
+            {{'sendDisabledWarning' | i18n}}
+        </app-callout>
+        <app-callout type="info" *ngIf="disableHideEmail && !disableSend">
+            {{'sendOptionsPolicyInEffect' | i18n}}
+        </app-callout>
+        <!-- File Warning -->
+        <app-callout type="warning" icon="fa fa-external-link fa-rotate-270 fa-fw" [clickable]="true"
+            title="{{'sendFileCalloutHeader' | i18n}}"
+            *ngIf="showFilePopoutMessage && send.type === sendType.File && !disableSend" (click)="popOutWindow()">
+            <div *ngIf="showChromiumFileWarning">{{'sendLinuxChromiumFileWarning' | i18n}}</div>
+            <div *ngIf="showFirefoxFileWarning">{{'sendFirefoxFileWarning' | i18n}}</div>
+            <div *ngIf="showSafariFileWarning">{{'sendSafariFileWarning' | i18n}}</div>
+        </app-callout>
+        <!-- Name -->
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row" appBoxRow>
+                    <label for="name">{{'name' | i18n}}</label>
+                    <input id="name" type="text" name="Name" [(ngModel)]="send.name" [readonly]="disableSend">
+                </div>
+            </div>
+            <div class="box-footer">
+                {{'sendNameDesc' | i18n}}
+            </div>
+        </div>
+        <!-- Type Options -->
+        <div class="box" *ngIf="!editMode">
+            <div class="box-content no-hover">
+                <div class="box-content-row">
+                    <label for="sendTypeOptions">{{'sendTypeHeader' | i18n}}</label>
+                    <div class="radio-group text-default" appBoxRow name="SendTypeOptions"
+                        *ngFor="let o of typeOptions">
+                        <input type="radio" [(ngModel)]="send.type" name="Type_{{o.value}}" id="type_{{o.value}}"
+                            [value]="o.value" (change)="typeChanged()" [checked]="send.type === o.value"
+                            [readonly]="disableSend">
+                        <label for="type_{{o.value}}">
+                            {{o.name}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- File -->
+        <div class="box" *ngIf="send.type === sendType.File && (editMode || showFileSelector)">
+            <div class="box-content no-hover">
+                <div class="box-content-row" *ngIf="editMode">
+                    <label for="file">{{'file' | i18n}}</label>
+                    <div class="row-main">{{send.file.fileName}} ({{send.file.sizeName}})</div>
+                </div>
+                <div class="box-content-row" *ngIf="showFileSelector">
+                    <label for="file">{{'file' | i18n}}</label>
+                    <input type="file" id="file" name="file" required [readonly]="disableSend">
+                </div>
+            </div>
+            <div class="box-footer" *ngIf="showFileSelector">
+                {{'sendFileDesc' | i18n}} {{'maxFileSize' | i18n}}
+            </div>
+        </div>
+        <!-- Text -->
+        <div class="box" *ngIf="send.type === sendType.Text">
+            <div class="box-content">
+                <div class="box-content-row" appBoxRow>
+                    <label for="text">{{'sendTypeText' | i18n}}</label>
+                    <textarea id="text" name="Text" rows="6" [(ngModel)]="send.text.text"
+                        [readonly]="disableSend"></textarea>
+                </div>
+            </div>
+            <div class="box-footer">
+                {{'sendTextDesc' | i18n}}
+            </div>
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="hideText">{{'sendHideText' | i18n}}</label>
+                    <input id="hideText" type="checkbox" name="HideText" [(ngModel)]="send.text.hidden"
+                        [disabled]="disableSend">
+                </div>
+            </div>
+        </div>
+        <!-- Share -->
+        <div class="box">
+            <div class="box-header">
+                {{'share' | i18n}}
+            </div>
+            <div class="box-content">
+                <!-- Copy Link on Save -->
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="copyOnSave">{{'sendShareDesc' | i18n}}</label>
+                    <input id="copyOnSave" type="checkbox" name="CopyOnSave" [(ngModel)]="copyLink"
+                        [disabled]="disableSend">
+                </div>
+            </div>
+        </div>
+        <!-- Options -->
+        <div class="box">
+            <div class="box-header-expandable" (click)="showOptions = !showOptions">
+                {{'options' | i18n}}
+                <i *ngIf="!showOptions" class="fa fa-chevron-down fa-sm icon"></i>
+                <i *ngIf="showOptions" class="fa fa-chevron-up fa-sm icon"></i>
+            </div>
+        </div>
+        <ng-container *ngIf="showOptions">
+            <!-- Deletion Date -->
+            <div class="box">
+                <div class="box-content">
+                    <ng-template #deletionDateCustom>
+                        <ng-container *ngIf="isDateTimeLocalSupported">
+                            <input id="deletionDateCustom" type="datetime-local" name="DeletionDate"
+                                [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
+                        </ng-container>
+                        <div class="flex flex-grow" *ngIf="!isDateTimeLocalSupported">
+                            <input id="deletionDateCustomFallback" type="date" name="DeletionDateFallback"
+                                [(ngModel)]="deletionDateFallback" required placeholder="MM/DD/YYYY"
+                                [readOnly]="disableSend" data-date-format="mm/dd/yyyy">
+                            <input *ngIf="!isSafari" id="deletionTimeCustomFallback" type="time" name="DeletionTimeDate"
+                                [(ngModel)]="deletionTimeFallback" required placeholder="HH:MM AM/PM"
+                                [readOnly]="disableSend">
+                            <select *ngIf="isSafari" id="deletionTimeCustomFallback" [(ngModel)]="safariDeletionTime"
+                                name="SafariDeletionTime">
+                                <option *ngFor="let o of safariDeletionTimeOptions" [value]="o.military">{{o.standard}}
+                                </option>
+                            </select>
+                        </div>
+                    </ng-template>
+                    <div class="box-content-row" *ngIf="!editMode">
+                        <label for="deletionDate">{{'deletionDate' | i18n}}</label>
+                        <select id="deletionDate" name="DeletionDateSelect" [(ngModel)]="deletionDateSelect" required>
+                            <option *ngFor="let o of deletionDateOptions" [ngValue]="o.value">{{o.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <ng-container *ngIf="deletionDateSelect === 0 && !editMode">
+                        <div class="box-content-row">
+                            <ng-container *ngTemplateOutlet="deletionDateCustom"></ng-container>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="editMode">
+                        <div class="box-content-row" appBoxRow>
+                            <label for="editDeletionDate">{{'deletionDate' | i18n}}</label>
+                            <ng-container *ngTemplateOutlet="deletionDateCustom"></ng-container>
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="box-footer">
+                    {{'deletionDateDesc' | i18n}}
+                    <ng-container
+                        *ngIf="(!inPopout && isFirefox) && (this.editMode || (deletionDateSelect === 0 && !editMode))">
+                        <br>{{'sendFirefoxCustomDatePopoutMessage1' | i18n}} <a
+                            (click)="popOutWindow()">{{'sendFirefoxCustomDatePopoutMessage2' | i18n}}</a>
+                        {{'sendFirefoxCustomDatePopoutMessage3' | i18n}}
+                    </ng-container>
+                </div>
+            </div>
+            <!-- Expiration Date -->
+            <div class="box">
+                <div class="box-content">
+                    <ng-template #expirationDateCustom>
+                        <ng-container *ngIf="isDateTimeLocalSupported">
+                            <input id="expirationDateCustom" type="datetime-local" name="ExpirationDate"
+                                [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM"
+                                [readOnly]="disableSend">
+                        </ng-container>
+                        <div class="flex flex-grow" *ngIf="!isDateTimeLocalSupported">
+                            <input id="expirationDateCustomFallback" type="date" name="ExpirationDateFallback"
+                                [(ngModel)]="expirationDateFallback" [required]="!editMode" placeholder="MM/DD/YYYY"
+                                [readOnly]="disableSend" (change)="expirationDateFallbackChanged()"
+                                data-date-format="mm/dd/yyyy">
+                            <input *ngIf="!isSafari" id="expirationTimeCustomFallback" type="time"
+                                name="ExpirationTimeFallback" [(ngModel)]="expirationTimeFallback"
+                                [required]="!editMode" placeholder="HH:MM AM/PM" [readOnly]="disableSend">
+                            <select *ngIf="isSafari" id="expirationTimeCustomFallback"
+                                [(ngModel)]="safariExpirationTime" name="SafariExpirationTime">
+                                <option *ngFor="let o of safariExpirationTimeOptions" [value]="o.military">
+                                    {{o.standard}}</option>
+                            </select>
+                        </div>
+                    </ng-template>
+                    <div class="box-content-row" *ngIf="!editMode">
+                        <label for="expirationDate">{{'expirationDate' | i18n}}</label>
+                        <select id="expirationDate" name="ExpirationDateSelect" [(ngModel)]="expirationDateSelect"
+                            required>
+                            <option *ngFor="let o of expirationDateOptions" [ngValue]="o.value">{{o.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="box-content-row" *ngIf="expirationDateSelect === 0 && !editMode">
+                        <ng-container *ngTemplateOutlet="expirationDateCustom"></ng-container>
+                    </div>
+                    <div class="box-content-row" *ngIf="editMode" appBoxRow>
+                        <div class="flex-label">
+                            <label for="editExpirationDate">{{'expirationDate' | i18n}}</label>
+                            <a *ngIf="!disableSend" href="#" appStopClick (click)="clearExpiration()">
+                                {{'clear' | i18n}}
+                            </a>
+                        </div>
+                        <ng-container *ngTemplateOutlet="expirationDateCustom"></ng-container>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    {{'expirationDateDesc' | i18n}}
+                    <ng-container
+                        *ngIf="(!inPopout && isFirefox) && (this.editMode || (deletionDateSelect === 0 && !editMode))">
+                        <br>{{'sendFirefoxCustomDatePopoutMessage1' | i18n}} <a
+                            (click)="popOutWindow()">{{'sendFirefoxCustomDatePopoutMessage2' | i18n}}</a>
+                        {{'sendFirefoxCustomDatePopoutMessage3' | i18n}}
+                    </ng-container>
+                </div>
+            </div>
+            <!-- Maximum Access Count -->
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-content-row" appBoxRow>
+                        <label for="maximumAccessCount">{{'maximumAccessCount' | i18n}}</label>
+                        <input id="maximumAccessCount" min="1" type="number" name="MaximumAccessCount"
+                            [(ngModel)]="send.maxAccessCount" [readonly]="disableSend">
+                    </div>
+                </div>
+                <div class="box-footer">
+                    {{'maximumAccessCountDesc' | i18n}}
+                </div>
+            </div>
+            <!-- Current Access Count -->
+            <div class="box" *ngIf="editMode">
+                <div class="box-content">
+                    <div class="box-content-row" appBoxRow>
+                        <label for="currentAccessCount">{{'currentAccessCount' | i18n}}</label>
+                        <input id="currentAccessCount" readonly type="text" name="CurrentAccessCount"
+                            [(ngModel)]="send.accessCount">
+                    </div>
+                </div>
+            </div>
+            <!-- Password -->
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-content-row box-content-row-flex" appBoxRow>
+                        <div class="row-main">
+                            <label for="password" *ngIf="hasPassword">{{'newPassword' | i18n}}</label>
+                            <label for="password" *ngIf="!hasPassword">{{'password' | i18n}}</label>
+                            <input id="password" type="{{showPassword ? 'text' : 'password'}}" name="Password"
+                                class="monospaced" [(ngModel)]="password" appInputVerbatim [readonly]="disableSend">
+                        </div>
+                        <div class="action-buttons" *ngIf="!disableSend">
+                            <a class="row-btn" href="#" appStopClick appBlurClick
+                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePasswordVisible()">
+                                <i class="fa fa-lg" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"
+                                    aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    {{'sendPasswordDesc' | i18n}}
+                </div>
+            </div>
+            <!-- Notes -->
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-content-row" appBoxRow>
+                        <label for="notes">{{'notes' | i18n}}</label>
+                        <textarea id="notes" name="Notes" rows="6" [(ngModel)]="send.notes"
+                            [readonly]="disableSend"></textarea>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    {{'sendNotesDesc' | i18n}}
+                </div>
+            </div>
+            <!-- Hide Email -->
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="hideEmail">{{'hideEmail' | i18n}}</label>
+                        <input id="hideEmail" type="checkbox" name="HideEmail" [(ngModel)]="send.hideEmail"
+                            [disabled]="(disableHideEmail && !send.hideEmail) || disableSend">
+                    </div>
+                </div>
+            </div>
+            <!-- Disable Send -->
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="disableSend">{{'sendDisableDesc' | i18n}}</label>
+                        <input id="disableSend" type="checkbox" name="DisableSend" [(ngModel)]="send.disabled"
+                            [disabled]="disableSend">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <!-- Delete -->
+        <div class="box list" *ngIf="editMode">
+            <div class="box-content single-line">
+                <a class="box-content-row" href="#" appStopClick appBlurClick (click)="delete()"
+                    [appApiAction]="deletePromise" #deleteBtn>
+                    <div class="row-main text-danger">
+                        <div class="icon text-danger" aria-hidden="true">
+                            <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
+                            <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
+                        </div>
+                        <span>{{'deleteSend' | i18n}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </content>
+</form>

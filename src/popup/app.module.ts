@@ -1,10 +1,5 @@
-import 'core-js';
-import 'zone.js/dist/zone';
-
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ToasterModule } from 'angular2-toaster';
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,6 +47,7 @@ import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
 
+import { SendAddEditComponent } from './send/send-add-edit.component';
 import { SendGroupingsComponent } from './send/send-groupings.component';
 import { SendTypeComponent } from './send/send-type.component';
 
@@ -81,6 +77,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
 
 import {
     CurrencyPipe,
+    DatePipe,
     registerLocaleData,
 } from '@angular/common';
 import localeBe from '@angular/common/locales/be';
@@ -164,11 +161,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         FormsModule,
         AppRoutingModule,
         ServicesModule,
-        Angulartics2Module.forRoot({
-            pageTracking: {
-                clearQueryParams: true,
-            },
-        }),
         ToasterModule.forRoot(),
         InfiniteScrollModule,
         DragDropModule,
@@ -213,6 +205,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
+        SendAddEditComponent,
         SendGroupingsComponent,
         SendListComponent,
         SendTypeComponent,
@@ -232,6 +225,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
     entryComponents: [],
     providers: [
         CurrencyPipe,
+        DatePipe,
     ],
     bootstrap: [AppComponent],
 })

@@ -4,10 +4,8 @@ import {
     BodyOutputType,
     Toast,
     ToasterConfig,
-    ToasterContainerComponent,
     ToasterService,
 } from 'angular2-toaster';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import Swal, { SweetAlertIcon } from 'sweetalert2/src/sweetalert2.js';
 
 import {
@@ -24,8 +22,6 @@ import {
     RouterOutlet,
 } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
-
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { AuthService } from 'jslib/abstractions/auth.service';
@@ -37,6 +33,7 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import BrowserPlatformUtilsService from 'src/services/browserPlatformUtils.service';
 import { routerTransition } from './app-routing.animations';
 
 @Component({
@@ -61,8 +58,7 @@ export class AppComponent implements OnInit {
 
     private lastActivity: number = null;
 
-    constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics, private analytics: Angulartics2,
-        private toasterService: ToasterService, private storageService: StorageService,
+    constructor(private toasterService: ToasterService, private storageService: StorageService,
         private broadcasterService: BroadcasterService, private authService: AuthService,
         private i18nService: I18nService, private router: Router,
         private stateService: StateService, private messagingService: MessagingService,
@@ -87,7 +83,6 @@ export class AppComponent implements OnInit {
             if (msg.command === 'doneLoggingOut') {
                 this.ngZone.run(async () => {
                     this.authService.logOut(() => {
-                        this.analytics.eventTrack.next({ action: 'Logged Out' });
                         if (msg.expired) {
                             this.showToast({
                                 type: 'warning',
@@ -111,14 +106,11 @@ export class AppComponent implements OnInit {
                 });
             } else if (msg.command === 'showDialog') {
                 await this.showDialog(msg);
+            } else if (msg.command === 'showPasswordDialog') {
+                await this.showPasswordDialog(msg);
             } else if (msg.command === 'showToast') {
                 this.ngZone.run(() => {
                     this.showToast(msg);
-                });
-            } else if (msg.command === 'analyticsEventTrack') {
-                this.analytics.eventTrack.next({
-                    action: msg.action,
-                    properties: { label: msg.label },
                 });
             } else if (msg.command === 'reloadProcess') {
                 const windowReload = this.platformUtilsService.isSafari() ||
@@ -145,6 +137,7 @@ export class AppComponent implements OnInit {
                 if (url.startsWith('/tabs/') && (window as any).previousPopupUrl != null &&
                     (window as any).previousPopupUrl.startsWith('/tabs/')) {
                     this.stateService.remove('GroupingsComponent');
+                    this.stateService.remove('GroupingsComponentScope');
                     this.stateService.remove('CiphersComponent');
                     this.stateService.remove('SendGroupingsComponent');
                     this.stateService.remove('SendGroupingsComponentScope');
@@ -152,7 +145,6 @@ export class AppComponent implements OnInit {
                 }
                 if (url.startsWith('/tabs/')) {
                     this.stateService.remove('addEditCipherInfo');
-                    // TODO Remove any Send add/edit state information (?)
                 }
                 (window as any).previousPopupUrl = url;
 
@@ -258,5 +250,31 @@ export class AppComponent implements OnInit {
             dialogId: msg.dialogId,
             confirmed: confirmed.value,
         });
+    }
+
+    private async showPasswordDialog(msg: any) {
+        const platformUtils = this.platformUtilsService as BrowserPlatformUtilsService;
+        const result = await Swal.fire({
+            heightAuto: false,
+            title: msg.title,
+            input: 'password',
+            text: msg.body,
+            confirmButtonText: this.i18nService.t('ok'),
+            showCancelButton: true,
+            cancelButtonText: this.i18nService.t('cancel'),
+            inputAttributes: {
+                autocapitalize: 'off',
+                autocorrect: 'off',
+            },
+            inputValidator: async (value: string): Promise<any> => {
+                if (await platformUtils.resolvePasswordDialogPromise(msg.dialogId, false, value)) {
+                    return false;
+                }
+
+                return this.i18nService.t('invalidMasterPassword');
+            },
+        });
+
+        platformUtils.resolvePasswordDialogPromise(msg.dialogId, true, null);
     }
 }

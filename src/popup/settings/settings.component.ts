@@ -1,4 +1,3 @@
-import { Angulartics2 } from 'angulartics2';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 
 import {
@@ -23,6 +22,7 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { PopupUtilsService } from '../services/popup-utils.service';
 
 const RateUrls = {
     [DeviceType.ChromeExtension]:
@@ -56,10 +56,10 @@ export class SettingsComponent implements OnInit {
     previousVaultTimeout: number = null;
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
-        private analytics: Angulartics2, private vaultTimeoutService: VaultTimeoutService,
-        private storageService: StorageService, public messagingService: MessagingService,
-        private router: Router, private environmentService: EnvironmentService,
-        private cryptoService: CryptoService, private userService: UserService) {
+        private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
+        public messagingService: MessagingService, private router: Router,
+        private environmentService: EnvironmentService, private cryptoService: CryptoService,
+        private userService: UserService, private popupUtilsService: PopupUtilsService) {
     }
 
     async ngOnInit() {
@@ -212,29 +212,28 @@ export class SettingsComponent implements OnInit {
     async updateBiometric() {
         if (this.biometric && this.supportsBiometric) {
 
-            // Request permission to use the optional permission for nativeMessaging
-            if (!this.platformUtilsService.isFirefox()) {
-                const hasPermission = await new Promise((resolve) => {
-                    chrome.permissions.contains({permissions: ['nativeMessaging']}, resolve);
-                });
+            let granted;
+            try {
+                granted = await BrowserApi.requestPermission({ permissions: ['nativeMessaging'] });
+            } catch (e) {
+                // tslint:disable-next-line
+                console.error(e);
 
-                if (!hasPermission) {
+                if (this.platformUtilsService.isFirefox() && this.popupUtilsService.inSidebar(window)) {
                     await this.platformUtilsService.showDialog(
-                        this.i18nService.t('nativeMessagingPermissionPromptDesc'), this.i18nService.t('nativeMessagingPermissionPromptTitle'),
+                        this.i18nService.t('nativeMessaginPermissionSidebarDesc'), this.i18nService.t('nativeMessaginPermissionSidebarTitle'),
                         this.i18nService.t('ok'), null);
-
-                    const granted = await new Promise((resolve, reject) => {
-                        chrome.permissions.request({permissions: ['nativeMessaging']}, resolve);
-                    });
-    
-                    if (!granted) {
-                        await this.platformUtilsService.showDialog(
-                            this.i18nService.t('nativeMessaginPermissionErrorDesc'), this.i18nService.t('nativeMessaginPermissionErrorTitle'),
-                            this.i18nService.t('ok'), null);
-                        this.biometric = false;
-                        return;
-                    }
+                    this.biometric = false;
+                    return;
                 }
+            }
+
+            if (!granted) {
+                await this.platformUtilsService.showDialog(
+                    this.i18nService.t('nativeMessaginPermissionErrorDesc'), this.i18nService.t('nativeMessaginPermissionErrorTitle'),
+                    this.i18nService.t('ok'), null);
+                this.biometric = false;
+                return;
             }
 
             const submitted = Swal.fire({
@@ -254,23 +253,23 @@ export class SettingsComponent implements OnInit {
             await this.cryptoService.toggleKey();
 
             await Promise.race([
-                submitted.then((result) => {
+                submitted.then(result => {
                     if (result.dismiss === Swal.DismissReason.cancel) {
                         this.biometric = false;
                         this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
                     }
                 }),
-                this.platformUtilsService.authenticateBiometric().then((result) => {
+                this.platformUtilsService.authenticateBiometric().then(result => {
                     this.biometric = result;
 
                     Swal.close();
                     if (this.biometric === false) {
                         this.platformUtilsService.showToast('error', this.i18nService.t('errorEnableBiometricTitle'), this.i18nService.t('errorEnableBiometricDesc'));
                     }
-                }).catch((e) => {
+                }).catch(e => {
                     // Handle connection errors
                     this.biometric = false;
-                })
+                }),
             ]);
         } else {
             await this.storageService.remove(ConstantsService.biometricUnlockKey);
@@ -279,7 +278,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async lock() {
-        this.analytics.eventTrack.next({ action: 'Lock Now' });
         await this.vaultTimeoutService.lock(true);
     }
 
@@ -293,7 +291,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async changePassword() {
-        this.analytics.eventTrack.next({ action: 'Clicked Change Password' });
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('changeMasterPasswordConfirmation'), this.i18nService.t('changeMasterPassword'),
             this.i18nService.t('yes'), this.i18nService.t('cancel'));
@@ -303,7 +300,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async twoStep() {
-        this.analytics.eventTrack.next({ action: 'Clicked Two-step Login' });
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('twoStepLoginConfirmation'), this.i18nService.t('twoStepLogin'),
             this.i18nService.t('yes'), this.i18nService.t('cancel'));
@@ -313,7 +309,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async share() {
-        this.analytics.eventTrack.next({ action: 'Clicked Share Vault' });
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('shareVaultConfirmation'), this.i18nService.t('shareVault'),
             this.i18nService.t('yes'), this.i18nService.t('cancel'));
@@ -323,7 +318,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async webVault() {
-        this.analytics.eventTrack.next({ action: 'Clicked Web Vault' });
         let url = this.environmentService.getWebVaultUrl();
         if (url == null) {
             url = 'https://vault.bitwarden.com';
@@ -332,7 +326,6 @@ export class SettingsComponent implements OnInit {
     }
 
     import() {
-        this.analytics.eventTrack.next({ action: 'Clicked Import Items' });
         BrowserApi.createNewTab('https://help.bitwarden.com/article/import-data/');
     }
 
@@ -341,13 +334,10 @@ export class SettingsComponent implements OnInit {
     }
 
     help() {
-        this.analytics.eventTrack.next({ action: 'Clicked Help and Feedback' });
         BrowserApi.createNewTab('https://help.bitwarden.com/');
     }
 
     about() {
-        this.analytics.eventTrack.next({ action: 'Clicked About' });
-
         const year = (new Date()).getFullYear();
         const versionText = document.createTextNode(
             this.i18nService.t('version') + ': ' + BrowserApi.getApplicationVersion());
@@ -367,8 +357,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async fingerprint() {
-        this.analytics.eventTrack.next({ action: 'Clicked Fingerprint' });
-
         const fingerprint = await this.cryptoService.getFingerprint(await this.userService.getUserId());
         const p = document.createElement('p');
         p.innerText = this.i18nService.t('yourAccountsFingerprint') + ':';
@@ -394,7 +382,6 @@ export class SettingsComponent implements OnInit {
     }
 
     rate() {
-        this.analytics.eventTrack.next({ action: 'Rate Extension' });
         const deviceType = this.platformUtilsService.getDevice();
         BrowserApi.createNewTab((RateUrls as any)[deviceType]);
     }

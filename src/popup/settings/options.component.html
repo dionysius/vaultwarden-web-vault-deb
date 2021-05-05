@@ -129,6 +129,15 @@
     </div>
     <div class="box">
         <div class="box-content">
+            <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                <label for="badge">{{'disableBadgeCounter' | i18n}}</label>
+                <input id="badge" type="checkbox" (change)="updateDisableBadgeCounter()" [(ngModel)]="disableBadgeCounter">
+            </div>
+        </div>
+        <div class="box-footer">{{'disableBadgeCounterDesc' | i18n}}</div>
+    </div>
+    <div class="box">
+        <div class="box-content">
             <div class="box-content-row" appBoxRow>
                 <label for="theme">{{'theme' | i18n}}</label>
                 <select id="theme" name="Theme" [(ngModel)]="theme" (change)="saveTheme()">

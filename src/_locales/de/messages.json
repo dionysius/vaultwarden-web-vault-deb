@@ -110,7 +110,7 @@
     "message": "Passwort-Hinweis"
   },
   "enterEmailToGetHint": {
-    "message": "Gebe die E-Mail Adresse deines Kontos ein, um den Hinweis für dein Master-Passwort zu erhalten."
+    "message": "Gib die E-Mail-Adresse deines Kontos ein, um den Hinweis für dein Master-Passwort zu erhalten."
   },
   "getMasterPasswordHint": {
     "message": "Hinweis zum Masterpasswort erhalten"
@@ -501,7 +501,7 @@
     "message": "Soll dieser Eintrag wirklich in den Papierkorb verschoben werden?"
   },
   "deletedItem": {
-    "message": "Eintrag in Papierkorb legen"
+    "message": "Eintrag in Papierkorb verschoben"
   },
   "overwritePassword": {
     "message": "Passwort ersetzen"
@@ -612,8 +612,11 @@
   "exportWarningDesc": {
     "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "Dieser Export verschlüsselt Ihre Daten mit dem Verschlüsselungscode Ihres Kontos. Falls Sie Ihren Verschlüsselungscode erneuern, sollten Sie den Export erneut durchführen, da Sie die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln können."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Die Verschlüsselungscodes eines Kontos sind für jedes Bitwarden Benutzerkonto einzigartig, deshalb können Sie keinen verschlüsselten Export in ein anderes Konto importieren."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -850,7 +853,7 @@
     "message": "Selbstgehostete Umgebung"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Bitte geben Sie die Basis-URL Ihrer selbst gehosteten Bitwarden-Installation an."
+    "message": "Bitte gib die Basis-URL deiner selbst gehosteten Bitwarden-Installation an."
   },
   "customEnvironment": {
     "message": "Benutzerdefinierte Umgebung"
@@ -934,7 +937,7 @@
     "message": "Dieses Pop-up Fenster wird geschlossen, wenn du außerhalb des Fensters klickst um in deinen E-Mails nach dem Verifizierungscode zu suchen. Möchtest du, dass dieses Pop-up in einem separaten Fenster geöffnet wird, damit es nicht geschlossen wird?"
   },
   "popupU2fCloseMessage": {
-    "message": "Dieser Browser kann U2F-Anfragen in diesem Popup-Fenster nicht verarbeiten. Möchten Sie dieses Popup in einem neuen Fenster öffnen, damit Sie sich mit U2F anmelden können?"
+    "message": "Dieser Browser kann U2F-Anfragen in diesem Popup-Fenster nicht verarbeiten. Möchtest du dieses Popup in einem neuen Fenster öffnen, damit du dich mit U2F anmelden kannst?"
   },
   "disableFavicon": {
     "message": "Icons der Website deaktivieren"
@@ -1202,7 +1205,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Bist du sicher das dein Tresor nicht automatisch gesperrt werden soll? Dadurch wird der Verschlüsselungsschlüssel auf dem Gerät gespeichert. Wenn du diese Option verwendest, solltest du darauf achten das dein Gerät ausreichend geschützt ist."
+    "message": "Bist du sicher, dass dein Tresor nicht automatisch gesperrt werden soll? Dadurch wird der Verschlüsselungsschlüssel auf dem Gerät gespeichert. Wenn du diese Option verwendest, solltest du darauf achten, dass dein Gerät ausreichend geschützt ist."
   },
   "noOrganizationsList": {
     "message": "Du bist kein Mitglied einer Organisation. Organisationen erlauben es dir Passwörter sicher mit anderen Nutzern zu teilen."
@@ -1242,7 +1245,7 @@
     "message": "Mit PIN-Code entsperren"
   },
   "setYourPinCode": {
-    "message": "Gebe deinen PIN-Code für das Entsperren von Bitwarden ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmelden."
+    "message": "Gebe deinen PIN-Code für das Entsperren von Bitwarden ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmeldest."
   },
   "pinRequired": {
     "message": "PIN-Code ist erforderlich."
@@ -1263,7 +1266,7 @@
     "message": "Warte auf Bestätigung vom Desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Bitte bestätigen Sie die Verwendung von Biometrie in der Bitwarden Desktop-Anwendung, um Biometrie für den Browser zu aktivieren."
+    "message": "Bitte bestätige die Verwendung von Biometrie in der Bitwarden Desktop-Anwendung, um Biometrie für den Browser zu aktivieren."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bei Neustart des Browsers mit Master-Passwort sperren"
@@ -1278,7 +1281,7 @@
     "message": "Duplizieren"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen Ihre Generator-Einstellungen."
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen deine Generator-Einstellungen."
   },
   "vaultTimeoutAction": {
     "message": "Aktion bei Tresor-Timeout"
@@ -1313,7 +1316,7 @@
     "message": "Eintrag wiederhergestellt"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Nach dem Ausloggen verlieren Sie jeglichen Zugriff auf Ihren Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Sind Sie sicher, dass Sie diese Einstellung nutzen möchten?"
+    "message": "Nach dem Ausloggen verlierest du jeglichen Zugriff auf deinen Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchten?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Bestätigung der Timeout-Aktion"
@@ -1322,16 +1325,16 @@
     "message": "Automatisch ausfüllen und speichern"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-Ausgefüllter Eintrag und gespeicherte URI"
+    "message": "Automatisch ausgefüllter Eintrag und gespeicherte URI"
   },
   "autoFillSuccess": {
-    "message": "Auto-Ausgefüllter Eintrag"
+    "message": "Automatisch ausgefüllter Eintrag"
   },
   "setMasterPassword": {
     "message": "Masterpasswort festlegen"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Eine oder mehrere Organisationsrichtlinien erfordern, dass Ihr Masterpasswort die folgenden Anforderungen erfüllt:"
+    "message": "Eine oder mehrere Organisationsrichtlinien erfordern, dass dein Masterpasswort die folgenden Anforderungen erfüllt:"
   },
   "policyInEffectMinComplexity": {
     "message": "Kleinster Komplexitätsgrad von $SCORE$",
@@ -1385,7 +1388,7 @@
     "message": "Datenschutzbestimmungen"
   },
   "hintEqualsPassword": {
-    "message": "Ihr Passwort-Hinweis darf nicht identisch mit Ihrem Passwort sein."
+    "message": "Dein Passwort-Hinweis darf nicht identisch mit deinem Passwort sein."
   },
   "ok": {
     "message": "Ok"
@@ -1400,7 +1403,7 @@
     "message": "Browser-Einbindung ist nicht aktiviert"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktivieren Sie diese in den Einstellungen innerhalb der Desktop-Anwendung."
+    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktiviere diese in den Einstellungen innerhalb der Desktop-Anwendung."
   },
   "startDesktopTitle": {
     "message": "Bitwarden Desktop-Anwendung starten"
@@ -1415,13 +1418,13 @@
     "message": "Die Aktion wurde von der Desktop-Anwendung abgebrochen"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Die Desktop-Anwendung hat den sicheren Kommunikationskanal für ungültig erklärt. Bitte starten Sie den Vorgang erneut"
+    "message": "Die Desktop-Anwendung hat den sicheren Kommunikationskanal für ungültig erklärt. Bitte starte den Vorgang erneut"
   },
   "nativeMessagingInvalidEncryptionTitle": {
     "message": "Desktop-Kommunikation unterbrochen"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "Die Desktop-Anwendung ist in ein anderes Konto eingeloggt. Bitte stellen Sie sicher, dass beide Anwendungen mit demselben Konto angemeldet sind."
+    "message": "Die Desktop-Anwendung ist in ein anderes Konto eingeloggt. Bitte stelle sicher, dass beide Anwendungen mit demselben Konto angemeldet sind."
   },
   "nativeMessagingWrongUserTitle": {
     "message": "Konten stimmen nicht überein"
@@ -1442,12 +1445,238 @@
     "message": "Berechtigung nicht erteilt"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Ohne die Berechtigung zur Kommunikation mit der Bitwarden Desktop-Anwendung können wir keine Biometrie in der Browser-Erweiterung anbieten. Bitte versuchen Sie es erneut."
+    "message": "Ohne die Berechtigung zur Kommunikation mit der Bitwarden Desktop-Anwendung können wir keine Biometrie in der Browser-Erweiterung anbieten. Bitte versuche es erneut."
+  },
+  "nativeMessaginPermissionSidebarTitle": {
+    "message": "Permission request error"
+  },
+  "nativeMessaginPermissionSidebarDesc": {
+    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
-    "message": "Aufgrund einer Unternehmensrichtlinie dürfen Sie keine Einträge in Ihrem persönlichen Tresor speichern. Ändern Sie die Eigentümer-Option in eine Organisation und wählen Sie aus den verfügbaren Sammlungen."
+    "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "Eine Organisationsrichtlinie beeinflusst Ihre Eigentümer-Optionen."
+    "message": "Eine Organisationsrichtlinie beeinflusst deine Eigentümer-Optionen."
+  },
+  "excludedDomains": {
+    "message": "Ausgeschlossene Domänen"
+  },
+  "excludedDomainsDesc": {
+    "message": "Bitwarden wird keine Login-Daten für diese Domäne speichern. Sie müssen die Seite aktualisieren, damit die Änderungen wirksam werden."
+  },
+  "excludedDomainsInvalidDomain": {
+    "message": "$DOMAIN$ ist keine gültige Domäne",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "googlecom"
+      }
+    }
+  },
+  "send": {
+    "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "searchSends": {
+    "message": "Sends suchen",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "addSend": {
+    "message": "Send hinzufügen",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeText": {
+    "message": "Text"
+  },
+  "sendTypeFile": {
+    "message": "Datei"
+  },
+  "allSends": {
+    "message": "Alle Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCountReached": {
+    "message": "Maximale Zugriffsanzahl erreicht"
+  },
+  "expired": {
+    "message": "Abgelaufen"
+  },
+  "pendingDeletion": {
+    "message": "Ausstehende Löschung"
+  },
+  "passwordProtected": {
+    "message": "Passwortgeschützt"
+  },
+  "copySendLink": {
+    "message": "Send-Link kopieren",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "removePassword": {
+    "message": "Passwort entfernen"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "removedPassword": {
+    "message": "Passwort entfernt"
+  },
+  "deletedSend": {
+    "message": "Send gelöscht",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send-Link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "disabled": {
+    "message": "Deaktiviert"
+  },
+  "removePasswordConfirmation": {
+    "message": "Sind Sie sicher, dass Sie das Passwort entfernen möchten?"
+  },
+  "deleteSend": {
+    "message": "Send löschen",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deleteSendConfirmation": {
+    "message": "Sind Sie sicher, dass Sie dieses Send löschen möchten?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Send bearbeiten",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeHeader": {
+    "message": "Welche Art von Send ist das?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNameDesc": {
+    "message": "Ein eigener Name, um dieses Send zu beschreiben.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFileDesc": {
+    "message": "Die Datei, die Sie senden möchten."
+  },
+  "deletionDate": {
+    "message": "Löschdatum"
+  },
+  "deletionDateDesc": {
+    "message": "Das Send wird am angegebenen Datum zur angegebenen Uhrzeit dauerhaft gelöscht.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Ablaufdatum"
+  },
+  "expirationDateDesc": {
+    "message": "Falls aktiviert, verfällt der Zugriff auf dieses Send am angegebenen Datum zur angegebenen Uhrzeit.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "oneDay": {
+    "message": "1 Tag"
+  },
+  "days": {
+    "message": "$DAYS$ Tage",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "custom": {
+    "message": "Benutzerdefiniert"
+  },
+  "maximumAccessCount": {
+    "message": "Maximale Zugriffsanzahl"
+  },
+  "maximumAccessCountDesc": {
+    "message": "Falls aktiviert, können Benutzer nicht mehr auf dieses Send zugreifen, sobald die maximale Zugriffsanzahl erreicht ist.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Optional ein Passwort verlangen, damit Benutzer auf dieses Send zugreifen können.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Private Notizen zu diesem Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisableDesc": {
+    "message": "Dieses Send deaktivieren, damit niemand darauf zugreifen kann.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendShareDesc": {
+    "message": "Kopiere den Send-Link beim Speichern in die Zwischenablage.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Der Text, den Sie senden möchten."
+  },
+  "sendHideText": {
+    "message": "Send-Text standardmäßig ausblenden.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Aktuelle Zugriffsanzahl"
+  },
+  "createSend": {
+    "message": "Neues Send erstellen",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Neues Passwort"
+  },
+  "sendDisabled": {
+    "message": "Send deaktiviert",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Aufgrund einer Unternehmensrichtlinie können Sie nur ein bestehendes Send löschen.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send erstellt",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Bearbeitetes Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFirefoxFileWarning": {
+    "message": "Um eine Datei mit Firefox auszuwählen, öffnen Sie die Erweiterung in der Sidebar oder öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
+  },
+  "sendSafariFileWarning": {
+    "message": "Um eine Datei mit Safari auszuwählen, öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
+  },
+  "sendFileCalloutHeader": {
+    "message": "Bevor Sie beginnen"
+  },
+  "sendFirefoxCustomDatePopoutMessage1": {
+    "message": "Um eine kalenderähnliche Datums-Auswahl zu verwenden",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
+  },
+  "sendFirefoxCustomDatePopoutMessage2": {
+    "message": "hier klicken",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
+  },
+  "sendFirefoxCustomDatePopoutMessage3": {
+    "message": "zum Öffnen in einem neuen Fenster.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
+  },
+  "expirationDateIsInvalid": {
+    "message": "Das angegebene Verfallsdatum ist nicht gültig."
+  },
+  "deletionDateIsInvalid": {
+    "message": "Das angegebene Löschdatum ist nicht gültig."
+  },
+  "expirationDateAndTimeRequired": {
+    "message": "Ein Verfallsdatum und eine Zeit sind erforderlich."
+  },
+  "deletionDateAndTimeRequired": {
+    "message": "Ein Löschdatum und eine Zeit sind erforderlich."
+  },
+  "dateParsingError": {
+    "message": "Es gab einen Fehler beim Speichern Ihrer Lösch- und Verfallsdaten."
   }
 }

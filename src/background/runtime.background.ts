@@ -7,6 +7,7 @@ import { LoginView } from 'jslib/models/view/loginView';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { NotificationsService } from 'jslib/abstractions/notifications.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -21,7 +22,6 @@ import { BrowserApi } from '../browser/browserApi';
 
 import MainBackground from './main.background';
 
-import { Analytics } from 'jslib/misc';
 import { Utils } from 'jslib/misc/utils';
 
 import { OrganizationUserStatusType } from 'jslib/enums/organizationUserStatusType';
@@ -36,10 +36,10 @@ export default class RuntimeBackground {
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
-        private analytics: Analytics, private notificationsService: NotificationsService,
+        private notificationsService: NotificationsService,
         private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService,
         private environmentService: EnvironmentService, private policyService: PolicyService,
-        private userService: UserService) {
+        private userService: UserService, private messagingService: MessagingService) {
 
         // onInstalled listener must be wired up before anything else, so we do it in the ctor
         chrome.runtime.onInstalled.addListener((details: any) => {
@@ -176,6 +176,22 @@ export default class RuntimeBackground {
                 }
                 catch { }
                 break;
+            case 'webAuthnResult':
+                let vaultUrl2 = this.environmentService.getWebVaultUrl();
+                if (vaultUrl2 == null) {
+                    vaultUrl2 = 'https://vault.bitwarden.com';
+                }
+
+                if (msg.referrer == null || Utils.getHostname(vaultUrl2) !== msg.referrer) {
+                    return;
+                }
+
+                const params = `webAuthnResponse=${encodeURIComponent(msg.data)};remember=${msg.remember}`;
+                BrowserApi.createNewTab(`popup/index.html?uilocation=popout#/2fa;${params}`, undefined, false);
+                break;
+            case 'reloadPopup':
+                this.messagingService.send('reloadPopup');
+                break;
             default:
                 break;
         }
@@ -230,10 +246,6 @@ export default class RuntimeBackground {
 
             const cipher = await this.cipherService.encrypt(model);
             await this.cipherService.saveWithServer(cipher);
-            this.analytics.ga('send', {
-                hitType: 'event',
-                eventAction: 'Added Login from Notification Bar',
-            });
         }
     }
 
@@ -262,10 +274,6 @@ export default class RuntimeBackground {
                 model.login.password = queueMessage.newPassword;
                 const newCipher = await this.cipherService.encrypt(model);
                 await this.cipherService.saveWithServer(newCipher);
-                this.analytics.ga('send', {
-                    hitType: 'event',
-                    eventAction: 'Changed Password from Notification Bar',
-                });
             }
         }
     }
@@ -396,10 +404,6 @@ export default class RuntimeBackground {
                     await this.setDefaultSettings();
                 }
 
-                this.analytics.ga('send', {
-                    hitType: 'event',
-                    eventAction: 'onInstalled ' + this.onInstalledReason,
-                });
                 this.onInstalledReason = null;
             }
         }, 100);

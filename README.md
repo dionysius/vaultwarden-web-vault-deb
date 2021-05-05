@@ -1,4 +1,4 @@
-[![appveyor build](https://ci.appveyor.com/api/projects/status/github/bitwarden/browser?branch=master&svg=true)](https://ci.appveyor.com/project/bitwarden/browser)
+[![Github Workflow build on master](https://github.com/bitwarden/browser/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/bitwarden/browser/actions/workflows/build.yml?query=branch:master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/bitwarden-browser/localized.svg)](https://crowdin.com/project/bitwarden-browser)
 [![Join the chat at https://gitter.im/bitwarden/Lobby](https://badges.gitter.im/bitwarden/Lobby.svg)](https://gitter.im/bitwarden/Lobby)
 
@@ -36,7 +36,7 @@ You can now load the extension into your browser through the browser's extension
 
 - Chrome/Opera:
   1. Type `chrome://extensions` in your address bar to bring up the extensions page.
-  2. Enable developer mode (checkbox)
+  2. Enable developer mode (toggle switch)
   3. Click the "Load unpacked extension" button, navigate to the `build` folder of your local extension instance, and click "Ok".
 - Firefox
   1. Type `about:debugging` in your address bar to bring up the add-ons page.

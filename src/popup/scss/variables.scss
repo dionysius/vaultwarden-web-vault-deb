@@ -37,6 +37,23 @@ $button-color: lighten($text-color, 40%);
 $button-color-primary: darken($brand-primary, 8%);
 $button-color-danger: darken($brand-danger, 10%);
 
+$solarizedDarkBase03:    #002b36;
+$solarizedDarkBase02:    #073642;
+$solarizedDarkBase01:    #586e75;
+$solarizedDarkBase00:    #657b83;
+$solarizedDarkBase0:     #839496;
+$solarizedDarkBase1:     #93a1a1;
+$solarizedDarkBase2:     #eee8d5;
+$solarizedDarkBase3:     #fdf6e3;
+$solarizedDarkYellow:    #b58900;
+$solarizedDarkOrange:    #cb4b16;
+$solarizedDarkRed:       #dc322f;
+$solarizedDarkMagenta:   #d33682;
+$solarizedDarkViolet:    #6c71c4;
+$solarizedDarkBlue:      #268bd2;
+$solarizedDarkCyan:      #2aa198;
+$solarizedDarkGreen:     #859900;
+
 $themes: (
     light: (
         textColor: $text-color,
@@ -184,6 +201,55 @@ $themes: (
         passwordSpecialColor: $nord12,
         calloutBorderColor: $nord0,
         calloutBackgroundColor: $nord2,
+    ),
+    solarizedDark: (
+        textColor: $solarizedDarkBase2,
+        borderColor: $solarizedDarkBase03,
+        backgroundColor: $solarizedDarkBase03,
+        backgroundColorAlt: $solarizedDarkBase02,
+        scrollbarColor: $solarizedDarkBase0,
+        scrollbarHoverColor: $solarizedDarkBase2,
+        boxBackgroundColor: $solarizedDarkBase03,
+        boxBackgroundHoverColor: $solarizedDarkBase02,
+        boxBorderColor: $solarizedDarkBase02,
+        tabBackgroundColor: $solarizedDarkBase02,
+        tabBackgroundHoverColor: $solarizedDarkBase01,
+        headerColor: $solarizedDarkBase1,
+        headerBackgroundColor: $solarizedDarkBase02,
+        headerBackgroundHoverColor: $solarizedDarkBase01,
+        headerBorderColor: $solarizedDarkBase03,
+        headerInputBackgroundColor: $solarizedDarkBase2,
+        headerInputBackgroundFocusColor: $solarizedDarkBase1,
+        headerInputColor: $solarizedDarkBase01,
+        headerInputPlaceholderColor: $solarizedDarkBase00,
+        listItemBackgroundHoverColor: $solarizedDarkBase02,
+        disabledIconColor: $solarizedDarkBase0,
+        disabledBoxOpacity: 0.5,
+        headingColor: $solarizedDarkBase0,
+        labelColor: $solarizedDarkBase0,
+        mutedColor: $solarizedDarkBase0,
+        totpStrokeColor: $solarizedDarkBase0,
+        boxRowButtonColor: $solarizedDarkBase0,
+        boxRowButtonHoverColor: $solarizedDarkBase2,
+        inputBorderColor: $solarizedDarkBase03,
+        inputBackgroundColor: $solarizedDarkBase01,
+        inputPlaceholderColor: lighten($solarizedDarkBase00, 20%),
+        buttonBackgroundColor: $solarizedDarkBase00,
+        buttonBorderColor: $solarizedDarkBase03,
+        buttonColor: $solarizedDarkBase1,
+        buttonPrimaryColor: $solarizedDarkCyan,
+        buttonDangerColor: $solarizedDarkRed,
+        primaryColor: $solarizedDarkGreen,
+        primaryAccentColor: $solarizedDarkCyan,
+        dangerColor: $solarizedDarkRed,
+        successColor: $solarizedDarkGreen,
+        infoColor: $solarizedDarkGreen,
+        warningColor: $solarizedDarkYellow,
+        logoSuffix: 'white',
+        passwordNumberColor: $solarizedDarkCyan,
+        passwordSpecialColor: $solarizedDarkYellow,
+        calloutBorderColor: $solarizedDarkBase03,
+        calloutBackgroundColor: $solarizedDarkBase01,
     ),
 );
 

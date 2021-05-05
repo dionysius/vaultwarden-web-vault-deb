@@ -46,6 +46,7 @@ import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { ViewComponent } from './vault/view.component';
 
+import { SendAddEditComponent } from './send/send-add-edit.component';
 import { SendGroupingsComponent } from './send/send-groupings.component';
 import { SendTypeComponent } from './send/send-type.component';
 
@@ -242,6 +243,18 @@ const routes: Routes = [
         component: SendTypeComponent,
         canActivate: [AuthGuardService],
         data: { state: 'send-type' },
+    },
+    {
+        path: 'add-send',
+        component: SendAddEditComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'add-send' },
+    },
+    {
+        path: 'edit-send',
+        component: SendAddEditComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'edit-send' },
     },
     {
         path: 'tabs',

@@ -4,8 +4,6 @@ import {
     OnInit,
 } from '@angular/core';
 
-import { Angulartics2 } from 'angulartics2';
-
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
@@ -17,7 +15,7 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 export class PopOutComponent implements OnInit {
     @Input() show = true;
 
-    constructor(private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService,
+    constructor(private platformUtilsService: PlatformUtilsService,
         private popupUtilsService: PopupUtilsService) { }
 
     ngOnInit() {
@@ -29,7 +27,6 @@ export class PopOutComponent implements OnInit {
     }
 
     expand() {
-        this.analytics.eventTrack.next({ action: 'Pop Out Window' });
         this.popupUtilsService.popOut(window);
     }
 }

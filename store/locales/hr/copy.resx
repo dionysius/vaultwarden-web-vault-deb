@@ -118,39 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden - Besplatni upravitelj lozinki</value>
+    <value>Bitwarden - besplatni upravitelj lozinki</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Siguran i besplatan upravitelj lozinki za sve vaše uređaje</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden je najlakši i najsigurniji način pohranjivanja svih vaših prijava i lozinki, dok su iste sinkronizirane među svim vašim uređajima.
+    <value>Bitwarden je jednostavan i siguran način pohrane svih tvojih korisničkih imena i lozinki, a sinkronizacija im omogućuje jednostavan pristup na svim tvojim uređajima.
 
-Krađa lozinki ozbiljan je problem. Web-lokacije i aplikacije koje upotrebljavate svakodnevno su napadnute. Pojavljuju se sigurnosne povrede, a vaše lozinke su ukradene. Ako ponovno upotrebljavate iste zaporke u aplikacijama i web-lokacijama, hakeri mogu lako pristupiti vašoj e-pošti, banci i drugim važnim računima.
+Krađa lozinki je ozbiljan problem. Web mjesta i aplikacije koje upotrebljavaš, svakog su dana izložene pokušajima napada, pri čemu može doći do curenja podataka, a tvoje lozinke mogu biti ukradene. Upotrebljavaš li jednu te istu lozinku na više mjesta, u slučaju njezinog curenja, neautorizirane osobe mogu vrlo lako pristupiti ostalim uslugama koje su zaštićene tom istom lozinkom, kao npr. tvoja e-pošta, internet bankarsrtvo i druge važne usluge.
 
-Sigurnosni stručnjaci preporučuju da koristite različitu, nasumično generiranu lozinku za svaki račun koji stvorite. Ali kako upravljati svim tim lozinkama? Bitwarden vam olakšava stvaranje, pohranu i pristup lozinkama.
+Sigurnosni stručnjaci preporučuju korištenje jedinstvene, nasumično generirane lozinke za svaki račun koji stvoriš. No kako upravljati svim tim lozinkama? Bitwarden na siguran način olakšava generiranje složenih, sigurnih lozinki i njihovu pohranu s pripadajućim korisničkim imenima.
 
-Bitwarden pohranjuje sve vaše prijave u šifrirani trezor koji se sinkronizira na svim vašim uređajima. Budući da je potpuno šifriran prije nego ikada napusti uređaj, samo vi imate pristup podacima. Čak ni tim u bitwardenu ne može vidjeti vaše podatke. Vaši su podaci zapečaćeni s AES-256 bitnim šifriranjem, salt hashom i PBKDF2 SHA-256.</value>
+Bitwarden tvoje podatke pohranjuje u šifrirani trezor koji je sinkroniziran i lako dostupan na svim tvojim uređajima. Budući je trezor u potpunosti šifriran prije nego li napusti uređaj, jedino ti imaš pristup podacima u trezoru. Čak niti tim u Bitwardenu ne može vidjeti tvoje podatke zapečaćene AES-256 bitnim šifriranjem, salted hashom i PBKDF2 SHA-256.
+
+Bitwarden je usredotočen na softver otvorenog kôda. Izvorni kôd za Bitwarden smješten je na GitHub-u i svatko ga može pregledati, revidirati i doprinijeti Bitwarden codebase-u.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Siguran i besplatan upravitelj lozinki za sve vaše uređaje</value>
+    <value>Siguran i besplatan upravitelj lozinki za sve tvoje uređaje</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sinkronizirajte i pristupite trezoru s više uređaja</value>
+    <value>Sinkroniziraj i pristupi svojem trezoru s više uređaja</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Upravljajte svim svojim prijavama i lozinkama iz sigurnog trezora</value>
+    <value>Upravljaj svojim korisničkim imenima i lozinkama iz sigurnog trezora</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Brzo automatsko popunjavanje vjerodajnica za prijavu na bilo kojoj web stranici koje posjećujete</value>
+    <value>Brza auto-ispuna vjerodajnica za prijavu za bilo koju web stranicu</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Vaš trezor je lako dostupan iz izbornika desnim klikom</value>
+    <value>Tvoj trezor je lako dostupan iz izbornika desnim klikom</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatski generirajte jake, nasumične i sigurne lozinke</value>
+    <value>Automatski generiraj jake, nasumične i sigurne lozinke</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Vašim se podacima sigurno upravlja AES-256 bitnim šifriranjem</value>
+    <value>Tvojim se podacima sigurno upravlja AES-256 bitnim šifriranjem</value>
   </data>
 </root>

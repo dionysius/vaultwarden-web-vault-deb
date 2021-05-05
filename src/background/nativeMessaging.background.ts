@@ -3,6 +3,7 @@ import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
@@ -33,10 +34,11 @@ export class NativeMessagingBackground {
     constructor(private storageService: StorageService, private cryptoService: CryptoService,
         private cryptoFunctionService: CryptoFunctionService, private vaultTimeoutService: VaultTimeoutService,
         private runtimeBackground: RuntimeBackground, private i18nService: I18nService, private userService: UserService,
-        private messagingService: MessagingService, private appIdService: AppIdService) {
+        private messagingService: MessagingService, private appIdService: AppIdService,
+        private platformUtilsService: PlatformUtilsService) {
             this.storageService.save(ConstantsService.biometricFingerprintValidated, false);
 
-            if (BrowserApi.isChromeApi) {
+            if (chrome?.permissions?.onAdded) {
                 // Reload extension to activate nativeMessaging
                 chrome.permissions.onAdded.addListener(permissions => {
                     BrowserApi.reloadExtension(null);
@@ -48,17 +50,27 @@ export class NativeMessagingBackground {
         this.appId = await this.appIdService.getAppId();
         this.storageService.save(ConstantsService.biometricFingerprintValidated, false);
 
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             this.port = BrowserApi.connectNative('com.8bit.bitwarden');
 
             this.connecting = true;
 
+            const connectedCallback = () => {
+                this.connected = true;
+                this.connecting = false;
+                resolve();
+            };
+
+            // Safari has a bundled native component which is always available, no need to
+            // check if the desktop app is running.
+            if (this.platformUtilsService.isSafari()) {
+                connectedCallback();
+            }
+
             this.port.onMessage.addListener(async (message: any) => {
                 switch (message.command) {
                     case 'connected':
-                        this.connected = true;
-                        this.connecting = false;
-                        resolve();
+                        connectedCallback();
                         break;
                     case 'disconnected':
                         if (this.connecting) {
@@ -114,15 +126,10 @@ export class NativeMessagingBackground {
                         break;
                     }
                     case 'wrongUserId':
-                        this.messagingService.send('showDialog', {
-                            text: this.i18nService.t('nativeMessagingWrongUserDesc'),
-                            title: this.i18nService.t('nativeMessagingWrongUserTitle'),
-                            confirmText: this.i18nService.t('ok'),
-                            type: 'error',
-                        });
+                        this.showWrongUserDialog();
                     default:
                         // Ignore since it belongs to another device
-                        if (message.appId !== this.appId) {
+                        if (!this.platformUtilsService.isSafari() && message.appId !== this.appId) {
                             return;
                         }
 
@@ -154,19 +161,35 @@ export class NativeMessagingBackground {
         });
     }
 
+    showWrongUserDialog() {
+        this.messagingService.send('showDialog', {
+            text: this.i18nService.t('nativeMessagingWrongUserDesc'),
+            title: this.i18nService.t('nativeMessagingWrongUserTitle'),
+            confirmText: this.i18nService.t('ok'),
+            type: 'error',
+        });
+    }
+
     async send(message: any) {
         if (!this.connected) {
             await this.connect();
         }
 
+        if (this.platformUtilsService.isSafari()) {
+            this.postMessage(message);
+        } else {
+            this.postMessage({appId: this.appId, message: await this.encryptMessage(message)});
+        }
+    }
+
+    async encryptMessage(message: any) {
         if (this.sharedSecret == null) {
             await this.secureCommunication();
         }
 
         message.timestamp = Date.now();
 
-        const encrypted = await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecret);
-        this.postMessage({appId: this.appId, message: encrypted});
+        return await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecret);
     }
 
     getResponse(): Promise<any> {
@@ -197,7 +220,10 @@ export class NativeMessagingBackground {
     }
 
     private async onMessage(rawMessage: any) {
-        const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecret));
+        let message = rawMessage;
+        if (!this.platformUtilsService.isSafari()) {
+            message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecret));
+        }
 
         if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
             // tslint:disable-next-line
@@ -241,7 +267,21 @@ export class NativeMessagingBackground {
                 }
 
                 if (message.response === 'unlocked') {
-                    this.cryptoService.setKey(new SymmetricCryptoKey(Utils.fromB64ToArray(message.keyB64).buffer));
+                    await this.cryptoService.setKey(new SymmetricCryptoKey(Utils.fromB64ToArray(message.keyB64).buffer));
+
+                    // Verify key is correct by attempting to decrypt a secret
+                    try {
+                        await this.cryptoService.getFingerprint(await this.userService.getUserId());
+                    } catch (e) {
+                        // tslint:disable-next-line
+                        console.error('Unable to verify key:', e);
+                        await this.cryptoService.clearKey();
+                        this.showWrongUserDialog();
+
+                        message = false;
+                        break;
+                    }
+
                     this.vaultTimeoutService.biometricLocked = false;
                     this.runtimeBackground.processMessage({command: 'unlocked'}, null, null);
                 }
