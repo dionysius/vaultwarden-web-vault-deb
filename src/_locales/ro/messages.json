@@ -596,6 +596,10 @@
     "message": "Luminos",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Export seif"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Introduceți cheia de securitate în portul USB al computerului. Dacă are un buton, apăsați-l."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
   "loginUnavailable": {
     "message": "Conectare indisponibilă"
   },
@@ -837,11 +847,11 @@
     "message": "Verificați cu Duo Security pentru organizația dvs. utilizând aplicația Duo Mobile, SMS, apel telefonic sau cheia de securitate U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utilizați orice cheie de securitate FIDO U2F activată pentru a accesa contul dvs."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Cheie de securitate FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Dacă este detectat un formular de autentificare, se efectuează automat o completare a acestuia la încărcarea paginii."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "În acest moment, aceasta funcțiune este experimentală. O puteți folosi pe propria răspundere."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Iconurile saiturilor oferă o imagine identificabilă lângă fiecare element de conectare din seiful dvs."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Deținător card"
@@ -1448,10 +1470,10 @@
     "message": "Fără permisiunea de comunicare cu aplicația Bitwarden Desktop nu putem furniza date biometrice în extensia browserului. Încercați din nou."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Eroare solicitare permisiune"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Această acțiune nu se poate efectua în bara laterală, vă rugăm să reîncercați acțiunea în fereastra pop-up sau popup."
   },
   "personalOwnershipSubmitError": {
     "message": "Datorită unei politici pentru întreprinderi, vă este restricționată salvarea de elemente în seiful dvs. personal. Schimbați opțiunea de proprietate la o organizație și alegeți dintre colecțiile disponibile."
@@ -1643,6 +1665,9 @@
     "message": "Send editat",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Pentru a alege un fișier folosind Firefox, deschideți extensia din bara laterală sau deschideți o fereastră nouă făcând clic pe acest banner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "A survenit o eroare la salvarea datelor de ștergere și de expirare."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
