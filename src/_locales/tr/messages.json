@@ -596,6 +596,10 @@
     "message": "Açık",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Kasayı dışa aktar"
   },
@@ -616,7 +620,7 @@
     "message": "Dışa aktardığınız bu dosyadaki verileriniz, hesabınızın şifreleme anahtarıyla şifrelenir. Hesabınızın şifreleme anahtarını değiştirirseniz bu dosyanın şifresi çözülemez hale gelir, dolayısıyla dosyayı yeniden dışa aktarmanız gerekir."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Her Bitwarden kullanıcı hesabının hesap şifreleme anahtarları farklıdır. Yani şifrelenmiş bir dışa aktarmayı farklı bir hesapta içe aktaramazsınız."
   },
   "exportMasterPassword": {
     "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Güvenlik anahtarınızı bilgisayarınızın USB portuna takın. Düğmesi varsa dokunun."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
   "loginUnavailable": {
     "message": "Giriş yapılamıyor"
   },
@@ -837,11 +847,11 @@
     "message": "Kuruluşunuzun Duo Security doğrulaması için Duo Mobile uygulaması, SMS, telefon araması veya U2F güvenlik anahtarını kullanın.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Hesabınıza erişmek için FIDO U2F uyumlu bir güvenlik anahtarı kullanın."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F güvenlik anahtarı"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-posta"
@@ -883,10 +893,16 @@
     "message": "Ortam URL'leri kaydedildi."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Sayfa yüklendiğinde otomatik doldurmayı etkinleştir"
+    "message": "Sayfa yüklendiğinde otomatik doldur"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Sayfa yüklendiğinde giriş formu tespit edilirse otomatik olarak formu doldur."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Bu şu anda deneysel bir özelliktir. Kullanımı sizin sorumluluğunuzdadır."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Web sitesi simgeleri, kasanızdaki her kaydın yanında o siteyi tanımanıza yardımcı olan bir resim sunar."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Kart sahibinin adı"
@@ -1448,10 +1470,10 @@
     "message": "Bitwarden masaüstü uygulamasıyla iletişim kurma iznimiz olmadan tarayıcı uzantısında biyometriyi kullanamayız. Lütfen tekrar deneyin."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "İzin isteme hatası"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Bu işlemi kenar çubuğundan yapamazsınız. Lütfen açılır pencereden yapmayı deneyin."
   },
   "personalOwnershipSubmitError": {
     "message": "Bir kuruluş ilkesi nedeniyle kişisel kasanıza hesap kaydetmeniz kısıtlanmış. Sahip seçeneğini bir kuruluş olarak değiştirin ve mevcut koleksiyonlar arasından seçim yapın."
@@ -1460,10 +1482,10 @@
     "message": "Bir kuruluş ilkesi sahiplik seçeneklerinizi etkiliyor."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Hariç tutulan alan adları"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+    "message": "Bitwarden bu alan adlarında hesaplarınızı kaydetmeyi sormayacaktır. Değişikliklerin etkili olması için sayfayı yenilemelisiniz."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ geçerli bir alan adı değil",
@@ -1552,24 +1574,24 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "A friendly name to describe this Send.",
+    "message": "Bu Send'i açıklayan anlaşılır bir ad",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Göndermek istediğiniz dosya."
   },
   "deletionDate": {
     "message": "Silinme tarihi"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Bu Send belirtilen tarih ve saatte kalıcı olacak silinecek.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Son kullanma tarihi"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Bunu ayarlarsanız belirtilen tarih ve saatten sonra bu Send'e erişilemeyecektir.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
@@ -1588,95 +1610,113 @@
     "message": "Özel"
   },
   "maximumAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Maksimum erişim sayısı"
   },
   "maximumAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Bunu ayarlarsanız maksimum erişim sayısına ulaşıldıktan sonra bu Send'e erişilemeyecektir.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Kullanıcıların bu Send'e erişmek için parola girmelerini isteyebilirsiniz.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Bu Send ile ilgili özel notlar.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Kimsenin erişememesi için bu Send'i devre dışı bırak.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Copy this Send's link to clipboard upon save.",
+    "message": "Kaydettikten sonra bu Send'in linkini panoya kopyala.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Göndermek istediğiniz metin."
   },
   "sendHideText": {
-    "message": "Hide this Send's text by default.",
+    "message": "Bu Send'in metnini varsayılan olarak gizle.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Mevcut erişim sayısı"
   },
   "createSend": {
-    "message": "Create New Send",
+    "message": "Yeni Send oluştur",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Yeni parola"
   },
   "sendDisabled": {
-    "message": "Send Disabled",
+    "message": "Send devre dışı",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Bir kuruluş ilkesi nedeniyle yalnızca mevcut Send'leri silebilirsiniz.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send oluşturuldu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send düzenlendi",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
-    "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
+    "message": "Firefox ile dosya seçmek için eklentiyi kenar çubuğunda açın veya bu banner'a tıklayarak yeni bir pencerede açın."
   },
   "sendSafariFileWarning": {
-    "message": "In order to choose a file using Safari, pop out to a new window by clicking this banner."
+    "message": "Safari ile dosya seçmek için bu banner'a tıklayarak eklentiyi yeni bir pencerede açın."
   },
   "sendFileCalloutHeader": {
-    "message": "Before you start"
+    "message": "Başlamadan önce"
   },
   "sendFirefoxCustomDatePopoutMessage1": {
-    "message": "To use a calendar style date picker",
+    "message": "Takvim tarzı tarih seçiyi kullanmak için",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
-    "message": "buraya tıklayın",
+    "message": "buraya tıklayarak",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
-    "message": "to pop out your window.",
+    "message": "yeni bir pencere açın.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
-    "message": "The expiration date provided is not valid."
+    "message": "Belirtilen son kullanma tarihi geçersiz."
   },
   "deletionDateIsInvalid": {
-    "message": "The deletion date provided is not valid."
+    "message": "Belirtilen silinme tarihi geçersiz."
   },
   "expirationDateAndTimeRequired": {
-    "message": "An expiration date and time are required."
+    "message": "Son kullanma tarihi ve saati gereklidir."
   },
   "deletionDateAndTimeRequired": {
-    "message": "A deletion date and time are required."
+    "message": "Silinme tarihi ve saati gereklidir."
   },
   "dateParsingError": {
-    "message": "There was an error saving your deletion and expiration dates."
+    "message": "Silinme ve son kullanma tarihleriniz kaydedilirken bir hata oluştu."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
