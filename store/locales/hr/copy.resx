@@ -132,7 +132,7 @@ Sigurnosni stručnjaci preporučuju korištenje jedinstvene, nasumično generira
 
 Bitwarden tvoje podatke pohranjuje u šifrirani trezor koji je sinkroniziran i lako dostupan na svim tvojim uređajima. Budući je trezor u potpunosti šifriran prije nego li napusti uređaj, jedino ti imaš pristup podacima u trezoru. Čak niti tim u Bitwardenu ne može vidjeti tvoje podatke zapečaćene AES-256 bitnim šifriranjem, salted hashom i PBKDF2 SHA-256.
 
-Bitwarden je usredotočen na softver otvorenog kôda. Izvorni kôd za Bitwarden smješten je na GitHub-u i svatko ga može pregledati, revidirati i doprinijeti Bitwarden codebase-u.</value>
+Bitwarden je usredotočen na softver otvorenog kôda. Izvorni kôd za Bitwarden smješten je na GitHub-u i svatko ga može pregledati, revidirati i doprinijeti Bitwarden kodnoj bazi.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Siguran i besplatan upravitelj lozinki za sve tvoje uređaje</value>
