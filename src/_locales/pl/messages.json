@@ -498,7 +498,7 @@
     "message": "Element został zaktualizowany"
   },
   "deleteItemConfirmation": {
-    "message": "Czy na pewno chcesz usunąć ten element?"
+    "message": "Czy na pewno chcesz to usunąć?"
   },
   "deletedItem": {
     "message": "Element został przeniesiony do kosza"
@@ -595,6 +595,10 @@
   "light": {
     "message": "Jasny",
     "description": "Light color"
+  },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
     "message": "Eksportuj sejf"
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Włóż klucz bezpieczeństwa do portu USB komputera. Jeśli klucz posiada przycisk, dotknij go."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
   "loginUnavailable": {
     "message": "Logowanie jest niedostępne"
   },
@@ -837,11 +847,11 @@
     "message": "Weryfikacja dostępu do Twojej organizacji z użyciem Duo Security poprzez aplikację Duo Mobile, SMS, połączenie telefoniczne lub klucz bezpieczeństwa U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Użyj dowolnego klucza bezpieczeństwa FIDO U2F, aby uzyskać dostęp do Twojego konta."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Klucz bezpieczeństwa FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Adres e-mail"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Jeśli zostanie wykryty formularz logowania, automatycznie uzupełnij dane logowania po załadowaniu strony."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Obecnie jest to funkcja eksperymentalna. Używaj na własne ryzyko."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Wyświetlaj rozpoznawalną ikonę serwisu obok danych logowania w sejfie."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Właściciel karty"
@@ -1409,7 +1431,7 @@
     "message": "Uruchom aplikację desktopową Bitwarden"
   },
   "startDesktopDesc": {
-    "message": "Aplikacja desktopowa Bitwarden musi zostać uruchomiona przed użyciem tej funkcji."
+    "message": "Aplikacja desktopowa Bitwarden, przed użyciem tej funkcji, musi zostać ponownie uruchomiona."
   },
   "errorEnableBiometricTitle": {
     "message": "Nie można włączyć danych biometrycznych"
@@ -1448,10 +1470,10 @@
     "message": "Bez uprawnienia do komunikowania się z aplikacją desktopową Bitwarden nie możemy dostarczyć obsługi danych biometrycznych w rozszerzeniu przeglądarki. Spróbuj ponownie."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Wystąpił błąd żądania uprawnienia"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Ta operacja nie może zostać wykonana na pasku bocznym. Spróbuj ponownie w nowym oknie."
   },
   "personalOwnershipSubmitError": {
     "message": "Ze względu na zasadę przedsiębiorstwa, nie możesz zapisywać elementów w osobistym sejfie. Zmień właściciela elementu na organizację i wybierz jedną z dostępnych kolekcji."
@@ -1526,7 +1548,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Wyślij link",
+    "message": "Link wysyłki",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
@@ -1552,7 +1574,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "Opis wysyłki",
+    "message": "Nazwa wysyłki.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
@@ -1585,7 +1607,7 @@
     }
   },
   "custom": {
-    "message": "Niestandardowy"
+    "message": "Niestandardowa"
   },
   "maximumAccessCount": {
     "message": "Maksymalna liczba dostępów"
@@ -1607,7 +1629,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Kopiuj link wysyłki po zapisaniu.",
+    "message": "Po zapisaniu wysyłki, skopiuj link do schowka.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1643,6 +1665,9 @@
     "message": "Wysyłka została zaktualizowana",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Aby wybrać plik za pomocą przeglądarki Firefox, otwórz rozszerzenie w nowym oknie."
   },
@@ -1661,7 +1686,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
-    "message": "w celu otwarcia okna kalendarza.",
+    "message": "w celu otwarcia rozszerzenia w oknie.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Wystąpił błąd podczas zapisywania dat usunięcia i wygaśnięcia."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
