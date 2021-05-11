@@ -596,6 +596,10 @@
     "message": "Hele",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Ekspordi hoidla"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Sisesta oma turvaline võti arvuti USB porti. Kui sellel on nupp, siis vajuta seda."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
   "loginUnavailable": {
     "message": "Sisselogimine ei ole saadaval"
   },
@@ -837,11 +847,11 @@
     "message": "Kinnita organisatsiooni jaoks Duo Security abil, kasutades selleks Duo Mobile rakendust, SMS-i, telefonikõnet või U2F turvavõtit.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Kasuta mistahes FIDO U2F toetavad turvalist võtit, et oma kontole ligi pääseda."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Turvaline võti"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-post"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Sisselogimise vormi tuvastamisel sisestatakse sinna kontoandmed automaatselt."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "See funktsioon on katsetusjärgus. Kasuta omal vastutusel."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Ikoonid aitavad hoidlas olevaid veebilehti paremini ära tunda."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Kaardiomaniku nimi"
@@ -1448,10 +1470,10 @@
     "message": "Puudub luba, et suhelda Bitwardeni töölaua rakendusega. Selle tõttu ei saa brauseri lisas biomeetriat kasutada. Palun proovi uuesti."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Loa taotlemisel ilmnes viga"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Seda tegevust ei saa küljeribal sooritada. Proovi seda sooritada hüpikakna vaates."
   },
   "personalOwnershipSubmitError": {
     "message": "Ettevõtte poliitika tõttu ei saa sa andmeid oma personaalsesse Hoidlasse salvestada. Vali Omanikuks organisatsioon ja vali mõni saadavaolevatest Kogumikest."
@@ -1569,7 +1591,7 @@
     "message": "Aegumiskuupäev"
   },
   "expirationDateDesc": {
-    "message": "Seadistamisel ei pääse sellele Sendile enam pärast määratud kuupäeva ligi.",
+    "message": "Selle valimisel ei pääse sellele Sendile enam pärast määratud kuupäeva ligi.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
@@ -1591,11 +1613,11 @@
     "message": "Maksimaalne ligipääsude arv"
   },
   "maximumAccessCountDesc": {
-    "message": "Seadistamisel ei saa kasutajad pärast maksimaalse ligipääsude arvu saavutamist sellele Sendile enam ligi.",
+    "message": "Selle valimisel ei saa kasutajad pärast maksimaalse ligipääsude arvu saavutamist sellele Sendile enam ligi.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Mittekohustuslik parooli küsimine, et Sendile ligi pääseda.",
+    "message": "Soovi korral nõua parooli, millega Sendile ligi pääseb.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1636,12 +1658,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Lõi Sendi",
+    "message": "Send on loodud",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Muutis Sendi",
+    "message": "Muudetud",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
   },
   "sendFirefoxFileWarning": {
     "message": "Faili valimiseks läbi Firefoxi ava Bitwardeni rakendus Firefoxi külgribal või kasuta hüpikakent (klikkides sellel bänneril)."
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Kustutamis- ja aegumiskuupäevade salvestamisel ilmnes tõrge."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
