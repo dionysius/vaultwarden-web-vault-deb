@@ -596,6 +596,10 @@
     "message": "Claro",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Exportar Cofre"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Insira a sua chave de segurança na porta USB do seu computador. Se ele tiver um botão, toque nele."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
   "loginUnavailable": {
     "message": "Sessão Indisponível"
   },
@@ -837,11 +847,11 @@
     "message": "Verifique com o Duo Security utilizando o aplicativo Duo Mobile, SMS, chamada telefônica, ou chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utilize qualquer chave de segurança ativada por FIDO U2F para acessar à sua conta."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Chave de Segurança FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se um formulário de login for detectado, realize automaticamente um autopreenchimento quando a página web carregar."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Atualmente, este é um recurso experimental. Utilize por sua conta e risco."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "O ícone do site fornece um ícone reconhecível ao lado de cada credencial no seu cofre."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Titular do Cartão"
@@ -1448,10 +1470,10 @@
     "message": "Sem permissão para nos comunicar com o aplicativo Bitwarden Desktop, não podemos fornecer dados biométricos na extensão do navegador. Por favor, tente novamente."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Erro ao solicitar permissão"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Esta ação não pode ser feita na barra lateral. Por favor, tente novamente no popup ou popout."
   },
   "personalOwnershipSubmitError": {
     "message": "Devido a uma Política Empresarial, você está restrito de salvar itens para seu cofre pessoal. Altere a opção de Propriedade para uma organização e escolha entre as Coleções disponíveis."
@@ -1643,6 +1665,9 @@
     "message": "Send Editado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Para escolher um arquivo usando o Firefox, abra a extensão na barra lateral ou abra uma nova janela clicando neste banner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Ocorreu um erro ao salvar as suas datas de exclusão e validade."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
