@@ -68,7 +68,7 @@
     "message": "复制密码"
   },
   "copyNote": {
-    "message": "复制笔记"
+    "message": "复制备注"
   },
   "copyUri": {
     "message": "复制 URI"
@@ -231,7 +231,7 @@
     "message": "符号最少个数"
   },
   "avoidAmbChar": {
-    "message": "避免含糊的字符"
+    "message": "避免易混淆的字符"
   },
   "searchVault": {
     "message": "搜索密码库"
@@ -261,10 +261,10 @@
     "message": "收藏"
   },
   "notes": {
-    "message": "笔记"
+    "message": "备注"
   },
   "note": {
-    "message": "笔记"
+    "message": "备注"
   },
   "editItem": {
     "message": "编辑项目"
@@ -489,7 +489,7 @@
     }
   },
   "newUri": {
-    "message": "新 URI"
+    "message": "新增 URI"
   },
   "addedItem": {
     "message": "项目已添加"
@@ -595,6 +595,10 @@
   "light": {
     "message": "亮",
     "description": "Light color"
+  },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
     "message": "导出密码库"
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有一个按钮，按下它。"
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
   "loginUnavailable": {
     "message": "登录不可用"
   },
@@ -837,11 +847,11 @@
     "message": "为您的组织使用 Duo Security 的 Duo 移动应用、短信、电话或 U2F 安全钥匙来进行验证。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "使用任何支持 FIDO U2F 的安全钥匙来访问您的帐户。"
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F 安全钥匙"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "电子邮件"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "如果网页加载时检测到登录表单，自动进行自动填充。"
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "目前这是一项实验功能。使用需自担风险。"
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "在您密码库的每个登录项目旁边显示一个可识别的图标。"
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "持卡人姓名"
@@ -1174,7 +1196,7 @@
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "当前网址",
+    "message": "当前 URI",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1400,10 +1422,10 @@
     "message": "请验证桌面应用程序显示的指纹为： "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "浏览器集成未启用"
+    "message": "浏览器整合未启用"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "浏览器集成在 Bitwarden 桌面应用程序中未启用。请在桌面应用程序的设置中启用它。"
+    "message": "浏览器整合在 Bitwarden 桌面应用程序中未启用。请在桌面应用程序的设置中启用它。"
   },
   "startDesktopTitle": {
     "message": "启动 Bitwarden 桌面应用程序"
@@ -1418,7 +1440,7 @@
     "message": "操作被桌面应用程序取消"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "桌面应用程序废止了安全通道。请重试此操作"
+    "message": "桌面应用程序废止了安全通信通道。请重试此操作"
   },
   "nativeMessagingInvalidEncryptionTitle": {
     "message": "桌面通信已中断"
@@ -1448,10 +1470,10 @@
     "message": "没有与 Bitwarden 桌面应用程序通信的权限，我们无法在浏览器扩展中提供生物识别。请再试一次。"
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "权限请求错误"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "此操作不能在侧边栏中完成，请在弹出窗口或弹出对话框中重试。"
   },
   "personalOwnershipSubmitError": {
     "message": "由于某个企业策略，您被限制为保存项目到您的个人密码库。将所有权选项更改为组织，并从可用的集合中选择。"
@@ -1603,15 +1625,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "禁用此 Send 则没有人能访问它。",
+    "message": "禁用此 Send 以阻止任何人访问它。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "保存时将此 Send 的链接复制到剪贴板。",
+    "message": "保存时复制此 Send 的链接到剪贴板。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "您要发送的文本。"
+    "message": "您想要发送的文本。"
   },
   "sendHideText": {
     "message": "默认隐藏此 Send 的文本。",
@@ -1643,11 +1665,14 @@
     "message": "Send 已编辑",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
-    "message": "要在 Firefox 中选择一个文件，请在侧栏中打开本扩展，或者点击此横幅来弹出一个新窗口。"
+    "message": "要在 Firefox 中选择文件，请在侧边栏中打开本扩展，或者点击此横幅来弹出一个新窗口。"
   },
   "sendSafariFileWarning": {
-    "message": "要在 Safari 中选择一个文件，请点击此横幅来弹出一个新窗口。"
+    "message": "要在 Safari 中选择文件，请点击此横幅来弹出一个新窗口。"
   },
   "sendFileCalloutHeader": {
     "message": "在开始之前"
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "保存您的删除和到期日期时出错。"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

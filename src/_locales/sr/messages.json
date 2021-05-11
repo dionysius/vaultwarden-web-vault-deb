@@ -406,7 +406,7 @@
     "message": "Верификациони код је обавезан."
   },
   "valueCopied": {
-    "message": "$VALUE$ копирано",
+    "message": "$VALUE$ копиран(а/о)",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -595,6 +595,10 @@
   "light": {
     "message": "Светла",
     "description": "Light color"
+  },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
     "message": "Извоз сефа"
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Убаците свој сигурносни кључ у УСБ порт рачунара, и ако има дугме , додирните га."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
   "loginUnavailable": {
     "message": "Пријава недоступна"
   },
@@ -837,11 +847,11 @@
     "message": "Провери са Duo Security за вашу организацију користећи Duo Mobile апликацију, СМС, телефонски позив, или U2F кључ.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Користите било који FIDO U2F сигурносни кључ за присту налога."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F сигурносни кључ"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Е-пошта"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Ако се открије образац за пријаву, извршите аутоматско попуњавање када се веб страница учита."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Ово је тренутно експериментална способност. Користите на властиту одговорност."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаву у сефу."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Име Власника Картице"
@@ -1448,10 +1470,10 @@
     "message": "Без дозволе за комуникацију са Bitwarden Desktop апликацијом, не можемо пружити биометријске податке у екстензији прегледача. Молим вас, покушајте поново."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Грешка у захтеву за дозволу"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Ову радњу није могуће извршити на бочној траци, покушајте поново у искачућем прозору."
   },
   "personalOwnershipSubmitError": {
     "message": "Због смерница за предузећа, ограничено вам је чување предмета у вашем личном трезору. Промените опцију власништва у организацију и изаберите из доступних колекција."
@@ -1559,14 +1581,14 @@
     "message": "Датотека коју желиш да пошаљеш."
   },
   "deletionDate": {
-    "message": "Датум брисања"
+    "message": "Брисање после"
   },
   "deletionDateDesc": {
     "message": "„Send“ ће бити трајно избрисан наведеног датума и времена.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Датум истека"
+    "message": "Рок употребе"
   },
   "expirationDateDesc": {
     "message": "Ако је постављено, приступ овом „Send“ истиче на наведени датум и време.",
@@ -1585,7 +1607,7 @@
     }
   },
   "custom": {
-    "message": "Прилагођен"
+    "message": "Друго"
   },
   "maximumAccessCount": {
     "message": "Максималан број приступа"
@@ -1643,6 +1665,9 @@
     "message": "Измењено слање",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Да бисте изабрали датотеку са Firefox-ом, отворите екстензију на бочној траци или отворите у нови прозор кликом на овај банер."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Појавила се грешка при снимању датума брисања и истицања."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

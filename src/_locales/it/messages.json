@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Fai il log in o crea un nuovo account per accedere alla tua cassaforte di sicurezza."
+    "message": "Accedi o crea un nuovo account per accedere alla tua cassaforte."
   },
   "createAccount": {
     "message": "Crea account"
@@ -20,7 +20,7 @@
     "message": "Accedi"
   },
   "enterpriseSingleSignOn": {
-    "message": "Accesso con il portale dell'organizzazione (SSO)"
+    "message": "Single Sign-On aziendale"
   },
   "cancel": {
     "message": "Annulla"
@@ -32,7 +32,7 @@
     "message": "Invia"
   },
   "emailAddress": {
-    "message": "Indirizzo Email"
+    "message": "Indirizzo email"
   },
   "masterPass": {
     "message": "Password principale"
@@ -41,19 +41,19 @@
     "message": "La password principale è la password che utilizzi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è modo di recuperare questa password nel caso che tu la dimenticassi."
   },
   "masterPassHintDesc": {
-    "message": "Un indizio per la password principale può aiutarti a ricordarla nel caso te la dimenticassi."
+    "message": "Un suggerimento per la password principale può aiutarti a ricordarla nel caso la dimenticassi."
   },
   "reTypeMasterPass": {
-    "message": "Ridigita la tua password principale"
+    "message": "Ri-digita la tua password principale"
   },
   "masterPassHint": {
     "message": "Suggerimento password principale (facoltativo)"
   },
   "tab": {
-    "message": "Pagina"
+    "message": "Scheda"
   },
   "myVault": {
-    "message": "Cassaforte"
+    "message": "La mia cassaforte"
   },
   "tools": {
     "message": "Strumenti"
@@ -80,7 +80,7 @@
     "message": "Copia numero"
   },
   "copySecurityCode": {
-    "message": "Copia il codice di sicurezza"
+    "message": "Copia codice di sicurezza"
   },
   "autoFill": {
     "message": "Auto-riempimento"
@@ -92,13 +92,13 @@
     "message": "Nessun login corrispondente."
   },
   "vaultLocked": {
-    "message": "Cassaforte bloccata."
+    "message": "La cassaforte è bloccata."
   },
   "vaultLoggedOut": {
-    "message": "Cassaforte bloccata."
+    "message": "La cassaforte è bloccata."
   },
   "autoFillInfo": {
-    "message": "Non ci sono login disponibili per completare la tab del browser corrente."
+    "message": "Non ci sono login disponibili per completare la scheda attuale del browser."
   },
   "addLogin": {
     "message": "Aggiungi un login"
@@ -110,10 +110,10 @@
     "message": "Suggerimento password"
   },
   "enterEmailToGetHint": {
-    "message": "Inserisci l'indirizzo email del tuo account per ricevere l'indizio della Password Principale"
+    "message": "Inserisci l'indirizzo email del tuo account per ricevere il suggerimento della password principale."
   },
   "getMasterPasswordHint": {
-    "message": "Ottieni l'indizio della password principale"
+    "message": "Ottieni il suggerimento della password principale"
   },
   "continue": {
     "message": "Continua"
@@ -166,16 +166,16 @@
     "message": "Cartelle"
   },
   "noFolders": {
-    "message": "Non ci sono cartelle da mostrare."
+    "message": "Non ci sono cartelle da elencare."
   },
   "helpFeedback": {
-    "message": "Aiuto e suggerimenti"
+    "message": "Aiuto e segnalazioni"
   },
   "sync": {
     "message": "Sincronizza"
   },
   "syncVaultNow": {
-    "message": "Sincronizza cassaforte ora"
+    "message": "Sincronizza ora la cassaforte"
   },
   "lastSync": {
     "message": "Ultima sincronizzazione:"
@@ -191,7 +191,7 @@
     "message": "Genera automaticamente password complesse e uniche per i tuoi login."
   },
   "bitWebVault": {
-    "message": "Cassaforte web Bitwarden"
+    "message": "Cassaforte web di Bitwarden"
   },
   "importItems": {
     "message": "Importa elementi"
@@ -243,13 +243,13 @@
     "message": "Visualizza"
   },
   "noItemsInList": {
-    "message": "Non ci sono elementi da mostrare."
+    "message": "Non ci sono elementi da elencare."
   },
   "itemInformation": {
     "message": "Informazioni sull'elemento"
   },
   "username": {
-    "message": "Nome Utente"
+    "message": "Nome utente"
   },
   "password": {
     "message": "Password"
@@ -282,7 +282,7 @@
     "message": "Avvia"
   },
   "website": {
-    "message": "Sito"
+    "message": "Sito web"
   },
   "toggleVisibility": {
     "message": "Mostra/Nascondi"
@@ -294,13 +294,13 @@
     "message": "Altro"
   },
   "rateExtension": {
-    "message": "Vota l'estensione"
+    "message": "Valuta l'estensione"
   },
   "rateExtensionDesc": {
-    "message": "Per favore prendi in considerazione l'idea di lasciarci una buona recensione!"
+    "message": "Prendi in considerazione l'idea di lasciarci una buona recensione!"
   },
   "browserNotSupportClipboard": {
-    "message": "Il tuo browser non supporta la copia dalla clipboard. Copiala manualmente."
+    "message": "Il tuo browser non supporta la copia dagli appunti. Copiala manualmente."
   },
   "verifyMasterPassword": {
     "message": "Verifica password principale"
@@ -331,7 +331,7 @@
     "message": "Timeout cassaforte"
   },
   "lockNow": {
-    "message": "Blocca"
+    "message": "Blocca ora"
   },
   "immediately": {
     "message": "Immediatamente"
@@ -367,7 +367,7 @@
     "message": "4 ore"
   },
   "onLocked": {
-    "message": "Al Blocco Computer"
+    "message": "Al blocco del computer"
   },
   "onRestart": {
     "message": "Al riavvio del browser"
@@ -382,10 +382,10 @@
     "message": "Si è verificato un errore"
   },
   "emailRequired": {
-    "message": "L'indirizzo Email è obbligatorio."
+    "message": "L'indirizzo email è obbligatorio."
   },
   "invalidEmail": {
-    "message": "Indirizzo Email invalido."
+    "message": "Indirizzo email non valido."
   },
   "masterPassRequired": {
     "message": "La password principale è obbligatoria."
@@ -397,10 +397,10 @@
     "message": "La conferma della password principale non corrisponde."
   },
   "newAccountCreated": {
-    "message": "Il tuo nuovo account è stato creato! Ora puoi fare il login."
+    "message": "Il tuo nuovo account è stato creato! Ora puoi eseguire l'accesso."
   },
   "masterPassSent": {
-    "message": "Ti abbiamo inviato una email col tuo indizio per la password principale."
+    "message": "Ti abbiamo inviato una email con il tuo suggerimento per la password principale."
   },
   "verificationCodeRequired": {
     "message": "Il codice di verifica è obbligatorio."
@@ -440,7 +440,7 @@
     "message": "Il nome è obbligatorio."
   },
   "addedFolder": {
-    "message": "Aggiungi cartella"
+    "message": "Cartella aggiunta"
   },
   "changeMasterPass": {
     "message": "Modifica password principale"
@@ -449,7 +449,7 @@
     "message": "Puoi cambiare la tua password principale sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una security key, app di autenticazione, SMS, telefonata o email. Può essere abilitata sulla cassaforte online di bitwarden.com. Vuoi visitare il sito ora?"
+    "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una chiave di sicurezza, applicazione di autenticazione, SMS, telefonata o email. Può essere abilitata sulla cassaforte online di bitwarden.com. Vuoi visitare il sito ora?"
   },
   "editedFolder": {
     "message": "Cartella modificata"
@@ -458,10 +458,10 @@
     "message": "Sei sicuro di voler modificare questa cartella?"
   },
   "deletedFolder": {
-    "message": "Cartella cancellata"
+    "message": "Cartella eliminata"
   },
   "gettingStartedTutorial": {
-    "message": "Tutorial per iniziare"
+    "message": "Guida per iniziare"
   },
   "gettingStartedTutorialVideo": {
     "message": "Guarda il nostro tutorial iniziale per capire come ottenere il massimo dall'estensione del browser."
@@ -470,7 +470,7 @@
     "message": "Sincronizzazione completata"
   },
   "syncingFailed": {
-    "message": "Sincronizzazione fallita"
+    "message": "Sincronizzazione non riuscita"
   },
   "passwordCopied": {
     "message": "Password copiata"
@@ -498,10 +498,10 @@
     "message": "Elemento modificato"
   },
   "deleteItemConfirmation": {
-    "message": "Sei sicuro di voler eliminare questo elemento?"
+    "message": "Sei sicuro di voler cestinare questo elemento?"
   },
   "deletedItem": {
-    "message": "Elemento spostato nel cestino"
+    "message": "Elemento cestinato"
   },
   "overwritePassword": {
     "message": "Sovrascrivi password"
@@ -510,10 +510,10 @@
     "message": "Sei sicuro di voler sovrascrivere la password corrente?"
   },
   "searchFolder": {
-    "message": "Cerca cartella"
+    "message": "Cerca nella cartella"
   },
   "searchCollection": {
-    "message": "Cerca collezione"
+    "message": "Cerca nella raccolta"
   },
   "searchType": {
     "message": "Cerca tipo"
@@ -552,13 +552,13 @@
     "message": "Vuoi che Bitwarden ricordi questa password per te?"
   },
   "notificationAddSave": {
-    "message": "Sì, Salva Ora"
+    "message": "Sì, salva ora"
   },
   "notificationNeverSave": {
     "message": "Mai per questo sito"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disabilita Notifica di Modifica Password"
+    "message": "Disabilita notifica di modifica delle password"
   },
   "disableChangedPasswordNotificationDesc": {
     "message": "La \"notifica di cambio password\" chiede automaticamente di aggiornare la password di un account della cassaforte ogni qualvolta viene rilevata una modifica su un sito web."
@@ -567,16 +567,16 @@
     "message": "Vuoi aggiornare questa password in Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Sì, Aggiorna Ora"
+    "message": "Sì, aggiorna ora"
   },
   "disableContextMenuItem": {
-    "message": "Disabilita Integrazione Menu Contestuale"
+    "message": "Disabilita integrazione del menu contestuale"
   },
   "disableContextMenuItemDesc": {
-    "message": "il menu contestuale di bitwarden fornisce l'accesso rapido ai login per la tab corrente."
+    "message": "Le opzioni del menu contestuale forniscono accesso rapido alla generazione di password e ai login per il sito web nella scheda corrente."
   },
   "defaultUriMatchDetection": {
-    "message": "Rilevamento corrispondenza URI di default",
+    "message": "Rilevamento corrispondenza URI predefinito",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -596,6 +596,10 @@
     "message": "Chiaro",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Esporta cassaforte"
   },
@@ -610,10 +614,10 @@
     "message": "Conferma esportazione della cassaforte"
   },
   "exportWarningDesc": {
-    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non criptato. Non salvare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo l'utilizzo."
+    "message": "Questa esportazione contiene i dati della tua cassaforte in un formato non cifrato. Non salvare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo l'utilizzo."
   },
   "encExportKeyWarningDesc": {
-    "message": "Questa esportazione cripta i tuoi dati utilizzando la chiave di crittografia del tuo account. Se cambi la chiave di crittografia del tuo account, non sarai più in grado di decrittare il file esportato e sarà necessario eseguire nuovo export."
+    "message": "Questa esportazione cifra i tuoi dati utilizzando la chiave di cifratura del tuo account. Se cambi la chiave di cifratura del tuo account, non sarai più in grado di decifrare il file esportato e sarà necessario eseguire una nuova esportazione."
   },
   "encExportAccountWarningDesc": {
     "message": "Le chiavi di cifratura dell'account sono uniche per ogni account utente Bitwarden, quindi non è possibile importare un'esportazione cifrata in un account diverso."
@@ -652,7 +656,7 @@
     "message": "Codice di verifica (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copia il codice di verifica"
+    "message": "Copia codice di verifica"
   },
   "attachments": {
     "message": "Allegati"
@@ -667,7 +671,7 @@
     "message": "Allegato eliminato"
   },
   "newAttachment": {
-    "message": "Aggiungi nuovo allegato"
+    "message": "Aggiungi Nuovo Allegato"
   },
   "noAttachments": {
     "message": "Nessun allegato."
@@ -688,7 +692,7 @@
     "message": "Funzione non disponibile"
   },
   "updateKey": {
-    "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave di crittografia."
+    "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave di cifratura."
   },
   "premiumMembership": {
     "message": "Abbonamento premium"
@@ -706,10 +710,10 @@
     "message": "Al momento non sei un membro premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Iscriviti ad un abbonamento premium e ottieni:"
+    "message": "Iscriviti a un abbonamento premium e ottieni:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB di spazio di archiviazione crittografato."
+    "message": "1 GB di spazio di archiviazione cifrato per gli allegati."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Opzioni addizionali di login in due passaggi come YubiKey, FIDO U2F, e Duo."
@@ -739,7 +743,7 @@
     "message": "Grazie per il tuo supporto a Bitwarden."
   },
   "premiumPrice": {
-    "message": "Il tutto per solo %price% all'anno!",
+    "message": "Il tutto per soli $PRICE$ all'anno!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -757,13 +761,13 @@
     "message": "Se il tuo login ha un autenticatore collegato, il codice ti verifica TOTP è automaticamente copiato negli appunti ogni volta che auto-completi il login."
   },
   "premiumRequired": {
-    "message": "Abbonamento Premium richiesto"
+    "message": "Premium richiesto"
   },
   "premiumRequiredDesc": {
     "message": "Un abbonamento premium è richiesto per utilizzare questa funzionalità."
   },
   "enterVerificationCodeApp": {
-    "message": "Inserisci il codice di verifica a 6 cifre dalla tua app di autenticazione."
+    "message": "Inserisci il codice di verifica a 6 cifre dalla tua applicazione di autenticazione."
   },
   "enterVerificationCodeEmail": {
     "message": "Inserisci il codice di verifica a 6 cifre ricevuto per email",
@@ -787,16 +791,22 @@
     "message": "Ricordami"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Invia nuovamente codice di verifica email"
+    "message": "Invia nuovamente l'email con il codice di verifica"
   },
   "useAnotherTwoStepMethod": {
     "message": "Usa un altro metodo di login in due passaggi"
   },
   "insertYubiKey": {
-    "message": "Inserisci la tua YubiKey nella porta USB del computer, poi premi il suo bottone."
+    "message": "Inserisci la tua YubiKey nella porta USB del computer, poi premi il suo pulsante."
   },
   "insertU2f": {
-    "message": "Inserisci la tua security key nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
+    "message": "Inserisci la tua chiave di sicurezza nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
+  },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
   },
   "loginUnavailable": {
     "message": "Login non disponibile"
@@ -805,7 +815,7 @@
     "message": "Questo account ha abilitato il login in due passaggi, ma nessuno dei provider configurati è supportato da questo browser web."
   },
   "noTwoStepProviders2": {
-    "message": "Utilizzare un browser web supportato (come Chrome) e/o aggiungere altri provider che sono supportati meglio da tutti i browser web (ad esempio un'app di autenticazione)."
+    "message": "Utilizzare un browser web supportato (come Chrome) e/o aggiungere altri provider che sono supportati meglio da tutti i browser web (ad esempio un'applicazione di autenticazione)."
   },
   "twoStepOptions": {
     "message": "Opzioni di login in due passaggi"
@@ -817,10 +827,10 @@
     "message": "Codice di recupero"
   },
   "authenticatorAppTitle": {
-    "message": "App di autenticazione"
+    "message": "Applicazione di autenticazione"
   },
   "authenticatorAppDesc": {
-    "message": "Usa un'app di autenticazione (come Authy o Google Authenticator) per generare codici di verifica a tempo.",
+    "message": "Usa un'applicazione di autenticazione (come Authy o Google Authenticator) per generare codici di verifica a tempo.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -830,18 +840,18 @@
     "message": "Usa YubiKey per accedere al tuo account. Funziona con YubiKey 4, 4 Nano, 4C, e dispositivi NEO."
   },
   "duoDesc": {
-    "message": "Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifica con Duo Security per la tua azienda usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security per la tua azienda usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Usa una chiave di sicurezza compatibile con FIDO U2F per accedere al tuo account."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Security key FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -886,10 +896,16 @@
     "message": "Abilita l'auto-completamento al caricamento della pagina"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Se viene rilevato un form di login, effettua un auto-completamento quando la pagina web si carica."
+    "message": "Se viene rilevato un modulo di accesso, effettua un auto-completamento quando la pagina web si carica."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
-    "message": "Al momento questa funzionalità è sperimentale. Usala tuo rischio e pericolo."
+    "message": "Al momento questa funzionalità è sperimentale. Usala a tuo rischio e pericolo."
   },
   "commandOpenPopup": {
     "message": "Apri popup cassaforte"
@@ -913,7 +929,7 @@
     "message": "Campi personalizzati"
   },
   "copyValue": {
-    "message": "Copia Valore"
+    "message": "Copia valore"
   },
   "value": {
     "message": "Valore"
@@ -937,13 +953,19 @@
     "message": "Facendo clic all'esterno della finestra popup per controllare la mail con il codice di verifica chiuderà la finestra di popup. Vuoi aprire questo popup in una nuova finestra?"
   },
   "popupU2fCloseMessage": {
-    "message": "Questo browser non può elaborare richieste U2F in questa finestra popup. Vuoi aprire questo popup in una nuova finestra in modo da poter accedere usando U2F?"
+    "message": "Questo browser non può elaborare richieste U2F in questa finestra a comparsa. Vuoi aprire questo popup in una nuova finestra in modo da poter accedere usando U2F?"
   },
   "disableFavicon": {
     "message": "Disabilita icone dei siti web"
   },
   "disableFaviconDesc": {
     "message": "Le icone del sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login della tua cassaforte."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Titolare della carta"
@@ -1030,7 +1052,7 @@
     "message": "Cognome"
   },
   "identityName": {
-    "message": "Nome identità"
+    "message": "Nome dell'identità"
   },
   "company": {
     "message": "Azienda"
@@ -1042,7 +1064,7 @@
     "message": "Numero del passaporto"
   },
   "licenseNumber": {
-    "message": "Numero patente"
+    "message": "Numero della patente"
   },
   "email": {
     "message": "Email"
@@ -1081,7 +1103,7 @@
     "message": "Login"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "Login"
   },
   "typeSecureNote": {
     "message": "Nota sicura"
@@ -1099,7 +1121,7 @@
     "message": "Indietro"
   },
   "collections": {
-    "message": "Collezioni"
+    "message": "Raccolte"
   },
   "favorites": {
     "message": "Preferiti"
@@ -1123,7 +1145,7 @@
     "message": "Note sicure"
   },
   "clear": {
-    "message": "Elimina tutto",
+    "message": "Cancella",
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {
@@ -1139,7 +1161,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Questa password non è stata trovata in dati violati noti. Dovrebbe essere sicura da usare."
+    "message": "Questa password non è stata trovata in database di violazioni noti. Dovrebbe essere sicura da usare."
   },
   "baseDomain": {
     "message": "Dominio di base"
@@ -1174,7 +1196,7 @@
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "URI Corrente",
+    "message": "URI corrente",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1205,13 +1227,13 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostando le opzioni di blocco su \"Mai\", la chiave di crittografia della cassaforte verrà salvata sul tuo dispositivo. Se utilizzi questa opzione, assicurati di mantenere il dispositivo adeguatamente protetto."
+    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostando le opzioni di blocco su \"Mai\", la chiave di cifratura della cassaforte sarà salvata sul tuo dispositivo. Se utilizzi questa opzione, assicurati di mantenere il dispositivo adeguatamente protetto."
   },
   "noOrganizationsList": {
     "message": "Non appartieni ad alcuna organizzazione. Le organizzazioni ti consentono di condividere oggetti in modo sicuro con altri utenti."
   },
   "noCollectionsInList": {
-    "message": "Nessuna raccolta da visualizzare."
+    "message": "Nessuna raccolta da elencare."
   },
   "ownership": {
     "message": "Proprietà"
@@ -1224,7 +1246,7 @@
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Buono",
+    "message": "Buona",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
@@ -1235,7 +1257,7 @@
     "message": "Password principale debole"
   },
   "weakMasterPasswordDesc": {
-    "message": "La password principale che hai scelto è debole. È necessario utilizzare una password principale forte (o una passphrase) per proteggere adeguatamente il tuo account Bitwarden. Sei sicuro di voler utilizzare questa password principale?"
+    "message": "La password principale che hai scelto è debole. È necessario utilizzare una password principale forte (o una frase segreta) per proteggere adeguatamente il tuo account Bitwarden. Sei sicuro di voler utilizzare questa password principale?"
   },
   "pin": {
     "message": "PIN",
@@ -1245,7 +1267,7 @@
     "message": "Sblocca con PIN"
   },
   "setYourPinCode": {
-    "message": "Imposta il tuo codice PIN per sbloccare Bitwarden. Le impostazioni PIN verranno reimpostate se si effettuerà il logout completo dall'applicazione."
+    "message": "Imposta il tuo codice PIN per sbloccare Bitwarden. Le impostazioni PIN saranno reimpostate se eseguirai una disconnessione completa dall'applicazione."
   },
   "pinRequired": {
     "message": "È richiesto il PIN."
@@ -1260,13 +1282,13 @@
     "message": "La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare."
   },
   "unlockWithBiometrics": {
-    "message": "Sblocca utilizzando l'autenticazione biometrica"
+    "message": "Sblocca con l'autenticazione biometrica"
   },
   "awaitDesktop": {
     "message": "In attesa di conferma dal desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Si prega di confermare utilizzando l'autenticazione biometrica nell'applicazione Bitwarden Desktop per abilitare l'autenticazione biometrica per il browser."
+    "message": "Conferma utilizzando l'autenticazione biometrica nell'applicazione Bitwarden Desktop per abilitare l'autenticazione biometrica per il browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio del browser"
@@ -1275,7 +1297,7 @@
     "message": "Devi selezionare almeno una raccolta."
   },
   "cloneItem": {
-    "message": "Clona oggetto"
+    "message": "Clona elemento"
   },
   "clone": {
     "message": "Clona"
@@ -1328,7 +1350,7 @@
     "message": "Elemento riempito automaticamente e URI salvato"
   },
   "autoFillSuccess": {
-    "message": "Elemento Riempito Automaticamente"
+    "message": "Elemento riempito automaticamente"
   },
   "setMasterPassword": {
     "message": "Imposta la password principale"
@@ -1337,7 +1359,7 @@
     "message": "La password principale deve avere i seguenti requisiti, stabiliti da una o più regole dell'organizzazione:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Punteggio minimo di complessità $SCORE$",
+    "message": "Punteggio minimo di complessità di $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1346,7 +1368,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Lunghezza minima $LENGTH$",
+    "message": "Lunghezza minima di $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1403,7 +1425,7 @@
     "message": "L'integrazione del browser non è abilitata"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "L'integrazione del browser non è abilitata nell'applicazione Bitwarden Desktop. Si prega di attivarla nelle impostazioni all'interno dell'applicazione desktop."
+    "message": "L'integrazione del browser non è abilitata nell'applicazione Bitwarden Desktop. Attivala nelle impostazioni all'interno dell'applicazione desktop."
   },
   "startDesktopTitle": {
     "message": "Avvia l'applicazione desktop Bitwarden"
@@ -1424,7 +1446,7 @@
     "message": "Comunicazione desktop interrotta"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "L'applicazione desktop è collegata a un account diverso. Assicurarsi che entrambe le applicazioni siano collegate allo stesso account."
+    "message": "L'applicazione desktop è collegata a un account diverso. Assicurati che entrambe le applicazioni siano collegate allo stesso account."
   },
   "nativeMessagingWrongUserTitle": {
     "message": "Account non corrispondente"
@@ -1433,7 +1455,7 @@
     "message": "Autenticazione biometrica non abilitata"
   },
   "biometricsNotEnabledDesc": {
-    "message": "L'autenticazione biometrica del browser richiede che l'autenticazione biometrica del desktop sia prima abilitata  nelle impostazioni."
+    "message": "L'autenticazione biometrica del browser richiede che l'autenticazione biometrica del desktop sia prima abilitata nelle impostazioni."
   },
   "biometricsNotSupportedTitle": {
     "message": "Autenticazione biometrica non supportata"
@@ -1445,13 +1467,13 @@
     "message": "Permesso non concesso"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Senza l'autorizzazione per comunicare con l'applicazione Bitwarden Desktop non è possibile fornire l'autenticazione biometrica nell'estensione del browser.\nRiprova di nuovo."
+    "message": "Senza l'autorizzazione per comunicare con l'applicazione Bitwarden Desktop non è possibile fornire l'autenticazione biometrica nell'estensione del browser. Riprova di nuovo."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Errore richiesta di autorizzazione"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Questa azione non può essere eseguita nella barra laterale, riprova l'azione nel popup o nella finestra."
   },
   "personalOwnershipSubmitError": {
     "message": "A causa di una policy aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione proprietà in un'organizzazione e scegli tra le raccolte disponibili."
@@ -1460,7 +1482,7 @@
     "message": "Una policy dell'organizzazione controlla le opzioni di proprietà."
   },
   "excludedDomains": {
-    "message": "Domini Esclusi"
+    "message": "Domini esclusi"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden non chiederà di salvare i dettagli di accesso per questi domini. È necessario aggiornare la pagina perché le modifiche abbiano effetto."
@@ -1475,7 +1497,7 @@
     }
   },
   "send": {
-    "message": "Invia",
+    "message": "Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -1509,28 +1531,28 @@
     "message": "Protetto da password"
   },
   "copySendLink": {
-    "message": "Copia link del Send",
+    "message": "Copia collegamento del Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "Rimuovi Password"
+    "message": "Rimuovi password"
   },
   "delete": {
     "message": "Elimina"
   },
   "removedPassword": {
-    "message": "Password Rimossa"
+    "message": "Password rimossa"
   },
   "deletedSend": {
     "message": "Send eliminato",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Invia link",
+    "message": "Collegamento del Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
-    "message": "Disattivo"
+    "message": "Disabilitato"
   },
   "removePasswordConfirmation": {
     "message": "Sei sicuro di voler rimuovere la password?"
@@ -1607,14 +1629,14 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Copia il link del Send negli appunti dopo aver salvato.",
+    "message": "Copia il collegamento del Send negli appunti dopo aver salvato.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
     "message": "Il testo che vuoi inviare."
   },
   "sendHideText": {
-    "message": "Nascondi il testo di questo Send per impostazione predefinita.",
+    "message": "Nascondi il testo di questo Send in modo predefinito.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1643,11 +1665,14 @@
     "message": "Send modificato",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
-    "message": "Per scegliere un file utilizzando Firefox, aprire l'estensione nella barra laterale o aprire una nuova finestra facendo clic sul banner."
+    "message": "Per scegliere un file utilizzando Firefox, apri l'estensione nella barra laterale o apri una nuova finestra facendo clic sul banner."
   },
   "sendSafariFileWarning": {
-    "message": "Per scegliere un file utilizzando Safari, aprire una nuova finestra facendo clic sul banner."
+    "message": "Per scegliere un file utilizzando Safari, apri una nuova finestra facendo clic sul banner."
   },
   "sendFileCalloutHeader": {
     "message": "Prima di iniziare"
@@ -1657,7 +1682,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
-    "message": "clicca qui",
+    "message": "fai clic qui",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
@@ -1677,6 +1702,21 @@
     "message": "È necessario inserire data e ora di eliminazione."
   },
   "dateParsingError": {
-    "message": "Si è verificato un errore durante il salvataggio delle date di cancellazione e scadenza."
+    "message": "Si è verificato un errore durante il salvataggio delle date di eliminazione e scadenza."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
