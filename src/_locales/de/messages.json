@@ -596,6 +596,10 @@
     "message": "Hell",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Tresor exportieren"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Stecke deinen Sicherheitsschlüssel in den USB-Port deines Computers. Falls ein Knopf vorhanden ist, berühre diesen."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
   "loginUnavailable": {
     "message": "Login nicht verfügbar"
   },
@@ -837,11 +847,11 @@
     "message": "Nutze Duo Security um dich mit der Duo Mobile App, SMS, per Anruf oder U2F Security Key bei deiner Organisation zu verifizieren.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Benutze einen FIDO U2F-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Sicherheitsschlüssel"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-Mail"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"
@@ -1448,10 +1470,10 @@
     "message": "Ohne die Berechtigung zur Kommunikation mit der Bitwarden Desktop-Anwendung können wir keine Biometrie in der Browser-Erweiterung anbieten. Bitte versuche es erneut."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Fehler bei der Berechtigungsanfrage"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Diese Aktion kann in der Sidebar nicht durchgeführt werden, bitte versuchen Sie die Aktion im Popup oder Popout erneut auszuführen."
   },
   "personalOwnershipSubmitError": {
     "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
@@ -1643,6 +1665,9 @@
     "message": "Bearbeitetes Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Um eine Datei mit Firefox auszuwählen, öffnen Sie die Erweiterung in der Sidebar oder öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Es gab einen Fehler beim Speichern Ihrer Lösch- und Verfallsdaten."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
