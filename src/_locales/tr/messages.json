@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized koyu",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -686,7 +686,7 @@
     "message": "Bir dosya seçin."
   },
   "maxFileSize": {
-    "message": "Maksimum dosya boyutu 100 MB'dir."
+    "message": "Maksimum dosya boyutu 500 MB'dir."
   },
   "featureUnavailable": {
     "message": "Özellik kullanılamıyor"
@@ -803,10 +803,10 @@
     "message": "Güvenlik anahtarınızı bilgisayarınızın USB portuna takın. Düğmesi varsa dokunun."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "WebAuthn 2FA doğrulamasına yeni sekmede devam edin."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "WebAutn ile doğrula"
   },
   "loginUnavailable": {
     "message": "Giriş yapılamıyor"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Hesabınıza erişmek için WebAuthn uyumlu bir güvenlik anahtarı kullanın."
   },
   "emailTitle": {
     "message": "E-posta"
@@ -899,10 +899,10 @@
     "message": "Sayfa yüklendiğinde giriş formu tespit edilirse otomatik olarak formu doldur."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Sayfa yüklendikten sonra TOTP'yi otomatik kopyala"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "\"TOTP'yi otomatik kopyala\" açıksa web sayfası yüklendikten sonra TOTP doğrulama kodu otomatik olarak panoya kopyalanır. \"Otomatik TOTP kopyalamayı kapat\" ayarı bu ayarı devre dışı bırakır."
   },
   "experimentalFeature": {
     "message": "Bu şu anda deneysel bir özelliktir. Kullanımı sizin sorumluluğunuzdadır."
@@ -962,10 +962,10 @@
     "message": "Web sitesi simgeleri, kasanızdaki her kaydın yanında o siteyi tanımanıza yardımcı olan bir resim sunar."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Düğmedeki sayacı devre dışı bırak"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Düğmedeki sayaç, görüntülenen sayfaya ait kaç hesabınız olduğunu gösterir."
   },
   "cardholderName": {
     "message": "Kart sahibinin adı"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Dosya seçmek için eklentiyi kenar çubuğunda açın (mümkünse) veya bu banner'a tıklayarak yeni bir pencerede açın."
   },
   "sendFirefoxFileWarning": {
     "message": "Firefox ile dosya seçmek için eklentiyi kenar çubuğunda açın veya bu banner'a tıklayarak yeni bir pencerede açın."
@@ -1705,18 +1705,18 @@
     "message": "Silinme ve son kullanma tarihleriniz kaydedilirken bir hata oluştu."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "E-posta adresimi alıcılardan gizle."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Bir veya daha fazla kuruluş ilkesi Send seçeneklerinizi etkiliyor."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Ana parola yeniden isteği"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Ana parola onayı"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Bu işleme devam etmek için lütfen ana parolanızı yeniden girin."
   }
 }
