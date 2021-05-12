@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden – бясплатны менеджар пароляў",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Бяспечны і бясплатны менеджар пароляў для ўсіх вашых прылад.",
