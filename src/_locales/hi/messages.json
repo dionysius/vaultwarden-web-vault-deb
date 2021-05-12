@@ -3,7 +3,7 @@
     "message": "bitwarden"
   },
   "extName": {
-    "message": "bitwarden - नि: शुल्क पासवर्ड प्रबंधक   password ",
+    "message": "Bitwarden",
     "description": "Extension name"
   },
   "extDesc": {
@@ -806,7 +806,7 @@
     "message": "Continue the WebAuthn 2FA verification in the new tab."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "loginUnavailable": {
     "message": "Login Unavailable"
