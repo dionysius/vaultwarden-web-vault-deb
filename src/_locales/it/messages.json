@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarizzato scuro",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -803,10 +803,10 @@
     "message": "Inserisci la tua chiave di sicurezza nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Continua la verifica di WebAuthn 2FA nella nuova scheda."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Autenticazione WebAutn"
   },
   "loginUnavailable": {
     "message": "Login non disponibile"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Usa qualsiasi chiave di sicurezza abilitata WebAuthn per accedere al tuo account."
   },
   "emailTitle": {
     "message": "Email"
@@ -899,10 +899,10 @@
     "message": "Se viene rilevato un modulo di accesso, effettua un auto-completamento quando la pagina web si carica."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Copia automatica TOTP dopo il caricamento della pagina"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Se il completamento automatico del caricamento della pagina è abilitato, il codice di verifica TOTP viene copiato automaticamente negli appunti dopo aver caricato la pagina web. Questo è sovrascritto da Disabilita copia automatica TOTP."
   },
   "experimentalFeature": {
     "message": "Al momento questa funzionalità è sperimentale. Usala a tuo rischio e pericolo."
@@ -962,10 +962,10 @@
     "message": "Le icone del sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login della tua cassaforte."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Disabilita contatore delle occorrenze"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Il contatore delle occorrenze indica quanti accessi hai per la pagina corrente nella tua cassaforte."
   },
   "cardholderName": {
     "message": "Titolare della carta"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Per scegliere un file, apri l'estensione nella barra laterale (se possibile) o apri una nuova finestra facendo clic su questo banner."
   },
   "sendFirefoxFileWarning": {
     "message": "Per scegliere un file utilizzando Firefox, apri l'estensione nella barra laterale o apri una nuova finestra facendo clic sul banner."
@@ -1705,18 +1705,18 @@
     "message": "Si è verificato un errore durante il salvataggio delle date di eliminazione e scadenza."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Nascondi il mio indirizzo email dai destinatari."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Una o più policy dell'organizzazione influenzano le opzioni dei Send."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Nuova richiesta della password principale"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Conferma della password principale"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Questa azione è protetta. Per continuare, inserisci nuovamente la tua password principale per verificare la tua identità."
   }
 }
