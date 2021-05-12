@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden – Bezplatný správce hesel",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Bezpečný a bezplatný správce hesel pro všechna vaše zařízení.",
