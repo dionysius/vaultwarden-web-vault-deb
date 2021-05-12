@@ -41,26 +41,12 @@ jobs:
           echo "::set-output name=repo_url::$repo_url" 
           echo "::set-output name=adj_build_number::$adj_build_num" 
 
-
-  browser:
-    runs-on: ubuntu-latest
+  locales-test:
+    runs-on: ubunut-latest
     needs: setup
-    env:
-      REPO_URL: ${{ needs.setup.outputs.repo_url }}
-      BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-
-      - name: Print environment
-        run: |
-          node --version
-          npm --version
 
       - name: Testing locale lengths
         run: |
@@ -82,6 +68,26 @@ jobs:
           else
             echo "Test passed"
           fi
+
+  build:
+    runs-on: windows-latest
+    needs: [ setup, locales-test ]
+    env:
+      REPO_URL: ${{ needs.setup.outputs.repo_url }}
+      BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
 
       - name: npm setup & test
         run: |

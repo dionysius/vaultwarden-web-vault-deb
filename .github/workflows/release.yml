@@ -64,9 +64,38 @@ jobs:
           prerelease: false
 
 
-  browser:
-    runs-on: windows-latest
+  locales-test:
+    runs-on: ubunut-latest
     needs: setup
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Testing locale lengths
+        run: |
+          errors=0
+          echo "Testing locales extName lengths"
+          echo "All must be 40 or less for Safari"
+          echo "================================="
+          for file in $(ls src/_locales/);
+          do
+              test_string=$(cat src/_locales/$file/messages.json | jq .extName.message | tr -d '"')
+              if [[ ${#test_string} -gt 40 ]]; then
+                  echo $file: ${#test_string}
+                  errors=1
+              fi
+          done
+
+          if [[ $errors -eq 1 ]]; then
+            exit 1
+          else
+            echo "Test passed"
+          fi
+
+
+  build:
+    runs-on: windows-latest
+    needs: [ setup, locales-test ]
     env:
       REPO_URL: ${{ needs.setup.outputs.repo_url }}
       BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
@@ -90,41 +119,20 @@ jobs:
           npm run dist
           npm run test
 
-      - name: Testing locale lengths
-        run: |
-          errors=0
-          echo "Testing locales extName lengths"
-          echo "All must be 40 or less for Safari"
-          echo "================================="
-          for file in $(ls src/_locales/);
-          do
-              test_string=$(cat src/_locales/$file/messages.json | jq .extName.message | tr -d '"')
-              if [[ ${#test_string} -gt 40 ]]; then
-                  echo $file: ${#test_string}
-                  errors=1
-              fi
-          done
-
-          if [[ $errors -eq 1 ]]; then
-            exit 1
-          else
-            echo "Test passed"
-          fi
-
       - name: gulp
         run: gulp ci
 
       - name: Build sources for reviewers
         shell: cmd
         run: |
-          mkdir dist\Source
-          call git clone %REPO_URL% dist\Source
-          cd dist\Source
-          call git checkout %GITHUB_SHA%
-          call git submodule update --init --recursive
+          mkdir dist/Source
+          git clone $REPO_URL dist/Source
+          cd dist/Source
+          git checkout $GITHUB_SHA
+          git submodule update --init --recursive
           cd ../
-          del /S/Q "Source\.git\objects\pack\*"
-          call 7z a browser-source-%BUILD_NUMBER%.zip "Source\*"
+          rm -rf Source/.git/objects/pack/*
+          zip -r browser-source-$BUILD_NUMBER.zip Source/*
 
       - name: upload opera release asset
         uses: actions/upload-release-asset@v1
