@@ -806,7 +806,7 @@
     "message": "Continue the WebAuthn 2FA verification in the new tab."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "loginUnavailable": {
     "message": "ログインできません。"
@@ -962,10 +962,10 @@
     "message": "保管庫のアイテム毎にウェブサイトのアイコンを表示します。"
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "バッジカウンターを無効化"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "保管庫にある、現在のページのログイン情報をバッジカウンターで表示します。"
   },
   "cardholderName": {
     "message": "カードの名義人名"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "ファイルを選択するには、可能な場合サイドバーで拡張子を開くか、このバナーをクリックして新しいウィンドウにポップアップしてください。"
   },
   "sendFirefoxFileWarning": {
     "message": "Firefox を使用してファイルを選択するには、サイドバーで開くか、このバナーをクリックして新しいウィンドウで開いてください。"
@@ -1705,18 +1705,18 @@
     "message": "削除と有効期限の保存中にエラーが発生しました。"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "メールアドレスを受信者に表示しない"
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "一つ以上の組織ポリシーが Send の設定に影響しています。"
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "マスターパスワードの再要求"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "マスターパスワードの確認"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "この操作は保護されています。続行するには、確認のためにマスターパスワードを再入力してください。"
   }
 }
