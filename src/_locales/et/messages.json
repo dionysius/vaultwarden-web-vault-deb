@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized tume",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -803,10 +803,10 @@
     "message": "Sisesta oma turvaline võti arvuti USB porti. Kui sellel on nupp, siis vajuta seda."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Jätka WebAuthn 2FA kinnitamisega uuel vahelehel."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "WebAuthn kinnitamine"
   },
   "loginUnavailable": {
     "message": "Sisselogimine ei ole saadaval"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Kasuta mistahes WebAuthn toetavat turvalist võtit, et oma kontole ligi pääseda."
   },
   "emailTitle": {
     "message": "E-post"
@@ -899,10 +899,10 @@
     "message": "Sisselogimise vormi tuvastamisel sisestatakse sinna kontoandmed automaatselt."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Automaatne TOTP kopeerimine lehe laadimisel"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Kui \"Luba kontoandmete täitmine\" on sisselülitatud, kopeeritakse TOTP kinnituskood lehe laadimisel automaatselt lõikelauale. Selle valiku nullib \"Keela automaatne TOTP kopeerimine\" sisselülitamine."
   },
   "experimentalFeature": {
     "message": "See funktsioon on katsetusjärgus. Kasuta omal vastutusel."
@@ -962,10 +962,10 @@
     "message": "Ikoonid aitavad hoidlas olevaid veebilehti paremini ära tunda."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Ära kuva kirjete loendurit"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Kirjete loendur kuvab konkreetse leheküljega seotud kirjete arvu."
   },
   "cardholderName": {
     "message": "Kaardiomaniku nimi"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Faili valimiseks ava rakendus külgribal (kui see on võimalik) või kasuta hüpikakent, klikkides sellel bänneril."
   },
   "sendFirefoxFileWarning": {
     "message": "Faili valimiseks läbi Firefoxi ava Bitwardeni rakendus Firefoxi külgribal või kasuta hüpikakent (klikkides sellel bänneril)."
@@ -1705,18 +1705,18 @@
     "message": "Kustutamis- ja aegumiskuupäevade salvestamisel ilmnes tõrge."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Ära näita saajatele minu e-posti aadressi."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Organisatsiooni seaded mõjutavad sinu Sendi sätteid."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Nõutav on ülemparool"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Ülemparooli kinnitamine"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "See tegevus on kaitstud. Jätkamiseks sisesta oma ülemparool."
   }
 }
