@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - 無料パスワードマネージャー",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Bitwarden はあらゆる端末で使える、安全な無料パスワードマネージャーです。",
