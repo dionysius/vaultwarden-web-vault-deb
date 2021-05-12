@@ -192,6 +192,15 @@ export default class RuntimeBackground {
             case 'reloadPopup':
                 this.messagingService.send('reloadPopup');
                 break;
+            case 'emailVerificationRequired':
+                this.messagingService.send('showDialog', {
+                    dialogId: 'emailVerificationRequired',
+                    title: this.i18nService.t('emailVerificationRequired'),
+                    text: this.i18nService.t('emailVerificationRequiredDesc'),
+                    confirmText: this.i18nService.t('ok'),
+                    type: 'info',
+                });
+                break;
             default:
                 break;
         }
