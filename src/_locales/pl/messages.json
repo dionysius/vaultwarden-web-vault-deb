@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - darmowy menedżer haseł",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Bezpieczny i darmowy menedżer haseł dla wszystkich Twoich urządzeń.",
