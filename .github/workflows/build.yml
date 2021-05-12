@@ -72,7 +72,7 @@ jobs:
           do
               test_string=$(cat src/_locales/$file/messages.json | jq .extName.message | tr -d '"')
               if [[ ${#test_string} -gt 40 ]]; then
-                  echo $file: -- ${#test_string} -- $test_string
+                  echo $file: ${#test_string}
                   errors=1
               fi
           done
