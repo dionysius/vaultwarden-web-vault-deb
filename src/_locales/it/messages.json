@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - Gestore di password gratuito",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Un gestore di password sicuro e gratuito per tutti i tuoi dispositivi.",
