@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - Tasuta paroolihaldur",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Turvaline ja tasuta paroolihaldur kõikidele sinu seadmetele.",

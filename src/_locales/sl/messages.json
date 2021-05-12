@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - Brezplačen upravitelj gesel",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Varen in brezplačen upravitelj gesel za vse vaše naprave.",

@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - besplatni upravitelj lozinki",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Bitwarden je siguran i besplatan upravitelj lozinki za sve tvoje uređaje.",

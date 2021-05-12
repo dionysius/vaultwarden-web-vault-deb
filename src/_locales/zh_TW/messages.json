@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - 免費密碼管理工具",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Bitwarden 是一款安全、免費、跨平台的密碼管理工具。",

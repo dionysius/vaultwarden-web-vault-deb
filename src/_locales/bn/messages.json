@@ -3,8 +3,8 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - বিনামূল্যের পাসওয়ার্ড ব্যবস্থাপক",
-    "description": "Extension name"
+    "message": "Bitwarden",
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "আপনার সমস্ত ডিভাইসের জন্য একটি সুরক্ষিত এবং বিনামূল্যের পাসওয়ার্ড ব্যবস্থাপক।",
