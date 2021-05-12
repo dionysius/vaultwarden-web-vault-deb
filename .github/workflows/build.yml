@@ -64,6 +64,7 @@ jobs:
 
       - name: Testing locale lengths
         run: |
+          errors=0
           for file in $(ls src/_locales/);
           do
               echo "Testing locales extName lengths"
@@ -72,8 +73,13 @@ jobs:
               test_string=$(cat src/_locales/$file/messages.json | jq .extName.message | tr -d '"')
               if [[ ${#test_string} -gt 40 ]]; then
                   echo $file: ${#test_string}
+                  errors=1
               fi
           done
+
+          if [[ $errors -eq 1 ]]; then
+            exit 1
+          fi
 
       - name: npm setup & test
         run: |
