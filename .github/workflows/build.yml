@@ -79,6 +79,8 @@ jobs:
 
           if [[ $errors -eq 1 ]]; then
             exit 1
+          else
+            echo "Test passed"
           fi
 
       - name: npm setup & test
