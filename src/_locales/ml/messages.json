@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - സൗജന്യ  പാസ്സ്‌വേഡ് മാനേജർ ",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "നിങ്ങളുടെ എല്ലാ ഉപകരണങ്ങൾക്കും സുരക്ഷിതവും സൗജന്യവുമായ പാസ്‌വേഡ് മാനേജർ.",
