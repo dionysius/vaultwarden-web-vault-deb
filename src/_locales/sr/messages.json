@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - Бесплатни Менаџер Лозинке",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Сигурни и бесплатни менаџер лозинке за сва Ваша уређаја.",
