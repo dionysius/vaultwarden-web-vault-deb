@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarizirana Tamna",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -686,7 +686,7 @@
     "message": "Odaberi datoteku."
   },
   "maxFileSize": {
-    "message": "Najveća veličina datoteke je 100 MB."
+    "message": "Najveća veličina datoteke je 500 MB."
   },
   "featureUnavailable": {
     "message": "Značajka nije dostupna"
@@ -803,10 +803,10 @@
     "message": "Umetni svoj sigurnosni ključ u USB priključak računala. Ako ima tipku, dodirni ju."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Nastavi na WebAuthn 2FA verifikaciju u novoj kartici."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Ovjeri WebAuthn"
   },
   "loginUnavailable": {
     "message": "Prijava nije dostupna"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Koristi WebAuthn sigurnosni ključ za pristup svojem računu."
   },
   "emailTitle": {
     "message": "E-pošta"
@@ -899,10 +899,10 @@
     "message": "Ako se otkrije obrazac za prijavu, samostalno auto-ispuni kada se web stranica učita."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Automatsko kopiranje TOTP nakon učitavanja stranice."
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Ako je auto-ispuna pri učitavanju stranice uključena, TOTP verifikacijski kôd će se automatski kopirati kod učitavanja stranice. Isključuje se opcijom „Onemogući automatsko kopiranje TOTP”"
   },
   "experimentalFeature": {
     "message": "Ovo je trenutno eksperimentalna značajka. Koristi na vlastitu odgovornost."
@@ -962,10 +962,10 @@
     "message": "Prepoznatljive ikone web mjesta prikazuju se pored prijava u tvom trezoru."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Onemogući brojač znački"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Brojač znački prikazuje koliko u tvojem trezoru ima spremljenih prijava za trenutnu stranicu."
   },
   "cardholderName": {
     "message": "Vlasnik kartice"
@@ -1581,17 +1581,17 @@
     "message": "Datoteka koju želiš poslati"
   },
   "deletionDate": {
-    "message": "Datum brisanja"
+    "message": "Obriši za"
   },
   "deletionDateDesc": {
-    "message": "Send će biti trajno izbrisan navedenog datuma.",
+    "message": "Send će nakon navedenog vremena biti trajno izbrisan.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Datum isteka"
+    "message": "Vremenski ograničeni pristup"
   },
   "expirationDateDesc": {
-    "message": "Ako je određeno, pristup ovom Send-u će isteći navedenog dana u navedeno vrijeme.",
+    "message": "Pristup ovom Sendu neće biti moguć nakon navednog roka.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
@@ -1610,10 +1610,10 @@
     "message": "Prilagođeno"
   },
   "maximumAccessCount": {
-    "message": "Najveći proj pristupanja"
+    "message": "Ograničeni broj pristupanja"
   },
   "maximumAccessCountDesc": {
-    "message": "Ako je određen, korisnici neće moći pristupiti ovom Sendu nakon što se postigne najveći broj pristupanja.",
+    "message": "Ako je određen, ovom Sendu će se moći pristupiti samo ograničeni broj puta.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1629,7 +1629,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Kopiraj vezu na ovaj Send nakon spremanja.",
+    "message": "Kopiraj vezu na Send nakon spremanja",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Za odabir datoteke, otvori proširenje u bočnoj traci (ako je moguće) ili u iskočnom prozoru klikom na ovu poruku."
   },
   "sendFirefoxFileWarning": {
     "message": "Za odabir datoteke u Firefoxu, otvori proširenje u bočnoj traci ili otvori iskočni prozor klikom na ovau poruku."
@@ -1705,18 +1705,18 @@
     "message": "Došlo je do greške kod spremanja vaših datuma isteka i brisanja."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Sakrij moju adresu e-pošte od primatelja."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Jedno ili više pravila organizacije utječe na postavke Senda."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Ponovno zatraži glavnu lozinku"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Potvrda glavne lozinke"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Ova radnja je zaštićena. Za nastavak i potvrdu identiteta, unesi svoju glavnu lozinku."
   }
 }
