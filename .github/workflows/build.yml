@@ -62,6 +62,19 @@ jobs:
           node --version
           npm --version
 
+      - name: Testing locale lengths
+        run: |
+          for file in $(ls src/_locales/);
+          do
+              echo "Testing locales extName lengths"
+              echo "All must be 40 or less for Safari"
+              echo "================================="
+              test_string=$(cat src/_locales/$file/messages.json | jq .extName.message | tr -d '"')
+              if [[ ${#test_string} -gt 40 ]]; then
+                  echo $file: ${#test_string}
+              fi
+          done
+
       - name: npm setup & test
         run: |
           npm install
