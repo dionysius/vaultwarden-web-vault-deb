@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Szolarizált sötét",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -803,10 +803,10 @@
     "message": "Illesz be biztonsági kulcsod a számítógéped egyik USB portjába. Ha van rajta egy gomb, nyomd le."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "A WebAuthn 2FA ellenőrzés folytatása az új fülön."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "WebAutn hitelesítés"
   },
   "loginUnavailable": {
     "message": "A bejelentkezés nem érhető el."
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Használjunk bármilyen WebAuthn engedélyezett biztonsági kulcsot a saját fiók eléréséhez."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -899,10 +899,10 @@
     "message": "Ha egy bejelentkezési űrlap észlelésre került, automatikusan töltse ki az adatokat az oldal betöltésekor."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Automatikus TOTP másolat az oldal betöltés után"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Ha az Automatikus kitöltés az oldalbetöltés funkció engedélyezve van, a weboldal betöltése után a TOTP ellenőrző kód automatikusan a vágólapra kerül. Ezt felülírja az Automatikus TOTP másolat letiltása."
   },
   "experimentalFeature": {
     "message": "Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
@@ -962,10 +962,10 @@
     "message": "A webhelyek ikonjai felismerhető ikonként jelennek meg a széf összes eleme mellett."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Számláló jelvény letiltása"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "A jelvényszámláló jelzi az aktuális oldalhoz a bejelentkezések számát a stárolóban."
   },
   "cardholderName": {
     "message": "Kártyatulajdonos neve"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "A fájl kiválasztásához nyissuk meg a kiterjesztést az oldalsávon (ha lehetséges) vagy kattintsunk erre a sávra új ablak felbukkanásához."
   },
   "sendFirefoxFileWarning": {
     "message": "Firefox esetén: nyisd meg a kiegészítőt, vagy erre a feliratra kattintva új ablak nyílik a fájl kiválasztásához"
@@ -1705,18 +1705,18 @@
     "message": "Hiba történt a törlési és a lejárati dátum mentésekor"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Saját email cím elrejtése a címzettek elől."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Egy vagy több szervezeti szabály érinti a Send opciókat."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Mesterjelszó ismételt megadás"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Mesterjelszó megerősítése"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Ez a művelet védett. A folytatásért ismételten meg kell adni a mesterjelszőt az személyazonosság ellenőrzéséhez."
   }
 }
