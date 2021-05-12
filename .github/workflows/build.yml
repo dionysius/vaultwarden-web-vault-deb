@@ -43,7 +43,7 @@ jobs:
 
 
   browser:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: setup
     env:
       REPO_URL: ${{ needs.setup.outputs.repo_url }}
