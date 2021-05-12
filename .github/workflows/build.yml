@@ -42,7 +42,7 @@ jobs:
           echo "::set-output name=adj_build_number::$adj_build_num" 
 
   locales-test:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     needs: setup
     steps:
       - name: Checkout repo
