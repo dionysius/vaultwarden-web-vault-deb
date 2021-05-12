@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Преекспонирано тъмен",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -803,10 +803,10 @@
     "message": "Поставете устройството за удостоверяване в USB порт на компютъра. Ако на устройството има бутон, натиснете го."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Продължаване на двустепенното удостоверяване чрез WebAuthn в новия раздел."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "loginUnavailable": {
     "message": "Записът липсва"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Използвайте всяко устройство, поддържащо WebAuthn, за да влезете в абонамента си."
   },
   "emailTitle": {
     "message": "Електронна поща"
@@ -899,10 +899,10 @@
     "message": "При засичане на формуляр за вписване при зареждането на уеб страницата автоматично да се попълват данните на съответстващата регистрация."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Автоматично копиране на временни, еднократни пароли след зареждане на страницата"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Ако автоматичното попълване при зареждане на страницата е включено, кодът за удостоверяване чрез временна, еднократна парола ще се копира автоматично в буфера за обмен при зареждане на страницата. Това не се зачита, ако е включена настройката „Без автоматично копиране на временни, еднократни пароли“."
   },
   "experimentalFeature": {
     "message": "Това все още е в експериментална фаза, ползвате го на собствена глава."
@@ -962,10 +962,10 @@
     "message": "Иконките на сайтовете са разпознаваемо изображение за всеки запис в трезора."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Изключване на значката с брояч"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Значката с брояч показва колко варианта за вписване имате в трезора си за текущата страница."
   },
   "cardholderName": {
     "message": "Име на притежателя на картата"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "За да изберете файл, отворете разширението в страничната лента (ако е възможно) или в нов прозорец, като натиснете това съобщение."
   },
   "sendFirefoxFileWarning": {
     "message": "За да изберете файл във Firefox, отворете разширението в страничната лента или в нов прозорец, като натиснете това съобщение."
@@ -1705,18 +1705,18 @@
     "message": "Грешка при запазване на датата на валидност и изтриване."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Скриване на е-пощата ми от получателите."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Поне една политика на организация влияе на настройките за изпращане."
   },
   "passwordPrompt": {
     "message": "Master password re-prompt"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Потвърждение на главната парола"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Това действие е защитено. За да продължите, въведете отново главната си парола, за да потвърдите самоличността си."
   }
 }

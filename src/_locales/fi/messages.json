@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden – Ilmainen salasanojen hallinta",
+    "message": "Bitwarden",
     "description": "Extension name"
   },
   "extDesc": {
@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized, tumma",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -686,7 +686,7 @@
     "message": "Valitse tiedosto."
   },
   "maxFileSize": {
-    "message": "Tiedoston enimmäiskoko on 100 Mt."
+    "message": "Tiedoston enimmäiskoko on 500 Mt."
   },
   "featureUnavailable": {
     "message": "Toiminto ei ole käytettävissä"
@@ -803,10 +803,10 @@
     "message": "Kytke todennuslaitteesi tietokoneen USB-porttiin. Jos laitteessa on painike, paina sitä."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Jatka kaksivaiheisen kirjautumisen (2FA) WebAuthn-todennusta uudessa välilehdessä."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Todenna WebAuthn"
   },
   "loginUnavailable": {
     "message": "Kirjautuminen ei ole käytettävissä"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Käytä mitä tahansa WebAuthn‑yhteensopivaa todennuslaitetta päästäksesi käsiksi tiliisi."
   },
   "emailTitle": {
     "message": "Sähköposti"
@@ -899,10 +899,10 @@
     "message": "Jos sivulla havaitaan kirjautumislomake, täytetään kirjautumistiedot automaattisesti sivua ladattaessa."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Kopioi TOTP-todennuskoodit automaattisesti sivun latauduttua"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Jos \"Täytä automaattisesti sivun latautuessa\" on käytössä, kopioidaan TOTP-todennuskoodi automaattisesti leikepöydälle sivun latauduttua. \"Älä kopioi TOTP-todennuskoodeja automaattisesti\" ohittaa tämän."
   },
   "experimentalFeature": {
     "message": "Tämä on vielä kokeellinen toiminto. Käytä omalla vastuullasi."
@@ -962,10 +962,10 @@
     "message": "Kirjautumistietojen vieressä näytettävät sivustojen kuvakkeet helpottavat kohteiden tunnistusta."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Älä näytä laskuria kuvakkeessa"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Kuvakkeen laskuri näyttää nykyiselle sivulle sopivien kirjautumistietojen määrän holvissasi."
   },
   "cardholderName": {
     "message": "Kortinhaltijan nimi"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Jotta voit valita tiedoston, avaa laajennus sivupalkkiin (jos mahdollista) tai erilliseen ikkunaan klikkaamalla tätä banneria."
   },
   "sendFirefoxFileWarning": {
     "message": "Jotta voit valita tiedoston käyttäen Firefoxia, avaa laajennus sivupalkkiin tai erilliseen ikkunaan klikkaamalla tätä banneria."
@@ -1705,18 +1705,18 @@
     "message": "Tapahtui virhe tallennettaessa poisto- ja erääntymispäiviä."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Piilota sähköpostiosoitteeni vastaanottajilta."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa Send-asetuksiisi."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Pääsalasanan uudelleenkysely"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Pääsalasanan vahvistus"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Toiminto on suojattu. Jatkaaksesi, syötä pääsalasanasi uudelleen vahvistaaksesi henkilöllisyytesi."
   }
 }

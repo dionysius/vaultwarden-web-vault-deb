@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Солнечная темная",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -686,7 +686,7 @@
     "message": "Выберите файл."
   },
   "maxFileSize": {
-    "message": "Максимальный размер файла 100 МБ."
+    "message": "Максимальный размер файла 500 МБ."
   },
   "featureUnavailable": {
     "message": "Функция недоступна"
@@ -803,10 +803,10 @@
     "message": "Вставьте ключ безопасности в USB-порт компьютера. Если у ключа есть кнопка, нажмите ее."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Продолжить проверку 2ФА WebAuthn в новой вкладке."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Аутентификация WebAutn"
   },
   "loginUnavailable": {
     "message": "Вход недоступен"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Используйте любой ключ безопасности с поддержкой WebAuthn для доступа к своей учетной записи."
   },
   "emailTitle": {
     "message": "Email"
@@ -899,10 +899,10 @@
     "message": "При обнаружении формы входа выполняется автозаполнение во время загрузки веб-страницы."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Автоматическое копирование TOTP после загрузки страницы"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Если включено автозаполнение при загрузке страницы, код проверки TOTP автоматически будет скопирован в буфер обмена после загрузки веб-страницы. Этот параметр отменяется функцией Отключить автоматическое копирование TOTP."
   },
   "experimentalFeature": {
     "message": "Это экспериментальная функция. Используйте на свой страх и риск."
@@ -962,10 +962,10 @@
     "message": "Значки веб-сайтов отображаются рядом с каждым элементом в вашем хранилище."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Отключить счетчик значка"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Счетчик значка показывает, сколько у вас логинов для текущей страницы в вашем хранилище."
   },
   "cardholderName": {
     "message": "Имя владельца карты"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Для выбора файла откройте расширение в боковой панели (если возможно) или перейдите в новое окно, нажав на этот баннер."
   },
   "sendFirefoxFileWarning": {
     "message": "Для выбора файла с помощью Firefox, откройте расширение в боковой панели или перейдите в новое окно, нажав на этот баннер."
@@ -1705,18 +1705,18 @@
     "message": "Произошла ошибка при сохранении данных о сроках удаления и истечения."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Скрыть мой адрес email от получателей."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "На параметры Send влияют одна или несколько политик организации."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Повторный запрос мастер-пароля"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Подтверждение мастер-пароля"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Это действие защищено. Для продолжения введите свой мастер-пароль, чтобы подтвердить свою личность."
   }
 }

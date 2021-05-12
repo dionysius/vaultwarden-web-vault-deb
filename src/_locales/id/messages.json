@@ -806,7 +806,7 @@
     "message": "Continue the WebAuthn 2FA verification in the new tab."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "loginUnavailable": {
     "message": "Info Masuk Tidak Tersedia"
@@ -1705,7 +1705,7 @@
     "message": "Terjadi kesalahan saat menyimpan tanggal penghapusan dan kedaluwarsa Anda."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Sembunyikan alamat surel dari penerima."
   },
   "sendOptionsPolicyInEffect": {
     "message": "One or more organization policies are affecting your Send options."
@@ -1714,9 +1714,9 @@
     "message": "Master password re-prompt"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Konfirmasi sandi utama"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Aksi ini terproteksi. Untuk melanjutkan, masukkan kembali sandi utama Anda untuk verifikasi identitas."
   }
 }

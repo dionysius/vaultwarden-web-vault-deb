@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized црно",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -803,10 +803,10 @@
     "message": "Убаците свој сигурносни кључ у УСБ порт рачунара, и ако има дугме , додирните га."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Наставите WebAuthn 2FA верификација у новом језичку."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "WebAutn аутентификација"
   },
   "loginUnavailable": {
     "message": "Пријава недоступна"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Користите било који WebAuthn сигурносни кључ за присту налога."
   },
   "emailTitle": {
     "message": "Е-пошта"
@@ -899,10 +899,10 @@
     "message": "Ако се открије образац за пријаву, извршите аутоматско попуњавање када се веб страница учита."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Ауто-копирати TOTP после учитавања странице"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Ако је омогућено да се аутоматски напуни на учитавање странице,  TOTP кôд се аутоматски копира у вашој остави након учитавања странице."
   },
   "experimentalFeature": {
     "message": "Ово је тренутно експериментална способност. Користите на властиту одговорност."
@@ -962,10 +962,10 @@
     "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаву у сефу."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Онемогући бројач на иконицу"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Бројач иконице указује колико пријава имате за тренутну страницу у вашем сефу."
   },
   "cardholderName": {
     "message": "Име Власника Картице"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Да бисте изабрали датотеку, отворите екстензију на бочној траци (ако могуће) или отворите у нови прозор кликом на овај банер."
   },
   "sendFirefoxFileWarning": {
     "message": "Да бисте изабрали датотеку са Firefox-ом, отворите екстензију на бочној траци или отворите у нови прозор кликом на овај банер."
@@ -1705,18 +1705,18 @@
     "message": "Појавила се грешка при снимању датума брисања и истицања."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Сакриј моју е-адресу од примаоца."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Једна или више смерница организације утичу на опције „Send“-а."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Поновно тражење главне лозинке"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Потврда главне лозинке"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Ова акција је заштићена. Да бисте наставили, поново унесите своју главну лозинку да бисте проверили идентитет."
   }
 }

@@ -803,10 +803,10 @@
     "message": "Stecke deinen Sicherheitsschlüssel in den USB-Port deines Computers. Falls ein Knopf vorhanden ist, berühre diesen."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Fahren Sie mit der WebAuthn 2FA Verifizierung im neuen Tab fort."
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "loginUnavailable": {
     "message": "Login nicht verfügbar"
@@ -899,10 +899,10 @@
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "Automatisch TOTP kopieren nach dem Laden der Seite"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "Wenn Auto-Ausfüllen beim Laden der Webseite aktiviert ist, wird der TOTP-Bestätigungscode nach dem Laden der Webseite automatisch in die Zwischenablage kopiert. Dies wird durch \"Automatisches TOTP kopieren deaktivieren\" überschrieben."
   },
   "experimentalFeature": {
     "message": "Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
@@ -962,10 +962,10 @@
     "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Badge-Zähler deaktivieren"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Der Badge-Zähler zeigt an, wie viele Zugangsdaten Sie für die aktuelle Seite in Ihrem Tresor haben."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Um eine Datei auszuwählen, öffnen Sie die Erweiterung in der Sidebar (falls möglich) oder öffnen Sie sie in einem neuem Fenster, indem Sie auf diesen Banner klicken."
   },
   "sendFirefoxFileWarning": {
     "message": "Um eine Datei mit Firefox auszuwählen, öffnen Sie die Erweiterung in der Sidebar oder öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
@@ -1705,18 +1705,18 @@
     "message": "Es gab einen Fehler beim Speichern Ihrer Lösch- und Verfallsdaten."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Meine E-Mail-Adresse vor den Empfängern ausblenden."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen ihre Send Einstellungen."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Master-Passwort erneut abfragen"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Masterpasswort bestätigen"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Diese Aktion ist geschützt. Um fortzufahren, geben Sie bitte Ihr Master-Passwort erneut ein, um Ihre Identität zu bestätigen."
   }
 }

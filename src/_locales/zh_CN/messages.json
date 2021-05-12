@@ -597,7 +597,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "过曝暗",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -686,7 +686,7 @@
     "message": "选择一个文件。"
   },
   "maxFileSize": {
-    "message": "文件最大为 100 MB。"
+    "message": "文件最大为 500 MB。"
   },
   "featureUnavailable": {
     "message": "功能不可用"
@@ -803,10 +803,10 @@
     "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有一个按钮，按下它。"
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "在新标签中继续 WebAuthn 2FA 身份验证。"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "验证 WebAuthn"
   },
   "loginUnavailable": {
     "message": "登录不可用"
@@ -851,7 +851,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "使用任何启用了 WebAuthn 的安全钥匙访问您的帐户。"
   },
   "emailTitle": {
     "message": "电子邮件"
@@ -899,10 +899,10 @@
     "message": "如果网页加载时检测到登录表单，自动进行自动填充。"
   },
   "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
+    "message": "页面加载后自动复制 TOTP"
   },
   "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
+    "message": "如果启用了“页面加载时自动填充”，TOTP 验证码将在加载网页后自动复制到剪贴板。此设置会被“禁用自动 TOTP 复制” 覆盖。"
   },
   "experimentalFeature": {
     "message": "目前这是一项实验功能。使用需自担风险。"
@@ -962,10 +962,10 @@
     "message": "在您密码库的每个登录项目旁边显示一个可识别的图标。"
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "禁用徽章计数器"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "徽章计数器表示您在密码库中的当前页面的登录次数。"
   },
   "cardholderName": {
     "message": "持卡人姓名"
@@ -1666,7 +1666,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "要选择文件，请在侧边栏中打开扩展（如果可以），或者点击此横幅来弹出一个新窗口。"
   },
   "sendFirefoxFileWarning": {
     "message": "要在 Firefox 中选择文件，请在侧边栏中打开本扩展，或者点击此横幅来弹出一个新窗口。"
@@ -1705,18 +1705,18 @@
     "message": "保存您的删除和到期日期时出错。"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "从收件人中隐藏我的电子邮件地址。"
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "一个或多个组织策略正在影响您的 Send 选项。"
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "重新提示主密码"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "确认主密码"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "此操作受到保护。若要继续，请重新输入您的主密码以验证您的身份。"
   }
 }
