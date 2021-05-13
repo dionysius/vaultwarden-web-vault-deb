@@ -238,7 +238,7 @@ export class AppComponent implements OnInit {
             iconHtml: iconClasses != null ? `<i class="swal-custom-icon fa ${iconClasses}"></i>` : undefined,
             text: msg.text,
             html: msg.html,
-            title: msg.title,
+            titleText: msg.title,
             showCancelButton: (cancelText != null),
             cancelButtonText: cancelText,
             showConfirmButton: true,
@@ -256,7 +256,7 @@ export class AppComponent implements OnInit {
         const platformUtils = this.platformUtilsService as BrowserPlatformUtilsService;
         const result = await Swal.fire({
             heightAuto: false,
-            title: msg.title,
+            titleText: msg.title,
             input: 'password',
             text: msg.body,
             confirmButtonText: this.i18nService.t('ok'),
