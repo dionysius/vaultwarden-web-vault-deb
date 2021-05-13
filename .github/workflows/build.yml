@@ -50,19 +50,27 @@ jobs:
 
       - name: Testing locales - extName length
         run: |
-          exit_status=0
-          
-          echo "extName string must be 40 characters or less"
-          echo "===================================="
-          for locale in $(ls src/_locales/); do
-            string_length=$(jq '.extName.message | length' src/_locales/$locale/messages.json)
-            if [[ $string_length -gt 40 ]]; then
-              echo $locale: $string_length
-              exit_status=1
-            fi
-          done
-          
-          exit $exit_status
+         found_error=false
+
+         echo "Locales Test"
+         echo "============"
+         echo "extName string must be 40 characters or less"
+         echo
+         for locale in $(ls src/_locales/); do
+           string_length=$(jq '.extName.message | length' src/_locales/$locale/messages.json)
+           if [[ $string_length -gt 40 ]]; then
+             echo "$locale: $string_length"
+             found_error=true
+           fi
+         done
+         
+         if $found_error; then
+           echo
+           echo "Please fix 'extName' for the locales listed above."
+           exit 1
+         else
+           echo "Test passed!"
+         fi 
 
   build:
     runs-on: windows-latest
