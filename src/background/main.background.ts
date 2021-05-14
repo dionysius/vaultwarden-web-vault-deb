@@ -220,7 +220,8 @@ export default class MainBackground {
             this.eventService);
         this.containerService = new ContainerService(this.cryptoService);
         this.auditService = new AuditService(this.cryptoFunctionService, this.apiService);
-        this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
+        this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService,
+            this.cryptoService);
         this.notificationsService = new NotificationsService(this.userService, this.syncService, this.appIdService,
             this.apiService, this.vaultTimeoutService, () => this.logout(true), this.consoleLogService);
         this.environmentService = new EnvironmentService(this.apiService, this.storageService,

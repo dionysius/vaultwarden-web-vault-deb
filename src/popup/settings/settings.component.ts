@@ -239,7 +239,7 @@ export class SettingsComponent implements OnInit {
             const submitted = Swal.fire({
                 heightAuto: false,
                 buttonsStyling: false,
-                title: this.i18nService.t('awaitDesktop'),
+                titleText: this.i18nService.t('awaitDesktop'),
                 text: this.i18nService.t('awaitDesktopDesc'),
                 icon: 'info',
                 iconHtml: '<i class="swal-custom-icon fa fa-info-circle text-info"></i>',
