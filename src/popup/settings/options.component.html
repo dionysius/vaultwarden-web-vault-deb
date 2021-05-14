@@ -163,18 +163,6 @@
         </div>
         <div class="box">
             <div class="box-content">
-                <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                    <label for="autoCopyTotp">{{'enableAutoTotpCopyOnAutoFill' | i18n}}</label>
-                    <input id="autoCopyTotp" type="checkbox" (change)="updateAutoTotpCopyOnAutoFill()"
-                        [(ngModel)]="enableAutoTotpCopyOnAutoFill" [disabled]="!enableAutoFillOnPageLoad">
-                </div>
-            </div>
-            <div class="box-footer">
-                {{'enableAutoTotpCopyOnAutoFillDesc' | i18n}}
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="defaultAutofill">{{'defaultAutoFillOnPageLoad' | i18n}}</label>
                     <select id="defaultAutofill" name="DefaultAutofill" [(ngModel)]="autoFillOnPageLoadDefault"
@@ -184,6 +172,18 @@
                 </div>
             </div>
             <div class="box-footer">{{'defaultAutoFillOnPageLoadDesc' | i18n}}</div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="autoCopyTotp">{{'enableAutoTotpCopyOnAutoFill' | i18n}}</label>
+                    <input id="autoCopyTotp" type="checkbox" (change)="updateAutoTotpCopyOnAutoFill()"
+                        [(ngModel)]="enableAutoTotpCopyOnAutoFill" [disabled]="!enableAutoFillOnPageLoad">
+                </div>
+            </div>
+            <div class="box-footer">
+                {{'enableAutoTotpCopyOnAutoFillDesc' | i18n}}
+            </div>
         </div>
     </ng-container>
 </content>
