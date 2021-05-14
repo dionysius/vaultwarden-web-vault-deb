@@ -125,6 +125,7 @@ jobs:
         run: gulp ci
 
       - name: Build sources for reviewers
+        shell: cmd
         run: |
           mkdir dist\Source
           call git clone %REPO_URL% dist\Source
