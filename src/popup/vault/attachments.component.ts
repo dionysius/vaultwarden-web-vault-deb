@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { ApiService } from 'jslib/abstractions/api.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -19,9 +20,9 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
 
     constructor(cipherService: CipherService, i18nService: I18nService,
         cryptoService: CryptoService, userService: UserService,
-        platformUtilsService: PlatformUtilsService, private location: Location,
+        platformUtilsService: PlatformUtilsService, apiService: ApiService, private location: Location,
         private route: ActivatedRoute, private router: Router) {
-        super(cipherService, i18nService, cryptoService, userService, platformUtilsService, window);
+        super(cipherService, i18nService, cryptoService, userService, platformUtilsService, apiService, window);
     }
 
     async ngOnInit() {

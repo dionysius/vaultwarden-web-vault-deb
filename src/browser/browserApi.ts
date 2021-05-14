@@ -65,7 +65,7 @@ export class BrowserApi {
             return;
         }
 
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             chrome.tabs.sendMessage(tab.id, obj, options, () => {
                 if (chrome.runtime.lastError) {
                     // Some error happened
@@ -87,8 +87,8 @@ export class BrowserApi {
         return Promise.resolve(chrome.extension.getViews({ type: 'popup' }).length > 0);
     }
 
-    static createNewTab(url: string, extensionPage: boolean = false) {
-        chrome.tabs.create({ url: url });
+    static createNewTab(url: string, extensionPage: boolean = false, active: boolean = true) {
+        chrome.tabs.create({ url: url, active: active });
     }
 
     static messageListener(name: string, callback: (message: any, sender: any, response: any) => void) {
@@ -174,6 +174,15 @@ export class BrowserApi {
         }
         return new Promise((resolve, reject) => {
             chrome.permissions.request(permission, resolve);
+        });
+    }
+
+    static getPlatformInfo(): Promise<browser.runtime.PlatformInfo | chrome.runtime.PlatformInfo> {
+        if (BrowserApi.isWebExtensionsApi) {
+            return browser.runtime.getPlatformInfo();
+        }
+        return new Promise(resolve => {
+            chrome.runtime.getPlatformInfo(resolve);
         });
     }
 }

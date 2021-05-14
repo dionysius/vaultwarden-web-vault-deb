@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - 免費密碼管理工具",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Bitwarden 是一款安全、免費、跨平台的密碼管理工具。",
@@ -47,7 +47,7 @@
     "message": "重新輸入主密碼"
   },
   "masterPassHint": {
-    "message": "主密碼提示 (可省略)"
+    "message": "主密碼提示（選用）"
   },
   "tab": {
     "message": "分頁"
@@ -68,7 +68,7 @@
     "message": "複製密碼"
   },
   "copyNote": {
-    "message": "複製筆記"
+    "message": "複製備註"
   },
   "copyUri": {
     "message": "複製 URI"
@@ -92,13 +92,13 @@
     "message": "無符合的登入資料。"
   },
   "vaultLocked": {
-    "message": "密碼庫已鎖定"
+    "message": "密碼庫已鎖定。"
   },
   "vaultLoggedOut": {
     "message": "密碼庫已登出。"
   },
   "autoFillInfo": {
-    "message": "沒有可以自動填入當前瀏覽器分頁的登入資料。"
+    "message": "沒有可以自動填入目前瀏覽器分頁的登入資料。"
   },
   "addLogin": {
     "message": "新增登入資料"
@@ -113,7 +113,7 @@
     "message": "請輸入您的帳户電子郵件地址以接收主密碼提示。"
   },
   "getMasterPasswordHint": {
-    "message": "獲取主密碼提示"
+    "message": "取得主密碼提示"
   },
   "continue": {
     "message": "繼續"
@@ -261,10 +261,10 @@
     "message": "我的最愛"
   },
   "notes": {
-    "message": "筆記"
+    "message": "備註"
   },
   "note": {
-    "message": "筆記"
+    "message": "備註"
   },
   "editItem": {
     "message": "編輯項目"
@@ -596,6 +596,10 @@
     "message": "淺色",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "匯出密碼庫"
   },
@@ -682,7 +686,7 @@
     "message": "選擇檔案。"
   },
   "maxFileSize": {
-    "message": "檔案最大為 100MB。"
+    "message": "檔案最大為 500MB。"
   },
   "featureUnavailable": {
     "message": "功能無法使用"
@@ -709,7 +713,7 @@
     "message": "註冊成為進階會員將獲得："
   },
   "ppremiumSignUpStorage": {
-    "message": "用於檔案附件的 1 GB 的加密儲存空間。"
+    "message": "用於檔案附件的 1 GB 加密儲存空間。"
   },
   "ppremiumSignUpTwoStep": {
     "message": "YubiKey、FIDO U2F 和 Duo 等額外的兩步驟登入選項。"
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "將您的安全金鑰插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
   },
+  "webAuthnNewTab": {
+    "message": "在新的分頁中繼續 WebAuthn 2FA 驗證。"
+  },
+  "webAuthnAuthenticate": {
+    "message": "驗證 WebAuthn"
+  },
   "loginUnavailable": {
     "message": "登入無法使用"
   },
@@ -837,17 +847,17 @@
     "message": "為您的組織使用 Duo Security 的 Duo Mobile 程式、SMS、致電或 U2F 安全金鑰進行驗證。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "使用任何啟用了 FIDO U2F 的安全金鑰來存取您的帳戶。"
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F 安全金鑰"
+  "webAuthnDesc": {
+    "message": "使用任何具有 WebAuthn 功能的安全鑰匙來存取您的帳戶。"
   },
   "emailTitle": {
     "message": "電子郵件"
   },
   "emailDesc": {
-    "message": "驗證碼將使用電子郵件傳送給您。"
+    "message": "將使用電子郵件傳送驗證碼給您。"
   },
   "selfHostedEnvironment": {
     "message": "自我託管環境"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "如果網頁載入時偵測到登入表單，則自動執行表單填入。"
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "頁面載入后自動複製 TOTP"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "如果啓用了“頁面載入時自動填入”，TOTP 驗證碼將在載入網頁后自動複製到剪貼簿。此設置會被“停用自動 TOTP 複製” 覆寫。"
   },
   "experimentalFeature": {
     "message": "目前這是一項實驗性功能。要使用需自行承擔風險。"
@@ -945,6 +961,12 @@
   "disableFaviconDesc": {
     "message": "在您密碼庫的每個登入資料旁顯示一個可辨識的圖示。"
   },
+  "disableBadgeCounter": {
+    "message": "停用徽章計數器"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "徽章計數器指示您在密码库中當前頁面的登入次數。"
+  },
   "cardholderName": {
     "message": "持卡人姓名"
   },
@@ -952,7 +974,7 @@
     "message": "號碼"
   },
   "brand": {
-    "message": "品牌"
+    "message": "發卡組織"
   },
   "expirationMonth": {
     "message": "逾期月份"
@@ -1081,7 +1103,7 @@
     "message": "登入"
   },
   "typeLogins": {
-    "message": "登入"
+    "message": "登入資料"
   },
   "typeSecureNote": {
     "message": "安全筆記"
@@ -1373,7 +1395,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "您的新主密碼不符合原則要求。"
+    "message": "您新的主密碼不符合原則要求。"
   },
   "acceptPolicies": {
     "message": "一旦選取此方塊，代表您同意下列項目："
@@ -1448,10 +1470,10 @@
     "message": "沒有與 Bitwarden 桌面應用程式通訊的權限，我們無法在瀏覽器擴充套件中提供生物特徵辨識。請再試一次。"
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "權限要求錯誤"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "此動作無法在側邊欄中完成，請在彈出式視窗中再試一次。"
   },
   "personalOwnershipSubmitError": {
     "message": "由於某個企業原則，您被限制為儲存項目到您的個人密碼庫。將擁有權改為組織，並從可用的集合中選擇。"
@@ -1463,7 +1485,7 @@
     "message": "排除的網域"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden 不會要求儲存這些網域的登入詳細資訊。必須刷新頁面才能使變更生效。"
+    "message": "Bitwarden 不會要求儲存這些網域的登入詳細資訊。必須重新整理頁面才能使變更生效。"
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ 不是一個有效的網域",
@@ -1483,7 +1505,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "addSend": {
-    "message": "添加 Send",
+    "message": "新增 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeText": {
@@ -1503,7 +1525,7 @@
     "message": "已逾期"
   },
   "pendingDeletion": {
-    "message": "等待刪除中"
+    "message": "等待刪除"
   },
   "passwordProtected": {
     "message": "密碼保護"
@@ -1552,7 +1574,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "用於描述此 Send 的友好名稱。",
+    "message": "用於描述此 Send 的易記名稱。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
@@ -1562,14 +1584,14 @@
     "message": "刪除日期"
   },
   "deletionDateDesc": {
-    "message": "此 Send 將在指定的日期和時間被永久删除。",
+    "message": "此 Send 將在指定的日期和時間後被永久删除。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "逾期日期"
   },
   "expirationDateDesc": {
-    "message": "如果設定，對此 Send 的存取將在指定的日期和時間后逾期。",
+    "message": "如果設定此選項，對此 Send 的存取將在指定的日期和時間後逾期。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
@@ -1591,7 +1613,7 @@
     "message": "最大存取次數"
   },
   "maximumAccessCountDesc": {
-    "message": "如果設定，達到最大存取次數后，使用者將無法再次存取此 Send。",
+    "message": "如果設定此選項，當達到最大存取次數時，使用者將無法再次存取此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1599,15 +1621,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "關於此 Send 的私人注釋。",
+    "message": "關於此 Send 的私人註釋。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "停用此 Send 則沒有任何人能存取它。",
+    "message": "停用此 Send 以阻止任何人存取它。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "保存時複製此 Send 的連結到剪貼簿。",
+    "message": "儲存時複製此 Send 的連結到剪貼簿。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1618,10 +1640,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "目前已存取次數"
+    "message": "目前存取次數"
   },
   "createSend": {
-    "message": "創建新的 Send",
+    "message": "建立新的 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1636,32 +1658,35 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send 已創建",
+    "message": "Send 已建立",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send 已編輯",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "要選擇文檔，請在側邊欄中打開擴充套件（若可能），或單擊此橫幅彈出到新視窗。"
+  },
   "sendFirefoxFileWarning": {
-    "message": "要使用 Firefox 來選擇檔案，請打開側邊欄中的擴充套件，或單擊此橫幅彈出到新視窗。"
+    "message": "要使用 Firefox 來選擇檔案，請開啟側邊欄中的擴充套件，或點選此橫幅彈出至新視窗。"
   },
   "sendSafariFileWarning": {
-    "message": "要使用 Safari 來選擇檔案，請單擊此橫幅彈出到新視窗。"
+    "message": "要使用 Safari 來選擇檔案，請點選此橫幅彈出至新視窗。"
   },
   "sendFileCalloutHeader": {
-    "message": "開始之前"
+    "message": "在開始之前"
   },
   "sendFirefoxCustomDatePopoutMessage1": {
     "message": "使用行事曆樣式的日期選取器",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
-    "message": "點擊這裡",
+    "message": "按一下這裡",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
-    "message": "要彈出到視窗。",
+    "message": "要彈出至視窗。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
@@ -1677,6 +1702,21 @@
     "message": "要求指定刪除日期和時間。"
   },
   "dateParsingError": {
-    "message": "儲存刪除日期和到期日期時發生錯誤。"
+    "message": "儲存刪除日期和逾期日期時發生錯誤。"
+  },
+  "hideEmail": {
+    "message": "對收件人隱藏我的電子郵件地址。"
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "一個或多個組織原则正影響您的 Send 選項。"
+  },
+  "passwordPrompt": {
+    "message": "重新提示主密碼"
+  },
+  "passwordConfirmation": {
+    "message": "確認主密碼"
+  },
+  "passwordConfirmationDesc": {
+    "message": "此操作受到保護。若要繼續，請重新輸入您的主密碼以驗證您的身份。"
   }
 }

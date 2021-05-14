@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extName__",
   "short_name": "__MSG_appName__",
-  "version": "1.49.0",
+  "version": "1.50.0",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "author": "Bitwarden Inc.",
@@ -44,7 +44,7 @@
     {
       "all_frames": false,
       "js": [
-        "content/sso.js"
+        "content/message_handler.js"
       ],
       "matches": [
         "http://*/*",

@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - مدیریت کلمه عبور رایگان",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "یک مدیریت کننده کلمه عبور رایگان برای تمامی دستگاههایتان.",
@@ -596,6 +596,10 @@
     "message": "روشن",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "صادر کردن گاوصندوق"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "کلید امنیتی خود را وارد پورت USB رایانه کنید، اگر دکمه ای دارد آن را بفشارید."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
   "loginUnavailable": {
     "message": "ورود به سیستم موجود نیست"
   },
@@ -837,11 +847,11 @@
     "message": "Duo Security را برای سازماندهی خود با استفاده از برنامه Duo Mobile، SMS، تماس تلفنی یا کلید امنیتی U2F تأیید کنید.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "از هر FIDO استفاده کنید U2F کلید امنیتی را فعال کنید تا به حساب کاربریتان دسترسی یابید."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "کلید امنیتی FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "ایمیل"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "اگر یک فرم ورودی شناسایی شود، وقتی صفحه وب بارگذاری می شود، به صورت اتوماتیک انجام می شود."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "در حال حاضر این یک ویژگی آزمایشی است. با مسئولیت خود استفاده کنید."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "آیکون های وبسایت یک تصویر قابل تشخیص در کنار هر داده ورودی ارائه میدهد."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "نام صاحب کارت"
@@ -1448,10 +1470,10 @@
     "message": "بدون اجازه ارتباط با برنامه دسکتاپ Bitwarden ، نمی توانیم بیومتریک را در افزونه مرورگر ارائه دهیم. لطفا دوباره تلاش کنید."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "خطای درخواست مجوز"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "این عمل را نمی توان در نوار کناری انجام داد، لطفاً اقدام را در پنجره بازشو یا پنجره بازخوانی کنید."
   },
   "personalOwnershipSubmitError": {
     "message": "به دلیل خط مشی Enterprise ، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
@@ -1643,6 +1665,9 @@
     "message": "ارسال جدید ویرایش شد",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "برای انتخاب یک فایل با استفاده از Firefox، افزونه را در نوار کناری باز کنید یا با کلیک بر روی این بنر به پنجره جدید باز شوید."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "هنگام ذخیره حذف و تاریخ انقضا شما خطایی روی داد."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

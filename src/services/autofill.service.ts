@@ -20,6 +20,7 @@ import {
 } from 'jslib/abstractions';
 
 import { EventService } from 'jslib/abstractions/event.service';
+import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
 import { EventType } from 'jslib/enums/eventType';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
@@ -258,10 +259,17 @@ export default class AutofillService implements AutofillServiceInterface {
             }
         }
 
+        if (cipher.reprompt !== CipherRepromptType.None) {
+            return;
+        }
+
+        const copyTotpOnAutoFill = await this.totpService.isAutoCopyOnAutoFillEnabled();
+        const shouldCopyTotp = fromCommand || copyTotpOnAutoFill;
+
         const totpCode = await this.doAutoFill({
             cipher: cipher,
             pageDetails: pageDetails,
-            skipTotp: !fromCommand,
+            skipTotp: !shouldCopyTotp,
             skipLastUsed: !fromCommand,
             skipUsernameOnlyFill: !fromCommand,
             onlyEmptyFields: !fromCommand,

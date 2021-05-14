@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - Δωρεάν Διαχειριστής Κωδικών",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Ένας ασφαλής και δωρεάν διαχειριστής κωδικών, για όλες σας τις συσκευές.",
@@ -596,6 +596,10 @@
     "message": "Φωτεινό",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Εξαγωγή Vault"
   },
@@ -613,10 +617,10 @@
     "message": "Αυτή η εξαγωγή περιέχει τα δεδομένα σε μη κρυπτογραφημένη μορφή. Δεν πρέπει να αποθηκεύετε ή να στείλετε το εξαγόμενο αρχείο μέσω μη ασφαλών τρόπων (όπως μέσω email). Διαγράψτε το αμέσως μόλις τελειώσετε με τη χρήση του."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Αυτή η εξαγωγή κρυπτογραφεί τα δεδομένα σας χρησιμοποιώντας το κλειδί κρυπτογράφησης του λογαριασμού σας. Εάν ποτέ περιστρέψετε το κλειδί κρυπτογράφησης του λογαριασμού σας, θα πρέπει να κάνετε εξαγωγή ξανά, καθώς δεν θα μπορείτε να αποκρυπτογραφήσετε αυτό το αρχείο εξαγωγής."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Τα κλειδιά κρυπτογράφησης λογαριασμού είναι μοναδικά για κάθε λογαριασμό χρήστη Bitwarden, οπότε δεν μπορείτε να εισάγετε μια κρυπτογραφημένη εξαγωγή σε διαφορετικό λογαριασμό."
   },
   "exportMasterPassword": {
     "message": "Πληκτρολογήστε τον κύριο κωδικό για εξαγωγή δεδομένων vault."
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Εισάγετε το κλειδί ασφαλείας στη θύρα USB του υπολογιστή σας. Αν έχει κουμπί, πατήστε το."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
   "loginUnavailable": {
     "message": "Σύνδεση μη Διαθέσιμη"
   },
@@ -837,11 +847,11 @@
     "message": "Επαληθεύστε με το Duo Security για τον οργανισμό σας χρησιμοποιώντας την εφαρμογή Duo Mobile, μηνύματα SMS, τηλεφωνική κλήση ή κλειδί ασφαλείας U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Χρησιμοποιήστε οποιοδήποτε κλειδί ασφαλείας με δυνατότητα FIDO U2F για πρόσβαση στον λογαριασμό σας."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Κλειδί ασφαλείας FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Εάν εντοπιστεί μια φόρμα σύνδεσης, πραγματοποιείται αυτόματα μια αυτόματη συμπλήρωση όταν φορτώνεται η ιστοσελίδα."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Αυτή είναι μια πειραματική λειτουργία. Χρησιμοποιήστε το με δική σας ευθύνη."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Τα εικονίδια ιστοσελίδων παρέχουν μια αναγνωρίσιμη εικόνα δίπλα σε κάθε στοιχείο σύνδεσης της λίστας σας."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Όνομα κατόχου της κάρτας"
@@ -1448,10 +1470,10 @@
     "message": "Χωρίς άδεια επικοινωνίας με την εφαρμογή Bitwarden Desktop δεν μπορούμε να παρέχουμε βιομετρικά στοιχεία στην επέκταση του προγράμματος περιήγησης. Παρακαλώ δοκιμάστε ξανά."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Σφάλμα αιτήματος άδειας"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Αυτή η ενέργεια δεν μπορεί να γίνει στην πλαϊνή μπάρα, δοκιμάστε ξανά την ενέργεια στο αναδυόμενο παράθυρο ή αναδυόμενο παράθυρο."
   },
   "personalOwnershipSubmitError": {
     "message": "Λόγω μιας Πολιτικής Επιχειρήσεων, δεν επιτρέπεται η αποθήκευση στοιχείων στο προσωπικό σας vault. Αλλάξτε την επιλογή Ιδιοκτησίας σε έναν οργανισμό και επιλέξτε από τις διαθέσιμες Συλλογές."
@@ -1463,7 +1485,7 @@
     "message": "Εξαιρούμενοι Τομείς"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+    "message": "Το Bitwarden δεν θα ζητήσει να αποθηκεύσετε τα στοιχεία σύνδεσης για αυτούς τους τομείς. Πρέπει να ανανεώσετε τη σελίδα για να τεθούν σε ισχύ οι αλλαγές."
   },
   "excludedDomainsInvalidDomain": {
     "message": "Το $DOMAIN$ δεν είναι έγκυρος τομέας",
@@ -1497,7 +1519,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Φτάσατε στον μέγιστο αριθμό πρόσβασης"
   },
   "expired": {
     "message": "Έληξε"
@@ -1588,14 +1610,14 @@
     "message": "Προσαρμοσμένο"
   },
   "maximumAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Μέγιστος Αριθμός Πρόσβασης"
   },
   "maximumAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Εάν οριστεί, οι χρήστες δεν θα μπορούν πλέον να έχουν πρόσβαση σε αυτό το send μόλις επιτευχθεί ο μέγιστος αριθμός πρόσβασης.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Προαιρετικά απαιτείται κωδικός πρόσβασης για τους χρήστες για να έχουν πρόσβαση σε αυτό το Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1618,7 +1640,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Τρέχων Αριθμός Πρόσβασης"
   },
   "createSend": {
     "message": "Δημιουργία Νέου Send",
@@ -1632,7 +1654,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Λόγω μιας επιχειρηματικής πολιτικής, είστε σε θέση να διαγράψετε μόνο ένα υπάρχον Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1643,17 +1665,20 @@
     "message": "Το Send Επεξεργάστηκε",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
-    "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
+    "message": "Για να επιλέξετε ένα αρχείο χρησιμοποιώντας τον Firefox, ανοίξτε την επέκταση στην πλαϊνή μπάρα ή βγείτε σε ένα νέο παράθυρο κάνοντας κλικ σε αυτή τη διαφήμιση."
   },
   "sendSafariFileWarning": {
-    "message": "In order to choose a file using Safari, pop out to a new window by clicking this banner."
+    "message": "Για να επιλέξετε ένα αρχείο χρησιμοποιώντας το Safari, βγαίνετε σε ένα νέο παράθυρο κάνοντας κλικ σε αυτή τη διαφήμιση."
   },
   "sendFileCalloutHeader": {
     "message": "Πριν ξεκινήσετε"
   },
   "sendFirefoxCustomDatePopoutMessage1": {
-    "message": "To use a calendar style date picker",
+    "message": "Για να χρησιμοποιήσετε έναν επιλογέα ημερομηνίας στυλ ημερολογίου",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
@@ -1661,7 +1686,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
-    "message": "to pop out your window.",
+    "message": "για να βγεις από το παράθυρο.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Παρουσιάστηκε σφάλμα κατά την αποθήκευση των ημερομηνιών διαγραφής και λήξης."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

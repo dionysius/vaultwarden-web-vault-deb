@@ -15,6 +15,7 @@ import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -43,39 +44,45 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         environmentService: EnvironmentService, private ngZone: NgZone,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private popupUtilsService: PopupUtilsService, stateService: StateService,
-        storageService: StorageService, route: ActivatedRoute) {
+        storageService: StorageService, route: ActivatedRoute, private messagingService: MessagingService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
             stateService, storageService, route);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
         super.successRoute = '/tabs/vault';
+        this.webAuthnNewTab = this.platformUtilsService.isFirefox() || this.platformUtilsService.isSafari();
     }
 
     async ngOnInit() {
-        const isFirefox = this.platformUtilsService.isFirefox();
-        if (this.popupUtilsService.inPopup(window) && isFirefox &&
-            this.win.navigator.userAgent.indexOf('Windows NT 10.0;') > -1) {
-            // ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1562620
-            this.initU2f = false;
+        if (this.route.snapshot.paramMap.has('webAuthnResponse')) {
+            // WebAuthn fallback response
+            this.selectedProviderType = TwoFactorProviderType.WebAuthn;
+            this.token = this.route.snapshot.paramMap.get('webAuthnResponse');
+            super.onSuccessfulLogin = async () => {
+                this.syncService.fullSync(true);
+                this.messagingService.send('reloadPopup');
+                window.close();
+            };
+            this.remember = this.route.snapshot.paramMap.get('remember') === 'true';
+            await this.doSubmit();
+            return;
         }
+
         await super.ngOnInit();
         if (this.selectedProviderType == null) {
             return;
         }
 
+        // WebAuthn prompt appears inside the popup on linux, and requires a larger popup width
+        // than usual to avoid cutting off the dialog.
+        if (this.selectedProviderType === TwoFactorProviderType.WebAuthn && await this.isLinux()) {
+            document.body.classList.add('linux-webauthn');
+        }
+
         if (this.selectedProviderType === TwoFactorProviderType.Email &&
             this.popupUtilsService.inPopup(window)) {
             const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popup2faCloseMessage'),
-                null, this.i18nService.t('yes'), this.i18nService.t('no'));
-            if (confirmed) {
-                this.popupUtilsService.popOut(window);
-            }
-        }
-
-        if (!this.initU2f && this.selectedProviderType === TwoFactorProviderType.U2f &&
-            this.popupUtilsService.inPopup(window)) {
-            const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('popupU2fCloseMessage'),
                 null, this.i18nService.t('yes'), this.i18nService.t('no'));
             if (confirmed) {
                 this.popupUtilsService.popOut(window);
@@ -97,12 +104,20 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         });
     }
 
-    ngOnDestroy() {
+    async ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+
+        if (this.selectedProviderType === TwoFactorProviderType.WebAuthn && await this.isLinux()) {
+            document.body.classList.remove('linux-webauthn');
+        }
         super.ngOnDestroy();
     }
 
     anotherMethod() {
         this.router.navigate(['2fa-options']);
+    }
+
+    async isLinux() {
+        return (await BrowserApi.getPlatformInfo()).os === 'linux';
     }
 }

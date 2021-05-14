@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - സൗജന്യ  പാസ്സ്‌വേഡ് മാനേജർ ",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "നിങ്ങളുടെ എല്ലാ ഉപകരണങ്ങൾക്കും സുരക്ഷിതവും സൗജന്യവുമായ പാസ്‌വേഡ് മാനേജർ.",
@@ -596,6 +596,10 @@
     "message": "ലൈറ്റ്",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "വാൾട് എക്സ്പോർട്"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "നിങ്ങളുടെ കമ്പ്യൂട്ടറിന്റെ യുഎസ്ബി പോർട്ടിൽ സുരക്ഷാ കീ ഇടുക. അതിന് ഒരു ബട്ടൺ ഉണ്ടെങ്കിൽ അത് അമർത്തുക."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
   "loginUnavailable": {
     "message": "പ്രവേശനം ലഭ്യമല്ല"
   },
@@ -837,11 +847,11 @@
     "message": "Duo Mobile, എസ്എംഎസ്, ഫോൺ കോൾ അല്ലെങ്കിൽ യു 2 എഫ് സുരക്ഷാ കീ ഉപയോഗിച്ച് നിങ്ങളുടെ ഓർഗനൈസേഷനെ ഡ്യുവോ സെക്യൂരിറ്റി ഉപയോഗിച്ച് പരിശോധിക്കുക.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "നിങ്ങളുടെ അക്കൗണ്ട് ആക്സസ് ചെയ്യുന്നതിന് ഏതെങ്കിലും FIDO U2F പ്രാപ്തമാക്കിയ സുരക്ഷാ കീ ഉപയോഗിക്കുക."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F സുരക്ഷാ കീ"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "ഇമെയിൽ"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "ഒരു ലോഗിൻ ഫോം കണ്ടെത്തിയാൽ, വെബ് പേജ് ലോഡുചെയ്യുമ്പോൾ യാന്ത്രികമായി ഒരു സ്വയം പൂരിപ്പിക്കൽ നടത്തുക."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "ഇത് നിലവിൽ ഒരു പരീക്ഷണാത്മക സവിശേഷതയാണ്. നിങ്ങളുടെ സ്വന്തം ഉത്തരവാദിത്വത്തിൽ ഉപയോഗിക്കുക."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "വെബ്സൈറ്റ് ഐക്കണുകൾ തങ്ങളുടെ വാൾട്ടിലെ ലോഗിൻ ഇന്നതിന്റ്റെ അടുത്തായി തിരിച്ചറിയുന്ന ഒരു ചിത്രം ഉൾപ്പെടുത്തുന്നു."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "കാർഡ് ഉടമയുടെ പേര്"
@@ -1643,6 +1665,9 @@
     "message": "Edited Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "There was an error saving your deletion and expiration dates."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

@@ -179,6 +179,15 @@
     flex-direction: column;
 }
 
+.box-section-divider {
+    border-top: 1px solid #000000;
+    padding-top: 10px;
+
+    @include themify($themes) {
+        border-color: themed('borderColor');
+    }
+}
+
 .box-content-row {
     display: block;
     padding: 10px 15px;

@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - Free Password Manager",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "A secure and free password manager for all of your devices.",
@@ -596,6 +596,10 @@
     "message": "Light",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Export vault"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
   "loginUnavailable": {
     "message": "Login unavailable"
   },
@@ -837,11 +847,11 @@
     "message": "Verify with Duo Security for your organisation using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F security key"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Website icons provide a recognisable image next to each login item in your vault."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Cardholder name"
@@ -1643,6 +1665,9 @@
     "message": "Edited Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "There was an error saving your deletion and expiration dates."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

@@ -3,8 +3,8 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Gerenciador de Senhas Gratuito",
-    "description": "Extension name"
+    "message": "Bitwarden",
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Um gerenciador de senhas seguro e gratuito para todos os seus dispositivos.",
@@ -596,6 +596,10 @@
     "message": "Claro",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Escuro Solarizado",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Exportar Cofre"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Insira a sua chave de segurança na porta USB do seu computador. Se ele tiver um botão, toque nele."
   },
+  "webAuthnNewTab": {
+    "message": "Continue a verificação de 2FA WebAuthn na nova aba."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autenticar WebAuthn"
+  },
   "loginUnavailable": {
     "message": "Sessão Indisponível"
   },
@@ -837,11 +847,11 @@
     "message": "Verifique com o Duo Security utilizando o aplicativo Duo Mobile, SMS, chamada telefônica, ou chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utilize qualquer chave de segurança ativada por FIDO U2F para acessar à sua conta."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Chave de Segurança FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Utilize qualquer chave de segurança ativada por WebAuthn para acessar a sua conta."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se um formulário de login for detectado, realize automaticamente um autopreenchimento quando a página web carregar."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Cópia Automática de TOTP após Carregamento da Página"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "Se o Autopreenchimento no Carregamento da Página estiver ativado, o código de verificação TOTP será copiado automaticamente para a área de transferência após carregar a página web. Isso é substituído por Desativar Cópia Automática de TOTP."
   },
   "experimentalFeature": {
     "message": "Atualmente, este é um recurso experimental. Utilize por sua conta e risco."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "O ícone do site fornece um ícone reconhecível ao lado de cada credencial no seu cofre."
+  },
+  "disableBadgeCounter": {
+    "message": "Desativar Contador de Emblemas"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "O contador de emblemas indica a quantidade de credenciais que você tem para a página atual no seu cofre."
   },
   "cardholderName": {
     "message": "Titular do Cartão"
@@ -1448,10 +1470,10 @@
     "message": "Sem permissão para nos comunicar com o aplicativo Bitwarden Desktop, não podemos fornecer dados biométricos na extensão do navegador. Por favor, tente novamente."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Erro ao solicitar permissão"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Esta ação não pode ser feita na barra lateral. Por favor, tente novamente no popup ou popout."
   },
   "personalOwnershipSubmitError": {
     "message": "Devido a uma Política Empresarial, você está restrito de salvar itens para seu cofre pessoal. Altere a opção de Propriedade para uma organização e escolha entre as Coleções disponíveis."
@@ -1643,6 +1665,9 @@
     "message": "Send Editado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "Para escolher um arquivo, abra a extensão na barra lateral (se possível), ou abra uma nova janela clicando neste banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Para escolher um arquivo usando o Firefox, abra a extensão na barra lateral ou abra uma nova janela clicando neste banner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Ocorreu um erro ao salvar as suas datas de exclusão e validade."
+  },
+  "hideEmail": {
+    "message": "Ocultar meu endereço de e-mail dos destinatários."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Uma ou mais políticas da organização estão afetando as suas opções de Send."
+  },
+  "passwordPrompt": {
+    "message": "Solicitação nova de senha mestra"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmação de senha mestra"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Esta ação está protegida. Para continuar, por favor, reinsira a sua senha mestra para verificar sua identidade."
   }
 }

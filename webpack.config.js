@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -63,37 +63,40 @@ const moduleRules = [
         test: /[\/\\]@angular[\/\\].+\.js$/,
         parser: { system: true },
     },
+    {
+        test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+        loader: '@ngtools/webpack',
+    }
 ];
 
 const plugins = [
-    new CleanWebpackPlugin([
-        path.resolve(__dirname, 'build/*'),
-    ]),
-    // ref: https://github.com/angular/angular/issues/20357
-    new webpack.ContextReplacementPlugin(/\@angular(\\|\/)core(\\|\/)fesm5/,
-        path.resolve(__dirname, './src')),
     new HtmlWebpackPlugin({
         template: './src/popup/index.html',
         filename: 'popup/index.html',
         chunks: ['popup/polyfills', 'popup/vendor-angular', 'popup/vendor', 'popup/main'],
+        cache: false, // Remove after upgrading to Webpack 5
     }),
     new HtmlWebpackPlugin({
         template: './src/background.html',
         filename: 'background.html',
         chunks: ['vendor', 'background'],
+        cache: false, // Remove after upgrading to Webpack 5
     }),
     new HtmlWebpackPlugin({
         template: './src/notification/bar.html',
         filename: 'notification/bar.html',
-        chunks: ['notification/bar']
+        chunks: ['notification/bar'],
+        cache: false, // Remove after upgrading to Webpack 5
     }),
-    new CopyWebpackPlugin([
-        './src/manifest.json',
-        { from: './src/_locales', to: '_locales' },
-        { from: './src/images', to: 'images' },
-        { from: './src/popup/images', to: 'popup/images' },
-        { from: './src/content/autofill.css', to: 'content' },
-    ]),
+    new CopyWebpackPlugin({
+        patterns: [
+            './src/manifest.json',
+            { from: './src/_locales', to: '_locales' },
+            { from: './src/images', to: 'images' },
+            { from: './src/popup/images', to: 'popup/images' },
+            { from: './src/content/autofill.css', to: 'content' },
+        ]
+    }),
     new webpack.SourceMapDevToolPlugin({
         include: ['popup/main.js', 'background.js'],
     }),
@@ -106,25 +109,16 @@ const plugins = [
             'ENV': JSON.stringify(ENV)
         }
     }),
-];
-
-if (ENV === 'production') {
-    moduleRules.push({
-        test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
-        loader: '@ngtools/webpack',
-    });
-    plugins.push(new AngularCompilerPlugin({
+    new AngularCompilerPlugin({
         tsConfigPath: 'tsconfig.json',
         entryModule: 'src/popup/app.module#AppModule',
         sourceMap: true,
-    }));
-} else {
-    moduleRules.push({
-        test: /\.ts$/,
-        loaders: ['ts-loader', 'angular2-template-loader'],
-        exclude: path.resolve(__dirname, 'node_modules'),
-    });
-}
+    }),
+    new CleanWebpackPlugin({
+        cleanAfterEveryBuildPatterns: ['!popup/fonts/**/*'],
+    }),
+];
+
 
 const config = {
     mode: ENV,
@@ -137,7 +131,7 @@ const config = {
         'content/autofiller': './src/content/autofiller.ts',
         'content/notificationBar': './src/content/notificationBar.ts',
         'content/shortcuts': './src/content/shortcuts.ts',
-        'content/sso': './src/content/sso.ts',
+        'content/message_handler': './src/content/message_handler.ts',
         'notification/bar': './src/notification/bar.js',
     },
     optimization: {

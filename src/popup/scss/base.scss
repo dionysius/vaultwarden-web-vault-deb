@@ -22,7 +22,7 @@ body {
 
     @include themify($themes) {
         color: themed('textColor');
-        background-color: themed('headerBackgroundColor');
+        background-color: themed('backgroundColor');
     }
 
     &.body-sm {

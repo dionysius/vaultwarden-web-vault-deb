@@ -9,8 +9,8 @@ export default class I18nService extends BaseI18nService {
         });
 
         this.supportedTranslationLocales = [
-            'en', 'be', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'et', 'fa', 'fi', 'fr', 'he', 'hr', 'hu',
-            'id', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sr', 'sv', 'th', 'tr', 'uk',
+            'en', 'be', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'en-IN', 'es', 'et', 'fa', 'fi', 'fr', 'he', 'hr', 'hu',
+            'id', 'it', 'ja', 'ko', 'lv', 'ml-IN', 'nb', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sr', 'sv', 'th', 'tr', 'uk',
             'vi', 'zh-CN', 'zh-TW',
         ];
     }

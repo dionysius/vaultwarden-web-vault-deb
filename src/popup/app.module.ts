@@ -1,10 +1,5 @@
-import 'core-js';
-import 'zone.js/dist/zone';
-
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ToasterModule } from 'angular2-toaster';
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -87,12 +82,14 @@ import {
 } from '@angular/common';
 import localeBe from '@angular/common/locales/be';
 import localeBg from '@angular/common/locales/bg';
+import localeBn from '@angular/common/locales/bn';
 import localeCa from '@angular/common/locales/ca';
 import localeCs from '@angular/common/locales/cs';
 import localeDa from '@angular/common/locales/da';
 import localeDe from '@angular/common/locales/de';
 import localeEl from '@angular/common/locales/el';
 import localeEnGb from '@angular/common/locales/en-GB';
+import localeEnIn from '@angular/common/locales/en-IN';
 import localeEs from '@angular/common/locales/es';
 import localeEt from '@angular/common/locales/et';
 import localeFa from '@angular/common/locales/fa';
@@ -105,6 +102,8 @@ import localeId from '@angular/common/locales/id';
 import localeIt from '@angular/common/locales/it';
 import localeJa from '@angular/common/locales/ja';
 import localeKo from '@angular/common/locales/ko';
+import localeLv from '@angular/common/locales/lv';
+import localeMlIn from '@angular/common/locales/ml-IN';
 import localeNb from '@angular/common/locales/nb';
 import localeNl from '@angular/common/locales/nl';
 import localePl from '@angular/common/locales/pl';
@@ -124,12 +123,14 @@ import localeZhTw from '@angular/common/locales/zh-Hant';
 
 registerLocaleData(localeBe, 'be');
 registerLocaleData(localeBg, 'bg');
+registerLocaleData(localeBn, 'bn');
 registerLocaleData(localeCa, 'ca');
 registerLocaleData(localeCs, 'cs');
 registerLocaleData(localeDa, 'da');
 registerLocaleData(localeDe, 'de');
 registerLocaleData(localeEl, 'el');
 registerLocaleData(localeEnGb, 'en-GB');
+registerLocaleData(localeEnIn, 'en-IN');
 registerLocaleData(localeEs, 'es');
 registerLocaleData(localeEt, 'et');
 registerLocaleData(localeFa, 'fa');
@@ -142,6 +143,8 @@ registerLocaleData(localeId, 'id');
 registerLocaleData(localeIt, 'it');
 registerLocaleData(localeJa, 'ja');
 registerLocaleData(localeKo, 'ko');
+registerLocaleData(localeLv, 'lv');
+registerLocaleData(localeMlIn, 'ml-IN');
 registerLocaleData(localeNb, 'nb');
 registerLocaleData(localeNl, 'nl');
 registerLocaleData(localePl, 'pl');
@@ -166,11 +169,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         FormsModule,
         AppRoutingModule,
         ServicesModule,
-        Angulartics2Module.forRoot({
-            pageTracking: {
-                clearQueryParams: true,
-            },
-        }),
         ToasterModule.forRoot(),
         InfiniteScrollModule,
         DragDropModule,

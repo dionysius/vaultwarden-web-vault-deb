@@ -34,9 +34,7 @@ const filters = {
 
 function buildString() {
     var build = '';
-    if (process.env.APPVEYOR_BUILD_NUMBER && process.env.APPVEYOR_BUILD_NUMBER !== '') {
-        build = `-${process.env.APPVEYOR_BUILD_NUMBER}`;
-    } else if (process.env.BUILD_NUMBER && process.env.BUILD_NUMBER !== '') {
+    if (process.env.BUILD_NUMBER && process.env.BUILD_NUMBER !== '') {
         build = `-${process.env.BUILD_NUMBER}`;
     }
     return build;

@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - Kostenloser Passwortmanager",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Bitwarden ist ein sicherer und kostenloser Passwortmanager für all Ihre Geräte.",
@@ -596,6 +596,10 @@
     "message": "Hell",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Tresor exportieren"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Stecke deinen Sicherheitsschlüssel in den USB-Port deines Computers. Falls ein Knopf vorhanden ist, berühre diesen."
   },
+  "webAuthnNewTab": {
+    "message": "Fahren Sie mit der WebAuthn 2FA Verifizierung im neuen Tab fort."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authentifiziere WebAuthn"
+  },
   "loginUnavailable": {
     "message": "Login nicht verfügbar"
   },
@@ -837,11 +847,11 @@
     "message": "Nutze Duo Security um dich mit der Duo Mobile App, SMS, per Anruf oder U2F Security Key bei deiner Organisation zu verifizieren.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Benutze einen FIDO U2F-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Sicherheitsschlüssel"
+  "webAuthnDesc": {
+    "message": "Benutze einen WebAuthn-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
   },
   "emailTitle": {
     "message": "E-Mail"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatisch TOTP kopieren nach dem Laden der Seite"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "Wenn Auto-Ausfüllen beim Laden der Webseite aktiviert ist, wird der TOTP-Bestätigungscode nach dem Laden der Webseite automatisch in die Zwischenablage kopiert. Dies wird durch \"Automatisches TOTP kopieren deaktivieren\" überschrieben."
   },
   "experimentalFeature": {
     "message": "Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
+  },
+  "disableBadgeCounter": {
+    "message": "Badge-Zähler deaktivieren"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Der Badge-Zähler zeigt an, wie viele Zugangsdaten Sie für die aktuelle Seite in Ihrem Tresor haben."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"
@@ -1448,10 +1470,10 @@
     "message": "Ohne die Berechtigung zur Kommunikation mit der Bitwarden Desktop-Anwendung können wir keine Biometrie in der Browser-Erweiterung anbieten. Bitte versuche es erneut."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Fehler bei der Berechtigungsanfrage"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Diese Aktion kann in der Sidebar nicht durchgeführt werden, bitte versuchen Sie die Aktion im Popup oder Popout erneut auszuführen."
   },
   "personalOwnershipSubmitError": {
     "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
@@ -1643,6 +1665,9 @@
     "message": "Bearbeitetes Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "Um eine Datei auszuwählen, öffnen Sie die Erweiterung in der Sidebar (falls möglich) oder öffnen Sie sie in einem neuem Fenster, indem Sie auf diesen Banner klicken."
+  },
   "sendFirefoxFileWarning": {
     "message": "Um eine Datei mit Firefox auszuwählen, öffnen Sie die Erweiterung in der Sidebar oder öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Es gab einen Fehler beim Speichern Ihrer Lösch- und Verfallsdaten."
+  },
+  "hideEmail": {
+    "message": "Meine E-Mail-Adresse vor den Empfängern ausblenden."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen ihre Send Einstellungen."
+  },
+  "passwordPrompt": {
+    "message": "Master-Passwort erneut abfragen"
+  },
+  "passwordConfirmation": {
+    "message": "Masterpasswort bestätigen"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Diese Aktion ist geschützt. Um fortzufahren, geben Sie bitte Ihr Master-Passwort erneut ein, um Ihre Identität zu bestätigen."
   }
 }

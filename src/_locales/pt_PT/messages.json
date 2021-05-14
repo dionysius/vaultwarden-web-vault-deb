@@ -3,8 +3,8 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Gestor de palavras-passe gratuito",
-    "description": "Extension name"
+    "message": "Bitwarden",
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Um gestor de palavras-passe seguro e gratuito para todos os seus dispositivos.",
@@ -596,6 +596,10 @@
     "message": "Claro",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Exportar cofre"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Introduza a sua chave de segurança na porta USB do seu computador. Se tiver um botão, toque no mesmo."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
   "loginUnavailable": {
     "message": "Início de sessão indisponível"
   },
@@ -837,11 +847,11 @@
     "message": "Verifique com Duo Security para a sua organização utilizando a aplicação Duo Mobile, SMS, chamada telefónica, ou chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utilize qualquer chave de segurança ativada por FIDO U2F para aceder à sua conta."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Chave de segurança FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se um formulário de início de sessão for detetado, realizar automaticamente um auto-preenchimento quando a página web carregar."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Esta é atualmente uma funcionalidade experimental. Utilize por sua conta e risco."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Os ícones de websites providenciam uma imagem reconhecível ao lado de cada item de credencial no seu cofre."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Titular do cartão"
@@ -1466,7 +1488,7 @@
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
   },
   "excludedDomainsInvalidDomain": {
-    "message": "$DOMAIN$ is not a valid domain",
+    "message": "$DOMAIN$ não é um domínio válido",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1487,10 +1509,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Texto"
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Ficheiro"
   },
   "allSends": {
     "message": "All Sends",
@@ -1509,17 +1531,17 @@
     "message": "Password protected"
   },
   "copySendLink": {
-    "message": "Copy Send link",
+    "message": "Copiar Send link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "Remove Password"
+    "message": "Remover palavra-passe"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Eliminar"
   },
   "removedPassword": {
-    "message": "Removed Password"
+    "message": "Palavra-passe removida"
   },
   "deletedSend": {
     "message": "Deleted Send",
@@ -1643,6 +1665,9 @@
     "message": "Edited Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "There was an error saving your deletion and expiration dates."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

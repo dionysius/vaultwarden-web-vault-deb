@@ -3,8 +3,8 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Gestionnaire de mots de passe gratuit",
-    "description": "Extension name"
+    "message": "Bitwarden",
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Un gestionnaire de mots de passe sécurisé et gratuit pour tous vos appareils.",
@@ -596,6 +596,10 @@
     "message": "Clair",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Exporter le coffre"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Insérez votre clé de sécurité dans le port USB de votre ordinateur. S'il dispose d'un bouton, appuyez dessus."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
   "loginUnavailable": {
     "message": "Connexion impossible"
   },
@@ -837,11 +847,11 @@
     "message": "Sécurisez votre organisation avec Duo Security à l'aide de l'application Duo Mobile, l'envoi d'un SMS, un appel vocal ou une clé de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utiliser n'importe quelle clé de sécurité FIDO U2F active pour accéder à votre compte."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Clé de sécurité FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Si un formulaire de connexion est détecté, remplir automatiquement les champs au chargement de la page web."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Ceci est actuellement une fonctionnalité expérimentale. À utiliser avec prudence."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Nom du titulaire de la carte"
@@ -1448,10 +1470,10 @@
     "message": "Sans la permission de communiquer avec l'application de bureau Bitwarden, nous ne pouvons pas activer le déverrouillage biométrique dans l'extension navigateur. Veuillez réessayer."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Erreur de demande de permission"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Cette action ne peut pas être effectuée dans la barre latérale, veuillez réessayer l'action dans la popup ou la nouvelle fenêtre."
   },
   "personalOwnershipSubmitError": {
     "message": "En raison d'une politique d'entreprise, il vous est interdit d'enregistrer des éléments dans votre coffre personnel. Sélectionnez une organisation dans l'option Propriété et choisissez parmi les collections disponibles."
@@ -1643,6 +1665,9 @@
     "message": "Send modifié",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Afin de choisir un fichier en utilisant Firefox, ouvrez l'extension dans la barre latérale ou ouvrez une nouvelle fenêtre en cliquant sur cette bannière."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Une erreur s'est produite lors de l'enregistrement de vos dates de suppression et d'expiration."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

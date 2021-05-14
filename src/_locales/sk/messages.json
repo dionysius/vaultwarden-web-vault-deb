@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - Bezplatný správca hesiel",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "bitwarden je bezpečný a bezplatný správca hesiel pre všetky vaše zariadenia.",
@@ -596,6 +596,10 @@
     "message": "Svetlý",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Tmavá –⁠ Solarized",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Export trezoru"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Vložte váš bezpečnostný kľúč do USB portu počítača. Ak má tlačidlo, stlačte ho."
   },
+  "webAuthnNewTab": {
+    "message": "V overovaní cez WebAuthn 2FA pokračujte na ďalšej záložke."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Overiť cez WebAuth"
+  },
   "loginUnavailable": {
     "message": "Prihlasovací údaj nedostupný"
   },
@@ -837,11 +847,11 @@
     "message": "Overiť s Duo Security vašej organizácie použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Použiť akýkoľvek FIDO U2F bezpečnostný kľúč pre prístup k vášmu účtu."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuth"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F bezpečnostný kľúč"
+  "webAuthnDesc": {
+    "message": "Použiť akýkoľvek WebAuth bezpečnostný kľúč pre prístup k vášmu účtu."
   },
   "emailTitle": {
     "message": "Email"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Ak je prihlasovací formulár detegovaný, automaticky vykonať vypĺňanie pri načítaní stránky."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automaticky skopírovať TOTP kód po načítaní stránky"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "Toto je zatiaľ experimentálna funkcia. Použite na vlastné riziko."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Ikony stránok poskytujú rozoznateľný obrázok vedľa každého prihlasovacieho údaju vo webovom trezore."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "Meno vlastníka karty"
@@ -1448,10 +1470,10 @@
     "message": "Bez oprávnenia komunikovať s aplikáciou Bitwarden Desktop nemôžeme poskytnúť biometriu v rozšírení prehliadača. Skúste to znova."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Chyba žiadosti o povolenie"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Túto akciu nie je možné vykonať na bočnom paneli. Skúste to znova vo vyskakovacom alebo samostatnom okne."
   },
   "personalOwnershipSubmitError": {
     "message": "Z dôvodu podnikovej politiky máte obmedzené ukladanie položiek do osobného trezora. Zmeňte možnosť vlastníctvo na organizáciu a vyberte si z dostupných zbierok."
@@ -1643,6 +1665,9 @@
     "message": "Send upravený",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Ak chcete zvoliť súbor pomocou prehliadača Firefox, otvorte príponu v bočnom paneli alebo kliknite do tohto okna kliknutím na tento banner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Pri ukladaní dátumov odstránenia a vypršania platnosti sa vyskytla chyba."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

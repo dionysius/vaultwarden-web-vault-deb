@@ -3,8 +3,8 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Bezmaksas Paroļu Pārvaldnieks",
-    "description": "Extension name"
+    "message": "Bitwarden",
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Drošs un bezmaksas paroļu pārvaldnieks priekš visām jūsu ierīcēm.",
@@ -101,7 +101,7 @@
     "message": "Nav pierakstīšanās vienumu, kurus automātiski ievadīt pašreizējā pārlūka cilnē."
   },
   "addLogin": {
-    "message": "Pievienot piekļuves datus"
+    "message": "Pievienot pierakstīšanās vienumu"
   },
   "addItem": {
     "message": "Pievienot vienumu"
@@ -194,7 +194,7 @@
     "message": "Bitwarden tīmekļa glabātava"
   },
   "importItems": {
-    "message": "Importēt vienumus"
+    "message": "Ievietot vienumus"
   },
   "select": {
     "message": "Atlasīt"
@@ -258,7 +258,7 @@
     "message": "Paroles vārdkopa"
   },
   "favorite": {
-    "message": "Favorīts"
+    "message": "Izlasē"
   },
   "notes": {
     "message": "Piezīmes"
@@ -596,6 +596,10 @@
     "message": "Gaišs",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Tumšs Solarized",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Izdot glabātavas saturu"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Ievieto savu drošības atslēgu datora USB ligzdā! Ja tai ir poga, pieskaries tai!"
   },
+  "webAuthnNewTab": {
+    "message": "Turpināt WebAuthn 2FA apstiprināšanu jaunā cilnē."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autentificēt WebAuthn"
+  },
   "loginUnavailable": {
     "message": "Pierakstīšanās nav pieejama"
   },
@@ -837,11 +847,11 @@
     "message": "Apstiprini ar Duo Security savā apvienībā, izmantojot Duo Mobile lietotni, īsziņu, tālruņa zvanu vai U2F drošības atslēgu!",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Izmanto jebkuru FIDO U2F atbalstošu drošības atslēgu, lai piekļūtu kontam!"
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F drošības atslēga"
+  "webAuthnDesc": {
+    "message": "Izmantot jebkuru WebAuthn atbalstošu drošības atslēgu, lai piekļūtu kontam."
   },
   "emailTitle": {
     "message": "E-pasts"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Ja tiek noteikta pieslēgšanās veidne, tā tiks aizpildīta lapas ielādes brīdī."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automātiska TOTP ievietošana starpliktuvē pēc lapas ielādes"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "Ja ir iespējota automātiskā aizpilde lapas ielādes brīdī, TOTP apstiprināšanas kods tiks automātiski ievietots starpliktuvē pēc tīmekļa lapas ielādes. Iestatījums \"Atspējot automātisku TOTP ievietošanu starpliktuvē\" ir pārāks par šo."
   },
   "experimentalFeature": {
     "message": "Šī iespēja pašlaik ir izmēģināšanā. Izmantošanas atbildība ir katra paša pārziņā. "
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Tīmekļa vietņu ikonas nodrošina atpazīstamu attēlu pie katra glabātavas pieteikšanās vienuma."
+  },
+  "disableBadgeCounter": {
+    "message": "Atspējot skaitītāja nozīmīti"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Skaitītāja nozīmīte norāda, cik pierakstīšanās vienumu pašreizējai lapai ir atrodami glabātavā."
   },
   "cardholderName": {
     "message": "Kartes īpašnieka vārds"
@@ -1448,10 +1470,10 @@
     "message": "Bez atļaujas sazināties ar Bitwarden darbvirsmas lietotni mēs nevaram nodrošināt biometriju pārlūka paplašinājumā. Lūgums mēģināt vēlreiz."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Atļaujas pieprasījuma kļūda"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Šī darbība nav izpildāma sānjoslā, tāpēc lūgums mēģināt to veikt uznirstošajā vai izlecošajā logā."
   },
   "personalOwnershipSubmitError": {
     "message": "Uzņēmuma nosacījumi liedz saglabāt vienumus privātajā glabātavā. Norādi piederību apvienībai un izvēlies kādu no pieejamajiem krājumiem."
@@ -1643,6 +1665,9 @@
     "message": "\"Send\" labots",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "Lai izvēlētos datni, paplašinājums ir jāatver sānjoslā (ja iespējams) vai atsevišķā logā, klikšķinot uz šī paziņojuma."
+  },
   "sendFirefoxFileWarning": {
     "message": "Lai izvēlētos datni, ja tiek izmantots Firefox, paplašinājums ir jāatver sānjoslā vai atsevišķā logā, klikšķinot uz šī paziņojuma."
   },
@@ -1677,6 +1702,21 @@
     "message": "Ir jānorāda dzēšanas datums un laiks."
   },
   "dateParsingError": {
-    "message": "Atgadījās kļūda, saglabājot dzēšanas un derīguma beigu datumus."
+    "message": "Atgadījusies kļūda dzēšanas un derīguma beigu datumu saglabāšanā."
+  },
+  "hideEmail": {
+    "message": "Slēpt e-pasta adresi no saņēmējiem."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Viens vai vairāki apvienības nosacījumi ietekmē \"Send\" iestatījumus."
+  },
+  "passwordPrompt": {
+    "message": "Galvenās paroles pārvaicāšana"
+  },
+  "passwordConfirmation": {
+    "message": "Galvenās paroles apstiprināšana"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Šī darbība ir aizsargāta. Lai turpinātu, ir jāievada galvenā parole, lai apstiprinātu identitāti."
   }
 }

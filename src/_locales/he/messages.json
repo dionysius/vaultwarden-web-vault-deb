@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - מנהל סיסמאות חינמי",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "מנהל סיסמאות חינמי ומאובטח עבור כל המכשירים שלך.",
@@ -596,6 +596,10 @@
     "message": "בהיר",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "יצוא כספת"
   },
@@ -613,7 +617,7 @@
     "message": "הקובץ מכיל את פרטי הכספת שלך בפורמט לא מוצפן. מומלץ להעביר את הקובץ רק בדרכים מוצפנות, ומאוד לא מומלץ לשמור או לשלוח את הקובץ הזה בדרכים לא מוצפנות (כדוגמת סתם אימייל). מחק את הקובץ מיד לאחר שסיימת את השימוש בו."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "ייצוא זה מצפין את המידע שלך באמצעות שימוש במפתח ההצפנה של חשבונך. אם אי-פעם תבצע החלפה (רוטציה) למפתח ההצפנה של חשבונך, עליך לבצע ייצוא זה שוב אחרת לא תוכל לפענח קובץ ייצוא זה."
   },
   "encExportAccountWarningDesc": {
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "הכנס את מפתח האבטחה שלך אל כניסת ה-USB במחשבך. אם יש לו כפתור, לחץ עליו."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
   "loginUnavailable": {
     "message": "פרטי כניסה לא זמינים"
   },
@@ -837,11 +847,11 @@
     "message": "בצע אימות מול Duo Security עבור הארגון שלך באמצעות אפליקצית Duo לפלאפון, SMS, שיחת טלפון, או מפתח אבטחה U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "השתמש בכל מפתח אבטחה התומך בFIDO U2F עבור גישה לחשבונך."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "מפתח אבטחה FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "אימייל"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "אם זוהה טופס כניסה, בצע אוטומטית מילוי-אוטומטי כשהעמוד נטען."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "זוהי אופציה נסיונית. השימוש באופציה זו על אחריותך."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "יכולת הצג אייקונים-של-האתר מאפשרת הצגה של תמונה או אייקון מוכר ליד פרטי הכניסה שבכספת שלך."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "שם בעל הכרטיס"
@@ -1643,6 +1665,9 @@
     "message": "Edited Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "There was an error saving your deletion and expiration dates."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

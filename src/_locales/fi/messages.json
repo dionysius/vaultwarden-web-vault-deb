@@ -3,8 +3,8 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden – Ilmainen salasanojen hallinta",
-    "description": "Extension name"
+    "message": "Bitwarden",
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Turvallinen ja ilmainen salasanojen hallinta kaikille laitteillesi.",
@@ -596,6 +596,10 @@
     "message": "Vaalea",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized, tumma",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Vie holvi"
   },
@@ -682,7 +686,7 @@
     "message": "Valitse tiedosto."
   },
   "maxFileSize": {
-    "message": "Tiedoston enimmäiskoko on 100 Mt."
+    "message": "Tiedoston enimmäiskoko on 500 Mt."
   },
   "featureUnavailable": {
     "message": "Toiminto ei ole käytettävissä"
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Kytke todennuslaitteesi tietokoneen USB-porttiin. Jos laitteessa on painike, paina sitä."
   },
+  "webAuthnNewTab": {
+    "message": "Jatka kaksivaiheisen kirjautumisen (2FA) WebAuthn-todennusta uudessa välilehdessä."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Todenna WebAuthn"
+  },
   "loginUnavailable": {
     "message": "Kirjautuminen ei ole käytettävissä"
   },
@@ -837,11 +847,11 @@
     "message": "Vahvista organisaatiollesi Duo Securityn avulla käyttäen Duo Mobile ‑sovellusta, tekstiviestiä, puhelua tai U2F-todennuslaitetta.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Käytä tilisi avaukseen mitä tahansa FIDO U2F ‑yhteensopivaa todennuslaitetta."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F ‑todennuslaite"
+  "webAuthnDesc": {
+    "message": "Käytä mitä tahansa WebAuthn‑yhteensopivaa todennuslaitetta päästäksesi käsiksi tiliisi."
   },
   "emailTitle": {
     "message": "Sähköposti"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Jos sivulla havaitaan kirjautumislomake, täytetään kirjautumistiedot automaattisesti sivua ladattaessa."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Kopioi TOTP-todennuskoodit automaattisesti sivun latauduttua"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "Jos \"Täytä automaattisesti sivun latautuessa\" on käytössä, kopioidaan TOTP-todennuskoodi automaattisesti leikepöydälle sivun latauduttua. \"Älä kopioi TOTP-todennuskoodeja automaattisesti\" ohittaa tämän."
   },
   "experimentalFeature": {
     "message": "Tämä on vielä kokeellinen toiminto. Käytä omalla vastuullasi."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Kirjautumistietojen vieressä näytettävät sivustojen kuvakkeet helpottavat kohteiden tunnistusta."
+  },
+  "disableBadgeCounter": {
+    "message": "Älä näytä laskuria kuvakkeessa"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Kuvakkeen laskuri näyttää nykyiselle sivulle sopivien kirjautumistietojen määrän holvissasi."
   },
   "cardholderName": {
     "message": "Kortinhaltijan nimi"
@@ -1448,10 +1470,10 @@
     "message": "Ilman oikeutta kommunikointiin Bitwardenin työpöytäseovleluksen kanssa ei biometriaa tueta selainlaajennuksessa. Yritä uudelleen."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Käyttöoikeuspyynnön virhe"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Toimintoa ei voi suorittaa sivupalkissa, yritä toimintoa uudelleen ponnahdusvalikossa tai ponnahdusikkunassa."
   },
   "personalOwnershipSubmitError": {
     "message": "Yrityksen asettaman käytännön johdosta kohteiden tallennus omaan holviisi ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
@@ -1643,6 +1665,9 @@
     "message": "Muokattiin Sendiä",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "Jotta voit valita tiedoston, avaa laajennus sivupalkkiin (jos mahdollista) tai erilliseen ikkunaan klikkaamalla tätä banneria."
+  },
   "sendFirefoxFileWarning": {
     "message": "Jotta voit valita tiedoston käyttäen Firefoxia, avaa laajennus sivupalkkiin tai erilliseen ikkunaan klikkaamalla tätä banneria."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "Tapahtui virhe tallennettaessa poisto- ja erääntymispäiviä."
+  },
+  "hideEmail": {
+    "message": "Piilota sähköpostiosoitteeni vastaanottajilta."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa Send-asetuksiisi."
+  },
+  "passwordPrompt": {
+    "message": "Pääsalasanan uudelleenkysely"
+  },
+  "passwordConfirmation": {
+    "message": "Pääsalasanan vahvistus"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Toiminto on suojattu. Jatkaaksesi, syötä pääsalasanasi uudelleen vahvistaaksesi henkilöllisyytesi."
   }
 }

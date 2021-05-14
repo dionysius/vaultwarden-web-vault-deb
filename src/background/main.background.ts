@@ -1,4 +1,5 @@
 import { CipherType } from 'jslib/enums';
+import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
 
 import {
     ApiService,
@@ -23,6 +24,7 @@ import {
 import { ConsoleLogService } from 'jslib/services/consoleLog.service';
 import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
+import { FileUploadService } from 'jslib/services/fileUpload.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { PolicyService } from 'jslib/services/policy.service';
 import { SearchService } from 'jslib/services/search.service';
@@ -56,13 +58,14 @@ import {
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 import { EventService as EventServiceAbstraction } from 'jslib/abstractions/event.service';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
+import { FileUploadService as FileUploadServiceAbstraction } from 'jslib/abstractions/fileUpload.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
 import { PolicyService as PolicyServiceAbstraction } from 'jslib/abstractions/policy.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
 import { SendService as SendServiceAbstraction } from 'jslib/abstractions/send.service';
 import { SystemService as SystemServiceAbstraction } from 'jslib/abstractions/system.service';
+import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
-import { Analytics } from 'jslib/misc';
 import { Utils } from 'jslib/misc/utils';
 
 import { BrowserApi } from '../browser/browserApi';
@@ -84,8 +87,6 @@ import BrowserPlatformUtilsService from '../services/browserPlatformUtils.servic
 import BrowserStorageService from '../services/browserStorage.service';
 import I18nService from '../services/i18n.service';
 import VaultTimeoutService from '../services/vaultTimeout.service';
-
-import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
 export default class MainBackground {
     messagingService: MessagingServiceAbstraction;
@@ -121,9 +122,9 @@ export default class MainBackground {
     systemService: SystemServiceAbstraction;
     eventService: EventServiceAbstraction;
     policyService: PolicyServiceAbstraction;
-    analytics: Analytics;
     popupUtilsService: PopupUtilsService;
     sendService: SendServiceAbstraction;
+    fileUploadService: FileUploadServiceAbstraction;
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
@@ -179,19 +180,17 @@ export default class MainBackground {
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
             (expired: boolean) => this.logout(expired));
         this.userService = new UserService(this.tokenService, this.storageService);
-        this.authService = new AuthService(this.cryptoService, this.apiService, this.userService,
-            this.tokenService, this.appIdService, this.i18nService, this.platformUtilsService,
-            this.messagingService, this.vaultTimeoutService, this.consoleLogService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
+        this.fileUploadService = new FileUploadService(this.consoleLogService, this.apiService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.storageService, this.i18nService, () => this.searchService);
+            this.apiService, this.fileUploadService, this.storageService, this.i18nService, () => this.searchService);
         this.folderService = new FolderService(this.cryptoService, this.userService, this.apiService,
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18nService);
-        this.searchService = new SearchService(this.cipherService, this.consoleLogService);
-        this.sendService = new SendService(this.cryptoService, this.userService, this.apiService, this.storageService,
-            this.i18nService, this.cryptoFunctionService);
+        this.searchService = new SearchService(this.cipherService, this.consoleLogService, this.i18nService);
+        this.sendService = new SendService(this.cryptoService, this.userService, this.apiService, this.fileUploadService,
+            this.storageService, this.i18nService, this.cryptoFunctionService);
         this.stateService = new StateService();
         this.policyService = new PolicyService(this.userService, this.storageService);
         this.vaultTimeoutService = new VaultTimeoutService(this.cipherService, this.folderService,
@@ -221,13 +220,12 @@ export default class MainBackground {
             this.eventService);
         this.containerService = new ContainerService(this.cryptoService);
         this.auditService = new AuditService(this.cryptoFunctionService, this.apiService);
-        this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
+        this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService,
+            this.cryptoService);
         this.notificationsService = new NotificationsService(this.userService, this.syncService, this.appIdService,
             this.apiService, this.vaultTimeoutService, () => this.logout(true), this.consoleLogService);
         this.environmentService = new EnvironmentService(this.apiService, this.storageService,
             this.notificationsService);
-        this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
-            this.storageService, this.appIdService);
         this.popupUtilsService = new PopupUtilsService(this.platformUtilsService);
         this.systemService = new SystemService(this.storageService, this.vaultTimeoutService,
             this.messagingService, this.platformUtilsService, () => {
@@ -245,28 +243,39 @@ export default class MainBackground {
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.analytics, this.notificationsService, this.systemService, this.vaultTimeoutService,
-            this.environmentService, this.policyService, this.userService);
+            this.notificationsService, this.systemService, this.vaultTimeoutService,
+            this.environmentService, this.policyService, this.userService, this.messagingService);
         this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.cryptoFunctionService,
-            this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService, this.appIdService);
+            this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService, this.appIdService,
+            this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
-            this.platformUtilsService, this.analytics, this.vaultTimeoutService);
+            this.platformUtilsService, this.vaultTimeoutService);
 
         this.tabsBackground = new TabsBackground(this);
-        this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
-            this.passwordGenerationService, this.analytics, this.platformUtilsService, this.vaultTimeoutService,
-            this.eventService, this.totpService);
+        this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService, this.passwordGenerationService,
+            this.platformUtilsService, this.vaultTimeoutService, this.eventService, this.totpService);
         this.idleBackground = new IdleBackground(this.vaultTimeoutService, this.storageService,
             this.notificationsService);
         this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService,
             this.vaultTimeoutService);
         this.windowsBackground = new WindowsBackground(this);
+
+        const that = this;
+        this.authService = new AuthService(this.cryptoService, this.apiService, this.userService,
+            this.tokenService, this.appIdService, this.i18nService, this.platformUtilsService,
+            new class extends MessagingServiceAbstraction {
+                // AuthService should send the messages to the background not popup.
+                send = (subscriber: string, arg: any = {}) => {
+                    const message = Object.assign({}, { command: subscriber }, arg);
+                    that.runtimeBackground.processMessage(message, that, null);
+                }
+            }(), this.vaultTimeoutService, this.consoleLogService);
     }
 
     async bootstrap() {
-        this.analytics.ga('send', 'pageview', '/background.html');
         this.containerService.attachToWindow(window);
 
+        (this.authService as AuthService).init();
         await (this.vaultTimeoutService as VaultTimeoutService).init(true);
         await (this.i18nService as I18nService).init();
         await (this.eventService as EventService).init(true);
@@ -279,7 +288,7 @@ export default class MainBackground {
         await this.webRequestBackground.init();
         await this.windowsBackground.init();
 
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             setTimeout(async () => {
                 await this.environmentService.setUrlsFromStorage();
                 await this.setIcon();
@@ -532,19 +541,24 @@ export default class MainBackground {
                     });
                 }
 
+                const disableBadgeCounter = await this.storageService.get<boolean>(ConstantsService.disableBadgeCounterKey);
                 let theText = '';
-                if (ciphers.length > 0 && ciphers.length <= 9) {
-                    theText = ciphers.length.toString();
-                } else if (ciphers.length > 0) {
-                    theText = '9+';
-                } else {
-                    if (contextMenuEnabled) {
-                        await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
+
+                if (!disableBadgeCounter) {
+                    if (ciphers.length > 0 && ciphers.length <= 9) {
+                        theText = ciphers.length.toString();
+                    } else if (ciphers.length > 0) {
+                        theText = '9+';
                     }
                 }
 
-                this.browserActionSetBadgeText(theText, tabId);
+                if (contextMenuEnabled && ciphers.length === 0) {
+                    await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
+                }
+
                 this.sidebarActionSetBadgeText(theText, tabId);
+                this.browserActionSetBadgeText(theText, tabId);
+
                 return;
             } catch { }
         }
@@ -570,7 +584,7 @@ export default class MainBackground {
     }
 
     private async loadLoginContextMenuOptions(cipher: any) {
-        if (cipher == null || cipher.type !== CipherType.Login) {
+        if (cipher == null || cipher.type !== CipherType.Login || cipher.reprompt !== CipherRepromptType.None) {
             return;
         }
 
@@ -703,7 +717,7 @@ export default class MainBackground {
     // Browser API Helpers
 
     private contextMenusRemoveAll() {
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             chrome.contextMenus.removeAll(() => {
                 resolve();
                 if (chrome.runtime.lastError) {
@@ -714,7 +728,7 @@ export default class MainBackground {
     }
 
     private contextMenusCreate(options: any) {
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             chrome.contextMenus.create(options, () => {
                 resolve();
                 if (chrome.runtime.lastError) {
@@ -743,7 +757,7 @@ export default class MainBackground {
             // which doesn't resolve within a reasonable time.
             theAction.setIcon(options);
         } else {
-            return new Promise(resolve => {
+            return new Promise<void>(resolve => {
                 theAction.setIcon(options, () => resolve());
             });
         }

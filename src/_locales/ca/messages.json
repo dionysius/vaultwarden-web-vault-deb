@@ -3,8 +3,8 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Administrador de contrasenyes gratuït",
-    "description": "Extension name"
+    "message": "Bitwarden",
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "Administrador de contrasenyes segur i gratuït per a tots els vostres dispositius.",
@@ -596,6 +596,10 @@
     "message": "Clar",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solaritzat fosc",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "Exporta caixa forta"
   },
@@ -682,7 +686,7 @@
     "message": "Seleccioneu un fitxer."
   },
   "maxFileSize": {
-    "message": "La mida màxima del fitxer és de 100 MB."
+    "message": "La mida màxima del fitxer és de 500 MB."
   },
   "featureUnavailable": {
     "message": "Característica no disponible"
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "Introduïu la vostra clau de seguretat al port USB de l'ordinador. Si té un botó, premeu-lo."
   },
+  "webAuthnNewTab": {
+    "message": "Continueu la verificació de WebAuthn 2FA a la nova pestanya."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autenticar WebAutn"
+  },
   "loginUnavailable": {
     "message": "Inici de sessió no disponible"
   },
@@ -837,11 +847,11 @@
     "message": "Verifiqueu amb Duo Security per a la vostra organització mitjançant l'aplicació Duo Mobile, SMS, trucada telefònica o clau de seguretat U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utilitzeu qualsevol clau de seguretat habilitada per FIDO U2F per accedir al vostre compte."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Clau de seguretat FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Utilitzeu qualsevol clau de seguretat habilitada per WebAuthn per accedir al vostre compte."
   },
   "emailTitle": {
     "message": "Correu electrònic"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Si es detecta un formulari d'inici de sessió, es realitza automàticament un emplenament automàtic quan es carrega la pàgina web."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Còpia automàtica TOTP després de la càrrega de la pàgina"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "Si l'emplenament automàtic de càrrega de pàgina està habilitat, el codi de verificació TOTP es copia automàticament al porta-retalls després de carregar la pàgina web. Açò s'anul·la en deshabilitar la còpia automàtica TOTP."
   },
   "experimentalFeature": {
     "message": "Actualment és una característica experimental. Utilitzeu sota el vostre propi risc."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "Les icones del lloc web proporcionen una imatge que es pot reconèixer al costat de cada element d'inici de sessió a la vostra caixa forta."
+  },
+  "disableBadgeCounter": {
+    "message": "Deshabilita el comptador d'insígnies"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "El comptador d’insígnies indica quants inicis de sessió teniu de la pàgina actual en la vostra caixa forta."
   },
   "cardholderName": {
     "message": "Nom del titular de la targeta"
@@ -1448,10 +1470,10 @@
     "message": "Sense permís per comunicar-nos amb l’aplicació d’escriptori Bitwarden, no podem proporcionar dades biomètriques a l’extensió del navegador. Torneu-ho a provar."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Error de sol·licitud de permís"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Aquesta acció no es pot fer a la barra lateral, torneu-ho a provar a la finestra emergent o l'emergent."
   },
   "personalOwnershipSubmitError": {
     "message": "A causa d'una política empresarial, no podeu guardar elements a la vostra caixa forta personal. Canvieu l'opció Propietat en organització i trieu entre les col·leccions disponibles."
@@ -1643,6 +1665,9 @@
     "message": "Send editat",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "Per triar un fitxer, obriu l'extensió a la barra lateral (si és possible) o eixiu a una finestra nova fent clic a aquest bàner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Per triar un fitxer mitjançant Firefox, obriu l'extensió a la barra lateral o bé apareixerà a una finestra nova fent clic a aquest bàner."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "S'ha produït un error en guardar les dates de supressió i caducitat."
+  },
+  "hideEmail": {
+    "message": "Amagueu la meua adreça de correu electrònic als destinataris."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Una o més polítiques d'organització afecten les vostres opcions del Send."
+  },
+  "passwordPrompt": {
+    "message": "Sol·licitud de la contrasenya mestra"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmació de la contrasenya mestra"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Aquesta acció està protegida. Per continuar, torneu a introduir la contrasenya principal per verificar la vostra identitat."
   }
 }

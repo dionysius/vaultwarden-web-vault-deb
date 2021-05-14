@@ -176,6 +176,29 @@ p.lead {
     }
 }
 
+#web-authn-frame {
+    background: url('../images/loading.svg') 0 0 no-repeat;
+    width: 100%;
+    height: 310px;
+    margin-bottom: -10px;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+body.linux-webauthn {
+    width: 485px !important;
+    #web-authn-frame {
+        iframe {
+            width: 375px;
+            margin: 0 55px;
+        }
+    }
+}
+
 app-root > #loading {
     display: flex;
     text-align: center;
@@ -323,5 +346,13 @@ input[type="password"]::-ms-reveal {
         > * {
             flex: 1;
         }
+    }
+}
+
+// Workaround for rendering error in Firefox sidebar
+// option elements will not render background-color correctly if identical to parent background-color
+select option {
+    @include themify($themes) {
+        background-color: darken(themed('inputBackgroundColor'), +1);
     }
 }

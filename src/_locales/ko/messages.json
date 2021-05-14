@@ -4,7 +4,7 @@
   },
   "extName": {
     "message": "Bitwarden - 무료 비밀번호 관리자",
-    "description": "Extension name"
+    "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
     "message": "당신의 모든 기기에서 사용할 수 있는, 안전한 무료 비밀번호 관리자입니다.",
@@ -596,6 +596,10 @@
     "message": "밝은 테마",
     "description": "Light color"
   },
+  "solarizedDark": {
+    "message": "Solarized Dark",
+    "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
+  },
   "exportVault": {
     "message": "보관함 내보내기"
   },
@@ -798,6 +802,12 @@
   "insertU2f": {
     "message": "보안 키를 컴퓨터의 USB 포트에 삽입하고 버튼이 있는 경우 누르세요."
   },
+  "webAuthnNewTab": {
+    "message": "Continue the WebAuthn 2FA verification in the new tab."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
   "loginUnavailable": {
     "message": "로그인 불가능"
   },
@@ -837,11 +847,11 @@
     "message": "Duo Mobile 앱, SMS, 전화 통화를 사용한 조직용 Duo Security 또는 U2F 보안 키를 사용하여 인증하세요.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "FIDO U2F가 활성화된 보안 키를 사용하여 계정에 접근하세요."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F 보안 키"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "이메일"
@@ -887,6 +897,12 @@
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "로그인 양식을 감지하면 웹 페이지 로드 시 자동 완성을 자동으로 수행합니다."
+  },
+  "enableAutoTotpCopyOnAutoFill": {
+    "message": "Automatic TOTP Copy after Page Load"
+  },
+  "enableAutoTotpCopyOnAutoFillDesc": {
+    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
   },
   "experimentalFeature": {
     "message": "현재 실험 중인 기능입니다. 위험을 감수하여 사용하세요."
@@ -944,6 +960,12 @@
   },
   "disableFaviconDesc": {
     "message": "웹 사이트 아이콘을 사용하면 보관함 각 항목 옆에 이미지를 보여줍니다."
+  },
+  "disableBadgeCounter": {
+    "message": "Disable Badge Counter"
+  },
+  "disableBadgeCounterDesc": {
+    "message": "Badge counter indicates how many logins you have for the current page in your vault."
   },
   "cardholderName": {
     "message": "카드 소유자 이름"
@@ -1448,10 +1470,10 @@
     "message": "Bitwarden 데스크톱 앱과 통신할 권한이 부여되지 않은 상태에서는 브라우저 확장 프로그램에서 생체 인식을 사용할 수 없습니다. 다시 시도해 주세요."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "권한 요청 오류"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "사이드바에서는 이 동작을 수행할 수 없습니다. 팝업 혹은 새 창으로 열고 다시 시도해 주세요."
   },
   "personalOwnershipSubmitError": {
     "message": "엔터프라이즈 정책으로 인해 개인 보관함에 항목을 저장할 수 없습니다. 조직에서 소유권 설정을 변경한 다음, 사용 가능한 컬렉션 중에서 선택해주세요."
@@ -1526,7 +1548,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "링크 보내기",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
@@ -1643,6 +1665,9 @@
     "message": "Send 수정함",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendLinuxChromiumFileWarning": {
+    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+  },
   "sendFirefoxFileWarning": {
     "message": "Firefox에서 파일을 선택할 경우, 이 배너를 클릭하여 확장 프로그램을 사이드바 혹은 새 창에서 여세요."
   },
@@ -1678,5 +1703,20 @@
   },
   "dateParsingError": {
     "message": "삭제 날짜와 만료 날짜를 저장하는 도중 오류가 발생했습니다."
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

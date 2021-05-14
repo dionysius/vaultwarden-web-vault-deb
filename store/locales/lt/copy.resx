@@ -118,41 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – 免费密码管理器</value>
+    <value>Bitwarden – nemokamas slaptažodžių tvarkyklė</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>安全免费的跨平台密码管理器</value>
+    <value>Saugi ir nemokama slaptažodžių tvarkyklė visiems įrenginiams</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden 简单易用，可以简单安全地存储您所有的登录信息和密码，并能在多台设备之间保持同步。
+    <value>„Bitwarden“ yra paprasčiausias ir saugiausias būdas išsaugoti visus prisijungimus ir slaptažodžius, tuo pačiu patogu juos pasiekti iš visų jūsų įrenginių.
 
-盗号是个严重的问题。您访问的网站、使用的各类应用每天都在遭受攻击。每当发生安全漏洞，您的密码就会被盗取，如果您跨应用和网站使用相同的密码，黑客就可以轻松访问您的电子邮件、银行或者其他重要账户。
+Slaptažodžių vagystė yra rimta problema. Jūsų naudojamos svetainės ir programos yra atakuojamos kiekvieną dieną. Įvykus saugumo pažeidimų jūsų slaptažodžiai yra pavogiami. Kai pakartotinai naudojate tuos pačius slaptažodžius programose ir svetainėse, įsilaužėliai gali lengvai pasiekti jūsų el. pašto, banko ir kitas svarbias paskiras.
 
-安全专家建议您为每一个账户使用不同的随机密码。但是要如何管理这些密码呢？ Bitwarden 可以让您轻松的创建、保存并访问您的密码。
+Saugumo ekspertai rekomenduoja kiekvienai jūsų sukurtai paskyrai naudoti kitą, atsitiktinai sugeneruotą slaptažodį. Bet kaip valdyti visus tuos slaptažodžius? „Bitwarden“ leidžia jums lengvai kurti, saugoti ir pasiekti slaptažodžius.
 
-Bitwarden 将您的登录信息保存在加密的密码库中，可以在您的所有设备上同步。由于数据在发送出您的设备之前，就已经被完全加密，因此只有您可以访问你的数据。甚至，就算 Bitwarden 的团队成员有这个想法，也没办法读取您的数据。您的数据采用 AES-256 位、加盐的哈希以及 PBKDF2 SHA-256 加密。
+„Bitwarden“ visus jūsų prisijungimus saugo šifruotoje saugykloje, kuri pasiekiama visuose jūsų įrenginiuose. Kadangi duomenys visiškai užšifruoti dar neišėjus iš jūsų įrenginio, prieigą prie savo duomenų turite tik jūs. Net „Bitwarden“ komanda negali perskaityti jūsų duomenų, net jei mes to ir norėtume. Jūsų duomenys užklijuojami naudojant AES-256 bitų šifravimą, druskinta maišos funkcija ir PBKDF2 SHA-256.
 
-Bitwarden 是 100% 开源软件。Bitwarden 的源代码托管在 GitHub 上，每个人都可以自由地查看、审核和贡献 Bitwarden 代码库。</value>
+„Bitwarden“ yra 100% atvirojo kodo programinė įranga. „Bitwarden“ kodas yra „GitHub“ ir visi gali peržiūrėti, tikrinti ir prisidėti prie „Bitwarden“ kodo bazės.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>安全免费的跨平台密码管理器</value>
+    <value>Saugi ir nemokama slaptažodžių tvarkyklė visiems įrenginiams</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>从多台设备同步和访问密码库</value>
+    <value>Pasiekite savo saugyklą iš kelių įrenginių</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>在一个安全的密码库中管理您所有的登录信息和密码</value>
+    <value>Tvarkykite visus prisijungimus ir slaptažodžius iš saugios saugyklos</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>在您访问的任何网站中快速自动填充登录项目</value>
+    <value>Greitai automatiškai užpildykite prisijungimo duomenis bet kurioje jūsų lankomoje svetainėje</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>您也可以通过右击菜单快捷方便地访问密码库</value>
+    <value>Jūsų saugyklą taip pat galima patogiai pasiekti spustelėjus dešiniuoju pelės mygtuku</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>自动生成强大、随机和安全的密码</value>
+    <value>Automatiškai sugeneruokite stiprius, atsitiktinius ir saugius slaptažodžius</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>您的信息使用 AES-256 位加密进行安全管理</value>
+    <value>Jūsų informacija yra saugiai tvarkoma naudojant AES-256 bitų šifravimą</value>
   </data>
 </root>
