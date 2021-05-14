@@ -126,14 +126,14 @@ jobs:
 
       - name: Build sources for reviewers
         run: |
-          mkdir dist/Source
-          git clone $REPO_URL dist/Source
-          cd dist/Source
-          git checkout $GITHUB_SHA
-          git submodule update --init --recursive
+          mkdir dist\Source
+          call git clone %REPO_URL% dist\Source
+          cd dist\Source
+          call git checkout %GITHUB_SHA%
+          call git submodule update --init --recursive
           cd ../
-          rm -rf Source/.git/objects/pack/*
-          zip -r browser-source-$BUILD_NUMBER.zip Source/*
+          del /S/Q "Source\.git\objects\pack\*"
+          call 7z a browser-source-%BUILD_NUMBER%.zip "Source\*"
 
       - name: upload opera release asset
         uses: actions/upload-release-asset@v1
