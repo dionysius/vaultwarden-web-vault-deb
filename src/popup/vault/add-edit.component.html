@@ -268,7 +268,7 @@
                 </a>
             </div>
         </div>
-        <div class="box" *ngIf="cipher.type === cipherType.Login">
+        <div class="box" *ngIf="showAutoFillOnPageLoadOptions">
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="autofillOnPageLoad">{{'itemAutoFillOnPageLoad' | i18n}} </label>

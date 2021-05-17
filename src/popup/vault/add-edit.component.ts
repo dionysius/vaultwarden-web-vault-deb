@@ -24,6 +24,9 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
+import { StorageService } from 'jslib/abstractions';
+import { ConstantsService } from 'jslib/services';
+import { CipherType } from 'jslib/enums';
 
 @Component({
     selector: 'app-vault-add-edit',
@@ -33,6 +36,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     currentUris: string[];
     showAttachments = true;
     openAttachmentsInPopup: boolean;
+    showAutoFillOnPageLoadOptions: boolean;
 
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
@@ -41,7 +45,7 @@ export class AddEditComponent extends BaseAddEditComponent {
         messagingService: MessagingService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         eventService: EventService, policyService: PolicyService,
-        private popupUtilsService: PopupUtilsService) {
+        private popupUtilsService: PopupUtilsService, private storageService: StorageService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
             userService, collectionService, messagingService, eventService, policyService);
     }
@@ -106,6 +110,9 @@ export class AddEditComponent extends BaseAddEditComponent {
                 }
             }
         }, 200);
+
+        this.showAutoFillOnPageLoadOptions = this.cipher.type === CipherType.Login &&
+            await this.storageService.get<boolean>(ConstantsService.enableAutoFillOnPageLoadKey);
     }
 
     async submit(): Promise<boolean> {
