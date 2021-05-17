@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Set up cloc
         run: |
@@ -30,7 +30,7 @@ jobs:
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Get Package Version
         id: gen_vars
@@ -46,7 +46,7 @@ jobs:
     needs: setup
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Testing locales - extName length
         run: |
@@ -80,12 +80,12 @@ jobs:
       BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
         with:
-          node-version: '14.x'
+          node-version: '14'
 
       - name: Print environment
         run: |
@@ -102,31 +102,31 @@ jobs:
         run: gulp ci
 
       - name: Upload opera artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: dist-opera-${{ env.BUILD_NUMBER }}.zip
           path: dist/dist-opera-${{ env.BUILD_NUMBER }}.zip
 
       - name: Upload chrome artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: dist-chrome-${{ env.BUILD_NUMBER }}.zip
           path: dist/dist-chrome-${{ env.BUILD_NUMBER }}.zip
 
       - name: Upload firefox artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: dist-firefox-${{ env.BUILD_NUMBER }}.zip
           path: dist/dist-firefox-${{ env.BUILD_NUMBER }}.zip
 
       - name: Upload edge artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: dist-edge-${{ env.BUILD_NUMBER }}.zip
           path: dist/dist-edge-${{ env.BUILD_NUMBER }}.zip
 
       - name: Upload coverage artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: coverage-${{ env.BUILD_NUMBER }}.zip
           path: coverage/coverage-${{ env.BUILD_NUMBER }}.zip
