@@ -18,15 +18,16 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { UserService } from 'jslib/abstractions/user.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
+import { ConstantsService } from 'jslib/services/constants.service';
 
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
-import { StorageService } from 'jslib/abstractions';
-import { ConstantsService } from 'jslib/services';
-import { CipherType } from 'jslib/enums';
+
+import { CipherType } from 'jslib/enums/cipherType';
 
 @Component({
     selector: 'app-vault-add-edit',
@@ -110,7 +111,10 @@ export class AddEditComponent extends BaseAddEditComponent {
                 }
             }
         }, 200);
+    }
 
+    async load() {
+        await super.load();
         this.showAutoFillOnPageLoadOptions = this.cipher.type === CipherType.Login &&
             await this.storageService.get<boolean>(ConstantsService.enableAutoFillOnPageLoadKey);
     }
