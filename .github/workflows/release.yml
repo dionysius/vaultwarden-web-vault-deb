@@ -18,7 +18,7 @@ jobs:
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Get Package Version
         id: gen_vars
@@ -54,7 +54,7 @@ jobs:
 
       - name: Create Draft Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -69,7 +69,7 @@ jobs:
     needs: setup
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Testing locales - extName length
         run: |
@@ -103,12 +103,12 @@ jobs:
       BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
         with:
-          node-version: '14.x'
+          node-version: '14'
 
       - name: Print environment
         run: |
@@ -137,7 +137,7 @@ jobs:
           call 7z a browser-source-%BUILD_NUMBER%.zip "Source\*"
 
       - name: upload opera release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -147,7 +147,7 @@ jobs:
           asset_content_type: application
 
       - name: upload chrome release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -157,7 +157,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: upload firefox release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -167,7 +167,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: upload edge release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -177,7 +177,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: upload browser source zip release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -187,7 +187,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: upload coverage release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

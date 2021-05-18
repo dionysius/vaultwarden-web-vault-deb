@@ -7,7 +7,6 @@ import { UriMatchType } from 'jslib/enums/uriMatchType';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
@@ -24,7 +23,6 @@ export class OptionsComponent implements OnInit {
     enableAutoFillOnPageLoad = false;
     autoFillOnPageLoadDefault = false;
     autoFillOnPageLoadOptions: any[];
-    enableAutoTotpCopyOnAutoFill = false;
     disableAutoTotpCopy = false;
     disableContextMenuItem = false;
     disableAddLoginNotification = false;
@@ -81,8 +79,6 @@ export class OptionsComponent implements OnInit {
         this.autoFillOnPageLoadDefault = await this.storageService.get<boolean>(
             ConstantsService.autoFillOnPageLoadDefaultKey) ?? false;
 
-        this.enableAutoTotpCopyOnAutoFill = await this.totpService.isAutoCopyOnAutoFillEnabled();
-
         this.disableAddLoginNotification = await this.storageService.get<boolean>(
             ConstantsService.disableAddLoginNotificationKey);
 
@@ -131,10 +127,6 @@ export class OptionsComponent implements OnInit {
 
     async updateAutoFillOnPageLoad() {
         await this.storageService.save(ConstantsService.enableAutoFillOnPageLoadKey, this.enableAutoFillOnPageLoad);
-    }
-
-    async updateAutoTotpCopyOnAutoFill() {
-        await this.storageService.save(ConstantsService.enableAutoTotpCopyOnAutoFillKey, this.enableAutoTotpCopyOnAutoFill);
     }
 
     async updateAutoFillOnPageLoadDefault() {

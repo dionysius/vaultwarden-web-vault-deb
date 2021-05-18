@@ -211,8 +211,8 @@ export default class AutofillService implements AutofillServiceInterface {
                 url: tab.url,
             }, { frameId: pd.frameId });
 
-            if (options.cipher.type !== CipherType.Login || totpPromise || options.skipTotp ||
-                !options.cipher.login.totp || (!canAccessPremium && !options.cipher.organizationUseTotp)) {
+            if (options.cipher.type !== CipherType.Login || totpPromise || !options.cipher.login.totp ||
+                (!canAccessPremium && !options.cipher.organizationUseTotp)) {
                 return;
             }
 
@@ -263,13 +263,9 @@ export default class AutofillService implements AutofillServiceInterface {
             return;
         }
 
-        const copyTotpOnAutoFill = await this.totpService.isAutoCopyOnAutoFillEnabled();
-        const shouldCopyTotp = fromCommand || copyTotpOnAutoFill;
-
         const totpCode = await this.doAutoFill({
             cipher: cipher,
             pageDetails: pageDetails,
-            skipTotp: !shouldCopyTotp,
             skipLastUsed: !fromCommand,
             skipUsernameOnlyFill: !fromCommand,
             onlyEmptyFields: !fromCommand,
