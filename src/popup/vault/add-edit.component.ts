@@ -18,12 +18,16 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { UserService } from 'jslib/abstractions/user.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
+import { ConstantsService } from 'jslib/services/constants.service';
 
 import { LoginUriView } from 'jslib/models/view/loginUriView';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
+
+import { CipherType } from 'jslib/enums/cipherType';
 
 @Component({
     selector: 'app-vault-add-edit',
@@ -33,6 +37,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     currentUris: string[];
     showAttachments = true;
     openAttachmentsInPopup: boolean;
+    showAutoFillOnPageLoadOptions: boolean;
 
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
@@ -41,7 +46,7 @@ export class AddEditComponent extends BaseAddEditComponent {
         messagingService: MessagingService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         eventService: EventService, policyService: PolicyService,
-        private popupUtilsService: PopupUtilsService) {
+        private popupUtilsService: PopupUtilsService, private storageService: StorageService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
             userService, collectionService, messagingService, eventService, policyService);
     }
@@ -106,6 +111,12 @@ export class AddEditComponent extends BaseAddEditComponent {
                 }
             }
         }, 200);
+    }
+
+    async load() {
+        await super.load();
+        this.showAutoFillOnPageLoadOptions = this.cipher.type === CipherType.Login &&
+            await this.storageService.get<boolean>(ConstantsService.enableAutoFillOnPageLoadKey);
     }
 
     async submit(): Promise<boolean> {

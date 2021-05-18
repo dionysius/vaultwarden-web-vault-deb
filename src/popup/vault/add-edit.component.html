@@ -268,6 +268,16 @@
                 </a>
             </div>
         </div>
+        <div class="box" *ngIf="showAutoFillOnPageLoadOptions">
+            <div class="box-content">
+                <div class="box-content-row" appBoxRow>
+                    <label for="autofillOnPageLoad">{{'itemAutoFillOnPageLoad' | i18n}} </label>
+                    <select id="autofillOnPageLoad" name="AutofillOnPageLoad" [(ngModel)]="cipher.login.autofillOnPageLoad">
+                        <option *ngFor="let o of autofillOnPageLoadOptions" [ngValue]="o.value">{{o.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="box">
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>

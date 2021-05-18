@@ -901,6 +901,24 @@
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
   },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill On Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill On Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
+  },
   "commandOpenPopup": {
     "message": "Open vault popup"
   },
