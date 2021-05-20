@@ -34,4 +34,6 @@ export class CiphersListComponent {
     viewCipher(c: CipherView) {
         this.onView.emit(c);
     }
+
+    async resetPaging() { }
 }

@@ -1,4 +1,5 @@
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling'; 
 import { ToasterModule } from 'angular2-toaster';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
@@ -172,6 +173,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ToasterModule.forRoot(),
         InfiniteScrollModule,
         DragDropModule,
+        ScrollingModule,
     ],
     declarations: [
         A11yTitleDirective,
