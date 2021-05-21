@@ -31,8 +31,7 @@
     }
   },
   "angularCompilerOptions": {
-    "preserveWhitespaces": true,
-    "enableIvy": false
+    "preserveWhitespaces": true
   },
   "exclude": [
     "node_modules",
