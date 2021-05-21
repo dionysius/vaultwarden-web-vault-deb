@@ -64,7 +64,6 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         private folderService: FolderService, private collectionService: CollectionService,
         private platformUtilsService: PlatformUtilsService, private cipherService: CipherService) {
         super(searchService);
-        this.pageSize = 100;
         this.applySavedState = (window as any).previousPopupUrl != null &&
             !(window as any).previousPopupUrl.startsWith('/ciphers');
     }
