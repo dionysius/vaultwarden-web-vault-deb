@@ -54,6 +54,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     private selectedTimeout: number;
     private preventSelected = false;
     private applySavedState = true;
+    private scrollingContainer = 'cdk-virtual-scroll-viewport';
 
     constructor(searchService: SearchService, private route: ActivatedRoute,
         private router: Router, private location: Location,
@@ -132,7 +133,8 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
             }
 
             if (this.applySavedState && this.state != null) {
-                window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
+                window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY,
+                    this.scrollingContainer), 0);
             }
             this.stateService.remove(ComponentId);
             if (queryParamsSub != null) {
@@ -227,7 +229,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
 
     private async saveState() {
         this.state = {
-            scrollY: this.popupUtils.getContentScrollY(window),
+            scrollY: this.popupUtils.getContentScrollY(window, this.scrollingContainer),
             searchText: this.searchText,
         };
         await this.stateService.save(ComponentId, this.state);

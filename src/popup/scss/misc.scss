@@ -361,35 +361,23 @@ select option {
 cdk-virtual-scroll-viewport {
     height: 500px;
     width: 375px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     overflow-y: auto !important;
     overflow-x: hidden !important;
-
-    &.flex {
-        display: flex;
-        flex-flow: column;
-
-        &.tab-page {
-            height: calc(100% - 99px);
-        }
-    }
 }
 
 // cribbed directly from base.scss
-cdk-virtual-scroll-viewport::-webkit-scrollbar, cdk-virtual-scroll-viewport::-webkit-scrollbar {
+cdk-virtual-scroll-viewport::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
-cdk-virtual-scroll-viewport::-webkit-scrollbar-track, cdk-virtual-scroll-viewport::-webkit-scrollbar {
-    background-color: transparent;
+cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
+    @include themify($themes) {
+        background-color: themed('backgroundColor');
+    }
 }
 
-cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb, cdk-virtual-scroll-viewport::-webkit-scrollbar {
+cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
     border-radius: 10px;
     margin-right: 1px;
 

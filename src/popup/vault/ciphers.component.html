@@ -63,15 +63,17 @@
                 </button>
             </ng-container>
         </div>
-        <div class="box list only-list" *ngIf="ciphers.length">
-            <div class="box-header">
-                {{groupingTitle}}
-                <span class="flex-right">{{isSearching() ? ciphers.length : ciphers.length}}</span>
+        <cdk-virtual-scroll-viewport itemSize="46" *ngIf="ciphers.length" #virtualScrollViewport>
+            <div class="box list only-list">
+                <div class="box-header">
+                    {{groupingTitle}}
+                    <span class="flex-right">{{isSearching() ? ciphers.length : ciphers.length}}</span>
+                </div>
+                <div class="box-content">
+                    <app-cipher-row *cdkVirtualFor="let c of ciphers" [cipher]="c" title="{{'viewItem' | i18n}}"
+                        (onSelected)="selectCipher($event)" (launchEvent)="launchCipher($event)"></app-cipher-row>
+                </div>
             </div>
-            <div class="box-content">
-                <app-ciphers-list [ciphers]="ciphers" title="{{'viewItem' | i18n}}"
-                    (onSelected)="selectCipher($event)" (launchEvent)="launchCipher($event)"></app-ciphers-list>
-            </div>
-        </div>
+        </cdk-virtual-scroll-viewport>
     </ng-container>
 </content>
