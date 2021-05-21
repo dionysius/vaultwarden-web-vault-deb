@@ -1,25 +1,23 @@
-<cdk-virtual-scroll-viewport itemSize="46">
-    <a *cdkVirtualFor="let c of ciphers" (click)="selectCipher(c)" (dblclick)="launchCipher(c)" href="#" appStopClick
-        title="{{title}} - {{c.name}}" class="box-content-row box-content-row-flex">
-        <div class="row-main">
-            <app-vault-icon [cipher]="c"></app-vault-icon>
-            <div class="row-main-content">
-                <span class="text">
-                    {{c.name}}
-                    <ng-container *ngIf="c.organizationId">
-                        <i class="fa fa-share-alt text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
-                        <span class="sr-only">{{'shared' | i18n}}</span>
-                    </ng-container>
-                    <ng-container *ngIf="c.hasAttachments">
-                        <i class="fa fa-paperclip text-muted" title="{{'attachments' | i18n}}" aria-hidden="true"></i>
-                        <span class="sr-only">{{'attachments' | i18n}}</span>
-                    </ng-container>
-                </span>
-                <span class="detail">{{c.subTitle}}</span>
-            </div>
+<a *ngFor="let c of ciphers" (click)="selectCipher(c)" (dblclick)="launchCipher(c)" href="#" appStopClick
+    title="{{title}} - {{c.name}}" class="box-content-row box-content-row-flex">
+    <div class="row-main">
+        <app-vault-icon [cipher]="c"></app-vault-icon>
+        <div class="row-main-content">
+            <span class="text">
+                {{c.name}}
+                <ng-container *ngIf="c.organizationId">
+                    <i class="fa fa-share-alt text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
+                    <span class="sr-only">{{'shared' | i18n}}</span>
+                </ng-container>
+                <ng-container *ngIf="c.hasAttachments">
+                    <i class="fa fa-paperclip text-muted" title="{{'attachments' | i18n}}" aria-hidden="true"></i>
+                    <span class="sr-only">{{'attachments' | i18n}}</span>
+                </ng-container>
+            </span>
+            <span class="detail">{{c.subTitle}}</span>
         </div>
-        <app-action-buttons [cipher]="c" [showView]="showView" (onView)="viewCipher(c)" (launchEvent)="launchCipher(c)" 
-            class="action-buttons">
-        </app-action-buttons>
-    </a>
-</cdk-virtual-scroll-viewport>
+    </div>
+    <app-action-buttons [cipher]="c" [showView]="showView" (onView)="viewCipher(c)" (launchEvent)="launchCipher(c)"
+        class="action-buttons">
+    </app-action-buttons>
+</a>
