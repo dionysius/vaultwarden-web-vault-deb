@@ -77,7 +77,7 @@ export class OptionsComponent implements OnInit {
             ConstantsService.enableAutoFillOnPageLoadKey);
         
         this.autoFillOnPageLoadDefault = await this.storageService.get<boolean>(
-            ConstantsService.autoFillOnPageLoadDefaultKey) ?? false;
+            ConstantsService.autoFillOnPageLoadDefaultKey) ?? true;
 
         this.disableAddLoginNotification = await this.storageService.get<boolean>(
             ConstantsService.disableAddLoginNotificationKey);
