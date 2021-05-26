@@ -22,6 +22,7 @@ The Bitwarden browser extension is written using the Web Extension API and Angul
 **Requirements**
 
 - [Node.js](https://nodejs.org) v14.17 or greater
+- NPM v7
 - [Gulp](https://gulpjs.com/) (`npm install --global gulp-cli`)
 - Chrome (preferred), Opera, or Firefox browser
 

@@ -87,6 +87,10 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Update NPM
+        run: |
+          npm install -g npm@7
+
       - name: Print environment
         run: |
           node --version
