@@ -555,7 +555,7 @@
             var els = [];
             try {
                 var elsList = theDoc.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="reset"])' +
-                    ':not([type="button"]):not([type="image"]):not([type="file"]):not([data-lpignore="false"]):not(data-bwignore="true"), select');
+                    ':not([type="button"]):not([type="image"]):not([type="file"]):not(data-bwignore="true"), select');
                 els = Array.prototype.slice.call(elsList);
             } catch (e) { }
 
