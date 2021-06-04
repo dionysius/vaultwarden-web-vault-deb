@@ -29,6 +29,10 @@ export default class BrowserStorageService implements StorageService {
             });
         }
 
+        if (obj instanceof Set) {
+            obj = Array.from(obj);
+        }
+
         const keyedObj = { [key]: obj };
         return new Promise<void>(resolve => {
             this.chromeStorageApi.set(keyedObj, () => {
