@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
+import { LockGuardService } from 'jslib/angular/services/lock-guard.service';
 
 import { LaunchGuardService } from './services/launch-guard.service';
 
@@ -76,6 +77,7 @@ const routes: Routes = [
     {
         path: 'lock',
         component: LockComponent,
+        canActivate: [LockGuardService],
         data: { state: 'lock' },
     },
     {

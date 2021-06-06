@@ -10,6 +10,7 @@ import { LaunchGuardService } from './launch-guard.service';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { LockGuardService } from 'jslib/angular/services/lock-guard.service';
 import { ValidationService } from 'jslib/angular/services/validation.service';
 
 import { BrowserApi } from '../../browser/browserApi';
@@ -115,6 +116,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
         ValidationService,
         AuthGuardService,
         LaunchGuardService,
+        LockGuardService,
         PopupUtilsService,
         BroadcasterService,
         { provide: MessagingService, useValue: messagingService },
