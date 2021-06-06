@@ -10,7 +10,7 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 @Injectable()
-export class LaunchGuardService implements CanActivate {
+export class NotPrivateGuardService implements CanActivate {
     constructor(private vaultTimeoutService: VaultTimeoutService, private userService: UserService,
         private router: Router) { }
 
@@ -19,19 +19,6 @@ export class LaunchGuardService implements CanActivate {
             this.router.navigate(['private-mode']);
             return false;
         }
-
-        const isAuthed = await this.userService.isAuthenticated();
-        if (!isAuthed) {
-            return true;
-        }
-
-        const locked = await this.vaultTimeoutService.isLocked();
-        if (locked) {
-            this.router.navigate(['lock']);
-        } else {
-            this.router.navigate(['tabs/current']);
-        }
-
-        return false;
+        return true;
     }
 }
