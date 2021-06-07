@@ -1,16 +1,16 @@
-import { AppIdService } from 'jslib/abstractions/appId.service';
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
-import { UserService } from 'jslib/abstractions/user.service';
-import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
-import { ConstantsService } from 'jslib/services/constants.service';
+import { AppIdService } from 'jslib-common/abstractions/appId.service';
+import { CryptoService } from 'jslib-common/abstractions/crypto.service';
+import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
+import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import { ConstantsService } from 'jslib-common/services/constants.service';
 
-import { Utils } from 'jslib/misc/utils';
-import { SymmetricCryptoKey } from 'jslib/models/domain';
+import { Utils } from 'jslib-common/misc/utils';
+import { SymmetricCryptoKey } from 'jslib-common/models/domain';
 
 import { BrowserApi } from '../browser/browserApi';
 import RuntimeBackground from './runtime.background';

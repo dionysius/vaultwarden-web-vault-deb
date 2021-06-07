@@ -3,15 +3,15 @@ import {
     OnInit,
 } from '@angular/core';
 
-import { UriMatchType } from 'jslib/enums/uriMatchType';
+import { UriMatchType } from 'jslib-common/enums/uriMatchType';
 
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { StateService } from 'jslib/abstractions/state.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
-import { TotpService } from 'jslib/abstractions/totp.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
+import { TotpService } from 'jslib-common/abstractions/totp.service';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import { ConstantsService } from 'jslib-common/services/constants.service';
 
 @Component({
     selector: 'app-options',
@@ -69,13 +69,13 @@ export class OptionsComponent implements OnInit {
         this.autoFillOnPageLoadOptions = [
             { name: i18nService.t('autoFillOnPageLoadYes'), value: true },
             { name: i18nService.t('autoFillOnPageLoadNo'), value: false },
-        ]
+        ];
     }
 
     async ngOnInit() {
         this.enableAutoFillOnPageLoad = await this.storageService.get<boolean>(
             ConstantsService.enableAutoFillOnPageLoadKey);
-        
+
         this.autoFillOnPageLoadDefault = await this.storageService.get<boolean>(
             ConstantsService.autoFillOnPageLoadDefaultKey) ?? true;
 

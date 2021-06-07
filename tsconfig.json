@@ -8,25 +8,13 @@
     "target": "ES2016",
     "allowJs": true,
     "sourceMap": true,
-    "types": [
-      "jasmine",
-      "sweetalert2",
-      "@types/chrome",
-      "@types/firefox-webext-browser"
-    ],
     "baseUrl": ".",
     "paths": {
-      "jslib/*": [
-        "jslib/src/*"
+      "jslib-common/*": [
+        "jslib/common/src/*"
       ],
-      "@angular/*": [
-        "node_modules/@angular/*"
-      ],
-      "node": [
-        "node_modules/@types/node"
-      ],
-      "duo_web_sdk": [
-        "node_modules/duo_web_sdk"
+      "jslib-angular/*": [
+        "jslib/angular/src/*"
       ]
     }
   },
@@ -34,21 +22,7 @@
     "preserveWhitespaces": true,
     "enableIvy": false
   },
-  "exclude": [
-    "node_modules",
-    "jslib/node_modules",
-    "dist",
-    "jslib/dist",
-    "jslib/spec",
-    "jslib/src/cli",
-    "jslib/src/electron",
-    "jslib/src/angular/components/modal.component.ts",
-    "jslib/src/angular/dummy.module.ts",
-    "build",
-    "build.safariextension",
-    "coverage",
-    "store",
-    "jslib/src/services/nodeApi.service.ts",
-    "jslib/src/services/lowdbStorage.service.ts"
+  "include": [
+    "src"
   ]
 }

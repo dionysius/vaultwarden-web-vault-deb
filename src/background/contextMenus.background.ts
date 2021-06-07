@@ -2,14 +2,14 @@ import { BrowserApi } from '../browser/browserApi';
 
 import MainBackground from './main.background';
 
-import { CipherService } from 'jslib/abstractions/cipher.service';
-import { EventService } from 'jslib/abstractions/event.service';
-import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { TotpService } from 'jslib/abstractions/totp.service';
-import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { CipherService } from 'jslib-common/abstractions/cipher.service';
+import { EventService } from 'jslib-common/abstractions/event.service';
+import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { TotpService } from 'jslib-common/abstractions/totp.service';
+import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
-import { EventType } from 'jslib/enums/eventType';
+import { EventType } from 'jslib-common/enums/eventType';
 
 export default class ContextMenusBackground {
     private contextMenus: any;

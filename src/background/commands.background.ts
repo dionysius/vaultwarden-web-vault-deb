@@ -2,9 +2,9 @@ import { BrowserApi } from '../browser/browserApi';
 
 import MainBackground from './main.background';
 
-import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 export default class CommandsBackground {
     private isSafari: boolean;

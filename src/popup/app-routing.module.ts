@@ -6,7 +6,7 @@ import {
     Routes,
 } from '@angular/router';
 
-import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
+import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
 
 import { LockGuardService } from './services/lock-guard.service';
 import { NotPrivateGuardService } from './services/not-private-guard.service';

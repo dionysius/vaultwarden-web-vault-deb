@@ -1,10 +1,10 @@
 import { BrowserApi } from '../browser/browserApi';
 import { SafariApp } from '../browser/safariApp';
 
-import { DeviceType } from 'jslib/enums/deviceType';
+import { DeviceType } from 'jslib-common/enums/deviceType';
 
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 
 const DialogPromiseExpiration = 600000; // 10 minutes
 

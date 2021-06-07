@@ -4,7 +4,7 @@ import {
     OnInit,
 } from '@angular/core';
 
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
 

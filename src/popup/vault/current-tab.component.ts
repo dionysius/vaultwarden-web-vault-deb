@@ -12,28 +12,28 @@ import { ToasterService } from 'angular2-toaster';
 
 import { BrowserApi } from '../../browser/browserApi';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
-import { CipherType } from 'jslib/enums/cipherType';
+import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
+import { CipherType } from 'jslib-common/enums/cipherType';
 
-import { CipherView } from 'jslib/models/view/cipherView';
+import { CipherView } from 'jslib-common/models/view/cipherView';
 
-import { CipherService } from 'jslib/abstractions/cipher.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { SearchService } from 'jslib/abstractions/search.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
-import { SyncService } from 'jslib/abstractions/sync.service';
+import { CipherService } from 'jslib-common/abstractions/cipher.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PasswordRepromptService } from 'jslib-common/abstractions/passwordReprompt.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { SearchService } from 'jslib-common/abstractions/search.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
+import { SyncService } from 'jslib-common/abstractions/sync.service';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import { ConstantsService } from 'jslib-common/services/constants.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
 
-import { Utils } from 'jslib/misc/utils';
+import { Utils } from 'jslib-common/misc/utils';
 
 const BroadcasterSubscriptionId = 'CurrentTabComponent';
 

@@ -6,8 +6,8 @@ import {
     Router,
 } from '@angular/router';
 
-import { UserService } from 'jslib/abstractions/user.service';
-import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
+import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 @Injectable()
 export class NotPrivateGuardService implements CanActivate {

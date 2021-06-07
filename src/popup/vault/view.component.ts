@@ -9,29 +9,29 @@ import {
     Router,
 } from '@angular/router';
 
-import { ApiService } from 'jslib/abstractions/api.service';
-import { AuditService } from 'jslib/abstractions/audit.service';
-import { CipherService } from 'jslib/abstractions/cipher.service';
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { EventService } from 'jslib/abstractions/event.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { TokenService } from 'jslib/abstractions/token.service';
-import { TotpService } from 'jslib/abstractions/totp.service';
-import { UserService } from 'jslib/abstractions/user.service';
-import { Cipher } from 'jslib/models/domain';
-import { LoginUriView } from 'jslib/models/view';
+import { ApiService } from 'jslib-common/abstractions/api.service';
+import { AuditService } from 'jslib-common/abstractions/audit.service';
+import { CipherService } from 'jslib-common/abstractions/cipher.service';
+import { CryptoService } from 'jslib-common/abstractions/crypto.service';
+import { EventService } from 'jslib-common/abstractions/event.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { PasswordRepromptService } from 'jslib-common/abstractions/passwordReprompt.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { TokenService } from 'jslib-common/abstractions/token.service';
+import { TotpService } from 'jslib-common/abstractions/totp.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
+import { Cipher } from 'jslib-common/models/domain';
+import { LoginUriView } from 'jslib-common/models/view';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/view.component';
+import { ViewComponent as BaseViewComponent } from 'jslib-angular/components/view.component';
 import { BrowserApi } from '../../browser/browserApi';
 import { AutofillService } from '../../services/abstractions/autofill.service';
 import { PopupUtilsService } from '../services/popup-utils.service';
 
-import { CipherType } from 'jslib/enums';
+import { CipherType } from 'jslib-common/enums';
 
 const BroadcasterSubscriptionId = 'ChildViewComponent';
 
