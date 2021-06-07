@@ -7,18 +7,18 @@ import {
 
 import { ToasterService } from 'angular2-toaster';
 
-import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
-import { CipherType } from 'jslib/enums/cipherType';
-import { EventType } from 'jslib/enums/eventType';
+import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
+import { CipherType } from 'jslib-common/enums/cipherType';
+import { EventType } from 'jslib-common/enums/eventType';
 
-import { CipherView } from 'jslib/models/view/cipherView';
+import { CipherView } from 'jslib-common/models/view/cipherView';
 
-import { EventService } from 'jslib/abstractions/event.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { TotpService } from 'jslib/abstractions/totp.service';
-import { UserService } from 'jslib/abstractions/user.service';
+import { EventService } from 'jslib-common/abstractions/event.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PasswordRepromptService } from 'jslib-common/abstractions/passwordReprompt.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { TotpService } from 'jslib-common/abstractions/totp.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
 @Component({
     selector: 'app-action-buttons',

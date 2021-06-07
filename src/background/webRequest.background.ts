@@ -1,8 +1,8 @@
-import { CipherService } from 'jslib/abstractions/cipher.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+import { CipherService } from 'jslib-common/abstractions/cipher.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
-import { UriMatchType } from 'jslib/enums';
+import { UriMatchType } from 'jslib-common/enums';
 
 export default class WebRequestBackground {
     private pendingAuthRequests: any[] = [];

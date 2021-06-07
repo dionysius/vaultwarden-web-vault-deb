@@ -5,9 +5,9 @@ import {
     Output,
 } from '@angular/core';
 
-import { SendView } from 'jslib/models/view/sendView';
+import { SendView } from 'jslib-common/models/view/sendView';
 
-import { SendType } from 'jslib/enums/sendType';
+import { SendType } from 'jslib-common/enums/sendType';
 
 @Component({
     selector: 'app-send-list',

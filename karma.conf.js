@@ -55,7 +55,8 @@ module.exports = function(config) {
             resolve: {
                 extensions: ['.js', '.ts', '.tsx'],
                 alias: {
-                    jslib: path.join(__dirname, 'jslib/src'),
+                    "jslib-common": path.join(__dirname, 'jslib/common/src'),
+                    "jslib-angular": path.join(__dirname, 'jslib/angular/src'),
                 },
             },
             module: {

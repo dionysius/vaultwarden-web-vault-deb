@@ -22,16 +22,16 @@ import {
     RouterOutlet,
 } from '@angular/router';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { AuthService } from 'jslib/abstractions/auth.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { StateService } from 'jslib/abstractions/state.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
+import { AuthService } from 'jslib-common/abstractions/auth.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import { ConstantsService } from 'jslib-common/services/constants.service';
 
 import BrowserPlatformUtilsService from 'src/services/browserPlatformUtils.service';
 import { routerTransition } from './app-routing.animations';
