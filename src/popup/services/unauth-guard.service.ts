@@ -15,5 +15,5 @@ export class UnauthGuardService extends BaseUnauthGuardService {
         super(vaultTimeoutService, userService, router);
         }
 
-    protected homepage = '/tabs/current';
+    protected homepage = 'tabs/current';
 }

@@ -12,5 +12,5 @@ export class LockGuardService extends BaseLockGuardService {
         super(vaultTimeoutService, userService, router);
         }
 
-    protected homepage = '/tabs/current';
+    protected homepage = 'tabs/current';
 }
