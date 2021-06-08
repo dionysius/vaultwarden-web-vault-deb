@@ -6,14 +6,14 @@ import {
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
-import { UnauthGuardService as BaseUnauthGuardService } from 'jslib/angular/services/unauth-guard.service';
+import { UnauthGuardService as BaseUnauthGuardService } from 'jslib-angular/services/unauth-guard.service';
 
 @Injectable()
 export class UnauthGuardService extends BaseUnauthGuardService {
-    constructor(private vaultTimeoutService: VaultTimeoutService, private userService: UserService,
-        private router: Router) {
+    constructor(vaultTimeoutService: VaultTimeoutService, userService: UserService,
+        router: Router) {
         super(vaultTimeoutService, userService, router);
         }
 
-    protected landingPage: '/tabs/current';
+    protected homepage = '/tabs/current';
 }

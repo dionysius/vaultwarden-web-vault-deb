@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
-import {
-    ActivatedRouteSnapshot,
-    CanActivate,
-    Router,
-} from '@angular/router';
+import { Router } from '@angular/router';
 
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import { LockGuardService as BaseLockGuardService } from 'jslib-angular/services/lock-guard.service';
 
 @Injectable()
 export class LockGuardService extends BaseLockGuardService {
-    constructor(private vaultTimeoutService: VaultTimeoutService, private userService: UserService,
-        private router: Router) { 
+    constructor(vaultTimeoutService: VaultTimeoutService, userService: UserService,
+        router: Router) { 
         super(vaultTimeoutService, userService, router);
         }
 
-    protected landingPage = '/tabs/current';
+    protected homepage = '/tabs/current';
 }

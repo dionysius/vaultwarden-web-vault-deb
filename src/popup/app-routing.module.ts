@@ -9,8 +9,7 @@ import {
 import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
 
 import { LockGuardService } from './services/lock-guard.service';
-import { NotPrivateGuardService } from './services/not-private-guard.service';
-import { UnauthGuardService } from './services/unauth-guard.service';
+import { LaunchGuardService } from './services/launch-guard.service';
 
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
@@ -66,13 +65,13 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomeComponent,
-        canActivate: [NotPrivateGuardService, UnauthGuardService],
+        canActivate: [LaunchGuardService],
         data: { state: 'home' },
     },
     {
         path: 'login',
         component: LoginComponent,
-        canActivate: [NotPrivateGuardService, UnauthGuardService],
+        canActivate: [LaunchGuardService],
         data: { state: 'login' },
     },
     {
@@ -84,19 +83,19 @@ const routes: Routes = [
     {
         path: '2fa',
         component: TwoFactorComponent,
-        canActivate: [NotPrivateGuardService, UnauthGuardService],
+        canActivate: [LaunchGuardService],
         data: { state: '2fa' },
     },
     {
         path: '2fa-options',
         component: TwoFactorOptionsComponent,
-        canActivate: [NotPrivateGuardService, UnauthGuardService],
+        canActivate: [LaunchGuardService],
         data: { state: '2fa-options' },
     },
     {
         path: 'sso',
         component: SsoComponent,
-        canActivate: [NotPrivateGuardService, UnauthGuardService],
+        canActivate: [LaunchGuardService],
         data: { state: 'sso' },
     },
     {
@@ -107,19 +106,19 @@ const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent,
-        canActivate: [NotPrivateGuardService, UnauthGuardService],
+        canActivate: [LaunchGuardService],
         data: { state: 'register' },
     },
     {
         path: 'hint',
         component: HintComponent,
-        canActivate: [NotPrivateGuardService, UnauthGuardService],
+        canActivate: [LaunchGuardService],
         data: { state: 'hint' },
     },
     {
         path: 'environment',
         component: EnvironmentComponent,
-        canActivate: [NotPrivateGuardService, UnauthGuardService],
+        canActivate: [LaunchGuardService],
         data: { state: 'environment' },
     },
     {
