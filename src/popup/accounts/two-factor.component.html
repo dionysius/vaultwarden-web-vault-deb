@@ -73,6 +73,7 @@
         <ng-container *ngIf="selectedProviderType === providerType.WebAuthn && webAuthnNewTab">
             <div class="content text-center" *ngIf="webAuthnNewTab">
                 <p class="text-center">{{'webAuthnNewTab' | i18n}}</p>
+                <button class="btn primary block" (click)="authWebAuthn()" appStopClick>{{'webAuthnNewTabOpen' | i18n}}</button>
             </div>
         </ng-container>
         <ng-container *ngIf="selectedProviderType === providerType.Duo ||
