@@ -65,12 +65,14 @@ function getBgService<T>(service: string) {
     };
 }
 
+const isPrivateMode = BrowserApi.getBackgroundPage() == null;
+
 const stateService = new StateService();
 const messagingService = new BrowserMessagingService();
-const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
+const searchService = isPrivateMode ? null : new PopupSearchService(getBgService<SearchService>('searchService')(),
     getBgService<CipherService>('cipherService')(), getBgService<ConsoleLogService>('consoleLogService')(),
     getBgService<I18nService>('i18nService')());
-const passwordRepromptService = new PasswordRepromptService(getBgService<I18nService>('i18nService')(),
+const passwordRepromptService = isPrivateMode ? null : new PasswordRepromptService(getBgService<I18nService>('i18nService')(),
     getBgService<CryptoService>('cryptoService')(), getBgService<PlatformUtilsService>('platformUtilsService')());
 
 export function initFactory(platformUtilsService: PlatformUtilsService, i18nService: I18nService, storageService: StorageService,
@@ -84,7 +86,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
             window.document.body.classList.add('body-sm');
         }
 
-        if (BrowserApi.getBackgroundPage() != null) {
+        if (!isPrivateMode) {
             await stateService.save(ConstantsService.disableFaviconKey,
                 await storageService.get<boolean>(ConstantsService.disableFaviconKey));
 
