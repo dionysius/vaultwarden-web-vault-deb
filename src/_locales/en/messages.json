@@ -803,7 +803,10 @@
     "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
+  },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
   },
   "webAuthnAuthenticate": {
     "message": "Authenticate WebAuthn"
