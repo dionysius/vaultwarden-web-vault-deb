@@ -1,9 +1,9 @@
 import {
     CipherType,
     FieldType,
-} from 'jslib/enums';
+} from 'jslib-common/enums';
 
-import { CipherView } from 'jslib/models/view';
+import { CipherView } from 'jslib-common/models/view';
 
 import AutofillField from '../models/autofillField';
 import AutofillPageDetails from '../models/autofillPageDetails';
@@ -17,11 +17,11 @@ import {
     CipherService,
     TotpService,
     UserService,
-} from 'jslib/abstractions';
+} from 'jslib-common/abstractions';
 
-import { EventService } from 'jslib/abstractions/event.service';
-import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
-import { EventType } from 'jslib/enums/eventType';
+import { EventService } from 'jslib-common/abstractions/event.service';
+import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
+import { EventType } from 'jslib-common/enums/eventType';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top', 'data-recurly'];

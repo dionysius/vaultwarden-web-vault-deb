@@ -1,10 +1,10 @@
-import { ConstantsService } from 'jslib/services/constants.service';
+import { ConstantsService } from 'jslib-common/services/constants.service';
 
 import {
     StorageService,
     VaultTimeoutService,
-} from 'jslib/abstractions';
-import { NotificationsService } from 'jslib/abstractions/notifications.service';
+} from 'jslib-common/abstractions';
+import { NotificationsService } from 'jslib-common/abstractions/notifications.service';
 
 const IdleInterval = 60 * 5; // 5 minutes
 

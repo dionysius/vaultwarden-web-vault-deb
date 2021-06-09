@@ -1,6 +1,6 @@
 import { SafariApp } from './safariApp';
 
-import { Utils } from 'jslib/misc/utils';
+import { Utils } from 'jslib-common/misc/utils';
 
 export class BrowserApi {
     static isWebExtensionsApi: boolean = (typeof browser !== 'undefined');

@@ -1,4 +1,4 @@
-import { StorageService } from 'jslib/abstractions/storage.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
 
 export default class BrowserStorageService implements StorageService {
     private chromeStorageApi: any;
@@ -27,6 +27,10 @@ export default class BrowserStorageService implements StorageService {
                     resolve();
                 });
             });
+        }
+
+        if (obj instanceof Set) {
+            obj = Array.from(obj);
         }
 
         const keyedObj = { [key]: obj };

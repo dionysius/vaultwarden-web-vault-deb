@@ -1,4 +1,4 @@
-import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 
 export default class BrowserMessagingService implements MessagingService {
     send(subscriber: string, arg: any = {}) {

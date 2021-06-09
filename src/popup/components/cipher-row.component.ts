@@ -5,7 +5,7 @@ import {
     Output,
 } from '@angular/core';
 
-import { CipherView } from 'jslib/models/view/cipherView';
+import { CipherView } from 'jslib-common/models/view/cipherView';
 
 @Component({
     selector: 'app-cipher-row',

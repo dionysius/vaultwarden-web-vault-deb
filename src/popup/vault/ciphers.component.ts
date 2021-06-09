@@ -13,25 +13,25 @@ import {
 
 import { BrowserApi } from '../../browser/browserApi';
 
-import { CipherService } from 'jslib/abstractions/cipher.service';
-import { CollectionService } from 'jslib/abstractions/collection.service';
-import { FolderService } from 'jslib/abstractions/folder.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { SearchService } from 'jslib/abstractions/search.service';
-import { StateService } from 'jslib/abstractions/state.service';
+import { CipherService } from 'jslib-common/abstractions/cipher.service';
+import { CollectionService } from 'jslib-common/abstractions/collection.service';
+import { FolderService } from 'jslib-common/abstractions/folder.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { SearchService } from 'jslib-common/abstractions/search.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
 
-import { CipherType } from 'jslib/enums/cipherType';
+import { CipherType } from 'jslib-common/enums/cipherType';
 
-import { CipherView } from 'jslib/models/view/cipherView';
-import { CollectionView } from 'jslib/models/view/collectionView';
-import { FolderView } from 'jslib/models/view/folderView';
+import { CipherView } from 'jslib-common/models/view/cipherView';
+import { CollectionView } from 'jslib-common/models/view/collectionView';
+import { FolderView } from 'jslib-common/models/view/folderView';
 
-import { TreeNode } from 'jslib/models/domain/treeNode';
+import { TreeNode } from 'jslib-common/models/domain/treeNode';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/components/ciphers.component';
+import { CiphersComponent as BaseCiphersComponent } from 'jslib-angular/components/ciphers.component';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
 
