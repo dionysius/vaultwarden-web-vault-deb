@@ -6,7 +6,9 @@ import {
 
 import { ToasterModule } from 'angular2-toaster';
 
+import { LockGuardService } from './lock-guard.service';
 import { LaunchGuardService } from './launch-guard.service';
+import { UnauthGuardService } from './unauth-guard.service';
 
 import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
@@ -116,7 +118,9 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
     providers: [
         ValidationService,
         AuthGuardService,
+        LockGuardService,
         LaunchGuardService,
+        UnauthGuardService,
         PopupUtilsService,
         BroadcasterService,
         { provide: MessagingService, useValue: messagingService },

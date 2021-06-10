@@ -6,32 +6,17 @@ import {
     Router,
 } from '@angular/router';
 
-import { UserService } from 'jslib-common/abstractions/user.service';
-import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import { UnauthGuardService } from './unauth-guard.service';
 
 @Injectable()
 export class LaunchGuardService implements CanActivate {
-    constructor(private vaultTimeoutService: VaultTimeoutService, private userService: UserService,
-        private router: Router) { }
+    constructor(private router: Router, private unauthGuardService: UnauthGuardService) { }
 
     async canActivate() {
         if (BrowserApi.getBackgroundPage() == null) {
             this.router.navigate(['private-mode']);
             return false;
         }
-
-        const isAuthed = await this.userService.isAuthenticated();
-        if (!isAuthed) {
-            return true;
-        }
-
-        const locked = await this.vaultTimeoutService.isLocked();
-        if (locked) {
-            this.router.navigate(['lock']);
-        } else {
-            this.router.navigate(['tabs/current']);
-        }
-
-        return false;
+        return await this.unauthGuardService.canActivate();
     }
 }
