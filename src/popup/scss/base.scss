@@ -100,7 +100,7 @@ main {
     height: 100%;
 }
 
-content::-webkit-scrollbar {
+content::-webkit-scrollbar, cdk-virtual-scroll-viewport::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
@@ -109,7 +109,13 @@ content::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-content::-webkit-scrollbar-thumb {
+cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
+    @include themify($themes) {
+        background-color: themed('backgroundColor');
+    }
+}
+
+content::-webkit-scrollbar-thumb, cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
     border-radius: 10px;
     margin-right: 1px;
 
@@ -393,4 +399,16 @@ content {
             color: themed('disabledIconColor');
         }
     }
+}
+
+// cdk-virtual-scroll
+.cdk-virtual-scroll-viewport {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.cdk-virtual-scroll-content-wrapper {
+    width: 100%;
 }

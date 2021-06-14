@@ -1,6 +1,6 @@
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ToasterModule } from 'angular2-toaster';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services/services.module';
@@ -68,7 +68,7 @@ import { I18nPipe } from 'jslib-angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from 'jslib-angular/pipes/search-ciphers.pipe';
 
 import { ActionButtonsComponent } from './components/action-buttons.component';
-import { CiphersListComponent } from './components/ciphers-list.component';
+import { CipherRowComponent } from './components/cipher-row.component';
 import { PopOutComponent } from './components/pop-out.component';
 import { SendListComponent } from './components/send-list.component';
 
@@ -170,8 +170,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         AppRoutingModule,
         ServicesModule,
         ToasterModule.forRoot(),
-        InfiniteScrollModule,
         DragDropModule,
+        ScrollingModule,
     ],
     declarations: [
         A11yTitleDirective,
@@ -184,8 +184,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BlurClickDirective,
         BoxRowDirective,
         CalloutComponent,
+        CipherRowComponent,
         CiphersComponent,
-        CiphersListComponent,
         CollectionsComponent,
         ColorPasswordPipe,
         CurrentTabComponent,

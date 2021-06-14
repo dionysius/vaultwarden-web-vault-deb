@@ -29,8 +29,9 @@
                 <span class="flex-right">{{favoriteCiphers.length}}</span>
             </div>
             <div class="box-content">
-                <app-ciphers-list [ciphers]="favoriteCiphers" title="{{'viewItem' | i18n}}"
-                    (onSelected)="selectCipher($event)" (launchEvent)="launchCipher($event)"></app-ciphers-list>
+                <app-cipher-row *ngFor="let favoriteCipher of favoriteCiphers" [cipher]="favoriteCipher"
+                    title="{{'viewItem' | i18n}}" (onSelected)="selectCipher($event)"
+                    (launchEvent)="launchCipher($event)"></app-cipher-row>
             </div>
         </div>
         <div class="box list">
@@ -74,7 +75,7 @@
                 </a>
             </div>
         </div>
-        <div class="box list" *ngIf="nestedFolders && nestedFolders.length">
+        <div class="box list" *ngIf="nestedFolders?.length">
             <div class="box-header">
                 {{'folders' | i18n}}
                 <span class="flex-right">{{folderCount}}</span>
@@ -100,13 +101,13 @@
                 <span class="flex-right">{{nestedCollections.length}}</span>
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let c of nestedCollections" href="#" class="box-content-row" appStopClick appBlurClick
-                    (click)="selectCollection(c.node)">
+                <a *ngFor="let nestedCollection of nestedCollections" href="#" class="box-content-row"
+                    appStopClick appBlurClick (click)="selectCollection(nestedCollection.node)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-cube"></i></div>
-                        <span class="text">{{c.node.name}}</span>
+                        <span class="text">{{nestedCollection.node.name}}</span>
                     </div>
-                    <span class="row-sub-label">{{collectionCounts.get(c.node.id) || 0}}</span>
+                    <span class="row-sub-label">{{collectionCounts.get(nestedCollection.node.id) || 0}}</span>
                     <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
             </div>
@@ -117,8 +118,9 @@
                 <div class="flex-right">{{noFolderCiphers.length}}</div>
             </div>
             <div class="box-content">
-                <app-ciphers-list [ciphers]="noFolderCiphers" title="{{'viewItem' | i18n}}"
-                    (onSelected)="selectCipher($event)" (launchEvent)="launchCipher($event)"></app-ciphers-list>
+                <app-cipher-row *ngFor="let noFolderCipher of noFolderCiphers" [cipher]="noFolderCipher"
+                    title="{{'viewItem' | i18n}}" (onSelected)="selectCipher($event)"
+                    (launchEvent)="launchCipher($event)"></app-cipher-row>
             </div>
         </div>
         <div class="box list" *ngIf="deletedCount">
@@ -143,11 +145,14 @@
         <div class="no-items" *ngIf="!ciphers || !ciphers.length">
             <p>{{'noItemsInList' | i18n}}</p>
         </div>
-        <div class="box list full-list" *ngIf="ciphers && ciphers.length > 0">
-            <div class="box-content">
-                <app-ciphers-list [ciphers]="ciphers" title="{{'viewItem' | i18n}}" (onSelected)="selectCipher($event)"
-                    (launchEvent)="launchCipher($event)"></app-ciphers-list>
+        <cdk-virtual-scroll-viewport itemSize="46" *ngIf="ciphers && ciphers.length > 0">
+            <div class="box list full-list">
+                <div class="box-content">
+                    <app-cipher-row *cdkVirtualFor="let searchedCipher of ciphers" [cipher]="searchedCipher"
+                        title="{{'viewItem' | i18n}}" (onSelected)="selectCipher($event)"
+                        (launchEvent)="launchCipher($event)"></app-cipher-row>
+                </div>
             </div>
-        </div>
+        </cdk-virtual-scroll-viewport>
     </ng-container>
 </content>

@@ -25,14 +25,14 @@ export class PopupUtilsService {
             win.location.search.indexOf('uilocation=popup') > -1;
     }
 
-    getContentScrollY(win: Window): number {
-        const content = win.document.getElementsByTagName('content')[0];
+    getContentScrollY(win: Window, scrollingContainer: string = 'content'): number {
+        const content = win.document.getElementsByTagName(scrollingContainer)[0];
         return content.scrollTop;
     }
 
-    setContentScrollY(win: Window, scrollY: number): void {
+    setContentScrollY(win: Window, scrollY: number, scrollingContainer: string = 'content'): void {
         if (scrollY != null) {
-            const content = win.document.getElementsByTagName('content')[0];
+            const content = win.document.getElementsByTagName(scrollingContainer)[0];
             content.scrollTop = scrollY;
         }
     }
