@@ -19,6 +19,10 @@ export default class BrowserStorageService implements StorageService {
         });
     }
 
+    async has(key: string): Promise<boolean> {
+        return this.get(key) != null;
+    }
+
     async save(key: string, obj: any): Promise<any> {
         if (obj == null) {
             // Fix safari not liking null in set
