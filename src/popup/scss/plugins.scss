@@ -8,36 +8,29 @@ $fa-font-path: "~font-awesome/fonts";
 
 // Toaster
 
-#toast-container {
-    .toast-close-button {
-        right: -0.15em;
-    }
-
+.toast-container {
     &.toast-bottom-full-width div.toast {
         margin: 0 10px 10px;
         width: calc(100% - 20px);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+
+         &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
     }
 
     .toast {
-        opacity: 1 !important;
-        background-image: none !important;
-        border-radius: $border-radius;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
-        display: flex;
-        align-items: center;
-
-        &:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-        }
-
         &:before {
             font-family: FontAwesome;
             font-size: 25px;
             line-height: 20px;
             float: left;
             color: #ffffff;
-            padding-right: 10px;
-            margin: auto 0 auto -36px;
+            margin: auto 0 auto 15px;
+        }
+
+        .toast-content {
+            padding: 15px;
         }
 
         .toaster-icon {
@@ -63,7 +56,6 @@ $fa-font-path: "~font-awesome/fonts";
 
             &:before {
                 content: "\f0e7";
-                margin-left: -30px;
             }
         }
 
