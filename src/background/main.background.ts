@@ -10,7 +10,6 @@ import {
     CollectionService,
     ConstantsService,
     ContainerService,
-    CryptoService,
     EnvironmentService,
     FolderService,
     PasswordGenerationService,
@@ -82,6 +81,7 @@ import WindowsBackground from './windows.background';
 
 import { PopupUtilsService } from '../popup/services/popup-utils.service';
 import AutofillService from '../services/autofill.service';
+import { BrowserCryptoService } from '../services/browserCrypto.service';
 import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
@@ -173,7 +173,7 @@ export default class MainBackground {
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
         this.cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
         this.consoleLogService = new ConsoleLogService(false);
-        this.cryptoService = new CryptoService(this.storageService, this.secureStorageService,
+        this.cryptoService = new BrowserCryptoService(this.storageService, this.secureStorageService,
             this.cryptoFunctionService, this.platformUtilsService, this.consoleLogService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);

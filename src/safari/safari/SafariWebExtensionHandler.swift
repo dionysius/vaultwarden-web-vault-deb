@@ -4,6 +4,7 @@ import LocalAuthentication
 
 let SFExtensionMessageKey = "message"
 let ServiceName = "Bitwarden"
+let ServiceNameBiometric = ServiceName + "_biometric"
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
@@ -118,8 +119,11 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                     var passwordLength: UInt32 = 0
                     var passwordPtr: UnsafeMutableRawPointer? = nil
                     
-                    let status = SecKeychainFindGenericPassword(nil, UInt32(ServiceName.utf8.count), ServiceName, UInt32(passwordName.utf8.count), passwordName, &passwordLength, &passwordPtr, nil)
-                    
+                    var status = SecKeychainFindGenericPassword(nil, UInt32(ServiceNameBiometric.utf8.count), ServiceNameBiometric, UInt32(passwordName.utf8.count), passwordName, &passwordLength, &passwordPtr, nil)
+                    if status != errSecSuccess {
+                        status = SecKeychainFindGenericPassword(nil, UInt32(ServiceName.utf8.count), ServiceName, UInt32(passwordName.utf8.count), passwordName, &passwordLength, &passwordPtr, nil)
+                    }
+    
                     if status == errSecSuccess {
                         let result = NSString(bytes: passwordPtr!, length: Int(passwordLength), encoding: String.Encoding.utf8.rawValue) as String?
                                     SecKeychainItemFreeContent(nil, passwordPtr)
