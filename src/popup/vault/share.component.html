@@ -4,12 +4,12 @@
             <button type="button" appBlurClick (click)="cancel()">{{'cancel' | i18n}}</button>
         </div>
         <div class="center">
-            <span class="title">{{'share' | i18n}}</span>
+            <span class="title">{{'moveToOrganization' | i18n}}</span>
         </div>
         <div class="right">
             <button type="submit" appBlurClick [disabled]="form.loading || !canSave"
                 *ngIf="organizations && organizations.length">
-                <span [hidden]="form.loading">{{'save' | i18n}}</span>
+                <span [hidden]="form.loading">{{'move' | i18n}}</span>
                 <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
         </div>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                {{'shareDesc' | i18n}}
+                {{'moveToOrgDesc' | i18n}}
             </div>
         </div>
         <div class="box" *ngIf="organizations && organizations.length">
