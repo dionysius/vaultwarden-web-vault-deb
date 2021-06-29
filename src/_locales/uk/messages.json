@@ -150,6 +150,9 @@
   "save": {
     "message": "Зберегти"
   },
+  "move": {
+    "message": "Move"
+  },
   "addFolder": {
     "message": "Додати теку"
   },
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Спільні"
   },
-  "shareVault": {
-    "message": "Поділитися своїм сховищем"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "Bitwarden дозволяє вам надавати доступ до свого сховища іншим за допомогою облікового запису організації. Чи не бажаєте перейти на вебсайт bitwarden.com, щоб дізнатися більше?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Поділитися записом"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Поділитися"
   },
-  "sharedItem": {
-    "message": "Спільний запис"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Оберіть організацію, з якою хочете поділитися. Зробивши це, ви передасте доступ до цього запису іншій організації та більше не будете його одноосібним власником."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Докладніше"
@@ -805,6 +818,9 @@
   "webAuthnNewTab": {
     "message": "Продовжити перевірку WebAuthn 2FA в новій вкладці."
   },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
+  },
   "webAuthnAuthenticate": {
     "message": "Авторизація WebAuthn"
   },
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "При виявленні форми входу виконувати автоматичне її заповнення під час завантаження сторінки."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Автоматичне копіювання TOTP після завантаження сторінки"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "Якщо увімкнено Автозаповнення на сторінці, код перевірки TOTP автоматично копіюється в буфер обміну після завантаження вебсторінки. Цей параметр перевизначається опцією Вимкнути авто-копіювання TOTP."
-  },
   "experimentalFeature": {
     "message": "Це експериментальна функція. При її використанні ви берете ризик на себе."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Відкрити сховище у виринаючому вікні"
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "Ця дія захищена. Щоб продовжити, повторно введіть головний пароль."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }
