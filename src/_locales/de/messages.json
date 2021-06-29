@@ -151,7 +151,7 @@
     "message": "Speichern"
   },
   "move": {
-    "message": "Move"
+    "message": "Verschieben"
   },
   "addFolder": {
     "message": "Ordner hinzufügen"
@@ -632,19 +632,19 @@
     "message": "Geteilt"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "Erfahre mehr über Organisationen"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden erlaubt es dir deine Tresor Einträge mit anderen zu teilen, wenn du einen Organisations Account hast. Möchtest du bitwarden.com besuchen, um mehr zu erfahren?"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "In Organisation verschieben"
   },
   "share": {
     "message": "Teilen"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ verschoben nach $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -657,7 +657,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Wähle eine Organisation aus, in die du diesen Eintrag verschieben möchten. Das Verschieben in eine Organisation überträgt das Eigentum an diese Organisation. Du bist nicht mehr der direkte Besitzer dieses Eintrags, sobald er verschoben wurde."
   },
   "learnMore": {
     "message": "Erfahre mehr"
@@ -819,7 +819,7 @@
     "message": "Fahre mit der WebAuthn 2FA Verifizierung im neuen Tab fort."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "Neuen Tab öffnen"
   },
   "webAuthnAuthenticate": {
     "message": "Authentifiziere WebAuthn"
@@ -918,22 +918,22 @@
     "message": "Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "Standard Auto-Ausfüllen Einstellung für Login-Einträge"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "Nachdem du das automatische Ausfüllen beim Laden der Seite aktiviert hast, kannst du die Funktion für einzelne Login-Einträge aktivieren oder deaktivieren. Dies ist die Standardeinstellung für Login-Einträge, die nicht separat konfiguriert wurden."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Automatisches Ausfüllen beim Laden der Seite (wenn in Optionen aktiviert)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "Nutze Standardeinstellung"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "Automatisches Ausfüllen beim Laden der Seite"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "Kein automatisches Ausfüllen beim Laden der Seite"
   },
   "commandOpenPopup": {
     "message": "Tresor-Popup öffnen"
@@ -1748,9 +1748,9 @@
     "message": "Diese Aktion ist geschützt. Um fortzufahren, gib bitte dein Master-Passwort erneut ein, um deine Identität zu bestätigen."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "E-Mail-Verifizierung erforderlich"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
+    "message": "Du musst deine E-Mail Adresse verifizieren, um diese Funktion nutzen zu können. Du kannst deine E-Mail im Web-Tresor verifizieren."
   }
 }
