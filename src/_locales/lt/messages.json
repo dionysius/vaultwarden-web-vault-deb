@@ -150,6 +150,9 @@
   "save": {
     "message": "Išsaugoti"
   },
+  "move": {
+    "message": "Move"
+  },
   "addFolder": {
     "message": "Pridėti katalogą"
   },
@@ -306,13 +309,13 @@
     "message": "Patikrinkite pagrindinį slaptažodį"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Jūsų saugykla užrakinta. Norėdami tęsti, patikrinkite pagrindinį slaptažodį."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Atrakinti"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Prisijungta prie $HOSTNAME$ kaip $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -325,88 +328,88 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Neteisingas pagrindinis slaptažodis"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Atsijungta nuo saugyklos"
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Užrakinti dabar"
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Nedelsiant"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekundžių"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekundžių"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekundžių"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 minutę"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minučių"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 minučių"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 minučių"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 minučių"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 valandos"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 valandų"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Užrakinant sistemą"
   },
   "onRestart": {
-    "message": "On Browser Restart"
+    "message": "Paleidus iš naujo naršyklę"
   },
   "never": {
-    "message": "Never"
+    "message": "Niekada"
   },
   "security": {
-    "message": "Security"
+    "message": "Apsauga"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Įvyko klaida"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Reikalingas el. pašto adresas."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Klaidingas el. pašto adresas."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Būtinas pagrindinis slaptažodis."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Pagrindinis slaptažodis turi būti bent 8 simbolių ilgio."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Pagrindinio slaptažodžio patvirtinimas nesutampa."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Jūsų paskyra sukurta! Galite prisijungti."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Išsiuntėme jums el. laišką su pagrindinio slaptažodžio užuomina."
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Būtinas patvirtinimo kodas."
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "Nukopijuota $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -416,61 +419,61 @@
     }
   },
   "autofillError": {
-    "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
+    "message": "Nepavyko automatiškai užpildyti pasirinkto elemento šiame puslapyje. Nukopijuokite ir įklijuokite informaciją."
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Atsijungta"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Sesijos laikas baigėsi."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Ar tikrai norite atsijungti?"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Taip"
   },
   "no": {
-    "message": "No"
+    "message": "Ne"
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Įvyko netikėta klaida."
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Pavadinimas yra būtinas."
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Katalogas pridėtas"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Keisti pagrindinį slaptažodį"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Pagrindinį slaptažodį galite pakeisti bitwarden.com žiniatinklio saugykloje. Ar norite dabar apsilankyti svetainėje?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Prisijungus dviem veiksmais, jūsų paskyra tampa saugesnė, reikalaujant patvirtinti prisijungimą naudojant kitą įrenginį, pvz., Saugos raktą, autentifikavimo programą, SMS, telefono skambutį ar el. Paštą. Dviejų žingsnių prisijungimą galima įjungti „bitwarden.com“ interneto saugykloje. Ar norite dabar apsilankyti svetainėje?"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Katalogas atnaujintas"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Ar tikrai norite ištrinti šį aplanką?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Katalogas ištrintas"
   },
   "gettingStartedTutorial": {
-    "message": "Getting Started Tutorial"
+    "message": "Apmokymai"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "Peržiūrėkite aomokymus, kad sužinotumėte, kaip išnaudoti visas naršyklės plėtinio galimybes."
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Sinchronizacija baigta"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Sinchronizuoti nepavyko"
   },
   "passwordCopied": {
     "message": "Password copied"
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Shared"
   },
-  "shareVault": {
-    "message": "Share Your Vault"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Share Item"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Share"
   },
-  "sharedItem": {
-    "message": "Shared Item"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Learn more"
@@ -803,7 +816,10 @@
     "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
+  },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
   },
   "webAuthnAuthenticate": {
     "message": "Authenticate WebAuthn"
@@ -893,19 +909,31 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load"
+    "message": "Enable Auto-fill on Page Load"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
-  },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Open vault popup"
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }
