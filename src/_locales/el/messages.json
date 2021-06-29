@@ -150,6 +150,9 @@
   "save": {
     "message": "Αποθήκευση"
   },
+  "move": {
+    "message": "Move"
+  },
   "addFolder": {
     "message": "Προσθήκη Φακέλου"
   },
@@ -597,7 +600,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized Σκούρο",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Κοινοποιήθηκε"
   },
-  "shareVault": {
-    "message": "Κοινή χρήση Vault"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "Το Bitwarden επιτρέπει να μοιράζεστε το vault σας με άλλους χρησιμοποιώντας ένα λογαριασμό οργανισμού. Θέλετε να επισκεφθείτε την ιστοσελίδα bitwarden.com για να μάθετε περισσότερα;"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Κοινή χρήση Αντικειμένου"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Κοινοποίηση"
   },
-  "sharedItem": {
-    "message": "Κοινοποιημένο Αντικείμενο"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Επιλέξτε έναν οργανισμό στον οποίο θέλετε να κοινοποιήσετε αυτό το αντικείμενο. Η κοινοποίηση μεταβιβάζει την ιδιοκτησία του αντικειμένου στον οργανισμό. Δεν θα είστε πλέον ο άμεσος ιδιοκτήτης αυτού του αντικειμένου μόλις το κοινοποιήσετε."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Μάθετε περισσότερα"
@@ -686,7 +699,7 @@
     "message": "Επιλέξτε ένα αρχείο."
   },
   "maxFileSize": {
-    "message": "Το μέγιστο μέγεθος αρχείου είναι 100 MB."
+    "message": "Το μέγιστο μέγεθος αρχείου είναι 500 MB."
   },
   "featureUnavailable": {
     "message": "Μη Διαθέσιμο Χαρακτηριστικό"
@@ -803,10 +816,13 @@
     "message": "Εισάγετε το κλειδί ασφαλείας στη θύρα USB του υπολογιστή σας. Αν έχει κουμπί, πατήστε το."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "Συνεχίστε την επαλήθευση WebAuthn 2FA στη νέα καρτέλα."
+  },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "Ταυτοποίηση WebAuthn"
   },
   "loginUnavailable": {
     "message": "Σύνδεση μη Διαθέσιμη"
@@ -851,7 +867,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Χρησιμοποιήστε οποιοδήποτε κλειδί ασφαλείας WebAuthn για να αποκτήσετε πρόσβαση στο λογαριασμό σας."
   },
   "emailTitle": {
     "message": "Email"
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Εάν εντοπιστεί μια φόρμα σύνδεσης, πραγματοποιείται αυτόματα μια αυτόματη συμπλήρωση όταν φορτώνεται η ιστοσελίδα."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
-  },
   "experimentalFeature": {
     "message": "Αυτή είναι μια πειραματική λειτουργία. Χρησιμοποιήστε το με δική σας ευθύνη."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Άνοιγμα αναδυόμενου vault"
@@ -962,10 +990,10 @@
     "message": "Τα εικονίδια ιστοσελίδων παρέχουν μια αναγνωρίσιμη εικόνα δίπλα σε κάθε στοιχείο σύνδεσης της λίστας σας."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Απενεργοποίηση Μετρητή Σημάτων"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Ο μετρητής εμβλημάτων δείχνει πόσες συνδέσεις έχετε για την τρέχουσα σελίδα στο vault σας."
   },
   "cardholderName": {
     "message": "Όνομα κατόχου της κάρτας"
@@ -1666,7 +1694,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Για να επιλέξετε ένα αρχείο, ανοίξτε την επέκταση στην πλαϊνή μπάρα (αν είναι δυνατόν) ή βγείτε σε ένα νέο παράθυρο κάνοντας κλικ σε αυτή τη διαφήμιση."
   },
   "sendFirefoxFileWarning": {
     "message": "Για να επιλέξετε ένα αρχείο χρησιμοποιώντας τον Firefox, ανοίξτε την επέκταση στην πλαϊνή μπάρα ή βγείτε σε ένα νέο παράθυρο κάνοντας κλικ σε αυτή τη διαφήμιση."
@@ -1705,18 +1733,24 @@
     "message": "Παρουσιάστηκε σφάλμα κατά την αποθήκευση των ημερομηνιών διαγραφής και λήξης."
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Απόκρυψη της διεύθυνσης email μου από τους παραλήπτες."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Μία ή περισσότερες οργανωτικές πολιτικές επηρεάζουν τις επιλογές send σας."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Προτροπή νέου κωδικού πρόσβασης"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Επιβεβαίωση κύριου κωδικού πρόσβασης"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Αυτή η ενέργεια προστατεύεται. Για να συνεχίσετε, πληκτρολογήστε ξανά τον κύριο κωδικό πρόσβασης για να επαληθεύσετε την ταυτότητά σας."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }
