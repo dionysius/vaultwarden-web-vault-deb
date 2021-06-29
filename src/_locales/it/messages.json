@@ -53,7 +53,7 @@
     "message": "Scheda"
   },
   "myVault": {
-    "message": "La mia cassaforte"
+    "message": "Cassaforte"
   },
   "tools": {
     "message": "Strumenti"
@@ -62,7 +62,7 @@
     "message": "Impostazioni"
   },
   "currentTab": {
-    "message": "Scheda corrente"
+    "message": "Scheda attuale"
   },
   "copyPassword": {
     "message": "Copia password"
@@ -150,6 +150,9 @@
   "save": {
     "message": "Salva"
   },
+  "move": {
+    "message": "Sposta"
+  },
   "addFolder": {
     "message": "Aggiungi cartella"
   },
@@ -225,10 +228,10 @@
     "message": "Includi numero"
   },
   "minNumbers": {
-    "message": "Minimo numeri"
+    "message": "Minimo di numeri"
   },
   "minSpecial": {
-    "message": "Minimo caratteri speciali"
+    "message": "Minimo di speciali"
   },
   "avoidAmbChar": {
     "message": "Evita caratteri ambigui"
@@ -532,13 +535,13 @@
     "message": "Non mostrare le carte nella pagina delle schede"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "I dati della carta dalla tua cassaforte sono elencati nella sezione \"Scheda corrente\" per facilitare il riempimento automatico."
+    "message": "I dati della carta dalla tua cassaforte sono elencati nella sezione \"Scheda attuale\" per facilitare il riempimento automatico."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "Non mostrare le identità nella pagina delle schede"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Gli elementi \"Identità\" della tua cassaforte sono elencati nella sezione \"Scheda corrente\" per facilitare il completamento automatico."
+    "message": "Le identità della tua cassaforte sono elencati nella sezione \"Scheda attuale\" per facilitare il completamento automatico."
   },
   "clearClipboard": {
     "message": "Cancella appunti",
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Condiviso"
   },
-  "shareVault": {
-    "message": "Condividi la tua cassaforte"
+  "learnOrg": {
+    "message": "Scopri le organizzazioni"
   },
-  "shareVaultConfirmation": {
-    "message": "Bitwarden ti permette di condividere la tua cassaforte con altri usando un account dell'organizzazione. Vuoi visitare il sito bitwarden.com per saperne di più?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden ti permette di condividere gli elementi della tua cassaforte con altri usando un'organizzazione. Vuoi visitare il sito bitwarden.com per saperne di più?"
   },
-  "shareItem": {
-    "message": "Condividi elemento"
+  "moveToOrganization": {
+    "message": "Sposta in organizzazione"
   },
   "share": {
     "message": "Condividi"
   },
-  "sharedItem": {
-    "message": "Elemento condiviso"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ spostato in $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Scegli un'organizzazione con cui desideri condividere questo elemento. La condivisione trasferisce la proprietà dell'articolo all'organizzazione. Non sarai più il proprietario diretto di questo oggetto una volta che sarà condiviso."
+  "moveToOrgDesc": {
+    "message": "Scegli un'organizzazione in cui desideri spostare questo elemento. Spostare in un'organizzazione trasferisce la proprietà dell'elemento all'organizzazione. Non sarai più il proprietario diretto di questo elemento una volta spostato."
   },
   "learnMore": {
     "message": "Per saperne di più"
@@ -686,7 +699,7 @@
     "message": "Seleziona un file."
   },
   "maxFileSize": {
-    "message": "La dimensione massima del file è 100 MB."
+    "message": "La dimensione massima del file è 500 MB."
   },
   "featureUnavailable": {
     "message": "Funzione non disponibile"
@@ -695,7 +708,7 @@
     "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave di cifratura."
   },
   "premiumMembership": {
-    "message": "Abbonamento premium"
+    "message": "Abbonamento Premium"
   },
   "premiumManage": {
     "message": "Gestisci abbonamento"
@@ -805,6 +818,9 @@
   "webAuthnNewTab": {
     "message": "Continua la verifica di WebAuthn 2FA nella nuova scheda."
   },
+  "webAuthnNewTabOpen": {
+    "message": "Apri nuova scheda"
+  },
   "webAuthnAuthenticate": {
     "message": "Autenticazione WebAutn"
   },
@@ -884,7 +900,7 @@
     "message": "URL del server di identità"
   },
   "notificationsUrl": {
-    "message": "URL del server di notifica"
+    "message": "URL del server delle notifiche"
   },
   "iconsUrl": {
     "message": "URL del server di icone"
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se viene rilevato un modulo di accesso, effettua un auto-completamento quando la pagina web si carica."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Copia automatica TOTP dopo il caricamento della pagina"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "Se il completamento automatico del caricamento della pagina è abilitato, il codice di verifica TOTP viene copiato automaticamente negli appunti dopo aver caricato la pagina web. Questo è sovrascritto da Disabilita copia automatica TOTP."
-  },
   "experimentalFeature": {
     "message": "Al momento questa funzionalità è sperimentale. Usala a tuo rischio e pericolo."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Impostazioni di riempimento automatico predefinito per gli elementi di accesso"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "Dopo aver abilitato il completamento automatico al caricamento della pagina, è possibile abilitare o disabilitare la funzione per singoli elementi di accesso. Questa è l'impostazione predefinita per gli elementi di accesso che non sono configurati separatamente."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Riempimento automatico al caricamento della pagina (se abilitato nelle opzioni)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Usa impostazione predefinita"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Riempimento automatico al caricamento della pagina"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Non riempire automaticamente al caricamento della pagina"
   },
   "commandOpenPopup": {
     "message": "Apri popup cassaforte"
@@ -1058,7 +1086,7 @@
     "message": "Azienda"
   },
   "ssn": {
-    "message": "Numero di previdenza sociale/codice fiscale"
+    "message": "Codice fiscale/Previdenza sociale"
   },
   "passportNumber": {
     "message": "Numero del passaporto"
@@ -1192,11 +1220,11 @@
     "message": "Attiva/Disattiva opzioni"
   },
   "toggleCurrentUris": {
-    "message": "Mostra/nascondi URI Corrente",
+    "message": "Mostra/Nascondi URI attuale",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "URI corrente",
+    "message": "URI attuale",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
@@ -1282,7 +1310,7 @@
     "message": "La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare."
   },
   "unlockWithBiometrics": {
-    "message": "Sblocca con l'autenticazione biometrica"
+    "message": "Sblocca con i dati biometrici"
   },
   "awaitDesktop": {
     "message": "In attesa di conferma dal desktop"
@@ -1410,7 +1438,7 @@
     "message": "Informativa sulla privacy"
   },
   "hintEqualsPassword": {
-    "message": "Il suggerimento password non può essere uguale alla password."
+    "message": "Il suggerimento della password non può essere uguale alla password."
   },
   "ok": {
     "message": "Ok"
@@ -1464,7 +1492,7 @@
     "message": "L'autenticazione biometrica del browser non è supportata su questo dispositivo."
   },
   "nativeMessaginPermissionErrorTitle": {
-    "message": "Permesso non concesso"
+    "message": "Permesso non fornito"
   },
   "nativeMessaginPermissionErrorDesc": {
     "message": "Senza l'autorizzazione per comunicare con l'applicazione Bitwarden Desktop non è possibile fornire l'autenticazione biometrica nell'estensione del browser. Riprova di nuovo."
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "Questa azione è protetta. Per continuare, inserisci nuovamente la tua password principale per verificare la tua identità."
+  },
+  "emailVerificationRequired": {
+    "message": "Verifica email necessaria"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Devi verificare la tua email per utilizzare questa funzionalità. Puoi verificare la tua email nella cassaforte web."
   }
 }

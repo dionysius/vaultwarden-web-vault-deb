@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden",
+    "message": "Bitwarden – Ilmainen salasananhallinta",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -149,6 +149,9 @@
   },
   "save": {
     "message": "Tallenna"
+  },
+  "move": {
+    "message": "Move"
   },
   "addFolder": {
     "message": "Lisää kansio"
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Jaettu"
   },
-  "shareVault": {
-    "message": "Jaa holvisi"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "Bitwardenin avulla voit jakaa holvisi sisältöä muiden kanssa organisaatiotiliä käyttäen. Haluatko lukea bitwarden.com-sivustolta lisää?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Jaa kohde"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Jaa"
   },
-  "sharedItem": {
-    "message": "Jaettu kohde"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Valitse organisaatio, jonka kanssa haluat jakaa kohteen. Jako siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Lue lisää"
@@ -805,6 +818,9 @@
   "webAuthnNewTab": {
     "message": "Jatka kaksivaiheisen kirjautumisen (2FA) WebAuthn-todennusta uudessa välilehdessä."
   },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
+  },
   "webAuthnAuthenticate": {
     "message": "Todenna WebAuthn"
   },
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Jos sivulla havaitaan kirjautumislomake, täytetään kirjautumistiedot automaattisesti sivua ladattaessa."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Kopioi TOTP-todennuskoodit automaattisesti sivun latauduttua"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "Jos \"Täytä automaattisesti sivun latautuessa\" on käytössä, kopioidaan TOTP-todennuskoodi automaattisesti leikepöydälle sivun latauduttua. \"Älä kopioi TOTP-todennuskoodeja automaattisesti\" ohittaa tämän."
-  },
   "experimentalFeature": {
     "message": "Tämä on vielä kokeellinen toiminto. Käytä omalla vastuullasi."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Avaa holvin ponnahdusikkuna"
@@ -962,10 +990,10 @@
     "message": "Kirjautumistietojen vieressä näytettävät sivustojen kuvakkeet helpottavat kohteiden tunnistusta."
   },
   "disableBadgeCounter": {
-    "message": "Älä näytä laskuria kuvakkeessa"
+    "message": "Älä näytä kuvakkeen laskuria"
   },
   "disableBadgeCounterDesc": {
-    "message": "Kuvakkeen laskuri näyttää nykyiselle sivulle sopivien kirjautumistietojen määrän holvissasi."
+    "message": "Kuvakkeen laskuri näyttää nykyiseen sivuun kohdistuvien kirjautumistietojen määrän holvissasi."
   },
   "cardholderName": {
     "message": "Kortinhaltijan nimi"
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "Toiminto on suojattu. Jatkaaksesi, syötä pääsalasanasi uudelleen vahvistaaksesi henkilöllisyytesi."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }

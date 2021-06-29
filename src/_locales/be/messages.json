@@ -150,6 +150,9 @@
   "save": {
     "message": "Захаваць"
   },
+  "move": {
+    "message": "Move"
+  },
   "addFolder": {
     "message": "Дадаць папку"
   },
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Абагуленыя"
   },
-  "shareVault": {
-    "message": "Абагуліць ваша сховішча"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "Bitwarden дазваляе абагуліць сваё сховішча з іншымі карыстальнікамі, выкарыстоўваючы ўліковы запіс арганізацыі. Хочаце наведаць сайт bitwarden.com, каб даведацца больш?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Абагуліць элемент"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Абагуліць"
   },
-  "sharedItem": {
-    "message": "Абагулены элемент"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Выберыце арганізацыю, якой вы хочаце даць доступ да гэтага элемента. Пасля выканання гэтай аперацыі, правы на элемент будуць перададзены арганізацыі і вы не будзеце з'яўляцца непасрэдным уладальнікам гэтага элемента."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Даведацца больш"
@@ -686,7 +699,7 @@
     "message": "Выберыце файл."
   },
   "maxFileSize": {
-    "message": "Максімальны памер файла 100 МБ."
+    "message": "Максімальны памер файла 500 МБ."
   },
   "featureUnavailable": {
     "message": "Функцыя недаступна"
@@ -803,7 +816,10 @@
     "message": "Устаўце ваш ключ бяспекі ў порт USB вашага камп'ютара. Калі на ім ёсць кнопка, націсніце на яе."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
+  },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
   },
   "webAuthnAuthenticate": {
     "message": "Authenticate WebAuthn"
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Пры выяўленні формы ўваходу выконваецца аўтазапаўненне падчас загрузкі вэб-старонкі."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
-  },
   "experimentalFeature": {
     "message": "Гэта эксперыментальная функцыя. Выкарыстоўвайце на свой страх і рызыку."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Адкрыць сховішча ва ўсплывальным акне"
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }

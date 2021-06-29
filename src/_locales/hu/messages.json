@@ -150,6 +150,9 @@
   "save": {
     "message": "Mentés"
   },
+  "move": {
+    "message": "Move"
+  },
   "addFolder": {
     "message": "Mappa hozzáadása"
   },
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Megosztott"
   },
-  "shareVault": {
-    "message": "Széf megosztása"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "A Bitwarden lehetővé teszi egy szervezeti fiók használatával a fiók megosztását másokkal. Szeretnénk felkeresni a bitwarden.com webhelyet további információért?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Elem megosztása"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Megosztás"
   },
-  "sharedItem": {
-    "message": "Az elem megosztásra került."
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Szervezet választása az elem megosztásához. Az elemtulajdon átadása a szervezetnek. Innentől nem közvetlen tulajdonosa leszünk az elemnek a megosztás után."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Tudjon meg többet"
@@ -686,7 +699,7 @@
     "message": "Válassz ki egy fájlt."
   },
   "maxFileSize": {
-    "message": "A naximális fájl méret 100 MB."
+    "message": "A naximális fájl méret 500 MB."
   },
   "featureUnavailable": {
     "message": "Ez a funkció nem érhető el."
@@ -805,6 +818,9 @@
   "webAuthnNewTab": {
     "message": "A WebAuthn 2FA ellenőrzés folytatása az új fülön."
   },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
+  },
   "webAuthnAuthenticate": {
     "message": "WebAutn hitelesítés"
   },
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Ha egy bejelentkezési űrlap észlelésre került, automatikusan töltse ki az adatokat az oldal betöltésekor."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatikus TOTP másolat az oldal betöltés után"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "Ha az Automatikus kitöltés az oldalbetöltés funkció engedélyezve van, a weboldal betöltése után a TOTP ellenőrző kód automatikusan a vágólapra kerül. Ezt felülírja az Automatikus TOTP másolat letiltása."
-  },
   "experimentalFeature": {
     "message": "Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Széf megnyitása ablakban"
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "Ez a művelet védett. A folytatásért ismételten meg kell adni a mesterjelszőt az személyazonosság ellenőrzéséhez."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }

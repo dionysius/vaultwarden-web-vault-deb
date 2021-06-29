@@ -150,6 +150,9 @@
   "save": {
     "message": "Guarda"
   },
+  "move": {
+    "message": "Desplaça"
+  },
   "addFolder": {
     "message": "Afegeix carpeta"
   },
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Compartit"
   },
-  "shareVault": {
-    "message": "Comparteix la vostra caixa forta"
+  "learnOrg": {
+    "message": "Més informació sobre les organitzacions"
   },
-  "shareVaultConfirmation": {
-    "message": "Bitwarden us permet compartir la vostra caixa forta amb altres usuaris mitjançant un compte d'organització. Voleu visitar el lloc web de bitwarden.com per obtenir més informació?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden us permet compartir els elements de la vostra caixa forta amb altres usuaris mitjançant una organització. Voleu visitar el lloc web de bitwarden.com per obtenir més informació?"
   },
-  "shareItem": {
-    "message": "Comparteix element"
+  "moveToOrganization": {
+    "message": "Desplaça a l'organització"
   },
   "share": {
     "message": "Comparteix"
   },
-  "sharedItem": {
-    "message": "Element compartit"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ desplaçat a $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Trieu una organització amb la qual vulgueu compartir aquest element. Compartir les transferències de la propietat de l'element a l'organització. Ja no sereu el propietari directe d'aquest element una vegada que s'haja compartit."
+  "moveToOrgDesc": {
+    "message": "Trieu una organització a la qual vulgueu desplaçar aquest element. El trasllat a una organització transfereix la propietat de l'element a aquesta organització. Ja no sereu el propietari directe d'aquest element una vegada s'haja mogut."
   },
   "learnMore": {
     "message": "Més informació"
@@ -803,10 +816,13 @@
     "message": "Introduïu la vostra clau de seguretat al port USB de l'ordinador. Si té un botó, premeu-lo."
   },
   "webAuthnNewTab": {
-    "message": "Continueu la verificació de WebAuthn 2FA a la nova pestanya."
+    "message": "\nPer iniciar la verificació de WebAuthn 2FA. Feu clic al botó següent per obrir una pestanya nova i seguiu les instruccions d'aquesta."
+  },
+  "webAuthnNewTabOpen": {
+    "message": "Obri una pestanya nova"
   },
   "webAuthnAuthenticate": {
-    "message": "Autenticar WebAutn"
+    "message": "Autenticar WebAuthn"
   },
   "loginUnavailable": {
     "message": "Inici de sessió no disponible"
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Si es detecta un formulari d'inici de sessió, es realitza automàticament un emplenament automàtic quan es carrega la pàgina web."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Còpia automàtica TOTP després de la càrrega de la pàgina"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "Si l'emplenament automàtic de càrrega de pàgina està habilitat, el codi de verificació TOTP es copia automàticament al porta-retalls després de carregar la pàgina web. Açò s'anul·la en deshabilitar la còpia automàtica TOTP."
-  },
   "experimentalFeature": {
     "message": "Actualment és una característica experimental. Utilitzeu sota el vostre propi risc."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Configuració per defecte d'emplenament automàtic per als elements d'inici de sessió"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "Després d'habilitar l'emplenament automàtic a la càrrega de la pàgina, podeu habilitar o inhabilitar la característica per a elements d'inici de sessió individuals. Aquesta és la configuració per defecte per als elements d'inici de sessió que no estan configurats per separat."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Emplenament automàtic a la càrrega de la pàgina (si està habilitat a Opcions)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Utilitza la configuració per defecte"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Emplenament automàtic a la càrrega de la pàgina"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "No s'emplena automàticament a la càrrega de la pàgina"
   },
   "commandOpenPopup": {
     "message": "Obri l'emergent de la caixa forta"
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "Aquesta acció està protegida. Per continuar, torneu a introduir la contrasenya principal per verificar la vostra identitat."
+  },
+  "emailVerificationRequired": {
+    "message": "Es requereix verificació del correu electrònic"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Heu de verificar el correu electrònic per utilitzar aquesta característica. Podeu verificar el vostre correu electrònic a la caixa forta web."
   }
 }

@@ -150,6 +150,9 @@
   "save": {
     "message": "Opslaan"
   },
+  "move": {
+    "message": "Move"
+  },
   "addFolder": {
     "message": "Map toevoegen"
   },
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Gedeeld"
   },
-  "shareVault": {
-    "message": "Kluis delen"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "Met een organisatie-account kunt je jeBitwarden-kluis delen met anderen. Wil je de website bitwarden.com bezoeken voor meer informatie?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Item delen"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Delen"
   },
-  "sharedItem": {
-    "message": "Item gedeeld"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Kies een organisatie waarmee je dit item wilt delen. Door het delen draag je het eigendom van dit item over aan de organisatie. Je bent niet langer de directe eigenaar van het item wanneer deze is gedeeld."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Meer informatie"
@@ -805,6 +818,9 @@
   "webAuthnNewTab": {
     "message": "Ga door met WebAuthn 2FA-verificatie in de nieuwe tab."
   },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
+  },
   "webAuthnAuthenticate": {
     "message": "Authenticeer WebAuthn"
   },
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Als een inlogformulier wordt gedetecteerd, dan worden de inloggegevens automatisch ingevuld."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatisch TOTP kopiëren na laden van de pagina"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "Als automatisch invullen op pagina laden is ingeschakeld, wordt de TOTP-verificatiecode automatisch naar je klembord gekopieerd na het laden van de webpagina. Dit wordt overschreven door automatische TOTP kopie uit te schakelen."
-  },
   "experimentalFeature": {
     "message": "Dit is momenteel een experimentele functie; gebruik hiervan is op eigen risico."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Open kluis in pop-up"
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "Deze actie is beveiligd. Voer je hoofdwachtwoord opnieuw in om je identiteit vast te stellen en door te gaan."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }
