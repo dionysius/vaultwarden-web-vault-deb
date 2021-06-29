@@ -150,6 +150,9 @@
   "save": {
     "message": "Guardar"
   },
+  "move": {
+    "message": "Move"
+  },
   "addFolder": {
     "message": "Adicionar pasta"
   },
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Partilhado"
   },
-  "shareVault": {
-    "message": "Partilhar o seu cofre"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "O Bitwarden permite-lhe partilhar o seu cofre com outros ao utilizar uma conta de organização. Gostaria de visitar o website bitwarden.com para saber mais?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Partilhar item"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Partilhar"
   },
-  "sharedItem": {
-    "message": "Item partilhado"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Escolha uma organização com que queira partilhar este item. Partilhar transfere a propriedade do item para a organização. Uma vez transferido já não será o proprietário direto deste item."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Saber mais"
@@ -686,7 +699,7 @@
     "message": "Selecione um ficheiro."
   },
   "maxFileSize": {
-    "message": "O tamanho máximo do ficheiro é de 100 MB."
+    "message": "O tamanho máximo do ficheiro é de 500 MB."
   },
   "featureUnavailable": {
     "message": "Funcionalidade indisponível"
@@ -803,7 +816,10 @@
     "message": "Introduza a sua chave de segurança na porta USB do seu computador. Se tiver um botão, toque no mesmo."
   },
   "webAuthnNewTab": {
-    "message": "Continue the WebAuthn 2FA verification in the new tab."
+    "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
+  },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
   },
   "webAuthnAuthenticate": {
     "message": "Authenticate WebAuthn"
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se um formulário de início de sessão for detetado, realizar automaticamente um auto-preenchimento quando a página web carregar."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatic TOTP Copy after Page Load"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "If Auto-fill On Page Load is enabled, the TOTP verification code is automatically copied to your clipboard after loading the web page. This is overridden by Disable Automatic TOTP Copy."
-  },
   "experimentalFeature": {
     "message": "Esta é atualmente uma funcionalidade experimental. Utilize por sua conta e risco."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Abrir popup do cofre"
@@ -1718,5 +1746,11 @@
   },
   "passwordConfirmationDesc": {
     "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }
