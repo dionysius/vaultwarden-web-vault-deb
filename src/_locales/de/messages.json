@@ -150,6 +150,9 @@
   "save": {
     "message": "Speichern"
   },
+  "move": {
+    "message": "Move"
+  },
   "addFolder": {
     "message": "Ordner hinzufügen"
   },
@@ -617,10 +620,10 @@
     "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
   "encExportKeyWarningDesc": {
-    "message": "Dieser Export verschlüsselt Ihre Daten mit dem Verschlüsselungscode Ihres Kontos. Falls Sie Ihren Verschlüsselungscode erneuern, sollten Sie den Export erneut durchführen, da Sie die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln können."
+    "message": "Dieser Export verschlüsselt deine Daten mit dem Verschlüsselungscode deines Kontos. Falls du deinen Verschlüsselungscode erneuerst, solltest du den Export erneut durchführen, da du die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln kannst."
   },
   "encExportAccountWarningDesc": {
-    "message": "Die Verschlüsselungscodes eines Kontos sind für jedes Bitwarden Benutzerkonto einzigartig, deshalb können Sie keinen verschlüsselten Export in ein anderes Konto importieren."
+    "message": "Die Verschlüsselungscodes eines Kontos sind für jedes Bitwarden Benutzerkonto einzigartig, deshalb kannst du keinen verschlüsselten Export in ein anderes Konto importieren."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -628,23 +631,33 @@
   "shared": {
     "message": "Geteilt"
   },
-  "shareVault": {
-    "message": "Teile deinen Tresor"
+  "learnOrg": {
+    "message": "Learn about Organizations"
   },
-  "shareVaultConfirmation": {
-    "message": "Bitwarden erlaubt es dir deinen Tresor mit anderen zu teilen wenn du einen Organisations Account hast. Möchtest du bitwarden.com besuchen um mehr zu erfahren?"
+  "learnOrgConfirmation": {
+    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
-  "shareItem": {
-    "message": "Eintrag teilen"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
   "share": {
     "message": "Teilen"
   },
-  "sharedItem": {
-    "message": "Geteilter Eintrag"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Wähle eine Organisation aus, für die du diesen Eintrag freigeben möchtest. Die gemeinsame Nutzung überträgt das Eigentum an dem Eintrag auf diese Organisation. Du bist dann nicht mehr der direkte Besitzer dieses Eintrags, sobald er geteilt wurde."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
     "message": "Erfahre mehr"
@@ -686,7 +699,7 @@
     "message": "Wähle eine Datei."
   },
   "maxFileSize": {
-    "message": "Die maximale Dateigröße beträgt 100 MB."
+    "message": "Die maximale Dateigröße beträgt 500 MB."
   },
   "featureUnavailable": {
     "message": "Funktion nicht verfügbar"
@@ -803,7 +816,10 @@
     "message": "Stecke deinen Sicherheitsschlüssel in den USB-Port deines Computers. Falls ein Knopf vorhanden ist, berühre diesen."
   },
   "webAuthnNewTab": {
-    "message": "Fahren Sie mit der WebAuthn 2FA Verifizierung im neuen Tab fort."
+    "message": "Fahre mit der WebAuthn 2FA Verifizierung im neuen Tab fort."
+  },
+  "webAuthnNewTabOpen": {
+    "message": "Open new tab"
   },
   "webAuthnAuthenticate": {
     "message": "Authentifiziere WebAuthn"
@@ -851,7 +867,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Benutze einen WebAuthn-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
+    "message": "Benutze einen WebAuthn-kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
   },
   "emailTitle": {
     "message": "E-Mail"
@@ -898,14 +914,26 @@
   "enableAutoFillOnPageLoadDesc": {
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
   },
-  "enableAutoTotpCopyOnAutoFill": {
-    "message": "Automatisch TOTP kopieren nach dem Laden der Seite"
-  },
-  "enableAutoTotpCopyOnAutoFillDesc": {
-    "message": "Wenn Auto-Ausfüllen beim Laden der Webseite aktiviert ist, wird der TOTP-Bestätigungscode nach dem Laden der Webseite automatisch in die Zwischenablage kopiert. Dies wird durch \"Automatisches TOTP kopieren deaktivieren\" überschrieben."
-  },
   "experimentalFeature": {
     "message": "Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
+  },
+  "defaultAutoFillOnPageLoad": {
+    "message": "Default autofill setting for login items"
+  },
+  "defaultAutoFillOnPageLoadDesc": {
+    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+  },
+  "itemAutoFillOnPageLoad": {
+    "message": "Auto-fill on Page Load (if enabled in Options)"
+  },
+  "autoFillOnPageLoadUseDefault": {
+    "message": "Use default setting"
+  },
+  "autoFillOnPageLoadYes": {
+    "message": "Auto-fill on page load"
+  },
+  "autoFillOnPageLoadNo": {
+    "message": "Do not auto-fill on page load"
   },
   "commandOpenPopup": {
     "message": "Tresor-Popup öffnen"
@@ -965,7 +993,7 @@
     "message": "Badge-Zähler deaktivieren"
   },
   "disableBadgeCounterDesc": {
-    "message": "Der Badge-Zähler zeigt an, wie viele Zugangsdaten Sie für die aktuelle Seite in Ihrem Tresor haben."
+    "message": "Der Badge-Zähler zeigt an, wie viele Zugangsdaten du für die aktuelle Seite in deinem Tresor hast."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"
@@ -1473,7 +1501,7 @@
     "message": "Fehler bei der Berechtigungsanfrage"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "Diese Aktion kann in der Sidebar nicht durchgeführt werden, bitte versuchen Sie die Aktion im Popup oder Popout erneut auszuführen."
+    "message": "Diese Aktion kann in der Sidebar nicht durchgeführt werden, bitte versuche die Aktion im Popup oder Popout erneut auszuführen."
   },
   "personalOwnershipSubmitError": {
     "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
@@ -1485,7 +1513,7 @@
     "message": "Ausgeschlossene Domänen"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden wird keine Login-Daten für diese Domäne speichern. Sie müssen die Seite aktualisieren, damit die Änderungen wirksam werden."
+    "message": "Bitwarden wird keine Login-Daten für diese Domäne speichern. Du musst die Seite aktualisieren, damit die Änderungen wirksam werden."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ ist keine gültige Domäne",
@@ -1555,14 +1583,14 @@
     "message": "Deaktiviert"
   },
   "removePasswordConfirmation": {
-    "message": "Sind Sie sicher, dass Sie das Passwort entfernen möchten?"
+    "message": "Bist du sicher, dass du dieses Passwort entfernen möchtest?"
   },
   "deleteSend": {
     "message": "Send löschen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
-    "message": "Sind Sie sicher, dass Sie dieses Send löschen möchten?",
+    "message": "Bist du sicher, dass du dieses Send löschen möchtest?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -1578,7 +1606,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
-    "message": "Die Datei, die Sie senden möchten."
+    "message": "Die Datei, die du senden möchtest."
   },
   "deletionDate": {
     "message": "Löschdatum"
@@ -1633,7 +1661,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "Der Text, den Sie senden möchten."
+    "message": "Der Text, den du senden möchtest."
   },
   "sendHideText": {
     "message": "Send-Text standardmäßig ausblenden.",
@@ -1654,7 +1682,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Aufgrund einer Unternehmensrichtlinie können Sie nur ein bestehendes Send löschen.",
+    "message": "Aufgrund einer Unternehmensrichtlinie kannst du nur ein bestehendes Send löschen.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1666,19 +1694,19 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "Um eine Datei auszuwählen, öffnen Sie die Erweiterung in der Sidebar (falls möglich) oder öffnen Sie sie in einem neuem Fenster, indem Sie auf diesen Banner klicken."
+    "message": "Um eine Datei auszuwählen, öffne die Erweiterung in der Sidebar (falls möglich) oder öffne sie in einem neuem Fenster, indem du auf dieses Banner klickst."
   },
   "sendFirefoxFileWarning": {
-    "message": "Um eine Datei mit Firefox auszuwählen, öffnen Sie die Erweiterung in der Sidebar oder öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
+    "message": "Um eine Datei mit Firefox auszuwählen, öffne die Erweiterung in der Sidebar oder öffne ein neues Fenster, indem du auf dieses Banner klickst."
   },
   "sendSafariFileWarning": {
-    "message": "Um eine Datei mit Safari auszuwählen, öffnen Sie ein neues Fenster, indem Sie auf diesen Banner klicken."
+    "message": "Um eine Datei mit Safari auszuwählen, öffne ein neues Fenster, indem du auf dieses Banner klickst."
   },
   "sendFileCalloutHeader": {
-    "message": "Bevor Sie beginnen"
+    "message": "Bevor du beginnst"
   },
   "sendFirefoxCustomDatePopoutMessage1": {
-    "message": "Um eine kalenderähnliche Datums-Auswahl zu verwenden",
+    "message": "Um einen Kalender-Datumsauswahl zu verwenden",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
@@ -1702,21 +1730,27 @@
     "message": "Ein Löschdatum und eine Zeit sind erforderlich."
   },
   "dateParsingError": {
-    "message": "Es gab einen Fehler beim Speichern Ihrer Lösch- und Verfallsdaten."
+    "message": "Es gab einen Fehler beim Speichern deiner Lösch- und Verfallsdaten."
   },
   "hideEmail": {
     "message": "Meine E-Mail-Adresse vor den Empfängern ausblenden."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen ihre Send Einstellungen."
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen deine Send Einstellungen."
   },
   "passwordPrompt": {
     "message": "Master-Passwort erneut abfragen"
   },
   "passwordConfirmation": {
-    "message": "Masterpasswort bestätigen"
+    "message": "Master-Passwort bestätigen"
   },
   "passwordConfirmationDesc": {
-    "message": "Diese Aktion ist geschützt. Um fortzufahren, geben Sie bitte Ihr Master-Passwort erneut ein, um Ihre Identität zu bestätigen."
+    "message": "Diese Aktion ist geschützt. Um fortzufahren, gib bitte dein Master-Passwort erneut ein, um deine Identität zu bestätigen."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   }
 }
