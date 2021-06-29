@@ -181,7 +181,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
         },
         {
             provide: LOCALE_ID,
-            useFactory: () => getBgService<I18nService>('i18nService')().translationLocale,
+            useFactory: () => isPrivateMode ? null : getBgService<I18nService>('i18nService')().translationLocale,
             deps: [],
         },
         { provide: PasswordRepromptServiceAbstraction, useValue: passwordRepromptService },
