@@ -38,7 +38,7 @@
     "message": "Hasło główne"
   },
   "masterPassDesc": {
-    "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, abyś je pamiętał. Jeśli je zapomnisz, nie będzie możliwości, aby je przywrócić."
+    "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, aby je pamiętać, ponieważ zapomnianego hasła nie będzie można odzyskać."
   },
   "masterPassHintDesc": {
     "message": "Podpowiedź do hasła głównego może pomóc Ci przypomnieć hasło, jeśli je zapomnisz."
@@ -77,7 +77,7 @@
     "message": "Kopiuj nazwę użytkownika"
   },
   "copyNumber": {
-    "message": "Kopiuj numer karty"
+    "message": "Kopiuj numer"
   },
   "copySecurityCode": {
     "message": "Kopiuj kod zabezpieczający"
@@ -95,7 +95,7 @@
     "message": "Sejf jest zablokowany."
   },
   "vaultLoggedOut": {
-    "message": "Wylogowałeś się z sejfu."
+    "message": "Wylogowano z sejfu."
   },
   "autoFillInfo": {
     "message": "Brak dostępnych danych logowania do autouzupełnienia dla obecnej karty przeglądarki."
@@ -151,7 +151,7 @@
     "message": "Zapisz"
   },
   "move": {
-    "message": "Move"
+    "message": "Przenieś"
   },
   "addFolder": {
     "message": "Dodaj folder"
@@ -632,19 +632,19 @@
     "message": "Udostępnione"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "Dowiedz się więcej o organizacjach"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden pozwala na udostępnianie zawartości sejfu innym osobom za pośrednictwem organizacji. Czy chcesz odwiedzić witrynę bitwarden.com, aby dowiedzieć się więcej?"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Przenieś do organizacji"
   },
   "share": {
     "message": "Udostępnij"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "Element $ITEMNAME$ przeniesiono do organizacji $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -657,7 +657,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Wybierz organizację, do której chcesz przenieść ten element. Przeniesienie do organizacji przenosi uprawnienia właścicielskie względem elementu na tę organizację. Po przeniesieniu elementu utracisz bezpośrednie uprawnienia właścicielskie."
   },
   "learnMore": {
     "message": "Dowiedz się więcej"
@@ -819,7 +819,7 @@
     "message": "Kontynuuj logowanie dwustopniowe WebAuthn w nowej karcie."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "Otwórz nową kartę"
   },
   "webAuthnAuthenticate": {
     "message": "Uwierzytelnianie WebAuthn"
@@ -918,22 +918,22 @@
     "message": "Obecnie jest to funkcja eksperymentalna. Używaj na własne ryzyko."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "Domyślne ustawienia autouzupełniania dla danych logowania"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "Gdy włączysz opcję autouzupełniania po wczytaniu strony, możesz włączyć lub wyłączyć tę funkcję dla poszczególnych danych logowania. Jest to domyślne ustawienie dla danych logowania, które nie zostały skonfigurowane oddzielnie."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Autouzupełnianie po wczytaniu strony (jeśli włączone w Opcjach)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "Użyj ustawienia domyślnego"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "Automatycznie uzupełniaj po wczytaniu strony"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "Nie uzupełniaj automatycznie po wczytaniu strony"
   },
   "commandOpenPopup": {
     "message": "Otwórz sejf w oknie"
@@ -1748,9 +1748,9 @@
     "message": "Ta operacja jest chroniona. Aby kontynuować, wpisz ponownie hasło główne."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Wymagana weryfikacja adresu e-mail"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
+    "message": "Musisz zweryfikować swój adres e-mail, aby korzystać z tej funkcji. Swój adres e-mail możesz zweryfikować w sejfie internetowym."
   }
 }
