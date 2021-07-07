@@ -632,19 +632,19 @@
     "message": "اشتراک گذاری شد"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "درباره سازمانها اطلاعات کسب کنید"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden به شما اجازه می دهد با استفاده از یک سازمان، موارد گاوصندوق خود را با دیگران به اشتراک بگذارید. آیا مایل به بازدید از وب سایت bitwarden.com برای کسب اطلاعات بیشتر هستید؟"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "انتقال به سازمان"
   },
   "share": {
     "message": "اشتراک گذاری"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ منتقل شد به $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -657,7 +657,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "سازمانی را انتخاب کنید که می خواهید این مورد را به آن منتقل کنید. انتقال به یک سازمان، مالکیت مورد را به آن سازمان منتقل می کند. پس از انتقال این مورد، دیگر مالک مستقیم آن نخواهید بود."
   },
   "learnMore": {
     "message": "بیشتر بدانید"
@@ -819,7 +819,7 @@
     "message": "تأیید WebAuthn 2FA را در برگه جدید ادامه دهید."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "باز کردن زبانه جدید"
   },
   "webAuthnAuthenticate": {
     "message": "تأیید اعتبار در WebAuthn"
@@ -918,22 +918,22 @@
     "message": "در حال حاضر این یک ویژگی آزمایشی است. با مسئولیت خود استفاده کنید."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "تنظیم خودکار پیش فرض برای موارد ورود به سیستم"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "پس از فعال کردن پرکردن خودکار بارگذاری صفحه، می توانید این ویژگی را برای موارد ورود به سیستم جداگانه فعال یا غیرفعال کنید. این تنظیمات پیش فرض برای موارد ورود به سیستم است که به طور جداگانه پیکربندی نشده اند."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "پر کردن خودکار بارگذاری صفحه (درصورت فعال بودن در گزینه ها)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "استفاده از تنظيمات پيشفرض"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "بارگذاری صفحه را به طور خودکار پر کن"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "بارگذاری صفحه را به طور خودکار پر نکن"
   },
   "commandOpenPopup": {
     "message": "بازکردن پنجره گاوصندوق"
@@ -1748,9 +1748,9 @@
     "message": "این عمل محافظت می شود. برای ادامه، لطفاً کلمه ورود اصلی خود را دوباره وارد کنید تا هویتان را تأیید کنید."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "تایید ایمیل لازم است"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
+    "message": "برای استفاده از این ویژگی باید ایمیل خود را تأیید کنید. می توانید ایمیل خود را در گاوصندوق وب تأیید کنید."
   }
 }

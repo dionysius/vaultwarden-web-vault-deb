@@ -151,7 +151,7 @@
     "message": "Mentés"
   },
   "move": {
-    "message": "Move"
+    "message": "Áthelyezés"
   },
   "addFolder": {
     "message": "Mappa hozzáadása"
@@ -632,19 +632,19 @@
     "message": "Megosztott"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "Információ szervezetekről"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "A Bitwarden lehetővé teszi a tároló elemeinek megosztását másokkal egy szervezet használatával. Szeretnénk ellátogatni a bitwarden.com webhelyre további információkét?"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Áthelyezés szervezethez"
   },
   "share": {
     "message": "Megosztás"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ átkerült $ORGNAME$ szervezethez",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -657,7 +657,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Válasszunk egy szervezetet, ahová áthelyezni szeretnénk ezt az elemet. A szervezetbe áthelyezés átruházza az elem tulajdonjogát az adott szervezetre. Az áthelyezés után többé nem leszünk az elem közvetlen tulajdonosa."
   },
   "learnMore": {
     "message": "Tudjon meg többet"
@@ -819,7 +819,7 @@
     "message": "A WebAuthn 2FA ellenőrzés folytatása az új fülön."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "Új fül megnyitása"
   },
   "webAuthnAuthenticate": {
     "message": "WebAutn hitelesítés"
@@ -918,22 +918,22 @@
     "message": "Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "Alapértelmezett beállítások bejelentkezési elemekhez"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "Az Automatikus kitöltés engedélyezése az oldalbetöltéskor engedélyezheti vagy letilthatja a funkciót az egyes bejelentkezési elemeknél. Ez az alapértelmezett beállítás a bejelentkezési elemeknéll, amelyek nincsenek külön konfigurálva."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Automatikus kitöltés oldal betöltésnél (Ha engedélyezett az opcióknál)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "Alapbeállítások használata"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "Automatikus kitöltés oldalbetöltésnél"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "Nincs automatikus kitöltés oldalbetöltéskor"
   },
   "commandOpenPopup": {
     "message": "Széf megnyitása ablakban"
@@ -1748,9 +1748,9 @@
     "message": "Ez a művelet védett. A folytatásért ismételten meg kell adni a mesterjelszőt az személyazonosság ellenőrzéséhez."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Email hitelesítés szükséges"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
+    "message": "A funkció használatához igazolni kell email címet. Az email cím a webtárban ellenőrizhető."
   }
 }

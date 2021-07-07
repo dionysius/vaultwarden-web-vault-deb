@@ -151,7 +151,7 @@
     "message": "Spara"
   },
   "move": {
-    "message": "Move"
+    "message": "Flytta"
   },
   "addFolder": {
     "message": "Skapa mapp"
@@ -632,19 +632,19 @@
     "message": "Delad"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "Lär dig om organisationer"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden gör det möjligt för dig att objekt i valvet med andra genom att använda en organisation. Vill du besöka bitwarden.com för att lära dig mer?"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Flytta till organisation"
   },
   "share": {
     "message": "Dela"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ flyttades till $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -657,7 +657,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Välj en organisation som du vill flytta detta objektet till. Flytt till en organisation överför ägandet av objektet till den organisationen. Du kommer inte längre att vara direkt ägare till detta objekt när det har flyttats."
   },
   "learnMore": {
     "message": "Läs mer"
@@ -816,10 +816,10 @@
     "message": "Sätt i din säkerhetsnyckel i en av datorns USB-portar. Om nyckeln har en knapp, sätt fingret på den."
   },
   "webAuthnNewTab": {
-    "message": "Fortsätt verifiering av WebAuthn 2FA i den nya fliken."
+    "message": "För att påbörja verifieringen av WebAuthn 2FA. Klicka på knappen nedan för att öppna en ny flik och följ instruktionerna i den nya fliken."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "Öppna ny flik"
   },
   "webAuthnAuthenticate": {
     "message": "Autentisera WebAuthn"
@@ -909,31 +909,31 @@
     "message": "Miljö-URL:er har sparats."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Aktivera automatisk ifyllnad när sidan laddas"
+    "message": "Aktivera automatisk ifyllnad vid sidhämtning"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Utför automatisk ifyllnad om ett inloggningsformulär upptäcks när webbsidan läses in."
+    "message": "Utför automatisk ifyllnad om ett inloggningsformulär upptäcks när webbsidan laddas."
   },
   "experimentalFeature": {
     "message": "Detta är för närvarande en experimentell funktion. Använd på egen risk."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "Standardinställning för autofyll för inloggningsobjekt"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "Efter att du har aktiverat automatisk ifyllnad vid sidhämtning kan du aktivera eller inaktivera funktionen för enskilda inloggningsobjekt. Detta är standardinställningen för inloggningsobjekt som inte är konfigurerade separat."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Automatisk ifyllning vid sidhämtning (om aktiverat i Alternativ)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "Använd standardinställningen"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "Fyll i automatiskt vid sidladdning"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "Fyll inte i automatiskt vid sidladdning"
   },
   "commandOpenPopup": {
     "message": "Öppna valvet i ett popupfönster"
@@ -1748,9 +1748,9 @@
     "message": "Denna åtgärd är skyddad. För att fortsätta, vänligen verifiera din identitet genom att ange ditt huvudlösenord."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "E-postverifiering krävs"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
+    "message": "Du måste verifiera din e-postadress för att använda den här funktionen. Du kan verifiera din e-postadress i webbvalvet."
   }
 }
