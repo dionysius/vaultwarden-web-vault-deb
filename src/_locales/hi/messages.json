@@ -132,7 +132,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "आपके खाते का फिंगरप्रिंट वाक्यांश",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -151,7 +151,7 @@
     "message": "सेव करें"
   },
   "move": {
-    "message": "Move"
+    "message": "ले जाएं"
   },
   "addFolder": {
     "message": "Add Folder"
@@ -191,7 +191,7 @@
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Automatically generate strong, unique passwords for your logins."
+    "message": "स्वचालित रूप से अपने लॉगिन के लिए मजबूत, अद्वितीय पासवर्ड उत्पन्न करते हैं।"
   },
   "bitWebVault": {
     "message": "bitwarden Web Vault"
@@ -221,11 +221,11 @@
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "कैपिटलाइज़ करें",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "नंबर शामिल करें"
   },
   "minNumbers": {
     "message": "Minimum Numbers"
@@ -237,7 +237,7 @@
     "message": "Avoid Ambiguous Characters"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "वॉल्ट खोजे"
   },
   "edit": {
     "message": "संपादन करें"
@@ -303,19 +303,19 @@
     "message": "कृपया एक अच्छी समीक्षा के साथ हमारी मदत करने पर विचार करें!"
   },
   "browserNotSupportClipboard": {
-    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message": "आपका वेब ब्राउज़र आसान क्लिपबोर्ड कॉपीिंग का समर्थन नहीं करता है। इसके बजाय इसे मैन्युअल रूप से कॉपी करें।"
   },
   "verifyMasterPassword": {
     "message": "Verify Master Password"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "आपकी वॉल्ट लॉक हो गई है। जारी रखने के लिए अपने मास्टर पासवर्ड को सत्यापित करें।"
   },
   "unlock": {
     "message": "ताला खोलें"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "पर के रूप में लॉग इन किया ।",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -328,46 +328,46 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "अमान्य मास्टर पासवर्ड"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "वॉल्ट मध्यांतर"
   },
   "lockNow": {
     "message": "Lock Now"
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "तत्‍काल"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 सेकंड"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 सेकंड"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 सेकंड"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 मिनट"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 मिनट"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 मिनट"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 मिनट"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 मिनट"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 घंटा"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 घंटे"
   },
   "onLocked": {
     "message": "On Locked"
@@ -376,37 +376,37 @@
     "message": "On Restart"
   },
   "never": {
-    "message": "Never"
+    "message": "कभी नहीं"
   },
   "security": {
-    "message": "Security"
+    "message": "सुरक्षा"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "कोई ग़लती हुई।"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "ई-मेल पते की आवश्यकता है।"
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "अमान्य ई-मेल |"
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "मास्टर पासवर्ड की आवश्यकता है।"
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "मास्टर पासवर्ड कम से कम 8 अक्षर लंबे होने चाहिए।"
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "मास्टर पासवर्ड पुष्टि मेल नहीं खाती है।"
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "आपका नया खाता बनाया गया है! अब आप लॉग इन कर सकते हैं।"
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "हमने आपको अपने मास्टर पासवर्ड संकेत के साथ एक ईमेल भेजा है।"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "सत्यापन टोकन आवश्यक है"
   },
   "valueCopied": {
     "message": " copied",
@@ -422,10 +422,10 @@
     "message": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "लॉग आउट"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "अपने लॉगिन सत्र समाप्त हो गया है।"
   },
   "logOutConfirmation": {
     "message": "क्या आप वाकई लॉग आउट करना चाहते हैं?"
@@ -443,13 +443,13 @@
     "message": "नाम आवश्यक है"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "जोड़ा गया फ़ोल्डर"
   },
   "changeMasterPass": {
     "message": "Change Master Password"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "आप वेब वॉल्ट bitwarden.com पर अपना मास्टर पासवर्ड बदल सकते हैं।क्या आप अब वेबसाइट पर जाना चाहते हैं?"
   },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
@@ -458,22 +458,22 @@
     "message": "Edited Folder"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "क्या आप वाकई इस फ़ोल्डर को हटाना चाहते हैं?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "हटाए गए फ़ोल्डर"
   },
   "gettingStartedTutorial": {
     "message": "Getting Started Tutorial"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "ब्राउज़र एक्सटेंशन का सबसे अधिक जानने के लिए हमारे शुरू ट्यूटोरियल देखें।"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "सिंकिंग पूर्ण"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "सिंकिंग असफल।"
   },
   "passwordCopied": {
     "message": "कूटशब्द की नकल हुइ"
@@ -482,7 +482,7 @@
     "message": "यूआरआइ"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "यू.आर.ऐ",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
