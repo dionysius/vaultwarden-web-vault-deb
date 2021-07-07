@@ -644,7 +644,7 @@
     "message": "Share"
   },
   "movedItemToOrg": {
-    "message": "moved to",
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
