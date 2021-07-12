@@ -80,6 +80,7 @@ import {
     DatePipe,
     registerLocaleData,
 } from '@angular/common';
+import localeAz from '@angular/common/locales/az';
 import localeBe from '@angular/common/locales/be';
 import localeBg from '@angular/common/locales/bg';
 import localeBn from '@angular/common/locales/bn';
@@ -122,6 +123,7 @@ import localeVi from '@angular/common/locales/vi';
 import localeZhCn from '@angular/common/locales/zh-Hans';
 import localeZhTw from '@angular/common/locales/zh-Hant';
 
+registerLocaleData(localeAz, 'az');
 registerLocaleData(localeBe, 'be');
 registerLocaleData(localeBg, 'bg');
 registerLocaleData(localeBn, 'bn');
