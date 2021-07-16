@@ -314,6 +314,11 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     async supportsBiometric() {
+        const platformInfo = await BrowserApi.getPlatformInfo();
+        if (platformInfo.os === 'android') {
+            return false;
+        }
+
         if (this.isFirefox()) {
             return parseInt((await browser.runtime.getBrowserInfo()).version.split('.')[0], 10) >= 87;
         }
