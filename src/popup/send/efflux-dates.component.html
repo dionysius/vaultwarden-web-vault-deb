@@ -82,7 +82,7 @@
                         [readOnly]="disabled" data-date-format="mm/dd/yyyy">
                     <select id="deletionTimeCustomFallback" formControlName="fallbackDeletionTime"
                         name="SafariDeletionTime">
-                        <option *ngFor="let o of safariDeletionTimePresetOptions" [ngValue]="o.military">{{o.standard}}
+                        <option *ngFor="let o of safariDeletionTimePresetOptions" [ngValue]="o.twentyFourHour">{{o.twelveHour}}
                         </option>
                     </select>
                 </div>
@@ -112,8 +112,8 @@
                         [readOnly]="disabled" data-date-format="mm/dd/yyyy">
                     <select id="expirationTimeCustomFallback"
                         formControlName="fallbackExpirationTime" name="SafariExpirationTime">
-                        <option *ngFor="let o of safariExpirationTimePresetOptions" [ngValue]="o.military">
-                            {{o.standard}}
+                        <option *ngFor="let o of safariExpirationTimePresetOptions" [ngValue]="o.twentyFourHour">
+                            {{o.twelveHour}}
                         </option>
                     </select>
                 </div>
