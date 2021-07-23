@@ -283,6 +283,10 @@
         display: flex;
         align-items: center;
         word-break: break-all;
+
+        &.box-content-row-word-break {
+            word-break: normal;
+        }
     }
 
     &.box-content-row-multi {

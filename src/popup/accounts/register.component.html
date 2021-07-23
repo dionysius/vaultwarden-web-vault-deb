@@ -80,9 +80,11 @@
                 {{'masterPassHintDesc' | i18n}}
             </div>
         </div>
+        <div [hidden]="!showCaptcha()"><iframe id="hcaptcha_iframe" height="80"></iframe></div>
         <div class="box last" *ngIf="showTerms">
             <div class="box-content">
-                <div class="box-content-row box-content-row-checkbox box-content-row-checkbox-left" appBoxRow>
+                <div class="box-content-row box-content-row-checkbox box-content-row-checkbox-left box-content-row-word-break"
+                    appBoxRow>
                     <input type="checkbox" id="acceptPolicies" [(ngModel)]="acceptPolicies" name="AcceptPolicies">
                     <label for="acceptPolicies">
                         {{'acceptPolicies' | i18n}}<br>
