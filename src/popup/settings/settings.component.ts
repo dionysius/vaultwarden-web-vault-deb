@@ -318,10 +318,7 @@ export class SettingsComponent implements OnInit {
     }
 
     async webVault() {
-        let url = this.environmentService.getWebVaultUrl();
-        if (url == null) {
-            url = 'https://vault.bitwarden.com';
-        }
+        const url = this.environmentService.getWebVaultUrl();
         BrowserApi.createNewTab(url);
     }
 

@@ -19,9 +19,8 @@ import { RegisterComponent as BaseRegisterComponent } from 'jslib-angular/compon
 export class RegisterComponent extends BaseRegisterComponent {
     constructor(authService: AuthService, router: Router,
         i18nService: I18nService, cryptoService: CryptoService,
-        apiService: ApiService, stateService: StateService,
-        platformUtilsService: PlatformUtilsService, passwordGenerationService: PasswordGenerationService,
-        environmentService: EnvironmentService) {
+        apiService: ApiService, stateService: StateService, platformUtilsService: PlatformUtilsService,
+        passwordGenerationService: PasswordGenerationService, environmentService: EnvironmentService) {
         super(authService, router, i18nService, cryptoService, apiService, stateService, platformUtilsService,
             passwordGenerationService, environmentService);
     }

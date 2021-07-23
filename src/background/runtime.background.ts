@@ -161,10 +161,7 @@ export default class RuntimeBackground {
                 }
                 break;
             case 'authResult':
-                let vaultUrl = this.environmentService.getWebVaultUrl();
-                if (vaultUrl == null) {
-                    vaultUrl = 'https://vault.bitwarden.com';
-                }
+                const vaultUrl = this.environmentService.getWebVaultUrl();
 
                 if (msg.referrer == null || Utils.getHostname(vaultUrl) !== msg.referrer) {
                     return;
@@ -177,10 +174,7 @@ export default class RuntimeBackground {
                 catch { }
                 break;
             case 'webAuthnResult':
-                let vaultUrl2 = this.environmentService.getWebVaultUrl();
-                if (vaultUrl2 == null) {
-                    vaultUrl2 = 'https://vault.bitwarden.com';
-                }
+                const vaultUrl2 = this.environmentService.getWebVaultUrl();
 
                 if (msg.referrer == null || Utils.getHostname(vaultUrl2) !== msg.referrer) {
                     return;
