@@ -50,20 +50,25 @@ app-home {
             color: themed('mutedColor');
         }
 
-        span {
-            visibility: hidden;
+        &:not(:hover):not(:focus) {
+            span {
+                clip: rect(0 0 0 0);
+                clip-path: inset(50%);
+                height: 1px;
+                overflow: hidden;
+                position: absolute;
+                white-space: nowrap;
+                width: 1px;
+            }
         }
 
-        &:hover {
+        &:hover, &:focus {
             text-decoration: none;
 
             @include themify($themes) {
                 color: themed('primaryColor');
             }
 
-            span {
-                visibility: visible;
-            }
         }
     }
 }
