@@ -31,11 +31,11 @@
                             class="monospaced" [(ngModel)]="masterPassword" required appInputVerbatim appAutofocus>
                     </div>
                     <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appBlurClick
+                        <button type="button" class="row-btn" appStopClick appBlurClick
                             appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
                             <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

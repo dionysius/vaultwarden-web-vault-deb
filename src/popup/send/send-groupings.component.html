@@ -8,7 +8,7 @@
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <button appBlurClick (click)="addSend()" appA11yTitle="{{'addSend' | i18n}}" [disabled]="disableSend">
+        <button type="button" appBlurClick (click)="addSend()" appA11yTitle="{{'addSend' | i18n}}" [disabled]="disableSend">
             <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
         </button>
     </div>
@@ -22,7 +22,7 @@
         <ng-container *ngIf="loaded">
             <i class="fa fa-frown-o fa-4x"></i>
             <p>{{'noItemsInList' | i18n}}</p>
-            <button (click)="addSend()" class="btn block primary link"
+            <button type="button" (click)="addSend()" class="btn block primary link"
                 [disabled]="disableSend">{{'addSend' | i18n}}</button>
         </ng-container>
     </div>
@@ -32,22 +32,22 @@
                 {{'types' | i18n}}
             </div>
             <div class="box-content single-line">
-                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(sendType.Text)">
+                <button type="button" class="box-content-row" appStopClick appBlurClick (click)="selectType(sendType.Text)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-file-text-o"></i></div>
                         <span class="text">{{'sendTypeText' | i18n}}</span>
                     </div>
                     <span class="row-sub-label">{{typeCounts.get(sendType.Text) || 0}}</span>
                     <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
-                </a>
-                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(sendType.File)">
+                </button>
+                <button type="button" class="box-content-row" appStopClick appBlurClick (click)="selectType(sendType.File)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-file-o"></i></div>
                         <span class="text">{{'sendTypeFile' | i18n}}</span>
                     </div>
                     <span class="row-sub-label">{{typeCounts.get(sendType.File) || 0}}</span>
                     <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
-                </a>
+                </button>
             </div>
         </div>
         <div class="box list">

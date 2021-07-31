@@ -155,11 +155,11 @@
                                 class="monospaced" [(ngModel)]="password" appInputVerbatim [readonly]="disableSend">
                         </div>
                         <div class="action-buttons" *ngIf="!disableSend">
-                            <a class="row-btn" href="#" appStopClick appBlurClick
+                            <button type="button" class="row-btn" appStopClick appBlurClick
                                 appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePasswordVisible()">
                                 <i class="fa fa-lg" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"
                                     aria-hidden="true"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
         <!-- Delete -->
         <div class="box list" *ngIf="editMode">
             <div class="box-content single-line">
-                <a class="box-content-row" href="#" appStopClick appBlurClick (click)="delete()"
+                <button type="button" class="box-content-row" appStopClick appBlurClick (click)="delete()"
                     [appApiAction]="deletePromise" #deleteBtn>
                     <div class="row-main text-danger">
                         <div class="icon text-danger" aria-hidden="true">
@@ -213,7 +213,7 @@
                         </div>
                         <span>{{'deleteSend' | i18n}}</span>
                     </div>
-                </a>
+                </button>
             </div>
         </div>
     </content>

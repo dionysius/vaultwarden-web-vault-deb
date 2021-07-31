@@ -50,16 +50,16 @@
                 <label for="biometric">{{'unlockWithBiometrics' | i18n}}</label>
                 <input id="biometric" type="checkbox" (change)="updateBiometric()" [(ngModel)]="biometric">
             </div>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="lock()">
                 <div class="row-main">{{'lockNow' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            </button>
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="twoStep()">
                 <div class="row-main">{{'twoStepLogin' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
+           </button>
         </div>
     </div>
     <div class="box list">
@@ -72,41 +72,41 @@
                 </div>
                 <span><i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i></span>
             </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="changePassword()">
                 <div class="row-main">{{'changeMasterPassword' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            </button>
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="fingerprint()">
                 <div class="row-main">{{'fingerprintPhrase' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            </button>
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="logOut()">
                 <div class="row-main">{{'logOut' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
+            </button>
         </div>
     </div>
     <div class="box list">
         <div class="box-header">{{'tools' | i18n}}</div>
         <div class="box-content single-line">
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="import()">
                 <div class="row-main">{{'importItems' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            </button>
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="export()">
                 <div class="row-main">{{'exportVault' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            </button>
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="webVault()">
                 <div class="row-main">{{'bitWebVault' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
+            </button>
         </div>
     </div>
     <div class="box list">
@@ -116,26 +116,26 @@
                 <div class="row-main">{{'options' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
             </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="about()">
                 <div class="row-main">{{'about' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            </button>
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="share()">
                 <div class="row-main">{{'learnOrg' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            </button>
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="help()">
                 <div class="row-main">{{'helpFeedback' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+            </button>
+            <button type="button" class="box-content-row box-content-row-flex text-default" appStopClick appBlurClick
                 (click)="rate()">
                 <div class="row-main">{{'rateExtension' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i>
-            </a>
+            </button>
         </div>
         <div class="box-footer">{{'rateExtensionDesc' | i18n}}</div>
     </div>

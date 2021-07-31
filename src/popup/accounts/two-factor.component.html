@@ -73,7 +73,7 @@
         <ng-container *ngIf="selectedProviderType === providerType.WebAuthn && webAuthnNewTab">
             <div class="content text-center" *ngIf="webAuthnNewTab">
                 <p class="text-center">{{'webAuthnNewTab' | i18n}}</p>
-                <button class="btn primary block" (click)="authWebAuthn()" appStopClick>{{'webAuthnNewTabOpen' | i18n}}</button>
+                <button type="button" class="btn primary block" (click)="authWebAuthn()" appStopClick>{{'webAuthnNewTabOpen' | i18n}}</button>
             </div>
         </ng-container>
         <ng-container *ngIf="selectedProviderType === providerType.Duo ||
@@ -94,12 +94,12 @@
         </div>
         <div class="content no-vpad" *ngIf="selectedProviderType != null">
             <p class="text-center">
-                <a href="#" appStopClick (click)="anotherMethod()">{{'useAnotherTwoStepMethod' | i18n}}</a>
+                <button type="button" appStopClick (click)="anotherMethod()">{{'useAnotherTwoStepMethod' | i18n}}</button>
             </p>
             <p *ngIf="selectedProviderType === providerType.Email" class="text-center">
-                <a href="#" appStopClick (click)="sendEmail(true)" [appApiAction]="emailPromise">
+                <button type="button" appStopClick (click)="sendEmail(true)" [appApiAction]="emailPromise">
                     {{'sendVerificationCodeEmailAgain' | i18n}}
-                </a>
+                </button>
             </p>
         </div>
     </content>

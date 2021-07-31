@@ -16,9 +16,9 @@
                 <ng-container *ngIf="excludedDomains">
                     <div class="box-content-row box-content-row-multi" appBoxRow
                         *ngFor="let domain of excludedDomains; let i = index; trackBy:trackByFunction">
-                        <a href="#" appStopClick (click)="removeUri(i)" appA11yTitle="{{'remove' | i18n}}">
+                        <button type="button" appStopClick (click)="removeUri(i)" appA11yTitle="{{'remove' | i18n}}">
                             <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
-                        </a>
+                        </button>
                         <div class="row-main">
                             <label for="excludedDomain{{i}}">{{'uriPosition' | i18n : (i + 1)}}</label>
                             <input id="excludedDomain{{i}}" name="excludedDomain{{i}}" type="text" [(ngModel)]="domain.uri"
@@ -33,17 +33,17 @@
                             </select>
                         </div>
                         <div class="action-buttons">
-                            <a *ngIf="currentUris && currentUris.length" class="row-btn" href="#" appStopClick
+                            <button type="button" *ngIf="currentUris && currentUris.length" class="row-btn" appStopClick
                                 appBlurClick appA11yTitle="{{'toggleCurrentUris' | i18n}}" (click)="toggleUriInput(domain)">
                                 <i aria-hidden="true" class="fa fa-lg fa-list"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </ng-container>
-                <a href="#" appStopClick appBlurClick (click)="addUri()"
+                <button type="button" appStopClick appBlurClick (click)="addUri()"
                     class="box-content-row box-content-row-newmulti">
                     <i class="fa fa-plus-circle fa-fw fa-lg" aria-hidden="true"></i> {{'newUri' | i18n}}
-                </a>
+                </button>
             </div>
             <div class="box-footer">
                 {{'excludedDomainsDesc' | i18n}}
