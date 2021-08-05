@@ -20,6 +20,7 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
@@ -44,7 +45,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         environmentService: EnvironmentService, private ngZone: NgZone,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private popupUtilsService: PopupUtilsService, stateService: StateService,
-        storageService: StorageService, route: ActivatedRoute, private messagingService: MessagingService) {
+        storageService: StorageService, route: ActivatedRoute, private messagingService: MessagingService,
+        private userService: UserService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
             stateService, storageService, route);
         super.onSuccessfulLogin = () => {
@@ -52,6 +54,17 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         };
         super.successRoute = '/tabs/vault';
         this.webAuthnNewTab = this.platformUtilsService.isFirefox() || this.platformUtilsService.isSafari();
+        super.onSuccessfulLoginNavigate = async () => {
+            if (await this.userService.getForcePasswordReset()) {
+                this.router.navigate(['update-temp-password']);
+            } else {
+                this.router.navigate([this.successRoute], {
+                    queryParams: {
+                        identifier: this.identifier,
+                    },
+                });
+            }
+        }
     }
 
     async ngOnInit() {
