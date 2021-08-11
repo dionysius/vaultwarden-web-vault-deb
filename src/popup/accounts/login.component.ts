@@ -26,17 +26,14 @@ export class LoginComponent extends BaseLoginComponent {
         protected cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
         syncService: SyncService, private userService: UserService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService, passwordGenerationService, cryptoFunctionService, storageService);
-        super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
+        super.onSuccessfulLogin = async () => {
+            await syncService.fullSync(true).then(async () => {
+                if (await this.userService.getForcePasswordReset()) {
+                    this.router.navigate(['update-temp-password']);
+                }
+            });
         };
         super.successRoute = '/tabs/vault';
-        super.onSuccessfulLoginNavigate = async () => {
-            if (await this.userService.getForcePasswordReset()) {
-                this.router.navigate(['update-temp-password']);
-            } else {
-                this.router.navigate([this.successRoute]);
-            }
-        };
     }
 
     settings() {
