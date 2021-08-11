@@ -57,6 +57,7 @@ import { ApiActionDirective } from 'jslib-angular/directives/api-action.directiv
 import { AutofocusDirective } from 'jslib-angular/directives/autofocus.directive';
 import { BlurClickDirective } from 'jslib-angular/directives/blur-click.directive';
 import { BoxRowDirective } from 'jslib-angular/directives/box-row.directive';
+import { CipherListVirtualScroll } from 'jslib-angular/directives/cipherListVirtualScroll.directive';
 import { FallbackSrcDirective } from 'jslib-angular/directives/fallback-src.directive';
 import { InputVerbatimDirective } from 'jslib-angular/directives/input-verbatim.directive';
 import { SelectCopyDirective } from 'jslib-angular/directives/select-copy.directive';
@@ -190,6 +191,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BlurClickDirective,
         BoxRowDirective,
         CalloutComponent,
+        CipherListVirtualScroll,
         CipherRowComponent,
         CiphersComponent,
         CollectionsComponent,
