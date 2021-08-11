@@ -20,6 +20,7 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
@@ -44,11 +45,16 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         environmentService: EnvironmentService, private ngZone: NgZone,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private popupUtilsService: PopupUtilsService, stateService: StateService,
-        storageService: StorageService, route: ActivatedRoute, private messagingService: MessagingService) {
+        storageService: StorageService, route: ActivatedRoute, private messagingService: MessagingService,
+        private userService: UserService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
             stateService, storageService, route);
-        super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
+        super.onSuccessfulLogin = async () => {
+            return syncService.fullSync(true).then(async () => {
+                if (await this.userService.getForcePasswordReset()) {
+                    this.router.navigate(['update-temp-password']);
+                };
+            });
         };
         super.successRoute = '/tabs/vault';
         this.webAuthnNewTab = this.platformUtilsService.isFirefox() || this.platformUtilsService.isSafari();

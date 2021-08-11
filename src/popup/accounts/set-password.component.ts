@@ -31,6 +31,13 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
         syncService: SyncService, route: ActivatedRoute) {
         super(i18nService, cryptoService, messagingService, userService, passwordGenerationService,
             platformUtilsService, policyService, router, apiService, syncService, route);
+        super.onSuccessfulChangePassword = async () => {
+            if (await this.userService.getForcePasswordReset()) {
+                this.router.navigate(['update-temp-password']);
+            } else {
+                this.router.navigate([this.successRoute]);
+            }
+        };
     }
 
     get masterPasswordScoreWidth() {
