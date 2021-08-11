@@ -49,22 +49,15 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         private userService: UserService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
             stateService, storageService, route);
-        super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
+        super.onSuccessfulLogin = async () => {
+            return syncService.fullSync(true).then(async () => {
+                if (await this.userService.getForcePasswordReset()) {
+                    this.router.navigate(['update-temp-password']);
+                };
+            });
         };
         super.successRoute = '/tabs/vault';
         this.webAuthnNewTab = this.platformUtilsService.isFirefox() || this.platformUtilsService.isSafari();
-        super.onSuccessfulLoginNavigate = async () => {
-            if (await this.userService.getForcePasswordReset()) {
-                this.router.navigate(['update-temp-password']);
-            } else {
-                this.router.navigate([this.successRoute], {
-                    queryParams: {
-                        identifier: this.identifier,
-                    },
-                });
-            }
-        }
     }
 
     async ngOnInit() {
