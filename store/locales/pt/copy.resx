@@ -118,57 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden - Trình quản lý mật khẩu miễn phí</value>
+    <value>Bitwarden - Gerenciador de Senhas Gratuito</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Một trình quản lý mật khẩu an toàn và miễn phí cho mọi thiết bị của bạn</value>
+    <value>Um gerenciador de senhas gratuito e seguro para todos os seus dispositivos</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden, Inc là công ty mẹ của 8bit Solutions LLC
+    <value>O Bitwarden é a maneira mais fácil e segura de armazenar todos os seus usuários e senhas mantendo-os convenientemente sincronizados entre todos os seus dispositivos.
 
-ĐƯỢC ĐÁNH GIÁ LÀ TRÌNH QUẢN LÝ MẬT KHẨU TỐT NHẤT BỞI NHÀ BÁO LỚN NHƯ THE VERGE, CNET, U.S. NEWS &amp; WORLD REPORT VÀ HƠN NỮA
+O furto de senhas é um problema sério. Os sites e aplicativos que os utiliza estão sob ataque todos os dias. Brechas de segurança ocorrem e as suas senhas são furtadas. Quando você reutiliza as mesmas senhas entre aplicativos e sites, os hackers podem facilmente acessar o seu e-mail, banco, e outras contas importantes.
 
-Quản lý, lưu trữ, bảo mật và chia sẻ mật khẩu không giới hạn trên các thiết bị không giới hạn mọi lúc, mọi nơi. Bitwarden cung cấp các giải pháp quản lý mật khẩu mã nguồn mở cho tất cả mọi người, cho dù ở nhà, tại cơ quan hay khi đang di chuyển .
+Os especialistas de segurança recomendam que utilize uma senha diferente e aleatoriamente gerada para todas as contas que você cria. Mas como gerenciar todas essas senhas? O Bitwarden torna-lhe fácil criar, armazenar, e acessar as suas senhas.
 
-Tạo mật khẩu mạnh, không bị trùng và ngẫu nhiên dựa trên các yêu cầu bảo mật cho mọi trang web bạn thường xuyên sử dụng.
+O Bitwarden armazena todas as suas credenciais num cofre encriptado que sincroniza entre todos os seus dispositivos. Como são completamente encriptados antes de se quer sair do seu dispositivo, apenas você tem acesso aos seus dados. Nem se quer a equipe do Bitwarden pode ler os seus dados, mesmo se quiséssemos. Os seus dados são selados com encriptação AES-256 bits, salted hashing, e PBKDF2 SHA-256.
 
-Tính năng 'Bitwarden Send' nhanh chóng truyền thông tin được mã hóa --- tệp và bản rõ - trực tiếp đến bất kỳ ai.
-
-Bitwarden cung cấp các gói 'Nhóm' và 'Doanh nghiệp' cho các công ty để bạn có thể chia sẻ mật khẩu với đồng nghiệp một cách an toàn.
-
-Tại sao bạn nên chọn Bitwarden:
-
-Mã hóa tốt nhất thế giới
-Mật khẩu được bảo vệ bằng mã hóa đầu cuối (end-to-end encryption) tiên tiến như AES-256 bit, salted hashtag, và PBKDF2 SHA-256 nên dữ liệu của bạn luôn an toàn và riêng tư. 
-
-Trình tạo mật khẩu tích hợp
-Tạo mật khẩu mạnh, không bị trùng và ngẫu nhiên dựa trên các yêu cầu bảo mật cho mọi trang web bạn thường xuyên sử dụng.
-
-Bản dịch ngôn ngữ từ cộng đồng
-Bitwarden đã có bản dịch 40 ngôn ngữ và đang phát triển nhờ vào cộng đồng toàn cầu của chúng tôi.
-
-Ứng dụng đa nền tảng
-Bảo mật và chia sẻ dữ liệu nhạy cảm trong kho lưu trữ Bitwarden của bạn từ bất kỳ trình duyệt, điện thoại thông minh hoặc hệ điều hành máy tính nào, vân vân</value>
+Bitwarden é um software 100% de código aberto. O código-fonte do Bitwarden está hospedado no GitHub e todos são livres para revisar, auditar e contribuir com a base de códigos do Bitwarden.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Một trình quản lý mật khẩu an toàn và miễn phí cho mọi thiết bị của bạn</value>
+    <value>Um gerenciador de senhas gratuito e seguro para todos os seus dispositivos</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Đồng bộ hóa và truy cập vào kho mật khẩu của bạn từ nhiều thiết bị</value>
+    <value>Sincronize e acesse o seu cofre através de múltiplos dispositivos</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Quản lý tất cả đăng nhập và mật khẩu của bạn từ một kho mật khẩu an toàn</value>
+    <value>Gerencie todas as suas credenciais a partir de um cofre seguro</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Nhanh chóng tự động điền thông tin đăng nhập của bạn vào bất kỳ trang web nào mà bạn truy cập</value>
+    <value>Autopreencha rapidamente as suas credenciais dentro de qualquer site que visitar</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Dễ dàng truy cập kho mật khẩu của bạn từ menu chuột phải</value>
+    <value>O seu cofre é também acessível a partir do menu de contexto pelo clique no botão direito do mouse</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Tự động tạo mật khẩu mạnh, ngẫu nhiên và an toàn</value>
+    <value>Gera automaticamente senhas fortes, aleatórias e seguras</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Thông tin của bạn được quản lý một cách an toàn bằng cách sử dụng mã hóa AES-256 bit</value>
+    <value>A sua informação é gerenciada com segurança utilizando encriptação AES-256 bits</value>
   </data>
 </root>

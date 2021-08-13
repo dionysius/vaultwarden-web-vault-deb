@@ -118,57 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden - Trình quản lý mật khẩu miễn phí</value>
+    <value>Bitwarden – Free Password Manager</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Một trình quản lý mật khẩu an toàn và miễn phí cho mọi thiết bị của bạn</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden, Inc là công ty mẹ của 8bit Solutions LLC
+    <value>Bitwarden, Inc. is the parent company of 8bit Solutions LLC.
 
-ĐƯỢC ĐÁNH GIÁ LÀ TRÌNH QUẢN LÝ MẬT KHẨU TỐT NHẤT BỞI NHÀ BÁO LỚN NHƯ THE VERGE, CNET, U.S. NEWS &amp; WORLD REPORT VÀ HƠN NỮA
+NAMED BEST PASSWORD MANAGER BY THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET, AND MORE.
 
-Quản lý, lưu trữ, bảo mật và chia sẻ mật khẩu không giới hạn trên các thiết bị không giới hạn mọi lúc, mọi nơi. Bitwarden cung cấp các giải pháp quản lý mật khẩu mã nguồn mở cho tất cả mọi người, cho dù ở nhà, tại cơ quan hay khi đang di chuyển .
+Manage, store, secure, and share unlimited passwords across unlimited devices from anywhere. Bitwarden delivers open source password management solutions to everyone, whether at  home, at work, or on the go.
 
-Tạo mật khẩu mạnh, không bị trùng và ngẫu nhiên dựa trên các yêu cầu bảo mật cho mọi trang web bạn thường xuyên sử dụng.
+Generate strong, unique, and random passwords based on security requirements for every website you frequent.
 
-Tính năng 'Bitwarden Send' nhanh chóng truyền thông tin được mã hóa --- tệp và bản rõ - trực tiếp đến bất kỳ ai.
+Bitwarden Send quickly transmits encrypted information --- files and plaintext -- directly to anyone.
 
-Bitwarden cung cấp các gói 'Nhóm' và 'Doanh nghiệp' cho các công ty để bạn có thể chia sẻ mật khẩu với đồng nghiệp một cách an toàn.
+Bitwarden offers Teams and Enterprise plans for companies so you can securely share passwords with colleagues.
 
-Tại sao bạn nên chọn Bitwarden:
+Why Choose Bitwarden:
 
-Mã hóa tốt nhất thế giới
-Mật khẩu được bảo vệ bằng mã hóa đầu cuối (end-to-end encryption) tiên tiến như AES-256 bit, salted hashtag, và PBKDF2 SHA-256 nên dữ liệu của bạn luôn an toàn và riêng tư. 
+World-Class Encryption
+Passwords are protected with advanced end-to-end encryption (AES-256 bit, salted hashtag, and PBKDF2 SHA-256) so your data stays secure and private.
 
-Trình tạo mật khẩu tích hợp
-Tạo mật khẩu mạnh, không bị trùng và ngẫu nhiên dựa trên các yêu cầu bảo mật cho mọi trang web bạn thường xuyên sử dụng.
+Built-in Password Generator
+Generate strong, unique, and random passwords based on security requirements for every website you frequent.
 
-Bản dịch ngôn ngữ từ cộng đồng
-Bitwarden đã có bản dịch 40 ngôn ngữ và đang phát triển nhờ vào cộng đồng toàn cầu của chúng tôi.
+Global Translations 
+Bitwarden translations exist in 40 languages and are growing, thanks to our global community.
 
-Ứng dụng đa nền tảng
-Bảo mật và chia sẻ dữ liệu nhạy cảm trong kho lưu trữ Bitwarden của bạn từ bất kỳ trình duyệt, điện thoại thông minh hoặc hệ điều hành máy tính nào, vân vân</value>
+Cross-Platform Applications 
+Secure and share sensitive data within your Bitwarden Vault from any browser, mobile device, or desktop OS, and more.
+</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Một trình quản lý mật khẩu an toàn và miễn phí cho mọi thiết bị của bạn</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Đồng bộ hóa và truy cập vào kho mật khẩu của bạn từ nhiều thiết bị</value>
+    <value>Sync and access your vault from multiple devices</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Quản lý tất cả đăng nhập và mật khẩu của bạn từ một kho mật khẩu an toàn</value>
+    <value>Manage all your logins and passwords from a secure vault</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Nhanh chóng tự động điền thông tin đăng nhập của bạn vào bất kỳ trang web nào mà bạn truy cập</value>
+    <value>Quickly auto-fill your login credentials into any website that you visit</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Dễ dàng truy cập kho mật khẩu của bạn từ menu chuột phải</value>
+    <value>Your vault is also conveniently accessible from the right-click menu</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Tự động tạo mật khẩu mạnh, ngẫu nhiên và an toàn</value>
+    <value>Automatically generate strong, random, and secure passwords</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Thông tin của bạn được quản lý một cách an toàn bằng cách sử dụng mã hóa AES-256 bit</value>
+    <value>Your information is managed securely using AES-256 bit encryption</value>
   </data>
 </root>

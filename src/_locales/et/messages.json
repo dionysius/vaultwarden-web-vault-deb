@@ -526,10 +526,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Keela \"Lisa konto andmed\" märguanne"
+    "message": "Keela \"Lisa konto andmed\" teavitus"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Lisa konto andmed\" märguanne ilmub pärast esimest sisselogimist ning võimaldab Sul kontoandmeid automaatselt Bitwardenisse lisada."
+    "message": "\"Lisa konto andmed\" teavitus ilmub pärast esimest sisselogimist ning võimaldab kontoandmeid automaatselt Bitwardenisse lisada."
   },
   "dontShowCardsCurrentTab": {
     "message": "Ära kuva \"Kaart\" vaates krediitkaardi andmeid"
@@ -564,7 +564,7 @@
     "message": "Keela Muudetud parooli teavitus"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "Kui mistahes veebilehel on toimunud parooli vahetamine, annab \"Muudetud parooli teavitus\" sulle märku, et vahetaksid selle ära ka Bitwardeni paroolihoidlas."
+    "message": "Kui mistahes veebilehel on toimunud parooli vahetamine, annab \"Muudetud parooli teavitus\" märku, et värskendaksid seda ka Bitwardeni paroolihoidlas."
   },
   "notificationChangeDesc": {
     "message": "Soovid seda parooli ka Bitwardenis uuendada?"
@@ -837,7 +837,7 @@
     "message": "Kaheastmelise sisselogimise valikud"
   },
   "recoveryCodeDesc": {
-    "message": "Sul ei ole ligipääsu ühelegi kaheastmelise kinnitamise teenusele? Kasuta Taastamise koodi, et kaheastmeline kinnitamine oma kontol välja lülitada."
+    "message": "Puudub ligipääs kaheastmelise kinnitamise teenusele? Kasuta Taastamise koodi, et kaheastmeline kinnitamine oma kontol välja lülitada."
   },
   "recoveryCodeTitle": {
     "message": "Taastamise kood"
@@ -933,7 +933,7 @@
     "message": "Täida kontoandmed lehe laadimisel"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Ära täida kontoandmed lehe laadimisel"
+    "message": "Ära täida kontoandmeid lehe laadimisel"
   },
   "commandOpenPopup": {
     "message": "Ava hoidla uues aknas"
