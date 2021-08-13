@@ -60,7 +60,7 @@
             </div>
         </ng-container>
         <ng-container *ngIf="selectedProviderType === providerType.WebAuthn && !webAuthnNewTab">
-            <div id="web-authn-frame"><iframe id="webauthn_iframe"></iframe></div>
+            <div id="web-authn-frame"><iframe id="webauthn_iframe" [allow]="webAuthnAllow"></iframe></div>
             <div class="box">
                 <div class="box-content">
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>
