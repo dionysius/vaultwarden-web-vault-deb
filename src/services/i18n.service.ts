@@ -8,8 +8,9 @@ export default class I18nService extends BaseI18nService {
             return await file.json();
         });
 
+        // Please leave 'en' where it is, as it's our fallback language in case no translation can be found
         this.supportedTranslationLocales = [
-            'az', 'en', 'be', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'en-IN', 'es', 'et', 'fa', 'fi', 'fr', 'he', 'hr', 'hu',
+            'en', 'az', 'be', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'en-IN', 'es', 'et', 'fa', 'fi', 'fr', 'he', 'hr', 'hu',
             'id', 'it', 'ja', 'kn', 'ko', 'lv', 'ml', 'nb', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sr', 'sv', 'th', 'tr', 'uk',
             'vi', 'zh-CN', 'zh-TW',
         ];
