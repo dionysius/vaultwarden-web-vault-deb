@@ -49,4 +49,5 @@ jobs:
           create_pull_request: true
           pull_request_title: "Autosync Crowdin Translations"
           pull_request_body: "Autosync the updated translations"
+          pull_request_base_branch_name: crowdin-testing-1.51.1
 
