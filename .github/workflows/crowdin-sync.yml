@@ -46,6 +46,7 @@ jobs:
           github_user_name: "github-actions"
           github_user_email: "<>"
           commit_message: "Autosync the updated translations"
+          localization_branch_name: crowdin-auto-sync
           create_pull_request: true
           pull_request_title: "Autosync Crowdin Translations"
           pull_request_body: "Autosync the updated translations"
