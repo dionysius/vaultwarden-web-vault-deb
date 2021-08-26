@@ -10,6 +10,8 @@ jobs:
   crowdin-sync:
     name: Autosync
     runs-on: ubuntu-20.04
+    env: 
+      _CROWDIN_PROJECT_ID: "268134"
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -30,7 +32,6 @@ jobs:
         uses: crowdin/github-action@e39093fd75daae7859c68eded4b43d42ec78d8ea
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CROWDIN_PROJECT_ID: "268134"
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
         with:
           config: crowdin.yml
