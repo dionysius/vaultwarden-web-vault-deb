@@ -72,6 +72,7 @@ import { SearchCiphersPipe } from 'jslib-angular/pipes/search-ciphers.pipe';
 
 import { ActionButtonsComponent } from './components/action-buttons.component';
 import { CipherRowComponent } from './components/cipher-row.component';
+import { PasswordRepromptComponent } from './components/password-reprompt.component';
 import { PopOutComponent } from './components/pop-out.component';
 import { SendListComponent } from './components/send-list.component';
 
@@ -240,6 +241,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorComponent,
         UpdateTempPasswordComponent,
         ViewComponent,
+        PasswordRepromptComponent,
     ],
     entryComponents: [],
     providers: [
