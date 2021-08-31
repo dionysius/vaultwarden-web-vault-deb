@@ -456,18 +456,6 @@ export default class RuntimeBackground {
     }
 
     private async allowPersonalOwnership(): Promise<boolean> {
-        const personalOwnershipPolicies = await this.policyService.getAll(PolicyType.PersonalOwnership);
-        if (personalOwnershipPolicies != null) {
-            for (const policy of personalOwnershipPolicies) {
-                if (policy.enabled) {
-                    const org = await this.userService.getOrganization(policy.organizationId);
-                    if (org != null && org.enabled && org.usePolicies && !org.canManagePolicies
-                        && org.status === OrganizationUserStatusType.Confirmed) {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
+        return !await this.policyService.policyAppliesToUser(PolicyType.PersonalOwnership);
     }
 }
