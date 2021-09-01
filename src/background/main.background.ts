@@ -512,6 +512,14 @@ export default class MainBackground {
             title: this.i18nService.t('generatePasswordCopied'),
         });
 
+        await this.contextMenusCreate({
+            type: 'normal',
+            id: 'copy-identifier',
+            parentId: 'root',
+            contexts: ['all'],
+            title: this.i18nService.t('copyElementIdentifier'),
+        });
+
         this.buildingContextMenu = false;
     }
 

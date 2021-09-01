@@ -195,6 +195,8 @@ export default class RuntimeBackground {
                     type: 'info',
                 });
                 break;
+            case 'getClickedElementResponse':
+                this.platformUtilsService.copyToClipboard(msg.identifier, { window: window });
             default:
                 break;
         }
