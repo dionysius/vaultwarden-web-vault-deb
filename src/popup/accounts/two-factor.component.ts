@@ -53,7 +53,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             return syncService.fullSync(true).then(async () => {
                 if (await this.userService.getForcePasswordReset()) {
                     this.router.navigate(['update-temp-password']);
-                };
+                }
             });
         };
         super.successRoute = '/tabs/vault';
