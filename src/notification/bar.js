@@ -53,9 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             addButton.addEventListener('click', (e) => {
                 e.preventDefault();
+                const folderId = document.querySelector('#template-add-clone .select-folder').value;
                 sendPlatformMessage({
                     command: 'bgAddSave',
-                    folder: document.getElementById("select-folder").value,
+                    folder: folderId,
                 });
             });
 
