@@ -109,32 +109,41 @@ jobs:
       - name: Gulp
         run: gulp ci
 
+      - name: Try to find the zips
+        run: |
+          ls -atlh dist
+
       - name: Upload Opera artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: dist-opera-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-opera-${{ env._BUILD_NUMBER }}.zip
+          if-no-files-found: error
 
       - name: Upload Chrome artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: dist-chrome-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-chrome-${{ env._BUILD_NUMBER }}.zip
+          if-no-files-found: error
 
       - name: Upload Firefox artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: dist-firefox-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-firefox-${{ env._BUILD_NUMBER }}.zip
+          if-no-files-found: error
 
       - name: Upload Edge artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: dist-edge-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-edge-${{ env._BUILD_NUMBER }}.zip
+          if-no-files-found: error
 
       - name: Upload coverage artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: coverage-${{ env._BUILD_NUMBER }}.zip
           path: coverage/coverage-${{ env._BUILD_NUMBER }}.zip
+          if-no-files-found: error
