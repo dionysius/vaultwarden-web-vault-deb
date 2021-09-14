@@ -160,7 +160,7 @@ jobs:
         with:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
           asset_name: dist-opera-${{ env._BUILD_NUMBER }}.zip
-          asset_path: dist/dist-opera-${{ env._BUILD_NUMBER }}.zip
+          asset_path: dist/dist-opera.zip
           asset_content_type: application
 
       - name: Upload Chrome release asset
@@ -170,7 +170,7 @@ jobs:
         with:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
           asset_name: dist-chrome-${{ env._BUILD_NUMBER }}.zip
-          asset_path: dist/dist-chrome-${{ env._BUILD_NUMBER }}.zip
+          asset_path: dist/dist-chrome.zip
           asset_content_type: application/zip
 
       - name: Upload Firefox release asset
@@ -180,7 +180,7 @@ jobs:
         with:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
           asset_name: dist-firefox-${{ env._BUILD_NUMBER }}.zip
-          asset_path: dist/dist-firefox-${{ env._BUILD_NUMBER }}.zip
+          asset_path: dist/dist-firefox.zip
           asset_content_type: application/zip
 
       - name: Upload Edge release asset
@@ -190,7 +190,7 @@ jobs:
         with:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
           asset_name: dist-edge-${{ env._BUILD_NUMBER }}.zip
-          asset_path: dist/dist-edge-${{ env._BUILD_NUMBER }}.zip
+          asset_path: dist/dist-edge.zip
           asset_content_type: application/zip
 
       - name: Upload browser source zip release asset
