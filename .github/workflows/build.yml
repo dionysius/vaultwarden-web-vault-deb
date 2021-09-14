@@ -109,11 +109,6 @@ jobs:
       - name: Gulp
         run: gulp ci
 
-      - name: Try to find the zips
-        run: |
-          ls
-          ls coverage
-
       - name: Upload Opera artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
@@ -143,6 +138,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload coverage artifact
+        if: false
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: coverage-${{ env._BUILD_NUMBER }}.zip
