@@ -111,7 +111,7 @@ jobs:
 
       - name: Try to find the zips
         run: |
-          ls -atlh dist
+          ls dist
 
       - name: Upload Opera artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
