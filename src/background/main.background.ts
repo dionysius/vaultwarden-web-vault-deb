@@ -197,7 +197,7 @@ export default class MainBackground {
         this.policyService = new PolicyService(this.userService, this.storageService);
         this.vaultTimeoutService = new VaultTimeoutService(this.cipherService, this.folderService,
             this.collectionService, this.cryptoService, this.platformUtilsService, this.storageService,
-            this.messagingService, this.searchService, this.userService, this.tokenService,
+            this.messagingService, this.searchService, this.userService, this.tokenService, this.policyService,
             async () => {
                 if (this.notificationsService != null) {
                     this.notificationsService.updateConnection(false);

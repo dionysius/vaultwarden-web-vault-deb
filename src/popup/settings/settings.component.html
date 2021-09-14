@@ -28,13 +28,7 @@
     <div class="box list">
         <div class="box-header">{{'security' | i18n}}</div>
         <div class="box-content single-line">
-            <div class="box-content-row display-block" appBoxRow>
-                <label for="vaultTimeout">{{'vaultTimeout' | i18n}}</label>
-                <select #vaultTimeoutSelect id="vaultTimeout" name="VaultTimeouts" [ngModel]="vaultTimeout"
-                    (ngModelChange)="saveVaultTimeout($event)">
-                    <option *ngFor="let o of vaultTimeouts" [ngValue]="o.value">{{o.name}}</option>
-                </select>
-            </div>
+            <app-vault-timeout-input [vaultTimeouts]="vaultTimeouts" [formControl]="vaultTimeout" ngDefaultControl></app-vault-timeout-input>
             <div class="box-content-row display-block" appBoxRow>
                 <label for="vaultTimeoutAction">{{'vaultTimeoutAction' | i18n}}</label>
                 <select #vaultTimeoutActionSelect id="vaultTimeoutAction" name="VaultTimeoutActions"

@@ -1,12 +1,13 @@
-import Swal from 'sweetalert2/src/sweetalert2.js';
-
 import {
     Component,
     ElementRef,
     OnInit,
     ViewChild,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToasterService } from 'angular2-toaster';
+import Swal from 'sweetalert2/src/sweetalert2.js';
 
 import { BrowserApi } from '../../browser/browserApi';
 
@@ -44,10 +45,8 @@ const RateUrls = {
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
-    @ViewChild('vaultTimeoutSelect', { read: ElementRef, static: true }) vaultTimeoutSelectRef: ElementRef;
     @ViewChild('vaultTimeoutActionSelect', { read: ElementRef, static: true }) vaultTimeoutActionSelectRef: ElementRef;
     vaultTimeouts: any[];
-    vaultTimeout: number = null;
     vaultTimeoutActions: any[];
     vaultTimeoutAction: string;
     pin: boolean = null;
@@ -55,11 +54,14 @@ export class SettingsComponent implements OnInit {
     biometric: boolean = false;
     previousVaultTimeout: number = null;
 
+    vaultTimeout: FormControl = new FormControl(null);
+
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
         private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
         public messagingService: MessagingService, private router: Router,
         private environmentService: EnvironmentService, private cryptoService: CryptoService,
-        private userService: UserService, private popupUtilsService: PopupUtilsService) {
+        private userService: UserService, private popupUtilsService: PopupUtilsService,
+        private toasterService: ToasterService) {
     }
 
     async ngOnInit() {
@@ -89,14 +91,18 @@ export class SettingsComponent implements OnInit {
             { name: this.i18nService.t('logOut'), value: 'logOut' },
         ];
 
-        let timeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
+        let timeout = await this.vaultTimeoutService.getVaultTimeout();
         if (timeout != null) {
             if (timeout === -2 && !showOnLocked) {
                 timeout = -1;
             }
-            this.vaultTimeout = timeout;
+            this.vaultTimeout.setValue(timeout);
         }
-        this.previousVaultTimeout = this.vaultTimeout;
+        this.previousVaultTimeout = this.vaultTimeout.value;
+        this.vaultTimeout.valueChanges.subscribe(value => {
+            this.saveVaultTimeout(value);
+        });
+
         const action = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
         this.vaultTimeoutAction = action == null ? 'lock' : action;
 
@@ -113,18 +119,19 @@ export class SettingsComponent implements OnInit {
                 this.i18nService.t('neverLockWarning'), null,
                 this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');
             if (!confirmed) {
-                this.vaultTimeouts.forEach((option: any, i) => {
-                    if (option.value === this.vaultTimeout) {
-                        this.vaultTimeoutSelectRef.nativeElement.value = i + ': ' + this.vaultTimeout;
-                    }
-                });
+                this.vaultTimeout.setValue(this.previousVaultTimeout);
                 return;
             }
         }
-        this.previousVaultTimeout = this.vaultTimeout;
-        this.vaultTimeout = newValue;
-        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
-            this.vaultTimeoutAction);
+
+        if (!this.vaultTimeout.valid) {
+            this.toasterService.popAsync('error', null, this.i18nService.t('vaultTimeoutToLarge'));
+            return;
+        }
+
+        this.previousVaultTimeout = this.vaultTimeout.value;
+
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout.value, this.vaultTimeoutAction);
         if (this.previousVaultTimeout == null) {
             this.messagingService.send('bgReseedStorage');
         }
@@ -145,9 +152,14 @@ export class SettingsComponent implements OnInit {
                 return;
             }
         }
+
+        if (!this.vaultTimeout.valid) {
+            this.toasterService.popAsync('error', null, this.i18nService.t('vaultTimeoutToLarge'));
+            return;
+        }
+
         this.vaultTimeoutAction = newValue;
-        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
-            this.vaultTimeoutAction);
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout.value, this.vaultTimeoutAction);
     }
 
     async updatePin() {
