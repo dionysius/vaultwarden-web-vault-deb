@@ -1764,7 +1764,7 @@
   },
   "updateMasterPasswordWarning": {
     "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
-  }, 
+  },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatic Enrollment"
   },
@@ -1798,5 +1798,11 @@
   },
   "vaultTimeoutToLarge": {
     "message": "Your vault timeout exceeds the restrictions set by your organization."
+  },
+  "vaultExportDisabled": {
+    "message": "Vault Export Disabled"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "One or more organization policies prevents you from exporting your personal vault."
   }
 }
