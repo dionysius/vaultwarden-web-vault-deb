@@ -776,6 +776,9 @@
   "disableAutoTotpCopyDesc": {
     "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
+  "disableAutoBiometricsPrompt": {
+    "message": "Do not prompt for biometrics on launch"
+  },
   "premiumRequired": {
     "message": "Premium Required"
   },

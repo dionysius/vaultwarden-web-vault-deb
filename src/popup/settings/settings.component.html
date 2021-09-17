@@ -44,6 +44,10 @@
                 <label for="biometric">{{'unlockWithBiometrics' | i18n}}</label>
                 <input id="biometric" type="checkbox" (change)="updateBiometric()" [(ngModel)]="biometric">
             </div>
+            <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="supportsBiometric">
+                <label for="autoBiometricsPrompt">{{'disableAutoBiometricsPrompt' | i18n}}</label>
+                <input id="autoBiometricsPrompt" type="checkbox" (change)="updateAutoBiometricsPrompt()" [disabled]="!biometric" [(ngModel)]="disableAutoBiometricsPrompt">
+            </div>
             <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                 (click)="lock()">
                 <div class="row-main">{{'lockNow' | i18n}}</div>
