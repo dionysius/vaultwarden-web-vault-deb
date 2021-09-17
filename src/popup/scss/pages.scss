@@ -68,7 +68,6 @@ app-home {
             @include themify($themes) {
                 color: themed('primaryColor');
             }
-
         }
     }
 }
