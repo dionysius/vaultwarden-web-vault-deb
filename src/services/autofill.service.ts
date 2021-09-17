@@ -1,27 +1,22 @@
-import {
-    CipherType,
-    FieldType,
-} from 'jslib-common/enums';
+import { CipherService } from 'jslib-common/abstractions/cipher.service';
+import { EventService } from 'jslib-common/abstractions/event.service';
+import { TotpService } from 'jslib-common/abstractions/totp.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
-import { CipherView } from 'jslib-common/models/view';
+import { AutofillService as AutofillServiceInterface } from './abstractions/autofill.service';
+
+import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
+import { CipherType } from 'jslib-common/enums/cipherType';
+import { EventType } from 'jslib-common/enums/eventType';
+import { FieldType } from 'jslib-common/enums/fieldType';
+
+import { CipherView } from 'jslib-common/models/view/cipherView';
 
 import AutofillField from '../models/autofillField';
 import AutofillPageDetails from '../models/autofillPageDetails';
 import AutofillScript from '../models/autofillScript';
 
 import { BrowserApi } from '../browser/browserApi';
-
-import { AutofillService as AutofillServiceInterface } from './abstractions/autofill.service';
-
-import {
-    CipherService,
-    TotpService,
-    UserService,
-} from 'jslib-common/abstractions';
-
-import { EventService } from 'jslib-common/abstractions/event.service';
-import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
-import { EventType } from 'jslib-common/enums/eventType';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top', 'data-recurly'];

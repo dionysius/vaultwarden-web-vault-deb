@@ -1,4 +1,4 @@
-import { CipherType } from 'jslib-common/enums';
+import { CipherType } from 'jslib-common/enums/cipherType';
 
 import { CipherView } from 'jslib-common/models/view/cipherView';
 import { LoginUriView } from 'jslib-common/models/view/loginUriView';
@@ -25,7 +25,6 @@ import MainBackground from './main.background';
 
 import { Utils } from 'jslib-common/misc/utils';
 
-import { OrganizationUserStatusType } from 'jslib-common/enums/organizationUserStatusType';
 import { PolicyType } from 'jslib-common/enums/policyType';
 
 export default class RuntimeBackground {
