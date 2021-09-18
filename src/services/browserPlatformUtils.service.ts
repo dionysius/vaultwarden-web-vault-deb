@@ -150,33 +150,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         });
     }
 
-    async showPasswordDialog(title: string, body: string, passwordValidation: (value: string) => Promise<boolean>) {
-        const dialogId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
-
-        this.messagingService.send('showPasswordDialog', {
-            title: title,
-            body: body,
-            dialogId: dialogId,
-        });
-
-        return new Promise<boolean>(resolve => {
-            this.passwordDialogResolves.set(dialogId, {
-                tryResolve: async (canceled: boolean, password: string) => {
-                    if (canceled) {
-                        resolve(false);
-                        return false;
-                    }
-
-                    if (await passwordValidation(password)) {
-                        resolve(true);
-                        return true;
-                    }
-                },
-                date: new Date(),
-            });
-        });
-    }
-
     isDev(): boolean {
         return process.env.ENV === 'development';
     }

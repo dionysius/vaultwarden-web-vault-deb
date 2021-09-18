@@ -200,6 +200,13 @@
         }
     }
 
+    &.last:last-child:before {
+        border-bottom: 1px solid #000000;
+        @include themify($themes) {
+            border-bottom-color: themed('boxBorderColor');
+        }
+    }
+
     &:after {
         content: "";
         display: table;

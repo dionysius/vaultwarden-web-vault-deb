@@ -63,7 +63,8 @@
                 </button>
             </ng-container>
         </div>
-        <cdk-virtual-scroll-viewport itemSize="46" *ngIf="ciphers.length" #virtualScrollViewport>
+        <cdk-virtual-scroll-viewport itemSize="46" minBufferPx="400" maxBufferPx="600" *ngIf="ciphers.length"
+            #virtualScrollViewport>
             <div class="box list only-list">
                 <div class="box-header">
                     {{groupingTitle}}

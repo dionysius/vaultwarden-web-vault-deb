@@ -145,7 +145,8 @@
         <div class="no-items" *ngIf="!ciphers || !ciphers.length">
             <p>{{'noItemsInList' | i18n}}</p>
         </div>
-        <cdk-virtual-scroll-viewport itemSize="46" *ngIf="ciphers && ciphers.length > 0">
+        <cdk-virtual-scroll-viewport itemSize="46" minBufferPx="400" maxBufferPx="600"
+            *ngIf="ciphers && ciphers.length > 0">
             <div class="box list full-list">
                 <div class="box-content">
                     <app-cipher-row *cdkVirtualFor="let searchedCipher of ciphers" [cipher]="searchedCipher"

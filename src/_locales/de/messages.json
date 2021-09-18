@@ -816,7 +816,7 @@
     "message": "Stecke deinen Sicherheitsschlüssel in den USB-Port deines Computers. Falls ein Knopf vorhanden ist, berühre diesen."
   },
   "webAuthnNewTab": {
-    "message": "Fahre mit der WebAuthn 2FA Verifizierung im neuen Tab fort."
+    "message": "Um die WebAuthn 2FA Verifizierung zu starten, klicke auf die Schaltfläche unten, um einen neuen Tab zu öffnen und folge den Anweisungen, die im neuen Tab angezeigt werden."
   },
   "webAuthnNewTabOpen": {
     "message": "Neuen Tab öffnen"
@@ -909,7 +909,7 @@
     "message": "Die URLs der Umgebung wurden gespeichert."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Aktiviere automatisches Ausfüllen beim Laden der Seite"
+    "message": "Auto-Ausfüllen beim Seitenladen aktivieren"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."

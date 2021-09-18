@@ -32,7 +32,7 @@
     "message": "Submit"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "වි-තැපැල් ලිපිනය"
   },
   "masterPass": {
     "message": "Master Password"
@@ -56,7 +56,7 @@
     "message": "My Vault"
   },
   "tools": {
-    "message": "Tools"
+    "message": "මෙවලම්"
   },
   "settings": {
     "message": "සැකසුම්"
@@ -65,25 +65,25 @@
     "message": "Current Tab"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "මුරපදය පිටපත් කරන්න"
   },
   "copyNote": {
-    "message": "Copy Note"
+    "message": "සටහන පිටපත් කරන්න"
   },
   "copyUri": {
     "message": "Copy URI"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "පරිශීලකනාමය පිටපත් කරන්න"
   },
   "copyNumber": {
-    "message": "Copy Number"
+    "message": "අංකය පිටපත් කරන්න"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "ආරක්ෂක කේතය පිටපත් කරන්න"
   },
   "autoFill": {
-    "message": "Auto-fill"
+    "message": "ස්වයං-පිරවීම"
   },
   "generatePasswordCopied": {
     "message": "Generate Password (copied)"
@@ -101,7 +101,7 @@
     "message": "There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin": {
-    "message": "Add a Login"
+    "message": "පිවිසුමක් එකතු කරන්න"
   },
   "addItem": {
     "message": "Add Item"
@@ -116,13 +116,13 @@
     "message": "Get master password hint"
   },
   "continue": {
-    "message": "Continue"
+    "message": "ඉදිරියට"
   },
   "verificationCode": {
     "message": "Verification Code"
   },
   "account": {
-    "message": "Account"
+    "message": "ගිණුම"
   },
   "changeMasterPassword": {
     "message": "Change Master Password"
@@ -139,25 +139,25 @@
     "message": "Two-step Login"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "නික්මෙන්න"
   },
   "about": {
-    "message": "About"
+    "message": "පිලිබඳව"
   },
   "version": {
-    "message": "Version"
+    "message": "අනුවාදය"
   },
   "save": {
-    "message": "Save"
+    "message": "සුරකින්න"
   },
   "move": {
     "message": "Move"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "බහාලුම එකතු කරන්න"
   },
   "name": {
-    "message": "Name"
+    "message": "නම"
   },
   "editFolder": {
     "message": "Edit Folder"
@@ -166,7 +166,7 @@
     "message": "Delete Folder"
   },
   "folders": {
-    "message": "Folders"
+    "message": "බහාලුම්"
   },
   "noFolders": {
     "message": "There are no folders to list."
@@ -240,7 +240,7 @@
     "message": "Search vault"
   },
   "edit": {
-    "message": "Edit"
+    "message": "සංස්කරණය"
   },
   "view": {
     "message": "View"
@@ -252,28 +252,28 @@
     "message": "Item Information"
   },
   "username": {
-    "message": "Username"
+    "message": "පරිශීලක නාමය"
   },
   "password": {
-    "message": "Password"
+    "message": "මුරපදය"
   },
   "passphrase": {
     "message": "Passphrase"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "ප්‍රියතමය"
   },
   "notes": {
-    "message": "Notes"
+    "message": "සටහන්"
   },
   "note": {
-    "message": "Note"
+    "message": "සටහන"
   },
   "editItem": {
     "message": "Edit Item"
   },
   "folder": {
-    "message": "Folder"
+    "message": "බහාලුම"
   },
   "deleteItem": {
     "message": "Delete Item"
@@ -282,10 +282,10 @@
     "message": "View Item"
   },
   "launch": {
-    "message": "Launch"
+    "message": "දියත්කරන්න"
   },
   "website": {
-    "message": "Website"
+    "message": "වියමන අඩවිය"
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
@@ -294,7 +294,7 @@
     "message": "Manage"
   },
   "other": {
-    "message": "Other"
+    "message": "වෙනත්"
   },
   "rateExtension": {
     "message": "Rate the Extension"
@@ -312,7 +312,7 @@
     "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "අගුලුහරින්න"
   },
   "loggedInAsOn": {
     "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
@@ -334,40 +334,40 @@
     "message": "Vault Timeout"
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "දැන් අගුලුදමන්න"
   },
   "immediately": {
     "message": "Immediately"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "තත්පර 10"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "තත්පර 20"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "තත්පර 30"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "විනාඩි 1"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "විනාඩි 2"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "විනාඩි 5"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "විනාඩි 15"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "විනාඩි 30"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "පැය 1"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "පැය 4"
   },
   "onLocked": {
     "message": "On System Lock"
@@ -379,7 +379,7 @@
     "message": "Never"
   },
   "security": {
-    "message": "Security"
+    "message": "ආරක්ෂාව"
   },
   "errorOccurred": {
     "message": "An error has occurred"
@@ -513,7 +513,7 @@
     "message": "Are you sure you want to overwrite the current password?"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "බහාලුම සොයන්න"
   },
   "searchCollection": {
     "message": "Search collection"
@@ -555,7 +555,7 @@
     "message": "Should Bitwarden remember this password for you?"
   },
   "notificationAddSave": {
-    "message": "Yes, Save Now"
+    "message": "ඔව්, දැන් සුරකින්න"
   },
   "notificationNeverSave": {
     "message": "Never for this website"
@@ -570,7 +570,7 @@
     "message": "Do you want to update this password in Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "ඔව්, දැන් යාවත්කාල කරන්න"
   },
   "disableContextMenuItem": {
     "message": "Disable Context Menu Options"
@@ -586,7 +586,7 @@
     "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
-    "message": "Theme"
+    "message": "තේමාව"
   },
   "themeDesc": {
     "message": "Change the application's color theme."
@@ -610,7 +610,7 @@
     "message": "File Format"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "අවවාදයයි",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
@@ -693,7 +693,7 @@
     "message": "The attachment has been saved."
   },
   "file": {
-    "message": "File"
+    "message": "ගොනුව"
   },
   "selectFile": {
     "message": "Select a file."
@@ -1014,40 +1014,40 @@
     "message": "Expiration"
   },
   "january": {
-    "message": "January"
+    "message": "දුරුතු"
   },
   "february": {
-    "message": "February"
+    "message": "නවම්"
   },
   "march": {
-    "message": "March"
+    "message": "මැදින්"
   },
   "april": {
-    "message": "April"
+    "message": "බක්"
   },
   "may": {
-    "message": "May"
+    "message": "වෙසක්"
   },
   "june": {
-    "message": "June"
+    "message": "පොසොන්"
   },
   "july": {
-    "message": "July"
+    "message": "ඇසළ"
   },
   "august": {
-    "message": "August"
+    "message": "නිකිණි"
   },
   "september": {
-    "message": "September"
+    "message": "බිනර"
   },
   "october": {
-    "message": "October"
+    "message": "වප්"
   },
   "november": {
-    "message": "November"
+    "message": "ඉල්"
   },
   "december": {
-    "message": "December"
+    "message": "උඳුවප්"
   },
   "securityCode": {
     "message": "Security Code"

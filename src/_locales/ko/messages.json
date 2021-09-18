@@ -151,7 +151,7 @@
     "message": "저장"
   },
   "move": {
-    "message": "Move"
+    "message": "이동"
   },
   "addFolder": {
     "message": "폴더 추가"
@@ -632,19 +632,19 @@
     "message": "공유됨"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "조직에 대해 알아보기"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden은 조직용 계정을 사용하면 사용자의 보관함을 타인에게 공유할 수 있습니다. bitwarden.com 웹 사이트를 방문하여 더 자세히 알아보시겠습니까?"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "조직으로 이동하기"
   },
   "share": {
     "message": "공유"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$이(가) $ORGNAME$(으)로 이동됨",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -657,7 +657,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "이 항목을 이동할 조직을 선택하십시오. 항목이 조직으로 이동되면 소유권이 조직으로 이전됩니다. 일단 이동되면, 더는 이동된 항목의 직접적인 소유자가 아니게 됩니다."
   },
   "learnMore": {
     "message": "더 알아보기"
@@ -819,7 +819,7 @@
     "message": "새 탭에서 WebAuthn 2단계 인증을 계속하세요."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "새 탭 열기"
   },
   "webAuthnAuthenticate": {
     "message": "WebAuthn 인증"
@@ -918,22 +918,22 @@
     "message": "현재 실험 중인 기능입니다. 위험을 감수하여 사용하세요."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "로그인 항목에 대한 기본 자동 완성 설정"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "페이지 로드 시 자동 완성을 켠 뒤에는 각 로그인 항목별로 이 기능을 켜거나 끌 수 있습니다. 이 옵션은 해당 기능을 개별적으로 구성하지 않은 항목에 사용되는 기본 설정값입니다."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "페이지 로드 시 자동 완성 (옵션에서 켜져 있을 경우)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "기본 설정 사용"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "페이지 로드 시 자동 완성"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "페이지 로드 시 자동 완성 안 함"
   },
   "commandOpenPopup": {
     "message": "보관함 팝업 열기"
@@ -1748,9 +1748,9 @@
     "message": "이 작업은 보호되어 있습니다. 계속하려면 마스터 비밀번호를 입력하여 신원을 인증하세요."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "이메일 인증 필요함"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
+    "message": "이 기능을 사용하려면 이메일 인증이 필요합니다. 웹 보관함에서 이메일을 인증할 수 있습니다."
   }
 }

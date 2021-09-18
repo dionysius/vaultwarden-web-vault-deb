@@ -10,7 +10,7 @@ import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.serv
 import { ConstantsService } from 'jslib-common/services/constants.service';
 
 import { Utils } from 'jslib-common/misc/utils';
-import { SymmetricCryptoKey } from 'jslib-common/models/domain';
+import { SymmetricCryptoKey } from 'jslib-common/models/domain/symmetricCryptoKey';
 
 import { BrowserApi } from '../browser/browserApi';
 import RuntimeBackground from './runtime.background';

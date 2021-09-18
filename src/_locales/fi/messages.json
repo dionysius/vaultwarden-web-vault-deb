@@ -1609,14 +1609,14 @@
     "message": "Tiedosto, jonka haluat lähettää."
   },
   "deletionDate": {
-    "message": "Poistopäivä"
+    "message": "Poistoajankohta"
   },
   "deletionDateDesc": {
-    "message": "Send poistetaan pysyvästi määritettynä ajankohtana.",
+    "message": "Send poistuu pysyvästi määritettynä ajankohtana.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Erääntymispäivä"
+    "message": "Erääntymisajankohta"
   },
   "expirationDateDesc": {
     "message": "Jos määritetty, Send erääntyy määritettynä ajankohtana.",
@@ -1718,19 +1718,19 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
-    "message": "Asetettu erääntymismispäivä on virheellinen."
+    "message": "Määritetty erääntymismisajankohta on virheellinen."
   },
   "deletionDateIsInvalid": {
-    "message": "Asetettu poistopäivä on virheellinen."
+    "message": "Määritetty poistoajankohta on virheellinen."
   },
   "expirationDateAndTimeRequired": {
-    "message": "Viimeinen voimassaolopäivä ja aika vaaditaan."
+    "message": "Erääntymispäivä ja -aika vaaditaan."
   },
   "deletionDateAndTimeRequired": {
     "message": "Poistopäivä ja -aika vaaditaan."
   },
   "dateParsingError": {
-    "message": "Tapahtui virhe tallennettaessa poisto- ja erääntymispäiviä."
+    "message": "Tapahtui virhe tallennettaessa poisto- ja erääntymisajankohtia."
   },
   "hideEmail": {
     "message": "Piilota sähköpostiosoitteeni vastaanottajilta."

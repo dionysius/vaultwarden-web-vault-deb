@@ -623,7 +623,7 @@
     "message": "Tento export zašifruje vaše data pomocí šifrovacího klíče vašeho účtu. Pokud někdy změníte šifrovací klíč vašeho účtu, měli by jste vyexportovat data znovu, protože tento exportovaný soubor nebudete moci dešifrovat."
   },
   "encExportAccountWarningDesc": {
-    "message": "Šifrovací klíče účtu jsou pro každý uživatelský účet Bitwarden jedinečné, tudíž nelze importovat šifrovaný export do jiného účtu."
+    "message": "Šifrovací klíče účtu jsou pro každý uživatelský účet Bitwarden jedinečné, takže nelze importovat šifrovaný export do jiného účtu."
   },
   "exportMasterPassword": {
     "message": "Zadejte své hlavní heslo pro export dat."
@@ -1492,7 +1492,7 @@
     "message": "Biometrie v prohlížeči není na tomto zařízení podporována."
   },
   "nativeMessaginPermissionErrorTitle": {
-    "message": "Povolení nebylo poskytnuto"
+    "message": "Oprávnění nebylo uděleno"
   },
   "nativeMessaginPermissionErrorDesc": {
     "message": "Bez oprávnění ke komunikaci s počítačovou aplikací Bitwarden nelze v rozšíření prohlížeče používat biometrické údaje. Zkuste to prosím znovu."
@@ -1543,7 +1543,7 @@
     "message": "Soubor"
   },
   "allSends": {
-    "message": "Všechny Sendy",
+    "message": "Všechny Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
@@ -1583,7 +1583,7 @@
     "message": "Zakázáno"
   },
   "removePasswordConfirmation": {
-    "message": "Jste si jisti, že chcete heslo odstranit?"
+    "message": "Jste si jisti, že chcete odstranit heslo?"
   },
   "deleteSend": {
     "message": "Smazat Send",
@@ -1616,7 +1616,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Datum expirace"
+    "message": "Datum vypršení platnosti"
   },
   "expirationDateDesc": {
     "message": "Je-li nastaveno, přístup k tomuto Send vyprší v daný datum a čas.",
@@ -1664,7 +1664,7 @@
     "message": "Text, který chcete odeslat."
   },
   "sendHideText": {
-    "message": "Skrýt ve výchozím stavu obsah tohoto Sendu.",
+    "message": "Skrýt ve výchozím stavu text tohoto Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1724,10 +1724,10 @@
     "message": "Uvedené datum odstranění není platné."
   },
   "expirationDateAndTimeRequired": {
-    "message": "Je vyžadováno datum a čas vypršení platnosti."
+    "message": "Je vyžadován datum a čas vypršení platnosti."
   },
   "deletionDateAndTimeRequired": {
-    "message": "Je vyžadováno datum a čas odstranění."
+    "message": "Je vyžadován datum a čas odstranění."
   },
   "dateParsingError": {
     "message": "Došlo k chybě při ukládání data odstranění a vypršení platnosti."
