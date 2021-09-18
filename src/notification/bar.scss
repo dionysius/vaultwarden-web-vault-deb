@@ -55,31 +55,33 @@ img {
     margin-right: 10px;
 }
 
-button:not(.link) {
+button:not(.link),
+button:not(.neutral) {
     background-color: #175DDC;
     padding: 5px 15px;
     border-radius: 3px;
     color: #ffffff;
     border: 0;
-}
 
-    button:not(.link):hover {
+    &:hover {
         cursor: pointer;
         background-color: #1751bd;
     }
+}
 
-button.link {
+button.link,
+button.neutral {
     background: none;
     padding: 5px 15px;
     color: #175DDC;
     border: 0;
-}
 
-    button.link:hover {
+    &:hover {
         cursor: pointer;
         background: none;
         text-decoration: underline;
     }
+}
 
 body[class*='lang-en'] .add-buttons {
     width: 175px;

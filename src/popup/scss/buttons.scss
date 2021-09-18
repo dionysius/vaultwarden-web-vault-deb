@@ -69,7 +69,8 @@
         width: 100%;
     }
 
-    &.link {
+    &.link,
+    &.neutral {
         border: none !important;
         background: none !important;
 
@@ -90,9 +91,11 @@
 button.box-content-row {
     display: block;
     width: 100%;
-    background: none;
+    text-align: left;
 }
 
 button {
     border: none;
+    background: transparent;
+    color: inherit;
 }

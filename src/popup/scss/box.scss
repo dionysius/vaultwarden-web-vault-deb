@@ -300,7 +300,8 @@
             margin-top: 5px;
         }
 
-        > a {
+        > a,
+        > button {
             padding: 8px 8px 8px 4px;
             margin: 0;
 
@@ -313,6 +314,12 @@
 
     &.box-content-row-multi, &.box-content-row-newmulti {
         padding-left: 10px;
+    }
+
+    &.box-content-row-newmulti {
+        @include themify($themes) {
+            color: themed('primaryColor');
+        }
     }
 
     &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
@@ -511,7 +518,6 @@
         justify-content: center;
         align-items: center;
         min-width: 34px;
-        height: 100%;
         margin-left: -5px;
 
         @include themify($themes) {
