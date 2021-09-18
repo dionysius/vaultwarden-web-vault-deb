@@ -339,6 +339,11 @@ app-vault-icon {
             }
         }
     }
+
+    .enforced-policy-options ul {
+        padding-left: 30px;
+        margin: 0;
+    }
 }
 
 input[type="password"]::-ms-reveal {

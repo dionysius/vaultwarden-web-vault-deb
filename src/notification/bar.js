@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // delay 50ms so that we get proper body dimensions
     setTimeout(load, 50);
-    
 
     function load() {
         var closeButton = document.getElementById('close-button'),
@@ -34,10 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bodyRect.width < 768) {
             document.querySelector('#template-add .add-save').textContent = i18n.yes;
             document.querySelector('#template-add .never-save').textContent = i18n.never;
+            document.querySelector('#template-add .select-folder').style.display = 'none';
             document.querySelector('#template-change .change-save').textContent = i18n.yes;
         } else {
             document.querySelector('#template-add .add-save').textContent = i18n.notificationAddSave;
             document.querySelector('#template-add .never-save').textContent = i18n.notificationNeverSave;
+            document.querySelector('#template-add .select-folder').style.display = 'initial';
             document.querySelector('#template-change .change-save').textContent = i18n.notificationChangeSave;
         }
 
@@ -52,8 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             addButton.addEventListener('click', (e) => {
                 e.preventDefault();
+                const folderId = document.querySelector('#template-add-clone .select-folder').value;
                 sendPlatformMessage({
-                    command: 'bgAddSave'
+                    command: 'bgAddSave',
+                    folder: folderId,
                 });
             });
 
@@ -62,6 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 sendPlatformMessage({
                     command: 'bgNeverSave'
                 });
+            });
+
+            const responseFoldersCommand = 'notificationBarGetFoldersList';
+            chrome.runtime.onMessage.addListener((msg) => {
+                if (msg.command === responseFoldersCommand && msg.data) {
+                    fillSelectorWithFolders(msg.data.folders);
+                }
+            });
+            sendPlatformMessage({
+                command: 'bgGetDataForTab',
+                responseCommand: responseFoldersCommand
             });
         } else if (getQueryVariable('change')) {
             setContent(document.getElementById('template-change'));
@@ -119,5 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function sendPlatformMessage(msg) {
         chrome.runtime.sendMessage(msg);
+    }
+
+    function fillSelectorWithFolders(folders) {
+        const select = document.querySelector('#template-add-clone .select-folder');
+        select.appendChild(new Option(chrome.i18n.getMessage('selectFolder'), null, true));
+        folders.forEach((folder) => {
+            //Select "No Folder" (id=null) folder by default
+            select.appendChild(new Option(folder.name, folder.id || '', false));
+        });
     }
 });

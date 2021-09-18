@@ -644,7 +644,7 @@
     "message": "שתף"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ הועבר ל- $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -918,19 +918,19 @@
     "message": "זוהי אופציה נסיונית. השימוש באופציה זו על אחריותך."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "הגדרת ברירת מחדל למילוי אוטומטי של פרטי התחברות"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "לאחר הפעלת מילוי אוטומטי של פרטים בעת טעינת דפים, אפשר להפעיל או לכבות את האפשרות לפרטי התחברות ספציפיים. זו הגדרת ברירת המחדל לפרטי התחברות שלא הוגדרו בנפרד."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "מילוי אוטומטי בעת טעינת דפים (אם מופעל בהגדרות)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "שימוש בהגדרות ברירת המחדל"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "מילוי אוטומטי אחרי טעינת דפים"
   },
   "autoFillOnPageLoadNo": {
     "message": "Do not auto-fill on page load"

@@ -139,7 +139,7 @@
     "message": "Verifica in due passaggi"
   },
   "logOut": {
-    "message": "Disconnessione"
+    "message": "Esci"
   },
   "about": {
     "message": "Informazioni"
@@ -732,7 +732,7 @@
     "message": "Opzioni addizionali di login in due passaggi come YubiKey, FIDO U2F, e Duo."
   },
   "ppremiumSignUpReports": {
-    "message": "Sicurezza delle password, integrità dell'account e rapporti sulla violazione di dati per mantenere sicura la tua cassaforte."
+    "message": "Sicurezza delle password, integrità dell'account e resoconti sulla violazione di dati per mantenere sicura la tua cassaforte."
   },
   "ppremiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
@@ -783,7 +783,7 @@
     "message": "Inserisci il codice di verifica a 6 cifre dalla tua applicazione di autenticazione."
   },
   "enterVerificationCodeEmail": {
-    "message": "Inserisci il codice di verifica a 6 cifre ricevuto per email",
+    "message": "Inserisci il codice di verifica a 6 cifrato inviato a $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -918,22 +918,22 @@
     "message": "Al momento questa funzionalità è sperimentale. Usala a tuo rischio e pericolo."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Impostazioni di riempimento automatico predefinito per gli elementi di accesso"
+    "message": "Impostazioni di completamento automatico predefinito per i login"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Dopo aver abilitato il completamento automatico al caricamento della pagina, è possibile abilitare o disabilitare la funzione per singoli elementi di accesso. Questa è l'impostazione predefinita per gli elementi di accesso che non sono configurati separatamente."
+    "message": "Dopo aver abilitato il completamento automatico al caricamento della pagina, è possibile abilitare o disabilitare la funzione per singoli login. Questa è l'impostazione predefinita per i login che non sono configurati separatamente."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Riempimento automatico al caricamento della pagina (se abilitato nelle opzioni)"
+    "message": "Autocompletamento al caricamento della pagina (se abilitato nelle opzioni)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Usa impostazione predefinita"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Riempimento automatico al caricamento della pagina"
+    "message": "Autocompletamento al caricamento della pagina"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Non riempire automaticamente al caricamento della pagina"
+    "message": "Non completare automaticamente al caricamento della pagina"
   },
   "commandOpenPopup": {
     "message": "Apri popup cassaforte"
@@ -942,10 +942,10 @@
     "message": "Apri la cassaforte nella barra laterale"
   },
   "commandAutofillDesc": {
-    "message": "Auto-completa con l'ultimo login utilizzato sul sito corrente."
+    "message": "Auto-completa con l'ultimo accesso utilizzato sul sito corrente"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Genera e copia una nuova password casuale negli appunti."
+    "message": "Genera e copia una nuova password casuale negli appunti"
   },
   "commandLockVaultDesc": {
     "message": "Blocca la cassaforte"
@@ -1668,7 +1668,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Numero di accessi correnti"
+    "message": "Numero di accessi attuale"
   },
   "createSend": {
     "message": "Crea nuovo Send",
@@ -1748,7 +1748,7 @@
     "message": "Questa azione è protetta. Per continuare, inserisci nuovamente la tua password principale per verificare la tua identità."
   },
   "emailVerificationRequired": {
-    "message": "Verifica email necessaria"
+    "message": "Verifica email richiesta"
   },
   "emailVerificationRequiredDesc": {
     "message": "Devi verificare la tua email per utilizzare questa funzionalità. Puoi verificare la tua email nella cassaforte web."

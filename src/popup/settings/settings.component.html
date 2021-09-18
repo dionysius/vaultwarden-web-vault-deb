@@ -28,13 +28,7 @@
     <div class="box list">
         <div class="box-header">{{'security' | i18n}}</div>
         <div class="box-content single-line">
-            <div class="box-content-row display-block" appBoxRow>
-                <label for="vaultTimeout">{{'vaultTimeout' | i18n}}</label>
-                <select #vaultTimeoutSelect id="vaultTimeout" name="VaultTimeouts" [ngModel]="vaultTimeout"
-                    (ngModelChange)="saveVaultTimeout($event)">
-                    <option *ngFor="let o of vaultTimeouts" [ngValue]="o.value">{{o.name}}</option>
-                </select>
-            </div>
+            <app-vault-timeout-input [vaultTimeouts]="vaultTimeouts" [formControl]="vaultTimeout" ngDefaultControl></app-vault-timeout-input>
             <div class="box-content-row display-block" appBoxRow>
                 <label for="vaultTimeoutAction">{{'vaultTimeoutAction' | i18n}}</label>
                 <select #vaultTimeoutActionSelect id="vaultTimeoutAction" name="VaultTimeoutActions"
@@ -49,6 +43,10 @@
             <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="supportsBiometric">
                 <label for="biometric">{{'unlockWithBiometrics' | i18n}}</label>
                 <input id="biometric" type="checkbox" (change)="updateBiometric()" [(ngModel)]="biometric">
+            </div>
+            <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="supportsBiometric">
+                <label for="autoBiometricsPrompt">{{'disableAutoBiometricsPrompt' | i18n}}</label>
+                <input id="autoBiometricsPrompt" type="checkbox" (change)="updateAutoBiometricsPrompt()" [disabled]="!biometric" [(ngModel)]="disableAutoBiometricsPrompt">
             </div>
             <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                 (click)="lock()">

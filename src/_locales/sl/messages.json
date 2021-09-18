@@ -151,7 +151,7 @@
     "message": "Shrani"
   },
   "move": {
-    "message": "Move"
+    "message": "Premakni"
   },
   "addFolder": {
     "message": "Dodaj mapo"
@@ -513,10 +513,10 @@
     "message": "Ali ste prepričani, da želite prepisati vaše trenutno geslo?"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Preišči mapo"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Preišči zbirko"
   },
   "searchType": {
     "message": "Search type"
@@ -870,10 +870,10 @@
     "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-pošta"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Potrditvene kode vam bodo posredovane po e-pošti."
   },
   "selfHostedEnvironment": {
     "message": "Self-hosted Environment"
@@ -888,10 +888,10 @@
     "message": "For advanced users. You can specify the base URL of each service independently."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL naslov strežnika"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "URL naslov API strežnika"
   },
   "webVaultUrl": {
     "message": "Web Vault Server URL"
@@ -927,7 +927,7 @@
     "message": "Auto-fill on Page Load (if enabled in Options)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "Uporabi privzete nastavitve"
   },
   "autoFillOnPageLoadYes": {
     "message": "Auto-fill on page load"
@@ -969,10 +969,10 @@
     "message": "Drag to sort"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Besedilo"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Skrito"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
@@ -1152,28 +1152,28 @@
     "message": "Collections"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Priljubljeno"
   },
   "popOutNewWindow": {
     "message": "Pop out to a new window"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Osveži"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Plačilne kartice"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identitete"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Prijave"
   },
   "secureNotes": {
     "message": "Secure Notes"
   },
   "clear": {
-    "message": "Clear",
+    "message": "Počisti",
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {

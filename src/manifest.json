@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extName__",
   "short_name": "__MSG_appName__",
-  "version": "1.51.1",
+  "version": "1.52.1",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "author": "Bitwarden Inc.",
@@ -20,7 +20,8 @@
       "js": [
         "content/autofill.js",
         "content/autofiller.js",
-        "content/notificationBar.js"
+        "content/notificationBar.js",
+        "content/contextMenuHandler.js"
       ],
       "matches": [
         "http://*/*",

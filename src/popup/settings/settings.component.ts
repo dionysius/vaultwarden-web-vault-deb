@@ -1,12 +1,13 @@
-import Swal from 'sweetalert2/src/sweetalert2.js';
-
 import {
     Component,
     ElementRef,
     OnInit,
     ViewChild,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToasterService } from 'angular2-toaster';
+import Swal from 'sweetalert2/src/sweetalert2.js';
 
 import { BrowserApi } from '../../browser/browserApi';
 
@@ -23,6 +24,10 @@ import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 import { PopupUtilsService } from '../services/popup-utils.service';
+
+import { ModalService } from 'jslib-angular/services/modal.service';
+
+import { SetPinComponent } from '../components/set-pin.component';
 
 const RateUrls = {
     [DeviceType.ChromeExtension]:
@@ -44,22 +49,24 @@ const RateUrls = {
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
-    @ViewChild('vaultTimeoutSelect', { read: ElementRef, static: true }) vaultTimeoutSelectRef: ElementRef;
     @ViewChild('vaultTimeoutActionSelect', { read: ElementRef, static: true }) vaultTimeoutActionSelectRef: ElementRef;
     vaultTimeouts: any[];
-    vaultTimeout: number = null;
     vaultTimeoutActions: any[];
     vaultTimeoutAction: string;
     pin: boolean = null;
     supportsBiometric: boolean;
     biometric: boolean = false;
+    disableAutoBiometricsPrompt = true;
     previousVaultTimeout: number = null;
+
+    vaultTimeout: FormControl = new FormControl(null);
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
         private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
         public messagingService: MessagingService, private router: Router,
         private environmentService: EnvironmentService, private cryptoService: CryptoService,
-        private userService: UserService, private popupUtilsService: PopupUtilsService) {
+        private userService: UserService, private popupUtilsService: PopupUtilsService,
+        private modalService: ModalService, private toasterService: ToasterService) {
     }
 
     async ngOnInit() {
@@ -89,14 +96,18 @@ export class SettingsComponent implements OnInit {
             { name: this.i18nService.t('logOut'), value: 'logOut' },
         ];
 
-        let timeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
+        let timeout = await this.vaultTimeoutService.getVaultTimeout();
         if (timeout != null) {
             if (timeout === -2 && !showOnLocked) {
                 timeout = -1;
             }
-            this.vaultTimeout = timeout;
+            this.vaultTimeout.setValue(timeout);
         }
-        this.previousVaultTimeout = this.vaultTimeout;
+        this.previousVaultTimeout = this.vaultTimeout.value;
+        this.vaultTimeout.valueChanges.subscribe(value => {
+            this.saveVaultTimeout(value);
+        });
+
         const action = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
         this.vaultTimeoutAction = action == null ? 'lock' : action;
 
@@ -105,6 +116,8 @@ export class SettingsComponent implements OnInit {
 
         this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
         this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
+        this.disableAutoBiometricsPrompt = await this.storageService.get<boolean>(
+            ConstantsService.disableAutoBiometricsPromptKey) ?? true;
     }
 
     async saveVaultTimeout(newValue: number) {
@@ -113,18 +126,19 @@ export class SettingsComponent implements OnInit {
                 this.i18nService.t('neverLockWarning'), null,
                 this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');
             if (!confirmed) {
-                this.vaultTimeouts.forEach((option: any, i) => {
-                    if (option.value === this.vaultTimeout) {
-                        this.vaultTimeoutSelectRef.nativeElement.value = i + ': ' + this.vaultTimeout;
-                    }
-                });
+                this.vaultTimeout.setValue(this.previousVaultTimeout);
                 return;
             }
         }
-        this.previousVaultTimeout = this.vaultTimeout;
-        this.vaultTimeout = newValue;
-        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
-            this.vaultTimeoutAction);
+
+        if (!this.vaultTimeout.valid) {
+            this.toasterService.popAsync('error', null, this.i18nService.t('vaultTimeoutToLarge'));
+            return;
+        }
+
+        this.previousVaultTimeout = this.vaultTimeout.value;
+
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout.value, this.vaultTimeoutAction);
         if (this.previousVaultTimeout == null) {
             this.messagingService.send('bgReseedStorage');
         }
@@ -145,65 +159,27 @@ export class SettingsComponent implements OnInit {
                 return;
             }
         }
+
+        if (!this.vaultTimeout.valid) {
+            this.toasterService.popAsync('error', null, this.i18nService.t('vaultTimeoutToLarge'));
+            return;
+        }
+
         this.vaultTimeoutAction = newValue;
-        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
-            this.vaultTimeoutAction);
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout.value, this.vaultTimeoutAction);
     }
 
     async updatePin() {
         if (this.pin) {
-            const div = document.createElement('div');
-            const label = document.createElement('label');
-            label.className = 'checkbox';
-            const checkboxText = document.createElement('span');
-            const restartText = document.createTextNode(this.i18nService.t('lockWithMasterPassOnRestart'));
-            checkboxText.appendChild(restartText);
-            label.innerHTML = '<input type="checkbox" id="master-pass-restart" checked>';
-            label.appendChild(checkboxText);
+            const ref = this.modalService.open(SetPinComponent, { allowMultipleModals: true });
 
-            div.innerHTML =
-                `<div class="swal2-text">${this.i18nService.t('setYourPinCode')}</div>` +
-                '<input type="text" class="swal2-input" id="pin-val" autocomplete="off" ' +
-                'autocapitalize="none" autocorrect="none" spellcheck="false" inputmode="verbatim">';
-
-            (div.querySelector('#pin-val') as HTMLInputElement).placeholder = this.i18nService.t('pin');
-            div.appendChild(label);
-
-            const submitted = await Swal.fire({
-                heightAuto: false,
-                buttonsStyling: false,
-                html: div,
-                showCancelButton: true,
-                cancelButtonText: this.i18nService.t('cancel'),
-                showConfirmButton: true,
-                confirmButtonText: this.i18nService.t('submit'),
-            });
-
-            let pin: string = null;
-            let masterPassOnRestart: boolean = null;
-            if (submitted.value) {
-                pin = (document.getElementById('pin-val') as HTMLInputElement).value;
-                masterPassOnRestart = (document.getElementById('master-pass-restart') as HTMLInputElement).checked;
-            }
-            if (pin != null && pin.trim() !== '') {
-                const kdf = await this.userService.getKdf();
-                const kdfIterations = await this.userService.getKdfIterations();
-                const email = await this.userService.getEmail();
-                const pinKey = await this.cryptoService.makePinKey(pin, email, kdf, kdfIterations);
-                const key = await this.cryptoService.getKey();
-                const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
-                if (masterPassOnRestart) {
-                    const encPin = await this.cryptoService.encrypt(pin);
-                    await this.storageService.save(ConstantsService.protectedPin, encPin.encryptedString);
-                    this.vaultTimeoutService.pinProtectedKey = pinProtectedKey;
-                } else {
-                    await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
-                }
-            } else {
+            if (ref == null) {
                 this.pin = false;
+                return;
             }
-        }
-        if (!this.pin) {
+
+            this.pin = await ref.onClosedPromise();
+        } else {
             await this.cryptoService.clearPinProtectedKey();
             await this.vaultTimeoutService.clear();
         }
@@ -275,6 +251,10 @@ export class SettingsComponent implements OnInit {
             await this.storageService.remove(ConstantsService.biometricUnlockKey);
             this.vaultTimeoutService.biometricLocked = false;
         }
+    }
+
+    async updateAutoBiometricsPrompt() {
+        await this.storageService.save(ConstantsService.disableAutoBiometricsPromptKey, this.disableAutoBiometricsPrompt);
     }
 
     async lock() {

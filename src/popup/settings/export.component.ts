@@ -6,6 +6,7 @@ import { EventService } from 'jslib-common/abstractions/event.service';
 import { ExportService } from 'jslib-common/abstractions/export.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { PolicyService } from 'jslib-common/abstractions/policy.service';
 
 import { ExportComponent as BaseExportComponent } from 'jslib-angular/components/export.component';
 
@@ -16,8 +17,8 @@ import { ExportComponent as BaseExportComponent } from 'jslib-angular/components
 export class ExportComponent extends BaseExportComponent {
     constructor(cryptoService: CryptoService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, exportService: ExportService,
-        eventService: EventService, private router: Router) {
-        super(cryptoService, i18nService, platformUtilsService, exportService, eventService, window);
+        eventService: EventService, policyService: PolicyService, private router: Router) {
+        super(cryptoService, i18nService, platformUtilsService, exportService, eventService, policyService, window);
     }
 
     protected saved() {

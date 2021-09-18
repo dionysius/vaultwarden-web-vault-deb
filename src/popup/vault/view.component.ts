@@ -21,17 +21,18 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { TokenService } from 'jslib-common/abstractions/token.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
-import { Cipher } from 'jslib-common/models/domain';
-import { LoginUriView } from 'jslib-common/models/view';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
+
+import { Cipher } from 'jslib-common/models/domain/cipher';
+import { LoginUriView } from 'jslib-common/models/view/loginUriView';
+
+import { CipherType } from 'jslib-common/enums/cipherType';
 
 import { ViewComponent as BaseViewComponent } from 'jslib-angular/components/view.component';
 import { BrowserApi } from '../../browser/browserApi';
 import { AutofillService } from '../../services/abstractions/autofill.service';
 import { PopupUtilsService } from '../services/popup-utils.service';
-
-import { CipherType } from 'jslib-common/enums';
 
 const BroadcasterSubscriptionId = 'ChildViewComponent';
 
