@@ -482,7 +482,7 @@
     "message": "यूआरआइ"
   },
   "uriPosition": {
-    "message": "यू.आर.ऐ",
+    "message": "URI $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -501,10 +501,10 @@
     "message": "संपादित आइटम "
   },
   "deleteItemConfirmation": {
-    "message": "क्या आप वास्तव में कचरे में भेजना चाहते हैं?"
+    "message": "क्या आप वास्तव में थ्रैश में भेजना चाहते हैं?"
   },
   "deletedItem": {
-    "message": "कचरा में भेजे"
+    "message": "थ्रैश में भेजे"
   },
   "overwritePassword": {
     "message": "Overwrite Password"
@@ -687,7 +687,7 @@
     "message": "Add New Attachment"
   },
   "noAttachments": {
-    "message": "कोई अटैचमेंट नहीं"
+    "message": "कोई अटैचमेंट नहीं।"
   },
   "attachmentSaved": {
     "message": "अटैचमेंट बच गया है।"
@@ -696,10 +696,10 @@
     "message": "फ़ाइल"
   },
   "selectFile": {
-    "message": "फ़ाइल का चयन करें|"
+    "message": "फ़ाइल का चयन करें।"
   },
   "maxFileSize": {
-    "message": "अधिकतम फाइल आकार 500 MB है"
+    "message": "अधिकतम फाइल आकार 500 MB है।"
   },
   "featureUnavailable": {
     "message": "Feature Unavailable"
@@ -792,7 +792,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "ईमेल $EMAIL$ को भेजा गया|",
+    "message": "ईमेल $EMAIL$ को भेजा गया।",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -966,7 +966,7 @@
     "message": "New Custom Field"
   },
   "dragToSort": {
-    "message": "सॉर्ट करने के लिए खींचें"
+    "message": "सॉर्ट करने के लिए ड्रैग करें"
   },
   "cfTypeText": {
     "message": "शब्द"
@@ -1255,7 +1255,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "क्या आप सुनिश्चित हैं कि आप \"कभी नहीं\" विकल्प का उपयोग करना चाहते हैं?\"कभी नहीं\" के लिए अपने लॉक विकल्प को सेट करना आपके डिवाइस पर आपकी वॉल्ट की एन्क्रिप्शन कुंजी को स्टोर करता है।यदि आप इस विकल्प का उपयोग करते हैं तो आपको यह सुनिश्चित करना चाहिए कि आप अपने डिवाइस को ठीक से सुरक्षित रखें।"
+    "message": "क्या आप सुनिश्चित हैं कि आप \"कभी नहीं\" विकल्प का उपयोग करना चाहते हैं?\"कभी नहीं\" के लिए अपने लॉक विकल्प को सेट करना आपके डिवाइस पर आपकी वॉल्ट की एन्क्रिप्शन कुंजी को स्टोर करता है। यदि आप इस विकल्प का उपयोग करते हैं तो आपको यह सुनिश्चित करना चाहिए कि आप अपने डिवाइस को ठीक से सुरक्षित रखें।"
   },
   "noOrganizationsList": {
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
@@ -1264,7 +1264,7 @@
     "message": "सूची में कोई संग्रह नहीं है।"
   },
   "ownership": {
-    "message": "\nमालिकी"
+    "message": "मालिकी"
   },
   "whoOwnsThisItem": {
     "message": "इस आइटम का मालिक कौन है?"

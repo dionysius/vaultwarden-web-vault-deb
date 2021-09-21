@@ -312,7 +312,7 @@
     "message": "Holvisi on lukittu. Syötä pääsalasana jatkaaksesi."
   },
   "unlock": {
-    "message": "Avaa lukitus"
+    "message": "Avaa"
   },
   "loggedInAsOn": {
     "message": "Kirjautuneena tunnuksella $EMAIL$ palveluun $HOSTNAME$.",
@@ -638,7 +638,7 @@
     "message": "Bitwardenin avulla voit jakaa holvisi sisältöä muiden kanssa organisaatiotiliä käyttäen. Haluatko lukea bitwarden.com-sivustolta lisää?"
   },
   "moveToOrganization": {
-    "message": "Siirrä organisaatioon"
+    "message": "Siirrä organisaatiolle"
   },
   "share": {
     "message": "Jaa"
@@ -657,7 +657,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Valitse organisaatio, johon haluat siirtää kohteen. Tämä siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
+    "message": "Valitse organisaatio, jolle haluat siirtää kohteen. Tämä siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
   },
   "learnMore": {
     "message": "Lue lisää"
@@ -1292,10 +1292,10 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Avaa lukitus PIN-koodilla"
+    "message": "Avaa PIN-koodilla"
   },
   "setYourPinCode": {
-    "message": "Aseta PIN-koodisi Bitwardenin avausta varten. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos sovelluksesta."
+    "message": "Aseta PIN-koodi Bitwardenin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos laajennuksesta."
   },
   "pinRequired": {
     "message": "PIN-koodi vaaditaan."
