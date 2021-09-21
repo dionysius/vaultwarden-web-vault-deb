@@ -620,7 +620,7 @@
     "message": "Ez az exportálás titkosítás nélkül tartalmazza a széfadatokat. Nem célszerű az exportált fájlt nem biztonságos csatornákon tárolni és tovább küldeni (például emailben). A felhasználás után erősen ajánlott a törlés."
   },
   "encExportKeyWarningDesc": {
-    "message": "Ez az exportálás titkosítja az adatokat a fiók titkosítási kulcsával. Ha a fiók titkosítási kulcsa megváltozik, akkor ismét exportálni kell, különben az exportált fájl visszafejtése nem lehetséges."
+    "message": "Ez az exportálás titkosítja az adatokat a fiók titkosítási kulcsával. Ha valaha a diók forgatási kulcsa más lesz, akkor újra exportálni kell, mert nem lehet visszafejteni ezt az exportálási fájlt."
   },
   "encExportAccountWarningDesc": {
     "message": "A fiók titkosítási kulcsai minden Bitwarden felhasználói fiókhoz egyediek, ezért nem importálhatunk titkosított exportálást egy másik fiókba."
@@ -699,7 +699,7 @@
     "message": "Válassz ki egy fájlt."
   },
   "maxFileSize": {
-    "message": "A naximális fájl méret 500 MB."
+    "message": "A naximális fájlméret 500 MB."
   },
   "featureUnavailable": {
     "message": "Ez a funkció nem érhető el."
@@ -1513,10 +1513,10 @@
     "message": "Kizárt domainek"
   },
   "excludedDomainsDesc": {
-    "message": "A Bitwarden nem fog rákérdezni a bejelentkezési adatok mentésére a megadott domaineken. Frissítsd az oldalt a változtatások életbe lépéséhez."
+    "message": "A Bitwarden nem fogja kérni a domainek bejelentkezési adatainak mentését. A változások életbe lépéséhez frissíteni kell az oldalt."
   },
   "excludedDomainsInvalidDomain": {
-    "message": "$DOMAIN$ egy érvénytelen domain.",
+    "message": "$DOMAIN$ nem érvényes domain.",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1547,7 +1547,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "A hozzáférések száma elérte a beállított maximumot."
+    "message": "A maximális hozzáférések száma elérésre került."
   },
   "expired": {
     "message": "Lejárt"
@@ -1576,7 +1576,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send linkje",
+    "message": "Send hivatkozás",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
@@ -1686,7 +1686,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "A Küldés létrehozva",
+    "message": "A Send létrejött.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -1697,10 +1697,10 @@
     "message": "A fájl kiválasztásához nyissuk meg a kiterjesztést az oldalsávon (ha lehetséges) vagy kattintsunk erre a sávra új ablak felbukkanásához."
   },
   "sendFirefoxFileWarning": {
-    "message": "Firefox esetén: nyisd meg a kiegészítőt, vagy erre a feliratra kattintva új ablak nyílik a fájl kiválasztásához"
+    "message": "Firefox esetén nyissuk meg a bővítményt az oldalsávon vafy erre a hirdetőtáblára kattintva új felbukkanó ablak nyílik meg."
   },
   "sendSafariFileWarning": {
-    "message": "Safari esetén: erre a feliratra kattintva új ablak nyílik a fájl kiválasztásához"
+    "message": "A fájl kiválasztásához Safariban kattintsunk erre a hirdetőtáblára kattintva új ablak nyílik meg."
   },
   "sendFileCalloutHeader": {
     "message": "Mielőtt belevágnánk"
@@ -1710,7 +1710,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
-    "message": "kattints ide",
+    "message": "kattintás ide",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
@@ -1718,19 +1718,19 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker click here **to pop out your window.**'"
   },
   "expirationDateIsInvalid": {
-    "message": "A megadott lejárati idő nem érvényes"
+    "message": "A megadott lejárati idő nem érvényes."
   },
   "deletionDateIsInvalid": {
-    "message": "A megadott törlési dátum nem érvényes"
+    "message": "A megadott törlési dátum nem érvényes."
   },
   "expirationDateAndTimeRequired": {
-    "message": "Lejárati dátum és idő megadása szükséges"
+    "message": "Lejárati dátum és idő megadása szükséges."
   },
   "deletionDateAndTimeRequired": {
-    "message": "Törlési dátum és idő megadása szükséges"
+    "message": "Törlési dátum és idő megadása szükséges."
   },
   "dateParsingError": {
-    "message": "Hiba történt a törlési és a lejárati dátum mentésekor"
+    "message": "Hiba történt a törlési és a lejárati dátum mentésekor."
   },
   "hideEmail": {
     "message": "Saját email cím elrejtése a címzettek elől."

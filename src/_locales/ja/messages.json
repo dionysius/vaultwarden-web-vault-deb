@@ -600,7 +600,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized ダーク",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -816,13 +816,13 @@
     "message": "セキュリティキーを USB ポートに挿入し、ボタンがある場合はボタンをタッチしてください。"
   },
   "webAuthnNewTab": {
-    "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
+    "message": "WebAuthn 2FA 認証を開始するには、下のボタンをクリックして新しいタブを開き、新しいタブの指示に従ってください。"
   },
   "webAuthnNewTabOpen": {
     "message": "新しいタブを開く"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "WebAuthn の認証"
   },
   "loginUnavailable": {
     "message": "ログインできません。"
@@ -867,7 +867,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "アカウントにアクセスするに WebAuthn 対応のセキュリティキーを使用します。"
   },
   "emailTitle": {
     "message": "メールアドレス"

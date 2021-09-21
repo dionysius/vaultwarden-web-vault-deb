@@ -501,7 +501,7 @@
     "message": "Edited item"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Do you really want to send to the bin?"
   },
   "deletedItem": {
     "message": "Sent item to bin"
@@ -600,7 +600,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarised Dark",
+    "message": "Solarized Dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -638,7 +638,7 @@
     "message": "Bitwarden allows you to share your vault items with others by using an organisation. Would you like to visit the bitwarden.com website to learn more?"
   },
   "moveToOrganization": {
-    "message": "Move to organisation"
+    "message": "Move to Organisation"
   },
   "share": {
     "message": "Share"
@@ -909,7 +909,7 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable auto-fill on page load"
+    "message": "Enable Auto-fill on Page Load"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
@@ -1116,7 +1116,7 @@
     "message": "City / town"
   },
   "stateProvince": {
-    "message": "State / Union territory"
+    "message": "County"
   },
   "zipPostalCode": {
     "message": "Postcode"
@@ -1429,13 +1429,13 @@
     "message": "By checking this box you agree to the following:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Terms of service and privacy policy have not been acknowledged."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Terms of service"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privacy policy"
   },
   "hintEqualsPassword": {
     "message": "Your password hint cannot be the same as your password."
@@ -1465,7 +1465,7 @@
     "message": "Unable to enable biometrics"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "Action was cancelled by the desktop application"
   },
   "nativeMessagingInvalidEncryptionDesc": {
     "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
@@ -1477,7 +1477,7 @@
     "message": "The desktop application is logged into a different account. Please ensure both applications are logged into the same account."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Account missmatch"
+    "message": "Account mismatch"
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not enabled"
@@ -1504,10 +1504,10 @@
     "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organisation and choose from available Collections."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "An organisation policy is affecting your ownership options."
   },
   "excludedDomains": {
     "message": "Excluded Domains"
