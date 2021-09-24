@@ -10,7 +10,6 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { LoginComponent as BaseLoginComponent } from 'jslib-angular/components/login.component';
 
@@ -24,14 +23,10 @@ export class LoginComponent extends BaseLoginComponent {
         protected stateService: StateService, protected environmentService: EnvironmentService,
         protected passwordGenerationService: PasswordGenerationService,
         protected cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
-        syncService: SyncService, private userService: UserService) {
+        syncService: SyncService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService, passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = async () => {
-            await syncService.fullSync(true).then(async () => {
-                if (await this.userService.getForcePasswordReset()) {
-                    this.router.navigate(['update-temp-password']);
-                }
-            });
+            await syncService.fullSync(true);
         };
         super.successRoute = '/tabs/vault';
     }
