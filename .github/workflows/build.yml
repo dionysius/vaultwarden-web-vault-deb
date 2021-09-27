@@ -6,13 +6,13 @@ on:
     branches-ignore:
       - 'l10n_master'
   workflow_dispatch:
-    inputs:
+    inputs: {}
 
 
 jobs:
   cloc:
     name: CLOC
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
@@ -27,7 +27,7 @@ jobs:
 
   setup:
     name: Setup
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     outputs:
       repo_url: ${{ steps.gen_vars.outputs.repo_url }}
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
@@ -46,7 +46,7 @@ jobs:
 
   locales-test:
     name: Locales Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: setup
     steps:
       - name: Checkout repo
@@ -78,8 +78,10 @@ jobs:
 
   build:
     name: Build
-    runs-on: windows-latest
-    needs: [setup, locales-test]
+    runs-on: windows-2019
+    needs:
+      - setup
+      - locales-test
     env:
       _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
     steps:
@@ -109,6 +111,18 @@ jobs:
       - name: Gulp
         run: gulp ci
 
+      - name: Build sources for reviewers
+        shell: cmd
+        run: |
+          mkdir dist\Source
+          call git clone %_REPO_URL% dist\Source
+          cd dist\Source
+          call git checkout %GITHUB_SHA%
+          call git submodule update --init --recursive
+          cd ../
+          del /S/Q "Source\.git\objects\pack\*"
+          call 7z a browser-source-%_BUILD_NUMBER%.zip "Source\*"
+
       - name: Upload Opera artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
@@ -135,6 +149,13 @@ jobs:
         with:
           name: dist-edge-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-edge.zip
+          if-no-files-found: error
+
+      - name: Upload browser source
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        with:
+          name: browser-source-${{ env._BUILD_NUMBER }}.zip
+          path: dist/browser-source-${{ env._BUILD_NUMBER }}.zip
           if-no-files-found: error
 
       - name: Upload coverage artifact

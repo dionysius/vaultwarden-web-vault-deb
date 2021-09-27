@@ -11,7 +11,7 @@ jobs:
   crowdin-sync:
     name: Autosync
     runs-on: ubuntu-20.04
-    env: 
+    env:
       _CROWDIN_PROJECT_ID: "268134"
     steps:
       - name: Checkout repo
