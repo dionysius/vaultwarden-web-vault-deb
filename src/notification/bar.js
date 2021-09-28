@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     i18n.close = chrome.i18n.getMessage('close');
     i18n.yes = chrome.i18n.getMessage('yes');
     i18n.never = chrome.i18n.getMessage('never');
+    i18n.folder = chrome.i18n.getMessage('folder');
     i18n.notificationAddSave = chrome.i18n.getMessage('notificationAddSave');
     i18n.notificationNeverSave = chrome.i18n.getMessage('notificationNeverSave');
     i18n.notificationAddDesc = chrome.i18n.getMessage('notificationAddDesc');
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('#template-add .add-save').textContent = i18n.notificationAddSave;
             document.querySelector('#template-add .never-save').textContent = i18n.notificationNeverSave;
             document.querySelector('#template-add .select-folder').style.display = 'initial';
+            document.querySelector('#template-add .select-folder').setAttribute('aria-label', i18n.folder);
             document.querySelector('#template-change .change-save').textContent = i18n.notificationChangeSave;
         }
 
