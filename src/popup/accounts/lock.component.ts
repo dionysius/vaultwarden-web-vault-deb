@@ -51,7 +51,7 @@ export class LockComponent extends BaseLockComponent {
         }, 100);
     }
 
-    async unlockBiometric() {
+    async unlockBiometric(): Promise<boolean> {
         if (!this.biometricLock) {
             return;
         }
@@ -68,8 +68,13 @@ export class LockComponent extends BaseLockComponent {
             showConfirmButton: false,
         });
 
-        await super.unlockBiometric();
+        const success = await super.unlockBiometric();
 
-        Swal.close();
+        // Avoid closing the error dialogs
+        if (success) {
+            Swal.close();
+        }
+
+        return success;
     }
 }
