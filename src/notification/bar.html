@@ -1,52 +1,38 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Bitwarden</title>
     <meta charset="utf-8" />
 </head>
 <body>
-    <table class="outter-table" cellpadding="0" cellspacing="0">
-        <tbody>
-            <tr>
-                <td width="24">
-                    <a href="https://vault.bitwarden.com" target="_blank" id="logo-link" aria-hidden="true">
-                        <img id="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVBQTFRFAAAAMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzjZa7EAAAAHB0Uk5TAGOSmJRPBP/wZ5ygx4CC4ZDDBsWdD86RJeX5dF7+3j4Hq78Rj/pY824x2B7tJoS7mgIc2Rqhyid69g6V/FQFe/sN0RTAGcxO4rwVickfrlDIpRsKeZdI94UD6tXmZCO1/TAIWulwn+zumy8B0DPPwmJoSmgAAAFHSURBVHicY2AAAkYmZsKAhZWNAQbYiQIcnCRqYOciVQM3VTXw8CIDPn6CGgQYkAGb4KiGUQ2jGoaTBiFhkJgI8RpExUBi4sRrkJAECklJE69BRhYoJCcP50sS0KCgCBJSUoYLqKji16CmDhSR1UAIaGrh1aCtAxKR1EUS0sOngU0fLGJgiKTByBi3BhNTsICZObIjDS0scWmwsgZL2djaoYSblb0sdg3m3A5gvrUhAypwdMKqwdkFot7JlQEdmLhhamBz94DwPJ0x1DMweLmgaxD1toFwfHyxqAcmGD8bZA1s/gGQ+JQNDMKqnoEhOEQdriE0LDAcwpKMCMahnoEhki8KpiE6BsrgiBXCqR4I4uITUEMrMBGfciBISo5CUp6SSkA5CCSmpUOVZ2RmZROhgYFNPgesXjjXjrBiCDC0zQvP52TDKgcAwC5BBQq6zvAAAAAASUVORK5CYII=" />
-                    </a>
-                </td>
-                <td id="content"></td>
-                <td align="right" width="15">
-                    <button type="button" class="neutral" id="close-button">
-                        <img id="close" alt="X" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAABJQTFRFAAAAMzMzMzMzMzMzMzMzMzMzbxxq5QAAAAZ0Uk5TAECg/2CfwOuXQgAAAJVJREFUeJxVkdEJwzAMRNXgAQpZINAu0Fz7b3AHyP7T1MrppNQfMuI9sE42s7vp3Lws7+zHMcsDPdqGz8SAhAEctgIhNDhiDYyNVw+8p5ZYgrCExBS+iSmgMIXCEhJTKMy+Yobf//BF0Hv9gp8lcPKRAifPPSiYBAULoXJTWHNyJy/f917vbv4fCtZOslSwcZLKMf/zB2MLKtNp5GuwAAAAAElFTkSuQmCC" />
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="outer-wrapper">
+        <div class="logo">
+            <a href="https://vault.bitwarden.com" target="_blank" id="logo-link">
+                <img id="logo" alt="Bitwarden" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVBQTFRFAAAAMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzjZa7EAAAAHB0Uk5TAGOSmJRPBP/wZ5ygx4CC4ZDDBsWdD86RJeX5dF7+3j4Hq78Rj/pY824x2B7tJoS7mgIc2Rqhyid69g6V/FQFe/sN0RTAGcxO4rwVickfrlDIpRsKeZdI94UD6tXmZCO1/TAIWulwn+zumy8B0DPPwmJoSmgAAAFHSURBVHicY2AAAkYmZsKAhZWNAQbYiQIcnCRqYOciVQM3VTXw8CIDPn6CGgQYkAGb4KiGUQ2jGoaTBiFhkJgI8RpExUBi4sRrkJAECklJE69BRhYoJCcP50sS0KCgCBJSUoYLqKji16CmDhSR1UAIaGrh1aCtAxKR1EUS0sOngU0fLGJgiKTByBi3BhNTsICZObIjDS0scWmwsgZL2djaoYSblb0sdg3m3A5gvrUhAypwdMKqwdkFot7JlQEdmLhhamBz94DwPJ0x1DMweLmgaxD1toFwfHyxqAcmGD8bZA1s/gGQ+JQNDMKqnoEhOEQdriE0LDAcwpKMCMahnoEhki8KpiE6BsrgiBXCqR4I4uITUEMrMBGfciBISo5CUp6SSkA5CCSmpUOVZ2RmZROhgYFNPgesXjjXjrBiCDC0zQvP52TDKgcAwC5BBQq6zvAAAAAASUVORK5CYII=" />
+            </a>
+        </div>
+        <div id="content"></div>
+        <div>
+            <button type="button" class="neutral" id="close-button">
+                <img id="close" alt="X" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAABJQTFRFAAAAMzMzMzMzMzMzMzMzMzMzbxxq5QAAAAZ0Uk5TAECg/2CfwOuXQgAAAJVJREFUeJxVkdEJwzAMRNXgAQpZINAu0Fz7b3AHyP7T1MrppNQfMuI9sE42s7vp3Lws7+zHMcsDPdqGz8SAhAEctgIhNDhiDYyNVw+8p5ZYgrCExBS+iSmgMIXCEhJTKMy+Yobf//BF0Hv9gp8lcPKRAifPPSiYBAULoXJTWHNyJy/f917vbv4fCtZOslSwcZLKMf/zB2MLKtNp5GuwAAAAAElFTkSuQmCC" />
+            </button>
+        </div>
+    </div>
     <div id="templates" style="display: none;">
-        <table class="inner-table" cellpadding="0" cellspacing="0" id="template-add">
-            <tbody>
-                <tr>
-                    <td class="add-text"></td>
-                    <td align="right">
-                        <button class="never-save link"></button>
-                    </td>
-                    <td align="right" class="add-buttons">
-                        <select class="select-folder"></select>
-                        <button class="add-save"></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="inner-table" cellpadding="0" cellspacing="0" id="template-change">
-            <tbody>
-                <tr>
-                    <td class="change-text"></td>
-                    <td align="right" class="change-buttons">
-                        <button type="button" class="change-save"></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="inner-wrapper" id="template-add">
+            <div class="add-text"></div>
+            <div class="add-buttons">
+                <button class="never-save link"></button>
+                <select class="select-folder"></select>
+                <button class="add-save"></button>
+            </div>
+        </div>
+        <div class="inner-wrapper" id="template-change">
+            <div class="change-text"></div>
+            <div class="change-buttons">
+                <button class="change-save"></button>
+            </div>
+        </div>
         <div id="template-alert"></div>
     </div>
 </body>

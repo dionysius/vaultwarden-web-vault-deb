@@ -600,7 +600,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Gelap Solarized",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -657,7 +657,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Pilihlah sebuah organisasi yang Anda ingin memindahkan item ini. Memindahkan bearti memberikan kepemilikan kepada organisasi tersebut. Anda tidak akan lagi menjadi pemilik item ini."
   },
   "learnMore": {
     "message": "Pelajari lebih lanjut"
@@ -822,7 +822,7 @@
     "message": "Buka tab baru"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "Autentikasi dengan WebAuthn."
   },
   "loginUnavailable": {
     "message": "Info Masuk Tidak Tersedia"
@@ -867,7 +867,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Gunakan kunci yang mendukung WebAUthn untuk mengakses akun anda."
   },
   "emailTitle": {
     "message": "Email"
@@ -918,22 +918,22 @@
     "message": "Fitur ini saat ini adalah fitur eksperimental. Gunakan dengan risiko Anda sendiri."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "Konfigurasi autofill standard untuk item login."
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "Setelah mengaktifkan Auto-Fill waktu website terbuka, kamu dapat mengaktifkan atau meng-nonaktifkan feature ini untuk setiap item. Ini adalah konfigurasi standard untuk item yang tidak dikonfigurasi terpisah."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Auto-fill waktu website terbuka (Jika diaktifkan di Options)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Gunakan pengaturan baku"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "Auto-Fill ketika website baru terbuka"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "Jangan Auto-Fill ketika website baru terbuka"
   },
   "commandOpenPopup": {
     "message": "Buka popup brankas"
@@ -990,10 +990,10 @@
     "message": "Ikon Situs Web menyediakan gambar yang mudah dikenali di sebelah item info masuk di dalam brankas Anda."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Matikan angka penghitung "
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Angka penghitung menandakan jumlah login yang kamu punya untuk website saat ini yang ada di dalam vault kamu."
   },
   "cardholderName": {
     "message": "Nama Pemegang Kartu"
@@ -1694,7 +1694,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Untuk memilih file ini, buka Extension di sidebar (jika memungkinkan) atau keluarkan menjadi window baru dengan menekan gambar ini."
   },
   "sendFirefoxFileWarning": {
     "message": "Untuk memilih file menggunakan Firefox, buka ekstensi di sidebar atau keluar ke jendela baru dengan mengklik banner ini."
@@ -1736,10 +1736,10 @@
     "message": "Sembunyikan alamat surel dari penerima."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Satu atau lebih kebijakan organisasi mempengaruhi pengaturan feature Send anda."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Master password ditanyakan kembali"
   },
   "passwordConfirmation": {
     "message": "Konfirmasi sandi utama"

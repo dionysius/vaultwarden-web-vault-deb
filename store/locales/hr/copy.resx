@@ -124,15 +124,31 @@
     <value>Siguran i besplatan upravitelj lozinki za sve vaše uređaje</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden je jednostavan i siguran način pohrane svih tvojih korisničkih imena i lozinki, a sinkronizacija im omogućuje jednostavan pristup na svim tvojim uređajima.
+    <value>Bitwarden, Inc. je vlasnik tvrtke 8bit Solutions LLC.
 
-Krađa lozinki je ozbiljan problem. Web mjesta i aplikacije koje upotrebljavaš, svakog su dana izložene pokušajima napada, pri čemu može doći do curenja podataka, a tvoje lozinke mogu biti ukradene. Upotrebljavaš li jednu te istu lozinku na više mjesta, u slučaju njezinog curenja, neautorizirane osobe mogu vrlo lako pristupiti ostalim uslugama koje su zaštićene tom istom lozinkom, kao npr. tvoja e-pošta, internet bankarsrtvo i druge važne usluge.
+THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET I DRUGI ODABRALI SU BITWARDEN NAJBOLJIM UPRAVITELJEM LOZINKI. 
 
-Sigurnosni stručnjaci preporučuju korištenje jedinstvene, nasumično generirane lozinke za svaki račun koji stvoriš. No kako upravljati svim tim lozinkama? Bitwarden na siguran način olakšava generiranje složenih, sigurnih lozinki i njihovu pohranu s pripadajućim korisničkim imenima.
+Upravljajte, spremajte, osigurajte i dijelite neograničen broj lozinki na neograničenom broju uređaja bilo gdje. Bitwarden omogućuje upravljanje lozinkama, bazirano na otvorenom kodu, svima, bilo kod kuće, na poslu ili u pokretu.
 
-Bitwarden tvoje podatke pohranjuje u šifrirani trezor koji je sinkroniziran i lako dostupan na svim tvojim uređajima. Budući je trezor u potpunosti šifriran prije nego li napusti uređaj, jedino ti imaš pristup podacima u trezoru. Čak niti tim u Bitwardenu ne može vidjeti tvoje podatke zapečaćene AES-256 bitnim šifriranjem, salted hashom i PBKDF2 SHA-256.
+Generirajte jake, jedinstvene i nasumične lozinke bazirane na sigurnosnim zahtjevima za svaku web stranicu koju često posjećujete.
 
-Bitwarden je usredotočen na softver otvorenog kôda. Izvorni kôd za Bitwarden smješten je na GitHub-u i svatko ga može pregledati, revidirati i doprinijeti Bitwarden kodnoj bazi.</value>
+Bitwarden Send omoguzćuje jednostavno i brzo slanje šifriranih podataka --- datoteki ili teksta -- direktno, bilo kome.
+
+Bitwarden nudi Teams i Enterprise planove za tvrtke kako biste sigurno mogli dijeliti lozinke s kolegama na poslu.
+
+Zašto odabrati Bitwarden?
+
+Svjetski priznata enkripcija
+Lozinke su zaštićene naprednim end-to-end šifriranjem (AES-256 bit, salted hashtag i PBKDF2 SHA-256) kako bi vaši osobni podaci ostali sigurni i samo vaši.
+
+Ugrađen generator lozinki
+Generirajte jake, jedinstvene i nasumične lozinke bazirane na sigurnosnim zahtjevima za svako web mjesto koje često posjećujete.
+
+Svjetski dostupan 
+Bitwarden je, zahvaljujući našoj globalnoj zajednici, dostupan na više od 40 jezika.
+
+Podržani svi OS
+Osigurajte i sigurno dijelite osjetljive podatke sadržane u vašem Bitwarden trezoru iz bilo kojeg preglednika, mobilnog uređaja ili stolnog računala s bilo kojim OS.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Siguran i besplatan upravitelj lozinki za sve tvoje uređaje</value>
@@ -144,7 +160,7 @@ Bitwarden je usredotočen na softver otvorenog kôda. Izvorni kôd za Bitwarden 
     <value>Upravljaj svojim korisničkim imenima i lozinkama iz sigurnog trezora</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Brza auto-ispuna vjerodajnica za prijavu za bilo koju web stranicu</value>
+    <value>Brza auto-ispuna vjerodajnica za prijavu na bilo kojoj web stranici</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
     <value>Tvoj trezor je lako dostupan iz izbornika desnim klikom</value>

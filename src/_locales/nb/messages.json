@@ -924,16 +924,16 @@
     "message": "Etter aktivering av auto-utfylling på sidelasser, kan du aktivere eller deaktivere funksjonen for individuelle innloggingselementer. Dette er standardinnstillingen for innloggingselementer som ikke er satt opp separat."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Auto-utfyll på sideinnlastning (hvis aktivert i Alternativer)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "Bruk standardinnstillinger"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "Auto-utfyll ved innlasting av side"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "Ikke fyll automatisk når du laster inn siden"
   },
   "commandOpenPopup": {
     "message": "Åpne hvelv-vindu"
@@ -990,10 +990,10 @@
     "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hver innloggingsgjenstand i hvelvet ditt."
   },
   "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+    "message": "Deaktiver Badge Teller"
   },
   "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+    "message": "Bade-teller indikerer hvor mange innlogginger du har for den nåværende siden i hvelvet ditt."
   },
   "cardholderName": {
     "message": "Kortholderens navn"
@@ -1498,10 +1498,10 @@
     "message": "Uten tillatelse til å kommunisere med Bitwardens skrivebordsprogram kan vi ikke tilgjengeligjøre biometri i nettleserutvidelsen. Prøv igjen."
   },
   "nativeMessaginPermissionSidebarTitle": {
-    "message": "Permission request error"
+    "message": "Feil ved forespørsel om tillatelse"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Denne handlingen kan ikke gjøres i sidestolpen, prøv på nytt i sprettoppvinduet eller popvindu."
   },
   "personalOwnershipSubmitError": {
     "message": "På grunn av bedrifsretningslinjer er du begrenset fra å lagre objekter til ditt personlige hvelv. Endre alternativ for eierskap til en organisasjon og velg blant tilgjengelige samlinger."
@@ -1510,13 +1510,13 @@
     "message": "En bedriftsretningslinje påvirker dine eierskapsinnstillinger."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Ekskluderte domener"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+    "message": "Bitwarden vil ikke be om å lagre innloggingsdetaljer for disse domenene. Du må oppdatere siden for at endringene skal tre i kraft."
   },
   "excludedDomainsInvalidDomain": {
-    "message": "$DOMAIN$ is not a valid domain",
+    "message": "$DOMAIN$ er ikke et gyldig domene",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1547,7 +1547,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Maksimalt antall tilganger nådd"
   },
   "expired": {
     "message": "Utløpt"
@@ -1602,17 +1602,17 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "A friendly name to describe this Send.",
+    "message": "Et vennlig navn for å beskrive dette Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Filen du vil send."
   },
   "deletionDate": {
     "message": "Dato for sletting"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Send-en vil bli slettet permanent på den angitte dato og klokkeslett.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -1682,25 +1682,25 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "På grunn av en virksomhetsregel kan du kun slette en eksisterende Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Opprettet Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Redigerte Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "For å velge en fil, åpne utvidelsen i sidepanelet (hvis mulig) eller poppe ut til et nytt vindu ved å klikke på dette banneret."
   },
   "sendFirefoxFileWarning": {
-    "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
+    "message": "For å velge en fil med Firefox må du åpne utvidelsen i sidestolpen eller sprette ut til et nytt vindu ved å klikke på dette banneret."
   },
   "sendSafariFileWarning": {
-    "message": "In order to choose a file using Safari, pop out to a new window by clicking this banner."
+    "message": "For å velge en fil med Safari, popp ut i et nytt vindu ved å klikke på dette banneret."
   },
   "sendFileCalloutHeader": {
     "message": "Før du starter"
@@ -1739,7 +1739,7 @@
     "message": "En eller flere av organisasjons retningslinjer påvirker generatorinnstillingene dine."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Forespørsel om hovedpassord på nytt"
   },
   "passwordConfirmation": {
     "message": "Superpassord bekreftelse"
