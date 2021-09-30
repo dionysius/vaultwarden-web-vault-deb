@@ -127,6 +127,7 @@ export default class MainBackground {
     onReplacedRan: boolean;
     loginToAutoFill: any = null;
     notificationQueue: any[] = [];
+    retryQueue: any[] = [];
 
     private commandsBackground: CommandsBackground;
     private contextMenusBackground: ContextMenusBackground;

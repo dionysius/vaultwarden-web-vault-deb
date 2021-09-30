@@ -73,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     sendPlatformMessage({
                         command: 'openPopout'
                     });
+
+                    sendPlatformMessage({
+                        command: 'addToRetryQueue',
+                        retryItem: bgAddSaveMessage
+                    });
+                    return;
                 }
 
                 sendPlatformMessage(bgAddSaveMessage);
@@ -111,6 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     sendPlatformMessage({
                         command: 'openPopout'
                     });
+
+                    sendPlatformMessage({
+                        command: 'addToRetryQueue',
+                        retryItem: bgChangeSaveMessage,
+                    });
+                    return;
                 }
                 sendPlatformMessage(bgChangeSaveMessage);
             });

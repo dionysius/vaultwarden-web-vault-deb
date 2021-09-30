@@ -71,6 +71,18 @@ export default class RuntimeBackground {
                 await this.main.refreshBadgeAndMenu(false);
                 this.notificationsService.updateConnection(msg.command === 'unlocked');
                 this.systemService.cancelProcessReload();
+
+                if (this.main.retryQueue.length > 0) {
+                    const retryItem = this.main.retryQueue.pop();
+                    await this.processMessage(retryItem.msg, retryItem.sender, null);
+                }
+                break;
+            case 'addToRetryQueue':
+                const retryMessage = {
+                    msg: msg.retryItem,
+                    sender: sender,
+                };
+                this.main.retryQueue.push(retryMessage);
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);
@@ -224,10 +236,6 @@ export default class RuntimeBackground {
     }
 
     private async saveAddLogin(tab: any, folderId: string) {
-        console.log('saveAddLogin triggered');
-        if (await this.vaultTimeoutService.isLocked()) {
-            return;
-        }
 
         for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.main.notificationQueue[i];
@@ -268,10 +276,6 @@ export default class RuntimeBackground {
     }
 
     private async saveChangePassword(tab: any) {
-        console.log('saveChangePassword triggered');
-        if (await this.vaultTimeoutService.isLocked()) {
-            return;
-        }
 
         for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.main.notificationQueue[i];
@@ -361,20 +365,20 @@ export default class RuntimeBackground {
     }
 
     private async pushAddLoginToQueue(loginDomain: string, loginInfo: any, tab: any, isVaultLocked: boolean = false) {
-            // remove any old messages for this tab
-            this.removeTabFromNotificationQueue(tab);
+        // remove any old messages for this tab
+        this.removeTabFromNotificationQueue(tab);
         const message: addLoginQueueMessage = {
-                type: 'addLogin',
-                username: loginInfo.username,
-                password: loginInfo.password,
-                domain: loginDomain,
-                uri: loginInfo.url,
-                tabId: tab.id,
-                expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
+            type: 'addLogin',
+            username: loginInfo.username,
+            password: loginInfo.password,
+            domain: loginDomain,
+            uri: loginInfo.url,
+            tabId: tab.id,
+            expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
             wasVaultLocked: isVaultLocked,
         };
         this.main.notificationQueue.push(message);
-            await this.main.checkNotificationQueue(tab);
+        await this.main.checkNotificationQueue(tab);
     }
 
     private async changedPassword(changeData: any, tab: any) {
