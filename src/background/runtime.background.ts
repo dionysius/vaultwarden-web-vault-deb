@@ -104,9 +104,6 @@ export default class RuntimeBackground {
             case 'bgGetDataForTab':
                 await this.getDataForTab(sender.tab, msg.responseCommand);
                 break;
-            case 'bgOpenNotificationBar':
-                await BrowserApi.tabSendMessageData(sender.tab, 'openNotificationBar', msg.data);
-                break;
             case 'bgCloseNotificationBar':
                 await BrowserApi.tabSendMessageData(sender.tab, 'closeNotificationBar');
                 break;

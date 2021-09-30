@@ -126,9 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 sendPlatformMessage(bgChangeSaveMessage);
             });
-        } else if (getQueryVariable('info')) {
-            setContent(document.getElementById('template-alert'));
-            document.getElementById('template-alert-clone').textContent = getQueryVariable('info');
         }
 
         closeButton.addEventListener('click', (e) => {
