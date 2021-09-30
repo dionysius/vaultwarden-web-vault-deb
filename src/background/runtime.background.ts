@@ -338,7 +338,6 @@ export default class RuntimeBackground {
     }
 
     private async addLogin(loginInfo: any, tab: any) {
-        console.log('addLogin triggered');
         const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
