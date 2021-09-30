@@ -27,6 +27,9 @@ import { Utils } from 'jslib-common/misc/utils';
 
 import { PolicyType } from 'jslib-common/enums/policyType';
 
+import addChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
+import addLoginQueueMessage from './models/addLoginQueueMessage';
+
 export default class RuntimeBackground {
     private runtime: any;
     private autofillTimeout: any;
@@ -217,6 +220,7 @@ export default class RuntimeBackground {
     }
 
     private async saveAddLogin(tab: any, folderId: string) {
+        console.log('saveAddLogin triggered');
         if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
@@ -260,6 +264,7 @@ export default class RuntimeBackground {
     }
 
     private async saveChangePassword(tab: any) {
+        console.log('saveChangePassword triggered');
         if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
@@ -309,10 +314,7 @@ export default class RuntimeBackground {
     }
 
     private async addLogin(loginInfo: any, tab: any) {
-        if (await this.vaultTimeoutService.isLocked()) {
-            return;
-        }
-
+        console.log('addLogin triggered');
         const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
@@ -321,6 +323,11 @@ export default class RuntimeBackground {
         let normalizedUsername = loginInfo.username;
         if (normalizedUsername != null) {
             normalizedUsername = normalizedUsername.toLowerCase();
+        }
+
+        if (await this.vaultTimeoutService.isLocked()) {
+            this.pushAddLoginToQueue(loginDomain, loginInfo, tab, true);
+            return;
         }
 
         const ciphers = await this.cipherService.getAllDecryptedForUrl(loginInfo.url);
@@ -337,9 +344,22 @@ export default class RuntimeBackground {
                 return;
             }
 
+            this.pushAddLoginToQueue(loginDomain, loginInfo, tab);
+
+        } else if (usernameMatches.length === 1 && usernameMatches[0].login.password !== loginInfo.password) {
+            const disabledChangePassword = await this.storageService.get<boolean>(
+                ConstantsService.disableChangedPasswordNotificationKey);
+            if (disabledChangePassword) {
+                return;
+            }
+            this.pushChangePasswordToQueue(usernameMatches[0].id, loginDomain, loginInfo.password, tab);
+        }
+    }
+
+    private async pushAddLoginToQueue(loginDomain: string, loginInfo: any, tab: any, isVaultLocked: boolean = false) {
             // remove any old messages for this tab
             this.removeTabFromNotificationQueue(tab);
-            this.main.notificationQueue.push({
+        const message: addLoginQueueMessage = {
                 type: 'addLogin',
                 username: loginInfo.username,
                 password: loginInfo.password,
@@ -347,25 +367,20 @@ export default class RuntimeBackground {
                 uri: loginInfo.url,
                 tabId: tab.id,
                 expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
-            });
+            wasVaultLocked: isVaultLocked,
+        };
+        this.main.notificationQueue.push(message);
             await this.main.checkNotificationQueue(tab);
-        } else if (usernameMatches.length === 1 && usernameMatches[0].login.password !== loginInfo.password) {
-            const disabledChangePassword = await this.storageService.get<boolean>(
-                ConstantsService.disableChangedPasswordNotificationKey);
-            if (disabledChangePassword) {
-                return;
-            }
-            this.addChangedPasswordToQueue(usernameMatches[0].id, loginDomain, loginInfo.password, tab);
-        }
     }
 
     private async changedPassword(changeData: any, tab: any) {
-        if (await this.vaultTimeoutService.isLocked()) {
+        const loginDomain = Utils.getDomain(changeData.url);
+        if (loginDomain == null) {
             return;
         }
 
-        const loginDomain = Utils.getDomain(changeData.url);
-        if (loginDomain == null) {
+        if (await this.vaultTimeoutService.isLocked()) {
+            this.pushChangePasswordToQueue(null, loginDomain, changeData.newPassword, tab, true);
             return;
         }
 
@@ -380,21 +395,23 @@ export default class RuntimeBackground {
             id = ciphers[0].id;
         }
         if (id != null) {
-            this.addChangedPasswordToQueue(id, loginDomain, changeData.newPassword, tab);
+            this.pushChangePasswordToQueue(id, loginDomain, changeData.newPassword, tab);
         }
     }
 
-    private async addChangedPasswordToQueue(cipherId: string, loginDomain: string, newPassword: string, tab: any) {
+    private async pushChangePasswordToQueue(cipherId: string, loginDomain: string, newPassword: string, tab: any, isVaultLocked: boolean = false) {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
-        this.main.notificationQueue.push({
+        const message: addChangePasswordQueueMessage = {
             type: 'changePassword',
             cipherId: cipherId,
             newPassword: newPassword,
             domain: loginDomain,
             tabId: tab.id,
             expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
-        });
+            wasVaultLocked: isVaultLocked,
+        };
+        this.main.notificationQueue.push(message);
         await this.main.checkNotificationQueue(tab);
     }
 
