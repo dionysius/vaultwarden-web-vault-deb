@@ -476,29 +476,7 @@ export default class RuntimeBackground {
 
     private async getDataForTab(tab: any, responseCommand: string) {
         const responseData: any = {};
-        if (responseCommand === 'notificationBarDataResponse') {
-            responseData.neverDomains = await this.storageService.get<any>(ConstantsService.neverDomainsKey);
-            const disableAddLoginFromOptions = await this.storageService.get<boolean>(
-                ConstantsService.disableAddLoginNotificationKey);
-            responseData.disabledAddLoginNotification = disableAddLoginFromOptions || !(await this.allowPersonalOwnership());
-            responseData.disabledChangedPasswordNotification = await this.storageService.get<boolean>(
-                ConstantsService.disableChangedPasswordNotificationKey);
-        } else if (responseCommand === 'autofillerAutofillOnPageLoadEnabledResponse') {
-            responseData.autofillEnabled = await this.storageService.get<boolean>(
-                ConstantsService.enableAutoFillOnPageLoadKey);
-        } else if (responseCommand === 'notificationBarFrameDataResponse') {
-            responseData.i18n = {
-                appName: this.i18nService.t('appName'),
-                close: this.i18nService.t('close'),
-                yes: this.i18nService.t('yes'),
-                never: this.i18nService.t('never'),
-                notificationAddSave: this.i18nService.t('notificationAddSave'),
-                notificationNeverSave: this.i18nService.t('notificationNeverSave'),
-                notificationAddDesc: this.i18nService.t('notificationAddDesc'),
-                notificationChangeSave: this.i18nService.t('notificationChangeSave'),
-                notificationChangeDesc: this.i18nService.t('notificationChangeDesc'),
-            };
-        } else if (responseCommand === 'notificationBarGetFoldersList') {
+        if (responseCommand === 'notificationBarGetFoldersList') {
             responseData.folders = await this.folderService.getAllDecrypted();
         }
 
