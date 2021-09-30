@@ -70,16 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            const responseFoldersCommand = 'notificationBarGetFoldersList';
-            chrome.runtime.onMessage.addListener((msg) => {
-                if (msg.command === responseFoldersCommand && msg.data) {
-                    fillSelectorWithFolders(msg.data.folders);
-                }
-            });
-            sendPlatformMessage({
-                command: 'bgGetDataForTab',
-                responseCommand: responseFoldersCommand
-            });
+            if (!isVaultLocked) {
+                const responseFoldersCommand = 'notificationBarGetFoldersList';
+                chrome.runtime.onMessage.addListener((msg) => {
+                    if (msg.command === responseFoldersCommand && msg.data) {
+                        fillSelectorWithFolders(msg.data.folders);
+                    }
+                });
+                sendPlatformMessage({
+                    command: 'bgGetDataForTab',
+                    responseCommand: responseFoldersCommand
+                });
+            }
         } else if (getQueryVariable('change')) {
             setContent(document.getElementById('template-change'));
             var changeButton = document.querySelector('#template-change-clone .change-save');
