@@ -374,10 +374,6 @@ export default class MainBackground {
             return;
         }
 
-        if (await this.vaultTimeoutService.isLocked()) {
-            return;
-        }
-
         const options: any = {};
         if (frameId != null) {
             options.frameId = frameId;

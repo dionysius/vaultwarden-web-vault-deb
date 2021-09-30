@@ -126,9 +126,6 @@ export default class RuntimeBackground {
                 await this.main.reseedStorage();
                 break;
             case 'collectPageDetailsResponse':
-                if (await this.vaultTimeoutService.isLocked()) {
-                    return;
-                }
                 switch (msg.sender) {
                     case 'notificationBar':
                         const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
