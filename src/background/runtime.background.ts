@@ -127,10 +127,8 @@ export default class RuntimeBackground {
                 this.removeTabFromNotificationQueue(sender.tab);
                 break;
             case 'bgAddSave':
-                await this.saveAddLogin(sender.tab, msg.folder);
-                break;
             case 'bgChangeSave':
-                await this.saveChangePassword(sender.tab);
+                await this.saveOrUpdateCredentials(sender.tab, msg.folder);
                 break;
             case 'bgNeverSave':
                 await this.saveNever(sender.tab);
@@ -235,11 +233,11 @@ export default class RuntimeBackground {
         this.pageDetailsToAutoFill = [];
     }
 
-    private async saveAddLogin(tab: any, folderId: string) {
-
+    private async saveOrUpdateCredentials(tab: any, folderId?: string) {
         for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.main.notificationQueue[i];
-            if (queueMessage.tabId !== tab.id || queueMessage.type !== 'addLogin') {
+            if (queueMessage.tabId !== tab.id ||
+                (queueMessage.type !== 'addLogin' && queueMessage.type !== 'changePassword')) {
                 continue;
             }
 
@@ -251,53 +249,74 @@ export default class RuntimeBackground {
             this.main.notificationQueue.splice(i, 1);
             BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
 
-            const loginModel = new LoginView();
-            const loginUri = new LoginUriView();
-            loginUri.uri = queueMessage.uri;
-            loginModel.uris = [loginUri];
-            loginModel.username = queueMessage.username;
-            loginModel.password = queueMessage.password;
-            const model = new CipherView();
-            model.name = Utils.getHostname(queueMessage.uri) || queueMessage.domain;
-            model.name = model.name.replace(/^www\./, '');
-            model.type = CipherType.Login;
-            model.login = loginModel;
-
-            if (!Utils.isNullOrWhitespace(folderId)) {
-                const folders = await this.folderService.getAllDecrypted();
-                if (folders.some(x => x.id === folderId)) {
-                    model.folderId = folderId;
+            if (queueMessage.type === 'changePassword') {
+                const message = (queueMessage as addChangePasswordQueueMessage);
+                const cipher = await this.getDecryptedCipherById(message.cipherId);
+                if (cipher == null) {
+                    return;
                 }
+                await this.updateCipher(cipher, message.newPassword);
+                return;
             }
 
-            const cipher = await this.cipherService.encrypt(model);
-            await this.cipherService.saveWithServer(cipher);
+            if (!queueMessage.wasVaultLocked) {
+                await this.createNewCipher(queueMessage, folderId);
+            }
+
+            // If the vault was locked, check if a cipher needs updating instead of creating a new one
+            if (queueMessage.type === 'addLogin' && queueMessage.wasVaultLocked === true) {
+                const message = (queueMessage as addLoginQueueMessage);
+                const ciphers = await this.cipherService.getAllDecryptedForUrl(message.uri);
+                const usernameMatches = ciphers.filter(c => c.login.username != null &&
+                    c.login.username.toLowerCase() === message.username);
+
+                if (usernameMatches.length === 1) {
+                    await this.updateCipher(usernameMatches[0], message.password);
+                    return;
+                }
+
+                await this.createNewCipher(message, folderId);
+            }
         }
     }
 
-    private async saveChangePassword(tab: any) {
+    private async createNewCipher(queueMessage: addLoginQueueMessage, folderId: string) {
+        const loginModel = new LoginView();
+        const loginUri = new LoginUriView();
+        loginUri.uri = queueMessage.uri;
+        loginModel.uris = [loginUri];
+        loginModel.username = queueMessage.username;
+        loginModel.password = queueMessage.password;
+        const model = new CipherView();
+        model.name = Utils.getHostname(queueMessage.uri) || queueMessage.domain;
+        model.name = model.name.replace(/^www\./, '');
+        model.type = CipherType.Login;
+        model.login = loginModel;
 
-        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
-            const queueMessage = this.main.notificationQueue[i];
-            if (queueMessage.tabId !== tab.id || queueMessage.type !== 'changePassword') {
-                continue;
+        if (!Utils.isNullOrWhitespace(folderId)) {
+            const folders = await this.folderService.getAllDecrypted();
+            if (folders.some(x => x.id === folderId)) {
+                model.folderId = folderId;
             }
+        }
 
-            const tabDomain = Utils.getDomain(tab.url);
-            if (tabDomain != null && tabDomain !== queueMessage.domain) {
-                continue;
-            }
+        const cipher = await this.cipherService.encrypt(model);
+        await this.cipherService.saveWithServer(cipher);
+    }
 
-            this.main.notificationQueue.splice(i, 1);
-            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
+    private async getDecryptedCipherById(cipherId: string) {
+        const cipher = await this.cipherService.get(cipherId);
+        if (cipher != null && cipher.type === CipherType.Login) {
+            return await cipher.decrypt();
+        }
+        return null;
+    }
 
-            const cipher = await this.cipherService.get(queueMessage.cipherId);
-            if (cipher != null && cipher.type === CipherType.Login) {
-                const model = await cipher.decrypt();
-                model.login.password = queueMessage.newPassword;
-                const newCipher = await this.cipherService.encrypt(model);
-                await this.cipherService.saveWithServer(newCipher);
-            }
+    private async updateCipher(cipher: CipherView, newPassword: string) {
+        if (cipher != null && cipher.type === CipherType.Login) {
+            cipher.login.password = newPassword;
+            const newCipher = await this.cipherService.encrypt(cipher);
+            await this.cipherService.saveWithServer(newCipher);
         }
     }
 
