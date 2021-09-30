@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(load, 50);
 
     function load() {
+        const isVaultLocked = getQueryVariable('isVaultLocked') == 'true';
         var closeButton = document.getElementById('close-button'),
             body = document.querySelector('body'),
             bodyRect = body.getBoundingClientRect();

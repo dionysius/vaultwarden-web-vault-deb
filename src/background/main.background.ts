@@ -676,13 +676,20 @@ export default class MainBackground {
             if (this.notificationQueue[i].tabId !== tab.id || this.notificationQueue[i].domain !== tabDomain) {
                 continue;
             }
+
             if (this.notificationQueue[i].type === 'addLogin') {
                 BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
                     type: 'add',
+                    typeData: {
+                        isVaultLocked: this.notificationQueue[i].wasVaultLocked,
+                    },
                 });
             } else if (this.notificationQueue[i].type === 'changePassword') {
                 BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
                     type: 'change',
+                    typeData: {
+                        isVaultLocked: this.notificationQueue[i].wasVaultLocked,
+                    },
                 });
             }
             break;

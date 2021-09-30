@@ -444,10 +444,10 @@ document.addEventListener('DOMContentLoaded', event => {
                 barPage = barPage + '?success=' + typeData.text;
                 break;
             case 'add':
-                barPage = barPage + '?add=1';
+                barPage = barPage + '?add=1&isVaultLocked=' + typeData.isVaultLocked;
                 break;
             case 'change':
-                barPage = barPage + '?change=1';
+                barPage = barPage + '?change=1&isVaultLocked=' + typeData.isVaultLocked;
                 break;
             default:
                 break;
