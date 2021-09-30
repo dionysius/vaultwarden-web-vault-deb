@@ -306,7 +306,11 @@ export default class AutofillService implements AutofillServiceInterface {
             });
 
             pageDetails.fields.forEach((field: any) => {
-                if (filledFields.hasOwnProperty(field.opid) || !field.viewable) {
+                if (filledFields.hasOwnProperty(field.opid)) {
+                    return;
+                }
+
+                if (!field.viewable && field.tagName !== 'span') {
                     return;
                 }
 
@@ -459,6 +463,10 @@ export default class AutofillService implements AutofillServiceInterface {
         const fillFields: { [id: string]: AutofillField; } = {};
 
         pageDetails.fields.forEach((f: any) => {
+            if (this.forCustomFieldsOnly(f)) {
+                return;
+            }
+
             if (this.isExcludedType(f.type, ExcludedAutofillTypes)) {
                 return;
             }
@@ -691,6 +699,10 @@ export default class AutofillService implements AutofillServiceInterface {
         const fillFields: { [id: string]: AutofillField; } = {};
 
         pageDetails.fields.forEach((f: any) => {
+            if (this.forCustomFieldsOnly(f)) {
+                return;
+            }
+
             if (this.isExcludedType(f.type, ExcludedAutofillTypes)) {
                 return;
             }
@@ -928,6 +940,10 @@ export default class AutofillService implements AutofillServiceInterface {
         mustBeEmpty: boolean, fillNewPassword: boolean) {
         const arr: AutofillField[] = [];
         pageDetails.fields.forEach(f => {
+            if (this.forCustomFieldsOnly(f)) {
+                return;
+            }
+
             const isPassword = f.type === 'password';
             const valueIsLikePassword = (value: string) => {
                 if (value == null) {
@@ -976,6 +992,10 @@ export default class AutofillService implements AutofillServiceInterface {
         let usernameField: AutofillField = null;
         for (let i = 0; i < pageDetails.fields.length; i++) {
             const f = pageDetails.fields[i];
+            if (this.forCustomFieldsOnly(f)) {
+                continue;
+            }
+
             if (f.elementNumber >= passwordField.elementNumber) {
                 break;
             }
@@ -1152,8 +1172,14 @@ export default class AutofillService implements AutofillServiceInterface {
         if (field.maxLength && value && value.length > field.maxLength) {
             value = value.substr(0, value.length);
         }
-        fillScript.script.push(['click_on_opid', field.opid]);
-        fillScript.script.push(['focus_by_opid', field.opid]);
+        if (field.tagName !== 'span') {
+            fillScript.script.push(['click_on_opid', field.opid]);
+            fillScript.script.push(['focus_by_opid', field.opid]);
+        }
         fillScript.script.push(['fill_by_opid', field.opid, value]);
+    }
+
+    private forCustomFieldsOnly(field: AutofillField): boolean {
+        return field.tagName === 'span';
     }
 }

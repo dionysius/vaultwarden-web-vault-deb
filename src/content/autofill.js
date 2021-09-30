@@ -38,6 +38,7 @@
     5. Remove fakeTested prop.
     6. Rename com.agilebits.* stuff to com.bitwarden.*
     7. Remove "some useful globals" on window
+    8. Add ability to autofill span[data-bwautofill] elements
     */
 
     function collect(document, undefined) {
@@ -103,6 +104,11 @@
                         return el;
 
                     default:
+                        // START MODIFICATION
+                        if (!el.type && el.tagName.toLowerCase() === 'span') {
+                            return el.innerText;
+                        }
+                        // END MODIFICATION
                         return el.value;
                 }
             }
@@ -268,8 +274,16 @@
                 addProp(field, 'htmlClass', getElementAttrValue(el, 'class'));
                 addProp(field, 'tabindex', getElementAttrValue(el, 'tabindex'));
                 addProp(field, 'title', getElementAttrValue(el, 'title'));
+
                 // START MODIFICATION
                 addProp(field, 'userEdited', !!el.dataset['com.browser.browser.userEdited']);
+
+                var elTagName = el.tagName.toLowerCase();
+                addProp(field, 'tagName', elTagName);
+
+                if (elTagName === 'span') {
+                    return field;
+                }
                 // END MODIFICATION
 
                 if ('hidden' != toLowerString(el.type)) {
@@ -555,7 +569,8 @@
             var els = [];
             try {
                 var elsList = theDoc.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="reset"])' +
-                    ':not([type="button"]):not([type="image"]):not([type="file"]):not([data-bwignore]), select');
+                    ':not([type="button"]):not([type="image"]):not([type="file"]):not([data-bwignore]), select, ' +
+                    'span[data-bwautofill]');
                 els = Array.prototype.slice.call(elsList);
             } catch (e) { }
 
@@ -809,6 +824,12 @@
                         break;
                     default:
                         el.value == op || doAllFillOperations(el, function (theEl) {
+                            // START MODIFICATION
+                            if (!theEl.type && theEl.tagName.toLowerCase() === 'span') {
+                                theEl.innerText = op;
+                                return;
+                            }
+                            // END MODIFICATION
                             theEl.value = op;
                         });
                 }
@@ -932,6 +953,11 @@
                     currentEl = currentEl === document;
                 }
             }
+            // START MODIFICATION
+            if (el && !el.type && el.tagName.toLowerCase() === 'span') {
+                return true;
+            }
+            // END MODIFICATION
             return currentEl ? -1 !== 'email text password number tel url'.split(' ').indexOf(el.type || '') : false;
         }
 
@@ -942,7 +968,10 @@
                 return null;
             }
             try {
-                var elements = Array.prototype.slice.call(selectAllFromDoc('input, select, button'));
+                // START MODIFICATION
+                var elements = Array.prototype.slice.call(selectAllFromDoc('input, select, button, ' +
+                    'span[data-bwautofill]'));
+                // END MODIFICATION
                 var filteredElements = elements.filter(function (o) {
                     return o.opid == theOpId;
                 });
