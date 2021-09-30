@@ -267,7 +267,7 @@ export default class RuntimeBackground {
                 const usernameMatches = ciphers.filter(c => c.login.username != null &&
                     c.login.username.toLowerCase() === message.username);
 
-                if (usernameMatches.length === 1) {
+                if (usernameMatches.length >= 1) {
                     await this.updateCipher(usernameMatches[0], message.password);
                     return;
                 }
