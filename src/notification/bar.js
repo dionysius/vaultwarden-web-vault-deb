@@ -61,11 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             addButton.addEventListener('click', (e) => {
                 e.preventDefault();
+
                 const folderId = document.querySelector('#template-add-clone .select-folder').value;
-                sendPlatformMessage({
+
+                const bgAddSaveMessage = {
                     command: 'bgAddSave',
                     folder: folderId,
-                });
+                };
+
+                if (isVaultLocked) {
+                    sendPlatformMessage({
+                        command: 'openPopout'
+                    });
+                }
+
+                sendPlatformMessage(bgAddSaveMessage);
             });
 
             neverButton.addEventListener('click', (e) => {
@@ -92,9 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
             var changeButton = document.querySelector('#template-change-clone .change-save');
             changeButton.addEventListener('click', (e) => {
                 e.preventDefault();
-                sendPlatformMessage({
+
+                const bgChangeSaveMessage = {
                     command: 'bgChangeSave'
-                });
+                };
+
+                if (isVaultLocked) {
+                    sendPlatformMessage({
+                        command: 'openPopout'
+                    });
+                }
+                sendPlatformMessage(bgChangeSaveMessage);
             });
         } else if (getQueryVariable('info')) {
             setContent(document.getElementById('template-alert'));
