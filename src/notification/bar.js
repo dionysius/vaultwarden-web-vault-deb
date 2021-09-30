@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             document.querySelector('#template-add .add-save').textContent = i18n.notificationAddSave;
             document.querySelector('#template-add .never-save').textContent = i18n.notificationNeverSave;
-            document.querySelector('#template-add .select-folder').style.display = 'initial';
+            document.querySelector('#template-add .select-folder').style.display = isVaultLocked ? 'none' : 'initial';
             document.querySelector('#template-add .select-folder').setAttribute('aria-label', i18n.folder);
             document.querySelector('#template-change .change-save').textContent = i18n.notificationChangeSave;
         }
