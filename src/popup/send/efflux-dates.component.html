@@ -46,9 +46,9 @@
             <div class="box-content-row" *ngIf="editMode" appBoxRow>
                 <div class="flex-label">
                     <label>{{'expirationDate' | i18n}}</label>
-                    <a *ngIf="!disabled" href="#" appStopClick (click)="clearExpiration()">
+                    <button type="button" *ngIf="!disabled" appStopClick (click)="clearExpiration()">
                         {{'clear' | i18n}}
-                    </a>
+                    </button>
                 </div>
                 <ng-container *ngTemplateOutlet="expirationDateCustom"></ng-container>
             </div>

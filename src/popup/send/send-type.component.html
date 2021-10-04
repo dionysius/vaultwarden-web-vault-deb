@@ -11,7 +11,7 @@
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <button appBlurClick (click)="addSend()" appA11yTitle="{{'addSend' | i18n}}" [disabled]="disableSend">
+        <button type="button" appBlurClick (click)="addSend()" appA11yTitle="{{'addSend' | i18n}}" [disabled]="disableSend">
             <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
         </button>
     </div>
@@ -24,7 +24,7 @@
         <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
         <ng-container *ngIf="loaded">
             <p>{{'noItemsInList' | i18n}}</p>
-            <button (click)="addSend()" class="btn block primary link" [disabled]="disableSend">
+            <button type="button" (click)="addSend()" class="btn block primary link" [disabled]="disableSend">
                 {{'addSend' | i18n}}
             </button>
         </ng-container>
