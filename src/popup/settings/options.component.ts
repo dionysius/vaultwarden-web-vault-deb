@@ -12,6 +12,7 @@ import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
+import { ThemeType } from 'jslib-common/enums/themeType';
 
 @Component({
     selector: 'app-options',
@@ -44,10 +45,10 @@ export class OptionsComponent implements OnInit {
         private stateService: StateService, private totpService: TotpService, i18nService: I18nService) {
         this.themeOptions = [
             { name: i18nService.t('default'), value: null },
-            { name: i18nService.t('light'), value: 'light' },
-            { name: i18nService.t('dark'), value: 'dark' },
-            { name: 'Nord', value: 'nord' },
-            { name: i18nService.t('solarizedDark'), value: 'solarizedDark' },
+            { name: i18nService.t('light'), value: ThemeType.Light },
+            { name: i18nService.t('dark'), value: ThemeType.Dark },
+            { name: 'Nord', value: ThemeType.Nord },
+            { name: i18nService.t('solarizedDark'), value: ThemeType.SolarizedDark },
         ];
         this.uriMatchOptions = [
             { name: i18nService.t('baseDomain'), value: UriMatchType.Domain },

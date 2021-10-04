@@ -146,7 +146,8 @@ export default class MainBackground {
     constructor() {
         // Services
         this.messagingService = new BrowserMessagingService();
-        this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService,
+        this.storageService = new BrowserStorageService();
+        this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService, this.storageService,
             (clipboardValue, clearMs) => {
                 if (this.systemService != null) {
                     this.systemService.clearClipboard(clipboardValue, clearMs);
@@ -165,7 +166,6 @@ export default class MainBackground {
                     return promise.then(result => result.response === 'unlocked');
                 }
             });
-        this.storageService = new BrowserStorageService();
         this.secureStorageService = new BrowserStorageService();
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
         this.cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
