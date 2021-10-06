@@ -13,29 +13,19 @@
     padding: 0 10px;
     border-bottom: 2px solid #175ddc;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    column-gap: 10px;
+    grid-template-columns: 24px auto 55px;
     grid-column-gap: 10px;
     box-sizing: border-box;
-    height: 42px;
-}
-
-.outer-wrapper > * {
-    align-self: center;
+    min-height: 42px;
 }
 
 .inner-wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 10px;
-    grid-column-gap: 10px;
+    grid-template-columns: auto max-content;
 }
 
-#content .change-buttons {
-    justify-self: end;
-}
 
-.wrapper > *, .inner-wrapper > * {
+.outer-wrapper > *, .inner-wrapper > * {
     align-self: center;
 }
 
@@ -84,17 +74,6 @@ button.neutral {
         cursor: pointer;
         background: none;
         text-decoration: underline;
-    }
-}
-
-body[class*='lang-en'] .add-buttons {
-    width: 175px;
-    text-align: right;
-}
-
-@media (min-width: 768px) {
-    body[class*='lang-en'] .add-buttons {
-        width: 420px;
     }
 }
 

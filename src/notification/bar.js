@@ -3,7 +3,7 @@ require('./bar.scss');
 document.addEventListener('DOMContentLoaded', () => {
     var i18n = {};
     var lang = window.navigator.language;
-    
+
     i18n.appName = chrome.i18n.getMessage('appName');
     i18n.close = chrome.i18n.getMessage('close');
     i18n.yes = chrome.i18n.getMessage('yes');
@@ -100,12 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        sendPlatformMessage({
-            command: 'bgAdjustNotificationBar',
-            data: {
-                height: body.scrollHeight
-            }
-        });
+        window.addEventListener("resize", adjustHeight);
+        adjustHeight();
     }
 
     function getQueryVariable(variable) {
@@ -143,6 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
         folders.forEach((folder) => {
             //Select "No Folder" (id=null) folder by default
             select.appendChild(new Option(folder.name, folder.id || '', false));
+        });
+    }
+
+    function adjustHeight() {
+        sendPlatformMessage({
+            command: 'bgAdjustNotificationBar',
+            data: {
+                height: document.querySelector('body').scrollHeight
+            }
         });
     }
 });
