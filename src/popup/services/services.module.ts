@@ -62,6 +62,7 @@ import { StateService } from 'jslib-common/services/state.service';
 
 import { PopupSearchService } from './popup-search.service';
 import { PopupUtilsService } from './popup-utils.service';
+
 import { ThemeType } from 'jslib-common/enums/themeType';
 
 function getBgService<T>(service: string) {

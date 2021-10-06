@@ -1,25 +1,49 @@
 const inputTags = ['input', 'textarea', 'select'];
+const labelTags = ['label', 'span'];
 const attributes = ['id', 'name', 'label-aria', 'placeholder'];
+const invalidElement = chrome.i18n.getMessage('copyCustomFieldNameInvalidElement');
+const noUniqueIdentifier = chrome.i18n.getMessage('copyCustomFieldNameNotUnique');
+
 let clickedEl: HTMLElement = null;
 
 // Find the best attribute to be used as the Name for an element in a custom field.
 function getClickedElementIdentifier() {
     if (clickedEl == null) {
-        return 'Unable to identify clicked element.';
+        return invalidElement;
     }
 
-    if (!inputTags.includes(clickedEl.nodeName.toLowerCase())) {
-        return 'Invalid element type.';
+    const tagName = clickedEl.nodeName.toLowerCase();
+    let inputEl = null;
+
+    // Try to identify the input element (which may not be the clicked element)
+    if (inputTags.includes(tagName)) {
+        inputEl = clickedEl;
+    } else if (labelTags.includes(tagName)) {
+        let inputName = null;
+        if (tagName === 'label') {
+            inputName = clickedEl.getAttribute('for');
+        } else {
+            inputName = clickedEl.closest('label')?.getAttribute('for');
+        }
+
+        if (inputName != null) {
+            inputEl = document.querySelector('input[name=' + inputName + '], select[name=' + inputName +
+                '], textarea[name=' + inputName + ']');
+        }
+    }
+
+    if (inputEl == null) {
+        return invalidElement;
     }
 
     for (const attr of attributes) {
-        const attributeValue = clickedEl.getAttribute(attr);
+        const attributeValue = inputEl.getAttribute(attr);
         const selector = '[' + attr + '="' + attributeValue + '"]';
         if (!isNullOrEmpty(attributeValue) && document.querySelectorAll(selector)?.length === 1) {
             return attributeValue;
         }
     }
-    return 'No unique identifier found.';
+    return noUniqueIdentifier;
 }
 
 function isNullOrEmpty(s: string) {

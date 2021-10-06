@@ -3,6 +3,7 @@ import {
     OnInit,
 } from '@angular/core';
 
+import { ThemeType } from 'jslib-common/enums/themeType';
 import { UriMatchType } from 'jslib-common/enums/uriMatchType';
 
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
@@ -12,7 +13,6 @@ import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
-import { ThemeType } from 'jslib-common/enums/themeType';
 
 @Component({
     selector: 'app-options',
