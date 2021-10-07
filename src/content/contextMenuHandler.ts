@@ -12,27 +12,24 @@ function getClickedElementIdentifier() {
         return invalidElement;
     }
 
-    const tagName = clickedEl.nodeName.toLowerCase();
+    const clickedTag = clickedEl.nodeName.toLowerCase();
     let inputEl = null;
 
     // Try to identify the input element (which may not be the clicked element)
-    if (inputTags.includes(tagName)) {
-        inputEl = clickedEl;
-    } else if (labelTags.includes(tagName)) {
-        let inputName = null;
-        if (tagName === 'label') {
-            inputName = clickedEl.getAttribute('for');
+    if (labelTags.includes(clickedTag)) {
+        let inputId = null;
+        if (clickedTag === 'label') {
+            inputId = clickedEl.getAttribute('for');
         } else {
-            inputName = clickedEl.closest('label')?.getAttribute('for');
+            inputId = clickedEl.closest('label')?.getAttribute('for');
         }
 
-        if (inputName != null) {
-            inputEl = document.querySelector('input[name=' + inputName + '], select[name=' + inputName +
-                '], textarea[name=' + inputName + ']');
-        }
+        inputEl = document.getElementById(inputId);
+    } else {
+        inputEl = clickedEl;
     }
 
-    if (inputEl == null) {
+    if (inputEl == null || !inputTags.includes(inputEl.nodeName.toLowerCase())) {
         return invalidElement;
     }
 
