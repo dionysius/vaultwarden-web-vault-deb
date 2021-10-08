@@ -98,6 +98,7 @@ export default class RuntimeBackground {
                 await this.main.openPopup();
                 break;
             case 'promptForLogin':
+                await BrowserApi.createNewTab('popup/index.html?uilocation=popout', true, true);
                 break;
             case 'showDialogResolve':
                 this.platformUtilsService.resolveDialogPromise(msg.dialogId, msg.confirmed);
