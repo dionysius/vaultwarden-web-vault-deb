@@ -77,6 +77,8 @@ export default class RuntimeBackground {
                 if (this.lockedVaultPendingNotifications.length > 0) {
                     const retryItem = this.lockedVaultPendingNotifications.pop();
                     await this.processMessage(retryItem.msg, retryItem.sender, null);
+
+                    await BrowserApi.closeLoginTab();
                 }
                 break;
             case 'addToLockedVaultPendingNotifications':

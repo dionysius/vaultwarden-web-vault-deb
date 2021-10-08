@@ -97,6 +97,20 @@ export class BrowserApi {
         });
     }
 
+    static async closeLoginTab() {
+        const tabs = await BrowserApi.tabsQuery({
+            active: true,
+            title: 'Bitwarden',
+        });
+
+        if (tabs.length === 0) {
+            return;
+        }
+
+        const tabToClose = tabs[tabs.length - 1].id;
+        chrome.tabs.remove(tabToClose);
+    }
+
     static closePopup(win: Window) {
         if (BrowserApi.isWebExtensionsApi && BrowserApi.isFirefoxOnAndroid) {
             // Reactivating the active tab dismisses the popup tab. The promise final
