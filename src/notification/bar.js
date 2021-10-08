@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
 
                     sendPlatformMessage({
-                        command: 'addToRetryQueue',
+                        command: 'addToLockedVaultPendingNotifications',
                         retryItem: bgAddSaveMessage
                     });
                     return;
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
 
                     sendPlatformMessage({
-                        command: 'addToRetryQueue',
+                        command: 'addToLockedVaultPendingNotifications',
                         retryItem: bgChangeSaveMessage,
                     });
                     return;

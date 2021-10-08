@@ -79,7 +79,7 @@ export default class RuntimeBackground {
                     await this.processMessage(retryItem.msg, retryItem.sender, null);
                 }
                 break;
-            case 'addToRetryQueue':
+            case 'addToLockedVaultPendingNotifications':
                 const retryMessage = {
                     msg: msg.retryItem,
                     sender: sender,
