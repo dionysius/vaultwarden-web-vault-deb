@@ -11,27 +11,27 @@ export class BrowserApi {
     static isFirefoxOnAndroid: boolean = navigator.userAgent.indexOf('Firefox/') !== -1 &&
         navigator.userAgent.indexOf('Android') !== -1;
 
-    static async getTabFromCurrentWindowId(): Promise<any> {
+    static async getTabFromCurrentWindowId(): Promise<chrome.tabs.Tab> | null {
         return await BrowserApi.tabsQueryFirst({
             active: true,
             windowId: chrome.windows.WINDOW_ID_CURRENT,
         });
     }
 
-    static async getTabFromCurrentWindow(): Promise<any> {
+    static async getTabFromCurrentWindow(): Promise<chrome.tabs.Tab> | null {
         return await BrowserApi.tabsQueryFirst({
             active: true,
             currentWindow: true,
         });
     }
 
-    static async getActiveTabs(): Promise<any[]> {
+    static async getActiveTabs(): Promise<chrome.tabs.Tab[]> {
         return await BrowserApi.tabsQuery({
             active: true,
         });
     }
 
-    static async tabsQuery(options: any): Promise<any[]> {
+    static async tabsQuery(options: chrome.tabs.QueryInfo): Promise<chrome.tabs.Tab[]> {
         return new Promise(resolve => {
             chrome.tabs.query(options, (tabs: any[]) => {
                 resolve(tabs);
@@ -39,7 +39,7 @@ export class BrowserApi {
         });
     }
 
-    static async tabsQueryFirst(options: any): Promise<any> {
+    static async tabsQueryFirst(options: chrome.tabs.QueryInfo): Promise<chrome.tabs.Tab> | null {
         const tabs = await BrowserApi.tabsQuery(options);
         if (tabs.length > 0) {
             return tabs[0];
