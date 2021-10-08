@@ -393,7 +393,7 @@ export default class RuntimeBackground {
             domain: loginDomain,
             uri: loginInfo.url,
             tabId: tab.id,
-            expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
+            expires: new Date((new Date()).getTime() + 5 * 60000), // 5 minutes
             wasVaultLocked: isVaultLocked,
         };
         this.main.notificationQueue.push(message);
@@ -435,7 +435,7 @@ export default class RuntimeBackground {
             newPassword: newPassword,
             domain: loginDomain,
             tabId: tab.id,
-            expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
+            expires: new Date((new Date()).getTime() + 5 * 60000), // 5 minutes
             wasVaultLocked: isVaultLocked,
         };
         this.main.notificationQueue.push(message);
