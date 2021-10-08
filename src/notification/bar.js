@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (isVaultLocked) {
                     sendPlatformMessage({
-                        command: 'openPopout'
+                        command: 'promptForLogin'
                     });
 
                     sendPlatformMessage({
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (isVaultLocked) {
                     sendPlatformMessage({
-                        command: 'openPopout'
+                        command: 'promptForLogin'
                     });
 
                     sendPlatformMessage({

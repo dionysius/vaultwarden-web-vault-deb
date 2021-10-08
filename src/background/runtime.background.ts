@@ -97,8 +97,7 @@ export default class RuntimeBackground {
             case 'openPopup':
                 await this.main.openPopup();
                 break;
-            case 'openPopout':
-                await this.popupUtilsService.popOut(window, 'popup/index.html?uilocation=popout');
+            case 'promptForLogin':
                 break;
             case 'showDialogResolve':
                 this.platformUtilsService.resolveDialogPromise(msg.dialogId, msg.confirmed);
