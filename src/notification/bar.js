@@ -135,12 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        sendPlatformMessage({
-            command: 'bgAdjustNotificationBar',
-            data: {
-                height: body.scrollHeight
-            }
-        });
+        window.addEventListener("resize", adjustHeight);
+        adjustHeight();
     }
 
     function getQueryVariable(variable) {
@@ -178,6 +174,15 @@ document.addEventListener('DOMContentLoaded', () => {
         folders.forEach((folder) => {
             //Select "No Folder" (id=null) folder by default
             select.appendChild(new Option(folder.name, folder.id || '', false));
+        });
+    }
+
+    function adjustHeight() {
+        sendPlatformMessage({
+            command: 'bgAdjustNotificationBar',
+            data: {
+                height: document.querySelector('body').scrollHeight
+            }
         });
     }
 });

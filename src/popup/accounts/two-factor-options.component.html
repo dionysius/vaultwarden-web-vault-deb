@@ -10,14 +10,14 @@
 <content>
     <div class="box">
         <div class="box-content">
-            <a href="#" appStopClick *ngFor="let p of providers" class="box-content-row" (click)="choose(p)">
+            <button type="button" appStopClick *ngFor="let p of providers" class="box-content-row" (click)="choose(p)">
                 <span class="text">{{p.name}}</span>
                 <span class="detail">{{p.description}}</span>
-            </a>
-            <a href="#" appStopClick class="box-content-row" (click)="recover()">
+            </button>
+            <button type="button" appStopClick class="box-content-row" (click)="recover()">
                 <span class="text">{{'recoveryCodeTitle' | i18n}}</span>
                 <span class="detail">{{'recoveryCodeDesc' | i18n}}</span>
-            </a>
+            </button>
         </div>
     </div>
 </content>

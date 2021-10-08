@@ -1,4 +1,4 @@
-<a (click)="selectCipher(cipher)" (dblclick)="launchCipher(cipher)" href="#" appStopClick
+<button (click)="selectCipher(cipher)" (dblclick)="launchCipher(cipher)" appStopClick
     title="{{title}} - {{cipher.name}}" class="box-content-row box-content-row-flex virtual-scroll-item">
     <div class="row-main">
         <app-vault-icon [cipher]="cipher"></app-vault-icon>
@@ -20,4 +20,4 @@
     <app-action-buttons [cipher]="cipher" [showView]="showView" (onView)="viewCipher(cipher)" (launchEvent)="launchCipher(cipher)" 
         class="action-buttons">
     </app-action-buttons>
-</a>
+</button>

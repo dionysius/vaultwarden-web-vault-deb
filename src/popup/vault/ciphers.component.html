@@ -24,7 +24,7 @@
                 {{'folders' | i18n}}
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let f of nestedFolders" href="#" class="box-content-row" appStopClick appBlurClick
+                <button type="button" *ngFor="let f of nestedFolders" class="box-content-row" appStopClick appBlurClick
                     (click)="selectFolder(f.node)">
                     <div class="row-main">
                         <div class="icon">
@@ -34,7 +34,7 @@
                         <span class="text">{{f.node.name}}</span>
                     </div>
                     <span><i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i></span>
-                </a>
+                </button>
             </div>
         </div>
         <div class="box list" *ngIf="nestedCollections && nestedCollections.length">
@@ -42,14 +42,14 @@
                 {{'collections' | i18n}}
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let c of nestedCollections" href="#" class="box-content-row" appStopClick appBlurClick
+                <button type="button" *ngFor="let c of nestedCollections" class="box-content-row" appStopClick appBlurClick
                     (click)="selectCollection(c.node)">
                     <div class="row-main">
                         <div class="icon"><i class="fa fa-fw fa-lg fa-cube" aria-hidden="true"></i></div>
                         <span class="text">{{c.node.name}}</span>
                     </div>
                     <span><i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i></span>
-                </a>
+                </button>
             </div>
         </div>
     </ng-container>
@@ -58,7 +58,7 @@
             <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
             <ng-container *ngIf="loaded">
                 <p>{{'noItemsInList' | i18n}}</p>
-                <button (click)="addCipher()" class="btn block primary link">
+                <button type="button" (click)="addCipher()" class="btn block primary link">
                     {{'addItem' | i18n}}
                 </button>
             </ng-container>

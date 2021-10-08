@@ -63,6 +63,8 @@ import { StateService } from 'jslib-common/services/state.service';
 import { PopupSearchService } from './popup-search.service';
 import { PopupUtilsService } from './popup-utils.service';
 
+import { ThemeType } from 'jslib-common/enums/themeType';
+
 function getBgService<T>(service: string) {
     return (): T => {
         const page = BrowserApi.getBackgroundPage();
@@ -96,17 +98,17 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
             await stateService.save(ConstantsService.disableBadgeCounterKey,
                 await storageService.get<boolean>(ConstantsService.disableBadgeCounterKey));
 
-            let theme = await storageService.get<string>(ConstantsService.themeKey);
-            if (theme == null) {
-                theme = await platformUtilsService.getDefaultSystemTheme();
-
-                platformUtilsService.onDefaultSystemThemeChange(sysTheme => {
-                    window.document.documentElement.classList.remove('theme_light', 'theme_dark');
-                    window.document.documentElement.classList.add('theme_' + sysTheme);
-                });
-            }
-            window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
-            window.document.documentElement.classList.add('theme_' + theme);
+            const htmlEl = window.document.documentElement;
+            const theme = await platformUtilsService.getEffectiveTheme();
+            htmlEl.classList.add('theme_' + theme);
+            platformUtilsService.onDefaultSystemThemeChange(async sysTheme => {
+                const bwTheme = await storageService.get<ThemeType>(ConstantsService.themeKey);
+                if (bwTheme == null || bwTheme === ThemeType.System) {
+                    htmlEl.classList.remove('theme_' + ThemeType.Light, 'theme_' + ThemeType.Dark);
+                    htmlEl.classList.add('theme_' + sysTheme);
+                }
+            });
+            htmlEl.classList.add('locale_' + i18nService.translationLocale);
         }
     };
 }
