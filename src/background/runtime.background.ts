@@ -37,6 +37,8 @@ export default class RuntimeBackground {
     private pageDetailsToAutoFill: any[] = [];
     private onInstalledReason: string = null;
 
+    private lockedVaultPendingNotifications: any[] = [];
+
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
@@ -72,8 +74,8 @@ export default class RuntimeBackground {
                 this.notificationsService.updateConnection(msg.command === 'unlocked');
                 this.systemService.cancelProcessReload();
 
-                if (this.main.retryQueue.length > 0) {
-                    const retryItem = this.main.retryQueue.pop();
+                if (this.lockedVaultPendingNotifications.length > 0) {
+                    const retryItem = this.lockedVaultPendingNotifications.pop();
                     await this.processMessage(retryItem.msg, retryItem.sender, null);
                 }
                 break;
@@ -82,7 +84,7 @@ export default class RuntimeBackground {
                     msg: msg.retryItem,
                     sender: sender,
                 };
-                this.main.retryQueue.push(retryMessage);
+                this.lockedVaultPendingNotifications.push(retryMessage);
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);
