@@ -111,6 +111,10 @@ export class BrowserApi {
         chrome.tabs.remove(tabToClose);
     }
 
+    static async focusSpecifiedTab(tabId: number) {
+        chrome.tabs.update(tabId, { active: true, highlighted: true });
+    }
+
     static closePopup(win: Window) {
         if (BrowserApi.isWebExtensionsApi && BrowserApi.isFirefoxOnAndroid) {
             // Reactivating the active tab dismisses the popup tab. The promise final

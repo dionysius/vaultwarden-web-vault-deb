@@ -79,6 +79,10 @@ export default class RuntimeBackground {
                     await this.processMessage(retryItem.msg, retryItem.sender, null);
 
                     await BrowserApi.closeLoginTab();
+
+                    if (retryItem?.sender?.tab?.id) {
+                        await BrowserApi.focusSpecifiedTab(retryItem.sender.tab.id);
+                    }
                 }
                 break;
             case 'addToLockedVaultPendingNotifications':
