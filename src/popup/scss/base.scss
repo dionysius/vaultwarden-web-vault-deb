@@ -346,8 +346,10 @@ app-root {
     }
 }
 
-app-lock content {
-    max-width: 600px;
+@media only screen and (min-width: 601px) {
+    app-lock content {
+        padding: 0 35%;
+    }
 }
 
 content {
