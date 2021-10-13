@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             : chrome.runtime.getURL('images/icon38.png');
 
         document.getElementById('close').src = chrome.runtime.getURL('images/close.png');
+        document.getElementById('close').alt = i18n.close;
 
         var closeButton = document.getElementById('close-button'),
             body = document.querySelector('body'),
