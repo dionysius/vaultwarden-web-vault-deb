@@ -1,4 +1,4 @@
-export default class addLoginQueueMessage {
+export default class AddLoginQueueMessage {
     type: string;
     username: string;
     password: string;

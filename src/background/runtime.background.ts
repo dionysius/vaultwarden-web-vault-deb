@@ -28,8 +28,8 @@ import { Utils } from 'jslib-common/misc/utils';
 
 import { PolicyType } from 'jslib-common/enums/policyType';
 
-import addChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
-import addLoginQueueMessage from './models/addLoginQueueMessage';
+import AddChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
+import AddLoginQueueMessage from './models/addLoginQueueMessage';
 
 export default class RuntimeBackground {
     private runtime: any;
@@ -255,7 +255,7 @@ export default class RuntimeBackground {
             BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
 
             if (queueMessage.type === 'changePassword') {
-                const message = (queueMessage as addChangePasswordQueueMessage);
+                const message = (queueMessage as AddChangePasswordQueueMessage);
                 const cipher = await this.getDecryptedCipherById(message.cipherId);
                 if (cipher == null) {
                     return;
@@ -270,7 +270,7 @@ export default class RuntimeBackground {
 
             // If the vault was locked, check if a cipher needs updating instead of creating a new one
             if (queueMessage.type === 'addLogin' && queueMessage.wasVaultLocked === true) {
-                const message = (queueMessage as addLoginQueueMessage);
+                const message = (queueMessage as AddLoginQueueMessage);
                 const ciphers = await this.cipherService.getAllDecryptedForUrl(message.uri);
                 const usernameMatches = ciphers.filter(c => c.login.username != null &&
                     c.login.username.toLowerCase() === message.username);
@@ -285,7 +285,7 @@ export default class RuntimeBackground {
         }
     }
 
-    private async createNewCipher(queueMessage: addLoginQueueMessage, folderId: string) {
+    private async createNewCipher(queueMessage: AddLoginQueueMessage, folderId: string) {
         const loginModel = new LoginView();
         const loginUri = new LoginUriView();
         loginUri.uri = queueMessage.uri;
@@ -390,7 +390,7 @@ export default class RuntimeBackground {
     private async pushAddLoginToQueue(loginDomain: string, loginInfo: any, tab: any, isVaultLocked: boolean = false) {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
-        const message: addLoginQueueMessage = {
+        const message: AddLoginQueueMessage = {
             type: 'addLogin',
             username: loginInfo.username,
             password: loginInfo.password,
@@ -433,7 +433,7 @@ export default class RuntimeBackground {
     private async pushChangePasswordToQueue(cipherId: string, loginDomain: string, newPassword: string, tab: any, isVaultLocked: boolean = false) {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
-        const message: addChangePasswordQueueMessage = {
+        const message: AddChangePasswordQueueMessage = {
             type: 'changePassword',
             cipherId: cipherId,
             newPassword: newPassword,

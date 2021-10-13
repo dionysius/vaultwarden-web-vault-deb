@@ -1,4 +1,4 @@
-export default class addChangePasswordQueueMessage {
+export default class AddChangePasswordQueueMessage {
     type: string;
     cipherId: string;
     newPassword: string;
