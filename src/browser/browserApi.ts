@@ -101,6 +101,8 @@ export class BrowserApi {
         const tabs = await BrowserApi.tabsQuery({
             active: true,
             title: 'Bitwarden',
+            windowType: 'normal',
+            currentWindow: true,
         });
 
         if (tabs.length === 0) {
