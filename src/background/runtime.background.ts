@@ -27,11 +27,16 @@ import { Utils } from 'jslib-common/misc/utils';
 
 import { PolicyType } from 'jslib-common/enums/policyType';
 
+import AddChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
+import AddLoginQueueMessage from './models/addLoginQueueMessage';
+
 export default class RuntimeBackground {
     private runtime: any;
     private autofillTimeout: any;
     private pageDetailsToAutoFill: any[] = [];
     private onInstalledReason: string = null;
+
+    private lockedVaultPendingNotifications: any[] = [];
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
@@ -67,6 +72,24 @@ export default class RuntimeBackground {
                 await this.main.refreshBadgeAndMenu(false);
                 this.notificationsService.updateConnection(msg.command === 'unlocked');
                 this.systemService.cancelProcessReload();
+
+                if (this.lockedVaultPendingNotifications.length > 0) {
+                    const retryItem = this.lockedVaultPendingNotifications.pop();
+                    await this.processMessage(retryItem.msg, retryItem.sender, null);
+
+                    await BrowserApi.closeLoginTab();
+
+                    if (retryItem?.sender?.tab?.id) {
+                        await BrowserApi.focusSpecifiedTab(retryItem.sender.tab.id);
+                    }
+                }
+                break;
+            case 'addToLockedVaultPendingNotifications':
+                const retryMessage = {
+                    msg: msg.retryItem,
+                    sender: sender,
+                };
+                this.lockedVaultPendingNotifications.push(retryMessage);
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);
@@ -79,14 +102,14 @@ export default class RuntimeBackground {
             case 'openPopup':
                 await this.main.openPopup();
                 break;
+            case 'promptForLogin':
+                await BrowserApi.createNewTab('popup/index.html?uilocation=popout', true, true);
+                break;
             case 'showDialogResolve':
                 this.platformUtilsService.resolveDialogPromise(msg.dialogId, msg.confirmed);
                 break;
             case 'bgGetDataForTab':
                 await this.getDataForTab(sender.tab, msg.responseCommand);
-                break;
-            case 'bgOpenNotificationBar':
-                await BrowserApi.tabSendMessageData(sender.tab, 'openNotificationBar', msg.data);
                 break;
             case 'bgCloseNotificationBar':
                 await BrowserApi.tabSendMessageData(sender.tab, 'closeNotificationBar');
@@ -108,10 +131,8 @@ export default class RuntimeBackground {
                 this.removeTabFromNotificationQueue(sender.tab);
                 break;
             case 'bgAddSave':
-                await this.saveAddLogin(sender.tab, msg.folder);
-                break;
             case 'bgChangeSave':
-                await this.saveChangePassword(sender.tab);
+                await this.saveOrUpdateCredentials(sender.tab, msg.folder);
                 break;
             case 'bgNeverSave':
                 await this.saveNever(sender.tab);
@@ -126,9 +147,6 @@ export default class RuntimeBackground {
                 await this.main.reseedStorage();
                 break;
             case 'collectPageDetailsResponse':
-                if (await this.vaultTimeoutService.isLocked()) {
-                    return;
-                }
                 switch (msg.sender) {
                     case 'notificationBar':
                         const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
@@ -219,14 +237,11 @@ export default class RuntimeBackground {
         this.pageDetailsToAutoFill = [];
     }
 
-    private async saveAddLogin(tab: any, folderId: string) {
-        if (await this.vaultTimeoutService.isLocked()) {
-            return;
-        }
-
+    private async saveOrUpdateCredentials(tab: any, folderId?: string) {
         for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.main.notificationQueue[i];
-            if (queueMessage.tabId !== tab.id || queueMessage.type !== 'addLogin') {
+            if (queueMessage.tabId !== tab.id ||
+                (queueMessage.type !== 'addLogin' && queueMessage.type !== 'changePassword')) {
                 continue;
             }
 
@@ -238,56 +253,74 @@ export default class RuntimeBackground {
             this.main.notificationQueue.splice(i, 1);
             BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
 
-            const loginModel = new LoginView();
-            const loginUri = new LoginUriView();
-            loginUri.uri = queueMessage.uri;
-            loginModel.uris = [loginUri];
-            loginModel.username = queueMessage.username;
-            loginModel.password = queueMessage.password;
-            const model = new CipherView();
-            model.name = Utils.getHostname(queueMessage.uri) || queueMessage.domain;
-            model.name = model.name.replace(/^www\./, '');
-            model.type = CipherType.Login;
-            model.login = loginModel;
-
-            if (!Utils.isNullOrWhitespace(folderId)) {
-                const folders = await this.folderService.getAllDecrypted();
-                if (folders.some(x => x.id === folderId)) {
-                    model.folderId = folderId;
+            if (queueMessage.type === 'changePassword') {
+                const message = (queueMessage as AddChangePasswordQueueMessage);
+                const cipher = await this.getDecryptedCipherById(message.cipherId);
+                if (cipher == null) {
+                    return;
                 }
+                await this.updateCipher(cipher, message.newPassword);
+                return;
             }
 
-            const cipher = await this.cipherService.encrypt(model);
-            await this.cipherService.saveWithServer(cipher);
+            if (!queueMessage.wasVaultLocked) {
+                await this.createNewCipher(queueMessage, folderId);
+            }
+
+            // If the vault was locked, check if a cipher needs updating instead of creating a new one
+            if (queueMessage.type === 'addLogin' && queueMessage.wasVaultLocked === true) {
+                const message = (queueMessage as AddLoginQueueMessage);
+                const ciphers = await this.cipherService.getAllDecryptedForUrl(message.uri);
+                const usernameMatches = ciphers.filter(c => c.login.username != null &&
+                    c.login.username.toLowerCase() === message.username);
+
+                if (usernameMatches.length >= 1) {
+                    await this.updateCipher(usernameMatches[0], message.password);
+                    return;
+                }
+
+                await this.createNewCipher(message, folderId);
+            }
         }
     }
 
-    private async saveChangePassword(tab: any) {
-        if (await this.vaultTimeoutService.isLocked()) {
-            return;
+    private async createNewCipher(queueMessage: AddLoginQueueMessage, folderId: string) {
+        const loginModel = new LoginView();
+        const loginUri = new LoginUriView();
+        loginUri.uri = queueMessage.uri;
+        loginModel.uris = [loginUri];
+        loginModel.username = queueMessage.username;
+        loginModel.password = queueMessage.password;
+        const model = new CipherView();
+        model.name = Utils.getHostname(queueMessage.uri) || queueMessage.domain;
+        model.name = model.name.replace(/^www\./, '');
+        model.type = CipherType.Login;
+        model.login = loginModel;
+
+        if (!Utils.isNullOrWhitespace(folderId)) {
+            const folders = await this.folderService.getAllDecrypted();
+            if (folders.some(x => x.id === folderId)) {
+                model.folderId = folderId;
+            }
         }
 
-        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
-            const queueMessage = this.main.notificationQueue[i];
-            if (queueMessage.tabId !== tab.id || queueMessage.type !== 'changePassword') {
-                continue;
-            }
+        const cipher = await this.cipherService.encrypt(model);
+        await this.cipherService.saveWithServer(cipher);
+    }
 
-            const tabDomain = Utils.getDomain(tab.url);
-            if (tabDomain != null && tabDomain !== queueMessage.domain) {
-                continue;
-            }
+    private async getDecryptedCipherById(cipherId: string) {
+        const cipher = await this.cipherService.get(cipherId);
+        if (cipher != null && cipher.type === CipherType.Login) {
+            return await cipher.decrypt();
+        }
+        return null;
+    }
 
-            this.main.notificationQueue.splice(i, 1);
-            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
-
-            const cipher = await this.cipherService.get(queueMessage.cipherId);
-            if (cipher != null && cipher.type === CipherType.Login) {
-                const model = await cipher.decrypt();
-                model.login.password = queueMessage.newPassword;
-                const newCipher = await this.cipherService.encrypt(model);
-                await this.cipherService.saveWithServer(newCipher);
-            }
+    private async updateCipher(cipher: CipherView, newPassword: string) {
+        if (cipher != null && cipher.type === CipherType.Login) {
+            cipher.login.password = newPassword;
+            const newCipher = await this.cipherService.encrypt(cipher);
+            await this.cipherService.saveWithServer(newCipher);
         }
     }
 
@@ -312,10 +345,6 @@ export default class RuntimeBackground {
     }
 
     private async addLogin(loginInfo: any, tab: any) {
-        if (await this.vaultTimeoutService.isLocked()) {
-            return;
-        }
-
         const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
@@ -324,6 +353,11 @@ export default class RuntimeBackground {
         let normalizedUsername = loginInfo.username;
         if (normalizedUsername != null) {
             normalizedUsername = normalizedUsername.toLowerCase();
+        }
+
+        if (await this.vaultTimeoutService.isLocked()) {
+            this.pushAddLoginToQueue(loginDomain, loginInfo, tab, true);
+            return;
         }
 
         const ciphers = await this.cipherService.getAllDecryptedForUrl(loginInfo.url);
@@ -340,35 +374,43 @@ export default class RuntimeBackground {
                 return;
             }
 
-            // remove any old messages for this tab
-            this.removeTabFromNotificationQueue(tab);
-            this.main.notificationQueue.push({
-                type: 'addLogin',
-                username: loginInfo.username,
-                password: loginInfo.password,
-                domain: loginDomain,
-                uri: loginInfo.url,
-                tabId: tab.id,
-                expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
-            });
-            await this.main.checkNotificationQueue(tab);
+            this.pushAddLoginToQueue(loginDomain, loginInfo, tab);
+
         } else if (usernameMatches.length === 1 && usernameMatches[0].login.password !== loginInfo.password) {
             const disabledChangePassword = await this.storageService.get<boolean>(
                 ConstantsService.disableChangedPasswordNotificationKey);
             if (disabledChangePassword) {
                 return;
             }
-            this.addChangedPasswordToQueue(usernameMatches[0].id, loginDomain, loginInfo.password, tab);
+            this.pushChangePasswordToQueue(usernameMatches[0].id, loginDomain, loginInfo.password, tab);
         }
     }
 
+    private async pushAddLoginToQueue(loginDomain: string, loginInfo: any, tab: any, isVaultLocked: boolean = false) {
+        // remove any old messages for this tab
+        this.removeTabFromNotificationQueue(tab);
+        const message: AddLoginQueueMessage = {
+            type: 'addLogin',
+            username: loginInfo.username,
+            password: loginInfo.password,
+            domain: loginDomain,
+            uri: loginInfo.url,
+            tabId: tab.id,
+            expires: new Date((new Date()).getTime() + 5 * 60000), // 5 minutes
+            wasVaultLocked: isVaultLocked,
+        };
+        this.main.notificationQueue.push(message);
+        await this.main.checkNotificationQueue(tab);
+    }
+
     private async changedPassword(changeData: any, tab: any) {
-        if (await this.vaultTimeoutService.isLocked()) {
+        const loginDomain = Utils.getDomain(changeData.url);
+        if (loginDomain == null) {
             return;
         }
 
-        const loginDomain = Utils.getDomain(changeData.url);
-        if (loginDomain == null) {
+        if (await this.vaultTimeoutService.isLocked()) {
+            this.pushChangePasswordToQueue(null, loginDomain, changeData.newPassword, tab, true);
             return;
         }
 
@@ -383,21 +425,23 @@ export default class RuntimeBackground {
             id = ciphers[0].id;
         }
         if (id != null) {
-            this.addChangedPasswordToQueue(id, loginDomain, changeData.newPassword, tab);
+            this.pushChangePasswordToQueue(id, loginDomain, changeData.newPassword, tab);
         }
     }
 
-    private async addChangedPasswordToQueue(cipherId: string, loginDomain: string, newPassword: string, tab: any) {
+    private async pushChangePasswordToQueue(cipherId: string, loginDomain: string, newPassword: string, tab: any, isVaultLocked: boolean = false) {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
-        this.main.notificationQueue.push({
+        const message: AddChangePasswordQueueMessage = {
             type: 'changePassword',
             cipherId: cipherId,
             newPassword: newPassword,
             domain: loginDomain,
             tabId: tab.id,
-            expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
-        });
+            expires: new Date((new Date()).getTime() + 5 * 60000), // 5 minutes
+            wasVaultLocked: isVaultLocked,
+        };
+        this.main.notificationQueue.push(message);
         await this.main.checkNotificationQueue(tab);
     }
 
@@ -438,29 +482,7 @@ export default class RuntimeBackground {
 
     private async getDataForTab(tab: any, responseCommand: string) {
         const responseData: any = {};
-        if (responseCommand === 'notificationBarDataResponse') {
-            responseData.neverDomains = await this.storageService.get<any>(ConstantsService.neverDomainsKey);
-            const disableAddLoginFromOptions = await this.storageService.get<boolean>(
-                ConstantsService.disableAddLoginNotificationKey);
-            responseData.disabledAddLoginNotification = disableAddLoginFromOptions || !(await this.allowPersonalOwnership());
-            responseData.disabledChangedPasswordNotification = await this.storageService.get<boolean>(
-                ConstantsService.disableChangedPasswordNotificationKey);
-        } else if (responseCommand === 'autofillerAutofillOnPageLoadEnabledResponse') {
-            responseData.autofillEnabled = await this.storageService.get<boolean>(
-                ConstantsService.enableAutoFillOnPageLoadKey);
-        } else if (responseCommand === 'notificationBarFrameDataResponse') {
-            responseData.i18n = {
-                appName: this.i18nService.t('appName'),
-                close: this.i18nService.t('close'),
-                yes: this.i18nService.t('yes'),
-                never: this.i18nService.t('never'),
-                notificationAddSave: this.i18nService.t('notificationAddSave'),
-                notificationNeverSave: this.i18nService.t('notificationNeverSave'),
-                notificationAddDesc: this.i18nService.t('notificationAddDesc'),
-                notificationChangeSave: this.i18nService.t('notificationChangeSave'),
-                notificationChangeDesc: this.i18nService.t('notificationChangeDesc'),
-            };
-        } else if (responseCommand === 'notificationBarGetFoldersList') {
+        if (responseCommand === 'notificationBarGetFoldersList') {
             responseData.folders = await this.folderService.getAllDecrypted();
         }
 

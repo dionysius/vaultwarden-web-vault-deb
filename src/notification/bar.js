@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(load, 50);
 
     function load() {
+        const isVaultLocked = getQueryVariable('isVaultLocked') == 'true';
+        document.getElementById('logo').src = isVaultLocked
+            ? chrome.runtime.getURL('images/icon38_locked.png')
+            : chrome.runtime.getURL('images/icon38.png');
+
+        document.getElementById('close').src = chrome.runtime.getURL('images/close.png');
+        document.getElementById('close').alt = i18n.close;
+
         var closeButton = document.getElementById('close-button'),
             body = document.querySelector('body'),
             bodyRect = body.getBoundingClientRect();
@@ -39,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             document.querySelector('#template-add .add-save').textContent = i18n.notificationAddSave;
             document.querySelector('#template-add .never-save').textContent = i18n.notificationNeverSave;
-            document.querySelector('#template-add .select-folder').style.display = 'initial';
+            document.querySelector('#template-add .select-folder').style.display = isVaultLocked ? 'none' : 'initial';
             document.querySelector('#template-add .select-folder').setAttribute('aria-label', i18n.folder);
             document.querySelector('#template-change .change-save').textContent = i18n.notificationChangeSave;
         }
@@ -55,11 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             addButton.addEventListener('click', (e) => {
                 e.preventDefault();
+
                 const folderId = document.querySelector('#template-add-clone .select-folder').value;
-                sendPlatformMessage({
+
+                const bgAddSaveMessage = {
                     command: 'bgAddSave',
                     folder: folderId,
-                });
+                };
+
+                if (isVaultLocked) {
+                    sendPlatformMessage({
+                        command: 'promptForLogin'
+                    });
+
+                    sendPlatformMessage({
+                        command: 'addToLockedVaultPendingNotifications',
+                        retryItem: bgAddSaveMessage
+                    });
+                    return;
+                }
+
+                sendPlatformMessage(bgAddSaveMessage);
             });
 
             neverButton.addEventListener('click', (e) => {
@@ -69,28 +93,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            const responseFoldersCommand = 'notificationBarGetFoldersList';
-            chrome.runtime.onMessage.addListener((msg) => {
-                if (msg.command === responseFoldersCommand && msg.data) {
-                    fillSelectorWithFolders(msg.data.folders);
-                }
-            });
-            sendPlatformMessage({
-                command: 'bgGetDataForTab',
-                responseCommand: responseFoldersCommand
-            });
+            if (!isVaultLocked) {
+                const responseFoldersCommand = 'notificationBarGetFoldersList';
+                chrome.runtime.onMessage.addListener((msg) => {
+                    if (msg.command === responseFoldersCommand && msg.data) {
+                        fillSelectorWithFolders(msg.data.folders);
+                    }
+                });
+                sendPlatformMessage({
+                    command: 'bgGetDataForTab',
+                    responseCommand: responseFoldersCommand
+                });
+            }
         } else if (getQueryVariable('change')) {
             setContent(document.getElementById('template-change'));
             var changeButton = document.querySelector('#template-change-clone .change-save');
             changeButton.addEventListener('click', (e) => {
                 e.preventDefault();
-                sendPlatformMessage({
+
+                const bgChangeSaveMessage = {
                     command: 'bgChangeSave'
-                });
+                };
+
+                if (isVaultLocked) {
+                    sendPlatformMessage({
+                        command: 'promptForLogin'
+                    });
+
+                    sendPlatformMessage({
+                        command: 'addToLockedVaultPendingNotifications',
+                        retryItem: bgChangeSaveMessage,
+                    });
+                    return;
+                }
+                sendPlatformMessage(bgChangeSaveMessage);
             });
-        } else if (getQueryVariable('info')) {
-            setContent(document.getElementById('template-alert'));
-            document.getElementById('template-alert-clone').textContent = getQueryVariable('info');
         }
 
         closeButton.addEventListener('click', (e) => {

@@ -431,23 +431,11 @@ document.addEventListener('DOMContentLoaded', event => {
     function closeExistingAndOpenBar(type: string, typeData: any) {
         let barPage = 'notification/bar.html';
         switch (type) {
-            case 'info':
-                barPage = barPage + '?info=' + typeData.text;
-                break;
-            case 'warning':
-                barPage = barPage + '?warning=' + typeData.text;
-                break;
-            case 'error':
-                barPage = barPage + '?error=' + typeData.text;
-                break;
-            case 'success':
-                barPage = barPage + '?success=' + typeData.text;
-                break;
             case 'add':
-                barPage = barPage + '?add=1';
+                barPage = barPage + '?add=1&isVaultLocked=' + typeData.isVaultLocked;
                 break;
             case 'change':
-                barPage = barPage + '?change=1';
+                barPage = barPage + '?change=1&isVaultLocked=' + typeData.isVaultLocked;
                 break;
             default:
                 break;
