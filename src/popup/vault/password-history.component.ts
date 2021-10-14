@@ -2,6 +2,8 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { first } from 'rxjs/operators';
+
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
@@ -22,16 +24,13 @@ export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
     }
 
     async ngOnInit() {
-        const queryParamsSub = this.route.queryParams.subscribe(async params => {
+        this.route.queryParams.pipe(first()).subscribe(async params => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
             } else {
                 this.close();
             }
             await this.init();
-            if (queryParamsSub != null) {
-                queryParamsSub.unsubscribe();
-            }
         });
     }
 

@@ -5,6 +5,8 @@ import {
     Router,
 } from '@angular/router';
 
+import { first } from 'rxjs/operators';
+
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
@@ -29,12 +31,9 @@ export class ShareComponent extends BaseShareComponent {
         this.onSharedCipher.subscribe(() => {
             this.router.navigate(['view-cipher', { cipherId: this.cipherId }]);
         });
-        const queryParamsSub = this.route.queryParams.subscribe(async params => {
+        this.route.queryParams.pipe(first()).subscribe(async params => {
             this.cipherId = params.cipherId;
             await this.load();
-            if (queryParamsSub != null) {
-                queryParamsSub.unsubscribe();
-            }
         });
     }
 

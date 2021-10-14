@@ -9,6 +9,8 @@ import {
     Router,
 } from '@angular/router';
 
+import { first } from 'rxjs/operators';
+
 import { Location } from '@angular/common';
 
 import { SendView } from 'jslib-common/models/view/sendView';
@@ -61,7 +63,7 @@ export class SendTypeComponent extends BaseSendComponent {
     async ngOnInit() {
         // Let super class finish
         await super.ngOnInit();
-        const queryParamsSub = this.route.queryParams.subscribe(async params => {
+        this.route.queryParams.pipe(first()).subscribe(async params => {
             if (this.applySavedState) {
                 this.state = (await this.stateService.get<any>(ComponentId)) || {};
                 if (this.state.searchText != null) {
@@ -89,11 +91,6 @@ export class SendTypeComponent extends BaseSendComponent {
                 window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             }
             this.stateService.remove(ComponentId);
-
-            // Unsubscribe
-            if (queryParamsSub != null) {
-                queryParamsSub.unsubscribe();
-            }
         });
 
         // Refresh Send list if sync completed in background

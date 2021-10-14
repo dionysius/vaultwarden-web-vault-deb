@@ -5,6 +5,8 @@ import {
     Router,
 } from '@angular/router';
 
+import { first } from 'rxjs/operators';
+
 import { BrowserApi } from '../../browser/browserApi';
 
 import { AuditService } from 'jslib-common/abstractions/audit.service';
@@ -54,7 +56,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     async ngOnInit() {
         await super.ngOnInit();
 
-        const queryParamsSub = this.route.queryParams.subscribe(async params => {
+        this.route.queryParams.pipe(first()).subscribe(async params => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
             }
@@ -88,9 +90,6 @@ export class AddEditComponent extends BaseAddEditComponent {
                     (this.cipher.login.uris[0].uri == null || this.cipher.login.uris[0].uri === '')) {
                     this.cipher.login.uris[0].uri = params.uri;
                 }
-            }
-            if (queryParamsSub != null) {
-                queryParamsSub.unsubscribe();
             }
 
             this.openAttachmentsInPopup = this.popupUtilsService.inPopup(window);

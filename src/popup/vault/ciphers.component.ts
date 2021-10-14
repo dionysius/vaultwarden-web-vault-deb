@@ -11,6 +11,8 @@ import {
     Router,
 } from '@angular/router';
 
+import { first } from 'rxjs/operators';
+
 import { BrowserApi } from '../../browser/browserApi';
 
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
@@ -70,7 +72,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
 
     async ngOnInit() {
         this.searchTypeSearch = !this.platformUtilsService.isSafari();
-        const queryParamsSub = this.route.queryParams.subscribe(async params => {
+        this.route.queryParams.pipe(first()).subscribe(async params => {
             if (this.applySavedState) {
                 this.state = (await this.stateService.get<any>(ComponentId)) || {};
                 if (this.state.searchText) {
@@ -136,9 +138,6 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                     this.scrollingContainer), 0);
             }
             this.stateService.remove(ComponentId);
-            if (queryParamsSub != null) {
-                queryParamsSub.unsubscribe();
-            }
         });
 
         this.broadcasterService.subscribe(ComponentId, (message: any) => {
