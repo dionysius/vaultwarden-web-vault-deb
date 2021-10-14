@@ -16,7 +16,6 @@ import { SystemService } from 'jslib-common/abstractions/system.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 import { ConstantsService } from 'jslib-common/services/constants.service';
-import { PopupUtilsService } from '../popup/services/popup-utils.service';
 import { AutofillService } from '../services/abstractions/autofill.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 
@@ -46,7 +45,7 @@ export default class RuntimeBackground {
         private systemService: SystemService, private vaultTimeoutService: VaultTimeoutService,
         private environmentService: EnvironmentService, private policyService: PolicyService,
         private userService: UserService, private messagingService: MessagingService,
-        private folderService: FolderService, private popupUtilsService: PopupUtilsService) {
+        private folderService: FolderService) {
 
         // onInstalled listener must be wired up before anything else, so we do it in the ctor
         chrome.runtime.onInstalled.addListener((details: any) => {
