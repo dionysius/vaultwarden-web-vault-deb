@@ -160,10 +160,10 @@
     "message": "Namn"
   },
   "editFolder": {
-    "message": "Ändra mapp"
+    "message": "Redigera mapp"
   },
   "deleteFolder": {
-    "message": "Ta bort mapp"
+    "message": "Radera mapp"
   },
   "folders": {
     "message": "Mappar"
@@ -172,7 +172,7 @@
     "message": "Det finns inga mappar att lista."
   },
   "helpFeedback": {
-    "message": "Hjälp & återkoppling"
+    "message": "Hjälp & Feedback"
   },
   "sync": {
     "message": "Synkronisera"
@@ -240,7 +240,7 @@
     "message": "Sök i valvet"
   },
   "edit": {
-    "message": "Ändra"
+    "message": "Redigera"
   },
   "view": {
     "message": "Visa"
@@ -276,7 +276,7 @@
     "message": "Mapp"
   },
   "deleteItem": {
-    "message": "Ta bort objekt"
+    "message": "Radera objekt"
   },
   "viewItem": {
     "message": "Visa objekt"
@@ -388,7 +388,7 @@
     "message": "E-postadress krävs."
   },
   "invalidEmail": {
-    "message": "Felaktig e-postadress."
+    "message": "Ogiltig e-postadress."
   },
   "masterPassRequired": {
     "message": "Huvudlösenord krävs."
@@ -744,7 +744,7 @@
     "message": "Alla framtida premium-funktioner. Mer kommer snart!"
   },
   "premiumPurchase": {
-    "message": "Köp premium"
+    "message": "Köp Premium"
   },
   "premiumPurchaseAlert": {
     "message": "Du kan köpa premium-medlemskap på bitwardens webbvalv. Vill du besöka webbplatsen nu?"
@@ -1053,7 +1053,7 @@
     "message": "Säkerhetskod"
   },
   "ex": {
-    "message": "ex."
+    "message": "t.ex."
   },
   "title": {
     "message": "Titel"
@@ -1525,7 +1525,7 @@
     }
   },
   "send": {
-    "message": "Försändelse",
+    "message": "Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -1572,7 +1572,7 @@
     "message": "Tog bort lösenord"
   },
   "deletedSend": {
-    "message": "Raderade försändelse",
+    "message": "Deleted Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1586,7 +1586,7 @@
     "message": "Är du säker på att du vill ta bort lösenordet?"
   },
   "deleteSend": {
-    "message": "Radera försändelse",
+    "message": "Radera Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
