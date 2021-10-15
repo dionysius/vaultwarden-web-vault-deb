@@ -71,6 +71,7 @@ import CommandsBackground from './commands.background';
 import ContextMenusBackground from './contextMenus.background';
 import IdleBackground from './idle.background';
 import { NativeMessagingBackground } from './nativeMessaging.background';
+import NotificationBackground from './notification.background';
 import RuntimeBackground from './runtime.background';
 import TabsBackground from './tabs.background';
 import WebRequestBackground from './webRequest.background';
@@ -135,6 +136,7 @@ export default class MainBackground {
     private tabsBackground: TabsBackground;
     private webRequestBackground: WebRequestBackground;
     private windowsBackground: WindowsBackground;
+    private notificationBackground: NotificationBackground;
 
     private sidebarAction: any;
     private buildingContextMenu: boolean;
@@ -237,15 +239,16 @@ export default class MainBackground {
             opr.sidebarAction : (window as any).chrome.sidebarAction;
 
         // Background
-        this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
+        this.runtimeBackground = new RuntimeBackground(this, this.autofillService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.notificationsService, this.systemService, this.vaultTimeoutService,
-            this.environmentService, this.policyService, this.userService, this.messagingService, this.folderService);
+            this.notificationsService, this.systemService, this.environmentService, this.messagingService);
         this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.cryptoFunctionService,
             this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService, this.appIdService,
             this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.vaultTimeoutService);
+        this.notificationBackground = new NotificationBackground(this, this.autofillService, this.cipherService,
+            this.storageService, this.vaultTimeoutService, this.policyService, this.folderService);
 
         this.tabsBackground = new TabsBackground(this);
         this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService, this.passwordGenerationService,
@@ -276,6 +279,7 @@ export default class MainBackground {
         await (this.i18nService as I18nService).init();
         await (this.eventService as EventService).init(true);
         await this.runtimeBackground.init();
+        await this.notificationBackground.init();
         await this.commandsBackground.init();
 
         await this.tabsBackground.init();
