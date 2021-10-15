@@ -54,21 +54,19 @@ export default class RuntimeBackground {
         switch (msg.command) {
             case 'loggedIn':
             case 'unlocked':
+                if (this.lockedVaultPendingNotifications.length > 0) {
+                    await BrowserApi.closeLoginTab();
+
+                    if (item?.sender?.tab?.id) {
+                        await BrowserApi.focusSpecifiedTab(item.sender.tab.id);
+                    }
+                    await this.processMessage(item.msg, item.sender, null);
+                }
+
                 await this.main.setIcon();
                 await this.main.refreshBadgeAndMenu(false);
                 this.notificationsService.updateConnection(msg.command === 'unlocked');
                 this.systemService.cancelProcessReload();
-
-                if (this.lockedVaultPendingNotifications.length > 0) {
-                    const retryItem = this.lockedVaultPendingNotifications.pop();
-                    await this.processMessage(retryItem.msg, retryItem.sender, null);
-
-                    await BrowserApi.closeLoginTab();
-
-                    if (retryItem?.sender?.tab?.id) {
-                        await BrowserApi.focusSpecifiedTab(retryItem.sender.tab.id);
-                    }
-                }
                 break;
             case 'addToLockedVaultPendingNotifications':
                 const retryMessage = {
