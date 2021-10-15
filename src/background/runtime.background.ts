@@ -13,14 +13,7 @@ import { BrowserApi } from '../browser/browserApi';
 import MainBackground from './main.background';
 
 import { Utils } from 'jslib-common/misc/utils';
-
-import { PolicyType } from 'jslib-common/enums/policyType';
-
-import AddChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
-import AddLoginQueueMessage from './models/addLoginQueueMessage';
-
 export default class RuntimeBackground {
-    private runtime: any;
     private autofillTimeout: any;
     private pageDetailsToAutoFill: any[] = [];
     private onInstalledReason: string = null;
@@ -72,7 +65,7 @@ export default class RuntimeBackground {
                 const retryMessage = {
                     commandToRetry: {
                         ...msg.retryItem,
-                        sender: sender
+                        sender: sender,
                     },
                     from: msg.from,
                 };

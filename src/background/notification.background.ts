@@ -45,6 +45,52 @@ export default class NotificationBackground {
         this.cleanupNotificationQueue();
     }
 
+    async processMessage(msg: any, sender: any, sendResponse: any) {
+        switch (msg.command) {
+            case 'bgGetDataForTab':
+                await this.getDataForTab(sender.tab, msg.responseCommand);
+                break;
+            case 'bgCloseNotificationBar':
+                await BrowserApi.tabSendMessageData(sender.tab, 'closeNotificationBar');
+                break;
+            case 'bgAdjustNotificationBar':
+                await BrowserApi.tabSendMessageData(sender.tab, 'adjustNotificationBar', msg.data);
+                break;
+            case 'bgAddLogin':
+                await this.addLogin(msg.login, sender.tab);
+                break;
+            case 'bgChangedPassword':
+                await this.changedPassword(msg.data, sender.tab);
+                break;
+            case 'bgAddClose':
+            case 'bgChangeClose':
+                this.removeTabFromNotificationQueue(sender.tab);
+                break;
+            case 'bgAddSave':
+            case 'bgChangeSave':
+                await this.saveOrUpdateCredentials(sender.tab, msg.folder);
+                break;
+            case 'bgNeverSave':
+                await this.saveNever(sender.tab);
+                break;
+            case 'collectPageDetailsResponse':
+                switch (msg.sender) {
+                    case 'notificationBar':
+                        const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
+                        await BrowserApi.tabSendMessageData(msg.tab, 'notificationBarPageDetails', {
+                            details: msg.details,
+                            forms: forms,
+                        });
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
     async checkNotificationQueue(tab: any = null): Promise<any> {
         if (this.notificationQueue.length === 0) {
             return;
@@ -109,53 +155,6 @@ export default class NotificationBackground {
             if (this.notificationQueue[i].tabId === tab.id) {
                 this.notificationQueue.splice(i, 1);
             }
-        }
-    }
-
-    async processMessage(msg: any, sender: any, sendResponse: any) {
-        switch (msg.command) {
-            case 'bgGetDataForTab':
-                await this.getDataForTab(sender.tab, msg.responseCommand);
-                break;
-            case 'bgCloseNotificationBar':
-                await BrowserApi.tabSendMessageData(sender.tab, 'closeNotificationBar');
-                break;
-            case 'bgAdjustNotificationBar':
-                await BrowserApi.tabSendMessageData(sender.tab, 'adjustNotificationBar', msg.data);
-                break;
-            case 'bgAddLogin':
-                await this.addLogin(msg.login, sender.tab);
-                break;
-            case 'bgChangedPassword':
-                await this.changedPassword(msg.data, sender.tab);
-                break;
-            case 'bgAddClose':
-            case 'bgChangeClose':
-                this.removeTabFromNotificationQueue(sender.tab);
-                break;
-            case 'bgAddSave':
-            case 'bgChangeSave':
-                await this.saveOrUpdateCredentials(sender.tab, msg.folder);
-                break;
-            case 'bgNeverSave':
-                await this.saveNever(sender.tab);
-                break;
-            case 'collectPageDetailsResponse':
-                switch (msg.sender) {
-                    case 'notificationBar':
-                        console.log('collectPageDetailsResponse for notificationBar received', msg.tab)
-                        const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
-                        await BrowserApi.tabSendMessageData(msg.tab, 'notificationBarPageDetails', {
-                            details: msg.details,
-                            forms: forms,
-                        });
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            default:
-                break;
         }
     }
 
