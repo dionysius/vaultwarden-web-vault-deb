@@ -127,7 +127,6 @@ export default class MainBackground {
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
     loginToAutoFill: any = null;
-    notificationQueue: any[] = [];
 
     private commandsBackground: CommandsBackground;
     private contextMenusBackground: ContextMenusBackground;
@@ -250,7 +249,7 @@ export default class MainBackground {
         this.notificationBackground = new NotificationBackground(this, this.autofillService, this.cipherService,
             this.storageService, this.vaultTimeoutService, this.policyService, this.folderService);
 
-        this.tabsBackground = new TabsBackground(this);
+        this.tabsBackground = new TabsBackground(this, this.notificationBackground);
         this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService, this.passwordGenerationService,
             this.platformUtilsService, this.vaultTimeoutService, this.eventService, this.totpService);
         this.idleBackground = new IdleBackground(this.vaultTimeoutService, this.storageService,
@@ -292,7 +291,6 @@ export default class MainBackground {
             setTimeout(async () => {
                 await this.environmentService.setUrlsFromStorage();
                 await this.setIcon();
-                this.cleanupNotificationQueue();
                 this.fullSync(true);
                 setTimeout(() => this.notificationsService.init(), 2500);
                 resolve();
@@ -388,22 +386,6 @@ export default class MainBackground {
             tab: tab,
             sender: sender,
         }, options);
-    }
-
-    async checkNotificationQueue(tab: any = null): Promise<any> {
-        if (this.notificationQueue.length === 0) {
-            return;
-        }
-
-        if (tab != null) {
-            this.doNotificationQueueCheck(tab);
-            return;
-        }
-
-        const currentTab = await BrowserApi.getTabFromCurrentWindow();
-        if (currentTab != null) {
-            this.doNotificationQueueCheck(currentTab);
-        }
     }
 
     async openPopup() {
@@ -655,49 +637,6 @@ export default class MainBackground {
 
     private sanitizeContextMenuTitle(title: string): string {
         return title.replace(/&/g, '&&');
-    }
-
-    private cleanupNotificationQueue() {
-        for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
-            if (this.notificationQueue[i].expires < new Date()) {
-                this.notificationQueue.splice(i, 1);
-            }
-        }
-        setTimeout(() => this.cleanupNotificationQueue(), 2 * 60 * 1000); // check every 2 minutes
-    }
-
-    private doNotificationQueueCheck(tab: any) {
-        if (tab == null) {
-            return;
-        }
-
-        const tabDomain = Utils.getDomain(tab.url);
-        if (tabDomain == null) {
-            return;
-        }
-
-        for (let i = 0; i < this.notificationQueue.length; i++) {
-            if (this.notificationQueue[i].tabId !== tab.id || this.notificationQueue[i].domain !== tabDomain) {
-                continue;
-            }
-
-            if (this.notificationQueue[i].type === 'addLogin') {
-                BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
-                    type: 'add',
-                    typeData: {
-                        isVaultLocked: this.notificationQueue[i].wasVaultLocked,
-                    },
-                });
-            } else if (this.notificationQueue[i].type === 'changePassword') {
-                BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
-                    type: 'change',
-                    typeData: {
-                        isVaultLocked: this.notificationQueue[i].wasVaultLocked,
-                    },
-                });
-            }
-            break;
-        }
     }
 
     private async fullSync(override: boolean = false) {

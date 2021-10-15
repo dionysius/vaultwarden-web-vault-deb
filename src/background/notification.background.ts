@@ -24,6 +24,9 @@ import AddChangePasswordQueueMessage from './models/addChangePasswordQueueMessag
 import AddLoginQueueMessage from './models/addLoginQueueMessage';
 
 export default class NotificationBackground {
+
+    private notificationQueue: any[] = [];
+
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private storageService: StorageService,
         private vaultTimeoutService: VaultTimeoutService, private policyService: PolicyService,
@@ -43,7 +46,7 @@ export default class NotificationBackground {
     }
 
     async checkNotificationQueue(tab: any = null): Promise<any> {
-        if (this.main.notificationQueue.length === 0) {
+        if (this.notificationQueue.length === 0) {
             return;
         }
 
@@ -59,9 +62,9 @@ export default class NotificationBackground {
     }
 
     private cleanupNotificationQueue() {
-        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
-            if (this.main.notificationQueue[i].expires < new Date()) {
-                this.main.notificationQueue.splice(i, 1);
+        for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
+            if (this.notificationQueue[i].expires < new Date()) {
+                this.notificationQueue.splice(i, 1);
             }
         }
         setTimeout(() => this.cleanupNotificationQueue(), 2 * 60 * 1000); // check every 2 minutes
@@ -77,23 +80,23 @@ export default class NotificationBackground {
             return;
         }
 
-        for (let i = 0; i < this.main.notificationQueue.length; i++) {
-            if (this.main.notificationQueue[i].tabId !== tab.id || this.main.notificationQueue[i].domain !== tabDomain) {
+        for (let i = 0; i < this.notificationQueue.length; i++) {
+            if (this.notificationQueue[i].tabId !== tab.id || this.notificationQueue[i].domain !== tabDomain) {
                 continue;
             }
 
-            if (this.main.notificationQueue[i].type === 'addLogin') {
+            if (this.notificationQueue[i].type === 'addLogin') {
                 BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
                     type: 'add',
                     typeData: {
-                        isVaultLocked: this.main.notificationQueue[i].wasVaultLocked,
+                        isVaultLocked: this.notificationQueue[i].wasVaultLocked,
                     },
                 });
-            } else if (this.main.notificationQueue[i].type === 'changePassword') {
+            } else if (this.notificationQueue[i].type === 'changePassword') {
                 BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
                     type: 'change',
                     typeData: {
-                        isVaultLocked: this.main.notificationQueue[i].wasVaultLocked,
+                        isVaultLocked: this.notificationQueue[i].wasVaultLocked,
                     },
                 });
             }
@@ -102,9 +105,9 @@ export default class NotificationBackground {
     }
 
     private removeTabFromNotificationQueue(tab: any) {
-        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
-            if (this.main.notificationQueue[i].tabId === tab.id) {
-                this.main.notificationQueue.splice(i, 1);
+        for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
+            if (this.notificationQueue[i].tabId === tab.id) {
+                this.notificationQueue.splice(i, 1);
             }
         }
     }
@@ -211,7 +214,7 @@ export default class NotificationBackground {
             expires: new Date((new Date()).getTime() + 5 * 60000), // 5 minutes
             wasVaultLocked: isVaultLocked,
         };
-        this.main.notificationQueue.push(message);
+        this.notificationQueue.push(message);
         await this.checkNotificationQueue(tab);
     }
 
@@ -253,13 +256,13 @@ export default class NotificationBackground {
             expires: new Date((new Date()).getTime() + 5 * 60000), // 5 minutes
             wasVaultLocked: isVaultLocked,
         };
-        this.main.notificationQueue.push(message);
+        this.notificationQueue.push(message);
         await this.checkNotificationQueue(tab);
     }
 
     private async saveOrUpdateCredentials(tab: any, folderId?: string) {
-        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
-            const queueMessage = this.main.notificationQueue[i];
+        for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
+            const queueMessage = this.notificationQueue[i];
             if (queueMessage.tabId !== tab.id ||
                 (queueMessage.type !== 'addLogin' && queueMessage.type !== 'changePassword')) {
                 continue;
@@ -270,7 +273,7 @@ export default class NotificationBackground {
                 continue;
             }
 
-            this.main.notificationQueue.splice(i, 1);
+            this.notificationQueue.splice(i, 1);
             BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
 
             if (queueMessage.type === 'changePassword') {
@@ -345,8 +348,8 @@ export default class NotificationBackground {
     }
 
     private async saveNever(tab: any) {
-        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
-            const queueMessage = this.main.notificationQueue[i];
+        for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
+            const queueMessage = this.notificationQueue[i];
             if (queueMessage.tabId !== tab.id || queueMessage.type !== 'addLogin') {
                 continue;
             }
@@ -356,7 +359,7 @@ export default class NotificationBackground {
                 continue;
             }
 
-            this.main.notificationQueue.splice(i, 1);
+            this.notificationQueue.splice(i, 1);
             BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
 
             const hostname = Utils.getHostname(tab.url);
