@@ -91,7 +91,7 @@ export default class NotificationBackground {
         }
     }
 
-    async checkNotificationQueue(tab: any = null): Promise<any> {
+    async checkNotificationQueue(tab: chrome.tabs.Tab = null): Promise<void> {
         if (this.notificationQueue.length === 0) {
             return;
         }
@@ -116,7 +116,7 @@ export default class NotificationBackground {
         setTimeout(() => this.cleanupNotificationQueue(), 2 * 60 * 1000); // check every 2 minutes
     }
 
-    private doNotificationQueueCheck(tab: any) {
+    private doNotificationQueueCheck(tab: chrome.tabs.Tab): void {
         if (tab == null) {
             return;
         }
@@ -150,7 +150,7 @@ export default class NotificationBackground {
         }
     }
 
-    private removeTabFromNotificationQueue(tab: any) {
+    private removeTabFromNotificationQueue(tab: chrome.tabs.Tab) {
         for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
             if (this.notificationQueue[i].tabId === tab.id) {
                 this.notificationQueue.splice(i, 1);
@@ -158,7 +158,7 @@ export default class NotificationBackground {
         }
     }
 
-    private async addLogin(loginInfo: any, tab: any) {
+    private async addLogin(loginInfo: any, tab: chrome.tabs.Tab) {
         const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
@@ -200,7 +200,7 @@ export default class NotificationBackground {
         }
     }
 
-    private async pushAddLoginToQueue(loginDomain: string, loginInfo: any, tab: any, isVaultLocked: boolean = false) {
+    private async pushAddLoginToQueue(loginDomain: string, loginInfo: any, tab: chrome.tabs.Tab, isVaultLocked: boolean = false) {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
         const message: AddLoginQueueMessage = {
@@ -217,7 +217,7 @@ export default class NotificationBackground {
         await this.checkNotificationQueue(tab);
     }
 
-    private async changedPassword(changeData: any, tab: any) {
+    private async changedPassword(changeData: any, tab: chrome.tabs.Tab) {
         const loginDomain = Utils.getDomain(changeData.url);
         if (loginDomain == null) {
             return;
@@ -243,7 +243,7 @@ export default class NotificationBackground {
         }
     }
 
-    private async pushChangePasswordToQueue(cipherId: string, loginDomain: string, newPassword: string, tab: any, isVaultLocked: boolean = false) {
+    private async pushChangePasswordToQueue(cipherId: string, loginDomain: string, newPassword: string, tab: chrome.tabs.Tab, isVaultLocked: boolean = false) {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
         const message: AddChangePasswordQueueMessage = {
@@ -259,7 +259,7 @@ export default class NotificationBackground {
         await this.checkNotificationQueue(tab);
     }
 
-    private async saveOrUpdateCredentials(tab: any, folderId?: string) {
+    private async saveOrUpdateCredentials(tab: chrome.tabs.Tab, folderId?: string) {
         for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.notificationQueue[i];
             if (queueMessage.tabId !== tab.id ||
@@ -346,7 +346,7 @@ export default class NotificationBackground {
         }
     }
 
-    private async saveNever(tab: any) {
+    private async saveNever(tab: chrome.tabs.Tab) {
         for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.notificationQueue[i];
             if (queueMessage.tabId !== tab.id || queueMessage.type !== 'addLogin') {
@@ -366,7 +366,7 @@ export default class NotificationBackground {
         }
     }
 
-    private async getDataForTab(tab: any, responseCommand: string) {
+    private async getDataForTab(tab: chrome.tabs.Tab, responseCommand: string) {
         const responseData: any = {};
         if (responseCommand === 'notificationBarGetFoldersList') {
             responseData.folders = await this.folderService.getAllDecrypted();

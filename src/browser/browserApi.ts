@@ -48,7 +48,7 @@ export class BrowserApi {
         return null;
     }
 
-    static tabSendMessageData(tab: any, command: string, data: any = null): Promise<any[]> {
+    static tabSendMessageData(tab: chrome.tabs.Tab, command: string, data: any = null): Promise<any[]> {
         const obj: any = {
             command: command,
         };
@@ -60,7 +60,7 @@ export class BrowserApi {
         return BrowserApi.tabSendMessage(tab, obj);
     }
 
-    static async tabSendMessage(tab: any, obj: any, options: any = null): Promise<any> {
+    static async tabSendMessage(tab: chrome.tabs.Tab, obj: any, options: chrome.tabs.MessageSendOptions = null): Promise<any> {
         if (!tab || !tab.id) {
             return;
         }
