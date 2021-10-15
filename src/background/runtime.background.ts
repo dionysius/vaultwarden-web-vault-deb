@@ -25,8 +25,6 @@ export default class RuntimeBackground {
     private pageDetailsToAutoFill: any[] = [];
     private onInstalledReason: string = null;
 
-    private lockedVaultPendingNotifications: any[] = [];
-
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
@@ -54,26 +52,31 @@ export default class RuntimeBackground {
         switch (msg.command) {
             case 'loggedIn':
             case 'unlocked':
-                if (this.lockedVaultPendingNotifications.length > 0) {
+                if (this.main.lockedVaultPendingNotifications.length > 0) {
                     await BrowserApi.closeLoginTab();
 
-                    if (item?.sender?.tab?.id) {
-                        await BrowserApi.focusSpecifiedTab(item.sender.tab.id);
+                    const item = this.main.lockedVaultPendingNotifications[0];
+                    if (item.commandToRetry?.sender?.tab?.id) {
+                        await BrowserApi.focusSpecifiedTab(item.commandToRetry.sender.tab.id);
                     }
-                    await this.processMessage(item.msg, item.sender, null);
                 }
 
                 await this.main.setIcon();
                 await this.main.refreshBadgeAndMenu(false);
                 this.notificationsService.updateConnection(msg.command === 'unlocked');
                 this.systemService.cancelProcessReload();
+
+                this.main.unlockCompleted();
                 break;
             case 'addToLockedVaultPendingNotifications':
                 const retryMessage = {
-                    msg: msg.retryItem,
-                    sender: sender,
+                    commandToRetry: {
+                        ...msg.retryItem,
+                        sender: sender
+                    },
+                    from: msg.from,
                 };
-                this.lockedVaultPendingNotifications.push(retryMessage);
+                this.main.lockedVaultPendingNotifications.push(retryMessage);
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);

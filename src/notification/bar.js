@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     sendPlatformMessage({
                         command: 'addToLockedVaultPendingNotifications',
+                        from: 'notificationBar',
                         retryItem: bgAddSaveMessage
                     });
                     return;
@@ -122,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     sendPlatformMessage({
                         command: 'addToLockedVaultPendingNotifications',
+                        from: 'notificationBar',
                         retryItem: bgChangeSaveMessage,
                     });
                     return;

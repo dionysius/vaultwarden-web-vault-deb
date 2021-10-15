@@ -127,6 +127,7 @@ export default class MainBackground {
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
     loginToAutoFill: any = null;
+    lockedVaultPendingNotifications: { commandToRetry: any, from: string }[] = [];
 
     private commandsBackground: CommandsBackground;
     private contextMenusBackground: ContextMenusBackground;
@@ -338,6 +339,21 @@ export default class MainBackground {
         const tab = await BrowserApi.getTabFromCurrentWindow();
         if (tab) {
             await this.contextMenuReady(tab, !menuDisabled);
+        }
+    }
+
+    async unlockCompleted() {
+        if (this.lockedVaultPendingNotifications.length === 0) {
+            return;
+        }
+
+        const lockedVaultPendingNotificationsItem = this.lockedVaultPendingNotifications.pop();
+        switch (lockedVaultPendingNotificationsItem.from) {
+            case 'notificationBar':
+                await this.notificationBackground.processMessage(lockedVaultPendingNotificationsItem.commandToRetry, lockedVaultPendingNotificationsItem.commandToRetry.sender, null);
+                break;
+            default:
+                break;
         }
     }
 
