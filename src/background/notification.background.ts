@@ -22,10 +22,11 @@ import { PolicyType } from 'jslib-common/enums/policyType';
 
 import AddChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
 import AddLoginQueueMessage from './models/addLoginQueueMessage';
+import { NotificationQueueMessageType } from './models/NotificationQueueMessageType';
 
 export default class NotificationBackground {
 
-    private notificationQueue: any[] = [];
+    private notificationQueue: (AddLoginQueueMessage | AddChangePasswordQueueMessage)[] = [];
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private storageService: StorageService,
@@ -131,14 +132,14 @@ export default class NotificationBackground {
                 continue;
             }
 
-            if (this.notificationQueue[i].type === 'addLogin') {
+            if (this.notificationQueue[i].type === NotificationQueueMessageType.addLogin) {
                 BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
                     type: 'add',
                     typeData: {
                         isVaultLocked: this.notificationQueue[i].wasVaultLocked,
                     },
                 });
-            } else if (this.notificationQueue[i].type === 'changePassword') {
+            } else if (this.notificationQueue[i].type === NotificationQueueMessageType.changePassword) {
                 BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
                     type: 'change',
                     typeData: {
@@ -204,7 +205,7 @@ export default class NotificationBackground {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
         const message: AddLoginQueueMessage = {
-            type: 'addLogin',
+            type: NotificationQueueMessageType.addLogin,
             username: loginInfo.username,
             password: loginInfo.password,
             domain: loginDomain,
@@ -247,7 +248,7 @@ export default class NotificationBackground {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
         const message: AddChangePasswordQueueMessage = {
-            type: 'changePassword',
+            type: NotificationQueueMessageType.changePassword,
             cipherId: cipherId,
             newPassword: newPassword,
             domain: loginDomain,
@@ -263,7 +264,7 @@ export default class NotificationBackground {
         for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.notificationQueue[i];
             if (queueMessage.tabId !== tab.id ||
-                (queueMessage.type !== 'addLogin' && queueMessage.type !== 'changePassword')) {
+                (queueMessage.type !== NotificationQueueMessageType.addLogin && queueMessage.type !== NotificationQueueMessageType.changePassword)) {
                 continue;
             }
 
@@ -275,7 +276,7 @@ export default class NotificationBackground {
             this.notificationQueue.splice(i, 1);
             BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
 
-            if (queueMessage.type === 'changePassword') {
+            if (queueMessage.type === NotificationQueueMessageType.changePassword) {
                 const message = (queueMessage as AddChangePasswordQueueMessage);
                 const cipher = await this.getDecryptedCipherById(message.cipherId);
                 if (cipher == null) {
@@ -286,11 +287,11 @@ export default class NotificationBackground {
             }
 
             if (!queueMessage.wasVaultLocked) {
-                await this.createNewCipher(queueMessage, folderId);
+                await this.createNewCipher(queueMessage as AddLoginQueueMessage, folderId);
             }
 
             // If the vault was locked, check if a cipher needs updating instead of creating a new one
-            if (queueMessage.type === 'addLogin' && queueMessage.wasVaultLocked === true) {
+            if (queueMessage.type === NotificationQueueMessageType.addLogin && queueMessage.wasVaultLocked === true) {
                 const message = (queueMessage as AddLoginQueueMessage);
                 const ciphers = await this.cipherService.getAllDecryptedForUrl(message.uri);
                 const usernameMatches = ciphers.filter(c => c.login.username != null &&
@@ -349,7 +350,7 @@ export default class NotificationBackground {
     private async saveNever(tab: chrome.tabs.Tab) {
         for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
             const queueMessage = this.notificationQueue[i];
-            if (queueMessage.tabId !== tab.id || queueMessage.type !== 'addLogin') {
+            if (queueMessage.tabId !== tab.id || queueMessage.type !== NotificationQueueMessageType.addLogin) {
                 continue;
             }
 

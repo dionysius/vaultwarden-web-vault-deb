@@ -1,9 +1,6 @@
-export default class AddChangePasswordQueueMessage {
-    type: string;
+import NotificationQueueMessage from "./notificationQueueMessage";
+
+export default class AddChangePasswordQueueMessage extends NotificationQueueMessage {
     cipherId: string;
     newPassword: string;
-    domain: string;
-    tabId: string;
-    expires: Date;
-    wasVaultLocked: boolean;
 }

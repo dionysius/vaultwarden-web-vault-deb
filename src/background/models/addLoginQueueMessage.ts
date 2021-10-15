@@ -1,10 +1,7 @@
-export default class AddLoginQueueMessage {
-    type: string;
+import NotificationQueueMessage from "./notificationQueueMessage";
+
+export default class AddLoginQueueMessage extends NotificationQueueMessage {
     username: string;
     password: string;
-    domain: string;
     uri: string;
-    tabId: string;
-    expires: Date;
-    wasVaultLocked: boolean;
 }
