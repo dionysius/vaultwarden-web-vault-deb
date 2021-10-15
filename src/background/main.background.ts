@@ -347,10 +347,10 @@ export default class MainBackground {
             return;
         }
 
-        const lockedVaultPendingNotificationsItem = this.lockedVaultPendingNotifications.pop();
-        switch (lockedVaultPendingNotificationsItem.from) {
+        const item = this.lockedVaultPendingNotifications.pop();
+        switch (item.from) {
             case 'notificationBar':
-                await this.notificationBackground.processMessage(lockedVaultPendingNotificationsItem.commandToRetry, lockedVaultPendingNotificationsItem.commandToRetry.sender, null);
+                await this.notificationBackground.processMessage(item.commandToRetry, item.commandToRetry.sender, null);
                 break;
             default:
                 break;
