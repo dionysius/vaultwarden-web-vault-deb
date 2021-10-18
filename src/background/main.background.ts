@@ -1,6 +1,8 @@
 import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
 import { CipherType } from 'jslib-common/enums/cipherType';
 
+import { CipherView } from 'jslib-common/models/view/cipherView';
+
 import { ApiService } from 'jslib-common/services/api.service';
 import { AppIdService } from 'jslib-common/services/appId.service';
 import { AuditService } from 'jslib-common/services/audit.service';
@@ -126,7 +128,7 @@ export default class MainBackground {
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
-    loginToAutoFill: any = null;
+    loginToAutoFill: CipherView = null;
     lockedVaultPendingNotifications: { commandToRetry: any, from: string }[] = [];
 
     private commandsBackground: CommandsBackground;
