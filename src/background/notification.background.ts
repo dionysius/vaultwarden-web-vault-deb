@@ -39,14 +39,14 @@ export default class NotificationBackground {
             return;
         }
 
-        BrowserApi.messageListener('notification.background', async (msg: any, sender: any, sendResponse: any) => {
-            await this.processMessage(msg, sender, sendResponse);
+        BrowserApi.messageListener('notification.background', async (msg: any, sender: chrome.runtime.MessageSender) => {
+            await this.processMessage(msg, sender);
         });
 
         this.cleanupNotificationQueue();
     }
 
-    async processMessage(msg: any, sender: any, sendResponse: any) {
+    async processMessage(msg: any, sender: chrome.runtime.MessageSender) {
         switch (msg.command) {
             case 'bgGetDataForTab':
                 await this.getDataForTab(sender.tab, msg.responseCommand);

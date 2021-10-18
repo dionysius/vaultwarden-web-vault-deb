@@ -91,8 +91,8 @@ export class BrowserApi {
         chrome.tabs.create({ url: url, active: active });
     }
 
-    static messageListener(name: string, callback: (message: any, sender: any, response: any) => void) {
-        chrome.runtime.onMessage.addListener((msg: any, sender: any, response: any) => {
+    static messageListener(name: string, callback: (message: any, sender: chrome.runtime.MessageSender, response: any) => void) {
+        chrome.runtime.onMessage.addListener((msg: any, sender: chrome.runtime.MessageSender, response: any) => {
             callback(msg, sender, response);
         });
     }

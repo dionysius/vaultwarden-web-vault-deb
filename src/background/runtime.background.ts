@@ -36,7 +36,7 @@ export default class RuntimeBackground {
         }
 
         await this.checkOnInstalled();
-        BrowserApi.messageListener('runtime.background', async (msg: any, sender: any, sendResponse: any) => {
+        BrowserApi.messageListener('runtime.background', async (msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) => {
             await this.processMessage(msg, sender, sendResponse);
         });
     }
