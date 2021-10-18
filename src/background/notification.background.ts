@@ -22,8 +22,8 @@ import { PolicyType } from 'jslib-common/enums/policyType';
 
 import AddChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
 import AddLoginQueueMessage from './models/addLoginQueueMessage';
-import { NotificationQueueMessageType } from './models/NotificationQueueMessageType';
 import lockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
+import { NotificationQueueMessageType } from './models/NotificationQueueMessageType';
 
 export default class NotificationBackground {
 
