@@ -31,7 +31,7 @@ export default class TabsBackground {
                 return;
             }
             this.main.onUpdatedRan = true;
-            await this.main.checkNotificationQueue();
+            await this.main.checkNotificationQueue(tab);
             await this.main.refreshBadgeAndMenu();
             this.main.messagingService.send('tabUpdated');
             this.main.messagingService.send('tabChanged');
