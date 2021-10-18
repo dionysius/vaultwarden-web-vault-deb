@@ -22,6 +22,13 @@ window.addEventListener('message', event => {
 }, false);
 
 chrome.runtime.onMessage.addListener(event => {
+    if (event.command === 'promptForLogin') {
+        chrome.runtime.sendMessage(event);
+    }
+
+    if (event.command === 'addToLockedVaultPendingNotifications') {
+        chrome.runtime.sendMessage(event);
+    }
 
     if (event.command === 'unlockCompleted') {
         chrome.runtime.sendMessage(event);

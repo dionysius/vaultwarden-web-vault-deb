@@ -23,6 +23,7 @@ import { PolicyType } from 'jslib-common/enums/policyType';
 import AddChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
 import AddLoginQueueMessage from './models/addLoginQueueMessage';
 import { NotificationQueueMessageType } from './models/NotificationQueueMessageType';
+import lockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
 
 export default class NotificationBackground {
 
@@ -75,6 +76,18 @@ export default class NotificationBackground {
                 break;
             case 'bgAddSave':
             case 'bgChangeSave':
+                if (await this.vaultTimeoutService.isLocked()) {
+                    const retryMessage: lockedVaultPendingNotificationsItem = {
+                        commandToRetry: {
+                            msg: msg,
+                            sender: sender,
+                        },
+                        target: 'notification.background',
+                    };
+                    await BrowserApi.tabSendMessageData(sender.tab, 'addToLockedVaultPendingNotifications', retryMessage);
+                    await BrowserApi.tabSendMessageData(sender.tab, 'promptForLogin');
+                    return;
+                }
                 await this.saveOrUpdateCredentials(sender.tab, msg.folder);
                 break;
             case 'bgNeverSave':
