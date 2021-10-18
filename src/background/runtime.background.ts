@@ -13,10 +13,13 @@ import { BrowserApi } from '../browser/browserApi';
 import MainBackground from './main.background';
 
 import { Utils } from 'jslib-common/misc/utils';
+import lockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
+
 export default class RuntimeBackground {
     private autofillTimeout: any;
     private pageDetailsToAutoFill: any[] = [];
     private onInstalledReason: string = null;
+    private lockedVaultPendingNotifications: lockedVaultPendingNotificationsItem[] = [];
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private platformUtilsService: BrowserPlatformUtilsService,
@@ -45,11 +48,13 @@ export default class RuntimeBackground {
         switch (msg.command) {
             case 'loggedIn':
             case 'unlocked':
-                if (this.main.lockedVaultPendingNotifications.length > 0) {
+                let item: lockedVaultPendingNotificationsItem;
+
+                if (this.lockedVaultPendingNotifications.length > 0) {
                     await BrowserApi.closeLoginTab();
 
-                    const item = this.main.lockedVaultPendingNotifications[0];
-                    if (item.commandToRetry?.sender?.tab?.id) {
+                    item = this.lockedVaultPendingNotifications.pop();
+                    if (item.commandToRetry.sender?.tab?.id) {
                         await BrowserApi.focusSpecifiedTab(item.commandToRetry.sender.tab.id);
                     }
                 }
@@ -59,17 +64,12 @@ export default class RuntimeBackground {
                 this.notificationsService.updateConnection(msg.command === 'unlocked');
                 this.systemService.cancelProcessReload();
 
-                this.main.unlockCompleted();
+                if (item) {
+                    await BrowserApi.tabSendMessageData(item.commandToRetry.sender.tab, 'unlockCompleted', item);
+                }
                 break;
             case 'addToLockedVaultPendingNotifications':
-                const retryMessage = {
-                    commandToRetry: {
-                        ...msg.retryItem,
-                        sender: sender,
-                    },
-                    from: msg.from,
-                };
-                this.main.lockedVaultPendingNotifications.push(retryMessage);
+                this.lockedVaultPendingNotifications.push(msg.data);
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);

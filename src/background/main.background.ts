@@ -129,16 +129,15 @@ export default class MainBackground {
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
     loginToAutoFill: CipherView = null;
-    lockedVaultPendingNotifications: { commandToRetry: any, from: string }[] = [];
 
     private commandsBackground: CommandsBackground;
     private contextMenusBackground: ContextMenusBackground;
     private idleBackground: IdleBackground;
+    private notificationBackground: NotificationBackground;
     private runtimeBackground: RuntimeBackground;
     private tabsBackground: TabsBackground;
     private webRequestBackground: WebRequestBackground;
     private windowsBackground: WindowsBackground;
-    private notificationBackground: NotificationBackground;
 
     private sidebarAction: any;
     private buildingContextMenu: boolean;
@@ -341,21 +340,6 @@ export default class MainBackground {
         const tab = await BrowserApi.getTabFromCurrentWindow();
         if (tab) {
             await this.contextMenuReady(tab, !menuDisabled);
-        }
-    }
-
-    async unlockCompleted() {
-        if (this.lockedVaultPendingNotifications.length === 0) {
-            return;
-        }
-
-        const item = this.lockedVaultPendingNotifications.pop();
-        switch (item.from) {
-            case 'notificationBar':
-                await this.notificationBackground.processMessage(item.commandToRetry, item.commandToRetry.sender, null);
-                break;
-            default:
-                break;
         }
     }
 

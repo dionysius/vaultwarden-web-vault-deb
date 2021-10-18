@@ -20,3 +20,10 @@ window.addEventListener('message', event => {
         });
     }
 }, false);
+
+chrome.runtime.onMessage.addListener(event => {
+
+    if (event.command === 'unlockCompleted') {
+        chrome.runtime.sendMessage(event);
+    }
+});
