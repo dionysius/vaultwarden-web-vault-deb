@@ -35,7 +35,7 @@ export default class NotificationBackground {
     }
 
     async init() {
-        if (!chrome.runtime) {
+        if (chrome.runtime == null) {
             return;
         }
 
