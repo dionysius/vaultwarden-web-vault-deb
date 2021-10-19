@@ -11,6 +11,7 @@ import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.serv
 
 import { EventType } from 'jslib-common/enums/eventType';
 import { CipherView } from 'jslib-common/models/view/cipherView';
+import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
 
 export default class ContextMenusBackground {
     private contextMenus: any;
@@ -58,14 +59,18 @@ export default class ContextMenusBackground {
 
     private async cipherAction(tab: chrome.tabs.Tab, info: chrome.contextMenus.OnClickData) {
         const id = info.menuItemId.split('_')[1];
-        if (id === 'noop') {
-            if (chrome.browserAction && (chrome.browserAction as any).openPopup) {
-                (chrome.browserAction as any).openPopup();
-            }
-            return;
-        }
 
         if (await this.vaultTimeoutService.isLocked()) {
+            const retryMessage: LockedVaultPendingNotificationsItem = {
+                commandToRetry: {
+                    msg: { command: 'noop', data: info },
+                    sender: { tab: tab },
+                },
+                target: 'contextmenus.background',
+            };
+            await BrowserApi.tabSendMessageData(tab, 'addToLockedVaultPendingNotifications', retryMessage);
+
+            BrowserApi.tabSendMessageData(tab, 'promptForLogin');
             return;
         }
 
