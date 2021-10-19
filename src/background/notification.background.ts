@@ -22,6 +22,8 @@ import { PolicyType } from 'jslib-common/enums/policyType';
 
 import AddChangePasswordQueueMessage from './models/addChangePasswordQueueMessage';
 import AddLoginQueueMessage from './models/addLoginQueueMessage';
+import AddLoginRuntimeMessage from './models/addLoginRuntimeMessage';
+import ChangePasswordRuntimeMessage from './models/changePasswordRuntimeMessage';
 import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
 import { NotificationQueueMessageType } from './models/NotificationQueueMessageType';
 
@@ -178,7 +180,7 @@ export default class NotificationBackground {
         }
     }
 
-    private async addLogin(loginInfo: any, tab: chrome.tabs.Tab) {
+    private async addLogin(loginInfo: AddLoginRuntimeMessage, tab: chrome.tabs.Tab) {
         const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
@@ -220,7 +222,7 @@ export default class NotificationBackground {
         }
     }
 
-    private async pushAddLoginToQueue(loginDomain: string, loginInfo: any, tab: chrome.tabs.Tab, isVaultLocked: boolean = false) {
+    private async pushAddLoginToQueue(loginDomain: string, loginInfo: AddLoginRuntimeMessage, tab: chrome.tabs.Tab, isVaultLocked: boolean = false) {
         // remove any old messages for this tab
         this.removeTabFromNotificationQueue(tab);
         const message: AddLoginQueueMessage = {
@@ -237,7 +239,7 @@ export default class NotificationBackground {
         await this.checkNotificationQueue(tab);
     }
 
-    private async changedPassword(changeData: any, tab: chrome.tabs.Tab) {
+    private async changedPassword(changeData: ChangePasswordRuntimeMessage, tab: chrome.tabs.Tab) {
         const loginDomain = Utils.getDomain(changeData.url);
         if (loginDomain == null) {
             return;
