@@ -27,7 +27,7 @@ export default class ContextMenusBackground {
             return;
         }
 
-        this.contextMenus.onClicked.addListener(async (info: any, tab: any) => {
+        this.contextMenus.onClicked.addListener(async (info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) => {
             if (info.menuItemId === 'generate-password') {
                 await this.generatePasswordToClipboard();
             } else if (info.menuItemId === 'copy-identifier') {
@@ -57,7 +57,7 @@ export default class ContextMenusBackground {
         BrowserApi.tabSendMessage(tab, { command: 'getClickedElement' }, { frameId: frameId });
     }
 
-    private async cipherAction(info: any) {
+    private async cipherAction(info: chrome.contextMenus.OnClickData) {
         const id = info.menuItemId.split('_')[1];
         if (id === 'noop') {
             if (chrome.browserAction && (chrome.browserAction as any).openPopup) {
