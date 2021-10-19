@@ -1,3 +1,6 @@
+import AddLoginRuntimeMessage from 'src/background/models/addLoginRuntimeMessage';
+import ChangePasswordRuntimeMessage from 'src/background/models/changePasswordRuntimeMessage';
+
 document.addEventListener('DOMContentLoaded', event => {
     if (window.location.hostname.indexOf('vault.bitwarden.com') > -1) {
         return;
@@ -294,7 +297,7 @@ document.addEventListener('DOMContentLoaded', event => {
             }
             const disabledBoth = disabledChangedPasswordNotification && disabledAddLoginNotification;
             if (!disabledBoth && formData[i].usernameEl != null && formData[i].passwordEl != null) {
-                const login = {
+                const login: AddLoginRuntimeMessage = {
                     username: formData[i].usernameEl.value,
                     password: formData[i].passwordEl.value,
                     url: document.URL,
@@ -343,13 +346,15 @@ document.addEventListener('DOMContentLoaded', event => {
 
                 if (newPass != null && curPass != null || (newPassOnly && newPass != null)) {
                     processedForm(form);
+
+                    const changePasswordRuntimeMessage: ChangePasswordRuntimeMessage = {
+                        newPassword: newPass,
+                        currentPassword: curPass,
+                        url: document.URL,
+                    };
                     sendPlatformMessage({
                         command: 'bgChangedPassword',
-                        data: {
-                            newPassword: newPass,
-                            currentPassword: curPass,
-                            url: document.URL,
-                        },
+                        data: changePasswordRuntimeMessage,
                     });
                     break;
                 }

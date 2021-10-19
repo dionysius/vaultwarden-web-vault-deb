@@ -1,7 +1,8 @@
 import MainBackground from './main.background';
+import NotificationBackground from './notification.background';
 
 export default class TabsBackground {
-    constructor(private main: MainBackground) {
+    constructor(private main: MainBackground, private notificationBackground: NotificationBackground) {
     }
 
     async init() {
@@ -20,7 +21,7 @@ export default class TabsBackground {
                 return;
             }
             this.main.onReplacedRan = true;
-            await this.main.checkNotificationQueue();
+            await this.notificationBackground.checkNotificationQueue();
             await this.main.refreshBadgeAndMenu();
             this.main.messagingService.send('tabReplaced');
             this.main.messagingService.send('tabChanged');
@@ -31,7 +32,7 @@ export default class TabsBackground {
                 return;
             }
             this.main.onUpdatedRan = true;
-            await this.main.checkNotificationQueue(tab);
+            await this.notificationBackground.checkNotificationQueue(tab);
             await this.main.refreshBadgeAndMenu();
             this.main.messagingService.send('tabUpdated');
             this.main.messagingService.send('tabChanged');
