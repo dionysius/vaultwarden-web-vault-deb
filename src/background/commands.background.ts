@@ -18,19 +18,19 @@ export default class CommandsBackground {
 
     async init() {
         if (this.isVivaldi) {
-            BrowserApi.messageListener('commands.background', async (msg: any, sender: any, sendResponse: any) => {
+            BrowserApi.messageListener('commands.background', async (msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) => {
                 if (msg.command === 'keyboardShortcutTriggered' && msg.shortcut) {
                     await this.processCommand(msg.shortcut, sender);
                 }
             });
         } else if (chrome && chrome.commands) {
-            chrome.commands.onCommand.addListener(async (command: any) => {
+            chrome.commands.onCommand.addListener(async (command: string) => {
                 await this.processCommand(command);
             });
         }
     }
 
-    private async processCommand(command: string, sender?: any) {
+    private async processCommand(command: string, sender?: chrome.runtime.MessageSender) {
         switch (command) {
             case 'generate_password':
                 await this.generatePasswordToClipboard();
@@ -56,7 +56,7 @@ export default class CommandsBackground {
         this.passwordGenerationService.addHistory(password);
     }
 
-    private async autoFillLogin(tab?: any) {
+    private async autoFillLogin(tab?: chrome.tabs.Tab) {
         if (await this.vaultTimeoutService.isLocked()) {
             return;
         }
