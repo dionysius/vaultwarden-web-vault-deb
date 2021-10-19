@@ -14,7 +14,7 @@
                                     class="monospaced" [(ngModel)]="pin" required appInputVerbatim cdkFocusInitial>
                             </div>
                             <div class="action-buttons">
-                                <button class="row-btn" appStopClick appBlurClick appA11yTitle="{{'toggleVisibility' | i18n}}"
+                                <button type="button" class="row-btn" appStopClick appBlurClick appA11yTitle="{{'toggleVisibility' | i18n}}"
                                     (click)="toggleVisibility()">
                                     <i class="fa fa-lg" aria-hidden="true"
                                         [ngClass]="{'fa-eye': !showPin, 'fa-eye-slash': showPin}"></i>
