@@ -5,6 +5,7 @@ import MainBackground from './main.background';
 import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
 
 export default class CommandsBackground {
     private isSafari: boolean;
@@ -17,13 +18,17 @@ export default class CommandsBackground {
     }
 
     async init() {
-        if (this.isVivaldi) {
-            BrowserApi.messageListener('commands.background', async (msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) => {
-                if (msg.command === 'keyboardShortcutTriggered' && msg.shortcut) {
-                    await this.processCommand(msg.shortcut, sender);
-                }
-            });
-        } else if (chrome && chrome.commands) {
+        BrowserApi.messageListener('commands.background', async (msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) => {
+            if (msg.command === 'unlockCompleted' && msg.data.target === 'commands.background') {
+                await this.processCommand(msg.data.commandToRetry.msg.command, msg.data.commandToRetry.sender);
+            }
+
+            if (this.isVivaldi && msg.command === 'keyboardShortcutTriggered' && msg.shortcut) {
+                await this.processCommand(msg.shortcut, sender);
+            }
+        });
+
+        if (!this.isVivaldi && chrome && chrome.commands) {
             chrome.commands.onCommand.addListener(async (command: string) => {
                 await this.processCommand(command);
             });
@@ -57,15 +62,25 @@ export default class CommandsBackground {
     }
 
     private async autoFillLogin(tab?: chrome.tabs.Tab) {
-        if (await this.vaultTimeoutService.isLocked()) {
-            return;
-        }
-
         if (!tab) {
             tab = await BrowserApi.getTabFromCurrentWindowId();
         }
 
         if (tab == null) {
+            return;
+        }
+
+        if (await this.vaultTimeoutService.isLocked()) {
+            const retryMessage: LockedVaultPendingNotificationsItem = {
+                commandToRetry: {
+                    msg: { command: 'autofill_login' },
+                    sender: { tab: tab },
+                },
+                target: 'commands.background',
+            };
+            await BrowserApi.tabSendMessageData(tab, 'addToLockedVaultPendingNotifications', retryMessage);
+
+            BrowserApi.tabSendMessageData(tab, 'promptForLogin');
             return;
         }
 
