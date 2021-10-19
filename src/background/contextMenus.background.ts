@@ -36,7 +36,7 @@ export default class ContextMenusBackground {
                 info.parentMenuItemId === 'copy-username' ||
                 info.parentMenuItemId === 'copy-password' ||
                 info.parentMenuItemId === 'copy-totp') {
-                await this.cipherAction(info);
+                await this.cipherAction(tab, info);
             }
         });
     }
@@ -57,7 +57,7 @@ export default class ContextMenusBackground {
         BrowserApi.tabSendMessage(tab, { command: 'getClickedElement' }, { frameId: frameId });
     }
 
-    private async cipherAction(info: chrome.contextMenus.OnClickData) {
+    private async cipherAction(tab: chrome.tabs.Tab, info: chrome.contextMenus.OnClickData) {
         const id = info.menuItemId.split('_')[1];
         if (id === 'noop') {
             if (chrome.browserAction && (chrome.browserAction as any).openPopup) {
@@ -77,7 +77,7 @@ export default class ContextMenusBackground {
         }
 
         if (info.parentMenuItemId === 'autofill') {
-            await this.startAutofillPage(cipher);
+            await this.startAutofillPage(tab, cipher);
         } else if (info.parentMenuItemId === 'copy-username') {
             this.platformUtilsService.copyToClipboard(cipher.login.username, { window: window });
         } else if (info.parentMenuItemId === 'copy-password') {
@@ -89,9 +89,8 @@ export default class ContextMenusBackground {
         }
     }
 
-    private async startAutofillPage(cipher: CipherView) {
+    private async startAutofillPage(tab: chrome.tabs.Tab, cipher: CipherView) {
         this.main.loginToAutoFill = cipher;
-        const tab = await BrowserApi.getTabFromCurrentWindow();
         if (tab == null) {
             return;
         }
