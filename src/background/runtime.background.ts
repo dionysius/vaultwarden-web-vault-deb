@@ -13,13 +13,13 @@ import { BrowserApi } from '../browser/browserApi';
 import MainBackground from './main.background';
 
 import { Utils } from 'jslib-common/misc/utils';
-import lockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
+import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
 
 export default class RuntimeBackground {
     private autofillTimeout: any;
     private pageDetailsToAutoFill: any[] = [];
     private onInstalledReason: string = null;
-    private lockedVaultPendingNotifications: lockedVaultPendingNotificationsItem[] = [];
+    private lockedVaultPendingNotifications: LockedVaultPendingNotificationsItem[] = [];
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private platformUtilsService: BrowserPlatformUtilsService,
@@ -48,7 +48,7 @@ export default class RuntimeBackground {
         switch (msg.command) {
             case 'loggedIn':
             case 'unlocked':
-                let item: lockedVaultPendingNotificationsItem;
+                let item: LockedVaultPendingNotificationsItem;
 
                 if (this.lockedVaultPendingNotifications.length > 0) {
                     await BrowserApi.closeLoginTab();
