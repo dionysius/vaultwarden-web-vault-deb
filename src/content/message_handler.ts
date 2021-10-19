@@ -20,3 +20,11 @@ window.addEventListener('message', event => {
         });
     }
 }, false);
+
+const forwardCommands = ['promptForLogin', 'addToLockedVaultPendingNotifications', 'unlockCompleted'];
+
+chrome.runtime.onMessage.addListener(event => {
+    if (forwardCommands.includes(event.command)) {
+        chrome.runtime.sendMessage(event);
+    }
+});

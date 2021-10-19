@@ -10,6 +10,7 @@ import { TotpService } from 'jslib-common/abstractions/totp.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { EventType } from 'jslib-common/enums/eventType';
+import { CipherView } from 'jslib-common/models/view/cipherView';
 
 export default class ContextMenusBackground {
     private contextMenus: any;
@@ -88,7 +89,7 @@ export default class ContextMenusBackground {
         }
     }
 
-    private async startAutofillPage(cipher: any) {
+    private async startAutofillPage(cipher: CipherView) {
         this.main.loginToAutoFill = cipher;
         const tab = await BrowserApi.getTabFromCurrentWindow();
         if (tab == null) {

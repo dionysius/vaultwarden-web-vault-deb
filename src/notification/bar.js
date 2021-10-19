@@ -70,19 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     command: 'bgAddSave',
                     folder: folderId,
                 };
-
-                if (isVaultLocked) {
-                    sendPlatformMessage({
-                        command: 'promptForLogin'
-                    });
-
-                    sendPlatformMessage({
-                        command: 'addToLockedVaultPendingNotifications',
-                        retryItem: bgAddSaveMessage
-                    });
-                    return;
-                }
-
                 sendPlatformMessage(bgAddSaveMessage);
             });
 
@@ -114,18 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const bgChangeSaveMessage = {
                     command: 'bgChangeSave'
                 };
-
-                if (isVaultLocked) {
-                    sendPlatformMessage({
-                        command: 'promptForLogin'
-                    });
-
-                    sendPlatformMessage({
-                        command: 'addToLockedVaultPendingNotifications',
-                        retryItem: bgChangeSaveMessage,
-                    });
-                    return;
-                }
                 sendPlatformMessage(bgChangeSaveMessage);
             });
         }
