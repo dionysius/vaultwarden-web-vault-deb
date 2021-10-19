@@ -21,16 +21,10 @@ window.addEventListener('message', event => {
     }
 }, false);
 
+const forwardCommands = ['promptForLogin', 'addToLockedVaultPendingNotifications', 'unlockCompleted'];
+
 chrome.runtime.onMessage.addListener(event => {
-    if (event.command === 'promptForLogin') {
-        chrome.runtime.sendMessage(event);
-    }
-
-    if (event.command === 'addToLockedVaultPendingNotifications') {
-        chrome.runtime.sendMessage(event);
-    }
-
-    if (event.command === 'unlockCompleted') {
+    if (forwardCommands.includes(event.command)) {
         chrome.runtime.sendMessage(event);
     }
 });
