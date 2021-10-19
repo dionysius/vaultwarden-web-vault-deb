@@ -40,6 +40,12 @@ export default class ContextMenusBackground {
                 await this.cipherAction(tab, info);
             }
         });
+
+        BrowserApi.messageListener('contextmenus.background', async (msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) => {
+            if (msg.command === 'unlockCompleted' && msg.data.target === 'contextmenus.background') {
+                await this.cipherAction(msg.data.commandToRetry.sender.tab, msg.data.commandToRetry.msg.data);
+            }
+        });
     }
 
     private async generatePasswordToClipboard() {
