@@ -14,6 +14,7 @@ import { CipherView } from 'jslib-common/models/view/cipherView';
 import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
 
 export default class ContextMenusBackground {
+    private readonly noopCommandSuffix = 'noop';
     private contextMenus: any;
 
     constructor(private main: MainBackground, private cipherService: CipherService,
@@ -69,7 +70,7 @@ export default class ContextMenusBackground {
         if (await this.vaultTimeoutService.isLocked()) {
             const retryMessage: LockedVaultPendingNotificationsItem = {
                 commandToRetry: {
-                    msg: { command: 'noop', data: info },
+                    msg: { command: this.noopCommandSuffix, data: info },
                     sender: { tab: tab },
                 },
                 target: 'contextmenus.background',
@@ -81,7 +82,7 @@ export default class ContextMenusBackground {
         }
 
         let cipher: CipherView;
-        if (id === 'noop') {
+        if (id === this.noopCommandSuffix) {
             const ciphers = await this.cipherService.getAllDecryptedForUrl(tab.url);
             cipher = ciphers.length > 0 ? ciphers[0] : null;
         }
