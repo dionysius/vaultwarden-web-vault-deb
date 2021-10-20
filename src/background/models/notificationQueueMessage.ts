@@ -1,4 +1,4 @@
-import { NotificationQueueMessageType } from "./NotificationQueueMessageType";
+import { NotificationQueueMessageType } from "./notificationQueueMessageType";
 
 export default class NotificationQueueMessage {
     type: NotificationQueueMessageType;

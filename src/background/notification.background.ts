@@ -25,7 +25,7 @@ import AddLoginQueueMessage from './models/addLoginQueueMessage';
 import AddLoginRuntimeMessage from './models/addLoginRuntimeMessage';
 import ChangePasswordRuntimeMessage from './models/changePasswordRuntimeMessage';
 import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
-import { NotificationQueueMessageType } from './models/NotificationQueueMessageType';
+import { NotificationQueueMessageType } from './models/notificationQueueMessageType';
 
 export default class NotificationBackground {
 
