@@ -9,12 +9,10 @@ import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNoti
 
 export default class CommandsBackground {
     private isSafari: boolean;
-    private isVivaldi: boolean;
 
     constructor(private main: MainBackground, private passwordGenerationService: PasswordGenerationService,
         private platformUtilsService: PlatformUtilsService, private vaultTimeoutService: VaultTimeoutService) {
         this.isSafari = this.platformUtilsService.isSafari();
-        this.isVivaldi = this.platformUtilsService.isVivaldi();
     }
 
     async init() {
@@ -23,12 +21,12 @@ export default class CommandsBackground {
                 await this.processCommand(msg.data.commandToRetry.msg.command, msg.data.commandToRetry.sender);
             }
 
-            if (this.isVivaldi && msg.command === 'keyboardShortcutTriggered' && msg.shortcut) {
+            if (msg.command === 'keyboardShortcutTriggered' && msg.shortcut) {
                 await this.processCommand(msg.shortcut, sender);
             }
         });
 
-        if (!this.isVivaldi && chrome && chrome.commands) {
+        if (chrome && chrome.commands) {
             chrome.commands.onCommand.addListener(async (command: string) => {
                 await this.processCommand(command);
             });
