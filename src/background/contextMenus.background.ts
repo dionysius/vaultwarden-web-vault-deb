@@ -85,8 +85,7 @@ export default class ContextMenusBackground {
         if (id === this.noopCommandSuffix) {
             const ciphers = await this.cipherService.getAllDecryptedForUrl(tab.url);
             cipher = ciphers.length > 0 ? ciphers[0] : null;
-        }
-        else {
+        } else {
             const ciphers = await this.cipherService.getAllDecrypted();
             cipher = ciphers.find(c => c.id === id);
         }
