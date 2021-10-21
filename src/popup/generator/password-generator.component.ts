@@ -40,8 +40,11 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
         this.close();
     }
 
-    lengthChanged() {
-        document.getElementById('length').focus();
+    async lengthInput() {
+        var last = this.password;
+        this.saveOptions();
+        if(last != this.password)
+            await this.passwordGenerationService.addHistory(this.password);
     }
 
     close() {
