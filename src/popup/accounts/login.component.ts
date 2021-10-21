@@ -5,6 +5,7 @@ import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
@@ -23,8 +24,9 @@ export class LoginComponent extends BaseLoginComponent {
         protected stateService: StateService, protected environmentService: EnvironmentService,
         protected passwordGenerationService: PasswordGenerationService,
         protected cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
-        syncService: SyncService) {
-        super(authService, router, platformUtilsService, i18nService, stateService, environmentService, passwordGenerationService, cryptoFunctionService, storageService);
+        syncService: SyncService, logService: LogService) {
+        super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
+            passwordGenerationService, cryptoFunctionService, storageService, logService);
         super.onSuccessfulLogin = async () => {
             await syncService.fullSync(true);
         };

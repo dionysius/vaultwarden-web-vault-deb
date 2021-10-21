@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
 
@@ -7,6 +8,7 @@ import { ApiService } from 'jslib-common/abstractions/api.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
@@ -15,7 +17,6 @@ import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib-angular/components/lock.component';
-import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-lock',
@@ -29,9 +30,9 @@ export class LockComponent extends BaseLockComponent {
         userService: UserService, cryptoService: CryptoService,
         storageService: StorageService, vaultTimeoutService: VaultTimeoutService,
         environmentService: EnvironmentService, stateService: StateService,
-        apiService: ApiService) {
+        apiService: ApiService, logService: LogService) {
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
-            storageService, vaultTimeoutService, environmentService, stateService, apiService);
+            storageService, vaultTimeoutService, environmentService, stateService, apiService, logService);
         this.successRoute = '/tabs/current';
         this.isInitialLockScreen = (window as any).previousPopupUrl == null;
     }

@@ -259,7 +259,9 @@ document.addEventListener('DOMContentLoaded', event => {
         if (fieldData.htmlID != null && fieldData.htmlID !== '') {
             try {
                 el = form.querySelector('#' + fieldData.htmlID);
-            } catch { }
+            } catch {
+                // Ignore error, we perform fallbacks below.
+            }
         }
         if (el == null && fieldData.htmlName != null && fieldData.htmlName !== '') {
             el = form.querySelector('input[name="' + fieldData.htmlName + '"]');

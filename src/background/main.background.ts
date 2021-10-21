@@ -184,7 +184,8 @@ export default class MainBackground {
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.fileUploadService = new FileUploadService(this.logService, this.apiService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.fileUploadService, this.storageService, this.i18nService, () => this.searchService);
+            this.apiService, this.fileUploadService, this.storageService, this.i18nService, () => this.searchService,
+            this.logService);
         this.folderService = new FolderService(this.cryptoService, this.userService, this.apiService,
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
@@ -193,7 +194,7 @@ export default class MainBackground {
         this.sendService = new SendService(this.cryptoService, this.userService, this.apiService, this.fileUploadService,
             this.storageService, this.i18nService, this.cryptoFunctionService);
         this.stateService = new StateService();
-        this.policyService = new PolicyService(this.userService, this.storageService);
+        this.policyService = new PolicyService(this.userService, this.storageService, this.apiService);
         this.vaultTimeoutService = new VaultTimeoutService(this.cipherService, this.folderService,
             this.collectionService, this.cryptoService, this.platformUtilsService, this.storageService,
             this.messagingService, this.searchService, this.userService, this.tokenService, this.policyService,
@@ -211,14 +212,14 @@ export default class MainBackground {
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
             this.storageService, this.messagingService, this.policyService, this.sendService,
-            async (expired: boolean) => await this.logout(expired));
+            this.logService, async (expired: boolean) => await this.logout(expired));
         this.eventService = new EventService(this.storageService, this.apiService, this.userService,
-            this.cipherService);
+            this.cipherService, this.logService);
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService,
             this.policyService);
-        this.totpService = new TotpService(this.storageService, this.cryptoFunctionService);
+        this.totpService = new TotpService(this.storageService, this.cryptoFunctionService, this.logService);
         this.autofillService = new AutofillService(this.cipherService, this.userService, this.totpService,
-            this.eventService);
+            this.eventService, this.logService);
         this.containerService = new ContainerService(this.cryptoService);
         this.auditService = new AuditService(this.cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService,
@@ -242,7 +243,8 @@ export default class MainBackground {
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.notificationsService, this.systemService, this.environmentService, this.messagingService);
+            this.notificationsService, this.systemService, this.environmentService, this.messagingService,
+            this.logService);
         this.nativeMessagingBackground = new NativeMessagingBackground(this.storageService, this.cryptoService, this.cryptoFunctionService,
             this.vaultTimeoutService, this.runtimeBackground, this.i18nService, this.userService, this.messagingService, this.appIdService,
             this.platformUtilsService);
@@ -548,7 +550,9 @@ export default class MainBackground {
                 this.browserActionSetBadgeText(theText, tabId);
 
                 return;
-            } catch { }
+            } catch (e) {
+                this.logService.error(e);
+            }
         }
 
         await this.loadMenuAndUpdateBadgeForNoAccessState(contextMenuEnabled);

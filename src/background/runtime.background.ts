@@ -1,10 +1,12 @@
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { NotificationsService } from 'jslib-common/abstractions/notifications.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SystemService } from 'jslib-common/abstractions/system.service';
 import { ConstantsService } from 'jslib-common/services/constants.service';
+
 import { AutofillService } from '../services/abstractions/autofill.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 
@@ -25,7 +27,8 @@ export default class RuntimeBackground {
         private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: I18nService,
         private notificationsService: NotificationsService, private systemService: SystemService,
-        private environmentService: EnvironmentService, private messagingService: MessagingService) {
+        private environmentService: EnvironmentService, private messagingService: MessagingService,
+        private logService: LogService) {
 
         // onInstalled listener must be wired up before anything else, so we do it in the ctor
         chrome.runtime.onInstalled.addListener((details: any) => {
@@ -137,7 +140,9 @@ export default class RuntimeBackground {
                     BrowserApi.createNewTab('popup/index.html?uilocation=popout#/sso?code=' +
                         msg.code + '&state=' + msg.state);
                 }
-                catch { }
+                catch {
+                    this.logService.error('Unable to open sso popout tab');
+                }
                 break;
             case 'webAuthnResult':
                 const vaultUrl2 = this.environmentService.getWebVaultUrl();
