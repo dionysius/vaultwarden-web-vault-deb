@@ -259,7 +259,9 @@ document.addEventListener('DOMContentLoaded', event => {
         if (fieldData.htmlID != null && fieldData.htmlID !== '') {
             try {
                 el = form.querySelector('#' + fieldData.htmlID);
-            } catch { }
+            } catch {
+                // Ignore error, we perform fallbacks below.
+            }
         }
         if (el == null && fieldData.htmlName != null && fieldData.htmlName !== '') {
             el = form.querySelector('input[name="' + fieldData.htmlName + '"]');
@@ -467,6 +469,7 @@ document.addEventListener('DOMContentLoaded', event => {
         const iframe = document.createElement('iframe');
         iframe.style.cssText = 'height: 42px; width: 100%; border: 0; min-height: initial;';
         iframe.id = 'bit-notification-bar-iframe';
+        iframe.src = barPageUrl;
 
         const frameDiv = document.createElement('div');
         frameDiv.setAttribute('aria-live', 'polite');

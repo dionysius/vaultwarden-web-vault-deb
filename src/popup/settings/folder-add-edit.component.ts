@@ -8,6 +8,7 @@ import { first } from 'rxjs/operators';
 
 import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 
 import {
@@ -21,8 +22,8 @@ import {
 export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     constructor(folderService: FolderService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, private router: Router,
-        private route: ActivatedRoute) {
-        super(folderService, i18nService, platformUtilsService);
+        private route: ActivatedRoute, logService: LogService) {
+        super(folderService, i18nService, platformUtilsService, logService);
     }
 
     async ngOnInit() {
