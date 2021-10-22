@@ -11,8 +11,10 @@ import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.serv
 
 import { EventType } from 'jslib-common/enums/eventType';
 import { CipherView } from 'jslib-common/models/view/cipherView';
+import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
 
 export default class ContextMenusBackground {
+    private readonly noopCommandSuffix = 'noop';
     private contextMenus: any;
 
     constructor(private main: MainBackground, private cipherService: CipherService,
@@ -27,16 +29,22 @@ export default class ContextMenusBackground {
             return;
         }
 
-        this.contextMenus.onClicked.addListener(async (info: any, tab: any) => {
+        this.contextMenus.onClicked.addListener(async (info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) => {
             if (info.menuItemId === 'generate-password') {
                 await this.generatePasswordToClipboard();
             } else if (info.menuItemId === 'copy-identifier') {
-                await this.getClickedElement(info.frameId);
+                await this.getClickedElement(tab, info.frameId);
             } else if (info.parentMenuItemId === 'autofill' ||
                 info.parentMenuItemId === 'copy-username' ||
                 info.parentMenuItemId === 'copy-password' ||
                 info.parentMenuItemId === 'copy-totp') {
-                await this.cipherAction(info);
+                await this.cipherAction(tab, info);
+            }
+        });
+
+        BrowserApi.messageListener('contextmenus.background', async (msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) => {
+            if (msg.command === 'unlockCompleted' && msg.data.target === 'contextmenus.background') {
+                await this.cipherAction(msg.data.commandToRetry.sender.tab, msg.data.commandToRetry.msg.data);
             }
         });
     }
@@ -48,8 +56,7 @@ export default class ContextMenusBackground {
         this.passwordGenerationService.addHistory(password);
     }
 
-    private async getClickedElement(frameId: number) {
-        const tab = await BrowserApi.getTabFromCurrentWindow();
+    private async getClickedElement(tab: chrome.tabs.Tab, frameId: number) {
         if (tab == null) {
             return;
         }
@@ -57,27 +64,38 @@ export default class ContextMenusBackground {
         BrowserApi.tabSendMessage(tab, { command: 'getClickedElement' }, { frameId: frameId });
     }
 
-    private async cipherAction(info: any) {
+    private async cipherAction(tab: chrome.tabs.Tab, info: chrome.contextMenus.OnClickData) {
         const id = info.menuItemId.split('_')[1];
-        if (id === 'noop') {
-            if (chrome.browserAction && (chrome.browserAction as any).openPopup) {
-                (chrome.browserAction as any).openPopup();
-            }
-            return;
-        }
 
         if (await this.vaultTimeoutService.isLocked()) {
+            const retryMessage: LockedVaultPendingNotificationsItem = {
+                commandToRetry: {
+                    msg: { command: this.noopCommandSuffix, data: info },
+                    sender: { tab: tab },
+                },
+                target: 'contextmenus.background',
+            };
+            await BrowserApi.tabSendMessageData(tab, 'addToLockedVaultPendingNotifications', retryMessage);
+
+            BrowserApi.tabSendMessageData(tab, 'promptForLogin');
             return;
         }
 
-        const ciphers = await this.cipherService.getAllDecrypted();
-        const cipher = ciphers.find(c => c.id === id);
+        let cipher: CipherView;
+        if (id === this.noopCommandSuffix) {
+            const ciphers = await this.cipherService.getAllDecryptedForUrl(tab.url);
+            cipher = ciphers.length > 0 ? ciphers[0] : null;
+        } else {
+            const ciphers = await this.cipherService.getAllDecrypted();
+            cipher = ciphers.find(c => c.id === id);
+        }
+
         if (cipher == null) {
             return;
         }
 
         if (info.parentMenuItemId === 'autofill') {
-            await this.startAutofillPage(cipher);
+            await this.startAutofillPage(tab, cipher);
         } else if (info.parentMenuItemId === 'copy-username') {
             this.platformUtilsService.copyToClipboard(cipher.login.username, { window: window });
         } else if (info.parentMenuItemId === 'copy-password') {
@@ -89,9 +107,8 @@ export default class ContextMenusBackground {
         }
     }
 
-    private async startAutofillPage(cipher: CipherView) {
+    private async startAutofillPage(tab: chrome.tabs.Tab, cipher: CipherView) {
         this.main.loginToAutoFill = cipher;
-        const tab = await BrowserApi.getTabFromCurrentWindow();
         if (tab == null) {
             return;
         }
