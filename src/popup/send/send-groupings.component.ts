@@ -14,6 +14,7 @@ import { SendComponent as BaseSendComponent } from 'jslib-angular/components/sen
 
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { SearchService } from 'jslib-common/abstractions/search.service';
@@ -50,9 +51,10 @@ export class SendGroupingsComponent extends BaseSendComponent {
         policyService: PolicyService, userService: UserService, searchService: SearchService,
         private popupUtils: PopupUtilsService, private stateService: StateService,
         private router: Router, private syncService: SyncService,
-        private changeDetectorRef: ChangeDetectorRef, private broadcasterService: BroadcasterService) {
+        private changeDetectorRef: ChangeDetectorRef, private broadcasterService: BroadcasterService,
+        logService: LogService) {
         super(sendService, i18nService, platformUtilsService, environmentService, ngZone, searchService,
-            policyService, userService);
+            policyService, userService, logService);
         super.onSuccessfulLoad = async () => {
             this.calculateTypeCounts();
             this.selectAll();

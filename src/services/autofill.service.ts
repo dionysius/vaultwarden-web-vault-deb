@@ -1,5 +1,6 @@
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 
@@ -131,7 +132,8 @@ var IsoProvinces: { [id: string]: string; } = {
 export default class AutofillService implements AutofillServiceInterface {
 
     constructor(private cipherService: CipherService, private userService: UserService,
-        private totpService: TotpService, private eventService: EventService) { }
+        private totpService: TotpService, private eventService: EventService,
+        private logService: LogService) { }
 
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
         const formData: any[] = [];
@@ -1079,7 +1081,9 @@ export default class AutofillService implements AutofillServiceInterface {
                     const regex = new RegExp(regexParts[1], 'i');
                     return regex.test(fieldVal);
                 }
-            } catch (e) { }
+            } catch (e) {
+                this.logService.error(e);
+            }
         } else if (name.startsWith('csv=')) {
             const csvParts = name.split('=', 2);
             if (csvParts.length === 2) {

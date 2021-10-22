@@ -10,6 +10,7 @@ import { first } from 'rxjs/operators';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 
@@ -23,8 +24,9 @@ export class ShareComponent extends BaseShareComponent {
     constructor(collectionService: CollectionService, platformUtilsService: PlatformUtilsService,
         i18nService: I18nService, userService: UserService,
         cipherService: CipherService, private route: ActivatedRoute,
-        private location: Location, private router: Router) {
-        super(collectionService, platformUtilsService, i18nService, userService, cipherService);
+        private router: Router, logService: LogService) {
+        super(collectionService, platformUtilsService, i18nService, userService, cipherService,
+            logService);
     }
 
     async ngOnInit() {

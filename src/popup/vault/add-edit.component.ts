@@ -15,6 +15,7 @@ import { CollectionService } from 'jslib-common/abstractions/collection.service'
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
@@ -23,6 +24,7 @@ import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
+
 import { PopupUtilsService } from '../services/popup-utils.service';
 
 import { LoginUriView } from 'jslib-common/models/view/loginUriView';
@@ -48,9 +50,10 @@ export class AddEditComponent extends BaseAddEditComponent {
         messagingService: MessagingService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         eventService: EventService, policyService: PolicyService,
-        private popupUtilsService: PopupUtilsService, private storageService: StorageService) {
+        private popupUtilsService: PopupUtilsService, private storageService: StorageService,
+        logService: LogService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
-            userService, collectionService, messagingService, eventService, policyService);
+            userService, collectionService, messagingService, eventService, policyService, logService);
     }
 
     async ngOnInit() {
