@@ -958,7 +958,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     return false;
                 }
 
-                const ignoreList = ['onetimepassword', 'captcha', 'findanything'];
+                const ignoreList = ['onetimepassword', 'captcha', 'findanything', 'forgot'];
                 if (ignoreList.some(i => cleanedValue.indexOf(i) > -1)) {
                     return false;
                 }
