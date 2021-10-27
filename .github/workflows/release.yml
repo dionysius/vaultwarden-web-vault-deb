@@ -83,32 +83,43 @@ jobs:
       - setup
       - locales-test
     steps:
+      - name: Get build number
+        id: get-build-commit
+        run: |
+          build_commit=$(ls browser-source-* | cut -d '.' -f 1 | cut -d '-' -f 3)
+          echo "::set-output name=build-commit::$build_commit"
+
       - name: Download latest RC build artifacts
         uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
         with:
           workflow: build.yml
           workflow_conclusion: success
           branch: release
-          artifacts: 'browser-source-*.zip,
-                      dist-chrome-*.zip,
-                      dist-opera-*.zip,
-                      dist-firefox-*.zip,
-                      dist-edge-*.zip'
+          artifacts: 'browser-source-${{ steps.get-build-commit.outputs.build-commit }}.zip,
+                      dist-chrome-${{ steps.get-build-commit.outputs.build-commit }}.zip,
+                      dist-opera-${{ steps.get-build-commit.outputs.build-commit }}.zip,
+                      dist-firefox-${{ steps.get-build-commit.outputs.build-commit }}.zip,
+                      dist-edge-${{ steps.get-build-commit.outputs.build-commit }}.zip'
 
-      - name: Get build number
-        id: get-build-number
+      - name: Rename build artifacts
+        env:
+          BUILD_COMMIT: ${{ steps.get-build-commit.outputs.build-commit }}
+          PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
         run: |
-          build_num=$(ls browser-source-* | grep -oE "[0-9]+")
-          echo "::set-output name=build-number::$build_num"
+          mv browser-source-$BUILD_COMMIT.zip browser-source-$PACKAGE_VERSION.zip
+          mv dist-chrome-$BUILD_COMMIT.zip dist-chrome-$PACKAGE_VERSION.zip
+          mv dist-opera-$BUILD_COMMIT.zip dist-opera-$PACKAGE_VERSION.zip
+          mv dist-firefox-$BUILD_COMMIT.zip dist-firefox-$PACKAGE_VERSION.zip
+          mv dist-edge-$BUILD_COMMIT.zip dist-edge-$PACKAGE_VERSION.zip
 
       - name: Create release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09
         with:
-          artifacts: 'browser-source-${{ steps.get-build-number.outputs.build-number }}.zip,
-                      dist-chrome-${{ steps.get-build-number.outputs.build-number }}.zip,
-                      dist-opera-${{ steps.get-build-number.outputs.build-number }}.zip,
-                      dist-firefox-${{ steps.get-build-number.outputs.build-number }}.zip,
-                      dist-edge-${{ steps.get-build-number.outputs.build-number }}.zip'
+          artifacts: 'browser-source-${{ needs.setup.outputs.release-version }}.zip,
+                      dist-chrome-${{ needs.setup.outputs.release-version }}.zip,
+                      dist-opera-${{ needs.setup.outputs.release-version }}.zip,
+                      dist-firefox-${{ needs.setup.outputs.release-version }}.zip,
+                      dist-edge-${{ needs.setup.outputs.release-version }}.zip'
           commit: ${{ github.sha }}
           tag: "v${{ needs.setup.outputs.release-version }}"
           name: "Version ${{ needs.setup.outputs.release-version }}"
