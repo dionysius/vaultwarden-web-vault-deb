@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Ödənişsiz Şifrə Meneceri",
+    "message": "Bitwarden - Ödənişsiz Parol Meneceri",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Bütün cihazlarınız üçün təhlükəsiz və ödənişsiz bir şifrə meneceri.",
+    "message": "Bütün cihazlarınız üçün təhlükəsiz və ödənişsiz bir parol meneceri.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -35,19 +35,19 @@
     "message": "E-poçt ünvanı"
   },
   "masterPass": {
-    "message": "Ana şifrə"
+    "message": "Ana parol"
   },
   "masterPassDesc": {
-    "message": "Ana şifrə, anbarınıza müraciət etmək üçün istifadə edəcəyiniz şifrədir. Ana şifrəni yadda saxlamaq çox vacibdir. Unutsanız, şifrəni bərpa etməyin heç bir yolu yoxdur."
+    "message": "Ana parol, anbarınıza müraciət etmək üçün istifadə edəcəyiniz paroldur. Ana parolu yadda saxlamaq çox vacibdir. Unutsanız, parolu bərpa etməyin heç bir yolu yoxdur."
   },
   "masterPassHintDesc": {
-    "message": "Ana şifrə məsləhəti, unutduğunuz şifrənizi xatırlamağınıza kömək edir."
+    "message": "Ana parol məsləhəti, unutduğunuz parolunuzu xatırlamağınıza kömək edir."
   },
   "reTypeMasterPass": {
-    "message": "Ana şifrəni yenidən yaz"
+    "message": "Ana parolu yenidən yaz"
   },
   "masterPassHint": {
-    "message": "Ana şifrə məsləhəti (ixtiyari)"
+    "message": "Ana parol məsləhəti (ixtiyari)"
   },
   "tab": {
     "message": "Vərəq"
@@ -65,7 +65,7 @@
     "message": "Hazırkı vərəq"
   },
   "copyPassword": {
-    "message": "Şifrəni kopyala"
+    "message": "Parolu kopyala"
   },
   "copyNote": {
     "message": "Qeydi kopyala"
@@ -86,10 +86,10 @@
     "message": "Avto-doldurma"
   },
   "generatePasswordCopied": {
-    "message": "Şifrə yarat (kopyalandı)"
+    "message": "Parol yarat (kopyalandı)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Özəl sahə adını kopyala"
   },
   "noMatchingLogins": {
     "message": "Uyğun gələn hesab yoxdur."
@@ -110,13 +110,13 @@
     "message": "Element əlavə et"
   },
   "passwordHint": {
-    "message": "Şifrə məsləhəti"
+    "message": "Parol məsləhəti"
   },
   "enterEmailToGetHint": {
-    "message": "Ana şifrə məsləhətini alacağınız hesabınızın e-poçt ünvanını daxil edin."
+    "message": "Ana parol məsləhətini alacağınız hesabınızın e-poçt ünvanını daxil edin."
   },
   "getMasterPasswordHint": {
-    "message": "Ana şifrə üçün məsləhət alın"
+    "message": "Ana parol üçün məsləhət alın"
   },
   "continue": {
     "message": "Davam"
@@ -128,7 +128,7 @@
     "message": "Hesab"
   },
   "changeMasterPassword": {
-    "message": "Ana şifrəni dəyişdir"
+    "message": "Ana parolu dəyişdir"
   },
   "fingerprintPhrase": {
     "message": "Barmaq izi ifadəsi",
@@ -154,7 +154,7 @@
     "message": "Saxla"
   },
   "move": {
-    "message": "Köçür"
+    "message": "Daşı"
   },
   "addFolder": {
     "message": "Qovluq əlavə et"
@@ -187,14 +187,14 @@
     "message": "Son eyniləşdirmə:"
   },
   "passGen": {
-    "message": "Şifrə yaradıcı"
+    "message": "Parol yaradıcı"
   },
   "generator": {
     "message": "Yaradıcı",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Hesablarınız üçün avtomatik olaraq güclü, unikal şifrələr yaradın."
+    "message": "Hesablarınız üçün avtomatik olaraq güclü, unikal parollar yaradın."
   },
   "bitWebVault": {
     "message": "Bitwarden veb anbarı"
@@ -206,10 +206,10 @@
     "message": "Seçin"
   },
   "generatePassword": {
-    "message": "Şifrə yarat"
+    "message": "Parol yarat"
   },
   "regeneratePassword": {
-    "message": "Şifrəni yenidən yarat"
+    "message": "Parolu yenidən yarat"
   },
   "options": {
     "message": "Seçimlər"
@@ -258,7 +258,7 @@
     "message": "İstifadəçi adı"
   },
   "password": {
-    "message": "Şifrə"
+    "message": "Parol"
   },
   "passphrase": {
     "message": "Uzun ifadə"
@@ -309,10 +309,10 @@
     "message": "Veb səyyahınız lövhəyə kopyalamağı dəstəkləmir. Əvəzində əllə kopyalayın."
   },
   "verifyMasterPassword": {
-    "message": "Ana şifrəni təsdiqlə"
+    "message": "Ana parolu təsdiqlə"
   },
   "yourVaultIsLocked": {
-    "message": "Anbarınız kilidlənib. Davam etmək üçün ana şifrənizi təsdiqləyin."
+    "message": "Anbarınız kilidlənib. Davam etmək üçün ana parolunuzu təsdiqləyin."
   },
   "unlock": {
     "message": "Kilidi aç"
@@ -331,7 +331,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Etibarsız ana şifrə"
+    "message": "Etibarsız ana parol"
   },
   "vaultTimeout": {
     "message": "Anbara müraciət bitəcək"
@@ -394,19 +394,19 @@
     "message": "Etibarsız e-poçt ünvanı."
   },
   "masterPassRequired": {
-    "message": "Ana şifrə lazımdır."
+    "message": "Ana parol lazımdır."
   },
   "masterPassLength": {
-    "message": "Ana şifrə ən azı 8 simvol uzunluğunda olmalıdır."
+    "message": "Ana parol ən azı 8 simvol uzunluğunda olmalıdır."
   },
   "masterPassDoesntMatch": {
-    "message": "Ana şifrə təsdiqləməsi uyğun gəlmir."
+    "message": "Ana parol təsdiqləməsi uyğun gəlmir."
   },
   "newAccountCreated": {
     "message": "Yeni hesabınız yaradıldı! İndi giriş edə bilərsiniz."
   },
   "masterPassSent": {
-    "message": "Ana şifrə məsləhətini ehtiva edən bir e-poçt göndərdik."
+    "message": "Ana parol məsləhətini ehtiva edən bir e-poçt göndərdik."
   },
   "verificationCodeRequired": {
     "message": "Təsdiq kodu lazımdır."
@@ -449,10 +449,10 @@
     "message": "Qovluq əlavə edildi"
   },
   "changeMasterPass": {
-    "message": "Ana şifrəni dəyişdir"
+    "message": "Ana parolu dəyişdir"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Ana şifrənizi bitwarden.com veb anbarında dəyişdirə bilərsiniz. İndi saytı ziyarət etmək istəyirsiniz?"
+    "message": "Ana parolunuzu bitwarden.com veb anbarında dəyişdirə bilərsiniz. İndi saytı ziyarət etmək istəyirsiniz?"
   },
   "twoStepLoginConfirmation": {
     "message": "İki mərhələli giriş, təhlükəsizlik açarı, kimlik təsdiqləyici tətbiq, SMS, telefon zəngi və ya e-poçt kimi digər cihazlarla girişinizi təsdiqləməyinizi tələb edərək hesabınızı daha da təhlükəsiz edir. İki mərhələli giriş, bitwarden.com veb anbarında fəallaşdırıla bilər. Veb saytı indi ziyarət etmək istəyirsiniz?"
@@ -479,7 +479,7 @@
     "message": "Uğursuz eyniləşdirmə"
   },
   "passwordCopied": {
-    "message": "Şifrə kopyalandı"
+    "message": "Parol kopyalandı"
   },
   "uri": {
     "message": "URI"
@@ -510,10 +510,10 @@
     "message": "Element tullantı qutusuna göndərildi"
   },
   "overwritePassword": {
-    "message": "Şifrənin üzərinə yaz"
+    "message": "Parolun üzərinə yaz"
   },
   "overwritePasswordConfirmation": {
-    "message": "Hazırkı şifrənin üzərinə yazmaq istədiyinizə əminsiniz?"
+    "message": "Hazırkı parolun üzərinə yazmaq istədiyinizə əminsiniz?"
   },
   "searchFolder": {
     "message": "Qovluq axtar"
@@ -555,7 +555,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Bitwarden sizin üçün bu şifrəni xatırlasın?"
+    "message": "Bitwarden sizin üçün bu parolu xatırlasın?"
   },
   "notificationAddSave": {
     "message": "Bəli, indi saxla"
@@ -564,13 +564,13 @@
     "message": "Bu veb sayt üçüm heç vaxt"
   },
   "disableChangedPasswordNotification": {
-    "message": "\"Şifrə dəyişdirildi\" bildirişini sıradan çıxart"
+    "message": "\"Parol dəyişdirildi\" bildirişini sıradan çıxart"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "\"Şifrə dəyşdirildi bildirişi\", bir veb saytında dəyişdirdiyinizi aşkarlayanda, anbarınızdakı giriş şifrəsini yeniləməyinizi avtomatik olaraq soruşar."
+    "message": "\"Parol dəyişdirildi bildirişi\", bir veb saytında parolu dəyişdirdiyinizi aşkarlayanda, anbarınızda qeyd etdiyiniz parolu yeniləməyinizi avtomatik olaraq soruşur."
   },
   "notificationChangeDesc": {
-    "message": "Bu şifrəni \"Bitwarden\"də yeniləmək istəyirsiniz?"
+    "message": "Bu parolu \"Bitwarden\"də yeniləmək istəyirsiniz?"
   },
   "notificationChangeSave": {
     "message": "Bəli, indi yenilə"
@@ -579,14 +579,14 @@
     "message": "Kontekst menyu seçimlərini sıradan çıxart"
   },
   "disableContextMenuItemDesc": {
-    "message": "Kontekst menyu seçimləri, hazırkı vərəqinizdə veb sayt üçün şifrə yaratma və giriş etmə əməliyyatlarına cəld müraciəti təmin edir."
+    "message": "Kontekst menyu seçimləri, hazırkı vərəqinizdə veb sayt üçün parol yaratma və giriş etmə əməliyyatlarına cəld müraciəti təmin edir."
   },
   "defaultUriMatchDetection": {
     "message": "İlkin URI uyğunluq aşkarlaması",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Avto-doldurma kimim əməliyyatları icra edərkən giriş etmə prosesi üçün URI uyğunluq aşkarlamasının ilkin yolunu seçin."
+    "message": "Avto-doldurma kimi əməliyyatları icra edərkən giriş etmə prosesi üçün URI uyğunluq aşkarlamasının ilkin yolunu seçin."
   },
   "theme": {
     "message": "Tema"
@@ -626,10 +626,10 @@
     "message": "Bu ixrac faylı, hesabınızın şifrələmə açarını istifadə edərək verilənlərinizi şifrələyir. Hesabınızın şifrələmə açarını döndərsəniz, bu ixrac faylının şifrəsini aça bilməyəcəyiniz üçün yenidən ixrac etməli olacaqsınız."
   },
   "encExportAccountWarningDesc": {
-    "message": "Hesab şifrələmə açarları, hər Bitwarden istifadəçi hesabı üçün unikaldır, buna görə də şifrəli bir ixracı, fərqli bir hesaba idxal edə bilməzsiniz."
+    "message": "Hesab şifrələmə açarları, hər Bitwarden istifadəçi hesabı üçün unikaldır, buna görə də şifrələnmiş bir ixracı, fərqli bir hesaba idxal edə bilməzsiniz."
   },
   "exportMasterPassword": {
-    "message": "Anbar verilənlərinizi ixrac etmək üçün ana şifrənizi daxil edin."
+    "message": "Anbar verilənlərinizi ixrac etmək üçün ana parolunuzu daxil edin."
   },
   "shared": {
     "message": "Paylaşılan"
@@ -641,13 +641,13 @@
     "message": "Bitwarden, bir təşkilat hesabı istifadə edərək anbar elementlərinizi başqaları ilə paylaşmağınıza icazə verər. Daha ətraflı məlumat üçün bitwarden.com saytını ziyarət etmək istəyirsiniz?"
   },
   "moveToOrganization": {
-    "message": "Təşkilata köçür"
+    "message": "Təşkilata daşı"
   },
   "share": {
     "message": "Paylaş"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ $ORGNAME$ şirkətinə köçürüldü",
+    "message": "$ITEMNAME$ $ORGNAME$ şirkətinə daşındı",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -660,7 +660,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Bu elementi köçürmək istədiyiniz təşkilatı seçin. Bir təşkilata köçürmək, elementin sahibliyini də həmin təşkilata köçürəcək. Köçürdükdən sonra bu elementə birbaşa sahibliyiniz olmayacaq."
+    "message": "Bu elementi daşımaq istədiyiniz təşkilatı seçin. Bir təşkilata daşımaq, elementin sahibliyini də həmin təşkilata daşıyacaq. Daşıdıqdan sonra bu elementə birbaşa sahibliyiniz olmayacaq."
   },
   "learnMore": {
     "message": "Daha ətraflı"
@@ -735,7 +735,7 @@
     "message": "YubiKey, FIDO U2F və Duo kimi iki mərhələli giriş seçimləri"
   },
   "ppremiumSignUpReports": {
-    "message": "Anbarınızın təhlükəsiyini təmin etmək üçün şifrə gigiyenası, hesab sağlamlığı və verilənlərin pozulması hesabatları."
+    "message": "Anbarınızın təhlükəsiyini təmin etmək üçün parol gigiyenası, hesab sağlamlığı və verilənlərin pozulması hesabatları."
   },
   "ppremiumSignUpTotp": {
     "message": "Anbarınızdakı hesablar üçün TOTP təsdiqləmə kodu (2FA) yaradıcısı."
@@ -777,7 +777,7 @@
     "message": "Hesabınıza əlavə edilən kimlik təsdiqləyici açarı varsa, giriş məlumatları avto-doldurulanda TOTP təsdiqləmə kodu da avtomatik olaraq lövhəyə kopyalanacaq."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "Açılışda biometrik üçün soruşma"
   },
   "premiumRequired": {
     "message": "Premium üzvlük lazımdır"
@@ -951,7 +951,7 @@
     "message": "Hazırkı veb sayt üçün son istifadə edilən giriş məlumatlarını avto-doldur"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Təsadüfi yeni bir şifrə yarat və lövhəyə kopyala"
+    "message": "Təsadüfi yeni bir parol yarat və lövhəyə kopyala"
   },
   "commandLockVaultDesc": {
     "message": "Anbarı kilidlə"
@@ -1149,7 +1149,7 @@
     "message": "Kimlik"
   },
   "passwordHistory": {
-    "message": "Şifrə tarixçəsi"
+    "message": "Parol tarixçəsi"
   },
   "back": {
     "message": "Geri"
@@ -1183,10 +1183,10 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {
-    "message": "Şifrənizin oğurlanıb oğurlanmadığını yoxlayın."
+    "message": "Parolunuzun oğurlanıb oğurlanmadığını yoxlayın."
   },
   "passwordExposed": {
-    "message": "Bu şifrə, məlumat pozuntularında $VALUE$ dəfə üzə çıxıb. Dəyişdirməyi məsləhət görürük.",
+    "message": "Bu parol, məlumat pozuntularında $VALUE$ dəfə üzə çıxıb. Dəyişdirməyi məsləhət görürük.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1195,7 +1195,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Bu şifrə, məlumat pozuntularında qeydə alınmayıb. Rahatlıqla istifadə edə bilərsiniz."
+    "message": "Bu parol, məlumat pozuntularında qeydə alınmayıb. Rahatlıqla istifadə edə bilərsiniz."
   },
   "baseDomain": {
     "message": "Baza domeni"
@@ -1244,7 +1244,7 @@
     "message": "Bütün elementlər"
   },
   "noPasswordsInList": {
-    "message": "Siyahılanacaq heç bir şifrə yoxdur."
+    "message": "Siyahılanacaq heç bir parol yoxdur."
   },
   "remove": {
     "message": "Çıxart"
@@ -1257,7 +1257,7 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Şifrə yeniləndi",
+    "message": "Parol yeniləndi",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
@@ -1288,10 +1288,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Zəif ana şifrə"
+    "message": "Zəif ana parol"
   },
   "weakMasterPasswordDesc": {
-    "message": "Seçdiyiniz ana şifrə zəifdir. Bitwarden hesabınızı daha yaxşı qorumaq üçün güclü bir ana şifrə (və ya uzun ifadə) istifadə etməlisiniz. Bu ana şifrəni istifadə etmək istədiyinizə əminsiniz?"
+    "message": "Seçdiyiniz ana parol zəifdir. Bitwarden hesabınızı daha yaxşı qorumaq üçün güclü bir ana parol (və ya uzun ifadə) istifadə etməlisiniz. Bu ana parol istifadə etmək istədiyinizə əminsiniz?"
   },
   "pin": {
     "message": "PIN",
@@ -1325,7 +1325,7 @@
     "message": "Səyyah üçün biometrikləri fəallaşdırmaq üçün zəhmət olmasa Bitwarden masaüstü tətbiqində biometrik istifadəsini təsdiqləyin."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Səyyah yenidən başladılanda ana şifrə ilə kilidlə"
+    "message": "Səyyah yenidən başladılanda ana parol ilə kilidlə"
   },
   "selectOneCollection": {
     "message": "Ən azı bir kolleksiya seçməlisiniz."
@@ -1387,10 +1387,10 @@
     "message": "Element avto-dolduruldu"
   },
   "setMasterPassword": {
-    "message": "Ana şifrəni tənzimlə"
+    "message": "Ana parolu tənzimlə"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Bir və ya daha çox təşkilat siyasəti, aşağıdakı tələbləri qarşılamaq üçün ana şifrənizi tələb edir:"
+    "message": "Bir və ya daha çox təşkilat siyasəti, aşağıdakı tələbləri qarşılamaq üçün ana parolunuzu tələb edir:"
   },
   "policyInEffectMinComplexity": {
     "message": "Minimum mürəkkəblik xalı: $SCORE$",
@@ -1429,7 +1429,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Yeni ana şifrəniz siyasət tələblərini qarşılamır."
+    "message": "Yeni ana parolunuz siyasət tələblərini qarşılamır."
   },
   "acceptPolicies": {
     "message": "Bu qutunu işarələyərək aşağıdakılarla razılaşırsınız:"
@@ -1444,7 +1444,7 @@
     "message": "Gizlilik Siyasəti"
   },
   "hintEqualsPassword": {
-    "message": "Şifrə məsləhəti, şifrənizlə eyni ola bilməz."
+    "message": "Parol məsləhəti, parolunuzla eyni ola bilməz."
   },
   "ok": {
     "message": "Oldu"
@@ -1562,20 +1562,20 @@
     "message": "Silinməsi gözlənilir"
   },
   "passwordProtected": {
-    "message": "Şifrə qorumalı"
+    "message": "Parolla qorunan"
   },
   "copySendLink": {
     "message": "\"Send\" bağlantısını kopyala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "Şifrəni çıxart"
+    "message": "Parolu çıxart"
   },
   "delete": {
     "message": "Sil"
   },
   "removedPassword": {
-    "message": "Şifrə çıxarıldı"
+    "message": "Parol çıxarıldı"
   },
   "deletedSend": {
     "message": "Send silindi",
@@ -1589,7 +1589,7 @@
     "message": "Sıradan çıxarıldı"
   },
   "removePasswordConfirmation": {
-    "message": "Şifrəni çıxartmaq istədiyinizə əminsiniz?"
+    "message": "Parolu çıxartmaq istədiyinizə əminsiniz?"
   },
   "deleteSend": {
     "message": "\"Send\"i sil",
@@ -1651,7 +1651,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "İstəyinizə görə istifadəçilərdən bu \"Send\"ə müraciət edərkən şifrə tələb edə bilərsiniz.",
+    "message": "İstəyinizə görə istifadəçilərdən bu \"Send\"ə müraciət edərkən parol tələb edə bilərsiniz.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1681,7 +1681,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "Yeni şifrə"
+    "message": "Yeni parol"
   },
   "sendDisabled": {
     "message": "Send sıradan çıxarıldı",
@@ -1745,13 +1745,13 @@
     "message": "Bir və ya daha çox təşkilat siyasətləri \"Send\" seçimlərinizə təsir edir."
   },
   "passwordPrompt": {
-    "message": "Ana şifrəni yenidə istə"
+    "message": "Ana parolu təkrar soruş"
   },
   "passwordConfirmation": {
-    "message": "Ana şifrə təsdiqi"
+    "message": "Ana parol təsdiqi"
   },
   "passwordConfirmationDesc": {
-    "message": "Bu əməliyyat qorumalıdır, davam etmək üçün zəhmət olmasa kimliyinizi təsdiqləmək üçün ana şifrənizi təkrar daxil edin."
+    "message": "Bu əməliyyat qorumalıdır, davam etmək üçün zəhmət olmasa kimliyinizi təsdiqləmək üçün ana parolunuzu təkrar daxil edin."
   },
   "emailVerificationRequired": {
     "message": "E-poçt təsdiqləməsi tələb olunur"
@@ -1760,34 +1760,34 @@
     "message": "Bu özəlliyi istifadə etmək üçün e-poçtunuzu təsdiqləməlisiniz. E-poçtunuzu veb anbarında təsdiqləyə bilərsiniz."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Yenilənmiş ana parol"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Ana parolu yenilə"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ana parolunuz təzəlikcə təşkilatınızdakı bir administrator tərəfindən dəyişdirildi. Anbara müraciət üçün indi yeniləməlisiniz. Davam etsəniz, hazırkı seansdan çıxış etmiş və təkrar giriş etməli olacaqsınız. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Avtomatik qeydiyyat"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Bu təşkilat, sizi \"parol sıfırlama\"da avtomatik olaraq qeydiyyata alan müəssisə siyasətinə sahibdir. Qeydiyyat, təşkilat administratorlarına ana parolunuzu dəyişdirmə icazəsi verəcək."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Qovluq seçin..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "SSO ilə giriş prosesini tamamlamaq üçün zəhmət olmasa anbarınıza müraciət etmək və onu qorumaq üçün bir ana parol tənzimləyin."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Saat"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Dəqiqə"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Təşkilatınızın siyasətləri, anbarınızın vaxt bitişinə təsir edir. Anbar vaxt bitişi üçün icazə verilən maksimum vaxt $HOURS$ saat $MINUTES$ dəqiqədir",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1800,18 +1800,18 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Anbar vaxt bitişi, təşkilatınız tərəfindən tənzimlənən məhdudiyyətləri aşır."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Anbar ixracı sıradan çıxarıldı"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Bir və ya daha çox təşkilat siyasəti, fərdi anbarınızı ixrac etməyinizin qarşısını alır."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Etibarlı form elementi müəyyənləşdirilə bilmir. Bunun əvəzinə HTML-i nəzərdən keçirməyi sınayın."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Unikal identifikator tapılmadı."
   }
 }

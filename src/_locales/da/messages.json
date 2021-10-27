@@ -89,7 +89,7 @@
     "message": "Generér adgangskode (kopieret)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Kopier Brugerdefineret Feltnavn"
   },
   "noMatchingLogins": {
     "message": "Ingen matchende logins."
@@ -777,7 +777,7 @@
     "message": "Hvis dit login har en autentificeringsnøgle tilknyttet, kopieres TOTP verifikationskoden automatisk til din udklipsholder når du auto-udfylder login."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "Bed ikke om biometri ved start"
   },
   "premiumRequired": {
     "message": "Premium påkrævet"
@@ -1760,31 +1760,31 @@
     "message": "Du skal bekræfte din e-mail for at bruge denne funktion. Du kan bekræfte din e-mail i web-boksen."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Hovedadgangskode opdateret"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Opdatér hovedadgangskode"
   },
   "updateMasterPasswordWarning": {
     "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatisk Indskrivning"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Vælg mappe..."
   },
   "ssoCompleteRegistration": {
     "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Timer"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minutter"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
@@ -1812,6 +1812,6 @@
     "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Ingen entydig identifikator fundet."
   }
 }

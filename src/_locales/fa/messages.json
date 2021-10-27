@@ -89,7 +89,7 @@
     "message": "ساخت کلمه عبور (کپی شد)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "رونوشت نام فیلد سفارشی"
   },
   "noMatchingLogins": {
     "message": "ورودیها منتطبق نیست."
@@ -777,7 +777,7 @@
     "message": "اگر ورود شما دارای یک کلید تأیید کننده است که به آن متصل شده است، هر زمان که بصورت خودکار وارد سایت شوید کد تأیید TOTP به صورت خودکار به کلیپ بورد شما کپی می شود."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "در هنگام راه اندازی، درخواست biometrics نکنید."
   },
   "premiumRequired": {
     "message": "در نسخه پرمیوم کار میکند"
@@ -1760,34 +1760,34 @@
     "message": "برای استفاده از این ویژگی باید ایمیل خود را تأیید کنید. می توانید ایمیل خود را در گاوصندوق وب تأیید کنید."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "کلمه عبور اصلی بروز شد"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "بروزرسانی کلمه عبور اصلی"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "کلمه عبور اصلی شما اخیراً توسط سرپرست سازمانتان تغییر کرده است. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "ثبت نام خودکار"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "این سازمان دارای خط مشی سازمانی ای است که به طور خودکار شما را در بازنشانی کلمه عبور ثبت نام می کند. این ثبت نام به مدیران سازمان اجازه می دهد تا کلمه عبور اصلی شما را تغییر دهند."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "پوشه را انتخاب کنید..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "برای تکمیل ورود به سیستم با SSO ، لطفاً یک کلمه عبور اصلی برای دسترسی و محافظت از گاوصندوق خود تنظیم کنید."
   },
   "hours": {
-    "message": "Hours"
+    "message": "ساعت"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "دقیقه"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "خط مشی های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می گذارد. حداکثر زمان مجاز گاوصندوق $HOURS$ ساعت و $MINUTES$ دقیقه است",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1800,18 +1800,18 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "مهلت زمانی شما بیش از محدودیت های تعیین شده توسط سازمانتان است."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "صادرات گاوصندوق غیرفعال شده است"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "شناسایی عنصر فرم معتبر امکان پذیر نیست. به جای آن سعی کنید HTML را بررسی کنید."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "شناسه منحصر به فردی یافت نشد."
   }
 }

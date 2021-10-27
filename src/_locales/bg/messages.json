@@ -89,7 +89,7 @@
     "message": "Генериране на парола (копирана)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Копиране на името на допълнителното поле"
   },
   "noMatchingLogins": {
     "message": "Няма съвпадащи записи."
@@ -777,7 +777,7 @@
     "message": "Ако регистрацията използва и удостоверителен ключ, временният, еднократен код се копира в буфера при всяко автоматично попълване на формуляра."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "Да не се изискват биометрични данни при стартиране"
   },
   "premiumRequired": {
     "message": "Изисква се платен абонамент"
@@ -1253,7 +1253,7 @@
     "message": "Стандартно"
   },
   "dateUpdated": {
-    "message": "Осъвременено",
+    "message": "Обновено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1760,25 +1760,25 @@
     "message": "Трябва да потвърдите е-пощата си, за да използвате тази функционалност. Можете да го направите в уеб-трезора."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Главната парола е променена"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Промяна на главната парола"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Вашата главна парола наскоро е била сменена от администратор в организацията Ви. За да получите достъп до трезора, трябва първо да я промените. Това означава, че ще бъдете отписан(а) от текущата си сесия и ще трябва да се впишете отново. Активните сесии на други устройства може да продължат да бъдат активни още един час."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Автоматично включване"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Тази организация включва автоматично новите си потребители в смяната на пароли. Това означава, че администраторите на организацията ще могат да променят главната Ви парола."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Избиране на папка..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "За да завършите настройките за еднократна идентификация, трябва да зададете главна парола за трезора."
   },
   "hours": {
     "message": "Hours"
@@ -1787,7 +1787,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Настройките на организацията Ви влияят върху времето за достъп до трезора Ви. Максималното разрешено време за достъп е $HOURS$ час(а) и $MINUTES$ минути",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1800,18 +1800,18 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Времето за достъп до трезора Ви превишава ограничението, определено от организацията Ви."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Изнасянето на трезора е изключено"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Една или повече от настройките на организацията Ви не позволяват да изнасяте личния си трезор."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Не може да бъде открит подходящ елемент от формуляр. Опитайте да инспектирате кода на HTML."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Няма намерен уникален идентификатор."
   }
 }
