@@ -121,7 +121,7 @@ jobs:
           call git submodule update --init --recursive
           cd ../
           del /S/Q "Source\.git\objects\pack\*"
-          call 7z a browser-source-%_BUILD_NUMBER%.zip "Source\*"
+          call 7z a browser-source.zip "Source\*"
 
       - name: Upload Opera artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
@@ -155,7 +155,7 @@ jobs:
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: browser-source-${{ env._BUILD_NUMBER }}.zip
-          path: dist/browser-source-${{ env._BUILD_NUMBER }}.zip
+          path: dist/browser-source.zip
           if-no-files-found: error
 
       - name: Upload coverage artifact
