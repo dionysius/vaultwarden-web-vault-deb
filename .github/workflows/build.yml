@@ -115,7 +115,7 @@ jobs:
         shell: cmd
         run: |
           mkdir dist\Source
-          call git clone %_REPO_URL% dist\Source
+          call git clone %GITHUB_SERVER_URL%/%GITHUB_REPOSITORY% dist\Source
           cd dist\Source
           call git checkout %GITHUB_SHA%
           call git submodule update --init --recursive
