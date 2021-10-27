@@ -89,7 +89,7 @@
     "message": "Wachtwoord genereren (op klembord)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Aangepaste veldnaam kopiëren"
   },
   "noMatchingLogins": {
     "message": "Geen overeenkomstige logins."
@@ -777,7 +777,7 @@
     "message": "Als je login gekoppeld is met een authenticatiecode, wordt de TOTP-verificatiecode automatisch naar het klembord gekopieerd bij het automatisch invullen van de login."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "Bij opstarten niet om biometrisch ontgrendelen vragen"
   },
   "premiumRequired": {
     "message": "Premium is vereist"
@@ -1760,34 +1760,34 @@
     "message": "Je moet je e-mailadres verifiëren om deze functie te gebruiken. Je kunt je e-mailadres verifiëren in de kluis."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Hoofdwachtwoord bijgewerkt"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Hoofdwachtwoord bijgewerken"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Je hoofdwachtwoord is onlangs veranderd door een beheerder in jouw organisatie. Om toegang te krijgen tot de kluis, moet je deze nu bijwerken. Doorgaan zal je huidige sessie uitloggen, waarna je opnieuw moet inloggen. Actieve sessies op andere apparaten blijven mogelijk nog een uur actief."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatische inschrijving"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Deze organisatie heeft een ondernemingsbeleid dat je automatisch inschrijft bij het resetten van je wachtwoord. Inschrijving stelt organisatiebeheerders in staat om je hoofdwachtwoord te wijzigen."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Map selecteren..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Voor het inloggen met SSO moet je een hoofdwachtwoord instellen voor toegang tot en bescherming van je kluis."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Uren"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minuten"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Het beleid van je organisatie heeft invloed op de time-out van je kluis. De maximaal toegestane Kluis Time-out is $HOURS$ uur en $MINUTES$ minuten",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1800,18 +1800,18 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Je kluis time-out is hoger dan het maximum van jouw organisatie."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Kluis exporteren uitgeschakeld"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Organisatiebeleid voorkomt dat je je persoonlijke kluis exporteert."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Kan geen geldig formulierelement identificeren. Probeer in plaats daarvan de HTML te inspecteren."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Geen unieke id gevonden."
   }
 }

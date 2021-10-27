@@ -89,7 +89,7 @@
     "message": "Passwort generieren (kopiert)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Benutzerdefinierten Feldnamen kopieren"
   },
   "noMatchingLogins": {
     "message": "Keine passenden Zugangsdaten."
@@ -777,7 +777,7 @@
     "message": "Ist ein Authentifizierungsschlüssel mit deinen Zugangsdaten verknüpft, wird der TOTP Bestätigungscode automatisch in die Zwischenablage kopiert, wenn du die Zugangsdaten einfügen lässt."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "Beim Start nicht nach biometrischen Daten fragen"
   },
   "premiumRequired": {
     "message": "Premium-Mitgliedschaft wird benötigt"
@@ -1760,34 +1760,34 @@
     "message": "Du musst deine E-Mail Adresse verifizieren, um diese Funktion nutzen zu können. Du kannst deine E-Mail im Web-Tresor verifizieren."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Master-Passwort aktualisiert"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Master-Passwort aktualisieren"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Dein Master-Passwort wurde kürzlich von einem Administrator Ihrer Organisation geändert. Um auf den Tresor zuzugreifen, musst du es jetzt aktualisieren. Wenn du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet, eine erneute Anmeldung wird erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatische Registrierung"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Diese Organisation hat eine Unternehmensrichtlinie, die dich automatisch zum Zurücksetzen deines Passworts registriert. Die Registrierung wird es Administratoren der Organisation erlauben, dein Master-Passwort zu ändern."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Ordner auswählen..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Um die Anmeldung über SSO abzuschließen, lege bitte ein Master-Passwort fest, um auf deinen Tresor zuzugreifen und ihn zu schützen."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Stunden"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minuten"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Deine Unternehmensrichtlinien beeinflussen dein Tresor-Timeout. Das maximal zulässige Tresor-Timeout ist $HOURS$ Stunde(n) und $MINUTES$ Minute(n)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1800,18 +1800,18 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Dein Tresor-Timeout überschreitet die von deinem Unternehmen festgelegten Beschränkungen."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Tresor-Export deaktiviert"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Eine oder mehrere Unternehmensrichtlinien hindern dich daran, deinen persönlichen Tresor zu exportieren."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Es konnte kein gültiges Formularelement identifiziert werden. Versuche stattdessen das HTML zu untersuchen."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Keine eindeutige Kennung gefunden."
   }
 }

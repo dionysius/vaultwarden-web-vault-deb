@@ -1539,7 +1539,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "addSend": {
-    "message": "Lägg till försändelse",
+    "message": "Lägg till Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeText": {
@@ -1596,11 +1596,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
-    "message": "Är du säker på att du vill radera denna försändelse?",
+    "message": "Är du säker på att du vill radera denna Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Redigera försändelse",
+    "message": "Redigera Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeHeader": {
@@ -1677,14 +1677,14 @@
     "message": "Nuvarande antal åtkomster"
   },
   "createSend": {
-    "message": "Skapa ny försändelse",
+    "message": "Skapa ny Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Nytt lösenord"
   },
   "sendDisabled": {
-    "message": "Försändelser inaktiverade",
+    "message": "Send Disabled",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1775,16 +1775,16 @@
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Välj mapp…"
   },
   "ssoCompleteRegistration": {
     "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Timmar"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minuter"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",

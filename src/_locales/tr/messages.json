@@ -89,7 +89,7 @@
     "message": "Parola oluştur (ve kopyala)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Özel alan adını kopyala"
   },
   "noMatchingLogins": {
     "message": "Eşleşen hesap yok."
@@ -777,7 +777,7 @@
     "message": "Hesabınıza bağlı bir kimlik doğrulama anahtarı varsa giriş bilgilerini otomatik olarak doldurduğunuzda TOTP doğrulama kodu da otomatik olarak panonuza kopyalanır."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "Açılışta biyometri doğrulaması isteme"
   },
   "premiumRequired": {
     "message": "Premium gerekli"
@@ -1760,34 +1760,34 @@
     "message": "Bu özelliği kullanmak için e-postanızı doğrulamanız gerekir. E-postanızı web kasasında doğrulayabilirsiniz."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Ana parola güncellendi"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Ana parolayı güncelle"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ana parolanız organizasyonunuzdaki bir yönetici tarafından yakın zaman önce değiştirildi. Kasanıza erişmek için bunu güncellemeniz gereklidir. Devam ettiğinizde oturumunuz kapatılacak ve tekrardan oturum açmanız gerekecektir. Diğer cihazlardaki aktif oturumlar bir saate kadar aktif kalabilirler. "
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Otomatik Kaydolma"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Bu kuruluş, sizi otomatik olarak parola sıfırlama işlemine kaydedecek bir kurumsal ilkeye sahiptir.  Kayıt işlemi kuruluş yöneticilerinin ana parolanızı değiştirmesine olanak tanır."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Klasör seç..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "SSO ile girişinizi tamamlamak için lütfen kasanıza erişirken kullanacağınız ana parolayı belirleyin."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Saat"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Dakika"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Kuruluş ilkeleriniz kasa zaman aşımınızı etkiliyor.  İzin verilen maksimum Kasa Zaman Aşımı {0} saat ve {1} dakikadır",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1800,18 +1800,18 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Kasa zaman aşımınız, kuruluşunuz tarafından belirlenen kısıtlamaları aşıyor."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Kasayı dışa aktarma devre dışı"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Bir veya daha fazla kuruluş ilkesi, kişisel kasanızı dışa aktarmanızı engelliyor."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Benzersiz tanımlayıcı bulunamadı."
   }
 }

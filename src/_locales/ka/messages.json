@@ -1,38 +1,38 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Free Password Manager",
+    "message": "Bitwarden - Free Password Manager",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "bitwarden is a secure and free password manager for all of your devices.",
+    "message": "A secure and free password manager for all of your devices.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
     "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "สร้างบัญชี"
+    "message": "Create Account"
   },
   "login": {
-    "message": "เข้าสู่ระบบ"
+    "message": "Log In"
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise Single Sign-On"
   },
   "cancel": {
-    "message": "ยกเลิก"
+    "message": "გაუქმება"
   },
   "close": {
-    "message": "ปิด"
+    "message": "დახურვა"
   },
   "submit": {
-    "message": "ส่งข้อมูล"
+    "message": "დადასტურება"
   },
   "emailAddress": {
-    "message": "ที่อยู่อีเมล"
+    "message": "ელ-ფოსტა"
   },
   "masterPass": {
     "message": "Master Password"
@@ -50,40 +50,40 @@
     "message": "Master Password Hint (optional)"
   },
   "tab": {
-    "message": "แท็บ"
+    "message": "Tab"
   },
   "myVault": {
     "message": "My Vault"
   },
   "tools": {
-    "message": "เครื่องมือ"
+    "message": "ხელსაწყოები"
   },
   "settings": {
-    "message": "การตั้งค่า"
+    "message": "პარამეტრები"
   },
   "currentTab": {
-    "message": "แท็บปัจจุบัน"
+    "message": "Current Tab"
   },
   "copyPassword": {
-    "message": "คัดลอกรหัสผ่าน"
+    "message": "Copy Password"
   },
   "copyNote": {
     "message": "Copy Note"
   },
   "copyUri": {
-    "message": "คัดลอก URI"
+    "message": "Copy URI"
   },
   "copyUsername": {
-    "message": "คัดลอกชื่อผู้ใช้"
+    "message": "Copy Username"
   },
   "copyNumber": {
-    "message": "คัดลอกหมายเลข"
+    "message": "Copy Number"
   },
   "copySecurityCode": {
-    "message": "คัดลอกรหัสรักษาความปลอดภัย"
+    "message": "Copy Security Code"
   },
   "autoFill": {
-    "message": "กรอกข้อมูลอัตโนมัติ"
+    "message": "თვითშევსება"
   },
   "generatePasswordCopied": {
     "message": "Generate Password (copied)"
@@ -107,10 +107,10 @@
     "message": "Add a Login"
   },
   "addItem": {
-    "message": "เพิ่มรายการ"
+    "message": "Add Item"
   },
   "passwordHint": {
-    "message": "คำใบ้รหัสผ่าน"
+    "message": "Password Hint"
   },
   "enterEmailToGetHint": {
     "message": "Enter your account email address to receive your master password hint."
@@ -119,13 +119,13 @@
     "message": "Get master password hint"
   },
   "continue": {
-    "message": "ดำเนินการต่อไป"
+    "message": "გაგრძელება"
   },
   "verificationCode": {
     "message": "Verification Code"
   },
   "account": {
-    "message": "บัญชี"
+    "message": "ანგარიში"
   },
   "changeMasterPassword": {
     "message": "Change Master Password"
@@ -142,34 +142,34 @@
     "message": "Two-step Login"
   },
   "logOut": {
-    "message": "ออกจากระบบ"
+    "message": "გამოსვლა"
   },
   "about": {
-    "message": "เกี่ยวกับ"
+    "message": "შესახებ"
   },
   "version": {
-    "message": "เวอร์ชัน"
+    "message": "ვერსია"
   },
   "save": {
-    "message": "บันทึก"
+    "message": "შენახვა"
   },
   "move": {
-    "message": "ย้าย"
+    "message": "Move"
   },
   "addFolder": {
-    "message": "เพิ่มโฟลเดอร์"
+    "message": "Add Folder"
   },
   "name": {
-    "message": "ชื่อ"
+    "message": "Name"
   },
   "editFolder": {
-    "message": "แก้ไขโฟลเดอร์"
+    "message": "Edit Folder"
   },
   "deleteFolder": {
-    "message": "ลบโฟลเดอร์"
+    "message": "Delete Folder"
   },
   "folders": {
-    "message": "โฟลเดอร์"
+    "message": "Folders"
   },
   "noFolders": {
     "message": "There are no folders to list."
@@ -178,7 +178,7 @@
     "message": "Help & Feedback"
   },
   "sync": {
-    "message": "ซิงค์"
+    "message": "Sync"
   },
   "syncVaultNow": {
     "message": "Sync Vault Now"
@@ -197,13 +197,13 @@
     "message": "Automatically generate strong, unique passwords for your logins."
   },
   "bitWebVault": {
-    "message": "bitwarden Web Vault"
+    "message": "Bitwarden Web Vault"
   },
   "importItems": {
     "message": "Import Items"
   },
   "select": {
-    "message": "เลือก"
+    "message": "მონიშვნა"
   },
   "generatePassword": {
     "message": "Generate Password"
@@ -212,19 +212,19 @@
     "message": "Regenerate Password"
   },
   "options": {
-    "message": "Options"
+    "message": "პარამეტრები"
   },
   "length": {
-    "message": "Length"
+    "message": "სიგრძე"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "სიტყვათა რაოდენობა"
   },
   "wordSeparator": {
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "დიდი ასოთი აღნიშვნა",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -255,49 +255,49 @@
     "message": "Item Information"
   },
   "username": {
-    "message": "ชื่อผู้ใช้"
+    "message": "Username"
   },
   "password": {
-    "message": "รหัสผ่าน"
+    "message": "პაროლი"
   },
   "passphrase": {
     "message": "Passphrase"
   },
   "favorite": {
-    "message": "รายการโปรด"
+    "message": "რჩეული"
   },
   "notes": {
-    "message": "โน้ต"
+    "message": "Notes"
   },
   "note": {
-    "message": "โน้ต"
+    "message": "Note"
   },
   "editItem": {
-    "message": "แก้ไขรายการ"
+    "message": "Edit Item"
   },
   "folder": {
-    "message": "โฟลเดอร์"
+    "message": "Folder"
   },
   "deleteItem": {
-    "message": "ลบรายการ"
+    "message": "Delete Item"
   },
   "viewItem": {
-    "message": "ดูรายการ"
+    "message": "View Item"
   },
   "launch": {
-    "message": "เริ่ม"
+    "message": "Launch"
   },
   "website": {
-    "message": "เว็บไซต์"
+    "message": "ვებგვერდი"
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
   },
   "manage": {
-    "message": "จัดการ"
+    "message": "Manage"
   },
   "other": {
-    "message": "อื่น ๆ"
+    "message": "სხვა"
   },
   "rateExtension": {
     "message": "Rate the Extension"
@@ -315,7 +315,7 @@
     "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "ปลดล็อค"
+    "message": "გახსნა"
   },
   "loggedInAsOn": {
     "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
@@ -331,7 +331,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "รหัสผ่านหลักไม่ถูกต้อง"
+    "message": "Invalid master password"
   },
   "vaultTimeout": {
     "message": "Vault Timeout"
@@ -340,49 +340,49 @@
     "message": "Lock Now"
   },
   "immediately": {
-    "message": "ทันที"
+    "message": "დაუყონებლივ"
   },
   "tenSeconds": {
-    "message": "10 วินาที"
+    "message": "10 წამი"
   },
   "twentySeconds": {
-    "message": "20 วินาที"
+    "message": "20 წამი"
   },
   "thirtySeconds": {
-    "message": "30 วินาที"
+    "message": "30 წამი"
   },
   "oneMinute": {
-    "message": "1 นาที"
+    "message": "1 წუთი"
   },
   "twoMinutes": {
-    "message": "2 นาที"
+    "message": "2 წუთი"
   },
   "fiveMinutes": {
-    "message": "5 นาที"
+    "message": "5 minutes"
   },
   "fifteenMinutes": {
-    "message": "15 นาที"
+    "message": "15 minutes"
   },
   "thirtyMinutes": {
-    "message": "30 นาที"
+    "message": "30 minutes"
   },
   "oneHour": {
-    "message": "1 ชั่วโมง"
+    "message": "1 hour"
   },
   "fourHours": {
-    "message": "4 ชั่วโมง"
+    "message": "4 hours"
   },
   "onLocked": {
-    "message": "On Locked"
+    "message": "On System Lock"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "On Browser Restart"
   },
   "never": {
-    "message": "ไม่อีกเลย"
+    "message": "Never"
   },
   "security": {
-    "message": "ความปลอดภัย"
+    "message": "Security"
   },
   "errorOccurred": {
     "message": "An error has occurred"
@@ -391,7 +391,7 @@
     "message": "Email address is required."
   },
   "invalidEmail": {
-    "message": "ที่อยู่อีเมลไม่ถูกต้อง"
+    "message": "Invalid email address."
   },
   "masterPassRequired": {
     "message": "Master password is required."
@@ -412,7 +412,7 @@
     "message": "Verification code is required."
   },
   "valueCopied": {
-    "message": " copied",
+    "message": "$VALUE$ copied",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -422,10 +422,10 @@
     }
   },
   "autofillError": {
-    "message": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
+    "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
   },
   "loggedOut": {
-    "message": "ออกจากระบบ"
+    "message": "Logged out"
   },
   "loginExpired": {
     "message": "Your login session has expired."
@@ -434,16 +434,16 @@
     "message": "Are you sure you want to log out?"
   },
   "yes": {
-    "message": "ใช่"
+    "message": "Yes"
   },
   "no": {
-    "message": "ไม่ใช่"
+    "message": "არა"
   },
   "unexpectedError": {
-    "message": "An unexpected error has occured."
+    "message": "An unexpected error has occurred."
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "სახელი სავალდებულოა."
   },
   "addedFolder": {
     "message": "Added folder"
@@ -455,10 +455,10 @@
     "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "editedFolder": {
-    "message": "Edited Folder"
+    "message": "Edited folder"
   },
   "deleteFolderConfirmation": {
     "message": "Are you sure you want to delete this folder?"
@@ -555,7 +555,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Should bitwarden remember this password for you?"
+    "message": "Should Bitwarden remember this password for you?"
   },
   "notificationAddSave": {
     "message": "Yes, Save Now"
@@ -729,7 +729,7 @@
     "message": "Sign up for a premium membership and get:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB encrypted storage for file attachments."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
@@ -756,10 +756,10 @@
     "message": "You are a premium member!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just %price% /year!",
+    "message": "All for just $PRICE$ /year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -789,7 +789,7 @@
     "message": "Enter the 6 digit verification code from your authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to",
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -885,7 +885,7 @@
     "message": "Self-hosted Environment"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
   },
   "customEnvironment": {
     "message": "Custom Environment"
@@ -915,7 +915,7 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load."
+    "message": "Enable Auto-fill on Page Load"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
@@ -948,10 +948,10 @@
     "message": "Open vault in sidebar"
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website."
+    "message": "Auto-fill the last used login for the current website"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard."
+    "message": "Generate and copy a new random password to the clipboard"
   },
   "commandLockVaultDesc": {
     "message": "Lock the vault"
@@ -993,7 +993,7 @@
     "message": "Disable Website Icons"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
   "disableBadgeCounter": {
     "message": "Disable Badge Counter"
@@ -1017,43 +1017,43 @@
     "message": "Expiration Year"
   },
   "expiration": {
-    "message": "วันหมดอายุ"
+    "message": "Expiration"
   },
   "january": {
-    "message": "มกราคม"
+    "message": "January"
   },
   "february": {
-    "message": "กุมภาพันธ์"
+    "message": "February"
   },
   "march": {
-    "message": "มีนาคม"
+    "message": "March"
   },
   "april": {
-    "message": "เมษายน"
+    "message": "April"
   },
   "may": {
-    "message": "พฤษภาคม"
+    "message": "May"
   },
   "june": {
-    "message": "มิถุนายน"
+    "message": "June"
   },
   "july": {
-    "message": "กรกฎาคม"
+    "message": "July"
   },
   "august": {
-    "message": "สิงหาคม"
+    "message": "August"
   },
   "september": {
-    "message": "กันยายน"
+    "message": "September"
   },
   "october": {
-    "message": "ตุลาคม"
+    "message": "October"
   },
   "november": {
-    "message": "พฤศจิกายน"
+    "message": "November"
   },
   "december": {
-    "message": "ธันวาคม"
+    "message": "December"
   },
   "securityCode": {
     "message": "Security Code"
@@ -1089,46 +1089,46 @@
     "message": "Identity Name"
   },
   "company": {
-    "message": "บริษัท"
+    "message": "Company"
   },
   "ssn": {
-    "message": "หมายเลขประกันสังคม"
+    "message": "Social Security Number"
   },
   "passportNumber": {
-    "message": "หมายเลขหนังสือเดินทาง"
+    "message": "Passport Number"
   },
   "licenseNumber": {
-    "message": "หมายเลขใบอนุญาต"
+    "message": "License Number"
   },
   "email": {
-    "message": "อีเมล"
+    "message": "Email"
   },
   "phone": {
-    "message": "โทรศัพท์"
+    "message": "Phone"
   },
   "address": {
-    "message": "ที่อยู่"
+    "message": "Address"
   },
   "address1": {
-    "message": "ที่อยู่ 1"
+    "message": "Address 1"
   },
   "address2": {
-    "message": "ที่อยู่ 2"
+    "message": "Address 2"
   },
   "address3": {
-    "message": "ที่อยู่ 3"
+    "message": "Address 3"
   },
   "cityTown": {
-    "message": "เมือง"
+    "message": "City / Town"
   },
   "stateProvince": {
-    "message": "รัฐ / จังหวัด"
+    "message": "State / Province"
   },
   "zipPostalCode": {
-    "message": "รหัสไปรษณีย์"
+    "message": "Zip / Postal Code"
   },
   "country": {
-    "message": "ประเทศ"
+    "message": "Country"
   },
   "type": {
     "message": "Type"
@@ -1152,7 +1152,7 @@
     "message": "Password History"
   },
   "back": {
-    "message": "ย้อนกลับ"
+    "message": "Back"
   },
   "collections": {
     "message": "Collections"
@@ -1186,7 +1186,7 @@
     "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
     "placeholders": {
       "value": {
         "content": "$1",
