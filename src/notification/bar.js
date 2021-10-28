@@ -25,32 +25,30 @@ document.addEventListener('DOMContentLoaded', () => {
             ? chrome.runtime.getURL('images/icon38_locked.png')
             : chrome.runtime.getURL('images/icon38.png');
 
-        document.getElementById('close').src = chrome.runtime.getURL('images/close.png');
-        document.getElementById('close').alt = i18n.close;
-
-        var closeButton = document.getElementById('close-button'),
-            body = document.querySelector('body'),
-            bodyRect = body.getBoundingClientRect();
-
-        // i18n
-        body.classList.add('lang-' + lang.slice(0, 2));
-
         document.getElementById('logo-link').title = i18n.appName;
+
+        var neverButton = document.querySelector('#template-add .never-save');
+        neverButton.setAttribute('short-text', i18n.never);
+        neverButton.setAttribute('full-text', i18n.notificationNeverSave);
+
+        var selectFolder = document.querySelector('#template-add .select-folder');
+        selectFolder.setAttribute('aria-label', i18n.folder);
+
+        var addButton = document.querySelector('#template-add .add-save');
+        addButton.setAttribute('short-text', i18n.yes);
+        addButton.setAttribute('full-text', i18n.notificationAddSave);
+
+        var changeButton = document.querySelector('#template-change .change-save');
+        changeButton.setAttribute('short-text', i18n.yes);
+        changeButton.setAttribute('full-text', i18n.notificationChangeSave);
+
+        var closeIcon = document.getElementById('close');
+        closeIcon.src = chrome.runtime.getURL('images/close.png');
+        closeIcon.alt = i18n.close;
+
+        var closeButton = document.getElementById('close-button')
         closeButton.title = i18n.close;
         closeButton.setAttribute('aria-label', i18n.close);
-
-        if (bodyRect.width < 768) {
-            document.querySelector('#template-add .add-save').textContent = i18n.yes;
-            document.querySelector('#template-add .never-save').textContent = i18n.never;
-            document.querySelector('#template-add .select-folder').style.display = 'none';
-            document.querySelector('#template-change .change-save').textContent = i18n.yes;
-        } else {
-            document.querySelector('#template-add .add-save').textContent = i18n.notificationAddSave;
-            document.querySelector('#template-add .never-save').textContent = i18n.notificationNeverSave;
-            document.querySelector('#template-add .select-folder').style.display = isVaultLocked ? 'none' : 'initial';
-            document.querySelector('#template-add .select-folder').setAttribute('aria-label', i18n.folder);
-            document.querySelector('#template-change .change-save').textContent = i18n.notificationChangeSave;
-        }
 
         document.querySelector('#template-add .add-text').textContent = i18n.notificationAddDesc;
         document.querySelector('#template-change .change-text').textContent = i18n.notificationChangeDesc;

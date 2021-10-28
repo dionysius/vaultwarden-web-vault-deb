@@ -1,4 +1,4 @@
-﻿body {
+body {
     background-color: #ffffff;
     padding: 0;
     margin: 0;
@@ -23,7 +23,6 @@
     display: grid;
     grid-template-columns: auto max-content;
 }
-
 
 .outer-wrapper > *, .inner-wrapper > * {
     align-self: center;
@@ -74,6 +73,35 @@ button.neutral {
         cursor: pointer;
         background: none;
         text-decoration: underline;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .never-save::after {
+        content: attr(full-text);
+    }
+
+    .add-save::after {
+        content: attr(full-text);
+    }
+
+    .change-save::after {
+        content: attr(full-text);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .never-save::after {
+        content: attr(short-text);
+    }
+
+    .add-save::after {
+        content: attr(short-text);
+    }
+
+    .change-save::after {
+        content: attr(short-text);
     }
 }
 
