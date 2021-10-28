@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         var selectFolder = document.querySelector('#template-add .select-folder');
         selectFolder.setAttribute('aria-label', i18n.folder);
+        selectFolder.setAttribute('isVaultLocked', isVaultLocked.toString());
 
         var addButton = document.querySelector('#template-add .add-save');
         addButton.setAttribute('short-text', i18n.yes);
