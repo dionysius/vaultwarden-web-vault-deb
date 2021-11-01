@@ -367,3 +367,17 @@ select option {
         background-color: darken(themed('inputBackgroundColor'), +1);
     }
 }
+
+// Workaround for slow performance on external monitors on Chrome + MacOS
+// See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
+@keyframes redraw {
+    0% {
+        opacity: 0.99;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+html.force_redraw {
+    animation: redraw 1s linear infinite;
+}

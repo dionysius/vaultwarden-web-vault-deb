@@ -76,9 +76,9 @@ const isPrivateMode = BrowserApi.getBackgroundPage() == null;
 
 const stateService = new StateService();
 const messagingService = new BrowserMessagingService();
+const logService = getBgService<ConsoleLogService>('logService')();
 const searchService = isPrivateMode ? null : new PopupSearchService(getBgService<SearchService>('searchService')(),
-    getBgService<CipherService>('cipherService')(), getBgService<ConsoleLogService>('consoleLogService')(),
-    getBgService<I18nService>('i18nService')());
+    getBgService<CipherService>('cipherService')(), logService, getBgService<I18nService>('i18nService')());
 
 export function initFactory(platformUtilsService: PlatformUtilsService, i18nService: I18nService, storageService: StorageService,
     popupUtilsService: PopupUtilsService): Function {
@@ -109,6 +109,19 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
                 }
             });
             htmlEl.classList.add('locale_' + i18nService.translationLocale);
+
+            // Workaround for slow performance on external monitors on Chrome + MacOS
+            // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
+            if (platformUtilsService.isChrome() &&
+                navigator.platform.indexOf('Mac') > -1 &&
+                popupUtilsService.inPopup(window) &&
+                (window.screenLeft < 0 ||
+                window.screenTop < 0 ||
+                window.screenLeft > window.screen.width ||
+                window.screenTop > window.screen.height)) {
+                htmlEl.classList.add('force_redraw');
+                logService.info('Force redraw is on');
+            }
         }
     };
 }
