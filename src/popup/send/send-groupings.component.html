@@ -28,9 +28,9 @@
     </div>
     <ng-container *ngIf="sends && sends.length && !showSearching()">
         <div class="box list">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'types' | i18n}}
-            </div>
+            </h2>
             <div class="box-content single-line">
                 <button type="button" class="box-content-row" appStopClick appBlurClick (click)="selectType(sendType.Text)">
                     <div class="row-main">
@@ -51,10 +51,10 @@
             </div>
         </div>
         <div class="box list">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'allSends' | i18n}}
                 <div class="flex-right">{{sends.length}}</div>
-            </div>
+            </h2>
             <div class="box-content">
                 <app-send-list [sends]="sends" title="{{'editItem' | i18n}}" [disabledByPolicy]="disableSend"
                     (onSelected)="selectSend($event)" (onCopySendLink)="copy($event)"

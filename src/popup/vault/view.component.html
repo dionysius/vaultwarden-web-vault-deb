@@ -2,18 +2,18 @@
     <div class="left">
         <button type="button" appBlurClick (click)="close()">{{'close' | i18n}}</button>
     </div>
-    <div class="center">
+    <h1 class="center">
         <span class="title">{{'viewItem' | i18n}}</span>
-    </div>
+    </h1>
     <div class="right" *ngIf="cipher">
         <button type="button" appBlurClick (click)="edit()" *ngIf="!cipher.isDeleted">{{'edit' | i18n}}</button>
     </div>
 </header>
 <content *ngIf="cipher">
     <div class="box">
-        <div class="box-header">
+        <h2 class="box-header">
             {{'itemInformation' | i18n}}
-        </div>
+        </h2>
         <div class="box-content">
             <div class="box-content-row">
                 <span class="row-label">{{'name' | i18n}}</span>
@@ -211,9 +211,9 @@
         </div>
     </div>
     <div class="box" *ngIf="cipher.notes">
-        <div class="box-header">
+        <h2 class="box-header">
             {{'notes' | i18n}}
-        </div>
+        </h2>
         <div class="box-content">
             <div class="box-content-row">
                 <textarea [value]="cipher.notes" rows="6" readonly aria-readonly="true"></textarea>
@@ -225,9 +225,9 @@
             [copy]="copy.bind(this)"></app-vault-view-custom-fields>
     </div>
     <div class="box" *ngIf="cipher.hasAttachments && (canAccessPremium || cipher.organizationId) && showAttachments">
-        <div class="box-header">
+        <h2 class="box-header">
             {{'attachments' | i18n}}
-        </div>
+        </h2>
         <div class="box-content">
             <button type="button" class="box-content-row box-content-row-flex text-default" *ngFor="let attachment of cipher.attachments"
                 appStopClick appBlurCLick (click)="downloadAttachment(attachment)">

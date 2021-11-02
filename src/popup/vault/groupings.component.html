@@ -24,10 +24,10 @@
     </div>
     <ng-container *ngIf="ciphers && ciphers.length && !showSearching()">
         <div class="box list" *ngIf="favoriteCiphers">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'favorites' | i18n}}
                 <span class="flex-right">{{favoriteCiphers.length}}</span>
-            </div>
+            </h2>
             <div class="box-content">
                 <app-cipher-row *ngFor="let favoriteCipher of favoriteCiphers" [cipher]="favoriteCipher"
                     title="{{'viewItem' | i18n}}" (onSelected)="selectCipher($event)"
@@ -35,10 +35,10 @@
             </div>
         </div>
         <div class="box list">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'types' | i18n}}
                 <span class="flex-right">4</span>
-            </div>
+            </h2>
             <div class="box-content single-line">
                 <button type="button" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Login)">
                     <div class="row-main">
@@ -76,10 +76,10 @@
             </div>
         </div>
         <div class="box list" *ngIf="nestedFolders?.length">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'folders' | i18n}}
                 <span class="flex-right">{{folderCount}}</span>
-            </div>
+            </h2>
             <div class="box-content single-line">
                 <button type="button" *ngFor="let f of nestedFolders" class="box-content-row" appStopClick appBlurClick
                     (click)="selectFolder(f.node)">
@@ -96,10 +96,10 @@
             </div>
         </div>
         <div class="box list" *ngIf="nestedCollections && nestedCollections.length">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'collections' | i18n}}
                 <span class="flex-right">{{nestedCollections.length}}</span>
-            </div>
+            </h2>
             <div class="box-content single-line">
                 <button type="button" *ngFor="let nestedCollection of nestedCollections" class="box-content-row"
                     appStopClick appBlurClick (click)="selectCollection(nestedCollection.node)">
@@ -113,10 +113,10 @@
             </div>
         </div>
         <div class="box list" *ngIf="showNoFolderCiphers">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'noneFolder' | i18n}}
                 <div class="flex-right">{{noFolderCiphers.length}}</div>
-            </div>
+            </h2>
             <div class="box-content">
                 <app-cipher-row *ngFor="let noFolderCipher of noFolderCiphers" [cipher]="noFolderCipher"
                     title="{{'viewItem' | i18n}}" (onSelected)="selectCipher($event)"
@@ -124,10 +124,10 @@
             </div>
         </div>
         <div class="box list" *ngIf="deletedCount">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'trash' | i18n}}
                 <span class="flex-right">{{deletedCount}}</span>
-            </div>
+            </h2>
             <div class="box-content single-line">
                 <button type="button" class="box-content-row" appStopClick appBlurClick
                     (click)="selectTrash()">

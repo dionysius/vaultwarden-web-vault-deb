@@ -30,10 +30,10 @@
         </ng-container>
     </div>
     <div class="box list only-list" *ngIf="filteredSends.length">
-        <div class="box-header">
+        <h2 class="box-header">
             {{groupingTitle}}
             <span class="flex-right">{{filteredSends.length}}</span>
-        </div>
+        </h2>
         <div class="box-content">
             <app-send-list [sends]="filteredSends" title="{{'editItem' | i18n}}" [disabledByPolicy]="disableSend"
                 (onSelected)="selectSend($event)" (onCopySendLink)="copy($event)"

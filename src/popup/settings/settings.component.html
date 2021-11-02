@@ -2,14 +2,14 @@
     <div class="left">
         <app-pop-out></app-pop-out>
     </div>
-    <div class="center">
+    <h1 class="center">
         <span class="title">{{'settings' | i18n}}</span>
-    </div>
+    </h1>
     <div class="right"></div>
 </header>
 <content>
     <div class="box list">
-        <div class="box-header">{{'manage' | i18n}}</div>
+        <h2 class="box-header">{{'manage' | i18n}}</h2>
         <div class="box-content single-line">
             <a class="box-content-row box-content-row-flex text-default" routerLink="/folders">
                 <div class="row-main">{{'folders' | i18n}}</div>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="box list">
-        <div class="box-header">{{'security' | i18n}}</div>
+        <h2 class="box-header">{{'security' | i18n}}</h2>
         <div class="box-content single-line">
             <app-vault-timeout-input [vaultTimeouts]="vaultTimeouts" [formControl]="vaultTimeout" ngDefaultControl></app-vault-timeout-input>
             <div class="box-content-row display-block" appBoxRow>
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="box list">
-        <div class="box-header">{{'account' | i18n}}</div>
+        <h2 class="">{{'account' | i18n}}</h2>
         <div class="box-content single-line">
             <a class="box-content-row" routerLink="/premium">
                 <div class="row-main">
@@ -108,7 +108,7 @@
         </div>
     </div>
     <div class="box list">
-        <div class="box-header">{{'other' | i18n}}</div>
+        <h2 class="box-header">{{'other' | i18n}}</h2>
         <div class="box-content single-line">
             <a class="box-content-row box-content-row-flex text-default" routerLink="/options">
                 <div class="row-main">{{'options' | i18n}}</div>

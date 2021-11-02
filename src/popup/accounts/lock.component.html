@@ -1,9 +1,9 @@
 <form (ngSubmit)="submit()">
     <header>
         <div class="left"></div>
-        <div class="center">
+        <h1 class="center">
             <span class="title">{{(pinLock ? 'verifyPin' : 'verifyMasterPassword') | i18n}}</span>
-        </div>
+        </h1>
         <div class="right">
             <button type="submit" appBlurClick>{{'unlock' | i18n}}</button>
         </div>
