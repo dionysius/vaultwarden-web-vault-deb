@@ -192,6 +192,10 @@ export default class NotificationBackground {
         }
 
         if (await this.vaultTimeoutService.isLocked()) {
+            if (!await this.allowPersonalOwnership()) {
+                return;
+            }
+
             this.pushAddLoginToQueue(loginDomain, loginInfo, tab, true);
             return;
         }
@@ -206,7 +210,7 @@ export default class NotificationBackground {
                 return;
             }
 
-            if (!(await this.allowPersonalOwnership())) {
+            if (!await this.allowPersonalOwnership()) {
                 return;
             }
 
