@@ -12,6 +12,7 @@ import { EventType } from 'jslib-common/enums/eventType';
 import { FieldType } from 'jslib-common/enums/fieldType';
 
 import { CipherView } from 'jslib-common/models/view/cipherView';
+import { FieldView } from 'jslib-common/models/view/fieldView';
 
 import AutofillField from '../models/autofillField';
 import AutofillPageDetails from '../models/autofillPageDetails';
@@ -318,9 +319,16 @@ export default class AutofillService implements AutofillServiceInterface {
 
                 const matchingIndex = this.findMatchingFieldIndex(field, fieldNames);
                 if (matchingIndex > -1) {
-                    let val = fields[matchingIndex].value;
-                    if (val == null && fields[matchingIndex].type === FieldType.Boolean) {
-                        val = 'false';
+                    const matchingField: FieldView = fields[matchingIndex];
+                    let val;
+                    if (matchingField.type === FieldType.Linked) {
+                        // Assumption: Linked Field is not being used to autofill a boolean value
+                        val = options.cipher.linkedFieldValue(matchingField.linkedId);
+                    } else {
+                        val = matchingField.value;
+                        if (val == null && matchingField.type === FieldType.Boolean) {
+                            val = 'false';
+                        }
                     }
 
                     filledFields[field.opid] = field;

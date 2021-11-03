@@ -271,7 +271,7 @@ export default class MainBackground {
                     const message = Object.assign({}, { command: subscriber }, arg);
                     that.runtimeBackground.processMessage(message, that, null);
                 }
-            }(), this.vaultTimeoutService, this.logService);
+            }(), this.vaultTimeoutService, this.logService, this.cryptoFunctionService);
     }
 
     async bootstrap() {
