@@ -80,33 +80,7 @@ button.neutral {
     display: none
 }
 
-@media screen and (min-width: 768px) {
-    .never-save::after {
-        content: attr(full-text);
-    }
-
-    .add-save::after {
-        content: attr(full-text);
-    }
-
-    .change-save::after {
-        content: attr(full-text);
-    }
-}
-
 @media screen and (max-width: 768px) {
-    .never-save::after {
-        content: attr(short-text);
-    }
-
-    .add-save::after {
-        content: attr(short-text);
-    }
-
-    .change-save::after {
-        content: attr(short-text);
-    }
-
     .select-folder {
         display: none
     }

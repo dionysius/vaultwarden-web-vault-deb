@@ -6,11 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     i18n.appName = chrome.i18n.getMessage('appName');
     i18n.close = chrome.i18n.getMessage('close');
-    i18n.yes = chrome.i18n.getMessage('yes');
     i18n.never = chrome.i18n.getMessage('never');
     i18n.folder = chrome.i18n.getMessage('folder');
     i18n.notificationAddSave = chrome.i18n.getMessage('notificationAddSave');
-    i18n.notificationNeverSave = chrome.i18n.getMessage('notificationNeverSave');
     i18n.notificationAddDesc = chrome.i18n.getMessage('notificationAddDesc');
     i18n.notificationChangeSave = chrome.i18n.getMessage('notificationChangeSave');
     i18n.notificationChangeDesc = chrome.i18n.getMessage('notificationChangeDesc');
@@ -28,20 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('logo-link').title = i18n.appName;
 
         var neverButton = document.querySelector('#template-add .never-save');
-        neverButton.setAttribute('short-text', i18n.never);
-        neverButton.setAttribute('full-text', i18n.notificationNeverSave);
+        neverButton.textContent = i18n.never;
 
         var selectFolder = document.querySelector('#template-add .select-folder');
         selectFolder.setAttribute('aria-label', i18n.folder);
         selectFolder.setAttribute('isVaultLocked', isVaultLocked.toString());
 
         var addButton = document.querySelector('#template-add .add-save');
-        addButton.setAttribute('short-text', i18n.yes);
-        addButton.setAttribute('full-text', i18n.notificationAddSave);
+        addButton.textContent = i18n.notificationAddSave;
 
         var changeButton = document.querySelector('#template-change .change-save');
-        changeButton.setAttribute('short-text', i18n.yes);
-        changeButton.setAttribute('full-text', i18n.notificationChangeSave);
+        changeButton.textContent = i18n.notificationChangeSave;
 
         var closeIcon = document.getElementById('close');
         closeIcon.src = chrome.runtime.getURL('images/close.png');

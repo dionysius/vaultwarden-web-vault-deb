@@ -558,10 +558,7 @@
     "message": "Should Bitwarden remember this password for you?"
   },
   "notificationAddSave": {
-    "message": "Yes, Save Now"
-  },
-  "notificationNeverSave": {
-    "message": "Never for this website"
+    "message": "Save"
   },
   "disableChangedPasswordNotification": {
     "message": "Disable Changed Password Notification"
@@ -573,7 +570,7 @@
     "message": "Do you want to update this password in Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Update"
   },
   "disableContextMenuItem": {
     "message": "Disable Context Menu Options"
