@@ -146,7 +146,7 @@ p.lead {
 }
 
 .password-wrapper {
-    word-break: break-all;
+    overflow-wrap: break-word;
     white-space: pre-wrap;
     min-width: 0;
 }
