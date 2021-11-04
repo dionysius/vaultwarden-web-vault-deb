@@ -24,7 +24,6 @@
     grid-template-columns: auto max-content;
 }
 
-
 .outer-wrapper > *, .inner-wrapper > * {
     align-self: center;
 }
@@ -74,6 +73,16 @@ button.neutral {
         cursor: pointer;
         background: none;
         text-decoration: underline;
+    }
+}
+
+.select-folder[isVaultLocked="true"] {
+    display: none
+}
+
+@media screen and (max-width: 768px) {
+    .select-folder {
+        display: none
     }
 }
 
