@@ -9,6 +9,7 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
+import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
 import { EventType } from 'jslib-common/enums/eventType';
 import { CipherView } from 'jslib-common/models/view/cipherView';
 import LockedVaultPendingNotificationsItem from './models/lockedVaultPendingNotificationsItem';
@@ -84,7 +85,7 @@ export default class ContextMenusBackground {
         let cipher: CipherView;
         if (id === this.noopCommandSuffix) {
             const ciphers = await this.cipherService.getAllDecryptedForUrl(tab.url);
-            cipher = ciphers.length > 0 ? ciphers[0] : null;
+            cipher = ciphers.find(x => x.reprompt === CipherRepromptType.None);
         } else {
             const ciphers = await this.cipherService.getAllDecrypted();
             cipher = ciphers.find(c => c.id === id);
