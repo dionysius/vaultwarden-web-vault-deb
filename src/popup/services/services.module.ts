@@ -33,6 +33,7 @@ import { ExportService } from 'jslib-common/abstractions/export.service';
 import { FileUploadService } from 'jslib-common/abstractions/fileUpload.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { KeyConnectorService } from 'jslib-common/abstractions/keyConnector.service';
 import { LogService as LogServiceAbstraction } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { NotificationsService } from 'jslib-common/abstractions/notifications.service';
@@ -49,6 +50,7 @@ import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
+import { UserVerificationService as UserVerificationServiceAbstraction } from 'jslib-common/abstractions/userVerification.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
@@ -59,6 +61,7 @@ import { ConsoleLogService } from 'jslib-common/services/consoleLog.service';
 import { ConstantsService } from 'jslib-common/services/constants.service';
 import { SearchService } from 'jslib-common/services/search.service';
 import { StateService } from 'jslib-common/services/state.service';
+import { UserVerificationService } from 'jslib-common/services/userVerification.service';
 
 import { PopupSearchService } from './popup-search.service';
 import { PopupUtilsService } from './popup-utils.service';
@@ -182,6 +185,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
         { provide: AutofillService, useFactory: getBgService<AutofillService>('autofillService'), deps: [] },
         { provide: ExportService, useFactory: getBgService<ExportService>('exportService'), deps: [] },
         { provide: SendService, useFactory: getBgService<SendService>('sendService'), deps: [] },
+        { provide: KeyConnectorService, useFactory: getBgService<KeyConnectorService>('keyConnectorService'), deps: [] },
         {
             provide: VaultTimeoutService,
             useFactory: getBgService<VaultTimeoutService>('vaultTimeoutService'),
@@ -204,6 +208,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
             deps: [],
         },
         { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
+        { provide: UserVerificationServiceAbstraction, useClass: UserVerificationService },
     ],
 })
 export class ServicesModule {
