@@ -138,7 +138,7 @@ export default class RuntimeBackground {
 
                 try {
                     BrowserApi.createNewTab('popup/index.html?uilocation=popout#/sso?code=' +
-                        msg.code + '&state=' + msg.state);
+                        encodeURIComponent(msg.code) + '&state=' + encodeURIComponent(msg.state));
                 }
                 catch {
                     this.logService.error('Unable to open sso popout tab');
@@ -151,7 +151,8 @@ export default class RuntimeBackground {
                     return;
                 }
 
-                const params = `webAuthnResponse=${encodeURIComponent(msg.data)};remember=${msg.remember}`;
+                const params = `webAuthnResponse=${encodeURIComponent(msg.data)};` +
+                    `remember=${encodeURIComponent(msg.remember)}`;
                 BrowserApi.createNewTab(`popup/index.html?uilocation=popout#/2fa;${params}`, undefined, false);
                 break;
             case 'reloadPopup':
