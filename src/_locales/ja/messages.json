@@ -121,6 +121,9 @@
   "continue": {
     "message": "続ける"
   },
+  "requestVerificationCode": {
+    "message": "ワンタイムパスワードを要求する"
+  },
   "verificationCode": {
     "message": "認証コード"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "認証コードは必須項目です。"
   },
+  "invalidVerificationCode": {
+    "message": "認証コードが間違っています"
+  },
   "valueCopied": {
     "message": "$VALUE$ をコピーしました",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "保存する"
-  },
-  "notificationNeverSave": {
-    "message": "このサイトではしない"
   },
   "disableChangedPasswordNotification": {
     "message": "パスワードの変更通知を無効化"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "真偽値"
   },
+  "cfTypeLinked": {
+    "message": "リンク済",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "リンクされた値",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "認証コードを確認するためにポップアップの外をクリックすると、このポップアップが閉じてしまいます。閉じてしまわないよう、新しいウインドウでこのポップアップを開きますか？"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "姓"
+  },
+  "fullName": {
+    "message": "フルネーム"
   },
   "identityName": {
     "message": "固有名"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "一意の識別子が見つかりませんでした。"
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ は自己ホストの鍵サーバで SSO を使用しています。この組織のメンバーのログインにマスターパスワードは必要ありません。",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "組織から脱退する"
+  },
+  "removeMasterPassword": {
+    "message": "マスターパスワードを削除する"
+  },
+  "removedMasterPassword": {
+    "message": "マスターパスワードを削除しました。"
   }
 }

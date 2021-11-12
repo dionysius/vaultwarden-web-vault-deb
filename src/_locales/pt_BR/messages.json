@@ -121,6 +121,9 @@
   "continue": {
     "message": "Continuar"
   },
+  "requestVerificationCode": {
+    "message": "Solicitar senha de uso único"
+  },
   "verificationCode": {
     "message": "Código de Verificação"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "O código de verificação é necessário."
   },
+  "invalidVerificationCode": {
+    "message": "Código de verificação inválido"
+  },
   "valueCopied": {
     "message": " copiado",
     "description": "Value has been copied to the clipboard.",
@@ -560,9 +566,6 @@
   "notificationAddSave": {
     "message": "Sim, Salvar Agora"
   },
-  "notificationNeverSave": {
-    "message": "Nunca para este site"
-  },
   "disableChangedPasswordNotification": {
     "message": "Desativar Notificação de Alteração da Senha"
   },
@@ -573,7 +576,7 @@
     "message": "Você quer atualizar esta senha no Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Sim, Atualizar Agora"
+    "message": "Sim, atualizar agora"
   },
   "disableContextMenuItem": {
     "message": "Desativar Opções do Menu de Contexto"
@@ -603,7 +606,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Escuro Solarizado",
+    "message": "Solarized (escuro)",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Booleano"
   },
+  "cfTypeLinked": {
+    "message": "Vinculado",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Valor vinculado",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Ao clicar fora da janela de pop-up para verificar seu e-mail para o seu código de verificação fará com que este pop-up feche. Você deseja abrir este pop-up em uma nova janela para que ele não seja fechado?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Sobrenome"
+  },
+  "fullName": {
+    "message": "Nome Completo"
   },
   "identityName": {
     "message": "Nome de Identidade"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Nenhum identificador exclusivo encontrado."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ está usando SSO com um servidor de chaves auto-hospedado. Não é mais necessária uma senha mestra para os membros desta organização entrarem.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Sair da Organização"
+  },
+  "removeMasterPassword": {
+    "message": "Remover Senha Mestra"
+  },
+  "removedMasterPassword": {
+    "message": "Senha mestra removida."
   }
 }

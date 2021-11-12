@@ -121,6 +121,9 @@
   "continue": {
     "message": "Devam"
   },
+  "requestVerificationCode": {
+    "message": "Tek kullanımlık parola iste"
+  },
   "verificationCode": {
     "message": "Doğrulama kodu"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Doğrulama kodu gereklidir."
   },
+  "invalidVerificationCode": {
+    "message": "Geçersiz doğrulama kodu"
+  },
   "valueCopied": {
     "message": "$VALUE$ kopyalandı",
     "description": "Value has been copied to the clipboard.",
@@ -558,10 +564,7 @@
     "message": "Bitwarden bu parolayı sizin için hatırlasın mı?"
   },
   "notificationAddSave": {
-    "message": "Evet, parolayı kaydet"
-  },
-  "notificationNeverSave": {
-    "message": "Bu sitede asla kaydetme"
+    "message": "Kaydet"
   },
   "disableChangedPasswordNotification": {
     "message": "\"Parola değiştirildi\" bildirimini kapat"
@@ -573,7 +576,7 @@
     "message": "Bu parolayı Bitwarden'da güncellemek ister misiniz?"
   },
   "notificationChangeSave": {
-    "message": "Evet, güncelle"
+    "message": "Güncelle"
   },
   "disableContextMenuItem": {
     "message": "Sağ tıklama menüsünü kapat"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Bağlantılı",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Bağlı değer",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Doğrulama kodunuzu alacağınız e-postayı kontrol etmek için bu pencerenin dışında bir yere tıklarsanız bu pencere kapanacaktır. Bu pencerenin kapanmaması için yeni bir pencerede açmak ister misiniz?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Soyad"
+  },
+  "fullName": {
+    "message": "Adı soyadı"
   },
   "identityName": {
     "message": "Kimlik adı"
@@ -1766,13 +1780,13 @@
     "message": "Ana parolayı güncelle"
   },
   "updateMasterPasswordWarning": {
-    "message": "Ana parolanız organizasyonunuzdaki bir yönetici tarafından yakın zaman önce değiştirildi. Kasanıza erişmek için bunu güncellemeniz gereklidir. Devam ettiğinizde oturumunuz kapatılacak ve tekrardan oturum açmanız gerekecektir. Diğer cihazlardaki aktif oturumlar bir saate kadar aktif kalabilirler. "
+    "message": "Ana parolanız kuruluşunuzdaki bir yönetici tarafından yakın zamanda değiştirildi. Kasanıza erişmek için parolanızı güncellemelisiniz. Devam ettiğinizde oturumunuz kapanacak ve yeniden oturum açmanız gerekecektir. Diğer cihazlardaki aktif oturumlar bir saate kadar aktif kalabilir."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Otomatik Kaydolma"
+    "message": "Otomatik Eklenme"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Bu kuruluş, sizi otomatik olarak parola sıfırlama işlemine kaydedecek bir kurumsal ilkeye sahiptir.  Kayıt işlemi kuruluş yöneticilerinin ana parolanızı değiştirmesine olanak tanır."
+    "message": "Bu kuruluşun sizi otomatik olarak parola sıfırlamaya ekleyen bir ilkesi bulunmakta. Bu ilkeye eklenmek, kuruluş yöneticilerinin ana parolanızı değiştirebilmesini sağlar."
   },
   "selectFolder": {
     "message": "Klasör seç..."
@@ -1787,7 +1801,7 @@
     "message": "Dakika"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Kuruluş ilkeleriniz kasa zaman aşımınızı etkiliyor.  İzin verilen maksimum Kasa Zaman Aşımı {0} saat ve {1} dakikadır",
+    "message": "Kuruluş ilkeleriniz kasa zaman aşımınızı etkiliyor. İzin verilen maksimum kasa zaman aşımı $HOURS$ saat $MINUTES$ dakikadır",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1809,9 +1823,27 @@
     "message": "Bir veya daha fazla kuruluş ilkesi, kişisel kasanızı dışa aktarmanızı engelliyor."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Geçerli bir form elemanı bulunamadı. HTML'i denetlemeyi deneyebilirsiniz."
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Benzersiz tanımlayıcı bulunamadı."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ kendi barındırdığı bir anahtar sunucusuyla SSO kullanıyor. Bu kuruluşun üyelerinin artık ana parola kullanması gerekmiyor.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Kuruluştan ayrıl"
+  },
+  "removeMasterPassword": {
+    "message": "Ana parolayı kaldır"
+  },
+  "removedMasterPassword": {
+    "message": "Ana parola kaldırıldı."
   }
 }

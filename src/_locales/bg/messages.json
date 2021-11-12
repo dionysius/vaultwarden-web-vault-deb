@@ -121,6 +121,9 @@
   "continue": {
     "message": "Продължаване"
   },
+  "requestVerificationCode": {
+    "message": "Заявка за еднократна парола"
+  },
   "verificationCode": {
     "message": "Код за потвърждаване"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Кодът за потвърждение е задължителен."
   },
+  "invalidVerificationCode": {
+    "message": "Грешен код за потвърждаване"
+  },
   "valueCopied": {
     "message": "$VALUE$ — копирано",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Да, нека се запише сега"
-  },
-  "notificationNeverSave": {
-    "message": "Никога за този сайт"
   },
   "disableChangedPasswordNotification": {
     "message": "Без известия за обновяване на регистрации"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Булево"
   },
+  "cfTypeLinked": {
+    "message": "Свързано",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Свързана стойност",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Ако натиснете бутон на мишката извън изскочилия прозорец за кода за потвърждение, същият този прозорец ще се затвори. Искате ли проверката да се извърши в нормален прозорец, който не се затваря толкова лесно?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Фамилно име"
+  },
+  "fullName": {
+    "message": "Пълно име"
   },
   "identityName": {
     "message": "Име на самоличността"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Няма намерен уникален идентификатор."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ използва еднократно удостоверяване със собствен сървър за ключове. Членовете на тази организация вече нямат нужда от главна парола за вписване.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Напускане на организацията"
+  },
+  "removeMasterPassword": {
+    "message": "Премахване на главната парола"
+  },
+  "removedMasterPassword": {
+    "message": "Главната парола е премахната."
   }
 }

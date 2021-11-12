@@ -121,6 +121,9 @@
   "continue": {
     "message": "Продовжити"
   },
+  "requestVerificationCode": {
+    "message": "Запитувати одноразовий пароль"
+  },
   "verificationCode": {
     "message": "Код підтвердження"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Потрібний код підтвердження."
   },
+  "invalidVerificationCode": {
+    "message": "Недійсний код підтвердження"
+  },
   "valueCopied": {
     "message": "$VALUE$ скопійовано",
     "description": "Value has been copied to the clipboard.",
@@ -558,10 +564,7 @@
     "message": "Чи повинен Bitwarden зберегти цей пароль?"
   },
   "notificationAddSave": {
-    "message": "Так, зберегти"
-  },
-  "notificationNeverSave": {
-    "message": "Ніколи для цього сайту"
+    "message": "Зберегти"
   },
   "disableChangedPasswordNotification": {
     "message": "Вимкнути сповіщення зміненого пароля"
@@ -573,7 +576,7 @@
     "message": "Ви хочете оновити цей пароль в Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Так, оновити"
+    "message": "Оновити"
   },
   "disableContextMenuItem": {
     "message": "Вимкнути в контекстному меню"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Логічне значення"
   },
+  "cfTypeLinked": {
+    "message": "Пов'язано",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Пов'язане значення",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Натискання поза межами спливаючого вікна для перевірки коду підтвердження в пошті спричинить його закриття. Хочете відкрити його в новому вікні, щоб воно не закрилося?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Прізвище"
+  },
+  "fullName": {
+    "message": "Повне ім'я"
   },
   "identityName": {
     "message": "Назва"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Не знайдено унікальний ідентифікатор."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ використовує SSO з власним сервером ключів. Головний пароль для учасників цієї організації більше не вимагається.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Покинути організацію"
+  },
+  "removeMasterPassword": {
+    "message": "Вилучити головний пароль"
+  },
+  "removedMasterPassword": {
+    "message": "Головний пароль вилучено."
   }
 }

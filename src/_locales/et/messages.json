@@ -121,6 +121,9 @@
   "continue": {
     "message": "Jätka"
   },
+  "requestVerificationCode": {
+    "message": "Küsi ühekordset parooli"
+  },
   "verificationCode": {
     "message": "Kinnituskood"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Nõutav on kinnituskood."
   },
+  "invalidVerificationCode": {
+    "message": "Vale kinnituskood"
+  },
   "valueCopied": {
     "message": "$VALUE$ on kopeeritud",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Jah, salvesta see"
-  },
-  "notificationNeverSave": {
-    "message": "Ära sellel lehel enam küsi"
   },
   "disableChangedPasswordNotification": {
     "message": "Keela Muudetud parooli teavitus"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Ühenduses",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Ühendatud väärtus",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "See aken sulgub, kui klikid oma e-posti aknale, et sealt kinnituskoodi vaadata. Soovid selle hüpikakna uues aknas avada, et seda ei juhtuks?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Perekonnanimi"
+  },
+  "fullName": {
+    "message": "Täisnimi"
   },
   "identityName": {
     "message": "Identiteedi nimi"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Unikaalset identifikaatorit ei leitud."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Lahku organisatsioonist"
+  },
+  "removeMasterPassword": {
+    "message": "Eemalda ülemparool"
+  },
+  "removedMasterPassword": {
+    "message": "Ülemparool on eemaldatud."
   }
 }

@@ -121,6 +121,9 @@
   "continue": {
     "message": "Continua"
   },
+  "requestVerificationCode": {
+    "message": "Richiedi OTP"
+  },
   "verificationCode": {
     "message": "Codice di verifica"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Il codice di verifica è obbligatorio."
   },
+  "invalidVerificationCode": {
+    "message": "Codice di verifica non valido"
+  },
   "valueCopied": {
     "message": "$VALUE$ copiato",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Sì, salva ora"
-  },
-  "notificationNeverSave": {
-    "message": "Mai per questo sito"
   },
   "disableChangedPasswordNotification": {
     "message": "Disabilita notifica di modifica delle password"
@@ -822,13 +825,13 @@
     "message": "Inserisci la tua chiave di sicurezza nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
   },
   "webAuthnNewTab": {
-    "message": "Continua la verifica di WebAuthn 2FA nella nuova scheda."
+    "message": "Per avviare la verifica WebAuthn 2FA. Fare clic sul pulsante in basso per aprire una nuova scheda e seguire le istruzioni fornite nella nuova scheda. "
   },
   "webAuthnNewTabOpen": {
     "message": "Apri nuova scheda"
   },
   "webAuthnAuthenticate": {
-    "message": "Autenticazione WebAutn"
+    "message": "Autenticazione WebAuthn"
   },
   "loginUnavailable": {
     "message": "Login non disponibile"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Booleano"
   },
+  "cfTypeLinked": {
+    "message": "Collegato",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Valore collegato",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Facendo clic all'esterno della finestra popup per controllare la mail con il codice di verifica chiuderà la finestra di popup. Vuoi aprire questo popup in una nuova finestra?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Cognome"
+  },
+  "fullName": {
+    "message": "Nome completo"
   },
   "identityName": {
     "message": "Nome dell'identità"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Nessun identificatore univoco trovato."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ sta usando SSO con un server \"self-hosted\". Non è più richiesta una password principale per accedere per i membri di questa organizzazione.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Lascia l'organizzazione"
+  },
+  "removeMasterPassword": {
+    "message": "Rimuovi la password principale"
+  },
+  "removedMasterPassword": {
+    "message": "Password principale rimossa."
   }
 }
