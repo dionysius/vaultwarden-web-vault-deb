@@ -121,6 +121,9 @@
   "continue": {
     "message": "계속"
   },
+  "requestVerificationCode": {
+    "message": "Request one-time password"
+  },
   "verificationCode": {
     "message": "인증 코드"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "인증 코드는 반드시 입력해야 합니다."
   },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
+  },
   "valueCopied": {
     "message": "$VALUE$를 클립보드에 복사함",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "예, 지금 저장하겠습니다."
-  },
-  "notificationNeverSave": {
-    "message": "이 사이트에는 사용 안 함"
   },
   "disableChangedPasswordNotification": {
     "message": "비밀번호 변경 알림 사용 안 함"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "참 / 거짓"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "인증 코드가 담긴 이메일을 확인하기 위해 팝업 창의 바깥쪽을 누르면 이 팝업이 닫힙니다. 팝업 창이 닫히는 것을 방지하기 위해 이 팝업을 새 창에서 다시 여시겠습니까?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "성"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "ID 이름"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "고유 식별자를 찾을 수 없습니다."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
   }
 }

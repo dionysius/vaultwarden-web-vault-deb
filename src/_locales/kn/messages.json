@@ -121,6 +121,9 @@
   "continue": {
     "message": "ಮುಂದುವರಿಸಿ"
   },
+  "requestVerificationCode": {
+    "message": "Request one-time password"
+  },
   "verificationCode": {
     "message": "ಪರಿಶೀಲನಾ ಕೋಡ್‌ಗಳು"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "ಪರಿಶೀಲನೆ ಕೋಡ್ ಅಗತ್ಯವಿದೆ."
   },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
+  },
   "valueCopied": {
     "message": "$VALUE$ ನಕಲಿಸಲಾಗಿದೆ",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "ಹೌದು, ಈಗ ಉಳಿಸಿ"
-  },
-  "notificationNeverSave": {
-    "message": "ಈ ವೆಬ್ಸೈಟ್ಗೆ ಎಂದಿಗೂ ಇಲ್ಲ"
   },
   "disableChangedPasswordNotification": {
     "message": "ಬದಲಾವಣೆ ಪಾಸ್ವರ್ಡ್ ಅಧಿಸೂಚನೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "ಬೂಲಿಯನ್"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "ನಿಮ್ಮ ಪರಿಶೀಲನಾ ಕೋಡ್‌ಗಾಗಿ ನಿಮ್ಮ ಇಮೇಲ್ ಪರಿಶೀಲಿಸಲು ಪಾಪ್ಅಪ್ ವಿಂಡೋದ ಹೊರಗೆ ಕ್ಲಿಕ್ ಮಾಡುವುದರಿಂದ ಈ ಪಾಪ್ಅಪ್ ಮುಚ್ಚಲ್ಪಡುತ್ತದೆ. ಈ ಪಾಪ್ಅಪ್ ಅನ್ನು ಮುಚ್ಚದಿರುವಂತೆ ಹೊಸ ವಿಂಡೋದಲ್ಲಿ ತೆರೆಯಲು ನೀವು ಬಯಸುವಿರಾ?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "ಕೊನೆ ಹೆಸರು"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "ಹೆಸರು ಗುರುತು"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
   }
 }

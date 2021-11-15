@@ -121,6 +121,9 @@
   "continue": {
     "message": "Folytatás"
   },
+  "requestVerificationCode": {
+    "message": "Egyszeri jelszó kérése"
+  },
   "verificationCode": {
     "message": "Ellenőrző kód"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Ellenőrző kód szükséges."
   },
+  "invalidVerificationCode": {
+    "message": "Érvénytelen ellenőrző kód"
+  },
   "valueCopied": {
     "message": "$VALUE$ másolásra került.",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Igen, mentés most"
-  },
-  "notificationNeverSave": {
-    "message": "Ezen az weboldalon soha"
   },
   "disableChangedPasswordNotification": {
     "message": "Megváltozott jelszó értesítés letiltása"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Boolean (Logikai)"
   },
+  "cfTypeLinked": {
+    "message": "Csatolva",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Csatolt érték",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Az ellenőrző kódot tartalmazó email egy olyan felugró ablakban nyílik meg, mely a mellette levő területre kattinva bezáródik. Szeretnéd az emailt egy olyan ablakban megnyitni, ami nem záródhat így be?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Családnév"
+  },
+  "fullName": {
+    "message": "Teljes név"
   },
   "identityName": {
     "message": "Személyazonosság megnevezés"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Nincs egyedi azonosító."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ jelenleg saját tárolású aláíráskulcsú SSO szervert használ. A mesterjelszó a továbbiakban nem szükséges a szervezeti tagsági bejelentkezéshez.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Szervezet elhagyása"
+  },
+  "removeMasterPassword": {
+    "message": "Mesterjelszó eltávolítása"
+  },
+  "removedMasterPassword": {
+    "message": "A mesterjelszó eltávolításra került."
   }
 }

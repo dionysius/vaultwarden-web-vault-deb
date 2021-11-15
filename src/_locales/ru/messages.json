@@ -121,6 +121,9 @@
   "continue": {
     "message": "Продолжить"
   },
+  "requestVerificationCode": {
+    "message": "Запросить одноразовый пароль"
+  },
   "verificationCode": {
     "message": "Код подтверждения"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Необходимо ввести код подтверждения."
   },
+  "invalidVerificationCode": {
+    "message": "Неверный код подтверждения"
+  },
   "valueCopied": {
     "message": "$VALUE$ скопировано",
     "description": "Value has been copied to the clipboard.",
@@ -558,10 +564,7 @@
     "message": "Должен ли Bitwarden запомнить этот пароль?"
   },
   "notificationAddSave": {
-    "message": "Да, сохранить"
-  },
-  "notificationNeverSave": {
-    "message": "Никогда для этого сайта"
+    "message": "Сохранить"
   },
   "disableChangedPasswordNotification": {
     "message": "Отключить уведомление об изменении пароля"
@@ -573,7 +576,7 @@
     "message": "Обновить этот пароль в Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Да, обновить"
+    "message": "Обновить"
   },
   "disableContextMenuItem": {
     "message": "Отключить опции контекстного меню"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Логическое"
   },
+  "cfTypeLinked": {
+    "message": "Связано",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Связанное значение",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Щелчок за пределами этого окна для просмотра кода проверки из электронной почты приведет к его закрытию. Открыть bitwarden в новом окне?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Фамилия"
+  },
+  "fullName": {
+    "message": "Полное имя"
   },
   "identityName": {
     "message": "Имя"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Уникальный идентификатор не найден."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ использует SSO с собственным сервером ключей. Для авторизации членам этой организации больше не требуется мастер-пароль.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Покинуть организацию"
+  },
+  "removeMasterPassword": {
+    "message": "Удалить мастер-пароль"
+  },
+  "removedMasterPassword": {
+    "message": "Мастер-пароль удален."
   }
 }

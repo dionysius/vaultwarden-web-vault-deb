@@ -121,6 +121,9 @@
   "continue": {
     "message": "Doorgaan"
   },
+  "requestVerificationCode": {
+    "message": "Eenmalig wachtwoord aanvragen"
+  },
   "verificationCode": {
     "message": "Verificatiecode"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Verificatiecode is vereist."
   },
+  "invalidVerificationCode": {
+    "message": "Ongeldige verificatiecode"
+  },
   "valueCopied": {
     "message": "$VALUE$ gekopieerd",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Ja, nu opslaan"
-  },
-  "notificationNeverSave": {
-    "message": "Nooit voor deze website"
   },
   "disableChangedPasswordNotification": {
     "message": "Melding gewijzigd wachtwoord uitschakelen"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Gekoppeld",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Gekoppelde waarde",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Als je buiten het pop-upvenster klikt om je e-mail te controleren op een verificatiecode, dan zal de pop-up sluiten. Wil je het pop-upvenster openen in een nieuw scherm, zodat het niet wordt gesloten?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Achternaam"
+  },
+  "fullName": {
+    "message": "Volledige naam"
   },
   "identityName": {
     "message": "Identiteitsnaam"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Geen unieke id gevonden."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ gebruikt SSO met een zelf gehoste sleutelserver. Leden van deze organisatie kunnen inloggen zonder hoofdwachtwoord.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Organisatie verlaten"
+  },
+  "removeMasterPassword": {
+    "message": "Hoofdwachtwoord verwijderen"
+  },
+  "removedMasterPassword": {
+    "message": "Hoofdwachtwoord verwijderd."
   }
 }

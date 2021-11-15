@@ -121,6 +121,9 @@
   "continue": {
     "message": "जारी रखें"
   },
+  "requestVerificationCode": {
+    "message": "Request one-time password"
+  },
   "verificationCode": {
     "message": "Verification Code"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "सत्यापन टोकन आवश्यक है"
   },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
+  },
   "valueCopied": {
     "message": " copied",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Yes, Save Now"
-  },
-  "notificationNeverSave": {
-    "message": "इस वेबसाइट के लिए कभी नहीं"
   },
   "disableChangedPasswordNotification": {
     "message": "Disable Changed Password Notification"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "बूलियन"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "अपने सत्यापन कोड के लिए अपने ईमेल की जांच करने के लिए पॉपअप विंडो के बाहर क्लिक करने से यह पॉपअप बंद हो जाएगा।क्या आप इस पॉपअप को एक नई विंडो में खोलना चाहते हैं ताकि यह बंद न हो?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Last Name"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Identity Name"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
   }
 }

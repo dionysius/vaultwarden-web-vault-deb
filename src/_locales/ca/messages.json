@@ -89,7 +89,7 @@
     "message": "Genera contrasenya (copiada)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Copia nom del camp personalitzat"
   },
   "noMatchingLogins": {
     "message": "No hi ha inicis de sessió coincidents."
@@ -120,6 +120,9 @@
   },
   "continue": {
     "message": "Continua"
+  },
+  "requestVerificationCode": {
+    "message": "Request one-time password"
   },
   "verificationCode": {
     "message": "Codi de verificació"
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "El codi de verificació és obligatori."
   },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
+  },
   "valueCopied": {
     "message": "S'ha copiat $VALUE$",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Sí, guarda-la ara"
-  },
-  "notificationNeverSave": {
-    "message": "Mai per a aquest lloc"
   },
   "disableChangedPasswordNotification": {
     "message": "Deshabilita la notificació de contrasenya modificada"
@@ -777,7 +780,7 @@
     "message": "Si el vostre inici de sessió té una clau d'autenticació associada, el codi de verificació TOTP es copiarà al vostre porta-retalls quan s'òmpliga automàticament l'inici de sessió."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "No sol·liciteu biomètrica en iniciar."
   },
   "premiumRequired": {
     "message": "Premium requerit"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Booleà"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Si feu clic a l'exterior de la finestra emergent per comprovar el vostre correu electrònic amb el codi de verificació, es tancarà aquesta finestra. Voleu obrir aquesta finestra emergent en una finestra nova perquè no es tanque?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Cognoms"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Nom d'identitat"
@@ -1760,34 +1774,34 @@
     "message": "Heu de verificar el correu electrònic per utilitzar aquesta característica. Podeu verificar el vostre correu electrònic a la caixa forta web."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Contrasenya mestra actualitzada"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Actualitza contrasenya mestra"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Un administrador de l'organització ha canviat recentment la contrasenya principal. Per accedir a la caixa forta, heu d'actualitzar-la ara. Si continueu, es tancarà la sessió actual i heu de tornar a iniciar-la. És possible que les sessions obertes en altres dispositius continuen actives fins a una hora."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Inscripció automàtica"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Aquesta organització té una política empresarial que us inscriurà automàticament al restabliment de la contrasenya. La inscripció permetrà als administradors de l’organització canviar la vostra contrasenya mestra."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Seleccioneu la carpeta..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Per completar la sessió amb SSO, configureu una contrasenya mestra per accedir i protegir la vostra caixa forta."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Hores"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minuts"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Les polítiques de l'organització afecten el temps d'espera de la caixa forta. El temps d'espera màxim permès d'aquesta és de $HOURS$ hores i $MINUTES$ minuts",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1800,18 +1814,36 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "El temps d'espera de la caixa forta supera les restriccions establertes per la vostra organització."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "L'exportació de la caixa forta està desactivada"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "No es pot identificar un element de formulari vàlid. Proveu d'inspeccionar l'HTML."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "No s'ha trobat cap identificador únic."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
   }
 }

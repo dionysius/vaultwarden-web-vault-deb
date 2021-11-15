@@ -121,6 +121,9 @@
   "continue": {
     "message": "Continuer"
   },
+  "requestVerificationCode": {
+    "message": "Demander un mot de passe à usage unique"
+  },
   "verificationCode": {
     "message": "Code de vérification"
   },
@@ -154,7 +157,7 @@
     "message": "Enregistrer"
   },
   "move": {
-    "message": "Se déplacer"
+    "message": "Déplacer"
   },
   "addFolder": {
     "message": "Ajouter un dossier"
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Le code de vérification est requis."
   },
+  "invalidVerificationCode": {
+    "message": "Code de vérification invalide"
+  },
   "valueCopied": {
     "message": "$VALUE$ copié",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Oui, enregistrer maintenant"
-  },
-  "notificationNeverSave": {
-    "message": "Jamais pour ce site web"
   },
   "disableChangedPasswordNotification": {
     "message": "Désactiver la notification de changement de mot de passe"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Booléen"
   },
+  "cfTypeLinked": {
+    "message": "Lié",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Valeur liée",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Le fait de cliquer à l'extérieur de la fenêtre pop-up pour vérifier votre e-mail avec votre code de vérification fermera cette pop-up. Voulez-vous ouvrir cette pop-up dans une nouvelle fenêtre pour qu'elle ne soit pas fermée ?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Nom"
+  },
+  "fullName": {
+    "message": "Nom et prénom"
   },
   "identityName": {
     "message": "Identité"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Aucun identifiant unique trouvé."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe maître n'est plus nécessaire aux membres de cette organisation pour se connecter.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Quitter l'organisation"
+  },
+  "removeMasterPassword": {
+    "message": "Supprimer le mot de passe maître"
+  },
+  "removedMasterPassword": {
+    "message": "Mot de passe maître supprimé."
   }
 }

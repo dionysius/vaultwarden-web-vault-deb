@@ -121,6 +121,9 @@
   "continue": {
     "message": "Davam"
   },
+  "requestVerificationCode": {
+    "message": "Tək istifadəlik parol tələb et"
+  },
   "verificationCode": {
     "message": "Təsdiqləmə kodu"
   },
@@ -411,6 +414,9 @@
   "verificationCodeRequired": {
     "message": "Təsdiq kodu lazımdır."
   },
+  "invalidVerificationCode": {
+    "message": "Etibarsız təsdiqləmə kodu"
+  },
   "valueCopied": {
     "message": "$VALUE$ kopyalandı",
     "description": "Value has been copied to the clipboard.",
@@ -559,9 +565,6 @@
   },
   "notificationAddSave": {
     "message": "Bəli, indi saxla"
-  },
-  "notificationNeverSave": {
-    "message": "Bu veb sayt üçüm heç vaxt"
   },
   "disableChangedPasswordNotification": {
     "message": "\"Parol dəyişdirildi\" bildirişini sıradan çıxart"
@@ -983,6 +986,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Əlaqə yaradıldı",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Əlaqəli dəyər",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Təsdiqləmə kodunu alacağınız e-poçtu yoxlamaq üçün bu pəncərə xaricində bir yerə klikləsəniz bu pəncərə bağlanacaq. Bu pəncərənin bağlanmaması üçün yeni bir pəncərədə açmaq istəyirsiniz?"
   },
@@ -1084,6 +1095,9 @@
   },
   "lastName": {
     "message": "Soyad"
+  },
+  "fullName": {
+    "message": "Tam ad"
   },
   "identityName": {
     "message": "Kimlik adı"
@@ -1813,5 +1827,23 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Unikal identifikator tapılmadı."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$, öz-özünə sahiblik edən açar serveri ilə SSO istifadə edir. Bu təşkilatın üzvlərinin giriş etməsi üçün artıq ana parol tələb edilməyəcək.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Təşkilatı tərk et"
+  },
+  "removeMasterPassword": {
+    "message": "Ana parolu sil"
+  },
+  "removedMasterPassword": {
+    "message": "Ana parol silindi."
   }
 }
