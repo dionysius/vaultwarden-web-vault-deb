@@ -30,6 +30,7 @@ import { SystemService } from 'jslib-common/services/system.service';
 import { TokenService } from 'jslib-common/services/token.service';
 import { TotpService } from 'jslib-common/services/totp.service';
 import { UserService } from 'jslib-common/services/user.service';
+import { UserVerificationService } from 'jslib-common/services/userVerification.service';
 import { WebCryptoFunctionService } from 'jslib-common/services/webCryptoFunction.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib-common/abstractions/api.service';
@@ -63,7 +64,9 @@ import { SystemService as SystemServiceAbstraction } from 'jslib-common/abstract
 import { TokenService as TokenServiceAbstraction } from 'jslib-common/abstractions/token.service';
 import { TotpService as TotpServiceAbstraction } from 'jslib-common/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib-common/abstractions/user.service';
+import { UserVerificationService as UserVerificationServiceAbstraction } from 'jslib-common/abstractions/userVerification.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
+
 import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
 import { BrowserApi } from '../browser/browserApi';
@@ -126,6 +129,7 @@ export default class MainBackground {
     sendService: SendServiceAbstraction;
     fileUploadService: FileUploadServiceAbstraction;
     keyConnectorService: KeyConnectorServiceAbstraction;
+    userVerificationService: UserVerificationServiceAbstraction;
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
@@ -197,7 +201,7 @@ export default class MainBackground {
         this.stateService = new StateService();
         this.policyService = new PolicyService(this.userService, this.storageService, this.apiService);
         this.keyConnectorService = new KeyConnectorService(this.storageService, this.userService, this.cryptoService,
-            this.apiService, this.environmentService, this.tokenService, this.logService);
+            this.apiService, this.tokenService, this.logService);
         this.vaultTimeoutService = new VaultTimeoutService(this.cipherService, this.folderService,
             this.collectionService, this.cryptoService, this.platformUtilsService, this.storageService,
             this.messagingService, this.searchService, this.userService, this.tokenService, this.policyService,
@@ -239,6 +243,8 @@ export default class MainBackground {
                 BrowserApi.reloadExtension(forceWindowReload ? window : null);
                 return Promise.resolve();
             });
+        this.userVerificationService = new UserVerificationService(this.cryptoService, this.i18nService,
+            this.apiService);
 
         // Other fields
         this.isSafari = this.platformUtilsService.isSafari();
