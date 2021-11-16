@@ -184,6 +184,10 @@ export default class NotificationBackground {
     }
 
     private async addLogin(loginInfo: AddLoginRuntimeMessage, tab: chrome.tabs.Tab) {
+        if (!await this.userService.isAuthenticated()) {
+            return;
+        }
+
         const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
@@ -194,7 +198,7 @@ export default class NotificationBackground {
             normalizedUsername = normalizedUsername.toLowerCase();
         }
 
-        if (await this.userService.isAuthenticated() && await this.vaultTimeoutService.isLocked()) {
+        if (await this.vaultTimeoutService.isLocked()) {
             if (!await this.allowPersonalOwnership()) {
                 return;
             }
