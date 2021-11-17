@@ -81,10 +81,10 @@ import { PasswordRepromptComponent } from './components/password-reprompt.compon
 import { PopOutComponent } from './components/pop-out.component';
 import { SendListComponent } from './components/send-list.component';
 import { SetPinComponent } from './components/set-pin.component';
+import { VerifyMasterPasswordComponent } from './components/verify-master-password.component';
 
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
-import { VerifyMasterPasswordComponent } from 'jslib-angular/components/verify-master-password.component';
 
 import {
     CurrencyPipe,
