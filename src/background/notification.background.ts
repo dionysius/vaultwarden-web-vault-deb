@@ -8,8 +8,11 @@ import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+
 import { ConstantsService } from 'jslib-common/services/constants.service';
+
 import { AutofillService } from '../services/abstractions/autofill.service';
 
 import { BrowserApi } from '../browser/browserApi';
@@ -34,7 +37,7 @@ export default class NotificationBackground {
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private storageService: StorageService,
         private vaultTimeoutService: VaultTimeoutService, private policyService: PolicyService,
-        private folderService: FolderService) {
+        private folderService: FolderService, private userService: UserService) {
     }
 
     async init() {
@@ -181,6 +184,10 @@ export default class NotificationBackground {
     }
 
     private async addLogin(loginInfo: AddLoginRuntimeMessage, tab: chrome.tabs.Tab) {
+        if (!await this.userService.isAuthenticated()) {
+            return;
+        }
+
         const loginDomain = Utils.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
