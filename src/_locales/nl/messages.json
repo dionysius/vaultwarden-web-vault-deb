@@ -121,11 +121,20 @@
   "continue": {
     "message": "Doorgaan"
   },
-  "requestVerificationCode": {
-    "message": "Eenmalig wachtwoord aanvragen"
+  "sendVerificationCode": {
+    "message": "Stuur een verificatiecode naar je e-mail"
+  },
+  "sendCode": {
+    "message": "Code versturen"
+  },
+  "codeSent": {
+    "message": "Code verstuurd"
   },
   "verificationCode": {
     "message": "Verificatiecode"
+  },
+  "confirmIdentity": {
+    "message": "Bevestig je identiteit om door te gaan."
   },
   "account": {
     "message": "Account"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Hoofdwachtwoord verwijderd."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Weet je zeker dat je deze organisatie wilt verlaten?"
+  },
+  "leftOrganization": {
+    "message": "Je hebt de organisatie verlaten."
   }
 }

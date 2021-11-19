@@ -121,11 +121,20 @@
   "continue": {
     "message": "Davam"
   },
-  "requestVerificationCode": {
-    "message": "Tək istifadəlik parol tələb et"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Təsdiqləmə kodu"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Hesab"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Ana parol silindi."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bu təşkilatı tərk etmək istədiyinizə əminsiniz?"
+  },
+  "leftOrganization": {
+    "message": "Təşkilatı tərk etdiniz."
   }
 }

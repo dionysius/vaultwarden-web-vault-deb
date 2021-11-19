@@ -121,11 +121,20 @@
   "continue": {
     "message": "Continuar"
   },
-  "requestVerificationCode": {
-    "message": "Solicitar senha de uso único"
+  "sendVerificationCode": {
+    "message": "Enviar um código de verificação para o seu e-mail"
+  },
+  "sendCode": {
+    "message": "Enviar Código"
+  },
+  "codeSent": {
+    "message": "Código Enviado"
   },
   "verificationCode": {
     "message": "Código de Verificação"
+  },
+  "confirmIdentity": {
+    "message": "Confirme a sua identidade para continuar."
   },
   "account": {
     "message": "Conta"
@@ -510,7 +519,7 @@
     "message": "Item editado"
   },
   "deleteItemConfirmation": {
-    "message": "Tem certeza de que pretende apagar este item?"
+    "message": "Você tem certeza que deseja enviar este item para a lixeira?"
   },
   "deletedItem": {
     "message": "Enviar item para lixeira"
@@ -564,7 +573,7 @@
     "message": "O Bitwarden deve lembrar esta senha para você?"
   },
   "notificationAddSave": {
-    "message": "Sim, Salvar Agora"
+    "message": "Salvar"
   },
   "disableChangedPasswordNotification": {
     "message": "Desativar Notificação de Alteração da Senha"
@@ -576,7 +585,7 @@
     "message": "Você quer atualizar esta senha no Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Sim, atualizar agora"
+    "message": "Atualizar"
   },
   "disableContextMenuItem": {
     "message": "Desativar Opções do Menu de Contexto"
@@ -629,7 +638,7 @@
     "message": "Esta exportação criptografa seus dados usando a chave de criptografia da sua conta. Se você rotacionar a chave de criptografia da sua conta, você deve exportar novamente, já que você não será capaz de descriptografar este arquivo de exportação."
   },
   "encExportAccountWarningDesc": {
-    "message": "Chaves de criptografia da conta são únicas para cada conta de usuário do Bitwarden, então você não pode importar uma exportação criptografada para uma conta diferente."
+    "message": "As chaves de criptografia são únicas para cada conta de usuário do Bitwarden, então você não pode importar um arquivo de exportação criptografado para uma conta diferente."
   },
   "exportMasterPassword": {
     "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
@@ -825,7 +834,7 @@
     "message": "Insira a sua chave de segurança na porta USB do seu computador. Se ele tiver um botão, toque nele."
   },
   "webAuthnNewTab": {
-    "message": "Continue a verificação de 2FA WebAuthn na nova aba."
+    "message": "Para iniciar a verificação 2FA WebAuthn. Clique no botão abaixo para abrir uma nova aba e siga as instruções fornecidas na nova guia."
   },
   "webAuthnNewTabOpen": {
     "message": "Abrir nova aba"
@@ -873,7 +882,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn"
+    "message": "WebAuthn FIDO2"
   },
   "webAuthnDesc": {
     "message": "Utilize qualquer chave de segurança ativada por WebAuthn para acessar a sua conta."
@@ -1007,10 +1016,10 @@
     "message": "O ícone do site fornece um ícone reconhecível ao lado de cada credencial no seu cofre."
   },
   "disableBadgeCounter": {
-    "message": "Desativar Contador de Emblemas"
+    "message": "Desativar Contador"
   },
   "disableBadgeCounterDesc": {
-    "message": "O contador de emblemas indica a quantidade de credenciais que você tem para a página atual no seu cofre."
+    "message": "O contador indica a quantidade de credenciais que você tem para a página atual no seu cofre."
   },
   "cardholderName": {
     "message": "Titular do Cartão"
@@ -1336,7 +1345,7 @@
     "message": "Aguardando confirmação do desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Por favor, confirme o uso de dados biométricos no aplicativo Bitwarden Desktop para habilitar os dados biométricos para o navegador."
+    "message": "Por favor, confirme o uso de dados biométricos no aplicativo Bitwarden Desktop para habilitar a biometria para o navegador."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar o navegador"
@@ -1458,7 +1467,7 @@
     "message": "Política de Privacidade"
   },
   "hintEqualsPassword": {
-    "message": "Sua dica de senha senha não pode ser a mesma que a sua senha."
+    "message": "Sua dica de senha não pode ser o mesmo que a senha."
   },
   "ok": {
     "message": "Ok"
@@ -1470,7 +1479,7 @@
     "message": "Por favor, verifique se o aplicativo desktop mostra esta impressão digital: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "A integração com o navegador não está ativada"
+    "message": "A integração com o navegador não está habilitada"
   },
   "desktopIntegrationDisabledDesc": {
     "message": "A integração com o navegador não está habilitada no aplicativo Bitwarden Desktop. Por favor, habilite-a nas configurações do aplicativo desktop."
@@ -1482,10 +1491,10 @@
     "message": "O aplicativo Bitwarden Desktop precisa ser iniciado antes que esta função possa ser usada."
   },
   "errorEnableBiometricTitle": {
-    "message": "Não foi possível ativar os dados biométricos"
+    "message": "Não foi possível habilitar os dados biométricos"
   },
   "errorEnableBiometricDesc": {
-    "message": "Ação foi cancelada pelo desktop"
+    "message": "A ação foi cancelada pelo aplicativo desktop"
   },
   "nativeMessagingInvalidEncryptionDesc": {
     "message": "O aplicativo desktop invalidou o canal de comunicação seguro. Por favor, tente esta operação novamente"
@@ -1494,7 +1503,7 @@
     "message": "Comunicação com o desktop interrompida"
   },
   "nativeMessagingWrongUserDesc": {
-    "message": "O aplicativo de desktop está conectado em uma conta diferente. Por favor, certifique-se de que ambos os aplicativos estejam conectados na mesma conta."
+    "message": "O aplicativo desktop está conectado em uma conta diferente. Por favor, certifique-se de que ambos os aplicativos estejam conectados na mesma conta."
   },
   "nativeMessagingWrongUserTitle": {
     "message": "A conta não confere"
@@ -1503,7 +1512,7 @@
     "message": "Biometria não habilitada"
   },
   "biometricsNotEnabledDesc": {
-    "message": "A biometria com o navegador requer que a biometria de desktop seja ativada nas configurações primeiro."
+    "message": "A biometria com o navegador requer que a biometria de desktop seja habilitada nas configurações primeiro."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometria não suportada"
@@ -1515,7 +1524,7 @@
     "message": "Permissão não fornecida"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Sem permissão para nos comunicar com o aplicativo Bitwarden Desktop, não podemos fornecer dados biométricos na extensão do navegador. Por favor, tente novamente."
+    "message": "Sem a permissão para se comunicar com o Aplicativo Bitwarden Desktop, não podemos fornecer dados biométricos na extensão do navegador. Por favor, tente novamente."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Erro ao solicitar permissão"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Senha mestra removida."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Você tem certeza que deseja sair desta organização?"
+  },
+  "leftOrganization": {
+    "message": "Você saiu da organização."
   }
 }

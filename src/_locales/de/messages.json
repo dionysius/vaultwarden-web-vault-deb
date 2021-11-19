@@ -121,11 +121,20 @@
   "continue": {
     "message": "Weiter"
   },
-  "requestVerificationCode": {
-    "message": "Einmalpasswort anfordern"
+  "sendVerificationCode": {
+    "message": "Einen Bestätigungscode an deine E-Mail senden"
+  },
+  "sendCode": {
+    "message": "Code senden"
+  },
+  "codeSent": {
+    "message": "Code gesendet"
   },
   "verificationCode": {
     "message": "Verifizierungscode"
+  },
+  "confirmIdentity": {
+    "message": "Bestätige deine Identität, um fortzufahren."
   },
   "account": {
     "message": "Konto"
@@ -415,7 +424,7 @@
     "message": "Verifizierungscode wird benötigt."
   },
   "invalidVerificationCode": {
-    "message": "Ungültiger Bestätigungscode"
+    "message": "Ungültiger Verifizierungscode"
   },
   "valueCopied": {
     "message": "$VALUE$ kopiert",
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Master-Passwort entfernt."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bist du sicher, dass du diese Organisation verlassen möchtest?"
+  },
+  "leftOrganization": {
+    "message": "Du hast die Organisation verlassen."
   }
 }

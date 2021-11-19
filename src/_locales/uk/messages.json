@@ -121,11 +121,20 @@
   "continue": {
     "message": "Продовжити"
   },
-  "requestVerificationCode": {
-    "message": "Запитувати одноразовий пароль"
+  "sendVerificationCode": {
+    "message": "Надіслати код підтвердження е-поштою"
+  },
+  "sendCode": {
+    "message": "Надіслати код"
+  },
+  "codeSent": {
+    "message": "Код надіслано"
   },
   "verificationCode": {
     "message": "Код підтвердження"
+  },
+  "confirmIdentity": {
+    "message": "Підтвердьте свої облікові дані для продовження."
   },
   "account": {
     "message": "Обліковий запис"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Головний пароль вилучено."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Ви справді хочете покинути цю організацію?"
+  },
+  "leftOrganization": {
+    "message": "Ви покинули організацію."
   }
 }

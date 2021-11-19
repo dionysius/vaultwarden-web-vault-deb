@@ -121,11 +121,20 @@
   "continue": {
     "message": "続ける"
   },
-  "requestVerificationCode": {
-    "message": "ワンタイムパスワードを要求する"
+  "sendVerificationCode": {
+    "message": "確認コードをメールに送信"
+  },
+  "sendCode": {
+    "message": "コードを送信"
+  },
+  "codeSent": {
+    "message": "確認コードを送信しました。"
   },
   "verificationCode": {
     "message": "認証コード"
+  },
+  "confirmIdentity": {
+    "message": "続行するには本人確認を行ってください。"
   },
   "account": {
     "message": "アカウント"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "マスターパスワードを削除しました。"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "本当にこの組織から脱退しますか？"
+  },
+  "leftOrganization": {
+    "message": "組織から脱退しました。"
   }
 }

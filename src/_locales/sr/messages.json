@@ -121,11 +121,20 @@
   "continue": {
     "message": "Настави"
   },
-  "requestVerificationCode": {
-    "message": "Захтевај једнократну лозинку"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Верификациони код"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Налог"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Главна лозинка уклоњена."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Да ли сте сигурни да желите да напустите ову организацију?"
+  },
+  "leftOrganization": {
+    "message": "Напустили сте организацију."
   }
 }

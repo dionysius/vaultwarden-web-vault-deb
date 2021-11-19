@@ -121,11 +121,20 @@
   "continue": {
     "message": "계속"
   },
-  "requestVerificationCode": {
-    "message": "Request one-time password"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "인증 코드"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "계정"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   }
 }

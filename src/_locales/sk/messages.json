@@ -121,11 +121,20 @@
   "continue": {
     "message": "Pokračovať"
   },
-  "requestVerificationCode": {
-    "message": "Vyžiadať jednorazové heslo"
+  "sendVerificationCode": {
+    "message": "Poslať overovací kód na váš e-mail"
+  },
+  "sendCode": {
+    "message": "Odoslať kód"
+  },
+  "codeSent": {
+    "message": "Kód bol odoslaný"
   },
   "verificationCode": {
     "message": "Overovací kód"
+  },
+  "confirmIdentity": {
+    "message": "Ak chcete pokračovať, potvrďte svoju identitu."
   },
   "account": {
     "message": "Účet"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Hlavné heslo bolo odstránené."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Naozaj chcete opustiť túto organizáciu?"
+  },
+  "leftOrganization": {
+    "message": "Opustili ste organizáciu."
   }
 }

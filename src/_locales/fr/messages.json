@@ -121,11 +121,20 @@
   "continue": {
     "message": "Continuer"
   },
-  "requestVerificationCode": {
-    "message": "Demander un mot de passe à usage unique"
+  "sendVerificationCode": {
+    "message": "Envoyer un code de vérification à votre adresse email"
+  },
+  "sendCode": {
+    "message": "Envoyer le code"
+  },
+  "codeSent": {
+    "message": "Code envoyé"
   },
   "verificationCode": {
     "message": "Code de vérification"
+  },
+  "confirmIdentity": {
+    "message": "Confirmez votre identité pour continuer."
   },
   "account": {
     "message": "Compte"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Mot de passe maître supprimé."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Êtes-vous sûr·e de vouloir quitter cette organisation ?"
+  },
+  "leftOrganization": {
+    "message": "Vous avez quitté l'organisation."
   }
 }

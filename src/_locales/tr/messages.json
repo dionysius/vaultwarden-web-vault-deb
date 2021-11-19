@@ -121,11 +121,20 @@
   "continue": {
     "message": "Devam"
   },
-  "requestVerificationCode": {
-    "message": "Tek kullanımlık parola iste"
+  "sendVerificationCode": {
+    "message": "E-posta adresime doğrulama kodu gönder"
+  },
+  "sendCode": {
+    "message": "Kod gönder"
+  },
+  "codeSent": {
+    "message": "Kod gönderildi"
   },
   "verificationCode": {
     "message": "Doğrulama kodu"
+  },
+  "confirmIdentity": {
+    "message": "Devam etmek için kimliğinizi doğrulayın."
   },
   "account": {
     "message": "Hesap"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Ana parola kaldırıldı."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bu kuruluştan ayrılmak istediğinizden emin misiniz?"
+  },
+  "leftOrganization": {
+    "message": "Kuruluştan ayrıldınız."
   }
 }

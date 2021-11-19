@@ -121,11 +121,20 @@
   "continue": {
     "message": "Продължаване"
   },
-  "requestVerificationCode": {
-    "message": "Заявка за еднократна парола"
+  "sendVerificationCode": {
+    "message": "Изпращане на код за потвърждаване до Вашата ел. поща"
+  },
+  "sendCode": {
+    "message": "Изпращане на кода"
+  },
+  "codeSent": {
+    "message": "Кодът е изпратен"
   },
   "verificationCode": {
     "message": "Код за потвърждаване"
+  },
+  "confirmIdentity": {
+    "message": "Потвърдете самоличността си, за да продължите."
   },
   "account": {
     "message": "Регистрация"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Главната парола е премахната."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Наистина ли искате да напуснете тази организация?"
+  },
+  "leftOrganization": {
+    "message": "Напуснахте организацията."
   }
 }

@@ -121,11 +121,20 @@
   "continue": {
     "message": "המשך"
   },
-  "requestVerificationCode": {
-    "message": "בקשת סיסמה חד־פעמית"
+  "sendVerificationCode": {
+    "message": "שליחת קוד אימות לדוא״ל שלך"
+  },
+  "sendCode": {
+    "message": "שליחת קוד"
+  },
+  "codeSent": {
+    "message": "קוד נשלח"
   },
   "verificationCode": {
     "message": "קוד אימות"
+  },
+  "confirmIdentity": {
+    "message": "יש לאשר את זהותך כדי להמשיך."
   },
   "account": {
     "message": "חשבון"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "הסיסמה הראשית הוסרה."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "לעזוב את הארגון?"
+  },
+  "leftOrganization": {
+    "message": "עזבת את הארגון."
   }
 }

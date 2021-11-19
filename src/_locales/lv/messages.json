@@ -121,11 +121,20 @@
   "continue": {
     "message": "Turpināt"
   },
-  "requestVerificationCode": {
-    "message": "Pieprasīt vienreiz izmantojamo paroli"
+  "sendVerificationCode": {
+    "message": "Sūtīt apstiprinājuma kodu uz e-pastu"
+  },
+  "sendCode": {
+    "message": "Nosūtīt kodu"
+  },
+  "codeSent": {
+    "message": "Kods nosūtīts"
   },
   "verificationCode": {
     "message": "Apstiprināšanas kods"
+  },
+  "confirmIdentity": {
+    "message": "Apstiprināt identitāti, lai turpinātu."
   },
   "account": {
     "message": "Konts"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Galvenā parole noņemta."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Vai tiešām pamest šo apvienību?"
+  },
+  "leftOrganization": {
+    "message": "Apvienība ir pamesta."
   }
 }
