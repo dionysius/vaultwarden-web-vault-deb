@@ -121,11 +121,20 @@
   "continue": {
     "message": "Folytatás"
   },
-  "requestVerificationCode": {
-    "message": "Egyszeri jelszó kérése"
+  "sendVerificationCode": {
+    "message": "Ellenőrző kód elküldése a saját email címre"
+  },
+  "sendCode": {
+    "message": "Kód küldése"
+  },
+  "codeSent": {
+    "message": "A kód elküldésre került."
   },
   "verificationCode": {
     "message": "Ellenőrző kód"
+  },
+  "confirmIdentity": {
+    "message": "A folytatáshoz meg kell erősíteni a személyazonosságot."
   },
   "account": {
     "message": "Felhasználó"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "A mesterjelszó eltávolításra került."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Biztosan kilépünk ebből a szervezetből?"
+  },
+  "leftOrganization": {
+    "message": "Megtörtént a kilépés a szervezetből."
   }
 }

@@ -121,11 +121,20 @@
   "continue": {
     "message": "Continua"
   },
-  "requestVerificationCode": {
-    "message": "Request one-time password"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Codi de verificació"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Compte"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Segur que voleu abandonar aquesta organització?"
+  },
+  "leftOrganization": {
+    "message": "Heu deixat l'organització."
   }
 }

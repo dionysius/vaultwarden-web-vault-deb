@@ -121,11 +121,20 @@
   "continue": {
     "message": "Continuar"
   },
-  "requestVerificationCode": {
-    "message": "Request one-time password"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Código de verificación"
+  },
+  "confirmIdentity": {
+    "message": "Confirme su identidad para continuar."
   },
   "account": {
     "message": "Cuenta"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "¿Confirma que quiere abandonar esta organización?"
+  },
+  "leftOrganization": {
+    "message": "Ha abandonado la organización."
   }
 }

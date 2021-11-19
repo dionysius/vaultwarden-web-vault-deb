@@ -121,11 +121,20 @@
   "continue": {
     "message": "Forsæt"
   },
-  "requestVerificationCode": {
-    "message": "Anmod om engangsadgangskode"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Bekræftelseskode"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Konto"
@@ -1829,7 +1838,7 @@
     "message": "Ingen entydig identifikator fundet."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ bruger SSO med en selv-hostet nøgleserver. Indlogning for organisationsmedlemmer kræver ikke længere en hovedadgangskode.",
+    "message": "$ORGANIZATION$ bruger SSO med en selv-hostet nøgleserver. En hovedadgangskode er ikke længere påkrævet for at logge ind for medlemmer af denne organisation.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1841,9 +1850,15 @@
     "message": "Forlad organisation"
   },
   "removeMasterPassword": {
-    "message": "Fjern Hovedadgangskode"
+    "message": "Fjern hovedadgangskode"
   },
   "removedMasterPassword": {
     "message": "Hovedadgangskode fjernet."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Er du sikker på, at du vil forlade denne organisation?"
+  },
+  "leftOrganization": {
+    "message": "Du har forladt organisationen."
   }
 }

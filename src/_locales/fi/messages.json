@@ -17,7 +17,7 @@
     "message": "Luo tili"
   },
   "login": {
-    "message": "Kirjaudu sisään"
+    "message": "Kirjaudu"
   },
   "enterpriseSingleSignOn": {
     "message": "Yrityksen kertakirjautuminen (SSO)"
@@ -121,11 +121,20 @@
   "continue": {
     "message": "Jatka"
   },
-  "requestVerificationCode": {
-    "message": "Pyydä kertakäyttöinen salasana"
+  "sendVerificationCode": {
+    "message": "Lähetä vahvistuskoodi sähköpostiisi"
+  },
+  "sendCode": {
+    "message": "Lähetä koodi"
+  },
+  "codeSent": {
+    "message": "Koodi lähetetty"
   },
   "verificationCode": {
     "message": "Todennuskoodi"
+  },
+  "confirmIdentity": {
+    "message": "Vahvista henkilöllisyytesi jatkaaksesi."
   },
   "account": {
     "message": "Käyttäjätili"
@@ -297,7 +306,7 @@
     "message": "Näytä tai piilota"
   },
   "manage": {
-    "message": "Hallinta"
+    "message": "Hallinnoi"
   },
   "other": {
     "message": "Muut"
@@ -816,7 +825,7 @@
     "message": "Lähetä todennuskoodi sähköpostitse uudelleen"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Käytä eri kaksivaiheisen kirjautumisen todennusmenetelmää"
+    "message": "Käytä toista kaksivaiheisen kirjautumisen todentajaa"
   },
   "insertYubiKey": {
     "message": "Kytke YubiKey-todennuslaitteesi tietokoneen USB-porttiin ja paina sen painiketta."
@@ -855,7 +864,7 @@
     "message": "Todennussovellus"
   },
   "authenticatorAppDesc": {
-    "message": "Käytä todennussovellusta (kuten Authy tai Google Authenticator) luodaksesi aikarajallisia todennuskoodeja.",
+    "message": "Käytä todennussovellusta (kuten Authy, Google tai Microsoft Authenticator) luodaksesi aikarajallisia todennuskoodeja.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Pääsalasana on poistettu."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Haluatko varmasti poistua tästä organisaatiosta?"
+  },
+  "leftOrganization": {
+    "message": "Olet poistunut organisaatiosta."
   }
 }

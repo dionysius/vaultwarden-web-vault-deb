@@ -121,11 +121,20 @@
   "continue": {
     "message": "Продолжить"
   },
-  "requestVerificationCode": {
-    "message": "Запросить одноразовый пароль"
+  "sendVerificationCode": {
+    "message": "Отправить код подтверждения на ваш email"
+  },
+  "sendCode": {
+    "message": "Отправить код"
+  },
+  "codeSent": {
+    "message": "Код отправлен"
   },
   "verificationCode": {
     "message": "Код подтверждения"
+  },
+  "confirmIdentity": {
+    "message": "Подтвердите вашу личность, чтобы продолжить."
   },
   "account": {
     "message": "Аккаунт"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Мастер-пароль удален."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Вы действительно хотите покинуть эту организацию?"
+  },
+  "leftOrganization": {
+    "message": "Вы покинули организацию."
   }
 }

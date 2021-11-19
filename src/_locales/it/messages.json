@@ -121,11 +121,20 @@
   "continue": {
     "message": "Continua"
   },
-  "requestVerificationCode": {
-    "message": "Richiedi OTP"
+  "sendVerificationCode": {
+    "message": "Invia un codice di verifica alla tua email"
+  },
+  "sendCode": {
+    "message": "Invia codice"
+  },
+  "codeSent": {
+    "message": "Codice inviato"
   },
   "verificationCode": {
     "message": "Codice di verifica"
+  },
+  "confirmIdentity": {
+    "message": "Conferma la tua identità per continuare."
   },
   "account": {
     "message": "Account"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Password principale rimossa."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Sei sicuro di voler lasciare questa organizzazione?"
+  },
+  "leftOrganization": {
+    "message": "Hai lasciato l'organizzazione."
   }
 }

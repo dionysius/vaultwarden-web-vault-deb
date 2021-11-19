@@ -121,11 +121,20 @@
   "continue": {
     "message": "Kontynuuj"
   },
-  "requestVerificationCode": {
-    "message": "Poproś o jednorazowe hasło"
+  "sendVerificationCode": {
+    "message": "Wyślij kod weryfikacyjny na mój adres e-mail"
+  },
+  "sendCode": {
+    "message": "Wyślij kod"
+  },
+  "codeSent": {
+    "message": "Kod został wysłany"
   },
   "verificationCode": {
     "message": "Kod weryfikacyjny"
+  },
+  "confirmIdentity": {
+    "message": "Potwierdź swoją tożsamość, aby kontynuować."
   },
   "account": {
     "message": "Konto"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Hasło główne zostało usunięte."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Czy na pewno chcesz opuścić tę organizację?"
+  },
+  "leftOrganization": {
+    "message": "Nie należysz już do tej organizacji."
   }
 }

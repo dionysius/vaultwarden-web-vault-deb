@@ -121,11 +121,20 @@
   "continue": {
     "message": "Continuare"
   },
-  "requestVerificationCode": {
-    "message": "Solicitare de parolă unică"
+  "sendVerificationCode": {
+    "message": "Trimite un cod de verificare la adresa dvs. de e-mail"
+  },
+  "sendCode": {
+    "message": "Trimitere cod"
+  },
+  "codeSent": {
+    "message": "Cod trimis"
   },
   "verificationCode": {
     "message": "Cod de verificare"
+  },
+  "confirmIdentity": {
+    "message": "Confirmați-vă identitatea pentru a continua."
   },
   "account": {
     "message": "Cont"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Parolă principală eliminată."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Sigur doriți să părăsiți această organizație?"
+  },
+  "leftOrganization": {
+    "message": "Ați părăsit organizația."
   }
 }

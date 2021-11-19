@@ -121,11 +121,20 @@
   "continue": {
     "message": "Jätka"
   },
-  "requestVerificationCode": {
-    "message": "Küsi ühekordset parooli"
+  "sendVerificationCode": {
+    "message": "Saada kinnituskood oma e-postile"
+  },
+  "sendCode": {
+    "message": "Saada kood"
+  },
+  "codeSent": {
+    "message": "Kood on saadetud"
   },
   "verificationCode": {
     "message": "Kinnituskood"
+  },
+  "confirmIdentity": {
+    "message": "Jätkamiseks kinnita oma identiteet."
   },
   "account": {
     "message": "Konto"
@@ -1829,7 +1838,7 @@
     "message": "Unikaalset identifikaatorit ei leitud."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ kasutab SSO-d koos enda majutatud võtmeserveriga. Selle organisatsiooni liikmed ei pea sisselogimisel enam ülemparooli kasutama.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "Ülemparool on eemaldatud."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Kas oled kindel, et soovid sellest organisatsioonist lahkuda?"
+  },
+  "leftOrganization": {
+    "message": "Oled organisatsioonist lahkunud."
   }
 }

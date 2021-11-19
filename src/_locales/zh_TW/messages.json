@@ -121,11 +121,20 @@
   "continue": {
     "message": "繼續"
   },
-  "requestVerificationCode": {
-    "message": "請求一次性密碼"
+  "sendVerificationCode": {
+    "message": "傳送驗證碼到您的信箱"
+  },
+  "sendCode": {
+    "message": "傳送驗證碼"
+  },
+  "codeSent": {
+    "message": "已送出驗證碼"
   },
   "verificationCode": {
     "message": "驗證碼"
+  },
+  "confirmIdentity": {
+    "message": "請先確認身分後再繼續。"
   },
   "account": {
     "message": "帳戶"
@@ -1845,5 +1854,11 @@
   },
   "removedMasterPassword": {
     "message": "主密碼已移除。"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "您確定要離開這個組織嗎？"
+  },
+  "leftOrganization": {
+    "message": "您已離開此組織。"
   }
 }
