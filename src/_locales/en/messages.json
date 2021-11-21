@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
-  "verifyMasterPassword": {
-    "message": "Verify Master Password"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Your vault is locked. Verify your identity to continue."
   },
   "unlock": {
     "message": "Unlock"
