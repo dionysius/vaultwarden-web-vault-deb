@@ -2,7 +2,7 @@
     <header>
         <div class="left"></div>
         <div class="center">
-            <span class="title">{{(pinLock ? 'verifyPin' : 'verifyIdentity') | i18n}}</span>
+            <span class="title">{{'verifyIdentity' | i18n}}</span>
         </div>
         <div class="right">
             <button type="submit" appBlurClick *ngIf="!hideInput">{{'unlock' | i18n}}</button>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <p>{{(pinLock ? 'yourVaultIsLockedPinCode' : 'yourVaultIsLocked') | i18n}}</p>
+                <p>{{'yourVaultIsLocked' | i18n}}</p>
                 {{'loggedInAsOn' | i18n : email : webVaultHostname}}
             </div>
         </div>
