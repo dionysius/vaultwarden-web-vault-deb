@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {
+    Component,
+    NgZone,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -31,10 +34,11 @@ export class LockComponent extends BaseLockComponent {
         userService: UserService, cryptoService: CryptoService,
         storageService: StorageService, vaultTimeoutService: VaultTimeoutService,
         environmentService: EnvironmentService, stateService: StateService,
-        apiService: ApiService, logService: LogService, keyConnectorService: KeyConnectorService) {
+        apiService: ApiService, logService: LogService, keyConnectorService: KeyConnectorService,
+        ngZone: NgZone) {
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
             storageService, vaultTimeoutService, environmentService, stateService, apiService, logService,
-            keyConnectorService);
+            keyConnectorService, ngZone);
         this.successRoute = '/tabs/current';
         this.isInitialLockScreen = (window as any).previousPopupUrl == null;
     }

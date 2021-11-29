@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {
+    Component,
+    NgZone,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from 'jslib-common/abstractions/auth.service';
@@ -24,9 +27,9 @@ export class LoginComponent extends BaseLoginComponent {
         protected stateService: StateService, protected environmentService: EnvironmentService,
         protected passwordGenerationService: PasswordGenerationService,
         protected cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
-        syncService: SyncService, logService: LogService) {
+        syncService: SyncService, logService: LogService, ngZone: NgZone) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
-            passwordGenerationService, cryptoFunctionService, storageService, logService);
+            passwordGenerationService, cryptoFunctionService, storageService, logService, ngZone);
         super.onSuccessfulLogin = async () => {
             await syncService.fullSync(true);
         };
