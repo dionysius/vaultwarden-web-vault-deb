@@ -26,7 +26,7 @@ jobs:
         with:
           ref: version_bump_${{ github.event.inputs.version_number }}
 
-      - name: Bump Version - Props
+      - name: Bump Version - Manifest
         uses: bitwarden/gh-actions/version-bump@0c263b3963211ccaf5804313c3b3a0bcc52d4b19
         with:
           version: ${{ github.event.inputs.version_number }}
