@@ -104,9 +104,12 @@ jobs:
 
       - name: NPM setup & test
         run: |
-          npm install
+          npm ci
           npm run dist
           npm run test
+
+      - name: Run linter
+        run: npm run lint
 
       - name: Gulp
         run: gulp ci
