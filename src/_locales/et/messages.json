@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Kasutatav brauser ei toeta lihtsat lõikelaua kopeerimist. Kopeeri see käsitsi."
   },
-  "verifyMasterPassword": {
-    "message": "Autendi ülemparooliga"
+  "verifyIdentity": {
+    "message": "Identiteedi kinnitamine"
   },
   "yourVaultIsLocked": {
     "message": "Hoidla on lukus. Jätkamiseks sisesta ülemparool."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Vale PIN kood."
-  },
-  "verifyPin": {
-    "message": "Kinnita PIN koodiga"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
   },
   "unlockWithBiometrics": {
     "message": "Ava biomeetriaga"

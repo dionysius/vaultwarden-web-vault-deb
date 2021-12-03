@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Браузърът не поддържа копиране в буфера, затова копирайте на ръка."
   },
-  "verifyMasterPassword": {
-    "message": "Потвърждаване на главната парола"
+  "verifyIdentity": {
+    "message": "Потвърждаване на самоличността"
   },
   "yourVaultIsLocked": {
     "message": "Трезорът е заключен — въведете главната си парола, за да продължите."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Неправилен ПИН."
-  },
-  "verifyPin": {
-    "message": "Потвърждаване на ПИН"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Трезорът е заключен. Въведете своя ПИН, за да продължите."
   },
   "unlockWithBiometrics": {
     "message": "Отключване с биометрични данни"

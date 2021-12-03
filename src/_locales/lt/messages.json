@@ -20,7 +20,7 @@
     "message": "Prisijungti"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Vienkartinis įmonės prisijungimas"
   },
   "cancel": {
     "message": "Atšaukti"
@@ -89,7 +89,7 @@
     "message": "Kurti slaptažodį (paruoštas įterpti)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Kopijuoti pritaikyto laukelio pavadinimą"
   },
   "noMatchingLogins": {
     "message": "Nėra atitinkančių prisijungimų."
@@ -122,19 +122,19 @@
     "message": "Tęsti"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Siųsti patvirtinimo kodą į el. paštą"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Siųsti kodą"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kodas išsiųstas"
   },
   "verificationCode": {
     "message": "Patvirtinimo kodas"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Norint tęsti, patvirtinkite tapatybę."
   },
   "account": {
     "message": "Paskyra"
@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Jūsų žiniatinklio naršyklė nepalaiko automatinio kopijavimo. Vietoj to nukopijuokite rankiniu būdu."
   },
-  "verifyMasterPassword": {
-    "message": "Patikrinkite pagrindinį slaptažodį"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Jūsų saugykla užrakinta. Norėdami tęsti, patikrinkite pagrindinį slaptažodį."
@@ -424,7 +424,7 @@
     "message": "Būtinas patvirtinimo kodas."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Neteisingas patvirtinimo kodas"
   },
   "valueCopied": {
     "message": "Nukopijuota $VALUE$",
@@ -500,7 +500,7 @@
     "message": "URI"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "URI adresas $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -550,48 +550,48 @@
     "message": "Prisijungimo pridėjimo pranešimas automatiškai Jūs paragina išsaugoti naujus prisijungimus Jūsų saugykloje, kuomet prisijungiate pirmą kartą."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+    "message": "Nerodyti kortelių skirtuko puslapyje"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Kortelių įrašai yra nurodyti „Dabartinis skirtukas“ puslapyje lengvai laukelių užpildymo prieigai."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+    "message": "Nerodyti tapatybių skirtuko puslapyje"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+    "message": "Saugyklos tapatybių įrašai yra nurodyti „Dabartinis skirtukas“ puslapyje lengvai laukelių užpildymo prieigai."
   },
   "clearClipboard": {
     "message": "Išvalyti iškarpinę",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Automatiškai išvalyti nukopijuotas reikšmes iškarpinėje.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Should Bitwarden remember this password for you?"
+    "message": "Ar „Bitwarden“ turėtų prisiminti šį slaptažodį?"
   },
   "notificationAddSave": {
     "message": "Taip, išsaugoti dabar"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Išjungti pakeisto slaptažodžio pranešimą"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "„Pakeisto slaptažodžio pranešimas“ automatiškai ragina atnaujinti slaptažodį saugykloje, kai aptinkamas pakeitimas svetainėje."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Ar norite atnaujinti šį slaptažodį „Bitwarden“?"
   },
   "notificationChangeSave": {
     "message": "Taip, atnaujinti dabar"
   },
   "disableContextMenuItem": {
-    "message": "Disable Context Menu Options"
+    "message": "Išjungti kontekstinio meniu nustatymus"
   },
   "disableContextMenuItemDesc": {
-    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "message": "Kontekstinio meniu nustatymai suteikia greitą prieigą prie slaptažodžių generavimo ir svetainės prisijungimų dabartiniame skirtuke."
   },
   "defaultUriMatchDetection": {
     "message": "Default URI Match Detection",
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Invalid PIN code."
-  },
-  "verifyPin": {
-    "message": "Verify PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"

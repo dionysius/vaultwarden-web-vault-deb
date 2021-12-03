@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "ನಿಮ್ಮ ವೆಬ್ ಬ್ರೌಸರ್ ಸುಲಭವಾದ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ನಕಲು ಮಾಡುವುದನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ಬದಲಿಗೆ ಅದನ್ನು ಹಸ್ತಚಾಲಿತವಾಗಿ ನಕಲಿಸಿ."
   },
-  "verifyMasterPassword": {
-    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಪರಿಶೀಲಿಸಿ"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಲಾಕ್ ಆಗಿದೆ. ಮುಂದುವರೆಯಲು ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "ಅಮಾನ್ಯ ಪಿನ್ ಕೋಡ್."
-  },
-  "verifyPin": {
-    "message": "ಪಿನ್ ಪರಿಶೀಲಿಸಿ"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಲಾಕ್ ಆಗಿದೆ. ಮುಂದುವರೆಯಲು ನಿಮ್ಮ ಪಿನ್ ಕೋಡ್ ಪರಿಶೀಲಿಸಿ."
   },
   "unlockWithBiometrics": {
     "message": "ಬಯೋಮೆಟ್ರಿಕ್ಸ್‌ನೊಂದಿಗೆ ಅನ್ಲಾಕ್ ಮಾಡಿ"

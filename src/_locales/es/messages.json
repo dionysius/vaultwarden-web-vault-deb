@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Tu navegador web no soporta copiar al portapapeles facilmente. Cópialo manualmente."
   },
-  "verifyMasterPassword": {
-    "message": "Verificar contraseña maestra"
+  "verifyIdentity": {
+    "message": "Verificar identidad"
   },
   "yourVaultIsLocked": {
     "message": "Su caja fuerte está bloqueada. Verifique su contraseña maestra para continuar."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Código PIN inválido."
-  },
-  "verifyPin": {
-    "message": "Verificar PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tu caja fuerte está bloqueada. Verifica tu código PIN para continuar."
   },
   "unlockWithBiometrics": {
     "message": "Desbloquear con biométricos"

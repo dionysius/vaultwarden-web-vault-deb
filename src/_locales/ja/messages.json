@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "お使いのブラウザはクリップボードへのコピーに対応していません。手動でコピーしてください"
   },
-  "verifyMasterPassword": {
-    "message": "マスターパスワードの確認"
+  "verifyIdentity": {
+    "message": "本人確認を行う"
   },
   "yourVaultIsLocked": {
     "message": "保管庫がロックされています。開くにはマスターパスワードを入力してください。"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "PIN コードが間違っています。"
-  },
-  "verifyPin": {
-    "message": "PIN の確認"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "保管庫がロックされています。PIN コードで認証してください。"
   },
   "unlockWithBiometrics": {
     "message": "生体認証でロック解除"

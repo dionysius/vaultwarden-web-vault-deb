@@ -122,19 +122,19 @@
     "message": "ادامه"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "ارسال یک کد تأیید به ایمیل شما"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "ارسال کد"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "کد ارسال شد"
   },
   "verificationCode": {
     "message": "کد تایید"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "برای ادامه هویت خود را تأیید کنید."
   },
   "account": {
     "message": "حساب"
@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "مرورگر شما از کپی کلیپ بورد آسان پشتیبانی نمی کند. به جای آن به صورت دستی کپی کنید."
   },
-  "verifyMasterPassword": {
-    "message": "تایید کلمه عبور اصلی"
+  "verifyIdentity": {
+    "message": "تأیید هویت"
   },
   "yourVaultIsLocked": {
     "message": "گاوصندوق شما قفل است. برای ادامه کلمه عبور اصلی خود را وارد کنید."
@@ -424,7 +424,7 @@
     "message": "کد تایید مورد نیاز است."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "کد تایید نامعتبر"
   },
   "valueCopied": {
     "message": " کپی شده",
@@ -1332,12 +1332,6 @@
   "invalidPin": {
     "message": "کد پین معتبر نیست. "
   },
-  "verifyPin": {
-    "message": "تأیید پین"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "گاوصندوق شما قفل شده است. برای ادامه کد پین خود را تایید کنید."
-  },
   "unlockWithBiometrics": {
     "message": "با استفاده از بیومتریک باز کنید"
   },
@@ -1838,7 +1832,7 @@
     "message": "شناسه منحصر به فردی یافت نشد."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ در حال استفاده از SSO با یک سرور کلید خود میزبان است. برای ورود اعضای این سازمان دیگر نیازی به کلمه عبور اصلی نیست.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1847,18 +1841,18 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "ترک سازمان"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "پاک کردن کلمه عبور اصلی"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "کلمه عبور اصلی پاک شد."
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "آيا مطمئن هستيد که می خواهيد سازمان های انتخاب شده را ترک کنيد؟"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "شما از سازمان ها خارج شده اید."
   }
 }

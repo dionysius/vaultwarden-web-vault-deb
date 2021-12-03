@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Selaimesi ei tue helppoa leikepöydälle kopiointia. Kopioi kohde manuaalisesti."
   },
-  "verifyMasterPassword": {
-    "message": "Vahvista pääsalasana"
+  "verifyIdentity": {
+    "message": "Vahvista henkilöllisyys"
   },
   "yourVaultIsLocked": {
-    "message": "Holvisi on lukittu. Syötä pääsalasana jatkaaksesi."
+    "message": "Holvisi on lukittu. Vahvista henkilöllisyytesi jatkaaksesi."
   },
   "unlock": {
     "message": "Avaa"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Virheellinen PIN-koodi."
-  },
-  "verifyPin": {
-    "message": "Vahvista PIN-koodi"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Holvisi on lukittu. Vahvista PIN-koodisi jatkaaksesi."
   },
   "unlockWithBiometrics": {
     "message": "Avaa biometrialla"

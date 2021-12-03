@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "הדפדפן שלך לא תומך בהעתקה ללוח. אנא העתק בצורה ידנית."
   },
-  "verifyMasterPassword": {
-    "message": "אמת סיסמה ראשית"
+  "verifyIdentity": {
+    "message": "אימות זהות"
   },
   "yourVaultIsLocked": {
     "message": "הכספת שלך נעולה. הזן את הסיסמה הראשית שלך כדי להמשיך."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "קוד PIN לא תקין."
-  },
-  "verifyPin": {
-    "message": "אמת PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "הכספת שלך נעולה. הזן את קוד הPIN שלך כדי להמשיך."
   },
   "unlockWithBiometrics": {
     "message": "פתח נעילה עם זיהוי ביומטרי"

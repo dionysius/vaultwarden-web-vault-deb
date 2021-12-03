@@ -122,19 +122,19 @@
     "message": "Davam"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "E-poçtunuza bir təsdiqləmə kodu göndərin"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Kod göndər"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kod göndərildi"
   },
   "verificationCode": {
     "message": "Təsdiqləmə kodu"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Davam etmək üçün kimliyinizi təsdiqləyin."
   },
   "account": {
     "message": "Hesab"
@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Veb səyyahınız lövhəyə kopyalamağı dəstəkləmir. Əvəzində əllə kopyalayın."
   },
-  "verifyMasterPassword": {
-    "message": "Ana parolu təsdiqlə"
+  "verifyIdentity": {
+    "message": "Kimliyi təsdiqləyin"
   },
   "yourVaultIsLocked": {
     "message": "Anbarınız kilidlənib. Davam etmək üçün ana parolunuzu təsdiqləyin."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Etibarsız PIN kod."
-  },
-  "verifyPin": {
-    "message": "PIN-i təsdiqlə"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Anbarınız kilidlənib. Davam etmək üçün PIN kodunuzu təsdiqləyin."
   },
   "unlockWithBiometrics": {
     "message": "Biometriklərlə kilidi açın"

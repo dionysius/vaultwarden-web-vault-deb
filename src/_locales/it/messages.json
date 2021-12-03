@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Il tuo browser non supporta la copia dagli appunti. Copiala manualmente."
   },
-  "verifyMasterPassword": {
-    "message": "Verifica password principale"
+  "verifyIdentity": {
+    "message": "Verifica identità"
   },
   "yourVaultIsLocked": {
     "message": "La tua cassaforte è bloccata. Inserisci la tua password principale per continuare."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Codice PIN non valido."
-  },
-  "verifyPin": {
-    "message": "Verifica PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare."
   },
   "unlockWithBiometrics": {
     "message": "Sblocca con i dati biometrici"

@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "आपका वेब ब्राउज़र आसान क्लिपबोर्ड कॉपीिंग का समर्थन नहीं करता है। इसके बजाय इसे मैन्युअल रूप से कॉपी करें।"
   },
-  "verifyMasterPassword": {
-    "message": "Verify Master Password"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "आपकी वॉल्ट लॉक हो गई है। जारी रखने के लिए अपने मास्टर पासवर्ड को सत्यापित करें।"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "अमान्य पिन कोड।"
-  },
-  "verifyPin": {
-    "message": "पिन की पुष्टि करें"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "आपकी वॉल्ट लॉक हो गई है। जारी रखने के लिए अपने पिन कोड को सत्यापित करें।"
   },
   "unlockWithBiometrics": {
     "message": "बायोमेट्रिक्स का उपयोग कर अनलॉक करें"

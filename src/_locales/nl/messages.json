@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Je webbrowser ondersteunt kopiëren naar plakbord niet. Kopieer handmatig."
   },
-  "verifyMasterPassword": {
-    "message": "Hoofdwachtwoord invoeren"
+  "verifyIdentity": {
+    "message": "Identiteit verifiëren"
   },
   "yourVaultIsLocked": {
     "message": "Je kluis is vergrendeld. Voer je hoofdwachtwoord in om door te gaan."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Ongeldige PIN-code."
-  },
-  "verifyPin": {
-    "message": "PIN-code invoeren"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Je kluis is vergrendeld. Voer je PIN-code in om door te gaan."
   },
   "unlockWithBiometrics": {
     "message": "Biometrisch ontgrendelen"

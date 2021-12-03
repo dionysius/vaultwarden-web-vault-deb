@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Web tarayıcınız panoya kopyalamayı desteklemiyor. Parolayı elle kopyalayın."
   },
-  "verifyMasterPassword": {
-    "message": "Ana parolayı doğrulayın"
+  "verifyIdentity": {
+    "message": "Kimlik Doğrulama"
   },
   "yourVaultIsLocked": {
-    "message": "Kasanız kilitli. Devam etmek için ana parolanızı doğrulayın."
+    "message": "Kasanız kilitli. Devam etmek için kimliğinizi doğrulayın."
   },
   "unlock": {
     "message": "Kilidi aç"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "PIN kodu geçersiz."
-  },
-  "verifyPin": {
-    "message": "PIN'i doğrula"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Kasanız kilitlendi. Devam etmek için PIN kodunuzu doğrulayın."
   },
   "unlockWithBiometrics": {
     "message": "Kilidi biyometri ile aç"

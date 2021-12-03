@@ -122,19 +122,19 @@
     "message": "Συνέχεια"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Στείλτε έναν κωδικό επαλήθευσης στο email σας"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Αποστολή Κωδικού"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Ο Κωδικός Στάλθηκε"
   },
   "verificationCode": {
     "message": "Κωδικός Επαλήθευσης"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Επιβεβαιώστε την ταυτότητα σας για να συνεχίσετε."
   },
   "account": {
     "message": "Λογαριασμός"
@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Το πρόγραμμα περιήγησης ιστού δεν υποστηρίζει εύκολη αντιγραφή πρόχειρου. Αντιγράψτε το με το χέρι αντ'αυτού."
   },
-  "verifyMasterPassword": {
-    "message": "Επαλήθευση Κύριου Κωδικού"
+  "verifyIdentity": {
+    "message": "Επιβεβαίωση ταυτότητας"
   },
   "yourVaultIsLocked": {
     "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κύριο κωδικό πρόσβασης για να συνεχίσετε."
@@ -424,7 +424,7 @@
     "message": "Απαιτείται ο κωδικός επαλήθευσης."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Μη έγκυρος κωδικός επαλήθευσης"
   },
   "valueCopied": {
     "message": "$VALUE$ αντιγράφηκε",
@@ -996,11 +996,11 @@
     "message": "Δυαδικό"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Συνδεδεμένο",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Συνδεδεμένη τιμή",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
@@ -1106,7 +1106,7 @@
     "message": "Επίθετο"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Ονοματεπώνυμο"
   },
   "identityName": {
     "message": "Όνομα Ταυτότητας"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Μη έγκυρος κωδικός PIN."
-  },
-  "verifyPin": {
-    "message": "Επαλήθευση PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κωδικό PIN για να συνεχίσετε."
   },
   "unlockWithBiometrics": {
     "message": "Ξεκλείδωμα με βιομετρικά στοιχεία"
@@ -1838,7 +1832,7 @@
     "message": "Δε βρέθηκε μοναδικό αναγνωριστικό."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ χρησιμοποιεί SSO με έναν αυτοεξυπηρετητή κλειδιών. Ένας κύριος κωδικός πρόσβασης δεν απαιτείται πλέον για να συνδεθείτε για τα μέλη αυτού του οργανισμού.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1847,18 +1841,18 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Αποχώρηση από τον οργανισμό"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Αφαίρεση Κύριου Κωδικού Πρόσβασης"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Ο κύριος κωδικός αφαιρέθηκε."
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Είστε βέβαιοι ότι θέλετε να φύγετε από αυτόν τον οργανισμό;"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Έχετε φύγει από τον οργανισμό."
   }
 }

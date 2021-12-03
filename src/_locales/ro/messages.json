@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Browserul dvs. nu acceptă copierea în clipboard. Transcrieți datele manual."
   },
-  "verifyMasterPassword": {
-    "message": "Verificare parolă principală"
+  "verifyIdentity": {
+    "message": "Verificare identitate"
   },
   "yourVaultIsLocked": {
-    "message": "Seiful dvs. este blocat. Verificați parola principală pentru a continua."
+    "message": "Seiful dvs. este blocat. Verificați-vă identitatea pentru a continua."
   },
   "unlock": {
     "message": "Deblocare"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Codul PIN este invalid."
-  },
-  "verifyPin": {
-    "message": "Verificare cod PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Seiful dvs. este blocat. Verificați codul PIN pentru a continua."
   },
   "unlockWithBiometrics": {
     "message": "Deblocare folosind biometria"

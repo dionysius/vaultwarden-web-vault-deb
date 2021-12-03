@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "നിങ്ങളുടെ ബ്രൌസർ എളുപ്പമുള്ള ക്ലിപ്പ്ബോർഡ് പകർത്തൽ പിന്തുണയ്ക്കത്തില്ല. പകരം അത് സ്വമേധയാ പകർക്കുക ."
   },
-  "verifyMasterPassword": {
-    "message": "പ്രാഥമിക പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "തങ്ങളുടെ വാൾട്  പൂട്ടിയിരിക്കുന്നു. തുടരുന്നതിന് നിങ്ങളുടെ പ്രാഥമിക പാസ്‌വേഡ് പരിശോധിക്കുക."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": " പിൻ കോഡ് അസാധുവാണ്."
-  },
-  "verifyPin": {
-    "message": "പിൻ സ്ഥിരീകരിക്കുക"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "നിങ്ങളുടെ വാൾട് പൂട്ടിയിരിക്കുന്നു. തുടരാൻ പിൻ കോഡ് സ്ഥിരീകരിക്കുക."
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"

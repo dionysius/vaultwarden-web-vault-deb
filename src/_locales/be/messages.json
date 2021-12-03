@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Ваш вэб-браўзер не падтрымлівае капіяванне даных у буфер абмену. Скапіюйце іх уручную."
   },
-  "verifyMasterPassword": {
-    "message": "Праверыць асноўны пароль"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце асноўны пароль."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Памылковы PIN-код."
-  },
-  "verifyPin": {
-    "message": "Праверыць PIN-код"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце PIN-код."
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"

@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Váš webový prohlížeč nepodporuje automatické kopírování do schránky. Musíte ho zkopírovat ručně."
   },
-  "verifyMasterPassword": {
-    "message": "Ověření hlavního hesla"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat hlavní heslo."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Neplatný PIN kód."
-  },
-  "verifyPin": {
-    "message": "Ověřit PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat PIN."
   },
   "unlockWithBiometrics": {
     "message": "Odemknout pomocí biometrie"
