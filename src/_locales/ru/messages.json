@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Ваш браузер не поддерживает копирование данных в буфер обмена. Скопируйте вручную."
   },
-  "verifyMasterPassword": {
-    "message": "Проверка мастер-пароля"
+  "verifyIdentity": {
+    "message": "Подтвердить личность"
   },
   "yourVaultIsLocked": {
-    "message": "Ваше хранилище заблокировано. Для продолжения введите мастер-пароль."
+    "message": "Ваше хранилище заблокировано. Подтвердите свою личность, чтобы продолжить"
   },
   "unlock": {
     "message": "Разблокировать"
@@ -874,11 +874,11 @@
     "message": "Используйте YubiKey для доступа к вашей учетной записи. Работает с устройствами YubiKey 4 серии, 5 серии и NEO."
   },
   "duoDesc": {
-    "message": "Проверьте с помощью Duo Security, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
+    "message": "Подтвердите с помощью Duo Security, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Подтвердите при помощи Duo Security для вашей организации, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
+    "message": "Подтвердите с помощью Duo Security для вашей организации, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Неверный PIN-код."
-  },
-  "verifyPin": {
-    "message": "Подтвердить PIN-код"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваше хранилище заблокировано. Для продолжения введите PIN-код."
   },
   "unlockWithBiometrics": {
     "message": "Разблокировать с помощью биометрии"

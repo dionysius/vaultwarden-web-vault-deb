@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Votre navigateur web ne supporte pas la copie rapide depuis le presse-papier. Copiez-le manuellement à la place."
   },
-  "verifyMasterPassword": {
-    "message": "Saisie du mot de passe maître"
+  "verifyIdentity": {
+    "message": "Confirmer votre identité"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Saisissez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Code PIN invalide."
-  },
-  "verifyPin": {
-    "message": "Saisie du code PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
   },
   "unlockWithBiometrics": {
     "message": "Déverrouiller par biométrie"

@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "আপনার ওয়েব ব্রাউজার সহজে ক্লিপবোর্ড অনুলিপি সমর্থন করে না। পরিবর্তে এটি নিজেই অনুলিপি করুন।"
   },
-  "verifyMasterPassword": {
-    "message": "মূল পাসওয়ার্ড যাচাইকরণ"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "আপনার ভল্ট লক করা আছে। চালিয়ে যেতে আপনার মূল পাসওয়ার্ডটি যাচাই করান।"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "অবৈধ পিন কোড।"
-  },
-  "verifyPin": {
-    "message": "পিন যাচাই করুন"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "আপনার ভল্ট লক করা আছে। চালিয়ে যেতে আপনার পিন কোড যাচাই করান।"
   },
   "unlockWithBiometrics": {
     "message": "বায়োমেট্রিক্স দিয়ে আনলক করুন"

@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Peramban Anda tidak mendukung menyalin clipboard dengan mudah. Salin secara manual."
   },
-  "verifyMasterPassword": {
-    "message": "Verifikasi Kata Sandi Utama"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Brankas Anda terkunci. Verifikasi kata sandi utama Anda untuk melanjutkan."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Kode PIN tidak valid."
-  },
-  "verifyPin": {
-    "message": "Verifikasi PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Brankas Anda terkunci. Verifikasi kode PIN Anda untuk melanjutkan."
   },
   "unlockWithBiometrics": {
     "message": "Buka kunci dengan biometrik"

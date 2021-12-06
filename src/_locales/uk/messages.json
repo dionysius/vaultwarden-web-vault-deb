@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Ваш браузер не підтримує копіювання даних в буфер обміну. Скопіюйте вручну."
   },
-  "verifyMasterPassword": {
-    "message": "Перевірка головного пароля"
+  "verifyIdentity": {
+    "message": "Виконати перевірку"
   },
   "yourVaultIsLocked": {
-    "message": "Сховище заблоковано. Введіть головний пароль для продовження."
+    "message": "Ваше сховище заблоковане. Для продовження виконайте перевірку."
   },
   "unlock": {
     "message": "Розблокувати"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Неправильний PIN-код."
-  },
-  "verifyPin": {
-    "message": "Перевірка PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваше сховище заблоковане. Для продовження підтвердьте свій PIN-код."
   },
   "unlockWithBiometrics": {
     "message": "Розблокувати з біометрією"

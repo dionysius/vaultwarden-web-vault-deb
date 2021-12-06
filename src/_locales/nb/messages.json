@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Nettleseren din støtter ikke kopiering til utklippstavlen på noe enkelt vis. Prøv å kopiere det manuelt i stedet."
   },
-  "verifyMasterPassword": {
-    "message": "Verifiser hovedpassordet"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Hvelvet ditt er låst. Kontroller hovedpassordet ditt for å fortsette."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Ugyldig PIN-kode."
-  },
-  "verifyPin": {
-    "message": "Verifiser PIN-koden"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Hvelvet ditt er låst. Kontroller PIN-koden din for å fortsette."
   },
   "unlockWithBiometrics": {
     "message": "Lås opp med biometri"

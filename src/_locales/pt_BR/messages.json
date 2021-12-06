@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "O seu navegador web não suporta cópia para a área de transferência. Em alternativa, copie manualmente."
   },
-  "verifyMasterPassword": {
-    "message": "Verificar Senha Mestra"
+  "verifyIdentity": {
+    "message": "Verificar Identidade"
   },
   "yourVaultIsLocked": {
-    "message": "O seu cofre está bloqueado. Verifique a sua senha mestra para continuar."
+    "message": "Seu cofre está trancado. Verifique sua identidade para continuar."
   },
   "unlock": {
     "message": "Desbloquear"
@@ -550,16 +550,16 @@
     "message": "A \"Notificação de Adicionar Login\" pede para salvar automaticamente novas logins para o seu cofre quando você inicia uma sessão em um site pela primeira vez."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Não Mostrar Cartões na Página \"Aba\""
+    "message": "Não Mostrar Cartões na Página 'Aba'"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Os itens de cartão do seu cofre estão listados na página \"Aba Atual\" para facilitar o acesso ao preenchimento automático."
+    "message": "Os itens de cartão do seu cofre estão listados na página 'Aba Atual' para facilitar o acesso ao preenchimento automático."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "Não Mostrar Identidades na Página \"Aba\""
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Os itens de identidade do seu cofre estão listados na página \"Aba Atual\" para facilitar o acesso ao preenchimento automático."
+    "message": "Os itens de identidade do seu cofre estão listados na página 'Aba Atual' para facilitar o acesso ao preenchimento automático."
   },
   "clearClipboard": {
     "message": "Limpar Área de Transferência",
@@ -591,7 +591,7 @@
     "message": "Desativar Opções do Menu de Contexto"
   },
   "disableContextMenuItemDesc": {
-    "message": "As opções do menu de contexto providenciam acesso rápido à geração de senha e credenciais para o site na sua aba atual."
+    "message": "As opções do menu de contexto fornecem acesso rápido à geração de senha e credenciais para o site na sua aba atual."
   },
   "defaultUriMatchDetection": {
     "message": "Detecção de Correspondência de URI Padrão",
@@ -615,7 +615,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized (escuro)",
+    "message": "Escuro Solarizado",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -786,7 +786,7 @@
     "message": "Desativar Cópia Automática de TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Se a sua credencial tiver uma chave de autenticação anexada, o código de verificação TOTP será copiado automaticamente para a área de transferência quando preencher automaticamente a credencial."
+    "message": "Se a sua credencial tiver uma chave de autenticação anexada, o código de verificação TOTP será copiado automaticamente para a área de transferência quando você autopreencher a credencial."
   },
   "disableAutoBiometricsPrompt": {
     "message": "Não solicitar por biometria na inicialização."
@@ -834,7 +834,7 @@
     "message": "Insira a sua chave de segurança na porta USB do seu computador. Se ele tiver um botão, toque nele."
   },
   "webAuthnNewTab": {
-    "message": "Para iniciar a verificação 2FA WebAuthn. Clique no botão abaixo para abrir uma nova aba e siga as instruções fornecidas na nova guia."
+    "message": "Para iniciar a verificação 2FA WebAuthn. Clique no botão abaixo para abrir uma nova aba e siga as instruções fornecidas na nova aba."
   },
   "webAuthnNewTabOpen": {
     "message": "Abrir nova aba"
@@ -927,7 +927,7 @@
     "message": "As URLs do ambiente foram salvas."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Habilitar o Auto-preencher ao Carregar a Página"
+    "message": "Ativar o Autopreenchimento ao Carregar a Página"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se um formulário de login for detectado, realize automaticamente um autopreenchimento quando a página web carregar."
@@ -939,19 +939,19 @@
     "message": "Configuração de autopreenchimento padrão para itens de credenciais"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Depois de habilitar o Auto-preenchimento ao carregar a página, você pode habilitar ou desabilitar o recurso para itens de credenciais individuais. Esta é a configuração padrão para itens de credenciais que não são configurados separadamente."
+    "message": "Depois de ativar o Autopreenchimento ao carregar a página, você pode ativar ou desativar o recurso para itens de credenciais individuais. Esta é a configuração padrão para itens de credenciais que não são configurados separadamente."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-preencher no Carregamento da Página (se ativado nas Opções)"
+    "message": "Autopreencher no Carregamento da Página (se ativado nas Opções)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Usar configuração padrão"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-preencher ao carregar a página"
+    "message": "Autopreencher ao carregar a página"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Não auto-preencher ao carregar a página"
+    "message": "Não autopreencher ao carregar a página"
   },
   "commandOpenPopup": {
     "message": "Abrir pop-up do cofre"
@@ -1013,7 +1013,7 @@
     "message": "Desativar Ícones de Site"
   },
   "disableFaviconDesc": {
-    "message": "O ícone do site fornece um ícone reconhecível ao lado de cada credencial no seu cofre."
+    "message": "O Ícone do Site fornece uma imagem reconhecível ao lado de cada credencial no seu cofre."
   },
   "disableBadgeCounter": {
     "message": "Desativar Contador"
@@ -1332,12 +1332,6 @@
   "invalidPin": {
     "message": "Código PIN inválido."
   },
-  "verifyPin": {
-    "message": "Verificar PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "O seu cofre está bloqueado. Verifique o seu PIN para continuar."
-  },
   "unlockWithBiometrics": {
     "message": "Desbloquear com a biometria"
   },
@@ -1345,7 +1339,7 @@
     "message": "Aguardando confirmação do desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Por favor, confirme o uso de dados biométricos no aplicativo Bitwarden Desktop para habilitar a biometria para o navegador."
+    "message": "Por favor, confirme o uso de dados biométricos no aplicativo Bitwarden Desktop para ativar a biometria para o navegador."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar o navegador"
@@ -1467,7 +1461,7 @@
     "message": "Política de Privacidade"
   },
   "hintEqualsPassword": {
-    "message": "Sua dica de senha não pode ser o mesmo que a senha."
+    "message": "Sua dica de senha não pode ser o mesmo que sua senha."
   },
   "ok": {
     "message": "Ok"
@@ -1479,10 +1473,10 @@
     "message": "Por favor, verifique se o aplicativo desktop mostra esta impressão digital: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "A integração com o navegador não está habilitada"
+    "message": "A integração com o navegador não está ativada"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "A integração com o navegador não está habilitada no aplicativo Bitwarden Desktop. Por favor, habilite-a nas configurações do aplicativo desktop."
+    "message": "A integração com o navegador não está ativada no aplicativo Bitwarden Desktop. Por favor, ative-a nas configurações do aplicativo desktop."
   },
   "startDesktopTitle": {
     "message": "Iniciar o aplicativo Bitwarden Desktop"
@@ -1491,7 +1485,7 @@
     "message": "O aplicativo Bitwarden Desktop precisa ser iniciado antes que esta função possa ser usada."
   },
   "errorEnableBiometricTitle": {
-    "message": "Não foi possível habilitar os dados biométricos"
+    "message": "Não foi possível ativar a biometria"
   },
   "errorEnableBiometricDesc": {
     "message": "A ação foi cancelada pelo aplicativo desktop"
@@ -1509,10 +1503,10 @@
     "message": "A conta não confere"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometria não habilitada"
+    "message": "Biometria não ativada"
   },
   "biometricsNotEnabledDesc": {
-    "message": "A biometria com o navegador requer que a biometria de desktop seja habilitada nas configurações primeiro."
+    "message": "A biometria com o navegador requer que a biometria de desktop seja ativada nas configurações primeiro."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometria não suportada"
@@ -1530,7 +1524,7 @@
     "message": "Erro ao solicitar permissão"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "Esta ação não pode ser feita na barra lateral. Por favor, tente novamente no popup ou popout."
+    "message": "Esta ação não pode ser feita na barra lateral. Por favor, tente novamente no pop-up ou popout."
   },
   "personalOwnershipSubmitError": {
     "message": "Devido a uma Política Empresarial, você está restrito de salvar itens para seu cofre pessoal. Altere a opção de Propriedade para uma organização e escolha entre as Coleções disponíveis."
@@ -1542,7 +1536,7 @@
     "message": "Domínios Excluídos"
   },
   "excludedDomainsDesc": {
-    "message": "O Bitwarden não irá pedir para salvar os detalhes de login para estes domínios. Você deve atualizar a página para que as alterações entrem em vigor."
+    "message": "O Bitwarden não irá pedir para salvar os detalhes de credencial para estes domínios. Você deve atualizar a página para que as alterações entrem em vigor."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ não é um domínio válido",
@@ -1674,7 +1668,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Opcionalmente exigir uma senha para os usuários acessarem este Send.",
+    "message": "Exigir opcionalmente uma senha para os usuários acessarem este Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1682,7 +1676,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "Desabilite este Send para que ninguém possa acessá-lo.",
+    "message": "Desative este Send para que ninguém possa acessá-lo.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
@@ -1707,11 +1701,11 @@
     "message": "Nova Senha"
   },
   "sendDisabled": {
-    "message": "Send Desabilitado",
+    "message": "Send Desativado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Devido a uma política corporativa, você só é capaz de excluir um Send existente.",
+    "message": "Devido a uma política corporativa, você só pode excluir um Send existente.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1826,10 +1820,10 @@
     "message": "O tempo limite do seu cofre excede as restrições definidas por sua organização."
   },
   "vaultExportDisabled": {
-    "message": "Exportação de Cofre Desabilitada"
+    "message": "Exportação de Cofre Desativada"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Uma ou mais políticas da organização impdem que você exporte seu cofre pessoal."
+    "message": "Uma ou mais políticas da organização impedem que você exporte seu cofre pessoal."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Não foi possível identificar um elemento de formulário válido. Em vez disso, tente inspecionar o HTML."

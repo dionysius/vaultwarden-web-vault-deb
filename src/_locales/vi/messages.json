@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Trình duyệt web của bạn không hỗ trợ dễ dàng sao chép bộ nhớ tạm. Bạn có thể sao chép nó theo cách thủ công để thay thế."
   },
-  "verifyMasterPassword": {
-    "message": "Nhập lại mật khẩu chính"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Kho của bạn đã bị khóa. Xác minh mật khẩu chính của bạn để mở."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Mã PIN không hợp lệ."
-  },
-  "verifyPin": {
-    "message": "Xác thực mã PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Kho của bạn đã bị khóa. Xác minh mã PIN của bạn để mở."
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"

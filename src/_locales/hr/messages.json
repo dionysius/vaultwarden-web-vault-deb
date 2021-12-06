@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Web preglednik ne podržava jednostavno kopiranje međuspremnika. Umjesto toga ručno kopirajte."
   },
-  "verifyMasterPassword": {
-    "message": "Potvrdi glavnu lozinku"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Tvoj trezor je zaključan. Potvrdi glavnu lozinku za nastavak."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Nerispravan PIN."
-  },
-  "verifyPin": {
-    "message": "Potvrdi PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tvoj trezor je zaključan. Potvrdi PIN-om za nastavak."
   },
   "unlockWithBiometrics": {
     "message": "Otključaj biometrijom"

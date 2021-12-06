@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Tavs tīmekļa pārlūks neatbalsta vienkāršu starpliktuves kopēšanu. Nokopē to pašrocīgi!"
   },
-  "verifyMasterPassword": {
-    "message": "Apstiprināt galveno paroli"
+  "verifyIdentity": {
+    "message": "Apstiprināt identitāti"
   },
   "yourVaultIsLocked": {
     "message": "Glabātava ir slēgta. Nepieciešams norādīt galveno paroli, lai turpinātu."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Nederīgs PIN kods."
-  },
-  "verifyPin": {
-    "message": "Apstiprināt PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Glabātava ir slēgta. Nepieciešams norādīt PIN kodu, lai turpinātu."
   },
   "unlockWithBiometrics": {
     "message": "Atslēgt ar biometriju"

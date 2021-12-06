@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Den Browser unterstützt das einfache Kopieren nicht. Bitte kopiere es manuell."
   },
-  "verifyMasterPassword": {
-    "message": "Master-Passwort verifizieren"
+  "verifyIdentity": {
+    "message": "Identität verifizieren"
   },
   "yourVaultIsLocked": {
     "message": "Dein Tresor ist gesperrt. Überprüfe dein Master-Passwort um fortzufahren."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Ungültiger PIN-Code."
-  },
-  "verifyPin": {
-    "message": "PIN bestätigen"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
   "unlockWithBiometrics": {
     "message": "Mit Biometrie entsperren"

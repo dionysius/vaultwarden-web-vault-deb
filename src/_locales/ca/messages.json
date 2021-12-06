@@ -320,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "El vostre navegador web no admet la còpia fàcil del porta-retalls. Copieu-ho manualment."
   },
-  "verifyMasterPassword": {
-    "message": "Verifica la contrasenya mestra"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "La caixa forta està bloquejada. Comproveu la contrasenya mestra per continuar."
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "El codi PIN no és vàlid."
-  },
-  "verifyPin": {
-    "message": "Verifica el PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "La caixa forta està bloquejada. Verifiqueu El codi PIN per continuar."
   },
   "unlockWithBiometrics": {
     "message": "Desbloqueja amb biomètrica"

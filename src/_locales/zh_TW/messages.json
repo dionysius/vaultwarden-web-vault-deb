@@ -128,7 +128,7 @@
     "message": "傳送驗證碼"
   },
   "codeSent": {
-    "message": "已送出驗證碼"
+    "message": "驗證碼已送出"
   },
   "verificationCode": {
     "message": "驗證碼"
@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "您的瀏覽器不支援剪貼簿簡單複製，請手動複製。"
   },
-  "verifyMasterPassword": {
-    "message": "驗證主密碼"
+  "verifyIdentity": {
+    "message": "驗證身份"
   },
   "yourVaultIsLocked": {
-    "message": "密碼庫已鎖定。驗證主密碼以繼續。"
+    "message": "您的密碼庫已上鎖。請驗證身份後繼續。"
   },
   "unlock": {
     "message": "解鎖"
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "無效的 PIN 碼。"
-  },
-  "verifyPin": {
-    "message": "驗證 PIN 碼"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "密碼庫已鎖定。驗證 PIN 碼以繼續。"
   },
   "unlockWithBiometrics": {
     "message": "使用生物特徵辨識解鎖"

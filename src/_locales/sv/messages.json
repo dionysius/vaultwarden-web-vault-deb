@@ -125,16 +125,16 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Skicka kod"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kod har skickats"
   },
   "verificationCode": {
     "message": "Verifieringskod"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Bekräfta din identitet för att fortsätta."
   },
   "account": {
     "message": "Konto"
@@ -320,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Din webbläsare har inte stöd för att enkelt kopiera till urklipp. Kopiera till urklipp manuellt istället."
   },
-  "verifyMasterPassword": {
-    "message": "Verifiera huvudlösenord"
+  "verifyIdentity": {
+    "message": "Verifiera identitet"
   },
   "yourVaultIsLocked": {
-    "message": "Valvet är låst. Kontrollera ditt huvudlösenord för att fortsätta."
+    "message": "Ditt valv är låst. Verifiera din identitet för att fortsätta."
   },
   "unlock": {
     "message": "Lås upp"
@@ -424,7 +424,7 @@
     "message": "Verifieringskod krävs."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Ogiltig verifieringskod"
   },
   "valueCopied": {
     "message": "$VALUE$ kopierat",
@@ -1331,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Ogiltig PIN-kod."
-  },
-  "verifyPin": {
-    "message": "Verifiera PIN-kod"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Valvet är låst. Kontrollera din PIN-kod för att fortsätta."
   },
   "unlockWithBiometrics": {
     "message": "Lås upp med biometri"
