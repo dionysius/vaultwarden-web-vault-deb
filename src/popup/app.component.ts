@@ -22,9 +22,8 @@ import {
     RouterOutlet,
 } from '@angular/router';
 
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
-
 import { AuthService } from 'jslib-common/abstractions/auth.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { KeyConnectorService } from 'jslib-common/abstractions/keyConnector.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';

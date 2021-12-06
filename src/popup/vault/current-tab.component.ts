@@ -12,13 +12,12 @@ import { ToasterService } from 'angular2-toaster';
 
 import { BrowserApi } from '../../browser/browserApi';
 
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
-
 import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
 import { CipherType } from 'jslib-common/enums/cipherType';
 
 import { CipherView } from 'jslib-common/models/view/cipherView';
 
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { PasswordRepromptService } from 'jslib-common/abstractions/passwordReprompt.service';
