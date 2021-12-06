@@ -7,10 +7,10 @@ import {
 } from '@angular/router';
 
 import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
+import { LockGuardService } from 'jslib-angular/services/lock-guard.service';
 
 import { DebounceNavigationService } from './services/debounceNavigationService';
 import { LaunchGuardService } from './services/launch-guard.service';
-import { LockGuardService } from './services/lock-guard.service';
 
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
