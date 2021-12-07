@@ -1,7 +1,6 @@
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { ToasterModule } from 'angular2-toaster';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services/services.module';
@@ -85,6 +84,7 @@ import { VerifyMasterPasswordComponent } from './components/verify-master-passwo
 
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
+import { BitwardenToastModule } from 'jslib-angular/components/toastr.component';
 
 import {
     CurrencyPipe,
@@ -188,7 +188,12 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ReactiveFormsModule,
         ScrollingModule,
         ServicesModule,
-        ToasterModule.forRoot(),
+        BitwardenToastModule.forRoot({
+            maxOpened: 2,
+            autoDismiss: true,
+            closeButton: true,
+            positionClass: 'toast-bottom-full-width',
+        }),
     ],
     declarations: [
         A11yTitleDirective,

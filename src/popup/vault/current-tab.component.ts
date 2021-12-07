@@ -5,10 +5,7 @@ import {
     OnDestroy,
     OnInit,
 } from '@angular/core';
-
 import { Router } from '@angular/router';
-
-import { ToasterService } from 'angular2-toaster';
 
 import { BrowserApi } from '../../browser/browserApi';
 
@@ -59,7 +56,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
     constructor(private platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
         private popupUtilsService: PopupUtilsService, private autofillService: AutofillService,
-        private toasterService: ToasterService, private i18nService: I18nService, private router: Router,
+        private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
         private searchService: SearchService, private storageService: StorageService,
@@ -140,7 +137,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         }
 
         if (this.pageDetails == null || this.pageDetails.length === 0) {
-            this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
+            this.platformUtilsService.showToast('error', null, this.i18nService.t('autofillError'));
             return;
         }
 
@@ -164,7 +161,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             }
         } catch {
             this.ngZone.run(() => {
-                this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
+                this.platformUtilsService.showToast('error', null, this.i18nService.t('autofillError'));
                 this.changeDetectorRef.detectChanges();
             });
         }

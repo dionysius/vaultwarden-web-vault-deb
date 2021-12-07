@@ -71,11 +71,11 @@
   "dependencies": {
     "@bitwarden/jslib-angular": "file:jslib/angular",
     "@bitwarden/jslib-common": "file:jslib/common",
-    "angular2-toaster": "^11.0.1",
     "core-js": "^3.11.0",
     "date-input-polyfill": "^2.14.0",
     "font-awesome": "4.7.0",
     "mousetrap": "^1.6.5",
+    "ngx-toastr": "^13.2.1",
     "nord": "^0.2.1",
     "sweetalert2": "^10.16.6",
     "web-animations-js": "^2.3.2"
