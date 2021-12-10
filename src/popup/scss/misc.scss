@@ -360,14 +360,6 @@ input[type="password"]::-ms-reveal {
     }
 }
 
-// Workaround for rendering error in Firefox sidebar
-// option elements will not render background-color correctly if identical to parent background-color
-select option {
-    @include themify($themes) {
-        background-color: darken(themed('inputBackgroundColor'), +1);
-    }
-}
-
 // Workaround for slow performance on external monitors on Chrome + MacOS
 // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
 @keyframes redraw {
