@@ -5,6 +5,7 @@
             <span>{{'back' | i18n}}</span>
         </button>
     </div>
+    <h1 class="sr-only">{{'send' | i18n}}</h1>
     <div class="search">
         <input type="search" placeholder="{{'searchType' | i18n}}" id="search" [(ngModel)]="searchText"
             (input)="search(200)" autocomplete="off" appAutofocus>

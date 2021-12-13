@@ -2,6 +2,7 @@
     <div class="left">
         <app-pop-out></app-pop-out>
     </div>
+    <h1 class="sr-only">{{'myVault' | i18n}}</h1>
     <div class="search">
         <input type="{{searchTypeSearch ? 'search' : 'text'}}" placeholder="{{'searchVault' | i18n}}" id="search"
             [(ngModel)]="searchText" (input)="search(200)" autocomplete="off" appAutofocus (keydown)="closeOnEsc($event)">
