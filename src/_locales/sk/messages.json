@@ -121,8 +121,20 @@
   "continue": {
     "message": "Pokračovať"
   },
+  "sendVerificationCode": {
+    "message": "Poslať overovací kód na váš e-mail"
+  },
+  "sendCode": {
+    "message": "Odoslať kód"
+  },
+  "codeSent": {
+    "message": "Kód bol odoslaný"
+  },
   "verificationCode": {
     "message": "Overovací kód"
+  },
+  "confirmIdentity": {
+    "message": "Ak chcete pokračovať, potvrďte svoju identitu."
   },
   "account": {
     "message": "Účet"
@@ -308,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Váš webový prehliadač nepodporuje automatické kopírovanie do schránky. Kopírujte manuálne."
   },
-  "verifyMasterPassword": {
-    "message": "Overenie hlavného hesla"
+  "verifyIdentity": {
+    "message": "Overiť identitu"
   },
   "yourVaultIsLocked": {
-    "message": "Váš trezor je uzamknutý. Overte sa hlavným heslom ak chcete pokračovať."
+    "message": "Váš trezor je uzamknutý. Ak chcete pokračovať, overte svoju identitu."
   },
   "unlock": {
     "message": "Odomknúť"
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Overovací kód je povinný."
+  },
+  "invalidVerificationCode": {
+    "message": "Neplatný verifikačný kód"
   },
   "valueCopied": {
     "message": " skopírované",
@@ -558,10 +573,7 @@
     "message": "Má si pre vás Bitwarden zapamätať toto heslo?"
   },
   "notificationAddSave": {
-    "message": "Áno, uložiť teraz"
-  },
-  "notificationNeverSave": {
-    "message": "Nikdy pre túto stránku"
+    "message": "Uložiť"
   },
   "disableChangedPasswordNotification": {
     "message": "Vypnúť oznámenie o zmene hesla"
@@ -573,7 +585,7 @@
     "message": "Chcete aktualizovať toto heslo v Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Áno, aktualizovať"
+    "message": "Aktualizovať"
   },
   "disableContextMenuItem": {
     "message": "Vypnúť možnosti kontextového menu"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Prepojené",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Prepojená hodnota",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Kliknutie mimo popup okna na prezretie vášho emailu pre overovací kód spôsobí zavretie tohto popupu. Chcete otvoriť tento popup v novom okne tak, aby sa nezavrel?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Priezvisko"
+  },
+  "fullName": {
+    "message": "Celé meno"
   },
   "identityName": {
     "message": "Názov identity"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Neplatný PIN kód."
-  },
-  "verifyPin": {
-    "message": "Overiť PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Váš trezor je uzamknutý. Overte sa PIN kódom ak chcete pokračovať."
   },
   "unlockWithBiometrics": {
     "message": "Odomknúť pomocou biometrie"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Nenašiel sa žiadny jedinečný identifikátor."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ používa SSO s vlastným kľúčovým serverom. Na prihlásenie členov tejto organizácie už nie je potrebné hlavné heslo.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Opustiť organizáciu"
+  },
+  "removeMasterPassword": {
+    "message": "Odstrániť hlavné heslo"
+  },
+  "removedMasterPassword": {
+    "message": "Hlavné heslo bolo odstránené."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Naozaj chcete opustiť túto organizáciu?"
+  },
+  "leftOrganization": {
+    "message": "Opustili ste organizáciu."
   }
 }

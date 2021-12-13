@@ -6,7 +6,6 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToasterService } from 'angular2-toaster';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 
 import { BrowserApi } from '../../browser/browserApi';
@@ -18,6 +17,7 @@ import { ConstantsService } from 'jslib-common/services/constants.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { KeyConnectorService } from 'jslib-common/abstractions/keyConnector.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
@@ -58,6 +58,7 @@ export class SettingsComponent implements OnInit {
     biometric: boolean = false;
     disableAutoBiometricsPrompt = true;
     previousVaultTimeout: number = null;
+    showChangeMasterPass = true;
 
     vaultTimeout: FormControl = new FormControl(null);
 
@@ -66,7 +67,8 @@ export class SettingsComponent implements OnInit {
         public messagingService: MessagingService, private router: Router,
         private environmentService: EnvironmentService, private cryptoService: CryptoService,
         private userService: UserService, private popupUtilsService: PopupUtilsService,
-        private modalService: ModalService, private toasterService: ToasterService) {
+        private modalService: ModalService,
+        private keyConnectorService: KeyConnectorService) {
     }
 
     async ngOnInit() {
@@ -118,6 +120,7 @@ export class SettingsComponent implements OnInit {
         this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
         this.disableAutoBiometricsPrompt = await this.storageService.get<boolean>(
             ConstantsService.disableAutoBiometricsPromptKey) ?? true;
+        this.showChangeMasterPass = !await this.keyConnectorService.getUsesKeyConnector();
     }
 
     async saveVaultTimeout(newValue: number) {
@@ -132,7 +135,7 @@ export class SettingsComponent implements OnInit {
         }
 
         if (!this.vaultTimeout.valid) {
-            this.toasterService.popAsync('error', null, this.i18nService.t('vaultTimeoutToLarge'));
+            this.platformUtilsService.showToast('error', null, this.i18nService.t('vaultTimeoutToLarge'));
             return;
         }
 
@@ -161,7 +164,7 @@ export class SettingsComponent implements OnInit {
         }
 
         if (!this.vaultTimeout.valid) {
-            this.toasterService.popAsync('error', null, this.i18nService.t('vaultTimeoutToLarge'));
+            this.platformUtilsService.showToast('error', null, this.i18nService.t('vaultTimeoutToLarge'));
             return;
         }
 

@@ -121,8 +121,20 @@
   "continue": {
     "message": "Συνέχεια"
   },
+  "sendVerificationCode": {
+    "message": "Στείλτε έναν κωδικό επαλήθευσης στο email σας"
+  },
+  "sendCode": {
+    "message": "Αποστολή Κωδικού"
+  },
+  "codeSent": {
+    "message": "Ο Κωδικός Στάλθηκε"
+  },
   "verificationCode": {
     "message": "Κωδικός Επαλήθευσης"
+  },
+  "confirmIdentity": {
+    "message": "Επιβεβαιώστε την ταυτότητα σας για να συνεχίσετε."
   },
   "account": {
     "message": "Λογαριασμός"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Το πρόγραμμα περιήγησης ιστού δεν υποστηρίζει εύκολη αντιγραφή πρόχειρου. Αντιγράψτε το με το χέρι αντ'αυτού."
   },
-  "verifyMasterPassword": {
-    "message": "Επαλήθευση Κύριου Κωδικού"
+  "verifyIdentity": {
+    "message": "Επιβεβαίωση ταυτότητας"
   },
   "yourVaultIsLocked": {
     "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κύριο κωδικό πρόσβασης για να συνεχίσετε."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Απαιτείται ο κωδικός επαλήθευσης."
+  },
+  "invalidVerificationCode": {
+    "message": "Μη έγκυρος κωδικός επαλήθευσης"
   },
   "valueCopied": {
     "message": "$VALUE$ αντιγράφηκε",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Ναι, Αποθήκευση Τώρα"
-  },
-  "notificationNeverSave": {
-    "message": "Ποτέ για αυτή την ιστοσελίδα"
   },
   "disableChangedPasswordNotification": {
     "message": "Απενεργοποίηση ειδοποίησης αλλαγής κωδικού πρόσβασης"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Δυαδικό"
   },
+  "cfTypeLinked": {
+    "message": "Συνδεδεμένο",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Συνδεδεμένη τιμή",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Εάν κάνετε κλικ έξω από το αναδυόμενο παράθυρο για να ελέγξετε το email για κωδικό επαλήθευσης, το αναδυόμενο παράθυρο θα κλείσει. Θέλετε να ανοίξετε αυτό το αναδυόμενο σε νέο παράθυρο ώστε να μην κλείνει;"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Επίθετο"
+  },
+  "fullName": {
+    "message": "Ονοματεπώνυμο"
   },
   "identityName": {
     "message": "Όνομα Ταυτότητας"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Μη έγκυρος κωδικός PIN."
-  },
-  "verifyPin": {
-    "message": "Επαλήθευση PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κωδικό PIN για να συνεχίσετε."
   },
   "unlockWithBiometrics": {
     "message": "Ξεκλείδωμα με βιομετρικά στοιχεία"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Δε βρέθηκε μοναδικό αναγνωριστικό."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ χρησιμοποιεί SSO με έναν αυτοεξυπηρετητή κλειδιών. Ένας κύριος κωδικός πρόσβασης δεν απαιτείται πλέον για να συνδεθείτε για τα μέλη αυτού του οργανισμού.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Αποχώρηση από τον οργανισμό"
+  },
+  "removeMasterPassword": {
+    "message": "Αφαίρεση Κύριου Κωδικού Πρόσβασης"
+  },
+  "removedMasterPassword": {
+    "message": "Ο κύριος κωδικός αφαιρέθηκε."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Είστε βέβαιοι ότι θέλετε να φύγετε από αυτόν τον οργανισμό;"
+  },
+  "leftOrganization": {
+    "message": "Έχετε φύγει από τον οργανισμό."
   }
 }

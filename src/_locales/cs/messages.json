@@ -121,8 +121,20 @@
   "continue": {
     "message": "Pokračovat"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Ověřovací kód"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Účet"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Váš webový prohlížeč nepodporuje automatické kopírování do schránky. Musíte ho zkopírovat ručně."
   },
-  "verifyMasterPassword": {
-    "message": "Ověření hlavního hesla"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat hlavní heslo."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Ověřovací kód je povinný."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "valueCopied": {
     "message": "Zkopírováno: $VALUE$",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Ano, uložit nyní"
-  },
-  "notificationNeverSave": {
-    "message": "Nikdy pro tuto stránku"
   },
   "disableChangedPasswordNotification": {
     "message": "Vypnout oznámení o změněném heslu"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Ano/Ne"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Klepnutím mimo vyskakovací okno při zjišťování ověřovacího kódu zaslaného na e-mail bude vyskakovací okno zavřeno. Chcete otevřít toto vyskakovací okno v novém okně, aby se nezavřelo?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Příjmení"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Název identity"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Neplatný PIN kód."
-  },
-  "verifyPin": {
-    "message": "Ověřit PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat PIN."
   },
   "unlockWithBiometrics": {
     "message": "Odemknout pomocí biometrie"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   }
 }

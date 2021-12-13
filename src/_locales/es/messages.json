@@ -121,8 +121,20 @@
   "continue": {
     "message": "Continuar"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Código de verificación"
+  },
+  "confirmIdentity": {
+    "message": "Confirme su identidad para continuar."
   },
   "account": {
     "message": "Cuenta"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Tu navegador web no soporta copiar al portapapeles facilmente. Cópialo manualmente."
   },
-  "verifyMasterPassword": {
-    "message": "Verificar contraseña maestra"
+  "verifyIdentity": {
+    "message": "Verificar identidad"
   },
   "yourVaultIsLocked": {
     "message": "Su caja fuerte está bloqueada. Verifique su contraseña maestra para continuar."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Código de verificación requerido."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "valueCopied": {
     "message": "Valor de $VALUE$ copiado",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Sí, guardar ahora"
-  },
-  "notificationNeverSave": {
-    "message": "Nunca para este sitio"
   },
   "disableChangedPasswordNotification": {
     "message": "Deshabilitar la notificación de cambio de contraseña"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Booleano"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Pulsar fuera de la ventana emergente para comprobar tu correo de verificación, hará que esta se cierre. ¿Quieres abrir esta ventana emergente en una nueva ventana para evitar su cierre?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Apellido"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Nombre de la identidad"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Código PIN inválido."
-  },
-  "verifyPin": {
-    "message": "Verificar PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tu caja fuerte está bloqueada. Verifica tu código PIN para continuar."
   },
   "unlockWithBiometrics": {
     "message": "Desbloquear con biométricos"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Identificador único no encontrado."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "¿Confirma que quiere abandonar esta organización?"
+  },
+  "leftOrganization": {
+    "message": "Ha abandonado la organización."
   }
 }

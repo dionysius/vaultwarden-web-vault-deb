@@ -121,8 +121,20 @@
   "continue": {
     "message": "Weiter"
   },
+  "sendVerificationCode": {
+    "message": "Einen Bestätigungscode an deine E-Mail senden"
+  },
+  "sendCode": {
+    "message": "Code senden"
+  },
+  "codeSent": {
+    "message": "Code gesendet"
+  },
   "verificationCode": {
     "message": "Verifizierungscode"
+  },
+  "confirmIdentity": {
+    "message": "Bestätige deine Identität, um fortzufahren."
   },
   "account": {
     "message": "Konto"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Den Browser unterstützt das einfache Kopieren nicht. Bitte kopiere es manuell."
   },
-  "verifyMasterPassword": {
-    "message": "Master-Passwort verifizieren"
+  "verifyIdentity": {
+    "message": "Identität verifizieren"
   },
   "yourVaultIsLocked": {
     "message": "Dein Tresor ist gesperrt. Überprüfe dein Master-Passwort um fortzufahren."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Verifizierungscode wird benötigt."
+  },
+  "invalidVerificationCode": {
+    "message": "Ungültiger Verifizierungscode"
   },
   "valueCopied": {
     "message": "$VALUE$ kopiert",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Ja, jetzt speichern"
-  },
-  "notificationNeverSave": {
-    "message": "Niemals für diese Webseite"
   },
   "disableChangedPasswordNotification": {
     "message": "Passwort geändert Benachrichtigung deaktivieren"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Ja/Nein"
   },
+  "cfTypeLinked": {
+    "message": "Verknüpft",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Verknüpfter Inhalt",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Dieses Pop-up Fenster wird geschlossen, wenn du außerhalb des Fensters klickst um in deinen E-Mails nach dem Verifizierungscode zu suchen. Möchtest du, dass dieses Pop-up in einem separaten Fenster geöffnet wird, damit es nicht geschlossen wird?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Nachname"
+  },
+  "fullName": {
+    "message": "Vollständiger Name"
   },
   "identityName": {
     "message": "Identitätsname"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Ungültiger PIN-Code."
-  },
-  "verifyPin": {
-    "message": "PIN bestätigen"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
   "unlockWithBiometrics": {
     "message": "Mit Biometrie entsperren"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Keine eindeutige Kennung gefunden."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ verwendet SSO mit einem selbst gehosteten Schlüsselserver. Ein Master-Passwort ist nicht mehr erforderlich, damit sich Mitglieder dieser Organisation anmelden können.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Organisation verlassen"
+  },
+  "removeMasterPassword": {
+    "message": "Master-Passwort entfernen"
+  },
+  "removedMasterPassword": {
+    "message": "Master-Passwort entfernt."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bist du sicher, dass du diese Organisation verlassen möchtest?"
+  },
+  "leftOrganization": {
+    "message": "Du hast die Organisation verlassen."
   }
 }

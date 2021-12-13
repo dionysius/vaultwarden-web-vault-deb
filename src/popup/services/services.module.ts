@@ -4,18 +4,15 @@ import {
     NgModule,
 } from '@angular/core';
 
-import { ToasterModule } from 'angular2-toaster';
-
 import { DebounceNavigationService } from './debounceNavigationService';
 import { LaunchGuardService } from './launch-guard.service';
 import { LockGuardService } from './lock-guard.service';
 import { PasswordRepromptService } from './password-reprompt.service';
 import { UnauthGuardService } from './unauth-guard.service';
 
-import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
-import { ModalService } from 'jslib-angular/services/modal.service';
-import { ValidationService } from 'jslib-angular/services/validation.service';
+import { JslibServicesModule } from 'jslib-angular/services/jslib-services.module';
+import { LockGuardService as BaseLockGuardService } from 'jslib-angular/services/lock-guard.service';
+import { UnauthGuardService as BaseUnauthGuardService } from 'jslib-angular/services/unauth-guard.service';
 
 import { BrowserApi } from '../../browser/browserApi';
 
@@ -33,6 +30,7 @@ import { ExportService } from 'jslib-common/abstractions/export.service';
 import { FileUploadService } from 'jslib-common/abstractions/fileUpload.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { KeyConnectorService } from 'jslib-common/abstractions/keyConnector.service';
 import { LogService as LogServiceAbstraction } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { NotificationsService } from 'jslib-common/abstractions/notifications.service';
@@ -49,6 +47,7 @@ import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
+import { UserVerificationService } from 'jslib-common/abstractions/userVerification.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
@@ -74,14 +73,9 @@ function getBgService<T>(service: string) {
 
 const isPrivateMode = BrowserApi.getBackgroundPage() == null;
 
-const stateService = new StateService();
-const messagingService = new BrowserMessagingService();
-const logService = getBgService<ConsoleLogService>('logService')();
-const searchService = isPrivateMode ? null : new PopupSearchService(getBgService<SearchService>('searchService')(),
-    getBgService<CipherService>('cipherService')(), logService, getBgService<I18nService>('i18nService')());
-
-export function initFactory(platformUtilsService: PlatformUtilsService, i18nService: I18nService, storageService: StorageService,
-    popupUtilsService: PopupUtilsService): Function {
+export function initFactory(platformUtilsService: PlatformUtilsService, i18nService: I18nService,
+    storageService: StorageService, popupUtilsService: PopupUtilsService, stateService: StateServiceAbstraction,
+    logService: LogServiceAbstraction): Function {
     return async () => {
         if (!popupUtilsService.inPopup(window)) {
             window.document.body.classList.add('body-full');
@@ -128,23 +122,48 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
 
 @NgModule({
     imports: [
-        ToasterModule,
+        JslibServicesModule,
     ],
     declarations: [],
     providers: [
-        ValidationService,
-        AuthGuardService,
-        LockGuardService,
+        {
+            provide: LOCALE_ID,
+            useFactory: () => isPrivateMode ? null : getBgService<I18nService>('i18nService')().translationLocale,
+            deps: [],
+        },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: initFactory,
+            deps: [
+                PlatformUtilsService,
+                I18nService,
+                StorageService,
+                PopupUtilsService,
+                StateServiceAbstraction,
+                LogServiceAbstraction,
+            ],
+            multi: true,
+        },
         LaunchGuardService,
-        UnauthGuardService,
+        { provide: BaseLockGuardService, useClass: LockGuardService },
+        { provide: BaseUnauthGuardService, useClass: UnauthGuardService },
         DebounceNavigationService,
         PopupUtilsService,
-        BroadcasterService,
-        ModalService,
-        { provide: MessagingService, useValue: messagingService },
+        { provide: MessagingService, useClass: BrowserMessagingService },
         { provide: AuthServiceAbstraction, useFactory: getBgService<AuthService>('authService'), deps: [] },
-        { provide: StateServiceAbstraction, useValue: stateService },
-        { provide: SearchServiceAbstraction, useValue: searchService },
+        { provide: StateServiceAbstraction, useClass: StateService },
+        {
+            provide: SearchServiceAbstraction,
+            useFactory: (cipherService: CipherService, logService: ConsoleLogService, i18nService: I18nService) => {
+                return isPrivateMode ? null : new PopupSearchService(getBgService<SearchService>('searchService')(),
+                    cipherService, logService, i18nService);
+            },
+            deps: [
+                CipherService,
+                LogServiceAbstraction,
+                I18nService,
+            ],
+        },
         { provide: AuditService, useFactory: getBgService<AuditService>('auditService'), deps: [] },
         { provide: FileUploadService, useFactory: getBgService<FileUploadService>('fileUploadService'), deps: [] },
         { provide: CipherService, useFactory: getBgService<CipherService>('cipherService'), deps: [] },
@@ -182,6 +201,12 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
         { provide: AutofillService, useFactory: getBgService<AutofillService>('autofillService'), deps: [] },
         { provide: ExportService, useFactory: getBgService<ExportService>('exportService'), deps: [] },
         { provide: SendService, useFactory: getBgService<SendService>('sendService'), deps: [] },
+        { provide: KeyConnectorService, useFactory: getBgService<KeyConnectorService>('keyConnectorService'), deps: [] },
+        {
+            provide: UserVerificationService,
+            useFactory: getBgService<UserVerificationService>('userVerificationService'),
+            deps: [],
+        },
         {
             provide: VaultTimeoutService,
             useFactory: getBgService<VaultTimeoutService>('vaultTimeoutService'),
@@ -192,17 +217,7 @@ export function initFactory(platformUtilsService: PlatformUtilsService, i18nServ
             useFactory: getBgService<NotificationsService>('notificationsService'),
             deps: [],
         },
-        {
-            provide: APP_INITIALIZER,
-            useFactory: initFactory,
-            deps: [PlatformUtilsService, I18nService, StorageService, PopupUtilsService],
-            multi: true,
-        },
-        {
-            provide: LOCALE_ID,
-            useFactory: () => isPrivateMode ? null : getBgService<I18nService>('i18nService')().translationLocale,
-            deps: [],
-        },
+        { provide: LogServiceAbstraction, useFactory: getBgService<ConsoleLogService>('logService'), deps: [] },
         { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
     ],
 })

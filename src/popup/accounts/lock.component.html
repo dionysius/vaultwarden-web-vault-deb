@@ -2,16 +2,16 @@
     <header>
         <div class="left"></div>
         <h1 class="center">
-            <span class="title">{{(pinLock ? 'verifyPin' : 'verifyMasterPassword') | i18n}}</span>
+            <span class="title">{{'verifyIdentity' | i18n}}</span>
         </h1>
         <div class="right">
-            <button type="submit" appBlurClick>{{'unlock' | i18n}}</button>
+            <button type="submit" appBlurClick *ngIf="!hideInput">{{'unlock' | i18n}}</button>
         </div>
     </header>
     <content>
         <div class="box">
             <div class="box-content">
-                <div class="box-content-row box-content-row-flex" appBoxRow>
+                <div class="box-content-row box-content-row-flex" appBoxRow *ngIf="!hideInput">
                     <div class="row-main" *ngIf="pinLock">
                         <label for="pin">{{'pin' | i18n}}</label>
                         <input id="pin" type="{{showPassword ? 'text' : 'password'}}" name="PIN" class="monospaced"
@@ -32,13 +32,14 @@
                 </div>
             </div>
             <div class="box-footer">
-                <p>{{(pinLock ? 'yourVaultIsLockedPinCode' : 'yourVaultIsLocked') | i18n}}</p>
+                <p>{{'yourVaultIsLocked' | i18n}}</p>
                 {{'loggedInAsOn' | i18n : email : webVaultHostname}}
             </div>
         </div>
         <div class="box" *ngIf="biometricLock">
             <div class="box-footer">
-                <button type="button" class="btn primary block" (click)="unlockBiometric()" appStopClick>{{'unlockWithBiometrics' | i18n}}</button>
+                <button type="button" class="btn primary block" (click)="unlockBiometric()"
+                    appStopClick>{{'unlockWithBiometrics' | i18n}}</button>
             </div>
         </div>
         <p class="text-center">

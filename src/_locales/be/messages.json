@@ -121,8 +121,20 @@
   "continue": {
     "message": "Працягнуць"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Код праверкі"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Уліковы запіс"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Ваш вэб-браўзер не падтрымлівае капіяванне даных у буфер абмену. Скапіюйце іх уручную."
   },
-  "verifyMasterPassword": {
-    "message": "Праверыць асноўны пароль"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце асноўны пароль."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Патрабуецца код праверкі."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "valueCopied": {
     "message": "$VALUE$ скапіяваны(-а)",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Так, захаваць зараз"
-  },
-  "notificationNeverSave": {
-    "message": "Ніколі (для гэтага сайта)"
   },
   "disableChangedPasswordNotification": {
     "message": "Адключыць апавяшчэнне аб змяненні пароля"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Лагічнае"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Націск за межамі гэтага акна для прагляду кода праверкі з электроннай пошты прывядзе да яго закрыцця. Адкрыць bitwarden у новым акне?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Прозвішча"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Імя"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Памылковы PIN-код."
-  },
-  "verifyPin": {
-    "message": "Праверыць PIN-код"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце PIN-код."
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   }
 }

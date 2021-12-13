@@ -121,8 +121,20 @@
   "continue": {
     "message": "続ける"
   },
+  "sendVerificationCode": {
+    "message": "確認コードをメールに送信"
+  },
+  "sendCode": {
+    "message": "コードを送信"
+  },
+  "codeSent": {
+    "message": "確認コードを送信しました。"
+  },
   "verificationCode": {
     "message": "認証コード"
+  },
+  "confirmIdentity": {
+    "message": "続行するには本人確認を行ってください。"
   },
   "account": {
     "message": "アカウント"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "お使いのブラウザはクリップボードへのコピーに対応していません。手動でコピーしてください"
   },
-  "verifyMasterPassword": {
-    "message": "マスターパスワードの確認"
+  "verifyIdentity": {
+    "message": "本人確認を行う"
   },
   "yourVaultIsLocked": {
     "message": "保管庫がロックされています。開くにはマスターパスワードを入力してください。"
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "認証コードは必須項目です。"
+  },
+  "invalidVerificationCode": {
+    "message": "認証コードが間違っています"
   },
   "valueCopied": {
     "message": "$VALUE$ をコピーしました",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "保存する"
-  },
-  "notificationNeverSave": {
-    "message": "このサイトではしない"
   },
   "disableChangedPasswordNotification": {
     "message": "パスワードの変更通知を無効化"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "真偽値"
   },
+  "cfTypeLinked": {
+    "message": "リンク済",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "リンクされた値",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "認証コードを確認するためにポップアップの外をクリックすると、このポップアップが閉じてしまいます。閉じてしまわないよう、新しいウインドウでこのポップアップを開きますか？"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "姓"
+  },
+  "fullName": {
+    "message": "フルネーム"
   },
   "identityName": {
     "message": "固有名"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "PIN コードが間違っています。"
-  },
-  "verifyPin": {
-    "message": "PIN の確認"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "保管庫がロックされています。PIN コードで認証してください。"
   },
   "unlockWithBiometrics": {
     "message": "生体認証でロック解除"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "一意の識別子が見つかりませんでした。"
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ は自己ホストの鍵サーバで SSO を使用しています。この組織のメンバーのログインにマスターパスワードは必要ありません。",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "組織から脱退する"
+  },
+  "removeMasterPassword": {
+    "message": "マスターパスワードを削除する"
+  },
+  "removedMasterPassword": {
+    "message": "マスターパスワードを削除しました。"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "本当にこの組織から脱退しますか？"
+  },
+  "leftOrganization": {
+    "message": "組織から脱退しました。"
   }
 }

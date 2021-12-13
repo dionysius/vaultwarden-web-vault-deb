@@ -121,8 +121,20 @@
   "continue": {
     "message": "Tiếp tục"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Mã xác nhận"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Tài khoản"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Trình duyệt web của bạn không hỗ trợ dễ dàng sao chép bộ nhớ tạm. Bạn có thể sao chép nó theo cách thủ công để thay thế."
   },
-  "verifyMasterPassword": {
-    "message": "Nhập lại mật khẩu chính"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Kho của bạn đã bị khóa. Xác minh mật khẩu chính của bạn để mở."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Yêu cầu mã xác nhận."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "valueCopied": {
     "message": "$VALUE$ đã sao chép",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Vâng, Lưu Ngay"
-  },
-  "notificationNeverSave": {
-    "message": "Không bao giờ lưu thông tin từ trang này"
   },
   "disableChangedPasswordNotification": {
     "message": "Disable Changed Password Notification"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Đúng/Sai"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Nhấp bên ngoài popup để xem mã xác thực trong email của bạn sẽ làm cho popup này đóng lại. Bạn có muốn mở popup này trong một cửa sổ mới để nó không bị đóng?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Họ"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Tên nhận dạng"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Mã PIN không hợp lệ."
-  },
-  "verifyPin": {
-    "message": "Xác thực mã PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Kho của bạn đã bị khóa. Xác minh mã PIN của bạn để mở."
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   }
 }

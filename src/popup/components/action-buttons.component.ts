@@ -5,8 +5,6 @@ import {
     Output,
 } from '@angular/core';
 
-import { ToasterService } from 'angular2-toaster';
-
 import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
 import { CipherType } from 'jslib-common/enums/cipherType';
 import { EventType } from 'jslib-common/enums/eventType';
@@ -33,7 +31,7 @@ export class ActionButtonsComponent {
     cipherType = CipherType;
     userHasPremiumAccess = false;
 
-    constructor(private toasterService: ToasterService, private i18nService: I18nService,
+    constructor(private i18nService: I18nService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
         private totpService: TotpService, private userService: UserService,
         private passwordRepromptService: PasswordRepromptService) { }
@@ -63,7 +61,7 @@ export class ActionButtonsComponent {
         }
 
         this.platformUtilsService.copyToClipboard(value, { window: window });
-        this.toasterService.popAsync('info', null,
+        this.platformUtilsService.showToast('info', null,
             this.i18nService.t('valueCopied', this.i18nService.t(typeI18nKey)));
 
         if (typeI18nKey === 'password' || typeI18nKey === 'verificationCodeTotp') {

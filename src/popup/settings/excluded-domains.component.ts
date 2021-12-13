@@ -9,11 +9,10 @@ import { Router } from '@angular/router';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
 
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
-
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { BrowserApi } from '../../browser/browserApi';
 

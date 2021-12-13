@@ -121,8 +121,20 @@
   "continue": {
     "message": "המשך"
   },
+  "sendVerificationCode": {
+    "message": "שליחת קוד אימות לדוא״ל שלך"
+  },
+  "sendCode": {
+    "message": "שליחת קוד"
+  },
+  "codeSent": {
+    "message": "קוד נשלח"
+  },
   "verificationCode": {
     "message": "קוד אימות"
+  },
+  "confirmIdentity": {
+    "message": "יש לאשר את זהותך כדי להמשיך."
   },
   "account": {
     "message": "חשבון"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "הדפדפן שלך לא תומך בהעתקה ללוח. אנא העתק בצורה ידנית."
   },
-  "verifyMasterPassword": {
-    "message": "אמת סיסמה ראשית"
+  "verifyIdentity": {
+    "message": "אימות זהות"
   },
   "yourVaultIsLocked": {
     "message": "הכספת שלך נעולה. הזן את הסיסמה הראשית שלך כדי להמשיך."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "נדרש קוד אימות."
+  },
+  "invalidVerificationCode": {
+    "message": "קוד אימות שגוי"
   },
   "valueCopied": {
     "message": "השדה $VALUE$ הועתק לזיכרון",
@@ -560,9 +575,6 @@
   "notificationAddSave": {
     "message": "כן, שמור עכשיו"
   },
-  "notificationNeverSave": {
-    "message": "אף פעם עבור אתר זה"
-  },
   "disableChangedPasswordNotification": {
     "message": "בטל התראת \"סיסמה שונתה\""
   },
@@ -635,7 +647,7 @@
     "message": "משותף"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "מידע על ארגונים"
   },
   "learnOrgConfirmation": {
     "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
@@ -825,7 +837,7 @@
     "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "פתיחת לשונית חדשה"
   },
   "webAuthnAuthenticate": {
     "message": "Authenticate WebAuthn"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "אמת או שקר"
   },
+  "cfTypeLinked": {
+    "message": "מקושר",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "ערך מקושר",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "לחיצה מחוץ לחלונית הצפה שנפתחה בכדי לבדוק את פרטי האימות תגרום לחלונית שנפתחה, להסגר. האם ברצונך להציג את המידע בחלון שאינו נסגר?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "שם משפחה"
+  },
+  "fullName": {
+    "message": "שם מלא"
   },
   "identityName": {
     "message": "שם זהות"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "קוד PIN לא תקין."
-  },
-  "verifyPin": {
-    "message": "אמת PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "הכספת שלך נעולה. הזן את קוד הPIN שלך כדי להמשיך."
   },
   "unlockWithBiometrics": {
     "message": "פתח נעילה עם זיהוי ביומטרי"
@@ -1612,27 +1629,27 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "הקובץ שברצונך לשלוח."
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "תאריך מחיקה"
   },
   "deletionDateDesc": {
     "message": "The Send will be permanently deleted on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "תאריך תפוגה"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "במידה ויוגדר, הגישה ל Send זה תושבת בתאריך ובשעה שהוגדרו.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "יום אחד"
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ ימים",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1641,13 +1658,13 @@
     }
   },
   "custom": {
-    "message": "Custom"
+    "message": "מותאם אישית"
   },
   "maximumAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "כמות גישות מרבית"
   },
   "maximumAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "במידה ויוגדר, משתמשים לא יוכלו יותר לגשת ל Send זה לאחר שמספר הגישות המרבי יושג.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ משתמשים ב־SSO עם שרת מפתחות באירוח עצמי. סיסמה ראשית לא נחוצה יותר לטובת כניסה לחברי הארגון.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "לעזוב את הארגון"
+  },
+  "removeMasterPassword": {
+    "message": "הסרת סיסמה ראשית"
+  },
+  "removedMasterPassword": {
+    "message": "הסיסמה הראשית הוסרה."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "לעזוב את הארגון?"
+  },
+  "leftOrganization": {
+    "message": "עזבת את הארגון."
   }
 }

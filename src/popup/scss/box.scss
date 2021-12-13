@@ -531,6 +531,10 @@
             color: themed('mutedColor');
         }
 
+        &.icon-small {
+            min-width: 25px;
+        }
+
         img {
             border-radius: $border-radius;
             max-height: 20px;

@@ -121,8 +121,20 @@
   "continue": {
     "message": "Folytatás"
   },
+  "sendVerificationCode": {
+    "message": "Ellenőrző kód elküldése a saját email címre"
+  },
+  "sendCode": {
+    "message": "Kód küldése"
+  },
+  "codeSent": {
+    "message": "A kód elküldésre került."
+  },
   "verificationCode": {
     "message": "Ellenőrző kód"
+  },
+  "confirmIdentity": {
+    "message": "A folytatáshoz meg kell erősíteni a személyazonosságot."
   },
   "account": {
     "message": "Felhasználó"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "A webböngésződ nem támogat könnyű vágólap másolást. Másold manuálisan inkább."
   },
-  "verifyMasterPassword": {
-    "message": "Mesterjelszó ellenőrzése"
+  "verifyIdentity": {
+    "message": "Személyazonosság ellenőrzése"
   },
   "yourVaultIsLocked": {
     "message": "A széf zárolásra került. A folytatáshoz meg kell adni a mesterjelszót."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Ellenőrző kód szükséges."
+  },
+  "invalidVerificationCode": {
+    "message": "Érvénytelen ellenőrző kód"
   },
   "valueCopied": {
     "message": "$VALUE$ másolásra került.",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Igen, mentés most"
-  },
-  "notificationNeverSave": {
-    "message": "Ezen az weboldalon soha"
   },
   "disableChangedPasswordNotification": {
     "message": "Megváltozott jelszó értesítés letiltása"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Boolean (Logikai)"
   },
+  "cfTypeLinked": {
+    "message": "Csatolva",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Csatolt érték",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Az ellenőrző kódot tartalmazó email egy olyan felugró ablakban nyílik meg, mely a mellette levő területre kattinva bezáródik. Szeretnéd az emailt egy olyan ablakban megnyitni, ami nem záródhat így be?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Családnév"
+  },
+  "fullName": {
+    "message": "Teljes név"
   },
   "identityName": {
     "message": "Személyazonosság megnevezés"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "A pinkód érvénytelen."
-  },
-  "verifyPin": {
-    "message": "Pinkód ellenőrzése"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "A széf zárolásra került. A folytatáshoz meg kell adni a pinkódot."
   },
   "unlockWithBiometrics": {
     "message": "Biometrikus feloldás"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Nincs egyedi azonosító."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ jelenleg saját tárolású aláíráskulcsú SSO szervert használ. A mesterjelszó a továbbiakban nem szükséges a szervezeti tagsági bejelentkezéshez.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Szervezet elhagyása"
+  },
+  "removeMasterPassword": {
+    "message": "Mesterjelszó eltávolítása"
+  },
+  "removedMasterPassword": {
+    "message": "A mesterjelszó eltávolításra került."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Biztosan kilépünk ebből a szervezetből?"
+  },
+  "leftOrganization": {
+    "message": "Megtörtént a kilépés a szervezetből."
   }
 }

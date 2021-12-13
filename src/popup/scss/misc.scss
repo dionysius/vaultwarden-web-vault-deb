@@ -146,7 +146,7 @@ p.lead {
 }
 
 .password-wrapper {
-    word-break: break-all;
+    overflow-wrap: break-word;
     white-space: pre-wrap;
     min-width: 0;
 }
@@ -357,14 +357,6 @@ input[type="password"]::-ms-reveal {
         > * {
             flex: 1;
         }
-    }
-}
-
-// Workaround for rendering error in Firefox sidebar
-// option elements will not render background-color correctly if identical to parent background-color
-select option {
-    @include themify($themes) {
-        background-color: darken(themed('inputBackgroundColor'), +1);
     }
 }
 

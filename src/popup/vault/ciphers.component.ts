@@ -15,6 +15,7 @@ import { first } from 'rxjs/operators';
 
 import { BrowserApi } from '../../browser/browserApi';
 
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
@@ -30,8 +31,6 @@ import { CollectionView } from 'jslib-common/models/view/collectionView';
 import { FolderView } from 'jslib-common/models/view/folderView';
 
 import { TreeNode } from 'jslib-common/models/domain/treeNode';
-
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { CiphersComponent as BaseCiphersComponent } from 'jslib-angular/components/ciphers.component';
 

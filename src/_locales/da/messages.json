@@ -89,7 +89,7 @@
     "message": "Generér adgangskode (kopieret)"
   },
   "copyElementIdentifier": {
-    "message": "Kopier Brugerdefineret Feltnavn"
+    "message": "Kopiér brugerdefineret feltnavn"
   },
   "noMatchingLogins": {
     "message": "Ingen matchende logins."
@@ -121,8 +121,20 @@
   "continue": {
     "message": "Forsæt"
   },
+  "sendVerificationCode": {
+    "message": "Send en bekræftelseskode til din e-mail"
+  },
+  "sendCode": {
+    "message": "Send kode"
+  },
+  "codeSent": {
+    "message": "Kode sendt"
+  },
   "verificationCode": {
     "message": "Bekræftelseskode"
+  },
+  "confirmIdentity": {
+    "message": "Bekræft din identitet for at fortsætte."
   },
   "account": {
     "message": "Konto"
@@ -308,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Din webbrowser understøtter ikke udklipsholder kopiering. Kopiér det manuelt i stedet."
   },
-  "verifyMasterPassword": {
-    "message": "Bekræft hovedadgangskode"
+  "verifyIdentity": {
+    "message": "Bekræft identitet"
   },
   "yourVaultIsLocked": {
-    "message": "Din boks er låst. Bekræft din hovedadgangskode for at fortsætte."
+    "message": "Din boks er låst. Bekræft din identitet for at fortsætte."
   },
   "unlock": {
     "message": "Lås op"
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Bekræftelseskode er påkrævet."
+  },
+  "invalidVerificationCode": {
+    "message": "Ugyldig bekræftelseskode"
   },
   "valueCopied": {
     "message": "$VALUE$ kopieret",
@@ -558,10 +573,7 @@
     "message": "Skal Bitwarden huske denne adgangskode for dig?"
   },
   "notificationAddSave": {
-    "message": "Ja, gem nu"
-  },
-  "notificationNeverSave": {
-    "message": "Aldrig for denne hjemmeside"
+    "message": "Gem"
   },
   "disableChangedPasswordNotification": {
     "message": "Deaktivér besked om ændret adgangskode"
@@ -573,7 +585,7 @@
     "message": "Vil du opdatere denne adgangskode i Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Ja, opdatér nu"
+    "message": "Opdatér"
   },
   "disableContextMenuItem": {
     "message": "Deaktivér Kontekst-menu valgmuligheder"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Boolsk"
   },
+  "cfTypeLinked": {
+    "message": "Forbundet",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Forbundet værdi",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Ved at klikke uden for pop-up-vinduet for at tjekke din e-mail for din bekræftelseskode vil få denne popup til at lukke. Vil du åbne denne popup i et nyt vindue, så det ikke lukker?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Efternavn"
+  },
+  "fullName": {
+    "message": "Fulde navn"
   },
   "identityName": {
     "message": "Identitetsnavn"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Ugyldig pinkode."
-  },
-  "verifyPin": {
-    "message": "Bekræft pinkode"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Din boks er låst. Bekræft din pinkode for at fortsætte."
   },
   "unlockWithBiometrics": {
     "message": "Lås op med biometri"
@@ -1766,19 +1783,19 @@
     "message": "Opdatér hovedadgangskode"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Dit hovedadgangskode blev for nylig ændret af en administrator i din organisation. For at få adgang til boksen skal du opdatere din hovedadgangskode nu. Hvis du fortsætter, logges du ud af din nuværende session, hvilket kræver, at du logger ind igen. Aktive sessioner på andre enheder kan fortsætte med at være aktive i op til én time."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatisk Indskrivning"
+    "message": "Auto-indrullering"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Denne organisation har en virksomhedspolitik, der automatisk tilmelder dig til nulstilling af adgangskode. Tilmelding giver organisationsadministratorer mulighed for at skifte din hovedadgangskode."
   },
   "selectFolder": {
     "message": "Vælg mappe..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "For at fuldføre indlogning med SSO skal du opsætte en hovedadgangskode for at få adgang til samt beskytte din boks."
   },
   "hours": {
     "message": "Timer"
@@ -1787,7 +1804,7 @@
     "message": "Minutter"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Din organisations politikker påvirker din boks-timeout. Maksimalt tilladt boks-timeout er $HOURS$ time(r) og $MINUTES$ minut(ter)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1800,18 +1817,42 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Din boks-timeout overskrider de begrænsninger, der er fastsat af din organisation."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Bokseksport deaktiveret"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "En eller flere organisationspolitikker forhindrer dig i at eksportere din personlige boks."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Kan ikke identificere et gyldigt formularelement. Prøv i stedet at inspicere HTML."
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Ingen entydig identifikator fundet."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ bruger SSO med en selv-hostet nøgleserver. En hovedadgangskode er ikke længere påkrævet for at logge ind for medlemmer af denne organisation.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Forlad organisation"
+  },
+  "removeMasterPassword": {
+    "message": "Fjern hovedadgangskode"
+  },
+  "removedMasterPassword": {
+    "message": "Hovedadgangskode fjernet."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Er du sikker på, at du vil forlade denne organisation?"
+  },
+  "leftOrganization": {
+    "message": "Du har forladt organisationen."
   }
 }

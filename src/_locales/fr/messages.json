@@ -121,8 +121,20 @@
   "continue": {
     "message": "Continuer"
   },
+  "sendVerificationCode": {
+    "message": "Envoyer un code de vérification à votre adresse email"
+  },
+  "sendCode": {
+    "message": "Envoyer le code"
+  },
+  "codeSent": {
+    "message": "Code envoyé"
+  },
   "verificationCode": {
     "message": "Code de vérification"
+  },
+  "confirmIdentity": {
+    "message": "Confirmez votre identité pour continuer."
   },
   "account": {
     "message": "Compte"
@@ -154,7 +166,7 @@
     "message": "Enregistrer"
   },
   "move": {
-    "message": "Se déplacer"
+    "message": "Déplacer"
   },
   "addFolder": {
     "message": "Ajouter un dossier"
@@ -308,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Votre navigateur web ne supporte pas la copie rapide depuis le presse-papier. Copiez-le manuellement à la place."
   },
-  "verifyMasterPassword": {
-    "message": "Saisie du mot de passe maître"
+  "verifyIdentity": {
+    "message": "Confirmer votre identité"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Saisissez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Le code de vérification est requis."
+  },
+  "invalidVerificationCode": {
+    "message": "Code de vérification invalide"
   },
   "valueCopied": {
     "message": "$VALUE$ copié",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Oui, enregistrer maintenant"
-  },
-  "notificationNeverSave": {
-    "message": "Jamais pour ce site web"
   },
   "disableChangedPasswordNotification": {
     "message": "Désactiver la notification de changement de mot de passe"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Booléen"
   },
+  "cfTypeLinked": {
+    "message": "Lié",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Valeur liée",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Le fait de cliquer à l'extérieur de la fenêtre pop-up pour vérifier votre e-mail avec votre code de vérification fermera cette pop-up. Voulez-vous ouvrir cette pop-up dans une nouvelle fenêtre pour qu'elle ne soit pas fermée ?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Nom"
+  },
+  "fullName": {
+    "message": "Nom et prénom"
   },
   "identityName": {
     "message": "Identité"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Code PIN invalide."
-  },
-  "verifyPin": {
-    "message": "Saisie du code PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
   },
   "unlockWithBiometrics": {
     "message": "Déverrouiller par biométrie"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Aucun identifiant unique trouvé."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe maître n'est plus nécessaire aux membres de cette organisation pour se connecter.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Quitter l'organisation"
+  },
+  "removeMasterPassword": {
+    "message": "Supprimer le mot de passe maître"
+  },
+  "removedMasterPassword": {
+    "message": "Mot de passe maître supprimé."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Êtes-vous sûr·e de vouloir quitter cette organisation ?"
+  },
+  "leftOrganization": {
+    "message": "Vous avez quitté l'organisation."
   }
 }

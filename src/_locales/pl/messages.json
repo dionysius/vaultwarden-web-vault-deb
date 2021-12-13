@@ -121,8 +121,20 @@
   "continue": {
     "message": "Kontynuuj"
   },
+  "sendVerificationCode": {
+    "message": "Wyślij kod weryfikacyjny na adres e-mail"
+  },
+  "sendCode": {
+    "message": "Wyślij kod"
+  },
+  "codeSent": {
+    "message": "Kod został wysłany"
+  },
   "verificationCode": {
     "message": "Kod weryfikacyjny"
+  },
+  "confirmIdentity": {
+    "message": "Potwierdź swoją tożsamość, aby kontynuować."
   },
   "account": {
     "message": "Konto"
@@ -308,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Przeglądarka nie obsługuje łatwego kopiowania schowka. Skopiuj element ręcznie."
   },
-  "verifyMasterPassword": {
-    "message": "Zweryfikuj hasło główne"
+  "verifyIdentity": {
+    "message": "Zweryfikuj tożsamość"
   },
   "yourVaultIsLocked": {
-    "message": "Sejf jest zablokowany. Wpisz hasło główne, aby kontynuować."
+    "message": "Twój sejf jest zablokowany. Wprowadź swoje hasło główne, aby kontynuować."
   },
   "unlock": {
     "message": "Odblokuj"
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Kod weryfikacyjny jest wymagany."
+  },
+  "invalidVerificationCode": {
+    "message": "Kod weryfikacyjny jest nieprawidłowy"
   },
   "valueCopied": {
     "message": "Skopiowano $VALUE$",
@@ -558,10 +573,7 @@
     "message": "Czy Bitwarden powinien zapisać dla Ciebie to hasło?"
   },
   "notificationAddSave": {
-    "message": "Tak, zapisz"
-  },
-  "notificationNeverSave": {
-    "message": "Nigdy dla tej strony"
+    "message": "Zapisz"
   },
   "disableChangedPasswordNotification": {
     "message": "Wyłącz powiadomienie o zmianie hasła"
@@ -573,7 +585,7 @@
     "message": "Czy chcesz zaktualizować to hasło w Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Tak, aktualizuj"
+    "message": "Zaktualizuj"
   },
   "disableContextMenuItem": {
     "message": "Wyłącz opcje menu kontekstowego"
@@ -777,7 +789,7 @@
     "message": "Jeśli dane logowania posiadają dołączony klucz uwierzytelniający TOTP, kod weryfikacyjny jest automatycznie kopiowany do schowka przy każdym autouzupełnianiu danych logowania."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Nie pytaj o autoryzację biometryczną podczas uruchamiania."
+    "message": "Zapamiętaj autoryzację biometryczną"
   },
   "premiumRequired": {
     "message": "Konto Premium jest wymagane"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Wartość logiczna"
   },
+  "cfTypeLinked": {
+    "message": "Powiązane pole",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Powiązana wartość",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Kliknięcie poza okno, w celu sprawdzenia wiadomość z kodem weryfikacyjnym spowoduje, że zostanie ono zamknięte. Czy chcesz otworzyć nowe okno tak, aby się nie zamknęło?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Nazwisko"
+  },
+  "fullName": {
+    "message": "Imię i nazwisko"
   },
   "identityName": {
     "message": "Nazwa profilu"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Kod PIN jest nieprawidłowy."
-  },
-  "verifyPin": {
-    "message": "Zweryfikuj kod PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Sejf jest zablokowany. Wpisz kod PIN, aby kontynuować."
   },
   "unlockWithBiometrics": {
     "message": "Odblokuj danymi biometrycznymi"
@@ -1641,7 +1658,7 @@
     }
   },
   "custom": {
-    "message": "Niestandardowa"
+    "message": "Niestandardowe"
   },
   "maximumAccessCount": {
     "message": "Maksymalna liczba dostępów"
@@ -1745,7 +1762,7 @@
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia wysyłek."
   },
   "passwordPrompt": {
-    "message": "Powtórz hasło główne"
+    "message": "Potwierdź hasłem głównym"
   },
   "passwordConfirmation": {
     "message": "Potwierdź hasło główne"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Nie znaleziono unikatowego identyfikatora."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "Organizacja $ORGANIZATION$ używa jednokrotnego logowania SSO z własnym serwerem kluczy. Użytkownicy nie muszą logować się za pomocą hasła głównego.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Opuść organizację"
+  },
+  "removeMasterPassword": {
+    "message": "Usuń hasło główne"
+  },
+  "removedMasterPassword": {
+    "message": "Hasło główne zostało usunięte."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Czy na pewno chcesz opuścić tę organizację?"
+  },
+  "leftOrganization": {
+    "message": "Nie należysz już do tej organizacji."
   }
 }

@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+const { AngularWebpackPlugin } = require('@ngtools/webpack');
 
 if (process.env.NODE_ENV == null) {
     process.env.NODE_ENV = 'development';
@@ -24,35 +24,24 @@ const moduleRules = [
     {
         test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         exclude: /loading.svg/,
-        use: [{
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]',
-                outputPath: 'popup/fonts/',
-                publicPath: './fonts/',
-            },
-        }],
+        generator: {
+            filename: 'popup/fonts/[name].[ext]',
+        },
+        type: 'asset/resource',
     },
     {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude: /.*(fontawesome-webfont|glyphicons-halflings-regular)\.svg/,
-        use: [{
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]',
-                outputPath: 'popup/images/',
-                publicPath: './images/',
-            },
-        }],
+        generator: {
+            filename: 'popup/images/[name].[ext]',
+        },
+        type: 'asset/resource',
     },
     {
         test: /\.scss$/,
         use: [
             {
                 loader: MiniCssExtractPlugin.loader,
-                options: {
-                    publicPath: '../',
-                }
             },
             'css-loader',
             'sass-loader',
@@ -74,19 +63,16 @@ const plugins = [
         template: './src/popup/index.html',
         filename: 'popup/index.html',
         chunks: ['popup/polyfills', 'popup/vendor-angular', 'popup/vendor', 'popup/main'],
-        cache: false, // Remove after upgrading to Webpack 5
     }),
     new HtmlWebpackPlugin({
         template: './src/background.html',
         filename: 'background.html',
         chunks: ['vendor', 'background'],
-        cache: false, // Remove after upgrading to Webpack 5
     }),
     new HtmlWebpackPlugin({
         template: './src/notification/bar.html',
         filename: 'notification/bar.html',
         chunks: ['notification/bar'],
-        cache: false, // Remove after upgrading to Webpack 5
     }),
     new CopyWebpackPlugin({
         patterns: [
@@ -109,13 +95,16 @@ const plugins = [
             'ENV': JSON.stringify(ENV)
         }
     }),
-    new AngularCompilerPlugin({
+    new AngularWebpackPlugin({
         tsConfigPath: 'tsconfig.json',
         entryModule: 'src/popup/app.module#AppModule',
         sourceMap: true,
     }),
     new CleanWebpackPlugin({
         cleanAfterEveryBuildPatterns: ['!popup/fonts/**/*'],
+    }),
+    new webpack.ProvidePlugin({
+        process: 'process/browser',
     }),
 ];
 
@@ -174,6 +163,12 @@ const config = {
         extensions: ['.ts', '.js'],
         symlinks: false,
         modules: [path.resolve('node_modules')],
+        fallback: {
+            'assert': false,
+            'buffer': require.resolve('buffer/'),
+            'util': require.resolve('util/'),
+            'url': require.resolve('url/'),
+        },
     },
     output: {
         filename: '[name].js',

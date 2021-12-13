@@ -89,7 +89,7 @@
     "message": "Skapa lösenord (kopierad)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Kopiera anpassat fältnamn"
   },
   "noMatchingLogins": {
     "message": "Inga matchande inloggningar."
@@ -121,8 +121,20 @@
   "continue": {
     "message": "Fortsätt"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Skicka kod"
+  },
+  "codeSent": {
+    "message": "Kod har skickats"
+  },
   "verificationCode": {
     "message": "Verifieringskod"
+  },
+  "confirmIdentity": {
+    "message": "Bekräfta din identitet för att fortsätta."
   },
   "account": {
     "message": "Konto"
@@ -308,11 +320,11 @@
   "browserNotSupportClipboard": {
     "message": "Din webbläsare har inte stöd för att enkelt kopiera till urklipp. Kopiera till urklipp manuellt istället."
   },
-  "verifyMasterPassword": {
-    "message": "Verifiera huvudlösenord"
+  "verifyIdentity": {
+    "message": "Verifiera identitet"
   },
   "yourVaultIsLocked": {
-    "message": "Valvet är låst. Kontrollera ditt huvudlösenord för att fortsätta."
+    "message": "Ditt valv är låst. Verifiera din identitet för att fortsätta."
   },
   "unlock": {
     "message": "Lås upp"
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Verifieringskod krävs."
+  },
+  "invalidVerificationCode": {
+    "message": "Ogiltig verifieringskod"
   },
   "valueCopied": {
     "message": "$VALUE$ kopierat",
@@ -558,10 +573,7 @@
     "message": "Ska Bitwarden komma ihåg det här lösenordet åt dig?"
   },
   "notificationAddSave": {
-    "message": "Ja, spara nu"
-  },
-  "notificationNeverSave": {
-    "message": "Aldrig för denna webbplats"
+    "message": "Spara"
   },
   "disableChangedPasswordNotification": {
     "message": "Inaktivera notifikation för ändrade lösenord"
@@ -573,7 +585,7 @@
     "message": "Vill du uppdatera det här lösenordet i Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Ja, uppdatera nu"
+    "message": "Uppdatera"
   },
   "disableContextMenuItem": {
     "message": "Inaktivera innehållsmenyn"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Länkat",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Länkat värde",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Om du klickar utanför popup-fönstret för att kontrollera din email efter din verifieringskod så stängs popup-fönstret. Vill du öppna popup-fönstret i ett nytt fönster, så att det inte stängs?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Efternamn"
+  },
+  "fullName": {
+    "message": "Fullständigt namn"
   },
   "identityName": {
     "message": "Identitetsnamn"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Ogiltig PIN-kod."
-  },
-  "verifyPin": {
-    "message": "Verifiera PIN-kod"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Valvet är låst. Kontrollera din PIN-kod för att fortsätta."
   },
   "unlockWithBiometrics": {
     "message": "Lås upp med biometri"
@@ -1604,7 +1621,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeHeader": {
-    "message": "Vilken typ av försändelse är detta?",
+    "message": "Vilken typ av Send är detta?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
@@ -1760,13 +1777,13 @@
     "message": "Du måste verifiera din e-postadress för att använda den här funktionen. Du kan verifiera din e-postadress i webbvalvet."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Huvudlösenord uppdaterades "
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Uppdatera huvudlösenord"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ditt huvudlösenord ändrades nyligen av en administratör i din organisation. För att få tillgång till valvet måste du uppdatera det nu. Om du fortsätter kommer du att loggas ut från din nuvarande session, vilket kräver att du loggar in igen. Aktiva sessioner på andra enheter kan komma att vara aktiva i upp till en timme."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatic Enrollment"
@@ -1809,9 +1826,33 @@
     "message": "One or more organization policies prevents you from exporting your personal vault."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Det gick inte att identifiera något giltigt formulärelement. Prova med att inspektera HTML-koden istället."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Ingen unik identifierare hittades."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Lämna organisation"
+  },
+  "removeMasterPassword": {
+    "message": "Ta bort huvudlösenord"
+  },
+  "removedMasterPassword": {
+    "message": "Huvudlösenord togs bort"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Är du säker på att du vill lämna denna organisation?"
+  },
+  "leftOrganization": {
+    "message": "Du har lämnat organisationen."
   }
 }

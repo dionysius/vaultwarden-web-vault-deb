@@ -121,8 +121,20 @@
   "continue": {
     "message": "Nastavi"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Kôd za provjeru"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Račun"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Web preglednik ne podržava jednostavno kopiranje međuspremnika. Umjesto toga ručno kopirajte."
   },
-  "verifyMasterPassword": {
-    "message": "Potvrdi glavnu lozinku"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Tvoj trezor je zaključan. Potvrdi glavnu lozinku za nastavak."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Potvrdni kôd je obavezan."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "valueCopied": {
     "message": " kopirano",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Da, spremi sad"
-  },
-  "notificationNeverSave": {
-    "message": "Ne pitaj više za ovu stranicu"
   },
   "disableChangedPasswordNotification": {
     "message": "Onemogući upit za spremanje ažurirane lozinke"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Ako klikneš izvan iskočnog prozora, za provjeru kontrolnog kôda iz e-pošte, on će se zatvoriti. Želiš li ovaj iskočni prozor otvoriti u novom prozoru kako se ne bi zatvorio?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Prezime"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Ime identiteta"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Nerispravan PIN."
-  },
-  "verifyPin": {
-    "message": "Potvrdi PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tvoj trezor je zaključan. Potvrdi PIN-om za nastavak."
   },
   "unlockWithBiometrics": {
     "message": "Otključaj biometrijom"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Nije nađen jedinstveni identifikator."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   }
 }

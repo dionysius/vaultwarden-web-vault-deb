@@ -121,8 +121,20 @@
   "continue": {
     "message": "Continue"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Verification code"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "Account"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
-  "verifyMasterPassword": {
-    "message": "Verify master password"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your master password to continue."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Verification code is required."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "valueCopied": {
     "message": "$VALUE$ copied",
@@ -558,10 +573,7 @@
     "message": "Should Bitwarden remember this password for you?"
   },
   "notificationAddSave": {
-    "message": "Yes, save now"
-  },
-  "notificationNeverSave": {
-    "message": "Never for this website"
+    "message": "Save"
   },
   "disableChangedPasswordNotification": {
     "message": "Disable changed password notification"
@@ -573,7 +585,7 @@
     "message": "Do you want to update this password in Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, update now"
+    "message": "Update"
   },
   "disableContextMenuItem": {
     "message": "Disable context menu options"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Last name"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Identity name"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Invalid PIN code."
-  },
-  "verifyPin": {
-    "message": "Verify PIN"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organisation.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organisation"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organisation?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organisation."
   }
 }

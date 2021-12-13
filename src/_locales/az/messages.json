@@ -121,8 +121,20 @@
   "continue": {
     "message": "Davam"
   },
+  "sendVerificationCode": {
+    "message": "E-poçtunuza bir təsdiqləmə kodu göndərin"
+  },
+  "sendCode": {
+    "message": "Kod göndər"
+  },
+  "codeSent": {
+    "message": "Kod göndərildi"
+  },
   "verificationCode": {
     "message": "Təsdiqləmə kodu"
+  },
+  "confirmIdentity": {
+    "message": "Davam etmək üçün kimliyinizi təsdiqləyin."
   },
   "account": {
     "message": "Hesab"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Veb səyyahınız lövhəyə kopyalamağı dəstəkləmir. Əvəzində əllə kopyalayın."
   },
-  "verifyMasterPassword": {
-    "message": "Ana parolu təsdiqlə"
+  "verifyIdentity": {
+    "message": "Kimliyi təsdiqləyin"
   },
   "yourVaultIsLocked": {
     "message": "Anbarınız kilidlənib. Davam etmək üçün ana parolunuzu təsdiqləyin."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Təsdiq kodu lazımdır."
+  },
+  "invalidVerificationCode": {
+    "message": "Etibarsız təsdiqləmə kodu"
   },
   "valueCopied": {
     "message": "$VALUE$ kopyalandı",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Bəli, indi saxla"
-  },
-  "notificationNeverSave": {
-    "message": "Bu veb sayt üçüm heç vaxt"
   },
   "disableChangedPasswordNotification": {
     "message": "\"Parol dəyişdirildi\" bildirişini sıradan çıxart"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Əlaqə yaradıldı",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Əlaqəli dəyər",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "Təsdiqləmə kodunu alacağınız e-poçtu yoxlamaq üçün bu pəncərə xaricində bir yerə klikləsəniz bu pəncərə bağlanacaq. Bu pəncərənin bağlanmaması üçün yeni bir pəncərədə açmaq istəyirsiniz?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Soyad"
+  },
+  "fullName": {
+    "message": "Tam ad"
   },
   "identityName": {
     "message": "Kimlik adı"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Etibarsız PIN kod."
-  },
-  "verifyPin": {
-    "message": "PIN-i təsdiqlə"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Anbarınız kilidlənib. Davam etmək üçün PIN kodunuzu təsdiqləyin."
   },
   "unlockWithBiometrics": {
     "message": "Biometriklərlə kilidi açın"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Unikal identifikator tapılmadı."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$, öz-özünə sahiblik edən açar serveri ilə SSO istifadə edir. Bu təşkilatın üzvlərinin giriş etməsi üçün artıq ana parol tələb edilməyəcək.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Təşkilatı tərk et"
+  },
+  "removeMasterPassword": {
+    "message": "Ana parolu sil"
+  },
+  "removedMasterPassword": {
+    "message": "Ana parol silindi."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bu təşkilatı tərk etmək istədiyinizə əminsiniz?"
+  },
+  "leftOrganization": {
+    "message": "Təşkilatı tərk etdiniz."
   }
 }

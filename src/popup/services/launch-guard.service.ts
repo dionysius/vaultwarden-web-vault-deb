@@ -6,7 +6,7 @@ import {
     Router,
 } from '@angular/router';
 
-import { UnauthGuardService } from './unauth-guard.service';
+import { UnauthGuardService } from 'jslib-angular/services/unauth-guard.service';
 
 @Injectable()
 export class LaunchGuardService implements CanActivate {

@@ -121,8 +121,20 @@
   "continue": {
     "message": "계속"
   },
+  "sendVerificationCode": {
+    "message": "이메일로 인증 코드 보내기"
+  },
+  "sendCode": {
+    "message": "코드 전송"
+  },
+  "codeSent": {
+    "message": "코드 전송됨"
+  },
   "verificationCode": {
     "message": "인증 코드"
+  },
+  "confirmIdentity": {
+    "message": "계속하려면 암호를 확인하세요."
   },
   "account": {
     "message": "계정"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "사용하고 있는 웹 브라우저가 쉬운 클립보드 복사를 지원하지 않습니다. 직접 복사하세요."
   },
-  "verifyMasterPassword": {
-    "message": "마스터 비밀번호 확인"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "보관함이 잠겨 있습니다. 마스터 비밀번호를 입력하여 계속하세요."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "인증 코드는 반드시 입력해야 합니다."
+  },
+  "invalidVerificationCode": {
+    "message": "유효하지 않은 확인 코드"
   },
   "valueCopied": {
     "message": "$VALUE$를 클립보드에 복사함",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "예, 지금 저장하겠습니다."
-  },
-  "notificationNeverSave": {
-    "message": "이 사이트에는 사용 안 함"
   },
   "disableChangedPasswordNotification": {
     "message": "비밀번호 변경 알림 사용 안 함"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "참 / 거짓"
   },
+  "cfTypeLinked": {
+    "message": "연결됨",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "연결된 값",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "인증 코드가 담긴 이메일을 확인하기 위해 팝업 창의 바깥쪽을 누르면 이 팝업이 닫힙니다. 팝업 창이 닫히는 것을 방지하기 위해 이 팝업을 새 창에서 다시 여시겠습니까?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "성"
+  },
+  "fullName": {
+    "message": "전체 이름"
   },
   "identityName": {
     "message": "ID 이름"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "잘못된 PIN 코드입니다."
-  },
-  "verifyPin": {
-    "message": "PIN 확인"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요."
   },
   "unlockWithBiometrics": {
     "message": "생체 인식을 사용하여 잠금 해제"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "고유 식별자를 찾을 수 없습니다."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ 조직은 자체 호스팅 키 서버로 SSO를 사용하고 있습니다 이 조직의 멤버들은 로그인할 때에 마스터 비밀번호를 필요로 하지 않습니다.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "조직 나가기"
+  },
+  "removeMasterPassword": {
+    "message": "마스터 비밀번호 제거"
+  },
+  "removedMasterPassword": {
+    "message": "마스터 비밀번호가 제거되었습니다."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "정말 이 조직을 떠나시겠어요?"
+  },
+  "leftOrganization": {
+    "message": "조직을 떠났습니다."
   }
 }

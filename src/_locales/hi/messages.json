@@ -121,8 +121,20 @@
   "continue": {
     "message": "जारी रखें"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Verification Code"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "खाता"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "आपका वेब ब्राउज़र आसान क्लिपबोर्ड कॉपीिंग का समर्थन नहीं करता है। इसके बजाय इसे मैन्युअल रूप से कॉपी करें।"
   },
-  "verifyMasterPassword": {
-    "message": "Verify Master Password"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "आपकी वॉल्ट लॉक हो गई है। जारी रखने के लिए अपने मास्टर पासवर्ड को सत्यापित करें।"
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "सत्यापन टोकन आवश्यक है"
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "valueCopied": {
     "message": " copied",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Yes, Save Now"
-  },
-  "notificationNeverSave": {
-    "message": "इस वेबसाइट के लिए कभी नहीं"
   },
   "disableChangedPasswordNotification": {
     "message": "Disable Changed Password Notification"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "बूलियन"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "अपने सत्यापन कोड के लिए अपने ईमेल की जांच करने के लिए पॉपअप विंडो के बाहर क्लिक करने से यह पॉपअप बंद हो जाएगा।क्या आप इस पॉपअप को एक नई विंडो में खोलना चाहते हैं ताकि यह बंद न हो?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Last Name"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "Identity Name"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "अमान्य पिन कोड।"
-  },
-  "verifyPin": {
-    "message": "पिन की पुष्टि करें"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "आपकी वॉल्ट लॉक हो गई है। जारी रखने के लिए अपने पिन कोड को सत्यापित करें।"
   },
   "unlockWithBiometrics": {
     "message": "बायोमेट्रिक्स का उपयोग कर अनलॉक करें"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   }
 }

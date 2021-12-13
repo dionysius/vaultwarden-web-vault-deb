@@ -121,8 +121,20 @@
   "continue": {
     "message": "অবিরত"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "যাচাইকরণ কোড"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "account": {
     "message": "অ্যাকাউন্ট"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "আপনার ওয়েব ব্রাউজার সহজে ক্লিপবোর্ড অনুলিপি সমর্থন করে না। পরিবর্তে এটি নিজেই অনুলিপি করুন।"
   },
-  "verifyMasterPassword": {
-    "message": "মূল পাসওয়ার্ড যাচাইকরণ"
+  "verifyIdentity": {
+    "message": "Verify Identity"
   },
   "yourVaultIsLocked": {
     "message": "আপনার ভল্ট লক করা আছে। চালিয়ে যেতে আপনার মূল পাসওয়ার্ডটি যাচাই করান।"
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "যাচাইকরণ কোড প্রয়োজন।"
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "valueCopied": {
     "message": "$VALUE$ অনুলিপিত",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "হ্যাঁ, এখনই সংরক্ষণ করুন"
-  },
-  "notificationNeverSave": {
-    "message": "এই ওয়েবসাইটের জন্য কখনই না"
   },
   "disableChangedPasswordNotification": {
     "message": "পাসওয়ার্ড পরিবর্তন বিজ্ঞপ্তি অক্ষম করুন"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "বুলিয়ান"
   },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "আপনার যাচাইকরণ কোডটির জন্য আপনার ইমেলটি পরীক্ষা করতে পপআপ উইন্ডোটির বাইরে ক্লিক করলে এই পপআপটি বন্ধ হয়ে যাবে। আপনি কি এই পপআপটি একটি নতুন উইন্ডোতে খুলতে চান যাতে এটি বন্ধ না হয়?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "নামের শেষাংশ"
+  },
+  "fullName": {
+    "message": "Full Name"
   },
   "identityName": {
     "message": "পরিচয়ের নাম"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "অবৈধ পিন কোড।"
-  },
-  "verifyPin": {
-    "message": "পিন যাচাই করুন"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "আপনার ভল্ট লক করা আছে। চালিয়ে যেতে আপনার পিন কোড যাচাই করান।"
   },
   "unlockWithBiometrics": {
     "message": "বায়োমেট্রিক্স দিয়ে আনলক করুন"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "No unique identifier found."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   }
 }

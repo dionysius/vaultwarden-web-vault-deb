@@ -347,6 +347,22 @@ app-root {
 }
 
 @media only screen and (min-width: 601px) {
+    app-login header {
+        padding: 0 calc((100% - 500px) / 2);
+    }
+
+    app-login content {
+        padding: 0 calc((100% - 500px) / 2);
+    }
+
+    app-two-factor header {
+        padding: 0 calc((100% - 500px) / 2);
+    }
+
+    app-two-factor content {
+        padding: 0 calc((100% - 500px) / 2);
+    }
+
     app-lock header {
         padding: 0 calc((100% - 500px) / 2);
     }

@@ -121,8 +121,20 @@
   "continue": {
     "message": "Jätka"
   },
+  "sendVerificationCode": {
+    "message": "Saada kinnituskood oma e-postile"
+  },
+  "sendCode": {
+    "message": "Saada kood"
+  },
+  "codeSent": {
+    "message": "Kood on saadetud"
+  },
   "verificationCode": {
     "message": "Kinnituskood"
+  },
+  "confirmIdentity": {
+    "message": "Jätkamiseks kinnita oma identiteet."
   },
   "account": {
     "message": "Konto"
@@ -308,8 +320,8 @@
   "browserNotSupportClipboard": {
     "message": "Kasutatav brauser ei toeta lihtsat lõikelaua kopeerimist. Kopeeri see käsitsi."
   },
-  "verifyMasterPassword": {
-    "message": "Autendi ülemparooliga"
+  "verifyIdentity": {
+    "message": "Identiteedi kinnitamine"
   },
   "yourVaultIsLocked": {
     "message": "Hoidla on lukus. Jätkamiseks sisesta ülemparool."
@@ -410,6 +422,9 @@
   },
   "verificationCodeRequired": {
     "message": "Nõutav on kinnituskood."
+  },
+  "invalidVerificationCode": {
+    "message": "Vale kinnituskood"
   },
   "valueCopied": {
     "message": "$VALUE$ on kopeeritud",
@@ -559,9 +574,6 @@
   },
   "notificationAddSave": {
     "message": "Jah, salvesta see"
-  },
-  "notificationNeverSave": {
-    "message": "Ära sellel lehel enam küsi"
   },
   "disableChangedPasswordNotification": {
     "message": "Keela Muudetud parooli teavitus"
@@ -983,6 +995,14 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Ühenduses",
+    "description": "This describes a field that is 'linked' (tied) to another field."
+  },
+  "linkedValue": {
+    "message": "Ühendatud väärtus",
+    "description": "This describes a value that is 'linked' (tied) to another value."
+  },
   "popup2faCloseMessage": {
     "message": "See aken sulgub, kui klikid oma e-posti aknale, et sealt kinnituskoodi vaadata. Soovid selle hüpikakna uues aknas avada, et seda ei juhtuks?"
   },
@@ -1084,6 +1104,9 @@
   },
   "lastName": {
     "message": "Perekonnanimi"
+  },
+  "fullName": {
+    "message": "Täisnimi"
   },
   "identityName": {
     "message": "Identiteedi nimi"
@@ -1308,12 +1331,6 @@
   },
   "invalidPin": {
     "message": "Vale PIN kood."
-  },
-  "verifyPin": {
-    "message": "Kinnita PIN koodiga"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
   },
   "unlockWithBiometrics": {
     "message": "Ava biomeetriaga"
@@ -1813,5 +1830,29 @@
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Unikaalset identifikaatorit ei leitud."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ kasutab SSO-d koos enda majutatud võtmeserveriga. Selle organisatsiooni liikmed ei pea sisselogimisel enam ülemparooli kasutama.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Lahku organisatsioonist"
+  },
+  "removeMasterPassword": {
+    "message": "Eemalda ülemparool"
+  },
+  "removedMasterPassword": {
+    "message": "Ülemparool on eemaldatud."
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Kas oled kindel, et soovid sellest organisatsioonist lahkuda?"
+  },
+  "leftOrganization": {
+    "message": "Oled organisatsioonist lahkunud."
   }
 }
