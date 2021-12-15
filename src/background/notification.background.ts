@@ -198,7 +198,12 @@ export default class NotificationBackground {
             normalizedUsername = normalizedUsername.toLowerCase();
         }
 
+        const disabledAddLogin = await this.storageService.get<boolean>(ConstantsService.disableAddLoginNotificationKey);
         if (await this.vaultTimeoutService.isLocked()) {
+            if (disabledAddLogin) {
+                return;
+            }
+
             if (!await this.allowPersonalOwnership()) {
                 return;
             }
@@ -211,8 +216,6 @@ export default class NotificationBackground {
         const usernameMatches = ciphers.filter(c =>
             c.login.username != null && c.login.username.toLowerCase() === normalizedUsername);
         if (usernameMatches.length === 0) {
-            const disabledAddLogin = await this.storageService.get<boolean>(
-                ConstantsService.disableAddLoginNotificationKey);
             if (disabledAddLogin) {
                 return;
             }
