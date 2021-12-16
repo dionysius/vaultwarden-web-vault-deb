@@ -27,13 +27,13 @@
                 </div>
             </div>
             <div class="action-buttons">
-                <button type="button" class="row-btn" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
+                <button type="button" class="row-btn" appStopClick attr.aria-label="{{'toggleVisibility' | i18n}} {{field.name}}" appA11yTitle="{{'toggleVisibility' | i18n}}"
                     *ngIf="field.type === fieldType.Hidden && cipher.viewPassword"
                     (click)="toggleFieldValue(field)">
                     <i class="fa fa-lg" aria-hidden="true"
                         [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                 </button>
-                <button type="button" class="row-btn" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
+                <button type="button" class="row-btn" appStopClick attr.aria-label="{{'copyValue' | i18n}} {{field.name}}" appA11yTitle="{{'copyValue' | i18n}}"
                     *ngIf="field.value && field.type !== fieldType.Boolean && field.type !== fieldType.Linked &&
                     !(field.type === fieldType.Hidden && !cipher.viewPassword)"
                     (click)="copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')">
