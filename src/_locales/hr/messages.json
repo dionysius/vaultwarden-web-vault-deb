@@ -122,19 +122,19 @@
     "message": "Nastavi"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Slanje verifikacijskog kôda e-poštom"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Pošalji kôd"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kôd poslan"
   },
   "verificationCode": {
     "message": "Kôd za provjeru"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Potvrdite lozinku za nastavak."
   },
   "account": {
     "message": "Račun"
@@ -321,7 +321,7 @@
     "message": "Web preglednik ne podržava jednostavno kopiranje međuspremnika. Umjesto toga ručno kopirajte."
   },
   "verifyIdentity": {
-    "message": "Verify Identity"
+    "message": "Potvrdi identitet"
   },
   "yourVaultIsLocked": {
     "message": "Tvoj trezor je zaključan. Potvrdi glavnu lozinku za nastavak."
@@ -424,7 +424,7 @@
     "message": "Potvrdni kôd je obavezan."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Nevažeći kôd za provjeru"
   },
   "valueCopied": {
     "message": " kopirano",
@@ -573,7 +573,7 @@
     "message": "Treba li Bitwarden zapamtiti ovu lozinku?"
   },
   "notificationAddSave": {
-    "message": "Da, spremi sad"
+    "message": "Spremi"
   },
   "disableChangedPasswordNotification": {
     "message": "Onemogući upit za spremanje ažurirane lozinke"
@@ -585,7 +585,7 @@
     "message": "Želiš li ovu lozinku ažurirati u Bitwarden-u?"
   },
   "notificationChangeSave": {
-    "message": "Da, ažuriraj sada"
+    "message": "Ažuriraj"
   },
   "disableContextMenuItem": {
     "message": "Onemogući kontekstualni izbornik u pregledniku"
@@ -996,11 +996,11 @@
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Povezano",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Povezana vrijednost",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
@@ -1106,7 +1106,7 @@
     "message": "Prezime"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Ime i prezime"
   },
   "identityName": {
     "message": "Ime identiteta"
@@ -1832,7 +1832,7 @@
     "message": "Nije nađen jedinstveni identifikator."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ koristi jedinstvenu prijavu SSO s vlastitim poslužiteljem. Članovima organizacije glavna lozinka više nije potrebna.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1841,18 +1841,18 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Napusti organizaciju"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Ukloni glavnu lozinku"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Glavna lozinka uklonjena."
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Sigurno želiš napustiti ovu organizaciju?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Organizacija napuštena."
   }
 }
