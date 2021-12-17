@@ -3,9 +3,9 @@
         <div class="left">
             <button type="button" appBlurClick (click)="cancel()">{{'cancel' | i18n}}</button>
         </div>
-        <div class="center">
+        <h1 class="center">
             <span class="title">{{'moveToOrganization' | i18n}}</span>
-        </div>
+        </h1>
         <div class="right">
             <button type="submit" appBlurClick [disabled]="form.loading || !canSave"
                 *ngIf="organizations && organizations.length">
@@ -35,9 +35,9 @@
             </div>
         </div>
         <div class="box" *ngIf="organizations && organizations.length">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'collections' | i18n}}
-            </div>
+            </h2>
             <div class="box-content" *ngIf="!collections || !collections.length">
                 <div class="box-content-row padded no-hover">
                     {{'noCollectionsInList' | i18n}}

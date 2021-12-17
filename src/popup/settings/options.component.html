@@ -5,18 +5,18 @@
             <span>{{'back' | i18n}}</span>
         </a>
     </div>
-    <div class="center">
+    <h1 class="center">
         <span class="title">{{'options' | i18n}}</span>
-    </div>
+    </h1>
     <div class="right"></div>
 </header>
 <content>
     <div class="box">
-        <div class="box-header-expandable" (click)="showGeneral = !showGeneral">
+        <h2 class="box-header-expandable" (click)="showGeneral = !showGeneral">
             General
             <i *ngIf="!showGeneral" class="fa fa-chevron-down fa-sm icon"></i>
             <i *ngIf="showGeneral" class="fa fa-chevron-up fa-sm icon"></i>
-        </div>
+        </h2>
     </div>
     <ng-container *ngIf="showGeneral">
         <div class="box">
@@ -84,11 +84,11 @@
         </div>
     </ng-container>
     <div class="box box-section-divider">
-        <div class="box-header-expandable" (click)="showDisplay = !showDisplay">
+        <h2 class="box-header-expandable" (click)="showDisplay = !showDisplay">
             Display
             <i *ngIf="!showDisplay" class="fa fa-chevron-down fa-sm icon"></i>
             <i *ngIf="showDisplay" class="fa fa-chevron-up fa-sm icon"></i>
-        </div>
+        </h2>
     </div>
     <ng-container *ngIf="showDisplay">
         <div class="box">
@@ -141,11 +141,11 @@
         </div>
     </ng-container>
     <div class="box box-section-divider">
-        <div class="box-header-expandable" (click)="showAutofill = !showAutofill">
+        <h2 class="box-header-expandable" (click)="showAutofill = !showAutofill">
             Autofill
             <i *ngIf="!showAutofill" class="fa fa-chevron-down fa-sm icon"></i>
             <i *ngIf="showAutofill" class="fa fa-chevron-up fa-sm icon"></i>
-        </div>
+        </h2>
     </div>
     <ng-container *ngIf="showAutofill">
         <div class="box">

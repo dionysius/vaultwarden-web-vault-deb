@@ -3,9 +3,9 @@
         <div class="left">
             <a routerLink="/folders">{{'cancel' | i18n}}</a>
         </div>
-        <div class="center">
+        <h1 class="center">
             <span class="title">{{title}}</span>
-        </div>
+        </h1>
         <div class="right">
             <button type="submit" appBlurClick [disabled]="form.loading">
                 <span [hidden]="form.loading">{{'save' | i18n}}</span>
