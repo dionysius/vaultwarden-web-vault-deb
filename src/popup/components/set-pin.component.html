@@ -15,7 +15,7 @@
                             </div>
                             <div class="action-buttons">
                                 <button type="button" class="row-btn" appStopClick appBlurClick appA11yTitle="{{'toggleVisibility' | i18n}}"
-                                    (click)="toggleVisibility()">
+                                    (click)="toggleVisibility()" [attr.aria-pressed]="showPin">
                                     <i class="fa fa-lg" aria-hidden="true"
                                         [ngClass]="{'fa-eye': !showPin, 'fa-eye-slash': showPin}"></i>
                                 </button>

@@ -34,7 +34,7 @@
                     *ngIf="f.type === fieldType.Boolean" appTrueFalseValue trueValue="true" falseValue="false">
                 <div class="action-buttons" *ngIf="f.type === fieldType.Hidden && (cipher.viewPassword || f.newField)">
                     <button type="button" class="row-btn" appStopClick appBlurClick appA11yTitle="{{'toggleVisibility' | i18n}}"
-                        (click)="toggleFieldValue(f)">
+                        (click)="toggleFieldValue(f)" [attr.aria-pressed]="f.showValue">
                         <i class="fa fa-lg" aria-hidden="true"
                             [ngClass]="{'fa-eye': !f.showValue, 'fa-eye-slash': f.showValue}"></i>
                     </button>
