@@ -987,16 +987,16 @@
     "message": "透過拖曳來排序"
   },
   "cfTypeText": {
-    "message": "文字"
+    "message": "文字型"
   },
   "cfTypeHidden": {
-    "message": "隱藏"
+    "message": "隱藏型"
   },
   "cfTypeBoolean": {
     "message": "布林值"
   },
   "cfTypeLinked": {
-    "message": "已連結",
+    "message": "連結型",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {

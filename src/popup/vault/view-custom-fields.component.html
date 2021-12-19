@@ -1,7 +1,7 @@
 <ng-container>
-    <div class="box-header">
+    <h2 class="box-header">
         {{'customFields' | i18n}}
-    </div>
+    </h2>
     <div class="box-content">
         <div class="box-content-row box-content-row-flex" *ngFor="let field of cipher.fields">
             <div class="row-main">
@@ -29,7 +29,7 @@
             <div class="action-buttons">
                 <button type="button" class="row-btn" appStopClick attr.aria-label="{{'toggleVisibility' | i18n}} {{field.name}}" appA11yTitle="{{'toggleVisibility' | i18n}}"
                     *ngIf="field.type === fieldType.Hidden && cipher.viewPassword"
-                    (click)="toggleFieldValue(field)">
+                    (click)="toggleFieldValue(field)" [attr.aria-pressed]="field.showValue">
                     <i class="fa fa-lg" aria-hidden="true"
                         [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                 </button>

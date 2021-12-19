@@ -3,9 +3,9 @@
         <div class="left">
             <a routerLink="/home">{{'close' | i18n}}</a>
         </div>
-        <div class="center">
+        <h1 class="center">
             <span class="title">{{'appName' | i18n}}</span>
-        </div>
+        </h1>
         <div class="right">
             <button type="submit" appBlurClick [disabled]="form.loading">
                 <span [hidden]="form.loading">{{'save' | i18n}}</span>
@@ -15,9 +15,9 @@
     </header>
     <content>
         <div class="box">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'selfHostedEnvironment' | i18n}}
-            </div>
+            </h2>
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="baseUrl">{{'baseUrl' | i18n}}</label>
@@ -30,9 +30,9 @@
             </div>
         </div>
         <div class="box">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'customEnvironment' | i18n}}
-            </div>
+            </h2>
             <div class="box-content" [hidden]="!showCustom">
                 <div class="box-content-row" appBoxRow>
                     <label for="webVaultUrl">{{'webVaultUrl' | i18n}}</label>

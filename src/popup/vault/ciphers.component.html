@@ -5,6 +5,7 @@
             <span>{{'back' | i18n}}</span>
         </button>
     </div>
+    <h1 class="sr-only">{{'myVault' | i18n}}</h1>
     <div class="search">
         <input type="{{searchTypeSearch ? 'search' : 'text'}}"
             placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search" [(ngModel)]="searchText"
@@ -20,9 +21,9 @@
 <content [ngClass]="{'stacked-boxes': showGroupings()}">
     <ng-container *ngIf="showGroupings()">
         <div class="box list" *ngIf="nestedFolders && nestedFolders.length">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'folders' | i18n}}
-            </div>
+            </h2>
             <div class="box-content single-line">
                 <button type="button" *ngFor="let f of nestedFolders" class="box-content-row" appStopClick appBlurClick
                     (click)="selectFolder(f.node)">
@@ -38,9 +39,9 @@
             </div>
         </div>
         <div class="box list" *ngIf="nestedCollections && nestedCollections.length">
-            <div class="box-header">
+            <h2 class="box-header">
                 {{'collections' | i18n}}
-            </div>
+            </h2>
             <div class="box-content single-line">
                 <button type="button" *ngFor="let c of nestedCollections" class="box-content-row" appStopClick appBlurClick
                     (click)="selectCollection(c.node)">
@@ -66,10 +67,10 @@
         <cdk-virtual-scroll-viewport itemSize="46" minBufferPx="400" maxBufferPx="600" *ngIf="ciphers.length"
             #virtualScrollViewport>
             <div class="box list only-list">
-                <div class="box-header">
+                <h2 class="box-header">
                     {{groupingTitle}}
                     <span class="flex-right">{{isSearching() ? ciphers.length : ciphers.length}}</span>
-                </div>
+                </h2>
                 <div class="box-content">
                     <app-cipher-row *cdkVirtualFor="let c of ciphers" [cipher]="c" title="{{'viewItem' | i18n}}"
                         (onSelected)="selectCipher($event)" (launchEvent)="launchCipher($event)"></app-cipher-row>

@@ -2,18 +2,18 @@
     <div class="left">
         <button type="button" appBlurClick (click)="close()">{{'close' | i18n}}</button>
     </div>
-    <div class="center">
+    <h1 class="center">
         <span class="title">{{'viewItem' | i18n}}</span>
-    </div>
+    </h1>
     <div class="right" *ngIf="cipher">
         <button type="button" appBlurClick (click)="edit()" *ngIf="!cipher.isDeleted">{{'edit' | i18n}}</button>
     </div>
 </header>
 <content *ngIf="cipher">
     <div class="box">
-        <div class="box-header">
+        <h2 class="box-header">
             {{'itemInformation' | i18n}}
-        </div>
+        </h2>
         <div class="box-content">
             <div class="box-content-row">
                 <label for="name">{{'name' | i18n}}</label>
@@ -55,7 +55,7 @@
                                 aria-hidden="true"></i>
                         </button>
                         <button type="button" class="row-btn" appStopClick attr.aria-label="{{'toggleVisibility' | i18n}} {{'password' | i18n}}" appA11yTitle="{{'toggleVisibility' | i18n}}"
-                            (click)="togglePassword()" *ngIf="cipher.viewPassword">
+                            (click)="togglePassword()" *ngIf="cipher.viewPassword" [attr.aria-pressed]="showPassword">
                             <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                         </button>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="action-buttons">
                         <button type="button" class="row-btn" appStopClick attr.aria-label="{{'toggleVisibility' | i18n}} {{'number' | i18n}}" appA11yTitle="{{'toggleVisibility' | i18n}}"
-                            (click)="toggleCardNumber()">
+                            (click)="toggleCardNumber()" [attr.aria-pressed]="showCardNumber">
                             <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber}"></i>
                         </button>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="action-buttons">
                         <button type="button" class="row-btn" appStopClick attr.aria-label="{{'toggleVisibility' | i18n}} {{'securityCode' | i18n}}" appA11yTitle="{{'toggleVisibility' | i18n}}"
-                            (click)="toggleCardCode()">
+                            (click)="toggleCardCode()" [attr.aria-pressed]="showCardCode">
                             <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
                         </button>
@@ -211,9 +211,9 @@
         </div>
     </div>
     <div class="box" *ngIf="cipher.notes">
-        <div class="box-header">
+        <h2 class="box-header">
             <label for="notes">{{'notes' | i18n}}</label>
-        </div>
+        </h2>
         <div class="box-content">
             <div class="box-content-row">
                 <textarea  id="notes" [value]="cipher.notes" rows="6" readonly aria-readonly="true"></textarea>
@@ -225,9 +225,9 @@
             [copy]="copy.bind(this)"></app-vault-view-custom-fields>
     </div>
     <div class="box" *ngIf="cipher.hasAttachments && (canAccessPremium || cipher.organizationId) && showAttachments">
-        <div class="box-header">
+        <h2 class="box-header">
             {{'attachments' | i18n}}
-        </div>
+        </h2>
         <div class="box-content">
             <button type="button" class="box-content-row box-content-row-flex text-default" *ngFor="let attachment of cipher.attachments"
                 appStopClick appBlurCLick (click)="downloadAttachment(attachment)">
