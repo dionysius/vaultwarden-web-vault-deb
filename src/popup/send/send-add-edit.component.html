@@ -110,10 +110,12 @@
         </div>
         <!-- Options -->
         <div class="box">
-            <h2 class="box-header-expandable" (click)="showOptions = !showOptions">
-                {{'options' | i18n}}
-                <i *ngIf="!showOptions" class="fa fa-chevron-down fa-sm icon"></i>
-                <i *ngIf="showOptions" class="fa fa-chevron-up fa-sm icon"></i>
+            <h2>
+                <button type="button" class="box-header-expandable" (click)="showOptions = !showOptions" [attr.aria-expanded]="showOptions">
+                    {{'options' | i18n}}
+                    <i *ngIf="!showOptions" class="fa fa-chevron-down fa-sm icon" aria-hidden="true"></i>
+                    <i *ngIf="showOptions" class="fa fa-chevron-up fa-sm icon" aria-hidden="true"></i>
+                </button>
             </h2>
         </div>
         <div [hidden]="!showOptions">

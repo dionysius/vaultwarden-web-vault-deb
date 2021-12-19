@@ -12,10 +12,12 @@
 </header>
 <content>
     <div class="box">
-        <h2 class="box-header-expandable" (click)="showGeneral = !showGeneral">
-            General
-            <i *ngIf="!showGeneral" class="fa fa-chevron-down fa-sm icon"></i>
-            <i *ngIf="showGeneral" class="fa fa-chevron-up fa-sm icon"></i>
+        <h2>
+            <button type="button" class="box-header-expandable" (click)="showGeneral = !showGeneral" [attr.aria-expanded]="showGeneral">
+                General
+                <i *ngIf="!showGeneral" class="fa fa-chevron-down fa-sm icon" aria-hidden="true"></i>
+                <i *ngIf="showGeneral" class="fa fa-chevron-up fa-sm icon" aria-hidden="true"></i>
+            </button>
         </h2>
     </div>
     <ng-container *ngIf="showGeneral">
@@ -84,10 +86,12 @@
         </div>
     </ng-container>
     <div class="box box-section-divider">
-        <h2 class="box-header-expandable" (click)="showDisplay = !showDisplay">
-            Display
-            <i *ngIf="!showDisplay" class="fa fa-chevron-down fa-sm icon"></i>
-            <i *ngIf="showDisplay" class="fa fa-chevron-up fa-sm icon"></i>
+        <h2>
+            <button type="button" class="box-header-expandable" (click)="showDisplay = !showDisplay" [attr.aria-expanded]="showDisplay">
+                Display
+                <i *ngIf="!showDisplay" class="fa fa-chevron-down fa-sm icon" aria-hidden="true"></i>
+                <i *ngIf="showDisplay" class="fa fa-chevron-up fa-sm icon" aria-hidden="true"></i>
+            </button>
         </h2>
     </div>
     <ng-container *ngIf="showDisplay">
@@ -141,10 +145,12 @@
         </div>
     </ng-container>
     <div class="box box-section-divider">
-        <h2 class="box-header-expandable" (click)="showAutofill = !showAutofill">
-            Autofill
-            <i *ngIf="!showAutofill" class="fa fa-chevron-down fa-sm icon"></i>
-            <i *ngIf="showAutofill" class="fa fa-chevron-up fa-sm icon"></i>
+        <h2>
+            <button type="button" class="box-header-expandable" (click)="showAutofill = !showAutofill" [attr.aria-expanded]="showAutofill">
+                Autofill
+                <i *ngIf="!showAutofill" class="fa fa-chevron-down fa-sm icon" aria-hidden="true"></i>
+                <i *ngIf="showAutofill" class="fa fa-chevron-up fa-sm icon" aria-hidden="true"></i>
+            </button>
         </h2>
     </div>
     <ng-container *ngIf="showAutofill">
