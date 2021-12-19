@@ -58,7 +58,7 @@
                             </button>
                             <button type="button" class="row-btn" appStopClick appBlurClick
                                 appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()"
-                                *ngIf="cipher.viewPassword">
+                                *ngIf="cipher.viewPassword" [attr.aria-pressed]="showPassword">
                                 <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </button>
@@ -91,7 +91,7 @@
                         </div>
                         <div class="action-buttons">
                             <button type="button" class="row-btn" appStopClick appBlurClick
-                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleCardNumber()">
+                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleCardNumber()" [attr.aria-pressed]="showCardNumber">
                                 <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber}"></i>
                             </button>
@@ -122,7 +122,7 @@
                         </div>
                         <div class="action-buttons">
                             <button type="button" class="row-btn" appStopClick appBlurClick
-                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleCardCode()">
+                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleCardCode()" [attr.aria-pressed]="showCardCode">
                                 <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
                             </button>

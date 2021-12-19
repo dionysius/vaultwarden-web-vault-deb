@@ -29,7 +29,7 @@
             <div class="action-buttons">
                 <button type="button" class="row-btn" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
                     *ngIf="field.type === fieldType.Hidden && cipher.viewPassword"
-                    (click)="toggleFieldValue(field)">
+                    (click)="toggleFieldValue(field)" [attr.aria-pressed]="field.showValue">
                     <i class="fa fa-lg" aria-hidden="true"
                         [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                 </button>
