@@ -16,17 +16,17 @@
         </h2>
         <div class="box-content">
             <div class="box-content-row">
-                <span class="row-label">{{'name' | i18n}}</span>
-                <input type="text" [value]="cipher.name" readonly aria-readonly="true" />
+                <label for="name">{{'name' | i18n}}</label>
+                <input id="name" type="text" [value]="cipher.name" readonly aria-readonly="true" />
             </div>
             <!-- Login -->
             <div *ngIf="cipher.login">
                 <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.username">
                     <div class="row-main">
-                        <span class="row-label draggable" draggable="true"
+                        <label for="loginUsername" class="row-label draggable" draggable="true"
                             (dragstart)="setTextDataOnDrag($event, cipher.login.username)">{{'username' | i18n}}
-                        </span>
-                        <input type="text" [value]="cipher.login.username" readonly aria-readonly="true" />
+                    </label>
+                        <input id="loginUsername" type="text" [value]="cipher.login.username" readonly aria-readonly="true" />
                     </div>
                     <div class="action-buttons">
                         <button type="button" class="row-btn" appStopClick appA11yTitle="{{'copyUsername' | i18n}}"
@@ -54,7 +54,7 @@
                             <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"
                                 aria-hidden="true"></i>
                         </button>
-                        <button type="button" class="row-btn" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
+                        <button type="button" class="row-btn" appStopClick attr.aria-label="{{'toggleVisibility' | i18n}} {{'password' | i18n}}" appA11yTitle="{{'toggleVisibility' | i18n}}"
                             (click)="togglePassword()" *ngIf="cipher.viewPassword" [attr.aria-pressed]="showPassword">
                             <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
@@ -103,7 +103,7 @@
                         <span [hidden]="!showCardNumber" class="monospaced">{{cipher.card.number}}</span>
                     </div>
                     <div class="action-buttons">
-                        <button type="button" class="row-btn" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
+                        <button type="button" class="row-btn" appStopClick attr.aria-label="{{'toggleVisibility' | i18n}} {{'number' | i18n}}" appA11yTitle="{{'toggleVisibility' | i18n}}"
                             (click)="toggleCardNumber()" [attr.aria-pressed]="showCardNumber">
                             <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber}"></i>
@@ -129,7 +129,7 @@
                         <span [hidden]="!showCardCode" class="monospaced">{{cipher.card.code}}</span>
                     </div>
                     <div class="action-buttons">
-                        <button type="button" class="row-btn" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
+                        <button type="button" class="row-btn" appStopClick attr.aria-label="{{'toggleVisibility' | i18n}} {{'securityCode' | i18n}}" appA11yTitle="{{'toggleVisibility' | i18n}}"
                             (click)="toggleCardCode()" [attr.aria-pressed]="showCardCode">
                             <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
@@ -191,18 +191,18 @@
         <div class="box-content">
             <div class="box-content-row box-content-row-flex" *ngFor="let u of cipher.login.uris; let i = index">
                 <div class="row-main">
-                    <span class="row-label" *ngIf="!u.isWebsite">{{'uri' | i18n}}</span>
-                    <span class="row-label" *ngIf="u.isWebsite">{{'website' | i18n}}</span>
+                    <label for="hostOrUri{{i}}" class="row-label" *ngIf="!u.isWebsite">{{'uri' | i18n}}</label>
+                    <label for="hostOrUri{{i}}" class="row-label" *ngIf="u.isWebsite">{{'website' | i18n}}</label>
                     <span title="{{u.uri}}">
-                        <input type="text" [value]="u.hostOrUri" readonly aria-readonly="true" />
+                        <input id="hostOrUri{{i}}" type="text" [value]="u.hostOrUri" readonly aria-readonly="true" />
                     </span>
                 </div>
                 <div class="action-buttons">
-                    <button type="button" class="row-btn" appStopClick appA11yTitle="{{'launch' | i18n}}" *ngIf="u.canLaunch"
+                    <button type="button" class="row-btn" appStopClick attr.aria-label="{{'launch' | i18n}} {{u.uri}}" appA11yTitle="{{'launch' | i18n}}" *ngIf="u.canLaunch"
                         (click)="launch(u)">
                         <i class="fa fa-lg fa-share-square-o" aria-hidden="true"></i>
                     </button>
-                    <button type="button" class="row-btn"appStopClick appA11yTitle="{{'copyUri' | i18n}}"
+                    <button type="button" class="row-btn"appStopClick attr.aria-label="{{'copyUri' | i18n}} {{u.uri}}" appA11yTitle="{{'copyUri' | i18n}}"
                         (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')">
                         <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                     </button>
@@ -212,11 +212,11 @@
     </div>
     <div class="box" *ngIf="cipher.notes">
         <h2 class="box-header">
-            {{'notes' | i18n}}
+            <label for="notes">{{'notes' | i18n}}</label>
         </h2>
         <div class="box-content">
             <div class="box-content-row">
-                <textarea [value]="cipher.notes" rows="6" readonly aria-readonly="true"></textarea>
+                <textarea  id="notes" [value]="cipher.notes" rows="6" readonly aria-readonly="true"></textarea>
             </div>
         </div>
     </div>
