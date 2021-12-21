@@ -1,0 +1,18 @@
+# Build directories
+build
+dist
+coverage
+
+jslib
+
+# External libraries / auto synced locales
+src/_locales
+src/scripts/duo.js
+src/content/autofill.js
+src/safari
+
+# TODO: Remove this!
+src/services/autofill.service.ts
+
+# Github Workflows
+.github/workflows 
