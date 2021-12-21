@@ -1,6 +1,6 @@
-import NotificationQueueMessage from './notificationQueueMessage';
+import NotificationQueueMessage from "./notificationQueueMessage";
 
 export default class AddChangePasswordQueueMessage extends NotificationQueueMessage {
-    cipherId: string;
-    newPassword: string;
+  cipherId: string;
+  newPassword: string;
 }

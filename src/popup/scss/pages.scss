@@ -1,95 +1,97 @@
 @import "variables.scss";
 
 app-sync {
-    content {
-        .btn {
-            margin-bottom: 10px;
-        }
+  content {
+    .btn {
+      margin-bottom: 10px;
     }
+  }
 }
 
 app-password-generator .password-block {
-    font-size: $font-size-large;
-    font-family: $font-family-monospace;
-    margin: 20px;
+  font-size: $font-size-large;
+  font-family: $font-family-monospace;
+  margin: 20px;
 
-    .password-wrapper {
-        text-align: center;
-    }
+  .password-wrapper {
+    text-align: center;
+  }
 }
 
 app-home {
-    position: fixed;
-    height: 100%;
-    width: 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
 
-    .center-content {
-        margin-top: -50px;
-        height: calc(100% + 50px);
+  .center-content {
+    margin-top: -50px;
+    height: calc(100% + 50px);
+  }
+
+  img {
+    width: 284px;
+    margin: 0 auto;
+  }
+
+  p.lead {
+    margin: 30px 0;
+  }
+
+  .btn + .btn {
+    margin-top: 10px;
+  }
+
+  a.settings-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    @include themify($themes) {
+      color: themed("mutedColor");
     }
 
-    img {
-        width: 284px;
-        margin: 0 auto;
+    &:not(:hover):not(:focus) {
+      span {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      @include themify($themes) {
+        color: themed("primaryColor");
+      }
+    }
+  }
+}
+
+body.body-sm,
+body.body-xs {
+  app-home {
+    .center-content {
+      margin-top: 0;
+      height: 100%;
     }
 
     p.lead {
-        margin: 30px 0;
+      margin: 15px 0;
     }
-
-    .btn + .btn {
-        margin-top: 10px;
-    }
-
-    a.settings-icon {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-
-        @include themify($themes) {
-            color: themed('mutedColor');
-        }
-
-        &:not(:hover):not(:focus) {
-            span {
-                clip: rect(0 0 0 0);
-                clip-path: inset(50%);
-                height: 1px;
-                overflow: hidden;
-                position: absolute;
-                white-space: nowrap;
-                width: 1px;
-            }
-        }
-
-        &:hover, &:focus {
-            text-decoration: none;
-
-            @include themify($themes) {
-                color: themed('primaryColor');
-            }
-        }
-    }
-}
-
-body.body-sm, body.body-xs {
-    app-home {
-        .center-content {
-            margin-top: 0;
-            height: 100%;
-        }
-
-        p.lead {
-            margin: 15px 0;
-        }
-    }
+  }
 }
 
 body.body-full {
-    app-home {
-        .center-content {
-            margin-top: -80px;
-            height: calc(100% + 80px);
-        }
+  app-home {
+    .center-content {
+      margin-top: -80px;
+      height: calc(100% + 80px);
     }
+  }
 }

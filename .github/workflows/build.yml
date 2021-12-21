@@ -104,8 +104,8 @@ jobs:
           npm run dist
           npm run test
 
-      # - name: Run linter
-      #   run: npm run lint
+      - name: Run linter
+        run: npm run lint
 
       - name: Gulp
         run: gulp ci

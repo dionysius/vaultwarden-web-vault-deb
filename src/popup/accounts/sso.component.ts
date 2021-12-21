@@ -1,55 +1,73 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import {
-    ActivatedRoute,
-    Router,
-} from '@angular/router';
+import { ActivatedRoute, Router } from "@angular/router";
 
-import { ApiService } from 'jslib-common/abstractions/api.service';
-import { AuthService } from 'jslib-common/abstractions/auth.service';
-import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
-import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
-import { I18nService } from 'jslib-common/abstractions/i18n.service';
-import { LogService } from 'jslib-common/abstractions/log.service';
-import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
-import { StateService } from 'jslib-common/abstractions/state.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
-import { SyncService } from 'jslib-common/abstractions/sync.service';
-import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import { ApiService } from "jslib-common/abstractions/api.service";
+import { AuthService } from "jslib-common/abstractions/auth.service";
+import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
+import { EnvironmentService } from "jslib-common/abstractions/environment.service";
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { LogService } from "jslib-common/abstractions/log.service";
+import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { StateService } from "jslib-common/abstractions/state.service";
+import { StorageService } from "jslib-common/abstractions/storage.service";
+import { SyncService } from "jslib-common/abstractions/sync.service";
+import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
-import { SsoComponent as BaseSsoComponent } from 'jslib-angular/components/sso.component';
-import { BrowserApi } from '../../browser/browserApi';
+import { SsoComponent as BaseSsoComponent } from "jslib-angular/components/sso.component";
+import { BrowserApi } from "../../browser/browserApi";
 
 @Component({
-    selector: 'app-sso',
-    templateUrl: 'sso.component.html',
+  selector: "app-sso",
+  templateUrl: "sso.component.html",
 })
 export class SsoComponent extends BaseSsoComponent {
-    constructor(authService: AuthService, router: Router,
-        i18nService: I18nService, route: ActivatedRoute,
-        storageService: StorageService, stateService: StateService,
-        platformUtilsService: PlatformUtilsService, apiService: ApiService,
-        cryptoFunctionService: CryptoFunctionService, passwordGenerationService: PasswordGenerationService,
-        syncService: SyncService, environmentService: EnvironmentService, logService: LogService,
-        private vaultTimeoutService: VaultTimeoutService) {
-        super(authService, router, i18nService, route, storageService, stateService, platformUtilsService,
-            apiService, cryptoFunctionService, environmentService, passwordGenerationService, logService);
+  constructor(
+    authService: AuthService,
+    router: Router,
+    i18nService: I18nService,
+    route: ActivatedRoute,
+    storageService: StorageService,
+    stateService: StateService,
+    platformUtilsService: PlatformUtilsService,
+    apiService: ApiService,
+    cryptoFunctionService: CryptoFunctionService,
+    passwordGenerationService: PasswordGenerationService,
+    syncService: SyncService,
+    environmentService: EnvironmentService,
+    logService: LogService,
+    private vaultTimeoutService: VaultTimeoutService
+  ) {
+    super(
+      authService,
+      router,
+      i18nService,
+      route,
+      storageService,
+      stateService,
+      platformUtilsService,
+      apiService,
+      cryptoFunctionService,
+      environmentService,
+      passwordGenerationService,
+      logService
+    );
 
-        const url = this.environmentService.getWebVaultUrl();
+    const url = this.environmentService.getWebVaultUrl();
 
-        this.redirectUri = url + '/sso-connector.html';
-        this.clientId = 'browser';
+    this.redirectUri = url + "/sso-connector.html";
+    this.clientId = "browser";
 
-        super.onSuccessfulLogin = async () => {
-            await syncService.fullSync(true);
-            if (await this.vaultTimeoutService.isLocked()) {
-                // If the vault is unlocked then this will clear keys from memory, which we don't want to do
-                BrowserApi.reloadOpenWindows();
-            }
+    super.onSuccessfulLogin = async () => {
+      await syncService.fullSync(true);
+      if (await this.vaultTimeoutService.isLocked()) {
+        // If the vault is unlocked then this will clear keys from memory, which we don't want to do
+        BrowserApi.reloadOpenWindows();
+      }
 
-            const thisWindow = window.open('', '_self');
-            thisWindow.close();
-        };
-    }
+      const thisWindow = window.open("", "_self");
+      thisWindow.close();
+    };
+  }
 }

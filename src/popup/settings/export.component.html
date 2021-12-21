@@ -1,37 +1,39 @@
 <form (ngSubmit)="submit()" [formGroup]="exportForm">
-    <header>
-        <div class="left">
-            <a routerLink="/tabs/settings">
-                <span class="header-icon" aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
-                <span>{{'back' | i18n}}</span>
-            </a>
-        </div>
-        <h1 class="center">
-            <span class="title">{{'exportVault' | i18n}}</span>
-        </h1>
-        <div class="right">
-            <button appBlurClick type="submit" [disabled]="!exportForm.enabled">{{'submit' | i18n}}</button>
-        </div>
-    </header>
-    <content>
-        <app-callout type="warning" title="{{'vaultExportDisabled' | i18n}}" *ngIf="disabledByPolicy">
-            {{'personalVaultExportPolicyInEffect' | i18n}}
-        </app-callout>
+  <header>
+    <div class="left">
+      <a routerLink="/tabs/settings">
+        <span class="header-icon" aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+        <span>{{ "back" | i18n }}</span>
+      </a>
+    </div>
+    <h1 class="center">
+      <span class="title">{{ "exportVault" | i18n }}</span>
+    </h1>
+    <div class="right">
+      <button appBlurClick type="submit" [disabled]="!exportForm.enabled">
+        {{ "submit" | i18n }}
+      </button>
+    </div>
+  </header>
+  <content>
+    <app-callout type="warning" title="{{ 'vaultExportDisabled' | i18n }}" *ngIf="disabledByPolicy">
+      {{ "personalVaultExportPolicyInEffect" | i18n }}
+    </app-callout>
 
-        <div class="box">
-            <div class="box-content">
-                <div class="box-content-row" appBoxRow>
-                    <label for="format">{{'fileFormat' | i18n}}</label>
-                    <select id="format" name="Format" formControlName="format">
-                        <option *ngFor="let f of formatOptions" [value]="f.value">{{f.name}}</option>
-                    </select>
-                </div>
-                <app-verify-master-password ngDefaultControl formControlName="secret" name="Secret">
-                </app-verify-master-password>
-            </div>
-            <div class="box-footer">
-                <p>{{'confirmIdentity' | i18n}}</p>
-            </div>
+    <div class="box">
+      <div class="box-content">
+        <div class="box-content-row" appBoxRow>
+          <label for="format">{{ "fileFormat" | i18n }}</label>
+          <select id="format" name="Format" formControlName="format">
+            <option *ngFor="let f of formatOptions" [value]="f.value">{{ f.name }}</option>
+          </select>
         </div>
-    </content>
+        <app-verify-master-password ngDefaultControl formControlName="secret" name="Secret">
+        </app-verify-master-password>
+      </div>
+      <div class="box-footer">
+        <p>{{ "confirmIdentity" | i18n }}</p>
+      </div>
+    </div>
+  </content>
 </form>

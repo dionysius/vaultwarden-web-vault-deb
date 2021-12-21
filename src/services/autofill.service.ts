@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
@@ -128,7 +129,7 @@ var IsoProvinces: { [id: string]: string; } = {
     alberta: 'AB', 'british columbia': 'BC', manitoba: 'MB', 'new brunswick': 'NB', 'newfoundland and labrador': 'NL',
     'nova scotia': 'NS', ontario: 'ON', 'prince edward island': 'PE', quebec: 'QC', saskatchewan: 'SK',
 };
-/* tslint:enable */
+// /* tslint:enable */
 
 export default class AutofillService implements AutofillServiceInterface {
 

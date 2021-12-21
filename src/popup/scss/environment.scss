@@ -1,39 +1,39 @@
 @import "variables.scss";
 
 html.browser_safari {
-    body {
-        height: 360px !important;
+  body {
+    height: 360px !important;
 
-        &.body-xs {
-            height: 300px !important;
-        }
-    
-        &.body-full {
-            height: 100% !important;
-        }
+    &.body-xs {
+      height: 300px !important;
     }
 
-    header { 
-        .search .fa {
-            left: 20px;
-        }
+    &.body-full {
+      height: 100% !important;
+    }
+  }
 
-        .left + .search .fa {
-            left: 10px;
-        }
+  header {
+    .search .fa {
+      left: 20px;
     }
 
-    app-root {
-        border-width: 1px;
-        border-style: solid;
-        border-color: #000000;
+    .left + .search .fa {
+      left: 10px;
     }
+  }
 
-    &.theme_light app-root {
-        border-color: #777777;
-    }
+  app-root {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+  }
 
-    &.theme_nord app-root {
-        border-color: #2e3440;
-    }
+  &.theme_light app-root {
+    border-color: #777777;
+  }
+
+  &.theme_nord app-root {
+    border-color: #2e3440;
+  }
 }

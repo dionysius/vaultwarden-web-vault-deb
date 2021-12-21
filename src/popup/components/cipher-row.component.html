@@ -1,23 +1,38 @@
-<button type="button" (click)="selectCipher(cipher)" (dblclick)="launchCipher(cipher)" appStopClick
-    title="{{title}} - {{cipher.name}}" class="box-content-row box-content-row-flex virtual-scroll-item">
-    <div class="row-main">
-        <app-vault-icon [cipher]="cipher"></app-vault-icon>
-        <div class="row-main-content">
-            <span class="text">
-                {{cipher.name}}
-                <ng-container *ngIf="cipher.organizationId">
-                    <i class="fa fa-cube text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
-                    <span class="sr-only">{{'shared' | i18n}}</span>
-                </ng-container>
-                <ng-container *ngIf="cipher.hasAttachments">
-                    <i class="fa fa-paperclip text-muted" title="{{'attachments' | i18n}}" aria-hidden="true"></i>
-                    <span class="sr-only">{{'attachments' | i18n}}</span>
-                </ng-container>
-            </span>
-            <span class="detail">{{cipher.subTitle}}</span>
-        </div>
+<button
+  type="button"
+  (click)="selectCipher(cipher)"
+  (dblclick)="launchCipher(cipher)"
+  appStopClick
+  title="{{ title }} - {{ cipher.name }}"
+  class="box-content-row box-content-row-flex virtual-scroll-item"
+>
+  <div class="row-main">
+    <app-vault-icon [cipher]="cipher"></app-vault-icon>
+    <div class="row-main-content">
+      <span class="text">
+        {{ cipher.name }}
+        <ng-container *ngIf="cipher.organizationId">
+          <i class="fa fa-cube text-muted" title="{{ 'shared' | i18n }}" aria-hidden="true"></i>
+          <span class="sr-only">{{ "shared" | i18n }}</span>
+        </ng-container>
+        <ng-container *ngIf="cipher.hasAttachments">
+          <i
+            class="fa fa-paperclip text-muted"
+            title="{{ 'attachments' | i18n }}"
+            aria-hidden="true"
+          ></i>
+          <span class="sr-only">{{ "attachments" | i18n }}</span>
+        </ng-container>
+      </span>
+      <span class="detail">{{ cipher.subTitle }}</span>
     </div>
-    <app-action-buttons [cipher]="cipher" [showView]="showView" (onView)="viewCipher(cipher)" (launchEvent)="launchCipher(cipher)" 
-        class="action-buttons">
-    </app-action-buttons>
+  </div>
+  <app-action-buttons
+    [cipher]="cipher"
+    [showView]="showView"
+    (onView)="viewCipher(cipher)"
+    (launchEvent)="launchCipher(cipher)"
+    class="action-buttons"
+  >
+  </app-action-buttons>
 </button>

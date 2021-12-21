@@ -10,18 +10,12 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "jslib-common/*": [
-        "jslib/common/src/*"
-      ],
-      "jslib-angular/*": [
-        "jslib/angular/src/*"
-      ]
+      "jslib-common/*": ["jslib/common/src/*"],
+      "jslib-angular/*": ["jslib/angular/src/*"]
     }
   },
   "angularCompilerOptions": {
     "preserveWhitespaces": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
