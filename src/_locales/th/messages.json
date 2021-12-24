@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "ล็อกอิน หรือ สร้างบัญชีใหม่ เพื่อใช้งานตู้นิรภัยของคุณ"
   },
   "createAccount": {
     "message": "สร้างบัญชี"
@@ -92,7 +92,7 @@
     "message": "Copy Custom Field Name"
   },
   "noMatchingLogins": {
-    "message": "No matching logins."
+    "message": "ไม่พบข้อมูลล็อกอินที่ตรงกัน"
   },
   "vaultLocked": {
     "message": "Vault is locked."
@@ -125,10 +125,10 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "ส่งโค้ด"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "ส่งโค้ดแล้ว"
   },
   "verificationCode": {
     "message": "Verification Code"
@@ -202,7 +202,7 @@
     "message": "Password Generator"
   },
   "generator": {
-    "message": "Generator",
+    "message": "สุ่มรหัส",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -227,7 +227,19 @@
     "message": "Options"
   },
   "length": {
-    "message": "Length"
+    "message": "ความยาว"
+  },
+  "uppercase": {
+    "message": "ตัวพิมพ์ใหญ่ (A-Z)"
+  },
+  "lowercase": {
+    "message": "ตัวพิมพ์เล็ก (a-z)"
+  },
+  "numbers": {
+    "message": "ตัวเลข (0-9)"
+  },
+  "specialCharacters": {
+    "message": "อักขระพิเศษ (!@#$%^&*)"
   },
   "numWords": {
     "message": "Number of Words"
@@ -236,11 +248,11 @@
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "ขึ้นต้นด้วยตัวพิมพ์ใหญ่",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "ต่อท้ายด้วยตัวเลข"
   },
   "minNumbers": {
     "message": "Minimum Numbers"
@@ -252,13 +264,13 @@
     "message": "Avoid Ambiguous Characters"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "ค้นหาในตู้นิรภัย"
   },
   "edit": {
-    "message": "Edit"
+    "message": "แก้ไข"
   },
   "view": {
-    "message": "View"
+    "message": "แสดง"
   },
   "noItemsInList": {
     "message": "There are no items to list."
@@ -424,7 +436,7 @@
     "message": "Verification code is required."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "โค้ดยืนยันไม่ถูกต้อง"
   },
   "valueCopied": {
     "message": " copied",

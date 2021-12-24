@@ -229,6 +229,18 @@
   "length": {
     "message": "Longueur"
   },
+  "uppercase": {
+    "message": "Majuscules (A-Z)"
+  },
+  "lowercase": {
+    "message": "Minuscules (a-z)"
+  },
+  "numbers": {
+    "message": "Chiffres (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Caractères spéciaux (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Nombre de mots"
   },

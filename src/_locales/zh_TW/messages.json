@@ -229,6 +229,18 @@
   "length": {
     "message": "長度"
   },
+  "uppercase": {
+    "message": "大寫 (A-Z)"
+  },
+  "lowercase": {
+    "message": "小寫 (a-z)"
+  },
+  "numbers": {
+    "message": "數字 (0-9)"
+  },
+  "specialCharacters": {
+    "message": "特殊字元 (!@#$%^&*)"
+  },
   "numWords": {
     "message": "字數"
   },

@@ -229,6 +229,18 @@
   "length": {
     "message": "Pikkus"
   },
+  "uppercase": {
+    "message": "Suurtäht (A-Z) "
+  },
+  "lowercase": {
+    "message": "Väiketäht (a-z) "
+  },
+  "numbers": {
+    "message": "Numbrid (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Erimärgid (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Sõnade arv"
   },

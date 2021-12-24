@@ -229,6 +229,18 @@
   "length": {
     "message": "Дължина"
   },
+  "uppercase": {
+    "message": "Главни букви (A-Z)"
+  },
+  "lowercase": {
+    "message": "Малки букви (a-z)"
+  },
+  "numbers": {
+    "message": "Числа (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Специални знаци (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Брой думи"
   },

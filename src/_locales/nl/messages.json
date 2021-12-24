@@ -229,6 +229,18 @@
   "length": {
     "message": "Lengte"
   },
+  "uppercase": {
+    "message": "Hoofdletters (A-Z)"
+  },
+  "lowercase": {
+    "message": "Kleine letters (a-z)"
+  },
+  "numbers": {
+    "message": "Cijfers (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Speciale tekens (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Aantal woorden"
   },
@@ -324,7 +336,7 @@
     "message": "Identiteit verifiëren"
   },
   "yourVaultIsLocked": {
-    "message": "Je kluis is vergrendeld. Voer je hoofdwachtwoord in om door te gaan."
+    "message": "Je kluis is vergrendeld. Bevestig je identiteit om door te gaan."
   },
   "unlock": {
     "message": "Ontgrendelen"
@@ -1804,7 +1816,7 @@
     "message": "Minuten"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Het beleid van je organisatie heeft invloed op de time-out van je kluis. De maximaal toegestane Kluis Time-out is $HOURS$ uur en $MINUTES$ minuten",
+    "message": "Het beleid van je organisatie heeft invloed op de time-out van je kluis. De maximaal toegestane kluis time-out is $HOURS$ uur en $MINUTES$ minuten.",
     "placeholders": {
       "hours": {
         "content": "$1",

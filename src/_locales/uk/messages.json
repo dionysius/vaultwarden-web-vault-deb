@@ -229,6 +229,18 @@
   "length": {
     "message": "Довжина"
   },
+  "uppercase": {
+    "message": "Верхній регістр (A-Z)"
+  },
+  "lowercase": {
+    "message": "Нижній регістр (a-z)"
+  },
+  "numbers": {
+    "message": "Числа (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Спеціальні символи (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Кількість слів"
   },
@@ -1479,7 +1491,7 @@
     "message": "Інтеграція з браузером не увімкнена в програмі Bitwarden на комп'ютері. Увімкніть її в налаштуваннях програми на комп'ютері."
   },
   "startDesktopTitle": {
-    "message": "Запустити програму Bitwarden на комп'ютері"
+    "message": "Запустіть програму Bitwarden на комп'ютері"
   },
   "startDesktopDesc": {
     "message": "Для використання цієї функції необхідно запустити програму Bitwarden на комп'ютері."

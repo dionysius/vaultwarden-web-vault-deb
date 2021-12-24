@@ -229,6 +229,18 @@
   "length": {
     "message": "Pituus"
   },
+  "uppercase": {
+    "message": "Isot kirjaimet  (A-Ö)"
+  },
+  "lowercase": {
+    "message": "Pienet kirjaimet (a-ö)"
+  },
+  "numbers": {
+    "message": "Numerot (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Erikoismerkit (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Sanojen määrä"
   },

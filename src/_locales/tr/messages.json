@@ -71,7 +71,7 @@
     "message": "Notu kopyala"
   },
   "copyUri": {
-    "message": "Linki Kopyala"
+    "message": "URI'yi kopyala"
   },
   "copyUsername": {
     "message": "Kullanıcı adını kopyala"
@@ -228,6 +228,18 @@
   },
   "length": {
     "message": "Uzunluk"
+  },
+  "uppercase": {
+    "message": "Büyük harf (A-Z)"
+  },
+  "lowercase": {
+    "message": "Küçük harf (a-z)"
+  },
+  "numbers": {
+    "message": "Rakamlar (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Özel karakterler (!@#$%^&*)"
   },
   "numWords": {
     "message": "Kelime sayısı"
@@ -500,7 +512,7 @@
     "message": "URl"
   },
   "uriPosition": {
-    "message": "URL $POSITION$",
+    "message": "URI $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -519,7 +531,7 @@
     "message": "Kayıt düzenlendi"
   },
   "deleteItemConfirmation": {
-    "message": "Bu kaydı çöp kutusuna göndermek istediğinizden emin misiniz?"
+    "message": "Çöp kutusuna göndermek istediğinizden emin misiniz?"
   },
   "deletedItem": {
     "message": "Kayıt çöp kutusuna gönderildi"
