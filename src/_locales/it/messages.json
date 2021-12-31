@@ -333,7 +333,7 @@
     "message": "Il tuo browser non supporta la copia dagli appunti. Copiala manualmente."
   },
   "verifyIdentity": {
-    "message": "Verifica identità"
+    "message": "Verifica l'identità."
   },
   "yourVaultIsLocked": {
     "message": "La tua cassaforte è bloccata. Inserisci la tua password principale per continuare."
@@ -436,7 +436,7 @@
     "message": "Il codice di verifica è obbligatorio."
   },
   "invalidVerificationCode": {
-    "message": "Codice di verifica non valido"
+    "message": "Codice di verifica non valido."
   },
   "valueCopied": {
     "message": "$VALUE$ copiato",
@@ -1458,7 +1458,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "La tua nuova password principale non soddisfa i requisiti di sicurezza."
+    "message": "La tua nuova password principale non soddisfa i parametri di sicurezza."
   },
   "acceptPolicies": {
     "message": "Selezionando la casella accetti quanto segue:"

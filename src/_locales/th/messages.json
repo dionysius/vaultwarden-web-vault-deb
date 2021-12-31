@@ -38,10 +38,10 @@
     "message": "Master Password"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "รหัสผ่านหลัก คือ รหัสผ่านที่ใช้เข้าถึงตู้นิรภัยของคุณ สิ่งสำคัญมาก คือ คุณจะต้องไม่ลืมรหัสผ่านหลักโดยเด็ดขาด เพราะหากคุณลืมแล้วล่ะก็ จะไม่มีวิธีที่สามารถกู้รหัสผ่านของคุณได้เลย"
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "คำใบ้เกี่ยวกับรหัสผ่านหลักสามารถช่วยให้คุณนึกรหัสผ่านหลักออกได้หากลืม"
   },
   "reTypeMasterPass": {
     "message": "Re-type Master Password"
@@ -95,13 +95,13 @@
     "message": "ไม่พบข้อมูลล็อกอินที่ตรงกัน"
   },
   "vaultLocked": {
-    "message": "Vault is locked."
+    "message": "ตู้เซฟถูกล็อก"
   },
   "vaultLoggedOut": {
-    "message": "Vault is logged out."
+    "message": "ล็อกเอาต์จากตู้เซฟแล้ว"
   },
   "autoFillInfo": {
-    "message": "There are no logins available to auto-fill for the current browser tab."
+    "message": "ไม่พบข้อมูลล็อกอินเพื่อใช้กรอกข้อมูลอัตโนมัติ สำหรับแท็บปัจจุบันของเบราว์เซอร์"
   },
   "addLogin": {
     "message": "Add a Login"
@@ -113,16 +113,16 @@
     "message": "คำใบ้รหัสผ่าน"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "กรอกอีเมลของบัญชีของคุณ เพื่อรับคำใบ้เกี่ยวกับรหัสผ่านหลักของคุณ"
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "รับคำใบ้เกี่ยวกับรหัสผ่านหลักของคุณ"
   },
   "continue": {
     "message": "ดำเนินการต่อไป"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "ส่งโค้ดยืนยันไปยังอีเมลของคุณ"
   },
   "sendCode": {
     "message": "ส่งโค้ด"
@@ -134,7 +134,7 @@
     "message": "Verification Code"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "ยืนยันตัวตนของคุณเพื่อดำเนินการต่อ"
   },
   "account": {
     "message": "บัญชี"
@@ -184,7 +184,7 @@
     "message": "โฟลเดอร์"
   },
   "noFolders": {
-    "message": "There are no folders to list."
+    "message": "ไม่มีโฟลเดอร์"
   },
   "helpFeedback": {
     "message": "Help & Feedback"
@@ -224,7 +224,7 @@
     "message": "Regenerate Password"
   },
   "options": {
-    "message": "Options"
+    "message": "ตัวเลือก"
   },
   "length": {
     "message": "ความยาว"
@@ -273,7 +273,7 @@
     "message": "แสดง"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "ไม่มีรายการ"
   },
   "itemInformation": {
     "message": "Item Information"
@@ -333,16 +333,16 @@
     "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyIdentity": {
-    "message": "Verify Identity"
+    "message": "ยืนยันตัวตน"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your identity to continue."
+    "message": "ตู้เซฟของคุณถูกล็อก ยืนยันตัวตนของคุณเพื่อดำเนินการต่อ"
   },
   "unlock": {
     "message": "ปลดล็อค"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "ล็อกอินด้วย $EMAIL$ บน $HOSTNAME$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -358,7 +358,7 @@
     "message": "รหัสผ่านหลักไม่ถูกต้อง"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "ระยะเวลาล็อกตู้เซฟ"
   },
   "lockNow": {
     "message": "Lock Now"
@@ -409,19 +409,19 @@
     "message": "ความปลอดภัย"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "พบข้อผิดพลาด"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "ต้องระบุอีเมล"
   },
   "invalidEmail": {
     "message": "ที่อยู่อีเมลไม่ถูกต้อง"
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "ต้องระบุรหัสผ่านหลัก"
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "รหัสผ่านหลักต้องมีความยาวอย่างน้อย 8 อักขระ"
   },
   "masterPassDoesntMatch": {
     "message": "Master password confirmation does not match."
@@ -433,7 +433,7 @@
     "message": "We've sent you an email with your master password hint."
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "ต้องระบุโค้ดยืนยัน"
   },
   "invalidVerificationCode": {
     "message": "โค้ดยืนยันไม่ถูกต้อง"
@@ -455,10 +455,10 @@
     "message": "ออกจากระบบ"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "เซสชันของคุณหมดอายุแล้ว"
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "คุณต้องการล็อกเอาต์ใช่หรือไม่?"
   },
   "yes": {
     "message": "ใช่"
@@ -470,16 +470,16 @@
     "message": "An unexpected error has occured."
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "ต้องระบุชื่อ"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "เพิ่มโฟลเดอร์แล้ว"
   },
   "changeMasterPass": {
     "message": "Change Master Password"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "คุณสามารถเปลี่ยนรหัสผ่านหลักได้ที่เว็บตู้เซฟ bitwarden.com คุณต้องการเปิดเว็บไซต์เลยหรือไม่?"
   },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
@@ -491,7 +491,7 @@
     "message": "Are you sure you want to delete this folder?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "ลบโฟลเดอร์แล้ว"
   },
   "gettingStartedTutorial": {
     "message": "Getting Started Tutorial"
@@ -500,13 +500,13 @@
     "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "การซิงก์เสร็จสมบูรณ์"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "การซิงก์ล้มเหลว"
   },
   "passwordCopied": {
-    "message": "Password copied"
+    "message": "คัดลอกรหัสผ่านแล้ว"
   },
   "uri": {
     "message": "URI"
@@ -522,28 +522,28 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "เพิ่ม URI ใหม่"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "เพิ่มรายการแล้ว"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "แก้ไขรายการแล้ว"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "คุณต้องการส่งไปยังถังขยะใช่หรือไม่?"
   },
   "deletedItem": {
-    "message": "Sent item to trash"
+    "message": "ส่งรายการไปยังถังขยะแล้ว"
   },
   "overwritePassword": {
     "message": "Overwrite Password"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "คุณต้องการเขียนทับรหัสผ่านปัจจุบันใช่หรือไม่?"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "ค้นหาในโพลเดอร์"
   },
   "searchCollection": {
     "message": "Search collection"
@@ -574,7 +574,7 @@
     "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "ล้างคลิปบอร์ด",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -594,7 +594,7 @@
     "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "คุณต้องการอัปเดตรหัสผ่านนี้ใน Bitwarden หรือไม่?"
   },
   "notificationChangeSave": {
     "message": "Yes, Update Now"
@@ -613,17 +613,17 @@
     "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
   },
   "theme": {
-    "message": "Theme"
+    "message": "ธีม"
   },
   "themeDesc": {
     "message": "Change the application's color theme."
   },
   "dark": {
-    "message": "Dark",
+    "message": "มืด",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "สว่าง",
     "description": "Light color"
   },
   "solarizedDark": {
@@ -637,7 +637,7 @@
     "message": "File Format"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "คำเตือน",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
@@ -656,7 +656,7 @@
     "message": "Enter your master password to export your vault data."
   },
   "shared": {
-    "message": "Shared"
+    "message": "แชร์แล้ว"
   },
   "learnOrg": {
     "message": "Learn about Organizations"
@@ -668,10 +668,10 @@
     "message": "Move to Organization"
   },
   "share": {
-    "message": "Share"
+    "message": "แชร์"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "ย้าย $ITEMNAME$ ไปยัง $ORGNAME$ แล้ว",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -699,34 +699,34 @@
     "message": "Copy Verification Code"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "ไฟล์แนบ"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "ลบไฟล์แนบ"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "คุณต้องการลบไฟล์แนบนี้ใช่หรือไม่?"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "ลบไฟล์แนบแล้ว"
   },
   "newAttachment": {
     "message": "Add New Attachment"
   },
   "noAttachments": {
-    "message": "No attachments."
+    "message": "ไม่มีไฟล์แนบ"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "บันทึกไฟล์แนบแล้ว"
   },
   "file": {
-    "message": "File"
+    "message": "ไฟล์"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "เลือกไฟล์"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "ขนาดไฟล์สูงสุด คือ 500 MB"
   },
   "featureUnavailable": {
     "message": "Feature Unavailable"
@@ -822,7 +822,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "ส่งโค้ดยืนยันไปยังอีเมล $EMAIL$ แล้ว",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -834,7 +834,7 @@
     "message": "Remember me"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "ส่งโค้ดยืนยันไปยังอีเมลอีกครั้ง"
   },
   "useAnotherTwoStepMethod": {
     "message": "Use another two-step login method"
@@ -900,7 +900,7 @@
     "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "อีเมล"
   },
   "emailDesc": {
     "message": "Verification codes will be emailed to you."
@@ -918,7 +918,7 @@
     "message": "For advanced users. You can specify the base URL of each service independently."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL ของเซิร์ฟเวอร์"
   },
   "apiUrl": {
     "message": "API Server URL"
@@ -978,7 +978,7 @@
     "message": "Generate and copy a new random password to the clipboard."
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "ล็อกตู้เซฟ"
   },
   "privateModeMessage": {
     "message": "Unfortunately this window is not available in private mode for this browser."
@@ -990,7 +990,7 @@
     "message": "Copy Value"
   },
   "value": {
-    "message": "Value"
+    "message": "ค่า"
   },
   "newCustomField": {
     "message": "New Custom Field"
@@ -999,7 +999,7 @@
     "message": "Drag to sort"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "ข้อความ"
   },
   "cfTypeHidden": {
     "message": "Hidden"
@@ -1037,7 +1037,7 @@
     "message": "Cardholder Name"
   },
   "number": {
-    "message": "Number"
+    "message": "หมายเลข"
   },
   "brand": {
     "message": "Brand"
@@ -1094,19 +1094,19 @@
     "message": "ex."
   },
   "title": {
-    "message": "Title"
+    "message": "คำนำหน้า"
   },
   "mr": {
-    "message": "Mr"
+    "message": "นาย"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "นาง"
   },
   "ms": {
-    "message": "Ms"
+    "message": "นางสาว"
   },
   "dr": {
-    "message": "Dr"
+    "message": "ดร."
   },
   "firstName": {
     "message": "First Name"
@@ -1169,22 +1169,22 @@
     "message": "Type"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "ล็อกอิน"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "ล็อกอิน"
   },
   "typeSecureNote": {
     "message": "Secure Note"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "บัตรเครดิต"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "ข้อมูลระบุตัวตน"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "ประวัติของรหัสผ่าน"
   },
   "back": {
     "message": "ย้อนกลับ"
@@ -1193,7 +1193,7 @@
     "message": "Collections"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "รายการโปรด"
   },
   "popOutNewWindow": {
     "message": "Pop out to a new window"
@@ -1265,34 +1265,34 @@
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "URI ปัจจุบัน",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
-    "message": "Organization",
+    "message": "องค์กร",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
     "message": "Types"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "รายการทั้งหมด"
   },
   "noPasswordsInList": {
     "message": "There are no passwords to list."
   },
   "remove": {
-    "message": "Remove"
+    "message": "ลบ"
   },
   "default": {
     "message": "Default"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "อัปเดตแล้ว",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "อัปเดต Password แล้ว",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
@@ -1305,21 +1305,21 @@
     "message": "There are no collections to list."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "เจ้าของ"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "ใครเป็นเจ้าของรายการนี้?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "แข็งแรง",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "ไม่เลว",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "ง่ายเกินไป",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
@@ -1333,16 +1333,16 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "ปลดล็อกด้วย PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "ตั้ง PIN เพื่อใช้ปลดล็อก Bitwarden ทั้งนี้ หากคุณล็อกเอาต์ออกจากแอปโดยสมบูรณ์จะเป็นการลบการตั้งค่า PIN ของคุณด้วย"
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "ต้องระบุ PIN"
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "PIN ไม่ถูกต้อง"
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"
@@ -1372,15 +1372,15 @@
     "message": "Vault Timeout Action"
   },
   "lock": {
-    "message": "Lock",
+    "message": "ล็อก",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "ถังขยะ",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "ค้นหาในถังขยะ"
   },
   "permanentlyDeleteItem": {
     "message": "Permanently Delete Item"
@@ -1416,7 +1416,7 @@
     "message": "Auto-filled Item"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "ตั้งรหัสผ่านหลัก"
   },
   "masterPasswordPolicyInEffect": {
     "message": "One or more organization policies require your master password to meet the following requirements:"
@@ -1431,7 +1431,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "ความยาวอย่างน้อย $LENGTH$ อักขระ",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1440,16 +1440,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "มีตัวพิมพ์ใหญ่อย่างน้อย 1 ตัว"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "มีตัวพิมพ์เล็กอย่างน้อย 1 ตัว"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "มีตัวเลขอย่างน้อย 1 ตัว"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "มีอักขระพิเศษต่อไปนี้อย่างน้อย 1 อักขระ: $CHARS$ ",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1476,7 +1476,7 @@
     "message": "Your password hint cannot be the same as your password."
   },
   "ok": {
-    "message": "Ok"
+    "message": "ตกลง"
   },
   "desktopSyncVerificationTitle": {
     "message": "Desktop sync verification"
@@ -1564,21 +1564,21 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "ค้นหาใน Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "addSend": {
-    "message": "Add Send",
+    "message": "เพิ่ม Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "ข้อความ"
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "ไฟล์"
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Send ทั้งหมด",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
@@ -1598,38 +1598,38 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "Remove Password"
+    "message": "ลบรหัสผ่าน"
   },
   "delete": {
-    "message": "Delete"
+    "message": "ลบ"
   },
   "removedPassword": {
-    "message": "Removed Password"
+    "message": "รหัสผ่านถูกลบแล้ว"
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send ถูกลบแล้ว",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "ลิงก์ Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Disabled"
   },
   "removePasswordConfirmation": {
-    "message": "Are you sure you want to remove the password?"
+    "message": "คุณต้องการลบรหัสผ่านนี้ใช่หรือไม่"
   },
   "deleteSend": {
-    "message": "Delete Send",
+    "message": "ลบ Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "คุณต้องการลบ Send นี้ใช่หรือไม่?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "แก้ไข Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeHeader": {
@@ -1658,10 +1658,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 วัน"
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ วัน",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1696,7 +1696,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "ข้อความที่คุณต้องการส่ง"
   },
   "sendHideText": {
     "message": "Hide this Send's text by default.",
