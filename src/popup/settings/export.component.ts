@@ -28,7 +28,7 @@ export class ExportComponent extends BaseExportComponent {
     private router: Router,
     logService: LogService,
     userVerificationService: UserVerificationService,
-    fb: FormBuilder
+    formBuilder: FormBuilder
   ) {
     super(
       cryptoService,
@@ -40,7 +40,7 @@ export class ExportComponent extends BaseExportComponent {
       window,
       logService,
       userVerificationService,
-      fb
+      formBuilder
     );
   }
 
