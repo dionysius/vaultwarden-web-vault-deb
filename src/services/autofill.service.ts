@@ -667,7 +667,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.username = f;
                     break;
                 } else if (!fillFields.company && this.isFieldMatch(f[attr],
-                    ['company', 'company-name', 'organization', 'organization-name'])) {
+                    IdentityAutoFillConstants.CompanyFieldNames)) {
                     fillFields.company = f;
                     break;
                 }

@@ -299,6 +299,13 @@ export class IdentityAutoFillConstants {
 
   static readonly UserNameFieldNames: string[] = ["user-name", "user-id", "screen-name"];
 
+  static readonly CompanyFieldNames: string[] = [
+    "company",
+    "company-name",
+    "organization",
+    "organization-name",
+  ];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",
