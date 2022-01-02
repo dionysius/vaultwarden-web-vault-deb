@@ -275,6 +275,8 @@ export class IdentityAutoFillConstants {
 
   static readonly FullNameFieldNames: string[] = ["name", "full-name", "your-name"];
 
+  static readonly FullNameFieldNameValues: string[] = ["full-name", "your-name"];
+
   static readonly TitleFieldNames: string[] = ["honorific-prefix", "prefix", "title"];
 
   static readonly FirstnameFieldNames: string[] = [
