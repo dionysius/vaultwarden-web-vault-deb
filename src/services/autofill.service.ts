@@ -411,9 +411,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.expYear = f;
                     break;
                 } else if (!fillFields.code && this.isFieldMatch(f[attr],
-                    ['cvv', 'cvc', 'cvv2', 'cc-csc', 'cc-cvv', 'card-csc', 'card-cvv', 'cvd', 'cid', 'cvc2',
-                        'cnv', 'cvn2', 'cc-code', 'card-code', 'code-securite', 'security-code', 'crypto',
-                        'card-verif', 'verification-code', 'csc', 'ccv'])) {
+                    CreditCardAutoFillConstants.CVVFieldNames)) {
                     fillFields.code = f;
                     break;
                 } else if (!fillFields.brand && this.isFieldMatch(f[attr],

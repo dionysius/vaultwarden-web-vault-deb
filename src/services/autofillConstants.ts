@@ -138,6 +138,30 @@ export class CreditCardAutoFillConstants {
     "date-y",
   ];
 
+  static readonly CVVFieldNames: string[] = [
+    "cvv",
+    "cvc",
+    "cvv2",
+    "cc-csc",
+    "cc-cvv",
+    "card-csc",
+    "card-cvv",
+    "cvd",
+    "cid",
+    "cvc2",
+    "cnv",
+    "cvn2",
+    "cc-code",
+    "card-code",
+    "code-securite",
+    "security-code",
+    "crypto",
+    "card-verif",
+    "verification-code",
+    "csc",
+    "ccv",
+  ];
+
   // Each index represents a language. These three arrays should all be the same length.
   // 0: English, 1: Danish, 2: German/Dutch, 3: French/Spanish/Italian, 4: Russian, 5: Portuguese
   static readonly MonthAbbr = ["mm", "mm", "mm", "mm", "mm", "mm"];
