@@ -610,7 +610,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.firstName = f;
                     break;
                 } else if (!fillFields.middleName && this.isFieldMatch(f[attr],
-                    ['m-name', 'middle-name', 'additional-name', 'middle-initial', 'middle-n', 'middle-i'])) {
+                    IdentityAutoFillConstants.MiddlenameFieldNames)) {
                     fillFields.middleName = f;
                     break;
                 } else if (!fillFields.lastName && this.isFieldMatch(f[attr],

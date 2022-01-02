@@ -200,6 +200,15 @@ export class IdentityAutoFillConstants {
     "vorname",
   ];
 
+  static readonly MiddlenameFieldNames: string[] = [
+    "m-name",
+    "middle-name",
+    "additional-name",
+    "middle-initial",
+    "middle-n",
+    "middle-i",
+  ];
+
   static readonly LastnameFieldNames: string[] = [
     // English
     "l-name",
