@@ -76,6 +76,27 @@ export class CreditCardAutoFillConstants {
     "cb-num",
   ];
 
+  static readonly CardExpiryFieldNames: string[] = [
+    "cc-exp",
+    "card-exp",
+    "cc-expiration",
+    "card-expiration",
+    "cc-ex",
+    "card-ex",
+    "card-expire",
+    "card-expiry",
+    "validite",
+    "expiration",
+    "expiry",
+    "mm-yy",
+    "mm-yyyy",
+    "yy-mm",
+    "yyyy-mm",
+    "expiration-date",
+    "payment-card-expiration",
+    "payment-cc-date",
+  ];
+
   static readonly ExpiryMonthFieldNames: string[] = [
     "exp-month",
     "cc-exp-month",
