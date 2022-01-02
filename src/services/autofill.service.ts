@@ -21,7 +21,7 @@ import AutofillScript from '../models/autofillScript';
 
 import { BrowserApi } from '../browser/browserApi';
 
-import { AutoFillConstants, CreditCardAutoFillConstants } from './autofillConstants';
+import { AutoFillConstants, CreditCardAutoFillConstants, IdentityAutoFillConstants } from './autofillConstants';
 export default class AutofillService implements AutofillServiceInterface {
 
     constructor(private cipherService: CipherService, private userService: UserService,
@@ -609,8 +609,8 @@ export default class AutofillService implements AutofillServiceInterface {
                 return;
             }
 
-            for (let i = 0; i < AutoFillConstants.IdentityAttributes.length; i++) {
-                const attr = AutoFillConstants.IdentityAttributes[i];
+            for (let i = 0; i < IdentityAutoFillConstants.IdentityAttributes.length; i++) {
+                const attr = IdentityAutoFillConstants.IdentityAttributes[i];
                 if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
                     continue;
                 }
@@ -622,7 +622,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.name = f;
                     break;
                 } else if (!fillFields.firstName && this.isFieldMatch(f[attr],
-                    AutoFillConstants.FirstnameFieldNames)) {
+                    IdentityAutoFillConstants.FirstnameFieldNames)) {
                     fillFields.firstName = f;
                     break;
                 } else if (!fillFields.middleName && this.isFieldMatch(f[attr],
@@ -630,7 +630,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.middleName = f;
                     break;
                 } else if (!fillFields.lastName && this.isFieldMatch(f[attr],
-                    AutoFillConstants.LastnameFieldNames)) {
+                    IdentityAutoFillConstants.LastnameFieldNames)) {
                     fillFields.lastName = f;
                     break;
                 } else if (!fillFields.title && this.isFieldMatch(f[attr],
@@ -711,7 +711,7 @@ export default class AutofillService implements AutofillServiceInterface {
         let filledState = false;
         if (fillFields.state && identity.state && identity.state.length > 2) {
             const stateLower = identity.state.toLowerCase();
-            const isoState = AutoFillConstants.IsoStates[stateLower] || AutoFillConstants.IsoProvinces[stateLower];
+            const isoState = IdentityAutoFillConstants.IsoStates[stateLower] || IdentityAutoFillConstants.IsoProvinces[stateLower];
             if (isoState) {
                 filledState = true;
                 this.makeScriptActionWithValue(fillScript, isoState, fillFields.state, filledFields);
@@ -725,7 +725,7 @@ export default class AutofillService implements AutofillServiceInterface {
         let filledCountry = false;
         if (fillFields.country && identity.country && identity.country.length > 2) {
             const countryLower = identity.country.toLowerCase();
-            const isoCountry = AutoFillConstants.IsoCountries[countryLower];
+            const isoCountry = IdentityAutoFillConstants.IsoCountries[countryLower];
             if (isoCountry) {
                 filledCountry = true;
                 this.makeScriptActionWithValue(fillScript, isoCountry, fillFields.country, filledFields);
