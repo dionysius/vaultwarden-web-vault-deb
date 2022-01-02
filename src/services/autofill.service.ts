@@ -415,7 +415,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.code = f;
                     break;
                 } else if (!fillFields.brand && this.isFieldMatch(f[attr],
-                    ['cc-type', 'card-type', 'card-brand', 'cc-brand', 'cb-type'])) {
+                    CreditCardAutoFillConstants.CardBrandFieldNames)) {
                     fillFields.brand = f;
                     break;
                 }
