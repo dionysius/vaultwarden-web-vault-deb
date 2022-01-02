@@ -288,6 +288,15 @@ export class IdentityAutoFillConstants {
     "address-country-code",
   ];
 
+  static readonly PhoneFieldNames: string[] = [
+    "phone",
+    "mobile",
+    "mobile-phone",
+    "tel",
+    "telephone",
+    "phone-number",
+  ];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",
