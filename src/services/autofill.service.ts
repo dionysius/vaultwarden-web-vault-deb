@@ -618,7 +618,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.lastName = f;
                     break;
                 } else if (!fillFields.title && this.isFieldMatch(f[attr],
-                    ['honorific-prefix', 'prefix', 'title'])) {
+                    IdentityAutoFillConstants.TitleFieldNames)) {
                     fillFields.title = f;
                     break;
                 } else if (!fillFields.email && this.isFieldMatch(f[attr],
