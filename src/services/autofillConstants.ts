@@ -262,6 +262,14 @@ export class IdentityAutoFillConstants {
     "address-zip-code",
   ];
 
+  static readonly CityFieldNames: string[] = [
+    "city",
+    "town",
+    "address-level-2",
+    "address-city",
+    "address-town",
+  ];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",

@@ -647,7 +647,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.postalCode = f;
                     break;
                 } else if (!fillFields.city && this.isFieldMatch(f[attr],
-                    ['city', 'town', 'address-level-2', 'address-city', 'address-town'])) {
+                    IdentityAutoFillConstants.CityFieldNames)) {
                     fillFields.city = f;
                     break;
                 } else if (!fillFields.state && this.isFieldMatch(f[attr],
