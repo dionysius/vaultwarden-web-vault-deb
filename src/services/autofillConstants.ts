@@ -270,6 +270,15 @@ export class IdentityAutoFillConstants {
     "address-town",
   ];
 
+  static readonly StateFieldNames: string[] = [
+    "state",
+    "province",
+    "provence",
+    "address-level-1",
+    "address-state",
+    "address-province",
+  ];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",
