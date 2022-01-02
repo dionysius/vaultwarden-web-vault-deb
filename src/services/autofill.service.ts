@@ -393,8 +393,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     break;
                 } else if (!fillFields.exp && this.isFieldMatch(f[attr],
                     CreditCardAutoFillConstants.CardExpiryFieldNames,
-                    ['mm-yy', 'mm-yyyy', 'yy-mm', 'yyyy-mm', 'expiration-date',
-                        'payment-card-expiration'])) {
+                    CreditCardAutoFillConstants.CardExpiryFieldNameValues)) {
                     fillFields.exp = f;
                     break;
                 } else if (!fillFields.expMonth && this.isFieldMatch(f[attr],
