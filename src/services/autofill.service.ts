@@ -388,8 +388,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     break;
                 } else if (!fillFields.number && this.isFieldMatch(f[attr],
                     CreditCardAutoFillConstants.CardNumberFieldNames,
-                    ['cc-number', 'cc-num', 'card-number', 'card-num', 'cc-no', 'card-no', 'numero-carte',
-                        'num-carte', 'cb-num'])) {
+                    CreditCardAutoFillConstants.CardNumberFieldNameValues)) {
                     fillFields.number = f;
                     break;
                 } else if (!fillFields.exp && this.isFieldMatch(f[attr],
