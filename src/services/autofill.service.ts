@@ -639,7 +639,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.address2 = f;
                     break;
                 } else if (!fillFields.address3 && this.isFieldMatch(f[attr],
-                    ['address-3', 'address-line-3', 'addr-3', 'street-3'])) {
+                    IdentityAutoFillConstants.Address3FieldNames)) {
                     fillFields.address3 = f;
                     break;
                 } else if (!fillFields.postalCode && this.isFieldMatch(f[attr],

@@ -241,6 +241,13 @@ export class IdentityAutoFillConstants {
     "street-2",
   ];
 
+  static readonly Address3FieldNames: string[] = [
+    "address-3",
+    "address-line-3",
+    "addr-3",
+    "street-3",
+  ];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",
