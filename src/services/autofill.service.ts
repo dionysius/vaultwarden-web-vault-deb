@@ -631,7 +631,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.address = f;
                     break;
                 } else if (!fillFields.address1 && this.isFieldMatch(f[attr],
-                    ['address-1', 'address-line-1', 'addr-1', 'street-1'])) {
+                    IdentityAutoFillConstants.Address1FieldNames)) {
                     fillFields.address1 = f;
                     break;
                 } else if (!fillFields.address2 && this.isFieldMatch(f[attr],

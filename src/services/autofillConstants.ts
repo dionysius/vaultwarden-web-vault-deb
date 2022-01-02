@@ -227,6 +227,13 @@ export class IdentityAutoFillConstants {
 
   static readonly EmailFieldNames: string[] = ["e-mail", "email-address"];
 
+  static readonly Address1FieldNames: string[] = [
+    "address-1",
+    "address-line-1",
+    "addr-1",
+    "street-1",
+  ];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",
