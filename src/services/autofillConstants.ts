@@ -66,6 +66,14 @@ export class CreditCardAutoFillConstants {
     "nom",
   ];
 
+  static readonly CardHolderFieldNameValues: string[] = [
+    "cc-name",
+    "card-name",
+    "cardholder-name",
+    "cardholder",
+    "tbName",
+  ];
+
   static readonly CardNumberFieldNames: string[] = [
     "cc-number",
     "cc-num",

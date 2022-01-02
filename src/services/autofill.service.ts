@@ -383,7 +383,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
                 if (!fillFields.cardholderName && this.isFieldMatch(f[attr],
                     CreditCardAutoFillConstants.CardHolderFieldNames,
-                    ['cc-name', 'card-name', 'cardholder-name', 'cardholder', 'tbName'])) {
+                    CreditCardAutoFillConstants.CardHolderFieldNameValues)) {
                     fillFields.cardholderName = f;
                     break;
                 } else if (!fillFields.number && this.isFieldMatch(f[attr],
