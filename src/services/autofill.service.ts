@@ -663,7 +663,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.phone = f;
                     break;
                 } else if (!fillFields.username && this.isFieldMatch(f[attr],
-                    ['user-name', 'user-id', 'screen-name'])) {
+                    IdentityAutoFillConstants.UserNameFieldNames)) {
                     fillFields.username = f;
                     break;
                 } else if (!fillFields.company && this.isFieldMatch(f[attr],

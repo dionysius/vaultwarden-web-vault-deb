@@ -297,6 +297,8 @@ export class IdentityAutoFillConstants {
     "phone-number",
   ];
 
+  static readonly UserNameFieldNames: string[] = ["user-name", "user-id", "screen-name"];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",
