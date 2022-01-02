@@ -620,7 +620,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.email = f;
                     break;
                 } else if (!fillFields.address && this.isFieldMatch(f[attr],
-                    IdentityAutoFillConstants.AddressFieldNames, ['mailing-addr', 'billing-addr', 'mail-addr', 'bill-addr'])) {
+                    IdentityAutoFillConstants.AddressFieldNames, IdentityAutoFillConstants.AddressFieldNameValues)) {
                     fillFields.address = f;
                     break;
                 } else if (!fillFields.address1 && this.isFieldMatch(f[attr],
