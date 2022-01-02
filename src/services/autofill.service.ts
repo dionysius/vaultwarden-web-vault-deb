@@ -602,7 +602,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
                 // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
                 if (!fillFields.name && this.isFieldMatch(f[attr],
-                    ['name', 'full-name', 'your-name'], ['full-name', 'your-name'])) {
+                    IdentityAutoFillConstants.FullNameFieldNames, ['full-name', 'your-name'])) {
                     fillFields.name = f;
                     break;
                 } else if (!fillFields.firstName && this.isFieldMatch(f[attr],

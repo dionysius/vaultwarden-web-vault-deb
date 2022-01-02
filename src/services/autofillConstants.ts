@@ -190,6 +190,8 @@ export class IdentityAutoFillConstants {
     "data-recurly",
   ];
 
+  static readonly FullNameFieldNames: string[] = ["name", "full-name", "your-name"];
+
   static readonly TitleFieldNames: string[] = ["honorific-prefix", "prefix", "title"];
 
   static readonly FirstnameFieldNames: string[] = [
