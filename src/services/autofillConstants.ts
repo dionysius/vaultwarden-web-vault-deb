@@ -248,6 +248,20 @@ export class IdentityAutoFillConstants {
     "street-3",
   ];
 
+  static readonly PostalCodeFieldNames: string[] = [
+    "postal",
+    "zip",
+    "zip2",
+    "zip-code",
+    "postal-code",
+    "post-code",
+    "address-zip",
+    "address-postal",
+    "address-code",
+    "address-postal-code",
+    "address-zip-code",
+  ];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",

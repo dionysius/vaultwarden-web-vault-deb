@@ -643,8 +643,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.address3 = f;
                     break;
                 } else if (!fillFields.postalCode && this.isFieldMatch(f[attr],
-                    ['postal', 'zip', 'zip2', 'zip-code', 'postal-code', 'post-code', 'address-zip',
-                        'address-postal', 'address-code', 'address-postal-code', 'address-zip-code'])) {
+                    IdentityAutoFillConstants.PostalCodeFieldNames)) {
                     fillFields.postalCode = f;
                     break;
                 } else if (!fillFields.city && this.isFieldMatch(f[attr],
