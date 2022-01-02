@@ -279,6 +279,15 @@ export class IdentityAutoFillConstants {
     "address-province",
   ];
 
+  static readonly CountryFieldNames: string[] = [
+    "country",
+    "country-code",
+    "country-name",
+    "address-country",
+    "address-country-name",
+    "address-country-code",
+  ];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",

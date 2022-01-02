@@ -655,8 +655,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.state = f;
                     break;
                 } else if (!fillFields.country && this.isFieldMatch(f[attr],
-                    ['country', 'country-code', 'country-name', 'address-country', 'address-country-name',
-                        'address-country-code'])) {
+                    IdentityAutoFillConstants.CountryFieldNames)) {
                     fillFields.country = f;
                     break;
                 } else if (!fillFields.phone && this.isFieldMatch(f[attr],
