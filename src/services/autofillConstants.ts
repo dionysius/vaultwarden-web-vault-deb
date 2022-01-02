@@ -20,6 +20,13 @@ export class AutoFillConstants {
     "benutzer id",
   ];
 
+  static readonly PasswordFieldIgnoreList: string[] = [
+    "onetimepassword",
+    "captcha",
+    "findanything",
+    "forgot",
+  ];
+
   static readonly ExcludedAutofillTypes: string[] = [
     "radio",
     "checkbox",
