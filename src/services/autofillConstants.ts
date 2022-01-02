@@ -229,6 +229,17 @@ export class IdentityAutoFillConstants {
 
   static readonly EmailFieldNames: string[] = ["e-mail", "email-address"];
 
+  static readonly AddressFieldNames: string[] = [
+    "address",
+    "street-address",
+    "addr",
+    "street",
+    "mailing-addr",
+    "billing-addr",
+    "mail-addr",
+    "bill-addr",
+  ];
+
   static readonly Address1FieldNames: string[] = [
     "address-1",
     "address-line-1",
