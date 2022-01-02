@@ -1,21 +1,4 @@
 export class AutoFillConstants {
-  static readonly CardAttributes: string[] = [
-    "autoCompleteType",
-    "data-stripe",
-    "htmlName",
-    "htmlID",
-    "label-tag",
-    "placeholder",
-    "label-left",
-    "label-top",
-    "data-recurly",
-  ];
-
-  static readonly CardAttributesExtended: string[] = [
-    ...AutoFillConstants.CardAttributes,
-    "label-right",
-  ];
-
   static readonly IdentityAttributes: string[] = [
     "autoCompleteType",
     "data-stripe",
@@ -83,12 +66,6 @@ export class AutoFillConstants {
     "reset",
     "search",
   ];
-
-  // Each index represents a language. These three arrays should all be the same length.
-  // 0: English, 1: Danish, 2: German/Dutch, 3: French/Spanish/Italian, 4: Russian, 5: Portuguese
-  static readonly MonthAbbr = ["mm", "mm", "mm", "mm", "mm", "mm"];
-  static readonly YearAbbrShort = ["yy", "åå", "jj", "aa", "гг", "rr"];
-  static readonly YearAbbrLong = ["yyyy", "åååå", "jjjj", "aa", "гггг", "rrrr"];
 
   static readonly OperationDelays = new Map<string, number>([["buzzsprout.com", 100]]);
 
@@ -417,4 +394,29 @@ export class AutoFillConstants {
     quebec: "QC",
     saskatchewan: "SK",
   };
+}
+
+export class CreditCardAutoFillConstants {
+  static readonly CardAttributes: string[] = [
+    "autoCompleteType",
+    "data-stripe",
+    "htmlName",
+    "htmlID",
+    "label-tag",
+    "placeholder",
+    "label-left",
+    "label-top",
+    "data-recurly",
+  ];
+
+  static readonly CardAttributesExtended: string[] = [
+    ...CreditCardAutoFillConstants.CardAttributes,
+    "label-right",
+  ];
+
+  // Each index represents a language. These three arrays should all be the same length.
+  // 0: English, 1: Danish, 2: German/Dutch, 3: French/Spanish/Italian, 4: Russian, 5: Portuguese
+  static readonly MonthAbbr = ["mm", "mm", "mm", "mm", "mm", "mm"];
+  static readonly YearAbbrShort = ["yy", "åå", "jj", "aa", "гг", "rr"];
+  static readonly YearAbbrLong = ["yyyy", "åååå", "jjjj", "aa", "гггг", "rrrr"];
 }

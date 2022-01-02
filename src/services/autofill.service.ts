@@ -21,7 +21,7 @@ import AutofillScript from '../models/autofillScript';
 
 import { BrowserApi } from '../browser/browserApi';
 
-import { AutoFillConstants } from './autofillConstants';
+import { AutoFillConstants, CreditCardAutoFillConstants } from './autofillConstants';
 export default class AutofillService implements AutofillServiceInterface {
 
     constructor(private cipherService: CipherService, private userService: UserService,
@@ -373,8 +373,8 @@ export default class AutofillService implements AutofillServiceInterface {
                 return;
             }
 
-            for (let i = 0; i < AutoFillConstants.CardAttributes.length; i++) {
-                const attr = AutoFillConstants.CardAttributes[i];
+            for (let i = 0; i < CreditCardAutoFillConstants.CardAttributes.length; i++) {
+                const attr = CreditCardAutoFillConstants.CardAttributes[i];
                 if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
                     continue;
                 }
@@ -525,36 +525,36 @@ export default class AutofillService implements AutofillServiceInterface {
             }
 
             let exp: string = null;
-            for (let i = 0; i < AutoFillConstants.MonthAbbr.length; i++) {
-                if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.MonthAbbr[i] + '/' + AutoFillConstants.YearAbbrShort[i]) &&
+            for (let i = 0; i < CreditCardAutoFillConstants.MonthAbbr.length; i++) {
+                if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.MonthAbbr[i] + '/' + CreditCardAutoFillConstants.YearAbbrShort[i]) &&
                     partYear != null) {
                     exp = fullMonth + '/' + partYear;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.MonthAbbr[i] + '/' + AutoFillConstants.YearAbbrLong[i])) {
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.MonthAbbr[i] + '/' + CreditCardAutoFillConstants.YearAbbrLong[i])) {
                     exp = fullMonth + '/' + fullYear;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.YearAbbrShort[i] + '/' + AutoFillConstants.MonthAbbr[i]) &&
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.YearAbbrShort[i] + '/' + CreditCardAutoFillConstants.MonthAbbr[i]) &&
                     partYear != null) {
                     exp = partYear + '/' + fullMonth;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.YearAbbrLong[i] + '/' + AutoFillConstants.MonthAbbr[i])) {
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.YearAbbrLong[i] + '/' + CreditCardAutoFillConstants.MonthAbbr[i])) {
                     exp = fullYear + '/' + fullMonth;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.MonthAbbr[i] + '-' + AutoFillConstants.YearAbbrShort[i]) &&
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.MonthAbbr[i] + '-' + CreditCardAutoFillConstants.YearAbbrShort[i]) &&
                     partYear != null) {
                     exp = fullMonth + '-' + partYear;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.MonthAbbr[i] + '-' + AutoFillConstants.YearAbbrLong[i])) {
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.MonthAbbr[i] + '-' + CreditCardAutoFillConstants.YearAbbrLong[i])) {
                     exp = fullMonth + '-' + fullYear;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.YearAbbrShort[i] + '-' + AutoFillConstants.MonthAbbr[i]) &&
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.YearAbbrShort[i] + '-' + CreditCardAutoFillConstants.MonthAbbr[i]) &&
                     partYear != null) {
                     exp = partYear + '-' + fullMonth;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.YearAbbrLong[i] + '-' + AutoFillConstants.MonthAbbr[i])) {
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.YearAbbrLong[i] + '-' + CreditCardAutoFillConstants.MonthAbbr[i])) {
                     exp = fullYear + '-' + fullMonth;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.YearAbbrShort[i] + AutoFillConstants.MonthAbbr[i]) &&
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.YearAbbrShort[i] + CreditCardAutoFillConstants.MonthAbbr[i]) &&
                     partYear != null) {
                     exp = partYear + fullMonth;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.YearAbbrLong[i] + AutoFillConstants.MonthAbbr[i])) {
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.YearAbbrLong[i] + CreditCardAutoFillConstants.MonthAbbr[i])) {
                     exp = fullYear + fullMonth;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.MonthAbbr[i] + AutoFillConstants.YearAbbrShort[i]) &&
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.MonthAbbr[i] + CreditCardAutoFillConstants.YearAbbrShort[i]) &&
                     partYear != null) {
                     exp = fullMonth + partYear;
-                } else if (this.fieldAttrsContain(fillFields.exp, AutoFillConstants.MonthAbbr[i] + AutoFillConstants.YearAbbrLong[i])) {
+                } else if (this.fieldAttrsContain(fillFields.exp, CreditCardAutoFillConstants.MonthAbbr[i] + CreditCardAutoFillConstants.YearAbbrLong[i])) {
                     exp = fullMonth + fullYear;
                 }
 
@@ -579,7 +579,7 @@ export default class AutofillService implements AutofillServiceInterface {
         }
 
         let doesContain = false;
-        AutoFillConstants.CardAttributesExtended.forEach(attr => {
+        CreditCardAutoFillConstants.CardAttributesExtended.forEach(attr => {
             if (doesContain || !field.hasOwnProperty(attr) || !field[attr]) {
                 return;
             }
