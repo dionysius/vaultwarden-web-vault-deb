@@ -407,14 +407,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.expMonth = f;
                     break;
                 } else if (!fillFields.expYear && this.isFieldMatch(f[attr],
-                    ['exp-year', 'cc-exp-year', 'cc-year', 'card-year', 'cc-yr', 'card-yr', 'exp-yr',
-                        'card-exp-yr', 'cc-exp-yr', 'card-expiration-year', 'expiration-year',
-                        'cc-yy', 'cc-y', 'card-yy', 'card-y', 'card-exp-yy', 'cc-exp-yy', 'exp-yy', 'exp-y',
-                        'cc-yyyy', 'card-yyyy', 'card-exp-yyyy', 'cc-exp-yyyy', 'expire-year', 'expire-yr',
-                        'expiry-year', 'expiry-yr', 'card-expire-year', 'card-expire-yr', 'card-expiry-year',
-                        'card-expiry-yr', 'an-validite', 'an-expiration', 'annee-validite',
-                        'annee-expiration', 'expiry-date-field-year', 'expiration-date-year', 'cb-date-ann',
-                        'expiration-date-yy', 'expiration-date-yyyy', 'validity-year', 'exp-date-year', 'date-y'])) {
+                    CreditCardAutoFillConstants.ExpiryYearFieldNames)) {
                     fillFields.expYear = f;
                     break;
                 } else if (!fillFields.code && this.isFieldMatch(f[attr],
