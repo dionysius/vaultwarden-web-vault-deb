@@ -50,6 +50,15 @@ export class CreditCardAutoFillConstants {
     "label-right",
   ];
 
+  static readonly CardHolderFieldNames: string[] = [
+    "cc-name",
+    "card-name",
+    "cardholder-name",
+    "cardholder",
+    "name",
+    "nom",
+  ];
+
   static readonly ExpiryMonthFieldNames: string[] = [
     "exp-month",
     "cc-exp-month",

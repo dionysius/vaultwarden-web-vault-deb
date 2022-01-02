@@ -382,7 +382,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
                 // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
                 if (!fillFields.cardholderName && this.isFieldMatch(f[attr],
-                    ['cc-name', 'card-name', 'cardholder-name', 'cardholder', 'name', 'nom'],
+                    CreditCardAutoFillConstants.CardHolderFieldNames,
                     ['cc-name', 'card-name', 'cardholder-name', 'cardholder', 'tbName'])) {
                     fillFields.cardholderName = f;
                     break;
