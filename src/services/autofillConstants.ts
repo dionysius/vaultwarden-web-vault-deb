@@ -30,8 +30,6 @@ export class AutoFillConstants {
     "reset",
     "search",
   ];
-
-  static readonly OperationDelays = new Map<string, number>([["buzzsprout.com", 100]]);
 }
 
 export class CreditCardAutoFillConstants {
