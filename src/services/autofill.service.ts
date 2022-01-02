@@ -622,7 +622,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.title = f;
                     break;
                 } else if (!fillFields.email && this.isFieldMatch(f[attr],
-                    ['e-mail', 'email-address'])) {
+                    IdentityAutoFillConstants.EmailFieldNames)) {
                     fillFields.email = f;
                     break;
                 } else if (!fillFields.address && this.isFieldMatch(f[attr],

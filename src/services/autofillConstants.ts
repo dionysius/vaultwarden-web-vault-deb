@@ -225,6 +225,8 @@ export class IdentityAutoFillConstants {
     "familienname",
   ];
 
+  static readonly EmailFieldNames: string[] = ["e-mail", "email-address"];
+
   static readonly IsoCountries: { [id: string]: string } = {
     afghanistan: "AF",
     "aland islands": "AX",
