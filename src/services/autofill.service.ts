@@ -25,6 +25,7 @@ import {
   CreditCardAutoFillConstants,
   IdentityAutoFillConstants,
 } from "./autofillConstants";
+
 export default class AutofillService implements AutofillServiceInterface {
   constructor(
     private cipherService: CipherService,
