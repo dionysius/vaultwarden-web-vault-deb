@@ -240,6 +240,7 @@ export class ViewComponent extends BaseViewComponent {
 
   async delete() {
     if (await super.delete()) {
+      this.messagingService.send("deletedCipher");
       this.close();
       return true;
     }
