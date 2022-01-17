@@ -1,5 +1,5 @@
 {
-  "name": "bitwarden-browser",
+  "name": "@bitwarden/browser",
   "version": "0.0.0",
   "scripts": {
     "sub:init": "git submodule update --init --recursive",
