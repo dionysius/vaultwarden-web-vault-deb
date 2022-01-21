@@ -122,19 +122,19 @@
     "message": "Pokračovat"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Poslat ověřovací kód na váš e-mail"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Poslat kód"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kód odeslán"
   },
   "verificationCode": {
     "message": "Ověřovací kód"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Pro pokračování potvrďte svou identitu."
   },
   "account": {
     "message": "Účet"
@@ -230,16 +230,16 @@
     "message": "Délka"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Velká písmena (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Malá písmena (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Čísla (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Speciální znaky (!@#$%^&*)"
   },
   "numWords": {
     "message": "Počet slov"
@@ -333,7 +333,7 @@
     "message": "Váš webový prohlížeč nepodporuje automatické kopírování do schránky. Musíte ho zkopírovat ručně."
   },
   "verifyIdentity": {
-    "message": "Verify Identity"
+    "message": "Ověřit identitu"
   },
   "yourVaultIsLocked": {
     "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat hlavní heslo."
@@ -436,7 +436,7 @@
     "message": "Ověřovací kód je povinný."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Neplatný ověřovací kód"
   },
   "valueCopied": {
     "message": "Zkopírováno: $VALUE$",
@@ -1008,11 +1008,11 @@
     "message": "Ano/Ne"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Propojené",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Propojená hodnota",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
@@ -1118,7 +1118,7 @@
     "message": "Příjmení"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Celé jméno"
   },
   "identityName": {
     "message": "Název identity"
@@ -1789,7 +1789,7 @@
     "message": "Abyste mohli tuto funkci používat, musíte ověřit svůj e-mail. Svůj e-mail můžete ověřit ve webovém trezoru."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Hlavní heslo aktualizováno"
   },
   "updateMasterPassword": {
     "message": "Změnit hlavní heslo"
@@ -1798,16 +1798,16 @@
     "message": "Administrátor v organizaci nedávno změnil vaše hlavní heslo. Pro přístup k trezoru jej nyní musíte změnit. Pokračování vás odhlásí z vaší aktuální relace a bude nutné se znovu přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatická registrace"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "Tato organizace má podnikové zásady, které vás automaticky zaregistrují k obnovení hesla. Registrace umožní správcům organizace změnit vaše hlavní heslo."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Vyberte složku"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Chcete-li dokončit přihlášení pomocí SSO, nastavte prosím hlavní přístupové heslo k vašemu trezoru."
   },
   "hours": {
     "message": "Hours"
@@ -1816,7 +1816,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Pravidla vaší organizace ovlivňují časový limit trezoru. Maximální povolený časový limit trezoru je $HOURS$ hodin a $MINUTES$ minut",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1829,22 +1829,22 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Časový limit vašeho trezoru překračuje omezení stanovená vaší organizací."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Export trezoru zakázán"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Jedna nebo více zásad organizace vám brání v exportu vašeho osobního trezoru."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Nelze identifikovat platný prvek formuláře. Zkuste místo toho zkontrolovat HTML."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Nenalezen žádný jedinečný identifikátor."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ používá SSO s vlastním klíčovým serverem. Hlavní heslo pro členy této organizace již není vyžadováno.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1853,18 +1853,18 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Opustit organizaci"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Odstranit hlavní heslo"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Hlavní heslo bylo odstraněno."
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Opravdu chcete tuto organizaci opustit?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Opustili jste organizaci."
   }
 }
