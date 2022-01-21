@@ -104,6 +104,7 @@ $themes: (
     calloutBorderColor: $border-color-dark,
     calloutBackgroundColor: $box-background-color,
     toastTextColor: #ffffff,
+    svgSuffix: "-light.svg",
   ),
   dark: (
     textColor: #ffffff,
@@ -154,6 +155,7 @@ $themes: (
     calloutBorderColor: #4c525f,
     calloutBackgroundColor: #3c424e,
     toastTextColor: #1f242e,
+    svgSuffix: "-dark.svg",
   ),
   nord: (
     textColor: $nord5,
@@ -204,6 +206,7 @@ $themes: (
     calloutBorderColor: $nord0,
     calloutBackgroundColor: $nord2,
     toastTextColor: #ffffff,
+    svgSuffix: "-dark.svg",
   ),
   solarizedDark: (
     textColor: $solarizedDarkBase2,
@@ -254,6 +257,7 @@ $themes: (
     calloutBorderColor: $solarizedDarkBase03,
     calloutBackgroundColor: $solarizedDarkBase01,
     toastTextColor: #ffffff,
+    svgSuffix: "-solarized.svg",
   ),
 );
 
