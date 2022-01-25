@@ -170,14 +170,14 @@ export default class NotificationBackground {
         continue;
       }
 
-      if (this.notificationQueue[i].type === NotificationQueueMessageType.addLogin) {
+      if (this.notificationQueue[i].type === NotificationQueueMessageType.AddLogin) {
         BrowserApi.tabSendMessageData(tab, "openNotificationBar", {
           type: "add",
           typeData: {
             isVaultLocked: this.notificationQueue[i].wasVaultLocked,
           },
         });
-      } else if (this.notificationQueue[i].type === NotificationQueueMessageType.changePassword) {
+      } else if (this.notificationQueue[i].type === NotificationQueueMessageType.ChangePassword) {
         BrowserApi.tabSendMessageData(tab, "openNotificationBar", {
           type: "change",
           typeData: {
@@ -265,7 +265,7 @@ export default class NotificationBackground {
     // remove any old messages for this tab
     this.removeTabFromNotificationQueue(tab);
     const message: AddLoginQueueMessage = {
-      type: NotificationQueueMessageType.addLogin,
+      type: NotificationQueueMessageType.AddLogin,
       username: loginInfo.username,
       password: loginInfo.password,
       domain: loginDomain,
@@ -316,7 +316,7 @@ export default class NotificationBackground {
     // remove any old messages for this tab
     this.removeTabFromNotificationQueue(tab);
     const message: AddChangePasswordQueueMessage = {
-      type: NotificationQueueMessageType.changePassword,
+      type: NotificationQueueMessageType.ChangePassword,
       cipherId: cipherId,
       newPassword: newPassword,
       domain: loginDomain,
@@ -333,8 +333,8 @@ export default class NotificationBackground {
       const queueMessage = this.notificationQueue[i];
       if (
         queueMessage.tabId !== tab.id ||
-        (queueMessage.type !== NotificationQueueMessageType.addLogin &&
-          queueMessage.type !== NotificationQueueMessageType.changePassword)
+        (queueMessage.type !== NotificationQueueMessageType.AddLogin &&
+          queueMessage.type !== NotificationQueueMessageType.ChangePassword)
       ) {
         continue;
       }
@@ -347,37 +347,38 @@ export default class NotificationBackground {
       this.notificationQueue.splice(i, 1);
       BrowserApi.tabSendMessageData(tab, "closeNotificationBar");
 
-      if (queueMessage.type === NotificationQueueMessageType.changePassword) {
-        const message = queueMessage as AddChangePasswordQueueMessage;
-        const cipher = await this.getDecryptedCipherById(message.cipherId);
+      if (queueMessage.type === NotificationQueueMessageType.ChangePassword) {
+        const changePasswordMessage = queueMessage as AddChangePasswordQueueMessage;
+        const cipher = await this.getDecryptedCipherById(changePasswordMessage.cipherId);
         if (cipher == null) {
           return;
         }
-        await this.updateCipher(cipher, message.newPassword);
+        await this.updateCipher(cipher, changePasswordMessage.newPassword);
         return;
       }
 
-      if (!queueMessage.wasVaultLocked) {
-        await this.createNewCipher(queueMessage as AddLoginQueueMessage, folderId);
-      }
-
-      // If the vault was locked, check if a cipher needs updating instead of creating a new one
-      if (
-        queueMessage.type === NotificationQueueMessageType.addLogin &&
-        queueMessage.wasVaultLocked === true
-      ) {
-        const message = queueMessage as AddLoginQueueMessage;
-        const ciphers = await this.cipherService.getAllDecryptedForUrl(message.uri);
-        const usernameMatches = ciphers.filter(
-          (c) => c.login.username != null && c.login.username.toLowerCase() === message.username
-        );
-
-        if (usernameMatches.length >= 1) {
-          await this.updateCipher(usernameMatches[0], message.password);
+      if (queueMessage.type === NotificationQueueMessageType.AddLogin) {
+        if (!queueMessage.wasVaultLocked) {
+          await this.createNewCipher(queueMessage as AddLoginQueueMessage, folderId);
+          BrowserApi.tabSendMessageData(tab, "addedCipher");
           return;
         }
 
-        await this.createNewCipher(message, folderId);
+        // If the vault was locked, check if a cipher needs updating instead of creating a new one
+        const addLoginMessage = queueMessage as AddLoginQueueMessage;
+        const ciphers = await this.cipherService.getAllDecryptedForUrl(addLoginMessage.uri);
+        const usernameMatches = ciphers.filter(
+          (c) =>
+            c.login.username != null && c.login.username.toLowerCase() === addLoginMessage.username
+        );
+
+        if (usernameMatches.length >= 1) {
+          await this.updateCipher(usernameMatches[0], addLoginMessage.password);
+          return;
+        }
+
+        await this.createNewCipher(addLoginMessage, folderId);
+        BrowserApi.tabSendMessageData(tab, "addedCipher");
       }
     }
   }
@@ -427,7 +428,7 @@ export default class NotificationBackground {
       const queueMessage = this.notificationQueue[i];
       if (
         queueMessage.tabId !== tab.id ||
-        queueMessage.type !== NotificationQueueMessageType.addLogin
+        queueMessage.type !== NotificationQueueMessageType.AddLogin
       ) {
         continue;
       }

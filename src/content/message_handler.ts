@@ -28,6 +28,7 @@ const forwardCommands = [
   "promptForLogin",
   "addToLockedVaultPendingNotifications",
   "unlockCompleted",
+  "addedCipher",
 ];
 
 chrome.runtime.onMessage.addListener((event) => {
