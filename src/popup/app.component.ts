@@ -116,7 +116,6 @@ export class AppComponent implements OnInit {
         });
       } else if (msg.command === "convertAccountToKeyConnector") {
         this.ngZone.run(async () => {
-          await this.keyConnectoService.setConvertAccountRequired(true);
           this.router.navigate(["/remove-password"]);
         });
       } else {
