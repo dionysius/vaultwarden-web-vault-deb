@@ -9,8 +9,8 @@ import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { PolicyService } from "jslib-common/abstractions/policy.service";
+import { StateService } from "jslib-common/abstractions/state.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
-import { UserService } from "jslib-common/abstractions/user.service";
 
 import { SetPasswordComponent as BaseSetPasswordComponent } from "jslib-angular/components/set-password.component";
 
@@ -24,7 +24,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
     i18nService: I18nService,
     cryptoService: CryptoService,
     messagingService: MessagingService,
-    userService: UserService,
+    stateService: StateService,
     passwordGenerationService: PasswordGenerationService,
     platformUtilsService: PlatformUtilsService,
     policyService: PolicyService,
@@ -36,14 +36,14 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
       i18nService,
       cryptoService,
       messagingService,
-      userService,
       passwordGenerationService,
       platformUtilsService,
       policyService,
       router,
       apiService,
       syncService,
-      route
+      route,
+      stateService
     );
   }
 

@@ -115,13 +115,17 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             }
             laContext.evaluateAccessControl(accessControl, operation: .useKeySign, localizedReason: "Bitwarden Safari Extension") { (success, error) in
                 if success {
-                    let passwordName = "key"
+                    guard let userId = message?["userId"] as? String else {
+                        return
+                    }
+                    let passwordName = userId + "_masterkey_biometric"
                     var passwordLength: UInt32 = 0
                     var passwordPtr: UnsafeMutableRawPointer? = nil
                     
                     var status = SecKeychainFindGenericPassword(nil, UInt32(ServiceNameBiometric.utf8.count), ServiceNameBiometric, UInt32(passwordName.utf8.count), passwordName, &passwordLength, &passwordPtr, nil)
                     if status != errSecSuccess {
-                        status = SecKeychainFindGenericPassword(nil, UInt32(ServiceName.utf8.count), ServiceName, UInt32(passwordName.utf8.count), passwordName, &passwordLength, &passwordPtr, nil)
+                        let fallbackName = "key"
+                        status = SecKeychainFindGenericPassword(nil, UInt32(ServiceNameBiometric.utf8.count), ServiceNameBiometric, UInt32(fallbackName.utf8.count), fallbackName, &passwordLength, &passwordPtr, nil)
                     }
     
                     if status == errSecSuccess {

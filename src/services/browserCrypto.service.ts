@@ -1,4 +1,4 @@
-import { KeySuffixOptions } from "jslib-common/abstractions/storage.service";
+import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
 import { CryptoService } from "jslib-common/services/crypto.service";
 
 export class BrowserCryptoService extends CryptoService {

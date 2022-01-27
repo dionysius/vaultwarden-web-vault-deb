@@ -9,7 +9,6 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
 
 import { LoginComponent as BaseLoginComponent } from "jslib-angular/components/login.component";
@@ -19,6 +18,8 @@ import { LoginComponent as BaseLoginComponent } from "jslib-angular/components/l
   templateUrl: "login.component.html",
 })
 export class LoginComponent extends BaseLoginComponent {
+  protected alwaysRememberEmail: boolean = true;
+
   constructor(
     authService: AuthService,
     router: Router,
@@ -28,7 +29,6 @@ export class LoginComponent extends BaseLoginComponent {
     protected environmentService: EnvironmentService,
     protected passwordGenerationService: PasswordGenerationService,
     protected cryptoFunctionService: CryptoFunctionService,
-    storageService: StorageService,
     syncService: SyncService,
     logService: LogService,
     ngZone: NgZone
@@ -42,7 +42,6 @@ export class LoginComponent extends BaseLoginComponent {
       environmentService,
       passwordGenerationService,
       cryptoFunctionService,
-      storageService,
       logService,
       ngZone
     );

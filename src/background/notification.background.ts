@@ -7,11 +7,7 @@ import { LoginView } from "jslib-common/models/view/loginView";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { FolderService } from "jslib-common/abstractions/folder.service";
 import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
-import { UserService } from "jslib-common/abstractions/user.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
-import { ConstantsService } from "jslib-common/services/constants.service";
 
 import { AutofillService } from "../services/abstractions/autofill.service";
 
@@ -23,6 +19,7 @@ import { Utils } from "jslib-common/misc/utils";
 
 import { PolicyType } from "jslib-common/enums/policyType";
 
+import { StateService } from "../services/abstractions/state.service";
 import AddChangePasswordQueueMessage from "./models/addChangePasswordQueueMessage";
 import AddLoginQueueMessage from "./models/addLoginQueueMessage";
 import AddLoginRuntimeMessage from "./models/addLoginRuntimeMessage";
@@ -37,11 +34,10 @@ export default class NotificationBackground {
     private main: MainBackground,
     private autofillService: AutofillService,
     private cipherService: CipherService,
-    private storageService: StorageService,
     private vaultTimeoutService: VaultTimeoutService,
     private policyService: PolicyService,
     private folderService: FolderService,
-    private userService: UserService
+    private stateService: StateService
   ) {}
 
   async init() {
@@ -198,7 +194,7 @@ export default class NotificationBackground {
   }
 
   private async addLogin(loginInfo: AddLoginRuntimeMessage, tab: chrome.tabs.Tab) {
-    if (!(await this.userService.isAuthenticated())) {
+    if (!(await this.stateService.getIsAuthenticated())) {
       return;
     }
 
@@ -212,9 +208,7 @@ export default class NotificationBackground {
       normalizedUsername = normalizedUsername.toLowerCase();
     }
 
-    const disabledAddLogin = await this.storageService.get<boolean>(
-      ConstantsService.disableAddLoginNotificationKey
-    );
+    const disabledAddLogin = await this.stateService.getDisableAddLoginNotification();
     if (await this.vaultTimeoutService.isLocked()) {
       if (disabledAddLogin) {
         return;
@@ -246,9 +240,8 @@ export default class NotificationBackground {
       usernameMatches.length === 1 &&
       usernameMatches[0].login.password !== loginInfo.password
     ) {
-      const disabledChangePassword = await this.storageService.get<boolean>(
-        ConstantsService.disableChangedPasswordNotificationKey
-      );
+      const disabledChangePassword =
+        await this.stateService.getDisableChangedPasswordNotification();
       if (disabledChangePassword) {
         return;
       }

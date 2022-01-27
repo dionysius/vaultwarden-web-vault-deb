@@ -29,7 +29,7 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
 
   async ngOnInit() {
     await super.ngOnInit();
-    const addEditCipherInfo = await this.stateService.get<any>("addEditCipherInfo");
+    const addEditCipherInfo = await this.stateService.getAddEditCipherInfo();
     if (addEditCipherInfo != null) {
       this.cipherState = addEditCipherInfo.cipher;
     }

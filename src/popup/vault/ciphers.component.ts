@@ -13,18 +13,19 @@ import { FolderService } from "jslib-common/abstractions/folder.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
-import { StateService } from "jslib-common/abstractions/state.service";
 
 import { CipherType } from "jslib-common/enums/cipherType";
+
+import { TreeNode } from "jslib-common/models/domain/treeNode";
 
 import { CipherView } from "jslib-common/models/view/cipherView";
 import { CollectionView } from "jslib-common/models/view/collectionView";
 import { FolderView } from "jslib-common/models/view/folderView";
 
-import { TreeNode } from "jslib-common/models/domain/treeNode";
-
 import { CiphersComponent as BaseCiphersComponent } from "jslib-angular/components/ciphers.component";
 
+import { BrowserComponentState } from "src/models/browserComponentState";
+import { StateService } from "../../services/abstractions/state.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
 const ComponentId = "CiphersComponent";
@@ -35,7 +36,7 @@ const ComponentId = "CiphersComponent";
 })
 export class CiphersComponent extends BaseCiphersComponent implements OnInit, OnDestroy {
   groupingTitle: string;
-  state: any;
+  state: BrowserComponentState;
   folderId: string = null;
   collectionId: string = null;
   type: CipherType = null;
@@ -74,8 +75,8 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     this.searchTypeSearch = !this.platformUtilsService.isSafari();
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (this.applySavedState) {
-        this.state = (await this.stateService.get<any>(ComponentId)) || {};
-        if (this.state.searchText) {
+        this.state = await this.stateService.getBrowserCipherComponentState();
+        if (this.state?.searchText) {
           this.searchText = this.state.searchText;
         }
       }
@@ -146,7 +147,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
           0
         );
       }
-      this.stateService.remove(ComponentId);
+      await this.stateService.setBrowserCipherComponentState(null);
     });
 
     this.broadcasterService.subscribe(ComponentId, (message: any) => {
@@ -241,6 +242,6 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
       scrollY: this.popupUtils.getContentScrollY(window, this.scrollingContainer),
       searchText: this.searchText,
     };
-    await this.stateService.save(ComponentId, this.state);
+    await this.stateService.setBrowserCipherComponentState(this.state);
   }
 }

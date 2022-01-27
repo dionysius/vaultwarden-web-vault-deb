@@ -10,8 +10,8 @@ import { EventService } from "jslib-common/abstractions/event.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { StateService } from "jslib-common/abstractions/state.service";
 import { TotpService } from "jslib-common/abstractions/totp.service";
-import { UserService } from "jslib-common/abstractions/user.service";
 
 @Component({
   selector: "app-action-buttons",
@@ -31,12 +31,12 @@ export class ActionButtonsComponent {
     private platformUtilsService: PlatformUtilsService,
     private eventService: EventService,
     private totpService: TotpService,
-    private userService: UserService,
+    private stateService: StateService,
     private passwordRepromptService: PasswordRepromptService
   ) {}
 
   async ngOnInit() {
-    this.userHasPremiumAccess = await this.userService.canAccessPremium();
+    this.userHasPremiumAccess = await this.stateService.getCanAccessPremium();
   }
 
   launchCipher() {

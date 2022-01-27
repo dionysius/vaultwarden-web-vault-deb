@@ -14,14 +14,11 @@ import { FolderService } from "jslib-common/abstractions/folder.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { OrganizationService } from "jslib-common/abstractions/organization.service";
 import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
-import { UserService } from "jslib-common/abstractions/user.service";
-
-import { ConstantsService } from "jslib-common/services/constants.service";
 
 import { PopupUtilsService } from "../services/popup-utils.service";
 
@@ -48,7 +45,6 @@ export class AddEditComponent extends BaseAddEditComponent {
     platformUtilsService: PlatformUtilsService,
     auditService: AuditService,
     stateService: StateService,
-    userService: UserService,
     collectionService: CollectionService,
     messagingService: MessagingService,
     private route: ActivatedRoute,
@@ -57,9 +53,9 @@ export class AddEditComponent extends BaseAddEditComponent {
     eventService: EventService,
     policyService: PolicyService,
     private popupUtilsService: PopupUtilsService,
-    private storageService: StorageService,
-    logService: LogService,
-    passwordRepromptService: PasswordRepromptService
+    organizationService: OrganizationService,
+    passwordRepromptService: PasswordRepromptService,
+    logService: LogService
   ) {
     super(
       cipherService,
@@ -68,13 +64,13 @@ export class AddEditComponent extends BaseAddEditComponent {
       platformUtilsService,
       auditService,
       stateService,
-      userService,
       collectionService,
       messagingService,
       eventService,
       policyService,
+      logService,
       passwordRepromptService,
-      logService
+      organizationService
     );
   }
 
@@ -149,7 +145,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     await super.load();
     this.showAutoFillOnPageLoadOptions =
       this.cipher.type === CipherType.Login &&
-      (await this.storageService.get<boolean>(ConstantsService.enableAutoFillOnPageLoadKey));
+      (await this.stateService.getEnableAutoFillOnPageLoad());
   }
 
   async submit(): Promise<boolean> {
@@ -194,7 +190,7 @@ export class AddEditComponent extends BaseAddEditComponent {
   async generatePassword(): Promise<boolean> {
     const confirmed = await super.generatePassword();
     if (confirmed) {
-      this.stateService.save("addEditCipherInfo", {
+      this.stateService.setAddEditCipherInfo({
         cipher: this.cipher,
         collectionIds:
           this.collections == null

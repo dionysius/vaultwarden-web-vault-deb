@@ -18,12 +18,13 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
 import { SendService } from "jslib-common/abstractions/send.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { UserService } from "jslib-common/abstractions/user.service";
 
+import { StateService } from "../../services/abstractions/state.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
 import { SendType } from "jslib-common/enums/sendType";
+
+import { BrowserComponentState } from "../../models/browserComponentState";
 
 const ComponentId = "SendTypeComponent";
 
@@ -34,7 +35,7 @@ const ComponentId = "SendTypeComponent";
 export class SendTypeComponent extends BaseSendComponent {
   groupingTitle: string;
   // State Handling
-  state: any;
+  state: BrowserComponentState;
   private refreshTimeout: number;
   private applySavedState = true;
 
@@ -45,7 +46,6 @@ export class SendTypeComponent extends BaseSendComponent {
     environmentService: EnvironmentService,
     ngZone: NgZone,
     policyService: PolicyService,
-    userService: UserService,
     searchService: SearchService,
     private popupUtils: PopupUtilsService,
     private stateService: StateService,
@@ -64,7 +64,6 @@ export class SendTypeComponent extends BaseSendComponent {
       ngZone,
       searchService,
       policyService,
-      userService,
       logService
     );
     super.onSuccessfulLoad = async () => {
@@ -80,8 +79,8 @@ export class SendTypeComponent extends BaseSendComponent {
     await super.ngOnInit();
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (this.applySavedState) {
-        this.state = (await this.stateService.get<any>(ComponentId)) || {};
-        if (this.state.searchText != null) {
+        this.state = await this.stateService.getBrowserSendTypeComponentState();
+        if (this.state?.searchText != null) {
           this.searchText = this.state.searchText;
         }
       }
@@ -103,9 +102,9 @@ export class SendTypeComponent extends BaseSendComponent {
 
       // Restore state and remove reference
       if (this.applySavedState && this.state != null) {
-        window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
+        window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state?.scrollY), 0);
       }
-      this.stateService.remove(ComponentId);
+      this.stateService.setBrowserSendTypeComponentState(null);
     });
 
     // Refresh Send list if sync completed in background
@@ -167,6 +166,6 @@ export class SendTypeComponent extends BaseSendComponent {
       scrollY: this.popupUtils.getContentScrollY(window),
       searchText: this.searchText,
     };
-    await this.stateService.save(ComponentId, this.state);
+    await this.stateService.setBrowserSendTypeComponentState(this.state);
   }
 }

@@ -2,8 +2,6 @@ import { Component, NgZone } from "@angular/core";
 import { Router } from "@angular/router";
 import Swal from "sweetalert2";
 
-import { ConstantsService } from "jslib-common/services/constants.service";
-
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
@@ -13,8 +11,6 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
-import { UserService } from "jslib-common/abstractions/user.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { LockComponent as BaseLockComponent } from "jslib-angular/components/lock.component";
@@ -31,9 +27,7 @@ export class LockComponent extends BaseLockComponent {
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     messagingService: MessagingService,
-    userService: UserService,
     cryptoService: CryptoService,
-    storageService: StorageService,
     vaultTimeoutService: VaultTimeoutService,
     environmentService: EnvironmentService,
     stateService: StateService,
@@ -47,9 +41,7 @@ export class LockComponent extends BaseLockComponent {
       i18nService,
       platformUtilsService,
       messagingService,
-      userService,
       cryptoService,
-      storageService,
       vaultTimeoutService,
       environmentService,
       stateService,
@@ -65,8 +57,7 @@ export class LockComponent extends BaseLockComponent {
   async ngOnInit() {
     await super.ngOnInit();
     const disableAutoBiometricsPrompt =
-      (await this.storageService.get<boolean>(ConstantsService.disableAutoBiometricsPromptKey)) ??
-      true;
+      (await this.stateService.getDisableAutoBiometricsPrompt()) ?? true;
 
     window.setTimeout(async () => {
       document.getElementById(this.pinLock ? "pin" : "masterPassword").focus();

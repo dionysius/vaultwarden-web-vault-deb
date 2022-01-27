@@ -11,7 +11,6 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
@@ -28,7 +27,6 @@ export class SsoComponent extends BaseSsoComponent {
     router: Router,
     i18nService: I18nService,
     route: ActivatedRoute,
-    storageService: StorageService,
     stateService: StateService,
     platformUtilsService: PlatformUtilsService,
     apiService: ApiService,
@@ -44,7 +42,6 @@ export class SsoComponent extends BaseSsoComponent {
       router,
       i18nService,
       route,
-      storageService,
       stateService,
       platformUtilsService,
       apiService,

@@ -18,17 +18,17 @@ import { CollectionService } from "jslib-common/abstractions/collection.service"
 import { FolderService } from "jslib-common/abstractions/folder.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
-import { UserService } from "jslib-common/abstractions/user.service";
 
 import { GroupingsComponent as BaseGroupingsComponent } from "jslib-angular/components/groupings.component";
 
+import { StateService } from "../../services/abstractions/state.service";
+
 import { PopupUtilsService } from "../services/popup-utils.service";
 
+import { BrowserGroupingsComponentState } from "src/models/browserGroupingsComponentState";
+
 const ComponentId = "GroupingsComponent";
-const ScopeStateId = ComponentId + "Scope";
 
 @Component({
   selector: "app-vault-groupings",
@@ -53,8 +53,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
   collectionCounts = new Map<string, number>();
   typeCounts = new Map<CipherType, number>();
   searchText: string;
-  state: any;
-  scopeState: any;
+  state: BrowserGroupingsComponentState;
   showLeftHeader = true;
   searchPending = false;
   searchTypeSearch = false;
@@ -72,22 +71,20 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
   constructor(
     collectionService: CollectionService,
     folderService: FolderService,
-    storageService: StorageService,
-    userService: UserService,
     private cipherService: CipherService,
     private router: Router,
     private ngZone: NgZone,
     private broadcasterService: BroadcasterService,
     private changeDetectorRef: ChangeDetectorRef,
     private route: ActivatedRoute,
-    private stateService: StateService,
     private popupUtils: PopupUtilsService,
     private syncService: SyncService,
     private platformUtilsService: PlatformUtilsService,
     private searchService: SearchService,
-    private location: Location
+    private location: Location,
+    private browserStateService: StateService
   ) {
-    super(collectionService, folderService, storageService, userService);
+    super(collectionService, folderService, browserStateService);
     this.noFolderListSize = 100;
   }
 
@@ -96,7 +93,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     this.showLeftHeader = !(
       this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox()
     );
-    this.stateService.remove("CiphersComponent");
+    await this.browserStateService.setBrowserCipherComponentState(null);
 
     this.broadcasterService.subscribe(ComponentId, (message: any) => {
       this.ngZone.run(async () => {
@@ -116,8 +113,8 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
     const restoredScopeState = await this.restoreState();
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
-      this.state = (await this.stateService.get<any>(ComponentId)) || {};
-      if (this.state.searchText) {
+      this.state = await this.browserStateService.getBrowserGroupingComponentState();
+      if (this.state?.searchText) {
         this.searchText = this.state.searchText;
       } else if (params.searchText) {
         this.searchText = params.searchText;
@@ -135,7 +132,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
       }
 
       if (!this.syncService.syncInProgress || restoredScopeState) {
-        window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
+        window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state?.scrollY), 0);
       }
     });
   }
@@ -320,10 +317,6 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     this.state = {
       scrollY: this.popupUtils.getContentScrollY(window),
       searchText: this.searchText,
-    };
-    await this.stateService.save(ComponentId, this.state);
-
-    this.scopeState = {
       favoriteCiphers: this.favoriteCiphers,
       noFolderCiphers: this.noFolderCiphers,
       ciphers: this.ciphers,
@@ -334,41 +327,41 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
       collections: this.collections,
       deletedCount: this.deletedCount,
     };
-    await this.stateService.save(ScopeStateId, this.scopeState);
+    await this.browserStateService.setBrowserGroupingComponentState(this.state);
   }
 
   private async restoreState(): Promise<boolean> {
-    this.scopeState = await this.stateService.get<any>(ScopeStateId);
-    if (this.scopeState == null) {
+    this.state = await this.browserStateService.getBrowserGroupingComponentState();
+    if (this.state == null) {
       return false;
     }
 
-    if (this.scopeState.favoriteCiphers != null) {
-      this.favoriteCiphers = this.scopeState.favoriteCiphers;
+    if (this.state.favoriteCiphers != null) {
+      this.favoriteCiphers = this.state.favoriteCiphers;
     }
-    if (this.scopeState.noFolderCiphers != null) {
-      this.noFolderCiphers = this.scopeState.noFolderCiphers;
+    if (this.state.noFolderCiphers != null) {
+      this.noFolderCiphers = this.state.noFolderCiphers;
     }
-    if (this.scopeState.ciphers != null) {
-      this.ciphers = this.scopeState.ciphers;
+    if (this.state.ciphers != null) {
+      this.ciphers = this.state.ciphers;
     }
-    if (this.scopeState.collectionCounts != null) {
-      this.collectionCounts = this.scopeState.collectionCounts;
+    if (this.state.collectionCounts != null) {
+      this.collectionCounts = this.state.collectionCounts;
     }
-    if (this.scopeState.folderCounts != null) {
-      this.folderCounts = this.scopeState.folderCounts;
+    if (this.state.folderCounts != null) {
+      this.folderCounts = this.state.folderCounts;
     }
-    if (this.scopeState.typeCounts != null) {
-      this.typeCounts = this.scopeState.typeCounts;
+    if (this.state.typeCounts != null) {
+      this.typeCounts = this.state.typeCounts;
     }
-    if (this.scopeState.folders != null) {
-      this.folders = this.scopeState.folders;
+    if (this.state.folders != null) {
+      this.folders = this.state.folders;
     }
-    if (this.scopeState.collections != null) {
-      this.collections = this.scopeState.collections;
+    if (this.state.collections != null) {
+      this.collections = this.state.collections;
     }
-    if (this.scopeState.deletedCiphers != null) {
-      this.deletedCount = this.scopeState.deletedCount;
+    if (this.state.deletedCount != null) {
+      this.deletedCount = this.state.deletedCount;
     }
 
     return true;

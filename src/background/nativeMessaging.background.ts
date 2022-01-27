@@ -2,14 +2,14 @@ import { AppIdService } from "jslib-common/abstractions/appId.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
 import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
-import { UserService } from "jslib-common/abstractions/user.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-import { ConstantsService } from "jslib-common/services/constants.service";
+import { StateService } from "jslib-common/abstractions/state.service";
 
 import { Utils } from "jslib-common/misc/utils";
+
+import { EncString } from "jslib-common/models/domain/encString";
 import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
 
 import { BrowserApi } from "../browser/browserApi";
@@ -17,6 +17,40 @@ import RuntimeBackground from "./runtime.background";
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = "sha1";
+
+type Message = {
+  command: string;
+
+  // Filled in by this service
+  userId?: string;
+  timestamp?: number;
+
+  // Used for sharing secret
+  publicKey?: string;
+};
+
+type OuterMessage = {
+  message: Message | EncString;
+  appId: string;
+};
+
+type ReceiveMessage = {
+  timestamp: number;
+  command: string;
+  response?: any;
+
+  // Unlock key
+  keyB64?: string;
+};
+
+type ReceiveMessageOuter = {
+  command: string;
+  appId: string;
+
+  // Should only have one of these.
+  message?: EncString;
+  sharedSecret?: string;
+};
 
 export class NativeMessagingBackground {
   private connected = false;
@@ -32,18 +66,17 @@ export class NativeMessagingBackground {
   private validatingFingerprint: boolean;
 
   constructor(
-    private storageService: StorageService,
     private cryptoService: CryptoService,
     private cryptoFunctionService: CryptoFunctionService,
-    private vaultTimeoutService: VaultTimeoutService,
     private runtimeBackground: RuntimeBackground,
     private i18nService: I18nService,
-    private userService: UserService,
     private messagingService: MessagingService,
     private appIdService: AppIdService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
+    private stateService: StateService,
+    private logService: LogService
   ) {
-    this.storageService.save(ConstantsService.biometricFingerprintValidated, false);
+    this.stateService.setBiometricFingerprintValidated(false);
 
     if (chrome?.permissions?.onAdded) {
       // Reload extension to activate nativeMessaging
@@ -55,7 +88,7 @@ export class NativeMessagingBackground {
 
   async connect() {
     this.appId = await this.appIdService.getAppId();
-    this.storageService.save(ConstantsService.biometricFingerprintValidated, false);
+    this.stateService.setBiometricFingerprintValidated(false);
 
     return new Promise<void>((resolve, reject) => {
       this.port = BrowserApi.connectNative("com.8bit.bitwarden");
@@ -74,7 +107,7 @@ export class NativeMessagingBackground {
         connectedCallback();
       }
 
-      this.port.onMessage.addListener(async (message: any) => {
+      this.port.onMessage.addListener(async (message: ReceiveMessageOuter) => {
         switch (message.command) {
           case "connected":
             connectedCallback();
@@ -107,7 +140,7 @@ export class NativeMessagingBackground {
 
             if (this.validatingFingerprint) {
               this.validatingFingerprint = false;
-              this.storageService.save(ConstantsService.biometricFingerprintValidated, true);
+              this.stateService.setBiometricFingerprintValidated(true);
             }
             this.sharedSecret = new SymmetricCryptoKey(decrypted);
             this.secureSetupResolve();
@@ -181,24 +214,25 @@ export class NativeMessagingBackground {
     });
   }
 
-  async send(message: any) {
+  async send(message: Message) {
     if (!this.connected) {
       await this.connect();
     }
 
+    message.userId = await this.stateService.getUserId();
+    message.timestamp = Date.now();
+
     if (this.platformUtilsService.isSafari()) {
-      this.postMessage(message);
+      this.postMessage(message as any);
     } else {
       this.postMessage({ appId: this.appId, message: await this.encryptMessage(message) });
     }
   }
 
-  async encryptMessage(message: any) {
+  async encryptMessage(message: Message) {
     if (this.sharedSecret == null) {
       await this.secureCommunication();
     }
-
-    message.timestamp = Date.now();
 
     return await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecret);
   }
@@ -209,13 +243,12 @@ export class NativeMessagingBackground {
     });
   }
 
-  private postMessage(message: any) {
+  private postMessage(message: OuterMessage) {
     // Wrap in try-catch to when the port disconnected without triggering `onDisconnect`.
     try {
       this.port.postMessage(message);
     } catch (e) {
-      // tslint:disable-next-line
-      console.error("NativeMessaging port disconnected, disconnecting.");
+      this.logService.error("NativeMessaging port disconnected, disconnecting.");
 
       this.sharedSecret = null;
       this.privateKey = null;
@@ -230,21 +263,22 @@ export class NativeMessagingBackground {
     }
   }
 
-  private async onMessage(rawMessage: any) {
-    let message = rawMessage;
+  private async onMessage(rawMessage: ReceiveMessage | EncString) {
+    let message = rawMessage as ReceiveMessage;
     if (!this.platformUtilsService.isSafari()) {
-      message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecret));
+      message = JSON.parse(
+        await this.cryptoService.decryptToUtf8(rawMessage as EncString, this.sharedSecret)
+      );
     }
 
     if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
-      // tslint:disable-next-line
-      console.error("NativeMessage is to old, ignoring.");
+      this.logService.error("NativeMessage is to old, ignoring.");
       return;
     }
 
     switch (message.command) {
       case "biometricUnlock":
-        await this.storageService.remove(ConstantsService.biometricAwaitingAcceptance);
+        await this.stateService.setBiometricAwaitingAcceptance(null);
 
         if (message.response === "not enabled") {
           this.messagingService.send("showDialog", {
@@ -264,16 +298,16 @@ export class NativeMessagingBackground {
           break;
         }
 
-        const enabled = await this.storageService.get(ConstantsService.biometricUnlockKey);
+        const enabled = await this.stateService.getBiometricUnlock();
         if (enabled === null || enabled === false) {
           if (message.response === "unlocked") {
-            await this.storageService.save(ConstantsService.biometricUnlockKey, true);
+            await this.stateService.setBiometricUnlock(true);
           }
           break;
         }
 
-        // Ignore unlock if already unlockeded
-        if (!this.vaultTimeoutService.biometricLocked) {
+        // Ignore unlock if already unlocked
+        if (!(await this.stateService.getBiometricLocked())) {
           break;
         }
 
@@ -284,24 +318,25 @@ export class NativeMessagingBackground {
 
           // Verify key is correct by attempting to decrypt a secret
           try {
-            await this.cryptoService.getFingerprint(await this.userService.getUserId());
+            await this.cryptoService.getFingerprint(await this.stateService.getUserId());
           } catch (e) {
-            // tslint:disable-next-line
-            console.error("Unable to verify key:", e);
+            this.logService.error("Unable to verify key: " + e);
             await this.cryptoService.clearKey();
             this.showWrongUserDialog();
 
-            message = false;
-            break;
+            // Exit early
+            if (this.resolver) {
+              this.resolver(message);
+            }
+            return;
           }
 
-          this.vaultTimeoutService.biometricLocked = false;
+          await this.stateService.setBiometricLocked(false);
           this.runtimeBackground.processMessage({ command: "unlocked" }, null, null);
         }
         break;
       default:
-        // tslint:disable-next-line
-        console.error("NativeMessage, got unknown command: ", message.command);
+        this.logService.error("NativeMessage, got unknown command: " + message.command);
     }
 
     if (this.resolver) {
@@ -317,13 +352,13 @@ export class NativeMessagingBackground {
     this.sendUnencrypted({
       command: "setupEncryption",
       publicKey: Utils.fromBufferToB64(publicKey),
-      userId: await this.userService.getUserId(),
+      userId: await this.stateService.getUserId(),
     });
 
     return new Promise((resolve, reject) => (this.secureSetupResolve = resolve));
   }
 
-  private async sendUnencrypted(message: any) {
+  private async sendUnencrypted(message: Message) {
     if (!this.connected) {
       await this.connect();
     }
@@ -335,7 +370,7 @@ export class NativeMessagingBackground {
 
   private async showFingerprintDialog() {
     const fingerprint = (
-      await this.cryptoService.getFingerprint(await this.userService.getUserId(), this.publicKey)
+      await this.cryptoService.getFingerprint(await this.stateService.getUserId(), this.publicKey)
     ).join(" ");
 
     this.messagingService.send("showDialog", {

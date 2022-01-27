@@ -1,4 +1,3 @@
-import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
@@ -8,8 +7,8 @@ import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { CollectionService } from "jslib-common/abstractions/collection.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { LogService } from "jslib-common/abstractions/log.service";
+import { OrganizationService } from "jslib-common/abstractions/organization.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { UserService } from "jslib-common/abstractions/user.service";
 
 import { ShareComponent as BaseShareComponent } from "jslib-angular/components/share.component";
 
@@ -22,19 +21,19 @@ export class ShareComponent extends BaseShareComponent {
     collectionService: CollectionService,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
-    userService: UserService,
+    logService: LogService,
     cipherService: CipherService,
     private route: ActivatedRoute,
     private router: Router,
-    logService: LogService
+    organizationService: OrganizationService
   ) {
     super(
       collectionService,
       platformUtilsService,
       i18nService,
-      userService,
       cipherService,
-      logService
+      logService,
+      organizationService
     );
   }
 

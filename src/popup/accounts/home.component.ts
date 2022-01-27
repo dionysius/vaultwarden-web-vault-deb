@@ -1,12 +1,10 @@
 import { Component } from "@angular/core";
 
-import { ConstantsService } from "jslib-common/services/constants.service";
-
 import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
+import { StateService } from "jslib-common/abstractions/state.service";
 
 import { Utils } from "jslib-common/misc/utils";
 
@@ -18,7 +16,7 @@ export class HomeComponent {
   constructor(
     protected platformUtilsService: PlatformUtilsService,
     private passwordGenerationService: PasswordGenerationService,
-    private storageService: StorageService,
+    private stateService: StateService,
     private cryptoFunctionService: CryptoFunctionService,
     private environmentService: EnvironmentService
   ) {}
@@ -41,8 +39,8 @@ export class HomeComponent {
     const codeVerifierHash = await this.cryptoFunctionService.hash(codeVerifier, "sha256");
     const codeChallenge = Utils.fromBufferToUrlB64(codeVerifierHash);
 
-    await this.storageService.save(ConstantsService.ssoCodeVerifierKey, codeVerifier);
-    await this.storageService.save(ConstantsService.ssoStateKey, state);
+    await this.stateService.setSsoCodeVerifier(codeVerifier);
+    await this.stateService.setSsoState(state);
 
     let url = this.environmentService.getWebVaultUrl();
     if (url == null) {

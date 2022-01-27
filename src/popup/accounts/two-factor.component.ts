@@ -13,7 +13,6 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
 
 import { TwoFactorComponent as BaseTwoFactorComponent } from "jslib-angular/components/two-factor.component";
@@ -42,7 +41,6 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     private broadcasterService: BroadcasterService,
     private popupUtilsService: PopupUtilsService,
     stateService: StateService,
-    storageService: StorageService,
     route: ActivatedRoute,
     private messagingService: MessagingService,
     logService: LogService
@@ -56,7 +54,6 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       window,
       environmentService,
       stateService,
-      storageService,
       route,
       logService
     );

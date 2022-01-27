@@ -14,16 +14,16 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
 import { SendService } from "jslib-common/abstractions/send.service";
-import { StateService } from "jslib-common/abstractions/state.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
-import { UserService } from "jslib-common/abstractions/user.service";
 
+import { StateService } from "../../services/abstractions/state.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
 import { SendType } from "jslib-common/enums/sendType";
 
+import { BrowserSendComponentState } from "src/models/browserSendComponentState";
+
 const ComponentId = "SendComponent";
-const ScopeStateId = ComponentId + "Scope";
 
 @Component({
   selector: "app-send-groupings",
@@ -35,8 +35,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
   // Send Type Calculations
   typeCounts = new Map<SendType, number>();
   // State Handling
-  state: any;
-  scopeState: any;
+  state: BrowserSendComponentState;
   private loadedTimeout: number;
 
   constructor(
@@ -46,7 +45,6 @@ export class SendGroupingsComponent extends BaseSendComponent {
     environmentService: EnvironmentService,
     ngZone: NgZone,
     policyService: PolicyService,
-    userService: UserService,
     searchService: SearchService,
     private popupUtils: PopupUtilsService,
     private stateService: StateService,
@@ -64,7 +62,6 @@ export class SendGroupingsComponent extends BaseSendComponent {
       ngZone,
       searchService,
       policyService,
-      userService,
       logService
     );
     super.onSuccessfulLoad = async () => {
@@ -79,13 +76,12 @@ export class SendGroupingsComponent extends BaseSendComponent {
       this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox()
     );
     // Clear state of Send Type Component
-    this.stateService.remove("SendTypeComponent");
+    await this.stateService.setBrowserSendTypeComponentState(null);
     // Let super class finish
     await super.ngOnInit();
     // Handle State Restore if necessary
     const restoredScopeState = await this.restoreState();
-    this.state = (await this.stateService.get<any>(ComponentId)) || {};
-    if (this.state.searchText != null) {
+    if (this.state?.searchText != null) {
       this.searchText = this.state.searchText;
     }
 
@@ -100,7 +96,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
     }
 
     if (!this.syncService.syncInProgress || restoredScopeState) {
-      window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
+      window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state?.scrollY), 0);
     }
 
     // Load all sends if sync completed in background
@@ -177,27 +173,23 @@ export class SendGroupingsComponent extends BaseSendComponent {
     this.state = {
       scrollY: this.popupUtils.getContentScrollY(window),
       searchText: this.searchText,
-    };
-    await this.stateService.save(ComponentId, this.state);
-
-    this.scopeState = {
       sends: this.sends,
       typeCounts: this.typeCounts,
     };
-    await this.stateService.save(ScopeStateId, this.scopeState);
+    await this.stateService.setBrowserSendComponentState(this.state);
   }
 
   private async restoreState(): Promise<boolean> {
-    this.scopeState = await this.stateService.get<any>(ScopeStateId);
-    if (this.scopeState == null) {
+    this.state = await this.stateService.getBrowserSendComponentState();
+    if (this.state == null) {
       return false;
     }
 
-    if (this.scopeState.sends != null) {
-      this.sends = this.scopeState.sends;
+    if (this.state.sends != null) {
+      this.sends = this.state.sends;
     }
-    if (this.scopeState.typeCounts != null) {
-      this.typeCounts = this.scopeState.typeCounts;
+    if (this.state.typeCounts != null) {
+      this.typeCounts = this.state.typeCounts;
     }
 
     return true;

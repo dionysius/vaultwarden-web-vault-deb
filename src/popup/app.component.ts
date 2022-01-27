@@ -11,10 +11,8 @@ import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { StorageService } from "jslib-common/abstractions/storage.service";
 
-import { ConstantsService } from "jslib-common/services/constants.service";
+import { StateService } from "../services/abstractions/state.service";
 
 import { routerTransition } from "./app-routing.animations";
 
@@ -31,7 +29,6 @@ export class AppComponent implements OnInit {
 
   constructor(
     private toastrService: ToastrService,
-    private storageService: StorageService,
     private broadcasterService: BroadcasterService,
     private authService: AuthService,
     private i18nService: I18nService,
@@ -49,14 +46,19 @@ export class AppComponent implements OnInit {
     if (BrowserApi.getBackgroundPage() == null) {
       return;
     }
+    let activeUserId: string = null;
+    this.stateService.activeAccount.subscribe((userId) => {
+      activeUserId = userId;
+    });
 
     this.ngZone.runOutsideAngular(() => {
-      window.onmousemove = () => this.recordActivity();
-      window.onmousedown = () => this.recordActivity();
-      window.ontouchstart = () => this.recordActivity();
-      window.onclick = () => this.recordActivity();
-      window.onscroll = () => this.recordActivity();
-      window.onkeypress = () => this.recordActivity();
+      if (activeUserId != null) {
+        window.onmousedown = () => this.recordActivity(activeUserId);
+        window.ontouchstart = () => this.recordActivity(activeUserId);
+        window.onclick = () => this.recordActivity(activeUserId);
+        window.onscroll = () => this.recordActivity(activeUserId);
+        window.onkeypress = () => this.recordActivity(activeUserId);
+      }
     });
 
     (window as any).bitwardenPopupMainMessageListener = async (
@@ -66,7 +68,7 @@ export class AppComponent implements OnInit {
     ) => {
       if (msg.command === "doneLoggingOut") {
         this.ngZone.run(async () => {
-          this.authService.logOut(() => {
+          this.authService.logOut(async () => {
             if (msg.expired) {
               this.showToast({
                 type: "warning",
@@ -74,8 +76,12 @@ export class AppComponent implements OnInit {
                 text: this.i18nService.t("loginExpired"),
               });
             }
-            this.router.navigate(["home"]);
-            this.stateService.purge();
+
+            await this.stateService.clean({ userId: msg.userId });
+
+            if (this.stateService.activeAccount.getValue() == null) {
+              this.router.navigate(["home"]);
+            }
           });
           this.changeDetectorRef.detectChanges();
         });
@@ -84,10 +90,11 @@ export class AppComponent implements OnInit {
           this.router.navigate(["home"]);
         });
       } else if (msg.command === "locked") {
-        this.stateService.purge();
-        this.ngZone.run(() => {
-          this.router.navigate(["lock"]);
-        });
+        if (msg.userId == null || msg.userId === (await this.stateService.getUserId())) {
+          this.ngZone.run(() => {
+            this.router.navigate(["lock"]);
+          });
+        }
       } else if (msg.command === "showDialog") {
         await this.showDialog(msg);
       } else if (msg.command === "showToast") {
@@ -120,7 +127,7 @@ export class AppComponent implements OnInit {
 
     BrowserApi.messageListener("app.component", (window as any).bitwardenPopupMainMessageListener);
 
-    this.router.events.subscribe((event) => {
+    this.router.events.subscribe(async (event) => {
       if (event instanceof NavigationEnd) {
         const url = event.urlAfterRedirects || event.url || "";
         if (
@@ -128,15 +135,13 @@ export class AppComponent implements OnInit {
           (window as any).previousPopupUrl != null &&
           (window as any).previousPopupUrl.startsWith("/tabs/")
         ) {
-          this.stateService.remove("GroupingsComponent");
-          this.stateService.remove("GroupingsComponentScope");
-          this.stateService.remove("CiphersComponent");
-          this.stateService.remove("SendGroupingsComponent");
-          this.stateService.remove("SendGroupingsComponentScope");
-          this.stateService.remove("SendTypeComponent");
+          await this.stateService.setBrowserGroupingComponentState(null);
+          await this.stateService.setBrowserCipherComponentState(null);
+          await this.stateService.setBrowserSendComponentState(null);
+          await this.stateService.setBrowserSendTypeComponentState(null);
         }
         if (url.startsWith("/tabs/")) {
-          this.stateService.remove("addEditCipherInfo");
+          await this.stateService.setAddEditCipherInfo(null);
         }
         (window as any).previousPopupUrl = url;
 
@@ -167,14 +172,14 @@ export class AppComponent implements OnInit {
     }
   }
 
-  private async recordActivity() {
+  private async recordActivity(userId: string) {
     const now = new Date().getTime();
     if (this.lastActivity != null && now - this.lastActivity < 250) {
       return;
     }
 
     this.lastActivity = now;
-    this.storageService.save(ConstantsService.lastActiveKey, now);
+    this.stateService.setLastActive(now, { userId: userId });
   }
 
   private showToast(msg: any) {

@@ -5,7 +5,7 @@ import { ApiService } from "jslib-common/abstractions/api.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { LogService } from "jslib-common/abstractions/log.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { UserService } from "jslib-common/abstractions/user.service";
+import { StateService } from "jslib-common/abstractions/state.service";
 
 import { PremiumComponent as BasePremiumComponent } from "jslib-angular/components/premium.component";
 
@@ -20,11 +20,11 @@ export class PremiumComponent extends BasePremiumComponent {
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     apiService: ApiService,
-    userService: UserService,
-    private currencyPipe: CurrencyPipe,
-    logService: LogService
+    stateService: StateService,
+    logService: LogService,
+    private currencyPipe: CurrencyPipe
   ) {
-    super(i18nService, platformUtilsService, apiService, userService, logService);
+    super(i18nService, platformUtilsService, apiService, logService, stateService);
 
     // Support old price string. Can be removed in future once all translations are properly updated.
     const thePrice = this.currencyPipe.transform(this.price, "$");
