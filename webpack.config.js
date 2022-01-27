@@ -25,7 +25,7 @@ const moduleRules = [
     test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
     exclude: /loading.svg/,
     generator: {
-      filename: "popup/fonts/[name].[ext]",
+      filename: "popup/fonts/[name][ext]",
     },
     type: "asset/resource",
   },
@@ -33,7 +33,7 @@ const moduleRules = [
     test: /\.(jpe?g|png|gif|svg)$/i,
     exclude: /.*(fontawesome-webfont|glyphicons-halflings-regular)\.svg/,
     generator: {
-      filename: "popup/images/[name].[ext]",
+      filename: "popup/images/[name][ext]",
     },
     type: "asset/resource",
   },
