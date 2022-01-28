@@ -24,6 +24,21 @@ jobs:
       - name: Print lines of code
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
+  lint:
+    name: Lint
+    runs-on: windows-2019
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Set up Node
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        with:
+          node-version: '16'
+
+      - name: Run linter
+        run: npm run lint
+
 
   setup:
     name: Setup
@@ -103,9 +118,6 @@ jobs:
           npm ci
           npm run dist
           npm run test
-
-      - name: Run linter
-        run: npm run lint
 
       - name: Gulp
         run: gulp ci
