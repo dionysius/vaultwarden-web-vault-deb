@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Ei tunnistettuja kirjautumistietoja."
   },
-  "vaultLocked": {
-    "message": "Holvi on lukittu."
+  "unlockVaultMenu": {
+    "message": "Avaa holvisi"
   },
-  "vaultLoggedOut": {
-    "message": "Holvista on kirjauduttu ulos."
+  "loginToVaultMenu": {
+    "message": "Kirjaudu holviisi"
   },
   "autoFillInfo": {
     "message": "Selaimen avoimelle välilehdelle ei ole automaattisesti täytettäviä kirjautumistietoja."

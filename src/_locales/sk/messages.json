@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Žiadne zodpovedajúce prihlasovacie údaje."
   },
-  "vaultLocked": {
-    "message": "Trezor je zamknutý."
+  "unlockVaultMenu": {
+    "message": "Odomknúť trezor"
   },
-  "vaultLoggedOut": {
-    "message": "Trezor je odhlásený"
+  "loginToVaultMenu": {
+    "message": "Prihláste sa do trezora"
   },
   "autoFillInfo": {
     "message": "Nie sú prístupné žiadne prihlasovacie údaje na automatické vyplnenie pre aktuálnu kartu."

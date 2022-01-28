@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Няма съвпадащи записи."
   },
-  "vaultLocked": {
-    "message": "Трезорът е заключен."
+  "unlockVaultMenu": {
+    "message": "Отключете трезора си"
   },
-  "vaultLoggedOut": {
-    "message": "Излезли сте от трезора."
+  "loginToVaultMenu": {
+    "message": "Влезте в трезора си"
   },
   "autoFillInfo": {
     "message": "В текущия раздел няма записи, които да бъдат попълнени."
@@ -1810,10 +1810,10 @@
     "message": "За да завършите настройките за еднократна идентификация, трябва да зададете главна парола за трезора."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Часа"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Минути"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Настройките на организацията Ви влияят върху времето за достъп до трезора Ви. Максималното разрешено време за достъп е $HOURS$ час(а) и $MINUTES$ минути",

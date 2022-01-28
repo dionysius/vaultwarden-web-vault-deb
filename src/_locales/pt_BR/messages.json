@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Sem credenciais correspondentes."
   },
-  "vaultLocked": {
-    "message": "O cofre está trancado."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "O cofre foi fechado."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."

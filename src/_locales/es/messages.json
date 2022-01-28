@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Sin entradas coincidentes."
   },
-  "vaultLocked": {
-    "message": "La caja fuerte está bloqueada."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "La caja fuerte está desconectada."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "No hay entradas disponibles para autorellenar en la pestaña actual del navegador."
@@ -239,7 +239,7 @@
     "message": "Números (0-9)"
   },
   "specialCharacters": {
-    "message": "Caracteres especiales (!@#$%^&*)"
+    "message": "Carácteres especiales (!@#$%^&*)"
   },
   "numWords": {
     "message": "Número de palabras"
@@ -597,7 +597,7 @@
     "message": "¿Desea actualizar esta contraseña en Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Sí, actualizar ahora"
+    "message": "Actualizado"
   },
   "disableContextMenuItem": {
     "message": "Deshabilitar opciones del menú contextual"

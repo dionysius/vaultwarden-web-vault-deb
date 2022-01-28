@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Δεν υπάρχουν αντιστοιχίσεις σύνδεσης."
   },
-  "vaultLocked": {
-    "message": "Το Vault είναι κλειδωμένο."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "Το Vault έχει αποσυνδεθεί."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Δεν υπάρχουν διαθέσιμες συνδέσεις για την αυτόματη συμπλήρωση, στην τρέχουσα καρτέλα του προγράμματος περιήγησης."

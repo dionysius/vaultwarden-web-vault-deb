@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Нет подходящих логинов."
   },
-  "vaultLocked": {
-    "message": "Хранилище заблокировано."
+  "unlockVaultMenu": {
+    "message": "Разблокировать хранилище"
   },
-  "vaultLoggedOut": {
-    "message": "Вы вышли из хранилища."
+  "loginToVaultMenu": {
+    "message": "Войти в хранилище"
   },
   "autoFillInfo": {
     "message": "Нет доступных логинов для автозаполнения на текущей вкладке браузера."

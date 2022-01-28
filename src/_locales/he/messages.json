@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "לא נמצאו פרטי כניסה תואמים."
   },
-  "vaultLocked": {
-    "message": "הכספת נעולה."
+  "unlockVaultMenu": {
+    "message": "שחרור הכספת שלך"
   },
-  "vaultLoggedOut": {
-    "message": "בוצעה יציאה מהכספת."
+  "loginToVaultMenu": {
+    "message": "כניסה לכספת שלך"
   },
   "autoFillInfo": {
     "message": "לא נמצאו פרטי כניסה להשלמה אוטומטית בלשונית הנוכחית בדפדפן."

@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "一致するログインがありません。"
   },
-  "vaultLocked": {
-    "message": "保管庫がロックされています。"
+  "unlockVaultMenu": {
+    "message": "保管庫のロックを解除"
   },
-  "vaultLoggedOut": {
-    "message": "保管庫はログアウトされています。"
+  "loginToVaultMenu": {
+    "message": "保管庫にログイン"
   },
   "autoFillInfo": {
     "message": "現在のブラウザタブに自動入力するログイン情報はありません。"

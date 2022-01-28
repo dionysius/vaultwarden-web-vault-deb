@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Нема одговарајућих пријављивања."
   },
-  "vaultLocked": {
-    "message": "Сеф је блокиран."
+  "unlockVaultMenu": {
+    "message": "Откључај свој сеф"
   },
-  "vaultLoggedOut": {
-    "message": "Одјављени сте из сефа."
+  "loginToVaultMenu": {
+    "message": "Пријавите се на свој налог"
   },
   "autoFillInfo": {
     "message": "Нема доступне пријаве за аутоматско допуњавање за тренутни језичак прегледача."

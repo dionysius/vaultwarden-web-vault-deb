@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "無符合的登入資料。"
   },
-  "vaultLocked": {
-    "message": "密碼庫已鎖定。"
+  "unlockVaultMenu": {
+    "message": "解鎖您的密碼庫"
   },
-  "vaultLoggedOut": {
-    "message": "密碼庫已登出。"
+  "loginToVaultMenu": {
+    "message": "登入您的密碼庫"
   },
   "autoFillInfo": {
     "message": "沒有可以自動填入目前瀏覽器分頁的登入資料。"

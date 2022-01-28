@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Nobenih ujemajočih prijav."
   },
-  "vaultLocked": {
-    "message": "Trezor je zaklenjen."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "Trezor je odjavljen."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Nobene prijave ni na voljo za auto-izpolnitev za trenutni zavihek."

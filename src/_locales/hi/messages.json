@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "कोई मेल-मिला लॉगिन नहीं |"
   },
-  "vaultLocked": {
-    "message": "तिजोरी बंद है |"
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "तिजोरी को लॉग आउट किया गया ।"
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "इस ब्राउज़र टैब के लिए स्वत: भरण लॉगिन उपलब्ध नहीं है।"

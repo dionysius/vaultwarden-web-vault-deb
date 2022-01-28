@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Sobivaid kontoandmeid ei leitud."
   },
-  "vaultLocked": {
-    "message": "Hoidla on lukus."
+  "unlockVaultMenu": {
+    "message": "Lukusta hoidla lahti"
   },
-  "vaultLoggedOut": {
-    "message": "Hoidlast on välja logitud."
+  "loginToVaultMenu": {
+    "message": "Logi hoidlasse sisse"
   },
   "autoFillInfo": {
     "message": "Selle vahekaardi automaatseks täitmiseks puuduvad kirjed."

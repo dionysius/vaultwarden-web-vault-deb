@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Nincsenek egyező bejelentkezések."
   },
-  "vaultLocked": {
-    "message": "A széf zárolva van."
+  "unlockVaultMenu": {
+    "message": "Széf kinyitása"
   },
-  "vaultLoggedOut": {
-    "message": "A széf kijelentkezésre került."
+  "loginToVaultMenu": {
+    "message": "Bejelentkezés a saját széfbe"
   },
   "autoFillInfo": {
     "message": "Nincsenek elérhető bejelentkezések ehhez a fülhöz ezért az automatikus kitöltés nem működik."
@@ -230,16 +230,16 @@
     "message": "Hossz"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Nagybetűs (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Kisbetűs (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Számot (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Speciális karakterek (!@#$%^&*)"
   },
   "numWords": {
     "message": "Szavak száma"
@@ -336,7 +336,7 @@
     "message": "Személyazonosság ellenőrzése"
   },
   "yourVaultIsLocked": {
-    "message": "A széf zárolásra került. A folytatáshoz meg kell adni a mesterjelszót."
+    "message": "A páncélszekrény zárva van. A folytatáshoz igazolja személyazonosságát."
   },
   "unlock": {
     "message": "Feloldás"
@@ -585,7 +585,7 @@
     "message": "A Bitwarden megjegyezze ezt a jelszót?"
   },
   "notificationAddSave": {
-    "message": "Igen, mentés most"
+    "message": "Megment"
   },
   "disableChangedPasswordNotification": {
     "message": "Megváltozott jelszó értesítés letiltása"
@@ -597,7 +597,7 @@
     "message": "Frissítésre kerüljön a jelszó a Bitwardenben?"
   },
   "notificationChangeSave": {
-    "message": "Igen, frissítés most"
+    "message": "Frissítés"
   },
   "disableContextMenuItem": {
     "message": "Helyi menüopciók kikapcsolása"

@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Brak pasujących danych logowania."
   },
-  "vaultLocked": {
-    "message": "Sejf jest zablokowany."
+  "unlockVaultMenu": {
+    "message": "Odblokuj sejf"
   },
-  "vaultLoggedOut": {
-    "message": "Wylogowano z sejfu."
+  "loginToVaultMenu": {
+    "message": "Zaloguj się do sejfu"
   },
   "autoFillInfo": {
     "message": "Brak dostępnych danych logowania do autouzupełnienia dla obecnej karty przeglądarki."

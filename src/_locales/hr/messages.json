@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Nema podudarajućih prijava."
   },
-  "vaultLocked": {
-    "message": "Trezor je zaključan."
+  "unlockVaultMenu": {
+    "message": "Otključaj trezor"
   },
-  "vaultLoggedOut": {
-    "message": "Trezor je odjavljen."
+  "loginToVaultMenu": {
+    "message": "Prijavite se u svoj trezor"
   },
   "autoFillInfo": {
     "message": "Nema dostupnih prijava za auto-ispunu na web stranici u ovoj kartici."
@@ -230,16 +230,16 @@
     "message": "Duljina"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Velika slova (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Mala slova (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Brojevi (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Posebni znakovi (!@#$%^&*)"
   },
   "numWords": {
     "message": "Broj riječi"

@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Aucun site correspondant."
   },
-  "vaultLocked": {
-    "message": "Le coffre est verrouillé."
+  "unlockVaultMenu": {
+    "message": "Déverrouillez votre coffre"
   },
-  "vaultLoggedOut": {
-    "message": "Le coffre est déconnecté."
+  "loginToVaultMenu": {
+    "message": "Connectez-vous à votre coffre"
   },
   "autoFillInfo": {
     "message": "Il n'existe aucun site disponible pour le remplissage automatique pour l'onglet actuel du navigateur."
@@ -336,7 +336,7 @@
     "message": "Confirmer votre identité"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Vérifiez votre identité pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -585,7 +585,7 @@
     "message": "Est-ce que Bitwarden doit se souvenir de ce mot de passe pour vous ?"
   },
   "notificationAddSave": {
-    "message": "Oui, enregistrer maintenant"
+    "message": "Enregistrer"
   },
   "disableChangedPasswordNotification": {
     "message": "Désactiver la notification de changement de mot de passe"
@@ -597,7 +597,7 @@
     "message": "Souhaitez-vous mettre à jour ce mot de passe dans Bitwarden ?"
   },
   "notificationChangeSave": {
-    "message": "Oui, mettre à jour maintenant"
+    "message": "Mettre à jour"
   },
   "disableContextMenuItem": {
     "message": "Désactiver les options de menu contextuel"
@@ -1807,16 +1807,16 @@
     "message": "Sélectionnez un dossier..."
   },
   "ssoCompleteRegistration": {
-    "message": "Afin de terminer la connexion avec SSO, veuillez définir un mot de passe maître pour accéder à votre coffre-fort et le protéger."
+    "message": "Afin de terminer la connexion avec SSO, veuillez définir un mot de passe maître pour accéder à votre coffre et le protéger."
   },
   "hours": {
-    "message": "heures"
+    "message": "Heures"
   },
   "minutes": {
-    "message": "minutes"
+    "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre-fort. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s).",
+    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre-fort. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1829,16 +1829,16 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Le délai d'expiration de votre coffre-fort dépasse la restriction définie par votre organisation."
+    "message": "Le délai d'expiration de votre coffre dépasse les restrictions définies par votre organisation."
   },
   "vaultExportDisabled": {
-    "message": "Exportation du coffre-fort désactivée"
+    "message": "Export du coffre désactivé"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Une ou plusieurs politiques d'entreprise vous empêchent d'exporter votre coffre-fort personnel."
+    "message": "Une ou plusieurs politiques d'organisation vous empêchent d'exporter votre coffre personnel."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Un élément de formulaire valide n'a pu être identifié. Essayez plutôt d'inspecter le HTML."
+    "message": "Aucun élément de formulaire valide n'a pu être identifié. Essayez plutôt d'inspecter le HTML."
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Aucun identifiant unique trouvé."

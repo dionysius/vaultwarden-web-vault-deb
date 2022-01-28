@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "No hi ha inicis de sessió coincidents."
   },
-  "vaultLocked": {
-    "message": "La caixa forta està bloquejada."
+  "unlockVaultMenu": {
+    "message": "1. Desbloquegeu la caixa forta."
   },
-  "vaultLoggedOut": {
-    "message": "La caixa forta està desconnectada."
+  "loginToVaultMenu": {
+    "message": "Inicia sessió a la caixa forta"
   },
   "autoFillInfo": {
     "message": "No hi ha cap inici de sessió disponible per omplir automàticament la pestanya del navegador actual."

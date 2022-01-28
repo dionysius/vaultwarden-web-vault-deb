@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Ingen matchende logins."
   },
-  "vaultLocked": {
-    "message": "Boksen er låst."
+  "unlockVaultMenu": {
+    "message": "Lås din boks op"
   },
-  "vaultLoggedOut": {
-    "message": "Boksen er logget ud."
+  "loginToVaultMenu": {
+    "message": "Log ind på din boks"
   },
   "autoFillInfo": {
     "message": "Der findes ingen login til at auto-udfylde i den nuværende browserfane."

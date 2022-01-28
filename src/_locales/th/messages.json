@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "ไม่พบข้อมูลล็อกอินที่ตรงกัน"
   },
-  "vaultLocked": {
-    "message": "ตู้เซฟถูกล็อก"
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "ล็อกเอาต์จากตู้เซฟแล้ว"
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "ไม่พบข้อมูลล็อกอินเพื่อใช้กรอกข้อมูลอัตโนมัติ สำหรับแท็บปัจจุบันของเบราว์เซอร์"

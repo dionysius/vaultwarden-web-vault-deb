@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Không có thông tin đăng nhập phù hợp."
   },
-  "vaultLocked": {
-    "message": "Kho bị khóa."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "Kho đã bị đăng xuất."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Không có thông tin đăng nhập nào sẵn có để tự động điền vào tab hiện tại."

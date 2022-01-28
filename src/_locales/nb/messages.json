@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Ingen samsvarende innlogginger."
   },
-  "vaultLocked": {
-    "message": "Hvelvet er låst."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "Hvelvet er logget ut."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Det er ingen tilgjengelige innlogginger å auto-utfylle med i den nåværende nettleserfanen."

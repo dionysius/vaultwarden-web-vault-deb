@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Nessun login corrispondente."
   },
-  "vaultLocked": {
-    "message": "La cassaforte è bloccata."
+  "unlockVaultMenu": {
+    "message": "Sblocca la tua cassaforte"
   },
-  "vaultLoggedOut": {
-    "message": "La cassaforte è bloccata."
+  "loginToVaultMenu": {
+    "message": "Accedi alla tua cassaforte"
   },
   "autoFillInfo": {
     "message": "Non ci sono login disponibili per completare la scheda attuale del browser."

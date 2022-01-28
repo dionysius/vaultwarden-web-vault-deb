@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Nu există potrivire de autentificări."
   },
-  "vaultLocked": {
-    "message": "Seiful este blocat."
+  "unlockVaultMenu": {
+    "message": "Deblocați-vă seiful"
   },
-  "vaultLoggedOut": {
-    "message": "Seiful este deconectat."
+  "loginToVaultMenu": {
+    "message": "Conectați-vă la seif"
   },
   "autoFillInfo": {
     "message": "Nu sunt disponibile autentificări pentru auto-completare în fila curentă a browserului."

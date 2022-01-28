@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Keine passenden Zugangsdaten."
   },
-  "vaultLocked": {
-    "message": "Der Tresor ist gesperrt."
+  "unlockVaultMenu": {
+    "message": "Entsperre deinen Tresor"
   },
-  "vaultLoggedOut": {
-    "message": "Der Tresor ist ausgeloggt."
+  "loginToVaultMenu": {
+    "message": "In deinem Tresor anmelden"
   },
   "autoFillInfo": {
     "message": "Für den aktuellen Browser-Tab gibt es keine passenden Zugangsdaten, welche automatisch ausgefüllt werden können."
@@ -125,7 +125,7 @@
     "message": "Einen Bestätigungscode an deine E-Mail senden"
   },
   "sendCode": {
-    "message": "Code senden"
+    "message": "Send Code"
   },
   "codeSent": {
     "message": "Code gesendet"

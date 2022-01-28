@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "사용할 수 있는 로그인이 없습니다."
   },
-  "vaultLocked": {
-    "message": "보관함이 잠겨 있습니다."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "보관함이 잠겼습니다."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "이 탭의 자동 완성에 사용할 수 있는 로그인이 없습니다."
@@ -333,7 +333,7 @@
     "message": "사용하고 있는 웹 브라우저가 쉬운 클립보드 복사를 지원하지 않습니다. 직접 복사하세요."
   },
   "verifyIdentity": {
-    "message": "Verify Identity"
+    "message": "신원 확인"
   },
   "yourVaultIsLocked": {
     "message": "보관함이 잠겨 있습니다. 마스터 비밀번호를 입력하여 계속하세요."

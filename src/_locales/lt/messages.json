@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Nėra atitinkančių prisijungimų."
   },
-  "vaultLocked": {
-    "message": "Saugykla užrakinta."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "Atsijungta nuo saugyklos."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Nėra galimų prisijungimų prie dabartinio naršyklės skirtuko."

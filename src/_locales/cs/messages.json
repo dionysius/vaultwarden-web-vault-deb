@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Žádné odpovídající přihlašovací údaje."
   },
-  "vaultLocked": {
-    "message": "Trezor je zamknutý."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "Byli jste odhlášeni."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Pro aktuální stránku neexistují žádné přihlašovací údaje."
@@ -1810,10 +1810,10 @@
     "message": "Chcete-li dokončit přihlášení pomocí SSO, nastavte prosím hlavní přístupové heslo k vašemu trezoru."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Hodin"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minuty"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Pravidla vaší organizace ovlivňují časový limit trezoru. Maximální povolený časový limit trezoru je $HOURS$ hodin a $MINUTES$ minut",

@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Inga matchande inloggningar."
   },
-  "vaultLocked": {
-    "message": "Valvet är låst."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "Valvet är utloggat."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Det finns inga inloggningar tillgängliga för automatisk ifyllnad på den nuvarande fliken."

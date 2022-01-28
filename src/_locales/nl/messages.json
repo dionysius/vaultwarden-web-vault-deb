@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Geen overeenkomstige logins."
   },
-  "vaultLocked": {
-    "message": "Kluis is vergrendeld."
+  "unlockVaultMenu": {
+    "message": "Unlock your vault"
   },
-  "vaultLoggedOut": {
-    "message": "Kluis is uitgelogd."
+  "loginToVaultMenu": {
+    "message": "Log in to your vault"
   },
   "autoFillInfo": {
     "message": "Er zijn geen logins beschikbaar om op het huidige browser-tabblad in te vullen."

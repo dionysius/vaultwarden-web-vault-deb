@@ -94,11 +94,11 @@
   "noMatchingLogins": {
     "message": "Немає відповідних записів."
   },
-  "vaultLocked": {
-    "message": "Сховище заблоковано."
+  "unlockVaultMenu": {
+    "message": "Розблокуйте сховище"
   },
-  "vaultLoggedOut": {
-    "message": "Ви вийшли зі сховища."
+  "loginToVaultMenu": {
+    "message": "Увійдіть до сховища"
   },
   "autoFillInfo": {
     "message": "Для поточної вкладки браузера немає записів автозаповнення."
