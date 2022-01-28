@@ -25,7 +25,7 @@ export class OptionsComponent implements OnInit {
   dontShowCards = false;
   dontShowIdentities = false;
   showClearClipboard = true;
-  theme: string;
+  theme: ThemeType;
   themeOptions: any[];
   defaultUriMatch = UriMatchType.Domain;
   uriMatchOptions: any[];
@@ -42,7 +42,7 @@ export class OptionsComponent implements OnInit {
     i18nService: I18nService
   ) {
     this.themeOptions = [
-      { name: i18nService.t("default"), value: null },
+      { name: i18nService.t("default"), value: ThemeType.System },
       { name: i18nService.t("light"), value: ThemeType.Light },
       { name: i18nService.t("dark"), value: ThemeType.Dark },
       { name: "Nord", value: ThemeType.Nord },
