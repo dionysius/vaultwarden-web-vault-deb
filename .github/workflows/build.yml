@@ -28,7 +28,6 @@ jobs:
     name: Lint
     runs-on: ubuntu-20.04
     steps:
-
       - name: Checkout repo
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
