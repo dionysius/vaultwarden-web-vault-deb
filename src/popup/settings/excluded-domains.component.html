@@ -25,7 +25,7 @@
               (click)="removeUri(i)"
               appA11yTitle="{{ 'remove' | i18n }}"
             >
-              <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
+              <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
             </button>
             <div class="row-main">
               <label for="excludedDomain{{ i }}">{{ "uriPosition" | i18n: i + 1 }}</label>
@@ -62,7 +62,7 @@
                 appA11yTitle="{{ 'toggleCurrentUris' | i18n }}"
                 (click)="toggleUriInput(domain)"
               >
-                <i aria-hidden="true" class="fa fa-lg fa-list"></i>
+                <i aria-hidden="true" class="bwi bwi-lg bwi-list"></i>
               </button>
             </div>
           </div>
@@ -74,7 +74,7 @@
           (click)="addUri()"
           class="box-content-row box-content-row-newmulti"
         >
-          <i class="fa fa-plus-circle fa-fw fa-lg" aria-hidden="true"></i> {{ "newUri" | i18n }}
+          <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i> {{ "newUri" | i18n }}
         </button>
       </div>
       <div class="box-footer">

@@ -530,7 +530,7 @@
   }
 
   .row-sub-icon,
-  .row-sub-label + i.fa {
+  .row-sub-label + i.bwi {
     @include themify($themes) {
       color: themed("disabledIconColor");
     }

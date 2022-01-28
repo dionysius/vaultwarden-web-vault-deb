@@ -6,7 +6,7 @@
   appA11yTitle="{{ 'view' | i18n }}"
   *ngIf="showView"
 >
-  <i class="fa fa-lg fa-list-alt" aria-hidden="true"></i>
+  <i class="bwi bwi-lg bwi-list-alt" aria-hidden="true"></i>
 </span>
 <ng-container *ngIf="cipher.type === cipherType.Login">
   <span
@@ -18,7 +18,7 @@
     *ngIf="!showView"
     [ngClass]="{ disabled: !cipher.login.canLaunch }"
   >
-    <i class="fa fa-lg fa-share-square-o" aria-hidden="true"></i>
+    <i class="bwi bwi-lg bwi-share-square" aria-hidden="true"></i>
   </span>
   <span
     class="row-btn"
@@ -28,7 +28,7 @@
     (click)="copy(cipher, cipher.login.username, 'username', 'Username')"
     [ngClass]="{ disabled: !cipher.login.username }"
   >
-    <i class="fa fa-lg fa-user" aria-hidden="true"></i>
+    <i class="bwi bwi-lg bwi-user" aria-hidden="true"></i>
   </span>
   <span
     class="row-btn"
@@ -38,7 +38,7 @@
     (click)="copy(cipher, cipher.login.password, 'password', 'Password')"
     [ngClass]="{ disabled: !cipher.login.password || !cipher.viewPassword }"
   >
-    <i class="fa fa-lg fa-key" aria-hidden="true"></i>
+    <i class="bwi bwi-lg bwi-key" aria-hidden="true"></i>
   </span>
   <span
     class="row-btn"
@@ -48,7 +48,7 @@
     (click)="copy(cipher, cipher.login.totp, 'verificationCodeTotp', 'TOTP')"
     [ngClass]="{ disabled: !displayTotpCopyButton(cipher) }"
   >
-    <i class="fa fa-lg fa-clock-o" aria-hidden="true"></i>
+    <i class="bwi bwi-lg bwi-clock" aria-hidden="true"></i>
   </span>
 </ng-container>
 <ng-container *ngIf="cipher.type === cipherType.Card">
@@ -60,7 +60,7 @@
     (click)="copy(cipher, cipher.card.number, 'number', 'Card Number')"
     [ngClass]="{ disabled: !cipher.card.number }"
   >
-    <i class="fa fa-lg fa-hashtag" aria-hidden="true"></i>
+    <i class="bwi bwi-lg bwi-hashtag" aria-hidden="true"></i>
   </span>
   <span
     class="row-btn"
@@ -70,7 +70,7 @@
     (click)="copy(cipher, cipher.card.code, 'securityCode', 'Security Code')"
     [ngClass]="{ disabled: !cipher.card.code }"
   >
-    <i class="fa fa-lg fa-key" aria-hidden="true"></i>
+    <i class="bwi bwi-lg bwi-key" aria-hidden="true"></i>
   </span>
 </ng-container>
 <ng-container *ngIf="cipher.type === cipherType.SecureNote">
@@ -82,6 +82,6 @@
     (click)="copy(cipher, cipher.notes, 'note', 'Note')"
     [ngClass]="{ disabled: !cipher.notes }"
   >
-    <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+    <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
   </span>
 </ng-container>

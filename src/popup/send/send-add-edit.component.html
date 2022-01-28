@@ -9,7 +9,7 @@
     <div class="right">
       <button type="submit" appBlurClick [disabled]="form.loading || disableSend">
         <span [hidden]="form.loading">{{ "save" | i18n }}</span>
-        <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+        <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
     </div>
   </header>
@@ -24,7 +24,7 @@
     <!-- File Warning -->
     <app-callout
       type="warning"
-      icon="fa fa-external-link fa-rotate-270 fa-fw"
+      icon="bwi-external-link bwi-rotate-270 bwi-fw"
       [clickable]="true"
       title="{{ 'sendFileCalloutHeader' | i18n }}"
       *ngIf="showFilePopoutMessage && send.type === sendType.File && !disableSend"
@@ -155,8 +155,8 @@
           [attr.aria-expanded]="showOptions"
         >
           {{ "options" | i18n }}
-          <i *ngIf="!showOptions" class="fa fa-chevron-down fa-sm icon" aria-hidden="true"></i>
-          <i *ngIf="showOptions" class="fa fa-chevron-up fa-sm icon" aria-hidden="true"></i>
+          <i *ngIf="!showOptions" class="bwi bwi-angle-down bwi-sm icon" aria-hidden="true"></i>
+          <i *ngIf="showOptions" class="bwi bwi-chevron-up bwi-sm icon" aria-hidden="true"></i>
         </button>
       </h2>
     </div>
@@ -232,8 +232,8 @@
                 [attr.aria-pressed]="showPassword"
               >
                 <i
-                  class="fa fa-lg"
-                  [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                  class="bwi bwi-lg"
+                  [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                   aria-hidden="true"
                 ></i>
               </button>
@@ -307,8 +307,8 @@
         >
           <div class="row-main text-danger">
             <div class="icon text-danger" aria-hidden="true">
-              <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
-              <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
+              <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading"></i>
+              <i class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw" [hidden]="!deleteBtn.loading"></i>
             </div>
             <span>{{ "deleteSend" | i18n }}</span>
           </div>

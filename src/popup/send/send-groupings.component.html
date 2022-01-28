@@ -13,7 +13,7 @@
       autocomplete="off"
       appAutofocus
     />
-    <i class="fa fa-search"></i>
+    <i class="bwi bwi-search"></i>
   </div>
   <div class="right">
     <button
@@ -23,7 +23,7 @@
       appA11yTitle="{{ 'addSend' | i18n }}"
       [disabled]="disableSend"
     >
-      <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
+      <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
 </header>
@@ -32,7 +32,7 @@
     {{ "sendDisabledWarning" | i18n }}
   </app-callout>
   <div class="no-items" *ngIf="(!sends || !sends.length) && !showSearching()">
-    <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
+    <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded"></i>
     <ng-container *ngIf="loaded">
       <img class="no-items-image" aria-hidden="true" />
       <p>{{ "noItemsInList" | i18n }}</p>
@@ -60,11 +60,11 @@
           (click)="selectType(sendType.Text)"
         >
           <div class="row-main">
-            <div class="icon"><i class="fa fa-fw fa-lg fa-file-text-o"></i></div>
+            <div class="icon"><i class="bwi bwi-fw bwi-lg bwi-file-text"></i></div>
             <span class="text">{{ "sendTypeText" | i18n }}</span>
           </div>
           <span class="row-sub-label">{{ typeCounts.get(sendType.Text) || 0 }}</span>
-          <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
+          <span><i class="bwi bwi-angle-right bwi-lg row-sub-icon"></i></span>
         </button>
         <button
           type="button"
@@ -74,11 +74,11 @@
           (click)="selectType(sendType.File)"
         >
           <div class="row-main">
-            <div class="icon"><i class="fa fa-fw fa-lg fa-file-o"></i></div>
+            <div class="icon"><i class="bwi bwi-fw bwi-lg bwi-file"></i></div>
             <span class="text">{{ "sendTypeFile" | i18n }}</span>
           </div>
           <span class="row-sub-label">{{ typeCounts.get(sendType.File) || 0 }}</span>
-          <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
+          <span><i class="bwi bwi-angle-right bwi-lg row-sub-icon"></i></span>
         </button>
       </div>
     </div>

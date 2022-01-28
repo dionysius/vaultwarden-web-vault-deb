@@ -9,7 +9,7 @@
     <div class="right">
       <button type="submit" appBlurClick [disabled]="form.loading">
         <span [hidden]="form.loading">{{ "save" | i18n }}</span>
-        <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+        <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
     </div>
   </header>
@@ -71,12 +71,12 @@
                 *ngIf="cipher.viewPassword"
               >
                 <i
-                  class="fa fa-lg fa-check-circle"
+                  class="bwi bwi-lg bwi-check-circle"
                   [hidden]="checkPasswordBtn.loading"
                   aria-hidden="true"
                 ></i>
                 <i
-                  class="fa fa-lg fa-spinner fa-spin"
+                  class="bwi bwi-lg bwi-spinner bwi-spin"
                   [hidden]="!checkPasswordBtn.loading"
                   aria-hidden="true"
                 ></i>
@@ -92,9 +92,9 @@
                 [attr.aria-pressed]="showPassword"
               >
                 <i
-                  class="fa fa-lg"
+                  class="bwi bwi-lg"
                   aria-hidden="true"
-                  [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                  [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                 ></i>
               </button>
               <button
@@ -106,7 +106,7 @@
                 (click)="generatePassword()"
                 *ngIf="cipher.viewPassword"
               >
-                <i class="fa fa-lg fa-refresh" aria-hidden="true"></i>
+                <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -157,9 +157,9 @@
                 [attr.aria-pressed]="showCardNumber"
               >
                 <i
-                  class="fa fa-lg"
+                  class="bwi bwi-lg"
                   aria-hidden="true"
-                  [ngClass]="{ 'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber }"
+                  [ngClass]="{ 'bwi-eye': !showCardNumber, 'bwi-eye-slash': showCardNumber }"
                 ></i>
               </button>
             </div>
@@ -211,9 +211,9 @@
                 [attr.aria-pressed]="showCardCode"
               >
                 <i
-                  class="fa fa-lg"
+                  class="bwi bwi-lg"
                   aria-hidden="true"
-                  [ngClass]="{ 'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode }"
+                  [ngClass]="{ 'bwi-eye': !showCardCode, 'bwi-eye-slash': showCardCode }"
                 ></i>
               </button>
             </div>
@@ -404,7 +404,7 @@
               (click)="removeUri(u)"
               appA11yTitle="{{ 'remove' | i18n }}"
             >
-              <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
+              <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
             </button>
             <div class="row-main">
               <label for="loginUri{{ i }}">{{ "uriPosition" | i18n: i + 1 }}</label>
@@ -454,7 +454,7 @@
                 appA11yTitle="{{ 'toggleCurrentUris' | i18n }}"
                 (click)="toggleUriInput(u)"
               >
-                <i aria-hidden="true" class="fa fa-lg fa-list"></i>
+                <i aria-hidden="true" class="bwi bwi-lg bwi-list"></i>
               </button>
               <button
                 type="button"
@@ -464,7 +464,7 @@
                 appA11yTitle="{{ 'toggleOptions' | i18n }}"
                 (click)="toggleUriOptions(u)"
               >
-                <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
+                <i class="bwi bwi-lg bwi-cog-f" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -476,7 +476,7 @@
           (click)="addUri()"
           class="box-content-row box-content-row-newmulti"
         >
-          <i class="fa fa-plus-circle fa-fw fa-lg" aria-hidden="true"></i> {{ "newUri" | i18n }}
+          <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i> {{ "newUri" | i18n }}
         </button>
       </div>
     </div>
@@ -517,7 +517,7 @@
               appA11yTitle="{{ 'learnMore' | i18n }}"
               href="https://bitwarden.com/help/article/managing-items/#protect-individual-items"
             >
-              <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+              <i class="bwi bwi-question-circle" aria-hidden="true"></i>
             </a>
           </label>
           <input
@@ -538,12 +538,12 @@
         >
           <div class="row-main">{{ "attachments" | i18n }}</div>
           <i
-            class="fa fa-external-link fa-lg fa-fw"
+            class="bwi bwi-external-link bwi-lg bwi-fw"
             aria-hidden="true"
             *ngIf="openAttachmentsInPopup"
           ></i>
           <i
-            class="fa fa-chevron-right row-sub-icon"
+            class="bwi bwi-angle-right row-sub-icon"
             aria-hidden="true"
             *ngIf="!openAttachmentsInPopup"
           ></i>
@@ -557,7 +557,7 @@
           *ngIf="editMode && cipher.organizationId && !cloneMode"
         >
           <div class="row-main">{{ "collections" | i18n }}</div>
-          <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
+          <i class="bwi bwi-angle-right row-sub-icon" aria-hidden="true"></i>
         </button>
       </div>
     </div>
@@ -634,8 +634,8 @@
         >
           <div class="row-main text-danger">
             <div class="icon text-danger" aria-hidden="true">
-              <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
-              <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
+              <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading"></i>
+              <i class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw" [hidden]="!deleteBtn.loading"></i>
             </div>
             <span>{{ "deleteItem" | i18n }}</span>
           </div>

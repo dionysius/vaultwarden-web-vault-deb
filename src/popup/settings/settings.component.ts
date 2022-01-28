@@ -238,7 +238,7 @@ export class SettingsComponent implements OnInit {
         titleText: this.i18nService.t("awaitDesktop"),
         text: this.i18nService.t("awaitDesktopDesc"),
         icon: "info",
-        iconHtml: '<i class="swal-custom-icon fa fa-info-circle text-info"></i>',
+        iconHtml: '<i class="swal-custom-icon bwi bwi-info-circle text-info"></i>',
         showCancelButton: true,
         cancelButtonText: this.i18nService.t("cancel"),
         showConfirmButton: false,
@@ -360,7 +360,7 @@ export class SettingsComponent implements OnInit {
     );
     const div = document.createElement("div");
     div.innerHTML =
-      `<p class="text-center"><i class="fa fa-shield fa-3x" aria-hidden="true"></i></p>
+      `<p class="text-center"><i class="bwi bwi-shield bwi-3x" aria-hidden="true"></i></p>
             <p class="text-center"><b>Bitwarden</b><br>&copy; Bitwarden Inc. 2015-` +
       year +
       `</p>`;

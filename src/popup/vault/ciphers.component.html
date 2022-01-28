@@ -1,7 +1,7 @@
 <header>
   <div class="left">
     <button type="button" appBlurClick (click)="back()">
-      <span class="header-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+      <span class="header-icon"><i class="bwi bwi-angle-left" aria-hidden="true"></i></span>
       <span>{{ "back" | i18n }}</span>
     </button>
   </div>
@@ -16,11 +16,11 @@
       autocomplete="off"
       appAutofocus
     />
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <i class="bwi bwi-search" aria-hidden="true"></i>
   </div>
   <div class="right">
     <button type="button" appBlurClick (click)="addCipher()" appA11yTitle="{{ 'addItem' | i18n }}">
-      <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
+      <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
 </header>
@@ -42,14 +42,14 @@
           <div class="row-main">
             <div class="icon">
               <i
-                class="fa fa-fw fa-lg"
+                class="bwi bwi-fw bwi-lg"
                 aria-hidden="true"
-                [ngClass]="{ 'fa-folder-open': f.node.id, 'fa-folder-open-o': !f.node.id }"
+                [ngClass]="{ 'bwi-bw-folder-open-f': f.node.id, 'bwi-folder-open': !f.node.id }"
               ></i>
             </div>
             <span class="text">{{ f.node.name }}</span>
           </div>
-          <span><i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i></span>
+          <span><i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i></span>
         </button>
       </div>
     </div>
@@ -67,17 +67,19 @@
           (click)="selectCollection(c.node)"
         >
           <div class="row-main">
-            <div class="icon"><i class="fa fa-fw fa-lg fa-cube" aria-hidden="true"></i></div>
+            <div class="icon">
+              <i class="bwi bwi-fw bwi-lg bwi-collection" aria-hidden="true"></i>
+            </div>
             <span class="text">{{ c.node.name }}</span>
           </div>
-          <span><i class="fa fa-chevron-right fa-lg row-sub-icon" aria-hidden="true"></i></span>
+          <span><i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i></span>
         </button>
       </div>
     </div>
   </ng-container>
   <ng-container *ngIf="ciphers">
     <div class="no-items" *ngIf="!ciphers.length">
-      <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
+      <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
       <ng-container *ngIf="loaded">
         <p>{{ "noItemsInList" | i18n }}</p>
         <button type="button" (click)="addCipher()" class="btn block primary link">

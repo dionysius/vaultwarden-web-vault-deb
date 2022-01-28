@@ -48,7 +48,7 @@
               appA11yTitle="{{ 'copyUsername' | i18n }}"
               (click)="copy(cipher.login.username, 'username', 'Username')"
             >
-              <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+              <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
             </button>
           </div>
         </div>
@@ -83,12 +83,12 @@
               *ngIf="cipher.viewPassword"
             >
               <i
-                class="fa fa-lg fa-check-circle"
+                class="bwi bwi-lg bwi-check-circle"
                 [hidden]="checkPasswordBtn.loading"
                 aria-hidden="true"
               ></i>
               <i
-                class="fa fa-lg fa-spinner fa-spin"
+                class="bwi bwi-lg bwi-spinner bwi-spin"
                 [hidden]="!checkPasswordBtn.loading"
                 aria-hidden="true"
               ></i>
@@ -104,9 +104,9 @@
               [attr.aria-pressed]="showPassword"
             >
               <i
-                class="fa fa-lg"
+                class="bwi bwi-lg"
                 aria-hidden="true"
-                [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
               ></i>
             </button>
             <button
@@ -117,7 +117,7 @@
               (click)="copy(cipher.login.password, 'password', 'Password')"
               *ngIf="cipher.viewPassword"
             >
-              <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+              <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
             </button>
           </div>
         </div>
@@ -158,7 +158,7 @@
               appA11yTitle="{{ 'copyVerificationCode' | i18n }}"
               (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')"
             >
-              <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+              <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
             </button>
           </div>
         </div>
@@ -186,9 +186,9 @@
               [attr.aria-pressed]="showCardNumber"
             >
               <i
-                class="fa fa-lg"
+                class="bwi bwi-lg"
                 aria-hidden="true"
-                [ngClass]="{ 'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber }"
+                [ngClass]="{ 'bwi-eye': !showCardNumber, 'bwi-eye-slash': showCardNumber }"
               ></i>
             </button>
             <button
@@ -198,7 +198,7 @@
               appA11yTitle="{{ 'copyNumber' | i18n }}"
               (click)="copy(cipher.card.number, 'number', 'Card Number')"
             >
-              <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+              <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
             </button>
           </div>
         </div>
@@ -227,9 +227,9 @@
               [attr.aria-pressed]="showCardCode"
             >
               <i
-                class="fa fa-lg"
+                class="bwi bwi-lg"
                 aria-hidden="true"
-                [ngClass]="{ 'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode }"
+                [ngClass]="{ 'bwi-eye': !showCardCode, 'bwi-eye-slash': showCardCode }"
               ></i>
             </button>
             <button
@@ -239,7 +239,7 @@
               appA11yTitle="{{ 'copySecurityCode' | i18n }}"
               (click)="copy(cipher.card.code, 'securityCode', 'Security Code')"
             >
-              <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+              <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
             </button>
           </div>
         </div>
@@ -325,7 +325,7 @@
             *ngIf="u.canLaunch"
             (click)="launch(u)"
           >
-            <i class="fa fa-lg fa-share-square-o" aria-hidden="true"></i>
+            <i class="bwi bwi-lg bwi-share-square" aria-hidden="true"></i>
           </button>
           <button
             type="button"
@@ -335,7 +335,7 @@
             appA11yTitle="{{ 'copyUri' | i18n }}"
             (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')"
           >
-            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+            <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -383,12 +383,12 @@
         <span class="row-main">{{ attachment.fileName }}</span>
         <small class="row-sub-label">{{ attachment.sizeName }}</small>
         <i
-          class="fa fa-download fa-fw row-sub-icon"
+          class="bwi bwi-download bwi-fw row-sub-icon"
           *ngIf="!attachment.downloading"
           aria-hidden="true"
         ></i>
         <i
-          class="fa fa-spinner fa-fw fa-spin row-sub-icon"
+          class="bwi bwi-spinner bwi-fw bwi-spin row-sub-icon"
           *ngIf="attachment.downloading"
           aria-hidden="true"
         ></i>
@@ -407,7 +407,7 @@
       >
         <div class="row-main text-primary">
           <div class="icon text-primary" aria-hidden="true">
-            <i class="fa fa-pencil-square-o fa-lg fa-fw"></i>
+            <i class="bwi bwi-pencil-square bwi-lg bwi-fw"></i>
           </div>
           <span>{{ "autoFill" | i18n }}</span>
         </div>
@@ -422,7 +422,7 @@
       >
         <div class="row-main text-primary">
           <div class="icon text-primary" aria-hidden="true">
-            <i class="fa fa-bookmark fa-lg fa-fw"></i>
+            <i class="bwi bwi-bookmark bwi-lg bwi-fw"></i>
           </div>
           <span>{{ "autoFillAndSave" | i18n }}</span>
         </div>
@@ -437,7 +437,7 @@
       >
         <div class="row-main text-primary">
           <div class="icon text-primary" aria-hidden="true">
-            <i class="fa fa-files-o fa-lg fa-fw"></i>
+            <i class="bwi bwi-files bwi-lg bwi-fw"></i>
           </div>
           <span>{{ "cloneItem" | i18n }}</span>
         </div>
@@ -452,7 +452,7 @@
       >
         <div class="row-main text-primary">
           <div class="icon text-primary" aria-hidden="true">
-            <i class="fa fa-arrow-circle-o-right fa-lg fa-fw"></i>
+            <i class="bwi bwi-arrow-circle-right bwi-lg bwi-fw"></i>
           </div>
           <span>{{ "moveToOrganization" | i18n }}</span>
         </div>
@@ -467,7 +467,7 @@
       >
         <div class="row-main text-primary">
           <div class="icon text-primary" aria-hidden="true">
-            <i class="fa fa-undo fa-lg fa-fw"></i>
+            <i class="bwi bwi-undo bwi-lg bwi-fw"></i>
           </div>
           <span>{{ "restoreItem" | i18n }}</span>
         </div>
@@ -475,7 +475,7 @@
       <button type="button" class="box-content-row" appStopClick appBlurClick (click)="delete()">
         <div class="row-main text-danger">
           <div class="icon text-danger" aria-hidden="true">
-            <i class="fa fa-trash-o fa-lg fa-fw"></i>
+            <i class="bwi bwi-trash bwi-lg bwi-fw"></i>
           </div>
           <span>{{ (cipher.isDeleted ? "permanentlyDeleteItem" : "deleteItem") | i18n }}</span>
         </div>

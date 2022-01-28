@@ -1,7 +1,7 @@
 <header>
   <div class="left">
     <a routerLink="/tabs/settings">
-      <span class="header-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+      <span class="header-icon"><i class="bwi bwi-angle-left" aria-hidden="true"></i></span>
       <span>{{ "back" | i18n }}</span>
     </a>
   </div>
@@ -15,29 +15,29 @@
     <ng-container *ngIf="!isPremium">
       <p class="text-center lead">{{ "premiumNotCurrentMember" | i18n }}</p>
       <p>{{ "premiumSignUpAndGet" | i18n }}</p>
-      <ul class="fa-ul">
+      <ul class="bwi-ul">
         <li>
-          <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+          <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
           {{ "ppremiumSignUpStorage" | i18n }}
         </li>
         <li>
-          <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+          <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
           {{ "ppremiumSignUpTwoStep" | i18n }}
         </li>
         <li>
-          <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+          <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
           {{ "ppremiumSignUpReports" | i18n }}
         </li>
         <li>
-          <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+          <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
           {{ "ppremiumSignUpTotp" | i18n }}
         </li>
         <li>
-          <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+          <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
           {{ "ppremiumSignUpSupport" | i18n }}
         </li>
         <li>
-          <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+          <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
           {{ "ppremiumSignUpFuture" | i18n }}
         </li>
       </ul>
@@ -56,7 +56,7 @@
       >
         <span [hidden]="refreshBtn.loading">{{ "premiumRefresh" | i18n }}</span>
         <i
-          class="fa fa-spinner fa-spin fa-lg fa-fw"
+          class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
           [hidden]="!refreshBtn.loading"
           aria-hidden="true"
         ></i>

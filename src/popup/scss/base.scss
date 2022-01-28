@@ -232,7 +232,7 @@ header {
     position: relative;
     display: flex;
 
-    .fa {
+    .bwi {
       position: absolute;
       top: 15px;
       left: 20px;
@@ -274,7 +274,7 @@ header {
   .left + .search {
     padding-left: 0;
 
-    .fa {
+    .bwi {
       left: 10px;
     }
   }
@@ -444,7 +444,8 @@ content {
       content: url("../images/search-desktop" + themed("svgSuffix"));
     }
   }
-  .fa {
+
+  .bwi {
     margin-bottom: 10px;
 
     @include themify($themes) {

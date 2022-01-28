@@ -9,7 +9,7 @@
       appA11yTitle="{{ 'refresh' | i18n }}"
       *ngIf="inSidebar"
     >
-      <i class="fa fa-retweet fa-lg fa-fw" aria-hidden="true"></i>
+      <i class="bwi bwi-refresh-tab bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
   <div class="search">
@@ -22,17 +22,17 @@
       autocomplete="off"
       (keydown)="closeOnEsc($event)"
     />
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <i class="bwi bwi-search" aria-hidden="true"></i>
   </div>
   <div class="right">
     <button type="button" appBlurClick (click)="addCipher()" appA11yTitle="{{ 'addItem' | i18n }}">
-      <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
+      <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
 </header>
 <content>
   <div class="no-items" *ngIf="!loaded">
-    <i class="fa fa-spinner fa-spin fa-3x" aria-hidden="true"></i>
+    <i class="bwi bwi-spinner bwi-spin bwi-3x" aria-hidden="true"></i>
   </div>
   <ng-container *ngIf="loaded">
     <div class="box list" *ngIf="loginCiphers">

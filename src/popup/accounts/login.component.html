@@ -9,7 +9,7 @@
     <div class="right">
       <button type="submit" appBlurClick [disabled]="form.loading">
         <span [hidden]="form.loading">{{ "login" | i18n }}</span>
-        <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+        <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
     </div>
   </header>
@@ -52,8 +52,8 @@
               [attr.aria-pressed]="showPassword"
             >
               <i
-                class="fa fa-lg"
-                [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                class="bwi bwi-lg"
+                [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                 aria-hidden="true"
               ></i>
             </button>
