@@ -37,7 +37,9 @@ jobs:
           node-version: '16'
 
       - name: Run linter
-        run: npm run lint
+        run: |
+          npm ci
+          npm run lint
 
 
   setup:
@@ -62,7 +64,9 @@ jobs:
   locales-test:
     name: Locales Test
     runs-on: ubuntu-20.04
-    needs: setup
+    needs: 
+      - setup
+      - lint
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
