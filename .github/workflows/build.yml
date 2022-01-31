@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
       - name: Set up cloc
         run: |
@@ -24,6 +24,22 @@ jobs:
       - name: Print lines of code
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
+  lint:
+    name: Lint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+
+      - name: Set up Node
+        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561
+        with:
+          node-version: '16'
+
+      - name: Run linter
+        run: |
+          npm ci
+          npm run lint
 
   setup:
     name: Setup
@@ -33,7 +49,7 @@ jobs:
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
       - name: Get Package Version
         id: gen_vars
@@ -47,10 +63,12 @@ jobs:
   locales-test:
     name: Locales Test
     runs-on: ubuntu-20.04
-    needs: setup
+    needs:
+      - setup
+      - lint
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
       - name: Testing locales - extName length
         run: |
@@ -86,10 +104,10 @@ jobs:
       _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561
         with:
           node-version: '16'
 
@@ -103,9 +121,6 @@ jobs:
           npm ci
           npm run dist
           npm run test
-
-      - name: Run linter
-        run: npm run lint
 
       - name: Gulp
         run: gulp ci
@@ -123,35 +138,35 @@ jobs:
           call 7z a browser-source.zip "Source\*"
 
       - name: Upload Opera artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
         with:
           name: dist-opera-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-opera.zip
           if-no-files-found: error
 
       - name: Upload Chrome artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
         with:
           name: dist-chrome-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-chrome.zip
           if-no-files-found: error
 
       - name: Upload Firefox artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
         with:
           name: dist-firefox-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-firefox.zip
           if-no-files-found: error
 
       - name: Upload Edge artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
         with:
           name: dist-edge-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-edge.zip
           if-no-files-found: error
 
       - name: Upload browser source
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
         with:
           name: browser-source-${{ env._BUILD_NUMBER }}.zip
           path: dist/browser-source.zip
@@ -159,7 +174,7 @@ jobs:
 
       - name: Upload coverage artifact
         if: false
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
         with:
           name: coverage-${{ env._BUILD_NUMBER }}.zip
           path: coverage/coverage-${{ env._BUILD_NUMBER }}.zip
@@ -176,10 +191,10 @@ jobs:
       _CROWDIN_PROJECT_ID: "268134"
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
       - name: Login to Azure
-        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
 
@@ -191,7 +206,7 @@ jobs:
           secrets: "crowdin-api-token"
 
       - name: Upload Sources
-        uses: crowdin/github-action@e39093fd75daae7859c68eded4b43d42ec78d8ea  # v1.3.2
+        uses: crowdin/github-action@b92956d48336795b1e5e6a353fdef213ada949c5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
@@ -212,6 +227,7 @@ jobs:
       - locales-test
       - build
       - crowdin-push
+      - lint
     steps:
       - name: Check if any job failed
         if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
@@ -221,6 +237,7 @@ jobs:
           LOCALES_TEST_STATUS: ${{ needs.locales-test.result }}
           BUILD_STATUS: ${{ needs.build.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
+          LINT_STATUS: ${{ needs.lint.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
@@ -232,10 +249,12 @@ jobs:
               exit 1
           elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
               exit 1
+          elif [ "LINT_STATUS" = "failure" ]; then
+              exit 1
           fi
 
       - name: Login to Azure - Prod Subscription
-        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
         if: failure()
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
@@ -249,7 +268,7 @@ jobs:
           secrets: "devops-alerts-slack-webhook-url"
 
       - name: Notify Slack on failure
-        uses: act10ns/slack@e4e71685b9b239384b0f676a63c32367f59c2522  # v1.2.2
+        uses: act10ns/slack@da3191ebe2e67f49b46880b4633f5591a96d1d33
         if: failure()
         env:
           SLACK_WEBHOOK_URL: ${{ steps.retrieve-secrets.outputs.devops-alerts-slack-webhook-url }}
