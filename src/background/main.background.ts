@@ -2,6 +2,7 @@ import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
 import { CipherType } from "jslib-common/enums/cipherType";
 
 import { CipherView } from "jslib-common/models/view/cipherView";
+
 import { GlobalState } from "jslib-common/models/domain/globalState";
 
 import { ApiService } from "jslib-common/services/api.service";
