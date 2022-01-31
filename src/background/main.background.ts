@@ -171,7 +171,7 @@ export default class MainBackground {
     this.stateMigrationService = new StateMigrationService(
       this.storageService,
       this.secureStorageService,
-      new GlobalStateFactory(GlobalState),
+      new GlobalStateFactory(GlobalState)
     );
     this.stateService = new StateService(
       this.storageService,
