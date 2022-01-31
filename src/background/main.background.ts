@@ -1,8 +1,9 @@
 import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
 import { CipherType } from "jslib-common/enums/cipherType";
 
-import { AccountFactory } from "jslib-common/models/domain/account";
 import { CipherView } from "jslib-common/models/view/cipherView";
+
+import { GlobalState } from "jslib-common/models/domain/globalState";
 
 import { ApiService } from "jslib-common/services/api.service";
 import { AppIdService } from "jslib-common/services/appId.service";
@@ -97,6 +98,9 @@ import VaultTimeoutService from "../services/vaultTimeout.service";
 
 import { Account } from "../models/account";
 
+import { GlobalStateFactory } from "jslib-common/factories/globalStateFactory";
+import { StateFactory } from "jslib-common/factories/stateFactory";
+
 export default class MainBackground {
   messagingService: MessagingServiceAbstraction;
   storageService: StorageServiceAbstraction;
@@ -166,14 +170,15 @@ export default class MainBackground {
     this.logService = new ConsoleLogService(false);
     this.stateMigrationService = new StateMigrationService(
       this.storageService,
-      this.secureStorageService
+      this.secureStorageService,
+      new GlobalStateFactory(GlobalState)
     );
     this.stateService = new StateService(
       this.storageService,
       this.secureStorageService,
       this.logService,
       this.stateMigrationService,
-      new AccountFactory(Account)
+      new StateFactory(GlobalState, Account)
     );
     this.platformUtilsService = new BrowserPlatformUtilsService(
       this.messagingService,
