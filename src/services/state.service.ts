@@ -1,3 +1,4 @@
+import { GlobalState } from "jslib-common/models/domain/globalState";
 import { StorageOptions } from "jslib-common/models/domain/storageOptions";
 import { StateService as BaseStateService } from "jslib-common/services/state.service";
 
@@ -7,7 +8,10 @@ import { BrowserGroupingsComponentState } from "../models/browserGroupingsCompon
 import { BrowserSendComponentState } from "../models/browserSendComponentState";
 import { StateService as StateServiceAbstraction } from "./abstractions/state.service";
 
-export class StateService extends BaseStateService<Account> implements StateServiceAbstraction {
+export class StateService
+  extends BaseStateService<GlobalState, Account>
+  implements StateServiceAbstraction
+{
   async addAccount(account: Account) {
     // Apply browser overrides to default account values
     account = new Account(account);
