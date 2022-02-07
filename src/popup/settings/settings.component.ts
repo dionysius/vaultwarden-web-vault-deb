@@ -104,8 +104,8 @@ export class SettingsComponent implements OnInit {
       this.vaultTimeout.setValue(timeout);
     }
     this.previousVaultTimeout = this.vaultTimeout.value;
-    this.vaultTimeout.valueChanges.subscribe((value) => {
-      this.saveVaultTimeout(value);
+    this.vaultTimeout.valueChanges.subscribe(async (value) => {
+      await this.saveVaultTimeout(value);
     });
 
     const action = await this.stateService.getVaultTimeoutAction();
