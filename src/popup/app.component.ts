@@ -26,6 +26,7 @@ import { routerTransition } from "./app-routing.animations";
 })
 export class AppComponent implements OnInit {
   private lastActivity: number = null;
+  private activeUserId: string;
 
   constructor(
     private toastrService: ToastrService,
@@ -46,19 +47,16 @@ export class AppComponent implements OnInit {
     if (BrowserApi.getBackgroundPage() == null) {
       return;
     }
-    let activeUserId: string = null;
     this.stateService.activeAccount.subscribe((userId) => {
-      activeUserId = userId;
+      this.activeUserId = userId;
     });
 
     this.ngZone.runOutsideAngular(() => {
-      if (activeUserId != null) {
-        window.onmousedown = () => this.recordActivity(activeUserId);
-        window.ontouchstart = () => this.recordActivity(activeUserId);
-        window.onclick = () => this.recordActivity(activeUserId);
-        window.onscroll = () => this.recordActivity(activeUserId);
-        window.onkeypress = () => this.recordActivity(activeUserId);
-      }
+      window.onmousedown = () => this.recordActivity();
+      window.ontouchstart = () => this.recordActivity();
+      window.onclick = () => this.recordActivity();
+      window.onscroll = () => this.recordActivity();
+      window.onkeypress = () => this.recordActivity();
     });
 
     (window as any).bitwardenPopupMainMessageListener = async (
@@ -171,14 +169,18 @@ export class AppComponent implements OnInit {
     }
   }
 
-  private async recordActivity(userId: string) {
+  private async recordActivity() {
+    if (this.activeUserId == null) {
+      return;
+    }
+
     const now = new Date().getTime();
     if (this.lastActivity != null && now - this.lastActivity < 250) {
       return;
     }
 
     this.lastActivity = now;
-    this.stateService.setLastActive(now, { userId: userId });
+    await this.stateService.setLastActive(now, { userId: this.activeUserId });
   }
 
   private showToast(msg: any) {
