@@ -48,23 +48,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let disabledAddLoginNotification = false;
   let disabledChangedPasswordNotification = false;
 
-  chrome.storage.local.get("neverDomains", (ndObj: any) => {
-    const domains = ndObj.neverDomains;
+  const activeUserIdKey = "activeUserId";
+  let activeUserId: string;
+  chrome.storage.local.get(activeUserIdKey, (obj: any) => {
+    if (obj == null || obj[activeUserIdKey] == null) {
+      return;
+    }
+    activeUserId = obj[activeUserIdKey];
+  });
+
+  chrome.storage.local.get(activeUserId, (obj: any) => {
+    if (obj === null) {
+      return;
+    }
+
+    const domains = obj[activeUserId].settings.neverDomains;
     if (domains != null && domains.hasOwnProperty(window.location.hostname)) {
       return;
     }
 
-    chrome.storage.local.get("disableAddLoginNotification", (disAddObj: any) => {
-      disabledAddLoginNotification =
-        disAddObj != null && disAddObj.disableAddLoginNotification === true;
-      chrome.storage.local.get("disableChangedPasswordNotification", (disChangedObj: any) => {
-        disabledChangedPasswordNotification =
-          disChangedObj != null && disChangedObj.disableChangedPasswordNotification === true;
-        if (!disabledAddLoginNotification || !disabledChangedPasswordNotification) {
-          collectIfNeededWithTimeout();
-        }
-      });
-    });
+    disabledAddLoginNotification = obj[activeUserId].settings.disableAddLoginNotification;
+    disabledChangedPasswordNotification =
+      obj[activeUserId].settings.disableChangedPasswordNotification;
+
+    if (!disabledAddLoginNotification || !disabledChangedPasswordNotification) {
+      collectIfNeededWithTimeout();
+    }
   });
 
   chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: Function) => {
