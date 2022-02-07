@@ -14,6 +14,7 @@ import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
+import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
 
 import { TwoFactorComponent as BaseTwoFactorComponent } from "jslib-angular/components/two-factor.component";
 
@@ -43,7 +44,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     stateService: StateService,
     route: ActivatedRoute,
     private messagingService: MessagingService,
-    logService: LogService
+    logService: LogService,
+    twoFactorService: TwoFactorService
   ) {
     super(
       authService,
@@ -55,7 +57,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       environmentService,
       stateService,
       route,
-      logService
+      logService,
+      twoFactorService
     );
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);
