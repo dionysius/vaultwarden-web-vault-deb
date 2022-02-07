@@ -571,6 +571,8 @@ export default class MainBackground {
       this.keyConnectorService.clear(),
     ]);
 
+    await this.stateService.clean();
+
     if (userId == null || userId === (await this.stateService.getUserId())) {
       this.searchService.clearIndex();
       this.messagingService.send("doneLoggingOut", { expired: expired, userId: userId });
