@@ -75,8 +75,6 @@ export class AppComponent implements OnInit {
               });
             }
 
-            await this.stateService.clean({ userId: msg.userId });
-
             if (this.stateService.activeAccount.getValue() == null) {
               this.router.navigate(["home"]);
             }
