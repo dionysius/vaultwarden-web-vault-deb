@@ -16,8 +16,6 @@ export class PrivateModeComponent implements OnInit {
   }
 
   learnMore() {
-    BrowserApi.createNewTab(
-      "https://help.bitwarden.com/article/extension-wont-load-in-private-mode/"
-    );
+    BrowserApi.createNewTab("https://bitwarden.com/help/extension-wont-load-in-private-mode/");
   }
 }

@@ -308,7 +308,9 @@ export class SettingsComponent implements OnInit {
       this.i18nService.t("cancel")
     );
     if (confirmed) {
-      BrowserApi.createNewTab("https://help.bitwarden.com/article/change-your-master-password/");
+      BrowserApi.createNewTab(
+        "https://bitwarden.com/help/master-password/#change-your-master-password"
+      );
     }
   }
 
@@ -320,7 +322,7 @@ export class SettingsComponent implements OnInit {
       this.i18nService.t("cancel")
     );
     if (confirmed) {
-      BrowserApi.createNewTab("https://help.bitwarden.com/article/setup-two-step-login/");
+      BrowserApi.createNewTab("https://bitwarden.com/help/setup-two-step-login/");
     }
   }
 
@@ -332,7 +334,7 @@ export class SettingsComponent implements OnInit {
       this.i18nService.t("cancel")
     );
     if (confirmed) {
-      BrowserApi.createNewTab("https://help.bitwarden.com/article/what-is-an-organization/");
+      BrowserApi.createNewTab("https://bitwarden.com/help/about-organizations/");
     }
   }
 
@@ -342,7 +344,7 @@ export class SettingsComponent implements OnInit {
   }
 
   import() {
-    BrowserApi.createNewTab("https://help.bitwarden.com/article/import-data/");
+    BrowserApi.createNewTab("https://bitwarden.com/help/import-data/");
   }
 
   export() {
@@ -350,7 +352,7 @@ export class SettingsComponent implements OnInit {
   }
 
   help() {
-    BrowserApi.createNewTab("https://help.bitwarden.com/");
+    BrowserApi.createNewTab("https://bitwarden.com/help/");
   }
 
   about() {
@@ -399,7 +401,7 @@ export class SettingsComponent implements OnInit {
     });
 
     if (result.value) {
-      this.platformUtilsService.launchUri("https://help.bitwarden.com/article/fingerprint-phrase/");
+      this.platformUtilsService.launchUri("https://bitwarden.com/help/fingerprint-phrase/");
     }
   }
 
