@@ -33,7 +33,7 @@ jobs:
           file_path: "./src/manifest.json"
 
       - name: Run Prettier after Version Bump
-        run: npm run prettier
+        run: prettier --write ./src/manifest.json
 
       - name: Commit files
         run: |
