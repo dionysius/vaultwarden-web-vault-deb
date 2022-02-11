@@ -89,16 +89,16 @@
     "message": "Membuat Kata Sandi (tersalin)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Salin Nama Kolom Pilihan"
   },
   "noMatchingLogins": {
     "message": "Tidak ada info masuk yang cocok."
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "Buka brankas Anda"
   },
   "loginToVaultMenu": {
-    "message": "Log in to your vault"
+    "message": "Masuk ke brankas Anda"
   },
   "autoFillInfo": {
     "message": "Tidak ada info masuk yang tersedia untuk mengisi secara otomatis tab peramban saat ini."
@@ -122,19 +122,19 @@
     "message": "Lanjutkan"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Kirim kode verifikasi ke email Anda"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Kirim Kode"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kode Terkirim!"
   },
   "verificationCode": {
     "message": "Kode Verifikasi"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Konfirmasi identitas Anda untuk melanjutkan."
   },
   "account": {
     "message": "Akun"
@@ -230,16 +230,16 @@
     "message": "Panjang"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Huruf besar (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Huruf kecil (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Angka (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "karakter khusus (contoh.! @#$%^&*)"
   },
   "numWords": {
     "message": "Jumlah Kata"
@@ -333,7 +333,7 @@
     "message": "Peramban Anda tidak mendukung menyalin clipboard dengan mudah. Salin secara manual."
   },
   "verifyIdentity": {
-    "message": "Verify Identity"
+    "message": "Verifikasi Identitas Anda"
   },
   "yourVaultIsLocked": {
     "message": "Brankas Anda terkunci. Verifikasi kata sandi utama Anda untuk melanjutkan."
@@ -436,7 +436,7 @@
     "message": "Kode verifikasi diperlukan."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Kode verifikasi tidak valid"
   },
   "valueCopied": {
     "message": "$VALUE$ disalin",
@@ -801,7 +801,7 @@
     "message": "Jika info masuk Anda memiliki kunci autentikasi yang menyertainya, kode verifikasi TOTP akan disalin secara otomatis ke clipboard Anda setiap kali Anda mengisi info masuk secara otomatis."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "Jangan minta biometrik saat dinyalakan."
   },
   "premiumRequired": {
     "message": "Membutuhkan Keanggotaan Premium"
@@ -1008,7 +1008,7 @@
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Terhubung",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
@@ -1118,7 +1118,7 @@
     "message": "Nama Belakang"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Nama Lengkap"
   },
   "identityName": {
     "message": "Nama Identitas"
@@ -1789,34 +1789,34 @@
     "message": "Anda harus memverifikasi email Anda untuk menggunakan fitur ini. Anda dapat memverifikasi email Anda di brankas web."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Kata Sandi Utama Telah Diperbarui"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Perbarui Kata Sandi Utama"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Kata Sandi Utama Anda baru-baru ini diubah oleh administrator organisasi Anda. Untuk mengakses brankas tersebut, Anda diharuskan memperbarui Kata Sandi Utama Anda sekarang. Jika Anda melanjutkan, Anda akan keluar dari sesi saat ini, yang mana mengharuskan Anda untuk login kembali. Sesi yang aktif di perangkat lain akan tetap aktif selama satu jam kedepan."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Pendaftaran Otomatis"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Organisasi ini memiliki kebijakan perusahaan yang secara otomatis mendaftarkan Anda dalam pengaturan ulang kata sandi. Dengan mendaftar, akan memungkinkan administrator organisasi untuk mengubah kata sandi utama Anda."
   },
   "selectFolder": {
-    "message": "Select folder..."
+    "message": "Pilih Folder..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Untuk menyelesaikan masuk dengan SSO, harap setel kata sandi utama untuk mengakses dan melindungi brankas Anda."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Jam"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Menit"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Kebijakan organisasi Anda memengaruhi waktu tunggu brankas Anda. Batas maksimal Waktu Tunggu Brankas yang diizinkan adalah $HOURS$ jam dan $MINUTES$ menit",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1829,19 +1829,19 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Waktu tunggu brankas Anda melebihi batasan yang diatur organisasi Anda."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Ekspor Brankas Dinonaktifkan"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Satu atau beberapa kebijakan organisasi mencegah Anda mengekspor brankas pribadi Anda."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "Tidak ada pengidentifikasi unik yang ditemukan."
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
@@ -1853,18 +1853,18 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Tinggalkan Organisasi"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Hapus Kata Sandi Utama"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Sandi utama dihapus."
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Apakah Anda yakin ingin meninggalkan organisasi ini?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Anda telah keluar dari organisasi."
   }
 }
