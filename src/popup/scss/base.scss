@@ -271,7 +271,8 @@ header {
     }
   }
 
-  .left + .search {
+  .left + .search,
+  .left + .sr-only + .search {
     padding-left: 0;
 
     .bwi {
