@@ -6,6 +6,7 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
+import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { Utils } from "jslib-common/misc/utils";
 
@@ -74,7 +75,8 @@ export class NativeMessagingBackground {
     private appIdService: AppIdService,
     private platformUtilsService: PlatformUtilsService,
     private stateService: StateService,
-    private logService: LogService
+    private logService: LogService,
+    private vaultTimeoutService: VaultTimeoutService
   ) {
     this.stateService.setBiometricFingerprintValidated(false);
 
@@ -307,7 +309,7 @@ export class NativeMessagingBackground {
         }
 
         // Ignore unlock if already unlocked
-        if (!(await this.stateService.getBiometricLocked())) {
+        if (!(await this.vaultTimeoutService.isLocked())) {
           break;
         }
 

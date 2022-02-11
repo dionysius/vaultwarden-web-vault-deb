@@ -416,7 +416,8 @@ export default class MainBackground {
       this.appIdService,
       this.platformUtilsService,
       this.stateService,
-      this.logService
+      this.logService,
+      this.vaultTimeoutService
     );
     this.commandsBackground = new CommandsBackground(
       this,
