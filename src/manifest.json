@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extName__",
   "short_name": "__MSG_appName__",
-  "version": "1.56.0",
+  "version": "1.56.1",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "author": "Bitwarden Inc.",
@@ -23,25 +23,47 @@
         "content/notificationBar.js",
         "content/contextMenuHandler.js"
       ],
-      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
       "run_at": "document_start"
     },
     {
       "all_frames": false,
-      "js": ["content/shortcuts.js"],
-      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "js": [
+        "content/shortcuts.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
       "run_at": "document_start"
     },
     {
       "all_frames": false,
-      "js": ["content/message_handler.js"],
-      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "js": [
+        "content/message_handler.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
       "run_at": "document_start"
     },
     {
       "all_frames": true,
-      "css": ["content/autofill.css"],
-      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "css": [
+        "content/autofill.css"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
       "run_at": "document_end"
     }
   ],
@@ -70,7 +92,9 @@
     "webRequest",
     "webRequestBlocking"
   ],
-  "optional_permissions": ["nativeMessaging"],
+  "optional_permissions": [
+    "nativeMessaging"
+  ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "commands": {
     "_execute_browser_action": {
