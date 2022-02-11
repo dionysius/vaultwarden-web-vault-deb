@@ -5,6 +5,7 @@
   appStopClick
   title="{{ title }} - {{ cipher.name }}"
   class="box-content-row box-content-row-flex virtual-scroll-item"
+  [ngClass]="{ 'override-last': !last }"
 >
   <div class="row-main">
     <app-vault-icon [cipher]="cipher"></app-vault-icon>

@@ -97,8 +97,9 @@
         </h2>
         <div class="box-content">
           <app-cipher-row
-            *cdkVirtualFor="let c of ciphers"
+            *cdkVirtualFor="let c of ciphers; let last = last"
             [cipher]="c"
+            [last]="last"
             title="{{ 'viewItem' | i18n }}"
             (onSelected)="selectCipher($event)"
             (launchEvent)="launchCipher($event)"

@@ -11,6 +11,7 @@ export class CipherRowComponent {
   @Output() launchEvent = new EventEmitter<CipherView>();
   @Output() onView = new EventEmitter<CipherView>();
   @Input() cipher: CipherView;
+  @Input() last: boolean;
   @Input() showView = false;
   @Input() title: string;
 
