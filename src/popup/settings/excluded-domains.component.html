@@ -1,7 +1,10 @@
 <form #form (ngSubmit)="submit()">
   <header>
     <div class="left">
-      <a routerLink="/tabs/settings">{{ "cancel" | i18n }}</a>
+      <a routerLink="/tabs/settings">
+        <span class="header-icon"><i class="bwi bwi-angle-left" aria-hidden="true"></i></span>
+        <span>{{ "back" | i18n }}</span>
+      </a>
     </div>
     <h1 class="center">
       <span class="title">{{ "excludedDomains" | i18n }}</span>
