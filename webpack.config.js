@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { AngularWebpackPlugin } = require("@ngtools/webpack");
+const TerserPlugin = require("terser-webpack-plugin");
 
 if (process.env.NODE_ENV == null) {
   process.env.NODE_ENV = "development";
@@ -103,11 +104,15 @@ const plugins = [
   new webpack.ProvidePlugin({
     process: "process/browser",
   }),
+  new webpack.SourceMapDevToolPlugin({
+    exclude: /content\/.*/,
+    filename: "[file].map",
+  }),
 ];
 
 const config = {
   mode: ENV,
-  devtool: ENV === "development" ? "eval-source-map" : "source-map",
+  devtool: false,
   entry: {
     "popup/polyfills": "./src/popup/polyfills.ts",
     "popup/main": "./src/popup/main.ts",
@@ -122,6 +127,11 @@ const config = {
   },
   optimization: {
     minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        exclude: /content\/.*/,
+      }),
+    ],
     splitChunks: {
       cacheGroups: {
         commons: {
