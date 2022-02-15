@@ -1,7 +1,6 @@
 import { APP_INITIALIZER, LOCALE_ID, NgModule } from "@angular/core";
 
 import { DebounceNavigationService } from "./debounceNavigationService";
-import { LaunchGuardService } from "./launch-guard.service";
 import { LockGuardService } from "./lock-guard.service";
 import { PasswordRepromptService } from "./password-reprompt.service";
 import { UnauthGuardService } from "./unauth-guard.service";
@@ -49,7 +48,9 @@ import { UserVerificationService } from "jslib-common/abstractions/userVerificat
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { AutofillService } from "../../services/abstractions/autofill.service";
+
 import BrowserMessagingService from "../../services/browserMessaging.service";
+import BrowserMessagingPrivateModePopupService from "../../services/browserMessagingPrivateModePopup.service";
 
 import { AuthService } from "jslib-common/services/auth.service";
 import { ConsoleLogService } from "jslib-common/services/consoleLog.service";
@@ -62,14 +63,24 @@ import { ThemeType } from "jslib-common/enums/themeType";
 
 import { StateService as StateServiceAbstraction } from "../../services/abstractions/state.service";
 
-function getBgService<T>(service: string) {
-  return (): T => {
-    const page = BrowserApi.getBackgroundPage();
-    return page ? (page.bitwardenMain[service] as T) : null;
-  };
-}
+import MainBackground from "../../background/main.background";
 
 const isPrivateMode = BrowserApi.getBackgroundPage() == null;
+const mainBackground: MainBackground = isPrivateMode
+  ? createLocalBgService()
+  : BrowserApi.getBackgroundPage().bitwardenMain;
+
+function createLocalBgService() {
+  const localBgService = new MainBackground(true);
+  localBgService.bootstrap();
+  return localBgService;
+}
+
+function getBgService<T>(service: keyof MainBackground) {
+  return (): T => {
+    return mainBackground ? (mainBackground[service] as any as T) : null;
+  };
+}
 
 export function initFactory(
   platformUtilsService: PlatformUtilsService,
@@ -89,33 +100,47 @@ export function initFactory(
       window.document.body.classList.add("body-sm");
     }
 
-    if (!isPrivateMode) {
-      const htmlEl = window.document.documentElement;
-      const theme = await platformUtilsService.getEffectiveTheme();
-      htmlEl.classList.add("theme_" + theme);
-      platformUtilsService.onDefaultSystemThemeChange(async (sysTheme) => {
-        const bwTheme = await stateService.getTheme();
-        if (bwTheme == null || bwTheme === ThemeType.System) {
-          htmlEl.classList.remove("theme_" + ThemeType.Light, "theme_" + ThemeType.Dark);
-          htmlEl.classList.add("theme_" + sysTheme);
-        }
-      });
-      htmlEl.classList.add("locale_" + i18nService.translationLocale);
-
-      // Workaround for slow performance on external monitors on Chrome + MacOS
-      // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
-      if (
-        platformUtilsService.isChrome() &&
-        navigator.platform.indexOf("Mac") > -1 &&
-        popupUtilsService.inPopup(window) &&
-        (window.screenLeft < 0 ||
-          window.screenTop < 0 ||
-          window.screenLeft > window.screen.width ||
-          window.screenTop > window.screen.height)
-      ) {
-        htmlEl.classList.add("force_redraw");
-        logService.info("Force redraw is on");
+    const htmlEl = window.document.documentElement;
+    const theme = await platformUtilsService.getEffectiveTheme();
+    htmlEl.classList.add("theme_" + theme);
+    platformUtilsService.onDefaultSystemThemeChange(async (sysTheme) => {
+      const bwTheme = await stateService.getTheme();
+      if (bwTheme == null || bwTheme === ThemeType.System) {
+        htmlEl.classList.remove("theme_" + ThemeType.Light, "theme_" + ThemeType.Dark);
+        htmlEl.classList.add("theme_" + sysTheme);
       }
+    });
+    htmlEl.classList.add("locale_" + i18nService.translationLocale);
+
+    // Workaround for slow performance on external monitors on Chrome + MacOS
+    // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
+    if (
+      platformUtilsService.isChrome() &&
+      navigator.platform.indexOf("Mac") > -1 &&
+      popupUtilsService.inPopup(window) &&
+      (window.screenLeft < 0 ||
+        window.screenTop < 0 ||
+        window.screenLeft > window.screen.width ||
+        window.screenTop > window.screen.height)
+    ) {
+      htmlEl.classList.add("force_redraw");
+      logService.info("Force redraw is on");
+    }
+    htmlEl.classList.add("locale_" + i18nService.translationLocale);
+
+    // Workaround for slow performance on external monitors on Chrome + MacOS
+    // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
+    if (
+      platformUtilsService.isChrome() &&
+      navigator.platform.indexOf("Mac") > -1 &&
+      popupUtilsService.inPopup(window) &&
+      (window.screenLeft < 0 ||
+        window.screenTop < 0 ||
+        window.screenLeft > window.screen.width ||
+        window.screenTop > window.screen.height)
+    ) {
+      htmlEl.classList.add("force_redraw");
+      logService.info("Force redraw is on");
     }
   };
 }
@@ -126,8 +151,7 @@ export function initFactory(
   providers: [
     {
       provide: LOCALE_ID,
-      useFactory: () =>
-        isPrivateMode ? null : getBgService<I18nService>("i18nService")().translationLocale,
+      useFactory: () => getBgService<I18nService>("i18nService")().translationLocale,
       deps: [],
     },
     {
@@ -142,12 +166,23 @@ export function initFactory(
       ],
       multi: true,
     },
-    LaunchGuardService,
     { provide: BaseLockGuardService, useClass: LockGuardService },
     { provide: BaseUnauthGuardService, useClass: UnauthGuardService },
     DebounceNavigationService,
-    PopupUtilsService,
-    { provide: MessagingService, useClass: BrowserMessagingService },
+    { provide: PopupUtilsService, useFactory: () => new PopupUtilsService(isPrivateMode) },
+    {
+      provide: MessagingService,
+      useFactory: () => {
+        return isPrivateMode
+          ? new BrowserMessagingPrivateModePopupService()
+          : new BrowserMessagingService();
+      },
+    },
+    {
+      provide: TwoFactorService,
+      useFactory: getBgService<TwoFactorService>("twoFactorService"),
+      deps: [],
+    },
     {
       provide: TwoFactorService,
       useFactory: getBgService<TwoFactorService>("twoFactorService"),
@@ -165,14 +200,12 @@ export function initFactory(
         logService: ConsoleLogService,
         i18nService: I18nService
       ) => {
-        return isPrivateMode
-          ? null
-          : new PopupSearchService(
-              getBgService<SearchService>("searchService")(),
-              cipherService,
-              logService,
-              i18nService
-            );
+        return new PopupSearchService(
+          getBgService<SearchService>("searchService")(),
+          cipherService,
+          logService,
+          i18nService
+        );
       },
       deps: [CipherService, LogServiceAbstraction, I18nService],
     },

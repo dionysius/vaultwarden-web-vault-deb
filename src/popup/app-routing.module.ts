@@ -3,9 +3,9 @@ import { ActivatedRouteSnapshot, RouteReuseStrategy, RouterModule, Routes } from
 
 import { AuthGuardService } from "jslib-angular/services/auth-guard.service";
 import { LockGuardService } from "jslib-angular/services/lock-guard.service";
+import { UnauthGuardService } from "jslib-angular/services/unauth-guard.service";
 
 import { DebounceNavigationService } from "./services/debounceNavigationService";
-import { LaunchGuardService } from "./services/launch-guard.service";
 
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
@@ -23,7 +23,6 @@ import { UpdateTempPasswordComponent } from "./accounts/update-temp-password.com
 import { PasswordGeneratorHistoryComponent } from "./generator/password-generator-history.component";
 import { PasswordGeneratorComponent } from "./generator/password-generator.component";
 
-import { PrivateModeComponent } from "./private-mode.component";
 import { TabsComponent } from "./tabs.component";
 
 import { ExcludedDomainsComponent } from "./settings/excluded-domains.component";
@@ -63,13 +62,13 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
-    canActivate: [LaunchGuardService],
+    canActivate: [UnauthGuardService],
     data: { state: "home" },
   },
   {
     path: "login",
     component: LoginComponent,
-    canActivate: [LaunchGuardService],
+    canActivate: [UnauthGuardService],
     data: { state: "login" },
   },
   {
@@ -81,19 +80,19 @@ const routes: Routes = [
   {
     path: "2fa",
     component: TwoFactorComponent,
-    canActivate: [LaunchGuardService],
+    canActivate: [UnauthGuardService],
     data: { state: "2fa" },
   },
   {
     path: "2fa-options",
     component: TwoFactorOptionsComponent,
-    canActivate: [LaunchGuardService],
+    canActivate: [UnauthGuardService],
     data: { state: "2fa-options" },
   },
   {
     path: "sso",
     component: SsoComponent,
-    canActivate: [LaunchGuardService],
+    canActivate: [UnauthGuardService],
     data: { state: "sso" },
   },
   {
@@ -110,19 +109,19 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent,
-    canActivate: [LaunchGuardService],
+    canActivate: [UnauthGuardService],
     data: { state: "register" },
   },
   {
     path: "hint",
     component: HintComponent,
-    canActivate: [LaunchGuardService],
+    canActivate: [UnauthGuardService],
     data: { state: "hint" },
   },
   {
     path: "environment",
     component: EnvironmentComponent,
-    canActivate: [LaunchGuardService],
+    canActivate: [UnauthGuardService],
     data: { state: "environment" },
   },
   {
@@ -234,11 +233,6 @@ const routes: Routes = [
     component: OptionsComponent,
     canActivate: [AuthGuardService],
     data: { state: "options" },
-  },
-  {
-    path: "private-mode",
-    component: PrivateModeComponent,
-    data: { state: "private-mode" },
   },
   {
     path: "clone-cipher",

@@ -8,7 +8,6 @@ import { BrowserApi } from "../browser/browserApi";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 
@@ -39,14 +38,10 @@ export class AppComponent implements OnInit {
     private changeDetectorRef: ChangeDetectorRef,
     private ngZone: NgZone,
     private sanitizer: DomSanitizer,
-    private platformUtilsService: PlatformUtilsService,
-    private keyConnectoService: KeyConnectorService
+    private platformUtilsService: PlatformUtilsService
   ) {}
 
   ngOnInit() {
-    if (BrowserApi.getBackgroundPage() == null) {
-      return;
-    }
     this.stateService.activeAccount.subscribe((userId) => {
       this.activeUserId = userId;
     });

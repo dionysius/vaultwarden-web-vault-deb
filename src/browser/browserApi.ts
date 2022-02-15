@@ -84,6 +84,14 @@ export class BrowserApi {
     });
   }
 
+  static async getPrivateModeWindows(): Promise<browser.windows.Window[]> {
+    return (await browser.windows.getAll()).filter((win) => win.incognito);
+  }
+
+  static async onWindowCreated(callback: (win: chrome.windows.Window) => any) {
+    return chrome.windows.onCreated.addListener(callback);
+  }
+
   static getBackgroundPage(): any {
     return chrome.extension.getBackgroundPage();
   }

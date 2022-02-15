@@ -18,6 +18,15 @@ export class StateService
     await super.addAccount(account);
   }
 
+  async getIsAuthenticated(options?: StorageOptions): Promise<boolean> {
+    // Firefox Private Mode can clash with non-Private Mode because they both read from the same onDiskOptions
+    // Check that there is an account in memory before considering the user authenticated
+    return (
+      (await super.getIsAuthenticated(options)) &&
+      (await this.getAccount(this.defaultInMemoryOptions)) != null
+    );
+  }
+
   async getBrowserGroupingComponentState(
     options?: StorageOptions
   ): Promise<BrowserGroupingsComponentState> {

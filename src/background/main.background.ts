@@ -92,6 +92,7 @@ import { PopupUtilsService } from "../popup/services/popup-utils.service";
 import AutofillService from "../services/autofill.service";
 import { BrowserCryptoService } from "../services/browserCrypto.service";
 import BrowserMessagingService from "../services/browserMessaging.service";
+import BrowserMessagingPrivateModeBackgroundService from "../services/browserMessagingPrivateModeBackground.service";
 import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
 import BrowserStorageService from "../services/browserStorage.service";
 import I18nService from "../services/i18n.service";
@@ -100,7 +101,6 @@ import VaultTimeoutService from "../services/vaultTimeout.service";
 
 import { Account } from "../models/account";
 
-import { GlobalStateFactory } from "jslib-common/factories/globalStateFactory";
 import { StateFactory } from "jslib-common/factories/stateFactory";
 
 export default class MainBackground {
@@ -165,9 +165,11 @@ export default class MainBackground {
   private isSafari: boolean;
   private nativeMessagingBackground: NativeMessagingBackground;
 
-  constructor() {
+  constructor(public isPrivateMode: boolean = false) {
     // Services
-    this.messagingService = new BrowserMessagingService();
+    this.messagingService = isPrivateMode
+      ? new BrowserMessagingPrivateModeBackgroundService()
+      : new BrowserMessagingService();
     this.storageService = new BrowserStorageService();
     this.secureStorageService = new BrowserStorageService();
     this.logService = new ConsoleLogService(false);
@@ -362,7 +364,7 @@ export default class MainBackground {
       this.logService,
       this.stateService
     );
-    this.popupUtilsService = new PopupUtilsService(this.platformUtilsService);
+    this.popupUtilsService = new PopupUtilsService(isPrivateMode);
 
     this.userVerificationService = new UserVerificationService(
       this.cryptoService,
@@ -404,7 +406,6 @@ export default class MainBackground {
       this.systemService,
       this.environmentService,
       this.messagingService,
-      this.stateService,
       this.logService
     );
     this.nativeMessagingBackground = new NativeMessagingBackground(
@@ -502,6 +503,16 @@ export default class MainBackground {
     await this.webRequestBackground.init();
     await this.windowsBackground.init();
 
+    if (this.platformUtilsService.isFirefox && !this.isPrivateMode) {
+      // Set new Private Mode windows to the default icon - they do not share state with the background page
+      BrowserApi.onWindowCreated(async (win) => {
+        if (win.incognito) {
+          await this.actionSetIcon(chrome.browserAction, "", win.id);
+          await this.actionSetIcon(this.sidebarAction, "", win.id);
+        }
+      });
+    }
+
     return new Promise<void>((resolve) => {
       setTimeout(async () => {
         await this.environmentService.setUrlsFromStorage();
@@ -514,7 +525,7 @@ export default class MainBackground {
   }
 
   async setIcon() {
-    if (!chrome.browserAction && !this.sidebarAction) {
+    if ((!chrome.browserAction && !this.sidebarAction) || this.isPrivateMode) {
       return;
     }
 
@@ -928,7 +939,7 @@ export default class MainBackground {
     });
   }
 
-  private async actionSetIcon(theAction: any, suffix: string): Promise<any> {
+  private async actionSetIcon(theAction: any, suffix: string, windowId?: number): Promise<any> {
     if (!theAction || !theAction.setIcon) {
       return;
     }
@@ -938,6 +949,7 @@ export default class MainBackground {
         19: "images/icon19" + suffix + ".png",
         38: "images/icon38" + suffix + ".png",
       },
+      windowId: windowId,
     };
 
     if (this.platformUtilsService.isFirefox()) {

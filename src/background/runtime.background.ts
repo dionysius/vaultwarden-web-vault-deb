@@ -31,7 +31,6 @@ export default class RuntimeBackground {
     private systemService: SystemService,
     private environmentService: EnvironmentService,
     private messagingService: MessagingService,
-    private stateService: StateService,
     private logService: LogService
   ) {
     // onInstalled listener must be wired up before anything else, so we do it in the ctor
@@ -46,12 +45,18 @@ export default class RuntimeBackground {
     }
 
     await this.checkOnInstalled();
-    BrowserApi.messageListener(
-      "runtime.background",
-      async (msg: any, sender: chrome.runtime.MessageSender, sendResponse: any) => {
-        await this.processMessage(msg, sender, sendResponse);
-      }
-    );
+    const backgroundMessageListener = async (
+      msg: any,
+      sender: chrome.runtime.MessageSender,
+      sendResponse: any
+    ) => {
+      await this.processMessage(msg, sender, sendResponse);
+    };
+
+    BrowserApi.messageListener("runtime.background", backgroundMessageListener);
+    if (this.main.isPrivateMode) {
+      (window as any).bitwardenBackgroundMessageListener = backgroundMessageListener;
+    }
   }
 
   async processMessage(msg: any, sender: any, sendResponse: any) {
@@ -60,7 +65,7 @@ export default class RuntimeBackground {
       case "unlocked":
         let item: LockedVaultPendingNotificationsItem;
 
-        if (this.lockedVaultPendingNotifications.length > 0) {
+        if (this.lockedVaultPendingNotifications?.length > 0) {
           await BrowserApi.closeLoginTab();
 
           item = this.lockedVaultPendingNotifications.pop();
