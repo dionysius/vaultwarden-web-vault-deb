@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   chrome.storage.local.get(activeUserId, (obj: any) => {
-    if (obj === null) {
+    if (obj?.[activeUserId] == null) {
       return;
     }
 

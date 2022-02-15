@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   chrome.storage.local.get(activeUserId, (obj: any) => {
-    if (obj != null && obj[activeUserId].settings.enableAutoFillOnPageLoad === true) {
+    if (obj?.[activeUserId]?.settings?.enableAutoFillOnPageLoad === true) {
       setInterval(() => doFillIfNeeded(), 500);
     }
   });
