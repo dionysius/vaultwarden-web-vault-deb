@@ -105,7 +105,7 @@ const plugins = [
     process: "process/browser",
   }),
   new webpack.SourceMapDevToolPlugin({
-    exclude: /content\/.*/,
+    exclude: [/content\/.*/, /notification\/.*/],
     filename: "[file].map",
   }),
 ];
@@ -129,7 +129,7 @@ const config = {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        exclude: /content\/.*/,
+        exclude: [/content\/.*/, /notification\/.*/],
       }),
     ],
     splitChunks: {
