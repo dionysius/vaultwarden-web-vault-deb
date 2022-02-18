@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "قفل گاوصندوق"
   },
-  "privateModeMessage": {
-    "message": "متأسفانه این پنجره در حالت خصوصی برای این مرورگر در دسترس نیست."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "فیلدهای سفارشی"

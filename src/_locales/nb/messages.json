@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Lås hvelvet"
   },
-  "privateModeMessage": {
-    "message": "Dessverre er dette vinduet ikke tilgjengelig i privat modus for denne nettleseren."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "Tilpassede felter"

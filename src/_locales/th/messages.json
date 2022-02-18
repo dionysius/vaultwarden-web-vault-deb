@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "ล็อกตู้เซฟ"
   },
-  "privateModeMessage": {
-    "message": "Unfortunately this window is not available in private mode for this browser."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "Custom Fields"

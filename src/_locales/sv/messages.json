@@ -95,10 +95,10 @@
     "message": "Inga matchande inloggningar."
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "Lås upp ditt valv"
   },
   "loginToVaultMenu": {
-    "message": "Log in to your vault"
+    "message": "Logga in i ditt valv"
   },
   "autoFillInfo": {
     "message": "Det finns inga inloggningar tillgängliga för automatisk ifyllnad på den nuvarande fliken."
@@ -122,7 +122,7 @@
     "message": "Fortsätt"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Skicka en verifieringskod till din e-postadress"
   },
   "sendCode": {
     "message": "Skicka kod"
@@ -230,10 +230,10 @@
     "message": "Längd"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Versaler (A-Ö)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Gemener (a-ö)"
   },
   "numbers": {
     "message": "Siffror (0-9)"
@@ -801,7 +801,7 @@
     "message": "Om din inloggning har en autentiseringsnyckel kopplad till den, kommer TOTP-verifieringskoden att automatiskt kopieras till urklipp när du automatiskt fyller i inloggningen."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+    "message": "Fråga inte efter biometri vid uppstart"
   },
   "premiumRequired": {
     "message": "Premium krävs"
@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Lås valvet"
   },
-  "privateModeMessage": {
-    "message": "Det här fönstret är tyvärr inte tillgängligt i privat läge för denna webbläsare."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "Anpassade fält"
@@ -1607,7 +1607,7 @@
     "message": "Tog bort lösenord"
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Raderade Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1713,7 +1713,7 @@
     "message": "Nytt lösenord"
   },
   "sendDisabled": {
-    "message": "Send Disabled",
+    "message": "Send inaktiverad",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1798,16 +1798,16 @@
     "message": "Ditt huvudlösenord ändrades nyligen av en administratör i din organisation. För att få tillgång till valvet måste du uppdatera det nu. Om du fortsätter kommer du att loggas ut från din nuvarande session, vilket kräver att du loggar in igen. Aktiva sessioner på andra enheter kan komma att vara aktiva i upp till en timme."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatiskt deltagande"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Denna organisation har en företagspolicy som automatiskt registrerar dig för lösenordsåterställning. Deltagandet gör det möjligt för organisationsadministratörer att ändra ditt huvudlösenord."
   },
   "selectFolder": {
     "message": "Välj mapp…"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "För att slutföra inloggning med SSO, ange ett huvudlösenord för att komma åt och skydda ditt valv."
   },
   "hours": {
     "message": "Timmar"
@@ -1816,7 +1816,7 @@
     "message": "Minuter"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Dina organisationsprinciper påverkar ditt valvs tid för timeout. Maximal tillåten tid innan timeout är $HOURS$ timmar och $MINUTES$ minuter",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1829,22 +1829,22 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Ditt valvs tid för timeout överskrider de begränsningar som fastställts av din organisation."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Valvexport inaktiverad"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "En eller flera organisationsprinciper hindrar dig från att exportera ditt personliga valv."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Det gick inte att identifiera något giltigt formulärelement. Prova med att inspektera HTML-koden istället."
+    "message": "Det gick inte att identifiera något giltigt formulärelement. Prova att inspektera HTML-koden istället."
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Ingen unik identifierare hittades."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ använder SSO med en egen nyckelserver. Ett huvudlösenord krävs inte längre för att logga in för medlemmar i denna organisation.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1859,7 +1859,7 @@
     "message": "Ta bort huvudlösenord"
   },
   "removedMasterPassword": {
-    "message": "Huvudlösenord togs bort"
+    "message": "Huvudlösenord togs bort."
   },
   "leaveOrganizationConfirmation": {
     "message": "Är du säker på att du vill lämna denna organisation?"

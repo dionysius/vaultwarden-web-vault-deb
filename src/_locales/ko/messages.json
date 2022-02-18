@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "보관함 잠그기"
   },
-  "privateModeMessage": {
-    "message": "죄송합니다. 이 브라우저에서는 시크릿 창에서 이 창을 사용할 수 없습니다."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "사용자 지정 필드"

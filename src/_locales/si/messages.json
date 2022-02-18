@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "සුරක්ෂිතාගාරය ලොක් කරන්න"
   },
-  "privateModeMessage": {
-    "message": "අවාසනාවකට මෙන් මෙම කවුළුව මෙම බ්රව්සරය සඳහා පුද්ගලික ප්රකාරයේදී ලබා ගත නොහැක."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "අභිරුචි ක්ෂේත්ර"

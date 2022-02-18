@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Zamknúť trezor"
   },
-  "privateModeMessage": {
-    "message": "Bohužiaľ, toto okno nie je dostupné v privátnom režime prehliadača."
+  "privateModeWarning": {
+    "message": "Podpora privátneho režimu je experimentálna a niektoré funkcie sú obmedzené."
   },
   "customFields": {
     "message": "Vlastné polia"

@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "वॉल्ट लॉक करें"
   },
-  "privateModeMessage": {
-    "message": "दुर्भाग्य से यह विंडो इस ब्राउज़र के लिए निजी मोड में उपलब्ध नहीं है।"
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "Custom Fields"

@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Lås boksen"
   },
-  "privateModeMessage": {
-    "message": "Desværre er dette vindue ikke tilgængelig i privat modus i denne browser."
+  "privateModeWarning": {
+    "message": "Understøttelse af privat tilstand er eksperimentel, og nogle funktioner er begrænsede."
   },
   "customFields": {
     "message": "Brugerdefinerede felter"

@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Κλειδώστε το vault"
   },
-  "privateModeMessage": {
-    "message": "Δυστυχώς, αυτό το παράθυρο δεν είναι διαθέσιμο σε ιδιωτική λειτουργία για αυτό το πρόγραμμα περιήγησης."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "Προσαρμοσμένα Πεδία"

@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "ভল্ট লক করুন"
   },
-  "privateModeMessage": {
-    "message": "দুর্ভাগ্যক্রমে এই উইন্ডোটি এই ব্রাউজারের জন্য ব্যক্তিগত মোডে উপলব্ধ নয়।"
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "পছন্দসই ক্ষেত্র"

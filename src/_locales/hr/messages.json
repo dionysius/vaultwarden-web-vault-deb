@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Zaključaj trezor"
   },
-  "privateModeMessage": {
-    "message": "Nažalost, ovaj prozor nije dostupan u privatnom načinu ovog preglednika."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "Prilagođena polja"

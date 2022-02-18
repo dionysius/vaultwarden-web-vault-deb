@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Tanca la caixa forta"
   },
-  "privateModeMessage": {
-    "message": "Malauradament, aquesta finestra no està disponible en el mode privat d'aquest navegador."
+  "privateModeWarning": {
+    "message": "El suport del mode privat és experimental i algunes funcions són limitades."
   },
   "customFields": {
     "message": "Camps personalitzats"

@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Zamknout trezor"
   },
-  "privateModeMessage": {
-    "message": "Bohužel toto okno není v tomto prohlížeči k dispozici v soukromém režimu."
+  "privateModeWarning": {
+    "message": "Podpora soukromého režimu je experimentální a některé funkce jsou omezené."
   },
   "customFields": {
     "message": "Vlastní pole"

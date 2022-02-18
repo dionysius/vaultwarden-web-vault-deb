@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Verrouiller le coffre"
   },
-  "privateModeMessage": {
-    "message": "Malheureusement cette fenêtre n'est pas disponible en navigation privée pour ce navigateur."
+  "privateModeWarning": {
+    "message": "La prise en charge de la navigation privée est expérimentale et certaines fonctionnalités sont limitées."
   },
   "customFields": {
     "message": "Champs personnalisés"

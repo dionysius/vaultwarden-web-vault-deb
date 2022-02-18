@@ -236,7 +236,7 @@
     "message": "Kisbetűs (a-z)"
   },
   "numbers": {
-    "message": "Számot (0-9)"
+    "message": "Számok (0-9)"
   },
   "specialCharacters": {
     "message": "Speciális karakterek (!@#$%^&*)"
@@ -585,7 +585,7 @@
     "message": "A Bitwarden megjegyezze ezt a jelszót?"
   },
   "notificationAddSave": {
-    "message": "Megment"
+    "message": "Mentés"
   },
   "disableChangedPasswordNotification": {
     "message": "Megváltozott jelszó értesítés letiltása"
@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "A széf zárolása"
   },
-  "privateModeMessage": {
-    "message": "Ebben a böngészőben ez az ablak sajnos nem érhető el privát módban."
+  "privateModeWarning": {
+    "message": "A privát mód támogatása kísérleti és néhány funkció korlátozott."
   },
   "customFields": {
     "message": "Egyedi mezők"

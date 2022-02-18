@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Bloquear la caja fuerte"
   },
-  "privateModeMessage": {
-    "message": "Lamentablemente esta ventana no está disponible en el modo privado de este navegador."
+  "privateModeWarning": {
+    "message": "Private mode support is experimental and some features are limited."
   },
   "customFields": {
     "message": "Campos personalizados"

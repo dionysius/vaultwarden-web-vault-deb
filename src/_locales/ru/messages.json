@@ -980,8 +980,8 @@
   "commandLockVaultDesc": {
     "message": "Заблокировать хранилище"
   },
-  "privateModeMessage": {
-    "message": "К сожалению, это окно недоступно в приватном режиме этого браузера."
+  "privateModeWarning": {
+    "message": "Частный режим - экспериментальный, некоторые функции ограничены."
   },
   "customFields": {
     "message": "Пользовательские поля"
