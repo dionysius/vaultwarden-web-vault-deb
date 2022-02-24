@@ -479,7 +479,8 @@ export default class MainBackground {
       this.keyConnectorService,
       this.environmentService,
       this.stateService,
-      this.twoFactorService
+      this.twoFactorService,
+      this.i18nService
     );
   }
 
