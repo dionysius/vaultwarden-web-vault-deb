@@ -1,11 +1,9 @@
 import { DatePipe, Location } from "@angular/common";
-
 import { Component } from "@angular/core";
-
 import { ActivatedRoute, Router } from "@angular/router";
-
 import { first } from "rxjs/operators";
 
+import { AddEditComponent as BaseAddEditComponent } from "jslib-angular/components/send/add-edit.component";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { LogService } from "jslib-common/abstractions/log.service";
@@ -15,10 +13,7 @@ import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { SendService } from "jslib-common/abstractions/send.service";
 
 import { StateService } from "../../services/abstractions/state.service";
-
 import { PopupUtilsService } from "../services/popup-utils.service";
-
-import { AddEditComponent as BaseAddEditComponent } from "jslib-angular/components/send/add-edit.component";
 
 @Component({
   selector: "app-send-add-edit",

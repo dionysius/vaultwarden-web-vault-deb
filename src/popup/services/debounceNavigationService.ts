@@ -1,6 +1,5 @@
 import { Injectable, OnDestroy } from "@angular/core";
 import { CanActivate, NavigationEnd, NavigationStart, Router } from "@angular/router";
-
 import { Subscription } from "rxjs";
 import { filter, pairwise } from "rxjs/operators";
 

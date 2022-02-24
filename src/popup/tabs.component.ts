@@ -7,7 +7,7 @@ import { PopupUtilsService } from "./services/popup-utils.service";
   templateUrl: "tabs.component.html",
 })
 export class TabsComponent implements OnInit {
-  showCurrentTab: boolean = true;
+  showCurrentTab = true;
 
   constructor(private popupUtilsService: PopupUtilsService) {}
 

@@ -1,7 +1,6 @@
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
 import { UriMatchType } from "jslib-common/enums/uriMatchType";
 
 export default class WebRequestBackground {
@@ -35,6 +34,7 @@ export default class WebRequestBackground {
         this.pendingAuthRequests.push(details.requestId);
 
         if (this.isFirefox) {
+          // eslint-disable-next-line
           return new Promise(async (resolve, reject) => {
             await this.resolveAuthCredentials(details.url, resolve, reject);
           });
@@ -57,6 +57,7 @@ export default class WebRequestBackground {
     );
   }
 
+  // eslint-disable-next-line
   private async resolveAuthCredentials(domain: string, success: Function, error: Function) {
     if (await this.vaultTimeoutService.isLocked()) {
       error();

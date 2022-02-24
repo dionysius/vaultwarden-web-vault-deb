@@ -1,17 +1,16 @@
-import { BrowserApi } from "../browser/browserApi";
-
-import MainBackground from "./main.background";
-
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { EventService } from "jslib-common/abstractions/event.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { TotpService } from "jslib-common/abstractions/totp.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
 import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
 import { EventType } from "jslib-common/enums/eventType";
 import { CipherView } from "jslib-common/models/view/cipherView";
+
+import { BrowserApi } from "../browser/browserApi";
+
+import MainBackground from "./main.background";
 import LockedVaultPendingNotificationsItem from "./models/lockedVaultPendingNotificationsItem";
 
 export default class ContextMenusBackground {

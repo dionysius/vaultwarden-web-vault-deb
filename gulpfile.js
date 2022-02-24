@@ -1,13 +1,15 @@
-const gulp = require("gulp"),
-  gulpif = require("gulp-if"),
-  filter = require("gulp-filter"),
-  replace = require("gulp-replace"),
-  jeditor = require("gulp-json-editor"),
-  child = require("child_process"),
-  zip = require("gulp-zip"),
-  manifest = require("./src/manifest.json"),
-  del = require("del"),
-  fs = require("fs");
+const child = require("child_process");
+const fs = require("fs");
+
+const del = require("del");
+const gulp = require("gulp");
+const filter = require("gulp-filter");
+const gulpif = require("gulp-if");
+const jeditor = require("gulp-json-editor");
+const replace = require("gulp-replace");
+const zip = require("gulp-zip");
+
+const manifest = require("./src/manifest.json");
 
 const paths = {
   build: "./build/",

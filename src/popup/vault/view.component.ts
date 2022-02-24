@@ -1,9 +1,9 @@
 import { Location } from "@angular/common";
 import { ChangeDetectorRef, Component, NgZone } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-
 import { first } from "rxjs/operators";
 
+import { ViewComponent as BaseViewComponent } from "jslib-angular/components/view.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { AuditService } from "jslib-common/abstractions/audit.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
@@ -18,13 +18,10 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { StateService } from "jslib-common/abstractions/state.service";
 import { TokenService } from "jslib-common/abstractions/token.service";
 import { TotpService } from "jslib-common/abstractions/totp.service";
-
+import { CipherType } from "jslib-common/enums/cipherType";
 import { Cipher } from "jslib-common/models/domain/cipher";
 import { LoginUriView } from "jslib-common/models/view/loginUriView";
 
-import { CipherType } from "jslib-common/enums/cipherType";
-
-import { ViewComponent as BaseViewComponent } from "jslib-angular/components/view.component";
 import { BrowserApi } from "../../browser/browserApi";
 import { AutofillService } from "../../services/abstractions/autofill.service";
 import { PopupUtilsService } from "../services/popup-utils.service";

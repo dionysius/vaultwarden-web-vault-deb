@@ -1,9 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { FolderView } from "jslib-common/models/view/folderView";
-
 import { FolderService } from "jslib-common/abstractions/folder.service";
+import { FolderView } from "jslib-common/models/view/folderView";
 
 @Component({
   selector: "app-folders",

@@ -5,8 +5,6 @@ import { AuthGuardService } from "jslib-angular/services/auth-guard.service";
 import { LockGuardService } from "jslib-angular/services/lock-guard.service";
 import { UnauthGuardService } from "jslib-angular/services/unauth-guard.service";
 
-import { DebounceNavigationService } from "./services/debounceNavigationService";
-
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
 import { HomeComponent } from "./accounts/home.component";
@@ -19,12 +17,12 @@ import { SsoComponent } from "./accounts/sso.component";
 import { TwoFactorOptionsComponent } from "./accounts/two-factor-options.component";
 import { TwoFactorComponent } from "./accounts/two-factor.component";
 import { UpdateTempPasswordComponent } from "./accounts/update-temp-password.component";
-
 import { PasswordGeneratorHistoryComponent } from "./generator/password-generator-history.component";
 import { PasswordGeneratorComponent } from "./generator/password-generator.component";
-
-import { TabsComponent } from "./tabs.component";
-
+import { SendAddEditComponent } from "./send/send-add-edit.component";
+import { SendGroupingsComponent } from "./send/send-groupings.component";
+import { SendTypeComponent } from "./send/send-type.component";
+import { DebounceNavigationService } from "./services/debounceNavigationService";
 import { ExcludedDomainsComponent } from "./settings/excluded-domains.component";
 import { ExportComponent } from "./settings/export.component";
 import { FolderAddEditComponent } from "./settings/folder-add-edit.component";
@@ -33,7 +31,7 @@ import { OptionsComponent } from "./settings/options.component";
 import { PremiumComponent } from "./settings/premium.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { SyncComponent } from "./settings/sync.component";
-
+import { TabsComponent } from "./tabs.component";
 import { AddEditComponent } from "./vault/add-edit.component";
 import { AttachmentsComponent } from "./vault/attachments.component";
 import { CiphersComponent } from "./vault/ciphers.component";
@@ -43,10 +41,6 @@ import { GroupingsComponent } from "./vault/groupings.component";
 import { PasswordHistoryComponent } from "./vault/password-history.component";
 import { ShareComponent } from "./vault/share.component";
 import { ViewComponent } from "./vault/view.component";
-
-import { SendAddEditComponent } from "./send/send-add-edit.component";
-import { SendGroupingsComponent } from "./send/send-groupings.component";
-import { SendTypeComponent } from "./send/send-type.component";
 
 const routes: Routes = [
   {
@@ -315,6 +309,7 @@ export class NoRouteReuseStrategy implements RouteReuseStrategy {
     return false;
   }
 
+  // eslint-disable-next-line
   store(route: ActivatedRouteSnapshot, handle: {}) {
     /* Nothing */
   }

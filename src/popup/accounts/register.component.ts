@@ -1,17 +1,16 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
+import { RegisterComponent as BaseRegisterComponent } from "jslib-angular/components/register.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { LogService } from "jslib-common/abstractions/log.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
-import { RegisterComponent as BaseRegisterComponent } from "jslib-angular/components/register.component";
-import { LogService } from "jslib-common/abstractions/log.service";
 
 @Component({
   selector: "app-register",

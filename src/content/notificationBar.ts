@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     const domains = obj[activeUserId].settings.neverDomains;
+    // eslint-disable-next-line
     if (domains != null && domains.hasOwnProperty(window.location.hostname)) {
       return;
     }
@@ -76,11 +77,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 
-  chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: Function) => {
+  chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     processMessages(msg, sendResponse);
   });
 
-  function processMessages(msg: any, sendResponse: Function) {
+  function processMessages(msg: any, sendResponse: (response?: any) => void) {
     if (msg.command === "openNotificationBar") {
       if (inIframe) {
         return;

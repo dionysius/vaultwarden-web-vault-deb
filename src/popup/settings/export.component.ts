@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 
+import { ExportComponent as BaseExportComponent } from "jslib-angular/components/export.component";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
 import { EventService } from "jslib-common/abstractions/event.service";
 import { ExportService } from "jslib-common/abstractions/export.service";
@@ -10,8 +11,6 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-
-import { ExportComponent as BaseExportComponent } from "jslib-angular/components/export.component";
 
 @Component({
   selector: "app-export",

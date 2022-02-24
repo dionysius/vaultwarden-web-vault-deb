@@ -1,16 +1,8 @@
 import { APP_INITIALIZER, LOCALE_ID, NgModule } from "@angular/core";
 
-import { DebounceNavigationService } from "./debounceNavigationService";
-import { LockGuardService } from "./lock-guard.service";
-import { PasswordRepromptService } from "./password-reprompt.service";
-import { UnauthGuardService } from "./unauth-guard.service";
-
 import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
 import { LockGuardService as BaseLockGuardService } from "jslib-angular/services/lock-guard.service";
 import { UnauthGuardService as BaseUnauthGuardService } from "jslib-angular/services/unauth-guard.service";
-
-import { BrowserApi } from "../../browser/browserApi";
-
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { AppIdService } from "jslib-common/abstractions/appId.service";
 import { AuditService } from "jslib-common/abstractions/audit.service";
@@ -46,24 +38,24 @@ import { TotpService } from "jslib-common/abstractions/totp.service";
 import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
 import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
-import { AutofillService } from "../../services/abstractions/autofill.service";
-
-import BrowserMessagingService from "../../services/browserMessaging.service";
-import BrowserMessagingPrivateModePopupService from "../../services/browserMessagingPrivateModePopup.service";
-
+import { ThemeType } from "jslib-common/enums/themeType";
 import { AuthService } from "jslib-common/services/auth.service";
 import { ConsoleLogService } from "jslib-common/services/consoleLog.service";
 import { SearchService } from "jslib-common/services/search.service";
 
+import MainBackground from "../../background/main.background";
+import { BrowserApi } from "../../browser/browserApi";
+import { AutofillService } from "../../services/abstractions/autofill.service";
+import { StateService as StateServiceAbstraction } from "../../services/abstractions/state.service";
+import BrowserMessagingService from "../../services/browserMessaging.service";
+import BrowserMessagingPrivateModePopupService from "../../services/browserMessagingPrivateModePopup.service";
+
+import { DebounceNavigationService } from "./debounceNavigationService";
+import { LockGuardService } from "./lock-guard.service";
+import { PasswordRepromptService } from "./password-reprompt.service";
 import { PopupSearchService } from "./popup-search.service";
 import { PopupUtilsService } from "./popup-utils.service";
-
-import { ThemeType } from "jslib-common/enums/themeType";
-
-import { StateService as StateServiceAbstraction } from "../../services/abstractions/state.service";
-
-import MainBackground from "../../background/main.background";
+import { UnauthGuardService } from "./unauth-guard.service";
 
 const isPrivateMode = BrowserApi.getBackgroundPage() == null;
 const mainBackground: MainBackground = isPrivateMode
@@ -88,7 +80,7 @@ export function initFactory(
   popupUtilsService: PopupUtilsService,
   stateService: StateServiceAbstraction,
   logService: LogServiceAbstraction
-): Function {
+): () => void {
   return async () => {
     await stateService.init();
 

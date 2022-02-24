@@ -3,10 +3,7 @@ import { FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import Swal from "sweetalert2/src/sweetalert2.js";
 
-import { BrowserApi } from "../../browser/browserApi";
-
-import { DeviceType } from "jslib-common/enums/deviceType";
-
+import { ModalService } from "jslib-angular/services/modal.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
@@ -15,11 +12,11 @@ import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-import { PopupUtilsService } from "../services/popup-utils.service";
+import { DeviceType } from "jslib-common/enums/deviceType";
 
-import { ModalService } from "jslib-angular/services/modal.service";
-
+import { BrowserApi } from "../../browser/browserApi";
 import { SetPinComponent } from "../components/set-pin.component";
+import { PopupUtilsService } from "../services/popup-utils.service";
 
 const RateUrls = {
   [DeviceType.ChromeExtension]:
@@ -47,7 +44,7 @@ export class SettingsComponent implements OnInit {
   vaultTimeoutAction: string;
   pin: boolean = null;
   supportsBiometric: boolean;
-  biometric: boolean = false;
+  biometric = false;
   disableAutoBiometricsPrompt = true;
   previousVaultTimeout: number = null;
   showChangeMasterPass = true;
@@ -206,7 +203,7 @@ export class SettingsComponent implements OnInit {
       try {
         granted = await BrowserApi.requestPermission({ permissions: ["nativeMessaging"] });
       } catch (e) {
-        // tslint:disable-next-line
+        // eslint-disable-next-line
         console.error(e);
 
         if (this.platformUtilsService.isFirefox() && this.popupUtilsService.inSidebar(window)) {

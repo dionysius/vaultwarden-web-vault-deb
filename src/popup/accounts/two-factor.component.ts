@@ -2,8 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
-
+import { TwoFactorComponent as BaseTwoFactorComponent } from "jslib-angular/components/two-factor.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
@@ -15,12 +14,10 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { StateService } from "jslib-common/abstractions/state.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
 import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
-
-import { TwoFactorComponent as BaseTwoFactorComponent } from "jslib-angular/components/two-factor.component";
-
-import { PopupUtilsService } from "../services/popup-utils.service";
+import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
 
 import { BrowserApi } from "../../browser/browserApi";
+import { PopupUtilsService } from "../services/popup-utils.service";
 
 const BroadcasterSubscriptionId = "TwoFactorComponent";
 

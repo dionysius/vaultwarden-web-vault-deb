@@ -1,10 +1,10 @@
-import { BrowserApi } from "../browser/browserApi";
-
-import MainBackground from "./main.background";
-
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
+
+import { BrowserApi } from "../browser/browserApi";
+
+import MainBackground from "./main.background";
 import LockedVaultPendingNotificationsItem from "./models/lockedVaultPendingNotificationsItem";
 
 export default class CommandsBackground {

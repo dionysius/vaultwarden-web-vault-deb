@@ -1,0 +1,9 @@
+**/build
+jslib
+webpack.config.js
+karma.conf.js
+gulpfile.js
+src/content/autofill.js
+src/scripts/duo.js
+
+**/node_modules

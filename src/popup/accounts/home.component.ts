@@ -5,7 +5,6 @@ import { EnvironmentService } from "jslib-common/abstractions/environment.servic
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
 import { Utils } from "jslib-common/misc/utils";
 
 @Component({

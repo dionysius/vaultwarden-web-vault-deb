@@ -1,7 +1,5 @@
 import { animate, group, query, style, transition, trigger } from "@angular/animations";
 
-import { BrowserApi } from "../browser/browserApi";
-
 const queryShown = query(
   ":enter, :leave",
   [style({ position: "fixed", width: "100%", height: "100%" })],
@@ -22,7 +20,7 @@ export function queryTranslate(
   axis: string,
   from: number,
   to: number,
-  zIndex: number = 1000
+  zIndex = 1000
 ) {
   return query(
     ":" + direction,
@@ -38,21 +36,11 @@ export function queryTranslate(
   );
 }
 
-export function queryTranslateX(
-  direction: string,
-  from: number,
-  to: number,
-  zIndex: number = 1000
-) {
+export function queryTranslateX(direction: string, from: number, to: number, zIndex = 1000) {
   return queryTranslate(direction, "X", from, to, zIndex);
 }
 
-export function queryTranslateY(
-  direction: string,
-  from: number,
-  to: number,
-  zIndex: number = 1000
-) {
+export function queryTranslateY(direction: string, from: number, to: number, zIndex = 1000) {
   return queryTranslate(direction, "Y", from, to, zIndex);
 }
 
@@ -81,6 +69,7 @@ const inSlideDown = [
   group([queryTranslateY("enter", -100, 0, 1010), queryTranslateY("leave", 0, 0), queryChildRoute]),
 ];
 
+// eslint-disable-next-line
 const outSlideUp = [
   queryShown,
   group([queryTranslateY("enter", 0, 0), queryTranslateY("leave", 0, -100, 1010)]),

@@ -3,17 +3,14 @@ import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { NotificationsService } from "jslib-common/abstractions/notifications.service";
-import { StateService } from "jslib-common/abstractions/state.service";
 import { SystemService } from "jslib-common/abstractions/system.service";
+import { Utils } from "jslib-common/misc/utils";
 
+import { BrowserApi } from "../browser/browserApi";
 import { AutofillService } from "../services/abstractions/autofill.service";
 import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
 
-import { BrowserApi } from "../browser/browserApi";
-
 import MainBackground from "./main.background";
-
-import { Utils } from "jslib-common/misc/utils";
 import LockedVaultPendingNotificationsItem from "./models/lockedVaultPendingNotificationsItem";
 
 export default class RuntimeBackground {
@@ -62,7 +59,7 @@ export default class RuntimeBackground {
   async processMessage(msg: any, sender: any, sendResponse: any) {
     switch (msg.command) {
       case "loggedIn":
-      case "unlocked":
+      case "unlocked": {
         let item: LockedVaultPendingNotificationsItem;
 
         if (this.lockedVaultPendingNotifications?.length > 0) {
@@ -87,6 +84,7 @@ export default class RuntimeBackground {
           );
         }
         break;
+      }
       case "addToLockedVaultPendingNotifications":
         this.lockedVaultPendingNotifications.push(msg.data);
         break;
@@ -122,7 +120,7 @@ export default class RuntimeBackground {
       case "collectPageDetailsResponse":
         switch (msg.sender) {
           case "autofiller":
-          case "autofill_cmd":
+          case "autofill_cmd": {
             const totpCode = await this.autofillService.doAutoFillActiveTab(
               [
                 {
@@ -137,6 +135,7 @@ export default class RuntimeBackground {
               this.platformUtilsService.copyToClipboard(totpCode, { window: window });
             }
             break;
+          }
           case "contextMenu":
             clearTimeout(this.autofillTimeout);
             this.pageDetailsToAutoFill.push({
@@ -150,7 +149,7 @@ export default class RuntimeBackground {
             break;
         }
         break;
-      case "authResult":
+      case "authResult": {
         const vaultUrl = this.environmentService.getWebVaultUrl();
 
         if (msg.referrer == null || Utils.getHostname(vaultUrl) !== msg.referrer) {
@@ -168,10 +167,11 @@ export default class RuntimeBackground {
           this.logService.error("Unable to open sso popout tab");
         }
         break;
-      case "webAuthnResult":
-        const vaultUrl2 = this.environmentService.getWebVaultUrl();
+      }
+      case "webAuthnResult": {
+        const vaultUrl = this.environmentService.getWebVaultUrl();
 
-        if (msg.referrer == null || Utils.getHostname(vaultUrl2) !== msg.referrer) {
+        if (msg.referrer == null || Utils.getHostname(vaultUrl) !== msg.referrer) {
           return;
         }
 
@@ -184,6 +184,7 @@ export default class RuntimeBackground {
           false
         );
         break;
+      }
       case "reloadPopup":
         this.messagingService.send("reloadPopup");
         break;
@@ -198,6 +199,7 @@ export default class RuntimeBackground {
         break;
       case "getClickedElementResponse":
         this.platformUtilsService.copyToClipboard(msg.identifier, { window: window });
+        break;
       default:
         break;
     }

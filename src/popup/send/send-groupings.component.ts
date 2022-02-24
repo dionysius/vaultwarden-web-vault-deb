@@ -1,11 +1,7 @@
 import { ChangeDetectorRef, Component, NgZone } from "@angular/core";
-
 import { Router } from "@angular/router";
 
-import { SendView } from "jslib-common/models/view/sendView";
-
 import { SendComponent as BaseSendComponent } from "jslib-angular/components/send/send.component";
-
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
@@ -15,13 +11,13 @@ import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
 import { SendService } from "jslib-common/abstractions/send.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
+import { SendType } from "jslib-common/enums/sendType";
+import { SendView } from "jslib-common/models/view/sendView";
+
+import { BrowserSendComponentState } from "src/models/browserSendComponentState";
 
 import { StateService } from "../../services/abstractions/state.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
-
-import { SendType } from "jslib-common/enums/sendType";
-
-import { BrowserSendComponentState } from "src/models/browserSendComponentState";
 
 const ComponentId = "SendComponent";
 

@@ -1,12 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
-import { ThemeType } from "jslib-common/enums/themeType";
-import { UriMatchType } from "jslib-common/enums/uriMatchType";
-
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { StateService } from "jslib-common/abstractions/state.service";
 import { TotpService } from "jslib-common/abstractions/totp.service";
+import { ThemeType } from "jslib-common/enums/themeType";
+import { UriMatchType } from "jslib-common/enums/uriMatchType";
 
 @Component({
   selector: "app-options",
@@ -31,9 +30,9 @@ export class OptionsComponent implements OnInit {
   uriMatchOptions: any[];
   clearClipboard: number;
   clearClipboardOptions: any[];
-  showGeneral: boolean = true;
-  showAutofill: boolean = true;
-  showDisplay: boolean = true;
+  showGeneral = true;
+  showAutofill = true;
+  showDisplay = true;
 
   constructor(
     private messagingService: MessagingService,

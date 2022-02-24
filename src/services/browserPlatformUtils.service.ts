@@ -1,13 +1,11 @@
-import { BrowserApi } from "../browser/browserApi";
-import { SafariApp } from "../browser/safariApp";
-
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { ClientType } from "jslib-common/enums/clientType";
 import { DeviceType } from "jslib-common/enums/deviceType";
 import { ThemeType } from "jslib-common/enums/themeType";
 
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-
+import { BrowserApi } from "../browser/browserApi";
+import { SafariApp } from "../browser/safariApp";
 import { StateService } from "../services/abstractions/state.service";
 
 const DialogPromiseExpiration = 600000; // 10 minutes
@@ -162,7 +160,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     confirmText?: string,
     cancelText?: string,
     type?: string,
-    bodyIsHtml: boolean = false
+    bodyIsHtml = false
   ) {
     const dialogId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
     this.messagingService.send("showDialog", {
@@ -239,7 +237,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
           this.clipboardWriteCallback(text, clearMs);
         }
       } catch (e) {
-        // tslint:disable-next-line
+        // eslint-disable-next-line
         console.warn("Copy to clipboard failed.", e);
       } finally {
         doc.body.removeChild(textarea);
@@ -277,7 +275,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
           return textarea.value;
         }
       } catch (e) {
-        // tslint:disable-next-line
+        // eslint-disable-next-line
         console.warn("Read from clipboard failed.", e);
       } finally {
         doc.body.removeChild(textarea);

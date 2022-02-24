@@ -1,11 +1,9 @@
 import { Location } from "@angular/common";
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-
 import { first } from "rxjs/operators";
 
-import { BrowserApi } from "../../browser/browserApi";
-
+import { CiphersComponent as BaseCiphersComponent } from "jslib-angular/components/ciphers.component";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { CollectionService } from "jslib-common/abstractions/collection.service";
@@ -13,18 +11,15 @@ import { FolderService } from "jslib-common/abstractions/folder.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
-
 import { CipherType } from "jslib-common/enums/cipherType";
-
 import { TreeNode } from "jslib-common/models/domain/treeNode";
-
 import { CipherView } from "jslib-common/models/view/cipherView";
 import { CollectionView } from "jslib-common/models/view/collectionView";
 import { FolderView } from "jslib-common/models/view/folderView";
 
-import { CiphersComponent as BaseCiphersComponent } from "jslib-angular/components/ciphers.component";
-
 import { BrowserComponentState } from "src/models/browserComponentState";
+
+import { BrowserApi } from "../../browser/browserApi";
 import { StateService } from "../../services/abstractions/state.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 

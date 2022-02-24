@@ -1,6 +1,7 @@
 import { Component, NgZone } from "@angular/core";
 import { Router } from "@angular/router";
 
+import { LoginComponent as BaseLoginComponent } from "jslib-angular/components/login.component";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
@@ -11,14 +12,12 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { StateService } from "jslib-common/abstractions/state.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
 
-import { LoginComponent as BaseLoginComponent } from "jslib-angular/components/login.component";
-
 @Component({
   selector: "app-login",
   templateUrl: "login.component.html",
 })
 export class LoginComponent extends BaseLoginComponent {
-  protected alwaysRememberEmail: boolean = true;
+  protected alwaysRememberEmail = true;
 
   constructor(
     authService: AuthService,

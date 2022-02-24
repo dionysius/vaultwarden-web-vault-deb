@@ -1,9 +1,9 @@
 import { Location } from "@angular/common";
 import { Component } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-
+import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
+import { AttachmentsComponent as BaseAttachmentsComponent } from "jslib-angular/components/attachments.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
@@ -11,8 +11,6 @@ import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { LogService } from "jslib-common/abstractions/log.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
-import { AttachmentsComponent as BaseAttachmentsComponent } from "jslib-angular/components/attachments.component";
 
 @Component({
   selector: "app-vault-attachments",

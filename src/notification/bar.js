@@ -1,8 +1,9 @@
+// eslint-disable-next-line
 require("./bar.scss");
 
 document.addEventListener("DOMContentLoaded", () => {
-  var i18n = {};
-  var lang = window.navigator.language;
+  let i18n = {};
+  let lang = window.navigator.language;
 
   i18n.appName = chrome.i18n.getMessage("appName");
   i18n.close = chrome.i18n.getMessage("close");
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   i18n.notificationAddDesc = chrome.i18n.getMessage("notificationAddDesc");
   i18n.notificationChangeSave = chrome.i18n.getMessage("notificationChangeSave");
   i18n.notificationChangeDesc = chrome.i18n.getMessage("notificationChangeDesc");
-  lang = chrome.i18n.getUILanguage();
+  lang = chrome.i18n.getUILanguage(); // eslint-disable-line
 
   // delay 50ms so that we get proper body dimensions
   setTimeout(load, 50);
@@ -53,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (getQueryVariable("add")) {
       setContent(document.getElementById("template-add"));
 
-      var addButton = document.querySelector("#template-add-clone .add-save"),
-        neverButton = document.querySelector("#template-add-clone .never-save");
+      var addButton = document.querySelector("#template-add-clone .add-save"), // eslint-disable-line
+        neverButton = document.querySelector("#template-add-clone .never-save"); // eslint-disable-line
 
       addButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -89,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } else if (getQueryVariable("change")) {
       setContent(document.getElementById("template-change"));
-      var changeButton = document.querySelector("#template-change-clone .change-save");
+      var changeButton = document.querySelector("#template-change-clone .change-save"); // eslint-disable-line
       changeButton.addEventListener("click", (e) => {
         e.preventDefault();
 

@@ -14,11 +14,6 @@ const ENV = (process.env.ENV = process.env.NODE_ENV);
 
 const moduleRules = [
   {
-    test: /\.ts$/,
-    enforce: "pre",
-    loader: "tslint-loader",
-  },
-  {
     test: /\.(html)$/,
     loader: "html-loader",
   },

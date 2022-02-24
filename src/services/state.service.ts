@@ -6,6 +6,7 @@ import { Account } from "../models/account";
 import { BrowserComponentState } from "../models/browserComponentState";
 import { BrowserGroupingsComponentState } from "../models/browserGroupingsComponentState";
 import { BrowserSendComponentState } from "../models/browserSendComponentState";
+
 import { StateService as StateServiceAbstraction } from "./abstractions/state.service";
 
 export class StateService

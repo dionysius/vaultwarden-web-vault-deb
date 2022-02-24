@@ -1,14 +1,12 @@
 import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 
+import { PasswordGeneratorComponent as BasePasswordGeneratorComponent } from "jslib-angular/components/password-generator.component";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
 import { CipherView } from "jslib-common/models/view/cipherView";
-
-import { PasswordGeneratorComponent as BasePasswordGeneratorComponent } from "jslib-angular/components/password-generator.component";
 
 @Component({
   selector: "app-password-generator",

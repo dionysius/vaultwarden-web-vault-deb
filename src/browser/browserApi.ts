@@ -1,6 +1,6 @@
-import { SafariApp } from "./safariApp";
-
 import { Utils } from "jslib-common/misc/utils";
+
+import { SafariApp } from "./safariApp";
 
 export class BrowserApi {
   static isWebExtensionsApi: boolean = typeof browser !== "undefined";
@@ -104,7 +104,7 @@ export class BrowserApi {
     return Promise.resolve(chrome.extension.getViews({ type: "popup" }).length > 0);
   }
 
-  static createNewTab(url: string, extensionPage: boolean = false, active: boolean = true) {
+  static createNewTab(url: string, extensionPage = false, active = true) {
     chrome.tabs.create({ url: url, active: active });
   }
 

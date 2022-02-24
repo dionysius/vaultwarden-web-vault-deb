@@ -8,7 +8,7 @@ import { BrowserGroupingsComponentState } from "./browserGroupingsComponentState
 import { BrowserSendComponentState } from "./browserSendComponentState";
 
 export class AccountSettings extends BaseAccountSettings {
-  vaultTimeout: number = -1; // On Restart
+  vaultTimeout = -1; // On Restart
 }
 
 export class Account extends BaseAccount {

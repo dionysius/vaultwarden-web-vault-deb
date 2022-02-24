@@ -1,25 +1,19 @@
-import { CipherType } from "jslib-common/enums/cipherType";
-
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { LoginUriView } from "jslib-common/models/view/loginUriView";
-import { LoginView } from "jslib-common/models/view/loginView";
-
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { FolderService } from "jslib-common/abstractions/folder.service";
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
-import { AutofillService } from "../services/abstractions/autofill.service";
+import { CipherType } from "jslib-common/enums/cipherType";
+import { PolicyType } from "jslib-common/enums/policyType";
+import { Utils } from "jslib-common/misc/utils";
+import { CipherView } from "jslib-common/models/view/cipherView";
+import { LoginUriView } from "jslib-common/models/view/loginUriView";
+import { LoginView } from "jslib-common/models/view/loginView";
 
 import { BrowserApi } from "../browser/browserApi";
+import { AutofillService } from "../services/abstractions/autofill.service";
+import { StateService } from "../services/abstractions/state.service";
 
 import MainBackground from "./main.background";
-
-import { Utils } from "jslib-common/misc/utils";
-
-import { PolicyType } from "jslib-common/enums/policyType";
-
-import { StateService } from "../services/abstractions/state.service";
 import AddChangePasswordQueueMessage from "./models/addChangePasswordQueueMessage";
 import AddLoginQueueMessage from "./models/addLoginQueueMessage";
 import AddLoginRuntimeMessage from "./models/addLoginRuntimeMessage";
@@ -107,13 +101,14 @@ export default class NotificationBackground {
         break;
       case "collectPageDetailsResponse":
         switch (msg.sender) {
-          case "notificationBar":
+          case "notificationBar": {
             const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
             await BrowserApi.tabSendMessageData(msg.tab, "notificationBarPageDetails", {
               details: msg.details,
               forms: forms,
             });
             break;
+          }
           default:
             break;
         }
@@ -253,7 +248,7 @@ export default class NotificationBackground {
     loginDomain: string,
     loginInfo: AddLoginRuntimeMessage,
     tab: chrome.tabs.Tab,
-    isVaultLocked: boolean = false
+    isVaultLocked = false
   ) {
     // remove any old messages for this tab
     this.removeTabFromNotificationQueue(tab);
@@ -304,7 +299,7 @@ export default class NotificationBackground {
     loginDomain: string,
     newPassword: string,
     tab: chrome.tabs.Tab,
-    isVaultLocked: boolean = false
+    isVaultLocked = false
   ) {
     // remove any old messages for this tab
     this.removeTabFromNotificationQueue(tab);

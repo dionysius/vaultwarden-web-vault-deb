@@ -2,25 +2,20 @@ import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { EventService } from "jslib-common/abstractions/event.service";
 import { LogService } from "jslib-common/abstractions/log.service";
 import { TotpService } from "jslib-common/abstractions/totp.service";
-
-import { AutofillService as AutofillServiceInterface } from "./abstractions/autofill.service";
-
 import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
 import { CipherType } from "jslib-common/enums/cipherType";
 import { EventType } from "jslib-common/enums/eventType";
 import { FieldType } from "jslib-common/enums/fieldType";
-
 import { CipherView } from "jslib-common/models/view/cipherView";
 import { FieldView } from "jslib-common/models/view/fieldView";
 
+import { BrowserApi } from "../browser/browserApi";
 import AutofillField from "../models/autofillField";
 import AutofillPageDetails from "../models/autofillPageDetails";
 import AutofillScript from "../models/autofillScript";
-
 import { StateService } from "../services/abstractions/state.service";
 
-import { BrowserApi } from "../browser/browserApi";
-
+import { AutofillService as AutofillServiceInterface } from "./abstractions/autofill.service";
 import {
   AutoFillConstants,
   CreditCardAutoFillConstants,
@@ -45,6 +40,7 @@ export default class AutofillService implements AutofillServiceInterface {
     }
 
     for (const formKey in pageDetails.forms) {
+      // eslint-disable-next-line
       if (!pageDetails.forms.hasOwnProperty(formKey)) {
         continue;
       }
@@ -219,6 +215,7 @@ export default class AutofillService implements AutofillServiceInterface {
       });
 
       pageDetails.fields.forEach((field: any) => {
+        // eslint-disable-next-line
         if (filledFields.hasOwnProperty(field.opid)) {
           return;
         }
@@ -310,6 +307,7 @@ export default class AutofillService implements AutofillServiceInterface {
     }
 
     for (const formKey in pageDetails.forms) {
+      // eslint-disable-next-line
       if (!pageDetails.forms.hasOwnProperty(formKey)) {
         continue;
       }
@@ -375,6 +373,7 @@ export default class AutofillService implements AutofillServiceInterface {
     }
 
     usernames.forEach((u) => {
+      // eslint-disable-next-line
       if (filledFields.hasOwnProperty(u.opid)) {
         return;
       }
@@ -384,6 +383,7 @@ export default class AutofillService implements AutofillServiceInterface {
     });
 
     passwords.forEach((p) => {
+      // eslint-disable-next-line
       if (filledFields.hasOwnProperty(p.opid)) {
         return;
       }
@@ -419,6 +419,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
       for (let i = 0; i < CreditCardAutoFillConstants.CardAttributes.length; i++) {
         const attr = CreditCardAutoFillConstants.CardAttributes[i];
+        // eslint-disable-next-line
         if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
           continue;
         }
@@ -717,6 +718,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
     let doesContain = false;
     CreditCardAutoFillConstants.CardAttributesExtended.forEach((attr) => {
+      // eslint-disable-next-line
       if (doesContain || !field.hasOwnProperty(attr) || !field[attr]) {
         return;
       }
@@ -752,6 +754,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
       for (let i = 0; i < IdentityAutoFillConstants.IdentityAttributes.length; i++) {
         const attr = IdentityAutoFillConstants.IdentityAttributes[i];
+        // eslint-disable-next-line
         if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
           continue;
         }
@@ -1055,6 +1058,7 @@ export default class AutofillService implements AutofillServiceInterface {
           return false;
         }
         // Removes all whitespace, _ and - characters
+        // eslint-disable-next-line
         const cleanedValue = value.toLowerCase().replace(/[\s_\-]/g, "");
 
         if (cleanedValue.indexOf("password") < 0) {
@@ -1279,6 +1283,7 @@ export default class AutofillService implements AutofillServiceInterface {
     let lastPasswordField: AutofillField = null;
 
     for (const opid in filledFields) {
+      // eslint-disable-next-line
       if (filledFields.hasOwnProperty(opid) && filledFields[opid].viewable) {
         lastField = filledFields[opid];
 

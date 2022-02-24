@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
       setInterval(() => doFillIfNeeded(), 500);
     }
   });
-  chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: Function) => {
+  chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     if (msg.command === "fillForm" && pageHref === msg.url) {
       filledThisHref = true;
     }
   });
 
-  function doFillIfNeeded(force: boolean = false) {
+  function doFillIfNeeded(force = false) {
     if (force || pageHref !== window.location.href) {
       if (!force) {
         // Some websites are slow and rendering all page content. Try to fill again later

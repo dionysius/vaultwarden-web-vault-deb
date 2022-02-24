@@ -1,11 +1,9 @@
 import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-
 import { first } from "rxjs/operators";
 
-import { BrowserApi } from "../../browser/browserApi";
-
+import { AddEditComponent as BaseAddEditComponent } from "jslib-angular/components/add-edit.component";
 import { AuditService } from "jslib-common/abstractions/audit.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { CollectionService } from "jslib-common/abstractions/collection.service";
@@ -19,14 +17,11 @@ import { PasswordRepromptService } from "jslib-common/abstractions/passwordRepro
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
-import { PopupUtilsService } from "../services/popup-utils.service";
-
+import { CipherType } from "jslib-common/enums/cipherType";
 import { LoginUriView } from "jslib-common/models/view/loginUriView";
 
-import { AddEditComponent as BaseAddEditComponent } from "jslib-angular/components/add-edit.component";
-
-import { CipherType } from "jslib-common/enums/cipherType";
+import { BrowserApi } from "../../browser/browserApi";
+import { PopupUtilsService } from "../services/popup-utils.service";
 
 @Component({
   selector: "app-vault-add-edit",

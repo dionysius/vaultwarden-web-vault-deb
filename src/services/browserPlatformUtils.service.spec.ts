@@ -1,6 +1,6 @@
-import BrowserPlatformUtilsService from "./browserPlatformUtils.service";
-
 import { DeviceType } from "jslib-common/enums/deviceType";
+
+import BrowserPlatformUtilsService from "./browserPlatformUtils.service";
 
 const platformUtilsFactory = () => new BrowserPlatformUtilsService(null, null, null, null);
 
