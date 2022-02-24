@@ -120,6 +120,11 @@
         }
 
         .action-buttons {
+          &.count {
+            align-self: start;
+            margin-top: 10px;
+          }
+
           .row-btn {
             padding-left: 5px;
             padding-right: 5px;
@@ -255,6 +260,7 @@
     display: block;
     width: 100%;
     margin-bottom: 5px;
+    min-height: 1em;
 
     @include themify($themes) {
       color: themed("mutedColor");
@@ -305,6 +311,7 @@
   .row-main {
     flex-grow: 1;
     min-width: 0;
+    align-self: start;
   }
 
   &.box-content-row-flex,
@@ -455,6 +462,7 @@
 
   .action-buttons {
     display: flex;
+    align-self: start;
     margin-left: 5px;
 
     .row-btn {

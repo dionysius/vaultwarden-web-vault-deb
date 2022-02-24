@@ -164,6 +164,30 @@ p.lead {
   }
 }
 
+.password-character {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  height: 36px;
+  font-weight: 600;
+
+  &:nth-child(odd) {
+    @include themify($themes) {
+      background-color: themed("backgroundColor");
+    }
+  }
+}
+
+.password-count {
+  white-space: nowrap;
+  font-size: 8px;
+
+  @include themify($themes) {
+    color: themed("mutedColor") !important;
+  }
+}
+
 #duo-frame {
   background: url("../images/loading.svg") 0 0 no-repeat;
   width: 100%;
