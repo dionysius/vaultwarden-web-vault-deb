@@ -981,7 +981,7 @@
     "message": "قفل گاوصندوق"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "پشتیبانی حالت خصوصی آزمایشی است و برخی از ویژگی‌ها محدود هستند."
   },
   "customFields": {
     "message": "فیلدهای سفارشی"
@@ -1866,5 +1866,11 @@
   },
   "leftOrganization": {
     "message": "شما از سازمان ها خارج شده اید."
+  },
+  "toggleCharacterCount": {
+    "message": "Toggle character count"
+  },
+  "sessionTimeout": {
+    "message": "Your session has timed out. Please go back and try logging in again."
   }
 }

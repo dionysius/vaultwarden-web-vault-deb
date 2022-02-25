@@ -1866,5 +1866,11 @@
   },
   "leftOrganization": {
     "message": "Vous avez quitté l'organisation."
+  },
+  "toggleCharacterCount": {
+    "message": "Activer/désactiver le compteur de caractères"
+  },
+  "sessionTimeout": {
+    "message": "Votre session a expiré. Veuillez revenir en arrière et essayer de vous connecter à nouveau."
   }
 }

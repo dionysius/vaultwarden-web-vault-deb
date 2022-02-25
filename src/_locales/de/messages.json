@@ -981,7 +981,7 @@
     "message": "Den Tresor sperren"
   },
   "privateModeWarning": {
-    "message": "Die Privatmodusunterstützung ist experimentell und einige Funktionen sind eingeschränkt."
+    "message": "Die Unterstützung des privaten Modus ist experimentell und einige Funktionen sind eingeschränkt."
   },
   "customFields": {
     "message": "Benutzerdefinierte Felder"
@@ -1866,5 +1866,11 @@
   },
   "leftOrganization": {
     "message": "Du hast die Organisation verlassen."
+  },
+  "toggleCharacterCount": {
+    "message": "Zeichenzählung ein-/ausschalten"
+  },
+  "sessionTimeout": {
+    "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut einzuloggen."
   }
 }

@@ -981,7 +981,7 @@
     "message": "Lås hvelvet"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "Støtte for privatmodus er eksperimentelt, og noen funksjoner er begrenset."
   },
   "customFields": {
     "message": "Tilpassede felter"
@@ -1866,5 +1866,11 @@
   },
   "leftOrganization": {
     "message": "Du har forlatt organisasjonen."
+  },
+  "toggleCharacterCount": {
+    "message": "Toggle character count"
+  },
+  "sessionTimeout": {
+    "message": "Your session has timed out. Please go back and try logging in again."
   }
 }

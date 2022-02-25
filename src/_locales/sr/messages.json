@@ -981,7 +981,7 @@
     "message": "Закључај сеф"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "Подршка за приватни режим је експериментална и неке функције су ограничене."
   },
   "customFields": {
     "message": "Прилагођена Поља"
@@ -1866,5 +1866,11 @@
   },
   "leftOrganization": {
     "message": "Напустили сте организацију."
+  },
+  "toggleCharacterCount": {
+    "message": "Пребаци бројање слова"
+  },
+  "sessionTimeout": {
+    "message": "Your session has timed out. Please go back and try logging in again."
   }
 }

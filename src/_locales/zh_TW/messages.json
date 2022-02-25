@@ -1866,5 +1866,11 @@
   },
   "leftOrganization": {
     "message": "您已離開此組織。"
+  },
+  "toggleCharacterCount": {
+    "message": "切換字元計數"
+  },
+  "sessionTimeout": {
+    "message": "您的登入階段已逾時，請返回並嘗試重新登入。"
   }
 }

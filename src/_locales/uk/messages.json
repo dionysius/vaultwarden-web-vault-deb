@@ -981,7 +981,7 @@
     "message": "Заблокувати сховище"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "Приватний режим - це експериментальна функція і деякі можливості обмежені."
   },
   "customFields": {
     "message": "Власні поля"
@@ -1866,5 +1866,11 @@
   },
   "leftOrganization": {
     "message": "Ви покинули організацію."
+  },
+  "toggleCharacterCount": {
+    "message": "Toggle character count"
+  },
+  "sessionTimeout": {
+    "message": "Your session has timed out. Please go back and try logging in again."
   }
 }
