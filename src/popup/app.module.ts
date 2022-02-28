@@ -59,6 +59,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { CalloutComponent } from "jslib-angular/components/callout.component";
+import { ExportScopeCalloutComponent } from "jslib-angular/components/export-scope-callout.component";
 import { IconComponent } from "jslib-angular/components/icon.component";
 import { BitwardenToastModule } from "jslib-angular/components/toastr.component";
 import { A11yTitleDirective } from "jslib-angular/directives/a11y-title.directive";
@@ -221,6 +222,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     EnvironmentComponent,
     ExcludedDomainsComponent,
     ExportComponent,
+    ExportScopeCalloutComponent,
     FallbackSrcDirective,
     FolderAddEditComponent,
     FoldersComponent,
