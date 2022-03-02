@@ -1,4 +1,4 @@
-export default class IconDetails {
+export default interface IconDetails {
   path: {
     19: string;
     38: string;
