@@ -87,6 +87,7 @@ import VaultTimeoutService from "../services/vaultTimeout.service";
 import CommandsBackground from "./commands.background";
 import ContextMenusBackground from "./contextMenus.background";
 import IdleBackground from "./idle.background";
+import IconDetails from "./models/iconDetails";
 import { NativeMessagingBackground } from "./nativeMessaging.background";
 import NotificationBackground from "./notification.background";
 import RuntimeBackground from "./runtime.background";
@@ -938,15 +939,15 @@ export default class MainBackground {
       return;
     }
 
-    const options = {
+    const options: IconDetails = {
       path: {
         19: "images/icon19" + suffix + ".png",
         38: "images/icon38" + suffix + ".png",
       },
-      windowId: windowId,
     };
 
     if (this.platformUtilsService.isFirefox()) {
+      options.windowId = windowId;
       await theAction.setIcon(options);
     } else if (this.platformUtilsService.isSafari()) {
       // Workaround since Safari 14.0.3 returns a pending promise
