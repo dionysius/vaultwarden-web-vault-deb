@@ -87,7 +87,7 @@ import VaultTimeoutService from "../services/vaultTimeout.service";
 import CommandsBackground from "./commands.background";
 import ContextMenusBackground from "./contextMenus.background";
 import IdleBackground from "./idle.background";
-import IconDetails from "./models/IconDetails";
+import IconDetails from "./models/iconDetails";
 import { NativeMessagingBackground } from "./nativeMessaging.background";
 import NotificationBackground from "./notification.background";
 import RuntimeBackground from "./runtime.background";
