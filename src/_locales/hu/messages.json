@@ -1871,6 +1871,18 @@
     "message": "Karakterszámláló váltás"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "A munkamenet lejárt. Lépjünk vissza és próbáljunk újra bejelentlezni."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Személyes széf exportálása"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Csak $EMAIL$ email címmel társított személyes széf elemek kerülnek exportálásra. Ebbe nem kerülnek be a szervezeti széf elemek.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

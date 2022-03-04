@@ -1872,5 +1872,17 @@
   },
   "sessionTimeout": {
     "message": "Je sessie is verlopen. Ga terug en probeer opnieuw in te loggen."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Persoonlijke kluis exporteren"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Exporteert alleen de persoonlijke kluis-items gerelateerd aan $EMAIL$. Geen kluis-items van de organisatie.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

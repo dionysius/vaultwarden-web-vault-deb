@@ -1868,9 +1868,21 @@
     "message": "Oled organisatsioonist lahkunud."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Loenda kirjatähtede hulka"
   },
   "sessionTimeout": {
     "message": "Sessioon on aegunud. Palun mine tagasi ja proovi uuesti sisse logida."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Personaalse hoidla eksportimine"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Ainult personaalsed $EMAIL$ alla kuuluvad kirjed eksportidakse. Organisatsiooni kirjeid ei ekspordita.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

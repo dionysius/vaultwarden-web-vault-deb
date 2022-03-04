@@ -449,7 +449,7 @@
     }
   },
   "autofillError": {
-    "message": "Valitun kohteen automaattinen täyttö tälle sivulle ei onnistu. Kopioi ja liitä tiedot sen sijaan."
+    "message": "Valitun kohteen automaattinen täyttö ei onnistu tällä sivulla. Kopioi ja liitä tiedot sen sijaan itse."
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos"
@@ -556,19 +556,19 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "Älä käytä \"Lisää kirjautumistieto\" -kehotetta"
+    "message": "Älä näytä \"Lisää kirjautumistieto\" -kehotetta"
   },
   "addLoginNotificationDesc": {
     "message": "\"Lisää kirjautumistieto\" -kehote kysyy, haluatko tallentaa kirjautumistiedot holviisi kun kirjaudut niillä ensimmäistä kertaa."
   },
   "dontShowCardsCurrentTab": {
-    "message": "Älä näytä välilehtikohtaisia korttiehdotuksia"
+    "message": "Älä näytä välilehdille korttiehdotuksia"
   },
   "dontShowCardsCurrentTabDesc": {
     "message": "Holvissasi olevat kortit tunnistetaan ja näytetään selaimen avoimelle välilehdelle, jotta niiden valinta täyttöä varten on helppoa."
   },
   "dontShowIdentitiesCurrentTab": {
-    "message": "Älä näytä välilehtikohtaisia henkilöllisyysehdotuksia"
+    "message": "Älä näytä välilehdille henkilöllisyysehdotuksia"
   },
   "dontShowIdentitiesCurrentTabDesc": {
     "message": "Holvissasi olevat henkilöllisyydet tunnistetaan ja näytetään selaimen avoimelle välilehdelle, jotta niiden valinta täyttöä varten on helppoa."
@@ -588,10 +588,10 @@
     "message": "Tallenna"
   },
   "disableChangedPasswordNotification": {
-    "message": "Älä näytä \"Salasana vaihdettu\" -ilmoitusta"
+    "message": "Älä näytä \"Salasana vaihdettu\" -kehotetta"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "\"Salasana vaihdettu\" -ilmoitus ehdottaa holviisi tallennetun salasanan automaattista päivitystä kun se havaitsee, että olet vaihtanut sen verkkosivustolla."
+    "message": "\"Salasana vaihdettu\" -ilmoitus ehdottaa holviisi tallennetun kirjautumistiedon salasanan automaattista päivitystä kun se havaitsee, että olet vaihtanut sen verkkosivustolla."
   },
   "notificationChangeDesc": {
     "message": "Haluatko päivittää salasanan Bitwardeniin?"
@@ -600,7 +600,7 @@
     "message": "Päivitä"
   },
   "disableContextMenuItem": {
-    "message": "Älä käytä hiiren kakkospainikkeen pikavalikon toimintoja"
+    "message": "Älä näytä kontekstivalikon valintoja"
   },
   "disableContextMenuItemDesc": {
     "message": "Hiiren kakkospainikkeen pikavalikon kautta pääset nopeasti käsiksi salasanojen luontiin ja nykyisellä välilehdellä avoinna olevan sivuston kirjautumisteitoihin."
@@ -795,7 +795,7 @@
     "message": "Päivitys on valmis"
   },
   "disableAutoTotpCopy": {
-    "message": "Älä kopioi TOTP-todennuskoodeja automaattisesti"
+    "message": "Älä kopioi TOTP-koodeja automaattisesti"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Jos kirjautumistietoosi on liitetty kaksivaiheisen todennusmenetelmän avain, kopioidaan kaksivaiheisen kirjautumisen TOTP-todennuskoodi automaattisesti leikepöydälle kun suoritat kohteen automaattisen täytön."
@@ -939,10 +939,10 @@
     "message": "Palvelinten URL-osoitteet tallennettiin."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Käytä automaattista täyttöä sivun latautuessa"
+    "message": "Täytä automaattisesti sivun avautuessa"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Jos sivulla havaitaan kirjautumislomake, täytetään kirjautumistiedot automaattisesti sivua ladattaessa."
+    "message": "Jos sivulla havaitaan kirjautumislomake, täytetään kirjautumistiedot automaattisesti sivun avautuessa."
   },
   "experimentalFeature": {
     "message": "Tämä on vielä kokeellinen toiminto. Käytä omalla vastuullasi."
@@ -951,19 +951,19 @@
     "message": "Automaattisen täytön oletusasetus kirjautumistiedoille"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Kun automaattinen täyttö sivun latautuessa on otettu käyttöön, voi toiminnon ottaa käyttöön tai poistaa käytöstä yksittäisille kirjautumistiedoille. Tämä on oletusarvo niille kirjautumistiedoille, joille asetusta ei erikseen ole määritetty."
+    "message": "Kun \"Täytä automaattisesti sivun avautuessa\" on käytössä, voi sen ottaa käyttöön tai poistaa käytöstä yksittäisille kirjautumistiedoille. Tämä on oletusarvo niille kirjautumistiedoille, joille asetusta ei ole erikseen määritetty."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Automaattinen täyttö sivun latautuessa (jos otettu asetuksista käyttöön)"
+    "message": "Automaattinen täyttö sivun avautuessa (jos kytketty asetuksista käyttöön)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Käytä oletusasetusta"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Täytä automaattisesti sivun latautuessa"
+    "message": "Täytä automaattisesti sivun avautuessa"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Älä täytä automaattisesti sivun latautuessa"
+    "message": "Älä täytä automaattisesti sivun avautuessa"
   },
   "commandOpenPopup": {
     "message": "Avaa holvin ponnahdusikkuna"
@@ -1031,7 +1031,7 @@
     "message": "Älä näytä kuvakkeen laskuria"
   },
   "disableBadgeCounterDesc": {
-    "message": "Kuvakkeen laskuri näyttää nykyiseen sivuun kohdistuvien kirjautumistietojen määrän holvissasi."
+    "message": "Työkalupalkin kuvakkeessa näytetään laskuri, joka kertoo avoimeen sivuun kohdistuvien kirjautumistietojen lukumäärän holvissasi."
   },
   "cardholderName": {
     "message": "Kortinhaltijan nimi"
@@ -1872,5 +1872,17 @@
   },
   "sessionTimeout": {
     "message": "Istuntosi on aikakatkaistu. Palaa takaisin ja yritä kirjautua uudelleen."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Henkilökohtaisen holvin vienti"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Vain tunnukseen $EMAIL$ liitetyt henkilökohtaiset holvin kohteet viedään. Organisaation kohteet eivät sisälly tähän.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

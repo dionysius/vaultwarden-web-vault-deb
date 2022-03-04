@@ -95,10 +95,10 @@
     "message": "Δεν υπάρχουν αντιστοιχίσεις σύνδεσης."
   },
   "unlockVaultMenu": {
-    "message": "Ξεκλειδώστε την κρύπτη σας"
+    "message": "Ξεκλειδώστε το vault σας"
   },
   "loginToVaultMenu": {
-    "message": "Συνδεθείτε στο θησαυ/κιο σας"
+    "message": "Συνδεθείτε στο vault σας"
   },
   "autoFillInfo": {
     "message": "Δεν υπάρχουν διαθέσιμες συνδέσεις για την αυτόματη συμπλήρωση, στην τρέχουσα καρτέλα του προγράμματος περιήγησης."
@@ -981,7 +981,7 @@
     "message": "Κλειδώστε το vault"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "Η υποστήριξη ιδιωτικής λειτουργίας είναι πειραματική και ορισμένες δυνατότητες είναι περιορισμένες."
   },
   "customFields": {
     "message": "Προσαρμοσμένα Πεδία"
@@ -1868,9 +1868,21 @@
     "message": "Έχετε φύγει από τον οργανισμό."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Εναλλαγή αριθμού χαρακτήρων"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Έχει λήξει το χρονικό όριο. Παρακαλώ επιστρέψτε και προσπαθήστε να συνδεθείτε ξανά."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

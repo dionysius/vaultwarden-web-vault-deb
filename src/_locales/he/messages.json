@@ -1868,9 +1868,21 @@
     "message": "עזבת את הארגון."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "החלפת מצב ספירת תווים"
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "הכספת האישית מיוצאת"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "רק פריטי הכספת האישית שמשויכת אל $EMAIL$ ייוצאו. פריטי הכספת הארגוניים לא יהיו חלק מהייצוא.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

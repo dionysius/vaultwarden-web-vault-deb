@@ -95,10 +95,10 @@
     "message": "Sin entradas coincidentes."
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "Desbloquea tu bóveda"
   },
   "loginToVaultMenu": {
-    "message": "Log in to your vault"
+    "message": "Inicia sesión en tu bóveda"
   },
   "autoFillInfo": {
     "message": "No hay entradas disponibles para autorellenar en la pestaña actual del navegador."
@@ -122,13 +122,13 @@
     "message": "Continuar"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Envía un código de verificación a tu correo electrónico"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Enviar código"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Código enviado"
   },
   "verificationCode": {
     "message": "Código de verificación"
@@ -436,7 +436,7 @@
     "message": "Código de verificación requerido."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Código de verificación no válido"
   },
   "valueCopied": {
     "message": "Valor de $VALUE$ copiado",
@@ -981,7 +981,7 @@
     "message": "Bloquear la caja fuerte"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "El soporte en modo privado es experimental y algunas características son limitadas."
   },
   "customFields": {
     "message": "Campos personalizados"
@@ -1008,11 +1008,11 @@
     "message": "Booleano"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Vinculado",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Valor vinculado",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
@@ -1118,7 +1118,7 @@
     "message": "Apellido"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Nombre completo"
   },
   "identityName": {
     "message": "Nombre de la identidad"
@@ -1844,7 +1844,7 @@
     "message": "Identificador único no encontrado."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ está usando SSO con un servidor de claves autoalojado. Los miembros de esta organización ya no necesitarán una contraseña maestra para iniciar sesión.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1853,13 +1853,13 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Abandonar organización"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Eliminar contraseña maestra"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Contraseña maestra eliminada."
   },
   "leaveOrganizationConfirmation": {
     "message": "¿Confirma que quiere abandonar esta organización?"
@@ -1868,9 +1868,21 @@
     "message": "Ha abandonado la organización."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Alternar conteo de caracteres"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Su sesión ha expirado. Por favor, vuelva e intente iniciar sesión de nuevo."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exportando bóveda personal"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Solo se exportarán los elementos de la bóveda personal asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

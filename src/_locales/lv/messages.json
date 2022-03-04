@@ -1871,6 +1871,18 @@
     "message": "Pārslēgt rakstzīmju skaita attēlošanu"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Sesijai iestājās noildze. Lūgums mēģināt pierakstīties vēlreiz."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Izdod personīgo glabātavu"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Tiks izdoti tikai personīgie glabātavas vienumi, kas ir saistīti ar $EMAIL$. Apvienības glabātavas vienumi netiks iekļauti.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

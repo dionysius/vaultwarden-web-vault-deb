@@ -1868,9 +1868,21 @@
     "message": "شما از سازمان ها خارج شده اید."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "تغییر تعداد کاراکترها"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "زمان نشست شما به پایان رسید. لطفاً برگردید و دوباره وارد سیستم شوید."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "صادرات گاو‌صندوق شخصی"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "فقط موارد گاو‌صندوق شخصی مرتبط با $EMAIL$ صادر خواهد شد. موارد گاو‌صندوق سازمان شامل نخواهد شد.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

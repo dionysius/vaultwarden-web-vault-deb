@@ -1872,5 +1872,17 @@
   },
   "sessionTimeout": {
     "message": "La tua sessione è scaduta. Torna indietro e riprova ad accedere."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Esportazione cassaforte personale"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Saranno esportati solo gli oggetti della cassaforte personale associati a $EMAIL$. Gli oggetti della cassaforte dell'organizzazione non saranno inclusi.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

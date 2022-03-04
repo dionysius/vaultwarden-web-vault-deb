@@ -1872,5 +1872,17 @@
   },
   "sessionTimeout": {
     "message": "Время вашей сессии истекло. Пожалуйста, вернитесь и попробуйте войти снова."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Экспорт личного хранилища"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Будут экспортированы только личные элементы хранилища, связанные с $EMAIL$. Элементы хранилища организации включены не будут.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

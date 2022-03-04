@@ -744,7 +744,7 @@
     "message": "您可以在 Bitwarden 網頁版管理您的會員資格。現在要前往嗎？"
   },
   "premiumRefresh": {
-    "message": "重新整理會員資格"
+    "message": "更新會員資格狀態"
   },
   "premiumNotCurrentMember": {
     "message": "您尚未成為進階會員。"
@@ -1548,7 +1548,7 @@
     "message": "排除的網域"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden 不會要求儲存這些網域的登入詳細資訊。必須重新整理頁面才能使變更生效。"
+    "message": "Bitwarden 不會要求儲存這些網域的詳細登入資訊。必須重新整理頁面才能使變更生效。"
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ 不是一個有效的網域",
@@ -1871,6 +1871,18 @@
     "message": "切換字元計數"
   },
   "sessionTimeout": {
-    "message": "您的登入階段已逾時，請返回並嘗試重新登入。"
+    "message": "您的登入階段已逾時。請返回並嘗試重新登入。"
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "匯出個人密碼庫"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "只會匯出關聯到 $EMAIL$ 的個人密碼庫。組織密碼庫的項目不包含在內。",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }
