@@ -497,7 +497,7 @@ export default class MainBackground {
     await this.webRequestBackground.init();
     await this.windowsBackground.init();
 
-    if (this.platformUtilsService.isFirefox && !this.isPrivateMode) {
+    if (this.platformUtilsService.isFirefox() && !this.isPrivateMode) {
       // Set new Private Mode windows to the default icon - they do not share state with the background page
       BrowserApi.onWindowCreated(async (win) => {
         if (win.incognito) {
