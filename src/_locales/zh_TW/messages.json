@@ -358,7 +358,7 @@
     "message": "無效的主密碼"
   },
   "vaultTimeout": {
-    "message": "密碼庫逾時時長"
+    "message": "密碼庫逾時時間"
   },
   "lockNow": {
     "message": "立即鎖定"
@@ -473,7 +473,7 @@
     "message": "必須填入名稱。"
   },
   "addedFolder": {
-    "message": "資料夾已新增"
+    "message": "已新增資料夾"
   },
   "changeMasterPass": {
     "message": "變更主密碼"
@@ -491,7 +491,7 @@
     "message": "您確定要刪除此資料夾嗎？"
   },
   "deletedFolder": {
-    "message": "資料夾已刪除"
+    "message": "已刪除資料夾"
   },
   "gettingStartedTutorial": {
     "message": "新手教學"
@@ -1816,7 +1816,7 @@
     "message": "分鐘"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "您的組織策略正在影響您的密碼庫逾時時長。密碼庫逾時時長最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。",
+    "message": "您的組織策略正在影響您的密碼庫逾時時間。密碼庫逾時時間最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1829,7 +1829,7 @@
     }
   },
   "vaultTimeoutToLarge": {
-    "message": "您的密碼庫逾時時長超過組織限制。"
+    "message": "您的密碼庫逾時時間超過組織限制。"
   },
   "vaultExportDisabled": {
     "message": "密碼庫匯出已停用"

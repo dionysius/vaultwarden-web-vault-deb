@@ -1874,10 +1874,10 @@
     "message": "Oturumunuzun süresi doldu. Lütfen geri dönüp yeniden giriş yapın."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Kişisel Kasayı Dışa Aktarma"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Yalnızca $EMAIL$ ile ilişkili kişisel kasa öğeleri dışa aktarılacaktır. Kuruluş kasası öğeleri dahil edilmeyecektir.",
     "placeholders": {
       "email": {
         "content": "$1",

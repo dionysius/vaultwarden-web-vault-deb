@@ -95,10 +95,10 @@
     "message": "Sem credenciais correspondentes."
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "Desbloqueie seu cofre"
   },
   "loginToVaultMenu": {
-    "message": "Log in to your vault"
+    "message": "Acesse o seu cofre"
   },
   "autoFillInfo": {
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
@@ -981,7 +981,7 @@
     "message": "Bloquear o cofre"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "O suporte para modo privado é experimental e alguns recursos são limitados."
   },
   "customFields": {
     "message": "Campos Personalizados"
@@ -1868,16 +1868,16 @@
     "message": "Você saiu da organização."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Alternar contagem de caracteres"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Sua sessão expirou. Por favor, volte e tente iniciar a sessão novamente."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exportando o Cofre Pessoal"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Apenas os itens pessoais do cofre associados com $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
     "placeholders": {
       "email": {
         "content": "$1",
