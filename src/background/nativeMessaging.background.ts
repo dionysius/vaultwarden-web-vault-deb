@@ -115,13 +115,7 @@ export class NativeMessagingBackground {
             break;
           case "disconnected":
             if (this.connecting) {
-              this.messagingService.send("showDialog", {
-                text: this.i18nService.t("startDesktopDesc"),
-                title: this.i18nService.t("startDesktopTitle"),
-                confirmText: this.i18nService.t("ok"),
-                type: "error",
-              });
-              reject();
+              reject("startDesktop");
             }
             this.connected = false;
             this.port.disconnect();
@@ -192,18 +186,12 @@ export class NativeMessagingBackground {
           error = chrome.runtime.lastError.message;
         }
 
-        if (error != null) {
-          this.messagingService.send("showDialog", {
-            text: this.i18nService.t("desktopIntegrationDisabledDesc"),
-            title: this.i18nService.t("desktopIntegrationDisabledTitle"),
-            confirmText: this.i18nService.t("ok"),
-            type: "error",
-          });
-        }
         this.sharedSecret = null;
         this.privateKey = null;
         this.connected = false;
-        reject();
+
+        const reason = error != null ? "desktopIntegrationDisabled" : null;
+        reject(reason);
       });
     });
   }

@@ -1,6 +1,5 @@
 import { Component, NgZone } from "@angular/core";
 import { Router } from "@angular/router";
-import Swal from "sweetalert2";
 
 import { LockComponent as BaseLockComponent } from "jslib-angular/components/lock.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
@@ -14,12 +13,17 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { StateService } from "jslib-common/abstractions/state.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
+import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErrors";
+
 @Component({
   selector: "app-lock",
   templateUrl: "lock.component.html",
 })
 export class LockComponent extends BaseLockComponent {
   private isInitialLockScreen: boolean;
+
+  biometricError: string;
+  pendingBiometric = false;
 
   constructor(
     router: Router,
@@ -73,24 +77,22 @@ export class LockComponent extends BaseLockComponent {
       return;
     }
 
-    const div = document.createElement("div");
-    div.innerHTML = `<div class="swal2-text">${this.i18nService.t("awaitDesktop")}</div>`;
+    this.pendingBiometric = true;
+    this.biometricError = null;
 
-    Swal.fire({
-      heightAuto: false,
-      buttonsStyling: false,
-      html: div,
-      showCancelButton: true,
-      cancelButtonText: this.i18nService.t("cancel"),
-      showConfirmButton: false,
-    });
+    let success;
+    try {
+      success = await super.unlockBiometric();
+    } catch (e) {
+      const error = BiometricErrors[e as BiometricErrorTypes];
 
-    const success = await super.unlockBiometric();
+      if (error == null) {
+        this.logService.error("Unknown error: " + e);
+      }
 
-    // Avoid closing the error dialogs
-    if (success) {
-      Swal.close();
+      this.biometricError = this.i18nService.t(error.description);
     }
+    this.pendingBiometric = false;
 
     return success;
   }

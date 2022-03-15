@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
-import Swal from "sweetalert2/src/sweetalert2.js";
+import Swal from "sweetalert2";
 
 import { ModalService } from "jslib-angular/services/modal.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
@@ -15,6 +15,7 @@ import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.serv
 import { DeviceType } from "jslib-common/enums/deviceType";
 
 import { BrowserApi } from "../../browser/browserApi";
+import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErrors";
 import { SetPinComponent } from "../components/set-pin.component";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
@@ -269,6 +270,16 @@ export class SettingsComponent implements OnInit {
           .catch((e) => {
             // Handle connection errors
             this.biometric = false;
+
+            const error = BiometricErrors[e as BiometricErrorTypes];
+
+            this.platformUtilsService.showDialog(
+              this.i18nService.t(error.description),
+              this.i18nService.t(error.title),
+              this.i18nService.t("ok"),
+              null,
+              "error"
+            );
           }),
       ]);
     } else {

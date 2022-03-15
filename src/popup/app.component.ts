@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, NgZone, OnInit, SecurityContext } from "@
 import { DomSanitizer } from "@angular/platform-browser";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
-import Swal, { SweetAlertIcon } from "sweetalert2/src/sweetalert2.js";
+import Swal, { SweetAlertIcon } from "sweetalert2";
 
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";

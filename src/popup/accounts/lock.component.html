@@ -62,7 +62,13 @@
     </div>
     <div class="box" *ngIf="biometricLock">
       <div class="box-footer">
-        <button type="button" class="btn primary block" (click)="unlockBiometric()" appStopClick>
+        <button
+          type="button"
+          class="btn primary block"
+          (click)="unlockBiometric()"
+          appStopClick
+          [disabled]="pendingBiometric"
+        >
           {{ "unlockWithBiometrics" | i18n }}
         </button>
       </div>
@@ -71,5 +77,9 @@
       <button type="button" appStopClick (click)="logOut()">{{ "logOut" | i18n }}</button>
     </p>
     <app-private-mode-warning></app-private-mode-warning>
+    <app-callout *ngIf="biometricError" type="error">{{ biometricError }}</app-callout>
+    <p class="text-center text-muted" *ngIf="pendingBiometric">
+      <i class="bwi bwi-spinner bwi-spin" aria-hidden="true"></i> {{ "awaitDesktop" | i18n }}
+    </p>
   </content>
 </form>
