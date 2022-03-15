@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up cloc
         run: |
@@ -31,10 +31,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up Node
-        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a
         with:
           node-version: '16'
 
@@ -51,7 +51,7 @@ jobs:
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Get Package Version
         id: gen_vars
@@ -70,7 +70,7 @@ jobs:
       - lint
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Testing locales - extName length
         run: |
@@ -106,10 +106,10 @@ jobs:
       _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up Node
-        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a
         with:
           node-version: '16'
 
@@ -140,35 +140,35 @@ jobs:
           call 7z a browser-source.zip "Source\*"
 
       - name: Upload Opera artifact
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: dist-opera-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-opera.zip
           if-no-files-found: error
 
       - name: Upload Chrome artifact
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: dist-chrome-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-chrome.zip
           if-no-files-found: error
 
       - name: Upload Firefox artifact
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: dist-firefox-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-firefox.zip
           if-no-files-found: error
 
       - name: Upload Edge artifact
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: dist-edge-${{ env._BUILD_NUMBER }}.zip
           path: dist/dist-edge.zip
           if-no-files-found: error
 
       - name: Upload browser source
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: browser-source-${{ env._BUILD_NUMBER }}.zip
           path: dist/browser-source.zip
@@ -176,7 +176,7 @@ jobs:
 
       - name: Upload coverage artifact
         if: false
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: coverage-${{ env._BUILD_NUMBER }}.zip
           path: coverage/coverage-${{ env._BUILD_NUMBER }}.zip
@@ -193,7 +193,7 @@ jobs:
       _CROWDIN_PROJECT_ID: "268134"
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Login to Azure
         uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
@@ -202,13 +202,13 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
+        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
         with:
           keyvault: "bitwarden-prod-kv"
           secrets: "crowdin-api-token"
 
       - name: Upload Sources
-        uses: crowdin/github-action@b92956d48336795b1e5e6a353fdef213ada949c5
+        uses: crowdin/github-action@9237b4cb361788dfce63feb2e2f15c09e2fe7415
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
@@ -263,7 +263,7 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
+        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
         if: failure()
         with:
           keyvault: "bitwarden-prod-kv"
