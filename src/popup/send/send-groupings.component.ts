@@ -14,8 +14,7 @@ import { SyncService } from "jslib-common/abstractions/sync.service";
 import { SendType } from "jslib-common/enums/sendType";
 import { SendView } from "jslib-common/models/view/sendView";
 
-import { BrowserSendComponentState } from "src/models/browserSendComponentState";
-
+import { BrowserSendComponentState } from "../../models/browserSendComponentState";
 import { StateService } from "../../services/abstractions/state.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 

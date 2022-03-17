@@ -41,7 +41,11 @@ export class AppComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    // Component states must not persist between closing and reopening the popup, otherwise they become dead objects
+    // Clear them aggressively to make sure this doesn't occur
+    await this.clearComponentStates();
+
     this.stateService.activeAccount.subscribe((userId) => {
       this.activeUserId = userId;
     });
@@ -125,10 +129,7 @@ export class AppComponent implements OnInit {
           (window as any).previousPopupUrl != null &&
           (window as any).previousPopupUrl.startsWith("/tabs/")
         ) {
-          await this.stateService.setBrowserGroupingComponentState(null);
-          await this.stateService.setBrowserCipherComponentState(null);
-          await this.stateService.setBrowserSendComponentState(null);
-          await this.stateService.setBrowserSendTypeComponentState(null);
+          await this.clearComponentStates();
         }
         if (url.startsWith("/tabs/")) {
           await this.stateService.setAddEditCipherInfo(null);
@@ -249,5 +250,14 @@ export class AppComponent implements OnInit {
       dialogId: msg.dialogId,
       confirmed: confirmed.value,
     });
+  }
+
+  private async clearComponentStates() {
+    await Promise.all([
+      this.stateService.setBrowserGroupingComponentState(null),
+      this.stateService.setBrowserCipherComponentState(null),
+      this.stateService.setBrowserSendComponentState(null),
+      this.stateService.setBrowserSendTypeComponentState(null),
+    ]);
   }
 }
