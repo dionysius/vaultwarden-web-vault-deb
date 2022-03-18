@@ -1868,21 +1868,24 @@
     "message": "Heu deixat l'organització."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Commuta el recompte de caràcters"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "La sessió ha expirat. Torneu arrere i proveu d'iniciar sessió de nou."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "S'està exportant la caixa forta personal"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Només s'exportaran els elements personals de la caixa forta  associats a $EMAIL$. Els elements de la caixa forta  de l'organització no s'inclouran.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
       }
     }
+  },
+  "error": {
+    "message": "Error"
   }
 }

@@ -1494,7 +1494,7 @@
     "message": "Porniți aplicația Bitwarden Desktop"
   },
   "startDesktopDesc": {
-    "message": "Aplicația Bitwarden Desktop trebuie pornită înainte de a putea utiliza această funcție."
+    "message": "Aplicația Bitwarden Desktop trebuie să fie pornită înainte de a putea fi utilizată deblocarea cu date biometrice."
   },
   "errorEnableBiometricTitle": {
     "message": "Nu se poate activa biometria"
@@ -1884,5 +1884,8 @@
         "example": "name@example.com"
       }
     }
+  },
+  "error": {
+    "message": "Eroare"
   }
 }

@@ -1494,7 +1494,7 @@
     "message": "Spustiť desktopovú aplikáciu Bitwarden Desktop"
   },
   "startDesktopDesc": {
-    "message": "Aplikácia Bitwarden Desktop musí byť pred použitím tejto funkcie spustená."
+    "message": "Aplikácia Bitwarden Desktop musí byť pred použitím odomknutia pomocou biometrických údajov spustená."
   },
   "errorEnableBiometricTitle": {
     "message": "Nie je môžné povoliť biometriu"
@@ -1884,5 +1884,8 @@
         "example": "name@example.com"
       }
     }
+  },
+  "error": {
+    "message": "Chyba"
   }
 }

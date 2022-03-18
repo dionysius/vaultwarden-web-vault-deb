@@ -1494,7 +1494,7 @@
     "message": "Start Bitwarden skrivebordsapplikationen"
   },
   "startDesktopDesc": {
-    "message": "Bitwarden skrivebordsapplikationen skal startes, før denne funktion kan bruges."
+    "message": "Bitwarden Desktop applikationen skal startes før oplåsning med biometri kan bruges."
   },
   "errorEnableBiometricTitle": {
     "message": "Kan ikke aktivere biometri"
@@ -1884,5 +1884,8 @@
         "example": "name@example.com"
       }
     }
+  },
+  "error": {
+    "message": "Fejl"
   }
 }

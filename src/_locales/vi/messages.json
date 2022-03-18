@@ -1494,7 +1494,7 @@
     "message": "Mở ứng dụng Bitwarden trên máy tính"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "The Bitwarden Desktop application needs to be started before unlock with biometrics can be used."
   },
   "errorEnableBiometricTitle": {
     "message": "Không thể bật nhận dạng sinh trắc học"
@@ -1884,5 +1884,8 @@
         "example": "name@example.com"
       }
     }
+  },
+  "error": {
+    "message": "Error"
   }
 }

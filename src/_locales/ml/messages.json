@@ -1494,7 +1494,7 @@
     "message": "Start the Bitwarden Desktop application"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "The Bitwarden Desktop application needs to be started before unlock with biometrics can be used."
   },
   "errorEnableBiometricTitle": {
     "message": "Unable to enable biometrics"
@@ -1884,5 +1884,8 @@
         "example": "name@example.com"
       }
     }
+  },
+  "error": {
+    "message": "Error"
   }
 }

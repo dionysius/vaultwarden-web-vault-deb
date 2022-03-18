@@ -68,7 +68,7 @@
     "message": "Kopioi salasana"
   },
   "copyNote": {
-    "message": "Kopioi muistio"
+    "message": "Kopioi merkinnät"
   },
   "copyUri": {
     "message": "Kopioi URI"
@@ -801,7 +801,7 @@
     "message": "Jos kirjautumistietoosi on liitetty kaksivaiheisen todennusmenetelmän avain, kopioidaan kaksivaiheisen kirjautumisen TOTP-todennuskoodi automaattisesti leikepöydälle kun suoritat kohteen automaattisen täytön."
   },
   "disableAutoBiometricsPrompt": {
-    "message": "Älä pyydä biometristä kirjautumista käynnistettäessä."
+    "message": "Älä pyydä biometristä avausta käynnistettäessä."
   },
   "premiumRequired": {
     "message": "Premium vaaditaan"
@@ -1494,13 +1494,13 @@
     "message": "Käynnistä Bitwardenin työpöytäsovellus"
   },
   "startDesktopDesc": {
-    "message": "Bitwardenin työpöytäsovellus on käynnistettävä ennen kuin tätä toimintoa voidaan käyttää."
+    "message": "Bitwardenin työpöytäsovellus on käynnistettävä ennen kuin biometristä avausta voidaan käyttää."
   },
   "errorEnableBiometricTitle": {
     "message": "Biometrian käyttöönotto ei onnistu"
   },
   "errorEnableBiometricDesc": {
-    "message": "Toiminto peruttiin työpöytäsovelluksen toimesta"
+    "message": "Työpöytäsovellus perui toiminnon"
   },
   "nativeMessagingInvalidEncryptionDesc": {
     "message": "Työpöytäsovellus hyläsi suojatun viestintäväylän. Yritä toimintoa uudelleen"
@@ -1530,7 +1530,7 @@
     "message": "Oikeutta ei myönnetty"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Ilman oikeutta kommunikointiin Bitwardenin työpöytäseovleluksen kanssa ei biometriaa tueta selainlaajennuksessa. Yritä uudelleen."
+    "message": "Ilman viestintäoikeutta Bitwardenin työpöytäsovelluksen kanssa, ei biometriaa tueta selainlaajennuksessa. Yritä uudelleen."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Käyttöoikeuspyynnön virhe"
@@ -1684,7 +1684,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Yksityiset muistiinpanot tästä Sendistä.",
+    "message": "Yksityisiä merkintöjä tästä Sendistä.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
@@ -1884,5 +1884,8 @@
         "example": "name@example.com"
       }
     }
+  },
+  "error": {
+    "message": "Virhe"
   }
 }

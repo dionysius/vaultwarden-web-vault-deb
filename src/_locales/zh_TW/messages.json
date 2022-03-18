@@ -38,7 +38,7 @@
     "message": "主密碼"
   },
   "masterPassDesc": {
-    "message": "主密碼是您用於存取您的密碼庫的密碼。不要忘記主密碼，這一點非常重要。如果忘記了密碼，無法將其復原。"
+    "message": "主密碼是用於存取密碼庫的密碼。它非常重要，請您不要忘記它。若您忘記了主密碼，沒有任何方法能將其復原。"
   },
   "masterPassHintDesc": {
     "message": "主密碼提示可以在您忘記主密碼時幫助您回憶主密碼。"
@@ -122,7 +122,7 @@
     "message": "繼續"
   },
   "sendVerificationCode": {
-    "message": "傳送驗證碼到您的信箱"
+    "message": "傳送驗證碼至您的電子郵件"
   },
   "sendCode": {
     "message": "傳送驗證碼"
@@ -336,7 +336,7 @@
     "message": "驗證身份"
   },
   "yourVaultIsLocked": {
-    "message": "您的密碼庫已上鎖。請驗證身份後繼續。"
+    "message": "您的密碼庫已鎖定。請驗證身份後繼續。"
   },
   "unlock": {
     "message": "解鎖"
@@ -400,7 +400,7 @@
     "message": "系統鎖定時"
   },
   "onRestart": {
-    "message": "瀏覽器重新啟動時"
+    "message": "重新啟動瀏覽器時"
   },
   "never": {
     "message": "永不"
@@ -409,7 +409,7 @@
     "message": "安全"
   },
   "errorOccurred": {
-    "message": "發生錯誤。"
+    "message": "發生錯誤"
   },
   "emailRequired": {
     "message": "必須填入電子郵件地址 。"
@@ -424,7 +424,7 @@
     "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
-    "message": "兩次填入的主密碼不一致。"
+    "message": "兩次填入的主密碼不相符。"
   },
   "newAccountCreated": {
     "message": "帳戶已建立！現在可以登入了。"
@@ -449,7 +449,7 @@
     }
   },
   "autofillError": {
-    "message": "無法在此頁面自動填入所選項目。請改為手動複製並貼上。"
+    "message": "無法在此頁面自動填入所選項目。請手動複製貼上。"
   },
   "loggedOut": {
     "message": "已登出"
@@ -482,10 +482,10 @@
     "message": "您可以在 Bitwarden 網頁版密碼庫變更主密碼。現在要前往嗎？"
   },
   "twoStepLoginConfirmation": {
-    "message": "兩步驟登入需要您從其他裝置（例如安全金鑰、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的帳戶更加安全。兩步驟登入可以在 Bitwarden 網頁版密碼庫啟用。現在要前往嗎？"
+    "message": "兩步驟登入需要您從其他裝置（例如安全金鑰、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的帳戶更加安全。兩步驟登入可以在 Bitwarden 網頁版密碼庫啟用。要現在前往嗎？"
   },
   "editedFolder": {
-    "message": "資料夾已編輯"
+    "message": "已編輯資料夾"
   },
   "deleteFolderConfirmation": {
     "message": "您確定要刪除此資料夾嗎？"
@@ -525,16 +525,16 @@
     "message": "新增 URI"
   },
   "addedItem": {
-    "message": "項目已新增"
+    "message": "已新增項目"
   },
   "editedItem": {
-    "message": "項目已編輯"
+    "message": "已編輯項目"
   },
   "deleteItemConfirmation": {
     "message": "確定要刪除此項目嗎？"
   },
   "deletedItem": {
-    "message": "已將項目丟到垃圾桶"
+    "message": "將項目移至垃圾桶"
   },
   "overwritePassword": {
     "message": "覆寫密碼"
@@ -591,7 +591,7 @@
     "message": "停用密碼變更通知"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "偵測到您已變更網站上的密碼時，「密碼變更通知」將會自動提醒您更新密碼庫的密碼。"
+    "message": "偵測到您變更網站上的密碼時，「密碼變更通知」將會自動提醒您更新密碼庫的密碼。"
   },
   "notificationChangeDesc": {
     "message": "是否要在 Bitwarden 中更新此密碼？"
@@ -662,7 +662,7 @@
     "message": "瞭解組織"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden 允許您使用組織與他人分享您的密碼庫項目。您想造訪 bitwarden.com 網站以了解更多內容詳情嗎？"
+    "message": "Bitwarden 允許您使用組織與他人分享您的密碼庫項目。您想造訪 bitwarden.com 網站以了解更多內容嗎？"
   },
   "moveToOrganization": {
     "message": "移動至組織 "
@@ -684,7 +684,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "選擇您希望將這個項目移動到哪個組織。項目的擁有權將會轉移到該組織。一經移動，您將不再是此項目的直接擁有者。"
+    "message": "選擇您希望將這個項目移動到哪個組織。項目的擁有權將會轉移到該組織。轉移之後，您將不再是此項目的直接擁有者。"
   },
   "learnMore": {
     "message": "了解更多"
@@ -741,7 +741,7 @@
     "message": "管理會員資格"
   },
   "premiumManageAlert": {
-    "message": "您可以在 Bitwarden 網頁版管理您的會員資格。現在要前往嗎？"
+    "message": "您可以在 Bitwarden 網頁版管理您的會員資格。要現在前往嗎？"
   },
   "premiumRefresh": {
     "message": "更新會員資格狀態"
@@ -768,13 +768,13 @@
     "message": "優先客戶支援。"
   },
   "ppremiumSignUpFuture": {
-    "message": "未來會增加更多進階功能，敬請期待！"
+    "message": "未來會新增更多進階功能，敬請期待！"
   },
   "premiumPurchase": {
-    "message": "購買進階會員資格"
+    "message": "升級為進接會員"
   },
   "premiumPurchaseAlert": {
-    "message": "您可以在 Bitwarden 網頁版密碼庫購買進階會員資格。現在要前往嗎？"
+    "message": "您可以在 Bitwarden 網頁版密碼庫購買進階會員資格。要現在前往嗎？"
   },
   "premiumCurrentMember": {
     "message": "您目前為進階會員！"
@@ -792,7 +792,7 @@
     }
   },
   "refreshComplete": {
-    "message": "重新整理完成"
+    "message": "狀態更新完成"
   },
   "disableAutoTotpCopy": {
     "message": "停用自動 TOTP 複製"
@@ -846,7 +846,7 @@
     "message": "將您的安全金鑰插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
   },
   "webAuthnNewTab": {
-    "message": "要開始 WebAuthn 2FA 驗證，請點擊下面的按鈕打開一個新的分頁，並按照新分頁中提供的說明操作。"
+    "message": "要開始 WebAuthn 2FA 驗證，請點選下面的按鈕開啟一個新分頁，並依照新分頁中提供的說明操作。"
   },
   "webAuthnNewTabOpen": {
     "message": "開啟新分頁"
@@ -867,7 +867,7 @@
     "message": "兩步驟登入選項"
   },
   "recoveryCodeDesc": {
-    "message": "無法使用任何雙要素提供程式嗎？請使用您的復原代碼以停用您賬戶的所有雙要素提供程式。"
+    "message": "無法使用任何雙因素提供程式嗎？請使用您的復原代碼以停用您帳戶的所有雙因素提供程式。"
   },
   "recoveryCodeTitle": {
     "message": "復原代碼"
@@ -886,11 +886,11 @@
     "message": "使用 YubiKey 存取您的帳戶。支援 YubiKey 4、4 Nano、4C、以及 NEO 裝置。"
   },
   "duoDesc": {
-    "message": "使用 Duo Security 的 Duo Mobile 程式、SMS 、致電或 U2F 安全金鑰進行驗證。",
+    "message": "使用 Duo Security 的 Duo Mobile 程式、SMS 、撥打電話或 U2F 安全金鑰進行驗證。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "為您的組織使用 Duo Security 的 Duo Mobile 程式、SMS、致電或 U2F 安全金鑰進行驗證。",
+    "message": "為您的組織使用 Duo Security 的 Duo Mobile 程式、SMS、撥打電話或 U2F 安全金鑰進行驗證。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
@@ -945,13 +945,13 @@
     "message": "如果網頁載入時偵測到登入表單，則自動執行表單填入。"
   },
   "experimentalFeature": {
-    "message": "目前這是一項實驗性功能。要使用需自行承擔風險。"
+    "message": "這目前是一項實驗性功能。要使用需自行承擔風險。"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "登入項目的預設自動填入設定"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "頁面載入時自動填入啟用後，你可以給個別登入項目啟用或停用這個功能。這是未單獨配置的登入項目的預設設定。"
+    "message": "啟用頁面載入時自動填入後，您可以幫個別登入項目啟用或停用這個功能。這是未單獨配置的登入項目的預設設定。"
   },
   "itemAutoFillOnPageLoad": {
     "message": "頁面載入時自動填入 (如果選項中已啟用)"
@@ -972,7 +972,7 @@
     "message": "在側邊欄中開啟密碼庫"
   },
   "commandAutofillDesc": {
-    "message": "自動使用最後一次登入的登入資料填入目前網站"
+    "message": "自動將上次使用的登入資料填入目前網站"
   },
   "commandGeneratePasswordDesc": {
     "message": "產生一組新的隨機密碼並將它複製到剪貼簿中。"
@@ -1012,7 +1012,7 @@
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "連結的數值",
+    "message": "連結的值",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
@@ -1028,10 +1028,10 @@
     "message": "在您密碼庫的每個登入資料旁顯示一個可辨識的圖示。"
   },
   "disableBadgeCounter": {
-    "message": "停用角標計數器"
+    "message": "停用圖示計數器"
   },
   "disableBadgeCounterDesc": {
-    "message": "角標計數器表示您的密碼庫中可用於當前頁面的登入資料的數量。"
+    "message": "圖示計數器顯示您密碼庫中可用於目前頁面的登入資料數量。"
   },
   "cardholderName": {
     "message": "持卡人姓名"
@@ -1279,7 +1279,7 @@
     "message": "所有項目"
   },
   "noPasswordsInList": {
-    "message": "沒有可顯示的密碼。"
+    "message": "沒有可列出的密碼。"
   },
   "remove": {
     "message": "移除"
@@ -1315,7 +1315,7 @@
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "好",
+    "message": "良好",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
@@ -1326,7 +1326,7 @@
     "message": "主密碼強度太弱"
   },
   "weakMasterPasswordDesc": {
-    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼 (或密碼短語) 來正確保護您的 bitwarden 帳戶。仍要使用這組主密碼嗎？"
+    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼（或密碼短語）來正確保護您的 bitwarden 帳戶。仍要使用這組主密碼嗎？"
   },
   "pin": {
     "message": "PIN",
@@ -1494,7 +1494,7 @@
     "message": "啟動 Bitwarden 桌面應用程式"
   },
   "startDesktopDesc": {
-    "message": "需要先啟動 Bitwarden 桌面應用程式才能使用此功能。"
+    "message": "Bitwarden 桌面應用程式需要已啟動才能使用生物特徵辨識解鎖功能。"
   },
   "errorEnableBiometricTitle": {
     "message": "無法啟用生物特徵辨識"
@@ -1884,5 +1884,8 @@
         "example": "name@example.com"
       }
     }
+  },
+  "error": {
+    "message": "錯誤"
   }
 }
