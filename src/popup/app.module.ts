@@ -58,26 +58,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { CalloutComponent } from "jslib-angular/components/callout.component";
-import { ExportScopeCalloutComponent } from "jslib-angular/components/export-scope-callout.component";
-import { IconComponent } from "jslib-angular/components/icon.component";
 import { BitwardenToastModule } from "jslib-angular/components/toastr.component";
-import { A11yTitleDirective } from "jslib-angular/directives/a11y-title.directive";
-import { ApiActionDirective } from "jslib-angular/directives/api-action.directive";
-import { AutofocusDirective } from "jslib-angular/directives/autofocus.directive";
-import { BlurClickDirective } from "jslib-angular/directives/blur-click.directive";
-import { BoxRowDirective } from "jslib-angular/directives/box-row.directive";
-import { CipherListVirtualScroll } from "jslib-angular/directives/cipherListVirtualScroll.directive";
-import { FallbackSrcDirective } from "jslib-angular/directives/fallback-src.directive";
-import { InputVerbatimDirective } from "jslib-angular/directives/input-verbatim.directive";
-import { SelectCopyDirective } from "jslib-angular/directives/select-copy.directive";
-import { StopClickDirective } from "jslib-angular/directives/stop-click.directive";
-import { StopPropDirective } from "jslib-angular/directives/stop-prop.directive";
-import { TrueFalseValueDirective } from "jslib-angular/directives/true-false-value.directive";
-import { ColorPasswordCountPipe } from "jslib-angular/pipes/color-password-count.pipe";
-import { ColorPasswordPipe } from "jslib-angular/pipes/color-password.pipe";
-import { I18nPipe } from "jslib-angular/pipes/i18n.pipe";
-import { SearchCiphersPipe } from "jslib-angular/pipes/search-ciphers.pipe";
+import { JslibModule } from "jslib-angular/jslib.module";
 
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
@@ -186,52 +168,39 @@ registerLocaleData(localeZhTw, "zh-TW");
   imports: [
     A11yModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    DragDropModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ScrollingModule,
-    ServicesModule,
     BitwardenToastModule.forRoot({
       maxOpened: 2,
       autoDismiss: true,
       closeButton: true,
       positionClass: "toast-bottom-full-width",
     }),
+    BrowserAnimationsModule,
+    BrowserModule,
+    DragDropModule,
+    FormsModule,
+    JslibModule,
+    ReactiveFormsModule,
+    ScrollingModule,
+    ServicesModule,
   ],
   declarations: [
-    A11yTitleDirective,
     ActionButtonsComponent,
     AddEditComponent,
     AddEditCustomFieldsComponent,
-    ApiActionDirective,
     AppComponent,
     AttachmentsComponent,
-    AutofocusDirective,
-    BlurClickDirective,
-    BoxRowDirective,
-    CalloutComponent,
-    CipherListVirtualScroll,
     CipherRowComponent,
     CiphersComponent,
     CollectionsComponent,
-    ColorPasswordCountPipe,
-    ColorPasswordPipe,
     CurrentTabComponent,
     EnvironmentComponent,
     ExcludedDomainsComponent,
     ExportComponent,
-    ExportScopeCalloutComponent,
-    FallbackSrcDirective,
     FolderAddEditComponent,
     FoldersComponent,
     GroupingsComponent,
     HintComponent,
     HomeComponent,
-    I18nPipe,
-    IconComponent,
-    InputVerbatimDirective,
     LockComponent,
     LoginComponent,
     OptionsComponent,
@@ -243,8 +212,6 @@ registerLocaleData(localeZhTw, "zh-TW");
     PremiumComponent,
     PrivateModeWarningComponent,
     RegisterComponent,
-    SearchCiphersPipe,
-    SelectCopyDirective,
     SendAddEditComponent,
     SendEffluxDatesComponent,
     SendGroupingsComponent,
@@ -255,11 +222,8 @@ registerLocaleData(localeZhTw, "zh-TW");
     SettingsComponent,
     ShareComponent,
     SsoComponent,
-    StopClickDirective,
-    StopPropDirective,
     SyncComponent,
     TabsComponent,
-    TrueFalseValueDirective,
     TwoFactorComponent,
     TwoFactorOptionsComponent,
     UpdateTempPasswordComponent,
