@@ -125,6 +125,15 @@ const config = {
     minimizer: [
       new TerserPlugin({
         exclude: [/content\/.*/, /notification\/.*/],
+        terserOptions: {
+          // Replicate Angular CLI behaviour
+          compress: {
+            global_defs: {
+              ngDevMode: false,
+              ngI18nClosureMode: false,
+            },
+          },
+        },
       }),
     ],
     splitChunks: {
