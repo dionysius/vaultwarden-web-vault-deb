@@ -1494,7 +1494,7 @@
     "message": "Запустіть програму Bitwarden на комп'ютері"
   },
   "startDesktopDesc": {
-    "message": "Для використання цієї функції необхідно запустити програму Bitwarden на комп'ютері."
+    "message": "Для можливості розблокування з біометрією необхідно запустити програму Bitwarden на комп'ютері."
   },
   "errorEnableBiometricTitle": {
     "message": "Не вдається увімкнути біометрію"
@@ -1868,16 +1868,16 @@
     "message": "Ви покинули організацію."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Перемкнути лічильник символів"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Час вашого сеансу завершився. Поверніться назад і спробуйте увійти знову."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Експортування особистого сховища"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Будуть експортовані лише записи особистого сховища, пов'язані з $EMAIL$. Записи сховища організації не буде включено.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1886,6 +1886,6 @@
     }
   },
   "error": {
-    "message": "Error"
+    "message": "Помилка"
   }
 }

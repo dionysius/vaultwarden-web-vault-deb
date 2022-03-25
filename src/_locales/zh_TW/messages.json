@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "登入或建立帳戶來存取您的安全密碼庫。"
+    "message": "登入或建立帳戶以存取您的安全密碼庫。"
   },
   "createAccount": {
     "message": "建立帳戶"
@@ -128,7 +128,7 @@
     "message": "傳送驗證碼"
   },
   "codeSent": {
-    "message": "驗證碼已送出"
+    "message": "已送出驗證碼"
   },
   "verificationCode": {
     "message": "驗證碼"
@@ -506,7 +506,7 @@
     "message": "同步失敗"
   },
   "passwordCopied": {
-    "message": "密碼已複製"
+    "message": "已複製密碼"
   },
   "uri": {
     "message": "URI"
@@ -641,16 +641,16 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "確認密碼庫匯出"
+    "message": "確認匯出密碼庫"
   },
   "exportWarningDesc": {
-    "message": "此次匯出包含未加密格式的密碼庫檔案。您不應將它存放或經由不安全的方式（例如電子郵件）傳送。用完後請立即將它刪除。"
+    "message": "此次匯出的密碼庫資料為未加密格式。您不應將它存放或經由不安全的方式（例如電子郵件）傳送。用完後請立即將它刪除。"
   },
   "encExportKeyWarningDesc": {
-    "message": "將使用您帳戶的加密金鑰來加密匯出資料，若您更新了帳戶的加密金鑰，請重新匯出，才有辦法解密匯出的檔案。"
+    "message": "將使用您帳戶的加密金鑰來加密匯出的資料，若您更新了帳戶的加密金鑰，請重新匯出，否則將無法解密匯出的檔案。"
   },
   "encExportAccountWarningDesc": {
-    "message": "每個 Bitwarden 使用者帳戶的帳戶加密金鑰都不同，因此無法將加密過的匯出檔案匯入到不同帳戶中。"
+    "message": "每個 Bitwarden 使用者帳戶的帳戶加密金鑰都不相同，因此無法將已加密匯出的檔案匯入至不同帳戶中。"
   },
   "exportMasterPassword": {
     "message": "輸入您的主密碼以匯出密碼庫資料。"
@@ -662,7 +662,7 @@
     "message": "瞭解組織"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden 允許您使用組織與他人分享您的密碼庫項目。您想造訪 bitwarden.com 網站以了解更多內容嗎？"
+    "message": "Bitwarden 允許您使用組織與他人分享您的密碼庫項目。您想造訪 bitwarden.com 網站以深入了解內容嗎？"
   },
   "moveToOrganization": {
     "message": "移動至組織 "
@@ -684,10 +684,10 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "選擇您希望將這個項目移動到哪個組織。項目的擁有權將會轉移到該組織。轉移之後，您將不再是此項目的直接擁有者。"
+    "message": "選擇您希望將這個項目移動至哪個組織。項目的擁有權將會轉移至該組織。轉移之後，您將不再是此項目的直接擁有者。"
   },
   "learnMore": {
-    "message": "了解更多"
+    "message": "深入了解"
   },
   "authenticatorKeyTotp": {
     "message": "驗證器金鑰 (TOTP)"
@@ -771,7 +771,7 @@
     "message": "未來會新增更多進階功能，敬請期待！"
   },
   "premiumPurchase": {
-    "message": "升級為進接會員"
+    "message": "升級為進階會員"
   },
   "premiumPurchaseAlert": {
     "message": "您可以在 Bitwarden 網頁版密碼庫購買進階會員資格。要現在前往嗎？"
@@ -855,7 +855,7 @@
     "message": "驗證 WebAuthn"
   },
   "loginUnavailable": {
-    "message": "登入無法使用"
+    "message": "無法登入"
   },
   "noTwoStepProviders": {
     "message": "此帳戶已啟用兩步驟登入，但是本瀏覽器不支援已設定的兩步驟登入方式。"
@@ -867,10 +867,10 @@
     "message": "兩步驟登入選項"
   },
   "recoveryCodeDesc": {
-    "message": "無法使用任何雙因素提供程式嗎？請使用您的復原代碼以停用您帳戶的所有雙因素提供程式。"
+    "message": "無法使用任何雙因素提供程式嗎？請使用您的復原碼以停用您帳戶的所有雙因素提供程式。"
   },
   "recoveryCodeTitle": {
-    "message": "復原代碼"
+    "message": "復原碼"
   },
   "authenticatorAppTitle": {
     "message": "驗證器應用程式"
@@ -951,7 +951,7 @@
     "message": "登入項目的預設自動填入設定"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "啟用頁面載入時自動填入後，您可以幫個別登入項目啟用或停用這個功能。這是未單獨配置的登入項目的預設設定。"
+    "message": "啟用頁面載入時自動填入後，您可以為單個登入項目啟用或停用此功能。這是未單獨設定的登入項目的預設設定。"
   },
   "itemAutoFillOnPageLoad": {
     "message": "頁面載入時自動填入 (如果選項中已啟用)"
@@ -1133,7 +1133,7 @@
     "message": "護照號碼"
   },
   "licenseNumber": {
-    "message": "許可證編號"
+    "message": "許可證號碼"
   },
   "email": {
     "message": "電子郵件"
@@ -1401,7 +1401,7 @@
     "message": "項目已還原"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "選擇登出將會在密碼庫逾時後移除對密碼庫的所有存取權限，以及重新認證時需要連線網路。確定要使用此設定嗎？"
+    "message": "選擇登出將會在密碼庫逾時後移除對密碼庫的所有存取權限，若要重新認證則需連線網路。確定要使用此設定嗎？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "逾時動作確認"
@@ -1461,7 +1461,7 @@
     "message": "您新的主密碼不符合原則要求。"
   },
   "acceptPolicies": {
-    "message": "一旦選取此方塊，代表您同意下列項目："
+    "message": "若選取此方塊，代表您同意下列項目："
   },
   "acceptPoliciesError": {
     "message": "尚未接受服務條款與隱私權政策。"
@@ -1479,7 +1479,7 @@
     "message": "確定"
   },
   "desktopSyncVerificationTitle": {
-    "message": "桌面同步確認"
+    "message": "桌面同步驗證"
   },
   "desktopIntegrationVerificationText": {
     "message": "請驗證桌面應用程式顯示的指紋為： "
@@ -1494,7 +1494,7 @@
     "message": "啟動 Bitwarden 桌面應用程式"
   },
   "startDesktopDesc": {
-    "message": "Bitwarden 桌面應用程式需要已啟動才能使用生物特徵辨識解鎖功能。"
+    "message": "Bitwarden 桌面應用程式需要在啟動狀態才能使用生物特徵辨識解鎖功能。"
   },
   "errorEnableBiometricTitle": {
     "message": "無法啟用生物特徵辨識"
@@ -1512,13 +1512,13 @@
     "message": "桌面應用程式登入了不同的帳戶。請確保兩個應用程式登入的是同一個帳戶。"
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "帳戶不符合"
+    "message": "帳戶不相符"
   },
   "biometricsNotEnabledTitle": {
     "message": "生物特徵辨識未啟用"
   },
   "biometricsNotEnabledDesc": {
-    "message": "需先在桌面應用程式的設定中啟用生物特徵辨識，才能使用瀏覽器的生物特徵辨識。"
+    "message": "需先在桌面應用程式設定中啟用生物特徵辨識，才能使用瀏覽器的生物特徵辨識功能。"
   },
   "biometricsNotSupportedTitle": {
     "message": "不支援生物特徵辨識"
@@ -1530,7 +1530,7 @@
     "message": "未提供權限"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "沒有與 Bitwarden 桌面應用程式通訊的權限，我們無法在瀏覽器擴充套件中提供生物特徵辨識。請再試一次。"
+    "message": "沒有與 Bitwarden 桌面應用程式通訊的權限，我們無法在瀏覽器擴充套件中提供生物特徵辨識功能。請再試一次。"
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "權限要求錯誤"
@@ -1542,7 +1542,7 @@
     "message": "由於某個企業原則，您被限制為儲存項目到您的個人密碼庫。將擁有權變更為組織，並從可用的集合中選擇。"
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "一個組織原則正在影響您的擁有權選項。"
+    "message": "組織原則正在影響您的擁有權選項。"
   },
   "excludedDomains": {
     "message": "排除的網域"
@@ -1604,10 +1604,10 @@
     "message": "刪除"
   },
   "removedPassword": {
-    "message": "密碼已移除"
+    "message": "已移除密碼"
   },
   "deletedSend": {
-    "message": "Send 已刪除",
+    "message": "已刪除 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1680,7 +1680,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "可選。使用者需提供密碼才能存取此 Send。",
+    "message": "選用功能。使用者需提供密碼才能存取此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1688,11 +1688,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "停用此 Send 以阻止任何人存取它。",
+    "message": "停用此 Send 以阻止任何人存取。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "儲存時複製此 Send 的連結到剪貼簿。",
+    "message": "儲存時複製此 Send 的連結至剪貼簿。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1706,33 +1706,33 @@
     "message": "目前存取次數"
   },
   "createSend": {
-    "message": "建立新的 Send",
+    "message": "建立新 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "新的密碼"
+    "message": "新密碼"
   },
   "sendDisabled": {
-    "message": "Send 已停用",
+    "message": "已停用 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "由於某個企業原則，您只能刪除已有的 Send。",
+    "message": "由於企業原則限制，您只能刪除現有的 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send 已建立",
+    "message": "已建立 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send 已編輯",
+    "message": "已編輯 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "要選擇文檔，請在側邊欄中打開擴充套件（若可能），或單擊此橫幅彈出到新視窗。"
+    "message": "要選擇檔案，請在側邊欄中開啟擴充套件（若可以），或點選此橫幅彈出至新視窗。"
   },
   "sendFirefoxFileWarning": {
-    "message": "要使用 Firefox 來選擇檔案，請開啟側邊欄中的擴充套件，或點選此橫幅彈出至新視窗。"
+    "message": "要使用 Firefox 來選擇檔案，請在側邊欄中開啟擴充套件，或點選此橫幅彈出至新視窗。"
   },
   "sendSafariFileWarning": {
     "message": "要使用 Safari 來選擇檔案，請點選此橫幅彈出至新視窗。"
@@ -1741,11 +1741,11 @@
     "message": "在開始之前"
   },
   "sendFirefoxCustomDatePopoutMessage1": {
-    "message": "使用行事曆樣式的日期選取器",
+    "message": "使用行事曆樣式的日期選擇器",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
-    "message": "按一下這裡",
+    "message": "點選此處",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
@@ -1768,10 +1768,10 @@
     "message": "儲存刪除日期和逾期日期時發生錯誤。"
   },
   "hideEmail": {
-    "message": "對收件人隱藏我的電子郵件位址。"
+    "message": "對收件人隱藏我的電子郵件地址。"
   },
   "sendOptionsPolicyInEffect": {
-    "message": "一個或多個組織原则正影響您的 Send 選項。"
+    "message": "一個或多個組織原則正影響您的 Send 選項。"
   },
   "passwordPrompt": {
     "message": "重新詢問主密碼"
@@ -1780,13 +1780,13 @@
     "message": "確認主密碼"
   },
   "passwordConfirmationDesc": {
-    "message": "此操作受到保護。若要繼續，請重新輸入您的主密碼以驗證您的身份。"
+    "message": "此動作受到保護。若要繼續，請重新輸入您的主密碼以驗證您的身份。"
   },
   "emailVerificationRequired": {
     "message": "需要驗證電子郵件"
   },
   "emailVerificationRequiredDesc": {
-    "message": "您必須驗證您的電子郵件才能使用此功能。 您可以在網頁密碼庫裡驗證您的電子郵件。"
+    "message": "您必須驗證您的電子郵件才能使用此功能。您可以在網頁密碼庫裡驗證您的電子郵件。"
   },
   "updatedMasterPassword": {
     "message": "已更新主密碼"
@@ -1795,7 +1795,7 @@
     "message": "更新主密碼"
   },
   "updateMasterPasswordWarning": {
-    "message": "您的主密碼最近被您的組織管理者變更過。要存取密碼庫，您必須現在更新主密碼。繼續操作會登出目前的登入階段，要求您重新登入。其他裝置上使用中的登入階段可能持續最長一個小時。"
+    "message": "您的主密碼最近被您的組織管理者變更過。若要存取密碼庫，您必須立即更新主密碼。繼續操作會登出目前的登入階段，並要求您重新登入。其他裝置上的活動登入階段最多會保持一個小時。"
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "自動註冊"
@@ -1835,16 +1835,16 @@
     "message": "密碼庫匯出已停用"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "一或多個組織策略不允許您輸出個人密碼庫。"
+    "message": "一或多個組織策略禁止您匯出個人密碼庫。"
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "未能找出有效的表單元件。請試試看改用 HTML 檢查功能。"
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "找不到唯一識別元。"
+    "message": "找不到唯一識別碼。"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ 使用自我托管金輪伺服器 SSO。這個组织的成員登入時将不再需要主密碼。",
+    "message": "$ORGANIZATION$ 使用自我托管金鑰伺服器 SSO。此組織的成員登入時將不再需要主密碼。",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1859,7 +1859,7 @@
     "message": "移除主密碼"
   },
   "removedMasterPassword": {
-    "message": "主密碼已移除。"
+    "message": "已移除主密碼。"
   },
   "leaveOrganizationConfirmation": {
     "message": "您確定要離開這個組織嗎？"
@@ -1877,7 +1877,7 @@
     "message": "匯出個人密碼庫"
   },
   "exportingPersonalVaultDescription": {
-    "message": "只會匯出關聯到 $EMAIL$ 的個人密碼庫。組織密碼庫的項目不包含在內。",
+    "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫。組織密碼庫的項目不包含在內。",
     "placeholders": {
       "email": {
         "content": "$1",
