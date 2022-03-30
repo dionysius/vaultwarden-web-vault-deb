@@ -8,13 +8,28 @@ app-sync {
   }
 }
 
-app-password-generator .password-block {
+app-password-generator .generated-block {
   font-size: $font-size-large;
   font-family: $font-family-monospace;
   margin: 20px;
+  display: flex;
 
-  .password-wrapper {
-    text-align: center;
+  .generated-wrapper {
+    text-align: left;
+    width: 100%;
+    min-width: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  .action-buttons {
+    display: flex;
+    align-self: center;
+
+    button {
+      padding-left: 5px;
+      margin-left: 10px;
+    }
   }
 }
 

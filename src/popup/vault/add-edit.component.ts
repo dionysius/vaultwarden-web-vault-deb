@@ -182,17 +182,20 @@ export class AddEditComponent extends BaseAddEditComponent {
     this.location.back();
   }
 
+  async generateUsername(): Promise<boolean> {
+    const confirmed = await super.generateUsername();
+    if (confirmed) {
+      await this.saveCipherState();
+      this.router.navigate(["generator"], { queryParams: { type: "username" } });
+    }
+    return confirmed;
+  }
+
   async generatePassword(): Promise<boolean> {
     const confirmed = await super.generatePassword();
     if (confirmed) {
-      this.stateService.setAddEditCipherInfo({
-        cipher: this.cipher,
-        collectionIds:
-          this.collections == null
-            ? []
-            : this.collections.filter((c) => (c as any).checked).map((c) => c.id),
-      });
-      this.router.navigate(["generator"]);
+      await this.saveCipherState();
+      this.router.navigate(["generator"], { queryParams: { type: "password" } });
     }
     return confirmed;
   }
@@ -216,5 +219,15 @@ export class AddEditComponent extends BaseAddEditComponent {
       this.ownershipOptions &&
       (this.ownershipOptions.length > 1 || !this.allowPersonal)
     );
+  }
+
+  private saveCipherState() {
+    return this.stateService.setAddEditCipherInfo({
+      cipher: this.cipher,
+      collectionIds:
+        this.collections == null
+          ? []
+          : this.collections.filter((c) => (c as any).checked).map((c) => c.id),
+    });
   }
 }

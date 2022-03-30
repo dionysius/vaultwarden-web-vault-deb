@@ -677,5 +677,14 @@
         color: themed("textColor");
       }
     }
+
+    &.align-start {
+      align-items: start;
+      margin-top: 10px;
+
+      label {
+        margin-top: -4px;
+      }
+    }
   }
 }

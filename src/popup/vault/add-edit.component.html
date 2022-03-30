@@ -34,16 +34,30 @@
         </div>
         <!-- Login -->
         <div *ngIf="cipher.type === cipherType.Login">
-          <div class="box-content-row" appBoxRow>
-            <label for="loginUsername">{{ "username" | i18n }}</label>
-            <input
-              id="loginUsername"
-              type="text"
-              name="Login.Username"
-              [(ngModel)]="cipher.login.username"
-              inputmode="email"
-              appInputVerbatim
-            />
+          <div class="box-content-row box-content-row-flex" appBoxRow>
+            <div class="row-main">
+              <label for="loginUsername">{{ "username" | i18n }}</label>
+              <input
+                id="loginUsername"
+                type="text"
+                name="Login.Username"
+                [(ngModel)]="cipher.login.username"
+                inputmode="email"
+                appInputVerbatim
+              />
+            </div>
+            <div class="action-buttons">
+              <button
+                type="button"
+                class="row-btn"
+                appStopClick
+                appBlurClick
+                appA11yTitle="{{ 'generateUsername' | i18n }}"
+                (click)="generateUsername()"
+              >
+                <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
           <div class="box-content-row box-content-row-flex" appBoxRow>
             <div class="row-main">
