@@ -2,7 +2,7 @@ import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { PasswordGeneratorComponent as BasePasswordGeneratorComponent } from "jslib-angular/components/password-generator.component";
+import { GeneratorComponent as BaseGeneratorComponent } from "jslib-angular/components/generator.component";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
@@ -11,10 +11,10 @@ import { UsernameGenerationService } from "jslib-common/abstractions/usernameGen
 import { CipherView } from "jslib-common/models/view/cipherView";
 
 @Component({
-  selector: "app-password-generator",
-  templateUrl: "password-generator.component.html",
+  selector: "app-generator",
+  templateUrl: "generator.component.html",
 })
-export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
+export class GeneratorComponent extends BaseGeneratorComponent {
   private addEditCipherInfo: any;
   private cipherState: CipherView;
 
@@ -43,10 +43,8 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
     if (this.addEditCipherInfo != null) {
       this.cipherState = this.addEditCipherInfo.cipher;
     }
-    this.showSelect = this.cipherState != null;
-    this.showWebsiteOption =
-      this.cipherState?.login?.hasUris && this.cipherState.login.uris[0].hostname != null;
-    if (this.showWebsiteOption) {
+    this.comingFromAddEdit = this.cipherState != null;
+    if (this.cipherState?.login?.hasUris) {
       this.usernameWebsite = this.cipherState.login.uris[0].hostname;
     }
     await super.ngOnInit();

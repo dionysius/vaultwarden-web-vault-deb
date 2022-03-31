@@ -83,8 +83,8 @@ import { PrivateModeWarningComponent } from "./components/private-mode-warning.c
 import { SendListComponent } from "./components/send-list.component";
 import { SetPinComponent } from "./components/set-pin.component";
 import { VerifyMasterPasswordComponent } from "./components/verify-master-password.component";
+import { GeneratorComponent } from "./generator/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./generator/password-generator-history.component";
-import { PasswordGeneratorComponent } from "./generator/password-generator.component";
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./send/efflux-dates.component";
 import { SendAddEditComponent } from "./send/send-add-edit.component";
 import { SendGroupingsComponent } from "./send/send-groupings.component";
@@ -204,7 +204,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     LockComponent,
     LoginComponent,
     OptionsComponent,
-    PasswordGeneratorComponent,
+    GeneratorComponent,
     PasswordGeneratorHistoryComponent,
     PasswordHistoryComponent,
     PasswordRepromptComponent,
