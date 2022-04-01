@@ -14,10 +14,10 @@
     "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "ანგარიშის შექმნა"
   },
   "login": {
-    "message": "Log In"
+    "message": "ავტორიზაცია"
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise Single Sign-On"
@@ -65,7 +65,7 @@
     "message": "Current Tab"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "პაროლის კოპირება"
   },
   "copyNote": {
     "message": "Copy Note"
@@ -74,13 +74,13 @@
     "message": "Copy URI"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "მომხმარებლის სახელის კოპირება"
   },
   "copyNumber": {
     "message": "Copy Number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "უსაფრთხოების კოდის კოპირება"
   },
   "autoFill": {
     "message": "თვითშევსება"
@@ -104,7 +104,7 @@
     "message": "There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin": {
-    "message": "Add a Login"
+    "message": "ავტორიზაციის დამატება"
   },
   "addItem": {
     "message": "Add Item"
@@ -122,16 +122,16 @@
     "message": "გაგრძელება"
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "ვერიფიკაციის კოდის გაგზავნა საკუთარ მეილზე"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "კოდის გაგზავნა"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "კოდი გაიგზავნა"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "ვერიფიკაციის კოდი"
   },
   "confirmIdentity": {
     "message": "Confirm your identity to continue."
@@ -151,7 +151,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "ორსაფეხურიანი ავტორიზაცია"
   },
   "logOut": {
     "message": "გამოსვლა"
@@ -169,28 +169,28 @@
     "message": "Move"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "საქაღალდის დამატება"
   },
   "name": {
-    "message": "Name"
+    "message": "სახელი"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "საქაღალდის რედაქტირება"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "საქაღალდის წაშლა"
   },
   "folders": {
-    "message": "Folders"
+    "message": "საქაღალდეები"
   },
   "noFolders": {
     "message": "There are no folders to list."
   },
   "helpFeedback": {
-    "message": "Help & Feedback"
+    "message": "დახმარება & გამოხმაურება"
   },
   "sync": {
-    "message": "Sync"
+    "message": "სინქრონიზაცია"
   },
   "syncVaultNow": {
     "message": "Sync Vault Now"
@@ -267,10 +267,10 @@
     "message": "Search vault"
   },
   "edit": {
-    "message": "Edit"
+    "message": "შეცვლა"
   },
   "view": {
-    "message": "View"
+    "message": "ნახვა"
   },
   "noItemsInList": {
     "message": "There are no items to list."
@@ -279,7 +279,7 @@
     "message": "Item Information"
   },
   "username": {
-    "message": "Username"
+    "message": "მომხმარებლის სახელი"
   },
   "password": {
     "message": "პაროლი"
@@ -300,7 +300,7 @@
     "message": "Edit Item"
   },
   "folder": {
-    "message": "Folder"
+    "message": "საქაღალდე"
   },
   "deleteItem": {
     "message": "Delete Item"
@@ -318,7 +318,7 @@
     "message": "Toggle Visibility"
   },
   "manage": {
-    "message": "Manage"
+    "message": "მართვა"
   },
   "other": {
     "message": "სხვა"
@@ -382,19 +382,19 @@
     "message": "2 წუთი"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 წუთი"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 წუთი"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 წუთი"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 საათი"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 საათი"
   },
   "onLocked": {
     "message": "On System Lock"
@@ -403,19 +403,19 @@
     "message": "On Browser Restart"
   },
   "never": {
-    "message": "Never"
+    "message": "არასოდეს"
   },
   "security": {
-    "message": "Security"
+    "message": "უსაფრთხოება"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "დაფიქსირდა შეცდომა"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "ელექტრონული ფოსტის მისამართი აუცილებელია."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "არასწორი ელექტრო ფოსტის მისამართი."
   },
   "masterPassRequired": {
     "message": "Master password is required."
@@ -433,7 +433,7 @@
     "message": "We've sent you an email with your master password hint."
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "ვერიფიკაციის კოდი აუცილებელია."
   },
   "invalidVerificationCode": {
     "message": "Invalid verification code"
@@ -541,6 +541,12 @@
   },
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?"
+  },
+  "overwriteUsername": {
+    "message": "Overwrite Username"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Are you sure you want to overwrite the current username?"
   },
   "searchFolder": {
     "message": "Search folder"
@@ -1233,7 +1239,12 @@
     "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Base domain",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domain Name",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Host",
@@ -1887,5 +1898,44 @@
   },
   "error": {
     "message": "Error"
+  },
+  "regenerateUsername": {
+    "message": "Regenerate Username"
+  },
+  "generateUsername": {
+    "message": "Generate Username"
+  },
+  "usernameType": {
+    "message": "Username Type"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Use your email provider's sub-addressing capabilities."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "Random"
+  },
+  "randomWord": {
+    "message": "Random Word"
+  },
+  "websiteName": {
+    "message": "Website Name"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "What would you like to generate?"
+  },
+  "passwordType": {
+    "message": "Password Type"
+  },
+  "service": {
+    "message": "Service"
   }
 }

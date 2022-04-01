@@ -542,6 +542,12 @@
   "overwritePasswordConfirmation": {
     "message": "Oled kindel, et soovid olemasolevat parooli üle kirjutada?"
   },
+  "overwriteUsername": {
+    "message": "Kasutajanime ülekirjutamine"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Oled kindel, et soovid praegust kasutajanime üle kirjutada? "
+  },
   "searchFolder": {
     "message": "Otsi kausta"
   },
@@ -1233,7 +1239,12 @@
     "message": "Seda parooli ei õnnestu andmeleketest leida. Parooli edasi kasutamine peaks olema turvaline."
   },
   "baseDomain": {
-    "message": "Baasdomeen"
+    "message": "Baasdomeen",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domeeni nimi",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Host",
@@ -1887,5 +1898,44 @@
   },
   "error": {
     "message": "Viga"
+  },
+  "regenerateUsername": {
+    "message": "Genereeri kasutajanimi"
+  },
+  "generateUsername": {
+    "message": "Genereeri kasutajanimi"
+  },
+  "usernameType": {
+    "message": "Kasutajanime tüüp"
+  },
+  "plusAddressedEmail": {
+    "message": "Lisaks e-post"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Kasuta e-posti teenuspakkuja alamadressimise võimalusi."
+  },
+  "catchallEmail": {
+    "message": "Kogumisaadress"
+  },
+  "catchallEmailDesc": {
+    "message": "Kasuta domeenipõhist kogumisaadressi."
+  },
+  "random": {
+    "message": "Juhuslik"
+  },
+  "randomWord": {
+    "message": "Juhuslik sõna"
+  },
+  "websiteName": {
+    "message": "Veebilehe nimi"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Mida sa soovid genereerida?"
+  },
+  "passwordType": {
+    "message": "Parooli tüüp"
+  },
+  "service": {
+    "message": "Teenus"
   }
 }

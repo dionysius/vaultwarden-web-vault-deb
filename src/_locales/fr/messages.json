@@ -542,6 +542,12 @@
   "overwritePasswordConfirmation": {
     "message": "Êtes-vous sûr de vouloir écraser le mot de passe actuel ?"
   },
+  "overwriteUsername": {
+    "message": "Remplacer le nom d'utilisateur"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir remplacer le nom d'utilisateur actuel ?"
+  },
   "searchFolder": {
     "message": "Rechercher dans le dossier"
   },
@@ -1233,7 +1239,12 @@
     "message": "Ce mot de passe n'a été trouvé dans aucune fuite de données connue. Il semble sécurisé."
   },
   "baseDomain": {
-    "message": "Domaine de base"
+    "message": "Domaine de base",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Nom de domaine",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Hôte",
@@ -1494,7 +1505,7 @@
     "message": "Démarrer l'application de bureau Bitwarden."
   },
   "startDesktopDesc": {
-    "message": "L'application de bureau Bitwarden doit être démarrée avant que cette fonction puisse être utilisée."
+    "message": "L'application de bureau Bitwarden doit être démarrée avant que le déverrouillage par biométrie puisse être utilisé."
   },
   "errorEnableBiometricTitle": {
     "message": "Impossible d'activer la biométrie"
@@ -1887,5 +1898,44 @@
   },
   "error": {
     "message": "Erreur"
+  },
+  "regenerateUsername": {
+    "message": "Régénérer un nom d'utilisateur"
+  },
+  "generateUsername": {
+    "message": "Générer un nom d'utilisateur"
+  },
+  "usernameType": {
+    "message": "Type de nom d'utilisateur"
+  },
+  "plusAddressedEmail": {
+    "message": "E-mail suffixé"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Utilisez les capacités de sous-adressage de votre fournisseur d'e-mail."
+  },
+  "catchallEmail": {
+    "message": "Collecteur d'e-mail"
+  },
+  "catchallEmailDesc": {
+    "message": "Utilisez la boîte de réception du collecteur configurée de votre domaine."
+  },
+  "random": {
+    "message": "Aléatoire"
+  },
+  "randomWord": {
+    "message": "Mots aléatoire"
+  },
+  "websiteName": {
+    "message": "Nom du site Web"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Que souhaitez-vous générer ?"
+  },
+  "passwordType": {
+    "message": "Type de mot de passe"
+  },
+  "service": {
+    "message": "Service"
   }
 }

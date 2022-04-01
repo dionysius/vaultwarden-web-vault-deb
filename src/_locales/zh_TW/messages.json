@@ -53,7 +53,7 @@
     "message": "分頁"
   },
   "myVault": {
-    "message": "我的密碼庫"
+    "message": "密碼庫"
   },
   "tools": {
     "message": "工具"
@@ -122,13 +122,13 @@
     "message": "繼續"
   },
   "sendVerificationCode": {
-    "message": "傳送驗證碼至您的電子郵件"
+    "message": "傳送驗證碼至您的電子郵件信箱"
   },
   "sendCode": {
     "message": "傳送驗證碼"
   },
   "codeSent": {
-    "message": "已送出驗證碼"
+    "message": "驗證碼已傳送"
   },
   "verificationCode": {
     "message": "驗證碼"
@@ -336,7 +336,7 @@
     "message": "驗證身份"
   },
   "yourVaultIsLocked": {
-    "message": "您的密碼庫已鎖定。請驗證身份後繼續。"
+    "message": "您的密碼庫已鎖定。請驗證身分以繼續。"
   },
   "unlock": {
     "message": "解鎖"
@@ -479,7 +479,7 @@
     "message": "變更主密碼"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "您可以在 Bitwarden 網頁版密碼庫變更主密碼。現在要前往嗎？"
+    "message": "您可以在 Bitwarden 網頁版密碼庫變更主密碼。要現在前往嗎？"
   },
   "twoStepLoginConfirmation": {
     "message": "兩步驟登入需要您從其他裝置（例如安全金鑰、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的帳戶更加安全。兩步驟登入可以在 Bitwarden 網頁版密碼庫啟用。要現在前往嗎？"
@@ -541,6 +541,12 @@
   },
   "overwritePasswordConfirmation": {
     "message": "您確定要覆寫目前的密碼嗎？"
+  },
+  "overwriteUsername": {
+    "message": "覆寫使用者名稱"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "您確定要覆寫目前的使用者名稱嗎？"
   },
   "searchFolder": {
     "message": "搜尋資料夾"
@@ -798,7 +804,7 @@
     "message": "停用自動 TOTP 複製"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "如果您的登入資料已包含驗證器金鑰，TOTP 驗證碼會在您自動填入時自動複製到您的剪貼簿。"
+    "message": "若您的登入資料已包含驗證器金鑰，TOTP 驗證碼會在您自動填入時自動複製至您的剪貼簿。"
   },
   "disableAutoBiometricsPrompt": {
     "message": "不要在啟動時提示生物特徵辨識驗證"
@@ -822,7 +828,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "驗證碼已傳送至 $EMAIL$。",
+    "message": "已傳送驗證電子郵件至 $EMAIL$。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -837,7 +843,7 @@
     "message": "再次傳送​​包含驗證碼的電子郵件"
   },
   "useAnotherTwoStepMethod": {
-    "message": "使用另一種兩步驟登入方式"
+    "message": "使用另一種兩步驟登入方法"
   },
   "insertYubiKey": {
     "message": "將您的 YubiKey 插入電腦的 USB 連接埠，然後按一下它的按鈕。"
@@ -903,10 +909,10 @@
     "message": "電子郵件"
   },
   "emailDesc": {
-    "message": "將使用電子郵件傳送驗證碼給您。"
+    "message": "使用電子郵件傳送驗證碼給您。"
   },
   "selfHostedEnvironment": {
-    "message": "自我託管環境"
+    "message": "自我裝載環境"
   },
   "selfHostedEnvironmentFooter": {
     "message": "指定您內部部署的 Bitwarden 安裝之基礎 URL。"
@@ -936,7 +942,7 @@
     "message": "圖示伺服器 URL"
   },
   "environmentSaved": {
-    "message": "環境 URL 已儲存。"
+    "message": "已儲存環境 URL。"
   },
   "enableAutoFillOnPageLoad": {
     "message": "啟用頁面載入時的自動填入功能"
@@ -1031,7 +1037,7 @@
     "message": "停用圖示計數器"
   },
   "disableBadgeCounterDesc": {
-    "message": "圖示計數器顯示您密碼庫中可用於目前頁面的登入資料數量。"
+    "message": "圖示計數器可顯示您密碼庫中可用於目前頁面的登入資料數量。"
   },
   "cardholderName": {
     "message": "持卡人姓名"
@@ -1233,7 +1239,12 @@
     "message": "任何已知的外洩密碼資料庫中都沒有此密碼，它目前是安全的。"
   },
   "baseDomain": {
-    "message": "基底網域"
+    "message": "基底網域",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "網域名稱",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "主機",
@@ -1401,7 +1412,7 @@
     "message": "項目已還原"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "選擇登出將會在密碼庫逾時後移除對密碼庫的所有存取權限，若要重新認證則需連線網路。確定要使用此設定嗎？"
+    "message": "選擇登出將會在密碼庫逾時後移除對密碼庫的所有存取權限，若要重新驗證則需連線網路。確定要使用此設定嗎？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "逾時動作確認"
@@ -1647,7 +1658,7 @@
     "message": "刪除日期"
   },
   "deletionDateDesc": {
-    "message": "此 Send 將在指定的日期和時間後被永久删除。",
+    "message": "此 Send 將在指定的日期和時間後被永久刪除。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -1684,7 +1695,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "關於此 Send 的私人註釋。",
+    "message": "關於此 Send 的私人備註。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
@@ -1807,7 +1818,7 @@
     "message": "選擇資料夾⋯"
   },
   "ssoCompleteRegistration": {
-    "message": "要完成 SSO 登入，請設定主密碼以存取和保護您的密碼庫。"
+    "message": "要完成 SSO 登入設定，請設定一組主密碼以存取和保護您的密碼庫。"
   },
   "hours": {
     "message": "小時"
@@ -1816,7 +1827,7 @@
     "message": "分鐘"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "您的組織策略正在影響您的密碼庫逾時時間。密碼庫逾時時間最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。",
+    "message": "您的組織原則正在影響您的密碼庫逾時時間。密碼庫逾時時間最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1835,7 +1846,7 @@
     "message": "密碼庫匯出已停用"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "一或多個組織策略禁止您匯出個人密碼庫。"
+    "message": "一個或多個組織原則禁止您匯出個人密碼庫。"
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "未能找出有效的表單元件。請試試看改用 HTML 檢查功能。"
@@ -1844,7 +1855,7 @@
     "message": "找不到唯一識別碼。"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ 使用自我托管金鑰伺服器 SSO。此組織的成員登入時將不再需要主密碼。",
+    "message": "$ORGANIZATION$ 使用自我裝載金鑰伺服器 SSO。此組織的成員登入時將不再需要主密碼。",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1871,7 +1882,7 @@
     "message": "切換字元計數"
   },
   "sessionTimeout": {
-    "message": "您的登入階段已逾時。請返回並嘗試重新登入。"
+    "message": "您的登入階段已逾時，請返回並嘗試重新登入。"
   },
   "exportingPersonalVaultTitle": {
     "message": "匯出個人密碼庫"
@@ -1887,5 +1898,44 @@
   },
   "error": {
     "message": "錯誤"
+  },
+  "regenerateUsername": {
+    "message": "重新產生使用者名稱"
+  },
+  "generateUsername": {
+    "message": "產生使用者名稱"
+  },
+  "usernameType": {
+    "message": "使用者名稱類型"
+  },
+  "plusAddressedEmail": {
+    "message": "加號地址電子郵件"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "使用您電子郵件提供者的子地址功能。"
+  },
+  "catchallEmail": {
+    "message": "Catch-all 電子郵件"
+  },
+  "catchallEmailDesc": {
+    "message": "使用您網域設定的 Catch-all 收件匣。"
+  },
+  "random": {
+    "message": "隨機"
+  },
+  "randomWord": {
+    "message": "隨機單字"
+  },
+  "websiteName": {
+    "message": "網站名稱"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "您想要產生什麼？"
+  },
+  "passwordType": {
+    "message": "密碼類型"
+  },
+  "service": {
+    "message": "服務"
   }
 }

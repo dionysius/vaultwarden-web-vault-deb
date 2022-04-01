@@ -542,6 +542,12 @@
   "overwritePasswordConfirmation": {
     "message": "Mevcut parolanın üzerine kaydetmek istediğinize emin misiniz?"
   },
+  "overwriteUsername": {
+    "message": "Kullanıcı adının üzerine yaz"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Kullanıcı adının üzerine kaydetmek istediğinizden emin misiniz?"
+  },
   "searchFolder": {
     "message": "Klasörde ara"
   },
@@ -1233,7 +1239,12 @@
     "message": "Bilinen veri ihlallerinde bu parola bulunamadı. Güvenle kullanabilirsiniz."
   },
   "baseDomain": {
-    "message": "Ana alan adı"
+    "message": "Ana alan adı",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Alan adı",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Sunucu",
@@ -1887,5 +1898,44 @@
   },
   "error": {
     "message": "Hata"
+  },
+  "regenerateUsername": {
+    "message": "Kullanıcı adını yeniden oluştur"
+  },
+  "generateUsername": {
+    "message": "Kullanıcı adı oluştur"
+  },
+  "usernameType": {
+    "message": "Kullanıcı adı türü"
+  },
+  "plusAddressedEmail": {
+    "message": "Artı adresli e-posta"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "E-posta sağlayıcınızın alt adres özelliklerini kullanın."
+  },
+  "catchallEmail": {
+    "message": "Catch-all e-posta"
+  },
+  "catchallEmailDesc": {
+    "message": "Alan adınızın tüm iletileri yakalamaya ayarlanmış adresini kullanın."
+  },
+  "random": {
+    "message": "Rastgele"
+  },
+  "randomWord": {
+    "message": "Rastgele kelime"
+  },
+  "websiteName": {
+    "message": "Web sitesi adı"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Ne oluşturmak istersiniz?"
+  },
+  "passwordType": {
+    "message": "Parola türü"
+  },
+  "service": {
+    "message": "Servis"
   }
 }

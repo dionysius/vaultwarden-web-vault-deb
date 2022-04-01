@@ -542,6 +542,12 @@
   "overwritePasswordConfirmation": {
     "message": "Czy na pewno chcesz zastąpić obecne hasło?"
   },
+  "overwriteUsername": {
+    "message": "Nadpisz nazwę użytkownika"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Czy na pewno chcesz nadpisać aktualną nazwę użytkownika?"
+  },
   "searchFolder": {
     "message": "Szukaj w folderze"
   },
@@ -1233,7 +1239,12 @@
     "message": "To hasło nie znajduje się w żadnej znanej wykradzionej bazie danych. Powinno być bezpieczne."
   },
   "baseDomain": {
-    "message": "Domena podstawowa"
+    "message": "Domena podstawowa",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Nazwa domeny",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Host",
@@ -1887,5 +1898,44 @@
   },
   "error": {
     "message": "Błąd"
+  },
+  "regenerateUsername": {
+    "message": "Wygeneruj ponownie nazwę użytkownika"
+  },
+  "generateUsername": {
+    "message": "Wygeneruj nazwę użytkownika"
+  },
+  "usernameType": {
+    "message": "Typ nazwy użytkownika"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Use your email provider's sub-addressing capabilities."
+  },
+  "catchallEmail": {
+    "message": "Adres catch-all"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "Losowo"
+  },
+  "randomWord": {
+    "message": "Losowe słowo"
+  },
+  "websiteName": {
+    "message": "Nazwa strony"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Co chcesz wygenerować?"
+  },
+  "passwordType": {
+    "message": "Typ hasła"
+  },
+  "service": {
+    "message": "Usługa"
   }
 }

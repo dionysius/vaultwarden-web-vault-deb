@@ -542,6 +542,12 @@
   "overwritePasswordConfirmation": {
     "message": "Наистина ли искате да презапишете текущата парола?"
   },
+  "overwriteUsername": {
+    "message": "Замяна на потребителското име"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Наостина ли искате да замените текущото потребителско име?"
+  },
   "searchFolder": {
     "message": "Търсене в папката"
   },
@@ -1233,7 +1239,12 @@
     "message": "Паролата не е била разкрита в известните пробиви. Засега ползването ѝ изглежда безопасно."
   },
   "baseDomain": {
-    "message": "Основен домейн"
+    "message": "Основен домейн",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Име на домейн",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Сървър",
@@ -1887,5 +1898,44 @@
   },
   "error": {
     "message": "Грешка"
+  },
+  "regenerateUsername": {
+    "message": "Повторно генериране на потр. име"
+  },
+  "generateUsername": {
+    "message": "Генериране на потр. име"
+  },
+  "usernameType": {
+    "message": "Тип потребителско име"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Използвайте възможностите за под-адресиране на е-поща на своя доставчик."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "Произволно"
+  },
+  "randomWord": {
+    "message": "Произволна дума"
+  },
+  "websiteName": {
+    "message": "Име на уеб сайт"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Какво бихте искали да генерирате?"
+  },
+  "passwordType": {
+    "message": "Тип парола"
+  },
+  "service": {
+    "message": "Услуга"
   }
 }

@@ -542,6 +542,12 @@
   "overwritePasswordConfirmation": {
     "message": "Esteu segur que voleu sobreescriure la contrasenya actual?"
   },
+  "overwriteUsername": {
+    "message": "Sobrescriu el nom d'usuari"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Segur que voleu sobreescriure el nom d'usuari actual?"
+  },
   "searchFolder": {
     "message": "Cerca la carpeta"
   },
@@ -1233,7 +1239,12 @@
     "message": "Aquesta contrasenya no s'ha trobat en cap filtració de dades coneguda. Hauries de poder utilitzar-la de manera segura."
   },
   "baseDomain": {
-    "message": "Domini base"
+    "message": "Domini base",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Nom del domini",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Amfitrió",
@@ -1887,5 +1898,44 @@
   },
   "error": {
     "message": "Error"
+  },
+  "regenerateUsername": {
+    "message": "Regenerate Username"
+  },
+  "generateUsername": {
+    "message": "Generate Username"
+  },
+  "usernameType": {
+    "message": "Username Type"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Use your email provider's sub-addressing capabilities."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "Aleatori"
+  },
+  "randomWord": {
+    "message": "Paraula aleatòria"
+  },
+  "websiteName": {
+    "message": "Nom del lloc web"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Què voleu generar?"
+  },
+  "passwordType": {
+    "message": "Tipus de contrasenya"
+  },
+  "service": {
+    "message": "Servei"
   }
 }
