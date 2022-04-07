@@ -133,8 +133,8 @@ function distSafariApp(cb, subBuildPath) {
       "--force",
       "--sign",
       subBuildPath === "mas"
-        ? "Apple Distribution: Bitwarden Inc"
-        : "804423200FF8ED2D5198919ED1831AAF83380226",
+        ? "3rd Party Mac Developer Application: 8bit Solutions LLC"
+        : "6B287DD81FF922D86FD836128B0F62F358B38726",
       "--entitlements",
       entitlementsPath,
     ];
