@@ -543,10 +543,10 @@
     "message": "Вы хотите перезаписать текущий пароль?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Перезаписать имя пользователя"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Вы хотите перезаписать текущее имя пользователя?"
   },
   "searchFolder": {
     "message": "Поиск в папке"
@@ -1243,7 +1243,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Доменное имя",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Достигнут максимум обращений"
+    "message": "Достигнут максимум обращений",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Срок истек"
@@ -1900,42 +1901,43 @@
     "message": "Ошибка"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Пересоздать имя пользователя"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Создать имя пользователя"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Тип имени пользователя"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Плюс-адресованные email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Использовать возможности суб-адресации вашего провайдера электронной почты."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all-адрес электронной почты"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Использовать настроенную в вашем домене почту catch-all."
   },
   "random": {
-    "message": "Random"
+    "message": "Случайно"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Случайное слово"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Название сайта"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Что вы хотите сгенерировать?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Тип пароля"
   },
   "service": {
-    "message": "Service"
+    "message": "Служба"
   }
 }

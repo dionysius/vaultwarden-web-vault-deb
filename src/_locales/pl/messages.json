@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Maksymalna liczba dostępów została osiągnięta"
+    "message": "Maksymalna liczba dostępów została osiągnięta",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Wygasła"
@@ -1906,19 +1907,20 @@
     "message": "Wygeneruj nazwę użytkownika"
   },
   "usernameType": {
-    "message": "Typ nazwy użytkownika"
+    "message": "Rodzaj nazwy użytkownika"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Adres e-mail z plusem",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Użyj możliwości dodawania aliasów u swojego dostawcy poczty e-mail."
   },
   "catchallEmail": {
     "message": "Adres catch-all"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Użyj skonfigurowanej skrzynki catch-all w swojej domenie."
   },
   "random": {
     "message": "Losowo"
@@ -1927,13 +1929,13 @@
     "message": "Losowe słowo"
   },
   "websiteName": {
-    "message": "Nazwa strony"
+    "message": "Nazwa witryny"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Co chcesz wygenerować?"
   },
   "passwordType": {
-    "message": "Typ hasła"
+    "message": "Rodzaj hasła"
   },
   "service": {
     "message": "Usługa"

@@ -543,10 +543,10 @@
     "message": "Er du sikker på at du vil overskrive det nåværende passordet?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Skriv over brukernavn"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Er du sikker på at du vil skrive over det nåværende brukernavnet?"
   },
   "searchFolder": {
     "message": "Søk i mappe"
@@ -1243,7 +1243,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domenenavn",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Maksimalt antall tilganger nådd"
+    "message": "Maksimalt antall tilganger nådd",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Utløpt"
@@ -1885,7 +1886,7 @@
     "message": "Your session has timed out. Please go back and try logging in again."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Eksporterer personlig hvelv"
   },
   "exportingPersonalVaultDescription": {
     "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
@@ -1900,16 +1901,17 @@
     "message": "Feil"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerer brukernavn"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generer brukernavn"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Brukernavntype"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Plus Addressed Email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
@@ -1921,21 +1923,21 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Tilfeldig"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Tilfeldig ord"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Navn på nettside"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Hva vil du generere?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Passordtype"
   },
   "service": {
-    "message": "Service"
+    "message": "Tjeneste"
   }
 }

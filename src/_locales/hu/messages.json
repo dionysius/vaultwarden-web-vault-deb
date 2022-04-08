@@ -543,10 +543,10 @@
     "message": "Biztosan felül akarod írni a jelenlegi jelszavad?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Felhasználónév felülírása"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Biztosan felülírásra kerüljön az aktuális felhasználónév?"
   },
   "searchFolder": {
     "message": "Mappa keresése"
@@ -1243,7 +1243,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Tartománynév",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "A maximális hozzáférések száma elérésre került."
+    "message": "A maximális hozzáférések száma elérésre került.",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Lejárt"
@@ -1900,42 +1901,43 @@
     "message": "Hiba"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Felhasználónév ismételt geneálása"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Felhasználónév generálása"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Felhasználónév típusa"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "További címzési email cím",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Használjuk az email cím szolgáltató alcímzési képességeit."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Összes email cím begyűjtése"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Használjuk a tartomány konfigurált összes befogási bejövő postaládát."
   },
   "random": {
-    "message": "Random"
+    "message": "Véletlen"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Véletlenszerű szó"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Webhelynév"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Mit szeretnénk generálni?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Jelszótípus"
   },
   "service": {
-    "message": "Service"
+    "message": "Szolgáltatás"
   }
 }

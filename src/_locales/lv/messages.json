@@ -543,10 +543,10 @@
     "message": "Vai tiešām pārrakstīt esošo paroli?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Pārrakstīt lietotājvārdu"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Vai tiešām pārrakstīt pašreizējo lietotājvārdu?"
   },
   "searchFolder": {
     "message": "Meklēt mapē"
@@ -1243,7 +1243,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domēna vārds",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Sasniegts lielākais pieļaujamais piekļuvju skaits"
+    "message": "Sasniegts lielākais pieļaujamais piekļuvju skaits",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Beidzies izmantošanas laiks"
@@ -1900,42 +1901,43 @@
     "message": "Kļūda"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Pārizveidot lietotājvārdu"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Izveidot lietotājvārdu"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Lietotājvārda veids"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "E-pasta adrese ar plusu",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Izmantot e-pasta pakalpojuma nodrošinātāja apakšadresēšanas spējas."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Visu tveroša e-pasta adrese"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Izmantot uzstādīto domēna visu tverošo iesūtni."
   },
   "random": {
-    "message": "Random"
+    "message": "Nejauši"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Nejaušs vārds"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Tīmekļa vietnes nosaukums"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Ko ir nepieciešams izveidot?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Paroles veids"
   },
   "service": {
-    "message": "Service"
+    "message": "Pakalpojums"
   }
 }

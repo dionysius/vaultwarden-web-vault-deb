@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Maksimaalne ligipääsude arv on saavutatud"
+    "message": "Maksimaalne ligipääsude arv on saavutatud",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Aegunud"
@@ -1900,7 +1901,7 @@
     "message": "Viga"
   },
   "regenerateUsername": {
-    "message": "Genereeri kasutajanimi"
+    "message": "Genereeri kasutajanimi uuesti"
   },
   "generateUsername": {
     "message": "Genereeri kasutajanimi"
@@ -1909,7 +1910,8 @@
     "message": "Kasutajanime tüüp"
   },
   "plusAddressedEmail": {
-    "message": "Lisaks e-post"
+    "message": "Lisaks e-post",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Kasuta e-posti teenuspakkuja alamadressimise võimalusi."

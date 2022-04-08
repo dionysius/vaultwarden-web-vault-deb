@@ -543,10 +543,10 @@
     "message": "آیا از بازنویسی بر روی پسورد فعلی مطمئن هستید؟"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "بازنویسی نام کاربری"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "آیا از بازنویسی نام کاربری فعلی مطمئن هستید؟"
   },
   "searchFolder": {
     "message": "جستجوی پوشه"
@@ -1243,7 +1243,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "نام دامنه",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "به حداکثر تعداد دسترسی رسیده است"
+    "message": "به حداکثر تعداد دسترسی رسیده است",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "منقضی شده"
@@ -1897,45 +1898,46 @@
     }
   },
   "error": {
-    "message": "Error"
+    "message": "خطا"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "ایجاد مجدد نام کاربری"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "ایجاد نام کاربری"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "نوع نام کاربری"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "به علاوه ایمیل آدرس داده شده",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "از قابلیت های آدرس دهی فرعی ارائه دهنده ایمیل خود استفاده کنید."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "رایانامه همه‌گیر"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "از صندوق ورودی پیکربندی شده دامنه خود استفاده کنید."
   },
   "random": {
-    "message": "Random"
+    "message": "تصادفی"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "کلمه تصادفی"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "نام وب سایت"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "چه چیزی دوست دارید تولید کنید؟"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "نوع گذرواژه"
   },
   "service": {
-    "message": "Service"
+    "message": "خدمت"
   }
 }

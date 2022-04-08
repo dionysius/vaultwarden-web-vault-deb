@@ -543,10 +543,10 @@
     "message": "Anda yakin ingin menimpa sandi saat ini?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Menimpa nama pengguna"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Anda yakin ingin menimpa nama pengguna saat ini?"
   },
   "searchFolder": {
     "message": "Cari folder"
@@ -1243,7 +1243,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nama Domain",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Jumlah akses maksimum tercapai"
+    "message": "Jumlah akses maksimum tercapai",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Kedaluwarsa"
@@ -1849,7 +1850,7 @@
     "message": "Satu atau beberapa kebijakan organisasi mencegah Anda mengekspor brankas pribadi Anda."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "Tidak dapat mengidentifikasi elemen yang valid. Coba inspeksi HTML saja."
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Tidak ada pengidentifikasi unik yang ditemukan."
@@ -1909,7 +1910,8 @@
     "message": "Username Type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Plus Addressed Email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."

@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "S'ha assolit el recompte màxim d'accesos"
+    "message": "S'ha assolit el recompte màxim d'accesos",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Caducat"
@@ -1900,16 +1901,17 @@
     "message": "Error"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenera el nom d'usuari"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Genera un nom d'usuari"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tipus de nom d'usuari"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Adreça amb sufix",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."

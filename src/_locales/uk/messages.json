@@ -1593,7 +1593,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
-    "message": "Досягнуто максимальну кількість доступів"
+    "message": "Досягнуто максимальну кількість доступів",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "expired": {
     "message": "Термін дії завершився"
@@ -1909,7 +1910,8 @@
     "message": "Тип імені користувача"
   },
   "plusAddressedEmail": {
-    "message": "Плюс адреса електронної пошти"
+    "message": "Плюс адреса електронної пошти",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Використовуйте розширені можливості адрес вашого постачальника електронної пошти."
