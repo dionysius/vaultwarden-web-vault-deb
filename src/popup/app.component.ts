@@ -253,6 +253,10 @@ export class AppComponent implements OnInit {
   }
 
   private async clearComponentStates() {
+    if (!(await this.stateService.getIsAuthenticated())) {
+      return;
+    }
+
     await Promise.all([
       this.stateService.setBrowserGroupingComponentState(null),
       this.stateService.setBrowserCipherComponentState(null),
