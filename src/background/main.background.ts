@@ -215,6 +215,7 @@ export default class MainBackground {
       this.tokenService,
       this.platformUtilsService,
       this.environmentService,
+      this.appIdService,
       (expired: boolean) => this.logout(expired)
     );
     this.settingsService = new SettingsService(this.stateService);

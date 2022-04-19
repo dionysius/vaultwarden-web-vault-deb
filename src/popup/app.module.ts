@@ -82,7 +82,7 @@ import { PopOutComponent } from "./components/pop-out.component";
 import { PrivateModeWarningComponent } from "./components/private-mode-warning.component";
 import { SendListComponent } from "./components/send-list.component";
 import { SetPinComponent } from "./components/set-pin.component";
-import { VerifyMasterPasswordComponent } from "./components/verify-master-password.component";
+import { UserVerificationComponent } from "./components/user-verification.component";
 import { GeneratorComponent } from "./generator/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./generator/password-generator-history.component";
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./send/efflux-dates.component";
@@ -227,8 +227,8 @@ registerLocaleData(localeZhTw, "zh-TW");
     TwoFactorComponent,
     TwoFactorOptionsComponent,
     UpdateTempPasswordComponent,
+    UserVerificationComponent,
     VaultTimeoutInputComponent,
-    VerifyMasterPasswordComponent,
     ViewComponent,
     ViewCustomFieldsComponent,
     RemovePasswordComponent,
