@@ -316,7 +316,8 @@ header {
       padding: 0;
       margin: 0;
 
-      a {
+      a,
+      button {
         text-align: center;
         display: block;
         padding: 7px 0;
@@ -325,6 +326,7 @@ header {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        width: 100%;
 
         @include themify($themes) {
           color: themed("mutedColor");
@@ -345,7 +347,8 @@ header {
       }
 
       &.active {
-        a {
+        a,
+        button {
           @include themify($themes) {
             color: themed("primaryColor");
           }
