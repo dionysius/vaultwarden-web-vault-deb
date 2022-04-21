@@ -79,7 +79,7 @@
             [value]="o.value"
             (change)="typeChanged()"
             [checked]="type === o.value"
-            [disabled]="comingFromAddEdit"
+            [disabled]="comingFromAddEdit && type !== o.value"
           />
           <label for="type_{{ o.value }}">
             {{ o.name }}
