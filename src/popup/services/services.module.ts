@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, LOCALE_ID, NgModule } from "@angular/core";
 
-import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
+import { JslibServicesModule, SECURE_STORAGE } from "jslib-angular/services/jslib-services.module";
 import { LockGuardService as BaseLockGuardService } from "jslib-angular/services/lock-guard.service";
 import { UnauthGuardService as BaseUnauthGuardService } from "jslib-angular/services/unauth-guard.service";
 import { ApiService } from "jslib-common/abstractions/api.service";
@@ -39,7 +39,6 @@ import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
 import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
 import { UsernameGenerationService } from "jslib-common/abstractions/usernameGeneration.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-import { ThemeType } from "jslib-common/enums/themeType";
 import { AuthService } from "jslib-common/services/auth.service";
 import { ConsoleLogService } from "jslib-common/services/consoleLog.service";
 import { SearchService } from "jslib-common/services/search.service";
@@ -52,6 +51,7 @@ import BrowserMessagingService from "../../services/browserMessaging.service";
 import BrowserMessagingPrivateModePopupService from "../../services/browserMessagingPrivateModePopup.service";
 
 import { DebounceNavigationService } from "./debounceNavigationService";
+import { InitService } from "./init.service";
 import { LockGuardService } from "./lock-guard.service";
 import { PasswordRepromptService } from "./password-reprompt.service";
 import { PopupSearchService } from "./popup-search.service";
@@ -75,73 +75,12 @@ function getBgService<T>(service: keyof MainBackground) {
   };
 }
 
-export function initFactory(
-  platformUtilsService: PlatformUtilsService,
-  i18nService: I18nService,
-  popupUtilsService: PopupUtilsService,
-  stateService: StateServiceAbstraction,
-  logService: LogServiceAbstraction
-): () => void {
-  return async () => {
-    await stateService.init();
-
-    if (!popupUtilsService.inPopup(window)) {
-      window.document.body.classList.add("body-full");
-    } else if (window.screen.availHeight < 600) {
-      window.document.body.classList.add("body-xs");
-    } else if (window.screen.availHeight <= 800) {
-      window.document.body.classList.add("body-sm");
-    }
-
-    const htmlEl = window.document.documentElement;
-    const theme = await platformUtilsService.getEffectiveTheme();
-    htmlEl.classList.add("theme_" + theme);
-    platformUtilsService.onDefaultSystemThemeChange(async (sysTheme) => {
-      const bwTheme = await stateService.getTheme();
-      if (bwTheme == null || bwTheme === ThemeType.System) {
-        htmlEl.classList.remove("theme_" + ThemeType.Light, "theme_" + ThemeType.Dark);
-        htmlEl.classList.add("theme_" + sysTheme);
-      }
-    });
-    htmlEl.classList.add("locale_" + i18nService.translationLocale);
-
-    // Workaround for slow performance on external monitors on Chrome + MacOS
-    // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
-    if (
-      platformUtilsService.isChrome() &&
-      navigator.platform.indexOf("Mac") > -1 &&
-      popupUtilsService.inPopup(window) &&
-      (window.screenLeft < 0 ||
-        window.screenTop < 0 ||
-        window.screenLeft > window.screen.width ||
-        window.screenTop > window.screen.height)
-    ) {
-      htmlEl.classList.add("force_redraw");
-      logService.info("Force redraw is on");
-    }
-    htmlEl.classList.add("locale_" + i18nService.translationLocale);
-
-    // Workaround for slow performance on external monitors on Chrome + MacOS
-    // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
-    if (
-      platformUtilsService.isChrome() &&
-      navigator.platform.indexOf("Mac") > -1 &&
-      popupUtilsService.inPopup(window) &&
-      (window.screenLeft < 0 ||
-        window.screenTop < 0 ||
-        window.screenLeft > window.screen.width ||
-        window.screenTop > window.screen.height)
-    ) {
-      htmlEl.classList.add("force_redraw");
-      logService.info("Force redraw is on");
-    }
-  };
-}
-
 @NgModule({
   imports: [JslibServicesModule],
   declarations: [],
   providers: [
+    InitService,
+    DebounceNavigationService,
     {
       provide: LOCALE_ID,
       useFactory: () => getBgService<I18nService>("i18nService")().translationLocale,
@@ -149,19 +88,12 @@ export function initFactory(
     },
     {
       provide: APP_INITIALIZER,
-      useFactory: initFactory,
-      deps: [
-        PlatformUtilsService,
-        I18nService,
-        PopupUtilsService,
-        StateServiceAbstraction,
-        LogServiceAbstraction,
-      ],
+      useFactory: (initService: InitService) => initService.init(),
+      deps: [InitService],
       multi: true,
     },
     { provide: BaseLockGuardService, useClass: LockGuardService },
     { provide: BaseUnauthGuardService, useClass: UnauthGuardService },
-    DebounceNavigationService,
     { provide: PopupUtilsService, useFactory: () => new PopupUtilsService(isPrivateMode) },
     {
       provide: MessagingService,
@@ -170,11 +102,6 @@ export function initFactory(
           ? new BrowserMessagingPrivateModePopupService()
           : new BrowserMessagingService();
       },
-    },
-    {
-      provide: TwoFactorService,
-      useFactory: getBgService<TwoFactorService>("twoFactorService"),
-      deps: [],
     },
     {
       provide: TwoFactorService,
@@ -303,7 +230,7 @@ export function initFactory(
       deps: [],
     },
     {
-      provide: "SECURE_STORAGE",
+      provide: SECURE_STORAGE,
       useFactory: getBgService<StorageServiceAbstraction>("secureStorageService"),
       deps: [],
     },

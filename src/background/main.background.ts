@@ -267,20 +267,20 @@ export default class MainBackground {
       this.cryptoFunctionService
     );
 
-    const vaultTimeoutServiceCallbacks = {
-      locked: async (userId?: string) => {
-        if (this.notificationsService != null) {
-          this.notificationsService.updateConnection(false);
-        }
-        await this.setIcon();
-        await this.refreshBadgeAndMenu(true);
-        if (this.systemService != null) {
-          await this.systemService.clearPendingClipboard();
-          await this.reloadProcess();
-        }
-      },
-      logout: async (userId?: string) => await this.logout(false, userId),
+    const lockedCallback = async (userId?: string) => {
+      if (this.notificationsService != null) {
+        this.notificationsService.updateConnection(false);
+      }
+      await this.setIcon();
+      await this.refreshBadgeAndMenu(true);
+      if (this.systemService != null) {
+        await this.systemService.clearPendingClipboard();
+        await this.reloadProcess();
+      }
     };
+
+    const logoutCallback = async (expired: boolean, userId?: string) =>
+      await this.logout(expired, userId);
 
     this.vaultTimeoutService = new VaultTimeoutService(
       this.cipherService,
@@ -294,8 +294,8 @@ export default class MainBackground {
       this.policyService,
       this.keyConnectorService,
       this.stateService,
-      vaultTimeoutServiceCallbacks.locked,
-      vaultTimeoutServiceCallbacks.logout
+      lockedCallback,
+      logoutCallback
     );
     this.providerService = new ProviderService(this.stateService);
     this.syncService = new SyncService(
@@ -313,7 +313,7 @@ export default class MainBackground {
       this.stateService,
       this.organizationService,
       this.providerService,
-      async (expired: boolean) => await this.logout(expired)
+      logoutCallback
     );
     this.eventService = new EventService(
       this.apiService,
@@ -354,7 +354,7 @@ export default class MainBackground {
       this.apiService,
       this.vaultTimeoutService,
       this.environmentService,
-      () => this.logout(true),
+      logoutCallback,
       this.logService,
       this.stateService
     );
