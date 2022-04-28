@@ -1,13 +1,17 @@
-<button
-  type="button"
-  (click)="selectCipher(cipher)"
-  (dblclick)="launchCipher(cipher)"
-  appStopClick
-  title="{{ title }} - {{ cipher.name }}"
+<div
+  role="group"
+  appA11yTitle="{{ cipher.name }}"
   class="box-content-row box-content-row-flex virtual-scroll-item"
   [ngClass]="{ 'override-last': !last }"
 >
-  <div class="row-main">
+  <button
+    type="button"
+    (click)="selectCipher(cipher)"
+    (dblclick)="launchCipher(cipher)"
+    appStopClick
+    title="{{ title }} - {{ cipher.name }}"
+    class="row-main"
+  >
     <app-vault-icon [cipher]="cipher"></app-vault-icon>
     <div class="row-main-content">
       <span class="text">
@@ -31,7 +35,7 @@
       </span>
       <span class="detail">{{ cipher.subTitle }}</span>
     </div>
-  </div>
+  </button>
   <app-action-buttons
     [cipher]="cipher"
     [showView]="showView"
@@ -40,4 +44,4 @@
     class="action-buttons"
   >
   </app-action-buttons>
-</button>
+</div>

@@ -136,6 +136,7 @@
         .row-main {
           display: flex;
           min-width: 0;
+          align-items: normal;
 
           .row-main-content {
             min-width: 0;
@@ -283,6 +284,7 @@
   .text,
   .detail {
     display: block;
+    text-align: left;
 
     @include themify($themes) {
       color: themed("textColor");
