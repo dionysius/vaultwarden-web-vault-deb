@@ -13,7 +13,7 @@
       </button>
     </div>
   </header>
-  <content *ngIf="cipher">
+  <main tabindex="-1" *ngIf="cipher">
     <app-callout type="info" *ngIf="allowOwnershipOptions() && !allowPersonal">
       {{ "personalOwnershipPolicyInEffect" | i18n }}
     </app-callout>
@@ -656,5 +656,5 @@
         </button>
       </div>
     </div>
-  </content>
+  </main>
 </form>

@@ -22,7 +22,7 @@
     </button>
   </div>
 </header>
-<content>
+<main tabindex="-1">
   <div class="no-items" *ngIf="(!ciphers || !ciphers.length) && !showSearching()">
     <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded"></i>
     <ng-container *ngIf="loaded">
@@ -227,4 +227,4 @@
       </div>
     </cdk-virtual-scroll-viewport>
   </ng-container>
-</content>
+</main>

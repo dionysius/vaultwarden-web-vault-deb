@@ -19,9 +19,9 @@ import { routerTransition } from "./app-routing.animations";
   selector: "app-root",
   styles: [],
   animations: [routerTransition],
-  template: ` <main [@routerTransition]="getState(o)">
+  template: ` <div [@routerTransition]="getState(o)">
     <router-outlet #o="outlet"></router-outlet>
-  </main>`,
+  </div>`,
 })
 export class AppComponent implements OnInit {
   private lastActivity: number = null;

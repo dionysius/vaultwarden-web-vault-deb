@@ -13,7 +13,7 @@
       </button>
     </div>
   </header>
-  <content *ngIf="send">
+  <main tabindex="-1" *ngIf="send">
     <!-- Policy Banner -->
     <app-callout type="warning" title="{{ 'sendDisabled' | i18n }}" *ngIf="disableSend">
       {{ "sendDisabledWarning" | i18n }}
@@ -315,5 +315,5 @@
         </button>
       </div>
     </div>
-  </content>
+  </main>
 </form>

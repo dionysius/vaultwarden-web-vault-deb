@@ -24,7 +24,7 @@
     </button>
   </div>
 </header>
-<content [ngClass]="{ 'stacked-boxes': showGroupings() }">
+<main tabindex="-1" [ngClass]="{ 'stacked-boxes': showGroupings() }">
   <ng-container *ngIf="showGroupings()">
     <div class="box list" *ngIf="nestedFolders && nestedFolders.length">
       <h2 class="box-header">
@@ -108,4 +108,4 @@
       </div>
     </cdk-virtual-scroll-viewport>
   </ng-container>
-</content>
+</main>

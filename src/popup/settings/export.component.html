@@ -15,7 +15,7 @@
       </button>
     </div>
   </header>
-  <content>
+  <main tabindex="-1">
     <app-callout type="warning" title="{{ 'vaultExportDisabled' | i18n }}" *ngIf="disabledByPolicy">
       {{ "personalVaultExportPolicyInEffect" | i18n }}
     </app-callout>
@@ -36,5 +36,5 @@
         <p>{{ "confirmIdentity" | i18n }}</p>
       </div>
     </div>
-  </content>
+  </main>
 </form>

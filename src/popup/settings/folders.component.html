@@ -19,7 +19,7 @@
     </button>
   </div>
 </header>
-<content>
+<main tabindex="-1">
   <div class="box list full-list" *ngIf="folders && folders.length">
     <div class="box-content">
       <button
@@ -36,4 +36,4 @@
   <div class="no-items" *ngIf="!folders || !folders.length">
     <p>{{ "noFolders" | i18n }}</p>
   </div>
-</content>
+</main>

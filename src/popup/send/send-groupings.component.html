@@ -27,7 +27,7 @@
     </button>
   </div>
 </header>
-<content [ngClass]="{ flex: disableSend, 'tab-page': disableSend }">
+<main tabindex="-1" [ngClass]="{ flex: disableSend, 'tab-page': disableSend }">
   <app-callout type="warning" title="{{ 'sendDisabled' | i18n }}" *ngIf="disableSend">
     {{ "sendDisabledWarning" | i18n }}
   </app-callout>
@@ -119,4 +119,4 @@
       </div>
     </div>
   </ng-container>
-</content>
+</main>
