@@ -1,6 +1,8 @@
+import { AuthService } from "jslib-common/abstractions/auth.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
+import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
 
 import { BrowserApi } from "../browser/browserApi";
 
@@ -15,7 +17,8 @@ export default class CommandsBackground {
     private main: MainBackground,
     private passwordGenerationService: PasswordGenerationService,
     private platformUtilsService: PlatformUtilsService,
-    private vaultTimeoutService: VaultTimeoutService
+    private vaultTimeoutService: VaultTimeoutService,
+    private authService: AuthService
   ) {
     this.isSafari = this.platformUtilsService.isSafari();
     this.isVivaldi = this.platformUtilsService.isVivaldi();
@@ -80,7 +83,7 @@ export default class CommandsBackground {
       return;
     }
 
-    if (await this.vaultTimeoutService.isLocked()) {
+    if ((await this.authService.getAuthStatus()) < AuthenticationStatus.Unlocked) {
       const retryMessage: LockedVaultPendingNotificationsItem = {
         commandToRetry: {
           msg: { command: "autofill_login" },

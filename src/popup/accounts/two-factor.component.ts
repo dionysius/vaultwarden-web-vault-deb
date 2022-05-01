@@ -4,6 +4,7 @@ import { first } from "rxjs/operators";
 
 import { TwoFactorComponent as BaseTwoFactorComponent } from "jslib-angular/components/two-factor.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
+import { AppIdService } from "jslib-common/abstractions/appId.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
@@ -42,7 +43,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     route: ActivatedRoute,
     private messagingService: MessagingService,
     logService: LogService,
-    twoFactorService: TwoFactorService
+    twoFactorService: TwoFactorService,
+    appIdService: AppIdService
   ) {
     super(
       authService,
@@ -55,7 +57,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       stateService,
       route,
       logService,
-      twoFactorService
+      twoFactorService,
+      appIdService
     );
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);

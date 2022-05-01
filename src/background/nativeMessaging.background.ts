@@ -1,4 +1,5 @@
 import { AppIdService } from "jslib-common/abstractions/appId.service";
+import { AuthService } from "jslib-common/abstractions/auth.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
 import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
@@ -6,7 +7,7 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
+import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
 import { Utils } from "jslib-common/misc/utils";
 import { EncString } from "jslib-common/models/domain/encString";
 import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
@@ -75,7 +76,7 @@ export class NativeMessagingBackground {
     private platformUtilsService: PlatformUtilsService,
     private stateService: StateService,
     private logService: LogService,
-    private vaultTimeoutService: VaultTimeoutService
+    private authService: AuthService
   ) {
     this.stateService.setBiometricFingerprintValidated(false);
 
@@ -298,7 +299,7 @@ export class NativeMessagingBackground {
         }
 
         // Ignore unlock if already unlocked
-        if (!(await this.vaultTimeoutService.isLocked())) {
+        if ((await this.authService.getAuthStatus()) === AuthenticationStatus.Unlocked) {
           break;
         }
 

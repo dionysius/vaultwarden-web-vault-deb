@@ -1,9 +1,10 @@
+import { AuthService } from "jslib-common/abstractions/auth.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { EventService } from "jslib-common/abstractions/event.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { TotpService } from "jslib-common/abstractions/totp.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
+import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
 import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
 import { EventType } from "jslib-common/enums/eventType";
 import { CipherView } from "jslib-common/models/view/cipherView";
@@ -22,7 +23,7 @@ export default class ContextMenusBackground {
     private cipherService: CipherService,
     private passwordGenerationService: PasswordGenerationService,
     private platformUtilsService: PlatformUtilsService,
-    private vaultTimeoutService: VaultTimeoutService,
+    private authService: AuthService,
     private eventService: EventService,
     private totpService: TotpService
   ) {
@@ -82,7 +83,7 @@ export default class ContextMenusBackground {
   private async cipherAction(tab: chrome.tabs.Tab, info: chrome.contextMenus.OnClickData) {
     const id = info.menuItemId.split("_")[1];
 
-    if (await this.vaultTimeoutService.isLocked()) {
+    if ((await this.authService.getAuthStatus()) < AuthenticationStatus.Unlocked) {
       const retryMessage: LockedVaultPendingNotificationsItem = {
         commandToRetry: {
           msg: { command: this.noopCommandSuffix, data: info },
