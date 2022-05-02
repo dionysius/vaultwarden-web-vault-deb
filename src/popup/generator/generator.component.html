@@ -334,6 +334,62 @@
             </label>
           </div>
         </div>
+        <ng-container *ngIf="usernameOptions.forwardedService === 'simplelogin'">
+          <div class="box-content-row" appBoxRow>
+            <label for="simplelogin-apikey">{{ "apiKey" | i18n }}</label>
+            <input
+              id="simplelogin-apikey"
+              type="password"
+              name="SimpleLoginApiKey"
+              [(ngModel)]="usernameOptions.forwardedSimpleLoginApiKey"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+          <div class="box-content-row" appBoxRow>
+            <label for="simplelogin-hostname">{{ "hostname" | i18n }}</label>
+            <input
+              id="simplelogin-hostname"
+              type="text"
+              name="SimpleLoginHostname"
+              [(ngModel)]="usernameOptions.forwardedSimpleLoginHostname"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+        </ng-container>
+        <ng-container *ngIf="usernameOptions.forwardedService === 'anonaddy'">
+          <div class="box-content-row" appBoxRow>
+            <label for="anonaddy-accessToken">{{ "apiAccessToken" | i18n }}</label>
+            <input
+              id="anonaddy-accessToken"
+              type="password"
+              name="AnonAddyAccessToken"
+              [(ngModel)]="usernameOptions.forwardedAnonAddyApiToken"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+          <div class="box-content-row" appBoxRow>
+            <label for="anonaddy-domain">{{ "domainName" | i18n }}</label>
+            <input
+              id="anonaddy-domain"
+              type="text"
+              name="AnonAddyDomain"
+              [(ngModel)]="usernameOptions.forwardedAnonAddyDomain"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+        </ng-container>
+        <ng-container *ngIf="usernameOptions.forwardedService === 'firefoxrelay'">
+          <div class="box-content-row" appBoxRow>
+            <label for="firefox-apikey">{{ "apiAccessToken" | i18n }}</label>
+            <input
+              id="firefox-apikey"
+              type="password"
+              name="FirefoxApiKey"
+              [(ngModel)]="usernameOptions.forwardedFirefoxApiToken"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+        </ng-container>
       </div>
     </div>
     <div class="box" *ngIf="usernameOptions.type === 'subaddress'">
