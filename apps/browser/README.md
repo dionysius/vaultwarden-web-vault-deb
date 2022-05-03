@@ -1,4 +1,4 @@
-[![Github Workflow build on master](https://github.com/bitwarden/browser/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/bitwarden/browser/actions/workflows/build.yml?query=branch:master)
+[![Github Workflow build browser on master](https://github.com/bitwarden/bitwarden/actions/workflows/build-browser.yml/badge.svg?branch=master)](https://github.com/bitwarden/bitwarden/actions/workflows/build-browser.yml?query=branch:master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/bitwarden-browser/localized.svg)](https://crowdin.com/project/bitwarden-browser)
 [![Join the chat at https://gitter.im/bitwarden/Lobby](https://badges.gitter.im/bitwarden/Lobby.svg)](https://gitter.im/bitwarden/Lobby)
 

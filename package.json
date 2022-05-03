@@ -1,0 +1,36 @@
+{
+  "name": "@bitwarden/bitwarden",
+  "version": "0.0.0",
+  "description": "Bitwarden Client Applications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitwarden/bitwarden.git"
+  },
+  "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bitwarden/bitwarden/issues"
+  },
+  "homepage": "https://bitwarden.com",
+  "scripts": {
+    "lint": "eslint . && prettier --check .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2"
+  },
+  "lint-staged": {
+    "./!(**/jslib)**": "prettier --ignore-unknown --write",
+    "*.ts": "eslint --fix"
+  }
+}

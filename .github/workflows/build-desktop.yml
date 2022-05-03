@@ -7,7 +7,7 @@ on:
       - 'l10n_master'
       - 'gh-pages'
     paths:
-      - 'apps/desktop'
+      - 'apps/desktop/**'
   workflow_dispatch:
     inputs: {}
 

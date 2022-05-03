@@ -1,0 +1,15 @@
+# Build directories
+**/build
+**/dist
+**/coverage
+
+**/jslib
+
+# External libraries / auto synced locales
+apps/browser/src/_locales
+apps/browser/src/scripts/duo.js
+apps/browser/src/content/autofill.js
+apps/browser/src/safari
+
+# Github Workflows
+.github/workflows 
