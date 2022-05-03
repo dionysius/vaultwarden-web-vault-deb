@@ -505,7 +505,7 @@
 
   &:not(.box-draggable-row) {
     .action-buttons .row-btn:last-child {
-      padding-right: 2px !important;
+      margin-right: -3px;
     }
   }
 
