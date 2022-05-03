@@ -4,54 +4,124 @@ name: Version Bump
 on:
   workflow_dispatch:
     inputs:
+      client:
+        description: "Client Project"
+        required: true
+        type: choice
+        options:
+          - Browser
+          - CLI
+          - Desktop
+          - Web
       version_number:
         description: "New Version"
         required: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   bump_version:
-    name: "Create version_bump_${{ github.event.inputs.version_number }} branch"
+    name: "Bump ${{ github.event.inputs.client }} Version"
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Branch
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
       - name: Create Version Branch
+        env:
+          CLIENT_NAME: ${{ github.event.inputs.client }}
         run: |
-          git switch -c version_bump_${{ github.event.inputs.version_number }}
-          git push -u origin version_bump_${{ github.event.inputs.version_number }}
+          echo "CLIENT=${CLIENT_NAME,,}" >> ${GITHUB_ENV}
+          git switch -c $CLIENT_version_bump_${{ github.event.inputs.version_number }}
+          git push -u origin $CLIENT_version_bump_${{ github.event.inputs.version_number }}
 
       - name: Checkout Version Branch
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
         with:
-          ref: version_bump_${{ github.event.inputs.version_number }}
+          ref: ${{ env.CLIENT }}_version_bump_${{ github.event.inputs.version_number }}
 
-      - name: Bump Version - Manifest
+      ########################
+      # VERSION BUMP SECTION #
+      ########################
+
+      ### Browser
+      - name: Bump Browser Version - Manifest
+        if: ${{ github.event.inputs.client == "Browser" }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
           file_path: "./src/manifest.json"
+        working-directory: apps/browser
 
-      - name: Run Prettier after Version Bump
+      - name: Run Prettier after Browser Version Bump
+        if: ${{ github.event.inputs.client == "Browser" }}
         run: |
           npm install -g prettier
           prettier --write ./src/manifest.json
+        working-directory: apps/browser
+
+      ### CLI
+      - name: Bump CLI Version - Package
+        if: ${{ github.event.inputs.client == "CLI" }}
+        uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
+        with:
+          version: ${{ github.event.inputs.version_number }}
+          file_path: "./package.json"
+        working-directory: apps/cli
+
+      - name: Bump CLI Version - Package-lock
+        if: ${{ github.event.inputs.client == "CLI" }}
+        uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
+        with:
+          version: ${{ github.event.inputs.version_number }}
+          file_path: "./package-lock.json"
+        working-directory: apps/cli
+
+      ### Desktop
+      - name: Bump Desktop Version - Package
+        if: ${{ github.event.inputs.client == "Desktop" }}
+        uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
+        with:
+          version: ${{ github.event.inputs.version_number }}
+          file_path: "./src/package.json"
+        working-directory: apps/desktop
+      
+      ### Web
+      - name: Bump Web Version - package.json
+        if: ${{ github.event.inputs.client == "Web" }}
+        uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
+        with:
+          version: ${{ github.event.inputs.version_number }}
+          file_path: "./package.json"
+        working-directory: apps/web
+
+      - name: Bump Web Version - package-lock.json
+        if: ${{ github.event.inputs.client == "Web" }}
+        uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
+        with:
+          version: ${{ github.event.inputs.version_number }}
+          file_path: "./package-lock.json"
+        working-directory: apps/web
+
+      ########################
 
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "Bumped version to ${{ github.event.inputs.version_number }}" -a
+          git commit -m "Bumped $CLIENT version to ${{ github.event.inputs.version_number }}" -a
 
       - name: Push changes
-        run: git push -u origin version_bump_${{ github.event.inputs.version_number }}
+        run: git push -u origin $CLIENT_version_bump_${{ github.event.inputs.version_number }}
 
-      - name: Create Version PR
+      - name: Create Bump Version PR
         env:
-          PR_BRANCH: "version_bump_${{ github.event.inputs.version_number }}"
+          PR_BRANCH: "${{ env.CLIENT }}_version_bump_${{ github.event.inputs.version_number }}"
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           BASE_BRANCH: master
-          TITLE: "Bump version to ${{ github.event.inputs.version_number }}"
+          TITLE: "Bump ${{ github.event.inputs.client }} version to ${{ github.event.inputs.version_number }}"
         run: |
           gh pr create --title "$TITLE" \
             --base "$BASE" \
@@ -67,4 +137,4 @@ jobs:
               - [X] Other
               
               ## Objective
-              Automated version bump to ${{ github.event.inputs.version_number }}"
+              Automated ${{ github.event.inputs.client }} version bump to ${{ github.event.inputs.version_number }}"

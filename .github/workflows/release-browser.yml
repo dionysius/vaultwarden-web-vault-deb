@@ -1,5 +1,5 @@
 ---
-name: Release
+name: Release Browser
 
 on:
   workflow_dispatch:
@@ -14,6 +14,10 @@ on:
           - Redeploy
           - Dry Run
 
+defaults:
+  run:
+    shell: bash
+    working-directory: apps/browser
 
 jobs:
   setup:
@@ -26,9 +30,9 @@ jobs:
       - name: Branch check
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         run: |
-          if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ "$GITHUB_REF" != "refs/heads/hotfix-rc" ]]; then
+          if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ $GITHUB_REF != refs/heads/hotfix-rc/* ]]; then
             echo "==================================="
-            echo "[!] Can only release from the 'rc' or 'hotfix-rc' branches"
+            echo "[!] Can only release from the 'rc' or 'hotfix-rc/*' branches"
             echo "==================================="
             exit 1
           fi
@@ -41,7 +45,7 @@ jobs:
         run: |
           version=$( jq -r ".version" src/manifest.json)
           previous_release_tag_version=$(
-            curl -sL https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest | jq -r ".tag_name"
+            curl -sL https://api.github.com/repos/$GITHUB_REPOSITORY/releases | jq -r 'first(.[] | select(.tag_name | startswith("browser"))).tag_name'
           )
 
           if [ "v$version" == "$previous_release_tag_version" ] && \
@@ -102,7 +106,7 @@ jobs:
       - name: Download latest RC build artifacts
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
-          workflow: build.yml
+          workflow: build-browser.yml
           workflow_conclusion: success
           branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: 'browser-source-*.zip,
@@ -131,7 +135,7 @@ jobs:
                       dist-firefox-${{ needs.setup.outputs.release-version }}.zip,
                       dist-edge-${{ needs.setup.outputs.release-version }}.zip'
           commit: ${{ github.sha }}
-          tag: "v${{ needs.setup.outputs.release-version }}"
+          tag: "browser-v${{ needs.setup.outputs.release-version }}"
           name: "Version ${{ needs.setup.outputs.release-version }}"
           body: "<insert release notes here>"
           token: ${{ secrets.GITHUB_TOKEN }}
