@@ -1,6 +1,6 @@
-name: Bug Report
+name: Browser Bug Report
 description: File a bug report
-labels: [bug]
+labels: [bug, browser]
 body:
   - type: markdown
     attributes:
