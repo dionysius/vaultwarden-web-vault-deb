@@ -48,7 +48,7 @@ jobs:
 
       ### Browser
       - name: Bump Browser Version - Manifest
-        if: ${{ github.event.inputs.client == "Browser" }}
+        if: ${{ github.event.inputs.client == 'Browser' }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
@@ -56,7 +56,7 @@ jobs:
         working-directory: apps/browser
 
       - name: Run Prettier after Browser Version Bump
-        if: ${{ github.event.inputs.client == "Browser" }}
+        if: ${{ github.event.inputs.client == 'Browser' }}
         run: |
           npm install -g prettier
           prettier --write ./src/manifest.json
@@ -64,7 +64,7 @@ jobs:
 
       ### CLI
       - name: Bump CLI Version - Package
-        if: ${{ github.event.inputs.client == "CLI" }}
+        if: ${{ github.event.inputs.client == 'CLI' }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
@@ -72,7 +72,7 @@ jobs:
         working-directory: apps/cli
 
       - name: Bump CLI Version - Package-lock
-        if: ${{ github.event.inputs.client == "CLI" }}
+        if: ${{ github.event.inputs.client == 'CLI' }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
@@ -81,16 +81,16 @@ jobs:
 
       ### Desktop
       - name: Bump Desktop Version - Package
-        if: ${{ github.event.inputs.client == "Desktop" }}
+        if: ${{ github.event.inputs.client == 'Desktop' }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
           file_path: "./src/package.json"
         working-directory: apps/desktop
-      
+
       ### Web
       - name: Bump Web Version - package.json
-        if: ${{ github.event.inputs.client == "Web" }}
+        if: ${{ github.event.inputs.client == 'Web' }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
@@ -98,7 +98,7 @@ jobs:
         working-directory: apps/web
 
       - name: Bump Web Version - package-lock.json
-        if: ${{ github.event.inputs.client == "Web" }}
+        if: ${{ github.event.inputs.client == 'Web' }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
@@ -135,6 +135,6 @@ jobs:
               - [ ] Tech debt (refactoring, code cleanup, dependency upgrades, etc)
               - [ ] Build/deploy pipeline (DevOps)
               - [X] Other
-              
+
               ## Objective
               Automated ${{ github.event.inputs.client }} version bump to ${{ github.event.inputs.version_number }}"
