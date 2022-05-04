@@ -15,7 +15,7 @@
 
 The Bitwarden browser extension is written using the Web Extension API and Angular.
 
-![](https://raw.githubusercontent.com/bitwarden/brand/master/screenshots/browser-chrome.png "My Vault")
+![My Vault](https://raw.githubusercontent.com/bitwarden/brand/master/screenshots/browser-chrome.png)
 
 # Build/Run
 
