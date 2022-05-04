@@ -206,7 +206,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
         with:
-          config: crowdin.yml
+          config: apps/browser/crowdin.yml
           crowdin_branch_name: master
           upload_sources: true
           upload_translations: false
