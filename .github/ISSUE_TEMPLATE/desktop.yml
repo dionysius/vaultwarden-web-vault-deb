@@ -1,6 +1,6 @@
-name: Bug Report
+name: Desktop Bug Report
 description: File a bug report
-labels: [bug]
+labels: [bug, desktop]
 body:
   - type: markdown
     attributes:
