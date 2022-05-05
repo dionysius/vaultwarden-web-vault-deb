@@ -54,7 +54,7 @@ jobs:
       - name: Increment Version
         id: increment-version
         run: |
-          BUILD_NUMBER=$(expr 500 + $GITHUB_RUN_NUMBER)
+          BUILD_NUMBER=$(expr 3000 + $GITHUB_RUN_NUMBER)
           echo "Setting build number to $BUILD_NUMBER"
           echo "::set-output name=build_number::$BUILD_NUMBER"
 
@@ -222,13 +222,6 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
-
-      - name: TEST STEP
-        shell: bash
-        run: |
-          pwd
-          echo "**********"
-          ls -alh
 
       - name: Build & Sign (dev)
         env:
