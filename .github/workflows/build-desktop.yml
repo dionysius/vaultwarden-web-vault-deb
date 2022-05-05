@@ -39,7 +39,6 @@ jobs:
     outputs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
       build_number: ${{ steps.increment-version.outputs.build_number }}
-      safari_ref: ${{ steps.safari-ref.outputs.safari_ref }}
       rc_branch_exists: ${{ steps.branch-check.outputs.rc_branch_exists }}
       hotfix_branch_exists: ${{ steps.branch-check.outputs.hotfix_branch_exists }}
     steps:
@@ -58,20 +57,6 @@ jobs:
           BUILD_NUMBER=$(expr 500 + $GITHUB_RUN_NUMBER)
           echo "Setting build number to $BUILD_NUMBER"
           echo "::set-output name=build_number::$BUILD_NUMBER"
-
-      - name: Get Safari Branch Ref
-        id: safari-ref
-        run: |
-          SAFARI_REF=master
-
-          if [[ "$GITHUB_REF" == "refs/heads/hotfix-rc" ]]; then
-              SAFARI_REF=hotfix-rc
-          elif [[ "$GITHUB_REF" == "refs/heads/rc" ]]; then
-              SAFARI_REF=rc
-          fi
-
-          echo "Setting Safari Extension ref to $SAFARI_REF"
-          echo "::set-output name=safari_ref::$SAFARI_REF"
 
       - name: Check if special branches exist
         id: branch-check
@@ -139,42 +124,42 @@ jobs:
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           if-no-files-found: error
 
       - name: Upload .rpm artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           if-no-files-found: error
 
       - name: Upload .freebsd artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           if-no-files-found: error
 
       - name: Upload .snap artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
-          path: ./dist/bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
+          path: apps/desktop/dist/bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           if-no-files-found: error
 
       - name: Upload .AppImage artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: latest-linux.yml
-          path: ./dist/latest-linux.yml
+          path: apps/desktop/dist/latest-linux.yml
           if-no-files-found: error
 
 
@@ -185,6 +170,7 @@ jobs:
     defaults:
       run:
         shell: pwsh
+        working-directory: apps/desktop
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
@@ -237,6 +223,13 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
+      - name: TEST STEP
+        shell: bash
+        run: |
+          pwd
+          echo "**********"
+          ls -alh
+
       - name: Build & Sign (dev)
         env:
           ELECTRON_BUILDER_SIGN: 1
@@ -273,91 +266,91 @@ jobs:
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
-          path: ./dist/Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
+          path: apps/desktop/dist/Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload installer exe artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
-          path: ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
+          path: apps/desktop/dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload appx ia32 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
           if-no-files-found: error
 
       - name: Upload store appx ia32 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS ia32 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
-          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
+          path: apps/desktop/dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
           if-no-files-found: error
 
       - name: Upload appx x64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
           if-no-files-found: error
 
       - name: Upload store appx x64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS x64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
-          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
+          path: apps/desktop/dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
           if-no-files-found: error
 
       - name: Upload appx ARM64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
           if-no-files-found: error
 
       - name: Upload store appx ARM64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS ARM64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
-          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
+          path: apps/desktop/dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           if-no-files-found: error
 
       - name: Upload nupkg artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
-          path: ./dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
+          path: apps/desktop/dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: latest.yml
-          path: ./dist/nsis-web/latest.yml
+          path: apps/desktop/dist/nsis-web/latest.yml
           if-no-files-found: error
 
 
@@ -397,14 +390,14 @@ jobs:
         id: build-cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
-          path: build
+          path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Cache Safari
         id: safari-cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
-          path: dist-safari
+          path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
@@ -471,9 +464,9 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
+          $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
 
       - name: Install Node dependencies
         run: npm ci
@@ -481,22 +474,11 @@ jobs:
       - name: Build application (dev)
         run: npm run build
 
-      - name: Create Safari directory
-        shell: pwsh
-        run: New-Item ./dist-safari -ItemType Directory -ea 0
-
-      - name: Checkout browser extension
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
-        with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
-          ref: ${{ needs.setup.outputs.safari_ref }}
-
       - name: Build Safari extension
         run: |
           npm install
           npm run dist:safari
-        working-directory: dist-safari/browser
+        working-directory: apps/browser
 
 
   macos-package-github:
@@ -537,14 +519,14 @@ jobs:
         id: build-cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
-          path: build
+          path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
-          path: dist-safari
+          path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
@@ -611,9 +593,9 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
+          $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
 
       - name: NPM install
         run: npm ci
@@ -622,30 +604,17 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
-      - name: Create Safari directory
-        if: steps.safari-cache.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: New-Item ./dist-safari -ItemType Directory -ea 0
-
-      - name: Checkout browser extension
-        if: steps.safari-cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
-        with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
-          ref: ${{ needs.setup.outputs.safari_ref }}
-
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
         run: |
           npm install
           npm run dist:safari
-        working-directory: dist-safari/browser
+        working-directory: apps/browser
 
       - name: Load Safari extension for .dmg
         run: |
           mkdir PlugIns
-          cp -r dist-safari/browser/dist/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
+          cp -r $GITHUB_WORKSPACE/apps/browser/dist/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application (dist)
         env:
@@ -657,28 +626,28 @@ jobs:
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
           if-no-files-found: error
 
       - name: Upload .dmg artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
           if-no-files-found: error
 
       - name: Upload .dmg blockmap artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
+          path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: latest-mac.yml
-          path: ./dist/latest-mac.yml
+          path: apps/desktop/dist/latest-mac.yml
           if-no-files-found: error
 
 
@@ -720,14 +689,14 @@ jobs:
         id: build-cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
-          path: build
+          path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
-          path: dist-safari
+          path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
@@ -794,9 +763,9 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
+          $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
 
       - name: NPM install
         run: npm ci
@@ -805,30 +774,17 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
-      - name: Create Safari directory
-        if: steps.safari-cache.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: New-Item ./dist-safari -ItemType Directory -ea 0
-
-      - name: Checkout browser extension
-        if: steps.safari-cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
-        with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
-          ref: ${{ needs.setup.outputs.safari_ref }}
-
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
         run: |
           npm install
           npm run dist:safari
-        working-directory: dist-safari/browser
+        working-directory: apps/browser
 
       - name: Load Safari extension for App Store
         run: |
           mkdir PlugIns
-          cp -r dist-safari/browser/dist/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
+          cp -r $GITHUB_WORKSPACE/apps/browser/dist/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application for App Store
         run: npm run pack:mac:mas
@@ -840,7 +796,7 @@ jobs:
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
-          path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
+          path: apps/desktop/dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           if-no-files-found: error
 
       - name: Deploy to TestFlight
@@ -895,14 +851,14 @@ jobs:
         id: build-cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
-          path: build
+          path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
-          path: dist-safari
+          path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
@@ -969,9 +925,9 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
+          $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
 
       - name: NPM install
         run: npm ci
@@ -980,30 +936,17 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
-      - name: Create Safari directory
-        if: steps.safari-cache.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: New-Item ./dist-safari -ItemType Directory -ea 0
-
-      - name: Checkout browser extension
-        if: steps.safari-cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
-        with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
-          ref: ${{ needs.setup.outputs.safari_ref }}
-
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
         run: |
           npm install
           npm run dist:safari
-        working-directory: dist-safari/browser
+        working-directory: apps/browser
 
       - name: Load Safari extension for App Store
         run: |
           mkdir PlugIns
-          cp -r dist-safari/browser/dist/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
+          cp -r $GITHUB_WORKSPACE/apps/browser/dist/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build dev application for App Store
         run: npm run pack:mac:masdev
@@ -1019,7 +962,7 @@ jobs:
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
-          path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
+          path: apps/desktop/dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           if-no-files-found: error
 
 
