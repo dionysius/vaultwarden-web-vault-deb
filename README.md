@@ -44,3 +44,28 @@ We recommend that you configure git to ignore specific revision using:
 ```bash
 git config blame.ignoreRevsFile .git-blame-ignore-revs
 ```
+
+## Migrate PRs from old repositories
+
+We recently migrated from individual client repositories. And some PRs were unfortunately left behind in the old repositories. Luckily it's fairly straightforward to sync them up again. Please follow all the instructions below in order to avoid most merge conflicts.
+
+### Desktop
+
+```
+# Merge master
+git merge master
+
+# Merge branch mono-repo-prep
+git merge 28bc4113b9bbae4dba2b5af14d460764fce79acf
+
+# Verify files are placed in apps/desktop
+
+# Add remote
+git remote add clients git@github.com:bitwarden/clients.git
+
+# Merge against clients master
+git fetch clients
+git merge clients/master
+
+# Push to clients or your own fork
+```
