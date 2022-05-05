@@ -15,7 +15,7 @@ Here is how you can get involved:
 
 ## Contributor Agreement
 
-Please sign the [Contributor Agreement](https://cla-assistant.io/bitwarden/bitwarden) if you intend on contributing to any Github repository. Pull requests cannot be accepted and merged unless the author has signed the Contributor Agreement.
+Please sign the [Contributor Agreement](https://cla-assistant.io/bitwarden/clients) if you intend on contributing to any Github repository. Pull requests cannot be accepted and merged unless the author has signed the Contributor Agreement.
 
 ## Pull Request Guidelines
 

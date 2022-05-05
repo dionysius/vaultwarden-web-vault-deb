@@ -1,15 +1,15 @@
 {
-  "name": "@bitwarden/bitwarden",
+  "name": "@bitwarden/clients",
   "version": "0.0.0",
   "description": "Bitwarden Client Applications",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitwarden/bitwarden.git"
+    "url": "git+https://github.com/bitwarden/clients.git"
   },
   "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/bitwarden/bitwarden/issues"
+    "url": "https://github.com/bitwarden/clients/issues"
   },
   "homepage": "https://bitwarden.com",
   "scripts": {
