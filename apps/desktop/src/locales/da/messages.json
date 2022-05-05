@@ -1,0 +1,1885 @@
+{
+  "bitwarden": {
+    "message": "Bitwarden"
+  },
+  "filters": {
+    "message": "Filtre"
+  },
+  "allItems": {
+    "message": "Alle elementer"
+  },
+  "favorites": {
+    "message": "Favoritter"
+  },
+  "types": {
+    "message": "Typer"
+  },
+  "typeLogin": {
+    "message": "Login"
+  },
+  "typeCard": {
+    "message": "Kort"
+  },
+  "typeIdentity": {
+    "message": "Identitet"
+  },
+  "typeSecureNote": {
+    "message": "Sikret notat"
+  },
+  "folders": {
+    "message": "Mapper"
+  },
+  "collections": {
+    "message": "Samlinger"
+  },
+  "searchVault": {
+    "message": "Søg i boks"
+  },
+  "addItem": {
+    "message": "Tilføj element"
+  },
+  "shared": {
+    "message": "Delt"
+  },
+  "share": {
+    "message": "Del"
+  },
+  "moveToOrganization": {
+    "message": "Flyt til organisation"
+  },
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ flyttet til $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
+  },
+  "moveToOrgDesc": {
+    "message": "Vælg den organisation, som du vil flytte dette emne til. Flytning overfører ejerskab af emnet til organisationen, og du vil efter flytningen ikke længere være den direkte ejer af emnet."
+  },
+  "attachments": {
+    "message": "Vedhæftninger"
+  },
+  "viewItem": {
+    "message": "Vis element"
+  },
+  "name": {
+    "message": "Navn"
+  },
+  "uri": {
+    "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "Ny URI"
+  },
+  "username": {
+    "message": "Brugernavn"
+  },
+  "password": {
+    "message": "Kodeord"
+  },
+  "passphrase": {
+    "message": "Adgangssætning"
+  },
+  "editItem": {
+    "message": "Redigér element"
+  },
+  "emailAddress": {
+    "message": "E-mailadresse"
+  },
+  "verificationCodeTotp": {
+    "message": "Verifikationskode (TOTP)"
+  },
+  "website": {
+    "message": "Hjemmeside"
+  },
+  "notes": {
+    "message": "Notater"
+  },
+  "customFields": {
+    "message": "Brugerdefinerede felter"
+  },
+  "launch": {
+    "message": "Kør"
+  },
+  "copyValue": {
+    "message": "Kopiér værdi",
+    "description": "Copy value to clipboard"
+  },
+  "minimizeOnCopyToClipboard": {
+    "message": "Minimér, når du kopierer til udklipsholder"
+  },
+  "minimizeOnCopyToClipboardDesc": {
+    "message": "Minimér, når du kopierer et elements data til udklipsholderen."
+  },
+  "toggleVisibility": {
+    "message": "Slå synlighed til/fra"
+  },
+  "toggleCollapse": {
+    "message": "Fold sammen/fold ud",
+    "description": "Toggling an expand/collapse state."
+  },
+  "cardholderName": {
+    "message": "Kortindehaverens navn"
+  },
+  "number": {
+    "message": "Nummer"
+  },
+  "brand": {
+    "message": "Mærke"
+  },
+  "expiration": {
+    "message": "Udløb"
+  },
+  "securityCode": {
+    "message": "Sikkerhedskode"
+  },
+  "identityName": {
+    "message": "Identitetsnavn"
+  },
+  "company": {
+    "message": "Virksomhed"
+  },
+  "ssn": {
+    "message": "CPR-nummer"
+  },
+  "passportNumber": {
+    "message": "Pasnummer"
+  },
+  "licenseNumber": {
+    "message": "Kørekortnummer"
+  },
+  "email": {
+    "message": "E-mail"
+  },
+  "phone": {
+    "message": "Telefon"
+  },
+  "address": {
+    "message": "Adresse"
+  },
+  "premiumRequired": {
+    "message": "Premium kræves"
+  },
+  "premiumRequiredDesc": {
+    "message": "Premium-medlemskab kræves for at anvende denne funktion."
+  },
+  "errorOccurred": {
+    "message": "En fejl er opstået."
+  },
+  "error": {
+    "message": "Fejl"
+  },
+  "january": {
+    "message": "Januar"
+  },
+  "february": {
+    "message": "Februar"
+  },
+  "march": {
+    "message": "Marts"
+  },
+  "april": {
+    "message": "April"
+  },
+  "may": {
+    "message": "Maj"
+  },
+  "june": {
+    "message": "Juni"
+  },
+  "july": {
+    "message": "Juli"
+  },
+  "august": {
+    "message": "August"
+  },
+  "september": {
+    "message": "September"
+  },
+  "october": {
+    "message": "Oktober"
+  },
+  "november": {
+    "message": "November"
+  },
+  "december": {
+    "message": "December"
+  },
+  "ex": {
+    "message": "eks.",
+    "description": "Short abbreviation for 'example'."
+  },
+  "title": {
+    "message": "Titel"
+  },
+  "mr": {
+    "message": "Hr"
+  },
+  "mrs": {
+    "message": "Fru"
+  },
+  "ms": {
+    "message": "Frøken"
+  },
+  "dr": {
+    "message": "Dr"
+  },
+  "expirationMonth": {
+    "message": "Udløbsmåned"
+  },
+  "expirationYear": {
+    "message": "Udløbsår"
+  },
+  "select": {
+    "message": "Vælg"
+  },
+  "other": {
+    "message": "Andet"
+  },
+  "generatePassword": {
+    "message": "Generér adgangskode"
+  },
+  "type": {
+    "message": "Type"
+  },
+  "firstName": {
+    "message": "Fornavn"
+  },
+  "middleName": {
+    "message": "Mellemnavn"
+  },
+  "lastName": {
+    "message": "Efternavn"
+  },
+  "fullName": {
+    "message": "Fulde navn"
+  },
+  "address1": {
+    "message": "Adresse 1"
+  },
+  "address2": {
+    "message": "Adresse 2"
+  },
+  "address3": {
+    "message": "Adresse 3"
+  },
+  "cityTown": {
+    "message": "By"
+  },
+  "stateProvince": {
+    "message": "Region"
+  },
+  "zipPostalCode": {
+    "message": "Postnummer"
+  },
+  "country": {
+    "message": "Land"
+  },
+  "save": {
+    "message": "Gem"
+  },
+  "cancel": {
+    "message": "Annullér"
+  },
+  "delete": {
+    "message": "Slet"
+  },
+  "favorite": {
+    "message": "Favorit"
+  },
+  "edit": {
+    "message": "Redigér"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Autentificeringsnøgle (TOTP)"
+  },
+  "folder": {
+    "message": "Mappe"
+  },
+  "newCustomField": {
+    "message": "Nyt brugerdefineret felt"
+  },
+  "value": {
+    "message": "Værdi"
+  },
+  "dragToSort": {
+    "message": "Træk for at sortere"
+  },
+  "cfTypeText": {
+    "message": "Tekst"
+  },
+  "cfTypeHidden": {
+    "message": "Skjult"
+  },
+  "cfTypeBoolean": {
+    "message": "Boolsk"
+  },
+  "cfTypeLinked": {
+    "message": "Forbundet",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Forbundet værdi",
+    "description": "This describes a value that is 'linked' (related) to another value."
+  },
+  "remove": {
+    "message": "Fjern"
+  },
+  "nameRequired": {
+    "message": "Navn er påkrævet."
+  },
+  "addedItem": {
+    "message": "Tilføjede element"
+  },
+  "editedItem": {
+    "message": "Redigerede element"
+  },
+  "deleteItem": {
+    "message": "Slet element"
+  },
+  "deleteFolder": {
+    "message": "Slet mappe"
+  },
+  "deleteAttachment": {
+    "message": "Slet vedhæftning"
+  },
+  "deleteItemConfirmation": {
+    "message": "Er du sikker på, at du sende til papirkurven?"
+  },
+  "deletedItem": {
+    "message": "Element sendt til papirkurven"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Er du sikker på, at du vil overskrive den aktuelle adgangskode?"
+  },
+  "overwriteUsername": {
+    "message": "Overwrite Username"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Are you sure you want to overwrite the current username?"
+  },
+  "noneFolder": {
+    "message": "Ingen mappe",
+    "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "Tilføj mappe"
+  },
+  "editFolder": {
+    "message": "Redigér mappe"
+  },
+  "regeneratePassword": {
+    "message": "Regenerér adgangskode"
+  },
+  "copyPassword": {
+    "message": "Kopiér kodeord"
+  },
+  "copyUri": {
+    "message": "Kopiér URI"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "Kopiér bekræftelseskode (TOTP)"
+  },
+  "length": {
+    "message": "Længde"
+  },
+  "numWords": {
+    "message": "Antal ord"
+  },
+  "wordSeparator": {
+    "message": "Ordseparator"
+  },
+  "capitalize": {
+    "message": "Stort begyndelsesbogstav",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Inkludér ciffer"
+  },
+  "close": {
+    "message": "Luk"
+  },
+  "minNumbers": {
+    "message": "Mindste antal cifre"
+  },
+  "minSpecial": {
+    "message": "Mindste antal specialtegn",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "Undgå tvetydige tegn"
+  },
+  "searchCollection": {
+    "message": "Søg i samling"
+  },
+  "searchFolder": {
+    "message": "Søg i mappe"
+  },
+  "searchFavorites": {
+    "message": "Søg i favoritter"
+  },
+  "searchType": {
+    "message": "Søg type",
+    "description": "Search item type"
+  },
+  "newAttachment": {
+    "message": "Tilføj ny vedhæftning"
+  },
+  "deletedAttachment": {
+    "message": "Slettet vedhæftning"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Er du sikker på du vil slette denne vedhæftning?"
+  },
+  "attachmentSaved": {
+    "message": "Den vedhæftede fil er blevet gemt."
+  },
+  "file": {
+    "message": "Fil"
+  },
+  "selectFile": {
+    "message": "Vælg en fil."
+  },
+  "maxFileSize": {
+    "message": "Maksimum filstørrelse er 500 MB."
+  },
+  "updateKey": {
+    "message": "Du kan ikke bruge denne funktion, før du opdaterer din krypteringsnøgle."
+  },
+  "editedFolder": {
+    "message": "Redigerede mappe"
+  },
+  "addedFolder": {
+    "message": "Tilføjede mappe"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Er du sikker på du vil slette denne mappe?"
+  },
+  "deletedFolder": {
+    "message": "Slettede mappe"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Log ind eller opret en ny konto for at få adgang til din sikre boks."
+  },
+  "createAccount": {
+    "message": "Opret konto"
+  },
+  "logIn": {
+    "message": "Log ind"
+  },
+  "submit": {
+    "message": "Indsend"
+  },
+  "masterPass": {
+    "message": "Hovedadgangskode"
+  },
+  "masterPassDesc": {
+    "message": "Hovedadgangskoden er den adgangskode, du bruger til at få adgang til din boks. Det er meget vigtigt, at du ikke glemmer din hovedadgangskode. Der er ingen måde hvorpå koden kan genoprettes, i tilfælde af at du glemmer den."
+  },
+  "masterPassHintDesc": {
+    "message": "Et tip til hovedadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer den."
+  },
+  "reTypeMasterPass": {
+    "message": "Gentast hovedadgangskode"
+  },
+  "masterPassHint": {
+    "message": "Hovedadgangskodetip (valgfri)"
+  },
+  "settings": {
+    "message": "Indstillinger"
+  },
+  "passwordHint": {
+    "message": "Adgangskodetip"
+  },
+  "enterEmailToGetHint": {
+    "message": "Indtast din kontos e-mailadresse for at modtage dit hovedadgangskodetip."
+  },
+  "getMasterPasswordHint": {
+    "message": "Få hovedadgangskodetip"
+  },
+  "emailRequired": {
+    "message": "E-mailadresse er påkrævet."
+  },
+  "invalidEmail": {
+    "message": "Ugyldig e-mailadresse."
+  },
+  "masterPassRequired": {
+    "message": "Hovedadgangskode er påkrævet."
+  },
+  "masterPassLength": {
+    "message": "Hovedadgangskoden skal være på mindst 8 tegn."
+  },
+  "masterPassDoesntMatch": {
+    "message": "De to adgangskoder matcher ikke."
+  },
+  "newAccountCreated": {
+    "message": "Din nye konto er oprettet! Du kan nu logge ind."
+  },
+  "masterPassSent": {
+    "message": "Vi har sendt dig en e-mail med dit hovedadgangskodetip."
+  },
+  "unexpectedError": {
+    "message": "Der opstod en uventet fejl."
+  },
+  "itemInformation": {
+    "message": "Elementinformation"
+  },
+  "noItemsInList": {
+    "message": "Der er ingen elementer at vise."
+  },
+  "sendVerificationCode": {
+    "message": "Send en bekræftelseskode til din e-mail"
+  },
+  "sendCode": {
+    "message": "Send kode"
+  },
+  "codeSent": {
+    "message": "Kode sendt"
+  },
+  "verificationCode": {
+    "message": "Bekræftelseskode"
+  },
+  "confirmIdentity": {
+    "message": "Bekræft din identitet for at fortsætte."
+  },
+  "verificationCodeRequired": {
+    "message": "Bekræftelseskode er påkrævet."
+  },
+  "invalidVerificationCode": {
+    "message": "Ugyldig bekræftelseskode"
+  },
+  "continue": {
+    "message": "Fortsæt"
+  },
+  "enterVerificationCodeApp": {
+    "message": "Indtast den 6-cifrede verifikationskode fra din autentificeringsapp."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Indtast den 6-cifrede verifikationskode, der blev sendt til $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Bekræftelses-email sendt til $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "rememberMe": {
+    "message": "Husk mig"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Send verifikationskode-email igen"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Brug en anden to-trins-loginmetode"
+  },
+  "insertYubiKey": {
+    "message": "Indsæt din YubiKey i din computers USB-port og tryk derefter på dens knap."
+  },
+  "insertU2f": {
+    "message": "Indsæt din sikkerhedsnøgle i din computers USB-port. Hvis den har en knap, tryk på den."
+  },
+  "recoveryCodeDesc": {
+    "message": "Mistet adgang til alle dine to-faktor-udbydere? Brug din genoprettelseskode til at deaktivere alle to-faktor udbydere på din konto."
+  },
+  "recoveryCodeTitle": {
+    "message": "Gendannelseskode"
+  },
+  "authenticatorAppTitle": {
+    "message": "Autentificeringsapp"
+  },
+  "authenticatorAppDesc": {
+    "message": "Brug en autentificeringsapp (f.eks. Authy eller Google Autentificering) til at generere tidsbaserede bekræftelseskoder.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP sikkerhedsnøgle"
+  },
+  "yubiKeyDesc": {
+    "message": "Brug en YubiKey til at få adgang til din konto. Virker med YubiKey 4, 4 Nano, 4C og NEO enheder."
+  },
+  "duoDesc": {
+    "message": "Bekræft med Duo sikkerhed ved hjælp af Duo Mobile app, SMS, telefonopkald eller U2F sikkerhedsnøgle.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Bekræft med Duo Security for din organisation ved hjælp af Duo Mobile app, SMS, telefonopkald eller U2F-sikkerhedsnøgle.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
+  },
+  "webAuthnDesc": {
+    "message": "Brug en hvilken som helst WebAuthn-aktiveret sikkerhedsnøgle til at få adgang til din konto."
+  },
+  "emailTitle": {
+    "message": "E-mail"
+  },
+  "emailDesc": {
+    "message": "Bekræftelseskoder vil blive e-mailet til dig."
+  },
+  "loginUnavailable": {
+    "message": "Login utilgængelig"
+  },
+  "noTwoStepProviders": {
+    "message": "Denne konto har to-trins login aktiveret, men ingen af de konfigurerede to-trinsudbydere understøttes af denne enhed."
+  },
+  "noTwoStepProviders2": {
+    "message": "Tilføj venligst yderligere udbydere, der understøttes bedre på tværs af enheder (såsom en autentificeringsapp)."
+  },
+  "twoStepOptions": {
+    "message": "To-trins-login indstillinger"
+  },
+  "selfHostedEnvironment": {
+    "message": "Selv-hostet miljø"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "Angiv grund-URL'en i din lokal-hostede Bitwarden-installation."
+  },
+  "customEnvironment": {
+    "message": "Brugerdefineret miljø"
+  },
+  "customEnvironmentFooter": {
+    "message": "Til avancerede brugere. Du kan angive grund URL'en for hver tjeneste uafhængigt."
+  },
+  "baseUrl": {
+    "message": "Server URL"
+  },
+  "apiUrl": {
+    "message": "API server URL"
+  },
+  "webVaultUrl": {
+    "message": "Web-boks server URL"
+  },
+  "identityUrl": {
+    "message": "Identitetsserver URL"
+  },
+  "notificationsUrl": {
+    "message": "Meddelelsesserver URL"
+  },
+  "iconsUrl": {
+    "message": "Ikonserver URL"
+  },
+  "environmentSaved": {
+    "message": "Miljøets URLs er blevet gemt."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "yes": {
+    "message": "Ja"
+  },
+  "no": {
+    "message": "Nej"
+  },
+  "overwritePassword": {
+    "message": "Overskriv adgangskode"
+  },
+  "learnMore": {
+    "message": "Lær mere"
+  },
+  "featureUnavailable": {
+    "message": "Funktion utilgængelig"
+  },
+  "loggedOut": {
+    "message": "Logget ud"
+  },
+  "loginExpired": {
+    "message": "Din login-session er udløbet."
+  },
+  "logOutConfirmation": {
+    "message": "Er du sikker på, at du vil logge ud?"
+  },
+  "logOut": {
+    "message": "Log ud"
+  },
+  "addNewLogin": {
+    "message": "Tilføj nyt login"
+  },
+  "addNewItem": {
+    "message": "Tilføj nyt element"
+  },
+  "addNewFolder": {
+    "message": "Tilføj ny mappe"
+  },
+  "view": {
+    "message": "Vis"
+  },
+  "account": {
+    "message": "Konto"
+  },
+  "loading": {
+    "message": "Indlæser..."
+  },
+  "lockVault": {
+    "message": "Lås boks"
+  },
+  "passwordGenerator": {
+    "message": "Adgangskodegenerator"
+  },
+  "contactUs": {
+    "message": "Kontakt os"
+  },
+  "getHelp": {
+    "message": "Få hjælp"
+  },
+  "fileBugReport": {
+    "message": "Indsend en fejlrapport"
+  },
+  "blog": {
+    "message": "Blog"
+  },
+  "followUs": {
+    "message": "Følg os"
+  },
+  "syncVault": {
+    "message": "Synkronisér boks"
+  },
+  "changeMasterPass": {
+    "message": "Skift hovedadgangskode"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Du kan ændre din hovedadgangskode i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+  },
+  "fingerprintPhrase": {
+    "message": "Fingeraftrykssætning",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "yourAccountsFingerprint": {
+    "message": "Din kontos fingeraftrykssætning",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "goToWebVault": {
+    "message": "Gå til web-boks"
+  },
+  "getMobileApp": {
+    "message": "Hent mobilapp"
+  },
+  "getBrowserExtension": {
+    "message": "Hent browserudvidelse"
+  },
+  "syncingComplete": {
+    "message": "Synkronisering fuldført"
+  },
+  "syncingFailed": {
+    "message": "Synkronisering mislykkedes"
+  },
+  "yourVaultIsLocked": {
+    "message": "Din boks er låst. Bekræft din identitet for at fortsætte."
+  },
+  "unlock": {
+    "message": "Lås op"
+  },
+  "loggedInAsOn": {
+    "message": "Logget ind som $EMAIL$ på $HOSTNAME$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "invalidMasterPassword": {
+    "message": "Ugyldig hovedadgangskode"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, med en sikkerhedsnøgle, autentificerings app, SMS, telefonopkald eller e-mail. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+  },
+  "twoStepLogin": {
+    "message": "To-trins login"
+  },
+  "vaultTimeout": {
+    "message": "Boks timeout"
+  },
+  "vaultTimeoutDesc": {
+    "message": "Vælg timeout for din boks, hvorefter den vil udføre den valgte handling."
+  },
+  "immediately": {
+    "message": "Straks"
+  },
+  "tenSeconds": {
+    "message": "10 sekunder"
+  },
+  "twentySeconds": {
+    "message": "20 sekunder"
+  },
+  "thirtySeconds": {
+    "message": "30 sekunder"
+  },
+  "oneMinute": {
+    "message": "1 minut"
+  },
+  "twoMinutes": {
+    "message": "2 minutter"
+  },
+  "fiveMinutes": {
+    "message": "5 minutter"
+  },
+  "fifteenMinutes": {
+    "message": "15 minutter"
+  },
+  "thirtyMinutes": {
+    "message": "30 minutter"
+  },
+  "oneHour": {
+    "message": "1 time"
+  },
+  "fourHours": {
+    "message": "4 timer"
+  },
+  "onIdle": {
+    "message": "Når systemet er inaktivt"
+  },
+  "onSleep": {
+    "message": "Når systemet sover"
+  },
+  "onLocked": {
+    "message": "Når systemet låses"
+  },
+  "onRestart": {
+    "message": "Ved genstart"
+  },
+  "never": {
+    "message": "Aldrig"
+  },
+  "security": {
+    "message": "Sikkerhed"
+  },
+  "clearClipboard": {
+    "message": "Ryd udklipsholder",
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Fjern automatisk kopierede data fra din udklipsholder.",
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
+  },
+  "disableFavicon": {
+    "message": "Slå webikoner fra"
+  },
+  "disableFaviconDesc": {
+    "message": "Webikoner vises som et genkendeligt billede ved siden af hvert loginelement i din boks."
+  },
+  "enableMinToTray": {
+    "message": "Minimer til bakkeikon"
+  },
+  "enableMinToTrayDesc": {
+    "message": "Når vinduet minimeres, vis i stedet et ikon i meddelelsesområdet."
+  },
+  "enableMinToMenuBar": {
+    "message": "Minimér til menulinjen"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Når vinduet minimeres, vis i stedet et ikon på menulinjen."
+  },
+  "enableCloseToTray": {
+    "message": "Luk til ikon i meddelelsesområdet"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "Når vinduet lukkes, vis i stedet et ikon i meddelelsesområdet."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Luk til menulinjen"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Når vinduet lukkes, vis i stedet et ikon på menulinjen."
+  },
+  "enableTray": {
+    "message": "Aktivér bakkeikon"
+  },
+  "enableTrayDesc": {
+    "message": "Vis altid et ikon i meddelelsesområdet."
+  },
+  "startToTray": {
+    "message": "Start som ikon i meddelelsesområdet"
+  },
+  "startToTrayDesc": {
+    "message": "Når applikationen startes første gang, skal der kun vises et ikon i meddelelsesområdet."
+  },
+  "startToMenuBar": {
+    "message": "Start på menulinjen"
+  },
+  "startToMenuBarDesc": {
+    "message": "Når applikationen startes første gang, skal der kun vises et ikon på menulinjen."
+  },
+  "openAtLogin": {
+    "message": "Start automatisk ved login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start Bitwarden skrivebordsapplikationen automatisk ved login."
+  },
+  "alwaysShowDock": {
+    "message": "Vis altid i Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Vis Bitwarden-ikonet i Dock, selv når det er minimeret til menulinjen."
+  },
+  "confirmTrayTitle": {
+    "message": "Bekræft deaktivering af bakke"
+  },
+  "confirmTrayDesc": {
+    "message": "Deaktivering af denne indstilling vil også deaktivere alle andre indstillinger relateret til bakken."
+  },
+  "language": {
+    "message": "Sprog"
+  },
+  "languageDesc": {
+    "message": "Skift det sprog, der bruges af applikationen. Genstart er påkrævet."
+  },
+  "theme": {
+    "message": "Tema"
+  },
+  "themeDesc": {
+    "message": "Skift applikationens farvetema."
+  },
+  "dark": {
+    "message": "Mørk",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Lys",
+    "description": "Light color"
+  },
+  "copy": {
+    "message": "Kopiér",
+    "description": "Copy to clipboard"
+  },
+  "checkForUpdates": {
+    "message": "Søg efter opdateringer"
+  },
+  "version": {
+    "message": "Version $VERSION_NUM$",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "restartToUpdate": {
+    "message": "Genstart for at opdatere"
+  },
+  "restartToUpdateDesc": {
+    "message": "Version $VERSION_NUM$ er klar til at installere. Du skal genstarte applikationen for at færdiggøre installationen. Vil du genstarte og opdatere nu?",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "updateAvailable": {
+    "message": "Opdatering tilgængelig"
+  },
+  "updateAvailableDesc": {
+    "message": "En opdatering blev fundet. Vil du hente den nu?"
+  },
+  "restart": {
+    "message": "Genstart"
+  },
+  "later": {
+    "message": "Senere"
+  },
+  "noUpdatesAvailable": {
+    "message": "Ingen opdateringer er tilgængelige i øjeblikket. Du anvender den nyeste version."
+  },
+  "updateError": {
+    "message": "Opdateringsfejl"
+  },
+  "unknown": {
+    "message": "Ukendt"
+  },
+  "copyUsername": {
+    "message": "Kopiér brugernavn"
+  },
+  "copyNumber": {
+    "message": "Kopiér nummer",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "Kopiér kortverifikationskode",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "premiumMembership": {
+    "message": "Premium-medlemskab"
+  },
+  "premiumManage": {
+    "message": "Håndtér medlemsskab"
+  },
+  "premiumManageAlert": {
+    "message": "Du kan håndtere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+  },
+  "premiumRefresh": {
+    "message": "Opdatér medlemskab"
+  },
+  "premiumNotCurrentMember": {
+    "message": "Du er i øjeblikket ikke premium-medlem."
+  },
+  "premiumSignUpAndGet": {
+    "message": "Tilmeld dig et premium medlemskab og få:"
+  },
+  "premiumSignUpStorage": {
+    "message": "1 GB krypteret lager til vedhæftede filer."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "Yderligere to-trins-loginmuligheder såsom YubiKey, FIDO U2F og Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Adgangskodehygiejne, kontosundhed og rapporter om datalæk til at holde din boks sikker."
+  },
+  "premiumSignUpTotp": {
+    "message": "TOTP verifikationskode (2FA) generator til logins i din boks."
+  },
+  "premiumSignUpSupport": {
+    "message": "Prioriteret kundeservice."
+  },
+  "premiumSignUpFuture": {
+    "message": "Alle fremtidige premium-funktioner. Mere kommer snart!"
+  },
+  "premiumPurchase": {
+    "message": "Køb premium"
+  },
+  "premiumPurchaseAlert": {
+    "message": "Du kan købe premium-medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+  },
+  "premiumCurrentMember": {
+    "message": "Du er premium-medlem!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "Tak fordi du støtter Bitwarden."
+  },
+  "premiumPrice": {
+    "message": "Alt dette for kun $PRICE$ /år!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "refreshComplete": {
+    "message": "Opdatering færdig"
+  },
+  "passwordHistory": {
+    "message": "Adgangskodehistorik"
+  },
+  "clear": {
+    "message": "Ryd",
+    "description": "To clear something out. example: To clear browser history."
+  },
+  "noPasswordsInList": {
+    "message": "Der er ingen kodeord at vise."
+  },
+  "undo": {
+    "message": "Fortryd"
+  },
+  "redo": {
+    "message": "Annullér fortryd"
+  },
+  "cut": {
+    "message": "Klip",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "Indsæt",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "Markér alt"
+  },
+  "zoomIn": {
+    "message": "Zoom ind"
+  },
+  "zoomOut": {
+    "message": "Zoom ud"
+  },
+  "resetZoom": {
+    "message": "Nulstil zoom"
+  },
+  "toggleFullScreen": {
+    "message": "Aktivér/deaktivér fuld skærm"
+  },
+  "reload": {
+    "message": "Genindlæs"
+  },
+  "toggleDevTools": {
+    "message": "Udviklingsværktøjer til/fra"
+  },
+  "minimize": {
+    "message": "Minimér",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "Zoom"
+  },
+  "bringAllToFront": {
+    "message": "Placér alle forrest",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "Om Bitwarden"
+  },
+  "services": {
+    "message": "Tjenester"
+  },
+  "hideBitwarden": {
+    "message": "Skjul Bitwarden"
+  },
+  "hideOthers": {
+    "message": "Skjul øvrige"
+  },
+  "showAll": {
+    "message": "Vis alle"
+  },
+  "quitBitwarden": {
+    "message": "Afslut Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ kopieret",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "help": {
+    "message": "Hjælp"
+  },
+  "window": {
+    "message": "Vindue"
+  },
+  "checkPassword": {
+    "message": "Undersøg om adgangskoden er blevet afsløret."
+  },
+  "passwordExposed": {
+    "message": "Denne adgangskode er blevet afsløret $VALUE$ gang(e) i datalæk. Du burde skifte den.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "Denne adgangskode er ikke fundet i nogen kendte datalæk. Den burde være sikker at bruge."
+  },
+  "baseDomain": {
+    "message": "Grund-domæne",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domain Name",
+    "description": "Domain name. Ex. website.com"
+  },
+  "host": {
+    "message": "Vært",
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Nøjagtig"
+  },
+  "startsWith": {
+    "message": "Begynder med"
+  },
+  "regEx": {
+    "message": "Regulært udtryk",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Matchmetode",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Standard matchmetode",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Skift indstillinger"
+  },
+  "organization": {
+    "message": "Organisation",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "default": {
+    "message": "Standard"
+  },
+  "exit": {
+    "message": "Afslut"
+  },
+  "showHide": {
+    "message": "Vis / skjul",
+    "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
+  },
+  "hideToTray": {
+    "message": "Skjul til bakke"
+  },
+  "alwaysOnTop": {
+    "message": "Altid øverst",
+    "description": "Application window should always stay on top of other windows"
+  },
+  "dateUpdated": {
+    "message": "Opdateret",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Adgangskode opdateret",
+    "description": "ex. Date this password was updated"
+  },
+  "exportVault": {
+    "message": "Eksportér boks"
+  },
+  "fileFormat": {
+    "message": "Filformat"
+  },
+  "warning": {
+    "message": "ADVARSEL",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "confirmVaultExport": {
+    "message": "Bekræft eksport af boks"
+  },
+  "exportWarningDesc": {
+    "message": "Denne eksport indeholder dine boksdata i ukrypteret form. Du bør ikke gemme eller sende den eksporterede fil over usikre kanaler (f.eks. e-mail). Slet den straks efter at du er færdig med at bruge den."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "Denne eksport krypterer dine data vha. din kontos krypteringsnøgle. Roterer du på et tidspunkt denne kontokrypteringsnøgle, skal du eksportere igen, da du ikke vil kunne dekryptere denne eksportfil."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Kontokrypteringsnøgler er unikke for hver Bitwarden-brugerkonto, så du kan ikke importere en krypteret eksport til en anden konto."
+  },
+  "noOrganizationsList": {
+    "message": "Du tilhører ikke nogen organisationer. Organisationer giver dig mulighed for at dele elementer med andre brugere på en sikker måde."
+  },
+  "noCollectionsInList": {
+    "message": "Der er ingen samlinger at vise."
+  },
+  "ownership": {
+    "message": "Ejerskab"
+  },
+  "whoOwnsThisItem": {
+    "message": "Hvem ejer dette element?"
+  },
+  "strong": {
+    "message": "Stærk",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "God",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Svag",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Svag hovedadgangskode"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "Hovedadgangskoden du har valgt er svag. Du skal bruge en stærk hovedadgangskode (eller en adgangssætning) for at beskytte din Bitwarden-konto korrekt. Er du sikker på, at du vil bruge denne hovedadgangskode?"
+  },
+  "pin": {
+    "message": "Pinkode",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Lås op med pinkode"
+  },
+  "setYourPinCode": {
+    "message": "Indstil din pinkode til at låse Bitwarden op. Dine pin-indstillinger nulstilles, hvis du nogensinde logger helt ud af programmet."
+  },
+  "pinRequired": {
+    "message": "Pinkode er påkrævet."
+  },
+  "invalidPin": {
+    "message": "Ugyldig pinkode."
+  },
+  "unlockWithWindowsHello": {
+    "message": "Lås op med Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Bekræft for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Lås op med Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "lås din boks op"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Bed ikke om Windows Hello ved start."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Bed ikke om Touch ID ved start."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lås med hovedadgangskode ved genstart"
+  },
+  "preferences": {
+    "message": "Indstillinger"
+  },
+  "enableMenuBar": {
+    "message": "Aktivér menulinjeikon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Vis altid et ikon på menulinjen."
+  },
+  "hideToMenuBar": {
+    "message": "Skjul på menulinjen"
+  },
+  "selectOneCollection": {
+    "message": "Du skal vælge minimum én samling."
+  },
+  "premiumUpdated": {
+    "message": "Du har opgraderet til premium."
+  },
+  "restore": {
+    "message": "Gendan"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "Du kan administrere dit abonnement fra app butikken. Vil du besøge app butikken nu?"
+  },
+  "legal": {
+    "message": "Juridisk",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Servicevilkår"
+  },
+  "privacyPolicy": {
+    "message": "Fortrolighedspolitik"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Er du sikker på, at du vil lukke? Hvis du lukker nu, gemmes dine nuværende oplysninger ikke."
+  },
+  "unsavedChangesTitle": {
+    "message": "Ikke-gemte ændringer"
+  },
+  "clone": {
+    "message": "Klon"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Én eller flere organisationspolitikker påvirker dine generatorindstillinger."
+  },
+  "vaultTimeoutAction": {
+    "message": "Boks timeout-handling"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "En låst boks kræver at du gentaster din hovedadgangskode for at tilgå den igen."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "En boks der er logget ud kræver, at du godkender igen for at få adgang til den."
+  },
+  "lock": {
+    "message": "Lås",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Papirkurv",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Søg i papirkurven"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Slet element permanent"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Er du sikker på, at du vil slette dette element permanent?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Element slettet permanent"
+  },
+  "restoreItem": {
+    "message": "Gendan element"
+  },
+  "restoreItemConfirmation": {
+    "message": "Er du sikker på, at du vil gendanne dette element?"
+  },
+  "restoredItem": {
+    "message": "Element gendannet"
+  },
+  "permanentlyDelete": {
+    "message": "Slette permanent"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Ved at logge ud fjernes al adgang til din boks og kræver online-godkendelse efter timeout-perioden. Er du sikker på, at du vil bruge denne indstilling?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Bekræft timeout-handling"
+  },
+  "enterpriseSingleSignOn": {
+    "message": "Virksomheds Single Sign On"
+  },
+  "setMasterPassword": {
+    "message": "Indstil hovedadgangskode"
+  },
+  "ssoCompleteRegistration": {
+    "message": "For at fuldføre indlogning vha. SSO skal en hovedadgangskode opsættes for at tilgå og beskytte din boks."
+  },
+  "newMasterPass": {
+    "message": "Ny hovedadgangskode"
+  },
+  "confirmNewMasterPass": {
+    "message": "Bekræft ny hovedadgangskode"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "Én eller flere organisationspolitikker kræver, at din hovedadgangskode opfylder flg. krav:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum kompleksitetsscore på $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimumslængde på $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Indeholder ét eller flere store bogstaver"
+  },
+  "policyInEffectLowercase": {
+    "message": "Indeholder ét eller flere små bogstaver"
+  },
+  "policyInEffectNumbers": {
+    "message": "Indeholder ét eller flere cifre"
+  },
+  "policyInEffectSpecial": {
+    "message": "Indeholder ét eller flere af følgende specialtegn $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Din nye hovedadgangskode opfylder ikke politikkravene."
+  },
+  "acceptPolicies": {
+    "message": "Ved at markere dette felt accepterer du følgende:"
+  },
+  "acceptPoliciesError": {
+    "message": "Servicevilkår og fortrolighedspolitik er ikke blevet bekræftet."
+  },
+  "enableBrowserIntegration": {
+    "message": "Aktiver browserintegration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browserintegration bruges til biometri i browseren."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browserintegration understøttes ikke"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Desværre understøttes browserintegration kun i Mac App Store-versionen indtil videre."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browserintegration understøttes ikke"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Desværre understøttes browserintegration i øjeblikket ikke i Windows Store-versionen."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Kræv verifikation for browserintegration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Aktivér et ekstra sikkerhedslag ved at kræve validering af fingeraftrykssætning, når du opretter en forbindelse mellem dit skrivebord og din browser. Når det er aktiveret, kræver dette brugerintervention og verifikation hver gang en forbindelse oprettes."
+  },
+  "approve": {
+    "message": "Godkend"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verificér browserforbindelse"
+  },
+  "verifyBrowserDesc": {
+    "message": "Sørg for, at det viste fingeraftryk er identisk med det fingeraftryk, der vises i browserudvidelsen."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometri ikke aktiveret"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browserbiometri kræver, at desktop-biometri er aktiveret i indstillingerne først."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "På grund af en virksomhedspolitik er du begrænset til at gemme elementer i din personlige boks. Skift ejerskabsindstillingen til en organisation, og vælg blandt de tilgængelige samlinger."
+  },
+  "hintEqualsPassword": {
+    "message": "Dit adgangskodetip kan ikke være det samme som din adgangskode."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "En organisationspolitik påvirker dine ejerskabsmuligheder."
+  },
+  "allSends": {
+    "message": "Alle Send",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Fil"
+  },
+  "sendTypeText": {
+    "message": "Tekst"
+  },
+  "searchSends": {
+    "message": "Søg i Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Redigér Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Min boks"
+  },
+  "text": {
+    "message": "Tekst"
+  },
+  "deletionDate": {
+    "message": "Sletningsdato"
+  },
+  "deletionDateDesc": {
+    "message": "Send'en slettes permanent på den angivne dato og tid.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Udløbsdato"
+  },
+  "expirationDateDesc": {
+    "message": "Hvis angivet, vil adgangen til denne Send udløbe på den angivne dato og tidspunkt.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maksimalt antal tilgange"
+  },
+  "maxAccessCountDesc": {
+    "message": "Hvis opsat, vil brugere ikke længere kunne tilgå denne Send, når det maksimale adgangsantal er nået.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Aktuelt antal tilgange"
+  },
+  "disableSend": {
+    "message": "Deaktivér denne Send, så ingen kan tilgå den.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Valgfrit brugeradgangskodekrav for at tilgå denne Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Private notater om denne Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Send link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Når Send tilgås, skjul som standard teksten",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send oprettet",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send opdateret",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send slettet",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Nyt kodeord"
+  },
+  "whatTypeOfSend": {
+    "message": "Hvilken type Send er dette?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Opret Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Den tekst, du vil sende."
+  },
+  "sendFileDesc": {
+    "message": "Den fil, du vil sende."
+  },
+  "days": {
+    "message": "$DAYS$ dage",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 dag"
+  },
+  "custom": {
+    "message": "Tilpasset"
+  },
+  "deleteSendConfirmation": {
+    "message": "Er du sikker på, at du vil slette denne Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Kopiér Send link til udklipsholder",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Kopier linket for at dele denne Send til min udklipsholder ved gem."
+  },
+  "sendDisabled": {
+    "message": "Send deaktiveret",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Du kan grundet en virksomhedspolitik kun slette en eksisterende Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Kopiér link"
+  },
+  "disabled": {
+    "message": "Deaktiveret"
+  },
+  "maxAccessCountReached": {
+    "message": "Maksimalt adgangsantal nået"
+  },
+  "expired": {
+    "message": "Udløbet"
+  },
+  "pendingDeletion": {
+    "message": "Afventer sletning"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Godkend WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Skjul min e-mailadresse for modtagere."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Én eller flere organisationspolitikker påvirker dine Send-valgmuligheder."
+  },
+  "emailVerificationRequired": {
+    "message": "E-mailbekræftelse kræves"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Du skal bekræfte din mailadresse for at bruge denne funktion."
+  },
+  "passwordPrompt": {
+    "message": "Genanmodning om hovedadgangskode"
+  },
+  "passwordConfirmation": {
+    "message": "Bekræftelse af hovedadgangskode"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Denne handling er beskyttet. For at fortsætte, indtast venligst din hovedadgangskode igen for at bekræfte din identitet."
+  },
+  "updatedMasterPassword": {
+    "message": "Hovedadgangskode opdateret"
+  },
+  "updateMasterPassword": {
+    "message": "Opdatér hovedadgangskode"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Dit hovedadgangskode blev for nylig ændret af en administrator i din organisation. For at få adgang til boksen skal du opdatere din hovedadgangskode nu. Hvis du fortsætter, logges du ud af din nuværende session, hvilket kræver, at du logger ind igen. Aktive sessioner på andre enheder kan fortsætte med at være aktive i op til én time."
+  },
+  "hours": {
+    "message": "Timer"
+  },
+  "minutes": {
+    "message": "Minutter"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Din organisations politikker påvirker din boks-timeout. Maksimalt tilladt boks-timeout er $HOURS$ time(r) og $MINUTES$ minut(ter)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Din boks-timeout overskrider de begrænsninger, der er fastsat af din organisation."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Auto-indrullering"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Denne organisation har en virksomhedspolitik, der automatisk tilmelder dig til nulstilling af adgangskode. Tilmelding giver organisationsadministratorer mulighed for at skifte din hovedadgangskode."
+  },
+  "vaultExportDisabled": {
+    "message": "Bokseksport deaktiveret"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "En eller flere organisationspolitikker forhindrer dig i at eksportere din personlige boks."
+  },
+  "addAccount": {
+    "message": "Tilføj konto"
+  },
+  "removeMasterPassword": {
+    "message": "Fjern hovedadgangskode"
+  },
+  "removedMasterPassword": {
+    "message": "Hovedadgangskode fjernet."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ bruger SSO med en selv-hostet nøgleserver. En hovedadgangskode er ikke længere påkrævet for at logge ind for medlemmer af denne organisation.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Forlad organisation"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Er du sikker på, at du vil forlade denne organisation?"
+  },
+  "leftOrganization": {
+    "message": "Du har forladt organisationen."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Kan ikke kontakte key connector, forsøg igen senere."
+  },
+  "lockAllVaults": {
+    "message": "Lås alle bokse"
+  },
+  "accountLimitReached": {
+    "message": "Der må ikke være logget på mere end 5 konti på samme tid."
+  },
+  "accountPreferences": {
+    "message": "Indstillinger"
+  },
+  "appPreferences": {
+    "message": "Appindstillinger (alle konti)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Kontogrænsen er nået. Log ud af en konto for at tilføje en anden."
+  },
+  "settingsTitle": {
+    "message": "Appindstillinger for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Skift konto"
+  },
+  "options": {
+    "message": "Indstillinger"
+  },
+  "sessionTimeout": {
+    "message": "Din session er udløbet. Gå tilbage og prøv at logge ind igen."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Eksporterer personlig boks"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Kun de personlige bokselementer tilknyttet $EMAIL$ eksporteres. Organisationsbokseelementer medtages ikke.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "generator": {
+    "message": "Generator"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "What would you like to generate?"
+  },
+  "passwordType": {
+    "message": "Password Type"
+  },
+  "regenerateUsername": {
+    "message": "Regenerate Username"
+  },
+  "generateUsername": {
+    "message": "Generate Username"
+  },
+  "usernameType": {
+    "message": "Username Type"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Use your email provider's sub-addressing capabilities."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "Random"
+  },
+  "randomWord": {
+    "message": "Random Word"
+  },
+  "websiteName": {
+    "message": "Website Name"
+  },
+  "service": {
+    "message": "Service"
+  }
+}
