@@ -1,0 +1,55 @@
+﻿html.os_macos {
+  body.layout_frontend {
+    -webkit-app-region: drag;
+
+    button,
+    a,
+    i,
+    b,
+    span,
+    input,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    img,
+    select,
+    textarea,
+    label,
+    .box,
+    .modal-backdrop {
+      -webkit-app-region: no-drag;
+    }
+  }
+
+  #login-page {
+    .content {
+      a.settings-icon {
+        position: absolute;
+        left: unset;
+        right: 20px;
+
+        span {
+          margin-right: 8px;
+          float: left;
+        }
+      }
+    }
+  }
+
+  .vault .header-search {
+    -webkit-app-region: drag;
+
+    input,
+    i {
+      -webkit-app-region: no-drag;
+    }
+  }
+
+  .vault > .groupings > .content > .inner-content {
+    padding-top: 0;
+  }
+}
