@@ -43,7 +43,7 @@
   </div>
   <div class="generated-block" *ngIf="type === 'username'">
     <div class="generated-wrapper" [innerHTML]="username | colorPassword" appSelectCopy></div>
-    <div class="action-buttons">
+    <div class="action-buttons" #form [appApiAction]="usernameGeneratingPromise">
       <button
         type="button"
         class="row-btn"
@@ -59,8 +59,13 @@
         appBlurClick
         appA11yTitle="{{ 'regenerateUsername' | i18n }}"
         (click)="regenerate()"
+        [disabled]="form.loading"
       >
-        <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
+        <i
+          class="bwi bwi-lg bwi-generate"
+          [ngClass]="form.loading ? 'bwi-spin' : ''"
+          aria-hidden="true"
+        ></i>
       </button>
     </div>
   </div>
