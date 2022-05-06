@@ -2,9 +2,9 @@ project_id_env: _CROWDIN_PROJECT_ID
 api_token_env: CROWDIN_API_TOKEN
 preserve_hierarchy: true
 files:
-  - source: /src/_locales/en/messages.json
-    dest: /src/_locales/en/%original_file_name%
-    translation: /src/_locales/%two_letters_code%/%original_file_name%
+  - source: /apps/browser/src/_locales/en/messages.json
+    dest: /apps/browser/src/_locales/en/%original_file_name%
+    translation: /apps/browser/src/_locales/%two_letters_code%/%original_file_name%
     update_option: update_as_unapproved
     languages_mapping:
       two_letters_code:
@@ -14,9 +14,9 @@ files:
         zh-TW: zh_TW
         en-GB: en_GB
         en-IN: en_IN
-  - source: /store/locales/en/copy.resx
-    dest: /store/locales/en/%original_file_name%
-    translation: /store/locales/%two_letters_code%/%original_file_name%
+  - source: /apps/browser/store/locales/en/copy.resx
+    dest: /apps/browser/store/locales/en/%original_file_name%
+    translation: /apps/browser/store/locales/%two_letters_code%/%original_file_name%
     update_option: update_as_unapproved
     languages_mapping:
       two_letters_code:
