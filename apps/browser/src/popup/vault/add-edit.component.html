@@ -464,9 +464,9 @@
                 *ngIf="currentUris && currentUris.length"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'toggleCurrentUris' | i18n }}"
                 (click)="toggleUriInput(u)"
+                [attr.aria-pressed]="u.showCurrentUris === true"
               >
                 <i aria-hidden="true" class="bwi bwi-lg bwi-list"></i>
               </button>
@@ -474,9 +474,9 @@
                 type="button"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'toggleOptions' | i18n }}"
                 (click)="toggleUriOptions(u)"
+                [attr.aria-pressed]="u.showOptions === true"
               >
                 <i class="bwi bwi-lg bwi-cog" aria-hidden="true"></i>
               </button>

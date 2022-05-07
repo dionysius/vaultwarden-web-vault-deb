@@ -61,9 +61,9 @@
                 *ngIf="currentUris && currentUris.length"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'toggleCurrentUris' | i18n }}"
                 (click)="toggleUriInput(domain)"
+                [attr.aria-pressed]="domain.showCurrentUris === true"
               >
                 <i aria-hidden="true" class="bwi bwi-lg bwi-list"></i>
               </button>
