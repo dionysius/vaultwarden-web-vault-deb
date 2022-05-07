@@ -1,12 +1,10 @@
-<button
-  type="button"
+<div
+  role="group"
   *ngFor="let s of sends"
-  (click)="selectSend(s)"
-  appStopClick
-  title="{{ title }} - {{ s.name }}"
+  appA11yTitle="{{ s.name }}"
   class="box-content-row box-content-row-flex"
 >
-  <div class="row-main">
+  <button type="button" class="row-main" (click)="selectSend(s)" appStopClick title="{{ title }} - {{ s.name }}">
     <div class="app-vault-icon">
       <div class="icon" aria-hidden="true">
         <i class="bwi bwi-fw bwi-lg bwi-file-text" *ngIf="s.type === sendType.Text"></i>
@@ -41,7 +39,11 @@
           <span class="sr-only">{{ "maxAccessCountReached" | i18n }}</span>
         </ng-container>
         <ng-container *ngIf="s.expired">
-          <i class="bwi bwi-clock text-muted" title="{{ 'expired' | i18n }}" aria-hidden="true"></i>
+          <i
+            class="bwi bwi-clock text-muted"
+            title="{{ 'expired' | i18n }}"
+            aria-hidden="true"
+          ></i>
           <span class="sr-only">{{ "expired" | i18n }}</span>
         </ng-container>
         <ng-container *ngIf="s.pendingDelete">
@@ -55,9 +57,10 @@
       </span>
       <span class="detail">{{ s.deletionDate | date: "medium" }}</span>
     </div>
-  </div>
+  </button>
   <div class="action-buttons">
-    <span
+    <button
+      type="button"
       class="row-btn"
       appStopClick
       appStopProp
@@ -65,10 +68,12 @@
       (click)="copySendLink(s)"
     >
       <i class="bwi bwi-lg bwi-files" aria-hidden="true"></i>
-    </span>
-    <span
+    </button>
+    <button
+      type="button"
       class="row-btn"
       [ngClass]="{ disabled: disabledByPolicy }"
+      [attr.disabled]="!disabledByPolicy ? '' : null"
       appStopClick
       appStopProp
       appA11yTitle="{{ 'removePassword' | i18n }}"
@@ -76,8 +81,9 @@
       *ngIf="s.password"
     >
       <i class="bwi bwi-lg bwi-undo" aria-hidden="true"></i>
-    </span>
-    <span
+    </button>
+    <button
+      type="button"
       class="row-btn"
       appStopClick
       appStopProp
@@ -85,6 +91,6 @@
       (click)="delete(s)"
     >
       <i class="bwi bwi-lg bwi-trash" aria-hidden="true"></i>
-    </span>
+    </button>
   </div>
-</button>
+</div>
