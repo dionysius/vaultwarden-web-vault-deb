@@ -9,7 +9,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitwarden/desktop"
+    "url": "git+https://github.com/bitwarden/clients.git"
   },
   "dependencies": {
     "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
