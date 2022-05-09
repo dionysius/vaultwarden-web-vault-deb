@@ -465,3 +465,59 @@ main {
 .cdk-virtual-scroll-content-wrapper {
   width: 100%;
 }
+
+.org-filter-content {
+  padding-bottom: 5px;
+  padding-left: 7px;
+  .org-filter {
+    @include themify($themes) {
+      background-color: themed("backgroundColor");
+    }
+    border: 1px solid;
+    padding: 7px;
+    border-radius: $border-radius;
+  }
+}
+.vault-select {
+  @include themify($themes) {
+    background-color: themed("boxBackgroundColor");
+  }
+  margin-right: 5px;
+  margin-top: 1px;
+  width: 160px;
+  @include themify($themes) {
+    border: 1px solid themed("borderColor");
+  }
+  border-radius: $border-radius;
+  button {
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding: 5px 10px;
+    text-align: start;
+    @include themify($themes) {
+      color: themed("textColor");
+    }
+
+    a {
+      @include themify($themes) {
+        color: themed("textColor");
+      }
+    }
+
+    &:hover {
+      @include themify($themes) {
+        background-color: themed("boxBackgroundHoverColor");
+      }
+    }
+  }
+  .border {
+    @include themify($themes) {
+      background: themed("borderColor");
+    }
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 1px;
+    position: relative;
+  }
+}

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { UnauthGuardService as BaseUnauthGuardService } from "jslib-angular/services/unauth-guard.service";
+import { UnauthGuard as BaseUnauthGuardService } from "jslib-angular/guards/unauth.guard";
 
 @Injectable()
 export class UnauthGuardService extends BaseUnauthGuardService {

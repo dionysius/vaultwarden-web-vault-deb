@@ -1,0 +1,74 @@
+<div class="content org-filter-content" *ngIf="loaded && showOrganizations">
+  <button
+    class="org-filter"
+    (click)="toggle()"
+    cdkOverlayOrigin
+    #trigger="cdkOverlayOrigin"
+    aria-haspopup="menu"
+    aria-controls="cdk-overlay-container"
+    [attr.aria-expanded]="isOpen"
+  >
+    <span>{{ vaultFilterDisplay }}&nbsp;</span>
+    <i
+      class="bwi bwi-sm"
+      aria-hidden="true"
+      [ngClass]="{ 'bwi-angle-down': !isOpen, 'bwi-chevron-up': isOpen }"
+    ></i>
+  </button>
+  <ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayHasBackdrop]="true"
+    [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+    [cdkConnectedOverlayOpen]="isOpen"
+    [cdkConnectedOverlayPositions]="overlayPostition"
+    (backdropClick)="close()"
+    (detach)="close()"
+  >
+    <div
+      class="vault-select"
+      [@transformPanel]="'open'"
+      cdkTrapFocus
+      cdkTrapFocusAutoCapture
+      role="dialog"
+      aria-modal="true"
+    >
+      <button
+        appStopClick
+        appBlurClick
+        (click)="selectAllVaults()"
+        [ngClass]="{ active: !myVaultOnly && !selectOrganizationId }"
+      >
+        <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>
+        &nbsp;{{ "allVaults" | i18n }}
+      </button>
+      <button
+        *ngIf="!enforcePersonalOwnwership"
+        appStopClick
+        appBlurClick
+        (click)="selectMyVault()"
+      >
+        <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
+        &nbsp;{{ "myVault" | i18n }}
+      </button>
+      <button
+        *ngFor="let organization of organizations"
+        appStopClick
+        appBlurClick
+        (click)="selectOrganization(organization)"
+      >
+        <i
+          *ngIf="organization.planProductType !== 1"
+          class="bwi bwi-fw bwi-business"
+          aria-hidden="true"
+        ></i>
+        <i
+          *ngIf="organization.planProductType === 1"
+          class="bwi bwi-fw bwi-family"
+          aria-hidden="true"
+        ></i>
+        <span>&nbsp;{{ organization.name | ellipsis: 23:true }}</span>
+      </button>
+    </div>
+  </ng-template>
+</div>

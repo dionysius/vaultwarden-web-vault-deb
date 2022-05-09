@@ -33,6 +33,7 @@
       </button>
     </ng-container>
   </div>
+  <app-vault-select (onVaultSelectionChanged)="vaultFilterChanged()"></app-vault-select>
   <ng-container *ngIf="ciphers && ciphers.length && !showSearching()">
     <div class="box list" *ngIf="favoriteCiphers">
       <h2 class="box-header">
@@ -114,7 +115,7 @@
         </button>
       </div>
     </div>
-    <div class="box list" *ngIf="nestedFolders?.length">
+    <div class="box list" *ngIf="!selectedOrganization && nestedFolders?.length">
       <h2 class="box-header">
         {{ "folders" | i18n }}
         <span class="flex-right">{{ folderCount }}</span>
@@ -139,7 +140,7 @@
         </button>
       </div>
     </div>
-    <div class="box list" *ngIf="nestedCollections && nestedCollections.length">
+    <div class="box list" *ngIf="showCollections && nestedCollections && nestedCollections.length">
       <h2 class="box-header">
         {{ "collections" | i18n }}
         <span class="flex-right">{{ nestedCollections.length }}</span>

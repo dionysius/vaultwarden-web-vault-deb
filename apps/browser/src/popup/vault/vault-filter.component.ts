@@ -3,15 +3,14 @@ import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angula
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { GroupingsComponent as BaseGroupingsComponent } from "jslib-angular/components/groupings.component";
+import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CollectionService } from "jslib-common/abstractions/collection.service";
-import { FolderService } from "jslib-common/abstractions/folder.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
 import { CipherType } from "jslib-common/enums/cipherType";
+import { TreeNode } from "jslib-common/models/domain/treeNode";
 import { CipherView } from "jslib-common/models/view/cipherView";
 import { CollectionView } from "jslib-common/models/view/collectionView";
 import { FolderView } from "jslib-common/models/view/folderView";
@@ -20,15 +19,16 @@ import { BrowserGroupingsComponentState } from "src/models/browserGroupingsCompo
 
 import { BrowserApi } from "../../browser/browserApi";
 import { StateService } from "../../services/abstractions/state.service";
+import { VaultFilterService } from "../../services/vaultFilter.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
-const ComponentId = "GroupingsComponent";
+const ComponentId = "VaultComponent";
 
 @Component({
-  selector: "app-vault-groupings",
-  templateUrl: "groupings.component.html",
+  selector: "app-vault-filter",
+  templateUrl: "vault-filter.component.html",
 })
-export class GroupingsComponent extends BaseGroupingsComponent implements OnInit, OnDestroy {
+export class VaultFilterComponent implements OnInit, OnDestroy {
   get showNoFolderCiphers(): boolean {
     return (
       this.noFolderCiphers != null &&
@@ -40,6 +40,12 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
   get folderCount(): number {
     return this.nestedFolders.length - (this.showNoFolderCiphers ? 0 : 1);
   }
+  folders: FolderView[];
+  nestedFolders: TreeNode<FolderView>[];
+  collections: CollectionView[];
+  nestedCollections: TreeNode<CollectionView>[];
+  loaded = false;
+  cipherType = CipherType;
   ciphers: CipherView[];
   favoriteCiphers: CipherView[];
   noFolderCiphers: CipherView[];
@@ -52,6 +58,9 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
   searchPending = false;
   searchTypeSearch = false;
   deletedCount = 0;
+  vaultFilter: VaultFilter;
+  selectedOrganization: string = null;
+  showCollections = true;
 
   private loadedTimeout: number;
   private selectedTimeout: number;
@@ -63,8 +72,6 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
   private allCiphers: CipherView[] = null;
 
   constructor(
-    collectionService: CollectionService,
-    folderService: FolderService,
     private cipherService: CipherService,
     private router: Router,
     private ngZone: NgZone,
@@ -76,9 +83,9 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     private platformUtilsService: PlatformUtilsService,
     private searchService: SearchService,
     private location: Location,
-    private browserStateService: StateService
+    private browserStateService: StateService,
+    private vaultFilterService: VaultFilterService
   ) {
-    super(collectionService, folderService, browserStateService);
     this.noFolderListSize = 100;
   }
 
@@ -143,14 +150,18 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
   }
 
   async load() {
-    await super.load(false);
+    this.vaultFilter = this.vaultFilterService.getVaultFilter();
+
+    this.updateSelectedOrg();
+    await this.loadCollectionsAndFolders();
     await this.loadCiphers();
+
     if (this.showNoFolderCiphers && this.nestedFolders.length > 0) {
       // Remove "No Folder" from folder listing
       this.nestedFolders = this.nestedFolders.slice(0, this.nestedFolders.length - 1);
     }
 
-    super.loaded = true;
+    this.loaded = true;
   }
 
   async loadCiphers() {
@@ -158,60 +169,20 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     if (!this.hasLoadedAllCiphers) {
       this.hasLoadedAllCiphers = !this.searchService.isSearchable(this.searchText);
     }
-    this.deletedCount = this.allCiphers.filter((c) => c.isDeleted).length;
     await this.search(null);
-    let favoriteCiphers: CipherView[] = null;
-    let noFolderCiphers: CipherView[] = null;
-    const folderCounts = new Map<string, number>();
-    const collectionCounts = new Map<string, number>();
-    const typeCounts = new Map<CipherType, number>();
+    this.getCounts();
+  }
 
-    this.ciphers.forEach((c) => {
-      if (c.isDeleted) {
-        return;
-      }
-      if (c.favorite) {
-        if (favoriteCiphers == null) {
-          favoriteCiphers = [];
-        }
-        favoriteCiphers.push(c);
-      }
+  async loadCollections() {
+    const allCollections = await this.vaultFilterService.buildCollections();
+    this.collections = allCollections.fullList;
+    this.nestedCollections = allCollections.nestedList;
+  }
 
-      if (c.folderId == null) {
-        if (noFolderCiphers == null) {
-          noFolderCiphers = [];
-        }
-        noFolderCiphers.push(c);
-      }
-
-      if (typeCounts.has(c.type)) {
-        typeCounts.set(c.type, typeCounts.get(c.type) + 1);
-      } else {
-        typeCounts.set(c.type, 1);
-      }
-
-      if (folderCounts.has(c.folderId)) {
-        folderCounts.set(c.folderId, folderCounts.get(c.folderId) + 1);
-      } else {
-        folderCounts.set(c.folderId, 1);
-      }
-
-      if (c.collectionIds != null) {
-        c.collectionIds.forEach((colId) => {
-          if (collectionCounts.has(colId)) {
-            collectionCounts.set(colId, collectionCounts.get(colId) + 1);
-          } else {
-            collectionCounts.set(colId, 1);
-          }
-        });
-      }
-    });
-
-    this.favoriteCiphers = favoriteCiphers;
-    this.noFolderCiphers = noFolderCiphers;
-    this.typeCounts = typeCounts;
-    this.folderCounts = folderCounts;
-    this.collectionCounts = collectionCounts;
+  async loadFolders() {
+    const allFolders = await this.vaultFilterService.buildFolders(this.selectedOrganization);
+    this.folders = allFolders.fullList;
+    this.nestedFolders = await allFolders.nestedList;
   }
 
   async search(timeout: number = null) {
@@ -227,6 +198,9 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         filterDeleted,
         this.allCiphers
       );
+      this.ciphers = this.ciphers.filter(
+        (c) => !this.vaultFilterService.filterCipherForSelectedVault(c)
+      );
       return;
     }
     this.searchPending = true;
@@ -241,27 +215,26 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
           this.allCiphers
         );
       }
+      this.ciphers = this.ciphers.filter(
+        (c) => !this.vaultFilterService.filterCipherForSelectedVault(c)
+      );
       this.searchPending = false;
     }, timeout);
   }
 
   async selectType(type: CipherType) {
-    super.selectType(type);
     this.router.navigate(["/ciphers"], { queryParams: { type: type } });
   }
 
   async selectFolder(folder: FolderView) {
-    super.selectFolder(folder);
     this.router.navigate(["/ciphers"], { queryParams: { folderId: folder.id || "none" } });
   }
 
   async selectCollection(collection: CollectionView) {
-    super.selectCollection(collection);
     this.router.navigate(["/ciphers"], { queryParams: { collectionId: collection.id } });
   }
 
   async selectTrash() {
-    super.selectTrash();
     this.router.navigate(["/ciphers"], { queryParams: { deleted: true } });
   }
 
@@ -294,6 +267,85 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     this.router.navigate(["/add-cipher"]);
   }
 
+  async vaultFilterChanged() {
+    if (this.showSearching) {
+      await this.search();
+    }
+    this.updateSelectedOrg();
+    await this.loadCollectionsAndFolders();
+    this.getCounts();
+  }
+
+  updateSelectedOrg() {
+    this.vaultFilter = this.vaultFilterService.getVaultFilter();
+    if (this.vaultFilter.selectedOrganizationId != null) {
+      this.selectedOrganization = this.vaultFilter.selectedOrganizationId;
+    } else {
+      this.selectedOrganization = null;
+    }
+  }
+
+  getCounts() {
+    let favoriteCiphers: CipherView[] = null;
+    let noFolderCiphers: CipherView[] = null;
+    const folderCounts = new Map<string, number>();
+    const collectionCounts = new Map<string, number>();
+    const typeCounts = new Map<CipherType, number>();
+
+    this.deletedCount = this.allCiphers.filter(
+      (c) => c.isDeleted && !this.vaultFilterService.filterCipherForSelectedVault(c)
+    ).length;
+
+    this.ciphers?.forEach((c) => {
+      if (!this.vaultFilterService.filterCipherForSelectedVault(c)) {
+        if (c.isDeleted) {
+          return;
+        }
+        if (c.favorite) {
+          if (favoriteCiphers == null) {
+            favoriteCiphers = [];
+          }
+          favoriteCiphers.push(c);
+        }
+
+        if (c.folderId == null) {
+          if (noFolderCiphers == null) {
+            noFolderCiphers = [];
+          }
+          noFolderCiphers.push(c);
+        }
+
+        if (typeCounts.has(c.type)) {
+          typeCounts.set(c.type, typeCounts.get(c.type) + 1);
+        } else {
+          typeCounts.set(c.type, 1);
+        }
+
+        if (folderCounts.has(c.folderId)) {
+          folderCounts.set(c.folderId, folderCounts.get(c.folderId) + 1);
+        } else {
+          folderCounts.set(c.folderId, 1);
+        }
+
+        if (c.collectionIds != null) {
+          c.collectionIds.forEach((colId) => {
+            if (collectionCounts.has(colId)) {
+              collectionCounts.set(colId, collectionCounts.get(colId) + 1);
+            } else {
+              collectionCounts.set(colId, 1);
+            }
+          });
+        }
+      }
+    });
+
+    this.favoriteCiphers = favoriteCiphers;
+    this.noFolderCiphers = noFolderCiphers;
+    this.typeCounts = typeCounts;
+    this.folderCounts = folderCounts;
+    this.collectionCounts = collectionCounts;
+  }
+
   showSearching() {
     return (
       this.hasSearched || (!this.searchPending && this.searchService.isSearchable(this.searchText))
@@ -305,6 +357,12 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     if (e.key === "Escape" && (this.searchText == null || this.searchText === "")) {
       BrowserApi.closePopup(window);
     }
+  }
+
+  private async loadCollectionsAndFolders() {
+    this.showCollections = !this.vaultFilter.myVaultOnly;
+    await this.loadFolders();
+    await this.loadCollections();
   }
 
   private async saveState() {

@@ -1,9 +1,9 @@
 import { Injectable, NgModule } from "@angular/core";
 import { ActivatedRouteSnapshot, RouteReuseStrategy, RouterModule, Routes } from "@angular/router";
 
-import { AuthGuardService } from "jslib-angular/services/auth-guard.service";
-import { LockGuardService } from "jslib-angular/services/lock-guard.service";
-import { UnauthGuardService } from "jslib-angular/services/unauth-guard.service";
+import { AuthGuard } from "jslib-angular/guards/auth.guard";
+import { LockGuard } from "jslib-angular/guards/lock.guard";
+import { UnauthGuard } from "jslib-angular/guards/unauth.guard";
 
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
@@ -37,9 +37,9 @@ import { AttachmentsComponent } from "./vault/attachments.component";
 import { CiphersComponent } from "./vault/ciphers.component";
 import { CollectionsComponent } from "./vault/collections.component";
 import { CurrentTabComponent } from "./vault/current-tab.component";
-import { GroupingsComponent } from "./vault/groupings.component";
 import { PasswordHistoryComponent } from "./vault/password-history.component";
 import { ShareComponent } from "./vault/share.component";
+import { VaultFilterComponent } from "./vault/vault-filter.component";
 import { ViewComponent } from "./vault/view.component";
 
 const routes: Routes = [
@@ -56,37 +56,37 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
-    canActivate: [UnauthGuardService],
+    canActivate: [UnauthGuard],
     data: { state: "home" },
   },
   {
     path: "login",
     component: LoginComponent,
-    canActivate: [UnauthGuardService],
+    canActivate: [UnauthGuard],
     data: { state: "login" },
   },
   {
     path: "lock",
     component: LockComponent,
-    canActivate: [LockGuardService],
+    canActivate: [LockGuard],
     data: { state: "lock" },
   },
   {
     path: "2fa",
     component: TwoFactorComponent,
-    canActivate: [UnauthGuardService],
+    canActivate: [UnauthGuard],
     data: { state: "2fa" },
   },
   {
     path: "2fa-options",
     component: TwoFactorOptionsComponent,
-    canActivate: [UnauthGuardService],
+    canActivate: [UnauthGuard],
     data: { state: "2fa-options" },
   },
   {
     path: "sso",
     component: SsoComponent,
-    canActivate: [UnauthGuardService],
+    canActivate: [UnauthGuard],
     data: { state: "sso" },
   },
   {
@@ -97,165 +97,165 @@ const routes: Routes = [
   {
     path: "remove-password",
     component: RemovePasswordComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "remove-password" },
   },
   {
     path: "register",
     component: RegisterComponent,
-    canActivate: [UnauthGuardService],
+    canActivate: [UnauthGuard],
     data: { state: "register" },
   },
   {
     path: "hint",
     component: HintComponent,
-    canActivate: [UnauthGuardService],
+    canActivate: [UnauthGuard],
     data: { state: "hint" },
   },
   {
     path: "environment",
     component: EnvironmentComponent,
-    canActivate: [UnauthGuardService],
+    canActivate: [UnauthGuard],
     data: { state: "environment" },
   },
   {
     path: "ciphers",
     component: CiphersComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "ciphers" },
   },
   {
     path: "view-cipher",
     component: ViewComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "view-cipher" },
   },
   {
     path: "cipher-password-history",
     component: PasswordHistoryComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "cipher-password-history" },
   },
   {
     path: "add-cipher",
     component: AddEditComponent,
-    canActivate: [AuthGuardService, DebounceNavigationService],
+    canActivate: [AuthGuard, DebounceNavigationService],
     data: { state: "add-cipher" },
     runGuardsAndResolvers: "always",
   },
   {
     path: "edit-cipher",
     component: AddEditComponent,
-    canActivate: [AuthGuardService, DebounceNavigationService],
+    canActivate: [AuthGuard, DebounceNavigationService],
     data: { state: "edit-cipher" },
     runGuardsAndResolvers: "always",
   },
   {
     path: "share-cipher",
     component: ShareComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "share-cipher" },
   },
   {
     path: "collections",
     component: CollectionsComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "collections" },
   },
   {
     path: "attachments",
     component: AttachmentsComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "attachments" },
   },
   {
     path: "generator",
     component: GeneratorComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "generator" },
   },
   {
     path: "generator-history",
     component: PasswordGeneratorHistoryComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "generator-history" },
   },
   {
     path: "export",
     component: ExportComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "export" },
   },
   {
     path: "folders",
     component: FoldersComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "folders" },
   },
   {
     path: "add-folder",
     component: FolderAddEditComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "add-folder" },
   },
   {
     path: "edit-folder",
     component: FolderAddEditComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "edit-folder" },
   },
   {
     path: "sync",
     component: SyncComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "sync" },
   },
   {
     path: "excluded-domains",
     component: ExcludedDomainsComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "excluded-domains" },
   },
   {
     path: "premium",
     component: PremiumComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "premium" },
   },
   {
     path: "options",
     component: OptionsComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "options" },
   },
   {
     path: "clone-cipher",
     component: AddEditComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "clone-cipher" },
   },
   {
     path: "send-type",
     component: SendTypeComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "send-type" },
   },
   {
     path: "add-send",
     component: SendAddEditComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "add-send" },
   },
   {
     path: "edit-send",
     component: SendAddEditComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "edit-send" },
   },
   {
     path: "update-temp-password",
     component: UpdateTempPasswordComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { state: "update-temp-password" },
   },
   {
@@ -271,32 +271,32 @@ const routes: Routes = [
       {
         path: "current",
         component: CurrentTabComponent,
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuard],
         data: { state: "tabs_current" },
         runGuardsAndResolvers: "always",
       },
       {
         path: "vault",
-        component: GroupingsComponent,
-        canActivate: [AuthGuardService],
+        component: VaultFilterComponent,
+        canActivate: [AuthGuard],
         data: { state: "tabs_vault" },
       },
       {
         path: "generator",
         component: GeneratorComponent,
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuard],
         data: { state: "tabs_generator" },
       },
       {
         path: "settings",
         component: SettingsComponent,
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuard],
         data: { state: "tabs_settings" },
       },
       {
         path: "send",
         component: SendGroupingsComponent,
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuard],
         data: { state: "tabs_send" },
       },
     ],

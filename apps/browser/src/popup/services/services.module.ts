@@ -1,8 +1,8 @@
 import { APP_INITIALIZER, LOCALE_ID, NgModule } from "@angular/core";
 
+import { LockGuard as BaseLockGuardService } from "jslib-angular/guards/lock.guard";
+import { UnauthGuard as BaseUnauthGuardService } from "jslib-angular/guards/unauth.guard";
 import { JslibServicesModule, SECURE_STORAGE } from "jslib-angular/services/jslib-services.module";
-import { LockGuardService as BaseLockGuardService } from "jslib-angular/services/lock-guard.service";
-import { UnauthGuardService as BaseUnauthGuardService } from "jslib-angular/services/unauth-guard.service";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { AppIdService } from "jslib-common/abstractions/appId.service";
 import { AuditService } from "jslib-common/abstractions/audit.service";
@@ -49,6 +49,7 @@ import { AutofillService } from "../../services/abstractions/autofill.service";
 import { StateService as StateServiceAbstraction } from "../../services/abstractions/state.service";
 import BrowserMessagingService from "../../services/browserMessaging.service";
 import BrowserMessagingPrivateModePopupService from "../../services/browserMessagingPrivateModePopup.service";
+import { VaultFilterService } from "../../services/vaultFilter.service";
 
 import { DebounceNavigationService } from "./debounceNavigationService";
 import { InitService } from "./init.service";
@@ -222,6 +223,20 @@ function getBgService<T>(service: keyof MainBackground) {
     {
       provide: OrganizationService,
       useFactory: getBgService<OrganizationService>("organizationService"),
+      deps: [],
+    },
+    {
+      provide: VaultFilterService,
+      useFactory: () => {
+        return new VaultFilterService(
+          getBgService<StateServiceAbstraction>("stateService")(),
+          getBgService<OrganizationService>("organizationService")(),
+          getBgService<FolderService>("folderService")(),
+          getBgService<CipherService>("cipherService")(),
+          getBgService<CollectionService>("collectionService")(),
+          getBgService<PolicyService>("policyService")()
+        );
+      },
       deps: [],
     },
     {

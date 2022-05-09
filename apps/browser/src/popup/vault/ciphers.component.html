@@ -26,6 +26,10 @@
 </header>
 <main tabindex="-1" [ngClass]="{ 'stacked-boxes': showGroupings() }">
   <ng-container *ngIf="showGroupings()">
+    <app-vault-select
+      *ngIf="showVaultFilter"
+      (onVaultSelectionChanged)="changeVaultSelection()"
+    ></app-vault-select>
     <div class="box list" *ngIf="nestedFolders && nestedFolders.length">
       <h2 class="box-header">
         {{ "folders" | i18n }}
@@ -89,7 +93,10 @@
       maxBufferPx="600"
       *ngIf="ciphers.length"
       #virtualScrollViewport
-    >
+      ><app-vault-select
+        *ngIf="showVaultFilter && !showGroupings()"
+        (onVaultSelectionChanged)="changeVaultSelection()"
+      ></app-vault-select>
       <div class="box list only-list">
         <h2 class="box-header">
           {{ groupingTitle }}

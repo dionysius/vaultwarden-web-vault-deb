@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { LockGuardService as BaseLockGuardService } from "jslib-angular/services/lock-guard.service";
+import { LockGuard as BaseLockGuardService } from "jslib-angular/guards/lock.guard";
 
 @Injectable()
 export class LockGuardService extends BaseLockGuardService {

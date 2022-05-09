@@ -35,6 +35,7 @@
     <i class="bwi bwi-spinner bwi-spin bwi-3x" aria-hidden="true"></i>
   </div>
   <ng-container *ngIf="loaded">
+    <app-vault-select (onVaultSelectionChanged)="load()"></app-vault-select>
     <div class="box list" *ngIf="loginCiphers">
       <h2 class="box-header">
         {{ "typeLogins" | i18n }}

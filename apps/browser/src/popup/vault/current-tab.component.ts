@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { OrganizationService } from "jslib-common/abstractions/organization.service";
 import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
@@ -16,6 +17,7 @@ import { CipherView } from "jslib-common/models/view/cipherView";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { AutofillService } from "../../services/abstractions/autofill.service";
+import { VaultFilterService } from "../../services/vaultFilter.service";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
 const BroadcasterSubscriptionId = "CurrentTabComponent";
@@ -35,6 +37,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   inSidebar = false;
   searchTypeSearch = false;
   loaded = false;
+  showOrganizations = false;
 
   private totpCode: string;
   private totpTimeout: number;
@@ -54,7 +57,9 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     private syncService: SyncService,
     private searchService: SearchService,
     private stateService: StateService,
-    private passwordRepromptService: PasswordRepromptService
+    private passwordRepromptService: PasswordRepromptService,
+    private organizationService: OrganizationService,
+    private vaultFilterService: VaultFilterService
   ) {}
 
   async ngOnInit() {
@@ -184,6 +189,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   }
 
   private async load() {
+    this.loaded = false;
     const tab = await BrowserApi.getTabFromCurrentWindow();
     if (tab != null) {
       this.url = tab.url;
@@ -204,6 +210,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     const otherTypes: CipherType[] = [];
     const dontShowCards = await this.stateService.getDontShowCardsCurrentTab();
     const dontShowIdentities = await this.stateService.getDontShowIdentitiesCurrentTab();
+    this.showOrganizations = await this.organizationService.hasOrganizations();
     if (!dontShowCards) {
       otherTypes.push(CipherType.Card);
     }
@@ -221,18 +228,20 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     this.identityCiphers = [];
 
     ciphers.forEach((c) => {
-      switch (c.type) {
-        case CipherType.Login:
-          this.loginCiphers.push(c);
-          break;
-        case CipherType.Card:
-          this.cardCiphers.push(c);
-          break;
-        case CipherType.Identity:
-          this.identityCiphers.push(c);
-          break;
-        default:
-          break;
+      if (!this.vaultFilterService.filterCipherForSelectedVault(c)) {
+        switch (c.type) {
+          case CipherType.Login:
+            this.loginCiphers.push(c);
+            break;
+          case CipherType.Card:
+            this.cardCiphers.push(c);
+            break;
+          case CipherType.Identity:
+            this.identityCiphers.push(c);
+            break;
+          default:
+            break;
+        }
       }
     });
 
