@@ -75,7 +75,7 @@
       type="button"
       class="row-btn"
       [ngClass]="{ disabled: disabledByPolicy }"
-      [attr.disabled]="!disabledByPolicy ? '' : null"
+      [attr.disabled]="disabledByPolicy ? '' : null"
       appStopClick
       appStopProp
       appA11yTitle="{{ 'removePassword' | i18n }}"
