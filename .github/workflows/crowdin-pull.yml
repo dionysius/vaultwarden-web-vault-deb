@@ -11,8 +11,14 @@ jobs:
   crowdin-sync:
     name: Autosync
     runs-on: ubuntu-20.04
-    env:
-      _CROWDIN_PROJECT_ID: "268134"
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - app_name: browser
+            crowdin_project_id: "268134"
+          - app_name: desktop
+            crowdin_project_id: "299360"
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -34,8 +40,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
+          CROWDIN_PROJECT_ID: ${{ matrix.crowdin_project_id }}
         with:
-          config: apps/browser/crowdin.yml
+          config: apps/${{ matrix.app_name }}/crowdin.yml
           crowdin_branch_name: master
           upload_sources: false
           upload_translations: false
@@ -45,5 +52,5 @@ jobs:
           commit_message: "Autosync the updated translations"
           localization_branch_name: crowdin-auto-sync
           create_pull_request: true
-          pull_request_title: "Autosync Crowdin Translations"
+          pull_request_title: "Autosync Crowdin Translations for ${{ matrix.app_name }}"
           pull_request_body: "Autosync the updated translations"
