@@ -2,25 +2,26 @@ import { DeviceType } from "jslib-common/enums/deviceType";
 
 import BrowserPlatformUtilsService from "./browserPlatformUtils.service";
 
-const platformUtilsFactory = () => new BrowserPlatformUtilsService(null, null, null, null);
-
 describe("Browser Utils Service", () => {
   describe("getBrowser", () => {
     const originalUserAgent = navigator.userAgent;
-    const originalSafariAppExtension = (window as any).safariAppExtension;
-    const originalOpr = (window as any).opr;
 
     // Reset the userAgent.
     afterAll(() => {
       Object.defineProperty(navigator, "userAgent", {
         value: originalUserAgent,
       });
-      Object.defineProperty(window, "safari", {
-        value: originalSafariAppExtension,
-      });
-      Object.defineProperty(window, "opr", {
-        value: originalOpr,
-      });
+    });
+
+    let browserPlatformUtilsService: BrowserPlatformUtilsService;
+    beforeEach(() => {
+      (window as any).matchMedia = jest.fn().mockReturnValueOnce({});
+      browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null, null, null);
+    });
+
+    afterEach(() => {
+      window.matchMedia = undefined;
+      (window as any).chrome = undefined;
     });
 
     it("should detect chrome", () => {
@@ -30,7 +31,8 @@ describe("Browser Utils Service", () => {
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
       });
 
-      const browserPlatformUtilsService = platformUtilsFactory();
+      (window as any).chrome = {};
+
       expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.ChromeExtension);
     });
 
@@ -40,7 +42,6 @@ describe("Browser Utils Service", () => {
         value: "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0",
       });
 
-      const browserPlatformUtilsService = platformUtilsFactory();
       expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.FirefoxExtension);
     });
 
@@ -51,12 +52,6 @@ describe("Browser Utils Service", () => {
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3175.3 Safari/537.36 OPR/49.0.2695.0 (Edition developer)",
       });
 
-      Object.defineProperty(window, "opr", {
-        configurable: true,
-        value: {},
-      });
-
-      const browserPlatformUtilsService = platformUtilsFactory();
       expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.OperaExtension);
     });
 
@@ -67,7 +62,6 @@ describe("Browser Utils Service", () => {
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.74 Safari/537.36 Edg/79.0.309.43",
       });
 
-      const browserPlatformUtilsService = platformUtilsFactory();
       expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.EdgeExtension);
     });
 
@@ -78,18 +72,7 @@ describe("Browser Utils Service", () => {
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8",
       });
 
-      Object.defineProperty(window, "safariAppExtension", {
-        configurable: true,
-        value: true,
-      });
-
-      const browserPlatformUtilsService = platformUtilsFactory();
       expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.SafariExtension);
-
-      Object.defineProperty(window, "safariAppExtension", {
-        configurable: true,
-        value: false,
-      });
     });
 
     it("should detect vivaldi", () => {
@@ -99,7 +82,6 @@ describe("Browser Utils Service", () => {
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.97 Safari/537.36 Vivaldi/1.94.1008.40",
       });
 
-      const browserPlatformUtilsService = platformUtilsFactory();
       expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.VivaldiExtension);
     });
   });

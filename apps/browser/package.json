@@ -17,8 +17,9 @@
     "dist:safari:mas": "npm run build:prod && gulp dist:safari:mas",
     "dist:safari:masdev": "npm run build:prod && gulp dist:safari:masdev",
     "dist:safari:dmg": "npm run build:prod && gulp dist:safari:dmg",
-    "test": "karma start --single-run",
-    "test:watch": "karma start"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:watch:all": "jest --watchAll"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^12.2.13",
@@ -26,6 +27,7 @@
     "@types/chrome": "^0.0.139",
     "@types/firefox-webext-browser": "^82.0.0",
     "@types/jasmine": "^3.7.6",
+    "@types/jest": "^27.5.0",
     "@types/mousetrap": "^1.6.8",
     "@types/node": "^16.11.12",
     "buffer": "^6.0.3",
@@ -44,12 +46,7 @@
     "html-webpack-plugin": "^5.5.0",
     "jasmine-core": "^3.7.1",
     "jasmine-spec-reporter": "^7.0.0",
-    "karma": "^6.3.2",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-cli": "^2.0.0",
-    "karma-jasmine": "^4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "karma-webpack": "^5.0.0",
+    "jest-preset-angular": "^10.1.0",
     "mini-css-extract-plugin": "^2.4.5",
     "prettier": "^2.5.1",
     "process": "^0.11.10",

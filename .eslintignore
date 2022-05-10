@@ -5,7 +5,7 @@
 **/node_modules
 
 **/webpack.*.js
-**/karma.conf.js
+**/jest.config.js
 **/gulpfile.js
 
 apps/browser/src/content/autofill.js
