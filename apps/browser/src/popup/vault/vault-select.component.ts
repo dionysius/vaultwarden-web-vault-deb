@@ -1,8 +1,9 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ConnectedPosition } from "@angular/cdk/overlay";
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, NgZone, OnInit, Output } from "@angular/core";
 
 import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
+import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { Organization } from "jslib-common/models/domain/organization";
 
@@ -37,7 +38,6 @@ export class VaultSelectComponent implements OnInit {
 
   isOpen = false;
   loaded = false;
-  showOrganizations = false;
   organizations: Organization[];
   vaultFilter: VaultFilter = new VaultFilter();
   vaultFilterDisplay = "";
@@ -51,20 +51,42 @@ export class VaultSelectComponent implements OnInit {
     },
   ];
 
-  constructor(private vaultFilterService: VaultFilterService, private i18nService: I18nService) {}
+  get show() {
+    return (
+      (this.organizations.length > 0 && !this.enforcePersonalOwnwership) ||
+      (this.organizations.length > 1 && this.enforcePersonalOwnwership)
+    );
+  }
+
+  constructor(
+    private vaultFilterService: VaultFilterService,
+    private i18nService: I18nService,
+    private ngZone: NgZone,
+    private broadcasterService: BroadcasterService
+  ) {}
 
   async ngOnInit() {
+    await this.load();
+    this.broadcasterService.subscribe(this.constructor.name, (message: any) => {
+      this.ngZone.run(async () => {
+        switch (message.command) {
+          case "syncCompleted":
+            await this.load();
+            break;
+          default:
+            break;
+        }
+      });
+    });
+  }
+
+  async load() {
     this.vaultFilter = this.vaultFilterService.getVaultFilter();
     this.organizations = await this.vaultFilterService.buildOrganizations();
     this.enforcePersonalOwnwership =
       await this.vaultFilterService.checkForPersonalOwnershipPolicy();
 
-    if (
-      (!this.enforcePersonalOwnwership && this.organizations.length > 0) ||
-      (this.enforcePersonalOwnwership && this.organizations.length > 1)
-    ) {
-      this.showOrganizations = true;
-
+    if (this.show) {
       if (this.enforcePersonalOwnwership && !this.vaultFilter.myVaultOnly) {
         this.vaultFilterService.setVaultFilter(this.organizations[0].id);
         this.vaultFilter.selectedOrganizationId = this.organizations[0].id;
