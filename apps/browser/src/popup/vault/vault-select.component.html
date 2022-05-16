@@ -1,9 +1,8 @@
 <div class="content org-filter-content" *ngIf="loaded && show">
   <button
+    #toggleVaults
     class="org-filter"
-    (click)="toggle()"
-    cdkOverlayOrigin
-    #trigger="cdkOverlayOrigin"
+    (click)="openOverlay()"
     aria-haspopup="menu"
     aria-controls="cdk-overlay-container"
     [attr.aria-expanded]="isOpen"
@@ -16,16 +15,7 @@
       [ngClass]="{ 'bwi-angle-down': !isOpen, 'bwi-chevron-up': isOpen }"
     ></i>
   </button>
-  <ng-template
-    cdkConnectedOverlay
-    [cdkConnectedOverlayOrigin]="trigger"
-    [cdkConnectedOverlayHasBackdrop]="true"
-    [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
-    [cdkConnectedOverlayOpen]="isOpen"
-    [cdkConnectedOverlayPositions]="overlayPostition"
-    (backdropClick)="close()"
-    (detach)="close()"
-  >
+  <ng-template class="vault-select-container" #vaultSelectorTemplate>
     <div
       class="vault-select"
       [@transformPanel]="'open'"

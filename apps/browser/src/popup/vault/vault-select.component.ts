@@ -1,6 +1,18 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { ConnectedPosition } from "@angular/cdk/overlay";
-import { Component, EventEmitter, NgZone, OnInit, Output } from "@angular/core";
+import { ConnectedPosition, Overlay, OverlayRef } from "@angular/cdk/overlay";
+import { TemplatePortal } from "@angular/cdk/portal";
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  NgZone,
+  OnInit,
+  Output,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+} from "@angular/core";
+import { merge } from "rxjs";
 
 import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
@@ -36,6 +48,10 @@ import { VaultFilterService } from "../../services/vaultFilter.service";
 export class VaultSelectComponent implements OnInit {
   @Output() onVaultSelectionChanged = new EventEmitter();
 
+  @ViewChild("toggleVaults", { read: ElementRef })
+  buttonRef: ElementRef<HTMLButtonElement>;
+  @ViewChild("vaultSelectorTemplate", { read: TemplateRef }) templateRef: TemplateRef<HTMLElement>;
+
   isOpen = false;
   loaded = false;
   organizations: Organization[];
@@ -51,6 +67,8 @@ export class VaultSelectComponent implements OnInit {
     },
   ];
 
+  private overlayRef: OverlayRef;
+
   get show() {
     return (
       (this.organizations.length > 0 && !this.enforcePersonalOwnwership) ||
@@ -62,7 +80,9 @@ export class VaultSelectComponent implements OnInit {
     private vaultFilterService: VaultFilterService,
     private i18nService: I18nService,
     private ngZone: NgZone,
-    private broadcasterService: BroadcasterService
+    private broadcasterService: BroadcasterService,
+    private overlay: Overlay,
+    private viewContainerRef: ViewContainerRef
   ) {}
 
   async ngOnInit() {
@@ -108,11 +128,44 @@ export class VaultSelectComponent implements OnInit {
     this.loaded = true;
   }
 
-  toggle() {
-    this.isOpen = !this.isOpen;
+  openOverlay() {
+    const viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    const positionStrategyBuilder = this.overlay.position();
+
+    const positionStrategy = positionStrategyBuilder
+      .flexibleConnectedTo(this.buttonRef.nativeElement)
+      .withFlexibleDimensions(true)
+      .withPush(true)
+      .withViewportMargin(10)
+      .withGrowAfterOpen(true)
+      .withPositions(this.overlayPostition);
+
+    this.overlayRef = this.overlay.create({
+      hasBackdrop: false,
+      positionStrategy,
+      maxHeight: viewPortHeight - 160,
+      backdropClass: "cdk-overlay-transparent-backdrop",
+    });
+
+    const templatePortal = new TemplatePortal(this.templateRef, this.viewContainerRef);
+    this.overlayRef.attach(templatePortal);
+    this.isOpen = true;
+
+    // Handle closing
+    merge(
+      this.overlayRef.outsidePointerEvents(),
+      this.overlayRef.backdropClick(),
+      this.overlayRef.detachments()
+    ).subscribe(() => {
+      this.close();
+    });
   }
 
   close() {
+    if (this.overlayRef) {
+      this.overlayRef.dispose();
+      this.overlayRef = undefined;
+    }
     this.isOpen = false;
   }
 

@@ -112,12 +112,14 @@ app-root > div {
 }
 
 main::-webkit-scrollbar,
-cdk-virtual-scroll-viewport::-webkit-scrollbar {
+cdk-virtual-scroll-viewport::-webkit-scrollbar,
+.vault-select::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-main::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track,
+.vault-select::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
@@ -128,7 +130,8 @@ cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
 }
 
 main::-webkit-scrollbar-thumb,
-cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
+cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb,
+.vault-select::-webkit-scrollbar-thumb {
   border-radius: 10px;
   margin-right: 1px;
 
@@ -483,6 +486,10 @@ main {
   }
 }
 .vault-select {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
   @include themify($themes) {
     background-color: themed("boxBackgroundColor");
   }
