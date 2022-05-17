@@ -234,6 +234,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         folderId: this.folderId,
         type: this.type,
         collectionId: this.collectionId,
+        selectedVault: this.vaultFilter.selectedOrganizationId,
       },
     });
   }

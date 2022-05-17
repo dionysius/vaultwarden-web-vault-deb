@@ -266,7 +266,9 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   }
 
   async addCipher() {
-    this.router.navigate(["/add-cipher"]);
+    this.router.navigate(["/add-cipher"], {
+      queryParams: { selectedVault: this.vaultFilter.selectedOrganizationId },
+    });
   }
 
   async vaultFilterChanged() {

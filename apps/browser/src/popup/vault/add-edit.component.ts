@@ -95,6 +95,9 @@ export class AddEditComponent extends BaseAddEditComponent {
       if (params.cloneMode != null) {
         this.cloneMode = params.cloneMode === "true";
       }
+      if (params.selectedVault) {
+        this.organizationId = params.selectedVault;
+      }
       await this.load();
 
       if (!this.editMode || this.cloneMode) {

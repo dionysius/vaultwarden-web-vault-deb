@@ -145,6 +145,7 @@ export class VaultSelectComponent implements OnInit {
       positionStrategy,
       maxHeight: viewPortHeight - 160,
       backdropClass: "cdk-overlay-transparent-backdrop",
+      scrollStrategy: this.overlay.scrollStrategies.close(),
     });
 
     const templatePortal = new TemplatePortal(this.templateRef, this.viewContainerRef);
