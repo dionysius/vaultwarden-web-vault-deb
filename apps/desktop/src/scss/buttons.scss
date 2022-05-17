@@ -176,4 +176,7 @@ button.no-btn {
   @include themify($themes) {
     color: themed("textColor");
   }
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
