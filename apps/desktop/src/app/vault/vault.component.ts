@@ -540,7 +540,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.i18nService.t(this.calculateSearchBarLocalizationString(vaultFilter))
     );
     this.activeFilter = vaultFilter;
-    await this.ciphersComponent.reload(this.buildFilter());
+    await this.ciphersComponent.reload(this.buildFilter(), vaultFilter.status === "trash");
     this.go();
   }
 
