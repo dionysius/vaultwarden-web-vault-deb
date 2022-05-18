@@ -15,7 +15,7 @@ app-root {
   height: 100%;
   display: flex;
 
-  > .items,
+  > .items > div,
   > .details,
   > .logo {
     display: flex;
