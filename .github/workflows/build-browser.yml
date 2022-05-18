@@ -177,6 +177,103 @@ jobs:
           path: apps/browser/coverage/coverage-${{ env._BUILD_NUMBER }}.zip
           if-no-files-found: error
 
+  build-safari:
+    name: Build Safari
+    runs-on: macos-11
+    needs:
+      - setup
+      - locales-test
+    env:
+      _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846  # v3.0.0
+
+      - name: Set up Node
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        with:
+          cache: 'npm'
+          cache-dependency-path: 'apps/browser/**/package-lock.json'
+          node-version: '16'
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+
+      - name: Decrypt secrets
+        env:
+          DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+        run: |
+          mkdir -p $HOME/secrets
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden-desktop-key.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden-desktop-key.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/macdev-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/macdev-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
+
+      - name: Set up keychain
+        env:
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
+          DEVID_CERT_PASSWORD: ${{ secrets.DEVID_CERT_PASSWORD }}
+          APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
+          MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        run: |
+          security create-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security set-keychain-settings -lut 1200 build.keychain
+          security import "$HOME/secrets/bitwarden-desktop-key.p12" -k build.keychain -P $DESKTOP_KEY_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-app-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-installer-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-app-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-installer-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/macdev-cert.p12" -k build.keychain -P $MACDEV_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
+
+      - name: Build Safari extension
+        run: |
+          npm ci
+          npm run dist:safari
+        working-directory: apps/browser
+
+      - name: Zip Safari build artifact
+        run: |
+          cd apps/browser/dist
+          zip dist-safari.zip ./Safari/**/build/Release/safari.appex -r
+          pwd
+          ls -la
+
+      - name: Upload Safari artifact
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
+        with:
+          name: dist-safari-${{ env._BUILD_NUMBER }}.zip
+          path: apps/browser/dist/dist-safari.zip
+          if-no-files-found: error
 
   crowdin-push:
     name: Crowdin Push
@@ -184,6 +281,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs:
       - build
+      - build-safari
     steps:
       - name: Checkout repo
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846  # v3.0.0
@@ -222,6 +320,7 @@ jobs:
       - setup
       - locales-test
       - build
+      - build-safari
       - crowdin-push
     steps:
       - name: Check if any job failed
@@ -231,6 +330,7 @@ jobs:
           SETUP_STATUS: ${{ needs.setup.result }}
           LOCALES_TEST_STATUS: ${{ needs.locales-test.result }}
           BUILD_STATUS: ${{ needs.build.result }}
+          SAFARI_BUILD_STATUS: ${{ needs.build-safari.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
@@ -240,6 +340,8 @@ jobs:
           elif [ "$LOCALES_TEST_STATUS" = "failure" ]; then
               exit 1
           elif [ "$BUILD_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$SAFARI_BUILD_STATUS" = "failure" ]; then
               exit 1
           elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
               exit 1

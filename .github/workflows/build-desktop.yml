@@ -475,12 +475,6 @@ jobs:
       - name: Build application (dev)
         run: npm run build
 
-      - name: Build Safari extension
-        run: |
-          npm install
-          npm run dist:safari
-        working-directory: apps/browser
-
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
@@ -608,17 +602,34 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
-      - name: Build Safari extension
-        if: steps.safari-cache.outputs.cache-hit != 'true'
+      - name: Download artifact from rc
+        if: github.ref == 'refs/heads/rc'
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: rc
+          path: ${{ github.workspace }}/browser-build-artifacts
+
+      - name: Download artifact from master
+        if: github.ref != 'refs/heads/rc'
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: master
+          path: ${{ github.workspace }}/browser-build-artifacts
+
+      - name: Unzip Safari artifact
         run: |
-          npm install
-          npm run dist:safari
-        working-directory: apps/browser
+          SAFARI_DIR=$(find $GITHUB_WORKSPACE/browser-build-artifacts -name 'dist-safari-*.zip')
+          echo $SAFARI_DIR
+          unzip $SAFARI_DIR/dist-safari.zip -d $GITHUB_WORKSPACE/browser-build-artifacts
 
       - name: Load Safari extension for .dmg
         run: |
           mkdir PlugIns
-          cp -r $GITHUB_WORKSPACE/apps/browser/dist/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
+          cp -r $GITHUB_WORKSPACE/browser-build-artifacts/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application (dist)
         env:
@@ -781,17 +792,34 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
-      - name: Build Safari extension
-        if: steps.safari-cache.outputs.cache-hit != 'true'
+      - name: Download artifact from rc
+        if: github.ref == 'refs/heads/rc'
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: rc
+          path: ${{ github.workspace }}/browser-build-artifacts
+
+      - name: Download artifact from master
+        if: github.ref != 'refs/heads/rc'
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: master
+          path: ${{ github.workspace }}/browser-build-artifacts
+
+      - name: Unzip Safari artifact
         run: |
-          npm install
-          npm run dist:safari
-        working-directory: apps/browser
+          SAFARI_DIR=$(find $GITHUB_WORKSPACE/browser-build-artifacts -name 'dist-safari-*.zip')
+          echo $SAFARI_DIR
+          unzip $SAFARI_DIR/dist-safari.zip -d $GITHUB_WORKSPACE/browser-build-artifacts
 
       - name: Load Safari extension for App Store
         run: |
           mkdir PlugIns
-          cp -r $GITHUB_WORKSPACE/apps/browser/dist/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
+          cp -r $GITHUB_WORKSPACE/browser-build-artifacts/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application for App Store
         run: npm run pack:mac:mas
@@ -946,17 +974,34 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
-      - name: Build Safari extension
-        if: steps.safari-cache.outputs.cache-hit != 'true'
+      - name: Download artifact from rc
+        if: github.ref == 'refs/heads/rc'
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: rc
+          path: ${{ github.workspace }}/browser-build-artifacts
+
+      - name: Download artifact from master
+        if: github.ref != 'refs/heads/rc'
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: master
+          path: ${{ github.workspace }}/browser-build-artifacts
+
+      - name: Unzip Safari artifact
         run: |
-          npm install
-          npm run dist:safari
-        working-directory: apps/browser
+          SAFARI_DIR=$(find $GITHUB_WORKSPACE/browser-build-artifacts -name 'dist-safari-*.zip')
+          echo $SAFARI_DIR
+          unzip $SAFARI_DIR/dist-safari.zip -d $GITHUB_WORKSPACE/browser-build-artifacts
 
       - name: Load Safari extension for App Store
         run: |
           mkdir PlugIns
-          cp -r $GITHUB_WORKSPACE/apps/browser/dist/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
+          cp -r $GITHUB_WORKSPACE/browser-build-artifacts/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build dev application for App Store
         run: npm run pack:mac:masdev
