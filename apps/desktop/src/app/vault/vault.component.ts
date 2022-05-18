@@ -128,7 +128,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             await this.openGenerator(false);
             break;
           case "syncCompleted":
-            await this.load();
+            await this.ciphersComponent.reload(this.buildFilter());
             await this.vaultFilterComponent.reloadCollectionsAndFolders(this.activeFilter);
             await this.vaultFilterComponent.reloadOrganizations();
             break;
