@@ -53,7 +53,7 @@
   </div>
   <div id="items" class="items">
     <div class="content">
-      <div class="list" *ngIf="filteredSends.length">
+      <div class="list full-height" *ngIf="filteredSends.length">
         <button
           *ngFor="let s of filteredSends"
           appStopClick
@@ -129,11 +129,11 @@
           <p>{{ "noItemsInList" | i18n }}</p>
         </ng-container>
       </div>
-    </div>
-    <div class="footer">
-      <button (click)="addSend()" class="block primary" appA11yTitle="{{ 'addItem' | i18n }}">
-        <i class="bwi bwi-plus bwi-lg" aria-hidden="true"></i>
-      </button>
+      <div class="footer">
+        <button (click)="addSend()" class="block primary" appA11yTitle="{{ 'addItem' | i18n }}">
+          <i class="bwi bwi-plus bwi-lg" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
   </div>
   <app-send-add-edit
