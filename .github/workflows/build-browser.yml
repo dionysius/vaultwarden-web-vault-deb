@@ -8,6 +8,7 @@ on:
       - 'gh-pages'
     paths:
       - 'apps/browser/**'
+      - '.github/workflows/build-browser.yml'
   workflow_dispatch:
     inputs: {}
 
