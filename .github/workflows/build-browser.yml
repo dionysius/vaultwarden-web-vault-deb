@@ -2,6 +2,13 @@
 name: Build Browser
 
 on:
+  pull_request:
+    branches-ignore:
+      - 'l10n_master'
+      - 'gh-pages'
+    paths:
+      - 'apps/browser/**'
+      - '.github/workflows/build-browser.yml'
   push:
     branches-ignore:
       - 'l10n_master'

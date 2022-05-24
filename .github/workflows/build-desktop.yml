@@ -2,6 +2,13 @@
 name: Build Desktop
 
 on:
+  pull_request:
+    branches-ignore:
+      - 'l10n_master'
+      - 'gh-pages'
+    paths:
+      - 'apps/desktop/**'
+      - '.github/workflows/build-desktop.yml'
   push:
     branches-ignore:
       - 'l10n_master'
