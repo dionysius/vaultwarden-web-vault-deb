@@ -10,9 +10,10 @@ on:
       - 'apps/browser/**'
       - '.github/workflows/build-browser.yml'
   push:
-    branches-ignore:
-      - 'l10n_master'
-      - 'gh-pages'
+    branches:
+      - 'master'
+      - 'rc'
+      - 'hotfix-rc/**'
     paths:
       - 'apps/browser/**'
       - '.github/workflows/build-browser.yml'

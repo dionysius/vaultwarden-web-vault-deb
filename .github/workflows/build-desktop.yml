@@ -10,9 +10,10 @@ on:
       - 'apps/desktop/**'
       - '.github/workflows/build-desktop.yml'
   push:
-    branches-ignore:
-      - 'l10n_master'
-      - 'gh-pages'
+    branches:
+      - 'master'
+      - 'rc'
+      - 'hotfix-rc/**'
     paths:
       - 'apps/desktop/**'
       - '.github/workflows/build-desktop.yml'
