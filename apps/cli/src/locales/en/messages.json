@@ -1,0 +1,44 @@
+﻿{
+  "bitwarden": {
+    "message": "Bitwarden"
+  },
+  "authenticatorAppTitle": {
+    "message": "Authenticator App"
+  },
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP Security Key"
+  },
+  "emailTitle": {
+    "message": "Email"
+  },
+  "noneFolder": {
+    "message": "No Folder"
+  },
+  "importEncKeyError": {
+    "message": "Invalid file password."
+  },
+  "importPasswordRequired": {
+    "message": "File is password protected, please provide a decryption password."
+  },
+  "importFormatError": {
+    "message": "Data is not formatted correctly. Please check your import file and try again."
+  },
+  "importNothingError": {
+    "message": "Nothing was imported."
+  },
+  "verificationCodeRequired": {
+    "message": "Verification code is required."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code."
+  },
+  "masterPassRequired": {
+    "message": "Master password is required."
+  },
+  "invalidMasterPassword": {
+    "message": "Invalid master password."
+  },
+  "sessionTimeout": {
+    "message": "Your session has timed out. Please go back and try logging in again."
+  }
+}

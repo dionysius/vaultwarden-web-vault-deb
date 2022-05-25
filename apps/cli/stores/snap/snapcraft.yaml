@@ -1,0 +1,17 @@
+name: bw
+version: __version__
+summary: Bitwarden CLI
+description: A secure and free password manager for all of your devices.
+confinement: strict
+base: core18
+apps:
+  bw:
+    command: bw
+    plugs: [network, home, network-bind]
+parts:
+  bw:
+    plugin: dump
+    source: ./bw-linux-$SNAPCRAFT_PROJECT_VERSION.zip
+    override-build: |
+      chmod +x bw
+      snapcraftctl build
