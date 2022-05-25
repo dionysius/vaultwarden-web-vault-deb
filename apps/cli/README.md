@@ -1,10 +1,4 @@
-> **Repository Reorganization in Progress**
->
-> We are currently migrating some projects over to a mono repository. For existing PR's we will be providing documentation on how to move/migrate them. To minimize the overhead we are actively reviewing open PRs. If possible please ensure any pending comments are resolved as soon as possible.
->
-> New pull requests created during this transition period may not get addressed —if needed, please create a new PR after the reorganization is complete.
-
-[![Github Workflow build on master](https://github.com/bitwarden/cli/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/bitwarden/cli/actions/workflows/build.yml?query=branch:master)
+[![Github Workflow build on master](https://github.com/bitwarden/clients/actions/workflows/build-cli.yml/badge.svg?branch=master)](https://github.com/bitwarden/clients/actions/workflows/build-cli.yml?query=branch:master)
 [![Join the chat at https://gitter.im/bitwarden/Lobby](https://badges.gitter.im/bitwarden/Lobby.svg)](https://gitter.im/bitwarden/Lobby)
 
 # Bitwarden Command-line Interface
@@ -87,34 +81,4 @@ You can then run commands from the `./build` folder:
 
 ```bash
 node ./build/bw.js login
-```
-
-## We're Hiring!
-
-Interested in contributing in a big way? Consider joining our team! We're hiring for many positions. Please take a look at our [Careers page](https://bitwarden.com/careers/) to see what opportunities are currently open as well as what it's like to work at Bitwarden.
-
-## Contribute
-
-Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
-
-Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature. You can read our security policy in the [`SECURITY.md`](SECURITY.md) file.
-
-## Prettier
-
-We recently migrated to using Prettier as code formatter. All previous branches will need to updated to avoid large merge conflicts using the following steps:
-
-1. Check out your local Branch
-2. Run `git merge ec53a16c005e0dd9aef6845c18811e8b14067168`
-3. Resolve any merge conflicts, commit.
-4. Run `npm run prettier`
-5. Commit
-6. Run `git merge -Xours 910b4a24e649f21acbf4da5b2d422b121d514bd5`
-7. Push
-
-### Git blame
-
-We also recommend that you configure git to ignore the prettier revision using:
-
-```bash
-git config blame.ignoreRevsFile .git-blame-ignore-revs
 ```
