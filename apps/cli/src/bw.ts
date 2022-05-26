@@ -228,7 +228,8 @@ export class Main {
       this.tokenService,
       this.logService,
       this.organizationService,
-      this.cryptoFunctionService
+      this.cryptoFunctionService,
+      async (expired: boolean) => await this.logout()
     );
 
     this.twoFactorService = new TwoFactorService(this.i18nService, this.platformUtilsService);

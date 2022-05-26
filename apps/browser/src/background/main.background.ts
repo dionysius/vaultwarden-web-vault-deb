@@ -163,6 +163,21 @@ export default class MainBackground {
 
   constructor(public isPrivateMode: boolean = false) {
     // Services
+    const lockedCallback = async (userId?: string) => {
+      if (this.notificationsService != null) {
+        this.notificationsService.updateConnection(false);
+      }
+      await this.setIcon();
+      await this.refreshBadgeAndMenu(true);
+      if (this.systemService != null) {
+        await this.systemService.clearPendingClipboard();
+        await this.reloadProcess();
+      }
+    };
+
+    const logoutCallback = async (expired: boolean, userId?: string) =>
+      await this.logout(expired, userId);
+
     this.messagingService = isPrivateMode
       ? new BrowserMessagingPrivateModeBackgroundService()
       : new BrowserMessagingService();
@@ -267,7 +282,8 @@ export default class MainBackground {
       this.tokenService,
       this.logService,
       this.organizationService,
-      this.cryptoFunctionService
+      this.cryptoFunctionService,
+      logoutCallback
     );
     this.vaultFilterService = new VaultFilterService(
       this.stateService,
@@ -303,21 +319,6 @@ export default class MainBackground {
       this.twoFactorService,
       this.i18nService
     );
-
-    const lockedCallback = async (userId?: string) => {
-      if (this.notificationsService != null) {
-        this.notificationsService.updateConnection(false);
-      }
-      await this.setIcon();
-      await this.refreshBadgeAndMenu(true);
-      if (this.systemService != null) {
-        await this.systemService.clearPendingClipboard();
-        await this.reloadProcess();
-      }
-    };
-
-    const logoutCallback = async (expired: boolean, userId?: string) =>
-      await this.logout(expired, userId);
 
     this.vaultTimeoutService = new VaultTimeoutService(
       this.cipherService,

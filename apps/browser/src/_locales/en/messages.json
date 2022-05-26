@@ -1961,5 +1961,8 @@
   },
   "apiKey": {
     "message": "API Key"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }
