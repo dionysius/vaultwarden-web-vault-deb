@@ -36,13 +36,13 @@ jobs:
           secrets: "crowdin-api-token"
 
       - name: Download translations
-        uses: crowdin/github-action@e39093fd75daae7859c68eded4b43d42ec78d8ea  # v1.3.2
+        uses: bitwarden/gh-actions/crowdin@05052c5c575ceb09ceea397fe241879e199ed44b
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
           CROWDIN_PROJECT_ID: ${{ matrix.crowdin_project_id }}
         with:
-          config: apps/${{ matrix.app_name }}/crowdin.yml
+          config: crowdin.yml
           crowdin_branch_name: master
           upload_sources: false
           upload_translations: false
@@ -50,7 +50,8 @@ jobs:
           github_user_name: "github-actions"
           github_user_email: "<>"
           commit_message: "Autosync the updated translations"
-          localization_branch_name: crowdin-auto-sync
+          localization_branch_name: crowdin-auto-sync-${{ matrix.app_name }}
           create_pull_request: true
           pull_request_title: "Autosync Crowdin Translations for ${{ matrix.app_name }}"
           pull_request_body: "Autosync the updated translations"
+          working_directory: apps/${{ matrix.app_name }}
