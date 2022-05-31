@@ -367,7 +367,7 @@ export class SettingsComponent implements OnInit {
     if (process.platform === "darwin" && !this.platformUtilsService.isMacAppStore()) {
       await this.platformUtilsService.showDialog(
         this.i18nService.t("browserIntegrationMasOnlyDesc"),
-        this.i18nService.t("browserIntegrationMasOnlyTitle"),
+        this.i18nService.t("browserIntegrationUnsupportedTitle"),
         this.i18nService.t("ok"),
         null,
         "warning"
@@ -378,7 +378,18 @@ export class SettingsComponent implements OnInit {
     } else if (isWindowsStore()) {
       await this.platformUtilsService.showDialog(
         this.i18nService.t("browserIntegrationWindowsStoreDesc"),
-        this.i18nService.t("browserIntegrationWindowsStoreTitle"),
+        this.i18nService.t("browserIntegrationUnsupportedTitle"),
+        this.i18nService.t("ok"),
+        null,
+        "warning"
+      );
+
+      this.enableBrowserIntegration = false;
+      return;
+    } else if (process.platform == "linux") {
+      await this.platformUtilsService.showDialog(
+        this.i18nService.t("browserIntegrationLinuxDesc"),
+        this.i18nService.t("browserIntegrationUnsupportedTitle"),
         this.i18nService.t("ok"),
         null,
         "warning"
