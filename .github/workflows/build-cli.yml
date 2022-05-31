@@ -1,14 +1,28 @@
 ---
-name: Build
+name: Build CLI
 
 on:
-  push:
+  pull_request:
     branches-ignore:
       - 'l10n_master'
-    paths-ignore:
-      - '.github/workflows/**'
+      - 'gh-pages'
+    paths:
+      - 'apps/cli/**'
+      - '.github/workflows/build-cli.yml'
+  push:
+    branches:
+      - 'master'
+      - 'rc'
+      - 'hotfix-rc/**'
+    paths:
+      - 'apps/cli/**'
+      - '.github/workflows/build-cli.yml'
   workflow_dispatch:
     inputs: {}
+
+defaults:
+  run:
+    working-directory: apps/cli
 
 jobs:
   cloc:
@@ -16,7 +30,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Set up cloc
         run: |
@@ -34,7 +48,7 @@ jobs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Get Package Version
         id: retrieve-version
@@ -42,55 +56,31 @@ jobs:
           PKG_VERSION=$(jq -r .version package.json)
           echo "::set-output name=package_version::$PKG_VERSION"
 
-  lint:
-    name: Lint
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
-
-      - name: Cache npm
-        id: npm-cache
-        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
-        with:
-          path: '~/.npm'
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
-
-      - name: Setup sub-module
-        run: npm run sub:init
-
-      - name: Install
-        run: npm ci
-
-      - name: Run linter
-        run: npm run lint
 
   cli:
     name: Build CLI
     runs-on: windows-2019
     needs:
       - setup
-      - lint
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
-      _WIN_PKG_FETCH_VERSION: 16.14.2
-      _WIN_PKG_VERSION: 3.3
+      _WIN_PKG_FETCH_VERSION: 16.15.0
+      _WIN_PKG_VERSION: 3.4
     steps:
       - name: Checkout repo
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Setup Windows builder
         run: |
           choco install checksum --no-progress
           choco install reshack --no-progress
+          choco install nasm --no-progress
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048  # v3.2.0
         with:
           cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          cache-dependency-path: 'apps/cli/**/package-lock.json'
           node-version: '16'
 
       - name: Get pkg-fetch
@@ -98,7 +88,6 @@ jobs:
         run: |
           cd $HOME
           $fetchedUrl = "https://github.com/vercel/pkg-fetch/releases/download/v$env:_WIN_PKG_VERSION/node-v$env:_WIN_PKG_FETCH_VERSION-win-x64"
-
           New-Item -ItemType directory -Path .\.pkg-cache
           New-Item -ItemType directory -Path .\.pkg-cache\v$env:_WIN_PKG_VERSION
           Invoke-RestMethod -Uri $fetchedUrl `
@@ -108,9 +97,7 @@ jobs:
         shell: pwsh
         run: |
           $major,$minor,$patch = $env:_PACKAGE_VERSION.split('.')
-
           $versionInfo = @"
-
           1 VERSIONINFO
           FILEVERSION $major,$minor,$patch,0
           PRODUCTVERSION $major,$minor,$patch,0
@@ -131,25 +118,21 @@ jobs:
               VALUE "LegalCopyright", "Copyright Bitwarden Inc."
             }
           }
-
           BLOCK "VarFileInfo"
           {
             VALUE "Translation", 0x0409 0x04B0
           }
           }
           "@
-
           $versionInfo | Out-File ./version-info.rc
-
-
       # https://github.com/vercel/pkg-fetch/issues/188
+
       - name: Resource Hacker
         shell: cmd
         run: |
           set PATH=%PATH%;C:\Program Files (x86)\Resource Hacker
           set WIN_PKG=C:\Users\runneradmin\.pkg-cache\v%_WIN_PKG_VERSION%\fetched-v%_WIN_PKG_FETCH_VERSION%-win-x64
           set WIN_PKG_BUILT=C:\Users\runneradmin\.pkg-cache\v%_WIN_PKG_VERSION%\built-v%_WIN_PKG_FETCH_VERSION%-win-x64
-
           copy %WIN_PKG% %WIN_PKG_BUILT%
           ResourceHacker -open %WIN_PKG_BUILT% -save %WIN_PKG_BUILT% -action delete -mask ICONGROUP,1,
           ResourceHacker -open version-info.rc -save version-info.res -action compile
@@ -165,15 +148,14 @@ jobs:
         run: npm run test
 
       - name: Build & Package
-        run: npm run dist
+        run: npm run dist --quiet
 
       - name: Package Chocolatey
         shell: pwsh
         run: |
           Copy-Item -Path stores/chocolatey -Destination dist/chocolatey -Recurse
           Copy-Item dist/windows/bw.exe -Destination dist/chocolatey/tools
-          Copy-Item LICENSE.txt -Destination dist/chocolatey/tools
-
+          Copy-Item ${{ github.workspace }}/LICENSE.txt -Destination dist/chocolatey/tools
           choco pack dist/chocolatey/bitwarden-cli.nuspec --version ${{ env._PACKAGE_VERSION }} --out dist/chocolatey
 
       - name: Zip
@@ -188,7 +170,6 @@ jobs:
           dir ./dist/
           Expand-Archive -Path "./dist/bw-windows-${env:_PACKAGE_VERSION}.zip" -DestinationPath "./test/windows"
           $testVersion = Invoke-Expression '& ./test/windows/bw.exe -v'
-
           echo "version: $env:_PACKAGE_VERSION"
           echo "testVersion: $testVersion"
           if($testVersion -ne $env:_PACKAGE_VERSION) {
@@ -205,59 +186,59 @@ jobs:
             -t sha256 | Out-File -Encoding ASCII ./dist/bw-linux-sha256-${env:_PACKAGE_VERSION}.txt
 
       - name: Upload windows zip asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bw-windows-${{ env._PACKAGE_VERSION }}.zip
-          path: ./dist/bw-windows-${{ env._PACKAGE_VERSION }}.zip
+          path: apps/cli/dist/bw-windows-${{ env._PACKAGE_VERSION }}.zip
           if-no-files-found: error
 
       - name: Upload windows checksum asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bw-windows-sha256-${{ env._PACKAGE_VERSION }}.txt
-          path: ./dist/bw-windows-sha256-${{ env._PACKAGE_VERSION }}.txt
+          path: apps/cli/dist/bw-windows-sha256-${{ env._PACKAGE_VERSION }}.txt
           if-no-files-found: error
 
       - name: Upload macos zip asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bw-macos-${{ env._PACKAGE_VERSION }}.zip
-          path: ./dist/bw-macos-${{ env._PACKAGE_VERSION }}.zip
+          path: apps/cli/dist/bw-macos-${{ env._PACKAGE_VERSION }}.zip
           if-no-files-found: error
 
       - name: Upload macos checksum asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bw-macos-sha256-${{ env._PACKAGE_VERSION }}.txt
-          path: ./dist/bw-macos-sha256-${{ env._PACKAGE_VERSION }}.txt
+          path: apps/cli/dist/bw-macos-sha256-${{ env._PACKAGE_VERSION }}.txt
           if-no-files-found: error
 
       - name: Upload linux zip asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bw-linux-${{ env._PACKAGE_VERSION }}.zip
-          path: ./dist/bw-linux-${{ env._PACKAGE_VERSION }}.zip
+          path: apps/cli/dist/bw-linux-${{ env._PACKAGE_VERSION }}.zip
           if-no-files-found: error
 
       - name: Upload linux checksum asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bw-linux-sha256-${{ env._PACKAGE_VERSION }}.txt
-          path: ./dist/bw-linux-sha256-${{ env._PACKAGE_VERSION }}.txt
+          path: apps/cli/dist/bw-linux-sha256-${{ env._PACKAGE_VERSION }}.txt
           if-no-files-found: error
 
       - name: Upload Chocolatey asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bitwarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
-          path: ./dist/chocolatey/bitwarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
+          path: apps/cli/dist/chocolatey/bitwarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
       - name: Upload NPM Build Directory asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bitwarden-cli-${{ env._PACKAGE_VERSION }}-npm-build.zip
-          path: ./build
+          path: apps/cli/build
           if-no-files-found: error
 
   snap:
@@ -268,7 +249,7 @@ jobs:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Print environment
         run: |
@@ -281,20 +262,19 @@ jobs:
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
         with:
           name: bw-linux-${{ env._PACKAGE_VERSION }}.zip
-          path: ./dist/snap
+          path: apps/cli/dist/snap
 
       - name: Setup Snap Package
         run: |
           cp -r stores/snap/* -t dist/snap
           sed -i s/__version__/${{ env._PACKAGE_VERSION }}/g dist/snap/snapcraft.yaml
-
           cd dist/snap
           ls -alth
 
       - name: Build snap
-        uses: snapcore/action-build@a400bf1c2d0f23074aaacf08a144813c3c20b35d  # v1.0.9
+        uses: snapcore/action-build@ea14cdeb353272f75977040488ca191880509a8c  # v1.1.0
         with:
-          path: dist/snap
+          path: apps/cli/dist/snap
 
       - name: Create checksum
         run: |
@@ -321,17 +301,17 @@ jobs:
         run: sudo snap remove bw
 
       - name: Upload snap asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bw_${{ env._PACKAGE_VERSION }}_amd64.snap
-          path: ./dist/snap/bw_${{ env._PACKAGE_VERSION }}_amd64.snap
+          path: apps/cli/dist/snap/bw_${{ env._PACKAGE_VERSION }}_amd64.snap
           if-no-files-found: error
 
       - name: Upload snap checksum asset
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
           name: bw-snap-sha256-${{ env._PACKAGE_VERSION }}.txt
-          path: ./dist/snap/bw-snap-sha256-${{ env._PACKAGE_VERSION }}.txt
+          path: apps/cli/dist/snap/bw-snap-sha256-${{ env._PACKAGE_VERSION }}.txt
           if-no-files-found: error
 
 
@@ -342,7 +322,6 @@ jobs:
     needs:
       - cloc
       - setup
-      - lint
       - cli
       - snap
     steps:
@@ -351,7 +330,6 @@ jobs:
         env:
           CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
-          LINT_STATUS: ${{ needs.lint.result }}
           CLI_STATUS: ${{ needs.cli.result }}
           SNAP_STATUS: ${{ needs.snap.result }}
         run: |
@@ -359,15 +337,14 @@ jobs:
               exit 1
           elif [ "$SETUP_STATUS" = "failure" ]; then
               exit 1
-          elif [ "$LINT_STATUS" = "failure" ]; then
-              exit 1
           elif [ "$CLI_STATUS" = "failure" ]; then
               exit 1
           elif [ "$SNAP_STATUS" = "failure" ]; then
               exit 1
           fi
+
       - name: Login to Azure - Prod Subscription
-        uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         if: failure()
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}

@@ -136,7 +136,7 @@ jobs:
                       dist-edge-${{ needs.setup.outputs.release-version }}.zip'
           commit: ${{ github.sha }}
           tag: "browser-v${{ needs.setup.outputs.release-version }}"
-          name: "Version ${{ needs.setup.outputs.release-version }}"
+          name: "Browser v${{ needs.setup.outputs.release-version }}"
           body: "<insert release notes here>"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true

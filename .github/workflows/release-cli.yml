@@ -1,5 +1,5 @@
 ---
-name: Release
+name: Release CLI
 
 on:
   workflow_dispatch:
@@ -14,6 +14,10 @@ on:
           - Redeploy
           - Dry Run
 
+defaults:
+  run:
+    working-directory: apps/cli
+
 jobs:
   setup:
     name: Setup
@@ -25,15 +29,15 @@ jobs:
       - name: Branch check
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         run: |
-          if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ "$GITHUB_REF" != "refs/heads/hotfix-rc" ]]; then
+          if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ $GITHUB_REF != refs/heads/hotfix-rc/* ]]; then
             echo "==================================="
-            echo "[!] Can only release from the 'rc' or 'hotfix-rc' branches"
+            echo "[!] Can only release from the 'rc' or 'hotfix-rc/*' branches"
             echo "==================================="
             exit 1
           fi
 
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579  # 2.4.0
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Retrieve CLI release version
         id: retrieve-version
@@ -46,7 +50,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          latest_ver=$(hub release -L 1 -f '%T')
+          latest_ver=$(
+            curl -sL https://api.github.com/repos/$GITHUB_REPOSITORY/releases | jq -r 'first(.[] | select(.tag_name | startswith("cli"))).tag_name'
+          )
           latest_ver=${latest_ver:1}
           echo "Latest version: $latest_ver"
           ver=${{ steps.retrieve-version.outputs.package_version }}
@@ -66,28 +72,28 @@ jobs:
       - name: Download all artifacts
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
-          workflow: build.yml
+          workflow: build-cli.yml
+          path: apps/cli
           workflow_conclusion: success
           branch: ${{ steps.branch.outputs.branch-name }}
 
       - name: Create release
-        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
-        uses: ncipollo/release-action@40bb172bd05f266cf9ba4ff965cb61e9ee5f6d01  # v1.9.0
+        uses: ncipollo/release-action@58ae73b360456532aafd58ee170c045abbeaee37  # v1.10.0
         env:
           PKG_VERSION: ${{ steps.retrieve-version.outputs.package_version }}
         with:
-          artifacts: "bw-windows-${{ env.PKG_VERSION }}.zip,
-                      bw-windows-sha256-${{ env.PKG_VERSION }}.txt,
-                      bw-macos-${{ env.PKG_VERSION }}.zip,
-                      bw-macos-sha256-${{ env.PKG_VERSION }}.txt,
-                      bw-linux-${{ env.PKG_VERSION }}.zip,
-                      bw-linux-sha256-${{ env.PKG_VERSION }}.txt,
-                      bitwarden-cli.${{ env.PKG_VERSION }}.nupkg,
-                      bw_${{ env.PKG_VERSION }}_amd64.snap,
-                      bw-snap-sha256-${{ env.PKG_VERSION }}.txt"
+          artifacts: "apps/cli/bw-windows-${{ env.PKG_VERSION }}.zip,
+                      apps/cli/bw-windows-sha256-${{ env.PKG_VERSION }}.txt,
+                      apps/cli/bw-macos-${{ env.PKG_VERSION }}.zip,
+                      apps/cli/bw-macos-sha256-${{ env.PKG_VERSION }}.txt,
+                      apps/cli/bw-linux-${{ env.PKG_VERSION }}.zip,
+                      apps/cli/bw-linux-sha256-${{ env.PKG_VERSION }}.txt,
+                      apps/cli/bitwarden-cli.${{ env.PKG_VERSION }}.nupkg,
+                      apps/cli/bw_${{ env.PKG_VERSION }}_amd64.snap,
+                      apps/cli/bw-snap-sha256-${{ env.PKG_VERSION }}.txt"
           commit: ${{ github.sha }}
-          tag: v${{ env.PKG_VERSION }}
-          name: Version ${{ env.PKG_VERSION }}
+          tag: cli-v${{ env.PKG_VERSION }}
+          name: CLI v${{ env.PKG_VERSION }}
           body: "<insert release notes here>"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
@@ -101,10 +107,10 @@ jobs:
       _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579  # v2.4.0
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Login to Azure
-        uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
 
@@ -123,7 +129,8 @@ jobs:
       - name: Download artifacts
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
-          workflow: build.yml
+          workflow: build-cli.yml
+          path: apps/cli
           workflow_conclusion: success
           branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bw_${{ env._PKG_VERSION }}_amd64.snap
@@ -143,7 +150,7 @@ jobs:
       _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579  # v2.4.0
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Setup Chocolatey
         run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
@@ -157,11 +164,11 @@ jobs:
       - name: Download artifacts
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
-          workflow: build.yml
+          workflow: build-cli.yml
+          path: apps/cli
           workflow_conclusion: success
           branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bitwarden-cli.${{ env._PKG_VERSION }}.nupkg
-          path: ./dist
 
       - name: Push to Chocolatey
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -179,16 +186,16 @@ jobs:
       _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579  # v2.4.0
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Download artifacts
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
-          workflow: build.yml
+          workflow: build-cli.yml
+          path: apps/cli
           workflow_conclusion: success
           branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
-          path: build
 
       - name: Setup NPM
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
