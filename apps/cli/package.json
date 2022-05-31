@@ -39,8 +39,9 @@
     "dist:mac": "npm run build:prod && npm run clean && npm run package:mac",
     "dist:lin": "npm run build:prod && npm run clean && npm run package:lin",
     "publish:npm": "npm run build:prod && npm publish --access public",
-    "test": "jasmine-ts -r tsconfig-paths/register -P spec/tsconfig.json",
-    "test:watch": "nodemon -w ./spec -w ./src -w ./jslib --ext \"ts,js,mjs,json\" --exec jasmine-ts -r tsconfig-paths/register -P spec/tsconfig.json"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:watch:all": "jest --watchAll"
   },
   "bin": {
     "bw": "build/bw.js"
@@ -51,7 +52,7 @@
   "devDependencies": {
     "@fluffy-spoon/substitute": "^1.208.0",
     "@types/inquirer": "^7.3.1",
-    "@types/jasmine": "^3.7.0",
+    "@types/jest": "^27.5.1",
     "@types/jsdom": "^16.2.10",
     "@types/koa": "^2.13.4",
     "@types/koa__multer": "^2.0.4",
@@ -71,12 +72,10 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.0",
     "cross-env": "^7.0.3",
-    "jasmine": "^3.7.0",
-    "jasmine-core": "^3.7.1",
-    "jasmine-ts": "^0.4.0",
-    "jasmine-ts-console-reporter": "^3.1.1",
+    "jest": "^27.5.1",
     "pkg": "5.7.0",
     "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.5",
     "ts-loader": "^8.2.0",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.12.0",
