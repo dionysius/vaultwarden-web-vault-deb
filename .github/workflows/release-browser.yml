@@ -24,7 +24,7 @@ jobs:
     name: Setup
     runs-on: ubuntu-20.04
     outputs:
-      release-version: ${{ steps.version.outputs.package-version }}
+      release-version: ${{ steps.version.outputs.version }}
       branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
@@ -42,19 +42,13 @@ jobs:
 
       - name: Check Release Version
         id: version
-        run: |
-          version=$( jq -r ".version" src/manifest.json)
-          previous_release_tag_version=$(
-            curl -sL https://api.github.com/repos/$GITHUB_REPOSITORY/releases | jq -r 'first(.[] | select(.tag_name | startswith("browser"))).tag_name'
-          )
-
-          if [ "v$version" == "$previous_release_tag_version" ] && \
-          [ "${{ github.event.inputs.release_type }}" == "Initial Release" ]; then
-            echo "[!] Already released v$version. Please bump version to continue"
-            exit 1
-          fi
-
-          echo "::set-output name=package-version::$version"
+        uses: bitwarden/gh-actions/release-version-check@ea9fab01d76940267b4147cc1c4542431246b9f6
+        with:
+          release-type: ${{ github.event.inputs.release_type }}
+          project-type: ts
+          file: apps/browser/src/manifest.json
+          monorepo: true
+          monorepo-project: browser
 
       - name: Get branch name
         id: branch

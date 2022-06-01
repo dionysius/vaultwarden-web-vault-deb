@@ -23,7 +23,7 @@ jobs:
     name: Setup
     runs-on: ubuntu-20.04
     outputs:
-      package_version: ${{ steps.retrieve-version.outputs.package_version }}
+      release-version: ${{ steps.version.outputs.version }}
       branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
@@ -39,29 +39,15 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
-      - name: Retrieve CLI release version
-        id: retrieve-version
-        run: |
-          PKG_VERSION=$(jq -r .version package.json)
-          echo "::set-output name=package_version::$PKG_VERSION"
-
-      - name: Check to make sure CLI release version has been bumped
-        if: ${{ github.event.inputs.release_type == 'Initial Release' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          latest_ver=$(
-            curl -sL https://api.github.com/repos/$GITHUB_REPOSITORY/releases | jq -r 'first(.[] | select(.tag_name | startswith("cli"))).tag_name'
-          )
-          latest_ver=${latest_ver:1}
-          echo "Latest version: $latest_ver"
-          ver=${{ steps.retrieve-version.outputs.package_version }}
-          echo "Version: $ver"
-          if [ "$latest_ver" = "$ver" ]; then
-            echo "Version has not been bumped!"
-            exit 1
-          fi
-        shell: bash
+      - name: Check Release Version
+        id: version
+        uses: bitwarden/gh-actions/release-version-check@ea9fab01d76940267b4147cc1c4542431246b9f6
+        with:
+          release-type: ${{ github.event.inputs.release_type }}
+          project-type: ts
+          file: apps/cli/package.json
+          monorepo: true
+          monorepo-project: cli
 
       - name: Get branch name
         id: branch
@@ -80,7 +66,7 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@58ae73b360456532aafd58ee170c045abbeaee37  # v1.10.0
         env:
-          PKG_VERSION: ${{ steps.retrieve-version.outputs.package_version }}
+          PKG_VERSION: ${{ steps.version.outputs.version }}
         with:
           artifacts: "apps/cli/bw-windows-${{ env.PKG_VERSION }}.zip,
                       apps/cli/bw-windows-sha256-${{ env.PKG_VERSION }}.txt,
@@ -104,7 +90,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: setup
     env:
-      _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
+      _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
@@ -147,7 +133,7 @@ jobs:
     runs-on: windows-2019
     needs: setup
     env:
-      _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
+      _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
@@ -183,7 +169,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: setup
     env:
-      _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
+      _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
