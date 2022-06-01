@@ -52,15 +52,13 @@ jobs:
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
-          file_path: "./src/manifest.json"
-        working-directory: apps/browser
+          file_path: "apps/browser/src/manifest.json"
 
       - name: Run Prettier after Browser Version Bump
         if: ${{ github.event.inputs.client == 'Browser' }}
         run: |
           npm install -g prettier
-          prettier --write ./src/manifest.json
-        working-directory: apps/browser
+          prettier --write apps/browser/src/manifest.json
 
       ### CLI
       - name: Bump CLI Version - Package
@@ -68,16 +66,14 @@ jobs:
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
-          file_path: "./package.json"
-        working-directory: apps/cli
+          file_path: "apps/cli/package.json"
 
       - name: Bump CLI Version - Package-lock
         if: ${{ github.event.inputs.client == 'CLI' }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
-          file_path: "./package-lock.json"
-        working-directory: apps/cli
+          file_path: "apps/cli/package-lock.json"
 
       ### Desktop
       - name: Bump Desktop Version - Package
@@ -85,8 +81,7 @@ jobs:
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
-          file_path: "./src/package.json"
-        working-directory: apps/desktop
+          file_path: "apps/desktop/src/package.json"
 
       ### Web
       - name: Bump Web Version - package.json
@@ -94,16 +89,14 @@ jobs:
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
-          file_path: "./package.json"
-        working-directory: apps/web
+          file_path: "apps/web/package.json"
 
       - name: Bump Web Version - package-lock.json
         if: ${{ github.event.inputs.client == 'Web' }}
         uses: bitwarden/gh-actions/version-bump@03ad9a873c39cdc95dd8d77dbbda67f84db43945
         with:
           version: ${{ github.event.inputs.version_number }}
-          file_path: "./package-lock.json"
-        working-directory: apps/web
+          file_path: "apps/web/package-lock.json"
 
       ########################
 
