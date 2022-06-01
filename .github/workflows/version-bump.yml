@@ -104,12 +104,16 @@ jobs:
       ########################
 
       - name: Commit files
+        env:
+          CLIENT: ${{ steps.branch.outputs.client }}
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "Bumped ${CLIENT} version to ${{ github.event.inputs.version_number }}" -a
 
       - name: Push changes
+        env:
+          CLIENT: ${{ steps.branch.outputs.client }}
         run: git push -u origin ${CLIENT}_version_bump_${{ github.event.inputs.version_number }}
 
       - name: Create Bump Version PR
