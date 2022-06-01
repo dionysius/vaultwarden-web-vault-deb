@@ -1,7 +1,7 @@
 <header>
   <h1 class="sr-only">{{ "currentTab" | i18n }}</h1>
   <div class="left">
-    <app-pop-out [show]="!inSidebar"></app-pop-out>
+    <app-pop-out *ngIf="!inSidebar"></app-pop-out>
     <button
       type="button"
       appBlurClick
