@@ -1,0 +1,15 @@
+.vs
+.idea
+.DS_Store
+node_modules
+npm-debug.log
+vwd.webinfo
+css/
+dist/
+*.pem
+*.crx
+*.zip
+*.swp
+build/
+!dev-server.shared.pem
+config/local.json
