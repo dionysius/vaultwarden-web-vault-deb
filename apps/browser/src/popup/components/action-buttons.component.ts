@@ -52,7 +52,7 @@ export class ActionButtonsComponent {
 
     if (value == null || (aType === "TOTP" && !this.displayTotpCopyButton(cipher))) {
       return;
-    } else if (value === cipher.login.totp) {
+    } else if (aType === "TOTP") {
       value = await this.totpService.getCode(value);
     }
 
