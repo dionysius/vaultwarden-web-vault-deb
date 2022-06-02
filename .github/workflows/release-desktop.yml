@@ -22,7 +22,7 @@ jobs:
     name: Setup
     runs-on: ubuntu-20.04
     outputs:
-      release-version: ${{ steps.version.outputs.verison }}
+      release-version: ${{ steps.version.outputs.version }}
       branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
