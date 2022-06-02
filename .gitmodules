@@ -12,3 +12,7 @@
 	path = apps/cli/jslib
 	url = https://github.com/bitwarden/jslib.git
 	branch = master
+[submodule "apps/web/jslib"]
+	path = apps/web/jslib
+	url = https://github.com/bitwarden/jslib.git
+	branch = master
