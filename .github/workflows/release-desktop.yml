@@ -16,7 +16,6 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: apps/desktop
 
 jobs:
   setup:
@@ -73,12 +72,12 @@ jobs:
           workflow: build-desktop.yml
           workflow_conclusion: success
           branch: ${{ steps.branch.outputs.branch-name }}
-          path: ./artifacts
+          path: apps/desktop/artifacts
 
       - name: Rename .pkg to .pkg.archive
         env:
           PKG_VERSION: ${{ steps.version.outputs.version }}
-        working-directory: ./artifacts
+        working-directory: apps/desktop/artifacts
         run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
 
       - name: Publish artifacts to S3
@@ -87,7 +86,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
           AWS_DEFAULT_REGION: 'us-west-2'
           AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
-        working-directory: ./artifacts
+        working-directory: apps/desktop/artifacts
         run: |
           aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
           --acl "public-read" \
@@ -99,30 +98,30 @@ jobs:
         env:
           PKG_VERSION: ${{ steps.version.outputs.version }}
         with:
-          artifacts: "artifacts/Bitwarden-${{ env.PKG_VERSION }}-amd64.deb,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-x86_64.rpm,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64.freebsd,
-            artifacts/bitwarden_${{ env.PKG_VERSION }}_amd64.snap,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-x86_64.AppImage,
-            artifacts/Bitwarden-Portable-${{ env.PKG_VERSION }}.exe,
-            artifacts/Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-ia32-store.appx,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-ia32.appx,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64-store.appx,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64.appx,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-arm64-store.appx,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-arm64.appx,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
-            artifacts/bitwarden.${{ env.PKG_VERSION }}.nupkg,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal-mac.zip,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
-            artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive"
+          artifacts: "apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-amd64.deb,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x86_64.rpm,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64.freebsd,
+            apps/desktop/artifacts/bitwarden_${{ env.PKG_VERSION }}_amd64.snap,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x86_64.AppImage,
+            apps/desktop/artifacts/Bitwarden-Portable-${{ env.PKG_VERSION }}.exe,
+            apps/desktop/artifacts/Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-ia32-store.appx,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-ia32.appx,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64-store.appx,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64.appx,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-arm64-store.appx,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-arm64.appx,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
+            apps/desktop/artifacts/bitwarden.${{ env.PKG_VERSION }}.nupkg,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal-mac.zip,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive"
           commit: ${{ github.sha }}
           tag: desktop-v${{ env.PKG_VERSION }}
-          name: Desktop ${{ env.PKG_VERSION }}
+          name: Desktop v${{ env.PKG_VERSION }}
           body: "<insert release notes here>"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
@@ -156,6 +155,7 @@ jobs:
 
       - name: Setup
         run: mkdir dist
+        working-directory: apps/desktop
 
       - name: Download Snap artifact
         uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
@@ -164,16 +164,14 @@ jobs:
           workflow_conclusion: success
           branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
-          path: ./dist
-
-      - name: Test
-        run: ls -alht dist
+          path: apps/desktop/dist
 
       - name: Deploy to Snap Store
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         run: |
-          snapcraft upload dist/bitwarden_${{ env._PKG_VERSION }}_amd64.snap --release stable
+          snapcraft upload bitwarden_${{ env._PKG_VERSION }}_amd64.snap --release stable
           snapcraft logout
+        working-directory: apps/desktop/dist
 
   choco:
     name: Deploy Choco
@@ -193,6 +191,7 @@ jobs:
       - name: Make dist dir
         shell: pwsh
         run: New-Item -ItemType directory -Path ./dist
+        working-directory: apps/desktop
 
       - name: Download choco artifact
         uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
@@ -201,11 +200,10 @@ jobs:
           workflow_conclusion: success
           branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
-          path: ./dist
+          path: apps/desktop/dist
 
       - name: Push to Chocolatey
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         shell: pwsh
-        run: |
-          cd dist
-          choco push
+        run: choco push
+        working-directory: apps/desktop/dist
