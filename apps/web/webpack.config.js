@@ -125,8 +125,8 @@ const plugins = [
       { from: "./src/404", to: "404" },
       { from: "./src/images", to: "images" },
       { from: "./src/locales", to: "locales" },
-      { from: "./node_modules/qrious/dist/qrious.min.js", to: "scripts" },
-      { from: "./node_modules/braintree-web-drop-in/dist/browser/dropin.js", to: "scripts" },
+      { from: "../../node_modules/qrious/dist/qrious.min.js", to: "scripts" },
+      { from: "../../node_modules/braintree-web-drop-in/dist/browser/dropin.js", to: "scripts" },
       {
         from: "./src/version.json",
         transform(content, path) {
@@ -317,7 +317,7 @@ const webpackConfig = {
   resolve: {
     extensions: [".ts", ".js"],
     symlinks: false,
-    modules: [path.resolve("node_modules")],
+    modules: [path.resolve("../../node_modules")],
     alias: {
       sweetalert2: require.resolve("sweetalert2/dist/sweetalert2.js"),
       "#sweetalert2": require.resolve("sweetalert2/src/sweetalert2.scss"),
