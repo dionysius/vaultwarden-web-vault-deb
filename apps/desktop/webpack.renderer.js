@@ -32,7 +32,7 @@ const common = {
       jslib: path.join(__dirname, "jslib/src"),
     },
     symlinks: false,
-    modules: [path.resolve("node_modules")],
+    modules: [path.resolve("../../node_modules")],
   },
   output: {
     filename: "[name].js",

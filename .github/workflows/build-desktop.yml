@@ -40,6 +40,24 @@ jobs:
       - name: Print lines of code
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
+  electron-verify:
+    name: Verify Electron Version
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
+
+      - name: Verify
+        run: |
+          PACKAGE_VERSION=$(jq -r .devDependencies.electron package.json)
+          ELECTRON_BUILDER_VERSION=$(jq -r .electronVersion ./apps/desktop/electron-builder.json)
+
+          if [[ "$PACKAGE_VERSION" == "$ELECTRON_BUILDER_VERSION"  ]]; then
+            echo "Versions matches"
+          else
+            echo "Version missmatch, package.json: $PACKAGE_VERSION, electron-builder.json: $ELECTRON_BUILDER_VERSION"
+            exit 1
+          fi
 
   setup:
     name: Setup
@@ -102,7 +120,7 @@ jobs:
         uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/desktop/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
 
       - name: Set Node options
@@ -130,6 +148,7 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
+        working-directory: ./
 
       - name: Build application
         run: npm run dist:lin
@@ -195,7 +214,7 @@ jobs:
         uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/desktop/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
 
       - name: Set Node options
@@ -236,6 +255,7 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
+        working-directory: ./
 
       - name: Build & Sign (dev)
         env:
@@ -378,7 +398,7 @@ jobs:
         uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/desktop/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
 
       - name: Set Node options
@@ -480,6 +500,7 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
+        working-directory: ./
 
       - name: Build application (dev)
         run: npm run build
@@ -504,7 +525,7 @@ jobs:
         uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/desktop/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
 
       - name: Set Node options
@@ -604,8 +625,9 @@ jobs:
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
 
-      - name: NPM install
+      - name: Install Node dependencies
         run: npm ci
+        working-directory: ./
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
@@ -694,7 +716,7 @@ jobs:
         uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/desktop/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
 
       - name: Set Node options
@@ -794,8 +816,9 @@ jobs:
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
 
-      - name: NPM install
+      - name: Install Node dependencies
         run: npm ci
+        working-directory: ./
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
@@ -876,7 +899,7 @@ jobs:
         uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/desktop/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
 
       - name: Set Node options
@@ -976,8 +999,9 @@ jobs:
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
 
-      - name: NPM install
+      - name: Install Node dependencies
         run: npm ci
+        working-directory: ./
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
@@ -1074,6 +1098,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs:
       - cloc
+      - electron-verify
       - setup
       - linux
       - windows
@@ -1086,6 +1111,7 @@ jobs:
         if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
         env:
           CLOC_STATUS: ${{ needs.cloc.result }}
+          ELECTRON_VERIFY_STATUS: ${{ needs.electron-verify.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
           LINUX_STATUS: ${{ needs.linux.result }}
           WINDOWS_STATUS: ${{ needs.windows.result }}
@@ -1095,6 +1121,8 @@ jobs:
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
+              exit 1
+          if [ "$ELECTRON_VERIFY_STATUS" = "failure" ]; then
               exit 1
           elif [ "$SETUP_STATUS" = "failure" ]; then
               exit 1

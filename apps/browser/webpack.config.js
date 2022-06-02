@@ -176,7 +176,7 @@ const config = {
   resolve: {
     extensions: [".ts", ".js"],
     symlinks: false,
-    modules: [path.resolve("node_modules")],
+    modules: [path.resolve("../../node_modules")],
     alias: {
       sweetalert2: require.resolve("sweetalert2/dist/sweetalert2.js"),
       "#sweetalert2": require.resolve("sweetalert2/src/sweetalert2.scss"),

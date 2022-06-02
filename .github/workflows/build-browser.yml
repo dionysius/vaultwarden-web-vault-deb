@@ -114,17 +114,25 @@ jobs:
         uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/browser/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
+
+      - name: Install node-gyp
+        run: |
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Print environment
         run: |
           node --version
           npm --version
 
-      - name: NPM setup & test
+      - name: NPM setup
+        run: npm ci
+        working-directory: ./
+
+      - name: Build & Test
         run: |
-          npm ci
           npm run dist
           npm run test
 
@@ -202,7 +210,7 @@ jobs:
         uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/browser/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
 
       - name: Print environment
@@ -264,10 +272,12 @@ jobs:
             -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
 
+      - name: NPM setup
+        run: npm ci
+        working-directory: ./
+
       - name: Build Safari extension
-        run: |
-          npm ci
-          npm run dist:safari
+        run: npm run dist:safari
         working-directory: apps/browser
 
       - name: Zip Safari build artifact
