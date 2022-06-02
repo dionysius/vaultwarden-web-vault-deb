@@ -1,0 +1,4882 @@
+{
+  "pageTitle": {
+    "message": "Coffre web $APP_NAME$",
+    "description": "The title of the website in the browser window.",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "Bitwarden"
+      }
+    }
+  },
+  "whatTypeOfItem": {
+    "message": "Quel type d'élément est-ce ?"
+  },
+  "name": {
+    "message": "Nom"
+  },
+  "uri": {
+    "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "Nouvelle URI"
+  },
+  "username": {
+    "message": "Nom d'utilisateur"
+  },
+  "password": {
+    "message": "Mot de passe"
+  },
+  "newPassword": {
+    "message": "Nouveau mot de passe"
+  },
+  "passphrase": {
+    "message": "Phrase de passe"
+  },
+  "notes": {
+    "message": "Notes"
+  },
+  "customFields": {
+    "message": "Champs personnalisés"
+  },
+  "cardholderName": {
+    "message": "Nom du titulaire de la carte"
+  },
+  "number": {
+    "message": "Numéro"
+  },
+  "brand": {
+    "message": "Réseau de paiement"
+  },
+  "expiration": {
+    "message": "Expiration"
+  },
+  "securityCode": {
+    "message": "Cryptogramme visuel (CVV)"
+  },
+  "identityName": {
+    "message": "Identité"
+  },
+  "company": {
+    "message": "Société"
+  },
+  "ssn": {
+    "message": "Numéro de sécurité sociale"
+  },
+  "passportNumber": {
+    "message": "Numéro de passeport"
+  },
+  "licenseNumber": {
+    "message": "Numéro de permis"
+  },
+  "email": {
+    "message": "E-mail"
+  },
+  "phone": {
+    "message": "Téléphone"
+  },
+  "january": {
+    "message": "Janvier"
+  },
+  "february": {
+    "message": "Février"
+  },
+  "march": {
+    "message": "Mars"
+  },
+  "april": {
+    "message": "Avril"
+  },
+  "may": {
+    "message": "Mai"
+  },
+  "june": {
+    "message": "Juin"
+  },
+  "july": {
+    "message": "Juillet"
+  },
+  "august": {
+    "message": "Août"
+  },
+  "september": {
+    "message": "Septembre"
+  },
+  "october": {
+    "message": "Octobre"
+  },
+  "november": {
+    "message": "Novembre"
+  },
+  "december": {
+    "message": "Décembre"
+  },
+  "title": {
+    "message": "Titre"
+  },
+  "mr": {
+    "message": "M."
+  },
+  "mrs": {
+    "message": "Mme"
+  },
+  "ms": {
+    "message": "Mlle"
+  },
+  "dr": {
+    "message": "Dr"
+  },
+  "expirationMonth": {
+    "message": "Mois d'expiration"
+  },
+  "expirationYear": {
+    "message": "Année d'expiration"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Clé d'authentification (TOTP)"
+  },
+  "folder": {
+    "message": "Dossier"
+  },
+  "newCustomField": {
+    "message": "Nouveau champ personnalisé"
+  },
+  "value": {
+    "message": "Valeur"
+  },
+  "dragToSort": {
+    "message": "Glissez pour trier"
+  },
+  "cfTypeText": {
+    "message": "Texte"
+  },
+  "cfTypeHidden": {
+    "message": "Masqué"
+  },
+  "cfTypeBoolean": {
+    "message": "Booléen"
+  },
+  "cfTypeLinked": {
+    "message": "Lié",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "remove": {
+    "message": "Retirer"
+  },
+  "unassigned": {
+    "message": "Non attribué"
+  },
+  "noneFolder": {
+    "message": "Aucun dossier",
+    "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "Ajouter un dossier"
+  },
+  "editFolder": {
+    "message": "Modifier le dossier"
+  },
+  "baseDomain": {
+    "message": "Domaine de base",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Nom de domaine",
+    "description": "Domain name. Ex. website.com"
+  },
+  "host": {
+    "message": "Hôte",
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Commence par"
+  },
+  "regEx": {
+    "message": "Expression régulière",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Détection de correspondance",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Détection de correspondance par défaut",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "never": {
+    "message": "Jamais"
+  },
+  "toggleVisibility": {
+    "message": "Afficher/Masquer"
+  },
+  "toggleCollapse": {
+    "message": "Déplier/Replier",
+    "description": "Toggling an expand/collapse state."
+  },
+  "generatePassword": {
+    "message": "Générer un mot de passe"
+  },
+  "checkPassword": {
+    "message": "Vérifier si le mot de passe a été exposé."
+  },
+  "passwordExposed": {
+    "message": "Ce mot de passe a été exposé $VALUE$ fois dans des fuites de données. Vous devriez le changer.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "Ce mot de passe n'a été trouvé dans aucune fuite de données connue. Il semble sécurisé."
+  },
+  "save": {
+    "message": "Enregistrer"
+  },
+  "cancel": {
+    "message": "Annuler"
+  },
+  "canceled": {
+    "message": "Annulé"
+  },
+  "close": {
+    "message": "Fermer"
+  },
+  "delete": {
+    "message": "Supprimer"
+  },
+  "favorite": {
+    "message": "Favori"
+  },
+  "unfavorite": {
+    "message": "Retirer des favoris"
+  },
+  "edit": {
+    "message": "Modifier"
+  },
+  "searchCollection": {
+    "message": "Rechercher dans la collection"
+  },
+  "searchFolder": {
+    "message": "Rechercher dans le dossier"
+  },
+  "searchFavorites": {
+    "message": "Rechercher dans les favoris"
+  },
+  "searchType": {
+    "message": "Rechercher dans le type",
+    "description": "Search item type"
+  },
+  "searchVault": {
+    "message": "Rechercher dans le coffre"
+  },
+  "allItems": {
+    "message": "Tous les éléments"
+  },
+  "favorites": {
+    "message": "Favoris"
+  },
+  "types": {
+    "message": "Types"
+  },
+  "typeLogin": {
+    "message": "Identifiant"
+  },
+  "typeCard": {
+    "message": "Carte de paiement"
+  },
+  "typeIdentity": {
+    "message": "Identité"
+  },
+  "typeSecureNote": {
+    "message": "Note sécurisée"
+  },
+  "typeLoginPlural": {
+    "message": "Identifiants"
+  },
+  "typeCardPlural": {
+    "message": "Cartes"
+  },
+  "typeIdentityPlural": {
+    "message": "Identités"
+  },
+  "typeSecureNotePlural": {
+    "message": "Notes sécurisées"
+  },
+  "folders": {
+    "message": "Dossiers"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "firstName": {
+    "message": "Prénom"
+  },
+  "middleName": {
+    "message": "Deuxième prénom"
+  },
+  "lastName": {
+    "message": "Nom de famille"
+  },
+  "fullName": {
+    "message": "Nom et prénom"
+  },
+  "address1": {
+    "message": "Adresse 1"
+  },
+  "address2": {
+    "message": "Adresse 2"
+  },
+  "address3": {
+    "message": "Adresse 3"
+  },
+  "cityTown": {
+    "message": "Ville"
+  },
+  "stateProvince": {
+    "message": "État / Région"
+  },
+  "zipPostalCode": {
+    "message": "Code postal"
+  },
+  "country": {
+    "message": "Pays"
+  },
+  "shared": {
+    "message": "Partagé"
+  },
+  "attachments": {
+    "message": "Pièces jointes"
+  },
+  "select": {
+    "message": "Sélectionner"
+  },
+  "addItem": {
+    "message": "Ajouter un élément"
+  },
+  "editItem": {
+    "message": "Modifier l'élément"
+  },
+  "viewItem": {
+    "message": "Afficher l'élément"
+  },
+  "ex": {
+    "message": "ex.",
+    "description": "Short abbreviation for 'example'."
+  },
+  "other": {
+    "message": "Autre"
+  },
+  "share": {
+    "message": "Partager"
+  },
+  "moveToOrganization": {
+    "message": "Déplacer vers l'organisation"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copié",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "copyValue": {
+    "message": "Copier la valeur",
+    "description": "Copy value to clipboard"
+  },
+  "copyPassword": {
+    "message": "Copier le mot de passe",
+    "description": "Copy password to clipboard"
+  },
+  "copyUsername": {
+    "message": "Copier le nom d'utilisateur",
+    "description": "Copy username to clipboard"
+  },
+  "copyNumber": {
+    "message": "Copier le numéro",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "Copier le code de sécurité",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "copyUri": {
+    "message": "Copier l'URI",
+    "description": "Copy URI to clipboard"
+  },
+  "myVault": {
+    "message": "Mon coffre"
+  },
+  "vault": {
+    "message": "Coffre"
+  },
+  "moveSelectedToOrg": {
+    "message": "Déplacer la sélection vers l'organisation"
+  },
+  "deleteSelected": {
+    "message": "Supprimer les éléments sélectionnés"
+  },
+  "moveSelected": {
+    "message": "Déplacer les éléments sélectionnés"
+  },
+  "selectAll": {
+    "message": "Tout sélectionner"
+  },
+  "unselectAll": {
+    "message": "Tout désélectionner"
+  },
+  "launch": {
+    "message": "Ouvrir"
+  },
+  "newAttachment": {
+    "message": "Ajouter une nouvelle pièce jointe"
+  },
+  "deletedAttachment": {
+    "message": "Pièce jointe supprimée"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer cette pièce jointe ?"
+  },
+  "attachmentSaved": {
+    "message": "La pièce jointe a été enregistrée."
+  },
+  "file": {
+    "message": "Fichier"
+  },
+  "selectFile": {
+    "message": "Sélectionnez un fichier."
+  },
+  "maxFileSize": {
+    "message": "La taille maximale du fichier est de 500 Mo."
+  },
+  "updateKey": {
+    "message": "Vous ne pouvez pas utiliser cette fonctionnalité avant de mettre à jour votre clé de chiffrement."
+  },
+  "addedItem": {
+    "message": "Élément ajouté"
+  },
+  "editedItem": {
+    "message": "Élément modifié"
+  },
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ a été déplacé vers $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
+  },
+  "movedItemsToOrg": {
+    "message": "Les éléments sélectionnés ont été déplacés vers $ORGNAME$",
+    "placeholders": {
+      "orgname": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
+  },
+  "deleteItem": {
+    "message": "Supprimer l'élément"
+  },
+  "deleteFolder": {
+    "message": "Supprimer le dossier"
+  },
+  "deleteAttachment": {
+    "message": "Supprimer la pièce jointe"
+  },
+  "deleteItemConfirmation": {
+    "message": "Êtes-vous sûr de vouloir déplacer cet élément vers la corbeille ?"
+  },
+  "deletedItem": {
+    "message": "L'élément a été envoyé dans la corbeille"
+  },
+  "deletedItems": {
+    "message": "Les éléments ont été envoyés dans la corbeille"
+  },
+  "movedItems": {
+    "message": "Éléments déplacés"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Êtes-vous sûr de vouloir écraser le mot de passe actuel ?"
+  },
+  "editedFolder": {
+    "message": "Dossier modifié"
+  },
+  "addedFolder": {
+    "message": "Dossier ajouté"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer ce dossier ?"
+  },
+  "deletedFolder": {
+    "message": "Dossier supprimé"
+  },
+  "loggedOut": {
+    "message": "Déconnecté"
+  },
+  "loginExpired": {
+    "message": "Votre session a expiré."
+  },
+  "logOutConfirmation": {
+    "message": "Êtes-vous sûr de vouloir vous déconnecter ?"
+  },
+  "logOut": {
+    "message": "Déconnexion"
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "yes": {
+    "message": "Oui"
+  },
+  "no": {
+    "message": "Non"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Identifiez-vous ou créez un nouveau compte pour accéder à votre coffre sécurisé."
+  },
+  "createAccount": {
+    "message": "Créer un compte"
+  },
+  "logIn": {
+    "message": "S'identifier"
+  },
+  "submit": {
+    "message": "Soumettre"
+  },
+  "emailAddressDesc": {
+    "message": "Vous utiliserez votre adresse e-mail pour vous connecter."
+  },
+  "yourName": {
+    "message": "Votre nom"
+  },
+  "yourNameDesc": {
+    "message": "Comment doit-on vous appeler ?"
+  },
+  "masterPass": {
+    "message": "Mot de passe maître"
+  },
+  "masterPassDesc": {
+    "message": "Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez."
+  },
+  "masterPassHintDesc": {
+    "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
+  },
+  "reTypeMasterPass": {
+    "message": "Saisissez à nouveau le mot de passe maître"
+  },
+  "masterPassHint": {
+    "message": "Indice du mot de passe maître (facultatif)"
+  },
+  "masterPassHintLabel": {
+    "message": "Indice du mot de passe maître"
+  },
+  "settings": {
+    "message": "Paramètres"
+  },
+  "passwordHint": {
+    "message": "Indice du mot de passe"
+  },
+  "enterEmailToGetHint": {
+    "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
+  },
+  "getMasterPasswordHint": {
+    "message": "Obtenir l'indice du mot de passe maître"
+  },
+  "emailRequired": {
+    "message": "L'adresse e-mail est requise."
+  },
+  "invalidEmail": {
+    "message": "Adresse e-mail invalide."
+  },
+  "masterPassRequired": {
+    "message": "Le mot de passe maître est requis."
+  },
+  "masterPassLength": {
+    "message": "Le mot de passe maître doit au moins contenir 8 caractères."
+  },
+  "masterPassDoesntMatch": {
+    "message": "La confirmation du mot de passe maître ne correspond pas."
+  },
+  "newAccountCreated": {
+    "message": "Votre nouveau compte a été créé ! Vous pouvez maintenant vous authentifier."
+  },
+  "masterPassSent": {
+    "message": "Nous vous avons envoyé un e-mail contenant votre indice de mot de passe maître."
+  },
+  "unexpectedError": {
+    "message": "Une erreur inattendue est survenue."
+  },
+  "emailAddress": {
+    "message": "Adresse e-mail"
+  },
+  "yourVaultIsLocked": {
+    "message": "Votre coffre est verrouillé. Saisissez votre mot de passe maître pour continuer."
+  },
+  "unlock": {
+    "message": "Déverrouiller"
+  },
+  "loggedInAsEmailOn": {
+    "message": "Connecté en tant que $EMAIL$ sur $HOSTNAME$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "invalidMasterPassword": {
+    "message": "Mot de passe maître invalide"
+  },
+  "lockNow": {
+    "message": "Verrouiller maintenant"
+  },
+  "noItemsInList": {
+    "message": "Aucun élément à afficher."
+  },
+  "noCollectionsInList": {
+    "message": "Aucune collection à afficher."
+  },
+  "noGroupsInList": {
+    "message": "Aucun groupe à afficher."
+  },
+  "noUsersInList": {
+    "message": "Aucun utilisateur à afficher."
+  },
+  "noEventsInList": {
+    "message": "Aucun événement à afficher."
+  },
+  "newOrganization": {
+    "message": "Nouvelle organisation"
+  },
+  "noOrganizationsList": {
+    "message": "Vous ne faites partie d'aucune organisation. Les organisations vous permettent de partager des éléments de façon sécurisée avec d'autres utilisateurs."
+  },
+  "versionNumber": {
+    "message": "Version $VERSION_NUMBER$",
+    "placeholders": {
+      "version_number": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "enterVerificationCodeApp": {
+    "message": "Saisissez le code de vérification à 6 chiffres depuis votre application d'authentification."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Saisissez le code de vérification à 6 chiffres qui vous a été envoyé par e-mail à $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "E-mail de vérification envoyé à $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "rememberMe": {
+    "message": "Rester connecté"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Envoyer à nouveau l'e-mail du code de vérification"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Utiliser une autre méthode d'identification en deux étapes"
+  },
+  "insertYubiKey": {
+    "message": "Insérez votre YubiKey dans le port USB de votre ordinateur puis appuyez sur son bouton."
+  },
+  "insertU2f": {
+    "message": "Insérez votre clé de sécurité dans le port USB de votre ordinateur. Si elle dispose d'un bouton, appuyez dessus."
+  },
+  "loginUnavailable": {
+    "message": "Connexion impossible"
+  },
+  "noTwoStepProviders": {
+    "message": "Ce compte dispose d'une authentification en deux étapes, cependant aucun de vos services d'authentification en deux étapes n'est supporté par ce navigateur web."
+  },
+  "noTwoStepProviders2": {
+    "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et/ou d'ajouter des services additionnels d'identification en deux étapes qui sont mieux supportés par les navigateurs web (comme par exemple une application d'authentification)."
+  },
+  "twoStepOptions": {
+    "message": "Options d'identification en deux étapes"
+  },
+  "recoveryCodeDesc": {
+    "message": "Vous avez perdu l'accès à tous vos services d'authentification à deux facteurs ? Utilisez votre code de récupération pour désactiver tous les services d'authentification à deux facteurs sur votre compte."
+  },
+  "recoveryCodeTitle": {
+    "message": "Code de récupération"
+  },
+  "authenticatorAppTitle": {
+    "message": "Application d'authentification"
+  },
+  "authenticatorAppDesc": {
+    "message": "Utiliser une application d'authentification (comme Authy ou Google Authenticator) pour générer des codes de vérification basés sur le temps.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "Clé de sécurité YubiKey OTP"
+  },
+  "yubiKeyDesc": {
+    "message": "Utilisez une YubiKey pour accéder à votre compte. Fonctionne avec les YubiKey série 4, série 5 et NEO."
+  },
+  "duoDesc": {
+    "message": "S'authentifier avec Duo Security via l'application Duo Mobile, un SMS, un appel téléphonique, ou une clé de sécurité U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Sécurisez votre organisation avec Duo Security à l'aide de l'application Duo Mobile, l'envoi d'un SMS, un appel vocal ou une clé de sécurité U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Utiliser n'importe quelle clé de sécurité FIDO U2F active pour accéder à votre compte."
+  },
+  "u2fTitle": {
+    "message": "Clé de sécurité FIDO U2F"
+  },
+  "webAuthnTitle": {
+    "message": "WebAuthn FIDO2"
+  },
+  "webAuthnDesc": {
+    "message": "Utilisez n'importe quelle clé de sécurité compatible WebAuthn pour accéder à votre compte."
+  },
+  "webAuthnMigrated": {
+    "message": "(Migré depuis FIDO)"
+  },
+  "emailTitle": {
+    "message": "E-mail"
+  },
+  "emailDesc": {
+    "message": "Les codes de vérification vous seront envoyés par e-mail."
+  },
+  "continue": {
+    "message": "Continuer"
+  },
+  "organization": {
+    "message": "Organisation"
+  },
+  "organizations": {
+    "message": "Organisations"
+  },
+  "moveToOrgDesc": {
+    "message": "Choisissez une organisation vers laquelle vous souhaitez déplacer cet élément. Déplacer un élément vers une organisation transfère la propriété de l'élément à cette organisation. Vous ne serez plus le propriétaire direct de cet élément une fois qu'il aura été déplacé."
+  },
+  "moveManyToOrgDesc": {
+    "message": "Choisissez une organisation vers laquelle vous souhaitez déplacer ces éléments. Déplacer des éléments vers une organisation transfère la propriété des éléments à cette organisation. Vous ne serez plus le propriétaire direct de ces éléments une fois qu'ils auront été déplacés."
+  },
+  "collectionsDesc": {
+    "message": "Modifier les collections avec lesquelles cet élément est partagé. Seuls les utilisateurs de l'organisation avec un accès à ces collections pourront voir cet élément."
+  },
+  "deleteSelectedItemsDesc": {
+    "message": "Vous avez sélectionné $COUNT$ élément(s) à supprimer. Êtes-vous sûr de vouloir supprimer tous ces éléments ?",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "moveSelectedItemsDesc": {
+    "message": "Choisissez le dossier vers lequel vous souhaitez déplacer les $COUNT$ élément(s) sélectionné(s).",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "moveSelectedItemsCountDesc": {
+    "message": "Vous avez sélectionné $COUNT$ élément(s). $MOVEABLE_COUNT$ élément(s) peuvent être déplacés vers une organisation, $NONMOVEABLE_COUNT$ ne le peuvent pas.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "moveable_count": {
+        "content": "$2",
+        "example": "8"
+      },
+      "nonmoveable_count": {
+        "content": "$3",
+        "example": "2"
+      }
+    }
+  },
+  "verificationCodeTotp": {
+    "message": "Code de vérification (TOTP)"
+  },
+  "copyVerificationCode": {
+    "message": "Copier le code de vérification"
+  },
+  "warning": {
+    "message": "Attention"
+  },
+  "confirmVaultExport": {
+    "message": "Confirmer l'export du coffre"
+  },
+  "exportWarningDesc": {
+    "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Les clés de chiffrement du compte sont spécifiques à chaque utilisateur Bitwarden. Vous ne pouvez donc pas importer d'export chiffré dans un compte différent."
+  },
+  "export": {
+    "message": "Exporter"
+  },
+  "exportVault": {
+    "message": "Exporter le coffre"
+  },
+  "fileFormat": {
+    "message": "Format de fichier"
+  },
+  "exportSuccess": {
+    "message": "Les données de votre coffre ont été exportées."
+  },
+  "passwordGenerator": {
+    "message": "Générateur de mot de passe"
+  },
+  "minComplexityScore": {
+    "message": "Score de complexité minimum"
+  },
+  "minNumbers": {
+    "message": "Nombre minimum de chiffres"
+  },
+  "minSpecial": {
+    "message": "Nombre minimum de caractères spéciaux",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "Éviter les caractères ambigus"
+  },
+  "regeneratePassword": {
+    "message": "Regénérer un mot de passe"
+  },
+  "length": {
+    "message": "Longueur"
+  },
+  "numWords": {
+    "message": "Nombre de mots"
+  },
+  "wordSeparator": {
+    "message": "Séparateur de mots"
+  },
+  "capitalize": {
+    "message": "Mettre la première lettre de chaque mot en majuscule",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Inclure un chiffre"
+  },
+  "passwordHistory": {
+    "message": "Historique des mots de passe"
+  },
+  "noPasswordsInList": {
+    "message": "Aucun mot de passe à afficher."
+  },
+  "clear": {
+    "message": "Effacer",
+    "description": "To clear something out. example: To clear browser history."
+  },
+  "accountUpdated": {
+    "message": "Compte mis à jour"
+  },
+  "changeEmail": {
+    "message": "Changer l'e-mail"
+  },
+  "changeEmailTwoFactorWarning": {
+    "message": "En continuant, vous changerez l'adresse e-mail de votre compte. Cela ne changera pas l'adresse e-mail utilisée pour l'authentification à deux facteurs. Vous pouvez modifier cette adresse e-mail dans les paramètres d'identification en deux étapes."
+  },
+  "newEmail": {
+    "message": "Nouvel e-mail"
+  },
+  "code": {
+    "message": "Code"
+  },
+  "changeEmailDesc": {
+    "message": "Nous avons envoyé un code de vérification à $EMAIL$. Veuillez consulter votre boîte de réception pour trouver ce code et l'entrer ci-dessous pour finaliser votre changement d'adresse e-mail.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "john.smith@example.com"
+      }
+    }
+  },
+  "loggedOutWarning": {
+    "message": "En continuant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
+  },
+  "emailChanged": {
+    "message": "Adresse e-mail modifiée"
+  },
+  "logBackIn": {
+    "message": "Veuillez vous reconnecter."
+  },
+  "logBackInOthersToo": {
+    "message": "Veuillez vous reconnecter. Si vous utilisez d'autres applications Bitwarden, déconnectez-vous puis reconnectez-vous dans ces applications également."
+  },
+  "changeMasterPassword": {
+    "message": "Modifier le mot de passe maître"
+  },
+  "masterPasswordChanged": {
+    "message": "Mot de passe maître modifié"
+  },
+  "currentMasterPass": {
+    "message": "Mot de passe maître actuel"
+  },
+  "newMasterPass": {
+    "message": "Nouveau mot de passe maître"
+  },
+  "confirmNewMasterPass": {
+    "message": "Confirmer le nouveau mot de passe maître"
+  },
+  "encKeySettings": {
+    "message": "Paramètres de la clé de chiffrement"
+  },
+  "kdfAlgorithm": {
+    "message": "Algorithme KDF"
+  },
+  "kdfIterations": {
+    "message": "Nombre d'itérations de KDF"
+  },
+  "kdfIterationsDesc": {
+    "message": "Un nombre plus élevé d'itérations de KDF peut aider à protéger votre mot de passe maître contre une attaque par force brute. Nous recommandons une valeur de $VALUE$ ou plus.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "100,000"
+      }
+    }
+  },
+  "kdfIterationsWarning": {
+    "message": "Si vous définissez un nombre d'itérations KDF trop élevé, les performances risquent d'être mauvaises lorsque vous vous connectez (et déverrouillez) Bitwarden sur des périphériques dont les processeurs sont plus lents. Nous vous recommandons d'augmenter la valeur par incréments de $INCREMENT$, puis de tester tous vos appareils.",
+    "placeholders": {
+      "increment": {
+        "content": "$1",
+        "example": "50,000"
+      }
+    }
+  },
+  "changeKdf": {
+    "message": "Modifier KDF"
+  },
+  "encKeySettingsChanged": {
+    "message": "Paramètres de la clé de chiffrement modifiés"
+  },
+  "dangerZone": {
+    "message": "Zone de danger"
+  },
+  "dangerZoneDesc": {
+    "message": "Attention, ces actions ne sont pas réversibles !"
+  },
+  "deauthorizeSessions": {
+    "message": "Révoquer les sessions"
+  },
+  "deauthorizeSessionsDesc": {
+    "message": "Vous craignez que votre compte soit connecté sur un autre appareil ? Poursuivez ci-dessous pour révoquer tous les ordinateurs ou appareils que vous avez déjà utilisés. Cette étape de sécurité est recommandée si vous avez précédemment utilisé un ordinateur public ou enregistré accidentellement votre mot de passe sur un appareil qui n'est pas le vôtre. Cette étape effacera également toutes les sessions de connexion en deux étapes précédemment mémorisées."
+  },
+  "deauthorizeSessionsWarning": {
+    "message": "Si vous continuez, vous serez également déconnecté de votre session en cours, ce qui vous nécessitera de vous reconnecter. Votre second facteur d'authentification vous sera également demandé, si cette option est activée. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
+  },
+  "sessionsDeauthorized": {
+    "message": "Toutes les sessions ont été révoquées"
+  },
+  "purgeVault": {
+    "message": "Effacer le coffre"
+  },
+  "purgedOrganizationVault": {
+    "message": "Le coffre de l'organisation a été effacé."
+  },
+  "vaultAccessedByProvider": {
+    "message": "Coffre-fort consulté par le fournisseur."
+  },
+  "purgeVaultDesc": {
+    "message": "Poursuivez ci-dessous pour supprimer tous les éléments et dossiers de votre coffre. Les éléments qui appartiennent à une organisation dont vous êtes membre ne seront pas supprimés."
+  },
+  "purgeOrgVaultDesc": {
+    "message": "Poursuivez ci-dessous pour supprimer tous les éléments du coffre de votre organisation."
+  },
+  "purgeVaultWarning": {
+    "message": "L'effacement votre coffre est définitif. Cette action ne peut pas être annulée."
+  },
+  "vaultPurged": {
+    "message": "Votre coffre a été effacé."
+  },
+  "deleteAccount": {
+    "message": "Supprimer le compte"
+  },
+  "deleteAccountDesc": {
+    "message": "Continuez ci-dessous pour supprimer votre compte et toutes les données associées."
+  },
+  "deleteAccountWarning": {
+    "message": "La suppression de votre compte est définitive. Cette action ne peut pas être annulée."
+  },
+  "accountDeleted": {
+    "message": "Compte supprimé"
+  },
+  "accountDeletedDesc": {
+    "message": "Votre compte a été fermé et toutes les données associées ont été supprimées."
+  },
+  "myAccount": {
+    "message": "Mon compte"
+  },
+  "tools": {
+    "message": "Outils"
+  },
+  "importData": {
+    "message": "Importer des données"
+  },
+  "importError": {
+    "message": "Erreur d'importation"
+  },
+  "importErrorDesc": {
+    "message": "Il y a eu un problème avec les données que vous avez essayé d'importer. Veuillez résoudre les erreurs listées ci-dessous dans votre fichier source et réessayer."
+  },
+  "importSuccess": {
+    "message": "Les données ont été importées dans votre coffre avec succès."
+  },
+  "importWarning": {
+    "message": "Vous importez des données vers $ORGANIZATION$. Vos données pourraient être partagées avec les membres de cette organisation. Voulez-vous continuer ?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Les données ne sont pas correctement mises en forme. Veuillez vérifier le fichier importé et réessayer."
+  },
+  "importNothingError": {
+    "message": "Rien à importer."
+  },
+  "importEncKeyError": {
+    "message": "Erreur lors du déchiffrement du fichier exporté. Votre clé de chiffrement ne correspond pas à la clé de chiffrement utilisée pour exporter les données."
+  },
+  "selectFormat": {
+    "message": "Sélectionnez le format du fichier à importer"
+  },
+  "selectImportFile": {
+    "message": "Sélectionnez le fichier à importer"
+  },
+  "orCopyPasteFileContents": {
+    "message": "ou copiez/collez le contenu du fichier à importer"
+  },
+  "instructionsFor": {
+    "message": "Instructions $NAME$",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "options": {
+    "message": "Options"
+  },
+  "optionsDesc": {
+    "message": "Personnaliser l'expérience de votre coffre web."
+  },
+  "optionsUpdated": {
+    "message": "Options mises à jour"
+  },
+  "language": {
+    "message": "Langue"
+  },
+  "languageDesc": {
+    "message": "Changer la langue utilisée par le coffre web."
+  },
+  "disableIcons": {
+    "message": "Désactiver les icônes de sites web"
+  },
+  "disableIconsDesc": {
+    "message": "Les icônes de sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
+  },
+  "enableGravatars": {
+    "message": "Activer Gravatar",
+    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+  },
+  "enableGravatarsDesc": {
+    "message": "Charger votre image de profil depuis gravatar.com."
+  },
+  "enableFullWidth": {
+    "message": "Activer la mise en page en pleine largeur",
+    "description": "Allows scaling the web vault UI's width"
+  },
+  "enableFullWidthDesc": {
+    "message": "Permettre au coffre web de s’étendre sur toute la largeur de la fenêtre du navigateur."
+  },
+  "default": {
+    "message": "Par défaut"
+  },
+  "domainRules": {
+    "message": "Règles de domaine"
+  },
+  "domainRulesDesc": {
+    "message": "Si vous avez un même identifiant sur plusieurs noms de domaines différents, vous pouvez marquer le site web comme \"équivalent\". Des domaines \"globaux\" sont déjà créés pour vous par Bitwarden."
+  },
+  "globalEqDomains": {
+    "message": "Domaines équivalents globaux"
+  },
+  "customEqDomains": {
+    "message": "Domaines équivalents personnalisés"
+  },
+  "exclude": {
+    "message": "Exclure"
+  },
+  "include": {
+    "message": "Inclure"
+  },
+  "customize": {
+    "message": "Personnaliser"
+  },
+  "newCustomDomain": {
+    "message": "Nouveau domaine personnalisé"
+  },
+  "newCustomDomainDesc": {
+    "message": "Entrez une liste de domaines séparés par des virgules. Seuls les domaines « de base » sont autorisés. N’entrez pas de sous-domaines. Par exemple, entrez « google.com » au lieu de « www.google.com ». Vous pouvez également entrer « androidapp://package.name » pour associer une application android avec d’autres domaines de sites web."
+  },
+  "customDomainX": {
+    "message": "Domaine personnalisé $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "domainsUpdated": {
+    "message": "Domaines mis à jour"
+  },
+  "twoStepLogin": {
+    "message": "Identification en deux étapes"
+  },
+  "twoStepLoginDesc": {
+    "message": "Sécuriser votre compte en exigeant une étape supplémentaire lors de la connexion."
+  },
+  "twoStepLoginOrganizationDesc": {
+    "message": "Exigez une connexion en deux étapes pour les utilisateurs de votre organisation en configurant les services au niveau de l'organisation."
+  },
+  "twoStepLoginRecoveryWarning": {
+    "message": "Activer la connexion en deux étapes peut vous empêcher définitivement d'accéder à votre compte Bitwarden. Un code de récupération vous permet d'accéder à votre compte dans le cas où vous ne pouvez plus utiliser votre service de connexion en deux étapes habituel (ex. vous perdez votre appareil). Le support Bitwarden ne pourra pas vous aider si vous perdez l'accès à votre compte. Nous vous recommandons d'écrire ou d'imprimer le code de récupération et de le conserver en lieu sûr."
+  },
+  "viewRecoveryCode": {
+    "message": "Voir le code de récupération"
+  },
+  "providers": {
+    "message": "Fournisseurs",
+    "description": "Two-step login providers such as YubiKey, Duo, Authenticator apps, Email, etc."
+  },
+  "enable": {
+    "message": "Activer"
+  },
+  "enabled": {
+    "message": "Activé"
+  },
+  "premium": {
+    "message": "Premium",
+    "description": "Premium Membership"
+  },
+  "premiumMembership": {
+    "message": "Adhésion Premium"
+  },
+  "premiumRequired": {
+    "message": "Adhésion Premium requise"
+  },
+  "premiumRequiredDesc": {
+    "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
+  },
+  "youHavePremiumAccess": {
+    "message": "Vous avez un accès premium"
+  },
+  "alreadyPremiumFromOrg": {
+    "message": "Vous avez déjà accès aux fonctionnalités premium grâce à une organisation dont vous êtes membre."
+  },
+  "manage": {
+    "message": "Gérer"
+  },
+  "disable": {
+    "message": "Désactiver"
+  },
+  "twoStepLoginProviderEnabled": {
+    "message": "Ce fournisseur de connexion en deux étapes est activé sur votre compte."
+  },
+  "twoStepLoginAuthDesc": {
+    "message": "Entrez votre mot de passe principal pour modifier les paramètres de connexion en deux étapes."
+  },
+  "twoStepAuthenticatorDesc": {
+    "message": "Suivez ces étapes pour configurer la connexion en deux étapes avec une application d'authentification :"
+  },
+  "twoStepAuthenticatorDownloadApp": {
+    "message": "Télécharger une application d'authentification en deux étapes"
+  },
+  "twoStepAuthenticatorNeedApp": {
+    "message": "Besoin d'une application d'authentification en deux étapes ? Téléchargez l'une des applications suivantes"
+  },
+  "iosDevices": {
+    "message": "Appareils iOS"
+  },
+  "androidDevices": {
+    "message": "Appareils Android"
+  },
+  "windowsDevices": {
+    "message": "Appareils Windows"
+  },
+  "twoStepAuthenticatorAppsRecommended": {
+    "message": "Ces applications sont recommandées, mais d'autres applications d'authentification fonctionneront également."
+  },
+  "twoStepAuthenticatorScanCode": {
+    "message": "Scannez ce QR code avec votre application d'authentification"
+  },
+  "key": {
+    "message": "Clé"
+  },
+  "twoStepAuthenticatorEnterCode": {
+    "message": "Entrez le code de vérification à 6 chiffres fourni par l’application"
+  },
+  "twoStepAuthenticatorReaddDesc": {
+    "message": "Dans le cas où vous devez l’ajouter à un autre appareil, voici le code QR (ou clé) requis par votre application d'authentification."
+  },
+  "twoStepDisableDesc": {
+    "message": "Êtes-vous sûr de que vouloir désactiver ce fournisseur de connexion en deux étapes ?"
+  },
+  "twoStepDisabled": {
+    "message": "Fournisseur de connexion en deux étapes désactivé."
+  },
+  "twoFactorYubikeyAdd": {
+    "message": "Ajouter une nouvelle YubiKey à votre compte"
+  },
+  "twoFactorYubikeyPlugIn": {
+    "message": "Branchez la YubiKey dans un port USB de votre ordinateur."
+  },
+  "twoFactorYubikeySelectKey": {
+    "message": "Sélectionnez le premier champ YubiKey libre ci-dessous."
+  },
+  "twoFactorYubikeyTouchButton": {
+    "message": "Appuyez sur le bouton de la YubiKey."
+  },
+  "twoFactorYubikeySaveForm": {
+    "message": "Sauvegarder le contenu du formulaire."
+  },
+  "twoFactorYubikeyWarning": {
+    "message": "En raison de limitations de plateforme, les YubiKeys ne sont pas utilisables sur toutes les applications Bitwarden. Vous devriez activer un autre fournisseur de connexion en deux étapes afin de pouvoir accéder à votre compte lorsque vous ne pouvez pas utiliser les YubiKeys. Plateformes prises en charge :"
+  },
+  "twoFactorYubikeySupportUsb": {
+    "message": "Coffre web, application de bureau, interface ligne de commande (CLI) et toutes les extensions de navigateur sur un appareil doté d'un port USB pouvant accepter votre YubiKey."
+  },
+  "twoFactorYubikeySupportMobile": {
+    "message": "Applications mobiles sur un appareil avec NFC ou un port USB pouvant accepter votre YubiKey."
+  },
+  "yubikeyX": {
+    "message": "YubiKey $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "u2fkeyX": {
+    "message": "Clé U2F $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "webAuthnkeyX": {
+    "message": "Clé WebAuthn $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "nfcSupport": {
+    "message": "Support du NFC"
+  },
+  "twoFactorYubikeySupportsNfc": {
+    "message": "Une de mes clés supporte le NFC."
+  },
+  "twoFactorYubikeySupportsNfcDesc": {
+    "message": "Si une de vos YubiKeys supporte le NFC (comme la YubiKey NEO), vous serez averti sur les appareils mobiles en cas de disponibilité du NFC."
+  },
+  "yubikeysUpdated": {
+    "message": "Les YubiKeys ont été mises à jour"
+  },
+  "disableAllKeys": {
+    "message": "Désactiver toutes les clés"
+  },
+  "twoFactorDuoDesc": {
+    "message": "Entrez les informations de l'application Bitwarden provenant de votre panneau Duo Admin."
+  },
+  "twoFactorDuoIntegrationKey": {
+    "message": "Clé d'intégration"
+  },
+  "twoFactorDuoSecretKey": {
+    "message": "Clé secrète"
+  },
+  "twoFactorDuoApiHostname": {
+    "message": "Nom d'hôte de l'API"
+  },
+  "twoFactorEmailDesc": {
+    "message": "Suivez ces étapes pour mettre en place la connexion en deux étapes avec e-mail :"
+  },
+  "twoFactorEmailEnterEmail": {
+    "message": "Entrez l'e-mail où vous souhaitez recevoir les codes de vérification"
+  },
+  "twoFactorEmailEnterCode": {
+    "message": "Entrez le code de vérification à 6 chiffres reçu par e-mail"
+  },
+  "sendEmail": {
+    "message": "Envoyer l'e-mail"
+  },
+  "twoFactorU2fAdd": {
+    "message": "Ajouter une clé de sécurité FIDO U2F à votre compte"
+  },
+  "removeU2fConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer cette clé de sécurité ?"
+  },
+  "twoFactorWebAuthnAdd": {
+    "message": "Ajoutez une clé de sécurité WebAuthn à votre compte"
+  },
+  "readKey": {
+    "message": "Lire la clé"
+  },
+  "keyCompromised": {
+    "message": "La clé est compromise."
+  },
+  "twoFactorU2fGiveName": {
+    "message": "Donnez un nom convivial à la clé de sécurité pour l'identifier."
+  },
+  "twoFactorU2fPlugInReadKey": {
+    "message": "Branchez la clé de sécurité sur un port USB de votre ordinateur et cliquez sur le bouton \"Lire la clé\"."
+  },
+  "twoFactorU2fTouchButton": {
+    "message": "Si la clé de sécurité a un bouton, touchez-le."
+  },
+  "twoFactorU2fSaveForm": {
+    "message": "Sauvegarder le contenu du formulaire."
+  },
+  "twoFactorU2fWarning": {
+    "message": "En raison de limitations de plateforme, FIDO U2F n'est pas utilisable sur toutes les applications Bitwarden. Vous devriez activer un autre fournisseur de connexion en deux étapes afin de pouvoir accéder à votre compte lorsque vous ne pouvez pas utiliser FIDO U2F. Plateformes prises en charge :"
+  },
+  "twoFactorU2fSupportWeb": {
+    "message": "Coffre web et extensions sur un ordinateur fixe/portable avec un navigateur compatible U2F (Chrome, Opera, Vivaldi ou Firefox avec FIDO U2F activé)."
+  },
+  "twoFactorU2fWaiting": {
+    "message": "Attente de l'appui sur le bouton de votre clé de sécurité"
+  },
+  "twoFactorU2fClickSave": {
+    "message": "Cliquez sur le bouton « Enregistrer » ci-dessous pour activer cette clé de sécurité pour une connexion en deux étapes."
+  },
+  "twoFactorU2fProblemReadingTryAgain": {
+    "message": "Un problème est survenu lors de la lecture de la clé de sécurité. Veuillez réessayer."
+  },
+  "twoFactorWebAuthnWarning": {
+    "message": "En raison de limitations de plateforme, WebAuthn n'est pas utilisable sur toutes les applications Bitwarden. Vous devriez activer un autre fournisseur de connexion en deux étapes afin de pouvoir accéder à votre compte lorsque vous ne pouvez pas utiliser WebAuthn. Plateformes prises en charge :"
+  },
+  "twoFactorWebAuthnSupportWeb": {
+    "message": "Coffre web et extensions sur un ordinateur fixe/portable avec un navigateur compatible WebAuthn (Chrome, Opera, Vivaldi ou Firefox avec FIDO U2F activé)."
+  },
+  "twoFactorRecoveryYourCode": {
+    "message": "Votre code de récupération de connexion en deux étapes Bitwarden"
+  },
+  "twoFactorRecoveryNoCode": {
+    "message": "Vous n'avez pas encore activé de fournisseur de connexion en deux étapes. Après avoir activé un fournisseur de connexion en deux étapes, vous pouvez consulter ici votre code de récupération."
+  },
+  "printCode": {
+    "message": "Imprimer le code",
+    "description": "Print 2FA recovery code"
+  },
+  "reports": {
+    "message": "Rapports"
+  },
+  "reportsDesc": {
+    "message": "Identifiez et fermez les trous de sécurité dans vos comptes en ligne en cliquant sur les rapports ci-dessous."
+  },
+  "unsecuredWebsitesReport": {
+    "message": "Rapport sur les sites web non sécurisés"
+  },
+  "unsecuredWebsitesReportDesc": {
+    "message": "L'utilisation de sites Web non sécurisés avec le schéma http:// peut être dangereuse. Si le site Web le permet, vous devriez toujours y accéder en utilisant le schéma https:// afin que votre connexion soit chiffrée."
+  },
+  "unsecuredWebsitesFound": {
+    "message": "Sites web non sécurisés trouvés"
+  },
+  "unsecuredWebsitesFoundDesc": {
+    "message": "Nous avons trouvé $COUNT$ éléments dans votre coffre avec des URI non sécurisés. Vous devriez remplacer leur schéma URI par https:// si le site Web le permet.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noUnsecuredWebsites": {
+    "message": "Aucun élément dans votre coffre n'a d'URI non sécurisés."
+  },
+  "inactive2faReport": {
+    "message": "Rapport 2FA inactif"
+  },
+  "inactive2faReportDesc": {
+    "message": "L'authentification à deux facteurs (2FA) est un paramètre de sécurité important qui permet de sécuriser vos comptes. Si le site Web le propose, vous devriez toujours activer l'authentification à deux facteurs."
+  },
+  "inactive2faFound": {
+    "message": "Identifiants sans 2FA trouvés"
+  },
+  "inactive2faFoundDesc": {
+    "message": "Nous avons trouvé $COUNT$ site(s) web(s) dans votre coffre qui ne sont peut-être pas configurés avec une authentification à deux facteurs (d'après twofactorauth.org). Pour mieux protéger ces comptes, vous devriez activer l'authentification à deux facteurs.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noInactive2fa": {
+    "message": "Aucun site web n'a été trouvé dans votre coffre avec une configuration d'authentification à deux facteurs manquante."
+  },
+  "instructions": {
+    "message": "Instructions"
+  },
+  "exposedPasswordsReport": {
+    "message": "Rapport sur les mots de passe exposés"
+  },
+  "exposedPasswordsReportDesc": {
+    "message": "Exposed passwords are passwords have been uncovered in known data breaches that were released publicly or sold on the dark web by hackers."
+  },
+  "exposedPasswordsFound": {
+    "message": "Mots de passe exposés trouvés"
+  },
+  "exposedPasswordsFoundDesc": {
+    "message": "Nous avons trouvé $COUNT$ éléments dans votre coffre qui ont des mots de passe qui ont été exposés dans des fuites de données connues. Vous devriez les changer pour utiliser un nouveau mot de passe.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noExposedPasswords": {
+    "message": "Aucun élément de votre coffre n'a de mots de passe qui ont été révélés lors de fuites de données connues."
+  },
+  "checkExposedPasswords": {
+    "message": "Vérifier les mots de passe exposés"
+  },
+  "exposedXTimes": {
+    "message": "Exposé $COUNT$ fois",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "52"
+      }
+    }
+  },
+  "weakPasswordsReport": {
+    "message": "Rapport sur les mots de passe faibles"
+  },
+  "weakPasswordsReportDesc": {
+    "message": "Les mots de passe faibles peuvent être facilement devinés par des pirates informatiques et des outils automatisés qui sont utilisés pour pirater les mots de passe. Le générateur de mots de passe Bitwarden peut vous aider à créer des mots de passe forts."
+  },
+  "weakPasswordsFound": {
+    "message": "Mots de passe faibles trouvés"
+  },
+  "weakPasswordsFoundDesc": {
+    "message": "Nous avons trouvé $COUNT$ éléments dans votre coffre avec des mots de passe qui ne sont pas forts. Vous devriez les mettre à jour pour utiliser des mots de passe plus forts.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noWeakPasswords": {
+    "message": "Aucun élément dans votre coffre n'a de mots de passe faibles."
+  },
+  "reusedPasswordsReport": {
+    "message": "Rapport sur les mots de passe réutilisés"
+  },
+  "reusedPasswordsReportDesc": {
+    "message": "Si un service que vous utilisez est compromis, la réutilisation du même mot de passe ailleurs peut permettre aux pirates d'accéder facilement à un plus grand nombre de vos comptes en ligne. Vous devriez utiliser un mot de passe unique pour chaque compte ou service."
+  },
+  "reusedPasswordsFound": {
+    "message": "Mots de passe réutilisés trouvés"
+  },
+  "reusedPasswordsFoundDesc": {
+    "message": "Nous avons trouvé $COUNT$ mots de passe qui sont réutilisés dans votre coffre. Vous devriez les changer pour utiliser des mots de passe différents.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noReusedPasswords": {
+    "message": "Aucun identifiant dans votre coffre n'a de mots de passe qui sont réutilisés."
+  },
+  "reusedXTimes": {
+    "message": "Réutilisé $COUNT$ fois",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "dataBreachReport": {
+    "message": "Rapport sur les fuites de données"
+  },
+  "breachDesc": {
+    "message": "Une « fuite » est un incident où les données d'un site ont été obtenues illégalement par des pirates informatiques, puis rendues publiques. Examinez les types de données qui ont été compromis (adresses électroniques, mots de passe, cartes de crédit, etc.) et prenez les mesures appropriées, comme la modification des mots de passe."
+  },
+  "breachCheckUsernameEmail": {
+    "message": "Vérifiez tous les noms d'utilisateur ou les adresses électroniques que vous utilisez."
+  },
+  "checkBreaches": {
+    "message": "Vérifier les fuites"
+  },
+  "breachUsernameNotFound": {
+    "message": "$USERNAME$ n'a été trouvé dans aucune fuite de données.",
+    "placeholders": {
+      "username": {
+        "content": "$1",
+        "example": "user@example.com"
+      }
+    }
+  },
+  "goodNews": {
+    "message": "Bonne nouvelle",
+    "description": "ex. Good News, No Breached Accounts Found!"
+  },
+  "breachUsernameFound": {
+    "message": "$USERNAME$ a été trouvé dans $COUNT$ fuites de données différentes en ligne.",
+    "placeholders": {
+      "username": {
+        "content": "$1",
+        "example": "user@example.com"
+      },
+      "count": {
+        "content": "$2",
+        "example": "7"
+      }
+    }
+  },
+  "breachFound": {
+    "message": "Des comptes ayant fuité ont été trouvés"
+  },
+  "compromisedData": {
+    "message": "Données compromises"
+  },
+  "website": {
+    "message": "Site web"
+  },
+  "affectedUsers": {
+    "message": "Utilisateurs concernés"
+  },
+  "breachOccurred": {
+    "message": "Une fuite a eu lieu"
+  },
+  "breachReported": {
+    "message": "Fuite signalée"
+  },
+  "reportError": {
+    "message": "Une erreur est survenue en essayant de charger le rapport. Réessayez"
+  },
+  "billing": {
+    "message": "Facturation"
+  },
+  "accountCredit": {
+    "message": "Compte créditeur",
+    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+  },
+  "accountBalance": {
+    "message": "Solde du compte",
+    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+  },
+  "addCredit": {
+    "message": "Ajouter du crédit",
+    "description": "Add more credit to your account's balance."
+  },
+  "amount": {
+    "message": "Montant",
+    "description": "Dollar amount, or quantity."
+  },
+  "creditDelayed": {
+    "message": "Le crédit ajouté apparaîtra sur votre compte une fois que le paiement aura été entièrement traité. Certains moyens de paiement sont différés et peuvent prendre plus de temps à traiter que d'autres."
+  },
+  "makeSureEnoughCredit": {
+    "message": "Veuillez vous assurer que votre compte dispose d'un crédit suffisant pour cet achat. Si le crédit de votre compte n'est pas suffisant, votre mode de paiement par défaut sera utilisé pour régler la différence. Vous pouvez ajouter du crédit à votre compte à partir de la page Facturation."
+  },
+  "creditAppliedDesc": {
+    "message": "Le crédit de votre compte peut être utilisé pour régler vos achats. Tout crédit disponible sera automatiquement appliqué aux factures générées pour ce compte."
+  },
+  "goPremium": {
+    "message": "Devenir Premium",
+    "description": "Another way of saying \"Get a premium membership\""
+  },
+  "premiumUpdated": {
+    "message": "Vous venez de passer à un compte Premium."
+  },
+  "premiumUpgradeUnlockFeatures": {
+    "message": "Mettez à niveau votre compte vers un abonnement premium et débloquez d'incroyables fonctionnalités supplémentaires."
+  },
+  "premiumSignUpStorage": {
+    "message": "1 Go de stockage de fichiers chiffrés."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "Options d'identification en deux étapes additionnelles comme YubiKey, FIDO U2F et Duo."
+  },
+  "premiumSignUpEmergency": {
+    "message": "Accès d'urgence"
+  },
+  "premiumSignUpReports": {
+    "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
+  },
+  "premiumSignUpTotp": {
+    "message": "Génération d'un code de vérification TOTP (2FA) pour les identifiants de votre coffre."
+  },
+  "premiumSignUpSupport": {
+    "message": "Support client prioritaire."
+  },
+  "premiumSignUpFuture": {
+    "message": "Toutes les futures options premium. D'autres suivront prochainement !"
+  },
+  "premiumPrice": {
+    "message": "Tout pour seulement $PRICE$ /an !",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "addons": {
+    "message": "Add-ons"
+  },
+  "premiumAccess": {
+    "message": "Accès premium"
+  },
+  "premiumAccessDesc": {
+    "message": "Vous pouvez offrir un accès premium à tous les membres de votre organisation pour $PRICE$/$INTERVAL$.",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$3.33"
+      },
+      "interval": {
+        "content": "$2",
+        "example": "'month' or 'year'"
+      }
+    }
+  },
+  "additionalStorageGb": {
+    "message": "Stockage additionnel (Go)"
+  },
+  "additionalStorageGbDesc": {
+    "message": "# Go additionnels"
+  },
+  "additionalStorageIntervalDesc": {
+    "message": "Votre offre comprend $SIZE$ de stockage de fichiers chiffrés. Vous pouvez ajouter du stockage supplémentaire pour $PRICE$ par Go/$INTERVAL$.",
+    "placeholders": {
+      "size": {
+        "content": "$1",
+        "example": "1 GB"
+      },
+      "price": {
+        "content": "$2",
+        "example": "$4.00"
+      },
+      "interval": {
+        "content": "$3",
+        "example": "'month' or 'year'"
+      }
+    }
+  },
+  "summary": {
+    "message": "Récapitulatif"
+  },
+  "total": {
+    "message": "Total"
+  },
+  "year": {
+    "message": "an"
+  },
+  "month": {
+    "message": "mois"
+  },
+  "monthAbbr": {
+    "message": "mois",
+    "description": "Short abbreviation for 'month'"
+  },
+  "paymentChargedAnnually": {
+    "message": "Votre mode de paiement sera facturé immédiatement et de manière récurrente chaque année. Vous pouvez annuler à tout moment."
+  },
+  "paymentCharged": {
+    "message": "Votre mode de paiement sera facturé immédiatement et de manière récurrente chaque $INTERVAL$. Vous pouvez annuler à tout moment.",
+    "placeholders": {
+      "interval": {
+        "content": "$1",
+        "example": "month or year"
+      }
+    }
+  },
+  "paymentChargedWithTrial": {
+    "message": "Votre offre comprend un essai gratuit de 7 jours. Votre mode de paiement ne sera pas facturé avant la fin de la période d'essai. Vous pouvez annuler à tout moment."
+  },
+  "paymentInformation": {
+    "message": "Informations de paiement"
+  },
+  "billingInformation": {
+    "message": "Informations de facturation"
+  },
+  "creditCard": {
+    "message": "Carte de crédit"
+  },
+  "paypalClickSubmit": {
+    "message": "Cliquez sur le bouton PayPal pour vous connecter sur votre compte PayPal, puis cliquez sur le bouton Soumettre ci-dessous pour continuer."
+  },
+  "cancelSubscription": {
+    "message": "Annuler l'abonnement"
+  },
+  "subscriptionCanceled": {
+    "message": "L'abonnement a été annulé."
+  },
+  "pendingCancellation": {
+    "message": "Annulation en attente"
+  },
+  "subscriptionPendingCanceled": {
+    "message": "L’abonnement a été marqué pour être annulé à la fin de la période de facturation actuelle."
+  },
+  "reinstateSubscription": {
+    "message": "Rétablir l’abonnement"
+  },
+  "reinstateConfirmation": {
+    "message": "Êtes-vous sûr de vouloir retirer la demande d’annulation en attente et rétablir votre abonnement ?"
+  },
+  "reinstated": {
+    "message": "Votre abonnement a été rétabli."
+  },
+  "cancelConfirmation": {
+    "message": "Êtes-vous sûr de vouloir annuler ? Vous perdrez l’accès à toutes les fonctionnalités de l’abonnement à la fin de ce cycle de facturation."
+  },
+  "canceledSubscription": {
+    "message": "L'abonnement a été annulé."
+  },
+  "neverExpires": {
+    "message": "N'expire jamais"
+  },
+  "status": {
+    "message": "État"
+  },
+  "nextCharge": {
+    "message": "Prochain paiement"
+  },
+  "details": {
+    "message": "Détails"
+  },
+  "downloadLicense": {
+    "message": "Télécharger la licence"
+  },
+  "updateLicense": {
+    "message": "Mettre à jour la licence"
+  },
+  "updatedLicense": {
+    "message": "Licence mise à jour"
+  },
+  "manageSubscription": {
+    "message": "Gérer l'abonnement"
+  },
+  "storage": {
+    "message": "Stockage"
+  },
+  "addStorage": {
+    "message": "Ajouter du stockage"
+  },
+  "removeStorage": {
+    "message": "Retirer du stockage"
+  },
+  "subscriptionStorage": {
+    "message": "Votre abonnement a un total de $MAX_STORAGE$ Go de stockage de fichiers chiffrés. Vous utilisez actuellement $USED_STORAGE$.",
+    "placeholders": {
+      "max_storage": {
+        "content": "$1",
+        "example": "4"
+      },
+      "used_storage": {
+        "content": "$2",
+        "example": "65 MB"
+      }
+    }
+  },
+  "paymentMethod": {
+    "message": "Moyen de paiement"
+  },
+  "noPaymentMethod": {
+    "message": "Aucun moyen de paiement enregistré."
+  },
+  "addPaymentMethod": {
+    "message": "Ajouter un moyen de paiement"
+  },
+  "changePaymentMethod": {
+    "message": "Changer de moyen de paiement"
+  },
+  "invoices": {
+    "message": "Factures"
+  },
+  "noInvoices": {
+    "message": "Aucune facture."
+  },
+  "paid": {
+    "message": "Payée",
+    "description": "Past tense status of an invoice. ex. Paid or unpaid."
+  },
+  "unpaid": {
+    "message": "Due",
+    "description": "Past tense status of an invoice. ex. Paid or unpaid."
+  },
+  "transactions": {
+    "message": "Transactions",
+    "description": "Payment/credit transactions."
+  },
+  "noTransactions": {
+    "message": "Aucune transaction."
+  },
+  "chargeNoun": {
+    "message": "Débit",
+    "description": "Noun. A charge from a payment method."
+  },
+  "refundNoun": {
+    "message": "Remboursement",
+    "description": "Noun. A refunded payment that was charged."
+  },
+  "chargesStatement": {
+    "message": "Tous les frais apparaîtront sur votre relevé sous $STATEMENT_NAME$.",
+    "placeholders": {
+      "statement_name": {
+        "content": "$1",
+        "example": "BITWARDEN"
+      }
+    }
+  },
+  "gbStorageAdd": {
+    "message": "Go de stockage à ajouter"
+  },
+  "gbStorageRemove": {
+    "message": "Go de stockage à retirer"
+  },
+  "storageAddNote": {
+    "message": "L'ajout d'espace de stockage entraînera des ajustements sur vos totaux de facturation et facturera immédiatement le moyen de paiement enregistré. La première facturation sera calculée au prorata du reste du cycle de facturation en cours."
+  },
+  "storageRemoveNote": {
+    "message": "La suppression d'espace de stockage entraînera des ajustements sur vos totaux de facturation qui seront calculés au prorata et portés au crédit de votre prochaine facturation."
+  },
+  "adjustedStorage": {
+    "message": "$AMOUNT$ Go de stockage mis à jour.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "contactSupport": {
+    "message": "Contacter le support client"
+  },
+  "updatedPaymentMethod": {
+    "message": "Moyen de paiement mise à jour."
+  },
+  "purchasePremium": {
+    "message": "Acheter Premium"
+  },
+  "licenseFile": {
+    "message": "Fichier de licence"
+  },
+  "licenseFileDesc": {
+    "message": "Votre fichier de licence aura un nom similaire à $FILE_NAME$",
+    "placeholders": {
+      "file_name": {
+        "content": "$1",
+        "example": "bitwarden_premium_license.json"
+      }
+    }
+  },
+  "uploadLicenseFilePremium": {
+    "message": "Pour mettre à niveau votre compte vers un abonnement premium, vous devez fournir un fichier de licence valide."
+  },
+  "uploadLicenseFileOrg": {
+    "message": "Pour créer une organisation sur une instance auto-hébergée vous devez fournir un fichier de licence valide."
+  },
+  "accountEmailMustBeVerified": {
+    "message": "L'adresse e-mail de votre compte doit être vérifiée."
+  },
+  "newOrganizationDesc": {
+    "message": "Les organisations permettent de partager des parties de votre coffre avec d'autres personnes ainsi que de gérer des utilisateurs pour une entité spécifique comme une famille, une petite équipe ou une grande entreprise."
+  },
+  "generalInformation": {
+    "message": "Informations générales"
+  },
+  "organizationName": {
+    "message": "Nom de l'organisation"
+  },
+  "accountOwnedBusiness": {
+    "message": "Ce compte est détenu par une entreprise."
+  },
+  "billingEmail": {
+    "message": "E-mail de facturation"
+  },
+  "businessName": {
+    "message": "Nom de l'entreprise"
+  },
+  "chooseYourPlan": {
+    "message": "Choisissez votre offre"
+  },
+  "users": {
+    "message": "Utilisateurs"
+  },
+  "userSeats": {
+    "message": "Licences utilisateur"
+  },
+  "additionalUserSeats": {
+    "message": "Licences utilisateur supplémentaires"
+  },
+  "userSeatsDesc": {
+    "message": "Nombre de licences utilisateur"
+  },
+  "userSeatsAdditionalDesc": {
+    "message": "Votre offre comprend $BASE_SEATS$ licences utilisateurs. Vous pouvez ajouter des utilisateurs supplémentaires pour $SEAT_PRICE$ par utilisateur/mois.",
+    "placeholders": {
+      "base_seats": {
+        "content": "$1",
+        "example": "5"
+      },
+      "seat_price": {
+        "content": "$2",
+        "example": "$2.00"
+      }
+    }
+  },
+  "userSeatsHowManyDesc": {
+    "message": "De combien de licences utilisateur avez-vous besoin ? Vous pouvez également en ajouter ultérieurement si besoin."
+  },
+  "planNameFree": {
+    "message": "Gratuit",
+    "description": "Free as in 'free beer'."
+  },
+  "planDescFree": {
+    "message": "Pour tester ou pour les utilisateurs individuels qui souhaitent partager avec $COUNT$ autre(s) utilisateur(s).",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "planNameFamilies": {
+    "message": "Familles"
+  },
+  "planDescFamilies": {
+    "message": "Pour une utilisation personnelle, pour partager avec la famille et les amis."
+  },
+  "planNameTeams": {
+    "message": "Équipes"
+  },
+  "planDescTeams": {
+    "message": "Pour les entreprises et autres équipes."
+  },
+  "planNameEnterprise": {
+    "message": "Entreprise"
+  },
+  "planDescEnterprise": {
+    "message": "Pour les entreprises et autres grandes organisations."
+  },
+  "freeForever": {
+    "message": "Gratuit pour toujours"
+  },
+  "includesXUsers": {
+    "message": "comprend $COUNT$ utilisateurs",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "additionalUsers": {
+    "message": "Utilisateurs supplémentaires"
+  },
+  "costPerUser": {
+    "message": "$COST$ par utilisateur",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$3"
+      }
+    }
+  },
+  "limitedUsers": {
+    "message": "Limité à $COUNT$ utilisateurs (vous inclus)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "limitedCollections": {
+    "message": "Limité à $COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "addShareLimitedUsers": {
+    "message": "Ajoutez et partagez avec jusqu'à $COUNT$ utilisateurs",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "addShareUnlimitedUsers": {
+    "message": "Ajoutez et partagez avec un nombre illimité d'utilisateurs"
+  },
+  "createUnlimitedCollections": {
+    "message": "Créez un nombre illimité de collections"
+  },
+  "gbEncryptedFileStorage": {
+    "message": "$SIZE$ de stockage de fichiers chiffrés",
+    "placeholders": {
+      "size": {
+        "content": "$1",
+        "example": "1 GB"
+      }
+    }
+  },
+  "onPremHostingOptional": {
+    "message": "Hébergement local (optionnel)"
+  },
+  "usersGetPremium": {
+    "message": "Les utilisateurs auront accès aux fonctionnalités premium"
+  },
+  "controlAccessWithGroups": {
+    "message": "Contrôlez l'accès des utilisateurs avec des groupes"
+  },
+  "syncUsersFromDirectory": {
+    "message": "Synchronisez vos utilisateurs et vos groupes à partir d'un répertoire"
+  },
+  "trackAuditLogs": {
+    "message": "Suivez les actions des utilisateurs avec les journaux d'audit"
+  },
+  "enforce2faDuo": {
+    "message": "Forcez l'authentification à deux facteurs (2FA) avec Duo"
+  },
+  "priorityCustomerSupport": {
+    "message": "Support client prioritaire"
+  },
+  "xDayFreeTrial": {
+    "message": "$COUNT$ jours d'essai gratuit, annulez à tout moment",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "7"
+      }
+    }
+  },
+  "monthly": {
+    "message": "Mensuel"
+  },
+  "annually": {
+    "message": "Annuel"
+  },
+  "basePrice": {
+    "message": "Prix de base"
+  },
+  "organizationCreated": {
+    "message": "L'organisation a été créée"
+  },
+  "organizationReadyToGo": {
+    "message": "Votre nouvelle organisation est prête !"
+  },
+  "organizationUpgraded": {
+    "message": "Votre organisation a été mise à niveau."
+  },
+  "leave": {
+    "message": "Quitter"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Êtes-vous sûr de vouloir quitter cette organisation ?"
+  },
+  "leftOrganization": {
+    "message": "Vous avez quitté l'organisation."
+  },
+  "defaultCollection": {
+    "message": "Collection par défaut"
+  },
+  "getHelp": {
+    "message": "Obtenir de l'aide"
+  },
+  "getApps": {
+    "message": "Télécharger les applications"
+  },
+  "loggedInAs": {
+    "message": "Connecté en tant que"
+  },
+  "eventLogs": {
+    "message": "Journal des événements"
+  },
+  "people": {
+    "message": "Personnes"
+  },
+  "policies": {
+    "message": "Politiques"
+  },
+  "singleSignOn": {
+    "message": "Authentification unique"
+  },
+  "editPolicy": {
+    "message": "Modifier la politique"
+  },
+  "groups": {
+    "message": "Groupes"
+  },
+  "newGroup": {
+    "message": "Nouveau groupe"
+  },
+  "addGroup": {
+    "message": "Ajouter un groupe"
+  },
+  "editGroup": {
+    "message": "Modifier le groupe"
+  },
+  "deleteGroupConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer ce groupe?"
+  },
+  "removeUserConfirmation": {
+    "message": "Êtes-vous sûr de vouloir retirer cet utilisateur ?"
+  },
+  "removeUserConfirmationKeyConnector": {
+    "message": "Attention ! Cet utilisateur a besoin de Key Connector pour gérer son chiffrement. Supprimer cet utilisateur de votre organisation désactivera définitivement son compte. Cette action ne peut pas être annulée. Voulez-vous continuer?"
+  },
+  "externalId": {
+    "message": "Identifiant externe"
+  },
+  "externalIdDesc": {
+    "message": "L’identifiant externe peut être utilisé comme référence ou pour lier cette ressource à un système externe tel qu’un répertoire utilisateur."
+  },
+  "accessControl": {
+    "message": "Contrôle d’accès"
+  },
+  "groupAccessAllItems": {
+    "message": "Ce groupe peut voir et modifier tous les éléments."
+  },
+  "groupAccessSelectedCollections": {
+    "message": "Ce groupe peut accéder uniquement aux collections sélectionnées."
+  },
+  "readOnly": {
+    "message": "Lecture seule"
+  },
+  "newCollection": {
+    "message": "Nouvelle collection"
+  },
+  "addCollection": {
+    "message": "Ajouter une collection"
+  },
+  "editCollection": {
+    "message": "Modifier la collection"
+  },
+  "deleteCollectionConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer cette collection?"
+  },
+  "editUser": {
+    "message": "Modifier un utilisateur"
+  },
+  "inviteUser": {
+    "message": "Inviter un utilisateur"
+  },
+  "inviteUserDesc": {
+    "message": "Invitez de nouveaux utilisateurs à votre organisation en entrant l'adresse e-mail de leur compte Bitwarden ci-dessous. S'ils n’ont pas déjà un compte Bitwarden, il leur sera demandé d'en créer un nouveau."
+  },
+  "inviteMultipleEmailDesc": {
+    "message": "Vous pouvez inviter jusqu'à $COUNT$ utilisateurs à la fois en séparant les adresses e-mail par une virgule.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "userUsingTwoStep": {
+    "message": "Cet utilisateur utilise l'identification en deux étapes pour protéger son compte."
+  },
+  "userAccessAllItems": {
+    "message": "Cet utilisateur peut voir et modifier tous les éléments."
+  },
+  "userAccessSelectedCollections": {
+    "message": "Cet utilisateur peut accéder uniquement aux collections sélectionnées."
+  },
+  "search": {
+    "message": "Rechercher"
+  },
+  "invited": {
+    "message": "Invité"
+  },
+  "accepted": {
+    "message": "Accepté"
+  },
+  "confirmed": {
+    "message": "Confirmé"
+  },
+  "clientOwnerEmail": {
+    "message": "Adresse e-mail du propriétaire du client"
+  },
+  "owner": {
+    "message": "Propriétaire"
+  },
+  "ownerDesc": {
+    "message": "L’utilisateur avec l’accès le plus élevé qui peut gérer tous les aspects de votre organisation."
+  },
+  "clientOwnerDesc": {
+    "message": "Cet utilisateur doit être indépendant du fournisseur. Si le fournisseur est dissocié de l'organisation, cet utilisateur conservera la propriété de l'organisation."
+  },
+  "admin": {
+    "message": "Administrateur"
+  },
+  "adminDesc": {
+    "message": "Les administrateurs peuvent voir et gérer tous les éléments, les collections et les utilisateurs de votre organisation."
+  },
+  "user": {
+    "message": "Utilisateur"
+  },
+  "userDesc": {
+    "message": "Un utilisateur standard avec accès aux collections qui lui sont assignées dans votre organisation."
+  },
+  "manager": {
+    "message": "Gestionnaire"
+  },
+  "managerDesc": {
+    "message": "Les gestionnaires peuvent voir et gérer les collections de votre organisation qui leur ont été assignées."
+  },
+  "all": {
+    "message": "Tous"
+  },
+  "refresh": {
+    "message": "Actualiser"
+  },
+  "timestamp": {
+    "message": "Horodatage"
+  },
+  "event": {
+    "message": "Évènement"
+  },
+  "unknown": {
+    "message": "Inconnu"
+  },
+  "loadMore": {
+    "message": "Plus de résultats"
+  },
+  "mobile": {
+    "message": "Mobile",
+    "description": "Mobile app"
+  },
+  "extension": {
+    "message": "Extension",
+    "description": "Browser extension/addon"
+  },
+  "desktop": {
+    "message": "Ordinateur",
+    "description": "Desktop app"
+  },
+  "webVault": {
+    "message": "Coffre web"
+  },
+  "loggedIn": {
+    "message": "Connecté."
+  },
+  "changedPassword": {
+    "message": "Mot de passe changé."
+  },
+  "enabledUpdated2fa": {
+    "message": "Connexion en deux étapes activée/mise à jour."
+  },
+  "disabled2fa": {
+    "message": "Connexion en deux étapes désactivée."
+  },
+  "recovered2fa": {
+    "message": "Compte récupéré depuis une connexion en deux étapes."
+  },
+  "failedLogin": {
+    "message": "Tentative de connexion avec mot de passe incorrect."
+  },
+  "failedLogin2fa": {
+    "message": "Tentative de connexion échouée avec deuxième facteur incorrect."
+  },
+  "exportedVault": {
+    "message": "Le coffre a été exporté."
+  },
+  "exportedOrganizationVault": {
+    "message": "Le coffre de l'organisation a été exporté."
+  },
+  "editedOrgSettings": {
+    "message": "Paramètres de l’organisation modifiés."
+  },
+  "createdItemId": {
+    "message": "Élément $ID$ créé.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "editedItemId": {
+    "message": "Élément $ID$ modifié.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "deletedItemId": {
+    "message": "L'élément $ID$ a été envoyé dans la corbeille.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "movedItemIdToOrg": {
+    "message": "L'élément $ID$ a été déplacé vers une organisation.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "'Google'"
+      }
+    }
+  },
+  "viewedItemId": {
+    "message": "L'élément $ID$ a été consulté.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "viewedPasswordItemId": {
+    "message": "Le mot de passe de l'élément $ID$ a été consulté.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "viewedHiddenFieldItemId": {
+    "message": "Un champ masqué de l’élément $ID$ a été consulté.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "viewedSecurityCodeItemId": {
+    "message": "Le code de sécurité de l’élément $ID$ a été consulté.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "copiedPasswordItemId": {
+    "message": "Le mot de passe de l'élément $ID$ a été copié.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "copiedHiddenFieldItemId": {
+    "message": "Un champ masqué de l’élément $ID$ a été copié.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "copiedSecurityCodeItemId": {
+    "message": "Le code de sécurité de l’élément $ID$ a été copié.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "autofilledItemId": {
+    "message": "L’élément $ID$ a été rempli automatiquement.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "createdCollectionId": {
+    "message": "Collection $ID$ créée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Server Passwords"
+      }
+    }
+  },
+  "editedCollectionId": {
+    "message": "Collection $ID$ modifiée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Server Passwords"
+      }
+    }
+  },
+  "deletedCollectionId": {
+    "message": "Collection $ID$ supprimée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Server Passwords"
+      }
+    }
+  },
+  "editedPolicyId": {
+    "message": "Politique $ID$ modifiée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Master Password"
+      }
+    }
+  },
+  "createdGroupId": {
+    "message": "Groupe $ID$ créé.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Developers"
+      }
+    }
+  },
+  "editedGroupId": {
+    "message": "Groupe $ID$ modifié.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Developers"
+      }
+    }
+  },
+  "deletedGroupId": {
+    "message": "Groupe $ID$ supprimé.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Developers"
+      }
+    }
+  },
+  "removedUserId": {
+    "message": "Utilisateur $ID$ retiré.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "createdAttachmentForItem": {
+    "message": "La pièce jointe pour l'élément $ID$ a été créée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "deletedAttachmentForItem": {
+    "message": "La pièce jointe de l'élément $ID$ a été supprimée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "editedCollectionsForItem": {
+    "message": "Collections éditées pour l'élément $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "invitedUserId": {
+    "message": "Utilisateur $ID$ invité.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "confirmedUserId": {
+    "message": "Utilisateur $ID$ confirmé.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "editedUserId": {
+    "message": "Utilisateur $ID$ modifié.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "editedGroupsForUser": {
+    "message": "Groupes édités pour l'utilisateur $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "unlinkedSsoUser": {
+    "message": "SSO dissocié pour l'utilisateur $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "createdOrganizationId": {
+    "message": "Organisation $ID$ créée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "addedOrganizationId": {
+    "message": "Organisation $ID$ ajoutée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "removedOrganizationId": {
+    "message": "Organisation $ID$ supprimée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "accessedClientVault": {
+    "message": "Coffre-fort de l'organisation $ID$ consulté.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "device": {
+    "message": "Appareil"
+  },
+  "view": {
+    "message": "Voir"
+  },
+  "invalidDateRange": {
+    "message": "Plage de dates non valide."
+  },
+  "errorOccurred": {
+    "message": "Une erreur est survenue."
+  },
+  "userAccess": {
+    "message": "Accès utilisateur"
+  },
+  "userType": {
+    "message": "Type d'utilisateur"
+  },
+  "groupAccess": {
+    "message": "Accès groupe"
+  },
+  "groupAccessUserDesc": {
+    "message": "Modifier les groupes auxquels appartient cet utilisateur."
+  },
+  "invitedUsers": {
+    "message": "Utilisateur(s) invité(s)."
+  },
+  "resendInvitation": {
+    "message": "Renvoyer l'invitation"
+  },
+  "resendEmail": {
+    "message": "Renvoyer l'email"
+  },
+  "hasBeenReinvited": {
+    "message": "$USER$ a été réinvité.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "confirm": {
+    "message": "Confirmer"
+  },
+  "confirmUser": {
+    "message": "Confirmer l'utilisateur"
+  },
+  "hasBeenConfirmed": {
+    "message": "$USER$ a été confirmé.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "confirmUsers": {
+    "message": "Confirmer les utilisateurs"
+  },
+  "usersNeedConfirmed": {
+    "message": "Il y a des utilisateurs qui ont accepté leur invitation, mais qui doivent encore être confirmés. Les utilisateurs n'auront pas accès à l'organisation tant qu'ils n'auront pas été confirmés."
+  },
+  "startDate": {
+    "message": "Date de début"
+  },
+  "endDate": {
+    "message": "Date de fin"
+  },
+  "verifyEmail": {
+    "message": "Vérifier l'adresse e-mail"
+  },
+  "verifyEmailDesc": {
+    "message": "Vérifiez l'adresse e-mail de votre compte pour débloquer l'ensemble des fonctionnalités."
+  },
+  "verifyEmailFirst": {
+    "message": "L'adresse e-mail de votre compte doit d'abord être vérifiée."
+  },
+  "checkInboxForVerification": {
+    "message": "Vérifiez votre boîte de réception pour le lien de vérification."
+  },
+  "emailVerified": {
+    "message": "Votre adresse e-mail a été vérifiée."
+  },
+  "emailVerifiedFailed": {
+    "message": "Impossible de vérifier votre adresse e-mail. Essayez de renvoyer un nouvel e-mail de vérification."
+  },
+  "emailVerificationRequired": {
+    "message": "Vérification de l'adresse e-mail nécessaire"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Vous devez vérifier votre adresse e-mail pour utiliser cette fonctionnalité."
+  },
+  "updateBrowser": {
+    "message": "Mettre à jour le navigateur"
+  },
+  "updateBrowserDesc": {
+    "message": "Vous utilisez un navigateur non supporté. Le coffre web pourrait ne pas fonctionner correctement."
+  },
+  "joinOrganization": {
+    "message": "Rejoindre l'organisation"
+  },
+  "joinOrganizationDesc": {
+    "message": "Vous avez été invité à rejoindre l'organisation ci-dessus. Pour accepter l'invitation, vous devez vous connecter ou créer un nouveau compte Bitwarden."
+  },
+  "inviteAccepted": {
+    "message": "Invitation acceptée"
+  },
+  "inviteAcceptedDesc": {
+    "message": "Vous pourrez accéder à cette organisation dès qu'un administrateur aura confirmé votre inscription. Nous vous enverrons un e-mail lorsque ce sera fait."
+  },
+  "inviteAcceptFailed": {
+    "message": "Impossible d’accepter l’invitation. Demandez à un administrateur de l'organisation d’envoyer une nouvelle invitation."
+  },
+  "inviteAcceptFailedShort": {
+    "message": "Impossible d'accepter l'invitation. $DESCRIPTION$",
+    "placeholders": {
+      "description": {
+        "content": "$1",
+        "example": "You must enable 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "rememberEmail": {
+    "message": "Se souvenir de l'e-mail"
+  },
+  "recoverAccountTwoStepDesc": {
+    "message": "Si vous ne pouvez pas accéder à votre compte grâce à vos méthodes de connexion en deux étapes habituelles, vous pouvez utiliser votre code de récupération de connexion en deux étapes pour désactiver tous les fournisseurs en deux étapes sur votre compte."
+  },
+  "recoverAccountTwoStep": {
+    "message": "Récupération de connexion en deux étapes"
+  },
+  "twoStepRecoverDisabled": {
+    "message": "L'authentification en deux étapes a été désactivée sur votre compte."
+  },
+  "learnMore": {
+    "message": "En savoir plus"
+  },
+  "deleteRecoverDesc": {
+    "message": "Entrez votre adresse e-mail ci-dessous pour récupérer et supprimer votre compte."
+  },
+  "deleteRecoverEmailSent": {
+    "message": "Si votre compte existe, nous vous avons envoyé un e-mail avec des instructions supplémentaires."
+  },
+  "deleteRecoverConfirmDesc": {
+    "message": "Vous avez demandé de supprimer votre compte Bitwarden. Cliquez sur le bouton ci-dessous pour confirmer."
+  },
+  "myOrganization": {
+    "message": "Mon organisation"
+  },
+  "deleteOrganization": {
+    "message": "Supprimer l'organisation"
+  },
+  "deletingOrganizationContentWarning": {
+    "message": "Entrez le mot de passe maître pour confirmer la suppression de $ORGANIZATION$ et de toutes les données associées. Les données du coffre dans $ORGANIZATION$ inclut:",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "deletingOrganizationActiveUserAccountsWarning": {
+    "message": "Les comptes utilisateur resteront actifs après la suppression, mais ne seront plus associés à cette organisation."
+  },
+  "deletingOrganizationIsPermanentWarning": {
+    "message": "La suppression de $ORGANIZATION$ est permanente et irréversible.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "organizationDeleted": {
+    "message": "Organisation supprimée"
+  },
+  "organizationDeletedDesc": {
+    "message": "L’organisation et toutes les données associées ont été supprimées."
+  },
+  "organizationUpdated": {
+    "message": "Organisation mise à jour"
+  },
+  "taxInformation": {
+    "message": "Informations fiscales"
+  },
+  "taxInformationDesc": {
+    "message": "Pour les clients aux États-Unis, le code postal (ZIP) est requis pour satisfaire aux exigences de la taxe de vente. Pour d'autres pays, vous pouvez éventuellement fournir un numéro d'identification fiscale (TVA/TPS) et/ou une adresse à afficher sur vos factures."
+  },
+  "billingPlan": {
+    "message": "Offre",
+    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+  },
+  "changeBillingPlan": {
+    "message": "Changer d'offre",
+    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+  },
+  "changeBillingPlanUpgrade": {
+    "message": "Mettez à niveau votre compte vers un autre plan en fournissant les informations ci-dessous. Assurez-vous qu'un mode de paiement actif a été ajouté au compte.",
+    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+  },
+  "invoiceNumber": {
+    "message": "Facture n°$NUMBER$",
+    "description": "ex. Invoice #79C66F0-0001",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "79C66F0-0001"
+      }
+    }
+  },
+  "viewInvoice": {
+    "message": "Afficher la facture"
+  },
+  "downloadInvoice": {
+    "message": "Télécharger la facture"
+  },
+  "verifyBankAccount": {
+    "message": "Vérifier le compte bancaire"
+  },
+  "verifyBankAccountDesc": {
+    "message": "Nous avons effectué deux dépôts d'un faible montant sur votre compte bancaire (ils peuvent prendre 1-2 jours ouvrés pour apparaître). Saisissez ces montants pour valider le compte bancaire."
+  },
+  "verifyBankAccountInitialDesc": {
+    "message": "Le paiement avec un compte bancaire est seulement disponible pour les clients résidant aux États-Unis. Il vous sera demandé de valider votre compte bancaire. Nous effectuerons deux dépôts d'un faible montant sous 1-2 jours ouvrés. Saisissez ces montants sur la page de facturation de votre organisation pour valider votre compte bancaire."
+  },
+  "verifyBankAccountFailureWarning": {
+    "message": "Une erreur lors de la validation de votre compte bancaire annulera le paiement et votre abonnement sera désactivé."
+  },
+  "verifiedBankAccount": {
+    "message": "Le compte bancaire a été vérifié."
+  },
+  "bankAccount": {
+    "message": "Compte bancaire"
+  },
+  "amountX": {
+    "message": "Montant $COUNT$",
+    "description": "Used in bank account verification of micro-deposits. Amount, as in a currency amount. Ex. Amount 1 is $2.00, Amount 2 is $1.50",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "routingNumber": {
+    "message": "Code banque",
+    "description": "Bank account routing number"
+  },
+  "accountNumber": {
+    "message": "Numéro de compte"
+  },
+  "accountHolderName": {
+    "message": "Nom du titulaire du compte"
+  },
+  "bankAccountType": {
+    "message": "Type de compte"
+  },
+  "bankAccountTypeCompany": {
+    "message": "Entreprise (professionnel)"
+  },
+  "bankAccountTypeIndividual": {
+    "message": "Individuel (personnel)"
+  },
+  "enterInstallationId": {
+    "message": "Saisissez l'identifiant de votre installation"
+  },
+  "limitSubscriptionDesc": {
+    "message": "Définissez un nombre de licences limite pour votre abonnement. Une fois cette limite atteinte, vous ne pourrez plus inviter de nouveaux utilisateurs."
+  },
+  "maxSeatLimit": {
+    "message": "Nombre de licences maximum (optionnel)",
+    "description": "Upper limit of seats to allow through autoscaling"
+  },
+  "maxSeatCost": {
+    "message": "Coût potentiel maximal des licences"
+  },
+  "addSeats": {
+    "message": "Ajouter des licences",
+    "description": "Seat = User Seat"
+  },
+  "removeSeats": {
+    "message": "Retirer des licences",
+    "description": "Seat = User Seat"
+  },
+  "subscriptionDesc": {
+    "message": "Les ajustements apportés à votre abonnement entraîneront des modifications au prorata de vos totaux de facturation. Si les utilisateurs nouvellement invités dépassent votre nombre de licences, vous recevrez immédiatement des frais au prorata pour les utilisateurs supplémentaires."
+  },
+  "subscriptionUserSeats": {
+    "message": "Votre abonnement permet un total de $COUNT$ utilisateurs.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "limitSubscription": {
+    "message": "Limiter le nombre de licences (optionnel)"
+  },
+  "subscriptionSeats": {
+    "message": "Licences"
+  },
+  "subscriptionUpdated": {
+    "message": "Abonnement mis à jour"
+  },
+  "additionalOptions": {
+    "message": "Options supplémentaires"
+  },
+  "additionalOptionsDesc": {
+    "message": "Pour obtenir de l'aide supplémentaire dans la gestion de votre abonnement, veuillez contacter le support client."
+  },
+  "subscriptionUserSeatsUnlimitedAutoscale": {
+    "message": "Les ajustements apportés à votre abonnement entraîneront des modifications au prorata de vos totaux de facturation. Si les utilisateurs nouvellement invités dépassent votre nombre de licences, vous recevrez immédiatement des frais au prorata pour les utilisateurs supplémentaires."
+  },
+  "subscriptionUserSeatsLimitedAutoscale": {
+    "message": "Les ajustements apportés à votre abonnement entraîneront des modifications au prorata de vos totaux de facturation. Si les utilisateurs nouvellement invités dépassent votre nombre de licences, vous recevrez immédiatement des frais au prorata pour les utilisateurs supplémentaires jusqu'à ce que votre limite de $MAX$ licences soit atteinte.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionFreePlan": {
+    "message": "Vous ne pouvez pas inviter plus de $COUNT$ utilisateurs sans mettre votre offre à niveau.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "subscriptionFamiliesPlan": {
+    "message": "Vous ne pouvez pas inviter plus de $COUNT$ utilisateurs sans mettre votre offre à niveau. Veuillez contacter le support client pour mettre à niveau.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "6"
+      }
+    }
+  },
+  "subscriptionSponsoredFamiliesPlan": {
+    "message": "Votre offre permet un total de $COUNT$ utilisateurs. Votre abonnement est parrainé et facturé à une organisation externe.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "6"
+      }
+    }
+  },
+  "subscriptionMaxReached": {
+    "message": "Les ajustements apportés à votre abonnement entraîneront des modifications au prorata de vos totaux de facturation. Vous ne pouvez pas inviter plus de $COUNT$ utilisateurs sans augmenter votre nombre de licences.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "seatsToAdd": {
+    "message": "Licences à ajouter"
+  },
+  "seatsToRemove": {
+    "message": "Licences à retirer"
+  },
+  "seatsAddNote": {
+    "message": "L'ajout de licences utilisateur entraînera des ajustements sur vos totaux de facturation et facturera immédiatement le moyen de paiement enregistré. La première facturation sera calculée au prorata du reste du cycle de facturation en cours."
+  },
+  "seatsRemoveNote": {
+    "message": "La suppression de licences utilisateur entraînera des ajustements sur vos totaux de facturation qui seront calculés au prorata et portés au crédit de votre prochaine facturation."
+  },
+  "adjustedSeats": {
+    "message": "$AMOUNT$ licences utilisateurs mis à jour.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
+  "keyUpdated": {
+    "message": "Clé mise à jour"
+  },
+  "updateKeyTitle": {
+    "message": "Mettre à jour la clé"
+  },
+  "updateEncryptionKey": {
+    "message": "Mettre à jour la clé de chiffrement"
+  },
+  "updateEncryptionKeyShortDesc": {
+    "message": "Vous utilisez actuellement un moyen de chiffrement obsolète."
+  },
+  "updateEncryptionKeyDesc": {
+    "message": "Nous sommes passés à des clés de chiffrement plus longues qui fournissent une meilleure sécurité et permettent l'accès à de nouvelles fonctionnalités. La mise à jour de votre clé de chiffrement est rapide et facile. Tapez simplement votre mot de passe maître ci-dessous. Cette mise à jour deviendra peut-être obligatoire."
+  },
+  "updateEncryptionKeyWarning": {
+    "message": "Après avoir mis à jour votre clé de chiffrement, vous devrez vous reconnecter sur toutes les applications Bitwarden que vous utilisez actuellement (comme par exemple l'application mobile ou les extensions de navigateur). Le fait de ne pas vous déconnecter et de vous reconnecter (ce qui télécharge votre nouvelle clé de chiffrement) pourrait entraîner une corruption des données. Nous allons essayer de vous déconnecter automatiquement, mais cela demande un peu de temps."
+  },
+  "updateEncryptionKeyExportWarning": {
+    "message": "Tous les exports chiffrés que vous avez enregistrés deviendront également invalides."
+  },
+  "subscription": {
+    "message": "Abonnement"
+  },
+  "loading": {
+    "message": "Chargement"
+  },
+  "upgrade": {
+    "message": "Mettre à niveau"
+  },
+  "upgradeOrganization": {
+    "message": "Mettre à niveau l'organisation"
+  },
+  "upgradeOrganizationDesc": {
+    "message": "Cette fonctionnalité n'est pas disponible pour les organisations gratuites. Passez à une offre payante pour débloquer plus de fonctionnalités."
+  },
+  "createOrganizationStep1": {
+    "message": "Créer une organisation : Étape 1"
+  },
+  "createOrganizationCreatePersonalAccount": {
+    "message": "Avant de créer votre organisation, vous devez d’abord créer un compte personnel gratuit."
+  },
+  "refunded": {
+    "message": "Remboursé"
+  },
+  "nothingSelected": {
+    "message": "Vous n'avez rien sélectionné."
+  },
+  "acceptPolicies": {
+    "message": "En cochant cette case, vous acceptez les éléments suivants :"
+  },
+  "acceptPoliciesError": {
+    "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
+  },
+  "termsOfService": {
+    "message": "Conditions d'utilisation"
+  },
+  "privacyPolicy": {
+    "message": "Politique de confidentialité"
+  },
+  "filters": {
+    "message": "Filtres"
+  },
+  "vaultTimeout": {
+    "message": "Délai d'expiration du coffre"
+  },
+  "vaultTimeoutDesc": {
+    "message": "Choisissez quand votre coffre expirera et effectuera l'action sélectionnée."
+  },
+  "oneMinute": {
+    "message": "1 minute"
+  },
+  "fiveMinutes": {
+    "message": "5 minutes"
+  },
+  "fifteenMinutes": {
+    "message": "15 minutes"
+  },
+  "thirtyMinutes": {
+    "message": "30 minutes"
+  },
+  "oneHour": {
+    "message": "1 heure"
+  },
+  "fourHours": {
+    "message": "4 heures"
+  },
+  "onRefresh": {
+    "message": "Au rechargement de la page"
+  },
+  "dateUpdated": {
+    "message": "Mis à jour",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Mot de passe mis à jour",
+    "description": "ex. Date this password was updated"
+  },
+  "organizationIsDisabled": {
+    "message": "L'organisation est désactivée."
+  },
+  "licenseIsExpired": {
+    "message": "La licence a expiré."
+  },
+  "updatedUsers": {
+    "message": "Utilisateurs mis à jour"
+  },
+  "selected": {
+    "message": "Sélectionné(s)"
+  },
+  "ownership": {
+    "message": "Propriété"
+  },
+  "whoOwnsThisItem": {
+    "message": "À qui appartient cet élément ?"
+  },
+  "strong": {
+    "message": "Fort",
+    "description": "ex. A strong password. Scale: Very Weak -> Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Suffisant",
+    "description": "ex. A good password. Scale: Very Weak -> Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Faible",
+    "description": "ex. A weak password. Scale: Very Weak -> Weak -> Good -> Strong"
+  },
+  "veryWeak": {
+    "message": "Très faible",
+    "description": "ex. A very weak password. Scale: Very Weak -> Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Mot de passe maître faible"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr de vouloir utiliser ce mot de passe maître ?"
+  },
+  "rotateAccountEncKey": {
+    "message": "Révoquer également la clé de chiffrement de mon compte"
+  },
+  "rotateEncKeyTitle": {
+    "message": "Révoquer la clé de chiffrement"
+  },
+  "rotateEncKeyConfirmation": {
+    "message": "Êtes-vous sûr de vouloir révoquer la clé de chiffrement de votre compte ?"
+  },
+  "attachmentsNeedFix": {
+    "message": "Cet élément a d'anciennes pièces jointes qui doivent être réparées."
+  },
+  "attachmentFixDesc": {
+    "message": "Il s'agit d'une ancienne pièce jointe qui doit être réparée. Cliquez pour en savoir plus."
+  },
+  "fix": {
+    "message": "Réparer",
+    "description": "This is a verb. ex. 'Fix The Car'"
+  },
+  "oldAttachmentsNeedFixDesc": {
+    "message": "Il y a d'anciennes pièces jointes dans votre coffre qui doivent être réparées avant que vous ne puissiez révoquer la clé de chiffrement de votre compte."
+  },
+  "yourAccountsFingerprint": {
+    "message": "La phrase d'empreinte de votre compte",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintEnsureIntegrityVerify": {
+    "message": "Pour assurer l'intégrité de vos clés de chiffrement, merci de saisir la phrase d'empreinte de l'utilisateur avant de continuer.",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "dontAskFingerprintAgain": {
+    "message": "Ne jamais demander de vérifier la phrase d'empreinte pour les utilisateurs invités (non recommandé)",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "free": {
+    "message": "Gratuit",
+    "description": "Free, as in 'Free beer'"
+  },
+  "apiKey": {
+    "message": "Clé d'API"
+  },
+  "apiKeyDesc": {
+    "message": "Votre clé d'API peut être utilisée pour s'authentifier auprès de l'API publique Bitwarden."
+  },
+  "apiKeyRotateDesc": {
+    "message": "Révoquer la clé d'API invalidera la clé précédente. Vous pouvez révoquer votre clé d'API si vous pensez que la clé actuelle a été compromise."
+  },
+  "apiKeyWarning": {
+    "message": "Votre clé d'API a un accès complet à l'organisation. Elle doit être gardée secrète."
+  },
+  "userApiKeyDesc": {
+    "message": "Votre clé d'API peut être utilisée pour vous authentifier dans l'interface ligne de commande (CLI) de Bitwarden."
+  },
+  "userApiKeyWarning": {
+    "message": "Votre clé d'API est un mécanisme d'authentification alternatif. Elle doit être gardée secrète."
+  },
+  "oauth2ClientCredentials": {
+    "message": "Identifiants du client OAuth 2.0",
+    "description": "'OAuth 2.0' is a programming protocol. It should probably not be translated."
+  },
+  "viewApiKey": {
+    "message": "Voir la clé d'API"
+  },
+  "rotateApiKey": {
+    "message": "Révoquer la clé d'API"
+  },
+  "selectOneCollection": {
+    "message": "Vous devez sélectionner au moins une collection."
+  },
+  "couldNotChargeCardPayInvoice": {
+    "message": "Nous n'avons pas pu compléter le paiement sur votre carte. Veuillez consulter et payer la facture impayée ci-dessous."
+  },
+  "inAppPurchase": {
+    "message": "Achat intégré"
+  },
+  "cannotPerformInAppPurchase": {
+    "message": "Vous ne pouvez pas effectuer cette action tant que vous utilisez les achats intégrés comme méthode de paiement."
+  },
+  "manageSubscriptionFromStore": {
+    "message": "Vous devez gérer votre abonnement à partir du magasin d’applications où votre achat intégré a été souscrit."
+  },
+  "minLength": {
+    "message": "Longueur minimale"
+  },
+  "clone": {
+    "message": "Cloner"
+  },
+  "masterPassPolicyDesc": {
+    "message": "Définir des exigences minimales pour la force du mot de passe maître."
+  },
+  "twoStepLoginPolicyDesc": {
+    "message": "Exiger que les utilisateurs définissent une connexion en deux étapes sur leurs comptes personnels."
+  },
+  "twoStepLoginPolicyWarning": {
+    "message": "Les membres de l'organisation (hors propriétaires et administrateurs) qui n'ont pas activé la connexion en deux étapes sur leur compte personnel seront supprimés de l'organisation et recevront un courriel les informant du changement."
+  },
+  "twoStepLoginPolicyUserWarning": {
+    "message": "Vous êtes membre d'une organisation qui nécessite que la connexion en deux étapes soit activée sur votre compte utilisateur. Si vous désactivez tous les fournisseurs de connexion en deux étapes, vous serez automatiquement retiré de ces organisations."
+  },
+  "passwordGeneratorPolicyDesc": {
+    "message": "Définir les exigences minimales pour la configuration du générateur de mot de passe."
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Une ou plusieurs politiques d'organisation affectent les paramètres de votre générateur."
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "Une ou plusieurs politiques de l'organisation exigent que votre mot de passe maître réponde aux exigences suivantes :"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Score de complexité minimum de $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Longueur minimale de $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contenir une ou plusieurs majuscules"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contenir une ou plusieurs minuscules"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contenir un ou plusieurs chiffres"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contenir un ou plusieurs des caractères spéciaux suivants $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Votre nouveau mot de passe maître ne répond pas aux exigences de la politique."
+  },
+  "minimumNumberOfWords": {
+    "message": "Nombre minimum de mots"
+  },
+  "defaultType": {
+    "message": "Type par défaut"
+  },
+  "userPreference": {
+    "message": "Choix laissé à l'utilisateur"
+  },
+  "vaultTimeoutAction": {
+    "message": "Action lors de l'expiration du délai du coffre"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "Un coffre verrouillé requiert la saisie de votre mot de passe maître pour y avoir à nouveau accès."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "Un coffre déconnecté nécessite que vous vous ré-authentifiez pour y accéder de nouveau."
+  },
+  "lock": {
+    "message": "Verrouiller",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Corbeille",
+    "description": "Noun: A special folder for holding deleted items that have not yet been permanently deleted"
+  },
+  "searchTrash": {
+    "message": "Rechercher dans la corbeille"
+  },
+  "permanentlyDelete": {
+    "message": "Supprimer définitivement"
+  },
+  "permanentlyDeleteSelected": {
+    "message": "Supprimer définitivement la sélection"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Supprimer définitivement l'élément"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer définitivement cet élément ?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Élément supprimé définitivement"
+  },
+  "permanentlyDeletedItems": {
+    "message": "Éléments supprimés définitivement"
+  },
+  "permanentlyDeleteSelectedItemsDesc": {
+    "message": "Vous avez sélectionné $COUNT$ élément(s) à supprimer définitivement. Êtes-vous sûr de vouloir supprimer définitivement tous ces éléments ?",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "permanentlyDeletedItemId": {
+    "message": "Élément $ID$ supprimé définitivement.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "restore": {
+    "message": "Restaurer"
+  },
+  "restoreSelected": {
+    "message": "Restaurer la sélection"
+  },
+  "restoreItem": {
+    "message": "Restaurer l'élément"
+  },
+  "restoredItem": {
+    "message": "Élément restauré"
+  },
+  "restoredItems": {
+    "message": "Éléments restaurés"
+  },
+  "restoreItemConfirmation": {
+    "message": "Êtes-vous sûr de vouloir restaurer cet élément ?"
+  },
+  "restoreItems": {
+    "message": "Restaurer les éléments"
+  },
+  "restoreSelectedItemsDesc": {
+    "message": "Vous avez sélectionné $COUNT$ élément(s) à restaurer. Êtes-vous sûr de vouloir restaurer tous ces éléments ?",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "restoredItemId": {
+    "message": "Élément $ID$ restauré.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "La déconnexion supprimera tous les accès à votre coffre et nécessite une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Confirmation de l'action lors de l'expiration du délai"
+  },
+  "hidePasswords": {
+    "message": "Masquer les mots de passe"
+  },
+  "countryPostalCodeRequiredDesc": {
+    "message": "Nous avons besoin de ces renseignements seulement pour calculer les taxes de vente et compléter les rapports financiers."
+  },
+  "includeVAT": {
+    "message": "Inclure des informations pour la TVA/TPS (facultatif)"
+  },
+  "taxIdNumber": {
+    "message": "Identifiant TVA/TPS"
+  },
+  "taxInfoUpdated": {
+    "message": "Informations sur les taxes mises à jour."
+  },
+  "setMasterPassword": {
+    "message": "Définir le mot de passe maître"
+  },
+  "ssoCompleteRegistration": {
+    "message": "Afin de terminer la connexion avec SSO, veuillez définir un mot de passe maître pour accéder à votre coffre et le protéger."
+  },
+  "identifier": {
+    "message": "Identifiant"
+  },
+  "organizationIdentifier": {
+    "message": "Identifiant de l'organisation"
+  },
+  "ssoLogInWithOrgIdentifier": {
+    "message": "Connectez-vous en utilisant le portail de connexion unique de votre organisation. Veuillez entrer l'identifiant de votre organisation pour commencer."
+  },
+  "enterpriseSingleSignOn": {
+    "message": "Portail de connexion unique d'entreprise (Single Sign-On)"
+  },
+  "ssoHandOff": {
+    "message": "Vous pouvez maintenant fermer cet onglet et continuer dans l'extension."
+  },
+  "includeAllTeamsFeatures": {
+    "message": "Toutes les fonctionnalités pour les équipes, plus :"
+  },
+  "includeSsoAuthentication": {
+    "message": "Authentification SSO via SAML2.0 et OpenID Connect"
+  },
+  "includeEnterprisePolicies": {
+    "message": "Politiques d'entreprise"
+  },
+  "ssoValidationFailed": {
+    "message": "Échec de la validation SSO"
+  },
+  "ssoIdentifierRequired": {
+    "message": "L'identifiant de l'organisation est requis."
+  },
+  "unlinkSso": {
+    "message": "Délier SSO"
+  },
+  "unlinkSsoConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer le lien SSO pour cette organisation?"
+  },
+  "linkSso": {
+    "message": "Lier SSO"
+  },
+  "singleOrg": {
+    "message": "Organisation Unique"
+  },
+  "singleOrgDesc": {
+    "message": "Empêcher les utilisateurs de pouvoir rejoindre d'autres organisations."
+  },
+  "singleOrgBlockCreateMessage": {
+    "message": "Votre organisation actuelle a une politique qui ne vous permet pas de rejoindre plus d'une organisation. Veuillez contacter les administrateurs de votre organisation ou vous inscrire à partir d'un compte Bitwarden différent."
+  },
+  "singleOrgPolicyWarning": {
+    "message": "Les membres de l'organisation qui ne sont ni propriétaires ni administrateurs et qui sont déjà membres d'une autre organisation seront retirés de votre organisation."
+  },
+  "requireSso": {
+    "message": "Authentification par Connexion Unique (Single Sign-On)"
+  },
+  "requireSsoPolicyDesc": {
+    "message": "Exiger que les utilisateurs se connectent avec la méthode du portail de connexion unique d'entreprise."
+  },
+  "prerequisite": {
+    "message": "Prérequis"
+  },
+  "requireSsoPolicyReq": {
+    "message": "La politique d'entreprise \"Organisation Unique\" doit être activée avant d'activer cette politique."
+  },
+  "requireSsoPolicyReqError": {
+    "message": "La politique \"Organisation Unique\" n'est pas activée."
+  },
+  "requireSsoExemption": {
+    "message": "Les propriétaires et les administrateurs de l'organisation sont exonérés de l'application de cette politique."
+  },
+  "sendTypeFile": {
+    "message": "Fichier"
+  },
+  "sendTypeText": {
+    "message": "Texte"
+  },
+  "createSend": {
+    "message": "Créer un nouveau Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Modifier le Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send créé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send modifié",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send supprimé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deleteSend": {
+    "message": "Supprimer le Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deleteSendConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer ce Send ?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "whatTypeOfSend": {
+    "message": "De quel type de Send s'agit-il ?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletionDate": {
+    "message": "Date de suppression"
+  },
+  "deletionDateDesc": {
+    "message": "Le Send sera définitivement supprimé à la date et heure spécifiées.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Date d'expiration"
+  },
+  "expirationDateDesc": {
+    "message": "Si défini, l'accès à ce Send expirera à la date et heure spécifiées.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Nombre maximum d'accès"
+  },
+  "maxAccessCountDesc": {
+    "message": "Si défini, les utilisateurs ne seront plus en mesure d'accéder à ce Send une fois que le nombre maximum d'accès sera atteint.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Nombre d'accès actuel"
+  },
+  "sendPasswordDesc": {
+    "message": "Vous pouvez, si vous le souhaitez, exiger un mot de passe pour accéder à ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Notes privées à propos de ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "disabled": {
+    "message": "Désactivé"
+  },
+  "sendLink": {
+    "message": "Lien du Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLink": {
+    "message": "Copier le lien du Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "removePassword": {
+    "message": "Supprimer le mot de passe"
+  },
+  "removedPassword": {
+    "message": "Mot de passe supprimé"
+  },
+  "removePasswordConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer le mot de passe ?"
+  },
+  "hideEmail": {
+    "message": "Cacher mon adresse e-mail aux destinataires."
+  },
+  "disableThisSend": {
+    "message": "Désactiver ce Send pour que personne ne puisse y accéder.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "allSends": {
+    "message": "Tous les Sends"
+  },
+  "maxAccessCountReached": {
+    "message": "Nombre maximum d'accès atteint",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
+  },
+  "pendingDeletion": {
+    "message": "En attente de suppression"
+  },
+  "expired": {
+    "message": "Expiré"
+  },
+  "searchSends": {
+    "message": "Rechercher dans les Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendProtectedPassword": {
+    "message": "Ce Send est protégé par un mot de passe. Veuillez saisir le mot de passe ci-dessous pour continuer.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendProtectedPasswordDontKnow": {
+    "message": "Vous ne connaissez pas le mot de passe ? Demandez à l'expéditeur le mot de passe nécessaire pour accéder à ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendHiddenByDefault": {
+    "message": "Ce Send est masqué par défaut. Vous pouvez changer sa visibilité en utilisant le bouton ci-dessous.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "downloadFile": {
+    "message": "Télécharger le fichier"
+  },
+  "sendAccessUnavailable": {
+    "message": "Le Send que vous essayez d'accéder n'existe pas ou n'est plus disponible.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "missingSendFile": {
+    "message": "Le fichier associé à ce Send est introuvable.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "noSendsInList": {
+    "message": "Il n'y a aucun Send à afficher.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "emergencyAccess": {
+    "message": "Accès d'urgence"
+  },
+  "emergencyAccessDesc": {
+    "message": "Accorder et gérer l'accès d'urgence pour les contacts de confiance. Les contacts de confiance peuvent demander l'accès à votre compte pour l'afficher ou en prendre le contrôle en cas d'urgence. Visitez notre page d'aide pour plus d'informations et de détails sur le fonctionnement du partage à divulgation nulle de connaissance."
+  },
+  "emergencyAccessOwnerWarning": {
+    "message": "Vous êtes propriétaire d'une ou de plusieurs organisations. Si vous autorisez la prise de contrôle à un contact d'urgence, il sera en mesure d'utiliser toutes vos permissions de propriétaire après la prise de contrôle."
+  },
+  "trustedEmergencyContacts": {
+    "message": "Contacts d'urgence de confiance"
+  },
+  "noTrustedContacts": {
+    "message": "Vous n'avez pas encore ajouté de contacts d'urgence, invitez un contact de confiance pour commencer."
+  },
+  "addEmergencyContact": {
+    "message": "Ajouter un contact d'urgence"
+  },
+  "designatedEmergencyContacts": {
+    "message": "Désigné comme contact d'urgence"
+  },
+  "noGrantedAccess": {
+    "message": "Vous n'avez pas encore été désigné comme contact d'urgence pour qui que ce soit."
+  },
+  "inviteEmergencyContact": {
+    "message": "Inviter un contact d'urgence"
+  },
+  "editEmergencyContact": {
+    "message": "Modifier le contact d'urgence"
+  },
+  "inviteEmergencyContactDesc": {
+    "message": "Invitez un nouveau contact d'urgence en entrant l'adresse e-mail de leur compte Bitwarden ci-dessous. S'ils n'ont pas encore de compte Bitwarden, ils seront invités à en créer un."
+  },
+  "emergencyAccessRecoveryInitiated": {
+    "message": "Accès d'urgence initié"
+  },
+  "emergencyAccessRecoveryApproved": {
+    "message": "Accès d'urgence approuvé"
+  },
+  "viewDesc": {
+    "message": "Peut afficher tous les éléments dans votre propre coffre."
+  },
+  "takeover": {
+    "message": "Prise de contrôle"
+  },
+  "takeoverDesc": {
+    "message": "Peut réinitialiser votre compte avec un nouveau mot de passe maître."
+  },
+  "waitTime": {
+    "message": "Période d'attente"
+  },
+  "waitTimeDesc": {
+    "message": "Temps nécessaire avant d'accorder l'accès automatiquement."
+  },
+  "oneDay": {
+    "message": "1 jour"
+  },
+  "days": {
+    "message": "$DAYS$ jours",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "invitedUser": {
+    "message": "Utilisateur invité."
+  },
+  "acceptEmergencyAccess": {
+    "message": "Vous avez été invité à devenir un contact d'urgence pour l'utilisateur indiqué ci-dessus. Pour accepter l'invitation, vous devez vous connecter ou créer un nouveau compte Bitwarden."
+  },
+  "emergencyInviteAcceptFailed": {
+    "message": "Impossible d'accepter l'invitation. Demandez à l'utilisateur d'envoyer une nouvelle invitation."
+  },
+  "emergencyInviteAcceptFailedShort": {
+    "message": "Impossible d'accepter l'invitation. $DESCRIPTION$",
+    "placeholders": {
+      "description": {
+        "content": "$1",
+        "example": "You must enable 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "emergencyInviteAcceptedDesc": {
+    "message": "Vous pourrez accéder aux options d'urgence pour cet utilisateur après la confirmation de votre identité. Nous vous enverrons un e-mail lorsque cela se produira."
+  },
+  "requestAccess": {
+    "message": "Demander l’accès"
+  },
+  "requestAccessConfirmation": {
+    "message": "Êtes-vous sûr de vouloir demander un accès d'urgence ? L'accès vous sera accordé après $WAITTIME$ jour(s) ou dès que l'utilisateur approuve manuellement la demande.",
+    "placeholders": {
+      "waittime": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "requestSent": {
+    "message": "Accès d'urgence demandé pour $USER$. Nous vous informerons par e-mail quand il sera possible de continuer.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "approve": {
+    "message": "Accepter"
+  },
+  "reject": {
+    "message": "Refuser"
+  },
+  "approveAccessConfirmation": {
+    "message": "Êtes-vous sûr de vouloir approuver l'accès d'urgence ? Cela accordera à $USER$ les permissions suivantes sur votre compte: $ACTION$.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      },
+      "action": {
+        "content": "$2",
+        "example": "View"
+      }
+    }
+  },
+  "emergencyApproved": {
+    "message": "Accès d'urgence approuvé."
+  },
+  "emergencyRejected": {
+    "message": "Accès d'urgence refusé."
+  },
+  "passwordResetFor": {
+    "message": "Réinitialisation du mot de passe pour $USER$. Vous pouvez maintenant vous connecter en utilisant le nouveau mot de passe.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "personalOwnership": {
+    "message": "Propriété individuelle"
+  },
+  "personalOwnershipPolicyDesc": {
+    "message": "Exiger que les utilisateurs enregistrent des éléments du coffre dans une organisation en retirant l'option de propriété individuelle."
+  },
+  "personalOwnershipExemption": {
+    "message": "Les propriétaires et les administrateurs de l'organisation sont exonérés de l'application de cette politique."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "En raison d'une politique d'entreprise, il vous est interdit d'enregistrer des éléments dans votre coffre personnel. Sélectionnez une organisation dans l'option Propriété et choisissez parmi les collections disponibles."
+  },
+  "disableSend": {
+    "message": "Désactiver le Send"
+  },
+  "disableSendPolicyDesc": {
+    "message": "Ne pas autoriser les utilisateurs à créer ou modifier un Send Bitwarden. La suppression d'un envoi existant est toujours autorisée.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "disableSendExemption": {
+    "message": "Les utilisateurs de l'organisation qui peuvent gérer les politiques de l'organisation sont exonérés de l'application de cette politique."
+  },
+  "sendDisabled": {
+    "message": "Send désactivé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "En raison d'une politique d'entreprise, vous ne pouvez que supprimer un Send existant.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendOptions": {
+    "message": "Options Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendOptionsPolicyDesc": {
+    "message": "Définir les options pour la création et la modification des Sends.",
+    "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendOptionsExemption": {
+    "message": "Les utilisateurs de l'organisation qui peuvent gérer les politiques de l'organisation sont exonérés de l'application de cette politique."
+  },
+  "disableHideEmail": {
+    "message": "Interdire aux utilisateurs de masquer leur adresse e-mail aux destinataires lors de la création ou de la modification d'un Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Les politiques d'organisation suivantes sont actuellement en vigueur :"
+  },
+  "sendDisableHideEmailInEffect": {
+    "message": "Les utilisateurs ne sont pas autorisés à masquer leur adresse e-mail aux destinataires lors de la création ou de la modification d'un Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "modifiedPolicyId": {
+    "message": "Politique $ID$ modifiée.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Master Password"
+      }
+    }
+  },
+  "planPrice": {
+    "message": "Prix du forfait"
+  },
+  "estimatedTax": {
+    "message": "Taxe estimée"
+  },
+  "custom": {
+    "message": "Personnalisé"
+  },
+  "customDesc": {
+    "message": "Permet un contrôle plus précis des permissions utilisateur pour les configurations avancées."
+  },
+  "permissions": {
+    "message": "Permissions"
+  },
+  "accessEventLogs": {
+    "message": "Accéder aux journaux d'événements"
+  },
+  "accessImportExport": {
+    "message": "Accéder aux options d'import et d'export"
+  },
+  "accessReports": {
+    "message": "Accéder aux rapports"
+  },
+  "missingPermissions": {
+    "message": "Vous n’avez pas les permissions requises pour accomplir cette action."
+  },
+  "manageAllCollections": {
+    "message": "Gérer toutes les collections"
+  },
+  "createNewCollections": {
+    "message": "Créer de nouvelles collections"
+  },
+  "editAnyCollection": {
+    "message": "Modifier n'importe quelle collection"
+  },
+  "deleteAnyCollection": {
+    "message": "Supprimer n'importe quelle collection"
+  },
+  "manageAssignedCollections": {
+    "message": "Gérer les collections assignées"
+  },
+  "editAssignedCollections": {
+    "message": "Modifier les collection assignées"
+  },
+  "deleteAssignedCollections": {
+    "message": "Supprimer les collections assignées"
+  },
+  "manageGroups": {
+    "message": "Gérer les groupes"
+  },
+  "managePolicies": {
+    "message": "Gérer les politiques"
+  },
+  "manageSso": {
+    "message": "Gérer le SSO"
+  },
+  "manageUsers": {
+    "message": "Gérer les utilisateurs"
+  },
+  "manageResetPassword": {
+    "message": "Gérer la réinitialisation du mot de passe"
+  },
+  "disableRequiredError": {
+    "message": "Afin de désactiver cette politique, vous devez préalablement manuellement désactiver la politique \"$POLICYNAME$\".",
+    "placeholders": {
+      "policyName": {
+        "content": "$1",
+        "example": "Single Sign-On Authentication"
+      }
+    }
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Une politique d'organisation affecte vos options de propriété."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "Une politique d'organisation a désactivé l'import d'éléments dans votre coffre personnel."
+  },
+  "personalOwnershipCheckboxDesc": {
+    "message": "Désactiver la propriété individuelle des utilisateurs de l'organisation"
+  },
+  "textHiddenByDefault": {
+    "message": "Lors de l'accès à ce Send, masquer le texte par défaut",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNameDesc": {
+    "message": "Un nom convivial pour décrire ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Le texte que vous voulez envoyer."
+  },
+  "sendFileDesc": {
+    "message": "Le fichier que vous voulez envoyer."
+  },
+  "copySendLinkOnSave": {
+    "message": "Copier le lien de ce Send dans mon presse-papiers lors de l'enregistrement."
+  },
+  "sendLinkLabel": {
+    "message": "Lien du Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "send": {
+    "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAccessTaglineProductDesc": {
+    "message": "Les Send Bitwarden permettent d'envoyer des informations sensibles et temporaires à d'autres, facilement et en toute sécurité.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAccessTaglineLearnMore": {
+    "message": "Apprenez-en plus sur",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more about** Bitwarden Send or sign up to try it today.'"
+  },
+  "sendVaultCardProductDesc": {
+    "message": "Partagez du texte ou des fichiers directement avec n'importe qui."
+  },
+  "sendVaultCardLearnMore": {
+    "message": "Apprenez-en plus",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more**, see how it works, or try it now. '"
+  },
+  "sendVaultCardSee": {
+    "message": "découvrez",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, **see** how it works, or try it now.'"
+  },
+  "sendVaultCardHowItWorks": {
+    "message": "comment cela fonctionne",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see **how it works**, or try it now.'"
+  },
+  "sendVaultCardOr": {
+    "message": "ou",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
+  },
+  "sendVaultCardTryItNow": {
+    "message": "essayez-le maintenant",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, or **try it now**.'"
+  },
+  "sendAccessTaglineOr": {
+    "message": "ou",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send **or** sign up to try it today.'"
+  },
+  "sendAccessTaglineSignUp": {
+    "message": "inscrivez-vous",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or **sign up** to try it today.'"
+  },
+  "sendAccessTaglineTryToday": {
+    "message": "pour l'essayer dès aujourd'hui.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
+  },
+  "sendCreatorIdentifier": {
+    "message": "L'utilisateur Bitwarden $USER_IDENTIFIER$ a partagé ce qui suit avec vous",
+    "placeholders": {
+      "user_identifier": {
+        "content": "$1",
+        "example": "An email address"
+      }
+    }
+  },
+  "viewSendHiddenEmailWarning": {
+    "message": "L'utilisateur Bitwarden qui a créé ce Send a choisi de masquer son adresse e-mail. Vous devez vous assurer que vous faites confiance à la source de ce lien avant d'utiliser ou de télécharger son contenu.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDateIsInvalid": {
+    "message": "La date d'expiration indiquée n'est pas valide."
+  },
+  "deletionDateIsInvalid": {
+    "message": "La date de suppression indiquée n'est pas valide."
+  },
+  "expirationDateAndTimeRequired": {
+    "message": "Une date et une heure d'expiration sont requises."
+  },
+  "deletionDateAndTimeRequired": {
+    "message": "Une date et une heure de suppression sont requises."
+  },
+  "dateParsingError": {
+    "message": "Une erreur s'est produite lors de l'enregistrement de vos dates de suppression et d'expiration."
+  },
+  "webAuthnFallbackMsg": {
+    "message": "Pour vérifier votre 2FA, veuillez cliquer sur le bouton ci-dessous."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authentifier WebAuthn"
+  },
+  "webAuthnNotSupported": {
+    "message": "WebAuthn n'est pas pris en charge dans ce navigateur."
+  },
+  "webAuthnSuccess": {
+    "message": "WebAuthn vérifié avec succès ! Vous pouvez fermer cet onglet."
+  },
+  "hintEqualsPassword": {
+    "message": "Votre indice de mot de passe ne peut pas être identique à votre mot de passe."
+  },
+  "enrollPasswordReset": {
+    "message": "S'inscrire à la réinitialisation du mot de passe"
+  },
+  "enrolledPasswordReset": {
+    "message": "Inscrit à la réinitialisation du mot de passe"
+  },
+  "withdrawPasswordReset": {
+    "message": "Se retirer de la réinitialisation du mot de passe"
+  },
+  "enrollPasswordResetSuccess": {
+    "message": "Inscription réussie !"
+  },
+  "withdrawPasswordResetSuccess": {
+    "message": "Retrait réussi !"
+  },
+  "eventEnrollPasswordReset": {
+    "message": "L'utilisateur $ID$ s'est inscrit à l'aide de réinitialisation du mot de passe.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "eventWithdrawPasswordReset": {
+    "message": "L'utilisateur $ID$ s'est retiré de l'aide à la réinitialisation du mot de passe.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "eventAdminPasswordReset": {
+    "message": "Réinitialisation du mot de passe maître pour l'utilisateur $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "eventResetSsoLink": {
+    "message": "Réinitialiser le lien SSO pour l'utilisateur $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "firstSsoLogin": {
+    "message": "$ID$ s'est connecté avec le SSO pour la première fois",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "resetPassword": {
+    "message": "Réinitialiser le mot de passe"
+  },
+  "resetPasswordLoggedOutWarning": {
+    "message": "En continuant, $NAME$ sera déconnecté de sa session actuelle, ce qui lui demandera de se reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "thisUser": {
+    "message": "cet utilisateur"
+  },
+  "resetPasswordMasterPasswordPolicyInEffect": {
+    "message": "Une ou plusieurs politiques de l'organisation exigent que le mot de passe maître réponde aux exigences suivantes :"
+  },
+  "resetPasswordSuccess": {
+    "message": "Mot de passe réinitialisé avec succès !"
+  },
+  "resetPasswordEnrollmentWarning": {
+    "message": "L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe maître. Êtes-vous sûr de vouloir vous inscrire ?"
+  },
+  "resetPasswordPolicy": {
+    "message": "Réinitialisation du mot de passe maître"
+  },
+  "resetPasswordPolicyDescription": {
+    "message": "Permettre aux administrateurs de l'organisation de réinitialiser le mot de passe maître des utilisateurs de l'organisation."
+  },
+  "resetPasswordPolicyWarning": {
+    "message": "Les utilisateurs de l'organisation devront s'inscrire personnellement ou être inscrits automatiquement avant que les administrateurs puissent réinitialiser leur mot de passe maître."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Inscription automatique"
+  },
+  "resetPasswordPolicyAutoEnrollDescription": {
+    "message": "Tous les utilisateurs seront automatiquement inscrits à la réinitialisation du mot de passe une fois leur invitation acceptée et n'auront pas la possibilité de refuser."
+  },
+  "resetPasswordPolicyAutoEnrollWarning": {
+    "message": "Les utilisateurs déjà dans l'organisation ne seront pas inscrits rétroactivement à la réinitialisation du mot de passe. Ils devront s'inscrire personnellement avant que les administrateurs puissent réinitialiser leur mot de passe maître."
+  },
+  "resetPasswordPolicyAutoEnrollCheckbox": {
+    "message": "Exiger que les nouveaux utilisateurs soient inscrits automatiquement"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Cette organisation a une politique d'entreprise qui vous inscrira automatiquement à la réinitialisation du mot de passe. L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe maître."
+  },
+  "resetPasswordOrgKeysError": {
+    "message": "Erreur lors du traitement de votre demande : \"Organization Keys response is null\""
+  },
+  "resetPasswordDetailsError": {
+    "message": "Erreur lors du traitement de votre demande : \"Reset Password Details response is null\""
+  },
+  "trashCleanupWarning": {
+    "message": "Les éléments présents dans la corbeille depuis plus de 30 jours seront automatiquement supprimés."
+  },
+  "trashCleanupWarningSelfHosted": {
+    "message": "Les éléments présents dans la corbeille depuis un moment seront automatiquement supprimés."
+  },
+  "passwordPrompt": {
+    "message": "Ressaisie du mot de passe maître"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmation du mot de passe maître"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Cette action est protégée. Pour continuer, veuillez ressaisir votre mot de passe maître pour vérifier votre identité."
+  },
+  "reinviteSelected": {
+    "message": "Renvoyer les invitations"
+  },
+  "noSelectedUsersApplicable": {
+    "message": "Cette action n'est applicable à aucun des utilisateurs sélectionnés."
+  },
+  "removeUsersWarning": {
+    "message": "Êtes-vous sûr de vouloir supprimer les utilisateurs suivants ? Le processus peut prendre quelques secondes et ne peut être interrompu ou annulé."
+  },
+  "theme": {
+    "message": "Thème"
+  },
+  "themeDesc": {
+    "message": "Choisissez un thème pour votre coffre web."
+  },
+  "themeSystem": {
+    "message": "Utiliser le thème du système"
+  },
+  "themeDark": {
+    "message": "Sombre"
+  },
+  "themeLight": {
+    "message": "Clair"
+  },
+  "confirmSelected": {
+    "message": "Confirmer la sélection"
+  },
+  "bulkConfirmStatus": {
+    "message": "Statut de l'action de masse"
+  },
+  "bulkConfirmMessage": {
+    "message": "Confirmé avec succès."
+  },
+  "bulkReinviteMessage": {
+    "message": "Réinvité avec succès."
+  },
+  "bulkRemovedMessage": {
+    "message": "Supprimé avec succès"
+  },
+  "bulkFilteredMessage": {
+    "message": "Exclu, non applicable pour cette action."
+  },
+  "fingerprint": {
+    "message": "Empreinte"
+  },
+  "removeUsers": {
+    "message": "Supprimer les utilisateurs"
+  },
+  "error": {
+    "message": "Erreur"
+  },
+  "resetPasswordManageUsers": {
+    "message": "La permission \"Gérer la réinitialisation du mot de passe\" requiert l'activation de la permission \"Gérer les utilisateurs\""
+  },
+  "setupProvider": {
+    "message": "Configuration du fournisseur"
+  },
+  "setupProviderLoginDesc": {
+    "message": "Vous avez été invité à configurer un nouveau fournisseur. Pour continuer, vous devez vous connecter ou créer un nouveau compte Bitwarden."
+  },
+  "setupProviderDesc": {
+    "message": "Veuillez entrer les détails ci-dessous pour finaliser la configuration du fournisseur. Contactez le support client si vous avez des questions."
+  },
+  "providerName": {
+    "message": "Nom du fournisseur"
+  },
+  "providerSetup": {
+    "message": "Le fournisseur a été configuré."
+  },
+  "clients": {
+    "message": "Clients"
+  },
+  "providerAdmin": {
+    "message": "Administrateur du fournisseur"
+  },
+  "providerAdminDesc": {
+    "message": "L'utilisateur à l'accès le plus élevé. Il peut gérer tous les aspects de votre fournisseur ainsi que gérer les organisations clientes et y accéder."
+  },
+  "serviceUser": {
+    "message": "Utilisateur de service"
+  },
+  "serviceUserDesc": {
+    "message": "Les utilisateurs de service peuvent gérer toutes les organisations clientes et y accéder."
+  },
+  "providerInviteUserDesc": {
+    "message": "Invitez de nouveaux utilisateurs à votre fournisseur en entrant l'adresse e-mail de leur compte Bitwarden ci-dessous. S'ils n’ont pas déjà un compte Bitwarden, il leur sera demandé d'en créer un nouveau."
+  },
+  "joinProvider": {
+    "message": "Rejoindre le fournisseur"
+  },
+  "joinProviderDesc": {
+    "message": "Vous avez été invité à rejoindre le fournisseur ci-dessus. Pour accepter l'invitation, vous devez vous connecter ou créer un nouveau compte Bitwarden."
+  },
+  "providerInviteAcceptFailed": {
+    "message": "Impossible d'accepter l'invitation. Demandez à un administrateur du fournisseur d'envoyer une nouvelle invitation."
+  },
+  "providerInviteAcceptedDesc": {
+    "message": "Vous pourrez accéder à ce fournisseur dès qu'un administrateur aura confirmé votre inscription. Nous vous enverrons un e-mail lorsque ce sera fait."
+  },
+  "providerUsersNeedConfirmed": {
+    "message": "Il y a des utilisateurs qui ont accepté leur invitation, mais qui doivent encore être confirmés. Les utilisateurs n'auront pas accès au fournisseur tant qu'ils n'auront pas été confirmés."
+  },
+  "provider": {
+    "message": "Fournisseur"
+  },
+  "newClientOrganization": {
+    "message": "Nouvelle organisation cliente"
+  },
+  "newClientOrganizationDesc": {
+    "message": "Créez une nouvelle organisation cliente qui sera associée avec vous en tant que fournisseur. Vous pourrez accéder à cette organisation et la gérer."
+  },
+  "addExistingOrganization": {
+    "message": "Ajouter une organisation existante"
+  },
+  "myProvider": {
+    "message": "Mon fournisseur"
+  },
+  "addOrganizationConfirmation": {
+    "message": "Êtes-vous sûr de vouloir ajouter $ORGANIZATION$ comme cliente de $PROVIDER$?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      },
+      "provider": {
+        "content": "$2",
+        "example": "My Provider Name"
+      }
+    }
+  },
+  "organizationJoinedProvider": {
+    "message": "L'organisation a bien été ajoutée au fournisseur"
+  },
+  "accessingUsingProvider": {
+    "message": "Accès à l'organisation en utilisant le fournisseur $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "My Provider Name"
+      }
+    }
+  },
+  "providerIsDisabled": {
+    "message": "Le fournisseur est désactivé."
+  },
+  "providerUpdated": {
+    "message": "Fournisseur mis à jour"
+  },
+  "yourProviderIs": {
+    "message": "Votre fournisseur est $PROVIDER$. Ils ont des privilèges d'administration et de facturation pour votre organisation.",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "My Provider Name"
+      }
+    }
+  },
+  "detachedOrganization": {
+    "message": "L'organisation $ORGANIZATION$ a été détachée de votre fournisseur.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "detachOrganizationConfirmation": {
+    "message": "Êtes-vous sûr de vouloir détacher cette organisation ? L'organisation continuera d'exister mais ne sera plus gérée par le fournisseur."
+  },
+  "add": {
+    "message": "Ajouter"
+  },
+  "updatedMasterPassword": {
+    "message": "Mot de passe maître mis à jour"
+  },
+  "updateMasterPassword": {
+    "message": "Mettre à jour le mot de passe maître"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Votre mot de passe maître a récemment été modifié par un administrateur de votre organisation. Pour accéder au coffre, vous devez mettre à jour votre mot de passe maître dès maintenant. Cette action va vous déconnecter et vous obligera à vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
+  },
+  "masterPasswordInvalidWarning": {
+    "message": "Votre mot de passe maître ne répond pas aux exigences des politiques de cette organisation. Afin de rejoindre l'organisation, vous devez mettre à jour votre mot de passe maître maintenant. En continuant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives pendant encore une heure."
+  },
+  "maximumVaultTimeout": {
+    "message": "Délai d'expiration du coffre"
+  },
+  "maximumVaultTimeoutDesc": {
+    "message": "Configurer un délai maximum d'expiration du coffre pour tous les utilisateurs."
+  },
+  "maximumVaultTimeoutLabel": {
+    "message": "Délai maximum d'expiration du coffre"
+  },
+  "invalidMaximumVaultTimeout": {
+    "message": "Délai maximum d'expiration du coffre invalide."
+  },
+  "hours": {
+    "message": "Heures"
+  },
+  "minutes": {
+    "message": "Minutes"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "customVaultTimeout": {
+    "message": "Délai d'expiration du coffre personnalisé"
+  },
+  "vaultTimeoutToLarge": {
+    "message": "Le délai d'expiration de votre coffre-fort dépasse les restrictions définies par votre organisation."
+  },
+  "disablePersonalVaultExport": {
+    "message": "Désactiver l'export du coffre personnel"
+  },
+  "disablePersonalVaultExportDesc": {
+    "message": "Empêche les utilisateurs d'exporter les données de leur coffre privé."
+  },
+  "vaultExportDisabled": {
+    "message": "Export du coffre désactivé"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Une ou plusieurs politiques d'organisation vous empêchent d'exporter votre coffre personnel."
+  },
+  "selectType": {
+    "message": "Sélectionnez le type de SSO"
+  },
+  "type": {
+    "message": "Type"
+  },
+  "openIdConnectConfig": {
+    "message": "Configuration OpenID Connect"
+  },
+  "samlSpConfig": {
+    "message": "Configuration SAML Service Provider"
+  },
+  "samlIdpConfig": {
+    "message": "Configuration SAML Identity Provider"
+  },
+  "callbackPath": {
+    "message": "URL de callback"
+  },
+  "signedOutCallbackPath": {
+    "message": "URL de callback pour la déconnexion"
+  },
+  "authority": {
+    "message": "Autorité"
+  },
+  "clientId": {
+    "message": "Client ID"
+  },
+  "clientSecret": {
+    "message": "Client Secret"
+  },
+  "metadataAddress": {
+    "message": "Adresse des métadonnées"
+  },
+  "oidcRedirectBehavior": {
+    "message": "Comportement de la redirection OIDC"
+  },
+  "getClaimsFromUserInfoEndpoint": {
+    "message": "Récupérer les claims depuis l'endpoint d'informations utilisateur (User Info Endpoint)"
+  },
+  "additionalScopes": {
+    "message": "Scopes personnalisés"
+  },
+  "additionalUserIdClaimTypes": {
+    "message": "Types de claim personnalisés pour l'identifiant de l'utilisateur"
+  },
+  "additionalEmailClaimTypes": {
+    "message": "Types de claim pour l'e-mail"
+  },
+  "additionalNameClaimTypes": {
+    "message": "Types de claim personnalisés pour le nom"
+  },
+  "acrValues": {
+    "message": "Valeurs Authentication Context Class Reference demandées"
+  },
+  "expectedReturnAcrValue": {
+    "message": "Valeur attendue pour le claim \"acr\" dans la réponse"
+  },
+  "spEntityId": {
+    "message": "ID de l'entité du Service Provider"
+  },
+  "spMetadataUrl": {
+    "message": "SAML 2.0 Metadata URL"
+  },
+  "spAcsUrl": {
+    "message": "Assertion Consumer Service (ACS) URL"
+  },
+  "spNameIdFormat": {
+    "message": "Name ID Format"
+  },
+  "spOutboundSigningAlgorithm": {
+    "message": "Algorithme de signature sortant"
+  },
+  "spSigningBehavior": {
+    "message": "Comportement de la signature"
+  },
+  "spMinIncomingSigningAlgorithm": {
+    "message": "Algorithme de signature entrant minimal"
+  },
+  "spWantAssertionsSigned": {
+    "message": "Exiger des assertions signées"
+  },
+  "spValidateCertificates": {
+    "message": "Vérifier les certificats"
+  },
+  "idpEntityId": {
+    "message": "ID de l'entité"
+  },
+  "idpBindingType": {
+    "message": "Type de liaison"
+  },
+  "idpSingleSignOnServiceUrl": {
+    "message": "URL du service de connexion unique (SSO)"
+  },
+  "idpSingleLogoutServiceUrl": {
+    "message": "URL du service de déconnexion unique (SLO)"
+  },
+  "idpX509PublicCert": {
+    "message": "Certificat public X.509"
+  },
+  "idpOutboundSigningAlgorithm": {
+    "message": "Algorithme de signature sortant"
+  },
+  "idpAllowUnsolicitedAuthnResponse": {
+    "message": "Autoriser les réponses d'authentification non sollicitées"
+  },
+  "idpAllowOutboundLogoutRequests": {
+    "message": "Autoriser les demandes de déconnexion sortantes"
+  },
+  "idpSignAuthenticationRequests": {
+    "message": "Signer les demandes d'authentification"
+  },
+  "ssoSettingsSaved": {
+    "message": "La configuration SSO a été enregistrée."
+  },
+  "sponsoredFamilies": {
+    "message": "Bitwarden Familles gratuit"
+  },
+  "sponsoredFamiliesEligible": {
+    "message": "Vous et votre famille êtes éligibles pour profiter gratuitement de Bitwarden Familles. Utilisez votre adresse e-mail personnelle pour obtenir votre accès et garder vos données en sécurité même lorsque vous n'êtes pas au travail."
+  },
+  "sponsoredFamiliesEligibleCard": {
+    "message": "Obtenez votre abonnement Bitwarden Familles gratuit aujourd'hui pour garder vos données en sécurité même lorsque vous n'êtes pas au travail."
+  },
+  "sponsoredFamiliesInclude": {
+    "message": "L'abonnement Bitwarden Familles inclut"
+  },
+  "sponsoredFamiliesPremiumAccess": {
+    "message": "Accès premium pour un maximum de 6 utilisateurs"
+  },
+  "sponsoredFamiliesSharedCollections": {
+    "message": "Collections partagées pour les secrets de la famille"
+  },
+  "badToken": {
+    "message": "Le lien n'est plus valide. Merci de demander à votre parrain de renvoyer l'offre."
+  },
+  "reclaimedFreePlan": {
+    "message": "Abonnement gratuit récupéré"
+  },
+  "redeem": {
+    "message": "Obtenir"
+  },
+  "sponsoredFamiliesSelectOffer": {
+    "message": "Sélectionnez l'organisation que vous souhaiteriez voir parrainée"
+  },
+  "familiesSponsoringOrgSelect": {
+    "message": "Quelle offre Familles gratuite aimeriez-vous obtenir ?"
+  },
+  "sponsoredFamiliesEmail": {
+    "message": "Entrez votre adresse e-mail personnelle pour obtenir Bitwarden Familles"
+  },
+  "sponsoredFamiliesLeaveCopy": {
+    "message": "Si vous quittez ou que vous êtes retiré de l'organisation marraine, votre forfait Familles expirera à la fin de la période de facturation."
+  },
+  "acceptBitwardenFamiliesHelp": {
+    "message": "Acceptez l'offre pour une organisation existante ou créer une nouvelle organisation Familles."
+  },
+  "setupSponsoredFamiliesLoginDesc": {
+    "message": "Vous avez reçu un abonnement gratuit pour une organisation Bitwarden Familles. Pour continuer, vous devez vous connecter au compte qui a reçu l'offre."
+  },
+  "sponsoredFamiliesAcceptFailed": {
+    "message": "Impossible d'accepter l'offre. Veuillez renvoyer l'e-mail de l'offre depuis votre compte professionnel et réessayer."
+  },
+  "sponsoredFamiliesAcceptFailedShort": {
+    "message": "Impossible d'accepter l'offre. $DESCRIPTION$",
+    "placeholders": {
+      "description": {
+        "content": "$1",
+        "example": "You must have at least one existing Families Organization."
+      }
+    }
+  },
+  "sponsoredFamiliesOffer": {
+    "message": "Accepter l'offre Bitwarden Familles gratuite"
+  },
+  "sponsoredFamiliesOfferRedeemed": {
+    "message": "L'offre gratuite de Bitwarden Familles a été récupérée avec succès"
+  },
+  "redeemed": {
+    "message": "Obtenue"
+  },
+  "redeemedAccount": {
+    "message": "Compte récupéré"
+  },
+  "revokeAccount": {
+    "message": "Révoquer le compte $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "My Sponsorship Name"
+      }
+    }
+  },
+  "resendEmailLabel": {
+    "message": "Renvoyer l'e-mail d'invitation au parrainage \"$NAME$\"",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "My Sponsorship Name"
+      }
+    }
+  },
+  "freeFamiliesPlan": {
+    "message": "Abonnement gratuit à Bitwarden Familles"
+  },
+  "redeemNow": {
+    "message": "Obtenir maintenant"
+  },
+  "recipient": {
+    "message": "Destinataire"
+  },
+  "removeSponsorship": {
+    "message": "Supprimer le parrainage"
+  },
+  "removeSponsorshipConfirmation": {
+    "message": "Après avoir supprimé un parrainage, vous serez responsable de cet abonnement et des factures associées. Êtes-vous sûr de vouloir continuer ?"
+  },
+  "sponsorshipCreated": {
+    "message": "Parrainage créé"
+  },
+  "revoke": {
+    "message": "Révoquer"
+  },
+  "emailSent": {
+    "message": "E-mail envoyé"
+  },
+  "revokeSponsorshipConfirmation": {
+    "message": "Après avoir supprimé ce compte, le propriétaire de l'organisation Familles sera responsable de cet abonnement et des factures associées. Êtes-vous sûr de vouloir continuer ?"
+  },
+  "removeSponsorshipSuccess": {
+    "message": "Parrainage supprimé"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Impossible de contacter Key Connector, réessayez plus tard."
+  },
+  "keyConnectorUrl": {
+    "message": "URL de Key Connector"
+  },
+  "sendVerificationCode": {
+    "message": "Envoyer un code de vérification à votre adresse email"
+  },
+  "sendCode": {
+    "message": "Envoyer le code"
+  },
+  "codeSent": {
+    "message": "Code envoyé"
+  },
+  "verificationCode": {
+    "message": "Code de vérification"
+  },
+  "confirmIdentity": {
+    "message": "Confirmez votre identité pour continuer."
+  },
+  "verificationCodeRequired": {
+    "message": "Le code de vérification est requis."
+  },
+  "invalidVerificationCode": {
+    "message": "Code de vérification invalide"
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe maître n'est plus nécessaire aux membres de cette organisation pour se connecter.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Quitter l'organisation"
+  },
+  "removeMasterPassword": {
+    "message": "Supprimer le mot de passe maître"
+  },
+  "removedMasterPassword": {
+    "message": "Mot de passe maître supprimé."
+  },
+  "allowSso": {
+    "message": "Autoriser l'authentification SSO"
+  },
+  "allowSsoDesc": {
+    "message": "Une fois configuré, votre configuration sera enregistrée et les membres seront en mesure de s'authentifier en utilisant leurs identifiants de l'Identity Provider."
+  },
+  "ssoPolicyHelpStart": {
+    "message": "Activer la",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+  },
+  "ssoPolicyHelpLink": {
+    "message": "politique de connexion SSO",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+  },
+  "ssoPolicyHelpEnd": {
+    "message": "pour obliger tous les membres à se connecter avec SSO.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+  },
+  "ssoPolicyHelpKeyConnector": {
+    "message": "Les politiques \"Authentification SSO\" et \"Organisation Unique\" sont requises pour mettre en place le déchiffrement avec Key Connector."
+  },
+  "memberDecryptionOption": {
+    "message": "Options de déchiffrement des membres"
+  },
+  "memberDecryptionPassDesc": {
+    "message": "Une fois authentifiés, les membres déchiffreront les données du coffre en utilisant leur mot de passe maître."
+  },
+  "keyConnector": {
+    "message": "Key Connector"
+  },
+  "memberDecryptionKeyConnectorDesc": {
+    "message": "Connectez l'authentification SSO à votre serveur de clés de déchiffrement auto-hébergé. En utilisant cette option, les membres n'auront pas besoin d'utiliser leur mot de passe maître pour déchiffrer les données du coffre. Contactez le support Bitwarden pour une assistance à la configuration."
+  },
+  "keyConnectorPolicyRestriction": {
+    "message": "\"Connexion avec SSO et déchiffrement avec Key Connector\" est activé. Cette politique ne s'appliquera qu'aux propriétaires et aux administrateurs."
+  },
+  "enabledSso": {
+    "message": "SSO activé"
+  },
+  "disabledSso": {
+    "message": "SSO désactivé"
+  },
+  "enabledKeyConnector": {
+    "message": "Key Connector activé"
+  },
+  "disabledKeyConnector": {
+    "message": "Key Connector désactivé"
+  },
+  "keyConnectorWarning": {
+    "message": "Dès que les membres de votre organisation commencent à utiliser Key Connector, votre organisation ne peut pas revenir au déchiffrement avec mot de passe maître. Ne continuez que si vous êtes à l'aise avec le déploiement et la maintenance d'un serveur de clés."
+  },
+  "migratedKeyConnector": {
+    "message": "Migré vers Key Connector"
+  },
+  "paymentSponsored": {
+    "message": "Veuillez fournir un moyen de paiement à associer à l'organisation. Ne vous inquiétez pas, nous ne vous facturerons rien à moins que vous ne sélectionniez des fonctionnalités supplémentaires ou que votre parrainage expire. "
+  },
+  "orgCreatedSponsorshipInvalid": {
+    "message": "L'offre de parrainage a expiré, vous pouvez supprimer l'organisation que vous avez créée pour éviter d'être facturé à la fin de votre essai de 7 jours. Dans le cas contraire, vous pouvez fermer ce message pour conserver l'organisation et assumer la responsabilité de la facturation."
+  },
+  "newFamiliesOrganization": {
+    "message": "Nouvelle organisation Familles"
+  },
+  "acceptOffer": {
+    "message": "Accepter l'offre"
+  },
+  "sponsoringOrg": {
+    "message": "Organisation marraine"
+  },
+  "keyConnectorTest": {
+    "message": "Test"
+  },
+  "keyConnectorTestSuccess": {
+    "message": "Succès! Key Connector atteint."
+  },
+  "keyConnectorTestFail": {
+    "message": "Impossible d'atteindre Key Connector. Vérifiez l'URL."
+  },
+  "sponsorshipTokenHasExpired": {
+    "message": "L'offre de parrainage a expiré."
+  },
+  "freeWithSponsorship": {
+    "message": "GRATUIT avec le parrainage"
+  },
+  "formErrorSummaryPlural": {
+    "message": "$COUNT$ champs ci-dessus nécessitent votre attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "formErrorSummarySingle": {
+    "message": "1 champ ci-dessus nécessite votre attention."
+  },
+  "fieldRequiredError": {
+    "message": "$FIELDNAME$ est requis.",
+    "placeholders": {
+      "fieldname": {
+        "content": "$1",
+        "example": "Full name"
+      }
+    }
+  },
+  "required": {
+    "message": "requis"
+  },
+  "idpSingleSignOnServiceUrlRequired": {
+    "message": "Requis si l'ID d'Entité n'est pas une URL."
+  },
+  "openIdOptionalCustomizations": {
+    "message": "Personnalisations Optionnelles"
+  },
+  "openIdAuthorityRequired": {
+    "message": "Requis si l'Autorité n'est pas valide."
+  },
+  "separateMultipleWithComma": {
+    "message": "Séparer avec des virgules."
+  },
+  "sessionTimeout": {
+    "message": "Votre session a expiré. Veuillez revenir en arrière et essayer de vous connecter à nouveau."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Export du coffre personnel"
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Export du coffre de l'organisation"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Seuls les éléments du coffre personnel associé à l'adresse e-mail $EMAIL$ seront exportés. Les éléments du coffre de l'organisation ne seront pas inclus.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultDescription": {
+    "message": "Seul le coffre de l'organisation associé à $ORGANIZATION$ sera exporté. Les éléments du coffre personnel et les éléments d'autres organisations ne seront pas inclus.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "backToReports": {
+    "message": "Retour aux Rapports"
+  },
+  "generator": {
+    "message": "Générateur"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Que souhaitez-vous générer ?"
+  },
+  "passwordType": {
+    "message": "Type de Mot de Passe"
+  },
+  "regenerateUsername": {
+    "message": "Régénérer le Nom d'Utilisateur"
+  },
+  "generateUsername": {
+    "message": "Générer le Nom d'Utilisateur"
+  },
+  "usernameType": {
+    "message": "Type de Nom d'Utilisateur"
+  },
+  "plusAddressedEmail": {
+    "message": "Courriel Adressé Plus",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Utilisez les capacités de sous-adressage de votre fournisseur de messagerie."
+  },
+  "catchallEmail": {
+    "message": "Collecteur d'Email (catch-all)"
+  },
+  "catchallEmailDesc": {
+    "message": "Utilisez la boîte de réception du collecteur (catch-all) configurée de votre domaine."
+  },
+  "random": {
+    "message": "Aléatoire"
+  },
+  "randomWord": {
+    "message": "Mot Aléatoire"
+  },
+  "service": {
+    "message": "Service"
+  }
+}

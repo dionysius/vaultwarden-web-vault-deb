@@ -13,3 +13,8 @@ apps/browser/src/scripts/duo.js
 
 apps/desktop/desktop_native
 apps/desktop/src/scripts/duo.js
+
+apps/web/config.js
+apps/web/scripts/*.js
+apps/web/src/theme.js
+apps/web/tailwind.config.js

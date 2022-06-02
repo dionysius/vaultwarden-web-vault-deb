@@ -1,0 +1,4882 @@
+{
+  "pageTitle": {
+    "message": "$APP_NAME$ Reta Volbo",
+    "description": "The title of the website in the browser window.",
+    "placeholders": {
+      "app_name": {
+        "content": "$1",
+        "example": "Bitwarden"
+      }
+    }
+  },
+  "whatTypeOfItem": {
+    "message": "Kia speco de ero estas ĉi tio?"
+  },
+  "name": {
+    "message": "Nomo"
+  },
+  "uri": {
+    "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "Nova URI"
+  },
+  "username": {
+    "message": "Uzantnomo"
+  },
+  "password": {
+    "message": "Pasvorto"
+  },
+  "newPassword": {
+    "message": "Nova pasvorto"
+  },
+  "passphrase": {
+    "message": "Pasfrazo"
+  },
+  "notes": {
+    "message": "Notoj"
+  },
+  "customFields": {
+    "message": "Propraj Kampoj"
+  },
+  "cardholderName": {
+    "message": "Nomo de Kartposedanto"
+  },
+  "number": {
+    "message": "Numero"
+  },
+  "brand": {
+    "message": "Marko"
+  },
+  "expiration": {
+    "message": "Finiĝo"
+  },
+  "securityCode": {
+    "message": "Sekureca Kodo (CVV)"
+  },
+  "identityName": {
+    "message": "Identeca Nomo"
+  },
+  "company": {
+    "message": "Kompanio"
+  },
+  "ssn": {
+    "message": "Socia Sekureca Numero"
+  },
+  "passportNumber": {
+    "message": "Pasporta Numero"
+  },
+  "licenseNumber": {
+    "message": "Permesila Numero"
+  },
+  "email": {
+    "message": "Retpoŝto"
+  },
+  "phone": {
+    "message": "Telefono"
+  },
+  "january": {
+    "message": "januaro"
+  },
+  "february": {
+    "message": "februaro"
+  },
+  "march": {
+    "message": "marto"
+  },
+  "april": {
+    "message": "aprilo"
+  },
+  "may": {
+    "message": "majo"
+  },
+  "june": {
+    "message": "junio"
+  },
+  "july": {
+    "message": "julio"
+  },
+  "august": {
+    "message": "aŭgusto"
+  },
+  "september": {
+    "message": "septembro"
+  },
+  "october": {
+    "message": "oktobro"
+  },
+  "november": {
+    "message": "novembro"
+  },
+  "december": {
+    "message": "decembro"
+  },
+  "title": {
+    "message": "Titolo"
+  },
+  "mr": {
+    "message": "S-ro"
+  },
+  "mrs": {
+    "message": "Sinjorino"
+  },
+  "ms": {
+    "message": "Sinjorino"
+  },
+  "dr": {
+    "message": "Dr"
+  },
+  "expirationMonth": {
+    "message": "Finiĝa Monato"
+  },
+  "expirationYear": {
+    "message": "Finiĝa Jaro"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Aŭtentiga Ŝlosilo (TOTP)"
+  },
+  "folder": {
+    "message": "Dosierujo"
+  },
+  "newCustomField": {
+    "message": "Nova Propra Kampo"
+  },
+  "value": {
+    "message": "Valoro"
+  },
+  "dragToSort": {
+    "message": "Trenu por ordigi"
+  },
+  "cfTypeText": {
+    "message": "Teksto"
+  },
+  "cfTypeHidden": {
+    "message": "Kaŝita"
+  },
+  "cfTypeBoolean": {
+    "message": "Bulea"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "remove": {
+    "message": "Forigi"
+  },
+  "unassigned": {
+    "message": "Neasignita"
+  },
+  "noneFolder": {
+    "message": "Neniu dosierujo",
+    "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "Aldoni dosierujon"
+  },
+  "editFolder": {
+    "message": "Redakti dosierujon"
+  },
+  "baseDomain": {
+    "message": "Baza domajno",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domain Name",
+    "description": "Domain name. Ex. website.com"
+  },
+  "host": {
+    "message": "Gastiganto",
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Ĝusta"
+  },
+  "startsWith": {
+    "message": "Komencas per"
+  },
+  "regEx": {
+    "message": "Regula esprimo",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Match",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Defaŭlta kongrua detekto",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "never": {
+    "message": "Neniam"
+  },
+  "toggleVisibility": {
+    "message": "Baskuli videblecon"
+  },
+  "toggleCollapse": {
+    "message": "Baskuli Fali",
+    "description": "Toggling an expand/collapse state."
+  },
+  "generatePassword": {
+    "message": "Generi Pasvorton"
+  },
+  "checkPassword": {
+    "message": "Kontrolu ĉu pasvorto estis elmontrita."
+  },
+  "passwordExposed": {
+    "message": "Ĉi tiu pasvorto estis elmontrita $VALUE$ tempo (j) en datumaj rompoj. Vi devas ŝanĝi ĝin.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "Ĉi tiu pasvorto ne troviĝis en iuj konataj rompo de datumoj. Ĝi estu sekure uzebla."
+  },
+  "save": {
+    "message": "Konservi"
+  },
+  "cancel": {
+    "message": "Nuligi"
+  },
+  "canceled": {
+    "message": "Nuligita"
+  },
+  "close": {
+    "message": "Fermi"
+  },
+  "delete": {
+    "message": "Forigi"
+  },
+  "favorite": {
+    "message": "Plej ŝatata"
+  },
+  "unfavorite": {
+    "message": "Malfavoras"
+  },
+  "edit": {
+    "message": "Redakti"
+  },
+  "searchCollection": {
+    "message": "Serĉi Kolekton"
+  },
+  "searchFolder": {
+    "message": "Serĉi dosierujon"
+  },
+  "searchFavorites": {
+    "message": "Serĉi Favoratojn"
+  },
+  "searchType": {
+    "message": "Serĉspeco",
+    "description": "Search item type"
+  },
+  "searchVault": {
+    "message": "Serĉi Volbon"
+  },
+  "allItems": {
+    "message": "Ĉiuj Eroj"
+  },
+  "favorites": {
+    "message": "Ŝatataj"
+  },
+  "types": {
+    "message": "Tipoj"
+  },
+  "typeLogin": {
+    "message": "Ensaluti"
+  },
+  "typeCard": {
+    "message": "Karto"
+  },
+  "typeIdentity": {
+    "message": "Identeco"
+  },
+  "typeSecureNote": {
+    "message": "Sekura Noto"
+  },
+  "typeLoginPlural": {
+    "message": "Logins"
+  },
+  "typeCardPlural": {
+    "message": "Cards"
+  },
+  "typeIdentityPlural": {
+    "message": "Identities"
+  },
+  "typeSecureNotePlural": {
+    "message": "Secure Notes"
+  },
+  "folders": {
+    "message": "Dosierujoj"
+  },
+  "collections": {
+    "message": "Kolektoj"
+  },
+  "firstName": {
+    "message": "Antaŭnomo"
+  },
+  "middleName": {
+    "message": "Meza nomo"
+  },
+  "lastName": {
+    "message": "Lasta nomo"
+  },
+  "fullName": {
+    "message": "Full Name"
+  },
+  "address1": {
+    "message": "Adreso 1"
+  },
+  "address2": {
+    "message": "Adreso 2"
+  },
+  "address3": {
+    "message": "Adreso 3"
+  },
+  "cityTown": {
+    "message": "Urbo / Urbo"
+  },
+  "stateProvince": {
+    "message": "Ŝtato / Provinco"
+  },
+  "zipPostalCode": {
+    "message": "Poŝtkodo / Poŝtkodo"
+  },
+  "country": {
+    "message": "Lando"
+  },
+  "shared": {
+    "message": "Kunhavigita"
+  },
+  "attachments": {
+    "message": "Aldonaĵoj"
+  },
+  "select": {
+    "message": "Elektu"
+  },
+  "addItem": {
+    "message": "Aldoni Artikolon"
+  },
+  "editItem": {
+    "message": "Redakti Artikolon"
+  },
+  "viewItem": {
+    "message": "Vidigi Artikolon"
+  },
+  "ex": {
+    "message": "ekz.",
+    "description": "Short abbreviation for 'example'."
+  },
+  "other": {
+    "message": "Aliaj"
+  },
+  "share": {
+    "message": "Kunhavigi"
+  },
+  "moveToOrganization": {
+    "message": "Move to Organization"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ kopiita",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "copyValue": {
+    "message": "Kopii valoron",
+    "description": "Copy value to clipboard"
+  },
+  "copyPassword": {
+    "message": "Kopii pasvorton",
+    "description": "Copy password to clipboard"
+  },
+  "copyUsername": {
+    "message": "Kopii uzantnomon",
+    "description": "Copy username to clipboard"
+  },
+  "copyNumber": {
+    "message": "Kopii Numeron",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "Kopiu Sekureckodon",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "copyUri": {
+    "message": "Kopii URI",
+    "description": "Copy URI to clipboard"
+  },
+  "myVault": {
+    "message": "Mia Volbo"
+  },
+  "vault": {
+    "message": "Volbo"
+  },
+  "moveSelectedToOrg": {
+    "message": "Move Selected to Organization"
+  },
+  "deleteSelected": {
+    "message": "Forigi Elektitajn"
+  },
+  "moveSelected": {
+    "message": "Movi Elektitan"
+  },
+  "selectAll": {
+    "message": "Elekti ĉiujn"
+  },
+  "unselectAll": {
+    "message": "Malelekti ĉiujn"
+  },
+  "launch": {
+    "message": "Lanĉo"
+  },
+  "newAttachment": {
+    "message": "Aldoni Novan Aldonaĵon"
+  },
+  "deletedAttachment": {
+    "message": "Forigita aldonaĵo"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Ĉu vi certe volas forigi ĉi tiun aldonaĵon?"
+  },
+  "attachmentSaved": {
+    "message": "La aldonaĵo estas konservita."
+  },
+  "file": {
+    "message": "Dosiero"
+  },
+  "selectFile": {
+    "message": "Elektu dosieron."
+  },
+  "maxFileSize": {
+    "message": "Maksimuma dosiergrandeco estas 500 MB."
+  },
+  "updateKey": {
+    "message": "Vi ne povas uzi ĉi tiun funkcion antaŭ ol vi ĝisdatigos vian ĉifran ŝlosilon."
+  },
+  "addedItem": {
+    "message": "Aldonita ero"
+  },
+  "editedItem": {
+    "message": "Redaktita ero"
+  },
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
+  },
+  "movedItemsToOrg": {
+    "message": "Selected items moved to $ORGNAME$",
+    "placeholders": {
+      "orgname": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
+  },
+  "deleteItem": {
+    "message": "Forigi Artikolon"
+  },
+  "deleteFolder": {
+    "message": "Forigi dosierujon"
+  },
+  "deleteAttachment": {
+    "message": "Forigi Aldonaĵon"
+  },
+  "deleteItemConfirmation": {
+    "message": "Ĉu vi vere volas sendi al la rubujo?"
+  },
+  "deletedItem": {
+    "message": "Artikolo sendita al rubujo"
+  },
+  "deletedItems": {
+    "message": "Eroj senditaj al rubujo"
+  },
+  "movedItems": {
+    "message": "Movitaj eroj"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Ĉu vi certe volas anstataŭigi la nunan pasvorton?"
+  },
+  "editedFolder": {
+    "message": "Redaktita dosierujo"
+  },
+  "addedFolder": {
+    "message": "Aldonita dosierujo"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Ĉu vi certe volas forigi ĉi tiun dosierujon?"
+  },
+  "deletedFolder": {
+    "message": "Forigita dosierujo"
+  },
+  "loggedOut": {
+    "message": "Elsalutita"
+  },
+  "loginExpired": {
+    "message": "Via ensaluta kunsido eksvalidiĝis."
+  },
+  "logOutConfirmation": {
+    "message": "Ĉu vi certe volas elsaluti?"
+  },
+  "logOut": {
+    "message": "Eliri"
+  },
+  "ok": {
+    "message": "Bone"
+  },
+  "yes": {
+    "message": "Jes"
+  },
+  "no": {
+    "message": "Ne"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Ensalutu aŭ kreu novan konton por aliri vian sekuran trezorejon."
+  },
+  "createAccount": {
+    "message": "Krei konton"
+  },
+  "logIn": {
+    "message": "Ensaluti"
+  },
+  "submit": {
+    "message": "Sendu"
+  },
+  "emailAddressDesc": {
+    "message": "Vi uzos vian retpoŝtan adreson por ensaluti."
+  },
+  "yourName": {
+    "message": "Via nomo"
+  },
+  "yourNameDesc": {
+    "message": "Kiel ni nomu vin?"
+  },
+  "masterPass": {
+    "message": "Majstra Pasvorto"
+  },
+  "masterPassDesc": {
+    "message": "La ĉefa pasvorto estas la pasvorto, kiun vi uzas por aliri vian trezorejon. Tre gravas, ke vi ne forgesu vian ĉefan pasvorton. Ne eblas retrovi la pasvorton, se vi forgesos ĝin."
+  },
+  "masterPassHintDesc": {
+    "message": "Majstra pasvorta sugesto povas helpi vin memori vian pasvorton se vi forgesas ĝin."
+  },
+  "reTypeMasterPass": {
+    "message": "Retajpu Majstran Pasvorton"
+  },
+  "masterPassHint": {
+    "message": "Majstra Pasvorta Konsilo (nedeviga)"
+  },
+  "masterPassHintLabel": {
+    "message": "Majstra Pasvorta Konsilo"
+  },
+  "settings": {
+    "message": "Agordoj"
+  },
+  "passwordHint": {
+    "message": "Pasvorta Konsilo"
+  },
+  "enterEmailToGetHint": {
+    "message": "Enigu vian retpoŝtadreson por ricevi vian ĉefan pasvortan aludon."
+  },
+  "getMasterPasswordHint": {
+    "message": "Akiru ĉefan pasvortan sugeston"
+  },
+  "emailRequired": {
+    "message": "Retpoŝta adreso estas bezonata."
+  },
+  "invalidEmail": {
+    "message": "Nevalida retpoŝta adreso."
+  },
+  "masterPassRequired": {
+    "message": "Majstra pasvorto necesas."
+  },
+  "masterPassLength": {
+    "message": "Majstra pasvorto devas havi almenaŭ 8 signojn."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Majstra pasvorta konfirmo ne kongruas."
+  },
+  "newAccountCreated": {
+    "message": "Via nova konto kreiĝis! Vi nun povas ensaluti."
+  },
+  "masterPassSent": {
+    "message": "Ni sendis al vi retpoŝton kun via ĉefa pasvorta sugesto."
+  },
+  "unexpectedError": {
+    "message": "Neatendita eraro okazis."
+  },
+  "emailAddress": {
+    "message": "Retpoŝta Adreso"
+  },
+  "yourVaultIsLocked": {
+    "message": "Via trezorejo estas ŝlosita. Kontrolu vian ĉefan pasvorton por daŭrigi."
+  },
+  "unlock": {
+    "message": "Malŝlosi"
+  },
+  "loggedInAsEmailOn": {
+    "message": "Ensalutinta kiel $EMAIL$ ĉe $HOSTNAME $.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "invalidMasterPassword": {
+    "message": "Nevalida majstra pasvorto"
+  },
+  "lockNow": {
+    "message": "Ŝlosi Nun"
+  },
+  "noItemsInList": {
+    "message": "Ne estas listigendaj eroj."
+  },
+  "noCollectionsInList": {
+    "message": "Estas neniuj kolektoj listigeblaj."
+  },
+  "noGroupsInList": {
+    "message": "Estas neniuj grupoj listigeblaj."
+  },
+  "noUsersInList": {
+    "message": "Estas neniuj uzantoj listigeblaj."
+  },
+  "noEventsInList": {
+    "message": "Ne estas eventoj listigeblaj."
+  },
+  "newOrganization": {
+    "message": "Nova Organizo"
+  },
+  "noOrganizationsList": {
+    "message": "Vi ne apartenas al iuj organizoj. Organizoj permesas al vi sekure dividi erojn kun aliaj uzantoj."
+  },
+  "versionNumber": {
+    "message": "Versio $VERSION_NUMBER $",
+    "placeholders": {
+      "version_number": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "enterVerificationCodeApp": {
+    "message": "Enigu la 6-ciferan konfirmkodon de via aŭtentikiga programo."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Enigu la 6-ciferan konfirmkodon, kiu estis retpoŝta al $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Kontrola retpoŝto sendita al $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "rememberMe": {
+    "message": "Memoru min"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Sendu retpoŝtan kontrol-kodon denove"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Uzu alian du-paŝan ensalutan metodon"
+  },
+  "insertYubiKey": {
+    "message": "Enmetu vian YubiKey en la USB-havenon de via komputilo, tiam tuŝu ĝian butonon."
+  },
+  "insertU2f": {
+    "message": "Enmetu vian sekurecan ŝlosilon en la USB-havenon de via komputilo. Se ĝi havas butonon, tuŝu ĝin."
+  },
+  "loginUnavailable": {
+    "message": "Ensaluto Neatingebla"
+  },
+  "noTwoStepProviders": {
+    "message": "Ĉi tiu konto havas du-paŝan ensaluton ebligita, tamen neniu el la agorditaj du-paŝaj provizantoj estas subtenata de ĉi tiu retumilo."
+  },
+  "noTwoStepProviders2": {
+    "message": "Bonvolu uzi subtenatan tTT-legilon (kiel Chrome) kaj / aŭ aldoni pliajn provizantojn pli bone subtenatajn tra tTT-legiloj (kiel aŭtentikiga programo)."
+  },
+  "twoStepOptions": {
+    "message": "Duŝtupaj Ensalutaj Elektoj"
+  },
+  "recoveryCodeDesc": {
+    "message": "Ĉu vi perdis aliron al ĉiuj viaj du-faktoraj provizantoj? Uzu vian reakiran kodon por malŝalti ĉiujn du-faktorajn provizantojn de via konto."
+  },
+  "recoveryCodeTitle": {
+    "message": "Rekuperiga Kodo"
+  },
+  "authenticatorAppTitle": {
+    "message": "Aŭtentiga Programo"
+  },
+  "authenticatorAppDesc": {
+    "message": "Uzu aŭtentikan programon (kiel Authy aŭ Google Authenticator) por generi tempokontrolajn kodojn.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "Sekureca Ŝlosilo de YubiKey OTP"
+  },
+  "yubiKeyDesc": {
+    "message": "Uzu YubiKey por aliri vian konton. Funkcias kun YubiKey 4-serio, 5-serio kaj NEO-aparatoj."
+  },
+  "duoDesc": {
+    "message": "Kontrolu per Duo-Sekureco per la Duo Mobile-programo, SMS, telefona alvoko aŭ U2F-sekureca ŝlosilo.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Kontrolu kun Duo Security por via organizo per la Duo Mobile-programo, SMS, telefona alvoko aŭ U2F-sekureca ŝlosilo.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Uzu iun ajn sekurecan ŝlosilon FIDO U2F por aliri vian konton."
+  },
+  "u2fTitle": {
+    "message": "Sekureca Ŝlosilo FIDO U2F"
+  },
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
+  },
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
+  },
+  "webAuthnMigrated": {
+    "message": "(Migrated from FIDO)"
+  },
+  "emailTitle": {
+    "message": "Retpoŝto"
+  },
+  "emailDesc": {
+    "message": "Kontrolaj kodoj estos retpoŝtigitaj al vi."
+  },
+  "continue": {
+    "message": "Daŭrigi"
+  },
+  "organization": {
+    "message": "Organizo"
+  },
+  "organizations": {
+    "message": "Organizoj"
+  },
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+  },
+  "moveManyToOrgDesc": {
+    "message": "Choose an organization that you wish to move these items to. Moving to an organization transfers ownership of the items to that organization. You will no longer be the direct owner of these items once they have been moved."
+  },
+  "collectionsDesc": {
+    "message": "Redaktu la kolektojn kun kiuj ĉi tiu ero estas dividita. Nur organizaj uzantoj kun aliro al ĉi tiuj kolektoj povos vidi ĉi tiun eron."
+  },
+  "deleteSelectedItemsDesc": {
+    "message": "Vi elektis $COUNT $eron (j) por forigi. Ĉu vi certe volas forigi ĉiujn ĉi tiujn erojn?",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "moveSelectedItemsDesc": {
+    "message": "Elektu dosierujon al kiu vi ŝatus movi la elektitajn erojn $COUNT$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "moveSelectedItemsCountDesc": {
+    "message": "You have selected $COUNT$ item(s). $MOVEABLE_COUNT$ item(s) can be moved to an organization, $NONMOVEABLE_COUNT$ cannot.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "moveable_count": {
+        "content": "$2",
+        "example": "8"
+      },
+      "nonmoveable_count": {
+        "content": "$3",
+        "example": "2"
+      }
+    }
+  },
+  "verificationCodeTotp": {
+    "message": "Kontrola Kodo (TOTP)"
+  },
+  "copyVerificationCode": {
+    "message": "Kopii Konfirman Kodon"
+  },
+  "warning": {
+    "message": "Averto"
+  },
+  "confirmVaultExport": {
+    "message": "Konfirmi Volbon-Eksportadon"
+  },
+  "exportWarningDesc": {
+    "message": "Ĉi tiu eksportado enhavas viajn volbajn datumojn en neĉifrita formato. Vi ne devas stoki aŭ sendi la eksportitan dosieron per nesekuraj kanaloj (kiel retpoŝto). Forigu ĝin tuj post kiam vi finuzos ĝin."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "Ĉi tiu eksporto ĉifras viajn datumojn per la ĉifra ŝlosilo de via konto. Se vi iam turnos la ĉifran ŝlosilon de via konto, vi devas eksporti denove, ĉar vi ne povos deĉifri ĉi tiun eksportan dosieron."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Kontaj ĉifraj ŝlosiloj estas unikaj por ĉiu Bitwarden-uzanto-konto, do vi ne povas importi ĉifritan eksportadon en alian konton."
+  },
+  "export": {
+    "message": "Export"
+  },
+  "exportVault": {
+    "message": "Eksporti Volbon"
+  },
+  "fileFormat": {
+    "message": "Dosierformato"
+  },
+  "exportSuccess": {
+    "message": "Viaj volbaj datumoj estis eksportitaj."
+  },
+  "passwordGenerator": {
+    "message": "Pasvorta Generilo"
+  },
+  "minComplexityScore": {
+    "message": "Minimuma Komplekseca Poentaro"
+  },
+  "minNumbers": {
+    "message": "Minimumaj Nombroj"
+  },
+  "minSpecial": {
+    "message": "Minimuma Specialaĵo",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "Evitu Dusignajn Karakterojn"
+  },
+  "regeneratePassword": {
+    "message": "Regeneri Pasvorton"
+  },
+  "length": {
+    "message": "Longo"
+  },
+  "numWords": {
+    "message": "Nombro de Vortoj"
+  },
+  "wordSeparator": {
+    "message": "Vortdisigilo"
+  },
+  "capitalize": {
+    "message": "Majuskligi",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Inkluzivi numeron"
+  },
+  "passwordHistory": {
+    "message": "Pasvorta Historio"
+  },
+  "noPasswordsInList": {
+    "message": "Ne estas listigitaj pasvortoj."
+  },
+  "clear": {
+    "message": "Malplenigi",
+    "description": "To clear something out. example: To clear browser history."
+  },
+  "accountUpdated": {
+    "message": "Konto ĝisdatigita"
+  },
+  "changeEmail": {
+    "message": "Ŝanĝi retpoŝton"
+  },
+  "changeEmailTwoFactorWarning": {
+    "message": "Proceeding will change your account email address. It will not change the email address used for two-factor authentication. You can change this email address in the Two-Step Login settings."
+  },
+  "newEmail": {
+    "message": "Nova retpoŝto"
+  },
+  "code": {
+    "message": "Kodo"
+  },
+  "changeEmailDesc": {
+    "message": "Ni sendis retpoŝtan kontrolkodon al $EMAIL$. Bonvolu kontroli vian retpoŝton pri ĉi tiu kodo kaj enigu ĝin sube por fini la retpoŝtan adresŝanĝon.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "john.smith@example.com"
+      }
+    }
+  },
+  "loggedOutWarning": {
+    "message": "Daŭrigi vin elsalutos de via nuna sesio, postulante vin denove ensaluti. Aktivaj sesioj sur aliaj aparatoj povas daŭre resti aktivaj ĝis unu horo."
+  },
+  "emailChanged": {
+    "message": "Retpoŝto Ŝanĝis"
+  },
+  "logBackIn": {
+    "message": "Bonvolu ensaluti denove."
+  },
+  "logBackInOthersToo": {
+    "message": "Bonvolu ensaluti. Se vi uzas aliajn Bitwarden-programojn, elsalutu kaj reen al tiuj ankaŭ."
+  },
+  "changeMasterPassword": {
+    "message": "Ŝanĝi Majstran Pasvorton"
+  },
+  "masterPasswordChanged": {
+    "message": "Majstra pasvorto ŝanĝita"
+  },
+  "currentMasterPass": {
+    "message": "Nuna Majstra Pasvorto"
+  },
+  "newMasterPass": {
+    "message": "Nova Majstra Pasvorto"
+  },
+  "confirmNewMasterPass": {
+    "message": "Konfirmi Novan Majstran Pasvorton"
+  },
+  "encKeySettings": {
+    "message": "Agordoj de Ĉifroklavo"
+  },
+  "kdfAlgorithm": {
+    "message": "KDF-Algoritmo"
+  },
+  "kdfIterations": {
+    "message": "KDF-Ripetoj"
+  },
+  "kdfIterationsDesc": {
+    "message": "Pli altaj KDF-ripetoj povas helpi protekti vian ĉefan pasvorton kontraŭ malpura devigo de atakanto. Ni rekomendas valoron de $VALUE$ aŭ pli.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "100,000"
+      }
+    }
+  },
+  "kdfIterationsWarning": {
+    "message": "Agordi viajn KDF-ripetojn tro alte povus rezultigi malbonan rendimenton kiam vi ensalutas (kaj malŝlosas) Bitwarden sur aparatoj kun pli malrapidaj CPUoj. Ni rekomendas, ke vi pliigu la valoron en pliigoj de $INCREMENT$ kaj poste provu ĉiujn viajn aparatojn. . ",
+    "placeholders": {
+      "increment": {
+        "content": "$1",
+        "example": "50,000"
+      }
+    }
+  },
+  "changeKdf": {
+    "message": "Ŝanĝi KDF"
+  },
+  "encKeySettingsChanged": {
+    "message": "Ŝanĝaj Ŝlosilaj Agordoj Ŝanĝiĝis"
+  },
+  "dangerZone": {
+    "message": "Danĝera Zono"
+  },
+  "dangerZoneDesc": {
+    "message": "Atentu, ĉi tiuj agoj ne estas reigeblaj!"
+  },
+  "deauthorizeSessions": {
+    "message": "Senrajtigi Sesiojn"
+  },
+  "deauthorizeSessionsDesc": {
+    "message": "Ĉu vi zorgas pri tio, ke via konto estas ensalutinta sur alia aparato? Sekvu sube por senrajtigi ĉiujn komputilojn aŭ aparatojn, kiujn vi antaŭe uzis. Ĉi tiu sekureca paŝo rekomendas se vi antaŭe uzis publikan komputilon aŭ hazarde konservis vian pasvorton sur aparato, kiu ne estas via. Ĉi tiu paŝo ankaŭ malplenigos ĉiujn antaŭe memoritajn du-paŝajn ensalutajn sesiojn. "
+  },
+  "deauthorizeSessionsWarning": {
+    "message": "La daŭrigo ankaŭ elsalutos vin de via nuna sesio, postulante vin denove ensaluti. Oni ankaŭ petos vin du-ŝtupa ensaluto, se ĝi estas ebligita. Aktivaj sesioj sur aliaj aparatoj povas daŭre resti aktivaj ĝis ĝis unu horo. "
+  },
+  "sessionsDeauthorized": {
+    "message": "Ĉiuj Sesioj Neaŭtorizitaj"
+  },
+  "purgeVault": {
+    "message": "Purigi Volbon"
+  },
+  "purgedOrganizationVault": {
+    "message": "Purigita organizo-volbo."
+  },
+  "vaultAccessedByProvider": {
+    "message": "Vault accessed by provider."
+  },
+  "purgeVaultDesc": {
+    "message": "Sekvu sube por forigi ĉiujn erojn kaj dosierujojn en via trezorejo. Eroj apartenantaj al organizo kun kiu vi dividas ne estos forigitaj."
+  },
+  "purgeOrgVaultDesc": {
+    "message": "Sekvu sube por forigi ĉiujn erojn en la trezorejo de la organizo."
+  },
+  "purgeVaultWarning": {
+    "message": "Purigi vian trezorejon estas konstanta. Ĝi ne povas esti malfarita."
+  },
+  "vaultPurged": {
+    "message": "Via trezorejo estis elpurigita."
+  },
+  "deleteAccount": {
+    "message": "Forigi konton"
+  },
+  "deleteAccountDesc": {
+    "message": "Sekvu sube por forigi vian konton kaj ĉiujn rilatajn datumojn."
+  },
+  "deleteAccountWarning": {
+    "message": "Forigi vian konton estas konstanta. Ĝi ne povas esti malfarita."
+  },
+  "accountDeleted": {
+    "message": "Konto Forigita"
+  },
+  "accountDeletedDesc": {
+    "message": "Via konto estis fermita kaj ĉiuj rilataj datumoj estis forigitaj."
+  },
+  "myAccount": {
+    "message": "Mia Konto"
+  },
+  "tools": {
+    "message": "Iloj"
+  },
+  "importData": {
+    "message": "Importi Datumojn"
+  },
+  "importError": {
+    "message": "Importa Eraro"
+  },
+  "importErrorDesc": {
+    "message": "Estis problemo pri la datumoj, kiujn vi provis importi. Bonvolu solvi la erarojn listigitajn sube en via fontdosiero kaj reprovi."
+  },
+  "importSuccess": {
+    "message": "Datumoj sukcese importiĝis en vian trezorejon."
+  },
+  "importWarning": {
+    "message": "Vi importas datumojn al $ORGANIZATION$. Viaj datumoj povas esti dividitaj kun membroj de ĉi tiu organizo. Ĉu vi volas daŭrigi?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "importFormatError": {
+    "message": "Datumoj ne estas ĝuste formatitaj. Bonvolu kontroli vian importan dosieron kaj reprovi."
+  },
+  "importNothingError": {
+    "message": "Nenio estis importita."
+  },
+  "importEncKeyError": {
+    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+  },
+  "selectFormat": {
+    "message": "Elektu la formaton de la importa dosiero"
+  },
+  "selectImportFile": {
+    "message": "Elektu la importan dosieron"
+  },
+  "orCopyPasteFileContents": {
+    "message": "aŭ kopii / alglui la importan dosieron enhavon"
+  },
+  "instructionsFor": {
+    "message": "Instrukcioj pri $NAME$",
+    "description": "The title for the import tool instructions.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "LastPass (csv)"
+      }
+    }
+  },
+  "options": {
+    "message": "Opcioj"
+  },
+  "optionsDesc": {
+    "message": "Agordu vian sperton pri retejo."
+  },
+  "optionsUpdated": {
+    "message": "Opcioj ĝisdatigitaj"
+  },
+  "language": {
+    "message": "Lingvo"
+  },
+  "languageDesc": {
+    "message": "Ŝanĝi la lingvon uzatan de la retejo-volbo."
+  },
+  "disableIcons": {
+    "message": "Malebligi retejajn piktogramojn"
+  },
+  "disableIconsDesc": {
+    "message": "Retejaj piktogramoj donas rekoneblan bildon apud ĉiu ensaluta ero en via trezorejo."
+  },
+  "enableGravatars": {
+    "message": "Ebligi Gravatars",
+    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+  },
+  "enableGravatarsDesc": {
+    "message": "Uzu avatarajn bildojn ŝarĝitajn de gravatar.com."
+  },
+  "enableFullWidth": {
+    "message": "Ebligi plenan larĝan aranĝon",
+    "description": "Allows scaling the web vault UI's width"
+  },
+  "enableFullWidthDesc": {
+    "message": "Permesu al la arka volbo pligrandigi la tutan larĝon de la retumila fenestro."
+  },
+  "default": {
+    "message": "Apriora"
+  },
+  "domainRules": {
+    "message": "Regaj Reguloj"
+  },
+  "domainRulesDesc": {
+    "message": "Se vi havas la saman ensaluton tra multaj malsamaj retejaj domajnoj, vi povas marki la retejon kiel \" ekvivalenta \". \" Tutmondaj \" domajnoj estas jam kreitaj por vi de Bitwarden."
+  },
+  "globalEqDomains": {
+    "message": "Tutmondaj Ekvivalentaj Domajnoj"
+  },
+  "customEqDomains": {
+    "message": "Propraj Ekvivalentaj Domajnoj"
+  },
+  "exclude": {
+    "message": "Ekskludi"
+  },
+  "include": {
+    "message": "Inkluzivi"
+  },
+  "customize": {
+    "message": "Agordi"
+  },
+  "newCustomDomain": {
+    "message": "Nova Propra Domajno"
+  },
+  "newCustomDomainDesc": {
+    "message": "Enmetu liston de domajnoj apartigitaj per komoj. Nur domajnoj \" bazaj \" estas permesataj. Ne enmetu subdomajnojn. Ekzemple enigu \" google.com \"anstataŭ \" www.google.com \". Vi ankaŭ povas enigi \" androidapp: //package.name \"por asocii android-programon kun aliaj retejaj domajnoj."
+  },
+  "customDomainX": {
+    "message": "Propra Domajno $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "domainsUpdated": {
+    "message": "Domajnoj ĝisdatigitaj"
+  },
+  "twoStepLogin": {
+    "message": "Du-ŝtupa ensaluto"
+  },
+  "twoStepLoginDesc": {
+    "message": "Sekurigu vian konton postulante plian paŝon kiam vi ensalutas."
+  },
+  "twoStepLoginOrganizationDesc": {
+    "message": "Postuli du-paŝan ensaluton por la uzantoj de via organizo per agordo de provizantoj je la organiza nivelo."
+  },
+  "twoStepLoginRecoveryWarning": {
+    "message": "Ebligi du-paŝan ensaluton povas konstante elŝlosi vin el via Bitwarden-konto. Rekuperiga kodo permesas vin aliri vian konton, se vi ne plu povas uzi vian normalan du-paŝan ensalutan provizanton (ekz. vi perdas Bitwarden-subteno ne povos helpi vin se vi perdos aliron al via konto. Ni rekomendas al vi skribi aŭ presi la reakiran kodon kaj konservi ĝin en sekura loko. "
+  },
+  "viewRecoveryCode": {
+    "message": "Rigardi Rekuperan Kodon"
+  },
+  "providers": {
+    "message": "Provizantoj",
+    "description": "Two-step login providers such as YubiKey, Duo, Authenticator apps, Email, etc."
+  },
+  "enable": {
+    "message": "Ebligi"
+  },
+  "enabled": {
+    "message": "Enŝaltita"
+  },
+  "premium": {
+    "message": "Premium",
+    "description": "Premium Membership"
+  },
+  "premiumMembership": {
+    "message": "Altkvalita Membreco"
+  },
+  "premiumRequired": {
+    "message": "Supra Postulo"
+  },
+  "premiumRequiredDesc": {
+    "message": "Altkvalita membreco necesas por uzi ĉi tiun funkcion."
+  },
+  "youHavePremiumAccess": {
+    "message": "Vi havas superan aliron"
+  },
+  "alreadyPremiumFromOrg": {
+    "message": "Vi jam havas aliron al superaj funkcioj pro organizo, en kiu vi membras."
+  },
+  "manage": {
+    "message": "Administri"
+  },
+  "disable": {
+    "message": "Malebligi"
+  },
+  "twoStepLoginProviderEnabled": {
+    "message": "Ĉi tiu du-ŝtupa ensaluta provizanto estas ebligita en via konto."
+  },
+  "twoStepLoginAuthDesc": {
+    "message": "Enigu vian ĉefan pasvorton por modifi du-paŝajn ensalutajn agordojn."
+  },
+  "twoStepAuthenticatorDesc": {
+    "message": "Sekvu ĉi tiujn paŝojn por agordi du-paŝan ensaluton per aŭtentikiga programo:"
+  },
+  "twoStepAuthenticatorDownloadApp": {
+    "message": "Elŝuti du-paŝan aŭtentikigan programon"
+  },
+  "twoStepAuthenticatorNeedApp": {
+    "message": "Ĉu vi bezonas du-paŝan aŭtentikigan programon? Elŝutu unu el la jenaj"
+  },
+  "iosDevices": {
+    "message": "iOS-aparatoj"
+  },
+  "androidDevices": {
+    "message": "Android-aparatoj"
+  },
+  "windowsDevices": {
+    "message": "Vindozaj aparatoj"
+  },
+  "twoStepAuthenticatorAppsRecommended": {
+    "message": "Ĉi tiuj programoj estas rekomendindaj, tamen ankaŭ aliaj aŭtentikigaj programoj funkcios."
+  },
+  "twoStepAuthenticatorScanCode": {
+    "message": "Skani ĉi tiun QR-kodon per via aŭtentikiga programo"
+  },
+  "key": {
+    "message": "Ŝlosilo"
+  },
+  "twoStepAuthenticatorEnterCode": {
+    "message": "Enigu la rezultan 6-ciferan konfirmkodon de la programo"
+  },
+  "twoStepAuthenticatorReaddDesc": {
+    "message": "Se vi bezonas aldoni ĝin al alia aparato, sube estas la QR-kodo (aŭ ŝlosilo) postulita de via aŭtentikiga programo."
+  },
+  "twoStepDisableDesc": {
+    "message": "Ĉu vi certas, ke vi volas malŝalti ĉi tiun du-paŝan ensalutan provizanton?"
+  },
+  "twoStepDisabled": {
+    "message": "Du-ŝtupa ensaluta provizanto malŝaltita."
+  },
+  "twoFactorYubikeyAdd": {
+    "message": "Aldoni novan YubiKey al via konto"
+  },
+  "twoFactorYubikeyPlugIn": {
+    "message": "Enŝovu la YubiKey en la USB-havenon de via komputilo."
+  },
+  "twoFactorYubikeySelectKey": {
+    "message": "Elektu la unuan malplenan enigan kampon YubiKey sube."
+  },
+  "twoFactorYubikeyTouchButton": {
+    "message": "Tuŝu la butonon de YubiKey."
+  },
+  "twoFactorYubikeySaveForm": {
+    "message": "Konservu la formularon."
+  },
+  "twoFactorYubikeyWarning": {
+    "message": "Pro platformaj limigoj, YubiKeys ne povas esti uzata en ĉiuj Bitwarden-aplikaĵoj. Vi rajtigu alian du-paŝan ensalutan provizanton, por ke vi povu aliri vian konton kiam YubiKeys ne povas esti uzata. Subtenitaj platformoj:"
+  },
+  "twoFactorYubikeySupportUsb": {
+    "message": "TTT-volbo, labortabla aplikaĵo, CLI kaj ĉiuj retumilaj etendaĵoj sur aparato kun USBa haveno, kiu povas akcepti vian YubiKey."
+  },
+  "twoFactorYubikeySupportMobile": {
+    "message": "Poŝtelefonaj programoj sur aparato kun NFC-kapabloj aŭ datuma haveno, kiu povas akcepti vian YubiKey."
+  },
+  "yubikeyX": {
+    "message": "YubiKey $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "u2fkeyX": {
+    "message": "U2F-Ŝlosilo $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "webAuthnkeyX": {
+    "message": "WebAuthn Key $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "nfcSupport": {
+    "message": "NFC-Subteno"
+  },
+  "twoFactorYubikeySupportsNfc": {
+    "message": "Unu el miaj klavoj subtenas NFC."
+  },
+  "twoFactorYubikeySupportsNfcDesc": {
+    "message": "Se unu el viaj YubiKeys subtenas NFC (kiel YubiKey NEO), vi estos instigita per poŝtelefonoj kiam ajn NFC-havebleco estas detektita."
+  },
+  "yubikeysUpdated": {
+    "message": "YubiKeys ĝisdatigis"
+  },
+  "disableAllKeys": {
+    "message": "Malebligi ĉiujn ŝlosilojn"
+  },
+  "twoFactorDuoDesc": {
+    "message": "Enmetu la informojn pri Bitwarden-aplikaĵo de via panelo de Duo Admin."
+  },
+  "twoFactorDuoIntegrationKey": {
+    "message": "Integriĝa Ŝlosilo"
+  },
+  "twoFactorDuoSecretKey": {
+    "message": "Sekreta Ŝlosilo"
+  },
+  "twoFactorDuoApiHostname": {
+    "message": "API Gastiganta Nomo"
+  },
+  "twoFactorEmailDesc": {
+    "message": "Sekvu ĉi tiujn paŝojn por agordi du-paŝan ensaluton per retpoŝto:"
+  },
+  "twoFactorEmailEnterEmail": {
+    "message": "Enigu la retpoŝton, ke vi volas ricevi kontrolajn kodojn"
+  },
+  "twoFactorEmailEnterCode": {
+    "message": "Enigu la rezultan 6-ciferan konfirmkodon el la retpoŝto"
+  },
+  "sendEmail": {
+    "message": "Sendi retpoŝton"
+  },
+  "twoFactorU2fAdd": {
+    "message": "Aldonu sekurecan ŝlosilon FIDO U2F al via konto"
+  },
+  "removeU2fConfirmation": {
+    "message": "Ĉu vi certe volas forigi ĉi tiun sekurecan ŝlosilon?"
+  },
+  "twoFactorWebAuthnAdd": {
+    "message": "Add a WebAuthn security key to your account"
+  },
+  "readKey": {
+    "message": "Legi Ŝlosilon"
+  },
+  "keyCompromised": {
+    "message": "Ŝlosilo estas kompromitita."
+  },
+  "twoFactorU2fGiveName": {
+    "message": "Donu al la sekureca ŝlosilo amikan nomon por identigi ĝin."
+  },
+  "twoFactorU2fPlugInReadKey": {
+    "message": "Enŝovu la sekurecan ŝlosilon en la USB-havenon de via komputilo kaj alklaku la butonon \" Legu Ŝlosilon \"."
+  },
+  "twoFactorU2fTouchButton": {
+    "message": "Se la sekureca ŝlosilo havas butonon, tuŝu ĝin."
+  },
+  "twoFactorU2fSaveForm": {
+    "message": "Konservu la formularon."
+  },
+  "twoFactorU2fWarning": {
+    "message": "Pro platformaj limigoj, FIDO U2F ne povas esti uzata en ĉiuj Bitwarden-aplikaĵoj. Vi rajtigu alian du-paŝan ensalutan provizanton, por ke vi povu aliri vian konton kiam FIDO U2F ne povas esti uzata. Subtenitaj platformoj:"
+  },
+  "twoFactorU2fSupportWeb": {
+    "message": "Reta volbo kaj retumilaj etendaĵoj sur labortablo / tekkomputilo kun U2F-ebligita retumilo (Chrome, Opera, Vivaldi aŭ Firefox kun FIDO U2F ebligita)."
+  },
+  "twoFactorU2fWaiting": {
+    "message": "Atendante, ke vi tuŝu la butonon de via sekureca ŝlosilo"
+  },
+  "twoFactorU2fClickSave": {
+    "message": "Alklaku la suban butonon \" Konservi \"por ebligi ĉi tiun sekurecan ŝlosilon por du-ŝtupa ensaluto."
+  },
+  "twoFactorU2fProblemReadingTryAgain": {
+    "message": "There was a problem reading the security key. Try again."
+  },
+  "twoFactorWebAuthnWarning": {
+    "message": "Due to platform limitations, WebAuthn cannot be used on all Bitwarden applications. You should enable another two-step login provider so that you can access your account when WebAuthn cannot be used. Supported platforms:"
+  },
+  "twoFactorWebAuthnSupportWeb": {
+    "message": "Web vault and browser extensions on a desktop/laptop with a WebAuthn enabled browser (Chrome, Opera, Vivaldi, or Firefox with FIDO U2F enabled)."
+  },
+  "twoFactorRecoveryYourCode": {
+    "message": "Via Bitwarden-du-ŝtupa ensaluta reakiro-kodo"
+  },
+  "twoFactorRecoveryNoCode": {
+    "message": "Vi ankoraŭ ne ebligis du-paŝajn ensalutajn provizantojn. Post kiam vi ebligis du-ŝtupan ensalut-provizanton, vi povas kontroli ĉi tie vian reakiran kodon."
+  },
+  "printCode": {
+    "message": "Presi Kodon",
+    "description": "Print 2FA recovery code"
+  },
+  "reports": {
+    "message": "Raportoj"
+  },
+  "reportsDesc": {
+    "message": "Identify and close security gaps in your online accounts by clicking the reports below."
+  },
+  "unsecuredWebsitesReport": {
+    "message": "Raporto pri Nesekurigitaj Retejoj"
+  },
+  "unsecuredWebsitesReportDesc": {
+    "message": "Uzi nesekurigitajn retejojn kun la http: // skemo povas esti danĝera. Se la retejo permesas, vi ĉiam devas aliri ĝin per la skemo https: // tiel ke via konekto estas ĉifrita."
+  },
+  "unsecuredWebsitesFound": {
+    "message": "Trovitaj Nesekurigitaj Retejoj"
+  },
+  "unsecuredWebsitesFoundDesc": {
+    "message": "Ni trovis $COUNT$ erojn en via trezorejo kun nesekurigitaj URI-oj. Vi devas ŝanĝi ilian URI-skemon al https: // se la retejo permesas ĝin.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noUnsecuredWebsites": {
+    "message": "No items in your vault have unsecured URIs."
+  },
+  "inactive2faReport": {
+    "message": "Raporto 2FA neaktiva"
+  },
+  "inactive2faReportDesc": {
+    "message": "Dufakta aŭtentokontrolo (2FA) estas grava sekureca agordo, kiu helpas sekurigi viajn kontojn. Se la retejo ofertas ĝin, vi devas ĉiam ebligi dufakturan aŭtentikigon."
+  },
+  "inactive2faFound": {
+    "message": "Ensalutoj Sen 2FA Trovitaj"
+  },
+  "inactive2faFoundDesc": {
+    "message": "Ni trovis $COUNT$ retejon (j) en via trezorejo, kiu eble ne estas agordita kun dufakta aŭtentokontrolo (laŭ 2fa.directory). Por plue protekti ĉi tiujn kontojn, vi devas ebligi dufaktoran aŭtentikigon.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noInactive2fa": {
+    "message": "Neniuj retejoj troviĝis en via trezorejo kun mankanta dufakta aŭtentiga agordo."
+  },
+  "instructions": {
+    "message": "Instrukcioj"
+  },
+  "exposedPasswordsReport": {
+    "message": "Raporto pri Malkaŝitaj Pasvortoj"
+  },
+  "exposedPasswordsReportDesc": {
+    "message": "Malkaŝitaj pasvortoj estas pasvortoj malkovritaj en konataj datumrompoj publikigitaj aŭ venditaj en la malluma retejo de retpiratoj."
+  },
+  "exposedPasswordsFound": {
+    "message": "Trovitaj Pasvortoj Trovitaj"
+  },
+  "exposedPasswordsFoundDesc": {
+    "message": "Ni trovis $COUNT$ erojn en via trezorejo, kiuj havas pasvortojn elmontritajn en konataj rompo de datumoj. Vi devas ŝanĝi ilin por uzi novan pasvorton.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noExposedPasswords": {
+    "message": "Neniuj eroj en via trezorejo havas pasvortojn elmontritajn en konataj rompo de datumoj."
+  },
+  "checkExposedPasswords": {
+    "message": "Kontroli Malkaŝitajn Pasvortojn"
+  },
+  "exposedXTimes": {
+    "message": "Elmontritaj $COUNT$ tempo (j)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "52"
+      }
+    }
+  },
+  "weakPasswordsReport": {
+    "message": "Raporto pri Malfortaj Pasvortoj"
+  },
+  "weakPasswordsReportDesc": {
+    "message": "Malfortaj pasvortoj facile diveneblas per retpiratoj kaj aŭtomataj iloj, kiuj estas uzataj por rompi pasvortojn. La Bitwarden-pasvorta generatoro povas helpi vin krei fortajn pasvortojn."
+  },
+  "weakPasswordsFound": {
+    "message": "Malfortaj Pasvortoj Trovitaj"
+  },
+  "weakPasswordsFoundDesc": {
+    "message": "Ni trovis $COUNT$ erojn en via trezorejo kun pasvortoj ne fortaj. Vi devas ĝisdatigi ilin por uzi pli fortajn pasvortojn.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noWeakPasswords": {
+    "message": "Neniuj eroj en via trezorejo havas malfortajn pasvortojn."
+  },
+  "reusedPasswordsReport": {
+    "message": "Raporto pri recikligitaj pasvortoj"
+  },
+  "reusedPasswordsReportDesc": {
+    "message": "Se servo, kiun vi uzas, estas kompromitita, reuzi la saman pasvorton aliloke povas permesi al retpiratoj facile aliri al pli da viaj retaj kontoj. Vi devas uzi unikan pasvorton por ĉiu konto aŭ servo."
+  },
+  "reusedPasswordsFound": {
+    "message": "Reuzitaj Pasvortoj Trovitaj"
+  },
+  "reusedPasswordsFoundDesc": {
+    "message": "Ni trovis $COUNT$ pasvortojn reuzatajn en via trezorejo. Vi devas ŝanĝi ilin al unika valoro.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "noReusedPasswords": {
+    "message": "Neniuj ensalutoj en via trezorejo havas pasvortojn reuzatajn."
+  },
+  "reusedXTimes": {
+    "message": "Reuzita $COUNT$ fojojn",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "dataBreachReport": {
+    "message": "Raporto pri Malobservo de Datumoj"
+  },
+  "breachDesc": {
+    "message": "\" breĉo \"estas okazaĵo, kie la datumoj de retejo estis kontraŭleĝe aliritaj de retpiratoj kaj poste publikigitaj publike. Revizii la tipojn de datumoj kompromititaj (retpoŝtadresoj, pasvortoj, kreditkartoj ktp.) taŭga ago, kiel ŝanĝi pasvortojn. "
+  },
+  "breachCheckUsernameEmail": {
+    "message": "Kontrolu iujn ajn uzantnomojn aŭ retpoŝtadresojn, kiujn vi uzas."
+  },
+  "checkBreaches": {
+    "message": "Kontroli breĉojn"
+  },
+  "breachUsernameNotFound": {
+    "message": "$USERNAME$ ne estis trovita en iuj konataj rompo de datumoj.",
+    "placeholders": {
+      "username": {
+        "content": "$1",
+        "example": "user@example.com"
+      }
+    }
+  },
+  "goodNews": {
+    "message": "Bonaj Novaĵoj",
+    "description": "ex. Good News, No Breached Accounts Found!"
+  },
+  "breachUsernameFound": {
+    "message": "$USERNAME$ estis trovita en $COUNT$ malsamaj datumaj rompoj interrete.",
+    "placeholders": {
+      "username": {
+        "content": "$1",
+        "example": "user@example.com"
+      },
+      "count": {
+        "content": "$2",
+        "example": "7"
+      }
+    }
+  },
+  "breachFound": {
+    "message": "Malobservitaj Kontoj Trovitaj"
+  },
+  "compromisedData": {
+    "message": "Kompromisitaj datumoj"
+  },
+  "website": {
+    "message": "Retejo"
+  },
+  "affectedUsers": {
+    "message": "Afektitaj Uzantoj"
+  },
+  "breachOccurred": {
+    "message": "Malobservo Okazis"
+  },
+  "breachReported": {
+    "message": "Malobservo raportita"
+  },
+  "reportError": {
+    "message": "Eraro okazis provante ŝarĝi la raporton. Provu denove"
+  },
+  "billing": {
+    "message": "Fakturado"
+  },
+  "accountCredit": {
+    "message": "Kredita Konto",
+    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+  },
+  "accountBalance": {
+    "message": "Konta Bilanco",
+    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+  },
+  "addCredit": {
+    "message": "Aldoni Krediton",
+    "description": "Add more credit to your account's balance."
+  },
+  "amount": {
+    "message": "Kvanto",
+    "description": "Dollar amount, or quantity."
+  },
+  "creditDelayed": {
+    "message": "Aldonita kredito aperos en via konto post kiam la pago estos plene prilaborita. Iuj pagmanieroj malfruas kaj povas daŭri pli longe ol aliaj."
+  },
+  "makeSureEnoughCredit": {
+    "message": "Bonvolu certigi, ke via konto havas sufiĉe da kredito havebla por ĉi tiu aĉeto. Se via konto ne havas sufiĉe da kredito havebla, via defaŭlta pagmaniero uzata por la diferenco. Vi povas aldoni krediton al via konto de la Faktura paĝo. "
+  },
+  "creditAppliedDesc": {
+    "message": "La kredito de via konto povas esti uzata por aĉeti. Ĉiu havebla kredito aŭtomate aplikiĝos al fakturoj generitaj por ĉi tiu konto."
+  },
+  "goPremium": {
+    "message": "Iru Premium",
+    "description": "Another way of saying \"Get a premium membership\""
+  },
+  "premiumUpdated": {
+    "message": "Vi ĝisdatigis al premio."
+  },
+  "premiumUpgradeUnlockFeatures": {
+    "message": "Altgradigu vian konton al supera membreco kaj malŝlosu iujn bonegajn aldonajn funkciojn."
+  },
+  "premiumSignUpStorage": {
+    "message": "1 GB ĉifrita stokado por dosieraj aldonaĵoj."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "Pliaj du-paŝaj ensalutaj opcioj kiel YubiKey, FIDO U2F kaj Duo."
+  },
+  "premiumSignUpEmergency": {
+    "message": "Kriza Aliro"
+  },
+  "premiumSignUpReports": {
+    "message": "Raportoj pri pasvorta higieno, sanstato de kontoj kaj rompo de datumoj por protekti vian trezorejon."
+  },
+  "premiumSignUpTotp": {
+    "message": "Generilo de TOTP-kontrola kodo (2FA) por ensalutoj en via trezorejo."
+  },
+  "premiumSignUpSupport": {
+    "message": "Prioritata klienta subteno."
+  },
+  "premiumSignUpFuture": {
+    "message": "Ĉiuj estontaj premiaj funkcioj. Pli baldaŭ!"
+  },
+  "premiumPrice": {
+    "message": "Ĉio kontraŭ nur $PRICE$ / jaro!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "addons": {
+    "message": "Aldonaĵoj"
+  },
+  "premiumAccess": {
+    "message": "Altkvalita Aliro"
+  },
+  "premiumAccessDesc": {
+    "message": "Vi povas aldoni altkvalitan aliron al ĉiuj membroj de via organizo kontraŭ $PRICE$ / $INTERVAL$.",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$3.33"
+      },
+      "interval": {
+        "content": "$2",
+        "example": "'month' or 'year'"
+      }
+    }
+  },
+  "additionalStorageGb": {
+    "message": "Aldona Stokado (GB)"
+  },
+  "additionalStorageGbDesc": {
+    "message": "Nombro da pliaj GB"
+  },
+  "additionalStorageIntervalDesc": {
+    "message": "Via plano venas kun $SIZE$ da ĉifrita dosier-stokado. Vi povas aldoni plian stokadon kontraŭ $PRICE$ po GB / $INTERVAL$.",
+    "placeholders": {
+      "size": {
+        "content": "$1",
+        "example": "1 GB"
+      },
+      "price": {
+        "content": "$2",
+        "example": "$4.00"
+      },
+      "interval": {
+        "content": "$3",
+        "example": "'month' or 'year'"
+      }
+    }
+  },
+  "summary": {
+    "message": "Resumo"
+  },
+  "total": {
+    "message": "Entute"
+  },
+  "year": {
+    "message": "jaro"
+  },
+  "month": {
+    "message": "monato"
+  },
+  "monthAbbr": {
+    "message": "mo.",
+    "description": "Short abbreviation for 'month'"
+  },
+  "paymentChargedAnnually": {
+    "message": "Via pagmaniero estos ŝargita tuj kaj poste ripetiĝante ĉiujare. Vi rajtas nuligi iam ajn."
+  },
+  "paymentCharged": {
+    "message": "Via pagmaniero tuj estos ŝargita kaj poste ripetiĝante ĉiu $INTERVAL$. Vi rajtas nuligi iam ajn.",
+    "placeholders": {
+      "interval": {
+        "content": "$1",
+        "example": "month or year"
+      }
+    }
+  },
+  "paymentChargedWithTrial": {
+    "message": "Via plano venas kun senpaga 7-taga provado. Via pagmaniero ne estos ŝargita ĝis la proceso finiĝos. Fakturado okazos ĉiufoje $INTERVAL$. Vi rajtas nuligi iam ajn."
+  },
+  "paymentInformation": {
+    "message": "Pagaj Informoj"
+  },
+  "billingInformation": {
+    "message": "Fakturaj Informoj"
+  },
+  "creditCard": {
+    "message": "Kreditkarto"
+  },
+  "paypalClickSubmit": {
+    "message": "Alklaku la butonon PayPal por ensaluti vian konton PayPal, poste alklaku la butonon Sendu sube por daŭrigi."
+  },
+  "cancelSubscription": {
+    "message": "Nuligi Abonon"
+  },
+  "subscriptionCanceled": {
+    "message": "La abono estis nuligita."
+  },
+  "pendingCancellation": {
+    "message": "Atendanta Nuligo"
+  },
+  "subscriptionPendingCanceled": {
+    "message": "La abono estis markita por nuligo ĉe la fino de la nuna faktura periodo."
+  },
+  "reinstateSubscription": {
+    "message": "Reinstali Abonon"
+  },
+  "reinstateConfirmation": {
+    "message": "Ĉu vi certe volas forigi la pritraktatan nuligan peton kaj reinstali vian abonon?"
+  },
+  "reinstated": {
+    "message": "La abono estis reinstalita."
+  },
+  "cancelConfirmation": {
+    "message": "Ĉu vi certas, ke vi volas nuligi? Vi perdos aliron al ĉiuj funkcioj de ĉi tiu abono fine de ĉi tiu faktura ciklo."
+  },
+  "canceledSubscription": {
+    "message": "La abono estis nuligita."
+  },
+  "neverExpires": {
+    "message": "Never Expires"
+  },
+  "status": {
+    "message": "Stato"
+  },
+  "nextCharge": {
+    "message": "Sekva Akuzo"
+  },
+  "details": {
+    "message": "Detaloj"
+  },
+  "downloadLicense": {
+    "message": "Elŝuti Permesilon"
+  },
+  "updateLicense": {
+    "message": "Ĝisdatigi Permesilon"
+  },
+  "updatedLicense": {
+    "message": "Ĝisdatigita permesilo"
+  },
+  "manageSubscription": {
+    "message": "Administri Abonon"
+  },
+  "storage": {
+    "message": "Stokado"
+  },
+  "addStorage": {
+    "message": "Aldoni Stokadon"
+  },
+  "removeStorage": {
+    "message": "Forigi Stokadon"
+  },
+  "subscriptionStorage": {
+    "message": "Via abono havas entute $MAX_STORAGE$ GB da ĉifrita dosier-stokado. Vi nun uzas $USED_STORAGE$.",
+    "placeholders": {
+      "max_storage": {
+        "content": "$1",
+        "example": "4"
+      },
+      "used_storage": {
+        "content": "$2",
+        "example": "65 MB"
+      }
+    }
+  },
+  "paymentMethod": {
+    "message": "Pagmaniero"
+  },
+  "noPaymentMethod": {
+    "message": "Neniu pagmaniero registrita."
+  },
+  "addPaymentMethod": {
+    "message": "Aldoni Pagmanieron"
+  },
+  "changePaymentMethod": {
+    "message": "Ŝanĝi Pagmanieron"
+  },
+  "invoices": {
+    "message": "Fakturoj"
+  },
+  "noInvoices": {
+    "message": "Neniuj fakturoj."
+  },
+  "paid": {
+    "message": "Pagita",
+    "description": "Past tense status of an invoice. ex. Paid or unpaid."
+  },
+  "unpaid": {
+    "message": "Sensalajra",
+    "description": "Past tense status of an invoice. ex. Paid or unpaid."
+  },
+  "transactions": {
+    "message": "Transakcioj",
+    "description": "Payment/credit transactions."
+  },
+  "noTransactions": {
+    "message": "Sen transakcioj."
+  },
+  "chargeNoun": {
+    "message": "Akuzo",
+    "description": "Noun. A charge from a payment method."
+  },
+  "refundNoun": {
+    "message": "Repago",
+    "description": "Noun. A refunded payment that was charged."
+  },
+  "chargesStatement": {
+    "message": "Ĉiuj akuzoj aperos en via deklaro kiel $STATEMENT_NAME$.",
+    "placeholders": {
+      "statement_name": {
+        "content": "$1",
+        "example": "BITWARDEN"
+      }
+    }
+  },
+  "gbStorageAdd": {
+    "message": "Aldoni GB-Stokadon"
+  },
+  "gbStorageRemove": {
+    "message": "Forigi GB-Stokadon"
+  },
+  "storageAddNote": {
+    "message": "Aldonado de stokado rezultigos ĝustigojn al viaj fakturaj sumoj kaj tuj ŝargos vian pagmanieron en dosiero. La unua ŝarĝo estos proporciigita por la resto de la aktuala faktura ciklo."
+  },
+  "storageRemoveNote": {
+    "message": "Forigi stokadon rezultigos ĝustigojn al viaj fakturaj sumoj, kiuj estos proratigitaj kiel kreditoj al via sekva faktura ŝarĝo."
+  },
+  "adjustedStorage": {
+    "message": "Ĝustigita $AMOUNT$ GB da stokado.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "contactSupport": {
+    "message": "Kontakti Klientan Subtenon"
+  },
+  "updatedPaymentMethod": {
+    "message": "Ĝisdatigita pagmaniero."
+  },
+  "purchasePremium": {
+    "message": "Aĉetu Superpagon"
+  },
+  "licenseFile": {
+    "message": "Permesila Dosiero"
+  },
+  "licenseFileDesc": {
+    "message": "Via licenca dosiero nomiĝos kiel $FILE_NAME$",
+    "placeholders": {
+      "file_name": {
+        "content": "$1",
+        "example": "bitwarden_premium_license.json"
+      }
+    }
+  },
+  "uploadLicenseFilePremium": {
+    "message": "Por ĝisdatigi vian konton al altkvalita membreco vi devas alŝuti validan licencdosieron."
+  },
+  "uploadLicenseFileOrg": {
+    "message": "Por krei lokan gastigitan organizon, vi devas alŝuti validan licencdosieron."
+  },
+  "accountEmailMustBeVerified": {
+    "message": "La retpoŝta adreso de via konto devas esti kontrolita."
+  },
+  "newOrganizationDesc": {
+    "message": "Organizoj permesas al vi dividi partojn de via trezorejo kun aliaj kaj administri rilatajn uzantojn por specifa ento kiel familio, malgranda teamo aŭ granda kompanio."
+  },
+  "generalInformation": {
+    "message": "Ĝeneralaj Informoj"
+  },
+  "organizationName": {
+    "message": "Organiza nomo"
+  },
+  "accountOwnedBusiness": {
+    "message": "Ĉi tiu konto estas posedata de kompanio."
+  },
+  "billingEmail": {
+    "message": "Faktura Retpoŝto"
+  },
+  "businessName": {
+    "message": "Komerca nomo"
+  },
+  "chooseYourPlan": {
+    "message": "Elektu Vian Planon"
+  },
+  "users": {
+    "message": "Uzantoj"
+  },
+  "userSeats": {
+    "message": "Uzantaj Sidlokoj"
+  },
+  "additionalUserSeats": {
+    "message": "Pliaj Uzaj Lokoj"
+  },
+  "userSeatsDesc": {
+    "message": "Nombro de uzantaj lokoj"
+  },
+  "userSeatsAdditionalDesc": {
+    "message": "Via plano venas kun $BASE_SEATS$ uzanto-seĝoj. Vi povas aldoni pliajn uzantojn kontraŭ $SEAT_PRICE$ po uzanto / monato.",
+    "placeholders": {
+      "base_seats": {
+        "content": "$1",
+        "example": "5"
+      },
+      "seat_price": {
+        "content": "$2",
+        "example": "$2.00"
+      }
+    }
+  },
+  "userSeatsHowManyDesc": {
+    "message": "Kiom da uzantaj seĝoj vi bezonas? Vi ankaŭ povas aldoni pliajn seĝojn poste se necese."
+  },
+  "planNameFree": {
+    "message": "Senpaga",
+    "description": "Free as in 'free beer'."
+  },
+  "planDescFree": {
+    "message": "Por testado aŭ personaj uzantoj dividi kun $COUNT$ alia uzanto.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "planNameFamilies": {
+    "message": "Familioj"
+  },
+  "planDescFamilies": {
+    "message": "Por persona uzo, dividi kun familio kaj amikoj."
+  },
+  "planNameTeams": {
+    "message": "Teamoj"
+  },
+  "planDescTeams": {
+    "message": "Por entreprenoj kaj aliaj teamaj organizoj."
+  },
+  "planNameEnterprise": {
+    "message": "Entrepreno"
+  },
+  "planDescEnterprise": {
+    "message": "Por entreprenoj kaj aliaj grandaj organizoj."
+  },
+  "freeForever": {
+    "message": "Senpaga Eterne"
+  },
+  "includesXUsers": {
+    "message": "inkluzivas $COUN$ uzantojn",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "additionalUsers": {
+    "message": "Pliaj Uzantoj"
+  },
+  "costPerUser": {
+    "message": "$COST$ por uzanto",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$3"
+      }
+    }
+  },
+  "limitedUsers": {
+    "message": "Limigita al $COUNT$ uzantoj (inkluzive de vi)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "limitedCollections": {
+    "message": "Limigita al $COUNT$ -kolektoj",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "addShareLimitedUsers": {
+    "message": "Aldoni kaj dividi kun ĝis $COUNT$ uzantoj",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "addShareUnlimitedUsers": {
+    "message": "Aldoni kaj dividi kun senlimaj uzantoj"
+  },
+  "createUnlimitedCollections": {
+    "message": "Krei senlimajn Kolektojn"
+  },
+  "gbEncryptedFileStorage": {
+    "message": "$SIZE$ ĉifrita dosier-stokado",
+    "placeholders": {
+      "size": {
+        "content": "$1",
+        "example": "1 GB"
+      }
+    }
+  },
+  "onPremHostingOptional": {
+    "message": "Surloka gastigado (nedeviga)"
+  },
+  "usersGetPremium": {
+    "message": "Uzantoj ricevas aliron al Premiaj Trajtoj"
+  },
+  "controlAccessWithGroups": {
+    "message": "Kontroli la aliron de uzanto per Grupoj"
+  },
+  "syncUsersFromDirectory": {
+    "message": "Sinkronigu viajn uzantojn kaj grupojn de dosierujo"
+  },
+  "trackAuditLogs": {
+    "message": "Spuri agojn de uzanto per kontrolaj protokoloj"
+  },
+  "enforce2faDuo": {
+    "message": "Devigi 2FA kun Duo"
+  },
+  "priorityCustomerSupport": {
+    "message": "Prioritata klienta subteno"
+  },
+  "xDayFreeTrial": {
+    "message": "$COUNT$ taga senpaga provo, nuligu iam ajn",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "7"
+      }
+    }
+  },
+  "monthly": {
+    "message": "Monata"
+  },
+  "annually": {
+    "message": "Ĉiujare"
+  },
+  "basePrice": {
+    "message": "Baza Prezo"
+  },
+  "organizationCreated": {
+    "message": "Organizo kreita"
+  },
+  "organizationReadyToGo": {
+    "message": "Via nova organizo pretas!"
+  },
+  "organizationUpgraded": {
+    "message": "Via organizo estis plibonigita."
+  },
+  "leave": {
+    "message": "Foriri"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Ĉu vi certe volas forlasi ĉi tiun organizon?"
+  },
+  "leftOrganization": {
+    "message": "Vi forlasis la organizon."
+  },
+  "defaultCollection": {
+    "message": "Apriora Kolekto"
+  },
+  "getHelp": {
+    "message": "Akiri Helpon"
+  },
+  "getApps": {
+    "message": "Akiru la Programojn"
+  },
+  "loggedInAs": {
+    "message": "Ensalutinta kiel"
+  },
+  "eventLogs": {
+    "message": "Eventaj Registroj"
+  },
+  "people": {
+    "message": "Homoj"
+  },
+  "policies": {
+    "message": "Politikoj"
+  },
+  "singleSignOn": {
+    "message": "Single Sign-On"
+  },
+  "editPolicy": {
+    "message": "Redakti politikon"
+  },
+  "groups": {
+    "message": "Grupoj"
+  },
+  "newGroup": {
+    "message": "Nova Grupo"
+  },
+  "addGroup": {
+    "message": "Aldoni grupon"
+  },
+  "editGroup": {
+    "message": "Redakti grupon"
+  },
+  "deleteGroupConfirmation": {
+    "message": "Ĉu vi certe volas forigi ĉi tiun grupon?"
+  },
+  "removeUserConfirmation": {
+    "message": "Ĉu vi certe volas forigi ĉi tiun uzanton?"
+  },
+  "removeUserConfirmationKeyConnector": {
+    "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
+  },
+  "externalId": {
+    "message": "Ekstera identigilo"
+  },
+  "externalIdDesc": {
+    "message": "La ekstera identigilo povas esti uzata kiel referenco aŭ por ligi ĉi tiun rimedon al ekstera sistemo kiel uzantdosierujo."
+  },
+  "accessControl": {
+    "message": "Alirkontrolo"
+  },
+  "groupAccessAllItems": {
+    "message": "Ĉi tiu grupo povas aliri kaj modifi ĉiujn erojn."
+  },
+  "groupAccessSelectedCollections": {
+    "message": "Ĉi tiu grupo povas aliri nur la elektitajn kolektojn."
+  },
+  "readOnly": {
+    "message": "Nurlegebla"
+  },
+  "newCollection": {
+    "message": "Nova Kolekto"
+  },
+  "addCollection": {
+    "message": "Aldoni Kolekton"
+  },
+  "editCollection": {
+    "message": "Redakti Kolekton"
+  },
+  "deleteCollectionConfirmation": {
+    "message": "Ĉu vi certe volas forigi ĉi tiun kolekton?"
+  },
+  "editUser": {
+    "message": "Redakti uzanton"
+  },
+  "inviteUser": {
+    "message": "Inviti uzanton"
+  },
+  "inviteUserDesc": {
+    "message": "Invitu novan uzanton al via organizo enigante ĉi-sube sian retpoŝtan adreson Bitwarden. Se ili ne havas Bitwarden-konton jam, ili estos petataj krei novan konton."
+  },
+  "inviteMultipleEmailDesc": {
+    "message": "Vi povas inviti ĝis $COUNT$ uzantojn samtempe per komo apartigante liston de retpoŝtadresoj.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "userUsingTwoStep": {
+    "message": "Ĉi tiu uzanto uzas du-paŝan ensaluton por protekti sian konton."
+  },
+  "userAccessAllItems": {
+    "message": "Ĉi tiu uzanto povas aliri kaj modifi ĉiujn erojn."
+  },
+  "userAccessSelectedCollections": {
+    "message": "Ĉi tiu uzanto povas aliri nur la elektitajn kolektojn."
+  },
+  "search": {
+    "message": "Serĉi"
+  },
+  "invited": {
+    "message": "Invitita"
+  },
+  "accepted": {
+    "message": "Akceptita"
+  },
+  "confirmed": {
+    "message": "Konfirmita"
+  },
+  "clientOwnerEmail": {
+    "message": "Client Owner Email"
+  },
+  "owner": {
+    "message": "Posedanto"
+  },
+  "ownerDesc": {
+    "message": "La plej alt-alira uzanto, kiu povas administri ĉiujn aspektojn de via organizo."
+  },
+  "clientOwnerDesc": {
+    "message": "This user should be independent of the Provider. If the Provider is disassociated with the organization, this user will maintain ownership of the organization."
+  },
+  "admin": {
+    "message": "Administranto"
+  },
+  "adminDesc": {
+    "message": "Administrantoj povas aliri kaj administri ĉiujn erojn, kolektojn kaj uzantojn en via organizo."
+  },
+  "user": {
+    "message": "Uzanto"
+  },
+  "userDesc": {
+    "message": "Regula uzanto kun aliro al asignitaj kolektoj en via organizo."
+  },
+  "manager": {
+    "message": "Administranto"
+  },
+  "managerDesc": {
+    "message": "Administrantoj povas aliri kaj administri asignitajn kolektojn en via organizo."
+  },
+  "all": {
+    "message": "Ĉiuj"
+  },
+  "refresh": {
+    "message": "Refreŝigi"
+  },
+  "timestamp": {
+    "message": "Horstampo"
+  },
+  "event": {
+    "message": "Evento"
+  },
+  "unknown": {
+    "message": "Nekonata"
+  },
+  "loadMore": {
+    "message": "Ŝargi Pli"
+  },
+  "mobile": {
+    "message": "Poŝtelefono",
+    "description": "Mobile app"
+  },
+  "extension": {
+    "message": "Etendaĵo",
+    "description": "Browser extension/addon"
+  },
+  "desktop": {
+    "message": "Labortablo",
+    "description": "Desktop app"
+  },
+  "webVault": {
+    "message": "Reta Volbo"
+  },
+  "loggedIn": {
+    "message": "Ensalutinta."
+  },
+  "changedPassword": {
+    "message": "Ŝanĝis pasvorton de konto."
+  },
+  "enabledUpdated2fa": {
+    "message": "Ebligita / ĝisdatigita du-ŝtupa ensaluto."
+  },
+  "disabled2fa": {
+    "message": "Malebligita du-ŝtupa ensaluto."
+  },
+  "recovered2fa": {
+    "message": "Rekuperita konto post du-ŝtupa ensaluto."
+  },
+  "failedLogin": {
+    "message": "Ensaluta provo malsukcesis kun malĝusta pasvorto."
+  },
+  "failedLogin2fa": {
+    "message": "Ensaluta provo malsukcesis kun malĝusta du-ŝtupa ensaluto."
+  },
+  "exportedVault": {
+    "message": "Eksportita trezorejo."
+  },
+  "exportedOrganizationVault": {
+    "message": "Eksportita organizo-volbo."
+  },
+  "editedOrgSettings": {
+    "message": "Redaktitaj organizaj agordoj."
+  },
+  "createdItemId": {
+    "message": "Kreita ero $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "editedItemId": {
+    "message": "Redaktita ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "deletedItemId": {
+    "message": "Sendita ero $ID $al rubujo.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "movedItemIdToOrg": {
+    "message": "Moved item $ID$ to an organization.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "'Google'"
+      }
+    }
+  },
+  "viewedItemId": {
+    "message": "Vidita ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "viewedPasswordItemId": {
+    "message": "Vidita pasvorto por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "viewedHiddenFieldItemId": {
+    "message": "Vidita kaŝita kampo por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "viewedSecurityCodeItemId": {
+    "message": "Vidita sekureca kodo por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "copiedPasswordItemId": {
+    "message": "Kopiita pasvorto por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "copiedHiddenFieldItemId": {
+    "message": "Kopiita kaŝita kampo por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "copiedSecurityCodeItemId": {
+    "message": "Kopiita sekureca kodo por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "autofilledItemId": {
+    "message": "Aŭtomate plenigita ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "createdCollectionId": {
+    "message": "Kreita kolekto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Server Passwords"
+      }
+    }
+  },
+  "editedCollectionId": {
+    "message": "Redaktita kolekto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Server Passwords"
+      }
+    }
+  },
+  "deletedCollectionId": {
+    "message": "Forigita kolekto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Server Passwords"
+      }
+    }
+  },
+  "editedPolicyId": {
+    "message": "Redaktita politiko $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Master Password"
+      }
+    }
+  },
+  "createdGroupId": {
+    "message": "Kreita grupo $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Developers"
+      }
+    }
+  },
+  "editedGroupId": {
+    "message": "Redaktita grupo $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Developers"
+      }
+    }
+  },
+  "deletedGroupId": {
+    "message": "Forigita grupo $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Developers"
+      }
+    }
+  },
+  "removedUserId": {
+    "message": "Forigita uzanto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "createdAttachmentForItem": {
+    "message": "Kreita aldonaĵo por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "deletedAttachmentForItem": {
+    "message": "Forigita aldonaĵo por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "editedCollectionsForItem": {
+    "message": "Redaktitaj kolektoj por ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "invitedUserId": {
+    "message": "Invitita uzanto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "confirmedUserId": {
+    "message": "Konfirmita uzanto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "editedUserId": {
+    "message": "Redaktita uzanto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "editedGroupsForUser": {
+    "message": "Redaktitaj grupoj por uzanto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "unlinkedSsoUser": {
+    "message": "Senligita SSO por uzanto $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "createdOrganizationId": {
+    "message": "Created organization $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "addedOrganizationId": {
+    "message": "Added organization $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "removedOrganizationId": {
+    "message": "Removed organization $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "accessedClientVault": {
+    "message": "Accessed $ID$ organization vault.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "device": {
+    "message": "Aparato"
+  },
+  "view": {
+    "message": "Vidigi"
+  },
+  "invalidDateRange": {
+    "message": "Nevalida datintervalo."
+  },
+  "errorOccurred": {
+    "message": "Eraro okazis."
+  },
+  "userAccess": {
+    "message": "Uzanto-Aliro"
+  },
+  "userType": {
+    "message": "Uzanto-Tipo"
+  },
+  "groupAccess": {
+    "message": "Grupaliro"
+  },
+  "groupAccessUserDesc": {
+    "message": "Redaktu la grupojn al kiuj apartenas ĉi tiu uzanto."
+  },
+  "invitedUsers": {
+    "message": "Invititaj uzantoj."
+  },
+  "resendInvitation": {
+    "message": "Resendi Inviton"
+  },
+  "resendEmail": {
+    "message": "Resend Email"
+  },
+  "hasBeenReinvited": {
+    "message": "$USER$ estis reenvitita.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "confirm": {
+    "message": "Konfirmi"
+  },
+  "confirmUser": {
+    "message": "Konfirmi uzanton"
+  },
+  "hasBeenConfirmed": {
+    "message": "$USER$ estas konfirmita.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "confirmUsers": {
+    "message": "Konfirmi Uzantojn"
+  },
+  "usersNeedConfirmed": {
+    "message": "Vi havas uzantojn, kiuj akceptis sian inviton, sed tamen devas esti konfirmitaj. Uzantoj ne havos aliron al la organizo antaŭ ol ili estos konfirmitaj."
+  },
+  "startDate": {
+    "message": "Komenca dato"
+  },
+  "endDate": {
+    "message": "Fina dato"
+  },
+  "verifyEmail": {
+    "message": "Kontroli retpoŝton"
+  },
+  "verifyEmailDesc": {
+    "message": "Kontrolu la retpoŝtadreson de via konto por malŝlosi aliron al ĉiuj funkcioj."
+  },
+  "verifyEmailFirst": {
+    "message": "La retpoŝta adreso de via konto unue devas esti kontrolita."
+  },
+  "checkInboxForVerification": {
+    "message": "Kontrolu vian retpoŝtan enirkeston por kontroli ligon."
+  },
+  "emailVerified": {
+    "message": "Via retpoŝto estis kontrolita."
+  },
+  "emailVerifiedFailed": {
+    "message": "Ne eblas kontroli vian retpoŝton. Provu sendi novan kontrolan retpoŝton."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "updateBrowser": {
+    "message": "Ĝisdatigi retumilon"
+  },
+  "updateBrowserDesc": {
+    "message": "Vi uzas nesubtenatan tTT-legilon. La ttt-volbo eble ne funkcias ĝuste."
+  },
+  "joinOrganization": {
+    "message": "Aliĝi al Organizo"
+  },
+  "joinOrganizationDesc": {
+    "message": "Vi estis invitita aliĝi al la organizo supre listigita. Por akcepti la inviton, vi devas ensaluti aŭ krei novan Bitwarden-konton."
+  },
+  "inviteAccepted": {
+    "message": "Invito Akceptita"
+  },
+  "inviteAcceptedDesc": {
+    "message": "Vi povas aliri ĉi tiun organizon post kiam administranto konfirmos vian membrecon. Ni sendos al vi retpoŝton kiam tio okazos."
+  },
+  "inviteAcceptFailed": {
+    "message": "Ne eblas akcepti inviton. Petu administranton de organizo sendi novan inviton."
+  },
+  "inviteAcceptFailedShort": {
+    "message": "Ne eblas akcepti inviton. $DESCRIPTION $",
+    "placeholders": {
+      "description": {
+        "content": "$1",
+        "example": "You must enable 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "rememberEmail": {
+    "message": "Memoru retpoŝton"
+  },
+  "recoverAccountTwoStepDesc": {
+    "message": "Se vi ne povas aliri vian konton per viaj normalaj du-ŝtupaj ensalutaj metodoj, vi povas uzi vian du-ŝtupan ensalutan rekuperan kodon por malŝalti ĉiujn du-ŝtupajn provizantojn en via konto."
+  },
+  "recoverAccountTwoStep": {
+    "message": "Rekuperi Ensaluton Du-Paŝan"
+  },
+  "twoStepRecoverDisabled": {
+    "message": "Du-ŝtupa ensaluto estas malŝaltita en via konto."
+  },
+  "learnMore": {
+    "message": "Lernu pli"
+  },
+  "deleteRecoverDesc": {
+    "message": "Enigu vian retpoŝtan adreson sube por rekuperi kaj forigi vian konton."
+  },
+  "deleteRecoverEmailSent": {
+    "message": "Se via konto ekzistas, ni sendis al vi retpoŝton kun pliaj instrukcioj."
+  },
+  "deleteRecoverConfirmDesc": {
+    "message": "Vi petis forigi vian Bitwarden-konton. Alklaku la butonon sube por konfirmi."
+  },
+  "myOrganization": {
+    "message": "Mia Organizo"
+  },
+  "deleteOrganization": {
+    "message": "Forigi Organizon"
+  },
+  "deletingOrganizationContentWarning": {
+    "message": "Enter the master password to confirm deletion of $ORGANIZATION$ and all associated data. Vault data in $ORGANIZATION$ includes:",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "deletingOrganizationActiveUserAccountsWarning": {
+    "message": "User accounts will remain active after deletion but will no longer be associated to this organization."
+  },
+  "deletingOrganizationIsPermanentWarning": {
+    "message": "Deleting $ORGANIZATION$ is permanent and irreversible.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "organizationDeleted": {
+    "message": "Organizo Forigita"
+  },
+  "organizationDeletedDesc": {
+    "message": "La organizo kaj ĉiuj rilataj datumoj estis forigitaj."
+  },
+  "organizationUpdated": {
+    "message": "Organizo ĝisdatigita"
+  },
+  "taxInformation": {
+    "message": "Impostaj Informoj"
+  },
+  "taxInformationDesc": {
+    "message": "Por klientoj en Usono, poŝtkodo necesas por plenumi vendimpostajn postulojn, por aliaj landoj vi rajtas laŭvole doni impostan identigan numeron (VAT / GST) kaj / aŭ adreson por aperi sur viaj fakturoj."
+  },
+  "billingPlan": {
+    "message": "Plani",
+    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+  },
+  "changeBillingPlan": {
+    "message": "Ŝanĝi Planon",
+    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+  },
+  "changeBillingPlanUpgrade": {
+    "message": "Ĝisdatigu vian konton al alia plano donante la informojn sube. Bonvolu certigi, ke vi havas aktivan pagmanieron aldonitan al la konto.",
+    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+  },
+  "invoiceNumber": {
+    "message": "Fakturo # $NUMBER$",
+    "description": "ex. Invoice #79C66F0-0001",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "79C66F0-0001"
+      }
+    }
+  },
+  "viewInvoice": {
+    "message": "Vidi Fakturon"
+  },
+  "downloadInvoice": {
+    "message": "Elŝuti Fakturon"
+  },
+  "verifyBankAccount": {
+    "message": "Kontroli bankan konton"
+  },
+  "verifyBankAccountDesc": {
+    "message": "Ni faris du mikrodeponejojn al via banka konto (ĝi povas daŭri 1-2 labortagojn por aperi). Enigu ĉi tiujn sumojn por kontroli la bankan konton."
+  },
+  "verifyBankAccountInitialDesc": {
+    "message": "Pago per banka konto disponeblas nur al klientoj en Usono. Vi devos kontroli vian bankan konton. Ni faros du mikro-deponejojn en la venontaj 1-2 labortagoj. Enigu ĉi tiujn sumojn en la faktura paĝo de la organizo por kontroli la bankan konton. "
+  },
+  "verifyBankAccountFailureWarning": {
+    "message": "Malsukceso kontroli la bankan konton rezultigos mankan pagon kaj via abono malŝaltita."
+  },
+  "verifiedBankAccount": {
+    "message": "Banka konto estas kontrolita."
+  },
+  "bankAccount": {
+    "message": "Banka Konto"
+  },
+  "amountX": {
+    "message": "Amount $COUNT$",
+    "description": "Used in bank account verification of micro-deposits. Amount, as in a currency amount. Ex. Amount 1 is $2.00, Amount 2 is $1.50",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "routingNumber": {
+    "message": "Numero de Vojo",
+    "description": "Bank account routing number"
+  },
+  "accountNumber": {
+    "message": "Konta Numero"
+  },
+  "accountHolderName": {
+    "message": "Nomo de Konto-Posedanto"
+  },
+  "bankAccountType": {
+    "message": "Kontospeco"
+  },
+  "bankAccountTypeCompany": {
+    "message": "Kompanio (Komerco)"
+  },
+  "bankAccountTypeIndividual": {
+    "message": "Individua (Persona)"
+  },
+  "enterInstallationId": {
+    "message": "Enigu vian instalan identigilon"
+  },
+  "limitSubscriptionDesc": {
+    "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new users."
+  },
+  "maxSeatLimit": {
+    "message": "Maximum Seat Limit (optional)",
+    "description": "Upper limit of seats to allow through autoscaling"
+  },
+  "maxSeatCost": {
+    "message": "Max potential seat cost"
+  },
+  "addSeats": {
+    "message": "Aldoni Sidlokojn",
+    "description": "Seat = User Seat"
+  },
+  "removeSeats": {
+    "message": "Forigi Sidlokojn",
+    "description": "Seat = User Seat"
+  },
+  "subscriptionDesc": {
+    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+  },
+  "subscriptionUserSeats": {
+    "message": "Via abono permesas entute $COUNT$ uzantojn.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "limitSubscription": {
+    "message": "Limit Subscription (Optional)"
+  },
+  "subscriptionSeats": {
+    "message": "Subscription Seats"
+  },
+  "subscriptionUpdated": {
+    "message": "Subscription updated"
+  },
+  "additionalOptions": {
+    "message": "Additional Options"
+  },
+  "additionalOptionsDesc": {
+    "message": "For additional help in managing your subscription, please contact Customer Support."
+  },
+  "subscriptionUserSeatsUnlimitedAutoscale": {
+    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+  },
+  "subscriptionUserSeatsLimitedAutoscale": {
+    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users until your $MAX$ seat limit is reached.",
+    "placeholders": {
+      "max": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionFreePlan": {
+    "message": "You cannot invite more than $COUNT$ users without upgrading your plan.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "subscriptionFamiliesPlan": {
+    "message": "You cannot invite more than $COUNT$ users without upgrading your plan. Please contact Customer Support to upgrade.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "6"
+      }
+    }
+  },
+  "subscriptionSponsoredFamiliesPlan": {
+    "message": "Your subscription allows for a total of $COUNT$ users. Your plan is sponsored and billed to an external organization.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "6"
+      }
+    }
+  },
+  "subscriptionMaxReached": {
+    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ users without increasing your subscription seats.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "seatsToAdd": {
+    "message": "Aldonaj Seĝoj"
+  },
+  "seatsToRemove": {
+    "message": "Forigeblaj Seĝoj"
+  },
+  "seatsAddNote": {
+    "message": "Aldoni uzantajn seĝojn rezultigos ĝustigojn al viaj fakturaj sumoj kaj tuj ŝargos vian pagmanieron en dosiero. La unua ŝarĝo estos proporciigita por la resto de la aktuala faktura ciklo."
+  },
+  "seatsRemoveNote": {
+    "message": "Forigi uzantajn seĝojn rezultigos ĝustigojn al viaj fakturaj sumoj, kiuj estos proratigitaj kiel kreditoj al via sekva faktura kosto."
+  },
+  "adjustedSeats": {
+    "message": "Ĝustigitaj $AMOUNT$ uzanto-seĝoj.",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
+  "keyUpdated": {
+    "message": "Ŝlosilo ĝisdatigita"
+  },
+  "updateKeyTitle": {
+    "message": "Ĝisdatiga Ŝlosilo"
+  },
+  "updateEncryptionKey": {
+    "message": "Ĝisdatigi Ĉifran Ŝlosilon"
+  },
+  "updateEncryptionKeyShortDesc": {
+    "message": "Vi nun uzas malmodernan ĉifran skemon."
+  },
+  "updateEncryptionKeyDesc": {
+    "message": "Ni transloĝiĝis al pli grandaj ĉifraj ŝlosiloj, kiuj donas pli bonan sekurecon kaj aliron al pli novaj funkcioj. Ĝisdatigi vian ĉifran ŝlosilon estas rapide kaj facile. Simple tajpu vian ĉefan pasvorton sube. Ĉi tiu ĝisdatigo fine fariĝos deviga."
+  },
+  "updateEncryptionKeyWarning": {
+    "message": "Post ĝisdatigi vian ĉifradan ŝlosilon, vi devas elsaluti kaj reeniri al ĉiuj Bitwarden-aplikaĵoj, kiujn vi nun uzas (kiel la poŝtelefona programo aŭ retumila etendaĵoj). Malsukceso elsaluti kaj reeniri (kiu elŝutas via nova ĉifra ŝlosilo) povas rezultigi korupton de datumoj. Ni provos elsaluti vin aŭtomate, tamen ĝi eble prokrastos. "
+  },
+  "updateEncryptionKeyExportWarning": {
+    "message": "Ĉiuj ĉifritaj eksportaĵoj, kiujn vi konservis, ankaŭ malvalidiĝos."
+  },
+  "subscription": {
+    "message": "Abono"
+  },
+  "loading": {
+    "message": "Ŝarĝante"
+  },
+  "upgrade": {
+    "message": "Ĝisdatigi"
+  },
+  "upgradeOrganization": {
+    "message": "Altgradiga Organizo"
+  },
+  "upgradeOrganizationDesc": {
+    "message": "Ĉi tiu funkcio ne haveblas por senpagaj organizoj. Ŝanĝu al pagita plano por malŝlosi pli da funkcioj."
+  },
+  "createOrganizationStep1": {
+    "message": "Krei Organizon: Paŝo 1"
+  },
+  "createOrganizationCreatePersonalAccount": {
+    "message": "Antaŭ ol krei vian organizon, vi unue devas krei senpagan personan konton."
+  },
+  "refunded": {
+    "message": "Repagita"
+  },
+  "nothingSelected": {
+    "message": "Vi elektis nenion."
+  },
+  "acceptPolicies": {
+    "message": "Markante ĉi tiun keston vi konsentas pri jeno:"
+  },
+  "acceptPoliciesError": {
+    "message": "Kondiĉoj pri Servo kaj Privateca Politiko ne estis agnoskitaj."
+  },
+  "termsOfService": {
+    "message": "Kondiĉoj por Servo"
+  },
+  "privacyPolicy": {
+    "message": "Privateca Politiko"
+  },
+  "filters": {
+    "message": "Filtriloj"
+  },
+  "vaultTimeout": {
+    "message": "Tempomezuro de Volbo"
+  },
+  "vaultTimeoutDesc": {
+    "message": "Elektu kiam via trezorejo eksvalidiĝos kaj plenumos la elektitan agon."
+  },
+  "oneMinute": {
+    "message": "1 minuto"
+  },
+  "fiveMinutes": {
+    "message": "5 minutoj"
+  },
+  "fifteenMinutes": {
+    "message": "15 minutoj"
+  },
+  "thirtyMinutes": {
+    "message": "30 minutoj"
+  },
+  "oneHour": {
+    "message": "1 horo"
+  },
+  "fourHours": {
+    "message": "4 horoj"
+  },
+  "onRefresh": {
+    "message": "Sur Retumila Aktualigo"
+  },
+  "dateUpdated": {
+    "message": "Ĝisdatigita",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Pasvorto Ĝisdatigita",
+    "description": "ex. Date this password was updated"
+  },
+  "organizationIsDisabled": {
+    "message": "Organizo estas malŝaltita."
+  },
+  "licenseIsExpired": {
+    "message": "Licenco eksvalidiĝis."
+  },
+  "updatedUsers": {
+    "message": "Ĝisdatigitaj uzantoj"
+  },
+  "selected": {
+    "message": "Elektita"
+  },
+  "ownership": {
+    "message": "Posedo"
+  },
+  "whoOwnsThisItem": {
+    "message": "Kiu posedas ĉi tiun eron?"
+  },
+  "strong": {
+    "message": "Forta",
+    "description": "ex. A strong password. Scale: Very Weak -> Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Bona",
+    "description": "ex. A good password. Scale: Very Weak -> Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Malforta",
+    "description": "ex. A weak password. Scale: Very Weak -> Weak -> Good -> Strong"
+  },
+  "veryWeak": {
+    "message": "Tre Malforta",
+    "description": "ex. A very weak password. Scale: Very Weak -> Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Malforta Majstra Pasvorto"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "La majstra pasvorto, kiun vi elektis, estas malforta. Vi devas uzi fortan majstran pasvorton (aŭ pasfrazon) por ĝuste protekti vian Bitwarden-konton. Ĉu vi certe volas uzi ĉi tiun ĉefan pasvorton?"
+  },
+  "rotateAccountEncKey": {
+    "message": "Ankaŭ turnu la ĉifran ŝlosilon de mia konto"
+  },
+  "rotateEncKeyTitle": {
+    "message": "Rotacii Ĉifran Ŝlosilon"
+  },
+  "rotateEncKeyConfirmation": {
+    "message": "Ĉu vi certe volas turni la ĉifran ŝlosilon de via konto?"
+  },
+  "attachmentsNeedFix": {
+    "message": "Ĉi tiu ero havas malnovajn dosierajn aldonaĵojn, kiujn necesas ripari."
+  },
+  "attachmentFixDesc": {
+    "message": "Ĉi tio estas malnova riparenda dosiero, kiun necesas ripari. Alklaku por lerni pli."
+  },
+  "fix": {
+    "message": "Ripari",
+    "description": "This is a verb. ex. 'Fix The Car'"
+  },
+  "oldAttachmentsNeedFixDesc": {
+    "message": "Estas malnovaj dosieraj aldonaĵoj en via trezorejo, kiuj devas esti riparitaj antaŭ ol vi povas turni la ĉifran ŝlosilon de via konto."
+  },
+  "yourAccountsFingerprint": {
+    "message": "Fingrospuro de via konto",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintEnsureIntegrityVerify": {
+    "message": "Por certigi la integrecon de viaj ĉifradaj ŝlosiloj, bonvolu kontroli la fingrospuran frazon de la uzanto antaŭ ol daŭrigi.",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "dontAskFingerprintAgain": {
+    "message": "Ne petu kontroli denove fingrospuran frazon",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "free": {
+    "message": "Senpaga",
+    "description": "Free, as in 'Free beer'"
+  },
+  "apiKey": {
+    "message": "API-Ŝlosilo"
+  },
+  "apiKeyDesc": {
+    "message": "Via API-ŝlosilo povas esti uzata por aŭtentikigi al la publika API de Bitwarden."
+  },
+  "apiKeyRotateDesc": {
+    "message": "Rotacii la API-ŝlosilon nuligos la antaŭan ŝlosilon. Vi povas turni vian API-ŝlosilon se vi kredas, ke la nuna ŝlosilo ne plu estas sekura uzi."
+  },
+  "apiKeyWarning": {
+    "message": "Via API-ŝlosilo havas plenan aliron al la organizo. Ĝi estu tenata sekreta."
+  },
+  "userApiKeyDesc": {
+    "message": "Via API-ŝlosilo povas esti uzata por aŭtentikigi en la Bitwarden CLI."
+  },
+  "userApiKeyWarning": {
+    "message": "Via API-ŝlosilo estas alternativa aŭtentikiga me mechanismanismo. Ĝi devas esti sekretigita."
+  },
+  "oauth2ClientCredentials": {
+    "message": "Klientaj Atestiloj de OAuth 2.0",
+    "description": "'OAuth 2.0' is a programming protocol. It should probably not be translated."
+  },
+  "viewApiKey": {
+    "message": "Vidi API-Ŝlosilon"
+  },
+  "rotateApiKey": {
+    "message": "Rotacii API-Ŝlosilon"
+  },
+  "selectOneCollection": {
+    "message": "Vi devas elekti almenaŭ unu kolekton."
+  },
+  "couldNotChargeCardPayInvoice": {
+    "message": "Ni ne povis ŝargi vian karton. Bonvolu vidi kaj pagi la senpagitan fakturon listigitan sube."
+  },
+  "inAppPurchase": {
+    "message": "En-aĉeta aĉeto"
+  },
+  "cannotPerformInAppPurchase": {
+    "message": "Vi ne povas plenumi ĉi tiun agon dum vi uzas en-programan aĉetan pagmanieron."
+  },
+  "manageSubscriptionFromStore": {
+    "message": "Vi devas administri vian abonon de la butiko, kie via aĉeta aĉeto estis farita."
+  },
+  "minLength": {
+    "message": "Minimuma longeco"
+  },
+  "clone": {
+    "message": "Kloni"
+  },
+  "masterPassPolicyDesc": {
+    "message": "Agordi minimumajn postulojn por majstra pasvorta forto."
+  },
+  "twoStepLoginPolicyDesc": {
+    "message": "Postuli uzantojn agordi du-ŝtupan ensaluton en siaj personaj kontoj."
+  },
+  "twoStepLoginPolicyWarning": {
+    "message": "Organizaj membroj, kiuj ne estas Posedantoj aŭ Administrantoj kaj ne havas du-paŝan ensaluton ebligita por sia persona konto, estos forigitaj de la organizo kaj ricevos retpoŝton sciigantan ilin pri la ŝanĝo."
+  },
+  "twoStepLoginPolicyUserWarning": {
+    "message": "Vi estas membro de organizo, kiu bezonas du-paŝan ensaluton por esti ebligita en via uzantokonto. Se vi malŝaltas ĉiujn du-paŝajn ensalutajn provizantojn, vi aŭtomate estos forigita de ĉi tiuj organizoj."
+  },
+  "passwordGeneratorPolicyDesc": {
+    "message": "Agordi minimumajn postulojn por agordi pasvortan generilon."
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Unu aŭ pluraj organizaj politikoj influas viajn generatorajn agordojn."
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "Unu aŭ pluraj organizaj politikoj postulas vian ĉefan pasvorton por plenumi la jenajn postulojn:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimuma kompleksa poentaro de $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimuma longo de $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Enhavas unu aŭ plurajn majusklajn literojn"
+  },
+  "policyInEffectLowercase": {
+    "message": "Enhavas unu aŭ plurajn minusklojn"
+  },
+  "policyInEffectNumbers": {
+    "message": "Enhavas unu aŭ plurajn numerojn"
+  },
+  "policyInEffectSpecial": {
+    "message": "Enhavas unu aŭ pli el la jenaj specialaj signoj $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Via nova majstra pasvorto ne plenumas la politikajn postulojn."
+  },
+  "minimumNumberOfWords": {
+    "message": "Minimuma Nombro de Vortoj"
+  },
+  "defaultType": {
+    "message": "Apriora Tipo"
+  },
+  "userPreference": {
+    "message": "Uzanta Prefero"
+  },
+  "vaultTimeoutAction": {
+    "message": "Volta Tempolima Ago"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "Ŝlosita trezorejo postulas, ke vi reenmetu vian ĉefan pasvorton por aliri ĝin denove."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "Ensalutita volbo postulas, ke vi denove aŭtentikigu por aliri ĝin denove."
+  },
+  "lock": {
+    "message": "Ŝlosi",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Rubujo",
+    "description": "Noun: A special folder for holding deleted items that have not yet been permanently deleted"
+  },
+  "searchTrash": {
+    "message": "Serĉi rubujon"
+  },
+  "permanentlyDelete": {
+    "message": "Konstante Forigi"
+  },
+  "permanentlyDeleteSelected": {
+    "message": "Permanently Delete Selected"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Konstante Forigi Artikolon"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Ĉu vi certe volas konstante forigi ĉi tiun eron?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Konstante forigita ero"
+  },
+  "permanentlyDeletedItems": {
+    "message": "Konstante Forigitaj Eroj"
+  },
+  "permanentlyDeleteSelectedItemsDesc": {
+    "message": "Vi elektis $COUNT$ eron (j) por konstante forigi. Ĉu vi certas, ke vi volas forigi konstante ĉiujn ĉi tiujn erojn?",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "permanentlyDeletedItemId": {
+    "message": "Konstante Forigita ero $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "restore": {
+    "message": "Restarigi"
+  },
+  "restoreSelected": {
+    "message": "Restarigi elektitajn"
+  },
+  "restoreItem": {
+    "message": "Restarigi Artikolon"
+  },
+  "restoredItem": {
+    "message": "Restarigita elemento"
+  },
+  "restoredItems": {
+    "message": "Restarigitaj Eroj"
+  },
+  "restoreItemConfirmation": {
+    "message": "Ĉu vi certe volas restarigi ĉi tiun eron?"
+  },
+  "restoreItems": {
+    "message": "Restarigi erojn"
+  },
+  "restoreSelectedItemsDesc": {
+    "message": "Vi elektis $COUNT$ eron (j) por restarigi. Ĉu vi certe volas restarigi ĉiujn ĉi tiujn erojn?",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "restoredItemId": {
+    "message": "Restored item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Google"
+      }
+    }
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Elsaluti forigos ĉian aliron al via trezorejo kaj postulas interretan aŭtentikigon post la limtempo. Ĉu vi certas, ke vi volas uzi ĉi tiun agordon?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Konfirmado de Tempolima Ago"
+  },
+  "hidePasswords": {
+    "message": "Kaŝi Pasvortojn"
+  },
+  "countryPostalCodeRequiredDesc": {
+    "message": "Ni postulas ĉi tiujn informojn nur por kalkuli vendimposton kaj financan raportadon."
+  },
+  "includeVAT": {
+    "message": "Inkluzivi informojn pri VAT / GST (nedeviga)"
+  },
+  "taxIdNumber": {
+    "message": "Imposta ID de VAT / GST"
+  },
+  "taxInfoUpdated": {
+    "message": "Impostaj informoj ĝisdatigitaj."
+  },
+  "setMasterPassword": {
+    "message": "Agordi Majstran Pasvorton"
+  },
+  "ssoCompleteRegistration": {
+    "message": "Por kompletigi ensalutadon per SSO, bonvolu agordi ĉefan pasvorton por aliri kaj protekti vian trezorejon."
+  },
+  "identifier": {
+    "message": "Identigilo"
+  },
+  "organizationIdentifier": {
+    "message": "Organiza Identigilo"
+  },
+  "ssoLogInWithOrgIdentifier": {
+    "message": "Ensalutu per la unika ensaluta portalo de via organizo. Bonvolu enigi la identigilon de via organizo por komenci."
+  },
+  "enterpriseSingleSignOn": {
+    "message": "Entreprena Ununura Ensaluto"
+  },
+  "ssoHandOff": {
+    "message": "Vi povas nun fermi ĉi tiun langeton kaj daŭrigi en la etendaĵo."
+  },
+  "includeAllTeamsFeatures": {
+    "message": "Ĉiuj funkcioj de teamoj, plus:"
+  },
+  "includeSsoAuthentication": {
+    "message": "SSO-Aŭtentikigo per SAML2.0 kaj OpenID Connect"
+  },
+  "includeEnterprisePolicies": {
+    "message": "Entreprenaj Politikoj"
+  },
+  "ssoValidationFailed": {
+    "message": "SSO-Validado Malsukcesis"
+  },
+  "ssoIdentifierRequired": {
+    "message": "Organiza Identigilo necesas."
+  },
+  "unlinkSso": {
+    "message": "Malkonekti SSO"
+  },
+  "unlinkSsoConfirmation": {
+    "message": "Are you sure you want to unlink SSO for this organization?"
+  },
+  "linkSso": {
+    "message": "Ligi SSO"
+  },
+  "singleOrg": {
+    "message": "Ununura Organizo"
+  },
+  "singleOrgDesc": {
+    "message": "Limigi uzantojn povi aliĝi al iuj aliaj organizoj."
+  },
+  "singleOrgBlockCreateMessage": {
+    "message": "Via nuna organizo havas politikon, kiu ne permesas vin aliĝi al pli ol unu organizo. Bonvolu kontakti administrantojn de via organizo aŭ registriĝi de alia Bitwarden-konto."
+  },
+  "singleOrgPolicyWarning": {
+    "message": "Organizaj membroj, kiuj ne estas Posedantoj aŭ Administrantoj kaj jam estas membro de alia organizo, estos forigitaj de via organizo."
+  },
+  "requireSso": {
+    "message": "Ununura Ensaluta Aŭtentikigo"
+  },
+  "requireSsoPolicyDesc": {
+    "message": "Postuli uzantojn ensaluti per la entrepreno pri sola ensaluto."
+  },
+  "prerequisite": {
+    "message": "Antaŭkondiĉo"
+  },
+  "requireSsoPolicyReq": {
+    "message": "La entreprena politiko pri Ununura Organizo devas esti ebligita antaŭ ol aktivigi ĉi tiun politikon."
+  },
+  "requireSsoPolicyReqError": {
+    "message": "Politiko pri Ununura Organizo ne ebligita."
+  },
+  "requireSsoExemption": {
+    "message": "Organizaj Posedantoj kaj Administrantoj estas esceptitaj de la apliko de ĉi tiu politiko."
+  },
+  "sendTypeFile": {
+    "message": "Dosiero"
+  },
+  "sendTypeText": {
+    "message": "Teksto"
+  },
+  "createSend": {
+    "message": "Krei novan sendon",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Redakti Sendu",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Kreita Sendo",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Redaktita Sendo",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Forigita Sendo",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deleteSend": {
+    "message": "Forigi Sendu",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deleteSendConfirmation": {
+    "message": "Ĉu vi certe volas forigi ĉi tiun Sendon?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "whatTypeOfSend": {
+    "message": "Kia Sendo estas ĉi tio?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletionDate": {
+    "message": "Dato de Forigo"
+  },
+  "deletionDateDesc": {
+    "message": "La Sendo estos definitive forigita en la specifaj dato kaj horo.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Findato"
+  },
+  "expirationDateDesc": {
+    "message": "Se agordita, aliro al ĉi tiu Sendo eksvalidiĝos je la specifaj dato kaj horo.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maksimuma Aliro-Kalkulo"
+  },
+  "maxAccessCountDesc": {
+    "message": "Se agordite, uzantoj ne plu povos aliri ĉi tiun sendon post kiam la maksimuma alira kalkulo estos atingita.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Nuna Alira Kalkulo"
+  },
+  "sendPasswordDesc": {
+    "message": "Laŭvole postulas pasvorton por uzantoj aliri ĉi tiun Sendon.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Privataj notoj pri ĉi tiu Sendo.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "disabled": {
+    "message": "Malebligita"
+  },
+  "sendLink": {
+    "message": "Sendi ligon",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLink": {
+    "message": "Kopii Sendu Ligilon",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "removePassword": {
+    "message": "Forigi pasvorton"
+  },
+  "removedPassword": {
+    "message": "Forigita Pasvorto"
+  },
+  "removePasswordConfirmation": {
+    "message": "Ĉu vi certe volas forigi la pasvorton?"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "disableThisSend": {
+    "message": "Malŝalti ĉi tiun Sendon por ke neniu povu aliri ĝin.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "allSends": {
+    "message": "Ĉiuj Sendoj"
+  },
+  "maxAccessCountReached": {
+    "message": "Maksimuma alirnombro atingis",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
+  },
+  "pendingDeletion": {
+    "message": "Atendanta forigo"
+  },
+  "expired": {
+    "message": "Eksvalidiĝis"
+  },
+  "searchSends": {
+    "message": "Serĉaj Sendoj",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendProtectedPassword": {
+    "message": "Ĉi tiu Sendo estas protektita per pasvorto. Bonvolu tajpi la pasvorton sube por daŭrigi.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendProtectedPasswordDontKnow": {
+    "message": "Ĉu vi ne scias la pasvorton? Petu al la Sendinto la pasvorton bezonatan por aliri ĉi tiun Sendon.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendHiddenByDefault": {
+    "message": "Ĉi tiu sendado estas kaŝita defaŭlte. Vi povas ŝalti ĝian videblecon per la suba butono.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "downloadFile": {
+    "message": "Elŝuti dosieron"
+  },
+  "sendAccessUnavailable": {
+    "message": "La Sendo, kiun vi provas aliri, ne ekzistas aŭ ne plu haveblas.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "missingSendFile": {
+    "message": "La dosiero asociita kun ĉi tiu Sendo ne estis trovebla.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "noSendsInList": {
+    "message": "Estas neniuj Sendoj por listigi.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "emergencyAccess": {
+    "message": "Kriza Aliro"
+  },
+  "emergencyAccessDesc": {
+    "message": "Donu kaj administru krizan aliron por fidindaj kontaktoj. Fidindaj kontaktoj povas peti aliron al aŭ Vidi aŭ Transpreni vian konton en kazo de krizo. Vizitu nian helpopaĝon por pliaj informoj kaj detaloj pri kiel funkcias nula scio-dividado."
+  },
+  "emergencyAccessOwnerWarning": {
+    "message": "Vi estas Posedanto de unu aŭ pluraj organizoj. Se vi donas transprenan aliron al urĝa kontakto, ili povos uzi ĉiujn viajn permesojn kiel Posedanto post transpreno."
+  },
+  "trustedEmergencyContacts": {
+    "message": "Fidindaj krizaj kontaktoj"
+  },
+  "noTrustedContacts": {
+    "message": "Vi ankoraŭ ne aldonis krizajn kontaktojn, invitu fidindan kontakton por komenci."
+  },
+  "addEmergencyContact": {
+    "message": "Aldoni krizan kontakton"
+  },
+  "designatedEmergencyContacts": {
+    "message": "Elektita kiel kriz-kontakto"
+  },
+  "noGrantedAccess": {
+    "message": "Vi ankoraŭ ne estis nomumita kiel urĝa kontakto por iu ajn."
+  },
+  "inviteEmergencyContact": {
+    "message": "Inviti krizan kontakton"
+  },
+  "editEmergencyContact": {
+    "message": "Redakti krizan kontakton"
+  },
+  "inviteEmergencyContactDesc": {
+    "message": "Invitu novan krizan kontakton enigante sube sian retpoŝtan adreson Bitwarden. Se ili ne havas Bitwarden-konton jam, ili estos petataj krei novan konton."
+  },
+  "emergencyAccessRecoveryInitiated": {
+    "message": "Kriza Aliro Komencita"
+  },
+  "emergencyAccessRecoveryApproved": {
+    "message": "Akutaliro aprobita"
+  },
+  "viewDesc": {
+    "message": "Povas vidi ĉiujn erojn en via propra trezorejo."
+  },
+  "takeover": {
+    "message": "Transpreno"
+  },
+  "takeoverDesc": {
+    "message": "Povas reagordi vian konton per nova majstra pasvorto."
+  },
+  "waitTime": {
+    "message": "Atendotempo"
+  },
+  "waitTimeDesc": {
+    "message": "Tempo bezonata antaŭ ol aŭtomate doni aliron."
+  },
+  "oneDay": {
+    "message": "1 tago"
+  },
+  "days": {
+    "message": "$TAGOJ$ tagoj",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "invitedUser": {
+    "message": "Invitita uzanto."
+  },
+  "acceptEmergencyAccess": {
+    "message": "Vi estis invitita fariĝi urĝa kontakto por la supre listigita uzanto. Por akcepti la inviton, vi devas ensaluti aŭ krei novan Bitwarden-konton."
+  },
+  "emergencyInviteAcceptFailed": {
+    "message": "Ne eblas akcepti inviton. Petu la uzanton sendi novan inviton."
+  },
+  "emergencyInviteAcceptFailedShort": {
+    "message": "Ne eblas akcepti inviton. $DESCRIPTION $",
+    "placeholders": {
+      "description": {
+        "content": "$1",
+        "example": "You must enable 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "emergencyInviteAcceptedDesc": {
+    "message": "Vi povas aliri la krizajn eblojn por ĉi tiu uzanto post kiam via identeco estis konfirmita. Ni sendos al vi retpoŝton kiam tio okazos."
+  },
+  "requestAccess": {
+    "message": "Peti Aliron"
+  },
+  "requestAccessConfirmation": {
+    "message": "Ĉu vi certe volas peti krizan aliron? Vi ricevos aliron post $WAITTIME$ tago (j) aŭ kiam la uzanto mane aprobos la peton.",
+    "placeholders": {
+      "waittime": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "requestSent": {
+    "message": "Kriza aliro petita por $USER $. Ni sciigos vin per retpoŝto kiam eblas daŭrigi.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "approve": {
+    "message": "Aprovi"
+  },
+  "reject": {
+    "message": "Malakcepti"
+  },
+  "approveAccessConfirmation": {
+    "message": "Ĉu vi certe volas aprobi krizan aliron? Ĉi tio permesos $USER$ al $ACTION$ via konto.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      },
+      "action": {
+        "content": "$2",
+        "example": "View"
+      }
+    }
+  },
+  "emergencyApproved": {
+    "message": "Akutaliro aprobita."
+  },
+  "emergencyRejected": {
+    "message": "Krizaliro malakceptita"
+  },
+  "passwordResetFor": {
+    "message": "Pasvorta restarigo por $USER $. Vi nun povas ensaluti per la nova pasvorto.",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "personalOwnership": {
+    "message": "Persona Posedo"
+  },
+  "personalOwnershipPolicyDesc": {
+    "message": "Postuli uzantojn konservi trezorejojn al organizo forigante la opcion pri persona posedo."
+  },
+  "personalOwnershipExemption": {
+    "message": "Organizaj Posedantoj kaj Administrantoj estas esceptitaj de la apliko de ĉi tiu politiko."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Pro entreprena politiko, vi ne rajtas konservi artikolojn al via persona trezorejo. Ŝanĝu la opcion Proprieto al organizo kaj elektu el disponeblaj Kolektoj."
+  },
+  "disableSend": {
+    "message": "Malebligi Sendi"
+  },
+  "disableSendPolicyDesc": {
+    "message": "Ne permesu al uzantoj krei aŭ redakti Bitwarden Sendon. Forigi ekzistantan Sendon estas ankoraŭ permesita.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "disableSendExemption": {
+    "message": "Organizaj uzantoj, kiuj povas administri la politikojn de la organizo, estas esceptitaj de la devigo de ĉi tiu politiko."
+  },
+  "sendDisabled": {
+    "message": "Sendu malebligita",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Pro entreprena politiko, vi nur povas forigi ekzistantan Sendon.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendOptions": {
+    "message": "Send Options",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendOptionsPolicyDesc": {
+    "message": "Set options for creating and editing Sends.",
+    "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendOptionsExemption": {
+    "message": "Organization users that can manage the organization's policies are exempt from this policy's enforcement."
+  },
+  "disableHideEmail": {
+    "message": "Do not allow users to hide their email address from recipients when creating or editing a Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "The following organization policies are currently in effect:"
+  },
+  "sendDisableHideEmailInEffect": {
+    "message": "Users are not allowed to hide their email address from recipients when creating or editing a Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "modifiedPolicyId": {
+    "message": "Modifita politiko $ID $.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Master Password"
+      }
+    }
+  },
+  "planPrice": {
+    "message": "Plana prezo"
+  },
+  "estimatedTax": {
+    "message": "Taksita imposto"
+  },
+  "custom": {
+    "message": "Propra"
+  },
+  "customDesc": {
+    "message": "Permesas pli detalan kontrolon de uzaj permesoj por progresintaj agordoj."
+  },
+  "permissions": {
+    "message": "Permesoj"
+  },
+  "accessEventLogs": {
+    "message": "Aliri Eventajn Registrojn"
+  },
+  "accessImportExport": {
+    "message": "Aliri Importi / Eksporti"
+  },
+  "accessReports": {
+    "message": "Aliraj Raportoj"
+  },
+  "missingPermissions": {
+    "message": "You lack the necessary permissions to perform this action."
+  },
+  "manageAllCollections": {
+    "message": "Administri ĉiujn kolektojn"
+  },
+  "createNewCollections": {
+    "message": "Create New Collections"
+  },
+  "editAnyCollection": {
+    "message": "Edit Any Collection"
+  },
+  "deleteAnyCollection": {
+    "message": "Delete Any Collection"
+  },
+  "manageAssignedCollections": {
+    "message": "Administri Asignitajn Kolektojn"
+  },
+  "editAssignedCollections": {
+    "message": "Edit Assigned Collections"
+  },
+  "deleteAssignedCollections": {
+    "message": "Delete Assigned Collections"
+  },
+  "manageGroups": {
+    "message": "Administri Grupojn"
+  },
+  "managePolicies": {
+    "message": "Administri Politikojn"
+  },
+  "manageSso": {
+    "message": "Administri SSO"
+  },
+  "manageUsers": {
+    "message": "Administri Uzantojn"
+  },
+  "manageResetPassword": {
+    "message": "Manage Password Reset"
+  },
+  "disableRequiredError": {
+    "message": "You must manually disable the $POLICYNAME$ policy before this policy can be disabled.",
+    "placeholders": {
+      "policyName": {
+        "content": "$1",
+        "example": "Single Sign-On Authentication"
+      }
+    }
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Organiza politiko influas viajn posedopciojn."
+  },
+  "personalOwnershipPolicyInEffectImports": {
+    "message": "An organization policy has disabled importing items into your personal vault."
+  },
+  "personalOwnershipCheckboxDesc": {
+    "message": "Malebligi personan posedon por organizaj uzantoj"
+  },
+  "textHiddenByDefault": {
+    "message": "Alirante la Sendon, kaŝu la tekston defaŭlte",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNameDesc": {
+    "message": "Amika nomo por priskribi ĉi tiun Sendon.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "La teksto, kiun vi volas sendi."
+  },
+  "sendFileDesc": {
+    "message": "La dosiero, kiun vi volas sendi."
+  },
+  "copySendLinkOnSave": {
+    "message": "Kopiu la ligon por dividi ĉi tion Sendu al mia tondujo post konservado."
+  },
+  "sendLinkLabel": {
+    "message": "Sendi ligon",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "send": {
+    "message": "Sendi",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAccessTaglineProductDesc": {
+    "message": "Bitwarden Send transdonas sentemajn provizorajn informojn al aliaj facile kaj sekure.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAccessTaglineLearnMore": {
+    "message": "Lernu pli pri",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more about** Bitwarden Send or sign up to try it today.'"
+  },
+  "sendVaultCardProductDesc": {
+    "message": "Kunhavigi tekston aŭ dosierojn rekte kun iu ajn."
+  },
+  "sendVaultCardLearnMore": {
+    "message": "Lernu pli",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more**, see how it works, or try it now. '"
+  },
+  "sendVaultCardSee": {
+    "message": "vidu",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, **see** how it works, or try it now.'"
+  },
+  "sendVaultCardHowItWorks": {
+    "message": "kiel ĝi funkcias",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see **how it works**, or try it now.'"
+  },
+  "sendVaultCardOr": {
+    "message": "aŭ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
+  },
+  "sendVaultCardTryItNow": {
+    "message": "provu ĝin nun",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, or **try it now**.'"
+  },
+  "sendAccessTaglineOr": {
+    "message": "aŭ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send **or** sign up to try it today.'"
+  },
+  "sendAccessTaglineSignUp": {
+    "message": "aliĝi",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or **sign up** to try it today.'"
+  },
+  "sendAccessTaglineTryToday": {
+    "message": "provi ĝin hodiaŭ.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
+  },
+  "sendCreatorIdentifier": {
+    "message": "Bitwarden-uzanto $USER_IDENTIFIER$ dividis la jenon kun vi",
+    "placeholders": {
+      "user_identifier": {
+        "content": "$1",
+        "example": "An email address"
+      }
+    }
+  },
+  "viewSendHiddenEmailWarning": {
+    "message": "The Bitwarden user who created this Send has chosen to hide their email address. You should ensure you trust the source of this link before using or downloading its content.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDateIsInvalid": {
+    "message": "La donita eksvalidiĝa dato ne validas."
+  },
+  "deletionDateIsInvalid": {
+    "message": "La forigita dato donita ne validas."
+  },
+  "expirationDateAndTimeRequired": {
+    "message": "Eksvalidiĝa dato kaj horo necesas."
+  },
+  "deletionDateAndTimeRequired": {
+    "message": "Forigo de dato kaj horo estas bezonataj."
+  },
+  "dateParsingError": {
+    "message": "Estis eraro konservante viajn forigajn kaj eksvalidajn datojn."
+  },
+  "webAuthnFallbackMsg": {
+    "message": "To verify your 2FA please click the button below."
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
+  "webAuthnNotSupported": {
+    "message": "WebAuthn is not supported in this browser."
+  },
+  "webAuthnSuccess": {
+    "message": "WebAuthn verified successfully! You may close this tab."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "enrollPasswordReset": {
+    "message": "Enroll in Password Reset"
+  },
+  "enrolledPasswordReset": {
+    "message": "Enrolled in Password Reset"
+  },
+  "withdrawPasswordReset": {
+    "message": "Withdraw from Password Reset"
+  },
+  "enrollPasswordResetSuccess": {
+    "message": "Enrollment success!"
+  },
+  "withdrawPasswordResetSuccess": {
+    "message": "Withdrawal success!"
+  },
+  "eventEnrollPasswordReset": {
+    "message": "User $ID$ enrolled in password reset assistance.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "eventWithdrawPasswordReset": {
+    "message": "User $ID$ withdrew from password reset assistance.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "eventAdminPasswordReset": {
+    "message": "Master password reset for user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "eventResetSsoLink": {
+    "message": "Reset Sso link for user $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "firstSsoLogin": {
+    "message": "$ID$ logged in using Sso for the first time",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "resetPassword": {
+    "message": "Reset Password"
+  },
+  "resetPasswordLoggedOutWarning": {
+    "message": "Proceeding will log $NAME$ out of their current session, requiring them to log back in. Active sessions on other devices may continue to remain active for up to one hour.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "thisUser": {
+    "message": "this user"
+  },
+  "resetPasswordMasterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require the master password to meet the following requirements:"
+  },
+  "resetPasswordSuccess": {
+    "message": "Password reset success!"
+  },
+  "resetPasswordEnrollmentWarning": {
+    "message": "Enrollment will allow organization administrators to change your master password. Are you sure you want to enroll?"
+  },
+  "resetPasswordPolicy": {
+    "message": "Master Password Reset"
+  },
+  "resetPasswordPolicyDescription": {
+    "message": "Allow administrators in the organization to reset organization users' master password."
+  },
+  "resetPasswordPolicyWarning": {
+    "message": "Users in the organization will need to self-enroll or be auto-enrolled before administrators can reset their master password."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatic Enrollment"
+  },
+  "resetPasswordPolicyAutoEnrollDescription": {
+    "message": "All users will be automatically enrolled in password reset once their invite is accepted and will not be allowed to withdraw."
+  },
+  "resetPasswordPolicyAutoEnrollWarning": {
+    "message": "Users already in the organization will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
+  },
+  "resetPasswordPolicyAutoEnrollCheckbox": {
+    "message": "Require new users to be enrolled automatically"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+  },
+  "resetPasswordOrgKeysError": {
+    "message": "Organization Keys response is null"
+  },
+  "resetPasswordDetailsError": {
+    "message": "Reset Password Details response is null"
+  },
+  "trashCleanupWarning": {
+    "message": "Items that have been in Trash more than 30 days will be automatically deleted."
+  },
+  "trashCleanupWarningSelfHosted": {
+    "message": "Items that have been in Trash for a while will be automatically deleted."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+  },
+  "reinviteSelected": {
+    "message": "Resend Invitations"
+  },
+  "noSelectedUsersApplicable": {
+    "message": "This action is not applicable to any of the selected users."
+  },
+  "removeUsersWarning": {
+    "message": "Are you sure you want to remove the following users? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Choose a theme for your web vault."
+  },
+  "themeSystem": {
+    "message": "Use System Theme"
+  },
+  "themeDark": {
+    "message": "Dark"
+  },
+  "themeLight": {
+    "message": "Light"
+  },
+  "confirmSelected": {
+    "message": "Confirm Selected"
+  },
+  "bulkConfirmStatus": {
+    "message": "Bulk action status"
+  },
+  "bulkConfirmMessage": {
+    "message": "Confirmed successfully."
+  },
+  "bulkReinviteMessage": {
+    "message": "Reinvited successfully."
+  },
+  "bulkRemovedMessage": {
+    "message": "Removed successfully"
+  },
+  "bulkFilteredMessage": {
+    "message": "Excluded, not applicable for this action."
+  },
+  "fingerprint": {
+    "message": "Fingerprint"
+  },
+  "removeUsers": {
+    "message": "Remove Users"
+  },
+  "error": {
+    "message": "Error"
+  },
+  "resetPasswordManageUsers": {
+    "message": "Manage Users must also be enabled with the Manage Password Reset permission"
+  },
+  "setupProvider": {
+    "message": "Provider Setup"
+  },
+  "setupProviderLoginDesc": {
+    "message": "You've been invited to setup a new provider. To continue, you need to log in or create a new Bitwarden account."
+  },
+  "setupProviderDesc": {
+    "message": "Please enter the details below to complete the provider setup. Contact Customer Support if you have any questions."
+  },
+  "providerName": {
+    "message": "Provider Name"
+  },
+  "providerSetup": {
+    "message": "The provider has been set up."
+  },
+  "clients": {
+    "message": "Clients"
+  },
+  "providerAdmin": {
+    "message": "Provider Admin"
+  },
+  "providerAdminDesc": {
+    "message": "The highest access user that can manage all aspects of your provider as well as access and manage client organizations."
+  },
+  "serviceUser": {
+    "message": "Service User"
+  },
+  "serviceUserDesc": {
+    "message": "Service users can access and manage all client organizations."
+  },
+  "providerInviteUserDesc": {
+    "message": "Invite a new user to your provider by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
+  },
+  "joinProvider": {
+    "message": "Join Provider"
+  },
+  "joinProviderDesc": {
+    "message": "You've been invited to join the provider listed above. To accept the invitation, you need to log in or create a new Bitwarden account."
+  },
+  "providerInviteAcceptFailed": {
+    "message": "Unable to accept invitation. Ask a provider admin to send a new invitation."
+  },
+  "providerInviteAcceptedDesc": {
+    "message": "You can access this provider once an administrator confirms your membership. We'll send you an email when that happens."
+  },
+  "providerUsersNeedConfirmed": {
+    "message": "You have users that have accepted their invitation, but still need to be confirmed. Users will not have access to the provider until they are confirmed."
+  },
+  "provider": {
+    "message": "Provider"
+  },
+  "newClientOrganization": {
+    "message": "New Client Organization"
+  },
+  "newClientOrganizationDesc": {
+    "message": "Create a new client organization that will be associated with you as the provider. You will be able to access and manage this organization."
+  },
+  "addExistingOrganization": {
+    "message": "Add Existing Organization"
+  },
+  "myProvider": {
+    "message": "My Provider"
+  },
+  "addOrganizationConfirmation": {
+    "message": "Are you sure you want to add $ORGANIZATION$ as a client to $PROVIDER$?",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      },
+      "provider": {
+        "content": "$2",
+        "example": "My Provider Name"
+      }
+    }
+  },
+  "organizationJoinedProvider": {
+    "message": "Organization was successfully added to the provider"
+  },
+  "accessingUsingProvider": {
+    "message": "Accessing organization using provider $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "My Provider Name"
+      }
+    }
+  },
+  "providerIsDisabled": {
+    "message": "Provider is disabled."
+  },
+  "providerUpdated": {
+    "message": "Provider updated"
+  },
+  "yourProviderIs": {
+    "message": "Your provider is $PROVIDER$. They have administrative and billing privileges for your organization.",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "My Provider Name"
+      }
+    }
+  },
+  "detachedOrganization": {
+    "message": "The organization $ORGANIZATION$ has been detached from your provider.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "detachOrganizationConfirmation": {
+    "message": "Are you sure you want to detach this organization? The organization will continue to exist but will no longer be managed by the provider."
+  },
+  "add": {
+    "message": "Add"
+  },
+  "updatedMasterPassword": {
+    "message": "Updated Master Password"
+  },
+  "updateMasterPassword": {
+    "message": "Update Master Password"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
+  "masterPasswordInvalidWarning": {
+    "message": "Your Master Password does not meet the policy requirements of this organization. In order to join the organization, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
+  "maximumVaultTimeout": {
+    "message": "Vault Timeout"
+  },
+  "maximumVaultTimeoutDesc": {
+    "message": "Configure a maximum vault timeout for all users."
+  },
+  "maximumVaultTimeoutLabel": {
+    "message": "Maximum Vault Timeout"
+  },
+  "invalidMaximumVaultTimeout": {
+    "message": "Invalid Maximum Vault Timeout."
+  },
+  "hours": {
+    "message": "Hours"
+  },
+  "minutes": {
+    "message": "Minutes"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "customVaultTimeout": {
+    "message": "Custom Vault Timeout"
+  },
+  "vaultTimeoutToLarge": {
+    "message": "Your vault timeout exceeds the restriction set by your organization."
+  },
+  "disablePersonalVaultExport": {
+    "message": "Disable Personal Vault Export"
+  },
+  "disablePersonalVaultExportDesc": {
+    "message": "Prohibits users from exporting their private vault data."
+  },
+  "vaultExportDisabled": {
+    "message": "Vault Export Disabled"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "selectType": {
+    "message": "Select SSO Type"
+  },
+  "type": {
+    "message": "Type"
+  },
+  "openIdConnectConfig": {
+    "message": "OpenID Connect Configuration"
+  },
+  "samlSpConfig": {
+    "message": "SAML Service Provider Configuration"
+  },
+  "samlIdpConfig": {
+    "message": "SAML Identity Provider Configuration"
+  },
+  "callbackPath": {
+    "message": "Callback Path"
+  },
+  "signedOutCallbackPath": {
+    "message": "Signed Out Callback Path"
+  },
+  "authority": {
+    "message": "Authority"
+  },
+  "clientId": {
+    "message": "Client ID"
+  },
+  "clientSecret": {
+    "message": "Client Secret"
+  },
+  "metadataAddress": {
+    "message": "Metadata Address"
+  },
+  "oidcRedirectBehavior": {
+    "message": "OIDC Redirect Behavior"
+  },
+  "getClaimsFromUserInfoEndpoint": {
+    "message": "Get claims from user info endpoint"
+  },
+  "additionalScopes": {
+    "message": "Custom Scopes"
+  },
+  "additionalUserIdClaimTypes": {
+    "message": "Custom User ID Claim Types"
+  },
+  "additionalEmailClaimTypes": {
+    "message": "Email Claim Types"
+  },
+  "additionalNameClaimTypes": {
+    "message": "Custom Name Claim Types"
+  },
+  "acrValues": {
+    "message": "Requested Authentication Context Class Reference values"
+  },
+  "expectedReturnAcrValue": {
+    "message": "Expected \"acr\" Claim Value In Response"
+  },
+  "spEntityId": {
+    "message": "SP Entity ID"
+  },
+  "spMetadataUrl": {
+    "message": "SAML 2.0 Metadata URL"
+  },
+  "spAcsUrl": {
+    "message": "Assertion Consumer Service (ACS) URL"
+  },
+  "spNameIdFormat": {
+    "message": "Name ID Format"
+  },
+  "spOutboundSigningAlgorithm": {
+    "message": "Outbound Signing Algorithm"
+  },
+  "spSigningBehavior": {
+    "message": "Signing Behavior"
+  },
+  "spMinIncomingSigningAlgorithm": {
+    "message": "Minimum Incoming Signing Algorithm"
+  },
+  "spWantAssertionsSigned": {
+    "message": "Expect signed assertions"
+  },
+  "spValidateCertificates": {
+    "message": "Validate certificates"
+  },
+  "idpEntityId": {
+    "message": "Entity ID"
+  },
+  "idpBindingType": {
+    "message": "Binding Type"
+  },
+  "idpSingleSignOnServiceUrl": {
+    "message": "Single Sign On Service URL"
+  },
+  "idpSingleLogoutServiceUrl": {
+    "message": "Single Log Out Service URL"
+  },
+  "idpX509PublicCert": {
+    "message": "X509 Public Certificate"
+  },
+  "idpOutboundSigningAlgorithm": {
+    "message": "Outbound Signing Algorithm"
+  },
+  "idpAllowUnsolicitedAuthnResponse": {
+    "message": "Allow unsolicited authentication response"
+  },
+  "idpAllowOutboundLogoutRequests": {
+    "message": "Allow outbound logout requests"
+  },
+  "idpSignAuthenticationRequests": {
+    "message": "Sign authentication requests"
+  },
+  "ssoSettingsSaved": {
+    "message": "Single Sign-On configuration was saved."
+  },
+  "sponsoredFamilies": {
+    "message": "Free Bitwarden Families"
+  },
+  "sponsoredFamiliesEligible": {
+    "message": "You and your family are eligible for Free Bitwarden Families. Redeem with your personal email to keep your data secure even when you are not at work."
+  },
+  "sponsoredFamiliesEligibleCard": {
+    "message": "Redeem your Free Bitwarden for Families plan today to keep your data secure even when you are not at work."
+  },
+  "sponsoredFamiliesInclude": {
+    "message": "The Bitwarden for Families plan include"
+  },
+  "sponsoredFamiliesPremiumAccess": {
+    "message": "Premium access for up to 6 users"
+  },
+  "sponsoredFamiliesSharedCollections": {
+    "message": "Shared collections for Family secrets"
+  },
+  "badToken": {
+    "message": "The link is no longer valid. Please have the sponsor resend the offer."
+  },
+  "reclaimedFreePlan": {
+    "message": "Reclaimed free plan"
+  },
+  "redeem": {
+    "message": "Redeem"
+  },
+  "sponsoredFamiliesSelectOffer": {
+    "message": "Select the organization you would like sponsored"
+  },
+  "familiesSponsoringOrgSelect": {
+    "message": "Which Free Families offer would you like to redeem?"
+  },
+  "sponsoredFamiliesEmail": {
+    "message": "Enter your personal email to redeem Bitwarden Families"
+  },
+  "sponsoredFamiliesLeaveCopy": {
+    "message": "If you leave or are removed from the sponsoring organization, your Families plan will expire at the end of the billing period."
+  },
+  "acceptBitwardenFamiliesHelp": {
+    "message": "Accept offer for an existing organization or create a new Families organization."
+  },
+  "setupSponsoredFamiliesLoginDesc": {
+    "message": "You've been offered a free Bitwarden Families Plan Organization. To continue, you need to log in to the account that received the offer."
+  },
+  "sponsoredFamiliesAcceptFailed": {
+    "message": "Unable to accept offer. Please resend the offer email from your enterprise account and try again."
+  },
+  "sponsoredFamiliesAcceptFailedShort": {
+    "message": "Unable to accept offer. $DESCRIPTION$",
+    "placeholders": {
+      "description": {
+        "content": "$1",
+        "example": "You must have at least one existing Families Organization."
+      }
+    }
+  },
+  "sponsoredFamiliesOffer": {
+    "message": "Accept Free Bitwarden Families"
+  },
+  "sponsoredFamiliesOfferRedeemed": {
+    "message": "Free Bitwarden Families offer successfully redeemed"
+  },
+  "redeemed": {
+    "message": "Redeemed"
+  },
+  "redeemedAccount": {
+    "message": "Redeemed Account"
+  },
+  "revokeAccount": {
+    "message": "Revoke account $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "My Sponsorship Name"
+      }
+    }
+  },
+  "resendEmailLabel": {
+    "message": "Resend Sponsorship email to $NAME$ sponsorship",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "My Sponsorship Name"
+      }
+    }
+  },
+  "freeFamiliesPlan": {
+    "message": "Free Families Plan"
+  },
+  "redeemNow": {
+    "message": "Redeem Now"
+  },
+  "recipient": {
+    "message": "Recipient"
+  },
+  "removeSponsorship": {
+    "message": "Remove Sponsorship"
+  },
+  "removeSponsorshipConfirmation": {
+    "message": "After removing a sponsorship, you will be responsible for this subscription and related invoices. Are you sure you want to continue?"
+  },
+  "sponsorshipCreated": {
+    "message": "Sponsorship Created"
+  },
+  "revoke": {
+    "message": "Revoke"
+  },
+  "emailSent": {
+    "message": "Email Sent"
+  },
+  "revokeSponsorshipConfirmation": {
+    "message": "After removing this account, the Families organization owner will be responsible for this subscription and related invoices. Are you sure you want to continue?"
+  },
+  "removeSponsorshipSuccess": {
+    "message": "Sponsorship Removed"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the Key Connector, try again later."
+  },
+  "keyConnectorUrl": {
+    "message": "Key Connector URL"
+  },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
+  "verificationCode": {
+    "message": "Verification Code"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
+  "verificationCodeRequired": {
+    "message": "Verification code is required."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "allowSso": {
+    "message": "Allow SSO authentication"
+  },
+  "allowSsoDesc": {
+    "message": "Once set up, your configuration will be saved and members will be able to authenticate using their Identity Provider credentials."
+  },
+  "ssoPolicyHelpStart": {
+    "message": "Enable the",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+  },
+  "ssoPolicyHelpLink": {
+    "message": "SSO Authentication policy",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+  },
+  "ssoPolicyHelpEnd": {
+    "message": "to require all members to log in with SSO.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+  },
+  "ssoPolicyHelpKeyConnector": {
+    "message": "SSO Authentication and Single Organization policies are required to set up Key Connector decryption."
+  },
+  "memberDecryptionOption": {
+    "message": "Member Decryption Options"
+  },
+  "memberDecryptionPassDesc": {
+    "message": "Once authenticated, members will decrypt vault data using their Master Passwords."
+  },
+  "keyConnector": {
+    "message": "Key Connector"
+  },
+  "memberDecryptionKeyConnectorDesc": {
+    "message": "Connect Login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their Master Passwords to decrypt vault data. Contact Bitwarden Support for set up assistance."
+  },
+  "keyConnectorPolicyRestriction": {
+    "message": "\"Login with SSO and Key Connector Decryption\" is enabled. This policy will only apply to Owners and Admins."
+  },
+  "enabledSso": {
+    "message": "Enabled SSO"
+  },
+  "disabledSso": {
+    "message": "Disabled SSO"
+  },
+  "enabledKeyConnector": {
+    "message": "Enabled Key Connector"
+  },
+  "disabledKeyConnector": {
+    "message": "Disabled Key Connector"
+  },
+  "keyConnectorWarning": {
+    "message": "Once members begin using Key Connector, your Organization cannot revert to Master Password decryption. Proceed only if you are comfortable deploying and managing a key server."
+  },
+  "migratedKeyConnector": {
+    "message": "Migrated to Key Connector"
+  },
+  "paymentSponsored": {
+    "message": "Please provide a payment method to associate with the organization. Don't worry, we won't charge you anything unless you select additional features or your sponsorship expires. "
+  },
+  "orgCreatedSponsorshipInvalid": {
+    "message": "The sponsorship offer has expired. You may delete the organization you created to avoid a charge at the end of your 7 day trial. Otherwise you may close this prompt to keep the organization and assume billing responsibility."
+  },
+  "newFamiliesOrganization": {
+    "message": "New Families Organization"
+  },
+  "acceptOffer": {
+    "message": "Accept Offer"
+  },
+  "sponsoringOrg": {
+    "message": "Sponsoring Organization"
+  },
+  "keyConnectorTest": {
+    "message": "Test"
+  },
+  "keyConnectorTestSuccess": {
+    "message": "Success! Key Connector reached."
+  },
+  "keyConnectorTestFail": {
+    "message": "Cannot reach Key Connector. Check URL."
+  },
+  "sponsorshipTokenHasExpired": {
+    "message": "The sponsorship offer has expired."
+  },
+  "freeWithSponsorship": {
+    "message": "FREE with sponsorship"
+  },
+  "formErrorSummaryPlural": {
+    "message": "$COUNT$ fields above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "formErrorSummarySingle": {
+    "message": "1 field above needs your attention."
+  },
+  "fieldRequiredError": {
+    "message": "$FIELDNAME$ is required.",
+    "placeholders": {
+      "fieldname": {
+        "content": "$1",
+        "example": "Full name"
+      }
+    }
+  },
+  "required": {
+    "message": "required"
+  },
+  "idpSingleSignOnServiceUrlRequired": {
+    "message": "Required if Entity ID is not a URL."
+  },
+  "openIdOptionalCustomizations": {
+    "message": "Optional Customizations"
+  },
+  "openIdAuthorityRequired": {
+    "message": "Required if Authority is not valid."
+  },
+  "separateMultipleWithComma": {
+    "message": "Separate multiple with a comma."
+  },
+  "sessionTimeout": {
+    "message": "Your session has timed out. Please go back and try logging in again."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Exporting Organization Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultDescription": {
+    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Personal vault items and items from other organizations will not be included.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "backToReports": {
+    "message": "Back to Reports"
+  },
+  "generator": {
+    "message": "Generator"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "What would you like to generate?"
+  },
+  "passwordType": {
+    "message": "Password Type"
+  },
+  "regenerateUsername": {
+    "message": "Regenerate Username"
+  },
+  "generateUsername": {
+    "message": "Generate Username"
+  },
+  "usernameType": {
+    "message": "Username Type"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Use your email provider's sub-addressing capabilities."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "Random"
+  },
+  "randomWord": {
+    "message": "Random Word"
+  },
+  "service": {
+    "message": "Service"
+  }
+}

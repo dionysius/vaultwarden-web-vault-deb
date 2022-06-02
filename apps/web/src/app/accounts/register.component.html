@@ -1,0 +1,355 @@
+<div class="layout" [ngClass]="['layout', layout]">
+  <!-- TEAMS 1 Header -->
+  <header
+    class="header"
+    *ngIf="
+      layout === 'default' ||
+      layout === 'teams' ||
+      layout === 'teams1' ||
+      layout === 'teams2' ||
+      layout === 'enterprise' ||
+      layout === 'enterprise1' ||
+      layout === 'enterprise2' ||
+      layout === 'cnetcmpgnent' ||
+      layout === 'cnetcmpgnteams' ||
+      layout === 'cnetcmpgnind'
+    "
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-7">
+          <img
+            alt="Bitwarden"
+            class="logo mb-2"
+            src="../../images/register-layout/logo-horizontal-white.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <form #form (ngSubmit)="submit()" [appApiAction]="formPromise" class="container" ngNativeValidate>
+    <div class="row">
+      <div class="col-7" *ngIf="layout">
+        <div class="mt-5">
+          <!-- Default Body -->
+          <div
+            *ngIf="
+              layout === 'teams' ||
+              layout === 'enterprise' ||
+              layout === 'enterprise1' ||
+              layout === 'default'
+            "
+          >
+            <h1>The Bitwarden Password Manager</h1>
+            <h2>
+              Trusted by millions of individuals, teams, and organizations worldwide for secure
+              password storage and sharing.
+            </h2>
+            <p>Store logins, secure notes, and more</p>
+            <p>Collaborate and share securely</p>
+            <p>Access anywhere on any device</p>
+            <p>Create your account to get started</p>
+          </div>
+
+          <!-- Teams & Enterprise Body -->
+          <div *ngIf="layout === 'teams1' || layout === 'teams2' || layout === 'enterprise2'">
+            <h1>
+              Start Your <span *ngIf="layout === 'teams1' || layout === 'teams1'">Teams<br /></span
+              ><span *ngIf="layout === 'enterprise2'">Enterprise</span> Free Trial Now
+            </h1>
+            <h2>
+              Millions of individuals, teams, and organizations worldwide trust Bitwarden for secure
+              password storage and sharing.
+            </h2>
+            <p>Collaborate and share securely</p>
+            <p>Deploy and manage quickly and easily</p>
+            <p>Access anywhere on any device</p>
+            <p>Create your account to get started</p>
+          </div>
+
+          <!-- CNET Campaign Teams & Enterprise Body -->
+          <div *ngIf="layout === 'cnetcmpgnteams' || layout === 'cnetcmpgnent'">
+            <h1>
+              Start Your <span *ngIf="layout === 'cnetcmpgnteams'">Teams<br /></span
+              ><span *ngIf="layout === 'cnetcmpgnent'">Enterprise</span> Free Trial Now
+            </h1>
+            <h2>
+              Millions of individuals, teams, and organizations worldwide trust Bitwarden for secure
+              password storage and sharing.
+            </h2>
+            <p>Collaborate and share securely</p>
+            <p>Deploy and manage quickly and easily</p>
+            <p>Access anywhere on any device</p>
+            <p>Create your account to get started</p>
+          </div>
+
+          <!-- CNET Campaign Premium Body -->
+          <div *ngIf="layout === 'cnetcmpgnind'">
+            <h1>Start Your Premium Account Now</h1>
+            <h2>
+              Millions of individuals, teams, and organizations worldwide trust Bitwarden for secure
+              password storage and sharing.
+            </h2>
+            <p>Store logins, secure notes, and more</p>
+            <p>Secure your account with advanced two-step login</p>
+            <p>Access anywhere on any device</p>
+            <p>Create your account to get started</p>
+          </div>
+        </div>
+      </div>
+      <div [ngClass]="{ 'col-5': layout, 'col-12': !layout }">
+        <div class="row justify-content-md-center mt-5">
+          <div [ngClass]="{ 'col-5': !layout, 'col-12': layout }">
+            <h1 class="lead text-center mb-4" *ngIf="!layout">{{ "createAccount" | i18n }}</h1>
+            <div class="card d-block">
+              <div class="card-body">
+                <app-callout
+                  title="{{ 'createOrganizationStep1' | i18n }}"
+                  type="info"
+                  icon="bwi bwi-thumb-tack"
+                  *ngIf="showCreateOrgMessage"
+                >
+                  {{ "createOrganizationCreatePersonalAccount" | i18n }}
+                </app-callout>
+                <div class="form-group">
+                  <label for="email">{{ "emailAddress" | i18n }}</label>
+                  <input
+                    id="email"
+                    class="form-control"
+                    type="text"
+                    name="Email"
+                    [(ngModel)]="email"
+                    required
+                    [appAutofocus]="email === ''"
+                    inputmode="email"
+                    appInputVerbatim="false"
+                  />
+                  <small class="form-text text-muted">{{ "emailAddressDesc" | i18n }}</small>
+                </div>
+                <div class="form-group">
+                  <label for="name">{{ "yourName" | i18n }}</label>
+                  <input
+                    id="name"
+                    class="form-control"
+                    type="text"
+                    name="Name"
+                    [(ngModel)]="name"
+                    [appAutofocus]="email !== ''"
+                  />
+                  <small class="form-text text-muted">{{ "yourNameDesc" | i18n }}</small>
+                </div>
+                <div class="form-group">
+                  <app-callout
+                    type="info"
+                    [enforcedPolicyOptions]="enforcedPolicyOptions"
+                    *ngIf="enforcedPolicyOptions"
+                  >
+                  </app-callout>
+                  <label for="masterPassword">{{ "masterPass" | i18n }}</label>
+                  <div class="d-flex">
+                    <div class="w-100">
+                      <input
+                        id="masterPassword"
+                        type="{{ showPassword ? 'text' : 'password' }}"
+                        name="MasterPassword"
+                        class="text-monospace form-control mb-1"
+                        [(ngModel)]="masterPassword"
+                        (input)="updatePasswordStrength()"
+                        required
+                        appInputVerbatim
+                      />
+                      <app-password-strength [score]="masterPasswordScore" [showText]="true">
+                      </app-password-strength>
+                    </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="ml-1 btn btn-link"
+                        appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                        (click)="togglePassword(false)"
+                      >
+                        <i
+                          class="bwi bwi-lg"
+                          aria-hidden="true"
+                          [ngClass]="{
+                            'bwi-eye': !showPassword,
+                            'bwi-eye-slash': showPassword
+                          }"
+                        ></i>
+                      </button>
+                      <div class="progress-bar invisible"></div>
+                    </div>
+                  </div>
+                  <small class="form-text text-muted">{{ "masterPassDesc" | i18n }}</small>
+                </div>
+                <div class="form-group">
+                  <label for="masterPasswordRetype">{{ "reTypeMasterPass" | i18n }}</label>
+                  <div class="d-flex">
+                    <input
+                      id="masterPasswordRetype"
+                      type="{{ showPassword ? 'text' : 'password' }}"
+                      name="MasterPasswordRetype"
+                      class="text-monospace form-control"
+                      [(ngModel)]="confirmMasterPassword"
+                      required
+                      appInputVerbatim
+                    />
+                    <button
+                      type="button"
+                      class="ml-1 btn btn-link"
+                      appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                      (click)="togglePassword(true)"
+                    >
+                      <i
+                        class="bwi bwi-lg"
+                        aria-hidden="true"
+                        [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="hint">{{ "masterPassHint" | i18n }}</label>
+                  <input
+                    id="hint"
+                    class="form-control"
+                    type="text"
+                    name="Hint"
+                    [(ngModel)]="hint"
+                  />
+                  <small class="form-text text-muted">{{ "masterPassHintDesc" | i18n }}</small>
+                </div>
+                <div [hidden]="!showCaptcha()">
+                  <iframe id="hcaptcha_iframe" height="80"></iframe>
+                </div>
+                <div class="form-group" *ngIf="showTerms">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="acceptPolicies"
+                      [(ngModel)]="acceptPolicies"
+                      name="AcceptPolicies"
+                    />
+                    <label class="form-check-label small text-muted" for="acceptPolicies">
+                      {{ "acceptPolicies" | i18n }}<br />
+                      <a href="https://bitwarden.com/terms/" target="_blank" rel="noopener">{{
+                        "termsOfService" | i18n
+                      }}</a
+                      >,
+                      <a href="https://bitwarden.com/privacy/" target="_blank" rel="noopener">{{
+                        "privacyPolicy" | i18n
+                      }}</a>
+                    </label>
+                  </div>
+                </div>
+                <hr />
+                <div class="d-flex mb-2">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block btn-submit"
+                    [disabled]="form.loading"
+                  >
+                    <span>{{ "submit" | i18n }}</span>
+                    <i
+                      class="bwi bwi-spinner bwi-spin"
+                      title="{{ 'loading' | i18n }}"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                  <a routerLink="/login" class="btn btn-outline-secondary btn-block ml-2 mt-0">
+                    {{ "cancel" | i18n }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7 d-flex align-items-center">
+        <div
+          *ngIf="
+            layout === 'cnetcmpgnent' || layout === 'cnetcmpgnteams' || layout === 'cnetcmpgnind'
+          "
+        >
+          <figure>
+            <figcaption>
+              <cite>
+                <img
+                  src="../../images/register-layout/cnet-logo.svg"
+                  class="w-25 d-block mx-auto"
+                  alt="cnet logo"
+                />
+              </cite>
+            </figcaption>
+            <blockquote class="mx-auto text-center px-4">
+              "No more excuses; start using Bitwarden today. The identity you save could be your
+              own. The money definitely will be."
+            </blockquote>
+          </figure>
+        </div>
+
+        <div
+          *ngIf="
+            layout === 'teams' ||
+            layout === 'teams1' ||
+            layout === 'teams2' ||
+            layout === 'enterprise' ||
+            layout === 'enterprise1' ||
+            layout === 'enterprise2' ||
+            layout === 'default'
+          "
+        >
+          <figure>
+            <figcaption>
+              <cite>
+                <img
+                  src="../../images/register-layout/forbes-logo.svg"
+                  class="w-25 d-block mx-auto"
+                  alt="Forbes Logo"
+                />
+              </cite>
+            </figcaption>
+            <blockquote class="mx-auto text-center px-4">
+              “Bitwarden boasts the backing of some of the world's best security experts and an
+              attractive, easy-to-use interface”
+            </blockquote>
+          </figure>
+        </div>
+      </div>
+      <div
+        *ngIf="
+          layout === 'cnetcmpgnent' || layout === 'cnetcmpgnteams' || layout === 'cnetcmpgnind'
+        "
+        class="col-5 d-flex align-items-center justify-content-center"
+      >
+        <img
+          src="../../images/register-layout/usnews-360-badge.svg"
+          class="w-50 d-block"
+          alt="US News 360 Reviews Best Password Manager"
+        />
+      </div>
+      <div
+        *ngIf="
+          layout === 'teams' ||
+          layout === 'teams1' ||
+          layout === 'teams2' ||
+          layout === 'enterprise' ||
+          layout === 'enterprise1' ||
+          layout === 'enterprise2' ||
+          layout === 'default'
+        "
+        class="col-5 d-flex align-items-center justify-content-center"
+      >
+        <img
+          src="../../images/register-layout/usnews-360-badge.svg"
+          class="w-50 d-block"
+          alt="US News 360 Reviews Best Password Manager"
+        />
+      </div>
+    </div>
+  </form>
+</div>
