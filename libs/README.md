@@ -1,0 +1,48 @@
+[![Github Workflow build on master](https://github.com/bitwarden/jslib/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/bitwarden/jslib/actions/workflows/build.yml?query=branch:master)
+
+> **Repository Reorganization in Progress**
+>
+> We are currently migrating some projects over to a mono repository. For existing PR's we will be providing documentation on how to move/migrate them. To minimize the overhead we are actively reviewing open PRs. If possible please ensure any pending comments are resolved as soon as possible.
+>
+> New pull requests created during this transition period may not get addressed —if needed, please create a new PR after the reorganization is complete.
+
+# Bitwarden JavaScript Library
+
+Common code referenced across Bitwarden JavaScript projects.
+
+## Requirements
+
+- [Node.js](https://nodejs.org) v16.13.1 or greater
+- NPM v8
+- Git
+- node-gyp
+
+### Windows
+
+- _Microsoft Build Tools 2015_ in Visual Studio Installer
+- [Windows 10 SDK 17134](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/)
+  either by downloading it seperately or through the Visual Studio Installer.
+
+## We're Hiring!
+
+Interested in contributing in a big way? Consider joining our team! We're hiring for many positions. Please take a look at our [Careers page](https://bitwarden.com/careers/) to see what opportunities are currently open as well as what it's like to work at Bitwarden.
+
+## Prettier
+
+We recently migrated to using Prettier as code formatter. All previous branches will need to updated to avoid large merge conflicts using the following steps:
+
+1. Check out your local Branch
+2. Run `git merge 8b2dfc6cdcb8ff5b604364c2ea6d343473aee7cd`
+3. Resolve any merge conflicts, commit.
+4. Run `npm run prettier`
+5. Commit
+6. Run `git merge -Xours 193434461dbd9c48fe5dcbad95693470aec422ac`
+7. Push
+
+### Git blame
+
+We also recommend that you configure git to ignore the prettier revision using:
+
+```bash
+git config blame.ignoreRevsFile .git-blame-ignore-revs
+```
