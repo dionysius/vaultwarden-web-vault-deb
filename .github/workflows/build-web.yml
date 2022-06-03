@@ -413,7 +413,6 @@ jobs:
       - build-commercial-selfhost
       - build-qa
       - crowdin-push
-      - windows
     steps:
       - name: Check if any job failed
         if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
@@ -425,7 +424,6 @@ jobs:
           BUILD_COMMERCIAL_SELFHOST_STATUS: ${{ needs.build-commercial-selfhost.result }}
           BUILD_QA_STATUS: ${{ needs.build-qa.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
-          WINDOWS_STATUS: ${{ needs.windows.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
@@ -440,8 +438,6 @@ jobs:
           elif [ "$BUILD_QA_STATUS" = "failure" ]; then
               exit 1
           elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$WINDOWS_STATUS" = "failure" ]; then
               exit 1
           fi
 
