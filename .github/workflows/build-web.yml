@@ -1,20 +1,24 @@
 ---
-name: Build
+name: Build Web
 
 on:
-  workflow_dispatch:
-    inputs:
-      custom_tag_extension:
-        description: "Custom image tag extension"
-        required: false
-  push:
+  pull_request:
     branches-ignore:
-      - "l10n_master"
-      - "gh-pages"
-      - "deploy"
-    paths-ignore:
-      - '.github/workflows/**'
-
+      - 'l10n_master'
+      - 'gh-pages'
+    paths:
+      - 'apps/web/**'
+      - '.github/workflows/build-web.yml'
+  push:
+    branches:
+      - 'master'
+      - 'rc'
+      - 'hotfix-rc/**'
+    paths:
+      - 'apps/web/**'
+      - '.github/workflows/build-web.yml'
+  workflow_dispatch:
+    inputs: {}
 
 jobs:
   cloc:
@@ -22,7 +26,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Set up cloc
         run: |
@@ -30,28 +34,8 @@ jobs:
           sudo apt -y install cloc
 
       - name: Print lines of code
+        working-directory: apps/web
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
-
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
-
-      - name: Cache npm
-        id: npm-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
-        with:
-          path: "~/.npm"
-          key: ${{ runner.os }}-npm-lint-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run linter
-        run: npm run lint
 
 
   setup:
@@ -61,7 +45,7 @@ jobs:
       version: ${{ steps.version.outputs.value }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Get GitHub sha as version
         id: version
@@ -73,15 +57,14 @@ jobs:
     runs-on: ubuntu-20.04
     needs:
       - setup
-      - lint
     env:
       _VERSION: ${{ needs.setup.outputs.version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854  # v3.1.1
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -101,15 +84,16 @@ jobs:
         run: npm ci
 
       - name: Build OSS selfhost
+        working-directory: apps/web
         run: |
           npm run dist:oss:selfhost
           zip -r web-$_VERSION-selfhosted-open-source.zip build
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:
           name: web-${{ env._VERSION }}-selfhosted-open-source.zip
-          path: ./web-${{ env._VERSION }}-selfhosted-open-source.zip
+          path: apps/web/web-${{ env._VERSION }}-selfhosted-open-source.zip
           if-no-files-found: error
 
 
@@ -118,15 +102,14 @@ jobs:
     runs-on: ubuntu-20.04
     needs:
       - setup
-      - lint
     env:
       _VERSION: ${{ needs.setup.outputs.version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854  # v3.1.1
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -146,15 +129,16 @@ jobs:
         run: npm ci
 
       - name: Build Cloud
+        working-directory: apps/web
         run: |
           npm run dist:bit:cloud
           zip -r web-$_VERSION-cloud-COMMERCIAL.zip build
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:
           name: web-${{ env._VERSION }}-cloud-COMMERCIAL.zip
-          path: ./web-${{ env._VERSION }}-cloud-COMMERCIAL.zip
+          path: apps/web/web-${{ env._VERSION }}-cloud-COMMERCIAL.zip
           if-no-files-found: error
 
 
@@ -163,15 +147,14 @@ jobs:
     runs-on: ubuntu-20.04
     needs:
       - setup
-      - lint
     env:
       _VERSION: ${{ needs.setup.outputs.version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854  # v3.1.1
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -199,6 +182,7 @@ jobs:
         run: npm ci
 
       - name: Build
+        working-directory: apps/web
         run: |
           echo -e "# Building Web\n"
           echo "Building app"
@@ -208,13 +192,14 @@ jobs:
           zip -r web-$_VERSION-selfhosted-COMMERCIAL.zip build
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:
           name: web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
-          path: ./web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
+          path: apps/web/web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
           if-no-files-found: error
 
       - name: Build Docker image
+        working-directory: apps/web
         run: |
           echo -e "\nBuilding Docker image"
           docker --version
@@ -264,7 +249,7 @@ jobs:
           echo "DOCKER_CONTENT_TRUST=0" >> $GITHUB_ENV
 
       - name: Login to Azure - QA Subscription
-        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         with:
           creds: ${{ secrets.AZURE_QA_KV_CREDENTIALS }}
 
@@ -292,13 +277,12 @@ jobs:
     runs-on: ubuntu-20.04
     needs:
       - setup
-      - lint
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854  # v3.1.1
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -315,7 +299,7 @@ jobs:
           echo "GitHub event: $GITHUB_EVENT"
 
       - name: Login to Azure
-        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         with:
           creds: ${{ secrets.AZURE_QA_KV_CREDENTIALS }}
 
@@ -326,6 +310,7 @@ jobs:
         run: npm ci
 
       - name: Build
+        working-directory: apps/web
         run: |
           echo -e "# Building Web\n"
           echo "Building app"
@@ -377,44 +362,6 @@ jobs:
       - name: Log out of Docker
         run: docker logout
 
-
-  windows:
-    name: Test code on Windows
-    runs-on: windows-2019
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-
-      - name: Set up NuGet
-        uses: nuget/setup-nuget@04b0c2b8d1b97922f67eca497d7cf0bf17b8ffe1
-        with:
-          nuget-version: "latest"
-
-      - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
-        with:
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
-          node-version: "16"
-
-      - name: Print environment
-        run: |
-          nuget help | grep Version
-          node --version
-          npm --version
-          echo "GitHub ref: $GITHUB_REF"
-          echo "GitHub event: $GITHUB_EVENT"
-        env:
-          GITHUB_REF: ${{ github.ref }}
-          GITHUB_EVENT: ${{ github.event_name }}
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: NPM build
-        run: npm run build:bit:cloud
-
-
   crowdin-push:
     name: Crowdin Push
     if: github.ref == 'refs/heads/master'
@@ -428,27 +375,27 @@ jobs:
       _CROWDIN_PROJECT_ID: "308189"
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2  # v2.3.4
 
       - name: Login to Azure
-        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
+        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f  # v1.0.0
         with:
           keyvault: "bitwarden-prod-kv"
           secrets: "crowdin-api-token"
 
       - name: Upload Sources
-        uses: crowdin/github-action@e39093fd75daae7859c68eded4b43d42ec78d8ea  # v1.3.2
+        uses: crowdin/github-action@a3160b9e5a9e00739392c23da5e580c6cabe526d  # v1.4.8
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
         with:
-          config: crowdin.yml
+          config: apps/web/crowdin.yml
           crowdin_branch_name: master
           upload_sources: true
           upload_translations: false
@@ -461,7 +408,6 @@ jobs:
     needs:
       - cloc
       - setup
-      - lint
       - build-oss-selfhost
       - build-cloud
       - build-commercial-selfhost
@@ -473,7 +419,6 @@ jobs:
         if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
         env:
           CLOC_STATUS: ${{ needs.cloc.result }}
-          LINT_STATUS: ${{ needs.lint.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
           BUILD_OSS_SELFHOST_STATUS: ${{ needs.build-oss-selfhost.result }}
           BUILD_CLOUD_STATUS: ${{ needs.build-cloud.result }}
@@ -483,8 +428,6 @@ jobs:
           WINDOWS_STATUS: ${{ needs.windows.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$LINT_STATUS" = "failure" ]; then
               exit 1
           elif [ "$SETUP_STATUS" = "failure" ]; then
               exit 1
@@ -503,21 +446,21 @@ jobs:
           fi
 
       - name: Login to Azure - Prod Subscription
-        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
         if: failure()
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
+        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f  # v1.0.0
         if: failure()
         with:
           keyvault: "bitwarden-prod-kv"
           secrets: "devops-alerts-slack-webhook-url"
 
       - name: Notify Slack on failure
-        uses: act10ns/slack@e4e71685b9b239384b0f676a63c32367f59c2522  # v1.2.2
+        uses: act10ns/slack@da3191ebe2e67f49b46880b4633f5591a96d1d33  # v1.5.1
         if: failure()
         env:
           SLACK_WEBHOOK_URL: ${{ steps.retrieve-secrets.outputs.devops-alerts-slack-webhook-url }}
