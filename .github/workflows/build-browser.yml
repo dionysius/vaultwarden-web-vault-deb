@@ -329,6 +329,46 @@ jobs:
           upload_sources: true
           upload_translations: false
 
+  trigger-desktop-build:
+    name: Trigger desktop build
+    if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') || contains(github.ref, 'hotfix-rc') }}
+    runs-on: ubuntu-20.04
+    needs:
+      - build
+      - build-safari
+    steps:
+
+      - name: Login to Azure
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010
+        with:
+          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+
+      - name: Retrieve secrets
+        id: retrieve-secrets
+        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "github-pat-bitwarden-devops-bot-repo-scope"
+
+      - name: Extract branch name
+        id: extract_branch
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+
+      - name: Call GitHub API to trigger desktop build workflow
+        env:
+          TOKEN: ${{ steps.retrieve-secrets.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
+          BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
+        run: |
+
+          JSON_STRING=$(printf '{"ref":"%s"}' "$BRANCH_NAME")
+
+          curl \
+            -X POST \
+            -i -u bitwarden-devops-bot:$TOKEN \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/bitwarden/clients/actions/workflows/build-desktop.yml/dispatches \
+            -d $JSON_STRING
 
   check-failures:
     name: Check for failures
@@ -341,6 +381,7 @@ jobs:
       - build
       - build-safari
       - crowdin-push
+      - trigger-desktop-build
     steps:
       - name: Check if any job failed
         if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
@@ -351,6 +392,7 @@ jobs:
           BUILD_STATUS: ${{ needs.build.result }}
           SAFARI_BUILD_STATUS: ${{ needs.build-safari.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
+          TRIGGER_DESKTOP_BUILD_STATUS:  ${{ needs.trigger-desktop-build.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
@@ -363,6 +405,8 @@ jobs:
           elif [ "$SAFARI_BUILD_STATUS" = "failure" ]; then
               exit 1
           elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$TRIGGER_DESKTOP_BUILD_STATUS" = "failure" ]; then
               exit 1
           fi
 

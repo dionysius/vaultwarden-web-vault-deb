@@ -633,6 +633,21 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
+      - name: Extract branch name
+        if: contains(github.ref, 'hotfix-rc')
+        id: extract_branch
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+
+      - name: Download artifact from hotfix-rc
+        if: contains(github.ref, 'hotfix-rc')
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: ${{ steps.extract_branch.outputs.branch }}
+          path: ${{ github.workspace }}/browser-build-artifacts
+
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
@@ -643,7 +658,7 @@ jobs:
           path: ${{ github.workspace }}/browser-build-artifacts
 
       - name: Download artifact from master
-        if: github.ref != 'refs/heads/rc'
+        if: ${{ github.ref != 'refs/heads/rc' && !contains(github.ref, 'hotfix-rc') }}
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
         with:
           workflow: build-browser.yml
@@ -824,6 +839,21 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
+      - name: Extract branch name
+        if: contains(github.ref, 'hotfix-rc')
+        id: extract_branch
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+
+      - name: Download artifact from hotfix-rc
+        if: contains(github.ref, 'hotfix-rc')
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: ${{ steps.extract_branch.outputs.branch }}
+          path: ${{ github.workspace }}/browser-build-artifacts
+
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
@@ -834,7 +864,7 @@ jobs:
           path: ${{ github.workspace }}/browser-build-artifacts
 
       - name: Download artifact from master
-        if: github.ref != 'refs/heads/rc'
+        if: ${{ github.ref != 'refs/heads/rc' && !contains(github.ref, 'hotfix-rc') }}
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
         with:
           workflow: build-browser.yml
