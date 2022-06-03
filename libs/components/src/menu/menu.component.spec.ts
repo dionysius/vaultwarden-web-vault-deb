@@ -16,19 +16,17 @@ describe("Menu", () => {
   // The overlay is created outside the root debugElement, so we need to query its parent
   const getBitMenuPanel = () => document.querySelector(".bit-menu-panel");
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [MenuModule],
-        declarations: [TestApp],
-      });
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [MenuModule],
+      declarations: [TestApp],
+    });
 
-      TestBed.compileComponents();
+    TestBed.compileComponents();
 
-      fixture = TestBed.createComponent(TestApp);
-      fixture.detectChanges();
-    })
-  );
+    fixture = TestBed.createComponent(TestApp);
+    fixture.detectChanges();
+  }));
 
   it("should open when the trigger is clicked", async () => {
     const buttonDebugElement = fixture.debugElement.query(By.directive(MenuTriggerForDirective));

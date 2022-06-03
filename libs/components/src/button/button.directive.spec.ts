@@ -10,20 +10,18 @@ describe("Button", () => {
   let buttonDebugElement: DebugElement;
   let linkDebugElement: DebugElement;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [ButtonModule],
-        declarations: [TestApp],
-      });
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [ButtonModule],
+      declarations: [TestApp],
+    });
 
-      TestBed.compileComponents();
-      fixture = TestBed.createComponent(TestApp);
-      testAppComponent = fixture.debugElement.componentInstance;
-      buttonDebugElement = fixture.debugElement.query(By.css("button"));
-      linkDebugElement = fixture.debugElement.query(By.css("a"));
-    })
-  );
+    TestBed.compileComponents();
+    fixture = TestBed.createComponent(TestApp);
+    testAppComponent = fixture.debugElement.componentInstance;
+    buttonDebugElement = fixture.debugElement.query(By.css("button"));
+    linkDebugElement = fixture.debugElement.query(By.css("a"));
+  }));
 
   it("should apply classes based on type", () => {
     testAppComponent.buttonType = "primary";
