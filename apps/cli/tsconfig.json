@@ -12,8 +12,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "jslib-common/*": ["jslib/common/src/*"],
-      "jslib-node/*": ["jslib/node/src/*"]
+      "jslib-common/*": ["../../libs/common/src/*"],
+      "jslib-node/*": ["../../libs/node/src/*"]
     }
   },
   "include": ["src"]

@@ -3,8 +3,6 @@
 **/dist
 **/coverage
 
-**/jslib
-
 # External libraries / auto synced locales
 apps/browser/src/_locales
 apps/browser/src/scripts/duo.js
@@ -23,5 +21,7 @@ apps/web/.github
 apps/web/src/404/bootstrap.min.css
 apps/web/src/locales
 
+libs/.github
+
 # Github Workflows
-.github/workflows 
+.github/workflows
