@@ -10,10 +10,10 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
-      "tldjs": ["jslib/common/src/misc/tldjs.noop"],
-      "jslib-common/*": ["jslib/common/src/*"],
-      "jslib-angular/*": ["jslib/angular/src/*"],
-      "jslib-electron/*": ["jslib/electron/src/*"]
+      "tldjs": ["../../libs/common/src/misc/tldjs.noop"],
+      "jslib-common/*": ["../../libs/common/src/*"],
+      "jslib-angular/*": ["../../libs/angular/src/*"],
+      "jslib-electron/*": ["../../libs/electron/src/*"]
     }
   },
   "angularCompilerOptions": {

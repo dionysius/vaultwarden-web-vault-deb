@@ -1,12 +1,12 @@
 {
-  "extends": "./jslib/shared/tsconfig",
+  "extends": "../../libs/shared/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "tldjs": ["jslib/common/src/misc/tldjs.noop"],
-      "jslib-common/*": ["jslib/common/src/*"],
-      "jslib-angular/*": ["jslib/angular/src/*"],
-      "@bitwarden/components": ["jslib/components/src"],
+      "tldjs": ["../../libs/common/src/misc/tldjs.noop"],
+      "jslib-common/*": ["../../libs/common/src/*"],
+      "jslib-angular/*": ["../../libs/angular/src/*"],
+      "@bitwarden/components": ["../../libs/components/src"],
       "src/*": ["src/*"]
     }
   },

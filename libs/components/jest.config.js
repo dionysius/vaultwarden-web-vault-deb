@@ -4,7 +4,7 @@ const { compilerOptions } = require("./tsconfig");
 
 module.exports = {
   name: "angular",
-  displayName: "component library tests",
+  displayName: "libs/components tests",
   preset: "jest-preset-angular",
   testMatch: ["**/+(*.)+(spec).+(ts)"],
   setupFilesAfterEnv: ["<rootDir>/spec/test.ts"],

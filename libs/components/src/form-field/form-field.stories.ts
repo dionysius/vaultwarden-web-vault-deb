@@ -8,10 +8,11 @@ import {
   Validators,
 } from "@angular/forms";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
-import { InputModule } from "src/input/input.module";
-import { I18nMockService } from "src/utils/i18n-mock.service";
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
+
+import { InputModule } from "src/input/input.module";
+import { I18nMockService } from "src/utils/i18n-mock.service";
 
 import { ButtonModule } from "../button";
 

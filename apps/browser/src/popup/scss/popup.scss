@@ -1,10 +1,10 @@
-$icomoon-font-path: "../../../jslib/angular/src/scss/bwicons/fonts/";
-$card-icons-base: "../../../jslib/angular/src/images/cards/";
+$icomoon-font-path: "../../../../../libs/angular/src/scss/bwicons/fonts/";
+$card-icons-base: "../../../../../libs/angular/src/images/cards/";
 
-@import "../../../jslib/angular/src/scss/webfonts.css";
-@import "../../../jslib/angular/src/scss/bwicons/styles/style.scss";
+@import "../../../../../libs/angular/src/scss/webfonts.css";
+@import "../../../../../libs/angular/src/scss/bwicons/styles/style.scss";
 @import "variables.scss";
-@import "../../../jslib/angular/src/scss/icons.scss";
+@import "../../../../../libs/angular/src/scss/icons.scss";
 @import "base.scss";
 @import "grid.scss";
 @import "box.scss";

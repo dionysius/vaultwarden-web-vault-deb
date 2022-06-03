@@ -4,7 +4,7 @@ const { compilerOptions } = require("./tsconfig");
 
 module.exports = {
   name: "common",
-  displayName: "common jslib tests",
+  displayName: "libs/common tests",
   preset: "ts-jest",
   testEnvironment: "jsdom",
   testMatch: ["**/+(*.)+(spec).+(ts)"],

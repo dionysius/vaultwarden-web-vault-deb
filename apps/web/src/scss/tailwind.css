@@ -2,4 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "../../jslib/components/src/tw-theme.css";
+@import "../../../../libs/components/src/tw-theme.css";
