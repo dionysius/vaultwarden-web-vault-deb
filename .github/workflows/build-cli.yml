@@ -80,8 +80,13 @@ jobs:
         uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048  # v3.2.0
         with:
           cache: 'npm'
-          cache-dependency-path: 'apps/cli/**/package-lock.json'
+          cache-dependency-path: '**/package-lock.json'
           node-version: '16'
+      
+      - name: Install node-gyp
+        run: |
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Get pkg-fetch
         shell: pwsh
@@ -138,11 +143,9 @@ jobs:
           ResourceHacker -open version-info.rc -save version-info.res -action compile
           ResourceHacker -open %WIN_PKG_BUILT% -save %WIN_PKG_BUILT% -action addoverwrite -resource version-info.res
 
-      - name: Setup sub-module
-        run: npm run sub:init
-
       - name: Install
         run: npm ci
+        working-directory: ./
 
       - name: Run tests
         run: npm run test

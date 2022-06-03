@@ -42,6 +42,10 @@ const plugins = [
     BWCLI_ENV: ENV,
     FLAGS: envConfig.flags,
   }),
+  new webpack.IgnorePlugin({
+    resourceRegExp: /canvas/,
+    contextRegExp: /jsdom$/,
+  }),
 ];
 
 const webpackConfig = {
@@ -61,7 +65,7 @@ const webpackConfig = {
   resolve: {
     extensions: [".ts", ".js"],
     symlinks: false,
-    modules: [path.resolve("node_modules")],
+    modules: [path.resolve("../../node_modules")],
     plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
   },
   output: {
@@ -70,7 +74,6 @@ const webpackConfig = {
   },
   module: { rules: moduleRules },
   plugins: plugins,
-  externals: [nodeExternals()],
 };
 
 module.exports = webpackConfig;
