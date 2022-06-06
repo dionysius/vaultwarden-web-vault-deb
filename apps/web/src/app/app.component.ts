@@ -1,4 +1,4 @@
-import { Component, NgZone, OnDestroy, OnInit, SecurityContext } from "@angular/core";
+import { Component, Inject, NgZone, OnDestroy, OnInit, SecurityContext } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
 import { NavigationEnd, Router } from "@angular/router";
 import * as jq from "jquery";
@@ -36,6 +36,7 @@ import { SingleOrgPolicy } from "./organizations/policies/single-org.component";
 import { TwoFactorAuthenticationPolicy } from "./organizations/policies/two-factor-authentication.component";
 import { PolicyListService } from "./services/policy-list.service";
 import { RouterService } from "./services/router.service";
+import { DOCUMENT } from "@angular/common";
 
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -50,6 +51,7 @@ export class AppComponent implements OnDestroy, OnInit {
   private isIdle = false;
 
   constructor(
+    @Inject(DOCUMENT) private document: Document,
     private broadcasterService: BroadcasterService,
     private tokenService: TokenService,
     private folderService: FolderService,
@@ -78,6 +80,8 @@ export class AppComponent implements OnDestroy, OnInit {
   ) {}
 
   ngOnInit() {
+    this.document.documentElement.lang = this.i18nService.locale;
+
     this.ngZone.runOutsideAngular(() => {
       window.onmousemove = () => this.recordActivity();
       window.onmousedown = () => this.recordActivity();
