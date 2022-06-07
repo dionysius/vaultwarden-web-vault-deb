@@ -1170,7 +1170,7 @@ jobs:
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
-          if [ "$ELECTRON_VERIFY_STATUS" = "failure" ]; then
+          elif [ "$ELECTRON_VERIFY_STATUS" = "failure" ]; then
               exit 1
           elif [ "$SETUP_STATUS" = "failure" ]; then
               exit 1
