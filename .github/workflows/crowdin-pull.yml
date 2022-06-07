@@ -19,6 +19,8 @@ jobs:
             crowdin_project_id: "268134"
           - app_name: desktop
             crowdin_project_id: "299360"
+          - app_name: web
+            crowdin_project_id: "308189"
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
