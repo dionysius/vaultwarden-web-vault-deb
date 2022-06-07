@@ -52,8 +52,14 @@
   "tab": {
     "message": "Вкладка"
   },
+  "vault": {
+    "message": "Сховище"
+  },
   "myVault": {
     "message": "Моє сховище"
+  },
+  "allVaults": {
+    "message": "Усі сховища"
   },
   "tools": {
     "message": "Інструменти"
@@ -549,13 +555,13 @@
     "message": "Ви дійсно бажаєте перезаписати поточне ім'я користувача?"
   },
   "searchFolder": {
-    "message": "Пошук в теці"
+    "message": "Шукати в теці"
   },
   "searchCollection": {
-    "message": "Пошук в збірках"
+    "message": "Шукати в збірці"
   },
   "searchType": {
-    "message": "Пошук за типом"
+    "message": "Шукати за типом"
   },
   "noneFolder": {
     "message": "Без теки",
@@ -1391,7 +1397,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Пошук у смітнику"
+    "message": "Шукати в смітнику"
   },
   "permanentlyDeleteItem": {
     "message": "Остаточно видалити запис"
@@ -1575,7 +1581,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
-    "message": "Пошук відправлень",
+    "message": "Шукати відправлення",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "addSend": {
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Послуга"
+  },
+  "forwardedEmail": {
+    "message": "Псевдонім е-пошти для пересилання"
+  },
+  "forwardedEmailDesc": {
+    "message": "Згенеруйте псевдонім е-пошти зі стороннім сервісом пересилання."
+  },
+  "hostname": {
+    "message": "Ім'я вузла",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Токен доступу до АРІ"
+  },
+  "apiKey": {
+    "message": "Ключ API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Помилка Key Connector: переконайтеся, що Key Connector доступний та працює правильно."
   }
 }

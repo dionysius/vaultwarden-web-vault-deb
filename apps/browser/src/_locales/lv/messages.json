@@ -52,8 +52,14 @@
   "tab": {
     "message": "Cilne"
   },
+  "vault": {
+    "message": "Glabātava"
+  },
   "myVault": {
     "message": "Mana glabātava"
+  },
+  "allVaults": {
+    "message": "Visas glabātavas"
   },
   "tools": {
     "message": "Rīki"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Pakalpojums"
+  },
+  "forwardedEmail": {
+    "message": "Pārvirzīto e-pastu aizstājvārds"
+  },
+  "forwardedEmailDesc": {
+    "message": "Izveidot e-pastu aizstājvārdu ar ārēju pārvirzīšanas pakalpojumu."
+  },
+  "hostname": {
+    "message": "Resursdatora nosaukums",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API piekļuves pilnvara"
+  },
+  "apiKey": {
+    "message": "API atslēga"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector kļūda: jāpārliecinās, ka Key Connector ir pieejams un darbojas pareizi."
   }
 }

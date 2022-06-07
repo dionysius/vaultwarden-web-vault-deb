@@ -52,8 +52,14 @@
   "tab": {
     "message": "タブ"
   },
+  "vault": {
+    "message": "保管庫"
+  },
   "myVault": {
     "message": "保管庫"
+  },
+  "allVaults": {
+    "message": "すべての保管庫"
   },
   "tools": {
     "message": "ツール"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "サービス"
+  },
+  "forwardedEmail": {
+    "message": "転送されたメールエイリアス"
+  },
+  "forwardedEmailDesc": {
+    "message": "外部転送サービスを使用してメールエイリアスを生成します。"
+  },
+  "hostname": {
+    "message": "ホスト名",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API アクセストークン"
+  },
+  "apiKey": {
+    "message": "API キー"
+  },
+  "ssoKeyConnectorError": {
+    "message": "キーコネクターエラー: キーコネクターが使用可能で、正常に動作しているか確認してください。"
   }
 }

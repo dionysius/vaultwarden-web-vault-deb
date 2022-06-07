@@ -52,8 +52,14 @@
   "tab": {
     "message": "Aba"
   },
+  "vault": {
+    "message": "Vault"
+  },
   "myVault": {
     "message": "Meu Cofre"
+  },
+  "allVaults": {
+    "message": "All Vaults"
   },
   "tools": {
     "message": "Ferramentas"
@@ -543,10 +549,10 @@
     "message": "Você tem certeza que deseja substituir a senha atual?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Sobrescrever Usuário"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Tem certeza que deseja substituir o usuário atual?"
   },
   "searchFolder": {
     "message": "Pesquisar pasta"
@@ -1243,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nome do domínio",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1901,43 +1907,62 @@
     "message": "Erro"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Recriar Usuário"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Gerar Usuário"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tipo de usuário"
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Use as capacidades de sub-endereçamento do seu provedor de e-mail."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "E-mail catch-all"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Use o catch-all configurado no seu domínio."
   },
   "random": {
-    "message": "Random"
+    "message": "Aleatório"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Palavra aleatória"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Nome do Site"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "O que você gostaria de gerar?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Categoria de Senha"
   },
   "service": {
-    "message": "Service"
+    "message": "Serviço"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

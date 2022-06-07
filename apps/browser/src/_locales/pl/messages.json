@@ -52,8 +52,14 @@
   "tab": {
     "message": "Karta"
   },
+  "vault": {
+    "message": "Sejf"
+  },
   "myVault": {
     "message": "Mój sejf"
+  },
+  "allVaults": {
+    "message": "Wszystkie sejfy"
   },
   "tools": {
     "message": "Narzędzia"
@@ -546,7 +552,7 @@
     "message": "Nadpisz nazwę użytkownika"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Czy na pewno chcesz nadpisać aktualną nazwę użytkownika?"
+    "message": "Czy na pewno chcesz nadpisać obecną nazwę użytkownika?"
   },
   "searchFolder": {
     "message": "Szukaj w folderze"
@@ -588,7 +594,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Czy Bitwarden powinien zapisać dla Ciebie to hasło?"
+    "message": "Czy Bitwarden powinien zapisać to hasło?"
   },
   "notificationAddSave": {
     "message": "Zapisz"
@@ -1034,10 +1040,10 @@
     "message": "Wyświetlaj rozpoznawalną ikonę serwisu obok danych logowania w sejfie."
   },
   "disableBadgeCounter": {
-    "message": "Wyłącz licznik logowań"
+    "message": "Wyłącz licznik danych logowania"
   },
   "disableBadgeCounterDesc": {
-    "message": "Licznik informuje, ile razy zalogowałeś się na obecnej stronie w sejfie."
+    "message": "Licznik informuje, ile danych logowania zawiera sejf dla obecnej strony."
   },
   "cardholderName": {
     "message": "Właściciel karty"
@@ -1505,7 +1511,7 @@
     "message": "Uruchom aplikację desktopową Bitwarden"
   },
   "startDesktopDesc": {
-    "message": "Aplikacja desktopowa Bitwarden, przed użyciem tej funkcji, musi zostać ponownie uruchomiona."
+    "message": "Aplikacja desktopowa Bitwarden, przed odblokowaniem danymi biometrycznymi, musi zostać ponownie uruchomiona."
   },
   "errorEnableBiometricTitle": {
     "message": "Nie można włączyć danych biometrycznych"
@@ -1923,7 +1929,7 @@
     "message": "Użyj skonfigurowanej skrzynki catch-all w swojej domenie."
   },
   "random": {
-    "message": "Losowo"
+    "message": "Losowa"
   },
   "randomWord": {
     "message": "Losowe słowo"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Usługa"
+  },
+  "forwardedEmail": {
+    "message": "Alias przekazywanego e-maila"
+  },
+  "forwardedEmailDesc": {
+    "message": "Wygeneruj alias adresu e-mail z zewnętrznej usługi przekazywania."
+  },
+  "hostname": {
+    "message": "Nazwa hosta",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token dostępu API"
+  },
+  "apiKey": {
+    "message": "Klucz interfejsu API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Błąd serwera Key Connector: upewnij się, że serwer Key Connector jest dostępny i działa poprawnie."
   }
 }

@@ -52,8 +52,14 @@
   "tab": {
     "message": "Језичак"
   },
+  "vault": {
+    "message": "Сеф"
+  },
   "myVault": {
     "message": "Мој Сеф"
+  },
+  "allVaults": {
+    "message": "Сви Сефови"
   },
   "tools": {
     "message": "Алатке"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Сервис"
+  },
+  "forwardedEmail": {
+    "message": "Псеудоним Прослеђене е-поште"
+  },
+  "forwardedEmailDesc": {
+    "message": "Генеришите псеудоним е-поште помоћу екстерне услуге прослеђивања."
+  },
+  "hostname": {
+    "message": "Име домаћина",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Приступни АПИ токен"
+  },
+  "apiKey": {
+    "message": "АПИ Кључ"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector грешка: будите сигурни да је Key Connector доступан и да ради."
   }
 }

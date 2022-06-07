@@ -52,8 +52,14 @@
   "tab": {
     "message": "Вкладка"
   },
+  "vault": {
+    "message": "Хранилище"
+  },
   "myVault": {
     "message": "Хранилище"
+  },
+  "allVaults": {
+    "message": "Все хранилища"
   },
   "tools": {
     "message": "Инструменты"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Служба"
+  },
+  "forwardedEmail": {
+    "message": "Псевдоним электронной почты для пересылки"
+  },
+  "forwardedEmailDesc": {
+    "message": "Создать псевдоним электронной почты для внешней службы пересылки."
+  },
+  "hostname": {
+    "message": "Имя хоста",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Токен доступа к API"
+  },
+  "apiKey": {
+    "message": "Ключ API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Ошибка соединителя ключей: убедитесь, что он доступен и работает корректно."
   }
 }

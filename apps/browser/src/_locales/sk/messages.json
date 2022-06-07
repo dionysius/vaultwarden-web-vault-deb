@@ -52,8 +52,14 @@
   "tab": {
     "message": "Karta"
   },
+  "vault": {
+    "message": "Trezor"
+  },
   "myVault": {
     "message": "Môj trezor"
+  },
+  "allVaults": {
+    "message": "Všetky trezory"
   },
   "tools": {
     "message": "Nástroje"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Služba"
+  },
+  "forwardedEmail": {
+    "message": "Alias preposlaného e-mailu"
+  },
+  "forwardedEmailDesc": {
+    "message": "Vytvoriť e-mailový alias pomocou externej služby preposielania."
+  },
+  "hostname": {
+    "message": "Názov hostiteľa",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Prístupový token API"
+  },
+  "apiKey": {
+    "message": "API kľúč"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Chyba Key Connector: uistite sa, že je Key Connector k dispozícii a funguje správne."
   }
 }

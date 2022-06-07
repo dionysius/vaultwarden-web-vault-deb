@@ -3,33 +3,33 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Free Password Manager",
+    "message": "Bitwarden - Libreng Tagapangasiwa ng Password",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "A secure and free password manager for all of your devices.",
+    "message": "Isang ligtas at libreng password manager para sa lahat ng iyong mga aparato.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Maglog-in o gumawa ng bagong account para ma-access ang iyong ligtas na kahadeyero."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Gumawa ng Account"
   },
   "login": {
-    "message": "Log In"
+    "message": "Mag-login"
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise Single Sign-On"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Kanselahin"
   },
   "close": {
-    "message": "Close"
+    "message": "Isara"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Isumite"
   },
   "emailAddress": {
     "message": "Email Address"
@@ -38,13 +38,13 @@
     "message": "Master Password"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Ang master password ay ang password na gagamitin mo upang ma-access ang iyong kahadeyero. Napakaimportante na hindi mo makalimutan ang iyong master password. Walang paraan upang ma-recover ang password kapag nakalimutan mo ito."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "May isang pahiwatig para sa master password na makakatulong na maalala mo ang iyong password kapag nakalimutan mo ito."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Muling i-type ang Master Password"
   },
   "masterPassHint": {
     "message": "Master Password Hint (optional)"
@@ -52,26 +52,32 @@
   "tab": {
     "message": "Tab"
   },
+  "vault": {
+    "message": "Vault"
+  },
   "myVault": {
-    "message": "My Vault"
+    "message": "Aking Kahadeyero"
+  },
+  "allVaults": {
+    "message": "All Vaults"
   },
   "tools": {
-    "message": "Tools"
+    "message": "Mga Kagamitan"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Mga Preperensya"
   },
   "currentTab": {
-    "message": "Current Tab"
+    "message": "Pangkasalukuyang Tab"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopyahin ang Password"
   },
   "copyNote": {
-    "message": "Copy Note"
+    "message": "Kopyahin ang Note"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopyahin ang URI"
   },
   "copyUsername": {
     "message": "Copy Username"
@@ -95,7 +101,7 @@
     "message": "No matching logins."
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "Buksan ang iyong kahadeyero"
   },
   "loginToVaultMenu": {
     "message": "Log in to your vault"
@@ -104,10 +110,10 @@
     "message": "There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin": {
-    "message": "Add a Login"
+    "message": "Magdagdag ng Login"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Magdagdag ng Item"
   },
   "passwordHint": {
     "message": "Password Hint"
@@ -119,7 +125,7 @@
     "message": "Get master password hint"
   },
   "continue": {
-    "message": "Continue"
+    "message": "Magpatuloy"
   },
   "sendVerificationCode": {
     "message": "Send a verification code to your email"
@@ -128,13 +134,13 @@
     "message": "Send Code"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Ipinadala ang Code"
   },
   "verificationCode": {
     "message": "Verification Code"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Kumpirmahin ang iyong identididad upang magpatuloy."
   },
   "account": {
     "message": "Account"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Service"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

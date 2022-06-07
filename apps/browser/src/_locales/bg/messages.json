@@ -52,8 +52,14 @@
   "tab": {
     "message": "Раздел"
   },
+  "vault": {
+    "message": "Трезор"
+  },
   "myVault": {
     "message": "Моят трезор"
+  },
+  "allVaults": {
+    "message": "Всички трезори"
   },
   "tools": {
     "message": "Средства"
@@ -77,7 +83,7 @@
     "message": "Копиране на потребителското име"
   },
   "copyNumber": {
-    "message": "Копиране на номера"
+    "message": "Копиране на но̀мера"
   },
   "copySecurityCode": {
     "message": "Копиране на кода да сигурност"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Услуга"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Име на сървъра",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Идентификатор за достъп до API"
+  },
+  "apiKey": {
+    "message": "Ключ за API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Грешка с конектора за ключове: уверете се, че конекторът за ключове е наличен и работи правилно."
   }
 }

@@ -52,8 +52,14 @@
   "tab": {
     "message": "Pestanya"
   },
+  "vault": {
+    "message": "Caixa forta"
+  },
   "myVault": {
     "message": "La meua caixa forta"
+  },
+  "allVaults": {
+    "message": "Totes les caixes fortes"
   },
   "tools": {
     "message": "Eines"
@@ -1505,7 +1511,7 @@
     "message": "Inicia l'aplicació Bitwarden Desktop"
   },
   "startDesktopDesc": {
-    "message": "Per poder utilitzar aquesta funció, cal iniciar l'aplicació Bitwarden Desktop."
+    "message": "L'aplicació Bitwarden Desktop s'ha d'iniciar abans que es puga utilitzar el desbloqueig amb biometria."
   },
   "errorEnableBiometricTitle": {
     "message": "No es pot habilitar la biomètrica"
@@ -1914,13 +1920,13 @@
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Utilitzeu les capacitats de subadreçament del vostre proveïdor de correu electrònic."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Captura tot correu electrònic"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Utilitzeu la safata d'entrada global configurada del vostre domini."
   },
   "random": {
     "message": "Aleatori"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Servei"
+  },
+  "forwardedEmail": {
+    "message": "Àlies de correu electrònic reenviat"
+  },
+  "forwardedEmailDesc": {
+    "message": "Genera un àlies de correu electrònic amb un servei de reenviament extern."
+  },
+  "hostname": {
+    "message": "Nom de l'amfitrió",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token d'accés a l'API"
+  },
+  "apiKey": {
+    "message": "Clau de l'API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Error del connector de claus: assegureu-vos que el connector de claus està disponible i funcionant correctament."
   }
 }

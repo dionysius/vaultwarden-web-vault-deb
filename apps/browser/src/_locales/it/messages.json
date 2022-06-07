@@ -52,8 +52,14 @@
   "tab": {
     "message": "Scheda"
   },
+  "vault": {
+    "message": "Cassaforte"
+  },
   "myVault": {
     "message": "Cassaforte"
+  },
+  "allVaults": {
+    "message": "Tutte le casseforti"
   },
   "tools": {
     "message": "Strumenti"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Servizio"
+  },
+  "forwardedEmail": {
+    "message": "Alias email inoltrate"
+  },
+  "forwardedEmailDesc": {
+    "message": "Genera un alias email con un servizio di inoltro esterno."
+  },
+  "hostname": {
+    "message": "Nome host",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token di accesso API"
+  },
+  "apiKey": {
+    "message": "Chiave API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Errore Key Connector: assicurarsi che il Key Connector sia disponibile e correttamente funzionante."
   }
 }

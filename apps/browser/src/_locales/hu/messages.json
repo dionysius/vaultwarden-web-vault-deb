@@ -23,13 +23,13 @@
     "message": "Vállalati önálló bejelentkezés"
   },
   "cancel": {
-    "message": "Mégse"
+    "message": "Mégsem"
   },
   "close": {
-    "message": "Bezár"
+    "message": "Bezárás"
   },
   "submit": {
-    "message": "Beküld"
+    "message": "Beküldés"
   },
   "emailAddress": {
     "message": "Email cím"
@@ -38,10 +38,10 @@
     "message": "Mesterjelszó"
   },
   "masterPassDesc": {
-    "message": "A mesterjelszó az a jelszó amit a széfed eléréséhez fogsz használni. Nagyon fontos, hogy ne felejtsd el a mesterjelszavad, mivel nincs lehetőséged visszaállítani még ha elfejeted is."
+    "message": "A mesterjelszó a jelszó a széf eléréséhez. Nagyon fontos a mesterjelszó ismerete. Nincs mód a jelszó visszaállítására."
   },
   "masterPassHintDesc": {
-    "message": "A mesterjelszó emlékeztető segíthet emlékezni a jelszavadra ha elfejetetted volna."
+    "message": "A mesterjelszó emlékeztető segíthet emlékezni a jelszóra elfelejtés esetén."
   },
   "reTypeMasterPass": {
     "message": "A mesterjelszó ismételt begépelése"
@@ -52,8 +52,14 @@
   "tab": {
     "message": "Fül"
   },
+  "vault": {
+    "message": "Széf"
+  },
   "myVault": {
     "message": "Saját széf"
+  },
+  "allVaults": {
+    "message": "Összes széf"
   },
   "tools": {
     "message": "Eszközök"
@@ -336,7 +342,7 @@
     "message": "Személyazonosság ellenőrzése"
   },
   "yourVaultIsLocked": {
-    "message": "A páncélszekrény zárva van. A folytatáshoz igazolja személyazonosságát."
+    "message": "A széf zárolásra került. A folytatáshoz meg kell adni a mesterjelszót."
   },
   "unlock": {
     "message": "Feloldás"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Szolgáltatás"
+  },
+  "forwardedEmail": {
+    "message": "Továbbított email álnevek"
+  },
+  "forwardedEmailDesc": {
+    "message": "Email álnév generálása külső továbbító szolgáltatással."
+  },
+  "hostname": {
+    "message": "Kiszolglónév",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API hozzáférési vezérjel"
+  },
+  "apiKey": {
+    "message": "API kulcs"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Kulcs csatlakozó hiba: ellenőrizzük, hogy a kulcs csatlakozó rendelkezésre áll-e és megfelelően működik-e."
   }
 }

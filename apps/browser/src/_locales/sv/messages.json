@@ -52,8 +52,14 @@
   "tab": {
     "message": "Flik"
   },
+  "vault": {
+    "message": "Valv"
+  },
   "myVault": {
     "message": "Mitt valv"
+  },
+  "allVaults": {
+    "message": "Alla valv"
   },
   "tools": {
     "message": "Verktyg"
@@ -543,10 +549,10 @@
     "message": "Är du säker på att du vill skriva över det nuvarande lösenordet?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Skriv över användarnamn"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Är du säker på att du vill skriva över det nuvarande användarnamnet?"
   },
   "searchFolder": {
     "message": "Sök i mapp"
@@ -1659,14 +1665,14 @@
     "message": "Raderingsdatum"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Denna Send kommer att raderas permanent på angivet datum och klockslag.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Utgångsdatum"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Om detta ställs in kommer åtkomst till denna Skicka att upphöra på angivet datum och tid.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
@@ -1688,7 +1694,7 @@
     "message": "Maximalt antal åtkomster"
   },
   "maximumAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Om detta ställs in kommer användare inte längre komma åt denna Send när maximalt antalet åtkomster har uppnåtts.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1704,14 +1710,14 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Copy this Send's link to clipboard upon save.",
+    "message": "Kopiera länken till denna Send vid sparande.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
     "message": "Texten du vill skicka."
   },
   "sendHideText": {
-    "message": "Hide this Send's text by default.",
+    "message": "Dölj texten för denna Send som standard",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1729,15 +1735,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "På grund av företagspolicy kan du bara ta bort en befintlig Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Skapade Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Redigera Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1880,16 +1886,16 @@
     "message": "Du har lämnat organisationen."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Växla teckenantal"
   },
   "sessionTimeout": {
     "message": "Din session har gått ut. Gå tillbaka och försök logga in igen."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exportera personligt valv"
+    "message": "Exporterar personligt valv"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Endast de personliga valvobjekt som är associerade med $EMAIL$ kommer att exporteras. Organisationens valv kommer inte att inkluderas.",
+    "message": "Endast de personliga valvobjekt som är associerade med $EMAIL$ kommer att exporteras. Organisationens valvobjekt kommer inte att inkluderas.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1901,43 +1907,62 @@
     "message": "Fel"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Återskapa användarnamn"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Skapa användarnamn"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Typ av användarnamn"
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Använd din e-postleverantörs subadresseringsfunktioner."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "E-post som fångar in alla"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Använd din domäns konfigurerade inkorg som fångar in alla."
   },
   "random": {
-    "message": "Random"
+    "message": "Slumpmässig"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Slumpmässigt ord"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Namn på webbplats"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Vad vill du skapa?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Typ av lösenord"
   },
   "service": {
-    "message": "Service"
+    "message": "Tjänst"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Värdnamn",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-åtkomsttoken"
+  },
+  "apiKey": {
+    "message": "API-nyckel"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

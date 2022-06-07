@@ -52,8 +52,14 @@
   "tab": {
     "message": "Filă"
   },
+  "vault": {
+    "message": "Seif"
+  },
   "myVault": {
     "message": "Seiful meu"
+  },
+  "allVaults": {
+    "message": "Toate seifurile"
   },
   "tools": {
     "message": "Unelte"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Serviciu"
+  },
+  "forwardedEmail": {
+    "message": "Alias de e-mail redirecționat"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generați un alias de e-mail cu un serviciu de redirecționare extern."
+  },
+  "hostname": {
+    "message": "Nume server",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token de acces API"
+  },
+  "apiKey": {
+    "message": "Cheie API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Eroare de Conector Cheie: asigurați-vă că aveți conectorul Cheie disponibil și că funcționează corect."
   }
 }

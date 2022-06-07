@@ -52,8 +52,14 @@
   "tab": {
     "message": "Sekme"
   },
+  "vault": {
+    "message": "Kasa"
+  },
   "myVault": {
     "message": "Kasam"
+  },
+  "allVaults": {
+    "message": "Tüm kasalar"
   },
   "tools": {
     "message": "Araçlar"
@@ -1886,7 +1892,7 @@
     "message": "Oturumunuzun süresi doldu. Lütfen geri dönüp yeniden giriş yapın."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Kişisel Kasayı Dışa Aktarma"
+    "message": "Kişisel Kasayı Dışa Aktar"
   },
   "exportingPersonalVaultDescription": {
     "message": "Yalnızca $EMAIL$ ile ilişkili kişisel kasa öğeleri dışa aktarılacaktır. Kuruluş kasası öğeleri dahil edilmeyecektir.",
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Servis"
+  },
+  "forwardedEmail": {
+    "message": "İletilen e-posta maskesi"
+  },
+  "forwardedEmailDesc": {
+    "message": "Harici bir yönlendirme servisiyle e-posta maskesi oluştur."
+  },
+  "hostname": {
+    "message": "Sunucu",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API erişim anahtarı"
+  },
+  "apiKey": {
+    "message": "API anahtarı"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Anahtar Bağlayıcı hatası: Anahtar Bağlayıcının mevcut olduğundan ve doğru çalıştığından emin olun."
   }
 }

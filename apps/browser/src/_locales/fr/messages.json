@@ -52,8 +52,14 @@
   "tab": {
     "message": "Onglet"
   },
+  "vault": {
+    "message": "Coffre"
+  },
   "myVault": {
     "message": "Mon coffre"
+  },
+  "allVaults": {
+    "message": "Tous les coffres"
   },
   "tools": {
     "message": "Outils"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Service"
+  },
+  "forwardedEmail": {
+    "message": "Alias d'email transféré"
+  },
+  "forwardedEmailDesc": {
+    "message": "Générer un alias de courriel avec un service de transfert externe."
+  },
+  "hostname": {
+    "message": "Nom d'hôte",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Jeton d'accès API"
+  },
+  "apiKey": {
+    "message": "Clé d'API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

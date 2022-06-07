@@ -52,8 +52,14 @@
   "tab": {
     "message": "Thẻ"
   },
+  "vault": {
+    "message": "Vault"
+  },
   "myVault": {
     "message": "Hầm của tôi"
+  },
+  "allVaults": {
+    "message": "All Vaults"
   },
   "tools": {
     "message": "Công cụ"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Service"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "Khóa API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

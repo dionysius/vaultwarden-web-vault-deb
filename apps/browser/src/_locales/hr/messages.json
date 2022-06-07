@@ -52,8 +52,14 @@
   "tab": {
     "message": "Kartica"
   },
+  "vault": {
+    "message": "Trezor"
+  },
   "myVault": {
     "message": "Moj trezor"
+  },
+  "allVaults": {
+    "message": "Svi trezori"
   },
   "tools": {
     "message": "Alati"
@@ -543,10 +549,10 @@
     "message": "Sigurno želiš prebrisati trenutnu lozinku?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Prebriši korisničko ime"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Jesi li siguran da želiš prebrisati trenutno korisničko ime?"
   },
   "searchFolder": {
     "message": "Mapa pretraživanja"
@@ -987,7 +993,7 @@
     "message": "Zaključaj trezor"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "Podrška za privatni način rada je eksperimentalna, a neke su značajke ograničene."
   },
   "customFields": {
     "message": "Prilagođena polja"
@@ -1243,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Naziv domene",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1880,16 +1886,16 @@
     "message": "Organizacija napuštena."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Prikaži/Sakrij broj znakova"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Tvoja sesija je istekla. Vrati se i pokušaj s ponovnom prijavom."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Izvoz osobnog trezora"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Izvest će se samo stavke osobnog trezora povezanog s $EMAIL$. Stavke organizacijskog trezora neće biti uključene.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1898,46 +1904,65 @@
     }
   },
   "error": {
-    "message": "Error"
+    "message": "Pogreška"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Ponovno kreiraj korisničko ime"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Kreiraj korisničko ime"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tip korisničkog imena"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus adresa e-pošte",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Koristi mogućnosti podadresiranja svog davatelja e-pošte."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Dohvati sve (Catch-all) e-pošta"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Koristi konfigurirani Catch-all sandučić svoje domene."
   },
   "random": {
-    "message": "Random"
+    "message": "Nasumično"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Nasumična riječ"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Naziv web mjesta"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Što želiš kreirati?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Tip lozinke"
   },
   "service": {
-    "message": "Service"
+    "message": "Usluga"
+  },
+  "forwardedEmail": {
+    "message": "Proslijeđeni pseudonim e-pošte"
+  },
+  "forwardedEmailDesc": {
+    "message": "Kreiraj pseudonim e-pošte s vanjskom uslugom prosljeđivanja."
+  },
+  "hostname": {
+    "message": "Naziv hosta",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API pristupni token"
+  },
+  "apiKey": {
+    "message": "API ključ"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Pogreška konektora ključa: provjerite je li konektor ključa dostupan i radi ispravno."
   }
 }

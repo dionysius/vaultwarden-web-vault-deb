@@ -52,8 +52,14 @@
   "tab": {
     "message": "Fane"
   },
+  "vault": {
+    "message": "Hvelv"
+  },
   "myVault": {
     "message": "Mitt hvelv"
+  },
+  "allVaults": {
+    "message": "Alle hvelv"
   },
   "tools": {
     "message": "Verktøy"
@@ -113,7 +119,7 @@
     "message": "Passordhint"
   },
   "enterEmailToGetHint": {
-    "message": "Skriv inn din kontos E-postadresse for å motta hintet til ditt superpassord."
+    "message": "Skriv inn e-postadressen din for å motta hintet til hovedpassordet."
   },
   "getMasterPasswordHint": {
     "message": "Få et hint om superpassordet"
@@ -212,7 +218,7 @@
     "message": "Bitwarden netthvelv"
   },
   "importItems": {
-    "message": "Importer gjenstander"
+    "message": "Importer elementer"
   },
   "select": {
     "message": "Velg"
@@ -273,7 +279,7 @@
     "message": "Vis"
   },
   "noItemsInList": {
-    "message": "Det er ingen gjenstander å liste opp."
+    "message": "Det er ingen elementer å vise."
   },
   "itemInformation": {
     "message": "Gjenstandsinformasjon"
@@ -297,16 +303,16 @@
     "message": "Notat"
   },
   "editItem": {
-    "message": "Rediger objektet"
+    "message": "Rediger element"
   },
   "folder": {
     "message": "Mappe"
   },
   "deleteItem": {
-    "message": "Slett objektet"
+    "message": "Slett element"
   },
   "viewItem": {
-    "message": "Vis objektet"
+    "message": "Vis element"
   },
   "launch": {
     "message": "Åpne"
@@ -528,13 +534,13 @@
     "message": "La til gjenstanden"
   },
   "editedItem": {
-    "message": "Redigerte gjenstanden"
+    "message": "Redigerte elementet"
   },
   "deleteItemConfirmation": {
-    "message": "Er du sikker på at du vil slette dette objektet?"
+    "message": "Er du sikker på at du vil slette dette elementet?"
   },
   "deletedItem": {
-    "message": "Slettet objektet"
+    "message": "Slettet elementet"
   },
   "overwritePassword": {
     "message": "Overskriv passordet"
@@ -668,7 +674,7 @@
     "message": "Lær om organisasjoner"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden lar deg dele dine hvelvgjenstander med andre ved å bruke en organisasjon. Vil du besøke bitwarden.com-nettstedet for å lære mer?"
+    "message": "Bitwarden lar deg dele dine hvelvelementer med andre ved å bruke en organisasjon. Vil du besøke bitwarden.com for å lære mer?"
   },
   "moveToOrganization": {
     "message": "Flytt til organisasjon"
@@ -690,7 +696,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Velg en organisasjon som du ønsker å flytte denne gjenstanden til. Flytting til en organisasjon overfører eierskap til den aktuelle organisasjonen. Du vil ikke lenger være den direkte eieren av denne varen når den er flyttet."
+    "message": "Velg en organisasjon du ønsker å flytte dette elementet til. Flytting til en organisasjon overfører eierskap av elementet til den aktuelle organisasjonen. Du vil ikke lenger være direkte eier av dette elementet når det er flyttet."
   },
   "learnMore": {
     "message": "Lær mer"
@@ -1031,7 +1037,7 @@
     "message": "Skru av nettstedsikoner"
   },
   "disableFaviconDesc": {
-    "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hver innloggingsgjenstand i hvelvet ditt."
+    "message": "Nettstedsikoner viser et karakteristisk bilde ved siden av hvert innloggingelement i hvelvet ditt."
   },
   "disableBadgeCounter": {
     "message": "Deaktiver Badge Teller"
@@ -1287,7 +1293,7 @@
     "message": "Typer"
   },
   "allItems": {
-    "message": "Alle objekter"
+    "message": "Alle elementer"
   },
   "noPasswordsInList": {
     "message": "Det er ingen passord å liste opp."
@@ -1310,7 +1316,7 @@
     "message": "Er du sikker på at du vil bruke alternativet «Aldri»? Ved å angi låsemulighetene til «Aldri» lagres hvelvets krypteringsnøkkel på enheten. Hvis du bruker dette alternativet, bør du sørge for at du holder enheten forsvarlig beskyttet."
   },
   "noOrganizationsList": {
-    "message": "Du tilhører ikke noen organisasjoner. Organisasjoner gjør det mulig for deg å sikkert dele objekter med andre brukere."
+    "message": "Du tilhører ikke en organisasjon. Organisasjoner gjør det mulig for deg å dele elementer med andre brukere på en trygg måte."
   },
   "noCollectionsInList": {
     "message": "Det er ingen samlinger å liste opp."
@@ -1406,7 +1412,7 @@
     "message": "Gjenopprett objekt"
   },
   "restoreItemConfirmation": {
-    "message": "Er du sikker på at du vil gjenopprette dette objektet?"
+    "message": "Er du sikker på at du vil gjenopprette dette elementet?"
   },
   "restoredItem": {
     "message": "Gjenopprettet objekt"
@@ -1424,7 +1430,7 @@
     "message": "Autoutfylt objekt og lagret URI"
   },
   "autoFillSuccess": {
-    "message": "Autoutfylt gjenstand"
+    "message": "Autoutfylt element"
   },
   "setMasterPassword": {
     "message": "Angi hovedpassord"
@@ -1789,10 +1795,10 @@
     "message": "Forespørsel om hovedpassord på nytt"
   },
   "passwordConfirmation": {
-    "message": "Superpassord bekreftelse"
+    "message": "Hovedpassord bekreftelse"
   },
   "passwordConfirmationDesc": {
-    "message": "Denne handlingen er beskyttet. For å fortsette, skriv inn superpassordet på nytt for å bekrefte identiteten din."
+    "message": "Denne handlingen er beskyttet. For å fortsette, skriv inn hovedpassordet på nytt for å bekrefte identiteten din."
   },
   "emailVerificationRequired": {
     "message": "E-postbekreftelse kreves"
@@ -1880,16 +1886,16 @@
     "message": "Du har forlatt organisasjonen."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Skru på/av telling av tegn"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Økten ble tidsavbrutt. Vennligst gå tilbake og prøv å logge inn på nytt."
   },
   "exportingPersonalVaultTitle": {
     "message": "Eksporterer personlig hvelv"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Bare de personlige hvelv-elementene som er knyttet til $EMAIL$ vil bli eksportert. Organisasjonshvelvets elementer vil ikke bli inkludert.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1910,17 +1916,17 @@
     "message": "Brukernavntype"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Pluss-adressert e-post",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Bruk sub-adresseringsmulighetene til e-posttilbyderen din."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all e-post"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Bruk domenets catch-all innboks."
   },
   "random": {
     "message": "Tilfeldig"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Tjeneste"
+  },
+  "forwardedEmail": {
+    "message": "Alias for videresendt e-post"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generer et e-postalias med en ekstern videresendingstjeneste."
+  },
+  "hostname": {
+    "message": "Vertsnavn ",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API tilgangstoken"
+  },
+  "apiKey": {
+    "message": "API-nøkkel"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector feil: Sjekk at Key Connector er tilgjengelig og fungerer."
   }
 }

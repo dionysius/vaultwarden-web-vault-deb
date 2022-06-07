@@ -52,8 +52,14 @@
   "tab": {
     "message": "לשונית"
   },
+  "vault": {
+    "message": "כספת"
+  },
   "myVault": {
     "message": "הכספת שלי"
+  },
+  "allVaults": {
+    "message": "All Vaults"
   },
   "tools": {
     "message": "כלים"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Service"
+  },
+  "forwardedEmail": {
+    "message": "כתובת דוא״ל להעברה"
+  },
+  "forwardedEmailDesc": {
+    "message": "יצירת כינוי דוא״ל עם שירות העברה חיצוני."
+  },
+  "hostname": {
+    "message": "שם מארח",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "אסימון גישה ל־API"
+  },
+  "apiKey": {
+    "message": "מפתח API"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

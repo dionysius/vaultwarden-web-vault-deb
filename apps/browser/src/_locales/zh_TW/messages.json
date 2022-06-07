@@ -52,8 +52,14 @@
   "tab": {
     "message": "分頁"
   },
+  "vault": {
+    "message": "密碼庫"
+  },
   "myVault": {
     "message": "密碼庫"
+  },
+  "allVaults": {
+    "message": "所有密碼庫"
   },
   "tools": {
     "message": "工具"
@@ -479,10 +485,10 @@
     "message": "變更主密碼"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "您可以在 Bitwarden 網頁版密碼庫變更主密碼。要現在前往嗎？"
+    "message": "您可以在 bitwarden.com 網頁版密碼庫變更主密碼。現在要前往嗎？"
   },
   "twoStepLoginConfirmation": {
-    "message": "兩步驟登入需要您從其他裝置（例如安全金鑰、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的帳戶更加安全。兩步驟登入可以在 Bitwarden 網頁版密碼庫啟用。要現在前往嗎？"
+    "message": "兩步驟登入需要您從其他裝置（例如安全金鑰、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的帳戶更加安全。兩步驟登入可以在 bitwarden.com 網頁版密碼庫啟用。現在要前往嗎？"
   },
   "editedFolder": {
     "message": "已編輯資料夾"
@@ -562,10 +568,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "disableAddLoginNotification": {
-    "message": "停用新增登入資料提示"
+    "message": "停用新增登入資料通知"
   },
   "addLoginNotificationDesc": {
-    "message": "當您首次登入時，「新增登入資料提示」會自動提醒您在密碼庫中新增登入資料。"
+    "message": "當您首次登入時，「新增登入資料通知」會自動提醒您在密碼庫中新增登入資料。"
   },
   "dontShowCardsCurrentTab": {
     "message": "不要在分頁頁面顯示支付卡"
@@ -747,7 +753,7 @@
     "message": "管理會員資格"
   },
   "premiumManageAlert": {
-    "message": "您可以在 Bitwarden 網頁版管理您的會員資格。要現在前往嗎？"
+    "message": "您可以在 bitwarden.com 網頁版密碼庫管理您的會員資格。現在要前往嗎？"
   },
   "premiumRefresh": {
     "message": "更新會員資格狀態"
@@ -768,7 +774,7 @@
     "message": "密碼健康度檢查、提供帳戶體檢以及資料外洩報告，以保障您的密碼庫安全。"
   },
   "ppremiumSignUpTotp": {
-    "message": "用於登入您的密碼庫的 TOTP 驗證碼 (2FA) 產生器。"
+    "message": "用於您的密碼庫中登入項目的 TOTP 驗證碼 (2FA) 產生器。"
   },
   "ppremiumSignUpSupport": {
     "message": "優先客戶支援。"
@@ -780,7 +786,7 @@
     "message": "升級為進階會員"
   },
   "premiumPurchaseAlert": {
-    "message": "您可以在 Bitwarden 網頁版密碼庫購買進階會員資格。要現在前往嗎？"
+    "message": "您可以在 bitwarden.com 網頁版密碼庫購買進階會員資格。現在要前往嗎？"
   },
   "premiumCurrentMember": {
     "message": "您目前為進階會員！"
@@ -960,7 +966,7 @@
     "message": "啟用頁面載入時自動填入後，您可以為單個登入項目啟用或停用此功能。這是未單獨設定的登入項目的預設設定。"
   },
   "itemAutoFillOnPageLoad": {
-    "message": "頁面載入時自動填入 (如果選項中已啟用)"
+    "message": "頁面載入時自動填入（如果選項中已啟用）"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "使用預設設定"
@@ -1556,7 +1562,7 @@
     "message": "組織原則正在影響您的擁有權選項。"
   },
   "excludedDomains": {
-    "message": "排除的網域"
+    "message": "排除網域"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden 不會要求儲存這些網域的詳細登入資訊。必須重新整理頁面才能使變更生效。"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "服務"
+  },
+  "forwardedEmail": {
+    "message": "轉寄的電子郵件別名"
+  },
+  "forwardedEmailDesc": {
+    "message": "使用外部轉寄服務產生一個電子郵件別名。"
+  },
+  "hostname": {
+    "message": "主機名稱",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API 存取權杖"
+  },
+  "apiKey": {
+    "message": "API 金鑰"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector 錯誤：請確保 Key Connector 可用且運作正常。"
   }
 }

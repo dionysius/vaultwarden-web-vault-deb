@@ -52,8 +52,14 @@
   "tab": {
     "message": "Kaart"
   },
+  "vault": {
+    "message": "Hoidla"
+  },
   "myVault": {
     "message": "Minu hoidla"
+  },
+  "allVaults": {
+    "message": "Kõik hoidlad"
   },
   "tools": {
     "message": "Tööriistad"
@@ -1910,7 +1916,7 @@
     "message": "Kasutajanime tüüp"
   },
   "plusAddressedEmail": {
-    "message": "Lisaks e-post",
+    "message": "Plussiga e-posti aadress",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Teenus"
+  },
+  "forwardedEmail": {
+    "message": "Edastav e-posti alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Genereeri e-posti alias, kasutades selleks välist teenuspakkujat."
+  },
+  "hostname": {
+    "message": "Hosti nimi",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API ligipääsu märk"
+  },
+  "apiKey": {
+    "message": "API võti"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

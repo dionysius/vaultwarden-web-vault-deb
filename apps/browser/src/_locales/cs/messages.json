@@ -52,8 +52,14 @@
   "tab": {
     "message": "Karta"
   },
+  "vault": {
+    "message": "Vault"
+  },
   "myVault": {
     "message": "Můj trezor"
+  },
+  "allVaults": {
+    "message": "All Vaults"
   },
   "tools": {
     "message": "Nástroje"
@@ -543,10 +549,10 @@
     "message": "Opravdu chcete přepsat aktuální heslo?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Přepsat uživatelské jméno"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Opravdu chcete přepsat aktuální uživatelské jméno?"
   },
   "searchFolder": {
     "message": "Vyhledat ve složce"
@@ -1243,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Název domény",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1901,13 +1907,13 @@
     "message": "Error"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Znovu vygenerovat uživatelské jméno"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generovat uživatelské jméno"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Typ uživatelského jména"
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email",
@@ -1917,27 +1923,46 @@
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "E-mail pro doménový koš"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Náhodný"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Náhodné slovo"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Název webu"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Co chcete vygenerovat?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Typ hesla"
   },
   "service": {
-    "message": "Service"
+    "message": "Služba"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

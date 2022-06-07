@@ -52,8 +52,14 @@
   "tab": {
     "message": "Fane"
   },
+  "vault": {
+    "message": "Boks"
+  },
   "myVault": {
     "message": "Min boks"
+  },
+  "allVaults": {
+    "message": "Alle bokse"
   },
   "tools": {
     "message": "Værktøjer"
@@ -543,10 +549,10 @@
     "message": "Er du sikker på, at du vil overskrive den aktuelle adgangskode?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Overskriv brugernavn"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Er du sikker på, at du vil overskrive det aktuelle brugernavn?"
   },
   "searchFolder": {
     "message": "Søg mappe"
@@ -1243,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domænenavn",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1901,43 +1907,62 @@
     "message": "Fejl"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerér brugernavn"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generér brugernavn"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Brugernavnstype"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus adresseret e-mail",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Brug din e-mailudbyders underadresseringsmuligheder."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Fang-alle e-mail"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Brug dit domænes konfigurerede fang-alle-indbakke."
   },
   "random": {
-    "message": "Random"
+    "message": "Tilfældig"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Tilfældigt ord"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Hjemmeside navn"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Hvad vil du gerne generere?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Adgangskodetype"
   },
   "service": {
-    "message": "Service"
+    "message": "Tjeneste"
+  },
+  "forwardedEmail": {
+    "message": "Videresendt E-mail Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generér et e-mail alias med en ekstern viderestillingstjeneste."
+  },
+  "hostname": {
+    "message": "Værtsnavn",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-adgangstoken"
+  },
+  "apiKey": {
+    "message": "API-nøgle"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector-fejl: Sørg for, at Key Connector er tilgængelig og fungerer korrekt."
   }
 }

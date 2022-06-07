@@ -52,8 +52,14 @@
   "tab": {
     "message": "Tab"
   },
+  "vault": {
+    "message": "Tresor"
+  },
   "myVault": {
     "message": "Mein Tresor"
+  },
+  "allVaults": {
+    "message": "Alle Tresore"
   },
   "tools": {
     "message": "Werkzeuge"
@@ -125,7 +131,7 @@
     "message": "Einen Bestätigungscode an deine E-Mail senden"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Code senden"
   },
   "codeSent": {
     "message": "Code gesendet"
@@ -248,11 +254,11 @@
     "message": "Trennzeichen"
   },
   "capitalize": {
-    "message": "Großschreiben",
+    "message": "Wortanfänge großschreiben",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Ziffer hinzufügen"
+    "message": "Zahl hinzufügen"
   },
   "minNumbers": {
     "message": "Mindestanzahl Zahlen"
@@ -603,7 +609,7 @@
     "message": "Möchtest du dieses Passwort in Bitwarden aktualisieren?"
   },
   "notificationChangeSave": {
-    "message": "Ja, jetzt aktualisieren"
+    "message": "Aktualisieren"
   },
   "disableContextMenuItem": {
     "message": "Kontextmenü-Optionen deaktivieren"
@@ -668,7 +674,7 @@
     "message": "Erfahre mehr über Organisationen"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden erlaubt es dir, deine Tresor-Einträge mit anderen zu teilen, wenn du eine Organisation verwendest. Möchtest du bitwarden.com besuchen, um mehr zu erfahren?"
+    "message": "Bitwarden erlaubt es dir deine Tresor Einträge mit anderen zu teilen, wenn du einen Organisations Account hast. Möchtest du bitwarden.com besuchen, um mehr zu erfahren?"
   },
   "moveToOrganization": {
     "message": "In Organisation verschieben"
@@ -1889,7 +1895,7 @@
     "message": "Persönlichen Tresor exportieren"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Nur die persönlichen Tresoreinträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
+    "message": "Nur die persönlichen Tresoreinträge die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Dienst"
+  },
+  "forwardedEmail": {
+    "message": "Weitergeleitetes E-Mail-Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generiere ein E-Mail-Alias mit einem externen Weiterleitungsdienst."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-Zugangs-Token"
+  },
+  "apiKey": {
+    "message": "API-Schlüssel"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector Fehler: Stelle sicher, dass der Key Connector verfügbar ist und einwandfrei funktioniert."
   }
 }

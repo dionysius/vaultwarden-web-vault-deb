@@ -52,8 +52,14 @@
   "tab": {
     "message": "Välilehti"
   },
+  "vault": {
+    "message": "Holvi"
+  },
   "myVault": {
     "message": "Oma holvi"
+  },
+  "allVaults": {
+    "message": "Kaikki holvit"
   },
   "tools": {
     "message": "Työkalut"
@@ -230,10 +236,10 @@
     "message": "Pituus"
   },
   "uppercase": {
-    "message": "Isot kirjaimet  (A-Ö)"
+    "message": "Isot kirjaimet (A-Z)"
   },
   "lowercase": {
-    "message": "Pienet kirjaimet (a-ö)"
+    "message": "Pienet kirjaimet (a-z)"
   },
   "numbers": {
     "message": "Numerot (0-9)"
@@ -1496,10 +1502,10 @@
     "message": "Varmista, että työpöytäsovellus näyttää tämän tunnistelausekkeen:"
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Selainintegrointi ei ole käytössä"
+    "message": "Selainintegraatio ei ole käytössä"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Selainintegrointi ei ole käytössä Bitwardenin työpöytäsovelluksessa. Ota se käyttöön työpöytäsovelluksen asetuksista."
+    "message": "Selainintegraatio ei ole käytössä Bitwardenin työpöytäsovelluksessa. Ota se käyttöön työpöytäsovelluksen asetuksista."
   },
   "startDesktopTitle": {
     "message": "Käynnistä Bitwardenin työpöytäsovellus"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Palvelu"
+  },
+  "forwardedEmail": {
+    "message": "Välitykseen käytetty sähköpostialias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."
+  },
+  "hostname": {
+    "message": "Osoite",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-käyttötunniste"
+  },
+  "apiKey": {
+    "message": "API-avain"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector -virhe: Varmista, että Key Connector on käytettävissä ja toimii oikein."
   }
 }

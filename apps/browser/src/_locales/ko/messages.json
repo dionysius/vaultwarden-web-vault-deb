@@ -52,8 +52,14 @@
   "tab": {
     "message": "탭"
   },
+  "vault": {
+    "message": "Vault"
+  },
   "myVault": {
     "message": "내 보관함"
+  },
+  "allVaults": {
+    "message": "All Vaults"
   },
   "tools": {
     "message": "도구"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "서비스"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }

@@ -52,8 +52,14 @@
   "tab": {
     "message": "Tab"
   },
+  "vault": {
+    "message": "Kluis"
+  },
   "myVault": {
     "message": "Mijn kluis"
+  },
+  "allVaults": {
+    "message": "Alle kluizen"
   },
   "tools": {
     "message": "Gereedschap"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Dienst"
+  },
+  "forwardedEmail": {
+    "message": "Doorgestuurd e-mailalias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Genereer een e-mailalias met een externe doorschakelservice."
+  },
+  "hostname": {
+    "message": "Hostnaam",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-toegangstoken"
+  },
+  "apiKey": {
+    "message": "API-sleutel"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key-connector fout: zorg ervoor dat Key-connector beschikbaar is en werkt."
   }
 }

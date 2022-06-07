@@ -52,8 +52,14 @@
   "tab": {
     "message": "Vərəq"
   },
+  "vault": {
+    "message": "Anbar"
+  },
   "myVault": {
     "message": "Anbarım"
+  },
+  "allVaults": {
+    "message": "Bütün anbarlar"
   },
   "tools": {
     "message": "Alətlər"
@@ -1939,5 +1945,24 @@
   },
   "service": {
     "message": "Xidmət"
+  },
+  "forwardedEmail": {
+    "message": "Yönləndirilən e-poçt ləqəbi"
+  },
+  "forwardedEmailDesc": {
+    "message": "Xarici yönləndirmə xidməti ilə e-poçt ləqəbi yaradın."
+  },
+  "hostname": {
+    "message": "Host adı",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API müraciət tokeni"
+  },
+  "apiKey": {
+    "message": "API açar"
+  },
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }
 }
