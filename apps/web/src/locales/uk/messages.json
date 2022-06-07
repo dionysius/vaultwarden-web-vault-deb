@@ -269,20 +269,20 @@
     "message": "Змінити"
   },
   "searchCollection": {
-    "message": "Пошук в збірках"
+    "message": "Шукати в збірці"
   },
   "searchFolder": {
-    "message": "Пошук в теці"
+    "message": "Шукати в теці"
   },
   "searchFavorites": {
-    "message": "Пошук в обраному"
+    "message": "Шукати в обраному"
   },
   "searchType": {
-    "message": "Пошук за типом",
+    "message": "Шукати за типом",
     "description": "Search item type"
   },
   "searchVault": {
-    "message": "Пошук"
+    "message": "Шукати у сховищі"
   },
   "allItems": {
     "message": "Всі елементи"
@@ -421,11 +421,23 @@
     "message": "Копіювати URI",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Я"
+  },
   "myVault": {
     "message": "Моє сховище"
   },
+  "allVaults": {
+    "message": "Усі сховища"
+  },
   "vault": {
     "message": "Сховище"
+  },
+  "vaults": {
+    "message": "Сховища"
+  },
+  "vaultItems": {
+    "message": "Елементи сховища"
   },
   "moveSelectedToOrg": {
     "message": "Перемістити вибране до організації"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Довжина"
   },
+  "uppercase": {
+    "message": "Верхній регістр (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Нижній регістр (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Числа (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Спеціальні символи (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Кількість слів"
   },
@@ -1110,10 +1136,13 @@
   "options": {
     "message": "Додатково"
   },
-  "optionsDesc": {
+  "preferences": {
+    "message": "Налаштування"
+  },
+  "preferencesDesc": {
     "message": "Налаштуйте свою роботу з веб сховищем."
   },
-  "optionsUpdated": {
+  "preferencesUpdated": {
     "message": "Налаштування оновлено"
   },
   "language": {
@@ -1431,7 +1460,8 @@
     "message": "Звіти"
   },
   "reportsDesc": {
-    "message": "Визначте і закрийте прогалини в безпеці у ваших облікових записах, натиснувши на звіти нижче."
+    "message": "Визначте і закрийте прогалини в безпеці у ваших облікових записах, натиснувши на звіти нижче.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Незахищені вебсайти"
@@ -3342,7 +3372,7 @@
     "description": "Noun: A special folder for holding deleted items that have not yet been permanently deleted"
   },
   "searchTrash": {
-    "message": "Пошук у смітнику"
+    "message": "Шукати в смітнику"
   },
   "permanentlyDelete": {
     "message": "Остаточно видалити"
@@ -3626,7 +3656,7 @@
     "message": "Термін дії завершився"
   },
   "searchSends": {
-    "message": "Пошук відправлень",
+    "message": "Шукати відправлення",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
@@ -4564,7 +4594,7 @@
     "message": "Введіть особисту електронну адресу для активації Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "Якщо ви покинете цю спонсоровану організацію, ваш доступ до тарифного плану Bitwarden Families завершиться в кінці оплаченого періоду."
+    "message": "Якщо ви вилучите пропозицію, або якщо вас вилучено з цієї спонсорованої організації, ваш доступ до тарифного плану Bitwarden Families завершиться під час наступної дати поновлення."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Прийняти пропозицію для наявної організації або створити нову сімейну організацію."
@@ -4639,13 +4669,13 @@
     "message": "Лист надіслано"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "Після вилучення цього облікового запису, власники сімейної організації будуть відповідальними за цю передплату та пов'язані рахунки. Ви дійсно хочете продовжити?"
+    "message": "Після вилучення цього облікового запису, спонсорування сімейного плану завершиться в кінці платіжного періоду. Ви не зможете запитати нову пропозицію спонсорування доки чинна не завершиться. Ви дійсно хочете продовжити?"
   },
   "removeSponsorshipSuccess": {
     "message": "Спонсорування вилучено"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Не вдається отримати доступ до Key Connector. Спробуйте знову пізніше."
+  "ssoKeyConnectorError": {
+    "message": "Помилка Key Connector: переконайтеся, що Key Connector доступний та працює правильно."
   },
   "keyConnectorUrl": {
     "message": "URL-адреса Key Connector"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "БЕЗПЛАТНО зі спонсоруванням"
   },
+  "viewBillingSyncToken": {
+    "message": "Переглянути токен платіжної синхронізації"
+  },
+  "generateBillingSyncToken": {
+    "message": "Згенерувати токен платіжної синхронізації"
+  },
+  "copyPasteBillingSync": {
+    "message": "Скопіюйте і вставте цей токен у налаштування платіжної синхронізації своєї власної розміщеної організації."
+  },
+  "billingSyncCanAccess": {
+    "message": "Ваш токен платіжної синхронізації може отримувати доступ і редагувати налаштування передплати цієї організації."
+  },
+  "manageBillingSync": {
+    "message": "Керувати платіжною синхронізацією"
+  },
+  "setUpBillingSync": {
+    "message": "Налаштувати платіжну синхронізацію"
+  },
+  "generateToken": {
+    "message": "Генерувати токен"
+  },
+  "rotateToken": {
+    "message": "Замінити токен"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "Якщо ви продовжите, вам потрібно буде повторно налаштувати платіжну синхронізацію на вашому власному розміщеному сервері."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Заміна токена платіжної синхронізації призведе до скасування попереднього токена."
+  },
+  "selfHostingTitle": {
+    "message": "Власне розміщення"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "Щоб налаштувати свою організацію на власному сервері, вам необхідно вивантажити файл ліцензії. Для підтримки безплатних сімейних тарифних планів та розширених можливостей власної розміщеної організації, вам необхідно налаштувати платіжну синхронізацію."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Токен замінено."
+  },
+  "billingSync": {
+    "message": "Платіжна синхронізація"
+  },
+  "billingSyncDesc": {
+    "message": "Платіжна синхронізація надає безплатні сімейні тарифні плани для учасників, а також розширені можливості передплати завдяки зв'язку вашого власного розміщеного Bitwarden з хмарним сервером Bitwarden."
+  },
+  "billingSyncKeyDesc": {
+    "message": "Для завершення цієї форми необхідний токен платіжної синхронізації з налаштувань передплати організації в хмарному сховищі."
+  },
+  "billingSyncKey": {
+    "message": "Токен платіжної синхронізації"
+  },
+  "active": {
+    "message": "Активний"
+  },
+  "inactive": {
+    "message": "Неактивний"
+  },
+  "sentAwaitingSync": {
+    "message": "Надіслано (Очікується синхронізація)"
+  },
+  "sent": {
+    "message": "Надіслано"
+  },
+  "requestRemoved": {
+    "message": "Вилучено (Очікується синхронізація)"
+  },
+  "requested": {
+    "message": "Запитано"
+  },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ зазначених вище полів потребують вашої уваги.",
     "placeholders": {
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Доступ заборонено. У вас немає дозволу на перегляд цієї сторінки."
+  },
+  "masterPassword": {
+    "message": "Головний пароль"
+  },
+  "security": {
+    "message": "Безпека"
+  },
+  "keys": {
+    "message": "Ключі"
+  },
+  "billingHistory": {
+    "message": "Історія платежів"
+  },
   "backToReports": {
     "message": "Повернутися до звітів"
+  },
+  "organizationPicker": {
+    "message": "Вибір організації"
+  },
+  "currentOrganization": {
+    "message": "Поточна організація",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Налаштування облікового запису"
   },
   "generator": {
     "message": "Генератор"
@@ -4871,12 +4995,79 @@
     "message": "Використовуйте свою скриньку вхідних Catch-All власного домену."
   },
   "random": {
-    "message": "Випадково"
+    "message": "Випадково",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Випадкове слово"
   },
   "service": {
     "message": "Послуга"
+  },
+  "unknownCipher": {
+    "message": "Невідомий елемент. Можливо, вам необхідно запитати дозвіл для доступу до нього."
+  },
+  "cannotSponsorSelf": {
+    "message": "Ви не можете отримати для активного облікового запису. Введіть іншу адресу е-пошти."
+  },
+  "revokeWhenExpired": {
+    "message": "Завершується $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Токен замінено $DAYS$ день тому. Оновіть токен платіжної синхронізації у налаштуваннях власної розміщеної організації.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Токен замінено $DAYS$ днів тому. Оновіть токен платіжної синхронізації у налаштуваннях власної розміщеної організації.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Востаннє синхронізовано",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Власне розміщене спонсорування синхронізовано."
+  },
+  "billingManagedByProvider": {
+    "message": "Керується $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Будь ласка, зверніться до них за допомогою",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Псевдонім е-пошти для пересилання"
+  },
+  "forwardedEmailDesc": {
+    "message": "Згенеруйте псевдонім е-пошти зі стороннім сервісом пересилання."
+  },
+  "hostname": {
+    "message": "Ім'я вузла",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Токен доступу до АРІ"
   }
 }

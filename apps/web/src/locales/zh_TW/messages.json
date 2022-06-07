@@ -230,10 +230,10 @@
     "message": "產生密碼"
   },
   "checkPassword": {
-    "message": "檢查密碼是否已外洩。"
+    "message": "檢查密碼是否已暴露。"
   },
   "passwordExposed": {
-    "message": "此密碼已外洩了 $VALUE$ 次，應立即變更密碼。",
+    "message": "此密碼在資料外洩事件中被暴露了 $VALUE$ 次，應立即變更。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -421,11 +421,23 @@
     "message": "複製 URI",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "我"
+  },
   "myVault": {
     "message": "我的密碼庫"
   },
+  "allVaults": {
+    "message": "所有密碼庫"
+  },
   "vault": {
     "message": "密碼庫"
+  },
+  "vaults": {
+    "message": "密碼庫"
+  },
+  "vaultItems": {
+    "message": "密碼庫項目"
   },
   "moveSelectedToOrg": {
     "message": "移動已選取項目至組織"
@@ -891,6 +903,20 @@
   "length": {
     "message": "長度"
   },
+  "uppercase": {
+    "message": "大寫 (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "小寫 (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "數字 (0-9)"
+  },
+  "specialCharacters": {
+    "message": "特殊字元 (!@#$%^&*)"
+  },
   "numWords": {
     "message": "字數"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "選項"
   },
-  "optionsDesc": {
-    "message": "自訂您的網頁版密碼庫"
+  "preferences": {
+    "message": "偏好設定"
   },
-  "optionsUpdated": {
-    "message": "已更新選項"
+  "preferencesDesc": {
+    "message": "自訂您的網頁版密碼庫。"
+  },
+  "preferencesUpdated": {
+    "message": "偏好設定已更新"
   },
   "language": {
     "message": "語言"
@@ -1235,7 +1264,7 @@
     "message": "停用"
   },
   "twoStepLoginProviderEnabled": {
-    "message": "您的帳戶已啟用兩步驟登入"
+    "message": "您的帳戶已啟用兩步驟登入。"
   },
   "twoStepLoginAuthDesc": {
     "message": "輸入您的主密碼以修改兩步驟登入設定。"
@@ -1415,7 +1444,7 @@
     "message": "由於平台限制，無法於所有 Bitwarden 應用程式中使用 WebAuthn。請設定另一套兩步驟登入方式，以確保在 WebAuthn 無法使用時還能存取您的帳戶。支援的平台有："
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "桌上型電腦/筆記型電腦上具有 WebAuthn 功能的瀏覽器（Chrome、Opera、Vivaldi 或開啟 FIDO U2F 功能的 Firefox）上的網頁版密碼庫和瀏覽器擴充套件。"
+    "message": "桌上型電腦/筆記型電腦上啟用了 WebAuthn 功能的瀏覽器（Chrome、Opera、Vivaldi 或啟用了 FIDO U2F 的 Firefox）上的網頁版密碼庫和瀏覽器擴充套件。"
   },
   "twoFactorRecoveryYourCode": {
     "message": "您的 Bitwarden 兩步驟登入復原碼"
@@ -1431,7 +1460,8 @@
     "message": "報告"
   },
   "reportsDesc": {
-    "message": "點選下方的報告，識別並消除您的線上帳戶中的安全漏洞。"
+    "message": "點選下方的報告，識別並消除您的線上帳戶中的安全漏洞。",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "不安全的網站"
@@ -1443,7 +1473,7 @@
     "message": "發現不安全的網站"
   },
   "unsecuredWebsitesFoundDesc": {
-    "message": "我們在您的密碼庫中找到 $COUNT$ 個使用不安全 URI 的項目。若網站允許，您應變更其網址配置為 https://。",
+    "message": "我們在您的密碼庫中找到了 $COUNT$ 個使用不安全 URI 的項目。若網站允許，您應變更其網址配置為 https://。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1455,10 +1485,10 @@
     "message": "您的密碼庫中沒有使用不安全 URI 的項目。"
   },
   "inactive2faReport": {
-    "message": "非使用中兩步驟登入"
+    "message": "未設定兩步驟登入"
   },
   "inactive2faReportDesc": {
-    "message": "兩步驟登入為您的帳戶添加了一層保護。使用 Bitwarden 驗證器或使用其他方法為這些帳戶啟用兩步驟登入。"
+    "message": "兩步驟登入為您的帳戶增加了一層保護。使用 Bitwarden 驗證器或使用其他方法為這些帳戶啟用兩步驟登入。"
   },
   "inactive2faFound": {
     "message": "發現未啟用 2FA 的登入資料"
@@ -1479,16 +1509,16 @@
     "message": "說明"
   },
   "exposedPasswordsReport": {
-    "message": "已公開的密碼"
+    "message": "暴露的密碼"
   },
   "exposedPasswordsReportDesc": {
-    "message": "資料外洩中暴露的密碼很容易成為攻擊者的目標。更改這些密碼以防止潛在的入侵。"
+    "message": "在資料外洩事件中暴露的密碼很容易成為攻擊者的目標。變更這些密碼以防止潛在的入侵。"
   },
   "exposedPasswordsFound": {
-    "message": "發現公開密碼"
+    "message": "發現暴露的密碼"
   },
   "exposedPasswordsFoundDesc": {
-    "message": "我們在您的密碼庫中找到 $COUNT$ 個項目的密碼在已知資料外洩事件中被公開。您應將它們變更為新密碼。",
+    "message": "我們在您的密碼庫中找到了 $COUNT$ 個項目的密碼在已知資料外洩事件中被暴露。您應將它們變更為新密碼。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1497,13 +1527,13 @@
     }
   },
   "noExposedPasswords": {
-    "message": "未在您的密碼庫中找到在已知資料外洩事件中被公開的項目。"
+    "message": "您的密碼庫中沒有在已知資料外洩事件中被暴露密碼的項目。"
   },
   "checkExposedPasswords": {
-    "message": "檢查公開密碼"
+    "message": "檢查暴露的密碼"
   },
   "exposedXTimes": {
-    "message": "被公開 $COUNT$ 次",
+    "message": "已暴露 $COUNT$ 次",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1515,13 +1545,13 @@
     "message": "弱式密碼"
   },
   "weakPasswordsReportDesc": {
-    "message": "弱密碼很容易被攻擊者猜到。使用密碼產生器將這些密碼更改為強密碼。"
+    "message": "弱密碼很容易被攻擊者猜到。使用密碼產生器將這些密碼變更為安全性更高的密碼。"
   },
   "weakPasswordsFound": {
     "message": "發現弱式密碼"
   },
   "weakPasswordsFoundDesc": {
-    "message": "我們在您的密碼庫中發現了 $COUNT$ 個使用弱式密碼的項目。您應該將它們變更為更強的密碼。",
+    "message": "我們在您的密碼庫中找到了 $COUNT$ 個使用弱式密碼的項目。您應該將它們變更為更強的密碼。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1536,13 +1566,13 @@
     "message": "重複使用密碼"
   },
   "reusedPasswordsReportDesc": {
-    "message": "重複使用密碼使攻擊者更容易侵入多個帳戶。更改這些密碼，使每個密碼都是唯一的。"
+    "message": "密碼重複使用會讓攻擊者更容易侵入多個帳戶。變更這些密碼，使每個密碼都是唯一的。"
   },
   "reusedPasswordsFound": {
     "message": "發現重複使用的密碼"
   },
   "reusedPasswordsFoundDesc": {
-    "message": "我們發現您的密碼庫中有 $COUNT$ 組密碼重複使用。您應該將它們變更為不同的密碼。",
+    "message": "我們在您的密碼庫中找到了 $COUNT$ 組密碼重複使用。您應該將它們變更為不同的密碼。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1551,7 +1581,7 @@
     }
   },
   "noReusedPasswords": {
-    "message": "未在您密碼庫中找到重複使用密碼的登入資訊。"
+    "message": "您的密碼庫中沒有重複使用密碼的登入資料。"
   },
   "reusedXTimes": {
     "message": "已重複使用 $COUNT$ 次",
@@ -1566,13 +1596,13 @@
     "message": "資料外洩"
   },
   "breachDesc": {
-    "message": "外洩的帳戶可能會暴露您的個人信息。透過啟用 2FA 或創建更強的密碼來保護被外洩的帳戶。"
+    "message": "外洩的帳戶可能會暴露您的個人資訊。透過啟用 2FA 或建立更強的密碼來保護被外洩的帳戶。"
   },
   "breachCheckUsernameEmail": {
     "message": "請檢查您使用的使用者名稱或電子郵件地址。"
   },
   "checkBreaches": {
-    "message": "檢查密碼外洩情況"
+    "message": "檢查外洩情況"
   },
   "breachUsernameNotFound": {
     "message": "在任何已知的外洩密碼資料庫中都找不到 $USERNAME$。",
@@ -1672,7 +1702,7 @@
     "message": "密碼健康、帳戶體檢以及資料外洩報告，保障您的密碼庫安全。"
   },
   "premiumSignUpTotp": {
-    "message": "用於登入您的密碼庫的 TOTP 驗證碼（2FA）產生器。"
+    "message": "用於您的密碼庫中登入項目的 TOTP 驗證碼 (2FA) 產生器。"
   },
   "premiumSignUpSupport": {
     "message": "優先客戶支援。"
@@ -1835,7 +1865,7 @@
     "message": "移除儲存空間"
   },
   "subscriptionStorage": {
-    "message": "您的訂閱方案包含 $MAX_STORAGE$ GB 的加密檔案儲存空間，目前已使用 $USED_STORAGE$。",
+    "message": "您訂閱的方案包含 $MAX_STORAGE$ GB 的加密檔案儲存空間，目前已使用 $USED_STORAGE$。",
     "placeholders": {
       "max_storage": {
         "content": "$1",
@@ -2239,7 +2269,7 @@
     "message": "在下方輸入 Bitwarden 帳戶的電子郵件位址，以邀請新使用者加入您的組織。若他們沒有 Bitwarden 帳戶，系統將提示他們建立新帳戶。"
   },
   "inviteMultipleEmailDesc": {
-    "message": "透過使用逗號分隔的電子郵件地址，您可以一次邀請 $COUNT$ 位使用者。",
+    "message": "透過使用逗號分隔的電子郵件地址，您可以一次邀請最多 $COUNT$ 位使用者。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2815,7 +2845,7 @@
     "message": "刪除後，使用者帳戶仍然可用，但將不再與此組織關聯。"
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "刪除 $ORGANIZATION$ 是永久性動作，無法回復。",
+    "message": "刪除 $ORGANIZATION$ 為永久性動作，並且無法回復。",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2908,10 +2938,10 @@
     "message": "帳戶類型"
   },
   "bankAccountTypeCompany": {
-    "message": "公司"
+    "message": "公司（商用）"
   },
   "bankAccountTypeIndividual": {
-    "message": "個人"
+    "message": "個體（個人）"
   },
   "enterInstallationId": {
     "message": "輸入您的安裝 ID"
@@ -2935,7 +2965,7 @@
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
-    "message": "調整訂閱將會依比例變更您的帳單總額。若新邀請的使用者超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用。"
+    "message": "調整訂閱將會依比例變更您的計費總額。若新邀請的使用者超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用。"
   },
   "subscriptionUserSeats": {
     "message": "您的訂閱當中包含 $COUNT$ 位使用者的授權。",
@@ -2962,10 +2992,10 @@
     "message": "如需更多管理訂閱協助，請聯絡客戶支援。"
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "調整訂閱將會依比例變更您的帳單總額。若新邀請的使用者超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用。"
+    "message": "調整訂閱將會依比例變更您的計費總額。若新邀請的使用者超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用。"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "調整訂閱將會依比例變更您的帳單總額。若新邀請的使用者超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用，直到您達到 $MAX$ 席位限制。",
+    "message": "調整訂閱將會依比例變更您的計費總額。若新邀請的使用者超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用，直到您達到 $MAX$ 席位限制。",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3001,7 +3031,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "調整訂閱將會依比例變更您的帳單總額。在不增加訂閱席位的情況下，您不能邀請超過 $COUNT$ 位使用者。",
+    "message": "調整訂閱將會依比例變更您的計費總額。在不增加訂閱席位的情況下，您不能邀請超過 $COUNT$ 位使用者。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3016,7 +3046,7 @@
     "message": "要移除的席位數"
   },
   "seatsAddNote": {
-    "message": "增加使用者席位將會調整帳單總額，並立即透過您選擇的付款方式進行扣款。第一期費用將依照目前計費週期的剩餘時間依比例分配。"
+    "message": "增加使用者席位將會調整計費總額，並立即透過您選擇的付款方式進行扣款。第一期費用將依照目前計費週期的剩餘時間依比例分配。"
   },
   "seatsRemoveNote": {
     "message": "移除使用者席位將會調整計費總額，這筆費用將依照比例返還並用於下一筆帳單費用中。"
@@ -3507,7 +3537,7 @@
     "message": "先決條件"
   },
   "requireSsoPolicyReq": {
-    "message": "必須先開啟單一組織企業原則，才能開啟此原則。"
+    "message": "必須先開啟「單一組織」企業原則，才能開啟此原則。"
   },
   "requireSsoPolicyReqError": {
     "message": "未啟用單一組織原則。"
@@ -4085,7 +4115,7 @@
     }
   },
   "eventAdminPasswordReset": {
-    "message": "重設使用者 $ID$ 的主密碼",
+    "message": "已重設使用者 $ID$ 的主密碼。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4154,7 +4184,7 @@
     "message": "已經在組織中的使用者將不會被註冊密碼重設。他們需要先自行註冊後管理者才能重設他們的主密碼。"
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "要求為新使用者啟用自動註冊"
+    "message": "為新使用者啟用自動註冊"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "此組織有一個可以為您自動註冊密碼重設的企業原則。註冊後將允許組織管理員變更您的主密碼。"
@@ -4564,7 +4594,7 @@
     "message": "輸入您的個人電子郵件以兌換 Bitwarden 家庭方案"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "如果您離開或被從該組織中移除，您的家庭方案將在計費周期結束時逾期。"
+    "message": "如果您移除邀請或被贊助組織移除，您的家庭贊助將在下一個續費日逾期。"
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "接受現有組織的邀請或建立一個新的家庭組織。"
@@ -4639,13 +4669,13 @@
     "message": "已寄出郵件"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "移除此帳戶後，家庭組織的擁有者將負責此訂閱及其相關帳單。您確定要繼續嗎？"
+    "message": "移除此帳戶後，家庭方案贊助將在計費周期結束前逾期。在現有的贊助逾期前您將不能兌換新的贊助邀請。您確定要繼續嗎？"
   },
   "removeSponsorshipSuccess": {
     "message": "已移除贊助"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "無法連線至 Key Connector。請稍後再試。"
+  "ssoKeyConnectorError": {
+    "message": "Key Connector 錯誤：請確保 Key Connector 可用且運作正常。"
   },
   "keyConnectorUrl": {
     "message": "Key Connector URL"
@@ -4672,7 +4702,7 @@
     "message": "無效的驗證碼"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ 使用自我托管金鑰伺服器 SSO。此組織的成員登入時將不再需要主密碼。",
+    "message": "$ORGANIZATION$ 使用自我裝載金鑰伺服器 SSO。此組織的成員登入時將不再需要主密碼。",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4704,7 +4734,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
-    "message": "要求所有成員皆使用 SSO 登入。",
+    "message": "將要求所有成員皆使用 SSO 登入。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
@@ -4720,7 +4750,7 @@
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDesc": {
-    "message": "連結 SSO 登入至您的自我托管解密金鑰伺服器。使用此選項後，成員便無需使用它們的主密碼來解密密碼庫資料。聯絡 Bitwarden 客戶支援以取得設定協助。"
+    "message": "連結 SSO 登入至您的自我裝載解密金鑰伺服器。使用此選項後，成員便無需使用它們的主密碼來解密密碼庫資料。聯絡 Bitwarden 客戶支援以取得設定協助。"
   },
   "keyConnectorPolicyRestriction": {
     "message": "已啟用「SSO 登入和 Key Connector 解密」。此原則僅適用於擁有者和管理員。"
@@ -4772,6 +4802,75 @@
   },
   "freeWithSponsorship": {
     "message": "免費贊助"
+  },
+  "viewBillingSyncToken": {
+    "message": "檢視帳單同步權杖"
+  },
+  "generateBillingSyncToken": {
+    "message": "產生帳單同步權杖"
+  },
+  "copyPasteBillingSync": {
+    "message": "請將本權杖複製後，貼至您自我裝載組織的「帳單同步」設定當中。"
+  },
+  "billingSyncCanAccess": {
+    "message": "您的帳單同步權杖可以讀取及編輯此組織的訂閱設定。"
+  },
+  "manageBillingSync": {
+    "message": "管理帳單同步"
+  },
+  "setUpBillingSync": {
+    "message": "設定帳單同步"
+  },
+  "generateToken": {
+    "message": "產生權杖"
+  },
+  "rotateToken": {
+    "message": "更換權杖"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "如果繼續，您需要重新在自我裝載伺服器上設定帳單同步。"
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "更換「帳單同步權杖」會導致之前的權杖失效。"
+  },
+  "selfHostingTitle": {
+    "message": "自我裝載"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "若要在您自己的伺服器上設定組織，您需要上傳授權檔案。若要使您的自我裝載組織支援「免費家庭」方案及進階帳單功能，您需要設定帳單同步。"
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "權杖已更換。"
+  },
+  "billingSync": {
+    "message": "帳單同步"
+  },
+  "billingSyncDesc": {
+    "message": "「帳單同步」藉由將您的自我裝載 Bitwarden 服務與 Bitwarden 雲端伺服器連結，向成員提供「免費家庭」方案及進階帳單功能。"
+  },
+  "billingSyncKeyDesc": {
+    "message": "想要完成這個表單，需要您雲端組織訂閱設定中的「帳單同步權杖」。"
+  },
+  "billingSyncKey": {
+    "message": "帳單同步權杖"
+  },
+  "active": {
+    "message": "生效中"
+  },
+  "inactive": {
+    "message": "已失效"
+  },
+  "sentAwaitingSync": {
+    "message": "已傳送（正在等待同步）"
+  },
+  "sent": {
+    "message": "已傳送"
+  },
+  "requestRemoved": {
+    "message": "已移除（正在等待同步）"
+  },
+  "requested": {
+    "message": "已要求"
   },
   "formErrorSummaryPlural": {
     "message": "您需注意上方的 $COUNT$ 個欄位。",
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "拒絕存取。您沒有檢視此頁面的權限。"
+  },
+  "masterPassword": {
+    "message": "主密碼"
+  },
+  "security": {
+    "message": "安全"
+  },
+  "keys": {
+    "message": "金鑰"
+  },
+  "billingHistory": {
+    "message": "帳單歷史記錄"
+  },
   "backToReports": {
     "message": "返回報告"
+  },
+  "organizationPicker": {
+    "message": "組織選擇器"
+  },
+  "currentOrganization": {
+    "message": "目前組織",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "帳戶設定"
   },
   "generator": {
     "message": "產生器"
@@ -4871,12 +4995,79 @@
     "message": "使用您的網域設定的 Catch-all 收件匣。"
   },
   "random": {
-    "message": "隨機"
+    "message": "隨機",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "隨機單字"
   },
   "service": {
     "message": "服務"
+  },
+  "unknownCipher": {
+    "message": "未知的項目，您可能需要要求權限才能存取此項目。"
+  },
+  "cannotSponsorSelf": {
+    "message": "您無法為已經啟用的帳戶兌換。請輸入其他信箱。"
+  },
+  "revokeWhenExpired": {
+    "message": "逾期於 $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "權杖已在 $DAYS$ 天前更換。請在您自我裝載組織的設定中，更新帳單同步權杖。",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "權杖已在 $DAYS$ 天前更換。請在您自我裝載組織的設定中，更新帳單同步權杖。",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "上次同步",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "已同步自我裝載贊助。"
+  },
+  "billingManagedByProvider": {
+    "message": "由 $PROVIDER$ 管理",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "請聯絡他們以取得後續協助",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "轉寄的電子郵件別名"
+  },
+  "forwardedEmailDesc": {
+    "message": "使用外部轉寄服務產生一個電子郵件別名。"
+  },
+  "hostname": {
+    "message": "主機名稱",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API 存取權杖"
   }
 }

@@ -421,11 +421,23 @@
     "message": "Copier l'URI",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Moi"
+  },
   "myVault": {
     "message": "Mon coffre"
   },
+  "allVaults": {
+    "message": "Tous les Coffres"
+  },
   "vault": {
     "message": "Coffre"
+  },
+  "vaults": {
+    "message": "Coffres-forts"
+  },
+  "vaultItems": {
+    "message": "Objets du Coffre"
   },
   "moveSelectedToOrg": {
     "message": "Déplacer la sélection vers l'organisation"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Longueur"
   },
+  "uppercase": {
+    "message": "Majuscule (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Minuscule (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Chiffres (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Caractères spéciaux (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Nombre de mots"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Options"
   },
-  "optionsDesc": {
+  "preferences": {
+    "message": "Préférences"
+  },
+  "preferencesDesc": {
     "message": "Personnaliser l'expérience de votre coffre web."
   },
-  "optionsUpdated": {
-    "message": "Options mises à jour"
+  "preferencesUpdated": {
+    "message": "Préférences mises à jour"
   },
   "language": {
     "message": "Langue"
@@ -1431,7 +1460,8 @@
     "message": "Rapports"
   },
   "reportsDesc": {
-    "message": "Identifiez et fermez les trous de sécurité dans vos comptes en ligne en cliquant sur les rapports ci-dessous."
+    "message": "Identifiez et fermez les trous de sécurité dans vos comptes en ligne en cliquant sur les rapports ci-dessous.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Rapport sur les sites web non sécurisés"
@@ -4644,8 +4674,8 @@
   "removeSponsorshipSuccess": {
     "message": "Parrainage supprimé"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Impossible de contacter Key Connector, réessayez plus tard."
+  "ssoKeyConnectorError": {
+    "message": "Erreur de Connecteur de Clé : assurez-vous que le Connecteur de Clé est disponible et qu'il fonctionne correctement."
   },
   "keyConnectorUrl": {
     "message": "URL de Key Connector"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "GRATUIT avec le parrainage"
   },
+  "viewBillingSyncToken": {
+    "message": "Voir le Jeton de Synchronisation de Facturation"
+  },
+  "generateBillingSyncToken": {
+    "message": "Générer un Jeton de Synchronisation de Facturation"
+  },
+  "copyPasteBillingSync": {
+    "message": "Copiez et collez ce jeton dans les paramètres de la Synchronisation de Facturation de votre organisation auto-hébergée."
+  },
+  "billingSyncCanAccess": {
+    "message": "Votre Jeton de Synchronisation de Facturation peut accéder et modifier les paramètres d'abonnement de cette organisation."
+  },
+  "manageBillingSync": {
+    "message": "Gérer la Synchronisation de Facturation"
+  },
+  "setUpBillingSync": {
+    "message": "Configurer la Synchronisation de Facturation"
+  },
+  "generateToken": {
+    "message": "Générer le Jeton"
+  },
+  "rotateToken": {
+    "message": "Permiter le Jeton"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "Si vous continuez, vous devrez reconfigurer la synchronisation de facturation sur votre serveur auto-hébergé."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Permuter le Jeton de Synchronisation de Facturation invalidera le jeton précédent."
+  },
+  "selfHostingTitle": {
+    "message": "Auto-Hébergement"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "Pour configurer votre organisation sur votre propre serveur, vous devrez télécharger votre fichier de licence. Pour prendre en charge les forfaits Familles Gratuits et les fonctionnalités avancées de facturation pour votre organisation auto-hébergée, vous devrez configurer la synchronisation de facturation."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Jeton permuté."
+  },
+  "billingSync": {
+    "message": "Synchronisation de Facturation"
+  },
+  "billingSyncDesc": {
+    "message": "La Synchronisation de Facturation fournit des forfaits Familles Gratuits pour les membres et des capacités de facturation avancées en liant votre Bitwarden auto-hébergé au serveur cloud Bitwarden."
+  },
+  "billingSyncKeyDesc": {
+    "message": "Un Jeton de Synchronisation de Facturation à partir des paramètres d'abonnement de votre organisation dans le cloud est nécessaire pour remplir ce formulaire."
+  },
+  "billingSyncKey": {
+    "message": "Jeton de Synchronisation de Facturation"
+  },
+  "active": {
+    "message": "Actif"
+  },
+  "inactive": {
+    "message": "Inactif"
+  },
+  "sentAwaitingSync": {
+    "message": "Envoyé (en Attente de Synchronisation)"
+  },
+  "sent": {
+    "message": "Envoyé"
+  },
+  "requestRemoved": {
+    "message": "Supprimé (en Attente de Synchronisation)"
+  },
+  "requested": {
+    "message": "Demandé"
+  },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ champs ci-dessus nécessitent votre attention.",
     "placeholders": {
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Accès Refusé. Vous n'avez pas la permission de voir cette page."
+  },
+  "masterPassword": {
+    "message": "Mot de Passe Maître"
+  },
+  "security": {
+    "message": "Sécurité"
+  },
+  "keys": {
+    "message": "Clés"
+  },
+  "billingHistory": {
+    "message": "Historique de Facturation"
+  },
   "backToReports": {
     "message": "Retour aux Rapports"
+  },
+  "organizationPicker": {
+    "message": "Sélecteur d'organisation"
+  },
+  "currentOrganization": {
+    "message": "Organisation actuelle",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Paramètres de Compte"
   },
   "generator": {
     "message": "Générateur"
@@ -4871,12 +4995,79 @@
     "message": "Utilisez la boîte de réception du collecteur (catch-all) configurée de votre domaine."
   },
   "random": {
-    "message": "Aléatoire"
+    "message": "Aléatoire",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Mot Aléatoire"
   },
   "service": {
     "message": "Service"
+  },
+  "unknownCipher": {
+    "message": "Élément inconnu, vous devrez peut-être vous connecter avec un autre compte pour accéder à cet élément."
+  },
+  "cannotSponsorSelf": {
+    "message": "Vous ne pouvez pas réclamer pour le compte actif. Entrez un e-mail différent."
+  },
+  "revokeWhenExpired": {
+    "message": "Expire le $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Jeton permuté il y a $DAYS$ jour. Mettez à jour le jeton de synchronisation de facturation dans les paramètres de votre organisation auto-hébergée.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Jeton permuté il y a $DAYS$ jour. Mettez à jour le jeton de synchronisation de facturation dans les paramètres de votre organisation auto-hébergée.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Dernière Synchronisation",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Self-hosted sponsorships synced."
+  },
+  "billingManagedByProvider": {
+    "message": "Géré par $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Veuillez les contacter pour plus d'assistance",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Alias d'email transféré"
+  },
+  "forwardedEmailDesc": {
+    "message": "Générer un alias de courriel avec un service de transfert externe."
+  },
+  "hostname": {
+    "message": "Nom d'hôte",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Jetons d'accès API"
   }
 }

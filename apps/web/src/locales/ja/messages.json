@@ -421,11 +421,23 @@
     "message": "URI のコピー",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "自分"
+  },
   "myVault": {
     "message": "保管庫"
   },
+  "allVaults": {
+    "message": "すべての保管庫"
+  },
   "vault": {
     "message": "保管庫"
+  },
+  "vaults": {
+    "message": "保管庫"
+  },
+  "vaultItems": {
+    "message": "保管庫のアイテム"
   },
   "moveSelectedToOrg": {
     "message": "選択したものを組織に移動"
@@ -891,6 +903,20 @@
   "length": {
     "message": "長さ"
   },
+  "uppercase": {
+    "message": "大文字（A-Z）",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "小文字（a-z）",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "数字 (0～9)"
+  },
+  "specialCharacters": {
+    "message": "特殊文字（!@#$%^&*)"
+  },
   "numWords": {
     "message": "単語数"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "オプション"
   },
-  "optionsDesc": {
+  "preferences": {
+    "message": "設定"
+  },
+  "preferencesDesc": {
     "message": "ウェブ保管庫の動作をカスタマイズします。"
   },
-  "optionsUpdated": {
-    "message": "オプションを更新しました"
+  "preferencesUpdated": {
+    "message": "基本設定を更新しました"
   },
   "language": {
     "message": "Language"
@@ -1415,7 +1444,7 @@
     "message": "プラットフォームの制限により、WebAuthnはBitwardenの全てのアプリケーションで使用できるわけではありません。WebAuthnが使用できない場合に備えて、他の二段階認証プロバイダを有効化しておくことをおすすめします。サポートされているプラットフォーム:"
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "Web vault and browser extensions on a desktop/laptop with a WebAuthn enabled browser (Chrome, Opera, Vivaldi, or Firefox with FIDO U2F enabled)."
+    "message": "WebAuthn対応ブラウザ（FIDO U2F が有効な Chrome、Opera、Vivaldi、Firefox）を搭載したデスクトップ/ノートパソコンで、WebVaultとブラウザ拡張機能を使用します。"
   },
   "twoFactorRecoveryYourCode": {
     "message": "二段階認証のリカバリーコード"
@@ -1431,7 +1460,8 @@
     "message": "レポート"
   },
   "reportsDesc": {
-    "message": "以下のレポートをクリックして、オンラインアカウントのセキュリティギャップを特定して修正してください。"
+    "message": "以下のレポートをクリックして、オンラインアカウントのセキュリティギャップを特定して修正してください。",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "非セキュアウェブサイト調査"
@@ -2278,7 +2308,7 @@
     "message": "組織内のすべてを管理できる最高のアクセス権を与えます"
   },
   "clientOwnerDesc": {
-    "message": "This user should be independent of the Provider. If the Provider is disassociated with the organization, this user will maintain ownership of the organization."
+    "message": "このユーザは、プロバイダから独立している必要があります。プロバイダが組織から切り離された場合、このユーザは組織の所有権を維持します。"
   },
   "admin": {
     "message": "管理者"
@@ -2614,7 +2644,7 @@
     }
   },
   "createdOrganizationId": {
-    "message": "Created organization $ID$.",
+    "message": "作成した組織ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2623,7 +2653,7 @@
     }
   },
   "addedOrganizationId": {
-    "message": "Added organization $ID$.",
+    "message": "組織$ID$を追加。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2632,7 +2662,7 @@
     }
   },
   "removedOrganizationId": {
-    "message": "Removed organization $ID$.",
+    "message": "組織$ID$を削除。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2641,7 +2671,7 @@
     }
   },
   "accessedClientVault": {
-    "message": "Accessed $ID$ organization vault.",
+    "message": "$ID$の組織保管庫にアクセス。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2680,7 +2710,7 @@
     "message": "招待を再送信"
   },
   "resendEmail": {
-    "message": "Resend Email"
+    "message": "メール再送信"
   },
   "hasBeenReinvited": {
     "message": "$USER$が再招待されました。",
@@ -2917,14 +2947,14 @@
     "message": "インストールIDを入力してください。"
   },
   "limitSubscriptionDesc": {
-    "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new users."
+    "message": "サブスクリプションの上限数を設定します。この制限に達すると、新しいユーザーを招待することができなくなります。"
   },
   "maxSeatLimit": {
-    "message": "Maximum Seat Limit (optional)",
+    "message": "最大ユーザー数(オプション)",
     "description": "Upper limit of seats to allow through autoscaling"
   },
   "maxSeatCost": {
-    "message": "Max potential seat cost"
+    "message": "ユーザー数のコストの最大値"
   },
   "addSeats": {
     "message": "ライセンスの追加",
@@ -2935,7 +2965,7 @@
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "サブスクリプションを調整すると、請求の合計が日割りで変更されます。新たに招待されたユーザーがお客様の契約数を超えた場合、お客様は直ちに追加ユーザー分の日割り計算を受けます。"
   },
   "subscriptionUserSeats": {
     "message": "あなたの契約では合計$COUNT$ユーザーまで利用できます。",
@@ -2947,25 +2977,25 @@
     }
   },
   "limitSubscription": {
-    "message": "Limit Subscription (Optional)"
+    "message": "サブスクリプションの上限(オプション)"
   },
   "subscriptionSeats": {
-    "message": "Subscription Seats"
+    "message": "サブスクリプション数"
   },
   "subscriptionUpdated": {
-    "message": "Subscription updated"
+    "message": "サブスクリプションが更新されました"
   },
   "additionalOptions": {
-    "message": "Additional Options"
+    "message": "追加オプション"
   },
   "additionalOptionsDesc": {
-    "message": "For additional help in managing your subscription, please contact Customer Support."
+    "message": "その他、サブスクリプションの管理については、カスタマーサポートにお問い合わせください。"
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "サブスクリプションを調整すると、請求の合計が日割りで変更されます。新たに招待されたユーザーがお客様の契約数を超えた場合、お客様は直ちに追加ユーザー分の日割り計算を請求されます。"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users until your $MAX$ seat limit is reached.",
+    "message": "サブスクリプションを調整すると、請求の合計が日割りで変更されます。新しく招待されたユーザーがお客様の契約数を超えた場合、契約数が$MAX$名に達するまで、追加されたユーザーに対する日割り計算の請求が即座に請求されます。",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2974,7 +3004,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "You cannot invite more than $COUNT$ users without upgrading your plan.",
+    "message": "プランをアップグレードしないと、$COUNT$名以上のユーザーを招待することはできません。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2983,7 +3013,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "You cannot invite more than $COUNT$ users without upgrading your plan. Please contact Customer Support to upgrade.",
+    "message": "プランをアップグレードしないと$COUNT$名以上のユーザーを招待することはできません。アップグレードをご希望の場合は、カスタマーサポートまでご連絡ください。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2992,7 +3022,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Your subscription allows for a total of $COUNT$ users. Your plan is sponsored and billed to an external organization.",
+    "message": "お客様の契約では、合計$COUNT$名のユーザーを使用することができます。お客様のプランはスポンサーが付き、費用は外部組織へ請求されます。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3480,7 +3510,7 @@
     "message": "SSO のリンクを解除"
   },
   "unlinkSsoConfirmation": {
-    "message": "Are you sure you want to unlink SSO for this organization?"
+    "message": "この組織の SSO を解除してもよろしいですか？"
   },
   "linkSso": {
     "message": "SSO をリンク"
@@ -3606,7 +3636,7 @@
     "message": "パスワードを削除してもよろしいですか？"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "受信者に自分のメールアドレスを表示しない"
   },
   "disableThisSend": {
     "message": "誰もアクセスできないように、この Send を無効にします。",
@@ -3630,7 +3660,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
-    "message": "This Send is protected with a password. Please type the password below to continue.",
+    "message": "この送信はパスワードで保護されています。続行するには、下にパスワードを入力してください。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPasswordDontKnow": {
@@ -3660,25 +3690,25 @@
     "message": "緊急アクセス"
   },
   "emergencyAccessDesc": {
-    "message": "Grant and manage emergency access for trusted contacts. Trusted contacts may request access to either View or Takeover your account in case of an emergency. Visit our help page for more information and details into how zero knowledge sharing works."
+    "message": "信頼できる連絡先への緊急アクセス権の付与と管理。信頼できる連絡先は、緊急時にお客様のアカウントの閲覧または乗っ取りを要求することができます。ゼロナレッジシェアの詳細については、ヘルプページをご覧ください。"
   },
   "emergencyAccessOwnerWarning": {
     "message": "あなたは1つ以上の組織の所有者です。 緊急連絡先に引き継ぎアクセスを与えると、引き継ぎ後に所有者としてすべての権限を使用できるようになります。"
   },
   "trustedEmergencyContacts": {
-    "message": "Trusted emergency contacts"
+    "message": "信頼できる緊急連絡先"
   },
   "noTrustedContacts": {
-    "message": "You have not added any emergency contacts yet, invite a trusted contact to get started."
+    "message": "まだ緊急連絡先を登録していない場合は、信頼できる連絡先を招待してください。"
   },
   "addEmergencyContact": {
     "message": "緊急連絡先を追加"
   },
   "designatedEmergencyContacts": {
-    "message": "Designated as emergency contact"
+    "message": "緊急連絡先として指定"
   },
   "noGrantedAccess": {
-    "message": "You have not been designated as an emergency contact for anyone yet."
+    "message": "あなたはまだ誰かの緊急連絡先として指定されていません。"
   },
   "inviteEmergencyContact": {
     "message": "緊急連絡先を招待"
@@ -3687,13 +3717,13 @@
     "message": "緊急連絡先を編集"
   },
   "inviteEmergencyContactDesc": {
-    "message": "Invite a new emergency contact by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
+    "message": "Bitwardenアカウントのメールアドレスを入力して、新しい緊急連絡先を招待してください。相手がまだBitwardenのアカウントを持っていない場合は、新しいアカウントを作成するように促されます。"
   },
   "emergencyAccessRecoveryInitiated": {
-    "message": "Emergency Access Initiated"
+    "message": "緊急アクセス開始"
   },
   "emergencyAccessRecoveryApproved": {
-    "message": "Emergency Access Approved"
+    "message": "緊急アクセス承認済"
   },
   "viewDesc": {
     "message": "自分の保管庫内のすべてのアイテムを表示できます。"
@@ -3708,7 +3738,7 @@
     "message": "待機時間"
   },
   "waitTimeDesc": {
-    "message": "Time required before automatically granting access."
+    "message": "自動的にアクセスを許可するまでの時間。"
   },
   "oneDay": {
     "message": "1日"
@@ -3729,7 +3759,7 @@
     "message": "上記のユーザーの緊急連絡先になるよう招待されています。 招待を承認するには、ログインまたは新しいBitwardenアカウントを作成する必要があります。"
   },
   "emergencyInviteAcceptFailed": {
-    "message": "Unable to accept invitation. Ask the user to send a new invitation."
+    "message": "招待状を受け取ることができません。新しい招待状を送信するよう組織の管理者に依頼してください。"
   },
   "emergencyInviteAcceptFailedShort": {
     "message": "Unable to accept invitation. $DESCRIPTION$",
@@ -4564,7 +4594,7 @@
     "message": "Enter your personal email to redeem Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "If you leave or are removed from the sponsoring organization, your Families plan will expire at the end of the billing period."
+    "message": "If you remove an offer or are removed from the sponsoring organization, your Families sponsorship will expire at the next renewal date."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Accept offer for an existing organization or create a new Families organization."
@@ -4639,13 +4669,13 @@
     "message": "Email Sent"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "After removing this account, the Families organization owner will be responsible for this subscription and related invoices. Are you sure you want to continue?"
+    "message": "After removing this account, the Families plan sponsorship will expire at the end of the billing period. You will not be able to redeem a new sponsorship offer until the existing one expires. Are you sure you want to continue?"
   },
   "removeSponsorshipSuccess": {
     "message": "Sponsorship Removed"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "キーコネクターに到達できません。後でもう一度お試しください。"
+  "ssoKeyConnectorError": {
+    "message": "キーコネクターエラー: キーコネクターが使用可能で、正常に動作しているか確認してください。"
   },
   "keyConnectorUrl": {
     "message": "キーコネクター URL"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "FREE with sponsorship"
   },
+  "viewBillingSyncToken": {
+    "message": "請求書同期トークンを表示"
+  },
+  "generateBillingSyncToken": {
+    "message": "請求同期トークンを生成"
+  },
+  "copyPasteBillingSync": {
+    "message": "セルフホスト組織の請求同期設定にこのトークンをコピーして貼り付けてください。"
+  },
+  "billingSyncCanAccess": {
+    "message": "請求同期トークンは、この組織のサブスクリプション設定にアクセスして編集できます。"
+  },
+  "manageBillingSync": {
+    "message": "請求書同期の管理"
+  },
+  "setUpBillingSync": {
+    "message": "請求書同期の設定"
+  },
+  "generateToken": {
+    "message": "トークンを生成"
+  },
+  "rotateToken": {
+    "message": "トークンを更新"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "続行する場合は、セルフホストサーバー上で請求同期を再設定する必要があります。"
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "請求同期トークンを更新すると、前のトークンは無効になります。"
+  },
+  "selfHostingTitle": {
+    "message": "セルフホスティング"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "組織を自分のサーバーにセットアップするには、ライセンスファイルをアップロードする必要があります。 セルフホスト組織の Free Families プランと高度な課金機能をサポートするには、 請求同期を設定する必要があります。"
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "トークンを更新しました。"
+  },
+  "billingSync": {
+    "message": "請求の同期"
+  },
+  "billingSyncDesc": {
+    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+  },
+  "billingSyncKeyDesc": {
+    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+  },
+  "billingSyncKey": {
+    "message": "請求同期トークン"
+  },
+  "active": {
+    "message": "有効"
+  },
+  "inactive": {
+    "message": "無効"
+  },
+  "sentAwaitingSync": {
+    "message": "送信済み (同期待機中)"
+  },
+  "sent": {
+    "message": "送信済み"
+  },
+  "requestRemoved": {
+    "message": "削除（同期待機中）"
+  },
+  "requested": {
+    "message": "リクエスト済み"
+  },
   "formErrorSummaryPlural": {
     "message": "上記の $COUNT$ フィールドは注意が必要です。",
     "placeholders": {
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "アクセスが拒否されました。このページを表示する権限がありません。"
+  },
+  "masterPassword": {
+    "message": "マスターパスワード"
+  },
+  "security": {
+    "message": "セキュリティ"
+  },
+  "keys": {
+    "message": "キー"
+  },
+  "billingHistory": {
+    "message": "請求履歴"
+  },
   "backToReports": {
     "message": "レポートに戻る"
+  },
+  "organizationPicker": {
+    "message": "組織選択"
+  },
+  "currentOrganization": {
+    "message": "現在の組織",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "アカウント設定"
   },
   "generator": {
     "message": "ジェネレーター"
@@ -4871,12 +4995,79 @@
     "message": "ドメインに設定されたキャッチオール受信トレイを使用します。"
   },
   "random": {
-    "message": "ランダム"
+    "message": "ランダム",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "ランダムな単語"
   },
   "service": {
     "message": "サービス"
+  },
+  "unknownCipher": {
+    "message": "不明なアイテムです。このアイテムにアクセスするには別のアカウントでログインする必要があります。"
+  },
+  "cannotSponsorSelf": {
+    "message": "有効なアカウントと引き換えることはできません。別のメールアドレスを入力してください。"
+  },
+  "revokeWhenExpired": {
+    "message": "有効期限: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "トークンは $DAYS$ 日前に更新されました。セルフホスト組織設定で請求同期トークンを更新してください。",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "トークンが $DAYS$ 日前に更新されました。セルフホスト組織設定で請求同期トークンを更新してください。",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "前回の同期",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "セルフホストのスポンサーシップが同期されました。"
+  },
+  "billingManagedByProvider": {
+    "message": "$PROVIDER$による管理",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "さらに詳しい情報をお求めの方は、こちらへご連絡ください。",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "転送されたメールエイリアス"
+  },
+  "forwardedEmailDesc": {
+    "message": "外部転送サービスを使用してメールエイリアスを生成します。"
+  },
+  "hostname": {
+    "message": "ホスト名",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API アクセストークン"
   }
 }

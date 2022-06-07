@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Naziv domene",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -306,16 +306,16 @@
     "message": "Sigurna bilješka"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "Prijave"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "Kartice"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "Identiteti"
   },
   "typeSecureNotePlural": {
-    "message": "Secure Notes"
+    "message": "Sigurne bilješke"
   },
   "folders": {
     "message": "Mape"
@@ -421,11 +421,23 @@
     "message": "Kopiraj URI",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Ja"
+  },
   "myVault": {
     "message": "Moj trezor"
   },
+  "allVaults": {
+    "message": "Svi trezori"
+  },
   "vault": {
     "message": "Trezor"
+  },
+  "vaults": {
+    "message": "Trezori"
+  },
+  "vaultItems": {
+    "message": "Trezorske stavke"
   },
   "moveSelectedToOrg": {
     "message": "Premjesti odabrano u Organizaciju"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Duljina"
   },
+  "uppercase": {
+    "message": "Velika slova (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Mala slova (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Brojevi (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Posebni znakovi (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Broj riječi"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Mogućnosti"
   },
-  "optionsDesc": {
+  "preferences": {
+    "message": "Postavke"
+  },
+  "preferencesDesc": {
     "message": "Prilagodi svoje iskustvo trezora."
   },
-  "optionsUpdated": {
-    "message": "Mogućnosti su ažurirane"
+  "preferencesUpdated": {
+    "message": "Postavke su ažurirane"
   },
   "language": {
     "message": "Jezik"
@@ -1431,7 +1460,8 @@
     "message": "Izvještaji"
   },
   "reportsDesc": {
-    "message": "Identify and close security gaps in your online accounts by clicking the reports below."
+    "message": "Identificiraj i zatvori sigurnosne praznine u svojim mrežnim računima klikom na izvješća u nastavku.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Izvještaj neosiguranih web mjesta"
@@ -2803,7 +2833,7 @@
     "message": "Izbriši organizaciju"
   },
   "deletingOrganizationContentWarning": {
-    "message": "Enter the master password to confirm deletion of $ORGANIZATION$ and all associated data. Vault data in $ORGANIZATION$ includes:",
+    "message": "Unesi glavnu lozinku za potvrdu brisanja $ORGANIZATION$ i svih povezanih podataka. Podaci trezora u $ORGANIZATION$ uključuju:",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2812,10 +2842,10 @@
     }
   },
   "deletingOrganizationActiveUserAccountsWarning": {
-    "message": "User accounts will remain active after deletion but will no longer be associated to this organization."
+    "message": "Korisnički računi ostat će aktivni nakon brisanja, ali više neće biti povezani s ovom organizacijom."
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "Deleting $ORGANIZATION$ is permanent and irreversible.",
+    "message": "Brisanje $ORGANIZATION$ trajno je i nepovratno.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3480,7 +3510,7 @@
     "message": "Odspoji SSO"
   },
   "unlinkSsoConfirmation": {
-    "message": "Are you sure you want to unlink SSO for this organization?"
+    "message": "Sigurno želiš napustiti ovu organizaciju?"
   },
   "linkSso": {
     "message": "Spoji SSO"
@@ -4160,10 +4190,10 @@
     "message": "Pravilo ove organizacija automatski će te učlaniti u ponovno postalvjanje lozinke. Učlanjenje će omogućiti administratorima organizacije promjenu tvoje glavne lozinke."
   },
   "resetPasswordOrgKeysError": {
-    "message": "Organization Keys response is null"
+    "message": "Odgovor organizacijskih ključeva je null"
   },
   "resetPasswordDetailsError": {
-    "message": "Reset Password Details response is null"
+    "message": "Reset Password Details odgovor is null"
   },
   "trashCleanupWarning": {
     "message": "Stavke koje se nalaze u Smeću duže od 30 dana će biti automatski izbrisane."
@@ -4238,25 +4268,25 @@
     "message": "Postavke davatelja"
   },
   "setupProviderLoginDesc": {
-    "message": "You've been invited to setup a new provider. To continue, you need to log in or create a new Bitwarden account."
+    "message": "Pozvan si da postaviš novog davatelja usluga. Da bi nastavio, moraš se prijaviti ili stvoriti novi Bitwarden račun."
   },
   "setupProviderDesc": {
-    "message": "Please enter the details below to complete the provider setup. Contact Customer Support if you have any questions."
+    "message": "Unesi detalje u nastavku kako bi dovršio postavljanje davatelja usluga. Obrati se korisničkoj podršci ako imaš pitanja."
   },
   "providerName": {
     "message": "Naziv davatelja"
   },
   "providerSetup": {
-    "message": "The provider has been set up."
+    "message": "Davatelj usluga je postavljen."
   },
   "clients": {
     "message": "Klijenti"
   },
   "providerAdmin": {
-    "message": "Provider Admin"
+    "message": "Administrator davatelja usluge"
   },
   "providerAdminDesc": {
-    "message": "The highest access user that can manage all aspects of your provider as well as access and manage client organizations."
+    "message": "Korisnik s najvišim pristupom koji može upravljati svim aspektima davatelja usluga kao i pristupiti i upravljati klijentskim organizacijama."
   },
   "serviceUser": {
     "message": "Servisni korisnik"
@@ -4265,31 +4295,31 @@
     "message": "Servisni korisnik može pristupiti i upravljati svim organizacijama."
   },
   "providerInviteUserDesc": {
-    "message": "Invite a new user to your provider by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
+    "message": "Pozovi novog korisnika svom davatelju usluga unosom adrese e-pošte njegovog Bitwarden računa ispod. Ako već nemaju Bitwarden račun, od njih će se tražiti da kreiraju novi račun."
   },
   "joinProvider": {
-    "message": "Join Provider"
+    "message": "Pridruži se davatelju usluga"
   },
   "joinProviderDesc": {
-    "message": "You've been invited to join the provider listed above. To accept the invitation, you need to log in or create a new Bitwarden account."
+    "message": "Pozvan si da se pridružiš gore navedenom davatelju usluga. Da bi prihvatio pozivnicu, moraš se prijaviti ili stvoriti novi Bitwarden račun."
   },
   "providerInviteAcceptFailed": {
-    "message": "Unable to accept invitation. Ask a provider admin to send a new invitation."
+    "message": "Nije moguće prihvatiti pozivnicu. Zamoli administratora davatelja usluge da pošalje novu pozivnicu."
   },
   "providerInviteAcceptedDesc": {
-    "message": "You can access this provider once an administrator confirms your membership. We'll send you an email when that happens."
+    "message": "Ovom davatelju usluga možeš pristupiti nakon što administrator potvrdi tvoje članstvo. Poslat ćemo ti e-poštu kada se to dogodi."
   },
   "providerUsersNeedConfirmed": {
-    "message": "You have users that have accepted their invitation, but still need to be confirmed. Users will not have access to the provider until they are confirmed."
+    "message": "Imaš korisnike koji su prihvatili poziv, ali ih još uvijek treba potvrditi. Korisnici neće imati pristup davatelju usluga dok ne budu potvrđeni."
   },
   "provider": {
     "message": "Davatelj"
   },
   "newClientOrganization": {
-    "message": "New Client Organization"
+    "message": "Nova klijentska organizacija"
   },
   "newClientOrganizationDesc": {
-    "message": "Create a new client organization that will be associated with you as the provider. You will be able to access and manage this organization."
+    "message": "Stvori novu klijentsku organizaciju koja će biti povezana s tobom kao pružateljem usluga. Moći ćeš pristupiti ovoj organizaciji i upravljati njome."
   },
   "addExistingOrganization": {
     "message": "Dodaj postojeću organizaciju"
@@ -4298,7 +4328,7 @@
     "message": "Moj davatelj"
   },
   "addOrganizationConfirmation": {
-    "message": "Are you sure you want to add $ORGANIZATION$ as a client to $PROVIDER$?",
+    "message": "Sigurno želiš dodati $ORGANIZATION$ kao klijenta u $PROVIDER$?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4314,7 +4344,7 @@
     "message": "Organizacija uspješno dodana davatelju"
   },
   "accessingUsingProvider": {
-    "message": "Accessing organization using provider $PROVIDER$",
+    "message": "Pristup organizaciji pomoću davatelja usluge $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -4329,7 +4359,7 @@
     "message": "Davatelj ažuriran"
   },
   "yourProviderIs": {
-    "message": "Your provider is $PROVIDER$. They have administrative and billing privileges for your organization.",
+    "message": "Tvoj davatelj usluga je $PROVIDER$. On ima administrativne privilegije i privilegije naplate za tvoju organizaciju.",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -4338,7 +4368,7 @@
     }
   },
   "detachedOrganization": {
-    "message": "The organization $ORGANIZATION$ has been detached from your provider.",
+    "message": "Organizacija $ORGANIZATION$ odvojena je od tvog davatelja usluga.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4347,7 +4377,7 @@
     }
   },
   "detachOrganizationConfirmation": {
-    "message": "Are you sure you want to detach this organization? The organization will continue to exist but will no longer be managed by the provider."
+    "message": "Sigurno želiš odvojiti ovu organizaciju? Organizacija će nastaviti postojati, ali više njome neće upravljati davatelj usluga."
   },
   "add": {
     "message": "Dodaj"
@@ -4362,7 +4392,7 @@
     "message": "Tvoju glavnu lozinku je nedavno promijenio administrator tvoje organizacije. Za pristup trezoru, potrebno je ažurirati glavnu lozinku, što će te odjaviti iz trenutne sesije, te ćeš se morati ponovno prijaviti. Aktivne sesije na drugim uređajima mogu ostati aktivne još sat vremena."
   },
   "masterPasswordInvalidWarning": {
-    "message": "Your Master Password does not meet the policy requirements of this organization. In order to join the organization, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Tvoja glavna lozinka ne ispunjava zahtjeve politike ove organizacije. Da bi se pridružio organizaciji, moraš odmah ažurirati svoju glavnu lozinku. Ako nastaviš, odjavit ćeš se iz trenutne sesije te ćeš se morati ponovno prijaviti. Aktivne sesije na drugim uređajima mogu ostati aktivne do jedan sat."
   },
   "maximumVaultTimeout": {
     "message": "Istek trezora"
@@ -4383,7 +4413,7 @@
     "message": "min."
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Pravila tvoje organizacije utječu na vremensko ograničenje trezora. Maksimalno dopušteno vremensko ograničenje trezora je $HOURS$ sati i $MINUTES$ minuta",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4429,49 +4459,49 @@
     "message": "Konfiguracija SAML Identity Provider"
   },
   "callbackPath": {
-    "message": "Callback Path"
+    "message": "Callback putanja"
   },
   "signedOutCallbackPath": {
-    "message": "Signed Out Callback Path"
+    "message": "Odjavljena Callback putanja"
   },
   "authority": {
-    "message": "Authority"
+    "message": "Autoritet"
   },
   "clientId": {
     "message": "ID klijenta"
   },
   "clientSecret": {
-    "message": "Client Secret"
+    "message": "Klijentova tajna"
   },
   "metadataAddress": {
-    "message": "Metadata Address"
+    "message": "Adresa metapodataka"
   },
   "oidcRedirectBehavior": {
-    "message": "OIDC Redirect Behavior"
+    "message": "Ponašanje OIDC preusmjeravanja"
   },
   "getClaimsFromUserInfoEndpoint": {
-    "message": "Get claims from user info endpoint"
+    "message": "Dobij zahtjeve s krajnje točke korisničkih podataka"
   },
   "additionalScopes": {
-    "message": "Custom Scopes"
+    "message": "Prilagođeni opsegi"
   },
   "additionalUserIdClaimTypes": {
-    "message": "Custom User ID Claim Types"
+    "message": "Vrste zahtjeva za prilagođeni korisnički ID"
   },
   "additionalEmailClaimTypes": {
-    "message": "Email Claim Types"
+    "message": "Vrste zahtjeva e-poštom"
   },
   "additionalNameClaimTypes": {
-    "message": "Custom Name Claim Types"
+    "message": "Vrste zahtjeva za prilagođeno ime"
   },
   "acrValues": {
-    "message": "Requested Authentication Context Class Reference values"
+    "message": "Referentne vrijednosti klase konteksta zatražene provjere autentičnosti"
   },
   "expectedReturnAcrValue": {
-    "message": "Expected \"acr\" Claim Value In Response"
+    "message": "Očekivana \"acr\" vrijednost zahtjeva u odgovoru"
   },
   "spEntityId": {
-    "message": "SP Entity ID"
+    "message": "ID SP entiteta"
   },
   "spMetadataUrl": {
     "message": "SAML 2.0 Metadata URL"
@@ -4564,7 +4594,7 @@
     "message": "Enter your personal email to redeem Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "If you leave or are removed from the sponsoring organization, your Families plan will expire at the end of the billing period."
+    "message": "If you remove an offer or are removed from the sponsoring organization, your Families sponsorship will expire at the next renewal date."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Accept offer for an existing organization or create a new Families organization."
@@ -4639,13 +4669,13 @@
     "message": "e-pošta poslana"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "After removing this account, the Families organization owner will be responsible for this subscription and related invoices. Are you sure you want to continue?"
+    "message": "After removing this account, the Families plan sponsorship will expire at the end of the billing period. You will not be able to redeem a new sponsorship offer until the existing one expires. Are you sure you want to continue?"
   },
   "removeSponsorshipSuccess": {
     "message": "Sponzorstvo uklonjeno"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nije moguće spajanje s konektorom za ključ, pokušaj kasnije."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "keyConnectorUrl": {
     "message": "URL konektora za ključ"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "BESPLATNO sa sponzorstvom"
   },
+  "viewBillingSyncToken": {
+    "message": "View Billing Sync Token"
+  },
+  "generateBillingSyncToken": {
+    "message": "Generate Billing Sync Token"
+  },
+  "copyPasteBillingSync": {
+    "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
+  },
+  "billingSyncCanAccess": {
+    "message": "Your Billing Sync token can access and edit this organization's subscription settings."
+  },
+  "manageBillingSync": {
+    "message": "Manage Billing Sync"
+  },
+  "setUpBillingSync": {
+    "message": "Set Up Billing Sync"
+  },
+  "generateToken": {
+    "message": "Generate Token"
+  },
+  "rotateToken": {
+    "message": "Rotate Token"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Rotating the Billing Sync Token will invalidate the previous token."
+  },
+  "selfHostingTitle": {
+    "message": "Self-Hosting"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Token rotated."
+  },
+  "billingSync": {
+    "message": "Billing Sync"
+  },
+  "billingSyncDesc": {
+    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+  },
+  "billingSyncKeyDesc": {
+    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+  },
+  "billingSyncKey": {
+    "message": "Billing Sync Token"
+  },
+  "active": {
+    "message": "Active"
+  },
+  "inactive": {
+    "message": "Inactive"
+  },
+  "sentAwaitingSync": {
+    "message": "Sent (Awaiting Sync)"
+  },
+  "sent": {
+    "message": "Sent"
+  },
+  "requestRemoved": {
+    "message": "Removed (Awaiting Sync)"
+  },
+  "requested": {
+    "message": "Requested"
+  },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ fields above need your attention.",
     "placeholders": {
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Access Denied. You do not have permission to view this page."
+  },
+  "masterPassword": {
+    "message": "Master Password"
+  },
+  "security": {
+    "message": "Security"
+  },
+  "keys": {
+    "message": "Keys"
+  },
+  "billingHistory": {
+    "message": "Billing History"
+  },
   "backToReports": {
     "message": "Back to Reports"
+  },
+  "organizationPicker": {
+    "message": "Organization picker"
+  },
+  "currentOrganization": {
+    "message": "Current organization",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Account Settings"
   },
   "generator": {
     "message": "Generator"
@@ -4871,12 +4995,79 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Random",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Random Word"
   },
   "service": {
     "message": "Service"
+  },
+  "unknownCipher": {
+    "message": "Unknown Item, you may need to request permission to access this item."
+  },
+  "cannotSponsorSelf": {
+    "message": "You cannot redeem for the active account. Enter a different email."
+  },
+  "revokeWhenExpired": {
+    "message": "Expires $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Token rotated $DAYS$ day ago. Update the billing sync token in your self-hosted organization settings.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Token rotated $DAYS$ days ago. Update the billing sync token in your self-hosted organization settings.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Last Sync",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Self-hosted sponsorships synced."
+  },
+  "billingManagedByProvider": {
+    "message": "Managed by $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Please reach out to them for further assistance",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
   }
 }

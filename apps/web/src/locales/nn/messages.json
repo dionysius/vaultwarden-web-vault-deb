@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "$APP_NAME$ Web Vault",
+    "message": "$APP_NAME$ nettkvelv",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -29,7 +29,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Ny URI"
   },
   "username": {
     "message": "Brukarnamn"
@@ -167,11 +167,11 @@
     "message": "Boolsk"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Tilknytt",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Fjerna"
   },
   "unassigned": {
     "message": "Unassigned"
@@ -191,11 +191,11 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domenenamn",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
-    "message": "Host",
+    "message": "Vert",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
@@ -217,17 +217,17 @@
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
-    "message": "Never"
+    "message": "Aldri"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Gjer synleg/usynleg"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Gøym/vid ut",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Laga passord"
   },
   "checkPassword": {
     "message": "Check if password has been exposed."
@@ -245,98 +245,98 @@
     "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "save": {
-    "message": "Save"
+    "message": "Lagra"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Avbryt"
   },
   "canceled": {
     "message": "Canceled"
   },
   "close": {
-    "message": "Close"
+    "message": "Lat att"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Sletta"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Gjer til favoritt"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "Fjerna frå favoritt"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Rei"
   },
   "searchCollection": {
-    "message": "Search Collection"
+    "message": "Leita i samling"
   },
   "searchFolder": {
-    "message": "Search Folder"
+    "message": "Leita i mappe"
   },
   "searchFavorites": {
-    "message": "Search Favorites"
+    "message": "Leita i favorittar"
   },
   "searchType": {
-    "message": "Search Type",
+    "message": "Leita i type",
     "description": "Search item type"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "Leita i kvelvet"
   },
   "allItems": {
     "message": "Alle oppføringar"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favorittar"
   },
   "types": {
-    "message": "Types"
+    "message": "Typar"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Innskriving"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kort"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identitet"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Trygg notat"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "Innskrivingar"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "Kort"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "Identitetar"
   },
   "typeSecureNotePlural": {
-    "message": "Secure Notes"
+    "message": "Trygge notat"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Mapper"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Samlingar"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Førenamn"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Mellomnamn"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Etternamn"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Fullt namn"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adresse 1"
   },
   "address2": {
     "message": "Adresse 2"
@@ -385,7 +385,7 @@
     "message": "Delt"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Flytta til samskipnad"
   },
   "valueCopied": {
     "message": "$VALUE$ er kopiert",
@@ -410,22 +410,34 @@
     "description": "Copy username to clipboard"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Skriv av nummer",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Skriv av trygdenykelen",
     "description": "Copy credit card security code (CVV)"
   },
   "copyUri": {
-    "message": "Copy URI",
+    "message": "Skriv av URI-en",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Eg"
+  },
   "myVault": {
-    "message": "My Vault"
+    "message": "Kvelvet mitt"
+  },
+  "allVaults": {
+    "message": "Alle kvelv"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Kvelv"
+  },
+  "vaults": {
+    "message": "Kvelv"
+  },
+  "vaultItems": {
+    "message": "Kvelvoppføringar"
   },
   "moveSelectedToOrg": {
     "message": "Flytt markerte til organisasjon"
@@ -443,13 +455,13 @@
     "message": "Marker ingen"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Opna"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Legg til nytt vedlegg"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Sletta vedlegget"
   },
   "deleteAttachmentConfirmation": {
     "message": "Are you sure you want to delete this attachment?"
@@ -458,16 +470,16 @@
     "message": "The attachment has been saved."
   },
   "file": {
-    "message": "File"
+    "message": "Fil"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Vel ei fil."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "Den høgste tillatne filstorleiken er 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Du kan ikkje bruka denne funksjonen før du rettar enkrypteringsnykelen din."
   },
   "addedItem": {
     "message": "Oppføringar du har lagt til"
@@ -501,10 +513,10 @@
     "message": "Sletta oppføring"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Sletta mappe"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Sletta vedlegg"
   },
   "deleteItemConfirmation": {
     "message": "Vil du verkeleg flytta denne til boss?"
@@ -573,73 +585,73 @@
     "message": "Your Name"
   },
   "yourNameDesc": {
-    "message": "What should we call you?"
+    "message": "Kva vil du at me kallar deg?"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Hovudpassord"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Hovudpassordet er passordet du brukar for å få tilgjenge til kvelvet ditt. Det er veldig viktig at du ikkje gløymer hovudpassordet ditt. Det er umogleg å få tilbake passordet om du so gløymer det."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Eit hovudpassordvink kan hjelpa deg med å hugsa passordet ditt om du gløymer det."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Stadfesta hovudpassord"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Vink til hovudpassord (valfritt)"
   },
   "masterPassHintLabel": {
-    "message": "Master Password Hint"
+    "message": "Vink til hovudpassord"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Innstillingar"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Passordvink"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Skriv inn e-postadressa til kontoen din for å få vinket til hovudpassordet ditt."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Få vink om hovudpassordet ditt"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "E-postadresse er påkravd."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Ugild e-postadresse."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Hovudpassord er påkravt."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hovudpassordet ditt må vera på minst 8 teikn."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Stadfesting av hovudpassordet samsvarar ikkje."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Den nye kontoen din er laga! Du kan no skriva deg inn."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Me har sendt deg ein e-post med vink til hovudpassordet ditt."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Eit uventa problem oppstod."
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-postadresse"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Kvelvet ditt er låst. Stadfesta hovudpassordet ditt for å halda fram."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Lås opp"
   },
   "loggedInAsEmailOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Skriven inn som $EMAIL$ på $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -652,28 +664,28 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Ugild hovudpassord"
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Lås no"
   },
   "noItemsInList": {
     "message": "Det er inga oppføringar å lista opp."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Det er ingen samlingar å syna."
   },
   "noGroupsInList": {
-    "message": "There are no groups to list."
+    "message": "Det er ingen grupper å syna."
   },
   "noUsersInList": {
     "message": "Det er inga brukarar å lista opp."
   },
   "noEventsInList": {
-    "message": "There are no events to list."
+    "message": "Det er ingen hendingar å syna."
   },
   "newOrganization": {
-    "message": "New Organization"
+    "message": "Ny samskipnad"
   },
   "noOrganizationsList": {
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
@@ -709,7 +721,7 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Hugsa meg"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "Send verification code email again"
@@ -742,7 +754,7 @@
     "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Autentiseringsapp"
   },
   "authenticatorAppDesc": {
     "message": "Bruk ein app for autentisering (til dømes Authy eller Google Authenticator) for å generera tidsavgrensa verifiseringskodar.",
@@ -891,43 +903,57 @@
   "length": {
     "message": "Length"
   },
+  "uppercase": {
+    "message": "Store bokstavar (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Små bokstavar (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Tal (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Spesialteikn (!@#$%^&*)"
+  },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Tal på ord"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Orddelar"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Stor førebokstav",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Inkluder tal"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Passordoversyn"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Det er ingen passord å syna."
   },
   "clear": {
-    "message": "Clear",
+    "message": "Tøm",
     "description": "To clear something out. example: To clear browser history."
   },
   "accountUpdated": {
-    "message": "Account Updated"
+    "message": "Kontoen er retta"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Byt e-post"
   },
   "changeEmailTwoFactorWarning": {
     "message": "Proceeding will change your account email address. It will not change the email address used for two-factor authentication. You can change this email address in the Two-Step Login settings."
   },
   "newEmail": {
-    "message": "New Email"
+    "message": "Ny e-post"
   },
   "code": {
-    "message": "Code"
+    "message": "Kode"
   },
   "changeEmailDesc": {
     "message": "We have emailed a verification code to $EMAIL$. Please check your email for this code and enter it below to finalize the email address change.",
@@ -1038,7 +1064,7 @@
     "message": "Your vault has been purged."
   },
   "deleteAccount": {
-    "message": "Delete Account"
+    "message": "Sletta konto"
   },
   "deleteAccountDesc": {
     "message": "Proceed below to delete your account and all associated data."
@@ -1047,7 +1073,7 @@
     "message": "Deleting your account is permanent. It cannot be undone."
   },
   "accountDeleted": {
-    "message": "Account Deleted"
+    "message": "Kontoen er sletta"
   },
   "accountDeletedDesc": {
     "message": "Your account has been closed and all associated data has been deleted."
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Options"
   },
-  "optionsDesc": {
+  "preferences": {
+    "message": "Preferences"
+  },
+  "preferencesDesc": {
     "message": "Customize your web vault experience."
   },
-  "optionsUpdated": {
-    "message": "Options updated"
+  "preferencesUpdated": {
+    "message": "Preferences updated"
   },
   "language": {
     "message": "Language"
@@ -1146,7 +1175,7 @@
     "message": "Default"
   },
   "domainRules": {
-    "message": "Domain Rules"
+    "message": "Domenereglar"
   },
   "domainRulesDesc": {
     "message": "If you have the same login across multiple different website domains, you can mark the website as \"equivalent\". \"Global\" domains are ones already created for you by Bitwarden."
@@ -1232,7 +1261,7 @@
     "message": "Manage"
   },
   "disable": {
-    "message": "Disable"
+    "message": "Slå av"
   },
   "twoStepLoginProviderEnabled": {
     "message": "This two-step login provider is enabled on your account."
@@ -1250,13 +1279,13 @@
     "message": "Need a two-step authenticator app? Download one of the following"
   },
   "iosDevices": {
-    "message": "iOS devices"
+    "message": "iOS-einingar"
   },
   "androidDevices": {
-    "message": "Android devices"
+    "message": "Android-einingar"
   },
   "windowsDevices": {
-    "message": "Windows devices"
+    "message": "Windows-einingar"
   },
   "twoStepAuthenticatorAppsRecommended": {
     "message": "These apps are recommended, however, other authenticator apps will also work."
@@ -1265,7 +1294,7 @@
     "message": "Scan this QR code with your authenticator app"
   },
   "key": {
-    "message": "Key"
+    "message": "Nykel"
   },
   "twoStepAuthenticatorEnterCode": {
     "message": "Enter the resulting 6 digit verification code from the app"
@@ -1431,7 +1460,8 @@
     "message": "Reports"
   },
   "reportsDesc": {
-    "message": "Identify and close security gaps in your online accounts by clicking the reports below."
+    "message": "Identify and close security gaps in your online accounts by clicking the reports below.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Unsecure Websites"
@@ -1476,7 +1506,7 @@
     "message": "No websites were found in your vault with a missing two-factor authentication configuration."
   },
   "instructions": {
-    "message": "Instructions"
+    "message": "Instruksjonar"
   },
   "exposedPasswordsReport": {
     "message": "Exposed Passwords"
@@ -1584,11 +1614,11 @@
     }
   },
   "goodNews": {
-    "message": "Good News",
+    "message": "Gode nyhende",
     "description": "ex. Good News, No Breached Accounts Found!"
   },
   "breachUsernameFound": {
-    "message": "$USERNAME$ was found in $COUNT$ different data breaches online.",
+    "message": "$USERNAME$ vart funne i $COUNT$ forskjellige databrot på nettet.",
     "placeholders": {
       "username": {
         "content": "$1",
@@ -1970,7 +2000,7 @@
     "message": "Choose Your Plan"
   },
   "users": {
-    "message": "Users"
+    "message": "Brukarar"
   },
   "userSeats": {
     "message": "User Seats"
@@ -1998,7 +2028,7 @@
     "message": "How many user seats do you need? You can also add additional seats later if needed."
   },
   "planNameFree": {
-    "message": "Free",
+    "message": "Gratis",
     "description": "Free as in 'free beer'."
   },
   "planDescFree": {
@@ -2029,7 +2059,7 @@
     "message": "For businesses and other large organizations."
   },
   "freeForever": {
-    "message": "Free Forever"
+    "message": "Gratis for alltid"
   },
   "includesXUsers": {
     "message": "includes $COUNT$ users",
@@ -2167,31 +2197,31 @@
     "message": "Event Logs"
   },
   "people": {
-    "message": "People"
+    "message": "Folk"
   },
   "policies": {
-    "message": "Policies"
+    "message": "Retningsliner"
   },
   "singleSignOn": {
     "message": "Single Sign-On"
   },
   "editPolicy": {
-    "message": "Edit Policy"
+    "message": "Rei vilkår"
   },
   "groups": {
-    "message": "Groups"
+    "message": "Grupper"
   },
   "newGroup": {
-    "message": "New Group"
+    "message": "Ny gruppe"
   },
   "addGroup": {
-    "message": "Add Group"
+    "message": "Legg til gruppe"
   },
   "editGroup": {
-    "message": "Edit Group"
+    "message": "Rei gruppe"
   },
   "deleteGroupConfirmation": {
-    "message": "Are you sure you want to delete this group?"
+    "message": "Er du trygg på at du vil sletta denne gruppa?"
   },
   "removeUserConfirmation": {
     "message": "Are you sure you want to remove this user?"
@@ -2218,13 +2248,13 @@
     "message": "Read Only"
   },
   "newCollection": {
-    "message": "New Collection"
+    "message": "Ny samling"
   },
   "addCollection": {
-    "message": "Add Collection"
+    "message": "Legg til samling"
   },
   "editCollection": {
-    "message": "Edit Collection"
+    "message": "Rei samling"
   },
   "deleteCollectionConfirmation": {
     "message": "Are you sure you want to delete this collection?"
@@ -2257,7 +2287,7 @@
     "message": "This user can access only the selected collections."
   },
   "search": {
-    "message": "Search"
+    "message": "Leita"
   },
   "invited": {
     "message": "Invited"
@@ -2272,7 +2302,7 @@
     "message": "Client Owner Email"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Eigar"
   },
   "ownerDesc": {
     "message": "The highest access user that can manage all aspects of your organization."
@@ -2287,7 +2317,7 @@
     "message": "Admins can access and manage all items, collections and users in your organization."
   },
   "user": {
-    "message": "User"
+    "message": "Brukar"
   },
   "userDesc": {
     "message": "A regular user with access to assigned collections in your organization."
@@ -2650,10 +2680,10 @@
     }
   },
   "device": {
-    "message": "Device"
+    "message": "Eining"
   },
   "view": {
-    "message": "View"
+    "message": "Syn"
   },
   "invalidDateRange": {
     "message": "Invalid date range."
@@ -2692,13 +2722,13 @@
     }
   },
   "confirm": {
-    "message": "Confirm"
+    "message": "Stadfesta"
   },
   "confirmUser": {
-    "message": "Confirm User"
+    "message": "Stadfesta brukar"
   },
   "hasBeenConfirmed": {
-    "message": "$USER$ has been confirmed.",
+    "message": "$USER$ er vorten stadfesta.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -2707,7 +2737,7 @@
     }
   },
   "confirmUsers": {
-    "message": "Confirm Users"
+    "message": "Stadfesta brukarar"
   },
   "usersNeedConfirmed": {
     "message": "You have users that have accepted their invitation, but still need to be confirmed. Users will not have access to the organization until they are confirmed."
@@ -4133,7 +4163,7 @@
     "message": "Password reset success!"
   },
   "resetPasswordEnrollmentWarning": {
-    "message": "Enrollment will allow organization administrators to change your master password. Are you sure you want to enroll?"
+    "message": "Enrollment will allow organization administrators to change your master password"
   },
   "resetPasswordPolicy": {
     "message": "Master Password Reset"
@@ -4564,7 +4594,7 @@
     "message": "Enter your personal email to redeem Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "If you leave or are removed from the sponsoring organization, your Families plan will expire at the end of the billing period."
+    "message": "If you remove an offer or are removed from the sponsoring organization, your Families sponsorship will expire at the next renewal date."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Accept offer for an existing organization or create a new Families organization."
@@ -4639,13 +4669,13 @@
     "message": "Email Sent"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "After removing this account, the Families organization owner will be responsible for this subscription and related invoices. Are you sure you want to continue?"
+    "message": "After removing this account, the Families plan sponsorship will expire at the end of the billing period. You will not be able to redeem a new sponsorship offer until the existing one expires. Are you sure you want to continue?"
   },
   "removeSponsorshipSuccess": {
     "message": "Sponsorship Removed"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the Key Connector, try again later."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "keyConnectorUrl": {
     "message": "Key Connector URL"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "FREE with sponsorship"
   },
+  "viewBillingSyncToken": {
+    "message": "View Billing Sync Token"
+  },
+  "generateBillingSyncToken": {
+    "message": "Generate Billing Sync Token"
+  },
+  "copyPasteBillingSync": {
+    "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
+  },
+  "billingSyncCanAccess": {
+    "message": "Your Billing Sync token can access and edit this organization's subscription settings."
+  },
+  "manageBillingSync": {
+    "message": "Manage Billing Sync"
+  },
+  "setUpBillingSync": {
+    "message": "Set Up Billing Sync"
+  },
+  "generateToken": {
+    "message": "Generate Token"
+  },
+  "rotateToken": {
+    "message": "Rotate Token"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Rotating the Billing Sync Token will invalidate the previous token."
+  },
+  "selfHostingTitle": {
+    "message": "Self-Hosting"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Token rotated."
+  },
+  "billingSync": {
+    "message": "Billing Sync"
+  },
+  "billingSyncDesc": {
+    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+  },
+  "billingSyncKeyDesc": {
+    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+  },
+  "billingSyncKey": {
+    "message": "Billing Sync Token"
+  },
+  "active": {
+    "message": "Active"
+  },
+  "inactive": {
+    "message": "Inactive"
+  },
+  "sentAwaitingSync": {
+    "message": "Sent (Awaiting Sync)"
+  },
+  "sent": {
+    "message": "Sent"
+  },
+  "requestRemoved": {
+    "message": "Removed (Awaiting Sync)"
+  },
+  "requested": {
+    "message": "Requested"
+  },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ fields above need your attention.",
     "placeholders": {
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Access Denied. You do not have permission to view this page."
+  },
+  "masterPassword": {
+    "message": "Master Password"
+  },
+  "security": {
+    "message": "Security"
+  },
+  "keys": {
+    "message": "Keys"
+  },
+  "billingHistory": {
+    "message": "Billing History"
+  },
   "backToReports": {
     "message": "Back to Reports"
+  },
+  "organizationPicker": {
+    "message": "Organization picker"
+  },
+  "currentOrganization": {
+    "message": "Current organization",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Account Settings"
   },
   "generator": {
     "message": "Generator"
@@ -4871,12 +4995,79 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Random",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Random Word"
   },
   "service": {
     "message": "Service"
+  },
+  "unknownCipher": {
+    "message": "Unknown Item, you may need to request permission to access this item."
+  },
+  "cannotSponsorSelf": {
+    "message": "You cannot redeem for the active account. Enter a different email."
+  },
+  "revokeWhenExpired": {
+    "message": "Expires $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Token rotated $DAYS$ day ago. Update the billing sync token in your self-hosted organization settings.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Token rotated $DAYS$ days ago. Update the billing sync token in your self-hosted organization settings.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Last Sync",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Self-hosted sponsorships synced."
+  },
+  "billingManagedByProvider": {
+    "message": "Managed by $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Please reach out to them for further assistance",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
   }
 }

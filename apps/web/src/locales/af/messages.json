@@ -421,11 +421,23 @@
     "message": "Kopieer URI",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Me"
+  },
   "myVault": {
     "message": "My kluis"
   },
+  "allVaults": {
+    "message": "Alle kluise"
+  },
   "vault": {
     "message": "Kluis"
+  },
+  "vaults": {
+    "message": "Kluise"
+  },
+  "vaultItems": {
+    "message": "Kluisitems"
   },
   "moveSelectedToOrg": {
     "message": "Skuif seleksie na organisasie"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Lengte"
   },
+  "uppercase": {
+    "message": "Hoofletters (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Kleinletters (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Syfers (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Spesiale karakters (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Aantal woorde"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Opsies"
   },
-  "optionsDesc": {
+  "preferences": {
+    "message": "Voorkeure"
+  },
+  "preferencesDesc": {
     "message": "Customize your web vault experience."
   },
-  "optionsUpdated": {
-    "message": "Opsies bygewerk"
+  "preferencesUpdated": {
+    "message": "Preferences updated"
   },
   "language": {
     "message": "Taal"
@@ -1431,7 +1460,8 @@
     "message": "Verslae"
   },
   "reportsDesc": {
-    "message": "Identify and close security gaps in your online accounts by clicking the reports below."
+    "message": "Identify and close security gaps in your online accounts by clicking the reports below.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Unsecure Websites"
@@ -4196,13 +4226,13 @@
     "message": "Choose a theme for your web vault."
   },
   "themeSystem": {
-    "message": "Use System Theme"
+    "message": "Gebruik stelseltema"
   },
   "themeDark": {
-    "message": "Dark"
+    "message": "Donker"
   },
   "themeLight": {
-    "message": "Light"
+    "message": "Lig"
   },
   "confirmSelected": {
     "message": "Bevestig keuse"
@@ -4283,7 +4313,7 @@
     "message": "You have users that have accepted their invitation, but still need to be confirmed. Users will not have access to the provider until they are confirmed."
   },
   "provider": {
-    "message": "Provider"
+    "message": "Aanbieder"
   },
   "newClientOrganization": {
     "message": "New Client Organization"
@@ -4295,7 +4325,7 @@
     "message": "Add Existing Organization"
   },
   "myProvider": {
-    "message": "My Provider"
+    "message": "My aanbieder"
   },
   "addOrganizationConfirmation": {
     "message": "Are you sure you want to add $ORGANIZATION$ as a client to $PROVIDER$?",
@@ -4326,7 +4356,7 @@
     "message": "Provider is disabled."
   },
   "providerUpdated": {
-    "message": "Provider updated"
+    "message": "Aanbieder bygewerk"
   },
   "yourProviderIs": {
     "message": "Your provider is $PROVIDER$. They have administrative and billing privileges for your organization.",
@@ -4353,19 +4383,19 @@
     "message": "Add"
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Hoofwagwoord bygewerk"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Werk hoofwagwoord by"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "U hoofwagwoord is onlangs deur ’n administrateur in u organisasie verander. Om toegang tot u kluis te verkry moet u u hoofwagwoord nóú bywerk. Deur voort te gaan word u uit u huidige sessie geteken, waarna u weer sal moet aanteken. Aktiewe sessies op ander toestelle kan vir tot ’n uur steeds aktief bly."
   },
   "masterPasswordInvalidWarning": {
     "message": "Your Master Password does not meet the policy requirements of this organization. In order to join the organization, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "maximumVaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Kluis-uittel"
   },
   "maximumVaultTimeoutDesc": {
     "message": "Configure a maximum vault timeout for all users."
@@ -4377,13 +4407,13 @@
     "message": "Invalid Maximum Vault Timeout."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Uur"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minute"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "U organisasiebeleide beïnvloed u kluisuitelling. Maksimum toegelate kluisuittelling is $HOURS$ uur en $MINUTES$ minuut(e)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4399,7 +4429,7 @@
     "message": "Custom Vault Timeout"
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restriction set by your organization."
+    "message": "U kluisuittelling oorskry die beperking wat deur u organisasie daargestel is."
   },
   "disablePersonalVaultExport": {
     "message": "Disable Personal Vault Export"
@@ -4408,16 +4438,16 @@
     "message": "Prohibits users from exporting their private vault data."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Kluisuitstuur gedeaktiveer"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Een of meer organisasiebeleide verhoed u om u persoonlike kluis uit te stuur."
   },
   "selectType": {
     "message": "Select SSO Type"
   },
   "type": {
-    "message": "Type"
+    "message": "Tipe"
   },
   "openIdConnectConfig": {
     "message": "OpenID Connect Configuration"
@@ -4564,7 +4594,7 @@
     "message": "Enter your personal email to redeem Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "If you leave or are removed from the sponsoring organization, your Families plan will expire at the end of the billing period."
+    "message": "If you remove an offer or are removed from the sponsoring organization, your Families sponsorship will expire at the next renewal date."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Accept offer for an existing organization or create a new Families organization."
@@ -4621,10 +4651,10 @@
     "message": "Redeem Now"
   },
   "recipient": {
-    "message": "Recipient"
+    "message": "Ontvanger"
   },
   "removeSponsorship": {
-    "message": "Remove Sponsorship"
+    "message": "Verwyder borgskap"
   },
   "removeSponsorshipConfirmation": {
     "message": "After removing a sponsorship, you will be responsible for this subscription and related invoices. Are you sure you want to continue?"
@@ -4633,19 +4663,19 @@
     "message": "Sponsorship Created"
   },
   "revoke": {
-    "message": "Revoke"
+    "message": "Herroep"
   },
   "emailSent": {
     "message": "Email Sent"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "After removing this account, the Families organization owner will be responsible for this subscription and related invoices. Are you sure you want to continue?"
+    "message": "After removing this account, the Families plan sponsorship will expire at the end of the billing period. You will not be able to redeem a new sponsorship offer until the existing one expires. Are you sure you want to continue?"
   },
   "removeSponsorshipSuccess": {
     "message": "Sponsorship Removed"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the Key Connector, try again later."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "keyConnectorUrl": {
     "message": "Key Connector URL"
@@ -4660,7 +4690,7 @@
     "message": "Code Sent"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Bevestigingskode"
   },
   "confirmIdentity": {
     "message": "Confirm your identity to continue."
@@ -4681,13 +4711,13 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Verlaat organisasie"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Verwyder hoofwagwoord"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Hoofwagwoord is verwyder."
   },
   "allowSso": {
     "message": "Allow SSO authentication"
@@ -4753,13 +4783,13 @@
     "message": "New Families Organization"
   },
   "acceptOffer": {
-    "message": "Accept Offer"
+    "message": "Aanvaar aanbod"
   },
   "sponsoringOrg": {
-    "message": "Sponsoring Organization"
+    "message": "Borgorganisasie"
   },
   "keyConnectorTest": {
-    "message": "Test"
+    "message": "Toets"
   },
   "keyConnectorTestSuccess": {
     "message": "Success! Key Connector reached."
@@ -4768,10 +4798,79 @@
     "message": "Cannot reach Key Connector. Check URL."
   },
   "sponsorshipTokenHasExpired": {
-    "message": "The sponsorship offer has expired."
+    "message": "Die borgskapaanbod het verstryk."
   },
   "freeWithSponsorship": {
-    "message": "FREE with sponsorship"
+    "message": "GRATIS met borgskap"
+  },
+  "viewBillingSyncToken": {
+    "message": "View Billing Sync Token"
+  },
+  "generateBillingSyncToken": {
+    "message": "Generate Billing Sync Token"
+  },
+  "copyPasteBillingSync": {
+    "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
+  },
+  "billingSyncCanAccess": {
+    "message": "Your Billing Sync token can access and edit this organization's subscription settings."
+  },
+  "manageBillingSync": {
+    "message": "Manage Billing Sync"
+  },
+  "setUpBillingSync": {
+    "message": "Set Up Billing Sync"
+  },
+  "generateToken": {
+    "message": "Generate Token"
+  },
+  "rotateToken": {
+    "message": "Rotate Token"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Rotating the Billing Sync Token will invalidate the previous token."
+  },
+  "selfHostingTitle": {
+    "message": "Self-Hosting"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Token rotated."
+  },
+  "billingSync": {
+    "message": "Billing Sync"
+  },
+  "billingSyncDesc": {
+    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+  },
+  "billingSyncKeyDesc": {
+    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+  },
+  "billingSyncKey": {
+    "message": "Billing Sync Token"
+  },
+  "active": {
+    "message": "Aktief"
+  },
+  "inactive": {
+    "message": "Onaktief"
+  },
+  "sentAwaitingSync": {
+    "message": "Sent (Awaiting Sync)"
+  },
+  "sent": {
+    "message": "Sent"
+  },
+  "requestRemoved": {
+    "message": "Removed (Awaiting Sync)"
+  },
+  "requested": {
+    "message": "Requested"
   },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ fields above need your attention.",
@@ -4786,7 +4885,7 @@
     "message": "1 field above needs your attention."
   },
   "fieldRequiredError": {
-    "message": "$FIELDNAME$ is required.",
+    "message": "$FIELDNAME$ word vereis.",
     "placeholders": {
       "fieldname": {
         "content": "$1",
@@ -4795,7 +4894,7 @@
     }
   },
   "required": {
-    "message": "required"
+    "message": "vereis"
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
@@ -4836,26 +4935,51 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Access Denied. You do not have permission to view this page."
+  },
+  "masterPassword": {
+    "message": "Hoofwagwoord"
+  },
+  "security": {
+    "message": "Sekuriteit"
+  },
+  "keys": {
+    "message": "Sleutels"
+  },
+  "billingHistory": {
+    "message": "Faktureringsgeskiedenis"
+  },
   "backToReports": {
-    "message": "Back to Reports"
+    "message": "Terug na verslae"
+  },
+  "organizationPicker": {
+    "message": "Organisasiekieser"
+  },
+  "currentOrganization": {
+    "message": "Huidige organisasie",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Rekeninginstellings"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Genereerder"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Wat wil u genereer?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Wagwoordtipe"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Hergenereer gebruikersnaam"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Genereer gebruikersnaam"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Gebruikersnaamtipe"
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email",
@@ -4871,12 +4995,79 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Lukraak",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Lukrake woord"
   },
   "service": {
-    "message": "Service"
+    "message": "Diens"
+  },
+  "unknownCipher": {
+    "message": "Onbekende item, u moet dalk toestemming versoek vir toegang tot hierdie item."
+  },
+  "cannotSponsorSelf": {
+    "message": "You cannot redeem for the active account. Enter a different email."
+  },
+  "revokeWhenExpired": {
+    "message": "Expires $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Token rotated $DAYS$ day ago. Update the billing sync token in your self-hosted organization settings.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Token rotated $DAYS$ days ago. Update the billing sync token in your self-hosted organization settings.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Last Sync",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Self-hosted sponsorships synced."
+  },
+  "billingManagedByProvider": {
+    "message": "Bestuur deur $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Please reach out to them for further assistance",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Gasheernaam",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-toegangsteken"
   }
 }

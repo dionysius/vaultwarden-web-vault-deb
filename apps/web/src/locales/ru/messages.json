@@ -421,11 +421,23 @@
     "message": "Скопировать URI",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Мое"
+  },
   "myVault": {
     "message": "Хранилище"
   },
+  "allVaults": {
+    "message": "Все хранилища"
+  },
   "vault": {
     "message": "Хранилище"
+  },
+  "vaults": {
+    "message": "Хранилища"
+  },
+  "vaultItems": {
+    "message": "Элементы хранилища"
   },
   "moveSelectedToOrg": {
     "message": "Переместить выбранное в организацию"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Длина"
   },
+  "uppercase": {
+    "message": "Прописные буквы (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Строчные буквы (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Цифры (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Специальные символы (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Количество слов"
   },
@@ -1038,7 +1064,7 @@
     "message": "Ваше хранилище очищено."
   },
   "deleteAccount": {
-    "message": "Удалить учетную запись"
+    "message": "Удалить аккаунт"
   },
   "deleteAccountDesc": {
     "message": "Чтобы удалить учетную запись и все связанные с ней данные, выполните действие ниже."
@@ -1047,13 +1073,13 @@
     "message": "Удаление вашей учетной записи необратимо. Его нельзя отменить."
   },
   "accountDeleted": {
-    "message": "Учетная запись удалена"
+    "message": "Аккаунт удален"
   },
   "accountDeletedDesc": {
     "message": "Ваша учетная запись была закрыта и все связанные с ней данные были удалены."
   },
   "myAccount": {
-    "message": "Моя учетная запись"
+    "message": "Мой аккаунт"
   },
   "tools": {
     "message": "Инструменты"
@@ -1110,10 +1136,13 @@
   "options": {
     "message": "Опции"
   },
-  "optionsDesc": {
+  "preferences": {
+    "message": "Настройки"
+  },
+  "preferencesDesc": {
     "message": "Настройте возможности вашего веб-хранилища."
   },
-  "optionsUpdated": {
+  "preferencesUpdated": {
     "message": "Настройки обновлены"
   },
   "language": {
@@ -1431,7 +1460,8 @@
     "message": "Отчеты"
   },
   "reportsDesc": {
-    "message": "Выявите и устраните проблемы с безопасностью в ваших онлайн-аккаунтах, перейдя по ссылкам на отчеты ниже."
+    "message": "Выявите и устраните проблемы с безопасностью в ваших онлайн-аккаунтах, перейдя по ссылкам на отчеты ниже.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Небезопасные сайты"
@@ -1625,7 +1655,7 @@
     "message": "Оплата"
   },
   "accountCredit": {
-    "message": "Средства аккаунта",
+    "message": "Кредит аккаунта",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
   },
   "accountBalance": {
@@ -1647,7 +1677,7 @@
     "message": "Убедитесь, что на вашем счету достаточно средств для этой покупки. Если на вашем счете недостаточно средств, то для покрытия разницы будет использован ваш метод оплаты по умолчанию. Вы можете добавить денежные средства в свой аккаунт на странице оплаты."
   },
   "creditAppliedDesc": {
-    "message": "Средства на вашего аккаунта используются для совершения платежей. Любой доступный остаток будет автоматически использован для оплаты счетов, выставленных этому аккаунту."
+    "message": "Средства на вашем счете могут быть использованы для совершения платежей. Любой доступный остаток будет автоматически использован для оплаты счетов, выставленных этому аккаунту."
   },
   "goPremium": {
     "message": "Перейти на Премиум",
@@ -1946,7 +1976,7 @@
     "message": "Для создания организации размещенной на локальном хостинге, необходимо загрузить действительный файл лицензии."
   },
   "accountEmailMustBeVerified": {
-    "message": "Адрес email вашей учетной записи должен быть подтвержден."
+    "message": "Адрес email вашего аккаунта должен быть подтвержден."
   },
   "newOrganizationDesc": {
     "message": "Организации позволяют совместно использовать части своего хранилища с другими, а также управлять связанными пользователями для определенного объекта, такого как семья, небольшая команда или крупная компания."
@@ -3169,13 +3199,13 @@
     "message": "Вы выбрали слабый мастер-пароль. Для надежной защиты аккаунта Bitwarden следует использовать сильный мастер-пароль (или парольную фразу). Вы действительно хотите использовать этот мастер-пароль?"
   },
   "rotateAccountEncKey": {
-    "message": "Также изменить ключ шифрования моего аккаунта"
+    "message": "Также сменить ключ шифрования моего аккаунта"
   },
   "rotateEncKeyTitle": {
-    "message": "Изменить ключ шифрования"
+    "message": "Сменить ключ шифрования"
   },
   "rotateEncKeyConfirmation": {
-    "message": "Вы уверены, что хотите изменить ключ шифрования вашей учетной записи?"
+    "message": "Вы уверены, что хотите сменить ключ шифрования вашей учетной записи?"
   },
   "attachmentsNeedFix": {
     "message": "К этому элементу прикреплены старые вложения, которые необходимо исправить."
@@ -3188,7 +3218,7 @@
     "description": "This is a verb. ex. 'Fix The Car'"
   },
   "oldAttachmentsNeedFixDesc": {
-    "message": "В вашем хранилище есть старые вложения файлов, которые необходимо исправить, прежде чем вы сможете изменить ключ шифрования вашего аккаунта."
+    "message": "В вашем хранилище есть старые вложения файлов, которые необходимо исправить, прежде чем вы сможете сменить ключ шифрования вашего аккаунта."
   },
   "yourAccountsFingerprint": {
     "message": "Фраза отпечатка вашего аккаунта",
@@ -3213,7 +3243,7 @@
     "message": "Ваш ключ API может быть использован для аутентификации в публичном API Bitwarden."
   },
   "apiKeyRotateDesc": {
-    "message": "Изменение ключа API приведет к аннулированию предыдущего ключа. Вы можете изменить свой ключ API, если считаете, что текущий ключ больше не безопасен для использования."
+    "message": "Смена ключа API аннулирует предыдущий ключ. Это необходимо, если возникли любые сомнения относительно безопасности текущего ключа."
   },
   "apiKeyWarning": {
     "message": "Ваш ключ API имеет полный доступ к организации. Это должно храниться в секрете."
@@ -3232,7 +3262,7 @@
     "message": "Показать ключ API"
   },
   "rotateApiKey": {
-    "message": "Изменить ключ API"
+    "message": "Сменить ключ API"
   },
   "selectOneCollection": {
     "message": "Необходимо выбрать хотя бы одну коллекцию."
@@ -4564,7 +4594,7 @@
     "message": "Введите свой личный адрес электронной почты, чтобы активировать Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "Если вы покинете или будете исключены из спонсорской организации, срок действия вашего плана Bitwarden Families истечет в конце расчетного периода."
+    "message": "Если вы покинете или будете исключены из спонсорской организации, срок действия вашего плана Bitwarden Families истечет в следующую дату продления."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Примите предложение существующей организации или создайте новую организацию Bitwarden Families."
@@ -4639,13 +4669,13 @@
     "message": "Письмо отправлено"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "После удаления этой учетной записи владелец организации Bitwarden Families будет нести ответственность за эту подписку и связанные счета. Вы уверены, что хотите продолжить?"
+    "message": "После удаления этого аккаунта спонсирование плана Families истечет в конце расчетного периода. Вы не сможете воспользоваться новым спонсорским предложением, пока не истечет срок действия существующего. Вы уверены, что хотите продолжить?"
   },
   "removeSponsorshipSuccess": {
     "message": "Спонсорство удалено"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Не удается подключиться к соединителю ключей, повторите попытку позже."
+  "ssoKeyConnectorError": {
+    "message": "Ошибка соединителя ключей: убедитесь, что он доступен и работает корректно."
   },
   "keyConnectorUrl": {
     "message": "URL соединителя ключей"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "БЕСПЛАТНО при спонсорской поддержке"
   },
+  "viewBillingSyncToken": {
+    "message": "Просмотр токена синхронизации биллинга"
+  },
+  "generateBillingSyncToken": {
+    "message": "Создание токена синхронизации биллинга"
+  },
+  "copyPasteBillingSync": {
+    "message": "Скопируйте и вставьте этот токен в настройки синхронизации биллинга вашей организации."
+  },
+  "billingSyncCanAccess": {
+    "message": "Ваш токен синхронизации биллинга может получить доступ и изменить настройки подписки этой организации."
+  },
+  "manageBillingSync": {
+    "message": "Управление синхронизацией биллинга"
+  },
+  "setUpBillingSync": {
+    "message": "Настроить синхронизацию биллинга"
+  },
+  "generateToken": {
+    "message": "Сгенерировать токен"
+  },
+  "rotateToken": {
+    "message": "Сменить токен"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "При продолжении, вам нужно будет заново настроить синхронизацию биллинга на вашем сервере."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Смена токена синхронизации биллинга аннулирует предыдущий токен."
+  },
+  "selfHostingTitle": {
+    "message": "Собственное размещение"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "Чтобы создать свою организацию на собственном сервере, потребуется загрузить файл лицензии. Для поддержки тарифных планов Free Families и расширенных возможностей выставления счетов для вашей организации, размещенной на собственном сервере необходимо настроить синхронизацию биллинга."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Токен сменен."
+  },
+  "billingSync": {
+    "message": "Синхронизация биллинга"
+  },
+  "billingSyncDesc": {
+    "message": "Синхронизация биллинга обеспечивает предоставление участникам планов Free Families и расширенных возможностей выставления счетов, связывая ваш собственный хостинг Bitwarden с облачным сервером Bitwarden."
+  },
+  "billingSyncKeyDesc": {
+    "message": "Для заполнения этой формы необходим токен синхронизации биллинга из настроек подписки вашей организации."
+  },
+  "billingSyncKey": {
+    "message": "Токен синхронизации биллинга"
+  },
+  "active": {
+    "message": "Активен"
+  },
+  "inactive": {
+    "message": "Неактивен"
+  },
+  "sentAwaitingSync": {
+    "message": "Отправлен (ожидает синхронизации)"
+  },
+  "sent": {
+    "message": "Отправлен"
+  },
+  "requestRemoved": {
+    "message": "Удален (ожидает синхронизации)"
+  },
+  "requested": {
+    "message": "Запрошен"
+  },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ полей выше требуют вашего внимания.",
     "placeholders": {
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Доступ запрещен. У вас нет разрешения на просмотр этой страницы."
+  },
+  "masterPassword": {
+    "message": "Мастер-пароль"
+  },
+  "security": {
+    "message": "Безопасность"
+  },
+  "keys": {
+    "message": "Ключи"
+  },
+  "billingHistory": {
+    "message": "История платежей"
+  },
   "backToReports": {
     "message": "Вернуться к отчетам"
+  },
+  "organizationPicker": {
+    "message": "Выбор организации"
+  },
+  "currentOrganization": {
+    "message": "Текущая организация",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Настройки аккаунта"
   },
   "generator": {
     "message": "Генератор"
@@ -4871,12 +4995,79 @@
     "message": "Использовать настроенную в вашем домене почту catch-all."
   },
   "random": {
-    "message": "Случайно"
+    "message": "Случайно",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Случайное слово"
   },
   "service": {
     "message": "Служба"
+  },
+  "unknownCipher": {
+    "message": "Неизвестный элемент, вам может потребоваться запросить разрешение на доступ к этому элементу."
+  },
+  "cannotSponsorSelf": {
+    "message": "Вы не можете активировать существующий аккаунт. Введите другой адрес электронной почты."
+  },
+  "revokeWhenExpired": {
+    "message": "Истекает $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Токен был сменен $DAYS$ день назад. Обновите токен синхронизации биллинга в настройках вашей организации.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Токен был сменен $DAYS$ дней назад. Обновите токен синхронизации биллинга в настройках вашей организации.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Последняя синхронизация",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Спонсирование собственного сервера синхронизировано."
+  },
+  "billingManagedByProvider": {
+    "message": "Управляется $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Обращайтесь к ним за дальнейшей помощью",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Псевдоним электронной почты для пересылки"
+  },
+  "forwardedEmailDesc": {
+    "message": "Создать псевдоним электронной почты для внешней службы пересылки."
+  },
+  "hostname": {
+    "message": "Имя хоста",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Токен доступа к API"
   }
 }

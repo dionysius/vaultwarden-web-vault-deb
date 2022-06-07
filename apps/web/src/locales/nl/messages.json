@@ -421,11 +421,23 @@
     "message": "URI kopiëren",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Ik"
+  },
   "myVault": {
     "message": "Mijn kluis"
   },
+  "allVaults": {
+    "message": "Alle kluizen"
+  },
   "vault": {
     "message": "Kluis"
+  },
+  "vaults": {
+    "message": "Kluizen"
+  },
+  "vaultItems": {
+    "message": "Kluis-items"
   },
   "moveSelectedToOrg": {
     "message": "Selectie naar organisatie verplaatsen"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Lengte"
   },
+  "uppercase": {
+    "message": "Hoofdletters (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Kleine letters (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Cijfers (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Speciale tekens (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Aantal woorden"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Opties"
   },
-  "optionsDesc": {
-    "message": "Pas je ervaring met de webkluis aan."
+  "preferences": {
+    "message": "Voorkeuren"
   },
-  "optionsUpdated": {
-    "message": "Opties bijgewerkt"
+  "preferencesDesc": {
+    "message": "Configureer je webkluis-ervaring."
+  },
+  "preferencesUpdated": {
+    "message": "Voorkeuren bijgewerkt"
   },
   "language": {
     "message": "Taal"
@@ -1431,7 +1460,8 @@
     "message": "Rapportages"
   },
   "reportsDesc": {
-    "message": "Identificeer en sluit beveiligingsgaten in je online accounts door op onderstaande rapporten te klikken."
+    "message": "Identificeer en sluit beveiligingsgaten in je online accounts door op onderstaande rapporten te klikken.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Niet-beveiligde websites"
@@ -4644,8 +4674,8 @@
   "removeSponsorshipSuccess": {
     "message": "Sponsoring verwijderd"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Kan de Key Connector niet bereiken, probeer het later opnieuw."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "keyConnectorUrl": {
     "message": "Key Connector URL"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "GRATIS met sponsoring"
   },
+  "viewBillingSyncToken": {
+    "message": "Factureringssynchronisatietoken bekijken"
+  },
+  "generateBillingSyncToken": {
+    "message": "Factureringssynchronisatietoken genereren"
+  },
+  "copyPasteBillingSync": {
+    "message": "Kopieer en plak dit token in de factureringssynchronisatie-instellingen van je zelfgehoste organisatie."
+  },
+  "billingSyncCanAccess": {
+    "message": "Je factureringssynchronisatietoken kan de abonnementsinstellingen van deze organisatie inzien en wijzigen."
+  },
+  "manageBillingSync": {
+    "message": "Factureringssynchronisatie beheren"
+  },
+  "setUpBillingSync": {
+    "message": "Factureringssynchronisatie instellen"
+  },
+  "generateToken": {
+    "message": "Token genereren"
+  },
+  "rotateToken": {
+    "message": "Token roteren"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "Als je doorgaat, moet je factureringssynchronisatie opnieuw instellen op je zelfgehoste server."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Het roteren van het factureringssynchronisatietoken maakt het vorige token ongeldig."
+  },
+  "selfHostingTitle": {
+    "message": "Zelfgehost"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "Voor het instellen van je organisatie op je eigen server, moet je je licentiebestand uploaden. Om gratis Families-plannen en geavanceerde factureringsmogelijkheden voor je zelfgehoste organisatie te ondersteunen, moet je factureringssynchronisatie instellen."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Token geroteerd."
+  },
+  "billingSync": {
+    "message": "Factureringssynchronisatie"
+  },
+  "billingSyncDesc": {
+    "message": "Factureringssynchronisatie biedt leden gratis Families-plannen en geavanceerde factureringsmogelijkheden door je zelfgehoste Bitwarden te koppelen aan de Bitwarden-cloudserver."
+  },
+  "billingSyncKeyDesc": {
+    "message": "Er is een factureringssynchronisatietoken van de abonnementsinstellingen van je cloudorganisatie vereist voor het afronden van dit formulier."
+  },
+  "billingSyncKey": {
+    "message": "Factureringssynchronisatietoken"
+  },
+  "active": {
+    "message": "Actief"
+  },
+  "inactive": {
+    "message": "Inactief"
+  },
+  "sentAwaitingSync": {
+    "message": "Verzonden (wacht op synchronisatie)"
+  },
+  "sent": {
+    "message": "Verzonden"
+  },
+  "requestRemoved": {
+    "message": "Verwijderd (wacht op synchronisatie)"
+  },
+  "requested": {
+    "message": "Aangevraagd"
+  },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ velden hierboven vereisen je aandacht.",
     "placeholders": {
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Toegang geweigerd. Je hebt geen toestemming om deze pagina te bekijken."
+  },
+  "masterPassword": {
+    "message": "Hoofdwachtwoord"
+  },
+  "security": {
+    "message": "Beveiliging"
+  },
+  "keys": {
+    "message": "Sleutels"
+  },
+  "billingHistory": {
+    "message": "Rekeningoverzicht"
+  },
   "backToReports": {
     "message": "Terug naar rapporten"
+  },
+  "organizationPicker": {
+    "message": "Organisatie-kiezer"
+  },
+  "currentOrganization": {
+    "message": "Huidige organisatie",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Accountinstellingen"
   },
   "generator": {
     "message": "Generator"
@@ -4871,12 +4995,79 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Willekeurig"
+    "message": "Willekeurig",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Willekeurig woord"
   },
   "service": {
     "message": "Dienst"
+  },
+  "unknownCipher": {
+    "message": "Onbekend item, je moet misschien inloggen met een andere account om dit item te kunnen opvragen."
+  },
+  "cannotSponsorSelf": {
+    "message": "Je kunt niet inwisselen voor het actieve account. Voor een ander e-mailadres in."
+  },
+  "revokeWhenExpired": {
+    "message": "Verloopt op $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Token is $DAYS$ dag geleden geroteerd. Werk het factureringssynchronisatietoken in de instellingen van je zelfgehoste organisatie bij.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Token is $DAYS$ dagen geleden geroteerd. Werk het factureringssynchronisatietoken in de instellingen van je zelfgehoste organisatie bij.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Laatste synchronisatie",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Zelf-gehoste sponsors gesynchroniseerd."
+  },
+  "billingManagedByProvider": {
+    "message": "Beheerd door $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Neem contact met hen op voor verdere ondersteuning",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Doorgestuurd e-mailalias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Genereer een e-mailalias met een externe doorschakelservice."
+  },
+  "hostname": {
+    "message": "Hostnaam",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-toegangstoken"
   }
 }

@@ -372,7 +372,7 @@
     "message": "Rediger gjenstanden"
   },
   "viewItem": {
-    "message": "Vis objektet"
+    "message": "Vis elementet"
   },
   "ex": {
     "message": "f.eks.",
@@ -421,11 +421,23 @@
     "message": "Kopier URIen",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Meg"
+  },
   "myVault": {
     "message": "Mitt hvelv"
   },
+  "allVaults": {
+    "message": "Alle hvelv"
+  },
   "vault": {
     "message": "Hvelv"
+  },
+  "vaults": {
+    "message": "Hvelv"
+  },
+  "vaultItems": {
+    "message": "Hvelvobjekter"
   },
   "moveSelectedToOrg": {
     "message": "Flytt valgte til organisasjon"
@@ -498,7 +510,7 @@
     }
   },
   "deleteItem": {
-    "message": "Slett objektet"
+    "message": "Slett element"
   },
   "deleteFolder": {
     "message": "Slett mappen"
@@ -507,13 +519,13 @@
     "message": "Slett vedlegget"
   },
   "deleteItemConfirmation": {
-    "message": "Er du sikker på at du vil slette denne gjenstanden?"
+    "message": "Vil du virkelig sende til papirkurven?"
   },
   "deletedItem": {
-    "message": "Slettet objektet"
+    "message": "Element sendt til papirkurv"
   },
   "deletedItems": {
-    "message": "Slettet objektene"
+    "message": "Elementer sendt til papirkurv"
   },
   "movedItems": {
     "message": "Flyttede gjenstander"
@@ -676,7 +688,7 @@
     "message": "Ny organisasjon"
   },
   "noOrganizationsList": {
-    "message": "Du tilhører ikke noen organisasjoner. Organisasjoner gjør det mulig for deg å trygt dele objekter med andre brukere."
+    "message": "Du tilhører ikke noen organisasjoner. Organisasjoner gjør det mulig for deg å trygt dele elementer med andre brukere."
   },
   "versionNumber": {
     "message": "Versjon $VERSION_NUMBER$",
@@ -793,13 +805,13 @@
     "message": "Organisasjoner"
   },
   "moveToOrgDesc": {
-    "message": "Velg en organisasjon som du ønsker å flytte denne gjenstanden til. Flytting til en organisasjon overfører eierskap til den aktuelle organisasjonen. Du vil ikke lenger være den direkte eieren av denne varen når den er flyttet."
+    "message": "Velg en organisasjon som du ønsker å flytte dette elementet til. Flytting til en organisasjon overfører eierskap til den aktuelle organisasjonen. Du vil ikke lenger være den direkte eieren av dette elementet når det er flyttet."
   },
   "moveManyToOrgDesc": {
-    "message": "Velg en organisasjon som du ønsker å flytte denne gjenstanden til. Flytting til en organisasjon overfører eierskap til den aktuelle organisasjonen. Du vil ikke lenger være den direkte eieren av denne varen når den er flyttet."
+    "message": "Velg en organisasjon som du ønsker å flytte dette elementet til. Flytting til en organisasjon overfører eierskap til den aktuelle organisasjonen. Du vil ikke lenger være den direkte eieren av dette elementet når det er flyttet."
   },
   "collectionsDesc": {
-    "message": "Rediger samlingene som dette objektet blir delt med. Kun organisasjonsbrukere med tilgang til disse samlingene vil kunne se dette objektet."
+    "message": "Rediger samlingene som dette elementet blir delt med. Kun organisasjonsbrukere med tilgang til disse samlingene vil kunne se dette elementet."
   },
   "deleteSelectedItemsDesc": {
     "message": "Du har valgt $COUNT$ gjenstand(er) som skal slettes. Er du sikker på du vil slette alle disse gjenstandene?",
@@ -820,7 +832,7 @@
     }
   },
   "moveSelectedItemsCountDesc": {
-    "message": "Du har valgt $COUNT$ gjenstand(er). $MOVEABLE_COUNT$ gjenstand(er) kan flyttes til en organisasjon, $NONMOVEABLE_COUNT$ kan ikke.",
+    "message": "Du har valgt $COUNT$ element(er). $MOVEABLE_COUNT$ element(er) kan flyttes til en organisasjon, $NONMOVEABLE_COUNT$ kan ikke.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -890,6 +902,20 @@
   },
   "length": {
     "message": "Lengde"
+  },
+  "uppercase": {
+    "message": "Store bokstaver (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Små bokstaver (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Siffer (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Spesialtegn (!@#$%^&*)"
   },
   "numWords": {
     "message": "Antall ord"
@@ -1026,10 +1052,10 @@
     "message": "Hvelv tilgjengelig av leverandør."
   },
   "purgeVaultDesc": {
-    "message": "Fortsett nedenfor for å slette alle objektet og mapper i ditt hvelv. Objekter som tilhører en organisasjon som du deler med, vil ikke bli slettet."
+    "message": "Fortsett nedenfor for å slette alle elementer og mapper i ditt hvelv. Elementer som tilhører en organisasjon som du deler med, vil ikke bli slettet."
   },
   "purgeOrgVaultDesc": {
-    "message": "Fortsett nedenfor for å slette alle objektene i organisasjonens hvelv."
+    "message": "Fortsett nedenfor for å slette alle elementer i organisasjonens hvelv."
   },
   "purgeVaultWarning": {
     "message": "Å tømme hvelvet ditt er permanent. Det kan ikke bli angret på."
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Alternativer"
   },
-  "optionsDesc": {
-    "message": "Tilpass din netthvelvopplevelse."
+  "preferences": {
+    "message": "Innstillinger"
   },
-  "optionsUpdated": {
-    "message": "Innstillingene er oppdatert"
+  "preferencesDesc": {
+    "message": "Tilpass opplevelsen i nett-hvelvet ditt."
+  },
+  "preferencesUpdated": {
+    "message": "Innstillingene oppdatert"
   },
   "language": {
     "message": "Språk"
@@ -1126,7 +1155,7 @@
     "message": "Skru av nettstedsikoner"
   },
   "disableIconsDesc": {
-    "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hvert innloggingsobjekt i hvelvet ditt."
+    "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved hvert innloggingselement i hvelvet ditt."
   },
   "enableGravatars": {
     "message": "Skru på Gravatarer",
@@ -1431,7 +1460,8 @@
     "message": "Rapporter"
   },
   "reportsDesc": {
-    "message": "Identifiser og løs sikkerhetsavvik i kontoene dine på nettet ved å klikke på rapportene nedenfor."
+    "message": "Identifiser og løs sikkerhetsavvik i kontoene dine på nettet ved å klikke på rapportene nedenfor.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Rapport om usikrede nettsteder"
@@ -2284,7 +2314,7 @@
     "message": "Admin"
   },
   "adminDesc": {
-    "message": "Administratorer kan få tilgang til og behandle alle objekter, samlinger og brukere i din organisasjon."
+    "message": "Administratorer kan få tilgang til og behandle alle elementer, samlinger og brukere i din organisasjon."
   },
   "user": {
     "message": "Bruker"
@@ -2359,7 +2389,7 @@
     "message": "Eksportert organisasjonshvelv."
   },
   "editedOrgSettings": {
-    "message": "Redigerte organisasjonens innstillinger."
+    "message": "Endret innstillinger for organisasjonen."
   },
   "createdItemId": {
     "message": "Lagde $ID$-gjenstanden.",
@@ -2380,7 +2410,7 @@
     }
   },
   "deletedItemId": {
-    "message": "Slettet $ID$-objektet.",
+    "message": "Sendte element $ID$ til papirkurven.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2914,7 +2944,7 @@
     "message": "Individuelt (Personlig)"
   },
   "enterInstallationId": {
-    "message": "Skriv inn din installasjons-ID"
+    "message": "Skriv inn din installasjons-id"
   },
   "limitSubscriptionDesc": {
     "message": "Angi en seteramme for ditt abonnement. Når denne grensen er nådd, vil du ikke kunne invitere nye brukere."
@@ -3301,7 +3331,7 @@
     "message": "Inneholder ett eller flere små tegn"
   },
   "policyInEffectNumbers": {
-    "message": "Inneholde ett eller flere tall"
+    "message": "Inneholder ett eller flere tall"
   },
   "policyInEffectSpecial": {
     "message": "Inneholder ett eller flere av følgende spesialtegn $CHARS$",
@@ -3522,7 +3552,7 @@
     "message": "Tekst"
   },
   "createSend": {
-    "message": "Opprett ny Send",
+    "message": "Lag ny Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -3530,19 +3560,19 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Opprettet Send",
+    "message": "Laget Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Redigerte Send",
+    "message": "Endret Send-en",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Slettet Send",
+    "message": "Slettet Send-en",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSend": {
-    "message": "Slett Send",
+    "message": "Slett Send-en",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
@@ -3557,28 +3587,28 @@
     "message": "Dato for sletting"
   },
   "deletionDateDesc": {
-    "message": "Send-en vil bli slettet permanent på den angitte dato og klokkeslett.",
+    "message": "Send-en vil bli permanent slettet på angitt dato og klokkeslett.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Utløpsdato"
   },
   "expirationDateDesc": {
-    "message": "Hvis satt, vil tilgang til denne Send gå ut på angitt dato og klokkeslett.",
+    "message": "Hvis satt, vil tilgang til denne Send-en opphøre på angitt dato og klokkeslett.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "Maksimal antall tilganger"
   },
   "maxAccessCountDesc": {
-    "message": "Hvis satt, vil ikke brukere lenger ha tilgang til dette Send når maksimal antall tilgang er nådd.",
+    "message": "Hvis satt, vil ikke brukere lenger ha tilgang til denne Send-en når maksimalt antall aksesseringer er nådd.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
     "message": "Antall nåværende tilganger"
   },
   "sendPasswordDesc": {
-    "message": "Eventuelt krever et passord for brukere å få tilgang til denne Send.",
+    "message": "Valgfritt passordkrav for å få tilgang til denne Send-en.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -3609,14 +3639,14 @@
     "message": "Skjul min e-postadresse fra mottakere."
   },
   "disableThisSend": {
-    "message": "Deaktiver denne Send-en, slik at ingen får tilgang til den.",
+    "message": "Deaktiver denne Send-en slik at ingen får tilgang til den.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "allSends": {
     "message": "Alle Send-er"
   },
   "maxAccessCountReached": {
-    "message": "Maksimalt antall tilganger nådd",
+    "message": "Maksimalt antall aksesseringer nådd",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "pendingDeletion": {
@@ -3630,7 +3660,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
-    "message": "Send er beskyttet med et passord. Skriv inn passordet nedenfor for å fortsette.",
+    "message": "Send-en er beskyttet med et passord. Skriv inn passordet nedenfor for å fortsette.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPasswordDontKnow": {
@@ -3638,22 +3668,22 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendHiddenByDefault": {
-    "message": "Denne sendingen er skjult som standard. Du kan velge å vise den ved å bruke knappen nedenfor.",
+    "message": "Denne Send-en er skjult som standard. Du kan veksle synlighet ved å bruke knappen nedenfor.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadFile": {
     "message": "Last ned fil"
   },
   "sendAccessUnavailable": {
-    "message": "Sende du prøver å få tilgang eksisterer ikke, eller er ikke lenger tilgjengelig.",
+    "message": "Send-en du forsøker å få tilgang til finnes ikke eller er ikke lenger tilgjengelig.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "missingSendFile": {
-    "message": "Filen knyttet til sendingen ble ikke funnet.",
+    "message": "Filen knyttet til Send-en ble ikke funnet.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "noSendsInList": {
-    "message": "Det er ingen Sends å vise.",
+    "message": "Det er ingen Send-er å vise.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "emergencyAccess": {
@@ -3802,19 +3832,19 @@
     "message": "Personlig eierskap"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "Krev at brukere lagrer hvelvgjenstander i en organisasjon ved å fjerne den personlige eierskapsmodulen."
+    "message": "Krev at brukere lagrer hvelv-elementer i en organisasjon ved å fjerne den personlige eierskapsmodulen."
   },
   "personalOwnershipExemption": {
     "message": "Organisasjonens eiere og administratorer er unntatt fra denne policyens håndheving."
   },
   "personalOwnershipSubmitError": {
-    "message": "På grunn av en virksomhetsregel er du begrenset fra å lagre gjenstander til ditt personlige hvelv. Endre eierskapet til en organisasjon og velg blant tilgjengelige samlinger."
+    "message": "På grunn av en virksomhetsregel er du begrenset fra å lagre elementer til ditt personlige hvelv. Endre eierskapet til en organisasjon og velg blant tilgjengelige samlinger."
   },
   "disableSend": {
     "message": "Deaktiver Send"
   },
   "disableSendPolicyDesc": {
-    "message": "Ikke tillat brukere å opprette eller redigere en Bitwarden Send. Å slette en eksisterende Send er fortsatt tillatt.",
+    "message": "Ikke tillat brukere å opprette eller endre en Bitwarden Send. Å slette en eksisterende Send er fortsatt tillatt.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
@@ -3829,25 +3859,25 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
-    "message": "Alternativer for sending",
+    "message": "Alternativer for Send-er",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyDesc": {
-    "message": "Angi alternativer for oppretting og redigering av Sends.",
+    "message": "Angi alternativer for oppretting og redigering av Send-er.",
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
     "message": "Organisasjonsbrukere som kan håndtere organisasjonens regler, er unntatt fra håndheving av denne reglen."
   },
   "disableHideEmail": {
-    "message": "Ikke tillat brukere å skjule sin e-postadresse fra mottakere når de oppretter eller redigerer en Send.",
+    "message": "Ikke tillat brukere å skjule sin e-postadresse fra mottakere når de oppretter eller endrer en Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
     "message": "Følgende organisasjonspolicyer er for tiden i virkning:"
   },
   "sendDisableHideEmailInEffect": {
-    "message": "Brukere kan ikke skjule sin e-postadresse fra mottakere når de oppretter eller redigerer en Send.",
+    "message": "Brukere kan ikke skjule sin e-postadresse fra mottakere når de oppretter eller endrer en Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "modifiedPolicyId": {
@@ -3935,7 +3965,7 @@
     "message": "En bedriftsretningslinje påvirker dine eierskapsinnstillinger."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "En organisasjonspolicy har deaktivert import av gjenstander til ditt personlige hvelv."
+    "message": "En virksomhetsregel har deaktivert import av elementer til ditt personlige hvelv."
   },
   "personalOwnershipCheckboxDesc": {
     "message": "Deaktiver personlig eierskap for organisasjonsbrukere"
@@ -3945,14 +3975,14 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "Et vennlig navn for å beskrive dette Send.",
+    "message": "Beskrivende navn for denne Send-en.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "Teksten du ønsker å send."
+    "message": "Teksten du ønsker å sende."
   },
   "sendFileDesc": {
-    "message": "Filen du vil send."
+    "message": "Filen du vil sende."
   },
   "copySendLinkOnSave": {
     "message": "Kopier lenken for å dele denne Send-en til utklippstavlen min ved lagring."
@@ -4166,10 +4196,10 @@
     "message": "Tilbakestilling av passorddetaljer er null"
   },
   "trashCleanupWarning": {
-    "message": "Elementer som har vært i papirkurv mer enn 30 dager vil automatisk bli slettet."
+    "message": "Elementer som har vært i papirkurven mer enn 30 dager vil bli slettet automatisk."
   },
   "trashCleanupWarningSelfHosted": {
-    "message": "Elementer som har vært i papirkurven for en stund vil bli slettet automatisk."
+    "message": "Elementer som har vært i papirkurven en stund vil bli slettet automatisk."
   },
   "passwordPrompt": {
     "message": "Forespørsel om hovedpassord på nytt"
@@ -4644,8 +4674,8 @@
   "removeSponsorshipSuccess": {
     "message": "Sponsor fjernet"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Kan ikke nå nøkkelkontakt. Prøv igjen senere."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector feil: Sjekk at Key Connector er tilgjengelig og fungerer."
   },
   "keyConnectorUrl": {
     "message": "Tast Connector URL"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "GRATIS med sponsorat"
   },
+  "viewBillingSyncToken": {
+    "message": "Vis faktureringssynkroniseringstoken"
+  },
+  "generateBillingSyncToken": {
+    "message": "Generer faktureringssynkroniseringstoken"
+  },
+  "copyPasteBillingSync": {
+    "message": "Kopier og lim inn dette tokenet i faktureringsynkroniserings-innstillingene for din selvbetjente organisasjon."
+  },
+  "billingSyncCanAccess": {
+    "message": "Din faktureringssynkroniserings-token kan få tilgang til og endre denne organisasjonens abonnementsinnstillinger."
+  },
+  "manageBillingSync": {
+    "message": "Administrer faktureringssynkronisering"
+  },
+  "setUpBillingSync": {
+    "message": "Sett opp faktureringssynkronisering"
+  },
+  "generateToken": {
+    "message": "Generer Token"
+  },
+  "rotateToken": {
+    "message": "Roter token"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "Hvis du fortsetter må du opprette faktureringssynkronisering på serveren din på nytt."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Rotasjon av faktureringssynkroniserings-token vil gjøre den forrige token ugyldig."
+  },
+  "selfHostingTitle": {
+    "message": "Self-Hosting"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "For å konfigurere din organisasjon på egen server, må du laste opp din lisensfil. For å støtte gratis familie-planer og avanserte faktureringsmuligheter for din egen organisasjon må du sette opp faktureringssynkronisering."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Token rotert."
+  },
+  "billingSync": {
+    "message": "Faktureringssykronisering"
+  },
+  "billingSyncDesc": {
+    "message": "Faktureringssynkronisering gir gratis familie-planer for medlemmer og avanserte faktureringsmuligheter ved å koble din selvbetjente Bitwarden til Bitwardens sky-server."
+  },
+  "billingSyncKeyDesc": {
+    "message": "Det kreves en faktureringssynkroniserings-token fra skyens abonnementsinnstillinger for å fylle ut dette skjemaet."
+  },
+  "billingSyncKey": {
+    "message": "Vis faktureringssynkroniseringstoken"
+  },
+  "active": {
+    "message": "Aktiv"
+  },
+  "inactive": {
+    "message": "Inaktiv"
+  },
+  "sentAwaitingSync": {
+    "message": "Sendt (avventer synkronisering)"
+  },
+  "sent": {
+    "message": "Sendt"
+  },
+  "requestRemoved": {
+    "message": "Fjernet (avventer synkronisering)"
+  },
+  "requested": {
+    "message": "Forespurt"
+  },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ felt trenger din oppmerksomhet.",
     "placeholders": {
@@ -4804,7 +4903,7 @@
     "message": "Valgfrie tilpasninger"
   },
   "openIdAuthorityRequired": {
-    "message": "Required if Authority is not valid."
+    "message": "Påkrevd dersom Authority er ugyldig."
   },
   "separateMultipleWithComma": {
     "message": "Avskill flere med komma."
@@ -4819,7 +4918,7 @@
     "message": "Eksporterer organisasjonshvelv"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Bare de personlige hvelvets gjenstandene som er knyttet til $EMAIL$ vil bli eksportert. Organisasjonshvelvets gjenstander vil ikke bli inkludert.",
+    "message": "Bare de personlige hvelv-elementene som er knyttet til $EMAIL$ vil bli eksportert. Organisasjonshvelvets elementer vil ikke bli inkludert.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -4828,7 +4927,7 @@
     }
   },
   "exportingOrganizationVaultDescription": {
-    "message": "Bare organisasjonens hvelv knyttet til $ORGANIZATION$ vil bli eksportert. Personlige hvelvelementer og gjenstander fra andre organisasjoner vil ikke bli inkludert.",
+    "message": "Bare organisasjonens hvelv knyttet til $ORGANIZATION$ vil bli eksportert. Personlige hvelvelementer og elementer fra andre organisasjoner vil ikke bli inkludert.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Ingen tilgang. Du har ikke tillatelse til å se denne siden."
+  },
+  "masterPassword": {
+    "message": "Hovedpassord"
+  },
+  "security": {
+    "message": "Sikkerhet"
+  },
+  "keys": {
+    "message": "Nøkler"
+  },
+  "billingHistory": {
+    "message": "Faktureringshistorikk"
+  },
   "backToReports": {
     "message": "Tilbake til rapporter"
+  },
+  "organizationPicker": {
+    "message": "Organisasjonsvelger"
+  },
+  "currentOrganization": {
+    "message": "Nåværende organisasjon",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Kontoinnstillinger"
   },
   "generator": {
     "message": "Generator"
@@ -4871,12 +4995,79 @@
     "message": "Bruk domenets konfigurerte catch-all innboks."
   },
   "random": {
-    "message": "Vilkårlig"
+    "message": "Vilkårlig",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Vilkårlig ord"
   },
   "service": {
     "message": "Tjeneste"
+  },
+  "unknownCipher": {
+    "message": "Ukjent element, du må kanskje logge inn med en annen konto for å få tilgang til dette elementet."
+  },
+  "cannotSponsorSelf": {
+    "message": "Du kan ikke innløse for den aktive kontoen. Skriv inn en annen e-post."
+  },
+  "revokeWhenExpired": {
+    "message": "Utløper $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Token rotated $DAYS$ day ago. Update the billing sync token in your self-hosted organization settings.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Token rotated $DAYS$ days ago. Update the billing sync token in your self-hosted organization settings.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Forrige synkronisering",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Self-hosted sponsorships synced."
+  },
+  "billingManagedByProvider": {
+    "message": "Administrert av $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Vennligst ta kontakt med dem for ytterligere hjelp",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Vertsnavn",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API tilgangstoken"
   }
 }

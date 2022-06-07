@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Tartománynév",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -421,11 +421,23 @@
     "message": "URI másolása",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Én"
+  },
   "myVault": {
     "message": "Saját széf"
   },
+  "allVaults": {
+    "message": "Összes széf"
+  },
   "vault": {
     "message": "Széf"
+  },
+  "vaults": {
+    "message": "Széfek"
+  },
+  "vaultItems": {
+    "message": "Széfelemek"
   },
   "moveSelectedToOrg": {
     "message": "A kiválasztott áthelyezése szervezetbe"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Hossz"
   },
+  "uppercase": {
+    "message": "Nagybetűs (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Kisbetűs (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Számok (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Speciális karakterek (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Szavak száma"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Opciók"
   },
-  "optionsDesc": {
+  "preferences": {
+    "message": "Beállítások"
+  },
+  "preferencesDesc": {
     "message": "A webes széf működésének testreszabása."
   },
-  "optionsUpdated": {
-    "message": "Az opciók frissítésre kerültek."
+  "preferencesUpdated": {
+    "message": "A beállítások frissítésre kerültek"
   },
   "language": {
     "message": "Nyelv"
@@ -1431,7 +1460,8 @@
     "message": "Jelentések"
   },
   "reportsDesc": {
-    "message": "Az alábbi jelentésekre kattintva azonosítsuk és zárjuk le a webes kiókjaink biztonsági hiányosságait."
+    "message": "Az alábbi jelentésekre kattintva azonosítsuk és zárjuk le a webes kiókjaink biztonsági hiányosságait.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Nem-biztonságos webhelyek jelentés"
@@ -1536,7 +1566,7 @@
     "message": "Újrahasznált jelszavak jelentés"
   },
   "reusedPasswordsReportDesc": {
-    "message": "Ha használatban levő szolgáltatást feltörtek, ugyanannak a jelszónak a használata máshol lehetővé teszi a hackereknek a hozzáférés elérését több webes fióknál is. Fontos, hogy egyedi jelszavakat használjunk minden fiókhoz vagy szolgáltatáshoz."
+    "message": "A jelszavak újbóli használata megkönnyíti a támadók számára, hogy több fiókot feltölrjenek. Módosítsuk ezeket a jelszavakat úgy, hogy mindegyik egyedi legyen."
   },
   "reusedPasswordsFound": {
     "message": "Újrahasznált jelszavak találhatók."
@@ -1566,7 +1596,7 @@
     "message": "Adatszivárgás jelentés"
   },
   "breachDesc": {
-    "message": "Adatszivárgásnak hívják azokat az incidenseket, amelyek során a webhelyek adataihoz illegálisan férnek hozzá hackerek és az így megszerzett adatokat nyilvánosságra hozzák. Ellenőrizzük a kompromittálódott adatok típusait (email cím, jelszó, hitelkártya adatok, stb.) és hajtsuk végre a megfelelő műveleteket, ilyen a jelszócsere."
+    "message": "A feltört fiókok felfedhetik személyes adatokat. Biztosítsuk a feltört fiókokat a 2FA engedélyezésével vagy erősebb jelszó létrehozásával."
   },
   "breachCheckUsernameEmail": {
     "message": "Ellenőriztük a használatban levő felhasználóneveket vagy email címeket."
@@ -1760,7 +1790,7 @@
     }
   },
   "paymentChargedWithTrial": {
-    "message": "A csomagod 7 napos ingyenes próbaidőszakot tartalmaz. A fizetési módját az időszak végéig nem terheljük. A csomag bármikor lemondható."
+    "message": "A jelenlegi csomag 7 napos ingyenes próbaidőszakot tartalmaz. A fizetési módot az időszak végéig nem terheljük. A csomag bármikor lemondható."
   },
   "paymentInformation": {
     "message": "Fizetési információ"
@@ -3199,7 +3229,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "dontAskFingerprintAgain": {
-    "message": "Soha ne kérje a meghívottak ujjlenyomat kifejezésének ellenőrzését (nem ajánlott)",
+    "message": "Soha ne kérjükk a meghívottak ujjlenyomat kifejezésének ellenőrzését (nem ajánlott)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -4450,22 +4480,22 @@
     "message": "OIDC átirányítási viselkedés"
   },
   "getClaimsFromUserInfoEndpoint": {
-    "message": "Követelések lekérése a felhasználói adatok végpontjáról"
+    "message": "Igények lekérése a felhasználói adatok végpontjáról"
   },
   "additionalScopes": {
-    "message": "További/egyedi hatókörök (vesszővel elválasztva)"
+    "message": "Eegyedi hatókörök"
   },
   "additionalUserIdClaimTypes": {
-    "message": "További/egyedi felhasználó AZ követelések (vesszővel elválasztva)"
+    "message": "Egyedi felhasználó AZ igénytípusok"
   },
   "additionalEmailClaimTypes": {
-    "message": "További/egyedi email követelés típusok (vesszővel elválasztva)"
+    "message": "Email igénytípusok"
   },
   "additionalNameClaimTypes": {
-    "message": "További/egyedi név követelés típusok (vesszővel elválasztva)"
+    "message": "Egyedi név igénytípusok"
   },
   "acrValues": {
-    "message": "Kért hitelesítési kontextusosztály referenciaértékek (acr_values)"
+    "message": "Kért hitelesítési kontextusosztály referenciaértékek"
   },
   "expectedReturnAcrValue": {
     "message": "Elvárt „acr” követelésérték a válaszban (acr érvényesítés)"
@@ -4492,7 +4522,7 @@
     "message": "Minimális bejövő aláírási algoritmus"
   },
   "spWantAssertionsSigned": {
-    "message": "Állításokat szeretnének aláírni"
+    "message": "Aláírt igény szükséges"
   },
   "spValidateCertificates": {
     "message": "Tanúsítványok ellenőrzése"
@@ -4546,7 +4576,7 @@
     "message": "Megosztott gyűjtemények a családi titkoknak"
   },
   "badToken": {
-    "message": "A link már nem érvényes. Kérje szponzorától az ajánlat újraküldését."
+    "message": "A hivatkozás már nem érvényes. Kérjük a szponzortól az ajánlat újraküldését."
   },
   "reclaimedFreePlan": {
     "message": "Visszaállás díjmentes csomagra"
@@ -4558,7 +4588,7 @@
     "message": "Válasszuk ki a szponzorálni kívánt szervezetet."
   },
   "familiesSponsoringOrgSelect": {
-    "message": "Melyik ingyenes családi ajánlatot szeretné beváltani?"
+    "message": "Melyik ingyenes családi ajánlatot szeretnénk beváltani?"
   },
   "sponsoredFamiliesEmail": {
     "message": "A Bitwarden családok beváltásához adjuk meg a személyes email címünket."
@@ -4630,7 +4660,7 @@
     "message": "A szponzorálás eltávolítása után felelősséget vállalunk az előfizetésért és a kapcsolódó számlákért. Biztosan folytatjuk?"
   },
   "sponsorshipCreated": {
-    "message": "A szponzoráció létrejött"
+    "message": "A szponzoráció létrejött."
   },
   "revoke": {
     "message": "Visszavonás"
@@ -4644,8 +4674,8 @@
   "removeSponsorshipSuccess": {
     "message": "A szponzoráció eltávolításra került."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nem érhető el a kulcskapcsoló. Próbáljuk újra később."
+  "ssoKeyConnectorError": {
+    "message": "Kulcs csatlakozó hiba: ellenőrizzük, hogy a kulcs csatlakozó rendelkezésre áll-e és megfelelően működik-e."
   },
   "keyConnectorUrl": {
     "message": "Kulcskapcsoló webcím"
@@ -4720,7 +4750,7 @@
     "message": "Kulcskapcsoló"
   },
   "memberDecryptionKeyConnectorDesc": {
-    "message": "SSO bejelentkezés bekapcsolása a saját üzemeltetésű kulcskiszolgálón. Ezzel az opcióval a tagoknak nem kell használniuk a mesterjelszavukat az adatok visszafejtéséhez. Segítségért keresse a Bitwarden ügyfélszolgálatot."
+    "message": "SSO bejelentkezés bekapcsolása a saját üzemeltetésű kulcskiszolgálón. Ezzel az opcióval a tagoknak nem kell használniuk a mesterjelszavukat az adatok visszafejtéséhez. Segítségért keressük a Bitwarden ügyfélszolgálatot."
   },
   "keyConnectorPolicyRestriction": {
     "message": "A „Bejelentkezés SSO szolgáltatással és a kulcskapcsoló visszafejtésével” engedélyezve van. Ez a szabály csak a tulajdonosokra és a rendszergazdákra vonatkozik."
@@ -4738,7 +4768,7 @@
     "message": "Kikapcsolt kulcskapcsoló"
   },
   "keyConnectorWarning": {
-    "message": "A kulcskiszolgáló beállítása után a szervezet nem térhet vissza a mesterjelszó használatához. Csak akkor folytassa, ha jól ismeri ennek telepítését és kezelését."
+    "message": "A kulcskiszolgáló beállítása után a szervezet nem térhet vissza a mesterjelszó használatához. Csak akkor folytassuk, ha jól ismerjük egy kulcsszerver telepítését és kezelését."
   },
   "migratedKeyConnector": {
     "message": "Áttérve kulcskapcsolóra"
@@ -4772,6 +4802,75 @@
   },
   "freeWithSponsorship": {
     "message": "INGYENES a szponzorációval"
+  },
+  "viewBillingSyncToken": {
+    "message": "A Számlázási szinkron vezérjel megtekintése"
+  },
+  "generateBillingSyncToken": {
+    "message": "Számlázási szinkron vezérjel generálása"
+  },
+  "copyPasteBillingSync": {
+    "message": "Másoljuk ezt a vezérjelet a saját kiszolgálójú szervezet Számlázási szinkron vezérjel beállításaiba."
+  },
+  "billingSyncCanAccess": {
+    "message": "A Számlázási szinkron vezérjel elérheti és szerkesztheti a szervezet előfizetési beállításait."
+  },
+  "manageBillingSync": {
+    "message": "Számlázási szinkron kezelés"
+  },
+  "setUpBillingSync": {
+    "message": "Számlázási szinkron beüzemelés"
+  },
+  "generateToken": {
+    "message": "Vezérjel generálás"
+  },
+  "rotateToken": {
+    "message": "Vezérjel gördülő váltás"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "A folytatáshoz újra be kell üzemelni a számlázási szinkront a saját kiszolgálójú szervezetnél."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "A Számlázási szinkron vezérjel gördülő váltása érvényteleníti ez előző vezérjelet."
+  },
+  "selfHostingTitle": {
+    "message": "Saját kiszolgáló"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "A szervezet saját szerveren történő beüzemeléséhez fel kell tölteni a licensz fájlt. A Free Families előfizetések és a fejlett számlázási képességek támogatásához a saját kiszolgálójú szervezet számára be kell állítani a számlázási szinkronizálást."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "A vezérjel gördülő váltásra került."
+  },
+  "billingSync": {
+    "message": "Számlázási szinkron"
+  },
+  "billingSyncDesc": {
+    "message": "A Számlázási szinkron a Free Familes előfizetési lehetőségeket nyújt a tagoknak a saját kiszolgálójú Bitwarden és a Bitwarden felhőszerver összekapcsolásával."
+  },
+  "billingSyncKeyDesc": {
+    "message": "Egy, a saját felhőszervezet előfizetési beállításaiból származó Számlázási szinkron vezérjel szükséges az űrlapkitöltés befejezéséhez."
+  },
+  "billingSyncKey": {
+    "message": "Számlázási szinkron vezérjel"
+  },
+  "active": {
+    "message": "Bekapcsolva"
+  },
+  "inactive": {
+    "message": "Kikapcsolva"
+  },
+  "sentAwaitingSync": {
+    "message": "Elküldésre került (szinkronizálásra vár)"
+  },
+  "sent": {
+    "message": "Elküldésre került"
+  },
+  "requestRemoved": {
+    "message": "Eltávolításra került (szinkronizálásra vár)"
+  },
+  "requested": {
+    "message": "Lekért"
   },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ mező fentebb figyelmet érdemel.",
@@ -4836,47 +4935,139 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "A hozzáférés megtagadásra került. Nincs jogosultság az oldal megtekintésére."
+  },
+  "masterPassword": {
+    "message": "Mesterjelszó"
+  },
+  "security": {
+    "message": "Biztonság"
+  },
+  "keys": {
+    "message": "Kulcsok"
+  },
+  "billingHistory": {
+    "message": "Számlázási előzmények"
+  },
   "backToReports": {
     "message": "Vissza a jelentésekhez"
   },
+  "organizationPicker": {
+    "message": "Szervezet választó"
+  },
+  "currentOrganization": {
+    "message": "Jelenlegi szervezet",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Fiókbeállítások"
+  },
   "generator": {
-    "message": "Generator"
+    "message": "Generátor"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Mit szeretnénk generálni?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Jelszótípus"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Felhasználónév ismételt generálása"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Felhasználónév generálása"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Felhasználónév típusa"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "További címzési email cím",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Használjuk az email cím szolgáltató alcímzési képességeit."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Összes email cím begyűjtése"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Használjuk a tartomány konfigurált összes befogási bejövő postaládát."
   },
   "random": {
-    "message": "Random"
+    "message": "Véletlen",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Véletlenszerű szó"
   },
   "service": {
-    "message": "Service"
+    "message": "Szolgáltatás"
+  },
+  "unknownCipher": {
+    "message": "Ismeretlen elem, lehet hogy egy másik fiókkal bejelentkezni az elem eléréséhez."
+  },
+  "cannotSponsorSelf": {
+    "message": "Az aktív számlára nem váltható be. Másik email címet kell megadni."
+  },
+  "revokeWhenExpired": {
+    "message": "Lejárat: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "A vezérjel $DAYS$ napja került gördülő váltásra. Frissíteni kell a számlázási szinkron vezérjelet a saját kiszolgálójú szervezet beállításaiban.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "A vezérjel $DAYS$ napja került gördülő váltásra. Frissíteni kell a számlázási szinkron vezérjelet a saját kiszolgálójú szervezet beállításaiban.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Utolsó szinkronizálás",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "A saját üzemeltetésű szponzorálások szinkronizálásra kerültek."
+  },
+  "billingManagedByProvider": {
+    "message": "$PROVIDER$ kezelte",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Forduljon hozzájuk további segítségért",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Továbbított email álnevek"
+  },
+  "forwardedEmailDesc": {
+    "message": "Email álnév generálása külső továbbító szolgáltatással."
+  },
+  "hostname": {
+    "message": "Kiszolglónév",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API hozzáférési vezérjel"
   }
 }

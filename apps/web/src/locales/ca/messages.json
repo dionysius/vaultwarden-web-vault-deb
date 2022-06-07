@@ -421,11 +421,23 @@
     "message": "Copia URI",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Jo"
+  },
   "myVault": {
     "message": "La meua caixa forta"
   },
+  "allVaults": {
+    "message": "Totes les caixes fortes"
+  },
   "vault": {
     "message": "Caixa forta"
+  },
+  "vaults": {
+    "message": "Caixes fortes"
+  },
+  "vaultItems": {
+    "message": "Elements de la caixa forta"
   },
   "moveSelectedToOrg": {
     "message": "Desplaça la selecció a l'organització"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Longitud"
   },
+  "uppercase": {
+    "message": "Majúscula (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Minúscula (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Números (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Caràcters especials (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Nombre de paraules"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Opcions"
   },
-  "optionsDesc": {
-    "message": "Personalitzeu la vostra caixa forta web."
+  "preferences": {
+    "message": "Preferències"
   },
-  "optionsUpdated": {
-    "message": "Opcions actualitzades"
+  "preferencesDesc": {
+    "message": "Personalitzeu la vostra experiència de caixa forta web."
+  },
+  "preferencesUpdated": {
+    "message": "Preferències actualitzades"
   },
   "language": {
     "message": "Idioma"
@@ -1431,13 +1460,14 @@
     "message": "Informes"
   },
   "reportsDesc": {
-    "message": "Identifiqueu i tanqueu els forats de seguretat dels comptes en línia fent clic en els informes següents."
+    "message": "Identifiqueu i tanqueu els forats de seguretat dels comptes en línia fent clic en els informes següents.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
-    "message": "Informe de llocs web no segurs"
+    "message": "Llocs web no segurs"
   },
   "unsecuredWebsitesReportDesc": {
-    "message": "L'ús de llocs web no segurs amb l'esquema http:// pot ser perillós. Si el lloc web ho permet, sempre haureu d'accedir-hi mitjançant l'esquema https:// perquè la vostra connexió estiga xifrada."
+    "message": "Els URL que comencen per http:// no utilitzen el millor xifratge disponible. Canvieu els URI d'inici de sessió d'aquests comptes a https:// per a una navegació més segura."
   },
   "unsecuredWebsitesFound": {
     "message": "S'han trobat llocs web no segurs"
@@ -1455,10 +1485,10 @@
     "message": "Cap element de la vostra caixa forta té URI no segures."
   },
   "inactive2faReport": {
-    "message": "Informe 2FA inactiu"
+    "message": "Inici de sessió inactiu en dos passos"
   },
   "inactive2faReportDesc": {
-    "message": "L'autenticació de dos factors (2FA) és una configuració de seguretat important que ajuda a assegurar els vostres comptes. Si el lloc web ho ofereix, sempre haureu d'activar l'autenticació de dos factors."
+    "message": "L'inici de sessió en dues passes afegeix una capa de protecció als comptes. Activeu l'inici de sessió en dues passes mitjançant Bitwarden Authenticator per a aquests comptes o utilitzeu un mètode alternatiu."
   },
   "inactive2faFound": {
     "message": "S'han trobat registres sense 2FA"
@@ -1479,7 +1509,7 @@
     "message": "Instruccions"
   },
   "exposedPasswordsReport": {
-    "message": "Informe de contrasenyes exposades"
+    "message": "Contrasenyes exposades"
   },
   "exposedPasswordsReportDesc": {
     "message": "Les contrasenyes exposades són claus que s'han descobert en filtracions de dades conegudes que es van fer públiques o que es van vendre a la web fosca per part d'hackers."
@@ -1512,10 +1542,10 @@
     }
   },
   "weakPasswordsReport": {
-    "message": "Informe de contrasenyes poc segures"
+    "message": "Contrasenyes poc segures"
   },
   "weakPasswordsReportDesc": {
-    "message": "Les contrasenyes poc segures poden ser descobertes fàcilment per pirates informàtics amb eines automatitzades que s'utilitzen per trencar contrasenyes. El generador de contrasenyes Bitwarden us pot ajudar a crear contrasenyes fortes."
+    "message": "Els atacants poden endevinar fàcilment les contrasenyes febles. Canvieu aquestes contrasenyes per fortes mitjançant el generador de contrasenyes."
   },
   "weakPasswordsFound": {
     "message": "S'han trobat contrasenyes poc segures"
@@ -1533,10 +1563,10 @@
     "message": "Cap element de la vostra caixa forta té contrasenyes poc segures."
   },
   "reusedPasswordsReport": {
-    "message": "Informe de contrasenyes reutilitzades"
+    "message": "Contrasenyes reutilitzades"
   },
   "reusedPasswordsReportDesc": {
-    "message": "Si un servei que utilitzeu està compromès, la reutilització de la mateixa contrasenya en altres llocs pot permetre als hackers accedir fàcilment a més comptes en línia vostres. Heu d'utilitzar una contrasenya exclusiva per a cada compte o servei."
+    "message": "La reutilització de contrasenyes facilita que els atacants puguin entrar en diversos comptes. Canvieu aquestes contrasenyes perquè cadascuna siga única."
   },
   "reusedPasswordsFound": {
     "message": "S'han trobat contrasenyes reutilitzades"
@@ -4644,8 +4674,8 @@
   "removeSponsorshipSuccess": {
     "message": "S'ha suprimit el patrocini"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "No es pot arribar al connector de claus, torneu-ho a provar més tard."
+  "ssoKeyConnectorError": {
+    "message": "Error del connector de claus: assegureu-vos que el connector de claus està disponible i funcionant correctament."
   },
   "keyConnectorUrl": {
     "message": "URL del connector de claus"
@@ -4773,6 +4803,75 @@
   "freeWithSponsorship": {
     "message": "GRATUÏT amb patrocini"
   },
+  "viewBillingSyncToken": {
+    "message": "Mostra el token de sincronització de facturació"
+  },
+  "generateBillingSyncToken": {
+    "message": "Genera el token de sincronització de facturació"
+  },
+  "copyPasteBillingSync": {
+    "message": "Copieu i enganxeu aquest token a la configuració de sincronització de facturació de la vostra organització autoallotjada."
+  },
+  "billingSyncCanAccess": {
+    "message": "El vostre tokende sincronització de facturació pot accedir i editar la configuració de subscripció d'aquesta organització."
+  },
+  "manageBillingSync": {
+    "message": "Gestiona la sincronització de facturació"
+  },
+  "setUpBillingSync": {
+    "message": "Configura la sincronització de facturació"
+  },
+  "generateToken": {
+    "message": "Genera un token"
+  },
+  "rotateToken": {
+    "message": "Gira el token"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "Si continueu, haureu de tornar a configurar la sincronització de facturació al vostre servidor allotjat."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Girar el token de sincronització de facturació invalidarà el token anterior."
+  },
+  "selfHostingTitle": {
+    "message": "Autoallotjat"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "Per configurar la organització al vostre servidor, haureu de carregar el fitxer de llicència. Per donar suport als plans Free Families i a les capacitats de facturació avançades per a la vostra organització autoallotjada, haureu de configurar la sincronització de facturació."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Token girat."
+  },
+  "billingSync": {
+    "message": "Sincronització de facturació"
+  },
+  "billingSyncDesc": {
+    "message": "La sincronització de facturació ofereix plans familiars gratuïts i capacitats de facturació avançades enllaçant el vostre Bitwarden autoallotjat amb el vostre servidor al núvol de Bitwarden."
+  },
+  "billingSyncKeyDesc": {
+    "message": "Per omplir aquest formulari, cal un token de sincronització de facturació de la configuració de subscripció de la vostra organització al núvol."
+  },
+  "billingSyncKey": {
+    "message": "Token de sincronització de facturació"
+  },
+  "active": {
+    "message": "Actiu"
+  },
+  "inactive": {
+    "message": "Inactiu"
+  },
+  "sentAwaitingSync": {
+    "message": "Enviat (esperant sincronització)"
+  },
+  "sent": {
+    "message": "Enviat"
+  },
+  "requestRemoved": {
+    "message": "Eliminat (esperant sincronització)"
+  },
+  "requested": {
+    "message": "Sol·licitat"
+  },
   "formErrorSummaryPlural": {
     "message": "$COUNT$ camps de dalt necessiten la vostra atenció.",
     "placeholders": {
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Accés denegat. No teniu permís per veure aquesta pàgina."
+  },
+  "masterPassword": {
+    "message": "Contrasenya mestra"
+  },
+  "security": {
+    "message": "Seguretat"
+  },
+  "keys": {
+    "message": "Claus"
+  },
+  "billingHistory": {
+    "message": "Historial de facturació"
+  },
   "backToReports": {
     "message": "Torna als informes"
+  },
+  "organizationPicker": {
+    "message": "Selector d'organització"
+  },
+  "currentOrganization": {
+    "message": "Organització actual",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Configuració del compte"
   },
   "generator": {
     "message": "Generador"
@@ -4862,21 +4986,88 @@
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Utilitzeu les capacitats de subadreçament del vostre proveïdor de correu electrònic."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Captura tot correu electrònic"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Utilitzeu la safata d'entrada global configurada del vostre domini."
   },
   "random": {
-    "message": "Aleatori"
+    "message": "Aleatori",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Paraula aleatòria"
   },
   "service": {
     "message": "Servei"
+  },
+  "unknownCipher": {
+    "message": "Element desconegut, és possible que hàgeu d'iniciar sessió amb un altre compte per accedir a aquest element."
+  },
+  "cannotSponsorSelf": {
+    "message": "No podeu bescanviar pel compte actiu. Introduïu un correu electrònic diferent."
+  },
+  "revokeWhenExpired": {
+    "message": "Caduca el $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "El testimoni es va girar fa $DAYS$ dia. Actualitzeu el token de sincronització de facturació a la configuració de l'organització autoallotjada.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "El testimoni es va girar fa $DAYS$ dies. Actualitzeu el token de sincronització de facturació a la configuració de l'organització autoallotjada.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Última sincronització",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Patrocinis autoallotjats sincronitzats."
+  },
+  "billingManagedByProvider": {
+    "message": "Gestionat per $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Poseu-vos en contacte amb ells per obtindre ajuda",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Àlies de correu electrònic reenviat"
+  },
+  "forwardedEmailDesc": {
+    "message": "Genera un àlies de correu electrònic amb un servei de reenviament extern."
+  },
+  "hostname": {
+    "message": "Nom de l'amfitrió",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token d'accés a l'API"
   }
 }

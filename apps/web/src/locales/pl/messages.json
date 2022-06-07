@@ -233,7 +233,7 @@
     "message": "Sprawdź, czy hasło zostało ujawnione."
   },
   "passwordExposed": {
-    "message": "To hasło znajduje się w $VALUE$ wykradzionej(ych) bazie(ach) danych. Należy je zmienić.",
+    "message": "To hasło znajduje się w wykradzionych bazach danych. Należy je zmienić.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -421,11 +421,23 @@
     "message": "Kopiuj URI",
     "description": "Copy URI to clipboard"
   },
+  "me": {
+    "message": "Ja"
+  },
   "myVault": {
     "message": "Mój sejf"
   },
+  "allVaults": {
+    "message": "Wszystkie sejfy"
+  },
   "vault": {
     "message": "Sejf"
+  },
+  "vaults": {
+    "message": "Sejfy"
+  },
+  "vaultItems": {
+    "message": "Elementy sejfu"
   },
   "moveSelectedToOrg": {
     "message": "Przenieś zaznaczone do organizacji"
@@ -891,6 +903,20 @@
   "length": {
     "message": "Długość"
   },
+  "uppercase": {
+    "message": "Wielkie litery (A-Z)",
+    "description": "Include uppercase letters in the password generator."
+  },
+  "lowercase": {
+    "message": "Małe litery (a-z)",
+    "description": "Include lowercase letters in the password generator."
+  },
+  "numbers": {
+    "message": "Cyfry (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Znaki specjalne (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Liczba słów"
   },
@@ -1110,11 +1136,14 @@
   "options": {
     "message": "Opcje"
   },
-  "optionsDesc": {
-    "message": "Spersonalizuj swój sejf."
+  "preferences": {
+    "message": "Ustawienia"
   },
-  "optionsUpdated": {
-    "message": "Opcje zostały zaktualizowane"
+  "preferencesDesc": {
+    "message": "Dostosuj swoje doświadczenia z sejfem internetowym."
+  },
+  "preferencesUpdated": {
+    "message": "Ustawienia zostały zaktualizowane"
   },
   "language": {
     "message": "Język"
@@ -1431,7 +1460,8 @@
     "message": "Raporty"
   },
   "reportsDesc": {
-    "message": "Zidentyfikuj i napraw luki bezpieczeństwa na swoich kontach online, klikając raporty poniżej."
+    "message": "Zidentyfikuj i napraw luki bezpieczeństwa na swoich kontach online, klikając raporty poniżej.",
+    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Niezabezpieczone witryny"
@@ -1455,7 +1485,7 @@
     "message": "Brak niezabezpieczonych elementów w Twoim sejfie."
   },
   "inactive2faReport": {
-    "message": "Raport stron z nieaktywnym logowaniem dwustopniowym"
+    "message": "Nieaktywne logowanie dwustopniowe"
   },
   "inactive2faReportDesc": {
     "message": "Logowanie dwustopniowe (2FA) jest ważnym ustawieniem bezpieczeństwa, które pomaga chronić Twoje konto. Jeśli witryna to umożliwia, zawsze powinieneś aktywować logowanie dwustopniowe."
@@ -1515,7 +1545,7 @@
     "message": "Słabe hasła"
   },
   "weakPasswordsReportDesc": {
-    "message": "Słabe hasła mogą być łatwo odgadnięte przez hakerów i zautomatyzowane narzędzia używane do łamania haseł. Generator haseł Bitwarden tworzy silne hasła."
+    "message": "Słabe hasła mogą być łatwo odgadnięte przez hakerów. Zmień te hasła na silniejsze za pomocą generatora hasła."
   },
   "weakPasswordsFound": {
     "message": "Znaleźliśmy słabe hasła"
@@ -1533,7 +1563,7 @@
     "message": "Brak elementów zawierających słabe hasła."
   },
   "reusedPasswordsReport": {
-    "message": "Raport identycznych haseł"
+    "message": "Identyczne hasła"
   },
   "reusedPasswordsReportDesc": {
     "message": "Jeśli używasz tego samego hasła w różnych miejscach, to w przypadku jego ujawnienia w jednej usłudze, hakerzy mogą uzyskać dostęp do wielu Twoich kont. Powinieneś używać unikalnych haseł dla każdego z kont lub usług."
@@ -1563,7 +1593,7 @@
     }
   },
   "dataBreachReport": {
-    "message": "Raport naruszeń danych"
+    "message": "Wyciek danych"
   },
   "breachDesc": {
     "message": "\"Wyciek\" jest zdarzeniem, w którym hakerzy uzyskali nielegalny dostęp do danych serwisu, a następnie je upublicznili. Przejrzyj rodzaj danych, które zostały naruszone (adresy e-mail, hasła, karty kredytowe itp.) i podejmij odpowiednie działania, takie jak zmiana hasła."
@@ -4456,19 +4486,19 @@
     "message": "Dodatkowe / niestandardowe zakresy (oddzielone przecinkami)"
   },
   "additionalUserIdClaimTypes": {
-    "message": "Dodatkowe / niestandardowe elementy Claim identyfikatora użytkownika (oddzielone przecinkami)"
+    "message": "Dodatkowe / niestandardowe elementy Claim identyfikatora użytkownika"
   },
   "additionalEmailClaimTypes": {
-    "message": "Dodatkowe / niestandardowe elementy Claim adresu e-mail (oddzielone przecinkami)"
+    "message": "Elementy Claim adresu e-mail"
   },
   "additionalNameClaimTypes": {
-    "message": "Dodatkowe / niestandardowe elementy Claim nazwy (oddzielone przecinkami)"
+    "message": "Niestandardowe elementy Claim nazwy"
   },
   "acrValues": {
     "message": "Żądane wartości referencyjne klasy kontekstu uwierzytelniania (acr_values)"
   },
   "expectedReturnAcrValue": {
-    "message": "Oczekiwano wartości \"acr\" elementu Claim w odpowiedzi (weryfikacja acr)"
+    "message": "Oczekiwano wartości \"acr\" elementu Claim w odpowiedzi"
   },
   "spEntityId": {
     "message": "Identyfikator jednostki SP"
@@ -4522,7 +4552,7 @@
     "message": "Zezwalaj na wychodzące żądania wylogowania"
   },
   "idpSignAuthenticationRequests": {
-    "message": "Podpisz żądanie autoryzacji"
+    "message": "Podpisz żądania uwierzytelniania"
   },
   "ssoSettingsSaved": {
     "message": "Konfiguracja logowania jednokrotnego została zapisana."
@@ -4644,8 +4674,8 @@
   "removeSponsorshipSuccess": {
     "message": "Sponsoring został usunięty"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nie można nawiązać połączenia z serwerem Key Connector. Spróbuj ponownie później."
+  "ssoKeyConnectorError": {
+    "message": "Błąd serwera Key Connector: upewnij się, że serwer Key Connector jest dostępny i działa poprawnie."
   },
   "keyConnectorUrl": {
     "message": "Adres URL serwera Key Connector"
@@ -4773,8 +4803,77 @@
   "freeWithSponsorship": {
     "message": "DARMOWY ze sponsoringiem"
   },
+  "viewBillingSyncToken": {
+    "message": "Pokaż token synchronizacji płatności"
+  },
+  "generateBillingSyncToken": {
+    "message": "Wygeneruj token synchronizacji płatności"
+  },
+  "copyPasteBillingSync": {
+    "message": "Kopiuj i wklej ten token do ustawień synchronizacji płatności swojej organizacji."
+  },
+  "billingSyncCanAccess": {
+    "message": "Twój token synchronizacji płatności może edytować ustawienia subskrypcji tej organizacji."
+  },
+  "manageBillingSync": {
+    "message": "Zarządzaj synchronizacją płatności"
+  },
+  "setUpBillingSync": {
+    "message": "Skonfiguruj synchronizację płatności"
+  },
+  "generateToken": {
+    "message": "Wygeneruj token"
+  },
+  "rotateToken": {
+    "message": "Zmień token"
+  },
+  "rotateBillingSyncTokenWarning": {
+    "message": "Jeśli będziesz kontynuować, będziesz musiał(a) ponownie skonfigurować synchronizację płatności na swoim własnym serwerze."
+  },
+  "rotateBillingSyncTokenTitle": {
+    "message": "Wymiana tokenu synchronizacji płatności spowoduje unieważnienie poprzedniego tokenu."
+  },
+  "selfHostingTitle": {
+    "message": "Własny hosting"
+  },
+  "selfHostingEnterpriseOrganizationSectionCopy": {
+    "message": "Aby skonfigurować swoją organizację na własnym serwerze, musisz przesłać plik licencyjny. Aby wesprzeć darmowe plany rodzinne i zaawansowane możliwości rozliczeniowe dla własnej organizacji, musisz skonfigurować synchronizację płatności."
+  },
+  "billingSyncApiKeyRotated": {
+    "message": "Token został zmieniony."
+  },
+  "billingSync": {
+    "message": "Synchronizacja płatności"
+  },
+  "billingSyncDesc": {
+    "message": "Synchronizacja płatności zapewnia darmowe plany rodzinne dla członków i zaawansowane możliwości rozliczeniowe, łącząc Twój własny hostowany Bitwarden z serwerem w chmurze Bitwarden."
+  },
+  "billingSyncKeyDesc": {
+    "message": "Token synchronizacji płatności z ustawieniami subskrypcji Twojej organizacji w chmurze jest wymagany do wypełnienia tego formularza."
+  },
+  "billingSyncKey": {
+    "message": "Token synchronizacji płatności"
+  },
+  "active": {
+    "message": "Aktywna"
+  },
+  "inactive": {
+    "message": "Nieaktywna"
+  },
+  "sentAwaitingSync": {
+    "message": "Wysłano (oczekiwanie na synchronizację)"
+  },
+  "sent": {
+    "message": "Wysłano"
+  },
+  "requestRemoved": {
+    "message": "Usunięto (oczekiwanie na synchronizację)"
+  },
+  "requested": {
+    "message": "Zażądano"
+  },
   "formErrorSummaryPlural": {
-    "message": "$COUNT$ pól powyżej wymaga Twojej uwagi.",
+    "message": "Pola powyżej wymagają Twojej uwagi.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4783,7 +4882,7 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 pole powyżej wymaga Twojej uwagi."
+    "message": "Pole powyżej wymaga Twojej uwagi."
   },
   "fieldRequiredError": {
     "message": "Pole $FIELDNAME$ jest wymagane.",
@@ -4836,8 +4935,33 @@
       }
     }
   },
+  "accessDenied": {
+    "message": "Odmowa dostępu. Nie masz uprawnień do przeglądania tej strony."
+  },
+  "masterPassword": {
+    "message": "Hasło główne"
+  },
+  "security": {
+    "message": "Zabezpieczenia"
+  },
+  "keys": {
+    "message": "Klucze"
+  },
+  "billingHistory": {
+    "message": "Historia płatności"
+  },
   "backToReports": {
     "message": "Powrót do raportów"
+  },
+  "organizationPicker": {
+    "message": "Wybór organizacji"
+  },
+  "currentOrganization": {
+    "message": "Obecna organizacja",
+    "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
+  },
+  "accountSettings": {
+    "message": "Ustawienia konta"
   },
   "generator": {
     "message": "Generator"
@@ -4871,12 +4995,79 @@
     "message": "Użyj skonfigurowanej skrzynki catch-all w swojej domenie."
   },
   "random": {
-    "message": "Losowo"
+    "message": "Losowa",
+    "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
     "message": "Losowe słowo"
   },
   "service": {
     "message": "Usługa"
+  },
+  "unknownCipher": {
+    "message": "Nieznany element, być może będziesz musiał zalogować się na inne konto, aby uzyskać dostęp do tego elementu."
+  },
+  "cannotSponsorSelf": {
+    "message": "Nie możesz zrealizować dla aktywnego konta. Wprowadź inny adres e-mail."
+  },
+  "revokeWhenExpired": {
+    "message": "Wygasa $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "12/31/2020"
+      }
+    }
+  },
+  "awaitingSyncSingular": {
+    "message": "Token został zmieniony $DAYS$ dzień temu. Zaktualizuj token synchronizacji płatności w ustawieniach swojej organizacji.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "awaitingSyncPlural": {
+    "message": "Token został zmieniony $DAYS$ dni temu. Zaktualizuj token synchronizacji płatności w ustawieniach swojej organizacji.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "lastSync": {
+    "message": "Ostatnia synchronizacja",
+    "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+  },
+  "sponsorshipsSynced": {
+    "message": "Self-hosted sponsorships synced."
+  },
+  "billingManagedByProvider": {
+    "message": "Zarządzane przez $PROVIDER$",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Managed Services Company"
+      }
+    }
+  },
+  "billingContactProviderForAssistance": {
+    "message": "Skontaktuj się z nimi w celu uzyskania dalszej pomocy",
+    "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
+  },
+  "forwardedEmail": {
+    "message": "Alias przekazywanego e-maila"
+  },
+  "forwardedEmailDesc": {
+    "message": "Wygeneruj alias adresu e-mail z zewnętrznej usługi przekazywania."
+  },
+  "hostname": {
+    "message": "Nazwa hosta",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token dostępu API"
   }
 }
