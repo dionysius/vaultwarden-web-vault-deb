@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-20.04
     outputs:
       release-version: ${{ steps.version.outputs.version }}
+      release-channel: ${{ steps.release-channel.outputs.channel }}
       branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
@@ -47,6 +48,23 @@ jobs:
           file: apps/desktop/src/package.json
           monorepo: true
           monorepo-project: desktop
+
+      - name: Get Version Channel
+        id: release-channel
+        run: |
+          case "${{ steps.version.outputs.version }}" in
+            *"alpha"*)
+              echo "::set-output name=channel::alpha"
+              echo "[!] We do not yet support 'alpha'"
+              exit 1
+              ;;
+            *"beta"*)
+              echo "::set-output name=channel::beta"
+              ;;
+            *)
+              echo "::set-output name=channel::latest"
+              ;;
+          esac
 
       - name: Get branch name
         id: branch
@@ -95,8 +113,10 @@ jobs:
 
       - name: Create release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09  # v2.8.5
+        if: ${{ steps.release-channel.outputs.channel }} == "latest"
         env:
           PKG_VERSION: ${{ steps.version.outputs.version }}
+          RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
         with:
           artifacts: "apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-amd64.deb,
             apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x86_64.rpm,
@@ -118,13 +138,17 @@ jobs:
             apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal-mac.zip,
             apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
             apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive"
+            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive,
+            apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}.yml,
+            apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}-linux.yml,
+            apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}-mac.yml"
           commit: ${{ github.sha }}
           tag: desktop-v${{ env.PKG_VERSION }}
           name: Desktop v${{ env.PKG_VERSION }}
           body: "<insert release notes here>"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
+
 
   snap:
     name: Deploy Snap

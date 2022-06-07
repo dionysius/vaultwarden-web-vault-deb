@@ -9,6 +9,7 @@
   "asarUnpack": ["**/*.node"],
   "files": ["**/*", "!**/node_modules/@bitwarden/desktop-native/**/*"],
   "electronVersion": "16.2.7",
+  "generateUpdatesFilesForAllChannels": true,
   "publish": {
     "provider": "generic",
     "url": "https://artifacts.bitwarden.com/desktop"

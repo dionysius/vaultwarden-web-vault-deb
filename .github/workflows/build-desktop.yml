@@ -64,6 +64,7 @@ jobs:
     runs-on: ubuntu-20.04
     outputs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
+      release_channel: ${{ steps.release-channel.outputs.channel }}
       build_number: ${{ steps.increment-version.outputs.build_number }}
       rc_branch_exists: ${{ steps.branch-check.outputs.rc_branch_exists }}
       hotfix_branch_exists: ${{ steps.branch-check.outputs.hotfix_branch_exists }}
@@ -86,6 +87,23 @@ jobs:
           BUILD_NUMBER=$(expr 3000 + $GITHUB_RUN_NUMBER)
           echo "Setting build number to $BUILD_NUMBER"
           echo "::set-output name=build_number::$BUILD_NUMBER"
+
+      - name: Get Version Channel
+        id: release-channel
+        run: |
+          case "${{ steps.retrieve-version.outputs.package_version }}" in
+            *"alpha"*)
+              echo "::set-output name=channel::alpha"
+              echo "[!] We do not yet support 'alpha'"
+              exit 1
+              ;;
+            *"beta"*)
+              echo "::set-output name=channel::beta"
+              ;;
+            *)
+              echo "::set-output name=channel::latest"
+              ;;
+          esac
 
       - name: Check if special branches exist
         id: branch-check
@@ -188,11 +206,11 @@ jobs:
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           if-no-files-found: error
 
-      - name: Upload latest auto-update artifact
+      - name: Upload auto-update artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: latest-linux.yml
-          path: apps/desktop/dist/latest-linux.yml
+          name: ${{ needs.setup.outputs.release_channel }}-linux.yml
+          path: apps/desktop/dist/${{ needs.setup.outputs.release_channel }}-linux.yml
           if-no-files-found: error
 
 
@@ -373,11 +391,11 @@ jobs:
           path: apps/desktop/dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
-      - name: Upload latest auto-update artifact
+      - name: Upload auto-update artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: latest.yml
-          path: apps/desktop/dist/nsis-web/latest.yml
+          name: ${{ needs.setup.outputs.release_channel }}.yml
+          path: apps/desktop/dist/nsis-web/${{ needs.setup.outputs.release_channel }}.yml
           if-no-files-found: error
 
 
@@ -704,11 +722,11 @@ jobs:
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           if-no-files-found: error
 
-      - name: Upload latest auto-update artifact
+      - name: Upload auto-update artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: latest-mac.yml
-          path: apps/desktop/dist/latest-mac.yml
+          name: ${{ needs.setup.outputs.release_channel }}-mac.yml
+          path: apps/desktop/dist/${{ needs.setup.outputs.release_channel }}-mac.yml
           if-no-files-found: error
 
 
