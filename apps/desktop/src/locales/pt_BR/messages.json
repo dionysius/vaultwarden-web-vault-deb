@@ -400,6 +400,18 @@
   "length": {
     "message": "Comprimento"
   },
+  "uppercase": {
+    "message": "Maiúsculas (A-Z)"
+  },
+  "lowercase": {
+    "message": "Minúsculas (a-z)"
+  },
+  "numbers": {
+    "message": "Números (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Caracteres Especiais (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Número de Palavras"
   },
@@ -973,7 +985,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Procurar Por Atualizações"
+    "message": "Verificar por atualizações"
   },
   "version": {
     "message": "Versão $VERSION_NUM$",
@@ -985,7 +997,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Reiniciar Para Atualizar"
+    "message": "Reiniciar para Atualizar"
   },
   "restartToUpdateDesc": {
     "message": "A versão $VERSION_NUM$ está pronta para ser instalada. Você deve reiniciar o Bitwarden para completar a instalação. Você quer reiniciar e atualizar agora?",
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "A integração do navegador é usada para biometria no navegador."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Integração com o navegador não suportada"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Infelizmente, por ora, a integração do navegador só é suportada na versão da Mac App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Integração com o navegador não suportada"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Infelizmente, a integração do navegador não é suportada na versão da Microsoft Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Exigir verificação para integração com o navegador"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Contagem Máxima de Acessos"
+    "message": "Contagem Máxima de Acessos",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Se atribuído, usuários não poderão mais acessar este Send assim que o número máximo de acessos for atingido.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Você saiu da organização."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Não foi possível acessar o conector de chave, tente novamente mais tarde."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
     "message": "Bloquear Todos os Cofres"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Bloqueado"
+  },
+  "unlocked": {
+    "message": "Desbloqueado"
+  },
   "generator": {
     "message": "Generator"
   },
@@ -1859,7 +1878,8 @@
     "message": "Username Type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Plus Addressed Email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Service"
+  },
+  "allVaults": {
+    "message": "All Vaults"
+  },
+  "searchOrganization": {
+    "message": "Search Organization"
+  },
+  "searchMyVault": {
+    "message": "Search My Vault"
+  },
+  "forwardedEmail": {
+    "message": "Alias de E-mail Encaminhado"
+  },
+  "forwardedEmailDesc": {
+    "message": "Gere um alias de e-mail com um serviço externo de encaminhamento."
+  },
+  "hostname": {
+    "message": "Nome do host",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
   }
 }

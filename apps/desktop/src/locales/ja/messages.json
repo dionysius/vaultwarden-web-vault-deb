@@ -400,6 +400,18 @@
   "length": {
     "message": "長さ"
   },
+  "uppercase": {
+    "message": "大文字（A-Z）"
+  },
+  "lowercase": {
+    "message": "小文字（a-z）"
+  },
+  "numbers": {
+    "message": "数字 (0～9)"
+  },
+  "specialCharacters": {
+    "message": "特殊文字（!@#$%^&*)"
+  },
   "numWords": {
     "message": "単語数"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "ブラウザでの生体認証のためにブラウザ統合を使用します。"
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "ブラウザ統合はサポートされていません"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "ブラウザー統合はサポートされていません"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "残念ながら、ブラウザ統合は、Mac App Storeのバージョンでのみサポートされています。"
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "ブラウザ統合に対応していません"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "残念ながらお使いの Microsoft Store のバージョンではブラウザの統合に対応していません。"
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "残念ながら、Linux バージョンではブラウザー統合は現在サポートされていません。"
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "ブラウザ統合には認証を必要とする。"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "最大アクセス数"
+    "message": "最大アクセス数",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "設定されている場合、最大アクセス数に達するとユーザーはこの Send にアクセスできなくなります。",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "組織から脱退しました。"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "キーコネクターに到達できません。後でもう一度お試しください。"
+  "ssoKeyConnectorError": {
+    "message": "キーコネクターエラー: キーコネクターが使用可能で、正常に動作しているか確認してください。"
   },
   "lockAllVaults": {
     "message": "すべての保管庫をロック"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "ロック中"
+  },
+  "unlocked": {
+    "message": "ロック解除済み"
+  },
   "generator": {
     "message": "ジェネレーター"
   },
@@ -1859,7 +1878,8 @@
     "message": "ユーザー名の種類"
   },
   "plusAddressedEmail": {
-    "message": "プラス付きのメールアドレス"
+    "message": "プラス付きのメールアドレス",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "メールプロバイダのエイリアス機能を使用します。"
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "サービス"
+  },
+  "allVaults": {
+    "message": "すべての保管庫"
+  },
+  "searchOrganization": {
+    "message": "組織の検索"
+  },
+  "searchMyVault": {
+    "message": "保管庫を検索"
+  },
+  "forwardedEmail": {
+    "message": "転送されたメールエイリアス"
+  },
+  "forwardedEmailDesc": {
+    "message": "外部転送サービスを使用してメールエイリアスを生成します。"
+  },
+  "hostname": {
+    "message": "ホスト名",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API アクセストークン"
+  },
+  "apiKey": {
+    "message": "API キー"
   }
 }

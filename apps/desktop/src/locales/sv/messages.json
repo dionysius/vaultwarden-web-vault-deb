@@ -370,10 +370,10 @@
     "message": "Är du säker på att du vill skriva över det nuvarande lösenordet?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Ersätt användarnamn"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Är du säker på att du vill ersätta den nuvarande användarnamnet?"
   },
   "noneFolder": {
     "message": "Ingen mapp",
@@ -399,6 +399,18 @@
   },
   "length": {
     "message": "Längd"
+  },
+  "uppercase": {
+    "message": "Versaler (A-Ö)"
+  },
+  "lowercase": {
+    "message": "Gemener (a-ö)"
+  },
+  "numbers": {
+    "message": "Siffror (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Specialtecken (!@#$%^&*)"
   },
   "numWords": {
     "message": "Antal ord"
@@ -743,10 +755,10 @@
     "message": "Lösenordsgenerator"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Kontakta oss"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Få hjälp"
   },
   "fileBugReport": {
     "message": "Skicka en felrapport"
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Webbläsarintegration används för biometri i webbläsaren."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Webbläsarintegration stöds inte"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Tyvärr stöds webbläsarintegration för tillfället endast i versionen från Mac App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Webbläsarintegration stöds inte"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Tyvärr stöds webbläsarintegration för tillfället inte i versionen från Windows Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Kräv verifiering för webbläsarintegration"
@@ -1549,7 +1561,7 @@
     "message": "En organisationspolicy påverkar dina ägarskapsalternativ."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Alla Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
@@ -1559,7 +1571,7 @@
     "message": "Text"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Sök bland Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -1576,18 +1588,19 @@
     "message": "Raderingsdatum"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Denna Send kommer att raderas permanent på angivet datum och klockslag.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Utgångsdatum"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Om detta ställs in kommer åtkomst till denna Skicka att upphöra på angivet datum och tid.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximalt antal åtkomster"
+    "message": "Maximalt antal åtkomster",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Du har lämnat organisationen."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Kunde inte nå key connector, försök igen senare."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
     "message": "Lås alla valv"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Locked"
+  },
+  "unlocked": {
+    "message": "Unlocked"
+  },
   "generator": {
     "message": "Generator"
   },
@@ -1859,7 +1878,8 @@
     "message": "Username Type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Plus Addressed Email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Service"
+  },
+  "allVaults": {
+    "message": "All Vaults"
+  },
+  "searchOrganization": {
+    "message": "Search Organization"
+  },
+  "searchMyVault": {
+    "message": "Search My Vault"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
   }
 }

@@ -400,6 +400,18 @@
   "length": {
     "message": "Lungime"
   },
+  "uppercase": {
+    "message": "Majuscule (A-Z)"
+  },
+  "lowercase": {
+    "message": "Minuscule (a-z)"
+  },
+  "numbers": {
+    "message": "Numere (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Caractere speciale (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Număr de cuvinte"
   },
@@ -775,7 +787,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Accesare seif web"
+    "message": "Deplasare la Seiful Web"
   },
   "getMobileApp": {
     "message": "Obținere aplicație pentru mobil"
@@ -973,7 +985,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Căutare actualizări"
+    "message": "Verificare pentru actualizări…"
   },
   "version": {
     "message": "Versiunea $VERSION_NUM$",
@@ -1408,7 +1420,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Căutare în coșul de reciclare"
+    "message": "Caută în coșul de gunoi"
   },
   "permanentlyDeleteItem": {
     "message": "Ștergere definitivă a articolului"
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Integrarea browserului este folosită pentru biometria în browser."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "Integrarea browserului nu este acceptată"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Din păcate, integrarea browserului este acceptată numai în versiunea Mac App Store pentru moment."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Integrarea browserului nu este acceptată"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Din păcate, integrarea browserului nu este acceptată în prezent în versiunea Windows Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Din păcate, integrarea browserului nu este acceptată în prezent în versiunea Linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Necesită verificare pentru integrarea browserului"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Număr maxim de accesări"
+    "message": "Număr maxim de accesări",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Dacă este configurat, utilizatorii nu vor mai putea accesa acest Send când a fost atins numărul maxim de accesări.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Ați părăsit organizația."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nu se poate accesa Conectorul Cheie, vă rugăm să încercați din nou mai târziu."
+  "ssoKeyConnectorError": {
+    "message": "Eroare de Conector Cheie: asigurați-vă că aveți conectorul Cheie disponibil și că funcționează corect."
   },
   "lockAllVaults": {
     "message": "Blocare toate seifurile"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Blocat"
+  },
+  "unlocked": {
+    "message": "Deblocat"
+  },
   "generator": {
     "message": "Generator"
   },
@@ -1859,7 +1878,8 @@
     "message": "Tip de nume de utilizator"
   },
   "plusAddressedEmail": {
-    "message": "Plus e-mail adresat"
+    "message": "Plus e-mail adresat",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Utilizați capacitățile de subadresare ale furnizorului dvs. de e-mail."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Serviciu"
+  },
+  "allVaults": {
+    "message": "Toate seifurile"
+  },
+  "searchOrganization": {
+    "message": "Căutare Organizație"
+  },
+  "searchMyVault": {
+    "message": "Căutare în seiful meu"
+  },
+  "forwardedEmail": {
+    "message": "Alias de e-mail redirecționat"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generați un alias de e-mail cu un serviciu de redirecționare extern."
+  },
+  "hostname": {
+    "message": "Nume gazdă",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token de acces API"
+  },
+  "apiKey": {
+    "message": "Cheie API"
   }
 }

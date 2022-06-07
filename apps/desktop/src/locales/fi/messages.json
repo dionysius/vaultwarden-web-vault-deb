@@ -400,6 +400,18 @@
   "length": {
     "message": "Pituus"
   },
+  "uppercase": {
+    "message": "Isot kirjaimet (A-Z)"
+  },
+  "lowercase": {
+    "message": "Pienet kirjaimet (a-z)"
+  },
+  "numbers": {
+    "message": "Numerot (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Erikoismerkit (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Sanojen määrä"
   },
@@ -973,7 +985,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Tarkista päivitykset"
+    "message": "Tarkista päivitykset…"
   },
   "version": {
     "message": "Versio $VERSION_NUM$",
@@ -1501,28 +1513,28 @@
     "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "enableBrowserIntegration": {
-    "message": "Käytä selainintegrointia"
+    "message": "Käytä selainintegraatiota"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Selainintegrointia käytetään selaimessa biometriaa varten."
+    "message": "Selainintegraatiota käytetään selaimessa biometriaa varten."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Selainintegrointia ei tueta"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Selainintegraatiota ei tueta"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Valitettavasti selainintegrointia tukee toistaiseksi vain Mac App Store -versio."
-  },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Selainintegrointia ei tueta"
+    "message": "Valitettavasti selainintegraatiota tukee toistaiseksi vain Mac App Store -versio."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Valitettavasti selainintegrointia ei toistaiseksi tueta sovelluksen Microsoft Store -versiossa."
+    "message": "Valitettavasti selainintegraatiota ei toistaiseksi tueta sovelluksen Microsoft Store -versiossa."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Valitettavasti selainintegraatiota ei toistaiseksi tueta Linux-versiossa."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Vaadi selainintegroinnin vahvistus"
+    "message": "Vaadi selainintegraation vahvistus"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Käytä ylimääräistä tietoturvakerrosta ja vaadi todennus tunnistelausekkeen avulla kun luot linkin työpöytäsi ja selaimesi välille. Kun käytössä, edellyttää käyttäjältä manuaalista todennusta aina yhteyden muodostuessa."
+    "message": "Käytä ylimääräistä tietoturvakerrosta ja vaadi todennus tunnistelausekkeen avulla kun luot linkin työpöydän ja selaimen välille. Kun käytössä, edellyttää käyttäjältä manuaalista todennusta aina yhteyden muodostuessa."
   },
   "approve": {
     "message": "Salli"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Käyttöoikeuksien enimmäismäärä"
+    "message": "Käyttöoikeuksien enimmäismäärä",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Jos määritetty, käyttäjät eivät voi avata Sendiä käyttökertojen enimmäismäärän täytyttyä.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Olet poistunut organisaatiosta."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Avainyhdistäjää ei tavoiteta. Yritä myöhemmin uudelleen."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector -virhe: Varmista, että Key Connector on käytettävissä ja toimii oikein."
   },
   "lockAllVaults": {
     "message": "Lukitse kaikki holvit"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Lukittu"
+  },
+  "unlocked": {
+    "message": "Avattu"
+  },
   "generator": {
     "message": "Generaattori"
   },
@@ -1859,7 +1878,8 @@
     "message": "Käyttäjätunnuksen tyyppi"
   },
   "plusAddressedEmail": {
-    "message": "Plus-osoitteinen sähköposti"
+    "message": "Plus-osoitteinen sähköposti",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Käytä sähköpostipalvelusi aliosoiteominaisuuksia."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Palvelu"
+  },
+  "allVaults": {
+    "message": "Kaikki holvit"
+  },
+  "searchOrganization": {
+    "message": "Hae organisaatiosta"
+  },
+  "searchMyVault": {
+    "message": "Hae omasta holvista"
+  },
+  "forwardedEmail": {
+    "message": "Välitykseen käytetty sähköpostialias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."
+  },
+  "hostname": {
+    "message": "Osoite",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-käyttötunniste"
+  },
+  "apiKey": {
+    "message": "API-avain"
   }
 }

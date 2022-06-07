@@ -400,6 +400,18 @@
   "length": {
     "message": "طول"
   },
+  "uppercase": {
+    "message": "حروف بزرگ (A-Z)"
+  },
+  "lowercase": {
+    "message": "حروف کوچک (a-z)"
+  },
+  "numbers": {
+    "message": "اعداد (‪0-9‬)"
+  },
+  "specialCharacters": {
+    "message": "نویسه‌های ویژه (!@#$%^&*)"
+  },
   "numWords": {
     "message": "تعداد کلمات"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "یکپارچه سازی مرورگر برای بیومتریک در مرورگر استفاده می شود."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "ادغام مرورگر پشتیبانی نمی شود"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "متأسفانه در حال حاضر ادغام مرورگر فقط در نسخه Mac App Store پشتیبانی می شود."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "ادغام مرورگر پشتیبانی نمی شود"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "متأسفانه در حال حاضر ادغام مرورگر در نسخه فروشگاه ویندوز پشتیبانی نمی شود."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "برای ادغام مرورگر نیاز به تأیید است"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "تعداد دسترسی حداکثر"
+    "message": "تعداد دسترسی حداکثر",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "در صورت تنظیم، با رسیدن به حداکثر تعداد دسترسی، کاربران دیگر نمی توانند به این ارسال دسترسی پیدا کنند.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "شما از سازمان ها خارج شده اید."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "دسترسی به رابط کلید ممکن نیست، بعداً دوباره امتحان کنید."
+  "ssoKeyConnectorError": {
+    "message": "خطای Key Connector: مطمئن شوید که Key Connector در دسترس است و به درستی کار می کند."
   },
   "lockAllVaults": {
     "message": "قفل کردن تمام گاوصندوق ها"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "قفل شده"
+  },
+  "unlocked": {
+    "message": "باز شده"
+  },
   "generator": {
     "message": "تولید کننده"
   },
@@ -1859,7 +1878,8 @@
     "message": "نوع نام کاربری"
   },
   "plusAddressedEmail": {
-    "message": "به علاوه ایمیل آدرس داده شده"
+    "message": "به علاوه ایمیل آدرس داده شده",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "از قابلیت های آدرس دهی فرعی ارائه دهنده ایمیل خود استفاده کنید."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "خدمت"
+  },
+  "allVaults": {
+    "message": "تمام گاو‌صندوق‌ها"
+  },
+  "searchOrganization": {
+    "message": "سازماندهی جستجو"
+  },
+  "searchMyVault": {
+    "message": "جستجوی گاوصندوق من"
+  },
+  "forwardedEmail": {
+    "message": "نام مستعار ایمیل فوروارد شده"
+  },
+  "forwardedEmailDesc": {
+    "message": "یک نام مستعار ایمیل با یک سرویس فروارد خارجی ایجاد کنید."
+  },
+  "hostname": {
+    "message": "نام میزبان",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "توکن دسترسی API"
+  },
+  "apiKey": {
+    "message": "کلید API"
   }
 }

@@ -370,10 +370,10 @@
     "message": "Sigurno želiš prebrisati trenutnu lozinku?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Prebriši korisničko ime"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Sigurno želiš prebrisati trenutno korisničko ime?"
   },
   "noneFolder": {
     "message": "Nema mape",
@@ -399,6 +399,18 @@
   },
   "length": {
     "message": "Duljina"
+  },
+  "uppercase": {
+    "message": "Velika slova (A-Z)"
+  },
+  "lowercase": {
+    "message": "Mala slova (a-z)"
+  },
+  "numbers": {
+    "message": "Brojevi (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Posebni znakovi (!@#$%^&*)"
   },
   "numWords": {
     "message": "Broj riječi"
@@ -743,10 +755,10 @@
     "message": "Generator lozinki"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Kontaktiraj nas"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Potraži pomoć"
   },
   "fileBugReport": {
     "message": "Podnesi izvješće o grešci"
@@ -1198,7 +1210,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Naziv domene",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Integracija s preglednikom koristi se za biometriju u pregledniku."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Integracija s preglednikom nije omogućena"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Nažalost, za sada je integracija s preglednikom podržana samo u Mac App Store verziji aplikacije."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Integracija s preglednikom nije podržana"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Nažalost, integracija s preglednikom nije podržana u Windows Store verziji aplikacije."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Traži verifikaciju za integraciju s preglednikom"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Ograničeni broj pristupanja"
+    "message": "Ograničeni broj pristupanja",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Ako je određen, ovom Sendu će se moći pristupiti samo ograničeni broj puta.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Organizacija napuštena."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nije moguće spajanje s konektorom za ključ, pokušaj kasnije."
+  "ssoKeyConnectorError": {
+    "message": "Pogreška konektora ključa: provjerite je li konektor ključa dostupan i radi ispravno."
   },
   "lockAllVaults": {
     "message": "Zaključaj sve trezore"
@@ -1823,16 +1836,16 @@
     "message": "Promijeni račun"
   },
   "options": {
-    "message": "Options"
+    "message": "Opcije"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Tvoja sesija je istekla. Vrati se i pokušaj s ponovnom prijavom."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Izvoz osobnog trezora"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Izvest će se samo stavke osobnog trezora povezanog s $EMAIL$. Stavke organizacijskog trezora neće biti uključene.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1840,46 +1853,78 @@
       }
     }
   },
+  "locked": {
+    "message": "Zaključano"
+  },
+  "unlocked": {
+    "message": "Otključano"
+  },
   "generator": {
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Što želiš kreirati?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Tip lozinke"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Ponovno kreiraj korisničko ime"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Kreiraj korisničko ime"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tip korisničkog imena"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Plus adresa e-pošte",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Koristi mogućnosti podadresiranja svog davatelja e-pošte."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Dohvati sve (Catch-all) e-pošta"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Koristi konfigurirani Catch-all sandučić svoje domene."
   },
   "random": {
-    "message": "Random"
+    "message": "Nasumično"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Nasumična riječ"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Naziv web mjesta"
   },
   "service": {
-    "message": "Service"
+    "message": "Usluga"
+  },
+  "allVaults": {
+    "message": "Svi trezori"
+  },
+  "searchOrganization": {
+    "message": "Pretraži organizaciju"
+  },
+  "searchMyVault": {
+    "message": "Pretraži moj trezor"
+  },
+  "forwardedEmail": {
+    "message": "Proslijeđeni pseudonim e-pošte"
+  },
+  "forwardedEmailDesc": {
+    "message": "Kreiraj pseudonim e-pošte s vanjskom uslugom prosljeđivanja."
+  },
+  "hostname": {
+    "message": "Naziv hosta",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API pristupni token"
+  },
+  "apiKey": {
+    "message": "API ključ"
   }
 }

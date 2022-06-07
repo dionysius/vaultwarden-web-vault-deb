@@ -400,6 +400,18 @@
   "length": {
     "message": "Длина"
   },
+  "uppercase": {
+    "message": "Прописные буквы (A-Z)"
+  },
+  "lowercase": {
+    "message": "Строчные буквы (a-z)"
+  },
+  "numbers": {
+    "message": "Цифры (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Специальные символы (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Количество слов"
   },
@@ -973,7 +985,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Проверка наличия обновлений"
+    "message": "Проверка обновлений…"
   },
   "version": {
     "message": "Версия $VERSION_NUM$",
@@ -985,7 +997,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Перезапуск для обновления"
+    "message": "Перезапустить для обновления"
   },
   "restartToUpdateDesc": {
     "message": "Версия $VERSION_NUM$ готова к установке. Для завершения установки необходимо перезапустить Bitwarden. Сделать это сейчас?",
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Интеграция с браузером используется для биометрии в браузере."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "Интеграция с браузером не поддерживается"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "К сожалению, интеграция браузера пока поддерживается только в версии Mac App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Интеграция с браузером не поддерживается"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "К сожалению, интеграция с браузером на текущий момент не поддерживается в версии из магазина Windows."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "К сожалению, интеграция с браузером на текущий момент не поддерживается в версии для linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Требовать верификацию для интеграции с браузером"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Максимум обращений"
+    "message": "Максимум обращений",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Если задано, пользователи больше не смогут получить доступ к этой Send, как только будет достигнуто максимальное количество обращений.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Вы покинули организацию."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Не удается подключиться к соединителю ключей, повторите попытку позже."
+  "ssoKeyConnectorError": {
+    "message": "Ошибка соединителя ключей: убедитесь, что он доступен и работает корректно."
   },
   "lockAllVaults": {
     "message": "Заблокировать все хранилища"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Заблокировано"
+  },
+  "unlocked": {
+    "message": "Разблокировано"
+  },
   "generator": {
     "message": "Генератор"
   },
@@ -1859,7 +1878,8 @@
     "message": "Тип имени пользователя"
   },
   "plusAddressedEmail": {
-    "message": "Плюс-адресованные email"
+    "message": "Плюс-адресованные email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Использовать возможности суб-адресации вашего провайдера электронной почты."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Служба"
+  },
+  "allVaults": {
+    "message": "Все хранилища"
+  },
+  "searchOrganization": {
+    "message": "Поиск организации"
+  },
+  "searchMyVault": {
+    "message": "Поиск в моем хранилище"
+  },
+  "forwardedEmail": {
+    "message": "Псевдоним электронной почты для пересылки"
+  },
+  "forwardedEmailDesc": {
+    "message": "Создать псевдоним электронной почты для внешней службы пересылки."
+  },
+  "hostname": {
+    "message": "Имя хоста",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Токен доступа к API"
+  },
+  "apiKey": {
+    "message": "Ключ API"
   }
 }

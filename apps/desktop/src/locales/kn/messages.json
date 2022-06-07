@@ -400,6 +400,18 @@
   "length": {
     "message": "ಉದ್ದ"
   },
+  "uppercase": {
+    "message": "Uppercase (A-Z)"
+  },
+  "lowercase": {
+    "message": "Lowercase (a-z)"
+  },
+  "numbers": {
+    "message": "Numbers (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Special Characters (!@#$%^&*)"
+  },
   "numWords": {
     "message": "ಪದಗಳ ಸಂಖ್ಯೆ"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "ಬ್ರೌಸರ್ನಲ್ಲಿ ಬಯೋಮೆಟ್ರಿಕ್ಸ್ಗಾಗಿ ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "ದುರದೃಷ್ಟವಶಾತ್ ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಇದೀಗ ಮ್ಯಾಕ್ ಆಪ್ ಸ್ಟೋರ್ ಆವೃತ್ತಿಯಲ್ಲಿ ಮಾತ್ರ ಬೆಂಬಲಿಸಲಾಗುತ್ತದೆ."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "ದುರದೃಷ್ಟವಶಾತ್ ವಿಂಡೋಸ್ ಸ್ಟೋರ್ ಆವೃತ್ತಿಯಲ್ಲಿ ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಪ್ರಸ್ತುತ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣಕ್ಕಾಗಿ ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "ಗರಿಷ್ಠ ಪ್ರವೇಶ ಎಣಿಕೆ"
+    "message": "ಗರಿಷ್ಠ ಪ್ರವೇಶ ಎಣಿಕೆ",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "ಹೊಂದಿಸಿದ್ದರೆ, ಗರಿಷ್ಠ ಪ್ರವೇಶ ಎಣಿಕೆ ತಲುಪಿದ ನಂತರ ಬಳಕೆದಾರರಿಗೆ ಈ ಕಳುಹಿಸುವಿಕೆಯನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "You have left the organization."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
     "message": "Lock All Vaults"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Locked"
+  },
+  "unlocked": {
+    "message": "Unlocked"
+  },
   "generator": {
     "message": "Generator"
   },
@@ -1859,7 +1878,8 @@
     "message": "Username Type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Plus Addressed Email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Service"
+  },
+  "allVaults": {
+    "message": "All Vaults"
+  },
+  "searchOrganization": {
+    "message": "Search Organization"
+  },
+  "searchMyVault": {
+    "message": "Search My Vault"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
   }
 }

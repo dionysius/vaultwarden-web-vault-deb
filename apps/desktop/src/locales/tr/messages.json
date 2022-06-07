@@ -400,6 +400,18 @@
   "length": {
     "message": "Uzunluk"
   },
+  "uppercase": {
+    "message": "Büyük harf (A-Z)"
+  },
+  "lowercase": {
+    "message": "Küçük harf (a-z)"
+  },
+  "numbers": {
+    "message": "Rakamlar (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Özel karakterler (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Kelime sayısı"
   },
@@ -743,10 +755,10 @@
     "message": "Parola oluşturucu"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Bize Ulaşın"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Yardım Alın"
   },
   "fileBugReport": {
     "message": "Hata bildirin"
@@ -775,7 +787,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Web kasasına git"
+    "message": "Web Kasasına Git"
   },
   "getMobileApp": {
     "message": "Mobil uygulamayı indir"
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Tarayıcı entegrasyonu tarayıcıda biyometrik doğrulama için kullanılır."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "Tarayıcı entegrasyonu desteklenmiyor"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Ne yazık ki tarayıcı entegrasyonu şu anda sadece Mac App Store sürümünde destekleniyor."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Tarayıcı entegrasyonu desteklenmiyor"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Maalesef tarayıcı entegrasyonu şimdilik Windows Store sürümünde desteklenmiyor."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Maalesef tarayıcı entegrasyonu şimdilik Linux sürümünde desteklenmiyor."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Tarayıcı entegrasyonu için doğrulamayı zorunlu kıl"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maksimum erişim sayısı"
+    "message": "Maksimum erişim sayısı",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Bunu ayarlarsanız maksimum erişim sayısına ulaşıldıktan sonra bu Send'e erişilemeyecektir.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Kuruluştan ayrıldınız."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Anahtar bağlayıcısına ulaşılamıyor, daha sonra yeniden deneyin."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
     "message": "Tüm kasaları kilitle"
@@ -1829,16 +1842,22 @@
     "message": "Oturumunuzun süresi doldu. Lütfen geri dönüp yeniden giriş yapın."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Kişisel Kasanızı Dışarı Aktarın"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Sadece $EMAIL$ ile ilişkili kişisel kasa ögeleri dışarı aktarılacak. Kuruluş kasasındaki ögeler dahil edilmeyecek.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
       }
     }
+  },
+  "locked": {
+    "message": "Kilitli"
+  },
+  "unlocked": {
+    "message": "Kilitli değil"
   },
   "generator": {
     "message": "Oluşturucu"
@@ -1859,7 +1878,8 @@
     "message": "Kullanıcı adı türü"
   },
   "plusAddressedEmail": {
-    "message": "Artı adresli e-posta"
+    "message": "Artı adresli e-posta",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "E-posta sağlayıcınızın alt adres özelliklerini kullanın."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Servis"
+  },
+  "allVaults": {
+    "message": "Tüm kasalar"
+  },
+  "searchOrganization": {
+    "message": "Kuruluşta ara"
+  },
+  "searchMyVault": {
+    "message": "Kasamda ara"
+  },
+  "forwardedEmail": {
+    "message": "İletilen e-posta maskesi"
+  },
+  "forwardedEmailDesc": {
+    "message": "Harici bir yönlendirme servisiyle e-posta maskesi oluştur."
+  },
+  "hostname": {
+    "message": "Sunucu",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API erişim anahtarı"
+  },
+  "apiKey": {
+    "message": "API anahtarı"
   }
 }

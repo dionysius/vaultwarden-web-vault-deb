@@ -400,6 +400,18 @@
   "length": {
     "message": "Länge"
   },
+  "uppercase": {
+    "message": "Großbuchstaben (A-Z)"
+  },
+  "lowercase": {
+    "message": "Kleinbuchstaben (a-z)"
+  },
+  "numbers": {
+    "message": "Zahlen (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Sonderzeichen (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Anzahl der Wörter"
   },
@@ -411,7 +423,7 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Ziffer hinzufügen"
+    "message": "Zahl hinzufügen"
   },
   "close": {
     "message": "Schließen"
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Die Browser-Integration wird für Biometrie im Browser verwendet."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Browser-Integration wird nicht unterstützt"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Leider wird die Browser-Integration derzeit nur in der Mac App Store Version unterstützt."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser-Integration wird nicht unterstützt"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Leider wird die Browser-Integration derzeit nicht in der Windows Store Version unterstützt."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Überprüfung für Browser-Integration verlangen"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximale Zugriffsanzahl"
+    "message": "Maximale Zugriffsanzahl",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Falls aktiviert, können Benutzer nicht mehr auf dieses Send zugreifen, sobald die maximale Zugriffsanzahl erreicht ist.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Du hast die Organisation verlassen."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Der Key Connector konnte nicht erreicht werden. Versuche es später erneut."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector Fehler: Stelle sicher, dass der Key Connector verfügbar ist und korrekt funktioniert."
   },
   "lockAllVaults": {
     "message": "Alle Tresore sperren"
@@ -1820,7 +1833,7 @@
     }
   },
   "switchAccount": {
-    "message": "Switch to Other Account"
+    "message": "Konto wechseln"
   },
   "options": {
     "message": "Optionen"
@@ -1839,6 +1852,12 @@
         "example": "name@example.com"
       }
     }
+  },
+  "locked": {
+    "message": "Gesperrt"
+  },
+  "unlocked": {
+    "message": "Entsperrt"
   },
   "generator": {
     "message": "Generator"
@@ -1859,7 +1878,8 @@
     "message": "Benutzernamentyp"
   },
   "plusAddressedEmail": {
-    "message": "Mit Plus adressierte E-Mail"
+    "message": "Mit Plus adressierte E-Mail",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Verwende die Unteradressierungsmöglichkeiten deines E-Mail-Providers."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Dienst"
+  },
+  "allVaults": {
+    "message": "Alle Tresore"
+  },
+  "searchOrganization": {
+    "message": "Organisationen durchsuchen"
+  },
+  "searchMyVault": {
+    "message": "Meinen Tresor durchsuchen"
+  },
+  "forwardedEmail": {
+    "message": "Weitergeleitetes E-Mail-Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generiere ein E-Mail-Alias mit einem externen Weiterleitungsdienst."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API-Zugangs-Token"
+  },
+  "apiKey": {
+    "message": "API-Schlüssel"
   }
 }

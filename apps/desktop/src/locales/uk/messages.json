@@ -400,6 +400,18 @@
   "length": {
     "message": "Довжина"
   },
+  "uppercase": {
+    "message": "Верхній регістр (A-Z)"
+  },
+  "lowercase": {
+    "message": "Нижній регістр (a-z)"
+  },
+  "numbers": {
+    "message": "Числа (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Спеціальні символи (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Кількість слів"
   },
@@ -427,16 +439,16 @@
     "message": "Уникати неоднозначних символів"
   },
   "searchCollection": {
-    "message": "Пошук в збірках"
+    "message": "Шукати в збірці"
   },
   "searchFolder": {
-    "message": "Пошук в теці"
+    "message": "Шукати в теці"
   },
   "searchFavorites": {
-    "message": "Пошук в обраному"
+    "message": "Шукати в обраному"
   },
   "searchType": {
-    "message": "Пошук за типом",
+    "message": "Шукати за типом",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -973,7 +985,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Перевірити оновлення"
+    "message": "Перевірити оновлення…"
   },
   "version": {
     "message": "Версія $VERSION_NUM$",
@@ -1408,7 +1420,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Пошук у смітнику"
+    "message": "Шукати в смітнику"
   },
   "permanentlyDeleteItem": {
     "message": "Остаточно видалити запис"
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Інтеграція з браузером використовується для біометрії в браузері."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Інтеграція з браузером не підтримується"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "На жаль, зараз інтеграція з браузером підтримується лише у версії для Mac з App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Інтеграція з браузером не підтримується"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "На жаль, зараз інтеграція з браузером не підтримується у версії з Windows Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Вимагати підтвердження для інтеграції з браузером"
@@ -1559,7 +1571,7 @@
     "message": "Текст"
   },
   "searchSends": {
-    "message": "Пошук відправлень",
+    "message": "Шукати відправлення",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Максимальна кількість доступів"
+    "message": "Максимальна кількість доступів",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Якщо встановлено, користувачі більше не зможуть отримати доступ до цього відправлення після досягнення максимальної кількості доступів.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Ви покинули організацію."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Не вдається отримати доступ до Key Connector. Спробуйте знову пізніше."
+  "ssoKeyConnectorError": {
+    "message": "Помилка Key Connector: переконайтеся, що Key Connector доступний та працює правильно."
   },
   "lockAllVaults": {
     "message": "Заблокувати всі сховища"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Заблоковано"
+  },
+  "unlocked": {
+    "message": "Розблоковано"
+  },
   "generator": {
     "message": "Генератор"
   },
@@ -1859,7 +1878,8 @@
     "message": "Тип імені користувача"
   },
   "plusAddressedEmail": {
-    "message": "Плюс адреса електронної пошти"
+    "message": "Плюс адреса електронної пошти",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Використовуйте розширені можливості адрес вашого постачальника електронної пошти."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Послуга"
+  },
+  "allVaults": {
+    "message": "Усі сховища"
+  },
+  "searchOrganization": {
+    "message": "Шукати в організації"
+  },
+  "searchMyVault": {
+    "message": "Шукати у сховищі"
+  },
+  "forwardedEmail": {
+    "message": "Псевдонім е-пошти для пересилання"
+  },
+  "forwardedEmailDesc": {
+    "message": "Згенеруйте псевдонім е-пошти зі стороннім сервісом пересилання."
+  },
+  "hostname": {
+    "message": "Ім'я вузла",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Токен доступу до АРІ"
+  },
+  "apiKey": {
+    "message": "Ключ API"
   }
 }

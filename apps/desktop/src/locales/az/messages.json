@@ -400,6 +400,18 @@
   "length": {
     "message": "Uzunluq"
   },
+  "uppercase": {
+    "message": "Böyük hərf (A-Z)"
+  },
+  "lowercase": {
+    "message": "Kiçik hərf (a-z)"
+  },
+  "numbers": {
+    "message": "Rəqəmlər (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Xüsusi simvollar (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Söz sayı"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Səyyah inteqrasiyası səyyahda biometrik təsdiqləmə üçün istifadə olunur."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Səyyah inteqrasiyası dəstəklənmir"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Təəssüf ki, səyyah inteqrasiyası yalnız Mac App Store versiyasında dəstəklənir."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Səyyah inteqrasiyası dəstəklənmir"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Təəssüf ki, səyyah inteqrasiyası hazır Windows Store versiyasında dəstəklənmir."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Səyyah inteqrasiyası üçün təsdiqləmə tələb et"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maksimal müraciət sayı"
+    "message": "Maksimal müraciət sayı",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Əgər tənzimlənsə, istifadəçilər maksimal müraciət sayına çatdıqdan sonra bu \"Send\"ə müraciət edə bilməyəcək.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Təşkilatı tərk etdiniz."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Açar bağlayıcı əlçatan deyil, daha sonra yenidən sınayın."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
     "message": "Bütün anbarları kilidlə"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Kilidli"
+  },
+  "unlocked": {
+    "message": "Kilidi açıldı"
+  },
   "generator": {
     "message": "Yaradıcı"
   },
@@ -1859,7 +1878,8 @@
     "message": "İstifadəçi adı növü"
   },
   "plusAddressedEmail": {
-    "message": "Plyus ünvanlı e-poçt"
+    "message": "Plyus ünvanlı e-poçt",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "E-poçt təchizatçınızın alt ünvan özəlliklərini istifadə et."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Xidmət"
+  },
+  "allVaults": {
+    "message": "Bütün anbarlar"
+  },
+  "searchOrganization": {
+    "message": "Təşkilat axtar"
+  },
+  "searchMyVault": {
+    "message": "Anbarlarımı axtar"
+  },
+  "forwardedEmail": {
+    "message": "Yönləndirilən e-poçt ləqəbi"
+  },
+  "forwardedEmailDesc": {
+    "message": "Xarici yönləndirmə xidməti ilə e-poçt ləqəbi yaradın."
+  },
+  "hostname": {
+    "message": "Host adı",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API müraciət tokeni"
+  },
+  "apiKey": {
+    "message": "API açar"
   }
 }

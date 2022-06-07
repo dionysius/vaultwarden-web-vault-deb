@@ -400,6 +400,18 @@
   "length": {
     "message": "Pikkus"
   },
+  "uppercase": {
+    "message": "Suurtäht (A-Z)"
+  },
+  "lowercase": {
+    "message": "Väiketäht (a-z)"
+  },
+  "numbers": {
+    "message": "Numbrid (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Erimärgid (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Sõnade arv"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Brauseri integratsioon on vajalik biomeetria kasutamiseks brauseris."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Brauseri integratsioon ei ole toetatud"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Paraku on brauseri integratsioon hetkel toetatud ainult Mac App Store'i versioonis."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Brauseri integratsioon ei ole toetatud"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Paraku ei ole brauseri integratsioon hetkel Microsoft Store versioonis toetatud."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Nõua brauseri integratsiooni ülekinnitamist"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maksimaalne ligipääsude arv"
+    "message": "Maksimaalne ligipääsude arv",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Selle valimisel ei saa kasutajad pärast maksimaalse ligipääsude arvu saavutamist sellele Sendile enam ligi.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Oled organisatsioonist lahkunud."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Ühenduse loomine ebaõnnestus. Proovi hiljem uuesti."
+  "ssoKeyConnectorError": {
+    "message": "Key Connectori viga: veendu, et Key Connector on saadaval ja töötab korrektselt."
   },
   "lockAllVaults": {
     "message": "Lukusta kõik hoidlad"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Lukustatud"
+  },
+  "unlocked": {
+    "message": "Lukustamata"
+  },
   "generator": {
     "message": "Genereerija"
   },
@@ -1859,7 +1878,8 @@
     "message": "Kasutajanime tüüp"
   },
   "plusAddressedEmail": {
-    "message": "Lisaks e-post"
+    "message": "Plussiga e-posti aadress",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Kasuta e-posti teenuspakkuja alamadressimise võimalusi."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Teenus"
+  },
+  "allVaults": {
+    "message": "Kõik hoidlad"
+  },
+  "searchOrganization": {
+    "message": "Otsi organisatsiooni"
+  },
+  "searchMyVault": {
+    "message": "Otsi hoidlast"
+  },
+  "forwardedEmail": {
+    "message": "Edastav e-posti alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Genereeri e-posti alias, kasutades selleks välist teenuspakkujat."
+  },
+  "hostname": {
+    "message": "Hosti nimi",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API ligipääsu märk"
+  },
+  "apiKey": {
+    "message": "API võti"
   }
 }

@@ -373,7 +373,7 @@
     "message": "Nadpisz nazwę użytkownika"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Czy na pewno chcesz nadpisać obecną nazwę użytkownika?"
   },
   "noneFolder": {
     "message": "Nieprzypisane",
@@ -399,6 +399,18 @@
   },
   "length": {
     "message": "Długość"
+  },
+  "uppercase": {
+    "message": "Wielkie litery (A-Z)"
+  },
+  "lowercase": {
+    "message": "Małe litery (a-z)"
+  },
+  "numbers": {
+    "message": "Cyfry (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Znaki specjalne (!@#$%^&*)"
   },
   "numWords": {
     "message": "Liczba słów"
@@ -973,7 +985,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Sprawdź dostępność aktualizacji"
+    "message": "Sprawdź dostępność aktualizacji…"
   },
   "version": {
     "message": "Wersja $VERSION_NUM$",
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Połączenie z przeglądarką jest używane do odblokowania danymi biometrycznymi."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "Połączenie z przeglądarką nie jest obsługiwane"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Połączenie z przeglądarką jest obsługiwane tylko z wersją aplikacji ze sklepu Mac App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Połączenie z przeglądarką nie jest obsługiwane"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Połączenie z przeglądarką nie jest obecnie obsługiwane w aplikacji w wersji Windows Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Połączenie z przeglądarką nie jest obecnie obsługiwane w aplikacji na Linuksa."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Wymagaj weryfikacji połączenia z przeglądarką"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maksymalna liczba dostępów"
+    "message": "Maksymalna liczba dostępów",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Jeśli funkcja jest włączona, po osiągnięciu maksymalnej liczby dostępów, użytkownicy nie będą mieli dostępu do tej wysyłki.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Nie należysz już do tej organizacji."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nie można nawiązać połączenia z serwerem Key Connector. Spróbuj ponownie później."
+  "ssoKeyConnectorError": {
+    "message": "Błąd serwera Key Connector: upewnij się, że serwer Key Connector jest dostępny i działa poprawnie."
   },
   "lockAllVaults": {
     "message": "Zablokuj wszystkie sejfy"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Zablokowany"
+  },
+  "unlocked": {
+    "message": "Odblokowany"
+  },
   "generator": {
     "message": "Generator"
   },
@@ -1859,7 +1878,8 @@
     "message": "Rodzaj nazwy użytkownika"
   },
   "plusAddressedEmail": {
-    "message": "Adres e-mail z plusem"
+    "message": "Adres e-mail z plusem",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Użyj możliwości dodawania aliasów u swojego dostawcy poczty e-mail."
@@ -1871,7 +1891,7 @@
     "message": "Użyj skonfigurowanej skrzynki catch-all w swojej domenie."
   },
   "random": {
-    "message": "Random"
+    "message": "Losowa"
   },
   "randomWord": {
     "message": "Losowe słowo"
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Usługa"
+  },
+  "allVaults": {
+    "message": "Wszystkie sejfy"
+  },
+  "searchOrganization": {
+    "message": "Szukaj w organizacji"
+  },
+  "searchMyVault": {
+    "message": "Szukaj w sejfie"
+  },
+  "forwardedEmail": {
+    "message": "Alias przekazywanego e-maila"
+  },
+  "forwardedEmailDesc": {
+    "message": "Wygeneruj alias adresu e-mail z zewnętrznej usługi przekazywania."
+  },
+  "hostname": {
+    "message": "Nazwa hosta",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token dostępu API"
+  },
+  "apiKey": {
+    "message": "Klucz interfejsu API"
   }
 }

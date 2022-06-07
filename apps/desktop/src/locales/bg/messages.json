@@ -400,6 +400,18 @@
   "length": {
     "message": "Дължина"
   },
+  "uppercase": {
+    "message": "Главни букви (A-Z)"
+  },
+  "lowercase": {
+    "message": "Малки букви (a-z)"
+  },
+  "numbers": {
+    "message": "Числа (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Специални знаци (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Брой думи"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "За потвърждаване с биометрични данни е необходима интеграция с браузъра."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "Интеграцията с браузър не се поддържа"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "За жалост в момента интеграцията с браузър не се поддържа във версията за магазина на Mac."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Интеграцията с браузър не се поддържа"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "За жалост в момента интеграцията с браузър не се поддържа във версията за магазина на Windows."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "За жалост в момента интеграцията с браузър не се поддържа във версията за Линукс."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Потвърждаване на интеграцията с браузър"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Максимален брой достъпвания"
+    "message": "Максимален брой достъпвания",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "При задаване — това изпращане ще се изключи след определен брой достъпвания.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Напуснахте организацията."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Конекторът за ключове е недостъпен. Опитайте отново по-късно."
+  "ssoKeyConnectorError": {
+    "message": "Грешка с конектора за ключове: уверете се, че конекторът за ключове е наличен и работи правилно."
   },
   "lockAllVaults": {
     "message": "Заключване на всички трезори"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Заключено"
+  },
+  "unlocked": {
+    "message": "Отключено"
+  },
   "generator": {
     "message": "Генератор"
   },
@@ -1859,7 +1878,8 @@
     "message": "Тип потребителско име"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Plus Addressed Email",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Използвайте възможностите за под-адресиране на е-поща на своя доставчик."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Услуга"
+  },
+  "allVaults": {
+    "message": "Всички трезори"
+  },
+  "searchOrganization": {
+    "message": "Търсене в организацията"
+  },
+  "searchMyVault": {
+    "message": "Търсене в моя трезор"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Име на сървъра",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Идентификатор за достъп до API"
+  },
+  "apiKey": {
+    "message": "Ключ за API"
   }
 }

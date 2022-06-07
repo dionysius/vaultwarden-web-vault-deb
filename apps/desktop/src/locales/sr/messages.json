@@ -400,6 +400,18 @@
   "length": {
     "message": "Дужина"
   },
+  "uppercase": {
+    "message": "Велика слова (A-Z)"
+  },
+  "lowercase": {
+    "message": "Мала слова (a-z)"
+  },
+  "numbers": {
+    "message": "Цифре (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Специјална слова (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Број речи"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Интеграција прегледача се користи за биометрију у прегледачу."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Интеграција претраживача није подржана"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Нажалост, интеграција прегледача за сада је подржана само у верзији Mac App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Интеграција претраживача није подржана"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Нажалост, интеграција прегледача није за сада подржана у Windows Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Захтева верификацију за интеграцију прегледача"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Максималан број приступа"
+    "message": "Максималан број приступа",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Ако је постављено, корисници више неће моћи да приступе овом „Send“ када се достигне максимални број приступа.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Напустили сте организацију."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Немогуће повезати се са добављачем кључева, покушајте поново касније."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector грешка: будите сигурни да је Key Connector доступан и да ради."
   },
   "lockAllVaults": {
     "message": "Закључај сефове"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Закључано"
+  },
+  "unlocked": {
+    "message": "Откључано"
+  },
   "generator": {
     "message": "Генератор"
   },
@@ -1859,7 +1878,8 @@
     "message": "Тип имена"
   },
   "plusAddressedEmail": {
-    "message": "Плус имејл адресе"
+    "message": "Плус имејл адресе",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Користите могућности подадресирања вашег добављача е-поште."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Сервис"
+  },
+  "allVaults": {
+    "message": "Сви Сефови"
+  },
+  "searchOrganization": {
+    "message": "Претражи Организацију"
+  },
+  "searchMyVault": {
+    "message": "Претражи мој сеф"
+  },
+  "forwardedEmail": {
+    "message": "Псеудоним прослешне е-поште"
+  },
+  "forwardedEmailDesc": {
+    "message": "Генеришите псеудоним е-поште помоћу екстерне услуге прослеђивања."
+  },
+  "hostname": {
+    "message": "Име домаћина",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Приступни АПИ токен"
+  },
+  "apiKey": {
+    "message": "АПИ Кључ"
   }
 }

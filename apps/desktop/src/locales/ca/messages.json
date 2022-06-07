@@ -370,10 +370,10 @@
     "message": "Esteu segur que voleu sobreescriure la contrasenya actual?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Sobrescriu el nom d'usuari"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Segur que voleu sobreescriure el nom d'usuari actual?"
   },
   "noneFolder": {
     "message": "Cap carpeta",
@@ -399,6 +399,18 @@
   },
   "length": {
     "message": "Longitud"
+  },
+  "uppercase": {
+    "message": "Majúscules (A-Z)"
+  },
+  "lowercase": {
+    "message": "Minúscules (a-z)"
+  },
+  "numbers": {
+    "message": "Números (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Caràcters especials (!@#$%^&*)"
   },
   "numWords": {
     "message": "Nombre de paraules"
@@ -1198,7 +1210,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nom del domini",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "La integració al navegador s’utilitza per a la biometria en aquest."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "La integració en el navegador no és compatible"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Malauradament, la integració del navegador només és compatible amb la versió de Mac App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "La integració en el navegador no és compatible"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Malauradament, la integració del navegador només és compatible amb la versió de Microsoft Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Malauradament, la integració del navegador actualment no és compatible amb la versió de Linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Requereix verificació per a la integració del navegador"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Recompte màxim d'accessos"
+    "message": "Recompte màxim d'accessos",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Si s’estableix, els usuaris ja no podran accedir a aquest Send una vegada s’assolisca el nombre màxim d’accessos.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Heu deixat l'organització."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "No es pot arribar al connector de claus, torneu-ho a provar més tard."
+  "ssoKeyConnectorError": {
+    "message": "Error del connector de claus: assegureu-vos que el connector de claus està disponible i funcionant correctament."
   },
   "lockAllVaults": {
     "message": "Bloqueja totes les caixes fortes"
@@ -1840,46 +1853,78 @@
       }
     }
   },
+  "locked": {
+    "message": "Bloquejat"
+  },
+  "unlocked": {
+    "message": "Desbloquejat"
+  },
   "generator": {
-    "message": "Generator"
+    "message": "Generador"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Què voleu generar?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Tipus de contrasenya"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenera el nom d'usuari"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Genera un nom d'usuari"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tipus de nom d'usuari"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Adreça amb sufix",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Utilitzeu les capacitats de subadreçament del vostre proveïdor de correu electrònic."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Captura tot el correu electrònic"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Utilitzeu la safata d'entrada global configurada del vostre domini."
   },
   "random": {
-    "message": "Random"
+    "message": "Aleatori"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Paraula aleatòria"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Nom del lloc web"
   },
   "service": {
-    "message": "Service"
+    "message": "Servei"
+  },
+  "allVaults": {
+    "message": "Totes les caixes fortes"
+  },
+  "searchOrganization": {
+    "message": "Cerca organització"
+  },
+  "searchMyVault": {
+    "message": "Cerca la meua caixa forta"
+  },
+  "forwardedEmail": {
+    "message": "Àlies de correu electrònic reenviat"
+  },
+  "forwardedEmailDesc": {
+    "message": "Genera un àlies de correu electrònic amb un servei de reenviament extern."
+  },
+  "hostname": {
+    "message": "Nom de l'amfitrió",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Token d'accés a l'API"
+  },
+  "apiKey": {
+    "message": "Clau de l'API"
   }
 }

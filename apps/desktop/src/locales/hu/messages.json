@@ -400,6 +400,18 @@
   "length": {
     "message": "Hossz"
   },
+  "uppercase": {
+    "message": "Nagybetűs (A-Z)"
+  },
+  "lowercase": {
+    "message": "Kisbetűs (a-z)"
+  },
+  "numbers": {
+    "message": "Számok (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Speciális karakterek (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Szavak száma"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "A böngésző integrációt a biometrikus adatokhoz használják a böngészőben."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "A böngésző integráció nem támogatott."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Sajnos a böngésző integrációt egyelőre csak a Mac App Store verzió támogatja."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "A böngésző integráció nem támogatott."
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "A böngésző integrációt egyelőre csak a Windows Store verzió támogatja."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Sajnos a böngésző integrációját a linux verzió jelenleg nem támogatja."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Ellenőrzés kérése a böngésző integrációhoz"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximális elérési szám"
+    "message": "Maximális elérési szám",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Beállítva a Küldés elérhetetlen lesz a meghatározott hozzáférések számának elérése után.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Megtörtént a kilépés a szervezetből."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nem érhető el a kulcskapcsoló. Próbáljuk újra később."
+  "ssoKeyConnectorError": {
+    "message": "Kulcs csatlakozó hiba: ellenőrizzük, hogy a kulcs csatlakozó rendelkezésre áll-e és megfelelően működik-e."
   },
   "lockAllVaults": {
     "message": "Összes széf lezárása"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Lezárva"
+  },
+  "unlocked": {
+    "message": "Feloldva"
+  },
   "generator": {
     "message": "Generátor"
   },
@@ -1859,7 +1878,8 @@
     "message": "Felhasználónév típusa"
   },
   "plusAddressedEmail": {
-    "message": "További címzési email cím"
+    "message": "További címzési email cím",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Használjuk az email cím szolgáltató alcímzési képességeit."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Szolgáltatás"
+  },
+  "allVaults": {
+    "message": "Összes széf"
+  },
+  "searchOrganization": {
+    "message": "Szervezet keresése"
+  },
+  "searchMyVault": {
+    "message": "Keresés a saját széfben"
+  },
+  "forwardedEmail": {
+    "message": "Továbbított email álnevek"
+  },
+  "forwardedEmailDesc": {
+    "message": "Email álnév generálása külső továbbító szolgáltatással."
+  },
+  "hostname": {
+    "message": "Kiszolglónév",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API hozzáférési vezérjel"
+  },
+  "apiKey": {
+    "message": "API kulcs"
   }
 }

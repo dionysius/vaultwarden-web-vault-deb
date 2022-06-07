@@ -400,6 +400,18 @@
   "length": {
     "message": "Garums"
   },
+  "uppercase": {
+    "message": "Lielie burti (A-Z)"
+  },
+  "lowercase": {
+    "message": "Mazie burti (a-z)"
+  },
+  "numbers": {
+    "message": "Cipari (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Īpašās rakstzīmes (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Vārdu skaits"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Pārlūka saistīšana tiek izmantota pārlūka biometrijas nodrošināšanai."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "Pārlūka saistīšana nav atbalstīta"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Diemžēl pārlūka saistīšana pagaidām ir nodrošināta tikai Mac App Store laidienā."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Pārlūka saistīšana nav atbalstīta"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Diemžēl pārlūka saistīšana pagaidām nav nodrošināta Windows veikala laidienā."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Diemžēl pārlūka saistīšana Linux laidienā pagaidām nav nodrošināta."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Pieprasīt apstiprinājumu pārlūka saistīšanai"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Lielākais pieļaujamais piekļuvju skaits"
+    "message": "Lielākais pieļaujamais piekļuvju skaits",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Ja uzstādīts, lietotāji nevarēs piekļūt šim \"Send\", kad tiks sasniegts lielākais pieļaujamais piekļūšanas reižu skaits.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Apvienība ir pamesta."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nav iespējams sasniegt Key Connector, tāpēc vēlāk jāmēģina atkal."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector kļūda: jāpārliecinās, ka Key Connector ir pieejams un darbojas pareizi."
   },
   "lockAllVaults": {
     "message": "Aizslēgt visas glabātavas"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Slēgts"
+  },
+  "unlocked": {
+    "message": "Atslēgts"
+  },
   "generator": {
     "message": "Veidotājs"
   },
@@ -1859,7 +1878,8 @@
     "message": "Lietotājvārda veids"
   },
   "plusAddressedEmail": {
-    "message": "E-pasta adrese ar plusu"
+    "message": "E-pasta adrese ar plusu",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Izmantot e-pasta pakalpojuma nodrošinātāja apakšadresēšanas spējas."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Pakalpojums"
+  },
+  "allVaults": {
+    "message": "Visas glabātavas"
+  },
+  "searchOrganization": {
+    "message": "Meklēt apvienībā"
+  },
+  "searchMyVault": {
+    "message": "Meklēt manā glabātavā"
+  },
+  "forwardedEmail": {
+    "message": "Pārvirzīto e-pastu aizstājvārds"
+  },
+  "forwardedEmailDesc": {
+    "message": "Izveidot e-pastu aizstājvārdu ar ārēju pārvirzīšanas pakalpojumu."
+  },
+  "hostname": {
+    "message": "Resursdatora nosaukums",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API piekļuves pilnvara"
+  },
+  "apiKey": {
+    "message": "API atslēga"
   }
 }

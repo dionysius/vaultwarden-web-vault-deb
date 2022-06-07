@@ -400,6 +400,18 @@
   "length": {
     "message": "Longueur"
   },
+  "uppercase": {
+    "message": "Majuscules (A-Z)"
+  },
+  "lowercase": {
+    "message": "Minuscules (a-z)"
+  },
+  "numbers": {
+    "message": "Chiffres (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Caractères spéciaux (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Nombre de mots"
   },
@@ -671,7 +683,7 @@
     "message": "URL du serveur"
   },
   "apiUrl": {
-    "message": "URL du serveur de l'API"
+    "message": "URL du serveur de l'IPA"
   },
   "webVaultUrl": {
     "message": "URL du serveur du coffre web"
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "L'intégration avec le navigateur est utilisée pour le déverrouillage biométrique dans le navigateur."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "Intégration avec le navigateur non supportée"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Malheureusement l'intégration avec le navigateur est uniquement supportée dans la version Mac App Store pour le moment."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Intégration avec le navigateur non supportée"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Malheureusement l'intégration avec le navigateur n'est pas supportée dans la version Windows Store pour le moment."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Exiger une vérification pour l'intégration avec le navigateur"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Nombre maximum d'accès"
+    "message": "Nombre maximum d'accès",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Si défini, les utilisateurs ne seront plus en mesure d'accéder à ce Send une fois que le nombre maximum d'accès sera atteint.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Vous avez quitté l'organisation."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Impossible de contacter Key Connector, réessayez plus tard."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
     "message": "Verrouiller tous les coffres"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Verrouillé"
+  },
+  "unlocked": {
+    "message": "Déverrouillé"
+  },
   "generator": {
     "message": "Générateur"
   },
@@ -1859,7 +1878,8 @@
     "message": "Type de nom d'utilisateur"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "E-mail sous-adressé",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Utilisez les capacités de sous-adressage de votre fournisseur de courriel."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Service"
+  },
+  "allVaults": {
+    "message": "Tous les coffres"
+  },
+  "searchOrganization": {
+    "message": "Recherche d'organisations"
+  },
+  "searchMyVault": {
+    "message": "Recherche dans le coffre"
+  },
+  "forwardedEmail": {
+    "message": "Alias d'email transféré"
+  },
+  "forwardedEmailDesc": {
+    "message": "Générer un alias de courriel avec un service de transfert externe."
+  },
+  "hostname": {
+    "message": "Nom d'hôte",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Jetons d'accès IPA"
+  },
+  "apiKey": {
+    "message": "Clé d'IPA"
   }
 }

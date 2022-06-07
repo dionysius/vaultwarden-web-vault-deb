@@ -104,7 +104,7 @@
     "message": "電子郵件地址"
   },
   "verificationCodeTotp": {
-    "message": "驗證碼（TOTP）"
+    "message": "驗證碼 (TOTP)"
   },
   "website": {
     "message": "網站"
@@ -308,7 +308,7 @@
     "message": "編輯"
   },
   "authenticatorKeyTotp": {
-    "message": "驗證器金鑰（TOTP）"
+    "message": "驗證器金鑰 (TOTP)"
   },
   "folder": {
     "message": "資料夾"
@@ -395,10 +395,22 @@
     "message": "複製 URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "複製驗證碼（TOTP）"
+    "message": "複製驗證碼 (TOTP)"
   },
   "length": {
     "message": "長度"
+  },
+  "uppercase": {
+    "message": "大寫 (A-Z)"
+  },
+  "lowercase": {
+    "message": "小寫 (a-z)"
+  },
+  "numbers": {
+    "message": "數字 (0-9)"
+  },
+  "specialCharacters": {
+    "message": "特殊字元 (!@#$%^&*)"
   },
   "numWords": {
     "message": "字數"
@@ -764,7 +776,7 @@
     "message": "變更主密碼"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "您可以在 Bitwarden 網頁版密碼庫變更主密碼。現在要前往嗎？"
+    "message": "您可以在 bitwarden.com 網頁版密碼庫變更主密碼。現在要前往嗎？"
   },
   "fingerprintPhrase": {
     "message": "指紋短語",
@@ -812,7 +824,7 @@
     "message": "無效的主密碼"
   },
   "twoStepLoginConfirmation": {
-    "message": "兩步驟登入需要您從其他設備（例如安全鑰匙、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的賬戶更加安全。兩步驟登入可以在 Bitwarden 網頁版密碼庫啟用。現在要前往嗎？"
+    "message": "兩步驟登入需要您從其他設備（例如安全鑰匙、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的賬戶更加安全。兩步驟登入可以在 bitwarden.com 網頁版密碼庫啟用。現在要前往嗎？"
   },
   "twoStepLogin": {
     "message": "兩步驟登入"
@@ -1035,7 +1047,7 @@
     "message": "管理會員資格"
   },
   "premiumManageAlert": {
-    "message": "您可以在 Bitwarden 網頁版密碼庫管理你的會員資格。現在要前往嗎？"
+    "message": "您可以在 bitwarden.com 網頁版密碼庫管理你的會員資格。現在要前往嗎？"
   },
   "premiumRefresh": {
     "message": "刷新會員資格"
@@ -1056,7 +1068,7 @@
     "message": "密碼健康度檢查、提供帳戶體檢以及資料外洩報告，以保障您的密碼庫安全。"
   },
   "premiumSignUpTotp": {
-    "message": "用於登入您的密碼庫的 TOTP 驗證碼 (2FA) 產生器。"
+    "message": "用於您的密碼庫中登入項目的 TOTP 驗證碼 (2FA) 產生器。"
   },
   "premiumSignUpSupport": {
     "message": "優先客戶支援。"
@@ -1068,7 +1080,7 @@
     "message": "購買進階會員資格"
   },
   "premiumPurchaseAlert": {
-    "message": "您可以在 Bitwarden 網頁版密碼庫購買進階會員資格。現在要前往嗎？"
+    "message": "您可以在 bitwarden.com 網頁版密碼庫購買進階會員資格。現在要前往嗎？"
   },
   "premiumCurrentMember": {
     "message": "您目前是進階會員！"
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "瀏覽器整合用於在瀏覽器中提供生物特徵辨識。"
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "不支援瀏覽器整合"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "很遺憾，目前僅 Mac App Store 版本支援瀏覽器整合功能。"
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "不支援瀏覽器整合"
-  },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "很遺憾，目前的 Windows Store 版本尚不支援瀏覽器整合功能。"
+    "message": "很遺憾，Windows Store 版本目前尚不支援瀏覽器整合功能。"
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "很遺憾，Linux 版本目前尚未支援瀏覽器整合功能。"
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "要求瀏覽器整合驗證"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "最大存取次數"
+    "message": "最大存取次數",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "如果設定此選項，當達到最大存取次數時，使用者將無法再次存取此 Send。",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "您已離開此組織。"
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "無法連線到 Key Connector。請稍後再試。"
+  "ssoKeyConnectorError": {
+    "message": "Key Connector 錯誤：請確保 Key Connector 可用且運作正常。"
   },
   "lockAllVaults": {
     "message": "鎖定所有密碼庫"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "已鎖定"
+  },
+  "unlocked": {
+    "message": "已解鎖"
+  },
   "generator": {
     "message": "產生器"
   },
@@ -1859,7 +1878,8 @@
     "message": "使用者名稱類型"
   },
   "plusAddressedEmail": {
-    "message": "加號地址電子郵件"
+    "message": "加號地址電子郵件",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "使用您的電子郵件提供者的子地址功能。"
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "服務"
+  },
+  "allVaults": {
+    "message": "所有密碼庫"
+  },
+  "searchOrganization": {
+    "message": "搜尋組織"
+  },
+  "searchMyVault": {
+    "message": "搜尋密碼庫"
+  },
+  "forwardedEmail": {
+    "message": "轉寄的電子郵件別名"
+  },
+  "forwardedEmailDesc": {
+    "message": "使用外部轉寄服務產生一個電子郵件別名。"
+  },
+  "hostname": {
+    "message": "主機名稱",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API 存取權杖"
+  },
+  "apiKey": {
+    "message": "API 金鑰"
   }
 }

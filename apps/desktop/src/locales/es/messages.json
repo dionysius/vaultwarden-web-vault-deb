@@ -400,6 +400,18 @@
   "length": {
     "message": "Longitud"
   },
+  "uppercase": {
+    "message": "Mayúsculas (A-Z)"
+  },
+  "lowercase": {
+    "message": "Minúsculas (a-z)"
+  },
+  "numbers": {
+    "message": "Números (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Carácteres especiales (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Número de palabras"
   },
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "La integración del navegador se usa para la biometría en el mismo."
   },
-  "browserIntegrationMasOnlyTitle": {
-    "message": "La integración del navegador no está soportada"
+  "browserIntegrationUnsupportedTitle": {
+    "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Por desgracia la integración del navegador sólo está soportada por ahora en la versión de la Mac App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "La integración del navegador no está soportada"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Por desgracia la integración del navegador sólo está soportada por ahora en la versión de Microsoft Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the linux version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Requiere verificación para la integración del navegador"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Número máximo de accesos"
+    "message": "Número máximo de accesos",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Si se establece, los usuarios ya no podrán acceder a este Send una vez que se alcance el número máximo de accesos.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Has abandonado la organización."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "No se puede acceder al conector de clave. Inténtalo de nuevo más tarde."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
     "message": "Bloquear todas las cajas fuertes"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Bloqueado"
+  },
+  "unlocked": {
+    "message": "Desbloqueado"
+  },
   "generator": {
     "message": "Generador"
   },
@@ -1859,16 +1878,17 @@
     "message": "Tipo de nombre de usuario"
   },
   "plusAddressedEmail": {
-    "message": "Dirección adicional de correo electrónico"
+    "message": "Dirección adicional de correo electrónico",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Utiliza las capacidades de subdirección de tu proveedor de correo electrónico."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Correo Catch-All"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Utiliza la bandeja de entrada Catch-All configurada por tu dominio."
   },
   "random": {
     "message": "Aleatorio"
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Servicio"
+  },
+  "allVaults": {
+    "message": "All Vaults"
+  },
+  "searchOrganization": {
+    "message": "Search Organization"
+  },
+  "searchMyVault": {
+    "message": "Search My Vault"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
   }
 }

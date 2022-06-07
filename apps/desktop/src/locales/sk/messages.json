@@ -400,6 +400,18 @@
   "length": {
     "message": "Dĺžka"
   },
+  "uppercase": {
+    "message": "Veľké písmená (A-Z)"
+  },
+  "lowercase": {
+    "message": "Malé písmená (a-z)"
+  },
+  "numbers": {
+    "message": "Čísla (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Špeciálne znaky (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Počet slov"
   },
@@ -973,7 +985,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Skontrolovať aktualizácie"
+    "message": "Skontrolovať aktualizácie…"
   },
   "version": {
     "message": "Verzia $VERSION_NUM$",
@@ -1506,17 +1518,17 @@
   "enableBrowserIntegrationDesc": {
     "message": "Integrácia v prehliadači sa používa na biometriu v prehliadači."
   },
-  "browserIntegrationMasOnlyTitle": {
+  "browserIntegrationUnsupportedTitle": {
     "message": "Integrácia v prehliadači nie je podporovaná"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Bohužiaľ, integrácia v prehliadači je zatiaľ podporovaná iba vo verzii Mac App Store."
   },
-  "browserIntegrationWindowsStoreTitle": {
-    "message": "Integrácia v prehliadači nie je podporovaná"
-  },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Bohužiaľ, integrácia v prehliadači je zatiaľ podporovaná iba vo verzii Windows Store."
+  },
+  "browserIntegrationLinuxDesc": {
+    "message": "Bohužiaľ, integrácia prehliadača nie je v súčasnosti podporovaná vo verzii pre Linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Vyžadovať overenie pre integráciu v prehliadači"
@@ -1587,7 +1599,8 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximálny počet prístupov"
+    "message": "Maximálny počet prístupov",
+    "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
     "message": "Ak je nastavené, používatelia už nebudú mať prístup k tomuto Sendu po dosiahnutí maximálneho počtu prístupov.",
@@ -1792,8 +1805,8 @@
   "leftOrganization": {
     "message": "Opustili ste organizáciu."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Nie je možné kontaktovať kľúčový konektor, skúste to znova neskôr."
+  "ssoKeyConnectorError": {
+    "message": "Chyba Key Connector: uistite sa, že je Key Connector k dispozícii a funguje správne."
   },
   "lockAllVaults": {
     "message": "Zamknúť všetky trezory"
@@ -1840,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Zamknutý"
+  },
+  "unlocked": {
+    "message": "Odomknutý"
+  },
   "generator": {
     "message": "Generátor"
   },
@@ -1859,7 +1878,8 @@
     "message": "Typ používateľského mena"
   },
   "plusAddressedEmail": {
-    "message": "E-mail s plusovým aliasom"
+    "message": "E-mail s plusovým aliasom",
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Použiť možnosti subadresovania svojho poskytovateľa e-mailu."
@@ -1881,5 +1901,30 @@
   },
   "service": {
     "message": "Služba"
+  },
+  "allVaults": {
+    "message": "Všetky trezory"
+  },
+  "searchOrganization": {
+    "message": "Vyhľadať organizáciu"
+  },
+  "searchMyVault": {
+    "message": "Prehľadávať môj trezor"
+  },
+  "forwardedEmail": {
+    "message": "Alias preposlaného e-mailu"
+  },
+  "forwardedEmailDesc": {
+    "message": "Vytvoriť e-mailový alias pomocou externej služby preposielania."
+  },
+  "hostname": {
+    "message": "Názov hostiteľa",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "Prístupový token API"
+  },
+  "apiKey": {
+    "message": "API kľúč"
   }
 }
