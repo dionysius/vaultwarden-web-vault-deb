@@ -3,52 +3,52 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filter"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alle oppføringar"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favorittar"
   },
   "types": {
-    "message": "Types"
+    "message": "Typar"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Innskriving"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kort"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identitet"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Trygg notat"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Mapper"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Samlingar"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "Leita i kvelvet"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Legg til ei oppføring"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Delt"
   },
   "share": {
-    "message": "Share"
+    "message": "Del"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Flytta til samskipnad"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ flytta til $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,16 +61,16 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Vel ei samskipnad du ynskjer å flytta denne oppføringa til. Ved å flytta ei oppføring til ei samskipnad fører ein eigarskapen til oppføringa til den samskipnaden. Du vil ikkje lenger ha bein eigarskap til denne oppføringa etter ho er flytta."
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Vedlegg"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Sjå oppføring"
   },
   "name": {
-    "message": "Name"
+    "message": "Namn"
   },
   "uri": {
     "message": "URI"
@@ -86,40 +86,40 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Ny URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Brukarnamn"
   },
   "password": {
-    "message": "Password"
+    "message": "Passord"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Passfrase"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Rei oppføring"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-postadresse"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Stadfestingskode (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Nettstad"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Notat"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Eigendefinert felt"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Opna"
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "Skriv av verdi",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
@@ -129,44 +129,44 @@
     "message": "Minimize when copying an item's data to the clipboard."
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Gjer synleg/usynleg"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Gøym/vid ut",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Namn til korteigar"
   },
   "number": {
-    "message": "Number"
+    "message": "Kortnummer"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Merke"
   },
   "expiration": {
     "message": "Expiration"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Trygdenykel"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Identitetsnamn"
   },
   "company": {
-    "message": "Company"
+    "message": "Verksemd"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Fødselsnummer"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Passnummer"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Førarkortnummer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-post"
   },
   "phone": {
     "message": "Phone"
@@ -311,39 +311,39 @@
     "message": "Authenticator Key (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Mappe"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Nytt eigendefinert felt"
   },
   "value": {
-    "message": "Value"
+    "message": "Verdi"
   },
   "dragToSort": {
     "message": "Drag to sort"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Gøymd"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Tilknytt",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Tilknytt verdi",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Fjerna"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Namn er påkravt."
   },
   "addedItem": {
     "message": "Added item"
@@ -352,16 +352,16 @@
     "message": "Edited item"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Sletta oppføring"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Sletta mappe"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Sletta vedlegg"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "Vil du verkeleg flytta denne til papirkorga?"
   },
   "deletedItem": {
     "message": "Sent item to trash"
