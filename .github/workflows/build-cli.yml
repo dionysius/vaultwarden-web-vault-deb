@@ -8,6 +8,7 @@ on:
       - 'gh-pages'
     paths:
       - 'apps/cli/**'
+      - 'libs/**'
       - '.github/workflows/build-cli.yml'
   push:
     branches:
@@ -16,6 +17,7 @@ on:
       - 'hotfix-rc/**'
     paths:
       - 'apps/cli/**'
+      - 'libs/**'
       - '.github/workflows/build-cli.yml'
   workflow_dispatch:
     inputs: {}
