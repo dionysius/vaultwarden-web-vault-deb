@@ -41,5 +41,9 @@
         <small>{{ "minutes" | i18n }}</small>
       </div>
     </div>
+
+    <small *ngIf="!exceedsMinimumTimout" class="tw-text-danger">
+      <i class="bwi bwi-error" aria-hidden="true"></i> {{ "vaultCustomTimeoutMinimum" | i18n }}
+    </small>
   </div>
 </div>
