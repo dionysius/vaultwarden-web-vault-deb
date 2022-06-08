@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Params } from "@angular/router";
 
 import { BaseAcceptComponent } from "src/app/common/base.accept.component";
 
@@ -12,11 +13,11 @@ export class AcceptFamilySponsorshipComponent extends BaseAcceptComponent {
 
   requiredParameters = ["email", "token"];
 
-  async authedHandler(qParams: any) {
+  async authedHandler(qParams: Params) {
     this.router.navigate(["/setup/families-for-enterprise"], { queryParams: qParams });
   }
 
-  async unauthedHandler(qParams: any) {
+  async unauthedHandler(qParams: Params) {
     if (!qParams.register) {
       this.router.navigate(["/login"], { queryParams: { email: qParams.email } });
     } else {

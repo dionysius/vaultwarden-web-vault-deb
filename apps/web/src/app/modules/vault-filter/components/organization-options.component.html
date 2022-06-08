@@ -6,7 +6,11 @@
   ></i>
   <span class="sr-only">{{ "loading" | i18n }}</span>
 </ng-container>
-<div *ngIf="loaded" class="tw-max-w-[300px] tw-min-w-[200px] tw-flex tw-flex-col">
+<div
+  *ngIf="loaded"
+  class="tw-max-w-[300px] tw-min-w-[200px] tw-flex tw-flex-col"
+  [appApiAction]="actionPromise"
+>
   <button
     *ngIf="allowEnrollmentChanges(organization) && !organization.resetPasswordEnrolled"
     class="dropdown-item"

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
@@ -31,7 +31,7 @@ export class AcceptEmergencyComponent extends BaseAcceptComponent {
     super(router, platformUtilsService, i18nService, route, stateService);
   }
 
-  async authedHandler(qParams: any): Promise<void> {
+  async authedHandler(qParams: Params): Promise<void> {
     const request = new EmergencyAccessAcceptRequest();
     request.token = qParams.token;
     this.actionPromise = this.apiService.postEmergencyAccessAccept(qParams.id, request);
@@ -45,7 +45,7 @@ export class AcceptEmergencyComponent extends BaseAcceptComponent {
     this.router.navigate(["/vault"]);
   }
 
-  async unauthedHandler(qParams: any): Promise<void> {
+  async unauthedHandler(qParams: Params): Promise<void> {
     this.name = qParams.name;
     if (this.name != null) {
       // Fix URL encoding of space issue with Angular

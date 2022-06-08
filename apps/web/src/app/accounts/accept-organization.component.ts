@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
@@ -11,7 +11,6 @@ import { StateService } from "jslib-common/abstractions/state.service";
 import { Utils } from "jslib-common/misc/utils";
 import { Policy } from "jslib-common/models/domain/policy";
 import { OrganizationUserAcceptRequest } from "jslib-common/models/request/organizationUserAcceptRequest";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "jslib-common/models/request/organizationUserResetPasswordEnrollmentRequest";
 
 import { BaseAcceptComponent } from "../common/base.accept.component";
 
@@ -38,44 +37,14 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
     super(router, platformUtilsService, i18nService, route, stateService);
   }
 
-  async authedHandler(qParams: any): Promise<void> {
-    const request = new OrganizationUserAcceptRequest();
-    request.token = qParams.token;
-    if (await this.performResetPasswordAutoEnroll(qParams)) {
-      this.actionPromise = this.apiService
-        .postOrganizationUserAccept(qParams.organizationId, qParams.organizationUserId, request)
-        .then(() => {
-          // Retrieve Public Key
-          return this.apiService.getOrganizationKeys(qParams.organizationId);
-        })
-        .then(async (response) => {
-          if (response == null) {
-            throw new Error(this.i18nService.t("resetPasswordOrgKeysError"));
-          }
-
-          const publicKey = Utils.fromB64ToArray(response.publicKey);
-
-          // RSA Encrypt user's encKey.key with organization public key
-          const encKey = await this.cryptoService.getEncKey();
-          const encryptedKey = await this.cryptoService.rsaEncrypt(encKey.key, publicKey.buffer);
-
-          // Create request and execute enrollment
-          const resetRequest = new OrganizationUserResetPasswordEnrollmentRequest();
-          resetRequest.resetPasswordKey = encryptedKey.encryptedString;
-
-          return this.apiService.putOrganizationUserResetPasswordEnrollment(
-            qParams.organizationId,
-            await this.stateService.getUserId(),
-            resetRequest
-          );
-        });
-    } else {
-      this.actionPromise = this.apiService.postOrganizationUserAccept(
+  async authedHandler(qParams: Params): Promise<void> {
+    this.actionPromise = this.prepareAcceptRequest(qParams).then(async (request) => {
+      await this.apiService.postOrganizationUserAccept(
         qParams.organizationId,
         qParams.organizationUserId,
         request
       );
-    }
+    });
 
     await this.actionPromise;
     this.platformUtilService.showToast(
@@ -89,13 +58,36 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
     this.router.navigate(["/vault"]);
   }
 
-  async unauthedHandler(qParams: any): Promise<void> {
+  async unauthedHandler(qParams: Params): Promise<void> {
     this.orgName = qParams.organizationName;
     if (this.orgName != null) {
       // Fix URL encoding of space issue with Angular
       this.orgName = this.orgName.replace(/\+/g, " ");
     }
     await this.stateService.setOrganizationInvitation(qParams);
+  }
+
+  private async prepareAcceptRequest(qParams: Params): Promise<OrganizationUserAcceptRequest> {
+    const request = new OrganizationUserAcceptRequest();
+    request.token = qParams.token;
+
+    if (await this.performResetPasswordAutoEnroll(qParams)) {
+      const response = await this.apiService.getOrganizationKeys(qParams.organizationId);
+
+      if (response == null) {
+        throw new Error(this.i18nService.t("resetPasswordOrgKeysError"));
+      }
+
+      const publicKey = Utils.fromB64ToArray(response.publicKey);
+
+      // RSA Encrypt user's encKey.key with organization public key
+      const encKey = await this.cryptoService.getEncKey();
+      const encryptedKey = await this.cryptoService.rsaEncrypt(encKey.key, publicKey.buffer);
+
+      // Add reset password key to accept request
+      request.resetPasswordKey = encryptedKey.encryptedString;
+    }
+    return request;
   }
 
   private async performResetPasswordAutoEnroll(qParams: any): Promise<boolean> {

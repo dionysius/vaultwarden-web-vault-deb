@@ -47,38 +47,27 @@ export class EnrollMasterPasswordReset {
         // Set variables
         let keyString: string = null;
 
-        // Enrolling
-        if (!this.organization.resetPasswordEnrolled) {
-          // Retrieve Public Key
-          const orgKeys = await this.apiService.getOrganizationKeys(this.organization.id);
-          if (orgKeys == null) {
-            throw new Error(this.i18nService.t("resetPasswordOrgKeysError"));
-          }
-
-          const publicKey = Utils.fromB64ToArray(orgKeys.publicKey);
-
-          // RSA Encrypt user's encKey.key with organization public key
-          const encKey = await this.cryptoService.getEncKey();
-          const encryptedKey = await this.cryptoService.rsaEncrypt(encKey.key, publicKey.buffer);
-          keyString = encryptedKey.encryptedString;
-          toastStringRef = "enrollPasswordResetSuccess";
-
-          // Create request and execute enrollment
-          request.resetPasswordKey = keyString;
-          await this.apiService.putOrganizationUserResetPasswordEnrollment(
-            this.organization.id,
-            this.organization.userId,
-            request
-          );
-        } else {
-          // Withdrawal
-          request.resetPasswordKey = keyString;
-          await this.apiService.putOrganizationUserResetPasswordEnrollment(
-            this.organization.id,
-            this.organization.userId,
-            request
-          );
+        // Retrieve Public Key
+        const orgKeys = await this.apiService.getOrganizationKeys(this.organization.id);
+        if (orgKeys == null) {
+          throw new Error(this.i18nService.t("resetPasswordOrgKeysError"));
         }
+
+        const publicKey = Utils.fromB64ToArray(orgKeys.publicKey);
+
+        // RSA Encrypt user's encKey.key with organization public key
+        const encKey = await this.cryptoService.getEncKey();
+        const encryptedKey = await this.cryptoService.rsaEncrypt(encKey.key, publicKey.buffer);
+        keyString = encryptedKey.encryptedString;
+        toastStringRef = "enrollPasswordResetSuccess";
+
+        // Create request and execute enrollment
+        request.resetPasswordKey = keyString;
+        await this.apiService.putOrganizationUserResetPasswordEnrollment(
+          this.organization.id,
+          this.organization.userId,
+          request
+        );
 
         await this.syncService.fullSync(true);
       });
@@ -89,9 +78,5 @@ export class EnrollMasterPasswordReset {
     } catch (e) {
       this.logService.error(e);
     }
-  }
-
-  get isEnrolled(): boolean {
-    return this.organization.resetPasswordEnrolled;
   }
 }
