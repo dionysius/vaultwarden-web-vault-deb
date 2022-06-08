@@ -34,6 +34,7 @@ export class EmergencyAccessComponent implements OnInit {
   @ViewChild("confirmTemplate", { read: ViewContainerRef, static: true })
   confirmModalRef: ViewContainerRef;
 
+  loaded = false;
   canAccessPremium: boolean;
   trustedContacts: EmergencyAccessGranteeDetailsResponse[];
   grantedContacts: EmergencyAccessGrantorDetailsResponse[];
@@ -65,6 +66,7 @@ export class EmergencyAccessComponent implements OnInit {
   async load() {
     this.trustedContacts = (await this.apiService.getEmergencyAccessTrusted()).data;
     this.grantedContacts = (await this.apiService.getEmergencyAccessGranted()).data;
+    this.loaded = true;
   }
 
   async premiumRequired() {

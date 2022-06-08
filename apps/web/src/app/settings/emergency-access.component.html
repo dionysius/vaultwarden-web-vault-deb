@@ -74,73 +74,71 @@
         <small class="text-muted d-block" *ngIf="c.name">{{ c.name }}</small>
       </td>
       <td class="table-list-options">
-        <div class="dropdown" appListDropdown>
+        <button
+          [bitMenuTriggerFor]="trustedContactOptions"
+          class="tw-border-none tw-bg-transparent tw-text-main"
+          type="button"
+          appA11yTitle="{{ 'options' | i18n }}"
+        >
+          <i class="bwi bwi-ellipsis-v bwi-lg" aria-hidden="true"></i>
+        </button>
+        <bit-menu #trustedContactOptions>
           <button
-            class="btn btn-outline-secondary dropdown-toggle"
-            type="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            appA11yTitle="{{ 'options' | i18n }}"
+            bitMenuItem
+            *ngIf="c.status === emergencyAccessStatusType.Invited"
+            (click)="reinvite(c)"
           >
-            <i class="bwi bwi-cog bwi-lg" aria-hidden="true"></i>
+            <i class="bwi bwi-fw bwi-envelope" aria-hidden="true"></i>
+            {{ "resendInvitation" | i18n }}
           </button>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a
-              class="dropdown-item"
-              href="#"
-              appStopClick
-              (click)="reinvite(c)"
-              *ngIf="c.status === emergencyAccessStatusType.Invited"
-            >
-              <i class="bwi bwi-fw bwi-envelope" aria-hidden="true"></i>
-              {{ "resendInvitation" | i18n }}
-            </a>
-            <a
-              class="dropdown-item text-success"
-              href="#"
-              appStopClick
-              (click)="confirm(c)"
-              *ngIf="c.status === emergencyAccessStatusType.Accepted"
-            >
-              <i class="bwi bwi-fw bwi-check" aria-hidden="true"></i>
-              {{ "confirm" | i18n }}
-            </a>
-            <a
-              class="dropdown-item text-success"
-              href="#"
-              appStopClick
-              (click)="approve(c)"
-              *ngIf="c.status === emergencyAccessStatusType.RecoveryInitiated"
-            >
-              <i class="bwi bwi-fw bwi-check" aria-hidden="true"></i>
-              {{ "approve" | i18n }}
-            </a>
-            <a
-              class="dropdown-item text-warning"
-              href="#"
-              appStopClick
-              (click)="reject(c)"
-              *ngIf="
-                c.status === emergencyAccessStatusType.RecoveryInitiated ||
-                c.status === emergencyAccessStatusType.RecoveryApproved
-              "
-            >
-              <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
-              {{ "reject" | i18n }}
-            </a>
-            <a class="dropdown-item text-danger" href="#" appStopClick (click)="remove(c)">
-              <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
-              {{ "remove" | i18n }}
-            </a>
-          </div>
-        </div>
+          <button
+            bitMenuItem
+            *ngIf="c.status === emergencyAccessStatusType.Accepted"
+            (click)="confirm(c)"
+          >
+            <i class="bwi bwi-fw bwi-check" aria-hidden="true"></i>
+            {{ "confirm" | i18n }}
+          </button>
+          <button
+            bitMenuItem
+            *ngIf="c.status === emergencyAccessStatusType.RecoveryInitiated"
+            (click)="approve(c)"
+          >
+            <i class="bwi bwi-fw bwi-check" aria-hidden="true"></i>
+            {{ "approve" | i18n }}
+          </button>
+          <button
+            bitMenuItem
+            *ngIf="
+              c.status === emergencyAccessStatusType.RecoveryInitiated ||
+              c.status === emergencyAccessStatusType.RecoveryApproved
+            "
+            (click)="reject(c)"
+          >
+            <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
+            {{ "reject" | i18n }}
+          </button>
+          <button bitMenuItem (click)="remove(c)">
+            <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
+            {{ "remove" | i18n }}
+          </button>
+        </bit-menu>
       </td>
     </tr>
   </tbody>
 </table>
 
-<p *ngIf="!trustedContacts || !trustedContacts.length">{{ "noTrustedContacts" | i18n }}</p>
+<ng-container *ngIf="!trustedContacts || !trustedContacts.length">
+  <p *ngIf="loaded">{{ "noTrustedContacts" | i18n }}</p>
+  <ng-container *ngIf="!loaded">
+    <i
+      class="bwi bwi-spinner bwi-spin text-muted"
+      title="{{ 'loading' | i18n }}"
+      aria-hidden="true"
+    ></i>
+    <span class="sr-only">{{ "loading" | i18n }}</span>
+  </ng-container>
+</ng-container>
 
 <div class="page-header spaced-header">
   <h2>{{ "designatedEmergencyContacts" | i18n }}</h2>
@@ -190,64 +188,66 @@
         <small class="text-muted d-block" *ngIf="c.name">{{ c.name }}</small>
       </td>
       <td class="table-list-options">
-        <div class="dropdown" appListDropdown>
+        <button
+          [bitMenuTriggerFor]="grantedContactOptions"
+          class="tw-border-none tw-bg-transparent tw-text-main"
+          type="button"
+          appA11yTitle="{{ 'options' | i18n }}"
+        >
+          <i class="bwi bwi-ellipsis-v bwi-lg" aria-hidden="true"></i>
+        </button>
+        <bit-menu #grantedContactOptions>
           <button
-            class="btn btn-outline-secondary dropdown-toggle"
-            type="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            appA11yTitle="{{ 'options' | i18n }}"
+            bitMenuItem
+            *ngIf="c.status === emergencyAccessStatusType.Confirmed"
+            (click)="requestAccess(c)"
           >
-            <i class="bwi bwi-cog bwi-lg" aria-hidden="true"></i>
+            <i class="bwi bwi-fw bwi-envelope" aria-hidden="true"></i>
+            {{ "requestAccess" | i18n }}
           </button>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a
-              class="dropdown-item"
-              href="#"
-              appStopClick
-              (click)="requestAccess(c)"
-              *ngIf="c.status === emergencyAccessStatusType.Confirmed"
-            >
-              <i class="bwi bwi-fw bwi-envelope" aria-hidden="true"></i>
-              {{ "requestAccess" | i18n }}
-            </a>
-            <a
-              class="dropdown-item"
-              href="#"
-              appStopClick
-              (click)="takeover(c)"
-              *ngIf="
-                c.status === emergencyAccessStatusType.RecoveryApproved &&
-                c.type === emergencyAccessType.Takeover
-              "
-            >
-              <i class="bwi bwi-fw bwi-key" aria-hidden="true"></i>
-              {{ "takeover" | i18n }}
-            </a>
-            <a
-              class="dropdown-item"
-              [routerLink]="c.id"
-              *ngIf="
-                c.status === emergencyAccessStatusType.RecoveryApproved &&
-                c.type === emergencyAccessType.View
-              "
-            >
-              <i class="bwi bwi-fw bwi-eye" aria-hidden="true"></i>
-              {{ "view" | i18n }}
-            </a>
-            <a class="dropdown-item text-danger" href="#" appStopClick (click)="remove(c)">
-              <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
-              {{ "remove" | i18n }}
-            </a>
-          </div>
-        </div>
+          <button
+            bitMenuItem
+            *ngIf="
+              c.status === emergencyAccessStatusType.RecoveryApproved &&
+              c.type === emergencyAccessType.Takeover
+            "
+            (click)="takeover(c)"
+          >
+            <i class="bwi bwi-fw bwi-key" aria-hidden="true"></i>
+            {{ "takeover" | i18n }}
+          </button>
+          <button
+            bitMenuItem
+            *ngIf="
+              c.status === emergencyAccessStatusType.RecoveryApproved &&
+              c.type === emergencyAccessType.View
+            "
+            [routerLink]="c.id"
+          >
+            <i class="bwi bwi-fw bwi-eye" aria-hidden="true"></i>
+            {{ "view" | i18n }}
+          </button>
+          <button bitMenuItem (click)="remove(c)">
+            <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
+            {{ "remove" | i18n }}
+          </button>
+        </bit-menu>
       </td>
     </tr>
   </tbody>
 </table>
 
-<p *ngIf="!grantedContacts || !grantedContacts.length">{{ "noGrantedAccess" | i18n }}</p>
+<ng-container *ngIf="!grantedContacts || !grantedContacts.length">
+  <p *ngIf="loaded">{{ "noGrantedAccess" | i18n }}</p>
+  <ng-container *ngIf="!loaded">
+    <i
+      class="bwi bwi-spinner bwi-spin text-muted"
+      title="{{ 'loading' | i18n }}"
+      aria-hidden="true"
+    ></i>
+    <span class="sr-only">{{ "loading" | i18n }}</span>
+  </ng-container>
+</ng-container>
 
 <ng-template #addEdit></ng-template>
 <ng-template #takeoverTemplate></ng-template>
