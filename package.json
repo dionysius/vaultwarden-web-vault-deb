@@ -180,6 +180,9 @@
     "zone.js": "^0.11.4",
     "zxcvbn": "^4.4.2"
   },
+  "overrides": {
+    "tailwindcss": "$tailwindcss"
+  },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
     "*.ts": "eslint --fix"
