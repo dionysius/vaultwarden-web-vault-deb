@@ -34,7 +34,8 @@ export class OrganizationService implements OrganizationServiceAbstraction {
         response.push(new Organization(organizations[id]));
       }
     }
-    return response;
+    const sortedResponse = response.sort((a, b) => a.name.localeCompare(b.name));
+    return sortedResponse;
   }
 
   async save(organizations: { [id: string]: OrganizationData }) {
