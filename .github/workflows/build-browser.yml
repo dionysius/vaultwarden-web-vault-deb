@@ -113,7 +113,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846  # v3.0.0
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd  # v3.3.0
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -144,14 +144,23 @@ jobs:
       - name: Build sources for reviewers
         shell: cmd
         run: |
-          mkdir dist\Source
-          call git clone %GITHUB_SERVER_URL%/%GITHUB_REPOSITORY% dist\Source
-          cd dist\Source
-          call git checkout %GITHUB_SHA%
-          call git submodule update --init --recursive
-          cd ../
-          del /S/Q "Source\.git\objects\pack\*"
-          call 7z a browser-source.zip "Source\*"
+          REM Remove ".git" directory
+          rmdir /S /Q ".git"
+
+          REM Copy root level files to source directory
+          mkdir browser-source
+          copy * browser-source
+
+          REM Copy apps\browser to Browser source directory
+          mkdir browser-source\apps\browser
+          xcopy apps\browser\* browser-source\apps\browser /E
+          
+          REM Copy libs to Browser source directory
+          mkdir browser-source\libs
+          xcopy libs\* browser-source\libs /E
+
+          call 7z a browser-source.zip "browser-source\*"
+        working-directory: ./
 
       - name: Upload Opera artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
@@ -185,7 +194,7 @@ jobs:
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:
           name: browser-source-${{ env._BUILD_NUMBER }}.zip
-          path: apps/browser/dist/browser-source.zip
+          path: browser-source.zip
           if-no-files-found: error
 
       - name: Upload coverage artifact
@@ -209,7 +218,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846  # v3.0.0
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd  # v3.3.0
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
