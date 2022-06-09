@@ -56,6 +56,7 @@ import localeZhCn from "@angular/common/locales/zh-Hans";
 import localeZhTw from "@angular/common/locales/zh-Hant";
 import { NgModule } from "@angular/core";
 
+import { AccessibilityCookieComponent } from "./accounts/accessibility-cookie.component";
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
 import { LockComponent } from "./accounts/lock.component";
@@ -156,6 +157,7 @@ registerLocaleData(localeZhTw, "zh-TW");
 @NgModule({
   imports: [SharedModule, AppRoutingModule, VaultFilterModule],
   declarations: [
+    AccessibilityCookieComponent,
     AccountSwitcherComponent,
     AddEditComponent,
     AddEditCustomFieldsComponent,

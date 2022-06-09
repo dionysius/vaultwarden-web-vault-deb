@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "jslib-angular/guards/auth.guard";
 import { LockGuard } from "jslib-angular/guards/lock.guard";
 
+import { AccessibilityCookieComponent } from "./accounts/accessibility-cookie.component";
 import { HintComponent } from "./accounts/hint.component";
 import { LockComponent } from "./accounts/lock.component";
 import { LoginComponent } from "./accounts/login.component";
@@ -36,6 +37,7 @@ const routes: Routes = [
     component: VaultComponent,
     canActivate: [AuthGuard],
   },
+  { path: "accessibility-cookie", component: AccessibilityCookieComponent },
   { path: "hint", component: HintComponent },
   { path: "set-password", component: SetPasswordComponent },
   { path: "sso", component: SsoComponent },
