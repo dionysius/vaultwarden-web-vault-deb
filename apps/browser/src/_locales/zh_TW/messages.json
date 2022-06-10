@@ -315,7 +315,7 @@
     "message": "檢視項目"
   },
   "launch": {
-    "message": "啟動"
+    "message": "前往"
   },
   "website": {
     "message": "網站"
@@ -813,7 +813,7 @@
     "message": "若您的登入資料已包含驗證器金鑰，TOTP 驗證碼會在您自動填入時自動複製至您的剪貼簿。"
   },
   "disableAutoBiometricsPrompt": {
-    "message": "不要在啟動時提示生物特徵辨識驗證"
+    "message": "不要在啟動時提示生物特徵辨識"
   },
   "premiumRequired": {
     "message": "需要進階會員資格"

@@ -53,13 +53,13 @@
     "message": "Aba"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Cofre"
   },
   "myVault": {
     "message": "Meu Cofre"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Todos os Cofres"
   },
   "tools": {
     "message": "Ferramentas"
@@ -101,10 +101,10 @@
     "message": "Sem credenciais correspondentes."
   },
   "unlockVaultMenu": {
-    "message": "Desbloqueie seu cofre"
+    "message": "Desbloqueie seu Cofre"
   },
   "loginToVaultMenu": {
-    "message": "Acesse o seu cofre"
+    "message": "Acesse o seu Cofre"
   },
   "autoFillInfo": {
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
@@ -1916,7 +1916,7 @@
     "message": "Tipo de usuário"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "E-mail alternativo (com um +)",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -1947,22 +1947,22 @@
     "message": "Serviço"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Apelido (alias) de E-mail Encaminhado"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Gere um apelido de e-mail com um serviço de encaminhamento externo."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Nome do host",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "Token de Acesso à API"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "Chave da API"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Erro de Key Connector: certifique-se de que a Key Connector está disponível e funcionando corretamente."
   }
 }

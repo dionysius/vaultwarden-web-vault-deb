@@ -315,7 +315,7 @@
     "message": "查看项目"
   },
   "launch": {
-    "message": "启动"
+    "message": "前往"
   },
   "website": {
     "message": "网站"
@@ -855,7 +855,7 @@
     "message": "将您的 YubiKey 插入计算机的 USB 端口，然后按下按钮。"
   },
   "insertU2f": {
-    "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有一个按钮，按下它。"
+    "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有按钮，请按下它。"
   },
   "webAuthnNewTab": {
     "message": "要开始 WebAuthn 2FA 验证，请点击下面的按钮打开一个新标签页，并按照新标签页中提供的说明操作。"
