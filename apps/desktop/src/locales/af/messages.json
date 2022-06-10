@@ -370,10 +370,10 @@
     "message": "Is u seker u wil oor die huidige wagwoord skryf?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Skryf oor gebruikersnaam"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Is u seker u wil oor die huidige gebruikersnaam skryf?"
   },
   "noneFolder": {
     "message": "Geen Vouer",
@@ -401,16 +401,16 @@
     "message": "Lengte"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Hoofletters (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Kleinletters (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Syfers (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Spesiale karakters (!@#$%^&*)"
   },
   "numWords": {
     "message": "Aantal Woorde"
@@ -749,16 +749,16 @@
     "message": "Laai tans…"
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Vergrendel kluis"
   },
   "passwordGenerator": {
     "message": "Wagwoordgenereerder"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Kontak ons"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Kry hulp"
   },
   "fileBugReport": {
     "message": "Rapporteer ’n fout"
@@ -1210,7 +1210,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domeinnaam",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1274,38 +1274,38 @@
     "message": "Lêerformaat"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "hCaptcha-bronadres",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Laai toeganklikheidskoekie"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Registreer as toeganklikheidsgebruiker by",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Kopieer en plak die skakel wat na die e-pos hier onder gestuur is"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Voer die bronadres in om die toeganklikheidskoekie vir hCaptcha te laai",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "hCaptcha-bronadres word benodig",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Ongeldige bronadres"
   },
   "done": {
-    "message": "Done"
+    "message": "Klaar"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Toeganklikheidskoekie is bewaar!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Geen toeganklikheidskoekie is bewaar nie"
   },
   "warning": {
     "message": "WAARSKUWING",
@@ -1553,7 +1553,7 @@
     "message": "Blaaierintegrasie word gebruik vir biometrie in blaaier."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Blaaierintegrasie word nie ondersteun nie"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Ongelukkig word blaaierintegrasie tans slegs in die weergawe vir die Mac-toepwinkel ondersteun."
@@ -1562,7 +1562,7 @@
     "message": "Ongelukkig word blaaierintegrasie tans nie in die weergawe vir die Windows-winkel ondersteun nie."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Ongelukkig word blaaierintegrasie tans nie in die weergawe vir Linux ondersteun nie."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Vereis bevestiging vir blaaierintegrasie"
@@ -1813,7 +1813,7 @@
     "message": "Een of meer organisasiebeleide verhoed u om u persoonlike kluis uit te stuur."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Voeg rekening toe"
   },
   "removeMasterPassword": {
     "message": "Verwyder hoofwagwoord"
@@ -1840,25 +1840,25 @@
     "message": "U het die organisasie verlaat."
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Sleutel-koppelstukfout: maak seker dat Sleutel-koppelstuk beskikbaar is en werk."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Vergrendel alle kluise"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Nie meer as 5 rekeninge kan terselfdertyd ingeteken wees nie."
   },
   "accountPreferences": {
-    "message": "Preferences"
+    "message": "Voorkeure"
   },
   "appPreferences": {
-    "message": "App Settings (All Accounts)"
+    "message": "Toepinstellings (alle rekeninge)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Rekeningperk is bereik. Teken by’n rekening af om ’n ander toe te voeg."
   },
   "settingsTitle": {
-    "message": "App settings for $EMAIL$",
+    "message": "Toepinstellings vir $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1867,19 +1867,19 @@
     }
   },
   "switchAccount": {
-    "message": "Switch Account"
+    "message": "Verander rekening"
   },
   "options": {
-    "message": "Options"
+    "message": "Opsies"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "U sessie het uitgetel. Gaan terug en probeer weer inteken."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Stuur tans persoonlike kluis uit"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Slegs die persoonlike kluisitems wat met $EMAIL$ verbind word, word uitgestuur. Organisasiekluisitems word nie ingesluit nie.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1888,77 +1888,77 @@
     }
   },
   "locked": {
-    "message": "Locked"
+    "message": "Vergrendel"
   },
   "unlocked": {
-    "message": "Unlocked"
+    "message": "Ontgrendel"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Genereerder"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Wat wil u genereer?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Wagwoordtipe"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Hergenereer gebruikersnaam"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Genereer gebruikersnaam"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Gebruikersnaamtipe"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "E-posadres met plus",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Gebruik u e-posverskaffer se subadresvermoëns."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Allesomvattende e-pos"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Gebruik u domein se opgestelde allesomvattende inmandjie."
   },
   "random": {
-    "message": "Random"
+    "message": "Lukraak"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Lukrake woord"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Webwerfnaam"
   },
   "service": {
-    "message": "Service"
+    "message": "Diens"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Alle kluise"
   },
   "searchOrganization": {
-    "message": "Search Organization"
+    "message": "Deursoek organisasie"
   },
   "searchMyVault": {
-    "message": "Search My Vault"
+    "message": "Deursoek my kluis"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "E-posalias vir aanstuur"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Genereer ’n e-posalias met ’n eksterne aanstuurdiens."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Gasheernaam",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "API-toegangsteken"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "API-sleutel"
   }
 }

@@ -1274,38 +1274,38 @@
     "message": "Fájlformátum"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "hCaptcha webcím",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Akadálymentes süti betöltése"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Regisztrálás akadálymentes felhasználóként:",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Vágólapon át szúrjuk be lentebb a kapott emailben levő hivatkozást."
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Webcím megadása a hCaptcha akadálymentes sütijének betöltéséhez",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "A hCaptcha webcím megadása szükséges",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "A webcím érvénytelen."
   },
   "done": {
-    "message": "Done"
+    "message": "Kész"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Az ajadálymentes süti mentésre került."
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Nem lett elmentve akadálymentes süti."
   },
   "warning": {
     "message": "FIGYELEM",

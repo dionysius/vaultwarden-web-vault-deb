@@ -1274,38 +1274,38 @@
     "message": "Format de fichier"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "URL hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Charger le cookie d'accessibilité"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "S'inscrire en tant qu'utilisateur avec accessibilité à",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Copiez et collez le lien envoyé à votre adresse e-mail ci-dessous"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Entrez l'URL pour charger le cookie d'accessibilité pour hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "L'URL hCaptcha est nécessaire",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "URL invalide"
   },
   "done": {
-    "message": "Done"
+    "message": "Terminé"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Cookie d'accessibilité enregistré !"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Aucun cookie d'accessibilité sauvegardé"
   },
   "warning": {
     "message": "AVERTISSEMENT",
@@ -1553,7 +1553,7 @@
     "message": "L'intégration avec le navigateur est utilisée pour le déverrouillage biométrique dans le navigateur."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Intégration dans le navigateur non supportée"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Malheureusement l'intégration avec le navigateur est uniquement supportée dans la version Mac App Store pour le moment."
@@ -1562,7 +1562,7 @@
     "message": "Malheureusement l'intégration avec le navigateur n'est pas supportée dans la version Windows Store pour le moment."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "L'intégration dans le navigateur n'est malheureusement pas supportée dans la version Linux pour le moment."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Exiger une vérification pour l'intégration avec le navigateur"
@@ -1840,7 +1840,7 @@
     "message": "Vous avez quitté l'organisation."
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Erreur du connecteur de clé: veuillez vérifier que le connecteur de clé est disponible et qu'il fonctionne correctement."
   },
   "lockAllVaults": {
     "message": "Verrouiller tous les coffres"
