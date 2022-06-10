@@ -20,6 +20,13 @@ export class VaultFilterComponent extends BaseVaultFilterComponent {
     super(vaultFilterService);
   }
 
+  async ngOnInit() {
+    await super.ngOnInit();
+    this.vaultFilterService.collapsedFilterNodes$.subscribe((nodes) => {
+      this.collapsedFilterNodes = nodes;
+    });
+  }
+
   searchTextChanged() {
     this.onSearchTextChanged.emit(this.searchText);
   }

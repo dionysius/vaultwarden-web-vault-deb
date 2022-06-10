@@ -1,3 +1,5 @@
+import { BehaviorSubject, Observable } from "rxjs";
+
 import { Injectable } from "@angular/core";
 
 import { DynamicTreeNode } from "jslib-angular/modules/vault-filter/models/dynamic-tree-node.model";
@@ -16,6 +18,9 @@ import { CollectionView } from "jslib-common/models/view/collectionView";
 
 @Injectable()
 export class VaultFilterService extends BaseVaultFilterService {
+  private _collapsedFilterNodes = new BehaviorSubject<Set<string>>(null);
+  collapsedFilterNodes$: Observable<Set<string>> = this._collapsedFilterNodes.asObservable();
+
   constructor(
     stateService: StateService,
     organizationService: OrganizationService,
@@ -33,6 +38,26 @@ export class VaultFilterService extends BaseVaultFilterService {
       collectionService,
       policyService
     );
+  }
+
+  async buildCollapsedFilterNodes(): Promise<Set<string>> {
+    const nodes = await super.buildCollapsedFilterNodes();
+    this._collapsedFilterNodes.next(nodes);
+    return nodes;
+  }
+
+  async storeCollapsedFilterNodes(collapsedFilterNodes: Set<string>): Promise<void> {
+    await super.storeCollapsedFilterNodes(collapsedFilterNodes);
+    this._collapsedFilterNodes.next(collapsedFilterNodes);
+  }
+
+  async ensureVaultFiltersAreExpanded() {
+    const collapsedFilterNodes = await super.buildCollapsedFilterNodes();
+    if (!collapsedFilterNodes.has("vaults")) {
+      return;
+    }
+    collapsedFilterNodes.delete("vaults");
+    await this.storeCollapsedFilterNodes(collapsedFilterNodes);
   }
 
   async buildAdminCollections(organizationId: string) {
