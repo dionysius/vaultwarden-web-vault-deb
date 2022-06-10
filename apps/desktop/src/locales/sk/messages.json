@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "Formát Súboru"
   },
+  "hCaptchaUrl": {
+    "message": "URL hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "Načítať súbor cookie prístupnosti"
+  },
+  "registerAccessibilityUser": {
+    "message": "Zaregistrujte sa ako používateľ prístupnosti na",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "Skopírujte a vložte odkaz zaslaný na váš e-mail nižšie"
+  },
+  "enterhCaptchaUrl": {
+    "message": "Zadajte adresu URL na načítanie súboru cookie prístupnosti pre hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "Vyžaduje sa URL hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "Neplatná URL"
+  },
+  "done": {
+    "message": "Hotovo"
+  },
+  "accessibilityCookieSaved": {
+    "message": "Súbor cookie prístupnosti uložený!"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "Nie je uložený žiadny súbor cookie prístupnosti"
+  },
   "warning": {
     "message": "UPOZORNENIE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"

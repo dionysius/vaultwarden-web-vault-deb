@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "Tiedostomuoto"
   },
+  "hCaptchaUrl": {
+    "message": "hCaptcha-URL",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "Lataa esteettömyyseväste"
+  },
+  "registerAccessibilityUser": {
+    "message": "Rekisteröidy esteettömyyskäyttäjäksi osoitteessa",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "Kopioi ja liitä alla olevaan sähköpostiosoitteeseen lähetetty linkki"
+  },
+  "enterhCaptchaUrl": {
+    "message": "Lataa hCaptcha-esteettömyyseväste syöttämällä URL",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "hCaptcha-URL vaaditaan",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "Virheellinen URL"
+  },
+  "done": {
+    "message": "Valmis"
+  },
+  "accessibilityCookieSaved": {
+    "message": "Esteettömyyseväste tallennettiin!"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "Esteettömyysevästettä ei tallennettu"
+  },
   "warning": {
     "message": "VAROITUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"

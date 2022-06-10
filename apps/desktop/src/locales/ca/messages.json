@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "Format de fitxer"
   },
+  "hCaptchaUrl": {
+    "message": "Url hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "Carrega la galeta d'accessibilitat"
+  },
+  "registerAccessibilityUser": {
+    "message": "Registreu-vos com a usuari d'accessibilitat a",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "Copieu i enganxeu l'enllaç enviat al vostre correu electrònic a continuació"
+  },
+  "enterhCaptchaUrl": {
+    "message": "Introduïu l'URL per carregar la galeta d'accessibilitat per a hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "Es requereix l'URL hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "URL no vàlida"
+  },
+  "done": {
+    "message": "Fet"
+  },
+  "accessibilityCookieSaved": {
+    "message": "S'ha guardat la galeta d'accessibilitat!"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "No s'ha guardat la galeta d'accessibilitat"
+  },
   "warning": {
     "message": "ADVERTIMENT",
     "description": "WARNING (should stay in capitalized letters if the language permits)"

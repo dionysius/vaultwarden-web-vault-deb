@@ -116,7 +116,7 @@
     "message": "自訂欄位"
   },
   "launch": {
-    "message": "啟動"
+    "message": "前往"
   },
   "copyValue": {
     "message": "複製值",
@@ -1121,7 +1121,7 @@
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "粘貼",
+    "message": "貼上",
     "description": "Paste from clipboard"
   },
   "selectAll": {
@@ -1272,6 +1272,40 @@
   },
   "fileFormat": {
     "message": "檔案格式"
+  },
+  "hCaptchaUrl": {
+    "message": "hCaptcha URL",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "載入無障礙 Cookie"
+  },
+  "registerAccessibilityUser": {
+    "message": "以無障礙使用者，在下述位置註冊：",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "複製寄到您信箱的連結然後貼在下方"
+  },
+  "enterhCaptchaUrl": {
+    "message": "輸入 URL 以載入 hCaptcha 的無障礙 Cookie",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "hCaptcha URL 為必填",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "無效的 URL"
+  },
+  "done": {
+    "message": "完成"
+  },
+  "accessibilityCookieSaved": {
+    "message": "已儲存無障礙 Cookie！"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "未儲存無障礙 Cookie"
   },
   "warning": {
     "message": "警告",

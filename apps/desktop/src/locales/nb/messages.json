@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "Filformat"
   },
+  "hCaptchaUrl": {
+    "message": "hCaptcha Url",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "Last inn tilgjengelighetsinformasjonskapsel"
+  },
+  "registerAccessibilityUser": {
+    "message": "Registrer deg som tilgjengelighetsbruker på",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "Kopier og lim inn linken som er sendt til e-posten din nedenfor"
+  },
+  "enterhCaptchaUrl": {
+    "message": "Skriv inn URL-adressen for å laste tilgjengelighets-informasjonskapsler for hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "hCaptcha Url er påkrevd",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "Ugyldig url"
+  },
+  "done": {
+    "message": "Ferdig"
+  },
+  "accessibilityCookieSaved": {
+    "message": "Tilgjengelighets-informasjonskapsel lagret!"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "Ingen tilgjengelighets-informasjonskapsel lagret"
+  },
   "warning": {
     "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"

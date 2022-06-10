@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "ファイル形式"
   },
+  "hCaptchaUrl": {
+    "message": "hCaptcha URL",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "アクセシビリティクッキーを読み込む"
+  },
+  "registerAccessibilityUser": {
+    "message": "アクセシビリティユーザーとして登録する",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "以下のメールに送信されたリンクをコピーして貼り付けてください"
+  },
+  "enterhCaptchaUrl": {
+    "message": "hCaptcha のアクセシビリティクッキーを読み込むための URL を入力してください",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "hCaptcha URL が必要です",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "無効な URL"
+  },
+  "done": {
+    "message": "完了"
+  },
+  "accessibilityCookieSaved": {
+    "message": "アクセシビリティクッキーを保存しました！"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "アクセシビリティクッキーが保存されていません"
+  },
   "warning": {
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"

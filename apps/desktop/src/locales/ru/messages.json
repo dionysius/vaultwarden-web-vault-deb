@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "Формат файла"
   },
+  "hCaptchaUrl": {
+    "message": "URL hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "Загрузить cookie специальных возможностей"
+  },
+  "registerAccessibilityUser": {
+    "message": "Зарегистрироваться как пользователь специальных возможностей на",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "Скопируйте и вставьте ниже ссылку, отправленную на вашу почту"
+  },
+  "enterhCaptchaUrl": {
+    "message": "Введите URL для загрузки cookie специальных возможностей для hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "Требуется URL hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "Неверный URL"
+  },
+  "done": {
+    "message": "Готово"
+  },
+  "accessibilityCookieSaved": {
+    "message": "Cookie специальных возможностей сохранены!"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "Отсутствуют сохраненные cookie специальных возможностей"
+  },
   "warning": {
     "message": "ВНИМАНИЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"

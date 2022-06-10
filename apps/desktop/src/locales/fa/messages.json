@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "فرمت پرونده"
   },
+  "hCaptchaUrl": {
+    "message": "hCaptcha Url",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "Load Accessibility Cookie"
+  },
+  "registerAccessibilityUser": {
+    "message": "Register as an accessibility user at",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "Copy and paste the link sent to your email below"
+  },
+  "enterhCaptchaUrl": {
+    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "hCaptcha Url is required",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "Invalid Url"
+  },
+  "done": {
+    "message": "Done"
+  },
+  "accessibilityCookieSaved": {
+    "message": "Accessibility cookie saved!"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "No accessibility cookie saved"
+  },
   "warning": {
     "message": "اخطار",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
@@ -1519,7 +1553,7 @@
     "message": "یکپارچه سازی مرورگر برای بیومتریک در مرورگر استفاده می شود."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "ادغام مرورگر پشتیبانی نمی شود"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "متأسفانه در حال حاضر ادغام مرورگر فقط در نسخه Mac App Store پشتیبانی می شود."
@@ -1528,7 +1562,7 @@
     "message": "متأسفانه در حال حاضر ادغام مرورگر در نسخه فروشگاه ویندوز پشتیبانی نمی شود."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "متأسفانه در حال حاضر ادغام مرورگر در نسخه لینوکس پشتیبانی نمی شود."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "برای ادغام مرورگر نیاز به تأیید است"

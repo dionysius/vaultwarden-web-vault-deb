@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "Failivorming"
   },
+  "hCaptchaUrl": {
+    "message": "hCaptcha Url",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "Lae juurdepääsetavuse küpsis"
+  },
+  "registerAccessibilityUser": {
+    "message": "Registreeri juurdepääsetavuse kasutajana lehel",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "Kopeeri ja kleebi link, mis saadeti sinu e-postile"
+  },
+  "enterhCaptchaUrl": {
+    "message": "Sisesta URL, et laadida ligipääsetavuse küpsis hCaptchale",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "hCaptcha Url on nõutud",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "Vale Url"
+  },
+  "done": {
+    "message": "Valmis"
+  },
+  "accessibilityCookieSaved": {
+    "message": "Ligipääsetavuse küpsis on salvestatud!"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "Ligipääsetavuse küpsis pole salvestatud"
+  },
   "warning": {
     "message": "HOIATUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"

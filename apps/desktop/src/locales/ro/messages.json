@@ -1273,6 +1273,40 @@
   "fileFormat": {
     "message": "Format fișier"
   },
+  "hCaptchaUrl": {
+    "message": "Url-ul hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "loadAccessibilityCookie": {
+    "message": "Încărcare Cookie de accesibilitate"
+  },
+  "registerAccessibilityUser": {
+    "message": "Înregistrați-vă ca utilizator de accesibilitate la",
+    "description": "ex. Register as an accessibility user at hcaptcha.com"
+  },
+  "copyPasteLink": {
+    "message": "Copiați și lipiți linkul trimis pe e-mailul dvs. mai jos"
+  },
+  "enterhCaptchaUrl": {
+    "message": "Introduceți URL-ul pentru încărcarea cookie-ului de accesibilitate pentru hCaptcha",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "hCaptchaUrlRequired": {
+    "message": "Url-ul hCaptcha este necesar",
+    "description": "hCaptcha is the name of a website, should not be translated"
+  },
+  "invalidUrl": {
+    "message": "Url invalid"
+  },
+  "done": {
+    "message": "Făcut"
+  },
+  "accessibilityCookieSaved": {
+    "message": "Cookie de accesibilitate salvat!"
+  },
+  "noAccessibilityCookieSaved": {
+    "message": "Niciun cookie de accesibilitate salvat"
+  },
   "warning": {
     "message": "AVERTISMENT",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
