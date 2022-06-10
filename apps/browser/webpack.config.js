@@ -72,7 +72,9 @@ const plugins = [
   }),
   new CopyWebpackPlugin({
     patterns: [
-      "./src/manifest.json",
+      process.env.MANIFEST_VERSION == 3
+        ? { from: "./src/manifest.json.v3", to: "manifest.json" }
+        : "./src/manifest.json",
       { from: "./src/_locales", to: "_locales" },
       { from: "./src/images", to: "images" },
       { from: "./src/popup/images", to: "popup/images" },
