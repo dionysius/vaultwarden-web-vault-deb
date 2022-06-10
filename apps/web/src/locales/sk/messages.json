@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Časový limit vášho trezora prekračuje obmedzenia nastavené vašou organizáciou."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimálny vlastný časový limit je 1 minúta."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Časový limit trezoru nie je v povolenom rozsahu."
+  },
   "disablePersonalVaultExport": {
     "message": "Zakázať export osobného trezora"
   },

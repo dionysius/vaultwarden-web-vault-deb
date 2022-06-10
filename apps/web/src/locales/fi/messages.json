@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Holvisi aikakatkaisuviive ylittää organisaatiosi asettamat rajoitukset."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Lyhin omavalintainen aikakatkaisuaika on 1 minuutti."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Holvin aikakatkaisuaika ei ole sallitun alueen sisällä."
+  },
   "disablePersonalVaultExport": {
     "message": "Poista henkilökohtaisen holvin vienti käytöstä"
   },
@@ -4936,7 +4942,7 @@
     }
   },
   "accessDenied": {
-    "message": "Pääsy estetty. Sinulla ei ole oikeutta näyttää tätä sivua."
+    "message": "Pääsy estetty. Sinulla ei ole oikeutta avata sivua."
   },
   "masterPassword": {
     "message": "Pääsalasana"

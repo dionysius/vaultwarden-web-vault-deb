@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Vrijeme isteka premašuje ograničenje koju je postavila tvoja organizacija."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Vault Timeout is not within allowed range."
+  },
   "disablePersonalVaultExport": {
     "message": "Onemogući izvoz osobnog trezora"
   },

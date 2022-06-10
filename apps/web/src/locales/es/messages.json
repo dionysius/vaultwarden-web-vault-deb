@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "El tiempo de espera de tu bóveda excede la restricción establecida por tu organización."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "El tiempo de espera mínimo personalizado es de 1 minuto."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "El tiempo de espera de la bóveda no está dentro del rango permitido."
+  },
   "disablePersonalVaultExport": {
     "message": "Desactivar exportación de bóveda personal"
   },

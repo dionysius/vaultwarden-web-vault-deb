@@ -3540,7 +3540,7 @@
     "message": "The Single Organization enterprise policy must be enabled before activating this policy."
   },
   "requireSsoPolicyReqError": {
-    "message": "Single Organization policy not enabled."
+    "message": "Política da Organização Única não ativada."
   },
   "requireSsoExemption": {
     "message": "Organization Owners and Administrators are exempt from this policy's enforcement."
@@ -3705,7 +3705,7 @@
     "message": "Adicione um contacto de emergência"
   },
   "designatedEmergencyContacts": {
-    "message": "Designated as emergency contact"
+    "message": "Designado como contato de emergência"
   },
   "noGrantedAccess": {
     "message": "You have not been designated as an emergency contact for anyone yet."
@@ -3814,13 +3814,13 @@
     }
   },
   "emergencyApproved": {
-    "message": "Emergency access approved."
+    "message": "Acesso de emergência aprovado."
   },
   "emergencyRejected": {
-    "message": "Emergency access rejected"
+    "message": "Acesso de emergência rejeitado"
   },
   "passwordResetFor": {
-    "message": "Password reset for $USER$. You can now login using the new password.",
+    "message": "Redefinição de senha para $USER$. Agora você pode aceder usando a nova senha.",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -3863,7 +3863,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyDesc": {
-    "message": "Set options for creating and editing Sends.",
+    "message": "Definir opções para a criação e edição de Sends.",
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
@@ -3881,7 +3881,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "modifiedPolicyId": {
-    "message": "Modified policy $ID$.",
+    "message": "Política modificada $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3893,7 +3893,7 @@
     "message": "Plan price"
   },
   "estimatedTax": {
-    "message": "Estimated tax"
+    "message": "Imposto estimado"
   },
   "custom": {
     "message": "Personalizado"
@@ -3905,22 +3905,22 @@
     "message": "Permissões"
   },
   "accessEventLogs": {
-    "message": "Access Event Logs"
+    "message": "Aceder ao Registro de Eventos"
   },
   "accessImportExport": {
-    "message": "Access Import/Export"
+    "message": "Aceder a Importar/Exportar"
   },
   "accessReports": {
     "message": "Relatórios de acesso"
   },
   "missingPermissions": {
-    "message": "You lack the necessary permissions to perform this action."
+    "message": "Não tem as permissões necessárias para executar esta ação."
   },
   "manageAllCollections": {
-    "message": "Manage All Collections"
+    "message": "Gerir todas as coleções"
   },
   "createNewCollections": {
-    "message": "Create New Collections"
+    "message": "Criar novas coleções"
   },
   "editAnyCollection": {
     "message": "Editar Qualquer Coleção"
@@ -4115,7 +4115,7 @@
     }
   },
   "eventAdminPasswordReset": {
-    "message": "Master password reset for user $ID$.",
+    "message": "Redefinir senha mestra para usuário $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4124,7 +4124,7 @@
     }
   },
   "eventResetSsoLink": {
-    "message": "Reset Sso link for user $ID$",
+    "message": "Redefinir link Sso para utilizador $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4184,7 +4184,7 @@
     "message": "Users already in the organization will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "Require new users to be enrolled automatically"
+    "message": "Exigir que novos utilizadore sejam inscritos automaticamente"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
@@ -4205,13 +4205,13 @@
     "message": "Redefinir senha mestra"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Confirmação da senha mestra"
   },
   "passwordConfirmationDesc": {
     "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   },
   "reinviteSelected": {
-    "message": "Resend Invitations"
+    "message": "Reenviar convites"
   },
   "noSelectedUsersApplicable": {
     "message": "This action is not applicable to any of the selected users."
@@ -4235,10 +4235,10 @@
     "message": "Claro"
   },
   "confirmSelected": {
-    "message": "Confirm Selected"
+    "message": "Confirmar Seleção"
   },
   "bulkConfirmStatus": {
-    "message": "Bulk action status"
+    "message": "Estado da ação em massa"
   },
   "bulkConfirmMessage": {
     "message": "Confirmado com sucesso."
@@ -4430,6 +4430,12 @@
   },
   "vaultTimeoutToLarge": {
     "message": "Your vault timeout exceeds the restriction set by your organization."
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Tempo limite mínimo personalizado é 1 minuto."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Tempo limite do cofre não está dentro do intervalo permitido."
   },
   "disablePersonalVaultExport": {
     "message": "Disable Personal Vault Export"

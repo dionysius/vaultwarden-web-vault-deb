@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "A széf időkorlátja túllépi a szervezet által beállított korlátozást."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Vault Timeout is not within allowed range."
+  },
   "disablePersonalVaultExport": {
     "message": "A személyes széf exportálás nem engedélyezett."
   },

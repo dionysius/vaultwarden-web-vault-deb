@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Your vault timeout exceeds the restriction set by your organization."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "カスタムタイムアウトの最小値は1分です。"
+  },
+  "vaultTimeoutRangeError": {
+    "message": "保管庫のタイムアウトは許可された範囲内にありません。"
+  },
   "disablePersonalVaultExport": {
     "message": "Disable Personal Vault Export"
   },

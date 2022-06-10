@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Je kluis time-out is hoger dan het maximum van jouw organisatie."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "De minimale instelbare time-out is 1 minuut."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Kluis time-out ligt niet binnen het toegestane bereik."
+  },
   "disablePersonalVaultExport": {
     "message": "Persoonlijke kluis exporteren uitschakelen"
   },

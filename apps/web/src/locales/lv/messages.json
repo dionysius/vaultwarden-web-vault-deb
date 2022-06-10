@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Glabātavas noildze pāŗsniedz apvienības uzstādīto ierobežojumu."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Mazākā pieļaujamā pielāgotā noildze ir 1 minūte."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Glabātavas noildze nav pieļaujamajās robežvērtībās."
+  },
   "disablePersonalVaultExport": {
     "message": "Atspējot personīgās glabātavas izgūšanu"
   },

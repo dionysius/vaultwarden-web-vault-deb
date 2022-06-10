@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Din boks-timeout overskrider den begrænsning, der er fastsat af din organisation."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum brugerdefineret timeout er 1 minut."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Boks-timeout er ikke inden for det tilladte interval."
+  },
   "disablePersonalVaultExport": {
     "message": "Deaktivér eksport af personlig boks"
   },

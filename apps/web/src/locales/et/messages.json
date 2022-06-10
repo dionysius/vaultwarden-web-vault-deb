@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Your vault timeout exceeds the restriction set by your organization."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimaalne ajalõpp on 1 minut."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Hoidla ajalõpp pole lubatud piirides."
+  },
   "disablePersonalVaultExport": {
     "message": "Disable Personal Vault Export"
   },

@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "El temps d'espera de la caixa forta supera les restriccions establertes per la vostra organització."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "El temps d'espera personalitzat mínim és d'1 minut."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "El temps d'espera de la caixa forta no es troba dins de l'interval permès."
+  },
   "disablePersonalVaultExport": {
     "message": "Inhabilita l'exportació de la caixa forta personal"
   },

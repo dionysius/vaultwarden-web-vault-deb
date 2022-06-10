@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Czas blokowania sejfu przekracza limit określony przez organizację."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimalny niestandardowy czas to 1 minuta."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Czas blokowania sejfu nie jest w dozwolonym zakresie."
+  },
   "disablePersonalVaultExport": {
     "message": "Wyłącz eksportowanie osobistego sejfu"
   },

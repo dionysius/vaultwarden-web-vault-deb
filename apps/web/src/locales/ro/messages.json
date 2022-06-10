@@ -4431,6 +4431,12 @@
   "vaultTimeoutToLarge": {
     "message": "Timpul de expirare a seifului depășește restricția stabilită de organizația dvs."
   },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Durata minimă de expirare personalizată este de 1 minut."
+  },
+  "vaultTimeoutRangeError": {
+    "message": "Expirarea seifului nu se încadrează în intervalul permis."
+  },
   "disablePersonalVaultExport": {
     "message": "Dezactivare a exportului seifului personal"
   },

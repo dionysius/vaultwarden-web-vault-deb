@@ -455,7 +455,7 @@
     "message": "取消全选"
   },
   "launch": {
-    "message": "启动"
+    "message": "前往"
   },
   "newAttachment": {
     "message": "添加新附件"
@@ -733,7 +733,7 @@
     "message": "将您的 YubiKey 插入计算机的 USB 端口，然后按下按钮。"
   },
   "insertU2f": {
-    "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有一个按钮，按下它。"
+    "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有按钮，请按下它。"
   },
   "loginUnavailable": {
     "message": "登录不可用"
@@ -4163,7 +4163,7 @@
     "message": "密码重置成功！"
   },
   "resetPasswordEnrollmentWarning": {
-    "message": "注册后将允许组织管理员更改您的主密码。确定要注册吗？"
+    "message": "注册后将允许组织管理员更改您的主密码"
   },
   "resetPasswordPolicy": {
     "message": "主密码重置"
@@ -4430,6 +4430,12 @@
   },
   "vaultTimeoutToLarge": {
     "message": "您的密码库超时时间超出了您的组织设置的限制。"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "最小自定义超时为1分钟。"
+  },
+  "vaultTimeoutRangeError": {
+    "message": "私密库超时不在允许的范围内。"
   },
   "disablePersonalVaultExport": {
     "message": "禁用个人密码库导出"
