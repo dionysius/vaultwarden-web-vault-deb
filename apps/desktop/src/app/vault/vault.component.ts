@@ -583,7 +583,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         cipherPassesFilter = cipher.type === this.activeFilter.cipherType;
       }
       if (
-        this.activeFilter.selectedFolderId != null &&
+        this.activeFilter.selectedFolder &&
         this.activeFilter.selectedFolderId != "none" &&
         cipherPassesFilter
       ) {
