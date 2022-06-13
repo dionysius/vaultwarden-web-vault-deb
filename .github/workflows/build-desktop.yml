@@ -8,7 +8,9 @@ on:
       - 'gh-pages'
     paths:
       - 'apps/desktop/**'
-      - 'libs/**'
+      - '*'
+      - '!*.md'
+      - '!*.txt'
       - '.github/workflows/build-desktop.yml'
   push:
     branches:
@@ -18,6 +20,9 @@ on:
     paths:
       - 'apps/desktop/**'
       - 'libs/**'
+      - '*'
+      - '!*.md'
+      - '!*.txt'
       - '.github/workflows/build-desktop.yml'
   workflow_dispatch:
     inputs: {}
