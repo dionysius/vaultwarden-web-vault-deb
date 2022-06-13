@@ -1,7 +1,9 @@
 import { OrganizationConnectionType } from "jslib-common/enums/organizationConnectionType";
+import { DeviceVerificationRequest } from "jslib-common/models/request/deviceVerificationRequest";
 import { OrganizationConnectionRequest } from "jslib-common/models/request/organizationConnectionRequest";
 import { BillingHistoryResponse } from "jslib-common/models/response/billingHistoryResponse";
 import { BillingPaymentResponse } from "jslib-common/models/response/billingPaymentResponse";
+import { DeviceVerificationResponse } from "jslib-common/models/response/deviceVerificationResponse";
 import {
   OrganizationConnectionConfigApis,
   OrganizationConnectionResponse,
@@ -494,6 +496,10 @@ export abstract class ApiService {
   postTwoFactorRecover: (request: TwoFactorRecoveryRequest) => Promise<any>;
   postTwoFactorEmailSetup: (request: TwoFactorEmailRequest) => Promise<any>;
   postTwoFactorEmail: (request: TwoFactorEmailRequest) => Promise<any>;
+  getDeviceVerificationSettings: () => Promise<DeviceVerificationResponse>;
+  putDeviceVerificationSettings: (
+    request: DeviceVerificationRequest
+  ) => Promise<DeviceVerificationResponse>;
 
   getEmergencyAccessTrusted: () => Promise<ListResponse<EmergencyAccessGranteeDetailsResponse>>;
   getEmergencyAccessGranted: () => Promise<ListResponse<EmergencyAccessGrantorDetailsResponse>>;
