@@ -19,7 +19,7 @@
 
 This repository houses all Bitwarden client applications except the [Mobile application](https://github.com/bitwarden/mobile).
 
-Please check the readmes for each application under `apps` for instructions on how to build the different applications.
+Please refer to the [Clients section](https://contributing.bitwarden.com/clients/) of the [Contributing Documentation](https://contributing.bitwarden.com/) for build instructions, recommended tooling, code style tips, and lots of other great information to get you started.
 
 ## Related projects:
 
@@ -33,17 +33,9 @@ Interested in contributing in a big way? Consider joining our team! We're hiring
 
 # Contribute
 
-Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
+Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute by reading the [Contributing Guidelines](https://contributing.bitwarden.com/contributing/). Check out the [Contributing Documentation](https://contributing.bitwarden.com/) for how to get started with your first contribution.
 
 Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature. You can read our security policy in the [`SECURITY.md`](SECURITY.md) file.
-
-## Git blame
-
-We recommend that you configure git to ignore specific revision using:
-
-```bash
-git config blame.ignoreRevsFile .git-blame-ignore-revs
-```
 
 ## Migrate PRs from old repositories
 

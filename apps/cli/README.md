@@ -9,7 +9,13 @@ The Bitwarden CLI is a powerful, full-featured command-line interface (CLI) tool
 
 ![CLI](https://raw.githubusercontent.com/bitwarden/brand/master/screenshots/cli-macos.png "CLI")
 
-## Download/Install
+## Developer Documentation
+
+Please refer to the [CLI section](https://contributing.bitwarden.com/clients/cli/) of the [Contributing Documentation](https://contributing.bitwarden.com/) for build instructions, recommended tooling, code style tips, and lots of other great information to get you started.
+
+## User Documentation
+
+### Download/Install
 
 You can install the Bitwarden CLI multiple different ways:
 
@@ -40,7 +46,7 @@ We provide natively packaged versions of the CLI for each platform which have no
   sudo snap install bw
   ```
 
-## Documentation
+### Help Command
 
 The Bitwarden CLI is self-documented with `--help` content and examples for every command. You should start exploring the CLI by using the global `--help` option:
 
@@ -57,28 +63,6 @@ bw list --help
 bw create --help
 ```
 
-**Detailed Documentation**
+### Help Center
 
 We provide detailed documentation and examples for using the CLI in our help center at https://help.bitwarden.com/article/cli/.
-
-## Build/Run
-
-**Requirements**
-
-- [Node.js](https://nodejs.org) v16.13.1.
-  - Testing is done against Node 16, other versions may work, but are not guaranteed.
-- NPM v8
-
-**Run the app**
-
-```bash
-npm install
-npm run sub:init # initialize the git submodule for jslib
-npm run build:watch
-```
-
-You can then run commands from the `./build` folder:
-
-```bash
-node ./build/bw.js login
-```
