@@ -190,8 +190,8 @@ export class IndividualVaultComponent implements OnInit, OnDestroy {
       this.activeFilter.myVaultOnly = true;
     } else {
       this.activeFilter.selectedOrganizationId = orgId;
-      await this.vaultFilterService.ensureVaultFiltersAreExpanded();
     }
+    await this.vaultFilterService.ensureVaultFiltersAreExpanded();
     await this.applyVaultFilter(this.activeFilter);
   }
 
