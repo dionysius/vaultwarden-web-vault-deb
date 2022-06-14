@@ -26,7 +26,6 @@ export abstract class TokenService {
   getEmail: () => Promise<string>;
   getEmailVerified: () => Promise<boolean>;
   getName: () => Promise<string>;
-  getPremium: () => Promise<boolean>;
   getIssuer: () => Promise<string>;
   getIsExternal: () => Promise<boolean>;
 }

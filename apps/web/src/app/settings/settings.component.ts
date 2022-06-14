@@ -51,9 +51,9 @@ export class SettingsComponent implements OnInit, OnDestroy {
   }
 
   async load() {
-    this.premium = await this.tokenService.getPremium();
+    this.premium = await this.stateService.getHasPremiumPersonally();
     this.hasFamilySponsorshipAvailable = await this.organizationService.canManageSponsorships();
-    const hasPremiumFromOrg = await this.stateService.getCanAccessPremium();
+    const hasPremiumFromOrg = await this.stateService.getHasPremiumFromOrganization();
     let billing = null;
     if (!this.selfHosted) {
       billing = await this.apiService.getUserBillingHistory();

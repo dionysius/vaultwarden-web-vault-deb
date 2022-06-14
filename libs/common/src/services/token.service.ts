@@ -169,15 +169,6 @@ export class TokenService implements TokenServiceAbstraction {
     return decoded.name as string;
   }
 
-  async getPremium(): Promise<boolean> {
-    const decoded = await this.decodeToken();
-    if (typeof decoded.premium === "undefined") {
-      return false;
-    }
-
-    return decoded.premium as boolean;
-  }
-
   async getIssuer(): Promise<string> {
     const decoded = await this.decodeToken();
     if (typeof decoded.iss === "undefined") {

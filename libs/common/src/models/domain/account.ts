@@ -90,6 +90,7 @@ export class AccountProfile {
   everBeenUnlocked?: boolean;
   forcePasswordReset?: boolean;
   hasPremiumPersonally?: boolean;
+  hasPremiumFromOrganization?: boolean;
   lastSync?: string;
   userId?: string;
   usesKeyConnector?: boolean;

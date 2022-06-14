@@ -337,13 +337,41 @@ export class StateService<
       return false;
     }
 
+    return (
+      (await this.getHasPremiumPersonally(options)) ||
+      (await this.getHasPremiumFromOrganization(options))
+    );
+  }
+
+  async getHasPremiumPersonally(options?: StorageOptions): Promise<boolean> {
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultOnDiskOptions())
     );
-    if (account.profile.hasPremiumPersonally) {
+    return account?.profile?.hasPremiumPersonally;
+  }
+
+  async setHasPremiumPersonally(value: boolean, options?: StorageOptions): Promise<void> {
+    const account = await this.getAccount(
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+    account.profile.hasPremiumPersonally = value;
+    await this.saveAccount(
+      account,
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+  }
+
+  async getHasPremiumFromOrganization(options?: StorageOptions): Promise<boolean> {
+    const account = await this.getAccount(
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+
+    if (account.profile?.hasPremiumFromOrganization) {
       return true;
     }
 
+    // TODO: older server versions won't send the hasPremiumFromOrganization flag, so we're keeping the old logic
+    // for backwards compatibility. It can be removed after everyone has upgraded.
     const organizations = await this.getOrganizations(options);
     if (organizations == null) {
       return false;
@@ -359,11 +387,11 @@ export class StateService<
     return false;
   }
 
-  async setCanAccessPremium(value: boolean, options?: StorageOptions): Promise<void> {
+  async setHasPremiumFromOrganization(value: boolean, options?: StorageOptions): Promise<void> {
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultOnDiskOptions())
     );
-    account.profile.hasPremiumPersonally = value;
+    account.profile.hasPremiumFromOrganization = value;
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultOnDiskOptions())

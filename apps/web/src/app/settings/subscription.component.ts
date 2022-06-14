@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { TokenService } from "jslib-common/abstractions/token.service";
+import { StateService } from "jslib-common/abstractions/state.service";
 
 @Component({
   selector: "app-subscription",
@@ -12,12 +12,12 @@ export class SubscriptionComponent {
   selfHosted: boolean;
 
   constructor(
-    private tokenService: TokenService,
+    private stateService: StateService,
     private platformUtilsService: PlatformUtilsService
   ) {}
 
   async ngOnInit() {
-    this.hasPremium = await this.tokenService.getPremium();
+    this.hasPremium = await this.stateService.getHasPremiumPersonally();
     this.selfHosted = this.platformUtilsService.isSelfHost();
   }
 
