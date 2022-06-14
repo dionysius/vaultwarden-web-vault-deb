@@ -6,5 +6,9 @@
       "webpack://?:*/*": "${workspaceFolder}/*",
       "webpack://@bitwarden/cli/*": "${workspaceFolder}/*"
     }
-  }
+  },
+  "eslint.options": {
+    "ignorePath": "${workspaceFolder}/../../../.eslintIgnore"
+  },
+  "prettier.ignorePath": "${workspaceFolder}/../../../.prettierignore"
 }

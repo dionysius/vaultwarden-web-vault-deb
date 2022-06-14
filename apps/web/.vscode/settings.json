@@ -1,0 +1,6 @@
+{
+  "eslint.options": {
+    "ignorePath": "${workspaceFolder}/../../../.eslintIgnore"
+  },
+  "prettier.ignorePath": "${workspaceFolder}/../../../.prettierignore"
+}

@@ -1,34 +1,34 @@
 {
-	"folders": [
-		{
-			"name": "root",
-			"path": "."
-		},
-		{
-			"name": "web vault",
-			"path": "apps/web"
-		},
-		{
-			"name": "web vault (bit)",
-			"path": "bitwarden_license/bit-web"
-		},
-		{
-			"name": "cli",
-			"path": "apps/cli"
-		},
-		{
-			"name": "desktop",
-			"path": "apps/desktop"
-		},
-		{
-			"name": "browser",
-			"path": "apps/browser"
-		},
-		{
-			"name": "libs",
-			"path": "libs"
-		}
-	],
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "name": "web vault",
+      "path": "apps/web"
+    },
+    {
+      "name": "web vault (bit)",
+      "path": "bitwarden_license/bit-web"
+    },
+    {
+      "name": "cli",
+      "path": "apps/cli"
+    },
+    {
+      "name": "desktop",
+      "path": "apps/desktop"
+    },
+    {
+      "name": "browser",
+      "path": "apps/browser"
+    },
+    {
+      "name": "libs",
+      "path": "libs"
+    }
+  ],
   "settings": {
     "debug.javascript.terminalOptions": {
       "sourceMapPathOverrides": {
@@ -37,6 +37,20 @@
         "webpack://?:*/*": "${workspaceFolder}/*",
         "webpack://@bitwarden/cli/*": "${workspaceFolder}/apps/cli/*"
       }
-    }
+  },
+  "jest.disabledWorkspaceFolders": [
+    "root",
+    "web vault",
+    "web vault (bit)",
+    "desktop"
+  ],
+  "jest.jestCommandLine": "npx jest"
+},
+"extensions": {
+  "recommendations": [
+    "orta.vscode-jest",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ],
   }
 }
