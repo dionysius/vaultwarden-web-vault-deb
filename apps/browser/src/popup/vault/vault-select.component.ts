@@ -14,10 +14,10 @@ import {
 } from "@angular/core";
 import { merge } from "rxjs";
 
-import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { Organization } from "jslib-common/models/domain/organization";
+import { VaultFilter } from "@bitwarden/angular/modules/vault-filter/models/vault-filter.model";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { Organization } from "@bitwarden/common/models/domain/organization";
 
 import { VaultFilterService } from "../../services/vaultFilter.service";
 

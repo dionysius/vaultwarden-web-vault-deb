@@ -1,6 +1,6 @@
 import { powerMonitor } from "electron";
 
-import { isSnapStore } from "jslib-electron/utils";
+import { isSnapStore } from "@bitwarden/electron/utils";
 
 import { Main } from "../main";
 

@@ -1,17 +1,17 @@
 import { Component, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
-import { ModalService } from "jslib-angular/services/modal.service";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { OrganizationKeysRequest } from "jslib-common/models/request/organizationKeysRequest";
-import { OrganizationUpdateRequest } from "jslib-common/models/request/organizationUpdateRequest";
-import { OrganizationResponse } from "jslib-common/models/response/organizationResponse";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { OrganizationKeysRequest } from "@bitwarden/common/models/request/organizationKeysRequest";
+import { OrganizationUpdateRequest } from "@bitwarden/common/models/request/organizationUpdateRequest";
+import { OrganizationResponse } from "@bitwarden/common/models/response/organizationResponse";
 
 import { ApiKeyComponent } from "../../settings/api-key.component";
 import { PurgeVaultComponent } from "../../settings/purge-vault.component";

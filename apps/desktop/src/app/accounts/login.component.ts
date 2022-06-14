@@ -1,19 +1,19 @@
 import { Component, NgZone, OnDestroy, ViewChild, ViewContainerRef } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { LoginComponent as BaseLoginComponent } from "jslib-angular/components/login.component";
-import { ModalService } from "jslib-angular/services/modal.service";
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
+import { LoginComponent as BaseLoginComponent } from "@bitwarden/angular/components/login.component";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 
 import { EnvironmentComponent } from "./environment.component";
 

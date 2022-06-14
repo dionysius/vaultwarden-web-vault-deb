@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 
 @Component({
   selector: "app-subscription",

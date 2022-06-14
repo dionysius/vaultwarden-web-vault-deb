@@ -1,16 +1,16 @@
 import { Component, NgZone, OnInit } from "@angular/core";
 
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { ProviderService } from "jslib-common/abstractions/provider.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { TokenService } from "jslib-common/abstractions/token.service";
-import { Utils } from "jslib-common/misc/utils";
-import { Organization } from "jslib-common/models/domain/organization";
-import { Provider } from "jslib-common/models/domain/provider";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { TokenService } from "@bitwarden/common/abstractions/token.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { Provider } from "@bitwarden/common/models/domain/provider";
 
 import { NavigationPermissionsService as OrgNavigationPermissionsService } from "../organizations/services/navigation-permissions.service";
 

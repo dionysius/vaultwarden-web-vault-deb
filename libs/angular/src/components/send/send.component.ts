@@ -1,15 +1,15 @@
 import { Directive, NgZone, OnInit } from "@angular/core";
 
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { SearchService } from "jslib-common/abstractions/search.service";
-import { SendService } from "jslib-common/abstractions/send.service";
-import { PolicyType } from "jslib-common/enums/policyType";
-import { SendType } from "jslib-common/enums/sendType";
-import { SendView } from "jslib-common/models/view/sendView";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { PolicyType } from "@bitwarden/common/enums/policyType";
+import { SendType } from "@bitwarden/common/enums/sendType";
+import { SendView } from "@bitwarden/common/models/view/sendView";
 
 @Directive()
 export class SendComponent implements OnInit {

@@ -1,7 +1,7 @@
 import {
   Account as BaseAccount,
   AccountSettings as BaseAccountSettings,
-} from "jslib-common/models/domain/account";
+} from "@bitwarden/common/models/domain/account";
 
 export class AccountSettings extends BaseAccountSettings {
   vaultTimeout = -1; // On Restart

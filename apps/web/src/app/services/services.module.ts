@@ -8,24 +8,24 @@ import {
   STATE_SERVICE_USE_CACHE,
   LOCALES_DIRECTORY,
   SYSTEM_LANGUAGE,
-} from "jslib-angular/services/jslib-services.module";
-import { ModalService as ModalServiceAbstraction } from "jslib-angular/services/modal.service";
-import { ApiService as ApiServiceAbstraction } from "jslib-common/abstractions/api.service";
-import { CipherService as CipherServiceAbstraction } from "jslib-common/abstractions/cipher.service";
-import { CollectionService as CollectionServiceAbstraction } from "jslib-common/abstractions/collection.service";
-import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
-import { FolderService as FolderServiceAbstraction } from "jslib-common/abstractions/folder.service";
-import { I18nService as I18nServiceAbstraction } from "jslib-common/abstractions/i18n.service";
-import { ImportService as ImportServiceAbstraction } from "jslib-common/abstractions/import.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService as MessagingServiceAbstraction } from "jslib-common/abstractions/messaging.service";
-import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "jslib-common/abstractions/passwordReprompt.service";
-import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "jslib-common/abstractions/platformUtils.service";
-import { StateService as BaseStateServiceAbstraction } from "jslib-common/abstractions/state.service";
-import { StateMigrationService as StateMigrationServiceAbstraction } from "jslib-common/abstractions/stateMigration.service";
-import { StorageService as StorageServiceAbstraction } from "jslib-common/abstractions/storage.service";
-import { StateFactory } from "jslib-common/factories/stateFactory";
-import { ImportService } from "jslib-common/services/import.service";
+} from "@bitwarden/angular/services/jslib-services.module";
+import { ModalService as ModalServiceAbstraction } from "@bitwarden/angular/services/modal.service";
+import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
+import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/abstractions/cipher.service";
+import { CollectionService as CollectionServiceAbstraction } from "@bitwarden/common/abstractions/collection.service";
+import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
+import { FolderService as FolderServiceAbstraction } from "@bitwarden/common/abstractions/folder.service";
+import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
+import { ImportService as ImportServiceAbstraction } from "@bitwarden/common/abstractions/import.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/abstractions/messaging.service";
+import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
+import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
+import { StateMigrationService as StateMigrationServiceAbstraction } from "@bitwarden/common/abstractions/stateMigration.service";
+import { StorageService as StorageServiceAbstraction } from "@bitwarden/common/abstractions/storage.service";
+import { StateFactory } from "@bitwarden/common/factories/stateFactory";
+import { ImportService } from "@bitwarden/common/services/import.service";
 
 import { StateService as StateServiceAbstraction } from "../../abstractions/state.service";
 import { Account } from "../../models/account";

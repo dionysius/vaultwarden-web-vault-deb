@@ -1,16 +1,16 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { Utils } from "jslib-common/misc/utils";
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { Verification } from "jslib-common/types/verification";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { Verification } from "@bitwarden/common/types/verification";
 
 class CountBasedLocalizationKey {
   singular: string;

@@ -1,6 +1,6 @@
-import { UriMatchType } from "jslib-common/enums/uriMatchType";
-import { LoginUriData } from "jslib-common/models/data/loginUriData";
-import { LoginUri } from "jslib-common/models/domain/loginUri";
+import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
+import { LoginUriData } from "@bitwarden/common/models/data/loginUriData";
+import { LoginUri } from "@bitwarden/common/models/domain/loginUri";
 
 import { mockEnc } from "../utils";
 

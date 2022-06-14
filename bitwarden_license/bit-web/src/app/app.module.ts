@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
-import { JslibModule } from "jslib-angular/jslib.module";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 
 import { OssRoutingModule } from "src/app/oss-routing.module";
 import { OssModule } from "src/app/oss.module";

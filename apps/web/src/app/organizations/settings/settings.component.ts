@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 @Component({
   selector: "app-org-settings",

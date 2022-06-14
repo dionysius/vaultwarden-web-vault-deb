@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 type CalloutTypes = "success" | "info" | "warning" | "danger";
 

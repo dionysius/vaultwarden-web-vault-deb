@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
-import { TwoFactorEmailRequest } from "jslib-common/models/request/twoFactorEmailRequest";
-import { UpdateTwoFactorEmailRequest } from "jslib-common/models/request/updateTwoFactorEmailRequest";
-import { TwoFactorEmailResponse } from "jslib-common/models/response/twoFactorEmailResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
+import { TwoFactorEmailRequest } from "@bitwarden/common/models/request/twoFactorEmailRequest";
+import { UpdateTwoFactorEmailRequest } from "@bitwarden/common/models/request/updateTwoFactorEmailRequest";
+import { TwoFactorEmailResponse } from "@bitwarden/common/models/response/twoFactorEmailResponse";
 
 import { TwoFactorBaseComponent } from "./two-factor-base.component";
 

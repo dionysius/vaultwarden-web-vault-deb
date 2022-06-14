@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 @Component({
   selector: "app-frontend-layout",

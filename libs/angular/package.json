@@ -1,5 +1,5 @@
 {
-  "name": "@bitwarden/jslib-angular",
+  "name": "@bitwarden/angular",
   "version": "0.0.0",
   "description": "Common code used across Bitwarden JavaScript projects.",
   "keywords": [
@@ -16,8 +16,5 @@
     "clean": "rimraf dist/**/*",
     "build": "npm run clean && tsc",
     "build:watch": "npm run clean && tsc -watch"
-  },
-  "dependencies": {
-    "@bitwarden/jslib-common": "file:../common"
   }
 }

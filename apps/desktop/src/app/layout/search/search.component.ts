@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
 
-import { StateService } from "jslib-common/abstractions/state.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 
 import { SearchBarService, SearchBarState } from "./search-bar.service";
 

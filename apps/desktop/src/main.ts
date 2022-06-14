@@ -2,15 +2,15 @@ import * as path from "path";
 
 import { app } from "electron";
 
-import { StateFactory } from "jslib-common/factories/stateFactory";
-import { GlobalState } from "jslib-common/models/domain/globalState";
-import { StateService } from "jslib-common/services/state.service";
-import { ElectronLogService } from "jslib-electron/services/electronLog.service";
-import { ElectronMainMessagingService } from "jslib-electron/services/electronMainMessaging.service";
-import { ElectronStorageService } from "jslib-electron/services/electronStorage.service";
-import { TrayMain } from "jslib-electron/tray.main";
-import { UpdaterMain } from "jslib-electron/updater.main";
-import { WindowMain } from "jslib-electron/window.main";
+import { StateFactory } from "@bitwarden/common/factories/stateFactory";
+import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { StateService } from "@bitwarden/common/services/state.service";
+import { ElectronLogService } from "@bitwarden/electron/services/electronLog.service";
+import { ElectronMainMessagingService } from "@bitwarden/electron/services/electronMainMessaging.service";
+import { ElectronStorageService } from "@bitwarden/electron/services/electronStorage.service";
+import { TrayMain } from "@bitwarden/electron/tray.main";
+import { UpdaterMain } from "@bitwarden/electron/updater.main";
+import { WindowMain } from "@bitwarden/electron/window.main";
 
 import { BiometricMain } from "./main/biometric/biometric.main";
 import { DesktopCredentialStorageListener } from "./main/desktopCredentialStorageListener";

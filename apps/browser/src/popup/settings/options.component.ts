@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { TotpService } from "jslib-common/abstractions/totp.service";
-import { ThemeType } from "jslib-common/enums/themeType";
-import { UriMatchType } from "jslib-common/enums/uriMatchType";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TotpService } from "@bitwarden/common/abstractions/totp.service";
+import { ThemeType } from "@bitwarden/common/enums/themeType";
+import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 
 @Component({
   selector: "app-options",

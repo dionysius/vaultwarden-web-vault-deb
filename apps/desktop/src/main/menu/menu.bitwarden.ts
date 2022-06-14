@@ -1,9 +1,9 @@
 import { BrowserWindow, MenuItemConstructorOptions } from "electron";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { UpdaterMain } from "jslib-electron/updater.main";
-import { isMac } from "jslib-electron/utils";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { UpdaterMain } from "@bitwarden/electron/updater.main";
+import { isMac } from "@bitwarden/electron/utils";
 
 import { FirstMenu } from "./menu.first";
 import { MenuAccount } from "./menu.updater";

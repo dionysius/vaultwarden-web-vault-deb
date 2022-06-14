@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { JslibModule } from "jslib-angular/jslib.module";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 
 import { ServicesModule } from "../services/services.module";
 

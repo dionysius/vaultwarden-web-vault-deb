@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 
-import { UserVerificationComponent } from "jslib-angular/components/user-verification.component";
+import { UserVerificationComponent } from "@bitwarden/angular/components/user-verification.component";
 
 import { AcceptEmergencyComponent } from "../accounts/accept-emergency.component";
 import { AcceptOrganizationComponent } from "../accounts/accept-organization.component";

@@ -1,4 +1,4 @@
-import { DeviceType } from "jslib-common/enums/deviceType";
+import { DeviceType } from "@bitwarden/common/enums/deviceType";
 
 import BrowserPlatformUtilsService from "./browserPlatformUtils.service";
 

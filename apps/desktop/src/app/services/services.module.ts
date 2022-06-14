@@ -8,32 +8,32 @@ import {
   CLIENT_TYPE,
   LOCALES_DIRECTORY,
   SYSTEM_LANGUAGE,
-} from "jslib-angular/services/jslib-services.module";
-import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
-import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
-import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "jslib-common/abstractions/cryptoFunction.service";
-import { I18nService as I18nServiceAbstraction } from "jslib-common/abstractions/i18n.service";
+} from "@bitwarden/angular/services/jslib-services.module";
+import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
+import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
 import {
   LogService,
   LogService as LogServiceAbstraction,
-} from "jslib-common/abstractions/log.service";
-import { MessagingService as MessagingServiceAbstraction } from "jslib-common/abstractions/messaging.service";
-import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "jslib-common/abstractions/passwordReprompt.service";
-import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "jslib-common/abstractions/platformUtils.service";
-import { StateService as StateServiceAbstraction } from "jslib-common/abstractions/state.service";
-import { StateMigrationService as StateMigrationServiceAbstraction } from "jslib-common/abstractions/stateMigration.service";
-import { StorageService as StorageServiceAbstraction } from "jslib-common/abstractions/storage.service";
-import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
-import { ClientType } from "jslib-common/enums/clientType";
-import { StateFactory } from "jslib-common/factories/stateFactory";
-import { GlobalState } from "jslib-common/models/domain/globalState";
-import { SystemService } from "jslib-common/services/system.service";
-import { ElectronCryptoService } from "jslib-electron/services/electronCrypto.service";
-import { ElectronLogService } from "jslib-electron/services/electronLog.service";
-import { ElectronPlatformUtilsService } from "jslib-electron/services/electronPlatformUtils.service";
-import { ElectronRendererMessagingService } from "jslib-electron/services/electronRendererMessaging.service";
-import { ElectronRendererSecureStorageService } from "jslib-electron/services/electronRendererSecureStorage.service";
-import { ElectronRendererStorageService } from "jslib-electron/services/electronRendererStorage.service";
+} from "@bitwarden/common/abstractions/log.service";
+import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/abstractions/messaging.service";
+import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
+import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
+import { StateMigrationService as StateMigrationServiceAbstraction } from "@bitwarden/common/abstractions/stateMigration.service";
+import { StorageService as StorageServiceAbstraction } from "@bitwarden/common/abstractions/storage.service";
+import { SystemService as SystemServiceAbstraction } from "@bitwarden/common/abstractions/system.service";
+import { ClientType } from "@bitwarden/common/enums/clientType";
+import { StateFactory } from "@bitwarden/common/factories/stateFactory";
+import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { SystemService } from "@bitwarden/common/services/system.service";
+import { ElectronCryptoService } from "@bitwarden/electron/services/electronCrypto.service";
+import { ElectronLogService } from "@bitwarden/electron/services/electronLog.service";
+import { ElectronPlatformUtilsService } from "@bitwarden/electron/services/electronPlatformUtils.service";
+import { ElectronRendererMessagingService } from "@bitwarden/electron/services/electronRendererMessaging.service";
+import { ElectronRendererSecureStorageService } from "@bitwarden/electron/services/electronRendererSecureStorage.service";
+import { ElectronRendererStorageService } from "@bitwarden/electron/services/electronRendererStorage.service";
 
 import { Account } from "../../models/account";
 import { I18nService } from "../../services/i18n.service";

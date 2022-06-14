@@ -1,22 +1,22 @@
 import { Directive } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-import { VerificationType } from "jslib-common/enums/verificationType";
-import { EncString } from "jslib-common/models/domain/encString";
-import { MasterPasswordPolicyOptions } from "jslib-common/models/domain/masterPasswordPolicyOptions";
-import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
-import { PasswordRequest } from "jslib-common/models/request/passwordRequest";
-import { Verification } from "jslib-common/types/verification";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { VerificationType } from "@bitwarden/common/enums/verificationType";
+import { EncString } from "@bitwarden/common/models/domain/encString";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { PasswordRequest } from "@bitwarden/common/models/request/passwordRequest";
+import { Verification } from "@bitwarden/common/types/verification";
 
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "./change-password.component";
 

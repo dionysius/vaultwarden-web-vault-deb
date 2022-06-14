@@ -1,13 +1,13 @@
 import * as chalk from "chalk";
 import * as program from "commander";
 
-import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
-import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
-import { BaseProgram } from "jslib-node/cli/baseProgram";
-import { LogoutCommand } from "jslib-node/cli/commands/logout.command";
-import { UpdateCommand } from "jslib-node/cli/commands/update.command";
-import { Response } from "jslib-node/cli/models/response";
-import { MessageResponse } from "jslib-node/cli/models/response/messageResponse";
+import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
+import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
+import { BaseProgram } from "@bitwarden/node/cli/baseProgram";
+import { LogoutCommand } from "@bitwarden/node/cli/commands/logout.command";
+import { UpdateCommand } from "@bitwarden/node/cli/commands/update.command";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
 import { Main } from "./bw";
 import { CompletionCommand } from "./commands/completion.command";

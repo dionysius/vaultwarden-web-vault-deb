@@ -4,14 +4,14 @@ import * as path from "path";
 import * as inquirer from "inquirer";
 import * as JSZip from "jszip";
 
-import { LogService } from "jslib-common/abstractions/log.service";
-import { NodeUtils } from "jslib-common/misc/nodeUtils";
-import { Utils } from "jslib-common/misc/utils";
-import { Organization } from "jslib-common/models/domain/organization";
-import { CollectionView } from "jslib-common/models/view/collectionView";
-import { FolderView } from "jslib-common/models/view/folderView";
-import { Response } from "jslib-node/cli/models/response";
-import { MessageResponse } from "jslib-node/cli/models/response/messageResponse";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { CollectionView } from "@bitwarden/common/models/view/collectionView";
+import { FolderView } from "@bitwarden/common/models/view/folderView";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
 import { FlagName, Flags } from "./flags";
 

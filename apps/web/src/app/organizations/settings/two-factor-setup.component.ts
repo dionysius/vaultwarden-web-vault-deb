@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { ModalService } from "jslib-angular/services/modal.service";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
 
 import { TwoFactorDuoComponent } from "../../settings/two-factor-duo.component";
 import { TwoFactorSetupComponent as BaseTwoFactorSetupComponent } from "../../settings/two-factor-setup.component";

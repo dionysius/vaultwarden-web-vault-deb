@@ -1,12 +1,12 @@
-import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
-import { VaultFilterService as BaseVaultFilterService } from "jslib-angular/modules/vault-filter/vault-filter.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CollectionService } from "jslib-common/abstractions/collection.service";
-import { FolderService } from "jslib-common/abstractions/folder.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { VaultFilter } from "@bitwarden/angular/modules/vault-filter/models/vault-filter.model";
+import { VaultFilterService as BaseVaultFilterService } from "@bitwarden/angular/modules/vault-filter/vault-filter.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
+import { FolderService } from "@bitwarden/common/abstractions/folder.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 export class VaultFilterService extends BaseVaultFilterService {
   vaultFilter: VaultFilter = new VaultFilter();

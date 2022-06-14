@@ -1,15 +1,4 @@
-import { OrganizationConnectionType } from "jslib-common/enums/organizationConnectionType";
-import { DeviceVerificationRequest } from "jslib-common/models/request/deviceVerificationRequest";
-import { OrganizationConnectionRequest } from "jslib-common/models/request/organizationConnectionRequest";
-import { BillingHistoryResponse } from "jslib-common/models/response/billingHistoryResponse";
-import { BillingPaymentResponse } from "jslib-common/models/response/billingPaymentResponse";
-import { DeviceVerificationResponse } from "jslib-common/models/response/deviceVerificationResponse";
-import {
-  OrganizationConnectionConfigApis,
-  OrganizationConnectionResponse,
-} from "jslib-common/models/response/organizationConnectionResponse";
-import { SsoPreValidateResponse } from "jslib-common/models/response/ssoPreValidateResponse";
-
+import { OrganizationConnectionType } from "../enums/organizationConnectionType";
 import { PolicyType } from "../enums/policyType";
 import { SetKeyConnectorKeyRequest } from "../models/request/account/setKeyConnectorKeyRequest";
 import { VerifyOTPRequest } from "../models/request/account/verifyOTPRequest";
@@ -25,6 +14,7 @@ import { CipherRequest } from "../models/request/cipherRequest";
 import { CipherShareRequest } from "../models/request/cipherShareRequest";
 import { CollectionRequest } from "../models/request/collectionRequest";
 import { DeleteRecoverRequest } from "../models/request/deleteRecoverRequest";
+import { DeviceVerificationRequest } from "../models/request/deviceVerificationRequest";
 import { EmailRequest } from "../models/request/emailRequest";
 import { EmailTokenRequest } from "../models/request/emailTokenRequest";
 import { EmergencyAccessAcceptRequest } from "../models/request/emergencyAccessAcceptRequest";
@@ -49,6 +39,7 @@ import { OrganizationSponsorshipCreateRequest } from "../models/request/organiza
 import { OrganizationSponsorshipRedeemRequest } from "../models/request/organization/organizationSponsorshipRedeemRequest";
 import { OrganizationSsoRequest } from "../models/request/organization/organizationSsoRequest";
 import { OrganizationApiKeyRequest } from "../models/request/organizationApiKeyRequest";
+import { OrganizationConnectionRequest } from "../models/request/organizationConnectionRequest";
 import { OrganizationCreateRequest } from "../models/request/organizationCreateRequest";
 import { OrganizationImportRequest } from "../models/request/organizationImportRequest";
 import { OrganizationKeysRequest } from "../models/request/organizationKeysRequest";
@@ -108,6 +99,8 @@ import { VerifyEmailRequest } from "../models/request/verifyEmailRequest";
 import { ApiKeyResponse } from "../models/response/apiKeyResponse";
 import { AttachmentResponse } from "../models/response/attachmentResponse";
 import { AttachmentUploadDataResponse } from "../models/response/attachmentUploadDataResponse";
+import { BillingHistoryResponse } from "../models/response/billingHistoryResponse";
+import { BillingPaymentResponse } from "../models/response/billingPaymentResponse";
 import { BillingResponse } from "../models/response/billingResponse";
 import { BreachAccountResponse } from "../models/response/breachAccountResponse";
 import { CipherResponse } from "../models/response/cipherResponse";
@@ -115,6 +108,7 @@ import {
   CollectionGroupDetailsResponse,
   CollectionResponse,
 } from "../models/response/collectionResponse";
+import { DeviceVerificationResponse } from "../models/response/deviceVerificationResponse";
 import { DomainsResponse } from "../models/response/domainsResponse";
 import {
   EmergencyAccessGranteeDetailsResponse,
@@ -133,6 +127,10 @@ import { ListResponse } from "../models/response/listResponse";
 import { OrganizationSsoResponse } from "../models/response/organization/organizationSsoResponse";
 import { OrganizationApiKeyInformationResponse } from "../models/response/organizationApiKeyInformationResponse";
 import { OrganizationAutoEnrollStatusResponse } from "../models/response/organizationAutoEnrollStatusResponse";
+import {
+  OrganizationConnectionConfigApis,
+  OrganizationConnectionResponse,
+} from "../models/response/organizationConnectionResponse";
 import { OrganizationKeysResponse } from "../models/response/organizationKeysResponse";
 import { OrganizationResponse } from "../models/response/organizationResponse";
 import { OrganizationSponsorshipSyncStatusResponse } from "../models/response/organizationSponsorshipSyncStatusResponse";
@@ -165,6 +163,7 @@ import { SendAccessResponse } from "../models/response/sendAccessResponse";
 import { SendFileDownloadDataResponse } from "../models/response/sendFileDownloadDataResponse";
 import { SendFileUploadDataResponse } from "../models/response/sendFileUploadDataResponse";
 import { SendResponse } from "../models/response/sendResponse";
+import { SsoPreValidateResponse } from "../models/response/ssoPreValidateResponse";
 import { SubscriptionResponse } from "../models/response/subscriptionResponse";
 import { SyncResponse } from "../models/response/syncResponse";
 import { TaxInfoResponse } from "../models/response/taxInfoResponse";

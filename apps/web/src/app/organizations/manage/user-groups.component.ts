@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { Utils } from "jslib-common/misc/utils";
-import { OrganizationUserUpdateGroupsRequest } from "jslib-common/models/request/organizationUserUpdateGroupsRequest";
-import { GroupResponse } from "jslib-common/models/response/groupResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { OrganizationUserUpdateGroupsRequest } from "@bitwarden/common/models/request/organizationUserUpdateGroupsRequest";
+import { GroupResponse } from "@bitwarden/common/models/response/groupResponse";
 
 @Component({
   selector: "app-user-groups",

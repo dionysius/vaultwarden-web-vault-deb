@@ -1,8 +1,8 @@
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { Utils } from "jslib-common/misc/utils";
-import { OrganizationUserConfirmRequest } from "jslib-common/models/request/organizationUserConfirmRequest";
-import { Response } from "jslib-node/cli/models/response";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { OrganizationUserConfirmRequest } from "@bitwarden/common/models/request/organizationUserConfirmRequest";
+import { Response } from "@bitwarden/node/cli/models/response";
 
 export class ConfirmCommand {
   constructor(private apiService: ApiService, private cryptoService: CryptoService) {}

@@ -1,19 +1,19 @@
 import Substitute, { Arg } from "@fluffy-spoon/substitute";
 
-import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { FieldType } from "jslib-common/enums/fieldType";
-import { SecureNoteType } from "jslib-common/enums/secureNoteType";
-import { UriMatchType } from "jslib-common/enums/uriMatchType";
-import { CipherData } from "jslib-common/models/data/cipherData";
-import { Card } from "jslib-common/models/domain/card";
-import { Cipher } from "jslib-common/models/domain/cipher";
-import { Identity } from "jslib-common/models/domain/identity";
-import { Login } from "jslib-common/models/domain/login";
-import { SecureNote } from "jslib-common/models/domain/secureNote";
-import { CardView } from "jslib-common/models/view/cardView";
-import { IdentityView } from "jslib-common/models/view/identityView";
-import { LoginView } from "jslib-common/models/view/loginView";
+import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { FieldType } from "@bitwarden/common/enums/fieldType";
+import { SecureNoteType } from "@bitwarden/common/enums/secureNoteType";
+import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
+import { CipherData } from "@bitwarden/common/models/data/cipherData";
+import { Card } from "@bitwarden/common/models/domain/card";
+import { Cipher } from "@bitwarden/common/models/domain/cipher";
+import { Identity } from "@bitwarden/common/models/domain/identity";
+import { Login } from "@bitwarden/common/models/domain/login";
+import { SecureNote } from "@bitwarden/common/models/domain/secureNote";
+import { CardView } from "@bitwarden/common/models/view/cardView";
+import { IdentityView } from "@bitwarden/common/models/view/identityView";
+import { LoginView } from "@bitwarden/common/models/view/loginView";
 
 import { mockEnc } from "../utils";
 

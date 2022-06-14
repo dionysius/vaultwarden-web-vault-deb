@@ -1,8 +1,8 @@
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { SearchService } from "jslib-common/abstractions/search.service";
-import { SendService } from "jslib-common/abstractions/send.service";
-import { Response } from "jslib-node/cli/models/response";
-import { ListResponse } from "jslib-node/cli/models/response/listResponse";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { ListResponse } from "@bitwarden/node/cli/models/response/listResponse";
 
 import { SendResponse } from "../..//models/response/sendResponse";
 

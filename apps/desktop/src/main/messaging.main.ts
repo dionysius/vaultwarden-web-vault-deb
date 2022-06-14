@@ -3,7 +3,7 @@ import * as path from "path";
 
 import { app, ipcMain } from "electron";
 
-import { StateService } from "jslib-common/abstractions/state.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 
 import { Main } from "../main";
 

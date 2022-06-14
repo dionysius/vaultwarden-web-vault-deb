@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { SetPinComponent as BaseSetPinComponent } from "jslib-angular/components/set-pin.component";
+import { SetPinComponent as BaseSetPinComponent } from "@bitwarden/angular/components/set-pin.component";
 
 @Component({
   templateUrl: "set-pin.component.html",

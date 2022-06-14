@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 @Pipe({
   name: "searchCiphers",

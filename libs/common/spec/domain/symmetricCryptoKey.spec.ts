@@ -1,5 +1,5 @@
-import { EncryptionType } from "jslib-common/enums/encryptionType";
-import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
+import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
 import { makeStaticByteArray } from "../utils";
 

@@ -1,20 +1,20 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { AppIdService } from "jslib-common/abstractions/appId.service";
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { TokenService } from "jslib-common/abstractions/token.service";
-import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
-import { HashPurpose } from "jslib-common/enums/hashPurpose";
-import { PasswordLogInStrategy } from "jslib-common/misc/logInStrategies/passwordLogin.strategy";
-import { Utils } from "jslib-common/misc/utils";
-import { PasswordLogInCredentials } from "jslib-common/models/domain/logInCredentials";
-import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TokenService } from "@bitwarden/common/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
+import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
+import { PasswordLogInStrategy } from "@bitwarden/common/misc/logInStrategies/passwordLogin.strategy";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/logInCredentials";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
 import { identityTokenResponseFactory } from "./logIn.strategy.spec";
 

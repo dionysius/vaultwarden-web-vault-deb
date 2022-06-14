@@ -1,18 +1,18 @@
 import { Component, OnInit, Type, ViewChild, ViewContainerRef } from "@angular/core";
 
-import { ModalRef } from "jslib-angular/components/modal/modal.ref";
-import { ModalService } from "jslib-angular/services/modal.service";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { PolicyType } from "jslib-common/enums/policyType";
-import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
-import { DeviceVerificationRequest } from "jslib-common/models/request/deviceVerificationRequest";
-import { TwoFactorProviders } from "jslib-common/services/twoFactor.service";
+import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { PolicyType } from "@bitwarden/common/enums/policyType";
+import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
+import { DeviceVerificationRequest } from "@bitwarden/common/models/request/deviceVerificationRequest";
+import { TwoFactorProviders } from "@bitwarden/common/services/twoFactor.service";
 
 import { TwoFactorAuthenticatorComponent } from "./two-factor-authenticator.component";
 import { TwoFactorDuoComponent } from "./two-factor-duo.component";

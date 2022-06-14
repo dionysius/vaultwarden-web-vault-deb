@@ -1,14 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { DEFAULT_KDF_ITERATIONS, KdfType } from "jslib-common/enums/kdfType";
-import { KdfRequest } from "jslib-common/models/request/kdfRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { DEFAULT_KDF_ITERATIONS, KdfType } from "@bitwarden/common/enums/kdfType";
+import { KdfRequest } from "@bitwarden/common/models/request/kdfRequest";
 
 @Component({
   selector: "app-change-kdf",

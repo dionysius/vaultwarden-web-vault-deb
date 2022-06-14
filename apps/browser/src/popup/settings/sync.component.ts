@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 
 @Component({
   selector: "app-sync",

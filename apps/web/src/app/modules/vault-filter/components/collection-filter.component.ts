@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { CollectionFilterComponent as BaseCollectionFilterComponent } from "jslib-angular/modules/vault-filter/components/collection-filter.component";
+import { CollectionFilterComponent as BaseCollectionFilterComponent } from "@bitwarden/angular/modules/vault-filter/components/collection-filter.component";
 
 @Component({
   selector: "app-collection-filter",

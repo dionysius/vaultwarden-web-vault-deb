@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-import { Verification } from "jslib-common/types/verification";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { Verification } from "@bitwarden/common/types/verification";
 
 @Component({
   selector: "app-delete-account",

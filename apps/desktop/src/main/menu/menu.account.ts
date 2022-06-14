@@ -1,8 +1,8 @@
 import { BrowserWindow, dialog, MenuItemConstructorOptions, shell } from "electron";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { isMacAppStore, isWindowsStore } from "jslib-electron/utils";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { isMacAppStore, isWindowsStore } from "@bitwarden/electron/utils";
 
 import { IMenubarMenu } from "./menubar";
 

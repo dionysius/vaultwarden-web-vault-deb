@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
 
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { StateService } from "jslib-common/abstractions/state.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 
 export enum ReportTypes {
   "exposedPasswords" = "exposedPasswords",

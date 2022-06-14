@@ -1,5 +1,5 @@
-import { StateService as BaseStateServiceAbstraction } from "jslib-common/abstractions/state.service";
-import { StorageOptions } from "jslib-common/models/domain/storageOptions";
+import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
+import { StorageOptions } from "@bitwarden/common/models/domain/storageOptions";
 
 import { Account } from "src/models/account";
 import { BrowserComponentState } from "src/models/browserComponentState";

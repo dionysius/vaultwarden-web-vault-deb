@@ -1,15 +1,15 @@
 import { Injectable } from "@angular/core";
 
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CollectionService } from "jslib-common/abstractions/collection.service";
-import { FolderService } from "jslib-common/abstractions/folder.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { PolicyType } from "jslib-common/enums/policyType";
-import { Organization } from "jslib-common/models/domain/organization";
-import { CollectionView } from "jslib-common/models/view/collectionView";
-import { FolderView } from "jslib-common/models/view/folderView";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
+import { FolderService } from "@bitwarden/common/abstractions/folder.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { PolicyType } from "@bitwarden/common/enums/policyType";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { CollectionView } from "@bitwarden/common/models/view/collectionView";
+import { FolderView } from "@bitwarden/common/models/view/folderView";
 
 import { DynamicTreeNode } from "./models/dynamic-tree-node.model";
 

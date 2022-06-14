@@ -1,7 +1,7 @@
-import { SafariCsvImporter as Importer } from "jslib-common/importers/safariCsvImporter";
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { LoginUriView } from "jslib-common/models/view/loginUriView";
-import { LoginView } from "jslib-common/models/view/loginView";
+import { SafariCsvImporter as Importer } from "@bitwarden/common/importers/safariCsvImporter";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
+import { LoginView } from "@bitwarden/common/models/view/loginView";
 
 import { data as oldSimplePasswordData } from "./testData/safariCsv/oldSimplePasswordData.csv";
 import { data as simplePasswordData } from "./testData/safariCsv/simplePasswordData.csv";

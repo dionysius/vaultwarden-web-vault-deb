@@ -13,11 +13,18 @@
   },
   "homepage": "https://bitwarden.com",
   "scripts": {
+    "prepare": "husky install",
     "lint": "eslint . && prettier --check .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --write .",
-    "prepare": "husky install"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:watch:all": "jest --watchAll"
   },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.2.13",
     "@angular/cli": "^12.2.13",
@@ -149,8 +156,9 @@
     "core-js": "^3.11.0",
     "date-input-polyfill": "^2.14.0",
     "duo_web_sdk": "github:duosecurity/duo_web_sdk",
-    "https-proxy-agent": "^5.0.0",
-    "inquirer": "^8.2.4",
+    "form-data": "4.0.0",
+    "https-proxy-agent": "5.0.0",
+    "inquirer": "8.0.0",
     "jquery": "3.6.0",
     "jsdom": "^16.7.0",
     "jszip": "^3.10.0",

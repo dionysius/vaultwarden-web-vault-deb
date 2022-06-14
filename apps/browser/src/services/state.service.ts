@@ -1,6 +1,6 @@
-import { GlobalState } from "jslib-common/models/domain/globalState";
-import { StorageOptions } from "jslib-common/models/domain/storageOptions";
-import { StateService as BaseStateService } from "jslib-common/services/state.service";
+import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { StorageOptions } from "@bitwarden/common/models/domain/storageOptions";
+import { StateService as BaseStateService } from "@bitwarden/common/services/state.service";
 
 import { Account } from "../models/account";
 import { BrowserComponentState } from "../models/browserComponentState";

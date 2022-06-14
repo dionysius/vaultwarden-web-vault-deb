@@ -1,12 +1,12 @@
 import { Directive, ViewChild, ViewContainerRef } from "@angular/core";
 
-import { ModalService } from "jslib-angular/services/modal.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
-import { Organization } from "jslib-common/models/domain/organization";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 import { AddEditComponent as OrgAddEditComponent } from "../organizations/vault/add-edit.component";
 import { AddEditComponent } from "../vault/add-edit.component";

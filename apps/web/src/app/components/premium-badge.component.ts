@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 
 @Component({
   selector: "app-premium-badge",

@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { ProviderAddOrganizationRequest } from "jslib-common/models/request/provider/providerAddOrganizationRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { ProviderAddOrganizationRequest } from "@bitwarden/common/models/request/provider/providerAddOrganizationRequest";
 
 @Injectable()
 export class WebProviderService {

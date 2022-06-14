@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
-import { ViewCustomFieldsComponent as BaseViewCustomFieldsComponent } from "jslib-angular/components/view-custom-fields.component";
-import { EventService } from "jslib-common/abstractions/event.service";
+import { ViewCustomFieldsComponent as BaseViewCustomFieldsComponent } from "@bitwarden/angular/components/view-custom-fields.component";
+import { EventService } from "@bitwarden/common/abstractions/event.service";
 
 @Component({
   selector: "app-vault-view-custom-fields",

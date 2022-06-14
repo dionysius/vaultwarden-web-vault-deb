@@ -1,6 +1,6 @@
 import { Directive, OnInit, TemplateRef, ViewContainerRef } from "@angular/core";
 
-import { StateService } from "jslib-common/abstractions/state.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 
 /**
  * Hides the element if the user has premium.

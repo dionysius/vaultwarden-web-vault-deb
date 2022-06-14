@@ -2,22 +2,22 @@ import { Directive, NgZone, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { take } from "rxjs/operators";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-import { HashPurpose } from "jslib-common/enums/hashPurpose";
-import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
-import { Utils } from "jslib-common/misc/utils";
-import { EncString } from "jslib-common/models/domain/encString";
-import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
-import { SecretVerificationRequest } from "jslib-common/models/request/secretVerificationRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
+import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
+import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { EncString } from "@bitwarden/common/models/domain/encString";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { SecretVerificationRequest } from "@bitwarden/common/models/request/secretVerificationRequest";
 
 @Directive()
 export class LockComponent implements OnInit {

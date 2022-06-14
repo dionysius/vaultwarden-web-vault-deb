@@ -2,19 +2,19 @@ import { Directive } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { Utils } from "jslib-common/misc/utils";
-import { AuthResult } from "jslib-common/models/domain/authResult";
-import { SsoLogInCredentials } from "jslib-common/models/domain/logInCredentials";
-import { SsoPreValidateResponse } from "jslib-common/models/response/ssoPreValidateResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { AuthResult } from "@bitwarden/common/models/domain/authResult";
+import { SsoLogInCredentials } from "@bitwarden/common/models/domain/logInCredentials";
+import { SsoPreValidateResponse } from "@bitwarden/common/models/response/ssoPreValidateResponse";
 
 @Directive()
 export class SsoComponent {

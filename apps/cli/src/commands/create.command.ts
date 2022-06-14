@@ -1,18 +1,18 @@
 import * as fs from "fs";
 import * as path from "path";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { FolderService } from "jslib-common/abstractions/folder.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { Utils } from "jslib-common/misc/utils";
-import { CipherExport } from "jslib-common/models/export/cipherExport";
-import { CollectionExport } from "jslib-common/models/export/collectionExport";
-import { FolderExport } from "jslib-common/models/export/folderExport";
-import { CollectionRequest } from "jslib-common/models/request/collectionRequest";
-import { SelectionReadOnlyRequest } from "jslib-common/models/request/selectionReadOnlyRequest";
-import { Response } from "jslib-node/cli/models/response";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { FolderService } from "@bitwarden/common/abstractions/folder.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { CipherExport } from "@bitwarden/common/models/export/cipherExport";
+import { CollectionExport } from "@bitwarden/common/models/export/collectionExport";
+import { FolderExport } from "@bitwarden/common/models/export/folderExport";
+import { CollectionRequest } from "@bitwarden/common/models/request/collectionRequest";
+import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selectionReadOnlyRequest";
+import { Response } from "@bitwarden/node/cli/models/response";
 
 import { OrganizationCollectionRequest } from "../models/request/organizationCollectionRequest";
 import { CipherResponse } from "../models/response/cipherResponse";

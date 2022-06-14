@@ -1,9 +1,9 @@
 import { Component, Input, OnChanges, OnInit } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
 
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { Utils } from "jslib-common/misc/utils";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 @Component({
   selector: "app-avatar",

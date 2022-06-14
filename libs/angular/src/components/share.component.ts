@@ -1,16 +1,16 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CollectionService } from "jslib-common/abstractions/collection.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { OrganizationUserStatusType } from "jslib-common/enums/organizationUserStatusType";
-import { Utils } from "jslib-common/misc/utils";
-import { Organization } from "jslib-common/models/domain/organization";
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { CollectionView } from "jslib-common/models/view/collectionView";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CollectionView } from "@bitwarden/common/models/view/collectionView";
 
 @Directive()
 export class ShareComponent implements OnInit {

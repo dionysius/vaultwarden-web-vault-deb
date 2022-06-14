@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input } from "@angular/core";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 // Increments for each instance of this component
 let nextId = 0;

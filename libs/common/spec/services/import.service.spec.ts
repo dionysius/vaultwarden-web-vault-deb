@@ -1,16 +1,16 @@
 import Substitute, { SubstituteOf } from "@fluffy-spoon/substitute";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CollectionService } from "jslib-common/abstractions/collection.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { FolderService } from "jslib-common/abstractions/folder.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { BitwardenPasswordProtectedImporter } from "jslib-common/importers/bitwardenPasswordProtectedImporter";
-import { Importer } from "jslib-common/importers/importer";
-import { Utils } from "jslib-common/misc/utils";
-import { ImportService } from "jslib-common/services/import.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { FolderService } from "@bitwarden/common/abstractions/folder.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { BitwardenPasswordProtectedImporter } from "@bitwarden/common/importers/bitwardenPasswordProtectedImporter";
+import { Importer } from "@bitwarden/common/importers/importer";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { ImportService } from "@bitwarden/common/services/import.service";
 
 describe("ImportService", () => {
   let importService: ImportService;

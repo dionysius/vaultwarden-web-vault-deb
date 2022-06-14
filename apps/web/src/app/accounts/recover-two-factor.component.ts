@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { TwoFactorRecoveryRequest } from "jslib-common/models/request/twoFactorRecoveryRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { TwoFactorRecoveryRequest } from "@bitwarden/common/models/request/twoFactorRecoveryRequest";
 
 @Component({
   selector: "app-recover-two-factor",

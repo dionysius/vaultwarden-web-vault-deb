@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, Input, Output } from "@angular/core";
 
-import { SearchService } from "jslib-common/abstractions/search.service";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 @Directive()
 export class CiphersComponent {

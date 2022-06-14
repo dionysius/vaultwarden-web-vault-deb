@@ -1,5 +1,5 @@
-import { Response } from "jslib-node/cli/models/response";
-import { StringResponse } from "jslib-node/cli/models/response/stringResponse";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { StringResponse } from "@bitwarden/node/cli/models/response/stringResponse";
 
 import { CliUtils } from "../utils";
 

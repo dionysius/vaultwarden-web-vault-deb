@@ -1,6 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 
-import { Organization } from "jslib-common/models/domain/organization";
+import { Organization } from "@bitwarden/common/models/domain/organization";
 
 import { VaultFilterComponent } from "./vault-filter.component";
 

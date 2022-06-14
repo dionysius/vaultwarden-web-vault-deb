@@ -1,10 +1,10 @@
 import { Directive, EventEmitter, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
-import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
+import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
 
 @Directive()
 export class TwoFactorOptionsComponent implements OnInit {

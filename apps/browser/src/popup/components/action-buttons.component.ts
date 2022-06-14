@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { EventService } from "jslib-common/abstractions/event.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { TotpService } from "jslib-common/abstractions/totp.service";
-import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { EventType } from "jslib-common/enums/eventType";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TotpService } from "@bitwarden/common/abstractions/totp.service";
+import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { EventType } from "@bitwarden/common/enums/eventType";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 @Component({
   selector: "app-action-buttons",

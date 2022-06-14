@@ -1,10 +1,10 @@
 import { Component, Input, OnChanges } from "@angular/core";
 
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { Utils } from "jslib-common/misc/utils";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 /**
  * Provides a mapping from supported card brands to

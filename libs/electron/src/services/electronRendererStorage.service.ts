@@ -1,6 +1,6 @@
 import { ipcRenderer } from "electron";
 
-import { StorageService } from "jslib-common/abstractions/storage.service";
+import { StorageService } from "@bitwarden/common/abstractions/storage.service";
 
 export class ElectronRendererStorageService implements StorageService {
   get<T>(key: string): Promise<T> {

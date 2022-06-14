@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { GeneratorComponent as BaseGeneratorComponent } from "jslib-angular/components/generator.component";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { UsernameGenerationService } from "jslib-common/abstractions/usernameGeneration.service";
+import { GeneratorComponent as BaseGeneratorComponent } from "@bitwarden/angular/components/generator.component";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { UsernameGenerationService } from "@bitwarden/common/abstractions/usernameGeneration.service";
 
 @Component({
   selector: "app-generator",

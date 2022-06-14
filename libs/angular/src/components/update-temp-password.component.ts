@@ -1,19 +1,19 @@
 import { Directive } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { EncString } from "jslib-common/models/domain/encString";
-import { MasterPasswordPolicyOptions } from "jslib-common/models/domain/masterPasswordPolicyOptions";
-import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
-import { UpdateTempPasswordRequest } from "jslib-common/models/request/updateTempPasswordRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { EncString } from "@bitwarden/common/models/domain/encString";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { UpdateTempPasswordRequest } from "@bitwarden/common/models/request/updateTempPasswordRequest";
 
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "./change-password.component";
 

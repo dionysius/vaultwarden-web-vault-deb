@@ -2,10 +2,10 @@ import { animate, style, transition, trigger } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from "@angular/forms";
 
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-import { VerificationType } from "jslib-common/enums/verificationType";
-import { Verification } from "jslib-common/types/verification";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { VerificationType } from "@bitwarden/common/enums/verificationType";
+import { Verification } from "@bitwarden/common/types/verification";
 
 /**
  * Used for general-purpose user verification throughout the app.

@@ -1,20 +1,20 @@
 import { Inject, Injectable } from "@angular/core";
 
-import { WINDOW } from "jslib-angular/services/jslib-services.module";
-import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
-import { EnvironmentService as EnvironmentServiceAbstraction } from "jslib-common/abstractions/environment.service";
-import { EventService as EventServiceAbstraction } from "jslib-common/abstractions/event.service";
-import { I18nService as I18nServiceAbstraction } from "jslib-common/abstractions/i18n.service";
-import { NotificationsService as NotificationsServiceAbstraction } from "jslib-common/abstractions/notifications.service";
-import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "jslib-common/abstractions/platformUtils.service";
-import { StateService as StateServiceAbstraction } from "jslib-common/abstractions/state.service";
-import { SyncService as SyncServiceAbstraction } from "jslib-common/abstractions/sync.service";
-import { TwoFactorService as TwoFactorServiceAbstraction } from "jslib-common/abstractions/twoFactor.service";
-import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "jslib-common/abstractions/vaultTimeout.service";
-import { ThemeType } from "jslib-common/enums/themeType";
-import { ContainerService } from "jslib-common/services/container.service";
-import { EventService } from "jslib-common/services/event.service";
-import { VaultTimeoutService } from "jslib-common/services/vaultTimeout.service";
+import { WINDOW } from "@bitwarden/angular/services/jslib-services.module";
+import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
+import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/abstractions/environment.service";
+import { EventService as EventServiceAbstraction } from "@bitwarden/common/abstractions/event.service";
+import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
+import { NotificationsService as NotificationsServiceAbstraction } from "@bitwarden/common/abstractions/notifications.service";
+import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
+import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/abstractions/sync.service";
+import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/abstractions/twoFactor.service";
+import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarden/common/abstractions/vaultTimeout.service";
+import { ThemeType } from "@bitwarden/common/enums/themeType";
+import { ContainerService } from "@bitwarden/common/services/container.service";
+import { EventService } from "@bitwarden/common/services/event.service";
+import { VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout.service";
 
 import { I18nService } from "../../services/i18n.service";
 import { NativeMessagingService } from "../../services/nativeMessaging.service";

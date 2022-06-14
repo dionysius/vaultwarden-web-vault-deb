@@ -53,11 +53,11 @@ import localeZhTw from "@angular/common/locales/zh-Hant";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { BadgeModule, ButtonModule, CalloutModule, MenuModule } from "@bitwarden/components";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { ToastrModule } from "ngx-toastr";
 
-import { JslibModule } from "jslib-angular/jslib.module";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { BadgeModule, ButtonModule, CalloutModule, MenuModule } from "@bitwarden/components";
 
 registerLocaleData(localeAf, "af");
 registerLocaleData(localeAz, "az");

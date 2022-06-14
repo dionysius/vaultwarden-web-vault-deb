@@ -1,7 +1,7 @@
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { Response } from "jslib-node/cli/models/response";
-import { MessageResponse } from "jslib-node/cli/models/response/messageResponse";
-import { StringResponse } from "jslib-node/cli/models/response/stringResponse";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
+import { StringResponse } from "@bitwarden/node/cli/models/response/stringResponse";
 
 import { CliUtils } from "src/utils";
 

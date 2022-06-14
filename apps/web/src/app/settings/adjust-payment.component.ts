@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output, ViewChild } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PaymentMethodType } from "jslib-common/enums/paymentMethodType";
-import { PaymentRequest } from "jslib-common/models/request/paymentRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
+import { PaymentRequest } from "@bitwarden/common/models/request/paymentRequest";
 
 import { PaymentComponent } from "./payment.component";
 import { TaxInfoComponent } from "./tax-info.component";

@@ -1,20 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { SEND_KDF_ITERATIONS } from "jslib-common/enums/kdfType";
-import { SendType } from "jslib-common/enums/sendType";
-import { Utils } from "jslib-common/misc/utils";
-import { SendAccess } from "jslib-common/models/domain/sendAccess";
-import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
-import { SendAccessRequest } from "jslib-common/models/request/sendAccessRequest";
-import { ErrorResponse } from "jslib-common/models/response/errorResponse";
-import { SendAccessResponse } from "jslib-common/models/response/sendAccessResponse";
-import { SendAccessView } from "jslib-common/models/view/sendAccessView";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SEND_KDF_ITERATIONS } from "@bitwarden/common/enums/kdfType";
+import { SendType } from "@bitwarden/common/enums/sendType";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { SendAccess } from "@bitwarden/common/models/domain/sendAccess";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { SendAccessRequest } from "@bitwarden/common/models/request/sendAccessRequest";
+import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
+import { SendAccessResponse } from "@bitwarden/common/models/response/sendAccessResponse";
+import { SendAccessView } from "@bitwarden/common/models/view/sendAccessView";
 
 @Component({
   selector: "app-send-access",

@@ -1,18 +1,18 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { AppIdService } from "jslib-common/abstractions/appId.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { TokenService } from "jslib-common/abstractions/token.service";
-import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
-import { SsoLogInStrategy } from "jslib-common/misc/logInStrategies/ssoLogin.strategy";
-import { Utils } from "jslib-common/misc/utils";
-import { SsoLogInCredentials } from "jslib-common/models/domain/logInCredentials";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TokenService } from "@bitwarden/common/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
+import { SsoLogInStrategy } from "@bitwarden/common/misc/logInStrategies/ssoLogin.strategy";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { SsoLogInCredentials } from "@bitwarden/common/models/domain/logInCredentials";
 
 import { identityTokenResponseFactory } from "./logIn.strategy.spec";
 

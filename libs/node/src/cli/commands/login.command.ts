@@ -4,30 +4,30 @@ import * as program from "commander";
 import * as inquirer from "inquirer";
 import Separator from "inquirer/lib/objects/separator";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
-import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
-import { NodeUtils } from "jslib-common/misc/nodeUtils";
-import { Utils } from "jslib-common/misc/utils";
-import { AuthResult } from "jslib-common/models/domain/authResult";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
+import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
+import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { AuthResult } from "@bitwarden/common/models/domain/authResult";
 import {
   ApiLogInCredentials,
   PasswordLogInCredentials,
   SsoLogInCredentials,
-} from "jslib-common/models/domain/logInCredentials";
-import { TokenRequestTwoFactor } from "jslib-common/models/request/identityToken/tokenRequestTwoFactor";
-import { TwoFactorEmailRequest } from "jslib-common/models/request/twoFactorEmailRequest";
-import { UpdateTempPasswordRequest } from "jslib-common/models/request/updateTempPasswordRequest";
-import { ErrorResponse } from "jslib-common/models/response/errorResponse";
+} from "@bitwarden/common/models/domain/logInCredentials";
+import { TokenRequestTwoFactor } from "@bitwarden/common/models/request/identityToken/tokenRequestTwoFactor";
+import { TwoFactorEmailRequest } from "@bitwarden/common/models/request/twoFactorEmailRequest";
+import { UpdateTempPasswordRequest } from "@bitwarden/common/models/request/updateTempPasswordRequest";
+import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
 
 import { Response } from "../models/response";
 import { MessageResponse } from "../models/response/messageResponse";

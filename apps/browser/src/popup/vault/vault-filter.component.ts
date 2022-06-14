@@ -3,17 +3,17 @@ import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angula
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { SearchService } from "jslib-common/abstractions/search.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { TreeNode } from "jslib-common/models/domain/treeNode";
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { CollectionView } from "jslib-common/models/view/collectionView";
-import { FolderView } from "jslib-common/models/view/folderView";
+import { VaultFilter } from "@bitwarden/angular/modules/vault-filter/models/vault-filter.model";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { TreeNode } from "@bitwarden/common/models/domain/treeNode";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CollectionView } from "@bitwarden/common/models/view/collectionView";
+import { FolderView } from "@bitwarden/common/models/view/folderView";
 
 import { BrowserGroupingsComponentState } from "src/models/browserGroupingsComponentState";
 

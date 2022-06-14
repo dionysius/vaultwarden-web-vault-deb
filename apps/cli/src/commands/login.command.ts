@@ -1,21 +1,21 @@
 import * as program from "commander";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
-import { Utils } from "jslib-common/misc/utils";
-import { LoginCommand as BaseLoginCommand } from "jslib-node/cli/commands/login.command";
-import { MessageResponse } from "jslib-node/cli/models/response/messageResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { LoginCommand as BaseLoginCommand } from "@bitwarden/node/cli/commands/login.command";
+import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
 export class LoginCommand extends BaseLoginCommand {
   private options: program.OptionValues;

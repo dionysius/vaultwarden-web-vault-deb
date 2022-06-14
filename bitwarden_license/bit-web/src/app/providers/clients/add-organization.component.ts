@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-import { ValidationService } from "jslib-angular/services/validation.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { ProviderService } from "jslib-common/abstractions/provider.service";
-import { Organization } from "jslib-common/models/domain/organization";
-import { Provider } from "jslib-common/models/domain/provider";
+import { ValidationService } from "@bitwarden/angular/services/validation.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { Provider } from "@bitwarden/common/models/domain/provider";
 
 import { WebProviderService } from "../services/webProvider.service";
 

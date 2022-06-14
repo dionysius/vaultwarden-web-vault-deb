@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 
-import { ModalService } from "jslib-angular/services/modal.service";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { StateService } from "jslib-common/abstractions/state.service";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 
 import { ApiKeyComponent } from "./api-key.component";
 

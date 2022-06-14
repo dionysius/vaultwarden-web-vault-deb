@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 
-import { CollectionsComponent as BaseCollectionsComponent } from "jslib-angular/components/collections.component";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CollectionService } from "jslib-common/abstractions/collection.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { CollectionsComponent as BaseCollectionsComponent } from "@bitwarden/angular/components/collections.component";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 @Component({
   selector: "app-vault-collections",

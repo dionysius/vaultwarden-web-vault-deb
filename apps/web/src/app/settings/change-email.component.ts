@@ -1,15 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
-import { EmailRequest } from "jslib-common/models/request/emailRequest";
-import { EmailTokenRequest } from "jslib-common/models/request/emailTokenRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
+import { EmailRequest } from "@bitwarden/common/models/request/emailRequest";
+import { EmailTokenRequest } from "@bitwarden/common/models/request/emailTokenRequest";
 
 @Component({
   selector: "app-change-email",

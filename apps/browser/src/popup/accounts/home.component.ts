@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { Utils } from "jslib-common/misc/utils";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 @Component({
   selector: "app-home",

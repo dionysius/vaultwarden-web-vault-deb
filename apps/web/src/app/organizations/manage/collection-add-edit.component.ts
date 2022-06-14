@@ -1,17 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { Utils } from "jslib-common/misc/utils";
-import { EncString } from "jslib-common/models/domain/encString";
-import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
-import { CollectionRequest } from "jslib-common/models/request/collectionRequest";
-import { SelectionReadOnlyRequest } from "jslib-common/models/request/selectionReadOnlyRequest";
-import { GroupResponse } from "jslib-common/models/response/groupResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { EncString } from "@bitwarden/common/models/domain/encString";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { CollectionRequest } from "@bitwarden/common/models/request/collectionRequest";
+import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selectionReadOnlyRequest";
+import { GroupResponse } from "@bitwarden/common/models/response/groupResponse";
 
 @Component({
   selector: "app-collection-add-edit",

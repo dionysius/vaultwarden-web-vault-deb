@@ -1,7 +1,7 @@
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { Response } from "jslib-node/cli/models/response";
-import { StringResponse } from "jslib-node/cli/models/response/stringResponse";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { StringResponse } from "@bitwarden/node/cli/models/response/stringResponse";
 
 import { CliUtils } from "../utils";
 

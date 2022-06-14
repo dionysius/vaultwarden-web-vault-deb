@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, OnChanges } from "@angular/core";
 
-import { LogService } from "jslib-common/abstractions/log.service";
-import { ErrorResponse } from "jslib-common/models/response/errorResponse";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
 
 import { ValidationService } from "../services/validation.service";
 

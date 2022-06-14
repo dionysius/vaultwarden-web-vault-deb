@@ -9,27 +9,27 @@ import {
   Output,
 } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { AuditService } from "jslib-common/abstractions/audit.service";
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { EventService } from "jslib-common/abstractions/event.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { TokenService } from "jslib-common/abstractions/token.service";
-import { TotpService } from "jslib-common/abstractions/totp.service";
-import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { EventType } from "jslib-common/enums/eventType";
-import { FieldType } from "jslib-common/enums/fieldType";
-import { ErrorResponse } from "jslib-common/models/response/errorResponse";
-import { AttachmentView } from "jslib-common/models/view/attachmentView";
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { LoginUriView } from "jslib-common/models/view/loginUriView";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuditService } from "@bitwarden/common/abstractions/audit.service";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TokenService } from "@bitwarden/common/abstractions/token.service";
+import { TotpService } from "@bitwarden/common/abstractions/totp.service";
+import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { EventType } from "@bitwarden/common/enums/eventType";
+import { FieldType } from "@bitwarden/common/enums/fieldType";
+import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
+import { AttachmentView } from "@bitwarden/common/models/view/attachmentView";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
 
 const BroadcasterSubscriptionId = "ViewComponent";
 

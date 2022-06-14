@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { Utils } from "jslib-common/misc/utils";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 /*
  An updated pipe that sanitizes HTML, highlights numbers and special characters (in different colors each)

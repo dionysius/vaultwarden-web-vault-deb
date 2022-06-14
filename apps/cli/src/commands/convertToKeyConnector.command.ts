@@ -1,11 +1,11 @@
 import * as inquirer from "inquirer";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { Response } from "jslib-node/cli/models/response";
-import { MessageResponse } from "jslib-node/cli/models/response/messageResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
 export class ConvertToKeyConnectorCommand {
   constructor(

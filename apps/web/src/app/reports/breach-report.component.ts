@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
-import { AuditService } from "jslib-common/abstractions/audit.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { BreachAccountResponse } from "jslib-common/models/response/breachAccountResponse";
+import { AuditService } from "@bitwarden/common/abstractions/audit.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { BreachAccountResponse } from "@bitwarden/common/models/response/breachAccountResponse";
 
 @Component({
   selector: "app-breach-report",

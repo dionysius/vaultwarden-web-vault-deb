@@ -1,6 +1,6 @@
 import * as program from "commander";
 
-import { Response } from "jslib-node/cli/models/response";
+import { Response } from "@bitwarden/node/cli/models/response";
 
 import { Main } from "./bw";
 import { ConfirmCommand } from "./commands/confirm.command";

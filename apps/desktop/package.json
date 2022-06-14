@@ -16,9 +16,8 @@
   },
   "license": "GPL-3.0",
   "scripts": {
-    "start": "cross-env ELECTRON_IS_DEV=0 ELECTRON_NO_UPDATER=1 electron ./build",
-    "preinstall": "npm run sub:init",
     "postinstall": "electron-rebuild",
+    "start": "cross-env ELECTRON_IS_DEV=0 ELECTRON_NO_UPDATER=1 electron ./build",
     "build": "concurrently -n Main,Rend -c yellow,cyan \"npm run build:main\" \"npm run build:renderer\"",
     "build:dev": "concurrently -n Main,Rend -c yellow,cyan \"npm run build:main:dev\" \"npm run build:renderer:dev\"",
     "build:main": "cross-env NODE_ENV=production webpack --config webpack.main.js",

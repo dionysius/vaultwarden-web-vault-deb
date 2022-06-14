@@ -1,4 +1,4 @@
-import { CipherType } from "jslib-common/enums/cipherType";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
 
 import { CipherStatus } from "./cipher-status.model";
 

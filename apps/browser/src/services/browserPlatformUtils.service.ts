@@ -1,8 +1,8 @@
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { ClientType } from "jslib-common/enums/clientType";
-import { DeviceType } from "jslib-common/enums/deviceType";
-import { ThemeType } from "jslib-common/enums/themeType";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { ClientType } from "@bitwarden/common/enums/clientType";
+import { DeviceType } from "@bitwarden/common/enums/deviceType";
+import { ThemeType } from "@bitwarden/common/enums/themeType";
 
 import { BrowserApi } from "../browser/browserApi";
 import { SafariApp } from "../browser/safariApp";

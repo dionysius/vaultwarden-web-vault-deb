@@ -1,11 +1,11 @@
 import { Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { Utils } from "jslib-common/misc/utils";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 import { BrowserApi } from "../../browser/browserApi";
 

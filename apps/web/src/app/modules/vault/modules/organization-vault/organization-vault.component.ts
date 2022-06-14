@@ -10,19 +10,19 @@ import {
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
-import { ModalService } from "jslib-angular/services/modal.service";
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { Organization } from "jslib-common/models/domain/organization";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { VaultFilter } from "@bitwarden/angular/modules/vault-filter/models/vault-filter.model";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 import { EntityEventsComponent } from "../../../../organizations/manage/entity-events.component";
 import { AddEditComponent } from "../../../../organizations/vault/add-edit.component";

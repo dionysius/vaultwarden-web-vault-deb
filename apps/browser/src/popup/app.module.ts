@@ -59,8 +59,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { BitwardenToastModule } from "jslib-angular/components/toastr.component";
-import { JslibModule } from "jslib-angular/jslib.module";
+import { BitwardenToastModule } from "@bitwarden/angular/components/toastr.component";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";

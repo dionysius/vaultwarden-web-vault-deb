@@ -2,13 +2,13 @@ import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { UsernameGenerationService } from "jslib-common/abstractions/usernameGeneration.service";
-import { PasswordGeneratorPolicyOptions } from "jslib-common/models/domain/passwordGeneratorPolicyOptions";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { UsernameGenerationService } from "@bitwarden/common/abstractions/usernameGeneration.service";
+import { PasswordGeneratorPolicyOptions } from "@bitwarden/common/models/domain/passwordGeneratorPolicyOptions";
 
 @Directive()
 export class GeneratorComponent implements OnInit {

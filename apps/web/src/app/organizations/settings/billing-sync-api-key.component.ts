@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-import { OrganizationApiKeyType } from "jslib-common/enums/organizationApiKeyType";
-import { OrganizationApiKeyRequest } from "jslib-common/models/request/organizationApiKeyRequest";
-import { ApiKeyResponse } from "jslib-common/models/response/apiKeyResponse";
-import { Verification } from "jslib-common/types/verification";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { OrganizationApiKeyType } from "@bitwarden/common/enums/organizationApiKeyType";
+import { OrganizationApiKeyRequest } from "@bitwarden/common/models/request/organizationApiKeyRequest";
+import { ApiKeyResponse } from "@bitwarden/common/models/response/apiKeyResponse";
+import { Verification } from "@bitwarden/common/types/verification";
 
 @Component({
   selector: "app-billing-sync-api-key",

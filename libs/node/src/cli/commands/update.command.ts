@@ -1,7 +1,7 @@
 import * as fetch from "node-fetch";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 import { Response } from "../models/response";
 import { MessageResponse } from "../models/response/messageResponse";

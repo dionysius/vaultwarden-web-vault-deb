@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 import Swal, { SweetAlertIcon } from "sweetalert2";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { ClientType } from "jslib-common/enums/clientType";
-import { DeviceType } from "jslib-common/enums/deviceType";
-import { ThemeType } from "jslib-common/enums/themeType";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { ClientType } from "@bitwarden/common/enums/clientType";
+import { DeviceType } from "@bitwarden/common/enums/deviceType";
+import { ThemeType } from "@bitwarden/common/enums/themeType";
 
 @Injectable()
 export class WebPlatformUtilsService implements PlatformUtilsService {

@@ -1,6 +1,6 @@
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-import { Response } from "jslib-node/cli/models/response";
-import { MessageResponse } from "jslib-node/cli/models/response/messageResponse";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
 export class LockCommand {
   constructor(private vaultTimeoutService: VaultTimeoutService) {}

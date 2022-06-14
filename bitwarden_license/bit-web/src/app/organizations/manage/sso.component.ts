@@ -2,25 +2,25 @@ import { Component, OnInit } from "@angular/core";
 import { AbstractControl, FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 
-import { SelectOptions } from "jslib-angular/interfaces/selectOptions";
-import { dirtyRequired } from "jslib-angular/validators/dirty.validator";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { SelectOptions } from "@bitwarden/angular/interfaces/selectOptions";
+import { dirtyRequired } from "@bitwarden/angular/validators/dirty.validator";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import {
   OpenIdConnectRedirectBehavior,
   Saml2BindingType,
   Saml2NameIdFormat,
   Saml2SigningBehavior,
   SsoType,
-} from "jslib-common/enums/ssoEnums";
-import { Utils } from "jslib-common/misc/utils";
-import { SsoConfigApi } from "jslib-common/models/api/ssoConfigApi";
-import { Organization } from "jslib-common/models/domain/organization";
-import { OrganizationSsoRequest } from "jslib-common/models/request/organization/organizationSsoRequest";
-import { OrganizationSsoResponse } from "jslib-common/models/response/organization/organizationSsoResponse";
-import { SsoConfigView } from "jslib-common/models/view/ssoConfigView";
+} from "@bitwarden/common/enums/ssoEnums";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { SsoConfigApi } from "@bitwarden/common/models/api/ssoConfigApi";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { OrganizationSsoRequest } from "@bitwarden/common/models/request/organization/organizationSsoRequest";
+import { OrganizationSsoResponse } from "@bitwarden/common/models/response/organization/organizationSsoResponse";
+import { SsoConfigView } from "@bitwarden/common/models/view/ssoConfigView";
 
 const defaultSigningAlgorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
 

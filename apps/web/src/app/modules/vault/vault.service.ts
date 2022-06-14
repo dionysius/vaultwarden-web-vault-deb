@@ -1,4 +1,4 @@
-import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
+import { VaultFilter } from "@bitwarden/angular/modules/vault-filter/models/vault-filter.model";
 
 export class VaultService {
   calculateSearchBarLocalizationString(vaultFilter: VaultFilter): string {

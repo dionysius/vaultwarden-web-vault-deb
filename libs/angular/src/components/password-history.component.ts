@@ -1,9 +1,9 @@
 import { Directive, OnInit } from "@angular/core";
 
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PasswordHistoryView } from "jslib-common/models/view/passwordHistoryView";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PasswordHistoryView } from "@bitwarden/common/models/view/passwordHistoryView";
 
 @Directive()
 export class PasswordHistoryComponent implements OnInit {

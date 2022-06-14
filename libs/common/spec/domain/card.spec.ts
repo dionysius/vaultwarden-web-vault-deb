@@ -1,5 +1,5 @@
-import { CardData } from "jslib-common/models/data/cardData";
-import { Card } from "jslib-common/models/domain/card";
+import { CardData } from "@bitwarden/common/models/data/cardData";
+import { Card } from "@bitwarden/common/models/domain/card";
 
 import { mockEnc } from "../utils";
 

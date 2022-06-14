@@ -10,8 +10,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "jslib-common/*": ["../../libs/common/src/*"],
-      "jslib-angular/*": ["../../libs/angular/src/*"]
+      "@bitwarden/common/*": ["../../libs/common/src/*"],
+      "@bitwarden/angular/*": ["../../libs/angular/src/*"]
     }
   },
   "angularCompilerOptions": {

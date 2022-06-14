@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { StatusFilterComponent as BaseStatusFilterComponent } from "jslib-angular/modules/vault-filter/components/status-filter.component";
+import { StatusFilterComponent as BaseStatusFilterComponent } from "@bitwarden/angular/modules/vault-filter/components/status-filter.component";
 
 @Component({
   selector: "app-status-filter",

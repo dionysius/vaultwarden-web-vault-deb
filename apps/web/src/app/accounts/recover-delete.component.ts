@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { DeleteRecoverRequest } from "jslib-common/models/request/deleteRecoverRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { DeleteRecoverRequest } from "@bitwarden/common/models/request/deleteRecoverRequest";
 
 @Component({
   selector: "app-recover-delete",

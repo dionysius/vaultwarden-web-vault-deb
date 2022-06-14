@@ -4,9 +4,9 @@ import * as path from "path";
 import * as chalk from "chalk";
 import * as program from "commander";
 
-import { SendType } from "jslib-common/enums/sendType";
-import { Utils } from "jslib-common/misc/utils";
-import { Response } from "jslib-node/cli/models/response";
+import { SendType } from "@bitwarden/common/enums/sendType";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { Response } from "@bitwarden/node/cli/models/response";
 
 import { Main } from "./bw";
 import { GetCommand } from "./commands/get.command";

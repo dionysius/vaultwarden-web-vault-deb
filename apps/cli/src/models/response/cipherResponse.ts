@@ -1,7 +1,7 @@
-import { CipherType } from "jslib-common/enums/cipherType";
-import { CipherWithIdExport } from "jslib-common/models/export/cipherWithIdsExport";
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { BaseResponse } from "jslib-node/cli/models/response/baseResponse";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { CipherWithIdExport } from "@bitwarden/common/models/export/cipherWithIdsExport";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { BaseResponse } from "@bitwarden/node/cli/models/response/baseResponse";
 
 import { AttachmentResponse } from "./attachmentResponse";
 import { LoginResponse } from "./loginResponse";

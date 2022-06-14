@@ -2,12 +2,12 @@ import { Component, NgZone } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { Utils } from "jslib-common/misc/utils";
-import { getCookie } from "jslib-electron/utils";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { getCookie } from "@bitwarden/electron/utils";
 
 const BroadcasterSubscriptionId = "AccessibilityCookieComponent";
 

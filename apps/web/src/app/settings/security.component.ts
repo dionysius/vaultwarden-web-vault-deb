@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
 
 @Component({
   selector: "app-security",

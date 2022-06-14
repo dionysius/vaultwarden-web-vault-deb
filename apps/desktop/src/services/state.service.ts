@@ -1,6 +1,6 @@
-import { StateService as StateServiceAbstraction } from "jslib-common/abstractions/state.service";
-import { GlobalState } from "jslib-common/models/domain/globalState";
-import { StateService as BaseStateService } from "jslib-common/services/state.service";
+import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
+import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { StateService as BaseStateService } from "@bitwarden/common/services/state.service";
 
 import { Account } from "../models/account";
 

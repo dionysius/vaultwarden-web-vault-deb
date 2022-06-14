@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { ProviderUpdateRequest } from "jslib-common/models/request/provider/providerUpdateRequest";
-import { ProviderResponse } from "jslib-common/models/response/provider/providerResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { ProviderUpdateRequest } from "@bitwarden/common/models/request/provider/providerUpdateRequest";
+import { ProviderResponse } from "@bitwarden/common/models/response/provider/providerResponse";
 
 @Component({
   selector: "provider-account",

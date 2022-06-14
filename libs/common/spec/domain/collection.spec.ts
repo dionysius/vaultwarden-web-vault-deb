@@ -1,5 +1,5 @@
-import { CollectionData } from "jslib-common/models/data/collectionData";
-import { Collection } from "jslib-common/models/domain/collection";
+import { CollectionData } from "@bitwarden/common/models/data/collectionData";
+import { Collection } from "@bitwarden/common/models/domain/collection";
 
 import { mockEnc } from "../utils";
 

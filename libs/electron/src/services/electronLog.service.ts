@@ -2,8 +2,8 @@ import * as path from "path";
 
 import log from "electron-log";
 
-import { LogLevelType } from "jslib-common/enums/logLevelType";
-import { ConsoleLogService as BaseLogService } from "jslib-common/services/consoleLog.service";
+import { LogLevelType } from "@bitwarden/common/enums/logLevelType";
+import { ConsoleLogService as BaseLogService } from "@bitwarden/common/services/consoleLog.service";
 
 import { isDev } from "../utils";
 

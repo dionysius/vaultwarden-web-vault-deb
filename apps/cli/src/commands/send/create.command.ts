@@ -1,12 +1,12 @@
 import * as fs from "fs";
 import * as path from "path";
 
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { SendService } from "jslib-common/abstractions/send.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SendType } from "jslib-common/enums/sendType";
-import { NodeUtils } from "jslib-common/misc/nodeUtils";
-import { Response } from "jslib-node/cli/models/response";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { SendType } from "@bitwarden/common/enums/sendType";
+import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
+import { Response } from "@bitwarden/node/cli/models/response";
 
 import { SendResponse } from "../../models/response/sendResponse";
 import { SendTextResponse } from "../../models/response/sendTextResponse";

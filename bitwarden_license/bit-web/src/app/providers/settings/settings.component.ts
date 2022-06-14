@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { ProviderService } from "jslib-common/abstractions/provider.service";
+import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
 
 @Component({
   selector: "provider-settings",

@@ -4,11 +4,11 @@ import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
 import Swal, { SweetAlertIcon } from "sweetalert2";
 
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 import { BrowserApi } from "../browser/browserApi";
 import { StateService } from "../services/abstractions/state.service";

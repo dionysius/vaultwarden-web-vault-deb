@@ -1,9 +1,9 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-import { Organization } from "jslib-common/models/domain/organization";
-import { ITreeNodeObject } from "jslib-common/models/domain/treeNode";
-import { CollectionView } from "jslib-common/models/view/collectionView";
-import { FolderView } from "jslib-common/models/view/folderView";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { ITreeNodeObject } from "@bitwarden/common/models/domain/treeNode";
+import { CollectionView } from "@bitwarden/common/models/view/collectionView";
+import { FolderView } from "@bitwarden/common/models/view/folderView";
 
 import { DynamicTreeNode } from "./models/dynamic-tree-node.model";
 import { VaultFilter } from "./models/vault-filter.model";

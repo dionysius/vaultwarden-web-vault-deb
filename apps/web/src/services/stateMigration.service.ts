@@ -1,4 +1,4 @@
-import { StateMigrationService as BaseStateMigrationService } from "jslib-common/services/stateMigration.service";
+import { StateMigrationService as BaseStateMigrationService } from "@bitwarden/common/services/stateMigration.service";
 
 import { Account } from "../models/account";
 import { GlobalState } from "../models/globalState";

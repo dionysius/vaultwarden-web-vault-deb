@@ -1,8 +1,8 @@
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
+import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 
 import { BrowserApi } from "../browser/browserApi";
 

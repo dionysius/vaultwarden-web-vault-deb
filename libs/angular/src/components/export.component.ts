@@ -1,16 +1,16 @@
 import { Directive, EventEmitter, OnInit, Output } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { EventService } from "jslib-common/abstractions/event.service";
-import { ExportService } from "jslib-common/abstractions/export.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-import { EventType } from "jslib-common/enums/eventType";
-import { PolicyType } from "jslib-common/enums/policyType";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { ExportService } from "@bitwarden/common/abstractions/export.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { EventType } from "@bitwarden/common/enums/eventType";
+import { PolicyType } from "@bitwarden/common/enums/policyType";
 
 @Directive()
 export class ExportComponent implements OnInit {

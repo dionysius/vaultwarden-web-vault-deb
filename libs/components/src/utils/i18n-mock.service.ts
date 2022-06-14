@@ -1,4 +1,4 @@
-import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 export class I18nMockService implements I18nService {
   locale: string;

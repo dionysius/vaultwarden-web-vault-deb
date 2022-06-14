@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { JslibModule } from "jslib-angular/jslib.module";
-import { VaultFilterService } from "jslib-angular/modules/vault-filter/vault-filter.service";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { VaultFilterService } from "@bitwarden/angular/modules/vault-filter/vault-filter.service";
 
 import { CollectionFilterComponent } from "./components/collection-filter.component";
 import { FolderFilterComponent } from "./components/folder-filter.component";

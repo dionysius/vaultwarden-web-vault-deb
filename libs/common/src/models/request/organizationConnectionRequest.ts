@@ -1,4 +1,4 @@
-import { OrganizationConnectionType } from "jslib-common/enums/organizationConnectionType";
+import { OrganizationConnectionType } from "../../enums/organizationConnectionType";
 
 import { BillingSyncConfigRequest } from "./billingSyncConfigRequest";
 

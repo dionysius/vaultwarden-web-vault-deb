@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { FolderFilterComponent as BaseFolderFilterComponent } from "jslib-angular/modules/vault-filter/components/folder-filter.component";
+import { FolderFilterComponent as BaseFolderFilterComponent } from "@bitwarden/angular/modules/vault-filter/components/folder-filter.component";
 
 @Component({
   selector: "app-folder-filter",

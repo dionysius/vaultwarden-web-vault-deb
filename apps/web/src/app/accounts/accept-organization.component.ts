@@ -1,16 +1,16 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { Utils } from "jslib-common/misc/utils";
-import { Policy } from "jslib-common/models/domain/policy";
-import { OrganizationUserAcceptRequest } from "jslib-common/models/request/organizationUserAcceptRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { Policy } from "@bitwarden/common/models/domain/policy";
+import { OrganizationUserAcceptRequest } from "@bitwarden/common/models/request/organizationUserAcceptRequest";
 
 import { BaseAcceptComponent } from "../common/base.accept.component";
 

@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { JslibModule } from "jslib-angular/jslib.module";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 
 import { InputCheckboxComponent } from "./components/input-checkbox.component";
 import { InputTextReadOnlyComponent } from "./components/input-text-readonly.component";

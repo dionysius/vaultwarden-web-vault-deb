@@ -1,16 +1,16 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { Cipher } from "jslib-common/models/domain/cipher";
-import { ErrorResponse } from "jslib-common/models/response/errorResponse";
-import { AttachmentView } from "jslib-common/models/view/attachmentView";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { Cipher } from "@bitwarden/common/models/domain/cipher";
+import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
+import { AttachmentView } from "@bitwarden/common/models/view/attachmentView";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 @Directive()
 export class AttachmentsComponent implements OnInit {

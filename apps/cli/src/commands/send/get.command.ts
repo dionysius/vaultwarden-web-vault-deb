@@ -1,12 +1,12 @@
 import * as program from "commander";
 
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { SearchService } from "jslib-common/abstractions/search.service";
-import { SendService } from "jslib-common/abstractions/send.service";
-import { Utils } from "jslib-common/misc/utils";
-import { SendView } from "jslib-common/models/view/sendView";
-import { Response } from "jslib-node/cli/models/response";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { SendView } from "@bitwarden/common/models/view/sendView";
+import { Response } from "@bitwarden/node/cli/models/response";
 
 import { SendResponse } from "../../models/response/sendResponse";
 import { DownloadCommand } from "../download.command";

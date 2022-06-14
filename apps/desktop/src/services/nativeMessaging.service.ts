@@ -2,17 +2,17 @@ import { Injectable } from "@angular/core";
 import { ipcRenderer } from "electron";
 import Swal from "sweetalert2";
 
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
-import { Utils } from "jslib-common/misc/utils";
-import { EncString } from "jslib-common/models/domain/encString";
-import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { EncString } from "@bitwarden/common/models/domain/encString";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = "sha1";

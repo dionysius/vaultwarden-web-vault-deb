@@ -38,7 +38,7 @@
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "jslib-*/**",
+            "pattern": "@bitwarden/**",
             "group": "external",
             "position": "after"
           },

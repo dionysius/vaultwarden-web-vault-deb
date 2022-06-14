@@ -1,4 +1,4 @@
-import { Utils } from "jslib-common/misc/utils";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 import { SafariApp } from "./safariApp";
 

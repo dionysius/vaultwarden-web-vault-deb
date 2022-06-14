@@ -1,7 +1,7 @@
 import {
   Account as BaseAccount,
   AccountSettings as BaseAccountSettings,
-} from "jslib-common/models/domain/account";
+} from "@bitwarden/common/models/domain/account";
 
 import { BrowserComponentState } from "./browserComponentState";
 import { BrowserGroupingsComponentState } from "./browserGroupingsComponentState";

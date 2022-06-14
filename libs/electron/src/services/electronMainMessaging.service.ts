@@ -1,7 +1,7 @@
 import { app, dialog, ipcMain, Menu, MenuItem, nativeTheme, session } from "electron";
 
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { ThemeType } from "jslib-common/enums/themeType";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { ThemeType } from "@bitwarden/common/enums/themeType";
 
 import { RendererMenuItem } from "../utils";
 import { WindowMain } from "../window.main";

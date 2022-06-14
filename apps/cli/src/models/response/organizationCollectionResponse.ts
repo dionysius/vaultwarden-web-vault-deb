@@ -1,4 +1,4 @@
-import { CollectionView } from "jslib-common/models/view/collectionView";
+import { CollectionView } from "@bitwarden/common/models/view/collectionView";
 
 import { SelectionReadOnly } from "../selectionReadOnly";
 

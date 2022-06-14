@@ -1,5 +1,5 @@
-import { KeeperJsonImporter as Importer } from "jslib-common/importers/keeperImporters/keeperJsonImporter";
-import { Utils } from "jslib-common/misc/utils";
+import { KeeperJsonImporter as Importer } from "@bitwarden/common/importers/keeperImporters/keeperJsonImporter";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 import { testData as TestData } from "./testData/keeperJson/testData";
 

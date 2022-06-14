@@ -3,17 +3,17 @@ import { ChangeDetectorRef, Component, NgZone } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { SendComponent as BaseSendComponent } from "jslib-angular/components/send/send.component";
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { SearchService } from "jslib-common/abstractions/search.service";
-import { SendService } from "jslib-common/abstractions/send.service";
-import { SendType } from "jslib-common/enums/sendType";
-import { SendView } from "jslib-common/models/view/sendView";
+import { SendComponent as BaseSendComponent } from "@bitwarden/angular/components/send/send.component";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { SendService } from "@bitwarden/common/abstractions/send.service";
+import { SendType } from "@bitwarden/common/enums/sendType";
+import { SendView } from "@bitwarden/common/models/view/sendView";
 
 import { BrowserComponentState } from "../../models/browserComponentState";
 import { StateService } from "../../services/abstractions/state.service";

@@ -1,8 +1,8 @@
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
-import { UriMatchType } from "jslib-common/enums/uriMatchType";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
+import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 
 export default class WebRequestBackground {
   private pendingAuthRequests: any[] = [];

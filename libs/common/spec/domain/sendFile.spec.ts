@@ -1,5 +1,5 @@
-import { SendFileData } from "jslib-common/models/data/sendFileData";
-import { SendFile } from "jslib-common/models/domain/sendFile";
+import { SendFileData } from "@bitwarden/common/models/data/sendFileData";
+import { SendFile } from "@bitwarden/common/models/domain/sendFile";
 
 import { mockEnc } from "../utils";
 

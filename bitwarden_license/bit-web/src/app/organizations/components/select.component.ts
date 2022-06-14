@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-import { SelectOptions } from "jslib-angular/interfaces/selectOptions";
+import { SelectOptions } from "@bitwarden/angular/interfaces/selectOptions";
 
 import { BaseCvaComponent } from "./base-cva.component";
 

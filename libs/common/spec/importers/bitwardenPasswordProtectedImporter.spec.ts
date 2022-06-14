@@ -1,11 +1,11 @@
 import Substitute, { Arg, SubstituteOf } from "@fluffy-spoon/substitute";
 
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { KdfType } from "jslib-common/enums/kdfType";
-import { BitwardenPasswordProtectedImporter } from "jslib-common/importers/bitwardenPasswordProtectedImporter";
-import { Utils } from "jslib-common/misc/utils";
-import { ImportResult } from "jslib-common/models/domain/importResult";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { KdfType } from "@bitwarden/common/enums/kdfType";
+import { BitwardenPasswordProtectedImporter } from "@bitwarden/common/importers/bitwardenPasswordProtectedImporter";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { ImportResult } from "@bitwarden/common/models/domain/importResult";
 
 import { data as emptyDecryptedData } from "./testData/bitwardenJson/empty.json";
 

@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { EnvironmentComponent as BaseEnvironmentComponent } from "jslib-angular/components/environment.component";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { EnvironmentComponent as BaseEnvironmentComponent } from "@bitwarden/angular/components/environment.component";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 @Component({
   selector: "app-environment",

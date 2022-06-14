@@ -1,10 +1,10 @@
 import Substitute, { Arg } from "@fluffy-spoon/substitute";
 
-import { UriMatchType } from "jslib-common/enums/uriMatchType";
-import { LoginData } from "jslib-common/models/data/loginData";
-import { Login } from "jslib-common/models/domain/login";
-import { LoginUri } from "jslib-common/models/domain/loginUri";
-import { LoginUriView } from "jslib-common/models/view/loginUriView";
+import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
+import { LoginData } from "@bitwarden/common/models/data/loginData";
+import { Login } from "@bitwarden/common/models/domain/login";
+import { LoginUri } from "@bitwarden/common/models/domain/loginUri";
+import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
 
 import { mockEnc } from "../utils";
 

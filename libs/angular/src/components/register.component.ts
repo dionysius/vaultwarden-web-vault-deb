@@ -1,19 +1,19 @@
 import { Directive, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { DEFAULT_KDF_ITERATIONS, DEFAULT_KDF_TYPE } from "jslib-common/enums/kdfType";
-import { KeysRequest } from "jslib-common/models/request/keysRequest";
-import { ReferenceEventRequest } from "jslib-common/models/request/referenceEventRequest";
-import { RegisterRequest } from "jslib-common/models/request/registerRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { DEFAULT_KDF_ITERATIONS, DEFAULT_KDF_TYPE } from "@bitwarden/common/enums/kdfType";
+import { KeysRequest } from "@bitwarden/common/models/request/keysRequest";
+import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
+import { RegisterRequest } from "@bitwarden/common/models/request/registerRequest";
 
 import { CaptchaProtectedComponent } from "./captchaProtected.component";
 

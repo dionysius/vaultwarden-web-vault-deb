@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService as LogServiceAbstraction } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { ThemeType } from "jslib-common/enums/themeType";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService as LogServiceAbstraction } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { ThemeType } from "@bitwarden/common/enums/themeType";
 
 import { StateService as StateServiceAbstraction } from "../../services/abstractions/state.service";
 

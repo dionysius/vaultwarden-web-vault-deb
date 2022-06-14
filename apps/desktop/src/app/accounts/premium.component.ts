@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 
-import { PremiumComponent as BasePremiumComponent } from "jslib-angular/components/premium.component";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
+import { PremiumComponent as BasePremiumComponent } from "@bitwarden/angular/components/premium.component";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
 
 @Component({
   selector: "app-premium",

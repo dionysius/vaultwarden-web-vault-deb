@@ -1,11 +1,5 @@
 {
-  "extends": "../shared/tsconfig",
-  "compilerOptions": {
-    "paths": {
-      "jslib-common/*": ["../common/src/*"],
-      "jslib-node/*": ["./src/*"]
-    }
-  },
+  "extends": "../shared/tsconfig.libs",
   "include": ["src", "spec"],
   "exclude": ["node_modules", "dist"]
 }

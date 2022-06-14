@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { AuthGuard } from "jslib-angular/guards/auth.guard";
+import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
 
 import { BreachReportComponent } from "./breach-report.component";
 import { ExposedPasswordsReportComponent } from "./exposed-passwords-report.component";

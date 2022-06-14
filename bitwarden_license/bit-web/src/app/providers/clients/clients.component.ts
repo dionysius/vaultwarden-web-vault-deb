@@ -2,19 +2,19 @@ import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { ModalService } from "jslib-angular/services/modal.service";
-import { ValidationService } from "jslib-angular/services/validation.service";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { ProviderService } from "jslib-common/abstractions/provider.service";
-import { SearchService } from "jslib-common/abstractions/search.service";
-import { PlanType } from "jslib-common/enums/planType";
-import { ProviderUserType } from "jslib-common/enums/providerUserType";
-import { Organization } from "jslib-common/models/domain/organization";
-import { ProviderOrganizationOrganizationDetailsResponse } from "jslib-common/models/response/provider/providerOrganizationResponse";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { ValidationService } from "@bitwarden/angular/services/validation.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { PlanType } from "@bitwarden/common/enums/planType";
+import { ProviderUserType } from "@bitwarden/common/enums/providerUserType";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { ProviderOrganizationOrganizationDetailsResponse } from "@bitwarden/common/models/response/provider/providerOrganizationResponse";
 
 import { WebProviderService } from "../services/webProvider.service";
 

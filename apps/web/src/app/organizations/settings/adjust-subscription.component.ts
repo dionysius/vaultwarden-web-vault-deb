@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { OrganizationSubscriptionUpdateRequest } from "jslib-common/models/request/organizationSubscriptionUpdateRequest";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { OrganizationSubscriptionUpdateRequest } from "@bitwarden/common/models/request/organizationSubscriptionUpdateRequest";
 
 @Component({
   selector: "app-adjust-subscription",

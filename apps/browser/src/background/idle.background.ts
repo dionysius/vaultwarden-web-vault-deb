@@ -1,5 +1,5 @@
-import { NotificationsService } from "jslib-common/abstractions/notifications.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
+import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
 
 import { StateService } from "../services/abstractions/state.service";
 

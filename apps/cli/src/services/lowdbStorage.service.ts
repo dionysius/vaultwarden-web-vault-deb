@@ -1,9 +1,9 @@
 import * as lock from "proper-lockfile";
 import { OperationOptions } from "retry";
 
-import { LogService } from "jslib-common/abstractions/log.service";
-import { Utils } from "jslib-common/misc/utils";
-import { LowdbStorageService as LowdbStorageServiceBase } from "jslib-node/services/lowdbStorage.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { LowdbStorageService as LowdbStorageServiceBase } from "@bitwarden/node/services/lowdbStorage.service";
 
 const retries: OperationOptions = {
   retries: 50,

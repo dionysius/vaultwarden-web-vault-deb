@@ -1,14 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { UpdateProfileRequest } from "jslib-common/models/request/updateProfileRequest";
-import { ProfileResponse } from "jslib-common/models/response/profileResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { UpdateProfileRequest } from "@bitwarden/common/models/request/updateProfileRequest";
+import { ProfileResponse } from "@bitwarden/common/models/response/profileResponse";
 
 @Component({
   selector: "app-profile",

@@ -1,7 +1,7 @@
 import { ipcRenderer } from "electron";
 
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 
 export class ElectronRendererMessagingService implements MessagingService {
   constructor(private broadcasterService: BroadcasterService) {

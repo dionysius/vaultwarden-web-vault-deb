@@ -15,10 +15,10 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "jslib-common/*": ["common/src/*"],
-      "jslib-angular/*": ["angular/src/*"],
-      "jslib-electron/*": ["electron/src/*"],
-      "jslib-node/*": ["node/src/*"]
+      "@bitwarden/common/*": ["./libs/common/src/*"],
+      "@bitwarden/angular/*": ["./libs/angular/src/*"],
+      "@bitwarden/electron/*": ["./libs/electron/src/*"],
+      "@bitwarden/node/*": ["./libs/node/src/*"]
     },
     "plugins": [
       {

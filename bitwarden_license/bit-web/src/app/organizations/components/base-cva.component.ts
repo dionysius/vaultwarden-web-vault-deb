@@ -1,7 +1,7 @@
 import { Directive, Input, OnInit, Self } from "@angular/core";
 import { ControlValueAccessor, FormControl, NgControl, Validators } from "@angular/forms";
 
-import { dirtyRequired } from "jslib-angular/validators/dirty.validator";
+import { dirtyRequired } from "@bitwarden/angular/validators/dirty.validator";
 
 /** For use in the SSO Config Form only - will be deprecated by the Component Library */
 @Directive()

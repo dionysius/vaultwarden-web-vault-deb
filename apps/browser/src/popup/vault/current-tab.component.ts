@@ -1,19 +1,19 @@
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { SearchService } from "jslib-common/abstractions/search.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { Utils } from "jslib-common/misc/utils";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { AutofillService } from "../../services/abstractions/autofill.service";

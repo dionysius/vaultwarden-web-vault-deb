@@ -1,6 +1,6 @@
-import { FieldType } from "jslib-common/enums/fieldType";
-import { FieldData } from "jslib-common/models/data/fieldData";
-import { Field } from "jslib-common/models/domain/field";
+import { FieldType } from "@bitwarden/common/enums/fieldType";
+import { FieldData } from "@bitwarden/common/models/data/fieldData";
+import { Field } from "@bitwarden/common/models/domain/field";
 
 import { mockEnc } from "../utils";
 

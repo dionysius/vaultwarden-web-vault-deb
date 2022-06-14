@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule, Pipe, PipeTransform } from "@angular/core";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 import { BitInputDirective } from "../input/input.directive";
 import { InputModule } from "../input/input.module";

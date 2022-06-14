@@ -1,4 +1,4 @@
-import { StorageService } from "jslib-common/abstractions/storage.service";
+import { StorageService } from "@bitwarden/common/abstractions/storage.service";
 
 export default class BrowserStorageService implements StorageService {
   private chromeStorageApi: any;

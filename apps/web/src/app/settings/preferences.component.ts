@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-import { ThemeType } from "jslib-common/enums/themeType";
-import { Utils } from "jslib-common/misc/utils";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
+import { ThemeType } from "@bitwarden/common/enums/themeType";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 @Component({
   selector: "app-preferences",

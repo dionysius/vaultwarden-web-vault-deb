@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-import { SearchPipe } from "jslib-angular/pipes/search.pipe";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { OrganizationUserStatusType } from "jslib-common/enums/organizationUserStatusType";
-import { OrganizationUserType } from "jslib-common/enums/organizationUserType";
-import { Utils } from "jslib-common/misc/utils";
-import { SelectionReadOnlyRequest } from "jslib-common/models/request/selectionReadOnlyRequest";
-import { OrganizationUserUserDetailsResponse } from "jslib-common/models/response/organizationUserResponse";
+import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
+import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserType";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selectionReadOnlyRequest";
+import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/models/response/organizationUserResponse";
 
 @Component({
   selector: "app-entity-users",

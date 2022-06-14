@@ -1,6 +1,6 @@
 import { app, Menu } from "electron";
 
-import { BaseMenu } from "jslib-electron/baseMenu";
+import { BaseMenu } from "@bitwarden/electron/baseMenu";
 
 import { Main } from "../../main";
 

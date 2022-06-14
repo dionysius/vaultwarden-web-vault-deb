@@ -1,13 +1,13 @@
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { CipherService } from "jslib-common/abstractions/cipher.service";
-import { EventService } from "jslib-common/abstractions/event.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { TotpService } from "jslib-common/abstractions/totp.service";
-import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
-import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
-import { EventType } from "jslib-common/enums/eventType";
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
+import { EventService } from "@bitwarden/common/abstractions/event.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { TotpService } from "@bitwarden/common/abstractions/totp.service";
+import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
+import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
+import { EventType } from "@bitwarden/common/enums/eventType";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 import { BrowserApi } from "../browser/browserApi";
 

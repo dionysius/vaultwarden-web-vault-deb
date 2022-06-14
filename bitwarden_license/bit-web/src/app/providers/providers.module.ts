@@ -2,8 +2,8 @@ import { CommonModule } from "@angular/common";
 import { ComponentFactoryResolver, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
-import { JslibModule } from "jslib-angular/jslib.module";
-import { ModalService } from "jslib-angular/services/modal.service";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
 
 import { OssModule } from "src/app/oss.module";
 

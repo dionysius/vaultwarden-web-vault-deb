@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { RemovePasswordComponent as BaseRemovePasswordComponent } from "jslib-angular/components/remove-password.component";
+import { RemovePasswordComponent as BaseRemovePasswordComponent } from "@bitwarden/angular/components/remove-password.component";
 
 @Component({
   selector: "app-remove-password",

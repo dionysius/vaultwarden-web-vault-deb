@@ -1,21 +1,21 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { ModalRef } from "jslib-angular/components/modal/modal.ref";
-import { ModalService } from "jslib-angular/services/modal.service";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { OrganizationService } from "jslib-common/abstractions/organization.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { OrganizationApiKeyType } from "jslib-common/enums/organizationApiKeyType";
-import { OrganizationConnectionType } from "jslib-common/enums/organizationConnectionType";
-import { PlanType } from "jslib-common/enums/planType";
-import { BillingSyncConfigApi } from "jslib-common/models/api/billingSyncConfigApi";
-import { Organization } from "jslib-common/models/domain/organization";
-import { OrganizationConnectionResponse } from "jslib-common/models/response/organizationConnectionResponse";
-import { OrganizationSubscriptionResponse } from "jslib-common/models/response/organizationSubscriptionResponse";
+import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { OrganizationApiKeyType } from "@bitwarden/common/enums/organizationApiKeyType";
+import { OrganizationConnectionType } from "@bitwarden/common/enums/organizationConnectionType";
+import { PlanType } from "@bitwarden/common/enums/planType";
+import { BillingSyncConfigApi } from "@bitwarden/common/models/api/billingSyncConfigApi";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+import { OrganizationConnectionResponse } from "@bitwarden/common/models/response/organizationConnectionResponse";
+import { OrganizationSubscriptionResponse } from "@bitwarden/common/models/response/organizationSubscriptionResponse";
 
 import { BillingSyncKeyComponent } from "src/app/settings/billing-sync-key.component";
 

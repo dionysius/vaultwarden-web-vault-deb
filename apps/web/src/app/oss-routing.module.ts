@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { AuthGuard } from "jslib-angular/guards/auth.guard";
-import { LockGuard } from "jslib-angular/guards/lock.guard";
-import { UnauthGuard } from "jslib-angular/guards/unauth.guard";
+import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
+import { LockGuard } from "@bitwarden/angular/guards/lock.guard";
+import { UnauthGuard } from "@bitwarden/angular/guards/unauth.guard";
 
 import { AcceptEmergencyComponent } from "./accounts/accept-emergency.component";
 import { AcceptOrganizationComponent } from "./accounts/accept-organization.component";

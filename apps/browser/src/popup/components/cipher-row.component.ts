@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { CipherView } from "jslib-common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
 @Component({
   selector: "app-cipher-row",

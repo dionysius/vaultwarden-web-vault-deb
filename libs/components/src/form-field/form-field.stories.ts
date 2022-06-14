@@ -9,12 +9,11 @@ import {
 } from "@angular/forms";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-
-import { InputModule } from "src/input/input.module";
-import { I18nMockService } from "src/utils/i18n-mock.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 import { ButtonModule } from "../button";
+import { InputModule } from "../input/input.module";
+import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { BitFormFieldComponent } from "./form-field.component";
 import { FormFieldModule } from "./form-field.module";

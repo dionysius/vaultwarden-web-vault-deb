@@ -1,9 +1,9 @@
-import { CipherType } from "jslib-common/enums/cipherType";
-import { FieldType } from "jslib-common/enums/fieldType";
-import { LastPassCsvImporter as Importer } from "jslib-common/importers/lastpassCsvImporter";
-import { ImportResult } from "jslib-common/models/domain/importResult";
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { FieldView } from "jslib-common/models/view/fieldView";
+import { CipherType } from "@bitwarden/common/enums/cipherType";
+import { FieldType } from "@bitwarden/common/enums/fieldType";
+import { LastPassCsvImporter as Importer } from "@bitwarden/common/importers/lastpassCsvImporter";
+import { ImportResult } from "@bitwarden/common/models/domain/importResult";
+import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { FieldView } from "@bitwarden/common/models/view/fieldView";
 
 function baseExcept(result: ImportResult) {
   expect(result).not.toBeNull();

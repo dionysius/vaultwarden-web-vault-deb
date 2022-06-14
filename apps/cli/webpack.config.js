@@ -77,6 +77,7 @@ const webpackConfig = {
   externals: [
     nodeExternals({
       modulesDir: "../../node_modules",
+      allowlist: [/@bitwarden/],
     }),
   ],
 };

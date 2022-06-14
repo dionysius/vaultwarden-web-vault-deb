@@ -2,12 +2,12 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 import { ConnectedPosition } from "@angular/cdk/overlay";
 import { Component, OnInit } from "@angular/core";
 
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
-import { Utils } from "jslib-common/misc/utils";
-import { Account } from "jslib-common/models/domain/account";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { Account } from "@bitwarden/common/models/domain/account";
 
 export class SwitcherAccount extends Account {
   get serverUrl() {

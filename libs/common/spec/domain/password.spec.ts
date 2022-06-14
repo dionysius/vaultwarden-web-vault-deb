@@ -1,5 +1,5 @@
-import { PasswordHistoryData } from "jslib-common/models/data/passwordHistoryData";
-import { Password } from "jslib-common/models/domain/password";
+import { PasswordHistoryData } from "@bitwarden/common/models/data/passwordHistoryData";
+import { Password } from "@bitwarden/common/models/domain/password";
 
 import { mockEnc } from "../utils";
 

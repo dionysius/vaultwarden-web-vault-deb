@@ -1,16 +1,16 @@
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { HashPurpose } from "jslib-common/enums/hashPurpose";
-import { Utils } from "jslib-common/misc/utils";
-import { SecretVerificationRequest } from "jslib-common/models/request/secretVerificationRequest";
-import { ConsoleLogService } from "jslib-common/services/consoleLog.service";
-import { Response } from "jslib-node/cli/models/response";
-import { MessageResponse } from "jslib-node/cli/models/response/messageResponse";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
+import { Utils } from "@bitwarden/common/misc/utils";
+import { SecretVerificationRequest } from "@bitwarden/common/models/request/secretVerificationRequest";
+import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
+import { Response } from "@bitwarden/node/cli/models/response";
+import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
 import { CliUtils } from "../utils";
 

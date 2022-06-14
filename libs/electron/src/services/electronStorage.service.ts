@@ -2,8 +2,8 @@ import * as fs from "fs";
 
 import { ipcMain } from "electron";
 
-import { StorageService } from "jslib-common/abstractions/storage.service";
-import { NodeUtils } from "jslib-common/misc/nodeUtils";
+import { StorageService } from "@bitwarden/common/abstractions/storage.service";
+import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 
 // eslint-disable-next-line
 const Store = require("electron-store");

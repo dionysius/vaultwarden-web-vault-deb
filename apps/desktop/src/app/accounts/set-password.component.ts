@@ -1,17 +1,17 @@
 import { Component, NgZone, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
-import { SetPasswordComponent as BaseSetPasswordComponent } from "jslib-angular/components/set-password.component";
-import { ApiService } from "jslib-common/abstractions/api.service";
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { PolicyService } from "jslib-common/abstractions/policy.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
+import { SetPasswordComponent as BaseSetPasswordComponent } from "@bitwarden/angular/components/set-password.component";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 
 const BroadcasterSubscriptionId = "SetPasswordComponent";
 

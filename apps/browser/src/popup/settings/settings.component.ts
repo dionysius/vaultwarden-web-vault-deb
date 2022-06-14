@@ -3,16 +3,16 @@ import { FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import Swal from "sweetalert2";
 
-import { ModalService } from "jslib-angular/services/modal.service";
-import { CryptoService } from "jslib-common/abstractions/crypto.service";
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { KeyConnectorService } from "jslib-common/abstractions/keyConnector.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-import { DeviceType } from "jslib-common/enums/deviceType";
+import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
+import { DeviceType } from "@bitwarden/common/enums/deviceType";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErrors";

@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { AuthGuard } from "jslib-angular/guards/auth.guard";
-import { LockGuard } from "jslib-angular/guards/lock.guard";
+import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
+import { LockGuard } from "@bitwarden/angular/guards/lock.guard";
 
 import { AccessibilityCookieComponent } from "./accounts/accessibility-cookie.component";
 import { HintComponent } from "./accounts/hint.component";

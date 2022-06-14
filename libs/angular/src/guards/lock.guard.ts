@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { CanActivate, Router } from "@angular/router";
 
-import { AuthService } from "jslib-common/abstractions/auth.service";
-import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
+import { AuthService } from "@bitwarden/common/abstractions/auth.service";
+import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 
 @Injectable()
 export class LockGuard implements CanActivate {

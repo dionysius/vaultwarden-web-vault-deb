@@ -4,10 +4,10 @@
     "baseUrl": ".",
     "paths": {
       "tldjs": ["../../libs/common/src/misc/tldjs.noop"],
-      "jslib-common/*": ["../../libs/common/src/*"],
-      "jslib-angular/*": ["../../libs/angular/src/*"],
-      "@bitwarden/components": ["../../libs/components/src"],
-      "src/*": ["src/*"]
+      "src/*": ["src/*"],
+      "@bitwarden/common/*": ["../../libs/common/src/*"],
+      "@bitwarden/angular/*": ["../../libs/angular/src/*"],
+      "@bitwarden/components": ["../../libs/components/src"]
     }
   },
   "angularCompilerOptions": {

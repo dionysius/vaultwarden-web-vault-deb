@@ -1,10 +1,10 @@
-import { EnvironmentService } from "jslib-common/abstractions/environment.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { LogService } from "jslib-common/abstractions/log.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { NotificationsService } from "jslib-common/abstractions/notifications.service";
-import { SystemService } from "jslib-common/abstractions/system.service";
-import { Utils } from "jslib-common/misc/utils";
+import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
+import { SystemService } from "@bitwarden/common/abstractions/system.service";
+import { Utils } from "@bitwarden/common/misc/utils";
 
 import { BrowserApi } from "../browser/browserApi";
 import { AutofillService } from "../services/abstractions/autofill.service";

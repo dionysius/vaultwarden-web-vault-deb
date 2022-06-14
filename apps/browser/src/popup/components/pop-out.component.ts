@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 import { PopupUtilsService } from "../services/popup-utils.service";
 

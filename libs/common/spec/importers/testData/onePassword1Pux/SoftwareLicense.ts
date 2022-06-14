@@ -1,4 +1,4 @@
-import { ExportData } from "jslib-common/importers/onepasswordImporters/types/onepassword1PuxImporterTypes";
+import { ExportData } from "@bitwarden/common/importers/onepasswordImporters/types/onepassword1PuxImporterTypes";
 
 export const SoftwareLicenseData: ExportData = {
   accounts: [
