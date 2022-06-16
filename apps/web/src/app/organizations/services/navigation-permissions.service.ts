@@ -12,6 +12,7 @@ const permissions = {
     Permissions.ManageGroups,
     Permissions.ManageUsers,
     Permissions.ManagePolicies,
+    Permissions.ManageSso,
   ],
   tools: [Permissions.AccessImportExport, Permissions.AccessReports],
   settings: [Permissions.ManageOrganization],
