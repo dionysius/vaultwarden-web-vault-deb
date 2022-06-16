@@ -28,14 +28,12 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
-        working-directory: ./components
 
       - name: Publish to Chromatic
         uses: chromaui/action@c72f0b48c8887c0ef0abe18ad865a6c1e01e73c6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: ./components
           exitOnceUploaded: true
           onlyChanged: true
           externals: "[\"components/**/*.scss\", \"components/tailwind.config*.js\"]"

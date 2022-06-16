@@ -2,3 +2,5 @@ node_modules/
 **/coverage/
 .github/workflows/act
 .DS_Store
+documentation.json
+dist

@@ -19,7 +19,11 @@
     "prettier": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:watch:all": "jest --watchAll"
+    "test:watch:all": "jest --watchAll",
+    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
+    "storybook": "npm run docs:json && start-storybook -p 6006",
+    "build-storybook": "npm run docs:json && build-storybook",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "workspaces": [
     "apps/*",
@@ -189,7 +193,8 @@
     "zxcvbn": "^4.4.2"
   },
   "overrides": {
-    "tailwindcss": "$tailwindcss"
+    "tailwindcss": "$tailwindcss",
+    "react": "^18.0.0"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
