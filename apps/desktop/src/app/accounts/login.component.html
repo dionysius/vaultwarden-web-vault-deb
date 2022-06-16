@@ -68,8 +68,8 @@
       </div>
       <div class="box last" [hidden]="!showCaptcha()">
         <div class="box-content">
+          <iframe id="hcaptcha_iframe" style="margin-top: 20px"></iframe>
           <div class="box-content-row">
-            <iframe id="hcaptcha_iframe" height="80"></iframe>
             <button class="btn block" type="button" routerLink="/accessibility-cookie">
               <i class="bwi bwi-universal-access" aria-hidden="true"></i>
               {{ "loadAccessibilityCookie" | i18n }}
