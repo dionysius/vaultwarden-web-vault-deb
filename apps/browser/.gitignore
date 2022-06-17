@@ -1,20 +1,7 @@
-.vs
-.vscode
-.idea
-.DS_Store
-node_modules
-npm-debug.log
-vwd.webinfo
-css/
-dist/
-dist-safari/
-webfonts/
-*.crx
-*.pem
-*.zip
-build/
-build.safariextension/
-xcuserdata/
-*.hmap
+# Safari
+dist-safari
 !src/safari/safari/app/popup/index.html
 src/safari/safari/app/
+build.safariextension
+xcuserdata
+*.hmap
