@@ -1278,34 +1278,34 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Učitaj kolačić pristupačnosti"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Registriraj se kao korisnik pristupačnosti na",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Kopiraj i zalijepi vezu poslanu na e-poštu u nastavku"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Unesi URL za učitavanje kolačića pristupačnosti za hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "hCaptcha Url je obavezan",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Neispravan Url"
   },
   "done": {
-    "message": "Done"
+    "message": "Gotovo"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Kolačić pristupačnosti spremljen!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Nije spremljen kolačić pristupačnosti"
   },
   "warning": {
     "message": "UPOZORENJE",
@@ -1553,7 +1553,7 @@
     "message": "Integracija s preglednikom koristi se za biometriju u pregledniku."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integracija preglednika nije podržana"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Nažalost, za sada je integracija s preglednikom podržana samo u Mac App Store verziji aplikacije."
@@ -1562,7 +1562,7 @@
     "message": "Nažalost, integracija s preglednikom nije podržana u Windows Store verziji aplikacije."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Nažalost, integracija preglednika trenutno nije podržana u verziji Linuxa."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Traži verifikaciju za integraciju s preglednikom"

@@ -1278,34 +1278,34 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Учитај колачић приступачности"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Региструјте се као корисник приступачности на",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Копирајте и испод налепите линк који је послат на адресу ваше е-поште"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Упишите адресу како би се учитао колачић приступачности за hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "hCaptcha адреса је неопходна",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Неисправна адреса"
   },
   "done": {
-    "message": "Done"
+    "message": "Готово"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Колачић приступачности сачуван!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Нема сачуваног колачића приступачности"
   },
   "warning": {
     "message": "УПОЗОРЕЊЕ",
@@ -1553,7 +1553,7 @@
     "message": "Интеграција прегледача се користи за биометрију у прегледачу."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Интеграција са претраживачем није подржана"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Нажалост, интеграција прегледача за сада је подржана само у верзији Mac App Store."
@@ -1562,7 +1562,7 @@
     "message": "Нажалост, интеграција прегледача није за сада подржана у Windows Store."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Нажалост интеграција са претраживачем није подржана у linux верзији."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Захтева верификацију за интеграцију прегледача"
@@ -1922,7 +1922,7 @@
     "message": "„Ухвати све“ е-порука"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Користите подешено catch-all пријемно сандуче вашег домена."
   },
   "random": {
     "message": "Случајно"
