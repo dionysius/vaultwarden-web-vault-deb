@@ -19,7 +19,7 @@ import { BitFormFieldComponent } from "./form-field.component";
 import { FormFieldModule } from "./form-field.module";
 
 export default {
-  title: "Jslib/Form Field",
+  title: "Component Library/Form/Field",
   component: BitFormFieldComponent,
   decorators: [
     moduleMetadata({

@@ -7,7 +7,7 @@ import { I18nMockService } from "../utils/i18n-mock.service";
 import { CalloutComponent } from "./callout.component";
 
 export default {
-  title: "Jslib/Callout",
+  title: "Component Library/Callout",
   component: CalloutComponent,
   decorators: [
     moduleMetadata({

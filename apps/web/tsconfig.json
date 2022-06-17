@@ -22,6 +22,7 @@
     "src/connectors/*.ts",
     "src/models/*.ts",
     "src/services/*.ts",
-    "src/abstractions/*.ts"
+    "src/abstractions/*.ts",
+    "src/**/*.stories.ts"
   ]
 }

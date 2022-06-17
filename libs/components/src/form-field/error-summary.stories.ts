@@ -11,7 +11,7 @@ import { BitFormFieldComponent } from "./form-field.component";
 import { FormFieldModule } from "./form-field.module";
 
 export default {
-  title: "Jslib/Form Error Summary",
+  title: "Component Library/Form/Error Summary",
   component: BitFormFieldComponent,
   decorators: [
     moduleMetadata({

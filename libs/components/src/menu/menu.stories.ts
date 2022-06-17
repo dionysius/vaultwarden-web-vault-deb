@@ -9,7 +9,7 @@ import { MenuTriggerForDirective } from "./menu-trigger-for.directive";
 import { MenuComponent } from "./menu.component";
 
 export default {
-  title: "Jslib/Menu",
+  title: "Component Library/Menu",
   component: MenuTriggerForDirective,
   decorators: [
     moduleMetadata({

@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/angular";
 import { BadgeDirective } from "./badge.directive";
 
 export default {
-  title: "Jslib/Badge",
+  title: "Component Library/Badge",
   component: BadgeDirective,
   args: {
     badgeType: "primary",

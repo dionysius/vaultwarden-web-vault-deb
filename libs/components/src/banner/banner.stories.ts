@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/angular";
 import { BannerComponent } from "./banner.component";
 
 export default {
-  title: "Jslib/Banner",
+  title: "Component Library/Banner",
   component: BannerComponent,
   args: {
     bannerType: "warning",

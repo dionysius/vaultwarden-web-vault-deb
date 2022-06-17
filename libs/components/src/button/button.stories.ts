@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/angular";
 import { ButtonDirective } from "./button.directive";
 
 export default {
-  title: "Jslib/Button",
+  title: "Component Library/Button",
   component: ButtonDirective,
   args: {
     buttonType: "primary",
