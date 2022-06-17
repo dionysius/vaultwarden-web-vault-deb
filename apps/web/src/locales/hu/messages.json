@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API hozzáférési vezérjel"
+  },
+  "deviceVerification": {
+    "message": "Eszköz ellenőrzés"
+  },
+  "enableDeviceVerification": {
+    "message": "Eszköz ellenőrzés engedélyezése"
+  },
+  "deviceVerificationDesc": {
+    "message": "Engedélyezve az ellenőrző kódok az email címre kerülnek elküldésre ismeretlen eszközről bejelentkezéskor."
+  },
+  "updatedDeviceVerification": {
+    "message": "Frissített eszköz engedélyezés"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Biztosan engedélyezve legyen az Eszköz ellenőrzés? Az ellenőrző kódot tartalmazó emailek címzettje: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

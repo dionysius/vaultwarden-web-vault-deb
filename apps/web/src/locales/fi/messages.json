@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API-käyttötunniste"
+  },
+  "deviceVerification": {
+    "message": "Laitetodennus"
+  },
+  "enableDeviceVerification": {
+    "message": "Käytä laitetodennusta"
+  },
+  "deviceVerificationDesc": {
+    "message": "Kun käytössä, todennuskoodit lähetetään sähköpostitse, kun yritetään kirjautua tuntemattomasta laitteesta"
+  },
+  "updatedDeviceVerification": {
+    "message": "Laitetodennus päivitettiin"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Haluatko varmasti käyttää laitetodennusta? Todennuskoodit lähetetään sähköpostiosoitteeseen $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

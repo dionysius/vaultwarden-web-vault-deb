@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "Prístupový token API"
+  },
+  "deviceVerification": {
+    "message": "Overenie zariadenia"
+  },
+  "enableDeviceVerification": {
+    "message": "Povoliť overenie zariadenia"
+  },
+  "deviceVerificationDesc": {
+    "message": "Ak je táto funkcia zapnutá, pri prihlásení z nerozpoznaného zariadenia sa na vašu e-mailovú adresu odošlú overovacie kódy"
+  },
+  "updatedDeviceVerification": {
+    "message": "Aktualizované overenie zariadenia"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Naozaj chcete povoliť overenie zariadenia? E-maily s overovacím kódom vám prídu na adresu: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

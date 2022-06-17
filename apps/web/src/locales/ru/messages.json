@@ -4432,7 +4432,7 @@
     "message": "Тайм-аут вашего хранилища превышает ограничение, установленное вашей организацией."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Минимальный пользовательский тайм-аут 1 минута."
+    "message": "Минимальный пользовательский тайм-аут составляет 1 минуту."
   },
   "vaultTimeoutRangeError": {
     "message": "Тайм-аут хранилища находится за пределами допустимого диапазона."
@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "Токен доступа к API"
+  },
+  "deviceVerification": {
+    "message": "Проверка устройства"
+  },
+  "enableDeviceVerification": {
+    "message": "Включить проверку устройства"
+  },
+  "deviceVerificationDesc": {
+    "message": "Если включено, то при входе с нераспознанного устройства на ваш адрес электронной почты отправляются проверочные коды"
+  },
+  "updatedDeviceVerification": {
+    "message": "Проверка устройства обновлена"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Вы действительно хотите включить проверку устройства? Письмо с кодом подтверждения будет отправлено по адресу: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

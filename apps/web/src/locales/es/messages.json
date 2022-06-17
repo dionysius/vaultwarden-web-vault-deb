@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nombre de dominio",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -422,22 +422,22 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Yo"
   },
   "myVault": {
     "message": "Mi caja fuerte"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Todas las bóvedas"
   },
   "vault": {
     "message": "Caja fuerte"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "Bóvedas"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "Elementos de la bóveda"
   },
   "moveSelectedToOrg": {
     "message": "Mover los seleccionados a la organización"
@@ -904,18 +904,18 @@
     "message": "Longitud"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)",
+    "message": "Mayúsculas (A-Z)",
     "description": "Include uppercase letters in the password generator."
   },
   "lowercase": {
-    "message": "Lowercase (a-z)",
+    "message": "Minúsculas (a-z)",
     "description": "Include lowercase letters in the password generator."
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Números (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Carácteres especiales (!@#$%^&*)"
   },
   "numWords": {
     "message": "Número de palabras"
@@ -1137,13 +1137,13 @@
     "message": "Opciones"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Preferencias"
   },
   "preferencesDesc": {
-    "message": "Customize your web vault experience."
+    "message": "Personaliza tu experiencia en la bóveda web."
   },
   "preferencesUpdated": {
-    "message": "Preferences updated"
+    "message": "Preferencias actualizadas"
   },
   "language": {
     "message": "Idioma"
@@ -1460,7 +1460,7 @@
     "message": "Informes"
   },
   "reportsDesc": {
-    "message": "Identify and close security gaps in your online accounts by clicking the reports below.",
+    "message": "Identifique y cierre las lagunas de seguridad en sus cuentas en línea haciendo clic en los siguientes informes.",
     "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -4486,43 +4486,43 @@
     "message": "Comportamiento de la redirección de OIDC"
   },
   "getClaimsFromUserInfoEndpoint": {
-    "message": "Get claims from user info endpoint"
+    "message": "Obtener reclamos del endpoint de información del usuario"
   },
   "additionalScopes": {
-    "message": "Custom Scopes"
+    "message": "Ámbitos personalizados"
   },
   "additionalUserIdClaimTypes": {
-    "message": "Custom User ID Claim Types"
+    "message": "Tipo de reclamación de ID de usuario personalizado"
   },
   "additionalEmailClaimTypes": {
-    "message": "Email Claim Types"
+    "message": "Tipos de reclamación de email"
   },
   "additionalNameClaimTypes": {
-    "message": "Custom Name Claim Types"
+    "message": "Tipos de reclamación de nombre personalizado"
   },
   "acrValues": {
-    "message": "Requested Authentication Context Class Reference values"
+    "message": "Valores de referencia de clase Context de autenticación solicitados"
   },
   "expectedReturnAcrValue": {
-    "message": "Expected \"acr\" Claim Value In Response"
+    "message": "Se esperaba un valor de reclamación \"acr\" en respuesta"
   },
   "spEntityId": {
-    "message": "SP Entity ID"
+    "message": "ID de entidad SP"
   },
   "spMetadataUrl": {
-    "message": "SAML 2.0 Metadata URL"
+    "message": "URL de metadatos SAML 2.0"
   },
   "spAcsUrl": {
-    "message": "Assertion Consumer Service (ACS) URL"
+    "message": "URL del Servicio al Consumidor de Aserción (ACS)"
   },
   "spNameIdFormat": {
-    "message": "Name ID Format"
+    "message": "Formato de ID de nombre"
   },
   "spOutboundSigningAlgorithm": {
-    "message": "Outbound Signing Algorithm"
+    "message": "Algoritmo de firma saliente"
   },
   "spSigningBehavior": {
-    "message": "Signing Behavior"
+    "message": "Comportamiento de firma"
   },
   "spMinIncomingSigningAlgorithm": {
     "message": "Minimum Incoming Signing Algorithm"
@@ -4531,13 +4531,13 @@
     "message": "Expect signed assertions"
   },
   "spValidateCertificates": {
-    "message": "Validate certificates"
+    "message": "Validar certificado"
   },
   "idpEntityId": {
-    "message": "Entity ID"
+    "message": "ID de la entidad"
   },
   "idpBindingType": {
-    "message": "Binding Type"
+    "message": "Tipo de enlace"
   },
   "idpSingleSignOnServiceUrl": {
     "message": "Single Sign On Service URL"
@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API Access Token"
+  },
+  "deviceVerification": {
+    "message": "Verificación del dispositivo"
+  },
+  "enableDeviceVerification": {
+    "message": "Activar verificación de dispositivo"
+  },
+  "deviceVerificationDesc": {
+    "message": "Cuando está habilitado, los códigos de verificación se envían a su dirección de correo electrónico al iniciar sesión desde un dispositivo no reconocido"
+  },
+  "updatedDeviceVerification": {
+    "message": "Verificación de dispositivo actualizada"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "¿Está seguro que desea habilitar la verificación del dispositivo? Los correos electrónicos con los códigos de verificación llegarán a: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

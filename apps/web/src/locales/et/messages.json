@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API ligipääsu märk"
+  },
+  "deviceVerification": {
+    "message": "Seadme kinnitamine"
+  },
+  "enableDeviceVerification": {
+    "message": "Lülita seadme kinnitamine sisse"
+  },
+  "deviceVerificationDesc": {
+    "message": "Sisselülitamisel saadetakse sinu e-postile kinnituskood, kui sisselogimine toimub tundmatust seadmest"
+  },
+  "updatedDeviceVerification": {
+    "message": "Updated Device Verification"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Are you sure you want to enable Device Verification? The verification code emails will arrive at: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

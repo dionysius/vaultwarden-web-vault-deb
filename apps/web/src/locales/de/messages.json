@@ -4432,10 +4432,10 @@
     "message": "Dein Tresor-Timeout überschreitet die von deinem Unternehmen festgelegte Beschränkung."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Minimales benutzerdefiniertes Timeout beträgt 1 Minute."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault Timeout is not within allowed range."
+    "message": "Tresor-Timeout ist außerhalb des zulässigen Bereichs."
   },
   "disablePersonalVaultExport": {
     "message": "Persönlichen Tresor-Export deaktivieren"
@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API-Zugangs-Token"
+  },
+  "deviceVerification": {
+    "message": "Geräteverifizierung"
+  },
+  "enableDeviceVerification": {
+    "message": "Aktiviere Geräteverifizierung"
+  },
+  "deviceVerificationDesc": {
+    "message": "Falls aktiviert, werden Verifizierungscodes an deine E-Mail-Adresse gesendet, wenn du dich von einem unbekannten Gerät einloggst"
+  },
+  "updatedDeviceVerification": {
+    "message": "Aktualisierte Geräteverifizierung"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Bist du sicher, dass du die Geräteverifizierung aktivieren möchtest? Der Verifizierungsscode wird an folgende E-Mails versendet: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

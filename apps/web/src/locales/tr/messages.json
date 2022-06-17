@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API erişim anahtarı"
+  },
+  "deviceVerification": {
+    "message": "Cihaz doğrulama"
+  },
+  "enableDeviceVerification": {
+    "message": "Cihaz doğrulamasını etkinleştir"
+  },
+  "deviceVerificationDesc": {
+    "message": "When enabled, verification codes are sent to your email address when logging in from an unrecognized device"
+  },
+  "updatedDeviceVerification": {
+    "message": "Cihaz doğrulaması güncellendi"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Are you sure you want to enable Device Verification? The verification code emails will arrive at: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

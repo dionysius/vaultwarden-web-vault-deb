@@ -4432,10 +4432,10 @@
     "message": "Време истека вашег сефа је премашило дозвољена ограничења од стране ваше организације."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Минимално прилагођено временско ограничење је 1 минут."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault Timeout is not within allowed range."
+    "message": "Временско ограничење сефа није у дозвољеном опсегу."
   },
   "disablePersonalVaultExport": {
     "message": "Онемогућите извоз личног сефа"
@@ -4627,13 +4627,13 @@
     "message": "Free Bitwarden Families offer successfully redeemed"
   },
   "redeemed": {
-    "message": "Redeemed"
+    "message": "Откупљено"
   },
   "redeemedAccount": {
-    "message": "Redeemed Account"
+    "message": "Налог откупљен"
   },
   "revokeAccount": {
-    "message": "Revoke account $NAME$",
+    "message": "Опозови налог $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4654,7 +4654,7 @@
     "message": "Free Families Plan"
   },
   "redeemNow": {
-    "message": "Redeem Now"
+    "message": "Откупи сада"
   },
   "recipient": {
     "message": "Прималац"
@@ -4747,10 +4747,10 @@
     "message": "SSO Authentication and Single Organization policies are required to set up Key Connector decryption."
   },
   "memberDecryptionOption": {
-    "message": "Member Decryption Options"
+    "message": "Опциј дешифровања члана"
   },
   "memberDecryptionPassDesc": {
-    "message": "Once authenticated, members will decrypt vault data using their Master Passwords."
+    "message": "Након аутентификације, чланови ће дешифровати податке из сефа користећи своје главне лозинке."
   },
   "keyConnector": {
     "message": "Key Connector"
@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "Приступни АПИ токен"
+  },
+  "deviceVerification": {
+    "message": "Device Verification"
+  },
+  "enableDeviceVerification": {
+    "message": "Enable Device Verification"
+  },
+  "deviceVerificationDesc": {
+    "message": "When enabled, verification codes are sent to your email address when logging in from an unrecognized device"
+  },
+  "updatedDeviceVerification": {
+    "message": "Провера уређаја је ажурирана"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Да ли сте сигурни да желите да омогућите верификацију уређаја? Верификациони кодо ће бити послат на: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

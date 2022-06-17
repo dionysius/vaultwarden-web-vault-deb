@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API piekļuves pilnvara"
+  },
+  "deviceVerification": {
+    "message": "Ierīces apstiprināšana"
+  },
+  "enableDeviceVerification": {
+    "message": "Iespējot ierīces apstiprināšanu"
+  },
+  "deviceVerificationDesc": {
+    "message": "Kad iespējots, apstiprinājuma kodi tiek sūtīti uz e-pasta adresi, kad notiek pierakstīšanās no neatpazītas ierīces"
+  },
+  "updatedDeviceVerification": {
+    "message": "Atjaunināta ierīces apstiprināšana"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Vai tiešām iespējot ierīces apstiprināšanu? Apstiprinājuma koda e-pasta ziņojumi tiks nosūtīti uz: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

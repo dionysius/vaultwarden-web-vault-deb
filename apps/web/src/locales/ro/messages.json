@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "Token de acces API"
+  },
+  "deviceVerification": {
+    "message": "Verificarea dispozitivului"
+  },
+  "enableDeviceVerification": {
+    "message": "Activați verificarea dispozitivului"
+  },
+  "deviceVerificationDesc": {
+    "message": "Când este activat, codurile de verificare sunt trimise la adresa dvs. de e-mail atunci când vă conectați de pe un dispozitiv nerecunoscut"
+  },
+  "updatedDeviceVerification": {
+    "message": "Verificarea dispozitivului actualizată"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Sunteți sigur că doriți să activați Verificarea dispozitivului? E-mailurile cu codul de verificare vor ajunge la: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

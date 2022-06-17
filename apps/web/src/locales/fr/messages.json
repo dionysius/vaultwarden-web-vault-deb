@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "Jetons d'accès API"
+  },
+  "deviceVerification": {
+    "message": "Vérification de l'Appareil"
+  },
+  "enableDeviceVerification": {
+    "message": "Activer la Vérification de l'Appareil"
+  },
+  "deviceVerificationDesc": {
+    "message": "Lorsque cette option est activée, les codes de vérification sont envoyés à votre adresse e-mail lorsque vous vous connectez à partir d'un appareil inconnu"
+  },
+  "updatedDeviceVerification": {
+    "message": "Vérification de l'Appareil mise à jour"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Êtes-vous sûr de vouloir activer la Vérification de l'Appareil ? Les e-mails de code de vérification arriveront à : $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

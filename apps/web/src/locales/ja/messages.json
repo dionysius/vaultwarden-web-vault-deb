@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API アクセストークン"
+  },
+  "deviceVerification": {
+    "message": "デバイス認証"
+  },
+  "enableDeviceVerification": {
+    "message": "デバイス認証を有効にする"
+  },
+  "deviceVerificationDesc": {
+    "message": "有効にすると、認識できないデバイスからログインする際に認証コードがメールアドレスに送信されます"
+  },
+  "updatedDeviceVerification": {
+    "message": "デバイスの認証を更新しました"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "デバイス認証を有効にしてもよろしいですか？認証コードのメールがこちらに届きます： $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

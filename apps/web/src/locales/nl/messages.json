@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API-toegangstoken"
+  },
+  "deviceVerification": {
+    "message": "Apparaatverificatie"
+  },
+  "enableDeviceVerification": {
+    "message": "Apparaatverificatie inschakelen"
+  },
+  "deviceVerificationDesc": {
+    "message": "Stuurt een verificatiecode naar je e-mailadres zodra je inlogt vanaf een onbekend apparaat"
+  },
+  "updatedDeviceVerification": {
+    "message": "Apparaatverificatie bijgewerkt"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Weet je zeker dat je apparaatverificatie wilt inschakelen? De verificatiecodes komen binnen via e-mail op: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

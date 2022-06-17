@@ -5048,7 +5048,7 @@
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
-    "message": "Self-hosted sponsorships synced."
+    "message": "Zsynchronizowano sponsorowanie na własnym hostingu."
   },
   "billingManagedByProvider": {
     "message": "Zarządzane przez $PROVIDER$",
@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "Token dostępu API"
+  },
+  "deviceVerification": {
+    "message": "Weryfikacja urządzenia"
+  },
+  "enableDeviceVerification": {
+    "message": "Włącz weryfikację urządzenia"
+  },
+  "deviceVerificationDesc": {
+    "message": "Gdy włączone, kody weryfikacyjne są wysyłane na Twój adres e-mail podczas logowania się z nierozpoznanego urządzenia"
+  },
+  "updatedDeviceVerification": {
+    "message": "Zaktualizowano weryfikację urządzenia"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Czy na pewno chcesz włączyć weryfikację urządzenia? Wiadomości e-mail z kodem weryfikacyjnym będą wysyłane do: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

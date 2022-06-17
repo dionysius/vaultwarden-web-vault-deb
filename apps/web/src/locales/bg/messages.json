@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "Идентификатор за достъп до API"
+  },
+  "deviceVerification": {
+    "message": "Потвърждаване на устройствата"
+  },
+  "enableDeviceVerification": {
+    "message": "Включване на потвърждаването на устройствата"
+  },
+  "deviceVerificationDesc": {
+    "message": "Ако е включено, когато се впишете на непознато устройство, ще получавате код за потвърждение на е-пощата си"
+  },
+  "updatedDeviceVerification": {
+    "message": "Потвърждението на устройствата е променено"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Наистина ли искате да включите потвърждението на устройствата? Е-писмата с кодовете ще се изпращат на: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

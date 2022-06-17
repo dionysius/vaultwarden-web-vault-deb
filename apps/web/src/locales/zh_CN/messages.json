@@ -1494,7 +1494,7 @@
     "message": "发现未启用 2FA 的登录项目"
   },
   "inactive2faFoundDesc": {
-    "message": "我们在您的密码库中发现 $COUNT$ 个网站可能没有配置双重身份验证（通过 twofactorauth.org）。为了进一步保护这些账户，您应该启用双重身份验证。",
+    "message": "我们在您的密码库中发现 $COUNT$ 个网站可能没有配置双重身份验证（根据 2fa.directory）。为了进一步保护这些账户，您应该启用双重身份验证。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3165,7 +3165,7 @@
     "message": "授权已过期"
   },
   "updatedUsers": {
-    "message": "更新用户"
+    "message": "用户已更新"
   },
   "selected": {
     "message": "已选择"
@@ -4383,7 +4383,7 @@
     "message": "添加"
   },
   "updatedMasterPassword": {
-    "message": "已更新主密码。"
+    "message": "已更新主密码"
   },
   "updateMasterPassword": {
     "message": "更新主密码"
@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API 访问令牌"
+  },
+  "deviceVerification": {
+    "message": "设备验证"
+  },
+  "enableDeviceVerification": {
+    "message": "启用设备验证"
+  },
+  "deviceVerificationDesc": {
+    "message": "启用后，当登录未识别的设备时，验证码会发送到您的电子邮箱"
+  },
+  "updatedDeviceVerification": {
+    "message": "设备验证已更新"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "您确定要启用设备验证吗？验证码邮件将发送到 $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

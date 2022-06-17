@@ -4432,10 +4432,10 @@
     "message": "Anbar vaxt bitişi, təşkilatınız tərəfindən tənzimlənən məhdudiyyətləri aşır."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Minimum özəl bitmə vaxtı 1 dəqiqədir."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault Timeout is not within allowed range."
+    "message": "Anbar bitmə vaxtı, icazə verilən aralıqda deyil."
   },
   "disablePersonalVaultExport": {
     "message": "Fərdi anbarın ixracını sıradan çıxart"
@@ -4681,7 +4681,7 @@
     "message": "Sponsorluq silindi"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Açar bağlayıcı xətası: Açar Bağlayıcının mövcud olduğuna və düzgün işlədiyinə əmin olun."
   },
   "keyConnectorUrl": {
     "message": "Açar Bağlayıcı URL-si"
@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API müraciət tokeni"
+  },
+  "deviceVerification": {
+    "message": "Cihaz təsdiqləməsi"
+  },
+  "enableDeviceVerification": {
+    "message": "Cihaz təsdiqləməsini fəallaşdır"
+  },
+  "deviceVerificationDesc": {
+    "message": "Fəal olduqda, tanınmayan bir cihazdan giriş edərkən e-poçt ünvanınıza təsdiqləmə kodları göndərilir"
+  },
+  "updatedDeviceVerification": {
+    "message": "Cihaz təsdiqləməsi yeniləndi"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Cihaz təsdiqləməsini fəallaşdırmaq istədiyinizə əminsiniz? Təsdiqləmə kodları $EMAIL$ ünvanına göndəriləcək",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

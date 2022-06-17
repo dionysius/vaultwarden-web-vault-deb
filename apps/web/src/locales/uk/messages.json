@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "Токен доступу до АРІ"
+  },
+  "deviceVerification": {
+    "message": "Перевірка пристрою"
+  },
+  "enableDeviceVerification": {
+    "message": "Увімкнути перевірку пристрою"
+  },
+  "deviceVerificationDesc": {
+    "message": "Якщо увімкнено, на вашу електронну пошту надсилаються коди підтвердження при вході з нового пристрою"
+  },
+  "updatedDeviceVerification": {
+    "message": "Оновлена перевірка пристрою"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "Ви дійсно хочете увімкнути перевірку пристрою? Повідомлення з кодом підтвердження надсилатимуться на: $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }

@@ -5075,5 +5075,26 @@
   },
   "apiAccessToken": {
     "message": "API 存取權杖"
+  },
+  "deviceVerification": {
+    "message": "裝置驗證"
+  },
+  "enableDeviceVerification": {
+    "message": "啟用裝置驗證"
+  },
+  "deviceVerificationDesc": {
+    "message": "啟用後，從無法辨識的裝置登入時，驗證碼將傳送至您的電子郵件地址"
+  },
+  "updatedDeviceVerification": {
+    "message": "已更新裝置驗證"
+  },
+  "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
+    "message": "您確定要啟用裝置驗證嗎？驗證碼電子郵件將寄送到：$EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "My Email"
+      }
+    }
   }
 }
