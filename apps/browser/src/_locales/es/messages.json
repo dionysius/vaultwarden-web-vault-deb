@@ -53,13 +53,13 @@
     "message": "Pestaña"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Caja fuerte"
   },
   "myVault": {
     "message": "Mi caja fuerte"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Todas las cajas fuertes"
   },
   "tools": {
     "message": "Herramientas"
@@ -101,10 +101,10 @@
     "message": "Sin entradas coincidentes."
   },
   "unlockVaultMenu": {
-    "message": "Desbloquea tu bóveda"
+    "message": "Desbloquea la caja fuerte"
   },
   "loginToVaultMenu": {
-    "message": "Inicia sesión en tu bóveda"
+    "message": "Inicia sesión en tu caja fuerte"
   },
   "autoFillInfo": {
     "message": "No hay entradas disponibles para autorellenar en la pestaña actual del navegador."
@@ -342,7 +342,7 @@
     "message": "Verificar identidad"
   },
   "yourVaultIsLocked": {
-    "message": "Su caja fuerte está bloqueada. Verifique su contraseña maestra para continuar."
+    "message": "Tu caja fuerte está bloqueada. Verifica tu identidad para continuar."
   },
   "unlock": {
     "message": "Desbloquear"
@@ -549,10 +549,10 @@
     "message": "¿Estás seguro de que quieres sobreescribir la contraseña actual?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Reemplazar nombre de usuario"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "¿Estás seguro de que quieres reemplazar el nombre de usuario actual?"
   },
   "searchFolder": {
     "message": "Buscar carpeta"
@@ -577,13 +577,13 @@
     "message": "No mostrar tarjetas en la pestaña"
   },
   "dontShowCardsCurrentTabDesc": {
-    "message": "Elementos de la tarjeta de su caja fuerte están listados en la página 'Ficha Actual' para el acceso fácil del autorellenado."
+    "message": "Los elementos de tarjeta de tu caja fuerte aparecen en la página \"pestaña actual\" para facilitar el acceso al autocompletado."
   },
   "dontShowIdentitiesCurrentTab": {
     "message": "No mostrar las identidades en la página de ficha"
   },
   "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Elementos de identidad de su caja fuerte están listados en la página 'Ficha Actual' para el acceso fácil del autorellenado."
+    "message": "Los elementos de identidad de tu caja fuerte aparecen en la página \"pestaña actual\" para facilitar el acceso al autocompletado."
   },
   "clearClipboard": {
     "message": "Vaciar portapapeles",
@@ -603,7 +603,7 @@
     "message": "Deshabilitar la notificación de cambio de contraseña"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "La notificación \"Contraseña cambiada\" automáticamente te pedirá que actualices la contraseña de inicio de sesión en tu caja fuerte cuando detecte que se ha cambiado en la web."
+    "message": "La \"notificación de cambio de contraseña\" te pregunta automáticamente si quieres actualizar la contraseña de un usuario de tu caja fuerte cuando detecta que la has cambiado en un sitio web."
   },
   "notificationChangeDesc": {
     "message": "¿Desea actualizar esta contraseña en Bitwarden?"
@@ -765,7 +765,7 @@
     "message": "Registrate como miembro Premium y obtén:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1GB de espacio cifrado en disco para adjuntos."
+    "message": "1 GB de espacio cifrado en disco para adjuntos."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Métodos de autenticación en dos pasos adicionales como YubiKey, FIDO U2F y Duo."
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nombre de dominio",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1834,7 +1834,7 @@
     "message": "Minutos"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Las políticas de tu organización están afectando el tiempo de espera de tu caja fuerte. El máximo permitido de espera es de $HOURS$ hora(s) y de $MINUTES$ minuto(s)",
+    "message": "Las políticas de tu organización están afectando al tiempo de espera de tu caja fuerte. El tiempo máximo de espera de la caja fuerte es de $HOURS$ hora(s) y $MINUTES$ minuto(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1853,7 +1853,7 @@
     "message": "Exportación de caja fuerte desactivada"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Una o más políticas de organización le impiden exportar su caja fuerte personal."
+    "message": "Una o más políticas de tu organización te impiden exportar tu caja fuerte personal."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "No se puede identificar un elemento de formulario válido. Intenta inspeccionar el HTML en su lugar."
@@ -1892,10 +1892,10 @@
     "message": "Su sesión ha expirado. Por favor, vuelva e intente iniciar sesión de nuevo."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exportando bóveda personal"
+    "message": "Exportando caja fuerte personal"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Solo se exportarán los elementos de la bóveda personal asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán.",
+    "message": "Solo se exportarán los elementos de la caja fuerte personal asociados a $EMAIL$. Los elementos de la caja fuerte de tu organización no se incluirán.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1907,62 +1907,62 @@
     "message": "Error"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerar nombre de usuario"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generar nombre de usuario"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tipo de nombre de usuario"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Dirección con sufijo",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Utiliza las capacidades de subdireccionamiento de tu proveedor de correo electrónico."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Captura todos los correos"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Utiliza la bandeja de entrada global configurada de tu dominio."
   },
   "random": {
-    "message": "Random"
+    "message": "Aleatorio"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Palabra aleatoria"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Nombre del sitio web"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "¿Qué te gustaría generar?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Tipo de contraseña"
   },
   "service": {
-    "message": "Service"
+    "message": "Servicio"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Alias de correo reenviado"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Genera un alias de correo electrónico con un servicio de reenvío externo."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Nombre del servidor",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "Token de acceso API"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "Clave API"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Error en el conector de claves: asegúrate de que el conector de claves está disponible y que funciona correctamente."
   }
 }
