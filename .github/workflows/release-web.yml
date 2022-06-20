@@ -142,73 +142,6 @@ jobs:
         run: docker logout
 
 
-  ghpages-deploy:
-    name: Deploy Web Vault to GitHub Pages
-    runs-on: ubuntu-20.04
-    needs:
-      - setup
-      - self-host
-    env:
-      _RELEASE_VERSION: ${{ needs.setup.outputs.release_version }}
-      _TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2  # v2.4.0
-        with:
-          ref: gh-pages
-
-      - name: Create gh-pages-deploy branch
-        run: |
-          git switch -c gh-pages-deploy-$_TAG_VERSION
-          git push -u origin gh-pages-deploy-$_TAG_VERSION
-
-      - name: Checkout Repo
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2  # v2.4.0
-
-      - name: Setup git config
-        run: |
-          git config user.name = "GitHub Action Bot"
-          git config user.email = "<>"
-          git config --global url."https://github.com/".insteadOf ssh://git@github.com/
-          git config --global url."https://".insteadOf ssh://
-
-      - name: Download latest cloud asset
-        uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
-        with:
-          workflow: build-web.yml
-          path: apps/web
-          workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch_name }}
-          artifacts: web-*-cloud-COMMERCIAL.zip
-
-      # This should result in a build directory in the current working directory
-      - name: Unzip build asset
-        working-directory: apps/web
-        run: unzip web-*-cloud-COMMERCIAL.zip
-
-      - name: Deploy GitHub Pages
-        uses: crazy-max/ghaction-github-pages@eb08c35b9fab86751edfff4e55cd5cde35ff0e52  # v3.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          target_branch: gh-pages-deploy-${{ needs.setup.outputs.tag_version }}
-          build_dir: apps/web/build
-          keep_history: true
-          commit_message: "Staging deploy ${{ needs.setup.outputs.release_version }}"
-          dry_run: ${{ github.event.inputs.release_type == 'Dry Run' }}
-
-      - name: Create GitHub Pages Deploy PR
-        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
-        env:
-          PR_BRANCH: gh-pages-deploy-${{ env._TAG_VERSION }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr create --title "Deploy $_RELEASE_VERSION to GitHub Pages" \
-            --body "Deploying $_RELEASE_VERSION" \
-            --base gh-pages \
-            --head "$PR_BRANCH"
-
-
   cfpages-deploy:
     name: Deploy Web Vault to CloudFlare Pages branch
     runs-on: ubuntu-20.04
@@ -239,7 +172,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
         with:
-          ref: deploy
+          ref: cf-pages
           path: deployment
 
       - name: Setup git config
@@ -271,7 +204,7 @@ jobs:
         run: |
           gh pr create --title "Deploy $_RELEASE_VERSION to CloudFlare Pages" \
             --body "Deploying $_RELEASE_VERSION" \
-            --base deploy \
+            --base cf-pages \
             --head "$PR_BRANCH"
 
 
@@ -281,7 +214,6 @@ jobs:
     needs:
       - setup
       - self-host
-      - ghpages-deploy
       - cfpages-deploy
     steps:
       - name: Download latest build artifacts
@@ -326,9 +258,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
-
-      - name: Remove gh-pages-deploy branch
-        run: git push origin --delete gh-pages-deploy-$_TAG_VERSION
 
       - name: Remove cf-pages-deploy branch
         run: git push origin --delete cf-pages-deploy-$_TAG_VERSION

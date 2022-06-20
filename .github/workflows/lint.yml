@@ -5,7 +5,7 @@ on:
   push:
     branches-ignore:
       - 'l10n_master'
-      - 'gh-pages'
+      - 'cf-pages'
     paths-ignore:
       - '.github/workflows/**'
   workflow_dispatch:
