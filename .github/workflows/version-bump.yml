@@ -36,7 +36,7 @@ jobs:
         run: |
           CLIENT=$(python -c "print('$CLIENT_NAME'.lower())")
           echo "::set-output name=client::$CLIENT"
-          
+
           git switch -c ${CLIENT}_version_bump_${{ github.event.inputs.version_number }}
           git push -u origin ${CLIENT}_version_bump_${{ github.event.inputs.version_number }}
 

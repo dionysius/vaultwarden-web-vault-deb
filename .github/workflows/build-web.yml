@@ -26,7 +26,10 @@ on:
       - '!*.txt'
       - '.github/workflows/build-web.yml'
   workflow_dispatch:
-    inputs: {}
+    inputs:
+      custom_tag_extension:
+        description: "Custom image tag extension"
+        required: false
 
 jobs:
   cloc:

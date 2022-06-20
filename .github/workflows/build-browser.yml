@@ -159,7 +159,7 @@ jobs:
           REM Copy apps\browser to Browser source directory
           mkdir browser-source\apps\browser
           xcopy apps\browser\* browser-source\apps\browser /E
-          
+
           REM Copy libs to Browser source directory
           mkdir browser-source\libs
           xcopy libs\* browser-source\libs /E
@@ -408,7 +408,7 @@ jobs:
           BUILD_STATUS: ${{ needs.build.result }}
           SAFARI_BUILD_STATUS: ${{ needs.build-safari.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
-          TRIGGER_DESKTOP_BUILD_STATUS:  ${{ needs.trigger-desktop-build.result }}
+          TRIGGER_DESKTOP_BUILD_STATUS: ${{ needs.trigger-desktop-build.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
