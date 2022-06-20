@@ -444,6 +444,16 @@ export abstract class ApiService {
     organizationId: string,
     request: OrganizationUserBulkRequest
   ) => Promise<ListResponse<OrganizationUserBulkResponse>>;
+  deactivateOrganizationUser: (organizationId: string, id: string) => Promise<any>;
+  deactivateManyOrganizationUsers: (
+    organizationId: string,
+    request: OrganizationUserBulkRequest
+  ) => Promise<ListResponse<OrganizationUserBulkResponse>>;
+  activateOrganizationUser: (organizationId: string, id: string) => Promise<any>;
+  activateManyOrganizationUsers: (
+    organizationId: string,
+    request: OrganizationUserBulkRequest
+  ) => Promise<ListResponse<OrganizationUserBulkResponse>>;
 
   getSync: () => Promise<SyncResponse>;
   postImportDirectory: (organizationId: string, request: ImportDirectoryRequest) => Promise<any>;

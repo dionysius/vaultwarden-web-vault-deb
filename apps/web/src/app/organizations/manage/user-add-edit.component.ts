@@ -5,6 +5,7 @@ import { CollectionService } from "@bitwarden/common/abstractions/collection.ser
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
 import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserType";
 import { PermissionsApi } from "@bitwarden/common/models/api/permissionsApi";
 import { CollectionData } from "@bitwarden/common/models/data/collectionData";
@@ -26,9 +27,12 @@ export class UserAddEditComponent implements OnInit {
   @Input() usesKeyConnector = false;
   @Output() onSavedUser = new EventEmitter();
   @Output() onDeletedUser = new EventEmitter();
+  @Output() onDeactivatedUser = new EventEmitter();
+  @Output() onActivatedUser = new EventEmitter();
 
   loading = true;
   editMode = false;
+  isDeactivated = false;
   title: string;
   emails: string;
   type: OrganizationUserType = OrganizationUserType.User;
@@ -97,6 +101,7 @@ export class UserAddEditComponent implements OnInit {
         );
         this.access = user.accessAll ? "all" : "selected";
         this.type = user.type;
+        this.isDeactivated = user.status === OrganizationUserStatusType.Deactivated;
         if (user.type === OrganizationUserType.Custom) {
           this.permissions = user.permissions;
         }
@@ -235,6 +240,74 @@ export class UserAddEditComponent implements OnInit {
         this.i18nService.t("removedUserId", this.name)
       );
       this.onDeletedUser.emit();
+    } catch (e) {
+      this.logService.error(e);
+    }
+  }
+
+  async deactivate() {
+    if (!this.editMode) {
+      return;
+    }
+
+    const confirmed = await this.platformUtilsService.showDialog(
+      this.i18nService.t("deactivateUserConfirmation"),
+      this.i18nService.t("deactivateUserId", this.name),
+      this.i18nService.t("deactivate"),
+      this.i18nService.t("cancel"),
+      "warning"
+    );
+    if (!confirmed) {
+      return false;
+    }
+
+    try {
+      this.formPromise = this.apiService.deactivateOrganizationUser(
+        this.organizationId,
+        this.organizationUserId
+      );
+      await this.formPromise;
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t("deactivatedUserId", this.name)
+      );
+      this.isDeactivated = true;
+      this.onDeactivatedUser.emit();
+    } catch (e) {
+      this.logService.error(e);
+    }
+  }
+
+  async activate() {
+    if (!this.editMode) {
+      return;
+    }
+
+    const confirmed = await this.platformUtilsService.showDialog(
+      this.i18nService.t("activateUserConfirmation"),
+      this.i18nService.t("activateUserId", this.name),
+      this.i18nService.t("activate"),
+      this.i18nService.t("cancel"),
+      "warning"
+    );
+    if (!confirmed) {
+      return false;
+    }
+
+    try {
+      this.formPromise = this.apiService.activateOrganizationUser(
+        this.organizationId,
+        this.organizationUserId
+      );
+      await this.formPromise;
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t("activatedUserId", this.name)
+      );
+      this.isDeactivated = false;
+      this.onActivatedUser.emit();
     } catch (e) {
       this.logService.error(e);
     }

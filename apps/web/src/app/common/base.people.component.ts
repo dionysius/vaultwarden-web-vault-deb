@@ -34,7 +34,7 @@ export abstract class BasePeopleComponent<
   confirmModalRef: ViewContainerRef;
 
   get allCount() {
-    return this.allUsers != null ? this.allUsers.length : 0;
+    return this.activeUsers != null ? this.activeUsers.length : 0;
   }
 
   get invitedCount() {
@@ -55,11 +55,17 @@ export abstract class BasePeopleComponent<
       : 0;
   }
 
+  get deactivatedCount() {
+    return this.statusMap.has(this.userStatusType.Deactivated)
+      ? this.statusMap.get(this.userStatusType.Deactivated).length
+      : 0;
+  }
+
   get showConfirmUsers(): boolean {
     return (
-      this.allUsers != null &&
+      this.activeUsers != null &&
       this.statusMap != null &&
-      this.allUsers.length > 1 &&
+      this.activeUsers.length > 1 &&
       this.confirmedCount > 0 &&
       this.confirmedCount < 3 &&
       this.acceptedCount > 0
@@ -82,6 +88,7 @@ export abstract class BasePeopleComponent<
   actionPromise: Promise<any>;
 
   protected allUsers: UserType[] = [];
+  protected activeUsers: UserType[] = [];
 
   protected didScroll = false;
   protected pageSize = 100;
@@ -105,12 +112,15 @@ export abstract class BasePeopleComponent<
   abstract edit(user: UserType): void;
   abstract getUsers(): Promise<ListResponse<UserType>>;
   abstract deleteUser(id: string): Promise<any>;
+  abstract deactivateUser(id: string): Promise<any>;
+  abstract activateUser(id: string): Promise<any>;
   abstract reinviteUser(id: string): Promise<any>;
   abstract confirmUser(user: UserType, publicKey: Uint8Array): Promise<any>;
 
   async load() {
     const response = await this.getUsers();
     this.statusMap.clear();
+    this.activeUsers = [];
     for (const status of Utils.iterateEnum(this.userStatusType)) {
       this.statusMap.set(status, []);
     }
@@ -123,6 +133,9 @@ export abstract class BasePeopleComponent<
       } else {
         this.statusMap.get(u.status).push(u);
       }
+      if (u.status !== this.userStatusType.Deactivated) {
+        this.activeUsers.push(u);
+      }
     });
     this.filter(this.status);
     this.loading = false;
@@ -133,7 +146,7 @@ export abstract class BasePeopleComponent<
     if (this.status != null) {
       this.users = this.statusMap.get(this.status);
     } else {
-      this.users = this.allUsers;
+      this.users = this.activeUsers;
     }
     // Reset checkbox selecton
     this.selectAll(false);
@@ -213,6 +226,62 @@ export abstract class BasePeopleComponent<
         this.i18nService.t("removedUserId", this.userNamePipe.transform(user))
       );
       this.removeUser(user);
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+    this.actionPromise = null;
+  }
+
+  async deactivate(user: UserType) {
+    const confirmed = await this.platformUtilsService.showDialog(
+      this.deactivateWarningMessage(),
+      this.i18nService.t("deactivateUserId", this.userNamePipe.transform(user)),
+      this.i18nService.t("deactivate"),
+      this.i18nService.t("cancel"),
+      "warning"
+    );
+
+    if (!confirmed) {
+      return false;
+    }
+
+    this.actionPromise = this.deactivateUser(user.id);
+    try {
+      await this.actionPromise;
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t("deactivatedUserId", this.userNamePipe.transform(user))
+      );
+      await this.load();
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+    this.actionPromise = null;
+  }
+
+  async activate(user: UserType) {
+    const confirmed = await this.platformUtilsService.showDialog(
+      this.activateWarningMessage(),
+      this.i18nService.t("activateUserId", this.userNamePipe.transform(user)),
+      this.i18nService.t("activate"),
+      this.i18nService.t("cancel"),
+      "warning"
+    );
+
+    if (!confirmed) {
+      return false;
+    }
+
+    this.actionPromise = this.activateUser(user.id);
+    try {
+      await this.actionPromise;
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t("activatedUserId", this.userNamePipe.transform(user))
+      );
+      await this.load();
     } catch (e) {
       this.validationService.showError(e);
     }
@@ -323,6 +392,14 @@ export abstract class BasePeopleComponent<
 
   protected deleteWarningMessage(user: UserType): string {
     return this.i18nService.t("removeUserConfirmation");
+  }
+
+  protected deactivateWarningMessage(): string {
+    return this.i18nService.t("deactivateUserConfirmation");
+  }
+
+  protected activateWarningMessage(): string {
+    return this.i18nService.t("activateUserConfirmation");
   }
 
   protected getCheckedUsers() {

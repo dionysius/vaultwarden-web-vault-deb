@@ -1,6 +1,6 @@
-<div class="page-header d-flex">
+<div class="page-header">
   <h1>{{ "people" | i18n }}</h1>
-  <div class="ml-auto d-flex">
+  <div class="mt-2 d-flex">
     <div class="btn-group btn-group-sm" role="group">
       <button
         type="button"
@@ -29,6 +29,17 @@
         {{ "accepted" | i18n }}
         <span class="badge badge-pill badge-warning" *ngIf="acceptedCount">{{
           acceptedCount
+        }}</span>
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        [ngClass]="{ active: status == userStatusType.Deactivated }"
+        (click)="filter(userStatusType.Deactivated)"
+      >
+        {{ "deactivated" | i18n }}
+        <span class="badge badge-pill badge-info" *ngIf="deactivatedCount">{{
+          deactivatedCount
         }}</span>
       </button>
     </div>
@@ -67,6 +78,14 @@
         >
           <i class="bwi bwi-fw bwi-check" aria-hidden="true"></i>
           {{ "confirmSelected" | i18n }}
+        </button>
+        <button class="dropdown-item" appStopClick (click)="bulkActivate()">
+          <i class="bwi bwi-fw bwi-plus-circle" aria-hidden="true"></i>
+          {{ "activate" | i18n }}
+        </button>
+        <button class="dropdown-item" appStopClick (click)="bulkDeactivate()">
+          <i class="bwi bwi-fw bwi-minus-circle" aria-hidden="true"></i>
+          {{ "deactivate" | i18n }}
         </button>
         <button class="dropdown-item text-danger" appStopClick (click)="bulkRemove()">
           <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
@@ -142,6 +161,9 @@
             }}</span>
             <span class="badge badge-warning" *ngIf="u.status === userStatusType.Accepted">{{
               "accepted" | i18n
+            }}</span>
+            <span class="badge badge-secondary" *ngIf="u.status === userStatusType.Deactivated">{{
+              "deactivated" | i18n
             }}</span>
             <small class="text-muted d-block" *ngIf="u.name">{{ u.name }}</small>
           </td>
@@ -232,6 +254,26 @@
                 >
                   <i class="bwi bwi-fw bwi-key" aria-hidden="true"></i>
                   {{ "resetPassword" | i18n }}
+                </a>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  appStopClick
+                  (click)="activate(u)"
+                  *ngIf="u.status === userStatusType.Deactivated"
+                >
+                  <i class="bwi bwi-fw bwi-plus-circle" aria-hidden="true"></i>
+                  {{ "activate" | i18n }}
+                </a>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  appStopClick
+                  (click)="deactivate(u)"
+                  *ngIf="u.status !== userStatusType.Deactivated"
+                >
+                  <i class="bwi bwi-fw bwi-minus-circle" aria-hidden="true"></i>
+                  {{ "deactivate" | i18n }}
                 </a>
                 <a class="dropdown-item text-danger" href="#" appStopClick (click)="remove(u)">
                   <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>

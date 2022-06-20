@@ -11,6 +11,7 @@
         <h2 class="modal-title" id="userAddEditTitle">
           {{ title }}
           <small class="text-muted" *ngIf="name">{{ name }}</small>
+          <span class="badge badge-dark" *ngIf="isDeactivated">{{ "deactivated" | i18n }}</span>
         </h2>
         <button
           type="button"
@@ -378,6 +379,46 @@
           {{ "cancel" | i18n }}
         </button>
         <div class="ml-auto">
+          <button
+            type="button"
+            (click)="activate()"
+            class="btn btn-outline-secondary"
+            appA11yTitle="{{ 'activate' | i18n }}"
+            *ngIf="editMode && isDeactivated"
+            [disabled]="form.loading"
+          >
+            <i
+              class="bwi bwi-plus-circle bwi-lg bwi-fw"
+              [hidden]="form.loading"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
+              [hidden]="!form.loading"
+              title="{{ 'loading' | i18n }}"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <button
+            type="button"
+            (click)="deactivate()"
+            class="btn btn-outline-secondary"
+            appA11yTitle="{{ 'deactivate' | i18n }}"
+            *ngIf="editMode && !isDeactivated"
+            [disabled]="form.loading"
+          >
+            <i
+              class="bwi bwi-minus-circle bwi-lg bwi-fw"
+              [hidden]="form.loading"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
+              [hidden]="!form.loading"
+              title="{{ 'loading' | i18n }}"
+              aria-hidden="true"
+            ></i>
+          </button>
           <button
             #deleteBtn
             type="button"

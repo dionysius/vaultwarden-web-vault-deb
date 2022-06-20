@@ -29,6 +29,7 @@ import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/models/re
 import { BasePeopleComponent } from "../../common/base.people.component";
 
 import { BulkConfirmComponent } from "./bulk/bulk-confirm.component";
+import { BulkDeactivateComponent } from "./bulk/bulk-deactivate.component";
 import { BulkRemoveComponent } from "./bulk/bulk-remove.component";
 import { BulkStatusComponent } from "./bulk/bulk-status.component";
 import { EntityEventsComponent } from "./entity-events.component";
@@ -166,6 +167,14 @@ export class PeopleComponent
     return this.apiService.deleteOrganizationUser(this.organizationId, id);
   }
 
+  deactivateUser(id: string): Promise<any> {
+    return this.apiService.deactivateOrganizationUser(this.organizationId, id);
+  }
+
+  activateUser(id: string): Promise<any> {
+    return this.apiService.activateOrganizationUser(this.organizationId, id);
+  }
+
   reinviteUser(id: string): Promise<any> {
     return this.apiService.postOrganizationUserReinvite(this.organizationId, id);
   }
@@ -236,6 +245,14 @@ export class PeopleComponent
           modal.close();
           this.removeUser(user);
         });
+        comp.onDeactivatedUser.subscribe(() => {
+          modal.close();
+          this.load();
+        });
+        comp.onActivatedUser.subscribe(() => {
+          modal.close();
+          this.load();
+        });
       }
     );
   }
@@ -270,6 +287,32 @@ export class PeopleComponent
     );
 
     await modal.onClosedPromise();
+    await this.load();
+  }
+
+  async bulkDeactivate() {
+    await this.bulkActivateOrDeactivate(true);
+  }
+
+  async bulkActivate() {
+    await this.bulkActivateOrDeactivate(false);
+  }
+
+  async bulkActivateOrDeactivate(isDeactivating: boolean) {
+    if (this.actionPromise != null) {
+      return;
+    }
+
+    const ref = this.modalService.open(BulkDeactivateComponent, {
+      allowMultipleModals: true,
+      data: {
+        organizationId: this.organizationId,
+        users: this.getCheckedUsers(),
+        isDeactivating: isDeactivating,
+      },
+    });
+
+    await ref.onClosedPromise();
     await this.load();
   }
 
