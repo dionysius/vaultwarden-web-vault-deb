@@ -21,7 +21,6 @@ jobs:
     outputs:
       release_version: ${{ steps.version.outputs.version }}
       tag_version: ${{ steps.version.outputs.tag }}
-      branch_name: ${{ steps.branch.outputs.branch_name }}
     steps:
       - name: Branch check
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -46,19 +45,13 @@ jobs:
           monorepo: true
           monorepo-project: web
 
-      - name: Get branch name
-        id: branch
-        run: |
-          BRANCH_NAME=$(basename ${{ github.ref }})
-          echo "::set-output name=branch_name::$BRANCH_NAME"
-
 
   self-host:
     name: Release self-host docker
     runs-on: ubuntu-20.04
     needs: setup
     env:
-      _BRANCH_NAME: ${{ needs.setup.outputs.branch_name }}
+      _BRANCH_NAME: ${{ github.ref_name }}
       _RELEASE_VERSION: ${{ needs.setup.outputs.release_version }}
       _RELEASE_OPTION: ${{ github.event.inputs.release_type }}
     steps:
@@ -91,8 +84,12 @@ jobs:
 
       - name: Docker Tag version and latest image
         run: |
-          docker tag bitwarden/web:$_BRANCH_NAME bitwarden/web:$_RELEASE_VERSION
-          docker tag bitwarden/web:$_BRANCH_NAME bitwarden/web:latest
+          if [[ "${{ github.event.inputs.release_type }}" == "Dry Run" ]]; then
+            docker tag bitwarden/web:latest bitwarden/web:$_RELEASE_VERSION
+          else
+            docker tag bitwarden/web:$_BRANCH_NAME bitwarden/web:$_RELEASE_VERSION
+            docker tag bitwarden/web:$_BRANCH_NAME bitwarden/web:latest
+          fi
 
       - name: Docker Push version and latest image
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -121,11 +118,19 @@ jobs:
         env:
           REGISTRY: bitwardenqa.azurecr.io
         run: |
-          docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web:$_RELEASE_VERSION
-          docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web:latest
+          if [[ "${{ github.event.inputs.release_type }}" == "Dry Run" ]]; then
+            docker tag bitwarden/web:latest $REGISTRY/web:$_RELEASE_VERSION
+            docker tag bitwarden/web:latest $REGISTRY/web:latest
 
-          docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web-sh:$_RELEASE_VERSION
-          docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web-sh:latest
+            docker tag bitwarden/web:latest $REGISTRY/web-sh:$_RELEASE_VERSION
+            docker tag bitwarden/web:latest $REGISTRY/web-sh:latest
+          else
+            docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web:$_RELEASE_VERSION
+            docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web:latest
+
+            docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web-sh:$_RELEASE_VERSION
+            docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web-sh:latest
+          fi
 
       - name: Push version and latest image
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -161,7 +166,7 @@ jobs:
           workflow: build-web.yml
           path: apps/web
           workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch_name }}
+          branch: ${{ github.ref_name }}
           artifacts: web-*-cloud-COMMERCIAL.zip
 
       # This should result in a build directory in the current working directory
@@ -185,7 +190,7 @@ jobs:
       - name: Deploy CloudFlare Pages
         run: |
           rm -rf ./*
-          cp -R apps/web/build/* .
+          cp -R ../apps/web/build/* .
         working-directory: deployment
 
       - name: Create cf-pages-deploy branch
@@ -222,7 +227,7 @@ jobs:
           workflow: build-web.yml
           path: apps/web/artifacts
           workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch_name }}
+          branch: ${{ github.ref_name }}
           artifacts: "web-*-selfhosted-COMMERCIAL.zip,
             web-*-selfhosted-open-source.zip"
 

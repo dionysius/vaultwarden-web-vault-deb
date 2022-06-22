@@ -24,7 +24,6 @@ jobs:
     runs-on: ubuntu-20.04
     outputs:
       release-version: ${{ steps.version.outputs.version }}
-      branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -49,21 +48,16 @@ jobs:
           monorepo: true
           monorepo-project: cli
 
-      - name: Get branch name
-        id: branch
-        run: |
-          BRANCH_NAME=$(basename ${{ github.ref }})
-          echo "::set-output name=branch-name::$BRANCH_NAME"
-
       - name: Download all artifacts
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
           workflow: build-cli.yml
           path: apps/cli
           workflow_conclusion: success
-          branch: ${{ steps.branch.outputs.branch-name }}
+          branch: ${{ github.ref_name }}
 
       - name: Create release
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: ncipollo/release-action@58ae73b360456532aafd58ee170c045abbeaee37  # v1.10.0
         env:
           PKG_VERSION: ${{ steps.version.outputs.version }}
@@ -118,7 +112,7 @@ jobs:
           workflow: build-cli.yml
           path: apps/cli
           workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch-name }}
+          branch: ${{ github.ref_name }}
           artifacts: bw_${{ env._PKG_VERSION }}_amd64.snap
 
       - name: Publish Snap & logout
@@ -153,7 +147,7 @@ jobs:
           workflow: build-cli.yml
           path: apps/cli
           workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch-name }}
+          branch: ${{ github.ref_name }}
           artifacts: bitwarden-cli.${{ env._PKG_VERSION }}.nupkg
 
       - name: Push to Chocolatey
@@ -180,7 +174,7 @@ jobs:
           workflow: build-cli.yml
           path: apps/cli
           workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch-name }}
+          branch: ${{ github.ref_name }}
           artifacts: bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
 
       - name: Setup NPM

@@ -24,7 +24,6 @@ jobs:
     outputs:
       release-version: ${{ steps.version.outputs.version }}
       release-channel: ${{ steps.release-channel.outputs.channel }}
-      branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -66,12 +65,6 @@ jobs:
               ;;
           esac
 
-      - name: Get branch name
-        id: branch
-        run: |
-          BRANCH_NAME=$(basename ${{ github.ref }})
-          echo "::set-output name=branch-name::$BRANCH_NAME"
-
       - name: Login to Azure
         uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010
         with:
@@ -89,7 +82,7 @@ jobs:
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
-          branch: ${{ steps.branch.outputs.branch-name }}
+          branch: ${{ github.ref_name }}
           path: apps/desktop/artifacts
 
       - name: Rename .pkg to .pkg.archive
@@ -186,7 +179,7 @@ jobs:
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch-name }}
+          branch: ${{ github.ref_name }}
           artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
           path: apps/desktop/dist
 
@@ -222,7 +215,7 @@ jobs:
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch-name }}
+          branch: ${{ github.ref_name }}
           artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
           path: apps/desktop/dist
 

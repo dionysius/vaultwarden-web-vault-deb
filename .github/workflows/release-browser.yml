@@ -24,7 +24,6 @@ jobs:
     runs-on: ubuntu-20.04
     outputs:
       release-version: ${{ steps.version.outputs.version }}
-      branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -48,12 +47,6 @@ jobs:
           file: apps/browser/src/manifest.json
           monorepo: true
           monorepo-project: browser
-
-      - name: Get branch name
-        id: branch
-        run: |
-          BRANCH_NAME=$(basename ${{ github.ref }})
-          echo "::set-output name=branch-name::$BRANCH_NAME"
 
 
   locales-test:
@@ -102,7 +95,7 @@ jobs:
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
-          branch: ${{ needs.setup.outputs.branch-name }}
+          branch: ${{ github.ref_name }}
           artifacts: 'browser-source-*.zip,
                       dist-chrome-*.zip,
                       dist-opera-*.zip,
