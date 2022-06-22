@@ -112,6 +112,7 @@
   "mas": {
     "entitlements": "resources/entitlements.mas.plist",
     "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
+    "entitlementsLoginHelper": "resources/entitlements.mas.loginhelper.plist",
     "hardenedRuntime": false,
     "extendInfo": {
       "LSMinimumSystemVersion": "10.14.0"
