@@ -7,12 +7,6 @@ import { PrefixClasses } from "./prefix.directive";
 })
 export class BitSuffixDirective {
   @HostBinding("class") @Input() get classList() {
-    return PrefixClasses.concat([
-      "tw-rounded-l-none",
-      "tw-border-l-0",
-      !this.last ? "tw-rounded-r-none" : "",
-    ]).filter((c) => c != "");
+    return PrefixClasses.concat(["tw-border-l-0", "last:tw-rounded-r"]);
   }
-
-  @Input() last = false;
 }

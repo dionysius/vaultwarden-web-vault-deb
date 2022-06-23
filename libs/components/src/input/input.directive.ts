@@ -17,18 +17,20 @@ export class BitInputDirective {
       "tw-bg-background-alt",
       "tw-border",
       "tw-border-solid",
-      "tw-rounded",
+      this.hasError ? "tw-border-danger-500" : "tw-border-secondary-500",
       "tw-text-main",
       "tw-placeholder-text-muted",
+      // Rounded
+      "tw-rounded-none",
+      "first:tw-rounded-l",
+      "last:tw-rounded-r",
+      // Focus
       "focus:tw-outline-none",
       "focus:tw-border-primary-700",
       "focus:tw-ring-1",
       "focus:tw-ring-primary-700",
       "focus:tw-z-10",
       "disabled:tw-bg-secondary-100",
-      this.hasPrefix ? "tw-rounded-l-none" : "",
-      this.hasSuffix ? "tw-rounded-r-none" : "",
-      this.hasError ? "tw-border-danger-500" : "tw-border-secondary-500",
     ].filter((s) => s != "");
   }
 

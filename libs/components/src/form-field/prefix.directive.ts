@@ -9,7 +9,7 @@ export const PrefixClasses = [
   "tw-border-solid",
   "tw-border-secondary-500",
   "tw-text-muted",
-  "tw-rounded",
+  "tw-rounded-none",
 ];
 
 @Directive({
@@ -17,12 +17,6 @@ export const PrefixClasses = [
 })
 export class BitPrefixDirective {
   @HostBinding("class") @Input() get classList() {
-    return PrefixClasses.concat([
-      "tw-border-r-0",
-      "tw-rounded-r-none",
-      !this.first ? "tw-rounded-l-none" : "",
-    ]).filter((c) => c != "");
+    return PrefixClasses.concat(["tw-border-r-0", "first:tw-rounded-l"]);
   }
-
-  @Input() first = false;
 }

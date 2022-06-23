@@ -31,17 +31,6 @@ export class BitFormFieldComponent implements AfterContentChecked {
   @ContentChildren(BitSuffixDirective) suffixChildren: QueryList<BitSuffixDirective>;
 
   ngAfterContentChecked(): void {
-    this.input.hasPrefix = this.prefixChildren.length > 0;
-    this.input.hasSuffix = this.suffixChildren.length > 0;
-
-    this.prefixChildren.forEach((prefix) => {
-      prefix.first = prefix == this.prefixChildren.first;
-    });
-
-    this.suffixChildren.forEach((suffix) => {
-      suffix.last = suffix == this.suffixChildren.last;
-    });
-
     if (this.error) {
       this.input.ariaDescribedBy = this.error.id;
     } else if (this.hint) {
