@@ -10,6 +10,7 @@ import {
 import { DomSanitizer } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
+import { Subject, takeUntil } from "rxjs";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -96,6 +97,8 @@ export class AppComponent implements OnInit {
   private isIdle = false;
   private activeUserId: string = null;
 
+  private destroy$: Subject<void> = new Subject<void>();
+
   constructor(
     private broadcasterService: BroadcasterService,
     private tokenService: TokenService,
@@ -127,9 +130,10 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.stateService.activeAccount.subscribe((userId) => {
+    this.stateService.activeAccount.pipe(takeUntil(this.destroy$)).subscribe((userId) => {
       this.activeUserId = userId;
     });
+
     this.ngZone.runOutsideAngular(() => {
       setTimeout(async () => {
         await this.updateAppMenu();
@@ -360,6 +364,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
   }
 
