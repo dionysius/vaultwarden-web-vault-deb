@@ -1,5 +1,7 @@
 import { InjectionToken, Injector, LOCALE_ID, NgModule } from "@angular/core";
 
+import { ThemingService } from "@bitwarden/angular/services/theming/theming.service";
+import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/abstractions/appId.service";
 import { AuditService as AuditServiceAbstraction } from "@bitwarden/common/abstractions/audit.service";
@@ -422,6 +424,10 @@ export const SYSTEM_LANGUAGE = new InjectionToken<string>("SYSTEM_LANGUAGE");
       provide: TwoFactorServiceAbstraction,
       useClass: TwoFactorService,
       deps: [I18nServiceAbstraction, PlatformUtilsServiceAbstraction],
+    },
+    {
+      provide: AbstractThemingService,
+      useClass: ThemingService,
     },
   ],
 })

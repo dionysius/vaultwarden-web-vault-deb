@@ -1,4 +1,5 @@
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { LayoutModule } from "@angular/cdk/layout";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -18,6 +19,7 @@ import { WildcardRoutingModule } from "./wildcard-routing.module";
     ServicesModule,
     InfiniteScrollModule,
     DragDropModule,
+    LayoutModule,
     OssRoutingModule,
     WildcardRoutingModule, // Needs to be last to catch all non-existing routes
   ],

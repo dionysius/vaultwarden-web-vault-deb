@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 
+import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService as LogServiceAbstraction } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { ThemeType } from "@bitwarden/common/enums/themeType";
 
 import { StateService as StateServiceAbstraction } from "../../services/abstractions/state.service";
 
@@ -16,7 +16,8 @@ export class InitService {
     private i18nService: I18nService,
     private popupUtilsService: PopupUtilsService,
     private stateService: StateServiceAbstraction,
-    private logService: LogServiceAbstraction
+    private logService: LogServiceAbstraction,
+    private themingService: AbstractThemingService
   ) {}
 
   init() {
@@ -32,15 +33,7 @@ export class InitService {
       }
 
       const htmlEl = window.document.documentElement;
-      const theme = await this.platformUtilsService.getEffectiveTheme();
-      htmlEl.classList.add("theme_" + theme);
-      this.platformUtilsService.onDefaultSystemThemeChange(async (sysTheme) => {
-        const bwTheme = await this.stateService.getTheme();
-        if (bwTheme == null || bwTheme === ThemeType.System) {
-          htmlEl.classList.remove("theme_" + ThemeType.Light, "theme_" + ThemeType.Dark);
-          htmlEl.classList.add("theme_" + sysTheme);
-        }
-      });
+      await this.themingService.monitorThemeChanges();
       htmlEl.classList.add("locale_" + this.i18nService.translationLocale);
 
       // Workaround for slow performance on external monitors on Chrome + MacOS

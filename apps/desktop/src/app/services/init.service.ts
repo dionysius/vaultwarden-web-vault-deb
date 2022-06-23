@@ -1,6 +1,7 @@
 import { Inject, Injectable } from "@angular/core";
 
 import { WINDOW } from "@bitwarden/angular/services/jslib-services.module";
+import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/abstractions/environment.service";
 import { EventService as EventServiceAbstraction } from "@bitwarden/common/abstractions/event.service";
@@ -11,7 +12,6 @@ import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstr
 import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/abstractions/sync.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/abstractions/twoFactor.service";
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarden/common/abstractions/vaultTimeout.service";
-import { ThemeType } from "@bitwarden/common/enums/themeType";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 import { EventService } from "@bitwarden/common/services/event.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout.service";
@@ -33,7 +33,8 @@ export class InitService {
     private platformUtilsService: PlatformUtilsServiceAbstraction,
     private stateService: StateServiceAbstraction,
     private cryptoService: CryptoServiceAbstraction,
-    private nativeMessagingService: NativeMessagingService
+    private nativeMessagingService: NativeMessagingService,
+    private themingService: AbstractThemingService
   ) {}
 
   init() {
@@ -50,17 +51,7 @@ export class InitService {
       setTimeout(() => this.notificationsService.init(), 3000);
       const htmlEl = this.win.document.documentElement;
       htmlEl.classList.add("os_" + this.platformUtilsService.getDeviceString());
-
-      const theme = await this.platformUtilsService.getEffectiveTheme();
-      htmlEl.classList.add("theme_" + theme);
-      this.platformUtilsService.onDefaultSystemThemeChange(async (sysTheme) => {
-        const bwTheme = await this.stateService.getTheme();
-        if (bwTheme == null || bwTheme === ThemeType.System) {
-          htmlEl.classList.remove("theme_" + ThemeType.Light, "theme_" + ThemeType.Dark);
-          htmlEl.classList.add("theme_" + sysTheme);
-        }
-      });
-
+      await this.themingService.monitorThemeChanges();
       let installAction = null;
       const installedVersion = await this.stateService.getInstalledVersion();
       const currentVersion = await this.platformUtilsService.getApplicationVersion();

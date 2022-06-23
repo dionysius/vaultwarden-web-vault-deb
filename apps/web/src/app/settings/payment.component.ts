@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Subject, takeUntil } from "rxjs";
 
+import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
 
@@ -17,13 +18,15 @@ const darkInputPlaceholderColor = ThemeVariables.darkInputPlaceholderColor;
   selector: "app-payment",
   templateUrl: "payment.component.html",
 })
-export class PaymentComponent implements OnInit {
+export class PaymentComponent implements OnInit, OnDestroy {
   @Input() showMethods = true;
   @Input() showOptions = true;
   @Input() method = PaymentMethodType.Card;
   @Input() hideBank = false;
   @Input() hidePaypal = false;
   @Input() hideCredit = false;
+
+  private destroy$: Subject<void> = new Subject<void>();
 
   bank: any = {
     routing_number: null,
@@ -48,9 +51,9 @@ export class PaymentComponent implements OnInit {
   private StripeElementClasses: any;
 
   constructor(
-    private platformUtilsService: PlatformUtilsService,
     private apiService: ApiService,
-    private logService: LogService
+    private logService: LogService,
+    private themingService: AbstractThemingService
   ) {
     this.stripeScript = window.document.createElement("script");
     this.stripeScript.src = "https://js.stripe.com/v3/";
@@ -100,6 +103,8 @@ export class PaymentComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
     window.document.head.removeChild(this.stripeScript);
     window.setTimeout(() => {
       Array.from(window.document.querySelectorAll("iframe")).forEach((el) => {
@@ -275,15 +280,16 @@ export class PaymentComponent implements OnInit {
   }
 
   private async setTheme() {
-    const theme = await this.platformUtilsService.getEffectiveTheme();
-    if (theme === ThemeType.Dark) {
-      this.StripeElementStyle.base.color = darkInputColor;
-      this.StripeElementStyle.base["::placeholder"].color = darkInputPlaceholderColor;
-      this.StripeElementStyle.invalid.color = darkInputColor;
-    } else {
-      this.StripeElementStyle.base.color = lightInputColor;
-      this.StripeElementStyle.base["::placeholder"].color = lightInputPlaceholderColor;
-      this.StripeElementStyle.invalid.color = lightInputColor;
-    }
+    this.themingService.theme$.pipe(takeUntil(this.destroy$)).subscribe((theme) => {
+      if (theme.effectiveTheme === ThemeType.Dark) {
+        this.StripeElementStyle.base.color = darkInputColor;
+        this.StripeElementStyle.base["::placeholder"].color = darkInputPlaceholderColor;
+        this.StripeElementStyle.invalid.color = darkInputColor;
+      } else {
+        this.StripeElementStyle.base.color = lightInputColor;
+        this.StripeElementStyle.base["::placeholder"].color = lightInputPlaceholderColor;
+        this.StripeElementStyle.invalid.color = lightInputColor;
+      }
+    });
   }
 }

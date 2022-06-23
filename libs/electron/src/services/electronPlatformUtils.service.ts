@@ -6,7 +6,6 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { ClientType } from "@bitwarden/common/enums/clientType";
 import { DeviceType } from "@bitwarden/common/enums/deviceType";
-import { ThemeType } from "@bitwarden/common/enums/themeType";
 
 import { isDev, isMacAppStore } from "../utils";
 
@@ -187,25 +186,6 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
       });
       resolve(val);
     });
-  }
-
-  getDefaultSystemTheme() {
-    return ipcRenderer.invoke("systemTheme");
-  }
-
-  onDefaultSystemThemeChange(callback: (theme: ThemeType.Light | ThemeType.Dark) => unknown) {
-    ipcRenderer.on("systemThemeUpdated", (event, theme: ThemeType.Light | ThemeType.Dark) =>
-      callback(theme)
-    );
-  }
-
-  async getEffectiveTheme() {
-    const theme = await this.stateService.getTheme();
-    if (theme == null || theme === ThemeType.System) {
-      return this.getDefaultSystemTheme();
-    } else {
-      return theme;
-    }
   }
 
   supportsSecureStorage(): boolean {

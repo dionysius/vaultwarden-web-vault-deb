@@ -2,7 +2,6 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { ClientType } from "@bitwarden/common/enums/clientType";
 import { DeviceType } from "@bitwarden/common/enums/deviceType";
-import { ThemeType } from "@bitwarden/common/enums/themeType";
 
 import { BrowserApi } from "../browser/browserApi";
 import { SafariApp } from "../browser/safariApp";
@@ -17,7 +16,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     { tryResolve: (canceled: boolean, password: string) => Promise<boolean>; date: Date }
   >();
   private deviceCache: DeviceType = null;
-  private prefersColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)");
 
   constructor(
     private messagingService: MessagingService,
@@ -354,24 +352,5 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
   supportsSecureStorage(): boolean {
     return false;
-  }
-
-  getDefaultSystemTheme(): Promise<ThemeType.Light | ThemeType.Dark> {
-    return Promise.resolve(this.prefersColorSchemeDark.matches ? ThemeType.Dark : ThemeType.Light);
-  }
-
-  onDefaultSystemThemeChange(callback: (theme: ThemeType.Light | ThemeType.Dark) => unknown) {
-    this.prefersColorSchemeDark.addEventListener("change", ({ matches }) => {
-      callback(matches ? ThemeType.Dark : ThemeType.Light);
-    });
-  }
-
-  async getEffectiveTheme() {
-    const theme = (await this.stateService.getTheme()) as ThemeType;
-    if (theme == null || theme === ThemeType.System) {
-      return this.getDefaultSystemTheme();
-    } else {
-      return theme;
-    }
   }
 }

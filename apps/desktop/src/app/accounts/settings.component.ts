@@ -3,6 +3,7 @@ import { FormControl } from "@angular/forms";
 import { debounceTime } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
@@ -74,7 +75,8 @@ export class SettingsComponent implements OnInit {
     private stateService: StateService,
     private messagingService: MessagingService,
     private cryptoService: CryptoService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private themingService: AbstractThemingService
   ) {
     const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
@@ -342,8 +344,7 @@ export class SettingsComponent implements OnInit {
   }
 
   async saveTheme() {
-    await this.stateService.setTheme(this.theme);
-    window.setTimeout(() => window.location.reload(), 200);
+    await this.themingService.updateConfiguredTheme(this.theme);
   }
 
   async saveMinOnCopyToClipboard() {

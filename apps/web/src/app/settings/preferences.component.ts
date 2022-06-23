@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
 
+import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -34,7 +35,8 @@ export class PreferencesComponent implements OnInit {
     private i18nService: I18nService,
     private vaultTimeoutService: VaultTimeoutService,
     private platformUtilsService: PlatformUtilsService,
-    private messagingService: MessagingService
+    private messagingService: MessagingService,
+    private themingService: AbstractThemingService
   ) {
     this.vaultTimeouts = [
       { name: i18nService.t("oneMinute"), value: 1 },
@@ -100,12 +102,8 @@ export class PreferencesComponent implements OnInit {
     await this.stateService.setEnableFullWidth(this.enableFullWidth);
     this.messagingService.send("setFullWidth");
     if (this.theme !== this.startingTheme) {
-      await this.stateService.setTheme(this.theme);
+      await this.themingService.updateConfiguredTheme(this.theme);
       this.startingTheme = this.theme;
-      const effectiveTheme = await this.platformUtilsService.getEffectiveTheme();
-      const htmlEl = window.document.documentElement;
-      htmlEl.classList.remove("theme_" + ThemeType.Light, "theme_" + ThemeType.Dark);
-      htmlEl.classList.add("theme_" + effectiveTheme);
     }
     await this.stateService.setLocale(this.locale);
     if (this.locale !== this.startingLocale) {
