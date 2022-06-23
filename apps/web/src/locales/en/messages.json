@@ -555,7 +555,7 @@
     "message": "Are you sure you want to log out?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Log out"
   },
   "ok": {
     "message": "Ok"
@@ -1151,21 +1151,21 @@
   "languageDesc": {
     "message": "Change the language used by the web vault."
   },
-  "disableIcons": {
-    "message": "Disable Website Icons"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableIconsDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableGravatars": {
-    "message": "Enable Gravatars",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "message": "Show Gravatars",
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Use avatar images loaded from gravatar.com."
   },
   "enableFullWidth": {
-    "message": "Enable Full Width Layout",
+    "message": "Display full width layout",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
@@ -3172,10 +3172,10 @@
     "message": "Filters"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Vault timeout"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Choose when your vault will take the vault timeout action."
   },
   "oneMinute": {
     "message": "1 minute"
@@ -3196,7 +3196,7 @@
     "message": "4 hours"
   },
   "onRefresh": {
-    "message": "On Browser Refresh"
+    "message": "On browser refresh"
   },
   "dateUpdated": {
     "message": "Updated",
@@ -3403,13 +3403,13 @@
     "message": "User Preference"
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Vault timeout action"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Master password or other unlock method is required to access your vault again."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Re-authentication is required to access your vault again."
   },
   "lock": {
     "message": "Lock",

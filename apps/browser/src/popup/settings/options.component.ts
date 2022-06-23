@@ -12,17 +12,17 @@ import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
   templateUrl: "options.component.html",
 })
 export class OptionsComponent implements OnInit {
-  disableFavicon = false;
-  disableBadgeCounter = false;
+  enableFavicon = false;
+  enableBadgeCounter = false;
   enableAutoFillOnPageLoad = false;
   autoFillOnPageLoadDefault = false;
   autoFillOnPageLoadOptions: any[];
-  disableAutoTotpCopy = false;
-  disableContextMenuItem = false;
-  disableAddLoginNotification = false;
-  disableChangedPasswordNotification = false;
-  dontShowCards = false;
-  dontShowIdentities = false;
+  enableAutoTotpCopy = false; // TODO: Does it matter if this is set to false or true?
+  enableContextMenuItem = false;
+  enableAddLoginNotification = false;
+  enableChangedPasswordNotification = false;
+  showCardsCurrentTab = false;
+  showIdentitiesCurrentTab = false;
   showClearClipboard = true;
   theme: ThemeType;
   themeOptions: any[];
@@ -76,21 +76,21 @@ export class OptionsComponent implements OnInit {
     this.autoFillOnPageLoadDefault =
       (await this.stateService.getAutoFillOnPageLoadDefault()) ?? true;
 
-    this.disableAddLoginNotification = await this.stateService.getDisableAddLoginNotification();
+    this.enableAddLoginNotification = !(await this.stateService.getDisableAddLoginNotification());
 
-    this.disableChangedPasswordNotification =
-      await this.stateService.getDisableChangedPasswordNotification();
+    this.enableChangedPasswordNotification =
+      !(await this.stateService.getDisableChangedPasswordNotification());
 
-    this.disableContextMenuItem = await this.stateService.getDisableContextMenuItem();
+    this.enableContextMenuItem = !(await this.stateService.getDisableContextMenuItem());
 
-    this.dontShowCards = await this.stateService.getDontShowCardsCurrentTab();
-    this.dontShowIdentities = await this.stateService.getDontShowIdentitiesCurrentTab();
+    this.showCardsCurrentTab = !(await this.stateService.getDontShowCardsCurrentTab());
+    this.showIdentitiesCurrentTab = !(await this.stateService.getDontShowIdentitiesCurrentTab());
 
-    this.disableAutoTotpCopy = !(await this.totpService.isAutoCopyEnabled());
+    this.enableAutoTotpCopy = !(await this.stateService.getDisableAutoTotpCopy());
 
-    this.disableFavicon = await this.stateService.getDisableFavicon();
+    this.enableFavicon = !(await this.stateService.getDisableFavicon());
 
-    this.disableBadgeCounter = await this.stateService.getDisableBadgeCounter();
+    this.enableBadgeCounter = !(await this.stateService.getDisableBadgeCounter());
 
     this.theme = await this.stateService.getTheme();
 
@@ -101,22 +101,22 @@ export class OptionsComponent implements OnInit {
   }
 
   async updateAddLoginNotification() {
-    await this.stateService.setDisableAddLoginNotification(this.disableAddLoginNotification);
+    await this.stateService.setDisableAddLoginNotification(!this.enableAddLoginNotification);
   }
 
   async updateChangedPasswordNotification() {
     await this.stateService.setDisableChangedPasswordNotification(
-      this.disableChangedPasswordNotification
+      !this.enableChangedPasswordNotification
     );
   }
 
-  async updateDisableContextMenuItem() {
-    await this.stateService.setDisableContextMenuItem(this.disableContextMenuItem);
+  async updateContextMenuItem() {
+    await this.stateService.setDisableContextMenuItem(!this.enableContextMenuItem);
     this.messagingService.send("bgUpdateContextMenu");
   }
 
   async updateAutoTotpCopy() {
-    await this.stateService.setDisableAutoTotpCopy(this.disableAutoTotpCopy);
+    await this.stateService.setDisableAutoTotpCopy(!this.enableAutoTotpCopy);
   }
 
   async updateAutoFillOnPageLoad() {
@@ -127,21 +127,21 @@ export class OptionsComponent implements OnInit {
     await this.stateService.setAutoFillOnPageLoadDefault(this.autoFillOnPageLoadDefault);
   }
 
-  async updateDisableFavicon() {
-    await this.stateService.setDisableFavicon(this.disableFavicon);
+  async updateFavicon() {
+    await this.stateService.setDisableFavicon(!this.enableFavicon);
   }
 
-  async updateDisableBadgeCounter() {
-    await this.stateService.setDisableBadgeCounter(this.disableBadgeCounter);
+  async updateBadgeCounter() {
+    await this.stateService.setDisableBadgeCounter(!this.enableBadgeCounter);
     this.messagingService.send("bgUpdateContextMenu");
   }
 
-  async updateShowCards() {
-    await this.stateService.setDontShowCardsCurrentTab(this.dontShowCards);
+  async updateShowCardsCurrentTab() {
+    await this.stateService.setDontShowCardsCurrentTab(!this.showCardsCurrentTab);
   }
 
-  async updateShowIdentities() {
-    await this.stateService.setDontShowIdentitiesCurrentTab(this.dontShowIdentities);
+  async updateShowIdentitiesCurrentTab() {
+    await this.stateService.setDontShowIdentitiesCurrentTab(!this.showIdentitiesCurrentTab);
   }
 
   async saveTheme() {

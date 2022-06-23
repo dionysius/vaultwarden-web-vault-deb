@@ -293,11 +293,7 @@ export class Main {
       this.stateService
     );
 
-    this.totpService = new TotpService(
-      this.cryptoFunctionService,
-      this.logService,
-      this.stateService
-    );
+    this.totpService = new TotpService(this.cryptoFunctionService, this.logService);
 
     this.importService = new ImportService(
       this.cipherService,

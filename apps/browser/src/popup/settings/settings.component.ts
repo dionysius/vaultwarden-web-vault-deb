@@ -46,7 +46,7 @@ export class SettingsComponent implements OnInit {
   pin: boolean = null;
   supportsBiometric: boolean;
   biometric = false;
-  disableAutoBiometricsPrompt = true;
+  enableAutoBiometricsPrompt = true;
   previousVaultTimeout: number = null;
   showChangeMasterPass = true;
 
@@ -114,8 +114,9 @@ export class SettingsComponent implements OnInit {
 
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
     this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
-    this.disableAutoBiometricsPrompt =
+    const disableAutoBiometricsPrompt =
       (await this.stateService.getDisableAutoBiometricsPrompt()) ?? true;
+    this.enableAutoBiometricsPrompt = !disableAutoBiometricsPrompt;
     this.showChangeMasterPass = !(await this.keyConnectorService.getUsesKeyConnector());
   }
 
@@ -289,7 +290,7 @@ export class SettingsComponent implements OnInit {
   }
 
   async updateAutoBiometricsPrompt() {
-    await this.stateService.setDisableAutoBiometricsPrompt(this.disableAutoBiometricsPrompt);
+    await this.stateService.setDisableAutoBiometricsPrompt(!this.enableAutoBiometricsPrompt);
   }
 
   async lock() {

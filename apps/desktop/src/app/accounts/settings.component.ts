@@ -24,7 +24,7 @@ import { SetPinComponent } from "../components/set-pin.component";
 export class SettingsComponent implements OnInit {
   vaultTimeoutAction: string;
   pin: boolean = null;
-  disableFavicons = false;
+  enableFavicons = false;
   enableBrowserIntegration = false;
   enableBrowserIntegrationFingerprint = false;
   enableMinToTray = false;
@@ -43,8 +43,8 @@ export class SettingsComponent implements OnInit {
   supportsBiometric: boolean;
   biometric: boolean;
   biometricText: string;
-  noAutoPromptBiometrics: boolean;
-  noAutoPromptBiometricsText: string;
+  autoPromptBiometrics: boolean;
+  autoPromptBiometricsText: string;
   alwaysShowDock: boolean;
   showAlwaysShowDock = false;
   openAtLogin: boolean;
@@ -179,7 +179,7 @@ export class SettingsComponent implements OnInit {
     this.pin = pinSet[0] || pinSet[1];
 
     // Account preferences
-    this.disableFavicons = await this.stateService.getDisableFavicon();
+    this.enableFavicons = !(await this.stateService.getDisableFavicon());
     this.enableBrowserIntegration = await this.stateService.getEnableBrowserIntegration();
     this.enableBrowserIntegrationFingerprint =
       await this.stateService.getEnableBrowserIntegrationFingerprint();
@@ -188,8 +188,8 @@ export class SettingsComponent implements OnInit {
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
     this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
     this.biometricText = await this.stateService.getBiometricText();
-    this.noAutoPromptBiometrics = await this.stateService.getNoAutoPromptBiometrics();
-    this.noAutoPromptBiometricsText = await this.stateService.getNoAutoPromptBiometricsText();
+    this.autoPromptBiometrics = !(await this.stateService.getNoAutoPromptBiometrics());
+    this.autoPromptBiometricsText = await this.stateService.getNoAutoPromptBiometricsText();
   }
 
   async saveVaultTimeoutOptions() {
@@ -259,27 +259,27 @@ export class SettingsComponent implements OnInit {
     } else {
       await this.stateService.setBiometricUnlock(null);
       await this.stateService.setNoAutoPromptBiometrics(null);
-      this.noAutoPromptBiometrics = false;
+      this.autoPromptBiometrics = false;
     }
     await this.stateService.setBiometricLocked(false);
     await this.cryptoService.toggleKey();
   }
 
-  async updateNoAutoPromptBiometrics() {
+  async updateAutoPromptBiometrics() {
     if (!this.biometric) {
-      this.noAutoPromptBiometrics = false;
+      this.autoPromptBiometrics = false;
     }
 
-    if (this.noAutoPromptBiometrics) {
-      await this.stateService.setNoAutoPromptBiometrics(true);
-    } else {
+    if (this.autoPromptBiometrics) {
       await this.stateService.setNoAutoPromptBiometrics(null);
+    } else {
+      await this.stateService.setNoAutoPromptBiometrics(true);
     }
   }
 
   async saveFavicons() {
-    await this.stateService.setDisableFavicon(this.disableFavicons);
-    await this.stateService.setDisableFavicon(this.disableFavicons, {
+    await this.stateService.setDisableFavicon(!this.enableFavicons);
+    await this.stateService.setDisableFavicon(!this.enableFavicons, {
       storageLocation: StorageLocation.Disk,
     });
     this.messagingService.send("refreshCiphers");

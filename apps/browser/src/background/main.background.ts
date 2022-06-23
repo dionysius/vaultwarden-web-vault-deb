@@ -366,11 +366,7 @@ export default class MainBackground {
       this.policyService,
       this.stateService
     );
-    this.totpService = new TotpService(
-      this.cryptoFunctionService,
-      this.logService,
-      this.stateService
-    );
+    this.totpService = new TotpService(this.cryptoFunctionService, this.logService);
     this.autofillService = new AutofillService(
       this.cipherService,
       this.stateService,

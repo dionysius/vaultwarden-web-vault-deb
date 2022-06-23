@@ -31,7 +31,7 @@ export default class BiometricWindowsMain implements BiometricMain {
     }
     await this.stateService.setEnableBiometric(supportsBiometric);
     await this.stateService.setBiometricText("unlockWithWindowsHello");
-    await this.stateService.setNoAutoPromptBiometricsText("noAutoPromptWindowsHello");
+    await this.stateService.setNoAutoPromptBiometricsText("autoPromptWindowsHello");
 
     ipcMain.on("biometric", async (event: any, message: any) => {
       event.returnValue = await this.authenticateBiometric();

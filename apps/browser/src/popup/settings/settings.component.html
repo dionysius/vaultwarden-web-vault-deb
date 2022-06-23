@@ -60,13 +60,13 @@
         />
       </div>
       <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="supportsBiometric">
-        <label for="autoBiometricsPrompt">{{ "disableAutoBiometricsPrompt" | i18n }}</label>
+        <label for="autoBiometricsPrompt">{{ "enableAutoBiometricsPrompt" | i18n }}</label>
         <input
           id="autoBiometricsPrompt"
           type="checkbox"
           (change)="updateAutoBiometricsPrompt()"
           [disabled]="!biometric"
-          [(ngModel)]="disableAutoBiometricsPrompt"
+          [(ngModel)]="enableAutoBiometricsPrompt"
         />
       </div>
       <button

@@ -15,7 +15,7 @@ import { Utils } from "@bitwarden/common/misc/utils";
 })
 export class PreferencesComponent implements OnInit {
   vaultTimeoutAction = "lock";
-  disableIcons: boolean;
+  enableFavicons: boolean;
   enableGravatars: boolean;
   enableFullWidth: boolean;
   theme: ThemeType;
@@ -70,7 +70,7 @@ export class PreferencesComponent implements OnInit {
   async ngOnInit() {
     this.vaultTimeout.setValue(await this.vaultTimeoutService.getVaultTimeout());
     this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
-    this.disableIcons = await this.stateService.getDisableFavicon();
+    this.enableFavicons = !(await this.stateService.getDisableFavicon());
     this.enableGravatars = await this.stateService.getEnableGravitars();
     this.enableFullWidth = await this.stateService.getEnableFullWidth();
 
@@ -95,7 +95,7 @@ export class PreferencesComponent implements OnInit {
       this.vaultTimeout.value,
       this.vaultTimeoutAction
     );
-    await this.stateService.setDisableFavicon(this.disableIcons);
+    await this.stateService.setDisableFavicon(!this.enableFavicons);
     await this.stateService.setEnableGravitars(this.enableGravatars);
     await this.stateService.setEnableFullWidth(this.enableFullWidth);
     this.messagingService.send("setFullWidth");

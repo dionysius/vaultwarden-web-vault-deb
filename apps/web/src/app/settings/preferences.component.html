@@ -72,12 +72,12 @@
       <input
         class="form-check-input"
         type="checkbox"
-        id="disableIcons"
-        name="DisableIcons"
-        [(ngModel)]="disableIcons"
+        id="enableFavicons"
+        name="enableFavicons"
+        [(ngModel)]="enableFavicons"
       />
-      <label class="form-check-label" for="disableIcons">
-        {{ "disableIcons" | i18n }}
+      <label class="form-check-label" for="enableFavicons">
+        {{ "enableFavicon" | i18n }}
       </label>
       <a
         href="https://bitwarden.com/help/website-icons/"
@@ -88,7 +88,7 @@
         <i class="bwi bwi-question-circle" aria-hidden="true"></i>
       </a>
     </div>
-    <small class="form-text text-muted">{{ "disableIconsDesc" | i18n }}</small>
+    <small class="form-text text-muted">{{ "faviconDesc" | i18n }}</small>
   </div>
   <div class="form-group">
     <div class="form-check">

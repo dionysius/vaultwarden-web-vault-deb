@@ -118,8 +118,8 @@ export default class AutofillService implements AutofillServiceInterface {
         return;
       }
 
-      totpPromise = this.totpService.isAutoCopyEnabled().then((enabled) => {
-        if (enabled) {
+      totpPromise = this.stateService.getDisableAutoTotpCopy().then((disabled) => {
+        if (!disabled) {
           return this.totpService.getCode(options.cipher.login.totp);
         }
         return null;

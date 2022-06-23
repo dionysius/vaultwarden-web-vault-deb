@@ -1,6 +1,5 @@
 import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
 import { LogService } from "../abstractions/log.service";
-import { StateService } from "../abstractions/state.service";
 import { TotpService as TotpServiceAbstraction } from "../abstractions/totp.service";
 import { Utils } from "../misc/utils";
 
@@ -10,8 +9,7 @@ const SteamChars = "23456789BCDFGHJKMNPQRTVWXY";
 export class TotpService implements TotpServiceAbstraction {
   constructor(
     private cryptoFunctionService: CryptoFunctionService,
-    private logService: LogService,
-    private stateService: StateService
+    private logService: LogService
   ) {}
 
   async getCode(key: string): Promise<string> {
@@ -111,10 +109,6 @@ export class TotpService implements TotpServiceAbstraction {
       }
     }
     return period;
-  }
-
-  async isAutoCopyEnabled(): Promise<boolean> {
-    return !(await this.stateService.getDisableAutoTotpCopy());
   }
 
   // Helpers
