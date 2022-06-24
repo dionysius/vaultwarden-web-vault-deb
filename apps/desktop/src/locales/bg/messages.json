@@ -894,11 +894,11 @@
     "message": "Автоматично изчистване на буфера след поставяне на стойността.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Без иконки на сайтовете"
+  "enableFavicon": {
+    "message": "Показване на иконките на уеб сайтовете"
   },
-  "disableFaviconDesc": {
-    "message": "Иконките на сайтовете са разпознаваемо изображение за всеки запис в трезора."
+  "faviconDesc": {
+    "message": "Показване на разпознаваемо изображение до всеки запис."
   },
   "enableMinToTray": {
     "message": "Смаляване в областта за уведомяване"
@@ -1379,13 +1379,13 @@
     "message": "Отключване с Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Потвърждаване за Битуорден."
+    "message": "отключете трезора си"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Да не се изисква Windows Hello при стартиране."
+  "autoPromptWindowsHello": {
+    "message": "Питане за Windows Hello при пускане"
   },
-  "noAutoPromptTouchId": {
-    "message": "Да не се изисква Touch ID при стартиране."
+  "autoPromptTouchId": {
+    "message": "Питане за Touch ID при пускане"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Заключване с главната парола при повторно пускане"

@@ -126,7 +126,7 @@
     "message": "Minimalizovať pri kopírovaní do schránky"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimalizovať pri kopírovaní údajov z položky do schránky."
+    "message": "Minimalizovať aplikáciu pri kopírovaní údajov z položky do schránky."
   },
   "toggleVisibility": {
     "message": "Prepnúť viditeľnosť"
@@ -894,14 +894,14 @@
     "message": "Automaticky vymazať skopírované hodnoty zo schránky.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Nezobrazovať ikony stránok"
+  "enableFavicon": {
+    "message": "Zobrazovať favikony stránok"
   },
-  "disableFaviconDesc": {
-    "message": "Ikony stránok poskytujú rozoznateľný obrázok vedľa každého prihlasovacieho údaju vo webovom trezore."
+  "faviconDesc": {
+    "message": "Pri každom prihlásení zobrazí rozpoznateľný obrázok."
   },
   "enableMinToTray": {
-    "message": "Minimalizovať na panel úloh"
+    "message": "Minimalizovať do systémovej lišty"
   },
   "enableMinToTrayDesc": {
     "message": "Namiesto minimalizácie okna zobraziť ikonu v systémovej lište."
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "odomknúť svoj trezor"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Pri spustení nezobrazovať výzvu na Windows Hello."
+  "autoPromptWindowsHello": {
+    "message": "Pri spustení požiadať o Windows Hello"
   },
-  "noAutoPromptTouchId": {
-    "message": "Pri spustení nezobrazovať výzvu na Touch ID."
+  "autoPromptTouchId": {
+    "message": "Pri spustení požiadať o Touch ID"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte zamknúť s hlavným heslom"
@@ -1440,7 +1440,7 @@
     "message": "Akcia pri vypršaní času pre trezor"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Uzamknutý trezor sa dá odomknúť opätovným zadaním hlavného hesla."
+    "message": "Uzamknutý trezor sa dá odomknúť opätovným zadaním hlavného hesla alebo inou metódou odomknutia."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Odhlásený trezor bude vyžadovať opätovné prihlásenie aby ste k nemu mohli pristupovať."
@@ -1547,7 +1547,7 @@
     "message": "Neboli akceptované Podmienky používania a zásady Ochrany osobných údajov."
   },
   "enableBrowserIntegration": {
-    "message": "Povoliť integráciu v prehliadači"
+    "message": "Povoliť integráciu v prehliadiači"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Integrácia v prehliadači sa používa na biometriu v prehliadači."

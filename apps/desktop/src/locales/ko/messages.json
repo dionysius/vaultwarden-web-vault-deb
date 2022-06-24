@@ -894,11 +894,11 @@
     "message": "자동으로 클립보드에 복사된 값을 제거합니다.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "웹 사이트 아이콘 사용 안 함"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "웹 사이트 아이콘을 사용하면 보관함 각 항목 옆에 이미지를 보여줍니다."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "알림 영역으로 최소화"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "보관함 잠금 해제"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "시작할 때 Windows Hello 요구하지 않음"
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "시작할 때 Touch ID 요구하지 않음"
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "다시 시작 시 마스터 비밀번호로 잠금"

@@ -878,7 +878,7 @@
     "message": "Po zablokowaniu komputera"
   },
   "onRestart": {
-    "message": "Po restarcie aplikacji"
+    "message": "Po uruchomieniu ponownym"
   },
   "never": {
     "message": "Nigdy"
@@ -894,11 +894,11 @@
     "message": "Automatycznie wyczyść skopiowaną wartość ze schowka.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Wyłącz ikony stron"
+  "enableFavicon": {
+    "message": "Pokaż ikony witryn"
   },
-  "disableFaviconDesc": {
-    "message": "Wyświetlaj rozpoznawalną ikonę serwisu obok danych logowania w sejfie."
+  "faviconDesc": {
+    "message": "Pokaż rozpoznawalny obraz obok każdych danych logowania."
   },
   "enableMinToTray": {
     "message": "Minimalizuj do zasobnika systemowego"
@@ -1274,38 +1274,38 @@
     "message": "Format pliku"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "Adres URL hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Załaduj ciasteczko ułatwień dostępu"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Zarejestruj się jako użytkownik ułatwień dostępu na",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Skopiuj i wklej link wysłany na poniższy adres e-mail"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Wpisz adres URL, aby załadować ciasteczko ułatwień dostępu dla hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "Adres URL hCaptcha jest wymagany",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Nieprawidłowy adres URL"
   },
   "done": {
-    "message": "Done"
+    "message": "Gotowe"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Zapisano ciasteczko ułatwień dostępu!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Brak zapisanych ciasteczek ułatwień dostępu"
   },
   "warning": {
     "message": "UWAGA",
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "odblokuj sejf"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Zapamiętaj autoryzację Windows Hello."
+  "autoPromptWindowsHello": {
+    "message": "Poproś o Windows Hello przy uruchomieniu"
   },
-  "noAutoPromptTouchId": {
-    "message": "Zapamiętaj autoryzację Touch ID."
+  "autoPromptTouchId": {
+    "message": "Poproś o Touch ID przy uruchomieniu"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"

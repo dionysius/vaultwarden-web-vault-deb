@@ -126,7 +126,7 @@
     "message": "Pienennä kopioitaessa leikepöydälle"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Pienennä kun kohteen tietoja kopioidaan leikepöydälle."
+    "message": "Piennenä, kun kohteen tiedot kopioidaan leikepöydälle."
   },
   "toggleVisibility": {
     "message": "Näytä tai piilota"
@@ -833,7 +833,7 @@
     "message": "Holvin aikakatkaisu"
   },
   "vaultTimeoutDesc": {
-    "message": "Valitse milloin holvin aikakatkaisu tapahtuu ja suorita valittu toiminto."
+    "message": "Määritä milloin holvin aikakatkaisutoiminto suoritetaan."
   },
   "immediately": {
     "message": "Välittömästi"
@@ -869,13 +869,13 @@
     "message": "4 tuntia"
   },
   "onIdle": {
-    "message": "Kun järjetelmä on käyttämättömänä"
+    "message": "Kun järjestelmää ei käytetä"
   },
   "onSleep": {
-    "message": "Kun järjestelmän siirtyy lepotilaan"
+    "message": "Kun järjestelmä siirtyy lepotilaan"
   },
   "onLocked": {
-    "message": "Kun järjestelmän lukitaan"
+    "message": "Kun järjestelmä lukitaan"
   },
   "onRestart": {
     "message": "Kun käynnistetään uudelleen"
@@ -894,53 +894,53 @@
     "message": "Poista kopioidut arvot leikepöydältä automaattisesti.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Älä näytä sivustojen kuvakkeita"
+  "enableFavicon": {
+    "message": "Näytä verkkosivustojen kuvakkeet"
   },
-  "disableFaviconDesc": {
-    "message": "Kirjautumistietojen vieressä näytettävät sivustojen kuvakkeet helpottavat kohteiden tunnistusta."
+  "faviconDesc": {
+    "message": "Näytä tunnistettava kuva jokaiselle kirjautumistiedolle."
   },
   "enableMinToTray": {
     "message": "Pienennä ilmoitusalueelle"
   },
   "enableMinToTrayDesc": {
-    "message": "Pienennä ikkuna kuvakkeeksi järjestelmän ilmoitusalueelle."
+    "message": "Pienennä ikkuna kuvakkeeksi ilmoitusalueelle."
   },
   "enableMinToMenuBar": {
     "message": "Pienennä valikkoriville"
   },
   "enableMinToMenuBarDesc": {
-    "message": "Kun ikkuna pienennetään, näytä se kuvakkeena valikkorivillä."
+    "message": "Pienennä ikkuna kuvakkeeksi valikkoriville."
   },
   "enableCloseToTray": {
     "message": "Sulje ilmoitusalueelle"
   },
   "enableCloseToTrayDesc": {
-    "message": "Sulje ikkuna kuvakkeeksi järjestelmän ilmoitusalueelle."
+    "message": "Sulje ikkuna kuvakkeeksi ilmoitusalueelle."
   },
   "enableCloseToMenuBar": {
     "message": "Sulje valikkoriville"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "Kun ikkuna suljetaan, näytä se sulun sijaan kuvakkeena valikkorivillä."
+    "message": "Sulje ikkuna kuvakkeeksi valikkoriville."
   },
   "enableTray": {
     "message": "Näytä ilmoitusalueen kuvake"
   },
   "enableTrayDesc": {
-    "message": "Näytä ilmoitusalueen kuvake aina."
+    "message": "Näytä aina kuvake ilmoitusalueella."
   },
   "startToTray": {
-    "message": "Käynnistä ilmoitusalueelle"
+    "message": "Avaa ilmoitusalueelle"
   },
   "startToTrayDesc": {
-    "message": "Kun sovellus käynnistetään, näytä vain kuvake ilmoitusalueella."
+    "message": "Kun sovellus alunperin avataan, näytä vain kuvake ilmoitusalueella."
   },
   "startToMenuBar": {
     "message": "Avaa valikkoriville"
   },
   "startToMenuBarDesc": {
-    "message": "Kun sovellus avataan ensimmäisen kerran, näytä se kuvakkeena valikkorivillä."
+    "message": "Kun sovellus alunperin avataan, näytä vain kuvake valikkorivillä."
   },
   "openAtLogin": {
     "message": "Käynnistä automaattisesti kirjauduttaessa"
@@ -952,7 +952,7 @@
     "message": "Näytä aina Dockissa"
   },
   "alwaysShowDockDesc": {
-    "message": "Näytä Bitwardenin kuvake Dockissa myös sen ollessa pienennettynä valikkoriville."
+    "message": "Näytä Bitwardenin kuvake Dockissa myös silloin, kun se on pienennetty valikkoriville."
   },
   "confirmTrayTitle": {
     "message": "Vahvista ilmoitusalueen käytöstä poisto"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "avaa holvisi"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Älä pyydä Windows Hello -kirjautumista käynnistettäessä."
+  "autoPromptWindowsHello": {
+    "message": "Pyydä Windows Hello -todennusta käynnistettäessä"
   },
-  "noAutoPromptTouchId": {
-    "message": "Älä pyydä Touch ID -kirjautumista käynnistettäessä."
+  "autoPromptTouchId": {
+    "message": "Pyydä Touch ID -todennusta käynnistettäessä"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukitse pääsalasanalla uudelleenkäynnistyksen yhteydessä"
@@ -1394,13 +1394,13 @@
     "message": "Asetukset"
   },
   "enableMenuBar": {
-    "message": "Käytä tehtäväpalkin kuvaketta"
+    "message": "Näytä kuvake valikkorivillä"
   },
   "enableMenuBarDesc": {
-    "message": "Näytä tehtäväpalkin kuvake aina."
+    "message": "Näytä aina kuvake valikkorivillä."
   },
   "hideToMenuBar": {
-    "message": "Piilota tehtäväpalkkiin"
+    "message": "Piilota valikkoriville"
   },
   "selectOneCollection": {
     "message": "Valitse ainakin yksi kokoelma."
@@ -1440,10 +1440,10 @@
     "message": "Holvin aikakatkaisun toiminto"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Lukittu holvi vaatii pääsalasanan syötön sen käyttämiseksi."
+    "message": "Holvin käyttö edellyttää pääsalasanaa tai muuta avaustapaa."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Uloskirjattu holvi vaatii uuden todennuksen sen käyttämiseksi."
+    "message": "Holvin käyttö edellyttää uuttaa todennusta."
   },
   "lock": {
     "message": "Lukitse",
@@ -1547,7 +1547,7 @@
     "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "enableBrowserIntegration": {
-    "message": "Käytä selainintegraatiota"
+    "message": "Salli selainintegraatio"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Selainintegraatiota käytetään selaimessa biometriaa varten."
@@ -1568,7 +1568,7 @@
     "message": "Vaadi selainintegraation vahvistus"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Käytä ylimääräistä tietoturvakerrosta ja vaadi todennus tunnistelausekkeen avulla kun luot linkin työpöydän ja selaimen välille. Kun käytössä, edellyttää käyttäjältä manuaalista todennusta aina yhteyden muodostuessa."
+    "message": "Käytä ylimääräistä tietoturvakerrosta ja edellytä työpöytäsovelluksen ja selainlaajennuksen liitoksen todennus tunnistelausekkeella. Tämä vaatii aina yhteyden muodostuessa vahvistuksen käyttäjältä."
   },
   "approve": {
     "message": "Salli"

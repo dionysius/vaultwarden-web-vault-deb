@@ -894,11 +894,11 @@
     "message": "Slett automatisk kopierte verdier fra utklippstavlen.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Skru av nettstedsikoner"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hvert innloggingsobjekt i hvelvet ditt."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "Minimer til oppgavelinjen"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "lås opp hvelvet ditt"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Ikke be om Windows Hello ved oppstart."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "Ikke be om Touch ID ved oppstart."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedpassord ved omstart"

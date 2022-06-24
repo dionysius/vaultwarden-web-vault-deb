@@ -894,11 +894,11 @@
     "message": "Secara otomatis menghapus nilai yang disalin dari clipboard Anda.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Nonaktifkan Ikon Situs Web"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Ikon Situs Web menyediakan gambar yang dikenali di sebelah item info masuk di brankas Anda."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "Kecilkan ke Ikon Baki"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "Verifikasi untuk Bitwarden."
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Jangan meminta Windows Hello waktu baru dinyalakan."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "Jangan meminta Touch ID waktu baru dinyalakan."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Kunci dengan kata sandi utama saat komputer dihidupkan ulang"

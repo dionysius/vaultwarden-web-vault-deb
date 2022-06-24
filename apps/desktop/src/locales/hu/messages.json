@@ -126,7 +126,7 @@
     "message": "Minimalizálás vágólapra másoláskor"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimalizálás asz összes elemadat vágólapra másolásakor."
+    "message": "Minimalizálás egy elem adatainak vágólapra való másolásakor."
   },
   "toggleVisibility": {
     "message": "Láthatóság váltása"
@@ -830,10 +830,10 @@
     "message": "Kétlépcsős bejelentkezés"
   },
   "vaultTimeout": {
-    "message": "Széf időkifutás"
+    "message": "Széf időkorlát"
   },
   "vaultTimeoutDesc": {
-    "message": "Válasszuk ki, hogy a széfnél mikor legyen időkifutás és a kiválasztott művelet végrehajtása."
+    "message": "Állítsd be a széfedhez egy időkorlátot és egy végrehajtandó műveletet."
   },
   "immediately": {
     "message": "Azonnal"
@@ -869,13 +869,13 @@
     "message": "4 óra"
   },
   "onIdle": {
-    "message": "Rendszer üresjárat esetén"
+    "message": "Tétlenség esetén"
   },
   "onSleep": {
-    "message": "Rendszer alvó mód esetén"
+    "message": "Alvó módba lépéskor"
   },
   "onLocked": {
-    "message": "Rendszer zárolás esetén"
+    "message": "A rendszer zárolásakor"
   },
   "onRestart": {
     "message": "Újraindításkor"
@@ -894,14 +894,14 @@
     "message": "Automatikusan törli a vágólapra másolt értékeket.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Webhely ikonok letiltása"
+  "enableFavicon": {
+    "message": "Webhely ikonok megjelenítése"
   },
-  "disableFaviconDesc": {
-    "message": "A webhelyek ikonjai felismerhető ikonként jelennek meg a széf összes eleme mellett."
+  "faviconDesc": {
+    "message": "Felismerhető kép megjelenítése minden bejelentkezés mellett."
   },
   "enableMinToTray": {
-    "message": "Kicsinyítés tálcaikonná"
+    "message": "Kicsinyítés tálcára"
   },
   "enableMinToTrayDesc": {
     "message": "Az ablak minimalizálásakor helyette egy ikon jelenik meg a rendszertálcán."
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "Bitwarden feloldás"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Indításkor ne kérje a Windows Hello alkalmazást."
+  "autoPromptWindowsHello": {
+    "message": "Windows Hello kérése indításkor"
   },
-  "noAutoPromptTouchId": {
-    "message": "Indításkor ne kérje a Touch ID alkalmazást."
+  "autoPromptTouchId": {
+    "message": "Érintés AZ kérése indításkor"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval újraindításkor"
@@ -1437,13 +1437,13 @@
     "message": "Egy vagy több szervezeti szabály érinti a generátor beállításokat."
   },
   "vaultTimeoutAction": {
-    "message": "Széf időkifutás művelet"
+    "message": "Széf időkorlát művelet"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Egy zárolt széfnél újra meg kell adni a mesterjelszót az ismételt hozzáféréshez."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A lezárt széfnél szükséges az újra hitelesítés az ismételt eléréshez."
+    "message": "A lezárt széfnél szükséges az újbóli hitelesítés az ismételt hozzáféréshez."
   },
   "lock": {
     "message": "Lezárás",

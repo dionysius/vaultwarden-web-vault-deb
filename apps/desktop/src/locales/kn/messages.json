@@ -894,11 +894,11 @@
     "message": "ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ನಿಂದ ನಕಲಿಸಿದ ಮೌಲ್ಯಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ತೆರವುಗೊಳಿಸಿ.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "ವೆಬ್‌ಸೈಟ್ ಚಿಹ್ನೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "ವೆಬ್‌ಸೈಟ್ ಐಕಾನ್‌ಗಳು ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿರುವ ಪ್ರತಿ ಲಾಗಿನ್ ಐಟಂನ ಪಕ್ಕದಲ್ಲಿ ಗುರುತಿಸಬಹುದಾದ ಚಿತ್ರವನ್ನು ಒದಗಿಸುತ್ತದೆ."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "ಟ್ರೇ ಐಕಾನ್‌ಗೆ ಕಡಿಮೆ ಮಾಡಿ"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಅನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "ಪ್ರಾರಂಭದಲ್ಲಿ ವಿಂಡೋಸ್ ಹಲೋಗಾಗಿ ಕೇಳಬೇಡಿ."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "ಪ್ರಾರಂಭದಲ್ಲಿ ಟಚ್ ಐಡಿಗಾಗಿ ಕೇಳಬೇಡಿ."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "ಮರುಪ್ರಾರಂಭಿಸಿದಾಗ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಲಾಕ್ ಮಾಡಿ"

@@ -894,11 +894,11 @@
     "message": "به صورت خودکار، مقادیر رونوشت شده را از کلیپ‌برد پاک کن.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "غیرفعال‌سازی آیکون‌های وبسایت"
+  "enableFavicon": {
+    "message": "نمایش نمادهای وب سایت"
   },
-  "disableFaviconDesc": {
-    "message": "آیکون‌های وبسایت یک تصویر قابل تشخیص در کنار هر داده ورودی ارائه می‌دهد."
+  "faviconDesc": {
+    "message": "یک تصویر قابل تشخیص در کنار هر ورود نشان دهید."
   },
   "enableMinToTray": {
     "message": "کوچک کردن به نماد Tray"
@@ -1274,38 +1274,38 @@
     "message": "فرمت پرونده"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "آدرس اینترنتی hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "بارگیری کوکی دسترس‌پذیری"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "ثبت نام به عنوان کاربر قابلیت دسترسی در",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "لینک ارسال شده به ایمیل خود را در زیر کپی و پیست کنید"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "برای بارگیری کوکی دسترسی برای hCaptcha، URL را وارد کنید",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "آدرس اینترنتی hCaptcha مورد نیاز است",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "آدرس اینترنتی نامعتبر"
   },
   "done": {
-    "message": "Done"
+    "message": "انجام شده"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "کوکی دسترس‌پذیری ذخیره شد!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "هیچ کوکی دسترسی ذخیره نشد"
   },
   "warning": {
     "message": "اخطار",
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "تایید برای Bitwarden."
   },
-  "noAutoPromptWindowsHello": {
-    "message": "در هنگام راه اندازی ، درخواست Windows Hello نکنید."
+  "autoPromptWindowsHello": {
+    "message": "درخواست Windows Hello در هنگام راه اندازی"
   },
-  "noAutoPromptTouchId": {
-    "message": "در هنگام راه اندازی ، درخواست Touch ID نکنید."
+  "autoPromptTouchId": {
+    "message": "درخواست تاچ آیدی در هنگام راه اندازی"
   },
   "lockWithMasterPassOnRestart": {
     "message": "در زمان شروع مجدد، با کلمه عبور اصلی قفل کن"

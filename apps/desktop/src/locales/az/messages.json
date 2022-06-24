@@ -894,11 +894,11 @@
     "message": "Kopyalanmış dəyərləri lövhədən avtomatik təmizlə.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Veb sayt nişanlarını sıradan çıxart"
+  "enableFavicon": {
+    "message": "Veb sayt nişanlarını göstər"
   },
-  "disableFaviconDesc": {
-    "message": "Veb sayt nişanları, anbarınızda hər bir giriş elementinin yanında tanımağınıza kömək edən bir təsvir təqdim edir."
+  "faviconDesc": {
+    "message": "Hər girişin yanında tanına bilən bir təsvir göstər."
   },
   "enableMinToTray": {
     "message": "Bildiriş nişanına kiçildin"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "anbarınızın kilidini açın"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Açılışda Windows Hello üçün soruşma."
+  "autoPromptWindowsHello": {
+    "message": "Açılışda Windows Hello-nu soruşun"
   },
-  "noAutoPromptTouchId": {
-    "message": "Açılışda Touch ID üçün soruşma."
+  "autoPromptTouchId": {
+    "message": "Açılışda Touch ID-ni soruşun"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Yenidən başladılanda ana parol ilə kilidlə"

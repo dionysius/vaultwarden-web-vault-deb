@@ -894,11 +894,11 @@
     "message": "Borrar automáticamente los valores copiados de su portapapeles.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Deshabilitar iconos de sitio web"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Los iconos de sitio web añaden una imagen reconocible al lado de cada entrada de tu caja fuerte."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "Minimizar a icono en la bandeja"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "Verificar para Bitwarden."
   },
-  "noAutoPromptWindowsHello": {
-    "message": "No solicite Windows Hello al empezar."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "No solicite Touch ID al empezar."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear con contraseña maestra al reiniciar"

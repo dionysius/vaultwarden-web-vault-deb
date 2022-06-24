@@ -370,10 +370,10 @@
     "message": "Da li ste sigurni da želite da zamijenite trenutnu lozinku?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Prebriši korisničko ime"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Sigurno želiš prebrisati trenutno korisničko ime?"
   },
   "noneFolder": {
     "message": "Nema foldera",
@@ -401,16 +401,16 @@
     "message": "Dužina"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Velika slova (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Mala slova (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Brojevi (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Posebni znakovi (!@#$%^&*)"
   },
   "numWords": {
     "message": "Broj riječi"
@@ -894,44 +894,44 @@
     "message": "Automatski očistiti kopirane vrijednosti iz vaše međumemorije.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Onemogućite ikone web lokacije"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimiziraj kao ikonicu u sistemskoj traci"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Kada minimizujete prozor, umjesto toga pokažite ikonu u sistemskoj traci."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimiziraj u traku menija"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Kod minimiziranja, prikazuje se ikona u programskoj traci."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Zatvaranje ostavlja ikonicu aplikacije u području obavijesti"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Kod zatvaranja prozora, prikazuje se ikona u području obavijesti."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Zatvori u traku menija"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Kod zatvaranja prozora, prikazuje se ikona u programskoj traci."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Omogući ikonu u sistemskoj traci"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Uvijek prikaži ikonu u sistemskoj traci."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Pokreni kao ikonicu u sistemskoj traci"
   },
   "startToTrayDesc": {
     "message": "Kada se aplikacija prvi put pokrene, prikaži samo ikonu u sistemskoj traci."
@@ -1108,74 +1108,74 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Nema lozinki za prikazati."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Poništi"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Vrati"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Izreži",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Zalijepi",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Odaberi sve"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Povećaj"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Smanji"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Poništi zumiranje"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Uključi/isključi prikaz preko cijelog zaslona"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Ponovo učitaj"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Uključi/isključi razvojne alate"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimiziraj",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Povećaj"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Premjesti sve u prednji plan",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "O aplikaciji Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Usluge"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Sakrij Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Sakrij ostale"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Prikaži sve"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Zatvori Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ kopirano",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1185,16 +1185,16 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Pomoć"
   },
   "window": {
-    "message": "Window"
+    "message": "Prozor"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Provjeri da li je lozinka kompromitovana."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Ova lozinka je kompromitovana $VALUE$ put(a) tijekom malicioznih napada. Savjetujemo njenu promjenu.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1203,14 +1203,14 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Ova lozinka nije pronađena ni u jednoj kompromitovanoj bazi podataka. Trebala bi biti sigurna za korištenje."
   },
   "baseDomain": {
-    "message": "Base domain",
+    "message": "Primarna domena",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Naziv domene",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1218,110 +1218,110 @@
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Tačno"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Počinje sa"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regularni izraz",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Otkrivanje podudaranja",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Zadano otkrivanje podudaranja",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Uključi/isključi opcije"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organizacija",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Zadano"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Izlaz"
   },
   "showHide": {
-    "message": "Show / Hide",
+    "message": "Prikaži / sakrij",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Sakrij u sistemsku traku"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Uvijek na vrhu",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Ažurirano",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Lozinka ažurirana",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Izvezi trezor"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Format datoteke"
   },
   "hCaptchaUrl": {
     "message": "hCaptcha Url",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Učitaj kolačić pristupačnosti"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Registruj se kao korisnik pristupačnosti na",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Kopiraj i zalijepi link poslan na e-mail u nastavku"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Unesi URL za učitavanje kolačića pristupačnosti za hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "hCaptcha Url je obavezan",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Neispravan Url"
   },
   "done": {
-    "message": "Done"
+    "message": "Gotovo"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Kolačić pristupačnosti spremljen!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Nije spremljen kolačić pristupačnosti"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "UPOZORENJE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Potvrdi izvoz trezora"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Ovaj izvoz sadrži podatke trezora u nešifriranom obliku! Izvezenu datoteku se ne bi smjelo pohranjivati ili slati putem nesigurnih kanala (npr. kao što je e-mail). Izbrišite je odmah nakon završetka korištenja."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Ovaj izvoz šifrira tvoje podatke koristeći ključ za šifriranje tvoga računa. Ako ikada zamjeniš ključ za šifriranje, potrebno je ponovno izvesti podatke, jer neće biti moguće dešifrirati ovu izvezenu datoteku."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Ključ za šifriranje jedinstven je za svakog Bitwarden korisnika, kako bi se šifrirani izvoz mogao uvesti u drugi korisnički račun."
   },
   "noOrganizationsList": {
     "message": "Ne pripadaš niti jednoj organizaciji. Organizacije omogućuju sigurno dijeljenje stavki s drugim korisnicima."
@@ -1358,34 +1358,34 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Otključaj PIN-om"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Postavite vaš PIN kod za otključavanje Bitwarden-a. Vaše podešene PIN postavke će biti resetovane ako se ikada potpuno odjavite iz aplikacije."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Potreban je PIN."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Neispravan PIN."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Otključaj koristeći Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Potvrdi za Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Otključaj koristeći Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "unlock your vault"
+    "message": "otključaj trezor"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
@@ -1394,7 +1394,7 @@
     "message": "Preferences"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Show menu bar icon"
   },
   "enableMenuBarDesc": {
     "message": "Always show an icon in the menu bar."
@@ -1437,13 +1437,13 @@
     "message": "One or more organization policies are affecting your generator settings."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Vault timeout action"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Master password or other unlock method is required to access your vault again."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Re-authentication is required to access your vault again."
   },
   "lock": {
     "message": "Lock",
@@ -1547,7 +1547,7 @@
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Allow browser integration"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Browser integration is used for biometrics in browser."
@@ -1556,148 +1556,148 @@
     "message": "Browser integration not supported"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Nažalost, za sada je integracija sa preglednikom podržana samo u Mac App Store verziji aplikacije."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "Nažalost, integracija sa preglednikom nije podržana u Windows Store verziji aplikacije."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Nažalost, integracija preglednika trenutno nije podržana u verziji Linuxa."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Traži verifikaciju za integraciju sa preglednikom"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Uključi dodatni sloj sigurnosti tražeći verifikaciju jedinstvenom frazom prilikom povezivanja Desktop-a i preglednika. Kada je ovo uključeno, potrebno je verificirati prilikom svakog novog povezivanja."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Odobri"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Verificiraj vezu sa preglednikom"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Provjeri da je prikazana jedinstvena fraza identična onoj prikazanoj u proširenju preglednika."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometrija nije omogućena"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Biometrija preglednika zahtijeva prethodno omogućenu biometriju u Bitwarden desktop aplikaciji."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Zbog poslovnih smjernica, zabranjeno vam je pohranjivanje predmeta u svoj lični trezor. Promijenite opciju vlasništva u organizaciji i odaberite neku od dostupnih kolekcija."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Podsjetnik za lozinku ne može biti isti kao lozinka."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Pravila organizacije utječu na tvoje mogućnosti vlasništva."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Svi Send-ovi",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Datoteka"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Pretraži Send-ove",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Uredi Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Moj trezor"
   },
   "text": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Obriši za"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Send će nakon navedenog vremena biti trajno izbrisan.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Vremenski ograničeni pristup"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Ako je postavljeno, pristup ovom Sendu ističe na navedeni datum i vrijeme.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count",
+    "message": "Maksimalan broj pristupa",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Ako je određeno, ovom Send-u će se moći pristupiti samo ograničeni broj puta.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Trenutni broj pristupa"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Onemogući ovaj Send da mu niko drugi ne može pristupiti.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Neobavezno zahtijevaj lozinku od korisnika za pristup ovom Send-u.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Privatne bilješke o ovom Send-u.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Link od Send-a",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Link od Send-a",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Zadano sakrij tekst pri pristupanju Send-u",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send stvoren",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send uređen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send izbrisan",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Nova lozinka"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Koja je ovo vrsta Send-a?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Stvori Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Tekst kojeg želiš poslati."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Datoteka koju želiš poslati."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ dana",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1706,32 +1706,32 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 dan"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Prilagođeno"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Sigurno želiš izbrisati ovaj Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Kopiraj link Send-a",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Kopiraj link od Send-a nakon spremanja."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send onemogućen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Pravila tvrtke omogućuju brisanje samo postojećeg Senda.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Kopiraj link"
   },
   "disabled": {
     "message": "Disabled"

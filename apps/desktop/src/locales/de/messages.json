@@ -894,14 +894,14 @@
     "message": "Kopierten Inhalt automatisch aus der Zwischenablage löschen.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Website-Icons deaktivieren"
+  "enableFavicon": {
+    "message": "Zeige Webseiten-Icons"
   },
-  "disableFaviconDesc": {
-    "message": "Website-Icons zeigen ein wiedererkennbares Bild neben jedem Login in deinem Tresor."
+  "faviconDesc": {
+    "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
   },
   "enableMinToTray": {
-    "message": "Minimieren und in der Taskleiste anzeigen"
+    "message": "Zum Taskleisten-Symbol minimieren"
   },
   "enableMinToTrayDesc": {
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster minimiert wird."
@@ -913,7 +913,7 @@
     "message": "Bei minimiertem Fenster stattdessen ein Symbol in der Menüleiste anzeigen."
   },
   "enableCloseToTray": {
-    "message": "In Taskleiste minimieren"
+    "message": "In den Infobereich minimieren"
   },
   "enableCloseToTrayDesc": {
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster geschlossen wird."
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "Deinen Tresor entsperren"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Beim Start nicht nach Windows Hello fragen."
+  "autoPromptWindowsHello": {
+    "message": "Beim Start nach Windows Hello fragen"
   },
-  "noAutoPromptTouchId": {
-    "message": "Beim Start nicht nach Touch ID fragen."
+  "autoPromptTouchId": {
+    "message": "Beim Start nach Touch ID fragen"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Beim Neustart mit Master-Passwort sperren"

@@ -894,11 +894,11 @@
     "message": "Automātiski noņemt starpliktuvē ievietotās vērtības.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Atspējot tīmekļa vietņu ikonas"
+  "enableFavicon": {
+    "message": "Rādīt vietņu ikonas"
   },
-  "disableFaviconDesc": {
-    "message": "Tīmekļā vietņu ikonas nodrošina atpazīstamu attēlu pie katra glabātavas pieteikšanās vienuma."
+  "faviconDesc": {
+    "message": "Attēlot atpazīstamu attēlu pie katra pierakstīšanās vienuma."
   },
   "enableMinToTray": {
     "message": "Samazināt ikonu joslā"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "atslēgt glabātavu"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Palaišanas brīdī nevaicāt par Windows Hello."
+  "autoPromptWindowsHello": {
+    "message": "Palaišanā vaicāt pēc Windows Hello"
   },
-  "noAutoPromptTouchId": {
-    "message": "Palaišanas brīdī nevaicāt par Touch ID."
+  "autoPromptTouchId": {
+    "message": "Palaišanā vaicāt pēc Touch ID"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Aizslēgt ar galveno paroli pēc pārsāknēšanas"

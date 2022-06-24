@@ -894,11 +894,11 @@
     "message": "Wis gekopieerde waardes outomaties vanuit u knipbord.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Deaktiveer Webwerfikone"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Webwerfikone verskaf ’n herkenbare beeld langs elke aantekenitem in u kluis."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "Minimaliseer na stelsellaai"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "ontgrendel u kluis"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Moenie by lansering vra vir Windows Hello nie."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "Moenie by lansering vra vir Touch ID nie."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Vergrendel by herbegin met hoofwagwoord"

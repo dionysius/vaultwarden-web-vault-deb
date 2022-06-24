@@ -894,11 +894,11 @@
     "message": "選択した時間が経過した後、自動的にクリップボードを消去します。",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "ウェブサイトアイコンの無効化"
+  "enableFavicon": {
+    "message": "ウェブサイトのアイコンを表示"
   },
-  "disableFaviconDesc": {
-    "message": "保管庫のアイテム毎にウェブサイトのアイコンを表示します。"
+  "faviconDesc": {
+    "message": "ログイン情報の隣にアイコン画像を表示します"
   },
   "enableMinToTray": {
     "message": "トレイアイコンに最小化"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "Bitwarden の認証を行います。"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "起動時に Windows Hello のプロンプトを表示しない"
+  "autoPromptWindowsHello": {
+    "message": "起動時に Windows Hello を要求する"
   },
-  "noAutoPromptTouchId": {
-    "message": "起動時に Touch ID を要求しない"
+  "autoPromptTouchId": {
+    "message": "起動時に Touch ID を要求する"
   },
   "lockWithMasterPassOnRestart": {
     "message": "再起動時にマスターパスワードでロック"

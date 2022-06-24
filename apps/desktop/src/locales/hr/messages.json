@@ -894,11 +894,11 @@
     "message": "Automatski očisti kopirane vrijednosti iz međuspremnika.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Onemogući ikone web mjesta"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Prepoznatljive ikone web mjesta prikazuju se pored prijava u tvojem trezoru."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "Minimiziraj u područje obavijesti"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "Otključaj trezor"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Ne traži Windows Hello pri pokretanju."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "Ne traži Touch ID pri pokretanju."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zaključaj glavnom lozinkom kod svakog pokretanja"

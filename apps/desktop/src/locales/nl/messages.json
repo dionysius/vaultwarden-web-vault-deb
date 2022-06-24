@@ -894,11 +894,11 @@
     "message": "Gekopieerde waarden automatisch van het klembord wissen.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Websitepictogrammen uitschakelen"
+  "enableFavicon": {
+    "message": "Websitepictogrammen weergeven"
   },
-  "disableFaviconDesc": {
-    "message": "Websitepictogrammen geven een herkenbare afbeelding naast elk item in je kluis."
+  "faviconDesc": {
+    "message": "Een herkenbare afbeelding naast iedere login weergeven."
   },
   "enableMinToTray": {
     "message": "Minimaliseren naar systeemvak"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "ontgrendel je kluis"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Bij het opstarten niet om Windows Hello vragen."
+  "autoPromptWindowsHello": {
+    "message": "Vraag om Windows Hello bij opstarten"
   },
-  "noAutoPromptTouchId": {
-    "message": "Bij het opstarten niet om Touch ID vragen."
+  "autoPromptTouchId": {
+    "message": "Vraag om Touch ID bij opstarten"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bij herstart vergrendelen met hoofdwachtwoord"

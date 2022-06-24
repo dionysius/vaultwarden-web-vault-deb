@@ -894,11 +894,11 @@
     "message": "Esborra automàticament els valors copiats del porta-retalls.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Inhabilita icones del lloc web"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Les icones del lloc web proporcionen una imatge que es pot reconèixer al costat de cada element d'inici de sessió a la vostra caixa forta."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "Minimitza a icona en la safata"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "desbloqueja la teva caixa forta"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "No demaneu que Windows Hello en iniciar."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "No sol·liciteu Touch ID en iniciar."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar"

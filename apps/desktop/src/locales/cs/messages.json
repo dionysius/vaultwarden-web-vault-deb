@@ -894,11 +894,11 @@
     "message": "Automaticky vymazat zkopírované hodnoty z vaší schránky.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Zakázat ikonky webových stránek"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Ikonky webových stránek zobrazí snadno rozeznatelný obrázek vedle každé položky ve vašem trezoru."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "Minimalizovat do systémové lišty"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "odemknout váš trezor"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Neptat se na Windows Hello při spuštění."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "Neptat se na Touch ID při spuštění."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu pomocí hlavního hesla"

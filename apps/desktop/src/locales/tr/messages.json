@@ -728,7 +728,7 @@
     "message": "Çıkmak istediğinize emin misiniz?"
   },
   "logOut": {
-    "message": "Çıkış yap"
+    "message": "Çıkış Yap"
   },
   "addNewLogin": {
     "message": "Yeni hesap ekle"
@@ -887,21 +887,21 @@
     "message": "Güvenlik"
   },
   "clearClipboard": {
-    "message": "Panoyu temizle",
+    "message": "Panoyu Temizle",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Kopyalanan değerleri otomatik olarak panodan sil.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Site simgelerini devre dışı bırak"
+  "enableFavicon": {
+    "message": "Web sitesi simgelerini göster"
   },
-  "disableFaviconDesc": {
-    "message": "Web sitesi simgeleri, kasanızdaki her kaydın yanında o siteyi tanımanıza yardımcı olan bir resim sunar."
+  "faviconDesc": {
+    "message": "Hesapların yanında tanıdık görseller göster."
   },
   "enableMinToTray": {
-    "message": "Tepsi simgesine küçült"
+    "message": "Sistem çubuğu ikonuna küçült"
   },
   "enableMinToTrayDesc": {
     "message": "Pencere küçültülünce sistem tepsisinde bir simge göster."
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "kasanızın kilidini açma"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Açılışta Windows Hello doğrulaması isteme."
+  "autoPromptWindowsHello": {
+    "message": "Açılışta Windows Hello doğrulaması iste"
   },
-  "noAutoPromptTouchId": {
-    "message": "Açılışta Touch ID doğrulaması isteme."
+  "autoPromptTouchId": {
+    "message": "Açılışta Touch ID doğrulaması iste"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Yeniden başlatmada ana şifre ile kilitle"
@@ -1394,7 +1394,7 @@
     "message": "Tercihler"
   },
   "enableMenuBar": {
-    "message": "Menü çubuğu simgesini etkinleştir"
+    "message": "Menü Çubuğu Simgesini Etkinleştir"
   },
   "enableMenuBarDesc": {
     "message": "Menü çubuğunda her zaman bir simge göster."

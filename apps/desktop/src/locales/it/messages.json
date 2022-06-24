@@ -894,14 +894,14 @@
     "message": "Cancella automaticamente i valori copiati dagli appunti.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Disabilita icone dei siti web"
+  "enableFavicon": {
+    "message": "Mostra icone del sito"
   },
-  "disableFaviconDesc": {
-    "message": "Le icone dei siti web forniscono un'immagine riconoscibile accanto ad ogni elemento di login della cassaforte."
+  "faviconDesc": {
+    "message": "Mostra un'immagine riconoscibile accanto a ogni login."
   },
   "enableMinToTray": {
-    "message": "Riduci nell'area di notifica"
+    "message": "Minimizza nell'area di notifica"
   },
   "enableMinToTrayDesc": {
     "message": "Riduci nell'area di notifica invece di ridurre a icona."
@@ -925,7 +925,7 @@
     "message": "Quando chiudi la finestra, mostra invece un'icona nella barra dei menu."
   },
   "enableTray": {
-    "message": "Icona nell'area di notifica"
+    "message": "Usa l'area di notifica"
   },
   "enableTrayDesc": {
     "message": "Mostra sempre un'icona nell'area di notifica."
@@ -1274,38 +1274,38 @@
     "message": "Formato file"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "URL hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Carica cookie di accessibilità"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Registrati come utente di accessibilità su",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Copia e incolla il link inviato alla tua email qui sotto"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Inserisci l'URL per caricare il cookie di accessibilità per hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "URL hCaptcha obbligatorio",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "URL non valido"
   },
   "done": {
-    "message": "Done"
+    "message": "Fatto"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Cookie di accessibilità salvato!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Nessun cookie di accessibilità salvato"
   },
   "warning": {
     "message": "ATTENZIONE",
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "sblocca la cassaforte"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Non richiedere Windows Hello all'avvio."
+  "autoPromptWindowsHello": {
+    "message": "Richiedi Windows Hello all'avvio"
   },
-  "noAutoPromptTouchId": {
-    "message": "Non richiedere Touch ID all'avvio."
+  "autoPromptTouchId": {
+    "message": "Richiedi Touch ID all'avvio"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio"
@@ -1547,13 +1547,13 @@
     "message": "I termini di servizio e l'informativa sulla privacy non sono stati accettati."
   },
   "enableBrowserIntegration": {
-    "message": "Abilita l'integrazione del browser"
+    "message": "Abilita l'integrazione con il browser"
   },
   "enableBrowserIntegrationDesc": {
     "message": "L'integrazione del browser è utilizzata per l'autenticazione biometrica."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "L'integrazione del browser non è supportata"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Purtroppo l'integrazione del browser è supportata solo nella versione disponibile nel Mac App Store."
@@ -1562,7 +1562,7 @@
     "message": "Purtroppo l'integrazione del browser non è attualmente supportata nella versione disponibile nel Microsoft Store."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Purtroppo l'integrazione del browser non è attualmente supportata nella versione Linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Richiedi verifica per l'integrazione del browser"

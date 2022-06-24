@@ -126,7 +126,7 @@
     "message": "Se minimizează la copierea în clipboard"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Se minimizează când se copiază datele unui articol în clipboard."
+    "message": "Aplicația se minimizează la copierea datelor unui element în clipboard."
   },
   "toggleVisibility": {
     "message": "Comutare vizibilitate"
@@ -830,10 +830,10 @@
     "message": "Autentificare în două etape"
   },
   "vaultTimeout": {
-    "message": "Expirare seif"
+    "message": "Timp de expirare seif"
   },
   "vaultTimeoutDesc": {
-    "message": "Alegeți când seiful dvs. va expira și va efectua acțiunea selectată."
+    "message": "Alegeți când seiful dvs. va efectua acțiunea de expirare a seifului."
   },
   "immediately": {
     "message": "Imediat"
@@ -894,11 +894,11 @@
     "message": "Se șterg automat valorile copiate din clipboard.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Se dezactivează iconurile saiturilor"
+  "enableFavicon": {
+    "message": "Afișare pictograme site web"
   },
-  "disableFaviconDesc": {
-    "message": "Iconurile saiturilor oferă o imagine identificabilă lângă fiecare element de conectare din seiful dvs."
+  "faviconDesc": {
+    "message": "Afișează o imagine ușor de recunoscut lângă fiecare autentificare."
   },
   "enableMinToTray": {
     "message": "Se minimizează în zona de notificare"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "deblocați-vă seiful"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Nu solicitați Windows Hello la pornire."
+  "autoPromptWindowsHello": {
+    "message": "Solicitați Windows Hello la pornire"
   },
-  "noAutoPromptTouchId": {
-    "message": "Nu solicitați Touch ID la pornire."
+  "autoPromptTouchId": {
+    "message": "Solicitați Touch ID la pornire"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocare cu parola principală la repornire"

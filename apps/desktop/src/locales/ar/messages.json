@@ -3,16 +3,16 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "فلاتر"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "كافة العناصر"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "المفضلات"
   },
   "types": {
-    "message": "Types"
+    "message": "أنواع"
   },
   "typeLogin": {
     "message": "تسجيل دخول"
@@ -21,34 +21,34 @@
     "message": "بطاقة"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "الهوية"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "ملاحظة آمنة"
   },
   "folders": {
-    "message": "Folders"
+    "message": "مجلدات"
   },
   "collections": {
-    "message": "Collections"
+    "message": "مجموعات"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "البحث في الخزنة"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "إضافة عنصر"
   },
   "shared": {
-    "message": "Shared"
+    "message": "مشارك"
   },
   "share": {
-    "message": "Share"
+    "message": "مشاركة"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "نقل إلى مؤسسة"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ انتقل إلى $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,22 +61,22 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "اختر المؤسسة التي ترغب في نقل هذا العنصر إليها. يؤدي الانتقال إلى مؤسسة إلى نقل ملكية العنصر إلى تلك المؤسسة. لن تكون المالك المباشر لهذا العنصر بعد نقله."
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "المرفقات"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "عرض العنصر"
   },
   "name": {
-    "message": "Name"
+    "message": "الاسم"
   },
   "uri": {
-    "message": "URI"
+    "message": "الرابط"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "الرابط $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -86,505 +86,505 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "رابط جديد"
   },
   "username": {
-    "message": "Username"
+    "message": "اسم المستخدم"
   },
   "password": {
-    "message": "Password"
+    "message": "كلمة المرور"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "جملة المرور"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "تعديل العنصر"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "عنوان البريد الإلكتروني"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "رمز التحقق (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "موقع الويب"
   },
   "notes": {
-    "message": "Notes"
+    "message": "ملاحظات"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "حقول مخصصة"
   },
   "launch": {
-    "message": "Launch"
+    "message": "بدء"
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "نسخ القيمة",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "تصغير عند النسخ إلى الحافظة"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "تصغير عند نسخ بيانات عنصر إلى الحافظة."
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "تبديل الظهور"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "تبديل الطي",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "اسم حامل البطاقة"
   },
   "number": {
-    "message": "Number"
+    "message": "رقم"
   },
   "brand": {
-    "message": "Brand"
+    "message": "العلامة"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "تاريخ الانتهاء"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "رمز الأمان"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "اسم الهوية"
   },
   "company": {
-    "message": "Company"
+    "message": "الشركة"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "رقم الضمان الاجتماعي"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "رقم جواز السفر"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "رقم الرخصة"
   },
   "email": {
-    "message": "Email"
+    "message": "البريد الإلكتروني"
   },
   "phone": {
-    "message": "Phone"
+    "message": "الهاتف"
   },
   "address": {
-    "message": "Address"
+    "message": "العنوان"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "مطلوب اشتراك بريميوم"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "هذه المِيزة متاحة فقط للعضوية المميزة."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "لقد حدث خطأ."
   },
   "error": {
-    "message": "Error"
+    "message": "خطأ"
   },
   "january": {
-    "message": "January"
+    "message": "يناير"
   },
   "february": {
-    "message": "February"
+    "message": "فبراير"
   },
   "march": {
-    "message": "March"
+    "message": "مارس"
   },
   "april": {
-    "message": "April"
+    "message": "أبريل"
   },
   "may": {
-    "message": "May"
+    "message": "مايو"
   },
   "june": {
-    "message": "June"
+    "message": "يونيو"
   },
   "july": {
-    "message": "July"
+    "message": "يوليو"
   },
   "august": {
-    "message": "August"
+    "message": "أغسطس"
   },
   "september": {
-    "message": "September"
+    "message": "سبتمبر"
   },
   "october": {
-    "message": "October"
+    "message": "أكتوبر"
   },
   "november": {
-    "message": "November"
+    "message": "نوفمبر"
   },
   "december": {
-    "message": "December"
+    "message": "ديسمبر"
   },
   "ex": {
-    "message": "ex.",
+    "message": "مثال.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Title"
+    "message": "اللقب"
   },
   "mr": {
-    "message": "Mr"
+    "message": "السيد"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "السيدة"
   },
   "ms": {
-    "message": "Ms"
+    "message": "آنسة"
   },
   "dr": {
-    "message": "Dr"
+    "message": "د"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "شهر انتهاء الصَّلاحِيَة"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "سنة انتهاء الصلاحية"
   },
   "select": {
-    "message": "Select"
+    "message": "تحديد"
   },
   "other": {
-    "message": "Other"
+    "message": "أخرى"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "توليد كلمة المرور"
   },
   "type": {
-    "message": "Type"
+    "message": "نوع"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "الاسم الأول"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "الاسم الأوسط"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "اسم العائلة"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "الاسم الكامل"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "العنوان 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "العنوان 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "العنوان 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "المدينة / البلدة"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "الولاية / المقاطعة"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "الرمز البريدي"
   },
   "country": {
-    "message": "Country"
+    "message": "الدولة"
   },
   "save": {
-    "message": "Save"
+    "message": "حفظ"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "إلغاء"
   },
   "delete": {
-    "message": "Delete"
+    "message": "حذف"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "المفضلة"
   },
   "edit": {
-    "message": "Edit"
+    "message": "تعديل"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "مفتاح المصادقة (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "المجلد"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "حقل مخصص جديد"
   },
   "value": {
-    "message": "Value"
+    "message": "القيمة"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "اسحب للفرز"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "نص"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "مخفي"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "قيمة منطقية"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "مرتبط",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "القيمة المرتبطة",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
-    "message": "Remove"
+    "message": "إزالة"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "الاسم مطلوب."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "تمت إضافة العنصر"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "تم تعديل العنصر"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "حذف العنصر"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "حذف المجلد"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "حذف المرفق"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "هل تريد حقاً أن ترسل إلى سلة المهملات؟"
   },
   "deletedItem": {
-    "message": "Sent item to trash"
+    "message": "إرسال العنصر إلى سلة المهملات"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "هل أنت متأكد من أنك تريد الكتابة فوق كلمة المرور الموجودة؟"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "الكتابة فوق اسم المستخدم"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "هل أنت متأكد من أنك تريد الكتابة فوق اسم المستخدم الموجود؟"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "لا يوجد مجلد",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "إضافة مجلد"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "تعديل المجلد"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "إعادة إنشاء كلمة مرور"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "نسخ كلمة المرور"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "نسخ الرابط"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "نسخ رمز التحقق (TOTP)"
   },
   "length": {
-    "message": "Length"
+    "message": "الطول"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "أحرف كبيرة (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "أحرف صغيرة (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "الأرقام (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "أحرف خاصة (!@#$%^&*)"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "عدد الكلمات"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "فاصل الكلمات"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "كبّر الحروف",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "تضمين الرقم"
   },
   "close": {
-    "message": "Close"
+    "message": "إغلاق"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "الحد الأدنى للأرقام"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "الحد الأدنى من الأحرف الخاصة",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "تجنب الأحرف الغامضة"
   },
   "searchCollection": {
-    "message": "Search Collection"
+    "message": "بحث عن مجموعة"
   },
   "searchFolder": {
-    "message": "Search Folder"
+    "message": "إبحث في المجلّد"
   },
   "searchFavorites": {
-    "message": "Search Favorites"
+    "message": "بحث في المفضلة"
   },
   "searchType": {
-    "message": "Search Type",
+    "message": "نوع البحث",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "إضافة مرفق جديد"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "تم حذف المرفق"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "هل أنت متأكد من أنك تريد حذف هذا المرفق؟"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "تم حفظ المرفق."
   },
   "file": {
-    "message": "File"
+    "message": "ملف"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "تحديد ملف."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "الحجم الأقصى للملف هو 500 ميجابايت."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "لا يمكنك استخدام هذه الميزة حتى تقوم بتحديث مفتاح التشفير الخاص بك."
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "تم تعديل المجلد"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "مجلد مضاف"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "هل أنت متأكد من حذف هذا المجلد؟"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "المجلد المحذوف"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "قم بالتسجيل أو إنشاء حساب جديد للوصول إلى خزنتك الآمنة."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "إنشاء حساب"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "تسجيل الدخول"
   },
   "submit": {
-    "message": "Submit"
+    "message": "إرسال"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "كلمة المرور الرئيسية"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "كلمة المرور الرئيسية هي كلمة المرور التي تستخدمها للوصول إلى خزانك. من المهم جدا ألا تنسى كلمة المرور الرئيسية. لا توجد طريقة لاسترداد كلمة المرور في حال نسيتها."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "يمكن أن يساعدك تلميح كلمة المرور الرئيسية في تذكر كلمة المرور الخاصة بك في حال نسيتها."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "إعادة إدخال كلمة المرور الرئيسية"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "تلميح كلمة المرور الرئيسية (اختياري)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "الإعدادات"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "تلميح كلمة المرور"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "أدخل عنوان البريد الإلكتروني لحسابك لتلقي تلميحات كلمة المرور الرئيسية."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "احصل على تلميح لكلمة المرور الرئيسية"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "عنوان البريد الإلكتروني مطلوب."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "عنوان البريد الإلكتروني غير صالح."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "كلمة المرور الرئيسية مطلوبة."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "يجب أن تكون كلمة المرور الرئيسية أكثر من 8 أحرف."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "لا يتطابق تأكيد كلمة المرور مع كلمة المرور."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "تم إنشاء حسابك الجديد! يمكنك الآن تسجيل الدخول."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "لقد أرسلنا لك رسالة بريد إلكتروني تحتوي على تلميحات كلمة المرور الرئيسية."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "حدث خطأ غير متوقع."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "معلومات العنصر"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "لا توجد عناصر لعرضها."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "إرسال رمز التحقق إلى بريدك الإلكتروني"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "إرسال الرمز"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "تم إرسال الرمز"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "رمز التحقق"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "يجب تأكيد هويتك للمتابعة."
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "رمز التحقق مطلوب."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "رمز التحقق غير صالح"
   },
   "continue": {
-    "message": "Continue"
+    "message": "متابعة"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "أدخل رمز التحقق من 6 أرقام من تطبيق المصادقة الخاص بك."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "أدخل رمز التحقق المكون من 6 أرقام الذي تم إرساله إلى $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -593,7 +593,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "تم إرسال رسالة التحقق إلى $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -602,213 +602,213 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "تذكرني"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "إرسال رمز التحقق إلى البريد الإلكتروني مرة أخرى"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "استخدام طريقة أخرى لتسجيل الدخول بخطوتين"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "أدخل YubiKey الخاص بك في منفذ USB في كمبيوترك، ثم لمس الزر."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "أدخل مفتاح الأمان الخاص بك في منفذ USB كمبيوترك، إذا كان يحتوي على زر، إلمسه."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "هل تفقد الوصول إلى جميع مزودي التحقق بعاملين؟ استخدم رمز الاسترداد الخاص بك لتعطيل جميع مزودي التحقق بعاملين من حسابك."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "رمز الاسترداد"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "تطبيق المصادقة"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "استخدام تطبيق مصادقة (مثل Authy أو Google Authenticator) لإنشاء رموز تحقق مستندة إلى الوقت.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "مفتاح أمان YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "استخدم YubiKey للوصول إلى حسابك. يعمل مع YubiKey 4 ،4 Nano ،4C، وأجهزة NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "التحقق باستخدام نظام الحماية الثنائي باستخدام تطبيق Duo Mobile أو الرسائل القصيرة أو المكالمة الهاتفية أو مفتاح الأمان U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "تحقق من خلال نظام الحماية الثنائي لمؤسستك باستخدام تطبيق Duo Mobile أو الرسائل القصيرة أو المكالمة الهاتفية أو مفتاح الأمان U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "استخدم أي مفتاح أمان ممكّن لـ WebAuthn للوصول إلى حسابك."
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "البريد الإلكتروني"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "سيتم إرسال رمز التحقق إليك بالبريد الإلكتروني."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "تسجيل الدخول غير متاح"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "تم تمكين تسجيل الدخول من خطوتين لهذا الحساب، ومع ذلك، لا يدعم هذا الجهاز أيًا من موفري تسجيل الدخول من خطوتين."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "الرجاء إضافة موفرين إضافيين يتم دعمهم بشكل أفضل عبر الأجهزة (مثل تطبيق المصادقة)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "خيارات تسجيل الدخول بخطوتين"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "البيئة المستضافة ذاتيا"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
+    "message": "حدد عنوان URL الأساسي لتثبيت Bitwarden المستضاف محليًا."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "بيئة مخصصة"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "للمستخدمين المتقدمين. يمكنك تحديد عنوان URL الأساسي لكل خدمة بشكل مستقل."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "رابط الخادم"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "رابط خادم API"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "رابط خادم مخزن الويب"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "رابط خادم الهوية"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "رابط خادم الإشعارات"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "رابط خادم الأيقونات"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "تم حفظ عناوين URL للبيئة."
   },
   "ok": {
-    "message": "Ok"
+    "message": "موافق"
   },
   "yes": {
-    "message": "Yes"
+    "message": "نعم"
   },
   "no": {
-    "message": "No"
+    "message": "لا"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "الكتابة فوق كلمة المرور"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "اعرف المزيد"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "الميزة غير متوفرة"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "الخروج"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "انتهت صلاحية جلسة الدخول."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "هل أنت متأكد من أنك تريد تسجيل الخروج؟"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "تسجيل الخروج"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "إضافة تسجيل دخول جديد"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "إضافة عنصر جديد"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "إضافة مجلد جديد"
   },
   "view": {
-    "message": "View"
+    "message": "عرض"
   },
   "account": {
-    "message": "Account"
+    "message": "حساب"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "تحميل..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "قفل الخزنة"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "مولّد كلمة المرور"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "اتصل بنا"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "الحصول على المساعدة"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "ملف تقرير عن الأخطاء"
   },
   "blog": {
-    "message": "Blog"
+    "message": "المدونة"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "تابعنا"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "مزامنة الخزنة"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "تغيير كلمة المرور الرئيسية"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "يمكنك تغيير كلمة المرور الرئيسية من خزنة الويب في bitwarden.com. هل تريد زيارة الموقع الآن؟"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "عبارة بصمة الإصبع",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "عبارة بصمة حسابك",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go to Web Vault"
+    "message": "اذهب لخزنة الوب"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "احصل على تطبيق الهاتف المحمول"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "الحصول على إضافة المتصفح"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "تم إكمال المزامنة"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "فشلت المزامنة"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your identity to continue."
+    "message": "خزنتك مقفلة. تحقق من هويتك للمتابعة."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "فتح"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "تم تسجيل الدخول كـ $EMAIL$ في $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -821,120 +821,120 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "كلمة المرور الرئيسية غير صالحة"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "تسجيل الدخول بخطوتين يجعل حسابك أكثر أمنا من خلال مطالبتك بالتحقق من تسجيل الدخول باستخدام جهاز آخر مثل مفتاح الأمان، تطبيق المصادقة، الرسائل القصيرة، المكالمة الهاتفية، أو البريد الإلكتروني. يمكن تمكين تسجيل الدخول بخطوتين على خزنة الويب bitwarden.com. هل تريد زيارة الموقع الآن؟"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "تسجيل الدخول بخطوتين"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "مهلة الخزنة"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "اختر وقت انتهاء مهلة خزنتك وقم بتنفيذ الإجراء المحدد."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "فورًا"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 ثوانِ"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 ثانية"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 ثانية"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 دقيقة"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "دقيقتان"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 دقائق"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 دقيقة"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 دقيقة"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "ساعة واحدة"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 ساعات"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "في وضع خمول النظام"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "في وضع سكون النظام"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "في وضع قفل النظام"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "عند إعادة التشغيل"
   },
   "never": {
-    "message": "Never"
+    "message": "أبداً"
   },
   "security": {
-    "message": "Security"
+    "message": "الأمان"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "مسح الحافظة",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "مسح القيم المنسوخة تلقائيًا من حافظتك.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Disable Website Icons"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "تصغير إلى أيقونة شريط المهام"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "عند تصغير النافذة، أظهر رمزًا في شريط المهام بدلاً من ذلك."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "تصغير إلى شريط القوائم"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "عند تصغير النافذة، أظهر رمزًا في شريط القوائم بدلاً من ذلك."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "أغلق إلى أيقونة شريط المهام"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "عند غلق النافذة، أظهر رمزًا في شريط المهام بدلاً من ذلك."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "إغلاق إلى شريط القوائم"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "عند إغلاق النافذة، إظهار أيقونة في شريط القوائم بدلاً من ذلك."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "تمكين أيقونة شريط المهام"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "إظهار أيقونة دائماً في شريط المهام."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "تشغيل لأيقونة المهام"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "عندما يبدأ التطبيق لأول مرة، فقط إظهار أيقونة في شريط مهام النظام."
   },
   "startToMenuBar": {
     "message": "Start to menu bar"
@@ -946,7 +946,7 @@
     "message": "Start automatically on login"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Start the Bitwarden desktop application automatically on login."
   },
   "alwaysShowDock": {
     "message": "Always show in the Dock"
@@ -961,34 +961,34 @@
     "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
-    "message": "Language"
+    "message": "اللّغة"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "قم بتغيير اللغة التي يستخدمها التطبيق. مطلوب إعادة التشغيل."
   },
   "theme": {
-    "message": "Theme"
+    "message": "المظهر"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "تغيير سمة لون التطبيق."
   },
   "dark": {
-    "message": "Dark",
+    "message": "داكن",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "فاتح",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "نسخ",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check for Updates…"
+    "message": "تحقق من التحديثات…"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "الإصدار $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -997,10 +997,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart to Update"
+    "message": "إعادة التشغيل للتحديث"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
+    "message": "الإصدار $VERSION_NUM$ جاهز للتثبيت. يجب إعادة تشغيل التطبيق لإكمال التثبيت. هل تريد إعادة التشغيل والتحديث الآن؟",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1009,87 +1009,87 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "التحديث متوفر"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "تم العثور على تحديث. هل تريد تحميله الآن؟"
   },
   "restart": {
-    "message": "Restart"
+    "message": "إعادة التشغيل"
   },
   "later": {
-    "message": "Later"
+    "message": "لاحقاً"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "لا توجد تحديثات متوفرة حاليا. أنت تستخدم أحدث إصدار."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "خطأ فى التحديث"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "غير معروف"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "نسخ اسم المستخدم"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "نسخ الرقم",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "نسخ رمز الأمان",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "العضوية المميزة"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "إدارة العضوية"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "يمكنك إدارة عضويتك على مقطع ويب bitwarden.com. هل تريد زيارة الموقع الآن؟"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "تحديث العضوية"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "أنت لست حاليا عضوا مميزا."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "قم بالتسجيل للحصول على عضوية مميزة واحصل على:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB encrypted storage for file attachments."
+    "message": "1 جيغابايت وحدة تخزين مشفرة لمرفقات الملفات."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "خيارات تسجيل الدخول الإضافية من خطوتين مثل YubiKey و FIDO U2F و Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "نظافة كلمة المرور، صحة الحساب، وتقارير خرق البيانات للحفاظ على سلامة خزنتك."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "مورد رمز التحقق (2FA) لتسجيل الدخول في خزنتك."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "أولوية دعم العملاء."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "جميع الميزات المميزة المستقبلية. المزيد قادم قريبا!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "شراء العضوية المميزة"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "يمكنك شراء العضوية المتميزة على bitwarden.com على خزانة الويب. هل تريد زيارة الموقع الآن؟"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "أنت عضو مميز!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting Bitwarden."
+    "message": "شكرا لك على دعم Bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ /year!",
+    "message": "الكل فقط بـ $PRICE$ /سنة!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1098,43 +1098,43 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "اكتمل التحديث"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "سجل كلمة المرور"
   },
   "clear": {
-    "message": "Clear",
+    "message": "مسح",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "لا توجد كلمات مرور للعرض."
   },
   "undo": {
-    "message": "Undo"
+    "message": "تراجع"
   },
   "redo": {
-    "message": "Redo"
+    "message": "إعادة"
   },
   "cut": {
-    "message": "Cut",
+    "message": "قص",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "لصق",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "تحديد الكل"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "التكبير"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "التصغير"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "إعادة تعيين التكبير/التصغير غلى الوضع الافتراضي"
   },
   "toggleFullScreen": {
     "message": "Toggle Full Screen"
@@ -1292,208 +1292,208 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "مطلوب عنوان hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "الرابط غير صالح"
   },
   "done": {
-    "message": "Done"
+    "message": "تم"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "تم حفظ ملف تعريف الارتباط الخاص بإمكانية الوصول!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "لم يحفظ ملف تعريف الارتباط الخاص بإمكانية الوصول"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "تحذير",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "تأكيد تصدير الخزنة"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "يحتوي هذا التصدير على بيانات خزنتك بتنسيق غير مشفر. لا يجب عليك تخزين أو إرسال الملف الذي تم تصديره عبر قنوات غير آمنة (مثل البريد الإلكتروني). احذفه مباشرة بعد انتهائك من استخدامه."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "يقوم هذا التصدير بتشفير بياناتك باستخدام مفتاح تشفير حسابك. إذا قمت بتدوير مفتاح تشفير حسابك يجب عليك التصدير مرة أخرى لأنك لن تتمكن من فك تشفير ملف التصدير هذا."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "مفاتيح تشفير الحساب فريدة من نوعها لكل حساب مستخدم Bitwarden، لذلك لا يمكنك استيراد تصدير مشفر إلى حساب آخر."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "أنت لا تنتمي إلى أي مؤسسة. تسمح لك المؤسسات بمشاركة العناصر بأمان مع مستخدمين آخرين."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "لا توجد مجموعات لعرضها."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "المالك"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "من يملك هذا العنصر؟"
   },
   "strong": {
-    "message": "Strong",
+    "message": "قوية",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "جيدة",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "ضعيفة",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "كلمة المرور الرئيسية الضعيفة"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "كلمة المرور الرئيسية التي اخترتها ضعيفة. يجب عليك استخدام كلمة مرور رئيسية قوية (أو عبارة مرور) لحماية حساب Bitwarden الخاص بك بشكل صحيح. هل أنت متأكد من أنك تريد استخدام كلمة المرور الرئيسية هذه؟"
   },
   "pin": {
-    "message": "PIN",
+    "message": "رقم التعريف الشخصي",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "فتح باستخدام رمز PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "تعيين رمز PIN الخاص بك لإلغاء قفل Bitwarden. سيتم إعادة تعيين إعدادات PIN الخاصة بك إذا قمت بتسجيل الخروج بالكامل من التطبيق."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "رمز PIN مطلوب."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "رمز PIN غير صالح."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "فتح مع Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "تحقق من Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "فتح بواسطة معرف اللمس"
   },
   "touchIdConsentMessage": {
-    "message": "unlock your vault"
+    "message": "فتح خزنتك"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "قفل مع كلمة المرور الرئيسية عند إعادة تشغيل"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "التفضيلات"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "تمكين أيقونة شريط القائمة"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "إظهار أيقونة دائماً في شريط القائمة."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "إخفاء إلى شريط القائمة"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "يجب عليك تحديد مجموعة واحدة على الأقل."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "لقد قمت بالترقية إلى البريميوم."
   },
   "restore": {
-    "message": "Restore"
+    "message": "استعادة"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "يمكنك إدارة اشتراكك من متجر التطبيق. هل تريد زيارة متجر التطبيقات الآن؟"
   },
   "legal": {
-    "message": "Legal",
+    "message": "قانوني",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "اتفاقية خدمة المستخدم"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "سياسة الخصوصيّة"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "هل أنت متأكد من أنك تريد المغادرة؟ إذا غادرت الآن فلن يتم حفظ معلوماتك الحالية."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "تغييرات غير محفوظة"
   },
   "clone": {
-    "message": "Clone"
+    "message": "استنساخ"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "واحدة أو أكثر من سياسات المؤسسة تؤثر على إعدادات المولدات الخاصة بك."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "إجراء مهلة الخزنة"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "الخزنة المقفلة تتطلب إعادة إدخال كلمة المرور الرئيسية الخاصة بك للوصول إليها مرة أخرى."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "تسجيل الخروج من الخزنة يتطلب إعادة المصادقة للوصول إليها مرة أخرى."
   },
   "lock": {
-    "message": "Lock",
+    "message": "قفل",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "سلة المهملات",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search Trash"
+    "message": "البحث عن سلة المهملات"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "حذف العنصر بشكل دائم"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "هل أنت متأكد من أنك تريد حذف هذا العنصر بشكل دائم؟"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "تم حذف العنصر بشكل دائم"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "استعادة العنصر"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "هل أنت متأكد من أنك تريد استعادة هذا العنصر؟"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "العنصر المستعاد"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "حُذف نهائيًا"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "سيؤدي تسجيل الخروج إلى إزالة جميع إمكانية الوصول إلى خزنتك ويتطلب المصادقة عبر الإنترنت بعد انتهاء المهلة. هل أنت متأكد من أنك تريد استخدام هذا الإعداد؟"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "تأكيد إجراء المهلة"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "تسجيل الدخول الفردي للمؤسسة"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "تعيين كلمة المرور الرئيسية"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "من أجل إكمال تسجيل الدخول باستخدام SSO، يرجى تعيين كلمة مرور رئيسية للوصول وحماية خزنتك."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "كلمة المرور الرئيسية الجديدة"
   },
   "confirmNewMasterPass": {
     "message": "Confirm New Master Password"
@@ -1547,7 +1547,7 @@
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Allow browser integration"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Browser integration is used for biometrics in browser."
@@ -1568,7 +1568,7 @@
     "message": "Require verification for browser integration"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Add an additional layer of security by requiring fingerprint phrase confirmation when establishing a link between your desktop and browser. This requires user action and verification each time a connection is created."
   },
   "approve": {
     "message": "Approve"
@@ -1652,52 +1652,52 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "ملاحظات خاصة حول هذا الإرسال.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "إرسال رابط",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "إرسال رابط",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "عند الوصول إلى الإرسال، إخفاء النص بشكل افتراضي",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "إنشاء إرسال",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "تم تعديل الإرسال",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "إرسال محذوف",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "كلمة المرور الجديدة"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "ما هو نوع الإرسال هذا؟",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "إنشاء إرسال",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "النص الذي تريد إرساله."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "الملف الذي تريد إرساله."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ أيام",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1706,62 +1706,62 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "يوم واحد"
   },
   "custom": {
-    "message": "Custom"
+    "message": "مُخصّص"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "هل أنت متأكد من أنك تريد حذف هذا الإرسال؟",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "نسخ رابط إرسال إلى الحافظة",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "نسخ الرابط لمشاركة هذا الإرسال إلى الحافظة الخاصة بي عند الحفظ."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "إرسال ملغى",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "بسبب سياسة المؤسسة، يمكنك فقط حذف إرسال موجود بالفعل.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "نسخ الرابط"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "معطّل"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "تم بلوغ الحد الأقصى لعدد الدخول"
   },
   "expired": {
-    "message": "Expired"
+    "message": "منتهية الصلاحية"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "في انتظار الحذف"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "مصادقة WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "إخفاء عنوان البريد الإلكتروني الخاص بي من المستلمين."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "واحدة أو أكثر من سياسات المؤسسة تؤثر على خيارات إرسال الخاص بك."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "التحقق من البريد الإلكتروني مطلوب"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "يجب عليك التحقق من بريدك الإلكتروني لاستخدام هذه الميزة."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "إعادة توجيه كلمة المرور الرئيسية"
   },
   "passwordConfirmation": {
     "message": "Master password confirmation"

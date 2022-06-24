@@ -401,16 +401,16 @@
     "message": "Μήκος"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Κεφαλαία (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Πεζά (α-ω)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Αριθμοί (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Ειδικοί Χαρακτήρες (!@#$%^&*)"
   },
   "numWords": {
     "message": "Αριθμός Λέξεων"
@@ -894,11 +894,11 @@
     "message": "Αυτόματη εκκαθάριση αντιγραμμένων τιμών προχείρου.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Απενεργοποίηση Εικονιδίων Ιστοσελίδας"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Τα εικονίδια ιστοσελίδων παρέχουν μια αναγνωρίσιμη εικόνα δίπλα σε κάθε στοιχείο σύνδεσης της λίστας σας."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableMinToTray": {
     "message": "Ελαχιστοποίηση σε Εικονίδιο Δίσκου"
@@ -1278,34 +1278,34 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Φόρτωση cookie προσβασιμότητας"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Εγγραφείτε ως χρήστης προσβασιμότητας στο",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Αντιγράψτε και επικολλήστε τον σύνδεσμο που στάλθηκε στο email σας παρακάτω"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Εισαγάγετε τη διεύθυνση URL για τη φόρτωση του cookie προσβασιμότητας για το hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "Απαιτείται διεύθυνση URL hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Μη έγκυρο Url"
   },
   "done": {
-    "message": "Done"
+    "message": "Εγινε"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Το cookie προσβασιμότητας αποθηκεύτηκε!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Δεν έχει αποθηκευτεί cookie προσβασιμότητας"
   },
   "warning": {
     "message": "ΠΡΟΕΙΔΟΠΟΙΗΣΗ",
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "Ξεκλειδώστε το vault σας"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Μην προτρέξετε για τα Windows Hello κατά την εκκίνηση."
+  "autoPromptWindowsHello": {
+    "message": "Ask for Windows Hello on launch"
   },
-  "noAutoPromptTouchId": {
-    "message": "Να μην ζητηθεί το Touch ID κατά την εκκίνηση."
+  "autoPromptTouchId": {
+    "message": "Ask for Touch ID on launch"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Κλείδωμα με τον κύριο κωδικό πρόσβασης κατά την επανεκκίνηση"
@@ -1553,7 +1553,7 @@
     "message": "Η ενσωμάτωση του προγράμματος περιήγησης χρησιμοποιείται για βιομετρικά στοιχεία στο πρόγραμμα περιήγησης."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Η ενσωμάτωση του περιηγητή δεν υποστηρίζεται"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Δυστυχώς η ενσωμάτωση του προγράμματος περιήγησης υποστηρίζεται μόνο στην έκδοση Mac App Store για τώρα."
@@ -1562,7 +1562,7 @@
     "message": "Δυστυχώς η ενσωμάτωση του προγράμματος περιήγησης, δεν υποστηρίζεται στην έκδοση Windows Store."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Δυστυχώς, η ενσωμάτωση του browser δεν υποστηρίζεται αυτήν τη στιγμή στην έκδοση linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Απαιτείται επαλήθευση για ολοκλήρωση περιηγητή"
@@ -1840,7 +1840,7 @@
     "message": "Έχετε φύγει από τον οργανισμό."
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Σφάλμα Key Connector: βεβαιωθείτε ότι το Key Connector είναι διαθέσιμο και λειτουργεί σωστά."
   },
   "lockAllVaults": {
     "message": "Κλείδωμα Όλων Των Vault"
@@ -1888,10 +1888,10 @@
     }
   },
   "locked": {
-    "message": "Locked"
+    "message": "Κλειδωμένο"
   },
   "unlocked": {
-    "message": "Unlocked"
+    "message": "Ξεκλείδωτο"
   },
   "generator": {
     "message": "Γεννήτρια"
@@ -1937,19 +1937,19 @@
     "message": "Υπηρεσία"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Όλα τα Vaults"
   },
   "searchOrganization": {
-    "message": "Search Organization"
+    "message": "Αναζήτηση Οργανισμού"
   },
   "searchMyVault": {
-    "message": "Search My Vault"
+    "message": "Αναζήτηση στο Vault"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Προωθημένο Email Alias"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Δημιουργήστε ένα alias email με μια εξωτερική υπηρεσία προώθησης."
   },
   "hostname": {
     "message": "Hostname",
@@ -1959,6 +1959,6 @@
     "message": "API Access Token"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "Kλειδί API"
   }
 }

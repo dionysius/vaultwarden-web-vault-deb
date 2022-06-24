@@ -728,7 +728,7 @@
     "message": "Вы действительно хотите выйти?"
   },
   "logOut": {
-    "message": "Выйти"
+    "message": "Выход"
   },
   "addNewLogin": {
     "message": "Добавить новый логин"
@@ -887,18 +887,18 @@
     "message": "Безопасность"
   },
   "clearClipboard": {
-    "message": "Очистка буфера обмена",
+    "message": "Очистить буфер обмена",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Автоматически очищать скопированные значения в вашем буфере обмена.",
+    "message": "Автоматически удалять скопированные значения из буфера обмена.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Отключить значки веб-сайтов"
+  "enableFavicon": {
+    "message": "Показать значки веб-сайтов"
   },
-  "disableFaviconDesc": {
-    "message": "Значки веб-сайтов отображаются рядом с каждым элементом в вашем хранилище."
+  "faviconDesc": {
+    "message": "Отображать узнаваемое изображение рядом с каждым логином."
   },
   "enableMinToTray": {
     "message": "Сворачивать в область уведомлений"
@@ -1268,7 +1268,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Экспорт хранилища"
+    "message": "Экспортировать хранилище"
   },
   "fileFormat": {
     "message": "Формат файла"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "разблокировать ваше хранилище"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Не запрашивать Windows Hello при запуске."
+  "autoPromptWindowsHello": {
+    "message": "Запрашивать Windows Hello при запуске"
   },
-  "noAutoPromptTouchId": {
-    "message": "Не запрашивать Touch ID при запуске."
+  "autoPromptTouchId": {
+    "message": "Запрашивать Touch ID при запуске"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске"
@@ -1440,10 +1440,10 @@
     "message": "Действие по тайм-ауту хранилища"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Заблокированное хранилище потребует повторного ввода мастер-пароля для получения доступа к нему."
+    "message": "Чтобы снова получить доступ к заблокированному хранилищу, нужно повторно ввести мастер-пароль."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Выход из хранилища потребует повторную аутентификацию для получения доступа к нему."
+    "message": "Чтобы получить доступ к хранилищу после выхода из него требуется повторная авторизация."
   },
   "lock": {
     "message": "Заблокировать",
@@ -1547,7 +1547,7 @@
     "message": "Условия предоставления услуг и Политика конфиденциальности не были подтверждены."
   },
   "enableBrowserIntegration": {
-    "message": "Включить интеграцию с браузером"
+    "message": "Разрешить интеграцию с браузером"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Интеграция с браузером используется для биометрии в браузере."
@@ -1568,7 +1568,7 @@
     "message": "Требовать верификацию для интеграции с браузером"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Включите дополнительный уровень безопасности, используя проверку отпечатка фразы при установлении соединения между компьютером и браузером. Когда эта функция включена, она требует участия пользователя и верификации каждый раз при установлении соединения."
+    "message": "Добавьте дополнительный уровень безопасности, требуя подтверждения отпечатка фразы при установлении связи между компьютером и браузером. Это потребует действий пользователя и подтверждения при каждом создании соединения."
   },
   "approve": {
     "message": "Принять"

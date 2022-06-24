@@ -894,11 +894,11 @@
     "message": "Автоматично очищати скопійовані значення з буфера обміну.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "Вимкнути піктограми вебсайтів"
+  "enableFavicon": {
+    "message": "Показувати піктограми вебсайтів"
   },
-  "disableFaviconDesc": {
-    "message": "Впізнавані піктограми вебсайтів додаються біля кожного запису вашого сховища."
+  "faviconDesc": {
+    "message": "Показувати впізнаване зображення біля кожного запису."
   },
   "enableMinToTray": {
     "message": "Згортати до системного лотка"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "розблокувати сховище"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "Не запитувати Windows Hello під час запуску."
+  "autoPromptWindowsHello": {
+    "message": "Ініціювати Windows Hello під час запуску"
   },
-  "noAutoPromptTouchId": {
-    "message": "Не запитувати Touch ID під час запуску."
+  "autoPromptTouchId": {
+    "message": "Ініціювати Touch ID під час запуску"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"

@@ -126,7 +126,7 @@
     "message": "複製到剪貼簿後最小化"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "複製項目資料到剪貼簿後最小化。"
+    "message": "複製項目資料到剪貼簿後最小化應用程式。"
   },
   "toggleVisibility": {
     "message": "切換可見性"
@@ -833,7 +833,7 @@
     "message": "密碼庫逾時時間"
   },
   "vaultTimeoutDesc": {
-    "message": "選擇密碼庫多久之後才會逾時並執行選取動作。"
+    "message": "選擇密碼庫何時執行密碼庫逾時動作。"
   },
   "immediately": {
     "message": "立即"
@@ -894,11 +894,11 @@
     "message": "自動清除剪貼簿中複製的值。",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
-  "disableFavicon": {
-    "message": "停用網站圖示"
+  "enableFavicon": {
+    "message": "顯示網站圖示"
   },
-  "disableFaviconDesc": {
-    "message": "在您密碼庫的每個登入資料旁顯示一個可辨識的圖示。"
+  "faviconDesc": {
+    "message": "在每個登入資料旁顯示一個可辨識的圖片。"
   },
   "enableMinToTray": {
     "message": "最小化至系統匣圖示"
@@ -946,7 +946,7 @@
     "message": "登入時自動啟動"
   },
   "openAtLoginDesc": {
-    "message": "登入時自動啟動 Bitwarden 桌面應用程式。"
+    "message": "登入後自動啟動 Bitwarden 桌面應用程式。"
   },
   "alwaysShowDock": {
     "message": "總是在 Dock 中顯示"
@@ -1381,11 +1381,11 @@
   "touchIdConsentMessage": {
     "message": "解鎖您的密碼庫"
   },
-  "noAutoPromptWindowsHello": {
-    "message": "啟動時不要提示使用 Windows Hello。"
+  "autoPromptWindowsHello": {
+    "message": "啟動時詢問 Windows Hello"
   },
-  "noAutoPromptTouchId": {
-    "message": "啟動時不要提示使用 Touch ID。"
+  "autoPromptTouchId": {
+    "message": "啟動時詢問 Touch ID"
   },
   "lockWithMasterPassOnRestart": {
     "message": "重啟後使用主密碼鎖定"
@@ -1394,7 +1394,7 @@
     "message": "偏好設定"
   },
   "enableMenuBar": {
-    "message": "啟用選單列圖示"
+    "message": "顯示選單列圖示"
   },
   "enableMenuBarDesc": {
     "message": "總是在選單列中顯示圖示。"
@@ -1440,10 +1440,10 @@
     "message": "密碼庫逾時動作"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "鎖定密碼庫後需要重新輸入主密碼才能再次存取。"
+    "message": "需要主密碼或其他解鎖方式才能再次存取密碼庫。"
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "登出密碼庫後需要重新驗證才能再次存取。"
+    "message": "需要重新驗證才能再次存取密碼庫。"
   },
   "lock": {
     "message": "鎖定",
@@ -1547,7 +1547,7 @@
     "message": "尚未接受服務條款與隱私權保護政策。"
   },
   "enableBrowserIntegration": {
-    "message": "開啟瀏覽器整合"
+    "message": "允許瀏覽器整合"
   },
   "enableBrowserIntegrationDesc": {
     "message": "瀏覽器整合用於在瀏覽器中提供生物特徵辨識。"
@@ -1568,7 +1568,7 @@
     "message": "要求瀏覽器整合驗證"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "在您的桌面和瀏覽器閒建立連綫時，要求驗證指紋短語以實現一個額外的安全層。此選項啓用後，每次建立連綫都需要使用者干預和驗證。"
+    "message": "在您的桌面和瀏覽器閒建立連綫時，透過要求指紋短語確認，以添加一個額外的安全層。每次建立連綫都需要使用者干預和驗證。"
   },
   "approve": {
     "message": "核准"
