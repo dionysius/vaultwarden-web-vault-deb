@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Nomainīt tīmekļa glabātavā izmantoto valodu."
   },
-  "disableIcons": {
-    "message": "Atspējot tīmekļa vietņu ikonas"
+  "enableFavicon": {
+    "message": "Rādīt vietņu ikonas"
   },
-  "disableIconsDesc": {
-    "message": "Tīmekļa vietņu ikonas nodrošina atpazīstamu attēlu pie katra glabātavas pieteikšanās vienuma."
+  "faviconDesc": {
+    "message": "Attēlot atpazīstamu attēlu pie katra pierakstīšanās vienuma."
   },
   "enableGravatars": {
     "message": "Iespējot Gravatārus",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Izmantot no gravatar.com ielādētus avatāra attēlus."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Iespējots"
   },
+  "activate": {
+    "message": "Activate"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Atspējot"
+  },
+  "deactivate": {
+    "message": "Deactivate"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Šis divpakāpju pierakstīšanās nodrošinātājs ir iespējots kontā."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Vai tiešām noņemt šo lietotāju?"
   },
+  "deactivateUserConfirmation": {
+    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+  },
+  "activateUserConfirmation": {
+    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Uzmanību! Šim lietotājam ir nepieciešams Key Connector, lai pārvaldītu šifrēšanu. Lietotāja noņemšana no apvienības neatgriezeniski atspējos viņa kontu. Šī darbība nevar tikt atdarīta. Vai turpināt?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Noņemts lietotājs $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Deactivated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Activated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Deactivate user $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Activate user $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Atspējots"
   },
+  "deactivated": {
+    "message": "Deactivated"
+  },
   "sendLink": {
     "message": "\"Send\" saite",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Vai tiešām noņemt šos lietotājus? Tas var aizņemt dažas sekundes un nevar tikt pārtraukts vai atcelts."
   },
+  "deactivateUsersWarning": {
+    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
+  "activateUsersWarning": {
+    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
   "theme": {
     "message": "Izskats"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Veiksmīgi noņemts"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Deactivated successfully"
+  },
+  "bulkActivatedMessage": {
+    "message": "Activated successfully"
+  },
   "bulkFilteredMessage": {
     "message": "Nav iekļauts, tādēļ nav piemērojams šai darbībai."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Noņemt lietotājus"
+  },
+  "deactivateUsers": {
+    "message": "Deactivate Users"
+  },
+  "activateUsers": {
+    "message": "Activate Users"
   },
   "error": {
     "message": "Kļūda"

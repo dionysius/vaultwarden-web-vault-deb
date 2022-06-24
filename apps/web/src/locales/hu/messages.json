@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "A webes széf nyelvének megváltoztatása."
   },
-  "disableIcons": {
-    "message": "Webhely ikonok letiltása"
+  "enableFavicon": {
+    "message": "Webhely ikonok megjelenítése"
   },
-  "disableIconsDesc": {
-    "message": "A webhelyek ikonjai felismerhető ikonként jelennek meg a széf összes eleme mellett."
+  "faviconDesc": {
+    "message": "Felismerhető kép megjelenítése minden bejelentkezés mellett."
   },
   "enableGravatars": {
     "message": "Gravatarok engedélyezése",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Avatar képek használata a gravatar.com webhelyről."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Engedélyezve"
   },
+  "activate": {
+    "message": "Bekapcsolás"
+  },
   "premium": {
     "message": "Prémium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Letiltás"
+  },
+  "deactivate": {
+    "message": "Kikapcsolás"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Ez a kétlépéses bejelentkezés szolgáltató már engedélyezett a fiókon."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Biztosan eltávolításra kerüljön ez a felhasználó?"
   },
+  "deactivateUserConfirmation": {
+    "message": "A tag a továbikban nem érheti el a szervezetet, de elérheti az egyedi széfjüket."
+  },
+  "activateUserConfirmation": {
+    "message": "Biztosan szeretnénk bekapcsolni ezt a felhasználót hozzáférési joggal a szervezethez?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Figyelem! Ennek a felhasználónak kulcskapcsolóra van szüksége a titkosítás kezeléséhez. Ha eltávolítjuk ezt a felhasználót a szervezetből, azzal véglegesen letiltjuk a fiókját. Ez a művelet nem visszavonható. Folytatás?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "$ID$ azonosítójú felhasználó eltávolításra került.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "$ID$ felhasználó kikapcsolásra került.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "$ID$ felhasználó bekapcsolásra került.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Kikapcsolásra kerüljön $ID$ felhasználó?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Bekapcsolásra kerüljön $ID$ felhasználó?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Letiltva"
   },
+  "deactivated": {
+    "message": "A kikapcsolás megtörtént."
+  },
   "sendLink": {
     "message": "Send hivatkozás",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Biztosan eltávolításra kerüljenek a következő felhasználók? A folyamat néhány másodpercet vehet igénybe és nem szakítható meg vagy törölhető."
   },
+  "deactivateUsersWarning": {
+    "message": "Biztosan kikapcsolásra kerüljenek a következő tagok? Többé nem férnek hozzá a szervezethez de továbbra is hozzáférhetnek az egyedi széfjükhöz. A folyamat befejezése néhány másodpercet vehet igénybe és nem szakítható meg vagy nem vonható vissza."
+  },
+  "activateUsersWarning": {
+    "message": "Biztosan bekapcsolásra kerüljenek a következő tagok, lehetővé téve számukra a szervezet elérését? A folyamat befejezése néhány másodpercet vehet igénybe, és nem szakítható meg vagy nem vonható vissza."
+  },
   "theme": {
     "message": "Téma"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Az eltávolítás sikeres volt."
   },
+  "bulkDeactivatedMessage": {
+    "message": "A kikapcsolás sikeresen megtörtént."
+  },
+  "bulkActivatedMessage": {
+    "message": "A bekapcsolás sikeresen megtörtént."
+  },
   "bulkFilteredMessage": {
     "message": "Kizárva, nem alkalmazható erre a műveletre."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Felhasználók eltávolítása"
+  },
+  "deactivateUsers": {
+    "message": "Felhasználók kikapcsolása"
+  },
+  "activateUsers": {
+    "message": "Felhasználók bekapcsolása"
   },
   "error": {
     "message": "Hiba"

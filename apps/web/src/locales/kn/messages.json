@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "ವೆಬ್ ವಾಲ್ಟ್ ಬಳಸುವ ಭಾಷೆಯನ್ನು ಬದಲಾಯಿಸಿ."
   },
-  "disableIcons": {
-    "message": "ವೆಬ್‌ಸೈಟ್ ಚಿಹ್ನೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableIconsDesc": {
-    "message": "ವೆಬ್‌ಸೈಟ್ ಐಕಾನ್‌ಗಳು ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿರುವ ಪ್ರತಿ ಲಾಗಿನ್ ಐಟಂನ ಪಕ್ಕದಲ್ಲಿ ಗುರುತಿಸಬಹುದಾದ ಚಿತ್ರವನ್ನು ಒದಗಿಸುತ್ತದೆ."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableGravatars": {
     "message": "Gravatars ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Gravatar.com ನಿಂದ ಲೋಡ್ ಮಾಡಲಾದ ಅವತಾರ್ ಚಿತ್ರಗಳನ್ನು ಬಳಸಿ."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "ಸಕ್ರಿಯಗೊಳಿಸಿದೆ"
   },
+  "activate": {
+    "message": "Activate"
+  },
   "premium": {
     "message": "ಪ್ರೀಮಿಯಮ್",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "ನಿಷ್‌ಕ್ರಿಯೆಗೊಳಿಸಿ"
+  },
+  "deactivate": {
+    "message": "Deactivate"
   },
   "twoStepLoginProviderEnabled": {
     "message": "ಈ ಎರಡು ಹಂತದ ಲಾಗಿನ್ ಒದಗಿಸುವವರನ್ನು ನಿಮ್ಮ ಖಾತೆಯಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "ಈ ಬಳಕೆದಾರರನ್ನು ತೆಗೆದುಹಾಕಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
+  "deactivateUserConfirmation": {
+    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+  },
+  "activateUserConfirmation": {
+    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "ತೆಗೆದುಹಾಕಲಾದ ಬಳಕೆದಾರ $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Deactivated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Activated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Deactivate user $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Activate user $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ"
   },
+  "deactivated": {
+    "message": "Deactivated"
+  },
   "sendLink": {
     "message": "ಲಿಂಕ್ ಕಳುಹಿಸಿ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "ಕೆಳಗಿನ ಬಳಕೆದಾರರನ್ನು ತೆಗೆದುಹಾಕಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ? ಪ್ರಕ್ರಿಯೆಯು ಪೂರ್ಣಗೊಳ್ಳಲು ಕೆಲವು ಸೆಕೆಂಡುಗಳು ತೆಗೆದುಕೊಳ್ಳಬಹುದು ಮತ್ತು ಅದನ್ನು ಅಡ್ಡಿಪಡಿಸಲು ಅಥವಾ ರದ್ದುಗೊಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ."
   },
+  "deactivateUsersWarning": {
+    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
+  "activateUsersWarning": {
+    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
   "theme": {
     "message": "Theme"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "ಯಶಸ್ವಿಯಾಗಿ ತೆಗೆದುಹಾಕಲಾಗಿದೆ"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Deactivated successfully"
+  },
+  "bulkActivatedMessage": {
+    "message": "Activated successfully"
+  },
   "bulkFilteredMessage": {
     "message": "ಹೊರಗಿಡಲಾಗಿದೆ, ಈ ಕ್ರಿಯೆಗೆ ಅನ್ವಯಿಸುವುದಿಲ್ಲ."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "ಬಳಕೆದಾರರನ್ನು ತೆಗೆದುಹಾಕಿ"
+  },
+  "deactivateUsers": {
+    "message": "Deactivate Users"
+  },
+  "activateUsers": {
+    "message": "Activate Users"
   },
   "error": {
     "message": "ದೋಷ"

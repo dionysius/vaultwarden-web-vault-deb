@@ -437,7 +437,7 @@
     "message": "Valv"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "Valvobjekt"
   },
   "moveSelectedToOrg": {
     "message": "Flytta valda till organisation"
@@ -1137,13 +1137,13 @@
     "message": "Alternativ"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Inställningar"
   },
   "preferencesDesc": {
-    "message": "Customize your web vault experience."
+    "message": "Anpassa din upplevelse för webbvalvet."
   },
   "preferencesUpdated": {
-    "message": "Preferences updated"
+    "message": "Inställningar uppdaterade"
   },
   "language": {
     "message": "Språk"
@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Ändra språket som används i webbvalvet."
   },
-  "disableIcons": {
-    "message": "Inaktivera webbplatsikoner"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableIconsDesc": {
-    "message": "Webbplatsikoner ger en igenkännbar ikon bredvid varje inloggningsobjekt i ditt valv."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableGravatars": {
     "message": "Aktivera gravatarer",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Använd avatarbilder hämtade från gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Aktiverad"
   },
+  "activate": {
+    "message": "Activate"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Inaktivera"
+  },
+  "deactivate": {
+    "message": "Deactivate"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Denna metod för tvåstegsverifiering är aktiverad på ditt konto."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Är du säker på att du vill ta bort denna användare?"
   },
+  "deactivateUserConfirmation": {
+    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+  },
+  "activateUserConfirmation": {
+    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Tog bort användaren $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Deactivated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Activated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Deactivate user $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Activate user $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3564,11 +3612,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Redigerad Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Raderad Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSend": {
@@ -3587,7 +3635,7 @@
     "message": "Raderingsdatum"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Denna Send kommer att raderas permanent på angivet datum och klockslag.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -3617,6 +3665,9 @@
   },
   "disabled": {
     "message": "Inaktiverad"
+  },
+  "deactivated": {
+    "message": "Deactivated"
   },
   "sendLink": {
     "message": "Länk till Send",
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Är du säker på att du vill ta bort följande användare? Processen kan ta några sekunder att slutföra och kan inte pausas eller avbrytas."
   },
+  "deactivateUsersWarning": {
+    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
+  "activateUsersWarning": {
+    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
   "theme": {
     "message": "Tema"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Tog bort"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Deactivated successfully"
+  },
+  "bulkActivatedMessage": {
+    "message": "Activated successfully"
+  },
   "bulkFilteredMessage": {
     "message": "Exkluderad, inte tillämplig för denna åtgärd."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Ta bort användare"
+  },
+  "deactivateUsers": {
+    "message": "Deactivate Users"
+  },
+  "activateUsers": {
+    "message": "Activate Users"
   },
   "error": {
     "message": "Fel"

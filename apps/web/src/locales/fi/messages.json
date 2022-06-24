@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Vaihda verkkoholvissa käytettävää kieltä."
   },
-  "disableIcons": {
-    "message": "Älä näytä sivustokuvakkeita"
+  "enableFavicon": {
+    "message": "Näytä verkkosivustojen kuvakkeet"
   },
-  "disableIconsDesc": {
-    "message": "Kirjautumistietojen vieressä näytettävät sivustojen kuvakkeet helpottavat kohteiden tunnistusta."
+  "faviconDesc": {
+    "message": "Näytä tunnistettava kuva jokaiselle kirjautumistiedolle."
   },
   "enableGravatars": {
-    "message": "Käytä Gravatareja",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "message": "Näytä Gravatarit",
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Käytä avatar-profiilikuvia Gravatar.com-palvelusta."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Käytössä"
   },
+  "activate": {
+    "message": "Aktivoi"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Poista käytöstä"
+  },
+  "deactivate": {
+    "message": "Poista aktivointi"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Tämä kaksivaiheisen kirjautumisen todentaja on käytössä tililläsi."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Haluatko varmasti poistaa käyttäjän?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Jäsenellä ei ole enää organisaation käyttöoikeutta, mutta hän voi edelleen käyttää henkilökohtaista hoviaan."
+  },
+  "activateUserConfirmation": {
+    "message": "Haluatko varmasti aktivoida käyttäjän ja myöntää heille organisaation käyttöoikeuden?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Varoitus! Tämä käyttäjä tarvitsee salauksensa hallintaan Key Connectoria. Käyttäjän poistaminen organisaatiostasi poistaa heidän tilinsä käytöstä pysvästi. Toimenpide on pysyvä, eikä sen peruminen ole mahdollista. Haluatko jatkaa?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Käyttäjä $ID$ poistettu.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Käyttäjän $ID$ aktivointi poistettiin.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Käyttäjä $ID$ aktivointiin.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Poistetaanko käyttäjän $ID$ aktivointi?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Aktivoidaanko käyttäjä $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3127,7 +3175,7 @@
     "message": "Holvin aikakatkaisu"
   },
   "vaultTimeoutDesc": {
-    "message": "Valitse milloin holvin aikakatkaisu tapahtuu ja suorita valittu toiminto."
+    "message": "Määritä milloin holvin aikakatkaisutoiminto suoritetaan."
   },
   "oneMinute": {
     "message": "1 minuutti"
@@ -3148,7 +3196,7 @@
     "message": "4 tuntia"
   },
   "onRefresh": {
-    "message": "Selaimen sivun päivityksen yhteydessä"
+    "message": "Selaimen sivupäivityksen yhteydessä"
   },
   "dateUpdated": {
     "message": "Päivitetty",
@@ -3358,10 +3406,10 @@
     "message": "Holvin aikakatkaisun toiminto"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Lukittu holvi vaatii pääsalasanan syötön sen käyttämiseksi."
+    "message": "Holvin käyttö edellyttää pääsalasanaa tai muuta avaustapaa."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Uloskirjattu holvi vaatii uuden todennuksen sen käyttämiseksi."
+    "message": "Holvin käyttö edellyttää uuttaa todennusta."
   },
   "lock": {
     "message": "Lukitse",
@@ -3617,6 +3665,9 @@
   },
   "disabled": {
     "message": "Poistettu käytöstä"
+  },
+  "deactivated": {
+    "message": "Aktivointi poistettiin"
   },
   "sendLink": {
     "message": "Send-linkki",
@@ -4217,7 +4268,13 @@
     "message": "Toiminto ei koske valittuja käyttäjiä."
   },
   "removeUsersWarning": {
-    "message": "Haluatko varmasti poistaa poistaa seuraavat käyttäjät? Toiminto saattaa kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
+    "message": "Haluatko varmasti poistaa seuraavat käyttäjät? Toiminto saattaa kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
+  },
+  "deactivateUsersWarning": {
+    "message": "Haluatko varmasti poistaa seuraavien käyttäjien aktivoinnin? Heillä ei enää ole organisaation käyttöoikeutta, mutta he voivat edelleen käyttää henkilökohtaisia holvejaan. Toiminto saattaa kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
+  },
+  "activateUsersWarning": {
+    "message": "Haluatko varmasti aktivoida seuraavat käyttäjät ja myöntää heille organisaation käyttöoikeuden? Toiminto saattaa kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
   },
   "theme": {
     "message": "Teema"
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Poistettu onnistuneesti."
   },
+  "bulkDeactivatedMessage": {
+    "message": "Aktivoinnin poisto onnistui"
+  },
+  "bulkActivatedMessage": {
+    "message": "Aktivointi onnistui"
+  },
   "bulkFilteredMessage": {
     "message": "Ohitettu, ei koske tätä toimintoa."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Poista käyttäjiä"
+  },
+  "deactivateUsers": {
+    "message": "Poista käyttäjien aktivointi"
+  },
+  "activateUsers": {
+    "message": "Aktivoi käyttäjät"
   },
   "error": {
     "message": "Virhe"
@@ -5083,7 +5152,7 @@
     "message": "Käytä laitetodennusta"
   },
   "deviceVerificationDesc": {
-    "message": "Kun käytössä, todennuskoodit lähetetään sähköpostitse, kun yritetään kirjautua tuntemattomasta laitteesta"
+    "message": "Kun käytössä, lähetetään todennuskoodit sähköpostitse, kun kirjaudutaan tuntemattomasta laitteesta"
   },
   "updatedDeviceVerification": {
     "message": "Laitetodennus päivitettiin"

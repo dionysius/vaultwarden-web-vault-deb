@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "ウェブ保管庫で使用する言語を変更します。"
   },
-  "disableIcons": {
-    "message": "ウェブサイトアイコンの無効化"
+  "enableFavicon": {
+    "message": "ウェブサイトのアイコンを表示"
   },
-  "disableIconsDesc": {
-    "message": "保管庫のアイテム毎にウェブサイトのアイコンを表示します。"
+  "faviconDesc": {
+    "message": "ログイン情報の隣にアイコン画像を表示します"
   },
   "enableGravatars": {
     "message": "Gravatar を有効化",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "gravatar.com から読み込んだアバター画像を使います。"
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "有効化されました"
   },
+  "activate": {
+    "message": "有効にする"
+  },
   "premium": {
     "message": "プレミアム版",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "無効化"
+  },
+  "deactivate": {
+    "message": "無効にする"
   },
   "twoStepLoginProviderEnabled": {
     "message": "この二段階認証プロバイダは、あなたのアカウントで有効になっています。"
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "本当にこのユーザーを削除してもよろしいですか？"
   },
+  "deactivateUserConfirmation": {
+    "message": "メンバーはもう組織へのアクセス権を持っていませんが、個々の保管庫にアクセスすることはできます。"
+  },
+  "activateUserConfirmation": {
+    "message": "このユーザーを有効にして、組織へのアクセスを許可してもよろしいですか？"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "警告! このユーザーは暗号化を管理するためにキー コネクタが必要です。 このユーザーを組織から削除すると、アカウントが完全に無効になります。この操作は元に戻せません。続行しますか？"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "ユーザー「$ID$」の削除",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "ユーザー $ID$ を無効化しました。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "ユーザー $ID$ を有効化しました。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "ユーザー $ID$ を無効にしますか？",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "ユーザー $ID$ を有効にしますか？",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "無効"
   },
+  "deactivated": {
+    "message": "無効化済み"
+  },
   "sendLink": {
     "message": "Send リンク",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "次のユーザーを削除してもよろしいですか？プロセスは完了まで数秒かかることがあり、中断またはキャンセルすることはできません。"
   },
+  "deactivateUsersWarning": {
+    "message": "次のメンバーを無効にしてもよろしいですか？ 彼らはもう組織にアクセスすることはできませんが、個々の保管庫にアクセスすることはできます。 プロセスは完了するまで数秒かかることがあり、中断またはキャンセルすることはできません。"
+  },
+  "activateUsersWarning": {
+    "message": "次のメンバーを有効にして組織へのアクセスを許可しますか？ プロセスは完了するまで数秒かかることがあり、中断またはキャンセルすることはできません。"
+  },
   "theme": {
     "message": "Theme"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "削除しました "
   },
+  "bulkDeactivatedMessage": {
+    "message": "無効化しました"
+  },
+  "bulkActivatedMessage": {
+    "message": "有効化しました"
+  },
   "bulkFilteredMessage": {
     "message": "除外します。このアクションには適用されません。"
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "ユーザーを削除"
+  },
+  "deactivateUsers": {
+    "message": "ユーザーを無効化"
+  },
+  "activateUsers": {
+    "message": "ユーザーを有効化"
   },
   "error": {
     "message": "エラー"

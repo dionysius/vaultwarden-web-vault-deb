@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Siin saab veebihoidla keelt muuta."
   },
-  "disableIcons": {
-    "message": "Lülita veebisaidi ikoonid välja"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableIconsDesc": {
-    "message": "Veebisaidi ikoonid aitavad hoidlas olevaid kontosid paremini eristada."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableGravatars": {
     "message": "Luba Gravatarid",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Luba avatari pildid, mida laaditakse lehelt gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Sisselülitatud"
   },
+  "activate": {
+    "message": "Aktiveeri"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Keela"
+  },
+  "deactivate": {
+    "message": "Deaktiveeri"
   },
   "twoStepLoginProviderEnabled": {
     "message": "See kaheastmelise kinnitamise teenus on sinu kontol sisse lülitatud."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Tahad kindlasti selle kasutaja eemaldada?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Liige ei pääse enam organisatsiooni hoidlale ligi. Küll aga säilitab ta ligipääsu oma individuaalsele hoidlale."
+  },
+  "activateUserConfirmation": {
+    "message": "Oled kindel, et soovid seda kasutajat aktiveerida ja anda talle ligipääs organisatsioonile?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Kasutaja $ID$ on eemaldatud.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Kasutaja $ID$ on deaktiveeritud.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Kasutaja $ID$ on aktiveeritud.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Deaktiveerin kasutaja $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Aktiveerin kasutaja $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Keelatud"
   },
+  "deactivated": {
+    "message": "Deaktiveeritud"
+  },
   "sendLink": {
     "message": "Sendi link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Oled kindel, et soovid järgnevaid kasutajaid eemaldada? See tegevus võib võtta paar sekundit ning seda ei saa katkestada."
   },
+  "deactivateUsersWarning": {
+    "message": "Oled kindel, et soovid järgnevad kasutajad deaktiveerida? Selle tulemusel ei pääse nad enam organisatsiooni ligi, aga säilitavad siiski ligipääsud oma isiklikele hoidlatele. See protsess võtab mõned sekundid ning seda ei saa tühistada."
+  },
+  "activateUsersWarning": {
+    "message": "Oled kindel, et soovid järgnevatele kasutajatele anda ligipääsu organisatsioonile? See tegevus võib võtta paar sekundit ning seda ei saa katkestada."
+  },
   "theme": {
     "message": "Teema"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Edukalt eemaldatud"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Edukalt deaktiveeritud"
+  },
+  "bulkActivatedMessage": {
+    "message": "Edukalt aktiveeritud"
+  },
   "bulkFilteredMessage": {
     "message": "Välja jäetud, ei rakendu sellel tegevuse puhul."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Kasutajate eemaldamine"
+  },
+  "deactivateUsers": {
+    "message": "Kasutajate deaktiveerimine"
+  },
+  "activateUsers": {
+    "message": "Kasutajate aktiveerimine"
   },
   "error": {
     "message": "Viga"

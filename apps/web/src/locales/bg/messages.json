@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Смяна на езика на интерфейса. Ще трябва да пуснете програмата повторно."
   },
-  "disableIcons": {
-    "message": "Изключване на иконите на сайтовете"
+  "enableFavicon": {
+    "message": "Показване на иконките на уеб сайтовете"
   },
-  "disableIconsDesc": {
-    "message": "Иконите на сайтовете са разпознаваеми изображения към записите за вход в трезора."
+  "faviconDesc": {
+    "message": "Показване на разпознаваемо изображение до всеки запис."
   },
   "enableGravatars": {
     "message": "Включване на граватари",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Използване на иконки за потребители от сайта „gravatar.com“."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Включено"
   },
+  "activate": {
+    "message": "Активиране"
+  },
   "premium": {
     "message": "Платен",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Изключване"
+  },
+  "deactivate": {
+    "message": "Деактивиране"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Този доставчик на двустепенно удостоверяване е включен за абонамента ви."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Сигурни ли сте, че искате да изтриете този потребител?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Този член вече няма да има достъп до организацията, но ще продължи да има достъп до собствения си трезор."
+  },
+  "activateUserConfirmation": {
+    "message": "Наистина ли искате да активирате този потребител, давайки му така достъп до организацията?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Внимание! Този потребител има нужда от конектор за ключове, за да управлява шифроването си. Ако премахнете потребителя от организацията, ще заключите завинаги достъпа му до неговата регистрация. Това действие е необратимо. Наистина ли искате да продължите?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Потребител № $ID$ е изтрит.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Деактивиран потребител: $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Активиран потребител: $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Деактивиране на потребител $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Активиране на потребител $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Изключено"
   },
+  "deactivated": {
+    "message": "Деактивиран"
+  },
   "sendLink": {
     "message": "Изпращане на връзката",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Наистина ли искате да премахнете следните потребители? Процесът може да отнеме няколко секунди и не може да бъде прекъснат или отменен."
   },
+  "deactivateUsersWarning": {
+    "message": "Наистина ли искате да деактивирате следните членове? Те вече няма да имат достъп до организацията, но ще продължат да имат достъп до собствените си трезори. Процедурата ще отнеме няколко секунди и не трябва да бъде прекъсвана или отменяна."
+  },
+  "activateUsersWarning": {
+    "message": "Наистина ли искате да активирате следните потребители, давайки им така достъп до организацията? Процесът може да отнеме няколко секунди и не може да бъде прекъснат или отменен."
+  },
   "theme": {
     "message": "Облик"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Успешно премахване"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Успешно деактивиране"
+  },
+  "bulkActivatedMessage": {
+    "message": "Успешно активиране"
+  },
   "bulkFilteredMessage": {
     "message": "Изключени като неподходящи за това действие."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Премахване на потребителите"
+  },
+  "deactivateUsers": {
+    "message": "Деактивиране на потребители"
+  },
+  "activateUsers": {
+    "message": "Активиране на потребители"
   },
   "error": {
     "message": "Грешка"

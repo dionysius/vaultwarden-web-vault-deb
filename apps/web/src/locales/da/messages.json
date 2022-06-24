@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Skift det sprog, der bruges af web-boksen."
   },
-  "disableIcons": {
-    "message": "Slå webikoner fra"
+  "enableFavicon": {
+    "message": "Vis webstedsikoner"
   },
-  "disableIconsDesc": {
-    "message": "Webikoner vises som et genkendeligt billede ved siden af hvert loginelement i din boks."
+  "faviconDesc": {
+    "message": "Vis genkendeligt billede ved hvert login."
   },
   "enableGravatars": {
     "message": "Aktivér Gravatars",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Brug avatar billeder hentet fra gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Aktiveret"
   },
+  "activate": {
+    "message": "Aktivér"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1261,6 +1264,9 @@
     "message": "Håndtér"
   },
   "disable": {
+    "message": "Deaktivér"
+  },
+  "deactivate": {
     "message": "Deaktivér"
   },
   "twoStepLoginProviderEnabled": {
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Er du sikker på, at du vil fjerne denne bruger?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Medlemmet vil ikke længere have adgang til organisationen, men vil stadig have adgang til sin egen boks."
+  },
+  "activateUserConfirmation": {
+    "message": "Er du sikker på, at du vil aktivere denne bruger og give vedkommende adgang til organisationen?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Advarsel! Denne bruger behøver Key Connector til krypteringshåndtering. Fjernes brugeren fra din organisation, deaktiveres vedkommendes konto permanent. Denne handling kan ikke fortrydes. Vil du fortsætte?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Slettede bruger $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Deaktiveret bruger $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Aktiveret bruger $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Deaktivér bruger $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Aktivér bruger $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Deaktiveret"
   },
+  "deactivated": {
+    "message": "Deaktiveret"
+  },
   "sendLink": {
     "message": "Send link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Er du sikker på, at du vil fjerne følgende brugere? Processen kan tage et par sekunder at fuldføre og kan ikke afbrydes eller annulleres."
   },
+  "deactivateUsersWarning": {
+    "message": "Er du sikker på, at du vil deaktivere følgende medlemmer? De vil ikke længere have adgang til organisationen, men vil stadig have adgang til deres egne bokse. Processen kan tage nogle sekunder at gennemføre, og den kan ikke afbrydes eller annulleres."
+  },
+  "activateUsersWarning": {
+    "message": "Er du sikker på, at du vil aktivere følgende medlemmer og give dem adgang til organisationen? Processen kan tage nogle sekunder at gennemføre og kan ikke afbrydes eller annulleres."
+  },
   "theme": {
     "message": "Tema"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Fjernet med succes"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Deaktivering udført"
+  },
+  "bulkActivatedMessage": {
+    "message": "Aktivering udført"
+  },
   "bulkFilteredMessage": {
     "message": "Udelukket, ikke anvendeligt til denne handling."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Fjern brugere"
+  },
+  "deactivateUsers": {
+    "message": "Deaktivere brugere"
+  },
+  "activateUsers": {
+    "message": "Aktivere brugere"
   },
   "error": {
     "message": "Fejl"
@@ -5089,7 +5158,7 @@
     "message": "Opdateret enhedsbekræftelse"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
-    "message": "Sikker på, at du vil aktivere enhedsbekræftelse? Bekræftelseskoder e-mailes til: $EMAIL$",
+    "message": "Er du sikker på, at du vil aktivere enhedsbekræftelse? Bekræftelseskoder e-mailes til: $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",

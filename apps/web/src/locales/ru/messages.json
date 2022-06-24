@@ -555,7 +555,7 @@
     "message": "Вы действительно хотите выйти?"
   },
   "logOut": {
-    "message": "Выйти"
+    "message": "Выход"
   },
   "ok": {
     "message": "Ok"
@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Изменение языка, используемого веб-хранилищем."
   },
-  "disableIcons": {
-    "message": "Отключить значки веб-сайтов"
+  "enableFavicon": {
+    "message": "Показать значки сайтов"
   },
-  "disableIconsDesc": {
-    "message": "Значки веб-сайтов отображаются рядом с каждым элементом в вашем хранилище."
+  "faviconDesc": {
+    "message": "Отображать узнаваемое изображение рядом с каждым логином."
   },
   "enableGravatars": {
     "message": "Включить Gravatar",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Использовать аватары с сайта gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Включено"
   },
+  "activate": {
+    "message": "Активировать"
+  },
   "premium": {
     "message": "Премиум",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Выключить"
+  },
+  "deactivate": {
+    "message": "Деактивировать"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Этот провайдер двухфакторной аутентификации включен для вашего аккаунта."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Вы действительно хотите удалить этого пользователя?"
   },
+  "deactivateUserConfirmation": {
+    "message": "У участника больше не будет доступа к организации, но у него останется доступ к своему личному хранилищу."
+  },
+  "activateUserConfirmation": {
+    "message": "Вы уверены, что хотите активировать этого пользователя, предоставив ему доступ к организации?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Внимание! Этому пользователю необходим соединитель ключей для управления шифрованием. Удаление этого пользователя из вашей организации приведет к окончательному отключению его учетной записи. Это действие нельзя отменить. Вы хотите продолжить?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Удален пользователь $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Пользователь деактивирован $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Пользователь активирован $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Деактивировать пользователя $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Активировать пользователя $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3358,10 +3406,10 @@
     "message": "Действие по тайм-ауту хранилища"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Заблокированное хранилище потребует повторного ввода мастер-пароля для получения доступа к нему."
+    "message": "Чтобы снова получить доступ к заблокированному хранилищу, нужно повторно ввести мастер-пароль."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Выход из хранилища потребует повторную аутентификацию для получения доступа к нему."
+    "message": "Чтобы получить доступ к хранилищу после выхода из него требуется повторная авторизация."
   },
   "lock": {
     "message": "Заблокировать",
@@ -3617,6 +3665,9 @@
   },
   "disabled": {
     "message": "Отключено"
+  },
+  "deactivated": {
+    "message": "Деактивирован"
   },
   "sendLink": {
     "message": "Ссылка на Send",
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Вы уверены, что хотите удалить следующих пользователей? Процесс может занять несколько секунд и не может быть прерван или отменен."
   },
+  "deactivateUsersWarning": {
+    "message": "Вы действительно хотите деактивировать следующих участников? У них больше не будет доступа к организации, но останется доступ к их личным хранилищам. Процесс может занять несколько секунд, и его нельзя прервать или отменить."
+  },
+  "activateUsersWarning": {
+    "message": "Вы действительно хотите активировать следующих участников, предоставив им доступ к организации? Процесс может занять несколько секунд и не может быть прерван или отменен."
+  },
   "theme": {
     "message": "Тема"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Удален(-о) успешно"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Деактивирован успешно"
+  },
+  "bulkActivatedMessage": {
+    "message": "Активирован успешно"
+  },
   "bulkFilteredMessage": {
     "message": "Исключено, не применимо для данного действия."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Удалить пользователей"
+  },
+  "deactivateUsers": {
+    "message": "Деактивировать пользователей"
+  },
+  "activateUsers": {
+    "message": "Активировать пользователей"
   },
   "error": {
     "message": "Ошибка"

@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Canvia l'idioma utilitzat per la caixa forta web."
   },
-  "disableIcons": {
-    "message": "Inhabilita les icones del lloc web"
+  "enableFavicon": {
+    "message": "Mostra les icones del lloc web"
   },
-  "disableIconsDesc": {
-    "message": "Les icones del lloc web proporcionen una imatge que es pot reconèixer al costat de cada element d'inici de sessió a la vostra caixa forta."
+  "faviconDesc": {
+    "message": "Mostra una imatge reconeixible al costat de cada inici de sessió."
   },
   "enableGravatars": {
     "message": "Habilita Gravatars",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Utilitzeu imatges d'avatar carregades de gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Habilitat"
   },
+  "activate": {
+    "message": "Activa"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Inhabilita"
+  },
+  "deactivate": {
+    "message": "Desactiva"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Aquest proveïdor d'inici de sessió en dues passes està habilitat al vostre compte."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Esteu segur que voleu suprimir aquest usuari?"
   },
+  "deactivateUserConfirmation": {
+    "message": "El membre ja no tindrà accés a l'organització, però encara tindrà accés a la caixa forta individual."
+  },
+  "activateUserConfirmation": {
+    "message": "Confirmeu que voleu activar aquest usuari per concedir-li accés a l'organització?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Advertència! Aquest usuari requereix un connector clau per gestionar el seu xifrat. La supressió d'aquest usuari des de la vostra organització desactivarà permanentment el seu compte. Aquesta acció no es pot desfer. Voleu continuar?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "S'ha suprimit l'usuari $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Desactivat usuari $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Activat usuari $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Vols desactivar l'usuari $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Vols activar l'usuari $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3358,7 +3406,7 @@
     "message": "Acció del temps d'espera de la caixa forta"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Una caixa forta bloquejada requereix que torneu a introduir la contrasenya principal per accedir-ne de nou."
+    "message": "Una caixa forta bloquejada requereix que torne a introduir la contrasenya principal per accedir-ne de nou."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Una caixa forta desconnectada requereix que torneu a autentificar-vos per accedir-hi de nou."
@@ -3617,6 +3665,9 @@
   },
   "disabled": {
     "message": "Inhabilitat"
+  },
+  "deactivated": {
+    "message": "Desactivat"
   },
   "sendLink": {
     "message": "Enllaç Send",
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Esteu segur que voleu eliminar els usuaris següents? El procés pot tardar uns segons a completar-se i no es pot interrompre ni cancel·lar."
   },
+  "deactivateUsersWarning": {
+    "message": "Esteu segur que voleu desactivar els membres següents? Ja no tindran accés a l'organització, però encara tindran accés a les seues caixes fortes individuals. El procés pot tardar uns quants segons a completar-se i no es pot interrompre ni cancel·lar."
+  },
+  "activateUsersWarning": {
+    "message": "Esteu segur que voleu activar els membres següents, donant-los accés a l'organització? El procés pot tardaruns quants segons a completar-se i no es pot interrompre ni cancel·lar."
+  },
   "theme": {
     "message": "Tema"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Suprimit correctament"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Desactivat correctament"
+  },
+  "bulkActivatedMessage": {
+    "message": "Activat correctament"
+  },
   "bulkFilteredMessage": {
     "message": "Exclòs, no aplicable per a aquesta acció."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Suprimeix usuaris"
+  },
+  "deactivateUsers": {
+    "message": "Desactiva usuaris"
+  },
+  "activateUsers": {
+    "message": "Activa usuaris"
   },
   "error": {
     "message": "Error"

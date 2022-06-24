@@ -1151,21 +1151,21 @@
   "languageDesc": {
     "message": "Змінити мову інтерфейсу веб сховища."
   },
-  "disableIcons": {
-    "message": "Вимкнути піктограми вебсайтів"
+  "enableFavicon": {
+    "message": "Показувати піктограми вебсайтів"
   },
-  "disableIconsDesc": {
-    "message": "Впізнавані піктограми вебсайтів додаються біля кожного запису вашого сховища."
+  "faviconDesc": {
+    "message": "Показувати впізнаване зображення біля кожного запису."
   },
   "enableGravatars": {
-    "message": "Увімкнути Gravatars",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "message": "Показувати Gravatars",
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Використовувати зображення профілю завантажені з gravatar.com."
   },
   "enableFullWidth": {
-    "message": "Увімкнути макет повної ширини",
+    "message": "Показувати на всю ширину сторінки",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Увімкнено"
   },
+  "activate": {
+    "message": "Активувати"
+  },
   "premium": {
     "message": "Преміум",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Вимкнути"
+  },
+  "deactivate": {
+    "message": "Деактивувати"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Для вашого облікового запису увімкнено цей спосіб двоетапної перевірки."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Ви справді хочете вилучити цього користувача?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Учасник більше не матиме доступу до організації, але й надалі може користуватися особистим сховищем."
+  },
+  "activateUserConfirmation": {
+    "message": "Ви дійсно хочете активувати цього користувача, надаючи йому доступ до організації?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Попередження! Цей користувач потребує Key Connector для керування шифруванням. Вилучення цього користувача з вашої організації остаточно вимкне його обліковий запис. Цю дію неможливо скасувати. Ви хочете продовжити?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Вилучений користувач $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Деактивований користувач $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Активований користувач $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Деактивувати користувача $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Активувати користувача $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3127,7 +3175,7 @@
     "message": "Час очікування сховища"
   },
   "vaultTimeoutDesc": {
-    "message": "Оберіть дію, яка виконається після завершення часу очікування вашого сховища."
+    "message": "Оберіть дію, яка виконається після завершення часу очікування сховища."
   },
   "oneMinute": {
     "message": "1 хвилина"
@@ -3148,7 +3196,7 @@
     "message": "4 години"
   },
   "onRefresh": {
-    "message": "Перезавантаження сторінки"
+    "message": "Оновлення сторінки"
   },
   "dateUpdated": {
     "message": "Оновлено",
@@ -3358,10 +3406,10 @@
     "message": "Дія після часу очікування сховища"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Щоб відновити доступ до заблокованого сховища, необхідно повторно ввести головний пароль."
+    "message": "Щоб відновити доступ до сховища, необхідно ввести головний пароль або скористатись іншим способом розблокування."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Щоб відновити доступ до сховища після виходу, необхідно повторно авторизуватись."
+    "message": "Щоб відновити доступ до сховища, необхідно повторно авторизуватись."
   },
   "lock": {
     "message": "Блокувати",
@@ -3617,6 +3665,9 @@
   },
   "disabled": {
     "message": "Вимкнено"
+  },
+  "deactivated": {
+    "message": "Деактивовано"
   },
   "sendLink": {
     "message": "Посилання на відправлення",
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Ви дійсно хочете вилучити зазначених користувачів? Цей процес може тривати кілька секунд і його неможливо перервати чи скасувати."
   },
+  "deactivateUsersWarning": {
+    "message": "Ви дійсно хочете деактивувати зазначених учасників? Вони більше не матимуть доступу до організації, але й надалі можуть користуватися особистим сховищем. Процес може тривати кілька секунд і його не можна перервати чи скасувати."
+  },
+  "activateUsersWarning": {
+    "message": "Ви дійсно хочете активувати зазначених учасників, надаючи їм доступ до організації? Процес може тривати кілька секунд і його не можна перервати чи скасувати."
+  },
   "theme": {
     "message": "Тема"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Успішно вилучено"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Успішно деактивовано"
+  },
+  "bulkActivatedMessage": {
+    "message": "Успішно активовано"
+  },
   "bulkFilteredMessage": {
     "message": "Виключено, не застосовується для цієї дії."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Вилучити користувачів"
+  },
+  "deactivateUsers": {
+    "message": "Деактивувати користувачів"
+  },
+  "activateUsers": {
+    "message": "Активувати користувачів"
   },
   "error": {
     "message": "Помилка"

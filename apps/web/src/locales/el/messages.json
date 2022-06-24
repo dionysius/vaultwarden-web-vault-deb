@@ -422,13 +422,13 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Εγώ"
   },
   "myVault": {
     "message": "Το Vault μου"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Όλα τα Vaults"
   },
   "vault": {
     "message": "Vault"
@@ -437,7 +437,7 @@
     "message": "Vaults"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "Αντικείμενα Vault"
   },
   "moveSelectedToOrg": {
     "message": "Μετακίνηση Επιλεγμένων στον Οργανισμό"
@@ -904,18 +904,18 @@
     "message": "Μήκος"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)",
+    "message": "Κεφαλαία (A-Z)",
     "description": "Include uppercase letters in the password generator."
   },
   "lowercase": {
-    "message": "Lowercase (a-z)",
+    "message": "Πεζά (α-ω)",
     "description": "Include lowercase letters in the password generator."
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Αριθμοί (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Ειδικοί Χαρακτήρες (!@#$%^&*)"
   },
   "numWords": {
     "message": "Αριθμός Λέξεων"
@@ -1137,13 +1137,13 @@
     "message": "Επιλογές"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Προτιμήσεις"
   },
   "preferencesDesc": {
-    "message": "Customize your web vault experience."
+    "message": "Προσαρμόστε την εμπειρία σας στο web vault."
   },
   "preferencesUpdated": {
-    "message": "Preferences updated"
+    "message": "Οι προτιμήσεις ενημερώθηκαν"
   },
   "language": {
     "message": "Γλώσσα"
@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Αλλάξτε γλώσσα που χρησιμοποιείται από το web vault."
   },
-  "disableIcons": {
-    "message": "Απενεργοποίηση Εικονιδίων Ιστοσελίδας"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableIconsDesc": {
-    "message": "Τα εικονίδια ιστοσελίδων παρέχουν μια αναγνωρίσιμη εικόνα δίπλα σε κάθε στοιχείο σύνδεσης του vault σας."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableGravatars": {
     "message": "Ενεργοποίηση Gravatars",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Χρήση εικόνων avatar από gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Ενεργοποιημένο"
   },
+  "activate": {
+    "message": "Activate"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Απενεργοποίηση"
+  },
+  "deactivate": {
+    "message": "Deactivate"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Ο πάροχος σύνδεσης δύο βημάτων του λογαριασμού σας, είναι ενεργοποιημένος."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Είστε βέβαιοι ότι θέλετε να αφαιρέσετε αυτό τον χρήστη;"
   },
+  "deactivateUserConfirmation": {
+    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+  },
+  "activateUserConfirmation": {
+    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Προσοχή! Αυτός ο χρήστης απαιτεί σύνδεση κλειδιού για τη διαχείριση της κρυπτογράφησης του. Η αφαίρεση αυτού του χρήστη από τον οργανισμό σας θα απενεργοποιήσει οριστικά τον λογαριασμό του. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί. Θέλετε να συνεχίσετε;"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Χρήστης που αφαιρέθηκε $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Deactivated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Activated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Deactivate user $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Activate user $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Απενεργοποιημένο"
   },
+  "deactivated": {
+    "message": "Deactivated"
+  },
   "sendLink": {
     "message": "Αποστολή Συνδέσμου",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Είστε βέβαιοι ότι θέλετε να καταργήσετε τους ακόλουθους χρήστες? Η διαδικασία μπορεί να διαρκέσει μερικά δευτερόλεπτα για να ολοκληρωθεί και δεν μπορεί να διακοπεί ή να ακυρωθεί."
   },
+  "deactivateUsersWarning": {
+    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
+  "activateUsersWarning": {
+    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
   "theme": {
     "message": "Θέμα"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Καταργήθηκε με επιτυχία"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Deactivated successfully"
+  },
+  "bulkActivatedMessage": {
+    "message": "Activated successfully"
+  },
   "bulkFilteredMessage": {
     "message": "Εξαιρείται, δεν ισχύει για αυτήν την ενέργεια."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Αφαίρεση Χρηστών"
+  },
+  "deactivateUsers": {
+    "message": "Deactivate Users"
+  },
+  "activateUsers": {
+    "message": "Activate Users"
   },
   "error": {
     "message": "Σφάλμα"

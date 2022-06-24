@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Cambia la lingua utilizzata dalla cassaforte web."
   },
-  "disableIcons": {
-    "message": "Disabilita icone dei siti web"
+  "enableFavicon": {
+    "message": "Mostra icone del sito"
   },
-  "disableIconsDesc": {
-    "message": "Le icone dei siti web forniscono un'immagine riconoscibile accanto a ogni elemento di accesso."
+  "faviconDesc": {
+    "message": "Mostra un'immagine riconoscibile accanto a ogni login."
   },
   "enableGravatars": {
     "message": "Abilita Gravatar",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Usa immagine profilo caricata da gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Abilitato"
   },
+  "activate": {
+    "message": "Attiva"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Disabilita"
+  },
+  "deactivate": {
+    "message": "Disattiva"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Questo metodo di verifica in due passaggi è abilitato sul tuo account."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Confermi di voler rimuovere questo utente?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Il membro non avrà più accesso all'organizzazione, ma continuerà ad avere accesso alla propria cassaforte."
+  },
+  "activateUserConfirmation": {
+    "message": "Sei sicuro di voler attivare questo utente e concedere l'accesso all'organizzazione?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Attenzione! Questo utente richiede Key Connector per gestire la crittografia. Rimuovere questo utente dalla propria organizzazione disabiliterà definitivamente l'account. Questa azione non può essere annullata. Vuoi procedere?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Utente $ID$ rimosso.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Utente $ID$ disattivato.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Utente $ID$ attivato.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Disattivare l'utente $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Attivare l'utente $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Disabilitato"
   },
+  "deactivated": {
+    "message": "Disattivato"
+  },
   "sendLink": {
     "message": "Collegamento del Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Sei sicuro di voler rimuovere i seguenti utenti? Il processo potrebbe richiedere alcuni secondi per essere completato e non può essere interrotto o annullato."
   },
+  "deactivateUsersWarning": {
+    "message": "Sei sicuro di voler disattivare i seguenti membri? Non avranno più accesso all'organizzazione, ma continueranno comunque ad avere accesso alle loro casseforti personali. Il processo può richiedere alcuni secondi e non può essere interrotto o annullato."
+  },
+  "activateUsersWarning": {
+    "message": "Sei sicuro di voler attivare i seguenti membri, concedendogli l'accesso all'organizzazione? Il processo potrebbe richiedere alcuni secondi e non può essere interrotto o annullato."
+  },
   "theme": {
     "message": "Tema"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Rimosso correttamente"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Disattivato con successo"
+  },
+  "bulkActivatedMessage": {
+    "message": "Attivato con successo"
+  },
   "bulkFilteredMessage": {
     "message": "Escluso, non applicabile per questa azione."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Rimuovi utenti"
+  },
+  "deactivateUsers": {
+    "message": "Disattiva utenti"
+  },
+  "activateUsers": {
+    "message": "Attiva utenti"
   },
   "error": {
     "message": "Errore"
@@ -4432,10 +4501,10 @@
     "message": "Il timeout della tua cassaforte supera le restrizioni impostate dalla tua organizzazione."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Il timeout minimo personalizzabile è di 1 minuto."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault Timeout is not within allowed range."
+    "message": "Il timeout della cassaforte non è all'interno dell'intervallo consentito."
   },
   "disablePersonalVaultExport": {
     "message": "Disabilita esportazione cassaforte personale"
@@ -5077,19 +5146,19 @@
     "message": "Token di accesso API"
   },
   "deviceVerification": {
-    "message": "Device Verification"
+    "message": "Verifica del dispositivo"
   },
   "enableDeviceVerification": {
-    "message": "Enable Device Verification"
+    "message": "Abilita la verifica del dispositivo"
   },
   "deviceVerificationDesc": {
-    "message": "When enabled, verification codes are sent to your email address when logging in from an unrecognized device"
+    "message": "Se abilitato, i codici di verifica vengono inviati al tuo indirizzo email quando accedi da un dispositivo non riconosciuto"
   },
   "updatedDeviceVerification": {
-    "message": "Updated Device Verification"
+    "message": "Verifica del dispositivo aggiornata"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
-    "message": "Are you sure you want to enable Device Verification? The verification code emails will arrive at: $EMAIL$",
+    "message": "Sei sicuro di voler abilitare la verifica del dispositivo? Le email con il codice di verifica saranno inviate a: $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",

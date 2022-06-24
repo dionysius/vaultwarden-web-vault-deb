@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Zmeňte východzí jazyk pre webový trezor."
   },
-  "disableIcons": {
-    "message": "Nezobrazovať ikony stránok"
+  "enableFavicon": {
+    "message": "Zobraziť favikony"
   },
-  "disableIconsDesc": {
-    "message": "Ikony stránok poskytujú rozoznateľný obrázok vedľa každého prihlasovacieho údaju vo webovom trezore."
+  "faviconDesc": {
+    "message": "Pri každom prihlásení zobraziť rozpoznateľný obrázok."
   },
   "enableGravatars": {
-    "message": "Povoliť Gravatar",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "message": "Zobraziť Gravatary",
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Použiť avatar obrázky načítané z gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Povolené"
   },
+  "activate": {
+    "message": "Aktivovať"
+  },
   "premium": {
     "message": "Prémium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Vypnúť"
+  },
+  "deactivate": {
+    "message": "Deaktivovať"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Tento poskytovateľ overenia je povolený pre váš účet."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Skutočne chcete odobrať tohto užívateľa?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Člen už nebude mať prístup do organizácie, ale stále bude mať prístup do svojho individuálneho trezoru."
+  },
+  "activateUserConfirmation": {
+    "message": "Naozaj chcete aktivovať tohto používateľa a udeliť mu prístup do organizácie?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Upozornenie! Tento používateľ potrebuje na správu svojho šifrovania aplikáciu Key Connector. Odstránením tohto používateľa z vašej organizácie sa jeho účet natrvalo deaktivuje. Túto akciu nie je možné vrátiť späť. Chcete pokračovať?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Používateľ $ID$ odstránený.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Deaktivovaný používateľ $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Aktivovaný používateľ $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Deaktivovať používateľa $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Aktivovať používateľa $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3148,7 +3196,7 @@
     "message": "4 hodiny"
   },
   "onRefresh": {
-    "message": "Pri obnovení stránky"
+    "message": "Pri obnovení prehliadača"
   },
   "dateUpdated": {
     "message": "Aktualizované",
@@ -3358,7 +3406,7 @@
     "message": "Akcia pri vypršaní času pre trezor"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Uzamknutý trezor sa dá odomknúť opätovným zadaním hlavného hesla."
+    "message": "Uzamknutý trezor sa dá odomknúť opätovným zadaním hlavného hesla alebo iným spôsobom odomknutia."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Odlhásený trezor bude vyžadovať opätovné prihlásenie aby ste k nemu mohli pristupovať."
@@ -3617,6 +3665,9 @@
   },
   "disabled": {
     "message": "Vypnuté"
+  },
+  "deactivated": {
+    "message": "Deaktivovaný"
   },
   "sendLink": {
     "message": "Odkaz na Send",
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Naozaj chcete odstrániť týchto používateľov? Dokončenie procesu môže trvať niekoľko sekúnd a nie je možné ho prerušiť ani zrušiť."
   },
+  "deactivateUsersWarning": {
+    "message": "Naozaj chcete deaktivovať týchto členov? Už nebudú mať prístup do organizácie, ale stále budú mať prístup do svojich individuálnych trezorov. Dokončenie procesu môže trvať niekoľko sekúnd a nie je možné ho prerušiť ani zrušiť."
+  },
+  "activateUsersWarning": {
+    "message": "Naozaj chcete aktivovať týchto členov a udeliť im prístup do organizácie? Dokončenie procesu môže trvať niekoľko sekúnd a nie je možné ho prerušiť ani zrušiť."
+  },
   "theme": {
     "message": "Motív"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Odstránenie úspešné"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Úspešne deaktivovaný"
+  },
+  "bulkActivatedMessage": {
+    "message": "Úspešne aktivovaný"
+  },
   "bulkFilteredMessage": {
     "message": "Vylúčené, neplatí pre túto akciu."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Odstrániť používateľov"
+  },
+  "deactivateUsers": {
+    "message": "Deaktivovať používateľov"
+  },
+  "activateUsers": {
+    "message": "Aktivovať používateľov"
   },
   "error": {
     "message": "Chyba"

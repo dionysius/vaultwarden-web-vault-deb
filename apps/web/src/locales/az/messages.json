@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Veb anbarda istifadə olunan dili dəyişdirin."
   },
-  "disableIcons": {
-    "message": "Veb sayt nişanlarını sıradan çıxart"
+  "enableFavicon": {
+    "message": "Veb sayt nişanlarını göstər"
   },
-  "disableIconsDesc": {
-    "message": "Veb sayt nişanları, anbarınızda hər bir giriş elementinin yanında tanımağınıza kömək edən bir təsvir təqdim edir."
+  "faviconDesc": {
+    "message": "Hər girişin yanında tanına bilən təsvir göstər."
   },
   "enableGravatars": {
     "message": "\"Gravatar\"ı fəallaşdırın",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "gravatar.com saytından yüklənilən avatarları istifadə edin."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Fəallaşdırıldı"
   },
+  "activate": {
+    "message": "Aktiv et"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Sıradan çıxart"
+  },
+  "deactivate": {
+    "message": "Deaktiv et"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Bu iki mərhələli giriş təchizatçısı hesabınızda fəallaşdırılıb."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Bu istifadəçini çıxartmaq istədiyinizə əminsiniz?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Üzv, artıq təşkilata müraciət edə bilməyəcək, ancaq fərdi anbarına müraciət etməyə davam edəcək."
+  },
+  "activateUserConfirmation": {
+    "message": "Bu istifadəçini aktivləşdirərək onun təşkilata müraciətinə icazə verirsiniz?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Xəbərdarlıq! Bu istifadəçi, şifrələmələrini idarə etmək üçün Açar Bağlayıcı tələb edir. Bu istifadəçini təşkilatınızdan silsəniz, hesabı birdəfəlik sıradan çıxarılacaq. Bu əməliyyatın geri dönüşü yoxdur. Davam etmək istəyirsiniz?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "$ID$ istifadəçisi çıxarıldı.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "$ID$ istifadəçisi deaktiv edildi.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "$ID$ istifadəçisi aktiv edildi.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "$ID$ istifadəçisi deaktiv edilsin?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "$ID$ istifadəçisi aktiv edilsin?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Sıradan çıxarıldı"
   },
+  "deactivated": {
+    "message": "Deaktiv edildi"
+  },
   "sendLink": {
     "message": "\"Send\" bağlantısı",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Aşağıdakı istifadəçiləri çıxartmaq istədiyinizə əminsiniz? Bu prosesin tamamlanması bir neçə saniyə çəkir, ləğv edilə və ya dayandırıla bilməz."
   },
+  "deactivateUsersWarning": {
+    "message": "Aşağıdakı üzvləri deaktiv etmək istədiyinizə əminsiniz? Təşkilata müraciət edə bilməyəcəklər, ancaq fərdi anbarlarına müraciət etməyə davam edəcəklər. Bu prosesin tamamlanması bir neçə saniyə çəkir, ləğv edilə və ya dayandırıla bilməz."
+  },
+  "activateUsersWarning": {
+    "message": "Aşağıdakı istifadəçiləri aktiv etmək istədiyinizə əminsiniz? Bu prosesin tamamlanması bir neçə saniyə çəkir, ləğv edilə və ya dayandırıla bilməz."
+  },
   "theme": {
     "message": "Tema"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Uğurla çıxarıldı"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Uğurla deaktiv edildi"
+  },
+  "bulkActivatedMessage": {
+    "message": "Uğurla aktiv edildi"
+  },
   "bulkFilteredMessage": {
     "message": "İstisna edildi, bu əməliyyat üçün etibarlı deyil."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "İstifadəçiləri çıxart"
+  },
+  "deactivateUsers": {
+    "message": "İstifadəçiləri deaktiv et"
+  },
+  "activateUsers": {
+    "message": "İstifadəçiləri aktiv et"
   },
   "error": {
     "message": "Xəta"

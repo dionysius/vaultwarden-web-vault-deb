@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Alterar o idioma utilizado pelo cofre web."
   },
-  "disableIcons": {
-    "message": "Desativar ícones de websites"
+  "enableFavicon": {
+    "message": "Mostrar ícones do site"
   },
-  "disableIconsDesc": {
-    "message": "Os ícones de websites providenciam uma imagem reconhecível ao lado de cada item de credencial no seu cofre."
+  "faviconDesc": {
+    "message": "Mostre uma imagem reconhecível ao lado de cada login."
   },
   "enableGravatars": {
     "message": "Ativar Gravatars",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Utilizar imagens de avatar carregadas a partir de gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Ativado"
   },
+  "activate": {
+    "message": "Ativar"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1261,6 +1264,9 @@
     "message": "Gerir"
   },
   "disable": {
+    "message": "Desativar"
+  },
+  "deactivate": {
     "message": "Desativar"
   },
   "twoStepLoginProviderEnabled": {
@@ -1441,10 +1447,10 @@
     "message": "Ocorreu um problema ao ler a chave de segurança. Tente novamente."
   },
   "twoFactorWebAuthnWarning": {
-    "message": "Due to platform limitations, WebAuthn cannot be used on all Bitwarden applications. You should enable another two-step login provider so that you can access your account when WebAuthn cannot be used. Supported platforms:"
+    "message": "Devido as limitações da plataforma, o WebAuthn não pode ser usado em todos os aplicativos do Bitwarden. Deve habilitar outro provedor de login de duas etapas para aceder à sua conta quando a WebAuthn não puder ser usada. Plataformas suportadas:"
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "Web vault and browser extensions on a desktop/laptop with a WebAuthn enabled browser (Chrome, Opera, Vivaldi, or Firefox with FIDO U2F enabled)."
+    "message": "Cofre web e extensões de navegador em um desktop/laptop com um navegador habilitado para WebAuthn (Chrome, Opera, Vivaldi ou Firefox com o FIDO U2F ativado)."
   },
   "twoFactorRecoveryYourCode": {
     "message": "O seu código Bitwarden de recuperação de início de sessão de dois passos"
@@ -1460,7 +1466,7 @@
     "message": "Relatórios"
   },
   "reportsDesc": {
-    "message": "Identify and close security gaps in your online accounts by clicking the reports below.",
+    "message": "Identifique e feche lacunas de segurança nas suas contas online clicando nos relatórios abaixo.",
     "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -2226,8 +2232,14 @@
   "removeUserConfirmation": {
     "message": "Tem a certeza de que pretende remover este utilizador?"
   },
+  "deactivateUserConfirmation": {
+    "message": "O membro não terá mais acesso à organização, mas continuará a ter acesso ao seu cofre individual."
+  },
+  "activateUserConfirmation": {
+    "message": "Tem a certeza de que deseja ativar este utilizador, concedendo-lhes o acesso à organização?"
+  },
   "removeUserConfirmationKeyConnector": {
-    "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
+    "message": "Atenção! Este utilizador requer o Key Connector para gerir a sua encriptação. Remover esse utilizador da sua organização desativará permanentemente a sua conta. Esta ação não pode ser desfeita. Você deseja continuar?"
   },
   "externalId": {
     "message": "Id externo"
@@ -2308,7 +2320,7 @@
     "message": "O utilizador com acesso mais elevado que pode gerir todos os aspetos da sua organização."
   },
   "clientOwnerDesc": {
-    "message": "This user should be independent of the Provider. If the Provider is disassociated with the organization, this user will maintain ownership of the organization."
+    "message": "Este utilizador deve ser independente do Provedor. Se o Provedor for desassociado da organização, este utilizador manterá a propriedade da organização."
   },
   "admin": {
     "message": "Administrador"
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Utilizador $ID$ removido.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Utilizador $ID$ desativado.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Utilizador $ID$ editado.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Desativar o utilizador $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Ativar o utilizador $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2842,10 +2890,10 @@
     }
   },
   "deletingOrganizationActiveUserAccountsWarning": {
-    "message": "User accounts will remain active after deletion but will no longer be associated to this organization."
+    "message": "As contas de utilizadores permanecerão ativas após a exclusão, mas não estarão mais associadas a essa organização."
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "Deleting $ORGANIZATION$ is permanent and irreversible.",
+    "message": "A exclusão de $ORGANIZATION$ é permanente e irreversível.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2947,14 +2995,14 @@
     "message": "Introduza o id da sua instalação"
   },
   "limitSubscriptionDesc": {
-    "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new users."
+    "message": "Defina um limite de utilizadores para sua assinatura. Depois que este limite for atingido, não poderá convidar novos utilizadores."
   },
   "maxSeatLimit": {
     "message": "Limite Máximo de Assentos (opcional)",
     "description": "Upper limit of seats to allow through autoscaling"
   },
   "maxSeatCost": {
-    "message": "Max potential seat cost"
+    "message": "Custo máximo potencial de utilizadores"
   },
   "addSeats": {
     "message": "Adicionar lugares",
@@ -2965,7 +3013,7 @@
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Os ajustes à sua assinatura resultarão em alterações repartidas nos totais de faturamento. Se os utilizadores recém-convidados excederem o número de utilizadores na sua assinatura, receberá imediatamente uma cobrança proporcional pelos utilizadores adicionais."
   },
   "subscriptionUserSeats": {
     "message": "A sua subscrição permite um total de $COUNT$ utilizadores.",
@@ -2977,7 +3025,7 @@
     }
   },
   "limitSubscription": {
-    "message": "Limit Subscription (Optional)"
+    "message": "Assinatura Limite (Opcional)"
   },
   "subscriptionSeats": {
     "message": "Assentos de Assinatura"
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Desabilitado"
   },
+  "deactivated": {
+    "message": "Desativado"
+  },
   "sendLink": {
     "message": "Enviar ligação",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Are you sure you want to remove the following users? The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
+  "deactivateUsersWarning": {
+    "message": "Tem a certeza de que deseja desativar os seguintes membros? Deixarão de ter acesso à organização, e continuarão a ter acesso aos seus cofres individuais. O processo pode demorar alguns segundos para ser concluído e não pode ser interrompido ou cancelado."
+  },
+  "activateUsersWarning": {
+    "message": "Tem a certeza de que deseja ativar os seguintes membros, concedendo-lhes acesso à organização? O processo pode demorar alguns segundos para ser concluído e não pode ser interrompido ou cancelado."
+  },
   "theme": {
     "message": "Tema"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Removido com sucesso"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Desativado com sucesso"
+  },
+  "bulkActivatedMessage": {
+    "message": "Ativado com sucesso"
+  },
   "bulkFilteredMessage": {
     "message": "Excluído, não aplicável para esta ação."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Remover utilizadores"
+  },
+  "deactivateUsers": {
+    "message": "Desativar Utilizadores"
+  },
+  "activateUsers": {
+    "message": "Ativar Utilizadores"
   },
   "error": {
     "message": "Erro"

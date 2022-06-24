@@ -1151,21 +1151,21 @@
   "languageDesc": {
     "message": "更改网页密码库的语言。"
   },
-  "disableIcons": {
-    "message": "禁用网站图标"
+  "enableFavicon": {
+    "message": "显示网站图标"
   },
-  "disableIconsDesc": {
-    "message": "网站图标用于在您密码库的每个登录项目旁显示一个易识别的图标。"
+  "faviconDesc": {
+    "message": "在每个登录旁显示一个可识别的图像。"
   },
   "enableGravatars": {
-    "message": "启用 Gravatar 头像",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "message": "显示 Gravatar 头像",
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "使用从 gravatar.com 加载的头像图像。"
   },
   "enableFullWidth": {
-    "message": "启用全宽布局",
+    "message": "显示全宽布局",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "启用"
   },
+  "activate": {
+    "message": "激活"
+  },
   "premium": {
     "message": "高级会员",
     "description": "Premium Membership"
@@ -1261,6 +1264,9 @@
     "message": "管理"
   },
   "disable": {
+    "message": "停用"
+  },
+  "deactivate": {
     "message": "停用"
   },
   "twoStepLoginProviderEnabled": {
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "您确实要移除此用户吗？"
   },
+  "deactivateUserConfirmation": {
+    "message": "该用户将无法再访问本组织，但仍可以访问其个人密码库。"
+  },
+  "activateUserConfirmation": {
+    "message": "您确定要激活此用户，授予他们访问本组织的权限吗？"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "警告！此用户需要 Key Connector 来管理他们的加密。从您的组织中移除此用户将永久禁用他们的账户。此操作无法撤消。您要继续吗？"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "已删除用户 $ID$。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "已停用的用户 $ID$。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "已激活的用户 $ID$。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "停用用户 $ID$ 吗？",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "激活用户 $ID$ 吗？",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3127,7 +3175,7 @@
     "message": "密码库超时时间"
   },
   "vaultTimeoutDesc": {
-    "message": "选择您的密码库何时超时并执行所选的动作。"
+    "message": "选择您的密码库何时执行密码库超时动作。"
   },
   "oneMinute": {
     "message": "1 分钟"
@@ -3148,7 +3196,7 @@
     "message": "4 小时"
   },
   "onRefresh": {
-    "message": "在浏览器刷新时"
+    "message": "浏览器刷新时"
   },
   "dateUpdated": {
     "message": "更新于",
@@ -3358,10 +3406,10 @@
     "message": "密码库超时动作"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "已锁定的密码库需要重新输入主密码才能再次访问。"
+    "message": "需要主密码或其他解锁方式才能再次访问您的密码库。"
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "已注销的密码库需要重新验证才能再次访问。"
+    "message": "需要重新验证才能再次访问您的密码库。"
   },
   "lock": {
     "message": "锁定",
@@ -3617,6 +3665,9 @@
   },
   "disabled": {
     "message": "已禁用"
+  },
+  "deactivated": {
+    "message": "已停用"
   },
   "sendLink": {
     "message": "Send 链接",
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "您确定要移除以下用户吗？该过程可能需要几秒钟才能完成，并且不能中断或取消。"
   },
+  "deactivateUsersWarning": {
+    "message": "您确定要停用以下成员吗？他们将无法再访问该组织，但仍可以访问其个人密码库。该过程可能需要几秒钟才能完成，并且不能被中断或取消。"
+  },
+  "activateUsersWarning": {
+    "message": "您确定要激活以下成员，授予他们对组织的访问权限吗？该过程可能需要几秒钟才能完成，并且不能被中断或取消。"
+  },
   "theme": {
     "message": "主题"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "移除成功"
   },
+  "bulkDeactivatedMessage": {
+    "message": "停用成功"
+  },
+  "bulkActivatedMessage": {
+    "message": "激活成功"
+  },
   "bulkFilteredMessage": {
     "message": "排除，不适用于此操作。"
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "移除用户"
+  },
+  "deactivateUsers": {
+    "message": "停用用户"
+  },
+  "activateUsers": {
+    "message": "激活用户"
   },
   "error": {
     "message": "错误"

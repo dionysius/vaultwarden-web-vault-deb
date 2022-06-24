@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Променити језик за Сеф."
   },
-  "disableIcons": {
-    "message": "Угаси иконице сајта"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableIconsDesc": {
-    "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаву у сефу."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableGravatars": {
     "message": "Омогући Gravatar",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Користите слике аватара учитане са gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Омогућено"
   },
+  "activate": {
+    "message": "Activate"
+  },
   "premium": {
     "message": "Премијум",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Онемогући"
+  },
+  "deactivate": {
+    "message": "Deactivate"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Овај добављач услуге пријављивања у два корака је омогућен на вашем налогу."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Да ли сте сигурни да желите да уклоните овог корисника?"
   },
+  "deactivateUserConfirmation": {
+    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+  },
+  "activateUserConfirmation": {
+    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Упозорење! Овај корисник захтева Key Connector да управља њиховом шифровањем. Уклањање овог корисника из ваше организације трајно ће онемогућити њихов рачун. Ова радња се не може поништити. Да ли желите да наставите?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Корисник $ID$ уклоњен.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Deactivated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Activated user $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Deactivate user $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Activate user $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Онемогућено"
   },
+  "deactivated": {
+    "message": "Deactivated"
+  },
   "sendLink": {
     "message": "УРЛ „Send“",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Јесте ли сигурни да желите да уклоните следеће кориснике? Процес може потрајати неколико секунди да се заврши, и не може се прекинути или отказати."
   },
+  "deactivateUsersWarning": {
+    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
+  "activateUsersWarning": {
+    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  },
   "theme": {
     "message": "Тема"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Успешно уклоњено"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Deactivated successfully"
+  },
+  "bulkActivatedMessage": {
+    "message": "Activated successfully"
+  },
   "bulkFilteredMessage": {
     "message": "Искључено, није применљиво за ову акцију."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Уклони кориснике"
+  },
+  "deactivateUsers": {
+    "message": "Deactivate Users"
+  },
+  "activateUsers": {
+    "message": "Activate Users"
   },
   "error": {
     "message": "Грешка"

@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "De taal van de webkluis aanpassen."
   },
-  "disableIcons": {
-    "message": "Websitepictogrammen uitschakelen"
+  "enableFavicon": {
+    "message": "Websitepictogrammen weergeven"
   },
-  "disableIconsDesc": {
-    "message": "Websitepictogrammen geven een herkenbare afbeelding naast elk item in je kluis."
+  "faviconDesc": {
+    "message": "Een herkenbare afbeelding naast iedere login weergeven."
   },
   "enableGravatars": {
     "message": "Gravatars activeren",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Gebruik avatar-afbeeldingen van gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Ingeschakeld"
   },
+  "activate": {
+    "message": "Activeren"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1262,6 +1265,9 @@
   },
   "disable": {
     "message": "Uitschakelen"
+  },
+  "deactivate": {
+    "message": "Deactiveren"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Deze tweestapsaanmeldingsaanbieder is geactiveerd voor je account."
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Weet je zeker dat je deze gebruiker wilt verwijderen?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Dit lid heeft geen toegang meer tot de organisatie, maar heeft nog wel toegang tot de individuele kluis."
+  },
+  "activateUserConfirmation": {
+    "message": "Weet je zeker dat je deze gebruiker wilt activeren en toegang tot de organisatie geven?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Waarschuwing! Deze gebruiker vereist de Key Connector om de versleuteling te beheren. Als je deze gebruiker uit je organisatie verwijdert, wordt zijn account permanent uitgeschakeld. Deze actie kan niet ongedaan worden gemaakt. Wil je doorgaan?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Gebruiker verwijderd $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Gebruiker $ID$ gedeactiveerd.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Gebruiker $ID$ geactiveerd.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Gebruiker $ID$ deactiveren?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Gebruiker $ID$ activeren?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Uitgeschakeld"
   },
+  "deactivated": {
+    "message": "Gedeactiveerd"
+  },
   "sendLink": {
     "message": "Send-koppeling",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Weet je zeker dat je de volgende gebruikers wilt verwijderen? Dit proces duurt enkele seconden en kan niet worden onderbroken of geannuleerd."
   },
+  "deactivateUsersWarning": {
+    "message": "Weet je zeker dat je de volgende leden wilt deactiveren? Ze hebben dan geen toegang meer tot de organisatie. Dit process neemt een paar seconden in beslag en je kunt het niet onderbreken of annuleren."
+  },
+  "activateUsersWarning": {
+    "message": "Weet je zeker dat je de volgende leden wilt activeren en ze toegang geven tot de organisatie? Dit process neemt een paar seconden in beslag en je kunt het niet onderbreken of annuleren."
+  },
   "theme": {
     "message": "Thema"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Succesvol verwijderd"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Succesvol gedeactiveerd"
+  },
+  "bulkActivatedMessage": {
+    "message": "Succesvol geactiveerd"
+  },
   "bulkFilteredMessage": {
     "message": "Uitgezonderd, niet van toepassing voor deze actie."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Gebruikers verwijderen"
+  },
+  "deactivateUsers": {
+    "message": "Gebruikers deactiveren"
+  },
+  "activateUsers": {
+    "message": "Gebruikers activeren"
   },
   "error": {
     "message": "Fout"

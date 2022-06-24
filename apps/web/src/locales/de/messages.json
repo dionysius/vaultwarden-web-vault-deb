@@ -1151,15 +1151,15 @@
   "languageDesc": {
     "message": "Ändern Sie die Sprache für den Web-Tresor."
   },
-  "disableIcons": {
-    "message": "Website-Icons deaktivieren"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableIconsDesc": {
-    "message": "Website-Icons zeigen ein wiedererkennbares Bild neben jedem Eintrag in Ihrem Tresor."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
   "enableGravatars": {
-    "message": "Aktiviere Gravatare",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "message": "Gravatare aktivieren",
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Nutze Profilbilder von gravatar.com."
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Aktiviert"
   },
+  "activate": {
+    "message": "Aktivieren"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1261,6 +1264,9 @@
     "message": "Verwalten"
   },
   "disable": {
+    "message": "Deaktivieren"
+  },
+  "deactivate": {
     "message": "Deaktivieren"
   },
   "twoStepLoginProviderEnabled": {
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Sind Sie sich sicher, dass Sie diesen Benutzer löschen wollen?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Das Mitglied wird keinen Zugriff mehr zur Organisation haben, aber weiterhin Zugriff auf seinen persönlichen Tresor."
+  },
+  "activateUserConfirmation": {
+    "message": "Bist du sicher, dass du diesen Benutzer aktivieren und ihm Zugriff zur Organisation gewähren möchtest?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Warnung! Dieser Benutzer benötigt Key Connector, um seine Verschlüsselung zu verwalten. Das Entfernen dieses Benutzers aus deiner Organisation wird sein Konto dauerhaft deaktivieren. Diese Aktion kann nicht rückgängig gemacht werden. Möchtest du fortfahren?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Benutzer $ID$ entfernt.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "Benutzer $ID$ deaktiviert.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "Benutzer $ID$ aktiviert.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Benutzer $ID$ deaktivieren?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Benutzer $ID$ aktivieren?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3618,6 +3666,9 @@
   "disabled": {
     "message": "Deaktiviert"
   },
+  "deactivated": {
+    "message": "Deaktiviert"
+  },
   "sendLink": {
     "message": "Send Link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Bist du sicher, dass du die folgenden Benutzer entfernen möchtest? Der Prozess kann einige Sekunden dauern und kann nicht unterbrochen oder abgebrochen werden."
   },
+  "deactivateUsersWarning": {
+    "message": "Bist du sicher, dass du die folgenden Mitglieder deaktivieren möchtest? Sie werden keinen Zugang mehr zur Organisation haben, aber weiterhin Zugang auf ihre persönlichen Tresore haben. Der Prozess kann einige Sekunden dauern und kann nicht unterbrochen oder abgebrochen werden."
+  },
+  "activateUsersWarning": {
+    "message": "Bist du sicher, dass du die folgenden Mitglieder aktivieren möchtest, um ihnen den Zugriff auf die Organisation zu gewähren? Der Prozess kann einige Sekunden dauern und kann nicht unterbrochen oder abgebrochen werden."
+  },
   "theme": {
     "message": "Design"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Erfolgreich entfernt"
   },
+  "bulkDeactivatedMessage": {
+    "message": "Erfolgreich deaktiviert"
+  },
+  "bulkActivatedMessage": {
+    "message": "Erfolgreich aktiviert"
+  },
   "bulkFilteredMessage": {
     "message": "Ausgeschlossen, nicht anwendbar für diese Aktion."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Benutzer entfernen"
+  },
+  "deactivateUsers": {
+    "message": "Benutzer deaktivieren"
+  },
+  "activateUsers": {
+    "message": "Benutzer aktivieren"
   },
   "error": {
     "message": "Fehler"

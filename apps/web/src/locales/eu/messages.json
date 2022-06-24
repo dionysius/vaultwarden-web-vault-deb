@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "$APP_NAME$ Web Vault",
+    "message": "Kutxa gotorra",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -10,10 +10,10 @@
     }
   },
   "whatTypeOfItem": {
-    "message": "What type of item is this?"
+    "message": "Zein elementu mota da hau?"
   },
   "name": {
-    "message": "Name"
+    "message": "Izena"
   },
   "uri": {
     "message": "URI"
@@ -29,100 +29,100 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "IRI berria"
   },
   "username": {
-    "message": "Username"
+    "message": "Erabiltzaile izena"
   },
   "password": {
-    "message": "Password"
+    "message": "Pasahitza"
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Pasahitz berria"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Pasaesaldia"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Oharrak"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Eremu pertsonalizatuak"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Txartelaren titularraren izena"
   },
   "number": {
-    "message": "Number"
+    "message": "Zenbakia"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Marka"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Iraungitze data"
   },
   "securityCode": {
-    "message": "Security Code (CVV)"
+    "message": "Segurtasun kodea (CVV)"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Nortasun izena"
   },
   "company": {
-    "message": "Company"
+    "message": "Enpresa"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Segurtasun sozialaren zenbakia"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Pasaporte zenbakia"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Lizentzia zenbakia"
   },
   "email": {
-    "message": "Email"
+    "message": "Eposta"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefonoa"
   },
   "january": {
-    "message": "January"
+    "message": "Urtarrila"
   },
   "february": {
-    "message": "February"
+    "message": "Otsaila"
   },
   "march": {
-    "message": "March"
+    "message": "Martxoa"
   },
   "april": {
-    "message": "April"
+    "message": "Apirila"
   },
   "may": {
-    "message": "May"
+    "message": "Maiatza"
   },
   "june": {
-    "message": "June"
+    "message": "Ekaina"
   },
   "july": {
-    "message": "July"
+    "message": "Uztaila"
   },
   "august": {
-    "message": "August"
+    "message": "Abuztua"
   },
   "september": {
-    "message": "September"
+    "message": "Iraila"
   },
   "october": {
-    "message": "October"
+    "message": "Urria"
   },
   "november": {
-    "message": "November"
+    "message": "Azaroa"
   },
   "december": {
-    "message": "December"
+    "message": "Abendua"
   },
   "title": {
-    "message": "Title"
+    "message": "Titulua"
   },
   "mr": {
     "message": "Mr"
@@ -137,103 +137,103 @@
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Iraungitze hilabetea"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Iraungitze urtea"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Autentifikazio giltza (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Karpeta"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Eremu pertsonalizatu berria"
   },
   "value": {
-    "message": "Value"
+    "message": "Balioa"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Arrastatu txukuntzeko"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Testua"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Ezkutatua"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Boolearra"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Konektatuta",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Ezabatu"
   },
   "unassigned": {
-    "message": "Unassigned"
+    "message": "Esleitu gabe"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Karpetarik ez",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Gehitu karpeta"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Editatu Karpeta"
   },
   "baseDomain": {
-    "message": "Base domain",
+    "message": "Oinarrizko domeinua",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domeinu izena",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
-    "message": "Host",
+    "message": "Ostalaria",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Zehatza"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Hasi honekin"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Expresio erregularra",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Detekzio mota",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Lehenetsitako detekzio mota",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
-    "message": "Never"
+    "message": "Inoiz ez"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Txandakatu ikusgarritasuna"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Hondoa jo",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Sortu pasahitza"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Egiaztatu pasahitza konprometituta dagoen."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Pasahitz hau $VALUE$ aldiz datu-iragazketetan aurkitu da. Aldatu egin beharko zenuke.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -242,153 +242,153 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Pasahitz hau ez da inongo datu-filtrazio ezagunetan aurkitu. Erabiltzea segurua izan beharko luke."
   },
   "save": {
-    "message": "Save"
+    "message": "Gorde"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Ezeztatu"
   },
   "canceled": {
-    "message": "Canceled"
+    "message": "Ezeztatuta"
   },
   "close": {
-    "message": "Close"
+    "message": "Itxi"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Ezabatu"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Gogokoa"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "Gogokoetatik kendu"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Editatu"
   },
   "searchCollection": {
-    "message": "Search Collection"
+    "message": "Bilatu bilduma"
   },
   "searchFolder": {
-    "message": "Search Folder"
+    "message": "Bilatu karpeta"
   },
   "searchFavorites": {
-    "message": "Search Favorites"
+    "message": "Bilatu gogokoak"
   },
   "searchType": {
-    "message": "Search Type",
+    "message": "Bilaketa mota",
     "description": "Search item type"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "Kutxa Gotorrean bilatu"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Elementu guztiak"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Gogokoak"
   },
   "types": {
-    "message": "Types"
+    "message": "Motak"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Hasi saioa"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Txartela"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Nortasuna"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Ohar segurua"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "Saio hasierak"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "Txartelak"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "Nortasunak"
   },
   "typeSecureNotePlural": {
-    "message": "Secure Notes"
+    "message": "Ohar seguruak"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Karpetak"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Bildumak"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Izena"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Bigarren izena"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Abizena"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Izen osoa"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "1go helbidea"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "2. helbidea"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "3. helbidea"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "Hiria / Herria"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "Estatua / Probintzia"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "Posta kodea"
   },
   "country": {
-    "message": "Country"
+    "message": "Herrialdea"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Partekatua"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Eranskinak"
   },
   "select": {
-    "message": "Select"
+    "message": "Hautatu"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Gehitu elementua"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Editatu elementua"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Bistaratu elementua"
   },
   "ex": {
-    "message": "ex.",
+    "message": "adb.",
     "description": "Short abbreviation for 'example'."
   },
   "other": {
-    "message": "Other"
+    "message": "Bestelakoak"
   },
   "share": {
-    "message": "Share"
+    "message": "Partekatu"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Mugitu erakundera"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ kopiatuta",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -398,97 +398,97 @@
     }
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "Kopiatu balioa",
     "description": "Copy value to clipboard"
   },
   "copyPassword": {
-    "message": "Copy Password",
+    "message": "Kopiatu pasahitza",
     "description": "Copy password to clipboard"
   },
   "copyUsername": {
-    "message": "Copy Username",
+    "message": "Kopiatu erabiltzaile-izena",
     "description": "Copy username to clipboard"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Kopiatu zenbakia",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Kopiatu segurtasun kodea (CVV)",
     "description": "Copy credit card security code (CVV)"
   },
   "copyUri": {
-    "message": "Copy URI",
+    "message": "Kopiatu URIa",
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Ni"
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Nire Kutxa Gotorra"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Kutxa Gotor guztiak"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Kutxa Gotorra"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "Kutxa Gotorrak"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "Kuxa gotorreko elementuak"
   },
   "moveSelectedToOrg": {
-    "message": "Move Selected to Organization"
+    "message": "Mugitu aukeratutako antolakundera"
   },
   "deleteSelected": {
-    "message": "Delete Selected"
+    "message": "Ezabatu hautatutakoa"
   },
   "moveSelected": {
-    "message": "Move Selected"
+    "message": "Mugitu aukeratuak"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Hautatu guztiak"
   },
   "unselectAll": {
-    "message": "Unselect All"
+    "message": "Deshautatu guztiak"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Abiarazi"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Gehitu eranskin berria"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Ezabatu eranskina"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Ziur zaude eranskina ezabatu nahi duzula?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Eranskina gorde da."
   },
   "file": {
-    "message": "File"
+    "message": "Fitxategia"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Hautatu fitxategia."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "Eranskinaren gehienezko tamaina 500MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Ezin duzu ezaugarri hau erabili enkriptazio giltza eguneratu arte."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Gehitu elementua"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Editatu elementua"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ $ORGNAME$-ra mugitu",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -501,7 +501,7 @@
     }
   },
   "movedItemsToOrg": {
-    "message": "Selected items moved to $ORGNAME$",
+    "message": "Hautatutako elementuak $ORGNAME$-ra mugituak",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -510,34 +510,34 @@
     }
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Ezabatu elementua"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Ezabatu karpeta"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Ezabatu eranskina"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "Ziur zaude osagai hau ezabatu nahi duzula?"
   },
   "deletedItem": {
-    "message": "Item sent to trash"
+    "message": "Elementua zakarrontzira bidalia"
   },
   "deletedItems": {
-    "message": "Items sent to trash"
+    "message": "Elementuak zakarrontzira bidaliak"
   },
   "movedItems": {
-    "message": "Moved items"
+    "message": "Elementuak mugituak"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Ziur zaude pasahitza berridatzi nahi duzula?"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Karpeta editatuta"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Karpeta gehituta"
   },
   "deleteFolderConfirmation": {
     "message": "Are you sure you want to delete this folder?"
@@ -648,10 +648,10 @@
     "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Desblokeatu"
   },
   "loggedInAsEmailOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$HOSTNAME$-en $EMAIL$ bezala saioa hasita.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -664,28 +664,28 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Master pasahitz baliogabea"
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Blokeatu orain"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Ez dago erakusteko elementurik."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Ez dago erakusteko bildumarik."
   },
   "noGroupsInList": {
-    "message": "There are no groups to list."
+    "message": "Ez dago erakusteko talderik."
   },
   "noUsersInList": {
-    "message": "There are no users to list."
+    "message": "Ez dago erakusteko erabiltzailerik."
   },
   "noEventsInList": {
-    "message": "There are no events to list."
+    "message": "Ez dago erakusteko gertakaririk."
   },
   "newOrganization": {
-    "message": "New Organization"
+    "message": "Erakunde berria"
   },
   "noOrganizationsList": {
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."

@@ -1151,21 +1151,21 @@
   "languageDesc": {
     "message": "Alegeți limba în care folosiți seiful web."
   },
-  "disableIcons": {
-    "message": "Dezactivare iconuri sait"
+  "enableFavicon": {
+    "message": "Afișare pictograme site web"
   },
-  "disableIconsDesc": {
-    "message": "Iconurile saiturilor oferă o imagine identificabilă lângă fiecare element de conectare din seiful dvs."
+  "faviconDesc": {
+    "message": "Afișează o imagine ușor de recunoscut lângă fiecare autentificare."
   },
   "enableGravatars": {
-    "message": "Activare Gravatars",
-    "description": "'Gravatar' is the name of a service. See www.gravatar.com"
+    "message": "Afișare Gravatars",
+    "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Folosește imagini avatar încărcate de pe gravatar.com."
   },
   "enableFullWidth": {
-    "message": "Activare aspect seif cu lățimea completă",
+    "message": "Afișare aspect pe toată lățimea",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
@@ -1238,6 +1238,9 @@
   "enabled": {
     "message": "Activat"
   },
+  "activate": {
+    "message": "Activare"
+  },
   "premium": {
     "message": "Premium",
     "description": "Premium Membership"
@@ -1261,6 +1264,9 @@
     "message": "Gestionare"
   },
   "disable": {
+    "message": "Dezactivare"
+  },
+  "deactivate": {
     "message": "Dezactivare"
   },
   "twoStepLoginProviderEnabled": {
@@ -2226,6 +2232,12 @@
   "removeUserConfirmation": {
     "message": "Sigur doriți să eliminați acest utilizator?"
   },
+  "deactivateUserConfirmation": {
+    "message": "Membrul nu va mai avea acces la organizație, dar va avea în continuare acces la seiful său individual."
+  },
+  "activateUserConfirmation": {
+    "message": "Sunteți sigur că doriți să activați acest utilizator, acordându-i acces la organizație?"
+  },
   "removeUserConfirmationKeyConnector": {
     "message": "Avertisment! Acest utilizator are nevoie de Conector Cheie pentru a-și gestiona criptarea. Eliminarea acestui utilizator din organizația dvs., îi va dezactiva permanent contul. Această acțiune nu poate fi anulată. Doriți să continuați?"
   },
@@ -2564,6 +2576,42 @@
   },
   "removedUserId": {
     "message": "Utilizatorul $ID$ a fost eliminat.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivatedUserId": {
+    "message": "S-a dezactivat utilizatorul $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activatedUserId": {
+    "message": "S-a activat utilizatorul $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deactivateUserId": {
+    "message": "Dezactivați utilizatorul $ID$?",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "activateUserId": {
+    "message": "Activați utilizatorul $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3124,10 +3172,10 @@
     "message": "Filtre"
   },
   "vaultTimeout": {
-    "message": "Expirare seif"
+    "message": "Timp de expirare seif"
   },
   "vaultTimeoutDesc": {
-    "message": "Determină când seiful dvs. va expira și va efectua acțiunea selectată."
+    "message": "Alegeți când se va efectua acțiunea selectată la expirarea seifului."
   },
   "oneMinute": {
     "message": "1 minut"
@@ -3148,7 +3196,7 @@
     "message": "4 ore"
   },
   "onRefresh": {
-    "message": "La reîmprospătarea browserului"
+    "message": "La împrospătarea browserului"
   },
   "dateUpdated": {
     "message": "S-a actualizat",
@@ -3358,10 +3406,10 @@
     "message": "Acțiune la expirarea seifului"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Un seif blocat necesită reintroducerea parolei principale pentru a-l accesa din nou."
+    "message": "Este necesară parola principală sau o altă metodă de deblocare pentru a vă accesa din nou seiful."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Un seif deconectat necesită reautentificarea pentru a-l accesa din nou."
+    "message": "Este necesară o nouă autentificare pentru a vă accesa din nou seiful."
   },
   "lock": {
     "message": "Blocare",
@@ -3616,6 +3664,9 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
+    "message": "Dezactivat"
+  },
+  "deactivated": {
     "message": "Dezactivat"
   },
   "sendLink": {
@@ -4219,6 +4270,12 @@
   "removeUsersWarning": {
     "message": "Sunteți sigur că doriți să eliminați următorii utilizatori? Finalizarea procesului poate dura câteva secunde și nu poate fi întrerupt sau anulat."
   },
+  "deactivateUsersWarning": {
+    "message": "Sunteți sigur că doriți să dezactivați următorii membri? Aceștia nu vor mai avea acces la organizație, dar vor avea în continuare acces la seifurile lor individuale. Procesul poate dura câteva secunde pentru a se finaliza și nu poate fi întrerupt sau anulat."
+  },
+  "activateUsersWarning": {
+    "message": "Sunteți sigur că doriți să activați următorii membri, acordându-le acces la organizație? Finalizarea procesului poate dura câteva secunde și nu poate fi întreruptă sau anulată."
+  },
   "theme": {
     "message": "Temă"
   },
@@ -4249,6 +4306,12 @@
   "bulkRemovedMessage": {
     "message": "Eliminat cu succes"
   },
+  "bulkDeactivatedMessage": {
+    "message": "S-a dezactivat cu succes"
+  },
+  "bulkActivatedMessage": {
+    "message": "S-a activat cu succes"
+  },
   "bulkFilteredMessage": {
     "message": "Exclus, nu se aplică pentru această acțiune."
   },
@@ -4257,6 +4320,12 @@
   },
   "removeUsers": {
     "message": "Eliminați utilizatorii"
+  },
+  "deactivateUsers": {
+    "message": "Dezactivare utilizatori"
+  },
+  "activateUsers": {
+    "message": "Activare utilizatori"
   },
   "error": {
     "message": "Eroare"
