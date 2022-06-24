@@ -141,7 +141,7 @@ export class VaultSelectComponent implements OnInit {
       .withPositions(this.overlayPostition);
 
     this.overlayRef = this.overlay.create({
-      hasBackdrop: false,
+      hasBackdrop: true,
       positionStrategy,
       maxHeight: viewPortHeight - 160,
       backdropClass: "cdk-overlay-transparent-backdrop",
