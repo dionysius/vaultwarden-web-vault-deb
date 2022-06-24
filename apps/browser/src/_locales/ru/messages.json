@@ -160,7 +160,7 @@
     "message": "Двухфакторная аутентификация"
   },
   "logOut": {
-    "message": "Выйти"
+    "message": "Выход"
   },
   "about": {
     "message": "О Bitwarden"
@@ -406,7 +406,7 @@
     "message": "Вместе с компьютером"
   },
   "onRestart": {
-    "message": "При перезапуске"
+    "message": "При перезапуске браузера"
   },
   "never": {
     "message": "Никогда"
@@ -567,26 +567,26 @@
     "message": "Без папки",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Отключить уведомление о добавлении логина"
+  "enableAddLoginNotification": {
+    "message": "Спрашивать при добавлении логина"
   },
   "addLoginNotificationDesc": {
-    "message": "Уведомление о добавлении логина автоматически предложит вам сохранить новые логины в хранилище."
+    "message": "Запросить добавление элемента, если его нет в вашем хранилище."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Не показывать карты на вкладке"
+  "showCardsCurrentTab": {
+    "message": "Показывать карты на вкладке"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Карты из вашего хранилища перечислены на 'Текущей вкладке' для упрощения доступа к автозаполнению."
+  "showCardsCurrentTabDesc": {
+    "message": "Карты будут отображены на вкладке для удобного автозаполнения."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Не показывать Личности на вкладке"
+  "showIdentitiesCurrentTab": {
+    "message": "Показывать Личности на вкладке"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Личности из вашего хранилища перечислены на 'Текущей вкладке' для упрощения доступа к автозаполнению."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Личности будут отображены на вкладке для удобного автозаполнения."
   },
   "clearClipboard": {
-    "message": "Очистка буфера обмена",
+    "message": "Очистить буфер обмена",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Сохранить"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Отключить уведомление об изменении пароля"
+  "enableChangedPasswordNotification": {
+    "message": "Спрашивать при обновлении существующего логина"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "Уведомление об изменении пароля автоматически предложит вам обновить пароль входа в хранилище, когда обнаружит, что вы изменили его на веб-сайте."
+  "changedPasswordNotificationDesc": {
+    "message": "Спрашивать обновление пароля логина при обнаружении изменения на веб-сайте."
   },
   "notificationChangeDesc": {
     "message": "Обновить этот пароль в Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Обновить"
   },
-  "disableContextMenuItem": {
-    "message": "Отключить опции контекстного меню"
+  "enableContextMenuItem": {
+    "message": "Показать опции контекстного меню"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта на текущей вкладке."
+  "contextMenuItemDesc": {
+    "message": "С помощью двойного щелчка можно получить доступ к генерации паролей и сопоставлению логинов для веб-сайта."
   },
   "defaultUriMatchDetection": {
     "message": "Обнаружение совпадения URI по умолчанию",
@@ -643,7 +643,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
-    "message": "Экспорт хранилища"
+    "message": "Экспортировать хранилище"
   },
   "fileFormat": {
     "message": "Формат файла"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Обновление завершено"
   },
-  "disableAutoTotpCopy": {
-    "message": "Отключить автоматическое копирование TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Копировать TOTP автоматически"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Если к вашему логину прикреплен ключ проверки подлинности, то код подтверждения TOTP будет скопирован при автозаполнении логина."
+    "message": "Если к вашему логину прикреплен ключ аутентификации, то код подтверждения TOTP будет скопирован при автозаполнении логина."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Не запрашивать биометрию при запуске"
+  "enableAutoBiometricsPrompt": {
+    "message": "Запрашивать биометрию при запуске"
   },
   "premiumRequired": {
     "message": "Необходим Премиум"
@@ -951,10 +951,10 @@
     "message": "URL-адреса среды сохранены."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Включить автозаполнение при загрузке страницы"
+    "message": "Автозаполнение при загрузке страницы"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "При обнаружении формы входа выполняется автозаполнение во время загрузки веб-страницы."
+    "message": "Если обнаружена форма входа, автозаполнение выполняется при загрузке веб-страницы."
   },
   "experimentalFeature": {
     "message": "Это экспериментальная функция. Используйте на свой страх и риск."
@@ -963,7 +963,7 @@
     "message": "Настройка автозаполнения по умолчанию для логинов"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "После включения автозаполнения при загрузке страницы вы можете включить или отключить эту функцию для отдельных логинов. Это настройка по умолчанию для логинов, которые не были настроены отдельно."
+    "message": "Вы можете отключить автозаполнение при загрузке страницы для отдельных логинов в режиме редактирования элемента."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Автозаполнение при загрузке страницы (если включено в настройках)"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Этот браузер не может обрабатывать запросы U2F в этом всплывающем окне. Вы хотите открыть это всплывающее окно в новом окне, чтобы иметь возможность войти в систему, используя U2F?"
   },
-  "disableFavicon": {
-    "message": "Отключить значки веб-сайтов"
+  "enableFavicon": {
+    "message": "Показать значки веб-сайтов"
   },
-  "disableFaviconDesc": {
-    "message": "Значки веб-сайтов отображаются рядом с каждым элементом в вашем хранилище."
+  "faviconDesc": {
+    "message": "Отображать узнаваемое изображение рядом с каждым логином."
   },
-  "disableBadgeCounter": {
-    "message": "Отключить счетчик значка"
+  "enableBadgeCounter": {
+    "message": "Показать счетчик на значке"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Счетчик значка показывает, сколько в вашем хранилище логинов для текущей страницы."
+  "badgeCounterDesc": {
+    "message": "Показывает количество логинов для текущей веб-страницы."
   },
   "cardholderName": {
     "message": "Имя владельца карты"

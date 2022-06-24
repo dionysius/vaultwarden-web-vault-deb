@@ -149,7 +149,7 @@
     "message": "Schimbare parolă principală"
   },
   "fingerprintPhrase": {
-    "message": "Frază amprentă",
+    "message": "Fraza amprentă",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -157,7 +157,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Autentificare în două etape"
+    "message": "Autentificare în doi pași"
   },
   "logOut": {
     "message": "Deconectare"
@@ -218,7 +218,7 @@
     "message": "Seif web Bitwarden"
   },
   "importItems": {
-    "message": "Import elemente"
+    "message": "Import de articole"
   },
   "select": {
     "message": "Selectare"
@@ -403,7 +403,7 @@
     "message": "4 ore"
   },
   "onLocked": {
-    "message": "La blocarea dispozitivului"
+    "message": "La blocarea sistemului"
   },
   "onRestart": {
     "message": "La repornirea browserului"
@@ -567,23 +567,23 @@
     "message": "Fără dosar",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Dezactivare \"Notificare de adăugare a autentificărilor\""
+  "enableAddLoginNotification": {
+    "message": "Solicitați adăugarea autentificării"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Notificarea de adăugare a autentificării\" vă solicită automat salvarea noilor conturi în seif de fiecare dată când vă conectați la ele pentru prima dată."
+    "message": "Solicitați adăugarea unui element dacă nu se găsește unul în seif."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Nu se afișează carduri în pagina filei curente"
+  "showCardsCurrentTab": {
+    "message": "Afișați cardurile pe pagina Filă"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Informațiile de tip card din seiful dvs. sunt afișate în pagina din \"Fila curentă\" pentru acces ușor la auto-completare."
+  "showCardsCurrentTabDesc": {
+    "message": "Listați elementele cardului pe pagina Filă pentru a facilita completarea automată."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Nu se afișează identități în pagina filei curente"
+  "showIdentitiesCurrentTab": {
+    "message": "Afișați identitățile pe pagina Filă"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Informațiile de tip identitate din seiful dvs. sunt afișate în pagina din \"Fila curentă\" pentru acces ușor la auto-completare."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Listați elementelor de identitate de pe pagina Filă pentru a facilita completarea automată."
   },
   "clearClipboard": {
     "message": "Golire clipboard",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Salvare"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Dezactivare notificare de modificare a parolei"
+  "enableChangedPasswordNotification": {
+    "message": "Solicitați actualizarea autentificării existente"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"Notificarea de modificare a parolei\" vă propune automat să actualizați o parolă din seif oricând se detectează că ați modificat-o pe un sait."
+  "changedPasswordNotificationDesc": {
+    "message": "Solicitați actualizarea unei parole de autentificare atunci când este detectată o modificare pe un site web."
   },
   "notificationChangeDesc": {
     "message": "Doriți să actualizați această parolă în Bitwarden?"
@@ -611,14 +611,14 @@
   "notificationChangeSave": {
     "message": "Actualizare"
   },
-  "disableContextMenuItem": {
-    "message": "Dezactivare opțiuni meniu contextual"
+  "enableContextMenuItem": {
+    "message": "Afișați opțiunile meniului contextual"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Opțiunile din meniul contextual oferă acces rapid la generarea de parole și la autentificările pentru saitul web din fila curentă."
+  "contextMenuItemDesc": {
+    "message": "Utilizați un clic secundar pentru a accesa generarea de parole și conectările potrivite pentru site-ul web."
   },
   "defaultUriMatchDetection": {
-    "message": "Detectare de potrivire URI implicită",
+    "message": "Detectare implicită a potrivirii URI",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -747,7 +747,7 @@
     "message": "Nu puteți utiliza această caracteristică înainte de a actualiza cheia de criptare."
   },
   "premiumMembership": {
-    "message": "Membru Premium"
+    "message": "Abonament Premium"
   },
   "premiumManage": {
     "message": "Gestionare statut de membru"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Actualizare completă"
   },
-  "disableAutoTotpCopy": {
-    "message": "Dezactivare copiere automată a codului TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Copiați automat TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Dacă autentificarea dvs. are o cheie atașată, codul de verificare TOTP este copiat în clipboard de fiecare dată când efectuați auto-completarea datelor de conectare."
+    "message": "Dacă o autentificare are o cheie de autentificare, copiați codul de verificare TOTP în clipboard când completați automat autentificarea."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Nu solicitați datele biometrice la pornire"
+  "enableAutoBiometricsPrompt": {
+    "message": "Solicitați date biometrice la pornire"
   },
   "premiumRequired": {
     "message": "Este necesară versiunea Premium"
@@ -951,10 +951,10 @@
     "message": "URL-urile mediului au fost salvate."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Activare auto-completare la încărcarea paginii"
+    "message": "Completare automată la încărcarea paginii"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Dacă este detectat un formular de autentificare, se efectuează automat o completare a acestuia la încărcarea paginii."
+    "message": "Dacă se detectează un formular de autentificare, completați-l automat la încărcarea paginii web."
   },
   "experimentalFeature": {
     "message": "În acest moment, aceasta funcțiune este experimentală. O puteți folosi pe propria răspundere."
@@ -963,10 +963,10 @@
     "message": "Setarea implicită de completare automată pentru articole de conectare"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "După activarea completării automate la încărcarea paginii, puteți activa sau dezactiva funcția pentru elementele de conectare individuale. Aceasta este setarea implicită pentru articolele de conectare care nu sunt configurate separat."
+    "message": "Puteți dezactiva completarea automată la încărcarea paginii pentru elementele de autentificare individuale din vizualizarea Editare element."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Completare automată la încărcarea paginii (dacă este activată în opțiuni)"
+    "message": "Completare automată la încărcarea paginii (dacă este activată în Opțiuni)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Utilizați setarea implicită"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Acest browser nu poate procesa cererile U2F în această fereastră pop-up. Doriți să deschideți acest pop-up într-o fereastră nouă, astfel încât să vă puteți conecta utilizând U2F?"
   },
-  "disableFavicon": {
-    "message": "Dezactivare iconuri sait"
+  "enableFavicon": {
+    "message": "Afișați pictogramele site-ului web"
   },
-  "disableFaviconDesc": {
-    "message": "Iconurile saiturilor oferă o imagine identificabilă lângă fiecare element de conectare din seiful dvs."
+  "faviconDesc": {
+    "message": "Afișează o imagine ușor de recunoscut lângă fiecare autentificare."
   },
-  "disableBadgeCounter": {
-    "message": "Dezactivați contorul de insigne"
+  "enableBadgeCounter": {
+    "message": "Afișați contorul de insigne"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Contorul de insigne arată câte conectări aveți în seiful dvs. pentru pagina curentă."
+  "badgeCounterDesc": {
+    "message": "Indică numărul de autentificări pe care le aveți pentru pagina web curentă."
   },
   "cardholderName": {
     "message": "Deținător card"

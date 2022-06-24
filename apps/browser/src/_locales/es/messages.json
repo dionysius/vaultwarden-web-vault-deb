@@ -567,23 +567,23 @@
     "message": "Sin carpeta",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Deshabilitar notificación para añadir entradas"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres guardar nuevas entradas en tu caja fuerte cuando te identificas en un sitio web por primera vez."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "No mostrar tarjetas en la pestaña"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Los elementos de tarjeta de tu caja fuerte aparecen en la página \"pestaña actual\" para facilitar el acceso al autocompletado."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "No mostrar las identidades en la página de ficha"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Los elementos de identidad de tu caja fuerte aparecen en la página \"pestaña actual\" para facilitar el acceso al autocompletado."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Vaciar portapapeles",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Sí, guardar ahora"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Deshabilitar la notificación de cambio de contraseña"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "La \"notificación de cambio de contraseña\" te pregunta automáticamente si quieres actualizar la contraseña de un usuario de tu caja fuerte cuando detecta que la has cambiado en un sitio web."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "¿Desea actualizar esta contraseña en Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Actualizado"
   },
-  "disableContextMenuItem": {
-    "message": "Deshabilitar opciones del menú contextual"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Las opciones del menú contextual permiten un acceso rápido al generador de contraseñas y a las entradas para el sitio abierto en tu pestaña actual."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Detección por defecto de coincidencia de URI",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Actualización completada"
   },
-  "disableAutoTotpCopy": {
-    "message": "Deshabilitar copiado automático de códigos TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Si tu entrada tiene una clave de autenticación adjunta, el código de verificación TOTP es copiado automáticamente al portapapeles cuando autorellenas una entrada."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "No solicitar biométricos al iniciar"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium requerido"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Este navegador no puede procesar las peticiones U2F en esta ventana emergente. ¿Desea abrir esta ventana emergente en una nueva ventana para que pueda iniciar sesión usando U2F?"
   },
-  "disableFavicon": {
-    "message": "Deshabilitar iconos del sitio web"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Los iconos del sitio web añaden una imagen reconocible al lado de cada entrada de tu caja fuerte."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Desactivar contador de insignias"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "El contador de insinuaciones indica cuántos registros tienes para la página actual en tu bóveda."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Nombre en la tarjeta"

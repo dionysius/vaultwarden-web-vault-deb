@@ -567,23 +567,23 @@
     "message": "Без фасцикле",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Онемогући обавештење Додај Пријаву"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "„Нотификације Додај Лозинку“ аутоматски тражи да сачувате нове пријаве у сефу кад год се први пут пријавите на њих."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Не приказуј кредитне картице на страници"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Ставке кредитне картице из вашег сефа наведене су на страници „Тренутна картица“ ради једноставног приступа аутоматског попуњавања."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Не приказуј идентитете на страници"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Идентитети из вашег сефа наведени су на страници „Тренутна картица“ ради једноставног приступа аутоматског попуњавања."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Обриши привремену меморију",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Сачувај"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Онемогући обавештење о  промењеним лозинкама"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "„Нотификација Промењена Лозинка“ аутоматски тражи да ажурирате лозинку за пријављивање у сефу сваки пут када открије да сте је променили на веб сајту."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Да ли желите да ажурирате ову лозинку за Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Ажурирај"
   },
-  "disableContextMenuItem": {
-    "message": "Онемогући опције у контекстном менију"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Опције контекстуалног менија пружају брз приступ генерисању лозинки и пријавама за веб сајт на вашом тренутном језичку."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Стандардно налажење УРЛ",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Освежавање је завршено"
   },
-  "disableAutoTotpCopy": {
-    "message": "Угаси аутоматско копирање једнократног кода"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Ако је за вашу пријаву приложен аутентификациони кључ, једнократни код се аутоматски копира у вашој привременој меморији кад год ауто-попуните пријаву."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Не тражи биометрику након покретања."
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Потребан Премијум"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Овај прегледач не може да обрађује U2F захтеве у овом искачућем прозору. Да ли желите да отворите овај искачући прозор у новом прозору како бисте могли да се пријавите користећи U2F?"
   },
-  "disableFavicon": {
-    "message": "Онемогући иконице сајта"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаве у сефу."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Онемогући бројач на иконици"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Бројач иконице указује колико пријава имате за тренутну страницу у вашем сефу."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Име Власника Картице"

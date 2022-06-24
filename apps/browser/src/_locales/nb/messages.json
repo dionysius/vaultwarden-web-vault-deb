@@ -567,23 +567,23 @@
     "message": "Ingen mappe",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Deaktiver «Legg til innlogging»-beskjedene"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "\"Legg til innlogging\"-beskjeden ber deg automatisk om å lagre nye innlogginger til hvelvet ditt hver gang du logger på dem for første gang."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Ikke vis kort på fanesiden"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Kortene fra hvelvet ditt er listet opp på «Nåværende fane»-siden for enkel tilgang til autoutfylling."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Ikke vis identiteter på fanesiden"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identitetene fra hvelvet ditt er listet opp på «Nåværende fane»-siden for enkel autoutfyllingstilgang."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Tøm utklippstavlen",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Ja, lagre nå"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Deaktiver beskjeder om passordendringer"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "«Endret passord»-beskjeden spør deg automatisk om å oppdatere et innloggingspassord i hvelvet ditt, dersom den oppdager at du har endret det på et nettsted."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Vil du oppdatere dette passordet i Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Ja, oppdater nå"
   },
-  "disableContextMenuItem": {
-    "message": "Deaktiver sammenhengsmeny-innstillinger"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Sammenhengsmeny-alternativer sørger for rask tilgang til passordgenerering og innlogginger for nettstedet i din nåværende fane."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Standard URI-samsvarsgjenkjenning",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Oppfriskning fullført"
   },
-  "disableAutoTotpCopy": {
-    "message": "Deaktiver automatisk TOTP-kopiering"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Dersom din innlogging har en autentiseringsnøkkel knyttet til den, blir TOTP-verifiseringskoden automatisk kopiert til utklippstavlen din når enn du auto-utfyller innloggingen."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Ikke be om biometri under åpning"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium er påkrevd"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Denne nettleseren kan ikke behandle U2F-forespørsler i dette popup-vinduet. Vil du åpne denne popupen i et nytt vindu, slik at du kan logge deg på med U2F?"
   },
-  "disableFavicon": {
-    "message": "Skru av nettstedsikoner"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Nettstedsikoner viser et karakteristisk bilde ved siden av hvert innloggingelement i hvelvet ditt."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Deaktiver Badge Teller"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Bade-teller indikerer hvor mange innlogginger du har for den nåværende siden i hvelvet ditt."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Kortholderens navn"

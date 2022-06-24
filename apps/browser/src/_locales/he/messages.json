@@ -567,23 +567,23 @@
     "message": "ללא תיקייה",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "בטל את ההודעה \"שמור פרטי כניסה\""
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "ההודעה \"שמור פרטי כניסה\" מופיעה בכל פעם שתכנס לאתר חדש בפעם הראשונה."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "אל תציג כרטיסים העמוד הלשונית"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "פרטי כרטיס מהכספת שלך מופיעים בעמוד 'הלשונית הנוכחית' לגישה קלה להשלמה האוטומטית."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "אל תציג זהויות בעמוד הלשונית"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "פרטי זהות מהכספת שלך מופיעים בעמוד 'הלשונית הנוכחית' לגישה קלה להשלמה האוטומטית."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "נקה לוח העתקות",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "כן, שמור עכשיו"
   },
-  "disableChangedPasswordNotification": {
-    "message": "בטל התראת \"סיסמה שונתה\""
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "ההתראה \"סיסמה שונתה\" תופיע בכל פעם שהמערכת מזהה שינוי בסיסמה באתר אם פרטי הכניסה הקודמים שמורים שבכספת."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "האם ברצונך לעדכן את הסיסמה הזו בתוכנת Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "כן, עדכן עכשיו"
   },
-  "disableContextMenuItem": {
-    "message": "בטל את אפשרויות תפריט ההקשר"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "אפשרויות תפריט ההקשר מספקים גישה מהירה ליצירת סיסמאות חדשות ולפרטי כניסה לאתר עבור הלשונית הנוכחית בדפדפן."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "ברירת מחדל לזיהוי התאמת כתובות",
@@ -639,7 +639,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "הרענון הושלם"
   },
-  "disableAutoTotpCopy": {
-    "message": "בטל העתקה אוטומטית של קוד TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "אם פרטי הכניסה שלך מקושרים לאפליקציית אימות, קוד האימות TOTP מועתק אוטומטית ללוח שלך ברגע שמתבצעת ההשלמה האוטומטית לטופס הכניסה."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "נדרש חשבון פרימיום"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "דפדפן זה לא יכול לעבד בקשות U2F בחלון צף זה. האם ברצונך לפתוח את החלון הצף כחלון חדש רגיל כדי שתוכל להכנס באמצעות U2F?"
   },
-  "disableFavicon": {
-    "message": "בטל אייקונים של האתר"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "יכולת הצג אייקונים-של-האתר מאפשרת הצגה של תמונה או אייקון מוכר ליד פרטי הכניסה שבכספת שלך."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "שם בעל הכרטיס"
@@ -1562,7 +1562,7 @@
     "message": "מדיניות ארגונית משפיעה על אפשרויות הבעלות שלך."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."

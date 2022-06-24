@@ -567,23 +567,23 @@
     "message": "ಫೋಲ್ಡರ್ ಇಲ್ಲ",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "ಲಾಗಿನ್ ಅಧಿಸೂಚನೆಯನ್ನು ಸೇರಿಸಿ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "\"ಲಾಗಿನ್ ಅಧಿಸೂಚನೆಯನ್ನು ಸೇರಿಸಿ\" ನೀವು ಮೊದಲ ಬಾರಿಗೆ ಪ್ರವೇಶಿಸಿದಾಗಲೆಲ್ಲಾ ಹೊಸ ಲಾಗಿನ್‌ಗಳನ್ನು ನಿಮ್ಮ ವಾಲ್ಟ್‌ಗೆ ಉಳಿಸಲು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಕೇಳುತ್ತದೆ."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "ಟ್ಯಾಬ್ ಪುಟದಲ್ಲಿ ಕಾರ್ಡ್‌ಗಳನ್ನು ತೋರಿಸಬೇಡಿ"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "ಸ್ವಯಂ-ಭರ್ತಿ ಸುಲಭ ಪ್ರವೇಶಕ್ಕಾಗಿ ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಿಂದ ಕಾರ್ಡ್ ವಸ್ತುಗಳನ್ನು 'ಪ್ರಸ್ತುತ ಟ್ಯಾಬ್' ಪುಟದಲ್ಲಿ ಪಟ್ಟಿ ಮಾಡಲಾಗಿದೆ."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "ಟ್ಯಾಬ್ ಪುಟದಲ್ಲಿ ಗುರುತುಗಳನ್ನು ತೋರಿಸಬೇಡಿ"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "ಸ್ವಯಂ-ಭರ್ತಿ ಸುಲಭ ಪ್ರವೇಶಕ್ಕಾಗಿ ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಿಂದ ಗುರುತಿನ ವಸ್ತುಗಳನ್ನು 'ಪ್ರಸ್ತುತ ಟ್ಯಾಬ್' ಪುಟದಲ್ಲಿ ಪಟ್ಟಿ ಮಾಡಲಾಗಿದೆ."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ತೆರವುಗೊಳಿಸಿ",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "ಹೌದು, ಈಗ ಉಳಿಸಿ"
   },
-  "disableChangedPasswordNotification": {
-    "message": "ಬದಲಾವಣೆ ಪಾಸ್ವರ್ಡ್ ಅಧಿಸೂಚನೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"ಬದಲಾಯಿಸಿದ ಪಾಸ್ವರ್ಡ್ ಅಧಿಸೂಚನೆ\" ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನಿಮ್ಮ ಉತ್ತೇಜಿಸುವ ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ನೀವು ವೆಬ್ಸೈಟ್ನಲ್ಲಿ ಬದಲಿಸಿದೆ ಎಂದು ಪತ್ತೆಹಚ್ಚಿದಾಗ ನಿಮ್ಮ ವಾಲ್ಟ್ನಲ್ಲಿ ಲಾಗಿನ್ ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ನವೀಕರಿಸಲು ನಿಮ್ಮನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಪೇಕ್ಷಿಸುತ್ತದೆ."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "ಈ ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ಬಿಟ್ವರ್ಡ್ನಲ್ಲಿ ನವೀಕರಿಸಲು ನೀವು ಬಯಸುತ್ತೀರಾ?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "ಹೌದು, ಈಗ ನವೀಕರಿಸಿ"
   },
-  "disableContextMenuItem": {
-    "message": "ಸನ್ನಿವೇಶ ಮೆನು ಆಯ್ಕೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "ಸನ್ನಿವೇಶ ಮೆನು ಆಯ್ಕೆಗಳು ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಟ್ಯಾಬ್ನಲ್ಲಿ ವೆಬ್ಸೈಟ್ಗೆ ಪಾಸ್ವರ್ಡ್ ಪೀಳಿಗೆಯ ಮತ್ತು ಲಾಗಿನ್ಗಳಿಗೆ ತ್ವರಿತ ಪ್ರವೇಶವನ್ನು ಒದಗಿಸುತ್ತದೆ."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "ಡೀಫಾಲ್ಟ್ ಯುಆರ್ಐ ಹೊಂದಾಣಿಕೆ ಪತ್ತೆ",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "ರಿಫ್ರೆಶ್ ಪೂರ್ಣಗೊಂಡಿದೆ"
   },
-  "disableAutoTotpCopy": {
-    "message": "ಸ್ವಯಂಚಾಲಿತ TOTP ನಕಲನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "ನಿಮ್ಮ ಲಾಗಿನ್‌ಗೆ ದೃಢೀಕರಣ ಕೀಲಿಯನ್ನು ಲಗತ್ತಿಸಿದ್ದರೆ, ನೀವು ಲಾಗಿನ್ ಅನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಭರ್ತಿ ಮಾಡಿದಾಗಲೆಲ್ಲಾ TOTP ಪರಿಶೀಲನಾ ಕೋಡ್ ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನಕಲಿಸಲ್ಪಡುತ್ತದೆ."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "ಪ್ರೀಮಿಯಂ ಅಗತ್ಯವಿದೆ"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "ಈ ಬ್ರೌಸರ್ ಈ ಪಾಪ್ಅಪ್ ವಿಂಡೋದಲ್ಲಿ ಯು 2 ಎಫ್ ವಿನಂತಿಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಈ ಪಾಪ್ಅಪ್ ಅನ್ನು ಹೊಸ ವಿಂಡೋದಲ್ಲಿ ತೆರೆಯಲು ನೀವು ಬಯಸುವಿರಾ, ಇದರಿಂದ ನೀವು ಯು 2 ಎಫ್ ಬಳಸಿ ಲಾಗ್ ಇನ್ ಆಗಬಹುದು."
   },
-  "disableFavicon": {
-    "message": "ವೆಬ್‌ಸೈಟ್ ಚಿಹ್ನೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "ವೆಬ್‌ಸೈಟ್ ಐಕಾನ್‌ಗಳು ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿರುವ ಪ್ರತಿ ಲಾಗಿನ್ ಐಟಂನ ಪಕ್ಕದಲ್ಲಿ ಗುರುತಿಸಬಹುದಾದ ಚಿತ್ರವನ್ನು ಒದಗಿಸುತ್ತದೆ."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "ಬ್ಯಾಡ್ಜ್ ಕೌಂಟರ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ನಲ್ಲಿ ಪ್ರಸ್ತುತ ಪುಟಕ್ಕಾಗಿ ನೀವು ಎಷ್ಟು ಲಾಗಿನ್ಗಳನ್ನು ಹೊಂದಿದ್ದೀರಿ ಎಂದು ಬ್ಯಾಡ್ಜ್ ಕೌಂಟರ್ ಸೂಚಿಸುತ್ತದೆ."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "ಕಾರ್ಡುದಾರನ ಹೆಸರು"
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {

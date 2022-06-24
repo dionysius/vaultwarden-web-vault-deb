@@ -567,23 +567,23 @@
     "message": "Nav mapes",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Atspējot piekļuves vienumu pievienošanas paziņojumu"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "Iestatījums \"Piekļuves vienumu pievienošanas paziņojumi\" piedāvā saglabāt jaunus pieslēgšanās ierakstus, kad vien tie tiek izmantoti pirmo reizi ierakstoties."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Nerādīt kartes cilnes lapā"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Glabātavas karšu vienumi tiek attēloti 'Pašreizējā cilne' lapā vieglai piekļūšanai automātiskajai aizpildīšanai."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Nerādīt identitātes cilnes pārskatā"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Glabātavas identitātes vienumi tiek attēloti 'Pašreizējā cilne' lapā vieglai piekļūšanai automātiskajai aizpildīšanai."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Notīrīt starpliktuvi",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Jā, saglabāt"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Atspējot mainītas paroles paziņojumu"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"Mainītas paroles paziņojums\" vaicā atjaunināt pieteikšanās vienuma paroli glabātavā, kad vien tiek noteikts, ka tā ir mainīta tīmekļa vietnē."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Vai atjaunināt šo paroli Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Jā, atjaunināt"
   },
-  "disableContextMenuItem": {
-    "message": "Atspējot konteksta izvēlnes iespējas"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Konteksta izvēlnes iespējas piedāvā ātru piekļūšanu paroļu veidošanai un tīmekļa vietnes pieteikšanās vienumiem pašreizējā cilnē."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Noklusējuma URI atbilstības noteikšana",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Atsvaidzināšana pabeigta"
   },
-  "disableAutoTotpCopy": {
-    "message": "Atspējot automātisku TOTP ievietošanu starpliktuvē"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Ja pierakstīšanās datiem ir pievienota autentificētāja atslēga, TOTP apstiprinājuma kods tiks automātiski pārkopēts uz starpliktuvi, kad vien tiks automātiski aizpildīta pierakstīšanās veidne."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Palaišanas brīdī nevaicāt par biometriju."
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Nepieciešams Premium"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Šis pārlūks nevar apstrādāt U2F pieprasījumus šajā uznirstošajā logā. Vai atvērt to atsevišķā logā, lai varētu pierakstīties, izmantojot U2F?"
   },
-  "disableFavicon": {
-    "message": "Atspējot tīmekļa vietņu ikonas"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Tīmekļa vietņu ikonas nodrošina atpazīstamu attēlu pie katra glabātavas pieteikšanās vienuma."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Atspējot skaitītāja nozīmīti"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Skaitītāja nozīmīte norāda, cik pierakstīšanās vienumu pašreizējai lapai ir atrodami glabātavā."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Kartes īpašnieka vārds"

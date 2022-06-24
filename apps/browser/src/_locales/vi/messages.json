@@ -567,23 +567,23 @@
     "message": "Không có thư mục",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Vô hiệu thông báo Thêm đăng nhập"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "'Thông báo Thêm đăng nhập' sẽ tự động nhắc bạn lưu các đăng nhập mới vào hầm an toàn của bạn bất cứ khi nào bạn đăng nhập trang web lần đầu tiên."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Dọn dẹp khay nhớ tạm",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Vâng, Lưu Ngay"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Bạn có muốn cập nhật mật khẩu này trên Bitwarden không?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Yes, Update Now"
   },
-  "disableContextMenuItem": {
-    "message": "Tắt tuỳ chọn trong Menu Ngữ Cảnh"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Tùy chọn menu ngữ cảnh giúp bạn truy cập nhanh thông tin đăng nhập và tạo mật khẩu cho trang web trong tab mà bạn đang mở."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Phương thức kiểm tra URI mặc định",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Làm mới hoàn tất"
   },
-  "disableAutoTotpCopy": {
-    "message": "Vô hiệu hoá tự động sao chép TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Nếu đăng nhập của bạn có một khóa xác thực gắn liền với nó, mã xác nhận TOTP sẽ được tự động sao chép vào bộ nhớ tạm của bạn bất cứ khi nào bạn tự động điền thông tin đăng nhập."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Không nhắc bảo mật sinh trắc học khi khởi chạy"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Cần có tài khoản cao cấp"
@@ -963,7 +963,7 @@
     "message": "Default autofill setting for login items"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Tự động điền khi tải trang (nếu được kích hoạt trong Tùy chọn)"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Trình duyệt này không thể xử lý các yêu cầu U2F trong cửa sổ popup này. Bạn có muốn mở popup này trong cửa sổ mới để bạn có thể đăng nhập thông qua U2F?"
   },
-  "disableFavicon": {
-    "message": "Vô hiệu hoá biểu tượng trang web"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Biểu tượng trang web cung cấp các biểu tượng nhận dạng trang web bên cạnh mỗi mục đăng nhập trong kho mật khẩu của bạn."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Hủy bộ đếm số"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Bộ đếm số chỉ ra bao nhiêu tài khoản đăng nhập bạn có với trang hiện tại."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Tên chủ thẻ"
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1562,7 +1562,7 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."

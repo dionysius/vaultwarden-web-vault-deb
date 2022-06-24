@@ -146,7 +146,7 @@
     "message": "Konto"
   },
   "changeMasterPassword": {
-    "message": "Master-Passwort ändern"
+    "message": "Masterpasswort ändern"
   },
   "fingerprintPhrase": {
     "message": "Prüfschlüssel",
@@ -157,7 +157,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Zwei-Faktor Authentifizierung"
+    "message": "Zwei-Faktor-Authentifizierung"
   },
   "logOut": {
     "message": "Abmelden"
@@ -193,7 +193,7 @@
     "message": "Es gibt keine Ordner zum Anzeigen."
   },
   "helpFeedback": {
-    "message": "Hilfe & Feedback"
+    "message": "Hilfe & Rückmeldung"
   },
   "sync": {
     "message": "Synchronisierung"
@@ -215,7 +215,7 @@
     "message": "Generiert automatisch ein starkes und einzigartiges Passwort."
   },
   "bitWebVault": {
-    "message": "Bitwarden Web-Tresor"
+    "message": "Bitwarden Web-Datenspeicher"
   },
   "importItems": {
     "message": "Einträge importieren"
@@ -567,23 +567,23 @@
     "message": "Kein Ordner",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "\"Login hinzufügen\" Benachrichtigung deaktivieren"
+  "enableAddLoginNotification": {
+    "message": "Danach fragen Zugangsdaten hinzuzufügen"
   },
   "addLoginNotificationDesc": {
-    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt dich automatisch ob du neue Zugangsdaten im Tresor speichern möchtest wenn du dich zum ersten mal mit ihnen anmeldest."
+    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt Sie automatisch, ob Sie neue Zugangsdaten in Ihrem Tresor speichern möchten, wenn Sie sich zum ersten Mal mit ihnen anmelden."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Zeige keine Karten auf der Tab Seite"
+  "showCardsCurrentTab": {
+    "message": "Karten auf Tab Seite anzeigen"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Karten Daten aus deinem Tresors werden unter 'Tab' aufgeführt um automatisches ausfüllen zu vereinfachen."
+  "showCardsCurrentTabDesc": {
+    "message": "Karten-Einträge auf der Tab Seite anzeigen, um das automatische Ausfüllen zu vereinfachen."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Zeige keine Identitäten auf der Tab Seite"
+  "showIdentitiesCurrentTab": {
+    "message": "Identitäten auf Tab Seite anzeigen"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identitäts Daten aus deinem Tresors werden unter 'Tab' aufgeführt um automatisches ausfüllen zu vereinfachen."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Identitäten-Einträge auf der Tab Seite anzeigen, um das automatische Ausfüllen zu vereinfachen."
   },
   "clearClipboard": {
     "message": "Zwischenablage leeren",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Ja, jetzt speichern"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Passwort geändert Benachrichtigung deaktivieren"
+  "enableChangedPasswordNotification": {
+    "message": "Danach fragen bestehende Zugangsdaten zu aktualisieren"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "Die \"Passwort geändert Benachrichtigung\" fragt automatisch nach, ein Passwort in deinem Tressor zu aktualisieren, sobald erkannt wurde das du es auf einer Webseite geändert hast."
+  "changedPasswordNotificationDesc": {
+    "message": "Danach fragen das Passwort der Zugangsdaten zu aktualisieren, wenn eine Änderung auf einer Webseite erkannt wird."
   },
   "notificationChangeDesc": {
     "message": "Möchtest du dieses Passwort in Bitwarden aktualisieren?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Aktualisieren"
   },
-  "disableContextMenuItem": {
-    "message": "Kontextmenü-Optionen deaktivieren"
+  "enableContextMenuItem": {
+    "message": "Kontextmenüoptionen anzeigen"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Kontextmenü-Optionen bieten schnellen Zugriff auf die Passwortgenerierung und Zugangsdaten für die Webseite in Ihrem aktuellen Tab."
+  "contextMenuItemDesc": {
+    "message": "Verwende einen zweiten Klick, um auf die Erstellung von Passwörtern und passende Zugangsdaten für die Webseite zuzugreifen. "
   },
   "defaultUriMatchDetection": {
     "message": "Standard-URI-Match-Erkennung",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Aktualisierung abgeschlossen"
   },
-  "disableAutoTotpCopy": {
-    "message": "Automatisches TOTP Kopieren deaktivieren"
+  "enableAutoTotpCopy": {
+    "message": "TOTP automatisch kopieren"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Ist ein Authentifizierungsschlüssel mit deinen Zugangsdaten verknüpft, wird der TOTP Bestätigungscode automatisch in die Zwischenablage kopiert, wenn du die Zugangsdaten einfügen lässt."
+    "message": "Ist ein Authentifizierungsschlüssel mit Ihren Zugangsdaten verknüpft, wird der TOTP Verifizierungscode automatisch in die Zwischenablage kopiert, wenn Sie die Zugangsdaten automatisch ausfüllen lassen."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Beim Start nicht nach biometrischen Daten fragen"
+  "enableAutoBiometricsPrompt": {
+    "message": "Beim Start nach biometrischen Daten fragen"
   },
   "premiumRequired": {
     "message": "Premium-Mitgliedschaft wird benötigt"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Dieser Browser kann U2F-Anfragen in diesem Popup-Fenster nicht verarbeiten. Möchtest du dieses Popup in einem neuen Fenster öffnen, damit du dich mit U2F anmelden kannst?"
   },
-  "disableFavicon": {
-    "message": "Icons der Website deaktivieren"
+  "enableFavicon": {
+    "message": "Zeige Webseiten-Icons"
   },
-  "disableFaviconDesc": {
-    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
+  "faviconDesc": {
+    "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
   },
-  "disableBadgeCounter": {
-    "message": "Badge-Zähler deaktivieren"
+  "enableBadgeCounter": {
+    "message": "Zeige Badge-Zähler"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Der Badge-Zähler zeigt an, wie viele Zugangsdaten du für die aktuelle Seite in deinem Tresor hast."
+  "badgeCounterDesc": {
+    "message": "Gebe an, wie viele Zugangsdaten du für die aktuelle Webseite besitzt."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"

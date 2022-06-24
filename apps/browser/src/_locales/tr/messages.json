@@ -146,10 +146,10 @@
     "message": "Hesap"
   },
   "changeMasterPassword": {
-    "message": "Ana parolayı değiştir"
+    "message": "Ana Parolayı Değiştir"
   },
   "fingerprintPhrase": {
-    "message": "Parmak izi ifadesi",
+    "message": "Özgün Cümle",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -157,10 +157,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "İki aşamalı giriş"
+    "message": "İki Aşamalı Giriş"
   },
   "logOut": {
-    "message": "Çıkış yap"
+    "message": "Çıkış Yap"
   },
   "about": {
     "message": "Hakkında"
@@ -193,7 +193,7 @@
     "message": "Listelenecek klasör yok."
   },
   "helpFeedback": {
-    "message": "Yardım ve geribildirim"
+    "message": "Yardım & Geribildirim"
   },
   "sync": {
     "message": "Eşitle"
@@ -215,10 +215,10 @@
     "message": "Hesaplarınız için otomatik olarak güçlü, özgün parolalar oluşturun."
   },
   "bitWebVault": {
-    "message": "Bitwarden web kasası"
+    "message": "Bitwarden Web Kasası"
   },
   "importItems": {
-    "message": "Hesapları içe aktar"
+    "message": "Hesapları İçe Aktar"
   },
   "select": {
     "message": "Seç"
@@ -367,7 +367,7 @@
     "message": "Kasa zaman aşımı"
   },
   "lockNow": {
-    "message": "Şimdi kilitle"
+    "message": "Şimdi Kilitle"
   },
   "immediately": {
     "message": "Hemen"
@@ -403,10 +403,10 @@
     "message": "4 saat"
   },
   "onLocked": {
-    "message": "Sistem kilitlenince"
+    "message": "Sistem Kilitliyken"
   },
   "onRestart": {
-    "message": "Tarayıcı yeniden başlatılınca"
+    "message": "Tarayıcı Yeniden Başlatıldığında"
   },
   "never": {
     "message": "Asla"
@@ -567,26 +567,26 @@
     "message": "Klasör yok",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "\"Hesap ekle\" bildirimini kapat"
+  "enableAddLoginNotification": {
+    "message": "Hesap eklemeyi öner"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Hesap ekle\" bildirimi, ilk kez kullandığınız hesap bilgilerini kasanıza kaydetmek isteyip istemediğinizi otomatik olarak sorar."
+    "message": "\"Hesap Ekle Bildirimi\" otomatik olarak, ilk kez oturum açtığınız hesabınızı kasanıza kaydetmeniz için uyarı verir."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Sekme sayfasında kartları gösterme"
+  "showCardsCurrentTab": {
+    "message": "Sekme sayfasında kartları göster"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Kasanızdaki banka/kredi kartları, otomatik doldurmayı kolaylaştırmak için \"geçerli sekme\" sayfasında listelenir."
+  "showCardsCurrentTabDesc": {
+    "message": "Kolay otomatik doldurma için sekme sayfasında kart öğelerini listele"
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Sekme sayfasında kimlikleri gösterme"
+  "showIdentitiesCurrentTab": {
+    "message": "Sekme sayfasında kimlikleri göster"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Kasanızdaki kimlik kayıtları, otomatik doldurmayı kolaylaştırmak için \"geçerli sekme\" sayfasında listelenir."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Kolay otomatik doldurma için sekme sayfasında kimlik öğelerini listele"
   },
   "clearClipboard": {
-    "message": "Panoyu temizle",
+    "message": "Panoyu Temizle",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Kaydet"
   },
-  "disableChangedPasswordNotification": {
-    "message": "\"Parola değiştirildi\" bildirimini kapat"
+  "enableChangedPasswordNotification": {
+    "message": "Mevcut hesapları güncellemeyi öner"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"Parola değiştirildi\" bildirimi, bir web sitesindeki parolanızı değiştirdiğiniz algılanınca otomatik olarak kasanızda kayıtlı parolayı güncellemenizi sağlar."
+  "changedPasswordNotificationDesc": {
+    "message": "Sitede bir değişiklik tespit edildiğinde hesap parolasını güncellemeyi öner."
   },
   "notificationChangeDesc": {
     "message": "Bu parolayı Bitwarden'da güncellemek ister misiniz?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Güncelle"
   },
-  "disableContextMenuItem": {
-    "message": "Sağ tıklama menüsünü kapat"
+  "enableContextMenuItem": {
+    "message": "Bağlam menüsü seçeneklerini göster"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Sağ tıklama menüsü, parola oluşturma aracına ve açık sekmeye ait hesaplara hızlı erişim sağlar."
+  "contextMenuItemDesc": {
+    "message": "Parola oluşturma ve eşlesen hesaplara ulaşmak için sağ tıklamayı kullan."
   },
   "defaultUriMatchDetection": {
     "message": "Varsayılan URI eşleşme tespiti",
@@ -643,7 +643,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
-    "message": "Kasayı dışa aktar"
+    "message": "Kasayı Dışa Aktar"
   },
   "fileFormat": {
     "message": "Dosya biçimi"
@@ -747,7 +747,7 @@
     "message": "Şifreleme anahtarınızı güncellemeden bu özelliği kullanamazsınız."
   },
   "premiumMembership": {
-    "message": "Premium üyelik"
+    "message": "Premium Üyelik"
   },
   "premiumManage": {
     "message": "Üyeliğimi yönet"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Yenileme tamamlandı"
   },
-  "disableAutoTotpCopy": {
-    "message": "Otomatik TOTP kopyalamayı kapat"
+  "enableAutoTotpCopy": {
+    "message": "TOTP'yi otomatik kopyala"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Hesabınıza bağlı bir kimlik doğrulama anahtarı varsa giriş bilgilerini otomatik olarak doldurduğunuzda TOTP doğrulama kodu da otomatik olarak panonuza kopyalanır."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Açılışta biyometri doğrulaması isteme"
+  "enableAutoBiometricsPrompt": {
+    "message": "Açılışta biyometri doğrulaması iste"
   },
   "premiumRequired": {
     "message": "Premium gerekli"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Bu tarayıcı bu açılır pencerede U2F isteklerini işleyemiyor. U2F kullanarak giriş yapmak için bu açılır pencereyi yeni bir pencerede açmak ister misiniz?"
   },
-  "disableFavicon": {
-    "message": "Site simgelerini devre dışı bırak"
+  "enableFavicon": {
+    "message": "Web sitesi simgelerini göster"
   },
-  "disableFaviconDesc": {
-    "message": "Web sitesi simgeleri, kasanızdaki her kaydın yanında o siteyi tanımanıza yardımcı olan bir resim sunar."
+  "faviconDesc": {
+    "message": "Hesapların yanında tanıdık görseller göster."
   },
-  "disableBadgeCounter": {
-    "message": "Düğmedeki sayacı devre dışı bırak"
+  "enableBadgeCounter": {
+    "message": "Rozet sayacını göster"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Düğmedeki sayaç, görüntülenen sayfaya ait kaç hesabınız olduğunu gösterir."
+  "badgeCounterDesc": {
+    "message": "Geçerli web sayfasına ait kaç tane hesabınız olduğunu gösterir."
   },
   "cardholderName": {
     "message": "Kart sahibinin adı"

@@ -567,23 +567,23 @@
     "message": "ഫോൾഡറിൽ ഉൾപ്പെടാത്ത",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "പ്രവേശനം ചേർക്കുക എന്ന അറിയിപ്പ് പ്രവർത്തനരഹിതമാക്കുക"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "നിങ്ങൾ ആദ്യമായി സൈറ്റിൽ പ്രവേശിക്കുമ്പോൾ നിങ്ങളുടെ വാൾട്ടിലേക്കു തനിയെ പ്രവേശനം ഉൾപെടുത്താൻ \"പ്രവേശനം ചേർക്കുക എന്ന അറിയിപ്പ്\" ആവശ്യപ്പെടും."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "ടാബ് പേജിൽ കാർഡുകൾ കാണിക്കരുത്"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "സ്വപ്രേരിതമായി പൂരിപ്പിക്കുന്നതിന് നിങ്ങളുടെ നിലവറയിൽ നിന്നുള്ള കാർഡ് ഇനങ്ങൾ 'നിലവിലെ ടാബ്' പേജിൽ പട്ടികപ്പെടുത്തിയിട്ടുണ്ട്."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "ടാബ് പേജിൽ ഐഡന്റിറ്റികൾ കാണിക്കരുത്"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "സ്വയമേവ എളുപ്പത്തിൽ പൂരിപ്പിക്കുന്നതിന് നിങ്ങളുടെ നിലവറയിൽ നിന്നുള്ള ഐഡന്റിറ്റി ഇനങ്ങൾ 'നിലവിലെ ടാബ്' പേജിൽ പട്ടികപ്പെടുത്തിയിട്ടുണ്ട്."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "ക്ലിപ്ബോര്‍ഡ് മായ്ക്കുക",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "ശരി, ഇപ്പോൾ സംരക്ഷിക്കുക"
   },
-  "disableChangedPasswordNotification": {
-    "message": "മാറ്റിയ പാസ്‌വേഡ് അറിയിപ്പ് പ്രവർത്തനരഹിതമാക്കുക"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "ഒരു വെബ്‌സൈറ്റിൽ നിങ്ങൾ അത് മാറ്റിയതായി കണ്ടെത്തുമ്പോഴെല്ലാം നിങ്ങളുടെ നിലവറയിൽ ഒരു ലോഗിൻ പാസ്‌വേഡ് അപ്‌ഡേറ്റുചെയ്യാൻ \"മാറ്റിയ പാസ്‌വേഡ് അറിയിപ്പ്\" യാന്ത്രികമായി ആവശ്യപ്പെടുന്നു."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "ബിറ്റ്വാർഡനിൽ ഈ പാസ്‌വേഡ് അപ്‌ഡേറ്റ് ചെയ്യാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "ശരി, ഇപ്പോൾ അപ്ഡേറ്റ് ചെയ്യുക"
   },
-  "disableContextMenuItem": {
-    "message": "സന്ദർഭ മെനു ഓപ്ഷനുകൾ അപ്രാപ്തമാക്കുക"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "നിങ്ങളുടെ നിലവിലെ ടാബിലെ വെബ്‌സൈറ്റിനായുള്ള പാസ്‌വേഡ് ജനറേഷനിലേക്കും ലോഗിനുകളിലേക്കും സന്ദർഭ മെനു ഓപ്ഷനുകൾ ദ്രുത പ്രവേശനം നൽകുന്നു."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "സാധാരണ URI പൊരുത്തം കണ്ടെത്തൽ",
@@ -639,7 +639,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -671,7 +671,7 @@
     "message": "പങ്കിട്ടവ"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "Learn about organizations"
   },
   "learnOrgConfirmation": {
     "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "റിഫ്രഷ് പൂർത്തിയായി"
   },
-  "disableAutoTotpCopy": {
-    "message": "ഓട്ടോമാറ്റിക് TOTP പകർപ്പ് പ്രവർത്തനരഹിതമാക്കുക"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "നിങ്ങളുടെ പ്രവേശനം ഒരു ഓതന്റിക്കേറ്റർ കീയുമായി ബന്ധപെടുത്തിയട്ടുടെങ്കിൽ, പ്രവേശനം ഓട്ടോഫിൽ ചെയ്യുമ്പോഴെല്ലാം  TOTP സ്ഥിരീകരണ കോഡ് നിങ്ങളുടെ ക്ലിപ്ബോർഡിൽ ഓട്ടോമാറ്റിക്കയായി പകർത്തപ്പെടും."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "പ്രീമിയം അംഗത്വം ആവശ്യമാണ്"
@@ -963,10 +963,10 @@
     "message": "Default autofill setting for login items"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Auto-fill on page load (if enabled in Options)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Use default setting"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "ഈ ബ്ര pop സറിന് ഈ പോപ്പ്അപ്പ് വിൻഡോയിൽ U2F അഭ്യർത്ഥനകൾ പ്രോസസ്സ് ചെയ്യാൻ കഴിയില്ല. യു 2 എഫ് ഉപയോഗിച്ച് ലോഗിൻ ചെയ്യാൻ ഈ പോപ്പ്അപ്പ് ഒരു പുതിയ വിൻഡോയിൽ തുറക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?"
   },
-  "disableFavicon": {
-    "message": "വെബ്‌സൈറ്റ് ഐക്കണുകൾ പ്രവർത്തനരഹിതമാക്കുക"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "വെബ്സൈറ്റ് ഐക്കണുകൾ തങ്ങളുടെ വാൾട്ടിലെ ലോഗിൻ ഇന്നതിന്റ്റെ അടുത്തായി തിരിച്ചറിയുന്ന ഒരു ചിത്രം ഉൾപ്പെടുത്തുന്നു."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "കാർഡ് ഉടമയുടെ പേര്"
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1562,7 +1562,7 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."

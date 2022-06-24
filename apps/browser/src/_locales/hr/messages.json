@@ -157,10 +157,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Prijava u dva koraka"
+    "message": "Prijava dvostrukom autentifikacijom"
   },
   "logOut": {
-    "message": "Odjavi se"
+    "message": "Odjava"
   },
   "about": {
     "message": "O aplikaciji"
@@ -567,23 +567,23 @@
     "message": "Nema mape",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Onemogući upit za dodavanje prijave"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "Upit za dodavanje prijave pojavljuje se kada se otkrije prva prijava na neko web mjesto. Bitwarden će te pitatati želiš li uneseno korisničko ime i lozinku spremiti u svoj trezor."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Ne prikazuj platne kartice"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Ne prikazuje Platne kartice iz tvog trezora prilikom prikaza stavki dostupnih za jednostavnu auto-ispunu."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Ne prikazuj Identitete"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Ne prikazuje Identitete iz tvog trezora prilikom prikaza stavki dostupnih za jednostavnu auto-ispunu."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Očisti međuspremnik",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Spremi"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Onemogući upit za spremanje ažurirane lozinke"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "Upit za spremanje ažurirane lozinke pojavljuje se kada se otkrije da je na nekoj web stranici unesena lozinka drugačija od one spremljene u trezoru. Bitwarden će te pitatati želiš li ažurirati lozinku u trezoru."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Želiš li ovu lozinku ažurirati u Bitwarden-u?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Ažuriraj"
   },
-  "disableContextMenuItem": {
-    "message": "Onemogući kontekstualni izbornik u pregledniku"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Kontekstualni izbornik omogućuje brzi pristup korisničkim imenima i lozinkama, kao i generiranje i kopiranje generirane lozinke jednim klikom."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Zadano otkrivanje URI podudaranja",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Osvježavanje završeno"
   },
-  "disableAutoTotpCopy": {
-    "message": "Onemogući automatsko kopiranje TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Ako se za prijavu koristi dvostruka autentifikacija, TOTP kontrolni kôd se automatski kopira u međuspremnik nakon auto-ispune korisničkog imena i lozinke."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Ne traži biometriju pri pokretanju"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Potrebno premium članstvo"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Ovaj preglednik ne može obraditi U2F zahtjeve u ovom iskočnom prozoru. Želiš li otvoriti ovaj iskočni prozor u novom prozoru za prijavu putem U2F?"
   },
-  "disableFavicon": {
-    "message": "Onemogući ikone web mjesta"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Prepoznatljive ikone web mjesta prikazuju se pored prijava u tvom trezoru."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Onemogući brojač znački"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Brojač znački prikazuje koliko u tvojem trezoru ima spremljenih prijava za trenutnu stranicu."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Vlasnik kartice"

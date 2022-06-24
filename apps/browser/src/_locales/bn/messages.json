@@ -567,23 +567,23 @@
     "message": "কোন ফোল্ডার নেই",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "লগইন যোগ করুন বিজ্ঞপ্তি অক্ষম করুন"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "\"লগইন যোগ করুন বিজ্ঞপ্তি\" স্বয়ংক্রিয়ভাবে আপনই যখনই প্রথমবারের জন্য লগ ইন করেন তখন আপনার ভল্টে নতুন লগইনগুলি সংরক্ষণ করতে অনুরোধ জানায়।"
   },
-  "dontShowCardsCurrentTab": {
-    "message": "ট্যাব পৃষ্ঠায় কার্ডগুলি দেখাবেন না"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "আপনার ভল্ট থেকে কার্ড বস্তুগুলি সহজেই স্বতঃপূরণের জন্য 'বর্তমান ট্যাব' পৃষ্ঠাতে তালিকাভুক্ত করা হয়েছে।"
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "ট্যাব পৃষ্ঠায় পরিচয় দেখাবেন না"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "আপনার ভল্ট থেকে পরিচিতি বস্তুগুলি সহজেই স্বতঃপূরণের জন্য 'বর্তমান ট্যাব' পৃষ্ঠাতে তালিকাভুক্ত করা হয়েছে।"
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "ক্লিপবোর্ড পরিষ্কার",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "হ্যাঁ, এখনই সংরক্ষণ করুন"
   },
-  "disableChangedPasswordNotification": {
-    "message": "পাসওয়ার্ড পরিবর্তন বিজ্ঞপ্তি অক্ষম করুন"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"পাসওয়ার্ড পরিবর্তন বিজ্ঞপ্তি\" স্বয়ংক্রিয়ভাবে আপনাকে আপনার ভল্টে একটি লগইনের পাসওয়ার্ড হালনাগাদ করার অনুরোধ জানায় যখনই কোনও ওয়েবসাইটে আপনি এটি পরিবর্তন করেছেন তা সনাক্ত করে।"
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "আপনি কি এই পাসওয়ার্ডটি Bitwarden এ হালনাগাদ করতে চান?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "হ্যাঁ, এখনই হালনাগাদ করুন"
   },
-  "disableContextMenuItem": {
-    "message": "প্রসঙ্গ মেনু বিকল্পগুলি অক্ষম করুন"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "প্রসঙ্গ মেনু বিকল্পগুলি আপনার বর্তমান ট্যাবের ওয়েবসাইটটির জন্য পাসওয়ার্ড তৈরি এবং লগিনগুলি দ্রুত সরবরাহ করে।"
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "পূর্ব-নির্ধারিত URI মিল সনাক্তকরণ",
@@ -639,7 +639,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -671,7 +671,7 @@
     "message": "ভাগকৃত"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "Learn about organizations"
   },
   "learnOrgConfirmation": {
     "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "পুনঃসতেজ সম্পূর্ণ"
   },
-  "disableAutoTotpCopy": {
-    "message": "স্বয়ংক্রিয় TOTP অনুলিপি অক্ষম করুন"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "যদি আপনার লগইনের সাথে একটি প্রমাণীকরণ কী থাকে, আপনি যখনই লগইনটি স্বতঃপূরণ করেন তবে TOTP যাচাইকরণ কোডটি স্বয়ংক্রিয়ভাবে আপনার ক্লিপবোর্ডে অনুলিপিত করা হয়।"
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "প্রিমিয়াম আবশ্যক"
@@ -963,10 +963,10 @@
     "message": "Default autofill setting for login items"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Auto-fill on page load (if enabled in Options)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Use default setting"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "ব্রাউজারটি এই পপআপ উইন্ডোতে U2F অনুরোধগুলি প্রক্রিয়া করতে পারে না। আপনি কি এই পপআপটি একটি নতুন উইন্ডোতে খুলতে চান যাতে আপনি U2F ব্যবহার করে লগ ইন করতে পারেন?"
   },
-  "disableFavicon": {
-    "message": "ওয়েবসাইট আইকন অক্ষম করুন"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "ওয়েবসাইট আইকনগুলি আপনার ভল্টের প্রতিটি লগইন বস্তুর পাশে একটি পরিচয়যোগ্য চিত্র সরবরাহ করে।"
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "কার্ডধারীর নাম"
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1562,7 +1562,7 @@
     "message": "একটি প্রতিষ্ঠানের নীতি আপনার মালিকানা বিকল্পগুলিকে প্রভাবিত করছে।"
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."

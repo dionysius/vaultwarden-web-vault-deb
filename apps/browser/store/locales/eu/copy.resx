@@ -118,41 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden - Tasuta paroolihaldur</value>
+    <value>Bitwarden - Pasahitz kudeatzailea</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Tasuta ja turvaline paroolihaldur kõikidele sinu seadmetele</value>
+    <value>Bitwarden, zure gailu guztietarako pasahitzen kudeatzaile seguru eta doakoa.</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden muudab kontoandmete ja teiste isiklike andmete kasutamise erinevate seadmete vahel lihtsaks ja turvaliseks.
+    <value>Bitwarden, Inc. 8bit Solutions LLC-ren enpresa matrizea da.
 
-Paroolivargustest on saamas järjest tõsisem probleem. Veebilehed ja rakendused, mida igapäevaselt kasutad, on pidevalt rünnakute all. Muuhulgas toimuvad alalõpmata andmelekked, millega koos saadakse ligipääs ka Sinu paroolidele. Kasutades erinevatel veebilehtedel ühesugust parooli, on häkkeritel lihtne ligi pääseda nii sinu e-postile, pangakontole või teistele tähtsatele kontodele.
+THE VERGE, U.S. NEWS &amp; WORLD REPORT ETA CNET ENPRESEK PASAHITZ-ADMINISTRATZAILE ONENA izendatu dute, besteak beste.
 
-Turvaeksperdid soovitavad kasutada kõikides kasutajakontodes erinevaid, juhuslikult koostatud paroole. Kuidas aga kõiki neid paroole hallata? Bitwarden muudab paroolide loomise, talletamise ja nendele ligipääsu lihtsaks ja turvaliseks.
+Gailu guztien artean pasahitz mugagabeak kudeatu, biltegiratu, babestu eta partekatzen ditu. Bitwardenek kode irekiko pasahitzak administratzeko irtenbideak eskaintzen ditu, bai etxean, bai lanean, bai bidaiatzen ari zaren bitartean.
 
-Bitwarden talletab kõik Sinu andmed krüpteeritud hoidlas, mis sünkroniseeritakse kõikide Sinu poolt kasutatavate seadmete vahel. Kuna hoidla sisu krüpteeritakse enne selle enne seadmest lahkumist, omad andmetele ligipääsu ainult sina. Ka bitwardeni meeskond ei saa Sinu andmeid vaadata, isegi kui neil selleks tahtmine oleks. Sinu andmed kaitsevad AES-256 bitine krüpteering, salted hashing ja PBKDF2 SHA-256.
+Pasahitz sendoak, bakarrak eta ausazkoak sortzen ditu, webgune bakoitzaren segurtasun-baldintzetan oinarrituta.
 
-Bitwarden on 100% avatud koodiga tarkvara. Bitwarden lähtekood on saadaval GitHubis ja kõik saavad sellega tasuta tutvuda, seda kontrollida ja Bitwardeni koodibaasi panustada.</value>
+Bitwarden Bidalketak-ek azkar transmititzen dio zifratutako informazioa --- artxiboak eta testu sinplea -- edozein pertsonari zuzenean.
+
+Bitwarden-ek Taldeak eta Enpresak planak eskaintzen ditu, enpresa bereko lankideek pasahitzak modu seguruan parteka ditzaten.
+
+Zergatik aukeratu Bitwarden:
+
+Mundu-mailako zifratzea
+Pasahitzak muturretik muturrerako zifratze aurreratuarekin babestuta daude (AES-256 bit, salted hashtag eta PBKDF2 SHA-256), zure informazioa seguru eta pribatu egon dadin.
+
+Pasahitzen sortzailea
+Pasahitz sendoak, bakarrak eta ausazkoak sortzen ditu, web gune bakoitzaren segurtasun-baldintzetan oinarrituta.
+
+Itzulpenak
+Bitwarden 40 hizkuntzatan dago, eta gero eta gehiago dira, gure komunitate globalari esker.
+
+Plataforma anitzeko aplikazioak
+Babestu eta partekatu zure Bitwarden kutxa gotorraren informazio konfidentziala edozein nabigatzailetatik, gailu mugikorretatik, mahaigaineko aplikaziotik eta gehiagotatik.
+</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Tasuta ja turvaline paroolihaldur kõikidele Sinu seadmetele</value>
+    <value>Zure gailu guztietarako pasahitzen kudeatzaile seguru eta doakoa.</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sünkroniseeri ja halda oma kontot erinevates seadmetes</value>
+    <value>Sinkronizatu eta sartu zure kutxa gotorrean hainbat gailutatik</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Halda kõiki kontoandmeid turvalises paroolihoidlas</value>
+    <value>Kudeatu zure erabiltzaile eta pasahitz guztiak kutxa gotor seguru batetik</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Täida külastatavatel veebilehtedel oma kasutajakonto andmeid automaatselt ja lihtsalt</value>
+    <value>Bizkor bete automatikoki zure sarbide-datuak bisitatzen duzun edozein webgunetan</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Pääsed paroolihaldurile hõlpsasti ligi ka parema kliki menüüst</value>
+    <value>Zure kutxa gotorrera erraz sar zaitezke eskuineko klik menutik</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Loo automaatselt tugevaid, erinevaid ja turvalisi paroole</value>
+    <value>Pasahitz sendoak, ausazkoak eta seguruak automatikoki sortzen ditu</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Sisestatud andmeid käitatakse turvaliselt, kasutades AES-256 bitist krüpteeringut</value>
+    <value>Zure informazioa modu seguruan kudeatzen da 256 biteko AES zifratuarekin</value>
   </data>
 </root>

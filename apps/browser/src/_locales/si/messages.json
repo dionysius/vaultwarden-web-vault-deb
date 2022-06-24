@@ -567,23 +567,23 @@
     "message": "බහලුමක් නැත",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "අක්රීය කරන්න ලොගින් වන්න නිවේදනය"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "මෙම “ලොගින් වන්න නිවේදනය එකතු කරන්න” ස්වයංක්රීයව ඔබ පළමු වරට ඔවුන් තුලට ප්රවිෂ්ට සෑම අවස්ථාවකදීම ඔබගේ සුරක්ෂිතාගාරය නව පිවිසුම් බේරා ගැනීමට ඔබෙන් විමසනු."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "ටැබ් පිටුවේ කාඩ්පත් පෙන්වන්න එපා"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "ඔබගේ සුරක්ෂිතාගාරයේ කාඩ්පත් අයිතම පහසුවෙන් ස්වයංක්රීයව පිරවීමේ ප්රවේශය සඳහා 'වත්මන් ටැබ් 'පිටුවේ ලැයිස්තුගත කර ඇත."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "ටැබ් පිටුවේ අනන්යතා පෙන්වන්න එපා"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "ඔබගේ සුරක්ෂිතාගාරයේ අනන්යතා අයිතම පහසුවෙන් ස්වයංක්රීය-පිරවීමේ ප්රවේශය සඳහා 'වත්මන් ටැබ්' පිටුවේ ලැයිස්තුගත කර ඇත."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "පසුරු පුවරුවට පැහැදිලි",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "සුරකින්න"
   },
-  "disableChangedPasswordNotification": {
-    "message": "වෙනස් කළ මුරපද නිවේදනය අක්රීය කරන්න"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "මෙම “වෙනස් මුරපදය නිවේදනය” ස්වයංක්රීයව ඔබ වෙබ් අඩවිය මත එය වෙනස් කර ඇති බව හඳුනාගන්නා සෑම අවස්ථාවකදීම ඔබගේ සුරක්ෂිතාගාරයේ පිවිසුම් මුරපදය යාවත්කාලීන කිරීමට ඔබෙන් විමසනු ඇත."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Bitwarden හි මෙම මුරපදය යාවත්කාලීන කිරීමට ඔබට අවශ්යද?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "යාවත්කාල"
   },
-  "disableContextMenuItem": {
-    "message": "සන්දර්භය මෙනු විකල්ප අක්රීය කරන්න"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "සන්දර්භය මෙනු විකල්පයන් ඔබගේ වත්මන් පටිත්තෙහි ඇති වෙබ් අඩවිය සඳහා මුරපද උත්පාදනය සහ පිවිසුම් සඳහා ඉක්මන් ප්රවේශයක් ලබා දෙයි."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "පෙරනිමි URI තරග හඳුනා",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "සම්පූර්ණ නැවුම් කරන්න"
   },
-  "disableAutoTotpCopy": {
-    "message": "ස්වයංක්රීය TOTP පිටපත් අක්රීය"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "ඔබගේ පිවිසුමට සත්යාපන යතුරක් අමුණා තිබේ නම්, ඔබ පිවිසුම ස්වයංක්රීයව පුරවන සෑම අවස්ථාවකදීම TOTP සත්යාපන කේතය ස්වයංක්රීයව ඔබගේ පසුරු පුවරුවට පිටපත් කරනු ලැබේ."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "දියත් කිරීම සඳහා ජෛව මිතික විද්යාව සඳහා විමසුම් නොකරන්න"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "වාරික අවශ්ය"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "මෙම බ්රවුසරයට මෙම උත්පතන කවුළුව තුළ U2F ඉල්ලීම් සැකසීමට නොහැක. ඔබට U2F භාවිතයෙන් පිවිසිය හැකි වන පරිදි නව කවුළුවක මෙම උත්පතන විවෘත කිරීමට අවශ්යද?"
   },
-  "disableFavicon": {
-    "message": "වෙබ් අඩවි අයිකන අක්රීය කරන්න"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "වෙබ් අඩවි අයිකන ඔබගේ සුරක්ෂිතාගාරයේ එක් එක් පිවිසුම් අයිතමයට යාබදව හඳුනාගත හැකි රූපයක් ලබා දෙයි."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "බැජ් කවුන්ටරය අක්රීය කරන්න"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "බැජ් කවුන්ටරය ඔබ ඔබේ සුරක්ෂිතාගාරයේ වත්මන් පිටුව සඳහා කොපමණ පිවිසුම් පෙන්නුම් කරයි."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "කාඞ්පත් හිමි නම"
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {

@@ -567,23 +567,23 @@
     "message": "Qovluq yoxdur",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "\"Hesab əlavə et\" bildirişini sıradan çıxart"
+  "enableAddLoginNotification": {
+    "message": "Giriş əlavə etmək üçün soruş"
   },
   "addLoginNotificationDesc": {
     "message": "\"Hesab əlavə et bildirişi\", ilk dəfə giriş edəndə yeni giriş məlumatlarını anbarda saxlamaq istəyib-istəmədiyinizi avtomatik olaraq soruşur."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Vərəq səhifəsində kartları göstərmə"
+  "showCardsCurrentTab": {
+    "message": "Kartları vərəq səhifəsində göstər"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Anbarınızdakı kart elementləri, avto-doldurma müraciətini asanlaşdırmaq üçün \"Hazırkı vərəq\" səhifəsində siyahılanır."
+  "showCardsCurrentTabDesc": {
+    "message": "Asan avto-doldurma üçün Vərəq səhifəsində kart elementlərini siyahılayın."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Vərəq səhifəsində kimlikləri göstərmə"
+  "showIdentitiesCurrentTab": {
+    "message": "Vərəq səhifəsində kimlikləri göstər"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Anbarınızdakı kimlik elementləri, avto-doldurma müraciətini asanlaşdırmaq üçün \"Hazırkı vərəq\" səhifəsində siyahılanır."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Asan avto-doldurma üçün Vərəq səhifəsində kimlik elementlərini siyahılayın."
   },
   "clearClipboard": {
     "message": "Lövhəni təmizlə",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Bəli, indi saxla"
   },
-  "disableChangedPasswordNotification": {
-    "message": "\"Parol dəyişdirildi\" bildirişini sıradan çıxart"
+  "enableChangedPasswordNotification": {
+    "message": "Mövcud girişin güncəllənməsini soruş"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"Parol dəyişdirildi bildirişi\", bir veb saytında parolu dəyişdirdiyinizi aşkarlayanda, anbarınızda qeyd etdiyiniz parolu yeniləməyinizi avtomatik olaraq soruşur."
+  "changedPasswordNotificationDesc": {
+    "message": "Bir veb saytda dəyişiklik aşkarlananda giriş parolunun güncəllənməsini soruşun."
   },
   "notificationChangeDesc": {
     "message": "Bu parolu \"Bitwarden\"də yeniləmək istəyirsiniz?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Bəli, indi yenilə"
   },
-  "disableContextMenuItem": {
-    "message": "Kontekst menyu seçimlərini sıradan çıxart"
+  "enableContextMenuItem": {
+    "message": "Konteks menyu seçimlərini göstər"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Kontekst menyu seçimləri, hazırkı vərəqinizdə veb sayt üçün parol yaratma və giriş etmə əməliyyatlarına cəld müraciəti təmin edir."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "İlkin URI uyğunluq aşkarlaması",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Təzələmə tamamlandı"
   },
-  "disableAutoTotpCopy": {
-    "message": "Avtomatik TOTP kopyalamasını sıradan çıxart"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Hesabınıza əlavə edilən kimlik təsdiqləyici açarı varsa, giriş məlumatları avto-doldurulanda TOTP təsdiqləmə kodu da avtomatik olaraq lövhəyə kopyalanacaq."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Açılışda biometrik üçün soruşma"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium üzvlük lazımdır"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Bu səyyah bu açılan pəncərədə U2F tələblərini emal edə bilmir. U2F istifadə edərək giriş etmək üçün bu açılan pəncərəni yeni bir pəncərədə açmaq istəyirsiniz?"
   },
-  "disableFavicon": {
-    "message": "Veb sayt nişanlarını sıradan çıxart"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Veb sayt nişanları, anbarınızda hər bir giriş elementinin yanında tanımağınıza kömək edən bir təsvir təqdim edir."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Nişan sayğacını sıradan çıxart"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Nişan sayğacı, anbarınızdakı hazırkı səhifə üçün neçə dəfə giriş etdiyinizi göstərir."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Kart sahibinin adı"

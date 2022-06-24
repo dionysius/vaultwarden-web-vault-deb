@@ -567,23 +567,23 @@
     "message": "폴더 없음",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "로그인 추가 알림 사용 안 함"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "\"로그인 추가 알림\"을 사용하면 새 로그인을 사용할 때마다 보관함에 그 로그인을 추가할 것인지 물어봅니다."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "탭 페이지에 카드 표시 안 함"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "보관함의 카드 항목은 쉽게 자동 완성할 수 있게끔 '현재 탭' 페이지에 나열되어 있습니다."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "탭 페이지에 신원 표시 안 함"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "보관함의 신원 항목은 쉽게 자동 완성할 수 있게끔 '현재 탭' 페이지에 나열되어 있습니다."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "클립보드 비우기",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "예, 지금 저장하겠습니다."
   },
-  "disableChangedPasswordNotification": {
-    "message": "비밀번호 변경 알림 사용 안 함"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"비밀번호 변경 알림\"을 사용하면 사용자가 웹 사이트에서 비밀번호를 변경했을 경우, 보관함에 저장된 비밀번호를 업데이트할 것인지 자동으로 물어봅니다."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Bitwarden에 저장되어 있는 비밀번호를 이 비밀번호로 변경하시겠습니까?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "예, 지금 변경하겠습니다."
   },
-  "disableContextMenuItem": {
-    "message": "오른쪽 클릭 메뉴 옵션 사용 안 함"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "오른쪽 클릭 메뉴 옵션을 사용하면 비밀번호 생성이나 현재 탭 웹 사이트의 로그인에 빠르게 접근할 수 있습니다."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "기본 URI 일치 인식",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "새로 고침 완료"
   },
-  "disableAutoTotpCopy": {
-    "message": "TOTP 자동 복사 사용 안 함"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "로그인에 인증 키가 연결되어 있을 경우, 그 로그인을 자동 완성할 때마다 TOTP 인증 코드가 클립보드에 자동으로 복사됩니다."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "시작할 때 생체 인증 요구하지 않음"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "프리미엄 멤버십 필요"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "이 브라우저의 팝업 창에서는 U2F 요청을 처리할 수 없습니다. U2F로 로그인할 수 있도록 이 창을 새 창에서 여시겠습니까?"
   },
-  "disableFavicon": {
-    "message": "웹 사이트 아이콘 사용 안 함"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "웹 사이트 아이콘을 사용하면 보관함 각 항목 옆에 이미지를 보여줍니다."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "배지에 개수 표시 사용 안 함"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "배지에는 보관함에 등록된 현재 페이지에 대한 로그인의 개수가 표시됩니다."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "카드 소유자 이름"

@@ -567,23 +567,23 @@
     "message": "Kaust puudub",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Keela \"Lisa konto andmed\" teavitus"
+  "enableAddLoginNotification": {
+    "message": "Küsi \"Lisa konto andmed\""
   },
   "addLoginNotificationDesc": {
     "message": "\"Lisa konto andmed\" teavitus ilmub pärast esimest sisselogimist ning võimaldab kontoandmeid automaatselt Bitwardenisse lisada."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Ära kuva \"Kaart\" vaates krediitkaardi andmeid"
+  "showCardsCurrentTab": {
+    "message": "Kuva kaardiandmed hoidla vaates"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Krediit- ja teiste kaartide andmed kuvatakse vaikeseadena \"Kaart\" vaates, et neid oleks lihtsam sisestada."
+  "showCardsCurrentTabDesc": {
+    "message": "Kuvab hoidla lehel kaardiandmed, et neid saaks kiiresti sisestada"
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Ära kuva \"Kaart\" vaates identiteete"
+  "showIdentitiesCurrentTab": {
+    "message": "Kuva hoidla vaates identiteete"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identiteediandmeid kuvatakse vaikeseadena \"Kaart\" vaates, et neid oleks lihtsam sisestada."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Lõikelaua sisu kustutamine",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Jah, salvesta see"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Keela Muudetud parooli teavitus"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "Kui mistahes veebilehel on toimunud parooli vahetamine, annab \"Muudetud parooli teavitus\" märku, et värskendaksid seda ka Bitwardeni paroolihoidlas."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Soovid seda parooli ka Bitwardenis uuendada?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Jah, uuenda"
   },
-  "disableContextMenuItem": {
-    "message": "Keela parema kliki menüü valikud"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Parema kliki menüü abil saad kiiresti parooli genereerida ja konkreetse veebilehe kasutajakonto andmeid sisestada."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Vaike URI sobivuse tuvastamine",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Uuendamine lõpetatud"
   },
-  "disableAutoTotpCopy": {
-    "message": "Keela automaatne TOTP kopeerimine"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Kui sinu sisselogimise andmetele on juurde lisatud autentimise võti, kopeeritakse TOTP kood automaatse täitmise kasutamisel lõikelauale."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Ära küsi käivitudes biomeetrilist kinnitamist"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Vajalik on Premium versioon"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Kasutatav brauser ei suuda selles aknas U2F päringuid töödelda. Kas avan uue akna, et saaksid U2F abil sisse logida?"
   },
-  "disableFavicon": {
-    "message": "Keela veebilehel ikoonid"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Ikoonid aitavad hoidlas olevaid veebilehti paremini ära tunda."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Keela kirjete loendur"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Kirjete loendur kuvab Bitwardeni ikoonil konkreetse leheküljega seotud kirjete arvu."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Kaardiomaniku nimi"

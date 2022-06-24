@@ -146,10 +146,10 @@
     "message": "ანგარიში"
   },
   "changeMasterPassword": {
-    "message": "Change Master Password"
+    "message": "Change master password"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Fingerprint phrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -215,10 +215,10 @@
     "message": "Automatically generate strong, unique passwords for your logins."
   },
   "bitWebVault": {
-    "message": "Bitwarden Web Vault"
+    "message": "Bitwarden web vault"
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "Import items"
   },
   "select": {
     "message": "მონიშვნა"
@@ -330,7 +330,7 @@
     "message": "სხვა"
   },
   "rateExtension": {
-    "message": "Rate the Extension"
+    "message": "Rate the extension"
   },
   "rateExtensionDesc": {
     "message": "Please consider helping us out with a good review!"
@@ -364,10 +364,10 @@
     "message": "Invalid master password"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Vault timeout"
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Lock now"
   },
   "immediately": {
     "message": "დაუყონებლივ"
@@ -403,10 +403,10 @@
     "message": "4 საათი"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "On system lock"
   },
   "onRestart": {
-    "message": "On Browser Restart"
+    "message": "On browser restart"
   },
   "never": {
     "message": "არასოდეს"
@@ -567,26 +567,26 @@
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Disable Add Login Notification"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
-    "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+    "message": "Ask to add an item if one isn't found in your vault."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Clear clipboard",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Save"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Do you want to update this password in Bitwarden?"
@@ -611,14 +611,14 @@
   "notificationChangeSave": {
     "message": "Update"
   },
-  "disableContextMenuItem": {
-    "message": "Disable Context Menu Options"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Default URI match detection",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -639,11 +639,11 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Export vault"
   },
   "fileFormat": {
     "message": "File Format"
@@ -671,7 +671,7 @@
     "message": "Shared"
   },
   "learnOrg": {
-    "message": "Learn about Organizations"
+    "message": "Learn about organizations"
   },
   "learnOrgConfirmation": {
     "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
@@ -747,7 +747,7 @@
     "message": "You cannot use this feature until you update your encryption key."
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium membership"
   },
   "premiumManage": {
     "message": "Manage Membership"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Refresh complete"
   },
-  "disableAutoTotpCopy": {
-    "message": "Disable Automatic TOTP Copy"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message": "If a login has an authenticator key, copy the TOTP verification code to your clip-board when you auto-fill the login."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -951,10 +951,10 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill on Page Load"
+    "message": "Auto-fill on page load"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message": "If a login form is detected, auto-fill when the web page loads."
   },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
@@ -963,10 +963,10 @@
     "message": "Default autofill setting for login items"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Auto-fill on page load (if enabled in Options)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Use default setting"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
-  "disableFavicon": {
-    "message": "Disable Website Icons"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Cardholder Name"
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1386,7 +1386,7 @@
     "message": "One or more organization policies are affecting your generator settings."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Vault timeout action"
   },
   "lock": {
     "message": "Lock",
@@ -1562,7 +1562,7 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."

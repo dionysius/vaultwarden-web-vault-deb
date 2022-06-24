@@ -567,23 +567,23 @@
     "message": "Tidak Ada Folder",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Nonaktifkan Notifikasi Penambahan Info Masuk"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "\"Notifikasi Penambahan Info Masuk\" secara otomatis akan meminta Anda untuk menyimpan info masuk baru ke brankas Anda saat Anda masuk untuk pertama kalinya."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Jangan Tampilkan Kartu pada Laman Tab"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Item kartu dari brankas Anda akan ditampilkan pada laman 'Tab' untuk mempermudah akses isi-otomatis."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Jangan Tampilkan Identitas pada Laman Tab"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Item identitas dari brankas Anda akan ditampilkan pada laman 'Tab' untuk mempermudah akses isi-otomatis."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Hapus Papan Klip",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Iya, Simpan Sekarang"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Nonaktifkan Notifikasi Perubahan Kata Sandi"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"Notifikasi Perubahan Kata Sandi\" secara otomatis akan meminta Anda untuk memperbarui kata sandi info masuk di brankas Anda ketika mendeteksi bahwa Anda telah mengubahnya lewat situs web."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Apakah Anda ingin memperbarui kata sandi ini di Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Iya, Perbarui Sekarang"
   },
-  "disableContextMenuItem": {
-    "message": "Nonaktifkan Opsi Menu Konteks"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Pilihan menu konteks menyediakan akses cepat ke pembuat sandi dan info masuk untuk situs web di tab Anda saat ini."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Deteksi Kecocokan URI Bawaan",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Penyegaran selesai"
   },
-  "disableAutoTotpCopy": {
-    "message": "Nonaktifkan Penyalinan Otomatis TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Jika info masuk Anda memiliki kunci autentikasi yang menyertainya, kode verifikasi TOTP akan disalin secara otomatis ke clipboard Anda setiap kali Anda mengisi info masuk secara otomatis."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Jangan minta biometrik saat dinyalakan."
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Membutuhkan Keanggotaan Premium"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Peramban ini tidak bisa memproses permintaan U2F di jendela popup ini. Apakah Anda ingin membuka popup ini di jendela baru sehingga Anda dapat masuk menggunakan U2F?"
   },
-  "disableFavicon": {
-    "message": "Nonaktifkan Ikon Situs Web"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Ikon Situs Web menyediakan gambar yang mudah dikenali di sebelah item info masuk di dalam brankas Anda."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Matikan angka penghitung "
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Angka penghitung menandakan jumlah login yang kamu punya untuk website saat ini yang ada di dalam vault kamu."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Nama Pemegang Kartu"

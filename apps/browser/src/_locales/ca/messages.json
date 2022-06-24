@@ -47,7 +47,7 @@
     "message": "Torneu a escriure la contrasenya mestra"
   },
   "masterPassHint": {
-    "message": "Suggeriment de la contrasenya mestra (opcional)"
+    "message": "Pista de la contrasenya mestra (opcional)"
   },
   "tab": {
     "message": "Pestanya"
@@ -567,23 +567,23 @@
     "message": "Cap carpeta",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Deshabilita la notificació per afegir inicis de sessió"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "La \"Notificació per afegir inicis de sessió\" demana automàticament que guardeu els nous inicis de sessió a la vostra caixa forta quan inicieu la sessió per primera vegada."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "No mostres les targetes a la pàgina de la pestanya"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Els elements de targeta de la vostra caixa forta es detallen a la pàgina \"Fitxa actual\" per obtenir un fàcil accés amb l'emplenat automàtic."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "No mostres les identitats a la pàgina de la pestanya"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Els elements d'identitat de la vostra caixa forta es detallen a la pàgina \"Fitxa actual\" per obtenir un fàcil accés amb l'emplenat automàtic."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Neteja el porta-retalls",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Guarda"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Deshabilita la notificació de contrasenya modificada"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "La \"Notificació de contrasenya modificada\" us demanarà automàticament que actualitzeu la contrasenya d'inici de sessió a la vostra caixa forta cada vegada que detecte que s'ha canviat en un lloc web."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Voleu actualitzar aquesta contrasenya a Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Actualitza"
   },
-  "disableContextMenuItem": {
-    "message": "Inhabilita opcions del menú contextual"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Les opcions del menú contextual proporcionen accés ràpid a la generació de contrasenyes i inici de sessió al lloc web en la vostra pestanya actual."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Detecció de coincidències URI per defecte",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Actualització completa"
   },
-  "disableAutoTotpCopy": {
-    "message": "Deshabilita la còpia TOTP automàtica"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Si el vostre inici de sessió té una clau d'autenticació associada, el codi de verificació TOTP es copiarà al vostre porta-retalls quan s'òmpliga automàticament l'inici de sessió."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "No sol·liciteu biomètrica en iniciar."
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium requerit"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Aquest navegador no pot processar sol·licituds U2F en aquesta finestra emergent. Voleu obrir l'emergent en una finestra nova per poder iniciar la sessió mitjançant U2F?"
   },
-  "disableFavicon": {
-    "message": "Deshabilitar icones del lloc web"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Les icones del lloc web proporcionen una imatge que es pot reconèixer al costat de cada element d'inici de sessió a la vostra caixa forta."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Deshabilita el comptador d'insígnies"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "El comptador d’insígnies indica quants inicis de sessió teniu de la pàgina actual en la vostra caixa forta."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Nom del titular de la targeta"

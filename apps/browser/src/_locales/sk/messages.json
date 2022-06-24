@@ -364,7 +364,7 @@
     "message": "Neplatné hlavné heslo"
   },
   "vaultTimeout": {
-    "message": "Časový limit pre trezor vypršal"
+    "message": "Časový limit pre trezor"
   },
   "lockNow": {
     "message": "Uzamknúť teraz"
@@ -403,10 +403,10 @@
     "message": "4 hodiny"
   },
   "onLocked": {
-    "message": "Pri uzamknutí"
+    "message": "Keď je systém uzamknutý"
   },
   "onRestart": {
-    "message": "Po reštarte"
+    "message": "Po reštarte prehliadača"
   },
   "never": {
     "message": "Nikdy"
@@ -567,23 +567,23 @@
     "message": "Žiadny priečinok",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Vypnúť notifikáciu Pridať prihlasovacie údaje"
+  "enableAddLoginNotification": {
+    "message": "Požiadať o pridanie prihlásenia"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Notifikácia Pridať prihlasovacie údaje\" vás automaticky upozorní na uloženie nových údajov do vášho trezoru vždy, keď sa s nimi prihlasujete poprvýkrát."
+    "message": "Opýtať sa na pridanie prihlasovacích údajov ak ich ešte nemáte v trezore."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Nezobrazovať platobné karty na stránke \"Aktuálna karta\""
+  "showCardsCurrentTab": {
+    "message": "Zobraziť karty na stránke \"Aktuálna karta\""
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Položky kariet sa zobrazujú na stránke „Aktuálna karta“ pre ľahšie automatické vypĺňanie."
+  "showCardsCurrentTabDesc": {
+    "message": "Zoznam položiek karty na stránke \"Aktuálna karta\" na jednoduché automatické vyplnenie."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Nezobrazovať identity na stránke Karta"
+  "showIdentitiesCurrentTab": {
+    "message": "Zobraziť identity na stránke \"Aktuálna karta\""
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity z vášho trezoru sa zobrazujú na stránke \"Aktuálna karta\" pre ľahké automatické vypĺňanie."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Zoznam položiek identity na stránke \"Aktuálna karta\" na jednoduché automatické vypĺňanie."
   },
   "clearClipboard": {
     "message": "Vymazať schránku",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Uložiť"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Vypnúť oznámenie o zmene hesla"
+  "enableChangedPasswordNotification": {
+    "message": "Požiadať o aktualizáciu existujúceho prihlasovania"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "Oznámenie o zmene hesla sa vás automaticky opýta na aktualizáciu prihlasovacích údajov vo vašom trezore vždy, keď zistí, že ste ho zmenili na stránke."
+  "changedPasswordNotificationDesc": {
+    "message": "Požiadať o aktualizáciu prihlasovacieho hesla, ak sa zistí zmena na stránke."
   },
   "notificationChangeDesc": {
     "message": "Chcete aktualizovať toto heslo v Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Aktualizovať"
   },
-  "disableContextMenuItem": {
-    "message": "Vypnúť možnosti kontextového menu"
+  "enableContextMenuItem": {
+    "message": "Zobraziť možnosti kontextovej ponuky"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Možnosti kontextového menu ponúkajú rýchly prístup k prihlasovacím údajom a generovaniu hesiel pre stránku vo vašej aktuálnej karte."
+  "contextMenuItemDesc": {
+    "message": "Sekundárnym kliknutím získate prístup k vygenerovaniu hesiel a zodpovedajúcim prihláseniam pre webovú stránku. "
   },
   "defaultUriMatchDetection": {
     "message": "Predvolené mapovanie",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Obnova kompletná"
   },
-  "disableAutoTotpCopy": {
-    "message": "Vypnúť automatické kopírovanie TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Automaticky kopírovať TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Ak je kľúč overovateľa spojený s vašim prihlásením, TOTP verifikačný kód bude automaticky skopírovaný do schránky vždy, keď použijete automatické vypĺňanie."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Pri spustení nevyžadovať biometrické údaje"
+  "enableAutoBiometricsPrompt": {
+    "message": "Pri spustení požiadať o biometriu"
   },
   "premiumRequired": {
     "message": "Vyžaduje prémiový účet"
@@ -954,7 +954,7 @@
     "message": "Povoliť automatické vypĺňanie pri načítaní stránky"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Ak je prihlasovací formulár detegovaný, automaticky vykonať vypĺňanie pri načítaní stránky."
+    "message": "Ak je detekovaný prihlasovací formulár, automaticky vykonať vypĺňanie pri načítaní stránky."
   },
   "experimentalFeature": {
     "message": "Toto je zatiaľ experimentálna funkcia. Použite na vlastné riziko."
@@ -963,7 +963,7 @@
     "message": "Predvolené nastavenie automatického vypĺňania pre prihlasovacie položky"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Po zapnutí funkcie Automatické vypĺňanie pri načítaní stránky môžete túto funkciu zapnúť alebo vypnúť pre jednotlivé položky prihlásenia. Toto je predvolené nastavenie pre prihlasovacie položky, ktoré nie sú samostatne nakonfigurované."
+    "message": "Pri úprave položky prihlásenia môžete individuálne zapnúť alebo vypnúť automatické vypĺňanie pri načítaní stránky pre danú položku."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Automatické vypĺňanie pri načítaní stránky (ak je povolené v možnostiach)"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Tento prehliadač nedokáže spracovať U2F požiadavku v popup okne. Chcete ho otvoriť v novom okne aby ste sa mohli prihlásiť pomocou U2F?"
   },
-  "disableFavicon": {
-    "message": "Nezobrazovať ikony stránok"
+  "enableFavicon": {
+    "message": "Zobrazovať favikony stránok"
   },
-  "disableFaviconDesc": {
-    "message": "Ikony stránok poskytujú rozoznateľný obrázok vedľa každého prihlasovacieho údaju vo webovom trezore."
+  "faviconDesc": {
+    "message": "Pri každom prihlásení zobrazí rozpoznateľný obrázok."
   },
-  "disableBadgeCounter": {
-    "message": "Zakázať počítadlo na ikone"
+  "enableBadgeCounter": {
+    "message": "Zobraziť počítadlo na ikone"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Zakáže počítadlo na ikone, ktoré zobrazuje počet prihlasovacích údajov v trezore pre aktuálnu stránku."
+  "badgeCounterDesc": {
+    "message": "Ukazuje, koľko prihlásení máte pre aktuálnu webovú stránku."
   },
   "cardholderName": {
     "message": "Meno vlastníka karty"

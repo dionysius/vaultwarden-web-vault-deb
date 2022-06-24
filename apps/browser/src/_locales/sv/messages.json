@@ -567,23 +567,23 @@
     "message": "Ingen mapp",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Inaktivera aviseringar för nya inloggningar"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "Aviseringar för nya inloggningar frågar dig om du vill lägga till en inloggning automatiskt till ditt valv, när du använder en inloggning som inte redan finns i ditt valv."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Visa inte kort på fliksida"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Kortobjekt från ditt valv listas på 'nuvarande flik'-sidan för enkel automatisk ifyllnad."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Visa inte identiteter på fliksidan"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identitetsobjekt från ditt valv listas på 'nuvarande flik'-sidan för enkel automatisk ifyllnad."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Rensa urklipp",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Spara"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Inaktivera notifikation för ändrade lösenord"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "”Notifikation för ändrade lösenord” uppmanar dig automatiskt att uppdatera ett lösenord i ditt valv när den upptäcker att du har ändrat det på en webbplats."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Vill du uppdatera det här lösenordet i Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Uppdatera"
   },
-  "disableContextMenuItem": {
-    "message": "Inaktivera innehållsmenyn"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Innehållsmenyn (högerklick) ger dig snabbare åtkomst för att skapa ett slumpmässigt lösenord, och för att fylla i en inloggning i den nuvarande fliken."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Standardmatchning för URI",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Uppdatering färdig"
   },
-  "disableAutoTotpCopy": {
-    "message": "Inaktivera automatisk TOTP-kopiering"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Om din inloggning har en autentiseringsnyckel kopplad till den, kommer TOTP-verifieringskoden att automatiskt kopieras till urklipp när du automatiskt fyller i inloggningen."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Fråga inte efter biometri vid uppstart"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium krävs"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Den här webbläsaren kan inte bearbeta U2F-förfrågningar i detta popup-fönster. Vill du öppna ett nytt fönster så att du kan logga in med U2F?"
   },
-  "disableFavicon": {
-    "message": "Inaktivera webbplatsikoner"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Webbplatsikoner ger en igenkännbar ikon bredvid varje inloggningsobjekt i ditt valv."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Inaktivera märkesräknare"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Märkesräknare visar hur många inloggningar du har för den aktuella sidan i ditt valv."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Kortinnehavarens namn"
@@ -1916,7 +1916,7 @@
     "message": "Typ av användarnamn"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plusadresserad e-post",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -1947,10 +1947,10 @@
     "message": "Tjänst"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Vidarebefordrande e-postalias"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Skapa ett e-postalias med en extern vidarebefordranstjänst."
   },
   "hostname": {
     "message": "Värdnamn",
@@ -1963,6 +1963,6 @@
     "message": "API-nyckel"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Key Connector-fel: säkerställ att Key Connector är tillgänglig och fungerar korrekt."
   }
 }

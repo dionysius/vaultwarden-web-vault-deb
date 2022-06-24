@@ -567,23 +567,23 @@
     "message": "Няма папка",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Без известия за запазване на регистрации"
+  "enableAddLoginNotification": {
+    "message": "Питане за добавяне на запис"
   },
   "addLoginNotificationDesc": {
     "message": "Известията за запазване на регистрации автоматично ви подканят да запазите новите регистрации в трезора при първото ви вписване в тях."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Без карти в основния прозорец"
+  "showCardsCurrentTab": {
+    "message": "Показване на карти в страницата с разделите"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Скриване на записите за платежните карти, които обичайно се извеждат в основния прозорец за лесно въвеждане."
+  "showCardsCurrentTabDesc": {
+    "message": "Показване на картите в страницата с разделите, за лесно автоматично попълване."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Без самоличности в основния прозорец"
+  "showIdentitiesCurrentTab": {
+    "message": "Показване на самоличности в страницата с разделите"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Скриване на записите за самоличност, които обичайно се извеждат в основния прозорец за лесно въвеждане."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Показване на самоличностите в страницата с разделите, за лесно автоматично попълване."
   },
   "clearClipboard": {
     "message": "Изчистване на буфера",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Да, нека се запише сега"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Без известия за обновяване на регистрации"
+  "enableChangedPasswordNotification": {
+    "message": "Питане за обновяване на съществуващ запис"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "Известията за обновяване на регистрации автоматично ви подканят да запазите променените регистрации в трезора при засичането на промяната."
+  "changedPasswordNotificationDesc": {
+    "message": "Питане за обновяване на паролата към даден запис, когато бъде засечена промяна в съответния уеб сайт."
   },
   "notificationChangeDesc": {
     "message": "Да се обнови ли паролата в Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Да, нека се обнови сега"
   },
-  "disableContextMenuItem": {
-    "message": "Без добавки към контекстното меню"
+  "enableContextMenuItem": {
+    "message": "Показване на опции в контекстното меню"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Добавките към контекстното меню позволяват бърз достъп до данните за сайтовете в текущия раздел, както и създаването на нова парола."
+  "contextMenuItemDesc": {
+    "message": "Щракване с десния бутон на мишката дава достъп до генератора на пароли и съответстващите за уеб сайта записи. "
   },
   "defaultUriMatchDetection": {
     "message": "Стандартно засичане на адреси",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Абонаментът е опреснен"
   },
-  "disableAutoTotpCopy": {
-    "message": "Без автоматично копиране на временни, еднократни пароли"
+  "enableAutoTotpCopy": {
+    "message": "Автоматично копиране на TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Ако регистрацията използва и удостоверителен ключ, временният, еднократен код се копира в буфера при всяко автоматично попълване на формуляра."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Да не се изискват биометрични данни при стартиране"
+  "enableAutoBiometricsPrompt": {
+    "message": "Питане за биометрични данни при пускане"
   },
   "premiumRequired": {
     "message": "Изисква се платен абонамент"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Този браузър не поддържа заявки чрез U2F в такъв изскачащ прозорец. Искате ли да се отвори нов прозорец, за да може да се впишете чрез U2F?"
   },
-  "disableFavicon": {
-    "message": "Без иконки на сайтовете"
+  "enableFavicon": {
+    "message": "Показване на иконките на уеб сайтовете"
   },
-  "disableFaviconDesc": {
-    "message": "Иконките на сайтовете са разпознаваемо изображение за всеки запис в трезора."
+  "faviconDesc": {
+    "message": "Показване на разпознаваемо изображение до всеки запис."
   },
-  "disableBadgeCounter": {
-    "message": "Изключване на значката с брояч"
+  "enableBadgeCounter": {
+    "message": "Показване на брояч в значка"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Значката с брояч показва колко варианта за вписване имате в трезора си за текущата страница."
+  "badgeCounterDesc": {
+    "message": "Показване на броя записи, които имате за текущата уеб страница."
   },
   "cardholderName": {
     "message": "Име на притежателя на картата"

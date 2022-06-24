@@ -367,7 +367,7 @@
     "message": "Blokowanie sejfu"
   },
   "lockNow": {
-    "message": "Zablokuj"
+    "message": "Zablokuj teraz"
   },
   "immediately": {
     "message": "Natychmiast"
@@ -406,7 +406,7 @@
     "message": "Po zablokowaniu komputera"
   },
   "onRestart": {
-    "message": "Po restarcie przeglądarki"
+    "message": "Po uruchomieniu przeglądarki"
   },
   "never": {
     "message": "Nigdy"
@@ -567,23 +567,23 @@
     "message": "Nieprzypisane",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Wyłącz powiadomienia automatycznego logowania"
+  "enableAddLoginNotification": {
+    "message": "Poproś o dodanie danych logowania"
   },
   "addLoginNotificationDesc": {
     "message": "\"Dodaj powiadomienia logowania\" automatycznie wyświetla monit o zapisanie nowych danych logowania do sejfu przy każdym pierwszym logowaniu."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Nie pokazuj kart w zakładce \"Obecna karta\""
+  "showCardsCurrentTab": {
+    "message": "Pokaż karty na stronie Karta"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Karty zapisane w sejfie są wyświetlane w zakładce \"Obecna karta\"."
+  "showCardsCurrentTabDesc": {
+    "message": "Wyświetlaj elementy karty na stronie Karta, aby ułatwić autouzupełnianie."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Nie pokazuj tożsamości w zakładce \"Obecna karta\""
+  "showIdentitiesCurrentTab": {
+    "message": "Pokaż tożsamości na stronie Karta"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Tożsamości zapisane w sejfie są wyświetlane w zakładce \"Obecna karta\"."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Wyświetlaj elementy tożsamości na stronie Karta, aby ułatwić autouzupełnianie."
   },
   "clearClipboard": {
     "message": "Wyczyść schowek",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Zapisz"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Wyłącz powiadomienie o zmianie hasła"
+  "enableChangedPasswordNotification": {
+    "message": "Poproś o aktualizację istniejących danych logowania"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"Powiadomienie o zmianie hasła\" automatycznie zapyta Cię o zaktualizowanie hasła w sejfie za każdym razem, gdy wykryje zmianę hasła na danej stronie."
+  "changedPasswordNotificationDesc": {
+    "message": "Poproś o aktualizację hasła danych logowania po wykryciu zmiany w witrynie."
   },
   "notificationChangeDesc": {
     "message": "Czy chcesz zaktualizować to hasło w Bitwarden?"
@@ -611,14 +611,14 @@
   "notificationChangeSave": {
     "message": "Zaktualizuj"
   },
-  "disableContextMenuItem": {
-    "message": "Wyłącz opcje menu kontekstowego"
+  "enableContextMenuItem": {
+    "message": "Pokaż opcje menu kontekstowego"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Opcje menu kontekstowego zapewniają szybki dostęp do generowania haseł oraz do danych logowania dla obecnej karty."
+  "contextMenuItemDesc": {
+    "message": "Użyj drugiego kliknięcia, aby uzyskać dostęp do generowania haseł i pasujących danych logowania do witryny. "
   },
   "defaultUriMatchDetection": {
-    "message": "Domyślne wykrywanie dopasowania",
+    "message": "Domyślna metoda dopasowania adresu",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Odświeżanie zostało zakończone"
   },
-  "disableAutoTotpCopy": {
-    "message": "Wyłącz automatyczne kopiowanie kodu TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Kopiuj TOTP automatycznie"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Jeśli dane logowania posiadają dołączony klucz uwierzytelniający TOTP, kod weryfikacyjny jest automatycznie kopiowany do schowka przy każdym autouzupełnianiu danych logowania."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Zapamiętaj autoryzację biometryczną"
+  "enableAutoBiometricsPrompt": {
+    "message": "Poproś o dane biometryczne przy uruchomieniu"
   },
   "premiumRequired": {
     "message": "Konto Premium jest wymagane"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Ta przeglądarka nie może przetworzyć żądania U2F w tym oknie. Czy chcesz otworzyć nowe okno przeglądarki, aby zalogować się przy pomocy klucza U2F?"
   },
-  "disableFavicon": {
-    "message": "Wyłącz ikony stron"
+  "enableFavicon": {
+    "message": "Pokaż ikony witryn"
   },
-  "disableFaviconDesc": {
-    "message": "Wyświetlaj rozpoznawalną ikonę serwisu obok danych logowania w sejfie."
+  "faviconDesc": {
+    "message": "Pokaż rozpoznawalny obraz obok każdych danych logowania."
   },
-  "disableBadgeCounter": {
-    "message": "Wyłącz licznik danych logowania"
+  "enableBadgeCounter": {
+    "message": "Pokaż licznik na ikonie"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Licznik informuje, ile danych logowania zawiera sejf dla obecnej strony."
+  "badgeCounterDesc": {
+    "message": "Wskaż, ile masz danych logowania do bieżącej strony internetowej."
   },
   "cardholderName": {
     "message": "Właściciel karty"

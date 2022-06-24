@@ -146,7 +146,7 @@
     "message": "账户"
   },
   "changeMasterPassword": {
-    "message": "修改主密码"
+    "message": "更改主密码"
   },
   "fingerprintPhrase": {
     "message": "指纹短语",
@@ -160,7 +160,7 @@
     "message": "两步登录"
   },
   "logOut": {
-    "message": "退出账户"
+    "message": "注销"
   },
   "about": {
     "message": "关于"
@@ -193,7 +193,7 @@
     "message": "没有可列出的文件夹。"
   },
   "helpFeedback": {
-    "message": "帮助和反馈"
+    "message": "帮助与反馈"
   },
   "sync": {
     "message": "同步"
@@ -406,7 +406,7 @@
     "message": "系统锁定时"
   },
   "onRestart": {
-    "message": "重启浏览器时"
+    "message": "浏览器重启时"
   },
   "never": {
     "message": "从不"
@@ -540,7 +540,7 @@
     "message": "您确定要删除此项目吗?"
   },
   "deletedItem": {
-    "message": "发送项目到回收站"
+    "message": "项目已发送到回收站"
   },
   "overwritePassword": {
     "message": "覆盖密码"
@@ -567,26 +567,26 @@
     "message": "默认文件夹",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "禁用添加登录项目通知"
+  "enableAddLoginNotification": {
+    "message": "要求添加登录"
   },
   "addLoginNotificationDesc": {
-    "message": "当您第一次登录时，「添加登录项目通知」会自动提醒您将新的登录保存到您的密码库。"
+    "message": "在密码库中找不到项目时询问添加一个项目。"
   },
-  "dontShowCardsCurrentTab": {
-    "message": "标签页上不显示支付卡"
+  "showCardsCurrentTab": {
+    "message": "在标签页上显示支付卡"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "密码库中的支付卡项目会在「当前标签页」页面列出，以便于自动填充。"
+  "showCardsCurrentTabDesc": {
+    "message": "在标签页上列出支付卡项目，以便于自动填充。"
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "标签页上不显示身份"
+  "showIdentitiesCurrentTab": {
+    "message": "在标签页上显示身份"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "密码库中的身份项目会在「当前标签页」页面列出，以便于自动填充。"
+  "showIdentitiesCurrentTabDesc": {
+    "message": "在标签页上列出身份项目，以便于自动填充。"
   },
   "clearClipboard": {
-    "message": "清除剪贴板",
+    "message": "清空剪贴板",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "保存"
   },
-  "disableChangedPasswordNotification": {
-    "message": "禁用密码变更通知"
+  "enableChangedPasswordNotification": {
+    "message": "要求更新现有的登录"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "当检测到您已变更网站上的密码时，「密码变更通知」将自动提醒您更新密码库中相应登录的密码。"
+  "changedPasswordNotificationDesc": {
+    "message": "在网站上检测到更改时要求更新登录密码。"
   },
   "notificationChangeDesc": {
     "message": "是否要在 Bitwarden 中更新此密码？"
@@ -611,14 +611,14 @@
   "notificationChangeSave": {
     "message": "更新"
   },
-  "disableContextMenuItem": {
-    "message": "禁用上下文菜单选项"
+  "enableContextMenuItem": {
+    "message": "显示上下文菜单选项"
   },
-  "disableContextMenuItemDesc": {
-    "message": "上下文菜单选项可以让您快速访问密码生成器，以及快速登陆当前标签页中的网站。"
+  "contextMenuItemDesc": {
+    "message": "使用辅助点击来访问网站的密码生成和匹配登录。"
   },
   "defaultUriMatchDetection": {
-    "message": "默认的 URI 匹配检测方式",
+    "message": "默认 URI 匹配检测",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "刷新完成"
   },
-  "disableAutoTotpCopy": {
-    "message": "禁用自动 TOTP 复制"
+  "enableAutoTotpCopy": {
+    "message": "自动复制 TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "如果您的登录信息包含一个验证器密钥，当自动填充该登录项目时，TOTP 验证码将会自动复制到剪贴板。"
+    "message": "如果登录包含验证器密钥，当自动填充此登录时，TOTP 验证码将复制到剪贴板。"
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "启动时不提示生物识别"
+  "enableAutoBiometricsPrompt": {
+    "message": "启动时要求生物识别"
   },
   "premiumRequired": {
     "message": "需要高级会员"
@@ -951,10 +951,10 @@
     "message": "各环境 URL 已保存。"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "启用页面加载时的自动填充"
+    "message": "页面加载时自动填充"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "如果网页加载时检测到登录表单，自动进行自动填充。"
+    "message": "网页加载时如果检测到登录表单，则自动填充。"
   },
   "experimentalFeature": {
     "message": "目前这是一项实验功能。使用需自担风险。"
@@ -963,7 +963,7 @@
     "message": "登录项目的默认自动填充设置"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "启用页面加载时自动填充后，您可以为单个登录项目启用或禁用此功能。这是未单独配置的登录项目的默认设置。"
+    "message": "您可以从项目编辑视图中为单个登录项目关闭页面加载时自动填充。"
   },
   "itemAutoFillOnPageLoad": {
     "message": "页面加载时自动填充（如果选项中已启用）"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "此浏览器无法处理此弹出窗口中的 U2F 请求。您想要在新窗口中打开此弹出窗口吗？"
   },
-  "disableFavicon": {
-    "message": "禁用网站图标"
+  "enableFavicon": {
+    "message": "显示网站图标"
   },
-  "disableFaviconDesc": {
-    "message": "在您密码库的每个登录项目旁边显示一个可识别的图标。"
+  "faviconDesc": {
+    "message": "在每个登录旁显示一个可识别的图像。"
   },
-  "disableBadgeCounter": {
-    "message": "禁用角标计数器"
+  "enableBadgeCounter": {
+    "message": "显示角标计数器"
   },
-  "disableBadgeCounterDesc": {
-    "message": "角标计数器表示您的密码库中可用于当前页面的登录的数量。"
+  "badgeCounterDesc": {
+    "message": "指示可用于当前网页的登录项目的数量。"
   },
   "cardholderName": {
     "message": "持卡人姓名"

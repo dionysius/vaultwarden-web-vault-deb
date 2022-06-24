@@ -567,23 +567,23 @@
     "message": "Nincs mappa",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Bejelentkezés értesítés hozzáadás letiltása"
+  "enableAddLoginNotification": {
+    "message": "Bejelentkezés hozzáadás kérése"
   },
   "addLoginNotificationDesc": {
     "message": "A \"Bejelentkezés értesítés hozzáadása\" automatikusan felajánlja a bejelentkezés széfbe mentését az első bejelentkezéskor."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "A kártyák ne jelenjenek meg a fül oldalon"
+  "showCardsCurrentTab": {
+    "message": "Kártyák megjelenítése a Fül oldalon"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "A széf kártyaelemei az 'Aktuális fül' oldalon jelennek meg a könnyű automatikus kitöltéshez."
+  "showCardsCurrentTabDesc": {
+    "message": "Kártyaelemek listázása a Fül oldalon a könnyű automatikus kitöltéshez."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "A személyazonosságok ne jelenjenek meg a Fül oldalon"
+  "showIdentitiesCurrentTab": {
+    "message": "Azonosítások megjelenítése a Fül oldalon"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "A széf személyazonosság elemei az 'Aktuális fül' oldalon jelennek meg a könnyű automatikus kitöltéshez."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Azonosítás elemek listázása a Fül oldalon a könnyű automatikus kitöltéshez."
   },
   "clearClipboard": {
     "message": "Vágólap ürítése",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Mentés"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Megváltozott jelszó értesítés letiltása"
+  "enableChangedPasswordNotification": {
+    "message": "Létező bejelentkezés frissítés kérése"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "A \"Megváltozott jelszó értesítés\" automatikusan felajánlja a bejelentkezési jelszó frissítését a széfben, ha annak megváltoztatását érzékeli a webhelyen."
+  "changedPasswordNotificationDesc": {
+    "message": "A bejelentkezési jelszó frissítésének kérése a webhelyen történő változás érzékelésekor."
   },
   "notificationChangeDesc": {
     "message": "Frissítésre kerüljön a jelszó a Bitwardenben?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Frissítés"
   },
-  "disableContextMenuItem": {
-    "message": "Helyi menüopciók kikapcsolása"
+  "enableContextMenuItem": {
+    "message": "Helyi menü opciók megjelenítése"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Helyi menü opciók gyors hozzáférést biztosít jelszó generáláshoz és bejelentkezésekhez a weboldalhoz amin éppen vagy."
+  "contextMenuItemDesc": {
+    "message": "Másodlagos kattintással férhetünk hozzá a webhely jelszó-generálásához és a egyező bejelentkezésekhez."
   },
   "defaultUriMatchDetection": {
     "message": "Alapértelmezett URI egyezés érzékelés",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Frissítés megtörtént"
   },
-  "disableAutoTotpCopy": {
-    "message": "Egyszeri jelszó automatikus másolás tiltása"
+  "enableAutoTotpCopy": {
+    "message": "TOTP automatikus másolása"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Ha a bejelentkezésedhez csatolva van egy hitelesítő kód, a TOTP ellenőrző kód automatikusan másolva lesz a vágólapodra bejelentkezésed automatikus kitöltése esetén."
+    "message": "Ha a bejelentkezéshez csatolva van egy hitelesítő kulcs, a TOTP ellenőrző kód automatikusan a vágólapra kerül a bejelentkezési adatok megadásánál."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Nincs biometrika kérés indításkor"
+  "enableAutoBiometricsPrompt": {
+    "message": "Biometria kérése indításkor"
   },
   "premiumRequired": {
     "message": "Prémium funkció szükséges"
@@ -954,7 +954,7 @@
     "message": "Automatikus kitöltés engedélyezése oldal betöltéskor"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Ha egy bejelentkezési űrlap észlelésre került, automatikusan töltse ki az adatokat az oldal betöltésekor."
+    "message": "Ha egy bejelentkezési űrlap észlelésre került, az adatok automatikus kitöltése az oldal betöltésekor."
   },
   "experimentalFeature": {
     "message": "Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Ez a böngésző nem dolgozza fel az U2F kéréseket ebben a felbukkanó ablakban. Szeretnénk megnyitni a felbukkanó ablakot új böngészőablakban az U2F segítségével történő bejelentkezéshez?"
   },
-  "disableFavicon": {
-    "message": "Webhely ikonok letiltása"
+  "enableFavicon": {
+    "message": "Webhely ikonok megjelenítése"
   },
-  "disableFaviconDesc": {
-    "message": "A webhelyek ikonjai felismerhető ikonként jelennek meg a széf összes eleme mellett."
+  "faviconDesc": {
+    "message": "Felismerhető kép megjelenítése minden bejelentkezés mellett."
   },
-  "disableBadgeCounter": {
-    "message": "Számláló jelvény letiltása"
+  "enableBadgeCounter": {
+    "message": "Számláló jelvény megjelenítése"
   },
-  "disableBadgeCounterDesc": {
-    "message": "A jelvényszámláló jelzi az aktuális oldalhoz a bejelentkezések számát a stárolóban."
+  "badgeCounterDesc": {
+    "message": "Jelöljük meg, hogy hány bejelentkezés van az aktuális weboldalnál."
   },
   "cardholderName": {
     "message": "Kártyatulajdonos neve"

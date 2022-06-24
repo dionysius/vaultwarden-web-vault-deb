@@ -149,7 +149,7 @@
     "message": "Змінити головний пароль"
   },
   "fingerprintPhrase": {
-    "message": "Фраза відбитку",
+    "message": "Фраза відбитка",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -193,7 +193,7 @@
     "message": "Немає тек."
   },
   "helpFeedback": {
-    "message": "Допомога і зворотній зв'язок"
+    "message": "Допомога і зворотний зв'язок"
   },
   "sync": {
     "message": "Синхронізація"
@@ -218,7 +218,7 @@
     "message": "Веб сховище Bitwarden"
   },
   "importItems": {
-    "message": "Імпорт записів"
+    "message": "Імпортувати записи"
   },
   "select": {
     "message": "Обрати"
@@ -367,7 +367,7 @@
     "message": "Час очікування сховища"
   },
   "lockNow": {
-    "message": "Заблокувати зараз"
+    "message": "Блокувати зараз"
   },
   "immediately": {
     "message": "Негайно"
@@ -403,10 +403,10 @@
     "message": "4 години"
   },
   "onLocked": {
-    "message": "При блокуванні системи"
+    "message": "З блокуванням системи"
   },
   "onRestart": {
-    "message": "При перезапуску браузера"
+    "message": "З перезапуском браузера"
   },
   "never": {
     "message": "Ніколи"
@@ -567,23 +567,23 @@
     "message": "Без теки",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Вимкнути сповіщення про новий запис"
+  "enableAddLoginNotification": {
+    "message": "Запитувати про додавання запису"
   },
   "addLoginNotificationDesc": {
-    "message": "Сповіщення про додавання пароля автоматично пропонує зберегти нові паролі у вашому сховищі під час першого входу."
+    "message": "Запитувати про додавання запису, якщо його немає у вашому сховищі."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Не показувати картки на вкладці"
+  "showCardsCurrentTab": {
+    "message": "Показувати картки на вкладці"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Картки з вашого сховища показано на сторінці поточної вкладки для швидкого доступу."
+  "showCardsCurrentTabDesc": {
+    "message": "Показувати список карток на сторінці вкладки для легкого автозаповнення."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Не показувати посвідчення на вкладці"
+  "showIdentitiesCurrentTab": {
+    "message": "Показувати посвідчення на вкладці"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Посвідчення з вашого сховища показано на сторінці поточної вкладки для швидкого доступу."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Показувати список посвідчень на сторінці вкладки для легкого автозаповнення."
   },
   "clearClipboard": {
     "message": "Очистити буфер обміну",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Зберегти"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Вимкнути сповіщення зміненого пароля"
+  "enableChangedPasswordNotification": {
+    "message": "Запитувати про оновлення запису"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "Сповіщення зміненого пароля автоматично запитує вас про оновлення пароля у сховищі, коли виявлено його зміну на вебсайті."
+  "changedPasswordNotificationDesc": {
+    "message": "Запитувати про оновлення пароля запису, якщо на вебсайті виявлено його зміну."
   },
   "notificationChangeDesc": {
     "message": "Ви хочете оновити цей пароль в Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Оновити"
   },
-  "disableContextMenuItem": {
-    "message": "Вимкнути в контекстному меню"
+  "enableContextMenuItem": {
+    "message": "Показувати в контекстному меню"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Можливості контекстного меню забезпечують швидкий доступ до генерування пароля й входу для вебсайту поточної вкладки."
+  "contextMenuItemDesc": {
+    "message": "Використовувати доступ до генератора паролів та відповідних записів для вебсайту через контекстне меню."
   },
   "defaultUriMatchDetection": {
     "message": "Типове виявлення збігів URI",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Оновлення завершено"
   },
-  "disableAutoTotpCopy": {
-    "message": "Вимкнути авто-копіювання TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Автоматично копіювати коди TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Якщо ваш запис має вкладений ключ авторизації, код підтвердження TOTP автоматично копіюється до буфера обміну щоразу при автозаповненні."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Не запитувати біометрію при запуску"
+  "enableAutoBiometricsPrompt": {
+    "message": "Запитувати біометрію під час запуску"
   },
   "premiumRequired": {
     "message": "Необхідний преміум статус"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Цей браузер не може обробити U2F запити в цьому виринаючому вікні. Хочете відкрити його у новому вікні, щоб ви змогли увійти з використанням U2F?"
   },
-  "disableFavicon": {
-    "message": "Вимкнути піктограми вебсайтів"
+  "enableFavicon": {
+    "message": "Показувати піктограми вебсайтів"
   },
-  "disableFaviconDesc": {
-    "message": "Впізнавані піктограми вебсайтів додаються біля кожного запису вашого сховища."
+  "faviconDesc": {
+    "message": "Показувати впізнаване зображення біля кожного запису."
   },
-  "disableBadgeCounter": {
-    "message": "Вимкнути лічильник значка"
+  "enableBadgeCounter": {
+    "message": "Показувати лічильник"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Лічильник значка показує кількість записів у сховищі для поточної сторінки."
+  "badgeCounterDesc": {
+    "message": "Показувати індикатор кількості записів для поточної вебсторінки."
   },
   "cardholderName": {
     "message": "Ім'я власника картки"

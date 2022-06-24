@@ -567,23 +567,23 @@
     "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "ログイン情報追加の通知を無効化"
+  "enableAddLoginNotification": {
+    "message": "ログイン情報の追加を尋ねる"
   },
   "addLoginNotificationDesc": {
     "message": "初めてログインしたとき保管庫にログイン情報を保存するよう「ログイン情報を追加」通知を自動的に表示します。"
   },
-  "dontShowCardsCurrentTab": {
-    "message": "タブページにカードを表示しない"
+  "showCardsCurrentTab": {
+    "message": "タブページにカードを表示"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "保管庫にあるカードアイテムは自動入力しやすいよう「タブ」に表示されます。"
+  "showCardsCurrentTabDesc": {
+    "message": "自動入力を簡単にするために、タブページにカードアイテムを表示します"
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "タブページに ID を表示しない"
+  "showIdentitiesCurrentTab": {
+    "message": "タブページに ID を表示"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "保管庫にある ID アイテムは自動入力しやすいよう「タブ」に表示されます。"
+  "showIdentitiesCurrentTabDesc": {
+    "message": "自動入力を簡単にするために、タブページに ID アイテムを表示します"
   },
   "clearClipboard": {
     "message": "クリップボードの消去",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "保存する"
   },
-  "disableChangedPasswordNotification": {
-    "message": "パスワードの変更通知を無効化"
+  "enableChangedPasswordNotification": {
+    "message": "既存のログイン情報の更新を尋ねる"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "ウェブサイトでパスワードを変更したことを検出したとき、保管庫のパスワードを更新するために自動的に「パスワードの変更通知」を表示します。"
+  "changedPasswordNotificationDesc": {
+    "message": "ウェブサイトで変更があったとき、ログイン情報のパスワードを更新するか尋ねます"
   },
   "notificationChangeDesc": {
     "message": "Bitwarden でこのパスワードを更新しますか？"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "今すぐ更新する"
   },
-  "disableContextMenuItem": {
-    "message": "コンテキストメニューオプションを無効化"
+  "enableContextMenuItem": {
+    "message": "コンテキストメニューオプションを表示"
   },
-  "disableContextMenuItemDesc": {
-    "message": "コンテキストメニューのオプションで、現在のタブのウェブサイトのログイン情報やパスワード生成に素早くアクセスできます。"
+  "contextMenuItemDesc": {
+    "message": "コンテキストメニューでパスワード生成やログイン情報の入力をできるようにします"
   },
   "defaultUriMatchDetection": {
     "message": "デフォルトの URI 一致検出方法",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "更新完了"
   },
-  "disableAutoTotpCopy": {
-    "message": "認証コードの自動コピーを無効化"
+  "enableAutoTotpCopy": {
+    "message": "TOTP を自動的にコピー"
   },
   "disableAutoTotpCopyDesc": {
     "message": "ログイン情報に認証キーが添付されている場合、自動入力した時に認証コードが自動的にクリップボードへコピーされます。"
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "起動時に生体認証のプロンプトを表示しない"
+  "enableAutoBiometricsPrompt": {
+    "message": "起動時に生体認証を要求する"
   },
   "premiumRequired": {
     "message": "プレミアム会員専用"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "このブラウザーでは U2F 要求をポップアップウインドウでは実行できません。U2F でログインできるよう、新しいウインドウで開き直しますか？"
   },
-  "disableFavicon": {
-    "message": "ウェブサイトアイコンの無効化"
+  "enableFavicon": {
+    "message": "ウェブサイトのアイコンを表示"
   },
-  "disableFaviconDesc": {
-    "message": "保管庫のアイテム毎にウェブサイトのアイコンを表示します。"
+  "faviconDesc": {
+    "message": "ログイン情報の隣にアイコン画像を表示します"
   },
-  "disableBadgeCounter": {
-    "message": "バッジカウンターを無効化"
+  "enableBadgeCounter": {
+    "message": "バッジカウンターを表示"
   },
-  "disableBadgeCounterDesc": {
-    "message": "保管庫にある、現在のページのログイン情報をバッジカウンターで表示します。"
+  "badgeCounterDesc": {
+    "message": "現在のページに一致するログイン情報の数を表示します"
   },
   "cardholderName": {
     "message": "カードの名義人名"

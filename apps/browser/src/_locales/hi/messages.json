@@ -567,23 +567,23 @@
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Disable Add Login Notification"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "क्लिपबोर्ड खाली करें",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Yes, Save Now"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "क्या आप बिटवर्डन में इस पासवर्ड को अपडेट करना चाहते हैं?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Yes, Update Now"
   },
-  "disableContextMenuItem": {
-    "message": "Disable Context Menu Options"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "संदर्भ मेनू विकल्प आपके वर्तमान टैब में वेबसाइट के लिए पासवर्ड जनरेशन और लॉगिन तक त्वरित पहुंच प्रदान करते हैं।"
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "डिफॉल्ट URI मैच डिटेक्शन",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "ताज़ा पूरा"
   },
-  "disableAutoTotpCopy": {
-    "message": "Disable Automatic TOTP Copy"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "यदि आपके लॉगिन में एक प्रमाणक कुंजी जुड़ी हुई है, तो जब भी आप लॉगिन को ऑटो-फिल करते हैं तो TOTP सत्यापन कोड स्वचालित रूप से आपके क्लिपबोर्ड पर कॉपी किया जाता है।"
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "यह ब्राउज़र इस पॉपअप विंडो में U2F अनुरोधों को संसाधित नहीं कर सकता है।क्या आप इस पॉपअप को एक नई विंडो में खोलना चाहते हैं ताकि आप U2F का उपयोग करके लॉग इन कर सकें?"
   },
-  "disableFavicon": {
-    "message": "Disable Website Icons"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "बैज काउंटर को अक्षम कर दो"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "बैज काउंटर निर्देश करता है कि आपके वॉल्ट में वर्तमान पृष्ठ के लिए आपके पास कितने लॉगिन हैं।"
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Cardholder Name"
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {

@@ -567,23 +567,23 @@
     "message": "Be aplanko",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Išjungti Pridėti prisijungimą pranešimą"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "Prisijungimo pridėjimo pranešimas automatiškai Jūs paragina išsaugoti naujus prisijungimus Jūsų saugykloje, kuomet prisijungiate pirmą kartą."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Nerodyti kortelių skirtuko puslapyje"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Kortelių įrašai yra nurodyti „Dabartinis skirtukas“ puslapyje lengvai laukelių užpildymo prieigai."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Nerodyti tapatybių skirtuko puslapyje"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Saugyklos tapatybių įrašai yra nurodyti „Dabartinis skirtukas“ puslapyje lengvai laukelių užpildymo prieigai."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Išvalyti iškarpinę",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Taip, išsaugoti dabar"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Išjungti pakeisto slaptažodžio pranešimą"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "„Pakeisto slaptažodžio pranešimas“ automatiškai ragina atnaujinti slaptažodį saugykloje, kai aptinkamas pakeitimas svetainėje."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Ar norite atnaujinti šį slaptažodį „Bitwarden“?"
@@ -611,14 +611,14 @@
   "notificationChangeSave": {
     "message": "Taip, atnaujinti dabar"
   },
-  "disableContextMenuItem": {
-    "message": "Išjungti kontekstinio meniu nustatymus"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Kontekstinio meniu nustatymai suteikia greitą prieigą prie slaptažodžių generavimo ir svetainės prisijungimų dabartiniame skirtuke."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI Match Detection",
+    "message": "Default URI match detection",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -639,7 +639,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -747,7 +747,7 @@
     "message": "You cannot use this feature until you update your encryption key."
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium membership"
   },
   "premiumManage": {
     "message": "Manage Membership"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Atnaujinimas įvykdytas"
   },
-  "disableAutoTotpCopy": {
-    "message": "Disable Automatic TOTP Copy"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message": "If a login has an authenticator key, copy the TOTP verification code to your clip-board when you auto-fill the login."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -951,10 +951,10 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill on Page Load"
+    "message": "Auto-fill on page load"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message": "If a login form is detected, auto-fill when the web page loads."
   },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
@@ -963,10 +963,10 @@
     "message": "Default autofill setting for login items"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Auto-fill on page load (if enabled in Options)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Use default setting"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
-  "disableFavicon": {
-    "message": "Disable Website Icons"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Cardholder Name"
@@ -1249,7 +1249,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1386,7 +1386,7 @@
     "message": "One or more organization policies are affecting your generator settings."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Vault timeout action"
   },
   "lock": {
     "message": "Lock",
@@ -1562,7 +1562,7 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."

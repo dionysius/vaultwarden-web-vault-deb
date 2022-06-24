@@ -157,10 +157,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Identification en deux étapes"
+    "message": "Identification à deux facteurs"
   },
   "logOut": {
-    "message": "Se déconnecter"
+    "message": "Déconnexion"
   },
   "about": {
     "message": "À propos"
@@ -215,10 +215,10 @@
     "message": "Générer automatiquement des mots de passe forts et uniques pour vos identifiants."
   },
   "bitWebVault": {
-    "message": "Coffre en ligne de Bitwarden"
+    "message": "Coffre en ligne de bitwarden"
   },
   "importItems": {
-    "message": "Importer des éléments"
+    "message": "Importer des identifiants"
   },
   "select": {
     "message": "Sélectionner"
@@ -403,7 +403,7 @@
     "message": "4 heures"
   },
   "onLocked": {
-    "message": "Au verrouillage du système"
+    "message": "Au verrouillage"
   },
   "onRestart": {
     "message": "Au redémarrage du navigateur"
@@ -567,23 +567,23 @@
     "message": "Aucun dossier",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Désactiver la notification d'ajout d'identifiant"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
-    "message": "La \"Notification de demande d'ajout d'identifiant\" apparaît automatiquement pour vous proposer d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
+    "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Ne pas afficher les cartes sur la page Onglet courant"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Les cartes stockées dans votre coffre sont listées sur la page \"Onglet courant\" pour un accès facile lors du remplissage automatique."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Ne pas afficher les identités sur la page Onglet courant"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Les identités stockées dans votre coffre sont listées sur la page \"Onglet courant\" pour un accès facile lors du remplissage automatique."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Effacer le presse-papiers",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Enregistrer"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Désactiver la notification de changement de mot de passe"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "La \"Notification de changement de mot de passe\" vous propose automatiquement de mettre à jour un mot de passe dans votre coffre lorsqu'il est changé sur un site web."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Souhaitez-vous mettre à jour ce mot de passe dans Bitwarden ?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Mettre à jour"
   },
-  "disableContextMenuItem": {
-    "message": "Désactiver les options de menu contextuel"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Les options du menu contextuel permettent un accès rapide à la génération de mots de passe et aux identifiants enregistrés pour le site web de l'onglet actuel."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Détection de correspondance URI par défaut",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Actualisation terminée"
   },
-  "disableAutoTotpCopy": {
-    "message": "Désactiver la copie automatique du TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Si une clé d'authentification est rattachée à votre identifiant, alors le code de vérification TOTP est automatiquement copié dans le presse-papiers lorsque vous renseignez l'identifiant."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Ne pas demander de biométrie au démarrage"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Adhésion Premium requise"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Ce navigateur ne peut pas traiter les requêtes U2F dans cette popup. Voulez-vous ouvrir cette popup dans une nouvelle fenêtre pour que vous puissiez vous connecter en utilisant U2F ?"
   },
-  "disableFavicon": {
-    "message": "Désactiver les icônes des sites web"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Désactiver le compteur de badge"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Le compteur de badge indique le nombre d'identifiants vous avez pour la page actuelle dans votre coffre."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Nom du titulaire de la carte"

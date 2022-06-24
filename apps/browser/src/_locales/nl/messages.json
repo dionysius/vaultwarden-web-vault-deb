@@ -330,7 +330,7 @@
     "message": "Overig"
   },
   "rateExtension": {
-    "message": "Deze extensie beoordelen"
+    "message": "Extensie beoordelen"
   },
   "rateExtensionDesc": {
     "message": "Je kunt ons helpen door een goede recensie achter te laten!"
@@ -567,23 +567,23 @@
     "message": "Geen map",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Melding bij nieuwe login uitschakelen"
+  "enableAddLoginNotification": {
+    "message": "Vraag om toevoegen login"
   },
   "addLoginNotificationDesc": {
     "message": "\"Melding bij nieuwe login\" vraagt automatisch om nieuwe sites in de kluis op te slaan wanneer je ergens voor de eerste keer inlogt."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Kaarten verbergen op tab"
+  "showCardsCurrentTab": {
+    "message": "Kaarten weergeven op tabpagina"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Kaartitems uit je kluis staan op de pagina 'Huidige Tab' om automatisch invullen te vereenvoudigen."
+  "showCardsCurrentTabDesc": {
+    "message": "Kaartenitems weergeven op de tabpagina voor gemakkelijk automatisch invullen."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Identiteiten verbergen op tab"
+  "showIdentitiesCurrentTab": {
+    "message": "Identiteiten weergeven op tabpagina"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identiteitsitems uit je kluis staan op de pagina 'Huidige Tab' om automatisch invullen te vereenvoudigen."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Identiteiten weergeven op de tabpagina voor gemakkelijk automatisch invullen."
   },
   "clearClipboard": {
     "message": "Klembord wissen",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Ja, nu opslaan"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Melding gewijzigd wachtwoord uitschakelen"
+  "enableChangedPasswordNotification": {
+    "message": "Vraag om bijwerken bestaande login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "De \"Melding gewijzigd wachtwoord\" stelt automatisch voor om een wachtwoord in je kluis bij te werken wanneer het op een website is gewijzigd."
+  "changedPasswordNotificationDesc": {
+    "message": "Vraag om bijwerken van het wachtwoord van een login zodra een wijziging op een website is gedetecteerd."
   },
   "notificationChangeDesc": {
     "message": "Wilt je dit wachtwoord in Bitwarden bijwerken?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Ja, nu bijwerken"
   },
-  "disableContextMenuItem": {
-    "message": "Contextmenu-opties uitschakelen"
+  "enableContextMenuItem": {
+    "message": "Contextmenu-opties weergeven"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Contextmenu-opties bieden snelle toegang tot de wachtwoordgenerator en logins voor de website in de huidige tab."
+  "contextMenuItemDesc": {
+    "message": "Gebruik de tweede klikfunctie voor toegang tot wachtwoordgeneratie en het matchen van logins voor de website."
   },
   "defaultUriMatchDetection": {
     "message": "Standaard URI-overeenkomstdetectie",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Bijwerken voltooid"
   },
-  "disableAutoTotpCopy": {
-    "message": "TOTP automatisch kopiëren uitschakelen"
+  "enableAutoTotpCopy": {
+    "message": "TOTP automatisch kopiëren"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Als je login gekoppeld is met een authenticatiecode, wordt de TOTP-verificatiecode automatisch naar het klembord gekopieerd bij het automatisch invullen van de login."
+    "message": "Als aan je login een authenticatorsleutel is gekoppeld, wordt de TOTP-verificatiecode automatisch gekopieerd naar je klembord wanneer je de login automatisch invult."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Bij opstarten niet om biometrisch ontgrendelen vragen"
+  "enableAutoBiometricsPrompt": {
+    "message": "Vraag om biometrie bij opstarten"
   },
   "premiumRequired": {
     "message": "Premium is vereist"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Deze browser kan U2F-verzoeken niet verwerken in dit popupvenster. Wilt je deze pop-up openen in een nieuw venster zodat je kunt inloggen met U2F?"
   },
-  "disableFavicon": {
-    "message": "Websitepictogrammen uitschakelen"
+  "enableFavicon": {
+    "message": "Websitepictogrammen weergeven"
   },
-  "disableFaviconDesc": {
-    "message": "Websitepictogrammen geven een herkenbare afbeelding naast elk item in je kluis weer."
+  "faviconDesc": {
+    "message": "Een herkenbare afbeelding naast iedere login weergeven."
   },
-  "disableBadgeCounter": {
-    "message": "Badgeteller uitschakelen"
+  "enableBadgeCounter": {
+    "message": "Teller weergeven"
   },
-  "disableBadgeCounterDesc": {
-    "message": "De badgeteller geeft aan hoeveel logins je in je kluis hebt voor de huidige pagina."
+  "badgeCounterDesc": {
+    "message": "Indicatie van het aantal logins dat je hebt voor de huidige webpagina."
   },
   "cardholderName": {
     "message": "Naam kaarthouder"

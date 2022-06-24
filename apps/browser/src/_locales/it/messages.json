@@ -367,7 +367,7 @@
     "message": "Timeout cassaforte"
   },
   "lockNow": {
-    "message": "Blocca ora"
+    "message": "Blocca"
   },
   "immediately": {
     "message": "Immediatamente"
@@ -403,7 +403,7 @@
     "message": "4 ore"
   },
   "onLocked": {
-    "message": "Al blocco del computer"
+    "message": "Al Blocco Computer"
   },
   "onRestart": {
     "message": "Al riavvio del browser"
@@ -567,23 +567,23 @@
     "message": "Nessuna cartella",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Disabilita notifica di aggiunta login"
+  "enableAddLoginNotification": {
+    "message": "Chiedi di aggiungere il login"
   },
   "addLoginNotificationDesc": {
     "message": "\"Aggiungi notifica di login\" richiede automaticamente di salvare i nuovi login nella tua cassaforte ogni volta che accedi per la prima volta."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Non mostrare le carte nella pagina delle schede"
+  "showCardsCurrentTab": {
+    "message": "Mostra le carte nella pagina delle schede"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "I dati della carta dalla tua cassaforte sono elencati nella sezione \"Scheda attuale\" per facilitare il riempimento automatico."
+  "showCardsCurrentTabDesc": {
+    "message": "Elenca le carte nella pagina della scheda per un facile completamento automatico."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Non mostrare le identità nella pagina delle schede"
+  "showIdentitiesCurrentTab": {
+    "message": "Mostra le identità nella pagina della scheda"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Le identità della tua cassaforte sono elencati nella sezione \"Scheda attuale\" per facilitare il completamento automatico."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Elenca le carte nella pagina della scheda per un facile completamento automatico."
   },
   "clearClipboard": {
     "message": "Cancella appunti",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Sì, salva ora"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Disabilita notifica di modifica delle password"
+  "enableChangedPasswordNotification": {
+    "message": "Chiedi di aggiornare il login esistente"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "La \"notifica di cambio password\" chiede automaticamente di aggiornare la password di un account della cassaforte ogni qualvolta viene rilevata una modifica su un sito web."
+  "changedPasswordNotificationDesc": {
+    "message": "Chiedi di aggiornare la password di accesso quando  viene rilevato un cambiamento su un sito web."
   },
   "notificationChangeDesc": {
     "message": "Vuoi aggiornare questa password in Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Sì, aggiorna ora"
   },
-  "disableContextMenuItem": {
-    "message": "Disabilita integrazione del menu contestuale"
+  "enableContextMenuItem": {
+    "message": "Mostra le opzioni del menu contestuale"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Le opzioni del menu contestuale forniscono accesso rapido alla generazione di password e ai login per il sito web nella scheda corrente."
+  "contextMenuItemDesc": {
+    "message": "Utilizza un clic secondario per accedere alla generazione di password e login per il sito web. "
   },
   "defaultUriMatchDetection": {
     "message": "Rilevamento corrispondenza URI predefinito",
@@ -747,7 +747,7 @@
     "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave di cifratura."
   },
   "premiumMembership": {
-    "message": "Abbonamento Premium"
+    "message": "Abbonamento premium"
   },
   "premiumManage": {
     "message": "Gestisci abbonamento"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Aggiornamento completato"
   },
-  "disableAutoTotpCopy": {
-    "message": "Disattiva copia TOTP automatica"
+  "enableAutoTotpCopy": {
+    "message": "Copia TOTP automaticamente"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Se il tuo login ha un autenticatore collegato, il codice ti verifica TOTP è automaticamente copiato negli appunti ogni volta che auto-completi il login."
+    "message": "Se il login ha una chiave di autenticazione, il codice di verifica TOTP viene automaticamente copiato negli appunti ogni volta che si compila automaticamente l'accesso."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Non richiedere dati biometrici all'avvio"
+  "enableAutoBiometricsPrompt": {
+    "message": "Richiedi dati biometrici all'avvio"
   },
   "premiumRequired": {
     "message": "Premium richiesto"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Questo browser non può elaborare richieste U2F in questa finestra a comparsa. Vuoi aprire questo popup in una nuova finestra in modo da poter accedere usando U2F?"
   },
-  "disableFavicon": {
-    "message": "Disabilita icone dei siti web"
+  "enableFavicon": {
+    "message": "Mostra icone del sito"
   },
-  "disableFaviconDesc": {
-    "message": "Le icone del sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login della tua cassaforte."
+  "faviconDesc": {
+    "message": "Mostra un'immagine riconoscibile accanto a ogni login."
   },
-  "disableBadgeCounter": {
-    "message": "Disabilita contatore delle occorrenze"
+  "enableBadgeCounter": {
+    "message": "Mostra contatore"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Il contatore delle occorrenze indica quanti accessi hai per la pagina corrente nella tua cassaforte."
+  "badgeCounterDesc": {
+    "message": "Indica quanti login hai per la pagina web corrente."
   },
   "cardholderName": {
     "message": "Titolare della carta"

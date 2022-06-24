@@ -567,23 +567,23 @@
     "message": "Žádná složka",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Vypnout oznámení Přidat přihlašovací údaje"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
-    "message": "Oznámení „Přidat přihlašovací údaje“ automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi přihlašujete poprvé."
+    "message": "Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Nezobrazovat karty na stránce Karta"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Položky karet jsou zobrazovány na stránce „Karta“ pro usnadnění automatického vyplňování."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Nezobrazovat identity na stránce Karta"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Položky identit jsou zobrazovány na stránce „Karta“ pro usnadnění automatického vyplňování."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Vyčistit schránku",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Ano, uložit nyní"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Vypnout oznámení o změněném heslu"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "„Oznámení o změněném heslu“ vás automaticky požádá o potvrzení uložení aktualizovaného hesla v případě, že aplikace rozpozná vámi provedenou změnu hesla na webu."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Chcete aktualizovat toto heslo v Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Ano, aktualizovat"
   },
-  "disableContextMenuItem": {
-    "message": "Vypnout kontextové menu"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Výchozí zjišťování shody URI",
@@ -643,7 +643,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
-    "message": "Exportovat trezor"
+    "message": "Exportovat přihlašovací údaje"
   },
   "fileFormat": {
     "message": "Formát souboru"
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Obnova je dokončena"
   },
-  "disableAutoTotpCopy": {
-    "message": "Vypnout automatické kopírování kódu TOTP"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Pokud mají vaše přihlašovací údaje přidán autentizační klíč pro TOTP, vygenerovaný ověřovací kód (TOTP) se automaticky zkopíruje do schránky při každém automatickém vyplnění přihlašovacích údajů."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Neptat se na biometriku při spuštění."
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Vyžaduje prémiové členství"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Tento prohlížeč nemůže zpracovat U2F požadavky ve vyskakovacím okně. Chcete otevřít toto vyskakovací okno v novém okně, abyste se mohli přihlásit pomocí U2F?"
   },
-  "disableFavicon": {
-    "message": "Vypnout ikonky webových stránek"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Ikonky webových stránek zobrazí snadno rozeznatelný obrázek vedle každé položky ve vašem trezoru."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Nezobrazovat počet přihlašovacích údajů"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Počítadlo zobrazuje, kolik přihlašovacích údajů máte pro aktuální stránku ve svém trezoru."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Jméno držitele karty"

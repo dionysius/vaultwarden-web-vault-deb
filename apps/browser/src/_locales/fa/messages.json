@@ -567,23 +567,23 @@
     "message": "بدون پوشه",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "غیرفعال کردن اعلانیه اضافه کردن ورودی"
+  "enableAddLoginNotification": {
+    "message": "درخواست اضافه کردن ورود به سیستم"
   },
   "addLoginNotificationDesc": {
     "message": "\"افزودن اعلانیه ورود\" به صورت خودکار از شما می خواهد هر بار که برای اولین بار وارد سیستم میشوید ورودی های جدید را در گاوصندوق خود ذخیره کنید."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Don't Show Cards on Tab Page"
+  "showCardsCurrentTab": {
+    "message": "نمایش کارت‌ها در صفحه برگه"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  "showCardsCurrentTabDesc": {
+    "message": "برای پر کردن خودکار آسان، موارد کارت را در صفحه برگه فهرست کن."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Don't Show Identities on Tab Page"
+  "showIdentitiesCurrentTab": {
+    "message": "نشان دادن هویت در صفحه برگه"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'Current Tab' page for easy auto-fill access."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "موارد هویتی را در صفحه برگه برای پر کردن خودکار آسان فهرست کن."
   },
   "clearClipboard": {
     "message": "پاک‌سازی کلیپ‌ برد",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "بله، ذخیره کن"
   },
-  "disableChangedPasswordNotification": {
-    "message": "غیر فعال کردن اعلان تغییر کلمه عبور"
+  "enableChangedPasswordNotification": {
+    "message": "درخواست برای بروزرسانی ورود به سیستم موجود"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"اعلانیه کلمه عبور تغییر کرده\" بصورت خودکار شما را از بروزرسانی کلمه عبور در گاوصندوق مطلع میکند هر زمان که شما آن را در یک وبسایت تغییر داده باشید."
+  "changedPasswordNotificationDesc": {
+    "message": "هنگامی که تغییری در یک وب‌سایت شناسایی شد، درخواست به‌روزرسانی کلمه عبور ورود کن."
   },
   "notificationChangeDesc": {
     "message": "آیا مایل به بروزرسانی این پسورد در Bitwarden هستید؟"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "بله، بروزرسانی کن"
   },
-  "disableContextMenuItem": {
-    "message": "غیر فعال کردن گزینه های منوی متن"
+  "enableContextMenuItem": {
+    "message": "نمایش گزینه های منوی زمینه"
   },
-  "disableContextMenuItemDesc": {
-    "message": "گزینه های منوی متن دسترسی سریع به ساخت کلمه عبور و ورود به سیستم برای وبسایت در برگه فعلی را برای شما فراهم میکند."
+  "contextMenuItemDesc": {
+    "message": "از یک کلیک ثانویه برای دسترسی به تولید کلمه عبور و ورودهای منطبق برای وب سایت استفاده کن."
   },
   "defaultUriMatchDetection": {
     "message": "بازرسی تطابق URL پیشفرض",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "نوسازی کامل شد"
   },
-  "disableAutoTotpCopy": {
-    "message": "غیرفعال کردن کپی خودکار TOTP"
+  "enableAutoTotpCopy": {
+    "message": "TOTP را به صورت خودکار کپی کن"
   },
   "disableAutoTotpCopyDesc": {
     "message": "اگر ورود شما دارای یک کلید تأیید کننده است که به آن متصل شده است، هر زمان که بصورت خودکار وارد سایت شوید کد تأیید TOTP به صورت خودکار به کلیپ بورد شما کپی می شود."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "در هنگام راه اندازی، درخواست biometrics نکنید."
+  "enableAutoBiometricsPrompt": {
+    "message": "درخواست بیومتریک هنگام راه اندازی"
   },
   "premiumRequired": {
     "message": "در نسخه پرمیوم کار میکند"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "این مرورگر نمیتواند درخواستهای U2F را در این پنجره پاپ آپ پردازش کند. آیا می خواهید این پنجره را در یک پنجره جدید باز کنید تا بتوانید با استفاده از U2F وارد شوید؟"
   },
-  "disableFavicon": {
-    "message": "غیرفعال سازی آیکون های وبسایت"
+  "enableFavicon": {
+    "message": "نمایش نمادهای وب سایت"
   },
-  "disableFaviconDesc": {
-    "message": "آیکون های وبسایت یک تصویر قابل تشخیص در کنار هر داده ورودی ارائه میدهد."
+  "faviconDesc": {
+    "message": "یک تصویر قابل تشخیص در کنار هر ورود نشان دهید."
   },
-  "disableBadgeCounter": {
-    "message": "شمارنده نشان را غیرفعال کن"
+  "enableBadgeCounter": {
+    "message": "نمایش شمارنده نشان"
   },
-  "disableBadgeCounterDesc": {
-    "message": "شمارنده نشان، نشان می دهد که چه تعداد ورود به سیستم برای صفحه فعلی در گاو‌صندوق خود دارید."
+  "badgeCounterDesc": {
+    "message": "تعداد ورود به صفحه وب فعلی را مشخص کن."
   },
   "cardholderName": {
     "message": "نام صاحب کارت"

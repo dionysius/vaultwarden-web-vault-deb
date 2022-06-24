@@ -218,7 +218,7 @@
     "message": "Bitwarden web-boks"
   },
   "importItems": {
-    "message": "Importér elementer"
+    "message": "Importer elementer"
   },
   "select": {
     "message": "Vælg"
@@ -567,23 +567,23 @@
     "message": "Ingen mappe",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Deaktivér Tilføj login notifikation"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "\"Tilføj login notifikation\" spørger dig automatisk om du vil gemme nye logins til din boks, når du logger ind med dem for første gang."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Vis ikke kort på fanebladet"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Kort fra din boks er vist på siden 'Aktuel fane' for nem adgang til automatisk udfyldning."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Vis ikke identiteter på fanebladet"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identiteter fra din boks er vist på siden 'Aktuel fane' for nem adgang til automatisk udfyldning."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Ryd udklipsholder",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Gem"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Deaktivér besked om ændret adgangskode"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"Besked om ændret adgangskode\" beder dig automatisk om at opdatere en adgangskode i din boks, når det opdager, at du har ændret den på en hjemmeside."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Vil du opdatere denne adgangskode i Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Opdatér"
   },
-  "disableContextMenuItem": {
-    "message": "Deaktivér Kontekst-menu valgmuligheder"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Kontekst-menu valgmuligheder giver hurtig adgang til adgangskode generering og login til hjemmesiden i din aktuelle fane."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Standard URI matchmetode",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Opdatering færdig"
   },
-  "disableAutoTotpCopy": {
-    "message": "Deaktivér Automatisk TOTP kopi"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Hvis dit login har en autentificeringsnøgle tilknyttet, kopieres TOTP verifikationskoden automatisk til din udklipsholder når du auto-udfylder login."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Bed ikke om biometri ved start"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium påkrævet"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Denne browser kan ikke behandle U2F-anmodninger i dette popup-vindue. Vil du åbne denne popup i et nyt vindue, så du kan logge ind ved hjælp af U2F?"
   },
-  "disableFavicon": {
-    "message": "Slå webikoner fra"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Webikoner vises som et genkendeligt billede ved siden af hvert loginelement i din boks."
+  "faviconDesc": {
+    "message": "Show a recognizable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Deaktivér Badge-tæller"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Badge-tæller angiver, hvor mange logins du har for den aktuelle side i din boks."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Kortindehaverens navn"

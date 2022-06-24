@@ -403,7 +403,7 @@
     "message": "4 tuntia"
   },
   "onLocked": {
-    "message": "Kun järjestelmän lukitaan"
+    "message": "Kun järjestelmä lukitaan"
   },
   "onRestart": {
     "message": "Kun selain käynnistetään uudelleen"
@@ -567,23 +567,23 @@
     "message": "Ei kansiota",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Älä näytä \"Lisää kirjautumistieto\" -kehotetta"
+  "enableAddLoginNotification": {
+    "message": "Kysy lisätäänkö kirjautimistieto"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Lisää kirjautumistieto\" -kehote kysyy, haluatko tallentaa kirjautumistiedot holviisi kun kirjaudut niillä ensimmäistä kertaa."
+    "message": "Kysy lisätäänkö uusi kohde, jos holvissa ei vielä ole sopivaa kohdetta."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Älä näytä välilehdille korttiehdotuksia"
+  "showCardsCurrentTab": {
+    "message": "Näytä kortit välilehtiosiossa"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Holvissasi olevat kortit tunnistetaan ja näytetään selaimen avoimelle välilehdelle, jotta niiden valinta täyttöä varten on helppoa."
+  "showCardsCurrentTabDesc": {
+    "message": "Kortit näytetään laajennuksen välilehtisivulla niiden automaattisen täytön helpottamiseksi."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Älä näytä välilehdille henkilöllisyysehdotuksia"
+  "showIdentitiesCurrentTab": {
+    "message": "Näytä henkilöllisyydet välilehtiosiossa"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Holvissasi olevat henkilöllisyydet tunnistetaan ja näytetään selaimen avoimelle välilehdelle, jotta niiden valinta täyttöä varten on helppoa."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "Henkilöllisyydet näytetään laajennuksen välilehtisivulla niiden automaattisen täytön helpottamiseksi."
   },
   "clearClipboard": {
     "message": "Tyhjennä leikepöytä",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Tallenna"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Älä näytä \"Salasana vaihdettu\" -kehotetta"
+  "enableChangedPasswordNotification": {
+    "message": "Kysy päivitetäänkö olemassa oleva kirjautimistieto"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "\"Salasana vaihdettu\" -ilmoitus ehdottaa holviisi tallennetun kirjautumistiedon salasanan automaattista päivitystä kun se havaitsee, että olet vaihtanut sen verkkosivustolla."
+  "changedPasswordNotificationDesc": {
+    "message": "Kysy päivitetäänkö kirjautumistiedon salasana, kun sivustolla havaitaan muutos."
   },
   "notificationChangeDesc": {
     "message": "Haluatko päivittää salasanan Bitwardeniin?"
@@ -611,14 +611,14 @@
   "notificationChangeSave": {
     "message": "Päivitä"
   },
-  "disableContextMenuItem": {
-    "message": "Älä näytä kontekstivalikon valintoja"
+  "enableContextMenuItem": {
+    "message": "Näytä sisältövalikon valinnat"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Hiiren kakkospainikkeen pikavalikon kautta pääset nopeasti käsiksi salasanojen luontiin ja nykyisellä välilehdellä avoinna olevan sivuston kirjautumisteitoihin."
+  "contextMenuItemDesc": {
+    "message": "Käytä salasanageneraattoria ja avoimelle sivulle soveltuvia kirjautumistietoja hiiren kakkospainikkeella avattavasta valikosta."
   },
   "defaultUriMatchDetection": {
-    "message": "URI:n tunnistuksen oletustapa",
+    "message": "URI:n oletusarvoinen täsmäystapa",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Päivitys on valmis"
   },
-  "disableAutoTotpCopy": {
-    "message": "Älä kopioi TOTP-koodeja automaattisesti"
+  "enableAutoTotpCopy": {
+    "message": "Kopioi TOTP-koodi automaattisesti"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Jos kirjautumistietoosi on liitetty kaksivaiheisen todennusmenetelmän avain, kopioidaan kaksivaiheisen kirjautumisen TOTP-todennuskoodi automaattisesti leikepöydälle kun suoritat kohteen automaattisen täytön."
+    "message": "Jos kirjautumistieto sisältää kaksivaiheisen todennusmenetelmän avaimen, kopioidaan TOTP-todennuskoodi leikepöydälle kohteen automaattisen täytön yhteydessä."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Älä pyydä biometristä avausta käynnistettäessä."
+  "enableAutoBiometricsPrompt": {
+    "message": "Pyydä Biometristä todennusta käynnistettäessä"
   },
   "premiumRequired": {
     "message": "Premium vaaditaan"
@@ -951,10 +951,10 @@
     "message": "Palvelinten URL-osoitteet tallennettiin."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Täytä automaattisesti sivun avautuessa"
+    "message": "Automaattinen täyttö sivun avautuessa"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Jos sivulla havaitaan kirjautumislomake, täytetään kirjautumistiedot automaattisesti sivun avautuessa."
+    "message": "Jos havaitaan kirjautumislomake, suorita automaattinen täyttö sivun avautuessa."
   },
   "experimentalFeature": {
     "message": "Tämä on vielä kokeellinen toiminto. Käytä omalla vastuullasi."
@@ -963,7 +963,7 @@
     "message": "Automaattisen täytön oletusasetus kirjautumistiedoille"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Kun \"Täytä automaattisesti sivun avautuessa\" on käytössä, voi sen ottaa käyttöön tai poistaa käytöstä yksittäisille kirjautumistiedoille. Tämä on oletusarvo niille kirjautumistiedoille, joille asetusta ei ole erikseen määritetty."
+    "message": "Voit ottaa automaattisen täytön käyttöön tai poistaa sen käytöstä kirjautumistietokohtaisesti muokkaamalla kohdetta."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Automaattinen täyttö sivun avautuessa (jos kytketty asetuksista käyttöön)"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "Tämä selain ei voi käsitellä U2F-pyyntöjä tässä ponnahdusikkunassa. Haluatko avata näkymän uuteen ikkunaan, jotta voit vahvistaa kirjautumisen U2F-todennuslaitteella?"
   },
-  "disableFavicon": {
-    "message": "Älä näytä sivustojen kuvakkeita"
+  "enableFavicon": {
+    "message": "Näytä verkkosivustojen kuvakkeet"
   },
-  "disableFaviconDesc": {
-    "message": "Kirjautumistietojen vieressä näytettävät sivustojen kuvakkeet helpottavat kohteiden tunnistusta."
+  "faviconDesc": {
+    "message": "Näytä tunnistettava kuva jokaiselle kirjautumistiedolle."
   },
-  "disableBadgeCounter": {
-    "message": "Älä näytä kuvakkeen laskuria"
+  "enableBadgeCounter": {
+    "message": "Näytä laskuri"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Työkalupalkin kuvakkeessa näytetään laskuri, joka kertoo avoimeen sivuun kohdistuvien kirjautumistietojen lukumäärän holvissasi."
+  "badgeCounterDesc": {
+    "message": "Ilmaisee nykyiselle sivulle sopivien kirjautumistietojen määrän."
   },
   "cardholderName": {
     "message": "Kortinhaltijan nimi"

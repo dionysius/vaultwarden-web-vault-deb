@@ -567,23 +567,23 @@
     "message": "No folder",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "Disable add login notification"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "The \"add login notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
-  "dontShowCardsCurrentTab": {
-    "message": "Don't show cards on tab page"
+  "showCardsCurrentTab": {
+    "message": "Show cards on Tab page"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "Card items from your vault are listed on the 'current tab' page for easy auto-fill access."
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "Don't show identities on tab page"
+  "showIdentitiesCurrentTab": {
+    "message": "Show identities on Tab page"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "Identity items from your vault are listed on the 'current tab' page for easy auto-fill access."
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "Clear clipboard",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "Save"
   },
-  "disableChangedPasswordNotification": {
-    "message": "Disable changed password notification"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "The \"changed password notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "Do you want to update this password in Bitwarden?"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "Update"
   },
-  "disableContextMenuItem": {
-    "message": "Disable context menu options"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "Default URI match detection",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "Refresh complete"
   },
-  "disableAutoTotpCopy": {
-    "message": "Disable automatic TOTP copy"
+  "enableAutoTotpCopy": {
+    "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
     "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "Do not prompt for biometrics on launch"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "Premium required"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "This browser cannot process U2F requests in this pop-up window. Do you want to open this pop-up in a new window so that you can log in using U2F?"
   },
-  "disableFavicon": {
-    "message": "Disable website icons"
+  "enableFavicon": {
+    "message": "Show website icons"
   },
-  "disableFaviconDesc": {
-    "message": "Website icons provide a recognisable image next to each login item in your vault."
+  "faviconDesc": {
+    "message": "Show a recognisable image next to each login."
   },
-  "disableBadgeCounter": {
-    "message": "Disable Badge Counter"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "Badge counter indicates how many logins you have for the current page in your vault."
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "Cardholder name"

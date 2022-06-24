@@ -403,10 +403,10 @@
     "message": "4 小時"
   },
   "onLocked": {
-    "message": "系統鎖定時"
+    "message": "於系統鎖定時"
   },
   "onRestart": {
-    "message": "重新啟動瀏覽器時"
+    "message": "於瀏覽器重新啟動時"
   },
   "never": {
     "message": "永不"
@@ -540,7 +540,7 @@
     "message": "確定要刪除此項目嗎？"
   },
   "deletedItem": {
-    "message": "將項目移至垃圾桶"
+    "message": "已將項目移至垃圾桶"
   },
   "overwritePassword": {
     "message": "覆寫密碼"
@@ -567,23 +567,23 @@
     "message": "（未分類）",
     "description": "This is the folder for uncategorized items"
   },
-  "disableAddLoginNotification": {
-    "message": "停用新增登入資料通知"
+  "enableAddLoginNotification": {
+    "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
     "message": "當您首次登入時，「新增登入資料通知」會自動提醒您在密碼庫中新增登入資料。"
   },
-  "dontShowCardsCurrentTab": {
-    "message": "不要在分頁頁面顯示支付卡"
+  "showCardsCurrentTab": {
+    "message": "於分頁頁面顯示支付卡"
   },
-  "dontShowCardsCurrentTabDesc": {
-    "message": "將密碼庫中的支付卡項目列在「目前分頁」頁面上，以便於自動填入。"
+  "showCardsCurrentTabDesc": {
+    "message": "List card items on the Tab page for easy auto-fill."
   },
-  "dontShowIdentitiesCurrentTab": {
-    "message": "不要在分頁頁面顯示身分"
+  "showIdentitiesCurrentTab": {
+    "message": "於分頁頁面顯示身分"
   },
-  "dontShowIdentitiesCurrentTabDesc": {
-    "message": "將密碼庫中的身分項目列在「目前分頁」頁面上，以便於自動填入。"
+  "showIdentitiesCurrentTabDesc": {
+    "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
     "message": "清除剪貼簿",
@@ -599,11 +599,11 @@
   "notificationAddSave": {
     "message": "儲存"
   },
-  "disableChangedPasswordNotification": {
-    "message": "停用密碼變更通知"
+  "enableChangedPasswordNotification": {
+    "message": "Ask to update existing login"
   },
-  "disableChangedPasswordNotificationDesc": {
-    "message": "偵測到您變更網站上的密碼時，「密碼變更通知」將會自動提醒您更新密碼庫的密碼。"
+  "changedPasswordNotificationDesc": {
+    "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
     "message": "是否要在 Bitwarden 中更新此密碼？"
@@ -611,11 +611,11 @@
   "notificationChangeSave": {
     "message": "更新"
   },
-  "disableContextMenuItem": {
-    "message": "停用右鍵選單選項"
+  "enableContextMenuItem": {
+    "message": "Show context menu options"
   },
-  "disableContextMenuItemDesc": {
-    "message": "右鍵選單選項幫您快速使用密碼產生器，以及快速登入目前分頁中的網站。"
+  "contextMenuItemDesc": {
+    "message": "Use a secondary click to access password generation and matching logins for the website. "
   },
   "defaultUriMatchDetection": {
     "message": "預設的 URI 一致性偵測",
@@ -806,14 +806,14 @@
   "refreshComplete": {
     "message": "狀態更新完成"
   },
-  "disableAutoTotpCopy": {
-    "message": "停用自動 TOTP 複製"
+  "enableAutoTotpCopy": {
+    "message": "自動複製 TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "若您的登入資料已包含驗證器金鑰，TOTP 驗證碼會在您自動填入時自動複製至您的剪貼簿。"
+    "message": "若登入資料已包含驗證器金鑰，在自動填入此登入資料時，TOTP 驗證碼將複製至您的剪貼簿。"
   },
-  "disableAutoBiometricsPrompt": {
-    "message": "不要在啟動時提示生物特徵辨識"
+  "enableAutoBiometricsPrompt": {
+    "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
     "message": "需要進階會員資格"
@@ -951,7 +951,7 @@
     "message": "已儲存環境 URL。"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "啟用頁面載入時的自動填入功能"
+    "message": "頁面載入時自動填入"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "如果網頁載入時偵測到登入表單，則自動執行表單填入。"
@@ -1033,17 +1033,17 @@
   "popupU2fCloseMessage": {
     "message": "此瀏覽器不能在彈出式視窗中處理 U2F 要求。是否在新視窗開啟此對話方塊，以便您能夠使用 U2F 登入？"
   },
-  "disableFavicon": {
-    "message": "停用網站圖示顯示功能"
+  "enableFavicon": {
+    "message": "顯示網站圖示"
   },
-  "disableFaviconDesc": {
-    "message": "在您密碼庫的每個登入資料旁顯示一個可辨識的圖示。"
+  "faviconDesc": {
+    "message": "在每個登入資料旁顯示一個可辨識的圖片。"
   },
-  "disableBadgeCounter": {
-    "message": "停用圖示計數器"
+  "enableBadgeCounter": {
+    "message": "Show badge counter"
   },
-  "disableBadgeCounterDesc": {
-    "message": "圖示計數器可顯示您密碼庫中可用於目前頁面的登入資料數量。"
+  "badgeCounterDesc": {
+    "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
     "message": "持卡人姓名"
