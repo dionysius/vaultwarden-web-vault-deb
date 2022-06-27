@@ -5,12 +5,12 @@ import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { StorageService } from "@bitwarden/common/abstractions/storage.service";
+import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { sequentialize } from "@bitwarden/common/misc/sequentialize";
 import { Utils } from "@bitwarden/common/misc/utils";
 
-export class LowdbStorageService implements StorageService {
+export class LowdbStorageService implements AbstractStorageService {
   protected dataFilePath: string;
   private db: lowdb.LowdbSync<any>;
   private defaults: any;

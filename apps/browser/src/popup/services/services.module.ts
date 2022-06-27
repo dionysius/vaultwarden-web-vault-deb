@@ -4,6 +4,7 @@ import { LockGuard as BaseLockGuardService } from "@bitwarden/angular/guards/loc
 import { UnauthGuard as BaseUnauthGuardService } from "@bitwarden/angular/guards/unauth.guard";
 import {
   JslibServicesModule,
+  MEMORY_STORAGE,
   SECURE_STORAGE,
 } from "@bitwarden/angular/services/jslib-services.module";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -34,7 +35,7 @@ import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abs
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
-import { StorageService as StorageServiceAbstraction } from "@bitwarden/common/abstractions/storage.service";
+import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
@@ -185,8 +186,8 @@ function getBgService<T>(service: keyof MainBackground) {
       deps: [],
     },
     {
-      provide: StorageServiceAbstraction,
-      useFactory: getBgService<StorageServiceAbstraction>("storageService"),
+      provide: AbstractStorageService,
+      useFactory: getBgService<AbstractStorageService>("storageService"),
       deps: [],
     },
     { provide: AppIdService, useFactory: getBgService<AppIdService>("appIdService"), deps: [] },
@@ -249,8 +250,12 @@ function getBgService<T>(service: keyof MainBackground) {
     },
     {
       provide: SECURE_STORAGE,
-      useFactory: getBgService<StorageServiceAbstraction>("secureStorageService"),
+      useFactory: getBgService<AbstractStorageService>("secureStorageService"),
       deps: [],
+    },
+    {
+      provide: MEMORY_STORAGE,
+      useFactory: getBgService<AbstractStorageService>("memoryStorageService"),
     },
     {
       provide: StateServiceAbstraction,

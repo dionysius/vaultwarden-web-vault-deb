@@ -54,4 +54,22 @@ export class SymmetricCryptoKey {
       this.macKeyB64 = Utils.fromBufferToB64(this.macKey);
     }
   }
+
+  static initFromJson(jsonResult: SymmetricCryptoKey): SymmetricCryptoKey {
+    if (jsonResult == null) {
+      return jsonResult;
+    }
+
+    if (jsonResult.keyB64 != null) {
+      jsonResult.key = Utils.fromB64ToArray(jsonResult.keyB64).buffer;
+    }
+    if (jsonResult.encKeyB64 != null) {
+      jsonResult.encKey = Utils.fromB64ToArray(jsonResult.encKeyB64).buffer;
+    }
+    if (jsonResult.macKeyB64 != null) {
+      jsonResult.macKey = Utils.fromB64ToArray(jsonResult.macKeyB64).buffer;
+    }
+
+    return jsonResult;
+  }
 }

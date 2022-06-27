@@ -30,12 +30,12 @@ export class PopupUtilsService {
     return this.privateMode;
   }
 
-  getContentScrollY(win: Window, scrollingContainer = "content"): number {
+  getContentScrollY(win: Window, scrollingContainer = "main"): number {
     const content = win.document.getElementsByTagName(scrollingContainer)[0];
     return content.scrollTop;
   }
 
-  setContentScrollY(win: Window, scrollY: number, scrollingContainer = "content"): void {
+  setContentScrollY(win: Window, scrollY: number, scrollingContainer = "main"): void {
     if (scrollY != null) {
       const content = win.document.getElementsByTagName(scrollingContainer)[0];
       content.scrollTop = scrollY;

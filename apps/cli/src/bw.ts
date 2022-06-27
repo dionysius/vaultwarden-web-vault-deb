@@ -17,12 +17,14 @@ import { CipherService } from "@bitwarden/common/services/cipher.service";
 import { CollectionService } from "@bitwarden/common/services/collection.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 import { CryptoService } from "@bitwarden/common/services/crypto.service";
+import { EncryptService } from "@bitwarden/common/services/encrypt.service";
 import { EnvironmentService } from "@bitwarden/common/services/environment.service";
 import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/fileUpload.service";
 import { FolderService } from "@bitwarden/common/services/folder.service";
 import { ImportService } from "@bitwarden/common/services/import.service";
 import { KeyConnectorService } from "@bitwarden/common/services/keyConnector.service";
+import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { NoopMessagingService } from "@bitwarden/common/services/noopMessaging.service";
 import { OrganizationService } from "@bitwarden/common/services/organization.service";
 import { PasswordGenerationService } from "@bitwarden/common/services/passwordGeneration.service";
@@ -61,6 +63,7 @@ export class Main {
   messagingService: NoopMessagingService;
   storageService: LowdbStorageService;
   secureStorageService: NodeEnvSecureStorageService;
+  memoryStorageService: MemoryStorageService;
   i18nService: I18nService;
   platformUtilsService: CliPlatformUtilsService;
   cryptoService: CryptoService;
@@ -82,6 +85,7 @@ export class Main {
   exportService: ExportService;
   searchService: SearchService;
   cryptoFunctionService: NodeCryptoFunctionService;
+  encryptService: EncryptService;
   authService: AuthService;
   policyService: PolicyService;
   program: Program;
@@ -122,12 +126,15 @@ export class Main {
       (level) => process.env.BITWARDENCLI_DEBUG !== "true" && level <= LogLevelType.Info
     );
     this.cryptoFunctionService = new NodeCryptoFunctionService();
+    this.encryptService = new EncryptService(this.cryptoFunctionService, this.logService, true);
     this.storageService = new LowdbStorageService(this.logService, null, p, false, true);
     this.secureStorageService = new NodeEnvSecureStorageService(
       this.storageService,
       this.logService,
       () => this.cryptoService
     );
+
+    this.memoryStorageService = new MemoryStorageService();
 
     this.stateMigrationService = new StateMigrationService(
       this.storageService,
@@ -138,6 +145,7 @@ export class Main {
     this.stateService = new StateService(
       this.storageService,
       this.secureStorageService,
+      this.memoryStorageService,
       this.logService,
       this.stateMigrationService,
       new StateFactory(GlobalState, Account)
@@ -145,6 +153,7 @@ export class Main {
 
     this.cryptoService = new CryptoService(
       this.cryptoFunctionService,
+      this.encryptService,
       this.platformUtilsService,
       this.logService,
       this.stateService

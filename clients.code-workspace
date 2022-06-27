@@ -36,20 +36,25 @@
         "webpack://?:*/*": "${workspaceFolder}/*",
         "webpack://@bitwarden/cli/*": "${workspaceFolder}/*"
       }
+    },
+    "jest.disabledWorkspaceFolders": [
+      "browser",
+      "cli",
+      "desktop",
+      "libs",
+      "web vault",
+      "web vault (bit)",
+      "desktop"
+    ],
+    "jest.jestCommandLine": "npx jest",
+    "angular.enable-strict-mode-prompt": false
   },
-  "jest.disabledWorkspaceFolders": [
-    "root",
-    "web vault",
-    "web vault (bit)",
-    "desktop"
-  ],
-  "jest.jestCommandLine": "npx jest"
-},
-"extensions": {
-  "recommendations": [
-    "orta.vscode-jest",
+  "extensions": {
+    "recommendations": [
+      "orta.vscode-jest",
       "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode"
+      "esbenp.prettier-vscode",
+      "Angular.ng-template"
     ],
   }
 }

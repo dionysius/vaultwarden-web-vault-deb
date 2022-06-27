@@ -37,7 +37,7 @@ export class StateService
   }
 
   async getEncryptedCiphers(options?: StorageOptions): Promise<{ [id: string]: CipherData }> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.getEncryptedCiphers(options);
   }
 
@@ -45,14 +45,14 @@ export class StateService
     value: { [id: string]: CipherData },
     options?: StorageOptions
   ): Promise<void> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedCiphers(value, options);
   }
 
   async getEncryptedCollections(
     options?: StorageOptions
   ): Promise<{ [id: string]: CollectionData }> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.getEncryptedCollections(options);
   }
 
@@ -60,12 +60,12 @@ export class StateService
     value: { [id: string]: CollectionData },
     options?: StorageOptions
   ): Promise<void> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedCollections(value, options);
   }
 
   async getEncryptedFolders(options?: StorageOptions): Promise<{ [id: string]: FolderData }> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.getEncryptedFolders(options);
   }
 
@@ -73,12 +73,12 @@ export class StateService
     value: { [id: string]: FolderData },
     options?: StorageOptions
   ): Promise<void> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedFolders(value, options);
   }
 
   async getEncryptedSends(options?: StorageOptions): Promise<{ [id: string]: SendData }> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.getEncryptedSends(options);
   }
 
@@ -86,17 +86,17 @@ export class StateService
     value: { [id: string]: SendData },
     options?: StorageOptions
   ): Promise<void> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedSends(value, options);
   }
 
   override async getLastSync(options?: StorageOptions): Promise<string> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.getLastSync(options);
   }
 
   override async setLastSync(value: string, options?: StorageOptions): Promise<void> {
-    options = this.reconcileOptions(options, this.defaultInMemoryOptions);
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setLastSync(value, options);
   }
 }

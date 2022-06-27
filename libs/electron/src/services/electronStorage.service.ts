@@ -2,13 +2,13 @@ import * as fs from "fs";
 
 import { ipcMain } from "electron";
 
-import { StorageService } from "@bitwarden/common/abstractions/storage.service";
+import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 
 // eslint-disable-next-line
 const Store = require("electron-store");
 
-export class ElectronStorageService implements StorageService {
+export class ElectronStorageService implements AbstractStorageService {
   private store: any;
 
   constructor(dir: string, defaults = {}) {

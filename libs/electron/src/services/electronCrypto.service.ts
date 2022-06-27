@@ -1,3 +1,4 @@
+import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -9,11 +10,12 @@ import { CryptoService } from "@bitwarden/common/services/crypto.service";
 export class ElectronCryptoService extends CryptoService {
   constructor(
     cryptoFunctionService: CryptoFunctionService,
+    encryptService: AbstractEncryptService,
     platformUtilService: PlatformUtilsService,
     logService: LogService,
     stateService: StateService
   ) {
-    super(cryptoFunctionService, platformUtilService, logService, stateService);
+    super(cryptoFunctionService, encryptService, platformUtilService, logService, stateService);
   }
 
   async hasKeyStored(keySuffix: KeySuffixOptions): Promise<boolean> {

@@ -1,6 +1,6 @@
-import { StorageService } from "@bitwarden/common/abstractions/storage.service";
+import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 
-export class MemoryStorageService implements StorageService {
+export class MemoryStorageService implements AbstractStorageService {
   private store = new Map<string, any>();
 
   get<T>(key: string): Promise<T> {

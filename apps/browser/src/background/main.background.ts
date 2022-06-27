@@ -24,7 +24,7 @@ import { ProviderService as ProviderServiceAbstraction } from "@bitwarden/common
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { SendService as SendServiceAbstraction } from "@bitwarden/common/abstractions/send.service";
 import { SettingsService as SettingsServiceAbstraction } from "@bitwarden/common/abstractions/settings.service";
-import { StorageService as StorageServiceAbstraction } from "@bitwarden/common/abstractions/storage.service";
+import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/abstractions/sync.service";
 import { SystemService as SystemServiceAbstraction } from "@bitwarden/common/abstractions/system.service";
 import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/abstractions/token.service";
@@ -47,12 +47,14 @@ import { CipherService } from "@bitwarden/common/services/cipher.service";
 import { CollectionService } from "@bitwarden/common/services/collection.service";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
+import { EncryptService } from "@bitwarden/common/services/encrypt.service";
 import { EnvironmentService } from "@bitwarden/common/services/environment.service";
 import { EventService } from "@bitwarden/common/services/event.service";
 import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/fileUpload.service";
 import { FolderService } from "@bitwarden/common/services/folder.service";
 import { KeyConnectorService } from "@bitwarden/common/services/keyConnector.service";
+import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { NotificationsService } from "@bitwarden/common/services/notifications.service";
 import { OrganizationService } from "@bitwarden/common/services/organization.service";
 import { PasswordGenerationService } from "@bitwarden/common/services/passwordGeneration.service";
@@ -79,11 +81,13 @@ import { AutofillService as AutofillServiceAbstraction } from "../services/abstr
 import { StateService as StateServiceAbstraction } from "../services/abstractions/state.service";
 import AutofillService from "../services/autofill.service";
 import { BrowserCryptoService } from "../services/browserCrypto.service";
+import BrowserLocalStorageService from "../services/browserLocalStorage.service";
 import BrowserMessagingService from "../services/browserMessaging.service";
 import BrowserMessagingPrivateModeBackgroundService from "../services/browserMessagingPrivateModeBackground.service";
 import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
-import BrowserStorageService from "../services/browserStorage.service";
 import I18nService from "../services/i18n.service";
+import { KeyGenerationService } from "../services/keyGeneration.service";
+import { LocalBackedSessionStorageService } from "../services/localBackedSessionStorage.service";
 import { StateService } from "../services/state.service";
 import { VaultFilterService } from "../services/vaultFilter.service";
 import VaultTimeoutService from "../services/vaultTimeout.service";
@@ -100,8 +104,9 @@ import WebRequestBackground from "./webRequest.background";
 
 export default class MainBackground {
   messagingService: MessagingServiceAbstraction;
-  storageService: StorageServiceAbstraction;
-  secureStorageService: StorageServiceAbstraction;
+  storageService: AbstractStorageService;
+  secureStorageService: AbstractStorageService;
+  memoryStorageService: AbstractStorageService;
   i18nService: I18nServiceAbstraction;
   platformUtilsService: PlatformUtilsServiceAbstraction;
   logService: LogServiceAbstraction;
@@ -141,6 +146,7 @@ export default class MainBackground {
   twoFactorService: TwoFactorServiceAbstraction;
   vaultFilterService: VaultFilterService;
   usernameGenerationService: UsernameGenerationServiceAbstraction;
+  encryptService: EncryptService;
 
   onUpdatedRan: boolean;
   onReplacedRan: boolean;
@@ -181,9 +187,17 @@ export default class MainBackground {
     this.messagingService = isPrivateMode
       ? new BrowserMessagingPrivateModeBackgroundService()
       : new BrowserMessagingService();
-    this.storageService = new BrowserStorageService();
-    this.secureStorageService = new BrowserStorageService();
     this.logService = new ConsoleLogService(false);
+    this.cryptoFunctionService = new WebCryptoFunctionService(window);
+    this.storageService = new BrowserLocalStorageService();
+    this.secureStorageService = new BrowserLocalStorageService();
+    this.memoryStorageService =
+      chrome.runtime.getManifest().manifest_version == 3
+        ? new LocalBackedSessionStorageService(
+            new EncryptService(this.cryptoFunctionService, this.logService, false),
+            new KeyGenerationService(this.cryptoFunctionService)
+          )
+        : new MemoryStorageService();
     this.stateMigrationService = new StateMigrationService(
       this.storageService,
       this.secureStorageService,
@@ -192,6 +206,7 @@ export default class MainBackground {
     this.stateService = new StateService(
       this.storageService,
       this.secureStorageService,
+      this.memoryStorageService,
       this.logService,
       this.stateMigrationService,
       new StateFactory(GlobalState, Account)
@@ -219,9 +234,10 @@ export default class MainBackground {
       }
     );
     this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
-    this.cryptoFunctionService = new WebCryptoFunctionService(window);
+    this.encryptService = new EncryptService(this.cryptoFunctionService, this.logService, true);
     this.cryptoService = new BrowserCryptoService(
       this.cryptoFunctionService,
+      this.encryptService,
       this.platformUtilsService,
       this.logService,
       this.stateService

@@ -4,6 +4,7 @@ import { app } from "electron";
 
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { StateService } from "@bitwarden/common/services/state.service";
 import { ElectronLogService } from "@bitwarden/electron/services/electronLog.service";
 import { ElectronMainMessagingService } from "@bitwarden/electron/services/electronMainMessaging.service";
@@ -25,6 +26,7 @@ export class Main {
   logService: ElectronLogService;
   i18nService: I18nService;
   storageService: ElectronStorageService;
+  memoryStorageService: MemoryStorageService;
   messagingService: ElectronMainMessagingService;
   stateService: StateService;
   desktopCredentialStorageListener: DesktopCredentialStorageListener;
@@ -74,6 +76,7 @@ export class Main {
     storageDefaults["global.vaultTimeout"] = -1;
     storageDefaults["global.vaultTimeoutAction"] = "lock";
     this.storageService = new ElectronStorageService(app.getPath("userData"), storageDefaults);
+    this.memoryStorageService = new MemoryStorageService();
 
     // TODO: this state service will have access to on disk storage, but not in memory storage.
     // If we could get this to work using the stateService singleton that the rest of the app uses we could save
@@ -81,6 +84,7 @@ export class Main {
     this.stateService = new StateService(
       this.storageService,
       null,
+      this.memoryStorageService,
       this.logService,
       null,
       new StateFactory(GlobalState, Account),

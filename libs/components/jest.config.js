@@ -7,7 +7,7 @@ module.exports = {
   displayName: "libs/components tests",
   preset: "jest-preset-angular",
   testMatch: ["**/+(*.)+(spec).+(ts)"],
-  setupFilesAfterEnv: ["<rootDir>/spec/test.ts"],
+  setupFilesAfterEnv: ["<rootDir>/spec/test.setup.ts"],
   collectCoverage: true,
   coverageReporters: ["html", "lcov"],
   coverageDirectory: "coverage",

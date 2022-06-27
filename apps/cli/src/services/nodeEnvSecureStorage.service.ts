@@ -1,12 +1,12 @@
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { StorageService } from "@bitwarden/common/abstractions/storage.service";
+import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
-export class NodeEnvSecureStorageService implements StorageService {
+export class NodeEnvSecureStorageService implements AbstractStorageService {
   constructor(
-    private storageService: StorageService,
+    private storageService: AbstractStorageService,
     private logService: LogService,
     private cryptoService: () => CryptoService
   ) {}

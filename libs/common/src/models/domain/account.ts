@@ -23,6 +23,7 @@ import { SymmetricCryptoKey } from "./symmetricCryptoKey";
 export class EncryptionPair<TEncrypted, TDecrypted> {
   encrypted?: TEncrypted;
   decrypted?: TDecrypted;
+  decryptedSerialized?: string;
 }
 
 export class DataEncryptionPair<TEncrypted, TDecrypted> {
@@ -76,6 +77,7 @@ export class AccountKeys {
   privateKey?: EncryptionPair<string, ArrayBuffer> = new EncryptionPair<string, ArrayBuffer>();
   legacyEtmKey?: SymmetricCryptoKey;
   publicKey?: ArrayBuffer;
+  publicKeySerialized?: string;
   apiKeyClientSecret?: string;
 }
 

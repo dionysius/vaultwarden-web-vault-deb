@@ -1,4 +1,4 @@
-import { StorageService } from "../abstractions/storage.service";
+import { AbstractStorageService } from "../abstractions/storage.service";
 import { HtmlStorageLocation } from "../enums/htmlStorageLocation";
 import { KdfType } from "../enums/kdfType";
 import { StateVersion } from "../enums/stateVersion";
@@ -132,8 +132,8 @@ export class StateMigrationService<
   TAccount extends Account = Account
 > {
   constructor(
-    protected storageService: StorageService,
-    protected secureStorageService: StorageService,
+    protected storageService: AbstractStorageService,
+    protected secureStorageService: AbstractStorageService,
     protected stateFactory: StateFactory<TGlobalState, TAccount>
   ) {}
 
