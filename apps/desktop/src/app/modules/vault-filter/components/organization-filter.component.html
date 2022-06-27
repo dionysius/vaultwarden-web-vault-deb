@@ -45,7 +45,7 @@
         </li>
       </ul>
     </ng-container>
-    <ng-container *ngSwitchCase="'organizationMember'">
+    <ng-container *ngSwitchDefault>
       <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
         <button
           appA11yTitle="{{ 'toggleCollapse' | i18n }}"
