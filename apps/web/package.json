@@ -7,6 +7,7 @@
     "build:oss:watch": "webpack serve",
     "build:bit:watch": "webpack serve -c ../../bitwarden_license/bit-web/webpack.config.js",
     "build:bit:dev": "cross-env ENV=development npm run build:bit",
+    "build:bit:dev:analyze": "cross-env LOGGING=false webpack -c ../../bitwarden_license/bit-web/webpack.config.js --profile --json > stats.json && npx webpack-bundle-analyzer stats.json build/",
     "build:bit:dev:watch": "cross-env ENV=development npm run build:bit:watch",
     "build:bit:qa": "cross-env NODE_ENV=production ENV=qa npm run build:bit",
     "build:bit:cloud": "cross-env NODE_ENV=production ENV=cloud npm run build:bit",

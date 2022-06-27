@@ -15,9 +15,12 @@ const pjson = require("./package.json");
 
 const ENV = process.env.ENV == null ? "development" : process.env.ENV;
 const NODE_ENV = process.env.NODE_ENV == null ? "development" : process.env.NODE_ENV;
+const LOGGING = process.env.LOGGING != "false";
 
 const envConfig = config.load(ENV);
-config.log(envConfig);
+if (LOGGING) {
+  config.log(envConfig);
+}
 
 const moduleRules = [
   {
@@ -205,8 +208,8 @@ const devServer =
               {
                 key: "Content-Security-Policy",
                 value: `
-                  default-src 'self'; 
-                  script-src 
+                  default-src 'self';
+                  script-src
                     'self'
                     'sha256-ryoU+5+IUZTuUyTElqkrQGBJXr1brEv6r2CA62WUw8w='
                     https://js.stripe.com
@@ -255,7 +258,7 @@ const devServer =
                     https://*.blob.core.windows.net
                     https://app.simplelogin.io/api/alias/random/new
                     https://app.anonaddy.com/api/v1/aliases;
-                  object-src 
+                  object-src
                     'self'
                     blob:;`,
               },
