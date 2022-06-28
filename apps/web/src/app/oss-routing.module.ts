@@ -24,8 +24,11 @@ import { VerifyRecoverDeleteComponent } from "./accounts/verify-recover-delete.c
 import { HomeGuard } from "./guards/home.guard";
 import { FrontendLayoutComponent } from "./layouts/frontend-layout.component";
 import { UserLayoutComponent } from "./layouts/user-layout.component";
+import { IndividualVaultModule } from "./modules/vault/modules/individual-vault/individual-vault.module";
+import { OrganizationsRoutingModule } from "./organizations/organization-routing.module";
 import { AcceptFamilySponsorshipComponent } from "./organizations/sponsorships/accept-family-sponsorship.component";
 import { FamiliesForEnterpriseSetupComponent } from "./organizations/sponsorships/families-for-enterprise-setup.component";
+import { ReportsRoutingModule } from "./reports/reports-routing.module";
 import { AccessComponent } from "./send/access.component";
 import { SendComponent } from "./send/send.component";
 import { AccountComponent } from "./settings/account.component";
@@ -34,11 +37,11 @@ import { DomainRulesComponent } from "./settings/domain-rules.component";
 import { EmergencyAccessViewComponent } from "./settings/emergency-access-view.component";
 import { EmergencyAccessComponent } from "./settings/emergency-access.component";
 import { PreferencesComponent } from "./settings/preferences.component";
+import { SecurityRoutingModule } from "./settings/security-routing.module";
 import { SettingsComponent } from "./settings/settings.component";
 import { SponsoredFamiliesComponent } from "./settings/sponsored-families.component";
-import { ExportComponent } from "./tools/export.component";
+import { SubscriptionRoutingModule } from "./settings/subscription-routing.module";
 import { GeneratorComponent } from "./tools/generator.component";
-import { ImportComponent } from "./tools/import.component";
 import { ToolsComponent } from "./tools/tools.component";
 
 const routes: Routes = [
@@ -150,9 +153,7 @@ const routes: Routes = [
     children: [
       {
         path: "vault",
-        loadChildren: async () =>
-          (await import("./modules/vault/modules/individual-vault/individual-vault.module"))
-            .IndividualVaultModule,
+        loadChildren: () => IndividualVaultModule,
       },
       { path: "sends", component: SendComponent, data: { title: "Send" } },
       {
@@ -173,8 +174,7 @@ const routes: Routes = [
           },
           {
             path: "security",
-            loadChildren: async () =>
-              (await import("./settings/security-routing.module")).SecurityRoutingModule,
+            loadChildren: () => SecurityRoutingModule,
           },
           {
             path: "domain-rules",
@@ -183,8 +183,7 @@ const routes: Routes = [
           },
           {
             path: "subscription",
-            loadChildren: async () =>
-              (await import("./settings/subscription-routing.module")).SubscriptionRoutingModule,
+            loadChildren: () => SubscriptionRoutingModule,
           },
           {
             path: "emergency-access",
@@ -214,8 +213,13 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         children: [
           { path: "", pathMatch: "full", redirectTo: "generator" },
-          { path: "import", component: ImportComponent, data: { titleId: "importData" } },
-          { path: "export", component: ExportComponent, data: { titleId: "exportVault" } },
+          {
+            path: "",
+            loadChildren: () =>
+              import("./tools/import-export/import-export.module").then(
+                (m) => m.ImportExportModule
+              ),
+          },
           {
             path: "generator",
             component: GeneratorComponent,
@@ -225,18 +229,14 @@ const routes: Routes = [
       },
       {
         path: "reports",
-        loadChildren: async () =>
-          (await import("./reports/reports-routing.module")).ReportsRoutingModule,
+        loadChildren: () => ReportsRoutingModule,
       },
       { path: "setup/families-for-enterprise", component: FamiliesForEnterpriseSetupComponent },
     ],
   },
   {
     path: "organizations",
-    loadChildren: () =>
-      import("./organizations/organization-routing.module").then(
-        (m) => m.OrganizationsRoutingModule
-      ),
+    loadChildren: () => OrganizationsRoutingModule,
   },
 ];
 
