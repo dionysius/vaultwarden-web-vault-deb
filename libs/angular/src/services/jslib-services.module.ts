@@ -99,6 +99,7 @@ export const LOCKED_CALLBACK = new InjectionToken<() => void>("LOCKED_CALLBACK")
 export const CLIENT_TYPE = new InjectionToken<boolean>("CLIENT_TYPE");
 export const LOCALES_DIRECTORY = new InjectionToken<string>("LOCALES_DIRECTORY");
 export const SYSTEM_LANGUAGE = new InjectionToken<string>("SYSTEM_LANGUAGE");
+export const LOG_MAC_FAILURES = new InjectionToken<string>("LOG_MAC_FAILURES");
 
 @NgModule({
   declarations: [],
@@ -141,6 +142,10 @@ export const SYSTEM_LANGUAGE = new InjectionToken<string>("SYSTEM_LANGUAGE");
     {
       provide: LOCKED_CALLBACK,
       useValue: null,
+    },
+    {
+      provide: LOG_MAC_FAILURES,
+      useValue: true,
     },
     {
       provide: AppIdServiceAbstraction,
@@ -370,7 +375,7 @@ export const SYSTEM_LANGUAGE = new InjectionToken<string>("SYSTEM_LANGUAGE");
     {
       provide: AbstractEncryptService,
       useClass: EncryptService,
-      deps: [CryptoFunctionServiceAbstraction, LogService, true], // Log mac failures = true
+      deps: [CryptoFunctionServiceAbstraction, LogService, LOG_MAC_FAILURES],
     },
     {
       provide: EventServiceAbstraction,
