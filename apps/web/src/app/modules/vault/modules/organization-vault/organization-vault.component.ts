@@ -54,7 +54,6 @@ export class OrganizationVaultComponent implements OnInit, OnDestroy {
   organization: Organization;
   collectionId: string = null;
   type: CipherType = null;
-  deleted = false;
   trashCleanupWarning: string = null;
   activeFilter: VaultFilter = new VaultFilter();
 
@@ -152,6 +151,10 @@ export class OrganizationVaultComponent implements OnInit, OnDestroy {
     });
   }
 
+  get deleted(): boolean {
+    return this.activeFilter.status === "trash";
+  }
+
   ngOnDestroy() {
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
   }
@@ -171,7 +174,7 @@ export class OrganizationVaultComponent implements OnInit, OnDestroy {
       if (this.activeFilter.status === "favorites" && cipherPassesFilter) {
         cipherPassesFilter = cipher.favorite;
       }
-      if (this.activeFilter.status === "trash" && cipherPassesFilter) {
+      if (this.deleted && cipherPassesFilter) {
         cipherPassesFilter = cipher.isDeleted;
       }
       if (this.activeFilter.cipherType != null && cipherPassesFilter) {
@@ -331,17 +334,11 @@ export class OrganizationVaultComponent implements OnInit, OnDestroy {
     });
   }
 
-  private clearFilters() {
-    this.collectionId = null;
-    this.type = null;
-    this.deleted = false;
-  }
-
   private go(queryParams: any = null) {
     if (queryParams == null) {
       queryParams = {
-        type: this.type,
-        collectionId: this.collectionId,
+        type: this.activeFilter.cipherType,
+        collectionId: this.activeFilter.selectedCollectionId,
         deleted: this.deleted ? true : null,
       };
     }
