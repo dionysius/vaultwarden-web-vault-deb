@@ -388,6 +388,28 @@ input[type="password"]::-ms-reveal {
   }
 }
 
+h1,
+h2,
+h3,
+label,
+a,
+button,
+p,
+img,
+.box-header,
+.box-footer,
+.callout,
+.row-label,
+.modal-title,
+.overlay-container,
+.swal2-container {
+  user-select: none;
+}
+
+app-vault-view .box-footer {
+  user-select: auto;
+}
+
 // Workaround for slow performance on external monitors on Chrome + MacOS
 // See: https://bugs.chromium.org/p/chromium/issues/detail?id=971701#c64
 @keyframes redraw {
