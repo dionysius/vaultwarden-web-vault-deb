@@ -100,20 +100,9 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button
-          bitButton
-          type="submit"
-          buttonType="primary"
-          [disabled]="loading || form.loading || readOnly"
-        >
-          <i
-            class="bwi bwi-spinner bwi-spin"
-            title="{{ 'loading' | i18n }}"
-            aria-hidden="true"
-            *ngIf="loading || form.loading"
-          ></i>
-          <span *ngIf="!loading && !form.loading">{{ "save" | i18n }}</span>
-        </button>
+        <bit-submit-button [loading]="loading || form.loading" [disabled]="readOnly">
+          {{ "save" | i18n }}
+        </bit-submit-button>
         <button bitButton buttonType="secondary" type="button" data-dismiss="modal">
           {{ "cancel" | i18n }}
         </button>

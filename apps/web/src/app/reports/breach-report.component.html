@@ -17,10 +17,9 @@
       <small class="form-text text-muted">{{ "breachCheckUsernameEmail" | i18n }}</small>
     </div>
   </div>
-  <button bitButton buttonType="primary" class="btn-submit" type="submit" [disabled]="form.loading">
-    <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-    <span>{{ "checkBreaches" | i18n }}</span>
-  </button>
+  <bit-submit-button [loading]="form.loading">
+    {{ "checkBreaches" | i18n }}
+  </bit-submit-button>
 </form>
 <div class="mt-4" *ngIf="!form.loading && checkedUsername">
   <p *ngIf="error">{{ "reportError" | i18n }}...</p>

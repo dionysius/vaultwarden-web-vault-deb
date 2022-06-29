@@ -66,10 +66,9 @@
       <app-avatar data="{{ org.name }}" dynamic="true" size="75" fontSize="35"></app-avatar>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary btn-submit" [disabled]="form.loading">
-    <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-    <span>{{ "save" | i18n }}</span>
-  </button>
+  <bit-submit-button [loading]="form.loading">
+    {{ "save" | i18n }}
+  </bit-submit-button>
 </form>
 <ng-container *ngIf="canUseApi">
   <div class="secondary-header border-0 mb-0">

@@ -68,16 +68,9 @@
         "licenseFileDesc" | i18n: "bitwarden_premium_license.json"
       }}</small>
     </div>
-    <button
-      bitButton
-      buttonType="primary"
-      type="submit"
-      class="btn-submit"
-      [disabled]="form.loading"
-    >
-      <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-      <span>{{ "submit" | i18n }}</span>
-    </button>
+    <bit-submit-button [loading]="form.loading">
+      {{ "submit" | i18n }}
+    </bit-submit-button>
   </form>
 </ng-container>
 <form #form (ngSubmit)="submit()" [appApiAction]="formPromise" ngNativeValidate *ngIf="!selfHosted">
@@ -125,8 +118,7 @@
     </p>
   </div>
   <small class="text-muted font-italic">{{ "paymentChargedAnnually" | i18n }}</small>
-  <button bitButton buttonType="primary" type="submit" class="btn-submit" [disabled]="form.loading">
-    <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-    <span>{{ "submit" | i18n }}</span>
-  </button>
+  <bit-submit-button [loading]="form.loading">
+    {{ "submit" | i18n }}
+  </bit-submit-button>
 </form>

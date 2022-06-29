@@ -77,22 +77,9 @@
         </div>
         <small class="form-text text-muted">{{ "deviceVerificationDesc" | i18n }}</small>
       </div>
-      <button
-        type="submit"
-        bitButton
-        buttonType="primary"
-        class="btn-submit"
-        [disabled]="form.loading"
-        *ngIf="isDeviceVerificationSectionEnabled"
-      >
-        <i
-          class="bwi bwi-spinner bwi-spin"
-          title="{{ 'loading' | i18n }}"
-          aria-hidden="true"
-          *ngIf="form.loading"
-        ></i>
-        <span>{{ "save" | i18n }}</span>
-      </button>
+      <bit-submit-button [loading]="form.loading" *ngIf="isDeviceVerificationSectionEnabled">
+        {{ "save" | i18n }}
+      </bit-submit-button>
     </div>
   </div>
 </form>
