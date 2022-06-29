@@ -1,7 +1,3 @@
-import { Utils } from "@bitwarden/common/misc/utils";
-
-import { SafariApp } from "./safariApp";
-
 export class BrowserApi {
   static isWebExtensionsApi: boolean = typeof browser !== "undefined";
   static isSafariApi: boolean =
@@ -147,39 +143,6 @@ export class BrowserApi {
       browser.tabs.update({ active: true }).finally(win.close);
     } else {
       win.close();
-    }
-  }
-
-  static downloadFile(win: Window, blobData: any, blobOptions: any, fileName: string) {
-    if (BrowserApi.isSafariApi) {
-      const type = blobOptions != null ? blobOptions.type : null;
-      let data: string = null;
-      if (type === "text/plain" && typeof blobData === "string") {
-        data = blobData;
-      } else {
-        data = Utils.fromBufferToB64(blobData);
-      }
-      SafariApp.sendMessageToApp(
-        "downloadFile",
-        JSON.stringify({
-          blobData: data,
-          blobOptions: blobOptions,
-          fileName: fileName,
-        }),
-        true
-      );
-    } else {
-      const blob = new Blob([blobData], blobOptions);
-      if (navigator.msSaveOrOpenBlob) {
-        navigator.msSaveBlob(blob, fileName);
-      } else {
-        const a = win.document.createElement("a");
-        a.href = URL.createObjectURL(blob);
-        a.download = fileName;
-        win.document.body.appendChild(a);
-        a.click();
-        win.document.body.removeChild(a);
-      }
     }
   }
 

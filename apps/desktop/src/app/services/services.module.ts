@@ -15,6 +15,7 @@ import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractE
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
 import {
   LogService,
@@ -48,6 +49,7 @@ import { LoginGuard } from "../guards/login.guard";
 import { SearchBarService } from "../layout/search/search-bar.service";
 
 import { DesktopThemingService } from "./desktop-theming.service";
+import { DesktopFileDownloadService } from "./desktopFileDownloadService";
 import { InitService } from "./init.service";
 
 const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
@@ -136,6 +138,10 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
         STATE_FACTORY,
         STATE_SERVICE_USE_CACHE,
       ],
+    },
+    {
+      provide: FileDownloadService,
+      useClass: DesktopFileDownloadService,
     },
     {
       provide: AbstractThemingService,

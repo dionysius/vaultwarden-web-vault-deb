@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { ExportService } from "@bitwarden/common/abstractions/export.service";
+import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
@@ -37,9 +38,17 @@ export class EventsComponent extends BaseEventsComponent implements OnInit {
     logService: LogService,
     private userNamePipe: UserNamePipe,
     private organizationService: OrganizationService,
-    private providerService: ProviderService
+    private providerService: ProviderService,
+    fileDownloadService: FileDownloadService
   ) {
-    super(eventService, i18nService, exportService, platformUtilsService, logService);
+    super(
+      eventService,
+      i18nService,
+      exportService,
+      platformUtilsService,
+      logService,
+      fileDownloadService
+    );
   }
 
   async ngOnInit() {

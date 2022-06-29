@@ -104,54 +104,6 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
     document.body.removeChild(a);
   }
 
-  saveFile(win: Window, blobData: any, blobOptions: any, fileName: string): void {
-    let blob: Blob = null;
-    let type: string = null;
-    const fileNameLower = fileName.toLowerCase();
-    let doDownload = true;
-    if (fileNameLower.endsWith(".pdf")) {
-      type = "application/pdf";
-      doDownload = false;
-    } else if (fileNameLower.endsWith(".xlsx")) {
-      type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-    } else if (fileNameLower.endsWith(".docx")) {
-      type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-    } else if (fileNameLower.endsWith(".pptx")) {
-      type = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
-    } else if (fileNameLower.endsWith(".csv")) {
-      type = "text/csv";
-    } else if (fileNameLower.endsWith(".png")) {
-      type = "image/png";
-    } else if (fileNameLower.endsWith(".jpg") || fileNameLower.endsWith(".jpeg")) {
-      type = "image/jpeg";
-    } else if (fileNameLower.endsWith(".gif")) {
-      type = "image/gif";
-    }
-    if (type != null) {
-      blobOptions = blobOptions || {};
-      if (blobOptions.type == null) {
-        blobOptions.type = type;
-      }
-    }
-    if (blobOptions != null) {
-      blob = new Blob([blobData], blobOptions);
-    } else {
-      blob = new Blob([blobData]);
-    }
-
-    const a = win.document.createElement("a");
-    if (doDownload) {
-      a.download = fileName;
-    } else if (!this.isSafari()) {
-      a.target = "_blank";
-    }
-    a.href = URL.createObjectURL(blob);
-    a.style.position = "fixed";
-    win.document.body.appendChild(a);
-    a.click();
-    win.document.body.removeChild(a);
-  }
-
   getApplicationVersion(): Promise<string> {
     return Promise.resolve(process.env.APPLICATION_VERSION || "-");
   }

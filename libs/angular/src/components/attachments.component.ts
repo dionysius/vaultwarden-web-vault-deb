@@ -3,6 +3,7 @@ import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -36,7 +37,8 @@ export class AttachmentsComponent implements OnInit {
     protected apiService: ApiService,
     protected win: Window,
     protected logService: LogService,
-    protected stateService: StateService
+    protected stateService: StateService,
+    protected fileDownloadService: FileDownloadService
   ) {}
 
   async ngOnInit() {
@@ -171,7 +173,10 @@ export class AttachmentsComponent implements OnInit {
           ? attachment.key
           : await this.cryptoService.getOrgKey(this.cipher.organizationId);
       const decBuf = await this.cryptoService.decryptFromBytes(buf, key);
-      this.platformUtilsService.saveFile(this.win, decBuf, null, attachment.fileName);
+      this.fileDownloadService.download({
+        fileName: attachment.fileName,
+        blobData: decBuf,
+      });
     } catch (e) {
       this.platformUtilsService.showToast("error", null, this.i18nService.t("errorOccurred"));
     }

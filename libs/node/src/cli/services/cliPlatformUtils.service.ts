@@ -84,10 +84,6 @@ export class CliPlatformUtilsService implements PlatformUtilsService {
     }
   }
 
-  saveFile(win: Window, blobData: any, blobOptions: any, fileName: string): void {
-    throw new Error("Not implemented.");
-  }
-
   getApplicationVersion(): Promise<string> {
     return Promise.resolve(this.packageJson.version);
   }

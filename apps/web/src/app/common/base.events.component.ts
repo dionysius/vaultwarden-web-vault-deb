@@ -1,6 +1,7 @@
 import { Directive } from "@angular/core";
 
 import { ExportService } from "@bitwarden/common/abstractions/export.service";
+import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -30,7 +31,8 @@ export abstract class BaseEventsComponent {
     protected i18nService: I18nService,
     protected exportService: ExportService,
     protected platformUtilsService: PlatformUtilsService,
-    protected logService: LogService
+    protected logService: LogService,
+    protected fileDownloadService: FileDownloadService
   ) {
     const defaultDates = this.eventService.getDefaultDateFilters();
     this.start = defaultDates[0];
@@ -173,6 +175,10 @@ export abstract class BaseEventsComponent {
 
     const data = await this.exportService.getEventExport(events);
     const fileName = this.exportService.getFileName(this.exportFileName, "csv");
-    this.platformUtilsService.saveFile(window, data, { type: "text/plain" }, fileName);
+    this.fileDownloadService.download({
+      fileName,
+      blobData: data,
+      blobOptions: { type: "text/plain" },
+    });
   }
 }

@@ -11,6 +11,7 @@ import {
   MEMORY_STORAGE,
 } from "@bitwarden/angular/services/jslib-services.module";
 import { ModalService as ModalServiceAbstraction } from "@bitwarden/angular/services/modal.service";
+import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/abstractions/messaging.service";
@@ -41,6 +42,7 @@ import { InitService } from "./init.service";
 import { ModalService } from "./modal.service";
 import { PolicyListService } from "./policy-list.service";
 import { RouterService } from "./router.service";
+import { WebFileDownloadService } from "./webFileDownload.service";
 
 @NgModule({
   imports: [ToastrModule, JslibServicesModule],
@@ -113,6 +115,10 @@ import { RouterService } from "./router.service";
     {
       provide: PasswordRepromptServiceAbstraction,
       useClass: PasswordRepromptService,
+    },
+    {
+      provide: FileDownloadService,
+      useClass: WebFileDownloadService,
     },
     HomeGuard,
   ],

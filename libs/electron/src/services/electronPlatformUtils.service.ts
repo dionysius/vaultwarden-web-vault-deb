@@ -83,16 +83,6 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     shell.openExternal(uri);
   }
 
-  saveFile(win: Window, blobData: any, blobOptions: any, fileName: string): void {
-    const blob = new Blob([blobData], blobOptions);
-    const a = win.document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = fileName;
-    win.document.body.appendChild(a);
-    a.click();
-    win.document.body.removeChild(a);
-  }
-
   getApplicationVersion(): Promise<string> {
     return ipcRenderer.invoke("appVersion");
   }

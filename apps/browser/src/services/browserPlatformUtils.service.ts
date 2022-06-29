@@ -122,10 +122,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     BrowserApi.createNewTab(uri, options && options.extensionPage === true);
   }
 
-  saveFile(win: Window, blobData: any, blobOptions: any, fileName: string): void {
-    BrowserApi.downloadFile(win, blobData, blobOptions, fileName);
-  }
-
   getApplicationVersion(): Promise<string> {
     return Promise.resolve(BrowserApi.getApplicationVersion());
   }
