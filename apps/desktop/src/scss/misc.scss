@@ -468,3 +468,25 @@ app-root > #loading,
 .rounded-circle {
   border-radius: 50% !important;
 }
+
+h1,
+h2,
+h3,
+label,
+a,
+button,
+p,
+img,
+.box-header,
+.box-footer,
+.row-label,
+.modal-title,
+.overlay-container,
+.help-block,
+.form-text.text-muted {
+  user-select: none;
+}
+
+app-vault-view .box-footer {
+  user-select: auto;
+}
