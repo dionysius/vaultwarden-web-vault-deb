@@ -25,6 +25,9 @@ jobs:
     outputs:
       release-version: ${{ steps.version.outputs.version }}
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
+
       - name: Branch check
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         run: |
@@ -34,9 +37,6 @@ jobs:
             echo "==================================="
             exit 1
           fi
-
-      - name: Checkout repo
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
       - name: Check Release Version
         id: version
