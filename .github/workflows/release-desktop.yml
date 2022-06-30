@@ -200,10 +200,22 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
+      - name: Login to Azure
+        uses: Azure/login@24848bc889cfc0a8313c2b3e378ac0d625b9bc16
+        with:
+          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+
+      - name: Retrieve secrets
+        id: retrieve-secrets
+        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "cli-choco-api-key"
+
       - name: Setup Chocolatey
         run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
         env:
-          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+          CHOCO_API_KEY: ${{ steps.retrieve-secrets.outputs.cli-choco-api-key }}
 
       - name: Make dist dir
         shell: pwsh
