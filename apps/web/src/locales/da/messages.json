@@ -1155,17 +1155,17 @@
     "message": "Vis webstedsikoner"
   },
   "faviconDesc": {
-    "message": "Vis genkendeligt billede ved hvert login."
+    "message": "Vis et genkendeligt billede ud for hvert login."
   },
   "enableGravatars": {
-    "message": "Aktivér Gravatars",
+    "message": "Vis Gravatarer",
     "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
     "message": "Brug avatar billeder hentet fra gravatar.com."
   },
   "enableFullWidth": {
-    "message": "Aktivér layout med fuld bredde",
+    "message": "Vis layout med fuld bredde",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
@@ -3175,7 +3175,7 @@
     "message": "Boks timeout"
   },
   "vaultTimeoutDesc": {
-    "message": "Vælg timeout for din boks, hvorefter den vil udføre den valgte handling."
+    "message": "Vælg hvornår din boks skal udføre timeout-handlingen."
   },
   "oneMinute": {
     "message": "1 minut"
@@ -3196,7 +3196,7 @@
     "message": "4 timer"
   },
   "onRefresh": {
-    "message": "Ved genstart af browseren"
+    "message": "Ved browser opdatering"
   },
   "dateUpdated": {
     "message": "Opdateret",
@@ -3406,10 +3406,10 @@
     "message": "Boks timeout-handling"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "En låst boks kræver at du gentaster din hovedadgangskode for at tilgå den igen."
+    "message": "Hovedadgangskode eller anden oplåsningsmetode kræves for at få adgang til din boks igen."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "En boks der er logget ud kræver, at du godkender igen for at få adgang til den."
+    "message": "Gengodkendelse kræves for at få adgang til din boks igen."
   },
   "lock": {
     "message": "Lås",

@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "$APP_NAME$ Reta Volbo",
+    "message": "Kasa retejo de $APP_NAME$",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -10,7 +10,7 @@
     }
   },
   "whatTypeOfItem": {
-    "message": "Kia speco de ero estas ĉi tio?"
+    "message": "Kia tipo de elemento estas ĉi tio?"
   },
   "name": {
     "message": "Nomo"
@@ -47,10 +47,10 @@
     "message": "Notoj"
   },
   "customFields": {
-    "message": "Propraj Kampoj"
+    "message": "Propraj kampoj"
   },
   "cardholderName": {
-    "message": "Nomo de Kartposedanto"
+    "message": "Nomo de la posedanto de la karto"
   },
   "number": {
     "message": "Numero"
@@ -65,7 +65,7 @@
     "message": "Sekureca Kodo (CVV)"
   },
   "identityName": {
-    "message": "Identeca Nomo"
+    "message": "Nomo de la identilo"
   },
   "company": {
     "message": "Kompanio"
@@ -74,10 +74,10 @@
     "message": "Socia Sekureca Numero"
   },
   "passportNumber": {
-    "message": "Pasporta Numero"
+    "message": "Numero de pasporto"
   },
   "licenseNumber": {
-    "message": "Permesila Numero"
+    "message": "Numero de permesilo"
   },
   "email": {
     "message": "Retpoŝto"
@@ -86,40 +86,40 @@
     "message": "Telefono"
   },
   "january": {
-    "message": "januaro"
+    "message": "Januaro"
   },
   "february": {
     "message": "februaro"
   },
   "march": {
-    "message": "marto"
+    "message": "Marto"
   },
   "april": {
-    "message": "aprilo"
+    "message": "Aprilo"
   },
   "may": {
-    "message": "majo"
+    "message": "Majo"
   },
   "june": {
-    "message": "junio"
+    "message": "Junio"
   },
   "july": {
-    "message": "julio"
+    "message": "Julio"
   },
   "august": {
-    "message": "aŭgusto"
+    "message": "Aŭgusto"
   },
   "september": {
-    "message": "septembro"
+    "message": "Septembro"
   },
   "october": {
-    "message": "oktobro"
+    "message": "Oktobro"
   },
   "november": {
-    "message": "novembro"
+    "message": "Novembro"
   },
   "december": {
-    "message": "decembro"
+    "message": "Decembro"
   },
   "title": {
     "message": "Titolo"
@@ -137,19 +137,19 @@
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Finiĝa Monato"
+    "message": "Monato de validoperiodo"
   },
   "expirationYear": {
-    "message": "Finiĝa Jaro"
+    "message": "Jaro de validoperiodo"
   },
   "authenticatorKeyTotp": {
-    "message": "Aŭtentiga Ŝlosilo (TOTP)"
+    "message": "Ŝlosilo de aŭtentigo (TOTP)"
   },
   "folder": {
     "message": "Dosierujo"
   },
   "newCustomField": {
-    "message": "Nova Propra Kampo"
+    "message": "Nova propra kampo"
   },
   "value": {
     "message": "Valoro"
@@ -167,7 +167,7 @@
     "message": "Bulea"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Ligita",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nomo de domajno",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -202,18 +202,18 @@
     "message": "Ĝusta"
   },
   "startsWith": {
-    "message": "Komencas per"
+    "message": "Komencas kun"
   },
   "regEx": {
     "message": "Regula esprimo",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Match",
+    "message": "Detektilo de interrespondo",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Defaŭlta kongrua detekto",
+    "message": "Implicita detektilo de interrespondo",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
@@ -227,7 +227,7 @@
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
-    "message": "Generi Pasvorton"
+    "message": "Generi pasvorton"
   },
   "checkPassword": {
     "message": "Kontrolu ĉu pasvorto estis elmontrita."
@@ -242,7 +242,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Ĉi tiu pasvorto ne troviĝis en iuj konataj rompo de datumoj. Ĝi estu sekure uzebla."
+    "message": "Ĉi tiu pasvorto ne estas trovita en iuj konataj branĉoj de databazo. Devas esti sekure uzeble."
   },
   "save": {
     "message": "Konservi"
@@ -257,13 +257,13 @@
     "message": "Fermi"
   },
   "delete": {
-    "message": "Forigi"
+    "message": "Forviŝi"
   },
   "favorite": {
-    "message": "Plej ŝatata"
+    "message": "Preferaĵo"
   },
   "unfavorite": {
-    "message": "Malfavoras"
+    "message": "Forigi de preferaĵo"
   },
   "edit": {
     "message": "Redakti"
@@ -278,7 +278,7 @@
     "message": "Serĉi Favoratojn"
   },
   "searchType": {
-    "message": "Serĉspeco",
+    "message": "Serĉo en tipo",
     "description": "Search item type"
   },
   "searchVault": {
@@ -294,28 +294,28 @@
     "message": "Tipoj"
   },
   "typeLogin": {
-    "message": "Ensaluti"
+    "message": "Saluto"
   },
   "typeCard": {
     "message": "Karto"
   },
   "typeIdentity": {
-    "message": "Identeco"
+    "message": "Identilo"
   },
   "typeSecureNote": {
-    "message": "Sekura Noto"
+    "message": "Sekura noto"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "Salutoj"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "Kartoj"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "Identiloj"
   },
   "typeSecureNotePlural": {
-    "message": "Secure Notes"
+    "message": "Sekuraj notoj"
   },
   "folders": {
     "message": "Dosierujoj"
@@ -546,16 +546,16 @@
     "message": "Forigita dosierujo"
   },
   "loggedOut": {
-    "message": "Elsalutita"
+    "message": "Adiaŭita"
   },
   "loginExpired": {
-    "message": "Via ensaluta kunsido eksvalidiĝis."
+    "message": "Via seanco eksvalidiĝis."
   },
   "logOutConfirmation": {
-    "message": "Ĉu vi certe volas elsaluti?"
+    "message": "Ĉu vi certas ke vi volas adiaŭi?"
   },
   "logOut": {
-    "message": "Eliri"
+    "message": "Adiaŭi"
   },
   "ok": {
     "message": "Bone"
@@ -573,7 +573,7 @@
     "message": "Krei konton"
   },
   "logIn": {
-    "message": "Ensaluti"
+    "message": "Saluti"
   },
   "submit": {
     "message": "Sendu"
@@ -630,7 +630,7 @@
     "message": "Majstra pasvorto devas havi almenaŭ 8 signojn."
   },
   "masterPassDoesntMatch": {
-    "message": "Majstra pasvorta konfirmo ne kongruas."
+    "message": "La konfirmo de la ĉefa pasvorto ne interrespondas."
   },
   "newAccountCreated": {
     "message": "Via nova konto kreiĝis! Vi nun povas ensaluti."
@@ -736,7 +736,7 @@
     "message": "Enmetu vian sekurecan ŝlosilon en la USB-havenon de via komputilo. Se ĝi havas butonon, tuŝu ĝin."
   },
   "loginUnavailable": {
-    "message": "Ensaluto Neatingebla"
+    "message": "Saluto ne disponebla"
   },
   "noTwoStepProviders": {
     "message": "Ĉi tiu konto havas du-paŝan ensaluton ebligita, tamen neniu el la agorditaj du-paŝaj provizantoj estas subtenata de ĉi tiu retumilo."
@@ -745,7 +745,7 @@
     "message": "Bonvolu uzi subtenatan tTT-legilon (kiel Chrome) kaj / aŭ aldoni pliajn provizantojn pli bone subtenatajn tra tTT-legiloj (kiel aŭtentikiga programo)."
   },
   "twoStepOptions": {
-    "message": "Duŝtupaj Ensalutaj Elektoj"
+    "message": "Elektebloj de la du-faktora aŭtentigo"
   },
   "recoveryCodeDesc": {
     "message": "Ĉu vi perdis aliron al ĉiuj viaj du-faktoraj provizantoj? Uzu vian reakiran kodon por malŝalti ĉiujn du-faktorajn provizantojn de via konto."
@@ -965,16 +965,16 @@
     }
   },
   "loggedOutWarning": {
-    "message": "Daŭrigi vin elsalutos de via nuna sesio, postulante vin denove ensaluti. Aktivaj sesioj sur aliaj aparatoj povas daŭre resti aktivaj ĝis unu horo."
+    "message": "Prilabori vian adiaŭadon de la nuna seanco, necesigos vin saluti denove. La seancoj aktivaj sur aliaj aparatoj povas resti aktivaj ankoraŭ unu horon."
   },
   "emailChanged": {
     "message": "Retpoŝto Ŝanĝis"
   },
   "logBackIn": {
-    "message": "Bonvolu ensaluti denove."
+    "message": "Bonvolu saluti refoje."
   },
   "logBackInOthersToo": {
-    "message": "Bonvolu ensaluti. Se vi uzas aliajn Bitwarden-programojn, elsalutu kaj reen al tiuj ankaŭ."
+    "message": "Bonvolu saluti refoje. Se vi uzas aliajn programojn de Bitwarden, adiaŭu kaj ankaŭ salutu ilin."
   },
   "changeMasterPassword": {
     "message": "Ŝanĝi Majstran Pasvorton"
@@ -1037,7 +1037,7 @@
     "message": "Ĉu vi zorgas pri tio, ke via konto estas ensalutinta sur alia aparato? Sekvu sube por senrajtigi ĉiujn komputilojn aŭ aparatojn, kiujn vi antaŭe uzis. Ĉi tiu sekureca paŝo rekomendas se vi antaŭe uzis publikan komputilon aŭ hazarde konservis vian pasvorton sur aparato, kiu ne estas via. Ĉi tiu paŝo ankaŭ malplenigos ĉiujn antaŭe memoritajn du-paŝajn ensalutajn sesiojn. "
   },
   "deauthorizeSessionsWarning": {
-    "message": "La daŭrigo ankaŭ elsalutos vin de via nuna sesio, postulante vin denove ensaluti. Oni ankaŭ petos vin du-ŝtupa ensaluto, se ĝi estas ebligita. Aktivaj sesioj sur aliaj aparatoj povas daŭre resti aktivaj ĝis ĝis unu horo. "
+    "message": "Se vi daŭrigos vian adiaŭadon de la nuna seanco, necesos vin saluti denove. Oni ankaŭ demandos de vi du-faktoran aŭtentigon, se la opcio estas ebligita. La seancoj aktivaj sur aliaj aparatoj povas resti daŭre aktivaj ankoraŭ unu horon."
   },
   "sessionsDeauthorized": {
     "message": "Ĉiuj Sesioj Neaŭtorizitaj"
@@ -1112,7 +1112,7 @@
     "message": "Nenio estis importita."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Eraro de deĉifrado de la elportaĵo. Via ŝlosilo de ĉifrado ne interrespondas kun la ŝlosilo de ĉifrado uzita por elporti la datenon."
   },
   "selectFormat": {
     "message": "Elektu la formaton de la importa dosiero"
@@ -1149,7 +1149,7 @@
     "message": "Lingvo"
   },
   "languageDesc": {
-    "message": "Ŝanĝi la lingvon uzatan de la retejo-volbo."
+    "message": "Ŝanĝi la lingvon uzatan por la retejo de la kaso."
   },
   "enableFavicon": {
     "message": "Show website icons"
@@ -1214,7 +1214,7 @@
     "message": "Domajnoj ĝisdatigitaj"
   },
   "twoStepLogin": {
-    "message": "Du-ŝtupa ensaluto"
+    "message": "Du-faktora aŭtentigo"
   },
   "twoStepLoginDesc": {
     "message": "Sekurigu vian konton postulante plian paŝon kiam vi ensalutas."
@@ -1453,7 +1453,7 @@
     "message": "Web vault and browser extensions on a desktop/laptop with a WebAuthn enabled browser (Chrome, Opera, Vivaldi, or Firefox with FIDO U2F enabled)."
   },
   "twoFactorRecoveryYourCode": {
-    "message": "Via Bitwarden-du-ŝtupa ensaluta reakiro-kodo"
+    "message": "Via kodo de senpaneigo de la du-faktora aŭtentigo de Bitwarden"
   },
   "twoFactorRecoveryNoCode": {
     "message": "Vi ankoraŭ ne ebligis du-paŝajn ensalutajn provizantojn. Post kiam vi ebligis du-ŝtupan ensalut-provizanton, vi povas kontroli ĉi tie vian reakiran kodon."
@@ -2383,10 +2383,10 @@
     "message": "Ebligita / ĝisdatigita du-ŝtupa ensaluto."
   },
   "disabled2fa": {
-    "message": "Malebligita du-ŝtupa ensaluto."
+    "message": "Du-faktora aŭtentigo malebligita."
   },
   "recovered2fa": {
-    "message": "Rekuperita konto post du-ŝtupa ensaluto."
+    "message": "Konto senpaneigita el du-faktora aŭtentigo."
   },
   "failedLogin": {
     "message": "Ensaluta provo malsukcesis kun malĝusta pasvorto."
@@ -2857,10 +2857,10 @@
     "message": "Se vi ne povas aliri vian konton per viaj normalaj du-ŝtupaj ensalutaj metodoj, vi povas uzi vian du-ŝtupan ensalutan rekuperan kodon por malŝalti ĉiujn du-ŝtupajn provizantojn en via konto."
   },
   "recoverAccountTwoStep": {
-    "message": "Rekuperi Ensaluton Du-Paŝan"
+    "message": "Senpaneigi la du-faktoran aŭtentigon de la konto"
   },
   "twoStepRecoverDisabled": {
-    "message": "Du-ŝtupa ensaluto estas malŝaltita en via konto."
+    "message": "Du-faktora aŭtentigo estas neebligita en via konto."
   },
   "learnMore": {
     "message": "Lernu pli"
@@ -2983,7 +2983,7 @@
     "message": "Nomo de Konto-Posedanto"
   },
   "bankAccountType": {
-    "message": "Kontospeco"
+    "message": "Tipo de konto"
   },
   "bankAccountTypeCompany": {
     "message": "Kompanio (Komerco)"
@@ -3528,7 +3528,7 @@
     "message": "Identigilo"
   },
   "organizationIdentifier": {
-    "message": "Organiza Identigilo"
+    "message": "Identigilo de la organizaĵo"
   },
   "ssoLogInWithOrgIdentifier": {
     "message": "Ensalutu per la unika ensaluta portalo de via organizo. Bonvolu enigi la identigilon de via organizo por komenci."
@@ -3871,7 +3871,7 @@
     "message": "Krizaliro malakceptita"
   },
   "passwordResetFor": {
-    "message": "Pasvorta restarigo por $USER $. Vi nun povas ensaluti per la nova pasvorto.",
+    "message": "Pravaloriziĝis la pasvorto de $USER$. Vi nun povas saluti per la nova pasvorto.",
     "placeholders": {
       "user": {
         "content": "$1",

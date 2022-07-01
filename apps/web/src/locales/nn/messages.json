@@ -177,7 +177,7 @@
     "message": "Unassigned"
   },
   "noneFolder": {
-    "message": "Ingen mappe",
+    "message": "Inga mappe",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -202,10 +202,10 @@
     "message": "Exact"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Byrjar med"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regulært uttrykk",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
@@ -251,7 +251,7 @@
     "message": "Avbryt"
   },
   "canceled": {
-    "message": "Canceled"
+    "message": "Brote av"
   },
   "close": {
     "message": "Lat att"
@@ -464,10 +464,10 @@
     "message": "Sletta vedlegget"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Er du trygg på at du vil sletta dette vedlegget?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Vedlegget er vorte lagra."
   },
   "file": {
     "message": "Fil"
@@ -531,10 +531,10 @@
     "message": "Flytta oppføringar"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Er du trygg på at du vil skriva over passordet du har no?"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Reidd mappa"
   },
   "addedFolder": {
     "message": "Added folder"
@@ -543,7 +543,7 @@
     "message": "Are you sure you want to delete this folder?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Sletta mappe"
   },
   "loggedOut": {
     "message": "Logged out"
@@ -855,7 +855,7 @@
     "message": "Copy Verification Code"
   },
   "warning": {
-    "message": "Warning"
+    "message": "Åtvaring"
   },
   "confirmVaultExport": {
     "message": "Confirm Vault Export"
@@ -2239,7 +2239,7 @@
     "message": "Are you sure you want to activate this user, granting them access to the organization?"
   },
   "removeUserConfirmationKeyConnector": {
-    "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
+    "message": "Åtvaring! Dette brukarnamnet krev nykelkopling for å administrera krypteringa. Fjernar du denne brukaren frå verksemda di vil det deaktivera kontoen deira. Du kan ikkje angra på denne gjerda. Vil du halda fram?"
   },
   "externalId": {
     "message": "External Id"
@@ -3420,7 +3420,7 @@
     "description": "Noun: A special folder for holding deleted items that have not yet been permanently deleted"
   },
   "searchTrash": {
-    "message": "Søk i boss"
+    "message": "Leita i papirkorga"
   },
   "permanentlyDelete": {
     "message": "Permanently Delete"
@@ -3707,7 +3707,7 @@
     "message": "Expired"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Leita i Send-ar",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
