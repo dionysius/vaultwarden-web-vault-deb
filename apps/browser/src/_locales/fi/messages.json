@@ -918,7 +918,7 @@
     "message": "Todennuskoodit lähetetään sinulle sähköpostitse."
   },
   "selfHostedEnvironment": {
-    "message": "Oma palvelinympäristö"
+    "message": "Itse ylläpidetty palvelinympäristö"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Määritä omassa palvelinympäristössäsi suoritettavan Bitwarden-asennuksen pääverkkotunnus."
@@ -1386,7 +1386,7 @@
     "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa generaattorisi asetuksiin."
   },
   "vaultTimeoutAction": {
-    "message": "Holvin aikakatkaisun toiminto"
+    "message": "Holvin aikakatkaisutoiminto"
   },
   "lock": {
     "message": "Lukitse",
@@ -1418,10 +1418,10 @@
     "message": "Kohde palautettu"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Uloskirjautuminen estää pääsyn holviisi ja vaatii ajan umpeuduttua todennuksen internet-yhteyden välityksellä. Haluatko varmasti käyttää tätä asetusta?"
+    "message": "Uloskirjautuminen estää pääsyn holviisi ja vaatii ajan umpeuduttua todennuksen Internet-yhteyden välityksellä. Haluatko varmasti käyttää asetusta?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Aikakatkaisun toiminnon vahvistus"
+    "message": "Aikakatkaisutoiminnon vahvistus"
   },
   "autoFillAndSave": {
     "message": "Täytä automaattisesti ja tallenna"
@@ -1834,7 +1834,7 @@
     "message": "Minuuttia"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Organisaatiosi käytännöt vaikuttavat holvisi aikakatkaisuun. Suurin sallittu viive on $HOURS$ tunti(a) ja $MINUTES$ minuutti(a)",
+    "message": "Organisaatiosi käytännöt vaikuttavat holvisi aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) ja $MINUTES$ minuutti(a)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1846,8 +1846,8 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
-    "message": "Holvisi aikakatkaisuviive ylittää organisaatiosi asettamat rajoitukset."
+  "vaultTimeoutTooLarge": {
+    "message": "Holvisi aikakatkaisu ylittää organisaatiosi asettamat rajoitukset."
   },
   "vaultExportDisabled": {
     "message": "Holvin vienti on poistettu käytöstä"
@@ -1862,7 +1862,7 @@
     "message": "Yksilöllistä tunnistetta ei löytynyt."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ käyttää kertakirjautumista (SSO) oman avainpalvelimensa kanssa. Organisaation jäsenet eivät enää tarvitse pääsalasanaa kirjautumiseen.",
+    "message": "$ORGANIZATION$ käyttää kertakirjautumista (SSO) itse ylläpidetyllä avainpalvelimella. Organisaation jäsenet eivät enää tarvitse pääsalasanaa kirjautumiseen.",
     "placeholders": {
       "organization": {
         "content": "$1",

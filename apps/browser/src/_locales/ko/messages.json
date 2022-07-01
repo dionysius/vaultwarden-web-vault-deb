@@ -1846,8 +1846,8 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
-    "message": "볼트 제한 시간이 조직에서 설정한 제한을 초과합니다."
+  "vaultTimeoutTooLarge": {
+    "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "vaultExportDisabled": {
     "message": "보관함 내보내기 비활성화됨"

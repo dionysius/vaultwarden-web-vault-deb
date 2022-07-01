@@ -1846,8 +1846,8 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
-    "message": "Време истека вашег сефа је премашило дозвољена ограничења од стране ваше организације."
+  "vaultTimeoutTooLarge": {
+    "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "vaultExportDisabled": {
     "message": "Извоз сефа онемогућен"

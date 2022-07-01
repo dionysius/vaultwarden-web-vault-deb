@@ -1846,8 +1846,8 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
-    "message": "El tiempo de espera de tu caja fuerte excede las restricciones establecidas por tu organización."
+  "vaultTimeoutTooLarge": {
+    "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "vaultExportDisabled": {
     "message": "Exportación de caja fuerte desactivada"

@@ -1846,8 +1846,8 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
-    "message": "Glabātavas noildze pāŗsniedz apvienības uzstādītos ierobežojumus."
+  "vaultTimeoutTooLarge": {
+    "message": "Glabātavas noildze pārsniedz apvienības uzstādītos ierobežojumus."
   },
   "vaultExportDisabled": {
     "message": "Glabātavas izgūšana ir atspējota"

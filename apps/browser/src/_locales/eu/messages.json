@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Identifika zaitez edo sortu kontu berri bat zure kutxa gotorrera sartzeko."
+    "message": "Saioa hasi edo sortu kontu berri bat zure kutxa gotorrera sartzeko."
   },
   "createAccount": {
     "message": "Sortu kontua"
@@ -89,7 +89,7 @@
     "message": "Kopiatu segurtasun kodea (CVV)"
   },
   "autoFill": {
-    "message": "Osatze automatikoa"
+    "message": "Auto-betetzea"
   },
   "generatePasswordCopied": {
     "message": "Sortu pasahitza (kopiatuta)"
@@ -98,7 +98,7 @@
     "message": "Eremu pertsonalizatuaren izena kopiatu"
   },
   "noMatchingLogins": {
-    "message": "Bat datozen sarrerarik gabe"
+    "message": "Bat datozen saio-hasierarik gabe"
   },
   "unlockVaultMenu": {
     "message": "Desblokeatu kutxa gotorra"
@@ -107,10 +107,10 @@
     "message": "Hasi saioa zure kutxa gotorrean"
   },
   "autoFillInfo": {
-    "message": "Ez dago automatikoki betetzeko sarrerarik nabigatzailearen uneko fitxan."
+    "message": "Ez dago auto-betetzeko saio-hasierarik nabigatzailearen uneko fitxan."
   },
   "addLogin": {
-    "message": "Sarrera gehitu"
+    "message": "Saio-hasiera gehitu"
   },
   "addItem": {
     "message": "Gehitu elementua"
@@ -140,7 +140,7 @@
     "message": "Egiaztatze-kodea"
   },
   "confirmIdentity": {
-    "message": "Jarraitzeko, berretsi zure nortasuna."
+    "message": "Jarraitzeko, berretsi zure identitatea."
   },
   "account": {
     "message": "Kontua"
@@ -157,7 +157,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Bi pausoko saio hasiera"
+    "message": "Bi urratseko egiaztatzea"
   },
   "logOut": {
     "message": "Itxi saioa"
@@ -212,7 +212,7 @@
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Pasahitz sendoak eta bakarrak sortzen ditu automatikoki zure sarbideetarako."
+    "message": "Automatikoki pasahitz sendo eta bakarrak sortzen ditu zure saio-hasieratarako."
   },
   "bitWebVault": {
     "message": "Bitwarden kutxa gotorra"
@@ -339,10 +339,10 @@
     "message": "Zure web nabigatzaileak ez du onartzen arbelean erraz kopiatzea. Eskuz kopiatu."
   },
   "verifyIdentity": {
-    "message": "Zure nortasuna egiaztatu"
+    "message": "Zure identitatea egiaztatu"
   },
   "yourVaultIsLocked": {
-    "message": "Zure kutxa gotorra blokeatuta dago. Egiaztatu zure nortasuna jarraitzeko."
+    "message": "Zure kutxa gotorra blokeatuta dago. Egiaztatu zure identitatea jarraitzeko."
   },
   "unlock": {
     "message": "Desblokeatu"
@@ -455,7 +455,7 @@
     }
   },
   "autofillError": {
-    "message": "Ezin izan da orri honetan hautatutako elementua automatikoki bete. Kopiatu eta itsatsi informazioa dagokion tokian."
+    "message": "Ezin izan da orri honetan hautatutako elementua auto-bete. Kopiatu eta itsatsi informazioa dagokion tokian."
   },
   "loggedOut": {
     "message": "Saioa itxita"
@@ -485,34 +485,34 @@
     "message": "Aldatu pasahitz nagusia"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Zure pasahitz nagusia alda dezakezu bitwarden.com webgunean. Orain joan nahi duzu webgunera?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Bi urratseko egiaztatzea dela eta, zure kontua seguruagoa da, beste aplikazio/gailu batekin saioa hastea eskatzen baitizu; adibidez, segurtasun kode, egiaztatze aplikazio, SMS, telefono dei edo posta elektroniko bidez. Bi urratseko egiaztatzea bitwarden.com webgunean  aktibatu daiteke. Orain joan nahi duzu webgunera?"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Karpeta editatuta"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Ziur al zaude karpeta hau ezabatu nahi duzula?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Karpeta ezabatuta"
   },
   "gettingStartedTutorial": {
-    "message": "Getting Started Tutorial"
+    "message": "Lehen urratsetako tutoriala"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "Ikusi lehen urratsetako tutoriala nabigatzailearen gehigarriari ahalik eta etekin handiena nola atera ikasteko."
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Sinkronizatu da"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Sinkronizazioak huts egin du"
   },
   "passwordCopied": {
-    "message": "Password copied"
+    "message": "Pasahitza kopiatuta"
   },
   "uri": {
     "message": "URI"
@@ -528,162 +528,162 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "IRI berria"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Elementua gehituta"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Elementua editatuta"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "Ziur zaude elementu hau zakarrontzira bidali nahi duzula?"
   },
   "deletedItem": {
-    "message": "Sent item to trash"
+    "message": "Elementua zakarrontzira bidalia"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Berridatzi pasahitza"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Ziur al zaude pasahitza berridatzi nahi duzula?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Erabiltzaile-izena berridatzi"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Ziur al zaude erabiltzaile-izena berridatzi nahi duzula?"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Bilatu karpeta"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Bilatu bilduma"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Bilaketa mota"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Karpetarik ez",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Galdetu saio-hasiera gehitzeko"
   },
   "addLoginNotificationDesc": {
-    "message": "Ask to add an item if one isn't found in your vault."
+    "message": "Elementu bat gehitu nahi duzun galdetu, elementu hau zure kutxa gotorrean ez badago."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Erakutsi txartelak fitxa orrian"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Erakutsi elementuen txartelak fitxa orrian, erraz auto-betetzeko."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Erakutsi identitateak fitxa orrian"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Erakutsi identitateak fitxa orrian, erraz auto-betetzeko."
   },
   "clearClipboard": {
-    "message": "Clear clipboard",
+    "message": "Hustu arbela",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Ezabatu automatikoki arbelean kopiatutako balioak.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Should Bitwarden remember this password for you?"
+    "message": "Bitwardenek pasahitz hau gogoratu beharko lizuke?"
   },
   "notificationAddSave": {
-    "message": "Save"
+    "message": "Gorde"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Galdetu uneko saio-hasiera eguneratzeko"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Galdetu saio-hasiera baten pasahitza eguneratzeko, webgune batean aldaketaren bat atzematen denean."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Bitwardenen pasahitz hau eguneratu nahi duzu?"
   },
   "notificationChangeSave": {
-    "message": "Update"
+    "message": "Eguneratu"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Erakutsi laster-menuko aukerak"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Erabili bigarren mailako klika webgunerako pasahitzak eta saio-hasierak sortzeko."
   },
   "defaultUriMatchDetection": {
-    "message": "Default URI match detection",
+    "message": "Lehenetsitako detekzioa URI kointzidentziarako",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill."
+    "message": "Hautatu auto-betetzea bezalako saio-hasierako ekintzetarako erabiliko den URI kointzidentzia detektatzeko modu lehenetsia."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Gaia"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Aldatu aplikaziorako kolore gaia."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Iluna",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Argia",
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized dark",
+    "message": "Solarized iluna",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
-    "message": "Export vault"
+    "message": "Esportatu kutxa gotorra"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Fitxategiaren formatua"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "KONTUZ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Baieztatu kutxa gotorra esportatzea"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Esportazio honek kutxa gotorraren datuak zifratu gabeko formatuan biltzen ditu. Ez zenuke gorde edo kanal ez-seguruetaik (posta elektronikoa, adibidez) bidali behar. Erabili eta berehala ezabatu."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Esportazio honek zure datuak enkriptatzen ditu zure kontuaren zifratze-kodea erabiliz. Inoiz zure kontuko zifratze-gakoa aldatuz gero, berriro esportatu beharko duzu, ezin izango baituzu fitxategi hori deszifratu."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Kontua zifratzeko gakoak Bitwarden erabiltzaile bakoitzarentzako bakarrik dira; beraz, ezin da inportatu beste kontu batean zifratutako esportazio bat."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Sartu pasahitz nagusia kutxa gotorreko datuak esportatzeko."
   },
   "shared": {
-    "message": "Shared"
+    "message": "Partekatua"
   },
   "learnOrg": {
-    "message": "Learn about organizations"
+    "message": "Erakundeak ezagutu"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwardek kutxa gotorreko elementuak beste batzuekin partekatzeko aukera ematen dizu erakunde bat erabiliz. Gehiago jakiteko, bitwarden.com webgunea bisitatu nahi duzu?"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Mugitu erakundera"
   },
   "share": {
-    "message": "Share"
+    "message": "Partekatu"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ $ORGNAME$-ra mugituta",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -696,94 +696,94 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Aukeratu elementu hau zein erakundetara eraman nahi duzun. Erakunde batera pasatzeak elementuaren jabetza erakunde horretara transferitzen du. Zu ez zara elementu honen jabe zuzena izango mugitzen duzunean."
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Gehiago ikasi"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Egiaztatze kodea (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Egiaztatze kodea"
   },
   "copyVerificationCode": {
-    "message": "Copy Verification Code"
+    "message": "Kopiatu egiaztatze kodea"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Eranskinak"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "Ezabatu eranskinak"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Ziur zaude eranskina ezabatu nahi duzula?"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Eranskina ezabatuta"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Gehitu eranskin berria"
   },
   "noAttachments": {
-    "message": "No attachments."
+    "message": "Ez dago eranskinik"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Eranskina gorde da."
   },
   "file": {
-    "message": "File"
+    "message": "Fitxategia"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Hautatu fitxategia."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "Eranskinaren gehienezko tamaina 500MB."
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Ezaugarria ez dago erabilgarri"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Ezin duzu ezaugarri hau erabili enkriptazio kodea eguneratu arte."
   },
   "premiumMembership": {
-    "message": "Premium membership"
+    "message": "Premium bazkidea"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Bazkidetza kudeatu"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Zure bazkidetza bitwarden.com webguneko kutxa gotorrean kudeatu dezakezu. Orain bisitatu nahi duzu webgunea?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Eguneratu bazkidetza"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Orain ez zara premium bazkide."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Erregistra zaitez premium bazkide gisa eta honakoa lortu:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB encrypted storage for file attachments."
+    "message": "Eranskinentzako 1GB-eko enkriptatutako biltegia."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "YubiKey, FIDO U2F eta Duo bezalako saio-hasieratarako bi urratseko egiaztatze aukerak."
   },
   "ppremiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Pasahitzaren higienea, kontuaren egoera eta datu-bortxaketen txostenak, kutxa gotorra seguru mantentzeko."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "TOTP (2FA) egiaztatze kode sortzailea gotor kutxako erregistroetarako."
   },
   "ppremiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Lehentasunezko bezeroarentzako arreta."
   },
   "ppremiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Etorkizuneko premium ezaugarri guztiak. Laister gehiago!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Premium erosi"
   },
   "premiumPurchaseAlert": {
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
@@ -810,7 +810,7 @@
     "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If a login has an authenticator key, copy the TOTP verification code to your clip-board when you auto-fill the login."
+    "message": "Saio-hasiera batek egiaztatze kodea badu, TOTP egiaztatze kodea arbelean automatikoki kopiatuko da saio-hasiera bat auto-betetzean."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Ask for biometrics on launch"
@@ -849,13 +849,13 @@
     "message": "Send verification code email again"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Erabili bi urratseko egiaztatzeko beste modu bat."
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Sartu zure YubiKey-a ordenagailuko USB portuan, ondoren, sakatu bere botoia."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Sartu zure segurtasun giltza ordenagailuaren USB portuan. Botoia badu, sakatu ezazu."
   },
   "webAuthnNewTab": {
     "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
@@ -867,16 +867,16 @@
     "message": "Authenticate WebAuthn"
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Ez dago eskuragarri saio-hasierarik"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message": "Kontu honek bi urratseko egiaztatzea du gaituta, baina konfiguratutako bi urratseko egiaztatzea ez da web-nabigatzaile honekin bateragarria."
   },
   "noTwoStepProviders2": {
     "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Bi urratseko egiaztatzearen aukerak"
   },
   "recoveryCodeDesc": {
     "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
@@ -892,10 +892,10 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP segurtasun giltza"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Erabili YubiKey zure kontuan sartzeko. YubiKey 4, 4 Nano, 4C eta NEO gailuekin dabil."
   },
   "duoDesc": {
     "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
@@ -951,31 +951,31 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Auto-fill on page load"
+    "message": "Auto-bete orrialdea kargatzean"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, auto-fill when the web page loads."
+    "message": "Saio-hasierako formulario bat detektatzen bada, auto-bete webgunea kargatzen denean."
   },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Default autofill setting for login items"
+    "message": "Saio-hasierako elementuetarako lehenetsitako auto-betetzearen konfigurazioa"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
+    "message": "Orrialdearen kargatze aukeretan auto-betetzea aktibatu ondoren, banakako saio-hasierak aktibatu edo desaktibatu ditzakezu."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on page load (if enabled in Options)"
+    "message": "Auto-bete orrialdea kargatzean (ezarpenetan gaituta badago)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Use default setting"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Auto-fill on page load"
+    "message": "Auto-bete orrialdea kargatzean"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Do not auto-fill on page load"
+    "message": "Ez auto-bete orrialdea kargatzean"
   },
   "commandOpenPopup": {
     "message": "Open vault popup"
@@ -984,7 +984,7 @@
     "message": "Open vault in sidebar"
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website"
+    "message": "Uneko webgunerako erabilitako azken saio-hastea auto-bete"
   },
   "commandGeneratePasswordDesc": {
     "message": "Generate and copy a new random password to the clipboard"
@@ -1037,13 +1037,13 @@
     "message": "Show website icons"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Erakutsi irudi bat saio-hasiera bakoitzaren ondoan."
   },
   "enableBadgeCounter": {
     "message": "Show badge counter"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Adierazi zenbat saio-hasiera dituzun uneko webgunerako."
   },
   "cardholderName": {
     "message": "Cardholder Name"
@@ -1181,10 +1181,10 @@
     "message": "Type"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Saio-hasiera"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "Saio-hasierak"
   },
   "typeSecureNote": {
     "message": "Secure Note"
@@ -1220,7 +1220,7 @@
     "message": "Identities"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Saio-hasierak"
   },
   "secureNotes": {
     "message": "Secure Notes"
@@ -1267,11 +1267,11 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Detekzio modua",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Lehenetsitako detekzio modua",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
@@ -1424,13 +1424,13 @@
     "message": "Timeout Action Confirmation"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Auto-bete eta gorde"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Auto-filled Item and Saved URI"
+    "message": "Elementua auto-betea eta URIa gordeta"
   },
   "autoFillSuccess": {
-    "message": "Auto-filled Item"
+    "message": "Elementua auto-beteta"
   },
   "setMasterPassword": {
     "message": "Set Master Password"
@@ -1547,7 +1547,7 @@
     "message": "Permission not provided"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+    "message": "Mahaigaineko Bitwarden aplikazioarekin komunikatzeko baimenik gabe, ezin diogu datu biometrikorik eman nabigatzailearen gehigarriari. Mesedez, saiatu berriro."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Permission request error"
@@ -1565,7 +1565,7 @@
     "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+    "message": "Bitwardenek ez du eskatuko domeinu horietarako saio-hasierako xehetasunak gordetzea. Orrialdea eguneratu behar duzu aldaketek eragina izan dezaten."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ is not a valid domain",
@@ -1747,10 +1747,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
+    "message": "Fitxategi bat aukeratzeko, ireki gehigarria alboko barran (ahal bada) edo atera leiho berri batera banner honetan klik eginez."
   },
   "sendFirefoxFileWarning": {
-    "message": "In order to choose a file using Firefox, open the extension in the sidebar or pop out to a new window by clicking this banner."
+    "message": "Firefox erabiliz fitxategi bat aukeratzeko, ireki gehigarria alboko barratik edo ireki beste leiho bat banner hau sakatuz."
   },
   "sendSafariFileWarning": {
     "message": "In order to choose a file using Safari, pop out to a new window by clicking this banner."
@@ -1846,7 +1846,7 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
+  "vaultTimeoutTooLarge": {
     "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "vaultExportDisabled": {
@@ -1960,9 +1960,9 @@
     "message": "API Access Token"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "API Kodea"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Errore bat gertatu da konektore giltzan: ziurtatu giltza konektorea erabilgarri dagoela eta behar bezala dabilela."
   }
 }

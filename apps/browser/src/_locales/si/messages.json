@@ -1846,8 +1846,8 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
-    "message": "ඔබේ සුරක්ෂිතාගාරය කාලය ඔබේ සංවිධානය විසින් නියම කර ඇති සීමාවන් ඉක්මවා යයි."
+  "vaultTimeoutTooLarge": {
+    "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "vaultExportDisabled": {
     "message": "ආබාධිත අපනයන සුරක්ෂිතාගාරය"

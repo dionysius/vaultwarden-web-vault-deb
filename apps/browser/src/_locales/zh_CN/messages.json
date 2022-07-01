@@ -571,7 +571,7 @@
     "message": "要求添加登录"
   },
   "addLoginNotificationDesc": {
-    "message": "在密码库中找不到项目时询问添加一个项目。"
+    "message": "在密码库中找不到匹配项目时询问添加一个。"
   },
   "showCardsCurrentTab": {
     "message": "在标签页上显示支付卡"
@@ -954,7 +954,7 @@
     "message": "页面加载时自动填充"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "网页加载时如果检测到登录表单，则自动填充。"
+    "message": "网页加载时如果检测到登录表单，则执行自动填充。"
   },
   "experimentalFeature": {
     "message": "目前这是一项实验功能。使用需自担风险。"
@@ -1846,7 +1846,7 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
+  "vaultTimeoutTooLarge": {
     "message": "您的密码库超时时间超出了组织设置的限制。"
   },
   "vaultExportDisabled": {

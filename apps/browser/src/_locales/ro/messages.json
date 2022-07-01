@@ -1846,8 +1846,8 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
-    "message": "Timpul de expirare a seifului depășește restricțiile stabilite de organizația dvs."
+  "vaultTimeoutTooLarge": {
+    "message": "Timpul de expirare al seifului depășește restricțiile stabilite de organizația dvs."
   },
   "vaultExportDisabled": {
     "message": "Export de seif dezactivat"

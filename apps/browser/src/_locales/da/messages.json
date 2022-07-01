@@ -218,7 +218,7 @@
     "message": "Bitwarden web-boks"
   },
   "importItems": {
-    "message": "Importer elementer"
+    "message": "Importér elementer"
   },
   "select": {
     "message": "Vælg"
@@ -568,22 +568,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Bed om at tilføje login"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Tilføj login notifikation\" spørger dig automatisk om du vil gemme nye logins til din boks, når du logger ind med dem for første gang."
+    "message": "Bed om at tilføje et element, hvis et ikke findes i din boks."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Vis kort på fanebladet"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Vis kortelementer på fanebladet for nem auto-udfyldning."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Vis identiteter på fanebladet"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Vis identitetselementer på fanebladet for nem auto-udfyldning."
   },
   "clearClipboard": {
     "message": "Ryd udklipsholder",
@@ -600,10 +600,10 @@
     "message": "Gem"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Bed om at opdatere eksisterende login"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Bed om at opdatere et logins adgangskode, når der registreres en ændring på en hjemmeside."
   },
   "notificationChangeDesc": {
     "message": "Vil du opdatere denne adgangskode i Bitwarden?"
@@ -612,10 +612,10 @@
     "message": "Opdatér"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Vis indstillinger i kontekstmenuen"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Brug et sekundært klik for at få adgang til adgangskodegenerering og matchende logins til hjemmesiden."
   },
   "defaultUriMatchDetection": {
     "message": "Standard URI matchmetode",
@@ -807,13 +807,13 @@
     "message": "Opdatering færdig"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Kopiér TOTP automatisk"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Hvis dit login har en autentificeringsnøgle tilknyttet, kopieres TOTP verifikationskoden automatisk til din udklipsholder når du auto-udfylder login."
+    "message": "Hvis et login har en autentificeringsnøgle, så kopiér TOTP-bekræftelseskoden til din udklipsholder, når du auto-udfylder login."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Bed om biometri ved start"
   },
   "premiumRequired": {
     "message": "Premium påkrævet"
@@ -951,10 +951,10 @@
     "message": "Miljøets URLs er blevet gemt."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Aktivér Auto-udfyld ved sideindlæsning"
+    "message": "Auto-udfyld ved sideindlæsning"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Hvis en login-formular er opdaget, så udfør automatisk en auto-udfyld når hjemmesiden indlæses."
+    "message": "Hvis der registreres en loginformular, så auto-udfyld, når websiden indlæses."
   },
   "experimentalFeature": {
     "message": "Dette er i øjeblikket en eksperimentel funktion. Brug på egen risiko."
@@ -963,7 +963,7 @@
     "message": "Standardindstilling for autofyld for loginelementer"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Når du har aktiveret auto-udfyldning ved sideindlæsning, kan du aktivere eller deaktivere funktionen for individuelle loginelementer. Dette er standardindstillingen for loginelementer, der ikke er konfigureret separat."
+    "message": "Du kan deaktivere auto-udfyld ved sideindlæsning for individuelle login-elementer fra elementets redigeringsvisning."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Auto-udfyld ved sideindlæsning (hvis aktiveret i Indstillinger)"
@@ -1034,16 +1034,16 @@
     "message": "Denne browser kan ikke behandle U2F-anmodninger i dette popup-vindue. Vil du åbne denne popup i et nyt vindue, så du kan logge ind ved hjælp af U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Vis webstedsikoner"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Vis et genkendeligt billede ud for hvert login."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Vis badge-tæller"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Vis hvor mange logins du har til den aktuelle webside."
   },
   "cardholderName": {
     "message": "Kortindehaverens navn"
@@ -1846,7 +1846,7 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
+  "vaultTimeoutTooLarge": {
     "message": "Din boks-timeout overskrider de begrænsninger, der er fastsat af din organisation."
   },
   "vaultExportDisabled": {

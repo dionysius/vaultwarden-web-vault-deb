@@ -568,22 +568,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "詢問新增登入資料"
   },
   "addLoginNotificationDesc": {
-    "message": "當您首次登入時，「新增登入資料通知」會自動提醒您在密碼庫中新增登入資料。"
+    "message": "在密碼庫中找不到相符的項目時詢問是否新增項目。"
   },
   "showCardsCurrentTab": {
     "message": "於分頁頁面顯示支付卡"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "於分頁頁面顯示支付卡以便於自動填入。"
   },
   "showIdentitiesCurrentTab": {
     "message": "於分頁頁面顯示身分"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "於分頁頁面顯示身分以便於自動填入。"
   },
   "clearClipboard": {
     "message": "清除剪貼簿",
@@ -600,10 +600,10 @@
     "message": "儲存"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "詢問更新現有的登入資料"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "偵測到網站密碼變更時，詢問是否更新登入資料密碼。"
   },
   "notificationChangeDesc": {
     "message": "是否要在 Bitwarden 中更新此密碼？"
@@ -612,10 +612,10 @@
     "message": "更新"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "顯示內容選單選項"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "使用輔助點選（右鍵選單）來存取密碼產生器和登入目前分頁中的網站。"
   },
   "defaultUriMatchDetection": {
     "message": "預設的 URI 一致性偵測",
@@ -639,7 +639,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized Dark 主題",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -813,7 +813,7 @@
     "message": "若登入資料已包含驗證器金鑰，在自動填入此登入資料時，TOTP 驗證碼將複製至您的剪貼簿。"
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "啟動時要求生物特徵辨識"
   },
   "premiumRequired": {
     "message": "需要進階會員資格"
@@ -954,7 +954,7 @@
     "message": "頁面載入時自動填入"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "如果網頁載入時偵測到登入表單，則自動執行表單填入。"
+    "message": "網頁載入時如果偵測到登入表單，則執行自動填入。"
   },
   "experimentalFeature": {
     "message": "這目前是一項實驗性功能。要使用需自行承擔風險。"
@@ -963,7 +963,7 @@
     "message": "登入項目的預設自動填入設定"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "啟用頁面載入時自動填入後，您可以為單個登入項目啟用或停用此功能。這是未單獨設定的登入項目的預設設定。"
+    "message": "您可以從項目的編輯檢視中為單個登入項目關閉頁面載入時自動填入。"
   },
   "itemAutoFillOnPageLoad": {
     "message": "頁面載入時自動填入（如果選項中已啟用）"
@@ -1040,10 +1040,10 @@
     "message": "在每個登入資料旁顯示一個可辨識的圖片。"
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "顯示圖示計數器"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "顯示可用於目前網頁的登入資料數量。"
   },
   "cardholderName": {
     "message": "持卡人姓名"
@@ -1846,8 +1846,8 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
-    "message": "您的密碼庫逾時時間超過組織限制。"
+  "vaultTimeoutTooLarge": {
+    "message": "您的密碼庫逾時時間超過組織設定的限制。"
   },
   "vaultExportDisabled": {
     "message": "密碼庫匯出已停用"
