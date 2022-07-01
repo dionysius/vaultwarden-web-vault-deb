@@ -872,7 +872,7 @@
     "message": "Când sistemul este inactiv"
   },
   "onSleep": {
-    "message": "Când sistemul este în repaus"
+    "message": "Când sistemul intră în repaus"
   },
   "onLocked": {
     "message": "La blocarea sistemului"
@@ -946,7 +946,7 @@
     "message": "Pornire automată la conectare"
   },
   "openAtLoginDesc": {
-    "message": "Pornește aplicația Bitwarden Desktop automat la autentificare."
+    "message": "Pornește automat aplicația Bitwarden desktop la conectare."
   },
   "alwaysShowDock": {
     "message": "Se afișează întotdeauna în Dock"
@@ -1394,7 +1394,7 @@
     "message": "Preferințe"
   },
   "enableMenuBar": {
-    "message": "Activare icon în bara de meniu"
+    "message": "Afișare pictogramă în bara de meniu"
   },
   "enableMenuBarDesc": {
     "message": "Afișează întotdeauna un icon în bara de meniu."
@@ -1440,10 +1440,10 @@
     "message": "Acțiune la expirarea seifului"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Un seif blocat necesită reintroducerea parolei principale pentru a-l accesa din nou."
+    "message": "Este necesară parola principală sau o altă metodă de deblocare pentru a vă accesa din nou seiful."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Un seif deconectat necesită reintroducerea parolei principale pentru a-l accesa din nou."
+    "message": "Este necesară o nouă autentificare pentru a vă accesa din nou seiful."
   },
   "lock": {
     "message": "Blocare",
@@ -1547,7 +1547,7 @@
     "message": "Termeni de utilizare și Politica de confidențialitate nu au fost recunoscute."
   },
   "enableBrowserIntegration": {
-    "message": "Activați integrarea browserului"
+    "message": "Permiteți integrarea în browser"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Integrarea browserului este folosită pentru biometria în browser."
@@ -1568,7 +1568,7 @@
     "message": "Necesită verificare pentru integrarea browserului"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Activează un nivel suplimentar de securitate prin solicitarea validării frazei de amprentă la stabilirea unei legături între desktop și browser. Când este activată, aceasta necesită intervenția utilizatorului și verificarea de fiecare dată când este stabilită o conexiune."
+    "message": "Adăugați un nivel suplimentar de securitate solicitând confirmarea frazei amprentă atunci când stabiliți un link între desktop și browser. Acest lucru necesită o acțiune și o verificare din partea utilizatorului la fiecare creare a unei conexiuni."
   },
   "approve": {
     "message": "Aprobați"
@@ -1798,7 +1798,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Timpul de expirare a seifului depășește restricțiile stabilite de organizația dvs."
+    "message": "Timpul de expirare al seifului depășește restricțiile stabilite de organizația dvs."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Înregistrare automată"
