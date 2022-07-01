@@ -48,13 +48,23 @@ jobs:
           monorepo: true
           monorepo-project: cli
 
-      - name: Download all artifacts
+      - name: Download all Release artifacts
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
           workflow: build-cli.yml
           path: apps/cli
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
+
+      - name: Download all artifacts
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
+        uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
+        with:
+          workflow: build-cli.yml
+          path: apps/cli
+          workflow_conclusion: success
+          branch: master
 
       - name: Create release
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}

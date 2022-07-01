@@ -90,12 +90,26 @@ jobs:
       - setup
       - locales-test
     steps:
-      - name: Download latest RC build artifacts
+      - name: Download latest Release build artifacts
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
+          artifacts: 'browser-source-*.zip,
+                      dist-chrome-*.zip,
+                      dist-opera-*.zip,
+                      dist-firefox-*.zip,
+                      dist-edge-*.zip'
+
+      - name: Download latest master build artifacts
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
+        uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
+        with:
+          workflow: build-browser.yml
+          workflow_conclusion: success
+          branch: master
           artifacts: 'browser-source-*.zip,
                       dist-chrome-*.zip,
                       dist-opera-*.zip,

@@ -78,11 +78,21 @@ jobs:
           secrets: "aws-electron-access-id, aws-electron-access-key, aws-electron-bucket-name"
 
       - name: Download all artifacts
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
+          path: apps/desktop/artifacts
+
+      - name: Download all artifacts
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
+        uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
+        with:
+          workflow: build-desktop.yml
+          workflow_conclusion: success
+          branch: master
           path: apps/desktop/artifacts
 
       - name: Rename .pkg to .pkg.archive
@@ -92,6 +102,7 @@ jobs:
         run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
 
       - name: Publish artifacts to S3
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         env:
           AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
           AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
@@ -106,7 +117,7 @@ jobs:
 
       - name: Create release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09  # v2.8.5
-        if: ${{ steps.release-channel.outputs.channel }} == "latest"
+        if: ${{ steps.release-channel.outputs.channel == 'latest' && github.event.inputs.release_type != 'Dry Run' }}
         env:
           PKG_VERSION: ${{ steps.version.outputs.version }}
           RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
@@ -200,6 +211,11 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
+      - name: Print Environment
+        run: |
+          dotnet --version
+          dotnet nuget --version
+
       - name: Login to Azure
         uses: Azure/login@24848bc889cfc0a8313c2b3e378ac0d625b9bc16
         with:
@@ -213,6 +229,7 @@ jobs:
           secrets: "cli-choco-api-key"
 
       - name: Setup Chocolatey
+        shell: pwsh
         run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
         env:
           CHOCO_API_KEY: ${{ steps.retrieve-secrets.outputs.cli-choco-api-key }}
