@@ -18,7 +18,13 @@ import { OrganizationBadgeModule } from "./modules/vault/modules/organization-ba
     OrganizationManageModule,
     OrganizationUserModule,
   ],
-  exports: [LooseComponentsModule, VaultFilterModule, OrganizationBadgeModule, PipesModule],
+  exports: [
+    SharedModule,
+    LooseComponentsModule,
+    VaultFilterModule,
+    OrganizationBadgeModule,
+    PipesModule,
+  ],
   bootstrap: [],
 })
 export class OssModule {}

@@ -11,7 +11,9 @@
         <h2 class="modal-title" id="userAddEditTitle">
           {{ title }}
           <small class="text-muted" *ngIf="name">{{ name }}</small>
-          <span class="badge badge-dark" *ngIf="isDeactivated">{{ "deactivated" | i18n }}</span>
+          <span bitBadge badgeType="secondary" *ngIf="isDeactivated">{{
+            "deactivated" | i18n
+          }}</span>
         </h2>
         <button
           type="button"

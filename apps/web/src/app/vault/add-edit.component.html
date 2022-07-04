@@ -194,7 +194,9 @@
                 <a
                   href="#"
                   appStopClick
-                  class="badge badge-primary ml-3"
+                  bitBadge
+                  badgeType="primary"
+                  class="tw-ml-4"
                   (click)="upgradeOrganization()"
                   *ngIf="
                     (organization && !organization.useTotp) ||

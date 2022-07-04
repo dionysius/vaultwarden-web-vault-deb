@@ -46,28 +46,29 @@
       <td>
         <a href="#" appStopClick (click)="edit(c)">{{ c.email }}</a>
         <span
-          class="badge badge-secondary"
+          bitBadge
+          badgeType="secondary"
           *ngIf="c.status === emergencyAccessStatusType.Invited"
           >{{ "invited" | i18n }}</span
         >
-        <span class="badge badge-warning" *ngIf="c.status === emergencyAccessStatusType.Accepted">{{
-          "accepted" | i18n
-        }}</span>
         <span
-          class="badge badge-warning"
+          bitBadge
+          badgeType="warning"
+          *ngIf="c.status === emergencyAccessStatusType.Accepted"
+          >{{ "accepted" | i18n }}</span
+        >
+        <span
+          bitBadge
+          badgeType="warning"
           *ngIf="c.status === emergencyAccessStatusType.RecoveryInitiated"
           >{{ "emergencyAccessRecoveryInitiated" | i18n }}</span
         >
-        <span
-          class="badge badge-success"
-          *ngIf="c.status === emergencyAccessStatusType.RecoveryApproved"
-          >{{ "emergencyAccessRecoveryApproved" | i18n }}</span
-        >
-
-        <span class="badge badge-primary" *ngIf="c.type === emergencyAccessType.View">{{
-          "view" | i18n
+        <span bitBadge *ngIf="c.status === emergencyAccessStatusType.RecoveryApproved">{{
+          "emergencyAccessRecoveryApproved" | i18n
         }}</span>
-        <span class="badge badge-primary" *ngIf="c.type === emergencyAccessType.Takeover">{{
+
+        <span bitBadge *ngIf="c.type === emergencyAccessType.View">{{ "view" | i18n }}</span>
+        <span bitBadge *ngIf="c.type === emergencyAccessType.Takeover">{{
           "takeover" | i18n
         }}</span>
 
@@ -159,29 +160,30 @@
       </td>
       <td>
         <span>{{ c.email }}</span>
-        <span
-          class="badge badge-secondary"
-          *ngIf="c.status === emergencyAccessStatusType.Invited"
-          >{{ "invited" | i18n }}</span
-        >
-        <span class="badge badge-warning" *ngIf="c.status === emergencyAccessStatusType.Accepted">{{
-          "accepted" | i18n
+        <span bitBadge *ngIf="c.status === emergencyAccessStatusType.Invited">{{
+          "invited" | i18n
         }}</span>
         <span
-          class="badge badge-warning"
+          bitBadge
+          badgeType="warning"
+          *ngIf="c.status === emergencyAccessStatusType.Accepted"
+          >{{ "accepted" | i18n }}</span
+        >
+        <span
+          bitBadge
+          badgeType="warning"
           *ngIf="c.status === emergencyAccessStatusType.RecoveryInitiated"
           >{{ "emergencyAccessRecoveryInitiated" | i18n }}</span
         >
         <span
-          class="badge badge-success"
+          bitBadge
+          badgeType="success"
           *ngIf="c.status === emergencyAccessStatusType.RecoveryApproved"
           >{{ "emergencyAccessRecoveryApproved" | i18n }}</span
         >
 
-        <span class="badge badge-primary" *ngIf="c.type === emergencyAccessType.View">{{
-          "view" | i18n
-        }}</span>
-        <span class="badge badge-primary" *ngIf="c.type === emergencyAccessType.Takeover">{{
+        <span bitBadge *ngIf="c.type === emergencyAccessType.View">{{ "view" | i18n }}</span>
+        <span bitBadge *ngIf="c.type === emergencyAccessType.Takeover">{{
           "takeover" | i18n
         }}</span>
 

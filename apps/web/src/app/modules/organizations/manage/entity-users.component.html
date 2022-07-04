@@ -64,9 +64,7 @@
                 (click)="filterSelected(true)"
               >
                 {{ "selected" | i18n }}
-                <span class="badge badge-pill badge-info" *ngIf="selectedCount">{{
-                  selectedCount
-                }}</span>
+                <span bitBadge badgeType="info" *ngIf="selectedCount">{{ selectedCount }}</span>
               </button>
             </div>
           </div>
@@ -115,12 +113,14 @@
                 <td>
                   {{ u.email }}
                   <span
-                    class="badge badge-secondary"
+                    bitBadge
+                    badgeType="secondary"
                     *ngIf="u.status === organizationUserStatusType.Invited"
                     >{{ "invited" | i18n }}</span
                   >
                   <span
-                    class="badge badge-warning"
+                    bitBadge
+                    badgeType="warning"
                     *ngIf="u.status === organizationUserStatusType.Accepted"
                     >{{ "accepted" | i18n }}</span
                   >

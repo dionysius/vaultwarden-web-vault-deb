@@ -9,7 +9,7 @@
         (click)="filter(null)"
       >
         {{ "all" | i18n }}
-        <span class="badge badge-pill badge-info" *ngIf="allCount">{{ allCount }}</span>
+        <span bitBadge badgeType="info" *ngIf="allCount">{{ allCount }}</span>
       </button>
       <button
         type="button"
@@ -18,7 +18,7 @@
         (click)="filter(userStatusType.Invited)"
       >
         {{ "invited" | i18n }}
-        <span class="badge badge-pill badge-info" *ngIf="invitedCount">{{ invitedCount }}</span>
+        <span bitBadge badgeType="info" *ngIf="invitedCount">{{ invitedCount }}</span>
       </button>
       <button
         type="button"
@@ -27,9 +27,7 @@
         (click)="filter(userStatusType.Accepted)"
       >
         {{ "accepted" | i18n }}
-        <span class="badge badge-pill badge-warning" *ngIf="acceptedCount">{{
-          acceptedCount
-        }}</span>
+        <span bitBadge badgeType="warning" *ngIf="acceptedCount">{{ acceptedCount }}</span>
       </button>
     </div>
     <div class="ml-3">
@@ -137,10 +135,10 @@
           </td>
           <td>
             <a href="#" appStopClick (click)="edit(u)">{{ u.email }}</a>
-            <span class="badge badge-secondary" *ngIf="u.status === userStatusType.Invited">{{
+            <span bitBadge badgeType="secondary" *ngIf="u.status === userStatusType.Invited">{{
               "invited" | i18n
             }}</span>
-            <span class="badge badge-warning" *ngIf="u.status === userStatusType.Accepted">{{
+            <span bitBadge badgeType="warning" *ngIf="u.status === userStatusType.Accepted">{{
               "accepted" | i18n
             }}</span>
             <small class="text-muted d-block" *ngIf="u.name">{{ u.name }}</small>

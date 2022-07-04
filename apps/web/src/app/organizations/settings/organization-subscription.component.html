@@ -62,7 +62,7 @@
               <span class="text-capitalize">{{
                 isSponsoredSubscription ? "sponsored" : subscription.status || "-"
               }}</span>
-              <span class="badge badge-warning" *ngIf="subscriptionMarkedForCancel">{{
+              <span bitBadge badgeType="warning" *ngIf="subscriptionMarkedForCancel">{{
                 "pendingCancellation" | i18n
               }}</span>
             </dd>
