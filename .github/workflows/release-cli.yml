@@ -206,7 +206,7 @@ jobs:
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
           workflow: build-cli.yml
-          path: apps/cli
+          path: apps/cli/build
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
           artifacts: bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
