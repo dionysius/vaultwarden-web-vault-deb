@@ -1,19 +1,17 @@
-<form id="register-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+<form
+  id="register-page"
+  #form
+  (ngSubmit)="submit()"
+  [appApiAction]="formPromise"
+  [formGroup]="formGroup"
+>
   <div class="content">
     <h1>{{ "createAccount" | i18n }}</h1>
     <div class="box">
       <div class="box-content">
         <div class="box-content-row" appBoxRow>
           <label for="email">{{ "emailAddress" | i18n }}</label>
-          <input
-            id="email"
-            type="text"
-            name="Email"
-            [(ngModel)]="email"
-            required
-            [appAutofocus]="email === ''"
-            appInputVerbatim
-          />
+          <input id="email" type="email" formControlName="email" appInputVerbatim />
         </div>
         <div class="box-content-row" appBoxRow>
           <div class="box-content-row-flex">
@@ -30,11 +28,8 @@
               <input
                 id="masterPassword"
                 type="{{ showPassword ? 'text' : 'password' }}"
-                name="MasterPassword"
                 class="monospaced"
-                [(ngModel)]="masterPassword"
-                required
-                [appAutofocus]="email !== ''"
+                formControlName="masterPassword"
                 (input)="updatePasswordStrength()"
                 appInputVerbatim
               />
@@ -46,7 +41,7 @@
                 appStopClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 [attr.aria-pressed]="showPassword"
-                (click)="togglePassword(false)"
+                (click)="togglePassword()"
               >
                 <i
                   class="bwi bwi-lg"
@@ -81,10 +76,8 @@
             <input
               id="masterPasswordRetype"
               type="{{ showPassword ? 'text' : 'password' }}"
-              name="MasterPasswordRetype"
               class="monospaced"
-              [(ngModel)]="confirmMasterPassword"
-              required
+              formControlName="confirmMasterPassword"
               appInputVerbatim
             />
           </div>
@@ -95,7 +88,7 @@
               appStopClick
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
               [attr.aria-pressed]="showPassword"
-              (click)="togglePassword(true)"
+              (click)="togglePassword()"
             >
               <i
                 class="bwi bwi-lg"
@@ -107,7 +100,7 @@
         </div>
         <div class="box-content-row" appBoxRow>
           <label for="hint">{{ "masterPassHint" | i18n }}</label>
-          <input id="hint" type="text" name="Hint" [(ngModel)]="hint" />
+          <input id="hint" type="text" formControlName="hint" />
         </div>
         <div class="box last" [hidden]="!showCaptcha()">
           <div class="box-content">
@@ -127,12 +120,7 @@
     </div>
     <div class="box last" *ngIf="showTerms">
       <div class="box-footer checkbox">
-        <input
-          type="checkbox"
-          id="acceptPolicies"
-          [(ngModel)]="acceptPolicies"
-          name="AcceptPolicies"
-        />
+        <input type="checkbox" id="acceptPolicies" formControlName="acceptPolicies" />
         <label for="acceptPolicies">
           {{ "acceptPolicies" | i18n }}<br />
           <a href="https://bitwarden.com/terms/" target="_blank" rel="noopener">{{

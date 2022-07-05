@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
@@ -7,6 +8,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { FormValidationErrorsService } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
@@ -25,6 +27,7 @@ import { RouterService } from "../services/router.service";
   templateUrl: "register.component.html",
 })
 export class RegisterComponent extends BaseRegisterComponent {
+  email = "";
   showCreateOrgMessage = false;
   layout = "";
   enforcedPolicyOptions: MasterPasswordPolicyOptions;
@@ -32,6 +35,8 @@ export class RegisterComponent extends BaseRegisterComponent {
   private policies: Policy[];
 
   constructor(
+    formValidationErrorService: FormValidationErrorsService,
+    formBuilder: FormBuilder,
     authService: AuthService,
     router: Router,
     i18nService: I18nService,
@@ -47,6 +52,8 @@ export class RegisterComponent extends BaseRegisterComponent {
     private routerService: RouterService
   ) {
     super(
+      formValidationErrorService,
+      formBuilder,
       authService,
       router,
       i18nService,
@@ -125,25 +132,5 @@ export class RegisterComponent extends BaseRegisterComponent {
     }
 
     await super.ngOnInit();
-  }
-
-  async submit() {
-    if (
-      this.enforcedPolicyOptions != null &&
-      !this.policyService.evaluateMasterPassword(
-        this.masterPasswordScore,
-        this.masterPassword,
-        this.enforcedPolicyOptions
-      )
-    ) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordPolicyRequirementsNotMet")
-      );
-      return;
-    }
-
-    await super.submit();
   }
 }

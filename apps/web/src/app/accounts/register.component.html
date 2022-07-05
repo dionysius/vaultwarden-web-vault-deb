@@ -28,7 +28,7 @@
     </div>
   </header>
 
-  <form #form (ngSubmit)="submit()" [appApiAction]="formPromise" class="container" ngNativeValidate>
+  <div class="container">
     <div class="row">
       <div class="col-7" *ngIf="layout">
         <div class="mt-5">
@@ -112,156 +112,10 @@
                 >
                   {{ "createOrganizationCreatePersonalAccount" | i18n }}
                 </app-callout>
-                <div class="form-group">
-                  <label for="email">{{ "emailAddress" | i18n }}</label>
-                  <input
-                    id="email"
-                    class="form-control"
-                    type="text"
-                    name="Email"
-                    [(ngModel)]="email"
-                    required
-                    [appAutofocus]="email === ''"
-                    inputmode="email"
-                    appInputVerbatim="false"
-                  />
-                  <small class="form-text text-muted">{{ "emailAddressDesc" | i18n }}</small>
-                </div>
-                <div class="form-group">
-                  <label for="name">{{ "yourName" | i18n }}</label>
-                  <input
-                    id="name"
-                    class="form-control"
-                    type="text"
-                    name="Name"
-                    [(ngModel)]="name"
-                    [appAutofocus]="email !== ''"
-                  />
-                  <small class="form-text text-muted">{{ "yourNameDesc" | i18n }}</small>
-                </div>
-                <div class="form-group">
-                  <app-callout
-                    type="info"
-                    [enforcedPolicyOptions]="enforcedPolicyOptions"
-                    *ngIf="enforcedPolicyOptions"
-                  >
-                  </app-callout>
-                  <label for="masterPassword">{{ "masterPass" | i18n }}</label>
-                  <div class="d-flex">
-                    <div class="w-100">
-                      <input
-                        id="masterPassword"
-                        type="{{ showPassword ? 'text' : 'password' }}"
-                        name="MasterPassword"
-                        class="text-monospace form-control mb-1"
-                        [(ngModel)]="masterPassword"
-                        (input)="updatePasswordStrength()"
-                        required
-                        appInputVerbatim
-                      />
-                      <app-password-strength [score]="masterPasswordScore" [showText]="true">
-                      </app-password-strength>
-                    </div>
-                    <div>
-                      <button
-                        type="button"
-                        class="ml-1 btn btn-link"
-                        appA11yTitle="{{ 'toggleVisibility' | i18n }}"
-                        (click)="togglePassword(false)"
-                      >
-                        <i
-                          class="bwi bwi-lg"
-                          aria-hidden="true"
-                          [ngClass]="{
-                            'bwi-eye': !showPassword,
-                            'bwi-eye-slash': showPassword
-                          }"
-                        ></i>
-                      </button>
-                      <div class="progress-bar invisible"></div>
-                    </div>
-                  </div>
-                  <small class="form-text text-muted">{{ "masterPassDesc" | i18n }}</small>
-                </div>
-                <div class="form-group">
-                  <label for="masterPasswordRetype">{{ "reTypeMasterPass" | i18n }}</label>
-                  <div class="d-flex">
-                    <input
-                      id="masterPasswordRetype"
-                      type="{{ showPassword ? 'text' : 'password' }}"
-                      name="MasterPasswordRetype"
-                      class="text-monospace form-control"
-                      [(ngModel)]="confirmMasterPassword"
-                      required
-                      appInputVerbatim
-                    />
-                    <button
-                      type="button"
-                      class="ml-1 btn btn-link"
-                      appA11yTitle="{{ 'toggleVisibility' | i18n }}"
-                      (click)="togglePassword(true)"
-                    >
-                      <i
-                        class="bwi bwi-lg"
-                        aria-hidden="true"
-                        [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
-                      ></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="hint">{{ "masterPassHint" | i18n }}</label>
-                  <input
-                    id="hint"
-                    class="form-control"
-                    type="text"
-                    name="Hint"
-                    [(ngModel)]="hint"
-                  />
-                  <small class="form-text text-muted">{{ "masterPassHintDesc" | i18n }}</small>
-                </div>
-                <div [hidden]="!showCaptcha()">
-                  <iframe id="hcaptcha_iframe" height="80"></iframe>
-                </div>
-                <div class="form-group" *ngIf="showTerms">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="acceptPolicies"
-                      [(ngModel)]="acceptPolicies"
-                      name="AcceptPolicies"
-                    />
-                    <label class="form-check-label small text-muted" for="acceptPolicies">
-                      {{ "acceptPolicies" | i18n }}<br />
-                      <a href="https://bitwarden.com/terms/" target="_blank" rel="noopener">{{
-                        "termsOfService" | i18n
-                      }}</a
-                      >,
-                      <a href="https://bitwarden.com/privacy/" target="_blank" rel="noopener">{{
-                        "privacyPolicy" | i18n
-                      }}</a>
-                    </label>
-                  </div>
-                </div>
-                <hr />
-                <div class="d-flex mb-2">
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-block btn-submit"
-                    [disabled]="form.loading"
-                  >
-                    <span>{{ "submit" | i18n }}</span>
-                    <i
-                      class="bwi bwi-spinner bwi-spin"
-                      title="{{ 'loading' | i18n }}"
-                      aria-hidden="true"
-                    ></i>
-                  </button>
-                  <a routerLink="/login" class="btn btn-outline-secondary btn-block ml-2 mt-0">
-                    {{ "cancel" | i18n }}
-                  </a>
-                </div>
+                <app-register-form
+                  [queryParamEmail]="email"
+                  [enforcedPolicyOptions]="enforcedPolicyOptions"
+                ></app-register-form>
               </div>
             </div>
           </div>
@@ -351,5 +205,5 @@
         />
       </div>
     </div>
-  </form>
+  </div>
 </div>

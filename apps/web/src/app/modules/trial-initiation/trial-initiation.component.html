@@ -1,0 +1,58 @@
+<div
+  class="tw-bg-background-alt2 tw-h-96 tw--mt-48 tw-absolute tw--skew-y-3 tw-w-full tw--z-10"
+></div>
+
+<div class="tw-flex tw-max-w-screen-xl tw-min-w-4xl tw-mx-auto tw-px-4">
+  <div class="tw-w-1/2">
+    <img
+      alt="Bitwarden"
+      style="height: 50px; width: 335px"
+      class="tw-mt-6"
+      src="../../images/register-layout/logo-horizontal-white.svg"
+    />
+    <!-- This is to for illustrative purposes and content will be replaced by marketing -->
+    <div class="tw-pt-12">
+      <!-- Teams Body -->
+      <app-teams-content *ngIf="org === 'teams'"></app-teams-content>
+      <!-- Enterprise Body -->
+      <app-enterprise-content *ngIf="org === 'enterprise'"></app-enterprise-content>
+      <!-- Families Body -->
+      <app-families-content *ngIf="org === 'families'"></app-families-content>
+    </div>
+  </div>
+  <div class="tw-w-1/2">
+    <div class="tw-pt-56">
+      <div class="tw-rounded tw-border tw-border-solid tw-bg-background tw-border-secondary-300">
+        <div class="tw-h-12 tw-flex tw-items-center tw-rounded-t tw-bg-secondary-100 tw-w-full">
+          <h2 class="tw-uppercase tw-pl-4 tw-text-base tw-mb-0 tw-font-bold">
+            Start your 7-Day free trial of Bitwarden for {{ org }}
+          </h2>
+        </div>
+        <app-vertical-stepper linear>
+          <!-- Content is for demo purposes. Replace with form components for each step-->
+          <app-vertical-step label="Create Account" [editable]="false">
+            <!-- Replace content with Registration step -->
+            <p>This is content of "Step 1" that has editable set to false</p>
+            <button bitButton buttonType="primary" cdkStepperNext>Complete step</button>
+          </app-vertical-step>
+          <app-vertical-step label="Create Organization" subLabel="It better be a good org">
+            <!-- Replace with Org creation step -->
+            <p>This is content of "Step 2"</p>
+            <button bitButton buttonType="primary" cdkStepperNext>Complete step</button>
+          </app-vertical-step>
+          <app-vertical-step label="Billing">
+            <!-- Replace with Billing step -->
+            <p>This is content of "Step 3"</p>
+            <button bitButton buttonType="secondary" cdkStepperPrevious>Back</button>
+            <button bitButton buttonType="primary" cdkStepperNext>Complete step</button>
+          </app-vertical-step>
+          <app-vertical-step label="Confirmation Details" subLabel="Fancy sub label">
+            <!-- Replace with Confirmation details step -->
+            <p>This is any content of "Step 4"</p>
+            <button bitButton buttonType="primary" cdkStepperNext>Complete</button>
+          </app-vertical-step>
+        </app-vertical-stepper>
+      </div>
+    </div>
+  </div>
+</div>

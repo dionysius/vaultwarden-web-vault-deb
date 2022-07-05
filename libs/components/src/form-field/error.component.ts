@@ -26,6 +26,8 @@ export class BitErrorComponent {
         return this.i18nService.t("inputRequired");
       case "email":
         return this.i18nService.t("inputEmail");
+      case "minlength":
+        return this.i18nService.t("inputMinLength", this.error[1]?.requiredLength);
       default:
         // Attempt to show a custom error message.
         if (this.error[1]?.message) {

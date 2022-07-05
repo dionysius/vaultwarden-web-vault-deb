@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -12,13 +12,20 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
 
 @Component({
-  selector: "app-register",
-  templateUrl: "register.component.html",
+  selector: "app-register-form",
+  templateUrl: "./register-form.component.html",
 })
-export class RegisterComponent extends BaseRegisterComponent {
+export class RegisterFormComponent extends BaseRegisterComponent {
+  @Input() queryParamEmail: string;
+  @Input() enforcedPolicyOptions: MasterPasswordPolicyOptions;
+
+  showErrorSummary = false;
+
   constructor(
     formValidationErrorService: FormValidationErrorsService,
     formBuilder: FormBuilder,
@@ -30,6 +37,7 @@ export class RegisterComponent extends BaseRegisterComponent {
     stateService: StateService,
     platformUtilsService: PlatformUtilsService,
     passwordGenerationService: PasswordGenerationService,
+    private policyService: PolicyService,
     environmentService: EnvironmentService,
     logService: LogService
   ) {
@@ -47,5 +55,33 @@ export class RegisterComponent extends BaseRegisterComponent {
       environmentService,
       logService
     );
+  }
+
+  async ngOnInit() {
+    await super.ngOnInit();
+
+    if (this.queryParamEmail) {
+      this.formGroup.get("email")?.setValue(this.queryParamEmail);
+    }
+  }
+
+  async submit() {
+    if (
+      this.enforcedPolicyOptions != null &&
+      !this.policyService.evaluateMasterPassword(
+        this.masterPasswordScore,
+        this.formGroup.get("masterPassword")?.value,
+        this.enforcedPolicyOptions
+      )
+    ) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("masterPasswordPolicyRequirementsNotMet")
+      );
+      return;
+    }
+
+    await super.submit(false);
   }
 }

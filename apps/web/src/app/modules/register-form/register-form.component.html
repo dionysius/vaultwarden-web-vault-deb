@@ -1,0 +1,121 @@
+<form
+  #form
+  (ngSubmit)="submit()"
+  [appApiAction]="formPromise"
+  class="tw-container tw-mx-auto"
+  [formGroup]="formGroup"
+>
+  <div>
+    <div class="tw-mb-3">
+      <bit-form-field>
+        <bit-label>{{ "emailAddress" | i18n }}</bit-label>
+        <input bitInput type="email" formControlName="email" />
+        <bit-hint>{{ "emailAddressDesc" | i18n }}</bit-hint>
+      </bit-form-field>
+    </div>
+
+    <div class="tw-mb-3">
+      <bit-form-field>
+        <bit-label>{{ "name" | i18n }}</bit-label>
+        <input bitInput type="text" formControlName="name" />
+        <bit-hint>{{ "yourNameDesc" | i18n }}</bit-hint>
+      </bit-form-field>
+    </div>
+
+    <div class="tw-mb-3">
+      <app-callout
+        type="info"
+        [enforcedPolicyOptions]="enforcedPolicyOptions"
+        *ngIf="enforcedPolicyOptions"
+      >
+      </app-callout>
+      <bit-form-field>
+        <bit-label>{{ "masterPass" | i18n }}</bit-label>
+        <input
+          bitInput
+          (input)="updatePasswordStrength()"
+          type="{{ showPassword ? 'text' : 'password' }}"
+          formControlName="masterPassword"
+        />
+        <button type="button" bitSuffix bitButton (click)="togglePassword()">
+          <i
+            aria-hidden="true"
+            class="bwi bwi-lg bwi-eye"
+            [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
+          ></i>
+        </button>
+        <bit-hint>
+          <span class="tw-font-semibold">Important:</span>
+          {{ "masterPassImportant" | i18n }}
+        </bit-hint>
+      </bit-form-field>
+      <app-password-strength [score]="masterPasswordScore" [showText]="true">
+      </app-password-strength>
+    </div>
+
+    <div class="tw-mb-3">
+      <bit-form-field>
+        <bit-label>{{ "reTypeMasterPass" | i18n }}</bit-label>
+        <input
+          bitInput
+          type="{{ showPassword ? 'text' : 'password' }}"
+          formControlName="confirmMasterPassword"
+        />
+        <button type="button" bitSuffix bitButton (click)="togglePassword()">
+          <i
+            aria-hidden="true"
+            class="bwi bwi-lg bwi-eye"
+            [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
+          ></i>
+        </button>
+      </bit-form-field>
+    </div>
+
+    <div class="tw-mb-3">
+      <bit-form-field>
+        <bit-label>{{ "masterPassHint" | i18n }}</bit-label>
+        <input bitInput type="text" formControlName="hint" />
+        <bit-hint>{{ "masterPassHintDesc" | i18n }}</bit-hint>
+      </bit-form-field>
+    </div>
+
+    <div [hidden]="!showCaptcha()">
+      <iframe id="hcaptcha_iframe" height="80"></iframe>
+    </div>
+
+    <div class="tw-flex tw-items-start tw-mb-3" *ngIf="showTerms">
+      <div class="tw-flex tw-items-center tw-h-6">
+        <input
+          class="tw-w-4 tw-rounded tw-border tw-border-gray-300"
+          bitInput
+          type="checkbox"
+          formControlName="acceptPolicies"
+        />
+      </div>
+      <bit-label class="ml-2">
+        {{ "acceptPolicies" | i18n }}<br />
+        <a href="https://bitwarden.com/terms/" target="_blank" rel="noopener">{{
+          "termsOfService" | i18n
+        }}</a
+        >,
+        <a href="https://bitwarden.com/privacy/" target="_blank" rel="noopener">{{
+          "privacyPolicy" | i18n
+        }}</a>
+      </bit-label>
+    </div>
+
+    <div class="tw-flex tw-mb-3">
+      <bit-submit-button [loading]="form.loading">{{ "createAccount" | i18n }}</bit-submit-button>
+      <a
+        bitButton
+        buttonType="secondary"
+        routerLink="/login"
+        class="tw-inline-flex tw-items-center tw-ml-3 tw-px-3"
+      >
+        <i class="bwi bwi-sign-in tw-mr-2"></i>
+        {{ "logIn" | i18n }}
+      </a>
+    </div>
+    <bit-error-summary *ngIf="showErrorSummary" [formGroup]="formGroup"></bit-error-summary>
+  </div>
+</form>

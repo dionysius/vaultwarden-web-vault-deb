@@ -1,0 +1,22 @@
+<div>
+  <ul class="tw-flex tw-list-none tw-flex-col tw-flex-wrap tw-p-5">
+    <li *ngFor="let step of steps; let i = index; let isLast = last">
+      <app-vertical-step-content
+        [disabled]="isStepDisabled(i)"
+        [selected]="selectedIndex === i"
+        [step]="step"
+        [stepNumber]="i + 1"
+        (onSelectStep)="selectStepByIndex(i)"
+      ></app-vertical-step-content>
+      <div
+        class="tw-pl-7 tw-inline-block"
+        *ngIf="selectedIndex === i"
+        [ngTemplateOutlet]="selected ? selected.content : null"
+      ></div>
+      <div
+        class="tw-h-6 tw-ml-8 tw-border-0 tw-border-l tw-border-solid tw-border-secondary-300"
+        *ngIf="!isLast && !(selectedIndex === i)"
+      ></div>
+    </li>
+  </ul>
+</div>

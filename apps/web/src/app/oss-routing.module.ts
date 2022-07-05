@@ -24,6 +24,7 @@ import { VerifyRecoverDeleteComponent } from "./accounts/verify-recover-delete.c
 import { HomeGuard } from "./guards/home.guard";
 import { FrontendLayoutComponent } from "./layouts/frontend-layout.component";
 import { UserLayoutComponent } from "./layouts/user-layout.component";
+import { TrialInitiationComponent } from "./modules/trial-initiation/trial-initiation.component";
 import { IndividualVaultModule } from "./modules/vault/modules/individual-vault/individual-vault.module";
 import { OrganizationsRoutingModule } from "./organizations/organization-routing.module";
 import { AcceptFamilySponsorshipComponent } from "./organizations/sponsorships/accept-family-sponsorship.component";
@@ -63,6 +64,12 @@ const routes: Routes = [
         component: RegisterComponent,
         canActivate: [UnauthGuard],
         data: { titleId: "createAccount" },
+      },
+      {
+        path: "trial",
+        component: TrialInitiationComponent,
+        canActivate: [UnauthGuard],
+        data: { titleId: "startTrial" },
       },
       {
         path: "sso",

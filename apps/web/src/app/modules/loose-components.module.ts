@@ -22,7 +22,6 @@ import { VerifyRecoverDeleteComponent } from "../accounts/verify-recover-delete.
 import { NestedCheckboxComponent } from "../components/nested-checkbox.component";
 import { OrganizationSwitcherComponent } from "../components/organization-switcher.component";
 import { PasswordRepromptComponent } from "../components/password-reprompt.component";
-import { PasswordStrengthComponent } from "../components/password-strength.component";
 import { PremiumBadgeComponent } from "../components/premium-badge.component";
 import { FooterComponent } from "../layouts/footer.component";
 import { FrontendLayoutComponent } from "../layouts/frontend-layout.component";
@@ -158,6 +157,7 @@ import { FolderAddEditComponent } from "../vault/folder-add-edit.component";
 import { ShareComponent } from "../vault/share.component";
 
 import { PipesModule } from "./pipes/pipes.module";
+import { RegisterFormModule } from "./register-form/register-form.module";
 import { SharedModule } from "./shared.module";
 import { VaultFilterModule } from "./vault-filter/vault-filter.module";
 import { OrganizationBadgeModule } from "./vault/modules/organization-badge/organization-badge.module";
@@ -165,7 +165,13 @@ import { OrganizationBadgeModule } from "./vault/modules/organization-badge/orga
 // Please do not add to this list of declarations - we should refactor these into modules when doing so makes sense until there are none left.
 // If you are building new functionality, please create or extend a feature module instead.
 @NgModule({
-  imports: [SharedModule, VaultFilterModule, OrganizationBadgeModule, PipesModule],
+  imports: [
+    SharedModule,
+    VaultFilterModule,
+    OrganizationBadgeModule,
+    PipesModule,
+    RegisterFormModule,
+  ],
   declarations: [
     PremiumBadgeComponent,
     AcceptEmergencyComponent,
@@ -263,7 +269,6 @@ import { OrganizationBadgeModule } from "./vault/modules/organization-badge/orga
     PasswordGeneratorHistoryComponent,
     PasswordGeneratorPolicyComponent,
     PasswordRepromptComponent,
-    PasswordStrengthComponent,
     PaymentComponent,
     PaymentMethodComponent,
     PersonalOwnershipPolicyComponent,
@@ -418,7 +423,6 @@ import { OrganizationBadgeModule } from "./vault/modules/organization-badge/orga
     PasswordGeneratorHistoryComponent,
     PasswordGeneratorPolicyComponent,
     PasswordRepromptComponent,
-    PasswordStrengthComponent,
     PaymentComponent,
     PaymentMethodComponent,
     PersonalOwnershipPolicyComponent,

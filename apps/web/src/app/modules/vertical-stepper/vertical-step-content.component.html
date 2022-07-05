@@ -1,0 +1,45 @@
+<div class="tw-m-2.5 tw-text-center tw-h-16">
+  <button
+    (click)="selectStep()"
+    [disabled]="disabled"
+    class="tw-w-full tw-flex tw-border-none tw-bg-transparent tw-items-center"
+    [ngClass]="{
+      'hover:tw-bg-secondary-100': !disabled && step.editable
+    }"
+    [attr.aria-expanded]="selected"
+  >
+    <span
+      class="tw-rounded-full tw-font-bold tw-leading-9 tw-mr-3.5 tw-w-9"
+      *ngIf="!step.completed"
+      [ngClass]="{
+        'tw-text-contrast tw-bg-primary-500': selected,
+        'tw-text-main tw-bg-secondary-300': !selected && !disabled && step.editable,
+        'tw-text-muted tw-bg-transparent': disabled
+      }"
+    >
+      {{ stepNumber }}
+    </span>
+    <span
+      class="tw-text-contrast tw-bg-primary-500 tw-rounded-full tw-font-bold tw-leading-9 tw-mr-3.5 tw-w-9"
+      *ngIf="step.completed"
+    >
+      <i class="bwi bwi-fw bwi-check tw-p-1" aria-hidden="true"></i>
+    </span>
+    <div
+      class="tw-text-left tw-txt-main tw-leading-snug tw-h-12 tw-mt-3.5"
+      [ngClass]="{
+        'tw-font-bold': selected
+      }"
+    >
+      <p
+        class="main-label text tw-text-main tw-mb-1"
+        [ngClass]="{
+          'tw-mt-1': !step.subLabel
+        }"
+      >
+        {{ step.label }}
+      </p>
+      <p class="sub-label small tw-text-muted">{{ step.subLabel }}</p>
+    </div>
+  </button>
+</div>

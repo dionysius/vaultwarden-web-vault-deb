@@ -61,9 +61,12 @@ import {
   BadgeModule,
   ButtonModule,
   CalloutModule,
-  MenuModule,
+  FormFieldModule,
   SubmitButtonModule,
+  MenuModule,
 } from "@bitwarden/components";
+
+import { PasswordStrengthComponent } from "../components/password-strength.component";
 
 registerLocaleData(localeAf, "af");
 registerLocaleData(localeAz, "az");
@@ -117,6 +120,7 @@ registerLocaleData(localeZhCn, "zh-CN");
 registerLocaleData(localeZhTw, "zh-TW");
 
 @NgModule({
+  declarations: [PasswordStrengthComponent],
   imports: [
     CommonModule,
     DragDropModule,
@@ -132,6 +136,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     BadgeModule,
     ButtonModule,
     MenuModule,
+    FormFieldModule,
     SubmitButtonModule,
   ],
   exports: [
@@ -149,6 +154,8 @@ registerLocaleData(localeZhTw, "zh-TW");
     BadgeModule,
     ButtonModule,
     MenuModule,
+    FormFieldModule,
+    PasswordStrengthComponent,
     SubmitButtonModule,
   ],
   providers: [DatePipe],
