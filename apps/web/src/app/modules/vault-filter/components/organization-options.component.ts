@@ -120,6 +120,7 @@ export class OrganizationOptionsComponent {
         },
       });
     } else {
+      // Remove reset password
       const request = new OrganizationUserResetPasswordEnrollmentRequest();
       request.masterPasswordHash = "ignored";
       request.resetPasswordKey = null;

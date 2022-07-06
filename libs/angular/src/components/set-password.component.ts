@@ -128,6 +128,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
             );
 
             const resetRequest = new OrganizationUserResetPasswordEnrollmentRequest();
+            resetRequest.masterPasswordHash = masterPasswordHash;
             resetRequest.resetPasswordKey = encryptedKey.encryptedString;
 
             return this.apiService.putOrganizationUserResetPasswordEnrollment(
