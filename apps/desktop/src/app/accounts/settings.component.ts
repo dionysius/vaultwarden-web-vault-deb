@@ -68,6 +68,8 @@ export class SettingsComponent implements OnInit {
 
   currentUserEmail: string;
 
+  previousVaultTimeout: number = null;
+
   constructor(
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
@@ -173,6 +175,7 @@ export class SettingsComponent implements OnInit {
     // Security
     this.vaultTimeout.setValue(await this.stateService.getVaultTimeout());
     this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
+    this.previousVaultTimeout = this.vaultTimeout.value;
     this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
       this.saveVaultTimeoutOptions();
     });
@@ -195,6 +198,20 @@ export class SettingsComponent implements OnInit {
   }
 
   async saveVaultTimeoutOptions() {
+    if (this.vaultTimeout.value == null) {
+      const confirmed = await this.platformUtilsService.showDialog(
+        this.i18nService.t("neverLockWarning"),
+        "",
+        this.i18nService.t("yes"),
+        this.i18nService.t("cancel"),
+        "warning"
+      );
+      if (!confirmed) {
+        this.vaultTimeout.setValue(this.previousVaultTimeout);
+        return;
+      }
+    }
+
     if (this.vaultTimeoutAction === "logOut") {
       const confirmed = await this.platformUtilsService.showDialog(
         this.i18nService.t("vaultTimeoutLogOutConfirmation"),
@@ -222,6 +239,8 @@ export class SettingsComponent implements OnInit {
       );
       return;
     }
+
+    this.previousVaultTimeout = this.vaultTimeout.value;
 
     await this.vaultTimeoutService.setVaultTimeoutOptions(
       this.vaultTimeout.value,
