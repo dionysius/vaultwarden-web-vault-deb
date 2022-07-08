@@ -1,26 +1,22 @@
-import { ApiService } from "../abstractions/api.service";
-import { CipherService } from "../abstractions/cipher.service";
-import { CryptoService } from "../abstractions/crypto.service";
-import { FolderService as FolderServiceAbstraction } from "../abstractions/folder.service";
-import { I18nService } from "../abstractions/i18n.service";
-import { StateService } from "../abstractions/state.service";
-import { ServiceUtils } from "../misc/serviceUtils";
-import { Utils } from "../misc/utils";
-import { CipherData } from "../models/data/cipherData";
-import { FolderData } from "../models/data/folderData";
-import { Folder } from "../models/domain/folder";
-import { SymmetricCryptoKey } from "../models/domain/symmetricCryptoKey";
-import { TreeNode } from "../models/domain/treeNode";
-import { FolderRequest } from "../models/request/folderRequest";
-import { FolderResponse } from "../models/response/folderResponse";
-import { FolderView } from "../models/view/folderView";
+import { CipherService } from "../../abstractions/cipher.service";
+import { CryptoService } from "../../abstractions/crypto.service";
+import { FolderService as FolderServiceAbstraction } from "../../abstractions/folder/folder.service.abstraction";
+import { I18nService } from "../../abstractions/i18n.service";
+import { StateService } from "../../abstractions/state.service";
+import { ServiceUtils } from "../../misc/serviceUtils";
+import { Utils } from "../../misc/utils";
+import { CipherData } from "../../models/data/cipherData";
+import { FolderData } from "../../models/data/folderData";
+import { Folder } from "../../models/domain/folder";
+import { SymmetricCryptoKey } from "../../models/domain/symmetricCryptoKey";
+import { TreeNode } from "../../models/domain/treeNode";
+import { FolderView } from "../../models/view/folderView";
 
 const NestingDelimiter = "/";
 
 export class FolderService implements FolderServiceAbstraction {
   constructor(
     private cryptoService: CryptoService,
-    private apiService: ApiService,
     private i18nService: I18nService,
     private cipherService: CipherService,
     private stateService: StateService
@@ -106,21 +102,6 @@ export class FolderService implements FolderServiceAbstraction {
     return ServiceUtils.getTreeNodeObject(folders, id) as TreeNode<FolderView>;
   }
 
-  async saveWithServer(folder: Folder): Promise<any> {
-    const request = new FolderRequest(folder);
-
-    let response: FolderResponse;
-    if (folder.id == null) {
-      response = await this.apiService.postFolder(request);
-      folder.id = response.id;
-    } else {
-      response = await this.apiService.putFolder(folder.id, request);
-    }
-
-    const data = new FolderData(response);
-    await this.upsert(data);
-  }
-
   async upsert(folder: FolderData | FolderData[]): Promise<any> {
     let folders = await this.stateService.getEncryptedFolders();
     if (folders == null) {
@@ -184,10 +165,5 @@ export class FolderService implements FolderServiceAbstraction {
         this.cipherService.upsert(updates);
       }
     }
-  }
-
-  async deleteWithServer(id: string): Promise<any> {
-    await this.apiService.deleteFolder(id);
-    await this.delete(id);
   }
 }

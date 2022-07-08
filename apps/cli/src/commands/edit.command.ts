@@ -1,7 +1,8 @@
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { FolderService } from "@bitwarden/common/abstractions/folder.service";
+import { FolderApiServiceAbstraction } from "@bitwarden/common/abstractions/folder/folder-api.service.abstraction";
+import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherExport } from "@bitwarden/common/models/export/cipherExport";
 import { CollectionExport } from "@bitwarden/common/models/export/collectionExport";
@@ -21,7 +22,8 @@ export class EditCommand {
     private cipherService: CipherService,
     private folderService: FolderService,
     private cryptoService: CryptoService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private folderApiService: FolderApiServiceAbstraction
   ) {}
 
   async run(
@@ -125,7 +127,7 @@ export class EditCommand {
     folderView = FolderExport.toView(req, folderView);
     const encFolder = await this.folderService.encrypt(folderView);
     try {
-      await this.folderService.saveWithServer(encFolder);
+      await this.folderApiService.save(encFolder);
       const updatedFolder = await this.folderService.get(folder.id);
       const decFolder = await updatedFolder.decrypt();
       const res = new FolderResponse(decFolder);

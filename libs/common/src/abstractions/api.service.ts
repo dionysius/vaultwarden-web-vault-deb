@@ -23,7 +23,6 @@ import { EmergencyAccessInviteRequest } from "../models/request/emergencyAccessI
 import { EmergencyAccessPasswordRequest } from "../models/request/emergencyAccessPasswordRequest";
 import { EmergencyAccessUpdateRequest } from "../models/request/emergencyAccessUpdateRequest";
 import { EventRequest } from "../models/request/eventRequest";
-import { FolderRequest } from "../models/request/folderRequest";
 import { GroupRequest } from "../models/request/groupRequest";
 import { IapCheckRequest } from "../models/request/iapCheckRequest";
 import { ApiTokenRequest } from "../models/request/identityToken/apiTokenRequest";
@@ -117,7 +116,6 @@ import {
   EmergencyAccessViewResponse,
 } from "../models/response/emergencyAccessResponse";
 import { EventResponse } from "../models/response/eventResponse";
-import { FolderResponse } from "../models/response/folderResponse";
 import { GroupDetailsResponse, GroupResponse } from "../models/response/groupResponse";
 import { IdentityCaptchaResponse } from "../models/response/identityCaptchaResponse";
 import { IdentityTokenResponse } from "../models/response/identityTokenResponse";
@@ -182,6 +180,16 @@ import { UserKeyResponse } from "../models/response/userKeyResponse";
 import { SendAccessView } from "../models/view/sendAccessView";
 
 export abstract class ApiService {
+  send: (
+    method: "GET" | "POST" | "PUT" | "DELETE",
+    path: string,
+    body: any,
+    authed: boolean,
+    hasResponse: boolean,
+    apiUrl?: string,
+    alterHeaders?: (headers: Headers) => void
+  ) => Promise<any>;
+
   postIdentityToken: (
     request: PasswordTokenRequest | SsoTokenRequest | ApiTokenRequest
   ) => Promise<IdentityTokenResponse | IdentityTwoFactorResponse | IdentityCaptchaResponse>;
@@ -227,11 +235,6 @@ export abstract class ApiService {
 
   getUserBillingHistory: () => Promise<BillingHistoryResponse>;
   getUserBillingPayment: () => Promise<BillingPaymentResponse>;
-
-  getFolder: (id: string) => Promise<FolderResponse>;
-  postFolder: (request: FolderRequest) => Promise<FolderResponse>;
-  putFolder: (id: string, request: FolderRequest) => Promise<FolderResponse>;
-  deleteFolder: (id: string) => Promise<any>;
 
   getSend: (id: string) => Promise<SendResponse>;
   postSendAccess: (

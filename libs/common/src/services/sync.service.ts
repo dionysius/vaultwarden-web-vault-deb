@@ -2,7 +2,8 @@ import { ApiService } from "../abstractions/api.service";
 import { CipherService } from "../abstractions/cipher.service";
 import { CollectionService } from "../abstractions/collection.service";
 import { CryptoService } from "../abstractions/crypto.service";
-import { FolderService } from "../abstractions/folder.service";
+import { FolderApiServiceAbstraction } from "../abstractions/folder/folder-api.service.abstraction";
+import { InternalFolderService } from "../abstractions/folder/folder.service.abstraction";
 import { KeyConnectorService } from "../abstractions/keyConnector.service";
 import { LogService } from "../abstractions/log.service";
 import { MessagingService } from "../abstractions/messaging.service";
@@ -40,7 +41,7 @@ export class SyncService implements SyncServiceAbstraction {
   constructor(
     private apiService: ApiService,
     private settingsService: SettingsService,
-    private folderService: FolderService,
+    private folderService: InternalFolderService,
     private cipherService: CipherService,
     private cryptoService: CryptoService,
     private collectionService: CollectionService,
@@ -52,6 +53,7 @@ export class SyncService implements SyncServiceAbstraction {
     private stateService: StateService,
     private organizationService: OrganizationService,
     private providerService: ProviderService,
+    private folderApiService: FolderApiServiceAbstraction,
     private logoutCallback: (expired: boolean) => Promise<void>
   ) {}
 
@@ -127,7 +129,7 @@ export class SyncService implements SyncServiceAbstraction {
           (!isEdit && localFolder == null) ||
           (isEdit && localFolder != null && localFolder.revisionDate < notification.revisionDate)
         ) {
-          const remoteFolder = await this.apiService.getFolder(notification.id);
+          const remoteFolder = await this.folderApiService.get(notification.id);
           if (remoteFolder != null) {
             await this.folderService.upsert(new FolderData(remoteFolder));
             this.messagingService.send("syncedUpsertedFolder", { folderId: notification.id });

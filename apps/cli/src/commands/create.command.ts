@@ -4,7 +4,8 @@ import * as path from "path";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { FolderService } from "@bitwarden/common/abstractions/folder.service";
+import { FolderApiServiceAbstraction } from "@bitwarden/common/abstractions/folder/folder-api.service.abstraction";
+import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherExport } from "@bitwarden/common/models/export/cipherExport";
@@ -26,7 +27,8 @@ export class CreateCommand {
     private folderService: FolderService,
     private stateService: StateService,
     private cryptoService: CryptoService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private folderApiService: FolderApiServiceAbstraction
   ) {}
 
   async run(
@@ -148,7 +150,7 @@ export class CreateCommand {
   private async createFolder(req: FolderExport) {
     const folder = await this.folderService.encrypt(FolderExport.toView(req));
     try {
-      await this.folderService.saveWithServer(folder);
+      await this.folderApiService.save(folder);
       const newFolder = await this.folderService.get(folder.id);
       const decFolder = await newFolder.decrypt();
       const res = new FolderResponse(decFolder);
