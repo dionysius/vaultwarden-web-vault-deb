@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Konto loomine"
   },
+  "startTrial": {
+    "message": "Alusta prooviperioodi"
+  },
   "logIn": {
     "message": "Logi sisse"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Ülemparooliga pääsed oma kontole ligi. On äärmiselt tähtis, et ülemparool ei ununeks. Selle parooli taastamine ei ole mingil moel võimalik."
+  },
+  "masterPassImportant": {
+    "message": "Ülemparooli ei saa taastada, kui sa selle unustama peaksid!"
   },
   "masterPassHintDesc": {
     "message": "Vihje võib abiks olla olukorras, kui oled ülemparooli unustanud."
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "Vigane e-posti aadress."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Vajalik on ülemparooli sisestamine."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Vajalik on ülemparooli uuesti sisestamine."
+  },
+  "masterPasswordMinLength": {
     "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
   },
   "masterPassDoesntMatch": {
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Märkeruudu markeerimisel nõustud järgnevaga:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Kasutustingimuste ja Privaatsuspoliitikaga pole nõustutud."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Sisestus on nõutav."
+  },
+  "inputEmail": {
+    "message": "Tegu pole e-posti aadressiga."
+  },
+  "inputMinLength": {
+    "message": "Sisend peab olema vähemalt $COUNT$ tähemärki pikk.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ välja vajab sinu tähelepanu.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

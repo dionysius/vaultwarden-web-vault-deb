@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "建立帳戶"
   },
+  "startTrial": {
+    "message": "立即試用"
+  },
   "logIn": {
     "message": "登入"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "主密碼是用於存取密碼庫的密碼。它非常重要，請您不要忘記它。若您忘記了主密碼，沒有任何方法能將其復原。"
+  },
+  "masterPassImportant": {
+    "message": "如果您忘記主密碼，沒有復原的方法！"
   },
   "masterPassHintDesc": {
     "message": "主密碼提示可以在您忘記主密碼時幫助您回憶主密碼。"
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "無效的電子郵件地址。"
   },
-  "masterPassRequired": {
-    "message": "必須填入主密碼。"
+  "masterPasswordRequired": {
+    "message": "必須填寫主密碼。"
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "必須再次輸入主密碼。"
+  },
+  "masterPasswordMinLength": {
     "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
@@ -1076,7 +1085,7 @@
     "message": "已刪除帳戶"
   },
   "accountDeletedDesc": {
-    "message": "您的帳戶已經關閉，所有關聯的資料已經被刪除。"
+    "message": "您的 Bitwarden 帳戶和密碼庫資料已被永久刪除。"
   },
   "myAccount": {
     "message": "我的帳戶"
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "一旦核取此方塊，即表示您同意下列條款："
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "尚未接受服務條款與隱私權政策。"
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "必須輸入內容。"
+  },
+  "inputEmail": {
+    "message": "輸入的不是電子郵件地址。"
+  },
+  "inputMinLength": {
+    "message": "必須輸入至少 $COUNT$ 個字元。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "您需注意上方的 $COUNT$ 個欄位。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

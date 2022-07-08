@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Создать аккаунт"
   },
+  "startTrial": {
+    "message": "Начать пробный период"
+  },
   "logIn": {
     "message": "Войти"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Мастер-пароль – это ключ к вашему защищенному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
+  },
+  "masterPassImportant": {
+    "message": "Мастер-пароли невозможно восстановить, если вы их забудете!"
   },
   "masterPassHintDesc": {
     "message": "Подсказка к мастер-паролю может помочь вам его вспомнить."
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "Неверный адрес email."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Требуется мастер-пароль."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Необходимо ввести мастер-пароль повторно."
+  },
+  "masterPasswordMinLength": {
     "message": "Мастер-пароль должен содержать не менее 8 символов."
   },
   "masterPassDoesntMatch": {
@@ -1076,7 +1085,7 @@
     "message": "Аккаунт удален"
   },
   "accountDeletedDesc": {
-    "message": "Ваша учетная запись была закрыта и все связанные с ней данные были удалены."
+    "message": "Ваш аккаунт был закрыт, а все связанные с ним данные удалены."
   },
   "myAccount": {
     "message": "Мой аккаунт"
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Отметив этот флажок, вы соглашаетесь со следующим:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Условия предоставления услуг и Политика конфиденциальности не были подтверждены."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Требуются вводные данные."
+  },
+  "inputEmail": {
+    "message": "Вводные данные — не адрес эл. почты."
+  },
+  "inputMinLength": {
+    "message": "Вводимые данные должны содежать не менее $COUNT$ символов.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ поля(ей) выше требуют вашего внимания.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

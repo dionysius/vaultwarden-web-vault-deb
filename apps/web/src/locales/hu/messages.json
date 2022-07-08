@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Fiók létrehozása"
   },
+  "startTrial": {
+    "message": "Próbaverzió indítása"
+  },
   "logIn": {
     "message": "Bejelentkezés"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "A mesterjelszó a jelszó a széf eléréséhez. Nagyon fontos a mesterjelszó ismerete. Nincs mód a jelszó visszaállítására."
+  },
+  "masterPassImportant": {
+    "message": "Az elfelejtett mesterjelszavak nem állíthatók helyre!"
   },
   "masterPassHintDesc": {
     "message": "A mesterjelszó emlékeztető segíthet emlékezni a jelszóra elfelejtése esetén."
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "Az email cím érvénytelen."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "A mesterjelszó megadása kötelező."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "A mesterjelszó ismételt megadása kötelező."
+  },
+  "masterPasswordMinLength": {
     "message": "A mesterjelszó legyen legalább 8 karakter hosszú."
   },
   "masterPassDoesntMatch": {
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "A doboz bejelölésével elfogadjuk a következőket:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Az adatbevitel kötelező."
+  },
+  "inputEmail": {
+    "message": "Az megadott adat nem email cím."
+  },
+  "inputMinLength": {
+    "message": "Az adat legyen legalább $COUNT$ karakter hosszú.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ mező fentebb figyelmet érdemel.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

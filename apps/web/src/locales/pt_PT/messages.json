@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Criar conta"
   },
+  "startTrial": {
+    "message": "Iniciar avaliação"
+  },
   "logIn": {
     "message": "Iniciar sessão"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não existe maneira de recuperar a palavra-passe no caso de a esquecer."
+  },
+  "masterPassImportant": {
+    "message": "Senhas mestres não podem ser recuperadas se as esquecer!"
   },
   "masterPassHintDesc": {
     "message": "Uma dica da palavra-passe mestra pode ajudar a lembrar-se da sua palavra-passe se a esquecer."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Endereço de email inválido."
   },
-  "masterPassRequired": {
-    "message": "A palavra-passe mestra é requerida."
+  "masterPasswordRequired": {
+    "message": "A senha mestra é obrigatória."
   },
-  "masterPassLength": {
-    "message": "A palavra-passe mestra tem de ter pelo menos 8 caracteres."
+  "confirmMasterPasswordRequired": {
+    "message": "É necessário redigitar a senha mestra."
+  },
+  "masterPasswordMinLength": {
+    "message": "A senha mestra deve ter pelo menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "A confirmação da palavra-passe mestra não corresponde."
@@ -1076,7 +1085,7 @@
     "message": "Conta eliminada"
   },
   "accountDeletedDesc": {
-    "message": "A sua conta foi encerrada e todos os dados associados foram eliminados."
+    "message": "A sua conta foi encerrada e todos os dados associados eliminados."
   },
   "myAccount": {
     "message": "Minha conta"
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "By checking this box you agree to the following:"
   },
-  "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  "acceptPoliciesRequired": {
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
   },
   "termsOfService": {
     "message": "Termos de serviço"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Entrada necessária."
+  },
+  "inputEmail": {
+    "message": "A entrada não é um endereço de e-mail."
+  },
+  "inputMinLength": {
+    "message": "A entrada deve ter pelo menos $COUNT$ caracteres.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ campos(s) acima precisam da sua atenção.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

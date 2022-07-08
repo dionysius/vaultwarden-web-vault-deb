@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Hesap aç"
   },
+  "startTrial": {
+    "message": "Denemeyi başlat"
+  },
   "logIn": {
     "message": "Giriş yap"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Ana parola, kasanıza ulaşmak için kullanacağınız paroladır. Ana parolanızı unutmamanız çok önemlidir. Unutursanız parolalarınızı asla kurtaramazsınız."
+  },
+  "masterPassImportant": {
+    "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
     "message": "Ana parolanızı unutursanız bu ipucuna bakınca size ana parolanızı hatırlatacak bir şey yazabilirsiniz."
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "Geçersiz e-posta adresi."
   },
-  "masterPassRequired": {
-    "message": "Ana parola gerekli."
+  "masterPasswordRequired": {
+    "message": "Ana parola gereklidir."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Ana parolayı yeniden yazmalısınız."
+  },
+  "masterPasswordMinLength": {
     "message": "Ana parola en az 8 karakter uzunluğunda olmalıdır."
   },
   "masterPassDoesntMatch": {
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Bu kutuyu işaretleyerek aşağıdakileri kabul etmiş olursunuz:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Hizmet Koşulları ve Gizlilik Politikası kabul edilmemiş."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Girdi gerekli."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

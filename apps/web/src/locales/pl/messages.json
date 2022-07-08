@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Utwórz konto"
   },
+  "startTrial": {
+    "message": "Rozpocznij okres próbny"
+  },
   "logIn": {
     "message": "Zaloguj się"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, aby je pamiętać, ponieważ zapomnianego hasła nie będzie można odzyskać."
+  },
+  "masterPassImportant": {
+    "message": "Hasła główne nie mogą zostać odzyskane, jeśli je zapomnisz!"
   },
   "masterPassHintDesc": {
     "message": "Podpowiedź do hasła głównego może pomóc Ci przypomnieć hasło, jeśli je zapomnisz."
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "Adres e-mail jest nieprawidłowy."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Hasło główne jest wymagane."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Wymagane jest ponowne wpisanie hasła głównego."
+  },
+  "masterPasswordMinLength": {
     "message": "Hasło główne musi zawierać co najmniej 8 znaków."
   },
   "masterPassDoesntMatch": {
@@ -1152,7 +1161,7 @@
     "message": "Zmień język używany przez sejf."
   },
   "enableFavicon": {
-    "message": "Pokaż ikonkę strony"
+    "message": "Pokaż ikony stron"
   },
   "faviconDesc": {
     "message": "Pokaż rozpoznawalny obrazek obok każdego elementu."
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "Zaznaczając tę opcję, akceptujesz:"
   },
-  "acceptPoliciesError": {
-    "message": "Nie zaakceptowałeś regulaminu i polityki prywatności."
+  "acceptPoliciesRequired": {
+    "message": "Warunki użytkowania i polityka prywatności nie zostały zaakceptowane."
   },
   "termsOfService": {
     "message": "Regulamin"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Dane wejściowe są wymagane."
+  },
+  "inputEmail": {
+    "message": "Dane wejściowe nie są adresem e-mail."
+  },
+  "inputMinLength": {
+    "message": "Dane wejściowe muszą zawierać co najmniej $COUNT$ znaki(-ów).",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "Pola powyżej wymagające Twojej uwagi: $COUNT$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

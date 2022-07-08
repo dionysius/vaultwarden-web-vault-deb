@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Konto erstellen"
   },
+  "startTrial": {
+    "message": "Probephase starten"
+  },
   "logIn": {
     "message": "Anmelden"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Das Master-Passwort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass Sie das Passwort nicht vergessen, da es keine Möglichkeit gibt es zurückzusetzen."
+  },
+  "masterPassImportant": {
+    "message": "Master-Passwörter können nicht wiederhergestellt werden, wenn du sie vergisst!"
   },
   "masterPassHintDesc": {
     "message": "Ein Master-Passwort-Hinweis kann Ihnen helfen, sich an das Passwort zu erinnern, wenn Sie es vergessen haben sollten."
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "Ungültige E-Mail Adresse."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Das Master-Passwort ist erforderlich."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Erneute Eingabe des Master-Passworts ist erforderlich."
+  },
+  "masterPasswordMinLength": {
     "message": "Das Master-Passwort muss mindestens 8 Zeichen lang sein."
   },
   "masterPassDoesntMatch": {
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Durch Anwählen dieses Kästchens erklären Sie sich mit folgendem einverstanden:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Die Nutzungsbedingungen und Datenschutzerklärung wurden nicht akzeptiert."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Angabe ist erforderlich."
+  },
+  "inputEmail": {
+    "message": "Angabe ist keine E-Mail-Adresse."
+  },
+  "inputMinLength": {
+    "message": "Angabe muss mindestens $COUNT$ Zeichen lang sein.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ Feld(er) oben benötigt deine Aufmerksamkeit.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

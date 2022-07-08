@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Créer un compte"
   },
+  "startTrial": {
+    "message": "Commencer la Période d'Essai"
+  },
   "logIn": {
     "message": "S'identifier"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez."
+  },
+  "masterPassImportant": {
+    "message": "Le mot de passe maître ne peut pas être récupérés si vous l'oubliez!"
   },
   "masterPassHintDesc": {
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Adresse e-mail invalide."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Le mot de passe maître est requis."
   },
-  "masterPassLength": {
-    "message": "Le mot de passe maître doit au moins contenir 8 caractères."
+  "confirmMasterPasswordRequired": {
+    "message": "Le mot de passe maître doit être entré de nouveau."
+  },
+  "masterPasswordMinLength": {
+    "message": "Le mot de passe maître doit comporter au moins 8 caractères."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmation du mot de passe maître ne correspond pas."
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "En cochant cette case, vous acceptez les éléments suivants :"
   },
-  "acceptPoliciesError": {
-    "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
+  "acceptPoliciesRequired": {
+    "message": "Les Conditions d'Utilisation et la Politique de Confidentialité n'ont pas été acceptées."
   },
   "termsOfService": {
     "message": "Conditions d'utilisation"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Entrée requise."
+  },
+  "inputEmail": {
+    "message": "L'entrée n'est pas une adresse e-mail."
+  },
+  "inputMinLength": {
+    "message": "L'entrée doit comporter au moins $COUNT$ caractères.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ champ(s) ci-dessus nécessitent votre attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

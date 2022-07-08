@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Hesab yarat"
   },
+  "startTrial": {
+    "message": "Sınağa Başla"
+  },
   "logIn": {
     "message": "Giriş et"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Ana parol, anbarınıza müraciət etmək üçün istifadə edəcəyiniz şifrədir. Ana parolu yadda saxlamaq çox vacibdir. Unutsanız, parolu bərpa etməyin heç bir yolu yoxdur."
+  },
+  "masterPassImportant": {
+    "message": "Unutsanız, Ana parollar bərpa edilə bilməz!"
   },
   "masterPassHintDesc": {
     "message": "Ana parol məsləhəti, unutduğunuz parolu xatırlamağınıza kömək edir."
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "Etibarsız e-poçt ünvanı."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Ana parol lazımdır."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Ana parolun yenidən yazılması lazımdır."
+  },
+  "masterPasswordMinLength": {
     "message": "Ana parol ən azı 8 simvol uzunluğunda olmalıdır."
   },
   "masterPassDoesntMatch": {
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Bu qutunu işarələyərək aşağıdakılarla razılaşırsınız:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Xidmət Şərtləri və Gizlilik Siyasəti qəbul edilməyib."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Giriş lazımdır."
+  },
+  "inputEmail": {
+    "message": "Giriş, bir e-poçt ünvanı deyil."
+  },
+  "inputMinLength": {
+    "message": "Giriş, ən azı $COUNT$ simvol uzunluğunda olmalıdır.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "Yuxarıdakı $COUNT$ sahənin diqqətinizə ehtiyacı var.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

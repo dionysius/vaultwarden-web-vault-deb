@@ -428,16 +428,16 @@
     "message": "Mi caja fuerte"
   },
   "allVaults": {
-    "message": "Todas las bóvedas"
+    "message": "Todas las cajas fuertes"
   },
   "vault": {
     "message": "Caja fuerte"
   },
   "vaults": {
-    "message": "Bóvedas"
+    "message": "Cajas fuertes"
   },
   "vaultItems": {
-    "message": "Elementos de la bóveda"
+    "message": "Elementos de la caja fuerte"
   },
   "moveSelectedToOrg": {
     "message": "Mover los seleccionados a la organización"
@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Crear cuenta"
   },
+  "startTrial": {
+    "message": "Iniciar período de prueba"
+  },
   "logIn": {
     "message": "Identificarse"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "La contraseña maestra es la clave que utilizas para acceder a tu caja fuerte. Es muy importante que no olvides tu contraseña maestra. No hay forma de recuperarla si la olvidas."
+  },
+  "masterPassImportant": {
+    "message": "¡Las contraseñas maestras no pueden ser recuperadas si las olvidas!"
   },
   "masterPassHintDesc": {
     "message": "Una pista de tu contraseña maestra puede ayudarte a recordarla en caso de que la olvides."
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "Correo electrónico no válido."
   },
-  "masterPassRequired": {
-    "message": "Contraseña maestra requerida."
+  "masterPasswordRequired": {
+    "message": "Se requiere una contraseña maestra."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Se requiere volver a teclear la contraseña maestra."
+  },
+  "masterPasswordMinLength": {
     "message": "La contraseña maestra debe tener al menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
@@ -667,7 +676,7 @@
     "message": "Contraseña maestra no válida"
   },
   "lockNow": {
-    "message": "Bloquear"
+    "message": "Bloquear ahora"
   },
   "noItemsInList": {
     "message": "No hay elementos que listar."
@@ -787,7 +796,7 @@
     "message": "Utilice cualquier clave de seguridad WebAuthn habilitada para acceder a su cuenta."
   },
   "webAuthnMigrated": {
-    "message": "(Migrado del FIDO)"
+    "message": "(Migrado desde FIDO)"
   },
   "emailTitle": {
     "message": "Correo electrónico"
@@ -832,7 +841,7 @@
     }
   },
   "moveSelectedItemsCountDesc": {
-    "message": "Ha seleccionado $COUNT$ elemento(s). $MOVEABLE_COUNT$ elemento(s) pueden ser movidos a una organización, $NONMOVEABLE_COUNT$ no puede.",
+    "message": "Ha seleccionado $COUNT$ elemento(s). Se pueden mover $MOVEABLE_COUNT$ elemento(s) a una organización, no se pueden mover $NONMOVEABLE_COUNT$.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -924,7 +933,7 @@
     "message": "Separador de palabras"
   },
   "capitalize": {
-    "message": "Mayúsculas iniciales",
+    "message": "Capitalizar",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -1076,7 +1085,7 @@
     "message": "Cuenta eliminada"
   },
   "accountDeletedDesc": {
-    "message": "Tu cuenta ha sido cerrada y toda la información asociada ha sido eliminada."
+    "message": "Tu cuenta de Bitwarden y los datos de tu caja fuerte fueron eliminados permanentemente."
   },
   "myAccount": {
     "message": "Mi cuenta"
@@ -1239,7 +1248,7 @@
     "message": "Activado"
   },
   "activate": {
-    "message": "Activate"
+    "message": "Activar"
   },
   "premium": {
     "message": "Premium",
@@ -1267,7 +1276,7 @@
     "message": "Desactivar"
   },
   "deactivate": {
-    "message": "Deactivate"
+    "message": "Desactivar"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Este proveedor de autenticación en dos pasos está habilitado para tu cuenta."
@@ -1548,7 +1557,7 @@
     }
   },
   "weakPasswordsReport": {
-    "message": "Informe de contraseñas débiles"
+    "message": "Contraseñas débiles"
   },
   "weakPasswordsReportDesc": {
     "message": "Contraseñas débiles pueden ser fácilmente adivinadas por hackers y herramientas automatizadas que se utilizan para descifrar contraseñas- El generador de contraseñas de Bitwarden puede ayudarle a crear contraseñas fuertes."
@@ -1569,7 +1578,7 @@
     "message": "No hay elementos en su caja fuerte que tengan contraseñas débiles."
   },
   "reusedPasswordsReport": {
-    "message": "Informe de contraseñas reutilizadas"
+    "message": "Contraseñas reutilizadas"
   },
   "reusedPasswordsReportDesc": {
     "message": "Si un servicio que usa está comprometido, reutilizar la misma contraseña en otros lugares puede permitir que los hackers accedan fácilmente a más de sus cuentas en línea. Debe utilizar una contraseña única para cada cuenta o servicio."
@@ -1590,7 +1599,7 @@
     "message": "No hay inicios de sesión en su caja fuerte que tengan contraseñas que esten siendo reutilizadas."
   },
   "reusedXTimes": {
-    "message": "Reutilizada $COUNT$ vez/veces",
+    "message": "Reutilizada $COUNT$ veces",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1620,7 +1629,7 @@
     }
   },
   "goodNews": {
-    "message": "Buenas Noticias",
+    "message": "Buenas noticias",
     "description": "ex. Good News, No Breached Accounts Found!"
   },
   "breachUsernameFound": {
@@ -1673,7 +1682,7 @@
     "description": "Add more credit to your account's balance."
   },
   "amount": {
-    "message": "Importe",
+    "message": "Cantidad",
     "description": "Dollar amount, or quantity."
   },
   "creditDelayed": {
@@ -1780,7 +1789,7 @@
     "message": "mes"
   },
   "monthAbbr": {
-    "message": "mo.",
+    "message": "mes",
     "description": "Short abbreviation for 'month'"
   },
   "paymentChargedAnnually": {
@@ -1802,7 +1811,7 @@
     "message": "Información de pago"
   },
   "billingInformation": {
-    "message": "Información de Facturación"
+    "message": "Información de facturación"
   },
   "creditCard": {
     "message": "Tarjeta de crédito"
@@ -1844,7 +1853,7 @@
     "message": "Estado"
   },
   "nextCharge": {
-    "message": "Cargo siguiente"
+    "message": "Siguiente cobro"
   },
   "details": {
     "message": "Detalles"
@@ -1853,7 +1862,7 @@
     "message": "Descargar licencia"
   },
   "updateLicense": {
-    "message": "Actualizar Licencia"
+    "message": "Actualizar licencia"
   },
   "updatedLicense": {
     "message": "Licencia actualizada"
@@ -1893,7 +1902,7 @@
     "message": "Añadir método de pago"
   },
   "changePaymentMethod": {
-    "message": "Cambiar Método de Pago"
+    "message": "Cambiar método de pago"
   },
   "invoices": {
     "message": "Facturas"
@@ -2038,7 +2047,7 @@
     "description": "Free as in 'free beer'."
   },
   "planDescFree": {
-    "message": "Para usuarios de prueba o personales, permite compartir con $COUNT$ usuario más.",
+    "message": "Para usuarios de prueba o personales, permite compartir con $COUNT$ usuarios más.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2062,7 +2071,7 @@
     "message": "Empresas"
   },
   "planDescEnterprise": {
-    "message": "Para empresas u otras organizaciones grandes."
+    "message": "Para empresas u otras grandes organizaciones."
   },
   "freeForever": {
     "message": "Gratis para siempre"
@@ -2584,7 +2593,7 @@
     }
   },
   "deactivatedUserId": {
-    "message": "Deactivated user $ID$.",
+    "message": "Usuario $ID$ desactivado.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2593,7 +2602,7 @@
     }
   },
   "activatedUserId": {
-    "message": "Activated user $ID$.",
+    "message": "Usuario $ID$ activado.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2602,7 +2611,7 @@
     }
   },
   "deactivateUserId": {
-    "message": "Deactivate user $ID$?",
+    "message": "¿Desactivar el usuario $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2611,7 +2620,7 @@
     }
   },
   "activateUserId": {
-    "message": "Activate user $ID$?",
+    "message": "¿Activar el usuario $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "Al seleccionar esta casilla, acepta lo siguiente:"
   },
-  "acceptPoliciesError": {
-    "message": "Todavía no has aceptado los términos del servicio y la política de privacidad."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Términos y condiciones del servicio"
@@ -3667,7 +3676,7 @@
     "message": "Deshabilitado"
   },
   "deactivated": {
-    "message": "Deactivated"
+    "message": "Desactivado"
   },
   "sendLink": {
     "message": "Enlace Send",
@@ -4307,10 +4316,10 @@
     "message": "Eliminado con éxito"
   },
   "bulkDeactivatedMessage": {
-    "message": "Deactivated successfully"
+    "message": "Desactivado correctamente"
   },
   "bulkActivatedMessage": {
-    "message": "Activated successfully"
+    "message": "Activado correctamente"
   },
   "bulkFilteredMessage": {
     "message": "Excluido, no aplicable a esta acción."
@@ -4322,10 +4331,10 @@
     "message": "Eliminar usuarios"
   },
   "deactivateUsers": {
-    "message": "Deactivate Users"
+    "message": "Desactivar usuarios"
   },
   "activateUsers": {
-    "message": "Activate Users"
+    "message": "Activar usuarios"
   },
   "error": {
     "message": "Error"
@@ -4609,13 +4618,13 @@
     "message": "Tipo de enlace"
   },
   "idpSingleSignOnServiceUrl": {
-    "message": "Single Sign On Service URL"
+    "message": "URL del servicio de inicio de sesión único"
   },
   "idpSingleLogoutServiceUrl": {
     "message": "Single Log Out Service URL"
   },
   "idpX509PublicCert": {
-    "message": "X509 Public Certificate"
+    "message": "Certificado público X509"
   },
   "idpOutboundSigningAlgorithm": {
     "message": "Outbound Signing Algorithm"
@@ -4657,10 +4666,10 @@
     "message": "Reclaimed free plan"
   },
   "redeem": {
-    "message": "Redeem"
+    "message": "Canjear"
   },
   "sponsoredFamiliesSelectOffer": {
-    "message": "Select the organization you would like sponsored"
+    "message": "Seleccione la organización que desea patrocinar"
   },
   "familiesSponsoringOrgSelect": {
     "message": "Which Free Families offer would you like to redeem?"
@@ -4879,10 +4888,10 @@
     "message": "GRATIS con patrocinio"
   },
   "viewBillingSyncToken": {
-    "message": "View Billing Sync Token"
+    "message": "Ver el token de sincronización de facturación"
   },
   "generateBillingSyncToken": {
-    "message": "Generate Billing Sync Token"
+    "message": "Generar el token de sincronización de facturación"
   },
   "copyPasteBillingSync": {
     "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
@@ -4891,16 +4900,16 @@
     "message": "Your Billing Sync token can access and edit this organization's subscription settings."
   },
   "manageBillingSync": {
-    "message": "Manage Billing Sync"
+    "message": "Administrar la sincronización de facturación"
   },
   "setUpBillingSync": {
-    "message": "Set Up Billing Sync"
+    "message": "Configurar la sincronización de facturación"
   },
   "generateToken": {
-    "message": "Generate Token"
+    "message": "Generar token"
   },
   "rotateToken": {
-    "message": "Rotate Token"
+    "message": "Rotar token"
   },
   "rotateBillingSyncTokenWarning": {
     "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
@@ -4915,7 +4924,7 @@
     "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
   },
   "billingSyncApiKeyRotated": {
-    "message": "Token rotated."
+    "message": "Token rotado."
   },
   "billingSync": {
     "message": "Billing Sync"
@@ -4930,25 +4939,25 @@
     "message": "Billing Sync Token"
   },
   "active": {
-    "message": "Active"
+    "message": "Activo"
   },
   "inactive": {
     "message": "Inactive"
   },
   "sentAwaitingSync": {
-    "message": "Sent (Awaiting Sync)"
+    "message": "Enviado (esperando sincronización)"
   },
   "sent": {
-    "message": "Sent"
+    "message": "Enviado"
   },
   "requestRemoved": {
-    "message": "Removed (Awaiting Sync)"
+    "message": "Eliminado (esperando sincronización)"
   },
   "requested": {
-    "message": "Requested"
+    "message": "Solicitado"
   },
   "formErrorSummaryPlural": {
-    "message": "$COUNT$ fields above need your attention.",
+    "message": "$COUNT$ campos anteriores necesitan tu atención.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4957,10 +4966,10 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 field above needs your attention."
+    "message": "1 campo de los anteriores necesita su atención."
   },
   "fieldRequiredError": {
-    "message": "$FIELDNAME$ is required.",
+    "message": "$FIELDNAME$ es requerido.",
     "placeholders": {
       "fieldname": {
         "content": "$1",
@@ -4969,19 +4978,19 @@
     }
   },
   "required": {
-    "message": "required"
+    "message": "requerido"
   },
   "idpSingleSignOnServiceUrlRequired": {
-    "message": "Required if Entity ID is not a URL."
+    "message": "Requerido si el ID de la entidad no es una URL."
   },
   "openIdOptionalCustomizations": {
-    "message": "Optional Customizations"
+    "message": "Personalizaciones opcionales"
   },
   "openIdAuthorityRequired": {
-    "message": "Required if Authority is not valid."
+    "message": "Requerido si la Autoridad no es válida."
   },
   "separateMultipleWithComma": {
-    "message": "Separate multiple with a comma."
+    "message": "Separados por comas."
   },
   "sessionTimeout": {
     "message": "Su sesión ha expirado. Por favor, vuelva e intente iniciar sesión de nuevo."
@@ -5011,50 +5020,50 @@
     }
   },
   "accessDenied": {
-    "message": "Access Denied. You do not have permission to view this page."
+    "message": "Acceso denegado. No tiene permiso para ver esta página."
   },
   "masterPassword": {
-    "message": "Master Password"
+    "message": "Contraseña maestra"
   },
   "security": {
-    "message": "Security"
+    "message": "Seguridad"
   },
   "keys": {
-    "message": "Keys"
+    "message": "Claves"
   },
   "billingHistory": {
-    "message": "Billing History"
+    "message": "Historial de facturación"
   },
   "backToReports": {
-    "message": "Back to Reports"
+    "message": "Volver a los informes"
   },
   "organizationPicker": {
-    "message": "Organization picker"
+    "message": "Nombre de la organización"
   },
   "currentOrganization": {
-    "message": "Current organization",
+    "message": "Organización actual",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountSettings": {
-    "message": "Account Settings"
+    "message": "Configuración de la cuenta"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Generador"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "¿Qué desea generar?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Tipo de contraseña"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerar nombre de usuario"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generar nombre de usuario"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tipo de nombre de usuario"
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email",
@@ -5070,14 +5079,14 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random",
+    "message": "Aleatorio",
     "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Palabra aleatoria"
   },
   "service": {
-    "message": "Service"
+    "message": "Servicio"
   },
   "unknownCipher": {
     "message": "Unknown Item, you may need to request permission to access this item."
@@ -5086,7 +5095,7 @@
     "message": "You cannot redeem for the active account. Enter a different email."
   },
   "revokeWhenExpired": {
-    "message": "Expires $DATE$",
+    "message": "Caduca $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -5095,7 +5104,7 @@
     }
   },
   "awaitingSyncSingular": {
-    "message": "Token rotated $DAYS$ day ago. Update the billing sync token in your self-hosted organization settings.",
+    "message": "El token se ha rotado hace $DAYS$ día. Actualice el token de sincronización de facturación en los ajustes de su organización.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5104,7 +5113,7 @@
     }
   },
   "awaitingSyncPlural": {
-    "message": "Token rotated $DAYS$ days ago. Update the billing sync token in your self-hosted organization settings.",
+    "message": "El token se ha rotado hace $DAYS$ días. Actualice el token de sincronización de facturación en los ajustes de su organización.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5113,14 +5122,14 @@
     }
   },
   "lastSync": {
-    "message": "Last Sync",
+    "message": "Última sincronización",
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Self-hosted sponsorships synced."
   },
   "billingManagedByProvider": {
-    "message": "Managed by $PROVIDER$",
+    "message": "Gestionado por $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -5129,21 +5138,21 @@
     }
   },
   "billingContactProviderForAssistance": {
-    "message": "Please reach out to them for further assistance",
+    "message": "Por favor, contacte con ellos para obtener más ayuda",
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
     "message": "Forwarded Email Alias"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Generar un alias de correo electrónico mediante un servicio de reenvío externo."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Nombre del host",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "Token de acceso API"
   },
   "deviceVerification": {
     "message": "Verificación del dispositivo"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Entrada requerida."
+  },
+  "inputEmail": {
+    "message": "La entrada no es una dirección de correo electrónico."
+  },
+  "inputMinLength": {
+    "message": "La entrada debe tener al menos $COUNT$ caracteres.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ campo(s) anteriores necesitan su atención.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

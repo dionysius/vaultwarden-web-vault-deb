@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Account aanmaken"
   },
+  "startTrial": {
+    "message": "Start proefperiode"
+  },
   "logIn": {
     "message": "Inloggen"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Het hoofdwachtwoord is het wachtwoord waarmee je toegang krijgt tot je beveiligde kluis. Het is belangrijk dat je het hoofdwachtwoord niet vergeet, want er is geen manier om het te herstellen."
+  },
+  "masterPassImportant": {
+    "message": "Hoofdwachtwoorden kun je niet herstellen als je ze vergeet!"
   },
   "masterPassHintDesc": {
     "message": "Een hoofdwachtwoordhint kan je helpen je wachtwoord te herinneren als je het vergeten bent."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Ongeldig e-mailadres."
   },
-  "masterPassRequired": {
-    "message": "Hoofdwachtwoord is vereist."
+  "masterPasswordRequired": {
+    "message": "Hoofdwachtwoord vereist."
   },
-  "masterPassLength": {
-    "message": "Het hoofdwachtwoord moet minimaal 8 tekens lang zijn."
+  "confirmMasterPasswordRequired": {
+    "message": "Type je hoofdwachtwoord opnieuw in."
+  },
+  "masterPasswordMinLength": {
+    "message": "Hoofdwachtwoord moet minimaal 8 tekens lang zijn."
   },
   "masterPassDoesntMatch": {
     "message": "De hoofdwachtwoorden komen niet overeen."
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "Door dit vakje aan te vinken ga je akkoord met het volgende:"
   },
-  "acceptPoliciesError": {
-    "message": "Algemene voorwaarden en privacybeleid zijn nog niet erkend."
+  "acceptPoliciesRequired": {
+    "message": "Je hebt de algemene voorwaarden en het privacybeleid nog niet erkend."
   },
   "termsOfService": {
     "message": "Algemene gebruiksvoorwaarden"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Invoer vereist."
+  },
+  "inputEmail": {
+    "message": "Invoer is geen e-mailadres."
+  },
+  "inputMinLength": {
+    "message": "Invoer moet minimaal $COUNT$ tekens lang zijn.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ veld(en) hierboven hebben je aandacht nodig.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "অ্যাকাউন্ট তৈরি"
   },
+  "startTrial": {
+    "message": "Start Trial"
+  },
   "logIn": {
     "message": "Log In"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassImportant": {
+    "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
     "message": "A master password hint can help you remember your password if you forget it."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "অকার্যকর ইমেইল ঠিকানা।"
   },
-  "masterPassRequired": {
-    "message": "মূল পাসওয়ার্ড প্রয়োজন।"
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "মূল পাসওয়ার্ড কমপক্ষে ৮ অক্ষর দীর্ঘ হওয়া উচিত।"
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "মূল পাসওয়ার্ড নিশ্চিতকরণ মেলেনি।"
@@ -1076,7 +1085,7 @@
     "message": "Account Deleted"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Your Bitwarden account and vault data were permanently deleted."
   },
   "myAccount": {
     "message": "My Account"
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "এই বাক্সটি টিক করে আপনি নিম্নলিখিতগুলিতে সম্মত হন:"
   },
-  "acceptPoliciesError": {
-    "message": "পরিষেবার শর্তাদি এবং গোপনীয়তা নীতি স্বীকার করা হয়নি।"
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "সেবা পাবার শর্ত"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input is required."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

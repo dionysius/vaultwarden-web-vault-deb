@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Vytvoriť účet"
   },
+  "startTrial": {
+    "message": "Začať skúšobné obdobie"
+  },
   "logIn": {
     "message": "Prihlásiť sa"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Hlavné heslo je heslo, ktoré použijete na prístup k svojmu trezoru. Je veľmi dôležité, aby ste svoje hlavné heslo nezabudli. Neexistuje možnosť, ako heslo obnoviť v prípade, že ho zabudnete."
+  },
+  "masterPassImportant": {
+    "message": "Hlavné heslo sa nedá obnoviť, ak ho zabudnete!"
   },
   "masterPassHintDesc": {
     "message": "Nápoveď k hlavnému heslu vám môže pomôcť spomenúť si na heslo, ak ho zabudnete."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Neplatná emailová adresa."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Hlavné heslo je povinné."
   },
-  "masterPassLength": {
-    "message": "Hlavné heslo musí obsahovať aspoň 8 znakov."
+  "confirmMasterPasswordRequired": {
+    "message": "Vyžaduje sa opätovné zadanie hlavného hesla."
+  },
+  "masterPasswordMinLength": {
+    "message": "Hlavné heslo musí mať aspoň 8 znakov."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrdenie hlavného hesla sa nezhoduje."
@@ -1076,7 +1085,7 @@
     "message": "Účet bol odstránený"
   },
   "accountDeletedDesc": {
-    "message": "Váš účet bol uzavretý a všetky súvisiace dáta vymazané."
+    "message": "Váš účet a dáta z trezora boli trvalo vymazané."
   },
   "myAccount": {
     "message": "Môj účet"
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Označením tohto políčka súhlasíte s nasledovným:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Neboli akceptované Podmienky používania a zásady Ochrany osobných údajov."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Vstup je povinný."
+  },
+  "inputEmail": {
+    "message": "Vstupom nie je e-mailová adresa."
+  },
+  "inputMinLength": {
+    "message": "Vstup musí mať aspoň $COUNT$ znakov.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "Niektoré polia ($COUNT$) vyžadujú vašu pozornosť.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

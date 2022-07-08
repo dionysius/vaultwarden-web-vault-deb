@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Krei konton"
   },
+  "startTrial": {
+    "message": "Start Trial"
+  },
   "logIn": {
     "message": "Saluti"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "La ĉefa pasvorto estas la pasvorto, kiun vi uzas por aliri vian trezorejon. Tre gravas, ke vi ne forgesu vian ĉefan pasvorton. Ne eblas retrovi la pasvorton, se vi forgesos ĝin."
+  },
+  "masterPassImportant": {
+    "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
     "message": "Majstra pasvorta sugesto povas helpi vin memori vian pasvorton se vi forgesas ĝin."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Nevalida retpoŝta adreso."
   },
-  "masterPassRequired": {
-    "message": "Majstra pasvorto necesas."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Majstra pasvorto devas havi almenaŭ 8 signojn."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "La konfirmo de la ĉefa pasvorto ne interrespondas."
@@ -727,7 +736,7 @@
     "message": "Sendu retpoŝtan kontrol-kodon denove"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Uzu alian du-paŝan ensalutan metodon"
+    "message": "Uzu alian metodon de identigo en du-ŝtupa saluto"
   },
   "insertYubiKey": {
     "message": "Enmetu vian YubiKey en la USB-havenon de via komputilo, tiam tuŝu ĝian butonon."
@@ -745,7 +754,7 @@
     "message": "Bonvolu uzi subtenatan tTT-legilon (kiel Chrome) kaj / aŭ aldoni pliajn provizantojn pli bone subtenatajn tra tTT-legiloj (kiel aŭtentikiga programo)."
   },
   "twoStepOptions": {
-    "message": "Elektebloj de la du-faktora aŭtentigo"
+    "message": "Elektebloj de la du-ŝtupa saluto"
   },
   "recoveryCodeDesc": {
     "message": "Ĉu vi perdis aliron al ĉiuj viaj du-faktoraj provizantoj? Uzu vian reakiran kodon por malŝalti ĉiujn du-faktorajn provizantojn de via konto."
@@ -1037,7 +1046,7 @@
     "message": "Ĉu vi zorgas pri tio, ke via konto estas ensalutinta sur alia aparato? Sekvu sube por senrajtigi ĉiujn komputilojn aŭ aparatojn, kiujn vi antaŭe uzis. Ĉi tiu sekureca paŝo rekomendas se vi antaŭe uzis publikan komputilon aŭ hazarde konservis vian pasvorton sur aparato, kiu ne estas via. Ĉi tiu paŝo ankaŭ malplenigos ĉiujn antaŭe memoritajn du-paŝajn ensalutajn sesiojn. "
   },
   "deauthorizeSessionsWarning": {
-    "message": "Se vi daŭrigos vian adiaŭadon de la nuna seanco, necesos vin saluti denove. Oni ankaŭ demandos de vi du-faktoran aŭtentigon, se la opcio estas ebligita. La seancoj aktivaj sur aliaj aparatoj povas resti daŭre aktivaj ankoraŭ unu horon."
+    "message": "Se vi daŭrigos vian adiaŭadon de la nuna seanco, necesos vin saluti denove. Oni ankaŭ demandos de vi du-faktoran aŭtentigon, se tiu elekteblo estas ebligita. La seancoj aktivaj sur aliaj aparatoj povas resti daŭre aktivaj ankoraŭ unu horon."
   },
   "sessionsDeauthorized": {
     "message": "Ĉiuj Sesioj Neaŭtorizitaj"
@@ -1134,7 +1143,7 @@
     }
   },
   "options": {
-    "message": "Opcioj"
+    "message": "Elektebloj"
   },
   "preferences": {
     "message": "Preferences"
@@ -1214,7 +1223,7 @@
     "message": "Domajnoj ĝisdatigitaj"
   },
   "twoStepLogin": {
-    "message": "Du-faktora aŭtentigo"
+    "message": "Du-ŝtupa saluto"
   },
   "twoStepLoginDesc": {
     "message": "Sekurigu vian konton postulante plian paŝon kiam vi ensalutas."
@@ -1264,7 +1273,7 @@
     "message": "Administri"
   },
   "disable": {
-    "message": "Malebligi"
+    "message": "Neebligi"
   },
   "deactivate": {
     "message": "Deactivate"
@@ -1300,7 +1309,7 @@
     "message": "Skani ĉi tiun QR-kodon per via aŭtentikiga programo"
   },
   "key": {
-    "message": "Ŝlosilo"
+    "message": "Konigilo"
   },
   "twoStepAuthenticatorEnterCode": {
     "message": "Enigu la rezultan 6-ciferan konfirmkodon de la programo"
@@ -1378,7 +1387,7 @@
     "message": "YubiKeys ĝisdatigis"
   },
   "disableAllKeys": {
-    "message": "Malebligi ĉiujn ŝlosilojn"
+    "message": "Neebligi ĉiujn ŝlosilojn"
   },
   "twoFactorDuoDesc": {
     "message": "Enmetu la informojn pri Bitwarden-aplikaĵo de via panelo de Duo Admin."
@@ -1453,7 +1462,7 @@
     "message": "Web vault and browser extensions on a desktop/laptop with a WebAuthn enabled browser (Chrome, Opera, Vivaldi, or Firefox with FIDO U2F enabled)."
   },
   "twoFactorRecoveryYourCode": {
-    "message": "Via kodo de senpaneigo de la du-faktora aŭtentigo de Bitwarden"
+    "message": "Via kodo de senpaneigo de la du-ŝtupa saluto de Bitwarden"
   },
   "twoFactorRecoveryNoCode": {
     "message": "Vi ankoraŭ ne ebligis du-paŝajn ensalutajn provizantojn. Post kiam vi ebligis du-ŝtupan ensalut-provizanton, vi povas kontroli ĉi tie vian reakiran kodon."
@@ -2383,10 +2392,10 @@
     "message": "Ebligita / ĝisdatigita du-ŝtupa ensaluto."
   },
   "disabled2fa": {
-    "message": "Du-faktora aŭtentigo malebligita."
+    "message": "Neebligita du-ŝtupa saluto."
   },
   "recovered2fa": {
-    "message": "Konto senpaneigita el du-faktora aŭtentigo."
+    "message": "Konto senpaneigita el du-ŝtupa saluto."
   },
   "failedLogin": {
     "message": "Ensaluta provo malsukcesis kun malĝusta pasvorto."
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "Markante ĉi tiun keston vi konsentas pri jeno:"
   },
-  "acceptPoliciesError": {
-    "message": "Kondiĉoj pri Servo kaj Privateca Politiko ne estis agnoskitaj."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Kondiĉoj por Servo"
@@ -3528,7 +3537,7 @@
     "message": "Identigilo"
   },
   "organizationIdentifier": {
-    "message": "Identigilo de la organizaĵo"
+    "message": "Identigilo de la organizo"
   },
   "ssoLogInWithOrgIdentifier": {
     "message": "Ensalutu per la unika ensaluta portalo de via organizo. Bonvolu enigi la identigilon de via organizo por komenci."
@@ -3552,7 +3561,7 @@
     "message": "SSO-Validado Malsukcesis"
   },
   "ssoIdentifierRequired": {
-    "message": "Organiza Identigilo necesas."
+    "message": "La identigilo de la organizo estas postulata."
   },
   "unlinkSso": {
     "message": "Malkonekti SSO"
@@ -3664,7 +3673,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
-    "message": "Malebligita"
+    "message": "Neebligita"
   },
   "deactivated": {
     "message": "Deactivated"
@@ -3892,7 +3901,7 @@
     "message": "Pro entreprena politiko, vi ne rajtas konservi artikolojn al via persona trezorejo. Ŝanĝu la opcion Proprieto al organizo kaj elektu el disponeblaj Kolektoj."
   },
   "disableSend": {
-    "message": "Malebligi Sendi"
+    "message": "Neebligi la Send"
   },
   "disableSendPolicyDesc": {
     "message": "Ne permesu al uzantoj krei aŭ redakti Bitwarden Sendon. Forigi ekzistantan Sendon estas ankoraŭ permesita.",
@@ -3902,7 +3911,7 @@
     "message": "Organizaj uzantoj, kiuj povas administri la politikojn de la organizo, estas esceptitaj de la devigo de ĉi tiu politiko."
   },
   "sendDisabled": {
-    "message": "Sendu malebligita",
+    "message": "Send neebligita",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -4241,7 +4250,7 @@
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
   },
   "resetPasswordOrgKeysError": {
-    "message": "Organization Keys response is null"
+    "message": "La respondo de la identigilo de la organizo estas nula"
   },
   "resetPasswordDetailsError": {
     "message": "Reset Password Details response is null"
@@ -4753,7 +4762,7 @@
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "keyConnectorUrl": {
-    "message": "Key Connector URL"
+    "message": "URL de la Key Connector"
   },
   "sendVerificationCode": {
     "message": "Send a verification code to your email"
@@ -4837,10 +4846,10 @@
     "message": "Disabled SSO"
   },
   "enabledKeyConnector": {
-    "message": "Enabled Key Connector"
+    "message": "Aktivigita Key Connector"
   },
   "disabledKeyConnector": {
-    "message": "Disabled Key Connector"
+    "message": "Neebligita Key Connector"
   },
   "keyConnectorWarning": {
     "message": "Once members begin using Key Connector, your Organization cannot revert to Master Password decryption. Proceed only if you are comfortable deploying and managing a key server."
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input is required."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

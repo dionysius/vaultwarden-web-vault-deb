@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "创建账户"
   },
+  "startTrial": {
+    "message": "开始试用"
+  },
   "logIn": {
     "message": "登录"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "主密码是您访问密码库的密码。它非常重要，请您不要忘记。一旦忘记，无任何办法恢复此密码。"
+  },
+  "masterPassImportant": {
+    "message": "主密码忘记后，将无法恢复！"
   },
   "masterPassHintDesc": {
     "message": "主密码提示可以在你忘记密码时帮你回忆起来。"
@@ -623,10 +629,13 @@
   "invalidEmail": {
     "message": "无效的电子邮件地址。"
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "必须填写主密码。"
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "必须填写确认主密码。"
+  },
+  "masterPasswordMinLength": {
     "message": "主密码至少需要 8 个字符。"
   },
   "masterPassDoesntMatch": {
@@ -645,7 +654,7 @@
     "message": "电子邮件地址"
   },
   "yourVaultIsLocked": {
-    "message": "您的密码库已被锁定，请验证您的主密码以继续。"
+    "message": "您的密码库已锁定，请验证您的主密码以继续。"
   },
   "unlock": {
     "message": "解锁​​​​"
@@ -1076,7 +1085,7 @@
     "message": "账户已删除"
   },
   "accountDeletedDesc": {
-    "message": "您的账户已关闭，所有相关数据也已被删除。"
+    "message": "您的 Bitwarden 账户和密码库数据已被永久删除。"
   },
   "myAccount": {
     "message": "我的账户"
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "选中此框表示您同意："
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "尚未同意服务条款和隐私政策。"
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "必须输入内容。"
+  },
+  "inputEmail": {
+    "message": "输入的不是电子邮件地址。"
+  },
+  "inputMinLength": {
+    "message": "至少输入 $COUNT$ 个字符。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "上面的 $COUNT$ 个字段需要您注意。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Стварыць уліковы запіс"
   },
+  "startTrial": {
+    "message": "Start Trial"
+  },
   "logIn": {
     "message": "Увайсці"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Асноўны пароль — ключ да вашага бяспечнага сховішча. Ён вельмі важны, таму не забывайце яго. Аднавіць асноўны пароль немагчыма."
+  },
+  "masterPassImportant": {
+    "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
     "message": "Падказка да асноўнага пароля можа дапамагчы вам яго ўспомніць."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Памылковы адрас электроннай пошты."
   },
-  "masterPassRequired": {
-    "message": "Патрабуецца асноўны пароль."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Асноўны пароль павінен быць даўжынёй не менш за 8 сімвалаў."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Асноўныя паролі не супадаюць."
@@ -1076,7 +1085,7 @@
     "message": "Уліковы запіс выдалены"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Your Bitwarden account and vault data were permanently deleted."
   },
   "myAccount": {
     "message": "Мой уліковы запіс"
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "By checking this box you agree to the following:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input is required."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

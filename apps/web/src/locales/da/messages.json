@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Opret konto"
   },
+  "startTrial": {
+    "message": "Start prøveperiode"
+  },
   "logIn": {
     "message": "Log ind"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Hovedadgangskoden er den adgangskode, du bruger til at få adgang til din boks. Det er meget vigtigt, at du ikke glemmer din hovedadgangskode. Der er ingen måde hvorpå koden kan genoprettes, i tilfælde af at du glemmer den."
+  },
+  "masterPassImportant": {
+    "message": "Hovedadgangskoder kan ikke gendannes, hvis de glemmes!"
   },
   "masterPassHintDesc": {
     "message": "Et tip til hovedadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer den."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Ugyldig e-mailadresse."
   },
-  "masterPassRequired": {
-    "message": "Hovedadgangskode er påkrævet."
+  "masterPasswordRequired": {
+    "message": "Hovedadgangskode er obligatorisk."
   },
-  "masterPassLength": {
-    "message": "Hovedadgangskoden skal være på mindst 8 tegn."
+  "confirmMasterPasswordRequired": {
+    "message": "Hovedadgangskode kræves angivet igen."
+  },
+  "masterPasswordMinLength": {
+    "message": "Hovedadgangskode skal udgøre min. 8 tegn."
   },
   "masterPassDoesntMatch": {
     "message": "De to hovedadgangskoder matcher ikke."
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "Ved at markere dette felt accepterer du følgende:"
   },
-  "acceptPoliciesError": {
-    "message": "Servicevilkår og fortrolighedspolitik er ikke blevet bekræftet."
+  "acceptPoliciesRequired": {
+    "message": "Tjenestevilkår og Fortrolighedspolitik er ikke blevet accepteret."
   },
   "termsOfService": {
     "message": "Servicevilkår"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input obligatorisk."
+  },
+  "inputEmail": {
+    "message": "Input er ikke en gyldig e-mailadresse."
+  },
+  "inputMinLength": {
+    "message": "Input skal udgøre min. $COUNT$ tegn.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$-felt(er) ovenfor kræver din opmærksomhed.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

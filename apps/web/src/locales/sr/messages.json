@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Креирај налог"
   },
+  "startTrial": {
+    "message": "Start Trial"
+  },
   "logIn": {
     "message": "Пријавите се"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Главна Лозинка је лозинка коју користите за приступ Вашем сефу. Врло је важно да је не заборавите. Не постоји начин да повратите лозинку у случају да је заборавите."
+  },
+  "masterPassImportant": {
+    "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
     "message": "Савет Главне Лозинке може да Вам помогне да се је потсетите ако је заборавите."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Неисправан имејл."
   },
-  "masterPassRequired": {
-    "message": "Главна Лозинка је неопходна."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Главна Лозинка треба имати бар 8 знака."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Потврђена Главна Лозинка се не подудара."
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "Означавањем овог поља пристајете на следеће:"
   },
-  "acceptPoliciesError": {
-    "message": "Услови услуге и Политика приватности нису признати."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Услови коришћења услуге"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input is required."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

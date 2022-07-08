@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nome do domínio",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -422,22 +422,22 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Eu"
   },
   "myVault": {
     "message": "Meu Cofre"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Todos os Cofres"
   },
   "vault": {
     "message": "Cofre"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "Cofres"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "Itens do Cofre"
   },
   "moveSelectedToOrg": {
     "message": "Mover Selecionados para a organização"
@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Criar Conta"
   },
+  "startTrial": {
+    "message": "Iniciar Período de Testes"
+  },
   "logIn": {
     "message": "Iniciar Sessão"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "A senha mestra é a senha que você usa para acessar o seu cofre. É muito importante que você não esqueça sua senha mestra. Não há maneira de recuperar a senha caso você se esqueça."
+  },
+  "masterPassImportant": {
+    "message": "Senhas mestres não podem ser recuperadas se você esquecê-la!"
   },
   "masterPassHintDesc": {
     "message": "Uma dica de senha mestra pode ajudá-lo(a) a lembrar a senha caso você esqueça."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Endereço de e-mail inválido."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "A senha mestra é obrigatória."
   },
-  "masterPassLength": {
-    "message": "A senha mestra deve ter pelo menos 8 caracteres."
+  "confirmMasterPasswordRequired": {
+    "message": "A senha mestra é necessária."
+  },
+  "masterPasswordMinLength": {
+    "message": "A senha mestra deve ter ao menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "A confirmação da senha mestra não corresponde."
@@ -1137,13 +1146,13 @@
     "message": "Opções"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Preferências"
   },
   "preferencesDesc": {
-    "message": "Customize your web vault experience."
+    "message": "Personalize sua experiência no cofre web."
   },
   "preferencesUpdated": {
-    "message": "Preferences updated"
+    "message": "Preferências atualizadas"
   },
   "language": {
     "message": "Idioma"
@@ -1152,10 +1161,10 @@
     "message": "Altere o idioma usado pelo cofre web."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Mostrar ícones do site"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Mostrar uma imagem reconhecível ao lado de cada login."
   },
   "enableGravatars": {
     "message": "Habilitar Gravatar",
@@ -1239,7 +1248,7 @@
     "message": "Habilitado"
   },
   "activate": {
-    "message": "Activate"
+    "message": "Ativar"
   },
   "premium": {
     "message": "Premium",
@@ -1267,7 +1276,7 @@
     "message": "Desabilitar"
   },
   "deactivate": {
-    "message": "Deactivate"
+    "message": "Desativado"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Este provedor de login em duas etapas está ativado em sua conta."
@@ -1466,7 +1475,7 @@
     "message": "Relatórios"
   },
   "reportsDesc": {
-    "message": "Identify and close security gaps in your online accounts by clicking the reports below.",
+    "message": "Identifique e feche as lacunas de segurança em suas contas online clicando nos relatórios abaixo.",
     "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -2233,10 +2242,10 @@
     "message": "Você tem certeza que deseja remover este(a) usuário(a)?"
   },
   "deactivateUserConfirmation": {
-    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+    "message": "O membro já não terá acesso à organização, mas ainda terá acesso ao seu cofre individual."
   },
   "activateUserConfirmation": {
-    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+    "message": "Tem certeza de que deseja ativar este usuário, concedendo-lhes o acesso à organização?"
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Aviso! Este usuário precisa do Conector de Chave para gerenciar sua criptografia. Remover este usuário de sua organização desativará permanentemente sua conta. Essa ação não pode ser desfeita. Você quer prosseguir?"
@@ -2584,7 +2593,7 @@
     }
   },
   "deactivatedUserId": {
-    "message": "Deactivated user $ID$.",
+    "message": "Usuário $ID$ desativado.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2593,7 +2602,7 @@
     }
   },
   "activatedUserId": {
-    "message": "Activated user $ID$.",
+    "message": "Usuário $ID$ ativado.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2602,7 +2611,7 @@
     }
   },
   "deactivateUserId": {
-    "message": "Deactivate user $ID$?",
+    "message": "Desativar o usuário $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2611,7 +2620,7 @@
     }
   },
   "activateUserId": {
-    "message": "Activate user $ID$?",
+    "message": "Ativar o usuário $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Ao marcar esta caixa, você concorda com o seguinte:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
   },
   "termsOfService": {
@@ -3667,7 +3676,7 @@
     "message": "Desativado"
   },
   "deactivated": {
-    "message": "Deactivated"
+    "message": "Desativado"
   },
   "sendLink": {
     "message": "Link do Send",
@@ -4307,10 +4316,10 @@
     "message": "Removido com sucesso"
   },
   "bulkDeactivatedMessage": {
-    "message": "Deactivated successfully"
+    "message": "Desativado com sucesso"
   },
   "bulkActivatedMessage": {
-    "message": "Activated successfully"
+    "message": "Ativado com sucesso"
   },
   "bulkFilteredMessage": {
     "message": "Excluído, não aplicável para esta ação."
@@ -4322,10 +4331,10 @@
     "message": "Remover Usuários"
   },
   "deactivateUsers": {
-    "message": "Deactivate Users"
+    "message": "Desativar Usuários"
   },
   "activateUsers": {
-    "message": "Activate Users"
+    "message": "Ativar usuários"
   },
   "error": {
     "message": "Erro"
@@ -4501,10 +4510,10 @@
     "message": "O tempo limite do seu cofre excede a restrição definida por sua organização."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Tempo limite mínimo personalizado é 1 minuto."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault Timeout is not within allowed range."
+    "message": "Tempo limite do cofre não está dentro do intervalo permitido."
   },
   "disablePersonalVaultExport": {
     "message": "Desabilitar Exportação de Cofre Pessoal"
@@ -4624,7 +4633,7 @@
     "message": "Permitir Retorno de Autenticação Não Solicitada"
   },
   "idpAllowOutboundLogoutRequests": {
-    "message": "Allow outbound logout requests"
+    "message": "Permitir pedidos de saída"
   },
   "idpSignAuthenticationRequests": {
     "message": "Assinar pedidos de autenticação"
@@ -4750,7 +4759,7 @@
     "message": "Patrocínio Removido"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Erro de Key Connector: certifique-se de que a Key Connector está disponível e funcionando corretamente."
   },
   "keyConnectorUrl": {
     "message": "URL de Conector de Chave"
@@ -4879,25 +4888,25 @@
     "message": "GRÁTIS com patrocínio"
   },
   "viewBillingSyncToken": {
-    "message": "View Billing Sync Token"
+    "message": "Ver Token de Faturamento Sync"
   },
   "generateBillingSyncToken": {
-    "message": "Generate Billing Sync Token"
+    "message": "Gerar token de faturamento Sync"
   },
   "copyPasteBillingSync": {
-    "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
+    "message": "Copie e cole esse token nas configurações de Faturamento Sync da sua organização auto-hospedada."
   },
   "billingSyncCanAccess": {
-    "message": "Your Billing Sync token can access and edit this organization's subscription settings."
+    "message": "Seu token de faturamento Sync pode acessar e editar as configurações de assinatura desta organização."
   },
   "manageBillingSync": {
-    "message": "Manage Billing Sync"
+    "message": "Gerenciar sincronização de faturamento"
   },
   "setUpBillingSync": {
-    "message": "Set Up Billing Sync"
+    "message": "Configurar sincronização de faturamento"
   },
   "generateToken": {
-    "message": "Generate Token"
+    "message": "Gerar o token"
   },
   "rotateToken": {
     "message": "Rotate Token"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input is required."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

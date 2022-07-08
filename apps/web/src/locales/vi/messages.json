@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Tạo tài khoản"
   },
+  "startTrial": {
+    "message": "Start Trial"
+  },
   "logIn": {
     "message": "Đăng nhập"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Mật khẩu chính là mật khẩu cho kho mật khẩu của bạn. Mật khẩu này rất quan trọng và bạn không nên quên nó của mình. Bạn sẽ không thể khôi phục lại mật khẩu chính của bạn nếu bạn quên nó."
+  },
+  "masterPassImportant": {
+    "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
     "message": "Gợi ý mật khẩu có thể giúp bạn nhớ lại mật khẩu chính của mình nếu bạn quên nó."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Địa chỉ email không hợp lệ."
   },
-  "masterPassRequired": {
-    "message": "Cần phải có mật khẩu chính."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Mật khẩu chính phải có ít nhất 8 kí tự."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Xác minh mật khẩu chính không đúng."
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "By checking this box you agree to the following:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input is required."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

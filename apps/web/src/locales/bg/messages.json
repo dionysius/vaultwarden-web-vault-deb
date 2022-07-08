@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Създаване на абонамент"
   },
+  "startTrial": {
+    "message": "Стартиране на пробния период"
+  },
   "logIn": {
     "message": "Вписване"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Главната парола се използва за достъп до трезора ви. Запомнете я добре, защото възстановяването ѝ е абсолютно невъзможно."
+  },
+  "masterPassImportant": {
+    "message": "Главната парола не може да бъде възстановена, ако я забравите!"
   },
   "masterPassHintDesc": {
     "message": "Ако сте забравили главната парола, то подсказването може да ви помогне да си я припомните."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Недействителна електронна поща."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Главната парола е задължителна."
   },
-  "masterPassLength": {
-    "message": "Главната парола трябва да съдържа поне 8 знака."
+  "confirmMasterPasswordRequired": {
+    "message": "Повторното въвеждане на главната парола е задължително."
+  },
+  "masterPasswordMinLength": {
+    "message": "Главната парола трябва да е с дължина поне 8 знака."
   },
   "masterPassDoesntMatch": {
     "message": "Главната парола и потвърждението ѝ не съвпадат."
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Чрез тази отметка вие се съгласявате със следните:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Условията за използване и политиката за поверителност не бяха приети."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Полето е задължтелно да бъде попълнено."
+  },
+  "inputEmail": {
+    "message": "Въведеният в полето текст не е адрес на е-поща."
+  },
+  "inputMinLength": {
+    "message": "Въведеният в полето текст трябва да бъде с дължина поне $COUNT$ знака.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ поле(та) по-горе се нуждае/ят от вниманието Ви.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

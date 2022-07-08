@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Skapa konto"
   },
+  "startTrial": {
+    "message": "Start Trial"
+  },
   "logIn": {
     "message": "Logga in"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Huvudlösenordet är det lösenord som du använder för att komma åt ditt valv. Det är väldigt viktigt att du inte glömmer bort ditt huvudlösenord, eftersom det inte går att återställa lösenordet ifall du skulle glömma bort det."
+  },
+  "masterPassImportant": {
+    "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
     "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt lösenord om du glömmer bort det."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Ogiltig e-postadress."
   },
-  "masterPassRequired": {
-    "message": "Huvudlösenord krävs."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Huvudlösenordet måste vara minst 8 tecken långt."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Huvudlösenorden stämmer inte överens."
@@ -1239,7 +1248,7 @@
     "message": "Aktiverad"
   },
   "activate": {
-    "message": "Activate"
+    "message": "Aktivera"
   },
   "premium": {
     "message": "Premium",
@@ -1267,7 +1276,7 @@
     "message": "Inaktivera"
   },
   "deactivate": {
-    "message": "Deactivate"
+    "message": "Inaktivera"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Denna metod för tvåstegsverifiering är aktiverad på ditt konto."
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "Genom att markera denna ruta godkänner du följande:"
   },
-  "acceptPoliciesError": {
-    "message": "Användarvillkoren och Integritetspolicyn har inte accepterats."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Användarvillkor"
@@ -4322,10 +4331,10 @@
     "message": "Ta bort användare"
   },
   "deactivateUsers": {
-    "message": "Deactivate Users"
+    "message": "Inaktivera användare"
   },
   "activateUsers": {
-    "message": "Activate Users"
+    "message": "Aktivera användare"
   },
   "error": {
     "message": "Fel"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input is required."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

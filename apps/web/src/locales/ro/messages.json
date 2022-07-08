@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Creare cont"
   },
+  "startTrial": {
+    "message": "Începeți o încercare"
+  },
   "logIn": {
     "message": "Conectare"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Parola principală este parola pe care o utilizați pentru a vă accesa seiful. Este foarte important să nu uitați această parolă. Nu există nicio modalitate de a recupera parola în cazul în care ați uitat-o."
+  },
+  "masterPassImportant": {
+    "message": "Parolele principale nu pot fi recuperate dacă le uitați!"
   },
   "masterPassHintDesc": {
     "message": "Un indiciu pentru parola principală vă poate ajuta să v-o reamintiți dacă o uitați."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Adresă de e-mail greșită."
   },
-  "masterPassRequired": {
-    "message": "Este necesară parola principală."
+  "masterPasswordRequired": {
+    "message": "Este necesară o parolă principală."
   },
-  "masterPassLength": {
-    "message": "Parola principală trebuie să conțină minimum 8 caractere."
+  "confirmMasterPasswordRequired": {
+    "message": "Este necesară rescrierea parolei principale."
+  },
+  "masterPasswordMinLength": {
+    "message": "Parola principală trebuie să aibă cel puțin 8 caractere."
   },
   "masterPassDoesntMatch": {
     "message": "Parola principală și confirmarea ei nu coincid!"
@@ -1076,7 +1085,7 @@
     "message": "Contul a fost șters"
   },
   "accountDeletedDesc": {
-    "message": "Contul dvs. a fost închis și toate datele asociate au fost șterse."
+    "message": "Contul dvs. Bitwarden și datele din seif au fost șterse definitiv."
   },
   "myAccount": {
     "message": "Contul meu"
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Dacă bifați această casetă sunteți de acord cu următoarele:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Termeni de utilizare și Politica de confidențialitate nu au fost recunoscute."
   },
   "termsOfService": {
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Este necesară o intrare."
+  },
+  "inputEmail": {
+    "message": "Intrarea nu este o adresă de e-mail."
+  },
+  "inputMinLength": {
+    "message": "Intrarea trebuie să aibă o lungime de cel puțin $COUNT$ caractere.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ câmp/câmpuri de mai sus necesită atenția dumneavoastră.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

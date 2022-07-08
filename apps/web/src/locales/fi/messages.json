@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "Luo tili"
   },
+  "startTrial": {
+    "message": "Aloita kokeilu"
+  },
   "logIn": {
     "message": "Kirjaudu sisään"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "Pääsalasanalla pääset käsiksi holviisi. On erittäin tärkeää, että muistat pääsalasanasi, koska sen palautus ei ole mahdollista, jos unohdat sen."
+  },
+  "masterPassImportant": {
+    "message": "Pääsalasanan palautus ei ole mahdollista, jos unohdat sen!"
   },
   "masterPassHintDesc": {
     "message": "Pääsalasanan vihje voi auttaa sinua muistamaan unohtamasi salasanan."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "Virheellinen sähköpostiosoite."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Pääsalasana vaaditaan."
   },
-  "masterPassLength": {
-    "message": "Pääsalasanan on oltava vähintään 8 merkkiä pitkä."
+  "confirmMasterPasswordRequired": {
+    "message": "Pääsalasanan uudelleensyöttö vaaditaan."
+  },
+  "masterPasswordMinLength": {
+    "message": "Pääsalasanan tulee sisältää ainakin 8 merkkiä."
   },
   "masterPassDoesntMatch": {
     "message": "Pääsalasanan vahvistus ei täsmää."
@@ -1076,7 +1085,7 @@
     "message": "Tili poistettu"
   },
   "accountDeletedDesc": {
-    "message": "Tilisi on suljettu ja kaikki siihen liittyvät tiedot on poistettu."
+    "message": "Bitwarden-tilisi ja -holvin tiedot on poistettu pysyvästi."
   },
   "myAccount": {
     "message": "Oma tili"
@@ -2812,7 +2821,7 @@
     "message": "Sähköpostiosoitteesi on vahvistettu."
   },
   "emailVerifiedFailed": {
-    "message": "Sähköpostiosoitteesi vahvistus ei onnistunut. Yritä lähettää uusi vahvistussähköposti."
+    "message": "Sähköpostiosoitettasi ei voitu vahvistaa. Yritä lähettää uusi vahvistussähköposti."
   },
   "emailVerificationRequired": {
     "message": "Sähköpostiosoitteen vahvistus vaaditaan"
@@ -2839,7 +2848,7 @@
     "message": "Saat organisaation käyttöoikeuden ylläpitäjän vahvistettua jäsentyytesi. Saat vahvistuksesta ilmoituksen sähköpostitse."
   },
   "inviteAcceptFailed": {
-    "message": "Kutsun hyväksyntä ei onnistu. Pyydä organisaation ylläpitäjää lähettämään uusi kutsu."
+    "message": "Kutsua ei voitu hyväksyä. Pyydä organisaation ylläpitäjää lähettämään uusi kutsu."
   },
   "inviteAcceptFailedShort": {
     "message": "Kutsua ei voitu hyväksyä. $DESCRIPTION$",
@@ -3159,7 +3168,7 @@
   "acceptPolicies": {
     "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "termsOfService": {
@@ -3810,7 +3819,7 @@
     "message": "Sinut on kutsuttu yllä mainitun käyttäjän varmuuskontaktiksi. Hyväksyäksesi kutsun, sinun tulee kirjautua tilillesi tai luoda uusi Bitwarden tili."
   },
   "emergencyInviteAcceptFailed": {
-    "message": "Kutsun hyväksyntä ei onnistu. Pyydä käyttäjää lähettämään uusi kutsu."
+    "message": "Kutsua ei voitu hyväksyä. Pyydä käyttäjää lähettämään uusi kutsu."
   },
   "emergencyInviteAcceptFailedShort": {
     "message": "Kutsua ei voitu hyväksyä. $DESCRIPTION$",
@@ -4373,7 +4382,7 @@
     "message": "Sinut on kutsuttu liittymään yllä mainittuun todentajaan. Hyväksyäksesi kutsun, sinun tulee kirjautua tilillesi tai luoda uusi Bitwarden-tili."
   },
   "providerInviteAcceptFailed": {
-    "message": "Kutsua ei voida hyväksyä. Pyydä todentajan ylläpitäjää lähettämään uusi kutsu."
+    "message": "Kutsua ei voitu hyväksyä. Pyydä todentajan ylläpitäjää lähettämään uusi kutsu."
   },
   "providerInviteAcceptedDesc": {
     "message": "Pääset käyttämään todentajaa ylläpitäjän vahvistettua jäsentyytesi. Saat tästä ilmoituksen sähköpostitse."
@@ -4678,10 +4687,10 @@
     "message": "Sinulle on tarjottu ilmaista Bitwarden Perheille -organisaatiota. Jatkaaksesi sinun on kirjauduttava tarjouksen saaneelle tilille."
   },
   "sponsoredFamiliesAcceptFailed": {
-    "message": "Tarjousta ei voida hyväksyä. Lähetä tarjoussähköposti uudestaan yritystililtäsi ja yritä uudelleen."
+    "message": "Tarjousta ei voitu hyväksyä. Lähetä tarjoussähköposti uudestaan yritystililtäsi ja yritä uudelleen."
   },
   "sponsoredFamiliesAcceptFailedShort": {
-    "message": "Tarjousta ei voida hyväksyä. $DESCRIPTION$",
+    "message": "Kutsua ei voitu hyväksyä. $DESCRIPTION$",
     "placeholders": {
       "description": {
         "content": "$1",
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Syöte vaaditaan."
+  },
+  "inputEmail": {
+    "message": "Syöte ei ole sähköpostiosoite."
+  },
+  "inputMinLength": {
+    "message": "Syötteen tulee sisältää ainakin $COUNT$ merkkiä.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ yllä oleva(a) kenttä(ä) vaatii huomiotasi.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }

@@ -572,6 +572,9 @@
   "createAccount": {
     "message": "צור חשבון"
   },
+  "startTrial": {
+    "message": "Start Trial"
+  },
   "logIn": {
     "message": "התחבר"
   },
@@ -592,6 +595,9 @@
   },
   "masterPassDesc": {
     "message": "הסיסמה הראשית היא הסיסמה שבאמצעותה תיגש לכספת שלך. חשוב מאוד שלא תשכח את הסיסמה הזו. אין שום דרך לשחזר אותה במקרה ושכחת אותה."
+  },
+  "masterPassImportant": {
+    "message": "Master passwords cannot be recovered if you forget it!"
   },
   "masterPassHintDesc": {
     "message": "ניתן להשתמש ברמז לסיסמה הראשית אם שכחת אותה."
@@ -623,11 +629,14 @@
   "invalidEmail": {
     "message": "כתובת אימייל לא תקינה."
   },
-  "masterPassRequired": {
-    "message": "יש להזין את הסיסמה הראשית."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "הסיסמה הראשית חייבת להיות לפחות באורך 8 תווים."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "שדה אימות סיסמה ראשית לא תואם."
@@ -3159,8 +3168,8 @@
   "acceptPolicies": {
     "message": "סימון תיבה זו מהווה את הסכמתך לתנאים הבאים:"
   },
-  "acceptPoliciesError": {
-    "message": "לא הסכמת לתנאי השירות ומדיניות הפרטיות."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "תנאי שירות"
@@ -5163,6 +5172,30 @@
       "email": {
         "content": "$1",
         "example": "My Email"
+      }
+    }
+  },
+  "inputRequired": {
+    "message": "Input is required."
+  },
+  "inputEmail": {
+    "message": "Input is not an email-address."
+  },
+  "inputMinLength": {
+    "message": "Input must be at least $COUNT$ characters long.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "fieldsNeedAttention": {
+    "message": "$COUNT$ field(s) above need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "4"
       }
     }
   }
