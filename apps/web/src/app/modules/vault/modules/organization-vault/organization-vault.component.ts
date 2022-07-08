@@ -162,44 +162,13 @@ export class OrganizationVaultComponent implements OnInit, OnDestroy {
   async applyVaultFilter(vaultFilter: VaultFilter) {
     this.ciphersComponent.showAddNew = vaultFilter.status !== "trash";
     this.activeFilter = vaultFilter;
-    await this.ciphersComponent.reload(this.buildFilter(), vaultFilter.status === "trash");
+    await this.ciphersComponent.reload(
+      this.activeFilter.buildFilter(),
+      vaultFilter.status === "trash"
+    );
     this.vaultFilterComponent.searchPlaceholder =
       this.vaultService.calculateSearchBarLocalizationString(this.activeFilter);
     this.go();
-  }
-
-  private buildFilter(): (cipher: CipherView) => boolean {
-    return (cipher) => {
-      let cipherPassesFilter = true;
-      if (this.activeFilter.status === "favorites" && cipherPassesFilter) {
-        cipherPassesFilter = cipher.favorite;
-      }
-      if (this.deleted && cipherPassesFilter) {
-        cipherPassesFilter = cipher.isDeleted;
-      }
-      if (this.activeFilter.cipherType != null && cipherPassesFilter) {
-        cipherPassesFilter = cipher.type === this.activeFilter.cipherType;
-      }
-      if (
-        this.activeFilter.selectedFolder != null &&
-        this.activeFilter.selectedFolderId != "none" &&
-        cipherPassesFilter
-      ) {
-        cipherPassesFilter = cipher.folderId === this.activeFilter.selectedFolderId;
-      }
-      if (this.activeFilter.selectedCollectionId != null && cipherPassesFilter) {
-        cipherPassesFilter =
-          cipher.collectionIds != null &&
-          cipher.collectionIds.indexOf(this.activeFilter.selectedCollectionId) > -1;
-      }
-      if (this.activeFilter.selectedOrganizationId != null && cipherPassesFilter) {
-        cipherPassesFilter = cipher.organizationId === this.activeFilter.selectedOrganizationId;
-      }
-      if (this.activeFilter.myVaultOnly && cipherPassesFilter) {
-        cipherPassesFilter = cipher.organizationId === null;
-      }
-      return cipherPassesFilter;
-    };
   }
 
   filterSearchText(searchText: string) {

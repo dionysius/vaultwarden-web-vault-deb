@@ -86,6 +86,7 @@ export class CollectionService implements CollectionServiceAbstraction {
 
     const collections = await this.getAll();
     decryptedCollections = await this.decryptMany(collections);
+
     await this.stateService.setDecryptedCollections(decryptedCollections);
     return decryptedCollections;
   }

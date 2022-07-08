@@ -128,7 +128,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             await this.openGenerator(false);
             break;
           case "syncCompleted":
-            await this.ciphersComponent.reload(this.buildFilter());
+            await this.ciphersComponent.reload(this.activeFilter.buildFilter());
             await this.vaultFilterComponent.reloadCollectionsAndFolders(this.activeFilter);
             await this.vaultFilterComponent.reloadOrganizations();
             break;
@@ -241,7 +241,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         selectedOrganizationId: params.selectedOrganizationId,
         myVaultOnly: params.myVaultOnly ?? false,
       });
-      await this.ciphersComponent.reload(this.buildFilter());
+      await this.ciphersComponent.reload(this.activeFilter.buildFilter());
     });
   }
 
@@ -540,7 +540,10 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.i18nService.t(this.calculateSearchBarLocalizationString(vaultFilter))
     );
     this.activeFilter = vaultFilter;
-    await this.ciphersComponent.reload(this.buildFilter(), vaultFilter.status === "trash");
+    await this.ciphersComponent.reload(
+      this.activeFilter.buildFilter(),
+      vaultFilter.status === "trash"
+    );
     this.go();
   }
 
@@ -568,40 +571,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     return "searchVault";
-  }
-
-  private buildFilter(): (cipher: CipherView) => boolean {
-    return (cipher) => {
-      let cipherPassesFilter = true;
-      if (this.activeFilter.status === "favorites" && cipherPassesFilter) {
-        cipherPassesFilter = cipher.favorite;
-      }
-      if (this.activeFilter.status === "trash" && cipherPassesFilter) {
-        cipherPassesFilter = cipher.isDeleted;
-      }
-      if (this.activeFilter.cipherType != null && cipherPassesFilter) {
-        cipherPassesFilter = cipher.type === this.activeFilter.cipherType;
-      }
-      if (
-        this.activeFilter.selectedFolder &&
-        this.activeFilter.selectedFolderId != "none" &&
-        cipherPassesFilter
-      ) {
-        cipherPassesFilter = cipher.folderId === this.activeFilter.selectedFolderId;
-      }
-      if (this.activeFilter.selectedCollectionId != null && cipherPassesFilter) {
-        cipherPassesFilter =
-          cipher.collectionIds != null &&
-          cipher.collectionIds.indexOf(this.activeFilter.selectedCollectionId) > -1;
-      }
-      if (this.activeFilter.selectedOrganizationId != null && cipherPassesFilter) {
-        cipherPassesFilter = cipher.organizationId === this.activeFilter.selectedOrganizationId;
-      }
-      if (this.activeFilter.myVaultOnly && cipherPassesFilter) {
-        cipherPassesFilter = cipher.organizationId === null;
-      }
-      return cipherPassesFilter;
-    };
   }
 
   async openGenerator(comingFromAddEdit: boolean, passwordType = true) {

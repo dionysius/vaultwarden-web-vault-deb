@@ -14,7 +14,7 @@ export class VaultService {
     if (vaultFilter.selectedFolderId != null && vaultFilter.selectedFolderId != "none") {
       return "searchFolder";
     }
-    if (vaultFilter.selectedCollectionId != null) {
+    if (vaultFilter.selectedCollection) {
       return "searchCollection";
     }
     if (vaultFilter.selectedOrganizationId != null) {

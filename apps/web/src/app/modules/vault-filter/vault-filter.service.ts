@@ -7,6 +7,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
@@ -27,6 +28,7 @@ export class VaultFilterService extends BaseVaultFilterService {
     cipherService: CipherService,
     collectionService: CollectionService,
     policyService: PolicyService,
+    private i18nService: I18nService,
     protected apiService: ApiService
   ) {
     super(
@@ -68,6 +70,11 @@ export class VaultFilterService extends BaseVaultFilterService {
       );
       result = await this.collectionService.decryptMany(collectionDomains);
     }
+
+    const noneCollection = new CollectionView();
+    noneCollection.name = this.i18nService.t("unassigned");
+    noneCollection.organizationId = organizationId;
+    result.push(noneCollection);
 
     const nestedCollections = await this.collectionService.getAllNested(result);
     return new DynamicTreeNode<CollectionView>({

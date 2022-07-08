@@ -111,9 +111,12 @@ export class VaultFilterComponent implements OnInit {
 
   protected pruneInvalidCollectionSelection(filter: VaultFilter): VaultFilter {
     if (
-      filter.selectedCollectionId != null &&
-      !this.collections?.hasId(filter.selectedCollectionId)
+      filter.myVaultOnly ||
+      (filter.selectedCollection &&
+        filter.selectedCollectionId != null &&
+        !this.collections?.hasId(filter.selectedCollectionId))
     ) {
+      filter.selectedCollection = false;
       filter.selectedCollectionId = null;
     }
     return filter;
