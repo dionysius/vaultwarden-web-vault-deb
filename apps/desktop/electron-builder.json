@@ -69,7 +69,7 @@
     "sign": "./sign.js",
     "extraResources": [
       {
-        "from": "node_modules/regedit/vbs",
+        "from": "../../node_modules/regedit/vbs",
         "to": "regedit/vbs",
         "filter": ["**/*"]
       },
