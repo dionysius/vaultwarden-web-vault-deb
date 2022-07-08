@@ -532,10 +532,13 @@
   "invalidEmail": {
     "message": "Неверный адрес email."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Требуется мастер-пароль."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Необходимо повторно ввести мастер-пароль."
+  },
+  "masterPasswordMinLength": {
     "message": "Мастер-пароль должен содержать не менее 8 символов."
   },
   "masterPassDoesntMatch": {
@@ -1543,7 +1546,7 @@
   "acceptPolicies": {
     "message": "Отметив этот флажок, вы соглашаетесь со следующим:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Условия предоставления услуг и Политика конфиденциальности не были подтверждены."
   },
   "enableBrowserIntegration": {
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "Ключ API"
+  },
+  "neverLockWarning": {
+    "message": "Вы действительно хотите отключить блокировку хранилища? В этом случае ключ шифрования вашего хранилища будет сохранен на вашем устройстве. Отключая блокировку, вы должны убедиться, что ваше устройство надежно защищено."
   }
 }

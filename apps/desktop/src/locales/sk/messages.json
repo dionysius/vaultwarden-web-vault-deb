@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Neplatná emailová adresa."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Hlavné heslo je povinné."
   },
-  "masterPassLength": {
-    "message": "Hlavné heslo musí obsahovať aspoň 8 znakov."
+  "confirmMasterPasswordRequired": {
+    "message": "Vyžaduje sa opätovné zadanie hlavného hesla."
+  },
+  "masterPasswordMinLength": {
+    "message": "Hlavné heslo musí mať aspoň 8 znakov."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrdenie hlavného hesla sa nezhoduje."
@@ -1543,7 +1546,7 @@
   "acceptPolicies": {
     "message": "Označením tohto políčka súhlasíte s nasledovným:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Neboli akceptované Podmienky používania a zásady Ochrany osobných údajov."
   },
   "enableBrowserIntegration": {
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API kľúč"
+  },
+  "neverLockWarning": {
+    "message": "Ste si istí, že chcete použiť možnosť \"Nikdy\"? Táto predvoľba ukladá šifrovací kľúč od trezora priamo na zariadení. Ak použijete túto možnosť, mali by ste svoje zariadenie náležite zabezpečiť."
   }
 }

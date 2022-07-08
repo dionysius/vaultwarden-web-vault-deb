@@ -532,10 +532,13 @@
   "invalidEmail": {
     "message": "Correo electrónico no válido."
   },
-  "masterPassRequired": {
-    "message": "Contraseña maestra requerida."
+  "masterPasswordRequired": {
+    "message": "Se requiere una contraseña maestra."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Se requiere volver a teclear la contraseña maestra."
+  },
+  "masterPasswordMinLength": {
     "message": "La contraseña maestra debe tener al menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
@@ -895,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Mostrar iconos del sitio web"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Mostrar una imagen reconocible junto a cada inicio de sesión."
   },
   "enableMinToTray": {
     "message": "Minimizar a icono en la bandeja"
@@ -1278,34 +1281,34 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Cargar cookie de accesibilidad"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Registrarse como usuario de accesibilidad en",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Copia y pega el enlace enviado a tu correo electrónico"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Introduzca la URL para cargar la cookie de accesibilidad de hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "hCaptcha Url es obligatorio",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Url inválida"
   },
   "done": {
-    "message": "Done"
+    "message": "Hecho"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "¡Cookie de accesibilidad guardada!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "No hay ninguna cookie de accesibilidad guardada"
   },
   "warning": {
     "message": "ADVERTENCIA",
@@ -1382,10 +1385,10 @@
     "message": "Verificar para Bitwarden."
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Solicicitar Windows Hello al iniciar"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Solicitar Touch ID al iniciar"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear con contraseña maestra al reiniciar"
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "Al seleccionar esta casilla, acepto lo siguiente:"
   },
-  "acceptPoliciesError": {
-    "message": "Todavía no has aceptado los términos del servicio y la política de privacidad."
+  "acceptPoliciesRequired": {
+    "message": "No ha aceptado los términos del servicio y la política de privacidad."
   },
   "enableBrowserIntegration": {
     "message": "Habilitar integración con el navegador"
@@ -1553,7 +1556,7 @@
     "message": "La integración del navegador se usa para la biometría en el mismo."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "La integración con el navegador no está soportada"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Por desgracia la integración del navegador sólo está soportada por ahora en la versión de la Mac App Store."
@@ -1562,7 +1565,7 @@
     "message": "Por desgracia la integración del navegador sólo está soportada por ahora en la versión de Microsoft Store."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Por desgracia la integración con el navegador actualmente sólo está soportada en la versión de Microsoft Store."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Requiere verificación para la integración del navegador"
@@ -1840,7 +1843,7 @@
     "message": "Has abandonado la organización."
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Error en el conector de claves: asegúrate de que el conector de claves está disponible y que funciona correctamente."
   },
   "lockAllVaults": {
     "message": "Bloquear todas las cajas fuertes"
@@ -1937,28 +1940,31 @@
     "message": "Servicio"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Todas las cajas fuertes"
   },
   "searchOrganization": {
-    "message": "Search Organization"
+    "message": "Buscar organizaciones"
   },
   "searchMyVault": {
-    "message": "Search My Vault"
+    "message": "Buscar en mi caja fuerte"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Alias de correo"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Generar un alias de correo electrónico con un servicio de reenvío externo."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Nombre del host",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "Token de acceso API"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "Clave API"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Памылковы адрас электроннай пошты."
   },
-  "masterPassRequired": {
-    "message": "Патрабуецца асноўны пароль."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Асноўны пароль павінен быць даўжынёй не менш за 8 сімвалаў."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Асноўныя паролі не супадаюць."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "Ставячы гэты сцяжок вы пагаджаецеся з наступным:"
   },
-  "acceptPoliciesError": {
-    "message": "Умовы выкарыстання і Палітыка прыватнасці не былі пацверджаны."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Allow browser integration"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API Key"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

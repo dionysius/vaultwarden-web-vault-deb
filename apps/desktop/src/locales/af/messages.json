@@ -233,13 +233,13 @@
     "message": "Mnr."
   },
   "mrs": {
-    "message": "Mev."
+    "message": "Mev"
   },
   "ms": {
-    "message": "Mej."
+    "message": "Mej"
   },
   "dr": {
-    "message": "Dr."
+    "message": "Dr"
   },
   "expirationMonth": {
     "message": "Vervalmaand"
@@ -532,10 +532,13 @@
   "invalidEmail": {
     "message": "Ongeldige e-posadres."
   },
-  "masterPassRequired": {
-    "message": "Hoofwagwoord word benodig."
+  "masterPasswordRequired": {
+    "message": "Hoofwagwoord word vereis."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Hoofwagwoord moet weer intevoer word."
+  },
+  "masterPasswordMinLength": {
     "message": "Hoofwagwoord moet ten minste 8 karakters lank wees."
   },
   "masterPassDoesntMatch": {
@@ -895,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Toon webwerfikone"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Toon ’n herkenbare beeld langs elke aantekening."
   },
   "enableMinToTray": {
     "message": "Minimaliseer na stelsellaai"
@@ -1382,10 +1385,10 @@
     "message": "ontgrendel u kluis"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Vra vir Windows Hello by lansering"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Vra vir Touch ID by lansering"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Vergrendel by herbegin met hoofwagwoord"
@@ -1543,7 +1546,7 @@
   "acceptPolicies": {
     "message": "Deur hierdie kassie af te merk stem u in tot die volgende:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Gebruiksvoorwaardes en privaatheidsbeleid is nie erken nie."
   },
   "enableBrowserIntegration": {
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API-sleutel"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

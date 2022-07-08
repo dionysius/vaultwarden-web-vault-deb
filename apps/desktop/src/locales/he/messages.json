@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "כתובת אימייל לא תקינה."
   },
-  "masterPassRequired": {
-    "message": "יש להזין את הסיסמה הראשית."
+  "masterPasswordRequired": {
+    "message": "הסיסמה הראשית נדרשת."
   },
-  "masterPassLength": {
-    "message": "הסיסמה הראשית חייבת להיות לפחות באורך 8 תווים."
+  "confirmMasterPasswordRequired": {
+    "message": "נדרשת חזרה על הסיסמה הראשית."
+  },
+  "masterPasswordMinLength": {
+    "message": "הסיסמה הראשית חייבת להכיל לפחות אורך של 8 תווים."
   },
   "masterPassDoesntMatch": {
     "message": "אימות סיסמה ראשית אינו תואם."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "סימון תיבה זו מהווה את הסכמתך לתנאים הבאים:"
   },
-  "acceptPoliciesError": {
-    "message": "לא הסכמת לתנאי השירות ומדיניות הפרטיות."
+  "acceptPoliciesRequired": {
+    "message": "תנאי השירות ומדיניות הפרטיות לא אושרו."
   },
   "enableBrowserIntegration": {
     "message": "אפשר אינטגרציה עם הדפדפן"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API Key"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

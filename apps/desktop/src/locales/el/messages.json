@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Μη έγκυρη διεύθυνση e-mail."
   },
-  "masterPassRequired": {
-    "message": "Απαιτείται κύριος κωδικός πρόσβασης."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Ο κύριος κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρες."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Η επιβεβαίωση κύριου κωδικού δεν ταιριάζει."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "Επιλέγοντας αυτό το πλαίσιο, συμφωνείτε με τα εξής:"
   },
-  "acceptPoliciesError": {
-    "message": "Οι Όροι Παροχής Υπηρεσιών και η Πολιτική Απορρήτου δεν έχουν αναγνωριστεί."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Ενεργοποίηση ενσωμάτωσης περιηγητή"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "Kλειδί API"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

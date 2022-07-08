@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Alamat email tidak valid."
   },
-  "masterPassRequired": {
-    "message": "Sandi utama diperlukan."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Kata sandi utama sedikitnya harus 8 karakter."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Konfirmasi sandi utama tidak cocok."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "Dengan mencentang kotak ini, anda menyetujui yang berikut:"
   },
-  "acceptPoliciesError": {
-    "message": "Persyaratan Layanan dan Kebijakan Privasi belum diakui."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Aktifkan integrasi browser"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API Key"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

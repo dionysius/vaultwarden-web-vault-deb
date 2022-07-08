@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "ಅಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸ."
   },
-  "masterPassRequired": {
-    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಅಗತ್ಯವಿದೆ."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳಷ್ಟು ಉದ್ದವಾಗಿರಬೇಕು."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಣವು ಹೊಂದಿಕೆಯಾಗುವುದಿಲ್ಲ."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "ಈ ಪೆಟ್ಟಿಗೆಯನ್ನು ಪರಿಶೀಲಿಸುವ ಮೂಲಕ ನೀವು ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಒಪ್ಪುತ್ತೀರಿ:"
   },
-  "acceptPoliciesError": {
-    "message": "ಸೇವಾ ನಿಯಮಗಳು ಮತ್ತು ಗೌಪ್ಯತೆ ನೀತಿಯನ್ನು ಅಂಗೀಕರಿಸಲಾಗಿಲ್ಲ."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API Key"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

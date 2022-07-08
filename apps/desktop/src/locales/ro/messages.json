@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Adresă de e-mail greșită."
   },
-  "masterPassRequired": {
-    "message": "Este parola principală este necesară."
+  "masterPasswordRequired": {
+    "message": "Este necesară o parolă principală."
   },
-  "masterPassLength": {
-    "message": "Parola principală trebuie să conțină minimum 8 caractere."
+  "confirmMasterPasswordRequired": {
+    "message": "Este necesară rescrierea parolei principale."
+  },
+  "masterPasswordMinLength": {
+    "message": "Parola principală trebuie să aibă cel puțin 8 caractere."
   },
   "masterPassDoesntMatch": {
     "message": "Parola principală și confirmarea ei nu coincid!"
@@ -1543,7 +1546,7 @@
   "acceptPolicies": {
     "message": "Dacă bifați această casetă sunteți de acord cu următoarele:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Termeni de utilizare și Politica de confidențialitate nu au fost recunoscute."
   },
   "enableBrowserIntegration": {
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "Cheie API"
+  },
+  "neverLockWarning": {
+    "message": "Sunteți sigur că doriți să folosiți opțiunea „Niciodată”? Setarea opțiunilor de blocare la „Niciodată” stochează cheia de criptare a seifului pe dispozitivul dumneavoastră. Dacă utilizați această opțiune, trebuie să vă asigurați că vă păstrați dispozitivul protejat corespunzător."
   }
 }

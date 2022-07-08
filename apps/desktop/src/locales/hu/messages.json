@@ -532,10 +532,13 @@
   "invalidEmail": {
     "message": "Az email cím érvénytelen."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "A mesterjelszó megadása kötelező."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "A mesterjelszó ismételt megadása kötelező."
+  },
+  "masterPasswordMinLength": {
     "message": "A mesterjelszó legyen legalább 8 karakter hosszú."
   },
   "masterPassDoesntMatch": {
@@ -1543,7 +1546,7 @@
   "acceptPolicies": {
     "message": "A kapcsoló bekapcsolásával egyetértünk a következőkkel:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
   },
   "enableBrowserIntegration": {
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API kulcs"
+  },
+  "neverLockWarning": {
+    "message": "Biztosan szeretnénk használni a \"Soha\" opciót? A zárolási opciók \"Soha\" értékre állítása a széf titkosítási kulcsát az eszközön tárolja. Ennek az opciónak a használatakor célszerű az eszköz megfelelő védettségét biztosítani."
   }
 }

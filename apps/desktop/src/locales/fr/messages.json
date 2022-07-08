@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Adresse e-mail invalide."
   },
-  "masterPassRequired": {
-    "message": "Le mot de passe maître est requis."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Le mot de passe maître doit au moins contenir 8 caractères."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmation du mot de passe maître ne correspond pas."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "En cochant cette case, vous acceptez les éléments suivants :"
   },
-  "acceptPoliciesError": {
-    "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Activer l'intégration avec le navigateur"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "Clé d'IPA"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

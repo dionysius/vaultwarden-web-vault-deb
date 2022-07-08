@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "L’adreça electrònica no és vàlida."
   },
-  "masterPassRequired": {
-    "message": "La contrasenya és obligatòria."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "La contrasenya ha de contenir almenys 8 caràcters."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmació de la contrasenya mestra no coincideix."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "Si activeu aquesta casella, indiqueu que esteu d’acord amb el següent:"
   },
-  "acceptPoliciesError": {
-    "message": "No s’han reconegut les condicions del servei i la declaració de privadesa."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Habilita la integració amb el navegador"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "Clau de l'API"
+  },
+  "neverLockWarning": {
+    "message": "Esteu segur que voleu utilitzar l'opció \"Mai\"? En configurar les opcions de bloqueig a \"Mai\" s'emmagatzema la clau de xifratge de la vostra caixa forta al vostre dispositiu. Si utilitzeu aquesta opció, heu d'assegurar-vos que conserveu el dispositiu degudament protegit."
   }
 }

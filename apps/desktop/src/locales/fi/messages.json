@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Virheellinen sähköpostiosoite."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Pääsalasana vaaditaan."
   },
-  "masterPassLength": {
-    "message": "Pääsalasanan on oltava vähintään 8 merkkiä pitkä."
+  "confirmMasterPasswordRequired": {
+    "message": "Pääsalasanan uudelleensyöttö vaaditaan."
+  },
+  "masterPasswordMinLength": {
+    "message": "Pääsalasanan tulee sisältää ainakin 8 merkkiä."
   },
   "masterPassDoesntMatch": {
     "message": "Pääsalasanan vahvistus ei täsmää."
@@ -1543,7 +1546,7 @@
   "acceptPolicies": {
     "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "enableBrowserIntegration": {
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API-avain"
+  },
+  "neverLockWarning": {
+    "message": "Haluatko varmasti käyttää asetusta \"Ei koskaan\"? Se tallentaa holvisi salausavaimen laitteellesi. Jos käytät asetusta, varmista, että laite on suojattu hyvin."
   }
 }

@@ -532,10 +532,13 @@
   "invalidEmail": {
     "message": "Etibarsız e-poçt ünvanı."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Ana parol lazımdır."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Ana parolun yenidən yazılması lazımdır."
+  },
+  "masterPasswordMinLength": {
     "message": "Ana parol ən azı 8 simvol uzunluğunda olmalıdır."
   },
   "masterPassDoesntMatch": {
@@ -1543,7 +1546,7 @@
   "acceptPolicies": {
     "message": "Bu qutunu işarələyərək aşağıdakılarla razılaşırsınız:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Xidmət Şərtləri və Gizlilik Siyasəti qəbul edilməyib."
   },
   "enableBrowserIntegration": {
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API açar"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Vigane e-posti aadress."
   },
-  "masterPassRequired": {
-    "message": "Vajalik on ülemparooli sisestamine."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Ülemparoolid ei ühti."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "Märkeruudu markeerimisel nõustud järgnevaga:"
   },
-  "acceptPoliciesError": {
-    "message": "Kasutustingimuste ja Privaatsuspoliitikaga pole nõustutud."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Lülita sisse brauseri integratsioon"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "API võti"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

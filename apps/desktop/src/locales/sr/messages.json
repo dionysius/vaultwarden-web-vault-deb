@@ -532,11 +532,14 @@
   "invalidEmail": {
     "message": "Неисправан имејл."
   },
-  "masterPassRequired": {
-    "message": "Главна Лозинка је неопходна."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Главна Лозинка треба имати бар 8 знака."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Потврђена Главна Лозинка се не подудара."
@@ -1543,8 +1546,8 @@
   "acceptPolicies": {
     "message": "Означавањем овог поља пристајете на следеће:"
   },
-  "acceptPoliciesError": {
-    "message": "Услови услуге и Политика приватности нису прихваћени."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Укључи интеграцију са претраживачем"
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "АПИ Кључ"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }

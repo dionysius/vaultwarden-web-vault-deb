@@ -532,10 +532,13 @@
   "invalidEmail": {
     "message": "نشانی رایانامه نامعتبر است."
   },
-  "masterPassRequired": {
-    "message": "کلمه عبور اصلی ضروری است."
+  "masterPasswordRequired": {
+    "message": "گذرواژه اصلی ضروری است."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "تایپ مجدد گذرواژه اصلی نیاز است."
+  },
+  "masterPasswordMinLength": {
     "message": "طول کلمه عبور اصلی باید حداقل ۸ کاراکتر باشد."
   },
   "masterPassDoesntMatch": {
@@ -1543,7 +1546,7 @@
   "acceptPolicies": {
     "message": "با علامت زدن این کادر با موارد زیر موافقت می کنید:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "شرایط خدمات و سیاست حفظ حریم خصوصی تأیید نشده است."
   },
   "enableBrowserIntegration": {
@@ -1960,5 +1963,8 @@
   },
   "apiKey": {
     "message": "کلید API"
+  },
+  "neverLockWarning": {
+    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
   }
 }
