@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Памылковы адрас электроннай пошты."
   },
-  "masterPassRequired": {
-    "message": "Патрабуецца асноўны пароль."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Асноўны пароль павінен быць даўжынёй не менш за 8 сімвалаў."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Асноўныя паролі не супадаюць."
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "Ставіўшы гэты сцяжок вы пагаджаецеся з наступным:"
   },
-  "acceptPoliciesError": {
-    "message": "Умовы выкарыстання і Палітыка прыватнасці не былі пацверджаны."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Умовы выкарыстання"

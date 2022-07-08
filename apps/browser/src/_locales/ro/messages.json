@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Adresă de e-mail greșită."
   },
-  "masterPassRequired": {
-    "message": "Este necesară parola principală."
+  "masterPasswordRequired": {
+    "message": "Este necesară o parolă principală."
   },
-  "masterPassLength": {
-    "message": "Parola principală trebuie să conțină minimum 8 caractere."
+  "confirmMasterPasswordRequired": {
+    "message": "Este necesară rescrierea parolei principale."
+  },
+  "masterPasswordMinLength": {
+    "message": "Parola principală trebuie să aibă cel puțin 8 caractere."
   },
   "masterPassDoesntMatch": {
     "message": "Parola principală și confirmarea ei nu coincid!"
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "Dacă bifați această casetă sunteți de acord cu următoarele:"
   },
-  "acceptPoliciesError": {
-    "message": "Termenii de utilizare și Politica de confidențialitate nu au fost recunoscute."
+  "acceptPoliciesRequired": {
+    "message": "Termeni de utilizare și Politica de confidențialitate nu au fost recunoscute."
   },
   "termsOfService": {
     "message": "Termeni de utilizare"

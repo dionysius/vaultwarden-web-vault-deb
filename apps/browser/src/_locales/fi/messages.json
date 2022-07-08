@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Virheellinen sähköpostiosoite."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Pääsalasana vaaditaan."
   },
-  "masterPassLength": {
-    "message": "Pääsalasanan on oltava vähintään 8 merkkiä pitkä."
+  "confirmMasterPasswordRequired": {
+    "message": "Pääsalasanan uudelleensyöttö vaaditaan."
+  },
+  "masterPasswordMinLength": {
+    "message": "Pääsalasanan tulee sisältää ainakin 8 merkkiä."
   },
   "masterPassDoesntMatch": {
     "message": "Pääsalasanan vahvistus ei täsmää."
@@ -455,7 +458,7 @@
     }
   },
   "autofillError": {
-    "message": "Valitun kohteen automaattinen täyttö ei onnistu tällä sivulla. Kopioi ja liitä tiedot sen sijaan itse."
+    "message": "Valitttua kohdetta ei voitu täyttää tälle sivulle automaattisesti. Kopioi ja liitä tiedot itse."
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos"
@@ -1313,7 +1316,7 @@
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Oletko varma, että haluat käyttää asetusta \"Ei koskaan\"? Tämä valinta tallentaa holvisi salausavaimen laitteellesi. Jos käytät asetusta, varmista että laitteesi on hyvin suojattu."
+    "message": "Haluatko varmasti käyttää asetusta \"Ei koskaan\"? Se tallentaa holvisi salausavaimen laitteellesi. Jos käytät asetusta, varmista että laite on suojattu hyvin."
   },
   "noOrganizationsList": {
     "message": "Et kuulu mihinkään organisaatioon. Organisaatioiden avulla voit jakaa kohteita turvallisesti muiden käyttäjien kanssa."
@@ -1480,7 +1483,7 @@
   "acceptPolicies": {
     "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "termsOfService": {
@@ -1514,7 +1517,7 @@
     "message": "Bitwardenin työpöytäsovellus on käynnistettävä ennen kuin biometristä avausta voidaan käyttää."
   },
   "errorEnableBiometricTitle": {
-    "message": "Biometrian käyttöönotto ei onnistu"
+    "message": "Biometriaa ei voitu ottaa käyttöön"
   },
   "errorEnableBiometricDesc": {
     "message": "Työpöytäsovellus perui toiminnon"
@@ -1856,7 +1859,7 @@
     "message": "Yksi tai useampi organisaation käytäntö estää henkilökohtaisen holvisi viennin."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Oikeaa lomakkeen elementtiä ei tunnistettu. Yritä sen sijaan HTML-koodin tarkastusta."
+    "message": "Oikeaa lomakkeen elementtiä ei voitu tunnistaa. Tutki sen sijaan HTML-koodia."
   },
   "copyCustomFieldNameNotUnique": {
     "message": "Yksilöllistä tunnistetta ei löytynyt."

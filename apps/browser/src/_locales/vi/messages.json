@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Địa chỉ email không hợp lệ."
   },
-  "masterPassRequired": {
-    "message": "Mật khẩu chủ là bắt buộc."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Mật khẩu chủ phải có ít nhất 8 kí tự."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Xác nhận mật khẩu chủ không khớp."
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "Bạn đồng ý với những điều sau khi nhấn chọn ô này:"
   },
-  "acceptPoliciesError": {
-    "message": "Điều khoản sử dụng và Chính sách quyền riêng tư chưa được đồng ý."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Điều khoản sử dụng"

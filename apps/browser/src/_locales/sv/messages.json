@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Ogiltig e-postadress."
   },
-  "masterPassRequired": {
-    "message": "Huvudlösenord krävs."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Huvudlösenordet måste vara minst 8 tecken långt."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Bekräftelsen för huvudlösenordet stämde ej."
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "Genom att markera denna ruta godkänner du följande:"
   },
-  "acceptPoliciesError": {
-    "message": "Användarvillkoren och Integritetspolicyn har inte accepterats."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Användarvillkor"

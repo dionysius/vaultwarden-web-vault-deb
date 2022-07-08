@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Email helbide baliogabea"
   },
-  "masterPassRequired": {
-    "message": "Pasahitz nagusia derrigorrezkoa da."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Pasahitz nagusiak gutxienez 8 karaktere izan behar ditu."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Pasahitz nagusiaren egiaztatzea ez dator bat."
@@ -439,10 +442,10 @@
     "message": "Mezu elektroniko bat bidali dizugu zure pasahitz nagusiaren pistarekin."
   },
   "verificationCodeRequired": {
-    "message": "Egiaztapen-kodea behar da."
+    "message": "Egiaztatze-kodea behar da."
   },
   "invalidVerificationCode": {
-    "message": "Egiaztapen-kodea ez da baliozkoa"
+    "message": "Egiaztatze-kodea ez da baliozkoa"
   },
   "valueCopied": {
     "message": "$VALUE$ kopiatuta",
@@ -488,7 +491,7 @@
     "message": "Zure pasahitz nagusia alda dezakezu bitwarden.com webgunean. Orain joan nahi duzu webgunera?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Bi urratseko egiaztatzea dela eta, zure kontua seguruagoa da, beste aplikazio/gailu batekin saioa hastea eskatzen baitizu; adibidez, segurtasun kode, egiaztatze aplikazio, SMS, telefono dei edo posta elektroniko bidez. Bi urratseko egiaztatzea bitwarden.com webgunean  aktibatu daiteke. Orain joan nahi duzu webgunera?"
+    "message": "Bi urratseko egiaztatzea dela eta, zure kontua seguruagoa da, beste aplikazio/gailu batekin saioa hastea eskatzen baitizu; adibidez, segurtasun kode, baimentze aplikazio, SMS, telefono dei edo posta elektroniko bidez. Bi urratseko egiaztatzea bitwarden.com webgunean  aktibatu daiteke. Orain joan nahi duzu webgunera?"
   },
   "editedFolder": {
     "message": "Karpeta editatuta"
@@ -702,13 +705,13 @@
     "message": "Gehiago ikasi"
   },
   "authenticatorKeyTotp": {
-    "message": "Egiaztatze kodea (TOTP)"
+    "message": "Baimentze kodea (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Egiaztatze kodea"
   },
   "copyVerificationCode": {
-    "message": "Kopiatu egiaztatze kodea"
+    "message": "Kopiatu egiaztatze-kodea"
   },
   "attachments": {
     "message": "Eranskinak"
@@ -774,7 +777,7 @@
     "message": "Pasahitzaren higienea, kontuaren egoera eta datu-bortxaketen txostenak, kutxa gotorra seguru mantentzeko."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP (2FA) egiaztatze kode sortzailea gotor kutxako erregistroetarako."
+    "message": "TOTP (2FA) egiaztatze-kode sortzailea gotor kutxako erregistroetarako."
   },
   "ppremiumSignUpSupport": {
     "message": "Lehentasunezko bezeroarentzako arreta."
@@ -786,16 +789,16 @@
     "message": "Premium erosi"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Zure premium bazkidetza bitwarden.com webguneko kutxa gotorrean ordaindu dezakezu. Orain bisitatu nahi duzu webgunea?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Premium bazkide zara!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting Bitwarden."
+    "message": "Eskerrik asko Bitwarden babesteagatik."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ /year!",
+    "message": "Dena, urtean $PRICE$gatik!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -804,28 +807,28 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Eguneratzea eginda"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Kopiatu TOTO automatikoki"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Saio-hasiera batek egiaztatze kodea badu, TOTP egiaztatze kodea arbelean automatikoki kopiatuko da saio-hasiera bat auto-betetzean."
+    "message": "Saio-hasiera batek baimentze-kodea badu, TOTP egiaztatze-kodea arbelean automatikoki kopiatuko da saio-hasiera bat auto-betetzean."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Biometria eskatu saioa hastean"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Premium izatea beharrezkoa da"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Premium bazkidetza beharrezkoa da ezaugarri hau erabiltzeko."
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Sartu zure baimentze-aplikazioaren 6 digituko egiaztatze-kodea."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Sartu $EMAILA$-era bidalitako 6 digituko egiaztatze-kodea.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -834,7 +837,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Egiaztatze emaila $EMAIL$-era bidalia.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -843,10 +846,10 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Gogora nazazu"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Berbidali email bidezko egiaztatze-kodea."
   },
   "useAnotherTwoStepMethod": {
     "message": "Erabili bi urratseko egiaztatzeko beste modu bat."
@@ -858,13 +861,13 @@
     "message": "Sartu zure segurtasun giltza ordenagailuaren USB portuan. Botoia badu, sakatu ezazu."
   },
   "webAuthnNewTab": {
-    "message": "To start the WebAuthn 2FA verification. Click the button below to open a new tab and follow the instructions provided in the new tab."
+    "message": "WebAuthn 2FA egiaztatzea hasteko. Egin klik beheko botoian fitxa berria irekitzeko eta jarraitu fitxa berriko jarraibideei."
   },
   "webAuthnNewTabOpen": {
-    "message": "Open new tab"
+    "message": "Ireki fitxa berria"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "WebAuthn baimendu"
   },
   "loginUnavailable": {
     "message": "Ez dago eskuragarri saio-hasierarik"
@@ -873,22 +876,22 @@
     "message": "Kontu honek bi urratseko egiaztatzea du gaituta, baina konfiguratutako bi urratseko egiaztatzea ez da web-nabigatzaile honekin bateragarria."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "Mesedez, erabili nabigatzaile bateragarri bat (adibidez, Chrome) eta/edo gehitu bateragarritasun obea duten nabigatzaile bidezko (baimentze-aplikazio gisa) baimentze modu gehigarriak."
   },
   "twoStepOptions": {
     "message": "Bi urratseko egiaztatzearen aukerak"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Bi urratseko egiaztatzeko modu guztietarako sarbidea galdu duzu? Erabili zure berreskuratze-kodea zure kontuko bi urratseko egiaztatze hornitzaile guztiak desaktibatzeko."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Berreskuratze-kodea"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Baimentze aplikazioa"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Erabili baimentze-aplikazio bat (adibidez, Authy edo Google Authenticator) denboran oinarritutako egiaztatze-kodeak sortzeko.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -898,57 +901,57 @@
     "message": "Erabili YubiKey zure kontuan sartzeko. YubiKey 4, 4 Nano, 4C eta NEO gailuekin dabil."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Egiaztatu Duo Securityrekin Duo Mobile aplikazioa, SMS, telefono deia edo U2F segurtasun-gakoa erabiliz.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Egiaztatu zure erakunderako Duo Securityrekin Duo Mobile aplikazioa, SMS, telefono deia edo U2F segurtasun-gakoa erabiliz.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Erabili gaitutako edozein WebAuthn segurtasun kode zure kontura sartzeko"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "Emaila"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Egiaztatze-kodeak email bidez bidaliko dira."
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Ostatze ingurune propioa"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
+    "message": "Bitwarden instalatzeko, zehaztu ostatze propioaren oinarrizko URL-a."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Ingurune pertsonalizatua"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Erabiltzaile aurreratuentzat. Zerbitzu bakoitzarentzako oinarrizko URL-a zehaztu dezakezu independienteki."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "Zerbitzariaren URL-a"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API zerbitzariaren URL-a"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "Web kutxa gotorreko zerbitzariaren URL-a"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "Identitate zerbitzariaren URL-a"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Jakinarazpenen zerbitzariaren URL-a"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikonoen zerbitzariaren URL-a"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Inguruneko URL-ak gorde dira."
   },
   "enableAutoFillOnPageLoad": {
     "message": "Auto-bete orrialdea kargatzean"
@@ -957,7 +960,7 @@
     "message": "Saio-hasierako formulario bat detektatzen bada, auto-bete webgunea kargatzen denean."
   },
   "experimentalFeature": {
-    "message": "This is currently an experimental feature. Use at your own risk."
+    "message": "Hau ezaugarri esperimental bat da. Zure ardurapean erabili."
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Saio-hasierako elementuetarako lehenetsitako auto-betetzearen konfigurazioa"
@@ -969,7 +972,7 @@
     "message": "Auto-bete orrialdea kargatzean (ezarpenetan gaituta badago)"
   },
   "autoFillOnPageLoadUseDefault": {
-    "message": "Use default setting"
+    "message": "Erabili ezarpen lehenetsiak"
   },
   "autoFillOnPageLoadYes": {
     "message": "Auto-bete orrialdea kargatzean"
@@ -978,207 +981,207 @@
     "message": "Ez auto-bete orrialdea kargatzean"
   },
   "commandOpenPopup": {
-    "message": "Open vault popup"
+    "message": "Leiho gainjarrian ireki kutxa gotorra"
   },
   "commandOpenSidebar": {
-    "message": "Open vault in sidebar"
+    "message": "Alboko barran ireki kutxa gotorra"
   },
   "commandAutofillDesc": {
     "message": "Uneko webgunerako erabilitako azken saio-hastea auto-bete"
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard"
+    "message": "Zorizko pasahitz berria sortu eta kopiatu arbelean"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Blokeatu kutxa gotorra"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "Modu pribatuko euskarria esperimentala da eta ezaugarri batzuk mugatuak dira."
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Eremu pertsonalizatuak"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Kopiatu balioa"
   },
   "value": {
-    "message": "Value"
+    "message": "Balioa"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Eremu pertsonalizatu berria"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Arrastatu txukuntzeko"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Testua"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Ezkutatua"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Boolearra"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Lotuta",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Balioa lotuta",
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "Leiho gainjarritik kanpora klik eginez gero, zure posta elektronikoa egiaztatzeko leiho gainjarria itxi egingo da. Leiho berri batean ireki nahi duzu leiho gainjarri hau itxi ez dadin?"
   },
   "popupU2fCloseMessage": {
-    "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
+    "message": "Nabigatzaile honek ezin ditu U2F eskaerak prozesatu leiho gainjarri honetan. Leiho berri batean ireki nahi duzu leiho gainjarri hau saioa U2F erabiliz hasi ahal izateko?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Erakutsi webguneko ikonoak"
   },
   "faviconDesc": {
     "message": "Erakutsi irudi bat saio-hasiera bakoitzaren ondoan."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Erakutsi txartelen kontagailua"
   },
   "badgeCounterDesc": {
     "message": "Adierazi zenbat saio-hasiera dituzun uneko webgunerako."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Txartelaren titularraren izena"
   },
   "number": {
-    "message": "Number"
+    "message": "Zenbakia"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Marka"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Iraungitze hilabetea"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Iraungitze urtea"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Iraungitze data"
   },
   "january": {
-    "message": "January"
+    "message": "Urtarrila"
   },
   "february": {
-    "message": "February"
+    "message": "Otsaila"
   },
   "march": {
-    "message": "March"
+    "message": "Martxoa"
   },
   "april": {
-    "message": "April"
+    "message": "Apirila"
   },
   "may": {
-    "message": "May"
+    "message": "Maiatza"
   },
   "june": {
-    "message": "June"
+    "message": "Ekaina"
   },
   "july": {
-    "message": "July"
+    "message": "Uztaila"
   },
   "august": {
-    "message": "August"
+    "message": "Abuztua"
   },
   "september": {
-    "message": "September"
+    "message": "Iraila"
   },
   "october": {
-    "message": "October"
+    "message": "Urria"
   },
   "november": {
-    "message": "November"
+    "message": "Azaroa"
   },
   "december": {
-    "message": "December"
+    "message": "Abendua"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Segurtasun kodea"
   },
   "ex": {
-    "message": "ex."
+    "message": "adib."
   },
   "title": {
-    "message": "Title"
+    "message": "Titulua"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Jn."
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "And."
   },
   "ms": {
-    "message": "Ms"
+    "message": "And."
   },
   "dr": {
-    "message": "Dr"
+    "message": "Jn."
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Izena"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Bigarren izena"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Abizena"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Izen osoa"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Nortasun izena"
   },
   "company": {
-    "message": "Company"
+    "message": "Enpresa"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Segurtasun sozialaren zenbakia"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Pasaporte zenbakia"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Lizentzia zenbakia"
   },
   "email": {
-    "message": "Email"
+    "message": "Emaila"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefonoa"
   },
   "address": {
-    "message": "Address"
+    "message": "Helbidea"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "1go helbidea"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "2. helbidea"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "3. helbidea"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "Hiria / Herria"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "Estatua / Probintzia"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "Posta kodea"
   },
   "country": {
-    "message": "Country"
+    "message": "Herrialdea"
   },
   "type": {
-    "message": "Type"
+    "message": "Mota"
   },
   "typeLogin": {
     "message": "Saio-hasiera"
@@ -1187,53 +1190,53 @@
     "message": "Saio-hasierak"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Ohar segurua"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Txartela"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Nortasuna"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Pasahitz historiala"
   },
   "back": {
-    "message": "Back"
+    "message": "Itzuli"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Bildumak"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Gogokoak"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Ireki leiho berrian"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Freskatu"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Txartelak"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Nortasunak"
   },
   "logins": {
     "message": "Saio-hasierak"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Ohar seguruak"
   },
   "clear": {
-    "message": "Clear",
+    "message": "Ezabatu",
     "description": "To clear something out. example: To clear browser history."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Egiaztatu pasahitza konprometituta dagoen."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Pasahitz hau $VALUE$ aldiz datu-iragazketetan aurkitu da. Aldatu egin beharko zenuke.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1242,28 +1245,28 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Pasahitz hau ez da inongo datu-filtrazio ezagunetan aurkitu. Erabiltzea segurua izan beharko luke."
   },
   "baseDomain": {
-    "message": "Base domain",
+    "message": "Oinarrizko domeinua",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain name",
+    "message": "Domeinu izena",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
-    "message": "Host",
+    "message": "Ostalaria",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Zehatza"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Hasi honekin"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Expresio erregularra",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
@@ -1275,82 +1278,82 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Txandaketa aukerak"
   },
   "toggleCurrentUris": {
-    "message": "Toggle Current URIs",
+    "message": "Uneko URI-ak txandakatu",
     "description": "Toggle the display of the URIs of the currently open tabs in the browser."
   },
   "currentUri": {
-    "message": "Current URI",
+    "message": "Uneko URI-a",
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
-    "message": "Organization",
+    "message": "Erakundea",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Motak"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Elementu guztiak"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Ez dago erakusteko pasahitzik."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Ezabatu"
   },
   "default": {
-    "message": "Default"
+    "message": "Lehenetsia"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Eguneratua",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Pasahitza eguneratu da",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Ziur zaude \"Inoiz ez\" aukera erabili nahi duzula? Zure blokeo aukerak \"Inoiz ez\" bezala konfiguratzeak kutxa gotorraren zifratze-gakoa gailuan gordetzen du. Aukera hau erabiltzen baduzu, gailua behar bezala babestuta duzula ziurtatu behar duzu."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Zu ez zara inongo erakundekoa. Erakundeek elementuak beste erabiltzaile batzuekin modu seguruan partekatzeko aukera ematen dute."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Ez dago erakusteko bildumarik."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Jabetza"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Nork du elementu hau?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Sendoa",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Ona",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Biguna",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Pasahitz nagusi ahula"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Aukeratu duzun pasahitza ahula da. Pasahitz nagusi sendo bat (edo pasaesaldi bat) erabili beharko zenuke Bitwarden kontua behar bezala babesteko. Ziur zaude pasahitz nagusi hau erabili nahi duzula?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-a",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "PIN-arekin desblokeatu"
   },
   "setYourPinCode": {
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
@@ -1418,7 +1421,7 @@
     "message": "Restored Item"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Saioa ixteak kutxa gotorreko sarrera guztia kenduko du eta itxaronaldiaren ondoren lineako baimentzea eskatuko du. Ziur zaude hau egin nahi duzula?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Timeout Action Confirmation"
@@ -1480,7 +1483,7 @@
   "acceptPolicies": {
     "message": "By checking this box you agree to the following:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
@@ -1553,7 +1556,7 @@
     "message": "Permission request error"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
+    "message": "Ekintza hau ezin da alboko barran egin. Saiatu berriro leiho gainjarrian edo leiho berri batean."
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
@@ -1886,7 +1889,7 @@
     "message": "You have left the organization."
   },
   "toggleCharacterCount": {
-    "message": "Toggle character count"
+    "message": "Karaktere kontaketak txandakatu"
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."

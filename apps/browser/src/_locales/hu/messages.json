@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Érvénytelen email cím."
   },
-  "masterPassRequired": {
-    "message": "Mesterjelszó megadása kötelező."
+  "masterPasswordRequired": {
+    "message": "A mesterjelszó megadása kötelező."
   },
-  "masterPassLength": {
-    "message": "Mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
+  "confirmMasterPasswordRequired": {
+    "message": "A mesterjelszó ismételt megadása kötelező."
+  },
+  "masterPasswordMinLength": {
+    "message": "A mesterjelszó legyen legalább 8 karakter hosszú."
   },
   "masterPassDoesntMatch": {
     "message": "A megadott két jelszó nem egyezik meg."
@@ -1480,7 +1483,7 @@
   "acceptPolicies": {
     "message": "A doboz bejelölésével elfogadjuk a következőket:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
   },
   "termsOfService": {

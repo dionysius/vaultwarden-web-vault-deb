@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Klaidingas el. pašto adresas."
   },
-  "masterPassRequired": {
-    "message": "Būtinas pagrindinis slaptažodis."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Pagrindinis slaptažodis turi būti bent 8 simbolių ilgio."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Pagrindinio slaptažodžio patvirtinimas nesutampa."
@@ -1480,7 +1483,7 @@
   "acceptPolicies": {
     "message": "By checking this box you agree to the following:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {

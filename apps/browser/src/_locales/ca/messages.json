@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "L'adreça de correu electrònic no és vàlida."
   },
-  "masterPassRequired": {
-    "message": "La contrasenya mestra és obligatòria."
+  "masterPasswordRequired": {
+    "message": "Es requereix la contrasenya mestra."
   },
-  "masterPassLength": {
-    "message": "La contrasenya mestra ha de contenir almenys 8 caràcters."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmació de la contrasenya mestra no coincideix."
@@ -568,7 +571,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Demana d'afegir els inicis de sessió"
   },
   "addLoginNotificationDesc": {
     "message": "La \"Notificació per afegir inicis de sessió\" demana automàticament que guardeu els nous inicis de sessió a la vostra caixa forta quan inicieu la sessió per primera vegada."
@@ -600,7 +603,7 @@
     "message": "Guarda"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Demana d'actualitzar els inicis de sessió existents"
   },
   "changedPasswordNotificationDesc": {
     "message": "Ask to update a login's password when a change is detected on a website."
@@ -1034,7 +1037,7 @@
     "message": "Aquest navegador no pot processar sol·licituds U2F en aquesta finestra emergent. Voleu obrir l'emergent en una finestra nova per poder iniciar la sessió mitjançant U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Mostra les icones dels llocs web"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "Si activeu aquesta casella, indiqueu que esteu d’acord amb el següent:"
   },
-  "acceptPoliciesError": {
-    "message": "No s’han reconegut les condicions del servei i la declaració de privadesa."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Condicions del servei"

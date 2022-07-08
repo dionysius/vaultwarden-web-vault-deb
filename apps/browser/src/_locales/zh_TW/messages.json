@@ -423,10 +423,13 @@
   "invalidEmail": {
     "message": "無效的電子郵件地址。"
   },
-  "masterPassRequired": {
-    "message": "必須填入主密碼。"
+  "masterPasswordRequired": {
+    "message": "必須填寫主密碼。"
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "必須再次輸入主密碼。"
+  },
+  "masterPasswordMinLength": {
     "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
@@ -1356,7 +1359,7 @@
     "message": "設定您用來解鎖 Bitwarden 的 PIN 碼。您的 PIN 設定將在您完全登出本應用程式時被重設。"
   },
   "pinRequired": {
-    "message": "需要 PIN 碼。"
+    "message": "必須填入 PIN 碼。"
   },
   "invalidPin": {
     "message": "無效的 PIN 碼。"
@@ -1480,7 +1483,7 @@
   "acceptPolicies": {
     "message": "若選取此方塊，代表您同意下列項目："
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "尚未接受服務條款與隱私權政策。"
   },
   "termsOfService": {

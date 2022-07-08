@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Ugyldig E-postadresse."
   },
-  "masterPassRequired": {
-    "message": "Superpassordet er påkrevd."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Superpassordet må være ≥8 tegn lang."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Superpassord-bekreftelsen er ikke samsvarende."
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "Ved å merke av denne boksen sier du deg enig i følgende:"
   },
-  "acceptPoliciesError": {
-    "message": "Vilkårene for bruk og personvernerklæring er ikke akseptert."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Vilkår for bruk"

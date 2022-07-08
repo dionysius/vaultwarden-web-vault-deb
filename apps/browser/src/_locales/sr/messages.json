@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Неисправан имејл."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Главна Лозинка је неопходна."
   },
-  "masterPassLength": {
-    "message": "Главна Лозинка треба имати бар 8 знака."
+  "confirmMasterPasswordRequired": {
+    "message": "Поновно уписивање главне лозинке је неопходно."
+  },
+  "masterPasswordMinLength": {
+    "message": "Главна лозинка мора да садржи барем 8 знакова."
   },
   "masterPassDoesntMatch": {
     "message": "Потврђена Главна Лозинка се не подудара."
@@ -568,22 +571,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Питај пре додавања"
   },
   "addLoginNotificationDesc": {
     "message": "„Нотификације Додај Лозинку“ аутоматски тражи да сачувате нове пријаве у сефу кад год се први пут пријавите на њих."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Прикажи кредитне картице на страници картице"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Прикажи ставке кредитних картица на страници картице за лакше аутоматско допуњавање."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Прикажи идентитете на страници"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Прикажи ставке идентитета на страници за лакше аутоматско допуњавање."
   },
   "clearClipboard": {
     "message": "Обриши привремену меморију",
@@ -600,10 +603,10 @@
     "message": "Сачувај"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Питај за ажурирање постојеће пријаве"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Прикажи потврду за ажурирање тренутне лозинке за пријаву када се промена препозна на Web страници."
   },
   "notificationChangeDesc": {
     "message": "Да ли желите да ажурирате ову лозинку за Bitwarden?"
@@ -612,10 +615,10 @@
     "message": "Ажурирај"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Прикажи контекстни мени"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Користите други клик за приступање генерисању лозинки и пријавама за тренутну web страницу. "
   },
   "defaultUriMatchDetection": {
     "message": "Стандардно налажење УРЛ",
@@ -807,13 +810,13 @@
     "message": "Освежавање је завршено"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Аутоматски копирај једнократни код"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Ако је за вашу пријаву приложен аутентификациони кључ, једнократни код се аутоматски копира у вашој привременој меморији кад год ауто-попуните пријаву."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Захтевај биометрију при покретању"
   },
   "premiumRequired": {
     "message": "Потребан Премијум"
@@ -1034,16 +1037,16 @@
     "message": "Овај прегледач не може да обрађује U2F захтеве у овом искачућем прозору. Да ли желите да отворите овај искачући прозор у новом прозору како бисте могли да се пријавите користећи U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Прикажи иконе сајтова"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Прикажи препознатљиву слику поред сваке ставке за пријаву."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Прикажи бедж са бројачем"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Означи број пријава које се могу користити на тренутној Web страници."
   },
   "cardholderName": {
     "message": "Име Власника Картице"
@@ -1480,7 +1483,7 @@
   "acceptPolicies": {
     "message": "Означавањем овог поља пристајете на следеће:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Услови услуге и Политика приватности нису прихваћени."
   },
   "termsOfService": {
@@ -1847,7 +1850,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Време истека вашег сефа је премашило дозвољена ограничења од стране ваше организације."
   },
   "vaultExportDisabled": {
     "message": "Извоз сефа онемогућен"

@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Недействителна електронна поща."
   },
-  "masterPassRequired": {
+  "masterPasswordRequired": {
     "message": "Главната парола е задължителна."
   },
-  "masterPassLength": {
-    "message": "Главната парола трябва да съдържа поне 8 знака."
+  "confirmMasterPasswordRequired": {
+    "message": "Повторното въвеждане на главната парола е задължително."
+  },
+  "masterPasswordMinLength": {
+    "message": "Главната парола трябва да е с дължина поне 8 знака."
   },
   "masterPassDoesntMatch": {
     "message": "Главната парола и потвърждението ѝ не съвпадат."
@@ -1480,7 +1483,7 @@
   "acceptPolicies": {
     "message": "Чрез тази отметка вие се съгласявате със следното:"
   },
-  "acceptPoliciesError": {
+  "acceptPoliciesRequired": {
     "message": "Условията за използване и политиката за поверителност не бяха приети."
   },
   "termsOfService": {

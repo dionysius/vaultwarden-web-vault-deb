@@ -423,10 +423,13 @@
   "invalidEmail": {
     "message": "Correo electrónico no válido."
   },
-  "masterPassRequired": {
-    "message": "Contraseña maestra requerida."
+  "masterPasswordRequired": {
+    "message": "Se requiere una contraseña maestra."
   },
-  "masterPassLength": {
+  "confirmMasterPasswordRequired": {
+    "message": "Se requiere volver a teclear la contraseña maestra."
+  },
+  "masterPasswordMinLength": {
     "message": "La contraseña maestra debe tener al menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
@@ -568,22 +571,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Pedir que se añada el inicio de sesión"
   },
   "addLoginNotificationDesc": {
     "message": "La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres guardar nuevas entradas en tu caja fuerte cuando te identificas en un sitio web por primera vez."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Mostrar las tarjetas en la pestaña"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Listar los elementos de tarjetas en la página para facilitar el auto-rellenado."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Mostrar las identidades en la página"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Listar los elementos de identidad en la página para facilitar el auto-rellenado."
   },
   "clearClipboard": {
     "message": "Vaciar portapapeles",
@@ -600,10 +603,10 @@
     "message": "Sí, guardar ahora"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Solicitar la actualización de los datos de iniciode sesión existentes"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Solicitar la actualización de los datos de iniciode sesión existentes cuuando se detecte un cambio en un sitio web."
   },
   "notificationChangeDesc": {
     "message": "¿Desea actualizar esta contraseña en Bitwarden?"
@@ -612,10 +615,10 @@
     "message": "Actualizado"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Mostrar las opciones de menú contextuales"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Haga clic con el botón secundario para acceder a la generación de contraseñas y a los inicios de sesión correspondientes al sitio web. "
   },
   "defaultUriMatchDetection": {
     "message": "Detección por defecto de coincidencia de URI",
@@ -807,13 +810,13 @@
     "message": "Actualización completada"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Copiar TOTP automáticamente"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Si tu entrada tiene una clave de autenticación adjunta, el código de verificación TOTP es copiado automáticamente al portapapeles cuando autorellenas una entrada."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Pedir datos biométricos al ejecutar"
   },
   "premiumRequired": {
     "message": "Premium requerido"
@@ -1034,16 +1037,16 @@
     "message": "Este navegador no puede procesar las peticiones U2F en esta ventana emergente. ¿Desea abrir esta ventana emergente en una nueva ventana para que pueda iniciar sesión usando U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Mostrar los iconos del sitio web"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Mostrar una imagen reconocible junto a cada inicio de sesión."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Mostrar el contador numérico"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Indique cuántos inicios de sesión tiene para la página web actual."
   },
   "cardholderName": {
     "message": "Nombre en la tarjeta"
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "Al seleccionar esta casilla, acepta lo siguiente:"
   },
-  "acceptPoliciesError": {
-    "message": "Todavía no has aceptado los términos del servicio y la política de privacidad."
+  "acceptPoliciesRequired": {
+    "message": "No ha aceptado los términos del servicio y la política de privacidad."
   },
   "termsOfService": {
     "message": "Términos y condiciones del servicio"
@@ -1847,7 +1850,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "El tiempo de espera de tu caja fuerte excede las restricciones establecidas por tu organización."
   },
   "vaultExportDisabled": {
     "message": "Exportación de caja fuerte desactivada"

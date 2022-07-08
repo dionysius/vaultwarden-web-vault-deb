@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "अमान्य ई-मेल |"
   },
-  "masterPassRequired": {
-    "message": "मास्टर पासवर्ड की आवश्यकता है।"
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "मास्टर पासवर्ड कम से कम 8 अक्षर लंबे होने चाहिए।"
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "मास्टर पासवर्ड पुष्टि मेल नहीं खाती है।"
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "इस बॉक्स की जांच करके आप निम्नलिखित से सहमत हैं:"
   },
-  "acceptPoliciesError": {
-    "message": "सेवा और गोपनीयता नीति की शर्तों को स्वीकार नहीं किया गया है ।"
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "सेवा की शर्तें"

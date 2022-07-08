@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "වලංගු නොවන විද්යුත් තැපැල් ලිපිනය."
   },
-  "masterPassRequired": {
-    "message": "ප්රධාන මුරපදය අවශ්ය වේ."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "ප්රධාන මුරපදය අවම වශයෙන් අක්ෂර 8 ක් දිගු විය යුතුය."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "ප්රධාන මුරපදය තහවුරු කිරීම නොගැලපේ."
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "මෙම කොටුව පරීක්ෂා කිරීමෙන් ඔබ පහත සඳහන් දෑ වලට එකඟ වේ:"
   },
-  "acceptPoliciesError": {
-    "message": "සේවා කොන්දේසි සහ රහස්යතා ප්රතිපත්තිය පිළිගෙන නොමැත."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "සේවා කොන්දේසි"

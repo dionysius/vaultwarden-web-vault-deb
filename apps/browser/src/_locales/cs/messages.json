@@ -423,11 +423,14 @@
   "invalidEmail": {
     "message": "Neplatná e-mailová adresa."
   },
-  "masterPassRequired": {
-    "message": "Hlavní heslo je povinné."
+  "masterPasswordRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength": {
-    "message": "Hlavní heslo musí obsahovat alespoň 8 znaků."
+  "confirmMasterPasswordRequired": {
+    "message": "Master password retype is required."
+  },
+  "masterPasswordMinLength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrzení hlavního hesla se neshoduje."
@@ -1480,8 +1483,8 @@
   "acceptPolicies": {
     "message": "Zaškrtnutím tohoto políčka souhlasím s následujícím:"
   },
-  "acceptPoliciesError": {
-    "message": "Podmínky použití a zásady ochrany osobních údajů nebyly odsouhlaseny."
+  "acceptPoliciesRequired": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
     "message": "Podmínky použití"
@@ -1950,17 +1953,17 @@
     "message": "Forwarded Email Alias"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Vygenerovat e-mailový alias pomocí externí služby pro přesměrování."
   },
   "hostname": {
     "message": "Hostname",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "Přístupový token"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "API klíč"
   },
   "ssoKeyConnectorError": {
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
