@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 
 import { LooseComponentsModule } from "./modules/loose-components.module";
+import { OrganizationCreateModule } from "./modules/organizations/create/organization-create.module";
 import { OrganizationManageModule } from "./modules/organizations/manage/organization-manage.module";
 import { OrganizationUserModule } from "./modules/organizations/users/organization-user.module";
 import { PipesModule } from "./modules/pipes/pipes.module";
@@ -19,6 +20,7 @@ import { OrganizationBadgeModule } from "./modules/vault/modules/organization-ba
     PipesModule,
     OrganizationManageModule,
     OrganizationUserModule,
+    OrganizationCreateModule,
   ],
   exports: [
     SharedModule,

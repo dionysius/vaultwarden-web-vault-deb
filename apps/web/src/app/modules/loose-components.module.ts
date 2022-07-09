@@ -156,6 +156,7 @@ import { CollectionsComponent } from "../vault/collections.component";
 import { FolderAddEditComponent } from "../vault/folder-add-edit.component";
 import { ShareComponent } from "../vault/share.component";
 
+import { OrganizationCreateModule } from "./organizations/create/organization-create.module";
 import { PipesModule } from "./pipes/pipes.module";
 import { RegisterFormModule } from "./register-form/register-form.module";
 import { SharedModule } from "./shared.module";
@@ -170,6 +171,7 @@ import { OrganizationBadgeModule } from "./vault/modules/organization-badge/orga
     VaultFilterModule,
     OrganizationBadgeModule,
     PipesModule,
+    OrganizationCreateModule,
     RegisterFormModule,
   ],
   declarations: [

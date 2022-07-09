@@ -24,68 +24,17 @@
 </ng-container>
 <form
   #form
+  [formGroup]="formGroup"
   (ngSubmit)="submit()"
   [appApiAction]="formPromise"
   ngNativeValidate
   *ngIf="!loading && !selfHosted && this.plans"
+  class="tw-pt-6"
 >
-  <h2 class="mt-5">{{ "generalInformation" | i18n }}</h2>
-  <div class="row" *ngIf="createOrganization">
-    <div class="form-group col-6">
-      <label for="name">{{ "organizationName" | i18n }}</label>
-      <input id="name" class="form-control" type="text" name="Name" [(ngModel)]="name" required />
-    </div>
-    <div class="form-group col-6">
-      <label for="billingEmail">{{ "billingEmail" | i18n }}</label>
-      <input
-        id="billingEmail"
-        class="form-control"
-        type="text"
-        name="BillingEmail"
-        [(ngModel)]="billingEmail"
-        required
-      />
-    </div>
-    <div class="form-group col-6" *ngIf="!!providerId">
-      <label for="email">{{ "clientOwnerEmail" | i18n }}</label>
-      <input
-        id="email"
-        class="form-control"
-        type="text"
-        name="Email"
-        [(ngModel)]="clientOwnerEmail"
-        required
-      />
-      <small class="text-muted">{{ "clientOwnerDesc" | i18n: "20" }}</small>
-    </div>
-  </div>
-  <div *ngIf="!providerId && !acceptingSponsorship">
-    <div class="form-group form-check">
-      <input
-        id="ownedBusiness"
-        class="form-check-input"
-        type="checkbox"
-        name="OwnedBusiness"
-        [(ngModel)]="ownedBusiness"
-        (change)="changedOwnedBusiness()"
-      />
-      <label for="ownedBusiness" class="form-check-label">{{
-        "accountOwnedBusiness" | i18n
-      }}</label>
-    </div>
-    <div class="row" *ngIf="ownedBusiness">
-      <div class="form-group col-6">
-        <label for="businessName">{{ "businessName" | i18n }}</label>
-        <input
-          id="businessName"
-          class="form-control"
-          type="text"
-          name="BusinessName"
-          [(ngModel)]="businessName"
-        />
-      </div>
-    </div>
-  </div>
+  <app-org-info
+    (changedBusinessOwned)="changedOwnedBusiness()"
+    [formGroup]="formGroup"
+  ></app-org-info>
   <h2 class="mt-5">{{ "chooseYourPlan" | i18n }}</h2>
   <div *ngFor="let selectableProduct of selectableProducts" class="form-check form-check-block">
     <input
@@ -94,7 +43,7 @@
       name="product"
       id="product{{ selectableProduct.product }}"
       [value]="selectableProduct.product"
-      [(ngModel)]="product"
+      formControlName="product"
       (change)="changedProduct()"
     />
     <label class="form-check-label" for="product{{ selectableProduct.product }}">
@@ -167,7 +116,7 @@
       <span *ngIf="selectableProduct.product == productTypes.Free">{{ "freeForever" | i18n }}</span>
     </label>
   </div>
-  <div *ngIf="product !== productTypes.Free">
+  <div *ngIf="formGroup.controls['product'].value !== productTypes.Free">
     <ng-container *ngIf="selectedPlan.hasAdditionalSeatsOption && !selectedPlan.baseSeats">
       <h2 class="mt-5">{{ "users" | i18n }}</h2>
       <div class="row">
@@ -177,8 +126,8 @@
             id="additionalSeats"
             class="form-control"
             type="number"
-            name="AdditionalSeats"
-            [(ngModel)]="additionalSeats"
+            name="additionalSeats"
+            formControlName="additionalSeats"
             min="1"
             max="100000"
             placeholder="{{ 'userSeatsDesc' | i18n }}"
@@ -196,8 +145,8 @@
           id="additionalSeats"
           class="form-control"
           type="number"
-          name="AdditionalSeats"
-          [(ngModel)]="additionalSeats"
+          name="additionalSeats"
+          formControlName="additionalSeats"
           min="0"
           max="100000"
           placeholder="{{ 'userSeatsDesc' | i18n }}"
@@ -215,8 +164,8 @@
           id="additionalStorage"
           class="form-control"
           type="number"
-          name="AdditionalStorageGb"
-          [(ngModel)]="additionalStorage"
+          name="additionalStorageGb"
+          formControlName="additionalStorage"
           min="0"
           max="99"
           step="1"
@@ -238,8 +187,8 @@
             id="premiumAccess"
             class="form-check-input"
             type="checkbox"
-            name="PremiumAccessAddon"
-            [(ngModel)]="premiumAccessAddon"
+            name="premiumAccessAddon"
+            formControlName="premiumAccessAddon"
           />
           <label for="premiumAccess" class="form-check-label bold">{{
             "premiumAccess" | i18n
@@ -255,10 +204,10 @@
       <input
         class="form-check-input"
         type="radio"
-        name="BillingInterval"
+        name="plan"
         id="interval{{ selectablePlan.type }}"
         [value]="selectablePlan.type"
-        [(ngModel)]="plan"
+        formControlName="plan"
       />
       <label class="form-check-label" for="interval{{ selectablePlan.type }}">
         <ng-container *ngIf="selectablePlan.isAnnual">
@@ -281,7 +230,7 @@
           <small *ngIf="selectablePlan.hasAdditionalSeatsOption">
             <span *ngIf="selectablePlan.baseSeats">{{ "additionalUsers" | i18n }}:</span>
             <span *ngIf="!selectablePlan.baseSeats">{{ "users" | i18n }}:</span>
-            {{ additionalSeats || 0 }} &times;
+            {{ formGroup.controls["additionalSeats"].value || 0 }} &times;
             {{ selectablePlan.seatPrice / 12 | currency: "$" }} &times; 12
             {{ "monthAbbr" | i18n }} = {{ seatTotal(selectablePlan) | currency: "$" }} /{{
               "year" | i18n
@@ -314,18 +263,23 @@
           <small *ngIf="selectablePlan.hasAdditionalSeatsOption">
             <span *ngIf="selectablePlan.baseSeats">{{ "additionalUsers" | i18n }}:</span>
             <span *ngIf="!selectablePlan.baseSeats">{{ "users" | i18n }}:</span>
-            {{ additionalSeats || 0 }} &times; {{ selectablePlan.seatPrice | currency: "$" }}
-            {{ "monthAbbr" | i18n }} = {{ seatTotal(selectablePlan) | currency: "$" }} /{{
-              "month" | i18n
-            }}
+            {{ formGroup.controls["additionalSeats"].value || 0 }} &times;
+            {{ selectablePlan.seatPrice | currency: "$" }} {{ "monthAbbr" | i18n }} =
+            {{ seatTotal(selectablePlan) | currency: "$" }} /{{ "month" | i18n }}
           </small>
           <small *ngIf="selectablePlan.hasAdditionalStorageOption">
-            {{ "additionalStorageGb" | i18n }}: {{ additionalStorage || 0 }} &times;
+            {{ "additionalStorageGb" | i18n }}:
+            {{ formGroup.controls["additionalStorage"].value || 0 }} &times;
             {{ selectablePlan.additionalStoragePricePerGb | currency: "$" }}
             {{ "monthAbbr" | i18n }} =
             {{ additionalStorageTotal(selectablePlan) | currency: "$" }} /{{ "month" | i18n }}
           </small>
-          <small *ngIf="selectablePlan.hasPremiumAccessOption && premiumAccessAddon">
+          <small
+            *ngIf="
+              selectablePlan.hasPremiumAccessOption &&
+              formGroup.controls['premiumAccessAddon'].value
+            "
+          >
             {{ "premiumAccess" | i18n }}:
             {{ selectablePlan.premiumAccessOptionCost | currency: "$" }} {{ "monthAbbr" | i18n }} =
             {{ 40 | currency: "$" }}
