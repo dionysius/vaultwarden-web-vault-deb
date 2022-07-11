@@ -197,13 +197,13 @@ export class AppComponent implements OnDestroy, OnInit {
     this.policyListService.addPolicies([
       new TwoFactorAuthenticationPolicy(),
       new MasterPasswordPolicy(),
+      new ResetPasswordPolicy(),
       new PasswordGeneratorPolicy(),
       new SingleOrgPolicy(),
       new RequireSsoPolicy(),
       new PersonalOwnershipPolicy(),
       new DisableSendPolicy(),
       new SendOptionsPolicy(),
-      new ResetPasswordPolicy(),
     ]);
 
     this.setFullWidth();
