@@ -198,7 +198,7 @@ export class SyncService implements SyncServiceAbstraction {
         }
 
         if (shouldUpdate) {
-          const remoteCipher = await this.apiService.getCipher(notification.id);
+          const remoteCipher = await this.apiService.getFullCipherDetails(notification.id);
           if (remoteCipher != null) {
             await this.cipherService.upsert(new CipherData(remoteCipher));
             this.messagingService.send("syncedUpsertedCipher", { cipherId: notification.id });

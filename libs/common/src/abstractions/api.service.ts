@@ -262,6 +262,7 @@ export abstract class ApiService {
   renewSendFileUploadUrl: (sendId: string, fileId: string) => Promise<SendFileUploadDataResponse>;
 
   getCipher: (id: string) => Promise<CipherResponse>;
+  getFullCipherDetails: (id: string) => Promise<CipherResponse>;
   getCipherAdmin: (id: string) => Promise<CipherResponse>;
   getAttachmentData: (
     cipherId: string,
