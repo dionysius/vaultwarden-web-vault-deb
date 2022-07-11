@@ -2,10 +2,7 @@ import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import {
-  validateInputsDoesntMatch,
-  validateInputsMatch,
-} from "@bitwarden/angular/validators/fieldsInputCheck.validator";
+import { InputsFieldMatch } from "@bitwarden/angular/validators/inputsFieldMatch.validator";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -38,24 +35,31 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   showTerms = true;
   showErrorSummary = false;
 
-  formGroup = this.formBuilder.group({
-    email: ["", [Validators.required, Validators.email]],
-    name: [""],
-    masterPassword: ["", [Validators.required, Validators.minLength(8)]],
-    confirmMasterPassword: [
-      "",
-      [
-        Validators.required,
-        Validators.minLength(8),
-        validateInputsMatch("masterPassword", this.i18nService.t("masterPassDoesntMatch")),
+  formGroup = this.formBuilder.group(
+    {
+      email: ["", [Validators.required, Validators.email]],
+      name: [""],
+      masterPassword: ["", [Validators.required, Validators.minLength(8)]],
+      confirmMasterPassword: ["", [Validators.required, Validators.minLength(8)]],
+      hint: [
+        null,
+        [
+          InputsFieldMatch.validateInputsDoesntMatch(
+            "masterPassword",
+            this.i18nService.t("hintEqualsPassword")
+          ),
+        ],
       ],
-    ],
-    hint: [
-      null,
-      [validateInputsDoesntMatch("masterPassword", this.i18nService.t("hintEqualsPassword"))],
-    ],
-    acceptPolicies: [false, [Validators.requiredTrue]],
-  });
+      acceptPolicies: [false, [Validators.requiredTrue]],
+    },
+    {
+      validator: InputsFieldMatch.validateFormInputsMatch(
+        "masterPassword",
+        "confirmMasterPassword",
+        this.i18nService.t("masterPassDoesntMatch")
+      ),
+    }
+  );
 
   protected successRoute = "login";
   private masterPasswordStrengthTimeout: any;
