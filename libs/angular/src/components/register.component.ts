@@ -1,4 +1,4 @@
-import { Directive, OnInit } from "@angular/core";
+import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -28,6 +28,9 @@ import { CaptchaProtectedComponent } from "./captchaProtected.component";
 
 @Directive()
 export class RegisterComponent extends CaptchaProtectedComponent implements OnInit {
+  @Input() isInTrialFlow = false;
+  @Output() createdAccount = new EventEmitter<string>();
+
   showPassword = false;
   formPromise: Promise<any>;
   masterPasswordScore: number;
@@ -194,7 +197,11 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
         }
       }
       this.platformUtilsService.showToast("success", null, this.i18nService.t("newAccountCreated"));
-      this.router.navigate([this.successRoute], { queryParams: { email: email } });
+      if (this.isInTrialFlow) {
+        this.createdAccount.emit(this.formGroup.get("email")?.value);
+      } else {
+        this.router.navigate([this.successRoute], { queryParams: { email: email } });
+      }
     } catch (e) {
       this.logService.error(e);
     }

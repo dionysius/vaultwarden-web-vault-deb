@@ -1,6 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs";
+
+import { VerticalStepperComponent } from "../vertical-stepper/vertical-stepper.component";
 
 @Component({
   selector: "app-trial",
@@ -9,6 +11,7 @@ import { first } from "rxjs";
 export class TrialInitiationComponent implements OnInit {
   email = "";
   org = "teams";
+  @ViewChild("stepper", { static: true }) verticalStepper: VerticalStepperComponent;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -21,5 +24,10 @@ export class TrialInitiationComponent implements OnInit {
         this.org = qParams.org;
       }
     });
+  }
+
+  createdAccount(email: string) {
+    this.email = email;
+    this.verticalStepper.next();
   }
 }
