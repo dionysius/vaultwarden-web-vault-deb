@@ -9,6 +9,9 @@ import { StateMigrationService } from "@bitwarden/common/services/stateMigration
 
 const userId = "USER_ID";
 
+// Note: each test calls the private migration method for that migration,
+// so that we don't accidentally run all following migrations as well
+
 describe("State Migration Service", () => {
   let storageService: SubstituteOf<AbstractStorageService>;
   let secureStorageService: SubstituteOf<AbstractStorageService>;
@@ -66,19 +69,62 @@ describe("State Migration Service", () => {
 
       storageService.get(userId, Arg.any()).resolves(accountVersion3);
 
-      await stateMigrationService.migrate();
+      await (stateMigrationService as any).migrateStateFrom3To4();
 
       storageService.received(1).save(userId, expectedAccountVersion4, Arg.any());
     });
 
     it("updates StateVersion number", async () => {
-      await stateMigrationService.migrate();
+      await (stateMigrationService as any).migrateStateFrom3To4();
 
       storageService.received(1).save(
         "global",
         Arg.is((globals: GlobalState) => globals.stateVersion === StateVersion.Four),
         Arg.any()
       );
+    });
+  });
+
+  describe("StateVersion 4 to 5 migration", () => {
+    it("migrates organization keys to new format", async () => {
+      const accountVersion4 = new Account({
+        keys: {
+          organizationKeys: {
+            encrypted: {
+              orgOneId: "orgOneEncKey",
+              orgTwoId: "orgTwoEncKey",
+              orgThreeId: "orgThreeEncKey",
+            },
+          },
+        },
+      } as any);
+
+      const expectedAccount = new Account({
+        keys: {
+          organizationKeys: {
+            encrypted: {
+              orgOneId: {
+                type: "organization",
+                key: "orgOneEncKey",
+              },
+              orgTwoId: {
+                type: "organization",
+                key: "orgTwoEncKey",
+              },
+              orgThreeId: {
+                type: "organization",
+                key: "orgThreeEncKey",
+              },
+            },
+          },
+        },
+      });
+
+      const migratedAccount = await (stateMigrationService as any).migrateAccountFrom4To5(
+        accountVersion4
+      );
+
+      expect(migratedAccount).toEqual(expectedAccount);
     });
   });
 });

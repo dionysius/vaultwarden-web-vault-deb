@@ -13,6 +13,7 @@ import { StateFactory } from "../factories/stateFactory";
 import { Utils } from "../misc/utils";
 import { CipherData } from "../models/data/cipherData";
 import { CollectionData } from "../models/data/collectionData";
+import { EncryptedOrganizationKeyData } from "../models/data/encryptedOrganizationKeyData";
 import { EventData } from "../models/data/eventData";
 import { FolderData } from "../models/data/folderData";
 import { OrganizationData } from "../models/data/organizationData";
@@ -1344,14 +1345,16 @@ export class StateService<
     );
   }
 
-  async getEncryptedOrganizationKeys(options?: StorageOptions): Promise<any> {
+  async getEncryptedOrganizationKeys(
+    options?: StorageOptions
+  ): Promise<{ [orgId: string]: EncryptedOrganizationKeyData }> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions()))
     )?.keys?.organizationKeys.encrypted;
   }
 
   async setEncryptedOrganizationKeys(
-    value: Map<string, SymmetricCryptoKey>,
+    value: { [orgId: string]: EncryptedOrganizationKeyData },
     options?: StorageOptions
   ): Promise<void> {
     const account = await this.getAccount(

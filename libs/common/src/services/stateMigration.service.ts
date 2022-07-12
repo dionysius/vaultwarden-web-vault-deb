@@ -155,6 +155,15 @@ export class StateMigrationService<
         case StateVersion.Three:
           await this.migrateStateFrom3To4();
           break;
+        case StateVersion.Four: {
+          const authenticatedAccounts = await this.getAuthenticatedAccounts();
+          for (const account of authenticatedAccounts) {
+            const migratedAccount = await this.migrateAccountFrom4To5(account);
+            await this.set(account.profile.userId, migratedAccount);
+          }
+          await this.setCurrentStateVersion(StateVersion.Five);
+          break;
+        }
       }
 
       currentStateVersion += 1;
@@ -488,6 +497,20 @@ export class StateMigrationService<
     await this.set(keys.global, globals);
   }
 
+  protected async migrateAccountFrom4To5(account: TAccount): Promise<TAccount> {
+    const encryptedOrgKeys = account.keys?.organizationKeys?.encrypted;
+    if (encryptedOrgKeys != null) {
+      for (const [orgId, encKey] of Object.entries(encryptedOrgKeys)) {
+        encryptedOrgKeys[orgId] = {
+          type: "organization",
+          key: encKey as unknown as string, // Account v4 does not reflect the current account model so we have to cast
+        };
+      }
+    }
+
+    return account;
+  }
+
   protected get options(): StorageOptions {
     return { htmlStorageLocation: HtmlStorageLocation.Local };
   }
@@ -509,5 +532,16 @@ export class StateMigrationService<
 
   protected async getCurrentStateVersion(): Promise<StateVersion> {
     return (await this.getGlobals())?.stateVersion ?? StateVersion.One;
+  }
+
+  protected async setCurrentStateVersion(newVersion: StateVersion): Promise<void> {
+    const globals = await this.getGlobals();
+    globals.stateVersion = newVersion;
+    await this.set(keys.global, globals);
+  }
+
+  protected async getAuthenticatedAccounts(): Promise<TAccount[]> {
+    const authenticatedUserIds = await this.get<string[]>(keys.authenticatedAccounts);
+    return Promise.all(authenticatedUserIds.map((id) => this.get<TAccount>(id)));
   }
 }

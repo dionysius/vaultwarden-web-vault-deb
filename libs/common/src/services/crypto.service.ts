@@ -13,9 +13,11 @@ import { KeySuffixOptions } from "../enums/keySuffixOptions";
 import { sequentialize } from "../misc/sequentialize";
 import { Utils } from "../misc/utils";
 import { EEFLongWordList } from "../misc/wordlist";
+import { EncryptedOrganizationKeyData } from "../models/data/encryptedOrganizationKeyData";
 import { EncArrayBuffer } from "../models/domain/encArrayBuffer";
 import { EncString } from "../models/domain/encString";
 import { EncryptedObject } from "../models/domain/encryptedObject";
+import { BaseEncryptedOrganizationKey } from "../models/domain/encryptedOrganizationKey";
 import { SymmetricCryptoKey } from "../models/domain/symmetricCryptoKey";
 import { ProfileOrganizationResponse } from "../models/response/profileOrganizationResponse";
 import { ProfileProviderOrganizationResponse } from "../models/response/profileProviderOrganizationResponse";
@@ -58,23 +60,28 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async setOrgKeys(
-    orgs: ProfileOrganizationResponse[],
-    providerOrgs: ProfileProviderOrganizationResponse[]
+    orgs: ProfileOrganizationResponse[] = [],
+    providerOrgs: ProfileProviderOrganizationResponse[] = []
   ): Promise<void> {
-    const orgKeys: any = {};
+    const encOrgKeyData: { [orgId: string]: EncryptedOrganizationKeyData } = {};
+
     orgs.forEach((org) => {
-      orgKeys[org.id] = org.key;
+      encOrgKeyData[org.id] = {
+        type: "organization",
+        key: org.key,
+      };
     });
 
-    for (const providerOrg of providerOrgs) {
-      // Convert provider encrypted keys to user encrypted.
-      const providerKey = await this.getProviderKey(providerOrg.providerId);
-      const decValue = await this.decryptToBytes(new EncString(providerOrg.key), providerKey);
-      orgKeys[providerOrg.id] = (await this.rsaEncrypt(decValue)).encryptedString;
-    }
+    providerOrgs.forEach((org) => {
+      encOrgKeyData[org.id] = {
+        type: "provider",
+        providerId: org.providerId,
+        key: org.key,
+      };
+    });
 
     await this.stateService.setDecryptedOrganizationKeys(null);
-    return await this.stateService.setEncryptedOrganizationKeys(orgKeys);
+    return await this.stateService.setEncryptedOrganizationKeys(encOrgKeyData);
   }
 
   async setProviderKeys(providers: ProfileProviderResponse[]): Promise<void> {
@@ -211,35 +218,36 @@ export class CryptoService implements CryptoServiceAbstraction {
 
   @sequentialize(() => "getOrgKeys")
   async getOrgKeys(): Promise<Map<string, SymmetricCryptoKey>> {
-    const orgKeys: Map<string, SymmetricCryptoKey> = new Map<string, SymmetricCryptoKey>();
+    const result: Map<string, SymmetricCryptoKey> = new Map<string, SymmetricCryptoKey>();
     const decryptedOrganizationKeys = await this.stateService.getDecryptedOrganizationKeys();
     if (decryptedOrganizationKeys != null && decryptedOrganizationKeys.size > 0) {
       return decryptedOrganizationKeys;
     }
 
-    const encOrgKeys = await this.stateService.getEncryptedOrganizationKeys();
-    if (encOrgKeys == null) {
+    const encOrgKeyData = await this.stateService.getEncryptedOrganizationKeys();
+    if (encOrgKeyData == null) {
       return null;
     }
 
     let setKey = false;
 
-    for (const orgId in encOrgKeys) {
-      // eslint-disable-next-line
-      if (!encOrgKeys.hasOwnProperty(orgId)) {
+    for (const orgId of Object.keys(encOrgKeyData)) {
+      if (result.has(orgId)) {
         continue;
       }
 
-      const decValue = await this.rsaDecrypt(encOrgKeys[orgId]);
-      orgKeys.set(orgId, new SymmetricCryptoKey(decValue));
+      const encOrgKey = BaseEncryptedOrganizationKey.fromData(encOrgKeyData[orgId]);
+      const decOrgKey = await encOrgKey.decrypt(this);
+      result.set(orgId, decOrgKey);
+
       setKey = true;
     }
 
     if (setKey) {
-      await this.stateService.setDecryptedOrganizationKeys(orgKeys);
+      await this.stateService.setDecryptedOrganizationKeys(result);
     }
 
-    return orgKeys;
+    return result;
   }
 
   async getOrgKey(orgId: string): Promise<SymmetricCryptoKey> {

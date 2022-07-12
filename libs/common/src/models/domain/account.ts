@@ -3,6 +3,7 @@ import { KdfType } from "../../enums/kdfType";
 import { UriMatchType } from "../../enums/uriMatchType";
 import { CipherData } from "../data/cipherData";
 import { CollectionData } from "../data/collectionData";
+import { EncryptedOrganizationKeyData } from "../data/encryptedOrganizationKeyData";
 import { EventData } from "../data/eventData";
 import { FolderData } from "../data/folderData";
 import { OrganizationData } from "../data/organizationData";
@@ -69,8 +70,11 @@ export class AccountKeys {
     string,
     SymmetricCryptoKey
   >();
-  organizationKeys?: EncryptionPair<any, Map<string, SymmetricCryptoKey>> = new EncryptionPair<
-    any,
+  organizationKeys?: EncryptionPair<
+    { [orgId: string]: EncryptedOrganizationKeyData },
+    Map<string, SymmetricCryptoKey>
+  > = new EncryptionPair<
+    { [orgId: string]: EncryptedOrganizationKeyData },
     Map<string, SymmetricCryptoKey>
   >();
   providerKeys?: EncryptionPair<any, Map<string, SymmetricCryptoKey>> = new EncryptionPair<
