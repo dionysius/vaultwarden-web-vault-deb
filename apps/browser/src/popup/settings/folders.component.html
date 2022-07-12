@@ -20,20 +20,20 @@
   </div>
 </header>
 <main tabindex="-1">
-  <div class="box list full-list" *ngIf="folders && folders.length">
+  <div class="box list full-list" *ngIf="(folders$ | async)?.length">
     <div class="box-content">
       <button
         type="button"
         appStopClick
         (click)="folderSelected(f)"
         class="box-content-row padded"
-        *ngFor="let f of folders"
+        *ngFor="let f of folders$ | async"
       >
         {{ f.name }}
       </button>
     </div>
   </div>
-  <div class="no-items" *ngIf="!folders || !folders.length">
+  <div class="no-items" *ngIf="!(folders$ | async)?.length">
     <p>{{ "noFolders" | i18n }}</p>
   </div>
 </main>

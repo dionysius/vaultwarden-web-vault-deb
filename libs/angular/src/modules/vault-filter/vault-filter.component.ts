@@ -1,4 +1,5 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { firstValueFrom, Observable } from "rxjs";
 
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { ITreeNodeObject } from "@bitwarden/common/models/domain/treeNode";
@@ -28,7 +29,7 @@ export class VaultFilterComponent implements OnInit {
   activePersonalOwnershipPolicy: boolean;
   activeSingleOrganizationPolicy: boolean;
   collections: DynamicTreeNode<CollectionView>;
-  folders: DynamicTreeNode<FolderView>;
+  folders$: Observable<DynamicTreeNode<FolderView>>;
 
   constructor(protected vaultFilterService: VaultFilterService) {}
 
@@ -45,7 +46,7 @@ export class VaultFilterComponent implements OnInit {
       this.activeSingleOrganizationPolicy =
         await this.vaultFilterService.checkForSingleOrganizationPolicy();
     }
-    this.folders = await this.vaultFilterService.buildFolders();
+    this.folders$ = await this.vaultFilterService.buildNestedFolders();
     this.collections = await this.initCollections();
     this.isLoaded = true;
   }
@@ -67,13 +68,13 @@ export class VaultFilterComponent implements OnInit {
   async applyFilter(filter: VaultFilter) {
     if (filter.refreshCollectionsAndFolders) {
       await this.reloadCollectionsAndFolders(filter);
-      filter = this.pruneInvalidatedFilterSelections(filter);
+      filter = await this.pruneInvalidatedFilterSelections(filter);
     }
     this.onFilterChange.emit(filter);
   }
 
   async reloadCollectionsAndFolders(filter: VaultFilter) {
-    this.folders = await this.vaultFilterService.buildFolders(filter.selectedOrganizationId);
+    this.folders$ = await this.vaultFilterService.buildNestedFolders(filter.selectedOrganizationId);
     this.collections = filter.myVaultOnly
       ? null
       : await this.vaultFilterService.buildCollections(filter.selectedOrganizationId);
@@ -95,14 +96,17 @@ export class VaultFilterComponent implements OnInit {
     this.onEditFolder.emit(folder);
   }
 
-  protected pruneInvalidatedFilterSelections(filter: VaultFilter): VaultFilter {
-    filter = this.pruneInvalidFolderSelection(filter);
+  protected async pruneInvalidatedFilterSelections(filter: VaultFilter): Promise<VaultFilter> {
+    filter = await this.pruneInvalidFolderSelection(filter);
     filter = this.pruneInvalidCollectionSelection(filter);
     return filter;
   }
 
-  protected pruneInvalidFolderSelection(filter: VaultFilter): VaultFilter {
-    if (filter.selectedFolder && !this.folders?.hasId(filter.selectedFolderId)) {
+  protected async pruneInvalidFolderSelection(filter: VaultFilter): Promise<VaultFilter> {
+    if (
+      filter.selectedFolder &&
+      !(await firstValueFrom(this.folders$))?.hasId(filter.selectedFolderId)
+    ) {
       filter.selectedFolder = false;
       filter.selectedFolderId = null;
     }

@@ -31,7 +31,6 @@ import { SymmetricCryptoKey } from "../models/domain/symmetricCryptoKey";
 import { WindowState } from "../models/domain/windowState";
 import { CipherView } from "../models/view/cipherView";
 import { CollectionView } from "../models/view/collectionView";
-import { FolderView } from "../models/view/folderView";
 import { SendView } from "../models/view/sendView";
 
 const keys = {
@@ -652,24 +651,6 @@ export class StateService<
       this.reconcileOptions(options, await this.defaultInMemoryOptions())
     );
     account.keys.cryptoSymmetricKey.decrypted = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
-    );
-  }
-
-  @withPrototypeForArrayMembers(FolderView)
-  async getDecryptedFolders(options?: StorageOptions): Promise<FolderView[]> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
-    )?.data?.folders?.decrypted;
-  }
-
-  async setDecryptedFolders(value: FolderView[], options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
-    );
-    account.data.folders.decrypted = value;
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultInMemoryOptions())

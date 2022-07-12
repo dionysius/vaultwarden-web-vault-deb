@@ -11,7 +11,6 @@ import { ProviderData } from "../data/providerData";
 import { SendData } from "../data/sendData";
 import { CipherView } from "../view/cipherView";
 import { CollectionView } from "../view/collectionView";
-import { FolderView } from "../view/folderView";
 import { SendView } from "../view/sendView";
 
 import { EncString } from "./encString";
@@ -31,15 +30,19 @@ export class DataEncryptionPair<TEncrypted, TDecrypted> {
   decrypted?: TDecrypted[];
 }
 
+// This is a temporary structure to handle migrated `DataEncryptionPair` to
+//  avoid needing a data migration at this stage. It should be replaced with
+//  proper data migrations when `DataEncryptionPair` is deprecated.
+export class TemporaryDataEncryption<TEncrypted> {
+  encrypted?: { [id: string]: TEncrypted };
+}
+
 export class AccountData {
   ciphers?: DataEncryptionPair<CipherData, CipherView> = new DataEncryptionPair<
     CipherData,
     CipherView
   >();
-  folders?: DataEncryptionPair<FolderData, FolderView> = new DataEncryptionPair<
-    FolderData,
-    FolderView
-  >();
+  folders? = new TemporaryDataEncryption<FolderData>();
   localData?: any;
   sends?: DataEncryptionPair<SendData, SendView> = new DataEncryptionPair<SendData, SendView>();
   collections?: DataEncryptionPair<CollectionData, CollectionView> = new DataEncryptionPair<

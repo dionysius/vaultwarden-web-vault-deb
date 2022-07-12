@@ -80,6 +80,7 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
 
     if (userId == null || userId === (await this.stateService.getUserId())) {
       this.searchService.clearIndex();
+      await this.folderService.clearCache();
     }
 
     await this.stateService.setEverBeenUnlocked(true, { userId: userId });
@@ -91,7 +92,6 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     await this.cryptoService.clearKeyPair(true, userId);
     await this.cryptoService.clearEncKey(true, userId);
 
-    await this.folderService.clearCache(userId);
     await this.cipherService.clearCache(userId);
     await this.collectionService.clearCache(userId);
 

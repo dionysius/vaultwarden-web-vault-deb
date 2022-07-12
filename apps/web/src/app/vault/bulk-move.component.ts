@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { firstValueFrom, Observable } from "rxjs";
 
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
@@ -15,7 +16,7 @@ export class BulkMoveComponent implements OnInit {
   @Output() onMoved = new EventEmitter();
 
   folderId: string = null;
-  folders: FolderView[] = [];
+  folders$: Observable<FolderView[]>;
   formPromise: Promise<any>;
 
   constructor(
@@ -26,8 +27,8 @@ export class BulkMoveComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.folders = await this.folderService.getAllDecrypted();
-    this.folderId = this.folders[0].id;
+    this.folders$ = this.folderService.folderViews$;
+    this.folderId = (await firstValueFrom(this.folders$))[0].id;
   }
 
   async submit() {

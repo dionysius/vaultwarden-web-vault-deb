@@ -1,4 +1,5 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Observable } from "rxjs";
 
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
@@ -51,7 +52,7 @@ export class AddEditComponent implements OnInit {
 
   editMode = false;
   cipher: CipherView;
-  folders: FolderView[];
+  folders$: Observable<FolderView[]>;
   collections: CollectionView[] = [];
   title: string;
   formPromise: Promise<any>;
@@ -243,7 +244,7 @@ export class AddEditComponent implements OnInit {
       }
     }
 
-    this.folders = await this.folderService.getAllDecrypted();
+    this.folders$ = this.folderService.folderViews$;
 
     if (this.editMode && this.previousCipherId !== this.cipherId) {
       this.eventService.collect(EventType.Cipher_ClientViewed, this.cipherId);

@@ -60,7 +60,7 @@
               class="form-control"
               [disabled]="cipher.isDeleted || viewOnly"
             >
-              <option *ngFor="let f of folders" [ngValue]="f.id">{{ f.name }}</option>
+              <option *ngFor="let f of folders$ | async" [ngValue]="f.id">{{ f.name }}</option>
             </select>
           </div>
         </div>

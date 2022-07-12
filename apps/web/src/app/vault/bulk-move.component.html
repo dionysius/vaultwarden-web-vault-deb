@@ -19,7 +19,7 @@
         <div class="form-group">
           <label for="folder">{{ "folder" | i18n }}</label>
           <select id="folder" name="FolderId" [(ngModel)]="folderId" class="form-control">
-            <option *ngFor="let f of folders" [ngValue]="f.id">{{ f.name }}</option>
+            <option *ngFor="let f of folders$ | async" [ngValue]="f.id">{{ f.name }}</option>
           </select>
         </div>
       </div>

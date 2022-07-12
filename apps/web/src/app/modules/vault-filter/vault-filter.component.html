@@ -57,7 +57,7 @@
           [hide]="hideFolders"
           [activeFilter]="activeFilter"
           [collapsedFilterNodes]="collapsedFilterNodes"
-          [folderNodes]="folders"
+          [folderNodes]="folders$ | async"
           (onNodeCollapseStateChange)="toggleFilterNodeCollapseState($event)"
           (onFilterChange)="applyFilter($event)"
           (onAddFolder)="addFolder()"

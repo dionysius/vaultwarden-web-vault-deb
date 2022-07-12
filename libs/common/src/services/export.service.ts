@@ -1,4 +1,5 @@
 import * as papa from "papaparse";
+import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "../abstractions/api.service";
 import { CipherService } from "../abstractions/cipher.service";
@@ -115,7 +116,7 @@ export class ExportService implements ExportServiceAbstraction {
     const promises = [];
 
     promises.push(
-      this.folderService.getAllDecrypted().then((folders) => {
+      firstValueFrom(this.folderService.folderViews$).then((folders) => {
         decFolders = folders;
       })
     );
@@ -191,7 +192,7 @@ export class ExportService implements ExportServiceAbstraction {
     const promises = [];
 
     promises.push(
-      this.folderService.getAll().then((f) => {
+      firstValueFrom(this.folderService.folders$).then((f) => {
         folders = f;
       })
     );

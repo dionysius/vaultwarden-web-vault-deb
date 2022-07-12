@@ -120,7 +120,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         this.searchPlaceholder = this.i18nService.t("searchFolder");
         if (this.folderId != null) {
           this.showOrganizations = false;
-          const folderNode = await this.folderService.getNested(this.folderId);
+          const folderNode = await this.vaultFilterService.getFolderNested(this.folderId);
           if (folderNode != null && folderNode.node != null) {
             this.groupingTitle = folderNode.node.name;
             this.nestedFolders =

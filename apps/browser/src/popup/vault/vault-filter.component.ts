@@ -1,6 +1,7 @@
 import { Location } from "@angular/common";
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
 
 import { VaultFilter } from "@bitwarden/angular/modules/vault-filter/models/vault-filter.model";
@@ -182,9 +183,11 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   }
 
   async loadFolders() {
-    const allFolders = await this.vaultFilterService.buildFolders(this.selectedOrganization);
+    const allFolders = await firstValueFrom(
+      this.vaultFilterService.buildNestedFolders(this.selectedOrganization)
+    );
     this.folders = allFolders.fullList;
-    this.nestedFolders = await allFolders.nestedList;
+    this.nestedFolders = allFolders.nestedList;
   }
 
   async search(timeout: number = null) {

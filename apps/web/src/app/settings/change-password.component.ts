@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "@bitwarden/angular/components/change-password.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -192,7 +193,7 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
     request.key = encKey[1].encryptedString;
     request.masterPasswordHash = masterPasswordHash;
 
-    const folders = await this.folderService.getAllDecrypted();
+    const folders = await firstValueFrom(this.folderService.folderViews$);
     for (let i = 0; i < folders.length; i++) {
       if (folders[i].id == null) {
         continue;

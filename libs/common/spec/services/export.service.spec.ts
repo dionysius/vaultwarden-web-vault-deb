@@ -1,4 +1,5 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
+import { BehaviorSubject } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
@@ -97,8 +98,8 @@ describe("ExportService", () => {
     folderService = Substitute.for<FolderService>();
     cryptoService = Substitute.for<CryptoService>();
 
-    folderService.getAllDecrypted().resolves([]);
-    folderService.getAll().resolves([]);
+    folderService.folderViews$.returns(new BehaviorSubject([]));
+    folderService.folders$.returns(new BehaviorSubject([]));
 
     exportService = new ExportService(
       folderService,

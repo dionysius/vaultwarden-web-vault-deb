@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { map, Observable } from "rxjs";
 
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { FolderView } from "@bitwarden/common/models/view/folderView";
@@ -8,17 +9,19 @@ import { FolderView } from "@bitwarden/common/models/view/folderView";
   selector: "app-folders",
   templateUrl: "folders.component.html",
 })
-export class FoldersComponent implements OnInit {
-  folders: FolderView[];
+export class FoldersComponent {
+  folders$: Observable<FolderView[]>;
 
-  constructor(private folderService: FolderService, private router: Router) {}
+  constructor(private folderService: FolderService, private router: Router) {
+    this.folders$ = this.folderService.folderViews$.pipe(
+      map((folders) => {
+        if (folders.length > 0) {
+          folders = folders.slice(0, folders.length - 1);
+        }
 
-  async ngOnInit() {
-    this.folders = await this.folderService.getAllDecrypted();
-    // Remove "No Folder"
-    if (this.folders.length > 0) {
-      this.folders = this.folders.slice(0, this.folders.length - 1);
-    }
+        return folders;
+      })
+    );
   }
 
   folderSelected(folder: FolderView) {
