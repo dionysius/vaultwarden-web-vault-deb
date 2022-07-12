@@ -1,5 +1,7 @@
+import { Observable } from "rxjs";
+
 export abstract class I18nService {
-  locale: string;
+  locale$: Observable<string>;
   supportedTranslationLocales: string[];
   translationLocale: string;
   collator: Intl.Collator;

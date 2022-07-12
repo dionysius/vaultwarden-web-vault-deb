@@ -1,7 +1,10 @@
+import { Observable, ReplaySubject } from "rxjs";
+
 import { I18nService as I18nServiceAbstraction } from "../abstractions/i18n.service";
 
 export class I18nService implements I18nServiceAbstraction {
-  locale: string;
+  private _locale = new ReplaySubject<string>(1);
+  locale$: Observable<string> = this._locale.asObservable();
   // First locale is the default (English)
   supportedTranslationLocales: string[] = ["en"];
   translationLocale: string;
@@ -85,10 +88,14 @@ export class I18nService implements I18nServiceAbstraction {
     }
 
     this.inited = true;
-    this.locale = this.translationLocale = locale != null ? locale : this.systemLanguage;
+    this.translationLocale = locale != null ? locale : this.systemLanguage;
+    this._locale.next(this.translationLocale);
 
     try {
-      this.collator = new Intl.Collator(this.locale, { numeric: true, sensitivity: "base" });
+      this.collator = new Intl.Collator(this.translationLocale, {
+        numeric: true,
+        sensitivity: "base",
+      });
     } catch {
       this.collator = null;
     }

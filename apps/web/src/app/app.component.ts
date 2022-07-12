@@ -4,6 +4,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { NavigationEnd, Router } from "@angular/router";
 import * as jq from "jquery";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
+import { Subject, takeUntil } from "rxjs";
 import Swal from "sweetalert2";
 
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
@@ -48,6 +49,7 @@ export class AppComponent implements OnDestroy, OnInit {
   private lastActivity: number = null;
   private idleTimer: number = null;
   private isIdle = false;
+  private destroy$ = new Subject<void>();
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -78,7 +80,9 @@ export class AppComponent implements OnDestroy, OnInit {
   ) {}
 
   ngOnInit() {
-    this.document.documentElement.lang = this.i18nService.locale;
+    this.i18nService.locale$.pipe(takeUntil(this.destroy$)).subscribe((locale) => {
+      this.document.documentElement.lang = locale;
+    });
 
     this.ngZone.runOutsideAngular(() => {
       window.onmousemove = () => this.recordActivity();
@@ -181,7 +185,7 @@ export class AppComponent implements OnDestroy, OnInit {
       });
     });
 
-    this.router.events.subscribe((event) => {
+    this.router.events.pipe(takeUntil(this.destroy$)).subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const modals = Array.from(document.querySelectorAll(".modal"));
         for (const modal of modals) {
@@ -211,6 +215,8 @@ export class AppComponent implements OnDestroy, OnInit {
 
   ngOnDestroy() {
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    this.destroy$.next();
+    this.destroy$.unsubscribe();
   }
 
   private async logOut(expired: boolean) {

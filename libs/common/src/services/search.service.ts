@@ -14,16 +14,23 @@ export class SearchService implements SearchServiceAbstraction {
   indexedEntityId?: string = null;
   private indexing = false;
   private index: lunr.Index = null;
-  private searchableMinLength = 2;
+  private readonly immediateSearchLocales: string[] = ["zh-CN", "zh-TW", "ja", "ko", "vi"];
+  private readonly defaultSearchableMinLength: number = 2;
+  private searchableMinLength: number = this.defaultSearchableMinLength;
 
   constructor(
     private cipherService: CipherService,
     private logService: LogService,
     private i18nService: I18nService
   ) {
-    if (["zh-CN", "zh-TW"].indexOf(i18nService.locale) !== -1) {
-      this.searchableMinLength = 1;
-    }
+    this.i18nService.locale$.subscribe((locale) => {
+      if (this.immediateSearchLocales.indexOf(locale) !== -1) {
+        this.searchableMinLength = 1;
+      } else {
+        this.searchableMinLength = this.defaultSearchableMinLength;
+      }
+    });
+
     //register lunr pipeline function
     lunr.Pipeline.registerFunction(this.normalizeAccentsPipelineFunction, "normalizeAccents");
   }
