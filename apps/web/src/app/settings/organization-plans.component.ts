@@ -58,7 +58,7 @@ export class OrganizationPlansComponent implements OnInit {
     premiumAccessAddon: [false],
     additionalStorage: [0, [Validators.min(0), Validators.max(99)]],
     additionalSeats: [0, [Validators.min(0), Validators.max(100000)]],
-    clientOwnerEmail: [""],
+    clientOwnerEmail: ["", [Validators.email]],
     businessName: [""],
     plan: [this.plan],
     product: [this.product],
@@ -94,6 +94,11 @@ export class OrganizationPlansComponent implements OnInit {
     if (this.providerId) {
       this.formGroup.controls.businessOwned.setValue(true);
       this.changedOwnedBusiness();
+    }
+
+    if (!this.createOrganization) {
+      this.formGroup.controls.product.setValue(ProductType.Families);
+      this.changedProduct();
     }
 
     this.loading = false;

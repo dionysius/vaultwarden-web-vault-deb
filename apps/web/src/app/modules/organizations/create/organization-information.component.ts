@@ -7,6 +7,9 @@ import { FormGroup } from "@angular/forms";
 })
 export class OrganizationInformationComponent {
   @Input() nameOnly = false;
+  @Input() createOrganization = true;
+  @Input() isProvider = false;
+  @Input() acceptingSponsorship = false;
   @Input() formGroup: FormGroup;
   @Output() changedBusinessOwned = new EventEmitter<void>();
 }

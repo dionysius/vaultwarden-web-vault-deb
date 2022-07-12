@@ -34,6 +34,9 @@
   <app-org-info
     (changedBusinessOwned)="changedOwnedBusiness()"
     [formGroup]="formGroup"
+    [createOrganization]="createOrganization"
+    [isProvider]="!!providerId"
+    [acceptingSponsorship]="acceptingSponsorship"
   ></app-org-info>
   <h2 class="mt-5">{{ "chooseYourPlan" | i18n }}</h2>
   <div *ngFor="let selectableProduct of selectableProducts" class="form-check form-check-block">
