@@ -28,18 +28,23 @@
             Start your 7-Day free trial of Bitwarden for {{ org }}
           </h2>
         </div>
-        <app-vertical-stepper #stepper linear>
-          <!-- Content is for demo purposes. Replace with form components for each step-->
+        <app-vertical-stepper #stepper linear (selectionChange)="stepSelectionChange($event)">
           <app-vertical-step label="Create Account" [editable]="false" [subLabel]="email">
             <app-register-form
               [isInTrialFlow]="true"
               (createdAccount)="createdAccount($event)"
             ></app-register-form>
           </app-vertical-step>
-          <app-vertical-step label="Create Organization" subLabel="It better be a good org">
-            <!-- Replace with Org creation step -->
-            <p>This is content of "Step 2"</p>
-            <button bitButton buttonType="primary" cdkStepperNext>Complete step</button>
+          <app-vertical-step label="Organization Information" [subLabel]="orgInfoSubLabel">
+            <app-org-info [nameOnly]="true" [formGroup]="orgInfoFormGroup"></app-org-info>
+            <button
+              bitButton
+              buttonType="primary"
+              [disabled]="orgInfoFormGroup.get('name').hasError('required')"
+              cdkStepperNext
+            >
+              Next
+            </button>
           </app-vertical-step>
           <app-vertical-step label="Billing">
             <!-- Replace with Billing step -->
