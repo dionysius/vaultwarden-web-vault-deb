@@ -52,8 +52,8 @@ export class OrganizationPlansComponent implements OnInit {
   discount = 0;
 
   formGroup = this.formBuilder.group({
-    name: ["", [Validators.required]],
-    billingEmail: ["", [Validators.required, Validators.email]],
+    name: [""],
+    billingEmail: ["", [Validators.email]],
     businessOwned: [false],
     premiumAccessAddon: [false],
     additionalStorage: [0, [Validators.min(0), Validators.max(99)]],
@@ -96,9 +96,14 @@ export class OrganizationPlansComponent implements OnInit {
       this.changedOwnedBusiness();
     }
 
-    if (!this.createOrganization) {
+    if (!this.createOrganization || this.acceptingSponsorship) {
       this.formGroup.controls.product.setValue(ProductType.Families);
       this.changedProduct();
+    }
+
+    if (this.createOrganization) {
+      this.formGroup.controls.name.addValidators(Validators.required);
+      this.formGroup.controls.billingEmail.addValidators(Validators.required);
     }
 
     this.loading = false;
@@ -255,6 +260,7 @@ export class OrganizationPlansComponent implements OnInit {
     }
     this.formGroup.controls.product.setValue(ProductType.Teams);
     this.formGroup.controls.plan.setValue(PlanType.TeamsAnnually);
+    this.changedProduct();
   }
 
   changedCountry() {

@@ -131,8 +131,6 @@
             type="number"
             name="additionalSeats"
             formControlName="additionalSeats"
-            min="1"
-            max="100000"
             placeholder="{{ 'userSeatsDesc' | i18n }}"
             required
           />
@@ -150,8 +148,6 @@
           type="number"
           name="additionalSeats"
           formControlName="additionalSeats"
-          min="0"
-          max="100000"
           placeholder="{{ 'userSeatsDesc' | i18n }}"
         />
         <small class="text-muted form-text">{{
@@ -169,8 +165,6 @@
           type="number"
           name="additionalStorageGb"
           formControlName="additionalStorage"
-          min="0"
-          max="99"
           step="1"
           placeholder="{{ 'additionalStorageGbDesc' | i18n }}"
         />
@@ -323,10 +317,9 @@
     <app-callout [type]="'error'">{{ "singleOrgBlockCreateMessage" | i18n }}</app-callout>
   </div>
   <div class="mt-4">
-    <button type="submit" class="btn btn-primary btn-submit" [disabled]="form.loading">
-      <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-      <span>{{ "submit" | i18n }}</span>
-    </button>
+    <bit-submit-button [loading]="form.loading" [disabled]="!formGroup.valid">{{
+      "submit" | i18n
+    }}</bit-submit-button>
     <button type="button" class="btn btn-outline-secondary" (click)="cancel()" *ngIf="showCancel">
       {{ "cancel" | i18n }}
     </button>
