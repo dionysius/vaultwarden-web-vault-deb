@@ -88,7 +88,6 @@ jobs:
             docker tag bitwarden/web:latest bitwarden/web:$_RELEASE_VERSION
           else
             docker tag bitwarden/web:$_BRANCH_NAME bitwarden/web:$_RELEASE_VERSION
-            docker tag bitwarden/web:$_BRANCH_NAME bitwarden/web:latest
           fi
 
       - name: Docker Push version and latest image
@@ -98,7 +97,6 @@ jobs:
           DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE: ${{ steps.setup-dct.outputs.dct-delegate-repo-passphrase }}
         run: |
           docker push bitwarden/web:$_RELEASE_VERSION
-          docker push bitwarden/web:latest
 
       - name: Log out of Docker and disable Docker Notary
         run: |
@@ -120,16 +118,12 @@ jobs:
         run: |
           if [[ "${{ github.event.inputs.release_type }}" == "Dry Run" ]]; then
             docker tag bitwarden/web:latest $REGISTRY/web:$_RELEASE_VERSION
-            docker tag bitwarden/web:latest $REGISTRY/web:latest
 
             docker tag bitwarden/web:latest $REGISTRY/web-sh:$_RELEASE_VERSION
-            docker tag bitwarden/web:latest $REGISTRY/web-sh:latest
           else
             docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web:$_RELEASE_VERSION
-            docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web:latest
 
             docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web-sh:$_RELEASE_VERSION
-            docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web-sh:latest
           fi
 
       - name: Push version and latest image
@@ -138,10 +132,8 @@ jobs:
           REGISTRY: bitwardenqa.azurecr.io
         run: |
           docker push $REGISTRY/web:$_RELEASE_VERSION
-          docker push $REGISTRY/web:latest
 
           docker push $REGISTRY/web-sh:$_RELEASE_VERSION
-          docker push $REGISTRY/web-sh:latest
 
       - name: Log out of Docker
         run: docker logout
