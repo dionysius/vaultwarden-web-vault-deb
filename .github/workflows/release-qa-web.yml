@@ -67,3 +67,54 @@ jobs:
           kubectl set image -n $_QA_K8S_NAMESPACE deployment/web web=bitwardenqa.azurecr.io/web:$IMAGE_TAG --record
           kubectl rollout restart -n $_QA_K8S_NAMESPACE deployment/web
           kubectl rollout status deployment/web -n $_QA_K8S_NAMESPACE
+
+  cfpages-deploy:
+    name: Deploy Web Vault to QA CloudFlare Pages branch
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
+
+      - name: Download latest cloud asset
+        uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
+        with:
+          workflow: build-web.yml
+          path: apps/web
+          workflow_conclusion: success
+          branch: ${{ github.ref_name }}
+          artifacts: web-*-cloud-COMMERCIAL.zip
+
+      # This should result in a build directory in the current working directory
+      - name: Unzip build asset
+        working-directory: apps/web
+        run: unzip web-*-cloud-COMMERCIAL.zip
+
+      - name: Checkout Repo
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
+        with:
+          ref: cf-pages-qa
+          path: deployment
+
+      - name: Setup git config
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global url."https://github.com/".insteadOf ssh://git@github.com/
+          git config --global url."https://".insteadOf ssh://
+
+      - name: Deploy CloudFlare Pages
+        run: |
+          rm -rf ./*
+          cp -R ../apps/web/build/* .
+        working-directory: deployment
+
+      - name: Push new ver to cf-pages-qa
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Deploy ${{ github.ref_name }} to QA Cloudflare pages"
+            git push -u origin cf-pages-qa
+          else
+            echo "No changes to commit!";
+          fi
+        working-directory: deployment
