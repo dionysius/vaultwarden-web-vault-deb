@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
+import { AbstractControl, FormBuilder, ValidatorFn, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { InputsFieldMatch } from "@bitwarden/angular/validators/inputsFieldMatch.validator";
@@ -50,7 +50,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
           ),
         ],
       ],
-      acceptPolicies: [false, [Validators.requiredTrue]],
+      acceptPolicies: [false, [this.acceptPoliciesValidation()]],
     },
     {
       validator: InputsFieldMatch.validateFormInputsMatch(
@@ -274,5 +274,14 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   private errorTag(error: AllValidationErrors): string {
     const name = error.errorName.charAt(0).toUpperCase() + error.errorName.slice(1);
     return `${error.controlName}${name}`;
+  }
+
+  //validation would be ignored on selfhosted
+  private acceptPoliciesValidation(): ValidatorFn {
+    return (control: AbstractControl) => {
+      const ctrlValue = control.value;
+
+      return !ctrlValue && this.showTerms ? { required: true } : null;
+    };
   }
 }
