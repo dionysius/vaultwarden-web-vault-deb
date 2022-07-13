@@ -151,6 +151,7 @@ const plugins = [
     STRIPE_KEY: envConfig["stripeKey"] ?? "",
     BRAINTREE_KEY: envConfig["braintreeKey"] ?? "",
     PAYPAL_CONFIG: envConfig["paypal"] ?? {},
+    FLAGS: envConfig["flags"] ?? {},
   }),
   new webpack.ProvidePlugin({
     process: "process/browser",

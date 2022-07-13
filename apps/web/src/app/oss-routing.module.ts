@@ -1,9 +1,11 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { Route, RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
 import { LockGuard } from "@bitwarden/angular/guards/lock.guard";
 import { UnauthGuard } from "@bitwarden/angular/guards/unauth.guard";
+
+import { flagEnabled, FlagName } from "../utils/flags";
 
 import { AcceptEmergencyComponent } from "./accounts/accept-emergency.component";
 import { AcceptOrganizationComponent } from "./accounts/accept-organization.component";
@@ -65,12 +67,12 @@ const routes: Routes = [
         canActivate: [UnauthGuard],
         data: { titleId: "createAccount" },
       },
-      {
+      buildFlaggedRoute("showTrial", {
         path: "trial",
         component: TrialInitiationComponent,
         canActivate: [UnauthGuard],
         data: { titleId: "startTrial" },
-      },
+      }),
       {
         path: "sso",
         component: SsoComponent,
@@ -258,3 +260,12 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class OssRoutingModule {}
+
+export function buildFlaggedRoute(flagName: FlagName, route: Route): Route {
+  return flagEnabled(flagName)
+    ? route
+    : {
+        path: route.path,
+        redirectTo: "/",
+      };
+}

@@ -5,5 +5,8 @@
     "proxyEvents": "http://localhost:46274",
     "proxyNotifications": "http://localhost:61841",
     "port": 8081
+  },
+  "flags": {
+    "showTrial": false
   }
 }

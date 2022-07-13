@@ -13,5 +13,8 @@
     "proxyApi": "https://api.bitwarden.com",
     "proxyIdentity": "https://identity.bitwarden.com",
     "proxyEvents": "https://events.bitwarden.com"
+  },
+  "flags": {
+    "showTrial": false
   }
 }

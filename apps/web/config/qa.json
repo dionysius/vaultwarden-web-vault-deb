@@ -7,5 +7,8 @@
     "proxyApi": "https://api.qa.bitwarden.pw",
     "proxyIdentity": "https://identity.qa.bitwarden.pw",
     "proxyEvents": "https://events.qa.bitwarden.pw"
+  },
+  "flags": {
+    "showTrial": true
   }
 }
