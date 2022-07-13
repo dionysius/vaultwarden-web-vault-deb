@@ -187,7 +187,7 @@ export class UserAddEditComponent implements OnInit {
         );
       } else {
         const request = new OrganizationUserInviteRequest();
-        request.emails = this.emails.trim().split(/\s*,\s*/);
+        request.emails = [...new Set(this.emails.trim().split(/\s*,\s*/))];
         request.accessAll = this.access === "all";
         request.type = this.type;
         request.permissions = this.setRequestPermissions(
