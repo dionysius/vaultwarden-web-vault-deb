@@ -27,5 +27,5 @@
       }
     ]
   },
-  "include": ["apps/*/src/*", "libs/*/src/*"]
+  "include": ["apps/*/src/*", "libs/*/src/**/*"]
 }
