@@ -153,6 +153,9 @@ export default class MainBackground {
   broadcasterService: BroadcasterService;
   folderApiService: FolderApiServiceAbstraction;
 
+  // Passed to the popup for Safari to workaround issues with theming, downloading, etc.
+  backgroundWindow = window;
+
   onUpdatedRan: boolean;
   onReplacedRan: boolean;
   loginToAutoFill: CipherView = null;

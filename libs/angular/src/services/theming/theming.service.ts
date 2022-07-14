@@ -17,7 +17,7 @@ export class ThemingService implements AbstractThemingService {
 
   constructor(
     private stateService: StateService,
-    private mediaMatcher: MediaMatcher,
+    private mediaMatcher: MediaMatcher | Window,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.monitorThemeChanges();

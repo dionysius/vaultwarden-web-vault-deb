@@ -7,6 +7,8 @@ import {
   MEMORY_STORAGE,
   SECURE_STORAGE,
 } from "@bitwarden/angular/services/jslib-services.module";
+import { ThemingService } from "@bitwarden/angular/services/theming/theming.service";
+import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
@@ -292,6 +294,20 @@ function getBgService<T>(service: keyof MainBackground) {
     {
       provide: FileDownloadService,
       useClass: BrowserFileDownloadService,
+    },
+    {
+      provide: AbstractThemingService,
+      useFactory: () => {
+        return new ThemingService(
+          getBgService<StateServiceAbstraction>("stateService")(),
+          // Safari doesn't properly handle the (prefers-color-scheme) media query in the popup window, it always returns light.
+          // In Safari we have to use the background page instead, which comes with limitations like not dynamically changing the extension theme when the system theme is changed.
+          getBgService<PlatformUtilsService>("platformUtilsService")().isSafari()
+            ? getBgService<Window>("backgroundWindow")()
+            : window,
+          document
+        );
+      },
     },
   ],
 })
