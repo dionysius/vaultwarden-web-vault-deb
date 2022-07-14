@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "Organization is disabled."
   },
+  "disabledOrganizationFilterError" : {
+    "message" : "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
   "licenseIsExpired": {
     "message": "License is expired."
   },

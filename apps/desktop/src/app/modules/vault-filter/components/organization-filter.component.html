@@ -92,6 +92,12 @@
             >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
+              <i
+                *ngIf="!organization.enabled"
+                class="bwi bwi-fw bwi-exclamation-triangle text-danger"
+                aria-label="{{ 'organizationIsDisabled' | i18n }}"
+                appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
+              ></i>
             </button>
           </span>
         </li>

@@ -17,6 +17,7 @@ import { merge } from "rxjs";
 import { VaultFilter } from "@bitwarden/angular/modules/vault-filter/models/vault-filter.model";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
 import { VaultFilterService } from "../../services/vaultFilter.service";
@@ -82,7 +83,8 @@ export class VaultSelectComponent implements OnInit {
     private ngZone: NgZone,
     private broadcasterService: BroadcasterService,
     private overlay: Overlay,
-    private viewContainerRef: ViewContainerRef
+    private viewContainerRef: ViewContainerRef,
+    private platformUtilsService: PlatformUtilsService
   ) {}
 
   async ngOnInit() {
@@ -171,10 +173,18 @@ export class VaultSelectComponent implements OnInit {
   }
 
   selectOrganization(organization: Organization) {
-    this.vaultFilterDisplay = organization.name;
-    this.vaultFilterService.setVaultFilter(organization.id);
-    this.onVaultSelectionChanged.emit();
-    this.close();
+    if (!organization.enabled) {
+      this.platformUtilsService.showToast(
+        "error",
+        null,
+        this.i18nService.t("disabledOrganizationFilterError")
+      );
+    } else {
+      this.vaultFilterDisplay = organization.name;
+      this.vaultFilterService.setVaultFilter(organization.id);
+      this.onVaultSelectionChanged.emit();
+      this.close();
+    }
   }
   selectAllVaults() {
     this.vaultFilterDisplay = this.i18nService.t(this.vaultFilterService.allVaults);

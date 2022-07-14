@@ -59,6 +59,12 @@
           aria-hidden="true"
         ></i>
         <span>&nbsp;{{ organization.name | ellipsis: 21:true }}</span>
+        <i
+          *ngIf="!organization.enabled"
+          class="bwi bwi-fw bwi-exclamation-triangle text-danger"
+          aria-label="{{ 'organizationIsDisabled' | i18n }}"
+          appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
+        ></i>
       </button>
     </div>
   </ng-template>

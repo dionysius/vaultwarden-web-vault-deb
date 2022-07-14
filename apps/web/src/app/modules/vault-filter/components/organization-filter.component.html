@@ -129,6 +129,12 @@
             <button class="filter-button" (click)="applyOrganizationFilter(organization)">
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               {{ organization.name }}
+              <i
+                *ngIf="!organization.enabled"
+                class="bwi bwi-fw bwi-exclamation-triangle text-danger"
+                aria-label="{{ 'organizationIsDisabled' | i18n }}"
+                appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
+              ></i>
             </button>
             <ng-container>
               <button [bitMenuTriggerFor]="orgMenu" class="org-options ml-auto">
