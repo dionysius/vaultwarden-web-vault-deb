@@ -13,6 +13,22 @@ on:
           - Initial Release
           - Redeploy
           - Dry Run
+      snap_publish:
+        description: 'Publish to snap store'
+        required: true
+        default: true
+        type: boolean
+      choco_publish:
+        description: 'Publish to chocolatey store'
+        required: true
+        default: true
+        type: boolean
+      npm_publish:
+        description: 'Publish to npm registry'
+        required: true
+        default: true
+        type: boolean
+
 
 defaults:
   run:
@@ -93,6 +109,7 @@ jobs:
     name: Deploy Snap
     runs-on: ubuntu-20.04
     needs: setup
+    if: inputs.snap_publish
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
@@ -136,6 +153,7 @@ jobs:
     name: Deploy Choco
     runs-on: windows-2019
     needs: setup
+    if: inputs.choco_publish
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
@@ -184,6 +202,7 @@ jobs:
     name: Publish NPM
     runs-on: ubuntu-20.04
     needs: setup
+    if: inputs.npm_publish
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
     steps:
