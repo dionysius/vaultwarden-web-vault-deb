@@ -17,9 +17,7 @@ export class BrowserFileDownloadService implements FileDownloadService {
       if (builder.blobOptions.type === "text/plain" && typeof request.blobData === "string") {
         data = request.blobData;
       } else {
-        builder.blob.arrayBuffer().then((buf) => {
-          data = Utils.fromBufferToB64(buf);
-        });
+        data = Utils.fromBufferToB64(request.blobData as ArrayBuffer);
       }
       SafariApp.sendMessageToApp(
         "downloadFile",
