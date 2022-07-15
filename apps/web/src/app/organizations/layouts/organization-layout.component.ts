@@ -86,6 +86,9 @@ export class OrganizationLayoutComponent implements OnInit, OnDestroy {
       case this.organization.canManageSso:
         route = "manage/sso";
         break;
+      case this.organization.canManageScim:
+        route = "manage/scim";
+        break;
       case this.organization.canAccessEventLogs:
         route = "manage/events";
         break;

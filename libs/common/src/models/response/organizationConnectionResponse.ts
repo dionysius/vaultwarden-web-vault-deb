@@ -1,10 +1,11 @@
 import { OrganizationConnectionType } from "../../enums/organizationConnectionType";
 import { BillingSyncConfigApi } from "../api/billingSyncConfigApi";
+import { ScimConfigApi } from "../api/scimConfigApi";
 
 import { BaseResponse } from "./baseResponse";
 
 /**API response config types for OrganizationConnectionResponse */
-export type OrganizationConnectionConfigApis = BillingSyncConfigApi;
+export type OrganizationConnectionConfigApis = BillingSyncConfigApi | ScimConfigApi;
 
 export class OrganizationConnectionResponse<
   TConfig extends OrganizationConnectionConfigApis

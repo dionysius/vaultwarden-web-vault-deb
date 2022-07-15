@@ -9,6 +9,7 @@ import { OrganizationLayoutComponent } from "src/app/organizations/layouts/organ
 import { ManageComponent } from "src/app/organizations/manage/manage.component";
 import { NavigationPermissionsService } from "src/app/organizations/services/navigation-permissions.service";
 
+import { ScimComponent } from "./manage/scim.component";
 import { SsoComponent } from "./manage/sso.component";
 
 const routes: Routes = [
@@ -31,6 +32,14 @@ const routes: Routes = [
             canActivate: [PermissionsGuard],
             data: {
               permissions: [Permissions.ManageSso],
+            },
+          },
+          {
+            path: "scim",
+            component: ScimComponent,
+            canActivate: [PermissionsGuard],
+            data: {
+              permissions: [Permissions.ManageScim],
             },
           },
         ],

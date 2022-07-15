@@ -4,6 +4,7 @@ import { EnvironmentService } from "../abstractions/environment.service";
 import { PlatformUtilsService } from "../abstractions/platformUtils.service";
 import { TokenService } from "../abstractions/token.service";
 import { DeviceType } from "../enums/deviceType";
+import { OrganizationApiKeyType } from "../enums/organizationApiKeyType";
 import { OrganizationConnectionType } from "../enums/organizationConnectionType";
 import { PolicyType } from "../enums/policyType";
 import { Utils } from "../misc/utils";
@@ -1822,15 +1823,14 @@ export class ApiService implements ApiServiceAbstraction {
   }
 
   async getOrganizationApiKeyInformation(
-    id: string
+    id: string,
+    type: OrganizationApiKeyType = null
   ): Promise<ListResponse<OrganizationApiKeyInformationResponse>> {
-    const r = await this.send(
-      "GET",
-      "/organizations/" + id + "/api-key-information",
-      null,
-      true,
-      true
-    );
+    const uri =
+      type === null
+        ? "/organizations/" + id + "/api-key-information"
+        : "/organizations/" + id + "/api-key-information/" + type;
+    const r = await this.send("GET", uri, null, true, true);
     return new ListResponse(r, OrganizationApiKeyInformationResponse);
   }
 

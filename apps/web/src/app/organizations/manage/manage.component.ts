@@ -14,6 +14,7 @@ export class ManageComponent implements OnInit {
   accessGroups = false;
   accessEvents = false;
   accessSso = false;
+  accessScim = false;
 
   constructor(private route: ActivatedRoute, private organizationService: OrganizationService) {}
 
@@ -24,6 +25,7 @@ export class ManageComponent implements OnInit {
       this.accessSso = this.organization.useSso;
       this.accessEvents = this.organization.useEvents;
       this.accessGroups = this.organization.useGroups;
+      this.accessScim = this.organization.useScim;
     });
   }
 }

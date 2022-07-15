@@ -1,6 +1,7 @@
 {
   "urls": {
-    "notifications": "http://localhost:61840"
+    "notifications": "http://localhost:61840",
+    "scim": "http://localhost:44559"
   },
   "dev": {
     "proxyApi": "http://localhost:4000",

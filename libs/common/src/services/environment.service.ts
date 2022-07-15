@@ -19,6 +19,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   private notificationsUrl: string;
   private eventsUrl: string;
   private keyConnectorUrl: string;
+  private scimUrl: string = null;
 
   constructor(private stateService: StateService) {
     this.stateService.activeAccount.subscribe(async () => {
@@ -111,6 +112,16 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     return this.keyConnectorUrl;
   }
 
+  getScimUrl() {
+    if (this.scimUrl != null) {
+      return this.scimUrl + "/v2";
+    }
+
+    return this.getWebVaultUrl() === "https://vault.bitwarden.com"
+      ? "https://scim.bitwarden.com/v2"
+      : this.getWebVaultUrl() + "/scim/v2";
+  }
+
   async setUrlsFromStorage(): Promise<void> {
     const urls: any = await this.stateService.getEnvironmentUrls();
     const envUrls = new EnvironmentUrls();
@@ -123,6 +134,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     this.notificationsUrl = urls.notifications;
     this.eventsUrl = envUrls.events = urls.events;
     this.keyConnectorUrl = urls.keyConnector;
+    // scimUrl is not saved to storage
   }
 
   async setUrls(urls: Urls): Promise<Urls> {
@@ -135,6 +147,9 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     urls.events = this.formatUrl(urls.events);
     urls.keyConnector = this.formatUrl(urls.keyConnector);
 
+    // scimUrl cannot be cleared
+    urls.scim = this.formatUrl(urls.scim) ?? this.scimUrl;
+
     await this.stateService.setEnvironmentUrls({
       base: urls.base,
       api: urls.api,
@@ -144,6 +159,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
       notifications: urls.notifications,
       events: urls.events,
       keyConnector: urls.keyConnector,
+      // scimUrl is not saved to storage
     });
 
     this.baseUrl = urls.base;
@@ -154,6 +170,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
     this.notificationsUrl = urls.notifications;
     this.eventsUrl = urls.events;
     this.keyConnectorUrl = urls.keyConnector;
+    this.scimUrl = urls.scim;
 
     this.urlsSubject.next(urls);
 
@@ -170,6 +187,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
       notifications: this.notificationsUrl,
       events: this.eventsUrl,
       keyConnector: this.keyConnectorUrl,
+      scim: this.scimUrl,
     };
   }
 

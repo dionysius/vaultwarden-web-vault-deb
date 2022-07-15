@@ -25,4 +25,5 @@ export enum Permissions {
   DeleteAssignedCollections,
   ManageSso,
   ManageBilling,
+  ManageScim,
 }

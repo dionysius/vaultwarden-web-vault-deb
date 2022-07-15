@@ -19,6 +19,7 @@ export class OrganizationData {
   useApi: boolean;
   useSso: boolean;
   useKeyConnector: boolean;
+  useScim: boolean;
   useResetPassword: boolean;
   selfHost: boolean;
   usersGetPremium: boolean;
@@ -58,6 +59,7 @@ export class OrganizationData {
     this.useApi = response.useApi;
     this.useSso = response.useSso;
     this.useKeyConnector = response.useKeyConnector;
+    this.useScim = response.useScim;
     this.useResetPassword = response.useResetPassword;
     this.selfHost = response.selfHost;
     this.usersGetPremium = response.usersGetPremium;

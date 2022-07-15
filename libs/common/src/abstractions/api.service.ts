@@ -1,3 +1,4 @@
+import { OrganizationApiKeyType } from "../enums/organizationApiKeyType";
 import { OrganizationConnectionType } from "../enums/organizationConnectionType";
 import { PolicyType } from "../enums/policyType";
 import { SetKeyConnectorKeyRequest } from "../models/request/account/setKeyConnectorKeyRequest";
@@ -573,7 +574,8 @@ export abstract class ApiService {
     request: OrganizationApiKeyRequest
   ) => Promise<ApiKeyResponse>;
   getOrganizationApiKeyInformation: (
-    id: string
+    id: string,
+    type?: OrganizationApiKeyType
   ) => Promise<ListResponse<OrganizationApiKeyInformationResponse>>;
   postOrganizationRotateApiKey: (
     id: string,

@@ -20,6 +20,7 @@ export class Organization {
   useApi: boolean;
   useSso: boolean;
   useKeyConnector: boolean;
+  useScim: boolean;
   useResetPassword: boolean;
   selfHost: boolean;
   usersGetPremium: boolean;
@@ -63,6 +64,7 @@ export class Organization {
     this.useApi = obj.useApi;
     this.useSso = obj.useSso;
     this.useKeyConnector = obj.useKeyConnector;
+    this.useScim = obj.useScim;
     this.useResetPassword = obj.useResetPassword;
     this.selfHost = obj.selfHost;
     this.usersGetPremium = obj.usersGetPremium;
@@ -173,6 +175,10 @@ export class Organization {
     return this.isAdmin || this.permissions.manageSso;
   }
 
+  get canManageScim() {
+    return this.isAdmin || this.permissions.manageScim;
+  }
+
   get canManagePolicies() {
     return this.isAdmin || this.permissions.managePolicies;
   }
@@ -207,6 +213,7 @@ export class Organization {
       (permissions.includes(Permissions.ManageUsers) && this.canManageUsers) ||
       (permissions.includes(Permissions.ManageUsersPassword) && this.canManageUsersPassword) ||
       (permissions.includes(Permissions.ManageSso) && this.canManageSso) ||
+      (permissions.includes(Permissions.ManageScim) && this.canManageScim) ||
       (permissions.includes(Permissions.ManageBilling) && this.canManageBilling);
 
     return specifiedPermissions && (this.enabled || this.isOwner);

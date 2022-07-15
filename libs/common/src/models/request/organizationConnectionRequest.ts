@@ -1,9 +1,10 @@
 import { OrganizationConnectionType } from "../../enums/organizationConnectionType";
 
 import { BillingSyncConfigRequest } from "./billingSyncConfigRequest";
+import { ScimConfigRequest } from "./scimConfigRequest";
 
 /**API request config types for OrganizationConnectionRequest */
-export type OrganizationConnectionRequestConfigs = BillingSyncConfigRequest;
+export type OrganizationConnectionRequestConfigs = BillingSyncConfigRequest | ScimConfigRequest;
 
 export class OrganizationConnectionRequest {
   constructor(
