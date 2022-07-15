@@ -39,12 +39,6 @@ jobs:
           echo "::set-output name=client::$CLIENT"
 
           git switch -c ${CLIENT}_version_bump_${VERSION}
-          git push -u origin ${CLIENT}_version_bump_${VERSION}
-
-      - name: Checkout Version Branch
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
-        with:
-          ref: ${{ steps.branch.outputs.client }}_version_bump_${{ github.event.inputs.version_number }}
 
       ########################
       # VERSION BUMP SECTION #
@@ -108,22 +102,38 @@ jobs:
 
       ########################
 
+      - name: Setup git
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Check if version changed
+        id: version-changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::set-output name=changes_to_commit::TRUE"
+          else
+            echo "::set-output name=changes_to_commit::FALSE"
+            echo "No changes to commit!";
+          fi
+
       - name: Commit files
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}
         env:
           CLIENT: ${{ steps.branch.outputs.client }}
           VERSION: ${{ github.event.inputs.version_number }}
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
           git commit -m "Bumped ${CLIENT} version to ${VERSION}" -a
 
       - name: Push changes
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}
         env:
           CLIENT: ${{ steps.branch.outputs.client }}
           VERSION: ${{ github.event.inputs.version_number }}
         run: git push -u origin ${CLIENT}_version_bump_${VERSION}
 
       - name: Create Bump Version PR
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}
         env:
           PR_BRANCH: "${{ steps.branch.outputs.client }}_version_bump_${{ github.event.inputs.version_number }}"
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
