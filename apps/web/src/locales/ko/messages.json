@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "도메인 이름",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -309,13 +309,13 @@
     "message": "Logins"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "카드"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "신원"
   },
   "typeSecureNotePlural": {
-    "message": "Secure Notes"
+    "message": "보안 메모"
   },
   "folders": {
     "message": "폴더"
@@ -422,22 +422,22 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "나"
   },
   "myVault": {
     "message": "내 보관함"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "모든 보관함"
   },
   "vault": {
     "message": "보관함"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "보관함"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "보관함 항목"
   },
   "moveSelectedToOrg": {
     "message": "선택한 항목을 조직으로 이동함"
@@ -573,7 +573,7 @@
     "message": "계정 만들기"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "평가판 시작"
   },
   "logIn": {
     "message": "로그인"
@@ -597,7 +597,7 @@
     "message": "마스터 비밀번호는 보관함을 열 때 필요한 비밀번호입니다. 절대 마스터 비밀번호를 잊어버리지 마세요. 잊어버리면 복구할 수 있는 방법이 없습니다."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "마스터 비밀번호를 잊으면 복구할 수 없습니다!"
   },
   "masterPassHintDesc": {
     "message": "마스터 비밀번호 힌트는 마스터 비밀번호를 잊었을 때 도움이 될 수 있습니다."
@@ -630,13 +630,13 @@
     "message": "잘못된 이메일 주소입니다."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "마스터 비밀번호가 필요합니다."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "마스터 비밀번호를 재입력해야 합니다."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "마스터 비밀번호는 최소 8자 이상이어야 합니다."
   },
   "masterPassDoesntMatch": {
     "message": "마스터 비밀번호 확인과 마스터 비밀번호가 일치하지 않습니다."
@@ -1146,13 +1146,13 @@
     "message": "옵션"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "설정"
   },
   "preferencesDesc": {
-    "message": "Customize your web vault experience."
+    "message": "웹 보관함 환경 사용자 지정"
   },
   "preferencesUpdated": {
-    "message": "Preferences updated"
+    "message": "설정 업데이트 완료!"
   },
   "language": {
     "message": "언어(Language)"
@@ -1161,7 +1161,7 @@
     "message": "웹 보관함에서 사용할 언어를 변경합니다."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "웹사이트 아이콘 표시하기"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -1248,7 +1248,7 @@
     "message": "활성화됨"
   },
   "activate": {
-    "message": "Activate"
+    "message": "활성화"
   },
   "premium": {
     "message": "프리미엄",
@@ -1276,7 +1276,7 @@
     "message": "비활성화"
   },
   "deactivate": {
-    "message": "Deactivate"
+    "message": "비활성화"
   },
   "twoStepLoginProviderEnabled": {
     "message": "이 2단계 로그인 제공자는 귀하의 계정에 사용 가능합니다."
@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "조직이 비활성화됨"
   },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
   "licenseIsExpired": {
     "message": "라이선스가 만료되었습니다."
   },
@@ -3342,8 +3345,14 @@
   "clone": {
     "message": "복제"
   },
+  "masterPassPolicyTitle": {
+    "message": "Master password requirements"
+  },
   "masterPassPolicyDesc": {
     "message": "마스터 비밀번호 강도에 대한 최소 요구 사항을 설정해주세요."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Require two-step login"
   },
   "twoStepLoginPolicyDesc": {
     "message": "개인 계정에서 2단계 로그인을 요구합니다."
@@ -4476,7 +4485,7 @@
     "message": "보관함 시간 제한"
   },
   "maximumVaultTimeoutDesc": {
-    "message": "Configure a maximum vault timeout for all users."
+    "message": "Set a maximum vault timeout for members."
   },
   "maximumVaultTimeoutLabel": {
     "message": "최대 보관함 시간 제한"
@@ -4519,7 +4528,7 @@
     "message": "개인 보관함 내보내기 비활성화"
   },
   "disablePersonalVaultExportDesc": {
-    "message": "Prohibits users from exporting their private vault data."
+    "message": "Do not allow members to export their individual vault data."
   },
   "vaultExportDisabled": {
     "message": "보관함 내보내기 비활성화됨"
@@ -4811,18 +4820,18 @@
   },
   "ssoPolicyHelpStart": {
     "message": "활성화:",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "SSO 인증 정책",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "to require all members to log in with SSO.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "SSO Authentication and Single Organization policies are required to set up Key Connector decryption."
+    "message": "The require SSO authentication and single organization policies are required to set up Key Connector decryption."
   },
   "memberDecryptionOption": {
     "message": "멤버 복호화 옵션"
@@ -5198,5 +5207,11 @@
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Turn on"
+  },
+  "on": {
+    "message": "On"
   }
 }

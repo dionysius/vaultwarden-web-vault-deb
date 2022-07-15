@@ -1076,7 +1076,7 @@
     "message": "Hesabı sil"
   },
   "deleteAccountDesc": {
-    "message": "Hesabınızı ve tüm ilişkili verileri silmek için aşağıdan devam edin."
+    "message": "Hesabınızı ve ilişkili tüm verileri silmek için aşağıya devam edin."
   },
   "deleteAccountWarning": {
     "message": "Hesabınızı silmek kalıcıdır. Geri alınamaz."
@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "Kuruluş devre dışı."
   },
+  "disabledOrganizationFilterError": {
+    "message": "Devre dışı kuruluşlardaki kayıtlara erişilemez. Destek almak için kuruluş sahibinizle iletişime geçin."
+  },
   "licenseIsExpired": {
     "message": "Lisans süresi doldu."
   },
@@ -3342,14 +3345,20 @@
   "clone": {
     "message": "Klonla"
   },
+  "masterPassPolicyTitle": {
+    "message": "Ana parola gereksinimleri"
+  },
   "masterPassPolicyDesc": {
     "message": "Ana parola gücü için minimum gereksinimleri ayarlayın."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Require two-step login"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Kullanıcıların hesaplarında iki aşamalı giriş kullanmalarını zorunlu tutun."
   },
   "twoStepLoginPolicyWarning": {
-    "message": "Organization members who are not Owners or Administrators and do not have two-step login enabled for their personal account will be removed from the organization and will receive an email notifying them about the change."
+    "message": "Organization members who are not Owners or Administrators and do not have two-step login turned on for their account will be removed from the organization and will receive an email notifying them about the change."
   },
   "twoStepLoginPolicyUserWarning": {
     "message": "İki aşamalı girişin etkinleştirilmesi gereken bir kuruluşa üyesisiniz. İki aşamalı giriş sağlayıcılarının tümünü devre dışı bırakırsanız bu kuruluşlardan otomatik olarak kaldırılırsınız."
@@ -4476,7 +4485,7 @@
     "message": "Kasa zaman aşımı"
   },
   "maximumVaultTimeoutDesc": {
-    "message": "Configure a maximum vault timeout for all users."
+    "message": "Set a maximum vault timeout for members."
   },
   "maximumVaultTimeoutLabel": {
     "message": "Maksimum kasa zaman aşımı"
@@ -4811,15 +4820,15 @@
   },
   "ssoPolicyHelpStart": {
     "message": "Tüm üyelerin SSO ile giriş yapmasını zorunlu tutmak için",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "SSO kimlik doğrulama ilkesini",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "etkinleştirin.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
     "message": "Key Connector ile çözmeyi kurmak için \"SSO kimlik doğrulama\" ve \"tek kuruluş\" ilkeleri gereklidir."
@@ -5198,5 +5207,11 @@
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Aç"
+  },
+  "on": {
+    "message": "Açık"
   }
 }

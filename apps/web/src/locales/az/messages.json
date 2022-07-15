@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "Təşkilat sıradan çıxarıldı."
   },
+  "disabledOrganizationFilterError": {
+    "message": "Sıradan çıxarılmış Təşkilatlardakı elementlərə müraciət edilə bilmir. Kömək üçün Təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
   "licenseIsExpired": {
     "message": "Lisenziyanın vaxtı bitib."
   },
@@ -3342,8 +3345,14 @@
   "clone": {
     "message": "Klonla"
   },
+  "masterPassPolicyTitle": {
+    "message": "Ana parol tələbləri"
+  },
   "masterPassPolicyDesc": {
     "message": "Ana parol gücü üçün minimum tələbləri tənzimlə."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "İki mərhələli girişi tələb et"
   },
   "twoStepLoginPolicyDesc": {
     "message": "İstifadəçilərin fərdi hesablarında \"iki mərhələli giriş\"i istifadə etmələrini məcburi et."
@@ -4811,15 +4820,15 @@
   },
   "ssoPolicyHelpStart": {
     "message": "Bütün üzvlərin SSO ilə",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "giriş etməsini məcburi etmək üçün",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "SSO Siyasətini fəallaşdırın.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
     "message": "Açar Bağlayıcı şifrə açmanı quraşdırmaq üçün SSO Kimlik Təsdiqləmə və Tək Təşkilat siyasətləri tələb olunur."
@@ -5198,5 +5207,11 @@
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "İşə sal"
+  },
+  "on": {
+    "message": "Açıqdır"
   }
 }

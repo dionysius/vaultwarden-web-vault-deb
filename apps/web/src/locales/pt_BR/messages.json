@@ -440,7 +440,7 @@
     "message": "Itens do Cofre"
   },
   "moveSelectedToOrg": {
-    "message": "Mover Selecionados para a organização"
+    "message": "Mover Selecionados para a Organização"
   },
   "deleteSelected": {
     "message": "Excluir Selecionados"
@@ -891,7 +891,7 @@
     "message": "Os dados do seu cofre foram exportados."
   },
   "passwordGenerator": {
-    "message": "Gerador de senha"
+    "message": "Gerador de Senha"
   },
   "minComplexityScore": {
     "message": "Pontuação Mínima de Complexidade"
@@ -1076,7 +1076,7 @@
     "message": "Excluir a conta"
   },
   "deleteAccountDesc": {
-    "message": "Prossiga abaixo para excluir a sua conta e todos os dados associados."
+    "message": "Prossiga abaixo para excluir sua conta e todos os dados associados."
   },
   "deleteAccountWarning": {
     "message": "A exclusão de sua conta é permanente. Não pode ser desfeito."
@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "Organização está desabilitada."
   },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
   "licenseIsExpired": {
     "message": "A licença está expirada."
   },
@@ -3342,8 +3345,14 @@
   "clone": {
     "message": "Clonar"
   },
+  "masterPassPolicyTitle": {
+    "message": "Requisitos de senha mestra"
+  },
   "masterPassPolicyDesc": {
     "message": "Defina os requisitos mínimos para a força da senha mestra."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Exigir login em duas etapas"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Exigir que os usuários definam a autenticação de dois passos nas suas contas pessoais."
@@ -4280,10 +4289,10 @@
     "message": "Tem certeza de que deseja remover os seguintes usuários? O processo pode levar alguns segundos para ser concluído e não pode ser interrompido ou cancelado."
   },
   "deactivateUsersWarning": {
-    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Você tem certeza de que deseja desativar os seguintes membros? Eles deixarão de ter acesso à organização, mas continuarão a ter acesso aos seus cofres individuais. O processo pode demorar alguns segundos para ser concluído e não pode ser interrompido ou cancelado."
   },
   "activateUsersWarning": {
-    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Tem certeza de que deseja ativar os seguintes membros, concedendo a eles acesso à organização? O processo pode demorar alguns segundos para ser concluído e não pode ser interrompido ou cancelado."
   },
   "theme": {
     "message": "Tema"
@@ -4811,15 +4820,15 @@
   },
   "ssoPolicyHelpStart": {
     "message": "Ativar o",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "Política de SSO",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "para exigir que todos os membros entrem com o SSO.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
     "message": "As políticas de Autenticação de SSO e Organização Única são necessárias para configurar a descriptografia do Conector de Chave."
@@ -4909,55 +4918,55 @@
     "message": "Gerar o token"
   },
   "rotateToken": {
-    "message": "Rotate Token"
+    "message": "Renovar Token"
   },
   "rotateBillingSyncTokenWarning": {
-    "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
+    "message": "Se você continuar, precisará re-configurar a sincronização de cobrança no seu servidor auto-hospedado."
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "Rotating the Billing Sync Token will invalidate the previous token."
+    "message": "Renovar o Token de Sincronização de Cobrança invalidará o token anterior."
   },
   "selfHostingTitle": {
-    "message": "Self-Hosting"
+    "message": "Auto-hospedado"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
+    "message": "Para configurar sua organização no seu próprio servidor, você precisará fazer o upload do arquivo de licença. Para oferecer suporte a planos de famílias gratuitas e recursos avançados de faturamento para a sua organização auto-hospedada, você precisará configurar a sincronização de cobrança."
   },
   "billingSyncApiKeyRotated": {
-    "message": "Token rotated."
+    "message": "Token renovado"
   },
   "billingSync": {
-    "message": "Billing Sync"
+    "message": "Sincronização de Faturamento"
   },
   "billingSyncDesc": {
-    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "A sincronização de faturamento fornece Plano Familiar gratuito para membros e recursos avançados de faturamento, vinculando o Bitwarden auto-hospedado ao servidor da nuvem do Bitwarden."
   },
   "billingSyncKeyDesc": {
-    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+    "message": "Um Token de sincronização de faturamento das configurações de assinatura da sua organização da nuvem é necessário para completar este formulário."
   },
   "billingSyncKey": {
-    "message": "Billing Sync Token"
+    "message": "Token de Sincronização de Faturamento"
   },
   "active": {
-    "message": "Active"
+    "message": "Ativo"
   },
   "inactive": {
-    "message": "Inactive"
+    "message": "Inativo"
   },
   "sentAwaitingSync": {
-    "message": "Sent (Awaiting Sync)"
+    "message": "Enviado (Aguardando Sincronização)"
   },
   "sent": {
-    "message": "Sent"
+    "message": "Enviado"
   },
   "requestRemoved": {
-    "message": "Removed (Awaiting Sync)"
+    "message": "Removido (Aguardando Sincronização)"
   },
   "requested": {
-    "message": "Requested"
+    "message": "Solicitado"
   },
   "formErrorSummaryPlural": {
-    "message": "$COUNT$ fields above need your attention.",
+    "message": "$COUNT$ campos acima precisam de sua atenção.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4966,10 +4975,10 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 field above needs your attention."
+    "message": "1 campo acima precisa de sua atenção."
   },
   "fieldRequiredError": {
-    "message": "$FIELDNAME$ is required.",
+    "message": "$FIELDNAME$ é obrigatório.",
     "placeholders": {
       "fieldname": {
         "content": "$1",
@@ -4978,31 +4987,31 @@
     }
   },
   "required": {
-    "message": "required"
+    "message": "obrigatório"
   },
   "idpSingleSignOnServiceUrlRequired": {
-    "message": "Required if Entity ID is not a URL."
+    "message": "Necessário se o ID da Entidade não for um URL."
   },
   "openIdOptionalCustomizations": {
-    "message": "Optional Customizations"
+    "message": "Personalizações opcionais"
   },
   "openIdAuthorityRequired": {
-    "message": "Required if Authority is not valid."
+    "message": "Necessário se a autoridade não for válida."
   },
   "separateMultipleWithComma": {
-    "message": "Separate multiple with a comma."
+    "message": "Separe várias tags com vírgula."
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Sua sessão expirou. Volte e tente iniciar a sessão novamente."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exportando Cofre Pessoal"
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting Organization Vault"
+    "message": "Exportando o Cofre da Organização"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Apenas os itens pessoais do cofre associados com $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5011,7 +5020,7 @@
     }
   },
   "exportingOrganizationVaultDescription": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Personal vault items and items from other organizations will not be included.",
+    "message": "Apenas o cofre da organização associado com $ORGANIZATION$ será exportado. Itens do cofre pessoal e itens de outras organizações não serão incluídos.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5020,82 +5029,82 @@
     }
   },
   "accessDenied": {
-    "message": "Access Denied. You do not have permission to view this page."
+    "message": "Acesso negado. Você não tem permissão para ver esta página."
   },
   "masterPassword": {
-    "message": "Master Password"
+    "message": "Senha Mestra"
   },
   "security": {
-    "message": "Security"
+    "message": "Segurança"
   },
   "keys": {
-    "message": "Keys"
+    "message": "Chaves"
   },
   "billingHistory": {
-    "message": "Billing History"
+    "message": "Histórico de Cobrança"
   },
   "backToReports": {
-    "message": "Back to Reports"
+    "message": "Voltar para Relatórios"
   },
   "organizationPicker": {
-    "message": "Organization picker"
+    "message": "Seletor de organização"
   },
   "currentOrganization": {
-    "message": "Current organization",
+    "message": "Organização atual",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountSettings": {
-    "message": "Account Settings"
+    "message": "Configurações da Conta"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Gerador"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "O que você gostaria de gerar?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Tipo de Senha"
   },
   "regenerateUsername": {
     "message": "Recriar Usuário"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Gerar Usuário"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tipo de Usuário"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "E-mail alternativo (com um +)",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Use as capacidades de sub-endereçamento do seu provedor de e-mail."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "E-mail pega-tudo"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Use o catch-all configurado no seu domínio."
   },
   "random": {
-    "message": "Random",
+    "message": "Aleatório",
     "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Palavra Aleatória"
   },
   "service": {
-    "message": "Service"
+    "message": "Serviço"
   },
   "unknownCipher": {
     "message": "Item desconhecido, talvez você precise fazer login com outra conta para acessar este item."
   },
   "cannotSponsorSelf": {
-    "message": "You cannot redeem for the active account. Enter a different email."
+    "message": "Você não pode resgatar a conta ativa. Digite um e-mail diferente."
   },
   "revokeWhenExpired": {
-    "message": "Expires $DATE$",
+    "message": "Expira em $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -5104,7 +5113,7 @@
     }
   },
   "awaitingSyncSingular": {
-    "message": "Token rotated $DAYS$ day ago. Update the billing sync token in your self-hosted organization settings.",
+    "message": "Token renovado há $DAYS$ dia atrás. Atualize o token de sincronização de cobrança nas configurações da organização auto-hospedada.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5113,7 +5122,7 @@
     }
   },
   "awaitingSyncPlural": {
-    "message": "Token rotated $DAYS$ days ago. Update the billing sync token in your self-hosted organization settings.",
+    "message": "Token renovado há $DAYS$ dias. Atualize o token de sincronização de cobrança nas configurações da sua organização auto-hospedada.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5122,14 +5131,14 @@
     }
   },
   "lastSync": {
-    "message": "Last Sync",
+    "message": "Última Sincronização",
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
-    "message": "Self-hosted sponsorships synced."
+    "message": "Patrocínios auto-hospedados sincronizados."
   },
   "billingManagedByProvider": {
-    "message": "Managed by $PROVIDER$",
+    "message": "Gerenciado por $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -5138,7 +5147,7 @@
     }
   },
   "billingContactProviderForAssistance": {
-    "message": "Please reach out to them for further assistance",
+    "message": "Por favor, entre em contato com eles para obter mais ajuda",
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
@@ -5152,22 +5161,22 @@
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "Token de acesso API"
   },
   "deviceVerification": {
-    "message": "Device Verification"
+    "message": "Verificação do dispositivo"
   },
   "enableDeviceVerification": {
-    "message": "Enable Device Verification"
+    "message": "Habilitar Verificação do Dispositivo"
   },
   "deviceVerificationDesc": {
-    "message": "When enabled, verification codes are sent to your email address when logging in from an unrecognized device"
+    "message": "Quando ativado, são enviados códigos de verificação para o seu endereço de e-mail ao fazer login a partir de um dispositivo não reconhecido"
   },
   "updatedDeviceVerification": {
-    "message": "Updated Device Verification"
+    "message": "Verificação do Dispositivo Atualizada"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
-    "message": "Are you sure you want to enable Device Verification? The verification code emails will arrive at: $EMAIL$",
+    "message": "Tem certeza de que deseja habilitar o Verificação do Dispositivo? O código de verificação de e-mail chegarão em: $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5176,13 +5185,13 @@
     }
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Entrada necessária."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "A entrada não é um endereço de e-mail."
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "A entrada deve ter pelo menos $COUNT$ caracteres.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5191,12 +5200,18 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ campos(s) acima precisam de sua atenção.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Ligar"
+  },
+  "on": {
+    "message": "Ligado"
   }
 }

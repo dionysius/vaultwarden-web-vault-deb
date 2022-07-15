@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "Organisatie uitgeschakeld."
   },
+  "disabledOrganizationFilterError": {
+    "message": "Je kunt uitgeschakelde items in een organisatie niet benaderen. Neem contact op met de eigenaar van je organisatie voor hulp."
+  },
   "licenseIsExpired": {
     "message": "Licentie verlopen."
   },
@@ -3342,8 +3345,14 @@
   "clone": {
     "message": "Dupliceren"
   },
+  "masterPassPolicyTitle": {
+    "message": "Vereisten hoofdwachtwoord"
+  },
   "masterPassPolicyDesc": {
     "message": "Minimale eisen voor de sterkte van het hoofdwachtwoord instellen."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Tweestapsaanmelding vereisen"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Vereis tweestapsaanmelding op het persoonlijke account van gebruikers."
@@ -3355,7 +3364,7 @@
     "message": "Je bent lid van een organisatie die tweestapsaanmelding vereist op je persoonlijke account. Als je tweestapsaanmelding uitschakelt wordt je automatisch uit deze organisaties verwijderd."
   },
   "passwordGeneratorPolicyDesc": {
-    "message": "Stel minimale vereisten in voor de configuratie van de wachtwoordgenerator."
+    "message": "Stel minimale vereisten in voor de configuratie van het wachtwoord generator."
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Een of meer organisatiebeleidseisen heeft invloed op de instellingen van je generator."
@@ -4811,15 +4820,15 @@
   },
   "ssoPolicyHelpStart": {
     "message": "Inschakelen",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "SSO-beleid",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "om alle leden inloggen met SSO te verplichten.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
     "message": "SSO-authenticatie en Enkele Organisatie-beleid zijn vereist voor het instellen van de versleuteling van de Key Connector."
@@ -5198,5 +5207,11 @@
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Inschakelen"
+  },
+  "on": {
+    "message": "Aan"
   }
 }

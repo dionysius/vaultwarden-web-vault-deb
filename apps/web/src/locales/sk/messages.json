@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "Organizácia je vypnutá."
   },
+  "disabledOrganizationFilterError": {
+    "message": "K položkám vo vypnutej organizácii nie je možné pristupovať. Požiadajte o pomoc vlastníka organizácie."
+  },
   "licenseIsExpired": {
     "message": "Licencia vypršala."
   },
@@ -3342,11 +3345,17 @@
   "clone": {
     "message": "Klonovať"
   },
+  "masterPassPolicyTitle": {
+    "message": "Požiadavky na hlavné heslo"
+  },
   "masterPassPolicyDesc": {
     "message": "Nastavte minimálne požiadavky pre silu hlavného hesla."
   },
+  "twoStepLoginPolicyTitle": {
+    "message": "Vyžadovať dvojstupňové prihlásenie"
+  },
   "twoStepLoginPolicyDesc": {
-    "message": "Požadujte dvojstupňové prihlásenie pre osobné účty."
+    "message": "Vyžadujte dvojstupňové prihlásenie pre členov."
   },
   "twoStepLoginPolicyWarning": {
     "message": "Členovia organizácie, ktorí nie su vlastníci alebo administratori a ktorí nemajú zapnuté dvojstupňové prihlásenie budú odstranení z organizácie a obdržia email s informáciou o tejto zmene."
@@ -3585,7 +3594,7 @@
     "message": "Členovia organizácie, ktorí nie sú vlastníkmi alebo administrátormi a už sú členmi inej organizácie, budú odstránení z vašej organizácie."
   },
   "requireSso": {
-    "message": "Overovanie prostredníctvom jednotného prihlasovania (SSO)"
+    "message": "Požadovať overovanie prostredníctvom jednotného prihlasovania (SSO)"
   },
   "requireSsoPolicyDesc": {
     "message": "Vyžadovať od používateľov prihlásenie prostredníctvom jednotného prihlasovania (SSO) spoločnosti."
@@ -3889,10 +3898,10 @@
     }
   },
   "personalOwnership": {
-    "message": "Osobné vlastníctvo"
+    "message": "Zakázať osobný trezor"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "Požadovať, aby používatelia na uloženie položiek trezoru organizácie odstránili osobné vlastníctvo."
+    "message": "Požadovať, aby používatelia na uloženie položiek používali trezor organizácie odstránením možnosti uloženia v osobnom trezore."
   },
   "personalOwnershipExemption": {
     "message": "Vlastníci a administrátori organizácie sú vyňatí z uplatnenia tohto pravidla."
@@ -3904,7 +3913,7 @@
     "message": "Zakázať Send"
   },
   "disableSendPolicyDesc": {
-    "message": "Nedovoľte používateľom vytvárať alebo upravovať funkciu Bitwarden Send. Odstránenie existujúceho Send je stále povolené.",
+    "message": "Nedovoľte používateľom vytvárať alebo upravovať Bitwarden Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
@@ -4811,18 +4820,18 @@
   },
   "ssoPolicyHelpStart": {
     "message": "Povoliť",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
-    "message": "SSO Authentication policy",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "message": "require single-sign-on authentication policy",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "to require all members to log in with SSO.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "SSO Authentication and Single Organization policies are required to set up Key Connector decryption."
+    "message": "The require SSO authentication and single organization policies are required to set up Key Connector decryption."
   },
   "memberDecryptionOption": {
     "message": "Member Decryption Options"
@@ -5198,5 +5207,11 @@
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Zapnúť"
+  },
+  "on": {
+    "message": "Zapnuté"
   }
 }

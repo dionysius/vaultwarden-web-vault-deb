@@ -1076,7 +1076,7 @@
     "message": "Видалити обліковий запис"
   },
   "deleteAccountDesc": {
-    "message": "Продовжуйте внизу для видалення облікового запису і всіх пов'язаних даних."
+    "message": "Нижче ви зможете завершити видалення облікового запису та всіх даних сховища."
   },
   "deleteAccountWarning": {
     "message": "Видалення облікового запису є незворотною дією. Це не можна буде скасувати."
@@ -1085,7 +1085,7 @@
     "message": "Обліковий запис видалено"
   },
   "accountDeletedDesc": {
-    "message": "Ваш обліковий запис було закрито і всі пов'язані дані було видалено."
+    "message": "Ваш обліковий запис і дані сховища було остаточно видалено."
   },
   "myAccount": {
     "message": "Мій обліковий запис"
@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "Організацію вимкнено."
   },
+  "disabledOrganizationFilterError": {
+    "message": "Записи у вимкнених організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
+  },
   "licenseIsExpired": {
     "message": "Термін дії ліцензії завершився."
   },
@@ -3342,20 +3345,26 @@
   "clone": {
     "message": "Клонувати"
   },
+  "masterPassPolicyTitle": {
+    "message": "Вимоги до головного пароля"
+  },
   "masterPassPolicyDesc": {
-    "message": "Встановіть мінімальні вимоги надійності головного пароля."
+    "message": "Встановіть вимоги надійності головного пароля."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Вимагати двоетапну перевірку"
   },
   "twoStepLoginPolicyDesc": {
-    "message": "Зобов'язувати користувачів встановлювати двоетапну перевірку в їхніх особистих облікових записах."
+    "message": "Зобов'язувати учасників встановлювати двоетапну перевірку."
   },
   "twoStepLoginPolicyWarning": {
-    "message": "Учасники організації, які не є власниками, чи адміністратори, в яких не увімкнено двоетапну перевірку для їхніх особистих облікових записів, будуть вилучені з організації та проінформовані поштовим повідомленням."
+    "message": "Учасники організації, які не є власниками, чи адміністратори, в яких не увімкнено двоетапну перевірку для їхніх облікових записів, будуть вилучені з організації та проінформовані поштовим повідомленням."
   },
   "twoStepLoginPolicyUserWarning": {
     "message": "Ви включені до організації, яка зобов'язує використання двоетапної перевірки у вашому обліковому записі. Якщо ви вимкнете всі способи двоетапної перевірки, вас буде автоматично вилучено з цієї організації."
   },
   "passwordGeneratorPolicyDesc": {
-    "message": "Встановіть мінімальні вимоги для параметрів генерування пароля."
+    "message": "Встановити вимоги для генерування пароля."
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "На параметри генератора впливають одна чи декілька політик організації."
@@ -3576,7 +3585,7 @@
     "message": "Єдина організація"
   },
   "singleOrgDesc": {
-    "message": "Заборонити користувачам приєднуватися до будь-яких інших організацій."
+    "message": "Заборонити користувачам приєднуватися до інших організацій."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Ваша організація має політику, що не дозволяє вам приєднуватися до більш, ніж однієї організації. Будь ласка, зв'яжіться з адміністратором вашої організації, або увійдіть з іншим обліковим записом Bitwarden."
@@ -3585,10 +3594,10 @@
     "message": "Учасники організації, які не є власниками чи адміністраторами, але вже є учасниками іншої організації, будуть вилучені з вашої організації."
   },
   "requireSso": {
-    "message": "Авторизація через єдиний вхід (SSO)"
+    "message": "Вимагати авторизацію через єдиний вхід (SSO)"
   },
   "requireSsoPolicyDesc": {
-    "message": "Вимагати від користувачів входити в систему через єдиний вхід (SSO) компанії."
+    "message": "Зобов'язувати учасників входити в систему через єдиний вхід (SSO) компанії."
   },
   "prerequisite": {
     "message": "Передумови"
@@ -3889,10 +3898,10 @@
     }
   },
   "personalOwnership": {
-    "message": "Особиста власність"
+    "message": "Вилучити особисте сховище"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "Вимагати від користувачів зберігати записи до організації, вилучивши можливість особистої власності."
+    "message": "Зобов'язувати учасників зберігати записи до організації, вилучивши параметр особистого сховища."
   },
   "personalOwnershipExemption": {
     "message": "Власники організації та адміністратори звільняються від дотримання цієї політики."
@@ -3901,10 +3910,10 @@
     "message": "У зв'язку з корпоративною політикою, вам не дозволено зберігати записи до особистого сховища. Змініть налаштування власності на організацію та виберіть серед доступних збірок."
   },
   "disableSend": {
-    "message": "Вимкнути відправлення"
+    "message": "Вилучити відправлення"
   },
   "disableSendPolicyDesc": {
-    "message": "Не дозволяти користувачам створювати чи змінювати відправлення Bitwarden. Видалення наявних відправлень все ще дозволяється.",
+    "message": "Не дозволяти учасникам створювати чи змінювати відправлення.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
@@ -3930,7 +3939,7 @@
     "message": "Користувачі організації, які можуть керувати політиками організації, звільняються від дотримання цієї політики."
   },
   "disableHideEmail": {
-    "message": "Не дозволяти користувачам приховувати свою адресу електронної пошти від отримувачів під час створення чи редагування відправлень.",
+    "message": "Завжди показувати отримувачам адресу е-пошти учасників під час створення чи редагування відправлень.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4229,7 +4238,7 @@
     "message": "Скидання головного пароля"
   },
   "resetPasswordPolicyDescription": {
-    "message": "Дозволити адміністраторам організації скидати головний пароль користувачів."
+    "message": "Дозволити адміністраторам скидати головний пароль учасників."
   },
   "resetPasswordPolicyWarning": {
     "message": "Користувачі в організації мають виконати самостійне розгортання, або отримати автоматичне розгортання, перш ніж адміністратори зможуть скинути їхній пароль."
@@ -4476,7 +4485,7 @@
     "message": "Час очікування сховища"
   },
   "maximumVaultTimeoutDesc": {
-    "message": "Налаштувати максимальний час очікування сховища для всіх користувачів."
+    "message": "Встановити максимальний час очікування сховища для учасників."
   },
   "maximumVaultTimeoutLabel": {
     "message": "Максимальний час очікування сховища"
@@ -4516,10 +4525,10 @@
     "message": "Час очікування сховища поза межами дозволеного діапазону."
   },
   "disablePersonalVaultExport": {
-    "message": "Вимкнути експорт особистого сховища"
+    "message": "Вилучити експорт особистого сховища"
   },
   "disablePersonalVaultExportDesc": {
-    "message": "Забороняє користувачам експортувати їхні особисті дані сховища."
+    "message": "Заборонити учасникам експортувати дані їхнього особистого сховища."
   },
   "vaultExportDisabled": {
     "message": "Експорт сховища вимкнено"
@@ -4810,16 +4819,16 @@
     "message": "Після налаштування вашу конфігурацію буде збережено та учасники зможуть авторизуватися з використанням облікових даних їхнього постачальника."
   },
   "ssoPolicyHelpStart": {
-    "message": "Увімкнути",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "message": "Використовувати",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
-    "message": "Політика авторизації SSO",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "message": "обов'язкову політику єдиного входу (SSO)",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "щоб вимагати в усіх учасників виконувати вхід з SSO.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
     "message": "Для встановлення розшифрування Key Connector необхідні політики авторизації SSO та єдиної організації."
@@ -5198,5 +5207,11 @@
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Увімкнути"
+  },
+  "on": {
+    "message": "Увімкнено"
   }
 }

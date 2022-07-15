@@ -633,7 +633,7 @@
     "message": "Требуется мастер-пароль."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Необходимо ввести мастер-пароль повторно."
+    "message": "Необходимо повторно ввести мастер-пароль."
   },
   "masterPasswordMinLength": {
     "message": "Мастер-пароль должен содержать не менее 8 символов."
@@ -1076,7 +1076,7 @@
     "message": "Удалить аккаунт"
   },
   "deleteAccountDesc": {
-    "message": "Чтобы удалить учетную запись и все связанные с ней данные, выполните действие ниже."
+    "message": "Чтобы удалить свой аккаунт и все данные хранилища, выполните следующие действия."
   },
   "deleteAccountWarning": {
     "message": "Удаление вашей учетной записи необратимо. Его нельзя отменить."
@@ -1085,7 +1085,7 @@
     "message": "Аккаунт удален"
   },
   "accountDeletedDesc": {
-    "message": "Ваш аккаунт был закрыт, а все связанные с ним данные удалены."
+    "message": "Ваш аккаунт Bitwarden и данные хранилища были удалены навсегда."
   },
   "myAccount": {
     "message": "Мой аккаунт"
@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "Организация отключена."
   },
+  "disabledOrganizationFilterError": {
+    "message": "Доступ к элементам в отключенных организациях невозможен. Обратитесь за помощью к владельцу организации."
+  },
   "licenseIsExpired": {
     "message": "Срок действия лицензии истек."
   },
@@ -3342,20 +3345,26 @@
   "clone": {
     "message": "Клонировать"
   },
+  "masterPassPolicyTitle": {
+    "message": "Требования к мастер-паролю"
+  },
   "masterPassPolicyDesc": {
-    "message": "Установите минимальные требования к надежности мастер-пароля."
+    "message": "Установите требования к надежности мастер-пароля."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Требуется двухфакторная аутентификация"
   },
   "twoStepLoginPolicyDesc": {
-    "message": "Требовать от пользователей настройки двухэтапной авторизации в их персональных учетных записях."
+    "message": "Требовать от пользователей настройки двухфакторной аутентификации."
   },
   "twoStepLoginPolicyWarning": {
-    "message": "Члены организации, у которых в личном аккаунте отключена двухфакторная аутентификация, будут удалены из организации и получат об этом уведомление по email."
+    "message": "Члены организации, которые не являются владельцами или администраторами и не включили двухфакторную авторизацию в своем аккаунте, будут удалены из организации и получат об этом уведомление по email."
   },
   "twoStepLoginPolicyUserWarning": {
     "message": "Вы участник организации, которая требует, чтобы в вашем аккаунте была включена двухфакторная аутентификация. Если вы отключите всех провайдеров двухфакторной аутентификации, то будете автоматически удалены из этих организаций."
   },
   "passwordGeneratorPolicyDesc": {
-    "message": "Установите минимальные требования к конфигурации генератора паролей."
+    "message": "Установить требования к генератору паролей."
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "На настройки генератора влияют одна или несколько политик организации."
@@ -3585,16 +3594,16 @@
     "message": "Члены организации, которые не являются владельцами или администраторами и уже входят в другую организацию, будут удалены из вашей организации."
   },
   "requireSso": {
-    "message": "Авторизация через единый вход (SSO)"
+    "message": "Требовать авторизацию через единый вход (SSO)"
   },
   "requireSsoPolicyDesc": {
-    "message": "Требовать от пользователей авторизацию с помощью единого корпоративного входа."
+    "message": "Требовать от пользователей авторизацию через единый вход (SSO)."
   },
   "prerequisite": {
     "message": "Обязательное условие"
   },
   "requireSsoPolicyReq": {
-    "message": "Перед активацией этой политики необходимо активировать корпоративную политику 'Одна организация'."
+    "message": "Перед активацией этой политики необходимо включить политику Единого входа (SSO)."
   },
   "requireSsoPolicyReqError": {
     "message": "Не включена политика 'Одна организация'."
@@ -3889,10 +3898,10 @@
     }
   },
   "personalOwnership": {
-    "message": "Личное владение"
+    "message": "Удалить личное хранилище"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "Требовать от пользователей сохранения элементов хранилища в организации, удалив опцию личного владения."
+    "message": "Требовать от пользователей сохранять элементы в организации, удалив опцию личного хранилища."
   },
   "personalOwnershipExemption": {
     "message": "Владельцы и администраторы организации не подпадают под действие этой политики."
@@ -3904,7 +3913,7 @@
     "message": "Отключить Send"
   },
   "disableSendPolicyDesc": {
-    "message": "Не разрешать пользователям создавать или редактировать Bitwarden Send. Удаление существующей Send по-прежнему разрешено.",
+    "message": "Не разрешать пользователям создавать или редактировать Bitwarden Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
@@ -3919,7 +3928,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
-    "message": "Настройки Send",
+    "message": "Параметры Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyDesc": {
@@ -3930,7 +3939,7 @@
     "message": "Политики не распространяются на пользователей организации, которые могут ими управлять."
   },
   "disableHideEmail": {
-    "message": "Запретить пользователям скрывать свой адрес email от получателей при создании или редактировании Send.",
+    "message": "Всегда показывать email пользователя получателям при создании или редактировании Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4229,7 +4238,7 @@
     "message": "Сброс мастер-пароля"
   },
   "resetPasswordPolicyDescription": {
-    "message": "Разрешить администраторам организации сбрасывать мастер-пароль пользователей организации."
+    "message": "Разрешить администраторам сбрасывать мастер-пароли пользователей."
   },
   "resetPasswordPolicyWarning": {
     "message": "Пользователи организации должны зарегистрироваться самостоятельно или быть зарегистрированными автоматически, чтобы администраторы могли сбросить их мастер-пароль."
@@ -4476,7 +4485,7 @@
     "message": "Тайм-аут хранилища"
   },
   "maximumVaultTimeoutDesc": {
-    "message": "Настроить максимальный тайм-аут хранилища для всех пользователей."
+    "message": "Установить максимальный тайм-аут хранилища для пользователей."
   },
   "maximumVaultTimeoutLabel": {
     "message": "Максимальный тайм-аут хранилища"
@@ -4516,10 +4525,10 @@
     "message": "Тайм-аут хранилища находится за пределами допустимого диапазона."
   },
   "disablePersonalVaultExport": {
-    "message": "Отключить экспорт личного хранилища"
+    "message": "Удалить экспорт личного хранилища"
   },
   "disablePersonalVaultExportDesc": {
-    "message": "Запрещает пользователям экспортировать данные своего личного хранилища."
+    "message": "Не разрешать пользователям экспортировать данные своего личного хранилища."
   },
   "vaultExportDisabled": {
     "message": "Экспорт хранилища отключен"
@@ -4810,19 +4819,19 @@
     "message": "После настройки ваша конфигурация будет сохранена, и пользователи смогут проходить аутентификацию, используя свои учетные данные Провайдера идентификации."
   },
   "ssoPolicyHelpStart": {
-    "message": "Активировать",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "message": "Использовать",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
-    "message": "Политика аутентификации SSO",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "message": "требуемую политику аутентификации с единым входом",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "для обеспечения авторизации всех членов при помощи единого входа.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "Для настройки расшифровки соединителя ключей требуются политики проверки подлинности SSO и единой организации."
+    "message": "Для настройки расшифровки соединителя ключей требуются политики аутентификации SSO и единой организации."
   },
   "memberDecryptionOption": {
     "message": "Параметры расшифровки членов"
@@ -5176,13 +5185,13 @@
     }
   },
   "inputRequired": {
-    "message": "Требуются вводные данные."
+    "message": "Необходимо ввести данные."
   },
   "inputEmail": {
-    "message": "Вводные данные — не адрес эл. почты."
+    "message": "Введенные данные не являются адресом email."
   },
   "inputMinLength": {
-    "message": "Вводимые данные должны содежать не менее $COUNT$ символов.",
+    "message": "Вводимые данные должны содержать не менее $COUNT$ символов.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5198,5 +5207,11 @@
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Включить"
+  },
+  "on": {
+    "message": "Вкл."
   }
 }

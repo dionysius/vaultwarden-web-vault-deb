@@ -573,7 +573,7 @@
     "message": "Креирај налог"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Почетак пробе"
   },
   "logIn": {
     "message": "Пријавите се"
@@ -597,7 +597,7 @@
     "message": "Главна Лозинка је лозинка коју користите за приступ Вашем сефу. Врло је важно да је не заборавите. Не постоји начин да повратите лозинку у случају да је заборавите."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Главне лозинке се не могу повратити ако их заборавите!"
   },
   "masterPassHintDesc": {
     "message": "Савет Главне Лозинке може да Вам помогне да се је потсетите ако је заборавите."
@@ -630,13 +630,13 @@
     "message": "Неисправан имејл."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Главна Лозинка је неопходна."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Поновно уписивање главне лозинке је неопходно."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Главна лозинка мора да садржи барем 8 знакова."
   },
   "masterPassDoesntMatch": {
     "message": "Потврђена Главна Лозинка се не подудара."
@@ -1161,10 +1161,10 @@
     "message": "Променити језик за Сеф."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Прикажи иконе сајтова"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Прикажи препознатљиву слику поред сваке ставке за пријаву."
   },
   "enableGravatars": {
     "message": "Омогући Gravatar",
@@ -1248,7 +1248,7 @@
     "message": "Омогућено"
   },
   "activate": {
-    "message": "Activate"
+    "message": "Активирати"
   },
   "premium": {
     "message": "Премијум",
@@ -1276,7 +1276,7 @@
     "message": "Онемогући"
   },
   "deactivate": {
-    "message": "Deactivate"
+    "message": "Деактивирати"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Овај добављач услуге пријављивања у два корака је омогућен на вашем налогу."
@@ -2242,10 +2242,10 @@
     "message": "Да ли сте сигурни да желите да уклоните овог корисника?"
   },
   "deactivateUserConfirmation": {
-    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+    "message": "Члан више неће имати приступ организацији, али ће и даље имати приступ свом индивидуалном сефу."
   },
   "activateUserConfirmation": {
-    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+    "message": "Да ли сигурно желите да активирате овог корисника, дајући му приступ организацији?"
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Упозорење! Овај корисник захтева Key Connector да управља њиховом шифровањем. Уклањање овог корисника из ваше организације трајно ће онемогућити њихов рачун. Ова радња се не може поништити. Да ли желите да наставите?"
@@ -2593,7 +2593,7 @@
     }
   },
   "deactivatedUserId": {
-    "message": "Deactivated user $ID$.",
+    "message": "Корисник $ID$ је деактивиран.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2602,7 +2602,7 @@
     }
   },
   "activatedUserId": {
-    "message": "Activated user $ID$.",
+    "message": "Корисник $ID$ је активиран.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2611,7 +2611,7 @@
     }
   },
   "deactivateUserId": {
-    "message": "Deactivate user $ID$?",
+    "message": "Деактивирати корисника $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2620,7 +2620,7 @@
     }
   },
   "activateUserId": {
-    "message": "Activate user $ID$?",
+    "message": "Активирати корисника $ID$?",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3169,7 +3169,7 @@
     "message": "Означавањем овог поља пристајете на следеће:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Услови услуге и Политика приватности нису прихваћени."
   },
   "termsOfService": {
     "message": "Услови коришћења услуге"
@@ -3217,6 +3217,9 @@
   },
   "organizationIsDisabled": {
     "message": "Организација је онемогућена."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "licenseIsExpired": {
     "message": "Лиценца је истекла."
@@ -3342,8 +3345,14 @@
   "clone": {
     "message": "Клонирај"
   },
+  "masterPassPolicyTitle": {
+    "message": "Захтеви за главну лозинку"
+  },
   "masterPassPolicyDesc": {
     "message": "Поставите минималне захтеве за чврстоћу главне лозинке."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Потребна дво-степенска пријава"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Захтевајте од корисника да поставе пријаву у два корака на своје личне налоге."
@@ -3676,7 +3685,7 @@
     "message": "Онемогућено"
   },
   "deactivated": {
-    "message": "Deactivated"
+    "message": "Деактивирано"
   },
   "sendLink": {
     "message": "УРЛ „Send“",
@@ -4280,10 +4289,10 @@
     "message": "Јесте ли сигурни да желите да уклоните следеће кориснике? Процес може потрајати неколико секунди да се заврши, и не може се прекинути или отказати."
   },
   "deactivateUsersWarning": {
-    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Да ли сте сигурни да желите да деактивирате следеће чланове? Они више неће имати приступ организацији, али ће и даље имати приступ својим појединачним сефовима. Процес може потрајати неколико секунди и не може се прекинути или отказати."
   },
   "activateUsersWarning": {
-    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Да ли сте сигурни да желите да активирате следеће чланове, дајући им приступ организацији? Процес може потрајати неколико секунди и не може се прекинути или отказати."
   },
   "theme": {
     "message": "Тема"
@@ -4316,10 +4325,10 @@
     "message": "Успешно уклоњено"
   },
   "bulkDeactivatedMessage": {
-    "message": "Deactivated successfully"
+    "message": "Успешно деактивирање"
   },
   "bulkActivatedMessage": {
-    "message": "Activated successfully"
+    "message": "Успешно активирање"
   },
   "bulkFilteredMessage": {
     "message": "Искључено, није применљиво за ову акцију."
@@ -4331,10 +4340,10 @@
     "message": "Уклони кориснике"
   },
   "deactivateUsers": {
-    "message": "Deactivate Users"
+    "message": "Деактивирати кориснике"
   },
   "activateUsers": {
-    "message": "Activate Users"
+    "message": "Активирати кориснике"
   },
   "error": {
     "message": "Грешка"
@@ -4642,19 +4651,19 @@
     "message": "Single Sign-On configuration was saved."
   },
   "sponsoredFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Бесплатно Bitwarden Families"
   },
   "sponsoredFamiliesEligible": {
-    "message": "You and your family are eligible for Free Bitwarden Families. Redeem with your personal email to keep your data secure even when you are not at work."
+    "message": "Ви и ваша породица испуњавате услове за бесплатне Bitwarden Families. Искористите својом личном е-поштом да бисте заштитили своје податке чак и када нисте на послу."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Redeem your Free Bitwarden for Families plan today to keep your data secure even when you are not at work."
+    "message": "Искористите свој бесплатни план Bitwarden for Families данас да бисте заштитили своје податке чак и када нисте на послу."
   },
   "sponsoredFamiliesInclude": {
-    "message": "The Bitwarden for Families plan include"
+    "message": "Bitwarden for Families укључује"
   },
   "sponsoredFamiliesPremiumAccess": {
-    "message": "Premium access for up to 6 users"
+    "message": "Премиум приступ за до 6 корисника"
   },
   "sponsoredFamiliesSharedCollections": {
     "message": "Shared collections for Family secrets"
@@ -4690,7 +4699,7 @@
     "message": "Unable to accept offer. Please resend the offer email from your enterprise account and try again."
   },
   "sponsoredFamiliesAcceptFailedShort": {
-    "message": "Unable to accept offer. $DESCRIPTION$",
+    "message": "Није могуће прихватити понуду. $DESCRIPTION$",
     "placeholders": {
       "description": {
         "content": "$1",
@@ -4699,10 +4708,10 @@
     }
   },
   "sponsoredFamiliesOffer": {
-    "message": "Accept Free Bitwarden Families"
+    "message": "Прихвати Бесплатно Free Bitwarden Families"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Free Bitwarden Families offer successfully redeemed"
+    "message": "Бесплатна понуда за Bitwarden Families је успешно искоришћена"
   },
   "redeemed": {
     "message": "Откупљено"
@@ -4811,18 +4820,18 @@
   },
   "ssoPolicyHelpStart": {
     "message": "Упалити",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "политику SSO аутентификације",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "да би сви чланови обавезно користили SSO.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "SSO Authentication and Single Organization policies are required to set up Key Connector decryption."
+    "message": "The require SSO authentication and single organization policies are required to set up Key Connector decryption."
   },
   "memberDecryptionOption": {
     "message": "Опциј дешифровања члана"
@@ -4888,10 +4897,10 @@
     "message": "БЕСПЛАТНО уз спонзорство"
   },
   "viewBillingSyncToken": {
-    "message": "View Billing Sync Token"
+    "message": "Види токен синхронизације наплате"
   },
   "generateBillingSyncToken": {
-    "message": "Generate Billing Sync Token"
+    "message": "Генериши токен синхронизације наплате"
   },
   "copyPasteBillingSync": {
     "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
@@ -4900,10 +4909,10 @@
     "message": "Your Billing Sync token can access and edit this organization's subscription settings."
   },
   "manageBillingSync": {
-    "message": "Manage Billing Sync"
+    "message": "Управљати синхроизацију наплате"
   },
   "setUpBillingSync": {
-    "message": "Set Up Billing Sync"
+    "message": "Подесити синхронизацију наплате"
   },
   "generateToken": {
     "message": "Генеришите Токен"
@@ -4924,10 +4933,10 @@
     "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
   },
   "billingSyncApiKeyRotated": {
-    "message": "Token rotated."
+    "message": "Токен је обрнут."
   },
   "billingSync": {
-    "message": "Billing Sync"
+    "message": "Синхронизација наплате"
   },
   "billingSyncDesc": {
     "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
@@ -4936,7 +4945,7 @@
     "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
   },
   "billingSyncKey": {
-    "message": "Billing Sync Token"
+    "message": "Синхронизација токена наплате"
   },
   "active": {
     "message": "Активан"
@@ -4993,7 +5002,7 @@
     "message": "Вишеструко одвојите зарезом."
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Ваша сесија је истекла. Вратите се и покушајте поново да се пријавите."
   },
   "exportingPersonalVaultTitle": {
     "message": "Извоз личног сефа"
@@ -5002,7 +5011,7 @@
     "message": "Извоз сефа организације"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Само предмети личног сефа повезани са $EMAIL$ биће извезени. Ставке организационог сефа неће бити укључене.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5138,7 +5147,7 @@
     }
   },
   "billingContactProviderForAssistance": {
-    "message": "Please reach out to them for further assistance",
+    "message": "Обратите се њима за даљу помоћ",
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
@@ -5155,13 +5164,13 @@
     "message": "Приступни АПИ токен"
   },
   "deviceVerification": {
-    "message": "Device Verification"
+    "message": "Провера уређаја"
   },
   "enableDeviceVerification": {
-    "message": "Enable Device Verification"
+    "message": "Омогућити проверу уређаја"
   },
   "deviceVerificationDesc": {
-    "message": "When enabled, verification codes are sent to your email address when logging in from an unrecognized device"
+    "message": "Када је омогућено, верификациони кодови се шаљу на вашу е-адресу када се пријавите са непрепознатог уређаја"
   },
   "updatedDeviceVerification": {
     "message": "Провера уређаја је ажурирана"
@@ -5176,13 +5185,13 @@
     }
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Унос је потребан."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "Унос није е-адреса."
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Унос трба имати најмање $COUNT$ слова.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5191,12 +5200,18 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ поље(а) изнад захтевај(у) вашу пажњу.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Укључи"
+  },
+  "on": {
+    "message": "Укључено"
   }
 }

@@ -1076,7 +1076,7 @@
     "message": "删除账户"
   },
   "deleteAccountDesc": {
-    "message": "接下来的操作会删除您的账户和所有相关数据。"
+    "message": "接下来的操作会删除您的账户和所有密码库数据。"
   },
   "deleteAccountWarning": {
     "message": "删除账户是永久性的。不能被撤消。"
@@ -3218,6 +3218,9 @@
   "organizationIsDisabled": {
     "message": "该组织已被禁用。"
   },
+  "disabledOrganizationFilterError": {
+    "message": "无法访问已禁用组织中的项目。请联系您的组织所有者获取协助。"
+  },
   "licenseIsExpired": {
     "message": "授权已过期"
   },
@@ -3342,20 +3345,26 @@
   "clone": {
     "message": "克隆"
   },
+  "masterPassPolicyTitle": {
+    "message": "主密码要求"
+  },
   "masterPassPolicyDesc": {
-    "message": "设置主密码强度的最低要求。"
+    "message": "设置主密码强度要求。"
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "需要两步登录"
   },
   "twoStepLoginPolicyDesc": {
-    "message": "要求用户在个人账户上设置两步登录。"
+    "message": "要求成员设置两步登录。"
   },
   "twoStepLoginPolicyWarning": {
-    "message": "非所有者或管理员并且其个人账户未启用两步登录的组织成员将从组织中移除，并将收到一封关于此更改的电子邮件通知。"
+    "message": "非所有者或管理员并且其账户未启用两步登录的组织成员将从组织中移除，并将收到一封关于此更改的电子邮件通知。"
   },
   "twoStepLoginPolicyUserWarning": {
     "message": "您的组织要求您在您的个人账户上启用两步登录。如果您禁用所有两步登录提供程序，您将自动从这些组织中移除。"
   },
   "passwordGeneratorPolicyDesc": {
-    "message": "设置密码生成器配置的最低要求。"
+    "message": "设置密码生成器要求。"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "一个或多个组织策略正在影响您的生成器设置。"
@@ -3576,7 +3585,7 @@
     "message": "单一组织"
   },
   "singleOrgDesc": {
-    "message": "限制用户加入任何其他组织。"
+    "message": "限制成员加入其他组织。"
   },
   "singleOrgBlockCreateMessage": {
     "message": "您当前的组织策略禁止您加入多个组织。请联系您的组织管理员，或从其他 Bitwarden 账户注册。"
@@ -3585,16 +3594,16 @@
     "message": "非所有者或管理员并且已是其他组织成员的组织成员将从您的组织中移除。"
   },
   "requireSso": {
-    "message": "单点登录身份验证"
+    "message": "要求单点登录（SSO）验证"
   },
   "requireSsoPolicyDesc": {
-    "message": "要求用户使用企业单点登录方式登录。"
+    "message": "要求成员使用企业单点登录方式登录。"
   },
   "prerequisite": {
     "message": "先决条件"
   },
   "requireSsoPolicyReq": {
-    "message": "启用此策略前，需先启用「单一组织」企业策略。"
+    "message": "激活此策略前，需先启用「单一组织」企业策略。"
   },
   "requireSsoPolicyReqError": {
     "message": "单一组织策略未启用。"
@@ -3889,10 +3898,10 @@
     }
   },
   "personalOwnership": {
-    "message": "个人所有权"
+    "message": "移除个人密码库"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "通过移除个人所有权选项，要求用户将密码库项目保存到组织。"
+    "message": "通过禁用个人密码库选项，要求成员将项目保存到组织。"
   },
   "personalOwnershipExemption": {
     "message": "组织的所有者和管理员豁免此策略。"
@@ -3904,7 +3913,7 @@
     "message": "禁用 Send"
   },
   "disableSendPolicyDesc": {
-    "message": "不允许用户创建和编辑 Bitwarden Send。但允许删除现有的 Send。",
+    "message": "不允许成员创建或编辑 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
@@ -3930,7 +3939,7 @@
     "message": "可以管理组织策略的组织用户豁免此策略的执行。"
   },
   "disableHideEmail": {
-    "message": "不允许用户在创建或编辑 Send 时隐藏他们的电子邮件地址。",
+    "message": "在创建或编辑 Send 时始终显示成员的电子邮件地址。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4229,7 +4238,7 @@
     "message": "主密码重置"
   },
   "resetPasswordPolicyDescription": {
-    "message": "允许组织管理员重置组织用户的主密码。"
+    "message": "允许管理员重置成员的主密码。"
   },
   "resetPasswordPolicyWarning": {
     "message": "组织中的用户自行注册或被自动注册后，管理员才能重置他们的主密码。"
@@ -4476,7 +4485,7 @@
     "message": "密码库超时时间"
   },
   "maximumVaultTimeoutDesc": {
-    "message": "为所有用户配置最大密码库超时时间。"
+    "message": "为成员配置最大密码库超时时间。"
   },
   "maximumVaultTimeoutLabel": {
     "message": "最大密码库超时时间"
@@ -4519,7 +4528,7 @@
     "message": "禁用个人密码库导出"
   },
   "disablePersonalVaultExportDesc": {
-    "message": "禁止用户导出个人密码库数据。"
+    "message": "不允许成员导出他们的个人密码库数据。"
   },
   "vaultExportDisabled": {
     "message": "密码库导出已禁用"
@@ -4810,19 +4819,19 @@
     "message": "设置后，您的配置将被保存，成员将能够使用他们的身份提供程序凭据进行身份验证。"
   },
   "ssoPolicyHelpStart": {
-    "message": "启用",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "message": "使用",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "SSO 身份验证策略",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "将要求所有会员使用 SSO 登录。",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "需要先设置 Key Connector 解密，然后才能启用 SSO 身份验证和单一组织策略。"
+    "message": "设置 Key Connector 解密之前，需要先启用 SSO 身份验证和单一组织策略。"
   },
   "memberDecryptionOption": {
     "message": "成员解密选项"
@@ -5198,5 +5207,11 @@
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "打开"
+  },
+  "on": {
+    "message": "开启"
   }
 }

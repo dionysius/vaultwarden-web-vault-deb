@@ -573,7 +573,7 @@
     "message": "Crea un compte"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Comença la prova"
   },
   "logIn": {
     "message": "Inicia sessió"
@@ -597,7 +597,7 @@
     "message": "La contrasenya mestra és la clau que utilitzeu per accedir a la vostra caixa forta. És molt important que no la oblideu. No hi ha manera de recuperar-la en cas que la oblideu."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Les contrasenyes mestres no es poden recuperar si les oblideu!"
   },
   "masterPassHintDesc": {
     "message": "Una pista de la contrasenya mestra pot ajudar-vos a recordar-la si la oblideu."
@@ -630,13 +630,13 @@
     "message": "L’adreça electrònica no és vàlida."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Es requereix la contrasenya mestra."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Cal tornar a escriure la contrasenya mestra."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "La contrasenya mestra ha de tenir almenys 8 caràcters."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmació de la contrasenya mestra no coincideix."
@@ -3169,7 +3169,7 @@
     "message": "Si activeu aquesta casella, indiqueu que esteu d’acord amb el següent:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "No s’han reconegut les condicions del servei i la declaració de privadesa."
   },
   "termsOfService": {
     "message": "Condicions del servei"
@@ -3217,6 +3217,9 @@
   },
   "organizationIsDisabled": {
     "message": "L'organització està inhabilitada."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "licenseIsExpired": {
     "message": "Llicència caducada."
@@ -3342,14 +3345,20 @@
   "clone": {
     "message": "Clona"
   },
+  "masterPassPolicyTitle": {
+    "message": "Requisits de contrasenya mestra"
+  },
   "masterPassPolicyDesc": {
     "message": "Estableix els requisits mínims per al nivell de seguretat de la contrasenya principal."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Cal iniciar sessió en dos passos"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Requereix que els usuaris configuren l’inici de sessió en dues passes als seus comptes personals."
   },
   "twoStepLoginPolicyWarning": {
-    "message": "Els membres de l’organització que no tinguen activat l’inici de sessió en dues passes per al seu compte personal s'eliminaran de l’organització i rebran un correu electrònic que els notificarà sobre el canvi."
+    "message": "Els membres de l’organització que no tinguen activat l’inici de sessió en dos passos per al seu compte personal s'eliminaran de l’organització i rebran un correu electrònic que els notificarà sobre el canvi."
   },
   "twoStepLoginPolicyUserWarning": {
     "message": "Eres membre d’una organització que necessita l’inici de sessió en dues passes per estar habilitat al vostre compte d’usuari. Si desactiveu tots els proveïdors d’inici de sessió en dues passes, sereu eliminats automàticament d’aquestes organitzacions."
@@ -3889,7 +3898,7 @@
     }
   },
   "personalOwnership": {
-    "message": "Propietat personal"
+    "message": "Suprimeix la caixa forta individual"
   },
   "personalOwnershipPolicyDesc": {
     "message": "Sol·liciteu als usuaris que guarden elements de caixa forta a una organització suprimint l’opció de propietat personal."
@@ -3901,10 +3910,10 @@
     "message": "A causa d'una política empresarial, no podeu guardar elements a la vostra caixa forta personal. Canvieu l'opció Propietat en organització i trieu entre les col·leccions disponibles."
   },
   "disableSend": {
-    "message": "Desactiva Send"
+    "message": "Suprimeix Send"
   },
   "disableSendPolicyDesc": {
-    "message": "No permeteu als usuaris crear o editar un Send Bitwarden. Es permet suprimir un Send existent.",
+    "message": "No permeteu als usuaris crear o editar Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
@@ -3930,7 +3939,7 @@
     "message": "Els usuaris de l’organització que poden gestionar les polítiques d'aquesta, estan exempts de la seua aplicació."
   },
   "disableHideEmail": {
-    "message": "No permeteu que els usuaris amaguen la seua adreça de correu electrònic dels destinataris en crear o editar un Send.",
+    "message": "Mostra sempre l'adreça de correu electrònic del membre amb els destinataris quan creeu o editeu un Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4811,18 +4820,18 @@
   },
   "ssoPolicyHelpStart": {
     "message": "Habilita la",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "Política d'autenticació SSO",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "per obligar que tots els membres inicien la sessió amb SSO.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "Les polítiques d'autenticació SSO i d'organització única són necessàries per configurar el desxifrat del connector de claus."
+    "message": "Es requereix l'autenticació SSO i les polítiques d'organització única per configurar el desxifrat del connector de claus."
   },
   "memberDecryptionOption": {
     "message": "Opcions de desxifrat de membres"
@@ -5176,13 +5185,13 @@
     }
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Es requereix una entrada."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "L'entrada no és una adreça de correu electrònic."
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "L'entrada ha de tenir com a mínim $COUNT$ caràcters.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5191,12 +5200,18 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ camps de dalt necessiten la vostra atenció.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Activa"
+  },
+  "on": {
+    "message": "Activat"
   }
 }

@@ -573,7 +573,7 @@
     "message": "Crea account"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Inizia il periodo di prova"
   },
   "logIn": {
     "message": "Accedi"
@@ -597,7 +597,7 @@
     "message": "La password principale è la password che utilizzi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è modo di recuperare questa password nel caso che tu la dimenticassi."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Le password principali non possono essere recuperate se dimenticate!"
   },
   "masterPassHintDesc": {
     "message": "Un suggerimento che può aiutarti a ricordare la tua password principale se la dimentichi."
@@ -630,13 +630,13 @@
     "message": "L'indirizzo email non è valido."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "È necessario inserire la password principale."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "È necessario reinserire la password principale."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "La password principale deve essere lunga almeno 8 caratteri."
   },
   "masterPassDoesntMatch": {
     "message": "La conferma della password principale non corrisponde."
@@ -3169,7 +3169,7 @@
     "message": "Selezionando la casella accetti quanto segue:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "I termini di servizio e l'informativa sulla privacy non sono stati accettati."
   },
   "termsOfService": {
     "message": "Termini del servizio"
@@ -3217,6 +3217,9 @@
   },
   "organizationIsDisabled": {
     "message": "L'organizzazione è disabilitata."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Non è possibile accedere agli oggetti nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per ricevere assistenza."
   },
   "licenseIsExpired": {
     "message": "La licenza è scaduta."
@@ -3342,8 +3345,14 @@
   "clone": {
     "message": "Clona"
   },
+  "masterPassPolicyTitle": {
+    "message": "Requisiti della password principale"
+  },
   "masterPassPolicyDesc": {
     "message": "Imposta i requisiti minimi di complessità della password principale."
+  },
+  "twoStepLoginPolicyTitle": {
+    "message": "Richiedi login in due passaggi"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Obbliga gli utenti a impostare l'autenticazione a due fattori sul loro account personale."
@@ -4780,7 +4789,7 @@
     "message": "Conferma la tua identità per continuare."
   },
   "verificationCodeRequired": {
-    "message": "Il codice di verifica è obbligatorio."
+    "message": "È necessario inserire il codice di verifica."
   },
   "invalidVerificationCode": {
     "message": "Codice di verifica non valido"
@@ -4811,15 +4820,15 @@
   },
   "ssoPolicyHelpStart": {
     "message": "Abilita la",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
     "message": "policy SSO",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
     "message": "per obbligare tutti i membri ad accedere con SSO.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enable the SSO Authentication policy to require all members to log in with SSO.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
     "message": "L'autenticazione SSO e i criteri dell'organizzazione unica sono necessari per configurare la decifratura del connettore chiave."
@@ -5176,13 +5185,13 @@
     }
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Input richiesto."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "L'input non è un indirizzo email."
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "L'input deve contenere almeno $COUNT$ caratteri.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5191,12 +5200,18 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "Il/i campo/i $COUNT$ sopra richiedono la tua attenzione.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "4"
       }
     }
+  },
+  "turnOn": {
+    "message": "Attiva"
+  },
+  "on": {
+    "message": "Attivo"
   }
 }
