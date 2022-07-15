@@ -53,13 +53,13 @@
     "message": "탭"
   },
   "vault": {
-    "message": "Vault"
+    "message": "보관함"
   },
   "myVault": {
     "message": "내 보관함"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "모든 보관함"
   },
   "tools": {
     "message": "도구"
@@ -424,12 +424,12 @@
     "message": "잘못된 이메일 주소입니다."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "마스터 비밀번호가 필요합니다."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "마스터 비밀번호를 재입력해야 합니다."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -810,13 +810,13 @@
     "message": "새로 고침 완료"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "인증 코드 자동으로 복사하기"
   },
   "disableAutoTotpCopyDesc": {
     "message": "로그인에 인증 키가 연결되어 있을 경우, 그 로그인을 자동 완성할 때마다 TOTP 인증 코드가 클립보드에 자동으로 복사됩니다."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "실행 시 생체 인증 요구하기"
   },
   "premiumRequired": {
     "message": "프리미엄 멤버십 필요"
@@ -1037,7 +1037,7 @@
     "message": "이 브라우저의 팝업 창에서는 U2F 요청을 처리할 수 없습니다. U2F로 로그인할 수 있도록 이 창을 새 창에서 여시겠습니까?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "웹사이트 아이콘 표시하기"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -1898,7 +1898,7 @@
     "message": "개인 보관함을 내보내는 중"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "오직 $EMAIL$와 연관된 개인 보관함의 항목만 내보내집니다. 조직 보관함의 항목은 포함되지 않습니다.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1960,12 +1960,18 @@
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "API 액세스 토큰"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "API 키"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "키 커넥터 오류: 키 커넥터가 사용 가능한지 및 정상적으로 작동하고 있는지 확인해주세요."
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   }
 }

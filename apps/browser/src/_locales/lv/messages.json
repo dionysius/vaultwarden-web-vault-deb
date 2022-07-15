@@ -429,8 +429,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "Galvenajai parolei ir jābūt vismaz 8 rakstzīmes garai."
   },
   "masterPassDoesntMatch": {
     "message": "Galvenās paroles apstiprinājums nesakrīt."
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Key Connector kļūda: jāpārliecinās, ka Key Connector ir pieejams un darbojas pareizi."
+  },
+  "organizationIsDisabled": {
+    "message": "Apvienība ir atspējota."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Atspējotu apvienību vienumiem nevar piekļūt. Jāsazinās ar apvienības īpašnieku, lai iegūtu palīdzību."
   }
 }

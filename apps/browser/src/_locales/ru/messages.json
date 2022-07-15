@@ -427,9 +427,9 @@
     "message": "Требуется мастер-пароль."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Необходимо ввести мастер-пароль повторно."
+    "message": "Необходимо повторно ввести мастер-пароль."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Мастер-пароль должен содержать не менее 8 символов."
   },
   "masterPassDoesntMatch": {
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Ошибка соединителя ключей: убедитесь, что он доступен и работает корректно."
+  },
+  "organizationIsDisabled": {
+    "message": "Организация отключена."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Доступ к элементам в отключенных организациях невозможен. Обратитесь за помощью к владельцу организации."
   }
 }

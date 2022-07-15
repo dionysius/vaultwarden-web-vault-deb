@@ -429,8 +429,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Vyžaduje sa opätovné zadanie hlavného hesla."
   },
-  "masterPasswordMinLength": {
-    "message": "Hlavné heslo musí mať aspoň 8 znakov."
+  "masterPasswordMinlength": {
+    "message": "Hlavné heslo musí obsahovať aspoň 8 znakov."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrdenie hlavného hesla sa nezhoduje."
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Chyba Key Connector: uistite sa, že je Key Connector k dispozícii a funguje správne."
+  },
+  "organizationIsDisabled": {
+    "message": "Organizácia je vypnutá."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "K položkám vo vypnutej organizácii nie je možné pristupovať. Požiadajte o pomoc vlastníka organizácie."
   }
 }

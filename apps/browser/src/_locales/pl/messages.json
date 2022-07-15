@@ -429,7 +429,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Wymagane jest ponowne wpisanie hasła głównego."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Hasło główne musi zawierać co najmniej 8 znaków."
   },
   "masterPassDoesntMatch": {
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Błąd serwera Key Connector: upewnij się, że serwer Key Connector jest dostępny i działa poprawnie."
+  },
+  "organizationIsDisabled": {
+    "message": "Organizacja jest wyłączona."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Nie można uzyskać dostępu do elementów w wyłączonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
   }
 }

@@ -424,13 +424,13 @@
     "message": "Indirizzo email non valido."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "È necessario inserire la password principale."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "È necessario reinserire la password principale."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "La password principale deve essere lunga almeno 8 caratteri."
   },
   "masterPassDoesntMatch": {
     "message": "La conferma della password principale non corrisponde."
@@ -1484,7 +1484,7 @@
     "message": "Selezionando la casella accetti quanto segue:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "I termini di servizio e l'informativa sulla privacy non sono stati accettati."
   },
   "termsOfService": {
     "message": "Termini del servizio"
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Errore Key Connector: assicurarsi che il Key Connector sia disponibile e correttamente funzionante."
+  },
+  "organizationIsDisabled": {
+    "message": "L'organizzazione è disabilitata."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Non è possibile accedere agli oggetti nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per ricevere assistenza."
   }
 }

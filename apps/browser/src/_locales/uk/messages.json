@@ -429,7 +429,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Необхідно повторно ввести головний пароль."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Довжина головного пароля має бути принаймні 8 символів."
   },
   "masterPassDoesntMatch": {
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Помилка Key Connector: переконайтеся, що Key Connector доступний та працює правильно."
+  },
+  "organizationIsDisabled": {
+    "message": "Організацію вимкнено."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Записи у вимкнених організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
   }
 }

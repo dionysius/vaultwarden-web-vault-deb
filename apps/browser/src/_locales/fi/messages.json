@@ -429,7 +429,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Pääsalasanan uudelleensyöttö vaaditaan."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Pääsalasanan tulee sisältää ainakin 8 merkkiä."
   },
   "masterPassDoesntMatch": {
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Key Connector -virhe: Varmista, että Key Connector on käytettävissä ja toimii oikein."
+  },
+  "organizationIsDisabled": {
+    "message": "Organisaatio on poistettu käytöstä."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Käytöstä poistettujen organisaatioiden kohteet eivät ole käytettävissä. Ole yhteydessä organisaation omistajaan saadaksesi apua."
   }
 }

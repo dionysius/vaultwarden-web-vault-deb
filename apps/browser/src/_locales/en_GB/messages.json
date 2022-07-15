@@ -429,7 +429,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
+  },
+  "organizationIsDisabled": {
+    "message": "Organisation is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organisations cannot be accessed. Contact your Organisation owner for assistance."
   }
 }

@@ -424,12 +424,12 @@
     "message": "Endereço de email inválido."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "A palavra-passe mestra é necessária."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "É necessário reescrever a palavra-passe mestra."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -1484,7 +1484,7 @@
     "message": "Ao marcar esta caixa concorda com o seguinte:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
   },
   "termsOfService": {
     "message": "Termos de serviço"
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   }
 }

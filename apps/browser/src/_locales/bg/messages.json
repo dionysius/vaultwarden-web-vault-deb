@@ -429,8 +429,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Повторното въвеждане на главната парола е задължително."
   },
-  "masterPasswordMinLength": {
-    "message": "Главната парола трябва да е с дължина поне 8 знака."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Главната парола и потвърждението ѝ не съвпадат."
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Грешка с конектора за ключове: уверете се, че конекторът за ключове е наличен и работи правилно."
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   }
 }

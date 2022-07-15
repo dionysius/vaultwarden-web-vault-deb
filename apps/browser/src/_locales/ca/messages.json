@@ -427,10 +427,10 @@
     "message": "Es requereix la contrasenya mestra."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Cal tornar a escriure la contrasenya mestra."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "La contrasenya ha de contenir almenys 8 caràcters."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmació de la contrasenya mestra no coincideix."
@@ -577,19 +577,19 @@
     "message": "La \"Notificació per afegir inicis de sessió\" demana automàticament que guardeu els nous inicis de sessió a la vostra caixa forta quan inicieu la sessió per primera vegada."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Mostra les targetes a la pàgina de pestanya"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Llista els elements de la targeta a la pàgina de pestanya per facilitar l'autoemplenat."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Mostra les identitats a la pàgina de pestanya"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Llista els elements d'identitat de la pàgina de pestanya per facilitar l'autoemplenat."
   },
   "clearClipboard": {
-    "message": "Neteja el porta-retalls",
+    "message": "Buida el porta-retalls",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -606,7 +606,7 @@
     "message": "Demana d'actualitzar els inicis de sessió existents"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Demana actualitzar la contrasenya d'inici de sessió quan es detecte un canvi en un lloc web."
   },
   "notificationChangeDesc": {
     "message": "Voleu actualitzar aquesta contrasenya a Bitwarden?"
@@ -615,10 +615,10 @@
     "message": "Actualitza"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Mostra les opcions del menú contextual"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Utilitza un clic secundari per accedir a la generació de contrasenyes i als inicis de sessió coincidents per al lloc web. "
   },
   "defaultUriMatchDetection": {
     "message": "Detecció de coincidències URI per defecte",
@@ -810,13 +810,13 @@
     "message": "Actualització completa"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Copia TOTP automaticament"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Si el vostre inici de sessió té una clau d'autenticació associada, el codi de verificació TOTP es copiarà al vostre porta-retalls quan s'òmpliga automàticament l'inici de sessió."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Demaneu dades biometriques en iniciar"
   },
   "premiumRequired": {
     "message": "Premium requerit"
@@ -1040,13 +1040,13 @@
     "message": "Mostra les icones dels llocs web"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Mostra una imatge reconeixible al costat de cada inici de sessió."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Mostra el comptador insígnia"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Indiqueu quants inicis de sessió teniu per a la pàgina web actual."
   },
   "cardholderName": {
     "message": "Nom del titular de la targeta"
@@ -1484,7 +1484,7 @@
     "message": "Si activeu aquesta casella, indiqueu que esteu d’acord amb el següent:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "No s’han reconegut les condicions del servei i la declaració de privadesa."
   },
   "termsOfService": {
     "message": "Condicions del servei"
@@ -1850,7 +1850,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "El temps d'espera de la caixa forta supera les restriccions establertes per la vostra organització."
   },
   "vaultExportDisabled": {
     "message": "L'exportació de la caixa forta està desactivada"
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Error del connector de claus: assegureu-vos que el connector de claus està disponible i funcionant correctament."
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   }
 }

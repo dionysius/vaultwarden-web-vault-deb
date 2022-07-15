@@ -429,7 +429,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Ana parolun yenidən yazılması lazımdır."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Ana parol ən azı 8 simvol uzunluğunda olmalıdır."
   },
   "masterPassDoesntMatch": {
@@ -618,7 +618,7 @@
     "message": "Konteks menyu seçimlərini göstər"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Veb sayt üçün parol yaratmaq və uyğunlaşan giriş məlumatlarına müraciət etmək üçün ikinci klikləməni istifadə edin. "
   },
   "defaultUriMatchDetection": {
     "message": "İlkin URI uyğunluq aşkarlaması",
@@ -810,13 +810,13 @@
     "message": "Təzələmə tamamlandı"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "TOTP-ni avtomatik kopyala"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Hesabınıza əlavə edilən kimlik təsdiqləyici açarı varsa, giriş məlumatları avto-doldurulanda TOTP təsdiqləmə kodu da avtomatik olaraq lövhəyə kopyalanacaq."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Açılışda biometrik təsdiqləmə soruş"
   },
   "premiumRequired": {
     "message": "Premium üzvlük lazımdır"
@@ -1037,16 +1037,16 @@
     "message": "Bu səyyah bu açılan pəncərədə U2F tələblərini emal edə bilmir. U2F istifadə edərək giriş etmək üçün bu açılan pəncərəni yeni bir pəncərədə açmaq istəyirsiniz?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Veb sayt nişanlarını göstər"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Hər girişin yanında tanına bilən təsvir göstər."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Nişan sayğacını göstər"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Hazırkı veb səhifə üçün neçə giriş olduğunu göstərir."
   },
   "cardholderName": {
     "message": "Kart sahibinin adı"
@@ -1966,6 +1966,12 @@
     "message": "API açar"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Açar bağlayıcı xətası: Açar Bağlayıcının mövcud olduğuna və düzgün işlədiyinə əmin olun."
+  },
+  "organizationIsDisabled": {
+    "message": "Təşkilat sıradan çıxarıldı."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Sıradan çıxarılmış Təşkilatlardakı elementlərə müraciət edilə bilmir. Kömək üçün Təşkilatınızın sahibi ilə əlaqə saxlayın."
   }
 }

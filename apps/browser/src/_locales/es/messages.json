@@ -245,7 +245,7 @@
     "message": "Números (0-9)"
   },
   "specialCharacters": {
-    "message": "Carácteres especiales (!@#$%^&*)"
+    "message": "Caracteres especiales (!@#$%^&*)"
   },
   "numWords": {
     "message": "Número de palabras"
@@ -429,8 +429,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Se requiere volver a teclear la contraseña maestra."
   },
-  "masterPasswordMinLength": {
-    "message": "La contraseña maestra debe tener al menos 8 caracteres."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmación de contraseña maestra no coincide."
@@ -540,7 +540,7 @@
     "message": "Elemento editado"
   },
   "deleteItemConfirmation": {
-    "message": "¿Seguro que quieres enviarlo a la papelera?"
+    "message": "¿Estás seguro de que quieres eliminar este elemento?"
   },
   "deletedItem": {
     "message": "Elemento enviado a la papelera"
@@ -552,7 +552,7 @@
     "message": "¿Estás seguro de que quieres sobreescribir la contraseña actual?"
   },
   "overwriteUsername": {
-    "message": "Reemplazar nombre de usuario"
+    "message": "Sobrescribir nombre de usuario"
   },
   "overwriteUsernameConfirmation": {
     "message": "¿Estás seguro de que quieres reemplazar el nombre de usuario actual?"
@@ -612,7 +612,7 @@
     "message": "¿Desea actualizar esta contraseña en Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Actualizado"
+    "message": "Actualizar"
   },
   "enableContextMenuItem": {
     "message": "Mostrar las opciones de menú contextuales"
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Error en el conector de claves: asegúrate de que el conector de claves está disponible y que funciona correctamente."
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   }
 }

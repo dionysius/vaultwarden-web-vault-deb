@@ -424,13 +424,13 @@
     "message": "Ugyldig E-postadresse."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Hovedpassord er påkrevd."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Skriv inn hovedpassordet på nytt."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "Hovedpassordet må være minst åtte tegn."
   },
   "masterPassDoesntMatch": {
     "message": "Superpassord-bekreftelsen er ikke samsvarende."
@@ -571,22 +571,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Spør om å legge til innlogging"
   },
   "addLoginNotificationDesc": {
     "message": "\"Legg til innlogging\"-beskjeden ber deg automatisk om å lagre nye innlogginger til hvelvet ditt hver gang du logger på dem for første gang."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Vis kort på fanesiden"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Vis kortelementer på fanesiden for lett auto-utfylling."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Vis identiteter på fanesiden"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Vis identitetselementer på fanesiden for enkel auto-utfylling."
   },
   "clearClipboard": {
     "message": "Tøm utklippstavlen",
@@ -603,10 +603,10 @@
     "message": "Ja, lagre nå"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Spør om å oppdatere eksisterende innlogginger"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Spør om å oppdatere passordet til innlogging når endring på nettside oppdages."
   },
   "notificationChangeDesc": {
     "message": "Vil du oppdatere dette passordet i Bitwarden?"
@@ -615,10 +615,10 @@
     "message": "Ja, oppdater nå"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Vis alternativer for kontekstmeny"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Bruk et sekundært klikk for å få tilgang til passordgenerering og samsvarende innlogginger for nettsiden. "
   },
   "defaultUriMatchDetection": {
     "message": "Standard URI-samsvarsgjenkjenning",
@@ -810,13 +810,13 @@
     "message": "Oppfriskning fullført"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Kopier TOTP automatisk"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Dersom din innlogging har en autentiseringsnøkkel knyttet til den, blir TOTP-verifiseringskoden automatisk kopiert til utklippstavlen din når enn du auto-utfyller innloggingen."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Spør om biometri ved oppstart"
   },
   "premiumRequired": {
     "message": "Premium er påkrevd"
@@ -1037,16 +1037,16 @@
     "message": "Denne nettleseren kan ikke behandle U2F-forespørsler i dette popup-vinduet. Vil du åpne denne popupen i et nytt vindu, slik at du kan logge deg på med U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Vis nettsideikoner"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Vis et gjenkjennelig bilde ved siden av hver innlogging."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Vis merke-teller"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Indiker hvor mange innlogginger du har for den aktuelle nettsiden."
   },
   "cardholderName": {
     "message": "Kortholderens navn"
@@ -1484,7 +1484,7 @@
     "message": "Ved å merke av denne boksen sier du deg enig i følgende:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Vilkårene for tjeneste og personvernerklæring er ikke akseptert."
   },
   "termsOfService": {
     "message": "Vilkår for bruk"
@@ -1850,7 +1850,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Tidsavbrudd i hvelvet ditt overskrider restriksjoner fastsatt av din organisasjon."
   },
   "vaultExportDisabled": {
     "message": "Hvelveksportering er skrudd av"
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Key Connector feil: Sjekk at Key Connector er tilgjengelig og fungerer."
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   }
 }

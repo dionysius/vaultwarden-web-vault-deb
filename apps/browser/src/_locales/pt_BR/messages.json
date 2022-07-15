@@ -101,10 +101,10 @@
     "message": "Sem credenciais correspondentes."
   },
   "unlockVaultMenu": {
-    "message": "Desbloqueie seu Cofre"
+    "message": "Desbloqueie seu cofre"
   },
   "loginToVaultMenu": {
-    "message": "Acesse o seu Cofre"
+    "message": "Acesse o seu cofre"
   },
   "autoFillInfo": {
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
@@ -149,7 +149,7 @@
     "message": "Alterar Senha Mestra"
   },
   "fingerprintPhrase": {
-    "message": "Frase de Biometria",
+    "message": "Frase Biométrica",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -424,13 +424,13 @@
     "message": "Endereço de e-mail inválido."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "A senha mestre é obrigatória."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "É necessário redigitar a senha mestre."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "A senha mestre deve ter pelo menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "A confirmação da senha mestra não corresponde."
@@ -555,7 +555,7 @@
     "message": "Sobrescrever Usuário"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Tem certeza que deseja sobrescrever o usuário atual?"
+    "message": "Tem certeza que deseja substituir o usuário atual?"
   },
   "searchFolder": {
     "message": "Pesquisar pasta"
@@ -1484,7 +1484,7 @@
     "message": "Ao marcar esta caixa, você concorda com o seguinte:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram aceitos."
   },
   "termsOfService": {
     "message": "Termos de Serviço"
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Erro de Key Connector: certifique-se de que a Key Connector está disponível e funcionando corretamente."
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   }
 }

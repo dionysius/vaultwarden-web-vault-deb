@@ -429,7 +429,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Vajalik on ülemparooli uuesti sisestamine."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
   },
   "masterPassDoesntMatch": {
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Key Connectori viga: veendu, et Key Connector on saadaval ja töötab korrektselt."
+  },
+  "organizationIsDisabled": {
+    "message": "Organisatsiooni ligipääs on keelatud."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Organisatsiooni alla kuuluvatele kirjetele ei ole ligipääsu. Kontakteeru oma organisatsiooni omanikuga."
   }
 }

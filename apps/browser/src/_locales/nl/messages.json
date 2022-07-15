@@ -429,8 +429,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Type je hoofdwachtwoord opnieuw in."
   },
-  "masterPasswordMinLength": {
-    "message": "Hoofdwachtwoord moet minimaal 8 tekens lang zijn."
+  "masterPasswordMinlength": {
+    "message": "Het hoofdwachtwoord moet minimaal 8 tekens lang zijn."
   },
   "masterPassDoesntMatch": {
     "message": "De hoofdwachtwoorden komen niet overeen."
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Key-connector fout: zorg ervoor dat Key-connector beschikbaar is en werkt."
+  },
+  "organizationIsDisabled": {
+    "message": "Organisatie is uitgeschakeld."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Je kunt uitgeschakelde items in een organisatie niet benaderen. Neem contact op met de eigenaar van je organisatie voor hulp."
   }
 }

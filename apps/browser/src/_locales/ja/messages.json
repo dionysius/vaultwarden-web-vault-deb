@@ -429,7 +429,7 @@
   "confirmMasterPasswordRequired": {
     "message": "マスターパスワードの再入力が必要です。"
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "マスターパスワードは、少なくとも8文字以上で設定してください。"
   },
   "masterPassDoesntMatch": {
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "キーコネクターエラー: キーコネクターが使用可能で、正常に動作しているか確認してください。"
+  },
+  "organizationIsDisabled": {
+    "message": "組織は無効です。"
+  },
+  "disabledOrganizationFilterError": {
+    "message": "無効な組織のアイテムにアクセスすることはできません。組織の所有者に連絡してください。"
   }
 }

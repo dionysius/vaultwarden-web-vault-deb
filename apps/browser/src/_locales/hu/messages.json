@@ -429,8 +429,8 @@
   "confirmMasterPasswordRequired": {
     "message": "A mesterjelszó ismételt megadása kötelező."
   },
-  "masterPasswordMinLength": {
-    "message": "A mesterjelszó legyen legalább 8 karakter hosszú."
+  "masterPasswordMinlength": {
+    "message": "Mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
   },
   "masterPassDoesntMatch": {
     "message": "A megadott két jelszó nem egyezik meg."
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Kulcs csatlakozó hiba: ellenőrizzük, hogy a kulcs csatlakozó rendelkezésre áll-e és megfelelően működik-e."
+  },
+  "organizationIsDisabled": {
+    "message": "A szervezet letiltásra került."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "A letiltott szervezetek elemei nem érhetők el. Vegyük fel a kapcsolatot a szervezet tulajdonosával segítségért."
   }
 }

@@ -429,7 +429,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Este necesară rescrierea parolei principale."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Parola principală trebuie să aibă cel puțin 8 caractere."
   },
   "masterPassDoesntMatch": {
@@ -571,7 +571,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Solicitați adăugarea autentificării"
+    "message": "Solicitare de adăugare cont"
   },
   "addLoginNotificationDesc": {
     "message": "Solicitați adăugarea unui element dacă nu se găsește unul în seif."
@@ -1967,5 +1967,11 @@
   },
   "ssoKeyConnectorError": {
     "message": "Eroare de Conector Cheie: asigurați-vă că aveți conectorul Cheie disponibil și că funcționează corect."
+  },
+  "organizationIsDisabled": {
+    "message": "Organizația este dezactivată."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Articolele din Organizațiile dezactivate nu pot fi accesate. Contactați proprietarul Organizației pentru asistență."
   }
 }
