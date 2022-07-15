@@ -538,7 +538,7 @@
   "confirmMasterPasswordRequired": {
     "message": "必須再次輸入主密碼。"
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
@@ -1963,6 +1963,12 @@
   },
   "apiKey": {
     "message": "API 金鑰"
+  },
+  "organizationIsDisabled": {
+    "message": "組織已停用。"
+  },
+  "disabledOrganizationFilterError": {
+    "message": "無法存取已停用組織中的項目。請聯絡您組織的擁有者以獲取協助。"
   },
   "neverLockWarning": {
     "message": "您確定要使用「永不」選項嗎？將鎖定選項設定為「永不」會將密碼庫的加密金鑰儲存在您的裝置上。如果使用此選項，應確保您的裝置是安全的。"

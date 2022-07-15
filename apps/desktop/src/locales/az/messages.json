@@ -538,7 +538,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Ana parolun yenidən yazılması lazımdır."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Ana parol ən azı 8 simvol uzunluğunda olmalıdır."
   },
   "masterPassDoesntMatch": {
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "API açar"
   },
+  "organizationIsDisabled": {
+    "message": "Təşkilat sıradan çıxarıldı."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Sıradan çıxarılmış Təşkilatlardakı elementlərə müraciət edilə bilmir. Kömək üçün Təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "\"Heç vaxt\" seçimini istifadə etmək istədiyinizə əminsiniz? Kilid seçimini \"Heç vaxt\" olaraq tənzimləsəniz, anbarınızın şifrələmə açarı cihazınızda saxlanılacaq. Bu seçimi istifadə etsəniz, cihazınızı daha yaxşı mühafizə etməlisiniz."
   }
 }

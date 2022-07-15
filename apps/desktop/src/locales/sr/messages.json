@@ -533,13 +533,13 @@
     "message": "Неисправан имејл."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Главна Лозинка је неопходна."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Поновно уписивање главне лозинке је неопходно."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "Главна Лозинка треба имати бар 8 знака."
   },
   "masterPassDoesntMatch": {
     "message": "Потврђена Главна Лозинка се не подудара."
@@ -1547,7 +1547,7 @@
     "message": "Означавањем овог поља пристајете на следеће:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Услови услуге и Политика приватности нису прихваћени."
   },
   "enableBrowserIntegration": {
     "message": "Укључи интеграцију са претраживачем"
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "АПИ Кључ"
   },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Да ли сте сигурни да желите да користите опцију „Никад“? Ако поставите опције закључавања на „Никада“, на вашем уређају се чува кључ за шифровање сефа. Ако користите ову опцију, осигурајте да је уређај правилно заштићен."
   }
 }

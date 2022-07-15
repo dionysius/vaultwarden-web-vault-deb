@@ -533,13 +533,13 @@
     "message": "Ugyldig E-postadresse."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Hovedpassord er påkrevd."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Skriv inn hovedpassordet på nytt."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "Hovedpassordet må være minst åtte tegn."
   },
   "masterPassDoesntMatch": {
     "message": "Superpassord-bekreftelsen er ikke samsvarende."
@@ -898,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Vis nettstedsikoner"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Vis et gjenkjennelig bilde ved siden av hver innlogging."
   },
   "enableMinToTray": {
     "message": "Minimer til oppgavelinjen"
@@ -1385,10 +1385,10 @@
     "message": "lås opp hvelvet ditt"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Spør etter Windows Hello ved oppstart"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Spør om Touch ID ved oppstart"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedpassord ved omstart"
@@ -1547,7 +1547,7 @@
     "message": "Ved å huke av i denne boksen sier du deg enig i følgende:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Vilkårene for tjeneste og personvernerklæring er ikke akseptert."
   },
   "enableBrowserIntegration": {
     "message": "Aktiver nettleserintegrasjon"
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "API-nøkkel"
   },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Er du sikker på at du vil bruke alternativet «Aldri»? Ved å angi låsemulighetene til «Aldri» lagres hvelvets krypteringsnøkkel på enheten. Hvis du bruker dette alternativet, bør du sørge for at du holder enheten forsvarlig beskyttet."
   }
 }

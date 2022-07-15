@@ -538,7 +538,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Wymagane jest ponowne wpisanie hasła głównego."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Hasło główne musi zawierać co najmniej 8 znaków."
   },
   "masterPassDoesntMatch": {
@@ -1963,6 +1963,12 @@
   },
   "apiKey": {
     "message": "Klucz interfejsu API"
+  },
+  "organizationIsDisabled": {
+    "message": "Organizacja jest wyłączona."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Nie można uzyskać dostępu do elementów w wyłączonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
   },
   "neverLockWarning": {
     "message": "Czy na pewno chcesz użyć opcji „Nigdy”? Ustawienie opcji blokady na „Nigdy” powoduje zapisanie klucza szyfrowania sejfu na urządzeniu. Jeśli korzystasz z tej opcji, upewnij się, że urządzenie jest odpowiednio chronione."

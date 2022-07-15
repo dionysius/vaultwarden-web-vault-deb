@@ -533,12 +533,12 @@
     "message": "Endereço de email inválido."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "A palavra-passe mestra é necessária."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "É necessário reescrever a palavra-passe mestra."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -1547,7 +1547,7 @@
     "message": "Ao marcar esta caixa concorda com o seguinte:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
   },
   "enableBrowserIntegration": {
     "message": "Allow browser integration"
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "API Key"
   },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Tem a certeza de que deseja utilizar a opção \"Nunca\"? Ao definir as opções de bloqueio para \"Nunca\" armazena a chave de encriptação do seu cofre no seu dispositivo. Se utilizar esta opção deve assegurar-se de que mantém o seu dispositivo devidamente protegido."
   }
 }

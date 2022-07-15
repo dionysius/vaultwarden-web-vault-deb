@@ -538,8 +538,8 @@
   "confirmMasterPasswordRequired": {
     "message": "A mesterjelszó ismételt megadása kötelező."
   },
-  "masterPasswordMinLength": {
-    "message": "A mesterjelszó legyen legalább 8 karakter hosszú."
+  "masterPasswordMinlength": {
+    "message": "Mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
   },
   "masterPassDoesntMatch": {
     "message": "A mesterjelszó megerősítése nem egyezik."
@@ -1963,6 +1963,12 @@
   },
   "apiKey": {
     "message": "API kulcs"
+  },
+  "organizationIsDisabled": {
+    "message": "A szervezet letiltásra került."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "A letiltott szervezetek elemei nem érhetők el. Vegyük fel a kapcsolatot a szervezet tulajdonosával segítségért."
   },
   "neverLockWarning": {
     "message": "Biztosan szeretnénk használni a \"Soha\" opciót? A zárolási opciók \"Soha\" értékre állítása a széf titkosítási kulcsát az eszközön tárolja. Ennek az opciónak a használatakor célszerű az eszköz megfelelő védettségét biztosítani."

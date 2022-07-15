@@ -533,13 +533,13 @@
     "message": "L’adreça electrònica no és vàlida."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Es requereix la contrasenya mestra."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Cal tornar a escriure la contrasenya mestra."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "La contrasenya ha de contenir almenys 8 caràcters."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmació de la contrasenya mestra no coincideix."
@@ -890,7 +890,7 @@
     "message": "Seguretat"
   },
   "clearClipboard": {
-    "message": "Neteja el porta-retalls",
+    "message": "Buida el porta-retalls",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -898,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Mostra les icones del lloc web"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Mostra una imatge reconeixible al costat de cada inici de sessió."
   },
   "enableMinToTray": {
     "message": "Minimitza a icona en la safata"
@@ -1385,10 +1385,10 @@
     "message": "desbloqueja la teva caixa forta"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Sol·liciteu Windows Hello en iniciar"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Sol·liciteu Touch ID en iniciar"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar"
@@ -1547,7 +1547,7 @@
     "message": "Si activeu aquesta casella, indiqueu que esteu d’acord amb el següent:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "No s’han reconegut les condicions del servei i la declaració de privadesa."
   },
   "enableBrowserIntegration": {
     "message": "Habilita la integració amb el navegador"
@@ -1963,6 +1963,12 @@
   },
   "apiKey": {
     "message": "Clau de l'API"
+  },
+  "organizationIsDisabled": {
+    "message": "L'organització està inhabilitada."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "No es pot accedir als elements de les organitzacions inhabilitades. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
   },
   "neverLockWarning": {
     "message": "Esteu segur que voleu utilitzar l'opció \"Mai\"? En configurar les opcions de bloqueig a \"Mai\" s'emmagatzema la clau de xifratge de la vostra caixa forta al vostre dispositiu. Si utilitzeu aquesta opció, heu d'assegurar-vos que conserveu el dispositiu degudament protegit."

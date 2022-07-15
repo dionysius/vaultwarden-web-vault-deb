@@ -538,7 +538,7 @@
   "confirmMasterPasswordRequired": {
     "message": "マスターパスワードの再入力が必要です。"
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "マスターパスワードは、少なくとも8文字以上で設定してください。"
   },
   "masterPassDoesntMatch": {
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "API キー"
   },
+  "organizationIsDisabled": {
+    "message": "組織は無効です。"
+  },
+  "disabledOrganizationFilterError": {
+    "message": "無効な組織のアイテムにアクセスすることはできません。組織の所有者に連絡してください。"
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "本当に「なし」オプションを使用しますか？ロックオプションを「なし」に設定すると、保管庫の暗号化キーがデバイスに保存されます。 このオプションを使用する場合は、デバイスを適切に保護する必要があります。"
   }
 }

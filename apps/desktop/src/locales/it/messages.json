@@ -533,13 +533,13 @@
     "message": "L'indirizzo email non è valido."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "È necessario inserire la password principale."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "È necessario reinserire la password principale."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "La password principale deve essere lunga almeno 8 caratteri."
   },
   "masterPassDoesntMatch": {
     "message": "La conferma della password principale non corrisponde."
@@ -1547,7 +1547,7 @@
     "message": "Marcando la casella accetti quanto segue:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "I termini di servizio e l'informativa sulla privacy non sono stati accettati."
   },
   "enableBrowserIntegration": {
     "message": "Abilita l'integrazione con il browser"
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "Chiave API"
   },
+  "organizationIsDisabled": {
+    "message": "L'organizzazione è disabilitata."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Non è possibile accedere agli oggetti nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per ricevere assistenza."
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Sei sicuro di voler usare l'opzione \"Mai\"? Impostando le opzioni di blocco su \"Mai\", la chiave di cifratura della cassaforte sarà salvata sul tuo dispositivo. Se utilizzi questa opzione, assicurati di mantenere il dispositivo adeguatamente protetto."
   }
 }

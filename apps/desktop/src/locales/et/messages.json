@@ -538,8 +538,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
   },
   "masterPassDoesntMatch": {
     "message": "Ülemparoolid ei ühti."
@@ -1963,6 +1963,12 @@
   },
   "apiKey": {
     "message": "API võti"
+  },
+  "organizationIsDisabled": {
+    "message": "Organisatsiooni ligipääs on keelatud."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Organisatsiooni alla kuuluvatele kirjetele ei ole ligipääsu. Kontakteeru oma organisatsiooni omanikuga."
   },
   "neverLockWarning": {
     "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."

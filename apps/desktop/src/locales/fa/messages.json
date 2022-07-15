@@ -538,8 +538,8 @@
   "confirmMasterPasswordRequired": {
     "message": "تایپ مجدد گذرواژه اصلی نیاز است."
   },
-  "masterPasswordMinLength": {
-    "message": "طول کلمه عبور اصلی باید حداقل ۸ کاراکتر باشد."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "کلمه عبور اصلی با تکرار آن مطابقت ندارد."
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "کلید API"
   },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "آیا جدا میخواهید از گزینه \"هرگز\" استفاده کنید؟ تنظیم کردن کردن گزینه قفل به \"هرگز\" کلیدهای رمزنگاری گاوصندوقتان را بر روی دستگاه شما ذخیره خواهد کرد. اگر از این گزینه استفاده میکنید باید اطمینان داشته باشید که دستگاه شما کاملا محافظت شده است."
   }
 }

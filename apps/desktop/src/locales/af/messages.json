@@ -538,8 +538,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Hoofwagwoord moet weer intevoer word."
   },
-  "masterPasswordMinLength": {
-    "message": "Hoofwagwoord moet ten minste 8 karakters lank wees."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Hoofwagwoordbevestiging stem nie ooreen nie."
@@ -1963,6 +1963,12 @@
   },
   "apiKey": {
     "message": "API-sleutel"
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "neverLockWarning": {
     "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."

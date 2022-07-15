@@ -370,7 +370,7 @@
     "message": "Você tem certeza que deseja substituir a senha atual?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Substituir Usuário"
   },
   "overwriteUsernameConfirmation": {
     "message": "Tem certeza que deseja substituir o usuário atual?"
@@ -533,13 +533,13 @@
     "message": "Endereço de e-mail inválido."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "A senha mestre é obrigatória."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "É necessário redigitar a senha mestre."
   },
-  "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+  "masterPasswordMinlength": {
+    "message": "A senha mestre deve ter pelo menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "A confirmação da senha mestra não corresponde."
@@ -898,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Mostrar ícones dos sites"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Mostre uma imagem reconhecível ao lado de cada login."
   },
   "enableMinToTray": {
     "message": "Minimizar para Ícone da Bandeja"
@@ -1213,7 +1213,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nome do Domínio",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1281,34 +1281,34 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Carregar Cookie de Acessibilidade"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Registre-se como um usuário de acessibilidade em",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Copie e cole o link enviado para o seu email abaixo"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Digite a URL para carregar o cookie de acessibilidade para hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "O URL do hCaptcha é necessário",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "URL inválida"
   },
   "done": {
-    "message": "Done"
+    "message": "Concluído"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Cookies de acessibilidade salvos!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Nenhum cookie de acessibilidade salvo"
   },
   "warning": {
     "message": "AVISO",
@@ -1385,10 +1385,10 @@
     "message": "desbloquear o seu cofre"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Perguntar para iniciar o Hello do Windows"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Pedir pelo Touch ID ao iniciar"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar"
@@ -1547,7 +1547,7 @@
     "message": "Ao marcar esta caixa, você concorda com o seguinte:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram aceitos."
   },
   "enableBrowserIntegration": {
     "message": "Ativar integração com o navegador"
@@ -1556,7 +1556,7 @@
     "message": "A integração do navegador é usada para biometria no navegador."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integração com o navegador não suportado"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Infelizmente, por ora, a integração do navegador só é suportada na versão da Mac App Store."
@@ -1565,7 +1565,7 @@
     "message": "Infelizmente, a integração do navegador não é suportada na versão da Microsoft Store."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Infelizmente, a integração do navegador não é suportada na versão linux."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Exigir verificação para integração com o navegador"
@@ -1843,7 +1843,7 @@
     "message": "Você saiu da organização."
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Erro de Key Connector: certifique-se de que a Key Connector está disponível e funcionando corretamente."
   },
   "lockAllVaults": {
     "message": "Bloquear Todos os Cofres"
@@ -1897,56 +1897,56 @@
     "message": "Desbloqueado"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Gerador"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "O que você gostaria de gerar?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Tipo de Senha"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerar Usuário"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Gerar Usuário"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tipo de Usuário"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "E-mail alternativo (com um +)",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Use as capacidades de sub-endereçamento do seu provedor de e-mail."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "E-mail pega-tudo"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Use o catch-all configurado no seu domínio."
   },
   "random": {
-    "message": "Random"
+    "message": "Aleatório"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Palavra Aleatória"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Nome do site"
   },
   "service": {
-    "message": "Service"
+    "message": "Serviço"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Todos os Cofres"
   },
   "searchOrganization": {
-    "message": "Search Organization"
+    "message": "Pesquisar Organização"
   },
   "searchMyVault": {
-    "message": "Search My Vault"
+    "message": "Pesquisar no Meu Cofre"
   },
   "forwardedEmail": {
     "message": "Alias de E-mail Encaminhado"
@@ -1959,12 +1959,18 @@
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "Token de acesso API"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "Chave de API"
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Você tem certeza que deseja usar a opção \"Nunca\"? Definir suas opções de bloqueio para \"Nunca\" armazena a chave de criptografia do seu cofre no seu dispositivo. Se você usar esta opção, deve garantir que mantém seu dispositivo devidamente protegido."
   }
 }

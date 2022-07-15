@@ -538,7 +538,7 @@
   "confirmMasterPasswordRequired": {
     "message": "必须填写确认主密码。"
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "主密码至少需要 8 个字符。"
   },
   "masterPassDoesntMatch": {
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "API 密钥"
   },
+  "organizationIsDisabled": {
+    "message": "组织已被禁用。"
+  },
+  "disabledOrganizationFilterError": {
+    "message": "无法访问已禁用组织中的项目。请联系您的组织所有者获取协助。"
+  },
   "neverLockWarning": {
-    "message": "您确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，您必须确保您的设备安全。"
+    "message": "确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，应确保您的设备得到妥善的保护。"
   }
 }

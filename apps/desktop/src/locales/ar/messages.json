@@ -538,7 +538,7 @@
   "confirmMasterPasswordRequired": {
     "message": "مطلوب إعادة كتابة كلمة المرور الرئيسية."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "يجب أن تكون كلمة المرور الرئيسية أكثر من 8 أحرف."
   },
   "masterPassDoesntMatch": {
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "مفتاح API"
   },
+  "organizationIsDisabled": {
+    "message": "تم تعطيل المؤسسة."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "لا يمكن الوصول إلى العناصر في المؤسسات المعطلة. اتصل بمالك مؤسستك للحصول على المساعدة."
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "هل أنت متأكد من أنك تريد استخدام خيار \"مطلقا\"؟ إعداد خيارات القفل إلى \"مطلقا\" يخزن مفتاح تشفير المستودع الخاص بك على جهازك. إذا كنت تستخدم هذا الخيار، يجب أن تتأكد من الحفاظ على حماية جهازك بشكل صحيح."
   }
 }

@@ -538,8 +538,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Type je hoofdwachtwoord opnieuw in."
   },
-  "masterPasswordMinLength": {
-    "message": "Hoofdwachtwoord moet minimaal 8 tekens lang zijn."
+  "masterPasswordMinlength": {
+    "message": "Het hoofdwachtwoord moet minimaal 8 tekens lang zijn."
   },
   "masterPassDoesntMatch": {
     "message": "De hoofdwachtwoorden komen niet overeen."
@@ -1963,6 +1963,12 @@
   },
   "apiKey": {
     "message": "API Key"
+  },
+  "organizationIsDisabled": {
+    "message": "Organisatie is uitgeschakeld."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Je kunt uitgeschakelde items in een organisatie niet benaderen. Neem contact op met de eigenaar van je organisatie voor hulp."
   },
   "neverLockWarning": {
     "message": "Weet je zeker dat je de optie \"Nooit\" wilt gebruiken? De vergrendelingsoptie \"Nooit\" bewaart de sleutel van je kluis op je apparaat. Als je deze optie gebruikt, moet je ervoor zorgen dat je je apparaat naar behoren beschermt."

@@ -538,8 +538,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Повторното въвеждане на главната парола е задължително."
   },
-  "masterPasswordMinLength": {
-    "message": "Главната парола трябва да е с дължина поне 8 знака."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Главната парола и потвърждението ѝ не съвпадат."
@@ -1964,7 +1964,13 @@
   "apiKey": {
     "message": "Ключ за API"
   },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Уверени ли сте, че искате да зададете стойност „Никога“? Това води до съхранение на шифриращия ключ за трезора във устройството ви. Ако използвате тази възможност, е много важно да имате надлежна защита на устройството си."
   }
 }

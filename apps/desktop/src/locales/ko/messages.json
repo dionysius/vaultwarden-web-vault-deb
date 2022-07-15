@@ -533,12 +533,12 @@
     "message": "잘못된 이메일 주소입니다."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "마스터 비밀번호가 필요합니다."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "마스터 비밀번호를 재입력해야 합니다."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -898,7 +898,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "웹사이트 아이콘 표시하기"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -1277,11 +1277,11 @@
     "message": "파일 형식"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "hCaptcha URL",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "접근성 쿠키 불러오기"
   },
   "registerAccessibilityUser": {
     "message": "Register as an accessibility user at",
@@ -1295,20 +1295,20 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "hCaptcha URL이 필요합니다",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "잘못된 URL"
   },
   "done": {
-    "message": "Done"
+    "message": "완료"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "접근성 쿠키가 저장되었습니다!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "접근성 쿠키가 저장되지 않았습니다"
   },
   "warning": {
     "message": "경고",
@@ -1385,10 +1385,10 @@
     "message": "보관함 잠금 해제"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "실행 시 Windows Hello 요구하기"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "실행 시 Touch ID 요구하기"
   },
   "lockWithMasterPassOnRestart": {
     "message": "다시 시작 시 마스터 비밀번호로 잠금"
@@ -1963,6 +1963,12 @@
   },
   "apiKey": {
     "message": "API 키"
+  },
+  "organizationIsDisabled": {
+    "message": "Organization is disabled."
+  },
+  "disabledOrganizationFilterError": {
+    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "neverLockWarning": {
     "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
