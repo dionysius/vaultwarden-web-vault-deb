@@ -234,7 +234,8 @@
             }}
           </small>
           <small *ngIf="selectablePlan.hasAdditionalStorageOption">
-            {{ "additionalStorageGb" | i18n }}: {{ additionalStorage || 0 }} &times;
+            {{ "additionalStorageGb" | i18n }}:
+            {{ formGroup.controls["additionalStorage"].value || 0 }} &times;
             {{ selectablePlan.additionalStoragePricePerGb / 12 | currency: "$" }} &times; 12
             {{ "monthAbbr" | i18n }} =
             {{ additionalStorageTotal(selectablePlan) | currency: "$" }} /{{ "year" | i18n }}
