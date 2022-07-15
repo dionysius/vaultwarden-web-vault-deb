@@ -1,10 +1,11 @@
-import { MediaMatcher } from "@angular/cdk/layout";
 import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
 import { BehaviorSubject, filter, fromEvent, Observable } from "rxjs";
 
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
+
+import { WINDOW } from "../jslib-services.module";
 
 import { Theme } from "./theme";
 import { ThemeBuilder } from "./themeBuilder";
@@ -17,7 +18,7 @@ export class ThemingService implements AbstractThemingService {
 
   constructor(
     private stateService: StateService,
-    private mediaMatcher: MediaMatcher | Window,
+    @Inject(WINDOW) private window: Window,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.monitorThemeChanges();
@@ -55,14 +56,14 @@ export class ThemingService implements AbstractThemingService {
   // We use a media match query for monitoring the system theme on web and browser, but this doesn't work for electron apps on Linux.
   // In desktop we override these methods to track systemTheme with the electron renderer instead, which works for all OSs.
   protected async getSystemTheme(): Promise<ThemeType> {
-    return this.mediaMatcher.matchMedia("(prefers-color-scheme: dark)").matches
+    return this.window.matchMedia("(prefers-color-scheme: dark)").matches
       ? ThemeType.Dark
       : ThemeType.Light;
   }
 
   protected monitorSystemThemeChanges(): void {
     fromEvent<MediaQueryListEvent>(
-      this.mediaMatcher.matchMedia("(prefers-color-scheme: dark)"),
+      this.window.matchMedia("(prefers-color-scheme: dark)"),
       "change"
     ).subscribe((event) => {
       this.updateSystemTheme(event.matches ? ThemeType.Dark : ThemeType.Light);
