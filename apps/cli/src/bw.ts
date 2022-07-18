@@ -206,8 +206,7 @@ export class Main {
       this.cryptoService,
       this.i18nService,
       this.cipherService,
-      this.stateService,
-      this.broadcasterService
+      this.stateService
     );
 
     this.folderApiService = new FolderApiService(this.folderService, this.apiService);

@@ -223,7 +223,6 @@ export const LOG_MAC_FAILURES = new InjectionToken<string>("LOG_MAC_FAILURES");
         I18nServiceAbstraction,
         CipherServiceAbstraction,
         StateServiceAbstraction,
-        BroadcasterServiceAbstraction,
       ],
     },
     {

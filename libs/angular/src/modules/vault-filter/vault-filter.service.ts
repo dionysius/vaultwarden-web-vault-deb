@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { from, mergeMap, Observable } from "rxjs";
+import { firstValueFrom, from, mergeMap, Observable } from "rxjs";
 
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
@@ -90,7 +90,7 @@ export class VaultFilterService {
     return await this.policyService.policyAppliesToUser(PolicyType.PersonalOwnership);
   }
 
-  protected async getAllFoldersNested(folders?: FolderView[]): Promise<TreeNode<FolderView>[]> {
+  protected async getAllFoldersNested(folders: FolderView[]): Promise<TreeNode<FolderView>[]> {
     const nodes: TreeNode<FolderView>[] = [];
     folders.forEach((f) => {
       const folderCopy = new FolderView();
@@ -103,7 +103,9 @@ export class VaultFilterService {
   }
 
   async getFolderNested(id: string): Promise<TreeNode<FolderView>> {
-    const folders = await this.getAllFoldersNested();
+    const folders = await this.getAllFoldersNested(
+      await firstValueFrom(this.folderService.folderViews$)
+    );
     return ServiceUtils.getTreeNodeObject(folders, id) as TreeNode<FolderView>;
   }
 }

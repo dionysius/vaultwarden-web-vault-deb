@@ -13,7 +13,6 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/abstractions/auth.service";
-import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -113,10 +112,6 @@ function getBgService<T>(service: keyof MainBackground) {
           ? new BrowserMessagingPrivateModePopupService()
           : new BrowserMessagingService();
       },
-    },
-    {
-      provide: BroadcasterServiceAbstraction,
-      useFactory: getBgService<BroadcasterServiceAbstraction>("broadcasterService"),
     },
     {
       provide: TwoFactorService,

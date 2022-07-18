@@ -1,5 +1,3 @@
-import { firstValueFrom } from "rxjs";
-
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
@@ -360,7 +358,7 @@ export class GetCommand extends DownloadCommand {
         decFolder = await folder.decrypt();
       }
     } else if (id.trim() !== "") {
-      let folders = await firstValueFrom(this.folderService.folderViews$);
+      let folders = await this.folderService.getAllDecryptedFromState();
       folders = CliUtils.searchFolders(folders, id);
       if (folders.length > 1) {
         return Response.multipleResults(folders.map((f) => f.id));

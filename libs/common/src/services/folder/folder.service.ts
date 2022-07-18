@@ -1,9 +1,8 @@
 import { BehaviorSubject } from "rxjs";
 
-import { BroadcasterService } from "../../abstractions/broadcaster.service";
 import { CipherService } from "../../abstractions/cipher.service";
 import { CryptoService } from "../../abstractions/crypto.service";
-import { FolderService as FolderServiceAbstraction } from "../../abstractions/folder/folder.service.abstraction";
+import { InternalFolderService as InternalFolderServiceAbstraction } from "../../abstractions/folder/folder.service.abstraction";
 import { I18nService } from "../../abstractions/i18n.service";
 import { StateService } from "../../abstractions/state.service";
 import { Utils } from "../../misc/utils";
@@ -13,9 +12,7 @@ import { Folder } from "../../models/domain/folder";
 import { SymmetricCryptoKey } from "../../models/domain/symmetricCryptoKey";
 import { FolderView } from "../../models/view/folderView";
 
-const BroadcasterSubscriptionId = "FolderService";
-
-export class FolderService implements FolderServiceAbstraction {
+export class FolderService implements InternalFolderServiceAbstraction {
   private _folders: BehaviorSubject<Folder[]> = new BehaviorSubject([]);
   private _folderViews: BehaviorSubject<FolderView[]> = new BehaviorSubject([]);
 
@@ -26,15 +23,14 @@ export class FolderService implements FolderServiceAbstraction {
     private cryptoService: CryptoService,
     private i18nService: I18nService,
     private cipherService: CipherService,
-    private stateService: StateService,
-    private broadcasterService: BroadcasterService
+    private stateService: StateService
   ) {
-    this.stateService.activeAccount.subscribe(async (activeAccount) => {
+    this.stateService.activeAccountUnlocked.subscribe(async (unlocked) => {
       if ((Utils.global as any).bitwardenContainerService == null) {
         return;
       }
 
-      if (activeAccount == null) {
+      if (!unlocked) {
         this._folders.next([]);
         this._folderViews.next([]);
         return;
@@ -43,20 +39,6 @@ export class FolderService implements FolderServiceAbstraction {
       const data = await this.stateService.getEncryptedFolders();
 
       await this.updateObservables(data);
-    });
-
-    // TODO: Broadcasterservice should be removed or replaced with observables
-    this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
-      switch (message.command) {
-        case "unlocked": {
-          const data = await this.stateService.getEncryptedFolders();
-
-          await this.updateObservables(data);
-          break;
-        }
-        default:
-          break;
-      }
     });
   }
 
@@ -76,6 +58,16 @@ export class FolderService implements FolderServiceAbstraction {
     const folders = this._folders.getValue();
 
     return folders.find((folder) => folder.id === id);
+  }
+
+  /**
+   * @deprecated Only use in CLI!
+   */
+  async getAllDecryptedFromState(): Promise<FolderView[]> {
+    const data = await this.stateService.getEncryptedFolders();
+    const folders = Object.values(data || {}).map((f) => new Folder(f));
+
+    return this.decryptFolders(folders);
   }
 
   async upsert(folder: FolderData | FolderData[]): Promise<void> {
@@ -149,6 +141,14 @@ export class FolderService implements FolderServiceAbstraction {
   private async updateObservables(foldersMap: { [id: string]: FolderData }) {
     const folders = Object.values(foldersMap || {}).map((f) => new Folder(f));
 
+    this._folders.next(folders);
+
+    if (await this.cryptoService.hasKey()) {
+      this._folderViews.next(await this.decryptFolders(folders));
+    }
+  }
+
+  private async decryptFolders(folders: Folder[]) {
     const decryptFolderPromises = folders.map((f) => f.decrypt());
     const decryptedFolders = await Promise.all(decryptFolderPromises);
 
@@ -158,7 +158,6 @@ export class FolderService implements FolderServiceAbstraction {
     noneFolder.name = this.i18nService.t("noneFolder");
     decryptedFolders.push(noneFolder);
 
-    this._folders.next(folders);
-    this._folderViews.next(decryptedFolders);
+    return decryptedFolders;
   }
 }
