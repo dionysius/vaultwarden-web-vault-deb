@@ -30,16 +30,6 @@
           readonly
         />
       </div>
-      <div class="form-group" *ngIf="!hidePasswordHint">
-        <label for="masterPasswordHint">{{ "masterPassHintLabel" | i18n }}</label>
-        <input
-          id="masterPasswordHint"
-          class="form-control"
-          type="text"
-          name="MasterPasswordHint"
-          [(ngModel)]="profile.masterPasswordHint"
-        />
-      </div>
     </div>
     <div class="col-6">
       <div class="mb-3">
