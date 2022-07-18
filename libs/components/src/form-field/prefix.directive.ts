@@ -10,6 +10,8 @@ export const PrefixClasses = [
   "tw-border-secondary-500",
   "tw-text-muted",
   "tw-rounded-none",
+  "disabled:!tw-text-muted",
+  "disabled:tw-border-secondary-500",
 ];
 
 @Directive({

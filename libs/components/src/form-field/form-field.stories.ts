@@ -180,6 +180,27 @@ const ButtonGroupTemplate: Story<BitFormFieldComponent> = (args: BitFormFieldCom
 export const ButtonInputGroup = ButtonGroupTemplate.bind({});
 ButtonInputGroup.args = {};
 
+const DisabledButtonInputGroupTemplate: Story<BitFormFieldComponent> = (
+  args: BitFormFieldComponent
+) => ({
+  props: args,
+  template: `
+    <bit-form-field>
+      <bit-label>Label</bit-label>
+      <input bitInput placeholder="Placeholder" disabled />
+      <button bitSuffix bitButton disabled>
+        <i aria-hidden="true" class="bwi bwi-lg bwi-eye"></i>
+      </button>
+      <button bitSuffix bitButton>
+        <i aria-hidden="true" class="bwi bwi-lg bwi-clone"></i>
+      </button>
+    </bit-form-field>
+  `,
+});
+
+export const DisabledButtonInputGroup = DisabledButtonInputGroupTemplate.bind({});
+DisabledButtonInputGroup.args = {};
+
 const SelectTemplate: Story<BitFormFieldComponent> = (args: BitFormFieldComponent) => ({
   props: args,
   template: `
