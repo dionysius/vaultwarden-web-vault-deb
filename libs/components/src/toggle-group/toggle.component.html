@@ -1,0 +1,11 @@
+<input
+  type="radio"
+  id="bit-toggle-{{ id }}"
+  [name]="name"
+  [ngClass]="inputClasses"
+  [checked]="selected"
+  (change)="onInputInteraction()"
+/>
+<label for="bit-toggle-{{ id }}" [ngClass]="labelClasses">
+  <ng-content></ng-content>
+</label>
