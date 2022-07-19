@@ -114,9 +114,7 @@ export class SettingsComponent implements OnInit {
 
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
     this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
-    const disableAutoBiometricsPrompt =
-      (await this.stateService.getDisableAutoBiometricsPrompt()) ?? true;
-    this.enableAutoBiometricsPrompt = !disableAutoBiometricsPrompt;
+    this.enableAutoBiometricsPrompt = !(await this.stateService.getDisableAutoBiometricsPrompt());
     this.showChangeMasterPass = !(await this.keyConnectorService.getUsesKeyConnector());
   }
 

@@ -265,32 +265,34 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-  async updateBiometric() {
-    const current = this.biometric;
-    if (this.biometric) {
+  async updateBiometric(newValue: boolean) {
+    // NOTE: A bug in angular causes [ngModel] to not reflect the backing field value
+    // causing the checkbox to remain checked even if authentication fails.
+    // The bug should resolve itself once the angular issue is resolved.
+    // See: https://github.com/angular/angular/issues/13063
+
+    if (!newValue || !this.supportsBiometric) {
       this.biometric = false;
-    } else if (this.supportsBiometric) {
-      this.biometric = await this.platformUtilsService.authenticateBiometric();
-    }
-    if (this.biometric === current) {
+      await this.stateService.setBiometricUnlock(null);
+      await this.stateService.setBiometricLocked(false);
+      await this.cryptoService.toggleKey();
       return;
     }
-    if (this.biometric) {
-      await this.stateService.setBiometricUnlock(true);
-    } else {
-      await this.stateService.setBiometricUnlock(null);
-      await this.stateService.setNoAutoPromptBiometrics(null);
-      this.autoPromptBiometrics = false;
+
+    const authResult = await this.platformUtilsService.authenticateBiometric();
+
+    if (!authResult) {
+      this.biometric = false;
+      return;
     }
+
+    this.biometric = true;
+    await this.stateService.setBiometricUnlock(true);
     await this.stateService.setBiometricLocked(false);
     await this.cryptoService.toggleKey();
   }
 
   async updateAutoPromptBiometrics() {
-    if (!this.biometric) {
-      this.autoPromptBiometrics = false;
-    }
-
     if (this.autoPromptBiometrics) {
       await this.stateService.setNoAutoPromptBiometrics(null);
     } else {

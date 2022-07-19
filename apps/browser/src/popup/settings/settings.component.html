@@ -59,7 +59,11 @@
           [(ngModel)]="biometric"
         />
       </div>
-      <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="supportsBiometric">
+      <div
+        class="box-content-row box-content-row-checkbox"
+        appBoxRow
+        *ngIf="supportsBiometric && biometric"
+      >
         <label for="autoBiometricsPrompt">{{ "enableAutoBiometricsPrompt" | i18n }}</label>
         <input
           id="autoBiometricsPrompt"
