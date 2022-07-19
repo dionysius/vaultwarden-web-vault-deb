@@ -211,7 +211,7 @@ export class OrganizationVaultComponent implements OnInit, OnDestroy {
         if (this.organization.canEditAnyCollection) {
           comp.collectionIds = cipher.collectionIds;
           comp.collections = this.vaultFilterComponent.collections.fullList.filter(
-            (c) => !c.readOnly
+            (c) => !c.readOnly && c.id != null
           );
         }
         comp.organization = this.organization;
@@ -230,7 +230,7 @@ export class OrganizationVaultComponent implements OnInit, OnDestroy {
     component.type = this.type;
     if (this.organization.canEditAnyCollection) {
       component.collections = this.vaultFilterComponent.collections.fullList.filter(
-        (c) => !c.readOnly
+        (c) => !c.readOnly && c.id != null
       );
     }
     if (this.collectionId != null) {
@@ -285,7 +285,7 @@ export class OrganizationVaultComponent implements OnInit, OnDestroy {
     component.organizationId = this.organization.id;
     if (this.organization.canEditAnyCollection) {
       component.collections = this.vaultFilterComponent.collections.fullList.filter(
-        (c) => !c.readOnly
+        (c) => !c.readOnly && c.id != null
       );
     }
     // Regardless of Admin state, the collection Ids need to passed manually as they are not assigned value
