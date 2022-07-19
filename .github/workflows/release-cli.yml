@@ -134,12 +134,23 @@ jobs:
           snapcraft_token: ${{ steps.retrieve-secrets.outputs.snapcraft-store-token }}
 
       - name: Download artifacts
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
           workflow: build-cli.yml
           path: apps/cli
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
+          artifacts: bw_${{ env._PKG_VERSION }}_amd64.snap
+
+      - name: Download artifacts
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
+        uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
+        with:
+          workflow: build-cli.yml
+          path: apps/cli
+          workflow_conclusion: success
+          branch: master
           artifacts: bw_${{ env._PKG_VERSION }}_amd64.snap
 
       - name: Publish Snap & logout
@@ -182,12 +193,23 @@ jobs:
         run: New-Item -ItemType directory -Path ./dist
 
       - name: Download artifacts
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
           workflow: build-cli.yml
           path: apps/cli/dist
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
+          artifacts: bitwarden-cli.${{ env._PKG_VERSION }}.nupkg
+
+      - name: Download artifacts
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
+        uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
+        with:
+          workflow: build-cli.yml
+          path: apps/cli/dist
+          workflow_conclusion: success
+          branch: master
           artifacts: bitwarden-cli.${{ env._PKG_VERSION }}.nupkg
 
       - name: Push to Chocolatey
@@ -222,12 +244,23 @@ jobs:
           secrets: "cli-npm-api-key"
 
       - name: Download artifacts
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
         with:
           workflow: build-cli.yml
           path: apps/cli/build
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
+          artifacts: bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
+
+      - name: Download artifacts
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
+        uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
+        with:
+          workflow: build-cli.yml
+          path: apps/cli/build
+          workflow_conclusion: success
+          branch: master
           artifacts: bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
 
       - name: Setup NPM

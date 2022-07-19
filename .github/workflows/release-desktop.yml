@@ -198,11 +198,22 @@ jobs:
         working-directory: apps/desktop
 
       - name: Download Snap artifact
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
+          artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
+          path: apps/desktop/dist
+
+      - name: Download Snap artifact
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
+        uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
+        with:
+          workflow: build-desktop.yml
+          workflow_conclusion: success
+          branch: master
           artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
           path: apps/desktop/dist
 
@@ -253,11 +264,22 @@ jobs:
         working-directory: apps/desktop
 
       - name: Download choco artifact
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
+          artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
+          path: apps/desktop/dist
+
+      - name: Download choco artifact
+        if: ${{ github.event.inputs.release_type == 'Dry Run' }}
+        uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
+        with:
+          workflow: build-desktop.yml
+          workflow_conclusion: success
+          branch: master
           artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
           path: apps/desktop/dist
 
