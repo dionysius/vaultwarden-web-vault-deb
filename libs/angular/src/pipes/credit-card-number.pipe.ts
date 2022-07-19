@@ -25,6 +25,12 @@ const numberFormats: Record<string, CardRuleEntry[]> = {
     { cardLength: 19, blocks: [6, 13] },
   ],
   Amex: [{ cardLength: 15, blocks: [4, 6, 5] }],
+  Mir: [
+    { cardLength: 16, blocks: [4, 4, 4, 4] },
+    { cardLength: 17, blocks: [5, 4, 4, 4] },
+    { cardLength: 18, blocks: [6, 4, 4, 4] },
+    { cardLength: 19, blocks: [7, 4, 4, 4] },
+  ],
   Other: [{ cardLength: 16, blocks: [4, 4, 4, 4] }],
 };
 

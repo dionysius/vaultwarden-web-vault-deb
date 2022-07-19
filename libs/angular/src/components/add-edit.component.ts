@@ -110,6 +110,7 @@ export class AddEditComponent implements OnInit {
       { name: "Maestro", value: "Maestro" },
       { name: "UnionPay", value: "UnionPay" },
       { name: "RuPay", value: "RuPay" },
+      { name: i18nService.t("cardBrandMir"), value: "Mir" },
       { name: i18nService.t("other"), value: "Other" },
     ];
     this.cardExpMonthOptions = [
