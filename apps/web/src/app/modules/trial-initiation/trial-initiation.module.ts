@@ -10,6 +10,7 @@ import { SharedModule } from "../shared.module";
 import { VerticalStepperModule } from "../vertical-stepper/vertical-stepper.module";
 
 import { BillingModule } from "./../billing/billing.module";
+import { ConfirmationDetailsComponent } from "./confirmation-details.component";
 import { EnterpriseContentComponent } from "./enterprise-content.component";
 import { FamiliesContentComponent } from "./families-content.component";
 import { TeamsContentComponent } from "./teams-content.component";
@@ -30,6 +31,7 @@ import { TrialInitiationComponent } from "./trial-initiation.component";
     EnterpriseContentComponent,
     FamiliesContentComponent,
     TeamsContentComponent,
+    ConfirmationDetailsComponent,
   ],
   exports: [TrialInitiationComponent],
   providers: [TitleCasePipe],

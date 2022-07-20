@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="tw-mb-4 tw-overflow-auto">
+    <div class="tw-mb-4">
       <h2 class="tw-text-base tw-mb-3 tw-font-semibold">{{ "paymentType" | i18n }}</h2>
       <app-payment [hideCredit]="true" [trialFlow]="true"></app-payment>
       <app-tax-info [trialFlow]="true" (onCountryChanged)="changedCountry()"></app-tax-info>

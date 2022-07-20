@@ -67,10 +67,24 @@
                 (onTrialBillingSuccess)="billingSuccess($event)"
               ></app-billing>
             </app-vertical-step>
-            <app-vertical-step label="Confirmation Details" subLabel="Fancy sub label">
-              <!-- Replace with Confirmation details step -->
-              <p>This is any content of "Step 4"</p>
-              <button bitButton buttonType="primary" cdkStepperNext>Complete</button>
+            <app-vertical-step label="Confirmation Details" [applyBorder]="false">
+              <app-trial-confirmation-details
+                [email]="email"
+                [orgLabel]="orgLabel"
+              ></app-trial-confirmation-details>
+              <div class="tw-flex tw-mb-3">
+                <button bitButton buttonType="primary" (click)="navigateToOrgVault()">
+                  Get Started
+                </button>
+                <button
+                  bitButton
+                  buttonType="secondary"
+                  (click)="navigateToOrgInvite()"
+                  class="tw-inline-flex tw-items-center tw-ml-3 tw-px-3"
+                >
+                  Invite Users
+                </button>
+              </div>
             </app-vertical-step>
           </app-vertical-stepper>
         </div>

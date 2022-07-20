@@ -2,7 +2,7 @@ import { StepperSelectionEvent } from "@angular/cdk/stepper";
 import { TitleCasePipe } from "@angular/common";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -27,13 +27,14 @@ export class TrialInitiationComponent implements OnInit {
   org = "teams";
   orgInfoSubLabel = "";
   orgId = "";
+  orgLabel = "";
   billingSubLabel = "";
   plan: PlanType;
   product: ProductType;
   accountCreateOnly = true;
   policies: Policy[];
   enforcedPolicyOptions: MasterPasswordPolicyOptions;
-  @ViewChild("stepper", { static: true }) verticalStepper: VerticalStepperComponent;
+  @ViewChild("stepper", { static: false }) verticalStepper: VerticalStepperComponent;
 
   orgInfoFormGroup = this.formBuilder.group({
     name: ["", [Validators.required]],
@@ -42,6 +43,7 @@ export class TrialInitiationComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    protected router: Router,
     private formBuilder: FormBuilder,
     private titleCasePipe: TitleCasePipe,
     private stateService: StateService,
@@ -62,6 +64,7 @@ export class TrialInitiationComponent implements OnInit {
       }
 
       this.org = qParams.org;
+      this.orgLabel = this.titleCasePipe.transform(this.org);
       this.accountCreateOnly = false;
 
       if (qParams.org === "families") {
@@ -126,6 +129,14 @@ export class TrialInitiationComponent implements OnInit {
     this.orgId = event?.orgId;
     this.billingSubLabel = event?.subLabelText;
     this.verticalStepper.next();
+  }
+
+  navigateToOrgVault() {
+    this.router.navigate(["organizations", this.orgId, "vault"]);
+  }
+
+  navigateToOrgInvite() {
+    this.router.navigate(["organizations", this.orgId, "manage", "people"]);
   }
 
   previousStep() {
