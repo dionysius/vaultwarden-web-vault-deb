@@ -57,6 +57,13 @@
       border: none;
       padding: 5px 10px 5px 30px;
       border-radius: $border-radius;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      -webkit-app-region: no-drag;
+      cursor: default;
 
       @include themify($themes) {
         background-color: themed("headerInputBackgroundColor");
