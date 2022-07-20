@@ -57,11 +57,15 @@
                 Next
               </button>
             </app-vertical-step>
-            <app-vertical-step label="Billing">
-              <!-- Replace with Billing step -->
-              <p>This is content of "Step 3"</p>
-              <button bitButton buttonType="secondary" cdkStepperPrevious>Back</button>
-              <button bitButton buttonType="primary" cdkStepperNext>Complete step</button>
+            <app-vertical-step label="Billing" [subLabel]="billingSubLabel">
+              <app-billing
+                *ngIf="stepper.selectedIndex === 2"
+                [plan]="plan"
+                [product]="product"
+                [orgInfoForm]="orgInfoFormGroup"
+                (previousStep)="previousStep()"
+                (onTrialBillingSuccess)="billingSuccess($event)"
+              ></app-billing>
             </app-vertical-step>
             <app-vertical-step label="Confirmation Details" subLabel="Fancy sub label">
               <!-- Replace with Confirmation details step -->

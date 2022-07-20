@@ -25,6 +25,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
   @Input() hideBank = false;
   @Input() hidePaypal = false;
   @Input() hideCredit = false;
+  @Input() trialFlow = false;
 
   private destroy$: Subject<void> = new Subject<void>();
 

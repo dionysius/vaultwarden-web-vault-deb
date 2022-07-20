@@ -265,7 +265,7 @@
       </select>
     </div>
   </div>
-  <div class="col-3">
+  <div [ngClass]="trialFlow ? 'col-4' : 'col-3'">
     <div class="form-group">
       <label for="addressPostalCode">{{ "zipPostalCode" | i18n }}</label>
       <input

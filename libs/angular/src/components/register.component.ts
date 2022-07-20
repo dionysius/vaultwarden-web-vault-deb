@@ -17,6 +17,7 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { DEFAULT_KDF_ITERATIONS, DEFAULT_KDF_TYPE } from "@bitwarden/common/enums/kdfType";
+import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/logInCredentials";
 import { KeysRequest } from "@bitwarden/common/models/request/keysRequest";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
 import { RegisterRequest } from "@bitwarden/common/models/request/registerRequest";
@@ -200,10 +201,29 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
           throw e;
         }
       }
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("newAccountCreated"));
+
       if (this.isInTrialFlow) {
+        this.platformUtilsService.showToast(
+          "success",
+          null,
+          this.i18nService.t("trialAccountCreated")
+        );
+        //login user here
+        const credentials = new PasswordLogInCredentials(
+          email,
+          masterPassword,
+          this.captchaToken,
+          null
+        );
+        await this.authService.logIn(credentials);
+
         this.createdAccount.emit(this.formGroup.get("email")?.value);
       } else {
+        this.platformUtilsService.showToast(
+          "success",
+          null,
+          this.i18nService.t("newAccountCreated")
+        );
         this.router.navigate([this.successRoute], { queryParams: { email: email } });
       }
     } catch (e) {

@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Your new account has been created! You may now log in."
   },
+  "trialAccountCreated": {
+    "message": "Account created successfully."
+  },
   "masterPassSent": {
     "message": "We've sent you an email with your master password hint."
   },
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Billing"
   },
+  "billingPlanLabel": {
+    "message": "Billing Plan"
+  },
+  "paymentType": {
+    "message": "Payment Type"
+  },
   "accountCredit": {
     "message": "Account Credit",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "year"
   },
+  "yr": {
+    "message": "yr"
+  },
   "month": {
     "message": "month"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Billing Information"
+  },
+  "billingTrialSubLabel": {
+    "message": "Your payment method will not be charged during the 7 day free trial."
   },
   "creditCard": {
     "message": "Credit Card"
@@ -2174,6 +2189,9 @@
   },
   "annually": {
     "message": "Annually"
+  },
+  "annual": {
+    "message": "Annual"
   },
   "basePrice": {
     "message": "Base Price"

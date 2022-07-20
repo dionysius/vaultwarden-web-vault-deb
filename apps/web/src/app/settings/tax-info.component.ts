@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -12,6 +12,7 @@ import { TaxRateResponse } from "@bitwarden/common/models/response/taxRateRespon
   templateUrl: "tax-info.component.html",
 })
 export class TaxInfoComponent {
+  @Input() trialFlow = false;
   @Output() onCountryChanged = new EventEmitter();
 
   loading = true;

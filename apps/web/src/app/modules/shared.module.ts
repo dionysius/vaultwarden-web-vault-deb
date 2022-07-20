@@ -67,6 +67,8 @@ import {
 } from "@bitwarden/components";
 
 import { PasswordStrengthComponent } from "../components/password-strength.component";
+import { PaymentComponent } from "../settings/payment.component";
+import { TaxInfoComponent } from "../settings/tax-info.component";
 
 registerLocaleData(localeAf, "af");
 registerLocaleData(localeAz, "az");
@@ -120,7 +122,7 @@ registerLocaleData(localeZhCn, "zh-CN");
 registerLocaleData(localeZhTw, "zh-TW");
 
 @NgModule({
-  declarations: [PasswordStrengthComponent],
+  declarations: [PasswordStrengthComponent, PaymentComponent, TaxInfoComponent],
   imports: [
     CommonModule,
     DragDropModule,
@@ -155,8 +157,10 @@ registerLocaleData(localeZhTw, "zh-TW");
     ButtonModule,
     MenuModule,
     FormFieldModule,
-    PasswordStrengthComponent,
     SubmitButtonModule,
+    PasswordStrengthComponent,
+    PaymentComponent,
+    TaxInfoComponent,
   ],
   providers: [DatePipe],
   bootstrap: [],
