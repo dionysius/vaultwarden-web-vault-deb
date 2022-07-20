@@ -9,7 +9,7 @@ import { RegisterFormModule } from "../register-form/register-form.module";
 import { SharedModule } from "../shared.module";
 import { VerticalStepperModule } from "../vertical-stepper/vertical-stepper.module";
 
-import { BillingModule } from "./../billing/billing.module";
+import { BillingComponent } from "./billing.component";
 import { ConfirmationDetailsComponent } from "./confirmation-details.component";
 import { EnterpriseContentComponent } from "./enterprise-content.component";
 import { FamiliesContentComponent } from "./families-content.component";
@@ -24,7 +24,6 @@ import { TrialInitiationComponent } from "./trial-initiation.component";
     FormFieldModule,
     RegisterFormModule,
     OrganizationCreateModule,
-    BillingModule,
   ],
   declarations: [
     TrialInitiationComponent,
@@ -32,6 +31,7 @@ import { TrialInitiationComponent } from "./trial-initiation.component";
     FamiliesContentComponent,
     TeamsContentComponent,
     ConfirmationDetailsComponent,
+    BillingComponent,
   ],
   exports: [TrialInitiationComponent],
   providers: [TitleCasePipe],

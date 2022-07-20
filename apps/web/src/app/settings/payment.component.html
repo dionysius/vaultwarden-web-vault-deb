@@ -58,7 +58,7 @@
 </div>
 <ng-container *ngIf="showMethods && method === paymentMethodType.Card">
   <div class="row">
-    <div [ngClass]="trialFlow ? 'col-4' : 'col-4'" class="form-group">
+    <div [ngClass]="trialFlow ? 'col-5' : 'col-4'" class="form-group">
       <label for="stripe-card-number-element">{{ "number" | i18n }}</label>
       <div id="stripe-card-number-element" class="form-control stripe-form-control"></div>
     </div>
@@ -74,7 +74,7 @@
       <label for="stripe-card-expiry-element">{{ "expiration" | i18n }}</label>
       <div id="stripe-card-expiry-element" class="form-control stripe-form-control"></div>
     </div>
-    <div [ngClass]="trialFlow ? 'col-5' : 'col-4'" class="form-group">
+    <div class="form-group col-4">
       <div class="d-flex">
         <label for="stripe-card-cvc-element">
           {{ "securityCode" | i18n }}
