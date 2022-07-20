@@ -15,4 +15,8 @@ export class BulkRemoveComponent extends OrganizationBulkRemoveComponent {
     const request = new ProviderUserBulkRequest(this.users.map((user) => user.id));
     return await this.apiService.deleteManyProviderUsers(this.providerId, request);
   }
+
+  protected get removeUsersWarning() {
+    return this.i18nService.t("removeUsersWarning");
+  }
 }

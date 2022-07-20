@@ -35,7 +35,7 @@
         [ngClass]="{ active: status == userStatusType.Deactivated }"
         (click)="filter(userStatusType.Deactivated)"
       >
-        {{ "deactivated" | i18n }}
+        {{ "revoked" | i18n }}
         <span bitBadge badgeType="info" *ngIf="deactivatedCount">{{ deactivatedCount }}</span>
       </button>
     </div>
@@ -77,11 +77,11 @@
         </button>
         <button class="dropdown-item" appStopClick (click)="bulkActivate()">
           <i class="bwi bwi-fw bwi-plus-circle" aria-hidden="true"></i>
-          {{ "activate" | i18n }}
+          {{ "restoreAccess" | i18n }}
         </button>
         <button class="dropdown-item" appStopClick (click)="bulkDeactivate()">
           <i class="bwi bwi-fw bwi-minus-circle" aria-hidden="true"></i>
-          {{ "deactivate" | i18n }}
+          {{ "revokeAccess" | i18n }}
         </button>
         <button class="dropdown-item text-danger" appStopClick (click)="bulkRemove()">
           <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>
@@ -159,7 +159,7 @@
               "accepted" | i18n
             }}</span>
             <span bitBadge badgeType="secondary" *ngIf="u.status === userStatusType.Deactivated">{{
-              "deactivated" | i18n
+              "revoked" | i18n
             }}</span>
             <small class="text-muted d-block" *ngIf="u.name">{{ u.name }}</small>
           </td>
@@ -259,7 +259,7 @@
                   *ngIf="u.status === userStatusType.Deactivated"
                 >
                   <i class="bwi bwi-fw bwi-plus-circle" aria-hidden="true"></i>
-                  {{ "activate" | i18n }}
+                  {{ "restoreAccess" | i18n }}
                 </a>
                 <a
                   class="dropdown-item"
@@ -269,7 +269,7 @@
                   *ngIf="u.status !== userStatusType.Deactivated"
                 >
                   <i class="bwi bwi-fw bwi-minus-circle" aria-hidden="true"></i>
-                  {{ "deactivate" | i18n }}
+                  {{ "revokeAccess" | i18n }}
                 </a>
                 <a class="dropdown-item text-danger" href="#" appStopClick (click)="remove(u)">
                   <i class="bwi bwi-fw bwi-close" aria-hidden="true"></i>

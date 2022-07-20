@@ -23,7 +23,7 @@
         </app-callout>
         <ng-container *ngIf="!done">
           <app-callout type="warning" *ngIf="users.length > 0 && !error">
-            {{ "removeUsersWarning" | i18n }}
+            {{ removeUsersWarning }}
           </app-callout>
           <table class="table table-hover table-list">
             <thead>

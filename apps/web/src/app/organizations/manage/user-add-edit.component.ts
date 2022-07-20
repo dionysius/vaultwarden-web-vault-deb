@@ -216,10 +216,10 @@ export class UserAddEditComponent implements OnInit {
 
     const message = this.usesKeyConnector
       ? "removeUserConfirmationKeyConnector"
-      : "removeUserConfirmation";
+      : "removeOrgUserConfirmation";
     const confirmed = await this.platformUtilsService.showDialog(
       this.i18nService.t(message),
-      this.name,
+      this.i18nService.t("removeUserIdAccess", this.name),
       this.i18nService.t("yes"),
       this.i18nService.t("no"),
       "warning"
@@ -251,9 +251,9 @@ export class UserAddEditComponent implements OnInit {
     }
 
     const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("deactivateUserConfirmation"),
-      this.i18nService.t("deactivateUserId", this.name),
-      this.i18nService.t("deactivate"),
+      this.i18nService.t("revokeUserConfirmation"),
+      this.i18nService.t("revokeUserId", this.name),
+      this.i18nService.t("revokeAccess"),
       this.i18nService.t("cancel"),
       "warning"
     );
@@ -270,7 +270,7 @@ export class UserAddEditComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("deactivatedUserId", this.name)
+        this.i18nService.t("revokedUserId", this.name)
       );
       this.isDeactivated = true;
       this.onDeactivatedUser.emit();
@@ -284,17 +284,6 @@ export class UserAddEditComponent implements OnInit {
       return;
     }
 
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.i18nService.t("activateUserConfirmation"),
-      this.i18nService.t("activateUserId", this.name),
-      this.i18nService.t("activate"),
-      this.i18nService.t("cancel"),
-      "warning"
-    );
-    if (!confirmed) {
-      return false;
-    }
-
     try {
       this.formPromise = this.apiService.activateOrganizationUser(
         this.organizationId,
@@ -304,7 +293,7 @@ export class UserAddEditComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("activatedUserId", this.name)
+        this.i18nService.t("restoredUserId", this.name)
       );
       this.isDeactivated = false;
       this.onActivatedUser.emit();

@@ -22,8 +22,8 @@
           {{ error }}
         </app-callout>
         <ng-container *ngIf="!done">
-          <app-callout type="warning" *ngIf="users.length > 0 && !error">
-            {{ usersWarning }}
+          <app-callout type="warning" *ngIf="users.length > 0 && !error && isDeactivating">
+            {{ "revokeUsersWarning" | i18n }}
           </app-callout>
           <table class="table table-hover table-list">
             <thead>

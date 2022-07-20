@@ -43,4 +43,8 @@ export class BulkRemoveComponent {
     const request = new OrganizationUserBulkRequest(this.users.map((user) => user.id));
     return await this.apiService.deleteManyOrganizationUsers(this.organizationId, request);
   }
+
+  protected get removeUsersWarning() {
+    return this.i18nService.t("removeOrgUsersConfirmation");
+  }
 }

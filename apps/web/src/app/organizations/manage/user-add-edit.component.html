@@ -11,9 +11,7 @@
         <h2 class="modal-title" id="userAddEditTitle">
           {{ title }}
           <small class="text-muted" *ngIf="name">{{ name }}</small>
-          <span bitBadge badgeType="secondary" *ngIf="isDeactivated">{{
-            "deactivated" | i18n
-          }}</span>
+          <span bitBadge badgeType="secondary" *ngIf="isDeactivated">{{ "revoked" | i18n }}</span>
         </h2>
         <button
           type="button"
@@ -385,41 +383,31 @@
             type="button"
             (click)="activate()"
             class="btn btn-outline-secondary"
-            appA11yTitle="{{ 'activate' | i18n }}"
             *ngIf="editMode && isDeactivated"
             [disabled]="form.loading"
           >
-            <i
-              class="bwi bwi-plus-circle bwi-lg bwi-fw"
-              [hidden]="form.loading"
-              aria-hidden="true"
-            ></i>
             <i
               class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
               [hidden]="!form.loading"
               title="{{ 'loading' | i18n }}"
               aria-hidden="true"
             ></i>
+            <span>{{ "restoreAccess" | i18n }}</span>
           </button>
           <button
             type="button"
             (click)="deactivate()"
             class="btn btn-outline-secondary"
-            appA11yTitle="{{ 'deactivate' | i18n }}"
             *ngIf="editMode && !isDeactivated"
             [disabled]="form.loading"
           >
-            <i
-              class="bwi bwi-minus-circle bwi-lg bwi-fw"
-              [hidden]="form.loading"
-              aria-hidden="true"
-            ></i>
             <i
               class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
               [hidden]="!form.loading"
               title="{{ 'loading' | i18n }}"
               aria-hidden="true"
             ></i>
+            <span>{{ "revokeAccess" | i18n }}</span>
           </button>
           <button
             #deleteBtn

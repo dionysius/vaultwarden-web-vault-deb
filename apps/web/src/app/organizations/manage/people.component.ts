@@ -397,12 +397,18 @@ export class PeopleComponent
     );
   }
 
-  protected deleteWarningMessage(user: OrganizationUserUserDetailsResponse): string {
-    if (user.usesKeyConnector) {
-      return this.i18nService.t("removeUserConfirmationKeyConnector");
-    }
+  protected async removeUserConfirmationDialog(user: OrganizationUserUserDetailsResponse) {
+    const warningMessage = user.usesKeyConnector
+      ? this.i18nService.t("removeUserConfirmationKeyConnector")
+      : this.i18nService.t("removeOrgUserConfirmation");
 
-    return super.deleteWarningMessage(user);
+    return this.platformUtilsService.showDialog(
+      warningMessage,
+      this.i18nService.t("removeUserIdAccess", this.userNamePipe.transform(user)),
+      this.i18nService.t("yes"),
+      this.i18nService.t("no"),
+      "warning"
+    );
   }
 
   private async showBulkStatus(

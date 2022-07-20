@@ -204,15 +204,18 @@ export abstract class BasePeopleComponent<
     this.edit(null);
   }
 
-  async remove(user: UserType) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.deleteWarningMessage(user),
+  protected async removeUserConfirmationDialog(user: UserType) {
+    return this.platformUtilsService.showDialog(
+      this.i18nService.t("removeUserConfirmation"),
       this.userNamePipe.transform(user),
       this.i18nService.t("yes"),
       this.i18nService.t("no"),
       "warning"
     );
+  }
 
+  async remove(user: UserType) {
+    const confirmed = await this.removeUserConfirmationDialog(user);
     if (!confirmed) {
       return false;
     }
@@ -235,8 +238,8 @@ export abstract class BasePeopleComponent<
   async deactivate(user: UserType) {
     const confirmed = await this.platformUtilsService.showDialog(
       this.deactivateWarningMessage(),
-      this.i18nService.t("deactivateUserId", this.userNamePipe.transform(user)),
-      this.i18nService.t("deactivate"),
+      this.i18nService.t("revokeUserId", this.userNamePipe.transform(user)),
+      this.i18nService.t("revokeAccess"),
       this.i18nService.t("cancel"),
       "warning"
     );
@@ -251,7 +254,7 @@ export abstract class BasePeopleComponent<
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("deactivatedUserId", this.userNamePipe.transform(user))
+        this.i18nService.t("revokedUserId", this.userNamePipe.transform(user))
       );
       await this.load();
     } catch (e) {
@@ -261,25 +264,13 @@ export abstract class BasePeopleComponent<
   }
 
   async activate(user: UserType) {
-    const confirmed = await this.platformUtilsService.showDialog(
-      this.activateWarningMessage(),
-      this.i18nService.t("activateUserId", this.userNamePipe.transform(user)),
-      this.i18nService.t("activate"),
-      this.i18nService.t("cancel"),
-      "warning"
-    );
-
-    if (!confirmed) {
-      return false;
-    }
-
     this.actionPromise = this.activateUser(user.id);
     try {
       await this.actionPromise;
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("activatedUserId", this.userNamePipe.transform(user))
+        this.i18nService.t("restoredUserId", this.userNamePipe.transform(user))
       );
       await this.load();
     } catch (e) {
@@ -395,7 +386,7 @@ export abstract class BasePeopleComponent<
   }
 
   protected deactivateWarningMessage(): string {
-    return this.i18nService.t("deactivateUserConfirmation");
+    return this.i18nService.t("revokeUserConfirmation");
   }
 
   protected activateWarningMessage(): string {
