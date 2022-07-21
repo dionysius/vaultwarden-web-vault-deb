@@ -276,6 +276,7 @@ export class ViewComponent extends BaseViewComponent {
 
     try {
       this.totpCode = await this.autofillService.doAutoFill({
+        tab: this.tab,
         cipher: this.cipher,
         pageDetails: this.pageDetails,
         doc: window.document,

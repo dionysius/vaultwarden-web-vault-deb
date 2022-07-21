@@ -28,6 +28,7 @@ const BroadcasterSubscriptionId = "CurrentTabComponent";
 })
 export class CurrentTabComponent implements OnInit, OnDestroy {
   pageDetails: any[] = [];
+  tab: chrome.tabs.Tab;
   cardCiphers: CipherView[];
   identityCiphers: CipherView[];
   loginCiphers: CipherView[];
@@ -151,6 +152,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
     try {
       this.totpCode = await this.autofillService.doAutoFill({
+        tab: this.tab,
         cipher: cipher,
         pageDetails: this.pageDetails,
         doc: window.document,
@@ -196,9 +198,9 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
   private async load() {
     this.loaded = false;
-    const tab = await BrowserApi.getTabFromCurrentWindow();
-    if (tab != null) {
-      this.url = tab.url;
+    this.tab = await BrowserApi.getTabFromCurrentWindow();
+    if (this.tab != null) {
+      this.url = this.tab.url;
     } else {
       this.loginCiphers = [];
       this.loaded = true;
@@ -207,9 +209,9 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
     this.hostname = Utils.getHostname(this.url);
     this.pageDetails = [];
-    BrowserApi.tabSendMessage(tab, {
+    BrowserApi.tabSendMessage(this.tab, {
       command: "collectPageDetails",
-      tab: tab,
+      tab: this.tab,
       sender: BroadcasterSubscriptionId,
     });
 

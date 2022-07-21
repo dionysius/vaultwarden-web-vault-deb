@@ -143,7 +143,7 @@ export default class RuntimeBackground {
               tab: msg.tab,
               details: msg.details,
             });
-            this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
+            this.autofillTimeout = setTimeout(async () => await this.autofillPage(msg.tab), 300);
             break;
           default:
             break;
@@ -205,8 +205,9 @@ export default class RuntimeBackground {
     }
   }
 
-  private async autofillPage() {
+  private async autofillPage(tabToAutoFill: chrome.tabs.Tab) {
     const totpCode = await this.autofillService.doAutoFill({
+      tab: tabToAutoFill,
       cipher: this.main.loginToAutoFill,
       pageDetails: this.pageDetailsToAutoFill,
       fillNewPassword: true,
