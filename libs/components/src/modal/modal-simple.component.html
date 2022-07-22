@@ -1,0 +1,19 @@
+<div
+  class="tw-max-w-sm tw-max-h-screen tw-my-4 tw-flex tw-flex-col tw-bg-text-contrast tw-border tw-border-solid tw-border-secondary-300 tw-rounded tw-text-main tw-overflow-hidden"
+>
+  <div class="tw-text-center tw-flex tw-flex-col tw-items-center tw-px-4 tw-pt-4 tw-gap-2">
+    <ng-content *ngIf="hasIcon; else elseBlock" select="[bit-modal-icon]"></ng-content>
+    <ng-template #elseBlock>
+      <i class="bwi bwi-exclamation-triangle tw-text-3xl tw-text-warning" aria-hidden="true"></i>
+    </ng-template>
+    <h2 class="tw-font-semibold tw-text-base tw-mb-0">
+      <ng-content select="[bit-modal-title]"></ng-content>
+    </h2>
+  </div>
+  <div class="tw-text-center tw-text-base tw-pt-2 tw-pb-4 tw-px-4 tw-overflow-y-auto">
+    <ng-content select="[bit-modal-content]"></ng-content>
+  </div>
+  <div class="tw-p-4 tw-border-solid tw-border-secondary-300 tw-border-0 tw-border-t">
+    <ng-content select="[bit-modal-footer]"></ng-content>
+  </div>
+</div>
