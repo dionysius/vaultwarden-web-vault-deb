@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Yeni hesabınız yaradıldı! İndi giriş edə bilərsiniz."
   },
+  "trialAccountCreated": {
+    "message": "Hesab uğurla yaradıldı."
+  },
   "masterPassSent": {
     "message": "Ana parol məsləhətini ehtiva edən bir e-poçt göndərdik."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Fəallaşdırıldı"
   },
-  "activate": {
-    "message": "Aktiv et"
+  "restoreAccess": {
+    "message": "Müraciəti bərpa et"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Sıradan çıxart"
   },
-  "deactivate": {
-    "message": "Deaktiv et"
+  "revokeAccess": {
+    "message": "Müraciəti ləğv et"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Bu iki mərhələli giriş təchizatçısı hesabınızda fəallaşdırılıb."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Faktura"
   },
+  "billingPlanLabel": {
+    "message": "Faktura planı"
+  },
+  "paymentType": {
+    "message": "Ödəniş növü"
+  },
   "accountCredit": {
     "message": "Hesab krediti",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "il"
   },
+  "yr": {
+    "message": "il"
+  },
   "month": {
     "message": "ay"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Faktura məlumatı"
+  },
+  "billingTrialSubLabel": {
+    "message": "7 günlük ödənişsiz sınaq müddətində ödəniş metodunuzdan pul alınmayacaq."
   },
   "creditCard": {
     "message": "Kredit kartı"
@@ -2169,10 +2184,34 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "$PLAN$ qarşılığında Bitwarden-də qeydiyyatdan keçdiyiniz üçün təşəkkürlər!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "7 gün ödənişsiz sınaq $PLAN$, 7 gün sonra ödənişli abunəliyə çevriləcək.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Komandanızın faktura e-poçtuna təsdiq məktubu göndərdik "
+  },
   "monthly": {
     "message": "Aylıq"
   },
   "annually": {
+    "message": "İllik"
+  },
+  "annual": {
     "message": "İllik"
   },
   "basePrice": {
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Bu istifadəçini çıxartmaq istədiyinizə əminsiniz?"
   },
-  "deactivateUserConfirmation": {
-    "message": "Üzv, artıq təşkilata müraciət edə bilməyəcək, ancaq fərdi anbarına müraciət etməyə davam edəcək."
+  "removeOrgUserConfirmation": {
+    "message": "Bir üzv silinəndə, artıq onun təşkilat verilənlərinə müraciəti olmur və bu əməliyyatın geri dönüşü yoxdur. Üzvü təşkilata yenidən əlavə etmək üçün, onların dəvət edilib təkrar qoşulmaları lazımdır."
   },
-  "activateUserConfirmation": {
-    "message": "Bu istifadəçini aktivləşdirərək onun təşkilata müraciətinə icazə verirsiniz?"
+  "revokeUserConfirmation": {
+    "message": "Bir üzv ləğv ediləndə, artıq onun təşkilat verilənlərinə müraciəti olmur. Üzv müraciətini daha tez bərpa etmək üçün, Ləğv edilənlər vərəqinə gedin."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Xəbərdarlıq! Bu istifadəçi, şifrələmələrini idarə etmək üçün Açar Bağlayıcı tələb edir. Bu istifadəçini təşkilatınızdan silsəniz, hesabı birdəfəlik sıradan çıxarılacaq. Bu əməliyyatın geri dönüşü yoxdur. Davam etmək istəyirsiniz?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "$ID$ istifadəçisi deaktiv edildi.",
+  "removeUserIdAccess": {
+    "message": "$ID$ müraciətini sil",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "$ID$ istifadəçisi aktiv edildi.",
+  "revokedUserId": {
+    "message": "$ID$ üçün təşkilat müraciəti ləğv edildi.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "$ID$ istifadəçisi deaktiv edilsin?",
+  "restoredUserId": {
+    "message": "$ID$ üçün təşkilat müraciəti bərpa edildi.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "$ID$ istifadəçisi aktiv edilsin?",
+  "revokeUserId": {
+    "message": "$ID$ müraciətini ləğv et",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Sıradan çıxarıldı"
   },
-  "deactivated": {
-    "message": "Deaktiv edildi"
+  "revoked": {
+    "message": "Ləğv edildi"
   },
   "sendLink": {
     "message": "\"Send\" bağlantısı",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Aşağıdakı istifadəçiləri çıxartmaq istədiyinizə əminsiniz? Bu prosesin tamamlanması bir neçə saniyə çəkir, ləğv edilə və ya dayandırıla bilməz."
   },
-  "deactivateUsersWarning": {
-    "message": "Aşağıdakı üzvləri deaktiv etmək istədiyinizə əminsiniz? Təşkilata müraciət edə bilməyəcəklər, ancaq fərdi anbarlarına müraciət etməyə davam edəcəklər. Bu prosesin tamamlanması bir neçə saniyə çəkir, ləğv edilə və ya dayandırıla bilməz."
+  "removeOrgUsersConfirmation": {
+    "message": "Üzv(lər) silinəndə, artıq onun/onların təşkilat verilənlərinə müraciəti olmur və bu əməliyyatın geri dönüşü yoxdur. Üzvü təşkilata yenidən əlavə etmək üçün, onların dəvət edilib təkrar qoşulmaları lazımdır. Prosesin tamamlanması bir neçə saniyə çəkə bilər, bu proses dayandırıla və ya ləğv edilə bilməz."
   },
-  "activateUsersWarning": {
-    "message": "Aşağıdakı istifadəçiləri aktiv etmək istədiyinizə əminsiniz? Bu prosesin tamamlanması bir neçə saniyə çəkir, ləğv edilə və ya dayandırıla bilməz."
+  "revokeUsersWarning": {
+    "message": "Üzv(lər) ləğv ediləndə, artıq onun/onların təşkilat verilənlərinə müraciəti olmur. Üzv müraciətini daha tez bərpa etmək üçün, Ləğv edilənlər vərəqinə gedin. Prosesin tamamlanması bir neçə saniyə çəkə bilər, bu proses dayandırıla və ya ləğv edilə bilməz."
   },
   "theme": {
     "message": "Tema"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Uğurla çıxarıldı"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Uğurla deaktiv edildi"
+  "bulkRevokedMessage": {
+    "message": "Təşkilat müraciəti uğurla ləğv edildi"
   },
-  "bulkActivatedMessage": {
-    "message": "Uğurla aktiv edildi"
+  "bulkRestoredMessage": {
+    "message": "Təşkilat müraciəti uğurla bərpa edildi"
   },
   "bulkFilteredMessage": {
     "message": "İstisna edildi, bu əməliyyat üçün etibarlı deyil."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "İstifadəçiləri çıxart"
   },
-  "deactivateUsers": {
-    "message": "İstifadəçiləri deaktiv et"
+  "revokeUsers": {
+    "message": "İstifadəçiləri ləğv et"
   },
-  "activateUsers": {
-    "message": "İstifadəçiləri aktiv et"
+  "restoreUsers": {
+    "message": "İstifadəçiləri bərpa et"
   },
   "error": {
     "message": "Xəta"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Sponsorluq yaradıldı"
-  },
-  "revoke": {
-    "message": "Geri al"
   },
   "emailSent": {
     "message": "E-poçt göndərildi"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "SCIM Təminatı",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "SCIM təmin etmə vasitəsilə tərcih etdiyiniz kimlik təsdiqləmə provayderləri ilə istifadəçiləri və qrupları avtomatik təmin edin",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "SCIM-i fəallaşdır",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "URL və SCIM API açarını konfiqurasiya edərək tərcih etdiyiniz kimlik təsdiqləmə provayderini quraşdırın",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Bu API açarı, təşkilatınızdakı istifadəçiləri idarə etmə müraciətinə sahibdir. Gizli saxlanılmalıdır."
+  },
+  "copyScimKey": {
+    "message": "SCIM API açarını lövhəyə kopyala",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "SCIM API açarını döndər",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "SCIM API açarını döndərmək istədiyinizə əminsiniz? Hazırkı açar, mövcud heç bir inteqrasiya üçün işləməyəcək.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Açarı döndər"
+  },
+  "scimApiKey": {
+    "message": "SCIM API açarı",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "SCIM uc nöqtə URL-sini lövhəyə kopyala",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM URL",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "SCIM API açarı uğurla döndərildi",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "SCIM tənzimləmələri uğurla saxlanıldı",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Giriş lazımdır."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Açıqdır"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

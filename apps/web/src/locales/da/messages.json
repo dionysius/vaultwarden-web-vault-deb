@@ -597,7 +597,7 @@
     "message": "Hovedadgangskoden er den adgangskode, du bruger til at få adgang til din boks. Det er meget vigtigt, at du ikke glemmer din hovedadgangskode. Der er ingen måde hvorpå koden kan genoprettes, i tilfælde af at du glemmer den."
   },
   "masterPassImportant": {
-    "message": "Hovedadgangskoder kan ikke gendannes, hvis de glemmes!"
+    "message": "Hovedadgangskoder kan ikke gendannes, hvis du glemmer dem!"
   },
   "masterPassHintDesc": {
     "message": "Et tip til hovedadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer den."
@@ -636,13 +636,16 @@
     "message": "Hovedadgangskode kræves angivet igen."
   },
   "masterPasswordMinLength": {
-    "message": "Hovedadgangskode skal udgøre min. 8 tegn."
+    "message": "Hovedadgangskode skal være på mindst 8 tegn."
   },
   "masterPassDoesntMatch": {
     "message": "De to hovedadgangskoder matcher ikke."
   },
   "newAccountCreated": {
     "message": "Din nye konto er oprettet! Du kan nu logge ind."
+  },
+  "trialAccountCreated": {
+    "message": "Konto oprettet."
   },
   "masterPassSent": {
     "message": "Vi har sendt dig en e-mail med dit hovedadgangskodetip."
@@ -1076,7 +1079,7 @@
     "message": "Slet konto"
   },
   "deleteAccountDesc": {
-    "message": "Fortsæt nedenfor for at slette din konto og alle tilknyttede data."
+    "message": "Fortsæt nedenfor for at slette din konto og alle boks-data."
   },
   "deleteAccountWarning": {
     "message": "Sletning af din konto er permanent. Det kan ikke fortrydes."
@@ -1085,7 +1088,7 @@
     "message": "Konto slettet"
   },
   "accountDeletedDesc": {
-    "message": "Din konto er blevet lukket, og alle tilknyttede data er blevet slettet."
+    "message": "Din Bitwarden-konto og boks-data er blevet slettet permanent."
   },
   "myAccount": {
     "message": "Min konto"
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Aktiveret"
   },
-  "activate": {
-    "message": "Aktivér"
+  "restoreAccess": {
+    "message": "Gendan adgang"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Deaktivér"
   },
-  "deactivate": {
-    "message": "Deaktivér"
+  "revokeAccess": {
+    "message": "Fjern Adgang"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Denne to-trins-login udbyder er aktiveret på din konto."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Fakturering"
   },
+  "billingPlanLabel": {
+    "message": "Faktureringsabonnement"
+  },
+  "paymentType": {
+    "message": "Betalingstype"
+  },
   "accountCredit": {
     "message": "Kontoindestående",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "år"
   },
+  "yr": {
+    "message": "år"
+  },
   "month": {
     "message": "måned"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Faktureringsoplysninger"
+  },
+  "billingTrialSubLabel": {
+    "message": "Betaling opkræves ikke via valgte betalingsmetode under den 7 dages gratis prøveperiode."
   },
   "creditCard": {
     "message": "Betalingskort"
@@ -2068,7 +2083,7 @@
     "message": "Til virksomheder og andre organisationer med teams."
   },
   "planNameEnterprise": {
-    "message": "Erhverv"
+    "message": "Virksomhed"
   },
   "planDescEnterprise": {
     "message": "Til virksomheder og andre store organisationer."
@@ -2169,11 +2184,35 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Tak for tilmeldingen til Bitwarden for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "Når den 7-dages gratis prøveperiode på $PLAN$ udløber, konverteres den til et betalt abonnement.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Vi har sendt en bekræftelses-email til dit teams faktureringsadresse på "
+  },
   "monthly": {
     "message": "Månedlig"
   },
   "annually": {
     "message": "Årlig"
+  },
+  "annual": {
+    "message": "Årligt"
   },
   "basePrice": {
     "message": "Grundpris"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Er du sikker på, at du vil fjerne denne bruger?"
   },
-  "deactivateUserConfirmation": {
-    "message": "Medlemmet vil ikke længere have adgang til organisationen, men vil stadig have adgang til sin egen boks."
+  "removeOrgUserConfirmation": {
+    "message": "Når et medlem er fjernet, har vedkommende ikke længere adgang til organisationsdata, og denne handling er irreversibel. For at føje medlemmet til organisationen igen, skal vedkommende inviteres og onboardes igen."
   },
-  "activateUserConfirmation": {
-    "message": "Er du sikker på, at du vil aktivere denne bruger og give vedkommende adgang til organisationen?"
+  "revokeUserConfirmation": {
+    "message": "Når et medlems rettigheder tilbagekaldes, har vedkommende ikke længere adgang til organisationsdata. For hurtigt at genoprette medlemsadgang, så gå til fanen Tilbagekaldt."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Advarsel! Denne bruger behøver Key Connector til krypteringshåndtering. Fjernes brugeren fra din organisation, deaktiveres vedkommendes konto permanent. Denne handling kan ikke fortrydes. Vil du fortsætte?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Deaktiveret bruger $ID$.",
+  "removeUserIdAccess": {
+    "message": "Fjern $ID$s adgang",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Aktiveret bruger $ID$.",
+  "revokedUserId": {
+    "message": "Tilbagekaldt organisationsadgang for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Deaktivér bruger $ID$?",
+  "restoredUserId": {
+    "message": "Genoprettet organisationsadgang for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Aktivér bruger $ID$?",
+  "revokeUserId": {
+    "message": "Fjern $ID$s adgang",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3169,7 +3208,7 @@
     "message": "Ved at markere dette felt accepterer du følgende:"
   },
   "acceptPoliciesRequired": {
-    "message": "Tjenestevilkår og Fortrolighedspolitik er ikke blevet accepteret."
+    "message": "Tjenestevilkår og fortrolighedspolitik er ikke blevet accepteret."
   },
   "termsOfService": {
     "message": "Servicevilkår"
@@ -3219,7 +3258,7 @@
     "message": "Organisationen er deaktiveret."
   },
   "disabledOrganizationFilterError": {
-    "message": "Elementer i deaktiverede organisationer kan ikke tilgås. Kontakt organisationsejeren for hjælp."
+    "message": "Elementer i deaktiverede organisationer kan ikke tilgås. Kontakt din organisationsejer for at få hjælp."
   },
   "licenseIsExpired": {
     "message": "Licensen er udløbet."
@@ -3346,25 +3385,25 @@
     "message": "Klon"
   },
   "masterPassPolicyTitle": {
-    "message": "Hovedadgangskodekrav"
+    "message": "Krav til hovedadgangskode"
   },
   "masterPassPolicyDesc": {
-    "message": "Angiv minimumskrav til styrken af hovedadgangskoden."
+    "message": "Angiv krav til styrken af hovedadgangskode."
   },
   "twoStepLoginPolicyTitle": {
     "message": "Kræv totrins-login"
   },
   "twoStepLoginPolicyDesc": {
-    "message": "Kræv at brugerne konfigurerer to-trins-login på deres personlige konti."
+    "message": "Kræv at medlemmer opsætter totrins-login."
   },
   "twoStepLoginPolicyWarning": {
-    "message": "Organisationsmedlemmer, der ikke er ejere eller administratorer og ikke har to-trins login aktiveret på deres personlige konto, fjernes fra organisationen og modtager en e-mail med besked om ændringen."
+    "message": "Organisationsmedlemmer, som ikke er ejere eller administratorer og ikke har totrins-login aktiveret på deres konto, vil blive fjernet fra organisationen og vil modtage en e-mail med besked om ændringen."
   },
   "twoStepLoginPolicyUserWarning": {
     "message": "Du er medlem af en organisation, der kræver at to-trins login er aktiveret på din brugerkonto. Hvis du deaktiverer alle to-trins login-udbydere, fjernes du automatisk fra disse organisationer."
   },
   "passwordGeneratorPolicyDesc": {
-    "message": "Angiv minimumskrav til konfiguration af adgangskodegenerator."
+    "message": "Angiv krav til adgangskodegenerator."
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Én eller flere organisationspolitikker påvirker dine generatorindstillinger."
@@ -3585,7 +3624,7 @@
     "message": "Enkel organisation"
   },
   "singleOrgDesc": {
-    "message": "Begræns brugere fra at kunne deltage i andre organisationer."
+    "message": "Begræns medlemmer fra at blive medlem af andre organisationer."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Din nuværende organisation har en politik, der ikke tillader dig at deltage i mere end en organisation. Kontakt din organisations administratorer, eller tilmeld dig fra en anden Bitwarden-konto."
@@ -3594,16 +3633,16 @@
     "message": "Organisationsmedlemmer, der ikke er ejere eller administratorer og allerede er medlem af en anden organisation, fjernes fra din organisation."
   },
   "requireSso": {
-    "message": "Single Sign-On autentificering"
+    "message": "Kræv single sign-on-godkendelse"
   },
   "requireSsoPolicyDesc": {
-    "message": "Kræv at brugerne logger ind med Virksomheds Single Sign-On-metoden."
+    "message": "Kræv at medlemmer logger på med virksomheds Single Sign-On-metoden."
   },
   "prerequisite": {
     "message": "Forudsætning"
   },
   "requireSsoPolicyReq": {
-    "message": "Enkel organisations virksomhedspolitikken skal aktiveres, før denne politik aktiveres."
+    "message": "Enkel organisation virksomhedspolitikken skal være aktiveret, før denne politik aktiveres."
   },
   "requireSsoPolicyReqError": {
     "message": "Enkelt organisationspolitik er ikke aktiveret."
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Deaktiveret"
   },
-  "deactivated": {
-    "message": "Deaktiveret"
+  "revoked": {
+    "message": "Tilbagekaldt"
   },
   "sendLink": {
     "message": "Send link",
@@ -3898,10 +3937,10 @@
     }
   },
   "personalOwnership": {
-    "message": "Personligt ejerskab"
+    "message": "Fjern individuel boks"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "Kræv at brugere gemmer boks-elementer til en organisation ved at fjerne den personlige ejerskabsmulighed."
+    "message": "Kræv at medlemmer gemmer elementer i en organisation ved at fjerne muligheden for individuelle bokse."
   },
   "personalOwnershipExemption": {
     "message": "Organisationsejere og administratorer er undtaget fra denne politik."
@@ -3910,10 +3949,10 @@
     "message": "Grundet en virksomhedspolitik kan du ikke gemme emner i din personlige boks. Skift ejerskabsindstillingen til en organisation, og vælg fra de tilgængelige samlinger."
   },
   "disableSend": {
-    "message": "Deaktivér Send"
+    "message": "Fjern Send"
   },
   "disableSendPolicyDesc": {
-    "message": "Tillad ikke brugere at oprette eller redigere en Bitwarden Send. Sletning af en eksisterende Send er stadig tilladt.",
+    "message": "Tillad ikke medlemmer at oprette eller redigere Sends.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
@@ -3939,7 +3978,7 @@
     "message": "Organisationsbrugere, som kan håndtere organisationens politikker, er undtaget fra denne politiks håndhævelse."
   },
   "disableHideEmail": {
-    "message": "Tillad ikke brugere at skjule deres e-mailadresse for modtagere når en Send oprettes eller redigeres.",
+    "message": "Vis altid medlemmets e-mailadresse med modtagere, når Sends oprettes eller redigeres.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4238,7 +4277,7 @@
     "message": "Nulstil hovedadgangskode"
   },
   "resetPasswordPolicyDescription": {
-    "message": "Tillad administratorer i organisationen at nulstille organisationsbrugeres hovedadgangskode."
+    "message": "Tillad administratorer at nulstille hovedadgangskoder for medlemmer."
   },
   "resetPasswordPolicyWarning": {
     "message": "Brugere i organisationen skal selvindrullere eller være auto-indrulleret, før administratorer kan nulstille deres hovedadgangskode."
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Er du sikker på, at du vil fjerne følgende brugere? Processen kan tage et par sekunder at fuldføre og kan ikke afbrydes eller annulleres."
   },
-  "deactivateUsersWarning": {
-    "message": "Er du sikker på, at du vil deaktivere følgende medlemmer? De vil ikke længere have adgang til organisationen, men vil stadig have adgang til deres egne bokse. Processen kan tage nogle sekunder at gennemføre, og den kan ikke afbrydes eller annulleres."
+  "removeOrgUsersConfirmation": {
+    "message": "Når medlemmer fjernes, har de ikke længere adgang til organisationsdata, og denne handling er irreversibel. For at gentilføje medlemmer til organisationen, skal de inviteres og onboardes igen. Processen kan tage et par sekunder at udføre og kan ikke afbrydes eller annulleres."
   },
-  "activateUsersWarning": {
-    "message": "Er du sikker på, at du vil aktivere følgende medlemmer og give dem adgang til organisationen? Processen kan tage nogle sekunder at gennemføre og kan ikke afbrydes eller annulleres."
+  "revokeUsersWarning": {
+    "message": "Når medlemmers adgang tilbagekaldes, har de ikke længere adgang til organisationsdata. For hurtigt at genoprette medlemsadgang, så gå til fanen Tilbagekaldt. Processen kan tage et par sekunder at udføre og kan ikke afbrydes."
   },
   "theme": {
     "message": "Tema"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Fjernet med succes"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Deaktivering udført"
+  "bulkRevokedMessage": {
+    "message": "Organisationsadgang tilbagekaldt"
   },
-  "bulkActivatedMessage": {
-    "message": "Aktivering udført"
+  "bulkRestoredMessage": {
+    "message": "Organisationsadgang genetableret"
   },
   "bulkFilteredMessage": {
     "message": "Udelukket, ikke anvendeligt til denne handling."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Fjern brugere"
   },
-  "deactivateUsers": {
-    "message": "Deaktivere brugere"
+  "revokeUsers": {
+    "message": "Tilbagekald brugeradgang"
   },
-  "activateUsers": {
-    "message": "Aktivere brugere"
+  "restoreUsers": {
+    "message": "Genetablér brugeradgang"
   },
   "error": {
     "message": "Fejl"
@@ -4485,7 +4524,7 @@
     "message": "Boks-timeout"
   },
   "maximumVaultTimeoutDesc": {
-    "message": "Opsæt en maksimal boks-timeout for alle brugere."
+    "message": "Opsæt en maksimal boks-timeout for medlemmer."
   },
   "maximumVaultTimeoutLabel": {
     "message": "Maksimal boks-timeout"
@@ -4525,10 +4564,10 @@
     "message": "Boks-timeout er ikke inden for det tilladte interval."
   },
   "disablePersonalVaultExport": {
-    "message": "Deaktivér eksport af personlig boks"
+    "message": "Deaktivér individuel bokseksport"
   },
   "disablePersonalVaultExportDesc": {
-    "message": "Forbyder brugere at eksportere deres private boksdata."
+    "message": "Tillad ikke medlemmer at eksportere deres individuelle boksdata."
   },
   "vaultExportDisabled": {
     "message": "Bokseksport deaktiveret"
@@ -4755,9 +4794,6 @@
   "sponsorshipCreated": {
     "message": "Sponsorat oprettet"
   },
-  "revoke": {
-    "message": "Tilbagekald"
-  },
   "emailSent": {
     "message": "E-mail sendt"
   },
@@ -4819,11 +4855,11 @@
     "message": "Når den er indstillet, vil din konfiguration blive gemt, og medlemmer vil være i stand til at autentificere ved hjælp af deres identitetsudbyder-akkreditiver."
   },
   "ssoPolicyHelpStart": {
-    "message": "Aktivér",
+    "message": "Brug",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
-    "message": "SSO-godkendelsespolitik",
+    "message": "kræv enkelt-logon-godkendelsespolitik",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
@@ -4831,7 +4867,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "SSO-godkendelse og Enkel organisation-politikker er påkrævet for at konfigurere Key Connector-dekryptering."
+    "message": "Kræv SSO-godkendelse og enkeltorganisationspolitikker er påkrævet for at konfigurere Key Connector-dekryptering."
   },
   "memberDecryptionOption": {
     "message": "Medlemsdekrypteringsindstillinger"
@@ -5184,14 +5220,68 @@
       }
     }
   },
+  "scim": {
+    "message": "SCIM-provisionering",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Opret automatisk brugere og grupper med din foretrukne identitetsudbyder via SCIM-provisionering",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Aktivér SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Opsæt din foretrukne identitetsudbyder ved at konfigurere URL'en og SCIM API-nøglen",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Denne API-nøgle har adgang til at håndtere organisationsbrugere. Den bør holdes hemmelig."
+  },
+  "copyScimKey": {
+    "message": "Kopiér SCIM API-nøglen til udklipsholderen",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Rotér SCIM API-nøglen",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Er du sikker på, at du vil rotere SCIM API-nøglen? Den nuværende nøgle vil ikke længere fungere for eksisterende integrationer.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Rotér nøgle"
+  },
+  "scimApiKey": {
+    "message": "SCIM API-nøgle",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Kopiér SCIM-slutpunktets URL til udklipsholderen",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM URL",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "SCIM API-nøglen er blevet roteret",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "SCIM-indstillingerne er blevet gemt",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Input obligatorisk."
   },
   "inputEmail": {
-    "message": "Input er ikke en gyldig e-mailadresse."
+    "message": "Input er ikke en e-mailadresse."
   },
   "inputMinLength": {
-    "message": "Input skal udgøre min. $COUNT$ tegn.",
+    "message": "Input skal være mindst $COUNT$ tegn langt.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5200,7 +5290,7 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$-felt(er) ovenfor kræver din opmærksomhed.",
+    "message": "$COUNT$ felt(er) ovenfor kræver din opmærksomhed.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Til"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

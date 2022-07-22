@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "Seif web $APP_NAME$",
+    "message": "Seiful web $APP_NAME$",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Noul dvs. cont a fost creat! Acum vă puteți autentifica."
   },
+  "trialAccountCreated": {
+    "message": "Cont creat cu succes."
+  },
   "masterPassSent": {
     "message": "V-am trimis un e-mail cu indiciul parolei principale."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Activat"
   },
-  "activate": {
-    "message": "Activare"
+  "restoreAccess": {
+    "message": "Restaurați accesul"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Dezactivare"
   },
-  "deactivate": {
-    "message": "Dezactivare"
+  "revokeAccess": {
+    "message": "Revocați accesul"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Acest furnizor de autentificare în două etape este activat în contul dvs."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Facturare"
   },
+  "billingPlanLabel": {
+    "message": "Plan de facturare"
+  },
+  "paymentType": {
+    "message": "Tipul de plată"
+  },
   "accountCredit": {
     "message": "Creditul contului",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "an"
   },
+  "yr": {
+    "message": "an"
+  },
   "month": {
     "message": "lună"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Informații de facturare"
+  },
+  "billingTrialSubLabel": {
+    "message": "Metoda dvs. de plată nu va fi taxată în timpul celor 7 zile de testare gratuită."
   },
   "creditCard": {
     "message": "Card de credit"
@@ -2169,10 +2184,34 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Vă mulțumim că v-ați înscris la Bitwarden pentru $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "Perioada de încercare gratuită de 7 zile $PLAN$ va fi transformată într-un abonament plătit după 7 zile.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Am trimis un e-mail de confirmare la adresa de e-mail de facturare a echipei dvs. la "
+  },
   "monthly": {
     "message": "Lunar"
   },
   "annually": {
+    "message": "Anual"
+  },
+  "annual": {
     "message": "Anual"
   },
   "basePrice": {
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Sigur doriți să eliminați acest utilizator?"
   },
-  "deactivateUserConfirmation": {
-    "message": "Membrul nu va mai avea acces la organizație, dar va avea în continuare acces la seiful său individual."
+  "removeOrgUserConfirmation": {
+    "message": "Atunci când un membru este înlăturat, acesta nu mai are acces la datele organizației, iar această acțiune este ireversibilă. Pentru a adăuga membrul înapoi în organizație, acesta trebuie să fie invitat și integrat din nou."
   },
-  "activateUserConfirmation": {
-    "message": "Sunteți sigur că doriți să activați acest utilizator, acordându-i acces la organizație?"
+  "revokeUserConfirmation": {
+    "message": "When a member is revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Avertisment! Acest utilizator are nevoie de Conector Cheie pentru a-și gestiona criptarea. Eliminarea acestui utilizator din organizația dvs., îi va dezactiva permanent contul. Această acțiune nu poate fi anulată. Doriți să continuați?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "S-a dezactivat utilizatorul $ID$.",
+  "removeUserIdAccess": {
+    "message": "Înlăturați accesul pentru $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "S-a activat utilizatorul $ID$.",
+  "revokedUserId": {
+    "message": "Accesul la organizație revocat pentru $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Dezactivați utilizatorul $ID$?",
+  "restoredUserId": {
+    "message": "S-a restabilit accesul organizației pentru $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Activați utilizatorul $ID$?",
+  "revokeUserId": {
+    "message": "Revocați accesul pentru $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Dezactivat"
   },
-  "deactivated": {
-    "message": "Dezactivat"
+  "revoked": {
+    "message": "Revocat"
   },
   "sendLink": {
     "message": "Link Send",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Sunteți sigur că doriți să eliminați următorii utilizatori? Finalizarea procesului poate dura câteva secunde și nu poate fi întrerupt sau anulat."
   },
-  "deactivateUsersWarning": {
-    "message": "Sunteți sigur că doriți să dezactivați următorii membri? Aceștia nu vor mai avea acces la organizație, dar vor avea în continuare acces la seifurile lor individuale. Procesul poate dura câteva secunde pentru a se finaliza și nu poate fi întrerupt sau anulat."
+  "removeOrgUsersConfirmation": {
+    "message": "Atunci când unul sau mai mulți membri sunt înlăturați, aceștia nu mai au acces la datele organizației, iar această acțiune este ireversibilă. Pentru a adăuga din nou membrul în organizație, acesta trebuie să fie invitat și integrat din nou. Procesul poate dura câteva secunde pentru a se finaliza și nu poate fi întrerupt sau anulat."
   },
-  "activateUsersWarning": {
-    "message": "Sunteți sigur că doriți să activați următorii membri, acordându-le acces la organizație? Finalizarea procesului poate dura câteva secunde și nu poate fi întreruptă sau anulată."
+  "revokeUsersWarning": {
+    "message": "Atunci când unul sau mai mulți membri sunt revocați, aceștia nu mai au acces la datele organizației. Pentru a restabili rapid accesul membrilor, accesați fila Revocat. Finalizarea procesului poate dura câteva secunde și nu poate fi întreruptă sau anulată."
   },
   "theme": {
     "message": "Temă"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Eliminat cu succes"
   },
-  "bulkDeactivatedMessage": {
-    "message": "S-a dezactivat cu succes"
+  "bulkRevokedMessage": {
+    "message": "Accesul la organizație revocat cu succes"
   },
-  "bulkActivatedMessage": {
-    "message": "S-a activat cu succes"
+  "bulkRestoredMessage": {
+    "message": "Accesul la organizație restabilit cu succes"
   },
   "bulkFilteredMessage": {
     "message": "Exclus, nu se aplică pentru această acțiune."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Eliminați utilizatorii"
   },
-  "deactivateUsers": {
-    "message": "Dezactivare utilizatori"
+  "revokeUsers": {
+    "message": "Revocare utilizatori"
   },
-  "activateUsers": {
-    "message": "Activare utilizatori"
+  "restoreUsers": {
+    "message": "Restabilire utilizatori"
   },
   "error": {
     "message": "Eroare"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Sponsorizare creată"
-  },
-  "revoke": {
-    "message": "Revocare"
   },
   "emailSent": {
     "message": "E-mail trimis"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "Aprovizionarea SCIM",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Furnizați automat utilizatorii și grupurile cu furnizorul dvs. preferat de identitate prin intermediul aprovizionării SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Activați SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Configurați furnizorul de identitate preferat prin configurarea URL-ului și a cheii API SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Această cheie API are acces pentru a gestiona utilizatorii din cadrul organizației dumneavoastră. Ar trebui să fie păstrată secretă."
+  },
+  "copyScimKey": {
+    "message": "Copiați cheia API SCIM în clipboard",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Revocați cheia API SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Sunteți sigur că doriți să revocați cheia API SCIM? Cheia actuală nu va mai funcționa pentru nicio integrare existentă.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Revocare cheie"
+  },
+  "scimApiKey": {
+    "message": "Cheia API SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Copiați URL-ul punctului final SCIM în clipboard",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "URL SCIM",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "Cheia API SCIM a fost revocată cu succes",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "Setările SCIM au fost salvate cu succes",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Este necesară o intrare."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Pornit"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

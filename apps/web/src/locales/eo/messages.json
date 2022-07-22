@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "Kasa retejo de $APP_NAME$",
+    "message": "Reta Trezorejo $APP_NAME$",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -10,7 +10,7 @@
     }
   },
   "whatTypeOfItem": {
-    "message": "Kia tipo de elemento estas ĉi tio?"
+    "message": "Kiuspeca estas ĉi tiu ero?"
   },
   "name": {
     "message": "Nomo"
@@ -47,7 +47,7 @@
     "message": "Notoj"
   },
   "customFields": {
-    "message": "Propraj kampoj"
+    "message": "Tekstujoj Uzantfaritaj"
   },
   "cardholderName": {
     "message": "Nomo de la posedanto de la karto"
@@ -128,13 +128,13 @@
     "message": "S-ro"
   },
   "mrs": {
-    "message": "Sinjorino"
+    "message": "S-ino"
   },
   "ms": {
-    "message": "Sinjorino"
+    "message": "F-ino"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dr-o"
   },
   "expirationMonth": {
     "message": "Monato de validoperiodo"
@@ -282,7 +282,7 @@
     "description": "Search item type"
   },
   "searchVault": {
-    "message": "Serĉi Volbon"
+    "message": "Traserĉu Trezorejon"
   },
   "allItems": {
     "message": "Ĉiuj Eroj"
@@ -333,7 +333,7 @@
     "message": "Lasta nomo"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Plena Nomo"
   },
   "address1": {
     "message": "Adreso 1"
@@ -385,7 +385,7 @@
     "message": "Kunhavigi"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Movu al Organizo"
   },
   "valueCopied": {
     "message": "$VALUE$ kopiita",
@@ -422,31 +422,31 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Mi"
   },
   "myVault": {
-    "message": "Mia Volbo"
+    "message": "Mia Trezorejo"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Ĉiuj Trezorejoj"
   },
   "vault": {
-    "message": "Volbo"
+    "message": "Trezorejo"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "Trezorejoj"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "Trezorejaj Eroj"
   },
   "moveSelectedToOrg": {
-    "message": "Move Selected to Organization"
+    "message": "Movu Elektitaĵojn al Organizo"
   },
   "deleteSelected": {
     "message": "Forigi Elektitajn"
   },
   "moveSelected": {
-    "message": "Movi Elektitan"
+    "message": "Movu Elektitaĵojn"
   },
   "selectAll": {
     "message": "Elekti ĉiujn"
@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Via nova konto kreiĝis! Vi nun povas ensaluti."
   },
+  "trialAccountCreated": {
+    "message": "Account created successfully."
+  },
   "masterPassSent": {
     "message": "Ni sendis al vi retpoŝton kun via ĉefa pasvorta sugesto."
   },
@@ -660,7 +663,7 @@
     "message": "Malŝlosi"
   },
   "loggedInAsEmailOn": {
-    "message": "Ensalutinta kiel $EMAIL$ ĉe $HOSTNAME $.",
+    "message": "Ensalutinta kiel $EMAIL$ ĉe $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -700,7 +703,7 @@
     "message": "Vi ne apartenas al iuj organizoj. Organizoj permesas al vi sekure dividi erojn kun aliaj uzantoj."
   },
   "versionNumber": {
-    "message": "Versio $VERSION_NUMBER $",
+    "message": "Versio $VERSION_NUMBER$",
     "placeholders": {
       "version_number": {
         "content": "$1",
@@ -867,7 +870,7 @@
     "message": "Averto"
   },
   "confirmVaultExport": {
-    "message": "Konfirmi Volbon-Eksportadon"
+    "message": "Konfirmu Eksportadon de Trezorejo"
   },
   "exportWarningDesc": {
     "message": "Ĉi tiu eksportado enhavas viajn volbajn datumojn en neĉifrita formato. Vi ne devas stoki aŭ sendi la eksportitan dosieron per nesekuraj kanaloj (kiel retpoŝto). Forigu ĝin tuj post kiam vi finuzos ĝin."
@@ -882,7 +885,7 @@
     "message": "Export"
   },
   "exportVault": {
-    "message": "Eksporti Volbon"
+    "message": "Eksportu Trezorejon"
   },
   "fileFormat": {
     "message": "Dosierformato"
@@ -1052,10 +1055,10 @@
     "message": "Ĉiuj Sesioj Neaŭtorizitaj"
   },
   "purgeVault": {
-    "message": "Purigi Volbon"
+    "message": "Malplenigu Trezorejon"
   },
   "purgedOrganizationVault": {
-    "message": "Purigita organizo-volbo."
+    "message": "Malpleniĝis trezorejo de organizo."
   },
   "vaultAccessedByProvider": {
     "message": "Vault accessed by provider."
@@ -1067,10 +1070,10 @@
     "message": "Sekvu sube por forigi ĉiujn erojn en la trezorejo de la organizo."
   },
   "purgeVaultWarning": {
-    "message": "Purigi vian trezorejon estas konstanta. Ĝi ne povas esti malfarita."
+    "message": "Malplenigado de via trezorejo estas daŭra. Malfarado estos malebla."
   },
   "vaultPurged": {
-    "message": "Via trezorejo estis elpurigita."
+    "message": "Via trezorejo malpleniĝis."
   },
   "deleteAccount": {
     "message": "Forigi konton"
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Enŝaltita"
   },
-  "activate": {
-    "message": "Activate"
+  "restoreAccess": {
+    "message": "Restore Access"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Neebligi"
   },
-  "deactivate": {
-    "message": "Deactivate"
+  "revokeAccess": {
+    "message": "Revoke Access"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Ĉi tiu du-ŝtupa ensaluta provizanto estas ebligita en via konto."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Fakturado"
   },
+  "billingPlanLabel": {
+    "message": "Billing Plan"
+  },
+  "paymentType": {
+    "message": "Payment Type"
+  },
   "accountCredit": {
     "message": "Kredita Konto",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "jaro"
   },
+  "yr": {
+    "message": "yr"
+  },
   "month": {
     "message": "monato"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Fakturaj Informoj"
+  },
+  "billingTrialSubLabel": {
+    "message": "Your payment method will not be charged during the 7 day free trial."
   },
   "creditCard": {
     "message": "Kreditkarto"
@@ -2169,11 +2184,35 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Thanks for signing up for Bitwarden for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "Your $PLAN$ 7 day free trial will be converted to a paid subscription after 7 days.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "We've sent a confirmation email to your team's billing email at "
+  },
   "monthly": {
     "message": "Monata"
   },
   "annually": {
     "message": "Ĉiujare"
+  },
+  "annual": {
+    "message": "Annual"
   },
   "basePrice": {
     "message": "Baza Prezo"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Ĉu vi certe volas forigi ĉi tiun uzanton?"
   },
-  "deactivateUserConfirmation": {
-    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+  "removeOrgUserConfirmation": {
+    "message": "When a member is removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again."
   },
-  "activateUserConfirmation": {
-    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+  "revokeUserConfirmation": {
+    "message": "When a member is revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
@@ -2380,7 +2419,7 @@
     "description": "Desktop app"
   },
   "webVault": {
-    "message": "Reta Volbo"
+    "message": "Rettrezorejo"
   },
   "loggedIn": {
     "message": "Ensalutinta."
@@ -2404,10 +2443,10 @@
     "message": "Ensaluta provo malsukcesis kun malĝusta du-ŝtupa ensaluto."
   },
   "exportedVault": {
-    "message": "Eksportita trezorejo."
+    "message": "Eksportiĝis trezorejo."
   },
   "exportedOrganizationVault": {
-    "message": "Eksportita organizo-volbo."
+    "message": "Eksportiĝis trezorejo de organizo."
   },
   "editedOrgSettings": {
     "message": "Redaktitaj organizaj agordoj."
@@ -2422,7 +2461,7 @@
     }
   },
   "editedItemId": {
-    "message": "Redaktita ero $ID $.",
+    "message": "Redaktiĝis ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2449,7 +2488,7 @@
     }
   },
   "viewedItemId": {
-    "message": "Vidita ero $ID $.",
+    "message": "Vidiĝis ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2458,7 +2497,7 @@
     }
   },
   "viewedPasswordItemId": {
-    "message": "Vidita pasvorto por ero $ID $.",
+    "message": "Vidiĝis pasvorto de ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2467,7 +2506,7 @@
     }
   },
   "viewedHiddenFieldItemId": {
-    "message": "Vidita kaŝita kampo por ero $ID $.",
+    "message": "Vidiĝis tekstujo kaŝita de ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2476,7 +2515,7 @@
     }
   },
   "viewedSecurityCodeItemId": {
-    "message": "Vidita sekureca kodo por ero $ID $.",
+    "message": "Vidiĝis sekureca kodo de ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2485,7 +2524,7 @@
     }
   },
   "copiedPasswordItemId": {
-    "message": "Kopiita pasvorto por ero $ID $.",
+    "message": "Kopiiĝis pasvorto de ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2494,7 +2533,7 @@
     }
   },
   "copiedHiddenFieldItemId": {
-    "message": "Kopiita kaŝita kampo por ero $ID $.",
+    "message": "Kopiiĝis tekstujo kaŝita de ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2503,7 +2542,7 @@
     }
   },
   "copiedSecurityCodeItemId": {
-    "message": "Kopiita sekureca kodo por ero $ID $.",
+    "message": "Kopiiĝis sekureca kodo de ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Deactivated user $ID$.",
+  "removeUserIdAccess": {
+    "message": "Remove $ID$ access",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Activated user $ID$.",
+  "revokedUserId": {
+    "message": "Revoked organization access for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Deactivate user $ID$?",
+  "restoredUserId": {
+    "message": "Restored organization access for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Activate user $ID$?",
+  "revokeUserId": {
+    "message": "Revoke $ID$ access",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2674,7 +2713,7 @@
     }
   },
   "editedUserId": {
-    "message": "Redaktita uzanto $ID $.",
+    "message": "Redaktiĝis uzanto $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2767,7 +2806,7 @@
     "message": "Resendi Inviton"
   },
   "resendEmail": {
-    "message": "Resend Email"
+    "message": "Resendu Retpoŝton"
   },
   "hasBeenReinvited": {
     "message": "$USER$ estis reenvitita.",
@@ -3181,7 +3220,7 @@
     "message": "Filtriloj"
   },
   "vaultTimeout": {
-    "message": "Tempomezuro de Volbo"
+    "message": "Tempolimo de trezorejo"
   },
   "vaultTimeoutDesc": {
     "message": "Elektu kiam via trezorejo eksvalidiĝos kaj plenumos la elektitan agon."
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Neebligita"
   },
-  "deactivated": {
-    "message": "Deactivated"
+  "revoked": {
+    "message": "Revoked"
   },
   "sendLink": {
     "message": "Sendi ligon",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Are you sure you want to remove the following users? The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
-  "deactivateUsersWarning": {
-    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  "removeOrgUsersConfirmation": {
+    "message": "When member(s) are removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
-  "activateUsersWarning": {
-    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  "revokeUsersWarning": {
+    "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
   "theme": {
     "message": "Theme"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Removed successfully"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Deactivated successfully"
+  "bulkRevokedMessage": {
+    "message": "Revoked organization access successfully"
   },
-  "bulkActivatedMessage": {
-    "message": "Activated successfully"
+  "bulkRestoredMessage": {
+    "message": "Restored organization access successfully"
   },
   "bulkFilteredMessage": {
     "message": "Excluded, not applicable for this action."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Remove Users"
   },
-  "deactivateUsers": {
-    "message": "Deactivate Users"
+  "revokeUsers": {
+    "message": "Revoke Users"
   },
-  "activateUsers": {
-    "message": "Activate Users"
+  "restoreUsers": {
+    "message": "Restore Users"
   },
   "error": {
     "message": "Error"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Sponsorship Created"
-  },
-  "revoke": {
-    "message": "Revoke"
   },
   "emailSent": {
     "message": "Email Sent"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "SCIM Provisioning",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Enable SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "This API key has access to manage users within your organization. It should be kept secret."
+  },
+  "copyScimKey": {
+    "message": "Copy the SCIM API Key to your clipboard",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Rotate the SCIM API Key",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Rotate Key"
+  },
+  "scimApiKey": {
+    "message": "SCIM API Key",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM URL",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "The SCIM API Key has been successfully rotated",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "SCIM settings have been saved successfully",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Input is required."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "On"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

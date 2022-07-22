@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "A fiók létrehozásra került. Most már be lehet jelentkezni."
   },
+  "trialAccountCreated": {
+    "message": "A fiók sikeresen létrejött."
+  },
   "masterPassSent": {
     "message": "A mesterjelszó emlékeztetőt tartalmazó email elküldésre került."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Engedélyezve"
   },
-  "activate": {
-    "message": "Bekapcsolás"
+  "restoreAccess": {
+    "message": "Hozzáférés helyreállítás"
   },
   "premium": {
     "message": "Prémium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Letiltás"
   },
-  "deactivate": {
-    "message": "Kikapcsolás"
+  "revokeAccess": {
+    "message": "Hozzáférés visszavonása"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Ez a kétlépéses bejelentkezés szolgáltató már engedélyezett a fiókon."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Számlázás"
   },
+  "billingPlanLabel": {
+    "message": "Számlázási csomag"
+  },
+  "paymentType": {
+    "message": "Fizetési mód"
+  },
   "accountCredit": {
     "message": "Fiók  hitelkeret",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "év"
   },
+  "yr": {
+    "message": "év"
+  },
   "month": {
     "message": "hónap"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Számlázási adatok"
+  },
+  "billingTrialSubLabel": {
+    "message": "A 7 napos ingyenes próbaidőszak alatt a fizetési mód nem kerül megterhelésre."
   },
   "creditCard": {
     "message": "Hitelkártya"
@@ -2169,11 +2184,35 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Köszönet a regisztrációért a Bitwarden $PLAN$ csomagjára!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "$PLAN$ csomag 7 napos ingyenes próbaverziója fizetős feliratkozássá válik 7 nap után.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "A megerősítő email elküldésre került a csoport számlázási email címére:"
+  },
   "monthly": {
     "message": "Havi"
   },
   "annually": {
     "message": "Évente"
+  },
+  "annual": {
+    "message": "Éves"
   },
   "basePrice": {
     "message": "Alapár"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Biztosan eltávolításra kerüljön ez a felhasználó?"
   },
-  "deactivateUserConfirmation": {
-    "message": "A tag a továbikban nem érheti el a szervezetet, de elérheti az egyedi széfjüket."
+  "removeOrgUserConfirmation": {
+    "message": "Ha egy tag eltávolításra kerül, többé nem fér hozzá a szervezet adataihoz és ez a művelet visszafordíthatatlan. Ha vissza szeretnénk adni a tagot a szervezethez, meg kell hívni és újra fel kell venni a kapcsolatot."
   },
-  "activateUserConfirmation": {
-    "message": "Biztosan szeretnénk bekapcsolni ezt a felhasználót hozzáférési joggal a szervezethez?"
+  "revokeUserConfirmation": {
+    "message": "Amikor egy tag visszavonásra kerül,  többé nem fér hozzá a szervezet adataihoz. A tagok hozzáférésének gyors visszaállításához lépjünk a Visszavont fülre."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Figyelem! Ennek a felhasználónak kulcskapcsolóra van szüksége a titkosítás kezeléséhez. Ha eltávolítjuk ezt a felhasználót a szervezetből, azzal véglegesen letiltjuk a fiókját. Ez a művelet nem visszavonható. Folytatás?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "$ID$ felhasználó kikapcsolásra került.",
+  "removeUserIdAccess": {
+    "message": "$ID$ hozzáférés visszavonás",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "$ID$ felhasználó bekapcsolásra került.",
+  "revokedUserId": {
+    "message": "$ID$ szervezeti hozzáférése visszavonásra került.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Kikapcsolásra kerüljön $ID$ felhasználó?",
+  "restoredUserId": {
+    "message": "$ID$ szervezeti hozzáférése helyreállításra került.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Bekapcsolásra kerüljön $ID$ felhasználó?",
+  "revokeUserId": {
+    "message": "$ID$ hozzáférés visszavonása",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Letiltva"
   },
-  "deactivated": {
-    "message": "A kikapcsolás megtörtént."
+  "revoked": {
+    "message": "A visszavonás megtörtént."
   },
   "sendLink": {
     "message": "Send hivatkozás",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Biztosan eltávolításra kerüljenek a következő felhasználók? A folyamat néhány másodpercet vehet igénybe és nem szakítható meg vagy törölhető."
   },
-  "deactivateUsersWarning": {
-    "message": "Biztosan kikapcsolásra kerüljenek a következő tagok? Többé nem férnek hozzá a szervezethez de továbbra is hozzáférhetnek az egyedi széfjükhöz. A folyamat befejezése néhány másodpercet vehet igénybe és nem szakítható meg vagy nem vonható vissza."
+  "removeOrgUsersConfirmation": {
+    "message": "A tagok eltávolítása után többé nem férnek hozzá a szervezet adataihoz és ez a művelet visszafordíthatatlan. Ha vissza szeretnénk adni a tagot a szervezethez, meg kell hívni és újra fel kell vennie a kapcsolatot. A folyamat néhány másodpercig tarthat és nem lehet megszakítani vagy törölni."
   },
-  "activateUsersWarning": {
-    "message": "Biztosan bekapcsolásra kerüljenek a következő tagok, lehetővé téve számukra a szervezet elérését? A folyamat befejezése néhány másodpercet vehet igénybe, és nem szakítható meg vagy nem vonható vissza."
+  "revokeUsersWarning": {
+    "message": "A tagok visszavonása után a továbbiakban nem férnek hozzá a szervezet adataihoz. A tagok hozzáférésének gyors visszaállításához lépjünk a Visszavont fülre. A folyamat néhány másodpercig tarthat és nem lehet megszakítani vagy törölni."
   },
   "theme": {
     "message": "Téma"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Az eltávolítás sikeres volt."
   },
-  "bulkDeactivatedMessage": {
-    "message": "A kikapcsolás sikeresen megtörtént."
+  "bulkRevokedMessage": {
+    "message": "Sikeresen visszavonásra került a szervezeti hozzáférés."
   },
-  "bulkActivatedMessage": {
-    "message": "A bekapcsolás sikeresen megtörtént."
+  "bulkRestoredMessage": {
+    "message": "Sikeresen helyreállításra került a szervezeti hozzáférés."
   },
   "bulkFilteredMessage": {
     "message": "Kizárva, nem alkalmazható erre a műveletre."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Felhasználók eltávolítása"
   },
-  "deactivateUsers": {
-    "message": "Felhasználók kikapcsolása"
+  "revokeUsers": {
+    "message": "Felhasználók visstavonása"
   },
-  "activateUsers": {
-    "message": "Felhasználók bekapcsolása"
+  "restoreUsers": {
+    "message": "Felhasználók helyreállítása"
   },
   "error": {
     "message": "Hiba"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "A szponzoráció létrejött."
-  },
-  "revoke": {
-    "message": "Visszavonás"
   },
   "emailSent": {
     "message": "Az email elküldésre került."
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "SCIM ellátás",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "A felhasználók és csoportok automatikusan biztosítása a kívánt identitás szolgáltatóval a SCIM szolgáltatáson keresztül.",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "SCIM engedélyezése",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Állítsuk be a kívánt azonosító szolgáltatót a webcím és a SCIM API kulcs konfigurálásával.",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Ez az API kulcs hozzáféréssel rendelkezik a szervezeten belüli felhasználók kezeléséhez. Célszerű titokban tartani."
+  },
+  "copyScimKey": {
+    "message": "A SCIM API kulcs másolása a vágólapra",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "A SCIM API kulcs forgatása",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Biztosan forgatni akarjuk a SCIM API kulcsot? A jelenlegi kulcs már nem működik egyik meglévő integrációhoz sem.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Kulcs forgatása"
+  },
+  "scimApiKey": {
+    "message": "SCIM API kulcs",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "A SCIM cégpont webcím másolása a vágólapra",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM webcím",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "A SCIM API kulcs sikeresen forgatásra került.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "A SCIM beállítások sikeresen mentésre kerültek.",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Az adatbevitel kötelező."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Be"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

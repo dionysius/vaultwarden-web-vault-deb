@@ -573,7 +573,7 @@
     "message": "Vytvořit účet"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Zahájit zkušební verzi"
   },
   "logIn": {
     "message": "Přihlásit se"
@@ -597,7 +597,7 @@
     "message": "Hlavní heslo je heslo, které používáte k přístupu do vašeho trezoru. Je velmi důležité, abyste jej nezapomněli. Neexistuje totiž žádný způsob, jak heslo obnovit v případě, že jste na něj zapomněli."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Hlavní hesla nelze obnovit, pokud je zapomenete!"
   },
   "masterPassHintDesc": {
     "message": "Nápověda k hlavnímu heslu vám pomůže zapamatovat si heslo, pokud ho zapomenete."
@@ -630,19 +630,22 @@
     "message": "Neplatná e-mailová adresa."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Hlavní heslo je povinné."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Druhé zadání hlavního hesla je povinné."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hlavní heslo musí obsahovat alespoň 8 znaků."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrzení hlavního hesla se neshoduje."
   },
   "newAccountCreated": {
     "message": "Váš účet byl vytvořen! Můžete se přihlásit."
+  },
+  "trialAccountCreated": {
+    "message": "Account created successfully."
   },
   "masterPassSent": {
     "message": "Poslali jsme vám e-mail s nápovědou k hlavnímu heslu."
@@ -1161,10 +1164,10 @@
     "message": "Změňte jazyk používaný ve webovém trezoru."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Zobrazit ikony webových stránek"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Zobrazit rozeznatelný obrázek vedle každého přihlášení."
   },
   "enableGravatars": {
     "message": "Povolit službu Gravatar",
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Povoleno"
   },
-  "activate": {
-    "message": "Activate"
+  "restoreAccess": {
+    "message": "Restore Access"
   },
   "premium": {
     "message": "Prémium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Zakázat"
   },
-  "deactivate": {
-    "message": "Deactivate"
+  "revokeAccess": {
+    "message": "Revoke Access"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Tento poskytovatel dvoufázového přihlášení byl povolen."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Fakturace"
   },
+  "billingPlanLabel": {
+    "message": "Billing Plan"
+  },
+  "paymentType": {
+    "message": "Payment Type"
+  },
   "accountCredit": {
     "message": "Kredit na účtu",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "rok"
   },
+  "yr": {
+    "message": "yr"
+  },
   "month": {
     "message": "měsíc"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Fakturační údaje"
+  },
+  "billingTrialSubLabel": {
+    "message": "Your payment method will not be charged during the 7 day free trial."
   },
   "creditCard": {
     "message": "Kreditní karta"
@@ -2169,11 +2184,35 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Thanks for signing up for Bitwarden for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "Your $PLAN$ 7 day free trial will be converted to a paid subscription after 7 days.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "We've sent a confirmation email to your team's billing email at "
+  },
   "monthly": {
     "message": "Měsíčně"
   },
   "annually": {
     "message": "Ročně"
+  },
+  "annual": {
+    "message": "Annual"
   },
   "basePrice": {
     "message": "Základní cena"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Opravdu chcete tohoto uživatele smazat?"
   },
-  "deactivateUserConfirmation": {
-    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+  "removeOrgUserConfirmation": {
+    "message": "When a member is removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again."
   },
-  "activateUserConfirmation": {
-    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+  "revokeUserConfirmation": {
+    "message": "When a member is revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Deactivated user $ID$.",
+  "removeUserIdAccess": {
+    "message": "Remove $ID$ access",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Activated user $ID$.",
+  "revokedUserId": {
+    "message": "Revoked organization access for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Deactivate user $ID$?",
+  "restoredUserId": {
+    "message": "Restored organization access for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Activate user $ID$?",
+  "revokeUserId": {
+    "message": "Revoke $ID$ access",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3169,7 +3208,7 @@
     "message": "Zaškrtnutím tohoto políčka souhlasím s následujícím:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Podmínky použití a zásady ochrany osobních údajů nebyly odsouhlaseny."
   },
   "termsOfService": {
     "message": "Podmínky služby"
@@ -3219,7 +3258,7 @@
     "message": "Organizace je zakázána."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Položky v zablokovaných organizacích nejsou dostupné. Pro pomoc kontaktujte majitele organizace."
   },
   "licenseIsExpired": {
     "message": "Licence vypršela."
@@ -3346,13 +3385,13 @@
     "message": "Duplikovat"
   },
   "masterPassPolicyTitle": {
-    "message": "Master password requirements"
+    "message": "Požadavky na hlavní heslo"
   },
   "masterPassPolicyDesc": {
     "message": "Nastavte minimální požadavky pro sílu hlavního hesla."
   },
   "twoStepLoginPolicyTitle": {
-    "message": "Require two-step login"
+    "message": "Požadavek dvoufázového přihlášení"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Požadovat po uživatelích nastavení dvoufázového přihlášení pro jejich osobní účty."
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Zakázáno"
   },
-  "deactivated": {
-    "message": "Deactivated"
+  "revoked": {
+    "message": "Revoked"
   },
   "sendLink": {
     "message": "Odkaz tohoto Send",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Opravdu chcete odebrat následující uživatele? Proces může trvat několik sekund a nelze jej přerušit ani zrušit."
   },
-  "deactivateUsersWarning": {
-    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  "removeOrgUsersConfirmation": {
+    "message": "When member(s) are removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
-  "activateUsersWarning": {
-    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  "revokeUsersWarning": {
+    "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
   "theme": {
     "message": "Motiv"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Úspěšně odstraněno"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Deactivated successfully"
+  "bulkRevokedMessage": {
+    "message": "Revoked organization access successfully"
   },
-  "bulkActivatedMessage": {
-    "message": "Activated successfully"
+  "bulkRestoredMessage": {
+    "message": "Restored organization access successfully"
   },
   "bulkFilteredMessage": {
     "message": "Vyloučené, neplatí pro tuto akci."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Odebrat uživatele"
   },
-  "deactivateUsers": {
-    "message": "Deactivate Users"
+  "revokeUsers": {
+    "message": "Revoke Users"
   },
-  "activateUsers": {
-    "message": "Activate Users"
+  "restoreUsers": {
+    "message": "Restore Users"
   },
   "error": {
     "message": "Chyba"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Sponsorship Created"
-  },
-  "revoke": {
-    "message": "Revoke"
   },
   "emailSent": {
     "message": "Email Sent"
@@ -5184,14 +5220,68 @@
       }
     }
   },
+  "scim": {
+    "message": "Poskytování SCIM",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Automaticky zajišťuje uživatelům a skupinám vašeho preferovaného poskytovatele identity prostřednictvím SCIM poskytování",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Aktivovat SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Nastavte svého preferovaného poskytovatele identity nastavením URL a SCIM API klíče",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Tento klíč API má přístup ke správě uživatelů ve vaší organizaci. Měl by být zachován v tajnosti."
+  },
+  "copyScimKey": {
+    "message": "Zkopírujte SCIM API klíč do schránky",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Vyměňte SCIM API klíč",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Opravdu chcete změnit SCIM API klíč? Aktuální klíč již nebude fungovat pro žádné existující integrace.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Změnit klíč"
+  },
+  "scimApiKey": {
+    "message": "SCIM API klíč",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Zkopírujte URL adresu SCIM koncového bodu do schránky",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM URL",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "SCIM API klíč byl úspěšně změněn",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "Nastavení SCIM bylo úspěšně uloženo",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Položka nesmí být prázdná."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "Neplatná e-mailová adresa."
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Vstup musí mít alespoň $COUNT$ znaků.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5200,7 +5290,7 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ výše uvedených polí vyžaduje vaši pozornost.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5209,9 +5299,12 @@
     }
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Zapnout"
   },
   "on": {
-    "message": "On"
+    "message": "Zapnuto"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Sinu konto on loodud! Saad nüüd sellesse sisse logida."
   },
+  "trialAccountCreated": {
+    "message": "Konto on edukalt loodud."
+  },
   "masterPassSent": {
     "message": "Ülemparooli vihje saadeti sinu e-posti aadressile."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Sisselülitatud"
   },
-  "activate": {
-    "message": "Aktiveeri"
+  "restoreAccess": {
+    "message": "Taasta ligipääsu luba"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Keela"
   },
-  "deactivate": {
-    "message": "Deaktiveeri"
+  "revokeAccess": {
+    "message": "Tühistada ligipääsu luba"
   },
   "twoStepLoginProviderEnabled": {
     "message": "See kaheastmelise kinnitamise teenus on sinu kontol sisse lülitatud."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Maksmine"
   },
+  "billingPlanLabel": {
+    "message": "Tellimus"
+  },
+  "paymentType": {
+    "message": "Makse tüüp"
+  },
   "accountCredit": {
     "message": "Konto krediit",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "aasta"
   },
+  "yr": {
+    "message": "a"
+  },
   "month": {
     "message": "kuu"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Arveldusandmed"
+  },
+  "billingTrialSubLabel": {
+    "message": "7 päevase prooviperioodi sees maksemeetodit ei kasutata."
   },
   "creditCard": {
     "message": "Krediitkaart"
@@ -2169,11 +2184,35 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Täname, et soetasid Bitwarden $PLAN$'i!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "$PLAN$ tasuta 7 päevane versioon muutub automaatselt pärast 7-ndat päeva tasuliseks.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Saatsime kinnituskirja sinu tiimi arve e-postile "
+  },
   "monthly": {
     "message": "Igakuiselt"
   },
   "annually": {
     "message": "Tasumine aasta kaupa"
+  },
+  "annual": {
+    "message": "Aastane"
   },
   "basePrice": {
     "message": "Baashind"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Tahad kindlasti selle kasutaja eemaldada?"
   },
-  "deactivateUserConfirmation": {
-    "message": "Liige ei pääse enam organisatsiooni hoidlale ligi. Küll aga säilitab ta ligipääsu oma individuaalsele hoidlale."
+  "removeOrgUserConfirmation": {
+    "message": "Pärast kasutaja eemaldamist ei saa ta enam organisatsiooni andmetele ligi. Seda tegevust ei saa tagasi võtta. Selleks, et kasutaja uuesti organisatsiooniga liita, peab talle esitama kutse. Sellega koos on vaja läbi teha kogu liitumise protsess."
   },
-  "activateUserConfirmation": {
-    "message": "Oled kindel, et soovid seda kasutajat aktiveerida ja anda talle ligipääs organisatsioonile?"
+  "revokeUserConfirmation": {
+    "message": "Kui kasutaja ligipääsu luba on tühistatud, ei saa ta enam origanisatsiooni andmetele ligi. Ligipääsu taastamiseks ava \"Tühistatud\" kaart."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Kasutaja $ID$ on deaktiveeritud.",
+  "removeUserIdAccess": {
+    "message": "Eemalda $ID$ ligipääs",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Kasutaja $ID$ on aktiveeritud.",
+  "revokedUserId": {
+    "message": "Revoked organization access for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Deaktiveerin kasutaja $ID$?",
+  "restoredUserId": {
+    "message": "Restored organization access for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Aktiveerin kasutaja $ID$?",
+  "revokeUserId": {
+    "message": "Revoke $ID$ access",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Keelatud"
   },
-  "deactivated": {
-    "message": "Deaktiveeritud"
+  "revoked": {
+    "message": "Revoked"
   },
   "sendLink": {
     "message": "Sendi link",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Oled kindel, et soovid järgnevaid kasutajaid eemaldada? See tegevus võib võtta paar sekundit ning seda ei saa katkestada."
   },
-  "deactivateUsersWarning": {
-    "message": "Oled kindel, et soovid järgnevad kasutajad deaktiveerida? Selle tulemusel ei pääse nad enam organisatsiooni ligi, aga säilitavad siiski ligipääsud oma isiklikele hoidlatele. See protsess võtab mõned sekundid ning seda ei saa tühistada."
+  "removeOrgUsersConfirmation": {
+    "message": "When member(s) are removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
-  "activateUsersWarning": {
-    "message": "Oled kindel, et soovid järgnevatele kasutajatele anda ligipääsu organisatsioonile? See tegevus võib võtta paar sekundit ning seda ei saa katkestada."
+  "revokeUsersWarning": {
+    "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
   "theme": {
     "message": "Teema"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Edukalt eemaldatud"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Edukalt deaktiveeritud"
+  "bulkRevokedMessage": {
+    "message": "Revoked organization access successfully"
   },
-  "bulkActivatedMessage": {
-    "message": "Edukalt aktiveeritud"
+  "bulkRestoredMessage": {
+    "message": "Restored organization access successfully"
   },
   "bulkFilteredMessage": {
     "message": "Välja jäetud, ei rakendu sellel tegevuse puhul."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Kasutajate eemaldamine"
   },
-  "deactivateUsers": {
-    "message": "Kasutajate deaktiveerimine"
+  "revokeUsers": {
+    "message": "Revoke Users"
   },
-  "activateUsers": {
-    "message": "Kasutajate aktiveerimine"
+  "restoreUsers": {
+    "message": "Restore Users"
   },
   "error": {
     "message": "Viga"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Sponsorship Created"
-  },
-  "revoke": {
-    "message": "Revoke"
   },
   "emailSent": {
     "message": "E-kiri on saadetud"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "SCIM Provisioning",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Enable SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "This API key has access to manage users within your organization. It should be kept secret."
+  },
+  "copyScimKey": {
+    "message": "Copy the SCIM API Key to your clipboard",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Rotate the SCIM API Key",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Rotate Key"
+  },
+  "scimApiKey": {
+    "message": "SCIM API Key",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM URL",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "The SCIM API Key has been successfully rotated",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "SCIM settings have been saved successfully",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Sisestus on nõutav."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "On"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

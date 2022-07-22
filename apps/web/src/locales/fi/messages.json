@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Uusi käyttäjätilisi on luotu! Voit nyt kirjautua sisään."
   },
+  "trialAccountCreated": {
+    "message": "Tilin luonti onnistui."
+  },
   "masterPassSent": {
     "message": "Lähetimme pääsalasanasi vihjeen sähköpostitse."
   },
@@ -1103,7 +1106,7 @@
     "message": "Tiedoissa, joita yritit tuoda, havaittiin ongelma. Korjaa alla listatut virheet lähdetiedostosta ja yritä uudelleen."
   },
   "importSuccess": {
-    "message": "Tietojen tuonti holviisi onnistui."
+    "message": "Tietojen tuonti holviin onnistui."
   },
   "importWarning": {
     "message": "Olet tuomassa tietoja organisaatioon $ORGANIZATION$. Tietojasi saatetaan jakaa organisaation jäsenten kesken. Haluatko jatkaa?",
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Käytössä"
   },
-  "activate": {
-    "message": "Aktivoi"
+  "restoreAccess": {
+    "message": "Palauta käyttöoikeus"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Poista käytöstä"
   },
-  "deactivate": {
-    "message": "Deaktivoi"
+  "revokeAccess": {
+    "message": "Peru käyttöoikeus"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Tämä kaksivaiheisen kirjautumisen todentaja on käytössä tililläsi."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Laskutus"
   },
+  "billingPlanLabel": {
+    "message": "Laskutussuunnitelma"
+  },
+  "paymentType": {
+    "message": "Maksun tyyppi"
+  },
   "accountCredit": {
     "message": "Tilin saldo",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "vuosi"
   },
+  "yr": {
+    "message": "v"
+  },
   "month": {
     "message": "kuukausi"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Laskutustiedot"
+  },
+  "billingTrialSubLabel": {
+    "message": "Maksutapaasi ei veloiteta 7 päivän kokeilujakson aikana."
   },
   "creditCard": {
     "message": "Maksukortti"
@@ -2169,10 +2184,34 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Kiitos Bitwarden $PLAN$ -tilauksesta!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "$PLAN$-tilauksesi 7 päivän kokeilujakso muutetaan 7 päivän kuluttua maksulliseksi tilaukseksi.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Olemme lähettäneet tiimillesi vahvistussähköpostin osoitteeseen "
+  },
   "monthly": {
     "message": "Kuukausittainen"
   },
   "annually": {
+    "message": "Vuotuinen"
+  },
+  "annual": {
     "message": "Vuotuinen"
   },
   "basePrice": {
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Haluatko varmasti poistaa käyttäjän?"
   },
-  "deactivateUserConfirmation": {
-    "message": "Jäsenellä ei ole enää organisaation käyttöoikeutta, mutta hän voi edelleen käyttää henkilökohtaista hoviaan."
+  "removeOrgUserConfirmation": {
+    "message": "Kun jäsen poistetaan, hänellä ei ole enää pääsyä organisaation tietoihin, eikä poistoa ole mahdollista perua. Jos haluat lisätä jäsenen takaisin organisaatioon, hänet on kutsuttava ja perehdytettävä uudelleen."
   },
-  "activateUserConfirmation": {
-    "message": "Haluatko varmasti aktivoida käyttäjän ja myöntää hänelle käyttöoikeuden organisaatioon?"
+  "revokeUserConfirmation": {
+    "message": "Kun jäsenen käyttöoikeus perutaan, hänellä ei ole enää pääsyä organisaation tietoihin. Voit palauttaa käyttöoikeuden nopeasti Perutut-välilehdeltä."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Varoitus! Tämä käyttäjä tarvitsee salauksensa hallintaan Key Connectoria. Käyttäjän poistaminen organisaatiostasi poistaa heidän tilinsä käytöstä pysvästi. Toimenpide on pysyvä, eikä sen peruminen ole mahdollista. Haluatko jatkaa?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Käyttäjä $ID$ on deaktivoitu.",
+  "removeUserIdAccess": {
+    "message": "Poista jäsenen $ID$ käyttöoikeus",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Käyttäjä $ID$ on aktivoitu.",
+  "revokedUserId": {
+    "message": "Jäsenen $ID$ organisaation käyttöoikeus on peruttu.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Deaktivoidaanko käyttäjä $ID$?",
+  "restoredUserId": {
+    "message": "Jäsenen $ID$ organisaation käyttöoikeus on palautettu.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Aktivoidaanko käyttäjä $ID$?",
+  "revokeUserId": {
+    "message": "Peru jäsenen $ID$ käyttöoikeus",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Poistettu käytöstä"
   },
-  "deactivated": {
-    "message": "Deaktivoitu"
+  "revoked": {
+    "message": "Perutut"
   },
   "sendLink": {
     "message": "Send-linkki",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Haluatko varmasti poistaa seuraavat käyttäjät? Toiminto saattaa kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
   },
-  "deactivateUsersWarning": {
-    "message": "Haluatko varmasti deaktivoida seuraavat käyttäjät? Heillä ei enää ole organisaation käyttöoikeutta, mutta he voivat edelleen käyttää henkilökohtaisia holvejaan. Toiminto saattaa kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
+  "removeOrgUsersConfirmation": {
+    "message": "Kun jäseniä poistetaan, heillä ei ole enää pääsyä organisaation tietoihin, eikä poistoa ole mahdollista perua. Jos haluat lisätä jäsenen takaisin organisaatioon, hänet on kutsuttava ja perehdytettävä uudelleen. Käsittely voi kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
   },
-  "activateUsersWarning": {
-    "message": "Haluatko varmasti aktivoida seuraavat käyttäjät ja myöntää heille käyttöoikeuden organisaatioon? Toiminto saattaa kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
+  "revokeUsersWarning": {
+    "message": "Kun jäsenien käyttöoikeus perutaan, heillä ei ole enää pääsyä organisaation tietoihin. Voit palauttaa käyttöoikeudet nopeasti Perutut-välilehdeltä. Käsittely voi kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
   },
   "theme": {
     "message": "Teema"
@@ -4316,19 +4355,19 @@
     "message": "Joukkotoiminnon tila"
   },
   "bulkConfirmMessage": {
-    "message": "Vahvistettu onnistuneesti."
+    "message": "Vahvistus onnistui."
   },
   "bulkReinviteMessage": {
-    "message": "Kutsuttu uudelleen onnistuneesti."
+    "message": "Uuudelleenkutsu onnistui."
   },
   "bulkRemovedMessage": {
-    "message": "Poistettu onnistuneesti."
+    "message": "Poisto onnistui."
   },
-  "bulkDeactivatedMessage": {
-    "message": "Deaktivointi onnistui"
+  "bulkRevokedMessage": {
+    "message": "Organisaation käyttöoikeuden peruminen onnistui"
   },
-  "bulkActivatedMessage": {
-    "message": "Aktivointi onnistui"
+  "bulkRestoredMessage": {
+    "message": "Organisaation käyttöoikeuden palautus onnistui"
   },
   "bulkFilteredMessage": {
     "message": "Ohitettu, ei koske tätä toimintoa."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Poista käyttäjiä"
   },
-  "deactivateUsers": {
-    "message": "Deaktivoi käyttäjät"
+  "revokeUsers": {
+    "message": "Peru jäsenien käyttöoikeudet"
   },
-  "activateUsers": {
-    "message": "Aktivoi käyttäjät"
+  "restoreUsers": {
+    "message": "Palauta jäsenien käyttöoikeudet"
   },
   "error": {
     "message": "Virhe"
@@ -4428,7 +4467,7 @@
     }
   },
   "organizationJoinedProvider": {
-    "message": "Organisaatio lisättiin todentajaan onnistuneesti"
+    "message": "Organisaation lisäys todentajaan onnistui"
   },
   "accessingUsingProvider": {
     "message": "Käytetään organisaatiota todentajalla $PROVIDER$",
@@ -4711,7 +4750,7 @@
     "message": "Hyväksy ilmainen Bitwarden Perheille"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Ilmainen Bitwarden Perheille -tarjous on lunastettu"
+    "message": "Ilmaisen Bitwarden Perheille -tarjouksen lunastus onnistui"
   },
   "redeemed": {
     "message": "Lunastettu"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Sponsorointi on luotu"
-  },
-  "revoke": {
-    "message": "Irtisano"
   },
   "emailSent": {
     "message": "Sähköposti on lähetetty"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "SCIM-provisiointi",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Provisioi käyttäjät ja ryhmät suosimasi tunnistustietojen tarjoajan kanssa SCIM-provisioinnilla",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Ota SCIM käyttöön",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Määritä haluamasi SAML-tunnistustietojen tarjoaja määrittämällä URL-osoite ja SCIM API-avain",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Tällä API-avaimella on oikeus hallita organisaation käyttäjiä. Se tulee pitää salassa."
+  },
+  "copyScimKey": {
+    "message": "Kopioi SCIM API-avain leikepöydälle",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Uudista SCIM API-avain",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Haluatko varmasti uudistaa SCIM API-avaimen? Nykyinen avain ei enää toimi olemassa oleville integraatioille.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Uudista avain"
+  },
+  "scimApiKey": {
+    "message": "SCIM API-avain",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Kopioi SCIM-päätteen URL-osoite leikepöydälle",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM URL",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "SCIM API-avaimen uudistus onnistui",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "SCIM-asetusten tallennus onnistui",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Syöte vaaditaan."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Käytössä"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

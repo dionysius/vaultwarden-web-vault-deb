@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "El vostre compte s'ha creat correctament. Ara ja podeu entrar."
   },
+  "trialAccountCreated": {
+    "message": "Compte creat amb èxit."
+  },
   "masterPassSent": {
     "message": "Hem enviat un correu electrònic amb la vostra contrasenya mestra."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Habilitat"
   },
-  "activate": {
-    "message": "Activa"
+  "restoreAccess": {
+    "message": "Restaura l'accés"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Inhabilita"
   },
-  "deactivate": {
-    "message": "Desactiva"
+  "revokeAccess": {
+    "message": "Revoca l'accés"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Aquest proveïdor d'inici de sessió en dues passes està habilitat al vostre compte."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Facturació"
   },
+  "billingPlanLabel": {
+    "message": "Pla de facturació"
+  },
+  "paymentType": {
+    "message": "Tipus de pagament"
+  },
   "accountCredit": {
     "message": "Compte de crèdit",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "any"
   },
+  "yr": {
+    "message": "any"
+  },
   "month": {
     "message": "mes"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Informació de facturació"
+  },
+  "billingTrialSubLabel": {
+    "message": "El vostre mètode de pagament no es cobrarà durant la prova gratuïta de 7 dies."
   },
   "creditCard": {
     "message": "Targeta de crèdit"
@@ -2169,11 +2184,35 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Gràcies per registrar-te a Bitwarden per $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "La vostra prova gratuïta de $PLAN$ de 7 dies es convertirà en una subscripció de pagament al cap de 7 dies.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Hem enviat un correu electrònic de confirmació al correu electrònic de facturació del vostre equip a "
+  },
   "monthly": {
     "message": "Mensual"
   },
   "annually": {
     "message": "Annual"
+  },
+  "annual": {
+    "message": "Anual"
   },
   "basePrice": {
     "message": "Preu base"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Esteu segur que voleu suprimir aquest usuari?"
   },
-  "deactivateUserConfirmation": {
-    "message": "El membre ja no tindrà accés a l'organització, però encara tindrà accés a la caixa forta individual."
+  "removeOrgUserConfirmation": {
+    "message": "Quan s'elimina un membre, ja no té accés a les dades de l'organització i aquesta acció és irreversible. Per tornar a afegir el membre a l'organització, cal convidar-lo i incorporar-lo de nou."
   },
-  "activateUserConfirmation": {
-    "message": "Confirmeu que voleu activar aquest usuari per concedir-li accés a l'organització?"
+  "revokeUserConfirmation": {
+    "message": "Quan un membre és revocat, ja no té accés a les dades de l'organització. Per restaurar ràpidament l'accés dels membres, aneu a la pestanya Revocat."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Advertència! Aquest usuari requereix un connector clau per gestionar el seu xifrat. La supressió d'aquest usuari des de la vostra organització desactivarà permanentment el seu compte. Aquesta acció no es pot desfer. Voleu continuar?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Desactivat usuari $ID$.",
+  "removeUserIdAccess": {
+    "message": "Suprimeix l'accés $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Activat usuari $ID$.",
+  "revokedUserId": {
+    "message": "S'ha revocat l'accés a l'organització per $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Vols desactivar l'usuari $ID$?",
+  "restoredUserId": {
+    "message": "S'ha revstaurat l'accés a l'organització per $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Vols activar l'usuari $ID$?",
+  "revokeUserId": {
+    "message": "S'ha revocat l'accés per $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3219,7 +3258,7 @@
     "message": "L'organització està inhabilitada."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "No es pot accedir als elements de les organitzacions inhabilitades. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
   },
   "licenseIsExpired": {
     "message": "Llicència caducada."
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Inhabilitat"
   },
-  "deactivated": {
-    "message": "Desactivat"
+  "revoked": {
+    "message": "Revocat"
   },
   "sendLink": {
     "message": "Enllaç Send",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Esteu segur que voleu eliminar els usuaris següents? El procés pot tardar uns segons a completar-se i no es pot interrompre ni cancel·lar."
   },
-  "deactivateUsersWarning": {
-    "message": "Esteu segur que voleu desactivar els membres següents? Ja no tindran accés a l'organització, però encara tindran accés a les seues caixes fortes individuals. El procés pot tardar uns quants segons a completar-se i no es pot interrompre ni cancel·lar."
+  "removeOrgUsersConfirmation": {
+    "message": "Quan se suprimeixen els membres, ja no tenen accés a les dades de l'organització i aquesta acció és irreversible. Per tornar a afegir el membre a l'organització, cal convidar-lo i incorporar-lo de nou. El procés pot tardar uns quants segons a completar-se i no es pot interrompre ni cancel·lar."
   },
-  "activateUsersWarning": {
-    "message": "Esteu segur que voleu activar els membres següents, donant-los accés a l'organització? El procés pot tardaruns quants segons a completar-se i no es pot interrompre ni cancel·lar."
+  "revokeUsersWarning": {
+    "message": "Quan els membres són revocats, ja no tenen accés a les dades de l'organització. Per restaurar ràpidament l'accés dels membres, aneu a la pestanya Revocat. El procés pot tardar uns quants segons a completar-se i no es pot interrompre ni cancel·lar."
   },
   "theme": {
     "message": "Tema"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Suprimit correctament"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Desactivat correctament"
+  "bulkRevokedMessage": {
+    "message": "S'ha revocat l'accés a l'organització correctament"
   },
-  "bulkActivatedMessage": {
-    "message": "Activat correctament"
+  "bulkRestoredMessage": {
+    "message": "S'ha restaurat l'accés a l'organització correctament"
   },
   "bulkFilteredMessage": {
     "message": "Exclòs, no aplicable per a aquesta acció."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Suprimeix usuaris"
   },
-  "deactivateUsers": {
-    "message": "Desactiva usuaris"
+  "revokeUsers": {
+    "message": "Revoca usuaris"
   },
-  "activateUsers": {
-    "message": "Activa usuaris"
+  "restoreUsers": {
+    "message": "Restaura usuaris"
   },
   "error": {
     "message": "Error"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "S'ha creat un patrocini"
-  },
-  "revoke": {
-    "message": "Revoca"
   },
   "emailSent": {
     "message": "Correu electrònic enviat"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "Aprovisionament SCIM",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Proporcioneu automàticament usuaris i grups amb el vostre proveïdor d'identitat preferit mitjançant el subministrament SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Habilita SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Configureu el vostre proveïdor d'identitat preferit configurant l'URL i la clau de l'API SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Aquesta clau d'API té accés per gestionar els usuaris de la vostra organització. S'ha de mantenir en secret."
+  },
+  "copyScimKey": {
+    "message": "Copieu la clau de l'API SCIM al porta-retalls",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Gira la clau de l'API SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Esteu segur que voleu girar la clau de l'API SCIM? La clau actual ja no funcionarà per a cap integració existent.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Gira la clau"
+  },
+  "scimApiKey": {
+    "message": "Gira la clau de l'API SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Copia l'URL del punt final d'SCIM al porta-retalls",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "URL d'SCIM",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "La clau de l'API SCIM s'ha girat correctament",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "La configuració de SCIM s'ha guardat correctament",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Es requereix una entrada."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Activat"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

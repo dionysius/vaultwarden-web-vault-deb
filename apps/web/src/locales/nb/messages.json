@@ -573,7 +573,7 @@
     "message": "Opprett en konto"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Start prøveperiode"
   },
   "logIn": {
     "message": "Logg på"
@@ -597,7 +597,7 @@
     "message": "Superpassordet er passordet du bruker for å få tilgang til hvelvet ditt. Det er veldig viktig at du aldri glemmer ditt superpassord. Det er ingen måter å få tilbake passordet på dersom du noensinne skulle klare å glemme det."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Hovedpassord kan ikke gjenopprettes hvis du glemmer det!"
   },
   "masterPassHintDesc": {
     "message": "Et hint for superpassordet kan hjelpe deg med å huske på passordet dersom du skulle glemme det."
@@ -630,19 +630,22 @@
     "message": "Ugyldig E-postadresse."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Hovedpassord er obligatorisk."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Skriv inn hovedpassordet på nytt."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hovedpassordet må være minst åtte tegn."
   },
   "masterPassDoesntMatch": {
     "message": "Superpassord-bekreftelsen er ikke samsvarende."
   },
   "newAccountCreated": {
     "message": "Din nye konto har blitt opprettet! Du kan nå logge på."
+  },
+  "trialAccountCreated": {
+    "message": "Kontoen ble opprettet."
   },
   "masterPassSent": {
     "message": "Vi har sendt deg en E-post med hintet til superpassordet."
@@ -1161,10 +1164,10 @@
     "message": "Endre språket som brukes av netthvelvet."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Vis nettsideikoner"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Vis et gjenkjennelig bilde ved siden av hver innlogging."
   },
   "enableGravatars": {
     "message": "Skru på Gravatarer",
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Aktivert"
   },
-  "activate": {
-    "message": "Activate"
+  "restoreAccess": {
+    "message": "Gjenopprett tilgang"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Deaktiver"
   },
-  "deactivate": {
-    "message": "Deactivate"
+  "revokeAccess": {
+    "message": "Opphev tilgang"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Denne 2-trinnsleverandøren er aktivert på din konto."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Fakturering"
   },
+  "billingPlanLabel": {
+    "message": "Betalingsplan"
+  },
+  "paymentType": {
+    "message": "Betalingstype"
+  },
   "accountCredit": {
     "message": "Kontokreditt",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "år"
   },
+  "yr": {
+    "message": "år"
+  },
   "month": {
     "message": "måned"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Faktureringsdetaljer"
+  },
+  "billingTrialSubLabel": {
+    "message": "Din betalingsmetode vil ikke bli belastet i løpet av prøveperioden på 7 dager."
   },
   "creditCard": {
     "message": "Bankkort"
@@ -2169,10 +2184,34 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Takk for at du registrerte deg hos Bitwarden for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "Din $PLAN$ 7-dagers gratis prøveversjon blir konvertert til et betalt abonnement etter 7 dager.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Vi har sendt en e-post til faktureringseposten til ditt team på "
+  },
   "monthly": {
     "message": "Månedlig"
   },
   "annually": {
+    "message": "Årlig"
+  },
+  "annual": {
     "message": "Årlig"
   },
   "basePrice": {
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Er du sikker på at du vil slette denne brukeren?"
   },
-  "deactivateUserConfirmation": {
-    "message": "The member will no longer have access to the organization, but will still have access to their individual vault."
+  "removeOrgUserConfirmation": {
+    "message": "Når et medlem fjernes, har de ikke lenger tilgang til organisasjonsdata og dette handlingen er ugjenkallelig. For å legge til medlemmet tilbake i organisasjonen, må de inviteres og legges til på nytt."
   },
-  "activateUserConfirmation": {
-    "message": "Are you sure you want to activate this user, granting them access to the organization?"
+  "revokeUserConfirmation": {
+    "message": "Når et medlem blir fjernet, har de ikke lenger tilgang til organisasjonsdata. For raskt å gjenopprette medlemstilgang, gå til kategorien Tilbakekall."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Advarsel! Denne brukeren krever nøkkelkobling for å administrere krypteringen. Fjerner du denne brukeren fra organisasjonen din vil deaktivere kontoen sin. Denne handlingen kan ikke angres. Vil du fortsette?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Deactivated user $ID$.",
+  "removeUserIdAccess": {
+    "message": "Fjern $ID$ tilgang",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Activated user $ID$.",
+  "revokedUserId": {
+    "message": "Tilbakekalt organisasjonstilgang for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Deactivate user $ID$?",
+  "restoredUserId": {
+    "message": "Gjenopprettet organisasjonstilgang for $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Activate user $ID$?",
+  "revokeUserId": {
+    "message": "Opphev tilgangen til $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3169,7 +3208,7 @@
     "message": "Ved å huke av denne boksen sier du deg enig i følgende:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Bruksvilkårene og personvernerklæring er ikke godkjent."
   },
   "termsOfService": {
     "message": "Tjenestevilkår"
@@ -3219,7 +3258,7 @@
     "message": "Organisasjonen er skrudd av."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Gjenstander i deaktiverte organisasjoner kan ikke åpnes. Ta kontakt med eieren av organisasjonen for hjelp."
   },
   "licenseIsExpired": {
     "message": "Lisensen har utløpt."
@@ -3346,13 +3385,13 @@
     "message": "Klon"
   },
   "masterPassPolicyTitle": {
-    "message": "Master password requirements"
+    "message": "Krav til hovedpassord"
   },
   "masterPassPolicyDesc": {
     "message": "Sett minimumskrav til hovedpassordets styrke."
   },
   "twoStepLoginPolicyTitle": {
-    "message": "Require two-step login"
+    "message": "Krev 2-trinnsinnlogging"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Krev at brukere konfigurere totrinns pålogging på sine personlige kontoer."
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Deaktivert"
   },
-  "deactivated": {
-    "message": "Deactivated"
+  "revoked": {
+    "message": "Opphevet"
   },
   "sendLink": {
     "message": "Send lenke",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Er du sikker på at du vil fjerne følgende brukere? Prosessen kan ta noen sekunder å fullføre og ikke kan avbrytes eller avbrytes."
   },
-  "deactivateUsersWarning": {
-    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  "removeOrgUsersConfirmation": {
+    "message": "Når medlemer fjernes har de ikke lenger tilgang til organisasjonsdata og denne handlingen er ugjenkallelig. For å legge til medlemmet tilbake i organisasjonen, må de inviteres og legges til på nytt. Det kan ta noen sekunder før prosessen fullføres og den kan ikke avbrytes."
   },
-  "activateUsersWarning": {
-    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  "revokeUsersWarning": {
+    "message": "Når medlemer tilbakekalles, har de ikke lenger tilgang til organisasjonsdata. For raskt å gjenopprette medlemstilgang, gå til kategorien Tilbakekall. Det kan ta noen sekunder før prosessen fullføres og den kan ikke avbrytes."
   },
   "theme": {
     "message": "Tema"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Fjernet"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Deactivated successfully"
+  "bulkRevokedMessage": {
+    "message": "Organisasjonsadgang opphevet"
   },
-  "bulkActivatedMessage": {
-    "message": "Activated successfully"
+  "bulkRestoredMessage": {
+    "message": "Organisasjonsadgang gjennopprettet"
   },
   "bulkFilteredMessage": {
     "message": "Unntatt dette, gjelder ikke for dette tiltaket."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Fjern brukere"
   },
-  "deactivateUsers": {
-    "message": "Deactivate Users"
+  "revokeUsers": {
+    "message": "Revoke Users"
   },
-  "activateUsers": {
-    "message": "Activate Users"
+  "restoreUsers": {
+    "message": "Restore Users"
   },
   "error": {
     "message": "Feil"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Sponsor fjernet"
-  },
-  "revoke": {
-    "message": "Tilbakekall"
   },
   "emailSent": {
     "message": "E-post sendt"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "SCIM Provisioning",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Enable SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "This API key has access to manage users within your organization. It should be kept secret."
+  },
+  "copyScimKey": {
+    "message": "Copy the SCIM API Key to your clipboard",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Rotate the SCIM API Key",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Rotate Key"
+  },
+  "scimApiKey": {
+    "message": "SCIM API Key",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM URL",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "The SCIM API Key has been successfully rotated",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "SCIM settings have been saved successfully",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Input is required."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "On"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

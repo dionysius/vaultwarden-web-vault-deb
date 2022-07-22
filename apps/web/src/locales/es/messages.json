@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "¡Tu nueva cuenta ha sido creada! Ahora puedes acceder."
   },
+  "trialAccountCreated": {
+    "message": "Cuenta creada con éxito."
+  },
   "masterPassSent": {
     "message": "Te hemos enviado un correo electrónico con la pista de tu contraseña maestra."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Activado"
   },
-  "activate": {
-    "message": "Activar"
+  "restoreAccess": {
+    "message": "Recuperar el acceso"
   },
   "premium": {
     "message": "Premium",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Desactivar"
   },
-  "deactivate": {
-    "message": "Desactivar"
+  "revokeAccess": {
+    "message": "Revocar el acceso"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Este proveedor de autenticación en dos pasos está habilitado para tu cuenta."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Facturación"
   },
+  "billingPlanLabel": {
+    "message": "Plan de facturación"
+  },
+  "paymentType": {
+    "message": "Tipo de pago"
+  },
   "accountCredit": {
     "message": "Crédito de la cuenta",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "año"
   },
+  "yr": {
+    "message": "año"
+  },
   "month": {
     "message": "mes"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Información de facturación"
+  },
+  "billingTrialSubLabel": {
+    "message": "Su método de pago no se utilizará para realizar el cobro durante la prueba gratuita de 7 días."
   },
   "creditCard": {
     "message": "Tarjeta de crédito"
@@ -2169,10 +2184,34 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "¡Gracias por registrarte en Bitwarden para $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "Tu prueba gratuita de 7 días para el $PLAN$ se convertirá en una suscripción de pago después de estos 7 días.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Hemos enviado un correo electrónico de confirmación al correo electrónico de facturación de tu equipo en "
+  },
   "monthly": {
     "message": "Mensual"
   },
   "annually": {
+    "message": "Anual"
+  },
+  "annual": {
     "message": "Anual"
   },
   "basePrice": {
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "¿Estás seguro de que deseas eliminar a este usuario?"
   },
-  "deactivateUserConfirmation": {
-    "message": "El miembro ya no tendrá acceso a la organización, pero todavía tendrá acceso a su caja fuerte individual."
+  "removeOrgUserConfirmation": {
+    "message": "Cuando se elimina un miembro de una organización, este ya no tiene acceso a los datos de la misma siendo esta acción es irreversible. Para agregar al miembro de nuevo a la organización, debe ser invitado y incorporado de nuevo."
   },
-  "activateUserConfirmation": {
-    "message": "¿Está seguro de que desea activar este usuario, concediéndole acceso a la organización?"
+  "revokeUserConfirmation": {
+    "message": "Cuando un miembro de una organización es revocado, ya no tiene acceso a los datos de la misma. Para restaurar rápidamente el acceso de los miembros, vaya a la pestaña Revocado."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "¡Advertencia! Este usuario requiere Conector de Clave para administrar su cifrado. Eliminar a este usuario de tu organización deshabilitará permanentemente su cuenta. Esta acción no se puede deshacer. ¿Quieres continuar?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Usuario $ID$ desactivado.",
+  "removeUserIdAccess": {
+    "message": "Eliminar acceso $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Usuario $ID$ activado.",
+  "revokedUserId": {
+    "message": "Acceso a la organización revocado para $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "¿Desactivar el usuario $ID$?",
+  "restoredUserId": {
+    "message": "Acceso a la organización restaurado para $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "¿Activar el usuario $ID$?",
+  "revokeUserId": {
+    "message": "Revocar el acceso a $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3219,7 +3258,7 @@
     "message": "La organización está desactivada."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "No se puede acceder a los elementos que pertenecen a organizaciones que estén deshabilitadas. Por favor, póngase en contacto con el propietario de la organización para obtener ayuda."
   },
   "licenseIsExpired": {
     "message": "Licencia expirada."
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Deshabilitado"
   },
-  "deactivated": {
-    "message": "Desactivado"
+  "revoked": {
+    "message": "Revocado"
   },
   "sendLink": {
     "message": "Enlace Send",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "¿Está seguro que desea eliminar los siguientes usuarios? El proceso puede tardar unos segundos en completarse y no puede interrumpirse o cancelarse."
   },
-  "deactivateUsersWarning": {
-    "message": "Are you sure you want to deactivate the following members? They will no longer have access to the organization, but will still have access to their individual vaults. The process may take a few seconds to complete and cannot be interrupted or canceled."
+  "removeOrgUsersConfirmation": {
+    "message": "Cuando los miembros de una organización son eliminados, ya no tienen acceso a los datos de la misma siendo esta acción irreversible. Para añadir a un miembro de vuelta a la organización, debe ser invitado e incorporado a la misma de nuevo. El proceso puede tardar unos segundos en completarse y no se puede interrumpir o cancelar."
   },
-  "activateUsersWarning": {
-    "message": "Are you sure you want to activate the following members, granting them access to the organization? The process may take a few seconds to complete and cannot be interrupted or canceled."
+  "revokeUsersWarning": {
+    "message": "Cuando los miembros de una organización son revocados, ya no tienen acceso a los datos de la misma. Para restaurar rápidamente el acceso de los miembros, vaya a la pestaña Revocado. El proceso puede tardar unos segundos en completarse y no se puede interrumpir o cancelar."
   },
   "theme": {
     "message": "Tema"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Eliminado con éxito"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Desactivado correctamente"
+  "bulkRevokedMessage": {
+    "message": "Acceso a la organización revocado con éxito"
   },
-  "bulkActivatedMessage": {
-    "message": "Activado correctamente"
+  "bulkRestoredMessage": {
+    "message": "Acceso a la organización restaurado con éxito"
   },
   "bulkFilteredMessage": {
     "message": "Excluido, no aplicable a esta acción."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Eliminar usuarios"
   },
-  "deactivateUsers": {
-    "message": "Desactivar usuarios"
+  "revokeUsers": {
+    "message": "Revocar usuarios"
   },
-  "activateUsers": {
-    "message": "Activar usuarios"
+  "restoreUsers": {
+    "message": "Restaurar usuarios"
   },
   "error": {
     "message": "Error"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Patrocinio creado"
-  },
-  "revoke": {
-    "message": "Revocar"
   },
   "emailSent": {
     "message": "Correo electrónico enviado"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "Aprovisionamiento de SCIM",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Activar SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "This API key has access to manage users within your organization. It should be kept secret."
+  },
+  "copyScimKey": {
+    "message": "Copy the SCIM API Key to your clipboard",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Rotar la clave API SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "¿Está seguro de que desea rotar la clave API SCIM? La clave actual no funcionará para ninguna integración existente.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Rotar clave"
+  },
+  "scimApiKey": {
+    "message": "Clave API SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "URL SCIM",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "La clave de API de SCIM se ha rotado correctamente",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "Los ajustes de SCIM se han guardado correctamente",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Entrada requerida."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Activado"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

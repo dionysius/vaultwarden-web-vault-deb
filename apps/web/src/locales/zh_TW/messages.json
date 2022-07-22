@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "帳戶已建立！現在可以登入了。"
   },
+  "trialAccountCreated": {
+    "message": "帳戶建立成功。"
+  },
   "masterPassSent": {
     "message": "已傳送包含您主密碼提示的電子郵件。"
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "已啟用"
   },
-  "activate": {
-    "message": "啟用"
+  "restoreAccess": {
+    "message": "還原存取權限"
   },
   "premium": {
     "message": "進階版",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "停用"
   },
-  "deactivate": {
-    "message": "停用"
+  "revokeAccess": {
+    "message": "撤銷存取權限"
   },
   "twoStepLoginProviderEnabled": {
     "message": "您的帳戶已啟用兩步驟登入。"
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "計費"
   },
+  "billingPlanLabel": {
+    "message": "計費方案"
+  },
+  "paymentType": {
+    "message": "付款類型"
+  },
   "accountCredit": {
     "message": "帳戶餘額",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "年"
   },
+  "yr": {
+    "message": "年"
+  },
   "month": {
     "message": "月"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "帳單資訊"
+  },
+  "billingTrialSubLabel": {
+    "message": "在 7 天的免費試用期間，不會從您的付款方式中扣款。"
   },
   "creditCard": {
     "message": "信用卡"
@@ -2169,10 +2184,34 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "感謝您申請 Bitwarden for $PLAN$！",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "您的 $PLAN$ 7 天免費試用期，將會在 7 天後轉換為付費訂閱。",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "我們已經將確認信件傳送至團隊的帳單信箱："
+  },
   "monthly": {
     "message": "每月"
   },
   "annually": {
+    "message": "每年"
+  },
+  "annual": {
     "message": "每年"
   },
   "basePrice": {
@@ -2218,7 +2257,7 @@
     "message": "原則"
   },
   "singleSignOn": {
-    "message": "單一登入(SSO)"
+    "message": "單一登入 (SSO)"
   },
   "editPolicy": {
     "message": "編輯原則"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "您確定要移除此使用者？"
   },
-  "deactivateUserConfirmation": {
-    "message": "該成員將無法再存取該組織，但仍可以存取其個人密碼庫。"
+  "removeOrgUserConfirmation": {
+    "message": "成員被移除後，他們將不再擁有對組織資料的存取權限，並且此動作無法恢復。要將此成員添加回組織，必須重新邀請他們並加入。"
   },
-  "activateUserConfirmation": {
-    "message": "您確定要啟用以下使用者，授予他們對組織的存取權限嗎？"
+  "revokeUserConfirmation": {
+    "message": "成員被撤銷后，他們將不再擁有對組織資料的存取權限。要快速還原此成員的存取權限，請轉到「已撤銷」分頁。"
   },
   "removeUserConfirmationKeyConnector": {
     "message": "警告！這位使用者需要 Key Connector 管理他們的加密方式。從您的組織中移除這位使用者，會永久停用他們的帳戶。此操作無法復原，是否繼續？"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "使用者 $ID$ 已停用。",
+  "removeUserIdAccess": {
+    "message": "移除 $ID$ 的存取權限",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "使用者 $ID$ 已啟用。",
+  "revokedUserId": {
+    "message": "已撤銷 $ID$ 對組織的存取權限。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "停用使用者 $ID$？",
+  "restoredUserId": {
+    "message": "已還原 $ID$ 對組織的存取權限。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "啟用使用者 $ID$？",
+  "revokeUserId": {
+    "message": "撤銷 $ID$ 的存取權限",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2902,7 +2941,7 @@
     "message": "刪除後，使用者帳戶仍然可用，但將不再與此組織關聯。"
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "刪除 $ORGANIZATION$ 為永久性動作，並且無法回復。",
+    "message": "刪除 $ORGANIZATION$ 為永久性動作，並且無法恢復。",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3352,7 +3391,7 @@
     "message": "設定主密碼強度要求。"
   },
   "twoStepLoginPolicyTitle": {
-    "message": "需要兩步驟登入"
+    "message": "要求兩步驟登入"
   },
   "twoStepLoginPolicyDesc": {
     "message": "要求成員設定兩步驟登入。"
@@ -3594,16 +3633,16 @@
     "message": "不是擁有者或管理員並且已經是其他組織的成員的組織成員將從您的組織中移除。"
   },
   "requireSso": {
-    "message": "要求單一登入認證"
+    "message": "要求單一登入驗證"
   },
   "requireSsoPolicyDesc": {
-    "message": "要求使用者以企業單一登入方法登入。"
+    "message": "要求成員使用企業單一登入方法登入。"
   },
   "prerequisite": {
     "message": "先決條件"
   },
   "requireSsoPolicyReq": {
-    "message": "必須先開啟「單一組織」企業原則，才能開啟此原則。"
+    "message": "必須先開啟「單一組織」企業原則，才能激活此原則。"
   },
   "requireSsoPolicyReqError": {
     "message": "未啟用單一組織原則。"
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "已停用"
   },
-  "deactivated": {
-    "message": "已停用"
+  "revoked": {
+    "message": "已撤銷"
   },
   "sendLink": {
     "message": "Send 連結",
@@ -3898,10 +3937,10 @@
     }
   },
   "personalOwnership": {
-    "message": "個人擁有權"
+    "message": "停用個人密碼庫"
   },
   "personalOwnershipPolicyDesc": {
-    "message": "透過移除個人擁有權選項要求使用者將密碼庫項目儲存至組織。"
+    "message": "透過停用個人密碼庫選項，要求成員將項目儲存至組織。"
   },
   "personalOwnershipExemption": {
     "message": "組織擁有者與管理員不受此原則的執行影響。"
@@ -3939,7 +3978,7 @@
     "message": "可以管理組織原則的組織使用者豁免此原則的執行。"
   },
   "disableHideEmail": {
-    "message": "不允許使用者在建立或編輯 Send 時隱藏他們的電子郵件位址。",
+    "message": "建立或編輯 Send 時，始終對收件人顯示成員的電子郵件位址。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4238,7 +4277,7 @@
     "message": "主密碼重設"
   },
   "resetPasswordPolicyDescription": {
-    "message": "允許組織管理者重設組織使用者的主密碼。"
+    "message": "允許管理者重設成員的主密碼。"
   },
   "resetPasswordPolicyWarning": {
     "message": "組織使用者需要先自行註冊或被自動註冊後，管理者才能重設他們的主密碼。"
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "您確定要移除以下使用者嗎？這可能需要幾秒鐘的時間，並且不能中斷或取消。"
   },
-  "deactivateUsersWarning": {
-    "message": "您確定要停用以下成員嗎？ 他們將無法再存取該組織，但仍可以存取其個人密碼庫。該過程可能需要幾秒鐘的時間，並且不能中斷或取消。"
+  "removeOrgUsersConfirmation": {
+    "message": "成員被移除後，他們將不再擁有對組織資料的存取權限，並且此動作無法恢復。要將成員添加回組織，必須重新邀請他們並加入。這可能需要幾秒鐘的時間，並且不能中斷或取消。"
   },
-  "activateUsersWarning": {
-    "message": "您確定要啟用以下成員，授予他們對組織的存取權限嗎？ 該過程可能需要幾秒鐘的時間，並且不能中斷或取消。"
+  "revokeUsersWarning": {
+    "message": "成員被撤銷后，他們將不再擁有對組織資料的存取權限。要快速還原成員的存取權限，請轉到「已撤銷」分頁。這可能需要幾秒鐘的時間，並且不能中斷或取消。"
   },
   "theme": {
     "message": "主題"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "已成功移除。"
   },
-  "bulkDeactivatedMessage": {
-    "message": "停用成功"
+  "bulkRevokedMessage": {
+    "message": "成功撤銷對組織的存取權限"
   },
-  "bulkActivatedMessage": {
-    "message": "啟用成功"
+  "bulkRestoredMessage": {
+    "message": "成功還原對組織的存取權限"
   },
   "bulkFilteredMessage": {
     "message": "已排除，不適用於此動作。"
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "移除使用者"
   },
-  "deactivateUsers": {
-    "message": "停用使用者"
+  "revokeUsers": {
+    "message": "撤銷使用者"
   },
-  "activateUsers": {
-    "message": "啟用使用者"
+  "restoreUsers": {
+    "message": "還原使用者"
   },
   "error": {
     "message": "錯誤"
@@ -4755,9 +4794,6 @@
   "sponsorshipCreated": {
     "message": "已建立贊助"
   },
-  "revoke": {
-    "message": "撤銷"
-  },
   "emailSent": {
     "message": "已寄出郵件"
   },
@@ -4823,7 +4859,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpLink": {
-    "message": "要求 SSO 驗證原則",
+    "message": "要求單一登入驗證原則",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
@@ -4831,7 +4867,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpKeyConnector": {
-    "message": "SSO 驗證及單一組織原則需要先設定 Key Connector 解密方式後才能啟用。"
+    "message": "設定 Key Connector 解密之前，需要先設定 SSO 驗證和單一組織原則。"
   },
   "memberDecryptionOption": {
     "message": "成員解密選項"
@@ -4918,7 +4954,7 @@
     "message": "產生權杖"
   },
   "rotateToken": {
-    "message": "更換權杖"
+    "message": "輪換權杖"
   },
   "rotateBillingSyncTokenWarning": {
     "message": "如果繼續，您需要重新在自我裝載伺服器上設定帳單同步。"
@@ -4933,7 +4969,7 @@
     "message": "若要在您自己的伺服器上設定組織，您需要上傳授權檔案。若要使您的自我裝載組織支援「免費家庭」方案及進階帳單功能，您需要設定帳單同步。"
   },
   "billingSyncApiKeyRotated": {
-    "message": "權杖已更換。"
+    "message": "權杖已輪換。"
   },
   "billingSync": {
     "message": "帳單同步"
@@ -5113,7 +5149,7 @@
     }
   },
   "awaitingSyncSingular": {
-    "message": "權杖已在 $DAYS$ 天前更換。請在您自我裝載組織的設定中，更新帳單同步權杖。",
+    "message": "權杖已在 $DAYS$ 天前輪換。請在您自我裝載組織的設定中，更新帳單同步權杖。",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5122,7 +5158,7 @@
     }
   },
   "awaitingSyncPlural": {
-    "message": "權杖已在 $DAYS$ 天前更換。請在您自我裝載組織的設定中，更新帳單同步權杖。",
+    "message": "權杖已在 $DAYS$ 天前輪換。請在您的自我裝載組織設定中，更新帳單同步權杖。",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "SCIM 佈建",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "透過 SCIM 佈建，使用您首選的身分提供程式自動佈建用戶和群組",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "啟用 SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "透過配置 URL 和 SCIM API 金鑰來設定您的首選身分提供程式",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "此 API 金鑰擁有管理您組織内使用者的權限，請儲存在安全的地方。"
+  },
+  "copyScimKey": {
+    "message": "複製 SCIM API 金鑰至剪貼簿",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "輪換 SCIM API 金鑰",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "確定要輪換 SCIM API 金鑰嗎？輪換後目前的金鑰將不再適用於現有的整合。",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "輪換金鑰"
+  },
+  "scimApiKey": {
+    "message": "SCIM API 金鑰",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "複製 SCIM 端點 URL 至剪貼簿",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "SCIM URL",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "SCIM API 金鑰已成功輪換",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "已成功儲存 SCIM 設定",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "必須輸入內容。"
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "開啟"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

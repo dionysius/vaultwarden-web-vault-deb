@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Ваш обліковий запис створений! Тепер ви можете увійти."
   },
+  "trialAccountCreated": {
+    "message": "Обліковий запис успішно створено."
+  },
   "masterPassSent": {
     "message": "Ми надіслали вам лист з підказкою для головного пароля."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Увімкнено"
   },
-  "activate": {
-    "message": "Активувати"
+  "restoreAccess": {
+    "message": "Відновити доступ"
   },
   "premium": {
     "message": "Преміум",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Вимкнути"
   },
-  "deactivate": {
-    "message": "Деактивувати"
+  "revokeAccess": {
+    "message": "Відкликати доступ"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Для вашого облікового запису увімкнено цей спосіб двоетапної перевірки."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Оплата"
   },
+  "billingPlanLabel": {
+    "message": "Тарифний план"
+  },
+  "paymentType": {
+    "message": "Тип оплати"
+  },
   "accountCredit": {
     "message": "Кредит рахунку",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "рік"
   },
+  "yr": {
+    "message": "рік"
+  },
   "month": {
     "message": "місяць"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Платіжна інформація"
+  },
+  "billingTrialSubLabel": {
+    "message": "З вас не буде стягнуто кошти протягом 7 днів пробного періоду."
   },
   "creditCard": {
     "message": "Кредитна карта"
@@ -2169,11 +2184,35 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Дякуємо за передплату тарифного плану Bitwarden $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "Через 7 днів пробного періоду $PLAN$ вас буде переведено на платний тарифний план.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Ми надіслали підтверджувальний лист на електронну пошту вашої команди "
+  },
   "monthly": {
     "message": "Щомісяця"
   },
   "annually": {
     "message": "Щороку"
+  },
+  "annual": {
+    "message": "Річний"
   },
   "basePrice": {
     "message": "Базова ціна"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Ви справді хочете вилучити цього користувача?"
   },
-  "deactivateUserConfirmation": {
-    "message": "Учасник більше не матиме доступу до організації, але й надалі може користуватися особистим сховищем."
+  "removeOrgUserConfirmation": {
+    "message": "Після вилучення учасник більше не матиме доступу до даних організації. Ця дія незворотна. Щоб повторно додати учасника до організації, необхідно запросити його знову."
   },
-  "activateUserConfirmation": {
-    "message": "Ви дійсно хочете активувати цього користувача, надаючи йому доступ до організації?"
+  "revokeUserConfirmation": {
+    "message": "Після відкликання учасник більше не матиме доступу до даних організації. Для швидкого відновлення доступу учасника перейдіть на вкладку Відкликані."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Попередження! Цей користувач потребує Key Connector для керування шифруванням. Вилучення цього користувача з вашої організації остаточно вимкне його обліковий запис. Цю дію неможливо скасувати. Ви хочете продовжити?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Деактивований користувач $ID$.",
+  "removeUserIdAccess": {
+    "message": "Вилучити доступ для $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Активований користувач $ID$.",
+  "revokedUserId": {
+    "message": "Доступ до організації для $ID$ відкликано.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Деактивувати користувача $ID$?",
+  "restoredUserId": {
+    "message": "Доступ до організації для $ID$ відновлено.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Активувати користувача $ID$?",
+  "revokeUserId": {
+    "message": "Відкликати доступ для $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Вимкнено"
   },
-  "deactivated": {
-    "message": "Деактивовано"
+  "revoked": {
+    "message": "Відкликані"
   },
   "sendLink": {
     "message": "Посилання на відправлення",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Ви дійсно хочете вилучити зазначених користувачів? Цей процес може тривати кілька секунд і його неможливо перервати чи скасувати."
   },
-  "deactivateUsersWarning": {
-    "message": "Ви дійсно хочете деактивувати зазначених учасників? Вони більше не матимуть доступу до організації, але й надалі можуть користуватися особистим сховищем. Процес може тривати кілька секунд і його не можна перервати чи скасувати."
+  "removeOrgUsersConfirmation": {
+    "message": "Після вилучення учасники більше не матимуть доступу до даних організації. Ця дія незворотна. Щоб повторно додати учасників до організації, необхідно запросити їх знову. Процес може тривати кілька секунд і його неможливо перервати чи скасувати."
   },
-  "activateUsersWarning": {
-    "message": "Ви дійсно хочете активувати зазначених учасників, надаючи їм доступ до організації? Процес може тривати кілька секунд і його не можна перервати чи скасувати."
+  "revokeUsersWarning": {
+    "message": "Після відкликання учасники більше не матимуть доступу до даних організації. Для швидкого відновлення доступу учасників перейдіть на вкладку Відкликані. Процес може тривати кілька секунд і його неможливо перервати чи скасувати."
   },
   "theme": {
     "message": "Тема"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Успішно вилучено"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Успішно деактивовано"
+  "bulkRevokedMessage": {
+    "message": "Доступ до організації успішно відкликано"
   },
-  "bulkActivatedMessage": {
-    "message": "Успішно активовано"
+  "bulkRestoredMessage": {
+    "message": "Доступ до організації успішно відновлено"
   },
   "bulkFilteredMessage": {
     "message": "Виключено, не застосовується для цієї дії."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Вилучити користувачів"
   },
-  "deactivateUsers": {
-    "message": "Деактивувати користувачів"
+  "revokeUsers": {
+    "message": "Відкликати користувачів"
   },
-  "activateUsers": {
-    "message": "Активувати користувачів"
+  "restoreUsers": {
+    "message": "Відновити користувачів"
   },
   "error": {
     "message": "Помилка"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Спонсорування створено"
-  },
-  "revoke": {
-    "message": "Відкликати"
   },
   "emailSent": {
     "message": "Лист надіслано"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "Забезпечення SCIM",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Автоматично забезпечувати користувачів та групи бажаним постачальником облікових даних через SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Увімкнути SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Встановіть бажаного постачальника облікових даних, налаштувавши URL-адресу та ключ API для SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Цей ключ API має доступ до керування користувачами в межах вашої організації. Його необхідно надійно зберігати."
+  },
+  "copyScimKey": {
+    "message": "Копіювати ключ API для SCIM до буфера обміну",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Оновити ключ API для SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Ви дійсно хочете оновити ключ API для SCIM? Поточний ключ надалі не працюватиме з жодними наявними інтеграціями.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Оновити ключ"
+  },
+  "scimApiKey": {
+    "message": "Ключ API для SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Копіювати URL кінцевої точки SCIM до буфера обміну",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "URL-адреса SCIM",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "Ключ API для SCIM було успішно оновлено",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "Налаштування SCIM було успішно збережено",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Необхідно ввести дані."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Увімкнено"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

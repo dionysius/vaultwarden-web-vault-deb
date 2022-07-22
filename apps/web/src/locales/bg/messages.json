@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Абонаментът ви бе създаден. Вече можете да се впишете."
   },
+  "trialAccountCreated": {
+    "message": "Регистрацията е създадена успешно."
+  },
   "masterPassSent": {
     "message": "Изпратихме ви писмо с подсказка за главната ви парола."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Включено"
   },
-  "activate": {
-    "message": "Активиране"
+  "restoreAccess": {
+    "message": "Възстановяване на достъпа"
   },
   "premium": {
     "message": "Платен",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Изключване"
   },
-  "deactivate": {
-    "message": "Деактивиране"
+  "revokeAccess": {
+    "message": "Отнемане на достъпа"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Този доставчик на двустепенно удостоверяване е включен за абонамента ви."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Заплащане"
   },
+  "billingPlanLabel": {
+    "message": "Платежен план"
+  },
+  "paymentType": {
+    "message": "Вид плащане"
+  },
   "accountCredit": {
     "message": "Кредит по абонамента",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "година"
   },
+  "yr": {
+    "message": "година"
+  },
   "month": {
     "message": "месец"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Информация за фактуриране"
+  },
+  "billingTrialSubLabel": {
+    "message": "Няма да получите задължение за плащане по време на 7-дневния пробен период."
   },
   "creditCard": {
     "message": "Кредитна карта"
@@ -2169,11 +2184,35 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Благодарим Ви, че се регистрирахте в Битуорден и избрахте плана $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "След като Вашият 7-дневен безплатен пробен период на плана $PLAN$ изтече, той ще бъде превърнат в платен абонамент.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Изпратихме Ви е-писмо за потвърждение до е-пощата на екипа Ви, на адрес: "
+  },
   "monthly": {
     "message": "Месечно"
   },
   "annually": {
     "message": "Годишно"
+  },
+  "annual": {
+    "message": "Annual"
   },
   "basePrice": {
     "message": "Базова цена"
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Сигурни ли сте, че искате да изтриете този потребител?"
   },
-  "deactivateUserConfirmation": {
-    "message": "Този член вече няма да има достъп до организацията, но ще продължи да има достъп до собствения си трезор."
+  "removeOrgUserConfirmation": {
+    "message": "Когато член бъде премахнат, той вече няма да има достъп до данните на организацията. Това действие е необратимо. Ако след това искате да върнете потребителя в организацията, той трябва отново да бъде поканен и въведен в нея."
   },
-  "activateUserConfirmation": {
-    "message": "Наистина ли искате да активирате този потребител, давайки му така достъп до организацията?"
+  "revokeUserConfirmation": {
+    "message": "Когато достъпът на член бъде отнет, той няма да може да разполага с данните в организацията. Ако искате да върнете достъпа му, идете в раздела „Отнет достъп“."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Внимание! Този потребител има нужда от конектор за ключове, за да управлява шифроването си. Ако премахнете потребителя от организацията, ще заключите завинаги достъпа му до неговата регистрация. Това действие е необратимо. Наистина ли искате да продължите?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Деактивиран потребител: $ID$.",
+  "removeUserIdAccess": {
+    "message": "Премахване на достъпа на $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Активиран потребител: $ID$.",
+  "revokedUserId": {
+    "message": "Достъпът на $ID$ до организацията е отнет.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Деактивиране на потребител $ID$?",
+  "restoredUserId": {
+    "message": "Достъпът на $ID$ до организацията е възстановен.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Активиране на потребител $ID$?",
+  "revokeUserId": {
+    "message": "Отнемане на достъпа на $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3219,7 +3258,7 @@
     "message": "Организацията е изключена."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Записите в изключени организации не са достъпни. Свържете се със собственика на организацията си за помощ."
   },
   "licenseIsExpired": {
     "message": "Изтекъл лиценз."
@@ -3346,13 +3385,13 @@
     "message": "Дублиране"
   },
   "masterPassPolicyTitle": {
-    "message": "Master password requirements"
+    "message": "Изисквания за главната парола"
   },
   "masterPassPolicyDesc": {
     "message": "Задаване на минимална сила на главната парола."
   },
   "twoStepLoginPolicyTitle": {
-    "message": "Require two-step login"
+    "message": "Изискване на двустепенно удостоверяване"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Изискване от потребителите да включат двустепенно удостоверяване за личните си абонаменти."
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Изключено"
   },
-  "deactivated": {
-    "message": "Деактивиран"
+  "revoked": {
+    "message": "Отнет достъп"
   },
   "sendLink": {
     "message": "Изпращане на връзката",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Наистина ли искате да премахнете следните потребители? Процесът може да отнеме няколко секунди и не може да бъде прекъснат или отменен."
   },
-  "deactivateUsersWarning": {
-    "message": "Наистина ли искате да деактивирате следните членове? Те вече няма да имат достъп до организацията, но ще продължат да имат достъп до собствените си трезори. Процедурата ще отнеме няколко секунди и не трябва да бъде прекъсвана или отменяна."
+  "removeOrgUsersConfirmation": {
+    "message": "Когато член бъде премахнат, той вече няма да има достъп до данните на организацията. Това действие е необратимо. Ако след това искате да върнете потребителя в организацията, той трябва отново да бъде поканен и въведен в нея. Процесът може да отнеме няколко секунди и не трябва да бъде прекъсван."
   },
-  "activateUsersWarning": {
-    "message": "Наистина ли искате да активирате следните потребители, давайки им така достъп до организацията? Процесът може да отнеме няколко секунди и не може да бъде прекъснат или отменен."
+  "revokeUsersWarning": {
+    "message": "Когато достъпът на член бъде отнет, той няма да може да разполага с данните в организацията. Ако искате да върнете достъпа му, идете в раздела „Отнет достъп“. Процесът може да отнеме няколко секунди и не трябва да бъде прекъсван."
   },
   "theme": {
     "message": "Облик"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Успешно премахване"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Успешно деактивиране"
+  "bulkRevokedMessage": {
+    "message": "Достъпът до организацията е отнет успешно"
   },
-  "bulkActivatedMessage": {
-    "message": "Успешно активиране"
+  "bulkRestoredMessage": {
+    "message": "Достъпът до организацията е възстановен успешно"
   },
   "bulkFilteredMessage": {
     "message": "Изключени като неподходящи за това действие."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Премахване на потребителите"
   },
-  "deactivateUsers": {
-    "message": "Деактивиране на потребители"
+  "revokeUsers": {
+    "message": "Отнемане на достъпа на потребители"
   },
-  "activateUsers": {
-    "message": "Активиране на потребители"
+  "restoreUsers": {
+    "message": "Възстановяване на достъпа на потребители"
   },
   "error": {
     "message": "Грешка"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Sponsorship Created"
-  },
-  "revoke": {
-    "message": "Revoke"
   },
   "emailSent": {
     "message": "Писмото е изпратено"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "Удостоверяване чрез SCIM",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Предоставете на потребителите и групите си автоматично удостоверяване със своя предпочитан доставчик на удостоверителни данни като използвате удостоверяване чрез SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Включване на SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Задайте предпочитания си доставчик на удостоверителни данни като настроите адреса и ключа за API на SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Този ключ за API предоставя достъп за управление на потребителите в организацията Ви. Трябва да го пазите в тайна."
+  },
+  "copyScimKey": {
+    "message": "Копиране на ключа за API на SCIM в буфера",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Смяна на ключа за API на SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Наистина ли искате да смените ключа за API на SCIM? Текущият ключ ще спре да работи за вече настроените интеграции.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Смяна на ключа"
+  },
+  "scimApiKey": {
+    "message": "Ключ за API на SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Копиране на адреса на SCIM в буфера",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "Адрес на SCIM",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "Ключът за API на SCIM беше сменен успешно",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "Настройките за SCIM бяха запазени успешно",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Полето е задължтелно да бъде попълнено."
   },
@@ -5209,9 +5299,12 @@
     }
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Включване"
   },
   "on": {
-    "message": "On"
+    "message": "Включено"
+  },
+  "cardBrandMir": {
+    "message": "Мир"
   }
 }

@@ -644,6 +644,9 @@
   "newAccountCreated": {
     "message": "Ваш аккаунт создан! Теперь вы можете войти в систему."
   },
+  "trialAccountCreated": {
+    "message": "Аккаунт успешно создан."
+  },
   "masterPassSent": {
     "message": "Мы отправили вам email с подсказкой к мастер-паролю."
   },
@@ -1247,8 +1250,8 @@
   "enabled": {
     "message": "Включено"
   },
-  "activate": {
-    "message": "Активировать"
+  "restoreAccess": {
+    "message": "Восстановить доступ"
   },
   "premium": {
     "message": "Премиум",
@@ -1275,8 +1278,8 @@
   "disable": {
     "message": "Выключить"
   },
-  "deactivate": {
-    "message": "Деактивировать"
+  "revokeAccess": {
+    "message": "Отозвать доступ"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Этот провайдер двухфакторной аутентификации включен для вашего аккаунта."
@@ -1669,6 +1672,12 @@
   "billing": {
     "message": "Оплата"
   },
+  "billingPlanLabel": {
+    "message": "Тарифный план"
+  },
+  "paymentType": {
+    "message": "Способ оплаты"
+  },
   "accountCredit": {
     "message": "Кредит аккаунта",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
@@ -1785,6 +1794,9 @@
   "year": {
     "message": "год"
   },
+  "yr": {
+    "message": "г"
+  },
   "month": {
     "message": "месяц"
   },
@@ -1812,6 +1824,9 @@
   },
   "billingInformation": {
     "message": "Платежная информация"
+  },
+  "billingTrialSubLabel": {
+    "message": "Ваш способ оплаты не будет использован в течение 7 дней пробного периода."
   },
   "creditCard": {
     "message": "Кредитная карта"
@@ -2169,10 +2184,34 @@
       }
     }
   },
+  "trialThankYou": {
+    "message": "Спасибо, что подписались на Bitwarden для $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialPaidInfoMessage": {
+    "message": "Ваша 7-дневная бесплатная пробная версия $PLAN$ будет преобразована в платную подписку через 7 дней.",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "trialConfirmationEmail": {
+    "message": "Мы отправили письмо с подтверждением на адрес email для выставления счетов вашей команды "
+  },
   "monthly": {
     "message": "Ежемесячно"
   },
   "annually": {
+    "message": "Ежегодно"
+  },
+  "annual": {
     "message": "Ежегодно"
   },
   "basePrice": {
@@ -2241,11 +2280,11 @@
   "removeUserConfirmation": {
     "message": "Вы действительно хотите удалить этого пользователя?"
   },
-  "deactivateUserConfirmation": {
-    "message": "У участника больше не будет доступа к организации, но у него останется доступ к своему личному хранилищу."
+  "removeOrgUserConfirmation": {
+    "message": "При удалении члена организации он потеряет доступ к ее данным и это действие необратимо. Чтобы снова добавить члена в организацию, его необходимо снова пригласить и подключить."
   },
-  "activateUserConfirmation": {
-    "message": "Вы уверены, что хотите активировать этого пользователя, предоставив ему доступ к организации?"
+  "revokeUserConfirmation": {
+    "message": "После отзыва члена организации, он теряет доступ к ее данным. Для быстрого восстановления доступа члена, перейдите на вкладку Отозвано."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Внимание! Этому пользователю необходим соединитель ключей для управления шифрованием. Удаление этого пользователя из вашей организации приведет к окончательному отключению его учетной записи. Это действие нельзя отменить. Вы хотите продолжить?"
@@ -2592,8 +2631,8 @@
       }
     }
   },
-  "deactivatedUserId": {
-    "message": "Пользователь деактивирован $ID$.",
+  "removeUserIdAccess": {
+    "message": "Удалить доступ $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2601,8 +2640,8 @@
       }
     }
   },
-  "activatedUserId": {
-    "message": "Пользователь активирован $ID$.",
+  "revokedUserId": {
+    "message": "Отозван доступ к организации для $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2610,8 +2649,8 @@
       }
     }
   },
-  "deactivateUserId": {
-    "message": "Деактивировать пользователя $ID$?",
+  "restoredUserId": {
+    "message": "Восстановлен доступ к организации для $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2619,8 +2658,8 @@
       }
     }
   },
-  "activateUserId": {
-    "message": "Активировать пользователя $ID$?",
+  "revokeUserId": {
+    "message": "Отозвать доступ $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3322,7 +3361,7 @@
     "message": "Показать ключ API"
   },
   "rotateApiKey": {
-    "message": "Сменить ключ API"
+    "message": "Сменить API-ключ"
   },
   "selectOneCollection": {
     "message": "Необходимо выбрать хотя бы одну коллекцию."
@@ -3684,8 +3723,8 @@
   "disabled": {
     "message": "Отключено"
   },
-  "deactivated": {
-    "message": "Деактивирован"
+  "revoked": {
+    "message": "Отозвано"
   },
   "sendLink": {
     "message": "Ссылка на Send",
@@ -4288,11 +4327,11 @@
   "removeUsersWarning": {
     "message": "Вы уверены, что хотите удалить следующих пользователей? Процесс может занять несколько секунд и не может быть прерван или отменен."
   },
-  "deactivateUsersWarning": {
-    "message": "Вы действительно хотите деактивировать следующих участников? У них больше не будет доступа к организации, но останется доступ к их личным хранилищам. Процесс может занять несколько секунд, и его нельзя прервать или отменить."
+  "removeOrgUsersConfirmation": {
+    "message": "После удаления члена(-ов) организации они теряют доступ к ее данным и это действие необратимо. Для повторного добавления участника в организацию, его необходимо снова пригласить и подключить. Процесс может занять несколько секунд, и его нельзя прервать или отменить."
   },
-  "activateUsersWarning": {
-    "message": "Вы действительно хотите активировать следующих участников, предоставив им доступ к организации? Процесс может занять несколько секунд и не может быть прерван или отменен."
+  "revokeUsersWarning": {
+    "message": "После отзыва члена(-ов) организации они теряют доступ к ее данным. Для быстрого восстановления доступа члена перейдите на вкладку Отозвано. Процесс может занять несколько секунд, и его нельзя прервать или отменить."
   },
   "theme": {
     "message": "Тема"
@@ -4324,11 +4363,11 @@
   "bulkRemovedMessage": {
     "message": "Удален(-о) успешно"
   },
-  "bulkDeactivatedMessage": {
-    "message": "Деактивирован успешно"
+  "bulkRevokedMessage": {
+    "message": "Доступ к организации отозван"
   },
-  "bulkActivatedMessage": {
-    "message": "Активирован успешно"
+  "bulkRestoredMessage": {
+    "message": "Доступ к организации восстановлен"
   },
   "bulkFilteredMessage": {
     "message": "Исключено, не применимо для данного действия."
@@ -4339,11 +4378,11 @@
   "removeUsers": {
     "message": "Удалить пользователей"
   },
-  "deactivateUsers": {
-    "message": "Деактивировать пользователей"
+  "revokeUsers": {
+    "message": "Отзыв пользователей"
   },
-  "activateUsers": {
-    "message": "Активировать пользователей"
+  "restoreUsers": {
+    "message": "Восстановление пользователей"
   },
   "error": {
     "message": "Ошибка"
@@ -4754,9 +4793,6 @@
   },
   "sponsorshipCreated": {
     "message": "Спонсирование создано"
-  },
-  "revoke": {
-    "message": "Отозвать"
   },
   "emailSent": {
     "message": "Письмо отправлено"
@@ -5184,6 +5220,60 @@
       }
     }
   },
+  "scim": {
+    "message": "Обеспечение SCIM",
+    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimDescription": {
+    "message": "Автоматически предоставлять пользователям и группам предпочитаемого поставщика удостоверений с помощью обеспечения SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDesc": {
+    "message": "Включить SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimEnabledCheckboxDescHelpText": {
+    "message": "Установите предпочтительного поставщика идентификационных данных, настроив URL и ключ API SCIM",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
+  "scimApiKeyHelperText": {
+    "message": "Этот ключ API имеет доступ к управлению пользователями вашей организации. Его следует держать в секрете."
+  },
+  "copyScimKey": {
+    "message": "Скопировать API-ключ SCIM в буфер обмена",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKey": {
+    "message": "Сменить API-ключ SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateScimKeyWarning": {
+    "message": "Вы уверены, что хотите сменить API-ключ SCIM? Текущий ключ перестанет работать для любых существующих интеграций.",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "rotateKey": {
+    "message": "Сменить ключ"
+  },
+  "scimApiKey": {
+    "message": "API-ключ SCIM",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "copyScimUrl": {
+    "message": "Скопировать URL конечной точки SCIM в буфер обмена",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimUrl": {
+    "message": "URL SCIM",
+    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+  },
+  "scimApiKeyRotated": {
+    "message": "API-ключ SCIM сменен успешно",
+    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+  },
+  "scimSettingsSaved": {
+    "message": "Настройки SCIM успешно сохранены",
+    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+  },
   "inputRequired": {
     "message": "Необходимо ввести данные."
   },
@@ -5213,5 +5303,8 @@
   },
   "on": {
     "message": "Вкл."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }
