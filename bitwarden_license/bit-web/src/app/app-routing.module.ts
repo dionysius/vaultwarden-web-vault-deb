@@ -8,6 +8,10 @@ const routes: Routes = [
     path: "providers",
     loadChildren: () => ProvidersModule,
   },
+  {
+    path: "sm",
+    loadChildren: async () => (await import("./sm/sm.module")).SecretsManagerModule,
+  },
 ];
 
 @NgModule({

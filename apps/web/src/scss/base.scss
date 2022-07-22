@@ -78,11 +78,11 @@ img.logo {
   height: 43px;
   margin: 0 auto;
   width: 284px;
+}
 
-  &.logo-themed {
-    @include themify($themes) {
-      content: url("../images/logo-" + themed("logoSuffix") + "@2x.png");
-    }
+img.logo-themed {
+  @include themify($themes) {
+    content: url("../images/logo-" + themed("logoSuffix") + "@2x.png");
   }
 }
 
