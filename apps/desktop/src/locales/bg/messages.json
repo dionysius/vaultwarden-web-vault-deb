@@ -539,7 +539,7 @@
     "message": "Повторното въвеждане на главната парола е задължително."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Главната парола трябва да е дълга поне 8 знака."
   },
   "masterPassDoesntMatch": {
     "message": "Главната парола и потвърждението ѝ не съвпадат."
@@ -1965,12 +1965,15 @@
     "message": "Ключ за API"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Организацията е изключена."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Записите в изключени организации не са достъпни. Свържете се със собственика на организацията си за помощ."
   },
   "neverLockWarning": {
     "message": "Уверени ли сте, че искате да зададете стойност „Никога“? Това води до съхранение на шифриращия ключ за трезора във устройството ви. Ако използвате тази възможност, е много важно да имате надлежна защита на устройството си."
+  },
+  "cardBrandMir": {
+    "message": "Мир"
   }
 }

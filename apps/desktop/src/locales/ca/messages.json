@@ -1553,7 +1553,7 @@
     "message": "Habilita la integració amb el navegador"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "La integració al navegador s’utilitza per a la biometria en aquest."
+    "message": "S'utilitza per a la biometria al navegador."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "La integració en el navegador no és compatible"
@@ -1972,5 +1972,8 @@
   },
   "neverLockWarning": {
     "message": "Esteu segur que voleu utilitzar l'opció \"Mai\"? En configurar les opcions de bloqueig a \"Mai\" s'emmagatzema la clau de xifratge de la vostra caixa forta al vostre dispositiu. Si utilitzeu aquesta opció, heu d'assegurar-vos que conserveu el dispositiu degudament protegit."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

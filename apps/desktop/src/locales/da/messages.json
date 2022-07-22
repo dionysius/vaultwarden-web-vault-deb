@@ -533,13 +533,13 @@
     "message": "Ugyldig e-mailadresse."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Hovedadgangskode er påkrævet."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Hovedadgangskode kræves angivet igen."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hovedadgangskode skal være mindst 8 tegn."
   },
   "masterPassDoesntMatch": {
     "message": "De to adgangskoder matcher ikke."
@@ -1547,13 +1547,13 @@
     "message": "Ved at markere dette felt accepterer du følgende:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Tjenestevilkår og fortrolighedspolitik er ikke blevet accepteret."
   },
   "enableBrowserIntegration": {
     "message": "Tillad browserintegration"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browserintegration bruges til biometri i browseren."
+    "message": "Bruges til biometri i browser."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browserintegration understøttes ikke"
@@ -1965,12 +1965,15 @@
     "message": "API-nøgle"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organisationen er deaktiveret."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Elementer i deaktiverede organisationer kan ikke tilgås. Kontakt din organisationsejer for at få hjælp."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Er du sikker på, at du vil bruge indstillingen \"Aldrig\"? Hvis du sætter dine låseindstillinger til \"Aldrig\" gemmes din boks krypteringsnøgle på din enhed. Hvis du bruger denne indstilling, skal du sikre dig, at du holder din enhed ordentligt beskyttet."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

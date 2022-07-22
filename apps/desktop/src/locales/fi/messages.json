@@ -1553,7 +1553,7 @@
     "message": "Salli selainintegraatio"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Selainintegraatiota käytetään selaimessa biometriaa varten."
+    "message": "Käytetään selainten biometriatukeen."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Selainintegraatiota ei tueta"
@@ -1972,5 +1972,8 @@
   },
   "neverLockWarning": {
     "message": "Haluatko varmasti käyttää asetusta \"Ei koskaan\"? Se tallentaa holvisi salausavaimen laitteellesi. Jos käytät asetusta, varmista, että laite on suojattu hyvin."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

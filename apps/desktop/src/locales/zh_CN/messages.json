@@ -1553,7 +1553,7 @@
     "message": "允许浏览器集成"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "浏览器集成用于在浏览器中提供生物识别。"
+    "message": "用于在浏览器中提供生物识别。"
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "不支持浏览器集成"
@@ -1972,5 +1972,8 @@
   },
   "neverLockWarning": {
     "message": "确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，应确保您的设备得到妥善的保护。"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

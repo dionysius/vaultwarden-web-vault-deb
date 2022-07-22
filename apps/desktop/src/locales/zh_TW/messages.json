@@ -934,7 +934,7 @@
     "message": "總是在系統匣中顯示圖示。"
   },
   "startToTray": {
-    "message": "啟動至系統匣圖示"
+    "message": "啟動時隱藏至系統匣"
   },
   "startToTrayDesc": {
     "message": "應用程式首次啟動時，只在系統匣顯示一個圖示。"
@@ -1553,7 +1553,7 @@
     "message": "允許瀏覽器整合"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "瀏覽器整合用於在瀏覽器中提供生物特徵辨識。"
+    "message": "用於在瀏覽器中提供生物特徵辨識。"
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "不支援瀏覽器整合"
@@ -1972,5 +1972,8 @@
   },
   "neverLockWarning": {
     "message": "您確定要使用「永不」選項嗎？將鎖定選項設定為「永不」會將密碼庫的加密金鑰儲存在您的裝置上。如果使用此選項，應確保您的裝置是安全的。"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }
