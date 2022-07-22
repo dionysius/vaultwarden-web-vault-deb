@@ -52,7 +52,7 @@ export class InitService {
       htmlEl.classList.add("locale_" + this.i18nService.translationLocale);
       await this.themingService.monitorThemeChanges();
       const containerService = new ContainerService(this.cryptoService);
-      containerService.attachToWindow(this.win);
+      containerService.attachToGlobal(this.win);
     };
   }
 }
