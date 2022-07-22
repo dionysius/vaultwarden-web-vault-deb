@@ -9,7 +9,7 @@
     <div class="tw-mb-3">
       <bit-form-field>
         <bit-label>{{ "emailAddress" | i18n }}</bit-label>
-        <input bitInput type="email" formControlName="email" />
+        <input id="register-form_input_email" bitInput type="email" formControlName="email" />
         <bit-hint>{{ "emailAddressDesc" | i18n }}</bit-hint>
       </bit-form-field>
     </div>
@@ -17,7 +17,7 @@
     <div class="tw-mb-3">
       <bit-form-field>
         <bit-label>{{ "name" | i18n }}</bit-label>
-        <input bitInput type="text" formControlName="name" />
+        <input id="register-form_input_name" bitInput type="text" formControlName="name" />
         <bit-hint>{{ "yourNameDesc" | i18n }}</bit-hint>
       </bit-form-field>
     </div>
@@ -32,6 +32,7 @@
       <bit-form-field>
         <bit-label>{{ "masterPass" | i18n }}</bit-label>
         <input
+          id="register-form_input_master-password"
           bitInput
           (input)="updatePasswordStrength()"
           type="{{ showPassword ? 'text' : 'password' }}"
@@ -57,6 +58,7 @@
       <bit-form-field>
         <bit-label>{{ "reTypeMasterPass" | i18n }}</bit-label>
         <input
+          id="register-form_input_confirm-master-password"
           bitInput
           type="{{ showPassword ? 'text' : 'password' }}"
           formControlName="confirmMasterPassword"
@@ -74,7 +76,7 @@
     <div class="tw-mb-3">
       <bit-form-field>
         <bit-label>{{ "masterPassHint" | i18n }}</bit-label>
-        <input bitInput type="text" formControlName="hint" />
+        <input id="register-form_input_hint" bitInput type="text" formControlName="hint" />
         <bit-hint>{{ "masterPassHintDesc" | i18n }}</bit-hint>
       </bit-form-field>
     </div>
@@ -86,6 +88,7 @@
     <div class="tw-flex tw-items-start tw-mb-3" *ngIf="showTerms">
       <div class="tw-flex tw-items-center tw-h-6">
         <input
+          id="register-form_input_accept-policies"
           class="tw-w-4 tw-rounded tw-border tw-border-gray-300"
           bitInput
           type="checkbox"

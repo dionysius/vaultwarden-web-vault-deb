@@ -34,7 +34,7 @@ export class BitInputDirective {
     ].filter((s) => s != "");
   }
 
-  @HostBinding() id = `bit-input-${nextId++}`;
+  @HostBinding() @Input() id = `bit-input-${nextId++}`;
 
   @HostBinding("attr.aria-describedby") ariaDescribedBy: string;
 
