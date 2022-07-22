@@ -424,13 +424,13 @@
     "message": "Ogiltig e-postadress."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Huvudlösenord krävs."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Huvudlösenord måste anges igen."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Huvudlösenordet måste vara minst 8 tecken långt."
   },
   "masterPassDoesntMatch": {
     "message": "Bekräftelsen för huvudlösenordet stämde ej."
@@ -571,7 +571,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Be om att lägga till inloggning"
   },
   "addLoginNotificationDesc": {
     "message": "Aviseringar för nya inloggningar frågar dig om du vill lägga till en inloggning automatiskt till ditt valv, när du använder en inloggning som inte redan finns i ditt valv."
@@ -603,10 +603,10 @@
     "message": "Spara"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Be om att uppdatera befintlig inloggning"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Be om att uppdatera ett lösenord när en ändring upptäcks på en webbplats."
   },
   "notificationChangeDesc": {
     "message": "Vill du uppdatera det här lösenordet i Bitwarden?"
@@ -615,7 +615,7 @@
     "message": "Uppdatera"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Visa alternativ för snabbmenyn"
   },
   "contextMenuItemDesc": {
     "message": "Use a secondary click to access password generation and matching logins for the website. "
@@ -810,13 +810,13 @@
     "message": "Uppdatering färdig"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Kopiera TOTP automatiskt"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Om din inloggning har en autentiseringsnyckel kopplad till den, kommer TOTP-verifieringskoden att automatiskt kopieras till urklipp när du automatiskt fyller i inloggningen."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Be om biometri vid start"
   },
   "premiumRequired": {
     "message": "Premium krävs"
@@ -1037,16 +1037,16 @@
     "message": "Den här webbläsaren kan inte bearbeta U2F-förfrågningar i detta popup-fönster. Vill du öppna ett nytt fönster så att du kan logga in med U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Visa webbplatsikoner"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Visa en identifierbar bild bredvid varje inloggning."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Visa aktivitetsräknaren"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Visa hur många inloggningar du har för den aktuella webbsidan."
   },
   "cardholderName": {
     "message": "Kortinnehavarens namn"
@@ -1484,7 +1484,7 @@
     "message": "Genom att markera denna ruta godkänner du följande:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Användarvillkoren och Integritetspolicyn har inte accepterats."
   },
   "termsOfService": {
     "message": "Användarvillkor"
@@ -1850,7 +1850,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Ditt valvs tidsgräns överskrider de begränsningar som fastställts av din organisation."
   },
   "vaultExportDisabled": {
     "message": "Valvexport inaktiverad"
@@ -1969,9 +1969,12 @@
     "message": "Key Connector-fel: säkerställ att Key Connector är tillgänglig och fungerar korrekt."
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organisationen är inaktiverad."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Objekt i inaktiverade organisationer är inte åtkomliga. Kontakta organisationens ägare för att få hjälp."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

@@ -157,7 +157,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Bi urratseko egiaztatzea"
+    "message": "Bi urratseko saio hasiera"
   },
   "logOut": {
     "message": "Itxi saioa"
@@ -491,7 +491,7 @@
     "message": "Zure pasahitz nagusia alda dezakezu bitwarden.com webgunean. Orain joan nahi duzu webgunera?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Bi urratseko egiaztatzea dela eta, zure kontua seguruagoa da, beste aplikazio/gailu batekin saioa hastea eskatzen baitizu; adibidez, segurtasun kode, baimentze aplikazio, SMS, telefono dei edo posta elektroniko bidez. Bi urratseko egiaztatzea bitwarden.com webgunean  aktibatu daiteke. Orain joan nahi duzu webgunera?"
+    "message": "Bi urratseko saio hasiera dela eta, zure kontua seguruagoa da, beste aplikazio/gailu batekin saioa hastea eskatzen baitizu; adibidez, segurtasun kode, autentifikazio aplikazio, SMS, telefono dei edo email bidez. Bi urratseko saio hasiera bitwarden.com webgunean aktibatu daiteke. Orain joan nahi duzu webgunera?"
   },
   "editedFolder": {
     "message": "Karpeta editatuta"
@@ -705,7 +705,7 @@
     "message": "Gehiago ikasi"
   },
   "authenticatorKeyTotp": {
-    "message": "Baimentze kodea (TOTP)"
+    "message": "Autentifikazio giltza (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Egiaztatze kodea"
@@ -771,7 +771,7 @@
     "message": "Eranskinentzako 1GB-eko enkriptatutako biltegia."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "YubiKey, FIDO U2F eta Duo bezalako saio-hasieratarako bi urratseko egiaztatze aukerak."
+    "message": "YubiKey, FIDO U2F eta Duo bezalako bi urratseko saio hasierarako aukera gehigarriak."
   },
   "ppremiumSignUpReports": {
     "message": "Pasahitzaren higienea, kontuaren egoera eta datu-bortxaketen txostenak, kutxa gotorra seguru mantentzeko."
@@ -813,7 +813,7 @@
     "message": "Kopiatu TOTO automatikoki"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Saio-hasiera batek baimentze-kodea badu, TOTP egiaztatze-kodea arbelean automatikoki kopiatuko da saio-hasiera bat auto-betetzean."
+    "message": "Saio hasiera batek autentifikazio giltza badu, TOTP egiaztatze kodea arbelean automatikoki kopiatuko da saio hasiera bat auto-betetzean."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Biometria eskatu saioa hastean"
@@ -825,7 +825,7 @@
     "message": "Premium bazkidetza beharrezkoa da ezaugarri hau erabiltzeko."
   },
   "enterVerificationCodeApp": {
-    "message": "Sartu zure baimentze-aplikazioaren 6 digituko egiaztatze-kodea."
+    "message": "Sartu zure autentifikazio aplikazioaren 6 digituko egiaztatze kodea."
   },
   "enterVerificationCodeEmail": {
     "message": "Sartu $EMAIL$-era bidalitako 6 digituko egiaztatze-kodea.",
@@ -852,13 +852,13 @@
     "message": "Berbidali email bidezko egiaztatze-kodea."
   },
   "useAnotherTwoStepMethod": {
-    "message": "Erabili bi urratseko egiaztatzeko beste modu bat."
+    "message": "Erabili bi urratseko saio hasierarako beste modu bat"
   },
   "insertYubiKey": {
-    "message": "Sartu zure YubiKey-a ordenagailuko USB portuan, ondoren, sakatu bere botoia."
+    "message": "Sartu zure YubiKey-a ordenagailuko USB atakan, ondoren, sakatu bere botoia."
   },
   "insertU2f": {
-    "message": "Sartu zure segurtasun giltza ordenagailuaren USB portuan. Botoia badu, sakatu ezazu."
+    "message": "Sartu zure segurtasun giltza ordenagailuaren USB atakan. Botoia badu, sakatu ezazu."
   },
   "webAuthnNewTab": {
     "message": "WebAuthn 2FA egiaztatzea hasteko. Egin klik beheko botoian fitxa berria irekitzeko eta jarraitu fitxa berriko jarraibideei."
@@ -867,19 +867,19 @@
     "message": "Ireki fitxa berria"
   },
   "webAuthnAuthenticate": {
-    "message": "WebAuthn baimendu"
+    "message": "WebAuthn autentifikatu"
   },
   "loginUnavailable": {
     "message": "Ez dago eskuragarri saio-hasierarik"
   },
   "noTwoStepProviders": {
-    "message": "Kontu honek bi urratseko egiaztatzea du gaituta, baina konfiguratutako bi urratseko egiaztatzea ez da web-nabigatzaile honekin bateragarria."
+    "message": "Kontu honek bi urratseko saio hasiera du gaituta, baina ezarritako bi urratserako hornitzailea ez da web-nabigatzaile honekin bateragarria."
   },
   "noTwoStepProviders2": {
-    "message": "Mesedez, erabili nabigatzaile bateragarri bat (adibidez, Chrome) eta/edo gehitu bateragarritasun obea duten nabigatzaile bidezko (baimentze-aplikazio gisa) baimentze modu gehigarriak."
+    "message": "Mesedez, erabili nabigatzaile bateragarri bat (adibidez, Chrome) eta/edo gehitu bateragarritasun obea duten nabigatzaile bidezko (autentifikazio aplikazio gisa) autentifikazio modu gehigarriak."
   },
   "twoStepOptions": {
-    "message": "Bi urratseko egiaztatzearen aukerak"
+    "message": "Bi urratseko saio hasieraren aukerak"
   },
   "recoveryCodeDesc": {
     "message": "Bi urratseko egiaztatzeko modu guztietarako sarbidea galdu duzu? Erabili zure berreskuratze-kodea zure kontuko bi urratseko egiaztatze hornitzaile guztiak desaktibatzeko."
@@ -888,10 +888,10 @@
     "message": "Berreskuratze-kodea"
   },
   "authenticatorAppTitle": {
-    "message": "Baimentze aplikazioa"
+    "message": "Autentifikazio aplikazioa"
   },
   "authenticatorAppDesc": {
-    "message": "Erabili baimentze-aplikazio bat (adibidez, Authy edo Google Authenticator) denboran oinarritutako egiaztatze-kodeak sortzeko.",
+    "message": "Erabili autentifikazio aplikazio bat (adibidez, Authy edo Google Authenticator) denboran oinarritutako egiaztatze-kodeak sortzeko.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -1421,7 +1421,7 @@
     "message": "Elementua berreskuratua"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Saioa ixteak kutxa gotorreko sarrera guztia kenduko du eta itxaronaldiaren ondoren lineako baimentzea eskatuko du. Ziur zaude hau egin nahi duzula?"
+    "message": "Saioa ixteak kutxa gotorreko sarrera guztia kenduko du eta itxaronaldiaren ondoren lineako autentifikazioa eskatuko du. Ziur zaude hau egin nahi duzula?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Baieztatu itxarote denboraren ekintza"
@@ -1886,7 +1886,7 @@
     "message": "Ziur al zaude erakundea utzi nahi duzula?"
   },
   "leftOrganization": {
-    "message": "Erakundea utzi egin duzu."
+    "message": "Erakundea utzi duzu."
   },
   "toggleCharacterCount": {
     "message": "Karaktere kontaketak txandakatu"
@@ -1969,9 +1969,12 @@
     "message": "Errore bat gertatu da konektore giltzan: ziurtatu giltza konektorea erabilgarri dagoela eta behar bezala dabilela."
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Erakundea desgaituta dago."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Ezin da sartu desgaitutako erakundeetako elementuetara. Laguntza lortzeko, jarri harremanetan zure erakundearekin."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

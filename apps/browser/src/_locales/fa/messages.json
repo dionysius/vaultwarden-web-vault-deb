@@ -430,7 +430,7 @@
     "message": "تایپ مجدد گذرواژه اصلی نیاز است."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "طول کلمه عبور اصلی باید حداقل ۸ کاراکتر باشد."
   },
   "masterPassDoesntMatch": {
     "message": "کلمه عبور اصلی با تکرار کلمه عبور اصلی مطابقت ندارد."
@@ -1969,9 +1969,12 @@
     "message": "خطای Key Connector: مطمئن شوید که Key Connector در دسترس است و به درستی کار می کند."
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "سازمان از کار افتاده است."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "موارد موجود در سازمان‌های غیرفعال، قابل دسترسی نیستند. برای دریافت کمک با مالک سازمان خود تماس بگیرید."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

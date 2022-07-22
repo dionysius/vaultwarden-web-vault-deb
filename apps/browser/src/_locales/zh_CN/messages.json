@@ -618,7 +618,7 @@
     "message": "显示上下文菜单选项"
   },
   "contextMenuItemDesc": {
-    "message": "使用辅助点击来访问网站的密码生成和匹配的登录项目。 "
+    "message": "使用辅助点击来访问密码生成和匹配的网站登录项目。 "
   },
   "defaultUriMatchDetection": {
     "message": "默认 URI 匹配检测",
@@ -1973,5 +1973,8 @@
   },
   "disabledOrganizationFilterError": {
     "message": "无法访问已禁用组织中的项目。请联系您的组织所有者获取协助。"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

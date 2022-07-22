@@ -11,28 +11,28 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Prijavite se ili napravite novi račun da biste pristupili svom sigurnom trezoru."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Napravi račun"
   },
   "login": {
-    "message": "Log In"
+    "message": "Prijavite se"
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise Single Sign-On"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Otkaži"
   },
   "close": {
-    "message": "Close"
+    "message": "Zatvori"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Potvrdi"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-Mail adresa"
   },
   "masterPass": {
     "message": "Master Password"
@@ -1973,5 +1973,8 @@
   },
   "disabledOrganizationFilterError": {
     "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

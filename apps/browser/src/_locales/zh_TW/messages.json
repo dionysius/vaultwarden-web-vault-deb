@@ -618,7 +618,7 @@
     "message": "顯示內容選單選項"
   },
   "contextMenuItemDesc": {
-    "message": "使用輔助點選（右鍵選單）來存取網站的密碼產生和匹配的登入項目。 "
+    "message": "使用輔助點選（右鍵選單）來存取密碼產生和匹配的網站登入項目。 "
   },
   "defaultUriMatchDetection": {
     "message": "預設的 URI 一致性偵測",
@@ -1973,5 +1973,8 @@
   },
   "disabledOrganizationFilterError": {
     "message": "無法存取已停用組織中的項目。請聯絡您組織的擁有者以獲取協助。"
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

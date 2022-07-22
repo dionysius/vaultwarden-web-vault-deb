@@ -1969,9 +1969,12 @@
     "message": "Error en el conector de claves: asegúrate de que el conector de claves está disponible y que funciona correctamente."
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "La organización está desactivada."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "No se puede acceder a los elementos de las organizaciones desactivadas. Póngase en contacto con el personal propietario de la organización para obtener ayuda."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

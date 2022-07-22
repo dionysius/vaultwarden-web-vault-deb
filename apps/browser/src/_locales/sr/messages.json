@@ -1969,9 +1969,12 @@
     "message": "Key Connector грешка: будите сигурни да је Key Connector доступан и да ради."
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Организација је онемогућена."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Није могуће приступити ставкама у онемогућене организације. Обратите се власнику организације за помоћ."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

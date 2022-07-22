@@ -1969,9 +1969,12 @@
     "message": "Error del connector de claus: assegureu-vos que el connector de claus està disponible i funcionant correctament."
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "L'organització està inhabilitada."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "No es pot accedir als elements de les organitzacions inhabilitades. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }

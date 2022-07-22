@@ -424,13 +424,13 @@
     "message": "Ugyldig e-mailadresse."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Hovedadgangskode er påkrævet."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Hovedadgangskode kræves angivet igen."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hovedadgangskode skal være mindst 8 tegn."
   },
   "masterPassDoesntMatch": {
     "message": "De to adgangskoder matcher ikke."
@@ -571,10 +571,10 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Bed om at tilføje login"
+    "message": "Spørg om at tilføje login"
   },
   "addLoginNotificationDesc": {
-    "message": "Bed om at tilføje et element, hvis et ikke findes i din boks."
+    "message": "Spørg om at tilføje et element, hvis et ikke findes i din boks."
   },
   "showCardsCurrentTab": {
     "message": "Vis kort på fanebladet"
@@ -1484,7 +1484,7 @@
     "message": "Ved at markere dette felt accepterer du følgende:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Tjenestevilkår og fortrolighedspolitik er ikke blevet accepteret."
   },
   "termsOfService": {
     "message": "Servicevilkår"
@@ -1969,9 +1969,12 @@
     "message": "Key Connector-fejl: Sørg for, at Key Connector er tilgængelig og fungerer korrekt."
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organisationen er deaktiveret."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Elementer i deaktiverede organisationer kan ikke tilgås. Kontakt din organisationsejer for at få hjælp."
+  },
+  "cardBrandMir": {
+    "message": "Mir"
   }
 }
