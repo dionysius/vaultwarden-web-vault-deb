@@ -1,20 +1,15 @@
 <header>
   <div class="left">
-    <a routerLink="/tabs/settings">
+    <button type="button" routerLink="/tabs/settings">
       <span class="header-icon"><i class="bwi bwi-angle-left" aria-hidden="true"></i></span>
       <span>{{ "back" | i18n }}</span>
-    </a>
+    </button>
   </div>
   <h1 class="center">
     <span class="title">{{ "folders" | i18n }}</span>
   </h1>
   <div class="right">
-    <button
-      type="button"
-      appBlurClick
-      (click)="addFolder()"
-      appA11yTitle="{{ 'addFolder' | i18n }}"
-    >
+    <button type="button" (click)="addFolder()" appA11yTitle="{{ 'addFolder' | i18n }}">
       <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>

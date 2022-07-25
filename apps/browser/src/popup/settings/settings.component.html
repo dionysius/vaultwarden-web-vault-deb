@@ -11,18 +11,30 @@
   <div class="box list">
     <h2 class="box-header">{{ "manage" | i18n }}</h2>
     <div class="box-content single-line">
-      <a class="box-content-row box-content-row-flex text-default" routerLink="/folders">
+      <button
+        type="button"
+        class="box-content-row box-content-row-flex text-default"
+        routerLink="/folders"
+      >
         <div class="row-main">{{ "folders" | i18n }}</div>
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </a>
-      <a class="box-content-row box-content-row-flex text-default" routerLink="/sync">
+      </button>
+      <button
+        type="button"
+        class="box-content-row box-content-row-flex text-default"
+        routerLink="/sync"
+      >
         <div class="row-main">{{ "sync" | i18n }}</div>
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </a>
-      <a class="box-content-row box-content-row-flex text-default" routerLink="/excluded-domains">
+      </button>
+      <button
+        type="button"
+        class="box-content-row box-content-row-flex text-default"
+        routerLink="/excluded-domains"
+      >
         <div class="row-main">{{ "excludedDomains" | i18n }}</div>
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </a>
+      </button>
     </div>
   </div>
   <div class="box list">
@@ -77,7 +89,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="lock()"
       >
         <div class="row-main">{{ "lockNow" | i18n }}</div>
@@ -87,7 +98,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="twoStep()"
       >
         <div class="row-main">{{ "twoStepLogin" | i18n }}</div>
@@ -98,7 +108,7 @@
   <div class="box list">
     <h2 class="box-header">{{ "account" | i18n }}</h2>
     <div class="box-content single-line">
-      <a class="box-content-row" routerLink="/premium">
+      <button type="button" class="box-content-row" routerLink="/premium">
         <div class="row-main">
           <div class="icon text-primary">
             <i class="bwi bwi-fw bwi-lg bwi-star-f" aria-hidden="true"></i>
@@ -108,12 +118,11 @@
           >
         </div>
         <span><i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i></span>
-      </a>
+      </button>
       <button
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="changePassword()"
         *ngIf="showChangeMasterPass"
       >
@@ -124,7 +133,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="fingerprint()"
       >
         <div class="row-main">{{ "fingerprintPhrase" | i18n }}</div>
@@ -134,7 +142,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="logOut()"
       >
         <div class="row-main">{{ "logOut" | i18n }}</div>
@@ -149,7 +156,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="import()"
       >
         <div class="row-main">{{ "importItems" | i18n }}</div>
@@ -159,7 +165,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="export()"
       >
         <div class="row-main">{{ "exportVault" | i18n }}</div>
@@ -169,7 +174,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="webVault()"
       >
         <div class="row-main">{{ "bitWebVault" | i18n }}</div>
@@ -180,15 +184,18 @@
   <div class="box list">
     <h2 class="box-header">{{ "other" | i18n }}</h2>
     <div class="box-content single-line">
-      <a class="box-content-row box-content-row-flex text-default" routerLink="/options">
+      <button
+        type="button"
+        class="box-content-row box-content-row-flex text-default"
+        routerLink="/options"
+      >
         <div class="row-main">{{ "options" | i18n }}</div>
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </a>
+      </button>
       <button
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="about()"
       >
         <div class="row-main">{{ "about" | i18n }}</div>
@@ -198,7 +205,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="share()"
       >
         <div class="row-main">{{ "learnOrg" | i18n }}</div>
@@ -208,7 +214,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="help()"
       >
         <div class="row-main">{{ "helpFeedback" | i18n }}</div>
@@ -218,7 +223,6 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
-        appBlurClick
         (click)="rate()"
       >
         <div class="row-main">{{ "rateExtension" | i18n }}</div>

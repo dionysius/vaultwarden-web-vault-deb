@@ -1,13 +1,13 @@
 <form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
   <header>
     <div class="left">
-      <a routerLink="/home">{{ "cancel" | i18n }}</a>
+      <button type="button" routerLink="/home">{{ "cancel" | i18n }}</button>
     </div>
     <h1 class="center">
       <span class="title">{{ "appName" | i18n }}</span>
     </h1>
     <div class="right">
-      <button type="submit" appBlurClick [disabled]="form.loading">
+      <button type="submit" [disabled]="form.loading">
         <span [hidden]="form.loading">{{ "login" | i18n }}</span>
         <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
@@ -46,7 +46,6 @@
               type="button"
               class="row-btn"
               appStopClick
-              appBlurClick
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
               (click)="togglePassword()"
               [attr.aria-pressed]="showPassword"
@@ -65,7 +64,7 @@
       </div>
     </div>
     <p class="text-center">
-      <a routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</a>
+      <button type="button" routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</button>
     </p>
     <app-private-mode-warning></app-private-mode-warning>
   </main>

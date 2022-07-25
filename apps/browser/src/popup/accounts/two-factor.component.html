@@ -1,7 +1,7 @@
 <form id="two-factor-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
   <header>
     <div class="left">
-      <a routerLink="/login">{{ "back" | i18n }}</a>
+      <button type="button" routerLink="/login">{{ "back" | i18n }}</button>
     </div>
     <h1 class="center">
       <span class="title">{{ title }}</span>
@@ -9,7 +9,6 @@
     <div class="right">
       <button
         type="submit"
-        appBlurClick
         [disabled]="form.loading"
         *ngIf="
           selectedProviderType != null &&

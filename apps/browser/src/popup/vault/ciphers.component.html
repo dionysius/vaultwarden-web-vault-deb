@@ -1,6 +1,6 @@
 <header>
   <div class="left">
-    <button type="button" appBlurClick (click)="back()">
+    <button type="button" (click)="back()">
       <span class="header-icon"><i class="bwi bwi-angle-left" aria-hidden="true"></i></span>
       <span>{{ "back" | i18n }}</span>
     </button>
@@ -19,7 +19,7 @@
     <i class="bwi bwi-search" aria-hidden="true"></i>
   </div>
   <div class="right">
-    <button type="button" appBlurClick (click)="addCipher()" appA11yTitle="{{ 'addItem' | i18n }}">
+    <button type="button" (click)="addCipher()" appA11yTitle="{{ 'addItem' | i18n }}">
       <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
@@ -40,7 +40,6 @@
           *ngFor="let f of nestedFolders"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectFolder(f.node)"
         >
           <div class="row-main">
@@ -63,7 +62,6 @@
           *ngFor="let c of nestedCollections"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectCollection(c.node)"
         >
           <div class="row-main">

@@ -1,16 +1,16 @@
 <form (ngSubmit)="submit()" [formGroup]="exportForm">
   <header>
     <div class="left">
-      <a routerLink="/tabs/settings">
+      <button type="button" routerLink="/tabs/settings">
         <span class="header-icon" aria-hidden="true"><i class="bwi bwi-angle-left"></i></span>
         <span>{{ "back" | i18n }}</span>
-      </a>
+      </button>
     </div>
     <h1 class="center">
       <span class="title">{{ "exportVault" | i18n }}</span>
     </h1>
     <div class="right">
-      <button appBlurClick type="submit" [disabled]="!exportForm.enabled">
+      <button type="submit" [disabled]="!exportForm.enabled">
         {{ "submit" | i18n }}
       </button>
     </div>

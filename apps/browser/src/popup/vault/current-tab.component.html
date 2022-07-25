@@ -4,7 +4,6 @@
     <app-pop-out *ngIf="!inSidebar"></app-pop-out>
     <button
       type="button"
-      appBlurClick
       (click)="refresh()"
       appA11yTitle="{{ 'refresh' | i18n }}"
       *ngIf="inSidebar"
@@ -25,7 +24,7 @@
     <i class="bwi bwi-search" aria-hidden="true"></i>
   </div>
   <div class="right">
-    <button type="button" appBlurClick (click)="addCipher()" appA11yTitle="{{ 'addItem' | i18n }}">
+    <button type="button" (click)="addCipher()" appA11yTitle="{{ 'addItem' | i18n }}">
       <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>

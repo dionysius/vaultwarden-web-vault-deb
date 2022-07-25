@@ -5,7 +5,7 @@
       <span class="title">{{ "verifyIdentity" | i18n }}</span>
     </h1>
     <div class="right">
-      <button type="submit" appBlurClick *ngIf="!hideInput">{{ "unlock" | i18n }}</button>
+      <button type="submit" *ngIf="!hideInput">{{ "unlock" | i18n }}</button>
     </div>
   </header>
   <main tabindex="-1">
@@ -41,7 +41,6 @@
               type="button"
               class="row-btn"
               appStopClick
-              appBlurClick
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
               (click)="togglePassword()"
               [attr.aria-pressed]="showPassword"

@@ -18,7 +18,6 @@
   <div class="right">
     <button
       type="button"
-      appBlurClick
       (click)="addSend()"
       appA11yTitle="{{ 'addSend' | i18n }}"
       [disabled]="disableSend"
@@ -56,7 +55,6 @@
           type="button"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectType(sendType.Text)"
         >
           <div class="row-main">
@@ -70,7 +68,6 @@
           type="button"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectType(sendType.File)"
         >
           <div class="row-main">

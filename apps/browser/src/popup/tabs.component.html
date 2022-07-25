@@ -4,6 +4,7 @@
     <ul>
       <li routerLinkActive="active" #rlaCurrentTab="routerLinkActive" *ngIf="showCurrentTab">
         <button
+          type="button"
           routerLink="current"
           appA11yTitle="{{ 'currentTab' | i18n }}"
           [attr.aria-pressed]="rlaCurrentTab.isActive"
@@ -13,6 +14,7 @@
       </li>
       <li routerLinkActive="active" #rlaMyVault="routerLinkActive">
         <button
+          type="button"
           routerLink="vault"
           appA11yTitle="{{ 'myVault' | i18n }}"
           [attr.aria-pressed]="rlaMyVault.isActive"
@@ -22,6 +24,7 @@
       </li>
       <li routerLinkActive="active" #rlaSend="routerLinkActive">
         <button
+          type="button"
           routerLink="send"
           appA11yTitle="{{ 'send' | i18n }}"
           [attr.aria-pressed]="rlaSend.isActive"
@@ -31,6 +34,7 @@
       </li>
       <li routerLinkActive="active" #rlaGenerator="routerLinkActive">
         <button
+          type="button"
           routerLink="generator"
           appA11yTitle="{{ 'passGen' | i18n }}"
           [attr.aria-pressed]="rlaGenerator.isActive"
@@ -40,6 +44,7 @@
       </li>
       <li routerLinkActive="active" #rlaSettings="routerLinkActive">
         <button
+          type="button"
           routerLink="settings"
           appA11yTitle="{{ 'settings' | i18n }}"
           [attr.aria-pressed]="rlaSettings.isActive"

@@ -17,7 +17,7 @@
     <i class="bwi bwi-search"></i>
   </div>
   <div class="right">
-    <button type="button" appBlurClick (click)="addCipher()" appA11yTitle="{{ 'addItem' | i18n }}">
+    <button type="button" (click)="addCipher()" appA11yTitle="{{ 'addItem' | i18n }}">
       <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
@@ -61,7 +61,6 @@
           type="button"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectType(cipherType.Login)"
         >
           <div class="row-main">
@@ -75,7 +74,6 @@
           type="button"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectType(cipherType.Card)"
         >
           <div class="row-main">
@@ -89,7 +87,6 @@
           type="button"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectType(cipherType.Identity)"
         >
           <div class="row-main">
@@ -103,7 +100,6 @@
           type="button"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectType(cipherType.SecureNote)"
         >
           <div class="row-main">
@@ -126,7 +122,6 @@
           *ngFor="let f of nestedFolders"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectFolder(f.node)"
         >
           <div class="row-main">
@@ -151,7 +146,6 @@
           *ngFor="let nestedCollection of nestedCollections"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="selectCollection(nestedCollection.node)"
         >
           <div class="row-main">
@@ -187,13 +181,7 @@
         <span class="flex-right">{{ deletedCount }}</span>
       </h2>
       <div class="box-content single-line">
-        <button
-          type="button"
-          class="box-content-row"
-          appStopClick
-          appBlurClick
-          (click)="selectTrash()"
-        >
+        <button type="button" class="box-content-row" appStopClick (click)="selectTrash()">
           <div class="row-main">
             <div class="icon"><i class="bwi bwi-fw bwi-lg bwi-trash"></i></div>
             <span class="text">{{ "trash" | i18n }}</span>

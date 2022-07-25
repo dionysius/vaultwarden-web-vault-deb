@@ -1,6 +1,6 @@
 <header>
   <div class="left">
-    <button type="button" appBlurClick (click)="back()">
+    <button type="button" (click)="back()">
       <span class="header-icon"><i class="bwi bwi-angle-left" aria-hidden="true"></i></span>
       <span>{{ "back" | i18n }}</span>
     </button>
@@ -21,7 +21,6 @@
   <div class="right">
     <button
       type="button"
-      appBlurClick
       (click)="addSend()"
       appA11yTitle="{{ 'addSend' | i18n }}"
       [disabled]="disableSend"

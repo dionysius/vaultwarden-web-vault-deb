@@ -1,12 +1,12 @@
 <header>
   <div class="left">
-    <button type="button" appBlurClick (click)="close()">{{ "close" | i18n }}</button>
+    <button type="button" (click)="close()">{{ "close" | i18n }}</button>
   </div>
   <h1 class="center">
     <span class="title">{{ "viewItem" | i18n }}</span>
   </h1>
   <div class="right" *ngIf="cipher">
-    <button type="button" appBlurClick (click)="edit()" *ngIf="!cipher.isDeleted">
+    <button type="button" (click)="edit()" *ngIf="!cipher.isDeleted">
       {{ "edit" | i18n }}
     </button>
   </div>
@@ -79,7 +79,6 @@
               type="button"
               #checkPasswordBtn
               class="row-btn btn"
-              appBlurClick
               appA11yTitle="{{ 'checkPassword' | i18n }}"
               (click)="checkPassword()"
               [appApiAction]="checkPasswordPromise"
@@ -397,7 +396,6 @@
         class="box-content-row box-content-row-flex text-default"
         *ngFor="let attachment of cipher.attachments"
         appStopClick
-        appBlurCLick
         (click)="downloadAttachment(attachment)"
       >
         <span class="row-main">{{ attachment.fileName }}</span>
@@ -421,7 +419,6 @@
         type="button"
         class="box-content-row"
         appStopClick
-        appBlurClick
         (click)="fillCipher()"
         *ngIf="cipher.type !== cipherType.SecureNote && !cipher.isDeleted && !inPopout"
       >
@@ -436,7 +433,6 @@
         type="button"
         class="box-content-row"
         appStopClick
-        appBlurClick
         (click)="fillCipherAndSave()"
         *ngIf="cipher.type === cipherType.Login && !cipher.isDeleted && !inPopout"
       >
@@ -451,7 +447,6 @@
         type="button"
         class="box-content-row"
         appStopClick
-        appBlurClick
         (click)="clone()"
         *ngIf="!cipher.organizationId && !cipher.isDeleted"
       >
@@ -466,7 +461,6 @@
         type="button"
         class="box-content-row"
         appStopClick
-        appBlurClick
         (click)="share()"
         *ngIf="!cipher.organizationId"
       >
@@ -481,7 +475,6 @@
         type="button"
         class="box-content-row"
         appStopClick
-        appBlurClick
         (click)="restore()"
         *ngIf="cipher.isDeleted"
       >
@@ -492,7 +485,7 @@
           <span>{{ "restoreItem" | i18n }}</span>
         </div>
       </button>
-      <button type="button" class="box-content-row" appStopClick appBlurClick (click)="delete()">
+      <button type="button" class="box-content-row" appStopClick (click)="delete()">
         <div class="row-main text-danger">
           <div class="icon text-danger" aria-hidden="true">
             <i class="bwi bwi-trash bwi-lg bwi-fw"></i>
@@ -514,14 +507,14 @@
       </div>
       <div *ngIf="cipher.hasPasswordHistory">
         <b class="font-weight-semibold">{{ "passwordHistory" | i18n }}:</b>
-        <a
+        <button
           routerLink="/cipher-password-history"
           [queryParams]="{ cipherId: cipher.id }"
           appStopClick
           title="{{ 'passwordHistory' | i18n }}"
         >
           {{ cipher.passwordHistory.length }}
-        </a>
+        </button>
       </div>
     </div>
   </div>

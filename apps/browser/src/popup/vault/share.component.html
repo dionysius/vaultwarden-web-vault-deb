@@ -1,7 +1,7 @@
 <form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
   <header>
     <div class="left">
-      <button type="button" appBlurClick (click)="cancel()">{{ "cancel" | i18n }}</button>
+      <button type="button" (click)="cancel()">{{ "cancel" | i18n }}</button>
     </div>
     <h1 class="center">
       <span class="title">{{ "moveToOrganization" | i18n }}</span>
@@ -9,7 +9,6 @@
     <div class="right">
       <button
         type="submit"
-        appBlurClick
         [disabled]="form.loading || !canSave"
         *ngIf="organizations && organizations.length"
       >

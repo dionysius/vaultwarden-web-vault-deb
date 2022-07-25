@@ -1,13 +1,13 @@
 <form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
   <header>
     <div class="left">
-      <button type="button" appBlurClick (click)="cancel()">{{ "cancel" | i18n }}</button>
+      <button type="button" (click)="cancel()">{{ "cancel" | i18n }}</button>
     </div>
     <h1 class="center">
       <span class="title">{{ title }}</span>
     </h1>
     <div class="right">
-      <button type="submit" appBlurClick [disabled]="form.loading">
+      <button type="submit" [disabled]="form.loading">
         <span [hidden]="form.loading">{{ "save" | i18n }}</span>
         <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
@@ -51,7 +51,6 @@
                 type="button"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'generateUsername' | i18n }}"
                 (click)="generateUsername()"
               >
@@ -77,7 +76,6 @@
                 type="button"
                 #checkPasswordBtn
                 class="row-btn btn"
-                appBlurClick
                 appA11yTitle="{{ 'checkPassword' | i18n }}"
                 (click)="checkPassword()"
                 [appApiAction]="checkPasswordPromise"
@@ -99,7 +97,6 @@
                 type="button"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 (click)="togglePassword()"
                 *ngIf="cipher.viewPassword"
@@ -115,7 +112,6 @@
                 type="button"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'generatePassword' | i18n }}"
                 (click)="generatePassword()"
                 *ngIf="cipher.viewPassword"
@@ -165,7 +161,6 @@
                 type="button"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 (click)="toggleCardNumber()"
                 [attr.aria-pressed]="showCardNumber"
@@ -219,7 +214,6 @@
                 type="button"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 (click)="toggleCardCode()"
                 [attr.aria-pressed]="showCardCode"
@@ -486,7 +480,6 @@
         <button
           type="button"
           appStopClick
-          appBlurClick
           (click)="addUri()"
           class="box-content-row box-content-row-newmulti"
         >
@@ -546,7 +539,6 @@
           type="button"
           class="box-content-row box-content-row-flex text-default"
           appStopClick
-          appBlurClick
           (click)="attachments()"
           *ngIf="editMode && showAttachments && !cloneMode"
         >
@@ -566,7 +558,6 @@
           type="button"
           class="box-content-row box-content-row-flex text-default"
           appStopClick
-          appBlurClick
           (click)="editCollections()"
           *ngIf="editMode && cipher.organizationId && !cloneMode"
         >
@@ -641,7 +632,6 @@
           type="button"
           class="box-content-row"
           appStopClick
-          appBlurClick
           (click)="delete()"
           [appApiAction]="deletePromise"
           #deleteBtn

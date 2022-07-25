@@ -1,9 +1,9 @@
 <header>
   <div class="left">
-    <a routerLink="/tabs/settings">
+    <button type="button" routerLink="/tabs/settings">
       <span class="header-icon"><i class="bwi bwi-angle-left" aria-hidden="true"></i></span>
       <span>{{ "back" | i18n }}</span>
-    </a>
+    </button>
   </div>
   <h1 class="center">
     <span class="title">{{ "premiumMembership" | i18n }}</span>
@@ -42,13 +42,12 @@
         </li>
       </ul>
       <p class="text-center lead">{{ priceString }}</p>
-      <button type="button" class="btn primary block" appBlurClick (click)="purchase()">
+      <button type="button" class="btn primary block" (click)="purchase()">
         <b>{{ "premiumPurchase" | i18n }}</b>
       </button>
       <button
         #refreshBtn
         type="button"
-        appBlurClick
         (click)="refresh()"
         [disabled]="refreshBtn.loading"
         [appApiAction]="refreshPromise"
@@ -65,7 +64,7 @@
     <ng-container *ngIf="isPremium">
       <p class="text-center lead">{{ "premiumCurrentMember" | i18n }}</p>
       <p class="text-center">{{ "premiumCurrentMemberThanks" | i18n }}</p>
-      <button type="button" class="btn block primary" appBlurClick (click)="manage()">
+      <button type="button" class="btn block primary" (click)="manage()">
         <b>{{ "premiumManage" | i18n }}</b>
       </button>
     </ng-container>
