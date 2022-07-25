@@ -63,10 +63,16 @@ const routes: Routes = [
       { path: "2fa", component: TwoFactorComponent, canActivate: [UnauthGuard] },
       {
         path: "register",
-        component: flagEnabled("showTrial") ? TrialInitiationComponent : RegisterComponent,
+        component: RegisterComponent,
         canActivate: [UnauthGuard],
         data: { titleId: "createAccount" },
       },
+      buildFlaggedRoute("showTrial", {
+        path: "trial",
+        component: TrialInitiationComponent,
+        canActivate: [UnauthGuard],
+        data: { titleId: "startTrial" },
+      }),
       {
         path: "sso",
         component: SsoComponent,

@@ -34,6 +34,7 @@ export class TrialInitiationComponent implements OnInit {
   accountCreateOnly = true;
   policies: Policy[];
   enforcedPolicyOptions: MasterPasswordPolicyOptions;
+  validOrgs: string[] = ["teams", "enterprise", "families"];
   @ViewChild("stepper", { static: false }) verticalStepper: VerticalStepperComponent;
 
   orgInfoFormGroup = this.formBuilder.group({
@@ -63,17 +64,22 @@ export class TrialInitiationComponent implements OnInit {
         return;
       }
 
-      this.org = qParams.org;
+      if (this.validOrgs.includes(qParams.org)) {
+        this.org = qParams.org;
+      } else {
+        this.org = "families";
+      }
+
       this.orgLabel = this.titleCasePipe.transform(this.org);
       this.accountCreateOnly = false;
 
-      if (qParams.org === "families") {
+      if (this.org === "families") {
         this.plan = PlanType.FamiliesAnnually;
         this.product = ProductType.Families;
-      } else if (qParams.org === "teams") {
+      } else if (this.org === "teams") {
         this.plan = PlanType.TeamsAnnually;
         this.product = ProductType.Teams;
-      } else if (qParams.org === "enterprise") {
+      } else if (this.org === "enterprise") {
         this.plan = PlanType.EnterpriseAnnually;
         this.product = ProductType.Enterprise;
       }
