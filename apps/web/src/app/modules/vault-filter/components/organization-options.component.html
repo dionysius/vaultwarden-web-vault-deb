@@ -13,7 +13,7 @@
 >
   <button
     *ngIf="allowEnrollmentChanges(organization) && !organization.resetPasswordEnrolled"
-    class="dropdown-item"
+    class="!tw-text-main active:!tw-ring-0 active:!tw-ring-offset-0 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-offset-2 focus:tw-ring-primary-700 focus:tw-z-50 hover:tw-bg-secondary-100 tw-bg-background tw-block tw-border-none tw-cursor-pointer tw-px-4 tw-py-2 tw-text-left"
     (click)="toggleResetPasswordEnrollment(organization)"
   >
     <i class="bwi bwi-fw bwi-key" aria-hidden="true"></i>
@@ -21,7 +21,7 @@
   </button>
   <button
     *ngIf="allowEnrollmentChanges(organization) && organization.resetPasswordEnrolled"
-    class="dropdown-item"
+    class="!tw-text-main active:!tw-ring-0 active:!tw-ring-offset-0 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-offset-2 focus:tw-ring-primary-700 focus:tw-z-50 hover:tw-bg-secondary-100 tw-bg-background tw-block tw-border-none tw-cursor-pointer tw-px-4 tw-py-2 tw-text-left"
     (click)="toggleResetPasswordEnrollment(organization)"
   >
     <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
@@ -30,7 +30,7 @@
   <ng-container *ngIf="organization.useSso && organization.identifier">
     <button
       *ngIf="organization.ssoBound; else linkSso"
-      class="dropdown-item"
+      class="!tw-text-main active:!tw-ring-0 active:!tw-ring-offset-0 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-offset-2 focus:tw-ring-primary-700 focus:tw-z-50 hover:tw-bg-secondary-100 tw-bg-background tw-block tw-border-none tw-cursor-pointer tw-px-4 tw-py-2 tw-text-left"
       (click)="unlinkSso(organization)"
     >
       <i class="bwi bwi-fw bwi-chain-broken" aria-hidden="true"></i>
@@ -40,7 +40,10 @@
       <app-link-sso [organization]="organization"> </app-link-sso>
     </ng-template>
   </ng-container>
-  <button class="dropdown-item text-danger" (click)="leave(organization)">
+  <button
+    class="text-danger active:!tw-ring-0 active:!tw-ring-offset-0 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-offset-2 focus:tw-ring-primary-700 focus:tw-z-50 hover:tw-bg-secondary-100 tw-bg-background tw-block tw-border-none tw-cursor-pointer tw-px-4 tw-py-2 tw-text-left"
+    (click)="leave(organization)"
+  >
     <i class="bwi bwi-fw bwi-sign-out" aria-hidden="true"></i>
     {{ "leave" | i18n }}
   </button>
