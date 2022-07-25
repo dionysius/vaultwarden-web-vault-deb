@@ -4,4 +4,5 @@ export class EventRequest {
   type: EventType;
   cipherId: string;
   date: string;
+  organizationId: string;
 }

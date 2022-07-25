@@ -139,6 +139,7 @@ import {
   OrganizationConnectionConfigApis,
   OrganizationConnectionResponse,
 } from "../models/response/organizationConnectionResponse";
+import { OrganizationExportResponse } from "../models/response/organizationExportResponse";
 import { OrganizationKeysResponse } from "../models/response/organizationKeysResponse";
 import { OrganizationResponse } from "../models/response/organizationResponse";
 import { OrganizationSponsorshipSyncStatusResponse } from "../models/response/organizationSponsorshipSyncStatusResponse";
@@ -2321,6 +2322,17 @@ export class ApiService implements ApiServiceAbstraction {
       const error = await this.handleError(response, false, true);
       return Promise.reject(error);
     }
+  }
+
+  async getOrganizationExport(organizationId: string): Promise<OrganizationExportResponse> {
+    const r = await this.send(
+      "GET",
+      "/organizations/" + organizationId + "/export",
+      null,
+      true,
+      true
+    );
+    return new OrganizationExportResponse(r);
   }
 
   // Helpers

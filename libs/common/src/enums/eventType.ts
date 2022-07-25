@@ -53,7 +53,7 @@ export enum EventType {
 
   Organization_Updated = 1600,
   Organization_PurgedVault = 1601,
-  // Organization_ClientExportedVault = 1602,
+  Organization_ClientExportedVault = 1602,
   Organization_VaultAccessed = 1603,
   Organization_EnabledSso = 1604,
   Organization_DisabledSso = 1605,

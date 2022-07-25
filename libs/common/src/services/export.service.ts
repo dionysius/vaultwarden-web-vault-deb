@@ -245,38 +245,41 @@ export class ExportService implements ExportServiceAbstraction {
     const promises = [];
 
     promises.push(
-      this.apiService.getCollections(organizationId).then((collections) => {
-        const collectionPromises: any = [];
-        if (collections != null && collections.data != null && collections.data.length > 0) {
-          collections.data.forEach((c) => {
-            const collection = new Collection(new CollectionData(c as CollectionDetailsResponse));
-            collectionPromises.push(
-              collection.decrypt().then((decCol) => {
-                decCollections.push(decCol);
-              })
-            );
-          });
-        }
-        return Promise.all(collectionPromises);
-      })
-    );
-
-    promises.push(
-      this.apiService.getCiphersOrganization(organizationId).then((ciphers) => {
-        const cipherPromises: any = [];
-        if (ciphers != null && ciphers.data != null && ciphers.data.length > 0) {
-          ciphers.data
-            .filter((c) => c.deletedDate === null)
-            .forEach((c) => {
-              const cipher = new Cipher(new CipherData(c));
-              cipherPromises.push(
-                cipher.decrypt().then((decCipher) => {
-                  decCiphers.push(decCipher);
+      this.apiService.getOrganizationExport(organizationId).then((exportData) => {
+        const exportPromises: any = [];
+        if (exportData != null) {
+          if (
+            exportData.collections != null &&
+            exportData.collections.data != null &&
+            exportData.collections.data.length > 0
+          ) {
+            exportData.collections.data.forEach((c) => {
+              const collection = new Collection(new CollectionData(c as CollectionDetailsResponse));
+              exportPromises.push(
+                collection.decrypt().then((decCol) => {
+                  decCollections.push(decCol);
                 })
               );
             });
+          }
+          if (
+            exportData.ciphers != null &&
+            exportData.ciphers.data != null &&
+            exportData.ciphers.data.length > 0
+          ) {
+            exportData.ciphers.data
+              .filter((c) => c.deletedDate === null)
+              .forEach((c) => {
+                const cipher = new Cipher(new CipherData(c));
+                exportPromises.push(
+                  cipher.decrypt().then((decCipher) => {
+                    decCiphers.push(decCipher);
+                  })
+                );
+              });
+          }
         }
-        return Promise.all(cipherPromises);
+        return Promise.all(exportPromises);
       })
     );
 
