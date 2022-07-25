@@ -227,6 +227,24 @@ jobs:
       - self-host
       - cfpages-deploy
     steps:
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@1b599fe41a0ef1f95191e7f2eec4743f2d7dfc48
+        id: deployment
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          environment-url: http://vault.bitwarden.com
+          environment: 'Web Vault - Production'
+          description: 'Deployment ${{ needs.setup.outputs.release_version }} from branch ${{ github.ref_name }}'
+          task: release
+      
+      - name: Update deployment status to In Progress
+        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          environment-url: http://vault.bitwarden.com
+          state: 'in_progress'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
       - name: Download latest build artifacts
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
@@ -267,3 +285,21 @@ jobs:
             apps/web/artifacts/web-${{ needs.setup.outputs.release_version }}-selfhosted-open-source.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
+
+      - name: Update deployment status to Success
+        if: success()
+        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          environment-url: http://vault.bitwarden.com
+          state: 'success'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update deployment status to Failure
+        if: failure()
+        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          environment-url: http://vault.bitwarden.com
+          state: 'failure'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}

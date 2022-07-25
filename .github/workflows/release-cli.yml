@@ -64,6 +64,22 @@ jobs:
           monorepo: true
           monorepo-project: cli
 
+      - name: Create GitHub deployment for Snap
+        uses: chrnorm/deployment-action@1b599fe41a0ef1f95191e7f2eec4743f2d7dfc48
+        id: deployment
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          environment: 'CLI - Production'
+          description: 'Deployment ${{ steps.version.outputs.version }} from branch ${{ github.ref_name }}'
+          task: release
+      
+      - name: Update deployment status to In Progress
+        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          state: 'in_progress'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
       - name: Download all Release artifacts
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
@@ -104,6 +120,21 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
 
+      - name: Update deployment status to Success
+        if: success()
+        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          state: 'success'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update deployment status to Failure
+        if: failure()
+        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          state: 'failure'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
   snap:
     name: Deploy Snap
@@ -158,7 +189,6 @@ jobs:
         run: |
           snapcraft push bw_${{ env._PKG_VERSION }}_amd64.snap --release stable
           snapcraft logout
-
 
   choco:
     name: Deploy Choco
@@ -219,7 +249,6 @@ jobs:
           cd dist
           choco push
 
-
   npm:
     name: Publish NPM
     runs-on: ubuntu-20.04
@@ -274,3 +303,4 @@ jobs:
       - name: Publish NPM
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         run: npm publish --access public
+
