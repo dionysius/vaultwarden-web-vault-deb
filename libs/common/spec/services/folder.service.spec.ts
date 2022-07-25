@@ -1,7 +1,6 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -19,30 +18,25 @@ describe("Folder Service", () => {
   let i18nService: SubstituteOf<I18nService>;
   let cipherService: SubstituteOf<CipherService>;
   let stateService: SubstituteOf<StateService>;
-  let broadcasterService: SubstituteOf<BroadcasterService>;
   let activeAccount: BehaviorSubject<string>;
+  let activeAccountUnlocked: BehaviorSubject<boolean>;
 
   beforeEach(() => {
     cryptoService = Substitute.for();
     i18nService = Substitute.for();
     cipherService = Substitute.for();
     stateService = Substitute.for();
-    broadcasterService = Substitute.for();
     activeAccount = new BehaviorSubject("123");
+    activeAccountUnlocked = new BehaviorSubject(true);
 
     stateService.getEncryptedFolders().resolves({
       "1": folderData("1", "test"),
     });
     stateService.activeAccount.returns(activeAccount);
+    stateService.activeAccountUnlocked.returns(activeAccountUnlocked);
     (window as any).bitwardenContainerService = new ContainerService(cryptoService);
 
-    folderService = new FolderService(
-      cryptoService,
-      i18nService,
-      cipherService,
-      stateService,
-      broadcasterService
-    );
+    folderService = new FolderService(cryptoService, i18nService, cipherService, stateService);
   });
 
   it("encrypt", async () => {
@@ -152,6 +146,15 @@ describe("Folder Service", () => {
     await folderService.clearCache();
 
     expect((await firstValueFrom(folderService.folders$)).length).toBe(1);
+    expect((await firstValueFrom(folderService.folderViews$)).length).toBe(0);
+  });
+
+  it("locking should clear", async () => {
+    activeAccountUnlocked.next(false);
+    // Sleep for 100ms to avoid timing issues
+    await new Promise((r) => setTimeout(r, 100));
+
+    expect((await firstValueFrom(folderService.folders$)).length).toBe(0);
     expect((await firstValueFrom(folderService.folderViews$)).length).toBe(0);
   });
 
