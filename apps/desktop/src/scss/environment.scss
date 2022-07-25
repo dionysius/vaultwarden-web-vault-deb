@@ -25,21 +25,6 @@
     }
   }
 
-  #login-page {
-    .content {
-      a.settings-icon {
-        position: absolute;
-        left: unset;
-        right: 20px;
-
-        span {
-          margin-right: 8px;
-          float: left;
-        }
-      }
-    }
-  }
-
   .vault .header-search {
     -webkit-app-region: drag;
 
