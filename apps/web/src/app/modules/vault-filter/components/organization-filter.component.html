@@ -129,21 +129,21 @@
             <button class="filter-button" (click)="applyOrganizationFilter(organization)">
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               {{ organization.name }}
+            </button>
+            <span class="ml-auto">
               <i
                 *ngIf="!organization.enabled"
-                class="bwi bwi-fw bwi-exclamation-triangle text-danger"
+                class="org-options bwi bwi-fw bwi-exclamation-triangle text-danger"
                 aria-label="{{ 'organizationIsDisabled' | i18n }}"
                 appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
-              ></i>
-            </button>
-            <ng-container>
-              <button [bitMenuTriggerFor]="orgMenu" class="org-options ml-auto">
+              ></i
+              ><button [bitMenuTriggerFor]="orgMenu" class="org-options">
                 <i class="bwi bwi-ellipsis-v" aria-hidden="true"></i>
               </button>
               <bit-menu class="filter-organization-options" #orgMenu>
                 <app-organization-options [organization]="organization"></app-organization-options>
               </bit-menu>
-            </ng-container>
+            </span>
           </span>
         </li>
         <li class="filter-option" *ngIf="!(displayMode === 'singleOrganizationPolicy')">

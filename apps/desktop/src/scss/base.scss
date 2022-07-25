@@ -136,3 +136,9 @@ div:not(.modal)::-webkit-scrollbar-thumb,
 .cdk-virtual-scroll-content-wrapper {
   width: 100%;
 }
+
+//taken from bootstrap for replicating functionality
+.ml-auto,
+.mx-auto {
+  margin-left: auto !important;
+}

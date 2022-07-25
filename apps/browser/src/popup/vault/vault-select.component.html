@@ -58,7 +58,7 @@
           class="bwi bwi-fw bwi-family"
           aria-hidden="true"
         ></i>
-        <span>&nbsp;{{ organization.name | ellipsis: 21:true }}</span>
+        <span>&nbsp;{{ organization.name | ellipsis: (organization.enabled ? 21 : 18):true }}</span>
         <i
           *ngIf="!organization.enabled"
           class="bwi bwi-fw bwi-exclamation-triangle text-danger"
