@@ -282,8 +282,8 @@ const webpackConfig = {
   devtool: "source-map",
   devServer: devServer,
   entry: {
-    "app/polyfills": "./src/app/polyfills.ts",
-    "app/main": "./src/app/main.ts",
+    "app/polyfills": "./src/polyfills.ts",
+    "app/main": "./src/main.ts",
     "connectors/webauthn": "./src/connectors/webauthn.ts",
     "connectors/webauthn-fallback": "./src/connectors/webauthn-fallback.ts",
     "connectors/duo": "./src/connectors/duo.ts",

@@ -1,3 +1,15 @@
+import { Inject, Injectable } from "@angular/core";
+
+import {
+  MEMORY_STORAGE,
+  SECURE_STORAGE,
+  STATE_FACTORY,
+  STATE_SERVICE_USE_CACHE,
+} from "@bitwarden/angular/services/jslib-services.module";
+import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { StateMigrationService } from "@bitwarden/common/abstractions/stateMigration.service";
+import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
+import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { CipherData } from "@bitwarden/common/models/data/cipherData";
 import { CollectionData } from "@bitwarden/common/models/data/collectionData";
 import { FolderData } from "@bitwarden/common/models/data/folderData";
@@ -5,14 +17,31 @@ import { SendData } from "@bitwarden/common/models/data/sendData";
 import { StorageOptions } from "@bitwarden/common/models/domain/storageOptions";
 import { StateService as BaseStateService } from "@bitwarden/common/services/state.service";
 
-import { StateService as StateServiceAbstraction } from "../abstractions/state.service";
 import { Account } from "../models/account";
 import { GlobalState } from "../models/globalState";
 
-export class StateService
-  extends BaseStateService<GlobalState, Account>
-  implements StateServiceAbstraction
-{
+@Injectable()
+export class StateService extends BaseStateService<GlobalState, Account> {
+  constructor(
+    storageService: AbstractStorageService,
+    @Inject(SECURE_STORAGE) secureStorageService: AbstractStorageService,
+    @Inject(MEMORY_STORAGE) memoryStorageService: AbstractStorageService,
+    logService: LogService,
+    stateMigrationService: StateMigrationService,
+    @Inject(STATE_FACTORY) stateFactory: StateFactory<GlobalState, Account>,
+    @Inject(STATE_SERVICE_USE_CACHE) useAccountCache = true
+  ) {
+    super(
+      storageService,
+      secureStorageService,
+      memoryStorageService,
+      logService,
+      stateMigrationService,
+      stateFactory,
+      useAccountCache
+    );
+  }
+
   async addAccount(account: Account) {
     // Apply web overides to default account values
     account = new Account(account);

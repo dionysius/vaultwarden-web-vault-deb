@@ -13,7 +13,6 @@ import {
 import { ModalService as ModalServiceAbstraction } from "@bitwarden/angular/services/modal.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/abstractions/messaging.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -23,26 +22,25 @@ import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.s
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 
-import { StateService as StateServiceAbstraction } from "../../abstractions/state.service";
-import { Account } from "../../models/account";
-import { GlobalState } from "../../models/globalState";
-import { BroadcasterMessagingService } from "../../services/broadcasterMessaging.service";
-import { HtmlStorageService } from "../../services/htmlStorage.service";
-import { I18nService } from "../../services/i18n.service";
-import { PasswordRepromptService } from "../../services/passwordReprompt.service";
-import { StateService } from "../../services/state.service";
-import { StateMigrationService } from "../../services/stateMigration.service";
-import { WebPlatformUtilsService } from "../../services/webPlatformUtils.service";
 import { HomeGuard } from "../guards/home.guard";
+import { Account } from "../models/account";
+import { GlobalState } from "../models/globalState";
 import { PermissionsGuard as OrgPermissionsGuard } from "../organizations/guards/permissions.guard";
 import { NavigationPermissionsService as OrgPermissionsService } from "../organizations/services/navigation-permissions.service";
 
+import { BroadcasterMessagingService } from "./broadcasterMessaging.service";
 import { EventService } from "./event.service";
+import { HtmlStorageService } from "./htmlStorage.service";
+import { I18nService } from "./i18n.service";
 import { InitService } from "./init.service";
 import { ModalService } from "./modal.service";
+import { PasswordRepromptService } from "./passwordReprompt.service";
 import { PolicyListService } from "./policy-list.service";
 import { RouterService } from "./router.service";
+import { StateService } from "./state.service";
+import { StateMigrationService } from "./stateMigration.service";
 import { WebFileDownloadService } from "./webFileDownload.service";
+import { WebPlatformUtilsService } from "./webPlatformUtils.service";
 
 @NgModule({
   imports: [ToastrModule, JslibServicesModule],
@@ -95,22 +93,10 @@ import { WebFileDownloadService } from "./webFileDownload.service";
       useClass: StateMigrationService,
       deps: [AbstractStorageService, SECURE_STORAGE, STATE_FACTORY],
     },
-    {
-      provide: StateServiceAbstraction,
-      useClass: StateService,
-      deps: [
-        AbstractStorageService,
-        SECURE_STORAGE,
-        MEMORY_STORAGE,
-        LogService,
-        StateMigrationServiceAbstraction,
-        STATE_FACTORY,
-        STATE_SERVICE_USE_CACHE,
-      ],
-    },
+    StateService,
     {
       provide: BaseStateServiceAbstraction,
-      useExisting: StateServiceAbstraction,
+      useExisting: StateService,
     },
     {
       provide: PasswordRepromptServiceAbstraction,
