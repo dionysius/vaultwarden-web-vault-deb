@@ -13,7 +13,7 @@ switch (process.platform) {
     break;
 
     default:
-        targets = ['x86_64-unknown-linux-gnu'];
+        targets = ['x86_64-unknown-linux-musl'];
     break;
 }
 

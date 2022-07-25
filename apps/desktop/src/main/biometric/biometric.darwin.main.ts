@@ -6,8 +6,6 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { BiometricMain } from "../biometric/biometric.main";
 
 export default class BiometricDarwinMain implements BiometricMain {
-  isError = false;
-
   constructor(private i18nservice: I18nService, private stateService: StateService) {}
 
   async init() {

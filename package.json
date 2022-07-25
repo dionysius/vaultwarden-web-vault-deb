@@ -27,6 +27,7 @@
   },
   "workspaces": [
     "apps/*",
+    "apps/desktop/desktop_native",
     "libs/*"
   ],
   "devDependencies": {
@@ -37,7 +38,6 @@
     "@compodoc/compodoc": "^1.1.19",
     "@fluffy-spoon/substitute": "^1.208.0",
     "@ngtools/webpack": "^12.2.13",
-    "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
     "@storybook/addon-a11y": "^6.5.7",
     "@storybook/addon-actions": "^6.5.7",
     "@storybook/addon-essentials": "^6.5.7",
@@ -94,7 +94,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.26.0",
-    "forcefocus": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-filter": "^7.0.0",
     "gulp-if": "^3.0.0",
@@ -108,7 +107,6 @@
     "jasmine-core": "^3.7.1",
     "jasmine-spec-reporter": "^7.0.0",
     "jest-preset-angular": "^10.1.0",
-    "keytar": "^7.9.0",
     "lint-staged": "^12.4.1",
     "mini-css-extract-plugin": "^2.4.5",
     "node-ipc": "^9.2.1",

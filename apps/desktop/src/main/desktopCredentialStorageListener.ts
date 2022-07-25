@@ -1,5 +1,6 @@
 import { ipcMain } from "electron";
-import { deletePassword, getPassword, setPassword } from "keytar";
+
+import { passwords } from "@bitwarden/desktop-native";
 
 import { BiometricMain } from "./biometric/biometric.main";
 
@@ -10,7 +11,7 @@ export class DesktopCredentialStorageListener {
   constructor(private serviceName: string, private biometricService: BiometricMain) {}
 
   init() {
-    ipcMain.on("keytar", async (event: any, message: any) => {
+    ipcMain.handle("keytar", async (event: any, message: any) => {
       try {
         let serviceName = this.serviceName;
         message.keySuffix = "_" + (message.keySuffix ?? "");
@@ -25,21 +26,33 @@ export class DesktopCredentialStorageListener {
         let val: string | boolean = null;
         if (authenticated && message.action && message.key) {
           if (message.action === "getPassword") {
-            val = await getPassword(serviceName, message.key);
+            val = await this.getPassword(serviceName, message.key);
           } else if (message.action === "hasPassword") {
-            const result = await getPassword(serviceName, message.key);
+            const result = await this.getPassword(serviceName, message.key);
             val = result != null;
           } else if (message.action === "setPassword" && message.value) {
-            await setPassword(serviceName, message.key, message.value);
+            await passwords.setPassword(serviceName, message.key, message.value);
           } else if (message.action === "deletePassword") {
-            await deletePassword(serviceName, message.key);
+            await passwords.deletePassword(serviceName, message.key);
           }
         }
-        event.returnValue = val;
+        return val;
       } catch {
-        event.returnValue = null;
+        return null;
       }
     });
+  }
+
+  // Gracefully handle old keytar values, and if detected updated the entry to the proper format
+  private async getPassword(serviceName: string, key: string) {
+    let val = await passwords.getPassword(serviceName, key);
+    try {
+      JSON.parse(val);
+    } catch (e) {
+      val = await passwords.getPasswordKeytar(serviceName, key);
+      await passwords.setPassword(serviceName, key, val);
+    }
+    return val;
   }
 
   private async authenticateBiometric(): Promise<boolean> {
