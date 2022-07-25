@@ -29,8 +29,8 @@ import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/models/re
 import { BasePeopleComponent } from "../../common/base.people.component";
 
 import { BulkConfirmComponent } from "./bulk/bulk-confirm.component";
-import { BulkDeactivateComponent } from "./bulk/bulk-deactivate.component";
 import { BulkRemoveComponent } from "./bulk/bulk-remove.component";
+import { BulkRestoreRevokeComponent } from "./bulk/bulk-restore-revoke.component";
 import { BulkStatusComponent } from "./bulk/bulk-status.component";
 import { EntityEventsComponent } from "./entity-events.component";
 import { ResetPasswordComponent } from "./reset-password.component";
@@ -167,12 +167,12 @@ export class PeopleComponent
     return this.apiService.deleteOrganizationUser(this.organizationId, id);
   }
 
-  deactivateUser(id: string): Promise<any> {
-    return this.apiService.deactivateOrganizationUser(this.organizationId, id);
+  revokeUser(id: string): Promise<any> {
+    return this.apiService.revokeOrganizationUser(this.organizationId, id);
   }
 
-  activateUser(id: string): Promise<any> {
-    return this.apiService.activateOrganizationUser(this.organizationId, id);
+  restoreUser(id: string): Promise<any> {
+    return this.apiService.restoreOrganizationUser(this.organizationId, id);
   }
 
   reinviteUser(id: string): Promise<any> {
@@ -245,11 +245,11 @@ export class PeopleComponent
           modal.close();
           this.removeUser(user);
         });
-        comp.onDeactivatedUser.subscribe(() => {
+        comp.onRevokedUser.subscribe(() => {
           modal.close();
           this.load();
         });
-        comp.onActivatedUser.subscribe(() => {
+        comp.onRestoredUser.subscribe(() => {
           modal.close();
           this.load();
         });
@@ -290,25 +290,25 @@ export class PeopleComponent
     await this.load();
   }
 
-  async bulkDeactivate() {
-    await this.bulkActivateOrDeactivate(true);
+  async bulkRevoke() {
+    await this.bulkRevokeOrRestore(true);
   }
 
-  async bulkActivate() {
-    await this.bulkActivateOrDeactivate(false);
+  async bulkRestore() {
+    await this.bulkRevokeOrRestore(false);
   }
 
-  async bulkActivateOrDeactivate(isDeactivating: boolean) {
+  async bulkRevokeOrRestore(isRevoking: boolean) {
     if (this.actionPromise != null) {
       return;
     }
 
-    const ref = this.modalService.open(BulkDeactivateComponent, {
+    const ref = this.modalService.open(BulkRestoreRevokeComponent, {
       allowMultipleModals: true,
       data: {
         organizationId: this.organizationId,
         users: this.getCheckedUsers(),
-        isDeactivating: isDeactivating,
+        isRevoking: isRevoking,
       },
     });
 

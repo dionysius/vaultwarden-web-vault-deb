@@ -8,11 +8,11 @@ import { OrganizationUserBulkRequest } from "@bitwarden/common/models/request/or
 import { BulkUserDetails } from "./bulk-status.component";
 
 @Component({
-  selector: "app-bulk-deactivate",
-  templateUrl: "bulk-deactivate.component.html",
+  selector: "app-bulk-restore-revoke",
+  templateUrl: "bulk-restore-revoke.component.html",
 })
-export class BulkDeactivateComponent {
-  isDeactivating: boolean;
+export class BulkRestoreRevokeComponent {
+  isRevoking: boolean;
   organizationId: string;
   users: BulkUserDetails[];
 
@@ -27,13 +27,13 @@ export class BulkDeactivateComponent {
     protected i18nService: I18nService,
     config: ModalConfig
   ) {
-    this.isDeactivating = config.data.isDeactivating;
+    this.isRevoking = config.data.isRevoking;
     this.organizationId = config.data.organizationId;
     this.users = config.data.users;
   }
 
   get bulkTitle() {
-    const titleKey = this.isDeactivating ? "revokeUsers" : "restoreUsers";
+    const titleKey = this.isRevoking ? "revokeUsers" : "restoreUsers";
     return this.i18nService.t(titleKey);
   }
 
@@ -42,7 +42,7 @@ export class BulkDeactivateComponent {
     try {
       const response = await this.performBulkUserAction();
 
-      const bulkMessage = this.isDeactivating ? "bulkRevokedMessage" : "bulkRestoredMessage";
+      const bulkMessage = this.isRevoking ? "bulkRevokedMessage" : "bulkRestoredMessage";
       response.data.forEach((entry) => {
         const error = entry.error !== "" ? entry.error : this.i18nService.t(bulkMessage);
         this.statuses.set(entry.id, error);
@@ -57,10 +57,10 @@ export class BulkDeactivateComponent {
 
   protected async performBulkUserAction() {
     const request = new OrganizationUserBulkRequest(this.users.map((user) => user.id));
-    if (this.isDeactivating) {
-      return await this.apiService.deactivateManyOrganizationUsers(this.organizationId, request);
+    if (this.isRevoking) {
+      return await this.apiService.revokeManyOrganizationUsers(this.organizationId, request);
     } else {
-      return await this.apiService.activateManyOrganizationUsers(this.organizationId, request);
+      return await this.apiService.restoreManyOrganizationUsers(this.organizationId, request);
     }
   }
 }

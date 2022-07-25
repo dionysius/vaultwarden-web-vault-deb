@@ -27,12 +27,12 @@ export class UserAddEditComponent implements OnInit {
   @Input() usesKeyConnector = false;
   @Output() onSavedUser = new EventEmitter();
   @Output() onDeletedUser = new EventEmitter();
-  @Output() onDeactivatedUser = new EventEmitter();
-  @Output() onActivatedUser = new EventEmitter();
+  @Output() onRevokedUser = new EventEmitter();
+  @Output() onRestoredUser = new EventEmitter();
 
   loading = true;
   editMode = false;
-  isDeactivated = false;
+  isRevoked = false;
   title: string;
   emails: string;
   type: OrganizationUserType = OrganizationUserType.User;
@@ -101,7 +101,7 @@ export class UserAddEditComponent implements OnInit {
         );
         this.access = user.accessAll ? "all" : "selected";
         this.type = user.type;
-        this.isDeactivated = user.status === OrganizationUserStatusType.Deactivated;
+        this.isRevoked = user.status === OrganizationUserStatusType.Revoked;
         if (user.type === OrganizationUserType.Custom) {
           this.permissions = user.permissions;
         }
@@ -245,7 +245,7 @@ export class UserAddEditComponent implements OnInit {
     }
   }
 
-  async deactivate() {
+  async revoke() {
     if (!this.editMode) {
       return;
     }
@@ -262,7 +262,7 @@ export class UserAddEditComponent implements OnInit {
     }
 
     try {
-      this.formPromise = this.apiService.deactivateOrganizationUser(
+      this.formPromise = this.apiService.revokeOrganizationUser(
         this.organizationId,
         this.organizationUserId
       );
@@ -272,20 +272,20 @@ export class UserAddEditComponent implements OnInit {
         null,
         this.i18nService.t("revokedUserId", this.name)
       );
-      this.isDeactivated = true;
-      this.onDeactivatedUser.emit();
+      this.isRevoked = true;
+      this.onRevokedUser.emit();
     } catch (e) {
       this.logService.error(e);
     }
   }
 
-  async activate() {
+  async restore() {
     if (!this.editMode) {
       return;
     }
 
     try {
-      this.formPromise = this.apiService.activateOrganizationUser(
+      this.formPromise = this.apiService.restoreOrganizationUser(
         this.organizationId,
         this.organizationUserId
       );
@@ -295,8 +295,8 @@ export class UserAddEditComponent implements OnInit {
         null,
         this.i18nService.t("restoredUserId", this.name)
       );
-      this.isDeactivated = false;
-      this.onActivatedUser.emit();
+      this.isRevoked = false;
+      this.onRestoredUser.emit();
     } catch (e) {
       this.logService.error(e);
     }

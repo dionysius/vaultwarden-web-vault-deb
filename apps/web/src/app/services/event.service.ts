@@ -280,14 +280,14 @@ export class EventService {
           this.getShortId(ev.organizationUserId)
         );
         break;
-      case EventType.OrganizationUser_Deactivated:
+      case EventType.OrganizationUser_Revoked:
         msg = this.i18nService.t("revokedUserId", this.formatOrgUserId(ev));
         humanReadableMsg = this.i18nService.t(
           "revokedUserId",
           this.getShortId(ev.organizationUserId)
         );
         break;
-      case EventType.OrganizationUser_Activated:
+      case EventType.OrganizationUser_Restored:
         msg = this.i18nService.t("restoredUserId", this.formatOrgUserId(ev));
         humanReadableMsg = this.i18nService.t(
           "restoredUserId",

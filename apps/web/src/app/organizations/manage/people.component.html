@@ -32,11 +32,11 @@
       <button
         type="button"
         class="btn btn-outline-secondary"
-        [ngClass]="{ active: status == userStatusType.Deactivated }"
-        (click)="filter(userStatusType.Deactivated)"
+        [ngClass]="{ active: status == userStatusType.Revoked }"
+        (click)="filter(userStatusType.Revoked)"
       >
         {{ "revoked" | i18n }}
-        <span bitBadge badgeType="info" *ngIf="deactivatedCount">{{ deactivatedCount }}</span>
+        <span bitBadge badgeType="info" *ngIf="revokedCount">{{ revokedCount }}</span>
       </button>
     </div>
     <div class="ml-3">
@@ -75,11 +75,11 @@
           <i class="bwi bwi-fw bwi-check" aria-hidden="true"></i>
           {{ "confirmSelected" | i18n }}
         </button>
-        <button class="dropdown-item" appStopClick (click)="bulkActivate()">
+        <button class="dropdown-item" appStopClick (click)="bulkRestore()">
           <i class="bwi bwi-fw bwi-plus-circle" aria-hidden="true"></i>
           {{ "restoreAccess" | i18n }}
         </button>
-        <button class="dropdown-item" appStopClick (click)="bulkDeactivate()">
+        <button class="dropdown-item" appStopClick (click)="bulkRevoke()">
           <i class="bwi bwi-fw bwi-minus-circle" aria-hidden="true"></i>
           {{ "revokeAccess" | i18n }}
         </button>
@@ -158,7 +158,7 @@
             <span bitBadge badgeType="warning" *ngIf="u.status === userStatusType.Accepted">{{
               "accepted" | i18n
             }}</span>
-            <span bitBadge badgeType="secondary" *ngIf="u.status === userStatusType.Deactivated">{{
+            <span bitBadge badgeType="secondary" *ngIf="u.status === userStatusType.Revoked">{{
               "revoked" | i18n
             }}</span>
             <small class="text-muted d-block" *ngIf="u.name">{{ u.name }}</small>
@@ -255,8 +255,8 @@
                   class="dropdown-item"
                   href="#"
                   appStopClick
-                  (click)="activate(u)"
-                  *ngIf="u.status === userStatusType.Deactivated"
+                  (click)="restore(u)"
+                  *ngIf="u.status === userStatusType.Revoked"
                 >
                   <i class="bwi bwi-fw bwi-plus-circle" aria-hidden="true"></i>
                   {{ "restoreAccess" | i18n }}
@@ -265,8 +265,8 @@
                   class="dropdown-item"
                   href="#"
                   appStopClick
-                  (click)="deactivate(u)"
-                  *ngIf="u.status !== userStatusType.Deactivated"
+                  (click)="revoke(u)"
+                  *ngIf="u.status !== userStatusType.Revoked"
                 >
                   <i class="bwi bwi-fw bwi-minus-circle" aria-hidden="true"></i>
                   {{ "revokeAccess" | i18n }}

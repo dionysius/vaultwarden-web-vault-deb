@@ -449,13 +449,13 @@ export abstract class ApiService {
     organizationId: string,
     request: OrganizationUserBulkRequest
   ) => Promise<ListResponse<OrganizationUserBulkResponse>>;
-  deactivateOrganizationUser: (organizationId: string, id: string) => Promise<any>;
-  deactivateManyOrganizationUsers: (
+  revokeOrganizationUser: (organizationId: string, id: string) => Promise<any>;
+  revokeManyOrganizationUsers: (
     organizationId: string,
     request: OrganizationUserBulkRequest
   ) => Promise<ListResponse<OrganizationUserBulkResponse>>;
-  activateOrganizationUser: (organizationId: string, id: string) => Promise<any>;
-  activateManyOrganizationUsers: (
+  restoreOrganizationUser: (organizationId: string, id: string) => Promise<any>;
+  restoreManyOrganizationUsers: (
     organizationId: string,
     request: OrganizationUserBulkRequest
   ) => Promise<ListResponse<OrganizationUserBulkResponse>>;

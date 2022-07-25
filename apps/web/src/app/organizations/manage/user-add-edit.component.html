@@ -11,7 +11,7 @@
         <h2 class="modal-title" id="userAddEditTitle">
           {{ title }}
           <small class="text-muted" *ngIf="name">{{ name }}</small>
-          <span bitBadge badgeType="secondary" *ngIf="isDeactivated">{{ "revoked" | i18n }}</span>
+          <span bitBadge badgeType="secondary" *ngIf="isRevoked">{{ "revoked" | i18n }}</span>
         </h2>
         <button
           type="button"
@@ -381,9 +381,9 @@
         <div class="ml-auto">
           <button
             type="button"
-            (click)="activate()"
+            (click)="restore()"
             class="btn btn-outline-secondary"
-            *ngIf="editMode && isDeactivated"
+            *ngIf="editMode && isRevoked"
             [disabled]="form.loading"
           >
             <i
@@ -396,9 +396,9 @@
           </button>
           <button
             type="button"
-            (click)="deactivate()"
+            (click)="revoke()"
             class="btn btn-outline-secondary"
-            *ngIf="editMode && !isDeactivated"
+            *ngIf="editMode && !isRevoked"
             [disabled]="form.loading"
           >
             <i
