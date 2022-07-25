@@ -22,6 +22,7 @@ const BroadcasterSubscriptionId = "excludedDomains";
 })
 export class ExcludedDomainsComponent implements OnInit, OnDestroy {
   excludedDomains: ExcludedDomain[] = [];
+  existingExcludedDomains: ExcludedDomain[] = [];
   currentUris: string[];
   loadCurrentUrisTimeout: number;
 
@@ -39,6 +40,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     if (savedDomains) {
       for (const uri of Object.keys(savedDomains)) {
         this.excludedDomains.push({ uri: uri, showCurrentUris: false });
+        this.existingExcludedDomains.push({ uri: uri, showCurrentUris: false });
       }
     }
 
@@ -78,26 +80,41 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
 
   async submit() {
     const savedDomains: { [name: string]: null } = {};
+    const newExcludedDomains = this.getNewlyAddedDomians(this.excludedDomains);
     for (const domain of this.excludedDomains) {
-      if (domain.uri && domain.uri !== "") {
-        const validDomain = Utils.getHostname(domain.uri);
-        if (!validDomain) {
-          this.platformUtilsService.showToast(
-            "error",
-            null,
-            this.i18nService.t("excludedDomainsInvalidDomain", domain.uri)
-          );
-          return;
+      const resp = newExcludedDomains.filter((e) => e.uri === domain.uri);
+      if (resp.length === 0) {
+        savedDomains[domain.uri] = null;
+      } else {
+        if (domain.uri && domain.uri !== "") {
+          const validDomain = Utils.getHostname(domain.uri);
+          if (!validDomain) {
+            this.platformUtilsService.showToast(
+              "error",
+              null,
+              this.i18nService.t("excludedDomainsInvalidDomain", domain.uri)
+            );
+            return;
+          }
+          savedDomains[validDomain] = null;
         }
-        savedDomains[validDomain] = null;
       }
     }
+
     await this.stateService.setNeverDomains(savedDomains);
     this.router.navigate(["/tabs/settings"]);
   }
 
   trackByFunction(index: number, item: any) {
     return index;
+  }
+
+  getNewlyAddedDomians(domain: ExcludedDomain[]): ExcludedDomain[] {
+    const result = this.excludedDomains.filter(
+      (newDomain) =>
+        !this.existingExcludedDomains.some((oldDomain) => newDomain.uri === oldDomain.uri)
+    );
+    return result;
   }
 
   toggleUriInput(domain: ExcludedDomain) {
