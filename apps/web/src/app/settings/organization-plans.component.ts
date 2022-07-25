@@ -452,6 +452,8 @@ export class OrganizationPlansComponent implements OnInit {
     const response = await this.apiService.postOrganizationLicense(fd);
     const orgId = response.id;
 
+    await this.apiService.refreshIdentityToken();
+
     // Org Keys live outside of the OrganizationLicense - add the keys to the org here
     const request = new OrganizationKeysRequest(orgKeys[0], orgKeys[1].encryptedString);
     await this.apiService.postOrganizationKeys(orgId, request);
