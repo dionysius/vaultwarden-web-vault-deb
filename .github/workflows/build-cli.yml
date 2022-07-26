@@ -17,7 +17,7 @@ on:
     branches:
       - 'master'
       - 'rc'
-      - 'hotfix-rc/**'
+      - 'hotfix-rc'
     paths:
       - 'apps/cli/**'
       - 'libs/**'

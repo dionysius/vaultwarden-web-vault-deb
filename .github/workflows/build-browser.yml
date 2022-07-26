@@ -16,7 +16,7 @@ on:
     branches:
       - 'master'
       - 'rc'
-      - 'hotfix-rc/**'
+      - 'hotfix-rc'
     paths:
       - 'apps/browser/**'
       - 'libs/**'
@@ -347,7 +347,7 @@ jobs:
 
   trigger-desktop-build:
     name: Trigger desktop build
-    if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') || contains(github.ref, 'hotfix-rc') }}
+    if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') || github.ref != 'refs/heads/hotfix-rc' }}
     runs-on: ubuntu-20.04
     needs:
       - build
