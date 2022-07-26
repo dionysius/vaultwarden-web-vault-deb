@@ -1,4 +1,4 @@
-import { mockReset, mock, MockProxy } from "jest-mock-extended";
+import { mockReset, mock } from "jest-mock-extended";
 
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";

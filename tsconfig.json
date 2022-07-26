@@ -7,11 +7,10 @@
     "module": "commonjs",
     "lib": ["es5", "es6", "es7", "dom"],
     "sourceMap": true,
-    "declaration": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "declarationDir": "dist/types",
+    "declaration": false,
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
@@ -27,5 +26,6 @@
       }
     ]
   },
-  "include": ["apps/*/src/*", "libs/*/src/**/*"]
+  "include": ["apps/*/src/**/*.stories.ts", "libs/*/src/**/*"],
+  "exclude": ["apps/*/src/**/*.spec.ts", "libs/*/src/**/*.spec.ts"]
 }

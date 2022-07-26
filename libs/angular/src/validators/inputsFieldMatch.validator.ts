@@ -1,4 +1,4 @@
-import { AbstractControl, FormGroup, ValidatorFn } from "@angular/forms";
+import { AbstractControl, UntypedFormGroup, ValidatorFn } from "@angular/forms";
 
 import { FormGroupControls } from "@bitwarden/common/abstractions/formValidationErrors.service";
 
@@ -39,7 +39,7 @@ export class InputsFieldMatch {
 
   //checks the formGroup if two fields have the same value and validation is controlled from either field
   static validateFormInputsMatch(field: string, fieldMatchTo: string, errorMessage: string) {
-    return (formGroup: FormGroup) => {
+    return (formGroup: UntypedFormGroup) => {
       const fieldCtrl = formGroup.controls[field];
       const fieldMatchToCtrl = formGroup.controls[fieldMatchTo];
 

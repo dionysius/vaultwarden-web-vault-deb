@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { RegisterComponent as BaseRegisterComponent } from "@bitwarden/angular/components/register.component";
@@ -28,7 +28,7 @@ export class RegisterFormComponent extends BaseRegisterComponent {
 
   constructor(
     formValidationErrorService: FormValidationErrorsService,
-    formBuilder: FormBuilder,
+    formBuilder: UntypedFormBuilder,
     authService: AuthService,
     router: Router,
     i18nService: I18nService,

@@ -1,7 +1,7 @@
 import * as os from "os";
 
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
 
 import { ExportComponent as BaseExportComponent } from "@bitwarden/angular/components/export.component";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
@@ -30,7 +30,7 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
     eventService: EventService,
     policyService: PolicyService,
     userVerificationService: UserVerificationService,
-    formBuilder: FormBuilder,
+    formBuilder: UntypedFormBuilder,
     private broadcasterService: BroadcasterService,
     logService: LogService,
     fileDownloadService: FileDownloadService

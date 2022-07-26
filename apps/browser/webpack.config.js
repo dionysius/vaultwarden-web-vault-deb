@@ -46,13 +46,20 @@ const moduleRules = [
       "sass-loader",
     ],
   },
-  // Hide System.import warnings. ref: https://github.com/angular/angular/issues/21560
   {
-    test: /[\/\\]@angular[\/\\].+\.js$/,
-    parser: { system: true },
+    test: /\.[cm]?js$/,
+    use: [
+      {
+        loader: "babel-loader",
+        options: {
+          configFile: false,
+          plugins: ["@angular/compiler-cli/linker/babel"],
+        },
+      },
+    ],
   },
   {
-    test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+    test: /\.[jt]sx?$/,
     loader: "@ngtools/webpack",
   },
 ];
@@ -102,7 +109,7 @@ const plugins = [
     cleanAfterEveryBuildPatterns: ["!popup/fonts/**/*"],
   }),
   new webpack.ProvidePlugin({
-    process: "process/browser",
+    process: "process/browser.js",
   }),
   new webpack.SourceMapDevToolPlugin({
     exclude: [/content\/.*/, /notification\/.*/],

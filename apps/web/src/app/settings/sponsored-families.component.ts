@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 
 import { notAllowedValueAsync } from "@bitwarden/angular/validators/notAllowedValueAsync.validator";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -24,7 +24,7 @@ export class SponsoredFamiliesComponent implements OnInit {
   // Conditional display properties
   formPromise: Promise<any>;
 
-  sponsorshipForm: FormGroup;
+  sponsorshipForm: UntypedFormGroup;
 
   constructor(
     private apiService: ApiService,
@@ -32,7 +32,7 @@ export class SponsoredFamiliesComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private syncService: SyncService,
     private organizationService: OrganizationService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private stateService: StateService
   ) {
     this.sponsorshipForm = this.formBuilder.group({

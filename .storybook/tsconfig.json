@@ -4,7 +4,10 @@
     "types": ["node"],
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["../src/test.setup.ts", "../src/**/*.spec.ts", "../projects/**/*.spec.ts"],
-  "include": ["../src/**/*", "../projects/**/*"],
-  "files": ["./typings.d.ts"]
+  "exclude": ["../src/test.setup.ts", "../apps/src/**/*.spec.ts", "../libs/**/*.spec.ts"],
+  "files": [
+    "./typings.d.ts",
+    "../libs/components/src/main.ts",
+    "../libs/components/src/polyfills.ts"
+  ]
 }

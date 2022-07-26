@@ -1,7 +1,7 @@
 import { StepperSelectionEvent } from "@angular/cdk/stepper";
 import { TitleCasePipe } from "@angular/common";
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
+import { UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs";
 
@@ -45,7 +45,7 @@ export class TrialInitiationComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     protected router: Router,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private titleCasePipe: TitleCasePipe,
     private stateService: StateService,
     private apiService: ApiService,

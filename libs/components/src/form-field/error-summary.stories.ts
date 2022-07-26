@@ -1,4 +1,4 @@
-import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
+import { UntypedFormBuilder, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -39,7 +39,7 @@ export default {
   },
 } as Meta;
 
-const fb = new FormBuilder();
+const fb = new UntypedFormBuilder();
 
 const formObj = fb.group({
   name: ["", [Validators.required]],

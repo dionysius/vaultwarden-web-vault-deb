@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
@@ -36,7 +36,7 @@ export class RegisterComponent extends BaseRegisterComponent {
 
   constructor(
     formValidationErrorService: FormValidationErrorsService,
-    formBuilder: FormBuilder,
+    formBuilder: UntypedFormBuilder,
     authService: AuthService,
     router: Router,
     i18nService: I18nService,

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
@@ -32,7 +32,7 @@ export class MasterPasswordPolicyComponent extends BasePolicyComponent {
   showKeyConnectorInfo = false;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     i18nService: I18nService,
     private organizationService: OrganizationService
   ) {

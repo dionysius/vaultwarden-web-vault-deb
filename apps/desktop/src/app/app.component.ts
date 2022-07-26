@@ -195,7 +195,7 @@ export class AppComponent implements OnInit {
             await this.reloadProcess();
             break;
           case "reloadProcess":
-            window.location.reload(true);
+            (window.location as any).reload(true);
             break;
           case "syncStarted":
             break;

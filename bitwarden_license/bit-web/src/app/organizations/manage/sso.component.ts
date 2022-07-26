@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AbstractControl, FormBuilder, FormGroup } from "@angular/forms";
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 
 import { SelectOptions } from "@bitwarden/angular/interfaces/selectOptions";
@@ -142,7 +142,7 @@ export class SsoComponent implements OnInit {
   });
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private route: ActivatedRoute,
     private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
@@ -242,9 +242,9 @@ export class SsoComponent implements OnInit {
     this.showOpenIdCustomizations = !this.showOpenIdCustomizations;
   }
 
-  getErrorCount(form: FormGroup): number {
+  getErrorCount(form: UntypedFormGroup): number {
     return Object.values(form.controls).reduce((acc: number, control: AbstractControl) => {
-      if (control instanceof FormGroup) {
+      if (control instanceof UntypedFormGroup) {
         return acc + this.getErrorCount(control);
       }
 
@@ -270,13 +270,13 @@ export class SsoComponent implements OnInit {
     return this.samlSigningAlgorithms.map((algorithm) => ({ name: algorithm, value: algorithm }));
   }
 
-  private validateForm(form: FormGroup) {
+  private validateForm(form: UntypedFormGroup) {
     Object.values(form.controls).forEach((control: AbstractControl) => {
       if (control.disabled) {
         return;
       }
 
-      if (control instanceof FormGroup) {
+      if (control instanceof UntypedFormGroup) {
         this.validateForm(control);
       } else {
         control.markAsDirty();

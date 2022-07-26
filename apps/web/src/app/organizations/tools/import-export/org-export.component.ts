@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -30,7 +30,7 @@ export class OrganizationExportComponent extends ExportComponent {
     policyService: PolicyService,
     logService: LogService,
     userVerificationService: UserVerificationService,
-    formBuilder: FormBuilder,
+    formBuilder: UntypedFormBuilder,
     fileDownloadService: FileDownloadService
   ) {
     super(

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
+import { UntypedFormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -79,7 +79,7 @@ export class OrganizationPlansComponent implements OnInit {
     private organizationService: OrganizationService,
     private logService: LogService,
     private messagingService: MessagingService,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
   }

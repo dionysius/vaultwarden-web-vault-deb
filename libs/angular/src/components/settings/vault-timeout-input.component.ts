@@ -2,7 +2,7 @@ import { Directive, Input, OnInit } from "@angular/core";
 import {
   AbstractControl,
   ControlValueAccessor,
-  FormBuilder,
+  UntypedFormBuilder,
   ValidationErrors,
   Validator,
 } from "@angular/forms";
@@ -44,7 +44,7 @@ export class VaultTimeoutInputComponent implements ControlValueAccessor, Validat
   private validatorChange: () => void;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private policyService: PolicyService,
     private i18nService: I18nService
   ) {}

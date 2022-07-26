@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { AbstractControl, FormBuilder, ValidatorFn, Validators } from "@angular/forms";
+import { AbstractControl, UntypedFormBuilder, ValidatorFn, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { InputsFieldMatch } from "@bitwarden/angular/validators/inputsFieldMatch.validator";
@@ -67,7 +67,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
 
   constructor(
     protected formValidationErrorService: FormValidationErrorsService,
-    protected formBuilder: FormBuilder,
+    protected formBuilder: UntypedFormBuilder,
     protected authService: AuthService,
     protected router: Router,
     i18nService: I18nService,

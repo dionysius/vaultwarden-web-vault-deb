@@ -3,6 +3,83 @@
   "version": 1,
   "newProjectRoot": "apps",
   "projects": {
+    "web": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "apps/web",
+      "sourceRoot": "apps/web/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/web",
+            "index": "apps/web/src/index.html",
+            "main": "apps/web/src/app/main.ts",
+            "polyfills": "apps/web/src/app/polyfills.ts",
+            "tsConfig": "apps/web/tsconfig.json",
+            "assets": ["apps/web/src/favicon.ico"],
+            "styles": [],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "browser": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "apps/browser",
+      "sourceRoot": "apps/browser/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/browser",
+            "index": "apps/browser/src/popup/index.html",
+            "main": "apps/browser/src/popup/main.ts",
+            "polyfills": "apps/browser/src/popup/polyfills.ts",
+            "tsConfig": "apps/browser/tsconfig.json",
+            "assets": [],
+            "styles": [],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "desktop": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "apps/desktop",
+      "sourceRoot": "apps/desktop/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/desktop",
+            "index": "apps/desktop/src/index.html",
+            "main": "apps/desktop/src/app/main.ts",
+            "tsConfig": "apps/desktop/tsconfig.json",
+            "assets": [],
+            "styles": [],
+            "scripts": []
+          }
+        }
+      }
+    },
     "components": {
       "projectType": "application",
       "schematics": {
@@ -10,9 +87,9 @@
           "strict": true
         }
       },
-      "root": "./libs/components",
+      "root": "libs/components",
       "sourceRoot": "libs/components/src",
-      "prefix": "components",
+      "prefix": "bit",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -31,18 +108,6 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "outputHashing": "all"
             },
             "development": {
@@ -60,22 +125,42 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "components:build:production"
+              "browserTarget": "test-storybook:build:production"
             },
             "development": {
-              "browserTarget": "components:build:development"
+              "browserTarget": "test-storybook:build:development"
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+        }
+      }
+    },
+    "storybook": {
+      "projectType": "application",
+      "root": "libs/components",
+      "sourceRoot": "libs/components/src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "browserTarget": "components:build"
+            "tsConfig": ".storybook/tsconfig.json",
+            "styles": ["libs/components/src/styles.scss", "libs/components/src/styles.css"],
+            "scripts": []
           }
         }
       }
+    },
+    "angular": {
+      "projectType": "library",
+      "root": "libs/angular",
+      "sourceRoot": "libs/angular/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "defaultConfiguration": "production"
+        }
+      }
     }
-  },
-  "defaultProject": "components"
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { UntypedFormBuilder, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -34,7 +34,7 @@ export class BillingComponent extends OrganizationPlansComponent {
     organizationService: OrganizationService,
     logService: LogService,
     messagingService: MessagingService,
-    formBuilder: FormBuilder
+    formBuilder: UntypedFormBuilder
   ) {
     super(
       apiService,

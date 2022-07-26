@@ -1,5 +1,5 @@
 import { Directive, Input, OnInit, Self } from "@angular/core";
-import { ControlValueAccessor, FormControl, NgControl, Validators } from "@angular/forms";
+import { ControlValueAccessor, UntypedFormControl, NgControl, Validators } from "@angular/forms";
 
 import { dirtyRequired } from "@bitwarden/angular/validators/dirty.validator";
 
@@ -25,7 +25,7 @@ export abstract class BaseCvaComponent implements ControlValueAccessor, OnInit {
   @Input() controlId: string;
   @Input() helperText: string;
 
-  internalControl = new FormControl("");
+  internalControl = new UntypedFormControl("");
 
   protected onChange: any;
   protected onTouched: any;

@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, OnInit, Output } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
 
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { EventService } from "@bitwarden/common/abstractions/event.service";
@@ -41,7 +41,7 @@ export class ExportComponent implements OnInit {
     protected win: Window,
     private logService: LogService,
     private userVerificationService: UserVerificationService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     protected fileDownloadService: FileDownloadService
   ) {}
 
