@@ -8,9 +8,9 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 
+import { CoreModule } from "src/app/core";
 import { OssRoutingModule } from "src/app/oss-routing.module";
 import { OssModule } from "src/app/oss.module";
-import { ServicesModule } from "src/app/services/services.module";
 import { WildcardRoutingModule } from "src/app/wildcard-routing.module";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -27,7 +27,7 @@ import { MaximumVaultTimeoutPolicyComponent } from "./policies/maximum-vault-tim
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    ServicesModule,
+    CoreModule,
     InfiniteScrollModule,
     DragDropModule,
     AppRoutingModule,

@@ -12,7 +12,7 @@ import { ProviderService } from "@bitwarden/common/abstractions/provider.service
 import { EventResponse } from "@bitwarden/common/models/response/eventResponse";
 
 import { BaseEventsComponent } from "src/app/common/base.events.component";
-import { EventService } from "src/app/services/event.service";
+import { EventService } from "src/app/core";
 
 @Component({
   selector: "provider-events",

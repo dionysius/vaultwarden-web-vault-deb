@@ -4,7 +4,9 @@ import { ActivatedRouteSnapshot, CanActivate, Router } from "@angular/router";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 
-@Injectable()
+@Injectable({
+  providedIn: "root",
+})
 export class HomeGuard implements CanActivate {
   constructor(private router: Router, private authService: AuthService) {}
 

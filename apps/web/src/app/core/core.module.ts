@@ -1,5 +1,5 @@
-import { APP_INITIALIZER, NgModule } from "@angular/core";
-import { ToastrModule } from "ngx-toastr";
+import { CommonModule } from "@angular/common";
+import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from "@angular/core";
 
 import {
   JslibServicesModule,
@@ -22,32 +22,24 @@ import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.s
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 
-import { HomeGuard } from "../guards/home.guard";
-import { Account } from "../models/account";
-import { GlobalState } from "../models/globalState";
-import { PermissionsGuard as OrgPermissionsGuard } from "../organizations/guards/permissions.guard";
-import { NavigationPermissionsService as OrgPermissionsService } from "../organizations/services/navigation-permissions.service";
-
-import { BroadcasterMessagingService } from "./broadcasterMessaging.service";
+import { BroadcasterMessagingService } from "./broadcaster-messaging.service";
 import { EventService } from "./event.service";
-import { HtmlStorageService } from "./htmlStorage.service";
+import { HtmlStorageService } from "./html-storage.service";
 import { I18nService } from "./i18n.service";
 import { InitService } from "./init.service";
 import { ModalService } from "./modal.service";
-import { PasswordRepromptService } from "./passwordReprompt.service";
+import { PasswordRepromptService } from "./password-reprompt.service";
 import { PolicyListService } from "./policy-list.service";
 import { RouterService } from "./router.service";
-import { StateService } from "./state.service";
-import { StateMigrationService } from "./stateMigration.service";
-import { WebFileDownloadService } from "./webFileDownload.service";
-import { WebPlatformUtilsService } from "./webPlatformUtils.service";
+import { Account, GlobalState, StateService } from "./state";
+import { StateMigrationService } from "./state-migration.service";
+import { WebFileDownloadService } from "./web-file-download.service";
+import { WebPlatformUtilsService } from "./web-platform-utils.service";
 
 @NgModule({
-  imports: [ToastrModule, JslibServicesModule],
   declarations: [],
+  imports: [CommonModule, JslibServicesModule],
   providers: [
-    OrgPermissionsService,
-    OrgPermissionsGuard,
     InitService,
     RouterService,
     EventService,
@@ -106,7 +98,12 @@ import { WebPlatformUtilsService } from "./webPlatformUtils.service";
       provide: FileDownloadService,
       useClass: WebFileDownloadService,
     },
-    HomeGuard,
   ],
 })
-export class ServicesModule {}
+export class CoreModule {
+  constructor(@Optional() @SkipSelf() parentModule?: CoreModule) {
+    if (parentModule) {
+      throw new Error("CoreModule is already loaded. Import it in the AppModule only");
+    }
+  }
+}

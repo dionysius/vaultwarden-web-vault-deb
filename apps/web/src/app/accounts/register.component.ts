@@ -20,7 +20,7 @@ import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/mas
 import { Policy } from "@bitwarden/common/models/domain/policy";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
 
-import { RouterService } from "../services/router.service";
+import { RouterService } from "../core";
 
 @Component({
   selector: "app-register",

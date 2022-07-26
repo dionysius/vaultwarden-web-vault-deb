@@ -13,7 +13,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
 
-import { RouterService } from "../services/router.service";
+import { RouterService } from "../core";
 
 @Component({
   selector: "app-lock",

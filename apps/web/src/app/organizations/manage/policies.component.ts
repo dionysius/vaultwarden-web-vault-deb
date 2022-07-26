@@ -9,7 +9,7 @@ import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
 
-import { PolicyListService } from "../../services/policy-list.service";
+import { PolicyListService } from "../../core";
 import { BasePolicy } from "../policies/base-policy.component";
 
 import { PolicyEditComponent } from "./policy-edit.component";

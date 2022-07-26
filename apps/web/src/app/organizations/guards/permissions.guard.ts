@@ -7,7 +7,9 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 import { Permissions } from "@bitwarden/common/enums/permissions";
 
-@Injectable()
+@Injectable({
+  providedIn: "root",
+})
 export class PermissionsGuard implements CanActivate {
   constructor(
     private router: Router,

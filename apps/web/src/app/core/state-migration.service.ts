@@ -1,7 +1,7 @@
 import { StateMigrationService as BaseStateMigrationService } from "@bitwarden/common/services/stateMigration.service";
 
-import { Account } from "../models/account";
-import { GlobalState } from "../models/globalState";
+import { Account } from "./state/account";
+import { GlobalState } from "./state/global-state";
 
 export class StateMigrationService extends BaseStateMigrationService<GlobalState, Account> {
   protected async migrationStateFrom1To2(): Promise<void> {

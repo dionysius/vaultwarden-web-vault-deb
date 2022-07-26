@@ -6,7 +6,7 @@ import { OrganizationService } from "@bitwarden/common/abstractions/organization
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 
-import { StateService } from "../services/state.service";
+import { StateService } from "../core";
 
 const BroadcasterSubscriptionId = "SettingsComponent";
 
