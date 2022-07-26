@@ -1,10 +1,12 @@
+import { IEncrypted } from "@bitwarden/common/interfaces/IEncrypted";
+
 import { CryptoService } from "../../abstractions/crypto.service";
 import { EncryptionType } from "../../enums/encryptionType";
 import { Utils } from "../../misc/utils";
 
 import { SymmetricCryptoKey } from "./symmetricCryptoKey";
 
-export class EncString {
+export class EncString implements IEncrypted {
   encryptedString?: string;
   encryptionType?: EncryptionType;
   decryptedValue?: string;
@@ -118,5 +120,17 @@ export class EncString {
       this.decryptedValue = "[error: cannot decrypt]";
     }
     return this.decryptedValue;
+  }
+
+  get ivBytes(): ArrayBuffer {
+    return this.iv == null ? null : Utils.fromB64ToArray(this.iv).buffer;
+  }
+
+  get macBytes(): ArrayBuffer {
+    return this.mac == null ? null : Utils.fromB64ToArray(this.mac).buffer;
+  }
+
+  get dataBytes(): ArrayBuffer {
+    return this.data == null ? null : Utils.fromB64ToArray(this.data).buffer;
   }
 }

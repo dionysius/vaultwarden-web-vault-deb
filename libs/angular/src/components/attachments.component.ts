@@ -9,6 +9,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
+import { EncArrayBuffer } from "@bitwarden/common/models/domain/encArrayBuffer";
 import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
 import { AttachmentView } from "@bitwarden/common/models/view/attachmentView";
 import { CipherView } from "@bitwarden/common/models/view/cipherView";
@@ -167,12 +168,12 @@ export class AttachmentsComponent implements OnInit {
     }
 
     try {
-      const buf = await response.arrayBuffer();
+      const encBuf = await EncArrayBuffer.fromResponse(response);
       const key =
         attachment.key != null
           ? attachment.key
           : await this.cryptoService.getOrgKey(this.cipher.organizationId);
-      const decBuf = await this.cryptoService.decryptFromBytes(buf, key);
+      const decBuf = await this.cryptoService.decryptFromBytes(encBuf, key);
       this.fileDownloadService.download({
         fileName: attachment.fileName,
         blobData: decBuf,
@@ -237,12 +238,12 @@ export class AttachmentsComponent implements OnInit {
 
         try {
           // 2. Resave
-          const buf = await response.arrayBuffer();
+          const encBuf = await EncArrayBuffer.fromResponse(response);
           const key =
             attachment.key != null
               ? attachment.key
               : await this.cryptoService.getOrgKey(this.cipher.organizationId);
-          const decBuf = await this.cryptoService.decryptFromBytes(buf, key);
+          const decBuf = await this.cryptoService.decryptFromBytes(encBuf, key);
           this.cipherDomain = await this.cipherService.saveAttachmentRawWithServer(
             this.cipherDomain,
             attachment.fileName,

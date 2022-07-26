@@ -16,7 +16,6 @@ import { EEFLongWordList } from "../misc/wordlist";
 import { EncryptedOrganizationKeyData } from "../models/data/encryptedOrganizationKeyData";
 import { EncArrayBuffer } from "../models/domain/encArrayBuffer";
 import { EncString } from "../models/domain/encString";
-import { EncryptedObject } from "../models/domain/encryptedObject";
 import { BaseEncryptedOrganizationKey } from "../models/domain/encryptedOrganizationKey";
 import { SymmetricCryptoKey } from "../models/domain/symmetricCryptoKey";
 import { ProfileOrganizationResponse } from "../models/response/profileOrganizationResponse";
@@ -513,33 +512,14 @@ export class CryptoService implements CryptoServiceAbstraction {
     return this.buildEncKey(key, encKey.key);
   }
 
-  /**
-   * @deprecated June 22 2022: This method has been moved to encryptService.
-   * All callers should use this service to grab the relevant key and use encryptService for encryption instead.
-   * This method will be removed once all existing code has been refactored to use encryptService.
-   */
   async encrypt(plainValue: string | ArrayBuffer, key?: SymmetricCryptoKey): Promise<EncString> {
     key = await this.getKeyForEncryption(key);
-
     return await this.encryptService.encrypt(plainValue, key);
   }
 
   async encryptToBytes(plainValue: ArrayBuffer, key?: SymmetricCryptoKey): Promise<EncArrayBuffer> {
-    const encValue = await this.aesEncrypt(plainValue, key);
-    let macLen = 0;
-    if (encValue.mac != null) {
-      macLen = encValue.mac.byteLength;
-    }
-
-    const encBytes = new Uint8Array(1 + encValue.iv.byteLength + macLen + encValue.data.byteLength);
-    encBytes.set([encValue.key.encType]);
-    encBytes.set(new Uint8Array(encValue.iv), 1);
-    if (encValue.mac != null) {
-      encBytes.set(new Uint8Array(encValue.mac), 1 + encValue.iv.byteLength);
-    }
-
-    encBytes.set(new Uint8Array(encValue.data), 1 + encValue.iv.byteLength + macLen);
-    return new EncArrayBuffer(encBytes.buffer);
+    key = await this.getKeyForEncryption(key);
+    return this.encryptService.encryptToBytes(plainValue, key);
   }
 
   async rsaEncrypt(data: ArrayBuffer, publicKey?: ArrayBuffer): Promise<EncString> {
@@ -608,15 +588,9 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async decryptToBytes(encString: EncString, key?: SymmetricCryptoKey): Promise<ArrayBuffer> {
-    const iv = Utils.fromB64ToArray(encString.iv).buffer;
-    const data = Utils.fromB64ToArray(encString.data).buffer;
-    const mac = encString.mac ? Utils.fromB64ToArray(encString.mac).buffer : null;
-    const decipher = await this.aesDecryptToBytes(encString.encryptionType, data, iv, mac, key);
-    if (decipher == null) {
-      return null;
-    }
-
-    return decipher;
+    const keyForEnc = await this.getKeyForEncryption(key);
+    const theKey = await this.resolveLegacyKey(encString.encryptionType, keyForEnc);
+    return this.encryptService.decryptToBytes(encString, theKey);
   }
 
   async decryptToUtf8(encString: EncString, key?: SymmetricCryptoKey): Promise<string> {
@@ -625,49 +599,15 @@ export class CryptoService implements CryptoServiceAbstraction {
     return await this.encryptService.decryptToUtf8(encString, key);
   }
 
-  async decryptFromBytes(encBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
-    if (encBuf == null) {
-      throw new Error("no encBuf.");
+  async decryptFromBytes(encBuffer: EncArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
+    if (encBuffer == null) {
+      throw new Error("No buffer provided for decryption.");
     }
 
-    const encBytes = new Uint8Array(encBuf);
-    const encType = encBytes[0];
-    let ctBytes: Uint8Array = null;
-    let ivBytes: Uint8Array = null;
-    let macBytes: Uint8Array = null;
+    key = await this.getKeyForEncryption(key);
+    key = await this.resolveLegacyKey(encBuffer.encryptionType, key);
 
-    switch (encType) {
-      case EncryptionType.AesCbc128_HmacSha256_B64:
-      case EncryptionType.AesCbc256_HmacSha256_B64:
-        if (encBytes.length <= 49) {
-          // 1 + 16 + 32 + ctLength
-          return null;
-        }
-
-        ivBytes = encBytes.slice(1, 17);
-        macBytes = encBytes.slice(17, 49);
-        ctBytes = encBytes.slice(49);
-        break;
-      case EncryptionType.AesCbc256_B64:
-        if (encBytes.length <= 17) {
-          // 1 + 16 + ctLength
-          return null;
-        }
-
-        ivBytes = encBytes.slice(1, 17);
-        ctBytes = encBytes.slice(17);
-        break;
-      default:
-        return null;
-    }
-
-    return await this.aesDecryptToBytes(
-      encType,
-      ctBytes.buffer,
-      ivBytes.buffer,
-      macBytes != null ? macBytes.buffer : null,
-      key
-    );
+    return this.encryptService.decryptToBytes(encBuffer, key);
   }
 
   // EFForg/OpenWireless
@@ -722,7 +662,8 @@ export class CryptoService implements CryptoServiceAbstraction {
     return true;
   }
 
-  // Helpers
+  // ---HELPERS---
+
   protected async storeKey(key: SymmetricCryptoKey, userId?: string) {
     if (await this.shouldStoreKey(KeySuffixOptions.Auto, userId)) {
       await this.stateService.setCryptoMasterKeyAuto(key.keyB64, { userId: userId });
@@ -750,67 +691,6 @@ export class CryptoService implements CryptoServiceAbstraction {
     return keySuffix === KeySuffixOptions.Auto
       ? await this.stateService.getCryptoMasterKeyAuto({ userId: userId })
       : await this.stateService.getCryptoMasterKeyBiometric({ userId: userId });
-  }
-
-  /**
-   * @deprecated June 22 2022: This method has been moved to encryptService.
-   * All callers should use encryptService instead. This method will be removed once all existing code has been refactored to use encryptService.
-   */
-  private async aesEncrypt(data: ArrayBuffer, key: SymmetricCryptoKey): Promise<EncryptedObject> {
-    const obj = new EncryptedObject();
-    obj.key = await this.getKeyForEncryption(key);
-    obj.iv = await this.cryptoFunctionService.randomBytes(16);
-    obj.data = await this.cryptoFunctionService.aesEncrypt(data, obj.iv, obj.key.encKey);
-
-    if (obj.key.macKey != null) {
-      const macData = new Uint8Array(obj.iv.byteLength + obj.data.byteLength);
-      macData.set(new Uint8Array(obj.iv), 0);
-      macData.set(new Uint8Array(obj.data), obj.iv.byteLength);
-      obj.mac = await this.cryptoFunctionService.hmac(macData.buffer, obj.key.macKey, "sha256");
-    }
-
-    return obj;
-  }
-
-  private async aesDecryptToBytes(
-    encType: EncryptionType,
-    data: ArrayBuffer,
-    iv: ArrayBuffer,
-    mac: ArrayBuffer,
-    key: SymmetricCryptoKey
-  ): Promise<ArrayBuffer> {
-    const keyForEnc = await this.getKeyForEncryption(key);
-    const theKey = await this.resolveLegacyKey(encType, keyForEnc);
-
-    if (theKey.macKey != null && mac == null) {
-      return null;
-    }
-
-    if (theKey.encType !== encType) {
-      return null;
-    }
-
-    if (theKey.macKey != null && mac != null) {
-      const macData = new Uint8Array(iv.byteLength + data.byteLength);
-      macData.set(new Uint8Array(iv), 0);
-      macData.set(new Uint8Array(data), iv.byteLength);
-      const computedMac = await this.cryptoFunctionService.hmac(
-        macData.buffer,
-        theKey.macKey,
-        "sha256"
-      );
-      if (computedMac === null) {
-        return null;
-      }
-
-      const macsMatch = await this.cryptoFunctionService.compare(mac, computedMac);
-      if (!macsMatch) {
-        this.logService.error("mac failed.");
-        return null;
-      }
-    }
-
-    return await this.cryptoFunctionService.aesDecrypt(data, iv, theKey.encKey);
   }
 
   private async getKeyForEncryption(key?: SymmetricCryptoKey): Promise<SymmetricCryptoKey> {

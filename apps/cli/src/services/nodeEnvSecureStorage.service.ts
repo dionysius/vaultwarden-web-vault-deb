@@ -2,6 +2,7 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { Utils } from "@bitwarden/common/misc/utils";
+import { EncArrayBuffer } from "@bitwarden/common/models/domain/encArrayBuffer";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
 export class NodeEnvSecureStorageService implements AbstractStorageService {
@@ -63,10 +64,8 @@ export class NodeEnvSecureStorageService implements AbstractStorageService {
         return null;
       }
 
-      const decValue = await this.cryptoService().decryptFromBytes(
-        Utils.fromB64ToArray(encValue).buffer,
-        sessionKey
-      );
+      const encBuf = EncArrayBuffer.fromB64(encValue);
+      const decValue = await this.cryptoService().decryptFromBytes(encBuf, sessionKey);
       if (decValue == null) {
         this.logService.info("Failed to decrypt.");
         return null;
