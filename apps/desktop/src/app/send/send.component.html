@@ -6,7 +6,11 @@
         <ul class="filter-options">
           <li class="filter-option" [ngClass]="{ active: selectedAll }">
             <span class="filter-buttons">
-              <button class="filter-button" (click)="selectAll()" [attr.aria-pressed]="selectedAll">
+              <button
+                class="filter-button"
+                (click)="selectAll()"
+                [attr.aria-pressed]="selectedAll === true"
+              >
                 <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{
                   "allSends" | i18n
                 }}

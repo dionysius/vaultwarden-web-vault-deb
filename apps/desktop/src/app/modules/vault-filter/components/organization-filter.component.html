@@ -4,7 +4,7 @@
       <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
         <button
           class="toggle-button"
-          appA11yTitle="{{ 'toggleCollapse' | i18n }}"
+          appA11yTitle="{{ 'toggleCollapse' | i18n }} {{ organizationGrouping.name | i18n }}"
           (click)="toggleCollapse()"
           [attr.aria-expanded]="!isCollapsed"
           aria-controls="organization-filters"
@@ -18,13 +18,16 @@
             }"
           ></i>
         </button>
-        <button
-          class="filter-button"
-          (click)="clearFilter()"
-          [attr.aria-pressed]="!hasActiveFilter"
-        >
-          <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
-        </button>
+        &nbsp;
+        <h2>
+          <button
+            class="filter-button"
+            (click)="clearFilter()"
+            [attr.aria-pressed]="!hasActiveFilter"
+          >
+            {{ organizationGrouping.name | i18n }}
+          </button>
+        </h2>
       </div>
       <ul id="organization-filters" *ngIf="!isCollapsed" class="filter-options no-margin">
         <li
@@ -48,7 +51,7 @@
     <ng-container *ngSwitchDefault>
       <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
         <button
-          appA11yTitle="{{ 'toggleCollapse' | i18n }}"
+          appA11yTitle="{{ 'toggleCollapse' | i18n }} {{ organizationGrouping.name | i18n }}"
           (click)="toggleCollapse()"
           [attr.aria-expanded]="!isCollapsed"
           aria-controls="organization-filters"
@@ -62,9 +65,16 @@
             }"
           ></i>
         </button>
-        <button class="filter-button" (click)="clearFilter()">
-          <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
-        </button>
+        &nbsp;
+        <h2>
+          <button
+            class="filter-button"
+            (click)="clearFilter()"
+            [attr.aria-pressed]="!hasActiveFilter"
+          >
+            {{ organizationGrouping.name | i18n }}
+          </button>
+        </h2>
       </div>
       <ul id="organization-filters" *ngIf="!isCollapsed" class="filter-options no-margin">
         <li class="filter-option" [ngClass]="{ active: activeFilter.myVaultOnly }">

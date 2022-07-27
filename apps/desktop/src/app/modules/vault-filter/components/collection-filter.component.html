@@ -1,22 +1,23 @@
 <ng-container *ngIf="show">
   <div class="filter-heading">
-    <button
-      class="no-btn"
-      [attr.aria-expanded]="!isCollapsed(collectionsGrouping)"
-      aria-controls="collection-filters"
-      (click)="toggleCollapse(collectionsGrouping)"
-      appA11yTitle="{{ 'toggleCollapse' | i18n }}"
-    >
-      <i
-        class="bwi bwi-fw"
-        aria-hidden="true"
-        [ngClass]="{
-          'bwi-angle-right': isCollapsed(collectionsGrouping),
-          'bwi-angle-down': !isCollapsed(collectionsGrouping)
-        }"
-      ></i>
-    </button>
-    <h2>&nbsp;{{ collectionsGrouping.name | i18n }}</h2>
+    <h2>
+      <button
+        class="no-btn"
+        [attr.aria-expanded]="!isCollapsed(collectionsGrouping)"
+        aria-controls="collection-filters"
+        (click)="toggleCollapse(collectionsGrouping)"
+      >
+        <i
+          class="bwi bwi-fw"
+          aria-hidden="true"
+          [ngClass]="{
+            'bwi-angle-right': isCollapsed(collectionsGrouping),
+            'bwi-angle-down': !isCollapsed(collectionsGrouping)
+          }"
+        ></i>
+        &nbsp;{{ collectionsGrouping.name | i18n }}
+      </button>
+    </h2>
   </div>
   <ul id="collection-filters" *ngIf="!isCollapsed(collectionsGrouping)" class="filter-options">
     <ng-template #recursiveCollections let-collections>
@@ -32,7 +33,7 @@
             [attr.aria-expanded]="!isCollapsed(c.node)"
             [attr.aria-controls]="c.node.name + '_children'"
             (click)="toggleCollapse(c.node)"
-            appA11yTitle="{{ 'toggleCollapse' | i18n }}"
+            appA11yTitle="{{ 'toggleCollapse' | i18n }} {{ c.node.name }}"
           >
             <i
               class="bwi bwi-fw"
