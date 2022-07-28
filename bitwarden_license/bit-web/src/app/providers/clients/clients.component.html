@@ -48,6 +48,14 @@
       [infiniteScrollDisabled]="!isPaging()"
       (scrolled)="loadMore()"
     >
+      <thead>
+        <tr>
+          <th colspan="2">{{ "name" | i18n }}</th>
+          <th>{{ "numberOfUsers" | i18n }}</th>
+          <th>{{ "billingPlan" | i18n }}</th>
+          <th></th>
+        </tr>
+      </thead>
       <tbody>
         <tr *ngFor="let o of searchedClients">
           <td width="30">
@@ -60,6 +68,13 @@
           </td>
           <td>
             <a [routerLink]="['/organizations', o.organizationId]">{{ o.organizationName }}</a>
+          </td>
+          <td>
+            <span>{{ o.userCount }}</span>
+            <span *ngIf="o.seats != null"> / {{ o.seats }}</span>
+          </td>
+          <td>
+            <span>{{ o.plan }}</span>
           </td>
           <td class="table-list-options" *ngIf="manageOrganizations">
             <div class="dropdown" appListDropdown>
