@@ -2674,10 +2674,9 @@ export class StateService<
   protected async clearDecryptedDataForActiveUser(): Promise<void> {
     await this.updateState(async (state) => {
       const userId = state?.activeUserId;
-      if (userId == null || state?.accounts[userId]?.data == null) {
-        return;
+      if (userId != null && state?.accounts[userId]?.data != null) {
+        state.accounts[userId].data = new AccountData();
       }
-      state.accounts[userId].data = new AccountData();
 
       return state;
     });
@@ -2756,6 +2755,9 @@ export class StateService<
   ) {
     await this.state().then(async (state) => {
       const updatedState = await stateUpdater(state);
+      if (updatedState == null) {
+        throw new Error("Attempted to update state to null value");
+      }
 
       await this.setState(updatedState);
     });
