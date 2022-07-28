@@ -90,6 +90,10 @@
     @extend .no-btn;
   }
 
+  .contents {
+    display: contents;
+  }
+
   .toggle-button {
     &:hover,
     &:focus {
