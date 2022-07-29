@@ -1339,7 +1339,7 @@
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Biguna",
+    "message": "Ahula",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
@@ -1415,7 +1415,7 @@
     "message": "Berreskuratu elementua"
   },
   "restoreItemConfirmation": {
-    "message": "Ziur zaude elementu hau ezabatu nahi duzula?"
+    "message": "Ziur zaude elementu hau berreskuratu nahi duzula?"
   },
   "restoredItem": {
     "message": "Elementua berreskuratua"
@@ -1580,15 +1580,15 @@
     }
   },
   "send": {
-    "message": "Bidalketa",
+    "message": "Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
-    "message": "Bildalketak bilatu",
+    "message": "Send-ak bilatu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "addSend": {
-    "message": "Gehitu Bidalketa",
+    "message": "Gehitu Send-a",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeText": {
@@ -1598,7 +1598,7 @@
     "message": "Fitxategia"
   },
   "allSends": {
-    "message": "Bidalketa guztiak",
+    "message": "Send guztiak",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
@@ -1615,7 +1615,7 @@
     "message": "Pasahitz babestua"
   },
   "copySendLink": {
-    "message": "Bidalketa esteka kopiatu",
+    "message": "Send esteka kopiatu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
@@ -1628,11 +1628,11 @@
     "message": "Pasahitza kendua"
   },
   "deletedSend": {
-    "message": "Bidalketa ezabatua",
+    "message": "Send-a ezabatua",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Bidalketa esteka",
+    "message": "Send esteka",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disabled": {
@@ -1642,23 +1642,23 @@
     "message": "Ziur zaude pasahitz hau ezabatu nahi duzula?"
   },
   "deleteSend": {
-    "message": "Ezabatu Bidalketa",
+    "message": "Ezabatu Send-a",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
-    "message": "Ziur al zaude Bidalketa hau ezabatu nahi duzula?",
+    "message": "Ziur al zaude Send hau ezabatu nahi duzula?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Bidalketa editatu",
+    "message": "Editatu Send-a",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeHeader": {
-    "message": "Zein Bidalketa mota da hau?",
+    "message": "Zein Send mota da hau?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNameDesc": {
-    "message": "Bidalketa hau deskribatzeko izena.",
+    "message": "Send hau deskribatzeko izena.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFileDesc": {
@@ -1668,14 +1668,14 @@
     "message": "Ezabatze data"
   },
   "deletionDateDesc": {
-    "message": "Bidalketa betiko ezabatuko da zehaztutako datan eta orduan.",
+    "message": "Send-a betiko ezabatuko da zehaztutako datan eta orduan.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Iraungitze data"
   },
   "expirationDateDesc": {
-    "message": "Hala ezartzen bada, Bidalketa honetarako sarbidea zehaztutako egunean eta orduan amaituko da.",
+    "message": "Hala ezartzen bada, Send honetarako sarbidea zehaztutako egunean eta orduan amaituko da.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
@@ -1697,56 +1697,56 @@
     "message": "Sarbide kopuru maximoa"
   },
   "maximumAccessCountDesc": {
-    "message": "Hala ezartzen bada, erabiltzaileak ezin izango dira Bidalketa honetara sartu gehienezko sarbide kopurura iritsi ondoren.",
+    "message": "Hala ezartzen bada, erabiltzaileak ezin izango dira Send honetara sartu gehienezko sarbide kopurura iritsi ondoren.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Nahi izanez gero, pasahitza eskatu erabiltzaileak bidalketa honetara sar daitezen.",
+    "message": "Nahi izanez gero, pasahitza eskatu erabiltzaileak Send honetara sar daitezen.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Bidalketa honi buruzko ohar pribatuak.",
+    "message": "Send honi buruzko ohar pribatuak.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "Desgaitu Bidalketa hau inor sar ez dadin.",
+    "message": "Desgaitu Send hau inor sar ez dadin.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
-    "message": "Gordetzean, kopiatu Bidalketa honen esteka arbelean.",
+    "message": "Gordetzean, kopiatu Send honen esteka arbelean.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
     "message": "Bidali nahi duzun testua."
   },
   "sendHideText": {
-    "message": "Ezkutatu Bidalketako testu hau, modu lehenetsian.",
+    "message": "Ezkutatu Send-eko testu hau, modu lehenetsian.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
     "message": "Uneko sarbide kopurua"
   },
   "createSend": {
-    "message": "Sortu Bidalketa berria",
+    "message": "Sortu Send berria",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Pasahitz berria"
   },
   "sendDisabled": {
-    "message": "Bidalketa desgaituta",
+    "message": "Send-a desgaitua",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Enpresa-politika baten ondorioz, lehendik dagoen Bidalketa bakarrik ezaba dezakezu.",
+    "message": "Enpresa-politika baten ondorioz, lehendik dagoen Send-a bakarrik ezaba dezakezu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Bidalketa sortua",
+    "message": "Send-a sortua",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Bidalketa editatua",
+    "message": "Send-a editatua",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1792,7 +1792,7 @@
     "message": "Ezkutatu nire helbide elektronikoa hartzaileei."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "Erakundeko politika batek edo gehiagok Bidalketa aukerei eragiten diote."
+    "message": "Erakundeko politika batek edo gehiagok Send-eko aukerei eragiten diote."
   },
   "passwordPrompt": {
     "message": "Berriro eskatu pasahitz nagusia"
