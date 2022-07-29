@@ -151,7 +151,7 @@ export class AppComponent implements OnDestroy, OnInit {
               this.i18nService.t("cancel")
             );
             if (premiumConfirmed) {
-              this.router.navigate(["settings/premium"]);
+              this.router.navigate(["settings/subscription/premium"]);
             }
             break;
           }
