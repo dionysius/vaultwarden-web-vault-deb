@@ -5,6 +5,7 @@ import { ControlValueAccessor, UntypedFormControl, NG_VALUE_ACCESSOR } from "@an
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
 import { VerificationType } from "@bitwarden/common/enums/verificationType";
+import { Utils } from "@bitwarden/common/misc/utils";
 import { Verification } from "@bitwarden/common/types/verification";
 
 /**
@@ -90,7 +91,7 @@ export class UserVerificationComponent implements ControlValueAccessor, OnInit {
 
     this.onChange({
       type: this.usesKeyConnector ? VerificationType.OTP : VerificationType.MasterPassword,
-      secret: secret,
+      secret: Utils.isNullOrWhitespace(secret) ? null : secret,
     });
   }
 }

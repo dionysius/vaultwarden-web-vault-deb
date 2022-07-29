@@ -3,6 +3,8 @@ import { InjectionToken, Injector, LOCALE_ID, NgModule } from "@angular/core";
 import { ThemingService } from "@bitwarden/angular/services/theming/theming.service";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
+import { AccountApiService as AccountApiServiceAbstraction } from "@bitwarden/common/abstractions/account/account-api.service.abstraction";
+import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/abstractions/account/account.service.abstraction";
 import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/abstractions/appId.service";
 import { AuditService as AuditServiceAbstraction } from "@bitwarden/common/abstractions/audit.service";
@@ -49,6 +51,8 @@ import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarde
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { Account } from "@bitwarden/common/models/domain/account";
 import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { AccountApiService } from "@bitwarden/common/services/account/account-api.service";
+import { AccountService } from "@bitwarden/common/services/account/account.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 import { AppIdService } from "@bitwarden/common/services/appId.service";
 import { AuditService } from "@bitwarden/common/services/audit.service";
@@ -233,6 +237,21 @@ export const LOG_MAC_FAILURES = new InjectionToken<string>("LOG_MAC_FAILURES");
       provide: FolderApiServiceAbstraction,
       useClass: FolderApiService,
       deps: [FolderServiceAbstraction, ApiServiceAbstraction],
+    },
+    {
+      provide: AccountApiServiceAbstraction,
+      useClass: AccountApiService,
+      deps: [ApiServiceAbstraction],
+    },
+    {
+      provide: AccountServiceAbstraction,
+      useClass: AccountService,
+      deps: [
+        AccountApiServiceAbstraction,
+        UserVerificationServiceAbstraction,
+        MessagingServiceAbstraction,
+        LogService,
+      ],
     },
     { provide: LogService, useFactory: () => new ConsoleLogService(false) },
     {

@@ -6,6 +6,7 @@
       (ngSubmit)="submit()"
       [appApiAction]="formPromise"
       ngNativeValidate
+      [formGroup]="deleteForm"
     >
       <div class="modal-header">
         <h2 class="modal-title" id="deleteAccountTitle">{{ "deleteAccount" | i18n }}</h2>
@@ -21,7 +22,7 @@
       <div class="modal-body">
         <p>{{ "deleteAccountDesc" | i18n }}</p>
         <app-callout type="warning">{{ "deleteAccountWarning" | i18n }}</app-callout>
-        <app-user-verification [(ngModel)]="masterPassword" ngDefaultControl name="secret">
+        <app-user-verification ngDefaultControl formControlName="verification" name="verification">
         </app-user-verification>
       </div>
       <div class="modal-footer">

@@ -17,7 +17,8 @@ import { ModalRef } from "../components/modal/modal.ref";
 
 export class ModalConfig<D = any> {
   data?: D;
-  allowMultipleModals = false;
+  allowMultipleModals?: boolean;
+  replaceTopModal?: boolean;
 }
 
 @Injectable()
@@ -63,13 +64,18 @@ export class ModalService {
     return [modalRef, modalComponentRef.instance.componentRef.instance];
   }
 
-  open(componentType: Type<any>, config?: ModalConfig) {
-    if (!(config?.allowMultipleModals ?? false) && this.modalCount > 0) {
+  open(componentType: Type<any>, config: ModalConfig = {}) {
+    const { replaceTopModal = false, allowMultipleModals = false } = config;
+
+    if (this.modalCount > 0 && replaceTopModal) {
+      this.topModal.instance.close();
+    }
+
+    if (this.modalCount > 0 && !allowMultipleModals) {
       return;
     }
 
-    // eslint-disable-next-line
-    const [modalRef, _] = this.openInternal(componentType, config, true);
+    const [modalRef] = this.openInternal(componentType, config, true);
 
     return modalRef;
   }
@@ -87,6 +93,10 @@ export class ModalService {
     }
 
     return this.componentFactoryResolver.resolveComponentFactory(componentType);
+  }
+
+  closeAll(): void {
+    this.modalList.forEach((modal) => modal.instance.close());
   }
 
   protected openInternal(

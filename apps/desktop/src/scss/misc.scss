@@ -336,6 +336,25 @@ form,
     @include themify($themes) {
       color: themed("mutedColor");
     }
+
+    a {
+      @extend .btn;
+      @extend .link;
+
+      padding: 0;
+      font-size: inherit;
+      font-weight: bold;
+
+      @include themify($themes) {
+        color: themed("mutedColor");
+      }
+
+      &:hover {
+        @include themify($themes) {
+          color: darken(themed("mutedColor"), 6%);
+        }
+      }
+    }
   }
 }
 

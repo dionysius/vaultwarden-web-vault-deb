@@ -102,6 +102,10 @@
       color: themed("mutedColor");
     }
   }
+
+  &.last {
+    margin-bottom: 15px;
+  }
 }
 
 .box-content-row {

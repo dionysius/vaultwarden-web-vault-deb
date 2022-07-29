@@ -108,6 +108,14 @@
                   </label>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label>{{ "deleteAccount" | i18n }}</label>
+                <small class="help-block">
+                  {{ "deleteAccountDesc" | i18n }}
+                  <a (click)="openDeleteAccount()">{{ "deleteAccount" | i18n }}</a>
+                </small>
+              </div>
             </ng-container>
           </div>
         </div>

@@ -5,7 +5,8 @@ import { AccountService } from "@bitwarden/common/abstractions/account/account.s
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { Verification } from "@bitwarden/common/types/verification";
+
+import { Verification } from "../../../../../libs/common/src/types/verification";
 
 @Component({
   selector: "app-delete-account",
@@ -25,6 +26,10 @@ export class DeleteAccountComponent {
     private accountService: AccountService,
     private logService: LogService
   ) {}
+
+  get secret() {
+    return this.deleteForm.get("verification")?.value?.secret;
+  }
 
   async submit() {
     try {

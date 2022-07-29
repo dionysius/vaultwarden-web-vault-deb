@@ -350,10 +350,6 @@ export class ApiService implements ApiServiceAbstraction {
     return this.send("POST", "/accounts/security-stamp", request, true, false);
   }
 
-  deleteAccount(request: SecretVerificationRequest): Promise<any> {
-    return this.send("DELETE", "/accounts", request, true, false);
-  }
-
   async getAccountRevisionDate(): Promise<number> {
     const r = await this.send("GET", "/accounts/revision-date", null, true, true);
     return r as number;

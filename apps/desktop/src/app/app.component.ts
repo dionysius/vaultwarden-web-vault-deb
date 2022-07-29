@@ -40,6 +40,7 @@ import { CipherType } from "@bitwarden/common/enums/cipherType";
 
 import { MenuUpdateRequest } from "../main/menu/menu.updater";
 
+import { DeleteAccountComponent } from "./accounts/delete-account.component";
 import { PremiumComponent } from "./accounts/premium.component";
 import { SettingsComponent } from "./accounts/settings.component";
 import { ExportComponent } from "./vault/export.component";
@@ -153,9 +154,7 @@ export class AppComponent implements OnInit {
             this.systemService.cancelProcessReload();
             break;
           case "loggedOut":
-            if (this.modal != null) {
-              this.modal.close();
-            }
+            this.modalService.closeAll();
             this.notificationsService.updateConnection();
             this.updateAppMenu();
             await this.systemService.clearPendingClipboard();
@@ -180,9 +179,7 @@ export class AppComponent implements OnInit {
             }
             break;
           case "locked":
-            if (this.modal != null) {
-              this.modal.close();
-            }
+            this.modalService.closeAll();
             if (
               message.userId == null ||
               message.userId === (await this.stateService.getUserId())
@@ -223,6 +220,9 @@ export class AppComponent implements OnInit {
             }
             break;
           }
+          case "deleteAccount":
+            this.modalService.open(DeleteAccountComponent, { replaceTopModal: true });
+            break;
           case "openPasswordHistory":
             await this.openModal<PasswordGeneratorHistoryComponent>(
               PasswordGeneratorHistoryComponent,
@@ -368,9 +368,7 @@ export class AppComponent implements OnInit {
   }
 
   async openExportVault() {
-    if (this.modal != null) {
-      this.modal.close();
-    }
+    this.modalService.closeAll();
 
     const [modal, childComponent] = await this.modalService.openViewRef(
       ExportComponent,
@@ -388,9 +386,7 @@ export class AppComponent implements OnInit {
   }
 
   async addFolder() {
-    if (this.modal != null) {
-      this.modal.close();
-    }
+    this.modalService.closeAll();
 
     const [modal, childComponent] = await this.modalService.openViewRef(
       FolderAddEditComponent,
@@ -410,9 +406,7 @@ export class AppComponent implements OnInit {
   }
 
   async openGenerator() {
-    if (this.modal != null) {
-      this.modal.close();
-    }
+    this.modalService.closeAll();
 
     [this.modal] = await this.modalService.openViewRef(
       GeneratorComponent,
@@ -542,9 +536,7 @@ export class AppComponent implements OnInit {
   }
 
   private async openModal<T>(type: Type<T>, ref: ViewContainerRef) {
-    if (this.modal != null) {
-      this.modal.close();
-    }
+    this.modalService.closeAll();
 
     [this.modal] = await this.modalService.openViewRef(type, ref);
 

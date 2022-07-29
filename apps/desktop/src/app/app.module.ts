@@ -57,6 +57,7 @@ import localeZhTw from "@angular/common/locales/zh-Hant";
 import { NgModule } from "@angular/core";
 
 import { AccessibilityCookieComponent } from "./accounts/accessibility-cookie.component";
+import { DeleteAccountComponent } from "./accounts/delete-account.component";
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
 import { LockComponent } from "./accounts/lock.component";
@@ -165,6 +166,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     AttachmentsComponent,
     CiphersComponent,
     CollectionsComponent,
+    DeleteAccountComponent,
     EnvironmentComponent,
     ExportComponent,
     FolderAddEditComponent,
