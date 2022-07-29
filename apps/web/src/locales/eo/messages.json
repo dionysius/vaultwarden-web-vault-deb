@@ -573,7 +573,7 @@
     "message": "Krei konton"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Komencu Provperiodon"
   },
   "logIn": {
     "message": "Saluti"
@@ -597,7 +597,7 @@
     "message": "La ĉefa pasvorto estas la pasvorto, kiun vi uzas por aliri vian trezorejon. Tre gravas, ke vi ne forgesu vian ĉefan pasvorton. Ne eblas retrovi la pasvorton, se vi forgesos ĝin."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Maleblas restarigado de ĉefpasvorto, se vi ĝin forgesos!"
   },
   "masterPassHintDesc": {
     "message": "Majstra pasvorta sugesto povas helpi vin memori vian pasvorton se vi forgesas ĝin."
@@ -630,10 +630,10 @@
     "message": "Nevalida retpoŝta adreso."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Ĉefpasvorto estas nepra."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Reentajpado de ĉefpasvorto estas nepra."
   },
   "masterPasswordMinLength": {
     "message": "Master password must be at least 8 characters long."
@@ -793,7 +793,7 @@
     "message": "Sekureca Ŝlosilo FIDO U2F"
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn"
+    "message": "WebAuthn FIDO2"
   },
   "webAuthnDesc": {
     "message": "Use any WebAuthn enabled security key to access your account."
@@ -924,10 +924,10 @@
     "description": "Include lowercase letters in the password generator."
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Ciferoj (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Signoj Specialaj (!@#$%^&*)"
   },
   "numWords": {
     "message": "Nombro de Vortoj"
@@ -1251,7 +1251,7 @@
     "message": "Enŝaltita"
   },
   "restoreAccess": {
-    "message": "Restore Access"
+    "message": "Restarigu Aliron"
   },
   "premium": {
     "message": "Premium",
@@ -1795,7 +1795,7 @@
     "message": "jaro"
   },
   "yr": {
-    "message": "yr"
+    "message": "jaro"
   },
   "month": {
     "message": "monato"
@@ -2212,7 +2212,7 @@
     "message": "Ĉiujare"
   },
   "annual": {
-    "message": "Annual"
+    "message": "Ĉiujare"
   },
   "basePrice": {
     "message": "Baza Prezo"
@@ -2740,7 +2740,7 @@
     }
   },
   "createdOrganizationId": {
-    "message": "Created organization $ID$.",
+    "message": "Kreiĝis organizo $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2749,7 +2749,7 @@
     }
   },
   "addedOrganizationId": {
-    "message": "Added organization $ID$.",
+    "message": "Aldoniĝis organizo $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2758,7 +2758,7 @@
     }
   },
   "removedOrganizationId": {
-    "message": "Removed organization $ID$.",
+    "message": "Forviŝiĝis organizo $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3391,7 +3391,7 @@
     "message": "Agordi minimumajn postulojn por majstra pasvorta forto."
   },
   "twoStepLoginPolicyTitle": {
-    "message": "Require two-step login"
+    "message": "Devigu dufazan ensaluton"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Postuli uzantojn agordi du-ŝtupan ensaluton en siaj personaj kontoj."
@@ -3546,7 +3546,7 @@
     }
   },
   "restoredItemId": {
-    "message": "Restored item $ID$.",
+    "message": "Restariĝis ero $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4262,7 +4262,7 @@
     }
   },
   "thisUser": {
-    "message": "this user"
+    "message": "ĉi tiu uzanto"
   },
   "resetPasswordMasterPasswordPolicyInEffect": {
     "message": "One or more organization policies require the master password to meet the following requirements:"
@@ -4343,10 +4343,10 @@
     "message": "Use System Theme"
   },
   "themeDark": {
-    "message": "Dark"
+    "message": "Malhela"
   },
   "themeLight": {
-    "message": "Light"
+    "message": "Hela"
   },
   "confirmSelected": {
     "message": "Confirm Selected"
@@ -4385,7 +4385,7 @@
     "message": "Restore Users"
   },
   "error": {
-    "message": "Error"
+    "message": "Eraro"
   },
   "resetPasswordManageUsers": {
     "message": "Manage Users must also be enabled with the Manage Password Reset permission"
@@ -4400,7 +4400,7 @@
     "message": "Please enter the details below to complete the provider setup. Contact Customer Support if you have any questions."
   },
   "providerName": {
-    "message": "Provider Name"
+    "message": "Nomo de Provizanto"
   },
   "providerSetup": {
     "message": "The provider has been set up."
@@ -4409,7 +4409,7 @@
     "message": "Clients"
   },
   "providerAdmin": {
-    "message": "Provider Admin"
+    "message": "Administranto de Provizanto"
   },
   "providerAdminDesc": {
     "message": "The highest access user that can manage all aspects of your provider as well as access and manage client organizations."
@@ -4439,7 +4439,7 @@
     "message": "You have users that have accepted their invitation, but still need to be confirmed. Users will not have access to the provider until they are confirmed."
   },
   "provider": {
-    "message": "Provider"
+    "message": "Provizanto"
   },
   "newClientOrganization": {
     "message": "New Client Organization"
@@ -4506,13 +4506,13 @@
     "message": "Are you sure you want to detach this organization? The organization will continue to exist but will no longer be managed by the provider."
   },
   "add": {
-    "message": "Add"
+    "message": "Aldonu"
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Ĉefpasvorto Estas Aktualigita"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Aktualigu Ĉefpasvorton"
   },
   "updateMasterPasswordWarning": {
     "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
@@ -4521,7 +4521,7 @@
     "message": "Your Master Password does not meet the policy requirements of this organization. In order to join the organization, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "maximumVaultTimeout": {
-    "message": "Vault timeout"
+    "message": "Tempolimo de trezorejo"
   },
   "maximumVaultTimeoutDesc": {
     "message": "Set a maximum vault timeout for members."
@@ -4533,10 +4533,10 @@
     "message": "Invalid Maximum Vault Timeout."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Horoj"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minutoj"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
@@ -4795,7 +4795,7 @@
     "message": "Sponsorship Created"
   },
   "emailSent": {
-    "message": "Email Sent"
+    "message": "Retmesaĝo Sendiĝis"
   },
   "revokeSponsorshipConfirmation": {
     "message": "After removing this account, the Families plan sponsorship will expire at the end of the billing period. You will not be able to redeem a new sponsorship offer until the existing one expires. Are you sure you want to continue?"
@@ -4813,19 +4813,19 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Sendu Kodon"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kodo Sendiĝis"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Aŭtentiga Kodo"
   },
   "confirmIdentity": {
     "message": "Confirm your identity to continue."
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Aŭtentiga kodo estas deviga."
   },
   "invalidVerificationCode": {
     "message": "Invalid verification code"
@@ -4843,7 +4843,7 @@
     "message": "Leave Organization"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Forigu Ĉefpasvorton"
   },
   "removedMasterPassword": {
     "message": "Master password removed."
@@ -4918,7 +4918,7 @@
     "message": "Sponsoring Organization"
   },
   "keyConnectorTest": {
-    "message": "Test"
+    "message": "Testu"
   },
   "keyConnectorTestSuccess": {
     "message": "Success! Key Connector reached."
@@ -4993,7 +4993,7 @@
     "message": "Sent (Awaiting Sync)"
   },
   "sent": {
-    "message": "Sent"
+    "message": "Sendita"
   },
   "requestRemoved": {
     "message": "Removed (Awaiting Sync)"
@@ -5023,7 +5023,7 @@
     }
   },
   "required": {
-    "message": "required"
+    "message": "deviga"
   },
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
@@ -5068,13 +5068,13 @@
     "message": "Access Denied. You do not have permission to view this page."
   },
   "masterPassword": {
-    "message": "Master Password"
+    "message": "Ĉefpasvorto"
   },
   "security": {
-    "message": "Security"
+    "message": "Sekureco"
   },
   "keys": {
-    "message": "Keys"
+    "message": "Ŝlosiloj"
   },
   "billingHistory": {
     "message": "Billing History"
@@ -5124,11 +5124,11 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random",
+    "message": "Hazarda",
     "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Vorto Hazarda"
   },
   "service": {
     "message": "Service"
@@ -5193,7 +5193,7 @@
     "message": "Generate an email alias with an external forwarding service."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Domajna nomo",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
@@ -5252,7 +5252,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotate Key"
+    "message": "Rotaciigu Ŝlosilon"
   },
   "scimApiKey": {
     "message": "SCIM API Key",
@@ -5275,10 +5275,10 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Enigo estas deviga."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "Enigo ne estas retpoŝta adreso."
   },
   "inputMinLength": {
     "message": "Input must be at least $COUNT$ characters long.",
@@ -5299,12 +5299,15 @@
     }
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Ŝaltu"
   },
   "on": {
-    "message": "On"
+    "message": "Ŝaltita"
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "numberOfUsers": {
+    "message": "Number of users"
   }
 }

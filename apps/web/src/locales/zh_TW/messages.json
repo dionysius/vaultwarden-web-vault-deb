@@ -2641,7 +2641,7 @@
     }
   },
   "revokedUserId": {
-    "message": "已撤銷 $ID$ 對組織的存取權限。",
+    "message": "已撤銷 $ID$ 的組織存取權限。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2650,7 +2650,7 @@
     }
   },
   "restoredUserId": {
-    "message": "已還原 $ID$ 對組織的存取權限。",
+    "message": "已還原 $ID$ 的組織存取權限。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5306,5 +5306,8 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "numberOfUsers": {
+    "message": "使用者數量"
   }
 }

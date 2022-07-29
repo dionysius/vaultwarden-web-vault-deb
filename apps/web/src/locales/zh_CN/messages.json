@@ -1563,7 +1563,7 @@
     "message": "弱密码"
   },
   "weakPasswordsReportDesc": {
-    "message": "弱的密码很容易被攻击者猜到。使用密码生成器将这些密码改为强密码。"
+    "message": "弱密码很容易被攻击者猜到。使用密码生成器将这些密码更改为强密码。"
   },
   "weakPasswordsFound": {
     "message": "发现弱密码"
@@ -1769,7 +1769,7 @@
     "message": "# GB 附加存储"
   },
   "additionalStorageIntervalDesc": {
-    "message": "您的计划附带 $SIZE$ 的加密存储空间。您也可以用 $PRICE$ 每 GB 每 $INTERVAL$ 购买附加存储。",
+    "message": "您的计划附带 $SIZE$ 的加密存储空间。您也可以以 $PRICE$ 每 GB 每 $INTERVAL$ 购买附加存储。",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -2194,7 +2194,7 @@
     }
   },
   "trialPaidInfoMessage": {
-    "message": "您的 $PLAN$ 7天免费试用将在 7 天后转换成付费订阅。",
+    "message": "您的 $PLAN$ 7 天免费试用将在 7 天后转换成付费订阅。",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2203,7 +2203,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "我们已经发送一封确认邮件到您的团队的账单电子邮箱 "
+    "message": "我们已经发送一封确认邮件到您的团队的计费电子邮箱 "
   },
   "monthly": {
     "message": "每月"
@@ -2632,7 +2632,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "移除 $ID$ 访问权限",
+    "message": "移除 $ID$ 的访问权限",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2659,7 +2659,7 @@
     }
   },
   "revokeUserId": {
-    "message": "撤销 $ID$ 访问权限",
+    "message": "撤销 $ID$ 的访问权限",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5306,5 +5306,8 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "numberOfUsers": {
+    "message": "用户数量"
   }
 }

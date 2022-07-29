@@ -1170,7 +1170,7 @@
     "message": "Pokaż rozpoznawalny obraz obok każdych danych logowania."
   },
   "enableGravatars": {
-    "message": "Włącz Gravatary",
+    "message": "Pokaż Gravatary",
     "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
@@ -3949,7 +3949,7 @@
     "message": "Ze względu na zasadę przedsiębiorstwa, nie możesz zapisywać elementów w osobistym sejfie. Zmień właściciela elementu na organizację i wybierz jedną z dostępnych kolekcji."
   },
   "disableSend": {
-    "message": "Wyłącz wysyłkę"
+    "message": "Usuń wysyłkę"
   },
   "disableSendPolicyDesc": {
     "message": "Nie zezwalaj użytkownikom na tworzenie i edytowanie wysyłek. Usunięcie obecnej wysyłki nadal jest dozwolone.",
@@ -5306,5 +5306,8 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "numberOfUsers": {
+    "message": "Liczba użytkowników"
   }
 }

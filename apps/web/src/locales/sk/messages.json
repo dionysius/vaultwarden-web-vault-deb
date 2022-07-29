@@ -2185,7 +2185,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Ďakujeme vám, že ste si predplatilí $PLAN$!",
+    "message": "Ďakujeme vám, že ste si predplatili $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -4690,22 +4690,22 @@
     "message": "Single Sign-On configuration was saved."
   },
   "sponsoredFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Bitwarden pre Rodiny zadarmo"
   },
   "sponsoredFamiliesEligible": {
-    "message": "You and your family are eligible for Free Bitwarden Families. Redeem with your personal email to keep your data secure even when you are not at work."
+    "message": "Vy a vaša rodina máte bezplatne k dispozícii Bitwarden pre Rodiny. Uplatnite si túto možnosť s vaším osobným emailom aby ste mali dáta v bezpečí aj keď nie ste v práci."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Redeem your Free Bitwarden for Families plan today to keep your data secure even when you are not at work."
+    "message": "Využite bezplatný plán Bitwarden pre Rodiny aby ste mali dáta v bezpečí aj keď nie ste v práci."
   },
   "sponsoredFamiliesInclude": {
-    "message": "The Bitwarden for Families plan include"
+    "message": "Bitwarden plán pre Rodiny zahŕňa"
   },
   "sponsoredFamiliesPremiumAccess": {
-    "message": "Premium access for up to 6 users"
+    "message": "Prémiový prístup pre maximálne 6 používateľov"
   },
   "sponsoredFamiliesSharedCollections": {
-    "message": "Shared collections for Family secrets"
+    "message": "Zdieľané zbierky pre Rodinné heslá"
   },
   "badToken": {
     "message": "The link is no longer valid. Please have the sponsor resend the offer."
@@ -4777,10 +4777,10 @@
     }
   },
   "freeFamiliesPlan": {
-    "message": "Free Families Plan"
+    "message": "Bezplatný plán pre Rodiny"
   },
   "redeemNow": {
-    "message": "Redeem Now"
+    "message": "Uplatniť Teraz"
   },
   "recipient": {
     "message": "Príjemca"
@@ -5011,7 +5011,7 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 field above needs your attention."
+    "message": "Jedno pole vyššie vyžaduje vašu pozornosť."
   },
   "fieldRequiredError": {
     "message": "$FIELDNAME$ je povinné.",
@@ -5080,7 +5080,7 @@
     "message": "História platieb"
   },
   "backToReports": {
-    "message": "Back to Reports"
+    "message": "Späť na Reporty"
   },
   "organizationPicker": {
     "message": "Výber organizácie"
@@ -5244,7 +5244,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Rotate the SCIM API Key",
+    "message": "Obnovte SCIM API kľúč",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
@@ -5252,10 +5252,10 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotate Key"
+    "message": "Obnoviť kľúč"
   },
   "scimApiKey": {
-    "message": "SCIM API Key",
+    "message": "SCIM API kľúč",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {
@@ -5306,5 +5306,8 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "numberOfUsers": {
+    "message": "Počet používateľov"
   }
 }
