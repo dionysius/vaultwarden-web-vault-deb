@@ -34,7 +34,6 @@
         <input
           id="register-form_input_master-password"
           bitInput
-          (input)="updatePasswordStrength()"
           type="{{ showPassword ? 'text' : 'password' }}"
           formControlName="masterPassword"
         />
@@ -50,7 +49,13 @@
           {{ "masterPassImportant" | i18n }}
         </bit-hint>
       </bit-form-field>
-      <app-password-strength [score]="masterPasswordScore" [showText]="true">
+      <app-password-strength
+        [password]="formGroup.get('masterPassword')?.value"
+        [email]="formGroup.get('email')?.value"
+        [name]="formGroup.get('name')?.value"
+        [showText]="true"
+        (passwordStrengthResult)="getStrengthResult($event)"
+      >
       </app-password-strength>
     </div>
 

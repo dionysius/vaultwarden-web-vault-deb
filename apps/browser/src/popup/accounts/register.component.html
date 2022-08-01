@@ -25,11 +25,8 @@
             <div class="row-main">
               <label for="masterPassword">
                 {{ "masterPass" | i18n }}
-                <strong
-                  class="sub-label text-{{ masterPasswordScoreColor }}"
-                  *ngIf="masterPasswordScoreText"
-                >
-                  {{ masterPasswordScoreText }}
+                <strong class="sub-label text-{{ color }}" *ngIf="text">
+                  {{ text }}
                 </strong>
               </label>
               <input
@@ -38,7 +35,6 @@
                 class="monospaced"
                 formControlName="masterPassword"
                 appInputVerbatim
-                (input)="updatePasswordStrength()"
               />
             </div>
             <div class="action-buttons">
@@ -58,17 +54,14 @@
               </button>
             </div>
           </div>
-          <div class="progress">
-            <div
-              class="progress-bar bg-{{ masterPasswordScoreColor }}"
-              role="progressbar"
-              aria-valuenow="0"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              [ngStyle]="{ width: masterPasswordScoreWidth + '%' }"
-              attr.aria-valuenow="{{ masterPasswordScoreWidth }}"
-            ></div>
-          </div>
+          <app-password-strength
+            [password]="formGroup.get('masterPassword')?.value"
+            [email]="formGroup.get('email')?.value"
+            [name]="formGroup.get('name')?.value"
+            (passwordStrengthResult)="getStrengthResult($event)"
+            (passwordScoreColor)="getPasswordScoreText($event)"
+          >
+          </app-password-strength>
         </div>
       </div>
       <div class="box-footer">

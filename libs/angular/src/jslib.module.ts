@@ -29,6 +29,7 @@ import { I18nPipe } from "./pipes/i18n.pipe";
 import { SearchCiphersPipe } from "./pipes/search-ciphers.pipe";
 import { SearchPipe } from "./pipes/search.pipe";
 import { UserNamePipe } from "./pipes/user-name.pipe";
+import { PasswordStrengthComponent } from "./shared/components/password-strength/password-strength.component";
 
 @NgModule({
   imports: [
@@ -68,6 +69,7 @@ import { UserNamePipe } from "./pipes/user-name.pipe";
     StopPropDirective,
     TrueFalseValueDirective,
     UserNamePipe,
+    PasswordStrengthComponent,
   ],
   exports: [
     A11yInvalidDirective,
@@ -97,6 +99,7 @@ import { UserNamePipe } from "./pipes/user-name.pipe";
     StopPropDirective,
     TrueFalseValueDirective,
     UserNamePipe,
+    PasswordStrengthComponent,
   ],
   providers: [CreditCardNumberPipe, DatePipe, I18nPipe, SearchPipe, UserNamePipe],
 })

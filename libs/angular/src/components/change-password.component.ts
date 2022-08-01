@@ -12,19 +12,21 @@ import { EncString } from "@bitwarden/common/models/domain/encString";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
+import { PasswordColorText } from "../shared/components/password-strength/password-strength.component";
+
 @Directive()
 export class ChangePasswordComponent implements OnInit {
   masterPassword: string;
   masterPasswordRetype: string;
   formPromise: Promise<any>;
-  masterPasswordScore: number;
   enforcedPolicyOptions: MasterPasswordPolicyOptions;
+  passwordStrengthResult: any;
+  color: string;
+  text: string;
 
   protected email: string;
   protected kdf: KdfType;
   protected kdfIterations: number;
-
-  private masterPasswordStrengthTimeout: any;
 
   constructor(
     protected i18nService: I18nService,
@@ -116,10 +118,7 @@ export class ChangePasswordComponent implements OnInit {
       return false;
     }
 
-    const strengthResult = this.passwordGenerationService.passwordStrength(
-      this.masterPassword,
-      this.getPasswordStrengthUserInput()
-    );
+    const strengthResult = this.passwordStrengthResult;
 
     if (
       this.enforcedPolicyOptions != null &&
@@ -153,19 +152,6 @@ export class ChangePasswordComponent implements OnInit {
     return true;
   }
 
-  updatePasswordStrength() {
-    if (this.masterPasswordStrengthTimeout != null) {
-      clearTimeout(this.masterPasswordStrengthTimeout);
-    }
-    this.masterPasswordStrengthTimeout = setTimeout(() => {
-      const strengthResult = this.passwordGenerationService.passwordStrength(
-        this.masterPassword,
-        this.getPasswordStrengthUserInput()
-      );
-      this.masterPasswordScore = strengthResult == null ? null : strengthResult.score;
-    }, 300);
-  }
-
   async logOut() {
     const confirmed = await this.platformUtilsService.showDialog(
       this.i18nService.t("logOutConfirmation"),
@@ -178,18 +164,12 @@ export class ChangePasswordComponent implements OnInit {
     }
   }
 
-  private getPasswordStrengthUserInput() {
-    let userInput: string[] = [];
-    const atPosition = this.email.indexOf("@");
-    if (atPosition > -1) {
-      userInput = userInput.concat(
-        this.email
-          .substr(0, atPosition)
-          .trim()
-          .toLowerCase()
-          .split(/[^A-Za-z0-9]/)
-      );
-    }
-    return userInput;
+  getStrengthResult(result: any) {
+    this.passwordStrengthResult = result;
+  }
+
+  getPasswordScoreText(event: PasswordColorText) {
+    this.color = event.color;
+    this.text = event.text;
   }
 }

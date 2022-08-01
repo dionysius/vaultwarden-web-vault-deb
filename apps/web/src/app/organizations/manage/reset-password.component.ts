@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
 
+import { PasswordStrengthComponent } from "@bitwarden/angular/shared/components/password-strength/password-strength.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -22,13 +23,13 @@ export class ResetPasswordComponent implements OnInit {
   @Input() id: string;
   @Input() organizationId: string;
   @Output() onPasswordReset = new EventEmitter();
+  @ViewChild(PasswordStrengthComponent) passwordStrengthComponent: PasswordStrengthComponent;
 
   enforcedPolicyOptions: MasterPasswordPolicyOptions;
   newPassword: string = null;
   showPassword = false;
   masterPasswordScore: number;
   formPromise: Promise<any>;
-  private newPasswordStrengthTimeout: any;
 
   constructor(
     private apiService: ApiService,
@@ -52,7 +53,7 @@ export class ResetPasswordComponent implements OnInit {
   async generatePassword() {
     const options = (await this.passwordGenerationService.getOptions())[0];
     this.newPassword = await this.passwordGenerationService.generatePassword(options);
-    this.updatePasswordStrength();
+    this.passwordStrengthComponent.updatePasswordStrength(this.newPassword);
   }
 
   togglePassword() {
@@ -182,36 +183,5 @@ export class ResetPasswordComponent implements OnInit {
     } catch (e) {
       this.logService.error(e);
     }
-  }
-
-  updatePasswordStrength() {
-    if (this.newPasswordStrengthTimeout != null) {
-      clearTimeout(this.newPasswordStrengthTimeout);
-    }
-    this.newPasswordStrengthTimeout = setTimeout(() => {
-      const strengthResult = this.passwordGenerationService.passwordStrength(
-        this.newPassword,
-        this.getPasswordStrengthUserInput()
-      );
-      this.masterPasswordScore = strengthResult == null ? null : strengthResult.score;
-    }, 300);
-  }
-
-  private getPasswordStrengthUserInput() {
-    let userInput: string[] = [];
-    const atPosition = this.email.indexOf("@");
-    if (atPosition > -1) {
-      userInput = userInput.concat(
-        this.email
-          .substr(0, atPosition)
-          .trim()
-          .toLowerCase()
-          .split(/[^A-Za-z0-9]/)
-      );
-    }
-    if (this.name != null && this.name !== "") {
-      userInput = userInput.concat(this.name.trim().toLowerCase().split(" "));
-    }
-    return userInput;
   }
 }

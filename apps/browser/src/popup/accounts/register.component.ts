@@ -19,6 +19,9 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
   templateUrl: "register.component.html",
 })
 export class RegisterComponent extends BaseRegisterComponent {
+  color: string;
+  text: string;
+
   constructor(
     formValidationErrorService: FormValidationErrorsService,
     formBuilder: UntypedFormBuilder,

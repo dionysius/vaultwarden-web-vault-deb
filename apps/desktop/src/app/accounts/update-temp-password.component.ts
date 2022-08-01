@@ -12,46 +12,11 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 
-interface MasterPasswordScore {
-  Color: string;
-  Text: string;
-  Width: number;
-}
-
 @Component({
   selector: "app-update-temp-password",
   templateUrl: "update-temp-password.component.html",
 })
 export class UpdateTempPasswordComponent extends BaseUpdateTempPasswordComponent {
-  get masterPasswordScoreStyle(): MasterPasswordScore {
-    const scoreWidth = this.masterPasswordScore == null ? 0 : (this.masterPasswordScore + 1) * 20;
-    switch (this.masterPasswordScore) {
-      case 4:
-        return {
-          Color: "bg-success",
-          Text: "strong",
-          Width: scoreWidth,
-        };
-      case 3:
-        return {
-          Color: "bg-primary",
-          Text: "good",
-          Width: scoreWidth,
-        };
-      case 2:
-        return {
-          Color: "bg-warning",
-          Text: "weak",
-          Width: scoreWidth,
-        };
-      default:
-        return {
-          Color: "bg-danger",
-          Text: "weak",
-          Width: scoreWidth,
-        };
-    }
-  }
   constructor(
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,

@@ -69,7 +69,7 @@ export class RegisterFormComponent extends BaseRegisterComponent {
     if (
       this.enforcedPolicyOptions != null &&
       !this.policyService.evaluateMasterPassword(
-        this.masterPasswordScore,
+        this.passwordStrengthResult.score,
         this.formGroup.get("masterPassword")?.value,
         this.enforcedPolicyOptions
       )
