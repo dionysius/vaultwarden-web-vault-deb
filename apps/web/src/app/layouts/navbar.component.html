@@ -44,9 +44,9 @@
           <i class="bwi bwi-caret-down bwi-sm" aria-hidden="true"></i>
         </button>
         <bit-menu class="dropdown-menu" #accountMenu>
-          <div class="tw-max-w-[300px] tw-min-w-[200px] tw-flex tw-flex-col">
+          <div class="tw-flex tw-min-w-[200px] tw-max-w-[300px] tw-flex-col">
             <div
-              class="tw-flex tw-items-center tw-leading-tight tw-text-info tw-py-1 tw-px-4"
+              class="tw-flex tw-items-center tw-py-1 tw-px-4 tw-leading-tight tw-text-info"
               *ngIf="name"
               appStopProp
             >
@@ -59,7 +59,7 @@
               ></app-avatar>
               <div class="tw-ml-2 tw-block tw-overflow-hidden tw-whitespace-nowrap">
                 <span>{{ "loggedInAs" | i18n }}</span>
-                <small class="tw-text-muted tw-block tw-overflow-hidden tw-whitespace-nowrap">{{
+                <small class="tw-block tw-overflow-hidden tw-whitespace-nowrap tw-text-muted">{{
                   name
                 }}</small>
               </div>

@@ -1,38 +1,38 @@
-<div class="tw-m-2.5 tw-text-center tw-h-16">
+<div class="tw-m-2.5 tw-h-16 tw-text-center">
   <button
     (click)="selectStep()"
     [disabled]="disabled"
-    class="tw-w-full tw-flex tw-border-none tw-bg-transparent tw-items-center"
+    class="tw-flex tw-w-full tw-items-center tw-border-none tw-bg-transparent"
     [ngClass]="{
       'hover:tw-bg-secondary-100': !disabled && step.editable
     }"
     [attr.aria-expanded]="selected"
   >
     <span
-      class="tw-rounded-full tw-font-bold tw-leading-9 tw-mr-3.5 tw-w-9"
+      class="tw-mr-3.5 tw-w-9 tw-rounded-full tw-font-bold tw-leading-9"
       *ngIf="!step.completed"
       [ngClass]="{
-        'tw-text-contrast tw-bg-primary-500': selected,
-        'tw-text-main tw-bg-secondary-300': !selected && !disabled && step.editable,
-        'tw-text-muted tw-bg-transparent': disabled
+        'tw-bg-primary-500 tw-text-contrast': selected,
+        'tw-bg-secondary-300 tw-text-main': !selected && !disabled && step.editable,
+        'tw-bg-transparent tw-text-muted': disabled
       }"
     >
       {{ stepNumber }}
     </span>
     <span
-      class="tw-text-contrast tw-bg-primary-500 tw-rounded-full tw-font-bold tw-leading-9 tw-mr-3.5 tw-w-9"
+      class="tw-mr-3.5 tw-w-9 tw-rounded-full tw-bg-primary-500 tw-font-bold tw-leading-9 tw-text-contrast"
       *ngIf="step.completed"
     >
       <i class="bwi bwi-fw bwi-check tw-p-1" aria-hidden="true"></i>
     </span>
     <div
-      class="tw-text-left tw-txt-main tw-leading-snug tw-h-12 tw-mt-3.5"
+      class="tw-txt-main tw-mt-3.5 tw-h-12 tw-text-left tw-leading-snug"
       [ngClass]="{
         'tw-font-bold': selected
       }"
     >
       <p
-        class="main-label text tw-text-main tw-mb-1"
+        class="main-label text tw-mb-1 tw-text-main"
         [ngClass]="{
           'tw-mt-1': !step.subLabel
         }"

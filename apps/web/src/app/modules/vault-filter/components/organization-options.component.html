@@ -8,12 +8,12 @@
 </ng-container>
 <div
   *ngIf="loaded"
-  class="tw-max-w-[300px] tw-min-w-[200px] tw-flex tw-flex-col"
+  class="tw-flex tw-min-w-[200px] tw-max-w-[300px] tw-flex-col"
   [appApiAction]="actionPromise"
 >
   <button
     *ngIf="allowEnrollmentChanges(organization) && !organization.resetPasswordEnrolled"
-    class="!tw-text-main active:!tw-ring-0 active:!tw-ring-offset-0 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-offset-2 focus:tw-ring-primary-700 focus:tw-z-50 hover:tw-bg-secondary-100 tw-bg-background tw-block tw-border-none tw-cursor-pointer tw-px-4 tw-py-2 tw-text-left"
+    class="tw-block tw-cursor-pointer tw-border-none tw-bg-background tw-px-4 tw-py-2 tw-text-left !tw-text-main hover:tw-bg-secondary-100 focus:tw-z-50 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-primary-700 focus:tw-ring-offset-2 active:!tw-ring-0 active:!tw-ring-offset-0"
     (click)="toggleResetPasswordEnrollment(organization)"
   >
     <i class="bwi bwi-fw bwi-key" aria-hidden="true"></i>
@@ -21,7 +21,7 @@
   </button>
   <button
     *ngIf="allowEnrollmentChanges(organization) && organization.resetPasswordEnrolled"
-    class="!tw-text-main active:!tw-ring-0 active:!tw-ring-offset-0 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-offset-2 focus:tw-ring-primary-700 focus:tw-z-50 hover:tw-bg-secondary-100 tw-bg-background tw-block tw-border-none tw-cursor-pointer tw-px-4 tw-py-2 tw-text-left"
+    class="tw-block tw-cursor-pointer tw-border-none tw-bg-background tw-px-4 tw-py-2 tw-text-left !tw-text-main hover:tw-bg-secondary-100 focus:tw-z-50 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-primary-700 focus:tw-ring-offset-2 active:!tw-ring-0 active:!tw-ring-offset-0"
     (click)="toggleResetPasswordEnrollment(organization)"
   >
     <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
@@ -30,7 +30,7 @@
   <ng-container *ngIf="organization.useSso && organization.identifier">
     <button
       *ngIf="organization.ssoBound; else linkSso"
-      class="!tw-text-main active:!tw-ring-0 active:!tw-ring-offset-0 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-offset-2 focus:tw-ring-primary-700 focus:tw-z-50 hover:tw-bg-secondary-100 tw-bg-background tw-block tw-border-none tw-cursor-pointer tw-px-4 tw-py-2 tw-text-left"
+      class="tw-block tw-cursor-pointer tw-border-none tw-bg-background tw-px-4 tw-py-2 tw-text-left !tw-text-main hover:tw-bg-secondary-100 focus:tw-z-50 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-primary-700 focus:tw-ring-offset-2 active:!tw-ring-0 active:!tw-ring-offset-0"
       (click)="unlinkSso(organization)"
     >
       <i class="bwi bwi-fw bwi-chain-broken" aria-hidden="true"></i>
@@ -41,7 +41,7 @@
     </ng-template>
   </ng-container>
   <button
-    class="text-danger active:!tw-ring-0 active:!tw-ring-offset-0 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-offset-2 focus:tw-ring-primary-700 focus:tw-z-50 hover:tw-bg-secondary-100 tw-bg-background tw-block tw-border-none tw-cursor-pointer tw-px-4 tw-py-2 tw-text-left"
+    class="text-danger tw-block tw-cursor-pointer tw-border-none tw-bg-background tw-px-4 tw-py-2 tw-text-left hover:tw-bg-secondary-100 focus:tw-z-50 focus:tw-bg-secondary-100 focus:tw-outline-none focus:tw-ring focus:tw-ring-primary-700 focus:tw-ring-offset-2 active:!tw-ring-0 active:!tw-ring-offset-0"
     (click)="leave(organization)"
   >
     <i class="bwi bwi-fw bwi-sign-out" aria-hidden="true"></i>
