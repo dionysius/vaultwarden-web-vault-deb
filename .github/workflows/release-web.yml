@@ -147,7 +147,7 @@ jobs:
       - self-host
     env:
       _RELEASE_VERSION: ${{ needs.setup.outputs.release_version }}
-      _TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
+      _TAG_VERSION: ${{ needs.setup.outputs.release_version }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
@@ -277,9 +277,9 @@ jobs:
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: ncipollo/release-action@58ae73b360456532aafd58ee170c045abbeaee37  # v1.10.0
         with:
-          name: "Version v${{ needs.setup.outputs.release_version }}"
+          name: "Web v${{ needs.setup.outputs.release_version }}"
           commit: ${{ github.sha }}
-          tag: web-v${{ needs.setup.outputs.tag_version }}
+          tag: web-v${{ needs.setup.outputs.release_version }}
           body: "<insert release notes here>"
           artifacts: "apps/web/artifacts/web-${{ needs.setup.outputs.release_version }}-selfhosted-COMMERCIAL.zip,
             apps/web/artifacts/web-${{ needs.setup.outputs.release_version }}-selfhosted-open-source.zip"
