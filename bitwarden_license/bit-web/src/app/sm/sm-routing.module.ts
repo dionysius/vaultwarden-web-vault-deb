@@ -24,6 +24,7 @@ const routes: Routes = [
       {
         path: "",
         redirectTo: "secrets",
+        pathMatch: "full",
       },
     ],
   },
