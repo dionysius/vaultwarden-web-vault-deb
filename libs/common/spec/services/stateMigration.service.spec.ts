@@ -127,4 +127,20 @@ describe("State Migration Service", () => {
       expect(migratedAccount).toEqual(expectedAccount);
     });
   });
+
+  describe("StateVersion 5 to 6 migration", () => {
+    it("deletes account.keys.legacyEtmKey value", async () => {
+      const accountVersion5 = new Account({
+        keys: {
+          legacyEtmKey: "legacy key",
+        },
+      } as any);
+
+      const migratedAccount = await (stateMigrationService as any).migrateAccountFrom5To6(
+        accountVersion5
+      );
+
+      expect(migratedAccount.keys.legacyEtmKey).toBeUndefined();
+    });
+  });
 });

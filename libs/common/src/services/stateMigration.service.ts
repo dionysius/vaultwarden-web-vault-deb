@@ -164,6 +164,15 @@ export class StateMigrationService<
           await this.setCurrentStateVersion(StateVersion.Five);
           break;
         }
+        case StateVersion.Five: {
+          const authenticatedAccounts = await this.getAuthenticatedAccounts();
+          for (const account of authenticatedAccounts) {
+            const migratedAccount = await this.migrateAccountFrom5To6(account);
+            await this.set(account.profile.userId, migratedAccount);
+          }
+          await this.setCurrentStateVersion(StateVersion.Six);
+          break;
+        }
       }
 
       currentStateVersion += 1;
@@ -508,6 +517,11 @@ export class StateMigrationService<
       }
     }
 
+    return account;
+  }
+
+  protected async migrateAccountFrom5To6(account: TAccount): Promise<TAccount> {
+    delete (account as any).keys?.legacyEtmKey;
     return account;
   }
 

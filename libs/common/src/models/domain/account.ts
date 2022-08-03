@@ -82,7 +82,6 @@ export class AccountKeys {
     Map<string, SymmetricCryptoKey>
   >();
   privateKey?: EncryptionPair<string, ArrayBuffer> = new EncryptionPair<string, ArrayBuffer>();
-  legacyEtmKey?: SymmetricCryptoKey;
   publicKey?: ArrayBuffer;
   publicKeySerialized?: string;
   apiKeyClientSecret?: string;
