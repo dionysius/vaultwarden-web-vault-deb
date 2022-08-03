@@ -126,11 +126,15 @@
           [ngClass]="{ active: organization.id === activeFilter.selectedOrganizationId }"
         >
           <span class="filter-buttons">
-            <button class="filter-button" (click)="applyOrganizationFilter(organization)">
+            <button
+              class="filter-button"
+              [ngClass]="{ 'disabled-organization': !organization.enabled }"
+              (click)="applyOrganizationFilter(organization)"
+            >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               {{ organization.name }}
             </button>
-            <span class="ml-auto contents">
+            <span class="ml-auto">
               <i
                 *ngIf="!organization.enabled"
                 class="org-options bwi bwi-fw bwi-exclamation-triangle text-danger"

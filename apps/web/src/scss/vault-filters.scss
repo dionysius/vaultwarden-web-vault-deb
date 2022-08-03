@@ -113,6 +113,10 @@
       text-decoration: none;
     }
     max-width: 90%;
+
+    &.disabled-organization {
+      max-width: 78%;
+    }
   }
 
   .edit-button {
