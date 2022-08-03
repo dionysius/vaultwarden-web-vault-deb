@@ -13,7 +13,7 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 import { ProductType } from "@bitwarden/common/enums/productType";
 
-import { OrganizationPlansComponent } from "src/app/settings/organization-plans.component";
+import { OrganizationPlansComponent } from "../../settings/organization-plans.component";
 
 @Component({
   selector: "app-billing",

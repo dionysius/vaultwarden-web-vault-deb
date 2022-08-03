@@ -1,32 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { DomSanitizer } from "@angular/platform-browser";
-
-import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
-
-export enum ReportTypes {
-  "exposedPasswords" = "exposedPasswords",
-  "reusedPasswords" = "reusedPasswords",
-  "weakPasswords" = "weakPasswords",
-  "unsecuredWebsites" = "unsecuredWebsites",
-  "inactive2fa" = "inactive2fa",
-  "dataBreach" = "dataBreach",
-}
-
-type ReportEntry = {
-  title: string;
-  description: string;
-  route: string;
-  icon: string;
-  requiresPremium: boolean;
-};
-
-const reports: Record<ReportTypes, ReportEntry> = {
-  exposedPasswords: {
-    title: "exposedPasswordsReport",
-    description: "exposedPasswordsReportDesc",
-    route: "exposed-passwords-report",
-    icon: `
+export const IconSvg = {
+  reportExposedPasswords: `
       <svg width="101" height="77" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M32.374 50.192a26.42 26.42 0 0 0 9.111 1.608c14.34 0 25.965-11.372 25.965-25.4 0-.337-.007-.673-.02-1.008h25.299v34.85H32.374v-10.05Z" fill="currentColor" />
         <path d="M15.805 26.4c0 14.028 11.625 25.4 25.965 25.4s25.964-11.372 25.964-25.4C67.734 12.372 56.11 1 41.77 1 27.43 1 15.805 12.372 15.805 26.4Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -40,26 +13,14 @@ const reports: Record<ReportTypes, ReportEntry> = {
         <path d="M16.852 33.375h28.375a4 4 0 0 1 4 4v1.757a4 4 0 0 1-4 4H22.174M66.523 33.375h-3.539a4 4 0 0 0-4 4v3.761c0 1.102.894 1.996 1.996 1.996v0" stroke="#fff" stroke-width="2" stroke-linecap="round" />
       </svg>
     `,
-    requiresPremium: true,
-  },
-  reusedPasswords: {
-    title: "reusedPasswordsReport",
-    description: "reusedPasswordsReportDesc",
-    route: "reused-passwords-report",
-    icon: `
+  reportReusedPasswords: `
     <svg width="102" height="102" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M57.983 15.06a35.664 35.664 0 0 1 14.531 6.27c16.164 11.78 19.585 34.613 7.643 51a37.227 37.227 0 0 1-6.81 7.138m-32.842 6.697a35.708 35.708 0 0 1-11.239-5.495c-16.163-11.78-19.585-34.613-7.642-51a37.55 37.55 0 0 1 3.295-3.929" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M93.909 64.598H7.72c-.708 0-1.275-.662-1.275-1.49V40.273c0-.828.567-1.49 1.275-1.49H93.91c.708 0 1.275.663 1.275 1.49v22.837c.047.827-.567 1.49-1.275 1.49Z" fill="currentColor" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M21.532 52.186v-5.965M21.532 52.187l5.748-1.844M21.532 52.186l3.524 4.881M21.531 52.186l-3.47 4.881M21.532 52.187l-5.694-1.844M40.944 52.186v-5.965M40.944 52.187l5.694-1.844M40.944 52.187l3.525 4.88M40.944 52.187l-3.525 4.88M40.944 52.187l-5.694-1.844M54.849 57.337h11.294M74.21 57.337h11.295M41.75 83l.71 4.75-4.75.71M58.664 18.66 56 14.665 59.996 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
     `,
-    requiresPremium: true,
-  },
-  weakPasswords: {
-    title: "weakPasswordsReport",
-    description: "weakPasswordsReportDesc",
-    route: "weak-passwords-report",
-    icon: `
+  reportWeakPasswords: `
       <svg width="78" height="78" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M66.493 64.415V77H9.979V64.324M9.979 44.065V32.106h56.514v12.148" stroke="#fff" stroke-width="2" stroke-linejoin="round" />
         <path d="M75.44 64.852H2.085c-.603 0-1.085-.555-1.085-1.25V44.448c0-.694.482-1.25 1.085-1.25H75.44c.603 0 1.085.556 1.085 1.25v19.156c.04.694-.482 1.25-1.085 1.25Z" fill="currentColor" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -67,13 +28,7 @@ const reports: Record<ReportTypes, ReportEntry> = {
         <path d="M20.863 31.364c-.274-5.285 0-15.817 1.093-18.863 1.276-3.554 6.233-10.826 15.856-11.482 4.83-.273 15.2 2.296 18.043 14.763" stroke="#fff" stroke-width="2" />
       </svg>
     `,
-    requiresPremium: true,
-  },
-  unsecuredWebsites: {
-    title: "unsecuredWebsitesReport",
-    description: "unsecuredWebsitesReportDesc",
-    route: "unsecured-websites-report",
-    icon: `
+  reportUnsecuredWebsites: `
       <svg width="113" height="76" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.71 12.983h110.362v55.11a6 6 0 0 1-6 6H7.711a6 6 0 0 1-6-6v-55.11Z" fill="currentColor" />
         <rect x="1" y="1.073" width="110.5" height="73.454" rx="9" stroke="#fff" stroke-width="2" />
@@ -83,13 +38,7 @@ const reports: Record<ReportTypes, ReportEntry> = {
         <rect width="96.673" height="6.886" rx="3.443" transform="matrix(-1 0 0 1 104.373 18.721)" stroke="#fff" />
       </svg>
     `,
-    requiresPremium: true,
-  },
-  inactive2fa: {
-    title: "inactive2faReport",
-    description: "inactive2faReportDesc",
-    route: "inactive-two-factor-report",
-    icon: `
+  reportInactiveTwoFactor: `
       <svg width="42" height="75" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="currentColor" stroke="#fff" stroke-width="2" d="M1 13.121h39.595v48.758H1z" />
         <rect x="1" y="1" width="39.595" height="73" rx="8" stroke="#fff" stroke-width="2" />
@@ -97,13 +46,7 @@ const reports: Record<ReportTypes, ReportEntry> = {
         <path d="m33.584 29.293-1.295 4.625-4.625-1.295M8.523 44.725l1.441-4.581 4.582 1.441" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     `,
-    requiresPremium: true,
-  },
-  dataBreach: {
-    title: "dataBreachReport",
-    description: "breachDesc",
-    route: "breach-report",
-    icon: `
+  reportBreach: `
       <svg width="58" height="75" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M39.569 74H13.007a7 7 0 0 1-7-7V31.077a7 7 0 0 1 7-7h19.101a7 7 0 0 1 4.988 2.088l7.46 7.576a7 7 0 0 1 2.013 4.912V67a7 7 0 0 1-7 7Z" fill="#175DDC" stroke="#fff" stroke-width="2" />
         <path d="M44.576 69.055H18.015a7 7 0 0 1-7-7V26.132a7 7 0 0 1 7-7h19.1a7 7 0 0 1 4.988 2.088l7.46 7.576a7 7 0 0 1 2.013 4.911v28.348a7 7 0 0 1-7 7Z" fill="#175DDC" stroke="#fff" stroke-width="2" />
@@ -115,52 +58,6 @@ const reports: Record<ReportTypes, ReportEntry> = {
         <ellipse rx="1.252" ry="1.236" transform="rotate(-.479 2802.219 -1964.476) skewX(.012)" fill="#fff" />
       </svg>
     `,
-    requiresPremium: false,
-  },
 };
 
-@Component({
-  selector: "app-report-card",
-  templateUrl: "report-card.component.html",
-})
-export class ReportCardComponent implements OnInit {
-  @Input() type: ReportTypes;
-
-  report: ReportEntry;
-
-  hasPremium: boolean;
-
-  constructor(
-    private stateService: StateService,
-    private messagingService: MessagingService,
-    private sanitizer: DomSanitizer
-  ) {}
-
-  async ngOnInit() {
-    this.report = reports[this.type];
-
-    this.hasPremium = await this.stateService.getCanAccessPremium();
-  }
-
-  get premium() {
-    return this.report.requiresPremium && !this.hasPremium;
-  }
-
-  get route() {
-    if (this.premium) {
-      return null;
-    }
-
-    return this.report.route;
-  }
-
-  get icon() {
-    return this.sanitizer.bypassSecurityTrustHtml(this.report.icon);
-  }
-
-  click() {
-    if (this.premium) {
-      this.messagingService.send("premiumRequired");
-    }
-  }
-}
+export type Icon = keyof typeof IconSvg;

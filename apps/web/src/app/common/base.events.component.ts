@@ -9,7 +9,7 @@ import { EventResponse } from "@bitwarden/common/models/response/eventResponse";
 import { ListResponse } from "@bitwarden/common/models/response/listResponse";
 import { EventView } from "@bitwarden/common/models/view/eventView";
 
-import { EventService } from "src/app/core";
+import { EventService } from "../core";
 
 @Directive()
 export abstract class BaseEventsComponent {

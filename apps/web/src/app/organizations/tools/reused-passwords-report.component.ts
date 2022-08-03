@@ -10,11 +10,12 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
-import { ReusedPasswordsReportComponent as BaseReusedPasswordsReportComponent } from "../../reports/reused-passwords-report.component";
+// eslint-disable-next-line no-restricted-imports
+import { ReusedPasswordsReportComponent as BaseReusedPasswordsReportComponent } from "../../reports/pages/reused-passwords-report.component";
 
 @Component({
   selector: "app-reused-passwords-report",
-  templateUrl: "../../reports/reused-passwords-report.component.html",
+  templateUrl: "../../reports/pages/reused-passwords-report.component.html",
 })
 export class ReusedPasswordsReportComponent extends BaseReusedPasswordsReportComponent {
   manageableCiphers: Cipher[];

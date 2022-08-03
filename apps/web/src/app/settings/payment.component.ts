@@ -7,7 +7,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
 
-import ThemeVariables from "src/scss/export.module.scss";
+import ThemeVariables from "../../scss/export.module.scss";
 
 const lightInputColor = ThemeVariables.lightInputColor;
 const lightInputPlaceholderColor = ThemeVariables.lightInputPlaceholderColor;

@@ -4,10 +4,10 @@ import { Subscription } from "rxjs";
 import { filter } from "rxjs/operators";
 
 @Component({
-  selector: "app-reports",
-  templateUrl: "reports.component.html",
+  selector: "app-reports-layout",
+  templateUrl: "reports-layout.component.html",
 })
-export class ReportsComponent implements OnDestroy {
+export class ReportsLayoutComponent implements OnDestroy {
   homepage = true;
   subscription: Subscription;
 

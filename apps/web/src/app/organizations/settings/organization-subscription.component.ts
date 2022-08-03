@@ -17,7 +17,7 @@ import { Organization } from "@bitwarden/common/models/domain/organization";
 import { OrganizationConnectionResponse } from "@bitwarden/common/models/response/organizationConnectionResponse";
 import { OrganizationSubscriptionResponse } from "@bitwarden/common/models/response/organizationSubscriptionResponse";
 
-import { BillingSyncKeyComponent } from "src/app/settings/billing-sync-key.component";
+import { BillingSyncKeyComponent } from "../../settings/billing-sync-key.component";
 
 import { BillingSyncApiKeyComponent } from "./billing-sync-api-key.component";
 

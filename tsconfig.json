@@ -13,6 +13,7 @@
     "declaration": false,
     "outDir": "dist",
     "baseUrl": ".",
+    "resolveJsonModule": true,
     "paths": {
       "@bitwarden/common/*": ["./libs/common/src/*"],
       "@bitwarden/angular/*": ["./libs/angular/src/*"],
@@ -26,6 +27,6 @@
       }
     ]
   },
-  "include": ["apps/*/src/**/*.stories.ts", "libs/*/src/**/*"],
-  "exclude": ["apps/*/src/**/*.spec.ts", "libs/*/src/**/*.spec.ts"]
+  "include": ["apps/web/src/**/*", "libs/*/src/**/*"],
+  "exclude": ["apps/web/src/**/*.spec.ts", "libs/*/src/**/*.spec.ts"]
 }

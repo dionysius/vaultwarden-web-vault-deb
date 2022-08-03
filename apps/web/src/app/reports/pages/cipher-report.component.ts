@@ -8,8 +8,8 @@ import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CipherView } from "@bitwarden/common/models/view/cipherView";
 
-import { AddEditComponent as OrgAddEditComponent } from "../organizations/vault/add-edit.component";
-import { AddEditComponent } from "../vault/add-edit.component";
+import { AddEditComponent as OrgAddEditComponent } from "../../organizations/vault/add-edit.component";
+import { AddEditComponent } from "../../vault/add-edit.component";
 
 @Directive()
 export class CipherReportComponent {
@@ -77,13 +77,6 @@ export class CipherReportComponent {
       // since all paid plans include useTotp
       if (this.requiresPaid && !this.organization.useTotp) {
         this.messagingService.send("upgradeOrganization", { organizationId: this.organization.id });
-        return false;
-      }
-    } else {
-      const accessPremium = await this.stateService.getCanAccessPremium();
-      if (this.requiresPaid && !accessPremium) {
-        this.messagingService.send("premiumRequired");
-        this.loading = false;
         return false;
       }
     }

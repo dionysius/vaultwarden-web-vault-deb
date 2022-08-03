@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Params } from "@angular/router";
 
-import { BaseAcceptComponent } from "src/app/common/base.accept.component";
+import { BaseAcceptComponent } from "../../common/base.accept.component";
 
 @Component({
   selector: "app-accept-family-sponsorship",

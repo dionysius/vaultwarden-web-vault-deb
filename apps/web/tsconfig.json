@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "ES2020",
+    "resolveJsonModule": true,
     "paths": {
       "tldjs": ["../../libs/common/src/misc/tldjs.noop"],
       "src/*": ["src/*"],
