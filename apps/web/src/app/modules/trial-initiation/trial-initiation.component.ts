@@ -24,7 +24,7 @@ import { VerticalStepperComponent } from "../vertical-stepper/vertical-stepper.c
 })
 export class TrialInitiationComponent implements OnInit {
   email = "";
-  org = "teams";
+  org = "";
   orgInfoSubLabel = "";
   orgId = "";
   orgLabel = "";
