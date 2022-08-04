@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { CipherRepromptType } from "../../enums/cipherRepromptType";
 import { CipherType } from "../../enums/cipherType";
 import { LinkedIdType } from "../../enums/linkedIdType";
@@ -130,5 +132,41 @@ export class CipherView implements View {
 
   linkedFieldI18nKey(id: LinkedIdType): string {
     return this.linkedFieldOptions.get(id)?.i18nKey;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<CipherView>>): CipherView {
+    const view = new CipherView();
+    const revisionDate = obj.revisionDate == null ? null : new Date(obj.revisionDate);
+    const deletedDate = obj.deletedDate == null ? null : new Date(obj.deletedDate);
+    const attachments = obj.attachments?.map((a: any) => AttachmentView.fromJSON(a));
+    const fields = obj.fields?.map((f: any) => FieldView.fromJSON(f));
+    const passwordHistory = obj.passwordHistory?.map((ph: any) => PasswordHistoryView.fromJSON(ph));
+
+    Object.assign(view, obj, {
+      revisionDate: revisionDate,
+      deletedDate: deletedDate,
+      attachments: attachments,
+      fields: fields,
+      passwordHistory: passwordHistory,
+    });
+
+    switch (obj.type) {
+      case CipherType.Card:
+        view.card = CardView.fromJSON(obj.card);
+        break;
+      case CipherType.Identity:
+        view.identity = IdentityView.fromJSON(obj.identity);
+        break;
+      case CipherType.Login:
+        view.login = LoginView.fromJSON(obj.login);
+        break;
+      case CipherType.SecureNote:
+        view.secureNote = SecureNoteView.fromJSON(obj.secureNote);
+        break;
+      default:
+        break;
+    }
+
+    return view;
   }
 }

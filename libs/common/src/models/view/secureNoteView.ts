@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { SecureNoteType } from "../../enums/secureNoteType";
 import { SecureNote } from "../domain/secureNote";
 
@@ -17,5 +19,9 @@ export class SecureNoteView extends ItemView {
 
   get subTitle(): string {
     return null;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<SecureNoteView>>): SecureNoteView {
+    return Object.assign(new SecureNoteView(), obj);
   }
 }

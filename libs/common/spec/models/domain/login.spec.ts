@@ -6,7 +6,7 @@ import { Login } from "@bitwarden/common/models/domain/login";
 import { LoginUri } from "@bitwarden/common/models/domain/loginUri";
 import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
 
-import { mockEnc } from "../utils";
+import { mockEnc } from "../../utils";
 
 describe("Login DTO", () => {
   it("Convert from empty LoginData", () => {

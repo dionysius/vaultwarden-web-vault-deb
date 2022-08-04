@@ -15,7 +15,7 @@ import { CardView } from "@bitwarden/common/models/view/cardView";
 import { IdentityView } from "@bitwarden/common/models/view/identityView";
 import { LoginView } from "@bitwarden/common/models/view/loginView";
 
-import { mockEnc } from "../utils";
+import { mockEnc } from "../../utils";
 
 describe("Cipher DTO", () => {
   it("Convert from empty CipherData", () => {

@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { CardLinkedId as LinkedId } from "../../enums/linkedIdType";
 import { linkedFieldOption } from "../../misc/linkedFieldOption.decorator";
 
@@ -16,10 +18,6 @@ export class CardView extends ItemView {
   private _brand: string = null;
   private _number: string = null;
   private _subTitle: string = null;
-
-  constructor() {
-    super();
-  }
 
   get maskedCode(): string {
     return this.code != null ? "•".repeat(this.code.length) : null;
@@ -78,5 +76,9 @@ export class CardView extends ItemView {
 
   private formatYear(year: string): string {
     return year.length === 2 ? "20" + year : year;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<CardView>>): CardView {
+    return Object.assign(new CardView(), obj);
   }
 }

@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { FieldType } from "../../enums/fieldType";
 import { LinkedIdType } from "../../enums/linkedIdType";
 import { Field } from "../domain/field";
@@ -24,5 +26,9 @@ export class FieldView implements View {
 
   get maskedValue(): string {
     return this.value != null ? "••••••••" : null;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<FieldView>>): FieldView {
+    return Object.assign(new FieldView(), obj);
   }
 }

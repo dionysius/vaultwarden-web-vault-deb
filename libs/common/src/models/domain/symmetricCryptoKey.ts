@@ -1,5 +1,8 @@
+import { Jsonify } from "type-fest";
+
+import { Utils } from "@bitwarden/common/misc/utils";
+
 import { EncryptionType } from "../../enums/encryptionType";
-import { Utils } from "../../misc/utils";
 
 export class SymmetricCryptoKey {
   key: ArrayBuffer;
@@ -55,21 +58,17 @@ export class SymmetricCryptoKey {
     }
   }
 
-  static initFromJson(jsonResult: SymmetricCryptoKey): SymmetricCryptoKey {
-    if (jsonResult == null) {
-      return jsonResult;
+  toJSON() {
+    // The whole object is constructed from the initial key, so just store the B64 key
+    return { keyB64: this.keyB64 };
+  }
+
+  static fromJSON(obj: Jsonify<SymmetricCryptoKey>): SymmetricCryptoKey {
+    if (obj == null) {
+      return null;
     }
 
-    if (jsonResult.keyB64 != null) {
-      jsonResult.key = Utils.fromB64ToArray(jsonResult.keyB64).buffer;
-    }
-    if (jsonResult.encKeyB64 != null) {
-      jsonResult.encKey = Utils.fromB64ToArray(jsonResult.encKeyB64).buffer;
-    }
-    if (jsonResult.macKeyB64 != null) {
-      jsonResult.macKey = Utils.fromB64ToArray(jsonResult.macKeyB64).buffer;
-    }
-
-    return jsonResult;
+    const arrayBuffer = Utils.fromB64ToArray(obj.keyB64).buffer;
+    return new SymmetricCryptoKey(arrayBuffer);
   }
 }

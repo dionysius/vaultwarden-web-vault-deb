@@ -1,7 +1,7 @@
 import { PasswordHistoryData } from "@bitwarden/common/models/data/passwordHistoryData";
 import { Password } from "@bitwarden/common/models/domain/password";
 
-import { mockEnc } from "../utils";
+import { mockEnc } from "../../utils";
 
 describe("Password", () => {
   let data: PasswordHistoryData;

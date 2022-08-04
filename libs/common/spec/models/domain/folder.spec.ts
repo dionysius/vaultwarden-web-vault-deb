@@ -1,7 +1,7 @@
 import { FolderData } from "@bitwarden/common/models/data/folderData";
 import { Folder } from "@bitwarden/common/models/domain/folder";
 
-import { mockEnc } from "../utils";
+import { mockEnc } from "../../utils";
 
 describe("Folder", () => {
   let data: FolderData;

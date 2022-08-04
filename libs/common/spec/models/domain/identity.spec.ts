@@ -1,7 +1,7 @@
 import { IdentityData } from "@bitwarden/common/models/data/identityData";
 import { Identity } from "@bitwarden/common/models/domain/identity";
 
-import { mockEnc } from "../utils";
+import { mockEnc } from "../../utils";
 
 describe("Identity", () => {
   let data: IdentityData;

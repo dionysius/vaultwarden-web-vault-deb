@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { IdentityLinkedId as LinkedId } from "../../enums/linkedIdType";
 import { linkedFieldOption } from "../../misc/linkedFieldOption.decorator";
 import { Utils } from "../../misc/utils";
@@ -138,5 +140,9 @@ export class IdentityView extends ItemView {
     }
     addressPart2 += ", " + postalCode;
     return addressPart2;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<IdentityView>>): IdentityView {
+    return Object.assign(new IdentityView(), obj);
   }
 }

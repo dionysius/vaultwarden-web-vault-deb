@@ -92,7 +92,7 @@ export class LocalBackedSessionStorageService extends AbstractStorageService {
       storedKey = await this.keyGenerationService.makeEphemeralKey();
       await this.setSessionEncKey(storedKey);
     }
-    return SymmetricCryptoKey.initFromJson(
+    return SymmetricCryptoKey.fromJSON(
       Object.create(SymmetricCryptoKey.prototype, Object.getOwnPropertyDescriptors(storedKey))
     );
   }

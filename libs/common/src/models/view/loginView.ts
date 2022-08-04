@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { LoginLinkedId as LinkedId } from "../../enums/linkedIdType";
 import { linkedFieldOption } from "../../misc/linkedFieldOption.decorator";
 import { Utils } from "../../misc/utils";
@@ -59,5 +61,16 @@ export class LoginView extends ItemView {
 
   get hasUris(): boolean {
     return this.uris != null && this.uris.length > 0;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<LoginView>>): LoginView {
+    const passwordRevisionDate =
+      obj.passwordRevisionDate == null ? null : new Date(obj.passwordRevisionDate);
+    const uris = obj.uris?.map((uri: any) => LoginUriView.fromJSON(uri));
+
+    return Object.assign(new LoginView(), obj, {
+      passwordRevisionDate: passwordRevisionDate,
+      uris: uris,
+    });
   }
 }

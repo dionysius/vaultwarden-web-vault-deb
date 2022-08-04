@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { Attachment } from "../domain/attachment";
 import { SymmetricCryptoKey } from "../domain/symmetricCryptoKey";
 
@@ -31,5 +33,10 @@ export class AttachmentView implements View {
       // Invalid file size.
     }
     return 0;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<AttachmentView>>): AttachmentView {
+    const key = obj.key == null ? null : SymmetricCryptoKey.fromJSON(obj.key);
+    return Object.assign(new AttachmentView(), obj, { key: key });
   }
 }

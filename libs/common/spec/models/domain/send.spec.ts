@@ -8,7 +8,7 @@ import { Send } from "@bitwarden/common/models/domain/send";
 import { SendText } from "@bitwarden/common/models/domain/sendText";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 
-import { makeStaticByteArray, mockEnc } from "../utils";
+import { makeStaticByteArray, mockEnc } from "../../utils";
 
 describe("Send", () => {
   let data: SendData;

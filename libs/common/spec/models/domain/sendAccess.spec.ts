@@ -5,7 +5,7 @@ import { SendAccess } from "@bitwarden/common/models/domain/sendAccess";
 import { SendText } from "@bitwarden/common/models/domain/sendText";
 import { SendAccessResponse } from "@bitwarden/common/models/response/sendAccessResponse";
 
-import { mockEnc } from "../utils";
+import { mockEnc } from "../../utils";
 
 describe("SendAccess", () => {
   let request: SendAccessResponse;

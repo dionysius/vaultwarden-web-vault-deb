@@ -2,7 +2,7 @@ import { FieldType } from "@bitwarden/common/enums/fieldType";
 import { FieldData } from "@bitwarden/common/models/data/fieldData";
 import { Field } from "@bitwarden/common/models/domain/field";
 
-import { mockEnc } from "../utils";
+import { mockEnc } from "../../utils";
 
 describe("Field", () => {
   let data: FieldData;

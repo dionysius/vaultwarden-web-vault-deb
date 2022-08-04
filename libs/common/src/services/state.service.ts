@@ -498,7 +498,7 @@ export class StateService<
     );
   }
 
-  @withPrototype(SymmetricCryptoKey, SymmetricCryptoKey.initFromJson)
+  @withPrototype(SymmetricCryptoKey, SymmetricCryptoKey.fromJSON)
   async getCryptoMasterKey(options?: StorageOptions): Promise<SymmetricCryptoKey> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
@@ -661,7 +661,7 @@ export class StateService<
     );
   }
 
-  @withPrototype(SymmetricCryptoKey, SymmetricCryptoKey.initFromJson)
+  @withPrototype(SymmetricCryptoKey, SymmetricCryptoKey.fromJSON)
   async getDecryptedCryptoSymmetricKey(options?: StorageOptions): Promise<SymmetricCryptoKey> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
@@ -682,7 +682,7 @@ export class StateService<
     );
   }
 
-  @withPrototypeForMap(SymmetricCryptoKey, SymmetricCryptoKey.initFromJson)
+  @withPrototypeForMap(SymmetricCryptoKey, SymmetricCryptoKey.fromJSON)
   async getDecryptedOrganizationKeys(
     options?: StorageOptions
   ): Promise<Map<string, SymmetricCryptoKey>> {
@@ -789,7 +789,7 @@ export class StateService<
     );
   }
 
-  @withPrototypeForMap(SymmetricCryptoKey, SymmetricCryptoKey.initFromJson)
+  @withPrototypeForMap(SymmetricCryptoKey, SymmetricCryptoKey.fromJSON)
   async getDecryptedProviderKeys(
     options?: StorageOptions
   ): Promise<Map<string, SymmetricCryptoKey>> {
@@ -2748,7 +2748,7 @@ export class StateService<
 
 export function withPrototype<T>(
   constructor: new (...args: any[]) => T,
-  converter: (input: T) => T = (i) => i
+  converter: (input: any) => T = (i) => i
 ): (
   target: any,
   propertyKey: string | symbol,
@@ -2784,7 +2784,7 @@ export function withPrototype<T>(
 
 function withPrototypeForArrayMembers<T>(
   memberConstructor: new (...args: any[]) => T,
-  memberConverter: (input: T) => T = (i) => i
+  memberConverter: (input: any) => T = (i) => i
 ): (
   target: any,
   propertyKey: string | symbol,
@@ -2832,7 +2832,7 @@ function withPrototypeForArrayMembers<T>(
 
 function withPrototypeForObjectValues<T>(
   valuesConstructor: new (...args: any[]) => T,
-  valuesConverter: (input: T) => T = (i) => i
+  valuesConverter: (input: any) => T = (i) => i
 ): (
   target: any,
   propertyKey: string | symbol,
@@ -2879,7 +2879,7 @@ function withPrototypeForObjectValues<T>(
 
 function withPrototypeForMap<T>(
   valuesConstructor: new (...args: any[]) => T,
-  valuesConverter: (input: T) => T = (i) => i
+  valuesConverter: (input: any) => T = (i) => i
 ): (
   target: any,
   propertyKey: string | symbol,

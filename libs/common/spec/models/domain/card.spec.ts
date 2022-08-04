@@ -1,7 +1,7 @@
 import { CardData } from "@bitwarden/common/models/data/cardData";
 import { Card } from "@bitwarden/common/models/domain/card";
 
-import { mockEnc } from "../utils";
+import { mockEnc } from "../../utils";
 
 describe("Card", () => {
   let data: CardData;

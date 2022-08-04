@@ -6,7 +6,7 @@ import { Attachment } from "@bitwarden/common/models/domain/attachment";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 
-import { makeStaticByteArray, mockEnc } from "../utils";
+import { makeStaticByteArray, mockEnc } from "../../utils";
 
 describe("Attachment", () => {
   let data: AttachmentData;

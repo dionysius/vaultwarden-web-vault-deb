@@ -1,7 +1,7 @@
 import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
-import { makeStaticByteArray } from "../utils";
+import { makeStaticByteArray } from "../../utils";
 
 describe("SymmetricCryptoKey", () => {
   it("errors if no key", () => {
@@ -65,5 +65,22 @@ describe("SymmetricCryptoKey", () => {
 
       expect(t).toThrowError("Unable to determine encType.");
     });
+  });
+
+  it("toJSON creates object for serialization", () => {
+    const key = new SymmetricCryptoKey(makeStaticByteArray(64).buffer);
+    const actual = key.toJSON();
+
+    const expected = { keyB64: key.keyB64 };
+
+    expect(actual).toEqual(expected);
+  });
+
+  it("fromJSON hydrates new object", () => {
+    const expected = new SymmetricCryptoKey(makeStaticByteArray(64).buffer);
+    const actual = SymmetricCryptoKey.fromJSON({ keyB64: expected.keyB64 });
+
+    expect(actual).toEqual(expected);
+    expect(actual).toBeInstanceOf(SymmetricCryptoKey);
   });
 });
