@@ -38,6 +38,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   inSidebar = false;
   searchTypeSearch = false;
   loaded = false;
+  isLoading = false;
   showOrganizations = false;
 
   private totpCode: string;
@@ -71,7 +72,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
       this.ngZone.run(async () => {
         switch (message.command) {
           case "syncCompleted":
-            if (this.loaded) {
+            if (this.isLoading) {
               window.setTimeout(() => {
                 this.load();
               }, 500);
@@ -98,7 +99,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
       await this.load();
     } else {
       this.loadedTimeout = window.setTimeout(async () => {
-        if (!this.loaded) {
+        if (!this.isLoading) {
           await this.load();
         }
       }, 5000);
@@ -197,13 +198,13 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   }
 
   private async load() {
-    this.loaded = false;
+    this.isLoading = false;
     this.tab = await BrowserApi.getTabFromCurrentWindow();
     if (this.tab != null) {
       this.url = this.tab.url;
     } else {
       this.loginCiphers = [];
-      this.loaded = true;
+      this.isLoading = this.loaded = true;
       return;
     }
 
@@ -256,6 +257,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     this.loginCiphers = this.loginCiphers.sort((a, b) =>
       this.cipherService.sortCiphersByLastUsedThenName(a, b)
     );
-    this.loaded = true;
+    this.isLoading = this.loaded = true;
   }
 }
