@@ -176,7 +176,7 @@ export class Organization {
   }
 
   get canManageScim() {
-    return this.isAdmin || this.permissions.manageScim;
+    return (this.isAdmin || this.permissions.manageScim) && this.useScim;
   }
 
   get canManagePolicies() {
