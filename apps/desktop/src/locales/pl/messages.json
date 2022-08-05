@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"
   },
+  "deleteAccount": {
+    "message": "Usuń konto"
+  },
+  "deleteAccountDesc": {
+    "message": "Kontynuuj poniżej, aby usunąć swoje konto i wszystkie dane sejfu."
+  },
+  "deleteAccountWarning": {
+    "message": "Usunięcie konta jest nieodwracalne. Ta czynność nie może zostać cofnięta."
+  },
+  "accountDeleted": {
+    "message": "Konto usunięte"
+  },
+  "accountDeletedDesc": {
+    "message": "Konto zostało zamknięte i wszystkie powiązane z nim dane zostały usunięte."
+  },
   "preferences": {
     "message": "Ustawienia"
   },

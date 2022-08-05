@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "再起動時にマスターパスワードでロック"
   },
+  "deleteAccount": {
+    "message": "アカウントを削除"
+  },
+  "deleteAccountDesc": {
+    "message": "アカウントとすべての保管庫データを削除するには、以下に進んでください。"
+  },
+  "deleteAccountWarning": {
+    "message": "アカウントを恒久的に削除します。元に戻すことはできません。"
+  },
+  "accountDeleted": {
+    "message": "アカウントが削除されました"
+  },
+  "accountDeletedDesc": {
+    "message": "アカウントが削除され、すべての関連するデータが削除されました。"
+  },
   "preferences": {
     "message": "設定"
   },

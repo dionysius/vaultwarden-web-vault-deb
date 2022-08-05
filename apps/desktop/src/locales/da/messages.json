@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedadgangskode ved genstart"
   },
+  "deleteAccount": {
+    "message": "Slet konto"
+  },
+  "deleteAccountDesc": {
+    "message": "Fortsæt nedenfor for at slette din konto og alle boks-data."
+  },
+  "deleteAccountWarning": {
+    "message": "Sletning af din konto er permanent. Det kan ikke fortrydes."
+  },
+  "accountDeleted": {
+    "message": "Konto slettet"
+  },
+  "accountDeletedDesc": {
+    "message": "Din konto er blevet lukket, og alle tilknyttede data er blevet slettet."
+  },
   "preferences": {
     "message": "Indstillinger"
   },

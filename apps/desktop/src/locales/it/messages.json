@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio"
   },
+  "deleteAccount": {
+    "message": "Elimina account"
+  },
+  "deleteAccountDesc": {
+    "message": "Procedi sotto per eliminare il tuo account e tutti i dati della tua cassaforte."
+  },
+  "deleteAccountWarning": {
+    "message": "L'eliminazione dell'account è permanente. Questa azione non è reversibile."
+  },
+  "accountDeleted": {
+    "message": "Account eliminato"
+  },
+  "accountDeletedDesc": {
+    "message": "Il tuo account è stato eliminato e tutti i dati associati sono stati rimossi."
+  },
   "preferences": {
     "message": "Preferenze"
   },

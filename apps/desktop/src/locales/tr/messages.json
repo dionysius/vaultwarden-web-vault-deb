@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Yeniden başlatmada ana şifre ile kilitle"
   },
+  "deleteAccount": {
+    "message": "Hesabı sil"
+  },
+  "deleteAccountDesc": {
+    "message": "Hesabınızı ve tüm kasa verilerini silmek için aşağıdan devam edin."
+  },
+  "deleteAccountWarning": {
+    "message": "Hesabınızı silmek kalıcıdır. Geri alınamaz."
+  },
+  "accountDeleted": {
+    "message": "Hesap silindi"
+  },
+  "accountDeletedDesc": {
+    "message": "Hesabınız kapatıldı ve ilişkili tüm veriler silindi."
+  },
   "preferences": {
     "message": "Tercihler"
   },

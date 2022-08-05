@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu pomocí hlavního hesla"
   },
+  "deleteAccount": {
+    "message": "Smazat účet"
+  },
+  "deleteAccountDesc": {
+    "message": "Pokračujte níže ke smazání účtu a všech dat trezoru."
+  },
+  "deleteAccountWarning": {
+    "message": "Smazání účtu je trvalé. Tuto akci nelze vrátit zpět."
+  },
+  "accountDeleted": {
+    "message": "Účet byl smazán"
+  },
+  "accountDeletedDesc": {
+    "message": "Váš účet byl uzavřen a všechna související data byla smazána."
+  },
   "preferences": {
     "message": "Nastavení"
   },

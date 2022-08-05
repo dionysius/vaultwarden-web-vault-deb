@@ -67,7 +67,7 @@
     "message": "Vedlegg"
   },
   "viewItem": {
-    "message": "Sjå oppføring"
+    "message": "Sjå oppføringa"
   },
   "name": {
     "message": "Namn"
@@ -98,7 +98,7 @@
     "message": "Passfrase"
   },
   "editItem": {
-    "message": "Rei oppføring"
+    "message": "Rei oppføringa"
   },
   "emailAddress": {
     "message": "E-postadresse"
@@ -145,7 +145,7 @@
     "message": "Merke"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Utlaup"
   },
   "securityCode": {
     "message": "Trygdenykel"
@@ -169,43 +169,43 @@
     "message": "E-post"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefon"
   },
   "address": {
     "message": "Address"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Premium er påkravd"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Ei Premium-tinging er påkravd for å nytta denne funksjonen."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Noko gjekk gale."
   },
   "error": {
-    "message": "Error"
+    "message": "Feil"
   },
   "january": {
-    "message": "January"
+    "message": "Januar"
   },
   "february": {
-    "message": "February"
+    "message": "Februar"
   },
   "march": {
-    "message": "March"
+    "message": "Mars"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "May"
+    "message": "Mai"
   },
   "june": {
-    "message": "June"
+    "message": "Juni"
   },
   "july": {
-    "message": "July"
+    "message": "Juli"
   },
   "august": {
     "message": "August"
@@ -214,44 +214,44 @@
     "message": "September"
   },
   "october": {
-    "message": "October"
+    "message": "Oktober"
   },
   "november": {
     "message": "November"
   },
   "december": {
-    "message": "December"
+    "message": "Desember"
   },
   "ex": {
-    "message": "ex.",
+    "message": "t.d.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Title"
+    "message": "Tittel"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Herr"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Fru"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Frøken"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dr."
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Utlaupsmånad"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Utlaupsår"
   },
   "select": {
-    "message": "Select"
+    "message": "Vel"
   },
   "other": {
-    "message": "Other"
+    "message": "Anna"
   },
   "generatePassword": {
     "message": "Generate Password"
@@ -260,40 +260,40 @@
     "message": "Type"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Førenamn"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Mellomnamn"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Etternamn"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Fullt namn"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adresse 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adresse 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adresse 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "By / Tettstad"
   },
   "stateProvince": {
     "message": "State / Province"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "Postnummer"
   },
   "country": {
-    "message": "Country"
+    "message": "Land"
   },
   "save": {
-    "message": "Save"
+    "message": "Lagra"
   },
   "cancel": {
     "message": "Cancel"
@@ -302,13 +302,13 @@
     "message": "Delete"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Gjer til favoritt"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Rei"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Autentiseringsnykel (TOTP)"
   },
   "folder": {
     "message": "Mappe"
@@ -346,13 +346,13 @@
     "message": "Namn er påkravt."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "La til oppføringa"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Reidde oppføringa"
   },
   "deleteItem": {
-    "message": "Sletta oppføring"
+    "message": "Sletta oppføringa"
   },
   "deleteFolder": {
     "message": "Sletta mappe"
@@ -364,7 +364,7 @@
     "message": "Vil du verkeleg flytta denne til papirkorga?"
   },
   "deletedItem": {
-    "message": "Sent item to trash"
+    "message": "Oppføringa sendt til papirkorga"
   },
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?"
@@ -376,14 +376,14 @@
     "message": "Are you sure you want to overwrite the current username?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Inga mappe",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
     "message": "Add Folder"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Rei mappa"
   },
   "regeneratePassword": {
     "message": "Regenerate Password"
@@ -464,19 +464,19 @@
     "message": "The attachment has been saved."
   },
   "file": {
-    "message": "File"
+    "message": "Fil"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Vel ei fil."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "Den høgste tillatne filstorleiken er 500 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Du kan ikkje nytta denne funksjonen før du rettar enkrypteringsnykelen din."
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Reidde mappa"
   },
   "addedFolder": {
     "message": "Added folder"
@@ -737,7 +737,7 @@
     "message": "Add New Login"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Legg til ei ny oppføring"
   },
   "addNewFolder": {
     "message": "Add New Folder"
@@ -1044,7 +1044,7 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium-tinging"
   },
   "premiumManage": {
     "message": "Manage Membership"
@@ -1059,7 +1059,7 @@
     "message": "You are not currently a premium member."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Ting på premium for å få:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB encrypted storage for file attachments."
@@ -1263,7 +1263,7 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Retta",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1336,7 +1336,7 @@
     "message": "Ownership"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Kven eig denne oppføringa?"
   },
   "strong": {
     "message": "Strong",
@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
+  "deleteAccount": {
+    "message": "Delete account"
+  },
+  "deleteAccountDesc": {
+    "message": "Proceed below to delete your account and all vault data."
+  },
+  "deleteAccountWarning": {
+    "message": "Deleting your account is permanent. It cannot be undone."
+  },
+  "accountDeleted": {
+    "message": "Account deleted"
+  },
+  "accountDeletedDesc": {
+    "message": "Your account has been closed and all associated data has been deleted."
+  },
   "preferences": {
     "message": "Preferences"
   },
@@ -1434,7 +1449,7 @@
     "message": "Unsaved Changes"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klona"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "One or more organization policies are affecting your generator settings."
@@ -1453,7 +1468,7 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Papirkorg",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
@@ -1612,7 +1627,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Rei Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
@@ -1675,7 +1690,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Reidde Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {

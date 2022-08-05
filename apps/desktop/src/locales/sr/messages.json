@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Закључајте са главном лозинком при поновном покретању"
   },
+  "deleteAccount": {
+    "message": "Брисање налога"
+  },
+  "deleteAccountDesc": {
+    "message": "Наставите доле да бисте избрисали свој налог и све податке сефа."
+  },
+  "deleteAccountWarning": {
+    "message": "Брисање налога је трајно. Не може се поништити."
+  },
+  "accountDeleted": {
+    "message": "Налог обрисан"
+  },
+  "accountDeletedDesc": {
+    "message": "Ваш налог је затворен и сви повезани подаци су избрисани."
+  },
   "preferences": {
     "message": "Подешавања"
   },

@@ -126,7 +126,7 @@
     "message": "Minimise when copying to clipboard"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimise when copying an item's data to the clipboard."
+    "message": "Minimise application when copying an item's data to the clipboard."
   },
   "toggleVisibility": {
     "message": "Toggle visibility"
@@ -790,7 +790,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go to web vault"
+    "message": "Go to Web Vault"
   },
   "getMobileApp": {
     "message": "Get mobile app"
@@ -836,7 +836,7 @@
     "message": "Vault timeout"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Choose when your vault will take the vault timeout action."
   },
   "immediately": {
     "message": "Immediately"
@@ -949,7 +949,7 @@
     "message": "Start automatically on login"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Start the Bitwarden desktop application automatically on login."
   },
   "alwaysShowDock": {
     "message": "Always show in the Dock"
@@ -988,7 +988,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check for updates"
+    "message": "Check for Updates…"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -1000,7 +1000,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart to update"
+    "message": "Restart to Update"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
@@ -1393,11 +1393,26 @@
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
+  "deleteAccount": {
+    "message": "Delete account"
+  },
+  "deleteAccountDesc": {
+    "message": "Proceed below to delete your account and all vault data."
+  },
+  "deleteAccountWarning": {
+    "message": "Deleting your account is permanent. It cannot be undone."
+  },
+  "accountDeleted": {
+    "message": "Account deleted"
+  },
+  "accountDeletedDesc": {
+    "message": "Your account has been closed and all associated data has been deleted."
+  },
   "preferences": {
     "message": "Preferences"
   },
   "enableMenuBar": {
-    "message": "Enable menu bar icon"
+    "message": "Show menu bar icon"
   },
   "enableMenuBarDesc": {
     "message": "Always show an icon in the menu bar."
@@ -1443,10 +1458,10 @@
     "message": "Vault timeout action"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Master password or other unlock method is required to access your vault again."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Re-authentication is required to access your vault again."
   },
   "lock": {
     "message": "Lock",
@@ -1457,7 +1472,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search bin"
+    "message": "Search Bin"
   },
   "permanentlyDeleteItem": {
     "message": "Permanently delete item"
@@ -1550,10 +1565,10 @@
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Allow browser integration"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Used for biometrics in browser."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browser integration not supported"
@@ -1571,7 +1586,7 @@
     "message": "Require verification for browser integration"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Add an additional layer of security by requiring fingerprint phrase confirmation when establishing a link between your desktop and browser. This requires user action and verification each time a connection is created."
   },
   "approve": {
     "message": "Approve"

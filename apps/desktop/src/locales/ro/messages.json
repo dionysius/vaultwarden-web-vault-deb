@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Blocare cu parola principală la repornire"
   },
+  "deleteAccount": {
+    "message": "Ștergere cont"
+  },
+  "deleteAccountDesc": {
+    "message": "Continuați mai jos pentru a vă șterge contul și toate datele din seif."
+  },
+  "deleteAccountWarning": {
+    "message": "Ștergerea contului dvs. este permanentă. Nu poate fi anulată."
+  },
+  "accountDeleted": {
+    "message": "Contul a fost șters"
+  },
+  "accountDeletedDesc": {
+    "message": "Contul dvs. a fost închis și toate datele asociate au fost șterse."
+  },
   "preferences": {
     "message": "Preferințe"
   },
@@ -1779,7 +1794,7 @@
     "message": "Actualizare parolă principală"
   },
   "updateMasterPasswordWarning": {
-    "message": "Parola dvs. principală a fost modificată recent de unul din administratorii organizației dvs. Pentru a accesa seiful, trebuie să o actualizați acum. Procedura vă va deconecta de la sesiunea curentă, necesitând să vă reconectați. Sesiunile active de pe alte dispozitive pot continua să rămână active timp de până la o oră."
+    "message": "Parola dvs. principală a fost modificată recent de unul din administratorii organizației dvs. Pentru a accesa seiful, trebuie să o actualizați acum. Continuarea vă va deconecta de la sesiunea curentă, necesitând să vă reconectați. Sesiunile active de pe alte dispozitive pot continua să rămână active timp de până la o oră."
   },
   "hours": {
     "message": "Ore"

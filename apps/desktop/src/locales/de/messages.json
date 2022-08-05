@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Beim Neustart mit Master-Passwort sperren"
   },
+  "deleteAccount": {
+    "message": "Konto löschen"
+  },
+  "deleteAccountDesc": {
+    "message": "Unten fortfahren, um dein Konto und alle Tresor-Daten zu löschen."
+  },
+  "deleteAccountWarning": {
+    "message": "Die Kontolöschung ist permanent. Sie kann nicht rückgängig gemacht werden."
+  },
+  "accountDeleted": {
+    "message": "Konto gelöscht"
+  },
+  "accountDeletedDesc": {
+    "message": "Dein Konto wurde geschlossen und alle zugehörigen Daten wurden gelöscht."
+  },
   "preferences": {
     "message": "Einstellungen"
   },

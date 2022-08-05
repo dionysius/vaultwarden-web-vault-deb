@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval újraindításkor"
   },
+  "deleteAccount": {
+    "message": "Fiók törlése"
+  },
+  "deleteAccountDesc": {
+    "message": "Folytassuk az alábbiakban a felhasználói fiók és valamennyi széf adat törléséhez."
+  },
+  "deleteAccountWarning": {
+    "message": "A fiók véglegesen törlésre kerül. A művelet nem vonható vissza."
+  },
+  "accountDeleted": {
+    "message": "A fiók törlésre került."
+  },
+  "accountDeletedDesc": {
+    "message": "A fiók bezárásra került és minden társított adat törölve lett."
+  },
   "preferences": {
     "message": "Beállítások"
   },

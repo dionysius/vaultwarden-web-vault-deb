@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "重啟後使用主密碼鎖定"
   },
+  "deleteAccount": {
+    "message": "刪除帳戶"
+  },
+  "deleteAccountDesc": {
+    "message": "接下來的操作將刪除您的帳戶及所有密碼庫資料。"
+  },
+  "deleteAccountWarning": {
+    "message": "刪除您的帳戶是永久性的。並且無法復原。"
+  },
+  "accountDeleted": {
+    "message": "帳戶已刪除"
+  },
+  "accountDeletedDesc": {
+    "message": "您的帳戶已經關閉，所有關聯的資料已經被刪除。"
+  },
   "preferences": {
     "message": "偏好設定"
   },

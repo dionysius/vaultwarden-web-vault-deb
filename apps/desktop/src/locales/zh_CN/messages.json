@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "重启后使用主密码锁定"
   },
+  "deleteAccount": {
+    "message": "删除账户"
+  },
+  "deleteAccountDesc": {
+    "message": "接下来的操作会删除您的账户和所有密码库数据。"
+  },
+  "deleteAccountWarning": {
+    "message": "删除账户是永久性的。不能被撤消。"
+  },
+  "accountDeleted": {
+    "message": "账户已删除"
+  },
+  "accountDeletedDesc": {
+    "message": "您的账户已关闭，所有相关数据也已被删除。"
+  },
   "preferences": {
     "message": "偏好设置"
   },

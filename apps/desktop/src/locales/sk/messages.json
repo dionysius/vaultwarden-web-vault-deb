@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte zamknúť s hlavným heslom"
   },
+  "deleteAccount": {
+    "message": "Odstrániť účet"
+  },
+  "deleteAccountDesc": {
+    "message": "Pokračujte, ak chcete odstrániť účet a všetky súvisiace dáta."
+  },
+  "deleteAccountWarning": {
+    "message": "Odstránenie účtu je trvalé. Operáciu nie je možné vrátiť späť."
+  },
+  "accountDeleted": {
+    "message": "Účet bol odstránený"
+  },
+  "accountDeletedDesc": {
+    "message": "Váš účet bol zrušený a všetky súvisiace dáta odstránené."
+  },
   "preferences": {
     "message": "Predvoľby"
   },

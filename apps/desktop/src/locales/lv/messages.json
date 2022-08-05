@@ -533,10 +533,10 @@
     "message": "Nederīga e-pasta adrese."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Ir jānorāda galvenā parole."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Ir nepieciešama galvenās paroles atkārtota ievadīšana."
   },
   "masterPasswordMinlength": {
     "message": "Galvenajai parolei ir jābūt vismaz 8 rakstzīmes garai."
@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Aizslēgt ar galveno paroli pēc pārsāknēšanas"
   },
+  "deleteAccount": {
+    "message": "Dzēst kontu"
+  },
+  "deleteAccountDesc": {
+    "message": "Turpināt zemāk, lai izdzēstu kontu un visu glabātavas sasturu."
+  },
+  "deleteAccountWarning": {
+    "message": "Konta dzēšana ir paliekoša. To nevar atsaukt."
+  },
+  "accountDeleted": {
+    "message": "Konts tika izdzēsts"
+  },
+  "accountDeletedDesc": {
+    "message": "Konts ir slēgts, un visi saistītie dati ir izdzēsti."
+  },
   "preferences": {
     "message": "Uzstādījumi"
   },
@@ -1547,7 +1562,7 @@
     "message": "Atzīmējot šo rūtiņu, Tu piekrīti sekojošajam:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Nav apstiprināti izmantošanas nosacījumi un privātuma politika."
   },
   "enableBrowserIntegration": {
     "message": "Iespējot pārlūka saistīšanu"
@@ -1971,7 +1986,7 @@
     "message": "Atspējotu apvienību vienumiem nevar piekļūt. Jāsazinās ar apvienības īpašnieku, lai iegūtu palīdzību."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Vai tiešām izmantot uzstādījumu \"Nekad\"? Uzstādot aizslēgšanas iespēju uz \"Nekad\", šifrēšanas atslēga tiek glabāta ierīcē. Ja šī iespēja tiek izmantota, jāpārliecinās, ka ierīce tiek pienācīgi aizsargāta."
   },
   "cardBrandMir": {
     "message": "Mir"

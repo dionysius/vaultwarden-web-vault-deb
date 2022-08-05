@@ -539,7 +539,7 @@
     "message": "Se requiere volver a teclear la contraseña maestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "La contraseña maestra debe tener al menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmación de contraseña maestra no coincide."
@@ -1393,6 +1393,21 @@
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear con contraseña maestra al reiniciar"
   },
+  "deleteAccount": {
+    "message": "Eliminar cuenta"
+  },
+  "deleteAccountDesc": {
+    "message": "Si procede eliminará su cuenta y todo el contenido asociado a ella."
+  },
+  "deleteAccountWarning": {
+    "message": "El borrado de su cuenta es una operación permanente. No se puede deshacer."
+  },
+  "accountDeleted": {
+    "message": "Cuenta eliminada"
+  },
+  "accountDeletedDesc": {
+    "message": "Su cuenta ha sido cerrada y toda la información asociada ha sido eliminada."
+  },
   "preferences": {
     "message": "Preferencias"
   },
@@ -1965,13 +1980,13 @@
     "message": "Clave API"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "La organización está desactivada."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "No se puede acceder a los elementos que pertenecen a organizaciones que estén deshabilitadas. Por favor, póngase en contacto con el propietario de la organización para obtener ayuda."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "¿Está seguro de que quieres usar la opción \"Nunca\"? Al ajustar las opciones de bloqueo a \"Nunca\", la clave de cifrado de su caja fuerte se guardará en tu dispositivo. Si usas esta opción, asegúrate de mantener tu dispositivo debidamente protegido."
   },
   "cardBrandMir": {
     "message": "Mir"
