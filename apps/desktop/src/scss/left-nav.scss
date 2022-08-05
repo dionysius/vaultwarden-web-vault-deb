@@ -131,15 +131,6 @@
   align-items: center;
   width: 100%;
 
-  &:hover,
-  &:focus {
-    .filter-button {
-      @include themify($themes) {
-        color: themed("primaryColor");
-      }
-    }
-  }
-
   button {
     @extend .no-btn;
   }
