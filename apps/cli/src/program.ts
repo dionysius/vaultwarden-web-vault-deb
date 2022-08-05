@@ -476,6 +476,10 @@ export class Program extends BaseProgram {
         .description("Start a RESTful API webserver.")
         .option("--hostname <hostname>", "The hostname to bind your API webserver to.")
         .option("--port <port>", "The port to run your API webserver on.")
+        .option(
+          "--disable-origin-protection",
+          "If set, allows requests with origin header. Not recommended!"
+        )
         .on("--help", () => {
           writeLn("\n  Notes:");
           writeLn("");
