@@ -11,6 +11,7 @@ import {
   TemplateRef,
   ViewChild,
   ViewContainerRef,
+  HostListener,
 } from "@angular/core";
 import { merge } from "rxjs";
 
@@ -86,6 +87,14 @@ export class VaultSelectComponent implements OnInit {
     private viewContainerRef: ViewContainerRef,
     private platformUtilsService: PlatformUtilsService
   ) {}
+
+  @HostListener("document:keydown.escape", ["$event"])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (this.isOpen) {
+      event.preventDefault();
+      this.close();
+    }
+  }
 
   async ngOnInit() {
     await this.load();
