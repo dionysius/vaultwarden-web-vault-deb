@@ -573,7 +573,7 @@
     "message": "Izveidot kontu"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Uzsākt izmēģinājumu"
   },
   "logIn": {
     "message": "Pierakstīties"
@@ -597,7 +597,7 @@
     "message": "Galvenā parole ir parole, kas tiek izmantota, lai piekļūtu glabātavai. Ir ļoti svarīgi, ka tā netiek aizmirsta, jo tādā gadījumā to nav iespējams atgūt."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Galvenā parole nevar tikt atkopta, ja tā tiek aizmirsta."
   },
   "masterPassHintDesc": {
     "message": "Galvenās paroles norāde var palīdzēt atcerēties paroli, ja tā ir aizmirsta."
@@ -630,13 +630,13 @@
     "message": "Nederīga e-pasta adrese."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Ir jānorāda galvenā parole."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Ir nepieciešama galvenās paroles atkārtota ievadīšana."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Galvenajai parolei ir jābūt vismaz 8 rakstzīmes garai."
   },
   "masterPassDoesntMatch": {
     "message": "Galvenās paroles apstiprinājums nesakrīt."
@@ -3208,7 +3208,7 @@
     "message": "Atzīmējot šo rūtiņu, Tu piekrīti sekojošajam:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Nav apstiprināti izmantošanas nosacījumi un privātuma politika."
   },
   "termsOfService": {
     "message": "Izmantošanas nosacījumi"
@@ -5275,13 +5275,13 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Ievade ir nepieciešama."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "Ievadītā vērtība nav e-pasta adrese."
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Ievadītajai vērtībai ir jābūt vismaz $COUNT$ rakstzīmes garai.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5290,7 +5290,7 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ augstāk esošajiem laukam(iem) ir jāpievērš uzmanība.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5308,6 +5308,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Number of users"
+    "message": "Lietotāju skaits"
   }
 }

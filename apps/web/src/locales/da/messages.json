@@ -1088,7 +1088,7 @@
     "message": "Konto slettet"
   },
   "accountDeletedDesc": {
-    "message": "Din Bitwarden-konto og boks-data er blevet slettet permanent."
+    "message": "Din konto er blevet lukket, og alle tilknyttede data er blevet slettet."
   },
   "myAccount": {
     "message": "Min konto"
@@ -5308,6 +5308,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Brugerantal"
+    "message": "Antal brugere"
   }
 }

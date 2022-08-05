@@ -645,7 +645,7 @@
     "message": "A sua nova conta foi criada! Agora você pode iniciar a sessão."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "Conta criada com sucesso."
   },
   "masterPassSent": {
     "message": "Enviamos um e-mail com a dica da sua senha mestra."
@@ -1251,7 +1251,7 @@
     "message": "Habilitado"
   },
   "restoreAccess": {
-    "message": "Restore Access"
+    "message": "Recuperar Acesso"
   },
   "premium": {
     "message": "Premium",
@@ -1279,7 +1279,7 @@
     "message": "Desabilitar"
   },
   "revokeAccess": {
-    "message": "Revoke Access"
+    "message": "Revogar Acesso"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Este provedor de login em duas etapas está ativado em sua conta."
@@ -1673,10 +1673,10 @@
     "message": "Cobrança"
   },
   "billingPlanLabel": {
-    "message": "Billing Plan"
+    "message": "Plano de cobrança"
   },
   "paymentType": {
-    "message": "Payment Type"
+    "message": "Tipo de Pagamento"
   },
   "accountCredit": {
     "message": "Crédito da Conta",
@@ -1795,7 +1795,7 @@
     "message": "ano"
   },
   "yr": {
-    "message": "yr"
+    "message": "ano"
   },
   "month": {
     "message": "mês"
@@ -1826,7 +1826,7 @@
     "message": "Informações de Pagamento"
   },
   "billingTrialSubLabel": {
-    "message": "Your payment method will not be charged during the 7 day free trial."
+    "message": "Seu método de pagamento não será cobrado durante o teste gratuito de 7 dias."
   },
   "creditCard": {
     "message": "Cartão de Crédito"
@@ -2185,7 +2185,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Thanks for signing up for Bitwarden for $PLAN$!",
+    "message": "Obrigado por se inscrever no Bitwarden para $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2194,7 +2194,7 @@
     }
   },
   "trialPaidInfoMessage": {
-    "message": "Your $PLAN$ 7 day free trial will be converted to a paid subscription after 7 days.",
+    "message": "Seu $PLAN$ de 7 dias será convertido em uma assinatura paga após 7 dias.",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2203,7 +2203,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "We've sent a confirmation email to your team's billing email at "
+    "message": "Enviamos um e-mail de confirmação para o e-mail de cobrança da sua equipe em "
   },
   "monthly": {
     "message": "Mensal"
@@ -2212,7 +2212,7 @@
     "message": "Anual"
   },
   "annual": {
-    "message": "Annual"
+    "message": "Anual"
   },
   "basePrice": {
     "message": "Preço Base"
@@ -2281,10 +2281,10 @@
     "message": "Você tem certeza que deseja remover este(a) usuário(a)?"
   },
   "removeOrgUserConfirmation": {
-    "message": "When a member is removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again."
+    "message": "Quando um membro é removido, ele não tem mais acesso aos dados da organização, e esta ação é irreversível. Para adicionar o membro de volta à organização, ele deve ser convidado e integrado novamente."
   },
   "revokeUserConfirmation": {
-    "message": "When a member is revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab."
+    "message": "Quando um membro é revogado, ele não tem mais acesso aos dados da organização. Para restaurar rapidamente o acesso ao membro vá para a aba Revogada."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Aviso! Este usuário precisa do Conector de Chave para gerenciar sua criptografia. Remover este usuário de sua organização desativará permanentemente sua conta. Essa ação não pode ser desfeita. Você quer prosseguir?"
@@ -2632,7 +2632,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "Remove $ID$ access",
+    "message": "Remover acesso de $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2641,7 +2641,7 @@
     }
   },
   "revokedUserId": {
-    "message": "Revoked organization access for $ID$.",
+    "message": "Acesso revogado da organização para $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2650,7 +2650,7 @@
     }
   },
   "restoredUserId": {
-    "message": "Restored organization access for $ID$.",
+    "message": "Acesso restaurado da organização para $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2659,7 +2659,7 @@
     }
   },
   "revokeUserId": {
-    "message": "Revoke $ID$ access",
+    "message": "Revogar acesso de $ID$",
     "placeholders": {
       "id": {
         "content": "$1",

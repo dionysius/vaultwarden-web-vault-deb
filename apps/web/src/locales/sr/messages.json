@@ -645,7 +645,7 @@
     "message": "Ваш налог је креиран! Сада се можте пријавити."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "Налог је успешно направљен."
   },
   "masterPassSent": {
     "message": "Послали смо Вам поруку са саветом главне лозинке."
@@ -1251,7 +1251,7 @@
     "message": "Омогућено"
   },
   "restoreAccess": {
-    "message": "Restore Access"
+    "message": "Врати притуп"
   },
   "premium": {
     "message": "Премијум",
@@ -1279,7 +1279,7 @@
     "message": "Онемогући"
   },
   "revokeAccess": {
-    "message": "Revoke Access"
+    "message": "Опозови Приступ"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Овај добављач услуге пријављивања у два корака је омогућен на вашем налогу."
@@ -1673,10 +1673,10 @@
     "message": "Наплате"
   },
   "billingPlanLabel": {
-    "message": "Billing Plan"
+    "message": "План претплате"
   },
   "paymentType": {
-    "message": "Payment Type"
+    "message": "Врста Уплате"
   },
   "accountCredit": {
     "message": "Салдо налога",
@@ -1795,7 +1795,7 @@
     "message": "година"
   },
   "yr": {
-    "message": "yr"
+    "message": "год"
   },
   "month": {
     "message": "месец"
@@ -1826,7 +1826,7 @@
     "message": "Информације за обрачун"
   },
   "billingTrialSubLabel": {
-    "message": "Your payment method will not be charged during the 7 day free trial."
+    "message": "Ваш начин плаћања неће бити наплаћен током бесплатног пробног периода од 7 дана."
   },
   "creditCard": {
     "message": "Кредитна Картица"
@@ -2185,7 +2185,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Thanks for signing up for Bitwarden for $PLAN$!",
+    "message": "Хвала што сте се пријавили за Bitwarden за $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2194,7 +2194,7 @@
     }
   },
   "trialPaidInfoMessage": {
-    "message": "Your $PLAN$ 7 day free trial will be converted to a paid subscription after 7 days.",
+    "message": "Када се заврши бесплатни период плана $PLAN$ (7 дана), биће претворен у плаћеном плану.",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2203,7 +2203,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "We've sent a confirmation email to your team's billing email at "
+    "message": "Послали смо имејл са потврдом на адресу за обрачун вашег тима на "
   },
   "monthly": {
     "message": "Месечно"
@@ -2212,7 +2212,7 @@
     "message": "Годишње"
   },
   "annual": {
-    "message": "Annual"
+    "message": "Годишње"
   },
   "basePrice": {
     "message": "Основна цена"
@@ -2632,7 +2632,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "Remove $ID$ access",
+    "message": "Опозови приступ „$ID$“",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3724,7 +3724,7 @@
     "message": "Онемогућено"
   },
   "revoked": {
-    "message": "Revoked"
+    "message": "Опозвано"
   },
   "sendLink": {
     "message": "УРЛ „Send“",
@@ -4379,10 +4379,10 @@
     "message": "Уклони кориснике"
   },
   "revokeUsers": {
-    "message": "Revoke Users"
+    "message": "Опозови кориснике"
   },
   "restoreUsers": {
-    "message": "Restore Users"
+    "message": "Врати кориснике"
   },
   "error": {
     "message": "Грешка"
@@ -5308,6 +5308,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Number of users"
+    "message": "Број корисника"
   }
 }
