@@ -32,7 +32,7 @@
     "message": "Bidali"
   },
   "emailAddress": {
-    "message": "Helbide elektronikoa"
+    "message": "Email helbidea"
   },
   "masterPass": {
     "message": "Pasahitz nagusia"
@@ -86,7 +86,7 @@
     "message": "Kopiatu zenbakia"
   },
   "copySecurityCode": {
-    "message": "Kopiatu segurtasun kodea (CVV)"
+    "message": "Kopiatu segurtasun-kodea"
   },
   "autoFill": {
     "message": "Auto-betetzea"
@@ -119,7 +119,7 @@
     "message": "Pasahitza gogoratzeko pista"
   },
   "enterEmailToGetHint": {
-    "message": "Sartu zure kontuko posta elektronikoa pasahitz nagusiaren pista jasotzeko."
+    "message": "Sartu zure kontuko emaila pasahitz nagusiaren pista jasotzeko."
   },
   "getMasterPasswordHint": {
     "message": "Jaso pasahitz nagusiaren pista"
@@ -128,7 +128,7 @@
     "message": "Jarraitu"
   },
   "sendVerificationCode": {
-    "message": "Bidali egiaztatze-kodea zure posta elektronikora"
+    "message": "Bidali egiaztatze-kodea zure emailera"
   },
   "sendCode": {
     "message": "Bidali kodea"
@@ -227,7 +227,7 @@
     "message": "Sortu pasahitza"
   },
   "regeneratePassword": {
-    "message": "Birsortu pasahitza"
+    "message": "Berrezarri pasahitza"
   },
   "options": {
     "message": "Aukerak"
@@ -364,7 +364,7 @@
     "message": "Pasahitz nagusi baliogabea"
   },
   "vaultTimeout": {
-    "message": "Kutxa gotorraren itxarote-denbora"
+    "message": "Kutxa gotorraren itxaronaldia"
   },
   "lockNow": {
     "message": "Blokeatu orain"
@@ -491,7 +491,7 @@
     "message": "Zure pasahitz nagusia alda dezakezu bitwarden.com webgunean. Orain joan nahi duzu webgunera?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Bi urratseko saio hasiera dela eta, zure kontua seguruagoa da, beste aplikazio/gailu batekin saioa hastea eskatzen baitizu; adibidez, segurtasun kode, autentifikazio aplikazio, SMS, telefono dei edo email bidez. Bi urratseko saio hasiera bitwarden.com webgunean aktibatu daiteke. Orain joan nahi duzu webgunera?"
+    "message": "Bi urratseko saio hasiera dela eta, zure kontua seguruagoa da, beste aplikazio/gailu batekin saioa hastea eskatzen baitizu; adibidez, segurtasun-gako, autentifikazio-aplikazio, SMS, telefono dei edo email bidez. Bi urratseko saio hasiera bitwarden.com webgunean aktibatu daiteke. Orain joan nahi duzu webgunera?"
   },
   "editedFolder": {
     "message": "Karpeta editatuta"
@@ -531,7 +531,7 @@
     }
   },
   "newUri": {
-    "message": "IRI berria"
+    "message": "URI berria"
   },
   "addedItem": {
     "message": "Elementua gehituta"
@@ -659,10 +659,10 @@
     "message": "Baieztatu kutxa gotorra esportatzea"
   },
   "exportWarningDesc": {
-    "message": "Esportazio honek kutxa gotorraren datuak zifratu gabeko formatuan biltzen ditu. Ez zenuke gorde edo kanal ez-seguruetaik (posta elektronikoa, adibidez) bidali behar. Erabili eta berehala ezabatu."
+    "message": "Esportazio honek kutxa gotorraren datuak zifratu gabeko formatuan biltzen ditu. Ez zenuke gorde edo kanal ez-seguruetaik (emaila, adibidez) bidali behar. Erabili eta berehala ezabatu."
   },
   "encExportKeyWarningDesc": {
-    "message": "Esportazio honek zure datuak enkriptatzen ditu zure kontuaren zifratze-kodea erabiliz. Inoiz zure kontuko zifratze-gakoa aldatuz gero, berriro esportatu beharko duzu, ezin izango baituzu fitxategi hori deszifratu."
+    "message": "Esportazio honek zure datuak zifratzen ditu zure kontuaren zifratze-gakoa erabiliz. Inoiz zure kontuko zifratze-gakoa aldatuz gero, berriro esportatu beharko duzu, ezin izango baituzu fitxategi hori deszifratu."
   },
   "encExportAccountWarningDesc": {
     "message": "Kontua zifratzeko gakoak Bitwarden erabiltzaile bakoitzarentzako bakarrik dira; beraz, ezin da inportatu beste kontu batean zifratutako esportazio bat."
@@ -705,7 +705,7 @@
     "message": "Gehiago ikasi"
   },
   "authenticatorKeyTotp": {
-    "message": "Autentifikazio giltza (TOTP)"
+    "message": "Autentifikazio-gakoa (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Egiaztatze kodea"
@@ -747,7 +747,7 @@
     "message": "Ezaugarria ez dago erabilgarri"
   },
   "updateKey": {
-    "message": "Ezin duzu ezaugarri hau erabili enkriptazio kodea eguneratu arte."
+    "message": "Ezin duzu ezaugarri hau erabili zifratze-gakoa eguneratu arte."
   },
   "premiumMembership": {
     "message": "Premium bazkidea"
@@ -768,7 +768,7 @@
     "message": "Erregistra zaitez premium bazkide gisa eta honakoa lortu:"
   },
   "ppremiumSignUpStorage": {
-    "message": "Eranskinentzako 1GB-eko enkriptatutako biltegia."
+    "message": "Eranskinentzako 1GB-eko zifratutako biltegia."
   },
   "ppremiumSignUpTwoStep": {
     "message": "YubiKey, FIDO U2F eta Duo bezalako bi urratseko saio hasierarako aukera gehigarriak."
@@ -813,7 +813,7 @@
     "message": "Kopiatu TOTO automatikoki"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Saio hasiera batek autentifikazio giltza badu, TOTP egiaztatze kodea arbelean automatikoki kopiatuko da saio hasiera bat auto-betetzean."
+    "message": "Saio hasiera batek autentifikazio-gakoa badu, TOTP egiaztatze-kodea arbelean automatikoki kopiatuko da saio hasiera bat auto-betetzean."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Biometria eskatu saioa hastean"
@@ -858,7 +858,7 @@
     "message": "Sartu zure YubiKey-a ordenagailuko USB atakan, ondoren, sakatu bere botoia."
   },
   "insertU2f": {
-    "message": "Sartu zure segurtasun giltza ordenagailuaren USB atakan. Botoia badu, sakatu ezazu."
+    "message": "Sartu zure segurtasun-gakoa ordenagailuaren USB atakan. Botoia badu, sakatu ezazu."
   },
   "webAuthnNewTab": {
     "message": "WebAuthn 2FA egiaztatzea hasteko. Egin klik beheko botoian fitxa berria irekitzeko eta jarraitu fitxa berriko jarraibideei."
@@ -895,7 +895,7 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP segurtasun giltza"
+    "message": "YubiKey OTP segurtasun-gakoa"
   },
   "yubiKeyDesc": {
     "message": "Erabili YubiKey zure kontuan sartzeko. YubiKey 4, 4 Nano, 4C eta NEO gailuekin dabil."
@@ -912,7 +912,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Erabili gaitutako edozein WebAuthn segurtasun kode zure kontura sartzeko"
+    "message": "Erabili gaitutako edozein WebAuthn segurtasun-gako zure kontura sartzeko."
   },
   "emailTitle": {
     "message": "Emaila"
@@ -924,7 +924,7 @@
     "message": "Ostatze ingurune propioa"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Bitwarden instalatzeko, zehaztu ostatze propioaren oinarrizko URL-a."
+    "message": "Bitwarden instalatzeko, zehaztu ostatatze propioaren oinarrizko URL-a."
   },
   "customEnvironment": {
     "message": "Ingurune pertsonalizatua"
@@ -1031,7 +1031,7 @@
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
-    "message": "Leiho gainjarritik kanpora klik eginez gero, zure posta elektronikoa egiaztatzeko leiho gainjarria itxi egingo da. Leiho berri batean ireki nahi duzu leiho gainjarri hau itxi ez dadin?"
+    "message": "Leiho gainjarritik kanpora klik eginez gero, zure emaila egiaztatzeko leiho gainjarria itxi egingo da. Leiho berri batean ireki nahi duzu leiho gainjarri hau itxi ez dadin?"
   },
   "popupU2fCloseMessage": {
     "message": "Nabigatzaile honek ezin ditu U2F eskaerak prozesatu leiho gainjarri honetan. Leiho berri batean ireki nahi duzu leiho gainjarri hau saioa U2F erabiliz hasi ahal izateko?"
@@ -1103,7 +1103,7 @@
     "message": "Abendua"
   },
   "securityCode": {
-    "message": "Segurtasun kodea"
+    "message": "Segurtasun-kodea"
   },
   "ex": {
     "message": "adib."
@@ -1199,7 +1199,7 @@
     "message": "Identitatea"
   },
   "passwordHistory": {
-    "message": "Pasahitz historiala"
+    "message": "Pasahitz historia"
   },
   "back": {
     "message": "Itzuli"
@@ -1220,7 +1220,7 @@
     "message": "Txartelak"
   },
   "identities": {
-    "message": "Nortasunak"
+    "message": "Identitateak"
   },
   "logins": {
     "message": "Saio-hasierak"
@@ -1389,7 +1389,7 @@
     "message": "Erakundeko politika batek edo gehiagok sortzailearen konfigurazioari eragiten diote."
   },
   "vaultTimeoutAction": {
-    "message": "Kutxa gotorraren itxarote denboraren ekintza"
+    "message": "Kutxa gotorraren itxaronaldiaren ekintza"
   },
   "lock": {
     "message": "Blokeatu",
@@ -1424,7 +1424,7 @@
     "message": "Saioa ixteak kutxa gotorreko sarrera guztia kenduko du eta itxaronaldiaren ondoren lineako autentifikazioa eskatuko du. Ziur zaude hau egin nahi duzula?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Baieztatu itxarote denboraren ekintza"
+    "message": "Baieztatu itxaronaldiaren ekintza"
   },
   "autoFillAndSave": {
     "message": "Auto-bete eta gorde"
@@ -1789,7 +1789,7 @@
     "message": "Akatsa gertatu da ezabatze eta iraungitze datak gordetzean."
   },
   "hideEmail": {
-    "message": "Ezkutatu nire helbide elektronikoa hartzaileei."
+    "message": "Ezkutatu nire emaila hartzaileei."
   },
   "sendOptionsPolicyInEffect": {
     "message": "Erakundeko politika batek edo gehiagok Send-eko aukerei eragiten diote."
@@ -1865,7 +1865,7 @@
     "message": "Ez da identifikatzaile bakarrik aurkitu."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ SSO erabiltzen ari da bere burua ostatatuta duen gako-zerbitzari batekin. Dagoeneko ez da pasahitz nagusirik behar erakunde honetako kideentzat saioa hasteko.",
+    "message": "$ORGANIZATION$ SSO erabiltzen ari da ostatatze propioa duen gako-zerbitzari batekin. Dagoeneko ez da pasahitz nagusirik behar erakunde honetako kideentzat saioa hasteko.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1910,7 +1910,7 @@
     "message": "Akatsa"
   },
   "regenerateUsername": {
-    "message": "Birsortu erabiltzaile izena"
+    "message": "Berrezarri erabiltzaile izena"
   },
   "generateUsername": {
     "message": "Sortu erabiltzaile izena"
@@ -1963,10 +1963,10 @@
     "message": "Token sarbide API-a"
   },
   "apiKey": {
-    "message": "API Kodea"
+    "message": "API Gakoa"
   },
   "ssoKeyConnectorError": {
-    "message": "Errore bat gertatu da konektore giltzan: ziurtatu giltza konektorea erabilgarri dagoela eta behar bezala dabilela."
+    "message": "Errore bat gertatu da Key Connector-ekin: ziurtatu Key Connector erabilgarri dagoela eta behar bezala dabilela."
   },
   "organizationIsDisabled": {
     "message": "Erakundea desgaituta dago."

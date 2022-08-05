@@ -424,10 +424,10 @@
     "message": "Nederīga e-pasta adrese."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Ir jānorāda galvenā parole."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Ir nepieciešama galvenās paroles atkārtota ievadīšana."
   },
   "masterPasswordMinlength": {
     "message": "Galvenajai parolei ir jābūt vismaz 8 rakstzīmes garai."
@@ -571,22 +571,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Vaicāt, lai pievienotu pierakstīšanās vienumu"
   },
   "addLoginNotificationDesc": {
     "message": "Iestatījums \"Piekļuves vienumu pievienošanas paziņojumi\" piedāvā saglabāt jaunus pieslēgšanās ierakstus, kad vien tie tiek izmantoti pirmo reizi ierakstoties."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Rādīt kartes cilnes lapā"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Attēlot kartes ciļņu lapā vieglākai aizpildīšanai."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Rādīt identitātes cilnes pārskatā"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Attēlot identitātes ciļņu lapā vieglākai aizpildīšanai."
   },
   "clearClipboard": {
     "message": "Notīrīt starpliktuvi",
@@ -603,10 +603,10 @@
     "message": "Jā, saglabāt"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Vaicāt atjaunināt esošu pierakstīšanās vienumu"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Vaicāt atjaunināt pierakstīšanās vienuma paroli, ja vietnē ir noteiktas tās izmaiņas."
   },
   "notificationChangeDesc": {
     "message": "Vai atjaunināt šo paroli Bitwarden?"
@@ -615,10 +615,10 @@
     "message": "Jā, atjaunināt"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Rādīt konteksta izvēlnes iespējas"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Izmantot orējo klikšķi, lai piekļūtu paroļu veidošanai un vietnei atbilstošajiem pierakstīšanās vienumiem. "
   },
   "defaultUriMatchDetection": {
     "message": "Noklusējuma URI atbilstības noteikšana",
@@ -810,13 +810,13 @@
     "message": "Atsvaidzināšana pabeigta"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Automātiski ievietot TOTP starpliktuvē"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Ja pierakstīšanās datiem ir pievienota autentificētāja atslēga, TOTP apstiprinājuma kods tiks automātiski pārkopēts uz starpliktuvi, kad vien tiks automātiski aizpildīta pierakstīšanās veidne."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Palaižot vaicāt biometriju"
   },
   "premiumRequired": {
     "message": "Nepieciešams Premium"
@@ -1037,16 +1037,16 @@
     "message": "Šis pārlūks nevar apstrādāt U2F pieprasījumus šajā uznirstošajā logā. Vai atvērt to atsevišķā logā, lai varētu pierakstīties, izmantojot U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Rādīt vietņu ikonas"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Attēlot atpazīstamu attēlu pie katra pierakstīšanās vienuma."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Rādīt skaita nozīmīti"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Attēlot pašreizējāi tīmekļa vietnei atbilstošo pierakstīšanās vienumu skaitu."
   },
   "cardholderName": {
     "message": "Kartes īpašnieka vārds"
@@ -1484,7 +1484,7 @@
     "message": "Atzīmējot šo rūtiņu, Tu piekrīti sekojošajam:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Nav apstiprināti izmantošanas nosacījumi un privātuma politika."
   },
   "termsOfService": {
     "message": "Izmantošanas nosacījumi"
