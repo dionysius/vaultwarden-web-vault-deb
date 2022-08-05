@@ -293,7 +293,7 @@ export class SettingsComponent implements OnInit {
       ]);
     } else {
       await this.stateService.setBiometricUnlock(null);
-      await this.stateService.setBiometricLocked(false);
+      await this.stateService.setBiometricFingerprintValidated(false);
     }
   }
 

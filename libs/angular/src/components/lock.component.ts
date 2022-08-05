@@ -237,7 +237,6 @@ export class LockComponent implements OnInit {
   }
 
   private async doContinue() {
-    await this.stateService.setBiometricLocked(false);
     await this.stateService.setEverBeenUnlocked(true);
     const disableFavicon = await this.stateService.getDisableFavicon();
     await this.stateService.setDisableFavicon(!!disableFavicon);

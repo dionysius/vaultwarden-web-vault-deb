@@ -158,7 +158,7 @@ export class AppComponent implements OnInit {
             this.notificationsService.updateConnection();
             this.updateAppMenu();
             await this.systemService.clearPendingClipboard();
-            await this.reloadProcess();
+            await this.systemService.startProcessReload(this.authService);
             break;
           case "authBlocked":
             this.router.navigate(["login"]);
@@ -189,7 +189,7 @@ export class AppComponent implements OnInit {
             this.notificationsService.updateConnection();
             await this.updateAppMenu();
             await this.systemService.clearPendingClipboard();
-            await this.reloadProcess();
+            await this.systemService.startProcessReload(this.authService);
             break;
           case "reloadProcess":
             (window.location as any).reload(true);
@@ -470,8 +470,6 @@ export class AppComponent implements OnInit {
       this.keyConnectorService.clear(),
     ]);
 
-    await this.stateService.setBiometricLocked(true, { userId: userBeingLoggedOut });
-
     if (userBeingLoggedOut === this.activeUserId) {
       this.searchService.clearIndex();
       this.authService.logOut(async () => {
@@ -583,21 +581,6 @@ export class AppComponent implements OnInit {
         replaceUrl: true,
       });
     }
-  }
-
-  private async reloadProcess(): Promise<void> {
-    const accounts = this.stateService.accounts.getValue();
-    if (accounts != null) {
-      const keys = Object.keys(accounts);
-      if (keys.length > 0) {
-        for (const userId of keys) {
-          if ((await this.authService.getAuthStatus(userId)) === AuthenticationStatus.Unlocked) {
-            return;
-          }
-        }
-      }
-    }
-    await this.systemService.startProcessReload();
   }
 
   private async checkForSystemTimeout(timeout: number): Promise<void> {

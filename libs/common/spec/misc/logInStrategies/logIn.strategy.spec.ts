@@ -139,7 +139,6 @@ describe("LogInStrategy", () => {
       cryptoService.received(1).setEncKey(encKey);
       cryptoService.received(1).setEncPrivateKey(privateKey);
 
-      stateService.received(1).setBiometricLocked(false);
       messagingService.received(1).send("loggedIn");
     });
 

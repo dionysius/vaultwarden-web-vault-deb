@@ -1,7 +1,9 @@
+import { AuthService } from "../abstractions/auth.service";
 import { MessagingService } from "../abstractions/messaging.service";
 import { PlatformUtilsService } from "../abstractions/platformUtils.service";
 import { StateService } from "../abstractions/state.service";
 import { SystemService as SystemServiceAbstraction } from "../abstractions/system.service";
+import { AuthenticationStatus } from "../enums/authenticationStatus";
 import { Utils } from "../misc/utils";
 
 export class SystemService implements SystemServiceAbstraction {
@@ -16,35 +18,60 @@ export class SystemService implements SystemServiceAbstraction {
     private stateService: StateService
   ) {}
 
-  async startProcessReload(): Promise<void> {
-    if (
-      (await this.stateService.getDecryptedPinProtected()) != null ||
-      (await this.stateService.getBiometricLocked()) ||
-      this.reloadInterval != null
-    ) {
-      return;
-    }
-    this.cancelProcessReload();
-    this.reloadInterval = setInterval(async () => {
-      let doRefresh = false;
-      const lastActive = await this.stateService.getLastActive();
-      if (lastActive != null) {
-        const diffSeconds = new Date().getTime() - lastActive;
-        // Don't refresh if they are still active in the window
-        doRefresh = diffSeconds >= 5000;
-      }
-      const biometricLockedFingerprintValidated =
-        (await this.stateService.getBiometricFingerprintValidated()) &&
-        (await this.stateService.getBiometricLocked());
-      if (doRefresh && !biometricLockedFingerprintValidated) {
-        clearInterval(this.reloadInterval);
-        this.reloadInterval = null;
-        this.messagingService.send("reloadProcess");
-        if (this.reloadCallback != null) {
-          await this.reloadCallback();
+  async startProcessReload(authService: AuthService): Promise<void> {
+    const accounts = this.stateService.accounts.getValue();
+    if (accounts != null) {
+      const keys = Object.keys(accounts);
+      if (keys.length > 0) {
+        for (const userId of keys) {
+          if ((await authService.getAuthStatus(userId)) === AuthenticationStatus.Unlocked) {
+            return;
+          }
         }
       }
-    }, 10000);
+    }
+
+    // A reloadInterval has already been set and is executing
+    if (this.reloadInterval != null) {
+      return;
+    }
+
+    // User has set a PIN, with ask for master password on restart, to protect their vault
+    const decryptedPinProtected = await this.stateService.getDecryptedPinProtected();
+    if (decryptedPinProtected != null) {
+      return;
+    }
+
+    this.cancelProcessReload();
+    this.reloadInterval = setInterval(async () => await this.executeProcessReload(), 10000);
+  }
+
+  private async inactiveMoreThanSeconds(seconds: number): Promise<boolean> {
+    const lastActive = await this.stateService.getLastActive();
+    if (lastActive != null) {
+      const diffMs = new Date().getTime() - lastActive;
+      return diffMs >= seconds * 1000;
+    }
+    return true;
+  }
+
+  private async executeProcessReload() {
+    const accounts = this.stateService.accounts.getValue();
+    const doRefresh =
+      accounts == null ||
+      Object.keys(accounts).length == 0 ||
+      (await this.inactiveMoreThanSeconds(5));
+
+    const biometricLockedFingerprintValidated =
+      await this.stateService.getBiometricFingerprintValidated();
+    if (doRefresh && !biometricLockedFingerprintValidated) {
+      clearInterval(this.reloadInterval);
+      this.reloadInterval = null;
+      this.messagingService.send("reloadProcess");
+      if (this.reloadCallback != null) {
+        await this.reloadCallback();
+      }
+    }
   }
 
   cancelProcessReload(): void {

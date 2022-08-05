@@ -276,7 +276,6 @@ export class SettingsComponent implements OnInit {
     if (!newValue || !this.supportsBiometric) {
       this.biometric = false;
       await this.stateService.setBiometricUnlock(null);
-      await this.stateService.setBiometricLocked(false);
       await this.cryptoService.toggleKey();
       return;
     }
@@ -290,7 +289,6 @@ export class SettingsComponent implements OnInit {
 
     this.biometric = true;
     await this.stateService.setBiometricUnlock(true);
-    await this.stateService.setBiometricLocked(false);
     await this.cryptoService.toggleKey();
   }
 

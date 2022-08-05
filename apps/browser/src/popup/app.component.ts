@@ -107,14 +107,15 @@ export class AppComponent implements OnInit, OnDestroy {
           this.showToast(msg);
         });
       } else if (msg.command === "reloadProcess") {
-        const windowReload =
+        const forceWindowReload =
           this.platformUtilsService.isSafari() ||
           this.platformUtilsService.isFirefox() ||
           this.platformUtilsService.isOpera();
-        if (windowReload) {
-          // Wait to make sure background has reloaded first.
-          window.setTimeout(() => BrowserApi.reloadExtension(window), 2000);
-        }
+        // Wait to make sure background has reloaded first.
+        window.setTimeout(
+          () => BrowserApi.reloadExtension(forceWindowReload ? window : null),
+          2000
+        );
       } else if (msg.command === "reloadPopup") {
         this.ngZone.run(() => {
           this.router.navigate(["/"]);

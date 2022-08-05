@@ -323,7 +323,6 @@ export class NativeMessagingBackground {
             return;
           }
 
-          await this.stateService.setBiometricLocked(false);
           this.runtimeBackground.processMessage({ command: "unlocked" }, null, null);
         }
         break;

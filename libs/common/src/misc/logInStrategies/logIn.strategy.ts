@@ -138,7 +138,6 @@ export abstract class LogInStrategy {
 
     await this.onSuccessfulLogin(response);
 
-    await this.stateService.setBiometricLocked(false);
     this.messagingService.send("loggedIn");
 
     return result;
