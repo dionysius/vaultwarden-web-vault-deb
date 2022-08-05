@@ -5,7 +5,7 @@ export * from "./callout";
 export * from "./form-field";
 export * from "./icon";
 export * from "./menu";
-export * from "./modal";
+export * from "./dialog";
 export * from "./submit-button";
 export * from "./tabs";
 export * from "./toggle-group";

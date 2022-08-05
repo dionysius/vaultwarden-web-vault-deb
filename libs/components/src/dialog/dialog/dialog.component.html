@@ -6,20 +6,20 @@
     class="tw-flex tw-gap-4 tw-border-0 tw-border-b tw-border-solid tw-border-secondary-300 tw-p-4"
   >
     <h2 class="tw-mb-0 tw-grow tw-text-lg tw-uppercase">
-      <ng-content select="[bit-modal-title]"></ng-content>
+      <ng-content select="[bit-dialog-title]"></ng-content>
     </h2>
-    <button class="tw-border-0 tw-bg-transparent tw-p-0">
+    <button class="tw-border-0 tw-bg-transparent tw-p-0" bitDialogClose>
       <i class="bwi bwi-close tw-text-xs tw-font-bold tw-text-main" aria-hidden="true"></i>
     </button>
   </div>
 
   <div class="tw-overflow-y-auto tw-p-4 tw-pb-8">
-    <ng-content select="[bit-modal-content]"></ng-content>
+    <ng-content select="[bit-dialog-content]"></ng-content>
   </div>
 
   <div
     class="tw-border-0 tw-border-t tw-border-solid tw-border-secondary-300 tw-bg-background-alt tw-p-4"
   >
-    <ng-content select="[bit-modal-footer]"></ng-content>
+    <ng-content select="[bit-dialog-footer]"></ng-content>
   </div>
 </div>

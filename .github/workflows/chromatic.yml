@@ -39,4 +39,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
           onlyChanged: true
-          externals: "[\"components/**/*.scss\", \"components/tailwind.config*.js\"]"
+          externals: "[\"libs/components/**/*.scss\", \"libs/components/tailwind.config*.js\"]"

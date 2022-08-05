@@ -10,6 +10,7 @@ module.exports = {
     colors: {
       transparent: colors.transparent,
       current: colors.current,
+      black: colors.black,
       primary: {
         300: "var(--color-primary-300)",
         500: "var(--color-primary-500)",
@@ -68,6 +69,12 @@ module.exports = {
       DEFAULT: theme("colors.background"),
       ...theme("colors"),
     }),
+    extend: {
+      width: {
+        "50vw": "50vw",
+        "75vw": "75vw",
+      },
+    },
   },
   plugins: [],
 };
