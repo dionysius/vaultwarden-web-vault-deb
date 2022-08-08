@@ -20,7 +20,8 @@ import { NotificationsService as NotificationsServiceAbstraction } from "@bitwar
 import { OrganizationService as OrganizationServiceAbstraction } from "@bitwarden/common/abstractions/organization.service";
 import { PasswordGenerationService as PasswordGenerationServiceAbstraction } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService as PolicyServiceAbstraction } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
+import { InternalPolicyService as InternalPolicyServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { ProviderService as ProviderServiceAbstraction } from "@bitwarden/common/abstractions/provider.service";
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { SendService as SendServiceAbstraction } from "@bitwarden/common/abstractions/send.service";
@@ -60,7 +61,8 @@ import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.s
 import { NotificationsService } from "@bitwarden/common/services/notifications.service";
 import { OrganizationService } from "@bitwarden/common/services/organization.service";
 import { PasswordGenerationService } from "@bitwarden/common/services/passwordGeneration.service";
-import { PolicyService } from "@bitwarden/common/services/policy.service";
+import { PolicyApiService } from "@bitwarden/common/services/policy/policy-api.service";
+import { PolicyService } from "@bitwarden/common/services/policy/policy.service";
 import { ProviderService } from "@bitwarden/common/services/provider.service";
 import { SearchService } from "@bitwarden/common/services/search.service";
 import { SendService } from "@bitwarden/common/services/send.service";
@@ -137,7 +139,7 @@ export default class MainBackground {
   stateMigrationService: StateMigrationService;
   systemService: SystemServiceAbstraction;
   eventService: EventServiceAbstraction;
-  policyService: PolicyServiceAbstraction;
+  policyService: InternalPolicyServiceAbstraction;
   popupUtilsService: PopupUtilsService;
   sendService: SendServiceAbstraction;
   fileUploadService: FileUploadServiceAbstraction;
@@ -150,6 +152,7 @@ export default class MainBackground {
   usernameGenerationService: UsernameGenerationServiceAbstraction;
   encryptService: EncryptService;
   folderApiService: FolderApiServiceAbstraction;
+  policyApiService: PolicyApiServiceAbstraction;
 
   // Passed to the popup for Safari to workaround issues with theming, downloading, etc.
   backgroundWindow = window;
@@ -292,10 +295,12 @@ export default class MainBackground {
       this.stateService
     );
     this.organizationService = new OrganizationService(this.stateService);
-    this.policyService = new PolicyService(
+    this.policyService = new PolicyService(this.stateService, this.organizationService);
+    this.policyApiService = new PolicyApiService(
+      this.policyService,
+      this.apiService,
       this.stateService,
-      this.organizationService,
-      this.apiService
+      this.organizationService
     );
     this.keyConnectorService = new KeyConnectorService(
       this.stateService,

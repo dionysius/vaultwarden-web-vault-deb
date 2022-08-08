@@ -5,10 +5,10 @@ import { UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PlanType } from "@bitwarden/common/enums/planType";
 import { ProductType } from "@bitwarden/common/enums/productType";
@@ -48,8 +48,8 @@ export class TrialInitiationComponent implements OnInit {
     private formBuilder: UntypedFormBuilder,
     private titleCasePipe: TitleCasePipe,
     private stateService: StateService,
-    private apiService: ApiService,
     private logService: LogService,
+    private policyApiService: PolicyApiServiceAbstraction,
     private policyService: PolicyService,
     private i18nService: I18nService
   ) {}
@@ -88,7 +88,7 @@ export class TrialInitiationComponent implements OnInit {
     const invite = await this.stateService.getOrganizationInvitation();
     if (invite != null) {
       try {
-        const policies = await this.apiService.getPoliciesByToken(
+        const policies = await this.policyApiService.getPoliciesByToken(
           invite.organizationId,
           invite.token,
           invite.email,

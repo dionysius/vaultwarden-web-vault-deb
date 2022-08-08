@@ -13,7 +13,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";

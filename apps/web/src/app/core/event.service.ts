@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { DeviceType } from "@bitwarden/common/enums/deviceType";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { PolicyType } from "@bitwarden/common/enums/policyType";

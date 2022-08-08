@@ -12,7 +12,7 @@ import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
 
 const BroadcasterSubscriptionId = "ExportComponent";

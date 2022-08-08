@@ -9,10 +9,10 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { PolicyRequest } from "@bitwarden/common/models/request/policyRequest";
 import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
@@ -42,7 +42,7 @@ export class PolicyEditComponent {
   private policyResponse: PolicyResponse;
 
   constructor(
-    private apiService: ApiService,
+    private policyApiService: PolicyApiServiceAbstraction,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -65,7 +65,10 @@ export class PolicyEditComponent {
 
   async load() {
     try {
-      this.policyResponse = await this.apiService.getPolicy(this.organizationId, this.policy.type);
+      this.policyResponse = await this.policyApiService.getPolicy(
+        this.organizationId,
+        this.policy.type
+      );
     } catch (e) {
       if (e.statusCode === 404) {
         this.policyResponse = new PolicyResponse({ Enabled: false });
@@ -85,7 +88,11 @@ export class PolicyEditComponent {
     }
 
     try {
-      this.formPromise = this.apiService.putPolicy(this.organizationId, this.policy.type, request);
+      this.formPromise = this.policyApiService.putPolicy(
+        this.organizationId,
+        this.policy.type,
+        request
+      );
       await this.formPromise;
       this.platformUtilsService.showToast(
         "success",

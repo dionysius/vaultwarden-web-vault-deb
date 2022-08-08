@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
@@ -31,10 +31,10 @@ export class PoliciesComponent implements OnInit {
   private policiesEnabledMap: Map<PolicyType, boolean> = new Map<PolicyType, boolean>();
 
   constructor(
-    private apiService: ApiService,
     private route: ActivatedRoute,
     private modalService: ModalService,
     private organizationService: OrganizationService,
+    private policyApiService: PolicyApiServiceAbstraction,
     private policyListService: PolicyListService,
     private router: Router
   ) {}
@@ -73,7 +73,7 @@ export class PoliciesComponent implements OnInit {
   }
 
   async load() {
-    const response = await this.apiService.getPolicies(this.organizationId);
+    const response = await this.policyApiService.getPolicies(this.organizationId);
     this.orgPolicies = response.data != null && response.data.length > 0 ? response.data : [];
     this.orgPolicies.forEach((op) => {
       this.policiesEnabledMap.set(op.type, op.enabled);

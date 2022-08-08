@@ -12,7 +12,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
@@ -84,6 +85,7 @@ export class PeopleComponent
     private router: Router,
     searchService: SearchService,
     validationService: ValidationService,
+    private policyApiService: PolicyApiServiceAbstraction,
     private policyService: PolicyService,
     logService: LogService,
     searchPipe: SearchPipe,
@@ -151,7 +153,7 @@ export class PeopleComponent
   }
 
   async load() {
-    const resetPasswordPolicy = await this.policyService.getPolicyForOrganization(
+    const resetPasswordPolicy = await this.policyApiService.getPolicyForOrganization(
       PolicyType.ResetPassword,
       this.organizationId
     );

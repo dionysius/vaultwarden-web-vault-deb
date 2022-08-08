@@ -9,7 +9,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
 import { PlanType } from "@bitwarden/common/enums/planType";

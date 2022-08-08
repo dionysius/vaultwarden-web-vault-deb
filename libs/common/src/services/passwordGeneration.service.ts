@@ -2,7 +2,7 @@ import * as zxcvbn from "zxcvbn";
 
 import { CryptoService } from "../abstractions/crypto.service";
 import { PasswordGenerationService as PasswordGenerationServiceAbstraction } from "../abstractions/passwordGeneration.service";
-import { PolicyService } from "../abstractions/policy.service";
+import { PolicyService } from "../abstractions/policy/policy.service.abstraction";
 import { StateService } from "../abstractions/state.service";
 import { PolicyType } from "../enums/policyType";
 import { EEFLongWordList } from "../misc/wordlist";

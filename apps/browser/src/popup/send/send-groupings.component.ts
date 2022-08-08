@@ -7,7 +7,7 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";

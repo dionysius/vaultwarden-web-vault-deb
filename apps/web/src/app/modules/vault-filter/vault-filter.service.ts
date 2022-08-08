@@ -9,7 +9,7 @@ import { CollectionService } from "@bitwarden/common/abstractions/collection.ser
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CollectionData } from "@bitwarden/common/models/data/collectionData";
 import { Collection } from "@bitwarden/common/models/domain/collection";

@@ -8,7 +8,7 @@ import { KeyConnectorService } from "../abstractions/keyConnector.service";
 import { LogService } from "../abstractions/log.service";
 import { MessagingService } from "../abstractions/messaging.service";
 import { OrganizationService } from "../abstractions/organization.service";
-import { PolicyService } from "../abstractions/policy.service";
+import { InternalPolicyService } from "../abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "../abstractions/provider.service";
 import { SendService } from "../abstractions/send.service";
 import { SettingsService } from "../abstractions/settings.service";
@@ -46,7 +46,7 @@ export class SyncService implements SyncServiceAbstraction {
     private cryptoService: CryptoService,
     private collectionService: CollectionService,
     private messagingService: MessagingService,
-    private policyService: PolicyService,
+    private policyService: InternalPolicyService,
     private sendService: SendService,
     private logService: LogService,
     private keyConnectorService: KeyConnectorService,

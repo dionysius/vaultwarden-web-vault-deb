@@ -7,7 +7,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { ImportService } from "@bitwarden/common/abstractions/import.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { ImportOption, ImportType } from "@bitwarden/common/enums/importOptions";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 

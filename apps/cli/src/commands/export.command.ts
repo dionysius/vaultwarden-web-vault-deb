@@ -2,7 +2,7 @@ import * as program from "commander";
 import * as inquirer from "inquirer";
 
 import { ExportFormat, ExportService } from "@bitwarden/common/abstractions/export.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Response } from "@bitwarden/node/cli/models/response";

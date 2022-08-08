@@ -33,7 +33,11 @@ import { OrganizationService as OrganizationServiceAbstraction } from "@bitwarde
 import { PasswordGenerationService as PasswordGenerationServiceAbstraction } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService as PolicyServiceAbstraction } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
+import {
+  PolicyService as PolicyServiceAbstraction,
+  InternalPolicyService,
+} from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { ProviderService as ProviderServiceAbstraction } from "@bitwarden/common/abstractions/provider.service";
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { SendService as SendServiceAbstraction } from "@bitwarden/common/abstractions/send.service";
@@ -73,7 +77,8 @@ import { KeyConnectorService } from "@bitwarden/common/services/keyConnector.ser
 import { NotificationsService } from "@bitwarden/common/services/notifications.service";
 import { OrganizationService } from "@bitwarden/common/services/organization.service";
 import { PasswordGenerationService } from "@bitwarden/common/services/passwordGeneration.service";
-import { PolicyService } from "@bitwarden/common/services/policy.service";
+import { PolicyApiService } from "@bitwarden/common/services/policy/policy-api.service";
+import { PolicyService } from "@bitwarden/common/services/policy/policy.service";
 import { ProviderService } from "@bitwarden/common/services/provider.service";
 import { SearchService } from "@bitwarden/common/services/search.service";
 import { SendService } from "@bitwarden/common/services/send.service";
@@ -426,7 +431,21 @@ export const LOG_MAC_FAILURES = new InjectionToken<string>("LOG_MAC_FAILURES");
     {
       provide: PolicyServiceAbstraction,
       useClass: PolicyService,
-      deps: [StateServiceAbstraction, OrganizationServiceAbstraction, ApiServiceAbstraction],
+      deps: [StateServiceAbstraction, OrganizationServiceAbstraction],
+    },
+    {
+      provide: InternalPolicyService,
+      useExisting: PolicyServiceAbstraction,
+    },
+    {
+      provide: PolicyApiServiceAbstraction,
+      useClass: PolicyApiService,
+      deps: [
+        PolicyServiceAbstraction,
+        ApiServiceAbstraction,
+        StateServiceAbstraction,
+        OrganizationServiceAbstraction,
+      ],
     },
     {
       provide: SendServiceAbstraction,

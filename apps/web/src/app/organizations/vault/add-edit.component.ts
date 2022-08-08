@@ -13,7 +13,7 @@ import { OrganizationService } from "@bitwarden/common/abstractions/organization
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { CipherData } from "@bitwarden/common/models/data/cipherData";

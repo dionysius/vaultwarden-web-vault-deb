@@ -12,7 +12,7 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";

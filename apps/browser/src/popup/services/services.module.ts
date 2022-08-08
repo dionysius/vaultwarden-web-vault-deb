@@ -33,7 +33,8 @@ import { OrganizationService } from "@bitwarden/common/abstractions/organization
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
@@ -181,7 +182,16 @@ function getBgService<T>(service: keyof MainBackground) {
     { provide: I18nService, useFactory: getBgService<I18nService>("i18nService"), deps: [] },
     { provide: CryptoService, useFactory: getBgService<CryptoService>("cryptoService"), deps: [] },
     { provide: EventService, useFactory: getBgService<EventService>("eventService"), deps: [] },
-    { provide: PolicyService, useFactory: getBgService<PolicyService>("policyService"), deps: [] },
+    {
+      provide: PolicyService,
+      useFactory: getBgService<PolicyService>("policyService"),
+      deps: [],
+    },
+    {
+      provide: PolicyApiServiceAbstraction,
+      useFactory: getBgService<PolicyApiServiceAbstraction>("policyApiService"),
+      deps: [],
+    },
     {
       provide: PlatformUtilsService,
       useFactory: getBgService<PlatformUtilsService>("platformUtilsService"),

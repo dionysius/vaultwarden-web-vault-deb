@@ -15,7 +15,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { PolicyService } from "@bitwarden/common/abstractions/policy.service";
+import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";

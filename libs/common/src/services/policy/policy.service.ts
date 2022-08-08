@@ -1,30 +1,24 @@
-import { ApiService } from "../abstractions/api.service";
-import { OrganizationService } from "../abstractions/organization.service";
-import { PolicyService as PolicyServiceAbstraction } from "../abstractions/policy.service";
-import { StateService } from "../abstractions/state.service";
-import { OrganizationUserStatusType } from "../enums/organizationUserStatusType";
-import { OrganizationUserType } from "../enums/organizationUserType";
-import { PolicyType } from "../enums/policyType";
-import { PolicyData } from "../models/data/policyData";
-import { MasterPasswordPolicyOptions } from "../models/domain/masterPasswordPolicyOptions";
-import { Organization } from "../models/domain/organization";
-import { Policy } from "../models/domain/policy";
-import { ResetPasswordPolicyOptions } from "../models/domain/resetPasswordPolicyOptions";
-import { ListResponse } from "../models/response/listResponse";
-import { PolicyResponse } from "../models/response/policyResponse";
+import { OrganizationService } from "../../abstractions/organization.service";
+import { InternalPolicyService as InternalPolicyServiceAbstraction } from "../../abstractions/policy/policy.service.abstraction";
+import { StateService } from "../../abstractions/state.service";
+import { OrganizationUserStatusType } from "../../enums/organizationUserStatusType";
+import { OrganizationUserType } from "../../enums/organizationUserType";
+import { PolicyType } from "../../enums/policyType";
+import { PolicyData } from "../../models/data/policyData";
+import { MasterPasswordPolicyOptions } from "../../models/domain/masterPasswordPolicyOptions";
+import { Organization } from "../../models/domain/organization";
+import { Policy } from "../../models/domain/policy";
+import { ResetPasswordPolicyOptions } from "../../models/domain/resetPasswordPolicyOptions";
+import { ListResponse } from "../../models/response/listResponse";
+import { PolicyResponse } from "../../models/response/policyResponse";
 
-export class PolicyService implements PolicyServiceAbstraction {
+export class PolicyService implements InternalPolicyServiceAbstraction {
   policyCache: Policy[];
 
   constructor(
     private stateService: StateService,
-    private organizationService: OrganizationService,
-    private apiService: ApiService
+    private organizationService: OrganizationService
   ) {}
-
-  async clearCache(): Promise<void> {
-    await this.stateService.setDecryptedPolicies(null);
-  }
 
   async getAll(type?: PolicyType, userId?: string): Promise<Policy[]> {
     let response: Policy[] = [];
@@ -46,42 +40,6 @@ export class PolicyService implements PolicyServiceAbstraction {
     } else {
       return response;
     }
-  }
-
-  async getPolicyForOrganization(policyType: PolicyType, organizationId: string): Promise<Policy> {
-    const org = await this.organizationService.get(organizationId);
-    if (org?.isProviderUser) {
-      const orgPolicies = await this.apiService.getPolicies(organizationId);
-      const policy = orgPolicies.data.find((p) => p.organizationId === organizationId);
-
-      if (policy == null) {
-        return null;
-      }
-
-      return new Policy(new PolicyData(policy));
-    }
-
-    const policies = await this.getAll(policyType);
-    return policies.find((p) => p.organizationId === organizationId);
-  }
-
-  async replace(policies: { [id: string]: PolicyData }): Promise<any> {
-    await this.stateService.setDecryptedPolicies(null);
-    await this.stateService.setEncryptedPolicies(policies);
-  }
-
-  async clear(userId?: string): Promise<any> {
-    await this.stateService.setDecryptedPolicies(null, { userId: userId });
-    await this.stateService.setEncryptedPolicies(null, { userId: userId });
-  }
-
-  async getMasterPasswordPoliciesForInvitedUsers(
-    orgId: string
-  ): Promise<MasterPasswordPolicyOptions> {
-    const userId = await this.stateService.getUserId();
-    const response = await this.apiService.getPoliciesByInvitedUser(orgId, userId);
-    const policies = await this.mapPoliciesFromToken(response);
-    return this.getMasterPasswordPolicyOptions(policies);
   }
 
   async getMasterPasswordPolicyOptions(policies?: Policy[]): Promise<MasterPasswordPolicyOptions> {
@@ -235,6 +193,28 @@ export class PolicyService implements PolicyServiceAbstraction {
         !this.isExcemptFromPolicies(o, policyType) &&
         policySet.has(o.id)
     );
+  }
+
+  async upsert(policy: PolicyData): Promise<any> {
+    let policies = await this.stateService.getEncryptedPolicies();
+    if (policies == null) {
+      policies = {};
+    }
+
+    policies[policy.id] = policy;
+
+    await this.stateService.setDecryptedPolicies(null);
+    await this.stateService.setEncryptedPolicies(policies);
+  }
+
+  async replace(policies: { [id: string]: PolicyData }): Promise<any> {
+    await this.stateService.setDecryptedPolicies(null);
+    await this.stateService.setEncryptedPolicies(policies);
+  }
+
+  async clear(userId?: string): Promise<any> {
+    await this.stateService.setDecryptedPolicies(null, { userId: userId });
+    await this.stateService.setEncryptedPolicies(null, { userId: userId });
   }
 
   private isExcemptFromPolicies(organization: Organization, policyType: PolicyType) {

@@ -6,7 +6,6 @@ import { TokenService } from "../abstractions/token.service";
 import { DeviceType } from "../enums/deviceType";
 import { OrganizationApiKeyType } from "../enums/organizationApiKeyType";
 import { OrganizationConnectionType } from "../enums/organizationConnectionType";
-import { PolicyType } from "../enums/policyType";
 import { Utils } from "../misc/utils";
 import { SetKeyConnectorKeyRequest } from "../models/request/account/setKeyConnectorKeyRequest";
 import { VerifyOTPRequest } from "../models/request/account/verifyOTPRequest";
@@ -67,7 +66,6 @@ import { OrganizationUserUpdateRequest } from "../models/request/organizationUse
 import { PasswordHintRequest } from "../models/request/passwordHintRequest";
 import { PasswordRequest } from "../models/request/passwordRequest";
 import { PaymentRequest } from "../models/request/paymentRequest";
-import { PolicyRequest } from "../models/request/policyRequest";
 import { PreloginRequest } from "../models/request/preloginRequest";
 import { ProviderAddOrganizationRequest } from "../models/request/provider/providerAddOrganizationRequest";
 import { ProviderOrganizationCreateRequest } from "../models/request/provider/providerOrganizationCreateRequest";
@@ -1022,83 +1020,6 @@ export class ApiService implements ApiServiceAbstraction {
       true,
       false
     );
-  }
-
-  // Policy APIs
-
-  async getPolicy(organizationId: string, type: PolicyType): Promise<PolicyResponse> {
-    const r = await this.send(
-      "GET",
-      "/organizations/" + organizationId + "/policies/" + type,
-      null,
-      true,
-      true
-    );
-    return new PolicyResponse(r);
-  }
-
-  async getPolicies(organizationId: string): Promise<ListResponse<PolicyResponse>> {
-    const r = await this.send(
-      "GET",
-      "/organizations/" + organizationId + "/policies",
-      null,
-      true,
-      true
-    );
-    return new ListResponse(r, PolicyResponse);
-  }
-
-  async getPoliciesByToken(
-    organizationId: string,
-    token: string,
-    email: string,
-    organizationUserId: string
-  ): Promise<ListResponse<PolicyResponse>> {
-    const r = await this.send(
-      "GET",
-      "/organizations/" +
-        organizationId +
-        "/policies/token?" +
-        "token=" +
-        encodeURIComponent(token) +
-        "&email=" +
-        encodeURIComponent(email) +
-        "&organizationUserId=" +
-        organizationUserId,
-      null,
-      false,
-      true
-    );
-    return new ListResponse(r, PolicyResponse);
-  }
-
-  async getPoliciesByInvitedUser(
-    organizationId: string,
-    userId: string
-  ): Promise<ListResponse<PolicyResponse>> {
-    const r = await this.send(
-      "GET",
-      "/organizations/" + organizationId + "/policies/invited-user?" + "userId=" + userId,
-      null,
-      false,
-      true
-    );
-    return new ListResponse(r, PolicyResponse);
-  }
-
-  async putPolicy(
-    organizationId: string,
-    type: PolicyType,
-    request: PolicyRequest
-  ): Promise<PolicyResponse> {
-    const r = await this.send(
-      "PUT",
-      "/organizations/" + organizationId + "/policies/" + type,
-      request,
-      true,
-      true
-    );
-    return new PolicyResponse(r);
   }
 
   // Organization User APIs
