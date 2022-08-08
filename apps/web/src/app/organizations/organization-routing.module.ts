@@ -4,8 +4,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
 import { Permissions } from "@bitwarden/common/enums/permissions";
 
-import { OrganizationVaultModule } from "../modules/vault/modules/organization-vault/organization-vault.module";
-
 import { PermissionsGuard } from "./guards/permissions.guard";
 import { OrganizationLayoutComponent } from "./layouts/organization-layout.component";
 import { CollectionsComponent } from "./manage/collections.component";
@@ -26,6 +24,7 @@ import { ReusedPasswordsReportComponent } from "./tools/reused-passwords-report.
 import { ToolsComponent } from "./tools/tools.component";
 import { UnsecuredWebsitesReportComponent } from "./tools/unsecured-websites-report.component";
 import { WeakPasswordsReportComponent } from "./tools/weak-passwords-report.component";
+import { VaultModule } from "./vault/vault.module";
 
 const routes: Routes = [
   {
@@ -39,7 +38,7 @@ const routes: Routes = [
       { path: "", pathMatch: "full", redirectTo: "vault" },
       {
         path: "vault",
-        loadChildren: () => OrganizationVaultModule,
+        loadChildren: () => VaultModule,
       },
       {
         path: "tools",

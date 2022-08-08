@@ -12,8 +12,7 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { GroupResponse } from "@bitwarden/common/models/response/groupResponse";
 
-import { EntityUsersComponent } from "../../modules/organizations/manage/entity-users.component";
-
+import { EntityUsersComponent } from "./entity-users.component";
 import { GroupAddEditComponent } from "./group-add-edit.component";
 
 @Component({

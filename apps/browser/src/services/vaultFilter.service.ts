@@ -1,5 +1,5 @@
-import { VaultFilter } from "@bitwarden/angular/modules/vault-filter/models/vault-filter.model";
-import { VaultFilterService as BaseVaultFilterService } from "@bitwarden/angular/modules/vault-filter/vault-filter.service";
+import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
+import { VaultFilterService as BaseVaultFilterService } from "@bitwarden/angular/vault/vault-filter/services/vault-filter.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";

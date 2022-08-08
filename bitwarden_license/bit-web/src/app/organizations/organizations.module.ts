@@ -1,8 +1,6 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { SharedModule } from "src/app/modules/shared.module";
+import { SharedModule } from "src/app/shared/shared.module";
 
 import { InputCheckboxComponent } from "./components/input-checkbox.component";
 import { InputTextReadOnlyComponent } from "./components/input-text-readonly.component";
@@ -15,13 +13,7 @@ import { OrganizationsRoutingModule } from "./organizations-routing.module";
 // Form components are for use in the SSO Configuration Form only and should not be exported for use elsewhere.
 // They will be deprecated by the Component Library.
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    SharedModule,
-    OrganizationsRoutingModule,
-  ],
+  imports: [SharedModule, OrganizationsRoutingModule],
   declarations: [
     InputCheckboxComponent,
     InputTextComponent,

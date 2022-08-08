@@ -18,6 +18,7 @@ import { RegisterComponent } from "./accounts/register.component";
 import { RemovePasswordComponent } from "./accounts/remove-password.component";
 import { SetPasswordComponent } from "./accounts/set-password.component";
 import { SsoComponent } from "./accounts/sso.component";
+import { TrialInitiationComponent } from "./accounts/trial-initiation/trial-initiation.component";
 import { TwoFactorComponent } from "./accounts/two-factor.component";
 import { UpdatePasswordComponent } from "./accounts/update-password.component";
 import { UpdateTempPasswordComponent } from "./accounts/update-temp-password.component";
@@ -26,8 +27,6 @@ import { VerifyRecoverDeleteComponent } from "./accounts/verify-recover-delete.c
 import { HomeGuard } from "./guards/home.guard";
 import { FrontendLayoutComponent } from "./layouts/frontend-layout.component";
 import { UserLayoutComponent } from "./layouts/user-layout.component";
-import { TrialInitiationComponent } from "./modules/trial-initiation/trial-initiation.component";
-import { IndividualVaultModule } from "./modules/vault/modules/individual-vault/individual-vault.module";
 import { OrganizationsRoutingModule } from "./organizations/organization-routing.module";
 import { AcceptFamilySponsorshipComponent } from "./organizations/sponsorships/accept-family-sponsorship.component";
 import { FamiliesForEnterpriseSetupComponent } from "./organizations/sponsorships/families-for-enterprise-setup.component";
@@ -46,6 +45,7 @@ import { SponsoredFamiliesComponent } from "./settings/sponsored-families.compon
 import { SubscriptionRoutingModule } from "./settings/subscription-routing.module";
 import { GeneratorComponent } from "./tools/generator.component";
 import { ToolsComponent } from "./tools/tools.component";
+import { VaultModule } from "./vault/vault.module";
 
 const routes: Routes = [
   {
@@ -162,7 +162,7 @@ const routes: Routes = [
     children: [
       {
         path: "vault",
-        loadChildren: () => IndividualVaultModule,
+        loadChildren: () => VaultModule,
       },
       { path: "sends", component: SendComponent, data: { title: "Send" } },
       {
