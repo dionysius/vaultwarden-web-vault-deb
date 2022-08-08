@@ -95,16 +95,10 @@ jobs:
         id: deployment
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
+          initial-status: 'in_progress'
           environment: 'Browser - Production'
           description: 'Deployment ${{ needs.setup.outputs.release-version }} from branch ${{ github.ref_name }}'
           task: release
-      
-      - name: Update deployment status to In Progress
-        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
-        with:
-          token: '${{ secrets.GITHUB_TOKEN }}'
-          state: 'in_progress'
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
       - name: Download latest Release build artifacts
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -159,7 +153,7 @@ jobs:
           draft: true
 
       - name: Update deployment status to Success
-        if: success()
+        if: ${{ success() }}
         uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
@@ -167,7 +161,7 @@ jobs:
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
       - name: Update deployment status to Failure
-        if: failure()
+        if: ${{ failure() }}
         uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'

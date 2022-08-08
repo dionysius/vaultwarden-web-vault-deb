@@ -20,6 +20,7 @@ jobs:
       release-version: ${{ steps.version.outputs.version }}
       release-channel: ${{ steps.release-channel.outputs.channel }}
       branch-name: ${{ steps.branch.outputs.branch-name }}
+      build_number: ${{ steps.increment-version.outputs.build_number }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
@@ -48,11 +49,18 @@ jobs:
         id: version
         uses: bitwarden/gh-actions/release-version-check@ea9fab01d76940267b4147cc1c4542431246b9f6
         with:
-          release-type: ${{ github.event.inputs.release_type }}
+          release-type: 'Initial Release'
           project-type: ts
           file: apps/desktop/src/package.json
           monorepo: true
           monorepo-project: desktop
+
+      - name: Increment Version
+        id: increment-version
+        run: |
+          BUILD_NUMBER=$(expr 3000 + $GITHUB_RUN_NUMBER)
+          echo "Setting build number to $BUILD_NUMBER"
+          echo "::set-output name=build_number::$BUILD_NUMBER"
 
       - name: Get Version Channel
         id: release-channel
@@ -907,6 +915,16 @@ jobs:
       - macos-package-github
       - macos-package-mas
     steps:
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@1b599fe41a0ef1f95191e7f2eec4743f2d7dfc48
+        id: deployment
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          initial-status: 'in_progress'
+          environment: 'Desktop - Beta'
+          description: 'Deployment ${{ needs.setup.outputs.release-version }} to channel ${{ needs.setup.outputs.release-channel }} from branch ${{ needs.setup.outputs.branch-name }}'
+          task: release
+
       - name: Login to Azure
         uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010
         with:
@@ -926,7 +944,7 @@ jobs:
 
       - name: Rename .pkg to .pkg.archive
         env:
-          PKG_VERSION: ${{ steps.version.outputs.version }}
+          PKG_VERSION: ${{ needs.setup.outputs.release-version }}
         working-directory: apps/desktop/artifacts
         run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
 
@@ -943,6 +961,21 @@ jobs:
           --recursive \
           --quiet
 
+      - name: Update deployment status to Success
+        if: ${{ success() }}
+        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          state: 'success'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update deployment status to Failure
+        if: ${{ failure() }}
+        uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+          state: 'failure'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
   remove-branch:
     name: Remove branch

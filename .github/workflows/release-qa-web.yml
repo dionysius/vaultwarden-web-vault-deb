@@ -77,6 +77,7 @@ jobs:
         id: deployment
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
+          initial-status: 'in_progress'
           environment-url: http://vault.qa.bitwarden.pw
           environment: 'Web Vault - QA'
           description: 'Deployment from branch ${{ github.ref_name }}'
@@ -137,7 +138,7 @@ jobs:
         working-directory: deployment
 
       - name: Update deployment status to Success
-        if: success()
+        if: ${{ success() }}
         uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
@@ -146,7 +147,7 @@ jobs:
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
       - name: Update deployment status to Failure
-        if: failure()
+        if: ${{ failure() }}
         uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
