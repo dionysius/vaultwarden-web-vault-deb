@@ -6,7 +6,6 @@ import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/abs
 import { CollectionService as CollectionServiceAbstraction } from "@bitwarden/common/abstractions/collection.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/abstractions/cryptoFunction.service";
-import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/abstractions/environment.service";
 import { EventService as EventServiceAbstraction } from "@bitwarden/common/abstractions/event.service";
 import { ExportService as ExportServiceAbstraction } from "@bitwarden/common/abstractions/export.service";
 import { FileUploadService as FileUploadServiceAbstraction } from "@bitwarden/common/abstractions/fileUpload.service";
@@ -50,7 +49,6 @@ import { CollectionService } from "@bitwarden/common/services/collection.service
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 import { EncryptService } from "@bitwarden/common/services/encrypt.service";
-import { EnvironmentService } from "@bitwarden/common/services/environment.service";
 import { EventService } from "@bitwarden/common/services/event.service";
 import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/fileUpload.service";
@@ -84,6 +82,7 @@ import { PopupUtilsService } from "../popup/services/popup-utils.service";
 import { AutofillService as AutofillServiceAbstraction } from "../services/abstractions/autofill.service";
 import { StateService as StateServiceAbstraction } from "../services/abstractions/state.service";
 import AutofillService from "../services/autofill.service";
+import { BrowserEnvironmentService } from "../services/browser-environment.service";
 import { BrowserCryptoService } from "../services/browserCrypto.service";
 import BrowserLocalStorageService from "../services/browserLocalStorage.service";
 import BrowserMessagingService from "../services/browserMessaging.service";
@@ -119,7 +118,7 @@ export default class MainBackground {
   tokenService: TokenServiceAbstraction;
   appIdService: AppIdServiceAbstraction;
   apiService: ApiServiceAbstraction;
-  environmentService: EnvironmentServiceAbstraction;
+  environmentService: BrowserEnvironmentService;
   settingsService: SettingsServiceAbstraction;
   cipherService: CipherServiceAbstraction;
   folderService: InternalFolderServiceAbstraction;
@@ -253,7 +252,7 @@ export default class MainBackground {
     );
     this.tokenService = new TokenService(this.stateService);
     this.appIdService = new AppIdService(this.storageService);
-    this.environmentService = new EnvironmentService(this.stateService);
+    this.environmentService = new BrowserEnvironmentService(this.stateService, this.logService);
     this.apiService = new ApiService(
       this.tokenService,
       this.platformUtilsService,

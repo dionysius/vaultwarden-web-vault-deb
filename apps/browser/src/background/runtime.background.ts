@@ -1,10 +1,11 @@
-import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
 import { SystemService } from "@bitwarden/common/abstractions/system.service";
 import { Utils } from "@bitwarden/common/misc/utils";
+
+import { BrowserEnvironmentService } from "src/services/browser-environment.service";
 
 import { BrowserApi } from "../browser/browserApi";
 import { AutofillService } from "../services/abstractions/autofill.service";
@@ -26,7 +27,7 @@ export default class RuntimeBackground {
     private i18nService: I18nService,
     private notificationsService: NotificationsService,
     private systemService: SystemService,
-    private environmentService: EnvironmentService,
+    private environmentService: BrowserEnvironmentService,
     private messagingService: MessagingService,
     private logService: LogService
   ) {
@@ -227,6 +228,10 @@ export default class RuntimeBackground {
       if (this.onInstalledReason != null) {
         if (this.onInstalledReason === "install") {
           BrowserApi.createNewTab("https://bitwarden.com/browser-start/");
+
+          if (await this.environmentService.hasManagedEnvironment()) {
+            await this.environmentService.setUrlsToManagedEnvironment();
+          }
         }
 
         this.onInstalledReason = null;

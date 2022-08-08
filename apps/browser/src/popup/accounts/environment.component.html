@@ -14,6 +14,17 @@
     </div>
   </header>
   <main tabindex="-1">
+    <app-callout
+      type="info"
+      title="{{ 'settingsEdited' | i18n }}"
+      *ngIf="showEditedManagedSettings"
+    >
+      <a href="#" appStopClick (click)="resetEnvironment()">
+        {{ "environmentEditedClick" | i18n }}
+      </a>
+      {{ "environmentEditedReset" | i18n }}
+    </app-callout>
+
     <div class="box">
       <h2 class="box-header">
         {{ "selfHostedEnvironment" | i18n }}

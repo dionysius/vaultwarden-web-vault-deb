@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "environment": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "string",
+          "description": "Base url, typically only this value needs to be set"
+        },
+        "webVault": { "type": "string" },
+        "api": { "type": "string" },
+        "identity": { "type": "string" },
+        "icons": { "type": "string" },
+        "notifications": { "type": "string" },
+        "events": { "type": "string" }
+      }
+    }
+  }
+}

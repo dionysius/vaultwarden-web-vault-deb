@@ -56,6 +56,7 @@ import MainBackground from "../../background/main.background";
 import { BrowserApi } from "../../browser/browserApi";
 import { AutofillService } from "../../services/abstractions/autofill.service";
 import { StateService as StateServiceAbstraction } from "../../services/abstractions/state.service";
+import { BrowserEnvironmentService } from "../../services/browser-environment.service";
 import { BrowserFileDownloadService } from "../../services/browserFileDownloadService";
 import BrowserMessagingService from "../../services/browserMessaging.service";
 import BrowserMessagingPrivateModePopupService from "../../services/browserMessagingPrivateModePopup.service";
@@ -171,6 +172,10 @@ function getBgService<T>(service: keyof MainBackground) {
       provide: LogServiceAbstraction,
       useFactory: getBgService<ConsoleLogService>("logService"),
       deps: [],
+    },
+    {
+      provide: BrowserEnvironmentService,
+      useExisting: EnvironmentService,
     },
     {
       provide: EnvironmentService,

@@ -1971,10 +1971,28 @@
   "organizationIsDisabled": {
     "message": "Organization is disabled."
   },
-  "disabledOrganizationFilterError" : {
+  "disabledOrganizationFilterError": {
     "message" : "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Logging in to $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Settings have been edited"
+  },
+  "environmentEditedClick": {
+    "message": "Click here"
+  },
+  "environmentEditedReset": {
+    "message": "to reset to pre-configured settings"
   }
 }

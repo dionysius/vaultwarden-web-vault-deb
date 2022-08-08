@@ -85,6 +85,7 @@ const plugins = [
       manifestVersion == 3
         ? { from: "./src/manifest.v3.json", to: "manifest.json" }
         : "./src/manifest.json",
+      { from: "./src/managed_schema.json", to: "managed_schema.json" },
       { from: "./src/_locales", to: "_locales" },
       { from: "./src/images", to: "images" },
       { from: "./src/popup/images", to: "popup/images" },
