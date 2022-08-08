@@ -29,8 +29,8 @@ export class TabItemComponent {
       "focus-visible:tw-outline-none",
       "focus-visible:tw-ring-2",
       "focus-visible:tw-ring-primary-700",
-      "disabled:tw-bg-secondary-100",
-      "disabled:!tw-text-muted",
+      "disabled:tw-bg-transparent",
+      "disabled:!tw-text-muted/60",
       "disabled:tw-no-underline",
       "disabled:tw-cursor-not-allowed",
     ];

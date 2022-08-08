@@ -1,6 +1,10 @@
 /* eslint-disable */
 const colors = require("tailwindcss/colors");
 
+function rgba(color) {
+  return "rgb(var(" + color + ") / <alpha-value>)";
+}
+
 module.exports = {
   prefix: "tw-",
   content: ["./src/**/*.{html,ts}", "../../libs/components/src/**/*.{html,ts}"],
@@ -12,57 +16,57 @@ module.exports = {
       current: colors.current,
       black: colors.black,
       primary: {
-        300: "var(--color-primary-300)",
-        500: "var(--color-primary-500)",
-        700: "var(--color-primary-700)",
+        300: rgba("--color-primary-300"),
+        500: rgba("--color-primary-500"),
+        700: rgba("--color-primary-700"),
       },
       secondary: {
-        100: "var(--color-secondary-100)",
-        300: "var(--color-secondary-300)",
-        500: "var(--color-secondary-500)",
-        700: "var(--color-secondary-700)",
+        100: rgba("--color-secondary-100"),
+        300: rgba("--color-secondary-300"),
+        500: rgba("--color-secondary-500"),
+        700: rgba("--color-secondary-700"),
       },
       success: {
-        500: "var(--color-success-500)",
-        700: "var(--color-success-700)",
+        500: rgba("--color-success-500"),
+        700: rgba("--color-success-700"),
       },
       danger: {
-        500: "var(--color-danger-500)",
-        700: "var(--color-danger-700)",
+        500: rgba("--color-danger-500"),
+        700: rgba("--color-danger-700"),
       },
       warning: {
-        500: "var(--color-warning-500)",
-        700: "var(--color-warning-700)",
+        500: rgba("--color-warning-500"),
+        700: rgba("--color-warning-700"),
       },
       info: {
-        500: "var(--color-info-500)",
-        700: "var(--color-info-700)",
+        500: rgba("--color-info-500"),
+        700: rgba("--color-info-700"),
       },
       text: {
-        main: "var(--color-text-main)",
-        muted: "var(--color-text-muted)",
-        contrast: "var(--color-text-contrast)",
-        alt2: "var(--color-text-alt2)",
+        main: rgba("--color-text-main"),
+        muted: rgba("--color-text-muted"),
+        contrast: rgba("--color-text-contrast"),
+        alt2: rgba("--color-text-alt2"),
       },
       background: {
-        DEFAULT: "var(--color-background)",
-        alt: "var(--color-background-alt)",
-        alt2: "var(--color-background-alt2)",
+        DEFAULT: rgba("--color-background"),
+        alt: rgba("--color-background-alt"),
+        alt2: rgba("--color-background-alt2"),
       },
     },
     textColor: {
-      main: "var(--color-text-main)",
-      muted: "var(--color-text-muted)",
-      contrast: "var(--color-text-contrast)",
-      alt2: "var(--color-text-alt2)",
-      success: "var(--color-success-500)",
-      danger: "var(--color-danger-500)",
-      warning: "var(--color-warning-500)",
-      info: "var(--color-info-500)",
+      main: rgba("--color-text-main"),
+      muted: rgba("--color-text-muted"),
+      contrast: rgba("--color-text-contrast"),
+      alt2: rgba("--color-text-alt2"),
+      success: rgba("--color-success-500"),
+      danger: rgba("--color-danger-500"),
+      warning: rgba("--color-warning-500"),
+      info: rgba("--color-info-500"),
       primary: {
-        300: "var(--color-primary-300)",
-        500: "var(--color-primary-500)",
-        700: "var(--color-primary-700)",
+        300: rgba("--color-primary-300"),
+        500: rgba("--color-primary-500"),
+        700: rgba("--color-primary-700"),
       },
     },
     ringOffsetColor: ({ theme }) => ({
