@@ -22,7 +22,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   private scimUrl: string = null;
 
   constructor(private stateService: StateService) {
-    this.stateService.activeAccount.subscribe(async () => {
+    this.stateService.activeAccount$.subscribe(async () => {
       await this.setUrlsFromStorage();
     });
   }

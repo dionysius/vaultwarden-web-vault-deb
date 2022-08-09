@@ -32,7 +32,7 @@ describe("Folder Service", () => {
     stateService.getEncryptedFolders().resolves({
       "1": folderData("1", "test"),
     });
-    stateService.activeAccount.returns(activeAccount);
+    stateService.activeAccount$.returns(activeAccount);
     stateService.activeAccountUnlocked.returns(activeAccountUnlocked);
     (window as any).bitwardenContainerService = new ContainerService(cryptoService);
 

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { UntypedFormControl } from "@angular/forms";
+import { Subscription } from "rxjs";
 
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 
@@ -13,8 +14,10 @@ export class SearchComponent implements OnInit, OnDestroy {
   state: SearchBarState;
   searchText: UntypedFormControl = new UntypedFormControl(null);
 
+  private activeAccountSubscription: Subscription;
+
   constructor(private searchBarService: SearchBarService, private stateService: StateService) {
-    this.searchBarService.state.subscribe((state) => {
+    this.searchBarService.state$.subscribe((state) => {
       this.state = state;
     });
 
@@ -24,13 +27,13 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.stateService.activeAccount.subscribe((value) => {
+    this.activeAccountSubscription = this.stateService.activeAccount$.subscribe((value) => {
       this.searchBarService.setSearchText("");
       this.searchText.patchValue("");
     });
   }
 
   ngOnDestroy() {
-    this.stateService.activeAccount.unsubscribe();
+    this.activeAccountSubscription.unsubscribe();
   }
 }

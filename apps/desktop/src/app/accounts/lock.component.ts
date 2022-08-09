@@ -1,4 +1,4 @@
-import { Component, NgZone, OnDestroy } from "@angular/core";
+import { Component, NgZone } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ipcRenderer } from "electron";
 
@@ -22,7 +22,7 @@ const BroadcasterSubscriptionId = "LockComponent";
   selector: "app-lock",
   templateUrl: "lock.component.html",
 })
-export class LockComponent extends BaseLockComponent implements OnDestroy {
+export class LockComponent extends BaseLockComponent {
   private deferFocus: boolean = null;
   authenicatedUrl = "vault";
   unAuthenicatedUrl = "update-temp-password";
@@ -103,6 +103,7 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
+    super.ngOnDestroy();
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
   }
 

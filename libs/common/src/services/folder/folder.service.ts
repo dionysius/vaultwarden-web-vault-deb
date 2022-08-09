@@ -25,7 +25,7 @@ export class FolderService implements InternalFolderServiceAbstraction {
     private cipherService: CipherService,
     private stateService: StateService
   ) {
-    this.stateService.activeAccountUnlocked.subscribe(async (unlocked) => {
+    this.stateService.activeAccountUnlocked$.subscribe(async (unlocked) => {
       if ((Utils.global as any).bitwardenContainerService == null) {
         return;
       }

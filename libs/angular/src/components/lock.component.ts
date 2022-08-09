@@ -1,5 +1,6 @@
-import { Directive, NgZone, OnInit } from "@angular/core";
+import { Directive, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Subscription } from "rxjs";
 import { take } from "rxjs/operators";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -20,7 +21,7 @@ import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCry
 import { SecretVerificationRequest } from "@bitwarden/common/models/request/secretVerificationRequest";
 
 @Directive()
-export class LockComponent implements OnInit {
+export class LockComponent implements OnInit, OnDestroy {
   masterPassword = "";
   pin = "";
   showPassword = false;
@@ -38,6 +39,8 @@ export class LockComponent implements OnInit {
 
   private invalidPinAttempts = 0;
   private pinSet: [boolean, boolean];
+
+  private activeAccountSubscription: Subscription;
 
   constructor(
     protected router: Router,
@@ -57,9 +60,13 @@ export class LockComponent implements OnInit {
   async ngOnInit() {
     // Load the first and observe updates
     await this.load();
-    this.stateService.activeAccount.subscribe(async () => {
+    this.activeAccountSubscription = this.stateService.activeAccount$.subscribe(async () => {
       await this.load();
     });
+  }
+
+  ngOnDestroy() {
+    this.activeAccountSubscription.unsubscribe();
   }
 
   async submit() {

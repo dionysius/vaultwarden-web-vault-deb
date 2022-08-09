@@ -1,6 +1,7 @@
 import {
   Component,
   NgZone,
+  OnDestroy,
   OnInit,
   SecurityContext,
   Type,
@@ -77,7 +78,7 @@ const systemTimeoutOptions = {
     </div>
   `,
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   @ViewChild("settings", { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;
   @ViewChild("premium", { read: ViewContainerRef, static: true }) premiumRef: ViewContainerRef;
   @ViewChild("passwordHistory", { read: ViewContainerRef, static: true })
@@ -129,7 +130,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.stateService.activeAccount.pipe(takeUntil(this.destroy$)).subscribe((userId) => {
+    this.stateService.activeAccount$.pipe(takeUntil(this.destroy$)).subscribe((userId) => {
       this.activeUserId = userId;
     });
 

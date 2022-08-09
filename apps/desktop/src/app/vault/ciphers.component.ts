@@ -14,7 +14,7 @@ export class CiphersComponent extends BaseCiphersComponent {
   constructor(searchService: SearchService, searchBarService: SearchBarService) {
     super(searchService);
 
-    searchBarService.searchText.subscribe((searchText) => {
+    searchBarService.searchText$.subscribe((searchText) => {
       this.searchText = searchText;
       this.search(200);
     });

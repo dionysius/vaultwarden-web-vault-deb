@@ -56,7 +56,7 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
       policyService,
       logService
     );
-    this.searchBarService.searchText.subscribe((searchText) => {
+    this.searchBarService.searchText$.subscribe((searchText) => {
       this.searchText = searchText;
       this.searchTextChanged();
     });

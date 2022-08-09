@@ -56,7 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
     // Clear them aggressively to make sure this doesn't occur
     await this.clearComponentStates();
 
-    this.stateService.activeAccount.pipe(takeUntil(this.destroy$)).subscribe((userId) => {
+    this.stateService.activeAccount$.pipe(takeUntil(this.destroy$)).subscribe((userId) => {
       this.activeUserId = userId;
     });
 
@@ -84,7 +84,7 @@ export class AppComponent implements OnInit, OnDestroy {
               });
             }
 
-            if (this.stateService.activeAccount.getValue() == null) {
+            if (this.activeUserId === null) {
               this.router.navigate(["home"]);
             }
           });
