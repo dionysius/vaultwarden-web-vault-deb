@@ -306,3 +306,18 @@ button i.bwi,
 a i.bwi {
   margin-right: 0.25rem;
 }
+
+.no-items {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .no-items-image {
+    @include themify($themes) {
+      content: url("../images/search-web" + themed("svgSuffix"));
+    }
+  }
+}

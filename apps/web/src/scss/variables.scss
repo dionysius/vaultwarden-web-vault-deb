@@ -219,6 +219,7 @@ $themes: (
     textMuted: #6c757d,
     textSuccessColor: $white,
     textWarningColor: $white,
+    svgSuffix: "-light.svg",
   ),
   dark: (
     primary: $darkPrimary,
@@ -330,6 +331,7 @@ $themes: (
     textMuted: $darkGrey1,
     textSuccessColor: $darkDarkBlue2,
     textWarningColor: $darkDarkBlue2,
+    svgSuffix: "-dark.svg",
   ),
 );
 

@@ -142,6 +142,7 @@
       <span class="sr-only">{{ "loading" | i18n }}</span>
     </ng-container>
     <ng-container *ngIf="loaded">
+      <img class="no-items-image" aria-hidden="true" />
       <p>{{ "noItemsInList" | i18n }}</p>
       <button (click)="addCipher()" class="btn btn-outline-primary" *ngIf="showAddNew">
         <i class="bwi bwi-plus bwi-fw"></i>{{ "addItem" | i18n }}
