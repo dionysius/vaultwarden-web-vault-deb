@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
+import zxcvbn from "zxcvbn";
 
 import { PasswordStrengthComponent } from "@bitwarden/angular/shared/components/password-strength/password-strength.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -28,7 +29,7 @@ export class ResetPasswordComponent implements OnInit {
   enforcedPolicyOptions: MasterPasswordPolicyOptions;
   newPassword: string = null;
   showPassword = false;
-  masterPasswordScore: number;
+  passwordStrengthResult: zxcvbn.ZXCVBNResult;
   formPromise: Promise<any>;
 
   constructor(
@@ -97,7 +98,7 @@ export class ResetPasswordComponent implements OnInit {
     if (
       this.enforcedPolicyOptions != null &&
       !this.policyService.evaluateMasterPassword(
-        this.masterPasswordScore,
+        this.passwordStrengthResult.score,
         this.newPassword,
         this.enforcedPolicyOptions
       )
@@ -110,7 +111,7 @@ export class ResetPasswordComponent implements OnInit {
       return;
     }
 
-    if (this.masterPasswordScore < 3) {
+    if (this.passwordStrengthResult.score < 3) {
       const result = await this.platformUtilsService.showDialog(
         this.i18nService.t("weakMasterPasswordDesc"),
         this.i18nService.t("weakMasterPassword"),
@@ -183,5 +184,9 @@ export class ResetPasswordComponent implements OnInit {
     } catch (e) {
       this.logService.error(e);
     }
+  }
+
+  getStrengthResult(result: zxcvbn.ZXCVBNResult) {
+    this.passwordStrengthResult = result;
   }
 }
