@@ -100,7 +100,7 @@
           <div
             class="box-content-row box-content-row-flex totp"
             [ngClass]="{ low: totpLow }"
-            *ngIf="cipher.login.totp && totpCode"
+            *ngIf="cipher.login.totp && totpCode && canAccessPremium"
           >
             <div class="row-main">
               <span
@@ -136,6 +136,19 @@
               >
                 <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
               </button>
+            </div>
+          </div>
+          <div
+            class="box-content-row box-content-row-flex totp"
+            *ngIf="cipher.login.totp && !canAccessPremium"
+          >
+            <div class="row-main">
+              <span class="row-label">{{ "verificationCodeTotp" | i18n }}</span>
+              <span class="row-label">
+                <a [routerLink]="" (click)="showGetPremium()"
+                  >{{ "premiumSubcriptionRequired" | i18n }}
+                </a>
+              </span>
             </div>
           </div>
         </div>

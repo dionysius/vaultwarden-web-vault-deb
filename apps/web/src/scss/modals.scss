@@ -130,6 +130,25 @@
         stroke-width: 2;
       }
     }
+
+    .totp-circle-muted {
+      fill: none;
+      @include themify($themes) {
+        stroke: themed("info");
+      }
+
+      &.inner {
+        stroke-dasharray: 78.6;
+        stroke-dashoffset: 0;
+        stroke-width: 3;
+      }
+
+      &.outer {
+        stroke-dasharray: 88;
+        stroke-dashoffset: 0;
+        stroke-width: 2;
+      }
+    }
   }
 
   > .align-items-center {

@@ -1,4 +1,4 @@
-import { CurrencyPipe } from "@angular/common";
+import { CurrencyPipe, Location } from "@angular/common";
 import { Component } from "@angular/core";
 
 import { PremiumComponent as BasePremiumComponent } from "@bitwarden/angular/components/premium.component";
@@ -21,6 +21,7 @@ export class PremiumComponent extends BasePremiumComponent {
     apiService: ApiService,
     stateService: StateService,
     logService: LogService,
+    private location: Location,
     private currencyPipe: CurrencyPipe
   ) {
     super(i18nService, platformUtilsService, apiService, logService, stateService);
@@ -31,5 +32,9 @@ export class PremiumComponent extends BasePremiumComponent {
     if (this.priceString.indexOf("%price%") > -1) {
       this.priceString = this.priceString.replace("%price%", thePrice);
     }
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

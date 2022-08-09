@@ -166,8 +166,8 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-6 form-group">
+          <div class="tw-flex tw-flex-row">
+            <div class="tw-mb-4 tw-w-1/2">
               <label for="loginTotp">{{ "authenticatorKeyTotp" | i18n }}</label>
               <input
                 id="loginTotp"
@@ -179,14 +179,41 @@
                 [disabled]="cipher.isDeleted || !cipher.viewPassword || viewOnly"
               />
             </div>
-            <div class="col-6 form-group totp d-flex align-items-end" [ngClass]="{ low: totpLow }">
-              <div *ngIf="!cipher.login.totp || !totpCode">
-                <img
-                  src="../../images/totp-countdown.png"
-                  id="totpImage"
+            <div class="tw-mb-4 tw-ml-4 tw-flex tw-w-1/2 tw-items-end" [ngClass]="{ low: totpLow }">
+              <div
+                class="totp tw-flex tw-flex-row tw-items-center"
+                *ngIf="!cipher.login.totp || (cipher.login.totp && !canAccessPremium)"
+              >
+                <span class="totp-countdown">
+                  <span class="totp-sec tw-text-muted">15</span>
+                  <svg>
+                    <g>
+                      <circle
+                        class="totp-circle-muted inner"
+                        r="12.6"
+                        cy="16"
+                        cx="16"
+                        opacity="0.25"
+                        [ngStyle]="{ 'stroke-dashoffset.px': 40 }"
+                      ></circle>
+                      <circle
+                        class="totp-circle-muted outer"
+                        opacity="0.25"
+                        r="14"
+                        cy="16"
+                        cx="16"
+                      ></circle>
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  class="totp-code tw-mr-3 tw-ml-2 tw-text-muted"
                   title="{{ 'verificationCodeTotp' | i18n }}"
-                  class="ml-2"
-                />
+                  >--- ---</span
+                >
+                <i class="bwi bwi-lg bwi-clone tw-text-muted" aria-hidden="true"></i>
+              </div>
+              <div class="tw-pb-2" *ngIf="!cipher.login.totp || !totpCode">
                 <app-premium-badge
                   *ngIf="!organization && !cipher.organizationId"
                   class="ml-3"
@@ -209,8 +236,11 @@
                   {{ "upgrade" | i18n }}
                 </a>
               </div>
-              <div *ngIf="cipher.login.totp && totpCode" class="d-flex align-items-center">
-                <span class="totp-countdown mr-3 ml-2">
+              <div
+                *ngIf="cipher.login.totp && totpCode && canAccessPremium"
+                class="totp tw-flex tw-flex-row tw-items-center"
+              >
+                <span class="totp-countdown">
                   <span class="totp-sec">{{ totpSec }}</span>
                   <svg>
                     <g>
@@ -225,16 +255,18 @@
                     </g>
                   </svg>
                 </span>
-                <span class="totp-code mr-2" title="{{ 'verificationCodeTotp' | i18n }}">{{
-                  totpCodeFormatted
-                }}</span>
+                <span
+                  class="totp-code tw-mr-2 tw-ml-2 tw-mt-1"
+                  title="{{ 'verificationCodeTotp' | i18n }}"
+                  >{{ totpCodeFormatted }}</span
+                >
                 <button
                   type="button"
-                  class="btn btn-link"
+                  class="tw-items-center tw-border-none tw-bg-transparent tw-text-primary-500"
                   appA11yTitle="{{ 'copyVerificationCode' | i18n }}"
                   (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')"
                 >
-                  <i class="bwi bwi-clone" aria-hidden="true"></i>
+                  <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
