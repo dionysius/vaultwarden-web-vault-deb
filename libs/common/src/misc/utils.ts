@@ -1,9 +1,20 @@
 /* eslint-disable no-useless-escape */
 import * as tldjs from "tldjs";
 
+import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+
 import { I18nService } from "../abstractions/i18n.service";
 
 const nodeURL = typeof window === "undefined" ? require("url") : null;
+
+declare global {
+  /* eslint-disable-next-line no-var */
+  var bitwardenContainerService: BitwardenContainerService;
+}
+
+interface BitwardenContainerService {
+  getCryptoService: () => CryptoService;
+}
 
 export class Utils {
   static inited = false;
@@ -11,7 +22,7 @@ export class Utils {
   static isBrowser = true;
   static isMobileBrowser = false;
   static isAppleMobileBrowser = false;
-  static global: any = null;
+  static global: typeof global = null;
   static tldEndingRegex =
     /.*\.(com|net|org|edu|uk|gov|ca|de|jp|fr|au|ru|ch|io|es|us|co|xyz|info|ly|mil)$/;
   // Transpiled version of /\p{Emoji_Presentation}/gu using https://mothereff.in/regexpu. Used for compatability in older browsers.
@@ -29,16 +40,25 @@ export class Utils {
       (process as any).release != null &&
       (process as any).release.name === "node";
     Utils.isBrowser = typeof window !== "undefined";
+
     Utils.isMobileBrowser = Utils.isBrowser && this.isMobile(window);
     Utils.isAppleMobileBrowser = Utils.isBrowser && this.isAppleMobile(window);
-    Utils.global = Utils.isNode && !Utils.isBrowser ? global : window;
+
+    if (Utils.isNode) {
+      Utils.global = global;
+    } else if (Utils.isBrowser) {
+      Utils.global = window;
+    } else {
+      // If it's not browser or node then it must be a service worker
+      Utils.global = self;
+    }
   }
 
   static fromB64ToArray(str: string): Uint8Array {
     if (Utils.isNode) {
       return new Uint8Array(Buffer.from(str, "base64"));
     } else {
-      const binaryString = window.atob(str);
+      const binaryString = Utils.global.atob(str);
       const bytes = new Uint8Array(binaryString.length);
       for (let i = 0; i < binaryString.length; i++) {
         bytes[i] = binaryString.charCodeAt(i);
@@ -93,7 +113,7 @@ export class Utils {
       for (let i = 0; i < bytes.byteLength; i++) {
         binary += String.fromCharCode(bytes[i]);
       }
-      return window.btoa(binary);
+      return Utils.global.btoa(binary);
     }
   }
 
@@ -157,7 +177,7 @@ export class Utils {
     if (Utils.isNode) {
       return Buffer.from(utfStr, "utf8").toString("base64");
     } else {
-      return decodeURIComponent(escape(window.btoa(utfStr)));
+      return decodeURIComponent(escape(Utils.global.btoa(utfStr)));
     }
   }
 
@@ -169,7 +189,7 @@ export class Utils {
     if (Utils.isNode) {
       return Buffer.from(b64Str, "base64").toString("utf8");
     } else {
-      return decodeURIComponent(escape(window.atob(b64Str)));
+      return decodeURIComponent(escape(Utils.global.atob(b64Str)));
     }
   }
 
@@ -384,7 +404,7 @@ export class Utils {
         return new nodeURL.URL(uriString);
       } else if (typeof URL === "function") {
         return new URL(uriString);
-      } else if (window != null) {
+      } else if (typeof window !== "undefined") {
         const hasProtocol = uriString.indexOf("://") > -1;
         if (!hasProtocol && uriString.indexOf(".") > -1) {
           uriString = "http://" + uriString;

@@ -1,5 +1,3 @@
-import * as hrtime from "browser-hrtime";
-
 import { LogService as LogServiceAbstraction } from "../abstractions/log.service";
 import { LogLevelType } from "../enums/logLevelType";
 
@@ -55,18 +53,5 @@ export class ConsoleLogService implements LogServiceAbstraction {
       default:
         break;
     }
-  }
-
-  time(label = "default") {
-    if (!this.timersMap.has(label)) {
-      this.timersMap.set(label, hrtime());
-    }
-  }
-
-  timeEnd(label = "default"): [number, number] {
-    const elapsed = hrtime(this.timersMap.get(label));
-    this.timersMap.delete(label);
-    this.write(LogLevelType.Info, `${label}: ${elapsed[0] * 1000 + elapsed[1] / 10e6}ms`);
-    return elapsed;
   }
 }

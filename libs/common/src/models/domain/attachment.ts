@@ -48,7 +48,7 @@ export class Attachment extends Domain {
 
     if (this.key != null) {
       let cryptoService: CryptoService;
-      const containerService = (Utils.global as any).bitwardenContainerService;
+      const containerService = Utils.global.bitwardenContainerService;
       if (containerService) {
         cryptoService = containerService.getCryptoService();
       } else {

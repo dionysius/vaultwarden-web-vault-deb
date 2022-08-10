@@ -1,7 +1,7 @@
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 
 export default abstract class AbstractChromeStorageService implements AbstractStorageService {
-  protected abstract chromeStorageApi: any;
+  protected abstract chromeStorageApi: chrome.storage.StorageArea;
 
   async get<T>(key: string): Promise<T> {
     return new Promise((resolve) => {

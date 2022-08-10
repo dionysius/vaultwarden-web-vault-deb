@@ -81,6 +81,10 @@ export default class ContextMenusBackground {
   }
 
   private async cipherAction(tab: chrome.tabs.Tab, info: chrome.contextMenus.OnClickData) {
+    if (typeof info.menuItemId !== "string") {
+      return;
+    }
+
     const id = info.menuItemId.split("_")[1];
 
     if ((await this.authService.getAuthStatus()) < AuthenticationStatus.Unlocked) {

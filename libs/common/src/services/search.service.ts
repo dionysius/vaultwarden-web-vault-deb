@@ -11,6 +11,8 @@ import { CipherView } from "../models/view/cipherView";
 import { SendView } from "../models/view/sendView";
 
 export class SearchService implements SearchServiceAbstraction {
+  private static registeredPipeline = false;
+
   indexedEntityId?: string = null;
   private indexing = false;
   private index: lunr.Index = null;
@@ -31,8 +33,13 @@ export class SearchService implements SearchServiceAbstraction {
       }
     });
 
-    //register lunr pipeline function
-    lunr.Pipeline.registerFunction(this.normalizeAccentsPipelineFunction, "normalizeAccents");
+    // Currently have to ensure this is only done a single time. Lunr allows you to register a function
+    // multiple times but they will add a warning message to the console. The way they do that breaks when ran on a service worker.
+    if (!SearchService.registeredPipeline) {
+      SearchService.registeredPipeline = true;
+      //register lunr pipeline function
+      lunr.Pipeline.registerFunction(this.normalizeAccentsPipelineFunction, "normalizeAccents");
+    }
   }
 
   clearIndex(): void {
@@ -54,7 +61,6 @@ export class SearchService implements SearchServiceAbstraction {
       return;
     }
 
-    this.logService.time("search indexing");
     this.indexing = true;
     this.indexedEntityId = indexedEntityId;
     this.index = null;
@@ -95,7 +101,7 @@ export class SearchService implements SearchServiceAbstraction {
 
     this.indexing = false;
 
-    this.logService.timeEnd("search indexing");
+    this.logService.info("Finished search indexing");
   }
 
   async searchCiphers(

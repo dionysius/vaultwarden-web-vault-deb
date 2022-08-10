@@ -22,4 +22,5 @@ export default class AutofillField {
   selectInfo: any;
   maxLength: number;
   tagName: string;
+  [key: string]: any;
 }

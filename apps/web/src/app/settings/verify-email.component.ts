@@ -10,7 +10,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
   templateUrl: "verify-email.component.html",
 })
 export class VerifyEmailComponent {
-  actionPromise: Promise<any>;
+  actionPromise: Promise<unknown>;
 
   constructor(
     private apiService: ApiService,

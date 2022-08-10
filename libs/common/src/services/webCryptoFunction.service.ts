@@ -9,7 +9,7 @@ export class WebCryptoFunctionService implements CryptoFunctionService {
   private crypto: Crypto;
   private subtle: SubtleCrypto;
 
-  constructor(win: Window) {
+  constructor(win: Window | typeof global) {
     this.crypto = typeof win.crypto !== "undefined" ? win.crypto : null;
     this.subtle =
       !!this.crypto && typeof win.crypto.subtle !== "undefined" ? win.crypto.subtle : null;

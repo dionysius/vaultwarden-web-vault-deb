@@ -14,7 +14,10 @@ export default class WebRequestBackground {
     private cipherService: CipherService,
     private authService: AuthService
   ) {
-    this.webRequest = (window as any).chrome.webRequest;
+    const manifest = chrome.runtime.getManifest();
+    if (manifest.manifest_version === 2) {
+      this.webRequest = (window as any).chrome.webRequest;
+    }
     this.isFirefox = platformUtilsService.isFirefox();
   }
 

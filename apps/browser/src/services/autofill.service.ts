@@ -15,12 +15,25 @@ import AutofillPageDetails from "../models/autofillPageDetails";
 import AutofillScript from "../models/autofillScript";
 import { StateService } from "../services/abstractions/state.service";
 
-import { AutofillService as AutofillServiceInterface } from "./abstractions/autofill.service";
+import {
+  AutoFillOptions,
+  AutofillService as AutofillServiceInterface,
+  PageDetail,
+  FormData,
+} from "./abstractions/autofill.service";
 import {
   AutoFillConstants,
   CreditCardAutoFillConstants,
   IdentityAutoFillConstants,
 } from "./autofillConstants";
+
+export interface GenerateFillScriptOptions {
+  skipUsernameOnlyFill: boolean;
+  onlyEmptyFields: boolean;
+  onlyVisibleFields: boolean;
+  fillNewPassword: boolean;
+  cipher: CipherView;
+}
 
 export default class AutofillService implements AutofillServiceInterface {
   constructor(
@@ -31,10 +44,16 @@ export default class AutofillService implements AutofillServiceInterface {
     private logService: LogService
   ) {}
 
-  getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
-    const formData: any[] = [];
+  getFormsWithPasswordFields(pageDetails: AutofillPageDetails): FormData[] {
+    const formData: FormData[] = [];
 
-    const passwordFields = this.loadPasswordFields(pageDetails, true, true, false, false);
+    const passwordFields = AutofillService.loadPasswordFields(
+      pageDetails,
+      true,
+      true,
+      false,
+      false
+    );
     if (passwordFields.length === 0) {
       return formData;
     }
@@ -64,16 +83,17 @@ export default class AutofillService implements AutofillServiceInterface {
     return formData;
   }
 
-  async doAutoFill(options: any) {
-    let totpPromise: Promise<string> = null;
+  async doAutoFill(options: AutoFillOptions) {
     const tab = options.tab;
     if (!tab || !options.cipher || !options.pageDetails || !options.pageDetails.length) {
       throw new Error("Nothing to auto-fill.");
     }
 
+    let totpPromise: Promise<string> = null;
+
     const canAccessPremium = await this.stateService.getCanAccessPremium();
     let didAutofill = false;
-    options.pageDetails.forEach((pd: any) => {
+    options.pageDetails.forEach((pd) => {
       // make sure we're still on correct tab
       if (pd.tab.id !== tab.id || pd.tab.url !== tab.url) {
         return;
@@ -138,12 +158,7 @@ export default class AutofillService implements AutofillServiceInterface {
     }
   }
 
-  async doAutoFillActiveTab(pageDetails: any, fromCommand: boolean) {
-    const tab = await this.getActiveTab();
-    if (!tab || !tab.url) {
-      return;
-    }
-
+  async doAutoFillOnTab(pageDetails: PageDetail[], tab: chrome.tabs.Tab, fromCommand: boolean) {
     let cipher: CipherView;
     if (fromCommand) {
       cipher = await this.cipherService.getNextCipherForUrl(tab.url);
@@ -186,9 +201,18 @@ export default class AutofillService implements AutofillServiceInterface {
     return totpCode;
   }
 
+  async doAutoFillActiveTab(pageDetails: PageDetail[], fromCommand: boolean) {
+    const tab = await this.getActiveTab();
+    if (!tab || !tab.url) {
+      return;
+    }
+
+    return await this.doAutoFillOnTab(pageDetails, tab, fromCommand);
+  }
+
   // Helpers
 
-  private async getActiveTab(): Promise<any> {
+  private async getActiveTab(): Promise<chrome.tabs.Tab> {
     const tab = await BrowserApi.getTabFromCurrentWindow();
     if (!tab) {
       throw new Error("No tab found.");
@@ -197,7 +221,10 @@ export default class AutofillService implements AutofillServiceInterface {
     return tab;
   }
 
-  private generateFillScript(pageDetails: AutofillPageDetails, options: any): AutofillScript {
+  private generateFillScript(
+    pageDetails: AutofillPageDetails,
+    options: GenerateFillScriptOptions
+  ): AutofillScript {
     if (!pageDetails || !options.cipher) {
       return null;
     }
@@ -209,13 +236,13 @@ export default class AutofillService implements AutofillServiceInterface {
     if (fields && fields.length) {
       const fieldNames: string[] = [];
 
-      fields.forEach((f: any) => {
-        if (this.hasValue(f.name)) {
+      fields.forEach((f) => {
+        if (AutofillService.hasValue(f.name)) {
           fieldNames.push(f.name.toLowerCase());
         }
       });
 
-      pageDetails.fields.forEach((field: any) => {
+      pageDetails.fields.forEach((field) => {
         // eslint-disable-next-line
         if (filledFields.hasOwnProperty(field.opid)) {
           return;
@@ -228,10 +255,10 @@ export default class AutofillService implements AutofillServiceInterface {
         const matchingIndex = this.findMatchingFieldIndex(field, fieldNames);
         if (matchingIndex > -1) {
           const matchingField: FieldView = fields[matchingIndex];
-          let val;
+          let val: string;
           if (matchingField.type === FieldType.Linked) {
             // Assumption: Linked Field is not being used to autofill a boolean value
-            val = options.cipher.linkedFieldValue(matchingField.linkedId);
+            val = options.cipher.linkedFieldValue(matchingField.linkedId) as string;
           } else {
             val = matchingField.value;
             if (val == null && matchingField.type === FieldType.Boolean) {
@@ -240,7 +267,7 @@ export default class AutofillService implements AutofillServiceInterface {
           }
 
           filledFields[field.opid] = field;
-          this.fillByOpid(fillScript, field, val);
+          AutofillService.fillByOpid(fillScript, field, val);
         }
       });
     }
@@ -269,9 +296,9 @@ export default class AutofillService implements AutofillServiceInterface {
 
   private generateLoginFillScript(
     fillScript: AutofillScript,
-    pageDetails: any,
+    pageDetails: AutofillPageDetails,
     filledFields: { [id: string]: AutofillField },
-    options: any
+    options: GenerateFillScriptOptions
   ): AutofillScript {
     if (!options.cipher.login) {
       return null;
@@ -285,11 +312,11 @@ export default class AutofillService implements AutofillServiceInterface {
 
     if (!login.password || login.password === "") {
       // No password for this login. Maybe they just wanted to auto-fill some custom fields?
-      fillScript = this.setFillScriptForFocus(filledFields, fillScript);
+      fillScript = AutofillService.setFillScriptForFocus(filledFields, fillScript);
       return fillScript;
     }
 
-    let passwordFields = this.loadPasswordFields(
+    let passwordFields = AutofillService.loadPasswordFields(
       pageDetails,
       false,
       false,
@@ -298,7 +325,7 @@ export default class AutofillService implements AutofillServiceInterface {
     );
     if (!passwordFields.length && !options.onlyVisibleFields) {
       // not able to find any viewable password fields. maybe there are some "hidden" ones?
-      passwordFields = this.loadPasswordFields(
+      passwordFields = AutofillService.loadPasswordFields(
         pageDetails,
         true,
         true,
@@ -362,11 +389,11 @@ export default class AutofillService implements AutofillServiceInterface {
 
     if (!passwordFields.length && !options.skipUsernameOnlyFill) {
       // No password fields on this page. Let's try to just fuzzy fill the username.
-      pageDetails.fields.forEach((f: any) => {
+      pageDetails.fields.forEach((f) => {
         if (
           f.viewable &&
           (f.type === "text" || f.type === "email" || f.type === "tel") &&
-          this.fieldIsFuzzyMatch(f, AutoFillConstants.UsernameFieldNames)
+          AutofillService.fieldIsFuzzyMatch(f, AutoFillConstants.UsernameFieldNames)
         ) {
           usernames.push(f);
         }
@@ -380,7 +407,7 @@ export default class AutofillService implements AutofillServiceInterface {
       }
 
       filledFields[u.opid] = u;
-      this.fillByOpid(fillScript, u, login.username);
+      AutofillService.fillByOpid(fillScript, u, login.username);
     });
 
     passwords.forEach((p) => {
@@ -390,18 +417,18 @@ export default class AutofillService implements AutofillServiceInterface {
       }
 
       filledFields[p.opid] = p;
-      this.fillByOpid(fillScript, p, login.password);
+      AutofillService.fillByOpid(fillScript, p, login.password);
     });
 
-    fillScript = this.setFillScriptForFocus(filledFields, fillScript);
+    fillScript = AutofillService.setFillScriptForFocus(filledFields, fillScript);
     return fillScript;
   }
 
   private generateCardFillScript(
     fillScript: AutofillScript,
-    pageDetails: any,
+    pageDetails: AutofillPageDetails,
     filledFields: { [id: string]: AutofillField },
-    options: any
+    options: GenerateFillScriptOptions
   ): AutofillScript {
     if (!options.cipher.card) {
       return null;
@@ -409,8 +436,8 @@ export default class AutofillService implements AutofillServiceInterface {
 
     const fillFields: { [id: string]: AutofillField } = {};
 
-    pageDetails.fields.forEach((f: any) => {
-      if (this.forCustomFieldsOnly(f)) {
+    pageDetails.fields.forEach((f) => {
+      if (AutofillService.forCustomFieldsOnly(f)) {
         return;
       }
 
@@ -429,7 +456,7 @@ export default class AutofillService implements AutofillServiceInterface {
         // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
         if (
           !fillFields.cardholderName &&
-          this.isFieldMatch(
+          AutofillService.isFieldMatch(
             f[attr],
             CreditCardAutoFillConstants.CardHolderFieldNames,
             CreditCardAutoFillConstants.CardHolderFieldNameValues
@@ -439,7 +466,7 @@ export default class AutofillService implements AutofillServiceInterface {
           break;
         } else if (
           !fillFields.number &&
-          this.isFieldMatch(
+          AutofillService.isFieldMatch(
             f[attr],
             CreditCardAutoFillConstants.CardNumberFieldNames,
             CreditCardAutoFillConstants.CardNumberFieldNameValues
@@ -449,7 +476,7 @@ export default class AutofillService implements AutofillServiceInterface {
           break;
         } else if (
           !fillFields.exp &&
-          this.isFieldMatch(
+          AutofillService.isFieldMatch(
             f[attr],
             CreditCardAutoFillConstants.CardExpiryFieldNames,
             CreditCardAutoFillConstants.CardExpiryFieldNameValues
@@ -459,25 +486,25 @@ export default class AutofillService implements AutofillServiceInterface {
           break;
         } else if (
           !fillFields.expMonth &&
-          this.isFieldMatch(f[attr], CreditCardAutoFillConstants.ExpiryMonthFieldNames)
+          AutofillService.isFieldMatch(f[attr], CreditCardAutoFillConstants.ExpiryMonthFieldNames)
         ) {
           fillFields.expMonth = f;
           break;
         } else if (
           !fillFields.expYear &&
-          this.isFieldMatch(f[attr], CreditCardAutoFillConstants.ExpiryYearFieldNames)
+          AutofillService.isFieldMatch(f[attr], CreditCardAutoFillConstants.ExpiryYearFieldNames)
         ) {
           fillFields.expYear = f;
           break;
         } else if (
           !fillFields.code &&
-          this.isFieldMatch(f[attr], CreditCardAutoFillConstants.CVVFieldNames)
+          AutofillService.isFieldMatch(f[attr], CreditCardAutoFillConstants.CVVFieldNames)
         ) {
           fillFields.code = f;
           break;
         } else if (
           !fillFields.brand &&
-          this.isFieldMatch(f[attr], CreditCardAutoFillConstants.CardBrandFieldNames)
+          AutofillService.isFieldMatch(f[attr], CreditCardAutoFillConstants.CardBrandFieldNames)
         ) {
           fillFields.brand = f;
           break;
@@ -491,7 +518,7 @@ export default class AutofillService implements AutofillServiceInterface {
     this.makeScriptAction(fillScript, card, fillFields, filledFields, "code");
     this.makeScriptAction(fillScript, card, fillFields, filledFields, "brand");
 
-    if (fillFields.expMonth && this.hasValue(card.expMonth)) {
+    if (fillFields.expMonth && AutofillService.hasValue(card.expMonth)) {
       let expMonth: string = card.expMonth;
 
       if (fillFields.expMonth.selectInfo && fillFields.expMonth.selectInfo.options) {
@@ -526,10 +553,10 @@ export default class AutofillService implements AutofillServiceInterface {
       }
 
       filledFields[fillFields.expMonth.opid] = fillFields.expMonth;
-      this.fillByOpid(fillScript, fillFields.expMonth, expMonth);
+      AutofillService.fillByOpid(fillScript, fillFields.expMonth, expMonth);
     }
 
-    if (fillFields.expYear && this.hasValue(card.expYear)) {
+    if (fillFields.expYear && AutofillService.hasValue(card.expYear)) {
       let expYear: string = card.expYear;
       if (fillFields.expYear.selectInfo && fillFields.expYear.selectInfo.options) {
         for (let i = 0; i < fillFields.expYear.selectInfo.options.length; i++) {
@@ -572,10 +599,14 @@ export default class AutofillService implements AutofillServiceInterface {
       }
 
       filledFields[fillFields.expYear.opid] = fillFields.expYear;
-      this.fillByOpid(fillScript, fillFields.expYear, expYear);
+      AutofillService.fillByOpid(fillScript, fillFields.expYear, expYear);
     }
 
-    if (fillFields.exp && this.hasValue(card.expMonth) && this.hasValue(card.expYear)) {
+    if (
+      fillFields.exp &&
+      AutofillService.hasValue(card.expMonth) &&
+      AutofillService.hasValue(card.expYear)
+    ) {
       const fullMonth = ("0" + card.expMonth).slice(-2);
 
       let fullYear: string = card.expYear;
@@ -712,7 +743,7 @@ export default class AutofillService implements AutofillServiceInterface {
     return fillScript;
   }
 
-  private fieldAttrsContain(field: any, containsVal: string) {
+  private fieldAttrsContain(field: AutofillField, containsVal: string) {
     if (!field) {
       return false;
     }
@@ -734,9 +765,9 @@ export default class AutofillService implements AutofillServiceInterface {
 
   private generateIdentityFillScript(
     fillScript: AutofillScript,
-    pageDetails: any,
+    pageDetails: AutofillPageDetails,
     filledFields: { [id: string]: AutofillField },
-    options: any
+    options: GenerateFillScriptOptions
   ): AutofillScript {
     if (!options.cipher.identity) {
       return null;
@@ -744,8 +775,8 @@ export default class AutofillService implements AutofillServiceInterface {
 
     const fillFields: { [id: string]: AutofillField } = {};
 
-    pageDetails.fields.forEach((f: any) => {
-      if (this.forCustomFieldsOnly(f)) {
+    pageDetails.fields.forEach((f) => {
+      if (AutofillService.forCustomFieldsOnly(f)) {
         return;
       }
 
@@ -764,7 +795,7 @@ export default class AutofillService implements AutofillServiceInterface {
         // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
         if (
           !fillFields.name &&
-          this.isFieldMatch(
+          AutofillService.isFieldMatch(
             f[attr],
             IdentityAutoFillConstants.FullNameFieldNames,
             IdentityAutoFillConstants.FullNameFieldNameValues
@@ -774,37 +805,37 @@ export default class AutofillService implements AutofillServiceInterface {
           break;
         } else if (
           !fillFields.firstName &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.FirstnameFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.FirstnameFieldNames)
         ) {
           fillFields.firstName = f;
           break;
         } else if (
           !fillFields.middleName &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.MiddlenameFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.MiddlenameFieldNames)
         ) {
           fillFields.middleName = f;
           break;
         } else if (
           !fillFields.lastName &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.LastnameFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.LastnameFieldNames)
         ) {
           fillFields.lastName = f;
           break;
         } else if (
           !fillFields.title &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.TitleFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.TitleFieldNames)
         ) {
           fillFields.title = f;
           break;
         } else if (
           !fillFields.email &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.EmailFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.EmailFieldNames)
         ) {
           fillFields.email = f;
           break;
         } else if (
           !fillFields.address &&
-          this.isFieldMatch(
+          AutofillService.isFieldMatch(
             f[attr],
             IdentityAutoFillConstants.AddressFieldNames,
             IdentityAutoFillConstants.AddressFieldNameValues
@@ -814,61 +845,61 @@ export default class AutofillService implements AutofillServiceInterface {
           break;
         } else if (
           !fillFields.address1 &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.Address1FieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.Address1FieldNames)
         ) {
           fillFields.address1 = f;
           break;
         } else if (
           !fillFields.address2 &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.Address2FieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.Address2FieldNames)
         ) {
           fillFields.address2 = f;
           break;
         } else if (
           !fillFields.address3 &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.Address3FieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.Address3FieldNames)
         ) {
           fillFields.address3 = f;
           break;
         } else if (
           !fillFields.postalCode &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.PostalCodeFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.PostalCodeFieldNames)
         ) {
           fillFields.postalCode = f;
           break;
         } else if (
           !fillFields.city &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.CityFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.CityFieldNames)
         ) {
           fillFields.city = f;
           break;
         } else if (
           !fillFields.state &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.StateFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.StateFieldNames)
         ) {
           fillFields.state = f;
           break;
         } else if (
           !fillFields.country &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.CountryFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.CountryFieldNames)
         ) {
           fillFields.country = f;
           break;
         } else if (
           !fillFields.phone &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.PhoneFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.PhoneFieldNames)
         ) {
           fillFields.phone = f;
           break;
         } else if (
           !fillFields.username &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.UserNameFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.UserNameFieldNames)
         ) {
           fillFields.username = f;
           break;
         } else if (
           !fillFields.company &&
-          this.isFieldMatch(f[attr], IdentityAutoFillConstants.CompanyFieldNames)
+          AutofillService.isFieldMatch(f[attr], IdentityAutoFillConstants.CompanyFieldNames)
         ) {
           fillFields.company = f;
           break;
@@ -923,16 +954,16 @@ export default class AutofillService implements AutofillServiceInterface {
 
     if (fillFields.name && (identity.firstName || identity.lastName)) {
       let fullName = "";
-      if (this.hasValue(identity.firstName)) {
+      if (AutofillService.hasValue(identity.firstName)) {
         fullName = identity.firstName;
       }
-      if (this.hasValue(identity.middleName)) {
+      if (AutofillService.hasValue(identity.middleName)) {
         if (fullName !== "") {
           fullName += " ";
         }
         fullName += identity.middleName;
       }
-      if (this.hasValue(identity.lastName)) {
+      if (AutofillService.hasValue(identity.lastName)) {
         if (fullName !== "") {
           fullName += " ";
         }
@@ -942,18 +973,18 @@ export default class AutofillService implements AutofillServiceInterface {
       this.makeScriptActionWithValue(fillScript, fullName, fillFields.name, filledFields);
     }
 
-    if (fillFields.address && this.hasValue(identity.address1)) {
+    if (fillFields.address && AutofillService.hasValue(identity.address1)) {
       let address = "";
-      if (this.hasValue(identity.address1)) {
+      if (AutofillService.hasValue(identity.address1)) {
         address = identity.address1;
       }
-      if (this.hasValue(identity.address2)) {
+      if (AutofillService.hasValue(identity.address2)) {
         if (address !== "") {
           address += ", ";
         }
         address += identity.address2;
       }
-      if (this.hasValue(identity.address3)) {
+      if (AutofillService.hasValue(identity.address3)) {
         if (address !== "") {
           address += ", ";
         }
@@ -970,7 +1001,11 @@ export default class AutofillService implements AutofillServiceInterface {
     return excludedTypes.indexOf(type) > -1;
   }
 
-  private isFieldMatch(value: string, options: string[], containsOptions?: string[]): boolean {
+  private static isFieldMatch(
+    value: string,
+    options: string[],
+    containsOptions?: string[]
+  ): boolean {
     value = value
       .trim()
       .toLowerCase()
@@ -1011,12 +1046,15 @@ export default class AutofillService implements AutofillServiceInterface {
     filledFields: { [id: string]: AutofillField }
   ) {
     let doFill = false;
-    if (this.hasValue(dataValue) && field) {
+    if (AutofillService.hasValue(dataValue) && field) {
       if (field.type === "select-one" && field.selectInfo && field.selectInfo.options) {
         for (let i = 0; i < field.selectInfo.options.length; i++) {
           const option = field.selectInfo.options[i];
           for (let j = 0; j < option.length; j++) {
-            if (this.hasValue(option[j]) && option[j].toLowerCase() === dataValue.toLowerCase()) {
+            if (
+              AutofillService.hasValue(option[j]) &&
+              option[j].toLowerCase() === dataValue.toLowerCase()
+            ) {
               doFill = true;
               if (option.length > 1) {
                 dataValue = option[1];
@@ -1036,11 +1074,11 @@ export default class AutofillService implements AutofillServiceInterface {
 
     if (doFill) {
       filledFields[field.opid] = field;
-      this.fillByOpid(fillScript, field, dataValue);
+      AutofillService.fillByOpid(fillScript, field, dataValue);
     }
   }
 
-  private loadPasswordFields(
+  static loadPasswordFields(
     pageDetails: AutofillPageDetails,
     canBeHidden: boolean,
     canBeReadOnly: boolean,
@@ -1049,7 +1087,7 @@ export default class AutofillService implements AutofillServiceInterface {
   ) {
     const arr: AutofillField[] = [];
     pageDetails.fields.forEach((f) => {
-      if (this.forCustomFieldsOnly(f)) {
+      if (AutofillService.forCustomFieldsOnly(f)) {
         return;
       }
 
@@ -1111,7 +1149,7 @@ export default class AutofillService implements AutofillServiceInterface {
     let usernameField: AutofillField = null;
     for (let i = 0; i < pageDetails.fields.length; i++) {
       const f = pageDetails.fields[i];
-      if (this.forCustomFieldsOnly(f)) {
+      if (AutofillService.forCustomFieldsOnly(f)) {
         continue;
       }
 
@@ -1195,7 +1233,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
   private fieldPropertyIsMatch(field: any, property: string, name: string): boolean {
     let fieldVal = field[property] as string;
-    if (!this.hasValue(fieldVal)) {
+    if (!AutofillService.hasValue(fieldVal)) {
       return false;
     }
 
@@ -1227,33 +1265,45 @@ export default class AutofillService implements AutofillServiceInterface {
     return fieldVal.toLowerCase() === name;
   }
 
-  private fieldIsFuzzyMatch(field: AutofillField, names: string[]): boolean {
-    if (this.hasValue(field.htmlID) && this.fuzzyMatch(names, field.htmlID)) {
+  static fieldIsFuzzyMatch(field: AutofillField, names: string[]): boolean {
+    if (AutofillService.hasValue(field.htmlID) && this.fuzzyMatch(names, field.htmlID)) {
       return true;
     }
-    if (this.hasValue(field.htmlName) && this.fuzzyMatch(names, field.htmlName)) {
+    if (AutofillService.hasValue(field.htmlName) && this.fuzzyMatch(names, field.htmlName)) {
       return true;
     }
-    if (this.hasValue(field["label-tag"]) && this.fuzzyMatch(names, field["label-tag"])) {
+    if (
+      AutofillService.hasValue(field["label-tag"]) &&
+      this.fuzzyMatch(names, field["label-tag"])
+    ) {
       return true;
     }
-    if (this.hasValue(field.placeholder) && this.fuzzyMatch(names, field.placeholder)) {
+    if (AutofillService.hasValue(field.placeholder) && this.fuzzyMatch(names, field.placeholder)) {
       return true;
     }
-    if (this.hasValue(field["label-left"]) && this.fuzzyMatch(names, field["label-left"])) {
+    if (
+      AutofillService.hasValue(field["label-left"]) &&
+      this.fuzzyMatch(names, field["label-left"])
+    ) {
       return true;
     }
-    if (this.hasValue(field["label-top"]) && this.fuzzyMatch(names, field["label-top"])) {
+    if (
+      AutofillService.hasValue(field["label-top"]) &&
+      this.fuzzyMatch(names, field["label-top"])
+    ) {
       return true;
     }
-    if (this.hasValue(field["label-aria"]) && this.fuzzyMatch(names, field["label-aria"])) {
+    if (
+      AutofillService.hasValue(field["label-aria"]) &&
+      this.fuzzyMatch(names, field["label-aria"])
+    ) {
       return true;
     }
 
     return false;
   }
 
-  private fuzzyMatch(options: string[], value: string): boolean {
+  private static fuzzyMatch(options: string[], value: string): boolean {
     if (options == null || options.length === 0 || value == null || value === "") {
       return false;
     }
@@ -1272,11 +1322,11 @@ export default class AutofillService implements AutofillServiceInterface {
     return false;
   }
 
-  private hasValue(str: string): boolean {
+  static hasValue(str: string): boolean {
     return str && str !== "";
   }
 
-  private setFillScriptForFocus(
+  static setFillScriptForFocus(
     filledFields: { [id: string]: AutofillField },
     fillScript: AutofillScript
   ): AutofillScript {
@@ -1304,7 +1354,7 @@ export default class AutofillService implements AutofillServiceInterface {
     return fillScript;
   }
 
-  private fillByOpid(fillScript: AutofillScript, field: AutofillField, value: string): void {
+  static fillByOpid(fillScript: AutofillScript, field: AutofillField, value: string): void {
     if (field.maxLength && value && value.length > field.maxLength) {
       value = value.substr(0, value.length);
     }
@@ -1315,7 +1365,7 @@ export default class AutofillService implements AutofillServiceInterface {
     fillScript.script.push(["fill_by_opid", field.opid, value]);
   }
 
-  private forCustomFieldsOnly(field: AutofillField): boolean {
+  static forCustomFieldsOnly(field: AutofillField): boolean {
     return field.tagName === "span";
   }
 }
