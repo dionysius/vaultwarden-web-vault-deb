@@ -31,7 +31,8 @@ import { SystemService as SystemServiceAbstraction } from "@bitwarden/common/abs
 import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/abstractions/token.service";
 import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/abstractions/totp.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/abstractions/twoFactor.service";
-import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationApiServiceAbstraction } from "@bitwarden/common/abstractions/userVerification/userVerification-api.service.abstraction";
+import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { UsernameGenerationService as UsernameGenerationServiceAbstraction } from "@bitwarden/common/abstractions/usernameGeneration.service";
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarden/common/abstractions/vaultTimeout.service";
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
@@ -71,7 +72,8 @@ import { SystemService } from "@bitwarden/common/services/system.service";
 import { TokenService } from "@bitwarden/common/services/token.service";
 import { TotpService } from "@bitwarden/common/services/totp.service";
 import { TwoFactorService } from "@bitwarden/common/services/twoFactor.service";
-import { UserVerificationService } from "@bitwarden/common/services/userVerification.service";
+import { UserVerificationApiService } from "@bitwarden/common/services/userVerification/userVerification-api.service";
+import { UserVerificationService } from "@bitwarden/common/services/userVerification/userVerification.service";
 import { UsernameGenerationService } from "@bitwarden/common/services/usernameGeneration.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/services/webCryptoFunction.service";
 
@@ -152,6 +154,7 @@ export default class MainBackground {
   encryptService: EncryptService;
   folderApiService: FolderApiServiceAbstraction;
   policyApiService: PolicyApiServiceAbstraction;
+  userVerificationApiService: UserVerificationApiServiceAbstraction;
 
   // Passed to the popup for Safari to workaround issues with theming, downloading, etc.
   backgroundWindow = window;
@@ -422,10 +425,12 @@ export default class MainBackground {
     );
     this.popupUtilsService = new PopupUtilsService(isPrivateMode);
 
+    this.userVerificationApiService = new UserVerificationApiService(this.apiService);
+
     this.userVerificationService = new UserVerificationService(
       this.cryptoService,
       this.i18nService,
-      this.apiService
+      this.userVerificationApiService
     );
 
     const systemUtilsServiceReloadCallback = () => {

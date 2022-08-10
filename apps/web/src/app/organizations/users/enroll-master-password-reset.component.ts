@@ -8,7 +8,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/models/request/organizationUserResetPasswordEnrollmentRequest";
@@ -22,7 +22,7 @@ export class EnrollMasterPasswordReset {
   organization: Organization;
 
   verification: Verification;
-  formPromise: Promise<any>;
+  formPromise: Promise<void>;
 
   constructor(
     private userVerificationService: UserVerificationService,

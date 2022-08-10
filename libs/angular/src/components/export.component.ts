@@ -9,7 +9,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 
@@ -142,7 +142,7 @@ export class ExportComponent implements OnInit {
     return this.exportService.getFileName(prefix, extension);
   }
 
-  protected async collectEvent(): Promise<any> {
+  protected async collectEvent(): Promise<void> {
     await this.eventService.collect(EventType.User_ClientExportedVault);
   }
 

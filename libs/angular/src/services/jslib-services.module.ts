@@ -49,7 +49,8 @@ import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/abstrac
 import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/abstractions/token.service";
 import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/abstractions/totp.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/abstractions/twoFactor.service";
-import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationApiServiceAbstraction } from "@bitwarden/common/abstractions/userVerification/userVerification-api.service.abstraction";
+import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { UsernameGenerationService as UsernameGenerationServiceAbstraction } from "@bitwarden/common/abstractions/usernameGeneration.service";
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarden/common/abstractions/vaultTimeout.service";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
@@ -89,7 +90,8 @@ import { SyncService } from "@bitwarden/common/services/sync.service";
 import { TokenService } from "@bitwarden/common/services/token.service";
 import { TotpService } from "@bitwarden/common/services/totp.service";
 import { TwoFactorService } from "@bitwarden/common/services/twoFactor.service";
-import { UserVerificationService } from "@bitwarden/common/services/userVerification.service";
+import { UserVerificationApiService } from "@bitwarden/common/services/userVerification/userVerification-api.service";
+import { UserVerificationService } from "@bitwarden/common/services/userVerification/userVerification.service";
 import { UsernameGenerationService } from "@bitwarden/common/services/usernameGeneration.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/services/webCryptoFunction.service";
@@ -476,7 +478,11 @@ export const LOG_MAC_FAILURES = new InjectionToken<string>("LOG_MAC_FAILURES");
     {
       provide: UserVerificationServiceAbstraction,
       useClass: UserVerificationService,
-      deps: [CryptoServiceAbstraction, I18nServiceAbstraction, ApiServiceAbstraction],
+      deps: [
+        CryptoServiceAbstraction,
+        I18nServiceAbstraction,
+        UserVerificationApiServiceAbstraction,
+      ],
     },
     { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
     {
@@ -501,6 +507,11 @@ export const LOG_MAC_FAILURES = new InjectionToken<string>("LOG_MAC_FAILURES");
     {
       provide: FormValidationErrorsServiceAbstraction,
       useClass: FormValidationErrorsService,
+    },
+    {
+      provide: UserVerificationApiServiceAbstraction,
+      useClass: UserVerificationApiService,
+      deps: [ApiServiceAbstraction],
     },
   ],
 })

@@ -6,7 +6,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherView } from "@bitwarden/common/models/view/cipherView";
@@ -53,10 +53,10 @@ export class DeleteOrganizationComponent implements OnInit {
   deleteOrganizationRequestType: "InvalidFamiliesForEnterprise" | "RegularDelete" = "RegularDelete";
   organizationName: string;
   organizationContentSummary: OrganizationContentSummary = new OrganizationContentSummary();
-  @Output() onSuccess: EventEmitter<any> = new EventEmitter();
+  @Output() onSuccess: EventEmitter<unknown> = new EventEmitter();
 
   masterPassword: Verification;
-  formPromise: Promise<any>;
+  formPromise: Promise<unknown>;
 
   constructor(
     private apiService: ApiService,

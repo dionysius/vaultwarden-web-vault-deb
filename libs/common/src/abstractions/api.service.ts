@@ -1,7 +1,6 @@
 import { OrganizationApiKeyType } from "../enums/organizationApiKeyType";
 import { OrganizationConnectionType } from "../enums/organizationConnectionType";
 import { SetKeyConnectorKeyRequest } from "../models/request/account/setKeyConnectorKeyRequest";
-import { VerifyOTPRequest } from "../models/request/account/verifyOTPRequest";
 import { AttachmentRequest } from "../models/request/attachmentRequest";
 import { BitPayInvoiceRequest } from "../models/request/bitPayInvoiceRequest";
 import { CipherBulkDeleteRequest } from "../models/request/cipherBulkDeleteRequest";
@@ -228,8 +227,6 @@ export abstract class ApiService {
   postUserApiKey: (id: string, request: SecretVerificationRequest) => Promise<ApiKeyResponse>;
   postUserRotateApiKey: (id: string, request: SecretVerificationRequest) => Promise<ApiKeyResponse>;
   putUpdateTempPassword: (request: UpdateTempPasswordRequest) => Promise<any>;
-  postAccountRequestOTP: () => Promise<void>;
-  postAccountVerifyOTP: (request: VerifyOTPRequest) => Promise<void>;
   postConvertToKeyConnector: () => Promise<void>;
 
   getUserBillingHistory: () => Promise<BillingHistoryResponse>;

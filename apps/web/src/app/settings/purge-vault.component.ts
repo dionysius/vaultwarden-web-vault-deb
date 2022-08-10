@@ -5,7 +5,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { Verification } from "@bitwarden/common/types/verification";
 
 @Component({
@@ -16,7 +16,7 @@ export class PurgeVaultComponent {
   @Input() organizationId?: string = null;
 
   masterPassword: Verification;
-  formPromise: Promise<any>;
+  formPromise: Promise<unknown>;
 
   constructor(
     private apiService: ApiService,

@@ -1,11 +1,11 @@
-import { ApiService } from "../abstractions/api.service";
-import { CryptoService } from "../abstractions/crypto.service";
-import { I18nService } from "../abstractions/i18n.service";
-import { UserVerificationService as UserVerificationServiceAbstraction } from "../abstractions/userVerification.service";
-import { VerificationType } from "../enums/verificationType";
-import { VerifyOTPRequest } from "../models/request/account/verifyOTPRequest";
-import { SecretVerificationRequest } from "../models/request/secretVerificationRequest";
-import { Verification } from "../types/verification";
+import { CryptoService } from "../../abstractions/crypto.service";
+import { I18nService } from "../../abstractions/i18n.service";
+import { UserVerificationApiServiceAbstraction } from "../../abstractions/userVerification/userVerification-api.service.abstraction";
+import { UserVerificationService as UserVerificationServiceAbstraction } from "../../abstractions/userVerification/userVerification.service.abstraction";
+import { VerificationType } from "../../enums/verificationType";
+import { VerifyOTPRequest } from "../../models/request/account/verifyOTPRequest";
+import { SecretVerificationRequest } from "../../models/request/secretVerificationRequest";
+import { Verification } from "../../types/verification";
 
 /**
  * Used for general-purpose user verification throughout the app.
@@ -15,7 +15,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
   constructor(
     private cryptoService: CryptoService,
     private i18nService: I18nService,
-    private apiService: ApiService
+    private userVerificationApiService: UserVerificationApiServiceAbstraction
   ) {}
 
   /**
@@ -56,7 +56,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     if (verification.type === VerificationType.OTP) {
       const request = new VerifyOTPRequest(verification.secret);
       try {
-        await this.apiService.postAccountVerifyOTP(request);
+        await this.userVerificationApiService.postAccountVerifyOTP(request);
       } catch (e) {
         throw new Error(this.i18nService.t("invalidVerificationCode"));
       }
@@ -73,7 +73,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
   }
 
   async requestOTP() {
-    await this.apiService.postAccountRequestOTP();
+    await this.userVerificationApiService.postAccountRequestOTP();
   }
 
   private validateInput(verification: Verification) {

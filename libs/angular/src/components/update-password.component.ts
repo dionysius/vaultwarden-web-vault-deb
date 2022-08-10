@@ -10,7 +10,7 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { VerificationType } from "@bitwarden/common/enums/verificationType";
 import { EncString } from "@bitwarden/common/models/domain/encString";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
@@ -28,7 +28,7 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
   showPassword = false;
   currentMasterPassword: string;
 
-  onSuccessfulChangePassword: () => Promise<any>;
+  onSuccessfulChangePassword: () => Promise<void>;
 
   constructor(
     protected router: Router,

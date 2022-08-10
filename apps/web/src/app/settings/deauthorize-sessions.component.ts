@@ -5,7 +5,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { Verification } from "@bitwarden/common/types/verification";
 
 @Component({
@@ -14,7 +14,7 @@ import { Verification } from "@bitwarden/common/types/verification";
 })
 export class DeauthorizeSessionsComponent {
   masterPassword: Verification;
-  formPromise: Promise<any>;
+  formPromise: Promise<unknown>;
 
   constructor(
     private apiService: ApiService,

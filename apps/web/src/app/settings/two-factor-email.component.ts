@@ -5,11 +5,12 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
 import { TwoFactorEmailRequest } from "@bitwarden/common/models/request/twoFactorEmailRequest";
 import { UpdateTwoFactorEmailRequest } from "@bitwarden/common/models/request/updateTwoFactorEmailRequest";
 import { TwoFactorEmailResponse } from "@bitwarden/common/models/response/twoFactorEmailResponse";
+import { AuthResponse } from "@bitwarden/common/types/authResponse";
 
 import { TwoFactorBaseComponent } from "./two-factor-base.component";
 
@@ -22,8 +23,8 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
   email: string;
   token: string;
   sentEmail: string;
-  formPromise: Promise<any>;
-  emailPromise: Promise<any>;
+  formPromise: Promise<TwoFactorEmailResponse>;
+  emailPromise: Promise<unknown>;
 
   constructor(
     apiService: ApiService,
@@ -36,7 +37,7 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
     super(apiService, i18nService, platformUtilsService, logService, userVerificationService);
   }
 
-  auth(authResponse: any) {
+  auth(authResponse: AuthResponse<TwoFactorEmailResponse>) {
     super.auth(authResponse);
     return this.processResponse(authResponse.response);
   }

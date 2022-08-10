@@ -4,7 +4,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
 import { SecretVerificationRequest } from "@bitwarden/common/models/request/secretVerificationRequest";
 import { UpdateTwoFactorWebAuthnDeleteRequest } from "@bitwarden/common/models/request/updateTwoFactorWebAuthnDeleteRequest";
@@ -13,8 +13,17 @@ import {
   ChallengeResponse,
   TwoFactorWebAuthnResponse,
 } from "@bitwarden/common/models/response/twoFactorWebAuthnResponse";
+import { AuthResponse } from "@bitwarden/common/types/authResponse";
 
 import { TwoFactorBaseComponent } from "./two-factor-base.component";
+
+interface Key {
+  id: number;
+  name: string;
+  configured: boolean;
+  migrated?: boolean;
+  removePromise: Promise<TwoFactorWebAuthnResponse> | null;
+}
 
 @Component({
   selector: "app-two-factor-webauthn",
@@ -23,14 +32,14 @@ import { TwoFactorBaseComponent } from "./two-factor-base.component";
 export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
   type = TwoFactorProviderType.WebAuthn;
   name: string;
-  keys: any[];
+  keys: Key[];
   keyIdAvailable: number = null;
   keysConfiguredCount = 0;
   webAuthnError: boolean;
   webAuthnListening: boolean;
   webAuthnResponse: PublicKeyCredential;
   challengePromise: Promise<ChallengeResponse>;
-  formPromise: Promise<any>;
+  formPromise: Promise<TwoFactorWebAuthnResponse>;
 
   constructor(
     apiService: ApiService,
@@ -43,7 +52,7 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
     super(apiService, i18nService, platformUtilsService, logService, userVerificationService);
   }
 
-  auth(authResponse: any) {
+  auth(authResponse: AuthResponse<TwoFactorWebAuthnResponse>) {
     super.auth(authResponse);
     this.processResponse(authResponse.response);
   }
@@ -69,11 +78,11 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
     return super.disable(this.formPromise);
   }
 
-  async remove(key: any) {
+  async remove(key: Key) {
     if (this.keysConfiguredCount <= 1 || key.removePromise != null) {
       return;
     }
-    const name = key.name != null ? key.name : this.i18nService.t("webAuthnkeyX", key.id);
+    const name = key.name != null ? key.name : this.i18nService.t("webAuthnkeyX", key.id as any);
     const confirmed = await this.platformUtilsService.showDialog(
       this.i18nService.t("removeU2fConfirmation"),
       name,

@@ -8,7 +8,6 @@ import { OrganizationApiKeyType } from "../enums/organizationApiKeyType";
 import { OrganizationConnectionType } from "../enums/organizationConnectionType";
 import { Utils } from "../misc/utils";
 import { SetKeyConnectorKeyRequest } from "../models/request/account/setKeyConnectorKeyRequest";
-import { VerifyOTPRequest } from "../models/request/account/verifyOTPRequest";
 import { AttachmentRequest } from "../models/request/attachmentRequest";
 import { BitPayInvoiceRequest } from "../models/request/bitPayInvoiceRequest";
 import { CipherBulkDeleteRequest } from "../models/request/cipherBulkDeleteRequest";
@@ -455,14 +454,6 @@ export class ApiService implements ApiServiceAbstraction {
 
   putUpdateTempPassword(request: UpdateTempPasswordRequest): Promise<any> {
     return this.send("PUT", "/accounts/update-temp-password", request, true, false);
-  }
-
-  postAccountRequestOTP(): Promise<void> {
-    return this.send("POST", "/accounts/request-otp", null, true, false);
-  }
-
-  postAccountVerifyOTP(request: VerifyOTPRequest): Promise<void> {
-    return this.send("POST", "/accounts/verify-otp", request, true, false);
   }
 
   postConvertToKeyConnector(): Promise<void> {

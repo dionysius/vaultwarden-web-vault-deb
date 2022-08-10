@@ -10,7 +10,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification.service";
+import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { EventType } from "@bitwarden/common/enums/eventType";
 
 import { ExportComponent } from "../../../tools/import-export/export.component";
@@ -66,7 +66,7 @@ export class OrganizationExportComponent extends ExportComponent {
     return super.getFileName("org");
   }
 
-  async collectEvent(): Promise<any> {
+  async collectEvent(): Promise<void> {
     await this.eventService.collect(
       EventType.Organization_ClientExportedVault,
       null,
