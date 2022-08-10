@@ -287,7 +287,9 @@ jobs:
           artifacts: bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
 
       - name: Setup NPM
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+        run: |
+          echo 'registry="https://registry.npmjs.org/"' > ./.npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ./.npmrc
         env:
           NPM_TOKEN: ${{ steps.retrieve-secrets.outputs.cli-npm-api-key }}
 
@@ -296,5 +298,5 @@ jobs:
 
       - name: Publish NPM
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
-        run: npm publish --access public
+        run: npm publish --access public --regsitry=https://registry.npmjs.org/  --userconfig=./.npmrc
 
