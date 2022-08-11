@@ -12,6 +12,7 @@ import { I18nPipe } from "@bitwarden/angular/pipes/i18n.pipe";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService as BaseStateService } from "@bitwarden/common/abstractions/state.service";
 import { PlanType } from "@bitwarden/common/enums/planType";
@@ -75,6 +76,10 @@ describe("TrialInitiationComponent", () => {
         { provide: LogService, useClass: Substitute.for<LogService>() },
         { provide: I18nService, useClass: Substitute.for<I18nService>() },
         { provide: TitleCasePipe, useClass: Substitute.for<TitleCasePipe>() },
+        {
+          provide: PolicyApiServiceAbstraction,
+          useClass: Substitute.for<PolicyApiServiceAbstraction>(),
+        },
         {
           provide: VerticalStepperComponent,
           useClass: VerticalStepperStubComponent,

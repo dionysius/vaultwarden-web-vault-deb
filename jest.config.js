@@ -12,6 +12,7 @@ module.exports = {
   projects: [
     "<rootDir>/apps/browser/jest.config.js",
     "<rootDir>/apps/cli/jest.config.js",
+    "<rootDir>/apps/web/jest.config.js",
 
     "<rootDir>/libs/angular/jest.config.js",
     "<rootDir>/libs/common/jest.config.js",
@@ -19,4 +20,9 @@ module.exports = {
     "<rootDir>/libs/electron/jest.config.js",
     "<rootDir>/libs/node/jest.config.js",
   ],
+
+  // Workaround for a memory leak that crashes tests in CI:
+  // https://github.com/facebook/jest/issues/9430#issuecomment-1149882002
+  // Also anecdotally improves performance when run locally
+  maxWorkers: 3,
 };

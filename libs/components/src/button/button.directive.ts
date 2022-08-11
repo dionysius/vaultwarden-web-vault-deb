@@ -61,11 +61,11 @@ export class ButtonDirective {
       "focus:tw-z-10",
     ]
       .concat(this.block ? ["tw-w-full", "tw-block"] : ["tw-inline-block"])
-      .concat(buttonStyles[this.buttonType] ?? []);
+      .concat(buttonStyles[this.buttonType ?? "secondary"]);
   }
 
   @Input()
-  buttonType: ButtonTypes = "secondary";
+  buttonType: ButtonTypes = null;
 
   @Input()
   block = false;

@@ -1,6 +1,6 @@
 import { webcrypto } from "crypto";
 
-import { toEqualBuffer } from "./matchers/toEqualBuffer";
+import { toEqualBuffer } from "./spec/matchers/toEqualBuffer";
 
 Object.defineProperty(window, "crypto", {
   value: webcrypto,

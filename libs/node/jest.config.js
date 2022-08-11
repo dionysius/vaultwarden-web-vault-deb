@@ -2,13 +2,12 @@ const { pathsToModuleNameMapper } = require("ts-jest");
 
 const { compilerOptions } = require("../shared/tsconfig.libs");
 
+const sharedConfig = require("../shared/jest.config.base");
+
 module.exports = {
+  ...sharedConfig,
   preset: "ts-jest",
-  testMatch: ["**/+(*.)+(spec).+(ts)"],
-  setupFilesAfterEnv: ["<rootDir>/spec/test.setup.ts"],
-  collectCoverage: true,
-  coverageReporters: ["html", "lcov"],
-  coverageDirectory: "coverage",
+  setupFilesAfterEnv: ["<rootDir>/test.setup.ts"],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions?.paths || {}, {
     prefix: "<rootDir>/",
   }),
