@@ -6,6 +6,7 @@ import * as koaBodyParser from "koa-bodyparser";
 import * as koaJson from "koa-json";
 
 import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
+import { Utils } from "@bitwarden/common/misc/utils";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { FileResponse } from "@bitwarden/node/cli/models/response/fileResponse";
 
@@ -167,7 +168,13 @@ export class ServeCommand {
       .use(async (ctx, next) => {
         if (protectOrigin && ctx.headers.origin != undefined) {
           ctx.status = 403;
-          this.main.logService.warning(`Blocking request from ${ctx.headers.origin}`);
+          this.main.logService.warning(
+            `Blocking request from "${
+              Utils.isNullOrEmpty(ctx.headers.origin)
+                ? "(Origin header value missing)"
+                : ctx.headers.origin
+            }"`
+          );
           return;
         }
         await next();
