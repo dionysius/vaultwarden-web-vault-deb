@@ -1088,7 +1088,7 @@
     "message": "Account deleted"
   },
   "accountDeletedDesc": {
-    "message": "Your Bitwarden account and vault data were permanently deleted."
+    "message": "Your account has been closed and all associated data has been deleted."
   },
   "myAccount": {
     "message": "My account"
@@ -5219,6 +5219,9 @@
         "example": "My Email"
       }
     }
+  },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
   },
   "scim": {
     "message": "SCIM Provisioning",

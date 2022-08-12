@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "message": "$APP_NAME$ вэб-сховішча",
+    "message": "Вэб-сховішча $APP_NAME$",
     "description": "The title of the website in the browser window.",
     "placeholders": {
       "app_name": {
@@ -98,7 +98,7 @@
     "message": "Красавік"
   },
   "may": {
-    "message": "Май"
+    "message": "Травень"
   },
   "june": {
     "message": "Чэрвень"
@@ -134,7 +134,7 @@
     "message": "Пані"
   },
   "dr": {
-    "message": "Док."
+    "message": "Доктар"
   },
   "expirationMonth": {
     "message": "Месяц заканчэння"
@@ -143,7 +143,7 @@
     "message": "Год заканчэння"
   },
   "authenticatorKeyTotp": {
-    "message": "Ключ праверкі сапраўднасці (TOTP)"
+    "message": "Ключ аўтэнтыфікацыі (TOTP)"
   },
   "folder": {
     "message": "Папка"
@@ -164,10 +164,10 @@
     "message": "Схавана"
   },
   "cfTypeBoolean": {
-    "message": "Лагічнае"
+    "message": "Булева"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Звязана",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Імя дамена",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -309,13 +309,13 @@
     "message": "Logins"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "Карткі"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "Пасведчанні"
   },
   "typeSecureNotePlural": {
-    "message": "Secure Notes"
+    "message": "Бяспечныя нататкі"
   },
   "folders": {
     "message": "Папкі"
@@ -333,16 +333,16 @@
     "message": "Прозвішча"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Поўнае імя"
   },
   "address1": {
     "message": "Радок адрасу 1"
   },
   "address2": {
-    "message": "Радок адрасу 2"
+    "message": "Адрас 2"
   },
   "address3": {
-    "message": "Радок адрасу 3"
+    "message": "Адрас 3"
   },
   "cityTown": {
     "message": "Горад / Пасёлак"
@@ -385,7 +385,7 @@
     "message": "Абагуліць"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Перамясціць у арганізацыю"
   },
   "valueCopied": {
     "message": "$VALUE$ скапіяваны(-а)",
@@ -422,25 +422,25 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Я"
   },
   "myVault": {
     "message": "Маё сховішча"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Усе сховішчы"
   },
   "vault": {
     "message": "Сховішча"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "Сховішчы"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "Элементы сховішча"
   },
   "moveSelectedToOrg": {
-    "message": "Move Selected to Organization"
+    "message": "Перамясціць выбранае ў арганізацыю"
   },
   "deleteSelected": {
     "message": "Выдаліць выбраныя"
@@ -452,7 +452,7 @@
     "message": "Выбраць усё"
   },
   "unselectAll": {
-    "message": "Адмяніць выбар"
+    "message": "Зняць выбар з усіх"
   },
   "launch": {
     "message": "Запусціць"
@@ -488,7 +488,7 @@
     "message": "Элемент адрэдагаваны"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ перамешчана ў $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -501,7 +501,7 @@
     }
   },
   "movedItemsToOrg": {
-    "message": "Selected items moved to $ORGNAME$",
+    "message": "Выбраныя элементы перамешчаны ў $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -519,13 +519,13 @@
     "message": "Выдаліць далучэнне"
   },
   "deleteItemConfirmation": {
-    "message": "Вы ўпэўнены, што хочаце выдаліць гэты элемент?"
+    "message": "Вы ўпэўнены, што хочаце адправіць гэты элемент у сметніцу?"
   },
   "deletedItem": {
-    "message": "Выдалены элемент"
+    "message": "Элемент адпраўлены ў сметніцу"
   },
   "deletedItems": {
-    "message": "Выдаленыя элементы"
+    "message": "Элементы адпраўлены ў сметніцу"
   },
   "movedItems": {
     "message": "Перамешчаныя элементы"
@@ -573,7 +573,7 @@
     "message": "Стварыць уліковы запіс"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Пачаць выпрабавальны перыяд"
   },
   "logIn": {
     "message": "Увайсці"
@@ -582,13 +582,13 @@
     "message": "Адправіць"
   },
   "emailAddressDesc": {
-    "message": "You'll use your email address to log in."
+    "message": "Адрас электроннай пошты будзе выкарыстоўвацца для ўваходу."
   },
   "yourName": {
     "message": "Ваша імя"
   },
   "yourNameDesc": {
-    "message": "What should we call you?"
+    "message": "Як да вас можна звяртацца?"
   },
   "masterPass": {
     "message": "Асноўны пароль"
@@ -597,7 +597,7 @@
     "message": "Асноўны пароль — ключ да вашага бяспечнага сховішча. Ён вельмі важны, таму не забывайце яго. Аднавіць асноўны пароль немагчыма."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Асноўныя паролі немагчыма будзе аднавіць, калі вы іх забудзеце!"
   },
   "masterPassHintDesc": {
     "message": "Падказка да асноўнага пароля можа дапамагчы вам яго ўспомніць."
@@ -630,13 +630,13 @@
     "message": "Памылковы адрас электроннай пошты."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Патрабуецца асноўны пароль."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Неабходна паўторна ўвесці асноўны пароль."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Асноўны пароль павінен змяшчаць прынамсі 8 сімвалаў."
   },
   "masterPassDoesntMatch": {
     "message": "Асноўныя паролі не супадаюць."
@@ -645,7 +645,7 @@
     "message": "Ваш уліковы запіс створаны! Вы можаце ўвайсці."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "Уліковы запіс паспяхова створаны."
   },
   "masterPassSent": {
     "message": "Мы адправілі вам на электронную пошту падказку для асноўнага пароля."
@@ -724,7 +724,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Адпраўлены ліст для пацвярджэння $EMAIL$.",
+    "message": "Ліст з пацвярджэннем адпраўлены на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -736,16 +736,16 @@
     "message": "Запомніць мяне"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Адправіць код пацвярджэння зноў"
+    "message": "Адправіць код пацвярджэння яшчэ раз"
   },
   "useAnotherTwoStepMethod": {
     "message": "Выкарыстоўваць іншы метад двухэтапнага ўваходу"
   },
   "insertYubiKey": {
-    "message": "Устаўце ваш YubiKey ў порт USB вашага камп'ютара, затым націсніце на кнопку."
+    "message": "Устаўце свой YubiKey ў порт USB камп'ютара, а потым націсніце на кнопку."
   },
   "insertU2f": {
-    "message": "Устаўце ваш ключ бяспекі ў порт USB вашага камп'ютара. Калі на ім ёсць кнопка, націсніце на яе."
+    "message": "Устаўце ваш ключ бяспекі ў порт USB камп'ютара. Калі на ім ёсць кнопка, націсніце на яе."
   },
   "loginUnavailable": {
     "message": "Уваход недаступны"
@@ -754,7 +754,7 @@
     "message": "У гэтага ўліковага запісу ўключаны двухэтапны ўваход, аднак ні адзін з наладжаных варыянтаў не падтрымліваецца гэтым вэб-браўзерам."
   },
   "noTwoStepProviders2": {
-    "message": "Выкарыстоўвайце актуальын вэб-браўзар (напрыклад, Chrome) і/або дадайце дадатковыя варыянты праверкі сапраўднасці, якія падтрымліваюцца ў вэб-браўзерах (напрыклад, праграма для праверкі сапраўднасці)."
+    "message": "Выкарыстоўвайце актуальны вэб-браўзер (напрыклад, Chrome) і/або дадайце іншых правайдараў, якія маюць лепшую падтрымку разнастайных вэб-браўзераў (напрыклад, праграма аўтэнтыфікацыі)."
   },
   "twoStepOptions": {
     "message": "Параметры двухэтапнага ўваходу"
@@ -796,10 +796,10 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Выкарыстоўвайце любы ключ бяспекі WebAuthn, каб атрымаць доступ да вашага ўліковага запісу."
   },
   "webAuthnMigrated": {
-    "message": "(Migrated from FIDO)"
+    "message": "(Перанесена з FIDO)"
   },
   "emailTitle": {
     "message": "Электронная пошта"
@@ -5219,6 +5219,9 @@
         "example": "My Email"
       }
     }
+  },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
   },
   "scim": {
     "message": "SCIM Provisioning",

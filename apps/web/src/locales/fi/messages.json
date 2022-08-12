@@ -5220,6 +5220,9 @@
       }
     }
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium-tilaus vaaditaan"
+  },
   "scim": {
     "message": "SCIM-provisiointi",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."

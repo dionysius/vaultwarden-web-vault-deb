@@ -5220,6 +5220,9 @@
       }
     }
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
+  },
   "scim": {
     "message": "SCIM Provisioning",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
@@ -5308,6 +5311,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Number of users"
+    "message": "Nombro de uzantoj"
   }
 }

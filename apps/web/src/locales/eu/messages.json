@@ -645,7 +645,7 @@
     "message": "Zure kontua egina dago. Orain saioa has dezakezu."
   },
   "trialAccountCreated": {
-    "message": "Arrakastaz sortutako kontua."
+    "message": "Kontua sortu da."
   },
   "masterPassSent": {
     "message": "Mezu elektroniko bat bidali dizugu zure pasahitz nagusiaren pistarekin."
@@ -861,7 +861,7 @@
     }
   },
   "verificationCodeTotp": {
-    "message": "Egiaztatze kodea (TOTP)"
+    "message": "Egiaztatze-kodea (TOTP)"
   },
   "copyVerificationCode": {
     "message": "Kopiatu egiaztatze-kodea"
@@ -5219,6 +5219,9 @@
         "example": "My Email"
       }
     }
+  },
+  "premiumSubcriptionRequired": {
+    "message": "Premium harpidetza beharrezkoa da"
   },
   "scim": {
     "message": "SCIM hornitzailea",

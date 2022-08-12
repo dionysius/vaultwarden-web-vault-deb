@@ -177,7 +177,7 @@
     "message": "未分派"
   },
   "noneFolder": {
-    "message": "默认文件夹",
+    "message": "无文件夹",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -1088,7 +1088,7 @@
     "message": "账户已删除"
   },
   "accountDeletedDesc": {
-    "message": "您的 Bitwarden 账户和密码库数据已被永久删除。"
+    "message": "您的账户已被关闭，所有相关数据也已被删除。"
   },
   "myAccount": {
     "message": "我的账户"
@@ -5219,6 +5219,9 @@
         "example": "My Email"
       }
     }
+  },
+  "premiumSubcriptionRequired": {
+    "message": "需要高级版订阅"
   },
   "scim": {
     "message": "SCIM 配置",

@@ -5220,6 +5220,9 @@
       }
     }
   },
+  "premiumSubcriptionRequired": {
+    "message": "Este necesar un abonament Premium"
+  },
   "scim": {
     "message": "Aprovizionarea SCIM",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."

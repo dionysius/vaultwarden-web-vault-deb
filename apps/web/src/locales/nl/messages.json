@@ -5220,6 +5220,9 @@
       }
     }
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium-abonnement vereist"
+  },
   "scim": {
     "message": "SCIM-provisioning",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."

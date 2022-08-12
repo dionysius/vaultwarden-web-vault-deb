@@ -5220,6 +5220,9 @@
       }
     }
   },
+  "premiumSubcriptionRequired": {
+    "message": "プレミアム版が必要です"
+  },
   "scim": {
     "message": "SCIM プロビジョニング",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."

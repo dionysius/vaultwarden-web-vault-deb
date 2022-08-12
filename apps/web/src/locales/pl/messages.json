@@ -1088,7 +1088,7 @@
     "message": "Konto zostało usunięte"
   },
   "accountDeletedDesc": {
-    "message": "Konto zostało zamknięte i wszystkie powiązane z nim dane zostały usunięte."
+    "message": "Twoje konto zostało zamknięte i wszystkie powiązane z nim dane zostały skasowane."
   },
   "myAccount": {
     "message": "Moje konto"
@@ -5219,6 +5219,9 @@
         "example": "My Email"
       }
     }
+  },
+  "premiumSubcriptionRequired": {
+    "message": "Wymagana jest subskrypcja Premium"
   },
   "scim": {
     "message": "Aprowizacja SCIM",

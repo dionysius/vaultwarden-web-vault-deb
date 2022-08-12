@@ -5220,6 +5220,9 @@
       }
     }
   },
+  "premiumSubcriptionRequired": {
+    "message": "Se requiere una Suscripción Premium"
+  },
   "scim": {
     "message": "Aprovisionamiento de SCIM",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."

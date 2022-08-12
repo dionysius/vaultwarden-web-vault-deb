@@ -1088,7 +1088,7 @@
     "message": "已刪除帳戶"
   },
   "accountDeletedDesc": {
-    "message": "您的 Bitwarden 帳戶和密碼庫資料已被永久刪除。"
+    "message": "您的帳戶已經關閉，所有關聯的資料也已經被刪除。"
   },
   "myAccount": {
     "message": "我的帳戶"
@@ -5219,6 +5219,9 @@
         "example": "My Email"
       }
     }
+  },
+  "premiumSubcriptionRequired": {
+    "message": "需要進階版訂閲"
   },
   "scim": {
     "message": "SCIM 佈建",

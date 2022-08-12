@@ -164,42 +164,42 @@
     "message": "Skriveno"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Logička varijabla"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Povezano sa",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Uklonite"
   },
   "unassigned": {
-    "message": "Unassigned"
+    "message": "Nedodijeljeno"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Nema foldera",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Dodajte folder"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Uredite folder"
   },
   "baseDomain": {
-    "message": "Base domain",
+    "message": "Osnovni domen",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Naziv domena",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
-    "message": "Host",
+    "message": "Domaćin",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Tačno"
   },
   "startsWith": {
     "message": "Starts with"
@@ -2185,7 +2185,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Thanks for signing up for Bitwarden for $PLAN$!",
+    "message": "Hvala što ste se prijavili za Bitwarden za $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -5220,6 +5220,9 @@
       }
     }
   },
+  "premiumSubcriptionRequired": {
+    "message": "Potrebna je Premijum pretplata"
+  },
   "scim": {
     "message": "SCIM Provisioning",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
@@ -5308,6 +5311,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Number of users"
+    "message": "Broj korisnika"
   }
 }

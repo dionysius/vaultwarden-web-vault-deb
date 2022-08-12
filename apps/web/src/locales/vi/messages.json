@@ -167,7 +167,7 @@
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Đã liên kết",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Tên miền",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -306,16 +306,16 @@
     "message": "Ghi chú bảo mật"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "Đăng nhập"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "Thẻ"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "Danh tính"
   },
   "typeSecureNotePlural": {
-    "message": "Secure Notes"
+    "message": "Ghi chú bảo mật"
   },
   "folders": {
     "message": "Thư mục"
@@ -422,7 +422,7 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Tôi"
   },
   "myVault": {
     "message": "Kho của tôi"
@@ -1704,7 +1704,7 @@
     "message": "Your account's credit can be used to make purchases. Any available credit will be automatically applied towards invoices generated for this account."
   },
   "goPremium": {
-    "message": "Go Premium",
+    "message": "Nâng cấp tài khoản",
     "description": "Another way of saying \"Get a premium membership\""
   },
   "premiumUpdated": {
@@ -2239,13 +2239,13 @@
     "message": "Default Collection"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Nhận trợ giúp"
   },
   "getApps": {
-    "message": "Get the Apps"
+    "message": "Tải ứng dụng"
   },
   "loggedInAs": {
-    "message": "Logged in as"
+    "message": "Đã đăng nhập là"
   },
   "eventLogs": {
     "message": "Event Logs"
@@ -5090,7 +5090,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountSettings": {
-    "message": "Account Settings"
+    "message": "Cài đặt tài khoản"
   },
   "generator": {
     "message": "Generator"
@@ -5220,6 +5220,9 @@
       }
     }
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
+  },
   "scim": {
     "message": "SCIM Provisioning",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
@@ -5308,6 +5311,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Number of users"
+    "message": "Số lượng người dùng"
   }
 }
