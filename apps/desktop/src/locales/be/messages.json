@@ -15,7 +15,7 @@
     "message": "Тыпы"
   },
   "typeLogin": {
-    "message": "Уліковыя даныя"
+    "message": "Уваход"
   },
   "typeCard": {
     "message": "Картка"
@@ -45,10 +45,10 @@
     "message": "Абагуліць"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Перамясціць у арганізацыю"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ перамешчаны ў $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Выберыце арганізацыю, у якую вы хочаце перамясціць гэты элемент. Пры перамяшчэнні ў арганізацыю ўсе правы ўласнасці на дадзены элемент пяройдуць да гэтай арганізацыі. Вы больш не будзеце адзіным уласнікам гэтага элемента пасля яго перамяшчэння."
   },
   "attachments": {
     "message": "Далучэнні"
@@ -101,7 +101,7 @@
     "message": "Рэдагаванне элемента"
   },
   "emailAddress": {
-    "message": "Адрас эл. пошты"
+    "message": "Адрас электроннай пошты"
   },
   "verificationCodeTotp": {
     "message": "Код праверкі (TOTP)"
@@ -199,7 +199,7 @@
     "message": "Красавік"
   },
   "may": {
-    "message": "Май"
+    "message": "Травень"
   },
   "june": {
     "message": "Чэрвень"
@@ -239,7 +239,7 @@
     "message": "Пані"
   },
   "dr": {
-    "message": "Док."
+    "message": "Доктар"
   },
   "expirationMonth": {
     "message": "Месяц заканчэння"
@@ -269,16 +269,16 @@
     "message": "Прозвішча"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Поўнае імя"
   },
   "address1": {
-    "message": "Радок адрасу 1"
+    "message": "Адрас 1"
   },
   "address2": {
-    "message": "Радок адрасу 2"
+    "message": "Адрас 2"
   },
   "address3": {
-    "message": "Радок адрасу 3"
+    "message": "Адрас 3"
   },
   "cityTown": {
     "message": "Горад / Пасёлак"
@@ -308,7 +308,7 @@
     "message": "Рэдагаваць"
   },
   "authenticatorKeyTotp": {
-    "message": "Ключ праверкі сапраўднасці (TOTP)"
+    "message": "Ключ аўтэнтыфікацыі (TOTP)"
   },
   "folder": {
     "message": "Папка"
@@ -332,18 +332,18 @@
     "message": "Лагічнае"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Звязана",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Звязанае значэнне",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Выдаліць"
   },
   "nameRequired": {
-    "message": "Патрэбна назва."
+    "message": "Патрабуецца назва."
   },
   "addedItem": {
     "message": "Элемент дададзены"
@@ -364,16 +364,16 @@
     "message": "Вы ўпэўнены, што хочаце выдаліць гэты элемент?"
   },
   "deletedItem": {
-    "message": "Выдалены элемент"
+    "message": "Элемент адпраўлены ў сметніцу"
   },
   "overwritePasswordConfirmation": {
     "message": "Вы ўпэўнены, што хочаце перазапісаць бягучы пароль?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Перазапісаць імя карыстальніка"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Вы ўпэўнены, што хочаце перазапісаць бягучае імя карыстальніка?"
   },
   "noneFolder": {
     "message": "Без папкі",
@@ -386,7 +386,7 @@
     "message": "Рэдагаваць папку"
   },
   "regeneratePassword": {
-    "message": "Стварыць новы пароль"
+    "message": "Згенерыраваць новы пароль"
   },
   "copyPassword": {
     "message": "Капіяваць пароль"
@@ -395,22 +395,22 @@
     "message": "Капіяваць URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Капіяваць код праверкі (TOTP)"
   },
   "length": {
     "message": "Даўжыня"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Вялікія літары (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Маленькія літары (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Лічбы (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Спецыяльныя сімвалы (!@#$%^&*)"
   },
   "numWords": {
     "message": "Колькасць слоў"
@@ -429,10 +429,10 @@
     "message": "Закрыць"
   },
   "minNumbers": {
-    "message": "Мін. колькасць лічбаў"
+    "message": "Мінімум лічбаў"
   },
   "minSpecial": {
-    "message": "Мін. колькасць сімвалаў",
+    "message": "Мінімум сімвалаў",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -533,13 +533,13 @@
     "message": "Памылковы адрас электроннай пошты."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Патрабуецца асноўны пароль."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Неабходна паўторна ўвесці асноўны пароль."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Асноўны пароль павінен быць даўжынёй не менш за 8 сімвалаў."
   },
   "masterPassDoesntMatch": {
     "message": "Асноўныя паролі не супадаюць."
@@ -560,25 +560,25 @@
     "message": "Няма элементаў для паказу."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Адправіць код праверкі на вашу электронную пошту"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Адправіць код"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Код адпраўлены"
   },
   "verificationCode": {
     "message": "Код праверкі"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Пацвердзіце сваю асобу, каб працягнуць."
   },
   "verificationCodeRequired": {
     "message": "Патрабуецца код праверкі."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Памылковы код праверкі"
   },
   "continue": {
     "message": "Працягнуць"
@@ -650,7 +650,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Выкарыстоўвайце любы ключ бяспекі WebAuthn для доступу да вашага ўліковага запісу."
   },
   "emailTitle": {
     "message": "Электронная пошта"
@@ -752,16 +752,16 @@
     "message": "Загрузка..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Заблакіраваць сховішча"
   },
   "passwordGenerator": {
     "message": "Генератар пароляў"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Звязацца з намі"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Атрымаць даведку"
   },
   "fileBugReport": {
     "message": "Паведаміць аб памылцы"
@@ -898,7 +898,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Паказваць значкі вэб-сайтаў"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -910,10 +910,10 @@
     "message": "Пры згортванні акна, будзе паказвацца значок у вообласці апавяшчэнняў."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Згарнуць у панэль меню"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Пры згортванні акна, паказваць значок у панэлі меню."
   },
   "enableCloseToTray": {
     "message": "Закрываць у вобласць апавяшчэнняў"
@@ -922,10 +922,10 @@
     "message": "Пры закрыцці акна, будзе паказвацца значок у вообласці апавяшчэнняў."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Закрыць у панэлі меню"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Пры закрыцці акна, паказваць значок у панэлі меню."
   },
   "enableTray": {
     "message": "Уключыць значок у вобласці апавяшчэнняў"
@@ -940,28 +940,28 @@
     "message": "Пры першым запуску праграмы, будзе паказвацца значок у вобласці апавяшчэнняў."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Запускаць у панэлі меню"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Пры першым запуску праграмы паказваць толькі значок у панэлі меню."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Запускаць аўтаматычна пры ўваходзе"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden desktop application automatically on login."
+    "message": "Запускаць праграму Bitwarden для камп'ютара аўтаматычна пры ўваходзе ў сістэму."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Заўсёды паказваць на панэлі Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Паказваць значок Bitwarden на панэлі Dock нават пры згортванні ў панэль меню."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Пацвердзіць адключэнне ў вобласці апавяшчэнняў"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Адключэнне гэтай налады таксама адключыць усе іншыя налады, якія звязаны з вобласцю апавяшчэнняў."
   },
   "language": {
     "message": "Мова"
@@ -1213,7 +1213,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Імя дамена",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1277,32 +1277,32 @@
     "message": "Фармат файла"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "URL-адрас hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Загрузіць cookie спецыяльных магчымасцяў"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Зарэгістравацца ў якасці карыстальніка са спецыяльнымі магчымасцямі на",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Скапіюйце і ўстаўце адпраўленую спасылку на вашу электронную пошту"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Увядзіце URL-адрас для загрузкі cookie спецыяльных магчымасцяў для hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "Патрабуецца URL-адрас hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Памылковы URL-адрас"
   },
   "done": {
-    "message": "Done"
+    "message": "Гатова"
   },
   "accessibilityCookieSaved": {
     "message": "Accessibility cookie saved!"
@@ -1412,7 +1412,7 @@
     "message": "Налады"
   },
   "enableMenuBar": {
-    "message": "Уключыць значок у радку меню"
+    "message": "Уключыць значок у панэлі меню"
   },
   "enableMenuBarDesc": {
     "message": "Заўсёды паказваць значок у радку меню."
@@ -1978,6 +1978,9 @@
   },
   "apiKey": {
     "message": "API Key"
+  },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
     "message": "Organization is disabled."

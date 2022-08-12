@@ -1394,7 +1394,7 @@
     "message": "Lås med hovedpassord ved omstart"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Slett konto"
   },
   "deleteAccountDesc": {
     "message": "Proceed below to delete your account and all vault data."
@@ -1403,7 +1403,7 @@
     "message": "Deleting your account is permanent. It cannot be undone."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Konto slettet"
   },
   "accountDeletedDesc": {
     "message": "Your account has been closed and all associated data has been deleted."
@@ -1979,8 +1979,11 @@
   "apiKey": {
     "message": "API-nøkkel"
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
+  },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organisasjonen er deaktivert."
   },
   "disabledOrganizationFilterError": {
     "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."

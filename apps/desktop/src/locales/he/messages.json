@@ -401,16 +401,16 @@
     "message": "אורך"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "אותיות רישיות (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "אותיות קטנות (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "מספרים (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "תווים מיוחדים (!@#$%^&*)"
   },
   "numWords": {
     "message": "מספר מילים"
@@ -539,7 +539,7 @@
     "message": "נדרשת חזרה על הסיסמה הראשית."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "הסיסמת הראשית חייבת להכיל 8 תווים לפחות."
   },
   "masterPassDoesntMatch": {
     "message": "אימות סיסמה ראשית אינו תואם."
@@ -898,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "הצג סמלים של אתרי האינטרננט"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "בכל נסיון התחברות הצג תמונה לזיהוי."
   },
   "enableMinToTray": {
     "message": "מזער למגש המערכת"
@@ -1277,38 +1277,38 @@
     "message": "פורמט קובץ"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "כתובת אתר hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "טען עוגיות נגישות Cookie"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "הירשם כמשתמש נגישות ב-",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Copy והדבק את הקישור sent ל-email שלך למטה"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "הזן את כתובת האתר לטעינת קובץ Cookie של נגישות עבור hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "נדרשת כתובת אתר hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "כתובת אתר לא חוקית"
   },
   "done": {
-    "message": "Done"
+    "message": "בוצע"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "קובץ Cookie הנגישות נשמר!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "לא נשמרה קובץ Cookie של נגישות"
   },
   "warning": {
     "message": "אזהרה",
@@ -1385,28 +1385,28 @@
     "message": "פתח את הכספת שלך"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "הצג בקשה של Windows Hello בעת האתחול"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "הצג בקשה של Touch ID בעת האתחול"
   },
   "lockWithMasterPassOnRestart": {
     "message": "נעל בעזרת הסיסמה הראשית בהפעלה מחדש"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "מחק חשבון"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "המשך למטה כדי למחוק את חשבונך ואת כל נתוני הכספת."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "מחיקת החשבון שלך היא לצמיתות. אי אפשר לבטל את זה."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "החשבון נמחק"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "חשבונך נסגר וכל הנתונים המשויכים נמחקו."
   },
   "preferences": {
     "message": "העדפות"
@@ -1571,7 +1571,7 @@
     "message": "אינטגרצייה עם הדפדפן מאפשרת שימוש באמצעיים ביומטריים בדפדפן."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "שילוב הדפדפן אינו נתמך"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "למצער, אינטגרצייה עם הדפדפן בשלב זה נתמכת רק על ידי גרסת חנות האפליקציות של מקינטוש."
@@ -1580,7 +1580,7 @@
     "message": "למרבה הצער שילוב הדפדפן אינו נתמך כרגע בגרסת ה-Windows Store."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "לצערינו בגרסאות ה-Linux תכונת השילוב הדפדפן אינה נתמכת כעת."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "דרוש אימות לצורך שילוב הדפדפן"
@@ -1858,7 +1858,7 @@
     "message": "עזבת את הארגון."
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "שגיאת בחיבור המפתח: ודא שמחבר המפתח זמין ופועל כצפוי."
   },
   "lockAllVaults": {
     "message": "נעילת כל הכספות"
@@ -1906,10 +1906,10 @@
     }
   },
   "locked": {
-    "message": "Locked"
+    "message": "נָעוּל"
   },
   "unlocked": {
-    "message": "Unlocked"
+    "message": "לא נעול"
   },
   "generator": {
     "message": "מחולל"
@@ -1930,17 +1930,17 @@
     "message": "סוג שם משתמש"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "דואר אלקטרוני ממוען",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "השתמש בתכונת הכתובת החלופית של ספק הדוא\"ל שלך."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all הדוא\"ל"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "השתמש בתכונת ה-catch-all המוגדרת בדומיין שלך."
   },
   "random": {
     "message": "אקראי"
@@ -1955,38 +1955,41 @@
     "message": "שירות"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "כל הכספות"
   },
   "searchOrganization": {
-    "message": "Search Organization"
+    "message": "חיפוש ארגון"
   },
   "searchMyVault": {
-    "message": "Search My Vault"
+    "message": "חפש בכספת שלי"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "כינוי דוא\"ל להעברה"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "צור כינוי דוא\"ל באמצעות שירות שליחת דוא\"ל חיצוני."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "שם מארח",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "API מפתח גישה"
   },
   "apiKey": {
-    "message": "API Key"
+    "message": "מפתח API"
+  },
+  "premiumSubcriptionRequired": {
+    "message": "נדרש מנוי Premium"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "תכונת חשבון ארגוני מושבת."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "לא ניתן לגשת לפריטים של ארגונים מושבתים. פנה לבעל הארגון שלך לקבלת סיוע."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "האם אתה בטוח שברצונך להשתמש באפשרות \"לעולם לא\"? על ידי הגדרת אפשרויות הנעילה ל\"לעולם לא\", מפתח ההצפנה של הכספת שלך יישמר במכשיר שלך. אם אתה משתמש באפשרות זו, ודא שאתה שומר על המכשיר שלך מוגן כראוי."
   },
   "cardBrandMir": {
     "message": "Mir"

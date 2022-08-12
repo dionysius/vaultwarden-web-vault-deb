@@ -24,10 +24,10 @@
     "message": "Identity"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Sekura noto"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Dosierujoj"
   },
   "collections": {
     "message": "Collections"
@@ -36,13 +36,13 @@
     "message": "Search Vault"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Aldoni elementon"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Kundividita"
   },
   "share": {
-    "message": "Share"
+    "message": "Kundividi"
   },
   "moveToOrganization": {
     "message": "Move to Organization"
@@ -64,13 +64,13 @@
     "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Aldonaĵoj"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Vidi la elementon"
   },
   "name": {
-    "message": "Name"
+    "message": "Nomo"
   },
   "uri": {
     "message": "URI"
@@ -86,22 +86,22 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Nova URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Uzantnomo"
   },
   "password": {
-    "message": "Password"
+    "message": "Pasvorto"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Pasfrazo"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Redakti la elementon"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Retpoŝta adreso"
   },
   "verificationCodeTotp": {
     "message": "Verification Code (TOTP)"
@@ -110,10 +110,10 @@
     "message": "Website"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Notoj"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Propraj kampoj"
   },
   "launch": {
     "message": "Launch"
@@ -139,28 +139,28 @@
     "message": "Cardholder Name"
   },
   "number": {
-    "message": "Number"
+    "message": "Numero"
   },
   "brand": {
     "message": "Brand"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Validoperiodo"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Kodo de sekureco"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Nomo de la identilo"
   },
   "company": {
-    "message": "Company"
+    "message": "Kompanio"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Numero de sociala asekuro"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Numero de pasporto"
   },
   "licenseNumber": {
     "message": "License Number"
@@ -1394,7 +1394,7 @@
     "message": "Lock with master password on restart"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Forviŝi la konton"
   },
   "deleteAccountDesc": {
     "message": "Proceed below to delete your account and all vault data."
@@ -1403,10 +1403,10 @@
     "message": "Deleting your account is permanent. It cannot be undone."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Konto forviŝita"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Via konto estas fermita, kaj ĉiuj rilataj datumoj estas forviŝitaj."
   },
   "preferences": {
     "message": "Preferences"
@@ -1978,6 +1978,9 @@
   },
   "apiKey": {
     "message": "API Key"
+  },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
     "message": "Organization is disabled."

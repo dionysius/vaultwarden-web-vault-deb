@@ -533,10 +533,10 @@
     "message": "Vigane e-posti aadress."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Vajalik on ülemparooli sisestamine."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Vajalik on ülemparooli uuesti sisestamine."
   },
   "masterPasswordMinlength": {
     "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
@@ -898,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Kuva veebilehtede ikoone"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Kuvab iga kirje kõrval lehekülje ikooni."
   },
   "enableMinToTray": {
     "message": "Minimeeri tegumiribale"
@@ -1385,28 +1385,28 @@
     "message": "Kinnita Bitwardenisse sisselogimine."
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Küsi avamisel Windows Hello tuvastust"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Küsi avamisel Touch ID tuvastust"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukusta ülemparooliga, kui rakendus taaskäivitatakse"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Kustuta konto"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Jätkates kustutatakse sinu konto ja kõik hoidla andmed."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "Konto kustutamine on ühekordne tegevus. Seda ei saa tagasi võtta."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Konto on kustutatud"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Konto on suletud ja kõik sellega seonduvad andmed on kustutatud."
   },
   "preferences": {
     "message": "Eelistused"
@@ -1562,7 +1562,7 @@
     "message": "Märkeruudu markeerimisel nõustud järgnevaga:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Kasutustingimuste ja Privaatsuspoliitikaga pole nõustutud."
   },
   "enableBrowserIntegration": {
     "message": "Lülita sisse brauseri integratsioon"
@@ -1979,6 +1979,9 @@
   "apiKey": {
     "message": "API võti"
   },
+  "premiumSubcriptionRequired": {
+    "message": "Vajalik on Premium versioon"
+  },
   "organizationIsDisabled": {
     "message": "Organisatsiooni ligipääs on keelatud."
   },
@@ -1986,7 +1989,7 @@
     "message": "Organisatsiooni alla kuuluvatele kirjetele ei ole ligipääsu. Kontakteeru oma organisatsiooni omanikuga."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Oled kindel, et soovid kasutada valikut \"Mitte kunagi\"? Sellega talletatakse sinu hoidla krüpteerimise võtit seadme mälus. Peaksid olema väga hoolas ja kindel, et seade on ohutu ja selles ei ole pahavara."
   },
   "cardBrandMir": {
     "message": "Mir"

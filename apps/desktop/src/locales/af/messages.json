@@ -539,7 +539,7 @@
     "message": "Hoofwagwoord moet weer intevoer word."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hoofwagwoord moet ten minste 8 karakters lank wees."
   },
   "masterPassDoesntMatch": {
     "message": "Hoofwagwoordbevestiging stem nie ooreen nie."
@@ -1394,19 +1394,19 @@
     "message": "Vergrendel by herbegin met hoofwagwoord"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Skrap rekening"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Gaan hieronder voort om u rekening en alle kluisdata te skrap."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "Skrap van u rekening is permanent. Dit kan nie ontdaan word nie."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Rekening geskrap"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "U rekening is gesluit en alle geassosieerde data is geskrap."
   },
   "preferences": {
     "message": "Voorkeure"
@@ -1979,8 +1979,11 @@
   "apiKey": {
     "message": "API-sleutel"
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
+  },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organisasie is gedeaktiveer."
   },
   "disabledOrganizationFilterError": {
     "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
