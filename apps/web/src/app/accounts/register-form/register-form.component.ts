@@ -15,6 +15,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
+import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
 
 @Component({
   selector: "app-register-form",
@@ -23,6 +24,7 @@ import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/mas
 export class RegisterFormComponent extends BaseRegisterComponent {
   @Input() queryParamEmail: string;
   @Input() enforcedPolicyOptions: MasterPasswordPolicyOptions;
+  @Input() referenceDataValue: ReferenceEventRequest;
 
   showErrorSummary = false;
 
@@ -59,6 +61,7 @@ export class RegisterFormComponent extends BaseRegisterComponent {
 
   async ngOnInit() {
     await super.ngOnInit();
+    this.referenceData = this.referenceDataValue;
 
     if (this.queryParamEmail) {
       this.formGroup.get("email")?.setValue(this.queryParamEmail);
