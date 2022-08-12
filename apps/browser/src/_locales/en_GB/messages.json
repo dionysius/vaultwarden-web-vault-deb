@@ -574,7 +574,7 @@
     "message": "Ask to add login"
   },
   "addLoginNotificationDesc": {
-    "message": "The \"add login notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+    "message": "Ask to add an item if one isn't found in your vault."
   },
   "showCardsCurrentTab": {
     "message": "Show cards on Tab page"
@@ -642,7 +642,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark",
+    "message": "Solarized dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -674,7 +674,7 @@
     "message": "Shared"
   },
   "learnOrg": {
-    "message": "Learn about Organisations"
+    "message": "Learn about organisations"
   },
   "learnOrgConfirmation": {
     "message": "Bitwarden allows you to share your vault items with others by using an organisation. Would you like to visit the bitwarden.com website to learn more?"
@@ -813,7 +813,7 @@
     "message": "Copy TOTP automatically"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message": "If a login has an authenticator key, copy the TOTP verification code to your clip-board when you auto-fill the login."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Ask for biometrics on launch"
@@ -954,10 +954,10 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill on Page Load"
+    "message": "Auto-fill on page load"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message": "If a login form is detected, auto-fill when the web page loads."
   },
   "experimentalFeature": {
     "message": "This is currently an experimental feature. Use at your own risk."
@@ -966,10 +966,10 @@
     "message": "Default autofill setting for login items"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "After enabling Auto-fill on Page Load, you can enable or disable the feature for individual login items. This is the default setting for login items that are not separately configured."
+    "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on Page Load (if enabled in Options)"
+    "message": "Auto-fill on page load (if enabled in Options)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Use default setting"
@@ -1252,7 +1252,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domain name",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1514,7 +1514,7 @@
     "message": "Start the Bitwarden Desktop application"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before this function can be used."
+    "message": "The Bitwarden Desktop application needs to be started before unlock with biometrics can be used."
   },
   "errorEnableBiometricTitle": {
     "message": "Unable to enable biometrics"
@@ -1565,7 +1565,7 @@
     "message": "An organisation policy is affecting your ownership options."
   },
   "excludedDomains": {
-    "message": "Excluded Domains"
+    "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
     "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
+  },
   "organizationIsDisabled": {
     "message": "Organisation is disabled."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Logging in to $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Settings have been edited"
+  },
+  "environmentEditedClick": {
+    "message": "Click here"
+  },
+  "environmentEditedReset": {
+    "message": "to reset to pre-configured settings"
   }
 }

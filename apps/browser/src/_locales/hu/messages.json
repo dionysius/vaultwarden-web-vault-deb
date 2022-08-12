@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Kulcs csatlakozó hiba: ellenőrizzük, hogy a kulcs csatlakozó rendelkezésre áll-e és megfelelően működik-e."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Prémium előfizetés szükséges"
+  },
   "organizationIsDisabled": {
     "message": "A szervezet letiltásra került."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Bejelentkezés $DOMAIN$ területre",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "A beállítások szerkesztésre kerültek."
+  },
+  "environmentEditedClick": {
+    "message": "Kattintás ide"
+  },
+  "environmentEditedReset": {
+    "message": "az előre konfigurált beállítások visszaállításához."
   }
 }

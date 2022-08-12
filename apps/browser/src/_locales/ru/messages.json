@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Ошибка соединителя ключей: убедитесь, что он доступен и работает корректно."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Требуется подписка Премиум"
+  },
   "organizationIsDisabled": {
     "message": "Организация отключена."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Вход в $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Настройки были изменены"
+  },
+  "environmentEditedClick": {
+    "message": "Нажмите здесь"
+  },
+  "environmentEditedReset": {
+    "message": "для сброса к предварительно настроенным параметрам"
   }
 }

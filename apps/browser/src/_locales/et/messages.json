@@ -603,10 +603,10 @@
     "message": "Jah, salvesta see"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Paku olemasolevate andmete uuendamist"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Kui veebilehel tuvastatakse olemasolevate andmete muutmine, siis pakutakse nende andmete uuendamist Bitwardenis."
   },
   "notificationChangeDesc": {
     "message": "Soovid seda parooli ka Bitwardenis uuendada?"
@@ -615,10 +615,10 @@
     "message": "Jah, uuenda"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Kuva parema kliki menüü valikud"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Võimaldab parema kliki menüüs kaustada Bitwardeni valikuid, nt kontoandmete täitmist või parooli genereerimist. "
   },
   "defaultUriMatchDetection": {
     "message": "Vaike URI sobivuse tuvastamine",
@@ -810,13 +810,13 @@
     "message": "Uuendamine lõpetatud"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "TOTP automaatne kopeerimine"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Kui sinu sisselogimise andmetele on juurde lisatud autentimise võti, kopeeritakse TOTP kood automaatse täitmise kasutamisel lõikelauale."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Küsi avamisel biomeetriat"
   },
   "premiumRequired": {
     "message": "Vajalik on Premium versioon"
@@ -1037,16 +1037,16 @@
     "message": "Kasutatav brauser ei suuda selles aknas U2F päringuid töödelda. Kas avan uue akna, et saaksid U2F abil sisse logida?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Kuva veebilehtede ikoone"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Kuvab iga kirje kõrval lehekülje ikooni."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Kuva kirjete arvu"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Kuvab numbrina konkreetsel veebilehel olevate kirjete arvu."
   },
   "cardholderName": {
     "message": "Kaardiomaniku nimi"
@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Key Connectori viga: veendu, et Key Connector on saadaval ja töötab korrektselt."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Vajalik on Premium versioon"
+  },
   "organizationIsDisabled": {
     "message": "Organisatsiooni ligipääs on keelatud."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Sisselogimine läbi $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Seaded on uuendatud"
+  },
+  "environmentEditedClick": {
+    "message": "Kliki siia,"
+  },
+  "environmentEditedReset": {
+    "message": "et taastada eelseadistatud seaded"
   }
 }

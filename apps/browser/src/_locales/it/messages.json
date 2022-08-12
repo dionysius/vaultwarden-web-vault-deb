@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Errore Key Connector: assicurarsi che il Key Connector sia disponibile e correttamente funzionante."
   },
+  "premiumSubcriptionRequired": {
+    "message": "È richiesto un abbonamento Premium"
+  },
   "organizationIsDisabled": {
     "message": "L'organizzazione è disabilitata."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Accedo a $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Le impostazioni sono state cambiate"
+  },
+  "environmentEditedClick": {
+    "message": "Clicca qui"
+  },
+  "environmentEditedReset": {
+    "message": "per ritornare alle impostazioni preconfigurate"
   }
 }

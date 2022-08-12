@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Key Connector -virhe: Varmista, että Key Connector on käytettävissä ja toimii oikein."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium-tilaus vaaditaan"
+  },
   "organizationIsDisabled": {
     "message": "Organisaatio on poistettu käytöstä."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Kirjaudutaan palveluun $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Asetuksia on muokattu"
+  },
+  "environmentEditedClick": {
+    "message": "Paina tästä"
+  },
+  "environmentEditedReset": {
+    "message": "palauttaaksesi esimääritetyt asetukset"
   }
 }

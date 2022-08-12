@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Eroare de Conector Cheie: asigurați-vă că aveți conectorul Cheie disponibil și că funcționează corect."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Este necesar un abonament Premium"
+  },
   "organizationIsDisabled": {
     "message": "Organizația este dezactivată."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Conectarea la $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Setările au fost editate"
+  },
+  "environmentEditedClick": {
+    "message": "Faceți clic aici"
+  },
+  "environmentEditedReset": {
+    "message": "pentru a restabili setările preconfigurate"
   }
 }

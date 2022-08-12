@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Key Connector kļūda: jāpārliecinās, ka Key Connector ir pieejams un darbojas pareizi."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Nepieciešams Premium abonements"
+  },
   "organizationIsDisabled": {
     "message": "Apvienība ir atspējota."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Pierakstās $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Iestatījumi ir izmainīti"
+  },
+  "environmentEditedClick": {
+    "message": "Klikšķināt šeit"
+  },
+  "environmentEditedReset": {
+    "message": "lai atiestatītu pirmsuzstādītos iestatījumus"
   }
 }

@@ -424,13 +424,13 @@
     "message": "Adresse e-mail invalide."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Le mot de passe maître est requis."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Le mot de passe maître doit être entré de nouveau."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Le mot de passe maître doit au moins contenir 8 caractères."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmation du mot de passe maître ne correspond pas."
@@ -1968,13 +1968,34 @@
   "ssoKeyConnectorError": {
     "message": "Erreur du connecteur de clé: veuillez vérifier que le connecteur de clé est disponible et qu'il fonctionne correctement."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Un abonnement Premium est requis"
+  },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "L'organisation est désactivée."
   },
   "disabledOrganizationFilterError": {
     "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Connexion à $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Les paramètres ont été modifiés"
+  },
+  "environmentEditedClick": {
+    "message": "Cliquez ici"
+  },
+  "environmentEditedReset": {
+    "message": "to reset to pre-configured settings"
   }
 }

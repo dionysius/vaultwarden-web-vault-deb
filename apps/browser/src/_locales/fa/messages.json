@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "خطای Key Connector: مطمئن شوید که Key Connector در دسترس است و به درستی کار می کند."
   },
+  "premiumSubcriptionRequired": {
+    "message": "اشتراک پرمیوم نیاز است"
+  },
   "organizationIsDisabled": {
     "message": "سازمان از کار افتاده است."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "میر"
+  },
+  "loggingInTo": {
+    "message": "ورود به $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "تنظیمات ویرایش شده اند"
+  },
+  "environmentEditedClick": {
+    "message": "اینجا کلیک کنید"
+  },
+  "environmentEditedReset": {
+    "message": "برای بازنشانی به تنظیمات از پیش پیکربندی شده"
   }
 }

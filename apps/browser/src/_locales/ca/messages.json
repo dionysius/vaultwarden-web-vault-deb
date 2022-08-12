@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Error del connector de claus: assegureu-vos que el connector de claus està disponible i funcionant correctament."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Cal una subscripció premium"
+  },
   "organizationIsDisabled": {
     "message": "L'organització està inhabilitada."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Inici de sessió a $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "La configuració s'ha editat"
+  },
+  "environmentEditedClick": {
+    "message": "Feu clic ací"
+  },
+  "environmentEditedReset": {
+    "message": "per restablir els paràmetres preconfigurats"
   }
 }

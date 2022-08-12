@@ -430,7 +430,7 @@
     "message": "Se requiere volver a teclear la contraseña maestra."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "La contraseña maestra debe tener al menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmación de contraseña maestra no coincide."
@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Error en el conector de claves: asegúrate de que el conector de claves está disponible y que funciona correctamente."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
+  },
   "organizationIsDisabled": {
     "message": "La organización está desactivada."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Iniciando sesión en $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Se han editado los ajustes"
+  },
+  "environmentEditedClick": {
+    "message": "Haga click aquí"
+  },
+  "environmentEditedReset": {
+    "message": "para restablecer a los ajustes por defecto"
   }
 }

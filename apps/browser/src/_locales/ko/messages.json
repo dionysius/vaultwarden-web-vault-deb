@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "키 커넥터 오류: 키 커넥터가 사용 가능한지 및 정상적으로 작동하고 있는지 확인해주세요."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
+  },
   "organizationIsDisabled": {
     "message": "Organization is disabled."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Logging in to $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Settings have been edited"
+  },
+  "environmentEditedClick": {
+    "message": "Click here"
+  },
+  "environmentEditedReset": {
+    "message": "to reset to pre-configured settings"
   }
 }

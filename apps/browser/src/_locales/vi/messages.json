@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium subscription required"
+  },
   "organizationIsDisabled": {
     "message": "Organization is disabled."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Đang đăng nhập vào $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Cài đặt đã được chỉnh sửa"
+  },
+  "environmentEditedClick": {
+    "message": "Nhấn vào đây"
+  },
+  "environmentEditedReset": {
+    "message": "để đặt lại cài đặt đã thiết đặt từ trước"
   }
 }

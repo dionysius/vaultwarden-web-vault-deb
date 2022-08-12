@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Anahtar Bağlayıcı hatası: Anahtar Bağlayıcının mevcut olduğundan ve doğru çalıştığından emin olun."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium abonelik gerekli"
+  },
   "organizationIsDisabled": {
     "message": "Kuruluş devre dışı."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "$DOMAIN$ sitesine giriş yapılıyor",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Ayarlar düzenlendi"
+  },
+  "environmentEditedClick": {
+    "message": "Buraya tıklayarak"
+  },
+  "environmentEditedReset": {
+    "message": "ön tanımlı ayarları sıfırlayabilirsiniz"
   }
 }

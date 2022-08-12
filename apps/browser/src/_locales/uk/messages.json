@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Помилка Key Connector: переконайтеся, що Key Connector доступний та працює правильно."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Необхідна передплата преміум"
+  },
   "organizationIsDisabled": {
     "message": "Організацію вимкнено."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Вхід до $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Налаштування змінено"
+  },
+  "environmentEditedClick": {
+    "message": "Натисніть тут,"
+  },
+  "environmentEditedReset": {
+    "message": "щоб скинути налаштування"
   }
 }

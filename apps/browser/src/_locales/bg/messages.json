@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Грешка с конектора за ключове: уверете се, че конекторът за ключове е наличен и работи правилно."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Изисква се платен абонамент"
+  },
   "organizationIsDisabled": {
     "message": "Организацията е изключена."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Мир"
+  },
+  "loggingInTo": {
+    "message": "Вписване в $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Настройките баха променени"
+  },
+  "environmentEditedClick": {
+    "message": "Щракнете тук"
+  },
+  "environmentEditedReset": {
+    "message": "за да върнете предварително зададените настройки"
   }
 }

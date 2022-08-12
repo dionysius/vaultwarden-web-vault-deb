@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Açar bağlayıcı xətası: Açar Bağlayıcının mövcud olduğuna və düzgün işlədiyinə əmin olun."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium abunəlik tələb olunur"
+  },
   "organizationIsDisabled": {
     "message": "Təşkilat sıradan çıxarıldı."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "$DOMAIN$ domeninə giriş edilir",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Tənzimləmələrə düzəliş edildi"
+  },
+  "environmentEditedClick": {
+    "message": "Bura klikləyin"
+  },
+  "environmentEditedReset": {
+    "message": "ön konfiqurasiyalı tənzimləmələri sıfırlamaq üçün"
   }
 }

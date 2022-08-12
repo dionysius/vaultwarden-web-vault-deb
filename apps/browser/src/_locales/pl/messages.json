@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Błąd serwera Key Connector: upewnij się, że serwer Key Connector jest dostępny i działa poprawnie."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Wymagana jest subskrypcja Premium"
+  },
   "organizationIsDisabled": {
     "message": "Organizacja jest wyłączona."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "Logowanie do $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Ustawienia zostały edytowane"
+  },
+  "environmentEditedClick": {
+    "message": "Kliknij tutaj"
+  },
+  "environmentEditedReset": {
+    "message": "aby zresetować do wstępnie skonfigurowanych ustawień"
   }
 }

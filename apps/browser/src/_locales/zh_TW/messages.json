@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Key Connector 錯誤：請確保 Key Connector 可用且運作正常。"
   },
+  "premiumSubcriptionRequired": {
+    "message": "需要進階版訂閲"
+  },
   "organizationIsDisabled": {
     "message": "組織已停用。"
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "正在登入至 $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "設定已編輯"
+  },
+  "environmentEditedClick": {
+    "message": "點選此處"
+  },
+  "environmentEditedReset": {
+    "message": "重設為預設設定"
   }
 }

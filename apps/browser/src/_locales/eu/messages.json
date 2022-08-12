@@ -708,7 +708,7 @@
     "message": "Autentifikazio-gakoa (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Egiaztatze kodea"
+    "message": "Egiaztatze-kodea (TOTP)"
   },
   "copyVerificationCode": {
     "message": "Kopiatu egiaztatze-kodea"
@@ -810,7 +810,7 @@
     "message": "Eguneratzea eginda"
   },
   "enableAutoTotpCopy": {
-    "message": "Kopiatu TOTO automatikoki"
+    "message": "Kopiatu TOTP automatikoki"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Saio hasiera batek autentifikazio-gakoa badu, TOTP egiaztatze-kodea arbelean automatikoki kopiatuko da saio hasiera bat auto-betetzean."
@@ -1968,6 +1968,9 @@
   "ssoKeyConnectorError": {
     "message": "Errore bat gertatu da Key Connector-ekin: ziurtatu Key Connector erabilgarri dagoela eta behar bezala dabilela."
   },
+  "premiumSubcriptionRequired": {
+    "message": "Premium harpidetza behar da"
+  },
   "organizationIsDisabled": {
     "message": "Erakundea desgaituta dago."
   },
@@ -1976,5 +1979,23 @@
   },
   "cardBrandMir": {
     "message": "Mir"
+  },
+  "loggingInTo": {
+    "message": "$DOMAIN$-en saioa hasten",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "settingsEdited": {
+    "message": "Ezarpenak editatu dira"
+  },
+  "environmentEditedClick": {
+    "message": "Sakatu hemen"
+  },
+  "environmentEditedReset": {
+    "message": "ezarpen lehenetsiak ezartzeko"
   }
 }
