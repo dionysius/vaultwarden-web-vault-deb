@@ -4,35 +4,18 @@ import { ActivatedRoute } from "@angular/router";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
-import { flagEnabled } from "../../../utils/flags";
-
 @Component({
   selector: "app-org-manage",
   templateUrl: "manage.component.html",
 })
 export class ManageComponent implements OnInit {
   organization: Organization;
-  accessPolicies = false;
-  accessGroups = false;
-  accessEvents = false;
-  accessSso = false;
-  accessScim = false;
 
   constructor(private route: ActivatedRoute, private organizationService: OrganizationService) {}
 
   ngOnInit() {
     this.route.parent.params.subscribe(async (params) => {
       this.organization = await this.organizationService.get(params.organizationId);
-      this.accessPolicies = this.organization.usePolicies;
-      this.accessSso = this.organization.useSso;
-      this.accessEvents = this.organization.useEvents;
-      this.accessGroups = this.organization.useGroups;
-
-      if (flagEnabled("scim")) {
-        this.accessScim = this.organization.useScim;
-      } else {
-        this.accessScim = false;
-      }
     });
   }
 }

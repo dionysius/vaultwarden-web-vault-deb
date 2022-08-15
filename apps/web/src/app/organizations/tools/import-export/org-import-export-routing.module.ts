@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { Permissions } from "@bitwarden/common/enums/permissions";
+import { Organization } from "@bitwarden/common/models/domain/organization";
 
-import { PermissionsGuard } from "../../guards/permissions.guard";
+import { OrganizationPermissionsGuard } from "../../guards/org-permissions.guard";
 
 import { OrganizationExportComponent } from "./org-export.component";
 import { OrganizationImportComponent } from "./org-import.component";
@@ -12,19 +12,19 @@ const routes: Routes = [
   {
     path: "import",
     component: OrganizationImportComponent,
-    canActivate: [PermissionsGuard],
+    canActivate: [OrganizationPermissionsGuard],
     data: {
       titleId: "importData",
-      permissions: [Permissions.AccessImportExport],
+      organizationPermissions: (org: Organization) => org.canAccessImportExport,
     },
   },
   {
     path: "export",
     component: OrganizationExportComponent,
-    canActivate: [PermissionsGuard],
+    canActivate: [OrganizationPermissionsGuard],
     data: {
       titleId: "exportVault",
-      permissions: [Permissions.AccessImportExport],
+      organizationPermissions: (org: Organization) => org.canAccessImportExport,
     },
   },
 ];

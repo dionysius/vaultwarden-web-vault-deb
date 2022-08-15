@@ -10,8 +10,7 @@ import { OssModule } from "src/app/oss.module";
 import { AddOrganizationComponent } from "./clients/add-organization.component";
 import { ClientsComponent } from "./clients/clients.component";
 import { CreateOrganizationComponent } from "./clients/create-organization.component";
-import { PermissionsGuard } from "./guards/provider-type.guard";
-import { ProviderGuard } from "./guards/provider.guard";
+import { ProviderPermissionsGuard } from "./guards/provider-permissions.guard";
 import { AcceptProviderComponent } from "./manage/accept-provider.component";
 import { BulkConfirmComponent } from "./manage/bulk/bulk-confirm.component";
 import { BulkRemoveComponent } from "./manage/bulk/bulk-remove.component";
@@ -46,7 +45,7 @@ import { SetupComponent } from "./setup/setup.component";
     SetupProviderComponent,
     UserAddEditComponent,
   ],
-  providers: [WebProviderService, ProviderGuard, PermissionsGuard],
+  providers: [WebProviderService, ProviderPermissionsGuard],
 })
 export class ProvidersModule {
   constructor(modalService: ModalService, componentFactoryResolver: ComponentFactoryResolver) {

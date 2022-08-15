@@ -113,10 +113,6 @@ export class PeopleComponent
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       const organization = await this.organizationService.get(this.organizationId);
-      if (!organization.canManageUsers) {
-        this.router.navigate(["../collections"], { relativeTo: this.route });
-        return;
-      }
       this.accessEvents = organization.useEvents;
       this.accessGroups = organization.useGroups;
       this.canResetPassword = organization.canManageUsersPassword;

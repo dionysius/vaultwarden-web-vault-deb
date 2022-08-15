@@ -12,7 +12,7 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { Provider } from "@bitwarden/common/models/domain/provider";
 
-import { NavigationPermissionsService as OrgNavigationPermissionsService } from "../organizations/services/navigation-permissions.service";
+import { canAccessOrgAdmin } from "../organizations/navigation-permissions";
 
 @Component({
   selector: "app-navbar",
@@ -69,9 +69,7 @@ export class NavbarComponent implements OnInit {
 
   async buildOrganizations() {
     const allOrgs = await this.organizationService.getAll();
-    return allOrgs
-      .filter((org) => OrgNavigationPermissionsService.canAccessAdmin(org))
-      .sort(Utils.getSortFunction(this.i18nService, "name"));
+    return allOrgs.filter(canAccessOrgAdmin).sort(Utils.getSortFunction(this.i18nService, "name"));
   }
 
   lock() {

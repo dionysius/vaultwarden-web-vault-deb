@@ -1,12 +1,11 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { Utils } from "@bitwarden/common/misc/utils";
@@ -41,20 +40,13 @@ export class GroupsComponent implements OnInit {
     private i18nService: I18nService,
     private modalService: ModalService,
     private platformUtilsService: PlatformUtilsService,
-    private router: Router,
     private searchService: SearchService,
-    private logService: LogService,
-    private organizationService: OrganizationService
+    private logService: LogService
   ) {}
 
   async ngOnInit() {
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
-      const organization = await this.organizationService.get(this.organizationId);
-      if (organization == null || !organization.useGroups) {
-        this.router.navigate(["/organizations", this.organizationId]);
-        return;
-      }
       await this.load();
       this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
         this.searchText = qParams.search;

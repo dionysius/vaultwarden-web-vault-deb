@@ -24,7 +24,7 @@
             routerLink="groups"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization.canManageGroups && accessGroups"
+            *ngIf="organization.canManageGroups"
           >
             {{ "groups" | i18n }}
           </a>
@@ -32,7 +32,7 @@
             routerLink="policies"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization.canManagePolicies && accessPolicies"
+            *ngIf="organization.canManagePolicies"
           >
             {{ "policies" | i18n }}
           </a>
@@ -40,7 +40,7 @@
             routerLink="sso"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization.canManageSso && accessSso"
+            *ngIf="organization.canManageSso"
           >
             {{ "singleSignOn" | i18n }}
           </a>
@@ -48,7 +48,7 @@
             routerLink="scim"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization.canManageScim && accessScim"
+            *ngIf="organization.canManageScim"
           >
             {{ "scim" | i18n }}
           </a>
@@ -56,7 +56,7 @@
             routerLink="events"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="organization.canAccessEventLogs && accessEvents"
+            *ngIf="organization.canAccessEventLogs"
           >
             {{ "eventLogs" | i18n }}
           </a>

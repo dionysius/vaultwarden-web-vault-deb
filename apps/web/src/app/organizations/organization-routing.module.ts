@@ -2,9 +2,9 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
-import { Permissions } from "@bitwarden/common/enums/permissions";
+import { Organization } from "@bitwarden/common/models/domain/organization";
 
-import { PermissionsGuard } from "./guards/permissions.guard";
+import { OrganizationPermissionsGuard } from "./guards/org-permissions.guard";
 import { OrganizationLayoutComponent } from "./layouts/organization-layout.component";
 import { CollectionsComponent } from "./manage/collections.component";
 import { EventsComponent } from "./manage/events.component";
@@ -12,7 +12,12 @@ import { GroupsComponent } from "./manage/groups.component";
 import { ManageComponent } from "./manage/manage.component";
 import { PeopleComponent } from "./manage/people.component";
 import { PoliciesComponent } from "./manage/policies.component";
-import { NavigationPermissionsService } from "./services/navigation-permissions.service";
+import {
+  canAccessOrgAdmin,
+  canAccessManageTab,
+  canAccessSettingsTab,
+  canAccessToolsTab,
+} from "./navigation-permissions";
 import { AccountComponent } from "./settings/account.component";
 import { OrganizationBillingComponent } from "./settings/organization-billing.component";
 import { OrganizationSubscriptionComponent } from "./settings/organization-subscription.component";
@@ -30,9 +35,9 @@ const routes: Routes = [
   {
     path: ":organizationId",
     component: OrganizationLayoutComponent,
-    canActivate: [AuthGuard, PermissionsGuard],
+    canActivate: [AuthGuard, OrganizationPermissionsGuard],
     data: {
-      permissions: NavigationPermissionsService.getPermissions("admin"),
+      organizationPermissions: canAccessOrgAdmin,
     },
     children: [
       { path: "", pathMatch: "full", redirectTo: "vault" },
@@ -43,8 +48,10 @@ const routes: Routes = [
       {
         path: "tools",
         component: ToolsComponent,
-        canActivate: [PermissionsGuard],
-        data: { permissions: NavigationPermissionsService.getPermissions("tools") },
+        canActivate: [OrganizationPermissionsGuard],
+        data: {
+          organizationPermissions: canAccessToolsTab,
+        },
         children: [
           {
             path: "",
@@ -61,46 +68,46 @@ const routes: Routes = [
           {
             path: "exposed-passwords-report",
             component: ExposedPasswordsReportComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "exposedPasswordsReport",
-              permissions: [Permissions.AccessReports],
+              organizationPermissions: (org: Organization) => org.canAccessReports,
             },
           },
           {
             path: "inactive-two-factor-report",
             component: InactiveTwoFactorReportComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "inactive2faReport",
-              permissions: [Permissions.AccessReports],
+              organizationPermissions: (org: Organization) => org.canAccessReports,
             },
           },
           {
             path: "reused-passwords-report",
             component: ReusedPasswordsReportComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "reusedPasswordsReport",
-              permissions: [Permissions.AccessReports],
+              organizationPermissions: (org: Organization) => org.canAccessReports,
             },
           },
           {
             path: "unsecured-websites-report",
             component: UnsecuredWebsitesReportComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "unsecuredWebsitesReport",
-              permissions: [Permissions.AccessReports],
+              organizationPermissions: (org: Organization) => org.canAccessReports,
             },
           },
           {
             path: "weak-passwords-report",
             component: WeakPasswordsReportComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "weakPasswordsReport",
-              permissions: [Permissions.AccessReports],
+              organizationPermissions: (org: Organization) => org.canAccessReports,
             },
           },
         ],
@@ -108,9 +115,9 @@ const routes: Routes = [
       {
         path: "manage",
         component: ManageComponent,
-        canActivate: [PermissionsGuard],
+        canActivate: [OrganizationPermissionsGuard],
         data: {
-          permissions: NavigationPermissionsService.getPermissions("manage"),
+          organizationPermissions: canAccessManageTab,
         },
         children: [
           {
@@ -121,52 +128,52 @@ const routes: Routes = [
           {
             path: "collections",
             component: CollectionsComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "collections",
-              permissions: [
-                Permissions.CreateNewCollections,
-                Permissions.EditAnyCollection,
-                Permissions.DeleteAnyCollection,
-                Permissions.EditAssignedCollections,
-                Permissions.DeleteAssignedCollections,
-              ],
+              organizationPermissions: (org: Organization) =>
+                org.canCreateNewCollections ||
+                org.canEditAnyCollection ||
+                org.canDeleteAnyCollection ||
+                org.canEditAssignedCollections ||
+                org.canDeleteAssignedCollections,
             },
           },
           {
             path: "events",
             component: EventsComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "eventLogs",
-              permissions: [Permissions.AccessEventLogs],
+              organizationPermissions: (org: Organization) => org.canAccessEventLogs,
             },
           },
           {
             path: "groups",
             component: GroupsComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "groups",
-              permissions: [Permissions.ManageGroups],
+              organizationPermissions: (org: Organization) => org.canManageGroups,
             },
           },
           {
             path: "people",
             component: PeopleComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "people",
-              permissions: [Permissions.ManageUsers, Permissions.ManageUsersPassword],
+              organizationPermissions: (org: Organization) =>
+                org.canManageUsers || org.canManageUsersPassword,
             },
           },
           {
             path: "policies",
             component: PoliciesComponent,
-            canActivate: [PermissionsGuard],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "policies",
-              permissions: [Permissions.ManagePolicies],
+              organizationPermissions: (org: Organization) => org.canManagePolicies,
             },
           },
         ],
@@ -174,8 +181,8 @@ const routes: Routes = [
       {
         path: "settings",
         component: SettingsComponent,
-        canActivate: [PermissionsGuard],
-        data: { permissions: NavigationPermissionsService.getPermissions("settings") },
+        canActivate: [OrganizationPermissionsGuard],
+        data: { organizationPermissions: canAccessSettingsTab },
         children: [
           { path: "", pathMatch: "full", redirectTo: "account" },
           { path: "account", component: AccountComponent, data: { titleId: "myOrganization" } },
@@ -187,8 +194,11 @@ const routes: Routes = [
           {
             path: "billing",
             component: OrganizationBillingComponent,
-            canActivate: [PermissionsGuard],
-            data: { titleId: "billing", permissions: [Permissions.ManageBilling] },
+            canActivate: [OrganizationPermissionsGuard],
+            data: {
+              titleId: "billing",
+              organizationPermissions: (org: Organization) => org.canManageBilling,
+            },
           },
           {
             path: "subscription",

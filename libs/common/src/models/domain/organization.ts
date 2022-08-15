@@ -1,6 +1,5 @@
 import { OrganizationUserStatusType } from "../../enums/organizationUserStatusType";
 import { OrganizationUserType } from "../../enums/organizationUserType";
-import { Permissions } from "../../enums/permissions";
 import { ProductType } from "../../enums/productType";
 import { PermissionsApi } from "../api/permissionsApi";
 import { OrganizationData } from "../data/organizationData";
@@ -114,7 +113,7 @@ export class Organization {
   }
 
   get canAccessEventLogs() {
-    return this.isAdmin || this.permissions.accessEventLogs;
+    return (this.isAdmin || this.permissions.accessEventLogs) && this.useEvents;
   }
 
   get canAccessImportExport() {
@@ -168,11 +167,11 @@ export class Organization {
   }
 
   get canManageGroups() {
-    return this.isAdmin || this.permissions.manageGroups;
+    return (this.isAdmin || this.permissions.manageGroups) && this.useGroups;
   }
 
   get canManageSso() {
-    return this.isAdmin || this.permissions.manageSso;
+    return (this.isAdmin || this.permissions.manageSso) && this.useSso;
   }
 
   get canManageScim() {
@@ -180,7 +179,7 @@ export class Organization {
   }
 
   get canManagePolicies() {
-    return this.isAdmin || this.permissions.managePolicies;
+    return (this.isAdmin || this.permissions.managePolicies) && this.usePolicies;
   }
 
   get canManageUsers() {
@@ -193,30 +192,6 @@ export class Organization {
 
   get isExemptFromPolicies() {
     return this.canManagePolicies;
-  }
-
-  hasAnyPermission(permissions: Permissions[]) {
-    const specifiedPermissions =
-      (permissions.includes(Permissions.AccessEventLogs) && this.canAccessEventLogs) ||
-      (permissions.includes(Permissions.AccessImportExport) && this.canAccessImportExport) ||
-      (permissions.includes(Permissions.AccessReports) && this.canAccessReports) ||
-      (permissions.includes(Permissions.CreateNewCollections) && this.canCreateNewCollections) ||
-      (permissions.includes(Permissions.EditAnyCollection) && this.canEditAnyCollection) ||
-      (permissions.includes(Permissions.DeleteAnyCollection) && this.canDeleteAnyCollection) ||
-      (permissions.includes(Permissions.EditAssignedCollections) &&
-        this.canEditAssignedCollections) ||
-      (permissions.includes(Permissions.DeleteAssignedCollections) &&
-        this.canDeleteAssignedCollections) ||
-      (permissions.includes(Permissions.ManageGroups) && this.canManageGroups) ||
-      (permissions.includes(Permissions.ManageOrganization) && this.isOwner) ||
-      (permissions.includes(Permissions.ManagePolicies) && this.canManagePolicies) ||
-      (permissions.includes(Permissions.ManageUsers) && this.canManageUsers) ||
-      (permissions.includes(Permissions.ManageUsersPassword) && this.canManageUsersPassword) ||
-      (permissions.includes(Permissions.ManageSso) && this.canManageSso) ||
-      (permissions.includes(Permissions.ManageScim) && this.canManageScim) ||
-      (permissions.includes(Permissions.ManageBilling) && this.canManageBilling);
-
-    return specifiedPermissions && (this.enabled || this.isOwner);
   }
 
   get canManageBilling() {

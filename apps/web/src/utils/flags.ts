@@ -1,6 +1,5 @@
 export type Flags = {
   showTrial?: boolean;
-  scim?: boolean;
 };
 
 export type FlagName = keyof Flags;

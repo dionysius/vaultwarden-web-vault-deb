@@ -43,11 +43,6 @@ export class PoliciesComponent implements OnInit {
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       this.organization = await this.organizationService.get(this.organizationId);
-      if (this.organization == null || !this.organization.usePolicies) {
-        this.router.navigate(["/organizations", this.organizationId]);
-        return;
-      }
-
       this.policies = this.policyListService.getPolicies();
 
       await this.load();

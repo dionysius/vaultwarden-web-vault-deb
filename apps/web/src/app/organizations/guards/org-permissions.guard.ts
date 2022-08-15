@@ -5,12 +5,14 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
-import { Permissions } from "@bitwarden/common/enums/permissions";
+import { Organization } from "@bitwarden/common/models/domain/organization";
+
+import { canAccessOrgAdmin } from "../navigation-permissions";
 
 @Injectable({
   providedIn: "root",
 })
-export class PermissionsGuard implements CanActivate {
+export class OrganizationPermissionsGuard implements CanActivate {
   constructor(
     private router: Router,
     private organizationService: OrganizationService,
@@ -39,8 +41,11 @@ export class PermissionsGuard implements CanActivate {
       return this.router.createUrlTree(["/"]);
     }
 
-    const permissions = route.data == null ? [] : (route.data.permissions as Permissions[]);
-    if (permissions != null && !org.hasAnyPermission(permissions)) {
+    const permissionsCallback: (organization: Organization) => boolean =
+      route.data?.organizationPermissions;
+    const hasPermissions = permissionsCallback == null || permissionsCallback(org);
+
+    if (!hasPermissions) {
       // Handle linkable ciphers for organizations the user only has view access to
       // https://bitwarden.atlassian.net/browse/EC-203
       const cipherId =
@@ -54,7 +59,9 @@ export class PermissionsGuard implements CanActivate {
       }
 
       this.platformUtilsService.showToast("error", null, this.i18nService.t("accessDenied"));
-      return this.router.createUrlTree(["/"]);
+      return canAccessOrgAdmin(org)
+        ? this.router.createUrlTree(["/organizations", org.id])
+        : this.router.createUrlTree(["/"]);
     }
 
     return true;

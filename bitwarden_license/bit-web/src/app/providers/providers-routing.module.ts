@@ -2,15 +2,14 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
-import { Permissions } from "@bitwarden/common/enums/permissions";
+import { Provider } from "@bitwarden/common/models/domain/provider";
 
 import { FrontendLayoutComponent } from "src/app/layouts/frontend-layout.component";
 import { ProvidersComponent } from "src/app/providers/providers.component";
 
 import { ClientsComponent } from "./clients/clients.component";
 import { CreateOrganizationComponent } from "./clients/create-organization.component";
-import { PermissionsGuard } from "./guards/provider-type.guard";
-import { ProviderGuard } from "./guards/provider.guard";
+import { ProviderPermissionsGuard } from "./guards/provider-permissions.guard";
 import { AcceptProviderComponent } from "./manage/accept-provider.component";
 import { EventsComponent } from "./manage/events.component";
 import { ManageComponent } from "./manage/manage.component";
@@ -54,7 +53,7 @@ const routes: Routes = [
       {
         path: ":providerId",
         component: ProvidersLayoutComponent,
-        canActivate: [ProviderGuard],
+        canActivate: [ProviderPermissionsGuard],
         children: [
           { path: "", pathMatch: "full", redirectTo: "clients" },
           { path: "clients/create", component: CreateOrganizationComponent },
@@ -71,19 +70,19 @@ const routes: Routes = [
               {
                 path: "people",
                 component: PeopleComponent,
-                canActivate: [PermissionsGuard],
+                canActivate: [ProviderPermissionsGuard],
                 data: {
                   titleId: "people",
-                  permissions: [Permissions.ManageUsers],
+                  providerPermissions: (provider: Provider) => provider.canManageUsers,
                 },
               },
               {
                 path: "events",
                 component: EventsComponent,
-                canActivate: [PermissionsGuard],
+                canActivate: [ProviderPermissionsGuard],
                 data: {
                   titleId: "eventLogs",
-                  permissions: [Permissions.AccessEventLogs],
+                  providerPermissions: (provider: Provider) => provider.canAccessEventLogs,
                 },
               },
             ],
@@ -100,10 +99,10 @@ const routes: Routes = [
               {
                 path: "account",
                 component: AccountComponent,
-                canActivate: [PermissionsGuard],
+                canActivate: [ProviderPermissionsGuard],
                 data: {
                   titleId: "myProvider",
-                  permissions: [Permissions.ManageProvider],
+                  providerPermissions: (provider: Provider) => provider.isProviderAdmin,
                 },
               },
             ],
