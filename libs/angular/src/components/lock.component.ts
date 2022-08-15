@@ -58,8 +58,6 @@ export class LockComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit() {
-    // Load the first and observe updates
-    await this.load();
     this.activeAccountSubscription = this.stateService.activeAccount$.subscribe(async () => {
       await this.load();
     });
