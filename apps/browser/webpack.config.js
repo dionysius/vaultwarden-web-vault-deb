@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { AngularWebpackPlugin } = require("@ngtools/webpack");
 const TerserPlugin = require("terser-webpack-plugin");
+const configurator = require("./config/config");
 
 if (process.env.NODE_ENV == null) {
   process.env.NODE_ENV = "development";
@@ -14,6 +15,8 @@ const ENV = (process.env.ENV = process.env.NODE_ENV);
 const manifestVersion = process.env.MANIFEST_VERSION == 3 ? 3 : 2;
 
 console.log(`Building Manifest Version ${manifestVersion} app`);
+const envConfig = configurator.load(ENV);
+configurator.log(envConfig);
 
 const moduleRules = [
   {
@@ -115,6 +118,10 @@ const plugins = [
   new webpack.SourceMapDevToolPlugin({
     exclude: [/content\/.*/, /notification\/.*/],
     filename: "[file].map",
+  }),
+  new webpack.EnvironmentPlugin({
+    FLAGS: envConfig.flags,
+    DEV_FLAGS: ENV === "development" ? envConfig.devFlags : {},
   }),
 ];
 

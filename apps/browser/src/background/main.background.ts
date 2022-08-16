@@ -54,7 +54,6 @@ import { EventService } from "@bitwarden/common/services/event.service";
 import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/fileUpload.service";
 import { FolderApiService } from "@bitwarden/common/services/folder/folder-api.service";
-import { FolderService } from "@bitwarden/common/services/folder/folder.service";
 import { KeyConnectorService } from "@bitwarden/common/services/keyConnector.service";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { NotificationsService } from "@bitwarden/common/services/notifications.service";
@@ -90,6 +89,7 @@ import BrowserLocalStorageService from "../services/browserLocalStorage.service"
 import BrowserMessagingService from "../services/browserMessaging.service";
 import BrowserMessagingPrivateModeBackgroundService from "../services/browserMessagingPrivateModeBackground.service";
 import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
+import { FolderService } from "../services/folders/folder.service";
 import I18nService from "../services/i18n.service";
 import { KeyGenerationService } from "../services/keyGeneration.service";
 import { LocalBackedSessionStorageService } from "../services/localBackedSessionStorage.service";

@@ -192,4 +192,12 @@ describe("EncString", () => {
       cryptoService.received().decryptToUtf8(encString, key);
     });
   });
+
+  describe("toJSON", () => {
+    it("Should be represented by the encrypted string", () => {
+      const encString = new EncString(EncryptionType.AesCbc256_B64, "data", "iv");
+
+      expect(encString.toJSON()).toBe(encString.encryptedString);
+    });
+  });
 });

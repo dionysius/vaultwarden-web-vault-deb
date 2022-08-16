@@ -6,3 +6,7 @@ export abstract class AbstractStorageService {
   abstract save<T>(key: string, obj: T, options?: StorageOptions): Promise<void>;
   abstract remove(key: string, options?: StorageOptions): Promise<void>;
 }
+
+export abstract class AbstractCachedStorageService extends AbstractStorageService {
+  abstract getBypassCache<T>(key: string, options?: StorageOptions): Promise<T>;
+}

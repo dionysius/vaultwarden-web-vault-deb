@@ -1,3 +1,4 @@
+import { AbstractCachedStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { GlobalState } from "@bitwarden/common/models/domain/globalState";
 import { StorageOptions } from "@bitwarden/common/models/domain/storageOptions";
 import {
@@ -16,6 +17,16 @@ export class StateService
   extends BaseStateService<GlobalState, Account>
   implements StateServiceAbstraction
 {
+  async getFromSessionMemory<T>(key: string): Promise<T> {
+    return this.memoryStorageService instanceof AbstractCachedStorageService
+      ? await this.memoryStorageService.getBypassCache<T>(key)
+      : await this.memoryStorageService.get<T>(key);
+  }
+
+  async setInSessionMemory(key: string, value: any): Promise<void> {
+    await this.memoryStorageService.save(key, value);
+  }
+
   async addAccount(account: Account) {
     // Apply browser overrides to default account values
     account = new Account(account);

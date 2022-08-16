@@ -1,4 +1,5 @@
 import { FolderData } from "@bitwarden/common/models/data/folderData";
+import { EncString } from "@bitwarden/common/models/domain/encString";
 import { Folder } from "@bitwarden/common/models/domain/folder";
 
 import { mockEnc } from "../../utils";
@@ -36,6 +37,29 @@ describe("Folder", () => {
       id: "id",
       name: "encName",
       revisionDate: new Date("2022-01-31T12:00:00.000Z"),
+    });
+  });
+
+  describe("fromJSON", () => {
+    jest.mock("@bitwarden/common/models/domain/encString");
+    const mockFromJson = (stub: any) => (stub + "_fromJSON") as any;
+    jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
+
+    it("initializes nested objects", () => {
+      const revisionDate = new Date("2022-08-04T01:06:40.441Z");
+      const actual = Folder.fromJSON({
+        revisionDate: revisionDate.toISOString(),
+        name: "name",
+        id: "id",
+      });
+
+      const expected = {
+        revisionDate: revisionDate,
+        name: "name_fromJSON",
+        id: "id",
+      };
+
+      expect(actual).toMatchObject(expected);
     });
   });
 });

@@ -7,6 +7,8 @@ import { BrowserGroupingsComponentState } from "src/models/browserGroupingsCompo
 import { BrowserSendComponentState } from "src/models/browserSendComponentState";
 
 export abstract class StateService extends BaseStateServiceAbstraction<Account> {
+  abstract getFromSessionMemory<T>(key: string): Promise<T>;
+  abstract setInSessionMemory(key: string, value: any): Promise<void>;
   getBrowserGroupingComponentState: (
     options?: StorageOptions
   ) => Promise<BrowserGroupingsComponentState>;

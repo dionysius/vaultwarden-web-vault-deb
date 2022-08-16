@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { IEncrypted } from "@bitwarden/common/interfaces/IEncrypted";
 
 import { CryptoService } from "../../abstractions/crypto.service";
@@ -21,80 +23,9 @@ export class EncString implements IEncrypted {
     mac?: string
   ) {
     if (data != null) {
-      // data and header
-      const encType = encryptedStringOrType as EncryptionType;
-
-      if (iv != null) {
-        this.encryptedString = encType + "." + iv + "|" + data;
-      } else {
-        this.encryptedString = encType + "." + data;
-      }
-
-      // mac
-      if (mac != null) {
-        this.encryptedString += "|" + mac;
-      }
-
-      this.encryptionType = encType;
-      this.data = data;
-      this.iv = iv;
-      this.mac = mac;
-
-      return;
-    }
-
-    this.encryptedString = encryptedStringOrType as string;
-    if (!this.encryptedString) {
-      return;
-    }
-
-    const headerPieces = this.encryptedString.split(".");
-    let encPieces: string[] = null;
-
-    if (headerPieces.length === 2) {
-      try {
-        this.encryptionType = parseInt(headerPieces[0], null);
-        encPieces = headerPieces[1].split("|");
-      } catch (e) {
-        return;
-      }
+      this.initFromData(encryptedStringOrType as EncryptionType, data, iv, mac);
     } else {
-      encPieces = this.encryptedString.split("|");
-      this.encryptionType =
-        encPieces.length === 3
-          ? EncryptionType.AesCbc128_HmacSha256_B64
-          : EncryptionType.AesCbc256_B64;
-    }
-
-    switch (this.encryptionType) {
-      case EncryptionType.AesCbc128_HmacSha256_B64:
-      case EncryptionType.AesCbc256_HmacSha256_B64:
-        if (encPieces.length !== 3) {
-          return;
-        }
-
-        this.iv = encPieces[0];
-        this.data = encPieces[1];
-        this.mac = encPieces[2];
-        break;
-      case EncryptionType.AesCbc256_B64:
-        if (encPieces.length !== 2) {
-          return;
-        }
-
-        this.iv = encPieces[0];
-        this.data = encPieces[1];
-        break;
-      case EncryptionType.Rsa2048_OaepSha256_B64:
-      case EncryptionType.Rsa2048_OaepSha1_B64:
-        if (encPieces.length !== 1) {
-          return;
-        }
-
-        this.data = encPieces[0];
-        break;
-      default:
-        return;
+      this.initFromEncryptedString(encryptedStringOrType as string);
     }
   }
 
@@ -132,5 +63,101 @@ export class EncString implements IEncrypted {
 
   get dataBytes(): ArrayBuffer {
     return this.data == null ? null : Utils.fromB64ToArray(this.data).buffer;
+  }
+
+  toJSON() {
+    return this.encryptedString;
+  }
+
+  static fromJSON(obj: Jsonify<EncString>): EncString {
+    return new EncString(obj);
+  }
+
+  private initFromData(encType: EncryptionType, data: string, iv: string, mac: string) {
+    if (iv != null) {
+      this.encryptedString = encType + "." + iv + "|" + data;
+    } else {
+      this.encryptedString = encType + "." + data;
+    }
+
+    // mac
+    if (mac != null) {
+      this.encryptedString += "|" + mac;
+    }
+
+    this.encryptionType = encType;
+    this.data = data;
+    this.iv = iv;
+    this.mac = mac;
+  }
+
+  private initFromEncryptedString(encryptedString: string) {
+    this.encryptedString = encryptedString as string;
+    if (!this.encryptedString) {
+      return;
+    }
+
+    const { encType, encPieces } = this.parseEncryptedString(this.encryptedString);
+    this.encryptionType = encType;
+
+    switch (encType) {
+      case EncryptionType.AesCbc128_HmacSha256_B64:
+      case EncryptionType.AesCbc256_HmacSha256_B64:
+        if (encPieces.length !== 3) {
+          return;
+        }
+
+        this.iv = encPieces[0];
+        this.data = encPieces[1];
+        this.mac = encPieces[2];
+        break;
+      case EncryptionType.AesCbc256_B64:
+        if (encPieces.length !== 2) {
+          return;
+        }
+
+        this.iv = encPieces[0];
+        this.data = encPieces[1];
+        break;
+      case EncryptionType.Rsa2048_OaepSha256_B64:
+      case EncryptionType.Rsa2048_OaepSha1_B64:
+        if (encPieces.length !== 1) {
+          return;
+        }
+
+        this.data = encPieces[0];
+        break;
+      default:
+        return;
+    }
+  }
+
+  private parseEncryptedString(encryptedString: string): {
+    encType: EncryptionType;
+    encPieces: string[];
+  } {
+    const headerPieces = encryptedString.split(".");
+    let encType: EncryptionType;
+    let encPieces: string[] = null;
+
+    if (headerPieces.length === 2) {
+      try {
+        encType = parseInt(headerPieces[0], null);
+        encPieces = headerPieces[1].split("|");
+      } catch (e) {
+        return;
+      }
+    } else {
+      encPieces = encryptedString.split("|");
+      encType =
+        encPieces.length === 3
+          ? EncryptionType.AesCbc128_HmacSha256_B64
+          : EncryptionType.AesCbc256_B64;
+    }
+
+    return {
+      encType,
+      encPieces,
+    };
   }
 }

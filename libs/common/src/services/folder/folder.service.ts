@@ -13,8 +13,8 @@ import { SymmetricCryptoKey } from "../../models/domain/symmetricCryptoKey";
 import { FolderView } from "../../models/view/folderView";
 
 export class FolderService implements InternalFolderServiceAbstraction {
-  private _folders: BehaviorSubject<Folder[]> = new BehaviorSubject([]);
-  private _folderViews: BehaviorSubject<FolderView[]> = new BehaviorSubject([]);
+  protected _folders: BehaviorSubject<Folder[]> = new BehaviorSubject([]);
+  protected _folderViews: BehaviorSubject<FolderView[]> = new BehaviorSubject([]);
 
   folders$ = this._folders.asObservable();
   folderViews$ = this._folderViews.asObservable();

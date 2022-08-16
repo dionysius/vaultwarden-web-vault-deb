@@ -1,7 +1,10 @@
 import { Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
+import {
+  AbstractCachedStorageService,
+  AbstractStorageService,
+} from "@bitwarden/common/abstractions/storage.service";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/globalState";
@@ -14,12 +17,12 @@ import { BrowserComponentState } from "../models/browserComponentState";
 import { BrowserGroupingsComponentState } from "../models/browserGroupingsComponentState";
 import { BrowserSendComponentState } from "../models/browserSendComponentState";
 
+import { LocalBackedSessionStorageService } from "./localBackedSessionStorage.service";
 import { StateService } from "./state.service";
 
 describe("Browser State Service", () => {
   let secureStorageService: SubstituteOf<AbstractStorageService>;
   let diskStorageService: SubstituteOf<AbstractStorageService>;
-  let memoryStorageService: SubstituteOf<AbstractStorageService>;
   let logService: SubstituteOf<LogService>;
   let stateMigrationService: SubstituteOf<StateMigrationService>;
   let stateFactory: SubstituteOf<StateFactory<GlobalState, Account>>;
@@ -33,7 +36,6 @@ describe("Browser State Service", () => {
   beforeEach(() => {
     secureStorageService = Substitute.for();
     diskStorageService = Substitute.for();
-    memoryStorageService = Substitute.for();
     logService = Substitute.for();
     stateMigrationService = Substitute.for();
     stateFactory = Substitute.for();
@@ -44,66 +46,104 @@ describe("Browser State Service", () => {
       profile: { userId: userId },
     });
     state.activeUserId = userId;
-    const stateGetter = (key: string) => Promise.resolve(JSON.parse(JSON.stringify(state)));
-    memoryStorageService.get("state").mimicks(stateGetter);
-
-    sut = new StateService(
-      diskStorageService,
-      secureStorageService,
-      memoryStorageService,
-      logService,
-      stateMigrationService,
-      stateFactory,
-      useAccountCache
-    );
   });
 
-  describe("getBrowserGroupingComponentState", () => {
-    it("should return a BrowserGroupingsComponentState", async () => {
-      state.accounts[userId].groupings = new BrowserGroupingsComponentState();
+  describe("direct memory storage access", () => {
+    let memoryStorageService: AbstractCachedStorageService;
 
-      const actual = await sut.getBrowserGroupingComponentState();
-      expect(actual).toBeInstanceOf(BrowserGroupingsComponentState);
+    beforeEach(() => {
+      // We need `AbstractCachedStorageService` in the prototype chain to correctly test cache bypass.
+      memoryStorageService = Object.create(LocalBackedSessionStorageService.prototype);
+
+      sut = new StateService(
+        diskStorageService,
+        secureStorageService,
+        memoryStorageService,
+        logService,
+        stateMigrationService,
+        stateFactory,
+        useAccountCache
+      );
+    });
+
+    it("should bypass cache if possible", async () => {
+      const spyBypass = jest
+        .spyOn(memoryStorageService, "getBypassCache")
+        .mockResolvedValue("value");
+      const spyGet = jest.spyOn(memoryStorageService, "get");
+      const result = await sut.getFromSessionMemory("key");
+      expect(spyBypass).toHaveBeenCalled();
+      expect(spyGet).not.toHaveBeenCalled();
+      expect(result).toBe("value");
     });
   });
 
-  describe("getBrowserCipherComponentState", () => {
-    it("should return a BrowserComponentState", async () => {
-      const componentState = new BrowserComponentState();
-      componentState.scrollY = 0;
-      componentState.searchText = "test";
-      state.accounts[userId].ciphers = componentState;
+  describe("state methods", () => {
+    let memoryStorageService: SubstituteOf<AbstractStorageService>;
 
-      const actual = await sut.getBrowserCipherComponentState();
-      expect(actual).toStrictEqual(componentState);
+    beforeEach(() => {
+      memoryStorageService = Substitute.for();
+      const stateGetter = (key: string) => Promise.resolve(JSON.parse(JSON.stringify(state)));
+      memoryStorageService.get("state").mimicks(stateGetter);
+
+      sut = new StateService(
+        diskStorageService,
+        secureStorageService,
+        memoryStorageService,
+        logService,
+        stateMigrationService,
+        stateFactory,
+        useAccountCache
+      );
     });
-  });
 
-  describe("getBrowserSendComponentState", () => {
-    it("should return a BrowserSendComponentState", async () => {
-      const sendState = new BrowserSendComponentState();
-      sendState.sends = [new SendView(), new SendView()];
-      sendState.typeCounts = new Map<SendType, number>([
-        [SendType.File, 3],
-        [SendType.Text, 5],
-      ]);
-      state.accounts[userId].send = sendState;
+    describe("getBrowserGroupingComponentState", () => {
+      it("should return a BrowserGroupingsComponentState", async () => {
+        state.accounts[userId].groupings = new BrowserGroupingsComponentState();
 
-      const actual = await sut.getBrowserSendComponentState();
-      expect(actual).toBeInstanceOf(BrowserSendComponentState);
-      expect(actual).toMatchObject(sendState);
+        const actual = await sut.getBrowserGroupingComponentState();
+        expect(actual).toBeInstanceOf(BrowserGroupingsComponentState);
+      });
     });
-  });
 
-  describe("getBrowserSendTypeComponentState", () => {
-    it("should return a BrowserComponentState", async () => {
-      const componentState = new BrowserComponentState();
-      componentState.scrollY = 0;
-      componentState.searchText = "test";
-      state.accounts[userId].sendType = componentState;
+    describe("getBrowserCipherComponentState", () => {
+      it("should return a BrowserComponentState", async () => {
+        const componentState = new BrowserComponentState();
+        componentState.scrollY = 0;
+        componentState.searchText = "test";
+        state.accounts[userId].ciphers = componentState;
 
-      const actual = await sut.getBrowserSendTypeComponentState();
-      expect(actual).toStrictEqual(componentState);
+        const actual = await sut.getBrowserCipherComponentState();
+        expect(actual).toStrictEqual(componentState);
+      });
+    });
+
+    describe("getBrowserSendComponentState", () => {
+      it("should return a BrowserSendComponentState", async () => {
+        const sendState = new BrowserSendComponentState();
+        sendState.sends = [new SendView(), new SendView()];
+        sendState.typeCounts = new Map<SendType, number>([
+          [SendType.File, 3],
+          [SendType.Text, 5],
+        ]);
+        state.accounts[userId].send = sendState;
+
+        const actual = await sut.getBrowserSendComponentState();
+        expect(actual).toBeInstanceOf(BrowserSendComponentState);
+        expect(actual).toMatchObject(sendState);
+      });
+    });
+
+    describe("getBrowserSendTypeComponentState", () => {
+      it("should return a BrowserComponentState", async () => {
+        const componentState = new BrowserComponentState();
+        componentState.scrollY = 0;
+        componentState.searchText = "test";
+        state.accounts[userId].sendType = componentState;
+
+        const actual = await sut.getBrowserSendTypeComponentState();
+        expect(actual).toStrictEqual(componentState);
+      });
     });
   });
 });
