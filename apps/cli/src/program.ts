@@ -281,7 +281,7 @@ export class Program extends BaseProgram {
         writeLn("", true);
       })
       .action(async (cmd) => {
-        await this.exitIfLocked();
+        await this.exitIfNotAuthed();
         const command = new SyncCommand(this.main.syncService);
         const response = await command.run(cmd);
         this.processResponse(response);
