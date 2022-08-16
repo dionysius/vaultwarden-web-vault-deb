@@ -48,7 +48,7 @@
     }
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &.active {
       @include themify($themes) {
         background-color: themed("boxBackgroundHoverColor");
@@ -77,6 +77,10 @@
 
     &.box-content-padded {
       padding: 10px 15px;
+
+      .box-header-expandable[aria-expanded="true"] {
+        margin-bottom: 1rem;
+      }
     }
 
     &.condensed .box-content-row,
