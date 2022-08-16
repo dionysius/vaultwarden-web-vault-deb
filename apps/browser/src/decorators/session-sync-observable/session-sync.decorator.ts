@@ -42,7 +42,8 @@ export function sessionSync<T>(buildOptions: BuildOptions<T>) {
     }
 
     p.__syncedItemMetadata.push({
-      key: `${prototype.constructor.name}_${propertyKey}`,
+      propertyKey,
+      sessionKey: `${prototype.constructor.name}_${propertyKey}`,
       ctor: buildOptions.ctor,
       initializer: buildOptions.initializer,
       initializeAsArray: buildOptions.initializeAsArray,

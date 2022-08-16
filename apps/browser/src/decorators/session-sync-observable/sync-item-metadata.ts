@@ -1,5 +1,6 @@
 export class SyncedItemMetadata {
-  key: string;
+  propertyKey: string;
+  sessionKey: string;
   ctor?: new () => any;
   initializer?: (keyValuePair: any) => any;
   initializeAsArray?: boolean;

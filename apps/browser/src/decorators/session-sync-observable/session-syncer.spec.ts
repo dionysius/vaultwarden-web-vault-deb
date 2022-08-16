@@ -7,8 +7,9 @@ import { StateService } from "../../services/abstractions/state.service";
 import { SessionSyncer } from "./session-syncer";
 
 describe("session syncer", () => {
-  const key = "Test__behaviorSubject";
-  const metaData = { key, initializer: (s: string) => s };
+  const propertyKey = "behaviorSubject";
+  const sessionKey = "Test__" + propertyKey;
+  const metaData = { propertyKey, sessionKey, initializer: (s: string) => s };
   let stateService: MockProxy<StateService>;
   let sut: SessionSyncer;
   let behaviorSubject: BehaviorSubject<string>;
@@ -40,18 +41,19 @@ describe("session syncer", () => {
 
     it("should create if either ctor or initializer is provided", () => {
       expect(
-        new SessionSyncer(behaviorSubject, stateService, { key: key, ctor: String })
+        new SessionSyncer(behaviorSubject, stateService, { propertyKey, sessionKey, ctor: String })
       ).toBeDefined();
       expect(
         new SessionSyncer(behaviorSubject, stateService, {
-          key: key,
+          propertyKey,
+          sessionKey,
           initializer: (s: any) => s,
         })
       ).toBeDefined();
     });
     it("should throw if neither ctor or initializer is provided", () => {
       expect(() => {
-        new SessionSyncer(behaviorSubject, stateService, { key: key });
+        new SessionSyncer(behaviorSubject, stateService, { propertyKey, sessionKey });
       }).toThrowError("ctor or initializer must be provided");
     });
   });
@@ -96,7 +98,7 @@ describe("session syncer", () => {
       // await finishing of fire-and-forget operation
       await new Promise((resolve) => setTimeout(resolve, 100));
       expect(stateService.setInSessionMemory).toHaveBeenCalledTimes(1);
-      expect(stateService.setInSessionMemory).toHaveBeenCalledWith(key, "test");
+      expect(stateService.setInSessionMemory).toHaveBeenCalledWith(sessionKey, "test");
     });
 
     it("should update sessionSyncers in other contexts", async () => {
@@ -104,7 +106,7 @@ describe("session syncer", () => {
       await new Promise((resolve) => setTimeout(resolve, 100));
 
       expect(sendMessageSpy).toHaveBeenCalledTimes(1);
-      expect(sendMessageSpy).toHaveBeenCalledWith(`${key}_update`, { id: sut.id });
+      expect(sendMessageSpy).toHaveBeenCalledWith(`${sessionKey}_update`, { id: sut.id });
     });
   });
 
@@ -131,7 +133,7 @@ describe("session syncer", () => {
     });
 
     it("should ignore messages from itself", async () => {
-      await sut.updateFromMessage({ command: `${key}_update`, id: sut.id });
+      await sut.updateFromMessage({ command: `${sessionKey}_update`, id: sut.id });
 
       expect(stateService.getFromSessionMemory).not.toHaveBeenCalled();
       expect(nextSpy).not.toHaveBeenCalled();
@@ -140,10 +142,10 @@ describe("session syncer", () => {
     it("should update from message on emit from another instance", async () => {
       stateService.getFromSessionMemory.mockResolvedValue("test");
 
-      await sut.updateFromMessage({ command: `${key}_update`, id: "different_id" });
+      await sut.updateFromMessage({ command: `${sessionKey}_update`, id: "different_id" });
 
       expect(stateService.getFromSessionMemory).toHaveBeenCalledTimes(1);
-      expect(stateService.getFromSessionMemory).toHaveBeenCalledWith(key);
+      expect(stateService.getFromSessionMemory).toHaveBeenCalledWith(sessionKey);
 
       expect(nextSpy).toHaveBeenCalledTimes(1);
       expect(nextSpy).toHaveBeenCalledWith("test");

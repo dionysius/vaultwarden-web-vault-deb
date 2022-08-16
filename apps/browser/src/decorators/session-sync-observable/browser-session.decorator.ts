@@ -39,7 +39,7 @@ export function browserSession<TCtor extends Constructor<any>>(constructor: TCto
     }
 
     buildSyncer(metadata: SyncedItemMetadata, stateService: StateService) {
-      const syncer = new SessionSyncer((this as any)[metadata.key], stateService, metadata);
+      const syncer = new SessionSyncer((this as any)[metadata.propertyKey], stateService, metadata);
       syncer.init();
       return syncer;
     }

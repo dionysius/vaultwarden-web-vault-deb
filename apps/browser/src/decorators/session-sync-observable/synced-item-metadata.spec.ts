@@ -1,6 +1,7 @@
 import { SyncedItemMetadata } from "./sync-item-metadata";
 
 describe("build from key value pair", () => {
+  const propertyKey = "propertyKey";
   const key = "key";
   const initializer = (s: any) => "used initializer";
   class TestClass {}
@@ -10,7 +11,8 @@ describe("build from key value pair", () => {
     const actual = SyncedItemMetadata.buildFromKeyValuePair(
       {},
       {
-        key: "key",
+        propertyKey,
+        sessionKey: "key",
         initializer: initializer,
       }
     );
@@ -21,7 +23,8 @@ describe("build from key value pair", () => {
   it("should call ctor if provided", () => {
     const expected = { provided: "value" };
     const actual = SyncedItemMetadata.buildFromKeyValuePair(expected, {
-      key: key,
+      propertyKey,
+      sessionKey: key,
       ctor: ctor,
     });
 
@@ -33,7 +36,8 @@ describe("build from key value pair", () => {
     const actual = SyncedItemMetadata.buildFromKeyValuePair(
       {},
       {
-        key: key,
+        propertyKey,
+        sessionKey: key,
         initializer: initializer,
         ctor: ctor,
       }
@@ -44,7 +48,8 @@ describe("build from key value pair", () => {
 
   it("should honor initialize as array", () => {
     const actual = SyncedItemMetadata.buildFromKeyValuePair([1, 2], {
-      key: key,
+      propertyKey,
+      sessionKey: key,
       initializer: initializer,
       initializeAsArray: true,
     });

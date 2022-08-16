@@ -62,18 +62,18 @@ export class SessionSyncer {
     if (message.command != this.updateMessageCommand || message.id === this.id) {
       return;
     }
-    const keyValuePair = await this.stateService.getFromSessionMemory(this.metaData.key);
+    const keyValuePair = await this.stateService.getFromSessionMemory(this.metaData.sessionKey);
     const value = SyncedItemMetadata.buildFromKeyValuePair(keyValuePair, this.metaData);
     this.ignoreNextUpdate = true;
     this.behaviorSubject.next(value);
   }
 
   private async updateSession(value: any) {
-    await this.stateService.setInSessionMemory(this.metaData.key, value);
+    await this.stateService.setInSessionMemory(this.metaData.sessionKey, value);
     await BrowserApi.sendMessage(this.updateMessageCommand, { id: this.id });
   }
 
   private get updateMessageCommand() {
-    return `${this.metaData.key}_update`;
+    return `${this.metaData.sessionKey}_update`;
   }
 }
