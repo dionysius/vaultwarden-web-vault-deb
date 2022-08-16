@@ -16,7 +16,7 @@ on:
     branches:
       - 'master'
       - 'rc'
-      - 'hotfix-rc'
+      - 'hotfix-rc-desktop'
     paths:
       - 'apps/desktop/**'
       - 'libs/**'
@@ -121,7 +121,7 @@ jobs:
             echo "::set-output name=rc_branch_exists::0"
           fi
 
-          if [[ $(git ls-remote --heads origin hotfix-rc) ]]; then
+          if [[ $(git ls-remote --heads origin hotfix-rc-desktop) ]]; then
             echo "::set-output name=hotfix_branch_exists::1"
           else
             echo "::set-output name=hotfix_branch_exists::0"
@@ -744,13 +744,13 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
-      - name: Download artifact from hotfix-rc
-        if: github.ref == 'refs/heads/hotfix-rc'
+      - name: Download artifact from hotfix-rc-desktop
+        if: github.ref == 'refs/heads/hotfix-rc-desktop'
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
-          branch: hotfix-rc
+          branch: hotfix-rc-desktop
           path: ${{ github.workspace }}/browser-build-artifacts
 
       - name: Download artifact from rc
@@ -763,7 +763,7 @@ jobs:
           path: ${{ github.workspace }}/browser-build-artifacts
 
       - name: Download artifact from master
-        if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc' }}
+        if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc-desktop' }}
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
         with:
           workflow: build-browser.yml
@@ -962,13 +962,13 @@ jobs:
         if: steps.build-cache.outputs.cache-hit != 'true'
         run: npm run build
 
-      - name: Download artifact from hotfix-rc
-        if: github.ref == 'refs/heads/hotfix-rc'
+      - name: Download artifact from hotfix-rc-desktop
+        if: github.ref == 'refs/heads/hotfix-rc-desktop'
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
-          branch: hotfix-rc
+          branch: hotfix-rc-desktop
           path: ${{ github.workspace }}/browser-build-artifacts
 
       - name: Download artifact from rc
@@ -981,7 +981,7 @@ jobs:
           path: ${{ github.workspace }}/browser-build-artifacts
 
       - name: Download artifact from master
-        if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc' }}
+        if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc-desktop' }}
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
         with:
           workflow: build-browser.yml
@@ -1022,7 +1022,7 @@ jobs:
               && needs.setup.outputs.rc_branch_exists == 0
               && needs.setup.outputs.hotfix_branch_exists == 0)
             || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
-            || github.ref == 'refs/heads/hotfix-rc'
+            || github.ref == 'refs/heads/hotfix-rc-desktop'
         run: npm run upload:mas
 
 
