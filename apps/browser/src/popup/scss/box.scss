@@ -441,7 +441,7 @@
       }
     }
 
-    &:focus {
+    &:not([type="file"]):focus {
       outline: none;
     }
   }
