@@ -267,16 +267,23 @@ jobs:
       - name: Login to Azure ACR
         run: az acr login -n bitwardenqa
 
-      - name: Tag and Push RC to Azure ACR QA registry
+      - name: Tag and Push to Azure QA ACR
         env:
           REGISTRY: bitwardenqa.azurecr.io
         run: |
-          IMAGE_TAG=$(echo "${GITHUB_REF:11}" | sed "s#/#-#g")  # slash safe branch name
+          if [[ $(grep "pull" <<< "${GITHUB_REF}") ]]; then
+            IMAGE_TAG=$(echo "${GITHUB_HEAD_REF}" | sed "s#/#-#g")
+          else
+            IMAGE_TAG=$(echo "${GITHUB_REF:11}" | sed "s#/#-#g")
+          fi
+
           if [[ "$IMAGE_TAG" == "master" ]]; then
             IMAGE_TAG=dev
           fi
+
           docker tag bitwarden/web \
             $REGISTRY/web-sh:$IMAGE_TAG
+
           docker push $REGISTRY/web-sh:$IMAGE_TAG
 
       - name: Log out of Docker
