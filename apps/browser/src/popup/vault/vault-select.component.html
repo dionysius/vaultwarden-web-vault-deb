@@ -26,26 +26,19 @@
     >
       <button
         appStopClick
-        appBlurClick
         (click)="selectAllVaults()"
         [ngClass]="{ active: !myVaultOnly && !selectOrganizationId }"
       >
         <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>
         &nbsp;{{ "allVaults" | i18n }}
       </button>
-      <button
-        *ngIf="!enforcePersonalOwnwership"
-        appStopClick
-        appBlurClick
-        (click)="selectMyVault()"
-      >
+      <button *ngIf="!enforcePersonalOwnwership" appStopClick (click)="selectMyVault()">
         <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
         &nbsp;{{ "myVault" | i18n }}
       </button>
       <button
         *ngFor="let organization of organizations"
         appStopClick
-        appBlurClick
         (click)="selectOrganization(organization)"
       >
         <i
