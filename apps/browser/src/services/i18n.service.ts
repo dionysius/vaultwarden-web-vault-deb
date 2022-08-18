@@ -25,6 +25,7 @@ export default class I18nService extends BaseI18nService {
       "en-IN",
       "es",
       "et",
+      "eu",
       "fa",
       "fi",
       "fil",

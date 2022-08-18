@@ -34,6 +34,7 @@ export class I18nService extends BaseI18nService {
       "eo",
       "es",
       "et",
+      "eu",
       "fa",
       "fi",
       "fil",

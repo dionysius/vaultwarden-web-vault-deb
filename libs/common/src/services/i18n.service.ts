@@ -27,6 +27,7 @@ export class I18nService implements I18nServiceAbstraction {
     ["eo", "Esperanto"],
     ["es", "español"],
     ["et", "eesti"],
+    ["eu", "euskara"],
     ["fa", "فارسی"],
     ["fi", "suomi"],
     ["fil", "Wikang Filipino"],
