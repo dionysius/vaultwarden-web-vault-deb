@@ -34,6 +34,9 @@ const filters = {
 
 function buildString() {
   var build = "";
+  if (process.env.MANIFEST_VERSION) {
+    build = `-mv${process.env.MANIFEST_VERSION}`;
+  }
   if (process.env.BUILD_NUMBER && process.env.BUILD_NUMBER !== "") {
     build = `-${process.env.BUILD_NUMBER}`;
   }

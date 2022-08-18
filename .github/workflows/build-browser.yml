@@ -143,6 +143,10 @@ jobs:
           npm run dist
           npm run test
 
+      - name: Build Manifest v3
+        run: |
+          npm run dist:chrome:mv3
+
       - name: Gulp
         run: gulp ci
 
@@ -179,6 +183,13 @@ jobs:
         with:
           name: dist-chrome-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-chrome.zip
+          if-no-files-found: error
+
+      - name: Upload Chrome MV3 artifact
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
+        with:
+          name: dist-chrome-MV3-${{ env._BUILD_NUMBER }}.zip
+          path: apps/browser/dist/dist-chrome-MV3.zip
           if-no-files-found: error
 
       - name: Upload Firefox artifact
