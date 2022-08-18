@@ -68,136 +68,11 @@ export class LockComponent implements OnInit, OnDestroy {
   }
 
   async submit() {
-    if (this.pinLock && (this.pin == null || this.pin === "")) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("pinRequired")
-      );
-      return;
-    }
-    if (!this.pinLock && (this.masterPassword == null || this.masterPassword === "")) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPassRequired")
-      );
-      return;
-    }
-
-    const kdf = await this.stateService.getKdfType();
-    const kdfIterations = await this.stateService.getKdfIterations();
-
     if (this.pinLock) {
-      let failed = true;
-      try {
-        if (this.pinSet[0]) {
-          const key = await this.cryptoService.makeKeyFromPin(
-            this.pin,
-            this.email,
-            kdf,
-            kdfIterations,
-            await this.stateService.getDecryptedPinProtected()
-          );
-          const encKey = await this.cryptoService.getEncKey(key);
-          const protectedPin = await this.stateService.getProtectedPin();
-          const decPin = await this.cryptoService.decryptToUtf8(
-            new EncString(protectedPin),
-            encKey
-          );
-          failed = decPin !== this.pin;
-          if (!failed) {
-            await this.setKeyAndContinue(key);
-          }
-        } else {
-          const key = await this.cryptoService.makeKeyFromPin(
-            this.pin,
-            this.email,
-            kdf,
-            kdfIterations
-          );
-          failed = false;
-          await this.setKeyAndContinue(key);
-        }
-      } catch {
-        failed = true;
-      }
-
-      if (failed) {
-        this.invalidPinAttempts++;
-        if (this.invalidPinAttempts >= 5) {
-          this.messagingService.send("logout");
-          return;
-        }
-        this.platformUtilsService.showToast(
-          "error",
-          this.i18nService.t("errorOccurred"),
-          this.i18nService.t("invalidPin")
-        );
-      }
-    } else {
-      const key = await this.cryptoService.makeKey(
-        this.masterPassword,
-        this.email,
-        kdf,
-        kdfIterations
-      );
-      const storedKeyHash = await this.cryptoService.getKeyHash();
-
-      let passwordValid = false;
-
-      if (storedKeyHash != null) {
-        passwordValid = await this.cryptoService.compareAndUpdateKeyHash(this.masterPassword, key);
-      } else {
-        const request = new SecretVerificationRequest();
-        const serverKeyHash = await this.cryptoService.hashPassword(
-          this.masterPassword,
-          key,
-          HashPurpose.ServerAuthorization
-        );
-        request.masterPasswordHash = serverKeyHash;
-        try {
-          this.formPromise = this.apiService.postAccountVerifyPassword(request);
-          await this.formPromise;
-          passwordValid = true;
-          const localKeyHash = await this.cryptoService.hashPassword(
-            this.masterPassword,
-            key,
-            HashPurpose.LocalAuthorization
-          );
-          await this.cryptoService.setKeyHash(localKeyHash);
-        } catch (e) {
-          this.logService.error(e);
-        }
-      }
-
-      if (passwordValid) {
-        if (this.pinSet[0]) {
-          const protectedPin = await this.stateService.getProtectedPin();
-          const encKey = await this.cryptoService.getEncKey(key);
-          const decPin = await this.cryptoService.decryptToUtf8(
-            new EncString(protectedPin),
-            encKey
-          );
-          const pinKey = await this.cryptoService.makePinKey(
-            decPin,
-            this.email,
-            kdf,
-            kdfIterations
-          );
-          await this.stateService.setDecryptedPinProtected(
-            await this.cryptoService.encrypt(key.key, pinKey)
-          );
-        }
-        await this.setKeyAndContinue(key);
-      } else {
-        this.platformUtilsService.showToast(
-          "error",
-          this.i18nService.t("errorOccurred"),
-          this.i18nService.t("invalidMasterPassword")
-        );
-      }
+      return await this.handlePinRequiredUnlock();
     }
+
+    await this.handleMasterPasswordRequiredUnlock();
   }
 
   async logOut() {
@@ -236,6 +111,138 @@ export class LockComponent implements OnInit, OnDestroy {
     }
   }
 
+  private async handlePinRequiredUnlock() {
+    if (this.pin == null || this.pin === "") {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("pinRequired")
+      );
+      return;
+    }
+
+    return await this.doUnlockWithPin();
+  }
+
+  private async doUnlockWithPin() {
+    let failed = true;
+    try {
+      const kdf = await this.stateService.getKdfType();
+      const kdfIterations = await this.stateService.getKdfIterations();
+      if (this.pinSet[0]) {
+        const key = await this.cryptoService.makeKeyFromPin(
+          this.pin,
+          this.email,
+          kdf,
+          kdfIterations,
+          await this.stateService.getDecryptedPinProtected()
+        );
+        const encKey = await this.cryptoService.getEncKey(key);
+        const protectedPin = await this.stateService.getProtectedPin();
+        const decPin = await this.cryptoService.decryptToUtf8(new EncString(protectedPin), encKey);
+        failed = decPin !== this.pin;
+        if (!failed) {
+          await this.setKeyAndContinue(key);
+        }
+      } else {
+        const key = await this.cryptoService.makeKeyFromPin(
+          this.pin,
+          this.email,
+          kdf,
+          kdfIterations
+        );
+        failed = false;
+        await this.setKeyAndContinue(key);
+      }
+    } catch {
+      failed = true;
+    }
+
+    if (failed) {
+      this.invalidPinAttempts++;
+      if (this.invalidPinAttempts >= 5) {
+        this.messagingService.send("logout");
+        return;
+      }
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("invalidPin")
+      );
+    }
+  }
+
+  private async handleMasterPasswordRequiredUnlock() {
+    if (this.masterPassword == null || this.masterPassword === "") {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("masterPassRequired")
+      );
+      return;
+    }
+    await this.doUnlockWithMasterPassword();
+  }
+
+  private async doUnlockWithMasterPassword() {
+    const kdf = await this.stateService.getKdfType();
+    const kdfIterations = await this.stateService.getKdfIterations();
+
+    const key = await this.cryptoService.makeKey(
+      this.masterPassword,
+      this.email,
+      kdf,
+      kdfIterations
+    );
+    const storedKeyHash = await this.cryptoService.getKeyHash();
+
+    let passwordValid = false;
+
+    if (storedKeyHash != null) {
+      passwordValid = await this.cryptoService.compareAndUpdateKeyHash(this.masterPassword, key);
+    } else {
+      const request = new SecretVerificationRequest();
+      const serverKeyHash = await this.cryptoService.hashPassword(
+        this.masterPassword,
+        key,
+        HashPurpose.ServerAuthorization
+      );
+      request.masterPasswordHash = serverKeyHash;
+      try {
+        this.formPromise = this.apiService.postAccountVerifyPassword(request);
+        await this.formPromise;
+        passwordValid = true;
+        const localKeyHash = await this.cryptoService.hashPassword(
+          this.masterPassword,
+          key,
+          HashPurpose.LocalAuthorization
+        );
+        await this.cryptoService.setKeyHash(localKeyHash);
+      } catch (e) {
+        this.logService.error(e);
+      }
+    }
+
+    if (!passwordValid) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("invalidMasterPassword")
+      );
+      return;
+    }
+
+    if (this.pinSet[0]) {
+      const protectedPin = await this.stateService.getProtectedPin();
+      const encKey = await this.cryptoService.getEncKey(key);
+      const decPin = await this.cryptoService.decryptToUtf8(new EncString(protectedPin), encKey);
+      const pinKey = await this.cryptoService.makePinKey(decPin, this.email, kdf, kdfIterations);
+      await this.stateService.setDecryptedPinProtected(
+        await this.cryptoService.encrypt(key.key, pinKey)
+      );
+    }
+    await this.setKeyAndContinue(key);
+  }
   private async setKeyAndContinue(key: SymmetricCryptoKey) {
     await this.cryptoService.setKey(key);
     await this.doContinue();
