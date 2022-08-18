@@ -5,9 +5,9 @@
         <app-callout type="info" *ngIf="allowOwnershipOptions() && !allowPersonal">
           {{ "personalOwnershipPolicyInEffect" | i18n }}
         </app-callout>
-        <div class="box-header">
+        <h2 class="box-header">
           {{ title }}
-        </div>
+        </h2>
         <div class="box-content">
           <div class="box-content-row" *ngIf="!editMode" appBoxRow>
             <label for="type">{{ "type" | i18n }}</label>
@@ -504,9 +504,9 @@
         </div>
       </div>
       <div class="box">
-        <div class="box-header">
+        <h2 class="box-header">
           <label for="notes">{{ "notes" | i18n }}</label>
-        </div>
+        </h2>
         <div class="box-content">
           <div class="box-content-row" appBoxRow>
             <textarea id="notes" name="Notes" rows="6" [(ngModel)]="cipher.notes"></textarea>
@@ -520,9 +520,9 @@
       >
       </app-vault-add-edit-custom-fields>
       <div class="box" *ngIf="allowOwnershipOptions()">
-        <div class="box-header">
+        <h2 class="box-header">
           {{ "ownership" | i18n }}
-        </div>
+        </h2>
         <div class="box-content">
           <div class="box-content-row" appBoxRow>
             <label for="organizationId">{{ "whoOwnsThisItem" | i18n }}</label>
@@ -539,9 +539,9 @@
         </div>
       </div>
       <div class="box" *ngIf="(!editMode || cloneMode) && cipher.organizationId">
-        <div class="box-header">
+        <h2 class="box-header">
           {{ "collections" | i18n }}
-        </div>
+        </h2>
         <div class="box-content" *ngIf="!collections || !collections.length">
           {{ "noCollectionsInList" | i18n }}
         </div>

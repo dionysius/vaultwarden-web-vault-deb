@@ -10,9 +10,9 @@
         </app-callout>
       </div>
       <div class="box">
-        <div class="box-header">
+        <h2 class="box-header">
           {{ title }}
-        </div>
+        </h2>
         <div class="box-content">
           <div class="box-content-row" appBoxRow>
             <label for="name">{{ "name" | i18n }}</label>
@@ -92,7 +92,7 @@
         </div>
       </div>
       <div class="box">
-        <div class="box-header">
+        <h2 class="box-header">
           <button
             type="button"
             class="toggle"
@@ -107,7 +107,7 @@
               [ngClass]="{ 'bwi-angle-down': !showOptions, 'bwi-chevron-up': showOptions }"
             ></i>
           </button>
-        </div>
+        </h2>
       </div>
       <div [hidden]="!showOptions">
         <app-send-efflux-dates
@@ -179,9 +179,9 @@
           </div>
         </div>
         <div class="box">
-          <div class="box-header">
+          <h2 class="box-header">
             {{ "notes" | i18n }}
-          </div>
+          </h2>
           <div class="box-content">
             <div class="box-content-row" appBoxRow>
               <textarea
@@ -227,9 +227,9 @@
         </div>
       </div>
       <div class="box">
-        <div class="box-header">
+        <h2 class="box-header">
           {{ "share" | i18n }}
-        </div>
+        </h2>
         <div class="box-content">
           <div class="box-content-row" appBoxRow *ngIf="editMode">
             <label for="link">{{ "sendLinkLabel" | i18n }}</label>

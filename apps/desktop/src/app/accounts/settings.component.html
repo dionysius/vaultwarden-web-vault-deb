@@ -1,11 +1,11 @@
-<div class="modal fade" role="dialog" aria-modal="true" attr.aria-label="{{ 'settings' | i18n }}">
+<div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body form">
         <div class="box">
-          <div class="box-header">
+          <h1 class="box-header" id="settingsTitle">
             {{ "settingsTitle" | i18n: currentUserEmail }}
-          </div>
+          </h1>
           <div class="box-content box-content-padded">
             <h2>
               <button

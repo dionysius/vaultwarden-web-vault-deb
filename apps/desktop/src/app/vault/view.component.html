@@ -1,9 +1,9 @@
 <div class="content">
   <div class="inner-content" *ngIf="cipher">
     <div class="box">
-      <div class="box-header">
+      <h2 class="box-header">
         {{ "itemInformation" | i18n }}
-      </div>
+      </h2>
       <div class="box-content">
         <div class="box-content-row">
           <span class="row-label">{{ "name" | i18n }}</span>
@@ -321,9 +321,9 @@
       </div>
     </div>
     <div class="box" *ngIf="cipher.notes">
-      <div class="box-header">
+      <h2 class="box-header">
         {{ "notes" | i18n }}
-      </div>
+      </h2>
       <div class="box-content">
         <div class="box-content-row pre-wrap">{{ cipher.notes }}</div>
       </div>
@@ -336,9 +336,9 @@
     >
     </app-vault-view-custom-fields>
     <div class="box" *ngIf="cipher.hasAttachments && (canAccessPremium || cipher.organizationId)">
-      <div class="box-header">
+      <h2 class="box-header">
         {{ "attachments" | i18n }}
-      </div>
+      </h2>
       <div class="box-content">
         <button
           type="button"

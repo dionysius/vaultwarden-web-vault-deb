@@ -3,9 +3,9 @@
     <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
       <div class="modal-body">
         <div class="box" *ngIf="cipher && cipher.hasAttachments">
-          <div class="box-header" id="attachmentsTitle">
+          <h1 class="box-header" id="attachmentsTitle">
             {{ "attachments" | i18n }}
-          </div>
+          </h1>
           <div class="box-content no-hover">
             <div class="box-content-row box-content-row-flex" *ngFor="let a of cipher.attachments">
               <div class="row-main">
@@ -39,9 +39,9 @@
           </div>
         </div>
         <div class="box">
-          <div class="box-header">
+          <h2 class="box-header">
             {{ "newAttachment" | i18n }}
-          </div>
+          </h2>
           <div class="box-content no-hover">
             <div class="box-content-row">
               <label for="file">{{ "file" | i18n }}</label>

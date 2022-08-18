@@ -3,9 +3,9 @@
     <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
       <div class="modal-body">
         <div class="box">
-          <div class="box-header" id="collectionsTitle">
+          <h1 class="box-header" id="collectionsTitle">
             {{ "collections" | i18n }}
-          </div>
+          </h1>
           <div class="box-content" *ngIf="!collections || !collections.length">
             {{ "noCollectionsInList" | i18n }}
           </div>
