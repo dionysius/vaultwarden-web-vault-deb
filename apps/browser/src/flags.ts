@@ -1,3 +1,5 @@
+import { GroupPolicyEnvironment } from "./types/group-policy-environment";
+
 function getFlags<T>(envFlags: string | T): T {
   if (typeof envFlags === "string") {
     return JSON.parse(envFlags) as T;
@@ -21,11 +23,13 @@ export function flagEnabled(flag: FlagName): boolean {
  */
 export type DevFlags = {
   storeSessionDecrypted?: boolean;
+  managedEnvironment?: GroupPolicyEnvironment;
 };
 
 export type DevFlagName = keyof DevFlags;
 
 /**
+ * Gets whether the given dev flag is truthy.
  * Gets the value of a dev flag from environment.
  * Will always return false unless in development.
  * @param flag The name of the dev flag to check
@@ -37,5 +41,21 @@ export function devFlagEnabled(flag: DevFlagName): boolean {
   }
 
   const devFlags = getFlags<DevFlags>(process.env.DEV_FLAGS);
-  return devFlags[flag] == null || devFlags[flag];
+  return devFlags[flag] == null || !!devFlags[flag];
+}
+
+/**
+ * Gets the value of a dev flag from environment.
+ * Will always return false unless in development.
+ * @param flag The name of the dev flag to check
+ * @returns The value of the flag
+ * @throws Error if the flag is not enabled
+ */
+export function devFlagValue<K extends DevFlagName>(flag: K): DevFlags[K] {
+  if (!devFlagEnabled(flag)) {
+    throw new Error(`This method should not be called, it is protected by a disabled dev flag.`);
+  }
+
+  const devFlags = getFlags<DevFlags>(process.env.DEV_FLAGS);
+  return devFlags[flag];
 }

@@ -47,7 +47,6 @@ import { AuditService } from "@bitwarden/common/services/audit.service";
 import { AuthService } from "@bitwarden/common/services/auth.service";
 import { CipherService } from "@bitwarden/common/services/cipher.service";
 import { CollectionService } from "@bitwarden/common/services/collection.service";
-import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 import { EncryptService } from "@bitwarden/common/services/encrypt.service";
 import { EventService } from "@bitwarden/common/services/event.service";
@@ -55,7 +54,6 @@ import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/fileUpload.service";
 import { FolderApiService } from "@bitwarden/common/services/folder/folder-api.service";
 import { KeyConnectorService } from "@bitwarden/common/services/keyConnector.service";
-import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { NotificationsService } from "@bitwarden/common/services/notifications.service";
 import { OrganizationService } from "@bitwarden/common/services/organization.service";
 import { PasswordGenerationService } from "@bitwarden/common/services/passwordGeneration.service";
@@ -74,7 +72,6 @@ import { TwoFactorService } from "@bitwarden/common/services/twoFactor.service";
 import { UserVerificationApiService } from "@bitwarden/common/services/userVerification/userVerification-api.service";
 import { UserVerificationService } from "@bitwarden/common/services/userVerification/userVerification.service";
 import { UsernameGenerationService } from "@bitwarden/common/services/usernameGeneration.service";
-import { WebCryptoFunctionService } from "@bitwarden/common/services/webCryptoFunction.service";
 
 import { BrowserApi } from "../browser/browserApi";
 import { SafariApp } from "../browser/safariApp";
@@ -85,15 +82,11 @@ import { StateService as StateServiceAbstraction } from "../services/abstraction
 import AutofillService from "../services/autofill.service";
 import { BrowserEnvironmentService } from "../services/browser-environment.service";
 import { BrowserCryptoService } from "../services/browserCrypto.service";
-import BrowserLocalStorageService from "../services/browserLocalStorage.service";
 import BrowserMessagingService from "../services/browserMessaging.service";
 import BrowserMessagingPrivateModeBackgroundService from "../services/browserMessagingPrivateModeBackground.service";
 import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
 import { FolderService } from "../services/folders/folder.service";
 import I18nService from "../services/i18n.service";
-import { KeyGenerationService } from "../services/keyGeneration.service";
-import { LocalBackedSessionStorageService } from "../services/localBackedSessionStorage.service";
-import { StateService } from "../services/state.service";
 import { VaultFilterService } from "../services/vaultFilter.service";
 import VaultTimeoutService from "../services/vaultTimeout.service";
 
@@ -104,6 +97,17 @@ import IconDetails from "./models/iconDetails";
 import { NativeMessagingBackground } from "./nativeMessaging.background";
 import NotificationBackground from "./notification.background";
 import RuntimeBackground from "./runtime.background";
+import { cryptoFunctionServiceFactory } from "./service_factories/crypto-function-service.factory";
+import { encryptServiceFactory } from "./service_factories/encrypt-service.factory";
+import { environmentServiceFactory } from "./service_factories/environment-service.factory";
+import { logServiceFactory } from "./service_factories/log-service.factory";
+import { stateMigrationServiceFactory } from "./service_factories/state-migration-service.factory";
+import { stateServiceFactory } from "./service_factories/state-service.factory";
+import {
+  diskStorageServiceFactory,
+  memoryStorageServiceFactory,
+  secureStorageServiceFactory,
+} from "./service_factories/storage-service.factory";
 import TabsBackground from "./tabs.background";
 import WebRequestBackground from "./webRequest.background";
 
@@ -195,33 +199,40 @@ export default class MainBackground {
     const logoutCallback = async (expired: boolean, userId?: string) =>
       await this.logout(expired, userId);
 
+    const services: Record<string, unknown> = {};
+    const factoryOptions = {
+      logServiceOptions: {
+        isDev: false,
+      },
+      cryptoFunctionServiceOptions: {
+        win: window,
+      },
+      stateMigrationServiceOptions: {
+        stateFactory: new StateFactory(GlobalState, Account),
+      },
+      stateServiceOptions: {
+        stateFactory: new StateFactory(GlobalState, Account),
+      },
+    };
+
     this.messagingService = isPrivateMode
       ? new BrowserMessagingPrivateModeBackgroundService()
       : new BrowserMessagingService();
-    this.logService = new ConsoleLogService(false);
-    this.cryptoFunctionService = new WebCryptoFunctionService(window);
-    this.storageService = new BrowserLocalStorageService();
-    this.secureStorageService = new BrowserLocalStorageService();
-    this.memoryStorageService =
-      chrome.runtime.getManifest().manifest_version == 3
-        ? new LocalBackedSessionStorageService(
-            new EncryptService(this.cryptoFunctionService, this.logService, false),
-            new KeyGenerationService(this.cryptoFunctionService)
-          )
-        : new MemoryStorageService();
-    this.stateMigrationService = new StateMigrationService(
-      this.storageService,
-      this.secureStorageService,
-      new StateFactory(GlobalState, Account)
-    );
-    this.stateService = new StateService(
-      this.storageService,
-      this.secureStorageService,
-      this.memoryStorageService,
-      this.logService,
-      this.stateMigrationService,
-      new StateFactory(GlobalState, Account)
-    );
+    this.logService = logServiceFactory(services, factoryOptions);
+    this.cryptoFunctionService = cryptoFunctionServiceFactory(services, factoryOptions);
+    this.storageService = diskStorageServiceFactory(services, factoryOptions);
+    this.secureStorageService = secureStorageServiceFactory(services, factoryOptions);
+    this.memoryStorageService = memoryStorageServiceFactory(services, {
+      ...factoryOptions,
+      encryptServiceOptions: {
+        logMacFailures: false,
+      },
+    });
+    this.stateMigrationService = stateMigrationServiceFactory(services, factoryOptions);
+    this.stateService = stateServiceFactory(services, {
+      ...factoryOptions,
+      encryptServiceOptions: { logMacFailures: false },
+    });
     this.platformUtilsService = new BrowserPlatformUtilsService(
       this.messagingService,
       this.stateService,
@@ -245,7 +256,13 @@ export default class MainBackground {
       }
     );
     this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
-    this.encryptService = new EncryptService(this.cryptoFunctionService, this.logService, true);
+    this.encryptService = encryptServiceFactory(services, {
+      ...factoryOptions,
+      encryptServiceOptions: {
+        logMacFailures: true,
+      },
+      alwaysInitializeNewService: true,
+    }); // Update encrypt service with new instances
     this.cryptoService = new BrowserCryptoService(
       this.cryptoFunctionService,
       this.encryptService,
@@ -255,7 +272,12 @@ export default class MainBackground {
     );
     this.tokenService = new TokenService(this.stateService);
     this.appIdService = new AppIdService(this.storageService);
-    this.environmentService = new BrowserEnvironmentService(this.stateService, this.logService);
+    this.environmentService = environmentServiceFactory(services, {
+      ...factoryOptions,
+      encryptServiceOptions: {
+        logMacFailures: false,
+      },
+    });
     this.apiService = new ApiService(
       this.tokenService,
       this.platformUtilsService,
