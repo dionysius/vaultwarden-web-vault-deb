@@ -382,6 +382,18 @@
                   />
                 </div>
               </ng-container>
+              <ng-container *ngIf="usernameOptions.forwardedService === 'duckduckgo'">
+                <div class="box-content-row" appBoxRow>
+                  <label for="duckduckgo-apikey">{{ "apiKey" | i18n }}</label>
+                  <input
+                    id="duckduckgo-apikey"
+                    type="password"
+                    name="DuckDudkGoApiKey"
+                    [(ngModel)]="usernameOptions.forwardedDuckDuckGoToken"
+                    (blur)="saveUsernameOptions()"
+                  />
+                </div>
+              </ng-container>
               <ng-container *ngIf="usernameOptions.forwardedService === 'anonaddy'">
                 <div class="box-content-row" appBoxRow>
                   <label for="anonaddy-accessToken">{{ "apiAccessToken" | i18n }}</label>

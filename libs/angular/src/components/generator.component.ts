@@ -74,6 +74,7 @@ export class GeneratorComponent implements OnInit {
       { name: "SimpleLogin", value: "simplelogin" },
       { name: "AnonAddy", value: "anonaddy" },
       { name: "Firefox Relay", value: "firefoxrelay" },
+      { name: "DuckDuckGo", value: "duckduckgo" },
       // { name: "FastMail", value: "fastmail" },
     ];
   }
