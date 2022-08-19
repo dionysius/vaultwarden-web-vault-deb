@@ -402,9 +402,11 @@
       <div class="box-content">
         <ng-container *ngIf="cipher.login.hasUris">
           <div
+            role="group"
             class="box-content-row box-content-row-multi"
             appBoxRow
             *ngFor="let u of cipher.login.uris; let i = index; trackBy: trackByFunction"
+            attr.aria-label="{{ 'uriPosition' | i18n: i + 1 }}"
           >
             <button
               type="button"

@@ -273,8 +273,10 @@
           </div>
           <ng-container *ngIf="cipher.login.hasUris">
             <div
+              role="group"
               class="row"
               *ngFor="let u of cipher.login.uris; let i = index; trackBy: trackByFunction"
+              attr.aria-label="{{ 'uriPosition' | i18n: i + 1 }}"
             >
               <div class="col-7 form-group">
                 <label for="loginUri{{ i }}">{{ "uriPosition" | i18n: i + 1 }}</label>

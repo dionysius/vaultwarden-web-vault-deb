@@ -6,11 +6,13 @@
     <!-- Current custom fields -->
     <div cdkDropList (cdkDropListDropped)="drop($event)" *ngIf="cipher.hasFields">
       <div
+        role="group"
         class="box-content-row box-content-row-multi box-draggable-row"
         appBoxRow
         cdkDrag
         *ngFor="let f of cipher.fields; let i = index; trackBy: trackByFunction"
         [ngClass]="{ 'box-content-row-checkbox': f.type === fieldType.Boolean }"
+        attr.aria-label="{{ f.name }}"
       >
         <button
           type="button"
@@ -41,6 +43,7 @@
             *ngIf="f.type === fieldType.Text"
             placeholder="{{ 'value' | i18n }}"
             appInputVerbatim
+            attr.aria-describedby="fieldName{{ i }}"
           />
           <!-- Hidden -->
           <input
@@ -53,6 +56,7 @@
             *ngIf="f.type === fieldType.Hidden"
             placeholder="{{ 'value' | i18n }}"
             [disabled]="!cipher.viewPassword && !f.newField"
+            attr.aria-describedby="fieldName{{ i }}"
           />
           <!-- Linked -->
           <select
@@ -60,6 +64,7 @@
             name="Field.Value{{ i }}"
             [(ngModel)]="f.linkedId"
             *ngIf="f.type === fieldType.Linked && cipher.linkedFieldOptions != null"
+            attr.aria-describedby="fieldName{{ i }}"
           >
             <option *ngFor="let o of linkedFieldOptions" [ngValue]="o.value">{{ o.name }}</option>
           </select>
@@ -74,6 +79,7 @@
           appTrueFalseValue
           trueValue="true"
           falseValue="false"
+          attr.aria-describedby="fieldName{{ i }}"
         />
         <div
           class="action-buttons"
