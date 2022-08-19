@@ -128,7 +128,7 @@
     "message": "Jatka"
   },
   "sendVerificationCode": {
-    "message": "Lähetä vahvistuskoodi sähköpostiisi"
+    "message": "Lähetä todennuskoodi sähköpostiisi"
   },
   "sendCode": {
     "message": "Lähetä koodi"
@@ -1031,7 +1031,7 @@
     "description": "This describes a value that is 'linked' (tied) to another value."
   },
   "popup2faCloseMessage": {
-    "message": "Klikkaus ponnahdusikkunan ulkopuolelle todennuskoodin sähköpostista noutoa varten sulkee ikkunan. Haluatko avata näkymän uuteen ikkunaan, jotta se pysyy avoinna?"
+    "message": "Painallus ponnahdusikkunan ulkopuolelle todennuskoodin sähköpostista noutoa varten sulkee ikkunan. Haluatko avata näkymän uuteen ikkunaan, jotta se pysyy avoinna?"
   },
   "popupU2fCloseMessage": {
     "message": "Tämä selain ei voi käsitellä U2F-pyyntöjä tässä ponnahdusikkunassa. Haluatko avata näkymän uuteen ikkunaan, jotta voit vahvistaa kirjautumisen U2F-todennuslaitteella?"
@@ -1996,6 +1996,6 @@
     "message": "Paina tästä"
   },
   "environmentEditedReset": {
-    "message": "palauttaaksesi esimääritetyt asetukset"
+    "message": "palauttaaksesi oletusasetukset"
   }
 }

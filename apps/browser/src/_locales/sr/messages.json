@@ -1981,7 +1981,7 @@
     "message": "Mir"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Пријављивање на $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1990,12 +1990,12 @@
     }
   },
   "settingsEdited": {
-    "message": "Settings have been edited"
+    "message": "Поставке су уређене"
   },
   "environmentEditedClick": {
-    "message": "Click here"
+    "message": "Кликните овде"
   },
   "environmentEditedReset": {
-    "message": "to reset to pre-configured settings"
+    "message": "за рисетовање на подразумевана подешавања"
   }
 }

@@ -53,13 +53,13 @@
     "message": "Karta"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Trezor"
   },
   "myVault": {
     "message": "Můj trezor"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Všechny trezory"
   },
   "tools": {
     "message": "Nástroje"
@@ -424,13 +424,13 @@
     "message": "Neplatná e-mailová adresa."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Je vyžadováno hlavní heslo."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Je vyžadováno zopakovat zadání hlavního hesla."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hlavní heslo musí obsahovat alespoň 8 znaků."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrzení hlavního hesla se neshoduje."
@@ -603,7 +603,7 @@
     "message": "Ano, uložit nyní"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Zeptat se na aktualizaci existujícího přihlášení"
   },
   "changedPasswordNotificationDesc": {
     "message": "Ask to update a login's password when a change is detected on a website."
@@ -810,13 +810,13 @@
     "message": "Obnova je dokončena"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Automaticky kopírovat TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Pokud mají vaše přihlašovací údaje přidán autentizační klíč pro TOTP, vygenerovaný ověřovací kód (TOTP) se automaticky zkopíruje do schránky při každém automatickém vyplnění přihlašovacích údajů."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Ověřit biometrické údaje při spuštění"
   },
   "premiumRequired": {
     "message": "Vyžaduje prémiové členství"
@@ -1037,16 +1037,16 @@
     "message": "Tento prohlížeč nemůže zpracovat U2F požadavky ve vyskakovacím okně. Chcete otevřít toto vyskakovací okno v novém okně, abyste se mohli přihlásit pomocí U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Zobrazit ikony webových stránek"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Zobrazit rozeznatelný obrázek vedle každého přihlášení."
   },
   "enableBadgeCounter": {
     "message": "Show badge counter"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Zobrazit počet přihlašovacích údajů pro aktuální webovou stránku."
   },
   "cardholderName": {
     "message": "Jméno držitele karty"
@@ -1907,7 +1907,7 @@
     }
   },
   "error": {
-    "message": "Error"
+    "message": "Chyba"
   },
   "regenerateUsername": {
     "message": "Znovu vygenerovat uživatelské jméno"
@@ -1969,7 +1969,7 @@
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Vyžadováno prémiové předplatné"
   },
   "organizationIsDisabled": {
     "message": "Organization is disabled."
@@ -1990,10 +1990,10 @@
     }
   },
   "settingsEdited": {
-    "message": "Settings have been edited"
+    "message": "Nastavení byla upravena"
   },
   "environmentEditedClick": {
-    "message": "Click here"
+    "message": "Klikněte zde"
   },
   "environmentEditedReset": {
     "message": "to reset to pre-configured settings"

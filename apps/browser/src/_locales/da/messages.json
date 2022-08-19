@@ -1969,7 +1969,7 @@
     "message": "Key Connector-fejl: Sørg for, at Key Connector er tilgængelig og fungerer korrekt."
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Premium-abonnement kræves"
   },
   "organizationIsDisabled": {
     "message": "Organisationen er deaktiveret."
@@ -1981,7 +1981,7 @@
     "message": "Mir"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Logger ind på $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1990,12 +1990,12 @@
     }
   },
   "settingsEdited": {
-    "message": "Settings have been edited"
+    "message": "Indstillinger er blevet redigeret"
   },
   "environmentEditedClick": {
-    "message": "Click here"
+    "message": "Klik her"
   },
   "environmentEditedReset": {
-    "message": "to reset to pre-configured settings"
+    "message": "for at nulstille til forudkonfigurerede indstillinger"
   }
 }

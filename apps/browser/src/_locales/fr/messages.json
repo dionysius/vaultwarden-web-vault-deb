@@ -603,10 +603,10 @@
     "message": "Enregistrer"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Demander à mettre à jour l'identifiant existant"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Demander à mettre à jour le mot de passe d'un identifiant lorsqu'un changement est détecté sur un site Web."
   },
   "notificationChangeDesc": {
     "message": "Souhaitez-vous mettre à jour ce mot de passe dans Bitwarden ?"
@@ -615,7 +615,7 @@
     "message": "Mettre à jour"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Afficher les options du menu contextuel"
   },
   "contextMenuItemDesc": {
     "message": "Use a secondary click to access password generation and matching logins for the website. "
@@ -810,7 +810,7 @@
     "message": "Actualisation terminée"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Copier le code TOTP automatiquement"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Si une clé d'authentification est rattachée à votre identifiant, alors le code de vérification TOTP est automatiquement copié dans le presse-papiers lorsque vous renseignez l'identifiant."
@@ -1037,10 +1037,10 @@
     "message": "Ce navigateur ne peut pas traiter les requêtes U2F dans cette popup. Voulez-vous ouvrir cette popup dans une nouvelle fenêtre pour que vous puissiez vous connecter en utilisant U2F ?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Afficher les icônes du site web"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Afficher une image reconnaissable à côté de chaque identifiant."
   },
   "enableBadgeCounter": {
     "message": "Show badge counter"
@@ -1484,7 +1484,7 @@
     "message": "En cochant cette case, vous acceptez les éléments suivants :"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Les Conditions d'Utilisation et la Politique de Confidentialité n'ont pas été acceptées."
   },
   "termsOfService": {
     "message": "Conditions d'utilisation"
@@ -1850,7 +1850,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Le délai d'expiration de votre coffre-fort dépasse les restrictions définies par votre organisation."
   },
   "vaultExportDisabled": {
     "message": "Export du coffre désactivé"
@@ -1975,7 +1975,7 @@
     "message": "L'organisation est désactivée."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Les éléments des Organisations désactivées ne sont pas accessibles. Contactez le propriétaire de votre Organisation pour obtenir de l'aide."
   },
   "cardBrandMir": {
     "message": "Mir"

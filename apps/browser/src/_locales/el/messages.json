@@ -424,13 +424,13 @@
     "message": "Μη έγκυρη διεύθυνση e-mail."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Απαιτείται κύριος κωδικός πρόσβασης."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Απαιτείται ξανά ο κύριος κωδικός πρόσβασης."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Ο κύριος κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρες."
   },
   "masterPassDoesntMatch": {
     "message": "Η επιβεβαίωση κύριου κωδικού δεν ταιριάζει."
@@ -571,22 +571,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Ζητήστε να προσθέσετε σύνδεση"
   },
   "addLoginNotificationDesc": {
     "message": "Η \"Προσθήκη Ειδοποίησης Σύνδεσης\" σας προτρέπει αυτόματα να αποθηκεύσετε νέες συνδέσεις στο vault σας κάθε φορά που θα συνδεθείτε για πρώτη φορά."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Εμφάνιση καρτών στη σελίδα Καρτέλας"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Λίστα αντικειμένων καρτών στη σελίδα Καρτέλας για εύκολη αυτόματη συμπλήρωση."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Εμφάνιση ταυτοτήτων στη σελίδα καρτέλας"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Λίστα στοιχείων ταυτότητας στη σελίδα Καρτέλας για εύκολη αυτόματη συμπλήρωση."
   },
   "clearClipboard": {
     "message": "Εκκαθάριση Πρόχειρου",
@@ -603,10 +603,10 @@
     "message": "Ναι, Αποθήκευση Τώρα"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Ζητήστε να ενημερώσετε την υπάρχουσα σύνδεση"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Ζητήστε να ενημερώσετε τον κωδικό πρόσβασης μιας σύνδεσης όταν εντοπιστεί μια αλλαγή σε μια ιστοσελίδα."
   },
   "notificationChangeDesc": {
     "message": "Θέλετε να ενημερώσετε αυτό τον κωδικό στο Bitwarden ;"
@@ -615,10 +615,10 @@
     "message": "Ναι, Ενημέρωση Τώρα"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Εμφάνιση επιλογών μενού περιβάλλοντος"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Χρησιμοποιήστε ένα δευτερεύον κλικ για να αποκτήσετε πρόσβαση στη δημιουργία κωδικού πρόσβασης και να ταιριάξετε τις συνδέσεις για την ιστοσελίδα. "
   },
   "defaultUriMatchDetection": {
     "message": "Προεπιλεγμένη ανίχνευση αντιστοιχίας URI",
@@ -810,13 +810,13 @@
     "message": "Επιτυχής ανανέωση"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Αυτόματη αντιγραφή TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Εάν η σύνδεση έχει συνημμένο κάποιο κλειδί επαλήθευσης, ο κωδικός επαλήθευσης TOTP αντιγράφεται αυτόματα στο πρόχειρο κάθε φορά που συμπληρώνετε αυτόματα τα στοιχεία σύνδεσης."
   },
   "enableAutoBiometricsPrompt": {
-    "message": "Ask for biometrics on launch"
+    "message": "Ζητήστε βιομετρικά κατά την εκκίνηση"
   },
   "premiumRequired": {
     "message": "Απαιτείται Έκδοση Premium"
@@ -966,7 +966,7 @@
     "message": "Προεπιλεγμένη ρύθμιση αυτόματης συμπλήρωσης για στοιχεία σύνδεσης"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Αφού ενεργοποιήσετε την αυτόματη συμπλήρωση κατά τη Φόρτωση Σελίδας, μπορείτε να ενεργοποιήσετε ή να απενεργοποιήσετε τη λειτουργία για μεμονωμένα στοιχεία σύνδεσης. Αυτή είναι η προεπιλεγμένη ρύθμιση για στοιχεία σύνδεσης που δεν έχουν ρυθμιστεί ξεχωριστά."
+    "message": "Μπορείτε να απενεργοποιήσετε την αυτόματη συμπλήρωση φόρτωσης σελίδας για μεμονωμένα στοιχεία σύνδεσης από την προβολή Επεξεργασία στοιχείου."
   },
   "itemAutoFillOnPageLoad": {
     "message": "Αυτόματη συμπλήρωση της Φόρτισης Σελίδας (αν είναι ενεργοποιημένη στις Επιλογές)"
@@ -1037,16 +1037,16 @@
     "message": "Αυτό το πρόγραμμα περιήγησης δεν μπορεί να επεξεργαστεί αιτήματα του U2F σε αυτό το αναδυόμενο παράθυρο. Θέλετε να ανοίξετε το αναδυόμενο σε νέο παράθυρο, ώστε να μπορείτε να συνδεθείτε χρησιμοποιώντας U2F;"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Εμφάνιση εικονιδίων ιστοσελίδας"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Εμφάνιση μιας αναγνωρίσιμης εικόνας δίπλα σε κάθε σύνδεση."
   },
   "enableBadgeCounter": {
-    "message": "Show badge counter"
+    "message": "Εμφάνιση μετρητή εμβλημάτων"
   },
   "badgeCounterDesc": {
-    "message": "Indicate how many logins you have for the current web page."
+    "message": "Υποδείξτε πόσες συνδέσεις έχετε για την τρέχουσα ιστοσελίδα."
   },
   "cardholderName": {
     "message": "Όνομα κατόχου της κάρτας"
@@ -1484,7 +1484,7 @@
     "message": "Επιλέγοντας αυτό το πλαίσιο, συμφωνείτε με τα εξής:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Οι Όροι Παροχής Υπηρεσιών και η Πολιτική Απορρήτου δεν έχουν αναγνωριστεί."
   },
   "termsOfService": {
     "message": "Όροι Χρήσης"
@@ -1850,7 +1850,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Το χρονικό όριο του vault σας υπερβαίνει τους περιορισμούς που έχει ορίσει ο οργανισμός σας."
   },
   "vaultExportDisabled": {
     "message": "Εξαγωγή vault Απενεργοποιημένη"
@@ -1969,19 +1969,19 @@
     "message": "Σφάλμα Key Connector: βεβαιωθείτε ότι το Key Connector είναι διαθέσιμο και λειτουργεί σωστά."
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Απαιτείται συνδρομή Premium"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Ο οργανισμός είναι απενεργοποιημένος."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Δεν είναι δυνατή η πρόσβαση σε αντικείμενα σε απενεργοποιημένους οργανισμούς. Επικοινωνήστε με τον ιδιοκτήτη του Οργανισμού για βοήθεια."
   },
   "cardBrandMir": {
     "message": "Mir"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Σύνδεση στο $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1990,12 +1990,12 @@
     }
   },
   "settingsEdited": {
-    "message": "Settings have been edited"
+    "message": "Οι ρυθμίσεις έχουν επεξεργαστεί"
   },
   "environmentEditedClick": {
-    "message": "Click here"
+    "message": "Κάντε κλικ εδώ"
   },
   "environmentEditedReset": {
-    "message": "to reset to pre-configured settings"
+    "message": "επαναφορά στις προ-ρυθμισμένες ρυθμίσεις"
   }
 }
