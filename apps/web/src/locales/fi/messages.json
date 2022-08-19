@@ -1676,7 +1676,7 @@
     "message": "Laskutussuunnitelma"
   },
   "paymentType": {
-    "message": "Maksun tyyppi"
+    "message": "Maksutapa"
   },
   "accountCredit": {
     "message": "Tilin saldo",
@@ -2203,7 +2203,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "Olemme lähettäneet tiimillesi vahvistussähköpostin osoitteeseen "
+    "message": "Olemme lähettäneet vahvistusviestin tiimisi laskutussähköpostiosoitteeseen "
   },
   "monthly": {
     "message": "Kuukausittainen"
@@ -2641,7 +2641,7 @@
     }
   },
   "revokedUserId": {
-    "message": "Jäsenen $ID$ organisaation käyttöoikeus on peruttu.",
+    "message": "Jäsenen $ID$ organisaation käyttöoikeus peruttiin.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4331,7 +4331,7 @@
     "message": "Kun jäseniä poistetaan, heillä ei ole enää pääsyä organisaation tietoihin, eikä poistoa ole mahdollista perua. Jos haluat lisätä jäsenen takaisin organisaatioon, hänet on kutsuttava ja perehdytettävä uudelleen. Käsittely voi kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
   },
   "revokeUsersWarning": {
-    "message": "Kun jäsenien käyttöoikeus perutaan, heillä ei ole enää pääsyä organisaation tietoihin. Voit palauttaa käyttöoikeudet nopeasti Perutut-välilehdeltä. Käsittely voi kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
+    "message": "Kun jäsenien käyttöoikeudet perutaan, heillä ei ole enää pääsyä organisaation tietoihin. Voit palauttaa käyttöoikeudet nopeasti Perutut-välilehdeltä. Käsittely voi kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
   },
   "theme": {
     "message": "Teema"
@@ -4364,7 +4364,7 @@
     "message": "Poisto onnistui."
   },
   "bulkRevokedMessage": {
-    "message": "Organisaation käyttöoikeuden peruminen onnistui"
+    "message": "Organisaation käyttöoikeus peruttiin onnistuneesti"
   },
   "bulkRestoredMessage": {
     "message": "Organisaation käyttöoikeuden palautus onnistui"
@@ -4379,10 +4379,10 @@
     "message": "Poista käyttäjiä"
   },
   "revokeUsers": {
-    "message": "Peru jäsenien käyttöoikeudet"
+    "message": "Peru käyttäjiä"
   },
   "restoreUsers": {
-    "message": "Palauta jäsenien käyttöoikeudet"
+    "message": "Palauta käyttäjiä"
   },
   "error": {
     "message": "Virhe"
@@ -4810,7 +4810,7 @@
     "message": "Key Connector URL"
   },
   "sendVerificationCode": {
-    "message": "Lähetä vahvistuskoodi sähköpostiisi"
+    "message": "Lähetä todennuskoodi sähköpostiisi"
   },
   "sendCode": {
     "message": "Lähetä koodi"
