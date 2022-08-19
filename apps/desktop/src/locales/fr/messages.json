@@ -533,13 +533,13 @@
     "message": "Adresse e-mail invalide."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Le mot de passe maître est requis."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Le mot de passe maître doit être entré de nouveau."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Le mot de passe maître doit au moins contenir 8 caractères."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmation du mot de passe maître ne correspond pas."
@@ -898,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Afficher les icônes du site web"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Afficher une image reconnaissable à côté de chaque identifiant."
   },
   "enableMinToTray": {
     "message": "Réduire dans la barre d'outils"
@@ -1394,19 +1394,19 @@
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Supprimer le compte"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Continuez ci-dessous pour supprimer votre compte et toutes les données associées."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "La suppression de votre compte est définitive. Cette action ne peut pas être annulée."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Compte supprimé"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Votre compte a été fermé et toutes les données associées ont été supprimées."
   },
   "preferences": {
     "message": "Préférences"
@@ -1562,7 +1562,7 @@
     "message": "En cochant cette case, vous acceptez les éléments suivants :"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Les Conditions d'Utilisation et la Politique de Confidentialité n'ont pas été acceptées."
   },
   "enableBrowserIntegration": {
     "message": "Activer l'intégration avec le navigateur"
@@ -1980,16 +1980,16 @@
     "message": "Clé d'IPA"
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Abonnement Premium requis"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "L'organisation est désactivée."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Les éléments des Organisations désactivées ne sont pas accessibles. Contactez le propriétaire de votre Organisation pour obtenir de l'aide."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Êtes-vous sûr de vouloir utiliser l'option \"Jamais\" ? Définir le verrouillage sur \"Jamais\" stocke la clé de chiffrement de votre coffre sur votre appareil. Si vous utilisez cette option, vous devez vous assurer de correctement protéger votre appareil."
   },
   "cardBrandMir": {
     "message": "Mir"

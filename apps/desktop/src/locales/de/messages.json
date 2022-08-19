@@ -587,7 +587,7 @@
     "message": "Gib den 6-stelligen Verifizierungscode aus deiner Authentifizierungs-App ein."
   },
   "enterVerificationCodeEmail": {
-    "message": "Gib den 6-stelligen Bestätigungscode ein, der an $EMAIL$ gesendet wurde.",
+    "message": "Gib den 6-stelligen Verifizierungscode ein, der an $EMAIL$ gesendet wurde.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -988,7 +988,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Auf Updates prüfen"
+    "message": "Auf Updates prüfen …"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -1803,7 +1803,7 @@
     "message": "Minuten"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Deine Unternehmensrichtlinien beeinflussen dein Tresor-Timeout. Das maximal zulässige Tresor-Timeout ist $HOURS$ Stunde(n) und $MINUTES$ Minute(n)",
+    "message": "Die Unternehmensrichtlinien beeinflussen deinen Tresor-Timeout. Das maximal zulässige Tresor-Timeout ist $HOURS$ Stunde(n) und $MINUTES$ Minute(n)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1864,7 +1864,7 @@
     "message": "Alle Tresore sperren"
   },
   "accountLimitReached": {
-    "message": "Es dürfen nicht mehr als 5 Konten gleichzeitig angemeldet sein."
+    "message": "Es dürfen nicht mehr als fünf Konten gleichzeitig angemeldet sein."
   },
   "accountPreferences": {
     "message": "Einstellungen"
@@ -1921,7 +1921,7 @@
     "message": "Passworttyp"
   },
   "regenerateUsername": {
-    "message": "Benutzername neu generieren"
+    "message": "Benutzernamen neu generieren"
   },
   "generateUsername": {
     "message": "Benutzernamen generieren"
@@ -1958,7 +1958,7 @@
     "message": "Alle Tresore"
   },
   "searchOrganization": {
-    "message": "Organisationen durchsuchen"
+    "message": "Organisation durchsuchen"
   },
   "searchMyVault": {
     "message": "Meinen Tresor durchsuchen"
