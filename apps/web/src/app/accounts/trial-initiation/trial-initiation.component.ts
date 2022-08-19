@@ -29,6 +29,7 @@ export class TrialInitiationComponent implements OnInit {
   orgId = "";
   orgLabel = "";
   billingSubLabel = "";
+  layout = "default";
   plan: PlanType;
   product: ProductType;
   accountCreateOnly = true;
@@ -62,6 +63,10 @@ export class TrialInitiationComponent implements OnInit {
 
       if (!qParams.org) {
         return;
+      }
+
+      if (qParams.layout) {
+        this.layout = qParams.layout;
       }
 
       if (this.validOrgs.includes(qParams.org)) {

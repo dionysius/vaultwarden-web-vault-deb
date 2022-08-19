@@ -13,7 +13,7 @@
   <div
     class="tw-absolute tw--z-10 tw--mt-48 tw-h-96 tw-w-full tw--skew-y-3 tw-bg-background-alt2"
   ></div>
-  <div class="tw-min-w-4xl tw-mx-auto tw-flex tw-max-w-screen-xl tw-px-4">
+  <div class="tw-min-w-4xl tw-mx-auto tw-flex tw-max-w-screen-xl tw-gap-12 tw-px-4">
     <div class="tw-w-1/2">
       <img
         alt="Bitwarden"
@@ -21,14 +21,23 @@
         class="tw-mt-6"
         src="../../images/register-layout/logo-horizontal-white.svg"
       />
-      <!-- This is to for illustrative purposes and content will be replaced by marketing -->
+
       <div class="tw-pt-12">
-        <!-- Teams Body -->
-        <app-teams-content *ngIf="org === 'teams'"></app-teams-content>
-        <!-- Enterprise Body -->
-        <app-enterprise-content *ngIf="org === 'enterprise'"></app-enterprise-content>
-        <!-- Families Body -->
-        <app-families-content *ngIf="org === 'families'"></app-families-content>
+        <!-- Layout params are used by marketing to determine left-hand content -->
+        <app-default-content *ngIf="layout === 'default'"></app-default-content>
+        <app-teams-content *ngIf="layout === 'teams'"></app-teams-content>
+        <app-teams1-content *ngIf="layout === 'teams1'"></app-teams1-content>
+        <app-teams2-content *ngIf="layout === 'teams2'"></app-teams2-content>
+        <app-enterprise-content *ngIf="layout === 'enterprise'"></app-enterprise-content>
+        <app-enterprise1-content *ngIf="layout === 'enterprise1'"></app-enterprise1-content>
+        <app-enterprise2-content *ngIf="layout === 'enterprise2'"></app-enterprise2-content>
+        <app-cnet-enterprise-content
+          *ngIf="layout === 'cnetcmpgnent'"
+        ></app-cnet-enterprise-content>
+        <app-cnet-individual-content
+          *ngIf="layout === 'cnetcmpgnind'"
+        ></app-cnet-individual-content>
+        <app-cnet-teams-content *ngIf="layout === 'cnetcmpgnteams'"></app-cnet-teams-content>
       </div>
     </div>
     <div class="tw-w-1/2">
