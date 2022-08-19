@@ -395,6 +395,28 @@
             />
           </div>
         </ng-container>
+        <ng-container *ngIf="usernameOptions.forwardedService === 'fastmail'">
+          <div class="box-content-row" appBoxRow>
+            <label for="fastmail-apiToken">{{ "apiAccessToken" | i18n }}</label>
+            <input
+              id="fastmail-apiToken"
+              type="password"
+              name="FastMailApiToken"
+              [(ngModel)]="usernameOptions.forwardedFastmailApiToken"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+          <div class="box-content-row" appBoxRow>
+            <label for="fastmail-accountId">{{ "accountId" | i18n }}</label>
+            <input
+              id="fastmail-accountId"
+              type="text"
+              name="FastmailAccountId"
+              [(ngModel)]="usernameOptions.forwardedFastmailAccountId"
+              (blur)="saveUsernameOptions()"
+            />
+          </div>
+        </ng-container>
       </div>
     </div>
     <div class="box" *ngIf="usernameOptions.type === 'subaddress'">

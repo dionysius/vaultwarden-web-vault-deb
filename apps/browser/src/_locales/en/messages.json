@@ -1965,6 +1965,10 @@
   "apiKey": {
     "message": "API Key"
   },
+  "accountId": {
+    "message": "Account ID",
+    "description": "ID is short for 'Identifier'"
+  },
   "ssoKeyConnectorError": {
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
   }, 
