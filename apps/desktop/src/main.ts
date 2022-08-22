@@ -104,7 +104,7 @@ export class Main {
     this.updaterMain = new UpdaterMain(
       this.i18nService,
       this.windowMain,
-      "desktop",
+      "clients",
       null,
       null,
       null,
