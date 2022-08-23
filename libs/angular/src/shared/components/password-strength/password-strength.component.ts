@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
@@ -15,9 +15,10 @@ export interface PasswordColorText {
 export class PasswordStrengthComponent implements OnChanges {
   @Input() showText = false;
   @Input() email: string;
-  @Input() password: string;
   @Input() name: string;
-
+  @Input() set password(value: string) {
+    this.updatePasswordStrength(value);
+  }
   @Output() passwordStrengthResult = new EventEmitter<any>();
   @Output() passwordScoreColor = new EventEmitter<PasswordColorText>();
 
@@ -61,10 +62,8 @@ export class PasswordStrengthComponent implements OnChanges {
     private passwordGenerationService: PasswordGenerationService
   ) {}
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.masterPasswordStrengthTimeout = setTimeout(() => {
-      this.updatePasswordStrength(changes.password?.currentValue);
-
       this.scoreWidth = this.masterPasswordScore == null ? 0 : (this.masterPasswordScore + 1) * 20;
 
       switch (this.masterPasswordScore) {
@@ -87,7 +86,7 @@ export class PasswordStrengthComponent implements OnChanges {
       }
 
       this.setPasswordScoreText(this.color, this.text);
-    }, 100);
+    }, 300);
   }
 
   updatePasswordStrength(password: string) {
@@ -102,7 +101,6 @@ export class PasswordStrengthComponent implements OnChanges {
       this.getPasswordStrengthUserInput()
     );
     this.passwordStrengthResult.emit(strengthResult);
-
     this.masterPasswordScore = strengthResult == null ? null : strengthResult.score;
   }
 
@@ -110,7 +108,7 @@ export class PasswordStrengthComponent implements OnChanges {
     let userInput: string[] = [];
     const email = this.email;
     const name = this.name;
-    const atPosition = email.indexOf("@");
+    const atPosition = email?.indexOf("@");
     if (atPosition > -1) {
       userInput = userInput.concat(
         email
