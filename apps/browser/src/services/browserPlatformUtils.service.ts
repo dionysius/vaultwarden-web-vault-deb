@@ -5,7 +5,6 @@ import { DeviceType } from "@bitwarden/common/enums/deviceType";
 
 import { BrowserApi } from "../browser/browserApi";
 import { SafariApp } from "../browser/safariApp";
-import { StateService } from "../services/abstractions/state.service";
 
 const DialogPromiseExpiration = 600000; // 10 minutes
 
@@ -19,7 +18,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
   constructor(
     private messagingService: MessagingService,
-    private stateService: StateService,
     private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void,
     private biometricCallback: () => Promise<boolean>
   ) {}

@@ -16,7 +16,7 @@ describe("Browser Utils Service", () => {
     let browserPlatformUtilsService: BrowserPlatformUtilsService;
     beforeEach(() => {
       (window as any).matchMedia = jest.fn().mockReturnValueOnce({});
-      browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null, null, null);
+      browserPlatformUtilsService = new BrowserPlatformUtilsService(null, null, null);
     });
 
     afterEach(() => {
