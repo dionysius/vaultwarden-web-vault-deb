@@ -652,7 +652,7 @@ jobs:
         run: npm run build
 
       - name: Download artifact from hotfix-rc
-        if: github.ref == 'refs/heads/hotfix-rc')
+        if: github.ref == 'refs/heads/hotfix-rc'
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
         with:
           workflow: build-browser.yml
@@ -854,7 +854,7 @@ jobs:
         run: npm run build
 
       - name: Download artifact from hotfix-rc
-        if: github.ref == 'refs/heads/hotfix-rc')
+        if: github.ref == 'refs/heads/hotfix-rc'
         uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
         with:
           workflow: build-browser.yml
