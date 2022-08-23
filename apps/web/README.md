@@ -5,8 +5,8 @@
     The Bitwarden web project is an Angular application that powers the web vault (https://vault.bitwarden.com/).
 </p>
 <p align="center">
-  <a href="https://github.com/bitwarden/web/actions?query=branch:master" target="_blank">
-    <img src="https://github.com/bitwarden/web/actions/workflows/build.yml/badge.svg?branch=master" alt="Github Workflow build on master" />
+  <a href="https://github.com/bitwarden/clients/actions/workflows/build-web.yml?query=branch:master" target="_blank">
+    <img src="https://github.com/bitwarden/clients/actions/workflows/build-web.yml/badge.svg?branch=master" alt="Github Workflow build on master" />
   </a>
   <a href="https://crowdin.com/project/bitwarden-web" target="_blank">
     <img src="https://d322cqt584bo4o.cloudfront.net/bitwarden-web/localized.svg" alt="Crowdin" />
