@@ -266,7 +266,8 @@ const devServer =
                     https://*.blob.core.windows.net
                     https://app.simplelogin.io/api/alias/random/new
                     https://quack.duckduckgo.com/api/email/addresses
-                    https://app.anonaddy.com/api/v1/aliases;
+                    https://app.anonaddy.com/api/v1/aliases
+                    https://api.fastmail.com/jmap/api;
                   object-src
                     'self'
                     blob:;`,
