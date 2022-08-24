@@ -1,9 +1,15 @@
-import { BroadcasterService as BroadcasterServiceAbstraction } from "../abstractions/broadcaster.service";
+import {
+  BroadcasterService as BroadcasterServiceAbstraction,
+  MessageBase,
+} from "../abstractions/broadcaster.service";
 
 export class BroadcasterService implements BroadcasterServiceAbstraction {
-  subscribers: Map<string, (message: any) => any> = new Map<string, (message: any) => any>();
+  subscribers: Map<string, (message: MessageBase) => void> = new Map<
+    string,
+    (message: MessageBase) => void
+  >();
 
-  send(message: any, id?: string) {
+  send(message: MessageBase, id?: string) {
     if (id != null) {
       if (this.subscribers.has(id)) {
         this.subscribers.get(id)(message);
@@ -16,7 +22,7 @@ export class BroadcasterService implements BroadcasterServiceAbstraction {
     });
   }
 
-  subscribe(id: string, messageCallback: (message: any) => any) {
+  subscribe(id: string, messageCallback: (message: MessageBase) => void) {
     this.subscribers.set(id, messageCallback);
   }
 

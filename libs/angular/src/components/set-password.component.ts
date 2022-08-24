@@ -6,6 +6,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
@@ -32,7 +33,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
   orgId: string;
   resetPasswordAutoEnroll = false;
 
-  onSuccessfulChangePassword: () => Promise<any>;
+  onSuccessfulChangePassword: () => Promise<void>;
   successRoute = "vault";
 
   constructor(
@@ -47,7 +48,8 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
     private apiService: ApiService,
     private syncService: SyncService,
     private route: ActivatedRoute,
-    stateService: StateService
+    stateService: StateService,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {
     super(
       i18nService,
@@ -73,7 +75,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
     // Automatic Enrollment Detection
     if (this.identifier != null) {
       try {
-        const response = await this.apiService.getOrganizationAutoEnrollStatus(this.identifier);
+        const response = await this.organizationApiService.getAutoEnrollStatus(this.identifier);
         this.orgId = response.id;
         this.resetPasswordAutoEnroll = response.resetPasswordEnabled;
         this.enforcedPolicyOptions =
@@ -113,7 +115,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
           .setPassword(request)
           .then(async () => {
             await this.onSetPasswordSuccess(key, encKey, keys);
-            return this.apiService.getOrganizationKeys(this.orgId);
+            return this.organizationApiService.getKeys(this.orgId);
           })
           .then(async (response) => {
             if (response == null) {

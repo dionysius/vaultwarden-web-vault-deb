@@ -8,6 +8,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
@@ -32,7 +33,7 @@ const DisallowedPlanTypes = [
 export class ClientsComponent implements OnInit {
   @ViewChild("add", { read: ViewContainerRef, static: true }) addModalRef: ViewContainerRef;
 
-  providerId: any;
+  providerId: string;
   searchText: string;
   addableOrganizations: Organization[];
   loading = true;
@@ -44,7 +45,7 @@ export class ClientsComponent implements OnInit {
 
   protected didScroll = false;
   protected pageSize = 100;
-  protected actionPromise: Promise<any>;
+  protected actionPromise: Promise<unknown>;
   private pagedClientsCount = 0;
 
   constructor(
@@ -58,7 +59,8 @@ export class ClientsComponent implements OnInit {
     private webProviderService: WebProviderService,
     private logService: LogService,
     private modalService: ModalService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -82,7 +84,7 @@ export class ClientsComponent implements OnInit {
       (o) => o.isOwner && o.providerId == null
     );
     const allowedOrgsIds = await Promise.all(
-      candidateOrgs.map((o) => this.apiService.getOrganization(o.id))
+      candidateOrgs.map((o) => this.organizationApiService.get(o.id))
     ).then((orgs) =>
       orgs.filter((o) => !DisallowedPlanTypes.includes(o.planType)).map((o) => o.id)
     );

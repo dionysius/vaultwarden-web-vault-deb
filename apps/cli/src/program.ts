@@ -260,6 +260,7 @@ export class Program extends BaseProgram {
             this.main.keyConnectorService,
             this.main.environmentService,
             this.main.syncService,
+            this.main.organizationApiService,
             async () => await this.main.logout()
           );
           const response = await command.run(password, cmd);
@@ -534,6 +535,7 @@ export class Program extends BaseProgram {
           this.main.keyConnectorService,
           this.main.environmentService,
           this.main.syncService,
+          this.main.organizationApiService,
           this.main.logout
         );
         const response = await command.run(null, null);

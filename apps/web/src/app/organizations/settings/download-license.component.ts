@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 
 @Component({
   selector: "app-download-license",
@@ -14,12 +14,12 @@ export class DownloadLicenseComponent {
   @Output() onCanceled = new EventEmitter();
 
   installationId: string;
-  formPromise: Promise<any>;
+  formPromise: Promise<unknown>;
 
   constructor(
-    private apiService: ApiService,
     private fileDownloadService: FileDownloadService,
-    private logService: LogService
+    private logService: LogService,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {}
 
   async submit() {
@@ -28,7 +28,7 @@ export class DownloadLicenseComponent {
     }
 
     try {
-      this.formPromise = this.apiService.getOrganizationLicense(
+      this.formPromise = this.organizationApiService.getLicense(
         this.organizationId,
         this.installationId
       );

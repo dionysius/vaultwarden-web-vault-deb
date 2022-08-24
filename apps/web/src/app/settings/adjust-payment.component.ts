@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output, ViewChild } from "@angular/core
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
 import { PaymentRequest } from "@bitwarden/common/models/request/paymentRequest";
@@ -24,13 +25,14 @@ export class AdjustPaymentComponent {
   @Output() onCanceled = new EventEmitter();
 
   paymentMethodType = PaymentMethodType;
-  formPromise: Promise<any>;
+  formPromise: Promise<void>;
 
   constructor(
     private apiService: ApiService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private logService: LogService
+    private logService: LogService,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {}
 
   async submit() {
@@ -50,7 +52,7 @@ export class AdjustPaymentComponent {
           request.line2 = this.taxInfoComponent.taxInfo.line2;
           request.city = this.taxInfoComponent.taxInfo.city;
           request.state = this.taxInfoComponent.taxInfo.state;
-          return this.apiService.postOrganizationPayment(this.organizationId, request);
+          return this.organizationApiService.updatePayment(this.organizationId, request);
         }
       });
       await this.formPromise;

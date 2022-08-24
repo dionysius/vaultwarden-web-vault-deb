@@ -1,18 +1,18 @@
 import * as inquirer from "inquirer";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
 export class ConvertToKeyConnectorCommand {
   constructor(
-    private apiService: ApiService,
     private keyConnectorService: KeyConnectorService,
     private environmentService: EnvironmentService,
     private syncService: SyncService,
+    private organizationApiService: OrganizationApiServiceAbstraction,
     private logout: () => Promise<void>
   ) {}
 
@@ -72,7 +72,7 @@ export class ConvertToKeyConnectorCommand {
 
       return Response.success();
     } else if (answer.convert === "leave") {
-      await this.apiService.postLeaveOrganization(organization.id);
+      await this.organizationApiService.leave(organization.id);
       await this.keyConnectorService.removeConvertAccountRequired();
       await this.syncService.fullSync(true);
       return Response.success();

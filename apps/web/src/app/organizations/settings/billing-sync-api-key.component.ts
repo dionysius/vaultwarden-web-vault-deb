@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { OrganizationApiKeyType } from "@bitwarden/common/enums/organizationApiKeyType";
@@ -28,7 +29,8 @@ export class BillingSyncApiKeyComponent {
     private userVerificationService: UserVerificationService,
     private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {}
 
   copy() {
@@ -41,7 +43,7 @@ export class BillingSyncApiKeyComponent {
         .buildRequest(this.masterPassword, OrganizationApiKeyRequest)
         .then((request) => {
           request.type = OrganizationApiKeyType.BillingSync;
-          return this.apiService.postOrganizationRotateApiKey(this.organizationId, request);
+          return this.organizationApiService.rotateApiKey(this.organizationId, request);
         });
       const response = await this.formPromise;
       await this.load(response);
@@ -56,7 +58,7 @@ export class BillingSyncApiKeyComponent {
         .buildRequest(this.masterPassword, OrganizationApiKeyRequest)
         .then((request) => {
           request.type = OrganizationApiKeyType.BillingSync;
-          return this.apiService.postOrganizationApiKey(this.organizationId, request);
+          return this.organizationApiService.getOrCreateApiKey(this.organizationId, request);
         });
       const response = await this.formPromise;
       await this.load(response);

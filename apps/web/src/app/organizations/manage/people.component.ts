@@ -11,6 +11,7 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
@@ -92,7 +93,8 @@ export class PeopleComponent
     userNamePipe: UserNamePipe,
     private syncService: SyncService,
     stateService: StateService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {
     super(
       apiService,
@@ -125,7 +127,7 @@ export class PeopleComponent
         const orgShareKey = await this.cryptoService.getOrgKey(this.organizationId);
         const orgKeys = await this.cryptoService.makeKeyPair(orgShareKey);
         const request = new OrganizationKeysRequest(orgKeys[0], orgKeys[1].encryptedString);
-        const response = await this.apiService.postOrganizationKeys(this.organizationId, request);
+        const response = await this.organizationApiService.updateKeys(this.organizationId, request);
         if (response != null) {
           this.orgHasKeys = response.publicKey != null && response.privateKey != null;
           await this.syncService.fullSync(true); // Replace oganizations with new data
@@ -161,26 +163,26 @@ export class PeopleComponent
     return this.apiService.getOrganizationUsers(this.organizationId);
   }
 
-  deleteUser(id: string): Promise<any> {
+  deleteUser(id: string): Promise<void> {
     return this.apiService.deleteOrganizationUser(this.organizationId, id);
   }
 
-  revokeUser(id: string): Promise<any> {
+  revokeUser(id: string): Promise<void> {
     return this.apiService.revokeOrganizationUser(this.organizationId, id);
   }
 
-  restoreUser(id: string): Promise<any> {
+  restoreUser(id: string): Promise<void> {
     return this.apiService.restoreOrganizationUser(this.organizationId, id);
   }
 
-  reinviteUser(id: string): Promise<any> {
+  reinviteUser(id: string): Promise<void> {
     return this.apiService.postOrganizationUserReinvite(this.organizationId, id);
   }
 
   async confirmUser(
     user: OrganizationUserUserDetailsResponse,
     publicKey: Uint8Array
-  ): Promise<any> {
+  ): Promise<void> {
     const orgKey = await this.cryptoService.getOrgKey(this.organizationId);
     const key = await this.cryptoService.rsaEncrypt(orgKey.key, publicKey.buffer);
     const request = new OrganizationUserConfirmRequest();

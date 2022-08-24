@@ -1,5 +1,9 @@
+export interface MessageBase {
+  command: string;
+}
+
 export abstract class BroadcasterService {
-  send: (message: any, id?: string) => void;
-  subscribe: (id: string, messageCallback: (message: any) => any) => void;
+  send: (message: MessageBase, id?: string) => void;
+  subscribe: (id: string, messageCallback: (message: MessageBase) => void) => void;
   unsubscribe: (id: string) => void;
 }

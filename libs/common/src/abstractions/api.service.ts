@@ -1,4 +1,3 @@
-import { OrganizationApiKeyType } from "../enums/organizationApiKeyType";
 import { OrganizationConnectionType } from "../enums/organizationConnectionType";
 import { SetKeyConnectorKeyRequest } from "../models/request/account/setKeyConnectorKeyRequest";
 import { AttachmentRequest } from "../models/request/attachmentRequest";
@@ -28,23 +27,14 @@ import { ApiTokenRequest } from "../models/request/identityToken/apiTokenRequest
 import { PasswordTokenRequest } from "../models/request/identityToken/passwordTokenRequest";
 import { SsoTokenRequest } from "../models/request/identityToken/ssoTokenRequest";
 import { ImportCiphersRequest } from "../models/request/importCiphersRequest";
-import { ImportDirectoryRequest } from "../models/request/importDirectoryRequest";
 import { ImportOrganizationCiphersRequest } from "../models/request/importOrganizationCiphersRequest";
 import { KdfRequest } from "../models/request/kdfRequest";
 import { KeyConnectorUserKeyRequest } from "../models/request/keyConnectorUserKeyRequest";
 import { KeysRequest } from "../models/request/keysRequest";
 import { OrganizationSponsorshipCreateRequest } from "../models/request/organization/organizationSponsorshipCreateRequest";
 import { OrganizationSponsorshipRedeemRequest } from "../models/request/organization/organizationSponsorshipRedeemRequest";
-import { OrganizationSsoRequest } from "../models/request/organization/organizationSsoRequest";
-import { OrganizationApiKeyRequest } from "../models/request/organizationApiKeyRequest";
 import { OrganizationConnectionRequest } from "../models/request/organizationConnectionRequest";
-import { OrganizationCreateRequest } from "../models/request/organizationCreateRequest";
 import { OrganizationImportRequest } from "../models/request/organizationImportRequest";
-import { OrganizationKeysRequest } from "../models/request/organizationKeysRequest";
-import { OrganizationSubscriptionUpdateRequest } from "../models/request/organizationSubscriptionUpdateRequest";
-import { OrganizationTaxInfoUpdateRequest } from "../models/request/organizationTaxInfoUpdateRequest";
-import { OrganizationUpdateRequest } from "../models/request/organizationUpdateRequest";
-import { OrganizationUpgradeRequest } from "../models/request/organizationUpgradeRequest";
 import { OrganizationUserAcceptRequest } from "../models/request/organizationUserAcceptRequest";
 import { OrganizationUserBulkConfirmRequest } from "../models/request/organizationUserBulkConfirmRequest";
 import { OrganizationUserBulkRequest } from "../models/request/organizationUserBulkRequest";
@@ -69,7 +59,6 @@ import { ProviderUserConfirmRequest } from "../models/request/provider/providerU
 import { ProviderUserInviteRequest } from "../models/request/provider/providerUserInviteRequest";
 import { ProviderUserUpdateRequest } from "../models/request/provider/providerUserUpdateRequest";
 import { RegisterRequest } from "../models/request/registerRequest";
-import { SeatRequest } from "../models/request/seatRequest";
 import { SecretVerificationRequest } from "../models/request/secretVerificationRequest";
 import { SelectionReadOnlyRequest } from "../models/request/selectionReadOnlyRequest";
 import { SendAccessRequest } from "../models/request/sendAccessRequest";
@@ -90,7 +79,6 @@ import { UpdateTwoFactorEmailRequest } from "../models/request/updateTwoFactorEm
 import { UpdateTwoFactorWebAuthnDeleteRequest } from "../models/request/updateTwoFactorWebAuthnDeleteRequest";
 import { UpdateTwoFactorWebAuthnRequest } from "../models/request/updateTwoFactorWebAuthnRequest";
 import { UpdateTwoFactorYubioOtpRequest } from "../models/request/updateTwoFactorYubioOtpRequest";
-import { VerifyBankRequest } from "../models/request/verifyBankRequest";
 import { VerifyDeleteRecoverRequest } from "../models/request/verifyDeleteRecoverRequest";
 import { VerifyEmailRequest } from "../models/request/verifyEmailRequest";
 import { ApiKeyResponse } from "../models/response/apiKeyResponse";
@@ -98,7 +86,6 @@ import { AttachmentResponse } from "../models/response/attachmentResponse";
 import { AttachmentUploadDataResponse } from "../models/response/attachmentUploadDataResponse";
 import { BillingHistoryResponse } from "../models/response/billingHistoryResponse";
 import { BillingPaymentResponse } from "../models/response/billingPaymentResponse";
-import { BillingResponse } from "../models/response/billingResponse";
 import { BreachAccountResponse } from "../models/response/breachAccountResponse";
 import { CipherResponse } from "../models/response/cipherResponse";
 import {
@@ -120,18 +107,12 @@ import { IdentityTokenResponse } from "../models/response/identityTokenResponse"
 import { IdentityTwoFactorResponse } from "../models/response/identityTwoFactorResponse";
 import { KeyConnectorUserKeyResponse } from "../models/response/keyConnectorUserKeyResponse";
 import { ListResponse } from "../models/response/listResponse";
-import { OrganizationSsoResponse } from "../models/response/organization/organizationSsoResponse";
-import { OrganizationApiKeyInformationResponse } from "../models/response/organizationApiKeyInformationResponse";
-import { OrganizationAutoEnrollStatusResponse } from "../models/response/organizationAutoEnrollStatusResponse";
 import {
   OrganizationConnectionConfigApis,
   OrganizationConnectionResponse,
 } from "../models/response/organizationConnectionResponse";
 import { OrganizationExportResponse } from "../models/response/organizationExportResponse";
-import { OrganizationKeysResponse } from "../models/response/organizationKeysResponse";
-import { OrganizationResponse } from "../models/response/organizationResponse";
 import { OrganizationSponsorshipSyncStatusResponse } from "../models/response/organizationSponsorshipSyncStatusResponse";
-import { OrganizationSubscriptionResponse } from "../models/response/organizationSubscriptionResponse";
 import { OrganizationUserBulkPublicKeyResponse } from "../models/response/organizationUserBulkPublicKeyResponse";
 import { OrganizationUserBulkResponse } from "../models/response/organizationUserBulkResponse";
 import {
@@ -214,7 +195,7 @@ export abstract class ApiService {
   postReinstatePremium: () => Promise<any>;
   postCancelPremium: () => Promise<any>;
   postAccountStorage: (request: StorageRequest) => Promise<PaymentResponse>;
-  postAccountPayment: (request: PaymentRequest) => Promise<any>;
+  postAccountPayment: (request: PaymentRequest) => Promise<void>;
   postAccountLicense: (data: FormData) => Promise<any>;
   postAccountKey: (request: UpdateKeyRequest) => Promise<any>;
   postAccountKeys: (request: KeysRequest) => Promise<any>;
@@ -415,7 +396,7 @@ export abstract class ApiService {
     organizationId: string,
     userId: string,
     request: OrganizationUserResetPasswordEnrollmentRequest
-  ) => Promise<any>;
+  ) => Promise<void>;
   putOrganizationUserResetPassword: (
     organizationId: string,
     id: string,
@@ -438,7 +419,6 @@ export abstract class ApiService {
   ) => Promise<ListResponse<OrganizationUserBulkResponse>>;
 
   getSync: () => Promise<SyncResponse>;
-  postImportDirectory: (organizationId: string, request: ImportDirectoryRequest) => Promise<any>;
   postPublicImportDirectory: (request: OrganizationImportRequest) => Promise<any>;
 
   getSettingsDomains: () => Promise<DomainsResponse>;
@@ -511,10 +491,6 @@ export abstract class ApiService {
     request: EmergencyAccessPasswordRequest
   ) => Promise<any>;
   postEmergencyAccessView: (id: string) => Promise<EmergencyAccessViewResponse>;
-
-  getOrganization: (id: string) => Promise<OrganizationResponse>;
-  getOrganizationBilling: (id: string) => Promise<BillingResponse>;
-  getOrganizationSubscription: (id: string) => Promise<OrganizationSubscriptionResponse>;
   getCloudCommunicationsEnabled: () => Promise<boolean>;
   abstract getOrganizationConnection<TConfig extends OrganizationConnectionConfigApis>(
     id: string,
@@ -531,59 +507,8 @@ export abstract class ApiService {
     organizationConnectionId: string
   ): Promise<OrganizationConnectionResponse<TConfig>>;
   deleteOrganizationConnection: (id: string) => Promise<void>;
-  getOrganizationLicense: (id: string, installationId: string) => Promise<any>;
-  getOrganizationTaxInfo: (id: string) => Promise<TaxInfoResponse>;
-  getOrganizationAutoEnrollStatus: (
-    identifier: string
-  ) => Promise<OrganizationAutoEnrollStatusResponse>;
-  getOrganizationSso: (id: string) => Promise<OrganizationSsoResponse>;
-  postOrganization: (request: OrganizationCreateRequest) => Promise<OrganizationResponse>;
-  putOrganization: (
-    id: string,
-    request: OrganizationUpdateRequest
-  ) => Promise<OrganizationResponse>;
-  putOrganizationTaxInfo: (id: string, request: OrganizationTaxInfoUpdateRequest) => Promise<any>;
-  postLeaveOrganization: (id: string) => Promise<any>;
-  postOrganizationLicense: (data: FormData) => Promise<OrganizationResponse>;
-  postOrganizationLicenseUpdate: (id: string, data: FormData) => Promise<any>;
-  postOrganizationApiKey: (
-    id: string,
-    request: OrganizationApiKeyRequest
-  ) => Promise<ApiKeyResponse>;
-  getOrganizationApiKeyInformation: (
-    id: string,
-    type?: OrganizationApiKeyType
-  ) => Promise<ListResponse<OrganizationApiKeyInformationResponse>>;
-  postOrganizationRotateApiKey: (
-    id: string,
-    request: OrganizationApiKeyRequest
-  ) => Promise<ApiKeyResponse>;
-  postOrganizationSso: (
-    id: string,
-    request: OrganizationSsoRequest
-  ) => Promise<OrganizationSsoResponse>;
-  postOrganizationUpgrade: (
-    id: string,
-    request: OrganizationUpgradeRequest
-  ) => Promise<PaymentResponse>;
-  postOrganizationUpdateSubscription: (
-    id: string,
-    request: OrganizationSubscriptionUpdateRequest
-  ) => Promise<void>;
-  postOrganizationSeat: (id: string, request: SeatRequest) => Promise<PaymentResponse>;
-  postOrganizationStorage: (id: string, request: StorageRequest) => Promise<any>;
-  postOrganizationPayment: (id: string, request: PaymentRequest) => Promise<any>;
-  postOrganizationVerifyBank: (id: string, request: VerifyBankRequest) => Promise<any>;
-  postOrganizationCancel: (id: string) => Promise<any>;
-  postOrganizationReinstate: (id: string) => Promise<any>;
-  deleteOrganization: (id: string, request: SecretVerificationRequest) => Promise<any>;
   getPlans: () => Promise<ListResponse<PlanResponse>>;
   getTaxRates: () => Promise<ListResponse<TaxRateResponse>>;
-  getOrganizationKeys: (id: string) => Promise<OrganizationKeysResponse>;
-  postOrganizationKeys: (
-    id: string,
-    request: OrganizationKeysRequest
-  ) => Promise<OrganizationKeysResponse>;
 
   postProviderSetup: (id: string, request: ProviderSetupRequest) => Promise<ProviderResponse>;
   getProvider: (id: string) => Promise<ProviderResponse>;
@@ -673,7 +598,7 @@ export abstract class ApiService {
   ) => Promise<ListResponse<EventResponse>>;
   postEventsCollect: (request: EventRequest[]) => Promise<any>;
 
-  deleteSsoUser: (organizationId: string) => Promise<any>;
+  deleteSsoUser: (organizationId: string) => Promise<void>;
   getSsoUserIdentifier: () => Promise<string>;
 
   getUserPublicKey: (id: string) => Promise<UserKeyResponse>;

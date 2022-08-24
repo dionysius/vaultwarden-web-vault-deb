@@ -3,6 +3,7 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
@@ -26,6 +27,7 @@ export class UnlockCommand {
     private keyConnectorService: KeyConnectorService,
     private environmentService: EnvironmentService,
     private syncService: SyncService,
+    private organizationApiService: OrganizationApiServiceAbstraction,
     private logout: () => Promise<void>
   ) {}
 
@@ -78,10 +80,10 @@ export class UnlockCommand {
 
       if (await this.keyConnectorService.getConvertAccountRequired()) {
         const convertToKeyConnectorCommand = new ConvertToKeyConnectorCommand(
-          this.apiService,
           this.keyConnectorService,
           this.environmentService,
           this.syncService,
+          this.organizationApiService,
           this.logout
         );
         const convertResponse = await convertToKeyConnectorCommand.run();

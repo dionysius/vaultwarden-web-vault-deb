@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
 import { TransactionType } from "@bitwarden/common/enums/transactionType";
@@ -26,16 +26,16 @@ export class OrganizationBillingComponent implements OnInit {
   verifyAmount1: number;
   verifyAmount2: number;
 
-  verifyBankPromise: Promise<any>;
+  verifyBankPromise: Promise<void>;
 
   // TODO - Make sure to properly split out the billing/invoice and payment method/account during org admin refresh
 
   constructor(
-    private apiService: ApiService,
     private i18nService: I18nService,
     private route: ActivatedRoute,
     private platformUtilsService: PlatformUtilsService,
-    private logService: LogService
+    private logService: LogService,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -52,7 +52,7 @@ export class OrganizationBillingComponent implements OnInit {
     }
     this.loading = true;
     if (this.organizationId != null) {
-      this.billing = await this.apiService.getOrganizationBilling(this.organizationId);
+      this.billing = await this.organizationApiService.getBilling(this.organizationId);
     }
     this.loading = false;
   }
@@ -66,10 +66,7 @@ export class OrganizationBillingComponent implements OnInit {
       const request = new VerifyBankRequest();
       request.amount1 = this.verifyAmount1;
       request.amount2 = this.verifyAmount2;
-      this.verifyBankPromise = this.apiService.postOrganizationVerifyBank(
-        this.organizationId,
-        request
-      );
+      this.verifyBankPromise = this.organizationApiService.verifyBank(this.organizationId, request);
       await this.verifyBankPromise;
       this.platformUtilsService.showToast(
         "success",

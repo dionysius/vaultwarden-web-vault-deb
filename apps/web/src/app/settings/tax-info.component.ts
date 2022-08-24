@@ -3,9 +3,16 @@ import { ActivatedRoute } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationTaxInfoUpdateRequest } from "@bitwarden/common/models/request/organizationTaxInfoUpdateRequest";
 import { TaxInfoUpdateRequest } from "@bitwarden/common/models/request/taxInfoUpdateRequest";
+import { TaxInfoResponse } from "@bitwarden/common/models/response/taxInfoResponse";
 import { TaxRateResponse } from "@bitwarden/common/models/response/taxRateResponse";
+
+type TaxInfoView = Omit<TaxInfoResponse, "taxIdType"> & {
+  includeTaxId: boolean;
+  [key: string]: unknown;
+};
 
 @Component({
   selector: "app-tax-info",
@@ -17,7 +24,7 @@ export class TaxInfoComponent {
 
   loading = true;
   organizationId: string;
-  taxInfo: any = {
+  taxInfo: TaxInfoView = {
     taxId: null,
     line1: null,
     line2: null,
@@ -30,7 +37,7 @@ export class TaxInfoComponent {
 
   taxRates: TaxRateResponse[];
 
-  private pristine: any = {
+  private pristine: TaxInfoView = {
     taxId: null,
     line1: null,
     line2: null,
@@ -44,7 +51,8 @@ export class TaxInfoComponent {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
-    private logService: LogService
+    private logService: LogService,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {}
 
   async ngOnInit() {
@@ -52,7 +60,7 @@ export class TaxInfoComponent {
       this.organizationId = params.organizationId;
       if (this.organizationId) {
         try {
-          const taxInfo = await this.apiService.getOrganizationTaxInfo(this.organizationId);
+          const taxInfo = await this.organizationApiService.getTaxInfo(this.organizationId);
           if (taxInfo) {
             this.taxInfo.taxId = taxInfo.taxId;
             this.taxInfo.state = taxInfo.state;
@@ -140,7 +148,7 @@ export class TaxInfoComponent {
     }
     const request = this.getTaxInfoRequest();
     return this.organizationId
-      ? this.apiService.putOrganizationTaxInfo(
+      ? this.organizationApiService.updateTaxInfo(
           this.organizationId,
           request as OrganizationTaxInfoUpdateRequest
         )

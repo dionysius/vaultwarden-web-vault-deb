@@ -6,6 +6,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
@@ -33,7 +34,8 @@ export class EnrollMasterPasswordReset {
     private syncService: SyncService,
     private logService: LogService,
     private modalRef: ModalRef,
-    config: ModalConfig
+    config: ModalConfig,
+    private organizationApiService: OrganizationApiServiceAbstraction
   ) {
     this.organization = config.data.organization;
   }
@@ -48,7 +50,7 @@ export class EnrollMasterPasswordReset {
         let keyString: string = null;
 
         // Retrieve Public Key
-        const orgKeys = await this.apiService.getOrganizationKeys(this.organization.id);
+        const orgKeys = await this.organizationApiService.getKeys(this.organization.id);
         if (orgKeys == null) {
           throw new Error(this.i18nService.t("resetPasswordOrgKeysError"));
         }

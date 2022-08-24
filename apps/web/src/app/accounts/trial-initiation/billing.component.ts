@@ -8,6 +8,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { SyncService } from "@bitwarden/common/abstractions/sync.service";
@@ -34,7 +35,8 @@ export class BillingComponent extends OrganizationPlansComponent {
     organizationService: OrganizationService,
     logService: LogService,
     messagingService: MessagingService,
-    formBuilder: UntypedFormBuilder
+    formBuilder: UntypedFormBuilder,
+    organizationApiService: OrganizationApiServiceAbstraction
   ) {
     super(
       apiService,
@@ -47,7 +49,8 @@ export class BillingComponent extends OrganizationPlansComponent {
       organizationService,
       logService,
       messagingService,
-      formBuilder
+      formBuilder,
+      organizationApiService
     );
   }
 
