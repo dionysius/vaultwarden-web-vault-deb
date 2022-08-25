@@ -6,7 +6,6 @@ import { CollectionService } from "@bitwarden/common/abstractions/collection.ser
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { BitwardenPasswordProtectedImporter } from "@bitwarden/common/importers/bitwardenPasswordProtectedImporter";
 import { Importer } from "@bitwarden/common/importers/importer";
 import { Utils } from "@bitwarden/common/misc/utils";
@@ -19,7 +18,6 @@ describe("ImportService", () => {
   let apiService: SubstituteOf<ApiService>;
   let i18nService: SubstituteOf<I18nService>;
   let collectionService: SubstituteOf<CollectionService>;
-  let platformUtilsService: SubstituteOf<PlatformUtilsService>;
   let cryptoService: SubstituteOf<CryptoService>;
 
   beforeEach(() => {
@@ -28,7 +26,6 @@ describe("ImportService", () => {
     apiService = Substitute.for<ApiService>();
     i18nService = Substitute.for<I18nService>();
     collectionService = Substitute.for<CollectionService>();
-    platformUtilsService = Substitute.for<PlatformUtilsService>();
     cryptoService = Substitute.for<CryptoService>();
 
     importService = new ImportService(
@@ -37,7 +34,6 @@ describe("ImportService", () => {
       apiService,
       i18nService,
       collectionService,
-      platformUtilsService,
       cryptoService
     );
   });

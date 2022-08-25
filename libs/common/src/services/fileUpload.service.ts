@@ -16,7 +16,7 @@ export class FileUploadService implements FileUploadServiceAbstraction {
 
   constructor(private logService: LogService, private apiService: ApiService) {
     this.azureFileUploadService = new AzureFileUploadService(logService);
-    this.bitwardenFileUploadService = new BitwardenFileUploadService(apiService);
+    this.bitwardenFileUploadService = new BitwardenFileUploadService();
   }
 
   async uploadSendFile(

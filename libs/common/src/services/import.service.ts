@@ -5,7 +5,6 @@ import { CryptoService } from "../abstractions/crypto.service";
 import { FolderService } from "../abstractions/folder/folder.service.abstraction";
 import { I18nService } from "../abstractions/i18n.service";
 import { ImportService as ImportServiceAbstraction } from "../abstractions/import.service";
-import { PlatformUtilsService } from "../abstractions/platformUtils.service";
 import { CipherType } from "../enums/cipherType";
 import {
   featuredImportOptions,
@@ -93,7 +92,6 @@ export class ImportService implements ImportServiceAbstraction {
     private apiService: ApiService,
     private i18nService: I18nService,
     private collectionService: CollectionService,
-    private platformUtilsService: PlatformUtilsService,
     private cryptoService: CryptoService
   ) {}
 

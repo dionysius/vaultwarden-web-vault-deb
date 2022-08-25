@@ -323,7 +323,6 @@ export class Main {
       this.apiService,
       this.i18nService,
       this.collectionService,
-      this.platformUtilsService,
       this.cryptoService
     );
     this.exportService = new ExportService(

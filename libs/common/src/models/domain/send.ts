@@ -72,7 +72,7 @@ export class Send extends Domain {
     const model = new SendView(this);
 
     let cryptoService: CryptoService;
-    const containerService = (Utils.global as any).bitwardenContainerService;
+    const containerService = Utils.global.bitwardenContainerService;
     if (containerService) {
       cryptoService = containerService.getCryptoService();
     } else {
