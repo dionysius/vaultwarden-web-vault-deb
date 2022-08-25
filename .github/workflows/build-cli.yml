@@ -155,9 +155,6 @@ jobs:
         run: npm ci
         working-directory: ./
 
-      - name: Run tests
-        run: npm run test
-
       - name: Build & Package
         run: npm run dist --quiet
 

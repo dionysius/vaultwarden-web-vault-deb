@@ -138,10 +138,9 @@ jobs:
         run: npm ci
         working-directory: ./
 
-      - name: Build & Test
+      - name: Build
         run: |
           npm run dist
-          npm run test
 
       - name: Build Manifest v3
         run: |
