@@ -18,6 +18,8 @@ import { StateService as BaseStateService } from "@bitwarden/common/abstractions
 import { PlanType } from "@bitwarden/common/enums/planType";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
 
+import { RouterService } from "../../core";
+
 import { TrialInitiationComponent } from "./trial-initiation.component";
 import { VerticalStepperComponent } from "./vertical-stepper/vertical-stepper.component";
 
@@ -83,6 +85,10 @@ describe("TrialInitiationComponent", () => {
         {
           provide: VerticalStepperComponent,
           useClass: VerticalStepperStubComponent,
+        },
+        {
+          provide: RouterService,
+          useClass: Substitute.for<RouterService>(),
         },
       ],
       schemas: [NO_ERRORS_SCHEMA], // Allows child components to be ignored (such as register component)
