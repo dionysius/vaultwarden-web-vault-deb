@@ -81,7 +81,7 @@ jobs:
           environment-url: http://vault.qa.bitwarden.pw
           environment: 'Web Vault - QA'
           description: 'Deployment from branch ${{ github.ref_name }}'
-      
+
       - name: Update deployment status to In Progress
         uses: chrnorm/deployment-status@07b3930847f65e71c9c6802ff5a402f6dfb46b86
         with:
@@ -94,7 +94,7 @@ jobs:
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Download latest cloud asset
-        uses: bitwarden/gh-actions/download-artifacts@c1fa8e09871a860862d6bbe36184b06d2c7e35a8
+        uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
           workflow: build-web.yml
           path: apps/web
