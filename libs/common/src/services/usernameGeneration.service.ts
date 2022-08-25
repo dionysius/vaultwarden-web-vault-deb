@@ -131,7 +131,6 @@ export class UsernameGenerationService implements BaseUsernameGenerationService 
     } else if (o.forwardedService === "fastmail") {
       forwarder = new FastmailForwarder();
       forwarderOptions.apiKey = o.forwardedFastmailApiToken;
-      forwarderOptions.fastmail.accountId = o.forwardedFastmailAccountId;
     } else if (o.forwardedService === "duckduckgo") {
       forwarder = new DuckDuckGoForwarder();
       forwarderOptions.apiKey = o.forwardedDuckDuckGoToken;

@@ -434,18 +434,8 @@
                   <input
                     id="fastmail-apiToken"
                     type="password"
-                    name="FastMailApiToken"
+                    name="FastmailApiToken"
                     [(ngModel)]="usernameOptions.forwardedFastmailApiToken"
-                    (blur)="saveUsernameOptions()"
-                  />
-                </div>
-                <div class="box-content-row" appBoxRow>
-                  <label for="fastmail-accountId">{{ "accountId" | i18n }}</label>
-                  <input
-                    id="fastmail-accountId"
-                    type="text"
-                    name="FastmailAccountId"
-                    [(ngModel)]="usernameOptions.forwardedFastmailAccountId"
                     (blur)="saveUsernameOptions()"
                   />
                 </div>

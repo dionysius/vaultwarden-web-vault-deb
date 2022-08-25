@@ -6,7 +6,6 @@ export class ForwarderOptions {
 }
 
 export class FastmailForwarderOptions {
-  accountId: string;
   prefix: string;
 }
 
