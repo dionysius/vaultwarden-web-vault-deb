@@ -117,19 +117,17 @@ export class UsernameGenerationService implements BaseUsernameGenerationService 
 
     let forwarder: Forwarder = null;
     const forwarderOptions = new ForwarderOptions();
+    forwarderOptions.website = o.website;
     if (o.forwardedService === "simplelogin") {
       forwarder = new SimpleLoginForwarder();
       forwarderOptions.apiKey = o.forwardedSimpleLoginApiKey;
-      forwarderOptions.website = o.website;
     } else if (o.forwardedService === "anonaddy") {
       forwarder = new AnonAddyForwarder();
       forwarderOptions.apiKey = o.forwardedAnonAddyApiToken;
       forwarderOptions.anonaddy.domain = o.forwardedAnonAddyDomain;
-      forwarderOptions.website = o.website;
     } else if (o.forwardedService === "firefoxrelay") {
       forwarder = new FirefoxRelayForwarder();
       forwarderOptions.apiKey = o.forwardedFirefoxApiToken;
-      forwarderOptions.website = o.website;
     } else if (o.forwardedService === "fastmail") {
       forwarder = new FastmailForwarder();
       forwarderOptions.apiKey = o.forwardedFastmailApiToken;
