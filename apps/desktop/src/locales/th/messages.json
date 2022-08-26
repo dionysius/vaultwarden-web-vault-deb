@@ -12,7 +12,7 @@
     "message": "รายการโปรด"
   },
   "types": {
-    "message": "Types"
+    "message": "ประเภท"
   },
   "typeLogin": {
     "message": "เข้าสู่ระบบ"
@@ -42,13 +42,13 @@
     "message": "แบ่งปัน"
   },
   "share": {
-    "message": "Share"
+    "message": "แชร์"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "ย้ายไปที่องค์กร"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ ย้ายไปที่ $ORGNAME$ แล้ว",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,10 +61,10 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "เลือกองค์กรที่คุณต้องการย้ายรายการนี้ไป การย้ายไปยังองค์กรจะเป็นการโอนความเป็นเจ้าของรายการไปยังองค์กรนั้น คุณจะไม่ได้เป็นเจ้าของโดยตรงของรายการนี้อีกต่อไปเมื่อมีการย้าย"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "ไฟล์แนบ"
   },
   "viewItem": {
     "message": "ดูรายการ"
@@ -86,7 +86,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "URL ใหม่"
   },
   "username": {
     "message": "ชื่อผู้ใช้"
@@ -110,13 +110,13 @@
     "message": "เว็บไซต์"
   },
   "notes": {
-    "message": "Notes"
+    "message": "โน๊ต"
   },
   "customFields": {
     "message": "Custom Fields"
   },
   "launch": {
-    "message": "Launch"
+    "message": "เริ่ม"
   },
   "copyValue": {
     "message": "คัดลอกค่า",
@@ -269,7 +269,7 @@
     "message": "นามสกุล"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "ชื่อเต็ม"
   },
   "address1": {
     "message": "ที่อยู่ 1"
@@ -401,16 +401,16 @@
     "message": "ความยาว"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "ตัวพิมพ์ใหญ่ (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "ตัวพิมพ์เล็ก (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "หมายเลข (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "อักขระพิเศษ (!@#$%^&*)"
   },
   "numWords": {
     "message": "Number of Words"
@@ -419,7 +419,7 @@
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "ขึ้นต้นด้วยตัวพิมพ์ใหญ่",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -563,19 +563,19 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "ส่งรหัส"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "ส่งรหัสแล้ว"
   },
   "verificationCode": {
     "message": "รหัสยืนยัน"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "ยืนยันตัวตนของคุณเพื่อดำเนินการต่อ"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "จำเป็นต้องมีรหัสการตรวจสอบยืนยัน"
   },
   "invalidVerificationCode": {
     "message": "Invalid verification code"
@@ -758,16 +758,16 @@
     "message": "ตัวสร้างรหัสผ่าน"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "ติดต่อเรา"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "ขอความช่วยเหลือ"
   },
   "fileBugReport": {
     "message": "File a Bug Report"
   },
   "blog": {
-    "message": "Blog"
+    "message": "บล็อก"
   },
   "followUs": {
     "message": "Follow Us"
@@ -779,7 +779,7 @@
     "message": "เปลี่ยนรหัสผ่านหลัก"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "คุณสามารถเปลี่ยนรหัสผ่านหลักของคุณได้ที่เว็บ bitwarden.com คุณต้องการไปที่เว็บไซต์ตอนนี้ไหม?"
   },
   "fingerprintPhrase": {
     "message": "Fingerprint Phrase",
@@ -799,19 +799,19 @@
     "message": "Get Browser Extension"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "การซิงก์เสร็จสมบูรณ์"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "การซิงก์ล้มเหลว"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your identity to continue."
+    "message": "ตู้เซฟของคุณถูกล็อก ยืนยันตัวตนของคุณเพื่อดำเนินการต่อ"
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "ปลดล็อค"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "ล็อกอินด้วย $EMAIL$ บน $HOSTNAME$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -824,10 +824,10 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "รหัสผ่านหลักไม่ถูกต้อง"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "การเข้าสู่ระบบแบบสองขั้นตอนทำให้บัญชีของคุณมีความปลอดภัยมากขึ้นด้วยการให้คุณตรวจสอบการเข้าสู่ระบบของคุณกับอุปกรณ์อื่นเช่นคีย์ความปลอดภัย, แอพ authenticator, SMS, โทรศัพท์หรืออีเมล. เข้าสู่ระบบแบบสองขั้นตอนสามารถเปิดใช้งานบน เว็บนิรภัย bitwarden.com คุณต้องการเยี่ยมชมเว็บไซต์เดี๋ยวนี้หรือไม่"
   },
   "twoStepLogin": {
     "message": "เข้าสู่ระบบแบบสองขั้นตอน"
@@ -842,19 +842,19 @@
     "message": "ทันที"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 วินาที"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 วินาที"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 วินาที"
   },
   "oneMinute": {
     "message": "1 นาที"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 นาที"
   },
   "fiveMinutes": {
     "message": "5 นาที"
@@ -884,13 +884,13 @@
     "message": "On Restart"
   },
   "never": {
-    "message": "Never"
+    "message": "ไม่อีกเลย"
   },
   "security": {
-    "message": "Security"
+    "message": "ความปลอดภัย"
   },
   "clearClipboard": {
-    "message": "Clear clipboard",
+    "message": "ล้างคลิปบอร์ด",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -898,7 +898,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "โชว์ไอคอนเว็บไซต์"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -964,23 +964,23 @@
     "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
-    "message": "Language"
+    "message": "ภาษา"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "การเปลี่ยนภาษาของแอพพลิเคชั่น จำเป็นต้องรีสตาร์ท"
   },
   "theme": {
-    "message": "Theme"
+    "message": "ธีม"
   },
   "themeDesc": {
     "message": "Change the application's color theme."
   },
   "dark": {
-    "message": "Dark",
+    "message": "มืด",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "สว่าง",
     "description": "Light color"
   },
   "copy": {
@@ -1015,7 +1015,7 @@
     "message": "Update Available"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "ตรวจพบการอัปเดต คุณต้องการดาวโหลดตอนนี้เลยไหม?"
   },
   "restart": {
     "message": "เริ่มต้นใหม่"
@@ -1030,7 +1030,7 @@
     "message": "เกิดข้อผิดพลาดในการอัปเดต"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "ไม่ทราบ"
   },
   "copyUsername": {
     "message": "คัดลอกชื่อผู้ใช้"
@@ -1056,10 +1056,10 @@
     "message": "Refresh Membership"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "คุณยังไม่ได้เป็นสมาชิกระดับพรีเมียม"
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "สมัครสมาชิกพรีเมี่ยมและรับ:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB of encrypted file storage."
@@ -1259,11 +1259,11 @@
     "message": "Hide to Tray"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "อยู่ด้านบนเสมอ",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "อัปเดตแล้ว",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1299,10 +1299,10 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Invalid Url"
+    "message": "Url ไม่ถูกต้อง"
   },
   "done": {
-    "message": "Done"
+    "message": "เสร็จสิ้น"
   },
   "accessibilityCookieSaved": {
     "message": "Accessibility cookie saved!"
@@ -1311,7 +1311,7 @@
     "message": "No accessibility cookie saved"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "คำเตือน",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
@@ -1333,21 +1333,21 @@
     "message": "There are no collections to list."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "ความเป็นเจ้าของ"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "ใครเป็นเจ้าของรายการนี้?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "แข็งแรง",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "ไม่เลว",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "ง่ายเกินไป",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
@@ -1361,19 +1361,19 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "ปลดล็อกด้วย PIN"
   },
   "setYourPinCode": {
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "กรุณาใส่รหัส PIN"
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "PIN ไม่ถูกต้อง"
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "ปลดล็อก ด้วย Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Verify for Bitwarden."
@@ -1394,7 +1394,7 @@
     "message": "Lock with master password on restart"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "ลบบัญชีผู้ใช้"
   },
   "deleteAccountDesc": {
     "message": "Proceed below to delete your account and all vault data."
@@ -1403,13 +1403,13 @@
     "message": "Deleting your account is permanent. It cannot be undone."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "ลบบัญชีผู้ใช้แล้ว"
   },
   "accountDeletedDesc": {
     "message": "Your account has been closed and all associated data has been deleted."
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "การตั้งค่า"
   },
   "enableMenuBar": {
     "message": "Show menu bar icon"
@@ -1437,7 +1437,7 @@
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "เงื่อนไขการใช้บริการ"
   },
   "privacyPolicy": {
     "message": "Privacy Policy"
@@ -1505,7 +1505,7 @@
     "message": "Enterprise Single Sign-On"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "ตั้งรหัสผ่านหลัก"
   },
   "ssoCompleteRegistration": {
     "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
@@ -1514,7 +1514,7 @@
     "message": "New Master Password"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "ยืนยันรหัสผ่านใหม่"
   },
   "masterPasswordPolicyInEffect": {
     "message": "One or more organization policies require your master password to meet the following requirements:"
@@ -1589,7 +1589,7 @@
     "message": "Add an additional layer of security by requiring fingerprint phrase confirmation when establishing a link between your desktop and browser. This requires user action and verification each time a connection is created."
   },
   "approve": {
-    "message": "Approve"
+    "message": "อนุมัติ"
   },
   "verifyBrowserTitle": {
     "message": "Verify browser connection"
@@ -1613,14 +1613,14 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "ส่งทั้งหมด",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "ไฟล์"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "ข้อความ"
   },
   "searchSends": {
     "message": "Search Sends",
@@ -1631,13 +1631,13 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "ตู้เซฟของฉัน"
   },
   "text": {
-    "message": "Text"
+    "message": "ข้อความ"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "ถูกลบเมื่อวันที่"
   },
   "deletionDateDesc": {
     "message": "The Send will be permanently deleted on the specified date and time.",
@@ -1674,7 +1674,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "ส่งลิงก์",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
@@ -1715,7 +1715,7 @@
     "message": "The file you want to send."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ วัน",
     "placeholders": {
       "days": {
         "content": "$1",

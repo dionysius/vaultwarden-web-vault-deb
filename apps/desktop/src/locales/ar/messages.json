@@ -1394,19 +1394,19 @@
     "message": "قفل مع كلمة المرور الرئيسية عند إعادة تشغيل"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "حذف الحساب"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "تابع أدناه لحذف حسابك وجميع بيانات خزنتك."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "حذف حسابك دائم. لا يمكن التراجع عنه."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "تم حذف الحساب"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "لقد تم إغلاق حسابك وتم حذف جميع البيانات المرتبطة به."
   },
   "preferences": {
     "message": "التفضيلات"
@@ -1980,7 +1980,7 @@
     "message": "مفتاح API"
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "الاشتراك المميز مطلوب"
   },
   "organizationIsDisabled": {
     "message": "تم تعطيل المؤسسة."

@@ -361,7 +361,7 @@
     "message": "Выдаліць далучэнне"
   },
   "deleteItemConfirmation": {
-    "message": "Вы ўпэўнены, што хочаце выдаліць гэты элемент?"
+    "message": "Вы сапраўды хочаце адправіць элемент у сметніцу?"
   },
   "deletedItem": {
     "message": "Элемент адпраўлены ў сметніцу"
@@ -560,7 +560,7 @@
     "message": "Няма элементаў для паказу."
   },
   "sendVerificationCode": {
-    "message": "Адправіць код праверкі на вашу электронную пошту"
+    "message": "Адправіць праверачны код на вашу электронную пошту"
   },
   "sendCode": {
     "message": "Адправіць код"
@@ -608,7 +608,7 @@
     "message": "Запомніць мяне"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Адправіць код пацвярджэння зноў"
+    "message": "Адправіць праверачны код яшчэ раз"
   },
   "useAnotherTwoStepMethod": {
     "message": "Выкарыстоўваць іншы метад двухэтапнага ўваходу"
@@ -1305,26 +1305,26 @@
     "message": "Гатова"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Cookie са спецыяльнымі магчымасцямі захаваны!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Адсутнічаюць захаваныя cookie са спецыяльнымі магчымасцямі"
   },
   "warning": {
     "message": "УВАГА",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Пацвердзіць экспартаванне сховішча"
   },
   "exportWarningDesc": {
     "message": "Экспартуемы файл утрымлівае даныя вашага сховішча ў незашыфраваным фармаце. Яго не варта захоўваць ці адпраўляць па небяспечным каналам (напрыклад, па электроннай пошце). Выдаліце яго адразу пасля выкарыстання."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Падчас экспартавання даныя шыфруюцца з дапамогай ключа шыфравання ўліковага запісу. Калі вы калі-небудзь зменіце ключ шыфравання ўліковага запісу, вам неабходна будзе экспартаваць даныя паўторна, паколькі вы не зможаце расшыфраваць гэты файл экспартавання."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Ключы шыфравання з'яўляюцца ўнікальнымі для кожнага ўліковага запісу Bitwarden, таму нельга імпартаваць зашыфраванае сховішча ў іншы ўліковы запіс."
   },
   "noOrganizationsList": {
     "message": "Вы не з'яўляецеся членам якой-небудзь арганізацыі. Арганізацыі дазваляюць бяспечна абменьвацца элементамі з іншымі карыстальнікамі."
@@ -1385,16 +1385,16 @@
     "message": "Праверыць на Bitwarden."
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Запытваць Windows Hello пры запуску"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Запытваць Touch ID пры запуску"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блакіраваць асноўным паролем пры перазапуску"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Выдаліць уліковы запіс"
   },
   "deleteAccountDesc": {
     "message": "Proceed below to delete your account and all vault data."
@@ -1613,7 +1613,7 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "allSends": {
-    "message": "Усе адпраўленні",
+    "message": "Усе Send'ы",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
@@ -1623,11 +1623,11 @@
     "message": "Тэкст"
   },
   "searchSends": {
-    "message": "Пошук адпраўленняў",
+    "message": "Пошук Send'аў",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Рэдагаваць адпраўленне",
+    "message": "Рэдагаваць Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
@@ -1640,7 +1640,7 @@
     "message": "Дата выдалення"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Send будзе незваротна выдалены ў азначаныя дату і час.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -1651,7 +1651,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count",
+    "message": "Максімальная колькасць доступаў",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
@@ -1674,27 +1674,27 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Даслаць спасылку",
+    "message": "Адправіць спасылку",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Адправіць спасылку",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Прадвызначана хаваць тэкст, калі адбываецца доступ да Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Створаны Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Адрэдагаваны Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Выдалены Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1705,7 +1705,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Стварыць адпраўленне",
+    "message": "Стварыць Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1734,7 +1734,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Скапіяваць спасылку адпраўлення ў буфер абмену",
+    "message": "Капіяваць спасылку на Send у буфер абмену",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
