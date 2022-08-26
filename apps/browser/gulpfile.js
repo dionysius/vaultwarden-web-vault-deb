@@ -60,6 +60,7 @@ function dist(browserName, manifest) {
 function distFirefox() {
   return dist("firefox", (manifest) => {
     delete manifest.content_security_policy;
+    delete manifest.storage;
     removeShortcuts(manifest);
     return manifest;
   });
