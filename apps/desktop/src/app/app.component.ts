@@ -170,12 +170,12 @@ export class AppComponent implements OnInit, OnDestroy {
             this.loading = false;
             break;
           case "lockVault":
-            await this.vaultTimeoutService.lock(true, message.userId);
+            await this.vaultTimeoutService.lock(message.userId);
             break;
           case "lockAllVaults":
             for (const userId in this.stateService.accounts.getValue()) {
               if (userId != null) {
-                await this.vaultTimeoutService.lock(true, userId);
+                await this.vaultTimeoutService.lock(userId);
               }
             }
             break;
@@ -593,7 +593,7 @@ export class AppComponent implements OnInit, OnDestroy {
       if (options[0] === timeout) {
         options[1] === "logOut"
           ? this.logOut(false, userId)
-          : await this.vaultTimeoutService.lock(true, userId);
+          : await this.vaultTimeoutService.lock(userId);
       }
     }
   }
