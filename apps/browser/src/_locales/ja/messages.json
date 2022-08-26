@@ -342,13 +342,13 @@
     "message": "本人確認を行う"
   },
   "yourVaultIsLocked": {
-    "message": "保管庫がロックされています。開くにはマスターパスワードを入力してください。"
+    "message": "保管庫がロックされています。続行するには本人確認を行ってください。"
   },
   "unlock": {
     "message": "ロック解除"
   },
   "loggedInAsOn": {
-    "message": "$HOSTNAME$ の $EMAIL$ としてログインしました。",
+    "message": "$EMAIL$ として $HOSTNAME$ にログインしました。",
     "placeholders": {
       "email": {
         "content": "$1",

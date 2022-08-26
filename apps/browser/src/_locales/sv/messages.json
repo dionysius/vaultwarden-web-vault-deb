@@ -577,16 +577,16 @@
     "message": "Aviseringar för nya inloggningar frågar dig om du vill lägga till en inloggning automatiskt till ditt valv, när du använder en inloggning som inte redan finns i ditt valv."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Visa kort på fliksida"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Lista kortobjekt på fliksidan för enkel automatisk fyllning."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Visa identiteter på fliksidan"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Lista identitetsobjekt på fliksidan för enkel automatisk fyllning."
   },
   "clearClipboard": {
     "message": "Rensa urklipp",
@@ -618,7 +618,7 @@
     "message": "Visa alternativ för snabbmenyn"
   },
   "contextMenuItemDesc": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. "
+    "message": "Använd ett andra klick för att komma åt lösenordsgenerering och matchande inloggningar för webbplatsen. "
   },
   "defaultUriMatchDetection": {
     "message": "Standardmatchning för URI",
@@ -1969,7 +1969,7 @@
     "message": "Key Connector-fel: säkerställ att Key Connector är tillgänglig och fungerar korrekt."
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Premiumabonnemang krävs"
   },
   "organizationIsDisabled": {
     "message": "Organisationen är inaktiverad."
@@ -1981,7 +1981,7 @@
     "message": "Mir"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Loggar in på $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1990,12 +1990,12 @@
     }
   },
   "settingsEdited": {
-    "message": "Settings have been edited"
+    "message": "Inställningarna har ändrats"
   },
   "environmentEditedClick": {
-    "message": "Click here"
+    "message": "Klicka här"
   },
   "environmentEditedReset": {
-    "message": "to reset to pre-configured settings"
+    "message": "för att återställa till förkonfigurerade inställningar"
   }
 }
