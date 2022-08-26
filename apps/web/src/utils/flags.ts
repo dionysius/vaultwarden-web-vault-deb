@@ -1,19 +1,29 @@
+import {
+  flagEnabled as baseFlagEnabled,
+  devFlagEnabled as baseDevFlagEnabled,
+  devFlagValue as baseDevFlagValue,
+  SharedFlags,
+  SharedDevFlags,
+} from "@bitwarden/common/misc/flags";
+
+// required to avoid linting errors when there are no flags
+/* eslint-disable-next-line @typescript-eslint/ban-types */
 export type Flags = {
   showTrial?: boolean;
-};
+} & SharedFlags;
 
-export type FlagName = keyof Flags;
+// required to avoid linting errors when there are no flags
+/* eslint-disable-next-line @typescript-eslint/ban-types */
+export type DevFlags = {} & SharedDevFlags;
 
-export function flagEnabled(flag: FlagName): boolean {
-  return flags()[flag] == null || flags()[flag];
+export function flagEnabled(flag: keyof Flags): boolean {
+  return baseFlagEnabled<Flags>(flag);
 }
 
-function flags(): Flags {
-  const envFlags = process.env.FLAGS as string | Flags;
+export function devFlagEnabled(flag: keyof DevFlags) {
+  return baseDevFlagEnabled<DevFlags>(flag);
+}
 
-  if (typeof envFlags === "string") {
-    return JSON.parse(envFlags) as Flags;
-  } else {
-    return envFlags as Flags;
-  }
+export function devFlagValue(flag: keyof DevFlags) {
+  return baseDevFlagValue(flag);
 }

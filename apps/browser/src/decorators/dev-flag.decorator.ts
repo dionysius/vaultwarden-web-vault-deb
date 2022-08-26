@@ -1,6 +1,6 @@
-import { devFlagEnabled, DevFlagName } from "../flags";
+import { devFlagEnabled, DevFlags } from "../flags";
 
-export function devFlag(flag: DevFlagName) {
+export function devFlag(flag: keyof DevFlags) {
   return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value;
     descriptor.value = function (...args: any[]) {

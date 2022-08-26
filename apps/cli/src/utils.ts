@@ -13,8 +13,6 @@ import { FolderView } from "@bitwarden/common/models/view/folderView";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
-import { FlagName, Flags } from "./flags";
-
 export class CliUtils {
   static writeLn(s: string, finalLine = false, error = false) {
     const stream = error ? process.stderr : process.stdout;
@@ -252,19 +250,5 @@ export class CliUtils {
 
   static convertBooleanOption(optionValue: any) {
     return optionValue || optionValue === "" ? true : false;
-  }
-
-  static flagEnabled(flag: FlagName) {
-    return this.flags[flag] == null || this.flags[flag];
-  }
-
-  private static get flags(): Flags {
-    const envFlags = process.env.FLAGS;
-
-    if (typeof envFlags === "string") {
-      return JSON.parse(envFlags) as Flags;
-    } else {
-      return envFlags as Flags;
-    }
   }
 }

@@ -5,7 +5,7 @@ import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
 import { LockGuard } from "@bitwarden/angular/guards/lock.guard";
 import { UnauthGuard } from "@bitwarden/angular/guards/unauth.guard";
 
-import { flagEnabled, FlagName } from "../utils/flags";
+import { flagEnabled, Flags } from "../utils/flags";
 
 import { AcceptEmergencyComponent } from "./accounts/accept-emergency.component";
 import { AcceptOrganizationComponent } from "./accounts/accept-organization.component";
@@ -261,7 +261,7 @@ const routes: Routes = [
 })
 export class OssRoutingModule {}
 
-export function buildFlaggedRoute(flagName: FlagName, route: Route): Route {
+export function buildFlaggedRoute(flagName: keyof Flags, route: Route): Route {
   return flagEnabled(flagName)
     ? route
     : {
