@@ -47,6 +47,7 @@ import { VaultFilterService } from "../../services/vaultFilter.service";
     ]),
   ],
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class VaultSelectComponent implements OnInit {
   @Output() onVaultSelectionChanged = new EventEmitter();
 
@@ -168,6 +169,7 @@ export class VaultSelectComponent implements OnInit {
       this.overlayRef.outsidePointerEvents(),
       this.overlayRef.backdropClick(),
       this.overlayRef.detachments()
+      // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     ).subscribe(() => {
       this.close();
     });

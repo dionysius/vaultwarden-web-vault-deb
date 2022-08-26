@@ -18,6 +18,7 @@ import { ExposedPasswordsReportComponent as BaseExposedPasswordsReportComponent 
   selector: "app-org-exposed-passwords-report",
   templateUrl: "../../reports/pages/exposed-passwords-report.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ExposedPasswordsReportComponent extends BaseExposedPasswordsReportComponent {
   manageableCiphers: Cipher[];
 
@@ -42,6 +43,7 @@ export class ExposedPasswordsReportComponent extends BaseExposedPasswordsReportC
   }
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organization = await this.organizationService.get(params.organizationId);
       this.manageableCiphers = await this.cipherService.getAll();

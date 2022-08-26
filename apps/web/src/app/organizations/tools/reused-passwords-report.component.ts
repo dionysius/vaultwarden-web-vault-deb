@@ -17,6 +17,7 @@ import { ReusedPasswordsReportComponent as BaseReusedPasswordsReportComponent } 
   selector: "app-reused-passwords-report",
   templateUrl: "../../reports/pages/reused-passwords-report.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ReusedPasswordsReportComponent extends BaseReusedPasswordsReportComponent {
   manageableCiphers: Cipher[];
 
@@ -33,6 +34,7 @@ export class ReusedPasswordsReportComponent extends BaseReusedPasswordsReportCom
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organization = await this.organizationService.get(params.organizationId);
       this.manageableCiphers = await this.cipherService.getAll();

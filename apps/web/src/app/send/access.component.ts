@@ -22,6 +22,7 @@ import { SendAccessView } from "@bitwarden/common/models/view/sendAccessView";
   selector: "app-send-access",
   templateUrl: "access.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class AccessComponent implements OnInit {
   send: SendAccessView;
   sendType = SendType;
@@ -72,6 +73,7 @@ export class AccessComponent implements OnInit {
   }
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.params.subscribe(async (params) => {
       this.id = params.sendId;
       this.key = params.key;

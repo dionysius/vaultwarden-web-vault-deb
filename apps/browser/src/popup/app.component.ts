@@ -35,7 +35,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private lastActivity: number = null;
   private activeUserId: string;
 
-  private destroy$: Subject<void> = new Subject<void>();
+  private destroy$ = new Subject<void>();
 
   constructor(
     private toastrService: ToastrService,
@@ -132,6 +132,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     BrowserApi.messageListener("app.component", (window as any).bitwardenPopupMainMessageListener);
 
+    // eslint-disable-next-line rxjs/no-async-subscribe
     this.router.events.pipe(takeUntil(this.destroy$)).subscribe(async (event) => {
       if (event instanceof NavigationEnd) {
         const url = event.urlAfterRedirects || event.url || "";

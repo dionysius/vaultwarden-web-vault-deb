@@ -18,6 +18,7 @@ import { canAccessOrgAdmin } from "../organizations/navigation-permissions";
   selector: "app-navbar",
   templateUrl: "navbar.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class NavbarComponent implements OnInit {
   selfHosted = false;
   name: string;

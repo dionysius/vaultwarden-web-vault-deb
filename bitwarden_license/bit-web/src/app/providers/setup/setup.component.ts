@@ -14,6 +14,7 @@ import { ProviderSetupRequest } from "@bitwarden/common/models/request/provider/
   selector: "provider-setup",
   templateUrl: "setup.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SetupComponent implements OnInit {
   loading = true;
   authed = false;
@@ -38,6 +39,7 @@ export class SetupComponent implements OnInit {
 
   ngOnInit() {
     document.body.classList.remove("layout_frontend");
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       const error = qParams.providerId == null || qParams.email == null || qParams.token == null;
 

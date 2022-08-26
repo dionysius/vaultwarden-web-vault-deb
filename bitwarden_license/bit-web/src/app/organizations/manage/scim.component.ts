@@ -20,6 +20,7 @@ import { OrganizationConnectionResponse } from "@bitwarden/common/models/respons
   selector: "app-org-manage-scim",
   templateUrl: "scim.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ScimComponent implements OnInit {
   loading = true;
   organizationId: string;
@@ -45,6 +46,7 @@ export class ScimComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       await this.load();

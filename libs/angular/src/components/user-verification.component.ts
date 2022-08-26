@@ -30,6 +30,7 @@ import { Verification } from "@bitwarden/common/types/verification";
     ]),
   ],
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class UserVerificationComponent implements ControlValueAccessor, OnInit {
   usesKeyConnector = false;
   disableRequestOTP = false;
@@ -48,6 +49,7 @@ export class UserVerificationComponent implements ControlValueAccessor, OnInit {
     this.usesKeyConnector = await this.keyConnectorService.getUsesKeyConnector();
     this.processChanges(this.secret.value);
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.secret.valueChanges.subscribe((secret: string) => this.processChanges(secret));
   }
 

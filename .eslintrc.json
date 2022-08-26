@@ -4,13 +4,19 @@
     "browser": true,
     "webextensions": true
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "rxjs", "rxjs-angular"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.eslint.json"],
+    "sourceType": "module"
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "prettier"
+    "prettier",
+    "plugin:rxjs/recommended"
   ],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off", // TODO: This should be re-enabled
@@ -50,6 +56,7 @@
         ],
         "pathGroupsExcludedImportTypes": ["builtin"]
       }
-    ]
+    ],
+    "rxjs-angular/prefer-takeuntil": "error"
   }
 }

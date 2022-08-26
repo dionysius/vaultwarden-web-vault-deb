@@ -21,6 +21,7 @@ import { TwoFactorOptionsComponent } from "./two-factor-options.component";
   selector: "app-two-factor",
   templateUrl: "two-factor.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class TwoFactorComponent extends BaseTwoFactorComponent {
   @ViewChild("twoFactorOptions", { read: ViewContainerRef, static: true })
   twoFactorOptionsModal: ViewContainerRef;
@@ -67,18 +68,22 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       this.twoFactorOptionsModal
     );
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     modal.onShown.subscribe(() => {
       this.showingModal = true;
     });
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     modal.onClosed.subscribe(() => {
       this.showingModal = false;
     });
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     childComponent.onProviderSelected.subscribe(async (provider: TwoFactorProviderType) => {
       modal.close();
       this.selectedProviderType = provider;
       await this.init();
     });
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     childComponent.onRecoverSelected.subscribe(() => {
       modal.close();
     });

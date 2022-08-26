@@ -17,6 +17,7 @@ import { CiphersComponent } from "./ciphers.component";
   selector: "app-vault-bulk-actions",
   templateUrl: "bulk-actions.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class BulkActionsComponent {
   @Input() ciphersComponent: CiphersComponent;
   @Input() deleted: boolean;
@@ -60,6 +61,7 @@ export class BulkActionsComponent {
         comp.permanent = this.deleted;
         comp.cipherIds = selectedIds;
         comp.organization = this.organization;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onDeleted.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();
@@ -88,6 +90,7 @@ export class BulkActionsComponent {
       this.bulkRestoreModalRef,
       (comp) => {
         comp.cipherIds = selectedIds;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onRestored.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();
@@ -116,6 +119,7 @@ export class BulkActionsComponent {
       this.bulkShareModalRef,
       (comp) => {
         comp.ciphers = selectedCiphers;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onShared.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();
@@ -144,6 +148,7 @@ export class BulkActionsComponent {
       this.bulkMoveModalRef,
       (comp) => {
         comp.cipherIds = selectedIds;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onMoved.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();

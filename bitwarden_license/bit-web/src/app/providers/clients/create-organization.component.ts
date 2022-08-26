@@ -7,6 +7,7 @@ import { OrganizationPlansComponent } from "src/app/settings/organization-plans.
   selector: "app-create-organization",
   templateUrl: "create-organization.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class CreateOrganizationComponent implements OnInit {
   @ViewChild(OrganizationPlansComponent, { static: true })
   orgPlansComponent: OrganizationPlansComponent;
@@ -16,6 +17,7 @@ export class CreateOrganizationComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.params.subscribe(async (params) => {
       this.providerId = params.providerId;
     });

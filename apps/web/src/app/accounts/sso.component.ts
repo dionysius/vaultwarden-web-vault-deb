@@ -17,6 +17,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
   selector: "app-sso",
   templateUrl: "sso.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SsoComponent extends BaseSsoComponent {
   constructor(
     authService: AuthService,
@@ -50,6 +51,7 @@ export class SsoComponent extends BaseSsoComponent {
 
   async ngOnInit() {
     super.ngOnInit();
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.identifier != null) {
         this.identifier = qParams.identifier;

@@ -26,6 +26,7 @@ import { RouterService, StateService } from "../core";
   selector: "app-login",
   templateUrl: "login.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class LoginComponent extends BaseLoginComponent {
   showResetPasswordAutoEnrollWarning = false;
   enforcedPasswordPolicyOptions: MasterPasswordPolicyOptions;
@@ -68,6 +69,7 @@ export class LoginComponent extends BaseLoginComponent {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.email != null && qParams.email.indexOf("@") > -1) {
         this.email = qParams.email;

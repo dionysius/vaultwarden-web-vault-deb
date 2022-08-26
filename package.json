@@ -14,8 +14,9 @@
   "homepage": "https://bitwarden.com",
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint . && prettier --check .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --cache --cache-strategy content && prettier --check .",
+    "lint:fix": "eslint . --cache --cache-strategy content --fix",
+    "lint:clear": "rimraf .eslintcache",
     "prettier": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --clearCache && jest --watch",
@@ -94,6 +95,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-rxjs": "^5.0.2",
+    "eslint-plugin-rxjs-angular": "^2.0.0",
     "gulp": "^4.0.2",
     "gulp-filter": "^7.0.0",
     "gulp-if": "^3.0.0",
@@ -198,7 +201,7 @@
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
-    "*.ts": "eslint --fix"
+    "*.ts": "eslint --cache --cache-strategy content --fix"
   },
   "engines": {
     "node": "~16",

@@ -8,6 +8,7 @@ import { Provider } from "@bitwarden/common/models/domain/provider";
   selector: "provider-manage",
   templateUrl: "manage.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ManageComponent implements OnInit {
   provider: Provider;
   accessEvents = false;
@@ -15,6 +16,7 @@ export class ManageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private providerService: ProviderService) {}
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.params.subscribe(async (params) => {
       this.provider = await this.providerService.get(params.providerId);
       this.accessEvents = this.provider.useEvents;

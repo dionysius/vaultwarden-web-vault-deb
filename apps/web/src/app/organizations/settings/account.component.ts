@@ -24,6 +24,7 @@ import { DeleteOrganizationComponent } from "./delete-organization.component";
   selector: "app-org-account",
   templateUrl: "account.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class AccountComponent {
   @ViewChild("deleteOrganizationTemplate", { read: ViewContainerRef, static: true })
   deleteModalRef: ViewContainerRef;
@@ -62,6 +63,7 @@ export class AccountComponent {
   async ngOnInit() {
     this.selfHosted = this.platformUtilsService.isSelfHost();
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       this.canManageBilling = (
@@ -118,6 +120,7 @@ export class AccountComponent {
       this.deleteModalRef,
       (comp) => {
         comp.organizationId = this.organizationId;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onSuccess.subscribe(() => {
           this.router.navigate(["/"]);
         });

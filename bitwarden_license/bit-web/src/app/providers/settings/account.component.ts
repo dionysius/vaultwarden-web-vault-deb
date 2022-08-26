@@ -13,6 +13,7 @@ import { ProviderResponse } from "@bitwarden/common/models/response/provider/pro
   selector: "provider-account",
   templateUrl: "account.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class AccountComponent {
   selfHosted = false;
   loading = true;
@@ -33,6 +34,7 @@ export class AccountComponent {
 
   async ngOnInit() {
     this.selfHosted = this.platformUtilsService.isSelfHost();
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.providerId = params.providerId;
       try {

@@ -80,6 +80,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     this.searchTypeSearch = !this.platformUtilsService.isSafari();
     this.showOrganizations = await this.organizationService.hasOrganizations();
     this.vaultFilter = this.vaultFilterService.getVaultFilter();
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (this.applySavedState) {
         this.state = await this.stateService.getBrowserCipherComponentState();

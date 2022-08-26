@@ -16,6 +16,7 @@ import { UnsecuredWebsitesReportComponent as BaseUnsecuredWebsitesReportComponen
   selector: "app-unsecured-websites-report",
   templateUrl: "../../reports/pages/unsecured-websites-report.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class UnsecuredWebsitesReportComponent extends BaseUnsecuredWebsitesReportComponent {
   constructor(
     cipherService: CipherService,
@@ -30,6 +31,7 @@ export class UnsecuredWebsitesReportComponent extends BaseUnsecuredWebsitesRepor
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organization = await this.organizationService.get(params.organizationId);
       await super.ngOnInit();

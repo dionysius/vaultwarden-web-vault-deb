@@ -18,6 +18,7 @@ import { EmergencyAddEditComponent } from "./emergency-add-edit.component";
   selector: "emergency-access-view",
   templateUrl: "emergency-access-view.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class EmergencyAccessViewComponent implements OnInit {
   @ViewChild("cipherAddEdit", { read: ViewContainerRef, static: true })
   cipherAddEditModalRef: ViewContainerRef;
@@ -38,6 +39,7 @@ export class EmergencyAccessViewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.route.params.subscribe((qParams) => {
       if (qParams.id == null) {
         return this.router.navigate(["settings/emergency-access"]);

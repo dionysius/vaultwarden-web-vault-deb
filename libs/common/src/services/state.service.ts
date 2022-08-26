@@ -1,4 +1,4 @@
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, concatMap } from "rxjs";
 
 import { LogService } from "../abstractions/log.service";
 import { StateService as StateServiceAbstraction } from "../abstractions/state.service";
@@ -76,18 +76,22 @@ export class StateService<
     protected useAccountCache: boolean = true
   ) {
     // If the account gets changed, verify the new account is unlocked
-    this.activeAccountSubject.subscribe(async (userId) => {
-      if (userId == null && this.activeAccountUnlockedSubject.getValue() == false) {
-        return;
-      } else if (userId == null) {
-        this.activeAccountUnlockedSubject.next(false);
-      }
+    this.activeAccountSubject
+      .pipe(
+        concatMap(async (userId) => {
+          if (userId == null && this.activeAccountUnlockedSubject.getValue() == false) {
+            return;
+          } else if (userId == null) {
+            this.activeAccountUnlockedSubject.next(false);
+          }
 
-      // FIXME: This should be refactored into AuthService or a similar service,
-      //  as checking for the existance of the crypto key is a low level
-      //  implementation detail.
-      this.activeAccountUnlockedSubject.next((await this.getCryptoMasterKey()) != null);
-    });
+          // FIXME: This should be refactored into AuthService or a similar service,
+          //  as checking for the existance of the crypto key is a low level
+          //  implementation detail.
+          this.activeAccountUnlockedSubject.next((await this.getCryptoMasterKey()) != null);
+        })
+      )
+      .subscribe();
   }
 
   async init(): Promise<void> {

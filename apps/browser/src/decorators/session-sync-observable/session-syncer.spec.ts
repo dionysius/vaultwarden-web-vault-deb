@@ -29,7 +29,7 @@ describe("session syncer", () => {
   afterEach(() => {
     jest.resetAllMocks();
 
-    behaviorSubject.unsubscribe();
+    behaviorSubject.complete();
   });
 
   describe("constructor", () => {

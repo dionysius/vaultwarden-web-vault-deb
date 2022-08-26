@@ -34,6 +34,7 @@ import { UserAddEditComponent } from "./user-add-edit.component";
   selector: "provider-people",
   templateUrl: "people.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class PeopleComponent
   extends BasePeopleComponent<ProviderUserUserDetailsResponse>
   implements OnInit
@@ -87,6 +88,7 @@ export class PeopleComponent
   }
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.params.subscribe(async (params) => {
       this.providerId = params.providerId;
       const provider = await this.providerService.get(this.providerId);
@@ -100,6 +102,7 @@ export class PeopleComponent
 
       await this.load();
 
+      /* eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe */
       this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
         this.searchText = qParams.search;
         if (qParams.viewEvents != null) {

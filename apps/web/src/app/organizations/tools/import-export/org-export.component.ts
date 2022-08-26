@@ -19,6 +19,7 @@ import { ExportComponent } from "../../../tools/import-export/export.component";
   selector: "app-org-export",
   templateUrl: "../../../tools/import-export/export.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class OrganizationExportComponent extends ExportComponent {
   constructor(
     cryptoService: CryptoService,
@@ -48,6 +49,7 @@ export class OrganizationExportComponent extends ExportComponent {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
     });

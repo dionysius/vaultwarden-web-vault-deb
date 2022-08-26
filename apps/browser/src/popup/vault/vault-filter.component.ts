@@ -114,6 +114,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     });
 
     const restoredScopeState = await this.restoreState();
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       this.state = await this.browserStateService.getBrowserGroupingComponentState();
       if (this.state?.searchText) {

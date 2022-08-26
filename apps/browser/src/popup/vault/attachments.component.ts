@@ -17,6 +17,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
   selector: "app-vault-attachments",
   templateUrl: "attachments.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class AttachmentsComponent extends BaseAttachmentsComponent {
   openedAttachmentsInPopup: boolean;
 
@@ -46,6 +47,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       this.cipherId = params.cipherId;
       await this.init();

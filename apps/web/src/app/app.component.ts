@@ -215,7 +215,7 @@ export class AppComponent implements OnDestroy, OnInit {
   ngOnDestroy() {
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     this.destroy$.next();
-    this.destroy$.unsubscribe();
+    this.destroy$.complete();
   }
 
   private async logOut(expired: boolean) {

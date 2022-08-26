@@ -24,6 +24,7 @@ import { DeleteAccountComponent } from "./delete-account.component";
   selector: "app-settings",
   templateUrl: "settings.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SettingsComponent implements OnInit {
   vaultTimeoutAction: string;
   pin: boolean = null;
@@ -178,6 +179,7 @@ export class SettingsComponent implements OnInit {
     this.vaultTimeout.setValue(await this.stateService.getVaultTimeout());
     this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
     this.previousVaultTimeout = this.vaultTimeout.value;
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
       this.saveVaultTimeoutOptions();
     });

@@ -98,7 +98,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private isIdle = false;
   private activeUserId: string = null;
 
-  private destroy$: Subject<void> = new Subject<void>();
+  private destroy$ = new Subject<void>();
 
   constructor(
     private broadcasterService: BroadcasterService,
@@ -377,10 +377,12 @@ export class AppComponent implements OnInit, OnDestroy {
     );
     this.modal = modal;
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     childComponent.onSaved.subscribe(() => {
       this.modal.close();
     });
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.modal.onClosed.subscribe(() => {
       this.modal = null;
     });
@@ -396,11 +398,13 @@ export class AppComponent implements OnInit, OnDestroy {
     );
     this.modal = modal;
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     childComponent.onSavedFolder.subscribe(async () => {
       this.modal.close();
       this.syncService.fullSync(false);
     });
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.modal.onClosed.subscribe(() => {
       this.modal = null;
     });
@@ -415,6 +419,7 @@ export class AppComponent implements OnInit, OnDestroy {
       (comp) => (comp.comingFromAddEdit = false)
     );
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.modal.onClosed.subscribe(() => {
       this.modal = null;
     });
@@ -539,6 +544,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     [this.modal] = await this.modalService.openViewRef(type, ref);
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.modal.onClosed.subscribe(() => {
       this.modal = null;
     });

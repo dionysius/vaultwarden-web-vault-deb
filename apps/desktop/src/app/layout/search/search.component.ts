@@ -17,16 +17,19 @@ export class SearchComponent implements OnInit, OnDestroy {
   private activeAccountSubscription: Subscription;
 
   constructor(private searchBarService: SearchBarService, private stateService: StateService) {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.searchBarService.state$.subscribe((state) => {
       this.state = state;
     });
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.searchText.valueChanges.subscribe((value) => {
       this.searchBarService.setSearchText(value);
     });
   }
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.activeAccountSubscription = this.stateService.activeAccount$.subscribe((value) => {
       this.searchBarService.setSearchText("");
       this.searchText.patchValue("");

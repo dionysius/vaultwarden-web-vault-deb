@@ -19,6 +19,7 @@ import { PopupUtilsService } from "../services/popup-utils.service";
   selector: "app-send-add-edit",
   templateUrl: "send-add-edit.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SendAddEditComponent extends BaseAddEditComponent {
   // Options header
   showOptions = false;
@@ -98,6 +99,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     this.isUnsupportedMac =
       this.platformUtilsService.isChrome() && window?.navigator?.appVersion.includes("Mac OS X 11");
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (params.sendId) {
         this.sendId = params.sendId;

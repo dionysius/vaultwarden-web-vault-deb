@@ -22,6 +22,7 @@ import { DeleteOrganizationComponent } from "../settings/delete-organization.com
   selector: "families-for-enterprise-setup",
   templateUrl: "families-for-enterprise-setup.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class FamiliesForEnterpriseSetupComponent implements OnInit {
   @ViewChild(OrganizationPlansComponent, { static: false })
   set organizationPlansComponent(value: OrganizationPlansComponent) {
@@ -32,6 +33,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit {
     value.plan = PlanType.FamiliesAnnually;
     value.product = ProductType.Families;
     value.acceptingSponsorship = true;
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     value.onSuccess.subscribe(this.onOrganizationCreateSuccess.bind(this));
   }
 
@@ -63,6 +65,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit {
 
   async ngOnInit() {
     document.body.classList.remove("layout_frontend");
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       const error = qParams.token == null;
       if (error) {
@@ -130,6 +133,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit {
           (comp) => {
             comp.organizationId = organizationId;
             comp.deleteOrganizationRequestType = "InvalidFamiliesForEnterprise";
+            // eslint-disable-next-line rxjs-angular/prefer-takeuntil
             comp.onSuccess.subscribe(() => {
               this.router.navigate(["/"]);
             });

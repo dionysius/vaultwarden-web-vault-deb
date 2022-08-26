@@ -17,6 +17,7 @@ import { InactiveTwoFactorReportComponent as BaseInactiveTwoFactorReportComponen
   selector: "app-inactive-two-factor-report",
   templateUrl: "../../reports/pages/inactive-two-factor-report.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class InactiveTwoFactorReportComponent extends BaseInactiveTwoFactorReportComponent {
   constructor(
     cipherService: CipherService,
@@ -39,6 +40,7 @@ export class InactiveTwoFactorReportComponent extends BaseInactiveTwoFactorRepor
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organization = await this.organizationService.get(params.organizationId);
       await super.ngOnInit();

@@ -20,6 +20,7 @@ import { EventService } from "../../core";
   selector: "app-org-events",
   templateUrl: "events.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class EventsComponent extends BaseEventsComponent implements OnInit {
   exportFileName = "org-events";
   organizationId: string;
@@ -52,6 +53,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       this.organization = await this.organizationService.get(this.organizationId);

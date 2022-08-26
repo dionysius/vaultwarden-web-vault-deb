@@ -27,6 +27,7 @@ import { EntityUsersComponent } from "./entity-users.component";
   selector: "app-org-manage-collections",
   templateUrl: "collections.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class CollectionsComponent implements OnInit {
   @ViewChild("addEdit", { read: ViewContainerRef, static: true }) addEditModalRef: ViewContainerRef;
   @ViewChild("usersTemplate", { read: ViewContainerRef, static: true })
@@ -59,9 +60,11 @@ export class CollectionsComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       await this.load();
+      // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe
       this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
         this.searchText = qParams.search;
       });
@@ -131,10 +134,12 @@ export class CollectionsComponent implements OnInit {
         comp.collectionId = collection != null ? collection.id : null;
         comp.canSave = canCreate || canEdit;
         comp.canDelete = canDelete;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onSavedCollection.subscribe(() => {
           modal.close();
           this.load();
         });
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onDeletedCollection.subscribe(() => {
           modal.close();
           this.removeCollection(collection);
@@ -183,6 +188,7 @@ export class CollectionsComponent implements OnInit {
         comp.entityId = collection.id;
         comp.entityName = collection.name;
 
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onEditedUsers.subscribe(() => {
           this.load();
           modal.close();

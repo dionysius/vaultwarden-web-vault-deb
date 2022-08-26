@@ -18,6 +18,7 @@ import { WeakPasswordsReportComponent as BaseWeakPasswordsReportComponent } from
   selector: "app-weak-passwords-report",
   templateUrl: "../../reports/pages/weak-passwords-report.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class WeakPasswordsReportComponent extends BaseWeakPasswordsReportComponent {
   manageableCiphers: Cipher[];
 
@@ -42,6 +43,7 @@ export class WeakPasswordsReportComponent extends BaseWeakPasswordsReportCompone
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organization = await this.organizationService.get(params.organizationId);
       this.manageableCiphers = await this.cipherService.getAll();

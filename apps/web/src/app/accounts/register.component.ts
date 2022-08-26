@@ -27,6 +27,7 @@ import { RouterService } from "../core";
   selector: "app-register",
   templateUrl: "register.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class RegisterComponent extends BaseRegisterComponent {
   email = "";
   showCreateOrgMessage = false;
@@ -70,6 +71,7 @@ export class RegisterComponent extends BaseRegisterComponent {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.route.queryParams.pipe(first()).subscribe((qParams) => {
       this.referenceData = new ReferenceEventRequest();
       if (qParams.email != null && qParams.email.indexOf("@") > -1) {

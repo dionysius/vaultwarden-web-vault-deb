@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "pretty": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "lib": ["es5", "es6", "es7", "dom"],
+    "sourceMap": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@bitwarden/common/*": ["./libs/common/src/*"],
+      "@bitwarden/angular/*": ["./libs/angular/src/*"],
+      "@bitwarden/electron/*": ["./libs/electron/src/*"],
+      "@bitwarden/node/*": ["./libs/node/src/*"],
+      "@bitwarden/components": ["./libs/components/src"]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
+  },
+  "include": ["apps/**/*", "libs/**/*", "bitwarden_license/**/*"]
+}

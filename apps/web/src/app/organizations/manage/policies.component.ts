@@ -18,6 +18,7 @@ import { PolicyEditComponent } from "./policy-edit.component";
   selector: "app-org-policies",
   templateUrl: "policies.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class PoliciesComponent implements OnInit {
   @ViewChild("editTemplate", { read: ViewContainerRef, static: true })
   editModalRef: ViewContainerRef;
@@ -40,6 +41,7 @@ export class PoliciesComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       this.organization = await this.organizationService.get(this.organizationId);
@@ -48,6 +50,7 @@ export class PoliciesComponent implements OnInit {
       await this.load();
 
       // Handle policies component launch from Event message
+      /* eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe */
       this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
         if (qParams.policyId != null) {
           const policyIdFromEvents: string = qParams.policyId;
@@ -85,6 +88,7 @@ export class PoliciesComponent implements OnInit {
         comp.policy = policy;
         comp.organizationId = this.organizationId;
         comp.policiesEnabledMap = this.policiesEnabledMap;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onSavedPolicy.subscribe(() => {
           modal.close();
           this.load();

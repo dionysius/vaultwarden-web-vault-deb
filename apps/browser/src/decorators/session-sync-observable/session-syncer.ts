@@ -1,4 +1,4 @@
-import { BehaviorSubject, Subscription } from "rxjs";
+import { BehaviorSubject, concatMap, Subscription } from "rxjs";
 
 import { Utils } from "@bitwarden/common/misc/utils";
 
@@ -41,13 +41,17 @@ export class SessionSyncer {
     // This may be a memory leak.
     // There is no good time to unsubscribe from this observable. Hopefully Manifest V3 clears memory from temporary
     // contexts. If so, this is handled by destruction of the context.
-    this.subscription = this.behaviorSubject.subscribe(async (next) => {
-      if (this.ignoreNextUpdate) {
-        this.ignoreNextUpdate = false;
-        return;
-      }
-      await this.updateSession(next);
-    });
+    this.subscription = this.behaviorSubject
+      .pipe(
+        concatMap(async (next) => {
+          if (this.ignoreNextUpdate) {
+            this.ignoreNextUpdate = false;
+            return;
+          }
+          await this.updateSession(next);
+        })
+      )
+      .subscribe();
   }
 
   private listenForUpdates() {

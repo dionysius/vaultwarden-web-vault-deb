@@ -56,6 +56,7 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
       policyService,
       logService
     );
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.searchBarService.searchText$.subscribe((searchText) => {
       this.searchText = searchText;
       this.searchTextChanged();

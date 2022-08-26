@@ -53,14 +53,17 @@ export class CipherReportComponent {
         }
 
         comp.cipherId = cipher == null ? null : cipher.id;
+        // eslint-disable-next-line rxjs/no-async-subscribe
         comp.onSavedCipher.subscribe(async () => {
           modal.close();
           await this.load();
         });
+        // eslint-disable-next-line rxjs/no-async-subscribe
         comp.onDeletedCipher.subscribe(async () => {
           modal.close();
           await this.load();
         });
+        // eslint-disable-next-line rxjs/no-async-subscribe
         comp.onRestoredCipher.subscribe(async () => {
           modal.close();
           await this.load();

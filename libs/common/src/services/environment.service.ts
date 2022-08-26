@@ -1,4 +1,4 @@
-import { Observable, Subject } from "rxjs";
+import { concatMap, Observable, Subject } from "rxjs";
 
 import {
   EnvironmentService as EnvironmentServiceAbstraction,
@@ -22,9 +22,13 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   private scimUrl: string = null;
 
   constructor(private stateService: StateService) {
-    this.stateService.activeAccount$.subscribe(async () => {
-      await this.setUrlsFromStorage();
-    });
+    this.stateService.activeAccount$
+      .pipe(
+        concatMap(async () => {
+          await this.setUrlsFromStorage();
+        })
+      )
+      .subscribe();
   }
 
   hasBaseUrl() {

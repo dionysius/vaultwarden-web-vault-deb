@@ -24,6 +24,7 @@ import { VerticalStepperComponent } from "./vertical-stepper/vertical-stepper.co
   selector: "app-trial",
   templateUrl: "trial-initiation.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class TrialInitiationComponent implements OnInit {
   email = "";
   org = "";
@@ -76,6 +77,7 @@ export class TrialInitiationComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.route.queryParams.pipe(first()).subscribe((qParams) => {
       this.referenceData = new ReferenceEventRequest();
       if (qParams.email != null && qParams.email.indexOf("@") > -1) {

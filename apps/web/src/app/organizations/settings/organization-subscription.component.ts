@@ -26,6 +26,7 @@ import { BillingSyncApiKeyComponent } from "./billing-sync-api-key.component";
   selector: "app-org-subscription",
   templateUrl: "organization-subscription.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class OrganizationSubscriptionComponent implements OnInit {
   @ViewChild("setupBillingSyncTemplate", { read: ViewContainerRef, static: true })
   setupBillingSyncModalRef: ViewContainerRef;
@@ -72,6 +73,7 @@ export class OrganizationSubscriptionComponent implements OnInit {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       await this.load();
@@ -187,6 +189,7 @@ export class OrganizationSubscriptionComponent implements OnInit {
         comp.hasBillingToken = this.hasBillingSyncToken;
       }
     );
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     ref.onClosed.subscribe(async () => {
       await this.load();
     });

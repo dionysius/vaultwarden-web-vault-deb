@@ -18,6 +18,7 @@ import { EventService } from "src/app/core";
   selector: "provider-events",
   templateUrl: "events.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class EventsComponent extends BaseEventsComponent implements OnInit {
   exportFileName = "provider-events";
   providerId: string;
@@ -49,6 +50,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.providerId = params.providerId;
       const provider = await this.providerService.get(this.providerId);

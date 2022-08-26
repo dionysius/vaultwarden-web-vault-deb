@@ -13,6 +13,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
   selector: "app-folder-add-edit",
   templateUrl: "folder-add-edit.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class FolderAddEditComponent extends BaseFolderAddEditComponent {
   constructor(
     folderService: FolderService,
@@ -27,6 +28,7 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (params.folderId) {
         this.folderId = params.folderId;

@@ -30,6 +30,7 @@ const DisallowedPlanTypes = [
 @Component({
   templateUrl: "clients.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ClientsComponent implements OnInit {
   @ViewChild("add", { read: ViewContainerRef, static: true }) addModalRef: ViewContainerRef;
 
@@ -64,11 +65,13 @@ export class ClientsComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.params.subscribe(async (params) => {
       this.providerId = params.providerId;
 
       await this.load();
 
+      /* eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe */
       this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
         this.searchText = qParams.search;
       });
@@ -136,6 +139,7 @@ export class ClientsComponent implements OnInit {
       (comp) => {
         comp.providerId = this.providerId;
         comp.organizations = this.addableOrganizations;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onAddedOrganization.subscribe(async () => {
           try {
             await this.load();

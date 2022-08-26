@@ -13,6 +13,7 @@ import { VerifyEmailRequest } from "@bitwarden/common/models/request/verifyEmail
   selector: "app-verify-email-token",
   templateUrl: "verify-email-token.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class VerifyEmailTokenComponent implements OnInit {
   constructor(
     private router: Router,
@@ -25,6 +26,7 @@ export class VerifyEmailTokenComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.userId != null && qParams.token != null) {
         try {

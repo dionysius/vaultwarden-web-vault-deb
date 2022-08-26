@@ -12,6 +12,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
   selector: "app-password-history",
   templateUrl: "password-history.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
   constructor(
     cipherService: CipherService,
@@ -24,6 +25,7 @@ export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (params.cipherId) {
         this.cipherId = params.cipherId;

@@ -8,6 +8,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
   selector: "app-org-settings",
   templateUrl: "settings.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SettingsComponent {
   access2fa = false;
   showBilling: boolean;
@@ -19,6 +20,7 @@ export class SettingsComponent {
   ) {}
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.params.subscribe(async (params) => {
       const organization = await this.organizationService.get(params.organizationId);
       this.showBilling = !this.platformUtilsService.isSelfHost() && organization.canManageBilling;

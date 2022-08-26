@@ -27,6 +27,7 @@ import { EmergencyAccessTakeoverComponent } from "./emergency-access-takeover.co
   selector: "emergency-access",
   templateUrl: "emergency-access.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class EmergencyAccessComponent implements OnInit {
   @ViewChild("addEdit", { read: ViewContainerRef, static: true }) addEditModalRef: ViewContainerRef;
   @ViewChild("takeoverTemplate", { read: ViewContainerRef, static: true })
@@ -84,10 +85,12 @@ export class EmergencyAccessComponent implements OnInit {
         comp.name = this.userNamePipe.transform(details);
         comp.emergencyAccessId = details?.id;
         comp.readOnly = !this.canAccessPremium;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onSaved.subscribe(() => {
           modal.close();
           this.load();
         });
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onDeleted.subscribe(() => {
           modal.close();
           this.remove(details);
@@ -132,6 +135,7 @@ export class EmergencyAccessComponent implements OnInit {
           comp.name = this.userNamePipe.transform(contact);
           comp.emergencyAccessId = contact.id;
           comp.userId = contact?.granteeId;
+          // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
           comp.onConfirmed.subscribe(async () => {
             modal.close();
 
@@ -264,6 +268,7 @@ export class EmergencyAccessComponent implements OnInit {
         comp.email = details.email;
         comp.emergencyAccessId = details != null ? details.id : null;
 
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onDone.subscribe(() => {
           modal.close();
           this.platformUtilsService.showToast(

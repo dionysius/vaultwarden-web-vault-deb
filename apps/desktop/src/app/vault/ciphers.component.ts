@@ -10,10 +10,12 @@ import { SearchBarService } from "../layout/search/search-bar.service";
   selector: "app-vault-ciphers",
   templateUrl: "ciphers.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class CiphersComponent extends BaseCiphersComponent {
   constructor(searchService: SearchService, searchBarService: SearchBarService) {
     super(searchService);
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     searchBarService.searchText$.subscribe((searchText) => {
       this.searchText = searchText;
       this.search(200);

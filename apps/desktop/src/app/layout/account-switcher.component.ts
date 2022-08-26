@@ -48,6 +48,7 @@ export class SwitcherAccount extends Account {
     ]),
   ],
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class AccountSwitcherComponent implements OnInit {
   isOpen = false;
   accounts: { [userId: string]: SwitcherAccount } = {};
@@ -84,6 +85,7 @@ export class AccountSwitcherComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.stateService.accounts.subscribe(async (accounts: { [userId: string]: Account }) => {
       for (const userId in accounts) {
         accounts[userId].profile.authenticationStatus = await this.authService.getAuthStatus(

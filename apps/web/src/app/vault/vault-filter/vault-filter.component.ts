@@ -8,6 +8,7 @@ import { VaultFilterService } from "./shared/vault-filter.service";
   selector: "./app-vault-filter",
   templateUrl: "vault-filter.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class VaultFilterComponent extends BaseVaultFilterComponent {
   @Output() onSearchTextChanged = new EventEmitter<string>();
 
@@ -22,6 +23,7 @@ export class VaultFilterComponent extends BaseVaultFilterComponent {
 
   async ngOnInit() {
     await super.ngOnInit();
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.vaultFilterService.collapsedFilterNodes$.subscribe((nodes) => {
       this.collapsedFilterNodes = nodes;
     });

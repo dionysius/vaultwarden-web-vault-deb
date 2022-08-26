@@ -27,6 +27,7 @@ import { PopupUtilsService } from "../services/popup-utils.service";
   selector: "app-vault-add-edit",
   templateUrl: "add-edit.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class AddEditComponent extends BaseAddEditComponent {
   currentUris: string[];
   showAttachments = true;
@@ -72,6 +73,7 @@ export class AddEditComponent extends BaseAddEditComponent {
   async ngOnInit() {
     await super.ngOnInit();
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (params.cipherId) {
         this.cipherId = params.cipherId;

@@ -70,6 +70,7 @@ export class SendTypeComponent extends BaseSendComponent {
   async ngOnInit() {
     // Let super class finish
     await super.ngOnInit();
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       if (this.applySavedState) {
         this.state = await this.stateService.getBrowserSendTypeComponentState();

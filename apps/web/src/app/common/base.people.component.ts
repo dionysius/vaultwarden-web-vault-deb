@@ -343,6 +343,7 @@ export abstract class BasePeopleComponent<
             comp.name = this.userNamePipe.transform(user);
             comp.userId = user != null ? user.userId : null;
             comp.publicKey = publicKey;
+            // eslint-disable-next-line rxjs/no-async-subscribe
             comp.onConfirmedUser.subscribe(async () => {
               try {
                 comp.formPromise = confirmUser(publicKey);

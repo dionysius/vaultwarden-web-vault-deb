@@ -12,6 +12,7 @@ import { VerifyDeleteRecoverRequest } from "@bitwarden/common/models/request/ver
   selector: "app-verify-recover-delete",
   templateUrl: "verify-recover-delete.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class VerifyRecoverDeleteComponent implements OnInit {
   email: string;
   formPromise: Promise<any>;
@@ -29,6 +30,7 @@ export class VerifyRecoverDeleteComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.userId != null && qParams.token != null && qParams.email != null) {
         this.userId = qParams.userId;

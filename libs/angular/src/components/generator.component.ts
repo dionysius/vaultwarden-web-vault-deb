@@ -80,6 +80,7 @@ export class GeneratorComponent implements OnInit {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       const passwordOptionsResponse = await this.passwordGenerationService.getOptions();
       this.passwordOptions = passwordOptionsResponse[0];

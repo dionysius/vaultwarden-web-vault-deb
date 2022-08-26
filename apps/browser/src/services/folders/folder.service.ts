@@ -1,4 +1,4 @@
-import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
+import { BehaviorSubject } from "rxjs";
 
 import { Folder } from "@bitwarden/common/models/domain/folder";
 import { FolderView } from "@bitwarden/common/models/view/folderView";

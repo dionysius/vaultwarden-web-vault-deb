@@ -29,6 +29,7 @@ export abstract class BaseAcceptComponent implements OnInit {
   abstract unauthedHandler(qParams: Params): Promise<void>;
 
   ngOnInit() {
+    // eslint-disable-next-line rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       let error = this.requiredParameters.some((e) => qParams?.[e] == null || qParams[e] === "");
       let errorMessage: string = null;

@@ -8,6 +8,7 @@ import { Provider } from "@bitwarden/common/models/domain/provider";
   selector: "providers-layout",
   templateUrl: "providers-layout.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ProvidersLayoutComponent {
   provider: Provider;
   private providerId: string;
@@ -16,6 +17,7 @@ export class ProvidersLayoutComponent {
 
   ngOnInit() {
     document.body.classList.remove("layout_frontend");
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.params.subscribe(async (params) => {
       this.providerId = params.providerId;
       await this.load();

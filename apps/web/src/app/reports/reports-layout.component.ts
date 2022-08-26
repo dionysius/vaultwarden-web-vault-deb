@@ -14,6 +14,7 @@ export class ReportsLayoutComponent implements OnDestroy {
   constructor(router: Router) {
     this.subscription = router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
+      // eslint-disable-next-line rxjs-angular/prefer-takeuntil
       .subscribe((event) => {
         this.homepage = (event as NavigationEnd).url == "/reports";
       });

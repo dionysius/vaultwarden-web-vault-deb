@@ -14,6 +14,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
   selector: "app-vault-collections",
   templateUrl: "collections.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class CollectionsComponent extends BaseCollectionsComponent {
   constructor(
     collectionService: CollectionService,
@@ -28,9 +29,11 @@ export class CollectionsComponent extends BaseCollectionsComponent {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.onSavedCollections.subscribe(() => {
       this.back();
     });
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       this.cipherId = params.cipherId;
       await this.load();

@@ -97,6 +97,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         : "trashCleanupWarning"
     );
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
       await this.syncService.fullSync(false);
       const canAccessPremium = await this.stateService.getCanAccessPremium();
@@ -120,6 +121,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       }
       await this.ciphersComponent.reload();
 
+      /* eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe */
       this.route.queryParams.subscribe(async (params) => {
         const cipherId = getCipherIdFromParams(params);
         if (cipherId) {
@@ -221,12 +223,16 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.attachmentsModalRef,
       (comp) => {
         comp.cipherId = cipher.id;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onUploadedAttachment.subscribe(() => (madeAttachmentChanges = true));
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onDeletedAttachment.subscribe(() => (madeAttachmentChanges = true));
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onReuploadedAttachment.subscribe(() => (madeAttachmentChanges = true));
       }
     );
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     modal.onClosed.subscribe(async () => {
       if (madeAttachmentChanges) {
         await this.ciphersComponent.refresh();
@@ -241,6 +247,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.shareModalRef,
       (comp) => {
         comp.cipherId = cipher.id;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onSharedCipher.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();
@@ -255,6 +262,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.collectionsModalRef,
       (comp) => {
         comp.cipherId = cipher.id;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onSavedCollections.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();
@@ -269,6 +277,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.folderAddEditModalRef,
       (comp) => {
         comp.folderId = null;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onSavedFolder.subscribe(async () => {
           modal.close();
           await this.filterComponent.reloadCollectionsAndFolders(this.activeFilter);
@@ -283,10 +292,12 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.folderAddEditModalRef,
       (comp) => {
         comp.folderId = folderId;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onSavedFolder.subscribe(async () => {
           modal.close();
           await this.filterComponent.reloadCollectionsAndFolders(this.activeFilter);
         });
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onDeletedFolder.subscribe(async () => {
           modal.close();
           await this.filterComponent.reloadCollectionsAndFolders(this.activeFilter);
@@ -334,14 +345,17 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.cipherAddEditModalRef,
       (comp) => {
         comp.cipherId = id;
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onSavedCipher.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();
         });
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onDeletedCipher.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();
         });
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
         comp.onRestoredCipher.subscribe(async () => {
           modal.close();
           await this.ciphersComponent.refresh();

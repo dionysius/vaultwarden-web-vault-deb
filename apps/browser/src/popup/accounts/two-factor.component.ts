@@ -109,6 +109,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       }
     }
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.sso === "true") {
         super.onSuccessfulLogin = () => {

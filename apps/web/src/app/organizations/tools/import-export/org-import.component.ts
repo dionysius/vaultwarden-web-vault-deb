@@ -14,6 +14,7 @@ import { ImportComponent } from "../../../tools/import-export/import.component";
   selector: "app-org-import",
   templateUrl: "../../../tools/import-export/import.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class OrganizationImportComponent extends ImportComponent {
   organizationName: string;
 
@@ -31,6 +32,7 @@ export class OrganizationImportComponent extends ImportComponent {
   }
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       this.successNavigate = ["organizations", this.organizationId, "vault"];

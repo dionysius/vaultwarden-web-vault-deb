@@ -102,13 +102,16 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       this.environmentModal
     );
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     modal.onShown.subscribe(() => {
       this.showingModal = true;
     });
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     modal.onClosed.subscribe(() => {
       this.showingModal = false;
     });
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     childComponent.onSaved.subscribe(() => {
       modal.close();
     });

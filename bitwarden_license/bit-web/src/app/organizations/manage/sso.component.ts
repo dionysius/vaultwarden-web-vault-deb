@@ -29,6 +29,7 @@ const defaultSigningAlgorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha2
   selector: "app-org-manage-sso",
   templateUrl: "sso.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SsoComponent implements OnInit {
   readonly ssoType = SsoType;
 
@@ -153,6 +154,7 @@ export class SsoComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.ssoConfigForm.get("configType").valueChanges.subscribe((newType: SsoType) => {
       if (newType === SsoType.OpenIdConnect) {
         this.openIdForm.enable();
@@ -168,10 +170,12 @@ export class SsoComponent implements OnInit {
 
     this.samlForm
       .get("spSigningBehavior")
+      // eslint-disable-next-line rxjs-angular/prefer-takeuntil
       .valueChanges.subscribe(() =>
         this.samlForm.get("idpX509PublicCert").updateValueAndValidity()
       );
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       await this.load();

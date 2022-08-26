@@ -14,6 +14,7 @@ import { BillingResponse } from "@bitwarden/common/models/response/billingRespon
   selector: "app-org-billing",
   templateUrl: "./organization-billing.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class OrganizationBillingComponent implements OnInit {
   loading = false;
   firstLoaded = false;
@@ -39,6 +40,7 @@ export class OrganizationBillingComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       await this.load();

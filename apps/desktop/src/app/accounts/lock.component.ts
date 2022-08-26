@@ -69,6 +69,7 @@ export class LockComponent extends BaseLockComponent {
     const forcePasswordReset = await this.stateService.getForcePasswordReset();
     this.successRoute = forcePasswordReset === true ? this.unAuthenicatedUrl : this.authenicatedUrl;
 
+    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.route.queryParams.subscribe((params) => {
       if (this.supportsBiometric && params.promptBiometric && autoPromptBiometric) {
         setTimeout(async () => {

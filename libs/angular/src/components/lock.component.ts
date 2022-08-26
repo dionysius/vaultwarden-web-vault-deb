@@ -58,6 +58,7 @@ export class LockComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit() {
+    // eslint-disable-next-line rxjs/no-async-subscribe
     this.activeAccountSubscription = this.stateService.activeAccount$.subscribe(async () => {
       await this.load();
     });

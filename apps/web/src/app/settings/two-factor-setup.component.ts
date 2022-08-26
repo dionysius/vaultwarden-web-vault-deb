@@ -25,6 +25,7 @@ import { TwoFactorYubiKeyComponent } from "./two-factor-yubikey.component";
   selector: "app-two-factor-setup",
   templateUrl: "two-factor-setup.component.html",
 })
+// eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class TwoFactorSetupComponent implements OnInit {
   @ViewChild("recoveryTemplate", { read: ViewContainerRef, static: true })
   recoveryModalRef: ViewContainerRef;
@@ -116,6 +117,7 @@ export class TwoFactorSetupComponent implements OnInit {
           this.authenticatorModalRef,
           TwoFactorAuthenticatorComponent
         );
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         authComp.onUpdated.subscribe((enabled: boolean) => {
           this.updateStatus(enabled, TwoFactorProviderType.Authenticator);
         });
@@ -123,6 +125,7 @@ export class TwoFactorSetupComponent implements OnInit {
       }
       case TwoFactorProviderType.Yubikey: {
         const yubiComp = await this.openModal(this.yubikeyModalRef, TwoFactorYubiKeyComponent);
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         yubiComp.onUpdated.subscribe((enabled: boolean) => {
           this.updateStatus(enabled, TwoFactorProviderType.Yubikey);
         });
@@ -130,6 +133,7 @@ export class TwoFactorSetupComponent implements OnInit {
       }
       case TwoFactorProviderType.Duo: {
         const duoComp = await this.openModal(this.duoModalRef, TwoFactorDuoComponent);
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         duoComp.onUpdated.subscribe((enabled: boolean) => {
           this.updateStatus(enabled, TwoFactorProviderType.Duo);
         });
@@ -137,6 +141,7 @@ export class TwoFactorSetupComponent implements OnInit {
       }
       case TwoFactorProviderType.Email: {
         const emailComp = await this.openModal(this.emailModalRef, TwoFactorEmailComponent);
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         emailComp.onUpdated.subscribe((enabled: boolean) => {
           this.updateStatus(enabled, TwoFactorProviderType.Email);
         });
@@ -147,6 +152,7 @@ export class TwoFactorSetupComponent implements OnInit {
           this.webAuthnModalRef,
           TwoFactorWebAuthnComponent
         );
+        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         webAuthnComp.onUpdated.subscribe((enabled: boolean) => {
           this.updateStatus(enabled, TwoFactorProviderType.WebAuthn);
         });

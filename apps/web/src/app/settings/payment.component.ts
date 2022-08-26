@@ -27,7 +27,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
   @Input() hideCredit = false;
   @Input() trialFlow = false;
 
-  private destroy$: Subject<void> = new Subject<void>();
+  private destroy$ = new Subject<void>();
 
   bank: any = {
     routing_number: null,
