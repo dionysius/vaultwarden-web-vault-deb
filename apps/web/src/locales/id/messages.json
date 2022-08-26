@@ -191,7 +191,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nama Domain",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -422,22 +422,22 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "Saya"
   },
   "myVault": {
     "message": "Brankas Saya"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Semua Vault"
   },
   "vault": {
     "message": "Brankas"
   },
   "vaults": {
-    "message": "Vaults"
+    "message": "Brankas"
   },
   "vaultItems": {
-    "message": "Vault Items"
+    "message": "Item Brankas"
   },
   "moveSelectedToOrg": {
     "message": "Pindahkan terpilih ke Organisasi"
@@ -573,7 +573,7 @@
     "message": "Buat Akun"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Mulai Masa Percobaan"
   },
   "logIn": {
     "message": "Masuk"
@@ -597,7 +597,7 @@
     "message": "Kata sandi utama adalah kata sandi yang Anda gunakan untuk mengakses brankas Anda. Sangat penting bahwa Anda tidak lupa kata sandi utama Anda. Tidak ada cara untuk memulihkan kata sandi jika Anda melupakannya."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Kata sandi utama tidak dapat dipulihkan jika Anda melupakannya!"
   },
   "masterPassHintDesc": {
     "message": "Petunjuk kata sandi utama dapat membantu Anda mengingat kata sandi Anda jika Anda melupakannya."
@@ -630,13 +630,13 @@
     "message": "Alamat surel tidak valid."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Kata sandi utama diperlukan."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Diperlukan pengetikan ulang kata sandi utama."
   },
   "masterPasswordMinLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Kata sandi utama harus memiliki sekurang-kurangnya 8 karakter."
   },
   "masterPassDoesntMatch": {
     "message": "Konfirmasi sandi utama tidak cocok."
@@ -645,7 +645,7 @@
     "message": "Akun baru Anda telah dibuat! Sekarang Anda bisa masuk."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "Akun berhasil dibuat."
   },
   "masterPassSent": {
     "message": "Kami telah mengirimi Anda email dengan petunjuk sandi utama Anda."
@@ -660,10 +660,10 @@
     "message": "Brankas Anda terkunci. Verifikasi kata sandi utama Anda untuk melanjutkan."
   },
   "unlock": {
-    "message": "Membuka kunci"
+    "message": "Buka Kunci"
   },
   "loggedInAsEmailOn": {
-    "message": "Telah log in sebagai $EMAIL$ di $HOSTNAME$.",
+    "message": "Login sebagai $EMAIL$ di $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -739,7 +739,7 @@
     "message": "Kirim ulang email kode verifikasi"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Gunakan metode masuk dua langkah lainnya"
+    "message": "Gunakan metode login dua-langkah lainnya"
   },
   "insertYubiKey": {
     "message": "Masukkan YubiKey Anda ke port USB komputer Anda, lalu sentuh tombol nya."
@@ -751,13 +751,13 @@
     "message": "Info Masuk Tidak Tersedia"
   },
   "noTwoStepProviders": {
-    "message": "Akun ini mengaktifkan info masuk dua langkah, namun, tidak satupun dari penyedia dua langkah yang dikonfigurasi didukung oleh peramban web ini."
+    "message": "Login dua-langkah telah diaktifkan di akun ini, tetapi provider dua-langkah yang dipilih tidak didukung oleh web browser ini."
   },
   "noTwoStepProviders2": {
     "message": "Silakan gunakan peramban web yang didukung (seperti Chrome) dan/atau tambahkan penyedia tambahan yang didukung di semua peramban web (seperti aplikasi autentikasi)."
   },
   "twoStepOptions": {
-    "message": "Pilihan Info Masuk Dua Langkah"
+    "message": "Opsi login dua-langkah"
   },
   "recoveryCodeDesc": {
     "message": "Kehilangan akses ke semua penyedia dua faktor Anda? Gunakan kode pemulihan untuk menonaktifkan semua penyedia dua faktor dari akun Anda."
@@ -870,7 +870,7 @@
     "message": "Peringatan"
   },
   "confirmVaultExport": {
-    "message": "Konfirmasi Ekspor Vault"
+    "message": "Konfirmasi Ekspor Brankas"
   },
   "exportWarningDesc": {
     "message": "Ekspor ini berisi data vault Anda dalam format yang tidak dienkripsi. Anda tidak boleh menyimpan atau mengirim file yang diekspor melalui saluran yang tidak aman (seperti email). Hapus segera setelah Anda selesai menggunakannya."
@@ -916,18 +916,18 @@
     "message": "Panjang"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)",
+    "message": "Huruf Kapital (A-Z)",
     "description": "Include uppercase letters in the password generator."
   },
   "lowercase": {
-    "message": "Lowercase (a-z)",
+    "message": "Huruf Kecil (a-z)",
     "description": "Include lowercase letters in the password generator."
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Angka (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Karakter Khusus (!@#$%^&*)"
   },
   "numWords": {
     "message": "Jumlah Kata"
@@ -959,7 +959,7 @@
     "message": "Ubah Surel"
   },
   "changeEmailTwoFactorWarning": {
-    "message": "Proceeding will change your account email address. It will not change the email address used for two-factor authentication. You can change this email address in the Two-Step Login settings."
+    "message": "Melanjutkan proses ini akan mengubah alamat email akun Anda. Tindakan ini tidak akan mengubah alamat email yang digunakan untuk autentikasi dua-faktor. Anda bisa mengubah alamat email tersebut di pengaturan Login Dua-Langkah."
   },
   "newEmail": {
     "message": "Surel Baru"
@@ -1055,7 +1055,7 @@
     "message": "Semua Sesi Dicabut Izinnya"
   },
   "purgeVault": {
-    "message": "Bersihkan Vault"
+    "message": "Kosongkan Brankas"
   },
   "purgedOrganizationVault": {
     "message": "Kubah organisasi yang dibersihkan."
@@ -1124,7 +1124,7 @@
     "message": "Tidak ada yang diimpor."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Tidak dapat mendekripsi file yang diekspor. Kunci enkripsi Anda tidak cocok dengan kunci enkripsi yang digunakan untuk menekspor data terkait."
   },
   "selectFormat": {
     "message": "Pilih format file impor"
@@ -1149,13 +1149,13 @@
     "message": "Pilihan"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Preferensi"
   },
   "preferencesDesc": {
-    "message": "Customize your web vault experience."
+    "message": "Sesuaikan pengalaman brankas web Anda."
   },
   "preferencesUpdated": {
-    "message": "Preferences updated"
+    "message": "Preferensi telah diperbarui"
   },
   "language": {
     "message": "Bahasa"
@@ -1164,10 +1164,10 @@
     "message": "Ubah bahasa yang digunakan oleh brankas web."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Tampilkan ikon website"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Tampilkan gambar pengenal di samping setiap login."
   },
   "enableGravatars": {
     "message": "Aktifkan Gravatars",
@@ -1226,16 +1226,16 @@
     "message": "Domain diperbaharui"
   },
   "twoStepLogin": {
-    "message": "Info masuk dua langkah"
+    "message": "Login dua-langkah"
   },
   "twoStepLoginDesc": {
     "message": "Amankan akun Anda dengan meminta langkah tambahan saat masuk."
   },
   "twoStepLoginOrganizationDesc": {
-    "message": "Mewajibkan login dua langkah untuk pengguna organisasi Anda dengan mengonfigurasi penyedia di tingkat organisasi."
+    "message": "Mewajibkan login dua-langkah untuk para pengguna organisasi Anda dengan cara mengatur provider di tingkat organisasi."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "Mengaktifkan login dua langkah dapat mengunci Anda secara permanen dari akun Bitwarden Anda. Kode pemulihan memungkinkan Anda untuk mengakses akun Anda jika Anda tidak dapat lagi menggunakan penyedia proses masuk dua langkah biasa (mis. Anda kehilangan perangkat). Dukungan Bitwarden tidak akan dapat membantu Anda jika Anda kehilangan akses ke akun Anda. Kami menyarankan Anda untuk menuliskan atau mencetak kode pemulihan dan menyimpannya di tempat yang aman."
+    "message": "Dengan mengaktifkan login dua-langkah, Anda bisa terkunci dari akun Bitwarden secara permanen. Jika Anda tidak bisa menggunakan provider login dua-langkah di kondisi normal (misal karena perangkat Anda hilang), Anda bisa menggunakan kode pemulihan untuk mengakses akun tersebut. Bitwarden sama sekali tidak dapat membantu jika Anda kehilangan akses ke akun Anda. Oleh karena itu, kami menyarankan Anda untuk menulis atau mencetak kode pemulihan dan menyimpannya di tempat yang aman."
   },
   "viewRecoveryCode": {
     "message": "Lihat Kode Pemulihan"
@@ -1251,7 +1251,7 @@
     "message": "Diaktifkan"
   },
   "restoreAccess": {
-    "message": "Restore Access"
+    "message": "Pulihkan Akses"
   },
   "premium": {
     "message": "Premium",
@@ -1279,7 +1279,7 @@
     "message": "Nonaktifkan"
   },
   "revokeAccess": {
-    "message": "Revoke Access"
+    "message": "Cabut Akses"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Penyedia proses masuk dua langkah ini diaktifkan di akun Anda."
@@ -1478,7 +1478,7 @@
     "message": "Laporan"
   },
   "reportsDesc": {
-    "message": "Identify and close security gaps in your online accounts by clicking the reports below.",
+    "message": "Identifikasi dan tutup celah keamanan di akun-akun online Anda dengan meng-klik laporan di bawah ini.",
     "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
@@ -1527,10 +1527,10 @@
     "message": "Instruksi"
   },
   "exposedPasswordsReport": {
-    "message": "Laporan Kata Sandi Terkena"
+    "message": "Kata Sandi yang Terpapar"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Kata sandi yang terbuka adalah kata sandi yang telah ditemukan dalam pelanggaran data yang diketahui yang dirilis secara publik atau dijual di web gelap oleh peretas."
+    "message": "Kata yang terpapar di sebuah kebocoran data adalah sasaran empuk untuk para peretas. Ubah kata sandi terkait untuk mencegah potensi terjadinya peretasan."
   },
   "exposedPasswordsFound": {
     "message": "Kata Sandi Terkena Ditemukan"
@@ -1548,7 +1548,7 @@
     "message": "Tidak ada item di lemari besi Anda yang memiliki kata sandi yang telah terungkap dalam pelanggaran data yang diketahui."
   },
   "checkExposedPasswords": {
-    "message": "Periksa Kata Sandi yang Terekspos"
+    "message": "Periksa Kata Sandi yang Terpapar"
   },
   "exposedXTimes": {
     "message": "Dipaparkan $COUNT$ kali",
@@ -1673,13 +1673,13 @@
     "message": "Penagihan"
   },
   "billingPlanLabel": {
-    "message": "Billing Plan"
+    "message": "Rencana Penagihan"
   },
   "paymentType": {
-    "message": "Payment Type"
+    "message": "Metode Pembayaran"
   },
   "accountCredit": {
-    "message": "Kredit Akun",
+    "message": "Saldo Akun",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
   },
   "accountBalance": {
@@ -1687,7 +1687,7 @@
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
   },
   "addCredit": {
-    "message": "Tambahkan Pulsa",
+    "message": "Tambah Saldo",
     "description": "Add more credit to your account's balance."
   },
   "amount": {
@@ -1701,7 +1701,7 @@
     "message": "Harap pastikan bahwa akun Anda memiliki cukup kredit yang tersedia untuk pembelian ini. Jika akun Anda tidak memiliki cukup kredit yang tersedia, metode pembayaran default Anda yang tercatat akan digunakan untuk selisihnya. Anda dapat menambahkan kredit ke akun Anda dari halaman Penagihan."
   },
   "creditAppliedDesc": {
-    "message": "Kredit akun Anda dapat digunakan untuk melakukan pembelian. Semua kredit yang tersedia akan secara otomatis diterapkan ke faktur yang dibuat untuk akun ini."
+    "message": "Saldo akun Anda dapat digunakan untuk melakukan pembelian. Semua saldo yang tersedia akan secara otomatis ditagihkan ke faktur yang dibuat untuk akun ini."
   },
   "goPremium": {
     "message": "Jadi Anggota Premium",
@@ -1795,7 +1795,7 @@
     "message": "tahun"
   },
   "yr": {
-    "message": "yr"
+    "message": "thn"
   },
   "month": {
     "message": "bulan"
@@ -1826,7 +1826,7 @@
     "message": "Informasi tagihan"
   },
   "billingTrialSubLabel": {
-    "message": "Your payment method will not be charged during the 7 day free trial."
+    "message": "Metode pembayaran Anda tidak akan dikenakan biaya selama 7 hari uji coba gratis."
   },
   "creditCard": {
     "message": "Kartu kredit"
@@ -1868,13 +1868,13 @@
     "message": "Status"
   },
   "nextCharge": {
-    "message": "Biaya berikutnya"
+    "message": "Tagihan Berikutnya"
   },
   "details": {
-    "message": "Detailnya"
+    "message": "Detail"
   },
   "downloadLicense": {
-    "message": "Mengunduh lisensi"
+    "message": "Unduh Lisensi"
   },
   "updateLicense": {
     "message": "Perbarui Lisensi"
@@ -1889,13 +1889,13 @@
     "message": "Penyimpanan"
   },
   "addStorage": {
-    "message": "Tambahkan Penyimpanan"
+    "message": "Tambah Penyimpanan"
   },
   "removeStorage": {
     "message": "Hapus Penyimpanan"
   },
   "subscriptionStorage": {
-    "message": "Langganan Anda memiliki total penyimpanan file terenkripsi $MAX_STORAGE$ GB. Anda saat ini menggunakan $USED_STORAGE$.",
+    "message": "Anda telah menggunakan $USED_STORAGE$ dari total $MAX_STORAGE$ GB penyimpanan file terkenkripsi.",
     "placeholders": {
       "max_storage": {
         "content": "$1",
@@ -1908,7 +1908,7 @@
     }
   },
   "paymentMethod": {
-    "message": "Cara Pembayaran"
+    "message": "Metode Pembayaran"
   },
   "noPaymentMethod": {
     "message": "Tidak ada metode pembayaran yang tercatat."
@@ -1941,7 +1941,7 @@
     "message": "Tidak ada transaksi."
   },
   "chargeNoun": {
-    "message": "Biaya",
+    "message": "Tagihan",
     "description": "Noun. A charge from a payment method."
   },
   "refundNoun": {
@@ -1949,7 +1949,7 @@
     "description": "Noun. A refunded payment that was charged."
   },
   "chargesStatement": {
-    "message": "Tagihan apa pun akan muncul di laporan mutasi Anda sebagai $STATEMENT_NAME$.",
+    "message": "Semua tagihan akan muncul di laporan Anda sebagai $STATEMENT_NAME$.",
     "placeholders": {
       "statement_name": {
         "content": "$1",
@@ -2185,7 +2185,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Thanks for signing up for Bitwarden for $PLAN$!",
+    "message": "Terima kasih telah mendaftar untuk Bitwarden $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2194,7 +2194,7 @@
     }
   },
   "trialPaidInfoMessage": {
-    "message": "Your $PLAN$ 7 day free trial will be converted to a paid subscription after 7 days.",
+    "message": "Uji coba gratis $PLAN$ 7 hari Anda akan dikonversi menjadi langganan berbayar setelah 7 hari.",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2203,7 +2203,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "We've sent a confirmation email to your team's billing email at "
+    "message": "Kami telah mengirim sebuah email konfirmasi ke email penagihan tim Anda di "
   },
   "monthly": {
     "message": "Bulanan"
@@ -2212,7 +2212,7 @@
     "message": "Setiap tahun"
   },
   "annual": {
-    "message": "Annual"
+    "message": "Tahunan"
   },
   "basePrice": {
     "message": "Harga dasar"
@@ -2281,13 +2281,13 @@
     "message": "Apakah Anda yakin ingin menghapus pengguna ini?"
   },
   "removeOrgUserConfirmation": {
-    "message": "When a member is removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again."
+    "message": "Ketika anggota dihapus, mereka tidak lagi memiliki akses ke data organisasi dan tindakan ini tidak dapat dibatalkan. Untuk menambahkan kembali anggota tersebut ke organisasi, mereka harus diundang dan diproses lagi."
   },
   "revokeUserConfirmation": {
-    "message": "When a member is revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab."
+    "message": "Ketika status keanggotaan dicabut, mereka tidak lagi memiliki akses ke data organisasi. Untuk mengembalikan akses anggota secara cepat, buka tab Dicabut."
   },
   "removeUserConfirmationKeyConnector": {
-    "message": "Warning! This user requires Key Connector to manage their encryption. Removing this user from your organization will permanently disable their account. This action cannot be undone. Do you want to proceed?"
+    "message": "Peringatan! Pengguna ini memerlukan Key Connector untuk mengelola enkripsi mereka. Menghapus pengguna ini dari organisasi Anda akan menonaktifkan akun mereka secara permanen. Tindakan ini tidak dapat dibatalkan. Apakah Anda ingin melanjutkan?"
   },
   "externalId": {
     "message": "Id Eksternal"
@@ -2368,7 +2368,7 @@
     "message": "Pengguna dengan akses tertinggi yang dapat mengelola semua aspek organisasi Anda."
   },
   "clientOwnerDesc": {
-    "message": "This user should be independent of the Provider. If the Provider is disassociated with the organization, this user will maintain ownership of the organization."
+    "message": "Pengguna ini harus independen dari Provider. Jika suatu saat Provider dipisahkan dari organisasi, pengguna ini akan memegang kepemilikan atas organisasi tersebut."
   },
   "admin": {
     "message": "Admin"
@@ -2632,7 +2632,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "Remove $ID$ access",
+    "message": "Hapus akses untuk $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2641,7 +2641,7 @@
     }
   },
   "revokedUserId": {
-    "message": "Revoked organization access for $ID$.",
+    "message": "Cabut akses organisasi untuk $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2650,7 +2650,7 @@
     }
   },
   "restoredUserId": {
-    "message": "Restored organization access for $ID$.",
+    "message": "Pulihkan akses organisasi untuk $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2659,7 +2659,7 @@
     }
   },
   "revokeUserId": {
-    "message": "Revoke $ID$ access",
+    "message": "Cabut akses untuk $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2767,7 +2767,7 @@
     }
   },
   "accessedClientVault": {
-    "message": "Accessed $ID$ organization vault.",
+    "message": "Mengakses brankas organisasi $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2929,7 +2929,7 @@
     "message": "Hapus Organisasi"
   },
   "deletingOrganizationContentWarning": {
-    "message": "Enter the master password to confirm deletion of $ORGANIZATION$ and all associated data. Vault data in $ORGANIZATION$ includes:",
+    "message": "Masukan kata sandi utama untuk mengonfirmasi penghapusan $ORGANIZATION$ serta semua data yang terkait. Data brankas di $ORGANIZATION$ termasuk:",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2938,10 +2938,10 @@
     }
   },
   "deletingOrganizationActiveUserAccountsWarning": {
-    "message": "User accounts will remain active after deletion but will no longer be associated to this organization."
+    "message": "Akun pengguna akan tetap aktif setelah dihapus, tetapi tidak akan lagi diasosiasikan dengan organisasi ini."
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "Deleting $ORGANIZATION$ is permanent and irreversible.",
+    "message": "Penghapusan $ORGANIZATION$ bersifat permanen dan tidak dapat dipulihkan.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3043,14 +3043,14 @@
     "message": "Masukkan id instalasi Anda"
   },
   "limitSubscriptionDesc": {
-    "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new users."
+    "message": "Tetapkan jumlah kuota untuk langganan Anda. Begitu batas ini tercapai, Anda tidak akan bisa mengundang pengguna baru."
   },
   "maxSeatLimit": {
-    "message": "Maximum Seat Limit (optional)",
+    "message": "Batas Kuota (opsional)",
     "description": "Upper limit of seats to allow through autoscaling"
   },
   "maxSeatCost": {
-    "message": "Max potential seat cost"
+    "message": "Perkiraan biaya maksimum untuk kuota"
   },
   "addSeats": {
     "message": "Tambahkan Kursi",
@@ -3061,7 +3061,7 @@
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Penyesuaian pada paket langganan Anda akan mengakibatkan perubahan prorata pada total tagihan Anda. Jika anggota yang baru diundang melampaui kuota langganan Anda, Anda akan langsung dikenakan biaya prorata untuk pengguna tambahan tersebut."
   },
   "subscriptionUserSeats": {
     "message": "Langganan Anda memungkinkan total $COUNT$ pengguna.",
@@ -3085,13 +3085,13 @@
     "message": "Opsi Tambahan"
   },
   "additionalOptionsDesc": {
-    "message": "For additional help in managing your subscription, please contact Customer Support."
+    "message": "Untuk bantuan lebih lanjut dalam mengelola paket langganan Anda, silakan hubungi Dukungan Pelanggan."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Penyesuaian pada paket langganan Anda akan mengakibatkan perubahan prorata pada total tagihan Anda. Jika anggota yang baru diundang melampaui kuota langganan Anda, Anda akan langsung dikenakan biaya prorata untuk pengguna tambahan tersebut."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users until your $MAX$ seat limit is reached.",
+    "message": "Penyesuaian pada paket langganan Anda akan mengakibatkan perubahan prorata pada total tagihan Anda. Jika anggota yang baru diundang melampaui kuota langganan Anda, Anda akan langsung dikenakan biaya prorata untuk pengguna tambahan tersebut hingga batas kuota $MAX$ anggota tercapai.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3109,7 +3109,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "You cannot invite more than $COUNT$ users without upgrading your plan. Please contact Customer Support to upgrade.",
+    "message": "Anda tidak dapat mengundang lebih dari $COUNT$ pengguna tanpa melakukan peningkatan pada paket Anda. Silakan hubungi Dukungan Pelanggan untuk melakukan peningkatan.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3118,7 +3118,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Your subscription allows for a total of $COUNT$ users. Your plan is sponsored and billed to an external organization.",
+    "message": "Paket langganan Anda dapat mengakomodasi hingga $COUNT$ pengguna. Paket Anda disponsori dan ditagihkan ke organisasi eksternal.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3127,7 +3127,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ users without increasing your subscription seats.",
+    "message": "Penyesuaian pada paket langganan Anda akan mengakibatkan perubahan prorata pada total tagihan Anda. Anda tidak dapat mengundang lebih dari $COUNT$ pengguna tanpa meningkatkan kuota paket langganan Anda.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3208,7 +3208,7 @@
     "message": "Dengan mencentang kotak ini, anda menyetujui yang berikut:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Persyaratan Layanan dan Kebijakan Privasi belum disetujui."
   },
   "termsOfService": {
     "message": "Persyaratan Layanan"
@@ -3223,7 +3223,7 @@
     "message": "Batas Waktu Brankas"
   },
   "vaultTimeoutDesc": {
-    "message": "Pilih kapan vault Anda akan habis waktu dan melakukan tindakan yang dipilih."
+    "message": "Pilih batas waktu untuk brankas Anda mengambil tindakan yang dipilih."
   },
   "oneMinute": {
     "message": "1 menit"
@@ -3258,7 +3258,7 @@
     "message": "Organisasi dinonaktifkan."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Item di Organisasi yang dinonaktifkan tidak bisa diakses. Hubungi pemilik Organisasi Anda untuk mendapatkan bantuan."
   },
   "licenseIsExpired": {
     "message": "Lisensi sudah kadaluarsa."
@@ -3385,13 +3385,13 @@
     "message": "Klon"
   },
   "masterPassPolicyTitle": {
-    "message": "Master password requirements"
+    "message": "Kata sandi utama diperlukan"
   },
   "masterPassPolicyDesc": {
     "message": "Tetapkan persyaratan minimum untuk kekuatan kata sandi utama."
   },
   "twoStepLoginPolicyTitle": {
-    "message": "Require two-step login"
+    "message": "Diperlukan login dua-langkah"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Mewajibkan pengguna untuk mengatur login dua langkah di akun pribadi mereka."
@@ -3460,7 +3460,7 @@
     "message": "Preferensi Pengguna"
   },
   "vaultTimeoutAction": {
-    "message": "Tindakan Batas Waktu Vault"
+    "message": "Tindakan ketika Batas Waktu Brankas Habis"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Kubah yang terkunci mengharuskan Anda memasukkan kembali kata sandi utama Anda untuk mengaksesnya lagi."
@@ -3615,7 +3615,7 @@
     "message": "Batalkan tautan SSO"
   },
   "unlinkSsoConfirmation": {
-    "message": "Are you sure you want to unlink SSO for this organization?"
+    "message": "Apakah Anda yakin ingin memutus link SSO untuk organisasi ini?"
   },
   "linkSso": {
     "message": "Tautkan SSO"
@@ -3724,7 +3724,7 @@
     "message": "Dinonaktifkan"
   },
   "revoked": {
-    "message": "Revoked"
+    "message": "Dicabut"
   },
   "sendLink": {
     "message": "Kirim Tautan",
@@ -4022,7 +4022,7 @@
     "message": "Akses Laporan"
   },
   "missingPermissions": {
-    "message": "You lack the necessary permissions to perform this action."
+    "message": "Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
   },
   "manageAllCollections": {
     "message": "Kelola Semua Koleksi"
@@ -4031,7 +4031,7 @@
     "message": "Buat Koleksi Baru"
   },
   "editAnyCollection": {
-    "message": "Edit Any Collection"
+    "message": "Ubah Koleksi Manapun"
   },
   "deleteAnyCollection": {
     "message": "Hapus Koleksi"
@@ -4379,7 +4379,7 @@
     "message": "Hapus pengguna"
   },
   "revokeUsers": {
-    "message": "Revoke Users"
+    "message": "Cabut Pengguna"
   },
   "restoreUsers": {
     "message": "Restore Users"
@@ -4984,7 +4984,7 @@
     "message": "Billing Sync Token"
   },
   "active": {
-    "message": "Active"
+    "message": "Aktif"
   },
   "inactive": {
     "message": "Inactive"
@@ -5068,19 +5068,19 @@
     "message": "Access Denied. You do not have permission to view this page."
   },
   "masterPassword": {
-    "message": "Master Password"
+    "message": "Kata Sandi Utama"
   },
   "security": {
-    "message": "Security"
+    "message": "Keamanan"
   },
   "keys": {
-    "message": "Keys"
+    "message": "Kunci"
   },
   "billingHistory": {
-    "message": "Billing History"
+    "message": "Riwayat Penagihan"
   },
   "backToReports": {
-    "message": "Back to Reports"
+    "message": "Kembali ke Laporan"
   },
   "organizationPicker": {
     "message": "Organization picker"
@@ -5090,7 +5090,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountSettings": {
-    "message": "Account Settings"
+    "message": "Pengaturan Akun"
   },
   "generator": {
     "message": "Generator"
@@ -5200,13 +5200,13 @@
     "message": "API Access Token"
   },
   "deviceVerification": {
-    "message": "Device Verification"
+    "message": "Verifikasi Perangkat"
   },
   "enableDeviceVerification": {
-    "message": "Enable Device Verification"
+    "message": "Aktifkan Verifikasi Perangkat"
   },
   "deviceVerificationDesc": {
-    "message": "When enabled, verification codes are sent to your email address when logging in from an unrecognized device"
+    "message": "Jika diaktifkan, kode verifikasi akan dikirim ke alamat email Anda ketika login dari perangkat yang tidak dikenal"
   },
   "updatedDeviceVerification": {
     "message": "Updated Device Verification"
@@ -5270,21 +5270,21 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "The SCIM API Key has been successfully rotated",
+    "message": "SCIM API Key berhasil dirotasi",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "SCIM settings have been saved successfully",
+    "message": "Pengaturan SCIM berhasil disimpan",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Data input diperlukan."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "Data input bukan sebuah alamat email."
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Data input harus memiliki sekurang-kurangnya $COUNT$ karakter.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5293,7 +5293,7 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ kolom diatas membutuhkan atensi Anda.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5302,7 +5302,7 @@
     }
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Aktifkan"
   },
   "on": {
     "message": "On"
@@ -5311,6 +5311,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Number of users"
+    "message": "Jumplah pengguna"
   }
 }

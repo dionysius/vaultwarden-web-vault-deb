@@ -751,16 +751,16 @@
     "message": "Уваход недаступны"
   },
   "noTwoStepProviders": {
-    "message": "У гэтага ўліковага запісу ўключаны двухэтапны ўваход, аднак ніводны з наладжаных правайдараў двухэтапнай праверкі не падтрымліваецца гэтым браўзерам."
+    "message": "У гэтага ўліковага запісу ўключаны двухэтапны ўваход, аднак ніводны з наладжаных пастаўшчыкоў двухэтапнай праверкі не падтрымліваецца гэтым браўзерам."
   },
   "noTwoStepProviders2": {
-    "message": "Выкарыстоўвайце актуальны браўзер (напрыклад, Chrome) і/або дадайце іншых правайдараў, якія маюць лепшую падтрымку разнастайных браўзераў (напрыклад, праграма аўтэнтыфікацыі)."
+    "message": "Выкарыстоўвайце актуальны браўзер (напрыклад, Chrome) і/або дадайце іншых пастаўшчыкоў, якія маюць лепшую падтрымку разнастайных браўзераў (напрыклад, праграма аўтэнтыфікацыі)."
   },
   "twoStepOptions": {
     "message": "Параметры двухэтапнага ўваходу"
   },
   "recoveryCodeDesc": {
-    "message": "Згубілі доступ да ўсіх варыянтаў двухэтапнай праверкі ўваходу? Скарыстайцеся кодам аднаўлення, каб адключыць двухэтапную праверку ўваходу для вашага ўліковага запісу."
+    "message": "Згубілі доступ да ўсіх варыянтаў доступу пастаўшчыкоў двухэтапнай аўтэнтыфікацыі? Скарыстайцеся кодам аднаўлення, каб адключыць праверку пастаўшчыкоў двухэтапнай аўтэнтыфікацыі для вашага ўліковага запісу."
   },
   "recoveryCodeTitle": {
     "message": "Код аднаўлення"
@@ -820,13 +820,13 @@
     "message": "Выберыце арганізацыю, у якую вы хочаце перамясціць гэты элемент. Пры перамяшчэнні ў арганізацыю ўсе правы ўласнасці на дадзены элемент пяройдуць да гэтай арганізацыі. Вы больш не будзеце адзіным уласнікам гэтага элемента пасля яго перамяшчэння."
   },
   "moveManyToOrgDesc": {
-    "message": "Choose an organization that you wish to move these items to. Moving to an organization transfers ownership of the items to that organization. You will no longer be the direct owner of these items once they have been moved."
+    "message": "Выберыце арганізацыю, у якую вы хочаце перамясціць гэтыя элементы. Пры перамяшчэнні ў арганізацыю ўсе правы ўласнасці на дадзеныя элементы пяройдуць да гэтай арганізацыі. Вы больш не будзеце адзіным уласнікам гэтых элементаў пасля іх перамяшчэння."
   },
   "collectionsDesc": {
-    "message": "Edit the collections that this item is being shared with. Only organization users with access to these collections will be able to see this item."
+    "message": "Рэдагуйце калекцыі, з якімі гэты элемент знаходзіцца ў агульным доступе. Толькі карыстальнікі арганізацыі з доступам да гэтых калекцый змогуць бачыць гэты элемент."
   },
   "deleteSelectedItemsDesc": {
-    "message": "You have selected $COUNT$ item(s) to delete. Are you sure you want to delete all of these items?",
+    "message": "Вы выбралі наступную колькасць запісаў для выдалення: $COUNT$. Вы ўпэўнены, што хочаце выдаліць гэтыя элементы?",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -835,7 +835,7 @@
     }
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to move the $COUNT$ selected item(s) to.",
+    "message": "Выберыце папку ў якую вы хочаце перамясціць выбраныя элементы (колькасць: $COUNT$).",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -844,7 +844,7 @@
     }
   },
   "moveSelectedItemsCountDesc": {
-    "message": "You have selected $COUNT$ item(s). $MOVEABLE_COUNT$ item(s) can be moved to an organization, $NONMOVEABLE_COUNT$ cannot.",
+    "message": "Вы выбралі наступную колькасць элементаў: $COUNT$. Наступная колькасць колькасць будзе перамешчана: $MOVEABLE_COUNT$. Застануцца без перамяшчэння: $NONMOVEABLE_COUNT$.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -876,10 +876,10 @@
     "message": "Файл, які экспартуецца ўтрымлівае даныя вашага сховішча ў незашыфраваным фармаце. Яго не варта захоўваць або адпраўляць па неабароненых каналах (напрыклад, па электроннай пошце). Выдаліце яго адразу пасля выкарыстання."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Пры экспарце даныя шыфруюцца з дапамогай ключа шыфравання ўліковага запісу. Калі вы калі-небудзь зменіце ключ шыфравання ўліковага запісу, вам неабходна будзе экспартаваць даныя паўторна, паколькі вы не зможаце расшыфраваць гэты файл экспартавання."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Ключы шыфравання з'яўляюцца ўнікальнымі для кожнага ўліковага запісу Bitwarden, таму нельга імпартаваць зашыфраванае сховішча ў іншы ўліковы запіс."
   },
   "export": {
     "message": "Экспартаваць"
@@ -891,13 +891,13 @@
     "message": "Фармат файла"
   },
   "exportSuccess": {
-    "message": "Your vault data has been exported."
+    "message": "Даныя вашага сховішча былі экспартаваныя."
   },
   "passwordGenerator": {
     "message": "Генератар пароляў"
   },
   "minComplexityScore": {
-    "message": "Minimum Complexity Score"
+    "message": "Мінімальная ацэнка складанасці"
   },
   "minNumbers": {
     "message": "Мінімум лічбаў"
@@ -916,7 +916,7 @@
     "message": "Даўжыня"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)",
+    "message": "Вялікія літары (A-Z)",
     "description": "Include uppercase letters in the password generator."
   },
   "lowercase": {
@@ -927,7 +927,7 @@
     "message": "Лічбы (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Спецыяльныя сімвалы (!@#$%^&*)"
   },
   "numWords": {
     "message": "Колькасць слоў"
@@ -959,7 +959,7 @@
     "message": "Змяніць электронную пошту"
   },
   "changeEmailTwoFactorWarning": {
-    "message": "Proceeding will change your account email address. It will not change the email address used for two-factor authentication. You can change this email address in the Two-Step Login settings."
+    "message": "Працягваючы, вы зменіце адрас электроннай пошты вашага ўліковага запісу. Гэта не паўплывае на змяненне адраса электроннай пошты, які выкарыстоўваецца для двухфактарнай аўтэнтыфікацыі. Калі вы хочаце змяніць і яго, то вам неабходна гэта зрабіць у наладах двухфактарнай аўтэнтыфікацыі."
   },
   "newEmail": {
     "message": "Новая электронная пошта"
@@ -977,7 +977,7 @@
     }
   },
   "loggedOutWarning": {
-    "message": "Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Працягваючы, вы выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны."
   },
   "emailChanged": {
     "message": "Электронная пошта зменена"
@@ -986,7 +986,7 @@
     "message": "Калі ласка, увайдзіце зноў."
   },
   "logBackInOthersToo": {
-    "message": "Please log back in. If you are using other Bitwarden applications log out and back in to those as well."
+    "message": "Калі ласка, увайдзіце паўторна. Калі вы выкарыстоўваеце іншыя праграмы Bitwarden, выйдзіце з іх, а потым увайдзіце зноў."
   },
   "changeMasterPassword": {
     "message": "Змяніць асноўны пароль"
@@ -1004,7 +1004,7 @@
     "message": "Пацвердзіць новы асноўны пароль"
   },
   "encKeySettings": {
-    "message": "Encryption Key Settings"
+    "message": "Налады ключа шыфравання"
   },
   "kdfAlgorithm": {
     "message": "Алгарытм KDF"
@@ -1013,7 +1013,7 @@
     "message": "Ітэрацыя KDF"
   },
   "kdfIterationsDesc": {
-    "message": "Higher KDF iterations can help protect your master password from being brute forced by an attacker. We recommend a value of $VALUE$ or more.",
+    "message": "Высокае значэнне ітэрацыі KDF дапаможа абараніць галоўны пароль ад атакі поўным пераборам. Мы рэкамендуем значэнне $VALUE$ або вышэй.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1022,7 +1022,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Setting your KDF iterations too high could result in poor performance when logging into (and unlocking) Bitwarden on devices with slower CPUs. We recommend that you increase the value in increments of $INCREMENT$ and then test all of your devices.",
+    "message": "Занадта вялікае значэнне ітэрацый KDF можа істотна запаволіць уваход (і разблакіроўку) на прыладах з састарэлымі працэсарамі. Мы рэкамендуем паслядоўна павялічваць значэнне з крокам $INCREMENT$ і правяраць вынік на ўсіх вашых прыладах.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -1034,25 +1034,25 @@
     "message": "Змяніць KDF"
   },
   "encKeySettingsChanged": {
-    "message": "Encryption Key Settings Changed"
+    "message": "Налады ключа шыфравання зменены"
   },
   "dangerZone": {
     "message": "Небяспечная зона"
   },
   "dangerZoneDesc": {
-    "message": "Careful, these actions are not reversible!"
+    "message": "Асцярожна, гэтыя дзеянні з'яўляюцца незваротнымі!"
   },
   "deauthorizeSessions": {
     "message": "Скасаваць аўтарызацыю сеанса"
   },
   "deauthorizeSessionsDesc": {
-    "message": "Concerned your account is logged in on another device? Proceed below to deauthorize all computers or devices that you have previously used. This security step is recommended if you previously used a public computer or accidentally saved your password on a device that isn't yours. This step will also clear all previously remembered two-step login sessions."
+    "message": "Непакоіцеся пра тое, што ўваход у ваш уліковы запіс выкананы іншай прыладзе? Перайдзіце ніжэй, каб закрыць сеансы на ўсіх камп'ютарах або іншых прыладах, якія вы раней выкарыстоўвалі. Гэты крок бяспекі рэкамендаваны, калі вы раней выкарыстоўвалі агульнадаступны камп'ютар або выпадкова захавалі пароль на прыладзе, якая не належыць вам. Гэта дзеянне таксама ачысціць усе папярэднія сеансы двухэтапнага ўваходу."
   },
   "deauthorizeSessionsWarning": {
-    "message": "Proceeding will also log you out of your current session, requiring you to log back in. You will also be prompted for two-step login again, if enabled. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Працягваючы, вы таксама выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Вы таксама атрымаеце паўторны запыт двухэтапнага ўваходу, калі гэта функцыя ў вас уключана. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны."
   },
   "sessionsDeauthorized": {
-    "message": "All Sessions Deauthorized"
+    "message": "Усе сеансы адкліканы"
   },
   "purgeVault": {
     "message": "Ачысціць сховішча"
@@ -1061,16 +1061,16 @@
     "message": "Ачысціць сховішча арганізацыі."
   },
   "vaultAccessedByProvider": {
-    "message": "Vault accessed by provider."
+    "message": "Пастаўшчык мае доступ да сховішча."
   },
   "purgeVaultDesc": {
-    "message": "Proceed below to delete all items and folders in your vault. Items that belong to an organization that you share with will not be deleted."
+    "message": "Працягніце ніжэй для выдалення ўсіх элементаў і папак у вашым сховішчы. Элементы, якія належаць арганізацыі і якія вы абагульнялі не будуць выдалены."
   },
   "purgeOrgVaultDesc": {
-    "message": "Proceed below to delete all items in the organization's vault."
+    "message": "Працягніце ніжэй для выдалення ўсіх элементаў у сховішчы арганізацыі."
   },
   "purgeVaultWarning": {
-    "message": "Purging your vault is permanent. It cannot be undone."
+    "message": "Ачыстка сховішча з'яўляецца незваротным дзеяннем. Гэту аперацыю нельга адрабіць."
   },
   "vaultPurged": {
     "message": "Ваша сховішча было ачышчана."
@@ -1079,16 +1079,16 @@
     "message": "Выдаліць уліковы запіс"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Працягніце ніжэй для выдалення вашага ўліковага запісу і ўсіх даных сховішча."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "Выдаленне вашага ўліковага запісу з'яўляецца незваротным дзеяннем. Яго нельга будзе адрабіць."
   },
   "accountDeleted": {
     "message": "Уліковы запіс выдалены"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Ваш уліковы запіс быў закрыты і ўсе звязаныя даныя былі выдалены."
   },
   "myAccount": {
     "message": "Мой уліковы запіс"
@@ -1103,13 +1103,13 @@
     "message": "Памылка імпартавання"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Адбылася праблема з данымі, якія вы спрабуеце імпартаваць. Калі ласка, выпраўце памылкі, якія пералічаны ў вашым зыходным файле і паспрабуйце яшчэ раз."
   },
   "importSuccess": {
-    "message": "Data has been successfully imported into your vault."
+    "message": "Даныя былі паспяхова імпартаваны ў ваша сховішча."
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Вы імпартуеце даныя ў $ORGANIZATION$. Вашы даныя могуць быць абагулены з удзельнікамі арганізацыі. Вы сапраўды хочаце працягнуць?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1118,22 +1118,22 @@
     }
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Даныя няправільна адфарматаваныя. Калі ласка, праверце файл імпарту і паспрабуйце яшчэ раз."
   },
   "importNothingError": {
     "message": "Нічога не было імпартавана."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Памылка дэшыфроўкі экспартаванага файла. Ваш ключ шыфравання не супадае з ключом шыфравання, які выкарыстоўваецца для экспартавання даных."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Выберыце фармат файла імпартавання"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Выберыце файл імпартавання"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "або скапіюйце/устаўце змесціва файла, які імпартуецца"
   },
   "instructionsFor": {
     "message": "Інструкцыі для $NAME$",
@@ -1152,7 +1152,7 @@
     "message": "Параметры"
   },
   "preferencesDesc": {
-    "message": "Customize your web vault experience."
+    "message": "Дастасуйце працу з вэб-сховішчам."
   },
   "preferencesUpdated": {
     "message": "Параметры абноўлены"
@@ -1161,7 +1161,7 @@
     "message": "Мова"
   },
   "languageDesc": {
-    "message": "Change the language used by the web vault."
+    "message": "Змяніць мову інтэрфейсу вэб-сховішча."
   },
   "enableFavicon": {
     "message": "Паказваць значкі вэб-сайтаў"
@@ -1174,14 +1174,14 @@
     "description": "Use avatar images loaded from gravatar.com."
   },
   "enableGravatarsDesc": {
-    "message": "Use avatar images loaded from gravatar.com."
+    "message": "Выкарыстоўваць аватары з сайта gravatar.com."
   },
   "enableFullWidth": {
-    "message": "Display full width layout",
+    "message": "Адлюстроўваць на ўсю шырыню макета",
     "description": "Allows scaling the web vault UI's width"
   },
   "enableFullWidthDesc": {
-    "message": "Allow the web vault to expand the full width of the browser window."
+    "message": "Дазволіць вэб-сховішчу выкарыстоўваць усю шырыню акна браўзера."
   },
   "default": {
     "message": "Прадвызначана"
@@ -1190,13 +1190,13 @@
     "message": "Правілы дамена"
   },
   "domainRulesDesc": {
-    "message": "If you have the same login across multiple different website domains, you can mark the website as \"equivalent\". \"Global\" domains are ones already created for you by Bitwarden."
+    "message": "Калі ў вас ёсць аднолькавы лагін на некалькіх розных даменах вэб-сайта, то вы можаце пазначыць вэб-сайт як \"эквівалентны\". \"Глабальныя\" - гэта дамены, які створаны для вас Bitwarden."
   },
   "globalEqDomains": {
-    "message": "Global Equivalent Domains"
+    "message": "Глабальныя эквівалентныя дамены"
   },
   "customEqDomains": {
-    "message": "Custom Equivalent Domains"
+    "message": "Карыстальніцкія эквівалентныя дамены"
   },
   "exclude": {
     "message": "Выключыць"
@@ -1211,7 +1211,7 @@
     "message": "Новы карыстальніцкі дамен"
   },
   "newCustomDomainDesc": {
-    "message": "Enter a list of domains separated by commas. Only \"base\" domains are allowed. Do not enter subdomains. For example, enter \"google.com\" instead of \"www.google.com\". You can also enter \"androidapp://package.name\" to associate an android app with other website domains."
+    "message": "Увядзіце спіс даменаў, які падзелены коскамі. Дазволены толькі \"асноўныя\" дамены. Не ўводзьце паддамены. Напрыклад, уводзьце \"google.com\" замест \"www.google.com\". Вы таксама можаце ўвесці \"androidapp://package.name\", каб звязаць праграму Android з іншымі даменамі вэб-сайта."
   },
   "customDomainX": {
     "message": "Карыстальніцкі дамен $INDEX$",
@@ -1229,19 +1229,19 @@
     "message": "Двухэтапны ўваход"
   },
   "twoStepLoginDesc": {
-    "message": "Secure your account by requiring an additional step when logging in."
+    "message": "Абараніце свой уліковы запіс з дапамогай дадатковага кроку праверкі падчас уваходу."
   },
   "twoStepLoginOrganizationDesc": {
-    "message": "Require two-step login for your organization's users by configuring providers at the organization level."
+    "message": "Патрабаваць двухэтапны ўваход для карыстальнікаў вашай арганізацыі, які сканфігураваны на ўзроўні арганізацыі."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "Enabling two-step login can permanently lock you out of your Bitwarden account. A recovery code allows you to access your account in the event that you can no longer use your normal two-step login provider (ex. you lose your device). Bitwarden support will not be able to assist you if you lose access to your account. We recommend you write down or print the recovery code and keep it in a safe place."
+    "message": "Уключэнне двухэтапнага ўваходу можа цалкам заблакіраваць доступ да ўліковага запісу Bitwarden. Код аднаўлення дае магчымасць атрымаць доступ да вашага ўліковага запісу ў выпадку, калі вы не можаце скарыстацца звычайным спосабам пастаўшчыка двухэтапнага ўваходу (напрыклад, вы згубілі сваю прыладу). Падтрымка Bitwarden не зможа вам дапамагчы, калі вы згубіце доступ да свайго ўліковага запіс. Мы рэкамендуем вам запісаць або раздрукаваць код аднаўлення і захоўваць яго ў надзейным месцы."
   },
   "viewRecoveryCode": {
     "message": "Паглядзець код аднаўлення"
   },
   "providers": {
-    "message": "Правайдары",
+    "message": "Пастаўшчыкі",
     "description": "Two-step login providers such as YubiKey, Duo, Authenticator apps, Email, etc."
   },
   "enable": {
@@ -1270,7 +1270,7 @@
     "message": "У вас прэміяльын статус"
   },
   "alreadyPremiumFromOrg": {
-    "message": "You already have access to premium features because of an organization you are a member of."
+    "message": "У вас ужо ёсць доступ да прэміяльных функцый, таму што вы з'яўляецеся ўдзельнікам арганізацыі, якая іх мае."
   },
   "manage": {
     "message": "Кіраваць"
@@ -1282,19 +1282,19 @@
     "message": "Адклікаць доступ"
   },
   "twoStepLoginProviderEnabled": {
-    "message": "This two-step login provider is enabled on your account."
+    "message": "Гэты пастаўшчык двухэтапнага ўваходу ўключаны для вашага ўліковага запісу."
   },
   "twoStepLoginAuthDesc": {
-    "message": "Enter your master password to modify two-step login settings."
+    "message": "Увядзіце галоўны пароль для змянення наладаў двухэтапнага ўваходу."
   },
   "twoStepAuthenticatorDesc": {
-    "message": "Follow these steps to set up two-step login with an authenticator app:"
+    "message": "Прытрымлівайцеся гэтых крокаў, каб прызначыць двухэтапны ўваход з дапамогай праграмы аўтэнтыфікацыі:"
   },
   "twoStepAuthenticatorDownloadApp": {
-    "message": "Download a two-step authenticator app"
+    "message": "Спампаваць праграму двухэтапнай аўтэнтыфікацыі"
   },
   "twoStepAuthenticatorNeedApp": {
-    "message": "Need a two-step authenticator app? Download one of the following"
+    "message": "Неабходна праграма двухэтапнай аўтэнтыфікацыі? Спампуйце адну з наступных"
   },
   "iosDevices": {
     "message": "Прылады на iOS"
@@ -1306,10 +1306,10 @@
     "message": "Прылады на Windows"
   },
   "twoStepAuthenticatorAppsRecommended": {
-    "message": "These apps are recommended, however, other authenticator apps will also work."
+    "message": "Гэтыя праграмы з'яўляюцца рэкамендаванымі. Звярніце ўвагу, што іншыя праграмы таксама будуць працаваць."
   },
   "twoStepAuthenticatorScanCode": {
-    "message": "Scan this QR code with your authenticator app"
+    "message": "Скануйце гэты QR-код з дапамогай праграмы аўтэнтыфікацыі"
   },
   "key": {
     "message": "Ключ"
@@ -1318,37 +1318,37 @@
     "message": "Увядзіце атрыманыя 6 лічбаў праверачнага кода з праграмы"
   },
   "twoStepAuthenticatorReaddDesc": {
-    "message": "In case you need to add it to another device, below is the QR code (or key) required by your authenticator app."
+    "message": "У выпадку, калі вам неабходна дадаць іншую прыладу, ніжэй пазначаны QR-код (або ключы), якія патрабуюцца праграме аўтэнтыфікацыі."
   },
   "twoStepDisableDesc": {
-    "message": "Are you sure you want to disable this two-step login provider?"
+    "message": "Вы ўпэўнены, што хочаце адключыць гэтага пастаўшчыка двухэтапнага ўваходу?"
   },
   "twoStepDisabled": {
-    "message": "Two-step login provider disabled."
+    "message": "Пастаўшчык двухэтапнага ўваходу выключаны."
   },
   "twoFactorYubikeyAdd": {
-    "message": "Add a new YubiKey to your account"
+    "message": "Дадаць новы YubiKey у ваш уліковы запіс"
   },
   "twoFactorYubikeyPlugIn": {
-    "message": "Plug the YubiKey into your computer's USB port."
+    "message": "Устаўце YubiKey у порт USB вашага камп'ютара."
   },
   "twoFactorYubikeySelectKey": {
-    "message": "Select the first empty YubiKey input field below."
+    "message": "Выберыце першае пустое поле ўводу YubiKey знізу."
   },
   "twoFactorYubikeyTouchButton": {
-    "message": "Touch the YubiKey's button."
+    "message": "Дакраніцеся да кнопкі YubiKey."
   },
   "twoFactorYubikeySaveForm": {
     "message": "Захаваць форму."
   },
   "twoFactorYubikeyWarning": {
-    "message": "Due to platform limitations, YubiKeys cannot be used on all Bitwarden applications. You should enable another two-step login provider so that you can access your account when YubiKeys cannot be used. Supported platforms:"
+    "message": "З-за абмежаванняў платформы, YubiKey нельга выкарыстоўваць ва ўсіх праграмах Bitwarden. Калі YubiKey немагчыма выкарыстоўваць, вы павінны актываваць пастаўшчыка двухэтапнага ўваходу для атрымання доступу да свайго ўліковага запісу. Платформы, якія падтрымліваюцца:"
   },
   "twoFactorYubikeySupportUsb": {
-    "message": "Web vault, desktop application, CLI, and all browser extensions on a device with a USB port that can accept your YubiKey."
+    "message": "Вэб-сховішча, праграма для камп'ютара, інтэрфейс каманднага радка (CLI) і ўсе пашырэнні браўзера на прыладах з партом USB, якія сумяшчальныя з YubiKey."
   },
   "twoFactorYubikeySupportMobile": {
-    "message": "Mobile apps on a device with NFC capabilities or a data port that can accept your YubiKey."
+    "message": "Мабільныя праграмы на прыладах з NFC або портам USB, якія сумяшчальныя з YubiKey."
   },
   "yubikeyX": {
     "message": "YubiKey $INDEX$",
@@ -1360,7 +1360,7 @@
     }
   },
   "u2fkeyX": {
-    "message": "U2F Key $INDEX$",
+    "message": "Ключ U2F $INDEX$",
     "placeholders": {
       "index": {
         "content": "$1",
@@ -1381,10 +1381,10 @@
     "message": "Падтрымка NFC"
   },
   "twoFactorYubikeySupportsNfc": {
-    "message": "One of my keys supports NFC."
+    "message": "Адзін з маіх ключоў падтрымлівае NFC."
   },
   "twoFactorYubikeySupportsNfcDesc": {
-    "message": "If one of your YubiKeys supports NFC (such as a YubiKey NEO), you will be prompted on mobile devices whenever NFC availability is detected."
+    "message": "Калі адзін з вашых YubiKey падтрымлівае NFC (напрыклад, YubiKey NEO), то вы атрымаеце запыт на мабільных прыладах, як толькі будзе выяўлена функцыя NFC."
   },
   "yubikeysUpdated": {
     "message": "YubiKeys абноўлены"
@@ -1393,7 +1393,7 @@
     "message": "Адключыць усе ключы"
   },
   "twoFactorDuoDesc": {
-    "message": "Enter the Bitwarden application information from your Duo Admin panel."
+    "message": "Увядзіце інфармацыю пра праграму Bitwarden з вашай панэлі адміністратара Duo."
   },
   "twoFactorDuoIntegrationKey": {
     "message": "Ключ інтэграцыі"
@@ -1444,31 +1444,31 @@
     "message": "Захаваць форму."
   },
   "twoFactorU2fWarning": {
-    "message": "З-за абмежаванняў платформы, FIDO U2F можна выкарыстоўваць не ва ўсіх праграмах Bitwarden. Калі FIDO U2F не атрымліваецца выкарыстоўваць, то вы павінны ўключыць другога правайдара двухэтапнага ўваходу, каб атрымаць доступ да вашага ўліковага запісу. Платформы, якія падтрымліваюцца:"
+    "message": "З-за абмежаванняў платформы, FIDO U2F можна выкарыстоўваць не ва ўсіх праграмах Bitwarden. Калі FIDO U2F не атрымліваецца выкарыстоўваць, то вы павінны ўключыць другога пастаўшчыка двухэтапнага ўваходу, каб атрымаць доступ да вашага ўліковага запісу. Платформы, якія падтрымліваюцца:"
   },
   "twoFactorU2fSupportWeb": {
     "message": "Вэб-сховішча і пашырэнні браўзера на камп'ютары/ноўтбуку з браўзерам, які падтрымлівае U2F (Chrome, Opera, Vivaldi або Firefox з уключаным FIDO U2F)."
   },
   "twoFactorU2fWaiting": {
-    "message": "Waiting for you to touch the button on your security key"
+    "message": "Чаканне націску кнопкі на ключы бяспекі"
   },
   "twoFactorU2fClickSave": {
-    "message": "Click the \"Save\" button below to enable this security key for two-step login."
+    "message": "Націсніце кнопку \"Захаваць\" ніжэй, каб уключыць гэты ключ бяспекі для двухэтапнага ўваходу."
   },
   "twoFactorU2fProblemReadingTryAgain": {
-    "message": "There was a problem reading the security key. Try again."
+    "message": "Праблема чытання ключа бяспекі. Паспрабуйце яшчэ раз."
   },
   "twoFactorWebAuthnWarning": {
-    "message": "Due to platform limitations, WebAuthn cannot be used on all Bitwarden applications. You should enable another two-step login provider so that you can access your account when WebAuthn cannot be used. Supported platforms:"
+    "message": "З-за абмежавання платформы, WebAuthn немагчыма выкарыстоўваць ва ўсіх праграмах Bitwarden. Вам неабходна актываваць іншага пастаўшчыка двухэтапнага ўваходу, каб вы маглі атрымаць доступ да свайго ўліковага запісу, калі немагчыма скарыстацца WebAuthn. Платформы, які падтрымліваюцца:"
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "Web vault and browser extensions on a desktop/laptop with a WebAuthn enabled browser (Chrome, Opera, Vivaldi, or Firefox with FIDO U2F enabled)."
+    "message": "Вэб-сховішча і пашырэнні браўзера на камп'ютары/ноўтбуку з браўзерам, які падтрымлівае WebAuthn (Chrome, Opera, Vivaldi або Firefox з уключаным FIDO U2F)."
   },
   "twoFactorRecoveryYourCode": {
-    "message": "Your Bitwarden two-step login recovery code"
+    "message": "Ваш код аднаўлення двухэтапнага ўваходу Bitwarden"
   },
   "twoFactorRecoveryNoCode": {
-    "message": "You have not enabled any two-step login providers yet. After you have enabled a two-step login provider you can check back here for your recovery code."
+    "message": "Вы яшчэ не ўключылі ніводнага пастаўшчыка двухэтапнага ўваходу. Пасля таго, як вы зробіце гэта, вы зможаце вярнуцца сюды для атрымання кода аднаўлення."
   },
   "printCode": {
     "message": "Друк кода",
@@ -1478,20 +1478,20 @@
     "message": "Справаздачы"
   },
   "reportsDesc": {
-    "message": "Identify and close security gaps in your online accounts by clicking the reports below.",
+    "message": "Выявіце і выпраўце недахопы ў бяспецы вашых уліковых запісах, націснуўшы на справаздачы ніжэй.",
     "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Неабароненыя вэб-сайты"
   },
   "unsecuredWebsitesReportDesc": {
-    "message": "URLs that start with http:// don’t use the best available encryption. Change the Login URIs for these accounts to https:// for safer browsing."
+    "message": "URL-адрасы, якія пачынаюцца з http:// не маюць надзейнага шыфравання. Змяніце URI для лагінаў гэтых уліковых запісаў на https:// для больш бяспечнага прагляду старонак."
   },
   "unsecuredWebsitesFound": {
-    "message": "Unsecured Websites Found"
+    "message": "Знойдзены неабароненыя вэб-сайты"
   },
   "unsecuredWebsitesFoundDesc": {
-    "message": "We found $COUNT$ items in your vault with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
+    "message": "Мы знайшлі наступную колькасць з неабароненымі URI у вашым сховішчы: $COUNT$. Вам неабходна змяніць іх схему URI на https://, калі вэб-сайт дазваляе гэта зрабіць.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1500,19 +1500,19 @@
     }
   },
   "noUnsecuredWebsites": {
-    "message": "No items in your vault have unsecured URIs."
+    "message": "У вашым сховішчы адсутнічаюць элементы з неабароненымі URI."
   },
   "inactive2faReport": {
-    "message": "Inactive Two-step Login"
+    "message": "Неактыўны двухэтапны ўваход"
   },
   "inactive2faReportDesc": {
-    "message": "Two-step Login adds a layer of protection to your accounts. Turn on Two-Step Login using Bitwarden Authenticator for these accounts or use an alternative method."
+    "message": "Двухэтапны ўваход дадае дадатковы слой бяспекі да вашага ўліковага запісу. Уключыце двухэтапны ўваход выкарыстоўваючы аўтэнтыфікатар Bitwatden або скарыстайцеся альтэрнатыўным метадам."
   },
   "inactive2faFound": {
-    "message": "Logins Without 2FA Found"
+    "message": "Знойдзены лагіны без 2ФА"
   },
   "inactive2faFoundDesc": {
-    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-factor authentication (according to 2fa.directory). To further protect these accounts, you should enable two-factor authentication.",
+    "message": "У сховішчы выяўлены вэб-сайты ($COUNT$ шт.), якія могуць быць не наладжаны для двухэтапнай аўтэнтыфікацыі (згодна з 2fa.directory). Для дадатковай абароны гэтых уліковых запісаў уключыце двухэтапную аўтэнтыфікацыю.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1521,7 +1521,7 @@
     }
   },
   "noInactive2fa": {
-    "message": "No websites were found in your vault with a missing two-factor authentication configuration."
+    "message": "У вашым сховішчы адсутнічаюць вэб-сайты з не наладжанай двухфактарнай аўтэнтыфікацыяй."
   },
   "instructions": {
     "message": "Iнструкцыi"
@@ -1530,13 +1530,13 @@
     "message": "Скампраметаваныя паролі"
   },
   "exposedPasswordsReportDesc": {
-    "message": "Passwords exposed in a data breach are easy targets for attackers. Change these passwords to prevent potential break-ins."
+    "message": "Скампраметаваныя ў выніку ўцечкі даных паролі з'яўляюцца лёгкай мішэнню для зламыснікаў. Змяніце гэтыя паролі, каб прадухіліць патэнцыйную рызыку."
   },
   "exposedPasswordsFound": {
-    "message": "Exposed Passwords Found"
+    "message": "Знойдзены скампраметаваныя паролі"
   },
   "exposedPasswordsFoundDesc": {
-    "message": "We found $COUNT$ items in your vault that have passwords that were exposed in known data breaches. You should change them to use a new password.",
+    "message": "У сховішчы выяўлены элементы ($COUNT$ шт.) з паролямі, якія былі скампраметаваны ў вядомых базах уцечак. Вам неабходна выбраць для іх іншы пароль.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1545,10 +1545,10 @@
     }
   },
   "noExposedPasswords": {
-    "message": "No items in your vault have passwords that have been exposed in known data breaches."
+    "message": "У вашым сховішчы адсутнічаюць элементы з паролямі, якія былі скампраметаваныя ў вядомых базах уцечак."
   },
   "checkExposedPasswords": {
-    "message": "Check Exposed Passwords"
+    "message": "Праверка скампраметаваных пароляў"
   },
   "exposedXTimes": {
     "message": "Exposed $COUNT$ time(s)",
@@ -1664,7 +1664,7 @@
     "message": "Адбылася ўцечка"
   },
   "breachReported": {
-    "message": "Breach Reported"
+    "message": "Паведамлена пра ўцечку"
   },
   "reportError": {
     "message": "An error occurred trying to load the report. Try again"
@@ -1683,7 +1683,7 @@
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
   },
   "accountBalance": {
-    "message": "Account Balance",
+    "message": "Баланс рахунку",
     "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
   },
   "addCredit": {
@@ -1698,7 +1698,7 @@
     "message": "Added credit will appear on your account after the payment has been fully processed. Some payment methods are delayed and can take longer to process than others."
   },
   "makeSureEnoughCredit": {
-    "message": "Please make sure that your account has enough credit available for this purchase. If your account does not have enough credit available, your default payment method on file will be used for the difference. You can add credit to your account from the Billing page."
+    "message": "Пераканайцеся, што на вашым рахунку дастаткова крэдытаў для ажыццяўлення гэтай пакупкі. Калі сродкаў на вашым рахунку не хапае, то для кампенсацыі нястачы будзе выкарыстаны ваш прадвызначаны метад аплаты. Вы можаце дадаць крэдыты на свой рахунак на старонцы аплаты."
   },
   "creditAppliedDesc": {
     "message": "Your account's credit can be used to make purchases. Any available credit will be automatically applied towards invoices generated for this account."
@@ -1964,10 +1964,10 @@
     "message": "GB of Storage To Remove"
   },
   "storageAddNote": {
-    "message": "Adding storage will result in adjustments to your billing totals and immediately charge your payment method on file. The first charge will be prorated for the remainder of the current billing cycle."
+    "message": "Дадаванне сховішча прывядзе да карэкціроўкі ў вашым выніковым рахунку і адразу будзе спагнана аплата згодна з азначаным метадам. Першы плацеж будзе прапарцыйны астачы бягучага плацежнага перыяду."
   },
   "storageRemoveNote": {
-    "message": "Removing storage will result in adjustments to your billing totals that will be prorated as credits toward your next billing charge."
+    "message": "Выдаленне сховішча прывядзе да карэкціроўкі вашага выніковага рахунку, які будзе прапарцыйна раздзелены ў выглядзе крэдытаў за наступны плацежны перыяд."
   },
   "adjustedStorage": {
     "message": "Adjusted $AMOUNT$ GB of storage.",
@@ -2039,10 +2039,10 @@
     "message": "Дадатковыя месцы карыстальнікаў"
   },
   "userSeatsDesc": {
-    "message": "# of user seats"
+    "message": "# карыстальніцкіх ліцэнзій"
   },
   "userSeatsAdditionalDesc": {
-    "message": "Your plan comes with $BASE_SEATS$ user seats. You can add additional users for $SEAT_PRICE$ per user /month.",
+    "message": "Ваш тарыфны план мае наступную колькасць карыстальніцкіх ліцэнзій: $BASE_SEATS$. Вы можаце дадаць дадатковую колькасць карыстальнікаў па кошце $SEAT_PRICE$ за карыстальніка ў месяц.",
     "placeholders": {
       "base_seats": {
         "content": "$1",
@@ -2055,7 +2055,7 @@
     }
   },
   "userSeatsHowManyDesc": {
-    "message": "How many user seats do you need? You can also add additional seats later if needed."
+    "message": "Колькі ліцэнзій вам неабходна? Пры неабходнасці, вы заўсёды можаце дакупіць дадатковыя ліцэнзіі."
   },
   "planNameFree": {
     "message": "Бясплатна",
@@ -2104,7 +2104,7 @@
     "message": "Дадатковыя карыстальнікі"
   },
   "costPerUser": {
-    "message": "$COST$ per user",
+    "message": "$COST$ на карыстальніка",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -2368,7 +2368,7 @@
     "message": "The highest access user that can manage all aspects of your organization."
   },
   "clientOwnerDesc": {
-    "message": "This user should be independent of the Provider. If the Provider is disassociated with the organization, this user will maintain ownership of the organization."
+    "message": "Гэты карыстальнік павінен быць незалежным ад пастаўшчыка. Калі пастаўшчык не звязаны з арганізацыяй, то гэты карыстальнік будзе падтрымліваць права ўласнасці арганізацыі."
   },
   "admin": {
     "message": "Адміністратар"
@@ -2902,7 +2902,7 @@
     "message": "Запомніць электронную пошту"
   },
   "recoverAccountTwoStepDesc": {
-    "message": "If you cannot access your account through your normal two-step login methods, you can use your two-step login recovery code to disable all two-step providers on your account."
+    "message": "Калі вы не можаце атрымаць доступ да свайго ўліковага запісу з дапамогай двухэтапнага ўваходу, то вы можаце скарыстацца кодам аднаўлення, каб адключыць усіх пастаўшчыкоў двухэтапнага ўваходу для вашага ўліковага запісу."
   },
   "recoverAccountTwoStep": {
     "message": "Recover Account Two-Step Login"
@@ -2923,7 +2923,7 @@
     "message": "You have requested to delete your Bitwarden account. Click the button below to confirm."
   },
   "myOrganization": {
-    "message": "My Organization"
+    "message": "Мая арганізацыя"
   },
   "deleteOrganization": {
     "message": "Выдаліць арганізацыю"
@@ -2959,7 +2959,7 @@
     "message": "Арганізацыя абноўлена"
   },
   "taxInformation": {
-    "message": "Tax Information"
+    "message": "Інфармацыя пра падаткі"
   },
   "taxInformationDesc": {
     "message": "For customers within the US, ZIP code is required to satisfy sales tax requirements, for other countries you may optionally provide a tax identification number (VAT/GST) and/or address to appear on your invoices."
@@ -2999,7 +2999,7 @@
     "message": "We have made two micro-deposits to your bank account (it may take 1-2 business days to show up). Enter these amounts to verify the bank account."
   },
   "verifyBankAccountInitialDesc": {
-    "message": "Payment with a bank account is only available to customers in the United States. You will be required to verify your bank account. We will make two micro-deposits within the next 1-2 business days. Enter these amounts on the organization's billing page to verify the bank account."
+    "message": "Плацеж праз банкаўскі рахунак даступны толькі кліентам, якія пражываюць у ЗША. Вам неабходна будзе пацвердзіць свой банкаўскі рахунак. Мы зробім два сімвалічныя ўклады на працягу наступных 1-2 дзён. Увядзіце гэтыя сумы на старонцы аплаты арганізацыі для праверкі банкаўскага рахунку."
   },
   "verifyBankAccountFailureWarning": {
     "message": "Failure to verify the bank account will result in a missed payment and your subscription being disabled."
@@ -3046,11 +3046,11 @@
     "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new users."
   },
   "maxSeatLimit": {
-    "message": "Maximum Seat Limit (optional)",
+    "message": "Максімальная колькасць ліцэнзій (неабавязкова)",
     "description": "Upper limit of seats to allow through autoscaling"
   },
   "maxSeatCost": {
-    "message": "Max potential seat cost"
+    "message": "Максімальная магчымы кошт ліцэнзіі"
   },
   "addSeats": {
     "message": "Дадаць месцы",
@@ -3061,7 +3061,7 @@
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць ліцэнзій у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў."
   },
   "subscriptionUserSeats": {
     "message": "Your subscription allows for a total of $COUNT$ users.",
@@ -3088,10 +3088,10 @@
     "message": "For additional help in managing your subscription, please contact Customer Support."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць ліцэнзій у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users until your $MAX$ seat limit is reached.",
+    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць ліцэнзій у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў, пакуль не будзе дасягнута абмежаванне $MAX$ ліцэнзій.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3127,7 +3127,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ users without increasing your subscription seats.",
+    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Вы не зможаце запрасіць больш за $COUNT$ карыстальнікаў без павелічэння ліцэнзій вашай падпіскі.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3139,13 +3139,13 @@
     "message": "Дадаецца месца"
   },
   "seatsToRemove": {
-    "message": "Seats To Remove"
+    "message": "Ліцэнзіі для выдалення"
   },
   "seatsAddNote": {
-    "message": "Adding user seats will result in adjustments to your billing totals and immediately charge your payment method on file. The first charge will be prorated for the remainder of the current billing cycle."
+    "message": "Дадаванне карыстальніцкіх ліцэнзій прывядзе да карэкціроўкі ў вашым выніковым рахунку і адразу будзе спагнана аплата згодна з азначаным метадам. Першы плацеж будзе прапарцыйны астачы бягучага плацежнага перыяду."
   },
   "seatsRemoveNote": {
-    "message": "Removing user seats will result in adjustments to your billing totals that will be prorated as credits toward your next billing charge."
+    "message": "Выдаленне карыстальніцкіх ліцэнзій прывядзе да змен у вашым выніковым рахунку, які будзе прапарцыйна раздзелены ў выглядзе крэдытаў за наступны плацежны перыяд."
   },
   "adjustedSeats": {
     "message": "Adjusted $AMOUNT$ user seats.",
@@ -3172,7 +3172,7 @@
     "message": "We've moved to larger encryption keys that provide better security and access to newer features. Updating your encryption key is quick and easy. Just type your master password below. This update will eventually become mandatory."
   },
   "updateEncryptionKeyWarning": {
-    "message": "After updating your encryption key, you are required to log out and back in to all Bitwarden applications that you are currently using (such as the mobile app or browser extensions). Failure to log out and back in (which downloads your new encryption key) may result in data corruption. We will attempt to log you out automatically, however, it may be delayed."
+    "message": "Пасля абнаўлення вашага ключа шыфравання вам неабходна выйсці з сістэмы, а потым выканаць паўторны ўваход ва ўсе праграмы Bitwarden, якія вы зараз выкарыстоўваеце (напрыклад, мабільныя праграмы або пашырэнні для браўзераў). Збой пры выхадзе і паўторным уваходзе (пры гэтым спампоўваецца ваш новы ключ шыфравання) можа стаць прычынай пашкоджання даных. Мы паспрабуем аўтаматычна ажыццявіць завяршэнне ўсіх вашых сеансаў, але гэта можа адбывацца з затрымкай."
   },
   "updateEncryptionKeyExportWarning": {
     "message": "Any encrypted exports that you have saved will also become invalid."
@@ -3400,7 +3400,7 @@
     "message": "Organization members who are not Owners or Administrators and do not have two-step login turned on for their account will be removed from the organization and will receive an email notifying them about the change."
   },
   "twoStepLoginPolicyUserWarning": {
-    "message": "You are a member of an organization that requires two-step login to be enabled on your user account. If you disable all two-step login providers you will be automatically removed from these organizations."
+    "message": "Вы з'яўляецеся ўдзельнікам арганізацыі, якая патрабуе выкарыстанне двухэтапнага ўваходу для вашага ўліковага запісу. Калі вы адключыце ўсіх пастаўшчыкоў двухэтапнага ўваходу, то вы будзеце аўтаматычна выдалены з гэтай арганізацыі."
   },
   "passwordGeneratorPolicyDesc": {
     "message": "Set requirements for password generator."
@@ -3731,7 +3731,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLink": {
-    "message": "Copy Send Link",
+    "message": "Капіяваць спасылку на Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
@@ -3798,7 +3798,7 @@
     "message": "Экстранны доступ"
   },
   "emergencyAccessDesc": {
-    "message": "Grant and manage emergency access for trusted contacts. Trusted contacts may request access to either View or Takeover your account in case of an emergency. Visit our help page for more information and details into how zero knowledge sharing works."
+    "message": "Забяспечце экстранны доступ давераным кантактам. Давераныя кантакты могуць атрымаць доступ для прагляду або перадачы валодання вашым уліковы запісам у экстранных сітуацыях. Наведайце нашу старонку дапамогі для падрабязнага азнаямлення, як працуе супольны доступ нулявога ўзроўню."
   },
   "emergencyAccessOwnerWarning": {
     "message": "You are an Owner of one or more organizations. If you give takeover access to an emergency contact, they will be able to use all your permissions as Owner after a takeover."
@@ -4253,7 +4253,7 @@
     "message": "Скінуць пароль"
   },
   "resetPasswordLoggedOutWarning": {
-    "message": "Proceeding will log $NAME$ out of their current session, requiring them to log back in. Active sessions on other devices may continue to remain active for up to one hour.",
+    "message": "Працягваючы, карыстальнік $NAME$ выйдзе з бягучага сеанса і яму неабходна будзе ўвайсці паўторна. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны.",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4328,7 +4328,7 @@
     "message": "Are you sure you want to remove the following users? The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
   "removeOrgUsersConfirmation": {
-    "message": "When member(s) are removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again. The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Пасля выдалення ўдзельніка(-ў) яны згубяць доступ да даных арганізацыі і гэта дзеянне з'яўляецца незваротным. Для паўторнага дабаўлення ўдзельніка ў арганізацыю, яго неабходна будзе зноў запрасіць туды. Працэс можа заняць некалькі секунд і яго немагчыма перарваць або скасаваць."
   },
   "revokeUsersWarning": {
     "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
@@ -4394,16 +4394,16 @@
     "message": "Налады пастаўшчыка"
   },
   "setupProviderLoginDesc": {
-    "message": "You've been invited to setup a new provider. To continue, you need to log in or create a new Bitwarden account."
+    "message": "Вы былі запрошаны для наладжвання новага пастаўшчыка. Для працягу вам неабходна ўвайсці або стврыць новы ўліковы запіс Bitwarden."
   },
   "setupProviderDesc": {
-    "message": "Please enter the details below to complete the provider setup. Contact Customer Support if you have any questions."
+    "message": "Калі ласка, увядзіце дэталі ніжэй для завяршэння наладжвання правайдара. Вы можаце звязацца са службай падтрымкі, калі ў вас узніклі пытанні."
   },
   "providerName": {
     "message": "Назва пастаўшчыка"
   },
   "providerSetup": {
-    "message": "The provider has been set up."
+    "message": "Правайдар быў наладжаны."
   },
   "clients": {
     "message": "Кліенты"
@@ -4412,7 +4412,7 @@
     "message": "Адміністратар пастаўшчыка"
   },
   "providerAdminDesc": {
-    "message": "The highest access user that can manage all aspects of your provider as well as access and manage client organizations."
+    "message": "Карыстальнік з самым высокім узроўнем доступу, які можа кіраваць усімі аспектамі вашага пастаўшчыка, а таксама доступам і кіраваннем арганізацыямі кліентаў."
   },
   "serviceUser": {
     "message": "Сэрвісны карыстальнік"
@@ -4421,31 +4421,31 @@
     "message": "Service users can access and manage all client organizations."
   },
   "providerInviteUserDesc": {
-    "message": "Invite a new user to your provider by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
+    "message": "Запрасіць новага карыстальніка да вашага пастаўшчыка, увёўшы электронную пошту яго ўліковага запісу Bitwarden ніжэй. Калі ён не мае ўліковага запісу, то ён атрымае запыт на яго стварэнне."
   },
   "joinProvider": {
     "message": "Далучыцца да пастаўшчыка"
   },
   "joinProviderDesc": {
-    "message": "You've been invited to join the provider listed above. To accept the invitation, you need to log in or create a new Bitwarden account."
+    "message": "Вас запрасілі далучыцца да азначанага вышэй пастаўшчыка. Для таго, каб пацвердзіць запрашэнне, вам неабходна ўвайсці ў ваш уліковы запіс Bitwarden або стварыць яго."
   },
   "providerInviteAcceptFailed": {
-    "message": "Unable to accept invitation. Ask a provider admin to send a new invitation."
+    "message": "Немагчыма прыняць запрашэнне. Папрасіце адміністратара пастаўшчыка адправіць яго яшчэ раз."
   },
   "providerInviteAcceptedDesc": {
-    "message": "You can access this provider once an administrator confirms your membership. We'll send you an email when that happens."
+    "message": "Вы можаце атрымаць доступ да гэтага пастаўшчыка адразу пасля таго, як будзе пацверджаны ваш удзел. Мы апавясцім вас, калі гэта адбудзецца."
   },
   "providerUsersNeedConfirmed": {
-    "message": "You have users that have accepted their invitation, but still need to be confirmed. Users will not have access to the provider until they are confirmed."
+    "message": "У вас ёсць карыстальнікі, якія прынялі запрашэнне, але яшчэ не былі пацверджаны. Яны не будуць мець доступу да пастаўшчыка пакуль не будзе пацверджаны іх удзел."
   },
   "provider": {
-    "message": "Правайдар"
+    "message": "Пастаўшчык"
   },
   "newClientOrganization": {
     "message": "New Client Organization"
   },
   "newClientOrganizationDesc": {
-    "message": "Create a new client organization that will be associated with you as the provider. You will be able to access and manage this organization."
+    "message": "Стварыць новую арганізацыю кліента, які будзе звязаны з вамі, як з пастаўшчыком. У вас будзе магчымасць атрымаць доступ і кіраваць гэтай арганізацыяй."
   },
   "addExistingOrganization": {
     "message": "Add Existing Organization"
@@ -4454,7 +4454,7 @@
     "message": "Мой пастаўшчык"
   },
   "addOrganizationConfirmation": {
-    "message": "Are you sure you want to add $ORGANIZATION$ as a client to $PROVIDER$?",
+    "message": "Вы ўпэўнены, што хочаце дадаць арганізацыю $ORGANIZATION$ у якасці кліента да пастаўшчыка $PROVIDER$?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4467,10 +4467,10 @@
     }
   },
   "organizationJoinedProvider": {
-    "message": "Organization was successfully added to the provider"
+    "message": "Арганізацыя была паспяхова дабаўлена да пастаўшчыка"
   },
   "accessingUsingProvider": {
-    "message": "Accessing organization using provider $PROVIDER$",
+    "message": "Доступ да арганізацыі з выкарыстаннем пастаўшчыка $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -4485,7 +4485,7 @@
     "message": "Пастаўшчык абноўлены"
   },
   "yourProviderIs": {
-    "message": "Your provider is $PROVIDER$. They have administrative and billing privileges for your organization.",
+    "message": "Ваш пастаўшчык $PROVIDER$. Ён валодае адміністратыўнымі і плацежнымі прывілеямі для вашай арганізацыі.",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -4494,7 +4494,7 @@
     }
   },
   "detachedOrganization": {
-    "message": "The organization $ORGANIZATION$ has been detached from your provider.",
+    "message": "Арганізацыя $ORGANIZATION$ была адлучана ад вашага пастаўшчыка.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4503,7 +4503,7 @@
     }
   },
   "detachOrganizationConfirmation": {
-    "message": "Are you sure you want to detach this organization? The organization will continue to exist but will no longer be managed by the provider."
+    "message": "Вы ўпэўнены, што хочаце адлучыць гэту арганізацыю? Арганізацыя працягне сваё існаванне, але больш не будзе кіравацца пастаўшчыком."
   },
   "add": {
     "message": "Дадаць"
@@ -4515,10 +4515,10 @@
     "message": "Update Master Password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ваш галоўны пароль быў нядаўна зменены адміністратарам вашай арганізацыі. Для атрымання доступу да сховішча, вы павінны абнавіць галоўны пароль. Працягваючы, вы выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны."
   },
   "masterPasswordInvalidWarning": {
-    "message": "Your Master Password does not meet the policy requirements of this organization. In order to join the organization, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ваш галоўны пароль не адпавядае патрабаванням гэтай арганізацыі. Каб далучыцца да арганізацыі, вам неабходна абнавіць свой галоўны пароль зараз. Працягнуўшы, вы выйдзіце з бягучага сеанса і вам спатрэбіцца ўвайсці зноў. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу гадзіны."
   },
   "maximumVaultTimeout": {
     "message": "Час чакання сховішча"
@@ -4585,10 +4585,10 @@
     "message": "OpenID Connect Configuration"
   },
   "samlSpConfig": {
-    "message": "SAML Service Provider Configuration"
+    "message": "Канфігурацыя пастаўшчыка паслуг SAML"
   },
   "samlIdpConfig": {
-    "message": "SAML Identity Provider Configuration"
+    "message": "Канфігурацыя пасведчання пастаўшчыка SAML"
   },
   "callbackPath": {
     "message": "Шлях да зваротнага выкліку"
@@ -4852,7 +4852,7 @@
     "message": "Allow SSO authentication"
   },
   "allowSsoDesc": {
-    "message": "Once set up, your configuration will be saved and members will be able to authenticate using their Identity Provider credentials."
+    "message": "Пасля наладжвання ваша канфігурацыя будзе захавана і ўдзельнікі змогуць праходзіць аўтэнтыфікацыю выкарыстоўваючы свае ўліковыя даныя пасведчанняў пастаўшчыка."
   },
   "ssoPolicyHelpStart": {
     "message": "Выкарыстоўваць",
@@ -5174,7 +5174,7 @@
     "message": "Self-hosted sponsorships synced."
   },
   "billingManagedByProvider": {
-    "message": "Managed by $PROVIDER$",
+    "message": "Кіруецца $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -5183,7 +5183,7 @@
     }
   },
   "billingContactProviderForAssistance": {
-    "message": "Please reach out to them for further assistance",
+    "message": "Калі ласка, звяжыцеся з намі, каб атрымаць дапамогу",
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
@@ -5228,7 +5228,7 @@
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "message": "Аўтаматычна забяспечваць карыстальнікаў і групы пажаданымі пасведчаннямі пастаўшчыка праз забеспячэнне SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
@@ -5236,7 +5236,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "message": "Наладзьце пажаданага пастаўшчыка пасведчанняў з дапамогай канфігурацыі URL-адраса і ключа API SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {

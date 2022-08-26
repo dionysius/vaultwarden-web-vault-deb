@@ -3301,10 +3301,10 @@
     "message": "También rotar la clave de encriptación de mi cuenta"
   },
   "rotateEncKeyTitle": {
-    "message": "Rotar clave de encriptación"
+    "message": "Actualizar clave de cifrado"
   },
   "rotateEncKeyConfirmation": {
-    "message": "¿Está seguro de que desea rotar la clave de encriptación de su cuenta?"
+    "message": "¿Está seguro de que desea regenerar la clave de encriptación de su cuenta?"
   },
   "attachmentsNeedFix": {
     "message": "Este elemento tiene archivos adjuntos antiguos que deben ser corregidos."
@@ -3361,7 +3361,7 @@
     "message": "Ver Clave API"
   },
   "rotateApiKey": {
-    "message": "Rotar clave API"
+    "message": "Regenerar clave API"
   },
   "selectOneCollection": {
     "message": "Debes seleccionar al menos una colección."
@@ -4690,10 +4690,10 @@
     "message": "Single Sign-On configuration was saved."
   },
   "sponsoredFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Familias Bitwarden gratis"
   },
   "sponsoredFamiliesEligible": {
-    "message": "You and your family are eligible for Free Bitwarden Families. Redeem with your personal email to keep your data secure even when you are not at work."
+    "message": "Usted y su familia son elegibles para Familias Bitwarden Gratis. Canjeé con su correo electrónico personal para mantener tus datos seguros incluso cuando no estés en el trabajo."
   },
   "sponsoredFamiliesEligibleCard": {
     "message": "Redeem your Free Bitwarden for Families plan today to keep your data secure even when you are not at work."
@@ -4711,7 +4711,7 @@
     "message": "The link is no longer valid. Please have the sponsor resend the offer."
   },
   "reclaimedFreePlan": {
-    "message": "Reclaimed free plan"
+    "message": "Plan gratis canjeado"
   },
   "redeem": {
     "message": "Canjear"
@@ -4954,7 +4954,7 @@
     "message": "Generar token"
   },
   "rotateToken": {
-    "message": "Rotar token"
+    "message": "Regenerar token"
   },
   "rotateBillingSyncTokenWarning": {
     "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
@@ -4963,7 +4963,7 @@
     "message": "Rotating the Billing Sync Token will invalidate the previous token."
   },
   "selfHostingTitle": {
-    "message": "Self-Hosting"
+    "message": "Autoalojamiento"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
     "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
@@ -4972,7 +4972,7 @@
     "message": "Token rotado."
   },
   "billingSync": {
-    "message": "Billing Sync"
+    "message": "Facturación sincronizada"
   },
   "billingSyncDesc": {
     "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
@@ -4981,7 +4981,7 @@
     "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
   },
   "billingSyncKey": {
-    "message": "Billing Sync Token"
+    "message": "Token de sincronización de facturación"
   },
   "active": {
     "message": "Activo"
@@ -5187,7 +5187,7 @@
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Alias de Correo Reenviado"
   },
   "forwardedEmailDesc": {
     "message": "Generar un alias de correo electrónico mediante un servicio de reenvío externo."
@@ -5228,7 +5228,7 @@
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "message": "Provisionar automáticamente a los usuarios y grupos con su proveedor de identidad preferido a través de la provisión SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
@@ -5236,14 +5236,14 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "message": "Configura tu proveedor de identidad preferido configurando la URL y la clave API SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
-    "message": "This API key has access to manage users within your organization. It should be kept secret."
+    "message": "Esta clave API tiene acceso para administrar usuarios dentro de su organización. Debe mantenerse en secreto."
   },
   "copyScimKey": {
-    "message": "Copy the SCIM API Key to your clipboard",
+    "message": "Copiar la clave de la API de SCIM al portapapeles",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
@@ -5255,14 +5255,14 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotar clave"
+    "message": "Regenerar clave"
   },
   "scimApiKey": {
     "message": "Clave API SCIM",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {
-    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "message": "Copiar la URL del endpoint SCIM al portapapeles",
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimUrl": {
@@ -5311,6 +5311,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Number of users"
+    "message": "Número de usuarios"
   }
 }
