@@ -54,7 +54,15 @@ export class FastmailForwarder implements Forwarder {
         json.methodResponses[0].length > 0
       ) {
         if (json.methodResponses[0][0] === "MaskedEmail/set") {
-          return json.methodResponses[0][1]?.created?.["new-masked-email"]?.email;
+          if (json.methodResponses[0][1]?.created?.["new-masked-email"] != null) {
+            return json.methodResponses[0][1]?.created?.["new-masked-email"]?.email;
+          }
+          if (json.methodResponses[0][1]?.notCreated?.["new-masked-email"] != null) {
+            throw (
+              "Fastmail error: " +
+              json.methodResponses[0][1]?.notCreated?.["new-masked-email"]?.description
+            );
+          }
         } else if (json.methodResponses[0][0] === "error") {
           throw "Fastmail error: " + json.methodResponses[0][1]?.description;
         }
