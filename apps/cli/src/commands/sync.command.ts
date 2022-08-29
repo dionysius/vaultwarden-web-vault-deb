@@ -1,4 +1,4 @@
-import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 import { StringResponse } from "@bitwarden/node/cli/models/response/stringResponse";

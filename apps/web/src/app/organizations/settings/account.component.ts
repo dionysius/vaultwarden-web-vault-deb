@@ -9,7 +9,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { OrganizationKeysRequest } from "@bitwarden/common/models/request/organizationKeysRequest";
 import { OrganizationUpdateRequest } from "@bitwarden/common/models/request/organizationUpdateRequest";
 import { OrganizationResponse } from "@bitwarden/common/models/response/organizationResponse";

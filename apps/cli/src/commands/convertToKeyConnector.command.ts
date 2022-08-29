@@ -3,7 +3,7 @@ import * as inquirer from "inquirer";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
-import { SyncService } from "@bitwarden/common/abstractions/sync.service";
+import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 

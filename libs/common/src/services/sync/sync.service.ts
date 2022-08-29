@@ -1,42 +1,49 @@
-import { ApiService } from "../abstractions/api.service";
-import { CipherService } from "../abstractions/cipher.service";
-import { CollectionService } from "../abstractions/collection.service";
-import { CryptoService } from "../abstractions/crypto.service";
-import { FolderApiServiceAbstraction } from "../abstractions/folder/folder-api.service.abstraction";
-import { InternalFolderService } from "../abstractions/folder/folder.service.abstraction";
-import { KeyConnectorService } from "../abstractions/keyConnector.service";
-import { LogService } from "../abstractions/log.service";
-import { MessagingService } from "../abstractions/messaging.service";
-import { OrganizationService } from "../abstractions/organization.service";
-import { InternalPolicyService } from "../abstractions/policy/policy.service.abstraction";
-import { ProviderService } from "../abstractions/provider.service";
-import { SendService } from "../abstractions/send.service";
-import { SettingsService } from "../abstractions/settings.service";
-import { StateService } from "../abstractions/state.service";
-import { SyncService as SyncServiceAbstraction } from "../abstractions/sync.service";
-import { sequentialize } from "../misc/sequentialize";
-import { CipherData } from "../models/data/cipherData";
-import { CollectionData } from "../models/data/collectionData";
-import { FolderData } from "../models/data/folderData";
-import { OrganizationData } from "../models/data/organizationData";
-import { PolicyData } from "../models/data/policyData";
-import { ProviderData } from "../models/data/providerData";
-import { SendData } from "../models/data/sendData";
-import { CipherResponse } from "../models/response/cipherResponse";
-import { CollectionDetailsResponse } from "../models/response/collectionResponse";
-import { DomainsResponse } from "../models/response/domainsResponse";
-import { FolderResponse } from "../models/response/folderResponse";
+import { Subject } from "rxjs";
+
+import { ApiService } from "../../abstractions/api.service";
+import { CipherService } from "../../abstractions/cipher.service";
+import { CollectionService } from "../../abstractions/collection.service";
+import { CryptoService } from "../../abstractions/crypto.service";
+import { FolderApiServiceAbstraction } from "../../abstractions/folder/folder-api.service.abstraction";
+import { InternalFolderService } from "../../abstractions/folder/folder.service.abstraction";
+import { KeyConnectorService } from "../../abstractions/keyConnector.service";
+import { LogService } from "../../abstractions/log.service";
+import { MessagingService } from "../../abstractions/messaging.service";
+import { OrganizationService } from "../../abstractions/organization.service";
+import { InternalPolicyService } from "../../abstractions/policy/policy.service.abstraction";
+import { ProviderService } from "../../abstractions/provider.service";
+import { SendService } from "../../abstractions/send.service";
+import { SettingsService } from "../../abstractions/settings.service";
+import { StateService } from "../../abstractions/state.service";
+import { SyncService as SyncServiceAbstraction } from "../../abstractions/sync/sync.service.abstraction";
+import { sequentialize } from "../../misc/sequentialize";
+import { CipherData } from "../../models/data/cipherData";
+import { CollectionData } from "../../models/data/collectionData";
+import { FolderData } from "../../models/data/folderData";
+import { OrganizationData } from "../../models/data/organizationData";
+import { PolicyData } from "../../models/data/policyData";
+import { ProviderData } from "../../models/data/providerData";
+import { SendData } from "../../models/data/sendData";
+import { CipherResponse } from "../../models/response/cipherResponse";
+import { CollectionDetailsResponse } from "../../models/response/collectionResponse";
+import { DomainsResponse } from "../../models/response/domainsResponse";
+import { FolderResponse } from "../../models/response/folderResponse";
 import {
   SyncCipherNotification,
   SyncFolderNotification,
   SyncSendNotification,
-} from "../models/response/notificationResponse";
-import { PolicyResponse } from "../models/response/policyResponse";
-import { ProfileResponse } from "../models/response/profileResponse";
-import { SendResponse } from "../models/response/sendResponse";
+} from "../../models/response/notificationResponse";
+import { PolicyResponse } from "../../models/response/policyResponse";
+import { ProfileResponse } from "../../models/response/profileResponse";
+import { SendResponse } from "../../models/response/sendResponse";
+import { SyncEventArgs } from "../../types/syncEventArgs";
 
 export class SyncService implements SyncServiceAbstraction {
   syncInProgress = false;
+
+  private _sync = new Subject<SyncEventArgs>();
+
+  sync$ = this._sync.asObservable();
 
   constructor(
     private apiService: ApiService,
@@ -265,11 +272,13 @@ export class SyncService implements SyncServiceAbstraction {
   private syncStarted() {
     this.syncInProgress = true;
     this.messagingService.send("syncStarted");
+    this._sync.next({ status: "Started" });
   }
 
   private syncCompleted(successfully: boolean): boolean {
     this.syncInProgress = false;
     this.messagingService.send("syncCompleted", { successfully: successfully });
+    this._sync.next({ status: successfully ? "SuccessfullyCompleted" : "UnsuccessfullyCompleted" });
     return successfully;
   }
 
