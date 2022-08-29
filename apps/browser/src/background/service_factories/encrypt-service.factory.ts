@@ -20,15 +20,15 @@ export type EncryptServiceInitOptions = EncryptServiceFactoryOptions &
 export function encryptServiceFactory(
   cache: { encryptService?: EncryptService } & CachedServices,
   opts: EncryptServiceInitOptions
-): EncryptService {
+): Promise<EncryptService> {
   return factory(
     cache,
     "encryptService",
     opts,
-    () =>
+    async () =>
       new EncryptService(
-        cryptoFunctionServiceFactory(cache, opts),
-        logServiceFactory(cache, opts),
+        await cryptoFunctionServiceFactory(cache, opts),
+        await logServiceFactory(cache, opts),
         opts.encryptServiceOptions.logMacFailures
       )
   );

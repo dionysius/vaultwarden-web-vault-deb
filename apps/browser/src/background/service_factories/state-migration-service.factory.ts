@@ -25,15 +25,15 @@ export type StateMigrationServiceInitOptions = StateMigrationServiceFactoryOptio
 export function stateMigrationServiceFactory(
   cache: { stateMigrationService?: StateMigrationService } & CachedServices,
   opts: StateMigrationServiceInitOptions
-): StateMigrationService {
+): Promise<StateMigrationService> {
   return factory(
     cache,
     "stateMigrationService",
     opts,
-    () =>
+    async () =>
       new StateMigrationService(
-        diskStorageServiceFactory(cache, opts),
-        secureStorageServiceFactory(cache, opts),
+        await diskStorageServiceFactory(cache, opts),
+        await secureStorageServiceFactory(cache, opts),
         opts.stateMigrationServiceOptions.stateFactory
       )
   );

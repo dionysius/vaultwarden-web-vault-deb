@@ -5,7 +5,7 @@ import { environmentServiceFactory } from "../background/service_factories/envir
 import { BrowserApi } from "../browser/browserApi";
 import { Account } from "../models/account";
 
-export function onInstallListener(details: chrome.runtime.InstalledDetails) {
+export async function onInstallListener(details: chrome.runtime.InstalledDetails) {
   const cache = {};
   const opts = {
     encryptServiceOptions: {
@@ -24,7 +24,7 @@ export function onInstallListener(details: chrome.runtime.InstalledDetails) {
       stateFactory: new StateFactory(GlobalState, Account),
     },
   };
-  const environmentService = environmentServiceFactory(cache, opts);
+  const environmentService = await environmentServiceFactory(cache, opts);
 
   setTimeout(async () => {
     if (details.reason != null && details.reason === "install") {

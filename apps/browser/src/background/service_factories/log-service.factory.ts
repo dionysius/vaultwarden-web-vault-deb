@@ -16,7 +16,7 @@ export type LogServiceInitOptions = LogServiceFactoryOptions;
 export function logServiceFactory(
   cache: { logService?: LogService } & CachedServices,
   opts: LogServiceInitOptions
-): LogService {
+): Promise<LogService> {
   return factory(
     cache,
     "logService",

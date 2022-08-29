@@ -33,23 +33,25 @@ export type StateServiceInitOptions = StateServiceFactoryOptions &
   LogServiceInitOptions &
   StateMigrationServiceInitOptions;
 
-export function stateServiceFactory(
+export async function stateServiceFactory(
   cache: { stateService?: StateService } & CachedServices,
   opts: StateServiceInitOptions
-): StateService {
-  return factory(
+): Promise<StateService> {
+  const service = await factory(
     cache,
     "stateService",
     opts,
-    () =>
-      new StateService(
-        diskStorageServiceFactory(cache, opts),
-        secureStorageServiceFactory(cache, opts),
-        memoryStorageServiceFactory(cache, opts),
-        logServiceFactory(cache, opts),
-        stateMigrationServiceFactory(cache, opts),
+    async () =>
+      await new StateService(
+        await diskStorageServiceFactory(cache, opts),
+        await secureStorageServiceFactory(cache, opts),
+        await memoryStorageServiceFactory(cache, opts),
+        await logServiceFactory(cache, opts),
+        await stateMigrationServiceFactory(cache, opts),
         opts.stateServiceOptions.stateFactory,
         opts.stateServiceOptions.useAccountCache
       )
   );
+  service.init();
+  return service;
 }

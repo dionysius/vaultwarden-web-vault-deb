@@ -22,26 +22,26 @@ export type MemoryStorageServiceInitOptions = StorageServiceFactoryOptions &
 export function diskStorageServiceFactory(
   cache: { diskStorageService?: AbstractStorageService } & CachedServices,
   opts: DiskStorageServiceInitOptions
-): AbstractStorageService {
+): Promise<AbstractStorageService> {
   return factory(cache, "diskStorageService", opts, () => new BrowserLocalStorageService());
 }
 
 export function secureStorageServiceFactory(
   cache: { secureStorageService?: AbstractStorageService } & CachedServices,
   opts: SecureStorageServiceInitOptions
-): AbstractStorageService {
+): Promise<AbstractStorageService> {
   return factory(cache, "secureStorageService", opts, () => new BrowserLocalStorageService());
 }
 
 export function memoryStorageServiceFactory(
   cache: { memoryStorageService?: AbstractStorageService } & CachedServices,
   opts: MemoryStorageServiceInitOptions
-): AbstractStorageService {
-  return factory(cache, "memoryStorageService", opts, () => {
+): Promise<AbstractStorageService> {
+  return factory(cache, "memoryStorageService", opts, async () => {
     if (chrome.runtime.getManifest().manifest_version == 3) {
       return new LocalBackedSessionStorageService(
-        encryptServiceFactory(cache, opts),
-        keyGenerationServiceFactory(cache, opts)
+        await encryptServiceFactory(cache, opts),
+        await keyGenerationServiceFactory(cache, opts)
       );
     }
     return new MemoryStorageService();

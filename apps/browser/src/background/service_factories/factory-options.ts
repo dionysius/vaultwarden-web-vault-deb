@@ -6,14 +6,20 @@ export type FactoryOptions = {
   [optionsKey: string]: unknown;
 };
 
-export function factory<
+export async function factory<
   TCache extends CachedServices,
   TName extends keyof TCache,
   TOpts extends FactoryOptions
->(cachedServices: TCache, name: TName, opts: TOpts, factory: () => TCache[TName]): TCache[TName] {
+>(
+  cachedServices: TCache,
+  name: TName,
+  opts: TOpts,
+  factory: () => TCache[TName] | Promise<TCache[TName]>
+): Promise<TCache[TName]> {
   let instance = cachedServices[name];
   if (opts.alwaysInitializeNewService || !instance) {
-    instance = factory();
+    const instanceOrPromise = factory();
+    instance = instanceOrPromise instanceof Promise ? await instanceOrPromise : instanceOrPromise;
   }
 
   if (!opts.doNotStoreInitializedService) {
