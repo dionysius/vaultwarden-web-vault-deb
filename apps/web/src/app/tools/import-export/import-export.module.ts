@@ -12,12 +12,13 @@ import { ImportService } from "@bitwarden/common/services/import.service";
 import { LooseComponentsModule, SharedModule } from "../../shared";
 
 import { ExportComponent } from "./export.component";
+import { FilePasswordPromptComponent } from "./file-password-prompt.component";
 import { ImportExportRoutingModule } from "./import-export-routing.module";
 import { ImportComponent } from "./import.component";
 
 @NgModule({
   imports: [SharedModule, LooseComponentsModule, ImportExportRoutingModule],
-  declarations: [ImportComponent, ExportComponent],
+  declarations: [ImportComponent, ExportComponent, FilePasswordPromptComponent],
   providers: [
     {
       provide: ImportServiceAbstraction,

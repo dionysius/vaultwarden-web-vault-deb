@@ -24,6 +24,7 @@ import { NestedCheckboxComponent } from "../components/nested-checkbox.component
 import { OrganizationSwitcherComponent } from "../components/organization-switcher.component";
 import { PasswordRepromptComponent } from "../components/password-reprompt.component";
 import { PremiumBadgeComponent } from "../components/premium-badge.component";
+import { UserVerificationPromptComponent } from "../components/user-verification-prompt.component";
 import { FooterComponent } from "../layouts/footer.component";
 import { FrontendLayoutComponent } from "../layouts/frontend-layout.component";
 import { NavbarComponent } from "../layouts/navbar.component";
@@ -253,6 +254,7 @@ import { SharedModule } from ".";
     PasswordGeneratorHistoryComponent,
     PasswordGeneratorPolicyComponent,
     PasswordRepromptComponent,
+    UserVerificationPromptComponent,
     PaymentComponent,
     PaymentMethodComponent,
     PersonalOwnershipPolicyComponent,

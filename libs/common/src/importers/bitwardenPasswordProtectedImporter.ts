@@ -35,7 +35,7 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
 
     if (!(await this.checkPassword(parsedData))) {
       result.success = false;
-      result.errorMessage = this.i18nService.t("importEncKeyError");
+      result.errorMessage = this.i18nService.t("invalidFilePassword");
       return result;
     }
 

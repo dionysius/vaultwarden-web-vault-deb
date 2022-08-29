@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
+import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { ImportService } from "@bitwarden/common/abstractions/import.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -26,9 +27,18 @@ export class OrganizationImportComponent extends ImportComponent {
     platformUtilsService: PlatformUtilsService,
     policyService: PolicyService,
     private organizationService: OrganizationService,
-    logService: LogService
+    logService: LogService,
+    modalService: ModalService
   ) {
-    super(i18nService, importService, router, platformUtilsService, policyService, logService);
+    super(
+      i18nService,
+      importService,
+      router,
+      platformUtilsService,
+      policyService,
+      logService,
+      modalService
+    );
   }
 
   async ngOnInit() {
