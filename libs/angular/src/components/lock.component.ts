@@ -13,6 +13,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
 import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
 import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
 import { Utils } from "@bitwarden/common/misc/utils";
@@ -49,6 +50,7 @@ export class LockComponent implements OnInit, OnDestroy {
     protected messagingService: MessagingService,
     protected cryptoService: CryptoService,
     protected vaultTimeoutService: VaultTimeoutService,
+    protected vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     protected environmentService: EnvironmentService,
     protected stateService: StateService,
     protected apiService: ApiService,
@@ -262,13 +264,13 @@ export class LockComponent implements OnInit, OnDestroy {
   }
 
   private async load() {
-    this.pinSet = await this.vaultTimeoutService.isPinLockSet();
+    this.pinSet = await this.vaultTimeoutSettingsService.isPinLockSet();
     this.pinLock =
       (this.pinSet[0] && (await this.stateService.getDecryptedPinProtected()) != null) ||
       this.pinSet[1];
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
     this.biometricLock =
-      (await this.vaultTimeoutService.isBiometricLockSet()) &&
+      (await this.vaultTimeoutSettingsService.isBiometricLockSet()) &&
       ((await this.cryptoService.hasKeyStored(KeySuffixOptions.Biometric)) ||
         !this.platformUtilsService.supportsSecureStorage());
     this.biometricText = await this.stateService.getBiometricText();

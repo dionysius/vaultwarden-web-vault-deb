@@ -20,13 +20,15 @@ import {
   platformUtilsServiceFactory,
   PlatformUtilsServiceInitOptions,
 } from "./platform-utils-service.factory";
-import { policyServiceFactory, PolicyServiceInitOptions } from "./policy-service.factory";
 import { searchServiceFactory, SearchServiceInitOptions } from "./search-service.factory";
 import {
   stateServiceFactory as stateServiceFactory,
   StateServiceInitOptions,
 } from "./state-service.factory";
-import { tokenServiceFactory, TokenServiceInitOptions } from "./token-service.factory";
+import {
+  vaultTimeoutSettingsServiceFactory,
+  VaultTimeoutSettingsServiceInitOptions,
+} from "./vault-timeout-settings-service.factory";
 
 type VaultTimeoutServiceFactoryOptions = FactoryOptions & {
   vaultTimeoutServiceOptions: {
@@ -43,11 +45,10 @@ export type VaultTimeoutServiceInitOptions = VaultTimeoutServiceFactoryOptions &
   PlatformUtilsServiceInitOptions &
   MessagingServiceInitOptions &
   SearchServiceInitOptions &
-  TokenServiceInitOptions &
-  PolicyServiceInitOptions &
   KeyConnectorServiceInitOptions &
   StateServiceInitOptions &
-  AuthServiceInitOptions;
+  AuthServiceInitOptions &
+  VaultTimeoutSettingsServiceInitOptions;
 
 export function vaultTimeoutServiceFactory(
   cache: { vaultTimeoutService?: AbstractVaultTimeoutService } & CachedServices,
@@ -66,11 +67,10 @@ export function vaultTimeoutServiceFactory(
         await platformUtilsServiceFactory(cache, opts),
         await messagingServiceFactory(cache, opts),
         await searchServiceFactory(cache, opts),
-        await tokenServiceFactory(cache, opts),
-        await policyServiceFactory(cache, opts),
         await keyConnectorServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
         await authServiceFactory(cache, opts),
+        await vaultTimeoutSettingsServiceFactory(cache, opts),
         opts.vaultTimeoutServiceOptions.lockedCallback,
         opts.vaultTimeoutServiceOptions.loggedOutCallback
       )

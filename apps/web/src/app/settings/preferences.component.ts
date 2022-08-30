@@ -6,7 +6,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
 import { Utils } from "@bitwarden/common/misc/utils";
 
@@ -33,7 +33,7 @@ export class PreferencesComponent implements OnInit {
   constructor(
     private stateService: StateService,
     private i18nService: I18nService,
-    private vaultTimeoutService: VaultTimeoutService,
+    private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     private platformUtilsService: PlatformUtilsService,
     private messagingService: MessagingService,
     private themingService: AbstractThemingService
@@ -70,7 +70,7 @@ export class PreferencesComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.vaultTimeout.setValue(await this.vaultTimeoutService.getVaultTimeout());
+    this.vaultTimeout.setValue(await this.vaultTimeoutSettingsService.getVaultTimeout());
     this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
     this.enableFavicons = !(await this.stateService.getDisableFavicon());
     this.enableGravatars = await this.stateService.getEnableGravitars();
@@ -93,7 +93,7 @@ export class PreferencesComponent implements OnInit {
       return;
     }
 
-    await this.vaultTimeoutService.setVaultTimeoutOptions(
+    await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
       this.vaultTimeout.value,
       this.vaultTimeoutAction
     );

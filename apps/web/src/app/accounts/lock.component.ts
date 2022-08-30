@@ -12,6 +12,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
 
 import { RouterService } from "../core";
 
@@ -27,6 +28,7 @@ export class LockComponent extends BaseLockComponent {
     messagingService: MessagingService,
     cryptoService: CryptoService,
     vaultTimeoutService: VaultTimeoutService,
+    vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     environmentService: EnvironmentService,
     private routerService: RouterService,
     stateService: StateService,
@@ -42,6 +44,7 @@ export class LockComponent extends BaseLockComponent {
       messagingService,
       cryptoService,
       vaultTimeoutService,
+      vaultTimeoutSettingsService,
       environmentService,
       stateService,
       apiService,
