@@ -137,10 +137,14 @@ export class AccountSettings {
   generatorOptions?: any;
   pinProtected?: EncryptionPair<string, EncString> = new EncryptionPair<string, EncString>();
   protectedPin?: string;
-  settings?: any; // TODO: Merge whatever is going on here into the AccountSettings model properly
+  settings?: AccountSettingsSettings; // TODO: Merge whatever is going on here into the AccountSettings model properly
   vaultTimeout?: number;
   vaultTimeoutAction?: string = "lock";
 }
+
+export type AccountSettingsSettings = {
+  equivalentDomains?: { [id: string]: any };
+};
 
 export class AccountTokens {
   accessToken?: string;

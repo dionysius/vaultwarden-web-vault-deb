@@ -20,7 +20,12 @@ import { OrganizationData } from "../models/data/organizationData";
 import { PolicyData } from "../models/data/policyData";
 import { ProviderData } from "../models/data/providerData";
 import { SendData } from "../models/data/sendData";
-import { Account, AccountData, AccountSettings } from "../models/domain/account";
+import {
+  Account,
+  AccountData,
+  AccountSettings,
+  AccountSettingsSettings,
+} from "../models/domain/account";
 import { EncString } from "../models/domain/encString";
 import { EnvironmentUrls } from "../models/domain/environmentUrls";
 import { GeneratedPasswordHistory } from "../models/domain/generatedPasswordHistory";
@@ -2075,13 +2080,13 @@ export class StateService<
     );
   }
 
-  async getSettings(options?: StorageOptions): Promise<any> {
+  async getSettings(options?: StorageOptions): Promise<AccountSettingsSettings> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()))
     )?.settings?.settings;
   }
 
-  async setSettings(value: string, options?: StorageOptions): Promise<void> {
+  async setSettings(value: AccountSettingsSettings, options?: StorageOptions): Promise<void> {
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions())
     );

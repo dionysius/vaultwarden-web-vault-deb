@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { ApiService } from "../abstractions/api.service";
 import { CipherService as CipherServiceAbstraction } from "../abstractions/cipher.service";
 import { CryptoService } from "../abstractions/crypto.service";
@@ -13,6 +15,7 @@ import { UriMatchType } from "../enums/uriMatchType";
 import { sequentialize } from "../misc/sequentialize";
 import { Utils } from "../misc/utils";
 import { CipherData } from "../models/data/cipherData";
+import { AccountSettingsSettings } from "../models/domain/account";
 import { Attachment } from "../models/domain/attachment";
 import { Card } from "../models/domain/card";
 import { Cipher } from "../models/domain/cipher";
@@ -387,20 +390,22 @@ export class CipherService implements CipherServiceAbstraction {
     const eqDomainsPromise =
       domain == null
         ? Promise.resolve([])
-        : this.settingsService.getEquivalentDomains().then((eqDomains: any[][]) => {
-            let matches: any[] = [];
-            eqDomains.forEach((eqDomain) => {
-              if (eqDomain.length && eqDomain.indexOf(domain) >= 0) {
-                matches = matches.concat(eqDomain);
+        : firstValueFrom(this.settingsService.settings$).then(
+            (settings: AccountSettingsSettings) => {
+              let matches: any[] = [];
+              settings.equivalentDomains.forEach((eqDomain: any) => {
+                if (eqDomain.length && eqDomain.indexOf(domain) >= 0) {
+                  matches = matches.concat(eqDomain);
+                }
+              });
+
+              if (!matches.length) {
+                matches.push(domain);
               }
-            });
 
-            if (!matches.length) {
-              matches.push(domain);
+              return matches;
             }
-
-            return matches;
-          });
+          );
 
     const result = await Promise.all([eqDomainsPromise, this.getAllDecrypted()]);
     const matchingDomains = result[0];

@@ -1,56 +1,50 @@
+import { BehaviorSubject, concatMap } from "rxjs";
+
 import { SettingsService as SettingsServiceAbstraction } from "../abstractions/settings.service";
 import { StateService } from "../abstractions/state.service";
-
-const Keys = {
-  settingsPrefix: "settings_",
-  equivalentDomains: "equivalentDomains",
-};
+import { Utils } from "../misc/utils";
+import { AccountSettingsSettings } from "../models/domain/account";
 
 export class SettingsService implements SettingsServiceAbstraction {
-  constructor(private stateService: StateService) {}
+  private _settings: BehaviorSubject<AccountSettingsSettings> = new BehaviorSubject({});
 
-  async clearCache(): Promise<void> {
-    await this.stateService.setSettings(null);
-  }
+  settings$ = this._settings.asObservable();
 
-  getEquivalentDomains(): Promise<any> {
-    return this.getSettingsKey(Keys.equivalentDomains);
+  constructor(private stateService: StateService) {
+    this.stateService.activeAccountUnlocked$
+      .pipe(
+        concatMap(async (unlocked) => {
+          if (Utils.global.bitwardenContainerService == null) {
+            return;
+          }
+
+          if (!unlocked) {
+            this._settings.next({});
+            return;
+          }
+
+          const data = await this.stateService.getSettings();
+
+          this._settings.next(data);
+        })
+      )
+      .subscribe();
   }
 
   async setEquivalentDomains(equivalentDomains: string[][]): Promise<void> {
-    await this.setSettingsKey(Keys.equivalentDomains, equivalentDomains);
+    const settings = this._settings.getValue() ?? {};
+
+    settings.equivalentDomains = equivalentDomains;
+
+    this._settings.next(settings);
+    await this.stateService.setSettings(settings);
   }
 
   async clear(userId?: string): Promise<void> {
+    if (userId == null || userId == (await this.stateService.getUserId())) {
+      this._settings.next({});
+    }
+
     await this.stateService.setSettings(null, { userId: userId });
-  }
-
-  // Helpers
-
-  private async getSettings(): Promise<any> {
-    const settings = await this.stateService.getSettings();
-    if (settings == null) {
-      // eslint-disable-next-line
-      const userId = await this.stateService.getUserId();
-    }
-    return settings;
-  }
-
-  private async getSettingsKey(key: string): Promise<any> {
-    const settings = await this.getSettings();
-    if (settings != null && settings[key]) {
-      return settings[key];
-    }
-    return null;
-  }
-
-  private async setSettingsKey(key: string, value: any): Promise<void> {
-    let settings = await this.getSettings();
-    if (!settings) {
-      settings = {};
-    }
-
-    settings[key] = value;
-    await this.stateService.setSettings(settings);
   }
 }

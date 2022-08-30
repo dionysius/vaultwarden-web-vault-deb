@@ -12,7 +12,7 @@ import { OrganizationData } from "../models/data/organizationData";
 import { PolicyData } from "../models/data/policyData";
 import { ProviderData } from "../models/data/providerData";
 import { SendData } from "../models/data/sendData";
-import { Account, AccountSettings } from "../models/domain/account";
+import { Account, AccountSettings, AccountSettingsSettings } from "../models/domain/account";
 import { EnvironmentUrls } from "../models/domain/environmentUrls";
 import { GeneratedPasswordHistory } from "../models/domain/generatedPasswordHistory";
 import { GlobalState } from "../models/domain/globalState";
@@ -319,7 +319,10 @@ export class StateMigrationService<
         encrypted: await this.get<string>(v1Keys.pinProtected),
       },
       protectedPin: await this.get<string>(v1Keys.protectedPin),
-      settings: userId == null ? null : await this.get<any>(v1KeyPrefixes.settings + userId),
+      settings:
+        userId == null
+          ? null
+          : await this.get<AccountSettingsSettings>(v1KeyPrefixes.settings + userId),
       vaultTimeout:
         (await this.get<number>(v1Keys.vaultTimeout)) ?? defaultAccount.settings.vaultTimeout,
       vaultTimeoutAction:
