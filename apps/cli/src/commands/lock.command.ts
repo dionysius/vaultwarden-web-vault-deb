@@ -1,4 +1,4 @@
-import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 

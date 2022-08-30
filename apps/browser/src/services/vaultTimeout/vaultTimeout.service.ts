@@ -1,6 +1,6 @@
-import { VaultTimeoutService as BaseVaultTimeoutService } from "@bitwarden/common/services/vaultTimeout.service";
+import { VaultTimeoutService as BaseVaultTimeoutService } from "@bitwarden/common/services/vaultTimeout/vaultTimeout.service";
 
-import { SafariApp } from "../browser/safariApp";
+import { SafariApp } from "../../browser/safariApp";
 
 export default class VaultTimeoutService extends BaseVaultTimeoutService {
   startCheck() {

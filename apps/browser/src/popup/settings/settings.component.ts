@@ -11,7 +11,7 @@ import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout.service";
+import { VaultTimeoutService } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeout.service";
 import { DeviceType } from "@bitwarden/common/enums/deviceType";
 
 import { BrowserApi } from "../../browser/browserApi";
