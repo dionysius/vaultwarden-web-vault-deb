@@ -8,6 +8,7 @@ import { CollectionData } from "../models/data/collectionData";
 import { EncryptedOrganizationKeyData } from "../models/data/encryptedOrganizationKeyData";
 import { EventData } from "../models/data/eventData";
 import { FolderData } from "../models/data/folderData";
+import { LocalData } from "../models/data/localData";
 import { OrganizationData } from "../models/data/organizationData";
 import { PolicyData } from "../models/data/policyData";
 import { ProviderData } from "../models/data/providerData";
@@ -245,8 +246,11 @@ export abstract class StateService<T extends Account = Account> {
   setLastActive: (value: number, options?: StorageOptions) => Promise<void>;
   getLastSync: (options?: StorageOptions) => Promise<string>;
   setLastSync: (value: string, options?: StorageOptions) => Promise<void>;
-  getLocalData: (options?: StorageOptions) => Promise<any>;
-  setLocalData: (value: string, options?: StorageOptions) => Promise<void>;
+  getLocalData: (options?: StorageOptions) => Promise<{ [cipherId: string]: LocalData }>;
+  setLocalData: (
+    value: { [cipherId: string]: LocalData },
+    options?: StorageOptions
+  ) => Promise<void>;
   getLocale: (options?: StorageOptions) => Promise<string>;
   setLocale: (value: string, options?: StorageOptions) => Promise<void>;
   getMainWindowSize: (options?: StorageOptions) => Promise<number>;

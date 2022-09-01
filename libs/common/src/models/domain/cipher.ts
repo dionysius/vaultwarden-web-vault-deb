@@ -1,6 +1,7 @@
 import { CipherRepromptType } from "../../enums/cipherRepromptType";
 import { CipherType } from "../../enums/cipherType";
 import { CipherData } from "../data/cipherData";
+import { LocalData } from "../data/localData";
 import { CipherView } from "../view/cipherView";
 
 import { Attachment } from "./attachment";
@@ -26,7 +27,7 @@ export class Cipher extends Domain {
   edit: boolean;
   viewPassword: boolean;
   revisionDate: Date;
-  localData: any;
+  localData: LocalData;
   login: Login;
   identity: Identity;
   card: Card;
@@ -38,7 +39,7 @@ export class Cipher extends Domain {
   deletedDate: Date;
   reprompt: CipherRepromptType;
 
-  constructor(obj?: CipherData, localData: any = null) {
+  constructor(obj?: CipherData, localData: LocalData = null) {
     super();
     if (obj == null) {
       return;

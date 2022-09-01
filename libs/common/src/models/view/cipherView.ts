@@ -3,6 +3,7 @@ import { Jsonify } from "type-fest";
 import { CipherRepromptType } from "../../enums/cipherRepromptType";
 import { CipherType } from "../../enums/cipherType";
 import { LinkedIdType } from "../../enums/linkedIdType";
+import { LocalData } from "../data/localData";
 import { Cipher } from "../domain/cipher";
 
 import { AttachmentView } from "./attachmentView";
@@ -25,7 +26,7 @@ export class CipherView implements View {
   organizationUseTotp = false;
   edit = false;
   viewPassword = true;
-  localData: any;
+  localData: LocalData;
   login = new LoginView();
   identity = new IdentityView();
   card = new CardView();
