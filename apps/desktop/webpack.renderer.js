@@ -5,8 +5,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { AngularWebpackPlugin } = require("@ngtools/webpack");
 const TerserPlugin = require("terser-webpack-plugin");
+const configurator = require("./config/config");
 
 const NODE_ENV = process.env.NODE_ENV == null ? "development" : process.env.NODE_ENV;
+
+console.log("Renderer process config");
+const envConfig = configurator.load(NODE_ENV);
+configurator.log(envConfig);
 
 const common = {
   module: {
@@ -141,6 +146,10 @@ const renderer = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].[contenthash].css",
+    }),
+    new webpack.EnvironmentPlugin({
+      FLAGS: envConfig.flags,
+      DEV_FLAGS: NODE_ENV === "development" ? envConfig.devFlags : {},
     }),
   ],
 };
