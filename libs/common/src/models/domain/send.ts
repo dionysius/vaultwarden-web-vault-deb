@@ -1,4 +1,3 @@
-import { CryptoService } from "../../abstractions/crypto.service";
 import { SendType } from "../../enums/sendType";
 import { Utils } from "../../misc/utils";
 import { SendData } from "../data/sendData";
@@ -71,13 +70,7 @@ export class Send extends Domain {
   async decrypt(): Promise<SendView> {
     const model = new SendView(this);
 
-    let cryptoService: CryptoService;
-    const containerService = Utils.global.bitwardenContainerService;
-    if (containerService) {
-      cryptoService = containerService.getCryptoService();
-    } else {
-      throw new Error("global bitwardenContainerService not initialized.");
-    }
+    const cryptoService = Utils.getContainerService().getCryptoService();
 
     try {
       model.key = await cryptoService.decryptToBytes(this.key, null);

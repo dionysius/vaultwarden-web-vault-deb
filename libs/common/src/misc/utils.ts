@@ -3,6 +3,7 @@ import * as tldjs from "tldjs";
 
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 
+import { AbstractEncryptService } from "../abstractions/abstractEncrypt.service";
 import { I18nService } from "../abstractions/i18n.service";
 
 const nodeURL = typeof window === "undefined" ? require("url") : null;
@@ -14,6 +15,7 @@ declare global {
 
 interface BitwardenContainerService {
   getCryptoService: () => CryptoService;
+  getEncryptService: () => AbstractEncryptService;
 }
 
 export class Utils {
@@ -366,6 +368,16 @@ export class Utils {
 
   static camelToPascalCase(s: string) {
     return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  /**
+   * @throws Will throw an error if the ContainerService has not been attached to the window object
+   */
+  static getContainerService(): BitwardenContainerService {
+    if (this.global.bitwardenContainerService == null) {
+      throw new Error("global bitwardenContainerService not initialized.");
+    }
+    return this.global.bitwardenContainerService;
   }
 
   private static validIpAddress(ipString: string): boolean {

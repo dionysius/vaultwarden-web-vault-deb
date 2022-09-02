@@ -1,6 +1,7 @@
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
+import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 import { SettingsService } from "@bitwarden/common/services/settings.service";
@@ -10,12 +11,14 @@ describe("SettingsService", () => {
   let settingsService: SettingsService;
 
   let cryptoService: SubstituteOf<CryptoService>;
+  let encryptService: SubstituteOf<AbstractEncryptService>;
   let stateService: SubstituteOf<StateService>;
   let activeAccount: BehaviorSubject<string>;
   let activeAccountUnlocked: BehaviorSubject<boolean>;
 
   beforeEach(() => {
     cryptoService = Substitute.for();
+    encryptService = Substitute.for();
     stateService = Substitute.for();
     activeAccount = new BehaviorSubject("123");
     activeAccountUnlocked = new BehaviorSubject(true);
@@ -23,7 +26,7 @@ describe("SettingsService", () => {
     stateService.getSettings().resolves({ equivalentDomains: [["test"], ["domains"]] });
     stateService.activeAccount$.returns(activeAccount);
     stateService.activeAccountUnlocked$.returns(activeAccountUnlocked);
-    (window as any).bitwardenContainerService = new ContainerService(cryptoService);
+    (window as any).bitwardenContainerService = new ContainerService(cryptoService, encryptService);
 
     settingsService = new SettingsService(stateService);
   });

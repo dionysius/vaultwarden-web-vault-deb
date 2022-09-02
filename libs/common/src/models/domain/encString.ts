@@ -2,7 +2,6 @@ import { Jsonify } from "type-fest";
 
 import { IEncrypted } from "@bitwarden/common/interfaces/IEncrypted";
 
-import { CryptoService } from "../../abstractions/crypto.service";
 import { EncryptionType } from "../../enums/encryptionType";
 import { Utils } from "../../misc/utils";
 
@@ -27,30 +26,6 @@ export class EncString implements IEncrypted {
     } else {
       this.initFromEncryptedString(encryptedStringOrType as string);
     }
-  }
-
-  async decrypt(orgId: string, key: SymmetricCryptoKey = null): Promise<string> {
-    if (this.decryptedValue != null) {
-      return this.decryptedValue;
-    }
-
-    let cryptoService: CryptoService;
-    const containerService = Utils.global.bitwardenContainerService;
-    if (containerService) {
-      cryptoService = containerService.getCryptoService();
-    } else {
-      throw new Error("global bitwardenContainerService not initialized.");
-    }
-
-    try {
-      if (key == null) {
-        key = await cryptoService.getOrgKey(orgId);
-      }
-      this.decryptedValue = await cryptoService.decryptToUtf8(this, key);
-    } catch (e) {
-      this.decryptedValue = "[error: cannot decrypt]";
-    }
-    return this.decryptedValue;
   }
 
   get ivBytes(): ArrayBuffer {
@@ -159,5 +134,33 @@ export class EncString implements IEncrypted {
       encType,
       encPieces,
     };
+  }
+
+  async decrypt(orgId: string, key: SymmetricCryptoKey = null): Promise<string> {
+    if (this.decryptedValue != null) {
+      return this.decryptedValue;
+    }
+
+    try {
+      if (key == null) {
+        key = await this.getKeyForDecryption(orgId);
+      }
+      if (key == null) {
+        throw new Error("No key to decrypt EncString with orgId " + orgId);
+      }
+
+      const encryptService = Utils.getContainerService().getEncryptService();
+      this.decryptedValue = await encryptService.decryptToUtf8(this, key);
+    } catch (e) {
+      this.decryptedValue = "[error: cannot decrypt]";
+    }
+    return this.decryptedValue;
+  }
+
+  private async getKeyForDecryption(orgId: string) {
+    const cryptoService = Utils.getContainerService().getCryptoService();
+    return orgId != null
+      ? await cryptoService.getOrgKey(orgId)
+      : await cryptoService.getKeyForUserEncryption();
   }
 }

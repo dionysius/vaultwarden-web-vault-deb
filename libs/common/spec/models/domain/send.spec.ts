@@ -1,5 +1,6 @@
 import Substitute, { Arg, SubstituteOf } from "@fluffy-spoon/substitute";
 
+import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { SendData } from "@bitwarden/common/models/data/sendData";
@@ -110,7 +111,9 @@ describe("Send", () => {
     cryptoService.decryptToBytes(send.key, null).resolves(makeStaticByteArray(32));
     cryptoService.makeSendKey(Arg.any()).resolves("cryptoKey" as any);
 
-    (window as any).bitwardenContainerService = new ContainerService(cryptoService);
+    const encryptService = Substitute.for<AbstractEncryptService>();
+
+    (window as any).bitwardenContainerService = new ContainerService(cryptoService, encryptService);
 
     const view = await send.decrypt();
 

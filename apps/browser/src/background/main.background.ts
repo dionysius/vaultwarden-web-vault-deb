@@ -413,7 +413,7 @@ export default class MainBackground {
       this.eventService,
       this.logService
     );
-    this.containerService = new ContainerService(this.cryptoService);
+    this.containerService = new ContainerService(this.cryptoService, this.encryptService);
     this.auditService = new AuditService(this.cryptoFunctionService, this.apiService);
     this.exportService = new ExportService(
       this.folderService,

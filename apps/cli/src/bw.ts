@@ -193,7 +193,7 @@ export class Main {
 
     this.organizationApiService = new OrganizationApiService(this.apiService);
 
-    this.containerService = new ContainerService(this.cryptoService);
+    this.containerService = new ContainerService(this.cryptoService, this.encryptService);
 
     this.settingsService = new SettingsService(this.stateService);
 
