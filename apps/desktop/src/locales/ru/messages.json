@@ -107,7 +107,7 @@
     "message": "Код подтверждения (TOTP)"
   },
   "website": {
-    "message": "Веб-сайт"
+    "message": "Сайт"
   },
   "notes": {
     "message": "Заметки"
@@ -898,7 +898,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Показать значки веб-сайтов"
+    "message": "Показать значки сайтов"
   },
   "faviconDesc": {
     "message": "Отображать узнаваемое изображение рядом с каждым логином."
@@ -1930,11 +1930,11 @@
     "message": "Тип имени пользователя"
   },
   "plusAddressedEmail": {
-    "message": "Плюс-адресованные email",
+    "message": "Субадресованные email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Использовать возможности суб-адресации вашего провайдера электронной почты."
+    "message": "Используйте возможности субадресации вашей электронной почты."
   },
   "catchallEmail": {
     "message": "Catch-all-адрес электронной почты"

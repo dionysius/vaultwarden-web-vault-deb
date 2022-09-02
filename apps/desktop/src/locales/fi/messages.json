@@ -1930,17 +1930,17 @@
     "message": "Käyttäjätunnuksen tyyppi"
   },
   "plusAddressedEmail": {
-    "message": "Plus-osoitteinen sähköposti",
+    "message": "Plus+merkkinen sähköposti",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Käytä sähköpostipalvelusi aliosoiteominaisuuksia."
   },
   "catchallEmail": {
-    "message": "Catch-all-sähköpostiosoite"
+    "message": "Catch-all-sähköposti"
   },
   "catchallEmailDesc": {
-    "message": "Käytä verkkotunnuksellesi määritettyä catch-all-postilaatikkoa."
+    "message": "Käytä verkkotunnuksesi catch-all-postilaatikkoa."
   },
   "random": {
     "message": "Satunnainen"
@@ -1964,7 +1964,7 @@
     "message": "Hae omasta holvista"
   },
   "forwardedEmail": {
-    "message": "Välitykseen käytetty sähköpostialias"
+    "message": "Sähköpostialias välitykseen"
   },
   "forwardedEmailDesc": {
     "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."
