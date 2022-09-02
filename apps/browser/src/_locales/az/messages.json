@@ -7,11 +7,11 @@
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Bütün cihazlarınız üçün təhlükəsiz və ödənişsiz bir parol meneceri.",
+    "message": "Bütün cihazlarınız üçün güvənli və ödənişsiz bir parol meneceri.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Təhlükəsiz anbarınıza müraciət etmək üçün giriş edin və ya yeni bir hesab yaradın."
+    "message": "Güvənli anbarınıza müraciət etmək üçün giriş edin və ya yeni bir hesab yaradın."
   },
   "createAccount": {
     "message": "Hesab yarat"
@@ -86,7 +86,7 @@
     "message": "Nömrəni kopyala"
   },
   "copySecurityCode": {
-    "message": "Təhlükəsizlik kodunu kopyala"
+    "message": "Güvənlik kodunu kopyala"
   },
   "autoFill": {
     "message": "Avto-doldurma"
@@ -107,7 +107,7 @@
     "message": "Anbarınıza giriş edin"
   },
   "autoFillInfo": {
-    "message": "Hazırkı səyyah vərəqi üçün avto-doldurulacaq giriş məlumatları yoxdur."
+    "message": "Hazırkı brauzer vərəqi üçün avto-doldurulacaq giriş məlumatları yoxdur."
   },
   "addLogin": {
     "message": "Hesab əlavə et"
@@ -336,7 +336,7 @@
     "message": "Gözəl bir rəy ilə bizə dəstək ola bilərsiniz!"
   },
   "browserNotSupportClipboard": {
-    "message": "Veb səyyahınız lövhəyə kopyalamağı dəstəkləmir. Əvəzində əllə kopyalayın."
+    "message": "Veb brauzeriniz lövhəyə kopyalamağı dəstəkləmir. Əvəzində əllə kopyalayın."
   },
   "verifyIdentity": {
     "message": "Kimliyi təsdiqləyin"
@@ -361,7 +361,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Etibarsız ana parol"
+    "message": "Yararsız ana parol"
   },
   "vaultTimeout": {
     "message": "Anbara müraciət bitəcək"
@@ -406,13 +406,13 @@
     "message": "Sistem kilidlənəndə"
   },
   "onRestart": {
-    "message": "Səyyah yenidən başladılanda"
+    "message": "Brauzer yenidən başladılanda"
   },
   "never": {
     "message": "Heç vaxt"
   },
   "security": {
-    "message": "Təhlükəsizlik"
+    "message": "Güvənlik"
   },
   "errorOccurred": {
     "message": "Bir xəta baş verdi"
@@ -421,7 +421,7 @@
     "message": "E-poçt ünvanı lazımdır."
   },
   "invalidEmail": {
-    "message": "Etibarsız e-poçt ünvanı."
+    "message": "Yararsız e-poçt ünvanı."
   },
   "masterPasswordRequired": {
     "message": "Ana parol lazımdır."
@@ -445,7 +445,7 @@
     "message": "Təsdiq kodu lazımdır."
   },
   "invalidVerificationCode": {
-    "message": "Etibarsız təsdiqləmə kodu"
+    "message": "Yararsız təsdiqləmə kodu"
   },
   "valueCopied": {
     "message": "$VALUE$ kopyalandı",
@@ -491,7 +491,7 @@
     "message": "Ana parolunuzu bitwarden.com veb anbarında dəyişdirə bilərsiniz. İndi saytı ziyarət etmək istəyirsiniz?"
   },
   "twoStepLoginConfirmation": {
-    "message": "İki mərhələli giriş, təhlükəsizlik açarı, kimlik təsdiqləyici tətbiq, SMS, telefon zəngi və ya e-poçt kimi digər cihazlarla girişinizi təsdiqləməyinizi tələb edərək hesabınızı daha da təhlükəsiz edir. İki mərhələli giriş, bitwarden.com veb anbarında fəallaşdırıla bilər. Veb saytı indi ziyarət etmək istəyirsiniz?"
+    "message": "İki mərhələli giriş, güvənlik açarı, kimlik təsdiqləyici tətbiq, SMS, telefon zəngi və ya e-poçt kimi digər cihazlarla girişinizi təsdiqləməyinizi tələb edərək hesabınızı daha da güvənli edir. İki mərhələli giriş, bitwarden.com veb anbarında fəallaşdırıla bilər. Veb saytı indi ziyarət etmək istəyirsiniz?"
   },
   "editedFolder": {
     "message": "Qovluğa düzəliş edildi"
@@ -506,7 +506,7 @@
     "message": "Başlanğıc təlimatı"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Səyyah genişləndirməsindən necə daha yaxşı faydalanmağı öyrənmək üçün başlanğıc təlimatına baxa bilərsiniz."
+    "message": "Brauzer genişləndirməsindən necə daha yaxşı faydalanmağı öyrənmək üçün başlanğıc təlimatına baxa bilərsiniz."
   },
   "syncingComplete": {
     "message": "Eyniləşdirmə tamamlandı"
@@ -609,10 +609,10 @@
     "message": "Bir veb saytda dəyişiklik aşkarlananda giriş parolunun güncəllənməsini soruşun."
   },
   "notificationChangeDesc": {
-    "message": "Bu parolu \"Bitwarden\"də yeniləmək istəyirsiniz?"
+    "message": "Bu parolu \"Bitwarden\"də güncəlləmək istəyirsiniz?"
   },
   "notificationChangeSave": {
-    "message": "Bəli, indi yenilə"
+    "message": "Güncəllə"
   },
   "enableContextMenuItem": {
     "message": "Konteks menyu seçimlərini göstər"
@@ -659,7 +659,7 @@
     "message": "Anbarın ixracını təsdiqləyin"
   },
   "exportWarningDesc": {
-    "message": "Bu ixrac faylındakı anbar verilənləriniz şifrələnməmiş formatdadır. İxrac edilən faylı saxlamamalı və etibarsız yollarla (e-poçt kimi) göndərməməlisiniz. Bu faylı işiniz bitdikdən sonra dərhal silin."
+    "message": "Bu ixrac faylındakı anbar verilənləriniz şifrələnməmiş formatdadır. İxrac edilən faylı, güvənli olmayan kanallar üzərində saxlamamalı və ya göndərməməlisiniz (e-poçt kimi). Bu faylı işiniz bitdikdən sonra dərhal silin."
   },
   "encExportKeyWarningDesc": {
     "message": "Bu ixrac faylı, hesabınızın şifrələmə açarını istifadə edərək verilənlərinizi şifrələyir. Hesabınızın şifrələmə açarını döndərsəniz, bu ixrac faylının şifrəsini aça bilməyəcəyiniz üçün yenidən ixrac etməli olacaqsınız."
@@ -747,7 +747,7 @@
     "message": "Özəllik əlçatmazdır"
   },
   "updateKey": {
-    "message": "Şifrələmə açarınızı yeniləyənə qədər bu özəlliyi istifadə edə bilməzsiniz."
+    "message": "Şifrələmə açarınızı güncəlləyənə qədər bu özəlliyi istifadə edə bilməzsiniz."
   },
   "premiumMembership": {
     "message": "Premium üzvlük"
@@ -858,7 +858,7 @@
     "message": "\"YubiKey\"i kompüterinizin USB portuna taxın, daha sonra düyməsinə toxunun."
   },
   "insertU2f": {
-    "message": "Təhlükəsizlik açarını kompüterinizin USB portun taxın. Düyməsi varsa toxunun."
+    "message": "Güvənlik açarını kompüterinizin USB portun taxın. Düyməsi varsa toxunun."
   },
   "webAuthnNewTab": {
     "message": "WebAuthn 2FA təsdiqləməsini başladın. Yeni bir vərəq açmaq üçün aşağıdakı düyməyə klikləyin və yeni vərəqdəki təlimatları izləyin."
@@ -873,16 +873,16 @@
     "message": "Giriş edilə bilmir"
   },
   "noTwoStepProviders": {
-    "message": "Bu hesabın iki mərhələli giriş özəlliyi fəaldır, ancaq, konfiqurasiya edilmiş iki mərhələli təchizatçıların heç biri bu səyyah tərəfindən dəstəklənmir."
+    "message": "Bu hesabın iki mərhələli giriş özəlliyi fəaldır, ancaq, konfiqurasiya edilmiş iki mərhələli provayderlərin heç biri bu brauzer tərəfindən dəstəklənmir."
   },
   "noTwoStepProviders2": {
-    "message": "Zəhmət olmasa (Chrome kimi) dəstəklənən bir veb səyyah istifadə edin və/və ya veb səyyahlara (kimlik təsdiqləyici tətbiq kimi) daha yaxşı dəstəklənən təchizatçılar əlavə edin."
+    "message": "Zəhmət olmasa (Chrome kimi) dəstəklənən bir veb brauzer istifadə edin və/və ya veb brauzerlərə (kimlik təsdiqləyici tətbiq kimi) daha yaxşı dəstəklənən provayderlər əlavə edin."
   },
   "twoStepOptions": {
     "message": "İki mərhələli giriş seçimləri"
   },
   "recoveryCodeDesc": {
-    "message": "İki mərhələli təsdiqləmə təchizatçılarına müraciəti itirmisiniz? Bərpa kodunuzu istifadə edərək hesabınızdakı bütün iki mərhələli təchizatçıları sıradan çıxara bilərsiniz."
+    "message": "İki mərhələli təsdiqləmə provayderlərinə müraciəti itirmisiniz? Bərpa kodunuzu istifadə edərək hesabınızdakı bütün iki mərhələli provayderləri sıradan çıxara bilərsiniz."
   },
   "recoveryCodeTitle": {
     "message": "Bərpa kodu"
@@ -895,24 +895,24 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP təhlükəsizlik açarı"
+    "message": "YubiKey OTP güvənlik açarı"
   },
   "yubiKeyDesc": {
     "message": "Hesabınıza müraciət etmək üçün bir YubiKey istifadə edin. YubiKey 4, 4 Nano, 4C və NEO cihazları ilə işləyir."
   },
   "duoDesc": {
-    "message": "Duo Security ilə təsdiqləmək üçün Duo Mobile tətbiqi, SMS, telefon zəngi və ya U2F təhlükəsizlik açarını istifadə edin.",
+    "message": "Duo Security ilə təsdiqləmək üçün Duo Mobile tətbiqi, SMS, telefon zəngi və ya U2F güvənlik açarını istifadə edin.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Təşkilatınızını Duo Security ilə təsdiqləmək üçün Duo Mobile tətbiqi, SMS, telefon zəngi və ya U2F təhlükəsizlik açarını istifadə edin.",
+    "message": "Təşkilatınızını Duo Security ilə təsdiqləmək üçün Duo Mobile tətbiqi, SMS, telefon zəngi və ya U2F güvənlik açarını istifadə edin.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Hesabınıza müraciət etmək üçün hər hansısa bir WebAuthn fəallaşdırılan təhlükəsizlik açarı istifadə edin."
+    "message": "Hesabınıza müraciət etmək üçün istənilən bir WebAuthn fəallaşdırılmış güvənlik açarı istifadə edin."
   },
   "emailTitle": {
     "message": "E-poçt"
@@ -1034,7 +1034,7 @@
     "message": "Təsdiqləmə kodunu alacağınız e-poçtu yoxlamaq üçün bu pəncərə xaricində bir yerə klikləsəniz bu pəncərə bağlanacaq. Bu pəncərənin bağlanmaması üçün yeni bir pəncərədə açmaq istəyirsiniz?"
   },
   "popupU2fCloseMessage": {
-    "message": "Bu səyyah bu açılan pəncərədə U2F tələblərini emal edə bilmir. U2F istifadə edərək giriş etmək üçün bu açılan pəncərəni yeni bir pəncərədə açmaq istəyirsiniz?"
+    "message": "Bu brauzer bu açılan pəncərədə U2F tələblərini emal edə bilmir. U2F istifadə edərək giriş etmək üçün bu açılan pəncərəni yeni bir pəncərədə açmaq istəyirsiniz?"
   },
   "enableFavicon": {
     "message": "Veb sayt nişanlarını göstər"
@@ -1103,7 +1103,7 @@
     "message": "Dekabr"
   },
   "securityCode": {
-    "message": "Təhlükəsizlik kodu"
+    "message": "Güvənlik kodu"
   },
   "ex": {
     "message": "məs."
@@ -1142,7 +1142,7 @@
     "message": "Şirkət"
   },
   "ssn": {
-    "message": "Sosial təhlükəsizlik nömrəsi"
+    "message": "Sosial güvənlik nömrəsi"
   },
   "passportNumber": {
     "message": "Pasport nömrəsi"
@@ -1190,7 +1190,7 @@
     "message": "Girişlər"
   },
   "typeSecureNote": {
-    "message": "Təhlükəsizlik qeydi"
+    "message": "Güvənli qeyd"
   },
   "typeCard": {
     "message": "Kart"
@@ -1226,7 +1226,7 @@
     "message": "Girişlər"
   },
   "secureNotes": {
-    "message": "Təhlükəsizlik qeydləri"
+    "message": "Güvənli qeydlər"
   },
   "clear": {
     "message": "Təmizlə",
@@ -1308,18 +1308,18 @@
     "message": "İlkin"
   },
   "dateUpdated": {
-    "message": "Yeniləndi",
+    "message": "Güncəlləndi",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Parol yeniləndi",
+    "message": "Parol güncəlləndi",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
     "message": "\"Heç vaxt\" seçimini istifadə etmək istədiyinizə əminsiniz? Kilid seçimini \"Heç vaxt\" olaraq tənzimləsəniz, anbarınızın şifrələmə açarı cihazınızda saxlanılacaq. Bu seçimi istifadə etsəniz, cihazınızı daha yaxşı mühafizə etməlisiniz."
   },
   "noOrganizationsList": {
-    "message": "Heç bir təşkilata aid deyilsiniz. Təşkilatlar, elementlərinizi digər istifadəçilərlə təhlükəsiz şəkildə paylaşmağınızı təmin edir."
+    "message": "Heç bir təşkilata aid deyilsiniz. Təşkilatlar, elementlərinizi digər istifadəçilərlə güvənli şəkildə paylaşmağınızı təmin edir."
   },
   "noCollectionsInList": {
     "message": "Siyahılanacaq heç bir kolleksiya yoxdur."
@@ -1362,7 +1362,7 @@
     "message": "PIN kod lazımdır."
   },
   "invalidPin": {
-    "message": "Etibarsız PIN kod."
+    "message": "Yararsız PIN kod."
   },
   "unlockWithBiometrics": {
     "message": "Biometriklərlə kilidi açın"
@@ -1371,10 +1371,10 @@
     "message": "Masaüstündən təsdiq gözlənilir"
   },
   "awaitDesktopDesc": {
-    "message": "Səyyah üçün biometrikləri fəallaşdırmaq üçün zəhmət olmasa Bitwarden masaüstü tətbiqində biometrik istifadəsini təsdiqləyin."
+    "message": "Brauzer üçün biometrikləri fəallaşdırmaq üçün zəhmət olmasa Bitwarden masaüstü tətbiqində biometrik istifadəsini təsdiqləyin."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Səyyah yenidən başladılanda ana parol ilə kilidlə"
+    "message": "Brauzer yenidən başladılanda ana parolla kilidlə"
   },
   "selectOneCollection": {
     "message": "Ən azı bir kolleksiya seçməlisiniz."
@@ -1505,10 +1505,10 @@
     "message": "Zəhmət olmasa masaüstü tətbiqin bu barmaq izini gördüyünü təsdiqləyin:"
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Səyyah inteqrasiyası fəal deyil"
+    "message": "Brauzer inteqrasiyası fəal deyil"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Səyyah inteqrasiyası Bitwarden masaüstü tətbiqində fəal deyil. Zəhmət olmasa masaüstü tətbiqinin tənzimləmələrində fəallaşdırın."
+    "message": "Brauzer inteqrasiyası Bitwarden masaüstü tətbiqində fəal deyil. Zəhmət olmasa masaüstü tətbiqinin tənzimləmələrində fəallaşdırın."
   },
   "startDesktopTitle": {
     "message": "Bitwarden masaüstü tətbiqini başlat"
@@ -1523,7 +1523,7 @@
     "message": "Əməliyyat, masaüstü tətbiqi tərəfindən ləğv edildi"
   },
   "nativeMessagingInvalidEncryptionDesc": {
-    "message": "Masaüstü tətbiqi, təhlükəsiz rabitə kanalını qüvvədən saldı. Bu əməliyyatı yenidən icra edin"
+    "message": "Masaüstü tətbiqi, güvənli rabitə kanalını yararsız etdi. Bu əməliyyatı yenidən icra edin"
   },
   "nativeMessagingInvalidEncryptionTitle": {
     "message": "Masaüstü rabitə əlaqəsi kəsildi"
@@ -1538,19 +1538,19 @@
     "message": "Biometriklə fəal deyil"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Səyyah biometrikləri, əvvəlcə tənzimləmələrdə masaüstü biometriklərinin fəallaşdırılmasını tələb edir."
+    "message": "Brauzer biometrikləri, əvvəlcə tənzimləmələrdə masaüstü biometriklərinin fəallaşdırılmasını tələb edir."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometriklər dəstəklənmir"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Səyyah biometrikləri bu cihazda dəstəklənmir"
+    "message": "Brauzer biometrikləri bu cihazda dəstəklənmir."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "İcazə verilmədi"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Bitwarden masaüstü tətbiqi ilə əlaqə qurma icazəsi olmadan, səyyah genişləndirməsində biometrikləri təmin edə bilmərik. Zəhmət olmasa yenidən sınayın."
+    "message": "Bitwarden masaüstü tətbiqi ilə əlaqə qurma icazəsi olmadan, brauzer genişləndirməsində biometrikləri təmin edə bilmərik. Zəhmət olmasa yenidən sınayın."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "İcazə tələb xətası"
@@ -1810,13 +1810,13 @@
     "message": "Bu özəlliyi istifadə etmək üçün e-poçtunuzu təsdiqləməlisiniz. E-poçtunuzu veb anbarında təsdiqləyə bilərsiniz."
   },
   "updatedMasterPassword": {
-    "message": "Yenilənmiş ana parol"
+    "message": "Güncəllənmiş ana parol"
   },
   "updateMasterPassword": {
-    "message": "Ana parolu yenilə"
+    "message": "Ana parolu güncəllə"
   },
   "updateMasterPasswordWarning": {
-    "message": "Ana parolunuz təzəlikcə təşkilatınızdakı bir administrator tərəfindən dəyişdirildi. Anbara müraciət üçün indi yeniləməlisiniz. Davam etsəniz, hazırkı seansdan çıxış etmiş və təkrar giriş etməli olacaqsınız. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər."
+    "message": "Ana parolunuz təzəlikcə təşkilatınızdakı bir administrator tərəfindən dəyişdirildi. Anbara müraciət üçün indi güncəlləməlisiniz. Davam etsəniz, hazırkı seansdan çıxış etmiş və təkrar giriş etməli olacaqsınız. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Avtomatik qeydiyyat"
@@ -1923,7 +1923,7 @@
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "E-poçt təchizatçınızın alt ünvan özəlliklərini istifadə et."
+    "message": "E-poçt provayderinizin alt ünvan özəlliklərini istifadə et."
   },
   "catchallEmail": {
     "message": "Catch-all E-poçt"
