@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "無效的主密碼"
   },
+  "invalidFilePassword": {
+    "message": "檔案密碼無效，請使用創建匯出檔案時輸入的密碼。"
+  },
   "lockNow": {
     "message": "立即鎖定"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "檔案格式"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "此檔案匯出將受密碼保護，需要檔案密碼才能解密。"
+  },
+  "exportPasswordDescription": {
+    "message": "此密碼將用於匯出和匯入此檔案"
+  },
+  "confirmMasterPassword": {
+    "message": "確認主密碼"
+  },
+  "confirmFormat": {
+    "message": "確認格式"
+  },
+  "filePassword": {
+    "message": "檔案密碼"
+  },
+  "confirmFilePassword": {
+    "message": "確認檔案密碼"
+  },
+  "accountBackupOptionDescription": {
+    "message": "使用您的帳戶加密金鑰來加密匯出的資料，並限制只能匯入到目前的 Bitwarden 帳戶。"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "設定一个密碼來加密匯出的資料，並使用密碼解密以匯入到任何 Bitwarden 帳戶。"
+  },
+  "fileTypeHeading": {
+    "message": "檔案類型"
+  },
+  "accountBackup": {
+    "message": "帳戶備份"
+  },
+  "passwordProtected": {
+    "message": "密碼保護"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "「檔案密碼」與「確認檔案密碼」不一致。"
+  },
+  "confirmVaultImport": {
+    "message": "確認密碼庫匯入"
+  },
+  "confirmVaultImportDesc": {
+    "message": "此檔案受密碼保護，請輸入檔案密碼以匯入資料。"
   },
   "exportSuccess": {
     "message": "已匯出您的密碼庫資料。"

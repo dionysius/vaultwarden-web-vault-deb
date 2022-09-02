@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Hasło główne jest nieprawidłowe"
   },
+  "invalidFilePassword": {
+    "message": "Nieprawidłowe hasło, użyj hasła, które wprowadziłeś podczas tworzenia pliku eksportu."
+  },
   "lockNow": {
     "message": "Zablokuj"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Format pliku"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Ten plik będzie chroniony hasłem i będzie wymagał tego hasła do odszyfrowania."
+  },
+  "exportPasswordDescription": {
+    "message": "To hasło będzie używane do eksportu i importu tego pliku"
+  },
+  "confirmMasterPassword": {
+    "message": "Potwierdź hasło główne"
+  },
+  "confirmFormat": {
+    "message": "Potwierdź format"
+  },
+  "filePassword": {
+    "message": "Hasło do pliku"
+  },
+  "confirmFilePassword": {
+    "message": "Potwierdź hasło do pliku"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Wykorzystuje szyfrowanie konta Bitwarden, a nie hasło główne, aby chronić eksport. Ten eksport może być zaimportowany tylko na tym koncie. Użyj tego, aby utworzyć kopię zapasową, której nie można użyć nigdzie indziej."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Utwórz hasło wygenerowane przez użytkownika, aby chronić eksport. Użyj tego, aby utworzyć eksport, który może być używany na innych kontach."
+  },
+  "fileTypeHeading": {
+    "message": "Typ Pliku"
+  },
+  "accountBackup": {
+    "message": "Kopia zapasowa konta"
+  },
+  "passwordProtected": {
+    "message": "Zabezpieczone hasłem"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Hasło do pliku\" i \"Potwierdź hasło do pliku\" nie pasują do siebie."
+  },
+  "confirmVaultImport": {
+    "message": "Potwierdź import sejfu"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Ten plik jest chroniony hasłem. Wprowadź hasło pliku, aby zaimportować dane."
   },
   "exportSuccess": {
     "message": "Dane z sejfu zostały wyeksportowane."

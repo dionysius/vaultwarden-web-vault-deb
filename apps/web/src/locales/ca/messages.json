@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Contrasenya mestra no vàlida"
   },
+  "invalidFilePassword": {
+    "message": "La contrasenya del fitxer no és vàlida. Utilitzeu la contrasenya que vau introduir quan vau crear el fitxer d'exportació."
+  },
   "lockNow": {
     "message": "Bloqueja ara"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Format de fitxer"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Aquesta exportació de fitxers estarà protegida amb contrasenya i requerirà la contrasenya del fitxer per desxifrar-la."
+  },
+  "exportPasswordDescription": {
+    "message": "Aquesta contrasenya s'utilitzarà per exportar i importar aquest fitxer"
+  },
+  "confirmMasterPassword": {
+    "message": "Confirma la contrasenya mestra"
+  },
+  "confirmFormat": {
+    "message": "Confirma el format"
+  },
+  "filePassword": {
+    "message": "Contrasenya del fitxer"
+  },
+  "confirmFilePassword": {
+    "message": "Confirma la contrasenya del fitxer"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Utilitzeu la clau de xifratge del vostre compte per xifrar l'exportació i restringir la importació només al compte de Bitwarden actual."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Establiu una contrasenya per xifrar l'exportació i importeu-la a qualsevol compte de Bitwarden mitjançant aquesta contrasenya."
+  },
+  "fileTypeHeading": {
+    "message": "Tipus de fitxer"
+  },
+  "accountBackup": {
+    "message": "Còpia de seguretat del compte"
+  },
+  "passwordProtected": {
+    "message": "Protegit amb contrasenya"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Contrasenya del fitxer\" i \"Confirma contrasenya del fitxer\" no coincideixen."
+  },
+  "confirmVaultImport": {
+    "message": "Confirma la importació de la Caixa forta"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Aquest fitxer està protegit amb contrasenya. Introduïu-la per importar dades."
   },
   "exportSuccess": {
     "message": "S'han exportat les dades de la vostra caixa forta."

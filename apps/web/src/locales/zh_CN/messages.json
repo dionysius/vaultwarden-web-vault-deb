@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "无效的主密码"
   },
+  "invalidFilePassword": {
+    "message": "无效的文件密码，请使用您创建导出文件时输入的密码。"
+  },
   "lockNow": {
     "message": "立即锁定"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "文件格式"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "此文件导出将受密码保护，需要文件密码才能解密。"
+  },
+  "exportPasswordDescription": {
+    "message": "此密码将用于导出和导入此文件"
+  },
+  "confirmMasterPassword": {
+    "message": "确认主密码"
+  },
+  "confirmFormat": {
+    "message": "确认格式"
+  },
+  "filePassword": {
+    "message": "文件密码"
+  },
+  "confirmFilePassword": {
+    "message": "确认文件密码"
+  },
+  "accountBackupOptionDescription": {
+    "message": "使用您的账户加密密钥来加密导出的数据，并且限制只能导入到当前的 Bitwarden 账户。"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "设置一个密码来加密导出的数据，并使用密码解密以导入到任何 Bitwarden 账户。"
+  },
+  "fileTypeHeading": {
+    "message": "文件类型"
+  },
+  "accountBackup": {
+    "message": "帐户备份"
+  },
+  "passwordProtected": {
+    "message": "密码保护"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "「文件密码」与「确认文件密码」不一致。"
+  },
+  "confirmVaultImport": {
+    "message": "确认密码库导入"
+  },
+  "confirmVaultImportDesc": {
+    "message": "此文件受密码保护。请输入文件密码以导入数据。"
   },
   "exportSuccess": {
     "message": "已经导出您的密码库数据。"

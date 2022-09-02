@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Palavra-passe mestra inválida"
   },
+  "invalidFilePassword": {
+    "message": "Senha do ficheiro inválida, por favor use a senha que definiu quando criou o arquivo de exportação."
+  },
   "lockNow": {
     "message": "Bloquear agora"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Formato do ficheiro"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Esta exportação de arquivo será protegida por senha e exigirá a senha do arquivo para descriptografar."
+  },
+  "exportPasswordDescription": {
+    "message": "Esta senha será usada para exportar e importar este arquivo"
+  },
+  "confirmMasterPassword": {
+    "message": "Confirme a Senha Mestra"
+  },
+  "confirmFormat": {
+    "message": "Confirmar Formato"
+  },
+  "filePassword": {
+    "message": "Senha do Arquivo"
+  },
+  "confirmFilePassword": {
+    "message": "Confirmar senha do arquivo"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Aproveite a criptografia da sua conta Bitwarden, não a senha mestra, para proteger a exportação. Esta exportação só pode ser importada para a conta atual. Use-a para criar um backup que não pode ser usado em outro lugar."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Crie uma senha gerada pelo utilizador para proteger a exportação. Use isto para criar uma exportação que pode ser usada em outras contas."
+  },
+  "fileTypeHeading": {
+    "message": "Tipo de ficheiro"
+  },
+  "accountBackup": {
+    "message": "Backup da Conta"
+  },
+  "passwordProtected": {
+    "message": "Protegido por senha"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Senha do ficheiro\" e \"Confirmação da senha do ficheiro\" não correspondem."
+  },
+  "confirmVaultImport": {
+    "message": "Confirmar Importação do Cofre"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Este ficheiro é protegido por senha. Por favor, digite a senha do ficheiro para importar os dados."
   },
   "exportSuccess": {
     "message": "Os dados do seu cofre foram exportados."
@@ -4147,7 +4192,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendCreatorIdentifier": {
-    "message": "O utilizaador do Bitwarden $USER_IDENTIFIER$ compartilhou o seguinte consigo",
+    "message": "O utilizador do Bitwarden $USER_IDENTIFIER$ compartilhou o seguinte consigo",
     "placeholders": {
       "user_identifier": {
         "content": "$1",

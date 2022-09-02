@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Invalid master password"
   },
+  "invalidFilePassword": {
+    "message": "Invalid file password, please use the password you entered when you created the export file."
+  },
   "lockNow": {
     "message": "Lock now"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "File format"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "This file export will be password protected and require the file password to decrypt."
+  },
+  "exportPasswordDescription": {
+    "message": "This password will be used to export and import this file"
+  },
+  "confirmMasterPassword": {
+    "message": "Confirm Master Password"
+  },
+  "confirmFormat": {
+    "message": "Confirm Format"
+  },
+  "filePassword": {
+    "message": "File Password"
+  },
+  "confirmFilePassword": {
+    "message": "Confirm File Password"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Leverages your Bitwarden account encryption, not master password, to protect the export. This export can only be imported into the current account. Use this to create a backup that cannot be used elsewhere."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Create a user-generated password to protect the export. Use this to create an export that can be used in other accounts."
+  },
+  "fileTypeHeading": {
+    "message": "File Type"
+  },
+  "accountBackup": {
+    "message": "Account Backup"
+  },
+  "passwordProtected": {
+    "message": "Password Protected"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "“File password”  and “Confirm File Password“ do not match."
+  },
+  "confirmVaultImport": {
+    "message": "Confirm Vault Import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "This file is password-protected. Please enter the file password to import data."
   },
   "exportSuccess": {
     "message": "Your vault data has been exported."

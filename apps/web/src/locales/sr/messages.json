@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Погрешна главна лозинка"
   },
+  "invalidFilePassword": {
+    "message": "Invalid file password, please use the password you entered when you created the export file."
+  },
   "lockNow": {
     "message": "Закључај одмах"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Формат датотеке"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "This file export will be password protected and require the file password to decrypt."
+  },
+  "exportPasswordDescription": {
+    "message": "This password will be used to export and import this file"
+  },
+  "confirmMasterPassword": {
+    "message": "Confirm Master Password"
+  },
+  "confirmFormat": {
+    "message": "Confirm Format"
+  },
+  "filePassword": {
+    "message": "File Password"
+  },
+  "confirmFilePassword": {
+    "message": "Confirm File Password"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Use your account encryption key to encrypt the export and restrict import to only the current Bitwarden account."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Set a password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+  },
+  "fileTypeHeading": {
+    "message": "File Type"
+  },
+  "accountBackup": {
+    "message": "Account Backup"
+  },
+  "passwordProtected": {
+    "message": "Password Protected"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "“File password”  and “Confirm File Password“ do not match."
+  },
+  "confirmVaultImport": {
+    "message": "Confirm Vault Import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "This file is password-protected. Please enter the file password to import data."
   },
   "exportSuccess": {
     "message": "Податци сефа су извежени."

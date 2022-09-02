@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Mot de passe maître invalide"
   },
+  "invalidFilePassword": {
+    "message": "Mot de passe de fichier invalide, veuillez utiliser le mot de passe que vous avez entré lorsque vous avez créé le fichier d'exportation."
+  },
   "lockNow": {
     "message": "Verrouiller maintenant"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Format de fichier"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Ce fichier d'exportation sera protégé par mot de passe et nécessitera le mot de passe pour que le fichier soit déchiffré."
+  },
+  "exportPasswordDescription": {
+    "message": "Ce mot de passe sera utilisé pour exporter et importer ce fichier"
+  },
+  "confirmMasterPassword": {
+    "message": "Confirmer le Mot de Passe Maître"
+  },
+  "confirmFormat": {
+    "message": "Confirmer le Format"
+  },
+  "filePassword": {
+    "message": "Mot de Passe du Fichier"
+  },
+  "confirmFilePassword": {
+    "message": "Confirmer le Mot de Passe du Fichier"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Utilise le chiffrement de votre compte Bitwarden pour protéger l'exportation, pas celui du mot de passe maître. Cette exportation ne peut être importée que dans le compte actuel. Utilisez ceci pour créer une sauvegarde qui ne peut pas être utilisée ailleurs."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Créez un mot de passe généré par l'utilisateur pour protéger l'exportation. Utilisez ceci pour créer une exportation qui peut être utilisée dans d'autres comptes."
+  },
+  "fileTypeHeading": {
+    "message": "Types de Fichier"
+  },
+  "accountBackup": {
+    "message": "Sauvegarde du Compte"
+  },
+  "passwordProtected": {
+    "message": "Protégé par Mot de Passe"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "Le \"Mot de Passe\" et le \"Mot de Passe Confirmé\" ne correspondent pas."
+  },
+  "confirmVaultImport": {
+    "message": "Confirmer l'Importation du Coffre"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Ce fichier est protégé par mot de passe. Veuillez entrer le mot de passe du fichier pour importer des données."
   },
   "exportSuccess": {
     "message": "Les données de votre coffre ont été exportées."

@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "マスターパスワードが間違っています"
   },
+  "invalidFilePassword": {
+    "message": "無効なファイルパスワードです。エクスポートファイルを作成したときに入力したパスワードを使用してください。"
+  },
   "lockNow": {
     "message": "今すぐロック"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "ファイル形式"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "エクスポートするファイルはパスワードで保護され、復号するにはファイルパスワードが必要になります。"
+  },
+  "exportPasswordDescription": {
+    "message": "このパスワードはこのファイルのエクスポートとインポート時に使用します"
+  },
+  "confirmMasterPassword": {
+    "message": "マスターパスワードの確認"
+  },
+  "confirmFormat": {
+    "message": "フォーマットの確認"
+  },
+  "filePassword": {
+    "message": "ファイルパスワード"
+  },
+  "confirmFilePassword": {
+    "message": "ファイルパスワードの確認"
+  },
+  "accountBackupOptionDescription": {
+    "message": "アカウントの暗号化キーを使用してエクスポートを暗号化し、インポートを現在の Bitwarden アカウントのみに制限します。"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "エクスポートを暗号化するためのパスワードを設定します。そのパスワードを使用して、任意の Bitwarden アカウントにインポートします。"
+  },
+  "fileTypeHeading": {
+    "message": "ファイル形式"
+  },
+  "accountBackup": {
+    "message": "アカウントのバックアップ"
+  },
+  "passwordProtected": {
+    "message": "パスワード保護あり"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "「ファイルパスワード」と「ファイルパスワードの確認」が一致しません。"
+  },
+  "confirmVaultImport": {
+    "message": "保管庫のエクスポートの確認"
+  },
+  "confirmVaultImportDesc": {
+    "message": "このファイルはパスワードで保護されています。インポートするファイルのパスワードを入力してください。"
   },
   "exportSuccess": {
     "message": "エクスポートされました。"

@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "A mesterjelszó érvénytelen."
   },
+  "invalidFilePassword": {
+    "message": "Érvénytelen a fájl jelszó. Használjuk az exportálás fájl létrehozásakor megadott jelszót."
+  },
   "lockNow": {
     "message": "Zárolás most"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Fájlformátum"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Ez a fájl exportálás jelszóval védett és a visszafejtéshez a fájl jelszó megadása szükséges."
+  },
+  "exportPasswordDescription": {
+    "message": "Ezt a jelszó kerül használatba a fájl exportálására és importálására."
+  },
+  "confirmMasterPassword": {
+    "message": "Mesterjelszó megerősítése"
+  },
+  "confirmFormat": {
+    "message": "Formátum megerősítése"
+  },
+  "filePassword": {
+    "message": "Fájl jelszó"
+  },
+  "confirmFilePassword": {
+    "message": "Fájl jelszó megerősítés"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Az exportálás védelme érdekében a Bitwarden fiók titkosítását használjuk, nem a mesterjelszót. Ez az exportálás csak az aktuális fiókba importálható. Ezzel máshol nem használható biztonsági másolatot hozhatunk létre."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Hozzunk létre egy felhasználó által generált jelszót az exportálás védelme érdekében. Ezzel más fiókokban is használható exportálást hozhatunk létre."
+  },
+  "fileTypeHeading": {
+    "message": "Fájltípus"
+  },
+  "accountBackup": {
+    "message": "Fiók biztonsági másolat"
+  },
+  "passwordProtected": {
+    "message": "Jelszóval védett"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "A “Fájl jelszó”  és a  “Fájl jelszó megerősítés“ nem egyezik."
+  },
+  "confirmVaultImport": {
+    "message": "Széf importálás megerősítése"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Ez a fájl jelszóval védett. Adjuk meg a fájl jelszót az adatok importálásához."
   },
   "exportSuccess": {
     "message": "A széfadatok exportálásra kerültek."

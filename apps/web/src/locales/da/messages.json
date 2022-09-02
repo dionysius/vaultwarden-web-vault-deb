@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Ugyldig hovedadgangskode"
   },
+  "invalidFilePassword": {
+    "message": "Ugyldig filadgangskode. Brug venligst den adgangskode, du indtastede, da du oprettede eksportfilen."
+  },
   "lockNow": {
     "message": "Lås nu"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Filformat"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Denne fileksport vil være adgangskodebeskyttet og kræve filadgangskoden ved dekryptering."
+  },
+  "exportPasswordDescription": {
+    "message": "Denne adgangskode vil blive brugt til at eksportere og importere denne fil"
+  },
+  "confirmMasterPassword": {
+    "message": "Bekræft hovedadgangskode"
+  },
+  "confirmFormat": {
+    "message": "Bekræft format"
+  },
+  "filePassword": {
+    "message": "Filadgangskode"
+  },
+  "confirmFilePassword": {
+    "message": "Bekræft filadgangskode"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Udnytter din Bitwarden-kontokryptering, ikke hovedadgangskode, for at beskytte eksporten. Denne eksport kan kun importeres til den aktuelle konto. Brug denne til at oprette en sikkerhedskopi, der ikke kan bruges andre steder."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Opret en brugergenereret adgangskode for at beskytte eksporten. Brug denne til at oprette en eksport, der kan bruges via andre konti."
+  },
+  "fileTypeHeading": {
+    "message": "Filtype"
+  },
+  "accountBackup": {
+    "message": "Kontosikkerhedskopi"
+  },
+  "passwordProtected": {
+    "message": "Kodeordsbeskyttet"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "“Filadgangskode” og “Bekræft filadgangskode“ matcher ikke."
+  },
+  "confirmVaultImport": {
+    "message": "Bekræft boks-import"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Denne fil er adgangskodebeskyttet. Angiv filadgangskoden for at importere data."
   },
   "exportSuccess": {
     "message": "Dine boksdata er blevet eksporteret."

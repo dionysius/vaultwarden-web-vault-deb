@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Neplatné hlavné heslo"
   },
+  "invalidFilePassword": {
+    "message": "Neplatné heslo súboru, použite heslo, ktoré ste zadali pri vytváraní exportného súboru."
+  },
   "lockNow": {
     "message": "Uzamknúť teraz"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Formát Súboru"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Tento export súborov bude chránený heslom a na dešifrovanie bude potrebné heslo súboru."
+  },
+  "exportPasswordDescription": {
+    "message": "Toto heslo sa použije na export a import tohto súboru"
+  },
+  "confirmMasterPassword": {
+    "message": "Potvrdiť hlavné heslo"
+  },
+  "confirmFormat": {
+    "message": "Potvrdiť formát"
+  },
+  "filePassword": {
+    "message": "Heslo súboru"
+  },
+  "confirmFilePassword": {
+    "message": "Potvrdiť heslo súboru"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Na ochranu exportu využíva šifrovanie vášho účtu Bitwarden, nie hlavné heslo. Tento export je možné importovať len do aktuálneho účtu. Použite ho na vytvorenie zálohy, ktorú nie je možné použiť inde."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Na ochranu exportu vytvorte heslo vygenerované používateľom. Použite ho na vytvorenie exportu, ktorý možno použiť v iných účtoch."
+  },
+  "fileTypeHeading": {
+    "message": "Typ súboru"
+  },
+  "accountBackup": {
+    "message": "Zálohovanie účtu"
+  },
+  "passwordProtected": {
+    "message": "Chránené heslom"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Heslo súboru\" a \"Potvrdiť heslo súboru\" sa nezhodujú."
+  },
+  "confirmVaultImport": {
+    "message": "Potvrdiť importu trezoru"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Tento súbor je chránený heslom. Ak chcete importovať údaje, zadajte heslo súboru."
   },
   "exportSuccess": {
     "message": "Dáta z vášho trezora boli exportované."

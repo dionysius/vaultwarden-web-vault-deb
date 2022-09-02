@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Contraseña maestra no válida"
   },
+  "invalidFilePassword": {
+    "message": "Contraseña de archivo no válida, por favor utilice la contraseña que introdujo cuando creó el archivo de exportación."
+  },
   "lockNow": {
     "message": "Bloquear ahora"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Formato de archivo"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Este archivo de exportación estará protegido por contraseña y requerirá la contraseña del archivo para descifrar."
+  },
+  "exportPasswordDescription": {
+    "message": "Esta contraseña se utilizará para exportar e importar este archivo"
+  },
+  "confirmMasterPassword": {
+    "message": "Confirmar contraseña maestra"
+  },
+  "confirmFormat": {
+    "message": "Confirmar formato"
+  },
+  "filePassword": {
+    "message": "Contraseña del archivo"
+  },
+  "confirmFilePassword": {
+    "message": "Confirmar contraseña del archivo"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Aproveche el cifrado de su cuenta de Bitwarden, no la contraseña maestra, para proteger la exportación. Esta exportación sólo puede importarse a la cuenta actual. Utilice esto para crear una copia de seguridad que no se puede utilizar en otro lugar."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Crear una contraseña generada por el usuario para proteger la exportación. Utilice esto para crear una exportación que pueda ser usada en otras cuentas."
+  },
+  "fileTypeHeading": {
+    "message": "Tipo de archivo"
+  },
+  "accountBackup": {
+    "message": "Copia de seguridad de la cuenta"
+  },
+  "passwordProtected": {
+    "message": "Protegida con contraseña"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "“Contraseña del archivo” y “Confirmar contraseña del archivo” no coinciden."
+  },
+  "confirmVaultImport": {
+    "message": "Confirmar importación de la bóveda"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Este archivo está protegido por contraseña. Introduzca la contraseña del archivo para importar datos."
   },
   "exportSuccess": {
     "message": "El contenido de tu caja fuerte ha sido exportado."

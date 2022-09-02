@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Parolă principală incorectă"
   },
+  "invalidFilePassword": {
+    "message": "Parola fișierului nu este validă, utilizați parola introdusă atunci când ați creat fișierul de export."
+  },
   "lockNow": {
     "message": "Blocare acum"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Format fișier"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Exportul acestui fișier va fi protejat prin parolă și necesită parola fișierului pentru decriptare."
+  },
+  "exportPasswordDescription": {
+    "message": "Această parolă se va folosi pentru exportul și importul acestui fișier"
+  },
+  "confirmMasterPassword": {
+    "message": "Confirmați parola principală"
+  },
+  "confirmFormat": {
+    "message": "Confirmați formatul"
+  },
+  "filePassword": {
+    "message": "Parola fișierului"
+  },
+  "confirmFilePassword": {
+    "message": "Confirmați parola fișierului"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Utilizați cheia de criptare a contului pentru a cripta exportul și a restricționa importul numai la contul curent Bitwarden."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Setați o parolă pentru criptarea exportului și importați-l în orice cont Bitwarden folosind parola pentru decriptare."
+  },
+  "fileTypeHeading": {
+    "message": "Tip de fișier"
+  },
+  "accountBackup": {
+    "message": "Backup de cont"
+  },
+  "passwordProtected": {
+    "message": "Protejat cu parolă"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "„Parola fișierului” și „Confirmați parolă fișierului” nu se potrivesc."
+  },
+  "confirmVaultImport": {
+    "message": "Confirmați importul seifului"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Acest fișier este protejat prin parolă. Introduceți parola fișierului pentru a importa datele."
   },
   "exportSuccess": {
     "message": "Datele seifului dvs. au fost exportate."

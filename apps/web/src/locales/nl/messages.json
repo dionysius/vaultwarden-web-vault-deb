@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Ongeldig hoofdwachtwoord"
   },
+  "invalidFilePassword": {
+    "message": "Onjuist bestandswachtwoord, gebruik het wachtwoord dat je hebt ingevoerd bij het aanmaken van het exportbestand."
+  },
   "lockNow": {
     "message": "Nu vergrendelen"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Bestandsindeling"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Deze bestandsexport wordt met een wachtwoord beveiligd en vereist het bestandswachtwoord om te decoderen."
+  },
+  "exportPasswordDescription": {
+    "message": "Dit wachtwoord wordt gebruikt om dit bestand te exporteren en te importeren"
+  },
+  "confirmMasterPassword": {
+    "message": "Nieuw hoofdwachtwoord bevestigen"
+  },
+  "confirmFormat": {
+    "message": "Formaat bevestigen"
+  },
+  "filePassword": {
+    "message": "Bestandswachtwoord"
+  },
+  "confirmFilePassword": {
+    "message": "Bestandswachtwoord bevestigen"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Maakt gebruik van Bitwarden-accountversleuteling, niet het hoofdwachtwoord, om de export te beveiligen. Je kunt deze export alleen importeren in het huidige account. Gebruik dit om een back-up te maken die je elders niet kunt gebruiken."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Maak een door de gebruiker gegenereerd wachtwoord aan om de export te beschermen. Gebruik dit om een export te maken die je in andere accounts kunt gebruiken."
+  },
+  "fileTypeHeading": {
+    "message": "Bestandstype"
+  },
+  "accountBackup": {
+    "message": "Account back-up"
+  },
+  "passwordProtected": {
+    "message": "Beveiligd met wachtwoord"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Bestandswachtwoord\" en \"Bestandswachtwoord bevestigen\" komen niet overeen."
+  },
+  "confirmVaultImport": {
+    "message": "Kluisimport bevestigen"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Dit bestand is beveiligd met een wachtwoord. Voer het bestandswachtwoord in om gegevens te importeren."
   },
   "exportSuccess": {
     "message": "Je kluisgegevens zijn geëxporteerd."

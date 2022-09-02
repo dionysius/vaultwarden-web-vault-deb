@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Virheellinen pääsalasana"
   },
+  "invalidFilePassword": {
+    "message": "Tiedoston salasana on virheellinen. Käytä vientitiedoston luonnin yhteydessä käytettyä salasanaa."
+  },
   "lockNow": {
     "message": "Lukitse nyt"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Tiedostomuoto"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Tämä vientitiedosto on suojattu salasanalla, joka on syötettävä ja salauksen purkamiseksi."
+  },
+  "exportPasswordDescription": {
+    "message": "Tätä salasanaa käytetään tämän tiedoston viennissä ja tuonnissa"
+  },
+  "confirmMasterPassword": {
+    "message": "Vahvista pääsalasana"
+  },
+  "confirmFormat": {
+    "message": "Vahvista muoto"
+  },
+  "filePassword": {
+    "message": "Tiedoston salasana"
+  },
+  "confirmFilePassword": {
+    "message": "Vahvista tiedoston salasana"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Hyödyntää viennin suojauksessa Bitwarden-tilisi salausta sen pääsalasanan sijaan. Tällainen vienti voidaan tuoda vain nykyiselle käyttäjätilille. Tämän avulla voidaan luoda varmuuskopio, jota ei ole mahdollista käyttää muilla tileillä."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Suojaa vienti omavalintaisella salasanalla. Tämän avulla voidaan luoda vienti, jota on mahdollista käyttää myös muilla käyttäjätileillä."
+  },
+  "fileTypeHeading": {
+    "message": "Tiedostotyyppi"
+  },
+  "accountBackup": {
+    "message": "Tilin varmuuskopiointi"
+  },
+  "passwordProtected": {
+    "message": "Salasanasuojattu"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Tiedoston salasana\" ja \"Vahvista tiedoston salasana\" eivät täsmää."
+  },
+  "confirmVaultImport": {
+    "message": "Vahvista holvin tuonti"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Tiedosto on salasanasuojattu. Syötä tiedoston salasana tuodaksesi tiedot."
   },
   "exportSuccess": {
     "message": "Holvisi tiedot on viety."
@@ -5111,17 +5156,17 @@
     "message": "Käyttäjätunnuksen tyyppi"
   },
   "plusAddressedEmail": {
-    "message": "Plus-osoitteinen sähköposti",
+    "message": "Plus+merkkinen sähköposti",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Käytä sähköpostipalvelusi aliosoiteominaisuuksia."
   },
   "catchallEmail": {
-    "message": "Catch-all-sähköpostiosoite"
+    "message": "Catch-all-sähköposti"
   },
   "catchallEmailDesc": {
-    "message": "Käytä verkkotunnuksellesi määritettyä catch-all-postilaatikkoa."
+    "message": "Käytä verkkotunnuksesi catch-all-postilaatikkoa."
   },
   "random": {
     "message": "Satunnainen",
@@ -5187,7 +5232,7 @@
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Välitykseen käytetty sähköpostialias"
+    "message": "Sähköpostialias välitykseen"
   },
   "forwardedEmailDesc": {
     "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."

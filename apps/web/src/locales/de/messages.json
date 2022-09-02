@@ -678,6 +678,9 @@
   "invalidMasterPassword": {
     "message": "Ungültiges Master-Passwort"
   },
+  "invalidFilePassword": {
+    "message": "Ungültiges Dateipasswort, bitte verwende das Passwort, das du beim Erstellen der Exportdatei eingegeben hast."
+  },
   "lockNow": {
     "message": "Jetzt sperren"
   },
@@ -889,6 +892,48 @@
   },
   "fileFormat": {
     "message": "Dateiformat"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Dieser Datei-Export ist passwortgeschützt und erfordert das Dateipasswort zum Entschlüsseln."
+  },
+  "exportPasswordDescription": {
+    "message": "Dieses Passwort wird verwendet, um diese Datei zu exportieren und zu importieren"
+  },
+  "confirmMasterPassword": {
+    "message": "Master-Passwort bestätigen"
+  },
+  "confirmFormat": {
+    "message": "Format bestätigen"
+  },
+  "filePassword": {
+    "message": "Dateipasswort"
+  },
+  "confirmFilePassword": {
+    "message": "Dateipasswort bestätigen"
+  },
+  "accountBackupOptionDescription": {
+    "message": "Nutzt die Verschlüsselung Ihres Bitwarden-Kontos, nicht das Master-Passwort, zum Schutz des Exports. Dieser Export kann nur in das aktuelle Konto importiert werden. Hiermit kannst du ein Backup erstellen, das nicht anderweitig verwendet werden kann."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Erstelle ein benutzergeneriertes Passwort, um den Export zu schützen. Verwende dies, um einen Export zu erstellen, der in anderen Konten verwendet werden kann."
+  },
+  "fileTypeHeading": {
+    "message": "Dateityp"
+  },
+  "accountBackup": {
+    "message": "Konto-Sicherung"
+  },
+  "passwordProtected": {
+    "message": "Passwortgeschützt"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "„Dateipasswort“ und „Dateipasswort bestätigen“ stimmen nicht überein."
+  },
+  "confirmVaultImport": {
+    "message": "Tresor-Import bestätigen"
+  },
+  "confirmVaultImportDesc": {
+    "message": "Diese Datei ist passwortgeschützt. Bitte gebe das Dateipasswort ein, um Daten zu importieren."
   },
   "exportSuccess": {
     "message": "Ihre Daten wurden exportiert."
