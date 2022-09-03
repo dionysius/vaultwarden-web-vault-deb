@@ -238,7 +238,18 @@ export class NativeMessagingBackground {
   private postMessage(message: OuterMessage) {
     // Wrap in try-catch to when the port disconnected without triggering `onDisconnect`.
     try {
-      this.port.postMessage(message);
+      const msg: any = message;
+      if (message.message instanceof EncString) {
+        // Alternative, backwards-compatible serialization of EncString
+        msg.message = {
+          encryptedString: message.message.encryptedString,
+          encryptionType: message.message.encryptionType,
+          data: message.message.data,
+          iv: message.message.iv,
+          mac: message.message.mac,
+        };
+      }
+      this.port.postMessage(msg);
     } catch (e) {
       this.logService.error("NativeMessaging port disconnected, disconnecting.");
 
