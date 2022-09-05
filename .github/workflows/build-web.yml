@@ -406,10 +406,17 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f  # v1.0.0
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "crowdin-api-token"
+        env:
+          KEYVAULT: bitwarden-prod-kv
+          SECRETS: |
+            crowdin-api-token
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Upload Sources
         uses: crowdin/github-action@ecd7eb0ef6f3cfa16293c79e9cbc4bc5b5fd9c49  # v1.4.9
@@ -472,11 +479,18 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f  # v1.0.0
         if: failure()
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "devops-alerts-slack-webhook-url"
+        env:
+          KEYVAULT: bitwarden-prod-kv
+          SECRETS: |
+            devops-alerts-slack-webhook-url
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Notify Slack on failure
         uses: act10ns/slack@da3191ebe2e67f49b46880b4633f5591a96d1d33  # v1.5.1

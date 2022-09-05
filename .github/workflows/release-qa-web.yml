@@ -32,10 +32,17 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f  # v1
-        with:
-          keyvault: "bitwarden-qa-kv"
-          secrets: "qa-aks-kubectl-credentials"
+        env:
+          KEYVAULT: bitwarden-qa-kv
+          SECRETS: |
+            qa-aks-kubectl-credentials
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Login with qa-aks-kubectl-credentials SP
         uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1

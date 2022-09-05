@@ -93,10 +93,19 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "aws-electron-access-id, aws-electron-access-key, aws-electron-bucket-name"
+        env:
+          KEYVAULT: bitwarden-prod-kv
+          SECRETS: |
+            aws-electron-access-id,
+            aws-electron-access-key,
+            aws-electron-bucket-name
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Download all artifacts
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -208,10 +217,17 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "snapcraft-store-token"
+        env:
+          KEYVAULT: bitwarden-prod-kv
+          SECRETS: |
+            snapcraft-store-token
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@10d7d0a84d9d86098b19f872257df314b0bd8e2d  # v1.2.0
@@ -272,10 +288,17 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "cli-choco-api-key"
+        env:
+          KEYVAULT: bitwarden-prod-kv
+          SECRETS: |
+            cli-choco-api-key
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Setup Chocolatey
         shell: pwsh

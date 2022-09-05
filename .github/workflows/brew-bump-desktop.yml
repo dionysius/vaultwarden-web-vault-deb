@@ -23,10 +23,17 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "brew-bump-workflow-pat"
+        env:
+          KEYVAULT: bitwarden-prod-kv
+          SECRETS: |
+            brew-bump-workflow-pat
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Update Homebrew cask
         uses: macauley/action-homebrew-bump-cask@445c42390d790569d938f9068d01af39ca030feb

@@ -249,14 +249,21 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "code-signing-vault-url,
-                    code-signing-client-id,
-                    code-signing-tenant-id,
-                    code-signing-client-secret,
-                    code-signing-cert-name"
+        env:
+          KEYVAULT: bitwarden-prod-kv
+          SECRETS: |
+            code-signing-vault-url,
+            code-signing-client-id,
+            code-signing-tenant-id,
+            code-signing-client-secret,
+            code-signing-cert-name
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Install Node dependencies
         run: npm ci
@@ -932,10 +939,19 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@b5c723b9ac7870c022b8c35befe620b7009b336f
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "aws-electron-access-id, aws-electron-access-key, aws-electron-bucket-name"
+        env:
+          KEYVAULT: bitwarden-prod-kv
+          SECRETS: |
+            aws-electron-access-id,
+            aws-electron-access-key,
+            aws-electron-bucket-name
+        run: |
+          for i in ${SECRETS//,/ }
+          do
+            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
+            echo "::add-mask::$VALUE"
+            echo "::set-output name=$i::$VALUE"
+          done
 
       - name: Download all artifacts
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # v3.0.0
