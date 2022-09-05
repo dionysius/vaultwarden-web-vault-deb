@@ -1,5 +1,6 @@
 import { registerLocaleData } from "@angular/common";
 import localeAf from "@angular/common/locales/af";
+import localeAr from "@angular/common/locales/ar";
 import localeAz from "@angular/common/locales/az";
 import localeBe from "@angular/common/locales/be";
 import localeBg from "@angular/common/locales/bg";
@@ -52,6 +53,7 @@ import localeZhCn from "@angular/common/locales/zh-Hans";
 import localeZhTw from "@angular/common/locales/zh-Hant";
 
 registerLocaleData(localeAf, "af");
+registerLocaleData(localeAr, "ar");
 registerLocaleData(localeAz, "az");
 registerLocaleData(localeBe, "be");
 registerLocaleData(localeBg, "bg");

@@ -4,6 +4,7 @@ import { LayoutModule } from "@angular/cdk/layout";
 import { OverlayModule } from "@angular/cdk/overlay";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CurrencyPipe, DatePipe, registerLocaleData } from "@angular/common";
+import localeAr from "@angular/common/locales/ar";
 import localeAz from "@angular/common/locales/az";
 import localeBe from "@angular/common/locales/be";
 import localeBg from "@angular/common/locales/bg";
@@ -116,6 +117,7 @@ import { VaultSelectComponent } from "./vault/vault-select.component";
 import { ViewCustomFieldsComponent } from "./vault/view-custom-fields.component";
 import { ViewComponent } from "./vault/view.component";
 
+registerLocaleData(localeAr, "ar");
 registerLocaleData(localeAz, "az");
 registerLocaleData(localeBe, "be");
 registerLocaleData(localeBg, "bg");

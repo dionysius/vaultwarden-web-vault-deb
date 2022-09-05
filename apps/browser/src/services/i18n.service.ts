@@ -11,6 +11,7 @@ export default class I18nService extends BaseI18nService {
     // Please leave 'en' where it is, as it's our fallback language in case no translation can be found
     this.supportedTranslationLocales = [
       "en",
+      "ar",
       "az",
       "be",
       "bg",
