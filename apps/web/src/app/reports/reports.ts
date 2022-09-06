@@ -1,3 +1,9 @@
+import { ReportBreach } from "./icons/report-breach.icon";
+import { ReportExposedPasswords } from "./icons/report-exposed-passwords.icon";
+import { ReportInactiveTwoFactor } from "./icons/report-inactive-two-factor.icon";
+import { ReportReusedPasswords } from "./icons/report-reused-passwords.icon";
+import { ReportUnsecuredWebsites } from "./icons/report-unsecured-websites.icon";
+import { ReportWeakPasswords } from "./icons/report-weak-passwords.icon";
 import { ReportEntry } from "./models/report-entry";
 
 export enum ReportType {
@@ -16,36 +22,36 @@ export const reports: Record<ReportType, ReportWithoutVariant> = {
     title: "exposedPasswordsReport",
     description: "exposedPasswordsReportDesc",
     route: "exposed-passwords-report",
-    icon: "reportExposedPasswords",
+    icon: ReportExposedPasswords,
   },
   [ReportType.ReusedPasswords]: {
     title: "reusedPasswordsReport",
     description: "reusedPasswordsReportDesc",
     route: "reused-passwords-report",
-    icon: "reportReusedPasswords",
+    icon: ReportReusedPasswords,
   },
   [ReportType.WeakPasswords]: {
     title: "weakPasswordsReport",
     description: "weakPasswordsReportDesc",
     route: "weak-passwords-report",
-    icon: "reportWeakPasswords",
+    icon: ReportWeakPasswords,
   },
   [ReportType.UnsecuredWebsites]: {
     title: "unsecuredWebsitesReport",
     description: "unsecuredWebsitesReportDesc",
     route: "unsecured-websites-report",
-    icon: "reportUnsecuredWebsites",
+    icon: ReportUnsecuredWebsites,
   },
   [ReportType.Inactive2fa]: {
     title: "inactive2faReport",
     description: "inactive2faReportDesc",
     route: "inactive-two-factor-report",
-    icon: "reportInactiveTwoFactor",
+    icon: ReportInactiveTwoFactor,
   },
   [ReportType.DataBreach]: {
     title: "dataBreachReport",
     description: "breachDesc",
     route: "breach-report",
-    icon: "reportBreach",
+    icon: ReportBreach,
   },
 };
