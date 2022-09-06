@@ -7,7 +7,6 @@
   padding: 7px 15px;
   border: 1px solid #000000;
   font-size: $font-size-base;
-  white-space: nowrap;
   text-align: center;
   cursor: pointer;
 
@@ -176,7 +175,6 @@ button.no-btn {
   @include themify($themes) {
     color: themed("textColor");
   }
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
