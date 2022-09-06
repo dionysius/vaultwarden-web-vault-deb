@@ -68,26 +68,13 @@ export class AvatarComponent implements OnChanges, OnInit {
       }
 
       const charObj = this.getCharText(chars);
-      const color = this.stringToColor(upperData);
+      const color = Utils.stringToColor(upperData);
       const svg = this.getSvg(this.size, color);
       svg.appendChild(charObj);
       const html = window.document.createElement("div").appendChild(svg).outerHTML;
       const svgHtml = window.btoa(unescape(encodeURIComponent(html)));
       this.src = "data:image/svg+xml;base64," + svgHtml;
     }
-  }
-
-  private stringToColor(str: string): string {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    let color = "#";
-    for (let i = 0; i < 3; i++) {
-      const value = (hash >> (i * 8)) & 0xff;
-      color += ("00" + value.toString(16)).substr(-2);
-    }
-    return color;
   }
 
   private getFirstLetters(data: string, count: number): string {
