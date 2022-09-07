@@ -1,4 +1,4 @@
-import { InjectionToken, Injector, LOCALE_ID, NgModule } from "@angular/core";
+import { Injector, LOCALE_ID, NgModule } from "@angular/core";
 
 import { ThemingService } from "@bitwarden/angular/services/theming/theming.service";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
@@ -105,23 +105,21 @@ import { LockGuard } from "../guards/lock.guard";
 import { UnauthGuard } from "../guards/unauth.guard";
 
 import { BroadcasterService } from "./broadcaster.service";
+import {
+  WINDOW,
+  MEMORY_STORAGE,
+  SECURE_STORAGE,
+  STATE_FACTORY,
+  STATE_SERVICE_USE_CACHE,
+  LOGOUT_CALLBACK,
+  LOCKED_CALLBACK,
+  LOCALES_DIRECTORY,
+  SYSTEM_LANGUAGE,
+  LOG_MAC_FAILURES,
+} from "./injection-tokens";
 import { ModalService } from "./modal.service";
 import { PasswordRepromptService } from "./passwordReprompt.service";
 import { ValidationService } from "./validation.service";
-
-export const WINDOW = new InjectionToken<Window>("WINDOW");
-export const MEMORY_STORAGE = new InjectionToken<AbstractStorageService>("MEMORY_STORAGE");
-export const SECURE_STORAGE = new InjectionToken<AbstractStorageService>("SECURE_STORAGE");
-export const STATE_FACTORY = new InjectionToken<StateFactory>("STATE_FACTORY");
-export const STATE_SERVICE_USE_CACHE = new InjectionToken<boolean>("STATE_SERVICE_USE_CACHE");
-export const LOGOUT_CALLBACK = new InjectionToken<(expired: boolean, userId?: string) => void>(
-  "LOGOUT_CALLBACK"
-);
-export const LOCKED_CALLBACK = new InjectionToken<() => void>("LOCKED_CALLBACK");
-export const CLIENT_TYPE = new InjectionToken<boolean>("CLIENT_TYPE");
-export const LOCALES_DIRECTORY = new InjectionToken<string>("LOCALES_DIRECTORY");
-export const SYSTEM_LANGUAGE = new InjectionToken<string>("SYSTEM_LANGUAGE");
-export const LOG_MAC_FAILURES = new InjectionToken<string>("LOG_MAC_FAILURES");
 
 @NgModule({
   declarations: [],

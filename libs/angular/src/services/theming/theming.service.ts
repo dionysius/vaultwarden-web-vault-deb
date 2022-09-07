@@ -5,7 +5,7 @@ import { BehaviorSubject, filter, fromEvent, Observable } from "rxjs";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/enums/themeType";
 
-import { WINDOW } from "../jslib-services.module";
+import { WINDOW } from "../injection-tokens";
 
 import { Theme } from "./theme";
 import { ThemeBuilder } from "./themeBuilder";

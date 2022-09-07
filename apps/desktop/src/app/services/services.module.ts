@@ -1,7 +1,6 @@
 import { APP_INITIALIZER, InjectionToken, NgModule } from "@angular/core";
 
 import {
-  JslibServicesModule,
   SECURE_STORAGE,
   STATE_FACTORY,
   STATE_SERVICE_USE_CACHE,
@@ -9,7 +8,8 @@ import {
   LOCALES_DIRECTORY,
   SYSTEM_LANGUAGE,
   MEMORY_STORAGE,
-} from "@bitwarden/angular/services/jslib-services.module";
+} from "@bitwarden/angular/services/injection-tokens";
+import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/abstractions/broadcaster.service";

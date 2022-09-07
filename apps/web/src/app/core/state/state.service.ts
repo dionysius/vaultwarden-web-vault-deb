@@ -5,7 +5,7 @@ import {
   SECURE_STORAGE,
   STATE_FACTORY,
   STATE_SERVICE_USE_CACHE,
-} from "@bitwarden/angular/services/jslib-services.module";
+} from "@bitwarden/angular/services/injection-tokens";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { StateMigrationService } from "@bitwarden/common/abstractions/stateMigration.service";
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
