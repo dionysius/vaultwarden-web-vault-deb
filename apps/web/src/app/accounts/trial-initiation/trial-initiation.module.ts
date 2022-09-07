@@ -10,6 +10,8 @@ import { RegisterFormModule } from "../register-form/register-form.module";
 
 import { BillingComponent } from "./billing.component";
 import { ConfirmationDetailsComponent } from "./confirmation-details.component";
+import { AbmEnterpriseContentComponent } from "./content/abm-enterprise-content.component";
+import { AbmTeamsContentComponent } from "./content/abm-teams-content.component";
 import { CnetEnterpriseContentComponent } from "./content/cnet-enterprise-content.component";
 import { CnetIndividualContentComponent } from "./content/cnet-individual-content.component";
 import { CnetTeamsContentComponent } from "./content/cnet-teams-content.component";
@@ -52,6 +54,8 @@ import { VerticalStepperModule } from "./vertical-stepper/vertical-stepper.modul
     CnetEnterpriseContentComponent,
     CnetIndividualContentComponent,
     CnetTeamsContentComponent,
+    AbmEnterpriseContentComponent,
+    AbmTeamsContentComponent,
     LogoCnetComponent,
     LogoForbesComponent,
     LogoUSNewsComponent,
