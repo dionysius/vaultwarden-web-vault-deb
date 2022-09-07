@@ -209,6 +209,12 @@ const devServer =
             secure: false,
             changeOrigin: true,
           },
+          "/icons": {
+            target: envConfig.dev?.proxyIcons,
+            pathRewrite: { "^/icons": "" },
+            secure: false,
+            changeOrigin: true,
+          },
         },
         headers: (req) => {
           if (!req.originalUrl.includes("connector.html")) {
