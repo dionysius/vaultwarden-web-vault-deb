@@ -1,9 +1,6 @@
-import {
-  interceptConsole,
-  restoreConsole,
-} from "@bitwarden/common/../spec/services/consolelog.service.spec";
-
 import { ConsoleLogService } from "@bitwarden/node/cli/services/consoleLog.service";
+
+import { interceptConsole, restoreConsole } from "../../../common/spec/shared/interceptConsole";
 
 let caughtMessage: any = {};
 

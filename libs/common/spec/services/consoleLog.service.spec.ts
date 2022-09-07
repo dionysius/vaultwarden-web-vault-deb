@@ -1,31 +1,8 @@
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 
-const originalConsole = console;
+import { interceptConsole, restoreConsole } from "../shared/interceptConsole";
+
 let caughtMessage: any;
-
-declare let console: any;
-
-export function interceptConsole(interceptions: any): object {
-  console = {
-    log: function () {
-      // eslint-disable-next-line
-      interceptions.log = arguments;
-    },
-    warn: function () {
-      // eslint-disable-next-line
-      interceptions.warn = arguments;
-    },
-    error: function () {
-      // eslint-disable-next-line
-      interceptions.error = arguments;
-    },
-  };
-  return interceptions;
-}
-
-export function restoreConsole() {
-  console = originalConsole;
-}
 
 describe("ConsoleLogService", () => {
   let logService: ConsoleLogService;
