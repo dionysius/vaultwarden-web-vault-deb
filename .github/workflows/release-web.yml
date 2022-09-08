@@ -74,7 +74,7 @@ jobs:
           azure-creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
           azure-keyvault-name: "bitwarden-prod-kv"
 
-      - name: Pull latest selfhost image
+      - name: Pull branch image
         run: |
           if [[ "${{ github.event.inputs.release_type }}" == "Dry Run" ]]; then
             docker pull bitwarden/web:latest
@@ -82,7 +82,7 @@ jobs:
             docker pull bitwarden/web:$_BRANCH_NAME
           fi
 
-      - name: Docker Tag version and latest image
+      - name: Docker Tag version
         run: |
           if [[ "${{ github.event.inputs.release_type }}" == "Dry Run" ]]; then
             docker tag bitwarden/web:latest bitwarden/web:$_RELEASE_VERSION
@@ -90,7 +90,7 @@ jobs:
             docker tag bitwarden/web:$_BRANCH_NAME bitwarden/web:$_RELEASE_VERSION
           fi
 
-      - name: Docker Push version and latest image
+      - name: Docker Push version
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         env:
           DOCKER_CONTENT_TRUST: 1
@@ -112,7 +112,7 @@ jobs:
       - name: Login to Azure ACR
         run: az acr login -n bitwardenqa
 
-      - name: Tag version and latest
+      - name: Tag version
         env:
           REGISTRY: bitwardenqa.azurecr.io
         run: |
@@ -126,7 +126,7 @@ jobs:
             docker tag bitwarden/web:$_BRANCH_NAME $REGISTRY/web-sh:$_RELEASE_VERSION
           fi
 
-      - name: Push version and latest image
+      - name: Push version
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         env:
           REGISTRY: bitwardenqa.azurecr.io
