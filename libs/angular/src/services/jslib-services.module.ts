@@ -12,6 +12,8 @@ import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/abstrac
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService as CollectionServiceAbstraction } from "@bitwarden/common/abstractions/collection.service";
+import { ConfigApiServiceAbstraction } from "@bitwarden/common/abstractions/config/config-api.service.abstraction";
+import { ConfigServiceAbstraction } from "@bitwarden/common/abstractions/config/config.service.abstraction";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/abstractions/environment.service";
@@ -66,6 +68,8 @@ import { AuditService } from "@bitwarden/common/services/audit.service";
 import { AuthService } from "@bitwarden/common/services/auth.service";
 import { CipherService } from "@bitwarden/common/services/cipher.service";
 import { CollectionService } from "@bitwarden/common/services/collection.service";
+import { ConfigApiService } from "@bitwarden/common/services/config/config-api.service";
+import { ConfigService } from "@bitwarden/common/services/config/config.service";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { CryptoService } from "@bitwarden/common/services/crypto.service";
 import { EncryptService } from "@bitwarden/common/services/encrypt.service";
@@ -528,6 +532,16 @@ import { ValidationService } from "./validation.service";
     {
       provide: OrganizationApiServiceAbstraction,
       useClass: OrganizationApiService,
+      deps: [ApiServiceAbstraction],
+    },
+    {
+      provide: ConfigServiceAbstraction,
+      useClass: ConfigService,
+      deps: [StateServiceAbstraction, ConfigApiServiceAbstraction],
+    },
+    {
+      provide: ConfigApiServiceAbstraction,
+      useClass: ConfigApiService,
       deps: [ApiServiceAbstraction],
     },
   ],

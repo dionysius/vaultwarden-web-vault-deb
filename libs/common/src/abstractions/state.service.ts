@@ -13,6 +13,7 @@ import { OrganizationData } from "../models/data/organizationData";
 import { PolicyData } from "../models/data/policyData";
 import { ProviderData } from "../models/data/providerData";
 import { SendData } from "../models/data/sendData";
+import { ServerConfigData } from "../models/data/server-config.data";
 import { Account, AccountSettingsSettings } from "../models/domain/account";
 import { EncString } from "../models/domain/encString";
 import { EnvironmentUrls } from "../models/domain/environmentUrls";
@@ -319,4 +320,12 @@ export abstract class StateService<T extends Account = Account> {
   setStateVersion: (value: number) => Promise<void>;
   getWindow: () => Promise<WindowState>;
   setWindow: (value: WindowState) => Promise<void>;
+  /**
+   * @deprecated Do not call this directly, use ConfigService
+   */
+  getServerConfig: (options?: StorageOptions) => Promise<ServerConfigData>;
+  /**
+   * @deprecated Do not call this directly, use ConfigService
+   */
+  setServerConfig: (value: ServerConfigData, options?: StorageOptions) => Promise<void>;
 }

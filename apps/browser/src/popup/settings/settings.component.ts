@@ -20,6 +20,8 @@ import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErro
 import { SetPinComponent } from "../components/set-pin.component";
 import { PopupUtilsService } from "../services/popup-utils.service";
 
+import { AboutComponent } from "./about.component";
+
 const RateUrls = {
   [DeviceType.ChromeExtension]:
     "https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews",
@@ -377,26 +379,7 @@ export class SettingsComponent implements OnInit {
   }
 
   about() {
-    const year = new Date().getFullYear();
-    const versionText = document.createTextNode(
-      this.i18nService.t("version") + ": " + BrowserApi.getApplicationVersion()
-    );
-    const div = document.createElement("div");
-    div.innerHTML =
-      `<p class="text-center"><i class="bwi bwi-shield bwi-3x" aria-hidden="true"></i></p>
-            <p class="text-center"><b>Bitwarden</b><br>&copy; Bitwarden Inc. 2015-` +
-      year +
-      `</p>`;
-    div.appendChild(versionText);
-
-    Swal.fire({
-      heightAuto: false,
-      buttonsStyling: false,
-      html: div,
-      showConfirmButton: false,
-      showCancelButton: true,
-      cancelButtonText: this.i18nService.t("close"),
-    });
+    this.modalService.open(AboutComponent);
   }
 
   async fingerprint() {

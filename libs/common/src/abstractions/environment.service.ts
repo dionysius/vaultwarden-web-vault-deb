@@ -33,4 +33,5 @@ export abstract class EnvironmentService {
   setUrlsFromStorage: () => Promise<void>;
   setUrls: (urls: Urls) => Promise<Urls>;
   getUrls: () => Urls;
+  isCloud: () => boolean;
 }
