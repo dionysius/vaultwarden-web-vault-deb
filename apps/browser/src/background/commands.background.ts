@@ -34,14 +34,10 @@ export default class CommandsBackground {
             msg.data.commandToRetry.sender
           );
         }
-
-        if (this.isVivaldi && msg.command === "keyboardShortcutTriggered" && msg.shortcut) {
-          await this.processCommand(msg.shortcut, sender);
-        }
       }
     );
 
-    if (!this.isVivaldi && chrome && chrome.commands) {
+    if (chrome && chrome.commands) {
       chrome.commands.onCommand.addListener(async (command: string) => {
         await this.processCommand(command);
       });

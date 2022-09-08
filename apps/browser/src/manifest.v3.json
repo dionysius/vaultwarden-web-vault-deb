@@ -29,12 +29,6 @@
     },
     {
       "all_frames": false,
-      "js": ["content/shortcuts.js"],
-      "matches": ["http://*/*", "https://*/*", "file:///*"],
-      "run_at": "document_start"
-    },
-    {
-      "all_frames": false,
       "js": ["content/message_handler.js"],
       "matches": ["http://*/*", "https://*/*", "file:///*"],
       "run_at": "document_start"

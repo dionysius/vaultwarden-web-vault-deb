@@ -61,7 +61,6 @@ function distFirefox() {
   return dist("firefox", (manifest) => {
     delete manifest.content_security_policy;
     delete manifest.storage;
-    removeShortcuts(manifest);
     return manifest;
   });
 }
@@ -70,7 +69,6 @@ function distOpera() {
   return dist("opera", (manifest) => {
     delete manifest.applications;
     delete manifest.content_security_policy;
-    removeShortcuts(manifest);
     return manifest;
   });
 }
@@ -93,15 +91,6 @@ function distEdge() {
     delete manifest.commands._execute_sidebar_action;
     return manifest;
   });
-}
-
-function removeShortcuts(manifest) {
-  if (manifest.content_scripts && manifest.content_scripts.length > 1) {
-    const shortcutsScript = manifest.content_scripts[1];
-    if (shortcutsScript.js.indexOf("content/shortcuts.js") > -1) {
-      manifest.content_scripts.splice(1, 1);
-    }
-  }
 }
 
 function distSafariMas(cb) {
@@ -212,6 +201,8 @@ function safariCopyBuild(source, dest) {
         gulpif(
           "manifest.json",
           jeditor((manifest) => {
+            delete manifest.sidebar_action;
+            delete manifest.commands._execute_sidebar_action;
             delete manifest.optional_permissions;
             manifest.permissions.push("nativeMessaging");
             return manifest;
