@@ -6,14 +6,14 @@
     <ng-template #elseBlock>
       <i class="bwi bwi-exclamation-triangle tw-text-3xl tw-text-warning" aria-hidden="true"></i>
     </ng-template>
-    <h2 class="tw-mb-0 tw-text-base tw-font-semibold">
-      <ng-content select="[bit-dialog-title]"></ng-content>
-    </h2>
+    <h1 bitDialogTitleContainer class="tw-mb-0 tw-text-base tw-font-semibold">
+      <ng-content select="[bitDialogTitle]"></ng-content>
+    </h1>
   </div>
   <div class="tw-overflow-y-auto tw-px-4 tw-pt-2 tw-pb-4 tw-text-center tw-text-base">
-    <ng-content select="[bit-dialog-content]"></ng-content>
+    <ng-content select="[bitDialogContent]"></ng-content>
   </div>
   <div class="tw-border-0 tw-border-t tw-border-solid tw-border-secondary-300 tw-p-4">
-    <ng-content select="[bit-dialog-footer]"></ng-content>
+    <ng-content select="[bitDialogFooter]"></ng-content>
   </div>
 </div>

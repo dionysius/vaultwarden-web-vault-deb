@@ -4,9 +4,10 @@ import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
 import { ButtonModule } from "../button";
 
-import { DialogCloseDirective } from "./dialog-close.directive";
 import { DialogService } from "./dialog.service";
-import { DialogComponent } from "./dialog/dialog.component";
+import { DialogCloseDirective } from "./directives/dialog-close.directive";
+import { DialogTitleContainerDirective } from "./directives/dialog-title-container.directive";
+import { SimpleDialogComponent } from "./simple-dialog/simple-dialog.component";
 
 interface Animal {
   animal: string;
@@ -14,7 +15,7 @@ interface Animal {
 
 @Component({
   selector: "app-story-dialog",
-  template: `<button bitButton (click)="openDialog()">Open Dialog</button>`,
+  template: `<button bitButton (click)="openDialog()">Open Simple Dialog</button>`,
 })
 class StoryDialogComponent {
   constructor(public dialogService: DialogService) {}
@@ -31,18 +32,18 @@ class StoryDialogComponent {
 @Component({
   selector: "story-dialog-content",
   template: `
-    <bit-dialog [dialogSize]="large">
-      <span bit-dialog-title>Dialog Title</span>
-      <span bit-dialog-content>
+    <bit-simple-dialog>
+      <span bitDialogTitle>Dialog Title</span>
+      <span bitDialogContent>
         Dialog body text goes here.
         <br />
         Animal: {{ animal }}
       </span>
-      <div bit-dialog-footer class="tw-flex tw-flex-row tw-gap-2">
+      <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
         <button bitButton buttonType="primary" (click)="dialogRef.close()">Save</button>
         <button bitButton buttonType="secondary" bitDialogClose>Cancel</button>
       </div>
-    </bit-dialog>
+    </bit-simple-dialog>
   `,
 })
 class StoryDialogContentComponent {
@@ -54,11 +55,16 @@ class StoryDialogContentComponent {
 }
 
 export default {
-  title: "Component Library/Dialogs/Service",
+  title: "Component Library/Dialogs/Service/Simple",
   component: StoryDialogComponent,
   decorators: [
     moduleMetadata({
-      declarations: [DialogComponent, StoryDialogContentComponent, DialogCloseDirective],
+      declarations: [
+        DialogCloseDirective,
+        SimpleDialogComponent,
+        DialogTitleContainerDirective,
+        StoryDialogContentComponent,
+      ],
       imports: [ButtonModule, DialogModule],
       providers: [DialogService],
     }),
