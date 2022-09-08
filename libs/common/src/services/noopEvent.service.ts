@@ -5,7 +5,7 @@ import { EventType } from "@bitwarden/common/enums/eventType";
  * If you want to use this, don't.
  * If you think you should use that after the warning, don't.
  */
-export default class NoOpEventService implements EventService {
+export class NoopEventService implements EventService {
   constructor() {
     if (chrome.runtime.getManifest().manifest_version !== 3) {
       throw new Error("You are not allowed to use this when not in manifest_version 3");
