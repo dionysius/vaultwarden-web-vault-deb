@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "для сброса к предварительно настроенным параметрам"
+  },
+  "serverVersion": {
+    "message": "Версия сервера"
+  },
+  "selfHosted": {
+    "message": "Собственный хостинг"
+  },
+  "thirdParty": {
+    "message": "Сторонний"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Подключено к стороннему серверу, $SERVERNAME$. Пожалуйста, проверяйте ошибки, используя официальный сервер, или сообщайте о них на сторонний сервер.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "был $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

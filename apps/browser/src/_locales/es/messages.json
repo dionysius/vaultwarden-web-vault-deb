@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "para restablecer a los ajustes por defecto"
+  },
+  "serverVersion": {
+    "message": "Versión del servidor"
+  },
+  "selfHosted": {
+    "message": "Autoalojado"
+  },
+  "thirdParty": {
+    "message": "Aplicaciones de terceros"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Conectado al servidor de terceros, $SERVERNAME$. Por favor, verifica los errores usando el servidor oficial o informe al servidor de terceros.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "visto por última vez el $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

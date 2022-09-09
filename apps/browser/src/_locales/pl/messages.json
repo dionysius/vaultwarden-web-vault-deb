@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "aby zresetować do wstępnie skonfigurowanych ustawień"
+  },
+  "serverVersion": {
+    "message": "Wersja serwera"
+  },
+  "selfHosted": {
+    "message": "Samodzielnie hostowany"
+  },
+  "thirdParty": {
+    "message": "Innego dostawcy"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Połączono z implementacją serwera innego dostawcy, $SERVERNAME$. Zweryfikuj błędy za pomocą oficjalnego serwera lub zgłoś je serwerowi innego dostawcy.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "ostatnio widziano $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

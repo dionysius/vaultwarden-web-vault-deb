@@ -53,13 +53,13 @@
     "message": "Skirtukas"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Saugykla"
   },
   "myVault": {
     "message": "Saugykla"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Visos saugyklos"
   },
   "tools": {
     "message": "Įrankiai"
@@ -101,10 +101,10 @@
     "message": "Nėra atitinkančių prisijungimų."
   },
   "unlockVaultMenu": {
-    "message": "Unlock your vault"
+    "message": "Atrakinti saugyklą"
   },
   "loginToVaultMenu": {
-    "message": "Log in to your vault"
+    "message": "Prisijungti prie saugyklos"
   },
   "autoFillInfo": {
     "message": "Nėra galimų prisijungimų prie dabartinio naršyklės skirtuko."
@@ -236,16 +236,16 @@
     "message": "Ilgis"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Didžiosiomis (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Mažosiomis (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Skaitmuo (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Specialieji simboliai (!@#$%^&*)"
   },
   "numWords": {
     "message": "Žodžių skaičius"
@@ -339,7 +339,7 @@
     "message": "Jūsų žiniatinklio naršyklė nepalaiko automatinio kopijavimo. Vietoj to nukopijuokite rankiniu būdu."
   },
   "verifyIdentity": {
-    "message": "Verify Identity"
+    "message": "Patvirtinti tapatybę"
   },
   "yourVaultIsLocked": {
     "message": "Jūsų saugykla užrakinta. Norėdami tęsti, patikrinkite pagrindinį slaptažodį."
@@ -424,13 +424,13 @@
     "message": "Klaidingas el. pašto adresas."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Būtinas pagrindinis slaptažodis."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Būtinas prisijungimo slaptažodžio patvirtinimas."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Pagrindinis slaptažodis turi būti bent 8 simbolių ilgio."
   },
   "masterPassDoesntMatch": {
     "message": "Pagrindinio slaptažodžio patvirtinimas nesutampa."
@@ -571,7 +571,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Prašyti pridėti prisijungimą"
   },
   "addLoginNotificationDesc": {
     "message": "Prisijungimo pridėjimo pranešimas automatiškai Jūs paragina išsaugoti naujus prisijungimus Jūsų saugykloje, kuomet prisijungiate pirmą kartą."
@@ -668,7 +668,7 @@
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Įveskite pagrindinį slaptažodį norint išsinešti saugyklos duomenis."
   },
   "shared": {
     "message": "Pasidalinti"
@@ -702,67 +702,67 @@
     "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Sužinoti daugiau"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Vienkartinio autentifikavimo raktas (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Patvirtinimo kodas (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copy Verification Code"
+    "message": "Kopijuoti patvirtinimo kodą"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Priedai"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "Ištrinti priedą"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Ar esate tikri, kad norite ištrinti šį priedą?"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Ištrintas priedas"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Pridėti naują priedą"
   },
   "noAttachments": {
-    "message": "No attachments."
+    "message": "Priedų nėra."
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Priedas buvo išsaugotas."
   },
   "file": {
-    "message": "File"
+    "message": "Failas"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Pasirinkite failą."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "Failai negali būti didesni už 500 MB."
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Funkcija neprieinama"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Negalite naudoti šios funkcijos, kol neatnaujinsite šifravimo raktą."
   },
   "premiumMembership": {
-    "message": "Premium membership"
+    "message": "Premium narystė"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Tvarkyti narystę"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Galite tvarkyti savo narystę internete per bitwarden.com. Ar norite aplankyti šį puslapį dabar?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Atnaujinti narystę"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Neturite Premium narystės."
   },
   "premiumSignUpAndGet": {
     "message": "Sign up for a premium membership and get:"
@@ -795,10 +795,10 @@
     "message": "You are a premium member!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting Bitwarden."
+    "message": "Dėkojame, kad remiate Bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ /year!",
+    "message": "Visa tai tik už $PRICE$ / metus!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -810,7 +810,7 @@
     "message": "Atnaujinimas įvykdytas"
   },
   "enableAutoTotpCopy": {
-    "message": "Copy TOTP automatically"
+    "message": "Kopijuoti vienkartinį kodą (TOTP) automatiškai"
   },
   "disableAutoTotpCopyDesc": {
     "message": "If a login has an authenticator key, copy the TOTP verification code to your clip-board when you auto-fill the login."
@@ -819,10 +819,10 @@
     "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Tik su Premium naryste"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Premium narystė reikalinga šiai funkcijai naudoti."
   },
   "enterVerificationCodeApp": {
     "message": "Enter the 6 digit verification code from your authenticator app."
@@ -888,7 +888,7 @@
     "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Autentifikavimo programa"
   },
   "authenticatorAppDesc": {
     "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
@@ -936,7 +936,7 @@
     "message": "Serverio URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API serverio nuoroda"
   },
   "webVaultUrl": {
     "message": "Web Vault Server URL"
@@ -954,7 +954,7 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Auto-fill on page load"
+    "message": "Automatiškai užpildyti užsikrovus puslapiui"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "If a login form is detected, auto-fill when the web page loads."
@@ -993,7 +993,7 @@
     "message": "Generate and copy a new random password to the clipboard"
   },
   "commandLockVaultDesc": {
-    "message": "Lock the vault"
+    "message": "Užrakinti saugyklą"
   },
   "privateModeWarning": {
     "message": "Private mode support is experimental and some features are limited."
@@ -1008,22 +1008,22 @@
     "message": "Value"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Naujas pasirinktis laukelis"
   },
   "dragToSort": {
     "message": "Drag to sort"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Tekstas"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Paslėpta"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Taip/Ne"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Susieta",
     "description": "This describes a field that is 'linked' (tied) to another field."
   },
   "linkedValue": {
@@ -1037,7 +1037,7 @@
     "message": "This browser cannot process U2F requests in this popup window. Do you want to open this popup in a new window so that you can log in using U2F?"
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Rodyti tinklalapių ikonėles"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -1049,7 +1049,7 @@
     "message": "Indicate how many logins you have for the current web page."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Mokėjimo kortelės savininko vardas"
   },
   "number": {
     "message": "Number"
@@ -1073,43 +1073,43 @@
     "message": "February"
   },
   "march": {
-    "message": "March"
+    "message": "Kovas"
   },
   "april": {
-    "message": "April"
+    "message": "Balandis"
   },
   "may": {
-    "message": "May"
+    "message": "Gegužė"
   },
   "june": {
-    "message": "June"
+    "message": "Birželis"
   },
   "july": {
-    "message": "July"
+    "message": "Liepa"
   },
   "august": {
-    "message": "August"
+    "message": "Rugpjūtis"
   },
   "september": {
-    "message": "September"
+    "message": "Rugsėjis"
   },
   "october": {
-    "message": "October"
+    "message": "Spalis"
   },
   "november": {
-    "message": "November"
+    "message": "Lapkritis"
   },
   "december": {
-    "message": "December"
+    "message": "Gruodis"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Apsaugos kodas"
   },
   "ex": {
-    "message": "ex."
+    "message": "pvz."
   },
   "title": {
-    "message": "Title"
+    "message": "Pavadinimas"
   },
   "mr": {
     "message": "Mr"
@@ -1124,103 +1124,103 @@
     "message": "Dr"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Vardas"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Antras vardas"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Pavardė"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Vardas ir pavardė"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Tapatybės vardas"
   },
   "company": {
-    "message": "Company"
+    "message": "Įmonė"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "ID kortelės numeris"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Paso numeris"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Licencijos numeris"
   },
   "email": {
-    "message": "Email"
+    "message": "El. paštas"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefonas"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresas"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adresas 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adresas 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adresas 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "Miestas"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "Rajonas/apskritis"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "Pašto kodas"
   },
   "country": {
-    "message": "Country"
+    "message": "Šalis"
   },
   "type": {
-    "message": "Type"
+    "message": "Tipas"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Prisijungimas"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "Prisijungimai"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Saugus įrašas"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kortelė"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Tapatybė"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Slaptažodžio istorija"
   },
   "back": {
-    "message": "Back"
+    "message": "Atgal"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Kolekcijos"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Mėgstamiausi"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Atverti naujame lange"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Atnaujinti"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Kortelės"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Tapatybės"
   },
   "logins": {
     "message": "Logins"
@@ -1343,7 +1343,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Silpnas pagrindinis slaptažodis"
   },
   "weakMasterPasswordDesc": {
     "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
@@ -1392,24 +1392,24 @@
     "message": "Vault timeout action"
   },
   "lock": {
-    "message": "Lock",
+    "message": "Užrakinti",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Šiukšliadėžė",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Ieškoti šiukšliadėžėje"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Ištrinti visam laikui"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Ar tai tikrai norite visam laikui ištrinti?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Ištrintas visam laikui"
   },
   "restoreItem": {
     "message": "Restore Item"
@@ -1427,7 +1427,7 @@
     "message": "Timeout Action Confirmation"
   },
   "autoFillAndSave": {
-    "message": "Auto-fill and Save"
+    "message": "Automatiškai užpildyti ir išsaugoti"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Auto-filled Item and Saved URI"
@@ -1436,7 +1436,7 @@
     "message": "Auto-filled Item"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Pagrindinio slaptažodžio nustatymas"
   },
   "masterPasswordPolicyInEffect": {
     "message": "One or more organization policies require your master password to meet the following requirements:"
@@ -1487,16 +1487,16 @@
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Paslaugų teikimo paslaugos"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privatumo politika"
   },
   "hintEqualsPassword": {
     "message": "Your password hint cannot be the same as your password."
   },
   "ok": {
-    "message": "Ok"
+    "message": "Gerai"
   },
   "desktopSyncVerificationTitle": {
     "message": "Desktop sync verification"
@@ -1541,13 +1541,13 @@
     "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
   },
   "biometricsNotSupportedTitle": {
-    "message": "Biometrics not supported"
+    "message": "Biometrika negali būti naudojama"
   },
   "biometricsNotSupportedDesc": {
-    "message": "Browser biometrics is not supported on this device."
+    "message": "Šiame įrenginyje biometrikos negalima naudoti."
   },
   "nativeMessaginPermissionErrorTitle": {
-    "message": "Permission not provided"
+    "message": "Nesuteiktos teisės"
   },
   "nativeMessaginPermissionErrorDesc": {
     "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
@@ -1795,13 +1795,13 @@
     "message": "One or more organization policies are affecting your Send options."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Iš naujo prašoma pagrindinio slaptažodžio"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Pagrindinio slaptažodžio patvirtinimas"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Negalite šio veiksmo padaryti neįvedus savo pagrindinio slaptažodžio ir patvirtinę tapatybę."
   },
   "emailVerificationRequired": {
     "message": "Email Verification Required"
@@ -1810,7 +1810,7 @@
     "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Naujasis pagrindinis slaptažodis"
   },
   "updateMasterPassword": {
     "message": "Update Master Password"
@@ -1877,7 +1877,7 @@
     "message": "Leave Organization"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Ištrinti pagrindinį slaptažodį"
   },
   "removedMasterPassword": {
     "message": "Master password removed."
@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "to reset to pre-configured settings"
+  },
+  "serverVersion": {
+    "message": "Server Version"
+  },
+  "selfHosted": {
+    "message": "Self-Hosted"
+  },
+  "thirdParty": {
+    "message": "Third-Party"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "last seen on $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

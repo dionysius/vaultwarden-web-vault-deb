@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "برای بازنشانی به تنظیمات از پیش پیکربندی شده"
+  },
+  "serverVersion": {
+    "message": "نسخه سرور"
+  },
+  "selfHosted": {
+    "message": "میزبانی خود"
+  },
+  "thirdParty": {
+    "message": "شخص ثالث"
+  },
+  "thirdPartyServerMessage": {
+    "message": "به اجرای سرور شخص ثالث، $SERVERNAME$ متصل شد. لطفاً اشکالات را با استفاده از سرور رسمی تأیید کنید یا آنها را به سرور شخص ثالث گزارش دهید.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "آخرین بار در $DATE$ دیده شده است",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

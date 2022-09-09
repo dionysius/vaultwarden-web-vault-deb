@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "pentru a restabili setările preconfigurate"
+  },
+  "serverVersion": {
+    "message": "Versiune server"
+  },
+  "selfHosted": {
+    "message": "Auto-găzduit"
+  },
+  "thirdParty": {
+    "message": "Parte terță"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Conectat la implementarea serverului terță parte, $SERVERNAME$. Verificați erorile folosind serverul oficial sau raportați-le serverului terț.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "văzut ultima dată la $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

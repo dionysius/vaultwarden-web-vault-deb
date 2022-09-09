@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "すると初期設定に戻します"
+  },
+  "serverVersion": {
+    "message": "サーバーのバージョン"
+  },
+  "selfHosted": {
+    "message": "セルフホスト"
+  },
+  "thirdParty": {
+    "message": "サードパーティー"
+  },
+  "thirdPartyServerMessage": {
+    "message": "サードパーティーサーバーの実装である $SERVERNAME$に接続しました。公式サーバーを使用してバグを確認するか、サードパーティサーバーに報告してください。",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "$DATE$ で最後に確認",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "щоб скинути налаштування"
+  },
+  "serverVersion": {
+    "message": "Версія сервера"
+  },
+  "selfHosted": {
+    "message": "Власне розміщення"
+  },
+  "thirdParty": {
+    "message": "Сторонній"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Під'єднано до стороннього сервера $SERVERNAME$. Будь ласка, перевірте помилки з використанням офіційного сервера, або повідомте про них сторонньому серверу.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "востаннє відвідано $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

@@ -38,10 +38,10 @@
     "message": "Master-Passwort"
   },
   "masterPassDesc": {
-    "message": "Das Master-Passwort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass du das Passwort nicht vergisst, da es keine Möglichkeit gibt es zurückzusetzen."
+    "message": "Das Master-Passwort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass du das Passwort nicht vergisst, da es keine Möglichkeit gibt dieses zurückzusetzen."
   },
   "masterPassHintDesc": {
-    "message": "Ein Master-Passwort-Hinweis kann dir helfen, dich an das Passwort zu erinnern, solltest du es vergessen."
+    "message": "Ein Master-Passwort-Hinweis kann dir helfen, dich an das Passwort zu erinnern, sofern du es vergessen hast."
   },
   "reTypeMasterPass": {
     "message": "Master-Passwort wiederholen"
@@ -146,7 +146,7 @@
     "message": "Konto"
   },
   "changeMasterPassword": {
-    "message": "Masterpasswort ändern"
+    "message": "Master-Passwort ändern"
   },
   "fingerprintPhrase": {
     "message": "Prüfschlüssel",
@@ -954,7 +954,7 @@
     "message": "Die URLs der Umgebung wurden gespeichert."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Auto-Ausfüllen beim Seitenladen aktivieren"
+    "message": "Auto-Ausfüllen beim Laden einer Seite aktivieren"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "um auf vorkonfigurierte Einstellungen zurückzusetzen"
+  },
+  "serverVersion": {
+    "message": "Server-Version"
+  },
+  "selfHosted": {
+    "message": "Selbstverwaltet"
+  },
+  "thirdParty": {
+    "message": "Drittanbieter"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Verbunden mit Server-Implementierung eines Drittanbieters, $SERVERNAME$. Bitte verifiziere Fehler mit dem offiziellen Server oder melde diese an den Drittanbieter-Server.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "zuletzt am $DATE$ gesehen",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "palauttaaksesi oletusasetukset"
+  },
+  "serverVersion": {
+    "message": "Palvelimen versio"
+  },
+  "selfHosted": {
+    "message": "Itse ylläpidetty"
+  },
+  "thirdParty": {
+    "message": "Ulkopuolinen taho"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Yhdistetty ulkopuoliseen palvelinympäristöön, $SERVERNAME$. Tarkista virheet virallisella palvelimella tai ilmoita niistä ulkopuolisen palvelimen ylläpidolle.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "nähty viimeksi $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

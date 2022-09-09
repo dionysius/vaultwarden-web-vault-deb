@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "重置为预设设置"
+  },
+  "serverVersion": {
+    "message": "服务器版本"
+  },
+  "selfHosted": {
+    "message": "自托管"
+  },
+  "thirdParty": {
+    "message": "第三方"
+  },
+  "thirdPartyServerMessage": {
+    "message": "已连接到第三方服务器，$SERVERNAME$。请使用官方服务器验证错误，或将其报告给第三方服务器。",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "最后上线于 $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

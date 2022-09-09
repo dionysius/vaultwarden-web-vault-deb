@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "重設為預設設定"
+  },
+  "serverVersion": {
+    "message": "伺服器版本"
+  },
+  "selfHosted": {
+    "message": "自我裝載"
+  },
+  "thirdParty": {
+    "message": "第三方"
+  },
+  "thirdPartyServerMessage": {
+    "message": "已連線至第三方伺服器實作，$SERVERNAME$。 請使用官方伺服器驗證錯誤，或將其報告給第三方伺服器。",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "最後上線於 $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }

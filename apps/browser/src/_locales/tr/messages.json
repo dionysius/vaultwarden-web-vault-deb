@@ -1997,5 +1997,32 @@
   },
   "environmentEditedReset": {
     "message": "ön tanımlı ayarları sıfırlayabilirsiniz"
+  },
+  "serverVersion": {
+    "message": "Sunucu Sürümü"
+  },
+  "selfHosted": {
+    "message": "Barındırılan"
+  },
+  "thirdParty": {
+    "message": "Üçüncü Taraf"
+  },
+  "thirdPartyServerMessage": {
+    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "placeholders": {
+      "servername": {
+        "content": "$1",
+        "example": "ThirdPartyServerName"
+      }
+    }
+  },
+  "lastSeenOn": {
+    "message": "son görüldüğü tarih: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "Jun 15, 2015"
+      }
+    }
   }
 }
