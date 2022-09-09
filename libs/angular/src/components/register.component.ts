@@ -104,7 +104,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
           await this.buildRegisterRequest(email, masterPassword, name),
           showToast
         );
-        if (registerResponse.captchaRequired) {
+        if (!registerResponse.successful) {
           return;
         }
         this.accountCreated = true;
@@ -183,7 +183,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
     };
   }
 
-  private async validateRegistration(showToast: boolean) {
+  private async validateRegistration(showToast: boolean): Promise<{ isValid: boolean }> {
     this.formGroup.markAllAsTouched();
     this.showErrorSummary = true;
 
@@ -193,19 +193,19 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
         this.i18nService.t("errorOccurred"),
         this.i18nService.t("acceptPoliciesRequired")
       );
-      return;
+      return { isValid: false };
     }
 
     //web
     if (this.formGroup.invalid && !showToast) {
-      return;
+      return { isValid: false };
     }
 
     //desktop, browser
     if (this.formGroup.invalid && showToast) {
       const errorText = this.getErrorToastMessage();
       this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), errorText);
-      return;
+      return { isValid: false };
     }
 
     if (this.passwordStrengthResult != null && this.passwordStrengthResult.score < 3) {
@@ -217,9 +217,10 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
         "warning"
       );
       if (!result) {
-        return;
+        return { isValid: false };
       }
     }
+    return { isValid: true };
   }
 
   private async buildRegisterRequest(
@@ -257,15 +258,17 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   private async registerAccount(
     request: RegisterRequest,
     showToast: boolean
-  ): Promise<{ captchaRequired: boolean }> {
-    await this.validateRegistration(showToast);
+  ): Promise<{ successful: boolean }> {
+    if (!(await this.validateRegistration(showToast)).isValid) {
+      return { successful: false };
+    }
     this.formPromise = this.apiService.postRegister(request);
     try {
       await this.formPromise;
-      return { captchaRequired: false };
+      return { successful: true };
     } catch (e) {
       if (this.handleCaptchaRequired(e)) {
-        return { captchaRequired: true };
+        return { successful: false };
       } else {
         throw e;
       }
