@@ -64,6 +64,7 @@
         "message": "Calling `svgIcon` directly is not allowed",
         "selector": "CallExpression[callee.name='svgIcon']"
       }
-    ]
+    ],
+    "curly": ["error", "all"]
   }
 }
