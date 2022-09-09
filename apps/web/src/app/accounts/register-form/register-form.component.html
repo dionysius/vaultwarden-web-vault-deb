@@ -113,16 +113,21 @@
     </div>
 
     <div class="tw-mb-3 tw-flex">
-      <bit-submit-button [loading]="form.loading">{{ "createAccount" | i18n }}</bit-submit-button>
-      <a
-        bitButton
-        buttonType="secondary"
-        routerLink="/login"
-        class="tw-ml-3 tw-inline-flex tw-items-center tw-px-3"
-      >
-        <i class="bwi bwi-sign-in tw-mr-2"></i>
-        {{ "logIn" | i18n }}
-      </a>
+      <ng-container *ngIf="!accountCreated">
+        <bit-submit-button [loading]="form.loading">{{ "createAccount" | i18n }}</bit-submit-button>
+        <a
+          bitButton
+          buttonType="secondary"
+          routerLink="/login"
+          class="tw-ml-3 tw-inline-flex tw-items-center tw-px-3"
+        >
+          <i class="bwi bwi-sign-in tw-mr-2"></i>
+          {{ "logIn" | i18n }}
+        </a>
+      </ng-container>
+      <ng-container *ngIf="accountCreated">
+        <bit-submit-button [loading]="form.loading">{{ "logIn" | i18n }}</bit-submit-button>
+      </ng-container>
     </div>
     <bit-error-summary *ngIf="showErrorSummary" [formGroup]="formGroup"></bit-error-summary>
   </div>
