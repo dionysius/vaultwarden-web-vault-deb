@@ -645,7 +645,7 @@
     "message": "您的新账户已创建！您现在可以登录了。"
   },
   "trialAccountCreated": {
-    "message": "帐户创建成功。"
+    "message": "账户创建成功。"
   },
   "masterPassSent": {
     "message": "我们已经为您发送了包含主密码提示的邮件。"
@@ -915,13 +915,13 @@
     "message": "使用您的账户加密密钥来加密导出的数据，并且限制只能导入到当前的 Bitwarden 账户。"
   },
   "passwordProtectedOptionDescription": {
-    "message": "设置一个密码来加密导出的数据，并使用密码解密以导入到任何 Bitwarden 账户。"
+    "message": "设置一个密码用来加密导出的数据，并使用此密码解密以导入到任何 Bitwarden 账户。"
   },
   "fileTypeHeading": {
     "message": "文件类型"
   },
   "accountBackup": {
-    "message": "帐户备份"
+    "message": "账户备份"
   },
   "passwordProtected": {
     "message": "密码保护"
@@ -3687,7 +3687,7 @@
     "message": "先决条件"
   },
   "requireSsoPolicyReq": {
-    "message": "激活此策略前，需先启用「单一组织」企业策略。"
+    "message": "激活此策略前，需先开启「单一组织」企业策略。"
   },
   "requireSsoPolicyReqError": {
     "message": "单一组织策略未启用。"
@@ -5347,7 +5347,7 @@
     }
   },
   "turnOn": {
-    "message": "打开"
+    "message": "开启"
   },
   "on": {
     "message": "开启"

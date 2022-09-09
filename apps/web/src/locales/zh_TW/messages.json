@@ -915,7 +915,7 @@
     "message": "使用您的帳戶加密金鑰來加密匯出的資料，並限制只能匯入到目前的 Bitwarden 帳戶。"
   },
   "passwordProtectedOptionDescription": {
-    "message": "設定一个密碼來加密匯出的資料，並使用密碼解密以匯入到任何 Bitwarden 帳戶。"
+    "message": "設定一个密碼來加密匯出的資料，並使用此密碼解密以匯入到任何 Bitwarden 帳戶。"
   },
   "fileTypeHeading": {
     "message": "檔案類型"
@@ -2302,7 +2302,7 @@
     "message": "原則"
   },
   "singleSignOn": {
-    "message": "單一登入 (SSO)"
+    "message": "單一登入"
   },
   "editPolicy": {
     "message": "編輯原則"
@@ -5347,7 +5347,7 @@
     }
   },
   "turnOn": {
-    "message": "打開"
+    "message": "開啟"
   },
   "on": {
     "message": "開啟"
