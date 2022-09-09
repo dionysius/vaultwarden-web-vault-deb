@@ -24,7 +24,6 @@ export class EnvironmentServerConfigResponse extends BaseResponse {
   vault: string;
   api: string;
   identity: string;
-  admin: string;
   notifications: string;
   sso: string;
 
@@ -38,7 +37,6 @@ export class EnvironmentServerConfigResponse extends BaseResponse {
     this.vault = this.getResponseProperty("Vault");
     this.api = this.getResponseProperty("Api");
     this.identity = this.getResponseProperty("Identity");
-    this.admin = this.getResponseProperty("Admin");
     this.notifications = this.getResponseProperty("Notifications");
     this.sso = this.getResponseProperty("Sso");
   }

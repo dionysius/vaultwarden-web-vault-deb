@@ -38,7 +38,6 @@ export class EnvironmentServerConfigData {
   vault: string;
   api: string;
   identity: string;
-  admin: string;
   notifications: string;
   sso: string;
 
@@ -46,7 +45,6 @@ export class EnvironmentServerConfigData {
     this.vault = response.vault;
     this.api = response.api;
     this.identity = response.identity;
-    this.admin = response.admin;
     this.notifications = response.notifications;
     this.sso = response.sso;
   }
