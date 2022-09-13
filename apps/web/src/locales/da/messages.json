@@ -912,10 +912,10 @@
     "message": "Bekræft filadgangskode"
   },
   "accountBackupOptionDescription": {
-    "message": "Udnytter din Bitwarden-kontokryptering, ikke hovedadgangskode, for at beskytte eksporten. Denne eksport kan kun importeres til den aktuelle konto. Brug denne til at oprette en sikkerhedskopi, der ikke kan bruges andre steder."
+    "message": "Brug din kontos krypteringsnøgle til at kryptere eksporten og begrænse importen til udelukkende den aktuelle Bitwarden-konto."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Opret en brugergenereret adgangskode for at beskytte eksporten. Brug denne til at oprette en eksport, der kan bruges via andre konti."
+    "message": "Opret en adgangskode til at kryptere eksporten og importér den til enhver Bitwarden-konto ved hjælp af adgangskoden til dekryptering."
   },
   "fileTypeHeading": {
     "message": "Filtype"

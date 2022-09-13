@@ -4627,16 +4627,16 @@
     "message": "タイプ"
   },
   "openIdConnectConfig": {
-    "message": "OpenID Connect Configuration"
+    "message": "OpenID Connectの設定"
   },
   "samlSpConfig": {
-    "message": "SAML Service Provider Configuration"
+    "message": "SAML サービス プロバイダーの設定"
   },
   "samlIdpConfig": {
-    "message": "SAML Identity Provider Configuration"
+    "message": "SAML IDプロバイダーの設定"
   },
   "callbackPath": {
-    "message": "Callback Path"
+    "message": "コールバックパス"
   },
   "signedOutCallbackPath": {
     "message": "Signed Out Callback Path"
@@ -4705,10 +4705,10 @@
     "message": "証明書を検証する"
   },
   "idpEntityId": {
-    "message": "Entity ID"
+    "message": "エンティティID"
   },
   "idpBindingType": {
-    "message": "Binding Type"
+    "message": "バインディングの種類"
   },
   "idpSingleSignOnServiceUrl": {
     "message": "Single Sign On Service URL"
@@ -4762,7 +4762,7 @@
     "message": "引き換える"
   },
   "sponsoredFamiliesSelectOffer": {
-    "message": "Select the organization you would like sponsored"
+    "message": "スポンサーしたい組織を選択してください"
   },
   "familiesSponsoringOrgSelect": {
     "message": "どの家族向けプランの無償提供に引き換えますか？"
@@ -4804,7 +4804,7 @@
     "message": "引き換えに使用したアカウント"
   },
   "revokeAccount": {
-    "message": "Revoke account $NAME$",
+    "message": "アカウント $NAME$ を取り消す",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4813,7 +4813,7 @@
     }
   },
   "resendEmailLabel": {
-    "message": "Resend Sponsorship email to $NAME$ sponsorship",
+    "message": "$NAME$ スポンサーシップにスポンサーシップメールを再送信する",
     "placeholders": {
       "name": {
         "content": "$1",

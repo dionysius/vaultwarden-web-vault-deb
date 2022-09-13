@@ -915,7 +915,7 @@
     "message": "使用您的账户加密密钥来加密导出的数据，并且限制只能导入到当前的 Bitwarden 账户。"
   },
   "passwordProtectedOptionDescription": {
-    "message": "设置一个密码用来加密导出的数据，并使用此密码解密以导入到任何 Bitwarden 账户。"
+    "message": "设置一个密码用来加密导出的数据，并使用此密码解密以导入到任意 Bitwarden 账户。"
   },
   "fileTypeHeading": {
     "message": "文件类型"

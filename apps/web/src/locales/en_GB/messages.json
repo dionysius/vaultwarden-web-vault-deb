@@ -912,10 +912,10 @@
     "message": "Confirm File Password"
   },
   "accountBackupOptionDescription": {
-    "message": "Leverages your Bitwarden account encryption, not master password, to protect the export. This export can only be imported into the current account. Use this to create a backup that cannot be used elsewhere."
+    "message": "Use your account encryption key to encrypt the export and restrict import to only the current Bitwarden account."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Create a user-generated password to protect the export. Use this to create an export that can be used in other accounts."
+    "message": "Set a password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "fileTypeHeading": {
     "message": "File Type"

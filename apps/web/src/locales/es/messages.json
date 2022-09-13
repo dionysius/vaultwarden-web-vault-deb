@@ -4729,7 +4729,7 @@
     "message": "Permitir peticiones de cierre de sesión"
   },
   "idpSignAuthenticationRequests": {
-    "message": "Sign authentication requests"
+    "message": "Solicitud de inicio de sesión"
   },
   "ssoSettingsSaved": {
     "message": "Single Sign-On configuration was saved."
@@ -4771,13 +4771,13 @@
     "message": "Enter your personal email to redeem Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "If you remove an offer or are removed from the sponsoring organization, your Families sponsorship will expire at the next renewal date."
+    "message": "Si eliminas una oferta o la eliminas de la organización patrocinadora, el patrocinio de tu familia caducará en la próxima fecha de renovación."
   },
   "acceptBitwardenFamiliesHelp": {
-    "message": "Accept offer for an existing organization or create a new Families organization."
+    "message": "Aceptar oferta para una organización existente o crear una nueva organización familiar."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "You've been offered a free Bitwarden Families Plan Organization. To continue, you need to log in to the account that received the offer."
+    "message": "Se le ha ofrecido una organización gratuita del Plan de Familias Bitwarden. Para continuar, necesita iniciar sesión en la cuenta que recibió la oferta."
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "No se puede aceptar la oferta. Por favor, reenvíe el correo electrónico de la oferta desde su cuenta de empresa e inténtelo de nuevo."
@@ -4984,10 +4984,10 @@
     "message": "Generar el token de sincronización de facturación"
   },
   "copyPasteBillingSync": {
-    "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
+    "message": "Copia y pega este token en la configuración de la sincronización de facturación de tu propia organización."
   },
   "billingSyncCanAccess": {
-    "message": "Your Billing Sync token can access and edit this organization's subscription settings."
+    "message": "Su token de sincronización de facturación puede acceder y editar la configuración de suscripción de esta organización."
   },
   "manageBillingSync": {
     "message": "Administrar la sincronización de facturación"
@@ -5002,10 +5002,10 @@
     "message": "Regenerar token"
   },
   "rotateBillingSyncTokenWarning": {
-    "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
+    "message": "Si continúa, necesitará reconfigurar la sincronización de facturación en su servidor autoalojado."
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "Rotating the Billing Sync Token will invalidate the previous token."
+    "message": "Rotar el token de sincronización de facturación invalidará el token anterior."
   },
   "selfHostingTitle": {
     "message": "Autoalojamiento"

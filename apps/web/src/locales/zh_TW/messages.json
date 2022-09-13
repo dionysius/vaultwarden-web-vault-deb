@@ -679,7 +679,7 @@
     "message": "無效的主密碼"
   },
   "invalidFilePassword": {
-    "message": "檔案密碼無效，請使用創建匯出檔案時輸入的密碼。"
+    "message": "檔案密碼無效，請使用您當初匯出檔案時輸入的密碼。"
   },
   "lockNow": {
     "message": "立即鎖定"
@@ -912,10 +912,10 @@
     "message": "確認檔案密碼"
   },
   "accountBackupOptionDescription": {
-    "message": "使用您的帳戶加密金鑰來加密匯出的資料，並限制只能匯入到目前的 Bitwarden 帳戶。"
+    "message": "使用您的帳戶加密金鑰來加密匯出的資料，並限制它只能匯入至目前的 Bitwarden 帳戶。"
   },
   "passwordProtectedOptionDescription": {
-    "message": "設定一个密碼來加密匯出的資料，並使用此密碼解密以匯入到任何 Bitwarden 帳戶。"
+    "message": "設定一組密碼來加密匯出的資料，並使用此密碼解密以匯入至任意 Bitwarden 帳戶。"
   },
   "fileTypeHeading": {
     "message": "檔案類型"

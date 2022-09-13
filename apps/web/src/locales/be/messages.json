@@ -388,7 +388,7 @@
     "message": "Перамясціць у арганізацыю"
   },
   "valueCopied": {
-    "message": "$VALUE$ скапіяваны(-а)",
+    "message": "$VALUE$ скапіяваны",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -600,7 +600,7 @@
     "message": "Асноўныя паролі немагчыма будзе аднавіць, калі вы іх забудзеце!"
   },
   "masterPassHintDesc": {
-    "message": "Падказка да асноўнага пароля можа дапамагчы вам яго ўспомніць, калі вы яго забылі."
+    "message": "Падказка да асноўнага пароля можа дапамагчы вам успомніць яго, калі вы яго забылі."
   },
   "reTypeMasterPass": {
     "message": "Увядзіце асноўны пароль паўторна"
@@ -838,7 +838,7 @@
     }
   },
   "moveSelectedItemsDesc": {
-    "message": "Выберыце папку ў якую вы хочаце перамясціць выбраныя элементы (колькасць: $COUNT$).",
+    "message": "Выберыце папку ў якую вы хочаце перамясціць выбраныя элементы (колькасць: $COUNT$ шт.).",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -930,7 +930,7 @@
     "message": "“Пароль файла”  і “Пацвярджэнне пароля файла“ не супадаюць."
   },
   "confirmVaultImport": {
-    "message": "Пацвердзіць імпартаванне сімвала"
+    "message": "Пацвердзіць імпартаванне сховішча"
   },
   "confirmVaultImportDesc": {
     "message": "Гэты файл абаронены паролем. Калі ласка, увядзіце пароль для імпартавання даных."
@@ -1058,7 +1058,7 @@
     "message": "Ітэрацыя KDF"
   },
   "kdfIterationsDesc": {
-    "message": "Высокае значэнне ітэрацыі KDF дапаможа абараніць галоўны пароль ад атакі поўным пераборам. Мы рэкамендуем значэнне $VALUE$ або вышэй.",
+    "message": "Высокае значэнне ітэрацыі KDF дапаможа абараніць асноўны пароль ад атакі поўным пераборам. Мы рэкамендуем значэнне $VALUE$ або вышэй.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1091,13 +1091,13 @@
     "message": "Скасаваць аўтарызацыю сеанса"
   },
   "deauthorizeSessionsDesc": {
-    "message": "Непакоіцеся пра тое, што ўваход у ваш уліковы запіс выкананы іншай прыладзе? Перайдзіце ніжэй, каб закрыць сеансы на ўсіх камп'ютарах або іншых прыладах, якія вы раней выкарыстоўвалі. Гэты крок бяспекі рэкамендаваны, калі вы раней выкарыстоўвалі агульнадаступны камп'ютар або выпадкова захавалі пароль на прыладзе, якая не належыць вам. Гэта дзеянне таксама ачысціць усе папярэднія сеансы двухэтапнага ўваходу."
+    "message": "Непакоіцеся, што ўваход у ваш уліковы запіс можа быць выкананы на іншай прыладзе? Перайдзіце ніжэй, каб скасаваць аўтарызацыю на ўсіх камп'ютарах або іншых прыладах, якія вы раней выкарыстоўвалі. Гэты крок бяспекі рэкамендаваны, калі вы раней выкарыстоўвалі агульнадаступны камп'ютар або выпадкова захавалі пароль на прыладзе, якая не належыць вам. Гэта дзеянне таксама ачысціць усе папярэднія сеансы двухэтапнага ўваходу."
   },
   "deauthorizeSessionsWarning": {
     "message": "Працягваючы, вы таксама выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Вы таксама атрымаеце паўторны запыт двухэтапнага ўваходу, калі гэта функцыя ў вас уключана. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны."
   },
   "sessionsDeauthorized": {
-    "message": "Усе сеансы адкліканы"
+    "message": "Аўтарызацыя ўсіх сеансаў скасавана"
   },
   "purgeVault": {
     "message": "Ачысціць сховішча"
@@ -1197,7 +1197,7 @@
     "message": "Параметры"
   },
   "preferencesDesc": {
-    "message": "Дастасуйце працу з вэб-сховішчам."
+    "message": "Дапасуйце працу з вэб-сховішчам."
   },
   "preferencesUpdated": {
     "message": "Параметры абноўлены"
@@ -1330,7 +1330,7 @@
     "message": "Гэты пастаўшчык двухэтапнага ўваходу ўключаны для вашага ўліковага запісу."
   },
   "twoStepLoginAuthDesc": {
-    "message": "Увядзіце галоўны пароль для змянення наладаў двухэтапнага ўваходу."
+    "message": "Увядзіце асноўны пароль для змянення наладаў двухэтапнага ўваходу."
   },
   "twoStepAuthenticatorDesc": {
     "message": "Прытрымлівайцеся гэтых крокаў, каб прызначыць двухэтапны ўваход з дапамогай праграмы аўтэнтыфікацыі:"
@@ -1369,7 +1369,7 @@
     "message": "Вы ўпэўнены, што хочаце адключыць гэтага пастаўшчыка двухэтапнага ўваходу?"
   },
   "twoStepDisabled": {
-    "message": "Пастаўшчык двухэтапнага ўваходу выключаны."
+    "message": "Пастаўшчык двухэтапнага ўваходу адключаны."
   },
   "twoFactorYubikeyAdd": {
     "message": "Дадаць новы YubiKey у ваш уліковы запіс"
@@ -1668,7 +1668,7 @@
     "message": "Праверыць па базах уцечак"
   },
   "breachUsernameNotFound": {
-    "message": "$USERNAME$ не знойдзены ў вядомых базах уцечак.",
+    "message": "$USERNAME$ не знойдзены ў вядомых уцечках даных.",
     "placeholders": {
       "username": {
         "content": "$1",
@@ -1780,7 +1780,7 @@
     "message": "Усе будучыя функцыі прэміяльнага статусу. Іх будзе больш!"
   },
   "premiumPrice": {
-    "message": "Усяго толькі за $PRICE$ на год!",
+    "message": "Усяго за $PRICE$ у год!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2009,7 +2009,7 @@
     "message": "ГБ сховішча для выдалення"
   },
   "storageAddNote": {
-    "message": "Дадаванне сховішча прывядзе да карэкціроўкі ў вашым выніковым рахунку і адразу будзе спагнана аплата згодна з азначаным метадам. Першы плацеж будзе прапарцыйны астачы бягучага плацежнага перыяду."
+    "message": "Дабаўленне сховішча прывядзе да карэкціроўкі ў вашым выніковым рахунку і адразу будзе спагнана аплата згодна з азначаным спосабам. Першы плацеж будзе прапарцыйны астачы бягучага плацежнага перыяду."
   },
   "storageRemoveNote": {
     "message": "Выдаленне сховішча прывядзе да карэкціроўкі вашага выніковага рахунку, які будзе прапарцыйна раздзелены ў выглядзе крэдытаў за наступны плацежны перыяд."
@@ -2066,7 +2066,7 @@
     "message": "Гэты ўліковы запіс належыць кампаніі."
   },
   "billingEmail": {
-    "message": "Адрас пошты для разлікаў"
+    "message": "Адрас пошты для аплаты"
   },
   "businessName": {
     "message": "Назва кампаніі"
@@ -2084,10 +2084,10 @@
     "message": "Дадатковыя месцы карыстальнікаў"
   },
   "userSeatsDesc": {
-    "message": "# карыстальніцкіх ліцэнзій"
+    "message": "# карыстальніцкіх месцаў"
   },
   "userSeatsAdditionalDesc": {
-    "message": "Ваш тарыфны план мае наступную колькасць карыстальніцкіх ліцэнзій: $BASE_SEATS$. Вы можаце дадаць дадатковую колькасць карыстальнікаў па кошце $SEAT_PRICE$ за карыстальніка ў месяц.",
+    "message": "Ваш тарыфны план мае наступную колькасць карыстальніцкіх месцаў: $BASE_SEATS$. Вы можаце дадаць дадатковую колькасць карыстальнікаў па кошце $SEAT_PRICE$ за карыстальніка ў месяц.",
     "placeholders": {
       "base_seats": {
         "content": "$1",
@@ -2100,7 +2100,7 @@
     }
   },
   "userSeatsHowManyDesc": {
-    "message": "Колькі ліцэнзій вам неабходна? Пры неабходнасці, вы заўсёды можаце дакупіць дадатковыя ліцэнзіі."
+    "message": "Колькі месцаў вам неабходна? Пры неабходнасці, вы заўсёды можаце дакупіць дадатковыя месцы."
   },
   "planNameFree": {
     "message": "Бясплатна",
@@ -2176,7 +2176,7 @@
     }
   },
   "addShareLimitedUsers": {
-    "message": "Дабаўленне і абагульненне з $COUNT$ карыстальнікамі",
+    "message": "Дабаўленне і абагуленне з $COUNT$ карыстальнікамі",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2257,7 +2257,7 @@
     "message": "Штогадова"
   },
   "annual": {
-    "message": "Штогадова"
+    "message": "Штогадовы"
   },
   "basePrice": {
     "message": "Базавы кошт"
@@ -2899,7 +2899,7 @@
     "message": "Спачатку неабходна праверыць адрас электроннай пошты вашага ўліковага запісу."
   },
   "checkInboxForVerification": {
-    "message": "У папцы ўваходныя павінен быць праверачны код."
+    "message": "У папцы з уваходнымі павінна быць праверачная спасылка."
   },
   "emailVerified": {
     "message": "Ваша пошта была праверана."
@@ -2974,7 +2974,7 @@
     "message": "Выдаліць арганізацыю"
   },
   "deletingOrganizationContentWarning": {
-    "message": "Увядзіце галоўны пароль для пацвярджэння выдалення $ORGANIZATION$ і ўсіх звязаных даных. Даныя сховішча $ORGANIZATION$ уключаюць:",
+    "message": "Увядзіце асноўны пароль для пацвярджэння выдалення $ORGANIZATION$ і ўсіх звязаных даных. Даныя сховішча $ORGANIZATION$ уключаюць:",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3091,7 +3091,7 @@
     "message": "Прызначыць абмежаванне месцаў для вашай падпіскі. Пасля дасягнення гэтага абмежавання, вы не зможаце запрашаць новых карыстальнікаў."
   },
   "maxSeatLimit": {
-    "message": "Максімальная колькасць ліцэнзій (неабавязкова)",
+    "message": "Максімальная колькасць месцаў (неабавязкова)",
     "description": "Upper limit of seats to allow through autoscaling"
   },
   "maxSeatCost": {
@@ -3106,10 +3106,10 @@
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
-    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць ліцэнзій у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў."
+    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць месцаў у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў."
   },
   "subscriptionUserSeats": {
-    "message": "Колькасць карыстальнікаў для вашай падпіскі: $COUNT$.",
+    "message": "Агульная колькасць карыстальнікаў для вашай падпіскі: $COUNT$.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3133,10 +3133,10 @@
     "message": "Для атрымання дадатковай дапамогі ў кіраванні вашай падпіскай, калі ласка, звярніцеся ў службу падтрымкі."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць ліцэнзій у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў."
+    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць месцаў у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць ліцэнзій у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў, пакуль не будзе дасягнута абмежаванне $MAX$ ліцэнзій.",
+    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць месцаў у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў, пакуль не будзе дасягнута абмежаванне (максімальная колькасць месцаў: $MAX$).",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3172,7 +3172,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Вы не зможаце запрасіць больш за $COUNT$ карыстальнікаў без павелічэння ліцэнзій вашай падпіскі.",
+    "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Вы не зможаце запрасіць больш за $COUNT$ карыстальнікаў без павелічэння месцаў у вашай падпісцы.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3181,16 +3181,16 @@
     }
   },
   "seatsToAdd": {
-    "message": "Дадаецца месца"
+    "message": "Дадаецца месцаў"
   },
   "seatsToRemove": {
-    "message": "Ліцэнзіі для выдалення"
+    "message": "Месцаў для выдалення"
   },
   "seatsAddNote": {
-    "message": "Дадаванне карыстальніцкіх ліцэнзій прывядзе да карэкціроўкі ў вашым выніковым рахунку і адразу будзе спагнана аплата згодна з азначаным метадам. Першы плацеж будзе прапарцыйны астачы бягучага плацежнага перыяду."
+    "message": "Дадаванне карыстальніцкіх месцаў прывядзе да карэкціроўкі ў вашым выніковым рахунку і адразу будзе спагнана аплата згодна з азначаным спосабам. Першы плацеж будзе прапарцыйны астачы бягучага плацежнага перыяду."
   },
   "seatsRemoveNote": {
-    "message": "Выдаленне карыстальніцкіх ліцэнзій прывядзе да змен у вашым выніковым рахунку, які будзе прапарцыйна раздзелены ў выглядзе крэдытаў за наступны плацежны перыяд."
+    "message": "Выдаленне карыстальніцкіх месцаў прывядзе да карэкціроўкі вашага выніковага рахунку, які будзе прапарцыйна раздзелены ў выглядзе крэдытаў за наступны плацежны перыяд."
   },
   "adjustedSeats": {
     "message": "Скарэктавана месцаў карыстальніка: $AMOUNT$.",
@@ -3214,7 +3214,7 @@
     "message": "Зараз вы выкарыстоўваеце састарэлую схему шыфравання."
   },
   "updateEncryptionKeyDesc": {
-    "message": "Мы перайшлі на больш складаныя ключы шыфравання, якія забяспечваюць лепшую бяспеку і доступ да самых новых функцый. Абнаўленне вашы ключоў шыфравання адбываецца хутка і лёгка. Проста ўвядзіце свой галоўны пароль знізу. Гэта абнаўленне ўрэшце стане абавязковым."
+    "message": "Мы перайшлі на больш складаныя ключы шыфравання, якія забяспечваюць лепшую бяспеку і доступ да самых новых функцый. Абнаўленне вашы ключоў шыфравання адбываецца хутка і лёгка. Проста ўвядзіце свой асноўны пароль знізу. Гэта абнаўленне ўрэшце стане абавязковым."
   },
   "updateEncryptionKeyWarning": {
     "message": "Пасля абнаўлення вашага ключа шыфравання вам неабходна выйсці з сістэмы, а потым выканаць паўторны ўваход ва ўсе праграмы Bitwarden, якія вы зараз выкарыстоўваеце (напрыклад, мабільныя праграмы або пашырэнні для браўзераў). Збой пры выхадзе і паўторным уваходзе (пры гэтым спампоўваецца ваш новы ключ шыфравання) можа стаць прычынай пашкоджання даных. Мы паспрабуем аўтаматычна ажыццявіць завяршэнне ўсіх вашых сеансаў, але гэта можа адбывацца з затрымкай."
@@ -3250,7 +3250,7 @@
     "message": "Вы нічога не выбралі."
   },
   "acceptPolicies": {
-    "message": "Ставячы гэты сцяжок вы пагаджаецеся з наступным:"
+    "message": "Ставячы гэты сцяжок, вы пагаджаецеся з наступным:"
   },
   "acceptPoliciesRequired": {
     "message": "Умовы выкарыстання і Палітыка прыватнасці не былі пацверджаны."
@@ -3433,7 +3433,7 @@
     "message": "Патрабуецца асноўны пароль"
   },
   "masterPassPolicyDesc": {
-    "message": "Задайце мінімальныя патрабаванні для надзейнасці асноўнага пароля."
+    "message": "Задайце мінімальныя патрабаванні да надзейнасці асноўнага пароля."
   },
   "twoStepLoginPolicyTitle": {
     "message": "Патрабуецца двухэтапны ўваход"
@@ -3445,7 +3445,7 @@
     "message": "Удзельнікі арганізацыі, якія не з'яўляюцца ўладальнікамі або адміністратарамі і якія не ўключылі двухэтапны ўваход у сваіх уліковых запісаць будуць выдалены з арганізацыі і атрымаюць адпаведнае апавяшчэнне па электроннай пошце."
   },
   "twoStepLoginPolicyUserWarning": {
-    "message": "Вы з'яўляецеся ўдзельнікам арганізацыі, якая патрабуе выкарыстанне двухэтапнага ўваходу для вашага ўліковага запісу. Калі вы адключыце ўсіх пастаўшчыкоў двухэтапнага ўваходу, то вы будзеце аўтаматычна выдалены з гэтай арганізацыі."
+    "message": "Вы з'яўляецеся ўдзельнікам арганізацыі, якая патрабуе выкарыстанне двухэтапнага ўваходу для вашага ўліковага запісу. Калі вы адключыце ўсіх пастаўшчыкоў двухэтапнага ўваходу, вы будзеце аўтаматычна выдалены з гэтай арганізацыі."
   },
   "passwordGeneratorPolicyDesc": {
     "message": "Прызначыць патрабаванні для генератара пароляў."
@@ -3475,13 +3475,13 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Уключыць адну ці больш вялікіх літар"
+    "message": "Уключыць адну або некалькі вялікіх літар"
   },
   "policyInEffectLowercase": {
-    "message": "Уключыць адну ці больш малых літар"
+    "message": "Уключыць адну або некалькі малых літар"
   },
   "policyInEffectNumbers": {
-    "message": "Уключыць адну або больш лічбаў"
+    "message": "Уключыць адну або некалькі лічбаў"
   },
   "policyInEffectSpecial": {
     "message": "Уключаць хаця б адзін з наступных спецыяльных сімвалаў $CHARS$",
@@ -3493,7 +3493,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Ваш новы асноўны пароль не адпавядае патрабаванням палітыцы."
+    "message": "Ваш новы асноўны пароль не адпавядае патрабаванням палітыкі."
   },
   "minimumNumberOfWords": {
     "message": "Мінімум лічбаў або слоў"
@@ -3508,7 +3508,7 @@
     "message": "Дзеянне пасля заканчэння часу сховішча"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Для таго, каб атрымаць доступ да заблакіраванага сховішча, вам неабходна ўвесці галоўны пароль або скарыстацца іншым метадам разблакіроўкі."
+    "message": "Для атрымання доступу да заблакіраванага сховішча, вам неабходна ўвесці асноўны пароль або скарыстацца іншым метадам разблакіроўкі."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Для таго, каб аднавіць доступ да сховішча, патрабуецца паўторная аўтарызацыя."
@@ -3624,7 +3624,7 @@
     "message": "Задаць асноўны пароль"
   },
   "ssoCompleteRegistration": {
-    "message": "Для завяршэння працэсу ўваходу з дапамогай SSO, прызначце галоўны пароль для доступу да вашага сховішча і яго абароны."
+    "message": "Для завяршэння працэсу ўваходу з дапамогай SSO, прызначце асноўны пароль для доступу да вашага сховішча і яго абароны."
   },
   "identifier": {
     "message": "Ідэнтыфікатар"
@@ -3710,7 +3710,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Адпраўленне створана",
+    "message": "Створаны Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3718,11 +3718,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Адпраўленне выдалена",
+    "message": "Send выдалены",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSend": {
-    "message": "Выдаленне Send",
+    "message": "Выдаліць Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
@@ -3796,7 +3796,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "allSends": {
-    "message": "Усе адпраўленні"
+    "message": "Усе Send'ы"
   },
   "maxAccessCountReached": {
     "message": "Дасягнута максімальная колькасць доступаў",
@@ -3885,7 +3885,7 @@
     "message": "Перадача ўласнасці"
   },
   "takeoverDesc": {
-    "message": "Можа скідаць пароль вашага ўліковага запісу."
+    "message": "Можа скідаць асноўны пароль вашага ўліковага запісу."
   },
   "waitTime": {
     "message": "Час чакання"
@@ -3930,7 +3930,7 @@
     "message": "Запытаць доступ"
   },
   "requestAccessConfirmation": {
-    "message": "Вы ўпэўнены, што хочаце запытаць экстранны доступ? Вам будзе забяспечаны доступ праз $WAITTIME$ дзён або калі карыстальнік уручную ўхваліць вас.",
+    "message": "Вы ўпэўнены, што хочаце запытаць экстранны доступ? Вам будзе забяспечаны доступ (меркаваная колькасць дзён: $WAITTIME$) або калі карыстальнік уручную ўхваліць запыт.",
     "placeholders": {
       "waittime": {
         "content": "$1",
@@ -4118,10 +4118,10 @@
     "message": "Палітыка арганізацыі ўплывае на вашы параметры ўласнасці."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "Імпартаванне элементаў у вашым асабістым сховішчы адключаны палітыкай арганізацыі."
+    "message": "Імпартаванне элементаў у вашым асабістым сховішчы адключана палітыкай арганізацыі."
   },
   "personalOwnershipCheckboxDesc": {
-    "message": "Адключыць асабістую ўласная для карыстальнікаў арганізацыі"
+    "message": "Адключыць асабістую ўласнасць для карыстальнікаў арганізацыі"
   },
   "textHiddenByDefault": {
     "message": "Пры доступе да Send прадвызначана хаваць тэкст",
@@ -4268,7 +4268,7 @@
     }
   },
   "eventAdminPasswordReset": {
-    "message": "Галоўны пароль скінуты карыстальнікам $ID$.",
+    "message": "Асноўны пароль скінуты карыстальнікам $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4316,73 +4316,73 @@
     "message": "Пароль паспяхова скінуты!"
   },
   "resetPasswordEnrollmentWarning": {
-    "message": "Рэгістрацыя дазволіць адміністратарам арганізацыі змяць ваш галоўны пароль"
+    "message": "Рэгістрацыя дазволіць адміністратарам арганізацыі змяняць ваш асноўны пароль"
   },
   "resetPasswordPolicy": {
     "message": "Скіданне асноўнага пароля"
   },
   "resetPasswordPolicyDescription": {
-    "message": "Дазволіць адміністратарам скідаць галоўны пароль для ўдзельнікаў."
+    "message": "Дазволіць адміністратарам скідаць асноўны пароль для ўдзельнікаў."
   },
   "resetPasswordPolicyWarning": {
-    "message": "Users in the organization will need to self-enroll or be auto-enrolled before administrators can reset their master password."
+    "message": "Карыстальнікі арганізацыі павінны зарэгістравацца самастойна або быць зарэгістраванымі аўтаматычна, каб адміністратары маглі скінуць іх асноўны пароль."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Аўтаматычная рэгістрацыя"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "All users will be automatically enrolled in password reset once their invite is accepted and will not be allowed to withdraw."
+    "message": "Усе карыстальнікі будуць аўтаматычна зарэгістраваны на скіданне пароля, пасля таго як іх запрашэнне будзе прынята і ім не будзе дазволена адмовіцца ад яго выканання."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "Users already in the organization will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
+    "message": "Карыстальнікі, якія ўжо ўваходзяць у арганізацыю не змогуць зарэгістравацца на скіданне пароля папярэднім чыслом. Яны павінны будуць самастойна зарэгістравацца, перад тым як адміністратары змогуць скінуць іх асноўны пароль."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "Require new users to be enrolled automatically"
+    "message": "Аўтаматычна рэгістраваць новых карыстальнікаў"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Гэта арганізацыя мае карпаратыўную палітыку, якая аўтаматычна зарэгіструе ваша скіданне пароля. Рэгістрацыя дазволіць адміністратарам арганізацыі змяняць ваш асноўны пароль."
   },
   "resetPasswordOrgKeysError": {
-    "message": "Organization Keys response is null"
+    "message": "Пусты адказ на ключы арганізацыі"
   },
   "resetPasswordDetailsError": {
-    "message": "Reset Password Details response is null"
+    "message": "Пусты адказ на скіданне пароля"
   },
   "trashCleanupWarning": {
-    "message": "Items that have been in Trash more than 30 days will be automatically deleted."
+    "message": "Элементы, якія знаходзяцца ў сметніцы больш чым 30 дзён будуць выдаляцца аўтаматычна."
   },
   "trashCleanupWarningSelfHosted": {
-    "message": "Items that have been in Trash for a while will be automatically deleted."
+    "message": "Элементы, якія будуць знаходзіцца ў сметніцы пэўны час будуць выдаляцца аўтаматычна."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Паўторны запыт асноўнага пароля"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Пацвярджэнне асноўнага пароля"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Гэта дзеянне абаронена. Для працягу, калі ласка, паўторна ўвядзіце свой асноўны пароль, каб пацвердзіць вашу асобу."
   },
   "reinviteSelected": {
     "message": "Паўторна адправіць запрашэнні"
   },
   "noSelectedUsersApplicable": {
-    "message": "This action is not applicable to any of the selected users."
+    "message": "Гэта дзеянне нельга ўжыць для ніводнага з выбраных карыстальнікаў."
   },
   "removeUsersWarning": {
-    "message": "Are you sure you want to remove the following users? The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Вы ўпэўнены, што хочаце выдаліць наступных карыстальнікаў? Для завяршэння працэсу можа спатрэбіцца некалькі секунд і гэта дзеянне нельга перарваць або скасаваць."
   },
   "removeOrgUsersConfirmation": {
     "message": "Пасля выдалення ўдзельніка(-ў) яны згубяць доступ да даных арганізацыі і гэта дзеянне з'яўляецца незваротным. Для паўторнага дабаўлення ўдзельніка ў арганізацыю, яго неабходна будзе зноў запрасіць туды. Працэс можа заняць некалькі секунд і яго немагчыма перарваць або скасаваць."
   },
   "revokeUsersWarning": {
-    "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Калі ўдзельнік(-і) адкліканы, яны больш не змогуць атрымаць доступ да даных арганізацыі. Для хуткага аднаўлення доступу ўдзельніка, перайдзіце ва ўкладку \"Адкліканыя\". Для завяршэння працэсу можа спатрэбіцца некалькі секунд і гэта дзеянне не можа быць перарвана або скасавана."
   },
   "theme": {
     "message": "Тэма"
   },
   "themeDesc": {
-    "message": "Choose a theme for your web vault."
+    "message": "Выберыце тэму для свайго вэб-сховішча."
   },
   "themeSystem": {
     "message": "Выкарыстоўваць сістэмную тэму"
@@ -4400,22 +4400,22 @@
     "message": "Статус масавага дзеяння"
   },
   "bulkConfirmMessage": {
-    "message": "Confirmed successfully."
+    "message": "Паспяхова пацверджана."
   },
   "bulkReinviteMessage": {
-    "message": "Reinvited successfully."
+    "message": "Паспяхова паўторна запрошаны."
   },
   "bulkRemovedMessage": {
     "message": "Паспяхова выдалена"
   },
   "bulkRevokedMessage": {
-    "message": "Revoked organization access successfully"
+    "message": "Паспяхова адкліканы доступ да арганізацыі"
   },
   "bulkRestoredMessage": {
-    "message": "Restored organization access successfully"
+    "message": "Паспяхова адноўлены доступ да арганізацыі"
   },
   "bulkFilteredMessage": {
-    "message": "Excluded, not applicable for this action."
+    "message": "Выключэнне нельга ўжыць для гэтага дзеяння."
   },
   "fingerprint": {
     "message": "Адбітак"
@@ -4433,7 +4433,7 @@
     "message": "Памылка"
   },
   "resetPasswordManageUsers": {
-    "message": "Manage Users must also be enabled with the Manage Password Reset permission"
+    "message": "Кіраванне карыстальнікамі павінна таксама быць уключана з дазволам \"Кіраванне скіданнем пароля\""
   },
   "setupProvider": {
     "message": "Налады пастаўшчыка"
@@ -4463,7 +4463,7 @@
     "message": "Сэрвісны карыстальнік"
   },
   "serviceUserDesc": {
-    "message": "Service users can access and manage all client organizations."
+    "message": "Сэрвісныя карыстальнікі могуць атрымліваць доступ і кіраваць усімі кліенцкімі арганізацыямі."
   },
   "providerInviteUserDesc": {
     "message": "Запрасіць новага карыстальніка да вашага пастаўшчыка, увёўшы электронную пошту яго ўліковага запісу Bitwarden ніжэй. Калі ён не мае ўліковага запісу, то ён атрымае запыт на яго стварэнне."
@@ -4554,16 +4554,16 @@
     "message": "Дадаць"
   },
   "updatedMasterPassword": {
-    "message": "Галоўны пароль абноўлены"
+    "message": "Асноўны пароль абноўлены"
   },
   "updateMasterPassword": {
-    "message": "Абнавіць галоўны пароль"
+    "message": "Абнавіць асноўны пароль"
   },
   "updateMasterPasswordWarning": {
-    "message": "Ваш галоўны пароль быў нядаўна зменены адміністратарам вашай арганізацыі. Для атрымання доступу да сховішча, вы павінны абнавіць галоўны пароль. Працягваючы, вы выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны."
+    "message": "Ваш асноўны пароль быў нядаўна зменены адміністратарам вашай арганізацыі. Для атрымання доступу да сховішча, вы павінны абнавіць асноўны пароль. Працягваючы, вы выйдзіце з бягучага сеанса і вам неабходна будзе ўвайсці паўторна. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу адной гадзіны."
   },
   "masterPasswordInvalidWarning": {
-    "message": "Ваш галоўны пароль не адпавядае патрабаванням гэтай арганізацыі. Каб далучыцца да арганізацыі, вам неабходна абнавіць свой галоўны пароль зараз. Працягнуўшы, вы выйдзіце з бягучага сеанса і вам спатрэбіцца ўвайсці зноў. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу гадзіны."
+    "message": "Ваш асноўны пароль не адпавядае патрабаванням гэтай арганізацыі. Каб далучыцца да арганізацыі, вам неабходна абнавіць свой асноўны пароль зараз. Працягнуўшы, вы выйдзіце з бягучага сеанса і вам спатрэбіцца ўвайсці зноў. Сеансы на іншых прыладах могуць заставацца актыўнымі на працягу гадзіны."
   },
   "maximumVaultTimeout": {
     "message": "Час чакання сховішча"
@@ -4584,7 +4584,7 @@
     "message": "Хвіліны"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Палітыка вашай арганізацыі ўплывае на час чакання сховішча. Максімальны дазволены час чакання сховішча $HOURS$ гадз. і $MINUTES$ хв.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4600,34 +4600,34 @@
     "message": "Карыстальніцкі час чакання сховішча"
   },
   "vaultTimeoutToLarge": {
-    "message": "Your vault timeout exceeds the restriction set by your organization."
+    "message": "Час чакання вашага сховішча перавышае дазволеныя абмежаванні, якія прызначыла ваша арганізацыя."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Мінімальны карыстальніцкі час чакання складае 1 хвіліну."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault Timeout is not within allowed range."
+    "message": "Час чакання сховішча па-за межамі дазволенага дыяпазону."
   },
   "disablePersonalVaultExport": {
-    "message": "Remove individual vault export"
+    "message": "Выдаліць экспартаванне асабістага сховішча"
   },
   "disablePersonalVaultExportDesc": {
-    "message": "Do not allow members to export their individual vault data."
+    "message": "Не дазваляць удзельнікам экспартаваць іх індывідуальнае сховішча."
   },
   "vaultExportDisabled": {
     "message": "Экспартаванне сховішча адключана"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Адна або больш палітык арганізацыі не дазваляюць вам экспартаваць асабістае сховішча."
   },
   "selectType": {
-    "message": "Select SSO Type"
+    "message": "Выберыце тып SSO"
   },
   "type": {
     "message": "Тып"
   },
   "openIdConnectConfig": {
-    "message": "OpenID Connect Configuration"
+    "message": "Канфігурацыя злучэння OpenID"
   },
   "samlSpConfig": {
     "message": "Канфігурацыя пастаўшчыка паслуг SAML"
@@ -4639,10 +4639,10 @@
     "message": "Шлях да зваротнага выкліку"
   },
   "signedOutCallbackPath": {
-    "message": "Signed Out Callback Path"
+    "message": "Выйсці са шляху да зваротнага выкліку"
   },
   "authority": {
-    "message": "Authority"
+    "message": "Аўтарызацыя"
   },
   "clientId": {
     "message": "Ідэнт. кліента"
@@ -4654,28 +4654,28 @@
     "message": "Адрас метаданых"
   },
   "oidcRedirectBehavior": {
-    "message": "OIDC Redirect Behavior"
+    "message": "Паводзіны перанакіравання OIDC"
   },
   "getClaimsFromUserInfoEndpoint": {
-    "message": "Get claims from user info endpoint"
+    "message": "Атрымліваць патрабаванні ад канцавога пункту інфармацыі аб карыстальніку"
   },
   "additionalScopes": {
     "message": "Карыстальніцкія вобласці"
   },
   "additionalUserIdClaimTypes": {
-    "message": "Custom User ID Claim Types"
+    "message": "Тыпы патрабаванняў да ідэнтыфікатара карыстальніка"
   },
   "additionalEmailClaimTypes": {
     "message": "Тыпы патрабаванняў электроннай пошты"
   },
   "additionalNameClaimTypes": {
-    "message": "Custom Name Claim Types"
+    "message": "Тыпы патрабаванняў да імя карыстальніка"
   },
   "acrValues": {
     "message": "Запытаныя значэнні спасылак класа кантэксту аўтэнтыфікацыі"
   },
   "expectedReturnAcrValue": {
-    "message": "Expected \"acr\" Claim Value In Response"
+    "message": "Чакаецца значэнне запыту \"acr\" у адказе"
   },
   "spEntityId": {
     "message": "ID аб'екта SP"
@@ -4684,76 +4684,76 @@
     "message": "URL-адрас метаданых SAML 2.0"
   },
   "spAcsUrl": {
-    "message": "Assertion Consumer Service (ACS) URL"
+    "message": "URL-адрасы службы пацвярджэння кліентаў (ACS)"
   },
   "spNameIdFormat": {
     "message": "Фармат ідэнтыфікатара назвы"
   },
   "spOutboundSigningAlgorithm": {
-    "message": "Outbound Signing Algorithm"
+    "message": "Алгарытм выходнага подпісу"
   },
   "spSigningBehavior": {
     "message": "Паводзіны пры падпісанні"
   },
   "spMinIncomingSigningAlgorithm": {
-    "message": "Minimum Incoming Signing Algorithm"
+    "message": "Мінімальны алгарытм уваходнага подпісу"
   },
   "spWantAssertionsSigned": {
-    "message": "Expect signed assertions"
+    "message": "Чакаецца подпіс пацвярджэнняў"
   },
   "spValidateCertificates": {
     "message": "Праверка сертыфікатаў"
   },
   "idpEntityId": {
-    "message": "Entity ID"
+    "message": "Ідэнтыфікатар аб'екта"
   },
   "idpBindingType": {
     "message": "Тып прывязкі"
   },
   "idpSingleSignOnServiceUrl": {
-    "message": "Single Sign On Service URL"
+    "message": "URL-службы адзінага ўваходу"
   },
   "idpSingleLogoutServiceUrl": {
-    "message": "Single Log Out Service URL"
+    "message": "URL-службы адзінага выхаду"
   },
   "idpX509PublicCert": {
-    "message": "X509 Public Certificate"
+    "message": "Публічны сертыфікат X509"
   },
   "idpOutboundSigningAlgorithm": {
-    "message": "Outbound Signing Algorithm"
+    "message": "Алгарытм выходнага подпісу"
   },
   "idpAllowUnsolicitedAuthnResponse": {
     "message": "Дазваляць непажаданы адказ аўтэнтыфікацыі"
   },
   "idpAllowOutboundLogoutRequests": {
-    "message": "Allow outbound logout requests"
+    "message": "Дазваляць выходныя запыты для завяршэння сеансу"
   },
   "idpSignAuthenticationRequests": {
     "message": "Падпісваць запыты аўтэнтыфікацыі"
   },
   "ssoSettingsSaved": {
-    "message": "Single Sign-On configuration was saved."
+    "message": "Канфігурацыя адзінага ўваходу захавана."
   },
   "sponsoredFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Бясплатны тарыфны план Bitwarden Families"
   },
   "sponsoredFamiliesEligible": {
-    "message": "You and your family are eligible for Free Bitwarden Families. Redeem with your personal email to keep your data secure even when you are not at work."
+    "message": "Вы і ваша сям'я маеце права на бясплатны тарыфны план Bitwarden Families. Актывуйце доступ з асабістай электроннай поштай, каб захаваць свае даныя ў бяспецы, нават калі вы не на працы."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Redeem your Free Bitwarden for Families plan today to keep your data secure even when you are not at work."
+    "message": "Актывуйце сёння бясплатны тарыфны план Bitwarden Families, каб захаваць свае даныя ў бяспецы, нават калі вы не на працы."
   },
   "sponsoredFamiliesInclude": {
-    "message": "The Bitwarden for Families plan include"
+    "message": "Тарыфны план Bitwarden Families уключае"
   },
   "sponsoredFamiliesPremiumAccess": {
-    "message": "Premium access for up to 6 users"
+    "message": "Прэміяльны доступ, які абмяжоўваецца 6 карыстальнікамі"
   },
   "sponsoredFamiliesSharedCollections": {
-    "message": "Shared collections for Family secrets"
+    "message": "Абагуленыя калекцыі для сямейных сакрэтаў"
   },
   "badToken": {
-    "message": "The link is no longer valid. Please have the sponsor resend the offer."
+    "message": "Спасылка больш не дзейнічае. Калі ласка, папрасіце спонсара паўторна адправіць прапанову."
   },
   "reclaimedFreePlan": {
     "message": "Бясплатны план адноўлены"
@@ -4762,28 +4762,28 @@
     "message": "Актываваць"
   },
   "sponsoredFamiliesSelectOffer": {
-    "message": "Select the organization you would like sponsored"
+    "message": "Выберыце арганізацыю, якую хочаце спансіраваць"
   },
   "familiesSponsoringOrgSelect": {
-    "message": "Which Free Families offer would you like to redeem?"
+    "message": "Якую бясплатную сямейную прапанову вы хочаце актываваць?"
   },
   "sponsoredFamiliesEmail": {
-    "message": "Enter your personal email to redeem Bitwarden Families"
+    "message": "Увядзіце свой асабісты адрас электроннай пошты Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "If you remove an offer or are removed from the sponsoring organization, your Families sponsorship will expire at the next renewal date."
+    "message": "Калі вы выдаліце прапанову або будзеце выключаны са спонсарскай арганізацыі, ваш доступ да тарыфнага плана Bitwarden Families завершыцца ў наступную дату падаўжэння."
   },
   "acceptBitwardenFamiliesHelp": {
-    "message": "Accept offer for an existing organization or create a new Families organization."
+    "message": "Пагадзіцеся на прапанову для існуючай арганізацыі або стварыце новую сямейную арганізацыю."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "You've been offered a free Bitwarden Families Plan Organization. To continue, you need to log in to the account that received the offer."
+    "message": "Вам прапанаваны бясплатны тарыфны план Bitwarden Families ад арганізацыі. Для працягу, вам неабходна ўвайсці ва ўліковы запіс з якога вы атрымалі прапанову."
   },
   "sponsoredFamiliesAcceptFailed": {
-    "message": "Unable to accept offer. Please resend the offer email from your enterprise account and try again."
+    "message": "Немагчыма праняць прапанову. Калі ласка, адпраўце прапанову на электронную пошту паўторна са свайго карпаратыўнага ўліковага запісу."
   },
   "sponsoredFamiliesAcceptFailedShort": {
-    "message": "Unable to accept offer. $DESCRIPTION$",
+    "message": "Немагчыма праняць прапанову. $DESCRIPTION$",
     "placeholders": {
       "description": {
         "content": "$1",
@@ -4792,10 +4792,10 @@
     }
   },
   "sponsoredFamiliesOffer": {
-    "message": "Accept Free Bitwarden Families"
+    "message": "Прыняць бясплатна Bitwarden Families"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Free Bitwarden Families offer successfully redeemed"
+    "message": "Прапанова на бясплатны тарыфны план Bitwarden Families паспяхова актывавана"
   },
   "redeemed": {
     "message": "Актывавана"
@@ -4813,7 +4813,7 @@
     }
   },
   "resendEmailLabel": {
-    "message": "Resend Sponsorship email to $NAME$ sponsorship",
+    "message": "Паўторна адправіць ліст пра спансаванне карыстальніку $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4831,25 +4831,25 @@
     "message": "Атрымальнік"
   },
   "removeSponsorship": {
-    "message": "Выдаліць спонсара"
+    "message": "Выдаліць спансаванне"
   },
   "removeSponsorshipConfirmation": {
-    "message": "After removing a sponsorship, you will be responsible for this subscription and related invoices. Are you sure you want to continue?"
+    "message": "Пасля выдалення спонсарства, вы будзеце адказваць за гэту падпіску і звязаныя рахункі. Вы ўпэўнены, што хочаце працягнуць?"
   },
   "sponsorshipCreated": {
-    "message": "Спонсар створаны"
+    "message": "Спансаванне створана"
   },
   "emailSent": {
     "message": "Ліст адпраўлены"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "After removing this account, the Families plan sponsorship will expire at the end of the billing period. You will not be able to redeem a new sponsorship offer until the existing one expires. Are you sure you want to continue?"
+    "message": "Пасля выдалення гэтага ўліковага запісу спонсарства тарыфнага плана Bitwarden Families завяршыцца ў канцы плацежнага перыяду. У вас не будзе магчымасці скарыстацца новай спонсарскай прапановай, пакуль не завяршыцца тэрмін бягучай прапановы. Вы ўпэўнены, што хочаце працягнуць?"
   },
   "removeSponsorshipSuccess": {
-    "message": "Спонсар выдалены"
+    "message": "Спансаванне выдалена"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Памылка Key Connector: пераканайцеся, што Key Connector даступны і карэктна працуе."
   },
   "keyConnectorUrl": {
     "message": "URL-адрас Key Connector"
@@ -4867,7 +4867,7 @@
     "message": "Праверачны код"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Пацвердзіце сваю асобу для працягу."
   },
   "verificationCodeRequired": {
     "message": "Патрабуецца праверачны код."
@@ -4876,7 +4876,7 @@
     "message": "Памылковы праверачны код"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ выкарыстоўвае SSO з уласным серверам ключоў. Асноўны пароль для ўдзельнікаў гэтай арганізацыі больш не патрабуецца.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4888,10 +4888,10 @@
     "message": "Пакінуць арганізацыю"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Выдаліць асноўны пароль"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Асноўны пароль выдалены."
   },
   "allowSso": {
     "message": "Дазволіць аўтэнтыфікацыю SSO"
@@ -4915,19 +4915,19 @@
     "message": "Для наладжвання расшыфроўкі Key Connector неабходна палітыка аўтэнтыфікацыі SSO і адзінай арганізацыі."
   },
   "memberDecryptionOption": {
-    "message": "Member Decryption Options"
+    "message": "Параметры расшыфроўкі ўдзельніка"
   },
   "memberDecryptionPassDesc": {
-    "message": "Once authenticated, members will decrypt vault data using their Master Passwords."
+    "message": "Пасля аўтэнтыфікацыі ўдзельнікі будуць расшыфроўваць даныя сховішча з выкарыстаннем сваіх асноўных пароляў."
   },
   "keyConnector": {
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDesc": {
-    "message": "Connect Login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their Master Passwords to decrypt vault data. Contact Bitwarden Support for set up assistance."
+    "message": "Падключыце аўтарызацыю з дапамогай SSO да свайго ўласнага сервера расшыфроўкі ключоў. Пры дапамозе гэтага параметра ўдзельнікам больш непатрэбна будзе выкарыстоўваць свае асноўныя паролі для расшыфроўкі даных сховішча. Звярніцеся ў службу падтрымкі, каб атрымаць дапамогу з наладжваннем."
   },
   "keyConnectorPolicyRestriction": {
-    "message": "\"Login with SSO and Key Connector Decryption\" is enabled. This policy will only apply to Owners and Admins."
+    "message": "\"Уваход з дапамогай SSO і расшыфроўкай Key Connector\" уключаны. Гэта палітыка распаўсюджваецца толькі на ўладальнікаў і адміністратараў."
   },
   "enabledSso": {
     "message": "SSO уключана"
@@ -4939,55 +4939,55 @@
     "message": "Key Connector уключаны"
   },
   "disabledKeyConnector": {
-    "message": "Disabled Key Connector"
+    "message": "Key Connector адключаны"
   },
   "keyConnectorWarning": {
-    "message": "Once members begin using Key Connector, your Organization cannot revert to Master Password decryption. Proceed only if you are comfortable deploying and managing a key server."
+    "message": "Як толькі ўдзельнікі пачнуць выкарыстоўваць Key Connector, ваша арганізацыя не зможа вярнуцца да расшыфроўкі з асноўным паролем. Працягвайце толькі калі вы гатовы разгарнуць сервер ключоў і кіраваць ім."
   },
   "migratedKeyConnector": {
-    "message": "Migrated to Key Connector"
+    "message": "Выканана міграцыя на Key Connector"
   },
   "paymentSponsored": {
-    "message": "Please provide a payment method to associate with the organization. Don't worry, we won't charge you anything unless you select additional features or your sponsorship expires. "
+    "message": "Калі ласка, забяспечце спосаб аплаты для звязанай арганізацыі. Не хвалюйцеся, мы нічога не будзем спаганяць з вас, калі вы не выберыце дадатковыя функцыі або ваша спонсарская прапанова не будзе пратэрмінавана. "
   },
   "orgCreatedSponsorshipInvalid": {
-    "message": "The sponsorship offer has expired. You may delete the organization you created to avoid a charge at the end of your 7 day trial. Otherwise you may close this prompt to keep the organization and assume billing responsibility."
+    "message": "Спонсарская прапанова пратэрмінавана. Вы можаце выдаліць створаную арганізацыю, каб пазбегнуць спагнання грашовых сродкаў пасля завяршэння 7-дзённага выпрабавальнага перыяду. У адваротным выпадку вы можаце закрыць гэта апавяшчэнне і ўзяць на сябе плацежныя абавязкі."
   },
   "newFamiliesOrganization": {
-    "message": "New Families Organization"
+    "message": "Новая сямейная арганізацыя"
   },
   "acceptOffer": {
     "message": "Прыняць прапанову"
   },
   "sponsoringOrg": {
-    "message": "Sponsoring Organization"
+    "message": "Спонсарская арганізацыя"
   },
   "keyConnectorTest": {
     "message": "Тэст"
   },
   "keyConnectorTestSuccess": {
-    "message": "Success! Key Connector reached."
+    "message": "Паспяхова! Key Connector падлучаны."
   },
   "keyConnectorTestFail": {
-    "message": "Cannot reach Key Connector. Check URL."
+    "message": "Немагчыма падлучыцца да Key Connector. Праверце URL-адрас."
   },
   "sponsorshipTokenHasExpired": {
-    "message": "The sponsorship offer has expired."
+    "message": "Тэрмін дзеяння спонсарскай прапановы пратэрмінаваны."
   },
   "freeWithSponsorship": {
-    "message": "БЯСПЛАТНА дзякуючы спонсару"
+    "message": "БЯСПЛАТНА дзякуючы спонсарству"
   },
   "viewBillingSyncToken": {
-    "message": "View Billing Sync Token"
+    "message": "Паглядзець плацежны токен сінхранізацыі"
   },
   "generateBillingSyncToken": {
-    "message": "Generate Billing Sync Token"
+    "message": "Генерыраваць плацежны токен сінхранізацыі"
   },
   "copyPasteBillingSync": {
-    "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
+    "message": "Скапіюйце і ўстаўце гэты токен у налады плацежнай сінхранізацыі сваёй уласнай размешчанай арганізацыі."
   },
   "billingSyncCanAccess": {
-    "message": "Your Billing Sync token can access and edit this organization's subscription settings."
+    "message": "Ваш токен плацежнай сінхранізацыі можа атрымаць доступ і адрэдагаваць налады падпіскі гэтай арганізацыі."
   },
   "manageBillingSync": {
     "message": "Кіраваць плацежнай сінхранізацыяй"
@@ -5002,16 +5002,16 @@
     "message": "Змяніць токен"
   },
   "rotateBillingSyncTokenWarning": {
-    "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
+    "message": "Калі вы працягніце, вам будзе неабходна паўторна наладзіць плацежную сінхранізацыю на вашым серверы."
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "Rotating the Billing Sync Token will invalidate the previous token."
+    "message": "Змяненне токена плацежнай сінхранізацыі прывядзе да скасавання папярэдняга токена."
   },
   "selfHostingTitle": {
     "message": "Уласнае размяшчэнне"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
+    "message": "Для наладжвання арганізацыі на вашым уласным серверы, вам неабходна будзе загрузіць файл ліцэнзіі. Для падтрымкі тарыфных планаў Bitwarden Families і пашыраных магчымасцяў выстаўлення рахункаў для вашай арганізацыі, вам неабходна наладзіць плацежную сінхранізацыю."
   },
   "billingSyncApiKeyRotated": {
     "message": "Токен зменены."
@@ -5020,10 +5020,10 @@
     "message": "Плацежная сінхранізацыя"
   },
   "billingSyncDesc": {
-    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Плацежная сінхранізацыя дае магчымасць удзельнікам атрымаць бясплатны тарыфны план Bitwarden Families і пашыраныя магчымасці выстаўлення рахункаў звязваючы ваш уласны сервер Bitwarden з воблачным серверам нашай кампаніі."
   },
   "billingSyncKeyDesc": {
-    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+    "message": "Для запаўнення гэтай формы неабходны токен плацежнай сінхранізацыі з наладаў падпіскі арганізацыі ў воблачным сховішчы."
   },
   "billingSyncKey": {
     "message": "Токен плацежнай сінхранізацыі"
@@ -5041,13 +5041,13 @@
     "message": "Адпраўлена"
   },
   "requestRemoved": {
-    "message": "Removed (Awaiting Sync)"
+    "message": "Выдалены (чакаецца сінхранізацыя)"
   },
   "requested": {
     "message": "Запытана"
   },
   "formErrorSummaryPlural": {
-    "message": "$COUNT$ fields above need your attention.",
+    "message": "$COUNT$ поле вышэй патрабуе вашай увагі.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5077,22 +5077,22 @@
     "message": "Дадатковыя дапасаванні"
   },
   "openIdAuthorityRequired": {
-    "message": "Required if Authority is not valid."
+    "message": "Абавязкова, калі ўстанова не дзейнічае."
   },
   "separateMultipleWithComma": {
-    "message": "Separate multiple with a comma."
+    "message": "Некалькі значэнняў, якія раздзелыны коскай."
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Час чакання вашай сесіі завяршыўся. Калі ласка, увайдзіце паўторна."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Экспартаванне асабістага сховішча"
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting Organization Vault"
+    "message": "Экспартавання сховішча арганізацыі"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Будуць экспартаваны толькі асабістыя элементы сховішча, якія звязаны з $EMAIL$. Элементы сховішча арганізацыі не будуць уключаны.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5101,7 +5101,7 @@
     }
   },
   "exportingOrganizationVaultDescription": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Personal vault items and items from other organizations will not be included.",
+    "message": "Будуць экспартаваны толькі запісы сховішча арганізацыі, які звязаны з $ORGANIZATION$. Элементы асабістага сховішча і элементы з іншых арганізацый не будуць уключаны.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -5110,7 +5110,7 @@
     }
   },
   "accessDenied": {
-    "message": "Access Denied. You do not have permission to view this page."
+    "message": "Доступ забаронены. У вас не дастаткова правоў для прагляду гэтай старонкі."
   },
   "masterPassword": {
     "message": "Асноўны пароль"
@@ -5125,7 +5125,7 @@
     "message": "Гісторыя плацяжоў"
   },
   "backToReports": {
-    "message": "Back to Reports"
+    "message": "Вярнуцца да справаздач"
   },
   "organizationPicker": {
     "message": "Выбар арганізацыі"
@@ -5141,7 +5141,7 @@
     "message": "Генератар"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Што вы хочаце генерыраваць?"
   },
   "passwordType": {
     "message": "Тып пароля"
@@ -5160,13 +5160,13 @@
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Выкарыстоўваць магчымасці пададрасацыі вашага пастаўшчыка паслуг электроннай пошты."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Адрас для ўсёй пошты дамена"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Выкарыстоўвайце сваю сканфігураваную скрыню для ўсё пошты дамена."
   },
   "random": {
     "message": "Выпадкова",
@@ -5179,10 +5179,10 @@
     "message": "Сэрвіс"
   },
   "unknownCipher": {
-    "message": "Unknown Item, you may need to request permission to access this item."
+    "message": "Невядомы элемент. Магчыма, што вам неабходна запытаць дазвол на доступ да гэтага элемента."
   },
   "cannotSponsorSelf": {
-    "message": "You cannot redeem for the active account. Enter a different email."
+    "message": "Вы не можаце актываваць актыўны ўліковы запіс. Увядзіце іншы адрас электроннай пошты."
   },
   "revokeWhenExpired": {
     "message": "Міне $DATE$",
@@ -5194,7 +5194,7 @@
     }
   },
   "awaitingSyncSingular": {
-    "message": "Token rotated $DAYS$ day ago. Update the billing sync token in your self-hosted organization settings.",
+    "message": "Токен зменены $DAYS$ дзень таму. Абнавіце токен плацежнай сінхранізацыі ў наладах уласнай размешчанай арганізацыі.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5203,7 +5203,7 @@
     }
   },
   "awaitingSyncPlural": {
-    "message": "Token rotated $DAYS$ days ago. Update the billing sync token in your self-hosted organization settings.",
+    "message": "Токен зменены $DAYS$ дні/дзён таму. Абнавіце токен плацежнай сінхранізацыі ў наладах уласнай размешчанай арганізацыі.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -5216,7 +5216,7 @@
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
-    "message": "Self-hosted sponsorships synced."
+    "message": "Уласнае размяшчэнне спансавання сінхранізавана."
   },
   "billingManagedByProvider": {
     "message": "Кіруецца $PROVIDER$",
@@ -5273,7 +5273,7 @@
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Аўтаматычна забяспечваць карыстальнікаў і групы пажаданымі пасведчаннямі пастаўшчыка праз забеспячэнне SCIM",
+    "message": "Аўтаматычна забяспечваць карыстальнікаў і групы пажаданымі пасведчаннямі пастаўшчыка праз SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
@@ -5285,18 +5285,18 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
-    "message": "This API key has access to manage users within your organization. It should be kept secret."
+    "message": "Гэты ключ API мае доступ да кіравання карыстальнікаў у межах вашай арганізацыі. Яго неабходна захоўваць у надзейным месцы."
   },
   "copyScimKey": {
-    "message": "Copy the SCIM API Key to your clipboard",
+    "message": "Капіяваць ключ API для SCIM у буфер абмену",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Rotate the SCIM API Key",
+    "message": "Змяніць ключ API для SCIM",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
+    "message": "Вы ўпэўнены, што хочаце змяніць ключ API для SCIM? Бягучы ключ не будзе больш працаваць для любых бягучых інтэграцый.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
@@ -5307,7 +5307,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {
-    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "message": "Скапіяваць SCIM канцавога пункту URL-адраса ў ваш буфер абмену",
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimUrl": {
@@ -5315,21 +5315,21 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "The SCIM API Key has been successfully rotated",
+    "message": "Ключ API для SCIM быў паспяхова зменены",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "SCIM settings have been saved successfully",
+    "message": "Налады SCIM былі паспяхова захаваны",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
     "message": "Неабходны ўвод даных."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "Уведзеныя даныя не з'яўляюцца адрасам электроннай пошты."
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Даўжыня ўведзеных даных павінна складаць прынамсі $COUNT$ сімв.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5338,7 +5338,7 @@
     }
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ полі(-ёў) вышэй патрабуе вашай увагі.",
     "placeholders": {
       "count": {
         "content": "$1",

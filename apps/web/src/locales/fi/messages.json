@@ -5273,7 +5273,7 @@
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Provisioi käyttäjät ja ryhmät suosimasi tunnistustietojen tarjoajan kanssa SCIM-provisioinnilla",
+    "message": "Provisioi käyttäjät ja ryhmät haluamasi tunnistustietojen tarjoajan kanssa SCIM-provisioinnilla",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
@@ -5281,7 +5281,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Määritä haluamasi SAML-tunnistustietojen tarjoaja määrittämällä URL-osoite ja SCIM API-avain",
+    "message": "Määritä haluamasi tunnistustietojen tarjoaja määrittämällä URL-osoite ja SCIM API -avain",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
