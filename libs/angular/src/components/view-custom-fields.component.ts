@@ -36,4 +36,8 @@ export class ViewCustomFieldsComponent {
 
     field.showCount = !field.showCount;
   }
+
+  setTextDataOnDrag(event: DragEvent, data: string) {
+    event.dataTransfer.setData("text", data);
+  }
 }

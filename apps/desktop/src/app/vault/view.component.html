@@ -6,7 +6,12 @@
       </h2>
       <div class="box-content">
         <div class="box-content-row">
-          <span class="row-label">{{ "name" | i18n }}</span>
+          <span
+            class="row-label draggable"
+            draggable="true"
+            (dragstart)="setTextDataOnDrag($event, cipher.name)"
+            >{{ "name" | i18n }}</span
+          >
           {{ cipher.name }}
         </div>
         <!-- Login -->
@@ -152,12 +157,22 @@
         <!-- Card -->
         <div *ngIf="cipher.card">
           <div class="box-content-row" *ngIf="cipher.card.cardholderName">
-            <span class="row-label">{{ "cardholderName" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.card.cardholderName)"
+              >{{ "cardholderName" | i18n }}</span
+            >
             {{ cipher.card.cardholderName }}
           </div>
           <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.number">
             <div class="row-main">
-              <span class="row-label">{{ "number" | i18n }}</span>
+              <span
+                class="row-label draggable"
+                draggable="true"
+                (dragstart)="setTextDataOnDrag($event, cipher.card.number)"
+                >{{ "number" | i18n }}</span
+              >
               <span *ngIf="!showCardNumber" class="monospaced">{{
                 cipher.card.maskedNumber | creditCardNumber: cipher.card.brand
               }}</span>
@@ -192,16 +207,31 @@
             </div>
           </div>
           <div class="box-content-row" *ngIf="cipher.card.brand">
-            <span class="row-label">{{ "brand" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.card.brand)"
+              >{{ "brand" | i18n }}</span
+            >
             {{ cipher.card.brand }}
           </div>
           <div class="box-content-row" *ngIf="cipher.card.expiration">
-            <span class="row-label">{{ "expiration" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.card.expiration)"
+              >{{ "expiration" | i18n }}</span
+            >
             {{ cipher.card.expiration }}
           </div>
           <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.code">
             <div class="row-main">
-              <span class="row-label">{{ "securityCode" | i18n }}</span>
+              <span
+                class="row-label draggable"
+                draggable="true"
+                (dragstart)="setTextDataOnDrag($event, cipher.card.code)"
+                >{{ "securityCode" | i18n }}</span
+              >
               <span *ngIf="!showCardCode" class="monospaced">{{ cipher.card.maskedCode }}</span>
               <span *ngIf="showCardCode" class="monospaced">{{ cipher.card.code }}</span>
             </div>
@@ -235,42 +265,98 @@
         <!-- Identity -->
         <div *ngIf="cipher.identity">
           <div class="box-content-row" *ngIf="cipher.identity.fullName">
-            <span class="row-label">{{ "identityName" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.identity.fullName)"
+              >{{ "identityName" | i18n }}</span
+            >
             {{ cipher.identity.fullName }}
           </div>
           <div class="box-content-row" *ngIf="cipher.identity.username">
-            <span class="row-label">{{ "username" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.identity.username)"
+              >{{ "username" | i18n }}</span
+            >
             {{ cipher.identity.username }}
           </div>
           <div class="box-content-row" *ngIf="cipher.identity.company">
-            <span class="row-label">{{ "company" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.identity.company)"
+              >{{ "company" | i18n }}</span
+            >
             {{ cipher.identity.company }}
           </div>
           <div class="box-content-row" *ngIf="cipher.identity.ssn">
-            <span class="row-label">{{ "ssn" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.identity.ssn)"
+              >{{ "ssn" | i18n }}</span
+            >
             {{ cipher.identity.ssn }}
           </div>
           <div class="box-content-row" *ngIf="cipher.identity.passportNumber">
-            <span class="row-label">{{ "passportNumber" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.identity.passportNumber)"
+              >{{ "passportNumber" | i18n }}</span
+            >
             {{ cipher.identity.passportNumber }}
           </div>
           <div class="box-content-row" *ngIf="cipher.identity.licenseNumber">
-            <span class="row-label">{{ "licenseNumber" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.identity.licenseNumber)"
+              >{{ "licenseNumber" | i18n }}</span
+            >
             {{ cipher.identity.licenseNumber }}
           </div>
           <div class="box-content-row" *ngIf="cipher.identity.email">
-            <span class="row-label">{{ "email" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.identity.email)"
+              >{{ "email" | i18n }}</span
+            >
             {{ cipher.identity.email }}
           </div>
           <div class="box-content-row" *ngIf="cipher.identity.phone">
-            <span class="row-label">{{ "phone" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, cipher.identity.phone)"
+              >{{ "phone" | i18n }}</span
+            >
             {{ cipher.identity.phone }}
           </div>
           <div
             class="box-content-row"
             *ngIf="cipher.identity.address1 || cipher.identity.city || cipher.identity.country"
           >
-            <span class="row-label">{{ "address" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="
+                setTextDataOnDrag(
+                  $event,
+                  (cipher.identity.address1 ? cipher.identity.address1 + '\n' : '') +
+                    (cipher.identity.address2 ? cipher.identity.address2 + '\n' : '') +
+                    (cipher.identity.address3 ? cipher.identity.address3 + '\n' : '') +
+                    (cipher.identity.fullAddressPart2
+                      ? cipher.identity.fullAddressPart2 + '\n'
+                      : '') +
+                    (cipher.identity.country ? cipher.identity.country : '')
+                )
+              "
+              >{{ "address" | i18n }}</span
+            >
             <div *ngIf="cipher.identity.address1">{{ cipher.identity.address1 }}</div>
             <div *ngIf="cipher.identity.address2">{{ cipher.identity.address2 }}</div>
             <div *ngIf="cipher.identity.address3">{{ cipher.identity.address3 }}</div>
@@ -289,8 +375,20 @@
           *ngFor="let u of cipher.login.uris; let i = index"
         >
           <div class="row-main">
-            <span class="row-label" *ngIf="!u.isWebsite">{{ "uri" | i18n }}</span>
-            <span class="row-label" *ngIf="u.isWebsite">{{ "website" | i18n }}</span>
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, u.uri)"
+              *ngIf="!u.isWebsite"
+              >{{ "uri" | i18n }}</span
+            >
+            <span
+              class="row-label draggable"
+              draggable="true"
+              (dragstart)="setTextDataOnDrag($event, u.uri)"
+              *ngIf="u.isWebsite"
+              >{{ "website" | i18n }}</span
+            >
             <span title="{{ u.uri }}">{{ u.hostOrUri }}</span>
           </div>
           <div class="action-buttons">
@@ -319,7 +417,12 @@
     </div>
     <div class="box" *ngIf="cipher.notes">
       <h2 class="box-header">
-        {{ "notes" | i18n }}
+        <span
+          class="draggable"
+          draggable="true"
+          (dragstart)="setTextDataOnDrag($event, cipher.notes)"
+          >{{ "notes" | i18n }}</span
+        >
       </h2>
       <div class="box-content">
         <div class="box-content-row pre-wrap">{{ cipher.notes }}</div>
