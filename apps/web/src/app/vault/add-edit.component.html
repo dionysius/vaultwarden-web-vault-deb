@@ -182,7 +182,7 @@
             <div class="tw-mb-4 tw-ml-4 tw-flex tw-w-1/2 tw-items-end" [ngClass]="{ low: totpLow }">
               <div
                 class="totp tw-flex tw-flex-row tw-items-center"
-                *ngIf="!cipher.login.totp || (cipher.login.totp && !canAccessPremium)"
+                *ngIf="!cipher.login.totp || !totpCode"
               >
                 <span class="totp-countdown">
                   <span class="totp-sec tw-text-muted">15</span>
@@ -237,7 +237,7 @@
                 </a>
               </div>
               <div
-                *ngIf="cipher.login.totp && totpCode && canAccessPremium"
+                *ngIf="cipher.login.totp && totpCode"
                 class="totp tw-flex tw-flex-row tw-items-center"
               >
                 <span class="totp-countdown">
