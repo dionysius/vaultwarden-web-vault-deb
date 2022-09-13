@@ -1999,16 +1999,16 @@
     "message": "for at nulstille til forudkonfigurerede indstillinger"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Selv-hostet"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Tredjepart"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Forbundet til tredjepartsserverimplementering, $SERVERNAME$. Kontrollér venligst fejl ved hjælp af den officielle server, eller rapportér dem til tredjepartsserveren.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on $DATE$",
+    "message": "sidst set den $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

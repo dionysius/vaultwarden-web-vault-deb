@@ -139,7 +139,7 @@ Bitwarden tilbyder Teams og Enterprise-planer for virksomheder, så du sikkert k
 Hvorfor vælge Bitwarden:
 
 Kryptering i verdensklasse
-Adgangskoder er beskyttet med avanceret end-to-end-kryptering (AES-256 bit, saltet hashtag og PBKDF2 SHA-256), så dine data forbliver sikre og private.
+Adgangskoder er beskyttet med avanceret end-to-end-kryptering (AES-256 bit, saltet hashing og PBKDF2 SHA-256), så dine data forbliver sikre og private.
 
 Indbygget adgangskodegenerator
 Generér stærke, unikke og tilfældige adgangskoder baseret på sikkerhedskrav til hvert websted, du besøger.
@@ -148,7 +148,8 @@ Globale oversættelser
 Bitwarden findes på 40 sprog, og flere kommer til, takket være vores globale fællesskab.
 
 Applikationer på tværs af platforme
-Beskyt og del følsomme data i din Bitwarden boks fra enhver browser, mobilenhed eller desktop OS og mere.</value>
+Beskyt og del følsomme data i din Bitwarden boks fra enhver browser, mobilenhed eller desktop OS og mere.
+</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>En sikker og gratis adgangskodemanager til alle dine enheder</value>

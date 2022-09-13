@@ -567,7 +567,7 @@
     "message": "搜索类型"
   },
   "noneFolder": {
-    "message": "默认文件夹",
+    "message": "无文件夹",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
@@ -2008,7 +2008,7 @@
     "message": "第三方"
   },
   "thirdPartyServerMessage": {
-    "message": "已连接到第三方服务器，$SERVERNAME$。请使用官方服务器验证错误，或将其报告给第三方服务器。",
+    "message": "已连接到第三方服务器实现，$SERVERNAME$。请使用官方服务器验证错误，或将其报告给第三方服务器。",
     "placeholders": {
       "servername": {
         "content": "$1",

@@ -56,7 +56,7 @@
     "message": "Kutxa gotorra"
   },
   "myVault": {
-    "message": "Nire kutxa gotorra"
+    "message": "Kutxa gotorra"
   },
   "allVaults": {
     "message": "Kutxa gotor guztiak"
@@ -1999,16 +1999,16 @@
     "message": "ezarpen lehenetsiak ezartzeko"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Zerbitzariaren bertsioa"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Ostatatze propioduna"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Hirugarrenen aplikazioak"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Hirugarrenen zerbitzariaren inplementaziora konektatuta, $SERVERNAME$. Mesedez, egiaztatu akatsak zerbitzari ofiziala erabiliz, edo galdetu hirugarren zerbitzariari.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on $DATE$",
+    "message": "Azkenekoz ikusia: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

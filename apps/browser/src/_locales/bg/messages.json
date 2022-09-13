@@ -2002,7 +2002,7 @@
     "message": "Версия на сървъра"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Собствен хостинг"
   },
   "thirdParty": {
     "message": "Third-Party"
@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on $DATE$",
+    "message": "последно видян на $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

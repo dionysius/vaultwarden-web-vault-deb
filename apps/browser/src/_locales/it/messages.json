@@ -1999,16 +1999,16 @@
     "message": "per ritornare alle impostazioni preconfigurate"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Versione Server"
   },
   "selfHosted": {
     "message": "Self-Hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Terze parti"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Connesso a una implementazione server di terze parti, $SERVERNAME$. Controlla i bug utilizzando il server ufficiale o segnalali al server di terze parti.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on $DATE$",
+    "message": "visto l'ultima volta il $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

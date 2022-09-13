@@ -149,7 +149,7 @@
     "message": "Master-Passwort ändern"
   },
   "fingerprintPhrase": {
-    "message": "Prüfschlüssel",
+    "message": "Fingerabdruck-Phrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -193,7 +193,7 @@
     "message": "Es gibt keine Ordner zum Anzeigen."
   },
   "helpFeedback": {
-    "message": "Hilfe & Rückmeldung"
+    "message": "Hilfe & Feedback"
   },
   "sync": {
     "message": "Synchronisierung"
@@ -215,7 +215,7 @@
     "message": "Generiert automatisch ein starkes und einzigartiges Passwort."
   },
   "bitWebVault": {
-    "message": "Bitwarden Web-Datenspeicher"
+    "message": "Bitwarden Web-Tresor"
   },
   "importItems": {
     "message": "Einträge importieren"
@@ -1436,7 +1436,7 @@
     "message": "Automatisch ausgefüllter Eintrag"
   },
   "setMasterPassword": {
-    "message": "Masterpasswort festlegen"
+    "message": "Master-Passwort festlegen"
   },
   "masterPasswordPolicyInEffect": {
     "message": "Eine oder mehrere Organisationsrichtlinien erfordern, dass dein Masterpasswort die folgenden Anforderungen erfüllt:"
@@ -2002,7 +2002,7 @@
     "message": "Server-Version"
   },
   "selfHosted": {
-    "message": "Selbstverwaltet"
+    "message": "Selbst-gehostet"
   },
   "thirdParty": {
     "message": "Drittanbieter"

@@ -1999,16 +1999,16 @@
     "message": "lai atiestatītu pirmsuzstādītos iestatījumus"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Servera versija"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Pašizvietots"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Trešās puses"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Savienots ar trešās puses izvietotu serveri $SERVERNAME$. Lūgums pārbaudīt nepilnību esamību oficiālajā serverī vai ziņot par tām trešās puses servera uzturētājiem.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on $DATE$",
+    "message": "pēdējoreiz manīts $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
