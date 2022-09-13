@@ -12,13 +12,13 @@ crate-type = ["cdylib"]
 
 [dependencies]
 anyhow = "1.0"
-napi = {version = "2", features = ["async"]}
-napi-derive = "2"
+napi = {version = "2.9.1", features = ["async"]}
+napi-derive = "2.9.1"
 scopeguard = "1.1.0"
 tokio = {version = "1.17.0", features = ["full"]}
 
 [build-dependencies]
-napi-build = "1"
+napi-build = "2.0.1"
 
 [target.'cfg(windows)'.dependencies]
 widestring = "0.5.1"
