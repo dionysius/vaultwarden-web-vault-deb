@@ -235,7 +235,7 @@ const devServer =
                     https://*.paypal.com
                     'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
                     'sha256-JVRXyYPueLWdwGwY9m/7u4QlZ1xeQdqUj2t8OVIzZE4=';
-                    'sha256-0xHKHIT3+e2Gknxsm/cpErSprhL+o254L/y5bljg74U='
+                    'sha256-or0p3LaHetJ4FRq+flVORVFFNsOjQGWrDvX8Jf7ACWg='
                   img-src
                     'self'
                     data:
