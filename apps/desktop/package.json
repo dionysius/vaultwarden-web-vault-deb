@@ -48,6 +48,9 @@
     "publish:mac:mas": "npm run dist:mac:mas && npm run upload:mas",
     "publish:win": "npm run build && npm run clean:dist && electron-builder --win --x64 --arm64 --ia32 -p always -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
     "publish:win:dev": "npm run build && npm run clean:dist && electron-builder --win --x64 --arm64 --ia32 -p always",
-    "upload:mas": "xcrun altool --upload-app --type osx --file \"$(find ./dist/mas-universal/Bitwarden*.pkg)\" --username $APPLE_ID_USERNAME --password $APPLE_ID_PASSWORD"
+    "upload:mas": "xcrun altool --upload-app --type osx --file \"$(find ./dist/mas-universal/Bitwarden*.pkg)\" --username $APPLE_ID_USERNAME --password $APPLE_ID_PASSWORD",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:watch:all": "jest --watchAll"
   }
 }
