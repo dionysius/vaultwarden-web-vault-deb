@@ -21,6 +21,7 @@ import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/logInC
 import { KeysRequest } from "@bitwarden/common/models/request/keysRequest";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
 import { RegisterRequest } from "@bitwarden/common/models/request/registerRequest";
+import { RegisterResponse } from "@bitwarden/common/models/response/authentication/registerResponse";
 
 import { PasswordColorText } from "../shared/components/password-strength/password-strength.component";
 
@@ -32,7 +33,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   @Output() createdAccount = new EventEmitter<string>();
 
   showPassword = false;
-  formPromise: Promise<any>;
+  formPromise: Promise<RegisterResponse>;
   referenceData: ReferenceEventRequest;
   showTerms = true;
   showErrorSummary = false;
@@ -69,6 +70,8 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   protected successRoute = "login";
 
   protected accountCreated = false;
+
+  protected captchaBypassToken: string = null;
 
   constructor(
     protected formValidationErrorService: FormValidationErrorsService,
@@ -107,6 +110,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
         if (!registerResponse.successful) {
           return;
         }
+        this.captchaBypassToken = registerResponse.captchaBypassToken;
         this.accountCreated = true;
       }
       if (this.isInTrialFlow) {
@@ -117,7 +121,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
             this.i18nService.t("trialAccountCreated")
           );
         }
-        const loginResponse = await this.logIn(email, masterPassword, this.captchaToken);
+        const loginResponse = await this.logIn(email, masterPassword, this.captchaBypassToken);
         if (loginResponse.captchaRequired) {
           return;
         }
@@ -258,14 +262,14 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   private async registerAccount(
     request: RegisterRequest,
     showToast: boolean
-  ): Promise<{ successful: boolean }> {
+  ): Promise<{ successful: boolean; captchaBypassToken?: string }> {
     if (!(await this.validateRegistration(showToast)).isValid) {
       return { successful: false };
     }
     this.formPromise = this.apiService.postRegister(request);
     try {
-      await this.formPromise;
-      return { successful: true };
+      const response = await this.formPromise;
+      return { successful: true, captchaBypassToken: response.captchaBypassToken };
     } catch (e) {
       if (this.handleCaptchaRequired(e)) {
         return { successful: false };

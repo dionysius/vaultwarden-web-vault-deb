@@ -84,6 +84,7 @@ import { VerifyEmailRequest } from "../models/request/verifyEmailRequest";
 import { ApiKeyResponse } from "../models/response/apiKeyResponse";
 import { AttachmentResponse } from "../models/response/attachmentResponse";
 import { AttachmentUploadDataResponse } from "../models/response/attachmentUploadDataResponse";
+import { RegisterResponse } from "../models/response/authentication/registerResponse";
 import { BillingHistoryResponse } from "../models/response/billingHistoryResponse";
 import { BillingPaymentResponse } from "../models/response/billingPaymentResponse";
 import { BreachAccountResponse } from "../models/response/breachAccountResponse";
@@ -189,7 +190,7 @@ export abstract class ApiService {
   postSecurityStamp: (request: SecretVerificationRequest) => Promise<any>;
   getAccountRevisionDate: () => Promise<number>;
   postPasswordHint: (request: PasswordHintRequest) => Promise<any>;
-  postRegister: (request: RegisterRequest) => Promise<any>;
+  postRegister: (request: RegisterRequest) => Promise<RegisterResponse>;
   postPremium: (data: FormData) => Promise<PaymentResponse>;
   postIapCheck: (request: IapCheckRequest) => Promise<any>;
   postReinstatePremium: () => Promise<any>;

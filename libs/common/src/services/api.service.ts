@@ -92,6 +92,7 @@ import { VerifyEmailRequest } from "../models/request/verifyEmailRequest";
 import { ApiKeyResponse } from "../models/response/apiKeyResponse";
 import { AttachmentResponse } from "../models/response/attachmentResponse";
 import { AttachmentUploadDataResponse } from "../models/response/attachmentUploadDataResponse";
+import { RegisterResponse } from "../models/response/authentication/registerResponse";
 import { BillingHistoryResponse } from "../models/response/billingHistoryResponse";
 import { BillingPaymentResponse } from "../models/response/billingPaymentResponse";
 import { BreachAccountResponse } from "../models/response/breachAccountResponse";
@@ -337,17 +338,18 @@ export class ApiService implements ApiServiceAbstraction {
     return this.send("POST", "/accounts/password-hint", request, false, false);
   }
 
-  postRegister(request: RegisterRequest): Promise<any> {
-    return this.send(
+  async postRegister(request: RegisterRequest): Promise<RegisterResponse> {
+    const r = await this.send(
       "POST",
       "/accounts/register",
       request,
       false,
-      false,
+      true,
       this.platformUtilsService.isDev()
         ? this.environmentService.getIdentityUrl()
         : this.environmentService.getApiUrl()
     );
+    return new RegisterResponse(r);
   }
 
   async postPremium(data: FormData): Promise<PaymentResponse> {
