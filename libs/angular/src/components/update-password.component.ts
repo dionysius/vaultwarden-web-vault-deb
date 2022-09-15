@@ -69,7 +69,7 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPassRequired")
+        this.i18nService.t("masterPasswordRequired")
       );
       return false;
     }

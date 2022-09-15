@@ -91,7 +91,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPassRequired")
+        this.i18nService.t("masterPasswordRequired")
       );
       return;
     }

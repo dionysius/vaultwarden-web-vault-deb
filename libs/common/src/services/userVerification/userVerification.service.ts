@@ -81,7 +81,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
       if (verification.type === VerificationType.OTP) {
         throw new Error(this.i18nService.t("verificationCodeRequired"));
       } else {
-        throw new Error(this.i18nService.t("masterPassRequired"));
+        throw new Error(this.i18nService.t("masterPasswordRequired"));
       }
     }
   }
