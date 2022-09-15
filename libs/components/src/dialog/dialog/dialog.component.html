@@ -3,19 +3,19 @@
   class="tw-my-4 tw-flex tw-max-h-screen tw-flex-col tw-overflow-hidden tw-rounded tw-border tw-border-solid tw-border-secondary-300 tw-bg-text-contrast tw-text-main"
 >
   <div
-    class="tw-flex tw-gap-4 tw-border-0 tw-border-b tw-border-solid tw-border-secondary-300 tw-p-4"
+    class="tw-flex tw-items-center tw-gap-4 tw-border-0 tw-border-b tw-border-solid tw-border-secondary-300 tw-p-4"
   >
     <h1 bitDialogTitleContainer class="tw-mb-0 tw-grow tw-text-lg tw-uppercase">
       <ng-content select="[bitDialogTitle]"></ng-content>
     </h1>
     <button
+      bitIconButton="bwi-close"
+      buttonType="main"
+      size="default"
       bitDialogClose
-      class="tw-border-0 tw-bg-transparent tw-p-0"
-      title="{{ 'close' | i18n }}"
-      attr.aria-label="{{ 'close' | i18n }}"
-    >
-      <i class="bwi bwi-close tw-text-xs tw-font-bold tw-text-main" aria-hidden="true"></i>
-    </button>
+      [attr.title]="'close' | i18n"
+      [attr.aria-label]="'close' | i18n"
+    ></button>
   </div>
 
   <div class="tw-overflow-y-auto tw-p-4 tw-pb-8">

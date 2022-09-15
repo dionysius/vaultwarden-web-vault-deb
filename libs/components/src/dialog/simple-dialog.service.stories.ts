@@ -2,7 +2,12 @@ import { DialogModule, DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
 import { Component, Inject } from "@angular/core";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
+
 import { ButtonModule } from "../button";
+import { IconButtonModule } from "../icon-button";
+import { SharedModule } from "../shared/shared.module";
+import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { DialogService } from "./dialog.service";
 import { DialogCloseDirective } from "./directives/dialog-close.directive";
@@ -60,13 +65,23 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [
-        DialogCloseDirective,
-        SimpleDialogComponent,
-        DialogTitleContainerDirective,
         StoryDialogContentComponent,
+        DialogCloseDirective,
+        DialogTitleContainerDirective,
+        SimpleDialogComponent,
       ],
-      imports: [ButtonModule, DialogModule],
-      providers: [DialogService],
+      imports: [SharedModule, IconButtonModule, ButtonModule, DialogModule],
+      providers: [
+        DialogService,
+        {
+          provide: I18nService,
+          useFactory: () => {
+            return new I18nMockService({
+              close: "Close",
+            });
+          },
+        },
+      ],
     }),
   ],
   parameters: {

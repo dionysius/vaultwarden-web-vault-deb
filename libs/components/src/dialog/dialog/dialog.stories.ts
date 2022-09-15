@@ -3,6 +3,7 @@ import { Meta, moduleMetadata, Story } from "@storybook/angular";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 
 import { ButtonModule } from "../../button";
+import { IconButtonModule } from "../../icon-button";
 import { SharedModule } from "../../shared";
 import { I18nMockService } from "../../utils/i18n-mock.service";
 import { DialogCloseDirective } from "../directives/dialog-close.directive";
@@ -15,7 +16,7 @@ export default {
   component: DialogComponent,
   decorators: [
     moduleMetadata({
-      imports: [SharedModule, ButtonModule],
+      imports: [ButtonModule, SharedModule, IconButtonModule],
       declarations: [DialogTitleContainerDirective, DialogCloseDirective],
       providers: [
         {
@@ -46,9 +47,16 @@ const Template: Story<DialogComponent> = (args: DialogComponent) => ({
   <bit-dialog [dialogSize]="dialogSize">
     <span bitDialogTitle>{{title}}</span>
     <span bitDialogContent>Dialog body text goes here.</span>
-    <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+    <div bitDialogFooter class="tw-flex tw-items-center tw-flex-row tw-gap-2">
       <button bitButton buttonType="primary">Save</button>
       <button bitButton buttonType="secondary">Cancel</button>
+      <button
+        class="tw-ml-auto"
+        bitIconButton="bwi-trash"
+        buttonType="danger"
+        size="default"
+        title="Delete"
+        aria-label="Delete"></button>
     </div>
   </bit-dialog>
   `,

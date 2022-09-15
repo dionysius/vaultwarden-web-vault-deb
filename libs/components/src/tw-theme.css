@@ -1,4 +1,6 @@
 :root {
+  --color-transparent-hover: rgb(0 0 0 / 0.03);
+
   --color-background: 255 255 255;
   --color-background-alt: 251 251 251;
   --color-background-alt2: 23 92 219;
@@ -37,6 +39,8 @@
 }
 
 .theme_dark {
+  --color-transparent-hover: rgb(255 255 255 / 0.12);
+
   --color-background: 31 36 46;
   --color-background-alt: 22 28 38;
   --color-background-alt2: 47 52 61;

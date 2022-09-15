@@ -12,7 +12,10 @@ module.exports = {
   corePlugins: { preflight: false },
   theme: {
     colors: {
-      transparent: colors.transparent,
+      transparent: {
+        DEFAULT: colors.transparent,
+        hover: "var(--color-transparent-hover)",
+      },
       current: colors.current,
       black: colors.black,
       primary: {

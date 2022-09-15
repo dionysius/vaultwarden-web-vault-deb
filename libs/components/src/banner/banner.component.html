@@ -1,5 +1,5 @@
 <div
-  class="tw-flex tw-items-center tw-gap-2 tw-py-2.5 tw-px-4 tw-text-contrast"
+  class="tw-flex tw-items-center tw-gap-2 tw-py-2.5 tw-px-4 tw-pr-2.5 tw-text-contrast"
   [ngClass]="bannerClass"
   [attr.role]="useAlertRole ? 'status' : null"
   [attr.aria-live]="useAlertRole ? 'polite' : null"
@@ -8,7 +8,12 @@
   <span class="tw-grow tw-text-base">
     <ng-content></ng-content>
   </span>
-  <button class="tw-border-0 tw-bg-transparent tw-p-0 tw-text-contrast" (click)="onClose.emit()">
-    <i class="bwi bwi-close tw-text-sm" *ngIf="icon" aria-hidden="true"></i>
-  </button>
+  <button
+    bitIconButton="bwi-close"
+    buttonType="contrast"
+    size="default"
+    (click)="onClose.emit()"
+    [attr.title]="'close' | i18n"
+    [attr.aria-label]="'close' | i18n"
+  ></button>
 </div>
