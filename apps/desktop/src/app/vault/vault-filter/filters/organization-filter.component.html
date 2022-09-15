@@ -24,6 +24,7 @@
             class="filter-button"
             (click)="clearFilter()"
             [attr.aria-pressed]="!hasActiveFilter"
+            appA11yTitle="{{ 'vault' | i18n }}: {{ organizationGrouping.name }}"
           >
             {{ organizationGrouping.name | i18n }}
           </button>
@@ -40,6 +41,7 @@
               class="filter-button"
               (click)="applyOrganizationFilter(organization)"
               [attr.aria-pressed]="activeFilter.myVaultOnly"
+              appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }}"
             >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
@@ -71,6 +73,7 @@
             class="filter-button"
             (click)="clearFilter()"
             [attr.aria-pressed]="!hasActiveFilter"
+            appA11yTitle="{{ 'vault' | i18n }}: {{ organizationGrouping.name }}"
           >
             {{ organizationGrouping.name | i18n }}
           </button>
@@ -83,6 +86,7 @@
               class="filter-button"
               (click)="applyMyVaultFilter()"
               [attr.aria-pressed]="activeFilter.myVaultOnly"
+              appA11yTitle="{{ 'vault' | i18n }}: {{ 'myVault' | i18n }}"
             >
               <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
               &nbsp;{{ "myVault" | i18n }}
@@ -98,6 +102,7 @@
             <button
               class="filter-button"
               (click)="applyOrganizationFilter(organization)"
+              appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }}"
               [attr.aria-pressed]="activeFilter.selectedOrganizationId === organization.id"
             >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>

@@ -4,7 +4,11 @@
       <ul class="filter-options">
         <li class="filter-option active">
           <span class="filter-buttons">
-            <button class="filter-button">
+            <button
+              class="filter-button"
+              [attr.aria-pressed]="activeFilter.myVaultOnly"
+              appA11yTitle="{{ 'vault' | i18n }}: {{ 'myVault' | i18n }}"
+            >
               <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
               {{ "myVault" | i18n }}
             </button>
@@ -42,6 +46,7 @@
           class="filter-button"
           (click)="clearFilter()"
           [ngClass]="{ active: !hasActiveFilter }"
+          appA11yTitle="{{ 'vault' | i18n }}: {{ organizationGrouping.name | i18n }}"
         >
           &nbsp;{{ organizationGrouping.name | i18n }}
         </button>
@@ -53,7 +58,12 @@
           [ngClass]="{ active: organization.id === activeFilter.selectedOrganizationId }"
         >
           <span class="filter-buttons">
-            <button class="filter-button" (click)="applyOrganizationFilter(organization)">
+            <button
+              class="filter-button"
+              (click)="applyOrganizationFilter(organization)"
+              [attr.aria-pressed]="activeFilter.selectedOrganizationId === organization.id"
+              appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }}"
+            >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               {{ organization.name }}
             </button>
@@ -79,7 +89,11 @@
     </ng-container>
     <ng-container *ngSwitchCase="'singleOrganizationAndPersonalOwnershipPolicies'">
       <div class="filter-heading">
-        <button class="filter-button active">
+        <button
+          class="filter-button active"
+          [attr.aria-pressed]="activeFilter.selectedOrganizationId === organizations[0].id"
+          appA11yTitle="{{ 'vault' | i18n }}: {{ organizations[0].name }}"
+        >
           <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
           {{ organizations[0].name }}
         </button>
@@ -107,6 +121,7 @@
           class="filter-button"
           (click)="clearFilter()"
           [ngClass]="{ active: !hasActiveFilter }"
+          appA11yTitle="{{ 'vault' | i18n }}: {{ organizationGrouping.name | i18n }}"
         >
           &nbsp;{{ organizationGrouping.name | i18n }}
         </button>
@@ -114,7 +129,12 @@
       <ul id="organization-filters" *ngIf="!isCollapsed" class="filter-options">
         <li class="filter-option" [ngClass]="{ active: activeFilter.myVaultOnly }">
           <span class="filter-buttons">
-            <button class="filter-button" (click)="applyMyVaultFilter()">
+            <button
+              class="filter-button"
+              (click)="applyMyVaultFilter()"
+              appA11yTitle="{{ 'vault' | i18n }}: {{ 'myVault' | i18n }}"
+              [attr.aria-pressed]="activeFilter.myVaultOnly"
+            >
               <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
               {{ "myVault" | i18n }}
             </button>
@@ -130,6 +150,7 @@
               class="filter-button"
               [ngClass]="{ 'disabled-organization': !organization.enabled }"
               (click)="applyOrganizationFilter(organization)"
+              appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }}"
             >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               {{ organization.name }}

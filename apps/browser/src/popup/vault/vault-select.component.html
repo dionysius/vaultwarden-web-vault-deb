@@ -28,11 +28,17 @@
         appStopClick
         (click)="selectAllVaults()"
         [ngClass]="{ active: !myVaultOnly && !selectOrganizationId }"
+        appA11yTitle="{{ 'vault' | i18n }}: {{ 'allVaults' | i18n }}"
       >
         <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>
         &nbsp;{{ "allVaults" | i18n }}
       </button>
-      <button *ngIf="!enforcePersonalOwnwership" appStopClick (click)="selectMyVault()">
+      <button
+        *ngIf="!enforcePersonalOwnwership"
+        appStopClick
+        (click)="selectMyVault()"
+        appA11yTitle="{{ 'vault' | i18n }}: {{ 'myVault' | i18n }}"
+      >
         <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
         &nbsp;{{ "myVault" | i18n }}
       </button>
@@ -40,6 +46,7 @@
         *ngFor="let organization of organizations"
         appStopClick
         (click)="selectOrganization(organization)"
+        appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }}"
       >
         <i
           *ngIf="organization.planProductType !== 1"
