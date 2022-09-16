@@ -912,10 +912,10 @@
     "message": "Dateipasswort bestätigen"
   },
   "accountBackupOptionDescription": {
-    "message": "Nutzt die Verschlüsselung deines Bitwarden-Kontos, nicht das Master-Passwort, zum Schutz des Exports. Dieser Export kann nur in das aktuelle Konto importiert werden. Hiermit kannst du ein Backup erstellen, das nicht anderweitig verwendet werden kann."
+    "message": "Nutze den Verschlüsselungscode deines Kontos, um den Export zu verschlüsseln und den Import allein auf das aktuelle Bitwarden-Konto zu beschränken."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Erstelle ein benutzergeneriertes Passwort, um den Export zu schützen. Verwende dies, um einen Export zu erstellen, der in anderen Konten verwendet werden kann."
+    "message": "Lege ein Passwort fest, um den Export zu verschlüsseln und ihn in ein beliebiges Bitwarden-Konto zu importieren, wobei das Passwort zum Entschlüsseln genutzt wird."
   },
   "fileTypeHeading": {
     "message": "Dateityp"
