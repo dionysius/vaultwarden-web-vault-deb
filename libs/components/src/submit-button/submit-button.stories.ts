@@ -14,6 +14,7 @@ export default {
   args: {
     buttonType: "primary",
     loading: false,
+    block: false,
   },
   parameters: {
     design: {
@@ -25,7 +26,7 @@ export default {
 
 const Template: Story<SubmitButtonComponent> = (args: SubmitButtonComponent) => ({
   props: args,
-  template: `<bit-submit-button [buttonType]="buttonType" [loading]="loading" [disabled]="disabled">
+  template: `<bit-submit-button [buttonType]="buttonType" [loading]="loading" [disabled]="disabled" [block]="block">
     Submit
   </bit-submit-button>`,
 });
