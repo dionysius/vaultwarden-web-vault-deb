@@ -15,7 +15,7 @@
     <app-vault-icon [cipher]="cipher"></app-vault-icon>
     <div class="row-main-content">
       <span class="text">
-        {{ cipher.name }}
+        {{ cipher.name | ellipsis: 20 }}
         <ng-container *ngIf="cipher.organizationId">
           <i
             class="bwi bwi-collection text-muted"

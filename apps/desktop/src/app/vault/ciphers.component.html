@@ -24,7 +24,7 @@
           <app-vault-icon [cipher]="c"></app-vault-icon>
           <div class="flex-cipher-list-item">
             <span class="text">
-              {{ c.name }}
+              {{ c.name | ellipsis }}
               <ng-container *ngIf="c.organizationId">
                 <i
                   class="bwi bwi-collection text-muted"
