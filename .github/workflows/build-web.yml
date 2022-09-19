@@ -34,7 +34,7 @@ on:
 jobs:
   cloc:
     name: CLOC
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
@@ -51,7 +51,7 @@ jobs:
 
   setup:
     name: Setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       version: ${{ steps.version.outputs.value }}
     steps:
@@ -62,20 +62,31 @@ jobs:
         id: version
         run: echo "::set-output name=value::${GITHUB_SHA:0:7}"
 
-
-  build-oss-selfhost:
-    name: Build OSS zip
-    runs-on: ubuntu-20.04
+  build-artifacts:
+    name: Build artifacts
+    runs-on: ubuntu-22.04
     needs:
       - setup
     env:
       _VERSION: ${{ needs.setup.outputs.version }}
+    strategy:
+      matrix:
+        include:
+          - name: "selfhosted-open-source"
+            npm_command: "dist:oss:selfhost"
+          - name: "cloud-COMMERCIAL"
+            npm_command: "dist:bit:cloud"
+          - name: "selfhosted-COMMERCIAL"
+            npm_command: "dist:bit:selfhost"
+          - name: "cloud-QA"
+            npm_command: "build:bit:qa"
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
 
       - name: Set up Node
-        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854  # v3.1.1
+        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93  # v3.4.1
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -94,127 +105,61 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build OSS selfhost
+      - name: Setup QA metadata
         working-directory: apps/web
+        if: matrix.name == 'cloud-QA'
         run: |
-          npm run dist:oss:selfhost
-          zip -r web-$_VERSION-selfhosted-open-source.zip build
+          VERSION=$( jq -r ".version" package.json)
+          jq --arg version "$VERSION - ${GITHUB_SHA:0:7}" '.version = $version' package.json > package.json.tmp
+          mv package.json.tmp package.json
 
-      - name: Upload build artifact
+      - name: Build ${{ matrix.name }}
+        working-directory: apps/web
+        run: npm run ${{ matrix.npm_command }}
+
+      - name: Package ${{ matrix.name }} artifact
+        working-directory: apps/web
+        run: zip -r web-$_VERSION-${{ matrix.name }}.zip build
+
+      - name: Upload ${{ matrix.name }} artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:
-          name: web-${{ env._VERSION }}-selfhosted-open-source.zip
-          path: apps/web/web-${{ env._VERSION }}-selfhosted-open-source.zip
+          name: web-${{ env._VERSION }}-${{ matrix.name }}.zip
+          path: apps/web/web-${{ env._VERSION }}-${{ matrix.name }}.zip
           if-no-files-found: error
 
-
-  build-cloud:
-    name: Build Cloud zip
-    runs-on: ubuntu-20.04
+  build-commercial-selfhost-image:
+    name: Build self-host docker image
+    runs-on: ubuntu-22.04
     needs:
       - setup
+      - build-artifacts
     env:
       _VERSION: ${{ needs.setup.outputs.version }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
-
-      - name: Set up Node
-        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854  # v3.1.1
-        with:
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
-          node-version: "16"
-
-      - name: Print environment
-        run: |
-          whoami
-          node --version
-          npm --version
-          gulp --version
-          docker --version
-          echo "GitHub ref: $GITHUB_REF"
-          echo "GitHub event: $GITHUB_EVENT"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Cloud
-        working-directory: apps/web
-        run: |
-          npm run dist:bit:cloud
-          zip -r web-$_VERSION-cloud-COMMERCIAL.zip build
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
-        with:
-          name: web-${{ env._VERSION }}-cloud-COMMERCIAL.zip
-          path: apps/web/web-${{ env._VERSION }}-cloud-COMMERCIAL.zip
-          if-no-files-found: error
-
-
-  build-commercial-selfhost:
-    name: Build SelfHost Docker image
-    runs-on: ubuntu-20.04
-    needs:
-      - setup
-    env:
-      _VERSION: ${{ needs.setup.outputs.version }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
-
-      - name: Set up Node
-        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854  # v3.1.1
-        with:
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
-          node-version: "16"
-
-      - name: Print environment
-        run: |
-          whoami
-          node --version
-          npm --version
-          gulp --version
-          docker --version
-          echo "GitHub ref: $GITHUB_REF"
-          echo "GitHub event: $GITHUB_EVENT"
 
       - name: Setup DCT
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc-web'
+        if: github.ref == 'refs/heads/master' ||
+          github.ref == 'refs/heads/rc' ||
+          github.ref == 'refs/heads/hotfix-rc-web'
         id: setup-dct
         uses: bitwarden/gh-actions/setup-docker-trust@a8c384a05a974c05c48374c818b004be221d43ff
         with:
           azure-creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
           azure-keyvault-name: "bitwarden-prod-kv"
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        working-directory: apps/web
-        run: |
-          echo -e "# Building Web\n"
-          echo "Building app"
-          echo "npm version $(npm --version)"
-
-          npm run dist:bit:selfhost
-          zip -r web-$_VERSION-selfhosted-COMMERCIAL.zip build
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
+      - name: Download selfhosted-COMMERCIAL artifact
+        uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
         with:
           name: web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
-          path: apps/web/web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
-          if-no-files-found: error
+          path: apps/web/build
 
       - name: Build Docker image
         working-directory: apps/web
-        run: |
-          echo -e "\nBuilding Docker image"
-          docker --version
-          docker build -t bitwarden/web .
+        run: docker build -t bitwarden/web .
 
       - name: Tag rc branch
         if: github.ref == 'refs/heads/rc'
@@ -229,7 +174,9 @@ jobs:
         run: docker tag bitwarden/web bitwarden/web:hotfix-rc-web
 
       - name: List Docker images
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc-web'
+        if: github.ref == 'refs/heads/master' ||
+          github.ref == 'refs/heads/rc' ||
+          github.ref == 'refs/heads/hotfix-rc-web'
         run: docker images
 
       - name: Push rc image
@@ -254,7 +201,9 @@ jobs:
           DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE: ${{ steps.setup-dct.outputs.dct-delegate-repo-passphrase }}
 
       - name: Log out of Docker
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc-web'
+        if: github.ref == 'refs/heads/master' ||
+          github.ref == 'refs/heads/rc' ||
+          github.ref == 'refs/heads/hotfix-rc-web'
         run: |
           docker logout
           echo "DOCKER_CONTENT_TRUST=0" >> $GITHUB_ENV
@@ -289,32 +238,17 @@ jobs:
       - name: Log out of Docker
         run: docker logout
 
-
   build-qa:
     name: Build Docker images for QA environment
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - setup
+      - build-artifacts
+    env:
+      _VERSION: ${{ needs.setup.outputs.version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
-
-      - name: Set up Node
-        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854  # v3.1.1
-        with:
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
-          node-version: "16"
-
-      - name: Print environment
-        run: |
-          whoami
-          node --version
-          npm --version
-          gulp --version
-          docker --version
-          echo "GitHub ref: $GITHUB_REF"
-          echo "GitHub event: $GITHUB_EVENT"
 
       - name: Login to Azure
         uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010  # v1.1
@@ -324,24 +258,15 @@ jobs:
       - name: Log into container registry
         run: az acr login -n bitwardenqa
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Download cloud-QA artifact
+        uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
+        with:
+          name: web-${{ env._VERSION }}-cloud-QA.zip
+          path: apps/web/build
 
-      - name: Build
+      - name: Build Docker image
         working-directory: apps/web
         run: |
-          echo -e "# Building Web\n"
-          echo "Building app"
-          echo "npm version $(npm --version)"
-          VERSION=$( jq -r ".version" package.json)
-          jq --arg version "$VERSION - ${GITHUB_SHA:0:7}" '.version = $version' package.json > package.json.tmp
-          mv package.json.tmp package.json
-
-          npm run build:bit:qa
-
-          echo "{\"commit_hash\": \"$GITHUB_SHA\", \"ref\": \"$GITHUB_REF\"}" | jq . > build/info.json
-
-          echo -e "\nBuilding Docker image"
           docker --version
           docker build -t bitwardenqa.azurecr.io/web .
 
@@ -371,9 +296,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         run: docker tag bitwardenqa.azurecr.io/web bitwardenqa.azurecr.io/web:dev
 
-      - name: List Docker images
-        run: docker images
-
       - name: Push image
         env:
           IMAGE_TAG: ${{ steps.image-tag.outputs.value }}
@@ -391,11 +313,8 @@ jobs:
     name: Crowdin Push
     if: github.ref == 'refs/heads/master'
     needs:
-      - build-oss-selfhost
-      - build-cloud
-      - build-commercial-selfhost
-      - build-qa
-    runs-on: ubuntu-20.04
+      - build-artifacts
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2  # v2.3.4
@@ -435,13 +354,11 @@ jobs:
   check-failures:
     name: Check for failures
     if: always()
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - cloc
       - setup
-      - build-oss-selfhost
-      - build-cloud
-      - build-commercial-selfhost
+      - build-artifacts
       - build-qa
       - crowdin-push
     steps:
@@ -450,9 +367,7 @@ jobs:
         env:
           CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
-          BUILD_OSS_SELFHOST_STATUS: ${{ needs.build-oss-selfhost.result }}
-          BUILD_CLOUD_STATUS: ${{ needs.build-cloud.result }}
-          BUILD_COMMERCIAL_SELFHOST_STATUS: ${{ needs.build-commercial-selfhost.result }}
+          ARTIFACT_STATUS: ${{ needs.build-artifacts.result }}
           BUILD_QA_STATUS: ${{ needs.build-qa.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
         run: |
@@ -460,11 +375,7 @@ jobs:
               exit 1
           elif [ "$SETUP_STATUS" = "failure" ]; then
               exit 1
-          elif [ "$BUILD_OSS_SELFHOST_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$BUILD_CLOUD_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$BUILD_COMMERCIAL_SELFHOST_STATUS" = "failure" ]; then
+          elif [ "$ARTIFACT_STATUS" = "failure" ]; then
               exit 1
           elif [ "$BUILD_QA_STATUS" = "failure" ]; then
               exit 1

@@ -7,6 +7,16 @@ on:
       image_extension:
         description: "Image tag extension"
         required: false
+      azure_publish:
+        description: 'Release to Azure'
+        required: false
+        default: true
+        type: boolean
+      cloudflare_publish:
+        description: 'Release to Cloudflare'
+        required: false
+        default: true
+        type: boolean
 
 env:
   _QA_CLUSTER_RESOURCE_GROUP: "bw-env-qa"
@@ -17,6 +27,7 @@ env:
 jobs:
   deploy:
     name: Deploy QA Web
+    if: inputs.azure_publish
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Repo
@@ -78,6 +89,7 @@ jobs:
   cfpages-deploy:
     name: Deploy Web Vault to QA CloudFlare Pages branch
     runs-on: ubuntu-20.04
+    if: inputs.cloudflare_publish
     steps:
       - name: Create GitHub deployment
         uses: chrnorm/deployment-action@1b599fe41a0ef1f95191e7f2eec4743f2d7dfc48
@@ -107,12 +119,12 @@ jobs:
           path: apps/web
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
-          artifacts: web-*-cloud-COMMERCIAL.zip
+          artifacts: web-*-cloud-QA.zip
 
       # This should result in a build directory in the current working directory
       - name: Unzip build asset
         working-directory: apps/web
-        run: unzip web-*-cloud-COMMERCIAL.zip
+        run: unzip web-*-cloud-QA.zip
 
       - name: Checkout Repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
