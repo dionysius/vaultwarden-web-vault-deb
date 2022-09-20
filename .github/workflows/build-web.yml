@@ -155,7 +155,11 @@ jobs:
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
         with:
           name: web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
-          path: apps/web/build
+          path: apps/web
+
+      - name: Extract selfhosted-COMMERCIAL artifact
+        working-directory: apps/web
+        run: unzip web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
 
       - name: Build Docker image
         working-directory: apps/web
@@ -262,7 +266,11 @@ jobs:
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
         with:
           name: web-${{ env._VERSION }}-cloud-QA.zip
-          path: apps/web/build
+          path: apps/web
+
+      - name: Extract cloud-QA artifact
+        working-directory: apps/web
+        run: unzip web-${{ env._VERSION }}-cloud-QA.zip
 
       - name: Build Docker image
         working-directory: apps/web
