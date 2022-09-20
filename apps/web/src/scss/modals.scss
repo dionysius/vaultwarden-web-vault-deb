@@ -41,6 +41,10 @@
     border-bottom: 1px solid themed("separator");
     color: themed("textColor");
   }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
 }
 
 .modal-body {

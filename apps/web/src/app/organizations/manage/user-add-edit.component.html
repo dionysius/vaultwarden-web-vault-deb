@@ -8,11 +8,11 @@
       ngNativeValidate
     >
       <div class="modal-header">
-        <h2 class="modal-title" id="userAddEditTitle">
+        <h1 class="modal-title" id="userAddEditTitle">
           {{ title }}
           <small class="text-muted" *ngIf="name">{{ name }}</small>
           <span bitBadge badgeType="secondary" *ngIf="isRevoked">{{ "revoked" | i18n }}</span>
-        </h2>
+        </h1>
         <button
           type="button"
           class="close"
