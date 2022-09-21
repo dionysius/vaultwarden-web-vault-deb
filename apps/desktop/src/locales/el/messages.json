@@ -533,7 +533,7 @@
     "message": "Μη έγκυρη διεύθυνση e-mail."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Απαιτείται κύριος κωδικός πρόσβασης."
   },
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
@@ -898,7 +898,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Εμφάνιση εικονιδίων ιστοτόπων"
   },
   "faviconDesc": {
     "message": "Show a recognizable image next to each login."
@@ -1394,7 +1394,7 @@
     "message": "Κλείδωμα με τον κύριο κωδικό πρόσβασης κατά την επανεκκίνηση"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Διαγραφή λογαριασμού"
   },
   "deleteAccountDesc": {
     "message": "Proceed below to delete your account and all vault data."
@@ -1403,7 +1403,7 @@
     "message": "Deleting your account is permanent. It cannot be undone."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Ο λογαριασμός διαγράφηκε"
   },
   "accountDeletedDesc": {
     "message": "Your account has been closed and all associated data has been deleted."
@@ -1980,7 +1980,7 @@
     "message": "Kλειδί API"
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Απαιτείται συνδρομή Premium"
   },
   "organizationIsDisabled": {
     "message": "Organization is disabled."

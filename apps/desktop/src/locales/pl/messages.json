@@ -872,16 +872,16 @@
     "message": "4 godziny"
   },
   "onIdle": {
-    "message": "Po bezczynności przez 5 minut"
+    "message": "Podczas bezczynności systemu"
   },
   "onSleep": {
-    "message": "Po uśpieniu komputera"
+    "message": "Podczas uśpienia systemu"
   },
   "onLocked": {
     "message": "Po zablokowaniu komputera"
   },
   "onRestart": {
-    "message": "Po uruchomieniu ponownym"
+    "message": "Po restarcie aplikacji"
   },
   "never": {
     "message": "Nigdy"
