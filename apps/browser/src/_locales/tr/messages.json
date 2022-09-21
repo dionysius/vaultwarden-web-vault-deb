@@ -2008,7 +2008,7 @@
     "message": "Üçüncü Taraf"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Üçüncü taraf sunucu uygulamasına bağlandı, $SERVERNAME$. Lütfen resmi sunucuyu kullanarak hataları doğrulayın veya üçüncü taraf sunucuya bildirin.",
     "placeholders": {
       "servername": {
         "content": "$1",

@@ -157,7 +157,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
-    "message": "Two-step login"
+    "message": "تسجيل الدخول بخطوتين"
   },
   "logOut": {
     "message": "تسجيل الخروج"
@@ -258,7 +258,7 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "تضمين الرقم"
   },
   "minNumbers": {
     "message": "الحد الأدنى من الأرقام"
@@ -315,7 +315,7 @@
     "message": "عرض العنصر"
   },
   "launch": {
-    "message": "Launch"
+    "message": "بدء"
   },
   "website": {
     "message": "الموقع الإلكتروني"
@@ -327,7 +327,7 @@
     "message": "إدارة"
   },
   "other": {
-    "message": "Other"
+    "message": "الأخرى"
   },
   "rateExtension": {
     "message": "قيِّم هذه الإضافة"
@@ -412,7 +412,7 @@
     "message": "مطلقاً"
   },
   "security": {
-    "message": "Security"
+    "message": "الأمان"
   },
   "errorOccurred": {
     "message": "لقد حدث خطأ ما"
@@ -488,10 +488,10 @@
     "message": "تغيير كلمة المرور الرئيسية"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "يمكنك تغيير كلمة المرور الرئيسية من خزنة الويب في bitwarden.com. هل تريد زيارة الموقع الآن؟"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "تسجيل الدخول بخطوتين يجعل حسابك أكثر أمنا من خلال مطالبتك بالتحقق من تسجيل الدخول باستخدام جهاز آخر مثل مفتاح الأمان، تطبيق المصادقة، الرسائل القصيرة، المكالمة الهاتفية، أو البريد الإلكتروني. يمكن تمكين تسجيل الدخول بخطوتين على خزنة الويب bitwarden.com. هل تريد زيارة الموقع الآن؟"
   },
   "editedFolder": {
     "message": "Edited folder"
@@ -540,22 +540,22 @@
     "message": "Edited item"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "هل تريد حقاً أن ترسل إلى سلة المهملات؟"
   },
   "deletedItem": {
     "message": "تم إرسال العنصر إلى سلة المهملات"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "الكتابة فوق كلمة المرور"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "هل أنت متأكد من أنك تريد الكتابة فوق كلمة المرور الموجودة؟"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "الكتابة فوق اسم المستخدم"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "هل أنت متأكد من أنك تريد الكتابة فوق اسم المستخدم الموجود؟"
   },
   "searchFolder": {
     "message": "إبحث في المجلّد"
@@ -589,15 +589,15 @@
     "message": "List identity items on the Tab page for easy auto-fill."
   },
   "clearClipboard": {
-    "message": "Clear clipboard",
+    "message": "مسح الحافظة",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "مسح القيم المنسوخة تلقائيًا من حافظتك.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Should Bitwarden remember this password for you?"
+    "message": "هل يجب على Bitwarden تذكر كلمة المرور هذه لك؟"
   },
   "notificationAddSave": {
     "message": "حفظ"
@@ -683,10 +683,10 @@
     "message": "Move to Organization"
   },
   "share": {
-    "message": "Share"
+    "message": "مشاركة"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ انتقل إلى $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -699,16 +699,16 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "اختر المؤسسة التي ترغب في نقل هذا العنصر إليها. يؤدي النقل إلى مؤسسة إلى نقل ملكية العنصر إلى تلك المؤسسة. لن تكون المالك المباشر لهذا العنصر بعد نقله."
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "معرفة المزيد"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "مفتاح المصادقة (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "رمز التحقق (TOTP)"
   },
   "copyVerificationCode": {
     "message": "Copy Verification Code"
@@ -1124,16 +1124,16 @@
     "message": "Dr"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "الاسم الأول"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "الاسم الأوسط"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "الاسم الأخير"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "الاسم الكامل"
   },
   "identityName": {
     "message": "Identity Name"
@@ -1289,7 +1289,7 @@
     "description": "The URI of one of the current open tabs in the browser."
   },
   "organization": {
-    "message": "Organization",
+    "message": "المؤسسة",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
@@ -1672,17 +1672,17 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "تاريخ انتهاء الصلاحية"
   },
   "expirationDateDesc": {
     "message": "If set, access to this Send will expire on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "يوم واحد"
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ أيام",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1731,7 +1731,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "كلمة المرور الجديدة"
   },
   "sendDisabled": {
     "message": "Send Disabled",
@@ -1766,7 +1766,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**To use a calendar style date picker ** click here to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage2": {
-    "message": "click here",
+    "message": "انقر هنا",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To use a calendar style date picker **click here** to pop out your window.'"
   },
   "sendFirefoxCustomDatePopoutMessage3": {
@@ -1798,37 +1798,37 @@
     "message": "Master password re-prompt"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "تأكيد كلمة المرور الرئيسية"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "هذا الإجراء محمي. للاستمرار، يرجى إعادة إدخال كلمة المرور الرئيسية للتحقق من هويتك."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "تأكيد البريد الإلكتروني مطلوب"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature. You can verify your email in the web vault."
+    "message": "يجب عليك تأكيد بريدك الإلكتروني لاستخدام هذه الميزة. يمكنك تأكيد بريدك الإلكتروني في خزنة الويب."
   },
   "updatedMasterPassword": {
     "message": "Updated Master Password"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "تحديث كلمة المرور الرئيسية"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "تم تغيير كلمة المرور الرئيسية الخاصة بك مؤخرًا من قبل مسؤول في مؤسستك. من أجل الوصول إلى الخزنة، يجب عليك تحديثها الآن. سيتم تسجيل خروجك من الجلسة الحالية، مما يتطلب منك تسجيل الدخول مرة أخرى. قد تظل الجلسات النشطة على أجهزة أخرى نشطة لمدة تصل إلى ساعة واحدة."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "التسجيل التلقائي"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "هذه المؤسسة لديها سياسة تقوم تلقائياً بتسجيلك في إعادة تعيين كلمة المرور. هذا التسجيل سيسمح لمسؤولي المؤسسة بتغيير كلمة المرور الرئيسية الخاصة بك."
   },
   "selectFolder": {
     "message": "Select folder..."
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "من أجل إكمال تسجيل الدخول باستخدام SSO، يرجى تعيين كلمة المرور الرئيسية للوصول لخزنتك وحمايتها."
   },
   "hours": {
     "message": "ساعات"
@@ -1837,7 +1837,7 @@
     "message": "دقائق"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "سياسات مؤسستك تؤثر على مهلة الخزنة الخاص بك. الحد الأقصى المسموح به لمهلة الخزنة هو $HOURS$ ساعة/ساعات و $MINUTES$ دقيقة/دقائق",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1850,19 +1850,19 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "مهلة خزنتك تتجاوز القيود التي تضعها مؤسستك."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "تصدير الخزنة مُعطّل"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "واحدة أو أكثر من سياسات المؤسسة تمنعك من تصدير خزانتك الشخصية."
   },
   "copyCustomFieldNameInvalidElement": {
-    "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
+    "message": "غير قادر على التعرف على نموذج صالح. حاول فحص HTML بدلا من ذلك."
   },
   "copyCustomFieldNameNotUnique": {
-    "message": "No unique identifier found."
+    "message": "لم يتم العثور على معرف فريد."
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
@@ -1923,10 +1923,10 @@
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "استخدم قدرات العنوان الفرعي لمزود البريد الإلكتروني الخاص بك."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "تجميع كل البريد الإلكتروني"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -1950,10 +1950,10 @@
     "message": "الخدمة"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "إعادة توجيه الاسم المستعار للبريد الإلكتروني"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "إنشاء بريد إلكتروني مستعار مع خدمة إعادة توجيه خارجية."
   },
   "hostname": {
     "message": "اسم المضيف",
@@ -1993,7 +1993,7 @@
     "message": "تم تعديل الإعدادات"
   },
   "environmentEditedClick": {
-    "message": "Click here"
+    "message": "انقر هنا"
   },
   "environmentEditedReset": {
     "message": "لإعادة تعيين الإعدادات المُعدة مسبقاً"
@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on $DATE$",
+    "message": "آخر ظهور في $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

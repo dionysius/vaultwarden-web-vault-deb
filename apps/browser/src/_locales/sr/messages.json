@@ -1999,13 +1999,13 @@
     "message": "за рисетовање на подразумевана подешавања"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Верзија сервера"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Личан хостинг"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Трећа страна"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on $DATE$",
+    "message": "последње виђено у $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

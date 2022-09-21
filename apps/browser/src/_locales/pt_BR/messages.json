@@ -1969,19 +1969,19 @@
     "message": "Erro de Key Connector: certifique-se de que a Key Connector está disponível e funcionando corretamente."
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Assinatura Premium necessária"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organização está desabilitada."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Itens em Organizações Desativadas não podem ser acessados. Entre em contato com o proprietário da sua Organização para obter assistência."
   },
   "cardBrandMir": {
     "message": "Mir"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Fazendo login em $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -1990,22 +1990,22 @@
     }
   },
   "settingsEdited": {
-    "message": "Settings have been edited"
+    "message": "As configurações foram editadas"
   },
   "environmentEditedClick": {
-    "message": "Click here"
+    "message": "Clique aqui"
   },
   "environmentEditedReset": {
-    "message": "to reset to pre-configured settings"
+    "message": "para redefinir para as configurações pré-configuradas"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Versão do servidor"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Auto-hospedado"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Terceiros"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
