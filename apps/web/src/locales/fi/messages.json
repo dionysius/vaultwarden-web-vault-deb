@@ -2248,7 +2248,7 @@
     }
   },
   "trialConfirmationEmail": {
-    "message": "Olemme lähettäneet vahvistusviestin tiimisi laskutussähköpostiosoitteeseen "
+    "message": "Olemme lähettäneet sähköpostivahvistuksen tiimisi laskutusoitteeseen "
   },
   "monthly": {
     "message": "Kuukausittainen"
@@ -2326,10 +2326,10 @@
     "message": "Haluatko varmasti poistaa käyttäjän?"
   },
   "removeOrgUserConfirmation": {
-    "message": "Kun jäsen poistetaan, hänellä ei ole enää pääsyä organisaation tietoihin, eikä poistoa ole mahdollista perua. Jos haluat lisätä jäsenen takaisin organisaatioon, hänet on kutsuttava ja perehdytettävä uudelleen."
+    "message": "Poisteltulla jäsenellä ei ole enää organisaation tietojen käyttöoikeutta, eikä poiston peruminen ole mahdollista. Jos jäsen halutaan palauttaa organisaatioon, hänet on kutsuttava ja määritettävä uudelleen."
   },
   "revokeUserConfirmation": {
-    "message": "Kun jäsenen käyttöoikeus perutaan, hänellä ei ole enää pääsyä organisaation tietoihin. Voit palauttaa käyttöoikeuden nopeasti Perutut-välilehdeltä."
+    "message": "Perutulla jäsenellä ei ole enää organisaation tietojen käyttöoikeutta. Käyttöoikeus voidaan palauttaa nopeasti Perutut-välilehdeltä."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Varoitus! Tämä käyttäjä tarvitsee salauksensa hallintaan Key Connectoria. Käyttäjän poistaminen organisaatiostasi poistaa heidän tilinsä käytöstä pysvästi. Toimenpide on pysyvä, eikä sen peruminen ole mahdollista. Haluatko jatkaa?"
@@ -2395,10 +2395,10 @@
     "message": "Hae"
   },
   "invited": {
-    "message": "Kutsuttu"
+    "message": "Kutsutut"
   },
   "accepted": {
-    "message": "Hyväksytty"
+    "message": "Hyväksytyt"
   },
   "confirmed": {
     "message": "Vahvistettu"
@@ -2686,7 +2686,7 @@
     }
   },
   "revokedUserId": {
-    "message": "Jäsenen $ID$ organisaation käyttöoikeus peruttiin.",
+    "message": "Käyttäjän $ID$ organisaation käyttöoikeus on peruttu.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2704,7 +2704,7 @@
     }
   },
   "revokeUserId": {
-    "message": "Peru jäsenen $ID$ käyttöoikeus",
+    "message": "Peru käyttäjän $ID$ käyttöoikeus",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4023,7 +4023,7 @@
     "message": "Käytäntöä ei pakoteta käyttöön niille organisaation käyttäjille, joilla on organisaation käytäntöjen hallintaoikeudet."
   },
   "disableHideEmail": {
-    "message": "Näytä jäsenen sähköpostiosoite aina vastaanottajien kanssa, kun luodaan tai muokataan Sendiä.",
+    "message": "Näytä jäsenen sähköpostiosoite aina vastaanottajien ohessa, kun Send luodaan tai sitä muokataan.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4370,13 +4370,13 @@
     "message": "Toiminto ei koske valittuja käyttäjiä."
   },
   "removeUsersWarning": {
-    "message": "Haluatko varmasti poistaa seuraavat käyttäjät? Toiminto saattaa kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
+    "message": "Haluatko varmasti poistaa seuraavat käyttäjät? Käsittely voi kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
   },
   "removeOrgUsersConfirmation": {
-    "message": "Kun jäseniä poistetaan, heillä ei ole enää pääsyä organisaation tietoihin, eikä poistoa ole mahdollista perua. Jos haluat lisätä jäsenen takaisin organisaatioon, hänet on kutsuttava ja perehdytettävä uudelleen. Käsittely voi kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
+    "message": "Poisteltuilla jäsenillä ei ole enää organisaation tietojen käyttöoikeutta, eikä poiston peruminen ole mahdollista. Jos jäsniä halutaan palauttaa organisaatioon, heidät on kutsuttava ja määritettävä uudelleen. Käsittely voi kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
   },
   "revokeUsersWarning": {
-    "message": "Kun jäsenien käyttöoikeudet perutaan, heillä ei ole enää pääsyä organisaation tietoihin. Voit palauttaa käyttöoikeudet nopeasti Perutut-välilehdeltä. Käsittely voi kestää muutamia sekunteja, eikä sitä ole mahdollista keskeyttää tai perua."
+    "message": "Perutuilla jäsenillä ei ole enää organisaation tietojen käyttöoikeutta. Käyttöoikeudet voidaan palauttaa nopeasti Perutut-välilehdeltä. Käsittely voi kestää muutamia sekunteja, eikä sen keskeytys tai peruminen ole mahdollista."
   },
   "theme": {
     "message": "Teema"
