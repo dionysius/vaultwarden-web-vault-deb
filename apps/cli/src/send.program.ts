@@ -176,12 +176,12 @@ export class SendProgram extends Program {
         writeLn("");
         writeLn("  Examples:");
         writeLn("");
-        writeLn("    bw get send searchText");
-        writeLn("    bw get send id");
-        writeLn("    bw get send searchText --text");
-        writeLn("    bw get send searchText --file");
-        writeLn("    bw get send searchText --file --output ../Photos/photo.jpg");
-        writeLn("    bw get send searchText --file --raw");
+        writeLn("    bw send get searchText");
+        writeLn("    bw send get id");
+        writeLn("    bw send get searchText --text");
+        writeLn("    bw send get searchText --file");
+        writeLn("    bw send get searchText --file --output ../Photos/photo.jpg");
+        writeLn("    bw send get searchText --file --raw");
         writeLn("", true);
       })
       .action(async (id: string, options: program.OptionValues) => {
