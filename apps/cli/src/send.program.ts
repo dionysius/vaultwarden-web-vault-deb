@@ -139,7 +139,7 @@ export class SendProgram extends Program {
     return new program.Command("template")
       .arguments("<object>")
       .description("Get json templates for send objects", {
-        object: "Valid objects are: send, send.text, send.file",
+        object: "Valid objects are: send.text, send.file",
       })
       .action(async (object) => {
         const cmd = new GetCommand(
