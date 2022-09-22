@@ -1,6 +1,12 @@
+import { Jsonify } from "type-fest";
+
 import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
-import { AbstractCachedStorageService } from "@bitwarden/common/abstractions/storage.service";
+import {
+  AbstractCachedStorageService,
+  MemoryStorageServiceInterface,
+} from "@bitwarden/common/abstractions/storage.service";
 import { EncString } from "@bitwarden/common/models/domain/encString";
+import { MemoryStorageOptions } from "@bitwarden/common/models/domain/storageOptions";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
 import { devFlag } from "../decorators/dev-flag.decorator";
@@ -15,7 +21,10 @@ const keys = {
   sessionKey: "session",
 };
 
-export class LocalBackedSessionStorageService extends AbstractCachedStorageService {
+export class LocalBackedSessionStorageService
+  extends AbstractCachedStorageService
+  implements MemoryStorageServiceInterface
+{
   private cache = new Map<string, unknown>();
   private localStorage = new BrowserLocalStorageService();
   private sessionStorage = new BrowserMemoryStorageService();
@@ -27,21 +36,26 @@ export class LocalBackedSessionStorageService extends AbstractCachedStorageServi
     super();
   }
 
-  async get<T>(key: string): Promise<T> {
+  async get<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T> {
     if (this.cache.has(key)) {
       return this.cache.get(key) as T;
     }
 
-    return await this.getBypassCache(key);
+    return await this.getBypassCache(key, options);
   }
 
-  async getBypassCache<T>(key: string): Promise<T> {
+  async getBypassCache<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T> {
     const session = await this.getLocalSession(await this.getSessionEncKey());
     if (session == null || !Object.keys(session).includes(key)) {
       return null;
     }
 
-    this.cache.set(key, session[key]);
+    let value = session[key];
+    if (options?.deserializer != null) {
+      value = options.deserializer(value as Jsonify<T>);
+    }
+
+    this.cache.set(key, value);
     return this.cache.get(key) as T;
   }
 

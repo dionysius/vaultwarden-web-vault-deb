@@ -93,11 +93,6 @@ export class TokenService implements TokenServiceAbstraction {
   // ref https://github.com/auth0/angular-jwt/blob/master/src/angularJwt/services/jwt.js
 
   async decodeToken(token?: string): Promise<any> {
-    const storedToken = await this.stateService.getDecodedToken();
-    if (token === null && storedToken != null) {
-      return storedToken;
-    }
-
     token = token ?? (await this.stateService.getAccessToken());
 
     if (token == null) {

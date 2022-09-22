@@ -5,6 +5,7 @@ import { BrowserApi } from "../../browser/browserApi";
 import { StateService } from "../../services/abstractions/state.service";
 
 import { SessionSyncer } from "./session-syncer";
+import { SyncedItemMetadata } from "./sync-item-metadata";
 
 describe("session syncer", () => {
   const propertyKey = "behaviorSubject";
@@ -140,12 +141,14 @@ describe("session syncer", () => {
     });
 
     it("should update from message on emit from another instance", async () => {
+      const builder = jest.fn();
+      jest.spyOn(SyncedItemMetadata, "builder").mockReturnValue(builder);
       stateService.getFromSessionMemory.mockResolvedValue("test");
 
       await sut.updateFromMessage({ command: `${sessionKey}_update`, id: "different_id" });
 
       expect(stateService.getFromSessionMemory).toHaveBeenCalledTimes(1);
-      expect(stateService.getFromSessionMemory).toHaveBeenCalledWith(sessionKey);
+      expect(stateService.getFromSessionMemory).toHaveBeenCalledWith(sessionKey, builder);
 
       expect(nextSpy).toHaveBeenCalledTimes(1);
       expect(nextSpy).toHaveBeenCalledWith("test");

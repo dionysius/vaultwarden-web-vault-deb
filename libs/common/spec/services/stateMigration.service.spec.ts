@@ -116,8 +116,8 @@ describe("State Migration Service", () => {
                 key: "orgThreeEncKey",
               },
             },
-          },
-        },
+          } as any,
+        } as any,
       });
 
       const migratedAccount = await (stateMigrationService as any).migrateAccountFrom4To5(

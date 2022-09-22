@@ -99,6 +99,9 @@ export class Utils {
   }
 
   static fromByteStringToArray(str: string): Uint8Array {
+    if (str == null) {
+      return null;
+    }
     const arr = new Uint8Array(str.length);
     for (let i = 0; i < str.length; i++) {
       arr[i] = str.charCodeAt(i);

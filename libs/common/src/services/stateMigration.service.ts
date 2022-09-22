@@ -12,7 +12,13 @@ import { OrganizationData } from "../models/data/organizationData";
 import { PolicyData } from "../models/data/policyData";
 import { ProviderData } from "../models/data/providerData";
 import { SendData } from "../models/data/sendData";
-import { Account, AccountSettings, AccountSettingsSettings } from "../models/domain/account";
+import {
+  Account,
+  AccountSettings,
+  AccountSettingsSettings,
+  EncryptionPair,
+} from "../models/domain/account";
+import { EncString } from "../models/domain/encString";
 import { EnvironmentUrls } from "../models/domain/environmentUrls";
 import { GeneratedPasswordHistory } from "../models/domain/generatedPasswordHistory";
 import { GlobalState } from "../models/domain/globalState";
@@ -314,10 +320,10 @@ export class StateMigrationService<
       passwordGenerationOptions:
         (await this.get<any>(v1Keys.passwordGenerationOptions)) ??
         defaultAccount.settings.passwordGenerationOptions,
-      pinProtected: {
+      pinProtected: Object.assign(new EncryptionPair<string, EncString>(), {
         decrypted: null,
         encrypted: await this.get<string>(v1Keys.pinProtected),
-      },
+      }),
       protectedPin: await this.get<string>(v1Keys.protectedPin),
       settings:
         userId == null

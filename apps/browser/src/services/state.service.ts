@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { AbstractCachedStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { GlobalState } from "@bitwarden/common/models/domain/globalState";
 import { StorageOptions } from "@bitwarden/common/models/domain/storageOptions";
@@ -17,9 +19,9 @@ export class StateService
   extends BaseStateService<GlobalState, Account>
   implements StateServiceAbstraction
 {
-  async getFromSessionMemory<T>(key: string): Promise<T> {
+  async getFromSessionMemory<T>(key: string, deserializer?: (obj: Jsonify<T>) => T): Promise<T> {
     return this.memoryStorageService instanceof AbstractCachedStorageService
-      ? await this.memoryStorageService.getBypassCache<T>(key)
+      ? await this.memoryStorageService.getBypassCache<T>(key, { deserializer: deserializer })
       : await this.memoryStorageService.get<T>(key);
   }
 

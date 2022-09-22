@@ -66,8 +66,8 @@ export class SessionSyncer {
     if (message.command != this.updateMessageCommand || message.id === this.id) {
       return;
     }
-    const keyValuePair = await this.stateService.getFromSessionMemory(this.metaData.sessionKey);
-    const value = SyncedItemMetadata.buildFromKeyValuePair(keyValuePair, this.metaData);
+    const builder = SyncedItemMetadata.builder(this.metaData);
+    const value = await this.stateService.getFromSessionMemory(this.metaData.sessionKey, builder);
     this.ignoreNextUpdate = true;
     this.behaviorSubject.next(value);
   }

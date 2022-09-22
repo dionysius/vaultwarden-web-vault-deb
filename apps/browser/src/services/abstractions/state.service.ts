@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
 import { StorageOptions } from "@bitwarden/common/models/domain/storageOptions";
 
@@ -7,7 +9,7 @@ import { BrowserGroupingsComponentState } from "src/models/browserGroupingsCompo
 import { BrowserSendComponentState } from "src/models/browserSendComponentState";
 
 export abstract class StateService extends BaseStateServiceAbstraction<Account> {
-  abstract getFromSessionMemory<T>(key: string): Promise<T>;
+  abstract getFromSessionMemory<T>(key: string, deserializer?: (obj: Jsonify<T>) => T): Promise<T>;
   abstract setInSessionMemory(key: string, value: any): Promise<void>;
   getBrowserGroupingComponentState: (
     options?: StorageOptions

@@ -98,7 +98,7 @@ export class EncryptService implements AbstractEncryptService {
       }
     }
 
-    return this.cryptoFunctionService.aesDecryptFast(fastParams);
+    return await this.cryptoFunctionService.aesDecryptFast(fastParams);
   }
 
   async decryptToBytes(encThing: IEncrypted, key: SymmetricCryptoKey): Promise<ArrayBuffer> {

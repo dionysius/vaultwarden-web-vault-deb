@@ -96,6 +96,13 @@ describe("Browser Session Storage Service", () => {
           expect(cache.has("test")).toBe(true);
           expect(cache.get("test")).toEqual(session.test);
         });
+
+        it("should use a deserializer if provided", async () => {
+          const deserializer = jest.fn().mockReturnValue(testObj);
+          const result = await sut.get("test", { deserializer: deserializer });
+          expect(deserializer).toHaveBeenCalledWith(session.test);
+          expect(result).toEqual(testObj);
+        });
       });
     });
   });

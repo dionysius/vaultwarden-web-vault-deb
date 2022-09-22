@@ -19,6 +19,7 @@ describe("sessionSync decorator", () => {
         ctor: ctor,
         initializer: initializer,
       }),
+      testClass.testProperty.complete(),
     ]);
   });
 });

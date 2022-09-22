@@ -1,4 +1,4 @@
-import { StorageOptions } from "../models/domain/storageOptions";
+import { MemoryStorageOptions, StorageOptions } from "../models/domain/storageOptions";
 
 export abstract class AbstractStorageService {
   abstract get<T>(key: string, options?: StorageOptions): Promise<T>;
@@ -8,5 +8,9 @@ export abstract class AbstractStorageService {
 }
 
 export abstract class AbstractCachedStorageService extends AbstractStorageService {
-  abstract getBypassCache<T>(key: string, options?: StorageOptions): Promise<T>;
+  abstract getBypassCache<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T>;
+}
+
+export interface MemoryStorageServiceInterface {
+  get<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T>;
 }

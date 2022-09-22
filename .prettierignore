@@ -27,3 +27,6 @@ libs/.github
 
 # Github Workflows
 .github/workflows
+
+# Forked library files
+libs/common/src/types/deep-jsonify.ts

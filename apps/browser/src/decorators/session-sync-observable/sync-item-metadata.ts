@@ -5,19 +5,15 @@ export class SyncedItemMetadata {
   initializer?: (keyValuePair: any) => any;
   initializeAsArray?: boolean;
 
-  static buildFromKeyValuePair(keyValuePair: any, metadata: SyncedItemMetadata): any {
-    const builder = SyncedItemMetadata.getBuilder(metadata);
-
+  static builder(metadata: SyncedItemMetadata): (o: any) => any {
+    const itemBuilder =
+      metadata.initializer != null
+        ? metadata.initializer
+        : (o: any) => Object.assign(new metadata.ctor(), o);
     if (metadata.initializeAsArray) {
-      return keyValuePair.map((o: any) => builder(o));
+      return (keyValuePair: any) => keyValuePair.map((o: any) => itemBuilder(o));
     } else {
-      return builder(keyValuePair);
+      return (keyValuePair: any) => itemBuilder(keyValuePair);
     }
-  }
-
-  private static getBuilder(metadata: SyncedItemMetadata): (o: any) => any {
-    return metadata.initializer != null
-      ? metadata.initializer
-      : (o: any) => Object.assign(new metadata.ctor(), o);
   }
 }
