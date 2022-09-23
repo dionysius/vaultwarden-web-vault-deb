@@ -1461,7 +1461,7 @@
     "message": "Una cassaforte bloccata richiede l'inserimento della password principale per accedere nuovamente."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "La disconnessione dalla cassaforte richiede l'inserimento della password principale per accedere nuovamente."
+    "message": "Per accedere nuovamente alla cassaforte è necessaria una nuova autenticazione."
   },
   "lock": {
     "message": "Blocca",
@@ -1565,7 +1565,7 @@
     "message": "I termini di servizio e l'informativa sulla privacy non sono stati accettati."
   },
   "enableBrowserIntegration": {
-    "message": "Abilita l'integrazione con il browser"
+    "message": "Abilita l'integrazione del browser"
   },
   "enableBrowserIntegrationDesc": {
     "message": "L'integrazione del browser è utilizzata per l'autenticazione biometrica."
@@ -1995,6 +1995,6 @@
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Cassaforte"
   }
 }
