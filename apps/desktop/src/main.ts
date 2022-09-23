@@ -171,7 +171,10 @@ export class Main {
           await this.biometricMain.init();
         }
 
-        if (await this.stateService.getEnableBrowserIntegration()) {
+        if (
+          (await this.stateService.getEnableBrowserIntegration()) ||
+          (await this.stateService.getEnableDuckDuckGoBrowserIntegration())
+        ) {
           this.nativeMessagingMain.listen();
         }
 

@@ -14,22 +14,14 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/encString";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
+import { LegacyMessage } from "src/models/nativeMessaging/legacyMessage";
+import { LegacyMessageWrapper } from "src/models/nativeMessaging/legacyMessageWrapper";
+import { Message } from "src/models/nativeMessaging/message";
+
+import { NativeMessageHandlerService } from "./nativeMessageHandler.service";
+
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = "sha1";
-
-type Message = {
-  command: string;
-
-  userId?: string;
-  timestamp?: number;
-
-  publicKey?: string;
-};
-
-type OuterMessage = {
-  message: Message | EncString;
-  appId: string;
-};
 
 @Injectable()
 export class NativeMessagingService {
@@ -42,7 +34,8 @@ export class NativeMessagingService {
     private logService: LogService,
     private i18nService: I18nService,
     private messagingService: MessagingService,
-    private stateService: StateService
+    private stateService: StateService,
+    private nativeMessageHandler: NativeMessageHandlerService
   ) {}
 
   init() {
@@ -51,15 +44,20 @@ export class NativeMessagingService {
     });
   }
 
-  private async messageHandler(msg: OuterMessage) {
-    const appId = msg.appId;
-    const rawMessage = msg.message;
+  private async messageHandler(msg: LegacyMessageWrapper | Message) {
+    const outerMessage = msg as Message;
+    if (outerMessage.version) {
+      this.nativeMessageHandler.handleMessage(outerMessage);
+      return;
+    }
+
+    const { appId, message: rawMessage } = msg as LegacyMessageWrapper;
 
     // Request to setup secure encryption
     if ("command" in rawMessage && rawMessage.command === "setupEncryption") {
       const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
 
-      // Valudate the UserId to ensure we are logged into the same account.
+      // Validate the UserId to ensure we are logged into the same account.
       const userIds = Object.keys(this.stateService.accounts.getValue());
       if (!userIds.includes(rawMessage.userId)) {
         ipcRenderer.send("nativeMessagingReply", { command: "wrongUserId", appId: appId });
@@ -103,7 +101,7 @@ export class NativeMessagingService {
       return;
     }
 
-    const message: Message = JSON.parse(
+    const message: LegacyMessage = JSON.parse(
       await this.cryptoService.decryptToUtf8(rawMessage as EncString, this.sharedSecrets.get(appId))
     );
 

@@ -12,7 +12,9 @@ import {
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
+import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/abstractions/auth.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
@@ -22,8 +24,10 @@ import {
   LogService as LogServiceAbstraction,
 } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/abstractions/messaging.service";
+import { PasswordGenerationService as PasswordGenerationServiceAbstraction } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
+import { PolicyService as PolicyServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
 import { StateMigrationService as StateMigrationServiceAbstraction } from "@bitwarden/common/abstractions/stateMigration.service";
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
@@ -41,7 +45,9 @@ import { ElectronRendererSecureStorageService } from "@bitwarden/electron/servic
 import { ElectronRendererStorageService } from "@bitwarden/electron/services/electronRendererStorage.service";
 
 import { Account } from "../../models/account";
+import { EncryptedMessageHandlerService } from "../../services/encryptedMessageHandlerService";
 import { I18nService } from "../../services/i18n.service";
+import { NativeMessageHandlerService } from "../../services/nativeMessageHandler.service";
 import { NativeMessagingService } from "../../services/nativeMessaging.service";
 import { PasswordRepromptService } from "../../services/passwordReprompt.service";
 import { StateService } from "../../services/state.service";
@@ -146,6 +152,28 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
     {
       provide: AbstractThemingService,
       useClass: DesktopThemingService,
+    },
+    {
+      provide: EncryptedMessageHandlerService,
+      deps: [
+        StateServiceAbstraction,
+        AuthServiceAbstraction,
+        CipherServiceAbstraction,
+        PolicyServiceAbstraction,
+        MessagingServiceAbstraction,
+        PasswordGenerationServiceAbstraction,
+      ],
+    },
+    {
+      provide: NativeMessageHandlerService,
+      deps: [
+        StateServiceAbstraction,
+        CryptoServiceAbstraction,
+        CryptoFunctionServiceAbstraction,
+        MessagingServiceAbstraction,
+        I18nServiceAbstraction,
+        EncryptedMessageHandlerService,
+      ],
     },
   ],
 })

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "dist",
+    "target": "es6",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "declaration": false,
+    "paths": {
+      "@src/*": ["src/*"],
+      "@bitwarden/node/*": ["../../../libs/node/src/*"],
+      "@bitwarden/common/*": ["../../../libs/common/src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

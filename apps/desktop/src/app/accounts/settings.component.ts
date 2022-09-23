@@ -16,6 +16,7 @@ import { ThemeType } from "@bitwarden/common/enums/themeType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { isWindowsStore } from "@bitwarden/electron/utils";
 
+import { flagEnabled } from "../../flags";
 import { SetPinComponent } from "../components/set-pin.component";
 
 @Component({
@@ -28,6 +29,7 @@ export class SettingsComponent implements OnInit {
   pin: boolean = null;
   enableFavicons = false;
   enableBrowserIntegration = false;
+  enableDuckDuckGoBrowserIntegration = false;
   enableBrowserIntegrationFingerprint = false;
   enableMinToTray = false;
   enableCloseToTray = false;
@@ -51,6 +53,7 @@ export class SettingsComponent implements OnInit {
   showAlwaysShowDock = false;
   openAtLogin: boolean;
   requireEnableTray = false;
+  showDuckDuckGoIntegrationOption = false;
 
   enableTrayText: string;
   enableTrayDescText: string;
@@ -101,6 +104,9 @@ export class SettingsComponent implements OnInit {
     const startToTrayKey = isMac ? "startToMenuBar" : "startToTray";
     this.startToTrayText = this.i18nService.t(startToTrayKey);
     this.startToTrayDescText = this.i18nService.t(startToTrayKey + "Desc");
+
+    // DuckDuckGo browser is only for macos initially
+    this.showDuckDuckGoIntegrationOption = flagEnabled("showDDGSetting") && isMac;
 
     this.vaultTimeouts = [
       // { name: i18nService.t('immediately'), value: 0 },
@@ -188,6 +194,8 @@ export class SettingsComponent implements OnInit {
     // Account preferences
     this.enableFavicons = !(await this.stateService.getDisableFavicon());
     this.enableBrowserIntegration = await this.stateService.getEnableBrowserIntegration();
+    this.enableDuckDuckGoBrowserIntegration =
+      await this.stateService.getEnableDuckDuckGoBrowserIntegration();
     this.enableBrowserIntegrationFingerprint =
       await this.stateService.getEnableBrowserIntegrationFingerprint();
     this.clearClipboard = await this.stateService.getClearClipboard();
@@ -430,6 +438,22 @@ export class SettingsComponent implements OnInit {
       this.enableBrowserIntegrationFingerprint = false;
       this.saveBrowserIntegrationFingerprint();
     }
+  }
+
+  async saveDdgBrowserIntegration() {
+    await this.stateService.setEnableDuckDuckGoBrowserIntegration(
+      this.enableDuckDuckGoBrowserIntegration
+    );
+
+    if (!this.enableBrowserIntegration) {
+      await this.stateService.setDuckDuckGoSharedKey(null);
+    }
+
+    this.messagingService.send(
+      this.enableDuckDuckGoBrowserIntegration
+        ? "enableDuckDuckGoBrowserIntegration"
+        : "disableDuckDuckGoBrowserIntegration"
+    );
   }
 
   async saveBrowserIntegrationFingerprint() {

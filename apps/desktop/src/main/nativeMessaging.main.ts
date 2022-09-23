@@ -163,6 +163,27 @@ export class NativeMessagingMain {
     }
   }
 
+  generateDdgManifests() {
+    const manifest = {
+      name: "com.8bit.bitwarden",
+      description: "Bitwarden desktop <-> DuckDuckGo bridge",
+      path: this.binaryPath(),
+      type: "stdio",
+    };
+    switch (process.platform) {
+      case "darwin": {
+        /* eslint-disable-next-line no-useless-escape */
+        const path = `${this.homedir()}/Library/Containers/com.duckduckgo.macos.browser/Data/Library/Application\ Support/NativeMessagingHosts/com.8bit.bitwarden.json`;
+        this.writeManifest(path, manifest).catch((e) =>
+          this.logService.error(`Error writing manifest for DuckDuckGo. ${e}`)
+        );
+        break;
+      }
+      default:
+        break;
+    }
+  }
+
   removeManifests() {
     switch (process.platform) {
       case "win32":
@@ -212,6 +233,21 @@ export class NativeMessagingMain {
           );
         }
         break;
+      default:
+        break;
+    }
+  }
+
+  removeDdgManifests() {
+    switch (process.platform) {
+      case "darwin": {
+        /* eslint-disable-next-line no-useless-escape */
+        const path = `${this.homedir()}/Library/Containers/com.duckduckgo.macos.browser/Data/Library/Application\ Support/NativeMessagingHosts/com.8bit.bitwarden.json`;
+        if (existsSync(path)) {
+          fs.unlink(path);
+        }
+        break;
+      }
       default:
         break;
     }

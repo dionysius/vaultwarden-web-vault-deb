@@ -58,6 +58,8 @@ const partialKeys = {
   masterKey: "_masterkey",
 };
 
+const DDG_SHARED_KEY = "DuckDuckGoSharedKey";
+
 export class StateService<
   TGlobalState extends GlobalState = GlobalState,
   TAccount extends Account = Account
@@ -1008,6 +1010,24 @@ export class StateService<
     );
   }
 
+  async getDuckDuckGoSharedKey(options?: StorageOptions): Promise<string> {
+    options = this.reconcileOptions(options, await this.defaultSecureStorageOptions());
+    if (options?.userId == null) {
+      return null;
+    }
+    return await this.secureStorageService.get<string>(DDG_SHARED_KEY, options);
+  }
+
+  async setDuckDuckGoSharedKey(value: string, options?: StorageOptions): Promise<void> {
+    options = this.reconcileOptions(options, await this.defaultSecureStorageOptions());
+    if (options?.userId == null) {
+      return;
+    }
+    value == null
+      ? await this.secureStorageService.remove(DDG_SHARED_KEY, options)
+      : await this.secureStorageService.save(DDG_SHARED_KEY, value, options);
+  }
+
   async getEmail(options?: StorageOptions): Promise<string> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
@@ -1160,6 +1180,27 @@ export class StateService<
       this.reconcileOptions(options, await this.defaultOnDiskOptions())
     );
     globals.enableCloseToTray = value;
+    await this.saveGlobals(
+      globals,
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+  }
+
+  async getEnableDuckDuckGoBrowserIntegration(options?: StorageOptions): Promise<boolean> {
+    return (
+      (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
+        ?.enableDuckDuckGoBrowserIntegration ?? false
+    );
+  }
+
+  async setEnableDuckDuckGoBrowserIntegration(
+    value: boolean,
+    options?: StorageOptions
+  ): Promise<void> {
+    const globals = await this.getGlobals(
+      this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    );
+    globals.enableDuckDuckGoBrowserIntegration = value;
     await this.saveGlobals(
       globals,
       this.reconcileOptions(options, await this.defaultOnDiskOptions())

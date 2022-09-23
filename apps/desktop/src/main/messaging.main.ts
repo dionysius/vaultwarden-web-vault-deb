@@ -68,8 +68,16 @@ export class MessagingMain {
         this.main.nativeMessagingMain.generateManifests();
         this.main.nativeMessagingMain.listen();
         break;
+      case "enableDuckDuckGoBrowserIntegration":
+        this.main.nativeMessagingMain.generateDdgManifests();
+        this.main.nativeMessagingMain.listen();
+        break;
       case "disableBrowserIntegration":
         this.main.nativeMessagingMain.removeManifests();
+        this.main.nativeMessagingMain.stop();
+        break;
+      case "disableDuckDuckGoBrowserIntegration":
+        this.main.nativeMessagingMain.removeDdgManifests();
         this.main.nativeMessagingMain.stop();
         break;
       default:
