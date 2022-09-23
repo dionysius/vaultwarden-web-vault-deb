@@ -32,7 +32,9 @@ base: core18
 apps:
   bw:
     command: bw
-    plugs: [network, home, network-bind]
+    environment:
+      XDG_CONFIG_HOME: $SNAP_USER_DATA
+    plugs: [network, network-bind]
 parts:
   bw:
     plugin: dump
