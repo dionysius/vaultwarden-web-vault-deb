@@ -126,7 +126,7 @@
     "message": "Panoya kaydederken küçült"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Bir kaydın verilerini panoya kopyalarken simge durumuna küçült."
+    "message": "Bir kaydın verilerini panoya kopyalarken uygulamayı simge durumuna küçült."
   },
   "toggleVisibility": {
     "message": "Görünürlüğü aç/kapat"
@@ -731,7 +731,7 @@
     "message": "Çıkmak istediğinize emin misiniz?"
   },
   "logOut": {
-    "message": "Çıkış Yap"
+    "message": "Çıkış yap"
   },
   "addNewLogin": {
     "message": "Yeni hesap ekle"
@@ -758,10 +758,10 @@
     "message": "Parola oluşturucu"
   },
   "contactUs": {
-    "message": "Bize Ulaşın"
+    "message": "Bize ulaşın"
   },
   "getHelp": {
-    "message": "Yardım Alın"
+    "message": "Yardım al"
   },
   "fileBugReport": {
     "message": "Hata bildirin"
@@ -790,7 +790,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Web Kasasına Git"
+    "message": "Web kasasına git"
   },
   "getMobileApp": {
     "message": "Mobil uygulamayı indir"
@@ -836,7 +836,7 @@
     "message": "Kasa zaman aşımı"
   },
   "vaultTimeoutDesc": {
-    "message": "Kasanızın zaman aşımına uğrayacağı ve seçilen işlemi gerçekleştirmede seçin."
+    "message": "Kasa zaman aşımı eyleminin ne zaman gerçekleştirileceğini seçin."
   },
   "immediately": {
     "message": "Hemen"
@@ -890,7 +890,7 @@
     "message": "Güvenlik"
   },
   "clearClipboard": {
-    "message": "Panoyu Temizle",
+    "message": "Panoyu temizle",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -904,7 +904,7 @@
     "message": "Hesapların yanında tanıdık görseller göster."
   },
   "enableMinToTray": {
-    "message": "Sistem çubuğu ikonuna küçült"
+    "message": "Tepsi simgesine küçült"
   },
   "enableMinToTrayDesc": {
     "message": "Pencere küçültülünce sistem tepsisinde bir simge göster."
@@ -988,7 +988,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Güncellemeleri denetle"
+    "message": "Güncellemeleri denetle…"
   },
   "version": {
     "message": "Sürüm $VERSION_NUM$",
@@ -1412,7 +1412,7 @@
     "message": "Tercihler"
   },
   "enableMenuBar": {
-    "message": "Menü Çubuğu Simgesini Etkinleştir"
+    "message": "Menü çubuğu simgesini göster"
   },
   "enableMenuBarDesc": {
     "message": "Menü çubuğunda her zaman bir simge göster."
@@ -1458,7 +1458,7 @@
     "message": "Kasa zaman aşımı eylemi"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Kilitli bir kasaya tekrar erişebilmeniz için ana şifrenizi tekrar girmeniz gerekir."
+    "message": "Kasaya tekrar erişmek için ana parolayı veya başka bir kilit açma yöntemini kullanmanız gerekir."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Çıkış yapılmış bir kasaya tekrardan erişmek için yeniden kimlik doğrulaması gerekir."
@@ -1565,10 +1565,16 @@
     "message": "Hizmet Koşulları ve Gizlilik Politikası kabul edilmemiş."
   },
   "enableBrowserIntegration": {
-    "message": "Tarayıcı entegrasyonunu etkinleştir"
+    "message": "Tarayıcı entegrasyonuna izin ver"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Tarayıcı entegrasyonu tarayıcıda biyometrik doğrulama için kullanılır."
+    "message": "Tarayıcıda biyometrik doğrulama için kullanılır."
+  },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "DuckDuckGo tarayıcı entegrasyonuna izin ver"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "DuckDuckGo ile gezinirken Bitwarden kasanızı kullanın."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Tarayıcı entegrasyonu desteklenmiyor"
@@ -1586,7 +1592,7 @@
     "message": "Tarayıcı entegrasyonu için doğrulamayı zorunlu kıl"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Masaüstü uygulamanızla ve tarayıcınız arasında bağlantı kurulurken parmak izi ifadesi doğrulamasını zorunlu kılarak ek bir güvenlik önlemi alabilirsiniz. Bu ayar açıldıktan sonra her bağlantı kurulduğunda tekrar doğrulama yapmanız gerekir."
+    "message": "Masaüstü uygulamanızla tarayıcınız arasında bağlantı kurulurken parmak izi ifadesi doğrulamasını zorunlu kılarak ek bir güvenlik önlemi alabilirsiniz. Bu ayarı açarsanız her bağlantı kurulduğunda tekrar doğrulama yapmanız gerekir."
   },
   "approve": {
     "message": "Onayla"
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Lütfen gösterilen parmak izinin tarayıcı eklentisinde gösterilen parmak iziyle aynı olduğundan emin olun."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ Bitwarden'a bağlanmak istiyor",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Bu isteği onaylamak ister misiniz?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Bu isteği siz başlatmadıysanız onaylamayın."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biyometri etkin değil"
@@ -1894,10 +1915,10 @@
     "message": "Oturumunuzun süresi doldu. Lütfen geri dönüp yeniden giriş yapın."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Kişisel Kasanızı Dışarı Aktarın"
+    "message": "Kişisel Kasayı Dışa Aktar"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Sadece $EMAIL$ ile ilişkili kişisel kasa ögeleri dışarı aktarılacak. Kuruluş kasasındaki ögeler dahil edilmeyecek.",
+    "message": "Yalnızca $EMAIL$ ile ilişkili kişisel kasadaki kayıtlar dışa aktarılacaktır. Kuruluş kasasındaki kayıtlar dahil edilmeyecektir.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1989,7 +2010,7 @@
     "message": "Devre dışı kuruluşlardaki kayıtlara erişilemez. Destek almak için kuruluş sahibinizle iletişime geçin."
   },
   "neverLockWarning": {
-    "message": "\"Asla\" seçeneğini kullanmak istediğinizden emin misiniz? Kilit seçeneklerinizi \"Asla\" olarak ayarlamak, kasanızın şifreleme anahtarını cihazınızda saklar. Bu seçeneği kullanırsanız, cihazınızı uygun şekilde koruduğunuzdan emin olmalısınız."
+    "message": "\"Asla\" seçeneğini kullanmak istediğinizden emin misiniz? Kilit seçeneklerinizi \"Asla\" olarak ayarlarsanız kasanızın şifreleme anahtarı cihazınızda saklanacaktır. Bu seçeneği kullanırsanız cihazınızı çok iyi korumalısınız."
   },
   "cardBrandMir": {
     "message": "Mir"

@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "A böngésző integrációt a biometrikus adatokhoz használják a böngészőben."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "DuckDuckGo böngésző integráció engedélyezése"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "A Bitwarden széf használata DuckDuckGo böngésző használatakor."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "A böngésző integráció nem támogatott."
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Ellenőrizzük, hogy a bemutatott ujjlenyomat megegyezik a böngésző kiterjesztésében megjelenített ujjlenyomattal."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ szeretne csaklakozni a Bitwardenhez.",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Szeretnénk jóváhagyni ezt a kérést?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Ha nem kezdeményeztük azt a kérést, ne hagyjuk jóvá."
   },
   "biometricsNotEnabledTitle": {
     "message": "A biometrikus adatok nincsenek engedélyezve."

@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "Integrácia v prehliadači sa používa na biometriu v prehliadači."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Povoliť integráciu prehliadača DuckDuckGo"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Používajte svoj trezor Bitwarden pri prehliadaní pomocou DuckDuckGo."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "Integrácia v prehliadači nie je podporovaná"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Uistite sa, že zobrazený odtlačok prsta je identický s odtlačkom prsta zobrazeným v rozšírení prehliadača."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ sa chce pripojiť k Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Chcete túto žiadosť schváliť?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Ak ste túto žiadosť neiniciovali, neschvaľujte ju."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometria nie je aktivovaná"

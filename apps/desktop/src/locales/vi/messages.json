@@ -45,7 +45,7 @@
     "message": "Chia sẻ"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Chuyển tới Tổ chức"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ moved to $ORGNAME$",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Chọn một tổ chức mà bạn muốn chuyển mục này tới. Việc di chuyển đến một tổ chức sẽ chuyển quyền sở hữu của mục sang tổ chức mà bạn chọn. Bạn sẽ không còn là chủ sở hữu trực tiếp của mục này một khi nó đã được chuyển."
   },
   "attachments": {
     "message": "Tệp đính kèm"
@@ -269,7 +269,7 @@
     "message": "Họ"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Tên đầy đủ"
   },
   "address1": {
     "message": "Địa chỉ 1"
@@ -332,11 +332,11 @@
     "message": "Đúng/Sai"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Đã liên kết",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Giá trị được liên kết",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -370,10 +370,10 @@
     "message": "Bạn có chắc chắn muốn ghi đè mật khẩu hiện tại không?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Ghi đè tên người dùng"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Bạn có chắc là muốn ghi đè tên người dùng hiện tại không?"
   },
   "noneFolder": {
     "message": "Không được phân loại",
@@ -401,16 +401,16 @@
     "message": "Độ dài"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Chữ in hoa (A-Z)"
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Chữ in thường (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Chữ số (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Ký tự đặc biệt (!@#$%^&*)"
   },
   "numWords": {
     "message": "Number of Words"
@@ -533,13 +533,13 @@
     "message": "Địa chỉ email không hợp lệ."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Yêu cầu mật khẩu chính."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Yêu cầu nhập lại mật khẩu chính."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Mật khẩu chính phải có ít nhất 8 kí tự."
   },
   "masterPassDoesntMatch": {
     "message": "Xác nhận mật khẩu chính không khớp."
@@ -560,25 +560,25 @@
     "message": "Không có mục nào để liệt kê."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Gửi mã xác minh đến email của bạn"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Gửi mã"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Đã gửi mã"
   },
   "verificationCode": {
     "message": "Mã xác nhận"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Xác minh danh tính của bạn để tiếp tục."
   },
   "verificationCodeRequired": {
     "message": "Yêu cầu mã xác nhận."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Mã xác minh không hợp lệ"
   },
   "continue": {
     "message": "Tiếp tục"
@@ -650,7 +650,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Sử dụng bất kỳ khoá bảo mật được kích hoạt WebAuthn nào để truy cập tài khoản của bạn."
   },
   "emailTitle": {
     "message": "Email"
@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "Used for biometrics in browser."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Allow DuckDuckGo browser integration"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browser integration not supported"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ wants to connect to Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Would you like to approve this request?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "If you did not initiate this request, do not approve it."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not enabled"

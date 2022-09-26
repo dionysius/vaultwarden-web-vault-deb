@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "ಬ್ರೌಸರ್ನಲ್ಲಿ ಬಯೋಮೆಟ್ರಿಕ್ಸ್ಗಾಗಿ ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Allow DuckDuckGo browser integration"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browser integration not supported"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "ತೋರಿಸಿದ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಬ್ರೌಸರ್ ವಿಸ್ತರಣೆಯಲ್ಲಿ ತೋರಿಸಿರುವ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್‌ಗೆ ಹೋಲುತ್ತದೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ wants to connect to Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Would you like to approve this request?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "If you did not initiate this request, do not approve it."
   },
   "biometricsNotEnabledTitle": {
     "message": "ಬಯೊಮಿಟ್ರಿಕ್ಸ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿಲ್ಲ"

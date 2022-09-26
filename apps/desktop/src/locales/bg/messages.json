@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "За потвърждаване с биометрични данни е необходима интеграция с браузъра."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Разрешаване на интеграцията на DuckDuckGo в браузъра"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Използвайте трезора си в Битуорден, когато навигирате в мрежата с DuckDuckGo."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "Интеграцията с браузър не се поддържа"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Уверете се, че идентификаторът в разширението съвпада с показания."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ иска де се свърже с Битуорден",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Одобрявате ли тази заявка?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Ако не Вие сте предизвикали тази заявка, не я одобрявайте."
   },
   "biometricsNotEnabledTitle": {
     "message": "Потвърждаването с биометрични данни не е включено"

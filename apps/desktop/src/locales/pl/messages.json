@@ -875,7 +875,7 @@
     "message": "Podczas bezczynności systemu"
   },
   "onSleep": {
-    "message": "Podczas uśpienia systemu"
+    "message": "Po uśpieniu komputera"
   },
   "onLocked": {
     "message": "Po zablokowaniu komputera"
@@ -901,7 +901,7 @@
     "message": "Pokaż ikony witryn"
   },
   "faviconDesc": {
-    "message": "Pokaż rozpoznawalny obraz obok każdych danych logowania."
+    "message": "Pokaż rozpoznawalny obraz obok danych logowania."
   },
   "enableMinToTray": {
     "message": "Minimalizuj do zasobnika systemowego"
@@ -1281,7 +1281,7 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Załaduj ciasteczko ułatwień dostępu"
+    "message": "Załaduj pliki cookies ułatwień dostępu"
   },
   "registerAccessibilityUser": {
     "message": "Zarejestruj się jako użytkownik ułatwień dostępu na",
@@ -1291,7 +1291,7 @@
     "message": "Skopiuj i wklej link wysłany na poniższy adres e-mail"
   },
   "enterhCaptchaUrl": {
-    "message": "Wpisz adres URL, aby załadować ciasteczko ułatwień dostępu dla hCaptcha",
+    "message": "Wpisz adres URL, aby załadować pliki cookies ułatwień dostępu dla hCaptcha",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
@@ -1299,16 +1299,16 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
-    "message": "Nieprawidłowy adres URL"
+    "message": "Adres URL jest nieprawidłowy"
   },
   "done": {
     "message": "Gotowe"
   },
   "accessibilityCookieSaved": {
-    "message": "Zapisano ciasteczko ułatwień dostępu!"
+    "message": "Pliki cookies ułatwień dostępu zostały zapisane!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "Brak zapisanych ciasteczek ułatwień dostępu"
+    "message": "Brak zapisanych plików cookies ułatwień dostępu"
   },
   "warning": {
     "message": "UWAGA",
@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "Połączenie z przeglądarką jest używane do odblokowania danymi biometrycznymi."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Włącz połączenie z przeglądarką DuckDuckGo"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Korzystaj z sejfu Bitwarden podczas przeglądania za pomocą DuckDuckGo."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "Połączenie z przeglądarką nie jest obsługiwane"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Upewnij się, że wyświetlony identyfikator jest identyczny z pokazanym w rozszerzeniu przeglądarki."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ chce połączyć się z Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Czy chcesz zatwierdzić to żądanie?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Jeśli to żądanie nie zostało zainicjowane przez Ciebie, nie zatwierdzaj go."
   },
   "biometricsNotEnabledTitle": {
     "message": "Dane biometryczne są wyłączone"

@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "S'utilitza per a la biometria al navegador."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Permet la integració del navegador DuckDuckGo"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Utilitzeu la vostra caixa forta de Bitwarden quan navegueu amb DuckDuckGo."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "La integració en el navegador no és compatible"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Assegureu-vos que l’empremta digital que es mostra és idèntica a la que es mostra a l’extensió del navegador."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ vol connectar-se a Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Voleu aprovar aquesta sol·licitud?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Si no heu iniciar aquesta sol·licitud, no l'aproveu."
   },
   "biometricsNotEnabledTitle": {
     "message": "La biomètrica no està habilitada"

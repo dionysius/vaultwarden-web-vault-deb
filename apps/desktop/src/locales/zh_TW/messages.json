@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "用於在瀏覽器中提供生物特徵辨識。"
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "允許 DuckDuckGo 瀏覽器整合"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "使用 DuckDuckGo 瀏覽時，使用您的 Bitwarden 密碼庫。"
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "不支援瀏覽器整合"
   },
@@ -1577,7 +1583,7 @@
     "message": "很遺憾，目前僅 Mac App Store 版本支援瀏覽器整合功能。"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "很遺憾，Windows Store 版本目前尚不支援瀏覽器整合功能。"
+    "message": "很遺憾，Microsoft Store 版本目前尚不支援瀏覽器整合功能。"
   },
   "browserIntegrationLinuxDesc": {
     "message": "很遺憾，Linux 版本目前尚未支援瀏覽器整合功能。"
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "請確保顯示的指紋與瀏覽器擴充套件中顯示的指紋一致。"
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ 想要連線至 Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "您要核准此要求嗎？"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "如果您沒有發起過此要求，請不要核准它。"
   },
   "biometricsNotEnabledTitle": {
     "message": "生物特徵辨識未啟用"

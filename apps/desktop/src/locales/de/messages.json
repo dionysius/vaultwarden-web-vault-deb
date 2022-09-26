@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "Die Browser-Integration wird für Biometrie im Browser verwendet."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "DuckDuckGo Browser-Integration erlauben"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Verwende deinen Bitwarden-Tresor, wenn du mit DuckDuckGo surfst."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browser-Integration wird nicht unterstützt"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Bitte stelle sicher, dass der angezeigte Prüfschlüssel identisch mit dem Prüfschlüssel in der Browser-Erweiterung ist."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ möchte sich mit Bitwarden verbinden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Möchtest du diese Anfrage genehmigen?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Wenn du diese Anfrage nicht initiiert hast, genehmige sie nicht."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrie ist nicht aktiviert"

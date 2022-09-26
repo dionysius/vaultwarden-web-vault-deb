@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "La integración del navegador se usa para la biometría en el mismo."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Permitir integración con el navegador DuckDuckGo"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Usa tu bóveda de Bitwarden cuando navegas con DuckDuckGo."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "La integración con el navegador no está soportada"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Por favor, asegúrese de que la huella digital mostrada es idéntica a la huella que aparece en la extensión del navegador."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ quiere conectarse a Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "¿Quieres aprobar esta solicitud?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Si no iniciaste esta solicitud, no la apruebes."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometría no habilitada"

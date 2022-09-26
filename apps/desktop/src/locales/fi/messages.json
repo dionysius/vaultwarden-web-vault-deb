@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "Käytetään selainten biometriatukeen."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Salli integrointi DuckDuckGo-selaimeen"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Käytä Bitwardenin holvia DuckDuckGo-selaimessa."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "Selainintegraatiota ei tueta"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Varmista, että näytetty tunnistelauseke on identtinen selainlaajennuksessa näkyvän lausekkeen kanssa."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ haluaa yhdistää Bitwardeniin",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Haluatko hyväksyä pyynnön?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Älä hyväksy pyyntöä, jollet itse aiheuttanut sitä."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometria ei ole käytössä"

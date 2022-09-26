@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "Використовується для біометрії в браузері."
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "Дозволити інтеграцію з браузером DuckDuckGo"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "Користуйтеся Bitwarden під час роботи з браузером DuckDuckGo."
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "Інтеграція з браузером не підтримується"
   },
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "Переконайтеся, що показаний відбиток ідентичний відбитку в розширенні браузера."
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ хоче з'єднатися з Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "Бажаєте схвалити цей запит?"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "Відхиліть цей запит, якщо ви його не ініціювали."
   },
   "biometricsNotEnabledTitle": {
     "message": "Біометрію не увімкнено"

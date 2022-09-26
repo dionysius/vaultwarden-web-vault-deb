@@ -1570,6 +1570,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "用于在浏览器中提供生物识别。"
   },
+  "enableDuckDuckGoBrowserIntegration": {
+    "message": "允许 DuckDuckGo 浏览器集成"
+  },
+  "enableDuckDuckGoBrowserIntegrationDesc": {
+    "message": "当使用 DuckDuckGo 浏览时，使用您的 Bitwarden 密码库。"
+  },
   "browserIntegrationUnsupportedTitle": {
     "message": "不支持浏览器集成"
   },
@@ -1577,7 +1583,7 @@
     "message": "很遗憾，目前仅 Mac App Store 版本支持浏览器集成。"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "很遗憾，Windows Store 版本目前不支持浏览器整合。"
+    "message": "很遗憾，Microsoft Store 版本目前不支持浏览器整合。"
   },
   "browserIntegrationLinuxDesc": {
     "message": "很遗憾，Linux 版本目前不支持浏览器集成。"
@@ -1596,6 +1602,21 @@
   },
   "verifyBrowserDesc": {
     "message": "请确保显示的指纹与浏览器扩展中显示的指纹相同。"
+  },
+  "verifyNativeMessagingConnectionTitle": {
+    "message": "$APPID$ 想要连接到 Bitwarden",
+    "placeholders": {
+      "appid": {
+        "content": "$1",
+        "example": "My App"
+      }
+    }
+  },
+  "verifyNativeMessagingConnectionDesc": {
+    "message": "您想要批准此请求吗？"
+  },
+  "verifyNativeMessagingConnectionWarning": {
+    "message": "如果您没有发起过此请求，请不要批准。"
   },
   "biometricsNotEnabledTitle": {
     "message": "生物识别未启用"
