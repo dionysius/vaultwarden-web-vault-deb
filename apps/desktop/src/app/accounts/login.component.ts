@@ -1,4 +1,5 @@
 import { Component, NgZone, OnDestroy, ViewChild, ViewContainerRef } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { LoginComponent as BaseLoginComponent } from "@bitwarden/angular/components/login.component";
@@ -7,6 +8,7 @@ import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { FormValidationErrorsService } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
@@ -47,7 +49,9 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     private broadcasterService: BroadcasterService,
     ngZone: NgZone,
     private messagingService: MessagingService,
-    logService: LogService
+    logService: LogService,
+    formBuilder: FormBuilder,
+    formValidationErrorService: FormValidationErrorsService
   ) {
     super(
       authService,
@@ -59,7 +63,9 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       passwordGenerationService,
       cryptoFunctionService,
       logService,
-      ngZone
+      ngZone,
+      formBuilder,
+      formValidationErrorService
     );
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);

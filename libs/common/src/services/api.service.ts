@@ -54,6 +54,7 @@ import { OrganizationUserUpdateGroupsRequest } from "../models/request/organizat
 import { OrganizationUserUpdateRequest } from "../models/request/organizationUserUpdateRequest";
 import { PasswordHintRequest } from "../models/request/passwordHintRequest";
 import { PasswordRequest } from "../models/request/passwordRequest";
+import { PasswordlessCreateAuthRequest } from "../models/request/passwordlessCreateAuthRequest";
 import { PaymentRequest } from "../models/request/paymentRequest";
 import { PreloginRequest } from "../models/request/preloginRequest";
 import { ProviderAddOrganizationRequest } from "../models/request/provider/providerAddOrganizationRequest";
@@ -92,6 +93,7 @@ import { VerifyEmailRequest } from "../models/request/verifyEmailRequest";
 import { ApiKeyResponse } from "../models/response/apiKeyResponse";
 import { AttachmentResponse } from "../models/response/attachmentResponse";
 import { AttachmentUploadDataResponse } from "../models/response/attachmentUploadDataResponse";
+import { AuthRequestResponse } from "../models/response/authRequestResponse";
 import { RegisterResponse } from "../models/response/authentication/registerResponse";
 import { BillingHistoryResponse } from "../models/response/billingHistoryResponse";
 import { BillingPaymentResponse } from "../models/response/billingPaymentResponse";
@@ -263,6 +265,17 @@ export class ApiService implements ApiServiceAbstraction {
     } catch (e) {
       return Promise.reject(null);
     }
+  }
+
+  async postAuthRequest(request: PasswordlessCreateAuthRequest): Promise<AuthRequestResponse> {
+    const r = await this.send("POST", "/auth-requests/", request, false, true);
+    return new AuthRequestResponse(r);
+  }
+
+  async getAuthResponse(id: string, accessCode: string): Promise<AuthRequestResponse> {
+    const path = `/auth-requests/${id}/response?code=${accessCode}`;
+    const r = await this.send("GET", path, null, false, true);
+    return new AuthRequestResponse(r);
   }
 
   // Account APIs

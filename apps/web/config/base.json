@@ -10,5 +10,7 @@
     "port": 8080,
     "allowedHosts": "auto"
   },
-  "flags": {}
+  "flags": {
+    "showPasswordless": false
+  }
 }

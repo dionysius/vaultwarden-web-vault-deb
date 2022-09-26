@@ -1,10 +1,15 @@
-import { Directive, Input, NgZone, OnInit } from "@angular/core";
+import { Directive, NgZone, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { take } from "rxjs/operators";
 
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import {
+  AllValidationErrors,
+  FormValidationErrorsService,
+} from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
@@ -18,16 +23,19 @@ import { CaptchaProtectedComponent } from "./captchaProtected.component";
 
 @Directive()
 export class LoginComponent extends CaptchaProtectedComponent implements OnInit {
-  @Input() email = "";
-  @Input() rememberEmail = true;
-
-  masterPassword = "";
   showPassword = false;
   formPromise: Promise<AuthResult>;
   onSuccessfulLogin: () => Promise<any>;
   onSuccessfulLoginNavigate: () => Promise<any>;
   onSuccessfulLoginTwoFactorNavigate: () => Promise<any>;
   onSuccessfulLoginForceResetNavigate: () => Promise<any>;
+  selfHosted = false;
+
+  formGroup = this.formBuilder.group({
+    email: ["", [Validators.required, Validators.email]],
+    masterPassword: ["", [Validators.required, Validators.minLength(8)]],
+    rememberEmail: [true],
+  });
 
   protected twoFactorRoute = "2fa";
   protected successRoute = "vault";
@@ -44,9 +52,12 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
     protected passwordGenerationService: PasswordGenerationService,
     protected cryptoFunctionService: CryptoFunctionService,
     protected logService: LogService,
-    protected ngZone: NgZone
+    protected ngZone: NgZone,
+    protected formBuilder: FormBuilder,
+    protected formValidationErrorService: FormValidationErrorsService
   ) {
     super(environmentService, i18nService, platformUtilsService);
+    this.selfHosted = platformUtilsService.isSelfHost();
   }
 
   get selfHostedDomain() {
@@ -54,59 +65,53 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
   }
 
   async ngOnInit() {
-    if (this.email == null || this.email === "") {
-      this.email = await this.stateService.getRememberedEmail();
-      if (this.email == null) {
-        this.email = "";
+    let email = this.formGroup.get("email")?.value;
+    if (email == null || email === "") {
+      email = await this.stateService.getRememberedEmail();
+      this.formGroup.get("email")?.setValue(email);
+
+      if (email == null) {
+        this.formGroup.get("email")?.setValue("");
       }
     }
     if (!this.alwaysRememberEmail) {
-      this.rememberEmail = (await this.stateService.getRememberedEmail()) != null;
-    }
-    if (Utils.isBrowser && !Utils.isNode) {
-      this.focusInput();
+      const rememberEmail = (await this.stateService.getRememberedEmail()) != null;
+      this.formGroup.get("rememberEmail")?.setValue(rememberEmail);
     }
   }
 
-  async submit() {
+  async submit(showToast = true) {
+    const email = this.formGroup.get("email")?.value;
+    const masterPassword = this.formGroup.get("masterPassword")?.value;
+    const rememberEmail = this.formGroup.get("rememberEmail")?.value;
+
     await this.setupCaptcha();
 
-    if (this.email == null || this.email === "") {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("emailRequired")
-      );
+    this.formGroup.markAllAsTouched();
+
+    //web
+    if (this.formGroup.invalid && !showToast) {
       return;
     }
-    if (this.email.indexOf("@") === -1) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidEmail")
-      );
-      return;
-    }
-    if (this.masterPassword == null || this.masterPassword === "") {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordRequired")
-      );
+
+    //desktop, browser; This should be removed once all clients use reactive forms
+    if (this.formGroup.invalid && showToast) {
+      const errorText = this.getErrorToastMessage();
+      this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), errorText);
       return;
     }
 
     try {
       const credentials = new PasswordLogInCredentials(
-        this.email,
-        this.masterPassword,
+        email,
+        masterPassword,
         this.captchaToken,
         null
       );
       this.formPromise = this.authService.logIn(credentials);
       const response = await this.formPromise;
-      if (this.rememberEmail || this.alwaysRememberEmail) {
-        await this.stateService.setRememberedEmail(this.email);
+      if (rememberEmail || this.alwaysRememberEmail) {
+        await this.stateService.setRememberedEmail(email);
       } else {
         await this.stateService.setRememberedEmail(null);
       }
@@ -188,9 +193,30 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit 
     );
   }
 
+  private getErrorToastMessage() {
+    const error: AllValidationErrors = this.formValidationErrorService
+      .getFormValidationErrors(this.formGroup.controls)
+      .shift();
+
+    if (error) {
+      switch (error.errorName) {
+        case "email":
+          return this.i18nService.t("invalidEmail");
+        default:
+          return this.i18nService.t(this.errorTag(error));
+      }
+    }
+
+    return;
+  }
+
+  private errorTag(error: AllValidationErrors): string {
+    const name = error.errorName.charAt(0).toUpperCase() + error.errorName.slice(1);
+    return `${error.controlName}${name}`;
+  }
+
   protected focusInput() {
-    document
-      .getElementById(this.email == null || this.email === "" ? "email" : "masterPassword")
-      .focus();
+    const email = this.formGroup.get("email")?.value;
+    document.getElementById(email == null || email === "" ? "email" : "masterPassword").focus();
   }
 }

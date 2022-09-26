@@ -10,6 +10,7 @@ import {
 /* eslint-disable-next-line @typescript-eslint/ban-types */
 export type Flags = {
   showTrial?: boolean;
+  showPasswordless?: boolean;
 } & SharedFlags;
 
 // required to avoid linting errors when there are no flags

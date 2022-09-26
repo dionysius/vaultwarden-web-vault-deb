@@ -14,6 +14,7 @@ import {
   ApiLogInCredentials,
   PasswordLogInCredentials,
   SsoLogInCredentials,
+  PasswordlessLogInCredentials,
 } from "../../models/domain/logInCredentials";
 import { DeviceRequest } from "../../models/request/deviceRequest";
 import { ApiTokenRequest } from "../../models/request/identityToken/apiTokenRequest";
@@ -42,7 +43,11 @@ export abstract class LogInStrategy {
   ) {}
 
   abstract logIn(
-    credentials: ApiLogInCredentials | PasswordLogInCredentials | SsoLogInCredentials
+    credentials:
+      | ApiLogInCredentials
+      | PasswordLogInCredentials
+      | SsoLogInCredentials
+      | PasswordlessLogInCredentials
   ): Promise<AuthResult>;
 
   async logInTwoFactor(

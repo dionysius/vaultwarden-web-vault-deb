@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 
+import { LoginModule } from "./accounts/login/login.module";
 import { TrialInitiationModule } from "./accounts/trial-initiation/trial-initiation.module";
 import { OrganizationCreateModule } from "./organizations/create/organization-create.module";
 import { OrganizationManageModule } from "./organizations/manage/organization-manage.module";
@@ -18,6 +19,7 @@ import { VaultFilterModule } from "./vault/vault-filter/vault-filter.module";
     OrganizationManageModule,
     OrganizationUserModule,
     OrganizationCreateModule,
+    LoginModule,
   ],
   exports: [
     SharedModule,
@@ -25,6 +27,7 @@ import { VaultFilterModule } from "./vault/vault-filter/vault-filter.module";
     TrialInitiationModule,
     VaultFilterModule,
     OrganizationBadgeModule,
+    LoginModule,
   ],
   bootstrap: [],
 })

@@ -1,4 +1,5 @@
 import { Component, NgZone } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
@@ -7,6 +8,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
+import { FormValidationErrorsService } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
@@ -20,7 +22,9 @@ import { Policy } from "@bitwarden/common/models/domain/policy";
 import { ListResponse } from "@bitwarden/common/models/response/listResponse";
 import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
 
-import { RouterService, StateService } from "../core";
+import { flagEnabled } from "src/utils/flags";
+
+import { RouterService, StateService } from "../../core";
 
 @Component({
   selector: "app-login",
@@ -31,6 +35,7 @@ export class LoginComponent extends BaseLoginComponent {
   showResetPasswordAutoEnrollWarning = false;
   enforcedPasswordPolicyOptions: MasterPasswordPolicyOptions;
   policies: ListResponse<PolicyResponse>;
+  showPasswordless = false;
 
   constructor(
     authService: AuthService,
@@ -48,7 +53,9 @@ export class LoginComponent extends BaseLoginComponent {
     ngZone: NgZone,
     protected stateService: StateService,
     private messagingService: MessagingService,
-    private routerService: RouterService
+    private routerService: RouterService,
+    formBuilder: FormBuilder,
+    formValidationErrorService: FormValidationErrorsService
   ) {
     super(
       authService,
@@ -60,19 +67,22 @@ export class LoginComponent extends BaseLoginComponent {
       passwordGenerationService,
       cryptoFunctionService,
       logService,
-      ngZone
+      ngZone,
+      formBuilder,
+      formValidationErrorService
     );
     this.onSuccessfulLogin = async () => {
       this.messagingService.send("setFullWidth");
     };
     this.onSuccessfulLoginNavigate = this.goAfterLogIn;
+    this.showPasswordless = flagEnabled("showPasswordless");
   }
 
   async ngOnInit() {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.email != null && qParams.email.indexOf("@") > -1) {
-        this.email = qParams.email;
+        this.formGroup.get("email")?.setValue(qParams.email);
       }
       if (qParams.premium != null) {
         this.routerService.setPreviousUrl("/settings/premium");
@@ -91,7 +101,8 @@ export class LoginComponent extends BaseLoginComponent {
         this.routerService.setPreviousUrl(route.toString());
       }
       await super.ngOnInit();
-      this.rememberEmail = await this.stateService.getRememberEmail();
+      const rememberEmail = await this.stateService.getRememberEmail();
+      this.formGroup.get("rememberEmail")?.setValue(rememberEmail);
     });
 
     const invite = await this.stateService.getOrganizationInvitation();
@@ -125,10 +136,12 @@ export class LoginComponent extends BaseLoginComponent {
   }
 
   async goAfterLogIn() {
+    const masterPassword = this.formGroup.get("masterPassword")?.value;
+
     // Check master password against policy
     if (this.enforcedPasswordPolicyOptions != null) {
       const strengthResult = this.passwordGenerationService.passwordStrength(
-        this.masterPassword,
+        masterPassword,
         this.getPasswordStrengthUserInput()
       );
       const masterPasswordScore = strengthResult == null ? null : strengthResult.score;
@@ -137,7 +150,7 @@ export class LoginComponent extends BaseLoginComponent {
       if (
         !this.policyService.evaluateMasterPassword(
           masterPasswordScore,
-          this.masterPassword,
+          masterPassword,
           this.enforcedPasswordPolicyOptions
         )
       ) {
@@ -158,19 +171,34 @@ export class LoginComponent extends BaseLoginComponent {
   }
 
   async submit() {
-    await this.stateService.setRememberEmail(this.rememberEmail);
-    if (!this.rememberEmail) {
+    const rememberEmail = this.formGroup.get("rememberEmail")?.value;
+
+    await this.stateService.setRememberEmail(rememberEmail);
+    if (!rememberEmail) {
       await this.stateService.setRememberedEmail(null);
     }
-    await super.submit();
+    await super.submit(false);
+  }
+
+  async startPasswordlessLogin() {
+    this.formGroup.get("masterPassword")?.clearValidators();
+    this.formGroup.get("masterPassword")?.updateValueAndValidity();
+
+    if (!this.formGroup.valid) {
+      return;
+    }
+
+    const email = this.formGroup.get("email").value;
+    this.router.navigate(["/login-with-device"], { state: { email: email } });
   }
 
   private getPasswordStrengthUserInput() {
+    const email = this.formGroup.get("email")?.value;
     let userInput: string[] = [];
-    const atPosition = this.email.indexOf("@");
+    const atPosition = email.indexOf("@");
     if (atPosition > -1) {
       userInput = userInput.concat(
-        this.email
+        email
           .substr(0, atPosition)
           .trim()
           .toLowerCase()

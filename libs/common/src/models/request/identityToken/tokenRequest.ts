@@ -4,6 +4,7 @@ import { TokenRequestTwoFactor } from "./tokenRequestTwoFactor";
 
 export abstract class TokenRequest {
   protected device?: DeviceRequest;
+  protected passwordlessAuthRequest: string;
 
   constructor(protected twoFactor: TokenRequestTwoFactor, device?: DeviceRequest) {
     this.device = device != null ? device : null;
@@ -18,6 +19,10 @@ export abstract class TokenRequest {
     this.twoFactor = twoFactor;
   }
 
+  setPasswordlessAccessCode(accessCode: string) {
+    this.passwordlessAuthRequest = accessCode;
+  }
+
   protected toIdentityToken(clientId: string) {
     const obj: any = {
       scope: "api offline_access",
@@ -30,6 +35,11 @@ export abstract class TokenRequest {
       obj.deviceName = this.device.name;
       // no push tokens for browser apps yet
       // obj.devicePushToken = this.device.pushToken;
+    }
+
+    //passswordless login
+    if (this.passwordlessAuthRequest) {
+      obj.authRequest = this.passwordlessAuthRequest;
     }
 
     if (this.twoFactor.token && this.twoFactor.provider != null) {

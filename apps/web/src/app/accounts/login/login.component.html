@@ -1,0 +1,121 @@
+<form
+  #form
+  (ngSubmit)="submit()"
+  [appApiAction]="formPromise"
+  class="tw-container tw-mx-auto"
+  [formGroup]="formGroup"
+>
+  <div
+    class="tw-mx-auto tw-mt-5 tw-flex tw-max-w-lg tw-flex-col tw-items-center tw-justify-center tw-p-8"
+  >
+    <div>
+      <img class="logo logo-themed" alt="Bitwarden" />
+      <p class="tw-mx-4 tw-mt-3 tw-mb-4 tw-text-center tw-text-xl">
+        {{ "loginOrCreateNewAccount" | i18n }}
+      </p>
+      <div
+        class="tw-mt-3 tw-rounded-md tw-border tw-border-solid tw-border-secondary-300 tw-bg-background tw-p-6"
+      >
+        <bit-callout
+          type="warning"
+          title="{{ 'resetPasswordPolicyAutoEnroll' | i18n }}"
+          *ngIf="showResetPasswordAutoEnrollWarning"
+        >
+          {{ "resetPasswordAutoEnrollInviteWarning" | i18n }}
+        </bit-callout>
+
+        <div class="tw-mb-3">
+          <bit-form-field>
+            <bit-label>{{ "emailAddress" | i18n }}</bit-label>
+            <input id="login_input_email" bitInput type="email" formControlName="email" />
+          </bit-form-field>
+        </div>
+
+        <div class="tw-mb-3">
+          <bit-form-field>
+            <bit-label>{{ "masterPass" | i18n }}</bit-label>
+            <input
+              id="login_input_master-password"
+              bitInput
+              type="{{ showPassword ? 'text' : 'password' }}"
+              formControlName="masterPassword"
+            />
+            <button type="button" bitSuffix bitButton (click)="togglePassword()">
+              <i
+                aria-hidden="true"
+                class="bwi bwi-lg bwi-eye"
+                [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
+              ></i>
+            </button>
+            <bit-hint>
+              <a routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</a>
+            </bit-hint>
+          </bit-form-field>
+        </div>
+
+        <div class="tw-mb-3 tw-flex tw-items-start">
+          <div class="tw-flex tw-h-6 tw-items-center">
+            <input
+              id="login_input_remember-email"
+              class="tw-w-4 tw-rounded tw-border"
+              bitInput
+              type="checkbox"
+              formControlName="rememberEmail"
+            />
+          </div>
+          <bit-label class="ml-2">
+            {{ "rememberEmail" | i18n }}
+          </bit-label>
+        </div>
+
+        <hr />
+
+        <div [hidden]="!showCaptcha()">
+          <iframe id="hcaptcha_iframe" height="80"></iframe>
+        </div>
+
+        <div class="tw-mb-3 tw-flex tw-space-x-4">
+          <button
+            bitButton
+            buttonType="primary"
+            type="submit"
+            class="tw-inline-block tw-w-1/2"
+            [disabled]="form.loading"
+          >
+            <span> <i class="bwi bwi-sign-in"></i> {{ "logIn" | i18n }} </span>
+          </button>
+
+          <a
+            bitButton
+            buttonType="secondary"
+            routerLink="/register"
+            class="tw-inline-block tw-w-1/2"
+          >
+            <i class="bwi bwi-pencil-square"></i>
+            {{ "createAccount" | i18n }}
+          </a>
+        </div>
+
+        <div class="tw-mb-3" *ngIf="!selfHosted && showPasswordless">
+          <button
+            bitButton
+            type="button"
+            buttonType="secondary"
+            class="tw-w-full"
+            (click)="startPasswordlessLogin()"
+            [disabled]="form.loading"
+          >
+            <span> <i class="bwi bwi-mobile"></i> {{ "loginWithDevice" | i18n }} </span>
+          </button>
+        </div>
+
+        <div class="tw-mb-3">
+          <a routerLink="/sso" bitButton buttonType="secondary" class="tw-w-full">
+            <i class="bwi bwi-provider tw-mr-2"></i>
+            {{ "enterpriseSingleSignOn" | i18n }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
