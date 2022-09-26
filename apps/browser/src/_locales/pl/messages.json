@@ -406,7 +406,7 @@
     "message": "Po zablokowaniu komputera"
   },
   "onRestart": {
-    "message": "Po uruchomieniu przeglądarki"
+    "message": "Po restarcie przeglądarki"
   },
   "never": {
     "message": "Nigdy"
@@ -577,16 +577,16 @@
     "message": "\"Dodaj powiadomienia logowania\" automatycznie wyświetla monit o zapisanie nowych danych logowania do sejfu przy każdym pierwszym logowaniu."
   },
   "showCardsCurrentTab": {
-    "message": "Pokaż karty na stronie Karta"
+    "message": "Pokaż karty na stronie głównej"
   },
   "showCardsCurrentTabDesc": {
-    "message": "Wyświetlaj elementy karty na stronie Karta, aby ułatwić autouzupełnianie."
+    "message": "Pokaż elementy karty na stronie głównej, aby ułatwić autouzupełnianie."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Pokaż tożsamości na stronie Karta"
+    "message": "Pokaż tożsamości na stronie głównej"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "Wyświetlaj elementy tożsamości na stronie Karta, aby ułatwić autouzupełnianie."
+    "message": "Pokaż elementy tożsamości na stronie głównej, aby ułatwić autouzupełnianie."
   },
   "clearClipboard": {
     "message": "Wyczyść schowek",
@@ -621,7 +621,7 @@
     "message": "Użyj drugiego kliknięcia, aby uzyskać dostęp do generowania haseł i pasujących danych logowania do witryny. "
   },
   "defaultUriMatchDetection": {
-    "message": "Domyślna metoda dopasowania adresu",
+    "message": "Domyślne wykrywanie dopasowania",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {

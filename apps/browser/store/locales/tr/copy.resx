@@ -139,7 +139,7 @@ Bitwarden, parolaları iş arkadaşlarınızla güvenli bir şekilde paylaşabil
 Neden Bitwarden?
 
 Üst düzey şifreleme
-Parolalarınız gelişmiş uçtan uca şifreleme (AES-256 bit, salted hashtag ve PBKDF2 SHA-256) ile korunuyor, böylece verileriniz güvende ve gizli kalıyor.
+Parolalarınız gelişmiş uçtan uca şifreleme (AES-256 bit, salted hashing ve PBKDF2 SHA-256) ile korunuyor, böylece verileriniz güvende ve gizli kalıyor.
 
 Dahili parola oluşturucu
 Sık kullandığınız web siteleri için güvenlik gereksinimlerinize uygun, güçlü, benzersiz ve rastgele parolalar oluşturabilirsiniz.
@@ -148,7 +148,8 @@ Sık kullandığınız web siteleri için güvenlik gereksinimlerinize uygun, g�
 Bitwarden 40 dilde kullanılabiliyor ve gönüllü topluluğumuz sayesinde çeviri sayısı giderek artıyor.
 
 Her platformla uyumlu uygulamalar
-Bitwarden kasanızdaki hassas verilere her tarayıcıdan, mobil cihazdan veya masaüstü işletim sisteminden ulaşabilir ve onları paylaşabilirsiniz.</value>
+Bitwarden kasanızdaki hassas verilere her tarayıcıdan, mobil cihazdan veya masaüstü işletim sisteminden ulaşabilir ve onları paylaşabilirsiniz.
+</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Tüm cihazarınız için güvenli ve ücretsiz bir parola yöneticisi</value>

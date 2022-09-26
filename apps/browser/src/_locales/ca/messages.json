@@ -1999,16 +1999,16 @@
     "message": "per restablir els paràmetres preconfigurats"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Versió del servidor"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Autoallotjat"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Tercers"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Connectat a la implementació del servidor de tercers, $SERVERNAME$. Verifiqueu els errors utilitzant el servidor oficial o comuniqueu-los al servidor de tercers.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on $DATE$",
+    "message": "vist per última vegada el $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
