@@ -645,7 +645,7 @@
     "message": "Konto zostało utworzone! Teraz możesz się zalogować."
   },
   "trialAccountCreated": {
-    "message": "Konto zostało pomyślnie utworzone."
+    "message": "Konto zostało utworzone."
   },
   "masterPassSent": {
     "message": "Wysłaliśmy Tobie wiadomość e-mail z podpowiedzią do hasła głównego."
@@ -918,7 +918,7 @@
     "message": "Utwórz hasło wygenerowane przez użytkownika, aby chronić eksport. Użyj tego, aby utworzyć eksport, który może być używany na innych kontach."
   },
   "fileTypeHeading": {
-    "message": "Typ Pliku"
+    "message": "Rodzaj pliku"
   },
   "accountBackup": {
     "message": "Kopia zapasowa konta"
@@ -1324,7 +1324,7 @@
     "message": "Wyłącz"
   },
   "revokeAccess": {
-    "message": "Odwołaj dostęp"
+    "message": "Unieważnij dostęp"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Ten dostawca logowania dwustopniowego jest już włączony na koncie."
@@ -1840,7 +1840,7 @@
     "message": "rok"
   },
   "yr": {
-    "message": "r."
+    "message": "rok"
   },
   "month": {
     "message": "miesiąc"
@@ -2257,7 +2257,7 @@
     "message": "Rocznie"
   },
   "annual": {
-    "message": "Raz w roku"
+    "message": "Rocznie"
   },
   "basePrice": {
     "message": "Cena netto"
@@ -2329,7 +2329,7 @@
     "message": "Gdy członek zostanie usunięty, nie ma już dostępu do danych organizacji, a ta czynność jest nieodwracalna. Aby ponownie dodać członka do organizacji, należy go zaprosić i ponownie wprowadzić."
   },
   "revokeUserConfirmation": {
-    "message": "Gdy członek zostanie odwołany, nie ma już dostępu do danych organizacji. Aby szybko przywrócić dostęp członków, przejdź do karty Odwołani."
+    "message": "Jeśli użytkownik zostanie unieważniony, nie będzie miał dostępu do danych organizacji. Aby przywrócić dostęp użytkownika, przejdź do karty Unieważnieni."
   },
   "removeUserConfirmationKeyConnector": {
     "message": "Ostrzeżenie! Ten użytkownik wymaga serwera Key Connector do zarządzania szyfrowaniem. Usunięcie tego użytkownika z organizacji spowoduje trwałe wyłączenie jego konta. Nie możesz cofnąć tej akcji. Czy chcesz kontynuować?"
@@ -2686,7 +2686,7 @@
     }
   },
   "revokedUserId": {
-    "message": "Odwołano dostęp organizacji dla $ID$.",
+    "message": "Dostęp do organizacji dla użytkownika $ID$ został unieważniony.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2704,7 +2704,7 @@
     }
   },
   "revokeUserId": {
-    "message": "Odwołano dostęp $ID$",
+    "message": "Unieważnij dostęp dla użytkownika $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3769,7 +3769,7 @@
     "message": "Wyłączone"
   },
   "revoked": {
-    "message": "Odwołani"
+    "message": "Unieważnieni"
   },
   "sendLink": {
     "message": "Link wysyłki",
@@ -4056,6 +4056,12 @@
   },
   "permissions": {
     "message": "Uprawnienia"
+  },
+  "managerPermissions": {
+    "message": "Menedżer uprawnień"
+  },
+  "adminPermissions": {
+    "message": "Administrator uprawnień"
   },
   "accessEventLogs": {
     "message": "Dostęp do dziennika zdarzeń"
@@ -4376,7 +4382,7 @@
     "message": "Kiedy członek (członkowie) zostaje usunięty, nie ma już dostępu do danych organizacji i działanie to jest nieodwracalne. Aby dodać członka z powrotem do organizacji, musi on zostać ponownie zaproszony i włączony do organizacji. Proces ten może trwać kilka sekund i nie może być przerwany ani anulowany."
   },
   "revokeUsersWarning": {
-    "message": "Gdy członek (członkowie) zostanie odwołany, nie ma już dostępu do danych organizacji. Aby szybko przywrócić dostęp do danych członka, przejdź do zakładki Odwołano. Proces ten może potrwać kilka sekund i nie można go przerwać ani anulować."
+    "message": "Jeśli użytkownicy zostaną unieważnieni, nie będą mieli dostępu do danych organizacji. Aby przywrócić dostęp użytkownika, przejdź do karty Unieważnieni. Proces może potrwać kilka sekund i nie można go przerwać lub anulować."
   },
   "theme": {
     "message": "Motyw"
@@ -4409,7 +4415,7 @@
     "message": "Usunięto"
   },
   "bulkRevokedMessage": {
-    "message": "Odwołano dostęp do organizacji"
+    "message": "Dostęp do organizacji został unieważniony"
   },
   "bulkRestoredMessage": {
     "message": "Przywrócono dostęp do organizacji"
@@ -4424,7 +4430,7 @@
     "message": "Usuń użytkowników"
   },
   "revokeUsers": {
-    "message": "Odwołaj użytkowników"
+    "message": "Unieważnij użytkowników"
   },
   "restoreUsers": {
     "message": "Przywróć użytkowników"

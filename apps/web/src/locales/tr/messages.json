@@ -2428,7 +2428,7 @@
     "message": "Kuruluşunuzda atanmış koleksiyonlara erişimi olan normal bir kullanıcı."
   },
   "manager": {
-    "message": "Yönetici"
+    "message": "Yetkili"
   },
   "managerDesc": {
     "message": "Yetkililer kuruluşunuzdaki kendilerine atanmış koleksiyonlara erişebilir ve onları yönetebilir."
@@ -4056,6 +4056,12 @@
   },
   "permissions": {
     "message": "İzinler"
+  },
+  "managerPermissions": {
+    "message": "Yetkili İzinleri"
+  },
+  "adminPermissions": {
+    "message": "Yönetici İzinleri"
   },
   "accessEventLogs": {
     "message": "Olay günlüklerine erişme"

@@ -4057,6 +4057,12 @@
   "permissions": {
     "message": "Права"
   },
+  "managerPermissions": {
+    "message": "Права на управителя"
+  },
+  "adminPermissions": {
+    "message": "Права на администратора"
+  },
   "accessEventLogs": {
     "message": "Достъп до журналите"
   },

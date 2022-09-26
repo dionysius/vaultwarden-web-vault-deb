@@ -306,7 +306,7 @@
     "message": "보안 메모"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "로그인"
   },
   "typeCardPlural": {
     "message": "카드"
@@ -4056,6 +4056,12 @@
   },
   "permissions": {
     "message": "권한"
+  },
+  "managerPermissions": {
+    "message": "Manager Permissions"
+  },
+  "adminPermissions": {
+    "message": "Admin Permissions"
   },
   "accessEventLogs": {
     "message": "이벤트 로그 접근"

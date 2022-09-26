@@ -4057,6 +4057,12 @@
   "permissions": {
     "message": "Разрешения"
   },
+  "managerPermissions": {
+    "message": "Права менеджера"
+  },
+  "adminPermissions": {
+    "message": "Права администратора"
+  },
   "accessEventLogs": {
     "message": "Доступ к журналам событий"
   },
