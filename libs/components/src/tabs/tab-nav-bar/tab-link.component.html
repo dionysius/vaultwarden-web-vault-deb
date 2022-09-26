@@ -1,0 +1,13 @@
+<a
+  bitTabListItem
+  [routerLink]="disabled ? null : route"
+  routerLinkActive
+  #rla="routerLinkActive"
+  [active]="rla.isActive"
+  [disabled]="disabled"
+  [attr.aria-disabled]="disabled"
+  ariaCurrentWhenActive="page"
+  role="link"
+>
+  <ng-content></ng-content>
+</a>

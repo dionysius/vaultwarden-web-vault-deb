@@ -3,8 +3,8 @@ import { Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 
-import { TabGroupComponent } from "./tab-group.component";
-import { TabItemComponent } from "./tab-item.component";
+import { TabGroupComponent } from "./tab-group/tab-group.component";
+import { TabsModule } from "./tabs.module";
 
 @Component({
   selector: "bit-tab-active-dummy",
@@ -36,8 +36,6 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [
-        TabGroupComponent,
-        TabItemComponent,
         ActiveDummyComponent,
         ItemTwoDummyComponent,
         ItemThreeDummyComponent,
@@ -45,6 +43,7 @@ export default {
       ],
       imports: [
         CommonModule,
+        TabsModule,
         RouterModule.forRoot(
           [
             { path: "", redirectTo: "active", pathMatch: "full" },
@@ -66,19 +65,63 @@ export default {
   },
 } as Meta;
 
-const TabGroupTemplate: Story<TabGroupComponent> = (args: TabGroupComponent) => ({
+const ContentTabGroupTemplate: Story<TabGroupComponent> = (args: any) => ({
   props: args,
   template: `
-    <bit-tab-group>
-      <bit-tab-item [route]="['active']">Active</bit-tab-item>
-      <bit-tab-item [route]="['item-2']">Item 2</bit-tab-item>
-      <bit-tab-item [route]="['item-3']">Item 3</bit-tab-item>
-      <bit-tab-item [route]="['disabled']" [disabled]="true">Disabled</bit-tab-item>
+    <bit-tab-group label="Main Content Tabs" class="tw-text-main">
+        <bit-tab label="First Tab">First Tab Content</bit-tab>
+        <bit-tab label="Second Tab">Second Tab Content</bit-tab>
+        <bit-tab>
+          <ng-template bitTabLabel>
+            <i class="bwi bwi-search tw-pr-1"></i> Template Label
+          </ng-template>
+          Template Label Content
+        </bit-tab>
+        <bit-tab [disabled]="true" label="Disabled">
+          Disabled Content
+        </bit-tab>
     </bit-tab-group>
-    <div class="tw-bg-transparent tw-text-semibold tw-text-center !tw-text-main tw-py-10">
+  `,
+});
+
+export const ContentTabs = ContentTabGroupTemplate.bind({});
+
+const NavTabGroupTemplate: Story<TabGroupComponent> = (args: TabGroupComponent) => ({
+  props: args,
+  template: `
+    <bit-tab-nav-bar label="Main">
+      <bit-tab-link [route]="['active']">Active</bit-tab-link>
+      <bit-tab-link [route]="['item-2']">Item 2</bit-tab-link>
+      <bit-tab-link [route]="['item-3']">Item 3</bit-tab-link>
+      <bit-tab-link [route]="['disable']" [disabled]="true">Disabled</bit-tab-link>
+    </bit-tab-nav-bar>
+    <div class="tw-bg-transparent tw-text-semibold tw-text-center tw-text-main tw-py-10">
       <router-outlet></router-outlet>
     </div>
   `,
 });
 
-export const TabGroup = TabGroupTemplate.bind({});
+export const NavigationTabs = NavTabGroupTemplate.bind({});
+
+const PreserveContentTabGroupTemplate: Story<TabGroupComponent> = (args: any) => ({
+  props: args,
+  template: `
+    <bit-tab-group label="Preserve Content Tabs" [preserveContent]="true" class="tw-text-main">
+        <bit-tab label="Text Tab">
+          <p>
+            Play the video in the other tab and switch back to hear the video is still playing.
+          </p>
+        </bit-tab>
+        <bit-tab label="Video Tab">
+          <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/H0-yWbe5XG4"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+             allowfullscreen></iframe>
+        </bit-tab>
+    </bit-tab-group>
+  `,
+});
+
+export const PreserveContentTabs = PreserveContentTabGroupTemplate.bind({});
