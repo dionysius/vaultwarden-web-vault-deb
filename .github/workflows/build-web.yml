@@ -355,6 +355,7 @@ jobs:
       - cloc
       - setup
       - build-artifacts
+      - build-commercial-selfhost-image
       - build-qa
       - crowdin-push
     steps:
@@ -364,6 +365,7 @@ jobs:
           CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
           ARTIFACT_STATUS: ${{ needs.build-artifacts.result }}
+          BUILD_SELFHOST_STATUS: ${{ needs.build-commercial-selfhost-image.result }}
           BUILD_QA_STATUS: ${{ needs.build-qa.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
         run: |
@@ -372,6 +374,8 @@ jobs:
           elif [ "$SETUP_STATUS" = "failure" ]; then
               exit 1
           elif [ "$ARTIFACT_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$BUILD_SELFHOST_STATUS" = "failure" ]; then
               exit 1
           elif [ "$BUILD_QA_STATUS" = "failure" ]; then
               exit 1
