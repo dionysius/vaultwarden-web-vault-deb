@@ -72,7 +72,7 @@ const sizes: Record<IconButtonSize, string[]> = {
 
 @Component({
   selector: "button[bitIconButton]",
-  template: `<i class="bwi" [ngClass]="icon" aria-hidden="true"></i>`,
+  template: `<i class="bwi" [ngClass]="iconClass" aria-hidden="true"></i>`,
 })
 export class BitIconButtonComponent {
   @Input("bitIconButton") icon: string;
@@ -106,10 +106,15 @@ export class BitIconButtonComponent {
       "before:tw-rounded-md",
       "before:tw-transition",
       "before:tw-ring",
+      "before:tw-ring-transparent",
       "focus-visible:before:tw-ring-text-contrast",
       "focus-visible:tw-z-10",
     ]
       .concat(styles[this.buttonType])
       .concat(sizes[this.size]);
+  }
+
+  get iconClass() {
+    return [this.icon, "!tw-m-0"];
   }
 }
