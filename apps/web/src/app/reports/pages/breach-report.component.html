@@ -17,9 +17,9 @@
       <small class="form-text text-muted">{{ "breachCheckUsernameEmail" | i18n }}</small>
     </div>
   </div>
-  <bit-submit-button [loading]="form.loading">
+  <button type="submit" buttonType="primary" bitButton [loading]="form.loading">
     {{ "checkBreaches" | i18n }}
-  </bit-submit-button>
+  </button>
 </form>
 <div class="mt-4" *ngIf="!form.loading && checkedUsername">
   <p *ngIf="error">{{ "reportError" | i18n }}...</p>

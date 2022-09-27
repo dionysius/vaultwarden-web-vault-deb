@@ -1,12 +1,14 @@
 import { Meta, Story } from "@storybook/angular";
 
-import { ButtonDirective } from "./button.directive";
+import { ButtonComponent } from "./button.component";
 
 export default {
   title: "Component Library/Button",
-  component: ButtonDirective,
+  component: ButtonComponent,
   args: {
     buttonType: "primary",
+    disabled: false,
+    loading: false,
   },
   parameters: {
     design: {
@@ -16,11 +18,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonDirective> = (args: ButtonDirective) => ({
+const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
   template: `
-    <button bitButton [buttonType]="buttonType" [block]="block">Button</button>
-    <a bitButton [buttonType]="buttonType" [block]="block" href="#" class="tw-ml-2">Link</a>
+    <button bitButton [disabled]="disabled" [loading]="loading" [buttonType]="buttonType" [block]="block">Button</button>
+    <a bitButton [disabled]="disabled" [loading]="loading" [buttonType]="buttonType" [block]="block" href="#" class="tw-ml-2">Link</a>
   `,
 });
 
@@ -39,21 +41,50 @@ Danger.args = {
   buttonType: "danger",
 };
 
-const DisabledTemplate: Story = (args) => ({
+const AllStylesTemplate: Story = (args) => ({
   props: args,
   template: `
-    <button bitButton disabled buttonType="primary" class="tw-mr-2">Primary</button>
-    <button bitButton disabled buttonType="secondary" class="tw-mr-2">Secondary</button>
-    <button bitButton disabled buttonType="danger" class="tw-mr-2">Danger</button>
+    <button bitButton [disabled]="disabled" [loading]="loading" [block]="block" buttonType="primary" class="tw-mr-2">Primary</button>
+    <button bitButton [disabled]="disabled" [loading]="loading" [block]="block" buttonType="secondary" class="tw-mr-2">Secondary</button>
+    <button bitButton [disabled]="disabled" [loading]="loading" [block]="block" buttonType="danger" class="tw-mr-2">Danger</button>
   `,
 });
 
-export const Disabled = DisabledTemplate.bind({});
-Disabled.args = {
-  size: "small",
+export const Loading = AllStylesTemplate.bind({});
+Loading.args = {
+  disabled: false,
+  loading: true,
 };
 
-const BlockTemplate: Story<ButtonDirective> = (args: ButtonDirective) => ({
+export const Disabled = AllStylesTemplate.bind({});
+Disabled.args = {
+  disabled: true,
+  loading: false,
+};
+
+const DisabledWithAttributeTemplate: Story = (args) => ({
+  props: args,
+  template: `
+    <ng-container *ngIf="disabled">
+      <button bitButton disabled [loading]="loading" [block]="block" buttonType="primary" class="tw-mr-2">Primary</button>
+      <button bitButton disabled [loading]="loading" [block]="block" buttonType="secondary" class="tw-mr-2">Secondary</button>
+      <button bitButton disabled [loading]="loading" [block]="block" buttonType="danger" class="tw-mr-2">Danger</button>
+    </ng-container>
+    <ng-container *ngIf="!disabled">
+      <button bitButton [loading]="loading" [block]="block" buttonType="primary" class="tw-mr-2">Primary</button>
+      <button bitButton [loading]="loading" [block]="block" buttonType="secondary" class="tw-mr-2">Secondary</button>
+      <button bitButton [loading]="loading" [block]="block" buttonType="danger" class="tw-mr-2">Danger</button>
+    </ng-container>
+  `,
+});
+
+export const DisabledWithAttribute = DisabledWithAttributeTemplate.bind({});
+DisabledWithAttribute.args = {
+  disabled: true,
+  loading: false,
+};
+
+const BlockTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
   template: `
     <span class="tw-flex">

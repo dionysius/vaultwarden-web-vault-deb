@@ -100,9 +100,15 @@
         </div>
       </div>
       <div class="modal-footer">
-        <bit-submit-button [loading]="loading || form.loading" [disabled]="readOnly">
+        <button
+          type="submit"
+          buttonType="primary"
+          bitButton
+          [loading]="loading || form.loading"
+          [disabled]="readOnly"
+        >
           {{ "save" | i18n }}
-        </bit-submit-button>
+        </button>
         <button bitButton buttonType="secondary" type="button" data-dismiss="modal">
           {{ "cancel" | i18n }}
         </button>

@@ -1,4 +1,4 @@
-import { Input, HostBinding, Directive } from "@angular/core";
+import { Input, HostBinding, Component } from "@angular/core";
 
 export type ButtonTypes = "primary" | "secondary" | "danger";
 
@@ -38,10 +38,11 @@ const buttonStyles: Record<ButtonTypes, string[]> = {
   ],
 };
 
-@Directive({
+@Component({
   selector: "button[bitButton], a[bitButton]",
+  templateUrl: "button.component.html",
 })
-export class ButtonDirective {
+export class ButtonComponent {
   @HostBinding("class") get classList() {
     return [
       "tw-font-semibold",
@@ -65,6 +66,14 @@ export class ButtonDirective {
       .concat(buttonStyles[this.buttonType ?? "secondary"]);
   }
 
+  @HostBinding("attr.disabled")
+  get disabledAttr() {
+    const disabled = this.disabled != null && this.disabled !== false;
+    return disabled || this.loading ? true : null;
+  }
+
   @Input() buttonType: ButtonTypes = null;
   @Input() block?: boolean;
+  @Input() loading = false;
+  @Input() disabled = false;
 }

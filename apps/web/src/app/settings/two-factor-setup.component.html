@@ -77,9 +77,15 @@
         </div>
         <small class="form-text text-muted">{{ "deviceVerificationDesc" | i18n }}</small>
       </div>
-      <bit-submit-button [loading]="form.loading" *ngIf="isDeviceVerificationSectionEnabled">
+      <button
+        type="submit"
+        buttonType="primary"
+        bitButton
+        [loading]="form.loading"
+        *ngIf="isDeviceVerificationSectionEnabled"
+      >
         {{ "save" | i18n }}
-      </bit-submit-button>
+      </button>
     </div>
   </div>
 </form>

@@ -114,7 +114,9 @@
 
     <div class="tw-mb-3 tw-flex">
       <ng-container *ngIf="!accountCreated">
-        <bit-submit-button [loading]="form.loading">{{ "createAccount" | i18n }}</bit-submit-button>
+        <button type="submit" buttonType="primary" bitButton [loading]="form.loading">
+          {{ "createAccount" | i18n }}
+        </button>
         <a
           bitButton
           buttonType="secondary"
@@ -126,7 +128,9 @@
         </a>
       </ng-container>
       <ng-container *ngIf="accountCreated">
-        <bit-submit-button [loading]="form.loading">{{ "logIn" | i18n }}</bit-submit-button>
+        <button type="submit" buttonType="primary" bitButton [loading]="form.loading">
+          {{ "logIn" | i18n }}
+        </button>
       </ng-container>
     </div>
     <bit-error-summary *ngIf="showErrorSummary" [formGroup]="formGroup"></bit-error-summary>
