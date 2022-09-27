@@ -34,15 +34,11 @@ jobs:
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
           workflow: build-web.yml
-          path: apps/web
+          path: apps/web/build
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
           artifacts: web-*-cloud-QA.zip
 
-      # This should result in a build directory in the current working directory
-      - name: Unzip build asset
-        working-directory: apps/web
-        run: unzip web-*-cloud-QA.zip
 
       - name: Checkout Repo
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
