@@ -4,11 +4,12 @@ import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { CipherView } from "@bitwarden/common/models/view/cipherView";
 import { CollectionView } from "@bitwarden/common/models/view/collectionView";
+import { Checkable, isChecked } from "@bitwarden/common/types/checkable";
 
 @Component({
   selector: "app-vault-bulk-share",
@@ -20,10 +21,10 @@ export class BulkShareComponent implements OnInit {
   @Output() onShared = new EventEmitter();
 
   nonShareableCount = 0;
-  collections: CollectionView[] = [];
+  collections: Checkable<CollectionView>[] = [];
   organizations: Organization[] = [];
   shareableCiphers: CipherView[] = [];
-  formPromise: Promise<any>;
+  formPromise: Promise<void>;
 
   private writeableCollections: CollectionView[] = [];
 
@@ -66,9 +67,7 @@ export class BulkShareComponent implements OnInit {
   }
 
   async submit() {
-    const checkedCollectionIds = this.collections
-      .filter((c) => (c as any).checked)
-      .map((c) => c.id);
+    const checkedCollectionIds = this.collections.filter(isChecked).map((c) => c.id);
     try {
       this.formPromise = this.cipherService.shareManyWithServer(
         this.shareableCiphers,
@@ -90,8 +89,8 @@ export class BulkShareComponent implements OnInit {
     }
   }
 
-  check(c: CollectionView, select?: boolean) {
-    (c as any).checked = select == null ? !(c as any).checked : select;
+  check(c: Checkable<CollectionView>, select?: boolean) {
+    c.checked = select == null ? !c.checked : select;
   }
 
   selectAll(select: boolean) {
@@ -106,7 +105,7 @@ export class BulkShareComponent implements OnInit {
       this.collections != null
     ) {
       for (let i = 0; i < this.collections.length; i++) {
-        if ((this.collections[i] as any).checked) {
+        if (this.collections[i].checked) {
           return true;
         }
       }

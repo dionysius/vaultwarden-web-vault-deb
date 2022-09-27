@@ -2,14 +2,12 @@ import { Component, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { OrganizationKeysRequest } from "@bitwarden/common/models/request/organizationKeysRequest";
 import { OrganizationUpdateRequest } from "@bitwarden/common/models/request/organizationUpdateRequest";
 import { OrganizationResponse } from "@bitwarden/common/models/response/organizationResponse";
@@ -41,17 +39,15 @@ export class AccountComponent {
   loading = true;
   canUseApi = false;
   org: OrganizationResponse;
-  formPromise: Promise<boolean>;
+  formPromise: Promise<OrganizationResponse>;
   taxFormPromise: Promise<unknown>;
 
   private organizationId: string;
 
   constructor(
     private modalService: ModalService,
-    private apiService: ApiService,
     private i18nService: I18nService,
     private route: ActivatedRoute,
-    private syncService: SyncService,
     private platformUtilsService: PlatformUtilsService,
     private cryptoService: CryptoService,
     private logService: LogService,
@@ -66,9 +62,7 @@ export class AccountComponent {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.parent.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
-      this.canManageBilling = (
-        await this.organizationService.get(this.organizationId)
-      ).canManageBilling;
+      this.canManageBilling = this.organizationService.get(this.organizationId).canManageBilling;
       try {
         this.org = await this.organizationApiService.get(this.organizationId);
         this.canUseApi = this.org.useApi;
@@ -94,9 +88,7 @@ export class AccountComponent {
         request.keys = new OrganizationKeysRequest(orgKeys[0], orgKeys[1].encryptedString);
       }
 
-      this.formPromise = this.organizationApiService.save(this.organizationId, request).then(() => {
-        return this.syncService.fullSync(true);
-      });
+      this.formPromise = this.organizationApiService.save(this.organizationId, request);
       await this.formPromise;
       this.platformUtilsService.showToast(
         "success",

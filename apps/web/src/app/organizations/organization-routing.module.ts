@@ -2,6 +2,12 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
+import {
+  canAccessOrgAdmin,
+  canAccessManageTab,
+  canAccessSettingsTab,
+  canAccessToolsTab,
+} from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
 import { OrganizationPermissionsGuard } from "./guards/org-permissions.guard";
@@ -12,12 +18,6 @@ import { GroupsComponent } from "./manage/groups.component";
 import { ManageComponent } from "./manage/manage.component";
 import { PeopleComponent } from "./manage/people.component";
 import { PoliciesComponent } from "./manage/policies.component";
-import {
-  canAccessOrgAdmin,
-  canAccessManageTab,
-  canAccessSettingsTab,
-  canAccessToolsTab,
-} from "./navigation-permissions";
 import { AccountComponent } from "./settings/account.component";
 import { OrganizationBillingComponent } from "./settings/organization-billing.component";
 import { OrganizationSubscriptionComponent } from "./settings/organization-subscription.component";

@@ -2,7 +2,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/abstractions/collection.service";
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { CollectionData } from "@bitwarden/common/models/data/collectionData";

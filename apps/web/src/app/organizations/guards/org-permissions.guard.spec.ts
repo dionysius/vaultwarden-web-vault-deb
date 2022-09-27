@@ -7,7 +7,7 @@ import {
 import { mock, MockProxy } from "jest-mock-extended";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserType";
@@ -57,7 +57,7 @@ describe("Organization Permissions Guard", () => {
   });
 
   it("blocks navigation if organization does not exist", async () => {
-    organizationService.get.mockResolvedValue(null);
+    organizationService.get.mockReturnValue(null);
 
     const actual = await organizationPermissionsGuard.canActivate(route, state);
 
@@ -66,7 +66,7 @@ describe("Organization Permissions Guard", () => {
 
   it("permits navigation if no permissions are specified", async () => {
     const org = orgFactory();
-    organizationService.get.calledWith(org.id).mockResolvedValue(org);
+    organizationService.get.calledWith(org.id).mockReturnValue(org);
 
     const actual = await organizationPermissionsGuard.canActivate(route, state);
 
@@ -81,7 +81,7 @@ describe("Organization Permissions Guard", () => {
     };
 
     const org = orgFactory();
-    organizationService.get.calledWith(org.id).mockResolvedValue(org);
+    organizationService.get.calledWith(org.id).mockReturnValue(org);
 
     const actual = await organizationPermissionsGuard.canActivate(route, state);
 
@@ -104,7 +104,7 @@ describe("Organization Permissions Guard", () => {
       });
 
       const org = orgFactory();
-      organizationService.get.calledWith(org.id).mockResolvedValue(org);
+      organizationService.get.calledWith(org.id).mockReturnValue(org);
 
       const actual = await organizationPermissionsGuard.canActivate(route, state);
 
@@ -124,7 +124,7 @@ describe("Organization Permissions Guard", () => {
         }),
       });
       const org = orgFactory();
-      organizationService.get.calledWith(org.id).mockResolvedValue(org);
+      organizationService.get.calledWith(org.id).mockReturnValue(org);
 
       const actual = await organizationPermissionsGuard.canActivate(route, state);
 
@@ -141,7 +141,7 @@ describe("Organization Permissions Guard", () => {
         type: OrganizationUserType.Admin,
         enabled: false,
       });
-      organizationService.get.calledWith(org.id).mockResolvedValue(org);
+      organizationService.get.calledWith(org.id).mockReturnValue(org);
 
       const actual = await organizationPermissionsGuard.canActivate(route, state);
 
@@ -153,7 +153,7 @@ describe("Organization Permissions Guard", () => {
         type: OrganizationUserType.Owner,
         enabled: false,
       });
-      organizationService.get.calledWith(org.id).mockResolvedValue(org);
+      organizationService.get.calledWith(org.id).mockReturnValue(org);
 
       const actual = await organizationPermissionsGuard.canActivate(route, state);
 

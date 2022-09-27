@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { UntypedFormBuilder } from "@angular/forms";
 
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 

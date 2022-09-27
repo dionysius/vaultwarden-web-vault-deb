@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
@@ -219,7 +219,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     const otherTypes: CipherType[] = [];
     const dontShowCards = await this.stateService.getDontShowCardsCurrentTab();
     const dontShowIdentities = await this.stateService.getDontShowIdentitiesCurrentTab();
-    this.showOrganizations = await this.organizationService.hasOrganizations();
+    this.showOrganizations = this.organizationService.hasOrganizations();
     if (!dontShowCards) {
       otherTypes.push(CipherType.Card);
     }

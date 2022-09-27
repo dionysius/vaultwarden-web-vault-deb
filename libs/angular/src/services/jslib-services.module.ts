@@ -32,8 +32,8 @@ import { KeyConnectorService as KeyConnectorServiceAbstraction } from "@bitwarde
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/abstractions/messaging.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "@bitwarden/common/abstractions/notifications.service";
-import { OrganizationService as OrganizationServiceAbstraction } from "@bitwarden/common/abstractions/organization.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
+import { OrganizationService as OrganizationServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PasswordGenerationService as PasswordGenerationServiceAbstraction } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -50,6 +50,7 @@ import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstr
 import { StateMigrationService as StateMigrationServiceAbstraction } from "@bitwarden/common/abstractions/stateMigration.service";
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
+import { SyncNotifierService as SyncNotifierServiceAbstraction } from "@bitwarden/common/abstractions/sync/syncNotifier.service.abstraction";
 import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/abstractions/token.service";
 import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/abstractions/totp.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/abstractions/twoFactor.service";
@@ -84,8 +85,8 @@ import { FolderService } from "@bitwarden/common/services/folder/folder.service"
 import { FormValidationErrorsService } from "@bitwarden/common/services/formValidationErrors.service";
 import { KeyConnectorService } from "@bitwarden/common/services/keyConnector.service";
 import { NotificationsService } from "@bitwarden/common/services/notifications.service";
-import { OrganizationService } from "@bitwarden/common/services/organization.service";
 import { OrganizationApiService } from "@bitwarden/common/services/organization/organization-api.service";
+import { OrganizationService } from "@bitwarden/common/services/organization/organization.service";
 import { PasswordGenerationService } from "@bitwarden/common/services/passwordGeneration.service";
 import { PolicyApiService } from "@bitwarden/common/services/policy/policy-api.service";
 import { PolicyService } from "@bitwarden/common/services/policy/policy.service";
@@ -96,6 +97,7 @@ import { SettingsService } from "@bitwarden/common/services/settings.service";
 import { StateService } from "@bitwarden/common/services/state.service";
 import { StateMigrationService } from "@bitwarden/common/services/stateMigration.service";
 import { SyncService } from "@bitwarden/common/services/sync/sync.service";
+import { SyncNotifierService } from "@bitwarden/common/services/sync/syncNotifier.service";
 import { TokenService } from "@bitwarden/common/services/token.service";
 import { TotpService } from "@bitwarden/common/services/totp.service";
 import { TwoFactorService } from "@bitwarden/common/services/twoFactor.service";
@@ -338,9 +340,9 @@ import { ValidationService } from "./validation.service";
         LogService,
         KeyConnectorServiceAbstraction,
         StateServiceAbstraction,
-        OrganizationServiceAbstraction,
         ProviderServiceAbstraction,
         FolderApiServiceAbstraction,
+        SyncNotifierServiceAbstraction,
         LOGOUT_CALLBACK,
       ],
     },
@@ -506,7 +508,7 @@ import { ValidationService } from "./validation.service";
     {
       provide: OrganizationServiceAbstraction,
       useClass: OrganizationService,
-      deps: [StateServiceAbstraction],
+      deps: [StateServiceAbstraction, SyncNotifierServiceAbstraction],
     },
     {
       provide: ProviderServiceAbstraction,
@@ -534,7 +536,15 @@ import { ValidationService } from "./validation.service";
     {
       provide: OrganizationApiServiceAbstraction,
       useClass: OrganizationApiService,
-      deps: [ApiServiceAbstraction],
+      // This is a slightly odd dependency tree for a specialized api service
+      // it depends on SyncService so that new data can be retrieved through the sync
+      // rather than updating the OrganizationService directly. Instead OrganizationService
+      // subscribes to sync notifications and will update itself based on that.
+      deps: [ApiServiceAbstraction, SyncServiceAbstraction],
+    },
+    {
+      provide: SyncNotifierServiceAbstraction,
+      useClass: SyncNotifierService,
     },
     {
       provide: ConfigServiceAbstraction,

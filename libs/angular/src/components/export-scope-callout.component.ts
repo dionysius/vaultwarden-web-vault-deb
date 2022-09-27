@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 
 @Component({
@@ -23,7 +23,7 @@ export class ExportScopeCalloutComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    if (!(await this.organizationService.hasOrganizations())) {
+    if (!this.organizationService.hasOrganizations()) {
       return;
     }
     this.scopeConfig =
@@ -31,7 +31,7 @@ export class ExportScopeCalloutComponent implements OnInit {
         ? {
             title: "exportingOrganizationVaultTitle",
             description: "exportingOrganizationVaultDescription",
-            scopeIdentifier: (await this.organizationService.get(this.organizationId)).name,
+            scopeIdentifier: this.organizationService.get(this.organizationId).name,
           }
         : {
             title: "exportingPersonalVaultTitle",

@@ -273,7 +273,13 @@ export abstract class StateService<T extends Account = Account> {
   setOpenAtLogin: (value: boolean, options?: StorageOptions) => Promise<void>;
   getOrganizationInvitation: (options?: StorageOptions) => Promise<any>;
   setOrganizationInvitation: (value: any, options?: StorageOptions) => Promise<void>;
+  /**
+   * @deprecated Do not call this directly, use OrganizationService
+   */
   getOrganizations: (options?: StorageOptions) => Promise<{ [id: string]: OrganizationData }>;
+  /**
+   * @deprecated Do not call this directly, use OrganizationService
+   */
   setOrganizations: (
     value: { [id: string]: OrganizationData },
     options?: StorageOptions

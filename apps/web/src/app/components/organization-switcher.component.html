@@ -45,7 +45,11 @@
 
   <bit-menu #orgPickerMenu>
     <ul aria-labelledby="pickerButton" class="tw-m-0 tw-p-0">
-      <li *ngFor="let org of organizations" class="tw-flex tw-list-none tw-flex-col" role="none">
+      <li
+        *ngFor="let org of organizations$ | async"
+        class="tw-flex tw-list-none tw-flex-col"
+        role="none"
+      >
         <a bitMenuItem [routerLink]="['/organizations', org.id]">
           <i
             class="bwi bwi-check mr-2"

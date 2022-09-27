@@ -1,71 +1,70 @@
-<div class="content org-filter-content" *ngIf="loaded && show">
-  <button
-    #toggleVaults
-    class="org-filter"
-    (click)="openOverlay()"
-    aria-haspopup="menu"
-    aria-controls="cdk-overlay-container"
-    [attr.aria-expanded]="isOpen"
-    [attr.aria-label]="vaultFilterDisplay"
-  >
-    {{ vaultFilterDisplay | ellipsis: 45 }}&nbsp;
-    <i
-      class="bwi bwi-sm"
-      aria-hidden="true"
-      [ngClass]="{ 'bwi-angle-down': !isOpen, 'bwi-chevron-up': isOpen }"
-    ></i>
-  </button>
-  <ng-template class="vault-select-container" #vaultSelectorTemplate>
-    <div
-      class="vault-select"
-      [@transformPanel]="'open'"
-      cdkTrapFocus
-      cdkTrapFocusAutoCapture
-      role="dialog"
-      aria-modal="true"
-    >
+<ng-container *ngIf="loaded && organizations$ | async as organizations">
+  <div class="content org-filter-content" *ngIf="loaded && shouldShow(organizations)">
+    <ng-container *ngIf="selectedVault$ | async as vaultFilterDisplay">
       <button
-        appStopClick
-        (click)="selectAllVaults()"
-        [ngClass]="{ active: !myVaultOnly && !selectOrganizationId }"
-        appA11yTitle="{{ 'vault' | i18n }}: {{ 'allVaults' | i18n }}"
+        #toggleVaults
+        class="org-filter"
+        (click)="openOverlay()"
+        aria-haspopup="menu"
+        aria-controls="cdk-overlay-container"
+        [attr.aria-expanded]="isOpen"
+        [attr.aria-label]="vaultFilterDisplay"
       >
-        <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>
-        &nbsp;{{ "allVaults" | i18n }}
-      </button>
-      <button
-        *ngIf="!enforcePersonalOwnwership"
-        appStopClick
-        (click)="selectMyVault()"
-        appA11yTitle="{{ 'vault' | i18n }}: {{ 'myVault' | i18n }}"
-      >
-        <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
-        &nbsp;{{ "myVault" | i18n }}
-      </button>
-      <button
-        *ngFor="let organization of organizations"
-        appStopClick
-        (click)="selectOrganization(organization)"
-        appA11yTitle="{{ 'vault' | i18n }}: {{ organization.name }}"
-      >
+        {{ vaultFilterDisplay | ellipsis: 45 }}&nbsp;
         <i
-          *ngIf="organization.planProductType !== 1"
-          class="bwi bwi-fw bwi-business"
+          class="bwi bwi-sm"
           aria-hidden="true"
-        ></i>
-        <i
-          *ngIf="organization.planProductType === 1"
-          class="bwi bwi-fw bwi-family"
-          aria-hidden="true"
-        ></i>
-        <span>&nbsp;{{ organization.name | ellipsis: (organization.enabled ? 21 : 18):true }}</span>
-        <i
-          *ngIf="!organization.enabled"
-          class="bwi bwi-fw bwi-exclamation-triangle text-danger"
-          aria-label="{{ 'organizationIsDisabled' | i18n }}"
-          appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
+          [ngClass]="{ 'bwi-angle-down': !isOpen, 'bwi-chevron-up': isOpen }"
         ></i>
       </button>
-    </div>
-  </ng-template>
-</div>
+    </ng-container>
+    <ng-template class="vault-select-container" #vaultSelectorTemplate>
+      <div
+        class="vault-select"
+        [@transformPanel]="'open'"
+        cdkTrapFocus
+        cdkTrapFocusAutoCapture
+        role="dialog"
+        aria-modal="true"
+      >
+        <button
+          appStopClick
+          (click)="selectAllVaults()"
+          [ngClass]="{ active: !myVaultOnly && !selectOrganizationId }"
+        >
+          <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>
+          &nbsp;{{ "allVaults" | i18n }}
+        </button>
+        <button *ngIf="!enforcePersonalOwnwership" appStopClick (click)="selectMyVault()">
+          <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
+          &nbsp;{{ "myVault" | i18n }}
+        </button>
+        <button
+          *ngFor="let organization of organizations"
+          appStopClick
+          (click)="selectOrganization(organization)"
+        >
+          <i
+            *ngIf="organization.planProductType !== 1"
+            class="bwi bwi-fw bwi-business"
+            aria-hidden="true"
+          ></i>
+          <i
+            *ngIf="organization.planProductType === 1"
+            class="bwi bwi-fw bwi-family"
+            aria-hidden="true"
+          ></i>
+          <span
+            >&nbsp;{{ organization.name | ellipsis: (organization.enabled ? 21 : 18):true }}</span
+          >
+          <i
+            *ngIf="!organization.enabled"
+            class="bwi bwi-fw bwi-exclamation-triangle text-danger"
+            aria-label="{{ 'organizationIsDisabled' | i18n }}"
+            appA11yTitle="{{ 'organizationIsDisabled' | i18n }}"
+          ></i>
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</ng-container>

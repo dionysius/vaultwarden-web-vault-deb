@@ -1,16 +1,11 @@
-import { Observable } from "rxjs";
-
 import {
   SyncCipherNotification,
   SyncFolderNotification,
   SyncSendNotification,
 } from "../../models/response/notificationResponse";
-import { SyncEventArgs } from "../../types/syncEventArgs";
 
 export abstract class SyncService {
   syncInProgress: boolean;
-
-  sync$: Observable<SyncEventArgs>;
 
   getLastSync: () => Promise<Date>;
   setLastSync: (date: Date, userId?: string) => Promise<any>;

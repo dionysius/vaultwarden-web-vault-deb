@@ -1,5 +1,3 @@
-import { Subject } from "rxjs";
-
 import { ApiService } from "../../abstractions/api.service";
 import { CipherService } from "../../abstractions/cipher.service";
 import { CollectionService } from "../../abstractions/collection.service";
@@ -9,18 +7,17 @@ import { InternalFolderService } from "../../abstractions/folder/folder.service.
 import { KeyConnectorService } from "../../abstractions/keyConnector.service";
 import { LogService } from "../../abstractions/log.service";
 import { MessagingService } from "../../abstractions/messaging.service";
-import { OrganizationService } from "../../abstractions/organization.service";
 import { InternalPolicyService } from "../../abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "../../abstractions/provider.service";
 import { SendService } from "../../abstractions/send.service";
 import { SettingsService } from "../../abstractions/settings.service";
 import { StateService } from "../../abstractions/state.service";
 import { SyncService as SyncServiceAbstraction } from "../../abstractions/sync/sync.service.abstraction";
+import { SyncNotifierService } from "../../abstractions/sync/syncNotifier.service.abstraction";
 import { sequentialize } from "../../misc/sequentialize";
 import { CipherData } from "../../models/data/cipherData";
 import { CollectionData } from "../../models/data/collectionData";
 import { FolderData } from "../../models/data/folderData";
-import { OrganizationData } from "../../models/data/organizationData";
 import { PolicyData } from "../../models/data/policyData";
 import { ProviderData } from "../../models/data/providerData";
 import { SendData } from "../../models/data/sendData";
@@ -36,14 +33,9 @@ import {
 import { PolicyResponse } from "../../models/response/policyResponse";
 import { ProfileResponse } from "../../models/response/profileResponse";
 import { SendResponse } from "../../models/response/sendResponse";
-import { SyncEventArgs } from "../../types/syncEventArgs";
 
 export class SyncService implements SyncServiceAbstraction {
   syncInProgress = false;
-
-  private _sync = new Subject<SyncEventArgs>();
-
-  sync$ = this._sync.asObservable();
 
   constructor(
     private apiService: ApiService,
@@ -58,9 +50,9 @@ export class SyncService implements SyncServiceAbstraction {
     private logService: LogService,
     private keyConnectorService: KeyConnectorService,
     private stateService: StateService,
-    private organizationService: OrganizationService,
     private providerService: ProviderService,
     private folderApiService: FolderApiServiceAbstraction,
+    private syncNotifierService: SyncNotifierService,
     private logoutCallback: (expired: boolean) => Promise<void>
   ) {}
 
@@ -84,8 +76,10 @@ export class SyncService implements SyncServiceAbstraction {
   @sequentialize(() => "fullSync")
   async fullSync(forceSync: boolean, allowThrowOnError = false): Promise<boolean> {
     this.syncStarted();
+    this.syncNotifierService.next({ status: "Started" });
     const isAuthenticated = await this.stateService.getIsAuthenticated();
     if (!isAuthenticated) {
+      this.syncNotifierService.next({ status: "Completed", successfully: false });
       return this.syncCompleted(false);
     }
 
@@ -101,6 +95,7 @@ export class SyncService implements SyncServiceAbstraction {
 
     if (!needsSync) {
       await this.setLastSync(now);
+      this.syncNotifierService.next({ status: "Completed", successfully: false });
       return this.syncCompleted(false);
     }
 
@@ -117,11 +112,13 @@ export class SyncService implements SyncServiceAbstraction {
       await this.syncPolicies(response.policies);
 
       await this.setLastSync(now);
+      this.syncNotifierService.next({ status: "Completed", successfully: true, data: response });
       return this.syncCompleted(true);
     } catch (e) {
       if (allowThrowOnError) {
         throw e;
       } else {
+        this.syncNotifierService.next({ status: "Completed", successfully: false });
         return this.syncCompleted(false);
       }
     }
@@ -272,13 +269,11 @@ export class SyncService implements SyncServiceAbstraction {
   private syncStarted() {
     this.syncInProgress = true;
     this.messagingService.send("syncStarted");
-    this._sync.next({ status: "Started" });
   }
 
   private syncCompleted(successfully: boolean): boolean {
     this.syncInProgress = false;
     this.messagingService.send("syncCompleted", { successfully: successfully });
-    this._sync.next({ status: successfully ? "SuccessfullyCompleted" : "UnsuccessfullyCompleted" });
     return successfully;
   }
 
@@ -320,24 +315,11 @@ export class SyncService implements SyncServiceAbstraction {
     await this.stateService.setForcePasswordReset(response.forcePasswordReset);
     await this.keyConnectorService.setUsesKeyConnector(response.usesKeyConnector);
 
-    const organizations: { [id: string]: OrganizationData } = {};
-    response.organizations.forEach((o) => {
-      organizations[o.id] = new OrganizationData(o);
-    });
-
     const providers: { [id: string]: ProviderData } = {};
     response.providers.forEach((p) => {
       providers[p.id] = new ProviderData(p);
     });
 
-    response.providerOrganizations.forEach((o) => {
-      if (organizations[o.id] == null) {
-        organizations[o.id] = new OrganizationData(o);
-        organizations[o.id].isProviderUser = true;
-      }
-    });
-
-    await this.organizationService.save(organizations);
     await this.providerService.save(providers);
 
     if (await this.keyConnectorService.userNeedsMigration()) {

@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
-import { Utils } from "@bitwarden/common/misc/utils";
+import {
+  canAccessAdmin,
+  OrganizationService,
+} from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-
-import { canAccessOrgAdmin } from "../organizations/navigation-permissions";
 
 @Component({
   selector: "app-organization-switcher",
@@ -15,19 +16,14 @@ export class OrganizationSwitcherComponent implements OnInit {
   constructor(private organizationService: OrganizationService, private i18nService: I18nService) {}
 
   @Input() activeOrganization: Organization = null;
-  organizations: Organization[] = [];
+  organizations$: Observable<Organization[]>;
 
   loaded = false;
 
   async ngOnInit() {
-    await this.load();
-  }
-
-  async load() {
-    const orgs = await this.organizationService.getAll();
-    this.organizations = orgs
-      .filter(canAccessOrgAdmin)
-      .sort(Utils.getSortFunction(this.i18nService, "name"));
+    this.organizations$ = this.organizationService.organizations$.pipe(
+      canAccessAdmin(this.i18nService)
+    );
 
     this.loaded = true;
   }

@@ -1,5 +1,6 @@
 import { ApiService } from "../../abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "../../abstractions/organization/organization-api.service.abstraction";
+import { SyncService } from "../../abstractions/sync/sync.service.abstraction";
 import { OrganizationApiKeyType } from "../../enums/organizationApiKeyType";
 import { ImportDirectoryRequest } from "../../models/request/importDirectoryRequest";
 import { OrganizationSsoRequest } from "../../models/request/organization/organizationSsoRequest";
@@ -28,7 +29,7 @@ import { PaymentResponse } from "../../models/response/paymentResponse";
 import { TaxInfoResponse } from "../../models/response/taxInfoResponse";
 
 export class OrganizationApiService implements OrganizationApiServiceAbstraction {
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private syncService: SyncService) {}
 
   async get(id: string): Promise<OrganizationResponse> {
     const r = await this.apiService.send("GET", "/organizations/" + id, null, true, true);
@@ -80,6 +81,8 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
 
   async create(request: OrganizationCreateRequest): Promise<OrganizationResponse> {
     const r = await this.apiService.send("POST", "/organizations", request, true, true);
+    // Forcing a sync will notify organization service that they need to repull
+    await this.syncService.fullSync(true);
     return new OrganizationResponse(r);
   }
 
@@ -90,7 +93,9 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
 
   async save(id: string, request: OrganizationUpdateRequest): Promise<OrganizationResponse> {
     const r = await this.apiService.send("PUT", "/organizations/" + id, request, true, true);
-    return new OrganizationResponse(r);
+    const data = new OrganizationResponse(r);
+    await this.syncService.fullSync(true);
+    return data;
   }
 
   async updatePayment(id: string, request: PaymentRequest): Promise<void> {
@@ -144,7 +149,7 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
   }
 
   async verifyBank(id: string, request: VerifyBankRequest): Promise<void> {
-    return this.apiService.send(
+    await this.apiService.send(
       "POST",
       "/organizations/" + id + "/verify-bank",
       request,
@@ -162,15 +167,17 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
   }
 
   async leave(id: string): Promise<void> {
-    return this.apiService.send("POST", "/organizations/" + id + "/leave", null, true, false);
+    await this.apiService.send("POST", "/organizations/" + id + "/leave", null, true, false);
+    await this.syncService.fullSync(true);
   }
 
   async delete(id: string, request: SecretVerificationRequest): Promise<void> {
-    return this.apiService.send("DELETE", "/organizations/" + id, request, true, false);
+    await this.apiService.send("DELETE", "/organizations/" + id, request, true, false);
+    await this.syncService.fullSync(true);
   }
 
   async updateLicense(id: string, data: FormData): Promise<void> {
-    return this.apiService.send("POST", "/organizations/" + id + "/license", data, true, false);
+    await this.apiService.send("POST", "/organizations/" + id + "/license", data, true, false);
   }
 
   async importDirectory(organizationId: string, request: ImportDirectoryRequest): Promise<void> {
@@ -223,6 +230,7 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
   }
 
   async updateTaxInfo(id: string, request: OrganizationTaxInfoUpdateRequest): Promise<void> {
+    // Can't broadcast anything because the response doesn't have content
     return this.apiService.send("PUT", "/organizations/" + id + "/tax", request, true, false);
   }
 
@@ -242,6 +250,7 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
       true,
       true
     );
+    // Not broadcasting anything because data on this response doesn't correspond to `Organization`
     return new OrganizationKeysResponse(r);
   }
 
@@ -258,6 +267,7 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
       true,
       true
     );
+    // Not broadcasting anything because data on this response doesn't correspond to `Organization`
     return new OrganizationSsoResponse(r);
   }
 }

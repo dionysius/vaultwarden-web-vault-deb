@@ -34,7 +34,9 @@
       >
         <option value="" disabled>-- {{ "select" | i18n }} --</option>
         <option value="createNew">{{ "newFamiliesOrganization" | i18n }}</option>
-        <option *ngFor="let o of existingFamilyOrganizations" [ngValue]="o.id">{{ o.name }}</option>
+        <option *ngFor="let o of existingFamilyOrganizations$ | async" [ngValue]="o.id">
+          {{ o.name }}
+        </option>
       </select>
     </div>
     <div *ngIf="showNewOrganization" class="col-12">

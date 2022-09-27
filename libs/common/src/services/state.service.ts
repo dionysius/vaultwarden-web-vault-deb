@@ -1927,12 +1927,18 @@ export class StateService<
     );
   }
 
+  /**
+   * @deprecated Do not call this directly, use OrganizationService
+   */
   async getOrganizations(options?: StorageOptions): Promise<{ [id: string]: OrganizationData }> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions()))
     )?.data?.organizations;
   }
 
+  /**
+   * @deprecated Do not call this directly, use OrganizationService
+   */
   async setOrganizations(
     value: { [id: string]: OrganizationData },
     options?: StorageOptions

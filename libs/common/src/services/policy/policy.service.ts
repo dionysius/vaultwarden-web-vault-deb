@@ -1,4 +1,4 @@
-import { OrganizationService } from "../../abstractions/organization.service";
+import { OrganizationService } from "../../abstractions/organization/organization.service.abstraction";
 import { InternalPolicyService as InternalPolicyServiceAbstraction } from "../../abstractions/policy/policy.service.abstraction";
 import { StateService } from "../../abstractions/state.service";
 import { OrganizationUserStatusType } from "../../enums/organizationUserStatusType";

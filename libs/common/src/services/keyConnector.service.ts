@@ -3,7 +3,7 @@ import { CryptoService } from "../abstractions/crypto.service";
 import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
 import { KeyConnectorService as KeyConnectorServiceAbstraction } from "../abstractions/keyConnector.service";
 import { LogService } from "../abstractions/log.service";
-import { OrganizationService } from "../abstractions/organization.service";
+import { OrganizationService } from "../abstractions/organization/organization.service.abstraction";
 import { StateService } from "../abstractions/state.service";
 import { TokenService } from "../abstractions/token.service";
 import { OrganizationUserType } from "../enums/organizationUserType";

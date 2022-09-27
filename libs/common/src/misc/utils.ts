@@ -310,8 +310,11 @@ export class Utils {
     return map;
   }
 
-  static getSortFunction(i18nService: I18nService, prop: string) {
-    return (a: any, b: any) => {
+  static getSortFunction<T>(
+    i18nService: I18nService,
+    prop: { [K in keyof T]: T[K] extends string ? K : never }[keyof T]
+  ): (a: T, b: T) => number {
+    return (a, b) => {
       if (a[prop] == null && b[prop] != null) {
         return -1;
       }
@@ -322,9 +325,10 @@ export class Utils {
         return 0;
       }
 
+      // The `as unknown as string` here is unfortunate because typescript doesn't property understand that the return of T[prop] will be a string
       return i18nService.collator
-        ? i18nService.collator.compare(a[prop], b[prop])
-        : a[prop].localeCompare(b[prop]);
+        ? i18nService.collator.compare(a[prop] as unknown as string, b[prop] as unknown as string)
+        : (a[prop] as unknown as string).localeCompare(b[prop] as unknown as string);
     };
   }
 

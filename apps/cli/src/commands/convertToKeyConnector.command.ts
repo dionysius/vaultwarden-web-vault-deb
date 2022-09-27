@@ -74,7 +74,6 @@ export class ConvertToKeyConnectorCommand {
     } else if (answer.convert === "leave") {
       await this.organizationApiService.leave(organization.id);
       await this.keyConnectorService.removeConvertAccountRequired();
-      await this.syncService.fullSync(true);
       return Response.success();
     } else {
       await this.logout();

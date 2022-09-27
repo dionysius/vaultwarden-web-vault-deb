@@ -126,7 +126,12 @@ export abstract class BasePeopleComponent<
     }
 
     this.allUsers = response.data != null && response.data.length > 0 ? response.data : [];
-    this.allUsers.sort(Utils.getSortFunction(this.i18nService, "email"));
+    this.allUsers.sort(
+      Utils.getSortFunction<ProviderUserUserDetailsResponse | OrganizationUserUserDetailsResponse>(
+        this.i18nService,
+        "email"
+      )
+    );
     this.allUsers.forEach((u) => {
       if (!this.statusMap.has(u.status)) {
         this.statusMap.set(u.status, [u]);

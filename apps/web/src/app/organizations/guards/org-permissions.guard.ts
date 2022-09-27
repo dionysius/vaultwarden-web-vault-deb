@@ -2,12 +2,13 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from "@angular/router";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization.service";
+import {
+  canAccessOrgAdmin,
+  OrganizationService,
+} from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-
-import { canAccessOrgAdmin } from "../navigation-permissions";
 
 @Injectable({
   providedIn: "root",
@@ -27,7 +28,7 @@ export class OrganizationPermissionsGuard implements CanActivate {
       await this.syncService.fullSync(false);
     }
 
-    const org = await this.organizationService.get(route.params.organizationId);
+    const org = this.organizationService.get(route.params.organizationId);
     if (org == null) {
       return this.router.createUrlTree(["/"]);
     }
