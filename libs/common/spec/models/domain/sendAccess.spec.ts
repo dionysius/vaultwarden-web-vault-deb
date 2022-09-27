@@ -1,4 +1,4 @@
-import Substitute, { Arg } from "@fluffy-spoon/substitute";
+import { Substitute, Arg } from "@fluffy-spoon/substitute";
 
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { SendAccess } from "@bitwarden/common/models/domain/sendAccess";

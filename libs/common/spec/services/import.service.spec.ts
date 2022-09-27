@@ -1,4 +1,4 @@
-import Substitute, { SubstituteOf } from "@fluffy-spoon/substitute";
+import { Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";

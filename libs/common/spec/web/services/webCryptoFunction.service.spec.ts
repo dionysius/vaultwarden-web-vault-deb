@@ -1,4 +1,4 @@
-import Substitute from "@fluffy-spoon/substitute";
+import { Substitute } from "@fluffy-spoon/substitute";
 
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { Utils } from "@bitwarden/common/misc/utils";

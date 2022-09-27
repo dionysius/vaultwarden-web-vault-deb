@@ -1,4 +1,4 @@
-import Substitute, { Arg } from "@fluffy-spoon/substitute";
+import { Substitute, Arg } from "@fluffy-spoon/substitute";
 
 import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 import { LoginData } from "@bitwarden/common/models/data/loginData";

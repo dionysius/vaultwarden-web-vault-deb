@@ -1,4 +1,4 @@
-import Substitute, { Arg } from "@fluffy-spoon/substitute";
+import { Substitute, Arg } from "@fluffy-spoon/substitute";
 import { mock, MockProxy } from "jest-mock-extended";
 
 import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
