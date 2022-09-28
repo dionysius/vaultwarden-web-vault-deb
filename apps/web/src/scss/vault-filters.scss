@@ -104,6 +104,9 @@
   }
 
   .filter-button {
+    max-width: 90%;
+    white-space: nowrap;
+
     &:hover,
     &:focus,
     &:active {
@@ -112,7 +115,6 @@
       }
       text-decoration: none;
     }
-    max-width: 90%;
 
     &.disabled-organization {
       max-width: 78%;
