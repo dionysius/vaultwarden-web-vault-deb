@@ -79,18 +79,14 @@
             bitButton
             buttonType="primary"
             type="submit"
-            class="tw-inline-block tw-w-1/2"
+            [block]="true"
+            [loading]="form.loading"
             [disabled]="form.loading"
           >
             <span> <i class="bwi bwi-sign-in"></i> {{ "logIn" | i18n }} </span>
           </button>
 
-          <a
-            bitButton
-            buttonType="secondary"
-            routerLink="/register"
-            class="tw-inline-block tw-w-1/2"
-          >
+          <a bitButton buttonType="secondary" routerLink="/register" [block]="true">
             <i class="bwi bwi-pencil-square"></i>
             {{ "createAccount" | i18n }}
           </a>
