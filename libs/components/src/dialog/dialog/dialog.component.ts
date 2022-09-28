@@ -1,3 +1,4 @@
+import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { Component, Input } from "@angular/core";
 
 @Component({
@@ -6,6 +7,14 @@ import { Component, Input } from "@angular/core";
 })
 export class DialogComponent {
   @Input() dialogSize: "small" | "default" | "large" = "default";
+
+  private _disablePadding: boolean;
+  @Input() set disablePadding(value: boolean) {
+    this._disablePadding = coerceBooleanProperty(value);
+  }
+  get disablePadding() {
+    return this._disablePadding;
+  }
 
   get width() {
     switch (this.dialogSize) {

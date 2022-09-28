@@ -5,6 +5,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { ButtonModule } from "../../button";
 import { IconButtonModule } from "../../icon-button";
 import { SharedModule } from "../../shared";
+import { TabsModule } from "../../tabs";
 import { I18nMockService } from "../../utils/i18n-mock.service";
 import { DialogCloseDirective } from "../directives/dialog-close.directive";
 import { DialogTitleContainerDirective } from "../directives/dialog-title-container.directive";
@@ -16,7 +17,7 @@ export default {
   component: DialogComponent,
   decorators: [
     moduleMetadata({
-      imports: [ButtonModule, SharedModule, IconButtonModule],
+      imports: [ButtonModule, SharedModule, IconButtonModule, TabsModule],
       declarations: [DialogTitleContainerDirective, DialogCloseDirective],
       providers: [
         {
@@ -33,6 +34,13 @@ export default {
   args: {
     dialogSize: "small",
   },
+  argTypes: {
+    _disablePadding: {
+      table: {
+        disable: true,
+      },
+    },
+  },
   parameters: {
     design: {
       type: "figma",
@@ -44,7 +52,7 @@ export default {
 const Template: Story<DialogComponent> = (args: DialogComponent) => ({
   props: args,
   template: `
-  <bit-dialog [dialogSize]="dialogSize">
+  <bit-dialog [dialogSize]="dialogSize" [disablePadding]="disablePadding">
     <span bitDialogTitle>{{title}}</span>
     <span bitDialogContent>Dialog body text goes here.</span>
     <div bitDialogFooter class="tw-flex tw-items-center tw-flex-row tw-gap-2">
@@ -83,7 +91,7 @@ Large.args = {
 const TemplateScrolling: Story<DialogComponent> = (args: DialogComponent) => ({
   props: args,
   template: `
-  <bit-dialog [dialogSize]="dialogSize">
+  <bit-dialog [dialogSize]="dialogSize" [disablePadding]="disablePadding">
   <span bitDialogTitle>Scrolling Example</span>
   <span bitDialogContent>
     Dialog body text goes here.<br>
@@ -103,4 +111,38 @@ const TemplateScrolling: Story<DialogComponent> = (args: DialogComponent) => ({
 export const ScrollingContent = TemplateScrolling.bind({});
 ScrollingContent.args = {
   dialogSize: "small",
+};
+
+const TemplateTabbed: Story<DialogComponent> = (args: DialogComponent) => ({
+  props: args,
+  template: `
+  <bit-dialog [dialogSize]="dialogSize" [disablePadding]="disablePadding">
+  <span bitDialogTitle>Tab Content Example</span>
+  <span bitDialogContent>
+    <bit-tab-group>
+        <bit-tab label="First Tab">First Tab Content</bit-tab>
+        <bit-tab label="Second Tab">Second Tab Content</bit-tab>
+        <bit-tab label="Third Tab">Third Tab Content</bit-tab>
+    </bit-tab-group>
+  </span>
+  <div bitDialogFooter class="tw-flex tw-flex-row tw-gap-2">
+    <button bitButton buttonType="primary">Save</button>
+    <button bitButton buttonType="secondary">Cancel</button>
+  </div>
+  </bit-dialog>
+  `,
+});
+
+export const TabContent = TemplateTabbed.bind({});
+TabContent.args = {
+  dialogSize: "large",
+  disablePadding: true,
+};
+TabContent.story = {
+  parameters: {
+    docs: {
+      storyDescription: `An example of using the \`bitTabGroup\` component within the Dialog. The content padding should be
+      disabled (via \`disablePadding\`) so that the tabs are flush against the dialog title.`,
+    },
+  },
 };

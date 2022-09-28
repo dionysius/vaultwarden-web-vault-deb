@@ -19,7 +19,7 @@
     ></button>
   </div>
 
-  <div class="tw-overflow-y-auto tw-p-4 tw-pb-8">
+  <div class="tw-overflow-y-auto tw-pb-8" [ngClass]="{ 'tw-p-4': !disablePadding }">
     <ng-content select="[bitDialogContent]"></ng-content>
   </div>
 
