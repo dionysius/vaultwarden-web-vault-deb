@@ -5,8 +5,8 @@ import "bootstrap";
 import "jquery";
 import "popper.js";
 
-require("src/scss/styles.scss");
-require("src/scss/tailwind.css");
+require("@bitwarden/web-vault/scss/styles.scss");
+require("@bitwarden/web-vault/scss/tailwind.css");
 
 import { AppModule } from "./app/app.module";
 

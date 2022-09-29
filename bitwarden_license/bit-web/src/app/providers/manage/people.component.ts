@@ -21,10 +21,9 @@ import { ProviderUserConfirmRequest } from "@bitwarden/common/models/request/pro
 import { ListResponse } from "@bitwarden/common/models/response/listResponse";
 import { ProviderUserBulkResponse } from "@bitwarden/common/models/response/provider/providerUserBulkResponse";
 import { ProviderUserUserDetailsResponse } from "@bitwarden/common/models/response/provider/providerUserResponse";
-
-import { BasePeopleComponent } from "src/app/common/base.people.component";
-import { BulkStatusComponent } from "src/app/organizations/manage/bulk/bulk-status.component";
-import { EntityEventsComponent } from "src/app/organizations/manage/entity-events.component";
+import { BasePeopleComponent } from "@bitwarden/web-vault/app/common/base.people.component";
+import { BulkStatusComponent } from "@bitwarden/web-vault/app/organizations/manage/bulk/bulk-status.component";
+import { EntityEventsComponent } from "@bitwarden/web-vault/app/organizations/manage/entity-events.component";
 
 import { BulkConfirmComponent } from "./bulk/bulk-confirm.component";
 import { BulkRemoveComponent } from "./bulk/bulk-remove.component";

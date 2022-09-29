@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { AppComponent as BaseAppComponent } from "src/app/app.component";
+import { AppComponent as BaseAppComponent } from "@bitwarden/web-vault/app/app.component";
 
 import { DisablePersonalVaultExportPolicy } from "./policies/disable-personal-vault-export.component";
 import { MaximumVaultTimeoutPolicy } from "./policies/maximum-vault-timeout.component";

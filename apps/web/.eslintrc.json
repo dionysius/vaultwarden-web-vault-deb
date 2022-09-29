@@ -6,7 +6,7 @@
     "no-restricted-imports": [
       "error",
       {
-        "patterns": ["**/app/core/*", "**/reports/*", "**/app/shared/*"]
+        "patterns": ["**/app/core/*", "**/reports/*", "**/app/shared/*", "@bitwarden/web-vault/*"]
       }
     ]
   }

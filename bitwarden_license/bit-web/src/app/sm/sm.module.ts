@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 
-import { SharedModule } from "src/app/shared";
+import { SharedModule } from "@bitwarden/web-vault/app/shared";
 
 import { LayoutComponent } from "./layout/layout.component";
 import { NavigationComponent } from "./layout/navigation.component";

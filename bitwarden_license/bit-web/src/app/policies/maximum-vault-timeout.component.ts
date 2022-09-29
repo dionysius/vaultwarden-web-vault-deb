@@ -4,11 +4,10 @@ import { UntypedFormBuilder } from "@angular/forms";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { PolicyRequest } from "@bitwarden/common/models/request/policyRequest";
-
 import {
   BasePolicy,
   BasePolicyComponent,
-} from "src/app/organizations/policies/base-policy.component";
+} from "@bitwarden/web-vault/app/organizations/policies/base-policy.component";
 
 export class MaximumVaultTimeoutPolicy extends BasePolicy {
   name = "maximumVaultTimeout";

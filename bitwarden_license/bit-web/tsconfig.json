@@ -2,6 +2,7 @@
   "extends": "../../apps/web/tsconfig",
   "compilerOptions": {
     "paths": {
+      "@bitwarden/web-vault/*": ["../../apps/web/src/*"],
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/angular/*": ["../../libs/angular/src/*"],
       "@bitwarden/components": ["../../libs/components/src"]
