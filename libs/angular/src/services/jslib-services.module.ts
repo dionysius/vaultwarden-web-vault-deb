@@ -1,7 +1,5 @@
 import { Injector, LOCALE_ID, NgModule } from "@angular/core";
 
-import { ThemingService } from "@bitwarden/angular/services/theming/theming.service";
-import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
 import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { AccountApiService as AccountApiServiceAbstraction } from "@bitwarden/common/abstractions/account/account-api.service.abstraction";
 import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/abstractions/account/account.service.abstraction";
@@ -127,6 +125,8 @@ import {
 } from "./injection-tokens";
 import { ModalService } from "./modal.service";
 import { PasswordRepromptService } from "./passwordReprompt.service";
+import { ThemingService } from "./theming/theming.service";
+import { AbstractThemingService } from "./theming/theming.service.abstraction";
 import { ValidationService } from "./validation.service";
 
 @NgModule({

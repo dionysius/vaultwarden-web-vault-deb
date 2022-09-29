@@ -2,7 +2,6 @@ import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { AbstractControl, UntypedFormBuilder, ValidatorFn, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { InputsFieldMatch } from "@bitwarden/angular/validators/inputsFieldMatch.validator";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -24,6 +23,7 @@ import { RegisterRequest } from "@bitwarden/common/models/request/registerReques
 import { RegisterResponse } from "@bitwarden/common/models/response/authentication/registerResponse";
 
 import { PasswordColorText } from "../shared/components/password-strength/password-strength.component";
+import { InputsFieldMatch } from "../validators/inputsFieldMatch.validator";
 
 import { CaptchaProtectedComponent } from "./captchaProtected.component";
 

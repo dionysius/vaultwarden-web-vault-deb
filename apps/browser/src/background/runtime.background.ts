@@ -5,10 +5,9 @@ import { NotificationsService } from "@bitwarden/common/abstractions/notificatio
 import { SystemService } from "@bitwarden/common/abstractions/system.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 
-import { BrowserEnvironmentService } from "src/services/browser-environment.service";
-
 import { BrowserApi } from "../browser/browserApi";
 import { AutofillService } from "../services/abstractions/autofill.service";
+import { BrowserEnvironmentService } from "../services/browser-environment.service";
 import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
 
 import MainBackground from "./main.background";

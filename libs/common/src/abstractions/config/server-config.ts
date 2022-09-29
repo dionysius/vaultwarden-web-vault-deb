@@ -2,7 +2,7 @@ import {
   ServerConfigData,
   ThirdPartyServerConfigData,
   EnvironmentServerConfigData,
-} from "@bitwarden/common/models/data/server-config.data";
+} from "../../models/data/server-config.data";
 
 const dayInMilliseconds = 24 * 3600 * 1000;
 const eighteenHoursInMilliseconds = 18 * 3600 * 1000;

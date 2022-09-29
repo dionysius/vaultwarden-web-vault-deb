@@ -1,6 +1,5 @@
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
-
 import { AuthenticationType } from "../../enums/authenticationType";
+import { SymmetricCryptoKey } from "../../models/domain/symmetricCryptoKey";
 import { TokenRequestTwoFactor } from "../request/identityToken/tokenRequestTwoFactor";
 
 export class PasswordLogInCredentials {

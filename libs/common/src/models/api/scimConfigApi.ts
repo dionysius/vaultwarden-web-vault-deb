@@ -1,5 +1,4 @@
-import { ScimProviderType } from "@bitwarden/common/enums/scimProviderType";
-
+import { ScimProviderType } from "../../enums/scimProviderType";
 import { BaseResponse } from "../response/baseResponse";
 
 export class ScimConfigApi extends BaseResponse {

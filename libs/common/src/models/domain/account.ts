@@ -1,11 +1,10 @@
 import { Except, Jsonify } from "type-fest";
 
-import { Utils } from "@bitwarden/common/misc/utils";
-import { DeepJsonify } from "@bitwarden/common/types/deep-jsonify";
-
 import { AuthenticationStatus } from "../../enums/authenticationStatus";
 import { KdfType } from "../../enums/kdfType";
 import { UriMatchType } from "../../enums/uriMatchType";
+import { Utils } from "../../misc/utils";
+import { DeepJsonify } from "../../types/deep-jsonify";
 import { CipherData } from "../data/cipherData";
 import { CollectionData } from "../data/collectionData";
 import { EncryptedOrganizationKeyData } from "../data/encryptedOrganizationKeyData";

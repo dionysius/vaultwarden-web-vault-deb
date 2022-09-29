@@ -1,10 +1,10 @@
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { FolderApiServiceAbstraction } from "@bitwarden/common/abstractions/folder/folder-api.service.abstraction";
-import { InternalFolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
-import { FolderData } from "@bitwarden/common/models/data/folderData";
-import { Folder } from "@bitwarden/common/models/domain/folder";
-import { FolderRequest } from "@bitwarden/common/models/request/folderRequest";
-import { FolderResponse } from "@bitwarden/common/models/response/folderResponse";
+import { ApiService } from "../../abstractions/api.service";
+import { FolderApiServiceAbstraction } from "../../abstractions/folder/folder-api.service.abstraction";
+import { InternalFolderService } from "../../abstractions/folder/folder.service.abstraction";
+import { FolderData } from "../../models/data/folderData";
+import { Folder } from "../../models/domain/folder";
+import { FolderRequest } from "../../models/request/folderRequest";
+import { FolderResponse } from "../../models/response/folderResponse";
 
 export class FolderApiService implements FolderApiServiceAbstraction {
   constructor(private folderService: InternalFolderService, private apiService: ApiService) {}

@@ -1,7 +1,7 @@
 import {
   AbstractStorageService,
   MemoryStorageServiceInterface,
-} from "@bitwarden/common/abstractions/storage.service";
+} from "../abstractions/storage.service";
 
 export class MemoryStorageService
   extends AbstractStorageService

@@ -16,9 +16,8 @@ import { CipherView } from "@bitwarden/common/models/view/cipherView";
 import { CollectionView } from "@bitwarden/common/models/view/collectionView";
 import { FolderView } from "@bitwarden/common/models/view/folderView";
 
-import { BrowserGroupingsComponentState } from "src/models/browserGroupingsComponentState";
-
 import { BrowserApi } from "../../browser/browserApi";
+import { BrowserGroupingsComponentState } from "../../models/browserGroupingsComponentState";
 import { StateService } from "../../services/abstractions/state.service";
 import { VaultFilterService } from "../../services/vaultFilter.service";
 import { PopupUtilsService } from "../services/popup-utils.service";

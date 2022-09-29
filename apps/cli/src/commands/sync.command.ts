@@ -3,7 +3,7 @@ import { Response } from "@bitwarden/node/cli/models/response";
 import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 import { StringResponse } from "@bitwarden/node/cli/models/response/stringResponse";
 
-import { CliUtils } from "src/utils";
+import { CliUtils } from "../utils";
 
 export class SyncCommand {
   constructor(private syncService: SyncService) {}

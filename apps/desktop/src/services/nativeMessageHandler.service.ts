@@ -12,12 +12,12 @@ import { EncString } from "@bitwarden/common/models/domain/encString";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 import { StateService } from "@bitwarden/common/services/state.service";
 
-import { DecryptedCommandData } from "src/models/nativeMessaging/decryptedCommandData";
-import { EncryptedMessage } from "src/models/nativeMessaging/encryptedMessage";
-import { EncryptedMessageResponse } from "src/models/nativeMessaging/encryptedMessageResponse";
-import { Message } from "src/models/nativeMessaging/message";
-import { UnencryptedMessage } from "src/models/nativeMessaging/unencryptedMessage";
-import { UnencryptedMessageResponse } from "src/models/nativeMessaging/unencryptedMessageResponse";
+import { DecryptedCommandData } from "../models/nativeMessaging/decryptedCommandData";
+import { EncryptedMessage } from "../models/nativeMessaging/encryptedMessage";
+import { EncryptedMessageResponse } from "../models/nativeMessaging/encryptedMessageResponse";
+import { Message } from "../models/nativeMessaging/message";
+import { UnencryptedMessage } from "../models/nativeMessaging/unencryptedMessage";
+import { UnencryptedMessageResponse } from "../models/nativeMessaging/unencryptedMessageResponse";
 
 import { EncryptedMessageHandlerService } from "./encryptedMessageHandlerService";
 

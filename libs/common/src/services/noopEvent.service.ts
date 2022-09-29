@@ -1,5 +1,5 @@
-import { EventService } from "@bitwarden/common/abstractions/event.service";
-import { EventType } from "@bitwarden/common/enums/eventType";
+import { EventService } from "../abstractions/event.service";
+import { EventType } from "../enums/eventType";
 
 /**
  * If you want to use this, don't.

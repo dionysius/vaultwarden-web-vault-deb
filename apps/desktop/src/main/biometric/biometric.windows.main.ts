@@ -6,7 +6,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { biometrics } from "@bitwarden/desktop-native";
 import { WindowMain } from "@bitwarden/electron/window.main";
 
-import { BiometricMain } from "src/main/biometric/biometric.main";
+import { BiometricMain } from "./biometric.main";
 
 export default class BiometricWindowsMain implements BiometricMain {
   constructor(

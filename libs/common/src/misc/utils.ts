@@ -1,9 +1,8 @@
 /* eslint-disable no-useless-escape */
 import * as tldjs from "tldjs";
 
-import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-
 import { AbstractEncryptService } from "../abstractions/abstractEncrypt.service";
+import { CryptoService } from "../abstractions/crypto.service";
 import { I18nService } from "../abstractions/i18n.service";
 
 const nodeURL = typeof window === "undefined" ? require("url") : null;

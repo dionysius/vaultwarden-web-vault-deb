@@ -1,5 +1,5 @@
-import AddLoginRuntimeMessage from "src/background/models/addLoginRuntimeMessage";
-import ChangePasswordRuntimeMessage from "src/background/models/changePasswordRuntimeMessage";
+import AddLoginRuntimeMessage from "../background/models/addLoginRuntimeMessage";
+import ChangePasswordRuntimeMessage from "../background/models/changePasswordRuntimeMessage";
 
 document.addEventListener("DOMContentLoaded", (event) => {
   if (window.location.hostname.endsWith("vault.bitwarden.com")) {

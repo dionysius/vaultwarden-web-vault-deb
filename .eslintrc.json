@@ -96,6 +96,39 @@
           }
         ]
       }
-    ]
-  }
+    ],
+    "no-restricted-imports": ["error", { "patterns": ["src/**/*"] }]
+  },
+  "overrides": [
+    {
+      "files": ["libs/common/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/common/*", "src/**/*"] }]
+      }
+    },
+    {
+      "files": ["libs/components/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/components/*", "src/**/*"] }]
+      }
+    },
+    {
+      "files": ["libs/angular/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/angular/*", "src/**/*"] }]
+      }
+    },
+    {
+      "files": ["libs/node/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/node/*", "src/**/*"] }]
+      }
+    },
+    {
+      "files": ["libs/electron/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/electron/*", "src/**/*"] }]
+      }
+    }
+  ]
 }

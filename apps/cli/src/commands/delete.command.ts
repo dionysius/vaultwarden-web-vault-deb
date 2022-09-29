@@ -6,7 +6,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Response } from "@bitwarden/node/cli/models/response";
 
-import { CliUtils } from "src/utils";
+import { CliUtils } from "../utils";
 
 export class DeleteCommand {
   constructor(

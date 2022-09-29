@@ -1,6 +1,6 @@
-import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
-import { IEncrypted } from "@bitwarden/common/interfaces/IEncrypted";
-import { Utils } from "@bitwarden/common/misc/utils";
+import { EncryptionType } from "../../enums/encryptionType";
+import { IEncrypted } from "../../interfaces/IEncrypted";
+import { Utils } from "../../misc/utils";
 
 const ENC_TYPE_LENGTH = 1;
 const IV_LENGTH = 16;

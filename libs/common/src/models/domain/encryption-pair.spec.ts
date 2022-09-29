@@ -1,4 +1,4 @@
-import { Utils } from "@bitwarden/common/misc/utils";
+import { Utils } from "../../misc/utils";
 
 import { EncryptionPair } from "./account";
 

@@ -1,15 +1,15 @@
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
-import { InternalPolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { PolicyType } from "@bitwarden/common/enums/policyType";
-import { PolicyData } from "@bitwarden/common/models/data/policyData";
-import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
-import { Policy } from "@bitwarden/common/models/domain/policy";
-import { PolicyRequest } from "@bitwarden/common/models/request/policyRequest";
-import { ListResponse } from "@bitwarden/common/models/response/listResponse";
-import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
+import { ApiService } from "../../abstractions/api.service";
+import { OrganizationService } from "../../abstractions/organization/organization.service.abstraction";
+import { PolicyApiServiceAbstraction } from "../../abstractions/policy/policy-api.service.abstraction";
+import { InternalPolicyService } from "../../abstractions/policy/policy.service.abstraction";
+import { StateService } from "../../abstractions/state.service";
+import { PolicyType } from "../../enums/policyType";
+import { PolicyData } from "../../models/data/policyData";
+import { MasterPasswordPolicyOptions } from "../../models/domain/masterPasswordPolicyOptions";
+import { Policy } from "../../models/domain/policy";
+import { PolicyRequest } from "../../models/request/policyRequest";
+import { ListResponse } from "../../models/response/listResponse";
+import { PolicyResponse } from "../../models/response/policyResponse";
 
 export class PolicyApiService implements PolicyApiServiceAbstraction {
   constructor(

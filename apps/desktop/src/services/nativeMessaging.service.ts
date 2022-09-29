@@ -14,9 +14,9 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/encString";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 
-import { LegacyMessage } from "src/models/nativeMessaging/legacyMessage";
-import { LegacyMessageWrapper } from "src/models/nativeMessaging/legacyMessageWrapper";
-import { Message } from "src/models/nativeMessaging/message";
+import { LegacyMessage } from "../models/nativeMessaging/legacyMessage";
+import { LegacyMessageWrapper } from "../models/nativeMessaging/legacyMessageWrapper";
+import { Message } from "../models/nativeMessaging/message";
 
 import { NativeMessageHandlerService } from "./nativeMessageHandler.service";
 

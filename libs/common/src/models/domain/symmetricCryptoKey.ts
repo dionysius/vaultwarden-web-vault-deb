@@ -1,8 +1,7 @@
 import { Jsonify } from "type-fest";
 
-import { Utils } from "@bitwarden/common/misc/utils";
-
 import { EncryptionType } from "../../enums/encryptionType";
+import { Utils } from "../../misc/utils";
 
 export class SymmetricCryptoKey {
   key: ArrayBuffer;

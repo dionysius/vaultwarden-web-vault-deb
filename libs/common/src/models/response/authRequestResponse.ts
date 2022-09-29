@@ -1,4 +1,4 @@
-import { DeviceType } from "@bitwarden/common/enums/deviceType";
+import { DeviceType } from "../../enums/deviceType";
 
 import { BaseResponse } from "./baseResponse";
 
