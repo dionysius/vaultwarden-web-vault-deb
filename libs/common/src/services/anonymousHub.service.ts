@@ -32,7 +32,7 @@ export class AnonymousHubService implements AnonymousHubServiceAbstraction {
     this.url = this.environmentService.getNotificationsUrl();
 
     this.anonHubConnection = new HubConnectionBuilder()
-      .withUrl(this.url + "/anonymousHub?Token=" + token, {
+      .withUrl(this.url + "/anonymous-hub?Token=" + token, {
         skipNegotiation: true,
         transport: HttpTransportType.WebSockets,
       })
