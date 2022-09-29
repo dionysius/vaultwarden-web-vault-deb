@@ -80,6 +80,8 @@ jobs:
             npm_command: "dist:bit:selfhost"
           - name: "cloud-QA"
             npm_command: "build:bit:qa"
+          - name: "ee"
+            npm_command: "build:bit:ee"
 
     steps:
       - name: Checkout repo
@@ -234,12 +236,20 @@ jobs:
       - name: Log out of Docker
         run: docker logout
 
-  build-qa:
-    name: Build Docker images for QA environment
+  build-containers:
+    name: Build Docker images for bitwardenqa
     runs-on: ubuntu-22.04
     needs:
       - setup
       - build-artifacts
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - artifact_name: cloud-QA
+            image_name: web
+          - artifact_name: ee
+            image_name: web-ee
     env:
       _VERSION: ${{ needs.setup.outputs.version }}
     steps:
@@ -254,17 +264,17 @@ jobs:
       - name: Log into container registry
         run: az acr login -n bitwardenqa
 
-      - name: Download cloud-QA artifact
+      - name: Download ${{ matrix.artifact_name }} artifact
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
         with:
-          name: web-${{ env._VERSION }}-cloud-QA.zip
+          name: web-${{ env._VERSION }}-${{ matrix.artifact_name }}.zip
           path: apps/web/build
 
       - name: Build Docker image
         working-directory: apps/web
         run: |
           docker --version
-          docker build -t bitwardenqa.azurecr.io/web .
+          docker build -t bitwardenqa.azurecr.io/${{ matrix.image_name }} .
 
       - name: Get image tag
         id: image-tag
@@ -286,24 +296,29 @@ jobs:
       - name: Tag image
         env:
           IMAGE_TAG: ${{ steps.image-tag.outputs.value }}
-        run: docker tag bitwardenqa.azurecr.io/web "bitwardenqa.azurecr.io/web:$IMAGE_TAG"
+          IMAGE_NAME: ${{ matrix.image_name }}
+        run: docker tag bitwardenqa.azurecr.io/$IMAGE_NAME "bitwardenqa.azurecr.io/$IMAGE_NAME:$IMAGE_TAG"
 
       - name: Tag dev
         if: github.ref == 'refs/heads/master'
-        run: docker tag bitwardenqa.azurecr.io/web bitwardenqa.azurecr.io/web:dev
+        env:
+          IMAGE_NAME: ${{ matrix.image_name }}
+        run: docker tag bitwardenqa.azurecr.io/web "bitwardenqa.azurecr.io/$IMAGE_NAME:dev"
 
       - name: Push image
         env:
           IMAGE_TAG: ${{ steps.image-tag.outputs.value }}
-        run: docker push "bitwardenqa.azurecr.io/web:$IMAGE_TAG"
+          IMAGE_NAME: ${{ matrix.image_name }}
+        run: docker push "bitwardenqa.azurecr.io/$IMAGE_NAME:$IMAGE_TAG"
 
       - name: Push dev images
         if: github.ref == 'refs/heads/master'
-        run: docker push bitwardenqa.azurecr.io/web:dev
+        env:
+          IMAGE_NAME: ${{ matrix.image_name }}
+        run: docker push "bitwardenqa.azurecr.io/$IMAGE_NAME:dev"
 
       - name: Log out of Docker
         run: docker logout
-
 
   crowdin-push:
     name: Crowdin Push
@@ -355,8 +370,8 @@ jobs:
       - cloc
       - setup
       - build-artifacts
+      - build-containers
       - build-commercial-selfhost-image
-      - build-qa
       - crowdin-push
     steps:
       - name: Check if any job failed
