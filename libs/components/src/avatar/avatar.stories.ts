@@ -6,6 +6,7 @@ export default {
   title: "Component Library/Avatar",
   component: AvatarComponent,
   args: {
+    id: undefined,
     text: "Walt Walterson",
     size: "default",
   },
@@ -28,13 +29,11 @@ Default.args = {
 
 export const Large = Template.bind({});
 Large.args = {
-  ...Default.args,
   size: "large",
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  ...Default.args,
   size: "small",
 };
 
@@ -45,7 +44,6 @@ LightBackground.args = {
 
 export const Border = Template.bind({});
 Border.args = {
-  ...Default.args,
   border: true,
 };
 
