@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Pro přístup do vašeho bezpečného trezoru se přihlaste nebo si vytvořte nový účet."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "Vytvořit účet"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Zahájit zkušební verzi"
   },
   "logIn": {
     "message": "Přihlásit se"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "Potvrdit"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Druhé zadání hlavního hesla je povinné."
   },
-  "masterPasswordMinLength": {
-    "message": "Hlavní heslo musí obsahovat alespoň 8 znaků."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrzení hlavního hesla se neshoduje."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Nepatříte do žádné organizace. Organizace umožňují bezpečné sdílení položek s ostatními uživateli."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "Verze $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "Položka $ID$ byla zobrazena.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Pro zajištění integrity vašich šifrovacích klíčů proveďte nejprve ověření fráze uživatelského otisku prstu.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "Již se neptat na ověření fráze otisku prstu",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Znovu odeslat pozvánky"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "Tuto akci nelze použít na žádného z vybraných uživatelů."

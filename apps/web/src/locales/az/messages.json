@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Güvənli anbarınıza müraciət etmək üçün giriş edin və ya yeni bir hesab yaradın."
   },
+  "loginWithDevice": {
+    "message": "Cihazla giriş et"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Cihazla giriş etmə, Bitwarden mobil tətbiqinin tənzimləmələrində fəallaşdırılmalıdır. Başqa bir seçimə ehtiyacınız var?"
+  },
   "createAccount": {
     "message": "Hesab yarat"
+  },
+  "newAroundHere": {
+    "message": "Burada yenisiniz?"
   },
   "startTrial": {
     "message": "Sınağa Başla"
   },
   "logIn": {
     "message": "Giriş et"
+  },
+  "logInInitiated": {
+    "message": "Giriş etmə başladıldı"
   },
   "submit": {
     "message": "Göndər"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Ana parolun yenidən yazılması lazımdır."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Ana parol ən azı 8 simvol uzunluğunda olmalıdır."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Heç bir təşkilata aid deyilsiniz. Təşkilatlar, elementlərinizi digər istifadəçilərlə güvənli şəkildə paylaşmağınızı təmin edir."
+  },
+  "notificationSentDevice": {
+    "message": "Cihazınıza bir bildiriş göndərildi."
   },
   "versionNumber": {
     "message": "Versiya $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Bütün giriş etmə seçimlərinə bax"
+  },
   "viewedItemId": {
     "message": "$ID$ elementinə baxıldı.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Şifrələmə açarlarının bütövlüyünü təmin etmək üçün, davam etməzdən əvvəl istifadəçinin barmaq izi ifadəsini təsdiqləyin.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Zəhmət olmasa anbarınızın kilidinin açıq olduğuna və Barmaq izi ifadəsinin digər cihazla uyğunlaşdığına əmin olun."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Barmaq izi ifadəsi"
   },
   "dontAskFingerprintAgain": {
     "message": "Barmaq izi ifadəsini təkrar soruşma",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Dəvətləri yenidən göndər"
+  },
+  "resendNotification": {
+    "message": "Bildirişi təkrar göndər"
   },
   "noSelectedUsersApplicable": {
     "message": "Bu əməliyyat, seçilən istifadəçilərin heç biri üçün etibarlı deyil."

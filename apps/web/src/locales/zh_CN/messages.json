@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "登录或者新建一个账户来访问您的安全密码库。"
   },
+  "loginWithDevice": {
+    "message": "使用设备登录"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "创建账户"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "开始试用"
   },
   "logIn": {
     "message": "登录"
+  },
+  "logInInitiated": {
+    "message": "登录已发起"
   },
   "submit": {
     "message": "提交"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "必须填写确认主密码。"
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "主密码至少需要 8 个字符。"
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "您没有加入任何组织。同一组织的用户可以安全地与其他用户共享项目。"
+  },
+  "notificationSentDevice": {
+    "message": "通知已发送到您的设备。"
   },
   "versionNumber": {
     "message": "版本: $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "查看所有登录选项"
+  },
   "viewedItemId": {
     "message": "查看了项目 $ID$。",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "为确保加密密钥的完整性，继续之前请先验证用户的指纹短语。",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "请确保您的密码库已解锁，并且指纹短语与其他设备匹配。"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "指纹短语"
   },
   "dontAskFingerprintAgain": {
     "message": "不再提示验证受邀用户的指纹短语（不推荐）",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "重新发送邀请"
+  },
+  "resendNotification": {
+    "message": "重新发送通知"
   },
   "noSelectedUsersApplicable": {
     "message": "此操作不适用于所选用户。"

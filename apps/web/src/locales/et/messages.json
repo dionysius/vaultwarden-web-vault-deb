@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Logi sisse või loo uus konto."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "Konto loomine"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Alusta prooviperioodi"
   },
   "logIn": {
     "message": "Logi sisse"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "Kinnita"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Vajalik on ülemparooli uuesti sisestamine."
   },
-  "masterPasswordMinLength": {
-    "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Ülemparoolid ei ühti."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Sa ei kuulu ühessegi organisatsiooni. Organisatsioonid võimaldavad sul kirjeid turvaliselt teiste kasutajatega jagada."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "Versioon $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "Vaatas kirjet $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Selleks, et sinu krüpteeringu terviklikkus säiliks, pead jätkamiseks kinnitama kasutaja sõrmejälje fraasi.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "Ära enam sõrmejälje fraasi kinnitamist küsi",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Saada kutsed uuesti"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "See valik rakendub mistahes valitud kasutajatele."

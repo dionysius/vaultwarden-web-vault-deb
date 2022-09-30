@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Пријавите се или креирајте нови налог за приступ Сефу."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "Креирај налог"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Почетак пробе"
   },
   "logIn": {
     "message": "Пријавите се"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "Пошаљи"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Поновно уписивање главне лозинке је неопходно."
   },
-  "masterPasswordMinLength": {
-    "message": "Главна лозинка мора да садржи барем 8 знакова."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Потврђена Главна Лозинка се не подудара."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Не припадате ниједној организацији. Организације вам омогућавају да безбедно делите ставке са другим корисницима."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "Верзија $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "Прогледана ставка $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Да бисте осигурали интегритет кључева за шифровање, молимо да проверите Вашу Сигурносну Фразу Сефа пре наставка.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "Не питај више за проверу Сигурносне Фразе Сефа",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Поновно послати позивнице"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "Ова акција није применљива на било који од одабраних корисника."

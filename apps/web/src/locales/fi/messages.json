@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Kirjaudu sisään tai luo uusi tili päästäksesi salattuun holviisi."
   },
+  "loginWithDevice": {
+    "message": "Laitteella kirjautuminen"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Laitteella kirjautuminen oltava käytössä Biwarden-mobiilisovelluksen asetuksista. Tarvitsetko eri vaihtoehdon?"
+  },
   "createAccount": {
     "message": "Luo tili"
+  },
+  "newAroundHere": {
+    "message": "Oletko uusi täällä?"
   },
   "startTrial": {
     "message": "Aloita kokeilu"
   },
   "logIn": {
     "message": "Kirjaudu sisään"
+  },
+  "logInInitiated": {
+    "message": "Kirjautuminen aloitettu"
   },
   "submit": {
     "message": "Jatka"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Pääsalasanan uudelleensyöttö vaaditaan."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Pääsalasanan tulee sisältää ainakin 8 merkkiä."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Et kuulu mihinkään organisaatioon. Organisaatioiden avulla voit jakaa kohteita turvallisesti muiden käyttäjien kanssa."
+  },
+  "notificationSentDevice": {
+    "message": "Laitteellesi on lähetetty ilmoitus."
   },
   "versionNumber": {
     "message": "Versio $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Näytä kaikki kirjautumisvaihtoehdot"
+  },
   "viewedItemId": {
     "message": "Kohdetta $ID$ tarkasteltu.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Varmistaaksesi salausavaintesi eheyden, vahvista käyttäjän tunnistelauseke ennen kuin jatkat.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Varmista, että holvisi on avattu ja tunnistelauseke vastaa kyseistä laitetta."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Tunnistelauseke"
   },
   "dontAskFingerprintAgain": {
     "message": "Älä koskaan kehota vahvistamaan kutsuttujen käyttäjien tunnistelausekkeita (ei suositella)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Lähetä kutsut uudelleen"
+  },
+  "resendNotification": {
+    "message": "Lähetä ilmoitus uudelleen"
   },
   "noSelectedUsersApplicable": {
     "message": "Toiminto ei koske valittuja käyttäjiä."

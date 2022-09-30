@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Identifiez-vous ou créez un nouveau compte pour accéder à votre coffre sécurisé."
   },
+  "loginWithDevice": {
+    "message": "Se connecter avec l'appareil"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "La connexion avec l'appareil doit être activée dans les paramètres de l'application mobile Bitwarden. Avez-vous besoin d'une autre option?"
+  },
   "createAccount": {
     "message": "Créer un compte"
+  },
+  "newAroundHere": {
+    "message": "Vous êtes nouveau ici ?"
   },
   "startTrial": {
     "message": "Commencer la Période d'Essai"
   },
   "logIn": {
     "message": "S'identifier"
+  },
+  "logInInitiated": {
+    "message": "Connexion initiée"
   },
   "submit": {
     "message": "Soumettre"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Le mot de passe maître doit être entré de nouveau."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Le mot de passe maître doit comporter au moins 8 caractères."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Vous ne faites partie d'aucune organisation. Les organisations vous permettent de partager des éléments de façon sécurisée avec d'autres utilisateurs."
+  },
+  "notificationSentDevice": {
+    "message": "Une notification a été envoyée à votre appareil."
   },
   "versionNumber": {
     "message": "Version $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Voir toutes les options de connexion"
+  },
   "viewedItemId": {
     "message": "L'élément $ID$ a été consulté.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Pour assurer l'intégrité de vos clés de chiffrement, merci de saisir la phrase d'empreinte de l'utilisateur avant de continuer.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Veuillez vous assurer que votre coffre est déverrouillé et que la Phrase d'Empreinte correspond à l'autre appareil."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Phrase d'empreinte"
   },
   "dontAskFingerprintAgain": {
     "message": "Ne jamais demander de vérifier la phrase d'empreinte pour les utilisateurs invités (non recommandé)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Renvoyer les invitations"
+  },
+  "resendNotification": {
+    "message": "Renvoyer la notification"
   },
   "noSelectedUsersApplicable": {
     "message": "Cette action n'est applicable à aucun des utilisateurs sélectionnés."

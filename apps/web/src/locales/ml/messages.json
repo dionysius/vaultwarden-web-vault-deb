@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "നിങ്ങളുടെ സുരക്ഷിത വാൾട്ടിലേക്ക് പ്രവേശിക്കാൻ ലോഗിൻ ചെയ്യുക അല്ലെങ്കിൽ ഒരു പുതിയ അക്കൗണ്ട് സൃഷ്ടിക്കുക."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "അക്കൗണ്ട് സൃഷ്ടിക്കുക"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Start Trial"
   },
   "logIn": {
     "message": "പ്രവേശിക്കുക"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "സമർപ്പിക്കുക"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "നിങ്ങൾ ഒരു സംഘടനയുടെയും അംഗമല്ല. മറ്റ് ഉപയോക്താക്കളുമായി ഇനങ്ങൾ സുരക്ഷിതമായി പങ്കിടാൻ ഓർഗനൈസേഷനുകൾ നിങ്ങളെ അനുവദിക്കുന്നു."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "വേർഷൻ $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "Viewed item $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "നിങ്ങളുടെ എൻ‌ക്രിപ്ഷൻ കീകളുടെ സമഗ്രത ഉറപ്പാക്കുന്നതിന്, തുടരുന്നതിന് മുമ്പ് ഉപയോക്താവിന്റെ വിരലടയാളം പരിശോധിക്കുക.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "ഫിംഗർപ്രിന്റ് വാചകം പരിശോധിക്കാൻ ആവശ്യപ്പെടരുത്",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Resend Invitations"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "This action is not applicable to any of the selected users."

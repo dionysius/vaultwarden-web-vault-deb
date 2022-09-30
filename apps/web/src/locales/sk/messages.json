@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Prihláste sa, alebo vytvorte nový účet pre prístup k vášmu bezpečnému trezoru."
   },
+  "loginWithDevice": {
+    "message": "Prihlásenie pomocou zariadenia"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Prihlásenie pomocou zariadenia musí byť povolené v nastaveniach mobilnej aplikácie Biwarden. Potrebujete inú možnosť?"
+  },
   "createAccount": {
     "message": "Vytvoriť účet"
+  },
+  "newAroundHere": {
+    "message": "Ste tu nový?"
   },
   "startTrial": {
     "message": "Začať skúšobné obdobie"
   },
   "logIn": {
     "message": "Prihlásiť sa"
+  },
+  "logInInitiated": {
+    "message": "Iniciované prihlásenie"
   },
   "submit": {
     "message": "Potvrdiť"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Vyžaduje sa opätovné zadanie hlavného hesla."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Hlavné heslo musí mať aspoň 8 znakov."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Nie ste členom žiadnej organizácie. Organizácie umožňujú bezpečne zdieľať položky s ostatnými používateľmi."
+  },
+  "notificationSentDevice": {
+    "message": "Do vášho zariadenia bolo odoslané upozornenie."
   },
   "versionNumber": {
     "message": "Verzia $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Zobraziť všetky možnosti prihlásenia"
+  },
   "viewedItemId": {
     "message": "Položka $ID$ zobrazená.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Na zabezpečenie integrity šifrovacích kľúčov, skontrolujte frázu odtlačku používateľa pred tým než budete pokračovať.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Skontrolujte, či je trezor odomknutý a či sa fráza odtlačku prsta zhoduje s druhým zariadením."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fráza odtlačku prsta"
   },
   "dontAskFingerprintAgain": {
     "message": "Nepýtať sa pozvaných používateľov na overenie frázy odtlačku. (neodporúča sa)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Znovu poslať pozvánky"
+  },
+  "resendNotification": {
+    "message": "Znova odoslať upozornenie"
   },
   "noSelectedUsersApplicable": {
     "message": "Táto akcia sa nevzťahuje na žiadneho z vybraných používateľov."

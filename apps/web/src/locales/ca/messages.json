@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Inicieu sessió o creeu un compte nou per accedir a la caixa forta."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "Crea un compte"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Comença la prova"
   },
   "logIn": {
     "message": "Inicia sessió"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "Envia"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Cal tornar a escriure la contrasenya mestra."
   },
-  "masterPasswordMinLength": {
-    "message": "La contrasenya mestra ha de tenir almenys 8 caràcters."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmació de la contrasenya mestra no coincideix."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "No pertanyeu a cap organització. Les organitzacions permeten compartir elements amb altres usuaris de forma segura."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "Versió $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "$ID$ de l'element vist.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Per assegurar la integritat de les vostres claus de xifratge, comproveu la frase de l'empremta digital de l'usuari abans de continuar.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "No sol·liciteu tornar a comprovar la frase de les empremtes dactilars (No recomanat)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Tornar a enviar invitacions"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "Aquesta acció no és aplicable a cap dels usuaris seleccionats."

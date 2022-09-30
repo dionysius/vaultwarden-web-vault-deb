@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Teken aan of skep ’n nuwe rekening vir toegang tot u beveiligde kluis."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "Skep rekening"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Start Trial"
   },
   "logIn": {
     "message": "Teken aan"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "Dien in"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "U behoort aan geen organisasies nie. Organisasies laat u toe om items op beveiligde wyse met ander gebruikers te deel."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "Weergawe $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "Item $ID$ gekyk.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Bevestig die gebruiker se vingerafdrukfrase alvorens voortgegaan word om die integriteit van u enkripsiesleutels te verseker.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "Moenie weer vra om die vingerafdrukfrase te bevestig nie",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Stuur weer uitnodigings"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "Hierdie aktie is nie van toepassing op die gekose gebruikers nie."

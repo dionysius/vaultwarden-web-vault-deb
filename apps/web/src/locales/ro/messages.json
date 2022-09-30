@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Autentificați-vă sau creați un cont nou pentru a accesa seiful dvs. securizat."
   },
+  "loginWithDevice": {
+    "message": "Autentificați-vă cu dispozitivul"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Autentificarea cu dispozitivul trebuie să fie activată în setările aplicației mobile Bitwarden. Aveți nevoie de o altă opțiune?"
+  },
   "createAccount": {
     "message": "Creare cont"
+  },
+  "newAroundHere": {
+    "message": "Sunteți nou pe aici?"
   },
   "startTrial": {
     "message": "Începeți o încercare"
   },
   "logIn": {
     "message": "Conectare"
+  },
+  "logInInitiated": {
+    "message": "Autentificare inițiată"
   },
   "submit": {
     "message": "Trimitere"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Este necesară rescrierea parolei principale."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Parola principală trebuie să aibă cel puțin 8 caractere."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Nu aparțineți niciunei organizații. Organizațiile vă permit să partajați în siguranță articole cu alți utilizatori."
+  },
+  "notificationSentDevice": {
+    "message": "O notificare a fost trimisă pe dispozitivul dvs."
   },
   "versionNumber": {
     "message": "Versiunea $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Vedeți toate opțiunile de autentificare"
+  },
   "viewedItemId": {
     "message": "Element $ID$ vizualizat.",
     "placeholders": {
@@ -3369,8 +3387,14 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintEnsureIntegrityVerify": {
-    "message": "Pentru a asigura integritatea cheilor dvs. de criptare, vă rugăm să verificați fraza amprentă a utilizatorului înainte de a continua.",
+    "message": "Pentru a asigura integritatea cheilor de criptare, verificați fraza amprentă a utilizatorului înainte de a continua.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Asigurați-vă că seiful dvs. este deblocat și că fraza amprentă corespunde cu cea a celuilalt dispozitiv."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fraza amprentă"
   },
   "dontAskFingerprintAgain": {
     "message": "Nu-mi cereți niciodată să verific frazele amprentă pentru utilizatorii invitați (Nerecomandat)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Retrimitere invitații"
+  },
+  "resendNotification": {
+    "message": "Retrimitere notificare"
   },
   "noSelectedUsersApplicable": {
     "message": "Această acțiune nu se aplică niciunui utilizator selectat."

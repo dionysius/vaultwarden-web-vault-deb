@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Saioa hasi edo sortu kontu berri bat zure kutxa gotorrera sartzeko."
   },
+  "loginWithDevice": {
+    "message": "Hasi saioa gailuarekin"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Bitwarden mugikorreko aplikazioaren konfigurazioan, gailuarekin saioa hastea gaituta egon behar du. Beste aukerarik behar duzu?"
+  },
   "createAccount": {
     "message": "Sortu kontua"
+  },
+  "newAroundHere": {
+    "message": "Berria hemendik?"
   },
   "startTrial": {
     "message": "Hasi probaldia"
   },
   "logIn": {
     "message": "Hasi saioa"
+  },
+  "logInInitiated": {
+    "message": "Saioa hastea martxan da"
   },
   "submit": {
     "message": "Bidali"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Pasahitz nagusia berridaztea derrigorrezkoa da."
   },
-  "masterPasswordMinLength": {
-    "message": "Pasahitz nagusiak gutxienez 8 karaktere izan behar ditu."
+  "masterPasswordMinlength": {
+    "message": "Pasahitz nagusiak 8 karaktere izan behar ditu gutxienez."
   },
   "masterPassDoesntMatch": {
     "message": "Pasahitz nagusiaren egiaztatzea ez dator bat."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Zu ez zara inongo erakundekoa. Erakundeek elementuak beste erabiltzaile batzuekin modu seguruan partekatzeko aukera ematen dute."
+  },
+  "notificationSentDevice": {
+    "message": "Jakinarazpen bat bidali da zure gailura."
   },
   "versionNumber": {
     "message": "$VERSION_NUMBER$ bertsioa",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Ikusi erregistro guztiak ezarpenetan"
+  },
   "viewedItemId": {
     "message": "$ID$ elementua ikusia.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Zifratze-gakoen osotasuna bermatzeko, egiaztatu erabiltzailearen hatz-marka esaldia jarraitu aurretik.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "Inoiz ez da beharrezkoa gonbidatutako erabiltzaileentzat hatz-marka esaldiak egiaztatzea (ez da gomendatzen)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Birbidali gonbidapenak"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "Ekintza hau ezin zaie hautatutako erabiltzaileei aplikatu."

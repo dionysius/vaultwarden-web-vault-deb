@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Впишете се или създайте нов абонамент, за да достъпите защитен трезор."
   },
+  "loginWithDevice": {
+    "message": "Вписване с устройство"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Вписването с устройство трябва да е включено в настройките на мобилното приложение на Битуорден. Друга настройка ли търсите?"
+  },
   "createAccount": {
     "message": "Създаване на абонамент"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Стартиране на пробния период"
   },
   "logIn": {
     "message": "Вписване"
+  },
+  "logInInitiated": {
+    "message": "Вписването е стартирано"
   },
   "submit": {
     "message": "Подаване"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Повторното въвеждане на главната парола е задължително."
   },
-  "masterPasswordMinLength": {
-    "message": "Главната парола трябва да е с дължина поне 8 знака."
+  "masterPasswordMinlength": {
+    "message": "Главната парола трябва да е дълга поне 8 знака."
   },
   "masterPassDoesntMatch": {
     "message": "Главната парола и потвърждението ѝ не съвпадат."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Не сте член на никоя организация. Организациите позволяват да споделяте записи с други потребители по защитен начин."
+  },
+  "notificationSentDevice": {
+    "message": "Към устройството Ви е изпратено известие."
   },
   "versionNumber": {
     "message": "Версия $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Вижте всички възможности за вписване"
+  },
   "viewedItemId": {
     "message": "Запис № $ID$ е разгледан.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "За да опазите ключовете за шифриране, въведете уникалната фраза, идентифицираща абонамента ви.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Уверете се, че трезорът Ви е отключен и че Уникалната фраза съвпада с другото устройство."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Уникална фраза"
   },
   "dontAskFingerprintAgain": {
     "message": "Без повторно питане за уникалната фраза",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Изпращане на поканите наново"
+  },
+  "resendNotification": {
+    "message": "Повторно изпращане на известието"
   },
   "noSelectedUsersApplicable": {
     "message": "Това действие не може да се изпълни за никого от избраните потребители."

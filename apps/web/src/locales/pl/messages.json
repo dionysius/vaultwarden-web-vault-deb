@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Zaloguj się lub utwórz nowe konto, aby uzyskać dostęp do Twojego bezpiecznego sejfu."
   },
+  "loginWithDevice": {
+    "message": "Zaloguj się za pomocą urządzenia"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Logowanie za pomocą urządzenia musi być włączone w ustawieniach aplikacji mobilnej Bitwarden. Potrzebujesz innej opcji?"
+  },
   "createAccount": {
     "message": "Utwórz konto"
+  },
+  "newAroundHere": {
+    "message": "Jesteś tu nowy(a)?"
   },
   "startTrial": {
     "message": "Rozpocznij okres próbny"
   },
   "logIn": {
     "message": "Zaloguj się"
+  },
+  "logInInitiated": {
+    "message": "Logowanie rozpoczęte"
   },
   "submit": {
     "message": "Wyślij"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Wymagane jest ponowne wpisanie hasła głównego."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Hasło główne musi zawierać co najmniej 8 znaków."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Nie należysz do żadnej organizacji. Organizacje pozwalają na bezpieczne udostępnianie elementów innym użytkownikom."
+  },
+  "notificationSentDevice": {
+    "message": "Powiadomienie zostało wysłane na twoje urządzenie."
   },
   "versionNumber": {
     "message": "Wersja $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Zobacz wszystkie sposoby logowania"
+  },
   "viewedItemId": {
     "message": "Wyświetlono element $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Aby zapewnić integralność kluczy szyfrowania, zweryfikuj unikalny identyfikator użytkownika, zanim przejdziesz dalej.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Upewnij się, że twój sejf jest odblokowany i unikalny identyfikator konta pasuje do drugiego urządzenia."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Unikalny identyfikator konta"
   },
   "dontAskFingerprintAgain": {
     "message": "Nie pytaj ponownie o weryfikację unikalnego identyfikatora konta dla zaproszonych użytkowników (niezalecane)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Wyślij ponownie zaproszenia"
+  },
+  "resendNotification": {
+    "message": "Wyślij ponownie powiadomienie"
   },
   "noSelectedUsersApplicable": {
     "message": "Ta akcja nie dotyczy żadnych zaznaczonych użytkowników."

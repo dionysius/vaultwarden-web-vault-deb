@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Log in of maak een nieuw account aan om toegang te krijgen tot je beveiligde kluis."
   },
+  "loginWithDevice": {
+    "message": "Inloggen met apparaat"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Inloggen met apparaat moet zijn ingeschakeld in de instellingen van de mobiele Bitwarden-app. Een andere optie nodig?"
+  },
   "createAccount": {
     "message": "Account aanmaken"
+  },
+  "newAroundHere": {
+    "message": "Nieuw hier?"
   },
   "startTrial": {
     "message": "Start proefperiode"
   },
   "logIn": {
     "message": "Inloggen"
+  },
+  "logInInitiated": {
+    "message": "Inloggen gestart"
   },
   "submit": {
     "message": "Versturen"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Type je hoofdwachtwoord opnieuw in."
   },
-  "masterPasswordMinLength": {
-    "message": "Hoofdwachtwoord moet minimaal 8 tekens lang zijn."
+  "masterPasswordMinlength": {
+    "message": "Hoofdwachtwoord moet minstens 8 karakters lang zijn."
   },
   "masterPassDoesntMatch": {
     "message": "De hoofdwachtwoorden komen niet overeen."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Je behoort niet tot een organisatie. Via organisaties deel je je items veilig met andere gebruikers."
+  },
+  "notificationSentDevice": {
+    "message": "Er is een bericht naar je apparaat verstuurd."
   },
   "versionNumber": {
     "message": "Versie $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Alle loginopties bekijken"
+  },
   "viewedItemId": {
     "message": "Bekeken item $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Verzeker jezelf van de integriteit van je encryptiesleutels, controleer de vingerafdrukzin van de gebruiker voor je verder gaat.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Controleer of je kluis is ontgrendeld en de vingerafdrukzin overeenkomt met het andere apparaat."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Vingerafdrukzin"
   },
   "dontAskFingerprintAgain": {
     "message": "Niet meer vragen om de vingerafdrukzin te controleren",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Uitnodigingen opnieuw verzenden"
+  },
+  "resendNotification": {
+    "message": "Bericht opnieuw verzenden"
   },
   "noSelectedUsersApplicable": {
     "message": "Deze actie is niet van toepassing op de geselecteerde gebruikers."

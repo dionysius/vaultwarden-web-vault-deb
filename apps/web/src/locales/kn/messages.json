@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "ನಿಮ್ಮ ಸುರಕ್ಷಿತ ವಾಲ್ಟ್ ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಲಾಗ್ ಇನ್ ಮಾಡಿ ಅಥವಾ ಹೊಸ ಖಾತೆಯನ್ನು ರಚಿಸಿ."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "ಖಾತೆ ತೆರೆ"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Start Trial"
   },
   "logIn": {
     "message": "ಲಾಗಿನ್"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "ಒಪ್ಪಿಸು"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "ನೀವು ಯಾವುದೇ ಸಂಸ್ಥೆಗಳಿಗೆ ಸೇರಿಲ್ಲ. ಇತರ ಬಳಕೆದಾರರೊಂದಿಗೆ ವಸ್ತುಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಹಂಚಿಕೊಳ್ಳಲು ಸಂಘಟನೆಗಳು ನಿಮಗೆ ಅವಕಾಶ ನೀಡುತ್ತವೆ."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "ಆವೃತ್ತಿ $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "ವೀಕ್ಷಿಸಿದ ಐಟಂ $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "ನಿಮ್ಮ ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಕೀಗಳ ಸಮಗ್ರತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು, ದಯವಿಟ್ಟು ಮುಂದುವರಿಯುವ ಮೊದಲು ಬಳಕೆದಾರರ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ನುಡಿಗಟ್ಟು ಪರಿಶೀಲಿಸಿ.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "ಫಿಂಗರ್ಪ್ರಿಂಟ್ ನುಡಿಗಟ್ಟು ಮತ್ತೆ ಪರಿಶೀಲಿಸಲು ಕೇಳಬೇಡಿ",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "ಆಮಂತ್ರಣಗಳನ್ನು ಮರುಹೊಂದಿಸಿ"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "ಆಯ್ದ ಯಾವುದೇ ಬಳಕೆದಾರರಿಗೆ ಈ ಕ್ರಿಯೆ ಅನ್ವಯಿಸುವುದಿಲ್ಲ."

@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Logg på eller opprett en ny konto for å få tilgang til ditt sikre hvelv."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "Opprett en konto"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Start prøveperiode"
   },
   "logIn": {
     "message": "Logg på"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "Send inn"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Skriv inn hovedpassordet på nytt."
   },
-  "masterPasswordMinLength": {
-    "message": "Hovedpassordet må være minst åtte tegn."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Superpassord-bekreftelsen er ikke samsvarende."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Du tilhører ikke noen organisasjoner. Organisasjoner gjør det mulig for deg å trygt dele elementer med andre brukere."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "Versjon $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "Vist $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "For å sikre integriteten til krypteringsnøkene dine, vær vennlig å bekrefte brukerens fingeravtrykksfrase før du fortsetter.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "Ikke be om bekreftelse av fingeravtrykksfrase flere ganger",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Send invitasjoner på nytt"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "Denne handlingen er ikke relevant for noen av de valgte brukerne."

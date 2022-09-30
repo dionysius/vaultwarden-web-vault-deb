@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Inicie sessão ou crie uma nova conta para aceder ao seu cofre seguro."
   },
+  "loginWithDevice": {
+    "message": "Iniciar sessão com dispositivo"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "O início de sessão com o dispositivo deve ser ativado nas definições da aplicação móvel do Bitwarden. Necessita de outra opção?"
+  },
   "createAccount": {
     "message": "Criar conta"
+  },
+  "newAroundHere": {
+    "message": "Novo por aqui?"
   },
   "startTrial": {
     "message": "Iniciar avaliação"
   },
   "logIn": {
     "message": "Iniciar sessão"
+  },
+  "logInInitiated": {
+    "message": "A preparar o início de sessão"
   },
   "submit": {
     "message": "Submeter"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "É necessário reescrever a palavra-passe mestra."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "A palavra-passe mestra deve ter pelo menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Você não pertence a nenhuma organização. Organizações permitem-lhe partilhar itens em segurança com outros utilizadores."
+  },
+  "notificationSentDevice": {
+    "message": "Foi enviada uma notificação para o seu dispositivo."
   },
   "versionNumber": {
     "message": "Versão $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Ver todas as opções de início de sessão"
+  },
   "viewedItemId": {
     "message": "Item $ID$ visto.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Para assegurar a integridade das suas chaves de encriptação, por favor verifique a frase de impressão digital do utilizador antes de continuar.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Por favor, certifique-se de que o seu cofre está desbloqueado e a frase de impressão digital corresponde ao outro dispositivo."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Frase biométrica"
   },
   "dontAskFingerprintAgain": {
     "message": "Não perguntar para verificar frase de impressão digital novamente",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Reenviar convites"
+  },
+  "resendNotification": {
+    "message": "Reenviar notificação"
   },
   "noSelectedUsersApplicable": {
     "message": "This action is not applicable to any of the selected users."

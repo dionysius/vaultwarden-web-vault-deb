@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Masuk atau buat akun baru untuk mengakses brankas Anda."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "Buat Akun"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Mulai Masa Percobaan"
   },
   "logIn": {
     "message": "Masuk"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "Kirim"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "Diperlukan pengetikan ulang kata sandi utama."
   },
-  "masterPasswordMinLength": {
-    "message": "Kata sandi utama harus memiliki sekurang-kurangnya 8 karakter."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "Konfirmasi sandi utama tidak cocok."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Anda tidak berada dalam organisasi apapun. Organisasi memungkinkan Anda dengan aman berbagi item dengan pengguna lainnya."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "Versi $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "Melihat item $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Untuk memastikan integritas kunci enkripsi Anda, harap verifikasi frasa sidik jari pengguna sebelum melanjutkan.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "Jangan tanya untuk memverifikasi frase sidik jari lagi",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Kirim Ulang Undangan"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "This action is not applicable to any of the selected users."

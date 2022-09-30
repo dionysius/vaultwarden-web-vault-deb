@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Prijavi se ili stvori novi račun za pristup svojem sigurnom trezoru."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "Stvori račun"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "Start Trial"
   },
   "logIn": {
     "message": "Prijavi se"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "Pošalji"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Ne pripadaš niti jednoj organizaciji. Organizacije omogućuju sigurno dijeljenje stavki s drugim korisnicima."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "Verzija $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "Gledana stavka $ID$.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Kako bi se osgurala cjelovitost tvojih ključeva za šifriranje, provjeri korisnikovu jedinstvenu frazu prije nastavka.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "Ne pitaj više za potvrdu jedinstvene fraze (Nije pozeljno)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Ponovno slanje pozivnica"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "Ova radnja nije primjenjiva niti na jednog odabranog korisnika."

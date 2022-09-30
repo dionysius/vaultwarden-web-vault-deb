@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "安全なデータ保管庫へアクセスするためにログインまたはアカウントを作成してください。"
   },
+  "loginWithDevice": {
+    "message": "デバイスでログイン"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Bitwarden モバイルアプリの設定で有効化する必要があります。別のオプションが必要ですか？"
+  },
   "createAccount": {
     "message": "アカウントの作成"
+  },
+  "newAroundHere": {
+    "message": "初めてですか?"
   },
   "startTrial": {
     "message": "試用版を開始"
   },
   "logIn": {
     "message": "ログイン"
+  },
+  "logInInitiated": {
+    "message": "ログイン開始"
   },
   "submit": {
     "message": "送信"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "マスターパスワードの再入力が必要です。"
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "マスターパスワードは、少なくとも8文字以上で設定してください。"
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "あなたはどの組織にも属していません。組織では他のユーザーとアイテムを安全に共有できます。"
+  },
+  "notificationSentDevice": {
+    "message": "デバイスに通知を送信しました。"
   },
   "versionNumber": {
     "message": "バージョン $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "すべてのログインオプションを表示"
+  },
   "viewedItemId": {
     "message": "アイテム $ID$ を表示しました。",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "暗号化キーの完全性を確保するため、先にパスフレーズを確認してください。",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "保管庫がロックされていることと、パスフレーズが他のデバイスと一致していることを確認してください。"
+  },
+  "fingerprintPhraseHeader": {
+    "message": "パスフレーズ"
   },
   "dontAskFingerprintAgain": {
     "message": "今後パスフレーズを確認しない",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "招待を再送信"
+  },
+  "resendNotification": {
+    "message": "通知を再送信する"
   },
   "noSelectedUsersApplicable": {
     "message": "この操作は、選択されたユーザーには適用されません。"

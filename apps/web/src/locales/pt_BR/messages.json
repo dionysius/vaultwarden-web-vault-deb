@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Inicie a sessão ou crie uma nova conta para acessar seu cofre seguro."
   },
+  "loginWithDevice": {
+    "message": "Fazer login com dispositivo"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Login com dispositivo deve ser habilitado nas configurações do aplicativo móvel do Bitwarden. Necessita de outra opção?"
+  },
   "createAccount": {
     "message": "Criar Conta"
+  },
+  "newAroundHere": {
+    "message": "Novo por aqui?"
   },
   "startTrial": {
     "message": "Iniciar Período de Testes"
   },
   "logIn": {
     "message": "Iniciar Sessão"
+  },
+  "logInInitiated": {
+    "message": "Login iniciado"
   },
   "submit": {
     "message": "Enviar"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "A senha mestra é necessária."
   },
-  "masterPasswordMinLength": {
-    "message": "A senha mestra deve ter ao menos 8 caracteres."
+  "masterPasswordMinlength": {
+    "message": "A senha mestra deve possuir no mínimo 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "A confirmação da senha mestra não corresponde."
@@ -679,7 +691,7 @@
     "message": "Senha mestra inválida"
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Senha do arquivo inválida, por favor informe a senha utilizada quando criou o arquivo de exportação."
   },
   "lockNow": {
     "message": "Bloquear Agora"
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Você não pertence a nenhuma organização. Organizações permitem-lhe compartilhar itens em segurança com outros usuários."
+  },
+  "notificationSentDevice": {
+    "message": "Uma notificação foi enviada para seu dispositivo."
   },
   "versionNumber": {
     "message": "Versão $VERSION_NUMBER$",
@@ -894,46 +909,46 @@
     "message": "Formato do arquivo"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "Esta exportação de arquivo será protegida por senha e exigirá a senha do arquivo para descriptografar."
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Esta senha será usada para exportar e importar este arquivo"
   },
   "confirmMasterPassword": {
-    "message": "Confirm Master Password"
+    "message": "Confirme a Senha Mestra"
   },
   "confirmFormat": {
-    "message": "Confirm Format"
+    "message": "Confirmar Formato"
   },
   "filePassword": {
-    "message": "File Password"
+    "message": "Senha do Arquivo"
   },
   "confirmFilePassword": {
-    "message": "Confirm File Password"
+    "message": "Confirmar senha do arquivo"
   },
   "accountBackupOptionDescription": {
-    "message": "Use your account encryption key to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Usar sua chave de criptografia da conta para criptografar a exportação e restringir a importação apenas para a conta atual do Bitwarden."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Defina uma senha para criptografar a exportação e importá-la para qualquer conta do Bitwarden usando a senha para descriptografar."
   },
   "fileTypeHeading": {
-    "message": "File Type"
+    "message": "Tipo de arquivo"
   },
   "accountBackup": {
-    "message": "Account Backup"
+    "message": "Backup da Conta"
   },
   "passwordProtected": {
-    "message": "Password Protected"
+    "message": "Protegido por Senha"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm File Password“ do not match."
+    "message": "\"Senha do arquivo\" e \"Confirmação de senha\" não correspondem."
   },
   "confirmVaultImport": {
-    "message": "Confirm Vault Import"
+    "message": "Confirmar Importação do Cofre"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Este arquivo é protegido por senha. Por favor, digite a senha do arquivo para importar os dados."
   },
   "exportSuccess": {
     "message": "Os dados do seu cofre foram exportados."
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Ver todas as opções de login"
+  },
   "viewedItemId": {
     "message": "Item $ID$ visualizado.",
     "placeholders": {
@@ -3303,7 +3321,7 @@
     "message": "Organização está desabilitada."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Itens em Organizações Desativadas não podem ser acessados. Entre em contato com o proprietário da sua Organização para obter ajuda."
   },
   "licenseIsExpired": {
     "message": "A licença está expirada."
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Para garantir a integridade de suas chaves de criptografia, verifique a frase biométrica do usuário antes de continuar.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Por favor, certifique-se de que o seu cofre esteja desbloqueado e a frase de identificação corresponda ao outro dispositivo."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Frase de identificação"
   },
   "dontAskFingerprintAgain": {
     "message": "Não peça para verificar a frase biométrica novamente",
@@ -3769,7 +3793,7 @@
     "message": "Desativado"
   },
   "revoked": {
-    "message": "Revoked"
+    "message": "Revogado"
   },
   "sendLink": {
     "message": "Link do Send",
@@ -4058,10 +4082,10 @@
     "message": "Permissões"
   },
   "managerPermissions": {
-    "message": "Manager Permissions"
+    "message": "Permissões de Gerente"
   },
   "adminPermissions": {
-    "message": "Admin Permissions"
+    "message": "Permissões de Administrador"
   },
   "accessEventLogs": {
     "message": "Acessar Registro de Eventos"
@@ -4372,6 +4396,9 @@
   "reinviteSelected": {
     "message": "Reenviar Convites"
   },
+  "resendNotification": {
+    "message": "Reenviar notificação"
+  },
   "noSelectedUsersApplicable": {
     "message": "Esta ação não é aplicável a nenhum dos usuários selecionados."
   },
@@ -4379,10 +4406,10 @@
     "message": "Tem certeza de que deseja remover os seguintes usuários? O processo pode levar alguns segundos para ser concluído e não pode ser interrompido ou cancelado."
   },
   "removeOrgUsersConfirmation": {
-    "message": "When member(s) are removed, they no longer have access to organization data and this action is irreversible. To add the member back to the organization, they must be invited and onboarded again. The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Quando membro(s) são removidos, eles não têm acesso aos dados da organização e esta ação é irreversível. Para adicionar o membro de volta à organização, ele deve ser convidado e integrado novamente. O processo pode demorar alguns segundos para ser concluído e não pode ser interrompido ou cancelado."
   },
   "revokeUsersWarning": {
-    "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
+    "message": "Quando membro(s) são revogados, eles não têm mais acesso aos dados da organização. Para restaurar o acesso rapidamente, vá para a aba Revogados. O processo pode demorar alguns segundos para ser concluído e não pode ser interrompido ou cancelado."
   },
   "theme": {
     "message": "Tema"
@@ -4415,10 +4442,10 @@
     "message": "Removido com sucesso"
   },
   "bulkRevokedMessage": {
-    "message": "Revoked organization access successfully"
+    "message": "Acesso à organização revogado com sucesso"
   },
   "bulkRestoredMessage": {
-    "message": "Restored organization access successfully"
+    "message": "Acesso à organização restaurado com sucesso"
   },
   "bulkFilteredMessage": {
     "message": "Excluído, não aplicável para esta ação."
@@ -4430,10 +4457,10 @@
     "message": "Remover Usuários"
   },
   "revokeUsers": {
-    "message": "Revoke Users"
+    "message": "Revogar Usuários"
   },
   "restoreUsers": {
-    "message": "Restore Users"
+    "message": "Restaurar Usuários"
   },
   "error": {
     "message": "Erro"
@@ -5272,60 +5299,60 @@
     }
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Assinatura Premium necessária"
   },
   "scim": {
-    "message": "SCIM Provisioning",
+    "message": "Provisionamento de SCIM",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "message": "Provisionar automaticamente usuários e grupos com seu provedor de identidade preferido via provisionamento de SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
-    "message": "Enable SCIM",
+    "message": "Habilitar SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "message": "Configure seu provedor de identidade preferido, configurando a URL e a chave de API SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
-    "message": "This API key has access to manage users within your organization. It should be kept secret."
+    "message": "Esta chave de API tem acesso para gerenciar os usuários da sua organização. Deve ser mantida em segredo."
   },
   "copyScimKey": {
-    "message": "Copy the SCIM API Key to your clipboard",
+    "message": "Copie a chave API do SCIM para a área de transferência",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Rotate the SCIM API Key",
+    "message": "Rotacionar a chave API SCIM",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
+    "message": "Você tem certeza que deseja rotacionar a chave de API SCIM? A chave atual não funcionará mais para quaisquer integrações existentes.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotate Key"
+    "message": "Rotacionar chave"
   },
   "scimApiKey": {
-    "message": "SCIM API Key",
+    "message": "Chave de API do SCIM",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {
-    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "message": "Copie a URL do endpoint SCIM para a área de transferência",
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimUrl": {
-    "message": "SCIM URL",
+    "message": "URL do SCIM",
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "The SCIM API Key has been successfully rotated",
+    "message": "A chave de API SCIM foi rotacionada com sucesso",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "SCIM settings have been saved successfully",
+    "message": "As configurações de SCIM foram salvas com sucesso",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
@@ -5362,6 +5389,6 @@
     "message": "Mir"
   },
   "numberOfUsers": {
-    "message": "Number of users"
+    "message": "Número de usuários"
   }
 }

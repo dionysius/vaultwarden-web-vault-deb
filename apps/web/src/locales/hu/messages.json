@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Bejelentkezés vagy új fiók létrehozása a biztonsági széf eléréséhez."
   },
+  "loginWithDevice": {
+    "message": "Bejelentkezés eszközzel"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Az eszközzel történő bejelentkezést engedélyezni kell a Biwarden mobilalkalmazás beállításaiban. Másik opcióra van szükség?"
+  },
   "createAccount": {
     "message": "Fiók létrehozása"
+  },
+  "newAroundHere": {
+    "message": "Új felhasználó vagyunk?"
   },
   "startTrial": {
     "message": "Próbaverzió indítása"
   },
   "logIn": {
     "message": "Bejelentkezés"
+  },
+  "logInInitiated": {
+    "message": "A bejelentkezés elindításra került."
   },
   "submit": {
     "message": "Elküldés"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "A mesterjelszó ismételt megadása kötelező."
   },
-  "masterPasswordMinLength": {
-    "message": "A mesterjelszó legyen legalább 8 karakter hosszú."
+  "masterPasswordMinlength": {
+    "message": "A mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
   },
   "masterPassDoesntMatch": {
     "message": "A megadott két jelszó nem egyezik meg."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Még nem tartozunk egyik szervezethez sem. A szervezetek lehetővé teszik az elemek megosztását más felhasználókkal."
+  },
+  "notificationSentDevice": {
+    "message": "A rendszer értesítést küldött az eszközre."
   },
   "versionNumber": {
     "message": "Verzió: $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Összes bejelentkezési opció megtekintése"
+  },
   "viewedItemId": {
     "message": "$ID$ azonosítójú elem megtekintésre került.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "A titkosítási kulcs integritásának biztosítása érdekében ellenőrizzük a felhasználói ujjlenyomat kifejezést a folytatás előtt.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Ellenőrizzük, hogy a széf feloldásra került és az Ujjlenyomat kifejezés egyezik a másik eszközével."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Ujjlenyomat kifejezés"
   },
   "dontAskFingerprintAgain": {
     "message": "Soha ne kérjükk a meghívottak ujjlenyomat kifejezésének ellenőrzését (nem ajánlott)",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "Meghívó újraküldése"
+  },
+  "resendNotification": {
+    "message": "Értesítés újraküldése"
   },
   "noSelectedUsersApplicable": {
     "message": "Ez a művelet a kiválasztott felhasználók egyikére sem alkalmazható."

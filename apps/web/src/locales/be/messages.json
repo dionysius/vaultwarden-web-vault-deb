@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Увайдзіце або стварыце новы ўліковы запіс для доступу да бяспечнага сховішча."
   },
+  "loginWithDevice": {
+    "message": "Увайсці з прыладай"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Неабходна ўключыць уваход з прыладай у наладах мабільнай праграмы Bitwarden. Неабходны іншы варыянт?"
+  },
   "createAccount": {
     "message": "Стварыць уліковы запіс"
+  },
+  "newAroundHere": {
+    "message": "Упершыню тут?"
   },
   "startTrial": {
     "message": "Пачаць выпрабавальны перыяд"
   },
   "logIn": {
     "message": "Увайсці"
+  },
+  "logInInitiated": {
+    "message": "Ініцыяваны ўваход"
   },
   "submit": {
     "message": "Адправіць"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Неабходна паўторна ўвесці асноўны пароль."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "Асноўны пароль павінен змяшчаць прынамсі 8 сімвалаў."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "Вы не належыце да ніводнай арганізацыі. Арганізацыі дазваляюць бяспечна абменьвацца элементамі з іншымі карыстальнікамі."
+  },
+  "notificationSentDevice": {
+    "message": "Апавяшчэнне было адпраўлена на вашу прыладу."
   },
   "versionNumber": {
     "message": "Версія $VERSION_NUMBER$",
@@ -1303,10 +1318,10 @@
     "description": "Premium Membership"
   },
   "premiumMembership": {
-    "message": "Прэміяльны ўдзельнік"
+    "message": "Прэміяльны статус"
   },
   "premiumRequired": {
-    "message": "Патрабуецца прэміум"
+    "message": "Патрабуецца прэміяльны статус"
   },
   "premiumRequiredDesc": {
     "message": "Для выкарыстання гэтай функцыі патрабуецца прэміяльны статус."
@@ -1756,7 +1771,7 @@
     "message": "Вы абнавіліся да прэміяльнай версіі."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Абнавіце свой уліковы запіс да платнай версіі і разблакіруйце некаторыя цудоўныя дадатковыя функцыі."
+    "message": "Абнавіце свой уліковы запіс да прэміяльнага статусу і разблакіруйце некаторыя цудоўныя дадатковыя функцыі."
   },
   "premiumSignUpStorage": {
     "message": "1 ГБ зашыфраванага сховішча для далучаных файлаў."
@@ -2045,7 +2060,7 @@
     }
   },
   "uploadLicenseFilePremium": {
-    "message": "Для паляпшэння вашага ўліковага запісу да прэміяльнага ўдзельніка вам неабходна запампаваць сапраўдны файл з ліцэнзіяй."
+    "message": "Для паляпшэння вашага ўліковага запісу да прэміяльнага статусу вам неабходна запампаваць сапраўдны файл з ліцэнзіяй."
   },
   "uploadLicenseFileOrg": {
     "message": "Для стварэння арганізацыі, якая будзе размешчана на лакальным хостынгу, вам неабходна запампаваць сапраўдны файл з ліцэнзіяй."
@@ -2278,7 +2293,7 @@
     "message": "Вы ўпэўнены, што хочаце выйсці з гэтай арганізацыі?"
   },
   "leftOrganization": {
-    "message": "Вы пакінулі арганізацыю."
+    "message": "Вы выйшлі з арганізацыі."
   },
   "defaultCollection": {
     "message": "Прадвызначаная калекцыя"
@@ -2531,6 +2546,9 @@
         "example": "'Google'"
       }
     }
+  },
+  "viewAllLoginOptions": {
+    "message": "Паглядзець усе варыянты ўваходу"
   },
   "viewedItemId": {
     "message": "Прагледжаны элемент $ID$.",
@@ -3318,7 +3336,7 @@
     "message": "Уладальнік"
   },
   "whoOwnsThisItem": {
-    "message": "Хто валодае гэтым элементам?"
+    "message": "Каму належыць гэты элемент?"
   },
   "strong": {
     "message": "Надзейны",
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Для забеспячэння цэласнасці вашых ключоў шыфравання, калі ласка, праверце фразу адбітка пальца карыстальніка.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Пераканайцеся, што ваша сховішча разблакіравана, а фраза адбітка пальца супадае з іншай прыладай."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Фраза адбітка пальца"
   },
   "dontAskFingerprintAgain": {
     "message": "Ніколі не пытаць пра праверку фразы адбітку пальца для запрошаных карыстальнікаў (не рэкамендуецца)",
@@ -4372,6 +4396,9 @@
   "reinviteSelected": {
     "message": "Паўторна адправіць запрашэнні"
   },
+  "resendNotification": {
+    "message": "Адправіць апавяшчэнне паўторна"
+  },
   "noSelectedUsersApplicable": {
     "message": "Гэта дзеянне нельга ўжыць для ніводнага з выбраных карыстальнікаў."
   },
@@ -5162,7 +5189,7 @@
     "message": "Тып імя карыстальніка"
   },
   "plusAddressedEmail": {
-    "message": "Плюс адрасы электроннай пошты",
+    "message": "Адрасы электроннай пошты з плюсам",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {

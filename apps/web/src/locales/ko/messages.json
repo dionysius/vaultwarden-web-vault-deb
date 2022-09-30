@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "안전 보관함에 접근하려면 로그인하거나 새 계정을 만드세요."
   },
+  "loginWithDevice": {
+    "message": "Log in with device"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+  },
   "createAccount": {
     "message": "계정 만들기"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
   },
   "startTrial": {
     "message": "평가판 시작"
   },
   "logIn": {
     "message": "로그인"
+  },
+  "logInInitiated": {
+    "message": "Log in initiated"
   },
   "submit": {
     "message": "보내기"
@@ -635,8 +647,8 @@
   "confirmMasterPasswordRequired": {
     "message": "마스터 비밀번호를 재입력해야 합니다."
   },
-  "masterPasswordMinLength": {
-    "message": "마스터 비밀번호는 최소 8자 이상이어야 합니다."
+  "masterPasswordMinlength": {
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
     "message": "마스터 비밀번호 확인과 마스터 비밀번호가 일치하지 않습니다."
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "당신은 어떤 조직에도 속해있지 않습니다. 조직은 다른 사용자들과 안전하게 항목을 공유할 수 있게 해줍니다."
+  },
+  "notificationSentDevice": {
+    "message": "A notification has been sent to your device."
   },
   "versionNumber": {
     "message": "버전 $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "View all log in options"
+  },
   "viewedItemId": {
     "message": "$ID$ 항목을 확인했습니다.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "암호화 키의 무결성을 확인하려면 계속하기 전에 사용자의 지문 구문을 확인하십시오.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Fingerprint phrase"
   },
   "dontAskFingerprintAgain": {
     "message": "지문 구절을 다시 확인하지 않음",
@@ -4371,6 +4395,9 @@
   },
   "reinviteSelected": {
     "message": "초대장 다시 보내기"
+  },
+  "resendNotification": {
+    "message": "Resend notification"
   },
   "noSelectedUsersApplicable": {
     "message": "이 작업은 선택한 사용자에게 적용할 수 없습니다."

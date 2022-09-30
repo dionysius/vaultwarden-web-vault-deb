@@ -569,14 +569,26 @@
   "loginOrCreateNewAccount": {
     "message": "Identifícate o crea una nueva cuenta para acceder a tu caja fuerte."
   },
+  "loginWithDevice": {
+    "message": "Iniciar sesión con el dispositivo"
+  },
+  "loginWithDeviceEnabledInfo": {
+    "message": "Iniciar sesión con el dispositivo debe estar habilitado en los ajustes de la aplicación móvil Bitwarden. ¿Necesitas otra opción?"
+  },
   "createAccount": {
     "message": "Crear cuenta"
+  },
+  "newAroundHere": {
+    "message": "¿Nuevo por aquí?"
   },
   "startTrial": {
     "message": "Iniciar período de prueba"
   },
   "logIn": {
     "message": "Identificarse"
+  },
+  "logInInitiated": {
+    "message": "Inicio de sesión en proceso"
   },
   "submit": {
     "message": "Enviar"
@@ -635,7 +647,7 @@
   "confirmMasterPasswordRequired": {
     "message": "Se requiere volver a teclear la contraseña maestra."
   },
-  "masterPasswordMinLength": {
+  "masterPasswordMinlength": {
     "message": "La contraseña maestra debe tener al menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
@@ -704,6 +716,9 @@
   },
   "noOrganizationsList": {
     "message": "No perteneces a ninguna organización. Las organizaciones te permiten compartir elementos con otros usuarios de forma segura."
+  },
+  "notificationSentDevice": {
+    "message": "Se ha enviado una notificación a tu dispositivo."
   },
   "versionNumber": {
     "message": "Versión $VERSION_NUMBER$",
@@ -2532,6 +2547,9 @@
       }
     }
   },
+  "viewAllLoginOptions": {
+    "message": "Ver todas las opciones de inicio de sesión"
+  },
   "viewedItemId": {
     "message": "Elemento $ID$ visto.",
     "placeholders": {
@@ -3371,6 +3389,12 @@
   "fingerprintEnsureIntegrityVerify": {
     "message": "Para asegurar la integridad de sus claves de encriptación, por favor verifique la frase de la huella digital del usuario antes de continuar.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "fingerprintMatchInfo": {
+    "message": "Por favor, asegúrese de que su bóveda está desbloqueada y la frase de huella dactilar coincide con el otro dispositivo."
+  },
+  "fingerprintPhraseHeader": {
+    "message": "Frase de huella dactilar"
   },
   "dontAskFingerprintAgain": {
     "message": "No pida verificar la frase de la huella dactilar de nuevo",
@@ -4372,6 +4396,9 @@
   "reinviteSelected": {
     "message": "Reenviar invitaciones"
   },
+  "resendNotification": {
+    "message": "Reenviar notificación"
+  },
   "noSelectedUsersApplicable": {
     "message": "Esta acción no es aplicable a ninguno de los usuarios seleccionados."
   },
@@ -4720,13 +4747,13 @@
     "message": "URL del servicio de inicio de sesión único"
   },
   "idpSingleLogoutServiceUrl": {
-    "message": "Single Log Out Service URL"
+    "message": "URL del Servicio Único de Cierre de Sesión (SLO)"
   },
   "idpX509PublicCert": {
     "message": "Certificado público X509"
   },
   "idpOutboundSigningAlgorithm": {
-    "message": "Outbound Signing Algorithm"
+    "message": "Algoritmo de firma saliente"
   },
   "idpAllowUnsolicitedAuthnResponse": {
     "message": "Permitir respuestas de autenticación no solicitadas"
@@ -4738,7 +4765,7 @@
     "message": "Solicitud de inicio de sesión"
   },
   "ssoSettingsSaved": {
-    "message": "Single Sign-On configuration was saved."
+    "message": "Se ha guardado la configuración única de inicio de sesión."
   },
   "sponsoredFamilies": {
     "message": "Familias Bitwarden gratis"
@@ -4747,7 +4774,7 @@
     "message": "Usted y su familia son elegibles para Familias Bitwarden Gratis. Canjeé con su correo electrónico personal para mantener tus datos seguros incluso cuando no estés en el trabajo."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Redeem your Free Bitwarden for Families plan today to keep your data secure even when you are not at work."
+    "message": "Reclame su plan gratuito de Bitwarden para Familias, para mantener sus datos seguros, incluso cuando no se encuentra en el trabajo."
   },
   "sponsoredFamiliesInclude": {
     "message": "El plan de Bitwarden para familias incluye"
@@ -4756,10 +4783,10 @@
     "message": "Acceso Premium para hasta 6 usuarios"
   },
   "sponsoredFamiliesSharedCollections": {
-    "message": "Shared collections for Family secrets"
+    "message": "Colecciones compartidas para Secretos Familiares"
   },
   "badToken": {
-    "message": "The link is no longer valid. Please have the sponsor resend the offer."
+    "message": "El enlace ya no es válido. Por favor, solicite al patrocinados que vuelva a enviar la oferta."
   },
   "reclaimedFreePlan": {
     "message": "Plan gratis canjeado"
@@ -4771,10 +4798,10 @@
     "message": "Seleccione la organización que desea patrocinar"
   },
   "familiesSponsoringOrgSelect": {
-    "message": "Which Free Families offer would you like to redeem?"
+    "message": "¿Cuál oferta gratuita para familias te gustaría canjear?"
   },
   "sponsoredFamiliesEmail": {
-    "message": "Enter your personal email to redeem Bitwarden Families"
+    "message": "Ingrese su correo personal para reclamar Bitwarden para Familias"
   },
   "sponsoredFamiliesLeaveCopy": {
     "message": "Si eliminas una oferta o la eliminas de la organización patrocinadora, el patrocinio de tu familia caducará en la próxima fecha de renovación."
@@ -5017,7 +5044,7 @@
     "message": "Autoalojamiento"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
+    "message": "Para configurar su organización en su propio servidor, necesitará subir su archivo de licencia. Para apoyar planes de Familias gratuitos y capacidades avanzadas de facturación para su organización autosuficiente, necesitará configurar la sincronización de facturación."
   },
   "billingSyncApiKeyRotated": {
     "message": "Token rotado."
@@ -5185,10 +5212,10 @@
     "message": "Servicio"
   },
   "unknownCipher": {
-    "message": "Unknown Item, you may need to request permission to access this item."
+    "message": "Elemento desconocido, puede que necesite solicitar permiso para acceder a este elemento."
   },
   "cannotSponsorSelf": {
-    "message": "You cannot redeem for the active account. Enter a different email."
+    "message": "No se puede canjear para la cuenta activa. Escriba un correo diferente."
   },
   "revokeWhenExpired": {
     "message": "Caduca $DATE$",
@@ -5222,7 +5249,7 @@
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
-    "message": "Self-hosted sponsorships synced."
+    "message": "Los patrocinios autohospedados están sincronizados."
   },
   "billingManagedByProvider": {
     "message": "Gestionado por $PROVIDER$",
