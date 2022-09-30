@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "văzut ultima dată la $DATE$",
+    "message": "văzut ultima dată pe: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

@@ -2002,13 +2002,13 @@
     "message": "Serverversion"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Lokalt installerad"
   },
   "thirdParty": {
     "message": "Tredje part"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Ansluten till implementering på tredjepartsserver, $SERVERNAME$. Verifiera buggar med den officiella servern eller rapportera dem till tredjepartsservern.",
     "placeholders": {
       "servername": {
         "content": "$1",
