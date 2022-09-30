@@ -303,7 +303,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         env:
           IMAGE_NAME: ${{ matrix.image_name }}
-        run: docker tag bitwardenqa.azurecr.io/web "bitwardenqa.azurecr.io/$IMAGE_NAME:dev"
+        run: docker tag bitwardenqa.azurecr.io/$IMAGE_NAME "bitwardenqa.azurecr.io/$IMAGE_NAME:dev"
 
       - name: Push image
         env:
