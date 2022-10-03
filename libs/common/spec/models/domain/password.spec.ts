@@ -1,7 +1,8 @@
 import { PasswordHistoryData } from "@bitwarden/common/models/data/passwordHistoryData";
+import { EncString } from "@bitwarden/common/models/domain/encString";
 import { Password } from "@bitwarden/common/models/domain/password";
 
-import { mockEnc } from "../../utils";
+import { mockEnc, mockFromJson } from "../../utils";
 
 describe("Password", () => {
   let data: PasswordHistoryData;
@@ -46,6 +47,28 @@ describe("Password", () => {
     expect(view).toEqual({
       password: "password",
       lastUsedDate: new Date("2022-01-31T12:00:00.000Z"),
+    });
+  });
+
+  describe("fromJSON", () => {
+    it("initializes nested objects", () => {
+      jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
+      const lastUsedDate = new Date("2022-01-31T12:00:00.000Z");
+
+      const actual = Password.fromJSON({
+        password: "myPassword",
+        lastUsedDate: lastUsedDate.toISOString(),
+      });
+
+      expect(actual).toEqual({
+        password: "myPassword_fromJSON",
+        lastUsedDate: lastUsedDate,
+      });
+      expect(actual).toBeInstanceOf(Password);
+    });
+
+    it("returns null if object is null", () => {
+      expect(Password.fromJSON(null)).toBeNull();
     });
   });
 });

@@ -8,6 +8,8 @@ import { LoginView } from "@bitwarden/common/models/view/loginView";
 import { PasswordHistoryView } from "@bitwarden/common/models/view/passwordHistoryView";
 import { SecureNoteView } from "@bitwarden/common/models/view/secureNoteView";
 
+import { mockFromJson } from "../../utils";
+
 jest.mock("@bitwarden/common/models/view/loginView");
 jest.mock("@bitwarden/common/models/view/attachmentView");
 jest.mock("@bitwarden/common/models/view/fieldView");
@@ -22,8 +24,6 @@ describe("CipherView", () => {
   });
 
   describe("fromJSON", () => {
-    const mockFromJson = (stub: any) => (stub + "_fromJSON") as any;
-
     it("initializes nested objects", () => {
       jest.spyOn(AttachmentView, "fromJSON").mockImplementation(mockFromJson);
       jest.spyOn(FieldView, "fromJSON").mockImplementation(mockFromJson);

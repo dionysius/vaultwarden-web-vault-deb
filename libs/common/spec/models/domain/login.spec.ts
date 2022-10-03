@@ -2,11 +2,12 @@ import { Substitute, Arg } from "@fluffy-spoon/substitute";
 
 import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 import { LoginData } from "@bitwarden/common/models/data/loginData";
+import { EncString } from "@bitwarden/common/models/domain/encString";
 import { Login } from "@bitwarden/common/models/domain/login";
 import { LoginUri } from "@bitwarden/common/models/domain/loginUri";
 import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
 
-import { mockEnc } from "../../utils";
+import { mockEnc, mockFromJson } from "../../utils";
 
 describe("Login DTO", () => {
   it("Convert from empty LoginData", () => {
@@ -97,5 +98,34 @@ describe("Login DTO", () => {
     const loginData = login.toLoginData();
 
     expect(loginData).toEqual(data);
+  });
+
+  describe("fromJSON", () => {
+    it("initializes nested objects", () => {
+      jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
+      jest.spyOn(LoginUri, "fromJSON").mockImplementation(mockFromJson);
+      const passwordRevisionDate = new Date("2022-01-31T12:00:00.000Z");
+
+      const actual = Login.fromJSON({
+        uris: ["loginUri1", "loginUri2"] as any,
+        username: "myUsername",
+        password: "myPassword",
+        passwordRevisionDate: passwordRevisionDate.toISOString(),
+        totp: "myTotp",
+      });
+
+      expect(actual).toEqual({
+        uris: ["loginUri1_fromJSON", "loginUri2_fromJSON"] as any,
+        username: "myUsername_fromJSON",
+        password: "myPassword_fromJSON",
+        passwordRevisionDate: passwordRevisionDate,
+        totp: "myTotp_fromJSON",
+      });
+      expect(actual).toBeInstanceOf(Login);
+    });
+
+    it("returns null if object is null", () => {
+      expect(Login.fromJSON(null)).toBeNull();
+    });
   });
 });

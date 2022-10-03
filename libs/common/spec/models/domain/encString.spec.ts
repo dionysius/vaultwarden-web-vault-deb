@@ -226,5 +226,9 @@ describe("EncString", () => {
 
       expect(encString.toJSON()).toBe(encString.encryptedString);
     });
+
+    it("returns null if object is null", () => {
+      expect(EncString.fromJSON(null)).toBeNull();
+    });
   });
 });

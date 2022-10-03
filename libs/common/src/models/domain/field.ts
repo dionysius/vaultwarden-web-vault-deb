@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { FieldType } from "../../enums/fieldType";
 import { LinkedIdType } from "../../enums/linkedIdType";
 import { FieldData } from "../data/fieldData";
@@ -58,5 +60,19 @@ export class Field extends Domain {
       ["type", "linkedId"]
     );
     return f;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<Field>>): Field {
+    if (obj == null) {
+      return null;
+    }
+
+    const name = EncString.fromJSON(obj.name);
+    const value = EncString.fromJSON(obj.value);
+
+    return Object.assign(new Field(), obj, {
+      name,
+      value,
+    });
   }
 }

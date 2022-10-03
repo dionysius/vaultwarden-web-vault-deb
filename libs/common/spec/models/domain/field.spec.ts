@@ -1,8 +1,9 @@
 import { FieldType } from "@bitwarden/common/enums/fieldType";
 import { FieldData } from "@bitwarden/common/models/data/fieldData";
+import { EncString } from "@bitwarden/common/models/domain/encString";
 import { Field } from "@bitwarden/common/models/domain/field";
 
-import { mockEnc } from "../../utils";
+import { mockEnc, mockFromJson } from "../../utils";
 
 describe("Field", () => {
   let data: FieldData;
@@ -59,6 +60,27 @@ describe("Field", () => {
       newField: false,
       showCount: false,
       showValue: false,
+    });
+  });
+
+  describe("fromJSON", () => {
+    it("initializes nested objects", () => {
+      jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
+
+      const actual = Field.fromJSON({
+        name: "myName",
+        value: "myValue",
+      });
+
+      expect(actual).toEqual({
+        name: "myName_fromJSON",
+        value: "myValue_fromJSON",
+      });
+      expect(actual).toBeInstanceOf(Field);
+    });
+
+    it("returns null if object is null", () => {
+      expect(Field.fromJSON(null)).toBeNull();
     });
   });
 });

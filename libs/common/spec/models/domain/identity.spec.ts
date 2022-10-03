@@ -1,7 +1,8 @@
 import { IdentityData } from "@bitwarden/common/models/data/identityData";
+import { EncString } from "@bitwarden/common/models/domain/encString";
 import { Identity } from "@bitwarden/common/models/domain/identity";
 
-import { mockEnc } from "../../utils";
+import { mockEnc, mockFromJson } from "../../utils";
 
 describe("Identity", () => {
   let data: IdentityData;
@@ -129,6 +130,59 @@ describe("Identity", () => {
       state: "mockState",
       title: "mockTitle",
       username: "mockUsername",
+    });
+  });
+
+  describe("fromJSON", () => {
+    it("initializes nested objects", () => {
+      jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
+
+      const actual = Identity.fromJSON({
+        firstName: "mockFirstName",
+        lastName: "mockLastName",
+        address1: "mockAddress1",
+        address2: "mockAddress2",
+        address3: "mockAddress3",
+        city: "mockCity",
+        company: "mockCompany",
+        country: "mockCountry",
+        email: "mockEmail",
+        licenseNumber: "mockLicenseNumber",
+        middleName: "mockMiddleName",
+        passportNumber: "mockPassportNumber",
+        phone: "mockPhone",
+        postalCode: "mockPostalCode",
+        ssn: "mockSsn",
+        state: "mockState",
+        title: "mockTitle",
+        username: "mockUsername",
+      });
+
+      expect(actual).toEqual({
+        firstName: "mockFirstName_fromJSON",
+        lastName: "mockLastName_fromJSON",
+        address1: "mockAddress1_fromJSON",
+        address2: "mockAddress2_fromJSON",
+        address3: "mockAddress3_fromJSON",
+        city: "mockCity_fromJSON",
+        company: "mockCompany_fromJSON",
+        country: "mockCountry_fromJSON",
+        email: "mockEmail_fromJSON",
+        licenseNumber: "mockLicenseNumber_fromJSON",
+        middleName: "mockMiddleName_fromJSON",
+        passportNumber: "mockPassportNumber_fromJSON",
+        phone: "mockPhone_fromJSON",
+        postalCode: "mockPostalCode_fromJSON",
+        ssn: "mockSsn_fromJSON",
+        state: "mockState_fromJSON",
+        title: "mockTitle_fromJSON",
+        username: "mockUsername_fromJSON",
+      });
+      expect(actual).toBeInstanceOf(Identity);
+    });
+
+    it("returns null if object is null", () => {
+      expect(Identity.fromJSON(null)).toBeNull();
     });
   });
 });

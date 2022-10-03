@@ -8,7 +8,7 @@ import { EncString } from "@bitwarden/common/models/domain/encString";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 
-import { makeStaticByteArray, mockEnc } from "../../utils";
+import { makeStaticByteArray, mockEnc, mockFromJson } from "../../utils";
 
 describe("Attachment", () => {
   let data: AttachmentData;
@@ -129,6 +129,27 @@ describe("Attachment", () => {
         expect(cryptoService.getKeyForUserEncryption).toHaveBeenCalled();
         expect(encryptService.decryptToBytes).toHaveBeenCalledWith(attachment.key, userKey);
       });
+    });
+  });
+
+  describe("fromJSON", () => {
+    it("initializes nested objects", () => {
+      jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
+
+      const actual = Attachment.fromJSON({
+        key: "myKey",
+        fileName: "myFileName",
+      });
+
+      expect(actual).toEqual({
+        key: "myKey_fromJSON",
+        fileName: "myFileName_fromJSON",
+      });
+      expect(actual).toBeInstanceOf(Attachment);
+    });
+
+    it("returns null if object is null", () => {
+      expect(Attachment.fromJSON(null)).toBeNull();
     });
   });
 });

@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { LoginData } from "../data/loginData";
 import { LoginView } from "../view/loginView";
 
@@ -84,5 +86,26 @@ export class Login extends Domain {
     }
 
     return l;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<Login>>): Login {
+    if (obj == null) {
+      return null;
+    }
+
+    const username = EncString.fromJSON(obj.username);
+    const password = EncString.fromJSON(obj.password);
+    const totp = EncString.fromJSON(obj.totp);
+    const passwordRevisionDate =
+      obj.passwordRevisionDate == null ? null : new Date(obj.passwordRevisionDate);
+    const uris = obj.uris?.map((uri: any) => LoginUri.fromJSON(uri));
+
+    return Object.assign(new Login(), obj, {
+      username,
+      password,
+      totp,
+      passwordRevisionDate: passwordRevisionDate,
+      uris: uris,
+    });
   }
 }

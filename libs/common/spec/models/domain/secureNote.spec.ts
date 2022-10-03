@@ -43,4 +43,10 @@ describe("SecureNote", () => {
       type: 0,
     });
   });
+
+  describe("fromJSON", () => {
+    it("returns null if object is null", () => {
+      expect(SecureNote.fromJSON(null)).toBeNull();
+    });
+  });
 });

@@ -1,8 +1,11 @@
+import { Jsonify } from "type-fest";
+
 import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 import { LoginUriData } from "@bitwarden/common/models/data/loginUriData";
+import { EncString } from "@bitwarden/common/models/domain/encString";
 import { LoginUri } from "@bitwarden/common/models/domain/loginUri";
 
-import { mockEnc } from "../../utils";
+import { mockEnc, mockFromJson } from "../../utils";
 
 describe("LoginUri", () => {
   let data: LoginUriData;
@@ -52,6 +55,25 @@ describe("LoginUri", () => {
       _hostname: null,
       _uri: "uri",
       match: 3,
+    });
+  });
+
+  describe("fromJSON", () => {
+    it("initializes nested objects", () => {
+      jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
+
+      const actual = LoginUri.fromJSON({
+        uri: "myUri",
+      } as Jsonify<LoginUri>);
+
+      expect(actual).toEqual({
+        uri: "myUri_fromJSON",
+      });
+      expect(actual).toBeInstanceOf(LoginUri);
+    });
+
+    it("returns null if object is null", () => {
+      expect(LoginUri.fromJSON(null)).toBeNull();
     });
   });
 });

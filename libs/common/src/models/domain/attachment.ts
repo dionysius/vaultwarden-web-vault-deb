@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { Utils } from "../../misc/utils";
 import { AttachmentData } from "../data/attachmentData";
 import { AttachmentView } from "../view/attachmentView";
@@ -89,5 +91,19 @@ export class Attachment extends Domain {
       ["id", "url", "sizeName"]
     );
     return a;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<Attachment>>): Attachment {
+    if (obj == null) {
+      return null;
+    }
+
+    const key = EncString.fromJSON(obj.key);
+    const fileName = EncString.fromJSON(obj.fileName);
+
+    return Object.assign(new Attachment(), obj, {
+      key,
+      fileName,
+    });
   }
 }

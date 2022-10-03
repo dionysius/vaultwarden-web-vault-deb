@@ -1,7 +1,8 @@
 import { CardData } from "@bitwarden/common/models/data/cardData";
 import { Card } from "@bitwarden/common/models/domain/card";
+import { EncString } from "@bitwarden/common/models/domain/encString";
 
-import { mockEnc } from "../../utils";
+import { mockEnc, mockFromJson } from "../../utils";
 
 describe("Card", () => {
   let data: CardData;
@@ -68,6 +69,35 @@ describe("Card", () => {
       code: "code",
       expMonth: "expMonth",
       expYear: "expYear",
+    });
+  });
+
+  describe("fromJSON", () => {
+    it("initializes nested objects", () => {
+      jest.spyOn(EncString, "fromJSON").mockImplementation(mockFromJson);
+
+      const actual = Card.fromJSON({
+        cardholderName: "mockCardHolder",
+        brand: "mockBrand",
+        number: "mockNumber",
+        expMonth: "mockExpMonth",
+        expYear: "mockExpYear",
+        code: "mockCode",
+      });
+
+      expect(actual).toEqual({
+        cardholderName: "mockCardHolder_fromJSON",
+        brand: "mockBrand_fromJSON",
+        number: "mockNumber_fromJSON",
+        expMonth: "mockExpMonth_fromJSON",
+        expYear: "mockExpYear_fromJSON",
+        code: "mockCode_fromJSON",
+      });
+      expect(actual).toBeInstanceOf(Card);
+    });
+
+    it("returns null if object is null", () => {
+      expect(Card.fromJSON(null)).toBeNull();
     });
   });
 });

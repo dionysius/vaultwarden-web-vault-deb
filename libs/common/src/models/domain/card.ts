@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { CardData } from "../data/cardData";
 import { CardView } from "../view/cardView";
 
@@ -61,5 +63,26 @@ export class Card extends Domain {
       code: null,
     });
     return c;
+  }
+
+  static fromJSON(obj: Partial<Jsonify<Card>>): Card {
+    if (obj == null) {
+      return null;
+    }
+
+    const cardholderName = EncString.fromJSON(obj.cardholderName);
+    const brand = EncString.fromJSON(obj.brand);
+    const number = EncString.fromJSON(obj.number);
+    const expMonth = EncString.fromJSON(obj.expMonth);
+    const expYear = EncString.fromJSON(obj.expYear);
+    const code = EncString.fromJSON(obj.code);
+    return Object.assign(new Card(), obj, {
+      cardholderName,
+      brand,
+      number,
+      expMonth,
+      expYear,
+      code,
+    });
   }
 }

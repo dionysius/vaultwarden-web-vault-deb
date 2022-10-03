@@ -1,3 +1,5 @@
+import { Jsonify } from "type-fest";
+
 import { UriMatchType } from "../../enums/uriMatchType";
 import { LoginUriData } from "../data/loginUriData";
 import { LoginUriView } from "../view/loginUriView";
@@ -50,5 +52,16 @@ export class LoginUri extends Domain {
       ["match"]
     );
     return u;
+  }
+
+  static fromJSON(obj: Jsonify<LoginUri>): LoginUri {
+    if (obj == null) {
+      return null;
+    }
+
+    const uri = EncString.fromJSON(obj.uri);
+    return Object.assign(new LoginUri(), obj, {
+      uri,
+    });
   }
 }
