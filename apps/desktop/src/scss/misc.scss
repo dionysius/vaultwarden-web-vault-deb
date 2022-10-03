@@ -112,6 +112,10 @@ p.lead {
   border: 0 !important;
 }
 
+:not(:focus) > .exists-only-on-parent-focus {
+  display: none;
+}
+
 .totp {
   .totp-code {
     font-family: $font-family-monospace;

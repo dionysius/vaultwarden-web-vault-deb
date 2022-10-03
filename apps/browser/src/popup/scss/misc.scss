@@ -146,6 +146,10 @@ p.lead {
   border: 0 !important;
 }
 
+:not(:focus) > .exists-only-on-parent-focus {
+  display: none;
+}
+
 .password-wrapper {
   overflow-wrap: break-word;
   white-space: pre-wrap;
