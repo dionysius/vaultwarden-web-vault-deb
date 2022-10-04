@@ -57,8 +57,8 @@ export class BillingComponent extends OrganizationPlansComponent {
   async ngOnInit() {
     const additionalSeats = this.product == ProductType.Families ? 0 : 1;
     this.formGroup.patchValue({
-      name: this.orgInfoForm.get("name")?.value,
-      billingEmail: this.orgInfoForm.get("email")?.value,
+      name: this.orgInfoForm.value.name,
+      billingEmail: this.orgInfoForm.value.email,
       additionalSeats: additionalSeats,
       plan: this.plan,
       product: this.product,

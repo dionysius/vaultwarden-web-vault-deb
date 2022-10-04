@@ -73,6 +73,10 @@
       {
         "message": "Calling `svgIcon` directly is not allowed",
         "selector": "CallExpression[callee.name='svgIcon']"
+      },
+      {
+        "message": "Accessing FormGroup using `get` is not allowed, use `.value` instead",
+        "selector": "ChainExpression[expression.object.callee.property.name='get'][expression.property.name='value']"
       }
     ],
     "curly": ["error", "all"],

@@ -135,7 +135,7 @@ export class LoginComponent extends BaseLoginComponent {
   }
 
   async goAfterLogIn() {
-    const masterPassword = this.formGroup.get("masterPassword")?.value;
+    const masterPassword = this.formGroup.value.masterPassword;
 
     // Check master password against policy
     if (this.enforcedPasswordPolicyOptions != null) {
@@ -170,7 +170,7 @@ export class LoginComponent extends BaseLoginComponent {
   }
 
   async submit() {
-    const rememberEmail = this.formGroup.get("rememberEmail")?.value;
+    const rememberEmail = this.formGroup.value.rememberEmail;
 
     await this.stateService.setRememberEmail(rememberEmail);
     if (!rememberEmail) {
@@ -192,7 +192,7 @@ export class LoginComponent extends BaseLoginComponent {
   }
 
   private getPasswordStrengthUserInput() {
-    const email = this.formGroup.get("email")?.value;
+    const email = this.formGroup.value.email;
     let userInput: string[] = [];
     const atPosition = email.indexOf("@");
     if (atPosition > -1) {
