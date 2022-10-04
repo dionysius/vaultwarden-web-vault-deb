@@ -98,7 +98,11 @@ jobs:
           SECRETS: |
             aws-electron-access-id,
             aws-electron-access-key,
-            aws-electron-bucket-name
+            aws-electron-bucket-name,
+            r2-electron-access-id,
+            r2-electron-access-key,
+            r2-electron-bucket-name,
+            cf-prod-account
         run: |
           for i in ${SECRETS//,/ }
           do
@@ -144,6 +148,21 @@ jobs:
           --acl "public-read" \
           --recursive \
           --quiet
+
+      - name: Publish artifacts to R2
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.r2-electron-access-id }}
+          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.r2-electron-access-key }}
+          AWS_DEFAULT_REGION: 'us-east-1'
+          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.r2-electron-bucket-name }}
+          CF_ACCOUNT: ${{ steps.retrieve-secrets.outputs.cf-prod-account }}
+        working-directory: apps/desktop/artifacts
+        run: |
+          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
+          --recursive \
+          --quiet \
+          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
 
       - name: Create release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09  # v2.8.5
