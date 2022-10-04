@@ -1,7 +1,7 @@
 import { Directive, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { take } from "rxjs/operators";
+import { Subject } from "rxjs";
+import { concatMap, take, takeUntil } from "rxjs/operators";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
@@ -41,7 +41,7 @@ export class LockComponent implements OnInit, OnDestroy {
   private invalidPinAttempts = 0;
   private pinSet: [boolean, boolean];
 
-  private activeAccountSubscription: Subscription;
+  private destroy$ = new Subject<void>();
 
   constructor(
     protected router: Router,
@@ -60,14 +60,19 @@ export class LockComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit() {
-    // eslint-disable-next-line rxjs/no-async-subscribe
-    this.activeAccountSubscription = this.stateService.activeAccount$.subscribe(async () => {
-      await this.load();
-    });
+    this.stateService.activeAccount$
+      .pipe(
+        concatMap(async () => {
+          await this.load();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
   }
 
   ngOnDestroy() {
-    this.activeAccountSubscription.unsubscribe();
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async submit() {
