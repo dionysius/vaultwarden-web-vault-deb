@@ -1,0 +1,17 @@
+---
+name: Staged Rollout Desktop
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  setup:
+    name: Stub
+    runs-on: ubuntu-22.04
+    steps:
+      - name: TEST
+        run: exit 0
