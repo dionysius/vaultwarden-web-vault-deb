@@ -117,6 +117,7 @@ export class ExportComponent implements OnInit, OnDestroy {
       await this.userVerificationService.verifyUser(secret);
     } catch (e) {
       this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), e.message);
+      return;
     }
 
     this.doExport();
