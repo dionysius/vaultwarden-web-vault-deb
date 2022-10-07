@@ -37,9 +37,11 @@ export class LoginWithDeviceComponent
   onSuccessfulLoginTwoFactorNavigate: () => Promise<any>;
   onSuccessfulLogin: () => Promise<any>;
   onSuccessfulLoginNavigate: () => Promise<any>;
+  onSuccessfulLoginForceResetNavigate: () => Promise<any>;
 
   protected twoFactorRoute = "2fa";
   protected successRoute = "vault";
+  protected forcePasswordResetRoute = "update-temp-password";
   private authRequestKeyPair: [publicKey: ArrayBuffer, privateKey: ArrayBuffer];
 
   constructor(
@@ -119,14 +121,29 @@ export class LoginWithDeviceComponent
       }
 
       const credentials = await this.buildLoginCredntials(requestId, response);
-      await this.authService.logIn(credentials);
-      if (this.onSuccessfulLogin != null) {
-        this.onSuccessfulLogin();
-      }
-      if (this.onSuccessfulLoginNavigate != null) {
-        this.onSuccessfulLoginNavigate();
+      const loginResponse = await this.authService.logIn(credentials);
+
+      if (loginResponse.requiresTwoFactor) {
+        if (this.onSuccessfulLoginTwoFactorNavigate != null) {
+          this.onSuccessfulLoginTwoFactorNavigate();
+        } else {
+          this.router.navigate([this.twoFactorRoute]);
+        }
+      } else if (loginResponse.forcePasswordReset) {
+        if (this.onSuccessfulLoginForceResetNavigate != null) {
+          this.onSuccessfulLoginForceResetNavigate();
+        } else {
+          this.router.navigate([this.forcePasswordResetRoute]);
+        }
       } else {
-        this.router.navigate([this.successRoute]);
+        if (this.onSuccessfulLogin != null) {
+          this.onSuccessfulLogin();
+        }
+        if (this.onSuccessfulLoginNavigate != null) {
+          this.onSuccessfulLoginNavigate();
+        } else {
+          this.router.navigate([this.successRoute]);
+        }
       }
     } catch (error) {
       this.logService.error(error);
