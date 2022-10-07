@@ -50,6 +50,7 @@ module.exports = {
         muted: rgba("--color-text-muted"),
         contrast: rgba("--color-text-contrast"),
         alt2: rgba("--color-text-alt2"),
+        code: rgba("--color-text-code"),
       },
       background: {
         DEFAULT: rgba("--color-background"),
@@ -62,6 +63,7 @@ module.exports = {
       muted: rgba("--color-text-muted"),
       contrast: rgba("--color-text-contrast"),
       alt2: rgba("--color-text-alt2"),
+      code: rgba("--color-text-code"),
       success: rgba("--color-success-500"),
       danger: rgba("--color-danger-500"),
       warning: rgba("--color-warning-500"),

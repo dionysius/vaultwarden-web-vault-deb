@@ -30,6 +30,7 @@
   --color-text-muted: 109 117 126;
   --color-text-contrast: 255 255 255;
   --color-text-alt2: 255 255 255;
+  --color-text-code: 192 17 118;
 
   --tw-ring-offset-color: #ffffff;
 }
@@ -70,6 +71,7 @@
   --color-text-muted: 186 192 206;
   --color-text-contrast: 25 30 38;
   --color-text-alt2: 255 255 255;
+  --color-text-code: 240 141 199;
 
   --tw-ring-offset-color: #1f242e;
 }
