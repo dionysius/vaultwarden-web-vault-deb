@@ -1,0 +1,63 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Component Library/Async Actions/Standalone/Documentation" />
+
+# Standalone Async Actions
+
+These directives should be used when building a standalone button that triggers a long running task in the background,
+eg. Refresh buttons. For non-submit buttons that are associated with forms see [Async Actions In Forms](?path=/story/component-library-async-actions-in-forms-documentation--page).
+
+## Usage
+
+Adding async actions to standalone buttons requires the following 2 steps
+
+### 1. Add a handler to your `Component`
+
+A handler is a function that returns a promise or an observable. Functions that return `void` are also supported which is
+useful for aborting an action.
+
+**NOTE:** Defining the handlers as arrow-functions assigned to variables is mandatory if the handler needs access to the parent
+component using the variable `this`.
+
+#### Example using promises
+
+```ts
+@Component({...})
+class PromiseExampleComponent {
+  handler = async () => {
+    if (/* perform guard check */) {
+      return;
+    }
+
+    await this.apiService.post(/* ... */);
+  };
+}
+```
+
+#### Example using observables
+
+```ts
+@Component({...})
+class Component {
+  handler = () => {
+    if (/* perform guard check */) {
+      return;
+    }
+
+    return this.apiService.post$(/* ... */);
+  };
+}
+```
+
+### 2. Add directive to the DOM element
+
+Add the `bitAction` directive and supply the handler defined in step 1.
+
+**NOTE:** The `directive` is defined using the input syntax: `[input]="handler"`.
+This is different from how click handlers are usually defined with the output syntax `(click)="handler()"`.
+
+```html
+<button bitButton [bitAction]="handler">Do action</button>
+
+<button bitIconButton="bwi-trash" [bitAction]="handler"></button>`;
+```

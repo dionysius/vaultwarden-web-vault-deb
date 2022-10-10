@@ -1,11 +1,9 @@
-import { Injectable } from "@angular/core";
+import { I18nService } from "../abstractions/i18n.service";
+import { PlatformUtilsService } from "../abstractions/platformUtils.service";
+import { ValidationService as ValidationServiceAbstraction } from "../abstractions/validation.service";
+import { ErrorResponse } from "../models/response/errorResponse";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
-
-@Injectable()
-export class ValidationService {
+export class ValidationService implements ValidationServiceAbstraction {
   constructor(
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService

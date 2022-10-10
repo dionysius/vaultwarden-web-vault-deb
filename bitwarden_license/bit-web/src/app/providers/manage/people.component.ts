@@ -5,7 +5,6 @@ import { first } from "rxjs/operators";
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
-import { ValidationService } from "@bitwarden/angular/services/validation.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
@@ -14,6 +13,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
 import { ProviderUserStatusType } from "@bitwarden/common/enums/providerUserStatusType";
 import { ProviderUserType } from "@bitwarden/common/enums/providerUserType";
 import { ProviderUserBulkRequest } from "@bitwarden/common/models/request/provider/providerUserBulkRequest";

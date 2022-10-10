@@ -339,6 +339,12 @@ export class Utils {
     return str == null || typeof str !== "string" || str == "";
   }
 
+  static isPromise(obj: any): obj is Promise<unknown> {
+    return (
+      obj != undefined && typeof obj["then"] === "function" && typeof obj["catch"] === "function"
+    );
+  }
+
   static nameOf<T>(name: string & keyof T) {
     return name;
   }
