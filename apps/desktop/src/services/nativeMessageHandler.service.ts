@@ -182,12 +182,25 @@ export class NativeMessageHandlerService {
       this.ddgSharedSecret = SymmetricCryptoKey.fromJSON({ keyB64: storedKey });
     }
 
-    return JSON.parse(
-      await this.cryptoService.decryptToUtf8(
+    try {
+      let decryptedResult = await this.cryptoService.decryptToUtf8(
         message.encryptedCommand as EncString,
         this.ddgSharedSecret
-      )
-    );
+      );
+
+      decryptedResult = this.trimNullCharsFromMessage(decryptedResult);
+
+      return JSON.parse(decryptedResult);
+    } catch {
+      this.sendResponse({
+        messageId: message.messageId,
+        version: NativeMessagingVersion.Latest,
+        payload: {
+          error: "cannot-decrypt",
+        },
+      });
+      return;
+    }
   }
 
   private async sendEncryptedResponse(
@@ -217,5 +230,24 @@ export class NativeMessageHandlerService {
 
   private sendResponse(response: EncryptedMessageResponse | UnencryptedMessageResponse) {
     ipcRenderer.send("nativeMessagingReply", response);
+  }
+
+  // Trim all null bytes padded at the end of messages. This happens with C encryption libraries.
+  private trimNullCharsFromMessage(message: string): string {
+    const charNull = 0;
+    const charRightCurlyBrace = 125;
+    const charRightBracket = 93;
+
+    for (let i = message.length - 1; i >= 0; i--) {
+      if (message.charCodeAt(i) === charNull) {
+        message = message.substring(0, message.length - 1);
+      } else if (
+        message.charCodeAt(i) === charRightCurlyBrace ||
+        message.charCodeAt(i) === charRightBracket
+      ) {
+        break;
+      }
+    }
+    return message;
   }
 }
