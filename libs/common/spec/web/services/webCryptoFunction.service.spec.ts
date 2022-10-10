@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { Substitute } from "@fluffy-spoon/substitute";
 
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";

@@ -1,6 +1,7 @@
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { ActivatedRoute } from "@angular/router";
+// eslint-disable-next-line no-restricted-imports
 import { Substitute } from "@fluffy-spoon/substitute";
 import { mock, MockProxy } from "jest-mock-extended";
 

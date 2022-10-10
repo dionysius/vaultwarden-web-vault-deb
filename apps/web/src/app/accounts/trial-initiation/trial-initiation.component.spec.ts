@@ -5,6 +5,7 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from "@angular/core/testin
 import { FormBuilder, UntypedFormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
+// eslint-disable-next-line no-restricted-imports
 import { Substitute } from "@fluffy-spoon/substitute";
 import { BehaviorSubject } from "rxjs";
 

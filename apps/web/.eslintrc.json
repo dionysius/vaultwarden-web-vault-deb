@@ -12,7 +12,8 @@
           "**/app/shared/*",
           "@bitwarden/web-vault/*",
           "src/**/*"
-        ]
+        ],
+        "paths": ["@fluffy-spoon/substitute"]
       }
     ]
   }

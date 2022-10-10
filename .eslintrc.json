@@ -101,7 +101,10 @@
         ]
       }
     ],
-    "no-restricted-imports": ["error", { "patterns": ["src/**/*"] }]
+    "no-restricted-imports": [
+      "error",
+      { "patterns": ["src/**/*"], "paths": ["@fluffy-spoon/substitute"] }
+    ]
   },
   "overrides": [
     {

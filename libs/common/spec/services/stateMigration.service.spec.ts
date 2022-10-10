@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";

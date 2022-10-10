@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { Substitute, Arg } from "@fluffy-spoon/substitute";
 import { Jsonify } from "type-fest";
 

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
