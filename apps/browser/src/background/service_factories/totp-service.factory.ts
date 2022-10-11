@@ -14,7 +14,7 @@ export type TotpServiceInitOptions = TotpServiceOptions &
   CryptoFunctionServiceInitOptions &
   LogServiceInitOptions;
 
-export function totpServiceFacotry(
+export function totpServiceFactory(
   cache: { totpService?: AbstractTotpService } & CachedServices,
   opts: TotpServiceInitOptions
 ): Promise<AbstractTotpService> {

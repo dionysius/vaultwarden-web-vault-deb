@@ -6,7 +6,7 @@ import { EventServiceInitOptions, eventServiceFactory } from "./event-service.fa
 import { CachedServices, factory, FactoryOptions } from "./factory-options";
 import { logServiceFactory, LogServiceInitOptions } from "./log-service.factory";
 import { stateServiceFactory, StateServiceInitOptions } from "./state-service.factory";
-import { totpServiceFacotry, TotpServiceInitOptions } from "./totp-service.factory";
+import { totpServiceFactory, TotpServiceInitOptions } from "./totp-service.factory";
 
 type AutoFillServiceOptions = FactoryOptions;
 
@@ -29,7 +29,7 @@ export function autofillServiceFactory(
       new AutofillService(
         await cipherServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
-        await totpServiceFacotry(cache, opts),
+        await totpServiceFactory(cache, opts),
         await eventServiceFactory(cache, opts),
         await logServiceFactory(cache, opts)
       )
