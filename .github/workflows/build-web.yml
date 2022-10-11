@@ -119,11 +119,15 @@ jobs:
         working-directory: apps/web
         run: npm run ${{ matrix.npm_command }}
 
+      - name: Package artifact
+        working-directory: apps/web
+        run: zip -r web-${{ env._VERSION }}-${{ matrix.name }}.zip build
+
       - name: Upload ${{ matrix.name }} artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:
           name: web-${{ env._VERSION }}-${{ matrix.name }}.zip
-          path: apps/web/build
+          path: apps/web/web-${{ env._VERSION }}-${{ matrix.name }}.zip
           if-no-files-found: error
 
   build-commercial-selfhost-image:
@@ -153,7 +157,11 @@ jobs:
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
         with:
           name: web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
-          path: apps/web/build
+          path: apps/web
+
+      - name: Extract artifact
+        working-directory: apps/web
+        run: unzip web-${{ env._VERSION }}-selfhosted-COMMERCIAL.zip
 
       - name: Build Docker image
         working-directory: apps/web
@@ -268,7 +276,11 @@ jobs:
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
         with:
           name: web-${{ env._VERSION }}-${{ matrix.artifact_name }}.zip
-          path: apps/web/build
+          path: apps/web
+
+      - name: Extract artifact
+        working-directory: apps/web
+        run: unzip web-${{ env._VERSION }}-${{ matrix.artifact_name }}.zip
 
       - name: Build Docker image
         working-directory: apps/web
