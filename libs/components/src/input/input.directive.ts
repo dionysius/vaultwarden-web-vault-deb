@@ -1,13 +1,16 @@
 import { Directive, HostBinding, Input, Optional, Self } from "@angular/core";
 import { NgControl, Validators } from "@angular/forms";
 
+import { BitFormFieldControl } from "../form-field/form-field-control";
+
 // Increments for each instance of this component
 let nextId = 0;
 
 @Directive({
   selector: "input[bitInput], select[bitInput], textarea[bitInput]",
+  providers: [{ provide: BitFormFieldControl, useExisting: BitInputDirective }],
 })
-export class BitInputDirective {
+export class BitInputDirective implements BitFormFieldControl {
   @HostBinding("class") @Input() get classList() {
     return [
       "tw-block",
@@ -37,6 +40,10 @@ export class BitInputDirective {
   @HostBinding() @Input() id = `bit-input-${nextId++}`;
 
   @HostBinding("attr.aria-describedby") ariaDescribedBy: string;
+
+  get labelForId(): string {
+    return this.id;
+  }
 
   @HostBinding("attr.aria-invalid") get ariaInvalid() {
     return this.hasError ? true : undefined;
