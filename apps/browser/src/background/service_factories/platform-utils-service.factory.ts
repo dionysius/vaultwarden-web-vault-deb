@@ -28,7 +28,8 @@ export function platformUtilsServiceFactory(
       new BrowserPlatformUtilsService(
         await messagingServiceFactory(cache, opts),
         opts.platformUtilsServiceOptions.clipboardWriteCallback,
-        opts.platformUtilsServiceOptions.biometricCallback
+        opts.platformUtilsServiceOptions.biometricCallback,
+        opts.platformUtilsServiceOptions.win
       )
   );
 }

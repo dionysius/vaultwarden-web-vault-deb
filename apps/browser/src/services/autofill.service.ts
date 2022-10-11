@@ -172,14 +172,10 @@ export default class AutofillService implements AutofillServiceInterface {
       } else {
         cipher = await this.cipherService.getLastUsedForUrl(tab.url, true);
       }
-
-      if (cipher == null) {
-        return null;
-      }
     }
 
-    if (cipher.reprompt !== CipherRepromptType.None) {
-      return;
+    if (cipher == null || cipher.reprompt !== CipherRepromptType.None) {
+      return null;
     }
 
     const totpCode = await this.doAutoFill({

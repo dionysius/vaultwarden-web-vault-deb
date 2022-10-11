@@ -247,7 +247,8 @@ export default class MainBackground {
 
           return promise.then((result) => result.response === "unlocked");
         }
-      }
+      },
+      window
     );
     this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
     this.encryptService = new EncryptService(this.cryptoFunctionService, this.logService, true);

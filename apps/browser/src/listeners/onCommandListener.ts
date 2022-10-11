@@ -1,27 +1,15 @@
+import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { GlobalState } from "@bitwarden/common/models/domain/globalState";
-import { AuthService } from "@bitwarden/common/services/auth.service";
-import { CipherService } from "@bitwarden/common/services/cipher.service";
-import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
-import { EncryptService } from "@bitwarden/common/services/encrypt.service";
-import { NoopEventService } from "@bitwarden/common/services/noopEvent.service";
-import { SearchService } from "@bitwarden/common/services/search.service";
-import { SettingsService } from "@bitwarden/common/services/settings.service";
-import { StateMigrationService } from "@bitwarden/common/services/stateMigration.service";
-import { WebCryptoFunctionService } from "@bitwarden/common/services/webCryptoFunction.service";
 
+import { authServiceFactory } from "../background/service_factories/auth-service.factory";
+import { autofillServiceFactory } from "../background/service_factories/autofill-service.factory";
+import { CachedServices } from "../background/service_factories/factory-options";
+import { logServiceFactory } from "../background/service_factories/log-service.factory";
+import { BrowserApi } from "../browser/browserApi";
 import { AutoFillActiveTabCommand } from "../commands/autoFillActiveTabCommand";
 import { Account } from "../models/account";
-import { StateService as AbstractStateService } from "../services/abstractions/state.service";
-import AutofillService from "../services/autofill.service";
-import { BrowserCryptoService } from "../services/browserCrypto.service";
-import BrowserLocalStorageService from "../services/browserLocalStorage.service";
-import BrowserPlatformUtilsService from "../services/browserPlatformUtils.service";
-import I18nService from "../services/i18n.service";
-import { KeyGenerationService } from "../services/keyGeneration.service";
-import { LocalBackedSessionStorageService } from "../services/localBackedSessionStorage.service";
-import { StateService } from "../services/state.service";
 
 export const onCommandListener = async (command: string, tab: chrome.tabs.Tab) => {
   switch (command) {
@@ -32,100 +20,44 @@ export const onCommandListener = async (command: string, tab: chrome.tabs.Tab) =
 };
 
 const doAutoFillLogin = async (tab: chrome.tabs.Tab): Promise<void> => {
-  const logService = new ConsoleLogService(false);
-
-  const cryptoFunctionService = new WebCryptoFunctionService(self);
-
-  const storageService = new BrowserLocalStorageService();
-
-  const secureStorageService = new BrowserLocalStorageService();
-
-  const memoryStorageService = new LocalBackedSessionStorageService(
-    new EncryptService(cryptoFunctionService, logService, false),
-    new KeyGenerationService(cryptoFunctionService)
-  );
-
-  const stateFactory = new StateFactory(GlobalState, Account);
-
-  const stateMigrationService = new StateMigrationService(
-    storageService,
-    secureStorageService,
-    stateFactory
-  );
-
-  const stateService: AbstractStateService = new StateService(
-    storageService,
-    secureStorageService,
-    memoryStorageService, // AbstractStorageService
-    logService,
-    stateMigrationService,
-    stateFactory
-  );
-
-  await stateService.init();
-
-  const platformUtils = new BrowserPlatformUtilsService(
-    null, // MessagingService
-    null, // clipboardWriteCallback
-    null // biometricCallback
-  );
-
-  const cryptoService = new BrowserCryptoService(
-    cryptoFunctionService,
-    null, // AbstractEncryptService
-    platformUtils,
-    logService,
-    stateService
-  );
-
-  const settingsService = new SettingsService(stateService);
-
-  const i18nService = new I18nService(chrome.i18n.getUILanguage());
-
-  await i18nService.init();
-
-  // Don't love this pt.1
-  let searchService: SearchService = null;
-
-  const cipherService = new CipherService(
-    cryptoService,
-    settingsService,
-    null, // ApiService
-    null, // FileUploadService,
-    i18nService,
-    () => searchService, // Don't love this pt.2
-    logService,
-    stateService
-  );
-
-  // Don't love this pt.3
-  searchService = new SearchService(cipherService, logService, i18nService);
-
-  // TODO: Remove this before we encourage anyone to start using this
-  const eventService = new NoopEventService();
-
-  const autofillService = new AutofillService(
-    cipherService,
-    stateService,
-    null, // TotpService
-    eventService,
-    logService
-  );
-
-  const authService = new AuthService(
-    cryptoService, // CryptoService
-    null, // ApiService
-    null, // TokenService
-    null, // AppIdService
-    platformUtils,
-    null, // MessagingService
-    logService,
-    null, // KeyConnectorService
-    null, // EnvironmentService
-    stateService,
-    null, // TwoFactorService
-    i18nService
-  );
+  const cachedServices: CachedServices = {};
+  const opts = {
+    cryptoFunctionServiceOptions: {
+      win: self,
+    },
+    encryptServiceOptions: {
+      logMacFailures: true,
+    },
+    logServiceOptions: {
+      isDev: false,
+    },
+    platformUtilsServiceOptions: {
+      clipboardWriteCallback: () => Promise.resolve(),
+      biometricCallback: () => Promise.resolve(false),
+      win: self,
+    },
+    stateServiceOptions: {
+      stateFactory: new StateFactory(GlobalState, Account),
+    },
+    stateMigrationServiceOptions: {
+      stateFactory: new StateFactory(GlobalState, Account),
+    },
+    apiServiceOptions: {
+      logoutCallback: () => Promise.resolve(),
+    },
+    keyConnectorServiceOptions: {
+      logoutCallback: () => Promise.resolve(),
+    },
+    i18nServiceOptions: {
+      systemLanguage: BrowserApi.getUILanguage(self),
+    },
+    cipherServiceOptions: {
+      searchServiceFactory: null as () => SearchService, // No dependence on search service
+    },
+  };
+  const logService = await logServiceFactory(cachedServices, opts);
+  const authService = await authServiceFactory(cachedServices, opts);
+  const autofillService = await autofillServiceFactory(cachedServices, opts);
 
   const authStatus = await authService.getAuthStatus();
   if (authStatus < AuthenticationStatus.Unlocked) {
