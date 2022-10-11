@@ -3,15 +3,121 @@ name: Staged Rollout Desktop
 
 on:
   workflow_dispatch:
+    inputs:
+      rollout_percentage:
+        description: 'Staged Rollout Percentage'
+        required: true
+        default: '10'
+        type: string
 
 defaults:
   run:
     shell: bash
 
 jobs:
-  setup:
-    name: Stub
+  rollout:
+    name: Update Rollout Percentage
     runs-on: ubuntu-22.04
+    outputs:
+      release-version: ${{ steps.version.outputs.version }}
+      release-channel: ${{ steps.release-channel.outputs.channel }}
     steps:
-      - name: TEST
-        run: exit 0
+      - name: Login to Azure
+        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010
+        with:
+          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+
+      - name: Retrieve secrets
+        id: retrieve-secrets
+        uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "aws-electron-access-id,
+            aws-electron-access-key,
+            aws-electron-bucket-name,
+            r2-electron-access-id,
+            r2-electron-access-key,
+            r2-electron-bucket-name,
+            cf-prod-account"
+
+      - name: Download channel update info files from S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
+          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
+          AWS_DEFAULT_REGION: 'us-west-2'
+          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
+        run: |
+          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest.yml . \
+          --quiet
+          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest-linux.yml . \
+          --quiet
+          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest-mac.yml . \
+          --quiet
+
+      - name: Download channel update info files from R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.r2-electron-access-id }}
+          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.r2-electron-access-key }}
+          AWS_DEFAULT_REGION: 'us-east-1'
+          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.r2-electron-bucket-name }}
+          CF_ACCOUNT: ${{ steps.retrieve-secrets.outputs.cf-prod-account }}
+        run: |
+          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest.yml . \
+          --quiet \
+          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
+          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest-linux.yml . \
+          --quiet \
+          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
+          aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest-mac.yml . \
+          --quiet \
+          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
+
+      - name: Check new rollout percentage
+        env:
+          NEW_PCT: ${{ github.event.inputs.rollout_percentage }}
+        run: |
+          CURRENT_PCT=$(sed -r -n "s/stagingPercentage:\s([0-9]+)/\1/p" latest.yml)
+          echo "Current percentage: ${CURRENT_PCT}"
+          echo "New percentage: ${NEW_PCT}"
+          echo
+          if [ "$NEW_PCT" -le "$CURRENT_PCT" ]; then
+            echo "New percentage (${NEW_PCT}) must be higher than current percentage (${CURRENT_PCT})!"
+            echo
+            echo "If you want to pull a staged release because it hasn’t gone well, you must increment the version \
+                  number higher than your broken release. Because some of your users will be on the broken 1.0.1, \
+                  releasing a new 1.0.1 would result in them staying on a broken version.”
+            exit 1
+          fi
+
+      - name: Set staged rollout percentage
+        env:
+          ROLLOUT_PCT: ${{ github.event.inputs.rollout_percentage }}
+        run: |
+          sed -i -r "/stagingPercentage/s/[0-9]+/${ROLLOUT_PCT}/" latest.yml
+          sed -i -r "/stagingPercentage/s/[0-9]+/${ROLLOUT_PCT}/" latest-linux.yml
+          sed -i -r "/stagingPercentage/s/[0-9]+/${ROLLOUT_PCT}/" latest-mac.yml
+
+      - name: Publish channel update info files to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
+          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
+          AWS_DEFAULT_REGION: 'us-west-2'
+          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
+        run: |
+          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
+          --include "latest*.yml" \
+          --acl "public-read" \
+          --quiet
+
+      - name: Publish channel update info files to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.r2-electron-access-id }}
+          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.r2-electron-access-key }}
+          AWS_DEFAULT_REGION: 'us-east-1'
+          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.r2-electron-bucket-name }}
+          CF_ACCOUNT: ${{ steps.retrieve-secrets.outputs.cf-prod-account }}
+        run: |
+          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
+          --include "latest*.yml" \
+          --quiet \
+          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
