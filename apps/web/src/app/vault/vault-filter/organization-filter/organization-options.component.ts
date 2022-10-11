@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { map, Subject, takeUntil } from "rxjs";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -19,12 +20,14 @@ import { EnrollMasterPasswordReset } from "../../../organizations/users/enroll-m
   selector: "app-organization-options",
   templateUrl: "organization-options.component.html",
 })
-export class OrganizationOptionsComponent {
+export class OrganizationOptionsComponent implements OnInit, OnDestroy {
   actionPromise: Promise<void | boolean>;
   policies: Policy[];
   loaded = false;
 
   @Input() organization: Organization;
+
+  private destroy$ = new Subject<void>();
 
   constructor(
     private platformUtilsService: PlatformUtilsService,
@@ -38,12 +41,20 @@ export class OrganizationOptionsComponent {
   ) {}
 
   async ngOnInit() {
-    await this.load();
+    this.policyService.policies$
+      .pipe(
+        map((policies) => policies.filter((policy) => policy.type === PolicyType.ResetPassword)),
+        takeUntil(this.destroy$)
+      )
+      .subscribe((policies) => {
+        this.policies = policies;
+        this.loaded = true;
+      });
   }
 
-  async load() {
-    this.policies = await this.policyService.getAll(PolicyType.ResetPassword);
-    this.loaded = true;
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   allowEnrollmentChanges(org: Organization): boolean {
@@ -83,7 +94,6 @@ export class OrganizationOptionsComponent {
       });
       await this.actionPromise;
       this.platformUtilsService.showToast("success", null, "Unlinked SSO");
-      await this.load();
     } catch (e) {
       this.logService.error(e);
     }
@@ -105,7 +115,6 @@ export class OrganizationOptionsComponent {
       this.actionPromise = this.organizationApiService.leave(org.id);
       await this.actionPromise;
       this.platformUtilsService.showToast("success", null, this.i18nService.t("leftOrganization"));
-      await this.load();
     } catch (e) {
       this.logService.error(e);
     }

@@ -60,7 +60,6 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
   }
 
   async setupSubmitActions(): Promise<boolean> {
-    this.enforcedPolicyOptions = await this.policyService.getMasterPasswordPolicyOptions();
     this.email = await this.stateService.getEmail();
     this.kdf = await this.stateService.getKdfType();
     this.kdfIterations = await this.stateService.getKdfIterations();

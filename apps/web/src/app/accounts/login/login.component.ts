@@ -1,6 +1,7 @@
-import { Component, NgZone } from "@angular/core";
+import { Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Subject, takeUntil } from "rxjs";
 import { first } from "rxjs/operators";
 
 import { LoginComponent as BaseLoginComponent } from "@bitwarden/angular/components/login.component";
@@ -29,12 +30,13 @@ import { RouterService, StateService } from "../../core";
   selector: "app-login",
   templateUrl: "login.component.html",
 })
-// eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class LoginComponent extends BaseLoginComponent {
+export class LoginComponent extends BaseLoginComponent implements OnInit, OnDestroy {
   showResetPasswordAutoEnrollWarning = false;
   enforcedPasswordPolicyOptions: MasterPasswordPolicyOptions;
   policies: ListResponse<PolicyResponse>;
   showPasswordless = false;
+
+  private destroy$ = new Subject<void>();
 
   constructor(
     authService: AuthService,
@@ -128,10 +130,19 @@ export class LoginComponent extends BaseLoginComponent {
         this.showResetPasswordAutoEnrollWarning =
           resetPasswordPolicy[1] && resetPasswordPolicy[0].autoEnrollEnabled;
 
-        this.enforcedPasswordPolicyOptions =
-          await this.policyService.getMasterPasswordPolicyOptions(policyList);
+        this.policyService
+          .masterPasswordPolicyOptions$(policyList)
+          .pipe(takeUntil(this.destroy$))
+          .subscribe((enforcedPasswordPolicyOptions) => {
+            this.enforcedPasswordPolicyOptions = enforcedPasswordPolicyOptions;
+          });
       }
     }
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async goAfterLogIn() {

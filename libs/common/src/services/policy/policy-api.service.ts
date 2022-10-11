@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { ApiService } from "../../abstractions/api.service";
 import { OrganizationService } from "../../abstractions/organization/organization.service.abstraction";
 import { PolicyApiServiceAbstraction } from "../../abstractions/policy/policy-api.service.abstraction";
@@ -6,7 +8,6 @@ import { StateService } from "../../abstractions/state.service";
 import { PolicyType } from "../../enums/policyType";
 import { PolicyData } from "../../models/data/policyData";
 import { MasterPasswordPolicyOptions } from "../../models/domain/masterPasswordPolicyOptions";
-import { Policy } from "../../models/domain/policy";
 import { PolicyRequest } from "../../models/request/policyRequest";
 import { ListResponse } from "../../models/response/listResponse";
 import { PolicyResponse } from "../../models/response/policyResponse";
@@ -79,30 +80,13 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
     return new ListResponse(r, PolicyResponse);
   }
 
-  async getPolicyForOrganization(policyType: PolicyType, organizationId: string): Promise<Policy> {
-    const org = await this.organizationService.get(organizationId);
-    if (org?.isProviderUser) {
-      const orgPolicies = await this.getPolicies(organizationId);
-      const policy = orgPolicies.data.find((p) => p.organizationId === organizationId);
-
-      if (policy == null) {
-        return null;
-      }
-
-      return new Policy(new PolicyData(policy));
-    }
-
-    const policies = await this.policyService.getAll(policyType);
-    return policies.find((p) => p.organizationId === organizationId);
-  }
-
   async getMasterPasswordPoliciesForInvitedUsers(
     orgId: string
   ): Promise<MasterPasswordPolicyOptions> {
     const userId = await this.stateService.getUserId();
     const response = await this.getPoliciesByInvitedUser(orgId, userId);
     const policies = await this.policyService.mapPoliciesFromToken(response);
-    return this.policyService.getMasterPasswordPolicyOptions(policies);
+    return await firstValueFrom(this.policyService.masterPasswordPolicyOptions$(policies));
   }
 
   async putPolicy(organizationId: string, type: PolicyType, request: PolicyRequest): Promise<any> {

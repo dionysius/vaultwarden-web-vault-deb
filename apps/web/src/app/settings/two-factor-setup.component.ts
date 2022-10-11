@@ -1,4 +1,5 @@
-import { Component, OnInit, Type, ViewChild, ViewContainerRef } from "@angular/core";
+import { Component, OnDestroy, OnInit, Type, ViewChild, ViewContainerRef } from "@angular/core";
+import { Subject, takeUntil } from "rxjs";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -25,8 +26,7 @@ import { TwoFactorYubiKeyComponent } from "./two-factor-yubikey.component";
   selector: "app-two-factor-setup",
   templateUrl: "two-factor-setup.component.html",
 })
-// eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class TwoFactorSetupComponent implements OnInit {
+export class TwoFactorSetupComponent implements OnInit, OnDestroy {
   @ViewChild("recoveryTemplate", { read: ViewContainerRef, static: true })
   recoveryModalRef: ViewContainerRef;
   @ViewChild("authenticatorTemplate", { read: ViewContainerRef, static: true })
@@ -48,6 +48,9 @@ export class TwoFactorSetupComponent implements OnInit {
   isDeviceVerificationSectionEnabled: boolean;
   modal: ModalRef;
   formPromise: Promise<any>;
+
+  private destroy$ = new Subject<void>();
+  private twoFactorAuthPolicyAppliesToActiveUser: boolean;
 
   constructor(
     protected apiService: ApiService,
@@ -93,7 +96,20 @@ export class TwoFactorSetupComponent implements OnInit {
     }
 
     this.providers.sort((a: any, b: any) => a.sort - b.sort);
+
+    this.policyService
+      .policyAppliesToActiveUser$(PolicyType.TwoFactorAuthentication)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((policyAppliesToActiveUser) => {
+        this.twoFactorAuthPolicyAppliesToActiveUser = policyAppliesToActiveUser;
+      });
+
     await this.load();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async load() {
@@ -203,9 +219,7 @@ export class TwoFactorSetupComponent implements OnInit {
 
   private async evaluatePolicies() {
     if (this.organizationId == null && this.providers.filter((p) => p.enabled).length === 1) {
-      this.showPolicyWarning = await this.policyService.policyAppliesToUser(
-        PolicyType.TwoFactorAuthentication
-      );
+      this.showPolicyWarning = this.twoFactorAuthPolicyAppliesToActiveUser;
     } else {
       this.showPolicyWarning = false;
     }

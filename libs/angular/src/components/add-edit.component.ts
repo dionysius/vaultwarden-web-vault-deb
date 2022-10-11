@@ -1,5 +1,5 @@
-import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { Observable } from "rxjs";
+import { Directive, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import { Observable, Subject, takeUntil, concatMap } from "rxjs";
 
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
@@ -33,7 +33,7 @@ import { LoginView } from "@bitwarden/common/models/view/loginView";
 import { SecureNoteView } from "@bitwarden/common/models/view/secureNoteView";
 
 @Directive()
-export class AddEditComponent implements OnInit {
+export class AddEditComponent implements OnInit, OnDestroy {
   @Input() cloneMode = false;
   @Input() folderId: string = null;
   @Input() cipherId: string;
@@ -75,7 +75,9 @@ export class AddEditComponent implements OnInit {
   reprompt = false;
   canUseReprompt = true;
 
+  protected destroy$ = new Subject<void>();
   protected writeableCollections: CollectionView[];
+  private personalOwnershipPolicyAppliesToActiveUser: boolean;
   private previousCipherId: string;
 
   constructor(
@@ -152,14 +154,28 @@ export class AddEditComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.init();
+    this.policyService
+      .policyAppliesToActiveUser$(PolicyType.PersonalOwnership)
+      .pipe(
+        concatMap(async (policyAppliesToActiveUser) => {
+          this.personalOwnershipPolicyAppliesToActiveUser = policyAppliesToActiveUser;
+          await this.init();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async init() {
     if (this.ownershipOptions.length) {
       this.ownershipOptions = [];
     }
-    if (await this.policyService.policyAppliesToUser(PolicyType.PersonalOwnership)) {
+    if (this.personalOwnershipPolicyAppliesToActiveUser) {
       this.allowPersonal = false;
     } else {
       const myEmail = await this.stateService.getEmail();

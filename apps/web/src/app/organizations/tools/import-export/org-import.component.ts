@@ -47,7 +47,6 @@ export class OrganizationImportComponent extends ImportComponent {
       this.organizationId = params.organizationId;
       this.successNavigate = ["organizations", this.organizationId, "vault"];
       await super.ngOnInit();
-      this.importBlockedByPolicy = false;
     });
     const organization = await this.organizationService.get(this.organizationId);
     this.organizationName = organization.name;

@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import * as JSZip from "jszip";
+import { firstValueFrom, Subject } from "rxjs";
 import Swal, { SweetAlertIcon } from "sweetalert2";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -19,17 +20,21 @@ import { FilePasswordPromptComponent } from "./file-password-prompt.component";
   selector: "app-import",
   templateUrl: "import.component.html",
 })
-export class ImportComponent implements OnInit {
+export class ImportComponent implements OnInit, OnDestroy {
   featuredImportOptions: ImportOption[];
   importOptions: ImportOption[];
   format: ImportType = null;
   fileContents: string;
   formPromise: Promise<ImportError>;
   loading = false;
-  importBlockedByPolicy = false;
+  importBlockedByPolicy$ = this.policyService.policyAppliesToActiveUser$(
+    PolicyType.PersonalOwnership
+  );
 
   protected organizationId: string = null;
   protected successNavigate: any[] = ["vault"];
+
+  private destroy$ = new Subject<void>();
 
   constructor(
     protected i18nService: I18nService,
@@ -43,14 +48,15 @@ export class ImportComponent implements OnInit {
 
   async ngOnInit() {
     this.setImportOptions();
+  }
 
-    this.importBlockedByPolicy = await this.policyService.policyAppliesToUser(
-      PolicyType.PersonalOwnership
-    );
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async submit() {
-    if (this.importBlockedByPolicy) {
+    if (await firstValueFrom(this.importBlockedByPolicy$)) {
       this.platformUtilsService.showToast(
         "error",
         null,

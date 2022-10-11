@@ -1,9 +1,9 @@
 import { StepperSelectionEvent } from "@angular/cdk/stepper";
 import { TitleCasePipe } from "@angular/common";
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { first } from "rxjs";
+import { first, Subject, takeUntil } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -24,8 +24,7 @@ import { VerticalStepperComponent } from "./vertical-stepper/vertical-stepper.co
   selector: "app-trial",
   templateUrl: "trial-initiation.component.html",
 })
-// eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class TrialInitiationComponent implements OnInit {
+export class TrialInitiationComponent implements OnInit, OnDestroy {
   email = "";
   org = "";
   orgInfoSubLabel = "";
@@ -62,6 +61,8 @@ export class TrialInitiationComponent implements OnInit {
       this.referenceData.id = null;
     }
   }
+
+  private destroy$ = new Subject<void>();
 
   constructor(
     private route: ActivatedRoute,
@@ -140,10 +141,18 @@ export class TrialInitiationComponent implements OnInit {
     }
 
     if (this.policies != null) {
-      this.enforcedPolicyOptions = await this.policyService.getMasterPasswordPolicyOptions(
-        this.policies
-      );
+      this.policyService
+        .masterPasswordPolicyOptions$(this.policies)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((enforcedPasswordPolicyOptions) => {
+          this.enforcedPolicyOptions = enforcedPasswordPolicyOptions;
+        });
     }
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   stepSelectionChange(event: StepperSelectionEvent) {

@@ -3,6 +3,7 @@ import * as http from "http";
 import * as program from "commander";
 import * as inquirer from "inquirer";
 import Separator from "inquirer/lib/objects/separator";
+import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
@@ -372,7 +373,9 @@ export class LoginCommand {
     const masterPasswordHint = hint.input;
 
     // Retrieve details for key generation
-    const enforcedPolicyOptions = await this.policyService.getMasterPasswordPolicyOptions();
+    const enforcedPolicyOptions = await firstValueFrom(
+      this.policyService.masterPasswordPolicyOptions$()
+    );
     const kdf = await this.stateService.getKdfType();
     const kdfIterations = await this.stateService.getKdfIterations();
 
