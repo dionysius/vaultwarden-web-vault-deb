@@ -157,12 +157,12 @@ jobs:
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
           workflow: build-web.yml
-          path: apps/web
+          path: apps/web/build
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
           artifacts: web-*-cloud-COMMERCIAL.zip
 
-      - name: Download latest cloud asset
+      - name: Download latest cloud asset (Dry Run)
         if: ${{ github.event.inputs.release_type == 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
