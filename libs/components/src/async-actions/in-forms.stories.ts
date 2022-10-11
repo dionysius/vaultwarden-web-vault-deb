@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule, Validators, FormBuilder } from "@angular/forms";
 import { action } from "@storybook/addon-actions";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
@@ -18,7 +18,7 @@ import { BitSubmitDirective } from "./bit-submit.directive";
 import { BitFormButtonDirective } from "./form-button.directive";
 
 const template = `
-  <form [formGroup]="formObj" [bitSubmit]="submit" [disableFormOnLoading]="disableFormOnLoading">
+  <form [formGroup]="formObj" [bitSubmit]="submit">
     <bit-form-field>
       <bit-label>Name</bit-label>
       <input bitInput formControlName="name" />
@@ -44,8 +44,6 @@ class PromiseExampleComponent {
     name: ["", [Validators.required]],
     email: ["", [Validators.required, Validators.email]],
   });
-
-  @Input() disableFormOnLoading: boolean;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -77,8 +75,6 @@ class ObservableExampleComponent {
     name: ["", [Validators.required]],
     email: ["", [Validators.required, Validators.email]],
   });
-
-  @Input() disableFormOnLoading: boolean;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -136,21 +132,18 @@ export default {
       ],
     }),
   ],
-  args: {
-    disableFormOnLoading: false,
-  },
 } as Meta;
 
 const PromiseTemplate: Story<PromiseExampleComponent> = (args: PromiseExampleComponent) => ({
   props: args,
-  template: `<app-promise-example [disableFormOnLoading]="disableFormOnLoading"></app-promise-example>`,
+  template: `<app-promise-example></app-promise-example>`,
 });
 
 export const UsingPromise = PromiseTemplate.bind({});
 
 const ObservableTemplate: Story<PromiseExampleComponent> = (args: PromiseExampleComponent) => ({
   props: args,
-  template: `<app-observable-example [disableFormOnLoading]="disableFormOnLoading"></app-observable-example>`,
+  template: `<app-observable-example></app-observable-example>`,
 });
 
 export const UsingObservable = ObservableTemplate.bind({});
