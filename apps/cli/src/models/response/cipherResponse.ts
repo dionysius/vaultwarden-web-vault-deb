@@ -11,6 +11,7 @@ export class CipherResponse extends CipherWithIdExport implements BaseResponse {
   object: string;
   attachments: AttachmentResponse[];
   revisionDate: Date;
+  creationDate: Date;
   deletedDate: Date;
   passwordHistory: PasswordHistoryResponse[];
 
@@ -22,6 +23,9 @@ export class CipherResponse extends CipherWithIdExport implements BaseResponse {
       this.attachments = o.attachments.map((a) => new AttachmentResponse(a));
     }
     this.revisionDate = o.revisionDate;
+    if (o.creationDate != null) {
+      this.creationDate = o.creationDate;
+    }
     this.deletedDate = o.deletedDate;
     if (o.passwordHistory != null) {
       this.passwordHistory = o.passwordHistory.map((h) => new PasswordHistoryResponse(h));

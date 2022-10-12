@@ -38,6 +38,7 @@ export class Cipher extends Domain {
   fields: Field[];
   passwordHistory: Password[];
   collectionIds: string[];
+  creationDate: Date;
   deletedDate: Date;
   reprompt: CipherRepromptType;
 
@@ -72,6 +73,7 @@ export class Cipher extends Domain {
     this.revisionDate = obj.revisionDate != null ? new Date(obj.revisionDate) : null;
     this.collectionIds = obj.collectionIds;
     this.localData = localData;
+    this.creationDate = obj.creationDate != null ? new Date(obj.creationDate) : null;
     this.deletedDate = obj.deletedDate != null ? new Date(obj.deletedDate) : null;
     this.reprompt = obj.reprompt;
 
@@ -200,6 +202,7 @@ export class Cipher extends Domain {
     c.revisionDate = this.revisionDate != null ? this.revisionDate.toISOString() : null;
     c.type = this.type;
     c.collectionIds = this.collectionIds;
+    c.creationDate = this.creationDate != null ? this.creationDate.toISOString() : null;
     c.deletedDate = this.deletedDate != null ? this.deletedDate.toISOString() : null;
     c.reprompt = this.reprompt;
 

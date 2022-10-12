@@ -36,6 +36,7 @@ export class CipherView implements View {
   passwordHistory: PasswordHistoryView[] = null;
   collectionIds: string[] = null;
   revisionDate: Date = null;
+  creationDate: Date = null;
   deletedDate: Date = null;
   reprompt: CipherRepromptType = CipherRepromptType.None;
 
@@ -55,6 +56,7 @@ export class CipherView implements View {
     this.localData = c.localData;
     this.collectionIds = c.collectionIds;
     this.revisionDate = c.revisionDate;
+    this.creationDate = c.creationDate;
     this.deletedDate = c.deletedDate;
     // Old locally stored ciphers might have reprompt == null. If so set it to None.
     this.reprompt = c.reprompt ?? CipherRepromptType.None;

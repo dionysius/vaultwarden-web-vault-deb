@@ -787,6 +787,10 @@
               <b class="font-weight-semibold">{{ "dateUpdated" | i18n }}:</b>
               {{ cipher.revisionDate | date: "medium" }}
             </div>
+            <div *ngIf="cipher.creationDate">
+              <b class="font-weight-semibold">{{ "dateCreated" | i18n }}:</b>
+              {{ cipher.creationDate | date: "medium" }}
+            </div>
             <div *ngIf="showRevisionDate">
               <b class="font-weight-semibold">{{ "datePasswordUpdated" | i18n }}:</b>
               {{ cipher.passwordRevisionDisplayDate | date: "medium" }}
