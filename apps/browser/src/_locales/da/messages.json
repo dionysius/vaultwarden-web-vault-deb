@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "sidst set den $DATE$",
+    "message": "sidst set: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

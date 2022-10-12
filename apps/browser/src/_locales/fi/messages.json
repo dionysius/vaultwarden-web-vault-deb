@@ -2017,7 +2017,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "nähty viimeksi $DATE$",
+    "message": "nähty viimeksi: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

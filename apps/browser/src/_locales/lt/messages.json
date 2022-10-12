@@ -552,10 +552,10 @@
     "message": "Ar tikrai norite perrašyti dabartinį slaptažodį?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Perrašyti Vartotojo Vardą"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Ar tikrai norite perrašyti dabartinį vartotojo vardą?"
   },
   "searchFolder": {
     "message": "Ieškoti aplanke"
@@ -577,7 +577,7 @@
     "message": "Prisijungimo pridėjimo pranešimas automatiškai Jūs paragina išsaugoti naujus prisijungimus Jūsų saugykloje, kuomet prisijungiate pirmą kartą."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Rodyti korteles skirtuko puslapyje"
   },
   "showCardsCurrentTabDesc": {
     "message": "List card items on the Tab page for easy auto-fill."
@@ -603,10 +603,10 @@
     "message": "Taip, išsaugoti dabar"
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "Paprašyti atnaujinti esamą prisijungimą"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Ask to update a login's password when a change is detected on a website."
+    "message": "Paprašyti atnaujinti prisijungimo slaptažodį, kai pakeitimas aptiktas svetainėje."
   },
   "notificationChangeDesc": {
     "message": "Ar norite atnaujinti šį slaptažodį „Bitwarden“?"
@@ -683,7 +683,7 @@
     "message": "Move to Organization"
   },
   "share": {
-    "message": "Share"
+    "message": "Bendrinti"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ moved to $ORGNAME$",
@@ -852,7 +852,7 @@
     "message": "Send verification code email again"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Naudoti dar vieną dviejų žingsnių prisijungimo metodą"
   },
   "insertYubiKey": {
     "message": "Insert your YubiKey into your computer's USB port, then touch its button."
@@ -870,7 +870,7 @@
     "message": "Authenticate WebAuthn"
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Prisijungimas nepasiekiamas"
   },
   "noTwoStepProviders": {
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
