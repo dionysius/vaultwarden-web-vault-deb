@@ -157,7 +157,7 @@ jobs:
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
           workflow: build-web.yml
-          path: apps/web/build
+          path: apps/web
           workflow_conclusion: success
           branch: ${{ github.ref_name }}
           artifacts: web-*-cloud-COMMERCIAL.zip
@@ -167,7 +167,7 @@ jobs:
         uses: bitwarden/gh-actions/download-artifacts@850faad0cf6c02a8c0dc46eddde2363fbd6c373a
         with:
           workflow: build-web.yml
-          path: apps/web/build
+          path: apps/web
           workflow_conclusion: success
           branch: master
           artifacts: web-*-cloud-COMMERCIAL.zip
