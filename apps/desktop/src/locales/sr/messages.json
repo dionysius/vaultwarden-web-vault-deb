@@ -1571,10 +1571,10 @@
     "message": "Интеграција прегледача се користи за биометрију у прегледачу."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Дозволи DuckDuckGo интерграцију претраживача"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Употребити Bitwarden сеф када користите DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Интеграција са претраживачем није подржана"
@@ -1604,7 +1604,7 @@
     "message": "Уверите се да је приказани отисак идентичан отиску приказаном у додатку прегледача."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ жели да се повеже са Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1613,10 +1613,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Да ли желите да одобрите овај захтев?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Ако нисте ви покренули овај захтев, немојте га одобрити."
   },
   "biometricsNotEnabledTitle": {
     "message": "Биометрија није омогућена"

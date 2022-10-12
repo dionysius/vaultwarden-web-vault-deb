@@ -1571,10 +1571,10 @@
     "message": "یکپارچه سازی مرورگر برای بیومتریک در مرورگر استفاده می شود."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "اجازه ادغام مرورگر DuckDuckGo را بدهید"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "هنگام مرور با DuckDuckGo از گاوصندوق Bitwarden خود استفاده کنید."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "ادغام مرورگر پشتیبانی نمی شود"
@@ -1604,7 +1604,7 @@
     "message": "لطفاً اطمینان حاصل کنید که اثر انگشت نشان داده شده با اثر انگشت نشان داده شده در افزونه مرورگر یکسان است."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ می‌خواهد به Bitwarden متصل شود",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1613,10 +1613,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "آیا می‌خواهید این درخواست را تأیید کنید؟"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "اگر شما این درخواست را آغاز نکرده اید، آن را تأیید نکنید."
   },
   "biometricsNotEnabledTitle": {
     "message": "بیومتریک فعال نیست"
@@ -2016,6 +2016,6 @@
     "message": "میر"
   },
   "vault": {
-    "message": "Vault"
+    "message": "گاوصندوق"
   }
 }

@@ -1571,10 +1571,10 @@
     "message": "L'integrazione del browser è utilizzata per l'autenticazione biometrica."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Consenti l'integrazione del browser DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Usa la tua cassaforte Bitwarden quando navighi con DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "L'integrazione del browser non è supportata"
@@ -1604,7 +1604,7 @@
     "message": "Assicurati che l'impronta digitale mostrata sia identica all'impronta digitale mostrata nell'estensione del browser."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ vuole connettersi a Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1613,10 +1613,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Vuoi approvare questa richiesta?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Se la richiesta non è stata fatta da te, non approvarla."
   },
   "biometricsNotEnabledTitle": {
     "message": "Autenticazione biometrica non abilitata"

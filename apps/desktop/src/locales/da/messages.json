@@ -1571,10 +1571,10 @@
     "message": "Bruges til biometri i browser."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Tillad DuckDuckGo browserintegration"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Brug din Bitwarden-boks, når du browser med DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browserintegration understøttes ikke"
@@ -1604,7 +1604,7 @@
     "message": "Sørg for, at det viste fingeraftryk er identisk med det fingeraftryk, der vises i browserudvidelsen."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ ønsker at oprette forbindelse til Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1613,10 +1613,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Vil du godkende denne anmodning?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Hvis du ikke indledte denne anmodning, skal du ikke godkende den."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometri ikke aktiveret"

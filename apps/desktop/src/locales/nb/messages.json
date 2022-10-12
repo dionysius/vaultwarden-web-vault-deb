@@ -36,7 +36,7 @@
     "message": "Søk i hvelvet"
   },
   "addItem": {
-    "message": "Legg til objekt"
+    "message": "Legg til element"
   },
   "shared": {
     "message": "Delt"
@@ -1397,16 +1397,16 @@
     "message": "Slett konto"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Fortsett nedenfor for å slette kontoen din og alle hvelvdataene."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "Å slette kontoen din er permanent. Det kan ikke reverseres."
   },
   "accountDeleted": {
     "message": "Konto slettet"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Kontoen din har blitt avsluttet og all relatert data har blitt slettet."
   },
   "preferences": {
     "message": "Innstillinger"
@@ -1571,10 +1571,10 @@
     "message": "Nettleserintegrasjon brukes til biometri i nettleseren."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Tillat integrering av DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Bruk Bitwarden-hvelvet ditt når du surfer med DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Nettleserintegrasjon støttes ikke"
@@ -1604,7 +1604,7 @@
     "message": "Kontroller at vist fingeravtrykk er identisk med fingeravtrykket som vises i nettleserutvidelsen."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ ønsker å koble til Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1613,10 +1613,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Ønsker du å godkjenne denne forespørselen?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Ikke godkjenn denne forespørselen dersom du ikke initierte den."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometri er ikke aktivert"
@@ -2001,13 +2001,13 @@
     "message": "API-nøkkel"
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Premium abonnement kreves"
   },
   "organizationIsDisabled": {
     "message": "Organisasjonen er deaktivert."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Elementer i deaktiverte organisasjoner kan ikke aksesseres. Kontakt organisasjonseier for hjelp."
   },
   "neverLockWarning": {
     "message": "Er du sikker på at du vil bruke alternativet «Aldri»? Ved å angi låsemulighetene til «Aldri» lagres hvelvets krypteringsnøkkel på enheten. Hvis du bruker dette alternativet, bør du sørge for at du holder enheten forsvarlig beskyttet."
@@ -2016,6 +2016,6 @@
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Hvelv"
   }
 }

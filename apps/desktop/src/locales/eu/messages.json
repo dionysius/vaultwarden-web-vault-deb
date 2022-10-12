@@ -1571,10 +1571,10 @@
     "message": "Nabigatzailean biometria erabiltzen da."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Baimendu DuckDuckGo nabigatzailearekin integratzea"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Erabili zure Bitwarden kutxa gotorra, DuckDuckGo-rekin nabigatzean."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Ez da nabigatzailearen integrazioa onartzen"
@@ -1604,7 +1604,7 @@
     "message": "Ziurtatu bistaratutako hatz-marka digitala nabigatzailearen gehigarrian agertzen den hatz-marka digitalaren berdina dela."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$-ek Bitwardenekin konektatu nahi du",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1613,10 +1613,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Eskaera hau onartu nahi duzu?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Eskaera hasi ez baduzu, ez onartu."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometria desgaitua"

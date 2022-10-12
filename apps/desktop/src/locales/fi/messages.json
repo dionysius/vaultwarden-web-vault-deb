@@ -764,7 +764,7 @@
     "message": "Hanki apua"
   },
   "fileBugReport": {
-    "message": "Jätä virheilmoitus"
+    "message": "Lähetä virheilmoitus"
   },
   "blog": {
     "message": "Blogi"
@@ -1568,22 +1568,22 @@
     "message": "Salli selainintegraatio"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Käytetään selainten biometriatukeen."
+    "message": "Käytetään verkkoselainten biometriatukeen."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Salli integrointi DuckDuckGo-selaimeen"
+    "message": "Salli integraatio DuckDuckGo-selaimeen"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Käytä Bitwardenin holvia DuckDuckGo-selaimessa."
+    "message": "Käytä Bitwarden-holvia DuckDuckGo-selaimessa."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Selainintegraatiota ei tueta"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Valitettavasti selainintegraatiota tukee toistaiseksi vain Mac App Store -versio."
+    "message": "Valitettavasti selainintegraatiota tuetaan toistaiseksi vain Mac App Store -versiossa."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Valitettavasti selainintegraatiota ei toistaiseksi tueta sovelluksen Microsoft Store -versiossa."
+    "message": "Valitettavasti selainintegraatiota ei toistaiseksi tueta Microsoft Store -versiossa."
   },
   "browserIntegrationLinuxDesc": {
     "message": "Valitettavasti selainintegraatiota ei toistaiseksi tueta Linux-versiossa."
@@ -1616,7 +1616,7 @@
     "message": "Haluatko hyväksyä pyynnön?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "Älä hyväksy pyyntöä, jollet itse aiheuttanut sitä."
+    "message": "Älä hyväksy pyyntöä, jos et tunnista sitä."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometria ei ole käytössä"

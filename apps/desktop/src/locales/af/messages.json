@@ -1571,10 +1571,10 @@
     "message": "Blaaierintegrasie word gebruik vir biometrie in blaaier."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Staan DuckDuckGo-blaaierintegrasie toe"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Gebruik u Bitwarden-kluis wanneer u met DuckDuckGo blaai."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Blaaierintegrasie word nie ondersteun nie"
@@ -1604,7 +1604,7 @@
     "message": "Maak seker dat die getoonde vingerafdruk identies is aan dié wat in die blaaieruitbreiding vertoon word."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ wil aan Bitwarden koppel",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1613,10 +1613,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Wil u hierdie versoek goedkeur?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Indien u nie hierdie versoek geïnisieer het nie, moet dit dan nie goedkeur nie."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrie is geaktiveer"
@@ -2016,6 +2016,6 @@
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Kluis"
   }
 }
