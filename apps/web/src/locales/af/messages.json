@@ -570,16 +570,16 @@
     "message": "Teken aan of skep ’n nuwe rekening vir toegang tot u beveiligde kluis."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Teken aan met toestel"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "Teken aan met toestel moet in die instellings van die Bitwarden-toep geaktiveer word. Kort u nog ’n opsie?"
   },
   "createAccount": {
     "message": "Skep rekening"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Nuut hier rond?"
   },
   "startTrial": {
     "message": "Start Trial"
@@ -609,7 +609,7 @@
     "message": "Die hoofwagwoord is die wagwoord wat u gaan gebruik vir toegang tot u kluis. Dit is baie belangrik dat u u hoofwagwoord onthou. Daar is geen manier om dit terug te kry ingeval u dit vergeet het nie."
   },
   "masterPassImportant": {
-    "message": "Master passwords cannot be recovered if you forget it!"
+    "message": "Hoofwagwoorde kan nie herstel word indien u dit vergeet nie!"
   },
   "masterPassHintDesc": {
     "message": "’n Hoofwagwoordwenk kan u help om u wagwoord te onthou, sou u dit vergeet."
@@ -642,13 +642,13 @@
     "message": "Ongeldige e-posadres."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Hoofwagwoord word vereis."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Hoofwagwoord moet weer ingevoer word."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hoofwagwoord moet ten minste 8 karakters lank wees."
   },
   "masterPassDoesntMatch": {
     "message": "Hoofwagwoordbevestiging stem nie ooreen nie."
@@ -657,7 +657,7 @@
     "message": "U nuwe rekening is geskep! U kan nou aanteken."
   },
   "trialAccountCreated": {
-    "message": "Account created successfully."
+    "message": "Rekening suksesvol geskep."
   },
   "masterPassSent": {
     "message": "Ons het ’n e-pos gestuur met u hoofwagwoordwenk."
@@ -718,7 +718,7 @@
     "message": "U behoort aan geen organisasies nie. Organisasies laat u toe om items op beveiligde wyse met ander gebruikers te deel."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "’n Kennisgewing is na u toestel gestuur."
   },
   "versionNumber": {
     "message": "Weergawe $VERSION_NUMBER$",
@@ -915,16 +915,16 @@
     "message": "This password will be used to export and import this file"
   },
   "confirmMasterPassword": {
-    "message": "Confirm Master Password"
+    "message": "Bevestig hoofwagwoord"
   },
   "confirmFormat": {
-    "message": "Confirm Format"
+    "message": "Bevestig formaat"
   },
   "filePassword": {
-    "message": "File Password"
+    "message": "Lêerwagwoord"
   },
   "confirmFilePassword": {
-    "message": "Confirm File Password"
+    "message": "Bevestig lêerwagwoord"
   },
   "accountBackupOptionDescription": {
     "message": "Use your account encryption key to encrypt the export and restrict import to only the current Bitwarden account."
@@ -933,19 +933,19 @@
     "message": "Set a password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "fileTypeHeading": {
-    "message": "File Type"
+    "message": "Lêertipe"
   },
   "accountBackup": {
-    "message": "Account Backup"
+    "message": "Rekeningrugsteun"
   },
   "passwordProtected": {
     "message": "Password Protected"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm File Password“ do not match."
+    "message": "“Lêerwagwoord” en “Bevestig lêerwagwoord” stem nie ooreen nie."
   },
   "confirmVaultImport": {
-    "message": "Confirm Vault Import"
+    "message": "Bevestig kluisinvoer"
   },
   "confirmVaultImportDesc": {
     "message": "This file is password-protected. Please enter the file password to import data."
@@ -1169,7 +1169,7 @@
     "message": "Data is suksesvol na u kluis ingevoer."
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "U voer data in na $ORGANIZATION$. U data kan met ander lede van hierdie organisasie gedeel word. Wil u voortgaan?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2272,7 +2272,7 @@
     "message": "Jaarliks"
   },
   "annual": {
-    "message": "Annual"
+    "message": "Jaarliks"
   },
   "basePrice": {
     "message": "Basisprys"
@@ -2695,7 +2695,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "Remove $ID$ access",
+    "message": "Verwyder $ID$ toegang",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2704,7 +2704,7 @@
     }
   },
   "revokedUserId": {
-    "message": "Revoked organization access for $ID$.",
+    "message": "Toegang tot die organisasie vir $ID$ is teruggetrek.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2713,7 +2713,7 @@
     }
   },
   "restoredUserId": {
-    "message": "Restored organization access for $ID$.",
+    "message": "Toegang tot die organisasie vir $ID$ is teruggestel.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -2722,7 +2722,7 @@
     }
   },
   "revokeUserId": {
-    "message": "Revoke $ID$ access",
+    "message": "Trek $ID$ toegang terug",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5261,7 +5261,7 @@
     }
   },
   "billingContactProviderForAssistance": {
-    "message": "Please reach out to them for further assistance",
+    "message": "Kontak hulle asseblief vir verdere hulp",
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
@@ -5318,18 +5318,18 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
-    "message": "This API key has access to manage users within your organization. It should be kept secret."
+    "message": "Hierdie API-sleutel het toegang tot die beheer van gebruikers in u organisasie. Dit moet ’n geheim gehou word."
   },
   "copyScimKey": {
-    "message": "Copy the SCIM API Key to your clipboard",
+    "message": "Kopieer die SCIM-API-sleutel na u knipbord",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Rotate the SCIM API Key",
+    "message": "Roteer die SCIM-API-sleutel",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
+    "message": "Is u seker u wil die SCIM-API-sleutel roteer? Die huidige sleutel sal nie meer werk vir enige bestaande integrasies nie.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
@@ -5383,7 +5383,7 @@
     "message": "Turn on"
   },
   "on": {
-    "message": "On"
+    "message": "Aan"
   },
   "cardBrandMir": {
     "message": "Mir"

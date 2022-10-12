@@ -570,16 +570,16 @@
     "message": "Accedi o crea un nuovo account per accedere alla tua cassaforte."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Accedi con il dispositivo"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "Il login con il dispositivo deve essere abilitato nelle impostazioni dell'app mobile Bitwarden. Hai bisogno di un'altra opzione?"
   },
   "createAccount": {
     "message": "Crea account"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Nuovo da queste parti?"
   },
   "startTrial": {
     "message": "Inizia il periodo di prova"
@@ -588,7 +588,7 @@
     "message": "Accedi"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Login avviato"
   },
   "submit": {
     "message": "Invia"
@@ -648,7 +648,7 @@
     "message": "È necessario reinserire la password principale."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "La password principale deve essere lunga almeno 8 caratteri."
   },
   "masterPassDoesntMatch": {
     "message": "La conferma della password principale non corrisponde."
@@ -718,7 +718,7 @@
     "message": "Non appartieni ad alcuna organizzazione. Le organizzazioni ti consentono di condividere oggetti in modo sicuro con altri utenti."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Una notifica è stata inviata al tuo dispositivo."
   },
   "versionNumber": {
     "message": "Versione $VERSION_NUMBER$",
@@ -2548,7 +2548,7 @@
     }
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Visualizza tutte le opzioni di accesso"
   },
   "viewedItemId": {
     "message": "Elemento visualizzato $ID$.",
@@ -3391,10 +3391,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Assicurati che la tua cassaforte sia sbloccata e che la \"frase impronta\" corrisponda sull'altro dispositivo."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Frase impronta"
   },
   "dontAskFingerprintAgain": {
     "message": "Non chiedere di verificare di nuovo la frase impronta",
@@ -4082,10 +4082,10 @@
     "message": "Permessi"
   },
   "managerPermissions": {
-    "message": "Manager Permissions"
+    "message": "Permessi del Manager"
   },
   "adminPermissions": {
-    "message": "Admin Permissions"
+    "message": "Permessi dell'Amministratore"
   },
   "accessEventLogs": {
     "message": "Accedi ai log degli eventi"
@@ -4397,7 +4397,7 @@
     "message": "Invia nuovamente l'invito"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Invia nuova notifica"
   },
   "noSelectedUsersApplicable": {
     "message": "Questa azione non è applicabile a nessuno degli utenti selezionati."

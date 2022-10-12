@@ -573,7 +573,7 @@
     "message": "Log ind med enhed"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log ind med enhed skal være aktiveret i Bitwarden mobil-appindstillingerne. Brug for en anden mulighed?"
+    "message": "Log ind med enhed skal være aktiveret i indstillingerne for Bitwarden-mobilappen. Har du brug for en anden mulighed?"
   },
   "createAccount": {
     "message": "Opret konto"
@@ -588,7 +588,7 @@
     "message": "Log ind"
   },
   "logInInitiated": {
-    "message": "Indlogning initieret"
+    "message": "Indlogning påbegyndt"
   },
   "submit": {
     "message": "Indsend"
@@ -648,7 +648,7 @@
     "message": "Hovedadgangskode kræves angivet igen."
   },
   "masterPasswordMinlength": {
-    "message": "Hovedadgangskode skal udgøre minimum 8 tegn."
+    "message": "Hovedadgangskoden skal være på mindst 8 tegn."
   },
   "masterPassDoesntMatch": {
     "message": "De to hovedadgangskoder matcher ikke."
@@ -3391,7 +3391,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Sørg for, at din Boks er oplåst, og at Fingeraftrykssætningen matcher den anden enhed."
+    "message": "Sørg for, at din boks er låst op, og at fingeraftrykssætningen matcher den anden enhed."
   },
   "fingerprintPhraseHeader": {
     "message": "Fingeraftrykssætning"
@@ -4082,7 +4082,7 @@
     "message": "Tilladelser"
   },
   "managerPermissions": {
-    "message": "Håndtér rettigheder"
+    "message": "Bestyrer-tilladelser"
   },
   "adminPermissions": {
     "message": "Admin-tilladelser"

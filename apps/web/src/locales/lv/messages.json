@@ -573,7 +573,7 @@
     "message": "Pierakstīties ar ierīci"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "Pierakstīšanās ar ierīci ir jābūt iespējotai Bitwarden lietotnes iestatījumos. Nepieciešama cita iespēja?"
   },
   "createAccount": {
     "message": "Izveidot kontu"
@@ -1311,7 +1311,7 @@
     "message": "Iespējots"
   },
   "restoreAccess": {
-    "message": "Restore Access"
+    "message": "Atjaunot piekļuvi"
   },
   "premium": {
     "message": "Premium",
@@ -1339,7 +1339,7 @@
     "message": "Atspējot"
   },
   "revokeAccess": {
-    "message": "Revoke Access"
+    "message": "Atsaukt piekļuvi"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Šis divpakāpju pierakstīšanās nodrošinātājs ir iespējots kontā."
@@ -2695,7 +2695,7 @@
     }
   },
   "removeUserIdAccess": {
-    "message": "Remove $ID$ access",
+    "message": "Noņemt piekļuvi $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3793,7 +3793,7 @@
     "message": "Atspējots"
   },
   "revoked": {
-    "message": "Revoked"
+    "message": "Atsaukts"
   },
   "sendLink": {
     "message": "\"Send\" saite",
@@ -4457,10 +4457,10 @@
     "message": "Noņemt lietotājus"
   },
   "revokeUsers": {
-    "message": "Revoke Users"
+    "message": "Atsaukt lietotāju piekļuvi"
   },
   "restoreUsers": {
-    "message": "Restore Users"
+    "message": "Atjaunot lietotāju piekļuvi"
   },
   "error": {
     "message": "Kļūda"
@@ -5310,7 +5310,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
-    "message": "Enable SCIM",
+    "message": "Iespējot SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
@@ -5336,7 +5336,7 @@
     "message": "Rotate Key"
   },
   "scimApiKey": {
-    "message": "SCIM API Key",
+    "message": "SCIM API atslēga",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {

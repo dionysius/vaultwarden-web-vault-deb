@@ -3391,10 +3391,10 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Mesedez, ziurtatu kutxa gotorra desblokeatuta dagoela eta hatz-marka digitalaren esaldia bat datorrela beste gailuarekin."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Hatz-marka digitalaren esaldia"
   },
   "dontAskFingerprintAgain": {
     "message": "Inoiz ez da beharrezkoa gonbidatutako erabiltzaileentzat hatz-marka esaldiak egiaztatzea (ez da gomendatzen)",
@@ -4082,10 +4082,10 @@
     "message": "Baimenak"
   },
   "managerPermissions": {
-    "message": "Manager Permissions"
+    "message": "Kudeatu baimenak"
   },
   "adminPermissions": {
-    "message": "Admin Permissions"
+    "message": "Kudeatzailearen baimenak"
   },
   "accessEventLogs": {
     "message": "Sarreren erregistroak"
@@ -4397,7 +4397,7 @@
     "message": "Birbidali gonbidapenak"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Berbidali jakinarazpena"
   },
   "noSelectedUsersApplicable": {
     "message": "Ekintza hau ezin zaie hautatutako erabiltzaileei aplikatu."

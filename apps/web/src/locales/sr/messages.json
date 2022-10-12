@@ -570,16 +570,16 @@
     "message": "Пријавите се или креирајте нови налог за приступ Сефу."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Пријавите се са уређајем"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "Пријава помоћу уређаја мора бити омогућена у подешавањима Bitwarden апликације. Потребна је друга опција?"
   },
   "createAccount": {
     "message": "Креирај налог"
   },
   "newAroundHere": {
-    "message": "New around here?"
+    "message": "Нов овде?"
   },
   "startTrial": {
     "message": "Почетак пробе"
@@ -588,7 +588,7 @@
     "message": "Пријавите се"
   },
   "logInInitiated": {
-    "message": "Log in initiated"
+    "message": "Пријава је покренута"
   },
   "submit": {
     "message": "Пошаљи"
@@ -648,7 +648,7 @@
     "message": "Поновно уписивање главне лозинке је неопходно."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Главна лозинка треба имати барем 8 карактера."
   },
   "masterPassDoesntMatch": {
     "message": "Потврђена Главна Лозинка се не подудара."
@@ -691,7 +691,7 @@
     "message": "Погрешна главна лозинка"
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Неважећа лозинка за датотеку, користите лозинку коју сте унели када сте креирали датотеку за извоз."
   },
   "lockNow": {
     "message": "Закључај одмах"
@@ -718,7 +718,7 @@
     "message": "Не припадате ниједној организацији. Организације вам омогућавају да безбедно делите ставке са другим корисницима."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Обавештење је послато на ваш уређај."
   },
   "versionNumber": {
     "message": "Верзија $VERSION_NUMBER$",
@@ -909,46 +909,46 @@
     "message": "Формат датотеке"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "Овај извоз ће бити заштићен лозинком и захтеваће лозинку датотеке за дешифровање."
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Ова лозинка ће се користити за извоз и увоз ове датотеке"
   },
   "confirmMasterPassword": {
-    "message": "Confirm Master Password"
+    "message": "Потрдити Главну Лозинку"
   },
   "confirmFormat": {
-    "message": "Confirm Format"
+    "message": "Потврдити формат"
   },
   "filePassword": {
-    "message": "File Password"
+    "message": "Лозинка датотеке"
   },
   "confirmFilePassword": {
-    "message": "Confirm File Password"
+    "message": "Потврдити лозинку датотеке"
   },
   "accountBackupOptionDescription": {
-    "message": "Use your account encryption key to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Користите кључ за шифровање налога да шифрујете извоз и ограничите увоз само на тренутни Bitwarden налогу."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Подесите лозинку за шифровање извоза и увоз у било који Bitwarden налог користећи лозинку за дешифровање."
   },
   "fileTypeHeading": {
-    "message": "File Type"
+    "message": "Тип датотеке"
   },
   "accountBackup": {
-    "message": "Account Backup"
+    "message": "Резервна копија налога"
   },
   "passwordProtected": {
-    "message": "Password Protected"
+    "message": "Заштићено лозинком"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm File Password“ do not match."
+    "message": "Унете лозинке се не подударају."
   },
   "confirmVaultImport": {
-    "message": "Confirm Vault Import"
+    "message": "Потврдите увоз сефа"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Ова датотека је заштићена лозинком. Унесите лозинку датотеке да бисте увезли податке."
   },
   "exportSuccess": {
     "message": "Податци сефа су извежени."
@@ -2548,7 +2548,7 @@
     }
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Погледајте сав извештај у опције"
   },
   "viewedItemId": {
     "message": "Прогледана ставка $ID$.",
@@ -3394,7 +3394,7 @@
     "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Сигурносна фраза сефа"
   },
   "dontAskFingerprintAgain": {
     "message": "Не питај више за проверу Сигурносне Фразе Сефа",
@@ -4082,10 +4082,10 @@
     "message": "Дозволе"
   },
   "managerPermissions": {
-    "message": "Manager Permissions"
+    "message": "Менаџер созвола"
   },
   "adminPermissions": {
-    "message": "Admin Permissions"
+    "message": "Админ дозволе"
   },
   "accessEventLogs": {
     "message": "Приступе извештаја догађаја"
@@ -4397,7 +4397,7 @@
     "message": "Поновно послати позивнице"
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Поново ослати обавештење"
   },
   "noSelectedUsersApplicable": {
     "message": "Ова акција није применљива на било који од одабраних корисника."
@@ -5333,7 +5333,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotate Key"
+    "message": "Променити кључ"
   },
   "scimApiKey": {
     "message": "SCIM API Key",
