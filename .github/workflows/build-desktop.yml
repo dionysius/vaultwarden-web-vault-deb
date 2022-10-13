@@ -142,7 +142,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -176,7 +176,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09
         id: cache
         with:
           path: |
@@ -257,7 +257,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -297,29 +297,21 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        shell: bash
-        env:
-          KEYVAULT: bitwarden-prod-kv
-          SECRETS: |
-            code-signing-vault-url,
+        uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "code-signing-vault-url,
             code-signing-client-id,
             code-signing-tenant-id,
             code-signing-client-secret,
-            code-signing-cert-name
-        run: |
-          for i in ${SECRETS//,/ }
-          do
-            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
-            echo "::add-mask::$VALUE"
-            echo "::set-output name=$i::$VALUE"
-          done
+            code-signing-cert-name"
 
       - name: Install Node dependencies
         run: npm ci
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09
         id: cache
         with:
           path: apps/desktop/desktop_native/*.node
@@ -478,7 +470,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -591,7 +583,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09
         id: cache
         with:
           path: apps/desktop/desktop_native/*.node
@@ -623,7 +615,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -736,7 +728,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09
         id: cache
         with:
           path: apps/desktop/desktop_native/*.node
@@ -754,7 +746,7 @@ jobs:
 
       - name: Download artifact from hotfix-rc-desktop
         if: github.ref == 'refs/heads/hotfix-rc-desktop'
-        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -763,7 +755,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -772,7 +764,7 @@ jobs:
 
       - name: Download artifact from master
         if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc-desktop' }}
-        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -841,7 +833,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -954,7 +946,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09
         id: cache
         with:
           path: apps/desktop/desktop_native/*.node
@@ -972,7 +964,7 @@ jobs:
 
       - name: Download artifact from hotfix-rc-desktop
         if: github.ref == 'refs/heads/hotfix-rc-desktop'
-        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -981,7 +973,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -990,7 +982,7 @@ jobs:
 
       - name: Download artifact from master
         if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc-desktop' }}
-        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -1051,7 +1043,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
 
       - name: Set up Node
-        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a  # v3.0.0
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -1159,7 +1151,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09
         id: cache
         with:
           path: apps/desktop/desktop_native/*.node
@@ -1177,7 +1169,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -1186,7 +1178,7 @@ jobs:
 
       - name: Download artifact from master
         if: github.ref != 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39  # v2.19.0
+        uses: dawidd6/action-download-artifact@b2abf1705491048a2d7074f7d90513044fd25d39
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -1242,20 +1234,13 @@ jobs:
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        env:
-          KEYVAULT: bitwarden-prod-kv
-          SECRETS: |
-            crowdin-api-token
-        run: |
-          for i in ${SECRETS//,/ }
-          do
-            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
-            echo "::add-mask::$VALUE"
-            echo "::set-output name=$i::$VALUE"
-          done
+        uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "crowdin-api-token"
 
       - name: Upload Sources
-        uses: crowdin/github-action@ecd7eb0ef6f3cfa16293c79e9cbc4bc5b5fd9c49  # v1.4.9
+        uses: crowdin/github-action@ecd7eb0ef6f3cfa16293c79e9cbc4bc5b5fd9c49
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
@@ -1324,17 +1309,10 @@ jobs:
       - name: Retrieve secrets
         id: retrieve-secrets
         if: failure()
-        env:
-          KEYVAULT: bitwarden-prod-kv
-          SECRETS: |
-            devops-alerts-slack-webhook-url
-        run: |
-          for i in ${SECRETS//,/ }
-          do
-            VALUE=$(az keyvault secret show --vault-name $KEYVAULT --name $i --query value --output tsv)
-            echo "::add-mask::$VALUE"
-            echo "::set-output name=$i::$VALUE"
-          done
+        uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "devops-alerts-slack-webhook-url"
 
       - name: Notify Slack on failure
         uses: act10ns/slack@da3191ebe2e67f49b46880b4633f5591a96d1d33
