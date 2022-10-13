@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Subject } from "rxjs";
+import { debounceTime, takeUntil } from "rxjs/operators";
 
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
@@ -40,6 +42,8 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   loaded = false;
   isLoading = false;
   showOrganizations = false;
+  protected search$ = new Subject<void>();
+  private destroy$ = new Subject<void>();
 
   private totpCode: string;
   private totpTimeout: number;
@@ -105,14 +109,17 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
       }, 5000);
     }
 
-    window.setTimeout(() => {
-      document.getElementById("search").focus();
-    }, 100);
+    this.search$
+      .pipe(debounceTime(500), takeUntil(this.destroy$))
+      .subscribe(() => this.searchVault());
   }
 
   ngOnDestroy() {
     window.clearTimeout(this.loadedTimeout);
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async refresh() {
@@ -179,15 +186,11 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   }
 
   searchVault() {
-    if (this.searchTimeout != null) {
-      clearTimeout(this.searchTimeout);
-    }
     if (!this.searchService.isSearchable(this.searchText)) {
       return;
     }
-    this.searchTimeout = window.setTimeout(async () => {
-      this.router.navigate(["/tabs/vault"], { queryParams: { searchText: this.searchText } });
-    }, 200);
+
+    this.router.navigate(["/tabs/vault"], { queryParams: { searchText: this.searchText } });
   }
 
   closeOnEsc(e: KeyboardEvent) {

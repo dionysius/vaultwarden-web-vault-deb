@@ -17,9 +17,10 @@
       placeholder="{{ 'searchVault' | i18n }}"
       id="search"
       [(ngModel)]="searchText"
-      (input)="searchVault()"
+      (input)="search$.next()"
       autocomplete="off"
       (keydown)="closeOnEsc($event)"
+      appAutofocus
     />
     <i class="bwi bwi-search" aria-hidden="true"></i>
   </div>
