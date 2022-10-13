@@ -128,7 +128,7 @@ $icons: (
   "dbl-angle-left": "\e970",
   "dbl-angle-right": "\e971",
   "hamburger": "\e972",
-  "bw-folder-open-f": "\e93e",
+  "bw-folder-open-f1": "\e93e",
   "desktop": "\e96a",
   "angle-left": "\e96b",
   "user": "\e900",
@@ -246,6 +246,10 @@ $icons: (
   "family": "\e98b",
   "provider": "\e98c",
   "business": "\e98d",
+  "learning": "\e98e",
+  "chat": "\e990",
+  "server": "\e98f",
+  "search-book": "\e992",
 );
 
 @each $name, $glyph in $icons {
