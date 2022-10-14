@@ -522,10 +522,10 @@
     "message": "Ви дійсно хочете перенести до смітника?"
   },
   "deletedItem": {
-    "message": "Запис перенесено до смітника"
+    "message": "Запис переміщено до смітника"
   },
   "deletedItems": {
-    "message": "Записи перенесено до смітника"
+    "message": "Записи переміщено до смітника"
   },
   "movedItems": {
     "message": "Записи переміщено"
@@ -537,7 +537,7 @@
     "message": "Тека відредагована"
   },
   "addedFolder": {
-    "message": "Додано теку"
+    "message": "Теку додано"
   },
   "deleteFolderConfirmation": {
     "message": "Ви дійсно хочете видалити цю теку?"
@@ -1321,10 +1321,10 @@
     "message": "Преміум статус"
   },
   "premiumRequired": {
-    "message": "Необхідний преміум статус"
+    "message": "Необхідна передплата преміум"
   },
   "premiumRequiredDesc": {
-    "message": "Для використання цієї функції необхідний преміум статус."
+    "message": "Для використання цієї функції необхідна передплата преміум."
   },
   "youHavePremiumAccess": {
     "message": "У вас є преміум-доступ"
@@ -1792,7 +1792,7 @@
     "message": "Пріоритетну технічну підтримку."
   },
   "premiumSignUpFuture": {
-    "message": "Всі майбутні функції преміум статусу. Їх буде більше!"
+    "message": "Усі майбутні преміумфункції. Їх буде більше!"
   },
   "premiumPrice": {
     "message": "Всього лише $PRICE$ / за рік!",
@@ -2530,7 +2530,7 @@
     }
   },
   "deletedItemId": {
-    "message": "Запис $ID$ перенесено до смітника.",
+    "message": "Запис $ID$ переміщено до смітника.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3312,6 +3312,10 @@
   "dateUpdated": {
     "message": "Оновлено",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Створено",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Пароль оновлено",
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Кількість користувачів"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Введіть для фільтрування --"
+  },
+  "multiSelectLoading": {
+    "message": "Параметри отримання..."
+  },
+  "multiSelectNotFound": {
+    "message": "Нічого не знайдено"
+  },
+  "multiSelectClearAll": {
+    "message": "Очистити все"
   }
 }

@@ -3313,6 +3313,10 @@
     "message": "Atjaunināts",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Izveidots",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Parole atjaunināta",
     "description": "ex. Date this password was updated"
@@ -5302,11 +5306,11 @@
     "message": "Nepieciešams Premium abonements"
   },
   "scim": {
-    "message": "SCIM Provisioning",
+    "message": "SCIM nodrošināšana",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
+    "message": "Automātiski nodrošina lietotājus un kopas ar vēlamo identitātes nodrošinātāju, izmantojot SCIM nodrošināšanu",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
@@ -5314,33 +5318,33 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
-    "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
+    "message": "Uzstādīt vēlamo identitātes nodrošinātāju ar URL un SCIM API atslēgas iestatīšanu",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimApiKeyHelperText": {
-    "message": "This API key has access to manage users within your organization. It should be kept secret."
+    "message": "Šai API atslēgai ir piekļuve pāŗvaldīt apvienības lietotājus. Tā ir jātur noslēpumā."
   },
   "copyScimKey": {
-    "message": "Copy the SCIM API Key to your clipboard",
+    "message": "Ievietot SCIM API atslēgu starpliktuvē",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Rotate the SCIM API Key",
+    "message": "Nomainīt SCIM API atslēgu",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
-    "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
+    "message": "Vai tiešām nomainīt SCIM API atslēgu? Pašreizējā atslēga vairs nedarbosies nekur, kur tā ir norādīta.",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotate Key"
+    "message": "Mainīt atslēgu"
   },
   "scimApiKey": {
     "message": "SCIM API atslēga",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "copyScimUrl": {
-    "message": "Copy the SCIM endpoint URL to your clipboard",
+    "message": "Ievietot SCIM galapunkta URL starpliktuvē",
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimUrl": {
@@ -5348,11 +5352,11 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "The SCIM API Key has been successfully rotated",
+    "message": "SCIM API atslēga ir veiksmīgi nomainīta",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "SCIM settings have been saved successfully",
+    "message": "SCIM iestatījumi ir veiksmīgi saglabāti",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Lietotāju skaits"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Rakstīt, lai atlasītu --"
+  },
+  "multiSelectLoading": {
+    "message": "Iegūst iespējas..."
+  },
+  "multiSelectNotFound": {
+    "message": "Netika atrasti vienumi"
+  },
+  "multiSelectClearAll": {
+    "message": "Notīrīt visu"
   }
 }

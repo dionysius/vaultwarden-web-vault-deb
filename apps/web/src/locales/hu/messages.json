@@ -3313,6 +3313,10 @@
     "message": "A frissítés megtörtént.",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Létrehozva",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "A jelszó frissítésre került.",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Felhasználók száma"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Szűrendő típus --"
+  },
+  "multiSelectLoading": {
+    "message": "Az opciók beolvasása folyamatban can..."
+  },
+  "multiSelectNotFound": {
+    "message": "Nem található elem."
+  },
+  "multiSelectClearAll": {
+    "message": "Összes törlése"
   }
 }

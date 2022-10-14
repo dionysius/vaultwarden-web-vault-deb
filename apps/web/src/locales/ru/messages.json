@@ -3313,6 +3313,10 @@
     "message": "Обновлено",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Создан",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Пароль обновлен",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Количество пользователей"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Тип фильтра --"
+  },
+  "multiSelectLoading": {
+    "message": "Получение параметров..."
+  },
+  "multiSelectNotFound": {
+    "message": "Элементов не найдено"
+  },
+  "multiSelectClearAll": {
+    "message": "Очистить все"
   }
 }

@@ -3313,6 +3313,10 @@
     "message": "Eguneratua",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Pasahitza eguneratu da",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Erabiltzaile kopurua"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Type to Filter --"
+  },
+  "multiSelectLoading": {
+    "message": "Retrieving options..."
+  },
+  "multiSelectNotFound": {
+    "message": "No items found"
+  },
+  "multiSelectClearAll": {
+    "message": "Clear all"
   }
 }

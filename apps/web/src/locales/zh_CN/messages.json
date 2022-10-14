@@ -3313,6 +3313,10 @@
     "message": "更新于",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "创建于",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "密码更新于",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "用户数量"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- 键入以筛选 --"
+  },
+  "multiSelectLoading": {
+    "message": "正在获取选项..."
+  },
+  "multiSelectNotFound": {
+    "message": "未找到任何项目"
+  },
+  "multiSelectClearAll": {
+    "message": "清除全部"
   }
 }

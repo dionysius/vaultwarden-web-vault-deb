@@ -461,13 +461,13 @@
     "message": "Lisää uusi tiedostoliite"
   },
   "deletedAttachment": {
-    "message": "Tiedostoliite poistettu"
+    "message": "Tiedostoliite poistettiin"
   },
   "deleteAttachmentConfirmation": {
     "message": "Haluatko varmasti poistaa liitteen?"
   },
   "attachmentSaved": {
-    "message": "Tiedostoliite tallennettu."
+    "message": "Tiedostoliite tallennettiin"
   },
   "file": {
     "message": "Tiedosto"
@@ -482,10 +482,10 @@
     "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
   },
   "addedItem": {
-    "message": "Kohde lisätty"
+    "message": "Kohde lisättiin"
   },
   "editedItem": {
-    "message": "Kohdetta muokattu"
+    "message": "Kohdetta muokattiin"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ siirrettiin organisaatiolle $ORGNAME$",
@@ -534,7 +534,7 @@
     "message": "Haluatko varmasti korvata nykyisen salasanan?"
   },
   "editedFolder": {
-    "message": "Kansiota muokattu"
+    "message": "Kansiota muokattiin"
   },
   "addedFolder": {
     "message": "Kansio lisätty"
@@ -543,7 +543,7 @@
     "message": "Haluatko varmasti poistaa kansion?"
   },
   "deletedFolder": {
-    "message": "Kansio poistettu"
+    "message": "Kansio poistettiin"
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos"
@@ -573,7 +573,7 @@
     "message": "Laitteella kirjautuminen"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Laitteella kirjautuminen oltava käytössä Biwarden-mobiilisovelluksen asetuksista. Tarvitsetko eri vaihtoehdon?"
+    "message": "Laitteella kirjautuminen otettava käyttöön Bitwardenin mobiilisovelluksen asetuksista. Tarvitsetko eri vaihtoehdon?"
   },
   "createAccount": {
     "message": "Luo tili"
@@ -1040,7 +1040,7 @@
     "message": "Jatkamalla kirjaudut ulos nykyisestä istunnostasi ja joudut kirjautumaan uudelleen. Aktiiviset istunnot toisilla laitteilla saattavat pysyä aktiivisina vielä tunnin ajan."
   },
   "emailChanged": {
-    "message": "Sähköpostiosoite vaihdettu"
+    "message": "Sähköpostiosoite vaihdettiin"
   },
   "logBackIn": {
     "message": "Kirjaudu sisään uudelleen."
@@ -1052,7 +1052,7 @@
     "message": "Vaihda pääsalasana"
   },
   "masterPasswordChanged": {
-    "message": "Pääsalasana vaihdettu"
+    "message": "Pääsalasana vaihdettiin"
   },
   "currentMasterPass": {
     "message": "Nykyinen pääsalasana"
@@ -1094,7 +1094,7 @@
     "message": "Vaihda KDF-asetuksia"
   },
   "encKeySettingsChanged": {
-    "message": "Salausavaimen asetukset muutettu"
+    "message": "Salausavaimen asetuksia muutettiin"
   },
   "dangerZone": {
     "message": "Vaaravyöhyke"
@@ -1112,7 +1112,7 @@
     "message": "Jatkamalla kirjaudut ulos nykyisestä istunnostasi ja joudut kirjautumaan uudelleen. Myös kaksivaiheinen kirjautuminen on tehtävä uudelleen. Aktiiviset istunnot toisilla laitteilla saattavat pysyä aktiivisina vielä tunnin ajan."
   },
   "sessionsDeauthorized": {
-    "message": "Kaikki istunnot mitätöity"
+    "message": "Kaikki istunnot mitätöitiin"
   },
   "purgeVault": {
     "message": "Tyhjennä holvi"
@@ -1566,7 +1566,7 @@
     "message": "Tunnusten 2FA-tila"
   },
   "inactive2faReportDesc": {
-    "message": "Kaksivaiheinen kirjautuminen (2FA) lisää tileillesi yhden suojaustason. Voit käyttää kaksivaiheiseen kirjautumiseen Bitwarden-todentajaa tai vaihtoehtoisia menetelmiä."
+    "message": "Kaksivaiheinen kirjautuminen (2FA) lisää tileillesi yhden suojaustason. Voit käyttää kaksivaiheiseen kirjautumiseen Bitwardenin todentajaa tai vaihtoehtoisia menetelmiä."
   },
   "inactive2faFound": {
     "message": "Tunnuksia ilman kaksivaiheista kirjautumista löytyi"
@@ -2386,7 +2386,7 @@
     "message": "Kutsu käyttäjä"
   },
   "inviteUserDesc": {
-    "message": "Kutsu organisaatioosi uusi käyttäjä syöttämällä alle heidän Bitwarden-tilinsä sähköpostiosoite. Jos heillä ei vielä ole Bitwarden-tiliä, heitä pyydetään luomaan uusi tili."
+    "message": "Kutsu organisaatioosi uusi käyttäjä syöttämällä alle heidän Bitwarden-tilinsä sähköpostiosoite. Jos heillä ei vielä ole Bitwarden-tiliä, heitä pyydetään luomaan uusi."
   },
   "inviteMultipleEmailDesc": {
     "message": "Voit kutsua korkeintaan $COUNT$ käyttäjää kerrallaan, erottelemalla listan sähköpostiosoitteista pilkuilla.",
@@ -2983,7 +2983,7 @@
     "message": "Jos tilisi on olemassa, olemme lähettäneet sinulle lisäohjeita sähköpostitse."
   },
   "deleteRecoverConfirmDesc": {
-    "message": "Olet pyytänyt Bitwarden-tilisi poistoa. Paina alla olevaa painiketta vahvistaaksesi."
+    "message": "Olet pyytänyt Bitwarden-tilisi poistoa. Vahvista painamalla alla olevaa painiketta."
   },
   "myOrganization": {
     "message": "Oma organisaatio"
@@ -3313,6 +3313,10 @@
     "message": "Päivitetty",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Luotu",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Salasana päivitetty",
     "description": "ex. Date this password was updated"
@@ -3391,7 +3395,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Varmista, että holvisi on avattu ja tunnistelauseke vastaa kyseistä laitetta."
+    "message": "Varmista, että holvisi on avattu ja tunnistelauseke vastaa toista laitetta."
   },
   "fingerprintPhraseHeader": {
     "message": "Tunnistelauseke"
@@ -3779,7 +3783,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Nykyinen käyttökertojen määrä"
+    "message": "Käyttökertojen nykyinen määrä"
   },
   "sendPasswordDesc": {
     "message": "Halutessasi, vaadi käyttäjiä syöttämään salasana Sendin avaamiseksi.",
@@ -3894,7 +3898,7 @@
     "message": "Muokkaa varmuuskontaktia"
   },
   "inviteEmergencyContactDesc": {
-    "message": "Kutsu uusi varmuuskontakti syöttämällä alle heidän Bitwarden-tilinsä sähköpostiosoite. Jos heillä ei vielä ole Bitwarden-tiliä, heitä pyydetään luomaan uusi tili."
+    "message": "Kutsu uusi varmuuskontakti syöttämällä alle heidän Bitwarden-tilinsä sähköpostiosoite. Jos heillä ei vielä ole Bitwarden-tiliä, heitä pyydetään luomaan uusi."
   },
   "emergencyAccessRecoveryInitiated": {
     "message": "Varmuuskäyttö aloitettu"
@@ -4472,7 +4476,7 @@
     "message": "Todentajan määritys"
   },
   "setupProviderLoginDesc": {
-    "message": "Sinut on kutsuttu määrittämään uusi todentaja. Jatkaaksesi, sinun on kirjauduttava Bitwarden-tilillesi tai luotava uusi tili."
+    "message": "Sinut on kutsuttu määrittämään uusi todentaja. Jatkaaksesi, sinun on kirjauduttava tilillesi tai luotava uusi Bitwarden-tili."
   },
   "setupProviderDesc": {
     "message": "Syötä alla pyydetyt tiedot viimeistelläksesi todentajan määrityksen. Jos sinulla on kysyttävää, ota yhteyttä asiakaspalveluun."
@@ -4499,13 +4503,13 @@
     "message": "Palvelun käyttäjät voivat käyttää ja hallita kaikkia asiakasorganisaatioita."
   },
   "providerInviteUserDesc": {
-    "message": "Kutsu todentajallesi uusi käyttäjä syöttämällä alle heidän Bitwarden-tilinsä sähköpostiosoite. Jos heillä ei vielä ole Bitwarden-tiliä, pyydetään heitä luomaan uusi tili."
+    "message": "Kutsu todentajallesi uusi käyttäjä syöttämällä alle heidän Bitwarden-tilinsä sähköpostiosoite. Jos heillä ei vielä ole Bitwarden-tiliä, pyydetään heitä luomaan uusi."
   },
   "joinProvider": {
     "message": "Liity todennustarjoajaan"
   },
   "joinProviderDesc": {
-    "message": "Sinut on kutsuttu liittymään yllä mainittuun todentajaan. Hyväksyäksesi kutsun, sinun tulee kirjautua tilillesi tai luoda uusi Bitwarden-tili."
+    "message": "Sinut on kutsuttu liittymään yllä mainittuun todentajaan. Hyväksyäksesi kutsun, sinun on kirjauduttava tilillesi tai luotava uusi Bitwarden-tili."
   },
   "providerInviteAcceptFailed": {
     "message": "Kutsua ei voitu hyväksyä. Pyydä todentajan ylläpitäjää lähettämään uusi kutsu."
@@ -5278,19 +5282,19 @@
     "message": "API-käyttötunniste"
   },
   "deviceVerification": {
-    "message": "Laitetodennus"
+    "message": "Laitevahvistus"
   },
   "enableDeviceVerification": {
-    "message": "Käytä laitetodennusta"
+    "message": "Käytä laitevahvistus"
   },
   "deviceVerificationDesc": {
-    "message": "Kun käytössä, lähetetään todennuskoodit sähköpostitse, kun kirjaudutaan tuntemattomasta laitteesta"
+    "message": "Kun käytössä, todennuskoodit lähetetään sinulle sähköpostitse kirjauduttaessa tuntemattomasta laitteesta."
   },
   "updatedDeviceVerification": {
-    "message": "Laitetodennus päivitettiin"
+    "message": "Laitevahvostus päivitettiin"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
-    "message": "Haluatko varmasti käyttää laitetodennusta? Todennuskoodit lähetetään sähköpostiosoitteeseen $EMAIL$",
+    "message": "Haluatko varmasti käyttää laitevahvistusta? Todennuskoodit lähetetään sähköpostiosoitteeseen $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Käyttäjien määrä"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Suodatettava tyyppi --"
+  },
+  "multiSelectLoading": {
+    "message": "Noudetaan vaihtoehtoja..."
+  },
+  "multiSelectNotFound": {
+    "message": "Kohteita ei löytynyt"
+  },
+  "multiSelectClearAll": {
+    "message": "Tyhjennä kaikki"
   }
 }

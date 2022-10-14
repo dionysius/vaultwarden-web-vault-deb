@@ -3313,6 +3313,10 @@
     "message": "更新日",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "作成日",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "パスワード更新日",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "ユーザー数"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- 入力して絞り込み --"
+  },
+  "multiSelectLoading": {
+    "message": "オプションを取得中..."
+  },
+  "multiSelectNotFound": {
+    "message": "アイテムが見つかりません"
+  },
+  "multiSelectClearAll": {
+    "message": "すべてクリア"
   }
 }

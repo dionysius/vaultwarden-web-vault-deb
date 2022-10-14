@@ -3313,6 +3313,10 @@
     "message": "Aktualizované",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Vytvorené",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Heslo bolo aktualizované",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Počet používateľov"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Začnite písať pre filtrovanie --"
+  },
+  "multiSelectLoading": {
+    "message": "Načítavajú sa možnosti..."
+  },
+  "multiSelectNotFound": {
+    "message": "Nenašli sa žiadne položky"
+  },
+  "multiSelectClearAll": {
+    "message": "Vyčistiť všetko"
   }
 }

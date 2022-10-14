@@ -3313,6 +3313,10 @@
     "message": "S-a actualizat",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Creată",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Parola s-a actualizat",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Număr de utilizatori"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Introduceți pentru a filtra --"
+  },
+  "multiSelectLoading": {
+    "message": "Recuperarea opțiunilor..."
+  },
+  "multiSelectNotFound": {
+    "message": "Niciun element găsit"
+  },
+  "multiSelectClearAll": {
+    "message": "Ștergeți tot"
   }
 }

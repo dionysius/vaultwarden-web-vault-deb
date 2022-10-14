@@ -3313,6 +3313,10 @@
     "message": "Actualizada",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Creado",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Contraseña actualizada",
     "description": "ex. Date this password was updated"
@@ -4729,7 +4733,7 @@
     "message": "Comportamiento de firma"
   },
   "spMinIncomingSigningAlgorithm": {
-    "message": "Minimum Incoming Signing Algorithm"
+    "message": "Algoritmo mínimo de firma entrante"
   },
   "spWantAssertionsSigned": {
     "message": "Expect signed assertions"
@@ -5053,7 +5057,7 @@
     "message": "Facturación sincronizada"
   },
   "billingSyncDesc": {
-    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "La sincronización de facturación proveé planes Famliares gratuitos para los miembros y facilidades de facturación avanzada, conectando la bóveda autoalojada de Bitwarden al servidor en la nube de Bitwarden."
   },
   "billingSyncKeyDesc": {
     "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Número de usuarios"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Escriba para filtrar --"
+  },
+  "multiSelectLoading": {
+    "message": "Recuperando opciones..."
+  },
+  "multiSelectNotFound": {
+    "message": "No hay elementos"
+  },
+  "multiSelectClearAll": {
+    "message": "Borrar todo"
   }
 }

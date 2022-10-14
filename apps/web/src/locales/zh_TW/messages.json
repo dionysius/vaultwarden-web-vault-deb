@@ -3310,8 +3310,12 @@
     "message": "於瀏覽器重新整理時"
   },
   "dateUpdated": {
-    "message": "已更新",
+    "message": "更新於",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "建立於",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "密碼更新於",
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "使用者數量"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- 輸入以進行篩選 --"
+  },
+  "multiSelectLoading": {
+    "message": "正在取得選項…"
+  },
+  "multiSelectNotFound": {
+    "message": "找不到任何項目"
+  },
+  "multiSelectClearAll": {
+    "message": "全部清除"
   }
 }

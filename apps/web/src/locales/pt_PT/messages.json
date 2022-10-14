@@ -3151,10 +3151,10 @@
     "message": "Para ajuda adicional no gerenciamento da sua assinatura, entre em contato com o suporte ao cliente."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Os ajustes à sua assinatura resultarão em alterações repartidas nos totais de faturamento. Se os utilizadores recém-convidados excederem o número de utilizadores na sua assinatura, receberá imediatamente uma cobrança proporcional pelos utilizadores adicionais."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users until your $MAX$ seat limit is reached.",
+    "message": "Os ajustes à sua assinatura resultarão em alterações repartidas nos totais de faturamento. Se os utilizadores recém-convidados excederem os seus assentos de assinatura, receberá imediatamente uma cobrança proporcional por utilizador adicional até que o seu limite de $MAX$ seja atingido.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3312,6 +3312,10 @@
   "dateUpdated": {
     "message": "Atualizado",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Criado",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Palavra-passe atualizada",
@@ -3663,7 +3667,7 @@
     "message": "Início de Sessão Único da Empresa"
   },
   "ssoHandOff": {
-    "message": "You may now close this tab and continue in the extension."
+    "message": "Pode fechar esta aba e continuar na extensão."
   },
   "includeAllTeamsFeatures": {
     "message": "Todas as funcionalidades de Equipas, mais:"
@@ -3936,10 +3940,10 @@
     "message": "You've been invited to become an emergency contact for the user listed above. To accept the invitation, you need to log in or create a new Bitwarden account."
   },
   "emergencyInviteAcceptFailed": {
-    "message": "Unable to accept invitation. Ask the user to send a new invitation."
+    "message": "Não é possível aceitar o convite. Peça ao utilizador para enviar um novo convite."
   },
   "emergencyInviteAcceptFailedShort": {
-    "message": "Unable to accept invitation. $DESCRIPTION$",
+    "message": "Não é possível aceitar o convite. $DESCRIPTION$",
     "placeholders": {
       "description": {
         "content": "$1",
@@ -4145,7 +4149,7 @@
     }
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Uma política de organização está a afetar as suas opções de propriedade."
   },
   "personalOwnershipPolicyInEffectImports": {
     "message": "An organization policy has disabled importing items into your personal vault."
@@ -4289,7 +4293,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "User $ID$ withdrew from password reset assistance.",
+    "message": "Utilizador $ID$ removeu-se da ajuda para redefinir senha.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4316,7 +4320,7 @@
     }
   },
   "firstSsoLogin": {
-    "message": "$ID$ logged in using Sso for the first time",
+    "message": "$ID$ conectou-se usando o Sso pela primeira vez",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4352,7 +4356,7 @@
     "message": "Redefinir Senha Mestra"
   },
   "resetPasswordPolicyDescription": {
-    "message": "Allow admins to reset master passwords for members."
+    "message": "Permitir que administradores redefinam senhas mestres dos membros."
   },
   "resetPasswordPolicyWarning": {
     "message": "Users in the organization will need to self-enroll or be auto-enrolled before administrators can reset their master password."
@@ -4361,7 +4365,7 @@
     "message": "Inscrição Automática"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "All users will be automatically enrolled in password reset once their invite is accepted and will not be allowed to withdraw."
+    "message": "Todos os utilizadores serão inscritos automaticamente na redefinição de senha assim que o convite for aceito e não será possível anular."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
     "message": "Users already in the organization will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
@@ -4373,13 +4377,13 @@
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
   },
   "resetPasswordOrgKeysError": {
-    "message": "Organization Keys response is null"
+    "message": "Resposta das chaves da organização é nula"
   },
   "resetPasswordDetailsError": {
-    "message": "Reset Password Details response is null"
+    "message": "Redefinir senha de resposta é nula"
   },
   "trashCleanupWarning": {
-    "message": "Items that have been in Trash more than 30 days will be automatically deleted."
+    "message": "Os registos que tenham sido enviados para a Lixeira, por mais que %d dias serão automaticamente excluídos."
   },
   "trashCleanupWarningSelfHosted": {
     "message": "Items that have been in Trash for a while will be automatically deleted."
@@ -4400,7 +4404,7 @@
     "message": "Reenviar notificação"
   },
   "noSelectedUsersApplicable": {
-    "message": "This action is not applicable to any of the selected users."
+    "message": "Esta ação não é aplicável a nenhum dos utilizadores selecionados."
   },
   "removeUsersWarning": {
     "message": "Are you sure you want to remove the following users? The process may take a few seconds to complete and cannot be interrupted or canceled."
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Número de utilizadores"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Escreva para Filtrar --"
+  },
+  "multiSelectLoading": {
+    "message": "A recuperar opções..."
+  },
+  "multiSelectNotFound": {
+    "message": "Nenhum item encontrado"
+  },
+  "multiSelectClearAll": {
+    "message": "Limpar tudo"
   }
 }

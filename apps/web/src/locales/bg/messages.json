@@ -3313,6 +3313,10 @@
     "message": "Обновена",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Създадено",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Обновена парола",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Брой потребители"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Пишете тук за филтриране --"
+  },
+  "multiSelectLoading": {
+    "message": "Зареждане на опциите…"
+  },
+  "multiSelectNotFound": {
+    "message": "Няма намерени записи"
+  },
+  "multiSelectClearAll": {
+    "message": "Изчистване на всичко"
   }
 }

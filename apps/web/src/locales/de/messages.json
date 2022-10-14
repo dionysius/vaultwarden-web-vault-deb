@@ -3313,6 +3313,10 @@
     "message": "Aktualisiert",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Erstellt",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Passwort aktualisiert",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Anzahl der Benutzer"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Typ zum Filtern --"
+  },
+  "multiSelectLoading": {
+    "message": "Optionen werden abgerufen..."
+  },
+  "multiSelectNotFound": {
+    "message": "Keine Einträge gefunden"
+  },
+  "multiSelectClearAll": {
+    "message": "Alles löschen"
   }
 }

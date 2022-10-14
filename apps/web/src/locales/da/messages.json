@@ -3313,6 +3313,10 @@
     "message": "Opdateret",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Oprettet",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Adgangskode opdateret",
     "description": "ex. Date this password was updated"
@@ -5390,5 +5394,17 @@
   },
   "numberOfUsers": {
     "message": "Antal brugere"
+  },
+  "multiSelectPlaceholder": {
+    "message": "-- Type at filtrere --"
+  },
+  "multiSelectLoading": {
+    "message": "Henter indstillinger..."
+  },
+  "multiSelectNotFound": {
+    "message": "Ingen emner fundet"
+  },
+  "multiSelectClearAll": {
+    "message": "Ryd alt"
   }
 }
