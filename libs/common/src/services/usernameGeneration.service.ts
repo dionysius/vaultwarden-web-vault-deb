@@ -9,7 +9,7 @@ import { FirefoxRelayForwarder } from "../emailForwarders/firefoxRelayForwarder"
 import { Forwarder } from "../emailForwarders/forwarder";
 import { ForwarderOptions } from "../emailForwarders/forwarderOptions";
 import { SimpleLoginForwarder } from "../emailForwarders/simpleLoginForwarder";
-import { EEFLongWordList } from "../misc/wordlist";
+import { EFFLongWordList } from "../misc/wordlist";
 
 const DefaultOptions = {
   type: "word",
@@ -50,8 +50,8 @@ export class UsernameGenerationService implements BaseUsernameGenerationService 
       o.wordIncludeNumber = true;
     }
 
-    const wordIndex = await this.cryptoService.randomNumber(0, EEFLongWordList.length - 1);
-    let word = EEFLongWordList[wordIndex];
+    const wordIndex = await this.cryptoService.randomNumber(0, EFFLongWordList.length - 1);
+    let word = EFFLongWordList[wordIndex];
     if (o.wordCapitalize) {
       word = word.charAt(0).toUpperCase() + word.slice(1);
     }

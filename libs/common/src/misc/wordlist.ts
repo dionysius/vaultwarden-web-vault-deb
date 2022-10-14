@@ -1,5 +1,5 @@
 // EFF's Long Wordlist from https://www.eff.org/dice
-export const EEFLongWordList = [
+export const EFFLongWordList = [
   "abacus",
   "abdomen",
   "abdominal",

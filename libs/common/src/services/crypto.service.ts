@@ -12,7 +12,7 @@ import { KdfType } from "../enums/kdfType";
 import { KeySuffixOptions } from "../enums/keySuffixOptions";
 import { sequentialize } from "../misc/sequentialize";
 import { Utils } from "../misc/utils";
-import { EEFLongWordList } from "../misc/wordlist";
+import { EFFLongWordList } from "../misc/wordlist";
 import { EncryptedOrganizationKeyData } from "../models/data/encryptedOrganizationKeyData";
 import { EncArrayBuffer } from "../models/domain/encArrayBuffer";
 import { EncString } from "../models/domain/encString";
@@ -734,7 +734,7 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   private async hashPhrase(hash: ArrayBuffer, minimumEntropy = 64) {
-    const entropyPerWord = Math.log(EEFLongWordList.length) / Math.log(2);
+    const entropyPerWord = Math.log(EFFLongWordList.length) / Math.log(2);
     let numWords = Math.ceil(minimumEntropy / entropyPerWord);
 
     const hashArr = Array.from(new Uint8Array(hash));
@@ -746,9 +746,9 @@ export class CryptoService implements CryptoServiceAbstraction {
     const phrase: string[] = [];
     let hashNumber = bigInt.fromArray(hashArr, 256);
     while (numWords--) {
-      const remainder = hashNumber.mod(EEFLongWordList.length);
-      hashNumber = hashNumber.divide(EEFLongWordList.length);
-      phrase.push(EEFLongWordList[remainder as any]);
+      const remainder = hashNumber.mod(EFFLongWordList.length);
+      hashNumber = hashNumber.divide(EFFLongWordList.length);
+      phrase.push(EFFLongWordList[remainder as any]);
     }
     return phrase;
   }
