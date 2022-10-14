@@ -8,7 +8,7 @@ import { PasswordRepromptService } from "@bitwarden/common/abstractions/password
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { CipherReportComponent } from "./cipher-report.component";
 

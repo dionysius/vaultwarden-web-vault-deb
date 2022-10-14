@@ -15,7 +15,7 @@ import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/poli
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PlanType } from "@bitwarden/common/enums/planType";
-import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { ListResponse } from "@bitwarden/common/models/response/listResponse";
 import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
 

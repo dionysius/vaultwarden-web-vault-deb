@@ -5,7 +5,7 @@ import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.s
 import { StateVersion } from "@bitwarden/common/enums/stateVersion";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { Account } from "@bitwarden/common/models/domain/account";
-import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { StateMigrationService } from "@bitwarden/common/services/stateMigration.service";
 
 const userId = "USER_ID";

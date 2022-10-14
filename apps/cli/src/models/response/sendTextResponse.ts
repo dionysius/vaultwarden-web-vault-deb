@@ -1,4 +1,4 @@
-import { SendTextView } from "@bitwarden/common/models/view/sendTextView";
+import { SendTextView } from "@bitwarden/common/models/view/send-text.view";
 
 export class SendTextResponse {
   static template(text = "Text contained in the send.", hidden = false): SendTextResponse {

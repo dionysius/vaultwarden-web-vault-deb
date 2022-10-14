@@ -60,7 +60,7 @@ import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "@bitwarde
 import { VaultTimeoutSettingsService as VaultTimeoutSettingsServiceAbstraction } from "@bitwarden/common/abstractions/vaultTimeout/vaultTimeoutSettings.service";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { Account } from "@bitwarden/common/models/domain/account";
-import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { AccountApiService } from "@bitwarden/common/services/account/account-api.service";
 import { AccountService } from "@bitwarden/common/services/account/account.service";
 import { AnonymousHubService } from "@bitwarden/common/services/anonymousHub.service";

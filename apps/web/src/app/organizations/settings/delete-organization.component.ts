@@ -9,7 +9,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { Verification } from "@bitwarden/common/types/verification";
 
 class CountBasedLocalizationKey {

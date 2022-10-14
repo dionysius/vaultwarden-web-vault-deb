@@ -3,9 +3,9 @@ import { mockReset, mock } from "jest-mock-extended";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
-import { EncArrayBuffer } from "@bitwarden/common/models/domain/encArrayBuffer";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { EncryptService } from "@bitwarden/common/services/encrypt.service";
 
 import { makeStaticByteArray } from "../utils";

@@ -10,9 +10,9 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { UpdateTempPasswordRequest } from "@bitwarden/common/models/request/updateTempPasswordRequest";
 
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "./change-password.component";

@@ -71,7 +71,7 @@ import { UpmCsvImporter } from "../importers/upmCsvImporter";
 import { YotiCsvImporter } from "../importers/yotiCsvImporter";
 import { ZohoVaultCsvImporter } from "../importers/zohoVaultCsvImporter";
 import { Utils } from "../misc/utils";
-import { ImportResult } from "../models/domain/importResult";
+import { ImportResult } from "../models/domain/import-result";
 import { CipherRequest } from "../models/request/cipherRequest";
 import { CollectionRequest } from "../models/request/collectionRequest";
 import { FolderRequest } from "../models/request/folderRequest";
@@ -79,7 +79,7 @@ import { ImportCiphersRequest } from "../models/request/importCiphersRequest";
 import { ImportOrganizationCiphersRequest } from "../models/request/importOrganizationCiphersRequest";
 import { KvpRequest } from "../models/request/kvpRequest";
 import { ErrorResponse } from "../models/response/errorResponse";
-import { CipherView } from "../models/view/cipherView";
+import { CipherView } from "../models/view/cipher.view";
 
 export class ImportService implements ImportServiceAbstraction {
   featuredImportOptions = featuredImportOptions as readonly ImportOption[];

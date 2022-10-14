@@ -1,7 +1,7 @@
 import { Jsonify } from "type-fest";
 
 import { Account } from "./account";
-import { GlobalState } from "./globalState";
+import { GlobalState } from "./global-state";
 
 export class State<
   TGlobalState extends GlobalState = GlobalState,

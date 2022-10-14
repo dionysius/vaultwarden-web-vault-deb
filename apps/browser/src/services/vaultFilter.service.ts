@@ -6,7 +6,7 @@ import { FolderService } from "@bitwarden/common/abstractions/folder/folder.serv
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 export class VaultFilterService extends BaseVaultFilterService {
   vaultFilter: VaultFilter = new VaultFilter();

@@ -14,7 +14,7 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
 
 @Component({

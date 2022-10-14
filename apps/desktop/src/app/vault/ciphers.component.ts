@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 import { CiphersComponent as BaseCiphersComponent } from "@bitwarden/angular/components/ciphers.component";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { SearchBarService } from "../layout/search/search-bar.service";
 

@@ -1,14 +1,14 @@
 import { Observable } from "rxjs";
 
 import { AuthenticationStatus } from "../enums/authenticationStatus";
-import { AuthResult } from "../models/domain/authResult";
+import { AuthResult } from "../models/domain/auth-result";
 import {
   ApiLogInCredentials,
   PasswordLogInCredentials,
   SsoLogInCredentials,
   PasswordlessLogInCredentials,
-} from "../models/domain/logInCredentials";
-import { SymmetricCryptoKey } from "../models/domain/symmetricCryptoKey";
+} from "../models/domain/log-in-credentials";
+import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 import { TokenRequestTwoFactor } from "../models/request/identityToken/tokenRequestTwoFactor";
 import { AuthRequestPushNotification } from "../models/response/notificationResponse";
 

@@ -1,6 +1,6 @@
 import { FieldType } from "@bitwarden/common/enums/fieldType";
-import { FieldData } from "@bitwarden/common/models/data/fieldData";
-import { EncString } from "@bitwarden/common/models/domain/encString";
+import { FieldData } from "@bitwarden/common/models/data/field.data";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { Field } from "@bitwarden/common/models/domain/field";
 
 import { mockEnc, mockFromJson } from "../../utils";

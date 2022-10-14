@@ -4,7 +4,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { CryptoService } from "@bitwarden/common/services/crypto.service";
 
 export class ElectronCryptoService extends CryptoService {

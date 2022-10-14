@@ -10,7 +10,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
-import { EncString } from "@bitwarden/common/models/domain/encString";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { CipherWithIdRequest } from "@bitwarden/common/models/request/cipherWithIdRequest";
 import { FolderWithIdRequest } from "@bitwarden/common/models/request/folderWithIdRequest";
 import { UpdateKeyRequest } from "@bitwarden/common/models/request/updateKeyRequest";

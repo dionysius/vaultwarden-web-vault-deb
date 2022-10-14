@@ -23,7 +23,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 const BroadcasterSubscriptionId = "ViewComponent";
 

@@ -12,9 +12,9 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KdfType } from "@bitwarden/common/enums/kdfType";
-import { PolicyData } from "@bitwarden/common/models/data/policyData";
+import { PolicyData } from "@bitwarden/common/models/data/policy.data";
 import { Policy } from "@bitwarden/common/models/domain/policy";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { EmergencyAccessPasswordRequest } from "@bitwarden/common/models/request/emergencyAccessPasswordRequest";
 import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
 

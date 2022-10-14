@@ -9,10 +9,10 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
-import { EncArrayBuffer } from "@bitwarden/common/models/domain/encArrayBuffer";
+import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
 import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
-import { AttachmentView } from "@bitwarden/common/models/view/attachmentView";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { AttachmentView } from "@bitwarden/common/models/view/attachment.view";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 @Directive()
 export class AttachmentsComponent implements OnInit {

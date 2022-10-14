@@ -9,7 +9,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { AttachmentView } from "@bitwarden/common/models/view/attachmentView";
+import { AttachmentView } from "@bitwarden/common/models/view/attachment.view";
 
 @Component({
   selector: "emergency-access-attachments",

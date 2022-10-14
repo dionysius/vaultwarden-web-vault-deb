@@ -15,7 +15,7 @@ import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.ab
 import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { AutofillService } from "../../services/abstractions/autofill.service";

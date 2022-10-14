@@ -1,7 +1,7 @@
 import { Jsonify } from "type-fest";
 
 import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
-import { StorageOptions } from "@bitwarden/common/models/domain/storageOptions";
+import { StorageOptions } from "@bitwarden/common/models/domain/storage-options";
 
 import { Account } from "../../models/account";
 import { BrowserComponentState } from "../../models/browserComponentState";

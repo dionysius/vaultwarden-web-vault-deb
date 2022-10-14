@@ -3,7 +3,7 @@ import { BehaviorSubject, firstValueFrom, Subject } from "rxjs";
 
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncNotifierService } from "@bitwarden/common/abstractions/sync/syncNotifier.service.abstraction";
-import { OrganizationData } from "@bitwarden/common/models/data/organizationData";
+import { OrganizationData } from "@bitwarden/common/models/data/organization.data";
 import { SyncResponse } from "@bitwarden/common/models/response/syncResponse";
 import { OrganizationService } from "@bitwarden/common/services/organization/organization.service";
 import { SyncEventArgs } from "@bitwarden/common/types/syncEventArgs";

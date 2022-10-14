@@ -23,14 +23,14 @@ import { SecureNoteType } from "@bitwarden/common/enums/secureNoteType";
 import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
-import { CardView } from "@bitwarden/common/models/view/cardView";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
-import { CollectionView } from "@bitwarden/common/models/view/collectionView";
-import { FolderView } from "@bitwarden/common/models/view/folderView";
-import { IdentityView } from "@bitwarden/common/models/view/identityView";
-import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
-import { LoginView } from "@bitwarden/common/models/view/loginView";
-import { SecureNoteView } from "@bitwarden/common/models/view/secureNoteView";
+import { CardView } from "@bitwarden/common/models/view/card.view";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
+import { CollectionView } from "@bitwarden/common/models/view/collection.view";
+import { FolderView } from "@bitwarden/common/models/view/folder.view";
+import { IdentityView } from "@bitwarden/common/models/view/identity.view";
+import { LoginUriView } from "@bitwarden/common/models/view/login-uri.view";
+import { LoginView } from "@bitwarden/common/models/view/login.view";
+import { SecureNoteView } from "@bitwarden/common/models/view/secure-note.view";
 
 @Directive()
 export class AddEditComponent implements OnInit, OnDestroy {

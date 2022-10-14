@@ -7,8 +7,8 @@ import { SearchService as SearchServiceAbstraction } from "../abstractions/searc
 import { CipherType } from "../enums/cipherType";
 import { FieldType } from "../enums/fieldType";
 import { UriMatchType } from "../enums/uriMatchType";
-import { CipherView } from "../models/view/cipherView";
-import { SendView } from "../models/view/sendView";
+import { CipherView } from "../models/view/cipher.view";
+import { SendView } from "../models/view/send.view";
 
 export class SearchService implements SearchServiceAbstraction {
   private static registeredPipeline = false;

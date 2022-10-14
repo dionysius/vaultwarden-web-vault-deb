@@ -13,7 +13,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { CiphersComponent as BaseCiphersComponent } from "../../vault/ciphers.component";
 

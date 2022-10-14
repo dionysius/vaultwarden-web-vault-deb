@@ -7,7 +7,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { EventResponse } from "@bitwarden/common/models/response/eventResponse";
 import { ListResponse } from "@bitwarden/common/models/response/listResponse";
-import { EventView } from "@bitwarden/common/models/view/eventView";
+import { EventView } from "@bitwarden/common/models/view/event.view";
 
 import { EventService } from "../core";
 

@@ -18,7 +18,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
-import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
+import { LoginUriView } from "@bitwarden/common/models/view/login-uri.view";
 
 import { BrowserApi } from "../../browser/browserApi";
 import { PopupUtilsService } from "../services/popup-utils.service";

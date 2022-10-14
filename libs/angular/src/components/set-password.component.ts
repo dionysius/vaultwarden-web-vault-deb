@@ -16,8 +16,8 @@ import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.ab
 import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
 import { DEFAULT_KDF_ITERATIONS, DEFAULT_KDF_TYPE } from "@bitwarden/common/enums/kdfType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { KeysRequest } from "@bitwarden/common/models/request/keysRequest";
 import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/models/request/organizationUserResetPasswordEnrollmentRequest";
 import { SetPasswordRequest } from "@bitwarden/common/models/request/setPasswordRequest";

@@ -1,5 +1,5 @@
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/abstractions/state.service";
-import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { StateService as BaseStateService } from "@bitwarden/common/services/state.service";
 
 import { Account } from "../models/account";

@@ -1,8 +1,8 @@
-import { CollectionData } from "../data/collectionData";
-import { CollectionView } from "../view/collectionView";
+import { CollectionData } from "../data/collection.data";
+import { CollectionView } from "../view/collection.view";
 
-import Domain from "./domainBase";
-import { EncString } from "./encString";
+import Domain from "./domain-base";
+import { EncString } from "./enc-string";
 
 export class Collection extends Domain {
   id: string;

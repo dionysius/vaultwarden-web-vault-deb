@@ -1,4 +1,4 @@
-import { MemoryStorageOptions, StorageOptions } from "../models/domain/storageOptions";
+import { MemoryStorageOptions, StorageOptions } from "../models/domain/storage-options";
 
 export abstract class AbstractStorageService {
   abstract get<T>(key: string, options?: StorageOptions): Promise<T>;

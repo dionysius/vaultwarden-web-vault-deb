@@ -1,5 +1,5 @@
 import { OrganizationUserType } from "../../enums/organizationUserType";
-import { PermissionsApi } from "../api/permissionsApi";
+import { PermissionsApi } from "../api/permissions.api";
 
 import { SelectionReadOnlyRequest } from "./selectionReadOnlyRequest";
 

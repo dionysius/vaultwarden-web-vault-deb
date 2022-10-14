@@ -27,11 +27,11 @@ import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { FieldType } from "@bitwarden/common/enums/fieldType";
-import { EncArrayBuffer } from "@bitwarden/common/models/domain/encArrayBuffer";
+import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
 import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
-import { AttachmentView } from "@bitwarden/common/models/view/attachmentView";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
-import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
+import { AttachmentView } from "@bitwarden/common/models/view/attachment.view";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
+import { LoginUriView } from "@bitwarden/common/models/view/login-uri.view";
 
 const BroadcasterSubscriptionId = "ViewComponent";
 

@@ -22,7 +22,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { VaultService } from "../../vault/shared/vault.service";
 import { EntityEventsComponent } from "../manage/entity-events.component";

@@ -1,8 +1,8 @@
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { FieldType } from "@bitwarden/common/enums/fieldType";
 import { OnePasswordWinCsvImporter as Importer } from "@bitwarden/common/importers/onepasswordImporters/onepasswordWinCsvImporter";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
-import { FieldView } from "@bitwarden/common/models/view/fieldView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
+import { FieldView } from "@bitwarden/common/models/view/field.view";
 
 import { data as creditCardData } from "./testData/onePasswordCsv/creditCard.windows.csv";
 import { data as identityData } from "./testData/onePasswordCsv/identity.windows.csv";

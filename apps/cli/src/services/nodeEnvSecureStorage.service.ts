@@ -2,8 +2,8 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.service";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { EncArrayBuffer } from "@bitwarden/common/models/domain/encArrayBuffer";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 
 export class NodeEnvSecureStorageService implements AbstractStorageService {
   constructor(

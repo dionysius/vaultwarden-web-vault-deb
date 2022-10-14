@@ -1,5 +1,5 @@
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
-import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 
 import { environmentServiceFactory } from "../background/service_factories/environment-service.factory";
 import { BrowserApi } from "../browser/browserApi";

@@ -5,7 +5,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { ProviderUserType } from "@bitwarden/common/enums/providerUserType";
-import { PermissionsApi } from "@bitwarden/common/models/api/permissionsApi";
+import { PermissionsApi } from "@bitwarden/common/models/api/permissions.api";
 import { ProviderUserInviteRequest } from "@bitwarden/common/models/request/provider/providerUserInviteRequest";
 import { ProviderUserUpdateRequest } from "@bitwarden/common/models/request/provider/providerUserUpdateRequest";
 

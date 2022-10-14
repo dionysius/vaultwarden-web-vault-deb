@@ -18,7 +18,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
-import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
+import { LoginUriView } from "@bitwarden/common/models/view/login-uri.view";
 
 @Component({
   selector: "app-vault-add-edit",

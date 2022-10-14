@@ -11,7 +11,7 @@ import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
 import { LogLevelType } from "@bitwarden/common/enums/logLevelType";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
 import { Account } from "@bitwarden/common/models/domain/account";
-import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { AppIdService } from "@bitwarden/common/services/appId.service";
 import { AuditService } from "@bitwarden/common/services/audit.service";
 import { AuthService } from "@bitwarden/common/services/auth.service";

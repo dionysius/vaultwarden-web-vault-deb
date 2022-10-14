@@ -3,7 +3,7 @@ import { Directive, OnInit } from "@angular/core";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { GeneratedPasswordHistory } from "@bitwarden/common/models/domain/generatedPasswordHistory";
+import { GeneratedPasswordHistory } from "@bitwarden/common/models/domain/generated-password-history";
 
 @Directive()
 export class PasswordGeneratorHistoryComponent implements OnInit {

@@ -1,6 +1,6 @@
-import { CardData } from "@bitwarden/common/models/data/cardData";
+import { CardData } from "@bitwarden/common/models/data/card.data";
 import { Card } from "@bitwarden/common/models/domain/card";
-import { EncString } from "@bitwarden/common/models/domain/encString";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
 
 import { mockEnc, mockFromJson } from "../../utils";
 

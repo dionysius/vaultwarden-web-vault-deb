@@ -1,7 +1,7 @@
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
-import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 
 import { authServiceFactory } from "../background/service_factories/auth-service.factory";
 import { autofillServiceFactory } from "../background/service_factories/autofill-service.factory";

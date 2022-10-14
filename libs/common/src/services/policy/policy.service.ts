@@ -7,11 +7,11 @@ import { OrganizationUserStatusType } from "../../enums/organizationUserStatusTy
 import { OrganizationUserType } from "../../enums/organizationUserType";
 import { PolicyType } from "../../enums/policyType";
 import { Utils } from "../../misc/utils";
-import { PolicyData } from "../../models/data/policyData";
-import { MasterPasswordPolicyOptions } from "../../models/domain/masterPasswordPolicyOptions";
+import { PolicyData } from "../../models/data/policy.data";
+import { MasterPasswordPolicyOptions } from "../../models/domain/master-password-policy-options";
 import { Organization } from "../../models/domain/organization";
 import { Policy } from "../../models/domain/policy";
-import { ResetPasswordPolicyOptions } from "../../models/domain/resetPasswordPolicyOptions";
+import { ResetPasswordPolicyOptions } from "../../models/domain/reset-password-policy-options";
 import { ListResponse } from "../../models/response/listResponse";
 import { PolicyResponse } from "../../models/response/policyResponse";
 

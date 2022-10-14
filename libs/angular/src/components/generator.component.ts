@@ -8,7 +8,7 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { UsernameGenerationService } from "@bitwarden/common/abstractions/usernameGeneration.service";
-import { PasswordGeneratorPolicyOptions } from "@bitwarden/common/models/domain/passwordGeneratorPolicyOptions";
+import { PasswordGeneratorPolicyOptions } from "@bitwarden/common/models/domain/password-generator-policy-options";
 
 @Directive()
 export class GeneratorComponent implements OnInit {

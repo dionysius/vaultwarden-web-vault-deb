@@ -1,8 +1,8 @@
 import { OrganizationUserStatusType } from "../../enums/organizationUserStatusType";
 import { OrganizationUserType } from "../../enums/organizationUserType";
 import { ProductType } from "../../enums/productType";
-import { PermissionsApi } from "../api/permissionsApi";
-import { OrganizationData } from "../data/organizationData";
+import { PermissionsApi } from "../api/permissions.api";
+import { OrganizationData } from "../data/organization.data";
 
 export class Organization {
   id: string;

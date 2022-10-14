@@ -1,6 +1,6 @@
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { SendView } from "@bitwarden/common/models/view/sendView";
+import { SendView } from "@bitwarden/common/models/view/send.view";
 import { BaseResponse } from "@bitwarden/node/cli/models/response/baseResponse";
 
 import { SendFileResponse } from "./sendFileResponse";

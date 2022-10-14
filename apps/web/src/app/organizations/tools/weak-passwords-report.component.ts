@@ -9,7 +9,7 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 // eslint-disable-next-line no-restricted-imports
 import { WeakPasswordsReportComponent as BaseWeakPasswordsReportComponent } from "../../reports/pages/weak-passwords-report.component";

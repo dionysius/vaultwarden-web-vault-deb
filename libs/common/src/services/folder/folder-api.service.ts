@@ -1,7 +1,7 @@
 import { ApiService } from "../../abstractions/api.service";
 import { FolderApiServiceAbstraction } from "../../abstractions/folder/folder-api.service.abstraction";
 import { InternalFolderService } from "../../abstractions/folder/folder.service.abstraction";
-import { FolderData } from "../../models/data/folderData";
+import { FolderData } from "../../models/data/folder.data";
 import { Folder } from "../../models/domain/folder";
 import { FolderRequest } from "../../models/request/folderRequest";
 import { FolderResponse } from "../../models/response/folderResponse";

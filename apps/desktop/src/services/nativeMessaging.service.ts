@@ -11,8 +11,8 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 
 import { LegacyMessage } from "../models/nativeMessaging/legacyMessage";
 import { LegacyMessageWrapper } from "../models/nativeMessaging/legacyMessageWrapper";

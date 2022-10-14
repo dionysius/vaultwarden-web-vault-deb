@@ -9,7 +9,7 @@ import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 @Component({
   selector: "app-action-buttons",

@@ -1,11 +1,11 @@
 import { CipherRepromptType } from "../../enums/cipherRepromptType";
 import { CipherType } from "../../enums/cipherType";
-import { CardApi } from "../api/cardApi";
-import { FieldApi } from "../api/fieldApi";
-import { IdentityApi } from "../api/identityApi";
-import { LoginApi } from "../api/loginApi";
-import { LoginUriApi } from "../api/loginUriApi";
-import { SecureNoteApi } from "../api/secureNoteApi";
+import { CardApi } from "../api/card.api";
+import { FieldApi } from "../api/field.api";
+import { IdentityApi } from "../api/identity.api";
+import { LoginUriApi } from "../api/login-uri.api";
+import { LoginApi } from "../api/login.api";
+import { SecureNoteApi } from "../api/secure-note.api";
 import { Cipher } from "../domain/cipher";
 
 import { AttachmentRequest } from "./attachmentRequest";

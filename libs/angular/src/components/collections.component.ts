@@ -6,8 +6,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
-import { CollectionView } from "@bitwarden/common/models/view/collectionView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
+import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 
 @Directive()
 export class CollectionsComponent implements OnInit {

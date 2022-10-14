@@ -18,9 +18,9 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/models/request/organizationUserResetPasswordRequest";
 
 @Component({

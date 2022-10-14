@@ -1,5 +1,5 @@
 import { Account } from "../models/domain/account";
-import { GlobalState } from "../models/domain/globalState";
+import { GlobalState } from "../models/domain/global-state";
 
 import { AccountFactory } from "./accountFactory";
 import { GlobalStateFactory } from "./globalStateFactory";

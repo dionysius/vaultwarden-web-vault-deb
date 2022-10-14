@@ -1,6 +1,6 @@
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { MykiCsvImporter as Importer } from "@bitwarden/common/importers/mykiCsvImporter";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { userAccountData } from "./testData/mykiCsv/UserAccount.csv";
 import { userCreditCardData } from "./testData/mykiCsv/UserCreditCard.csv";

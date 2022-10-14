@@ -7,14 +7,14 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
 import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserType";
-import { PermissionsApi } from "@bitwarden/common/models/api/permissionsApi";
-import { CollectionData } from "@bitwarden/common/models/data/collectionData";
+import { PermissionsApi } from "@bitwarden/common/models/api/permissions.api";
+import { CollectionData } from "@bitwarden/common/models/data/collection.data";
 import { Collection } from "@bitwarden/common/models/domain/collection";
 import { OrganizationUserInviteRequest } from "@bitwarden/common/models/request/organizationUserInviteRequest";
 import { OrganizationUserUpdateRequest } from "@bitwarden/common/models/request/organizationUserUpdateRequest";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selectionReadOnlyRequest";
 import { CollectionDetailsResponse } from "@bitwarden/common/models/response/collectionResponse";
-import { CollectionView } from "@bitwarden/common/models/view/collectionView";
+import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 
 @Component({
   selector: "app-user-add-edit",

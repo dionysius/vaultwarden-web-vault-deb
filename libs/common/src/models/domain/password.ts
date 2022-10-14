@@ -1,11 +1,11 @@
 import { Jsonify } from "type-fest";
 
-import { PasswordHistoryData } from "../data/passwordHistoryData";
-import { PasswordHistoryView } from "../view/passwordHistoryView";
+import { PasswordHistoryData } from "../data/password-history.data";
+import { PasswordHistoryView } from "../view/password-history.view";
 
-import Domain from "./domainBase";
-import { EncString } from "./encString";
-import { SymmetricCryptoKey } from "./symmetricCryptoKey";
+import Domain from "./domain-base";
+import { EncString } from "./enc-string";
+import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 export class Password extends Domain {
   password: EncString;

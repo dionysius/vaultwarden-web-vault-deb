@@ -1,4 +1,4 @@
-import { ProviderData } from "../models/data/providerData";
+import { ProviderData } from "../models/data/provider.data";
 import { Provider } from "../models/domain/provider";
 
 export abstract class ProviderService {

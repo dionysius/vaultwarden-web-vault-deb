@@ -1,6 +1,6 @@
 import { SendType } from "../../enums/sendType";
-import { SendFileApi } from "../api/sendFileApi";
-import { SendTextApi } from "../api/sendTextApi";
+import { SendFileApi } from "../api/send-file.api";
+import { SendTextApi } from "../api/send-text.api";
 
 import { BaseResponse } from "./baseResponse";
 

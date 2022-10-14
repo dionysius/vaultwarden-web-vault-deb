@@ -2,10 +2,10 @@ import { mock, MockProxy } from "jest-mock-extended";
 
 import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { AttachmentData } from "@bitwarden/common/models/data/attachmentData";
+import { AttachmentData } from "@bitwarden/common/models/data/attachment.data";
 import { Attachment } from "@bitwarden/common/models/domain/attachment";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 
 import { makeStaticByteArray, mockEnc, mockFromJson } from "../../utils";

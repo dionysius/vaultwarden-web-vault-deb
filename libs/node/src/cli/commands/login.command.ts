@@ -19,12 +19,12 @@ import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.servi
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { AuthResult } from "@bitwarden/common/models/domain/authResult";
+import { AuthResult } from "@bitwarden/common/models/domain/auth-result";
 import {
   ApiLogInCredentials,
   PasswordLogInCredentials,
   SsoLogInCredentials,
-} from "@bitwarden/common/models/domain/logInCredentials";
+} from "@bitwarden/common/models/domain/log-in-credentials";
 import { TokenRequestTwoFactor } from "@bitwarden/common/models/request/identityToken/tokenRequestTwoFactor";
 import { TwoFactorEmailRequest } from "@bitwarden/common/models/request/twoFactorEmailRequest";
 import { UpdateTempPasswordRequest } from "@bitwarden/common/models/request/updateTempPasswordRequest";

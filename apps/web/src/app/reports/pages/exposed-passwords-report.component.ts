@@ -7,7 +7,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { CipherReportComponent } from "./cipher-report.component";
 

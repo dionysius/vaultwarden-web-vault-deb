@@ -4,8 +4,8 @@ import * as forge from "node-forge";
 
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { DecryptParameters } from "@bitwarden/common/models/domain/decryptParameters";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { DecryptParameters } from "@bitwarden/common/models/domain/decrypt-parameters";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 
 export class NodeCryptoFunctionService implements CryptoFunctionService {
   pbkdf2(

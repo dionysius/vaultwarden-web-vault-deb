@@ -1,7 +1,7 @@
 import { KdfType } from "../../enums/kdfType";
 import { OrganizationUserStatusType } from "../../enums/organizationUserStatusType";
 import { OrganizationUserType } from "../../enums/organizationUserType";
-import { PermissionsApi } from "../api/permissionsApi";
+import { PermissionsApi } from "../api/permissions.api";
 
 import { BaseResponse } from "./baseResponse";
 import { SelectionReadOnlyResponse } from "./selectionReadOnlyResponse";

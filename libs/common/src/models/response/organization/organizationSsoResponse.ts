@@ -1,4 +1,4 @@
-import { SsoConfigApi } from "../../api/ssoConfigApi";
+import { SsoConfigApi } from "../../api/sso-config.api";
 import { BaseResponse } from "../baseResponse";
 
 export class OrganizationSsoResponse extends BaseResponse {

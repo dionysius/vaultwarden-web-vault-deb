@@ -169,7 +169,7 @@ import {
 } from "../models/response/twoFactorWebAuthnResponse";
 import { TwoFactorYubiKeyResponse } from "../models/response/twoFactorYubiKeyResponse";
 import { UserKeyResponse } from "../models/response/userKeyResponse";
-import { SendAccessView } from "../models/view/sendAccessView";
+import { SendAccessView } from "../models/view/send-access.view";
 
 export class ApiService implements ApiServiceAbstraction {
   private device: DeviceType;

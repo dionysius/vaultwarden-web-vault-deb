@@ -8,7 +8,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PasswordRepromptService } from "@bitwarden/common/abstractions/passwordReprompt.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 // eslint-disable-next-line no-restricted-imports
 import { InactiveTwoFactorReportComponent as BaseInactiveTwoFactorReportComponent } from "../../reports/pages/inactive-two-factor-report.component";

@@ -1,8 +1,8 @@
 import { CipherType } from "../../enums/cipherType";
-import { CardView } from "../../models/view/cardView";
-import { CipherView } from "../../models/view/cipherView";
-import { IdentityView } from "../../models/view/identityView";
-import { LoginView } from "../../models/view/loginView";
+import { CardView } from "../../models/view/card.view";
+import { CipherView } from "../../models/view/cipher.view";
+import { IdentityView } from "../../models/view/identity.view";
+import { LoginView } from "../../models/view/login.view";
 import { Importer } from "../importer";
 
 import { CipherImportContext } from "./cipherImportContext";

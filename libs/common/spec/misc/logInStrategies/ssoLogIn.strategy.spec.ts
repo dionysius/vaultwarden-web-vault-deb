@@ -13,7 +13,7 @@ import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
 import { SsoLogInStrategy } from "@bitwarden/common/misc/logInStrategies/ssoLogin.strategy";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { SsoLogInCredentials } from "@bitwarden/common/models/domain/logInCredentials";
+import { SsoLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
 
 import { identityTokenResponseFactory } from "./logIn.strategy.spec";
 

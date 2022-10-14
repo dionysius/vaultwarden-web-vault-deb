@@ -9,7 +9,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
-import { SendView } from "@bitwarden/common/models/view/sendView";
+import { SendView } from "@bitwarden/common/models/view/send.view";
 import { invokeMenu, RendererMenuItem } from "@bitwarden/electron/utils";
 
 import { SearchBarService } from "../layout/search/search-bar.service";

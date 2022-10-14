@@ -16,8 +16,8 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { AuthResult } from "@bitwarden/common/models/domain/authResult";
-import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/logInCredentials";
+import { AuthResult } from "@bitwarden/common/models/domain/auth-result";
+import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
 
 import { CaptchaProtectedComponent } from "./captchaProtected.component";
 

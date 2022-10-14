@@ -10,7 +10,7 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { SendType } from "@bitwarden/common/enums/sendType";
-import { SendView } from "@bitwarden/common/models/view/sendView";
+import { SendView } from "@bitwarden/common/models/view/send.view";
 
 @Directive()
 export class SendComponent implements OnInit, OnDestroy {

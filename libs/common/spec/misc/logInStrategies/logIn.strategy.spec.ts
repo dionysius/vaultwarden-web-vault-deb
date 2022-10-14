@@ -15,9 +15,9 @@ import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProvider
 import { PasswordLogInStrategy } from "@bitwarden/common/misc/logInStrategies/passwordLogin.strategy";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Account, AccountProfile, AccountTokens } from "@bitwarden/common/models/domain/account";
-import { AuthResult } from "@bitwarden/common/models/domain/authResult";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/logInCredentials";
+import { AuthResult } from "@bitwarden/common/models/domain/auth-result";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
 import { PasswordTokenRequest } from "@bitwarden/common/models/request/identityToken/passwordTokenRequest";
 import { TokenRequestTwoFactor } from "@bitwarden/common/models/request/identityToken/tokenRequestTwoFactor";
 import { IdentityCaptchaResponse } from "@bitwarden/common/models/response/identityCaptchaResponse";

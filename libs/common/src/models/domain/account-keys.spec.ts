@@ -2,7 +2,7 @@ import { makeStaticByteArray } from "../../../spec/utils";
 import { Utils } from "../../misc/utils";
 
 import { AccountKeys, EncryptionPair } from "./account";
-import { SymmetricCryptoKey } from "./symmetricCryptoKey";
+import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 describe("AccountKeys", () => {
   describe("toJSON", () => {

@@ -13,7 +13,7 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { SendType } from "@bitwarden/common/enums/sendType";
-import { SendView } from "@bitwarden/common/models/view/sendView";
+import { SendView } from "@bitwarden/common/models/view/send.view";
 
 import { BrowserComponentState } from "../../models/browserComponentState";
 import { StateService } from "../../services/abstractions/state.service";

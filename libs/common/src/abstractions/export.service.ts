@@ -1,4 +1,4 @@
-import { EventView } from "../models/view/eventView";
+import { EventView } from "../models/view/event.view";
 
 export type ExportFormat = "csv" | "json" | "encrypted_json";
 

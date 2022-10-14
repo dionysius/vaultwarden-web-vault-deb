@@ -1,12 +1,12 @@
 import { Jsonify } from "type-fest";
 
-import { LoginData } from "../data/loginData";
-import { LoginView } from "../view/loginView";
+import { LoginData } from "../data/login.data";
+import { LoginView } from "../view/login.view";
 
-import Domain from "./domainBase";
-import { EncString } from "./encString";
-import { LoginUri } from "./loginUri";
-import { SymmetricCryptoKey } from "./symmetricCryptoKey";
+import Domain from "./domain-base";
+import { EncString } from "./enc-string";
+import { LoginUri } from "./login-uri";
+import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 export class Login extends Domain {
   uris: LoginUri[];

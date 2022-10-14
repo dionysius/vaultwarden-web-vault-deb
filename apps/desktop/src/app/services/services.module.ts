@@ -34,7 +34,7 @@ import { AbstractStorageService } from "@bitwarden/common/abstractions/storage.s
 import { SystemService as SystemServiceAbstraction } from "@bitwarden/common/abstractions/system.service";
 import { ClientType } from "@bitwarden/common/enums/clientType";
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
-import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { SystemService } from "@bitwarden/common/services/system.service";
 import { ElectronCryptoService } from "@bitwarden/electron/services/electronCrypto.service";

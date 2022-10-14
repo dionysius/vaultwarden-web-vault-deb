@@ -4,7 +4,7 @@ import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { StorageOptions } from "@bitwarden/common/models/domain/storageOptions";
+import { StorageOptions } from "@bitwarden/common/models/domain/storage-options";
 import { BadgeModule, I18nMockService } from "@bitwarden/components";
 
 import { PremiumBadgeComponent } from "./premium-badge.component";

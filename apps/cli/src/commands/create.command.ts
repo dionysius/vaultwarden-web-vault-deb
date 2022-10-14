@@ -8,9 +8,9 @@ import { FolderApiServiceAbstraction } from "@bitwarden/common/abstractions/fold
 import { FolderService } from "@bitwarden/common/abstractions/folder/folder.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { CipherExport } from "@bitwarden/common/models/export/cipherExport";
-import { CollectionExport } from "@bitwarden/common/models/export/collectionExport";
-import { FolderExport } from "@bitwarden/common/models/export/folderExport";
+import { CipherExport } from "@bitwarden/common/models/export/cipher.export";
+import { CollectionExport } from "@bitwarden/common/models/export/collection.export";
+import { FolderExport } from "@bitwarden/common/models/export/folder.export";
 import { CollectionRequest } from "@bitwarden/common/models/request/collectionRequest";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selectionReadOnlyRequest";
 import { Response } from "@bitwarden/node/cli/models/response";

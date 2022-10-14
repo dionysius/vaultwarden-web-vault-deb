@@ -3,7 +3,7 @@ import * as path from "path";
 import { app } from "electron";
 
 import { StateFactory } from "@bitwarden/common/factories/stateFactory";
-import { GlobalState } from "@bitwarden/common/models/domain/globalState";
+import { GlobalState } from "@bitwarden/common/models/domain/global-state";
 import { MemoryStorageService } from "@bitwarden/common/services/memoryStorage.service";
 import { StateService } from "@bitwarden/common/services/state.service";
 import { ElectronLogService } from "@bitwarden/electron/services/electronLog.service";

@@ -1,6 +1,6 @@
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { OnePasswordMacCsvImporter as Importer } from "@bitwarden/common/importers/onepasswordImporters/onepasswordMacCsvImporter";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { data as creditCardData } from "./testData/onePasswordCsv/creditCard.mac.csv";
 import { data as identityData } from "./testData/onePasswordCsv/identity.mac.csv";

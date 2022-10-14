@@ -5,14 +5,14 @@ import { FolderService } from "@bitwarden/common/abstractions/folder/folder.serv
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { CollectionData } from "@bitwarden/common/models/data/collectionData";
+import { CollectionData } from "@bitwarden/common/models/data/collection.data";
 import { Collection } from "@bitwarden/common/models/domain/collection";
 import {
   CollectionDetailsResponse as ApiCollectionDetailsResponse,
   CollectionResponse as ApiCollectionResponse,
 } from "@bitwarden/common/models/response/collectionResponse";
 import { ListResponse as ApiListResponse } from "@bitwarden/common/models/response/listResponse";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { ListResponse } from "@bitwarden/node/cli/models/response/listResponse";
 

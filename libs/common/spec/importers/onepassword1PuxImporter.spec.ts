@@ -3,7 +3,7 @@ import { FieldType } from "@bitwarden/common/enums/fieldType";
 import { SecureNoteType } from "@bitwarden/common/enums/secureNoteType";
 import { OnePassword1PuxImporter as Importer } from "@bitwarden/common/importers/onepasswordImporters/onepassword1PuxImporter";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { FieldView } from "@bitwarden/common/models/view/fieldView";
+import { FieldView } from "@bitwarden/common/models/view/field.view";
 
 import { APICredentialsData } from "./testData/onePassword1Pux/APICredentials";
 import { BankAccountData } from "./testData/onePassword1Pux/BankAccount";

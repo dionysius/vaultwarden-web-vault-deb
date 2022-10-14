@@ -2,8 +2,8 @@ import * as forge from "node-forge";
 
 import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
 import { Utils } from "../misc/utils";
-import { DecryptParameters } from "../models/domain/decryptParameters";
-import { SymmetricCryptoKey } from "../models/domain/symmetricCryptoKey";
+import { DecryptParameters } from "../models/domain/decrypt-parameters";
+import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 
 export class WebCryptoFunctionService implements CryptoFunctionService {
   private crypto: Crypto;

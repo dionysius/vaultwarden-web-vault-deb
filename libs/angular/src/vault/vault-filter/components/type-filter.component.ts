@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, Input, Output } from "@angular/core";
 
 import { CipherType } from "@bitwarden/common/enums/cipherType";
-import { ITreeNodeObject } from "@bitwarden/common/models/domain/treeNode";
+import { ITreeNodeObject } from "@bitwarden/common/models/domain/tree-node";
 
 import { TopLevelTreeNode } from "../models/top-level-tree-node.model";
 import { VaultFilter } from "../models/vault-filter.model";

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import { Substitute, Arg } from "@fluffy-spoon/substitute";
 
-import { EncString } from "@bitwarden/common/models/domain/encString";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
 
 function newGuid() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {

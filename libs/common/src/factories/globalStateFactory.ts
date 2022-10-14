@@ -1,4 +1,4 @@
-import { GlobalState } from "../models/domain/globalState";
+import { GlobalState } from "../models/domain/global-state";
 
 export class GlobalStateFactory<T extends GlobalState = GlobalState> {
   private globalStateConstructor: new (init: Partial<T>) => T;

@@ -6,7 +6,7 @@ import { CollectionService } from "@bitwarden/common/abstractions/collection.ser
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { CollectionView } from "@bitwarden/common/models/view/collectionView";
+import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 
 @Component({
   selector: "app-vault-collections",

@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationConnectionType } from "@bitwarden/common/enums/organizationConnectionType";
-import { BillingSyncConfigApi } from "@bitwarden/common/models/api/billingSyncConfigApi";
+import { BillingSyncConfigApi } from "@bitwarden/common/models/api/billing-sync-config.api";
 import { BillingSyncConfigRequest } from "@bitwarden/common/models/request/billingSyncConfigRequest";
 import { OrganizationConnectionRequest } from "@bitwarden/common/models/request/organizationConnectionRequest";
 import { OrganizationConnectionResponse } from "@bitwarden/common/models/response/organizationConnectionResponse";

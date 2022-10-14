@@ -2,20 +2,20 @@ import { Jsonify } from "type-fest";
 
 import { CipherRepromptType } from "../../enums/cipherRepromptType";
 import { CipherType } from "../../enums/cipherType";
-import { CipherData } from "../data/cipherData";
-import { LocalData } from "../data/localData";
-import { CipherView } from "../view/cipherView";
+import { CipherData } from "../data/cipher.data";
+import { LocalData } from "../data/local.data";
+import { CipherView } from "../view/cipher.view";
 
 import { Attachment } from "./attachment";
 import { Card } from "./card";
-import Domain from "./domainBase";
-import { EncString } from "./encString";
+import Domain from "./domain-base";
+import { EncString } from "./enc-string";
 import { Field } from "./field";
 import { Identity } from "./identity";
 import { Login } from "./login";
 import { Password } from "./password";
-import { SecureNote } from "./secureNote";
-import { SymmetricCryptoKey } from "./symmetricCryptoKey";
+import { SecureNote } from "./secure-note";
+import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 export class Cipher extends Domain {
   id: string;

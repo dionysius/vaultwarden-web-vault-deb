@@ -3,8 +3,8 @@ import "module-alias/register";
 import { v4 as uuidv4 } from "uuid";
 
 import { Utils } from "@bitwarden/common/misc/utils";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { EncryptService } from "@bitwarden/common/services/encrypt.service";
 import { NodeCryptoFunctionService } from "@bitwarden/node/services/nodeCryptoFunction.service";

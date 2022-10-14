@@ -13,20 +13,20 @@ import { FolderService } from "../abstractions/folder/folder.service.abstraction
 import { CipherType } from "../enums/cipherType";
 import { DEFAULT_KDF_ITERATIONS, KdfType } from "../enums/kdfType";
 import { Utils } from "../misc/utils";
-import { CipherData } from "../models/data/cipherData";
-import { CollectionData } from "../models/data/collectionData";
+import { CipherData } from "../models/data/cipher.data";
+import { CollectionData } from "../models/data/collection.data";
 import { Cipher } from "../models/domain/cipher";
 import { Collection } from "../models/domain/collection";
 import { Folder } from "../models/domain/folder";
-import { CipherWithIdExport as CipherExport } from "../models/export/cipherWithIdsExport";
-import { CollectionWithIdExport as CollectionExport } from "../models/export/collectionWithIdExport";
-import { EventExport } from "../models/export/eventExport";
-import { FolderWithIdExport as FolderExport } from "../models/export/folderWithIdExport";
+import { CipherWithIdExport as CipherExport } from "../models/export/cipher-with-ids.export";
+import { CollectionWithIdExport as CollectionExport } from "../models/export/collection-with-id.export";
+import { EventExport } from "../models/export/event.export";
+import { FolderWithIdExport as FolderExport } from "../models/export/folder-with-id.export";
 import { CollectionDetailsResponse } from "../models/response/collectionResponse";
-import { CipherView } from "../models/view/cipherView";
-import { CollectionView } from "../models/view/collectionView";
-import { EventView } from "../models/view/eventView";
-import { FolderView } from "../models/view/folderView";
+import { CipherView } from "../models/view/cipher.view";
+import { CollectionView } from "../models/view/collection.view";
+import { EventView } from "../models/view/event.view";
+import { FolderView } from "../models/view/folder.view";
 
 export class ExportService implements ExportServiceAbstraction {
   constructor(

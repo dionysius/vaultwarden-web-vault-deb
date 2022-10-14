@@ -5,7 +5,7 @@ import { LogService } from "../abstractions/log.service";
 import { OrganizationService } from "../abstractions/organization/organization.service.abstraction";
 import { StateService } from "../abstractions/state.service";
 import { EventType } from "../enums/eventType";
-import { EventData } from "../models/data/eventData";
+import { EventData } from "../models/data/event.data";
 import { EventRequest } from "../models/request/eventRequest";
 
 export class EventService implements EventServiceAbstraction {

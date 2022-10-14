@@ -12,7 +12,7 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { SendType } from "@bitwarden/common/enums/sendType";
-import { SendView } from "@bitwarden/common/models/view/sendView";
+import { SendView } from "@bitwarden/common/models/view/send.view";
 
 import { BrowserSendComponentState } from "../../models/browserSendComponentState";
 import { StateService } from "../../services/abstractions/state.service";

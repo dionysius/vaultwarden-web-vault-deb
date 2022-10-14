@@ -7,7 +7,7 @@ import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { EventType } from "@bitwarden/common/enums/eventType";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 
 import { BrowserApi } from "../browser/browserApi";
 

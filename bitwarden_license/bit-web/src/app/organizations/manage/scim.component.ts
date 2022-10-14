@@ -9,7 +9,7 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstraction
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { OrganizationApiKeyType } from "@bitwarden/common/enums/organizationApiKeyType";
 import { OrganizationConnectionType } from "@bitwarden/common/enums/organizationConnectionType";
-import { ScimConfigApi } from "@bitwarden/common/models/api/scimConfigApi";
+import { ScimConfigApi } from "@bitwarden/common/models/api/scim-config.api";
 import { OrganizationApiKeyRequest } from "@bitwarden/common/models/request/organizationApiKeyRequest";
 import { OrganizationConnectionRequest } from "@bitwarden/common/models/request/organizationConnectionRequest";
 import { ScimConfigRequest } from "@bitwarden/common/models/request/scimConfigRequest";

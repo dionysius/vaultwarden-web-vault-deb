@@ -16,7 +16,7 @@ import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwo
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { DEFAULT_KDF_ITERATIONS, DEFAULT_KDF_TYPE } from "@bitwarden/common/enums/kdfType";
-import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/logInCredentials";
+import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
 import { KeysRequest } from "@bitwarden/common/models/request/keysRequest";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
 import { RegisterRequest } from "@bitwarden/common/models/request/registerRequest";

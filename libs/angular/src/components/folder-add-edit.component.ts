@@ -5,7 +5,7 @@ import { FolderService } from "@bitwarden/common/abstractions/folder/folder.serv
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { FolderView } from "@bitwarden/common/models/view/folderView";
+import { FolderView } from "@bitwarden/common/models/view/folder.view";
 
 @Directive()
 export class FolderAddEditComponent implements OnInit {

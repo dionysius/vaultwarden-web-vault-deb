@@ -25,8 +25,8 @@ import { TotpService } from "@bitwarden/common/abstractions/totp.service";
 import { CipherRepromptType } from "@bitwarden/common/enums/cipherRepromptType";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
-import { FolderView } from "@bitwarden/common/models/view/folderView";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
+import { FolderView } from "@bitwarden/common/models/view/folder.view";
 import { invokeMenu, RendererMenuItem } from "@bitwarden/electron/utils";
 
 import { SearchBarService } from "../layout/search/search-bar.service";

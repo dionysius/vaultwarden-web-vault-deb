@@ -7,9 +7,9 @@ import { PolicyService } from "../abstractions/policy/policy.service.abstraction
 import { StateService } from "../abstractions/state.service";
 import { PolicyType } from "../enums/policyType";
 import { EFFLongWordList } from "../misc/wordlist";
-import { EncString } from "../models/domain/encString";
-import { GeneratedPasswordHistory } from "../models/domain/generatedPasswordHistory";
-import { PasswordGeneratorPolicyOptions } from "../models/domain/passwordGeneratorPolicyOptions";
+import { EncString } from "../models/domain/enc-string";
+import { GeneratedPasswordHistory } from "../models/domain/generated-password-history";
+import { PasswordGeneratorPolicyOptions } from "../models/domain/password-generator-policy-options";
 import { Policy } from "../models/domain/policy";
 
 const DefaultOptions = {

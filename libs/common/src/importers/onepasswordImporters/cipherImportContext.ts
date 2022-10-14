@@ -1,4 +1,4 @@
-import { CipherView } from "../../models/view/cipherView";
+import { CipherView } from "../../models/view/cipher.view";
 
 export class CipherImportContext {
   lowerProperty: string;

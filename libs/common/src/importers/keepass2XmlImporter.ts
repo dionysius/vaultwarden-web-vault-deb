@@ -1,6 +1,6 @@
 import { FieldType } from "../enums/fieldType";
-import { ImportResult } from "../models/domain/importResult";
-import { FolderView } from "../models/view/folderView";
+import { ImportResult } from "../models/domain/import-result";
+import { FolderView } from "../models/view/folder.view";
 
 import { BaseImporter } from "./baseImporter";
 import { Importer } from "./importer";

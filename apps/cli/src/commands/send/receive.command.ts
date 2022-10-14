@@ -9,11 +9,11 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { SendAccess } from "@bitwarden/common/models/domain/sendAccess";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { SendAccess } from "@bitwarden/common/models/domain/send-access";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { SendAccessRequest } from "@bitwarden/common/models/request/sendAccessRequest";
 import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
-import { SendAccessView } from "@bitwarden/common/models/view/sendAccessView";
+import { SendAccessView } from "@bitwarden/common/models/view/send-access.view";
 import { Response } from "@bitwarden/node/cli/models/response";
 
 import { SendAccessResponse } from "../../models/response/sendAccessResponse";

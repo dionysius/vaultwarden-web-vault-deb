@@ -14,7 +14,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
 import { WebAuthnIFrame } from "@bitwarden/common/misc/webauthn_iframe";
-import { AuthResult } from "@bitwarden/common/models/domain/authResult";
+import { AuthResult } from "@bitwarden/common/models/domain/auth-result";
 import { TokenRequestTwoFactor } from "@bitwarden/common/models/request/identityToken/tokenRequestTwoFactor";
 import { TwoFactorEmailRequest } from "@bitwarden/common/models/request/twoFactorEmailRequest";
 import { TwoFactorProviders } from "@bitwarden/common/services/twoFactor.service";

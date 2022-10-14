@@ -12,9 +12,9 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { VerificationType } from "@bitwarden/common/enums/verificationType";
-import { EncString } from "@bitwarden/common/models/domain/encString";
-import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/masterPasswordPolicyOptions";
-import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetricCryptoKey";
+import { EncString } from "@bitwarden/common/models/domain/enc-string";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
+import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { PasswordRequest } from "@bitwarden/common/models/request/passwordRequest";
 import { Verification } from "@bitwarden/common/types/verification";
 
