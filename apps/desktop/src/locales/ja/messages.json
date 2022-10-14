@@ -1266,6 +1266,10 @@
     "message": "更新日",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "作成日",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "パスワード更新日",
     "description": "ex. Date this password was updated"

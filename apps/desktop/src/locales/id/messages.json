@@ -1266,6 +1266,10 @@
     "message": "Di perbarui",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Kata Sandi telah Diperbarui",
     "description": "ex. Date this password was updated"

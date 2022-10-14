@@ -1266,6 +1266,10 @@
     "message": "Bijgewerkt",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Aangemaakt",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Wachtwoord bijgewerkt",
     "description": "ex. Date this password was updated"

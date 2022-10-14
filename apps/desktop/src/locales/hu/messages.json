@@ -1266,6 +1266,10 @@
     "message": "A frissítés megtörtént.",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Létrehozva",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "A jelszó frissítésre került.",
     "description": "ex. Date this password was updated"

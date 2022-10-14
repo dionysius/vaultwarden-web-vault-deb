@@ -346,7 +346,7 @@
     "message": "Nimi vaaditaan."
   },
   "addedItem": {
-    "message": "Kohde lisätty"
+    "message": "Kohde lisättiin"
   },
   "editedItem": {
     "message": "Kohdetta muokattu"
@@ -1266,6 +1266,10 @@
     "message": "Päivitetty",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Luotu",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Salasana päivitetty",
     "description": "ex. Date this password was updated"
@@ -1364,7 +1368,7 @@
     "message": "Avaa PIN-koodilla"
   },
   "setYourPinCode": {
-    "message": "Aseta PIN-koodi Bitwardenin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos sovelluksesta."
+    "message": "Aseta PIN-koodi Bitwardenin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut sovelluksesta kokonaan ulos."
   },
   "pinRequired": {
     "message": "PIN-koodi vaaditaan."
@@ -1574,7 +1578,7 @@
     "message": "Salli integraatio DuckDuckGo-selaimeen"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Käytä Bitwarden-holvia DuckDuckGo-selaimessa."
+    "message": "Käytä Bitwardenin holvia DuckDuckGo-selaimessa."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Selainintegraatiota ei tueta"
@@ -1680,7 +1684,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Nykyinen käyttökertojen määrä"
+    "message": "Käyttökertojen nykyinen määrä"
   },
   "disableSend": {
     "message": "Poista Send käytöstä, jottei kukaan voi avata sitä.",

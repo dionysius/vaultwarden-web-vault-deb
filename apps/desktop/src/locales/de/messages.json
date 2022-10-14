@@ -1266,6 +1266,10 @@
     "message": "Aktualisiert",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Erstellt",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Passwort aktualisiert",
     "description": "ex. Date this password was updated"

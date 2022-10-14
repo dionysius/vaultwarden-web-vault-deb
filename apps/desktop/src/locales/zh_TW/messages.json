@@ -1266,6 +1266,10 @@
     "message": "更新於",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "建立於",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "密碼更新於",
     "description": "ex. Date this password was updated"
@@ -1574,7 +1578,7 @@
     "message": "允許 DuckDuckGo 瀏覽器整合"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "使用 DuckDuckGo 瀏覽時，使用您的 Bitwarden 密碼庫。"
+    "message": "當使用 DuckDuckGo 瀏覽時，使用您的 Bitwarden 密碼庫。"
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "不支援瀏覽器整合"

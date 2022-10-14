@@ -1266,6 +1266,10 @@
     "message": "Güncelleme",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Oluşturma",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Parola güncelleme",
     "description": "ex. Date this password was updated"

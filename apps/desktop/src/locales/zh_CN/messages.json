@@ -1266,6 +1266,10 @@
     "message": "更新于",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "创建于",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "密码更新于",
     "description": "ex. Date this password was updated"

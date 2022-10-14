@@ -1266,6 +1266,10 @@
     "message": "Mis à jour ",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Mot de passe mis à jour",
     "description": "ex. Date this password was updated"
@@ -1385,10 +1389,10 @@
     "message": "déverouiller votre coffre"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Demander à Windows Hello au démarrage"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Demander à Touch ID au démarrage"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
@@ -1571,10 +1575,10 @@
     "message": "L'intégration avec le navigateur est utilisée pour le déverrouillage biométrique dans le navigateur."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Autoriser l'intégration DuckDuckGo au navigateur"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Utiliser votre coffre Bitwarden quand vous naviguez avec DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Intégration dans le navigateur non supportée"
@@ -1604,7 +1608,7 @@
     "message": "Veuillez vous assurer que la phrase d'empreinte affichée est identique à celle affichée dans l'extension de navigateur."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ souhaite se connecter à Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1613,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Voulez-vous approuver cette demande ?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Si vous n'avez pas initié cette demande, ne l'approuverez pas."
   },
   "biometricsNotEnabledTitle": {
     "message": "Le déverrouillage biométrique n'est pas activé"
@@ -2016,6 +2020,6 @@
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Coffre"
   }
 }
