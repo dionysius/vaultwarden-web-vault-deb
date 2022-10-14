@@ -1311,6 +1311,10 @@
     "message": "Uuendatud",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Loodud",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Parool on uuendatud",
     "description": "ex. Date this password was updated"
@@ -1999,13 +2003,13 @@
     "message": "et taastada eelseadistatud seaded"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Serveri versioon"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Enda majutatud"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Kolmanda osapoole"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
@@ -2017,7 +2021,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on: $DATE$",
+    "message": "viimati nähtud: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

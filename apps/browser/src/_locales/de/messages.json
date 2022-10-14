@@ -32,7 +32,7 @@
     "message": "Absenden"
   },
   "emailAddress": {
-    "message": "E-Mail Adresse"
+    "message": "E-Mail-Adresse"
   },
   "masterPass": {
     "message": "Master-Passwort"
@@ -44,7 +44,7 @@
     "message": "Ein Master-Passwort-Hinweis kann dir helfen, dich an das Passwort zu erinnern, sofern du es vergessen hast."
   },
   "reTypeMasterPass": {
-    "message": "Master-Passwort wiederholen"
+    "message": "Master-Passwort erneut eingeben"
   },
   "masterPassHint": {
     "message": "Master-Passwort-Hinweis (optional)"
@@ -80,7 +80,7 @@
     "message": "URI kopieren"
   },
   "copyUsername": {
-    "message": "Nutzernamen Kopieren"
+    "message": "Nutzernamen kopieren"
   },
   "copyNumber": {
     "message": "Nummer kopieren"
@@ -131,7 +131,7 @@
     "message": "Einen Bestätigungscode an deine E-Mail senden"
   },
   "sendCode": {
-    "message": "Code senden"
+    "message": "Send Code"
   },
   "codeSent": {
     "message": "Code gesendet"
@@ -199,13 +199,13 @@
     "message": "Synchronisierung"
   },
   "syncVaultNow": {
-    "message": "Tresor jetzt synchronisieren"
+    "message": "Datenspeicher jetzt synchronisieren"
   },
   "lastSync": {
-    "message": "Letzte Synchronisation:"
+    "message": "Zuletzt synchronisiert:"
   },
   "passGen": {
-    "message": "Passwort-Generator"
+    "message": "Passwortgenerator"
   },
   "generator": {
     "message": "Generator",
@@ -227,7 +227,7 @@
     "message": "Passwort generieren"
   },
   "regeneratePassword": {
-    "message": "Password neu generieren"
+    "message": "Passwort neu generieren"
   },
   "options": {
     "message": "Optionen"
@@ -258,10 +258,10 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Zahl hinzufügen"
+    "message": "Ziffer hinzufügen"
   },
   "minNumbers": {
-    "message": "Mindestanzahl Zahlen"
+    "message": "Mindestanzahl Ziffern"
   },
   "minSpecial": {
     "message": "Mindestanzahl Sonderzeichen"
@@ -282,7 +282,7 @@
     "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "itemInformation": {
-    "message": "Eintrags-Information"
+    "message": "Anmeldedaten Information"
   },
   "username": {
     "message": "Nutzername"
@@ -491,7 +491,7 @@
     "message": "Du kannst dein Master-Passwort im Bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Mit der Zwei-Faktor Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor Authentifizierung kann im Bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
+    "message": "Mit der Zwei-Faktor-Authentifizierung wird Ihr Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, eine SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor-Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchten Sie die Seite jetzt öffnen?"
   },
   "editedFolder": {
     "message": "Ordner bearbeitet"
@@ -705,13 +705,13 @@
     "message": "Erfahre mehr"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Schlüssel (TOTP)"
+    "message": "Authentifizierungsschlüssel (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Verifizierungscode (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Kopiere Verifizierungscode"
+    "message": "Verifizierungscode kopieren"
   },
   "attachments": {
     "message": "Anhänge"
@@ -762,7 +762,7 @@
     "message": "Mitgliedschaft erneuern"
   },
   "premiumNotCurrentMember": {
-    "message": "Du hast derzeit keine Premium-Mitgliedschaft."
+    "message": "Sie haben derzeit keine Premium-Mitgliedschaft."
   },
   "premiumSignUpAndGet": {
     "message": "Werde Premium-Mitglied und erhalte dafür:"
@@ -792,7 +792,7 @@
     "message": "Du kannst deine Premium-Mitgliedschaft im Bitwarden.com Web-Tresor kaufen. Möchtest du die Webseite jetzt besuchen?"
   },
   "premiumCurrentMember": {
-    "message": "Du bist jetzt Premium-Mitglied!"
+    "message": "Sie sind jetzt Premium-Mitglied!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Vielen Dank, dass du Bitwarden unterstützt."
@@ -819,7 +819,7 @@
     "message": "Beim Start nach biometrischen Daten fragen"
   },
   "premiumRequired": {
-    "message": "Premium-Mitgliedschaft wird benötigt"
+    "message": "Erweiterte Mitgliedschaft wird benötigt"
   },
   "premiumRequiredDesc": {
     "message": "Eine Premium-Mitgliedschaft ist für diese Funktion notwendig."
@@ -882,7 +882,7 @@
     "message": "Optionen für Zwei-Faktor Authentifizierung"
   },
   "recoveryCodeDesc": {
-    "message": "Zugang zu allen Zwei-Faktor Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor Anbieter in deinem Konto zu deaktivieren."
+    "message": "Zugang zu allen Zwei-Faktor-Anbietern verloren? Benutzen Sie Ihren Wiederherstellungscode, um alle Zwei-Faktor-Anbieter in Ihrem Konto zu deaktivieren."
   },
   "recoveryCodeTitle": {
     "message": "Wiederherstellungscode"
@@ -1311,6 +1311,10 @@
     "message": "Aktualisiert",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Erstellt",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Passwort aktualisiert",
     "description": "ex. Date this password was updated"
@@ -1430,7 +1434,7 @@
     "message": "Automatisch ausfüllen und speichern"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Automatisch ausgefüllter Eintrag und gespeicherte URI"
+    "message": "Auto-Ausgefüllter Eintrag und gespeicherte URI"
   },
   "autoFillSuccess": {
     "message": "Automatisch ausgefüllter Eintrag"
@@ -1508,7 +1512,7 @@
     "message": "Browser-Einbindung ist nicht aktiviert"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktiviere diese in den Einstellungen innerhalb der Desktop-Anwendung."
+    "message": "Die Browser-Einbindung ist in der Bitwarden Desktop-Anwendung nicht aktiviert. Bitte aktivieren Sie diese in den Einstellungen innerhalb der Desktop-Anwendung."
   },
   "startDesktopTitle": {
     "message": "Bitwarden Desktop-Anwendung starten"
@@ -1898,7 +1902,7 @@
     "message": "Persönlichen Tresor exportieren"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Nur die persönlichen Tresoreinträge die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
+    "message": "Nur die persönlichen Tresoreinträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
     "placeholders": {
       "email": {
         "content": "$1",

@@ -110,7 +110,7 @@
     "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
   },
   "addLogin": {
-    "message": "Adicionar uma Credencial"
+    "message": "Adicionar um Login"
   },
   "addItem": {
     "message": "Adicionar Item"
@@ -261,10 +261,10 @@
     "message": "Incluir Número"
   },
   "minNumbers": {
-    "message": "Mínimo de Números"
+    "message": "Números Mínimos"
   },
   "minSpecial": {
-    "message": "Mínimo Especial"
+    "message": "Especiais Mínimos"
   },
   "avoidAmbChar": {
     "message": "Evitar Caracteres Ambíguos"
@@ -491,7 +491,7 @@
     "message": "Você pode alterar a sua senha mestra no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "twoStepLoginConfirmation": {
-    "message": "O login em duas etapas torna a sua conta mais segura ao exigir que você verifique seu login com outro dispositivo como uma chave de segurança, aplicativo de autenticação, SMS, ligação telefônica, ou e-mail. O login em duas etapas pode ser ativado no cofre web em bitwarden.com. Você deseja visitar o site agora?"
+    "message": "O login de duas etapas torna a sua conta mais segura ao exigir que digite um código de segurança de um aplicativo de autenticação quando for iniciar a sessão. O login de duas etapas pode ser ativado no cofre web bitwarden.com. Deseja visitar o site agora?"
   },
   "editedFolder": {
     "message": "Pasta Editada"
@@ -543,7 +543,7 @@
     "message": "Você tem certeza que deseja enviar este item para a lixeira?"
   },
   "deletedItem": {
-    "message": "Enviar item para lixeira"
+    "message": "Item excluído"
   },
   "overwritePassword": {
     "message": "Sobrescrever Senha"
@@ -762,10 +762,10 @@
     "message": "Atualizar Assinatura"
   },
   "premiumNotCurrentMember": {
-    "message": "Você não é um membro premium atualmente."
+    "message": "Você não é atualmente um membro premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Registre-se para uma assinatura premium e obtenha:"
+    "message": "Registe-se para uma assinatura premium e obtenha:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 GB de armazenamento de arquivos encriptados."
@@ -873,7 +873,7 @@
     "message": "Sessão Indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem a verificação em duas etapas ativado, no entanto, nenhum dos provedores de verificação em duas etapas configurados são suportados por este navegador web."
+    "message": "Esta conta tem a verificação de duas etapas ativado, no entanto, nenhum dos provedores de verificação de duas etapas configurados são suportados por este navegador web."
   },
   "noTwoStepProviders2": {
     "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e/ou inclua provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
@@ -1130,7 +1130,7 @@
     "message": "Nome do Meio"
   },
   "lastName": {
-    "message": "Sobrenome"
+    "message": "Último Nome"
   },
   "fullName": {
     "message": "Nome Completo"
@@ -1142,7 +1142,7 @@
     "message": "Empresa"
   },
   "ssn": {
-    "message": "Cadastro de Pessoas Físicas (CPF)"
+    "message": "Número de Segurança Social"
   },
   "passportNumber": {
     "message": "Número do Passaporte"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Atualizado",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Senha Atualizada",
@@ -1505,10 +1509,10 @@
     "message": "Por favor, verifique se o aplicativo desktop mostra esta impressão digital: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "A integração com o navegador não está ativada"
+    "message": "A integração com o navegador não está habilitada"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "A integração com o navegador não está ativada no aplicativo Bitwarden Desktop. Por favor, ative-a nas configurações do aplicativo desktop."
+    "message": "A integração com o navegador não está habilitada no aplicativo Bitwarden Desktop. Por favor, habilite-a nas configurações do aplicativo desktop."
   },
   "startDesktopTitle": {
     "message": "Iniciar o aplicativo Bitwarden Desktop"
@@ -1538,7 +1542,7 @@
     "message": "Biometria não ativada"
   },
   "biometricsNotEnabledDesc": {
-    "message": "A biometria com o navegador requer que a biometria de desktop seja ativada nas configurações primeiro."
+    "message": "A biometria com o navegador requer que a biometria de desktop seja habilitada nas configurações primeiro."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometria não suportada"

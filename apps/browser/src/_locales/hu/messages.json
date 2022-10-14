@@ -482,7 +482,7 @@
     "message": "Név megadása kötelező."
   },
   "addedFolder": {
-    "message": "Hozzáadott mappa"
+    "message": "A mappa hozzáadásra került."
   },
   "changeMasterPass": {
     "message": "Mesterjelszó módosítása"
@@ -491,7 +491,7 @@
     "message": "Mesterjelszavadat a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
   "twoStepLoginConfirmation": {
-    "message": "A kétlépcsős bejelentkezés biztonságosabbá teszi a felhasználódat azáltal, hogy ellenőrizned kell a bejelentkezésedet egy másik készülékkel mint például biztonsági kulcs, hitelesítő alkalmazás, SMS, telefon hívás vagy e-mail. Kétlépcsős bejelentkezést a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
+    "message": "A kétlépcsős bejelentkezés biztonságosabbá teszi a fiókot azáltal, hogy ellenőrizni kell a bejelentkezést egy másik olyan eszközzel mint például biztonsági kulcs, hitelesítő alkalmazás, SMS, telefon hívás vagy email. A kétlépcsős bejelentkezést a bitwarden.com webes széfben lehet engedélyezni. Felkeressük a webhelyet most?"
   },
   "editedFolder": {
     "message": "A mappa módosításra került."
@@ -500,7 +500,7 @@
     "message": "Biztos, hogy törölni akarod ezt a mappát?"
   },
   "deletedFolder": {
-    "message": "Törölt mappa"
+    "message": "A mappa törlésre került."
   },
   "gettingStartedTutorial": {
     "message": "Kezdeti ismertető"
@@ -534,10 +534,10 @@
     "message": "Új URI"
   },
   "addedItem": {
-    "message": "Elem hozzáadva"
+    "message": "Az elem hozzáadásra került."
   },
   "editedItem": {
-    "message": "Elem szerkesztve"
+    "message": "Az elem szerkesztésre került."
   },
   "deleteItemConfirmation": {
     "message": "Biztosan törlésre kerüljön ezt az elem?"
@@ -723,7 +723,7 @@
     "message": "Biztos törölni akarod ezt a mellékletet?"
   },
   "deletedAttachment": {
-    "message": "Mellékletek törlése"
+    "message": "A melléklet törlésre került."
   },
   "newAttachment": {
     "message": "Új melléklet hozzáadása"
@@ -738,7 +738,7 @@
     "message": "Fájl"
   },
   "selectFile": {
-    "message": "Válassz ki egy fájlt."
+    "message": "Válasszunk egy fájlt."
   },
   "maxFileSize": {
     "message": "A naximális fájlméret 500 MB."
@@ -762,10 +762,10 @@
     "message": "Tagság frissítése"
   },
   "premiumNotCurrentMember": {
-    "message": "Pillanatnyilag nem vagy prémium tag."
+    "message": "Jelenleg nincs prémium tagság."
   },
   "premiumSignUpAndGet": {
-    "message": "Regisztrálj prémium tagságra az alábbi funkciókért:"
+    "message": "Regisztráció a prémium tagságra az alábbi funkciókért:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 GB titkosított tárhely a fájlmellékleteknek."
@@ -783,16 +783,16 @@
     "message": "Kiemelt ügyfélszolgálati."
   },
   "ppremiumSignUpFuture": {
-    "message": "Minden jövőbeli prémium funkció. Hamarosan jön még több!"
+    "message": "Minden jövőbeli prémium funkció. Hamarosan jön még több."
   },
   "premiumPurchase": {
     "message": "Prémium funkció megvásárlása"
   },
   "premiumPurchaseAlert": {
-    "message": "Prémium tagságot a bitwarden.com webes széfén tudsz venni. Szeretnéd meglátogatni a most a weboldalt?"
+    "message": "A prémium tagság megvásárolható a bitwarden.com webes széfben. Szeretnénk felkeresni a webhelyet most?"
   },
   "premiumCurrentMember": {
-    "message": "Te egy prémium tag vagy!"
+    "message": "Jelenleg a prémium tagság érvényben van."
   },
   "premiumCurrentMemberThanks": {
     "message": "Köszönjük a Bitwarden támogatását."
@@ -822,7 +822,7 @@
     "message": "Prémium funkció szükséges"
   },
   "premiumRequiredDesc": {
-    "message": "Prémium tagság szükséges ennek a funkciónak eléréséhez."
+    "message": "Prémium tagság szükséges ennek a funkciónak eléréséhez a jövőben."
   },
   "enterVerificationCodeApp": {
     "message": "Add meg a 6 számjegyű ellenőrző kódot a hitelesítő alkalmazásodból."
@@ -882,7 +882,7 @@
     "message": "Kétlépcsős bejelentkezés opciók"
   },
   "recoveryCodeDesc": {
-    "message": "Elvesztetted a hozzáférésed az összes kétlépcsős szolgáltatásodhoz? Használd a visszaállítókódod a kétlépcsős kiszolgálok kikapcsolásához a felhasználódon."
+    "message": "Elveszett a hozzáférés az összes kétlépcsős szolgáltatóhoz? A helyreállító kód használatával letilthatók fiókból a kétlépcsős szolgáltatók."
   },
   "recoveryCodeTitle": {
     "message": "Helyreállító kód"
@@ -927,7 +927,7 @@
     "message": "A helyileg működtetett Bitwarden telepítés alap webcímének megadása."
   },
   "customEnvironment": {
-    "message": "Egyedi környezet"
+    "message": "Egyéni környezet"
   },
   "customEnvironmentFooter": {
     "message": "Haladó felhasználóknak. Minden egyes szolgáltatás alap URL-jét külön megadhatod."
@@ -951,7 +951,7 @@
     "message": "Ikonok szerver webcím"
   },
   "environmentSaved": {
-    "message": "A környezet URL-ek mentésre kerültek."
+    "message": "A környezeti webcímek mentésre kerültek."
   },
   "enableAutoFillOnPageLoad": {
     "message": "Automatikus kitöltés engedélyezése oldal betöltéskor"
@@ -1103,7 +1103,7 @@
     "message": "December"
   },
   "securityCode": {
-    "message": "Biztonsági kód"
+    "message": "Biztonsági Kód"
   },
   "ex": {
     "message": "példa:"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "A frissítés megtörtént.",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Létrehozva",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "A jelszó frissítésre került.",
@@ -1727,7 +1731,7 @@
     "message": "Aktuális elérési szám"
   },
   "createSend": {
-    "message": "Új küldés létrehozása",
+    "message": "Új Send létrehozása",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {

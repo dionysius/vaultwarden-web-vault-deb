@@ -32,7 +32,7 @@
     "message": "Υποβολή"
   },
   "emailAddress": {
-    "message": "Διεύθυνση Email"
+    "message": "Διεύθυνση email"
   },
   "masterPass": {
     "message": "Κύριος κωδικός"
@@ -1311,6 +1311,10 @@
     "message": "Ενημερώθηκε",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Ο Κωδικός Ενημερώθηκε",
     "description": "ex. Date this password was updated"
@@ -2002,10 +2006,10 @@
     "message": "Έκδοση διακομιστή"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

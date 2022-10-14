@@ -98,7 +98,7 @@
     "message": "Копіювати назву власного поля"
   },
   "noMatchingLogins": {
-    "message": "Немає відповідних записів."
+    "message": "Немає відповідних записів"
   },
   "unlockVaultMenu": {
     "message": "Розблокуйте сховище"
@@ -303,7 +303,7 @@
     "message": "Нотатка"
   },
   "editItem": {
-    "message": "Зміна запису"
+    "message": "Редагування запису"
   },
   "folder": {
     "message": "Тека"
@@ -482,7 +482,7 @@
     "message": "Потрібна назва."
   },
   "addedFolder": {
-    "message": "Додано теку"
+    "message": "Теку додано"
   },
   "changeMasterPass": {
     "message": "Змінити головний пароль"
@@ -494,7 +494,7 @@
     "message": "Двоетапна перевірка робить ваш обліковий запис більш захищеним, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете увімкнути двоетапну перевірку в сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "editedFolder": {
-    "message": "Тека змінена"
+    "message": "Теку збережено"
   },
   "deleteFolderConfirmation": {
     "message": "Ви дійсно хочете видалити цю теку?"
@@ -543,7 +543,7 @@
     "message": "Ви дійсно хочете перенести до смітника?"
   },
   "deletedItem": {
-    "message": "Запис перенесено до смітника"
+    "message": "Запис переміщено до смітника"
   },
   "overwritePassword": {
     "message": "Перезаписати пароль"
@@ -732,13 +732,13 @@
     "message": "Немає вкладень."
   },
   "attachmentSaved": {
-    "message": "Вкладення збережено."
+    "message": "Вкладення збережено"
   },
   "file": {
     "message": "Файл"
   },
   "selectFile": {
-    "message": "Оберіть файл."
+    "message": "Оберіть файл"
   },
   "maxFileSize": {
     "message": "Максимальний розмір файлу 500 Мб."
@@ -753,19 +753,19 @@
     "message": "Преміум статус"
   },
   "premiumManage": {
-    "message": "Керувати статусом"
+    "message": "Керувати передплатою"
   },
   "premiumManageAlert": {
     "message": "Ви можете керувати своїм статусом у сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "premiumRefresh": {
-    "message": "Оновити статус"
+    "message": "Оновити стан передплати"
   },
   "premiumNotCurrentMember": {
-    "message": "Зараз у вас немає преміум-статусу."
+    "message": "Зараз у вас немає передплати преміум."
   },
   "premiumSignUpAndGet": {
-    "message": "Підпишіться на преміум-статус і отримайте:"
+    "message": "Передплатіть преміум і отримайте:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 ГБ зашифрованого сховища для файлів."
@@ -783,16 +783,16 @@
     "message": "Пріоритетну технічну підтримку."
   },
   "ppremiumSignUpFuture": {
-    "message": "Всі майбутні функції преміум статусу. Їх буде більше!"
+    "message": "Усі майбутні преміумфункції. Їх буде більше!"
   },
   "premiumPurchase": {
     "message": "Придбати преміум"
   },
   "premiumPurchaseAlert": {
-    "message": "Ви можете придбати преміум статус у сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
+    "message": "Ви можете передплатити преміум у сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "premiumCurrentMember": {
-    "message": "У вас преміум статус!"
+    "message": "Ви користуєтеся передплатою преміум!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Дякуємо за підтримку Bitwarden."
@@ -819,10 +819,10 @@
     "message": "Запитувати біометрію під час запуску"
   },
   "premiumRequired": {
-    "message": "Необхідний преміум статус"
+    "message": "Необхідна передплата преміум"
   },
   "premiumRequiredDesc": {
-    "message": "Для використання цієї функції необхідний преміум статус."
+    "message": "Для використання цієї функції необхідна передплата преміум."
   },
   "enterVerificationCodeApp": {
     "message": "Введіть 6-значний код підтвердження з програми авторизації."
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Оновлено",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Створено",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Пароль оновлено",

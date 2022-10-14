@@ -32,7 +32,7 @@
     "message": "Wyślij"
   },
   "emailAddress": {
-    "message": "Adres e-mail"
+    "message": "Adres email"
   },
   "masterPass": {
     "message": "Hasło główne"
@@ -56,7 +56,7 @@
     "message": "Sejf"
   },
   "myVault": {
-    "message": "Mój sejf"
+    "message": "Mój Sejf"
   },
   "allVaults": {
     "message": "Wszystkie sejfy"
@@ -68,31 +68,31 @@
     "message": "Ustawienia"
   },
   "currentTab": {
-    "message": "Obecna karta"
+    "message": "Bieżąca karta"
   },
   "copyPassword": {
-    "message": "Kopiuj hasło"
+    "message": "Skopiuj hasło"
   },
   "copyNote": {
-    "message": "Kopiuj notatkę"
+    "message": "Skopiuj notatkę"
   },
   "copyUri": {
     "message": "Kopiuj URI"
   },
   "copyUsername": {
-    "message": "Kopiuj nazwę użytkownika"
+    "message": "Skopiuj nazwę użytkownika"
   },
   "copyNumber": {
-    "message": "Kopiuj numer"
+    "message": "Skopiuj numer"
   },
   "copySecurityCode": {
-    "message": "Kopiuj kod zabezpieczający"
+    "message": "Skopiuj kod zabezpieczający"
   },
   "autoFill": {
     "message": "Autouzupełnianie"
   },
   "generatePasswordCopied": {
-    "message": "Generuj hasło (do schowka)"
+    "message": "Wygeneruj hasło (do schowka)"
   },
   "copyElementIdentifier": {
     "message": "Kopiuj nazwę pola niestandardowego"
@@ -199,7 +199,7 @@
     "message": "Synchronizacja"
   },
   "syncVaultNow": {
-    "message": "Synchronizuj sejf"
+    "message": "Rozpocznij synchronizację sejfu"
   },
   "lastSync": {
     "message": "Ostatnia synchronizacja:"
@@ -1311,6 +1311,10 @@
     "message": "Zaktualizowano",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Utworzono",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Aktualizacja hasła",
     "description": "ex. Date this password was updated"
@@ -1810,16 +1814,16 @@
     "message": "Musisz zweryfikować adres e-mail, aby korzystać z tej funkcji. Adres możesz zweryfikować w sejfie internetowym."
   },
   "updatedMasterPassword": {
-    "message": "Hasło główne zostało zaktualizowane"
+    "message": "Zaktualizowane hasło główne"
   },
   "updateMasterPassword": {
     "message": "Zaktualizuj hasło główne"
   },
   "updateMasterPasswordWarning": {
-    "message": "Hasło główne zostało zmienione przez administratora Twojej organizacji. Musisz je zaktualizować, aby uzyskać dostęp do sejfu. Ta czynność spowoduje wylogowanie z bieżącej sesji, przez co konieczne będzie ponowne zalogowanie się. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie godzinę."
+    "message": "Twoje hasło główne zostało ostatnio zmienione przez administratora Twojej organizacji. Musisz je teraz zaktualizować, aby uzyskać dostęp do sejfu. W przypadku kontynuacji nastąpi wylogowanie z bieżącej sesji, przez co konieczne będzie ponowne zalogowanie się. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie jedną godzinę."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatyczne rejestrowanie użytkowników do resetowania hasła"
+    "message": "Automatyczne rejestrowanie użytkowników"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "Ta organizacja posługuje się zasadą, która automatycznie rejestruje użytkowników do resetowania hasła. Rejestracja umożliwia administratorom organizacji zmianę Twojego hasła głównego."
@@ -1853,7 +1857,7 @@
     "message": "Czas blokowania sejfu przekracza limit określony przez organizację."
   },
   "vaultExportDisabled": {
-    "message": "Eksportowanie sejfu zostało wyłączone"
+    "message": "Eksport sejfu wyłączony"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie Twojego sejfu."

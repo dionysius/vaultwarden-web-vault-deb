@@ -482,7 +482,7 @@
     "message": "名前は必須項目です。"
   },
   "addedFolder": {
-    "message": "フォルダーを追加しました"
+    "message": "フォルダを追加しました"
   },
   "changeMasterPass": {
     "message": "マスターパスワードの変更"
@@ -534,10 +534,10 @@
     "message": "新しい URI"
   },
   "addedItem": {
-    "message": "追加しました"
+    "message": "追加されたアイテム"
   },
   "editedItem": {
-    "message": "編集しました"
+    "message": "編集されたアイテム"
   },
   "deleteItemConfirmation": {
     "message": "このアイテムを削除しますか？"
@@ -567,7 +567,7 @@
     "message": "検索の種類"
   },
   "noneFolder": {
-    "message": "フォルダーなし",
+    "message": "フォルダなし",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "更新日",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "作成日",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "パスワード更新日",

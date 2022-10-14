@@ -20,7 +20,7 @@
     "message": "Prihlásiť sa"
   },
   "enterpriseSingleSignOn": {
-    "message": "Prihlásenie cez prihlasovací formulár spoločnosti (SSO)"
+    "message": "Jednotné prihlásenie pre podniky (SSO)"
   },
   "cancel": {
     "message": "Zrušiť"
@@ -309,7 +309,7 @@
     "message": "Priečinok"
   },
   "deleteItem": {
-    "message": "Zmazať položku"
+    "message": "Odstrániť položku"
   },
   "viewItem": {
     "message": "Zobraziť položku"
@@ -534,16 +534,16 @@
     "message": "Nové URI"
   },
   "addedItem": {
-    "message": "Položka pridaná"
+    "message": "Pridaná položka"
   },
   "editedItem": {
-    "message": "Položka upravená"
+    "message": "Upravená položka"
   },
   "deleteItemConfirmation": {
     "message": "Naozaj chcete odstrániť túto položku?"
   },
   "deletedItem": {
-    "message": "Položka odstránená do koša"
+    "message": "Odstránená položka"
   },
   "overwritePassword": {
     "message": "Prepísať heslo"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Aktualizované",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Vytvorené",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Heslo bolo aktualizované",

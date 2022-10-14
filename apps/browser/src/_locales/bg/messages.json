@@ -83,7 +83,7 @@
     "message": "Копиране на потребителското име"
   },
   "copyNumber": {
-    "message": "Копиране на но̀мера"
+    "message": "Копиране на номера"
   },
   "copySecurityCode": {
     "message": "Копиране на кода да сигурност"
@@ -1311,6 +1311,10 @@
     "message": "Обновено",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Създадено",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Обновена парола",
     "description": "ex. Date this password was updated"
@@ -1919,14 +1923,14 @@
     "message": "Тип потребителско име"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Използвайте възможностите за под-адресиране на е-поща на своя доставчик."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -1950,7 +1954,7 @@
     "message": "Услуга"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -2005,7 +2009,7 @@
     "message": "Собствен хостинг"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

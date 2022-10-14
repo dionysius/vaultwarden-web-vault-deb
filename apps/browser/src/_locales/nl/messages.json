@@ -227,7 +227,7 @@
     "message": "Wachtwoord genereren"
   },
   "regeneratePassword": {
-    "message": "Opnieuw genereren"
+    "message": "Wachtwoord opnieuw genereren"
   },
   "options": {
     "message": "Opties"
@@ -996,7 +996,7 @@
     "message": "Kluis vergrendelen"
   },
   "privateModeWarning": {
-    "message": "Private mode support is experimental and some features are limited."
+    "message": "Private mode ondersteuning is experimenteel en sommige functies zijn beperkt."
   },
   "customFields": {
     "message": "Aangepaste velden"
@@ -1127,7 +1127,7 @@
     "message": "Voornaam"
   },
   "middleName": {
-    "message": "Tweede naam"
+    "message": "Tussenvoegsel"
   },
   "lastName": {
     "message": "Achternaam"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Bijgewerkt",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Wachtwoord bijgewerkt",
@@ -1999,16 +2003,16 @@
     "message": "om terug te gaan naar vooraf geconfigureerde instellingen"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Serverversie"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Zelfgehost"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Verbonden met server implementatie van derden, $SERVERNAME$. Reproduceer bugs via de officiële server, of meld ze bij het serverproject.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2017,7 +2021,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on: $DATE$",
+    "message": "laatst gezien op: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

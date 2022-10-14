@@ -14,7 +14,7 @@
     "message": "登入或建立帳戶以存取您的安全密碼庫。"
   },
   "createAccount": {
-    "message": "建立帳戶"
+    "message": "新增帳戶"
   },
   "login": {
     "message": "登入"
@@ -44,7 +44,7 @@
     "message": "主密碼提示可以在您忘記主密碼時幫助您回憶主密碼。"
   },
   "reTypeMasterPass": {
-    "message": "重新輸入主密碼"
+    "message": "再次輸入主密碼"
   },
   "masterPassHint": {
     "message": "主密碼提示（選用）"
@@ -56,7 +56,7 @@
     "message": "密碼庫"
   },
   "myVault": {
-    "message": "密碼庫"
+    "message": "我的密碼庫"
   },
   "allVaults": {
     "message": "所有密碼庫"
@@ -98,7 +98,7 @@
     "message": "複製自訂欄位名稱"
   },
   "noMatchingLogins": {
-    "message": "無符合的登入資料。"
+    "message": "無符合的登入資料"
   },
   "unlockVaultMenu": {
     "message": "解鎖您的密碼庫"
@@ -248,10 +248,10 @@
     "message": "特殊字元 (!@#$%^&*)"
   },
   "numWords": {
-    "message": "字數"
+    "message": "單詞數量"
   },
   "wordSeparator": {
-    "message": "文字分隔字元"
+    "message": "單詞分隔字元"
   },
   "capitalize": {
     "message": "大寫",
@@ -321,7 +321,7 @@
     "message": "網站"
   },
   "toggleVisibility": {
-    "message": "切換可見度"
+    "message": "切換可見性"
   },
   "manage": {
     "message": "管理"
@@ -482,7 +482,7 @@
     "message": "必須填入名稱。"
   },
   "addedFolder": {
-    "message": "已新增資料夾"
+    "message": "資料夾已新增"
   },
   "changeMasterPass": {
     "message": "變更主密碼"
@@ -494,13 +494,13 @@
     "message": "兩步驟登入需要您從其他裝置（例如安全金鑰、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的帳戶更加安全。兩步驟登入可以在 bitwarden.com 網頁版密碼庫啟用。現在要前往嗎？"
   },
   "editedFolder": {
-    "message": "已編輯資料夾"
+    "message": "資料夾已儲存"
   },
   "deleteFolderConfirmation": {
     "message": "您確定要刪除此資料夾嗎？"
   },
   "deletedFolder": {
-    "message": "已刪除資料夾"
+    "message": "資料夾已刪除"
   },
   "gettingStartedTutorial": {
     "message": "新手教學"
@@ -534,16 +534,16 @@
     "message": "新增 URI"
   },
   "addedItem": {
-    "message": "已新增項目"
+    "message": "項目已新增"
   },
   "editedItem": {
-    "message": "已編輯項目"
+    "message": "項目已儲存"
   },
   "deleteItemConfirmation": {
     "message": "確定要刪除此項目嗎？"
   },
   "deletedItem": {
-    "message": "已將項目移至垃圾桶"
+    "message": "項目已移至垃圾桶"
   },
   "overwritePassword": {
     "message": "覆寫密碼"
@@ -567,7 +567,7 @@
     "message": "搜尋類型"
   },
   "noneFolder": {
-    "message": "（未分類）",
+    "message": "預設資料夾",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
@@ -732,7 +732,7 @@
     "message": "沒有附件。"
   },
   "attachmentSaved": {
-    "message": "附件已儲存。"
+    "message": "附件已儲存"
   },
   "file": {
     "message": "檔案"
@@ -744,7 +744,7 @@
     "message": "檔案最大為 500MB。"
   },
   "featureUnavailable": {
-    "message": "功能無法使用"
+    "message": "功能不可用"
   },
   "updateKey": {
     "message": "更新加密金鑰前不能使用此功能。"
@@ -870,13 +870,13 @@
     "message": "驗證 WebAuthn"
   },
   "loginUnavailable": {
-    "message": "無法登入"
+    "message": "登入無法使用"
   },
   "noTwoStepProviders": {
-    "message": "此帳戶已啟用兩步驟登入，但是本瀏覽器不支援已設定的兩步驟登入方式。"
+    "message": "此帳戶已設定兩步驟登入，但是本瀏覽器不支援已設定的任一個兩步驟提供程式。"
   },
   "noTwoStepProviders2": {
-    "message": "請使用已支援的瀏覽器（例如 Chrome ），及/或新增可以更好地跨瀏覽器的兩步驟登入方法（例如驗證器應用程式）。"
+    "message": "請使用受支援的瀏覽器（例如 Chrome ），及/或新增可以更好地跨瀏覽器的提供程式（例如驗證器應用程式）。"
   },
   "twoStepOptions": {
     "message": "兩步驟登入選項"
@@ -885,7 +885,7 @@
     "message": "無法使用任何雙因素提供程式嗎？請使用您的復原碼以停用您帳戶的所有雙因素提供程式。"
   },
   "recoveryCodeTitle": {
-    "message": "復原碼"
+    "message": "復原代碼"
   },
   "authenticatorAppTitle": {
     "message": "驗證器應用程式"
@@ -939,19 +939,19 @@
     "message": "API 伺服器 URL"
   },
   "webVaultUrl": {
-    "message": "網頁版密碼庫伺服器 URL"
+    "message": "網路版密碼庫伺服器 URL"
   },
   "identityUrl": {
-    "message": "身分伺服器 URL"
+    "message": "身份伺服器 URL"
   },
   "notificationsUrl": {
     "message": "通知伺服器 URL"
   },
   "iconsUrl": {
-    "message": "圖示伺服器 URL"
+    "message": "圖標伺服器 URL"
   },
   "environmentSaved": {
-    "message": "已儲存環境 URL。"
+    "message": "環境 URL 已儲存"
   },
   "enableAutoFillOnPageLoad": {
     "message": "頁面載入時自動填入"
@@ -969,7 +969,7 @@
     "message": "您可以從項目的編輯檢視中為單個登入項目關閉頁面載入時自動填入。"
   },
   "itemAutoFillOnPageLoad": {
-    "message": "頁面載入時自動填入（如果選項中已啟用）"
+    "message": "頁面載入時自動填入（如果選項中已設定）"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "使用預設設定"
@@ -1136,7 +1136,7 @@
     "message": "全名"
   },
   "identityName": {
-    "message": "身分名稱"
+    "message": "身份名稱"
   },
   "company": {
     "message": "公司"
@@ -1311,6 +1311,10 @@
     "message": "更新於",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "建立於",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "密碼更新於",
     "description": "ex. Date this password was updated"
@@ -1371,7 +1375,7 @@
     "message": "等待來自桌面應用程式的確認"
   },
   "awaitDesktopDesc": {
-    "message": "請確認在 Bitwarden 桌面應用程式中使用了生物特徵辨識，以啟用瀏覽器的生物特徵辨識。"
+    "message": "請確認在 Bitwarden 桌面應用程式中使用了生物特徵辨識，以啟用瀏覽器的生物特徵辨識功能。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "瀏覽器重啟後使用主密碼鎖定"
@@ -1409,7 +1413,7 @@
     "message": "您確定要永久刪除此項目嗎？"
   },
   "permanentlyDeletedItem": {
-    "message": "已永久刪除項目"
+    "message": "項目已永久刪除"
   },
   "restoreItem": {
     "message": "還原項目"
@@ -1505,10 +1509,10 @@
     "message": "請驗證桌面應用程式顯示的指紋為： "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "瀏覽器整合未啟用"
+    "message": "瀏覽器整合未設定"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "瀏覽器整合在桌面應用程式中未啟用，請在桌面應用程式的設定中啟用它。"
+    "message": "瀏覽器整合在桌面應用程式中未設定，請在桌面應用程式的設定中設定它。"
   },
   "startDesktopTitle": {
     "message": "啟動 Bitwarden 桌面應用程式"
@@ -1535,10 +1539,10 @@
     "message": "帳戶不相符"
   },
   "biometricsNotEnabledTitle": {
-    "message": "生物特徵辨識未啟用"
+    "message": "生物特徵辨識未設定"
   },
   "biometricsNotEnabledDesc": {
-    "message": "需先在桌面應用程式設定中啟用生物特徵辨識，才能使用瀏覽器的生物特徵辨識功能。"
+    "message": "需先在桌面應用程式設定中設定生物特徵辨識，才能使用瀏覽器的生物特徵辨識功能。"
   },
   "biometricsNotSupportedTitle": {
     "message": "不支援生物特徵辨識"
@@ -1628,7 +1632,7 @@
     "message": "已移除密碼"
   },
   "deletedSend": {
-    "message": "已刪除 Send",
+    "message": "Send 已刪除",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1734,7 +1738,7 @@
     "message": "新密碼"
   },
   "sendDisabled": {
-    "message": "已停用 Send",
+    "message": "Send 已停用",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1742,11 +1746,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "已建立 Send",
+    "message": "Send 已建立",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "已編輯 Send",
+    "message": "Send 已儲存",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1880,7 +1884,7 @@
     "message": "移除主密碼"
   },
   "removedMasterPassword": {
-    "message": "已移除主密碼。"
+    "message": "主密碼已移除。"
   },
   "leaveOrganizationConfirmation": {
     "message": "您確定要離開這個組織嗎？"
@@ -1898,7 +1902,7 @@
     "message": "匯出個人密碼庫"
   },
   "exportingPersonalVaultDescription": {
-    "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫。組織密碼庫的項目不包含在內。",
+    "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫項目。組織密碼庫的項目不包含在內。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2017,7 +2021,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "最後上線於 $DATE$",
+    "message": "最後上線於：$DATE$",
     "placeholders": {
       "date": {
         "content": "$1",

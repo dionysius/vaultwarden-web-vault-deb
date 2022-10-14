@@ -56,7 +56,7 @@
     "message": "Caixa forta"
   },
   "myVault": {
-    "message": "La meua caixa forta"
+    "message": "Caixa forta"
   },
   "allVaults": {
     "message": "Totes les caixes fortes"
@@ -494,7 +494,7 @@
     "message": "L'inici de sessió en dues passes fa que el vostre compte siga més segur, ja que obliga a verificar el vostre inici de sessió amb un altre dispositiu, com ara una clau de seguretat, una aplicació autenticadora, un SMS, una trucada telefònica o un correu electrònic. Es pot habilitar l'inici de sessió en dues passes a la caixa forta web de bitwarden.com. Voleu visitar el lloc web ara?"
   },
   "editedFolder": {
-    "message": "Carpeta editada"
+    "message": "Carpeta guardada"
   },
   "deleteFolderConfirmation": {
     "message": "Esteu segur que voleu suprimir aquesta carpeta?"
@@ -1311,6 +1311,10 @@
     "message": "Actualitzat",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Creat",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Contrasenya actualitzada",
     "description": "ex. Date this password was updated"
@@ -1874,7 +1878,7 @@
     }
   },
   "leaveOrganization": {
-    "message": "Abandona organització"
+    "message": "Abandona l'organització"
   },
   "removeMasterPassword": {
     "message": "Suprimiu la contrasenya mestra"
@@ -1926,7 +1930,7 @@
     "message": "Utilitzeu les capacitats de subadreçament del vostre proveïdor de correu electrònic."
   },
   "catchallEmail": {
-    "message": "Captura tot correu electrònic"
+    "message": "Captura tot el correu electrònic"
   },
   "catchallEmailDesc": {
     "message": "Utilitzeu la safata d'entrada global configurada del vostre domini."

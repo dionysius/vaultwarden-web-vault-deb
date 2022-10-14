@@ -1311,6 +1311,10 @@
     "message": "업데이트됨",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "비밀번호 업데이트됨",
     "description": "ex. Date this password was updated"
@@ -1919,14 +1923,14 @@
     "message": "아이디 유형"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -1950,7 +1954,7 @@
     "message": "서비스"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -1972,10 +1976,10 @@
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organization suspended."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -1999,13 +2003,13 @@
     "message": "to reset to pre-configured settings"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

@@ -20,7 +20,7 @@
     "message": "Log ind"
   },
   "enterpriseSingleSignOn": {
-    "message": "Virksomheds Single Sign On"
+    "message": "Virksomheds Single-Sign-On"
   },
   "cancel": {
     "message": "Annullér"
@@ -44,7 +44,7 @@
     "message": "Et tip til hovedadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer den."
   },
   "reTypeMasterPass": {
-    "message": "Bekræft hovedadgangskode"
+    "message": "Indtast hovedadgangskode igen"
   },
   "masterPassHint": {
     "message": "Hovedadgangskodetip (valgfrit)"
@@ -98,7 +98,7 @@
     "message": "Kopiér brugerdefineret feltnavn"
   },
   "noMatchingLogins": {
-    "message": "Ingen matchende logins."
+    "message": "Ingen matchende logins"
   },
   "unlockVaultMenu": {
     "message": "Lås din boks op"
@@ -245,7 +245,7 @@
     "message": "Tal (0-9)"
   },
   "specialCharacters": {
-    "message": "Specielle tegn (!@#$%^&*)"
+    "message": "Specialtegn (!@#$%^&*)"
   },
   "numWords": {
     "message": "Antal ord"
@@ -482,7 +482,7 @@
     "message": "Navn er påkrævet."
   },
   "addedFolder": {
-    "message": "Tilføjede mappe"
+    "message": "Mappe tilføjet"
   },
   "changeMasterPass": {
     "message": "Skift hovedadgangskode"
@@ -491,16 +491,16 @@
     "message": "Du kan ændre din hovedadgangskode i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "twoStepLoginConfirmation": {
-    "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, med en sikkerhedsnøgle, autentificerings app, SMS, telefonopkald eller e-mail. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+    "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, såsom en sikkerhedsnøgle, autentificeringsapp, SMS, telefonopkald eller e-mail. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "editedFolder": {
-    "message": "Redigerede mappe"
+    "message": "Mappe gemt"
   },
   "deleteFolderConfirmation": {
     "message": "Er du sikker på du vil slette denne mappe?"
   },
   "deletedFolder": {
-    "message": "Slettede mappe"
+    "message": "Mappe slettet"
   },
   "gettingStartedTutorial": {
     "message": "Sådan kommer du i gang"
@@ -534,10 +534,10 @@
     "message": "Ny URI"
   },
   "addedItem": {
-    "message": "Tilføjede element"
+    "message": "Element tilføjet"
   },
   "editedItem": {
-    "message": "Redigerede element"
+    "message": "Element gemt"
   },
   "deleteItemConfirmation": {
     "message": "Er du sikker på, at du sende til papirkurven?"
@@ -723,7 +723,7 @@
     "message": "Er du sikker på du vil slette denne vedhæftning?"
   },
   "deletedAttachment": {
-    "message": "Slettet vedhæftning"
+    "message": "Vedhæftning slettet"
   },
   "newAttachment": {
     "message": "Tilføj ny vedhæftning"
@@ -732,13 +732,13 @@
     "message": "Ingen vedhæftninger."
   },
   "attachmentSaved": {
-    "message": "Vedhæftningen er blevet gemt."
+    "message": "Vedhæftning gemt"
   },
   "file": {
     "message": "Fil"
   },
   "selectFile": {
-    "message": "Vælg en fil."
+    "message": "Vælg en fil"
   },
   "maxFileSize": {
     "message": "Maksimum filstørrelse er 500 MB."
@@ -783,7 +783,7 @@
     "message": "Prioriteret kundeservice."
   },
   "ppremiumSignUpFuture": {
-    "message": "Alle fremtidige premium-funktioner. Mere kommer snart!"
+    "message": "Alle fremtidige premium-funktioner. Flere kommer snart!"
   },
   "premiumPurchase": {
     "message": "Køb premium"
@@ -879,7 +879,7 @@
     "message": "Du skal bruge en understøttet webbrowser (såsom Chrome) og/eller tilføje ekstra udbydere, der understøttes bedre på tværs af webbrowsere (f.eks. en autentificering app)."
   },
   "twoStepOptions": {
-    "message": "To-trins login muligheder"
+    "message": "To-trins-login indstillinger"
   },
   "recoveryCodeDesc": {
     "message": "Mistet adgang til alle dine to-faktor-udbydere? Brug din genoprettelseskode til at deaktivere alle to-faktor udbydere på din konto."
@@ -912,7 +912,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Brug en hvilken som helst WebAuthn-aktiveret sikkerhedsnøgle til at få adgang til din konto."
+    "message": "Brug en hvilken som helst WebAuthn-kompatibel sikkerhedsnøgle til at få adgang til din konto."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1049,7 +1049,7 @@
     "message": "Vis hvor mange logins du har til den aktuelle webside."
   },
   "cardholderName": {
-    "message": "Kortindehaverens navn"
+    "message": "Kortholders navn"
   },
   "number": {
     "message": "Nummer"
@@ -1148,7 +1148,7 @@
     "message": "Pasnummer"
   },
   "licenseNumber": {
-    "message": "Kørekortnummer"
+    "message": "Licensnummer"
   },
   "email": {
     "message": "E-mail"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Opdateret",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Oprettet",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Adgangskode opdateret",
@@ -1505,10 +1509,10 @@
     "message": "Bekræft venligst at skrivebordsprogrammet viser dette fingeraftryk: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browserintegration er ikke aktiveret"
+    "message": "Browserintegration er ikke konfigureret"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browserintegration er ikke aktiveret i Bitwarden skrivebordsapplikationen. Aktivér det i indstillingerne i skrivebordsprogrammet."
+    "message": "Browserintegration er ikke konfigureret i Bitwarden skrivebordsapplikationen. Aktivér det i indstillingerne i skrivebordsapplikationen."
   },
   "startDesktopTitle": {
     "message": "Start Bitwarden skrivebordsapplikationen"
@@ -1538,7 +1542,7 @@
     "message": "Biometri ikke aktiveret"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browserbiometri kræver, at desktop-biometri er aktiveret i indstillingerne først."
+    "message": "Browserbiometri kræver, at skrivebords-biometri er aktiveret i indstillingerne først."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometri ikke understøttet"
@@ -1559,7 +1563,7 @@
     "message": "Denne handling kan ikke udføres i sidebjælken, prøv handlingen igen i popup tilstand eller i et nyt vindue."
   },
   "personalOwnershipSubmitError": {
-    "message": "På grund af en virksomhedspolitik er du begrænset til at gemme elementer i din personlige boks. Skift ejerskabsindstillingen til en organisation, og vælg blandt de tilgængelige samlinger."
+    "message": "På grund af en virksomhedspolitik er du begrænset fra at gemme elementer i din personlige boks. Skift ejerskabsindstillingen til en organisation, og vælg blandt de tilgængelige samlinger."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "En organisationspolitik påvirker dine ejerskabsmuligheder."
@@ -1727,14 +1731,14 @@
     "message": "Aktuelt antal tilgange"
   },
   "createSend": {
-    "message": "Opret ny Send",
+    "message": "Ny Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Ny adgangskode"
   },
   "sendDisabled": {
-    "message": "Send deaktiveret",
+    "message": "Send fjernet",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1746,7 +1750,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send opdateret",
+    "message": "Send gemt",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1816,10 +1820,10 @@
     "message": "Opdatér hovedadgangskode"
   },
   "updateMasterPasswordWarning": {
-    "message": "Dit hovedadgangskode blev for nylig ændret af en administrator i din organisation. For at få adgang til boksen skal du opdatere din hovedadgangskode nu. Hvis du fortsætter, logges du ud af din nuværende session, hvilket kræver, at du logger ind igen. Aktive sessioner på andre enheder kan fortsætte med at være aktive i op til én time."
+    "message": "Dit hovedadgangskode blev for nylig ændret af en administrator i din organisation. For at få adgang til boksen skal du opdatere den nu. Hvis du fortsætter, logges du ud af din nuværende session, hvilket kræver, at du logger ind igen. Aktive sessioner på andre enheder kan fortsætte med at være aktive i op til én time."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Auto-indrullering"
+    "message": "Automatisk tilmelding"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "Denne organisation har en virksomhedspolitik, der automatisk tilmelder dig til nulstilling af adgangskode. Tilmelding giver organisationsadministratorer mulighed for at skifte din hovedadgangskode."
@@ -1853,7 +1857,7 @@
     "message": "Din boks-timeout overskrider de begrænsninger, der er fastsat af din organisation."
   },
   "vaultExportDisabled": {
-    "message": "Bokseksport deaktiveret"
+    "message": "Boks-eksport ikke tilgængelig"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "En eller flere organisationspolitikker forhindrer dig i at eksportere din personlige boks."
@@ -1880,7 +1884,7 @@
     "message": "Fjern hovedadgangskode"
   },
   "removedMasterPassword": {
-    "message": "Hovedadgangskode fjernet."
+    "message": "Hovedadgangskode fjernet"
   },
   "leaveOrganizationConfirmation": {
     "message": "Er du sikker på, at du vil forlade denne organisation?"
@@ -1898,7 +1902,7 @@
     "message": "Eksporterer personlig boks"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Kun de personlige bokselementer tilknyttet $EMAIL$ eksporteres. Organisationsbokseelementer medtages ikke.",
+    "message": "Kun de personlige bokselementer tilknyttet $EMAIL$ vil blive eksporteret. Organisationsbokseelementer vil ikke være inkluderet.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1919,7 +1923,7 @@
     "message": "Brugernavnstype"
   },
   "plusAddressedEmail": {
-    "message": "Plus adresseret e-mail",
+    "message": "Plus-adresseret e-mail",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -1950,7 +1954,7 @@
     "message": "Tjeneste"
   },
   "forwardedEmail": {
-    "message": "Videresendt E-mail Alias"
+    "message": "Videresendt e-mail alias"
   },
   "forwardedEmailDesc": {
     "message": "Generér et e-mail alias med en ekstern viderestillingstjeneste."
@@ -1972,10 +1976,10 @@
     "message": "Premium-abonnement kræves"
   },
   "organizationIsDisabled": {
-    "message": "Organisationen er deaktiveret."
+    "message": "Organisation suspenderet."
   },
   "disabledOrganizationFilterError": {
-    "message": "Elementer i deaktiverede organisationer kan ikke tilgås. Kontakt din organisationsejer for at få hjælp."
+    "message": "Elementer i suspenderede organisationer kan ikke tilgås. Kontakt din organisationsejer for at få hjælp."
   },
   "cardBrandMir": {
     "message": "Mir"

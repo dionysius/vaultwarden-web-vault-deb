@@ -149,7 +149,7 @@
     "message": "Změnit hlavní heslo"
   },
   "fingerprintPhrase": {
-    "message": "Fráze otisku prstu",
+    "message": "Unikátní přístupová fráze",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -184,7 +184,7 @@
     "message": "Upravit složku"
   },
   "deleteFolder": {
-    "message": "Smazat složku"
+    "message": "Odstranit složku"
   },
   "folders": {
     "message": "Složky"
@@ -482,7 +482,7 @@
     "message": "Název je povinný."
   },
   "addedFolder": {
-    "message": "Složka byla přidána"
+    "message": "Složka byla úspěšně přidána"
   },
   "changeMasterPass": {
     "message": "Změnit hlavní heslo"
@@ -500,7 +500,7 @@
     "message": "Opravdu chcete tuto složku smazat?"
   },
   "deletedFolder": {
-    "message": "Složka byla smazána"
+    "message": "Smazaná složka"
   },
   "gettingStartedTutorial": {
     "message": "Průvodce pro začátečníky"
@@ -534,7 +534,7 @@
     "message": "Nová URI"
   },
   "addedItem": {
-    "message": "Položka byla přidána"
+    "message": "Přidaná položka"
   },
   "editedItem": {
     "message": "Položka byla upravena"
@@ -1148,7 +1148,7 @@
     "message": "Číslo cestovního pasu"
   },
   "licenseNumber": {
-    "message": "Číslo dokladu totožnosti"
+    "message": "Licenční číslo"
   },
   "email": {
     "message": "E-mail"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Změněno",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Heslo bylo změněno",
@@ -1895,10 +1899,10 @@
     "message": "Vypršel časový limit relace. Vraťte se prosím zpět a zkuste se znovu přihlásit."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exporting individual vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1919,7 +1923,7 @@
     "message": "Typ uživatelského jména"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
@@ -1950,7 +1954,7 @@
     "message": "Služba"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Vygenerovat e-mailový alias pomocí externí služby pro přesměrování."
@@ -1966,16 +1970,16 @@
     "message": "API klíč"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Key connector error: make sure key connector is available and working correctly."
   },
   "premiumSubcriptionRequired": {
     "message": "Vyžadováno prémiové předplatné"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organization suspended."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -1999,13 +2003,13 @@
     "message": "to reset to pre-configured settings"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Verze serveru"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

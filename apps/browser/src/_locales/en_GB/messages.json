@@ -92,7 +92,7 @@
     "message": "Auto-fill"
   },
   "generatePasswordCopied": {
-    "message": "Generate password (copied)"
+    "message": "Generate Password (and Copy)"
   },
   "copyElementIdentifier": {
     "message": "Copy Custom Field Name"
@@ -543,7 +543,7 @@
     "message": "Do you really want to send to the bin?"
   },
   "deletedItem": {
-    "message": "Sent item to bin"
+    "message": "Deleted item"
   },
   "overwritePassword": {
     "message": "Overwrite password"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Updated",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Password updated",

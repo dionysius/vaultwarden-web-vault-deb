@@ -822,7 +822,7 @@
     "message": "Premium requerido"
   },
   "premiumRequiredDesc": {
-    "message": "Una membresía Premium es requerida para utilizar esta característica."
+    "message": "Una membrasía Premium es requerida para utilizar esta característica."
   },
   "enterVerificationCodeApp": {
     "message": "Introduce el código de verificación de 6 dígitos de tu aplicación autenticadora."
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Actualizado",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Creado",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Contraseña actualizada",

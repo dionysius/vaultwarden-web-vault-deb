@@ -44,7 +44,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Saisissez à nouveau le mot de passe maître"
+    "message": "Saisir à nouveau le mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -56,7 +56,7 @@
     "message": "Coffre"
   },
   "myVault": {
-    "message": "Mon coffre"
+    "message": "Mon Coffre"
   },
   "allVaults": {
     "message": "Tous les coffres"
@@ -98,7 +98,7 @@
     "message": "Copier le nom du champ personnalisé"
   },
   "noMatchingLogins": {
-    "message": "Aucun site correspondant."
+    "message": "Aucun identifiant correspondant."
   },
   "unlockVaultMenu": {
     "message": "Déverrouillez votre coffre"
@@ -110,13 +110,13 @@
     "message": "Il n'existe aucun site disponible pour le remplissage automatique pour l'onglet actuel du navigateur."
   },
   "addLogin": {
-    "message": "Ajouter un identifiant"
+    "message": "Ajouter un site"
   },
   "addItem": {
     "message": "Ajouter un élément"
   },
   "passwordHint": {
-    "message": "Indice du mot de passe"
+    "message": "Indice mot de passe"
   },
   "enterEmailToGetHint": {
     "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
@@ -227,7 +227,7 @@
     "message": "Générer un mot de passe"
   },
   "regeneratePassword": {
-    "message": "Générer un nouveau mot de passe"
+    "message": "Re-générer un mot de passe"
   },
   "options": {
     "message": "Options"
@@ -258,7 +258,7 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Inclure un chiffre"
+    "message": "Inclure le numéro"
   },
   "minNumbers": {
     "message": "Nombre minimum de chiffres"
@@ -282,7 +282,7 @@
     "message": "Aucun identifiant à afficher."
   },
   "itemInformation": {
-    "message": "Informations sur l'élément"
+    "message": "Information sur l'élément"
   },
   "username": {
     "message": "Nom d'utilisateur"
@@ -303,16 +303,16 @@
     "message": "Note"
   },
   "editItem": {
-    "message": "Modifier l'élément"
+    "message": "Modifier l'identifiant"
   },
   "folder": {
     "message": "Dossier"
   },
   "deleteItem": {
-    "message": "Supprimer l'élément"
+    "message": "Supprimer l'identifiant"
   },
   "viewItem": {
-    "message": "Afficher l'élément"
+    "message": "Voir l'élément"
   },
   "launch": {
     "message": "Ouvrir"
@@ -491,7 +491,7 @@
     "message": "Vous pouvez modifier votre mot de passe maître depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'identification en deux étapes sécurise davantage votre compte en vous demandant à chaque connexion de saisir un code de sécurité obtenu depuis un autre appareil, via une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique, ou un e-mail. L'identification en deux étapes peut être activée depuis le coffre web sur bitwarden.com. Voulez-vous vous visiter le site web maintenant ?"
+    "message": "L'identification en deux étapes rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'identification en deux étapes peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
   "editedFolder": {
     "message": "Dossier modifié"
@@ -503,7 +503,7 @@
     "message": "Dossier supprimé"
   },
   "gettingStartedTutorial": {
-    "message": "Tutoriel"
+    "message": "Didacticiel"
   },
   "gettingStartedTutorialVideo": {
     "message": "Regardez notre didacticiel pour savoir comment parfaitement utiliser l'extension du navigateur."
@@ -567,7 +567,7 @@
     "message": "Rechercher dans le type"
   },
   "noneFolder": {
-    "message": "Aucun dossier",
+    "message": "Pas de dossier",
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
@@ -783,13 +783,13 @@
     "message": "Support client prioritaire."
   },
   "ppremiumSignUpFuture": {
-    "message": "Toutes les futures options premium. D'autres suivront prochainement !"
+    "message": "Toutes les futures options premium. Prochainement !"
   },
   "premiumPurchase": {
     "message": "Acheter Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site web maintenant ?"
+    "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?"
   },
   "premiumCurrentMember": {
     "message": "Vous êtes un adhérent premium !"
@@ -819,7 +819,7 @@
     "message": "Ask for biometrics on launch"
   },
   "premiumRequired": {
-    "message": "Adhésion Premium requise"
+    "message": "Version Premium requise"
   },
   "premiumRequiredDesc": {
     "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
@@ -870,16 +870,16 @@
     "message": "Authentifier WebAuthn"
   },
   "loginUnavailable": {
-    "message": "Connexion impossible"
+    "message": "Identifiant non disponible"
   },
   "noTwoStepProviders": {
-    "message": "Ce compte dispose d'une identification en deux étapes. Cependant, aucun service d'identification en deux étapes n'est supporté par ce navigateur web."
+    "message": "Ce compte dispose d'une authentification à double facteurs, cependant, aucun service d'authentification à double facteurs n'est supporté par ce navigateur web."
   },
   "noTwoStepProviders2": {
     "message": "Merci d'utiliser un navigateur web compatible (comme Chrome) et/ou d'ajouter des services additionnels d'identification en deux étapes qui sont mieux supportés par les navigateurs web (comme par exemple une application d'authentification)."
   },
   "twoStepOptions": {
-    "message": "Options d'identification en deux étapes"
+    "message": "Options d'identification à double facteurs"
   },
   "recoveryCodeDesc": {
     "message": "Accès perdu à tous vos services d'authentification à double facteurs ? Utilisez votre code de récupération pour désactiver tous les services de double authentifications sur votre compte."
@@ -1148,7 +1148,7 @@
     "message": "Numéro de passeport"
   },
   "licenseNumber": {
-    "message": "Numéro de permis"
+    "message": "Numéro de permis de Conduire"
   },
   "email": {
     "message": "E-mail"
@@ -1278,7 +1278,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Afficher/masquer les options"
+    "message": "Options de basculement"
   },
   "toggleCurrentUris": {
     "message": "Afficher/masquer les URIs actuels",
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Mis à jour",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Mot de passe mis à jour",
@@ -1999,13 +2003,13 @@
     "message": "to reset to pre-configured settings"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

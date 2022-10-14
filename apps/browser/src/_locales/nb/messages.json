@@ -491,7 +491,7 @@
     "message": "Du kan endre superpassordet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
   "twoStepLoginConfirmation": {
-    "message": "2-trinnsinnlogging gjør kontoen din mer sikker, ved å kreve at du verifiserer din innlogging med en annen enhet, f.eks. en autentiseringsapp, SMS, E-post, telefonsamtale, eller sikkerhetsnøkkel. 2-trinnsinnlogging kan aktiveres på bitwarden.com-netthvelvet. Vil du besøke den nettsiden nå?"
+    "message": "2-trinnsinnlogging gjør kontoen din mer sikker, ved å kreve at du verifiserer din innlogging med en annen enhet, f.eks. en autentiseringsapp, SMS, e-post, telefonsamtale, eller sikkerhetsnøkkel. 2-trinnsinnlogging kan aktiveres i netthvelvet ditt på bitwarden.com. Vil du besøke bitwarden.com nå?"
   },
   "editedFolder": {
     "message": "Redigerte mappen"
@@ -534,7 +534,7 @@
     "message": "Ny URI"
   },
   "addedItem": {
-    "message": "La til gjenstanden"
+    "message": "La til element"
   },
   "editedItem": {
     "message": "Redigerte elementet"
@@ -783,13 +783,13 @@
     "message": "Prioritert kundestøtte."
   },
   "ppremiumSignUpFuture": {
-    "message": "Alle fremtidige Premium-egenskaper. Mere er planlagt snart!"
+    "message": "Alle fremtidige Premium-egenskaper. Mer er planlagt og vil komme snart!"
   },
   "premiumPurchase": {
     "message": "Kjøp Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Du kan kjøpe et Premium-medlemskap på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
+    "message": "Du kan kjøpe et Premium-medlemskap på bitwarden.com. Vil du besøke det nettstedet nå?"
   },
   "premiumCurrentMember": {
     "message": "Du er et Premium-medlem!"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Oppdatert den",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Passordet ble oppdatert den",

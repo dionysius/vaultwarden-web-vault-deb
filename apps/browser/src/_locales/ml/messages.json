@@ -59,7 +59,7 @@
     "message": "എൻ്റെ വാൾട് "
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "All vaults"
   },
   "tools": {
     "message": "ഉപകരണങ്ങള്‍"
@@ -95,7 +95,7 @@
     "message": "പാസ്‌വേഡ് സൃഷ്ടിക്കുക (പകർത്തുക )"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Copy custom field name"
   },
   "noMatchingLogins": {
     "message": "പൊരുത്തപ്പെടുന്ന ലോഗിനുകളൊന്നുമില്ല."
@@ -131,10 +131,10 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Send code"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Code sent"
   },
   "verificationCode": {
     "message": "പരിശോധിച്ചുറപ്പിക്കൽ കോഡ്"
@@ -245,7 +245,7 @@
     "message": "Numbers (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Special characters (!@#$%^&*)"
   },
   "numWords": {
     "message": "വാക്കുകളുടെ എണ്ണം"
@@ -339,7 +339,7 @@
     "message": "നിങ്ങളുടെ ബ്രൌസർ എളുപ്പമുള്ള ക്ലിപ്പ്ബോർഡ് പകർത്തൽ പിന്തുണയ്ക്കത്തില്ല. പകരം അത് സ്വമേധയാ പകർക്കുക ."
   },
   "verifyIdentity": {
-    "message": "Verify Identity"
+    "message": "Verify identity"
   },
   "yourVaultIsLocked": {
     "message": "തങ്ങളുടെ വാൾട്  പൂട്ടിയിരിക്കുന്നു. തുടരുന്നതിന് നിങ്ങളുടെ പ്രാഥമിക പാസ്‌വേഡ് പരിശോധിക്കുക."
@@ -552,7 +552,7 @@
     "message": "നിലവിലെ പാസ്‌വേഡ് പുനരാലേഖനം ചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Overwrite username"
   },
   "overwriteUsernameConfirmation": {
     "message": "Are you sure you want to overwrite the current username?"
@@ -656,7 +656,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Confirm vault export"
   },
   "exportWarningDesc": {
     "message": "ഈ എക്‌സ്‌പോർട്ടിൽ എൻക്രിപ്റ്റ് ചെയ്യാത്ത ഫോർമാറ്റിൽ നിങ്ങളുടെ വാൾട് ഡാറ്റ അടങ്ങിയിരിക്കുന്നു. എക്‌സ്‌പോർട് ചെയ്ത ഫയൽ സുരക്ഷിതമല്ലാത്ത ചാനലുകളിൽ (ഇമെയിൽ പോലുള്ളവ) നിങ്ങൾ സംഭരിക്കുകയോ അയയ്ക്കുകയോ ചെയ്യരുത്. നിങ്ങൾ ഇത് ഉപയോഗിച്ചുകഴിഞ്ഞാലുടൻ അത് മായ്ച്ചുകളയണം."
@@ -680,7 +680,7 @@
     "message": "Bitwarden allows you to share your vault items with others by using an organization. Would you like to visit the bitwarden.com website to learn more?"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Move to organization"
   },
   "share": {
     "message": "പങ്കിടുക"
@@ -912,7 +912,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Use any WebAuthn compatible security key to access your account."
   },
   "emailTitle": {
     "message": "ഇമെയിൽ"
@@ -969,7 +969,7 @@
     "message": "You can turn off auto-fill on page load for individual login items from the item's Edit view."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Auto-fill on page load (if enabled in Options)"
+    "message": "Auto-fill on page load (if set up in Options)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Use default setting"
@@ -1133,7 +1133,7 @@
     "message": "പേരിന്റെ അവസാന ഭാഗം"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Full name"
   },
   "identityName": {
     "message": "ഐഡന്റിറ്റിയുടെ പേര്"
@@ -1311,6 +1311,10 @@
     "message": "പുതുക്കി",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "പാസ്സ്‌വേഡ് പുതുക്കി",
     "description": "ex. Date this password was updated"
@@ -1371,7 +1375,7 @@
     "message": "Awaiting confirmation from desktop"
   },
   "awaitDesktopDesc": {
-    "message": "Please confirm using biometrics in the Bitwarden Desktop application to enable biometrics for browser."
+    "message": "Please confirm using biometrics in the Bitwarden desktop application to set up biometrics for browser."
   },
   "lockWithMasterPassOnRestart": {
     "message": "ബ്രൌസർ പുനരാരംഭത്തിൽ പ്രാഥമിക പാസ്‌വേഡ് ഉപയോഗിച്ച് ലോക്ക് ചെയ്യുക"
@@ -1505,19 +1509,19 @@
     "message": "Please verify that the desktop application shows this fingerprint: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not enabled"
+    "message": "Browser integration is not set up"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "Browser integration is not set up in the Bitwarden desktop application. Please set it up in the settings within the desktop application."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden Desktop application"
+    "message": "Start the Bitwarden desktop application"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before unlock with biometrics can be used."
+    "message": "The Bitwarden desktop application needs to be started before unlock with biometrics can be used."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to enable biometrics"
+    "message": "Unable to set up biometrics"
   },
   "errorEnableBiometricDesc": {
     "message": "Action was canceled by the desktop application"
@@ -1535,10 +1539,10 @@
     "message": "Account missmatch"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometrics not set up"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Browser biometrics requires desktop biometric to be set up in the settings first."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometrics not supported"
@@ -1559,7 +1563,7 @@
     "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available collections."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "An organization policy is affecting your ownership options."
@@ -1625,10 +1629,10 @@
     "message": "Delete"
   },
   "removedPassword": {
-    "message": "Removed Password"
+    "message": "Password removed"
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send deleted",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1665,14 +1669,14 @@
     "message": "The file you want to send."
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Deletion date"
   },
   "deletionDateDesc": {
     "message": "The Send will be permanently deleted on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Expiration date"
   },
   "expirationDateDesc": {
     "message": "If set, access to this Send will expire on the specified date and time.",
@@ -1709,7 +1713,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Deactivate this Send so that no one can access it.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
@@ -1724,17 +1728,17 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Current access count"
   },
   "createSend": {
-    "message": "Create New Send",
+    "message": "New Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "New password"
   },
   "sendDisabled": {
-    "message": "Send Disabled",
+    "message": "Send removed",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1742,11 +1746,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send created",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send saved",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1804,22 +1808,22 @@
     "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Email verification required"
   },
   "emailVerificationRequiredDesc": {
     "message": "You must verify your email to use this feature. You can verify your email in the web vault."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Updated master password"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Update master password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatic enrollment"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
@@ -1853,10 +1857,10 @@
     "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Vault export unavailable"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "One or more organization policies prevents you from exporting your individual vault."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
@@ -1874,13 +1878,13 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Leave organization"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Remove master password"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Master password removed"
   },
   "leaveOrganizationConfirmation": {
     "message": "Are you sure you want to leave this organization?"
@@ -1895,10 +1899,10 @@
     "message": "Your session has timed out. Please go back and try logging in again."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exporting individual vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1910,23 +1914,23 @@
     "message": "Error"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerate username"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generate username"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Username type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -1935,22 +1939,22 @@
     "message": "Random"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Random word"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Website name"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "What would you like to generate?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Password type"
   },
   "service": {
     "message": "Service"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -1966,16 +1970,16 @@
     "message": "API Key"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Key connector error: make sure key connector is available and working correctly."
   },
   "premiumSubcriptionRequired": {
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organization suspended."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -1999,13 +2003,13 @@
     "message": "to reset to pre-configured settings"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

@@ -59,7 +59,7 @@
     "message": "Hầm của tôi"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "All vaults"
   },
   "tools": {
     "message": "Công cụ"
@@ -491,7 +491,7 @@
     "message": "Bạn có thể thay đổi mật khẩu chủ trong trang web Bitwarden. Bạn có muốn truy cập bitwarden.com bây giờ?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Xác thực hai lớp giúp cho tài khoản của bạn an toàn hơn bằng cách yêu cầu bạn xác minh thông tin đăng nhập của bạn bằng một thiết bị khác như khóa bảo mật, ứng dụng xác thực, SMS, cuộc gọi điện thoại hoặc email. Bạn có thể bật xác thực hai lớp trong trang web Bitwarden. Bạn có muốn ghé thăm bitwarden.com bây giờ?"
+    "message": "Xác thực hai lớp giúp cho tài khoản của bạn an toàn hơn bằng cách yêu cầu bạn xác minh thông tin đăng nhập của bạn bằng một thiết bị khác như khóa bảo mật, ứng dụng xác thực, SMS, cuộc gọi điện thoại hoặc email. Bạn có thể bật xác thực hai lớp trong kho bitwarden nền web. Bạn có muốn ghé thăm trang web bây giờ?"
   },
   "editedFolder": {
     "message": "Chỉnh sửa Thư mục"
@@ -552,7 +552,7 @@
     "message": "Bạn có chắc chắn muốn ghi đè mật khẩu hiện tại không?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Overwrite username"
   },
   "overwriteUsernameConfirmation": {
     "message": "Are you sure you want to overwrite the current username?"
@@ -789,7 +789,7 @@
     "message": "Mua bản Cao Cấp"
   },
   "premiumPurchaseAlert": {
-    "message": "Bạn có thể nâng cấp làm thành viên cao cấp trong trang web Bitwarden. Bạn có muốn truy cập bitwarden.com bây giờ?"
+    "message": "Bạn có thể nâng cấp làm thành viên cao cấp trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "premiumCurrentMember": {
     "message": "Bạn là một thành viên cao cấp!"
@@ -912,7 +912,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Use any WebAuthn compatible security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -1311,6 +1311,10 @@
     "message": "Ngày cập nhật",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "Password Updated",
     "description": "ex. Date this password was updated"
@@ -1508,13 +1512,13 @@
     "message": "Tích hợp trình duyệt chưa được kích hoạt"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not enabled in the Bitwarden Desktop application. Please enable it in the settings within the desktop application."
+    "message": "Browser integration is not set up in the Bitwarden desktop application. Please set it up in the settings within the desktop application."
   },
   "startDesktopTitle": {
     "message": "Mở ứng dụng Bitwarden trên máy tính"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden Desktop application needs to be started before unlock with biometrics can be used."
+    "message": "The Bitwarden desktop application needs to be started before unlock with biometrics can be used."
   },
   "errorEnableBiometricTitle": {
     "message": "Không thể bật nhận dạng sinh trắc học"
@@ -1538,7 +1542,7 @@
     "message": "Nhận dạng sinh trắc học chưa được bật"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometric to be enabled in the settings first."
+    "message": "Browser biometrics requires desktop biometric to be set up in the settings first."
   },
   "biometricsNotSupportedTitle": {
     "message": "Nhận dạng sinh trắc học không được hỗ trợ"
@@ -1559,7 +1563,7 @@
     "message": "This action cannot be done in the sidebar, please retry the action in the popup or popout."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available collections."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "An organization policy is affecting your ownership options."
@@ -1709,7 +1713,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Deactivate this Send so that no one can access it.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
@@ -1724,10 +1728,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Current access count"
   },
   "createSend": {
-    "message": "Create New Send",
+    "message": "New Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1816,10 +1820,10 @@
     "message": "Cập nhật mật khẩu chính"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatic enrollment"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
@@ -1856,7 +1860,7 @@
     "message": "Xuất mật khẩu đăng tắt"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "One or more organization policies prevents you from exporting your individual vault."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
@@ -1895,10 +1899,10 @@
     "message": "Your session has timed out. Please go back and try logging in again."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exporting individual vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1910,23 +1914,23 @@
     "message": "Error"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerate username"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generate username"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Username type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -1935,22 +1939,22 @@
     "message": "Random"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Random word"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Website name"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "What would you like to generate?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Password type"
   },
   "service": {
     "message": "Service"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -1966,16 +1970,16 @@
     "message": "Khóa API"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Key connector error: make sure key connector is available and working correctly."
   },
   "premiumSubcriptionRequired": {
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organization suspended."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -1999,13 +2003,13 @@
     "message": "để đặt lại cài đặt đã thiết đặt từ trước"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

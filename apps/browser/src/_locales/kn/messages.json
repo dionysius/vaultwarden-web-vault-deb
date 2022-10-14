@@ -59,7 +59,7 @@
     "message": "ನನ್ನ ವಾಲ್ಟ್"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "All vaults"
   },
   "tools": {
     "message": "ಉಪಕರಣ"
@@ -95,7 +95,7 @@
     "message": "ಪಾಸ್ವರ್ಡ್ ರಚಿಸಿ (ನಕಲಿಸಲಾಗಿದೆ)"
   },
   "copyElementIdentifier": {
-    "message": "Copy Custom Field Name"
+    "message": "Copy custom field name"
   },
   "noMatchingLogins": {
     "message": "ಹೊಂದಾಣಿಕೆಯ ಲಾಗಿನ್‌ಗಳು ಇಲ್ಲ."
@@ -131,10 +131,10 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Send code"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Code sent"
   },
   "verificationCode": {
     "message": "ಪರಿಶೀಲನಾ ಕೋಡ್‌ಗಳು"
@@ -245,7 +245,7 @@
     "message": "Numbers (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Special characters (!@#$%^&*)"
   },
   "numWords": {
     "message": "ಪದಗಳ ಸಂಖ್ಯೆ"
@@ -339,7 +339,7 @@
     "message": "ನಿಮ್ಮ ವೆಬ್ ಬ್ರೌಸರ್ ಸುಲಭವಾದ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ನಕಲು ಮಾಡುವುದನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ಬದಲಿಗೆ ಅದನ್ನು ಹಸ್ತಚಾಲಿತವಾಗಿ ನಕಲಿಸಿ."
   },
   "verifyIdentity": {
-    "message": "Verify Identity"
+    "message": "Verify identity"
   },
   "yourVaultIsLocked": {
     "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಲಾಕ್ ಆಗಿದೆ. ಮುಂದುವರೆಯಲು ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ."
@@ -552,7 +552,7 @@
     "message": "ಪ್ರಸ್ತುತ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ತಿದ್ದಿಬರೆಯಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Overwrite username"
   },
   "overwriteUsernameConfirmation": {
     "message": "Are you sure you want to overwrite the current username?"
@@ -1133,7 +1133,7 @@
     "message": "ಕೊನೆ ಹೆಸರು"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Full name"
   },
   "identityName": {
     "message": "ಹೆಸರು ಗುರುತು"
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "ಅಪ್‌ಡೇಟ್",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "ಪಾಸ್ವರ್ಡ್ ನವೀಕರಿಸಲಾಗಿದೆ",
@@ -1810,16 +1814,16 @@
     "message": "ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲು ನಿಮ್ಮ ಇಮೇಲ್ ಅನ್ನು ನೀವು ಪರಿಶೀಲಿಸಬೇಕು. ವೆಬ್ ವಾಲ್ಟ್ನಲ್ಲಿ ನಿಮ್ಮ ಇಮೇಲ್ ಅನ್ನು ನೀವು ಪರಿಶೀಲಿಸಬಹುದು."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Updated master password"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Update master password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatic enrollment"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
@@ -1853,10 +1857,10 @@
     "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Vault export unavailable"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "One or more organization policies prevents you from exporting your individual vault."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Unable to identify a valid form element. Try inspecting the HTML instead."
@@ -1874,13 +1878,13 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Leave organization"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Remove master password"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Master password removed"
   },
   "leaveOrganizationConfirmation": {
     "message": "Are you sure you want to leave this organization?"
@@ -1895,10 +1899,10 @@
     "message": "Your session has timed out. Please go back and try logging in again."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exporting individual vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1910,23 +1914,23 @@
     "message": "Error"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerate username"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generate username"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Username type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -1935,22 +1939,22 @@
     "message": "Random"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Random word"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Website name"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "What would you like to generate?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Password type"
   },
   "service": {
     "message": "Service"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -1966,16 +1970,16 @@
     "message": "API Key"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Key connector error: make sure key connector is available and working correctly."
   },
   "premiumSubcriptionRequired": {
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organization suspended."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -1999,13 +2003,13 @@
     "message": "to reset to pre-configured settings"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

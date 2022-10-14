@@ -14,7 +14,7 @@
     "message": "Prijavi se ili stvori novi račun za pristup svojem sigurnom trezoru."
   },
   "createAccount": {
-    "message": "Stvori račun"
+    "message": "Napravi račun"
   },
   "login": {
     "message": "Prijava"
@@ -32,7 +32,7 @@
     "message": "Pošalji"
   },
   "emailAddress": {
-    "message": "Adresa e-pošte"
+    "message": "Email Adresa"
   },
   "masterPass": {
     "message": "Glavna lozinka"
@@ -95,7 +95,7 @@
     "message": "Generiraj lozinku (i kopiraj)"
   },
   "copyElementIdentifier": {
-    "message": "Kopiranje prilagođenog naziva polja"
+    "message": "Prilagođeno ime polja"
   },
   "noMatchingLogins": {
     "message": "Nema podudarajućih prijava."
@@ -494,7 +494,7 @@
     "message": "Prijava u dva koraka čini tvoj račun još sigurnijim tako što će zahtijevati da potvrdiš prijavu putem drugog uređaja kao što je sigurnosni ključ, autentifikatorske aplikacije, SMS-om, pozivom ili e-poštom. Prijavu u dva koraka možeš omogućiti na web trezoru. Želiš li sada posjetiti bitwarden.com?"
   },
   "editedFolder": {
-    "message": "Uređena mapa"
+    "message": "Mapa izmijenjena"
   },
   "deleteFolderConfirmation": {
     "message": "Sigurno želiš izbrisati ovu mapu?"
@@ -879,7 +879,7 @@
     "message": "Koristi podržani web-preglednik (npr. Chrome) i/ili dodaj dodatne usluge koje su bolje podržane u web preglednicima (npr. aplikacija Autentifikator)."
   },
   "twoStepOptions": {
-    "message": "Mogućnosti prijave u dva koraka"
+    "message": "Mogućnosti dvostruke autentifikacije"
   },
   "recoveryCodeDesc": {
     "message": "Izgubljen je pristup uređaju za dvostruku autentifikaciju? Koristi svoj kôd za oporavak za onemogućavanje svih pružatelja usluga dvostruke autentifikacije na tvojem računu."
@@ -1310,6 +1310,10 @@
   "dateUpdated": {
     "message": "Ažurirano",
     "description": "ex. Date this item was updated"
+  },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
     "message": "Lozinka ažurirana",
@@ -1972,10 +1976,10 @@
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organization suspended."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -1999,13 +2003,13 @@
     "message": "to reset to pre-configured settings"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",

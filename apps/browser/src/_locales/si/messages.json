@@ -59,7 +59,7 @@
     "message": "මගේ සුරක්ෂිතාගාරය"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "All vaults"
   },
   "tools": {
     "message": "මෙවලම්"
@@ -245,7 +245,7 @@
     "message": "Numbers (0-9)"
   },
   "specialCharacters": {
-    "message": "Special Characters (!@#$%^&*)"
+    "message": "Special characters (!@#$%^&*)"
   },
   "numWords": {
     "message": "වචන ගණන"
@@ -552,7 +552,7 @@
     "message": "ඔබට වත්මන් මුරපදය නැවත ලිවීමට අවශ්ය බව ඔබට විශ්වාසද?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Overwrite username"
   },
   "overwriteUsernameConfirmation": {
     "message": "Are you sure you want to overwrite the current username?"
@@ -1311,6 +1311,10 @@
     "message": "යාවත්කාලීන",
     "description": "ex. Date this item was updated"
   },
+  "dateCreated": {
+    "message": "Created",
+    "description": "ex. Date this item was created"
+  },
   "datePasswordUpdated": {
     "message": "මුරපදය යාවත්කාලීන කිරීම",
     "description": "ex. Date this password was updated"
@@ -1895,10 +1899,10 @@
     "message": "Your session has timed out. Please go back and try logging in again."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exporting individual vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1910,23 +1914,23 @@
     "message": "Error"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerate username"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generate username"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Username type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -1935,22 +1939,22 @@
     "message": "Random"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Random word"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Website name"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "What would you like to generate?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Password type"
   },
   "service": {
     "message": "Service"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -1966,16 +1970,16 @@
     "message": "API Key"
   },
   "ssoKeyConnectorError": {
-    "message": "Key Connector error: make sure Key Connector is available and working correctly."
+    "message": "Key connector error: make sure key connector is available and working correctly."
   },
   "premiumSubcriptionRequired": {
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organization suspended."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "cardBrandMir": {
     "message": "Mir"
@@ -1999,13 +2003,13 @@
     "message": "to reset to pre-configured settings"
   },
   "serverVersion": {
-    "message": "Server Version"
+    "message": "Server version"
   },
   "selfHosted": {
-    "message": "Self-Hosted"
+    "message": "Self-hosted"
   },
   "thirdParty": {
-    "message": "Third-Party"
+    "message": "Third-party"
   },
   "thirdPartyServerMessage": {
     "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
