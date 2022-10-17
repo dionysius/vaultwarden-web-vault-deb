@@ -37,7 +37,10 @@ export default {
 const Template: Story<BannerComponent> = (args: BannerComponent) => ({
   props: args,
   template: `
-    <bit-banner [bannerType]="bannerType" (onClose)="onClose($event)">Content Really Long Text Lorem Ipsum Ipsum Ipsum <button>Button</button></bit-banner>
+    <bit-banner [bannerType]="bannerType" (onClose)="onClose($event)">
+        Content Really Long Text Lorem Ipsum Ipsum Ipsum 
+        <button>Button</button>
+    </bit-banner>
   `,
 });
 
