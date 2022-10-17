@@ -24,23 +24,25 @@
           <app-vault-icon [cipher]="c"></app-vault-icon>
           <div class="flex-cipher-list-item">
             <span class="text">
-              {{ c.name | ellipsis }}
-              <ng-container *ngIf="c.organizationId">
-                <i
-                  class="bwi bwi-collection text-muted"
-                  title="{{ 'shared' | i18n }}"
-                  aria-hidden="true"
-                ></i>
-                <span class="sr-only">{{ "shared" | i18n }}</span>
-              </ng-container>
-              <ng-container *ngIf="c.hasAttachments">
-                <i
-                  class="bwi bwi-paperclip text-muted"
-                  title="{{ 'attachments' | i18n }}"
-                  aria-hidden="true"
-                ></i>
-                <span class="sr-only">{{ "attachments" | i18n }}</span>
-              </ng-container>
+              <span class="truncate-box">
+                <span class="truncate">{{ c.name }}</span>
+                <ng-container *ngIf="c.organizationId">
+                  <i
+                    class="bwi bwi-collection text-muted"
+                    title="{{ 'shared' | i18n }}"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="sr-only">{{ "shared" | i18n }}</span>
+                </ng-container>
+                <ng-container *ngIf="c.hasAttachments">
+                  <i
+                    class="bwi bwi-paperclip text-muted"
+                    title="{{ 'attachments' | i18n }}"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="sr-only">{{ "attachments" | i18n }}</span>
+                </ng-container>
+              </span>
             </span>
             <span *ngIf="c.subTitle" class="detail">{{ c.subTitle }}</span>
           </div>

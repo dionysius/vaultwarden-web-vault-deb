@@ -692,3 +692,16 @@
     }
   }
 }
+
+.truncate-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.truncate {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
