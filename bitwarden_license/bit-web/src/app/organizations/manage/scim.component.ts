@@ -29,6 +29,7 @@ export class ScimComponent implements OnInit {
   rotatePromise: Promise<ApiKeyResponse>;
   enabled = new FormControl(false);
   showScimSettings = false;
+  showScimKey = false;
 
   formData = this.formBuilder.group({
     endpointUrl: new FormControl({ value: "", disabled: true }),
@@ -145,6 +146,11 @@ export class ScimComponent implements OnInit {
 
   getScimEndpointUrl() {
     return this.environmentService.getScimUrl() + "/" + this.organizationId;
+  }
+
+  toggleScimKey() {
+    this.showScimKey = !this.showScimKey;
+    document.getElementById("clientSecret").focus();
   }
 
   private async setConnectionFormValues(connection: OrganizationConnectionResponse<ScimConfigApi>) {
