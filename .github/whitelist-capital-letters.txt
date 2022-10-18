@@ -502,7 +502,6 @@
 ./apps/desktop/README.md
 ./apps/desktop/desktop_native/Cargo.toml
 ./apps/desktop/desktop_native/Cargo.lock
-./apps/desktop/SECURITY.md
 ./apps/desktop/src/app/services/desktopFileDownloadService.ts
 ./apps/desktop/src/models/nativeMessaging/unencryptedCommand.ts
 ./apps/desktop/src/models/nativeMessaging/encryptedMessage.ts
