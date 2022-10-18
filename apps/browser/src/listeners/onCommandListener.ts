@@ -7,7 +7,13 @@ import { authServiceFactory } from "../background/service_factories/auth-service
 import { autofillServiceFactory } from "../background/service_factories/autofill-service.factory";
 import { CachedServices } from "../background/service_factories/factory-options";
 import { logServiceFactory } from "../background/service_factories/log-service.factory";
+import {
+  passwordGenerationServiceFactory,
+  PasswordGenerationServiceInitOptions,
+} from "../background/service_factories/password-generation-service.factory";
+import { stateServiceFactory } from "../background/service_factories/state-service.factory";
 import { BrowserApi } from "../browser/browserApi";
+import { GeneratePasswordToClipboardCommand } from "../clipboard";
 import { AutoFillActiveTabCommand } from "../commands/autoFillActiveTabCommand";
 import { Account } from "../models/account";
 
@@ -15,6 +21,9 @@ export const onCommandListener = async (command: string, tab: chrome.tabs.Tab) =
   switch (command) {
     case "autofill_login":
       await doAutoFillLogin(tab);
+      break;
+    case "generate_password":
+      await doGeneratePasswordToClipboard(tab);
       break;
   }
 };
@@ -68,4 +77,38 @@ const doAutoFillLogin = async (tab: chrome.tabs.Tab): Promise<void> => {
 
   const command = new AutoFillActiveTabCommand(autofillService);
   await command.doAutoFillActiveTabCommand(tab);
+};
+
+const doGeneratePasswordToClipboard = async (tab: chrome.tabs.Tab): Promise<void> => {
+  const stateFactory = new StateFactory(GlobalState, Account);
+
+  const cache = {};
+  const options: PasswordGenerationServiceInitOptions = {
+    cryptoFunctionServiceOptions: {
+      win: self,
+    },
+    encryptServiceOptions: {
+      logMacFailures: false,
+    },
+    logServiceOptions: {
+      isDev: false,
+    },
+    platformUtilsServiceOptions: {
+      biometricCallback: () => Promise.resolve(true),
+      clipboardWriteCallback: (_clipboardValue, _clearMs) => Promise.resolve(),
+      win: self,
+    },
+    stateMigrationServiceOptions: {
+      stateFactory: stateFactory,
+    },
+    stateServiceOptions: {
+      stateFactory: stateFactory,
+    },
+  };
+
+  const command = new GeneratePasswordToClipboardCommand(
+    await passwordGenerationServiceFactory(cache, options),
+    await stateServiceFactory(cache, options)
+  );
+  command.generatePasswordToClipboard(tab);
 };

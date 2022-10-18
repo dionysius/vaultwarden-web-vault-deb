@@ -1,5 +1,6 @@
 import { CryptoService as AbstractCryptoService } from "@bitwarden/common/abstractions/crypto.service";
-import { CryptoService } from "@bitwarden/common/services/crypto.service";
+
+import { BrowserCryptoService } from "../../services/browserCrypto.service";
 
 import {
   cryptoFunctionServiceFactory,
@@ -32,7 +33,7 @@ export function cryptoServiceFactory(
     "cryptoService",
     opts,
     async () =>
-      new CryptoService(
+      new BrowserCryptoService(
         await cryptoFunctionServiceFactory(cache, opts),
         await encryptServiceFactory(cache, opts),
         await platformUtilsServiceFactory(cache, opts),

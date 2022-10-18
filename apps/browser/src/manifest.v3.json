@@ -38,6 +38,12 @@
       "css": ["content/autofill.css"],
       "matches": ["http://*/*", "https://*/*", "file:///*"],
       "run_at": "document_end"
+    },
+    {
+      "all_frames": true,
+      "js": ["content/misc-utils.js"],
+      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "run_at": "document_end"
     }
   ],
   "background": {
@@ -59,7 +65,8 @@
     "unlimitedStorage",
     "clipboardRead",
     "clipboardWrite",
-    "idle"
+    "idle",
+    "alarms"
   ],
   "optional_permissions": ["nativeMessaging"],
   "host_permissions": ["http://*/*", "https://*/*"],
