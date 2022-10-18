@@ -268,6 +268,7 @@ const devServer =
                   https://client-analytics.braintreegateway.com
                   https://*.braintree-api.com
                   https://*.blob.core.windows.net
+                  http://127.0.0.1:10000
                   https://app.simplelogin.io/api/alias/random/new
                   https://quack.duckduckgo.com/api/email/addresses
                   https://app.anonaddy.com/api/v1/aliases
