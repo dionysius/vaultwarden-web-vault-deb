@@ -72,13 +72,13 @@ import { YotiCsvImporter } from "../importers/yotiCsvImporter";
 import { ZohoVaultCsvImporter } from "../importers/zohoVaultCsvImporter";
 import { Utils } from "../misc/utils";
 import { ImportResult } from "../models/domain/import-result";
-import { CipherRequest } from "../models/request/cipherRequest";
-import { CollectionRequest } from "../models/request/collectionRequest";
-import { FolderRequest } from "../models/request/folderRequest";
-import { ImportCiphersRequest } from "../models/request/importCiphersRequest";
-import { ImportOrganizationCiphersRequest } from "../models/request/importOrganizationCiphersRequest";
-import { KvpRequest } from "../models/request/kvpRequest";
-import { ErrorResponse } from "../models/response/errorResponse";
+import { CipherRequest } from "../models/request/cipher.request";
+import { CollectionRequest } from "../models/request/collection.request";
+import { FolderRequest } from "../models/request/folder.request";
+import { ImportCiphersRequest } from "../models/request/import-ciphers.request";
+import { ImportOrganizationCiphersRequest } from "../models/request/import-organization-ciphers.request";
+import { KvpRequest } from "../models/request/kvp.request";
+import { ErrorResponse } from "../models/response/error.response";
 import { CipherView } from "../models/view/cipher.view";
 
 export class ImportService implements ImportServiceAbstraction {

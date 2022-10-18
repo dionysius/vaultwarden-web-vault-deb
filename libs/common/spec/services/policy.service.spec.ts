@@ -13,8 +13,8 @@ import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/mas
 import { Organization } from "@bitwarden/common/models/domain/organization";
 import { Policy } from "@bitwarden/common/models/domain/policy";
 import { ResetPasswordPolicyOptions } from "@bitwarden/common/models/domain/reset-password-policy-options";
-import { ListResponse } from "@bitwarden/common/models/response/listResponse";
-import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
+import { ListResponse } from "@bitwarden/common/models/response/list.response";
+import { PolicyResponse } from "@bitwarden/common/models/response/policy.response";
 import { ContainerService } from "@bitwarden/common/services/container.service";
 import { EncryptService } from "@bitwarden/common/services/encrypt.service";
 import { PolicyService } from "@bitwarden/common/services/policy/policy.service";

@@ -9,7 +9,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { GroupResponse } from "@bitwarden/common/models/response/groupResponse";
+import { GroupResponse } from "@bitwarden/common/models/response/group.response";
 
 import { EntityUsersComponent } from "./entity-users.component";
 import { GroupAddEditComponent } from "./group-add-edit.component";

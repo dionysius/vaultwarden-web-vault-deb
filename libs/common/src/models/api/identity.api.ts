@@ -1,4 +1,4 @@
-import { BaseResponse } from "../response/baseResponse";
+import { BaseResponse } from "../response/base.response";
 
 export class IdentityApi extends BaseResponse {
   title: string;

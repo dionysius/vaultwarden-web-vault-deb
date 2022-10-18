@@ -8,8 +8,8 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
 import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selectionReadOnlyRequest";
-import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/models/response/organizationUserResponse";
+import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selection-read-only.request";
+import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/models/response/organization-user.response";
 
 @Component({
   selector: "app-entity-users",

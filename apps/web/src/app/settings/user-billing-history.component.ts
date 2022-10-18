@@ -6,7 +6,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
 import { TransactionType } from "@bitwarden/common/enums/transactionType";
-import { BillingHistoryResponse } from "@bitwarden/common/models/response/billingHistoryResponse";
+import { BillingHistoryResponse } from "@bitwarden/common/models/response/billing-history.response";
 
 @Component({
   selector: "app-user-billing",

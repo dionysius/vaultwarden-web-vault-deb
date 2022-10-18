@@ -9,7 +9,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { CipherData } from "@bitwarden/common/models/data/cipher.data";
 import { Cipher } from "@bitwarden/common/models/domain/cipher";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-import { CipherCollectionsRequest } from "@bitwarden/common/models/request/cipherCollectionsRequest";
+import { CipherCollectionsRequest } from "@bitwarden/common/models/request/cipher-collections.request";
 
 import { CollectionsComponent as BaseCollectionsComponent } from "../../vault/collections.component";
 

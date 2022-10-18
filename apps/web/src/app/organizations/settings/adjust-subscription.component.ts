@@ -4,7 +4,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { OrganizationSubscriptionUpdateRequest } from "@bitwarden/common/models/request/organizationSubscriptionUpdateRequest";
+import { OrganizationSubscriptionUpdateRequest } from "@bitwarden/common/models/request/organization-subscription-update.request";
 
 @Component({
   selector: "app-adjust-subscription",

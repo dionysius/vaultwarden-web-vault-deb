@@ -7,8 +7,8 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstraction
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
 import { TransactionType } from "@bitwarden/common/enums/transactionType";
-import { VerifyBankRequest } from "@bitwarden/common/models/request/verifyBankRequest";
-import { BillingResponse } from "@bitwarden/common/models/response/billingResponse";
+import { VerifyBankRequest } from "@bitwarden/common/models/request/verify-bank.request";
+import { BillingResponse } from "@bitwarden/common/models/response/billing.response";
 
 @Component({
   selector: "app-org-billing",

@@ -15,7 +15,7 @@ import { ValidationService } from "@bitwarden/common/abstractions/validation.ser
 import { PlanType } from "@bitwarden/common/enums/planType";
 import { ProviderUserType } from "@bitwarden/common/enums/providerUserType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-import { ProviderOrganizationOrganizationDetailsResponse } from "@bitwarden/common/models/response/provider/providerOrganizationResponse";
+import { ProviderOrganizationOrganizationDetailsResponse } from "@bitwarden/common/models/response/provider/provider-organization.response";
 
 import { WebProviderService } from "../services/webProvider.service";
 

@@ -10,10 +10,10 @@ import { OrganizationUserType } from "@bitwarden/common/enums/organizationUserTy
 import { PermissionsApi } from "@bitwarden/common/models/api/permissions.api";
 import { CollectionData } from "@bitwarden/common/models/data/collection.data";
 import { Collection } from "@bitwarden/common/models/domain/collection";
-import { OrganizationUserInviteRequest } from "@bitwarden/common/models/request/organizationUserInviteRequest";
-import { OrganizationUserUpdateRequest } from "@bitwarden/common/models/request/organizationUserUpdateRequest";
-import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selectionReadOnlyRequest";
-import { CollectionDetailsResponse } from "@bitwarden/common/models/response/collectionResponse";
+import { OrganizationUserInviteRequest } from "@bitwarden/common/models/request/organization-user-invite.request";
+import { OrganizationUserUpdateRequest } from "@bitwarden/common/models/request/organization-user-update.request";
+import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selection-read-only.request";
+import { CollectionDetailsResponse } from "@bitwarden/common/models/response/collection.response";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 
 @Component({

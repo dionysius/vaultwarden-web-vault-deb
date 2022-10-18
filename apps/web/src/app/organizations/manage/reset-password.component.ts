@@ -21,7 +21,7 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/models/request/organizationUserResetPasswordRequest";
+import { OrganizationUserResetPasswordRequest } from "@bitwarden/common/models/request/organization-user-reset-password.request";
 
 @Component({
   selector: "app-reset-password",

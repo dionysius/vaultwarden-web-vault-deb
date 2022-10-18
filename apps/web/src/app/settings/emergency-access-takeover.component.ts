@@ -15,8 +15,8 @@ import { KdfType } from "@bitwarden/common/enums/kdfType";
 import { PolicyData } from "@bitwarden/common/models/data/policy.data";
 import { Policy } from "@bitwarden/common/models/domain/policy";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { EmergencyAccessPasswordRequest } from "@bitwarden/common/models/request/emergencyAccessPasswordRequest";
-import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
+import { EmergencyAccessPasswordRequest } from "@bitwarden/common/models/request/emergency-access-password.request";
+import { PolicyResponse } from "@bitwarden/common/models/response/policy.response";
 
 @Component({
   selector: "emergency-access-takeover",

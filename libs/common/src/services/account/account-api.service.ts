@@ -1,6 +1,6 @@
 import { AccountApiService as AccountApiServiceAbstraction } from "../../abstractions/account/account-api.service.abstraction";
 import { ApiService } from "../../abstractions/api.service";
-import { SecretVerificationRequest } from "../../models/request/secretVerificationRequest";
+import { SecretVerificationRequest } from "../../models/request/secret-verification.request";
 
 export class AccountApiService implements AccountApiServiceAbstraction {
   constructor(private apiService: ApiService) {}

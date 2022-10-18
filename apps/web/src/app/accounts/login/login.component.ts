@@ -20,8 +20,8 @@ import { InternalPolicyService } from "@bitwarden/common/abstractions/policy/pol
 import { PolicyData } from "@bitwarden/common/models/data/policy.data";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { Policy } from "@bitwarden/common/models/domain/policy";
-import { ListResponse } from "@bitwarden/common/models/response/listResponse";
-import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
+import { ListResponse } from "@bitwarden/common/models/response/list.response";
+import { PolicyResponse } from "@bitwarden/common/models/response/policy.response";
 
 import { flagEnabled } from "../../../utils/flags";
 import { RouterService, StateService } from "../../core";

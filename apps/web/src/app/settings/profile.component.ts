@@ -7,8 +7,8 @@ import { KeyConnectorService } from "@bitwarden/common/abstractions/keyConnector
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { UpdateProfileRequest } from "@bitwarden/common/models/request/updateProfileRequest";
-import { ProfileResponse } from "@bitwarden/common/models/response/profileResponse";
+import { UpdateProfileRequest } from "@bitwarden/common/models/request/update-profile.request";
+import { ProfileResponse } from "@bitwarden/common/models/response/profile.response";
 
 @Component({
   selector: "app-profile",

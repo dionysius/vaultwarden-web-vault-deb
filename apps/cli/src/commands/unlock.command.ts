@@ -8,7 +8,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
 import { HashPurpose } from "@bitwarden/common/enums/hashPurpose";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { SecretVerificationRequest } from "@bitwarden/common/models/request/secretVerificationRequest";
+import { SecretVerificationRequest } from "@bitwarden/common/models/request/secret-verification.request";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";

@@ -20,7 +20,7 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PolicyData } from "@bitwarden/common/models/data/policy.data";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
 import { Policy } from "@bitwarden/common/models/domain/policy";
-import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
+import { ReferenceEventRequest } from "@bitwarden/common/models/request/reference-event.request";
 
 import { RouterService } from "../core";
 

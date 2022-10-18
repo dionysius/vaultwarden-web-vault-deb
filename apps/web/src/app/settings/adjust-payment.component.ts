@@ -6,7 +6,7 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
-import { PaymentRequest } from "@bitwarden/common/models/request/paymentRequest";
+import { PaymentRequest } from "@bitwarden/common/models/request/payment.request";
 
 import { PaymentComponent } from "./payment.component";
 import { TaxInfoComponent } from "./tax-info.component";

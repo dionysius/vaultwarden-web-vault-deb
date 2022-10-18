@@ -10,11 +10,11 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { OrganizationApiKeyType } from "@bitwarden/common/enums/organizationApiKeyType";
 import { OrganizationConnectionType } from "@bitwarden/common/enums/organizationConnectionType";
 import { ScimConfigApi } from "@bitwarden/common/models/api/scim-config.api";
-import { OrganizationApiKeyRequest } from "@bitwarden/common/models/request/organizationApiKeyRequest";
-import { OrganizationConnectionRequest } from "@bitwarden/common/models/request/organizationConnectionRequest";
-import { ScimConfigRequest } from "@bitwarden/common/models/request/scimConfigRequest";
-import { ApiKeyResponse } from "@bitwarden/common/models/response/apiKeyResponse";
-import { OrganizationConnectionResponse } from "@bitwarden/common/models/response/organizationConnectionResponse";
+import { OrganizationApiKeyRequest } from "@bitwarden/common/models/request/organization-api-key.request";
+import { OrganizationConnectionRequest } from "@bitwarden/common/models/request/organization-connection.request";
+import { ScimConfigRequest } from "@bitwarden/common/models/request/scim-config.request";
+import { ApiKeyResponse } from "@bitwarden/common/models/response/api-key.response";
+import { OrganizationConnectionResponse } from "@bitwarden/common/models/response/organization-connection.response";
 
 @Component({
   selector: "app-org-manage-scim",

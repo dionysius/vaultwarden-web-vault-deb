@@ -7,7 +7,7 @@ import { DeviceType } from "@bitwarden/common/enums/deviceType";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { Policy } from "@bitwarden/common/models/domain/policy";
-import { EventResponse } from "@bitwarden/common/models/response/eventResponse";
+import { EventResponse } from "@bitwarden/common/models/response/event.response";
 
 @Injectable()
 export class EventService implements OnInit, OnDestroy {

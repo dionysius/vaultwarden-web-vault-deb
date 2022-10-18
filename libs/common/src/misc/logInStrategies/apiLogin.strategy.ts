@@ -10,8 +10,8 @@ import { StateService } from "../../abstractions/state.service";
 import { TokenService } from "../../abstractions/token.service";
 import { TwoFactorService } from "../../abstractions/twoFactor.service";
 import { ApiLogInCredentials } from "../../models/domain/log-in-credentials";
-import { ApiTokenRequest } from "../../models/request/identityToken/apiTokenRequest";
-import { IdentityTokenResponse } from "../../models/response/identityTokenResponse";
+import { ApiTokenRequest } from "../../models/request/identity-token/api-token.request";
+import { IdentityTokenResponse } from "../../models/response/identity-token.response";
 
 import { LogInStrategy } from "./logIn.strategy";
 

@@ -15,7 +15,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.service.abstraction";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
-import { ReferenceEventRequest } from "@bitwarden/common/models/request/referenceEventRequest";
+import { ReferenceEventRequest } from "@bitwarden/common/models/request/reference-event.request";
 
 @Component({
   selector: "app-register-form",

@@ -5,7 +5,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { DeleteRecoverRequest } from "@bitwarden/common/models/request/deleteRecoverRequest";
+import { DeleteRecoverRequest } from "@bitwarden/common/models/request/delete-recover.request";
 
 @Component({
   selector: "app-recover-delete",

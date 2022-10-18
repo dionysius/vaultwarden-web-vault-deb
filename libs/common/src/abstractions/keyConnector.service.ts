@@ -1,5 +1,5 @@
 import { Organization } from "../models/domain/organization";
-import { IdentityTokenResponse } from "../models/response/identityTokenResponse";
+import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
 export abstract class KeyConnectorService {
   getAndSetKey: (url?: string) => Promise<void>;

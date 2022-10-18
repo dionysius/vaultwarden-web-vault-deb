@@ -3,8 +3,8 @@ import { FolderApiServiceAbstraction } from "../../abstractions/folder/folder-ap
 import { InternalFolderService } from "../../abstractions/folder/folder.service.abstraction";
 import { FolderData } from "../../models/data/folder.data";
 import { Folder } from "../../models/domain/folder";
-import { FolderRequest } from "../../models/request/folderRequest";
-import { FolderResponse } from "../../models/response/folderResponse";
+import { FolderRequest } from "../../models/request/folder.request";
+import { FolderResponse } from "../../models/response/folder.response";
 
 export class FolderApiService implements FolderApiServiceAbstraction {
   constructor(private folderService: InternalFolderService, private apiService: ApiService) {}

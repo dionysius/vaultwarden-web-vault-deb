@@ -1,5 +1,5 @@
 import { AuthenticationType } from "../../enums/authenticationType";
-import { TokenRequestTwoFactor } from "../request/identityToken/tokenRequestTwoFactor";
+import { TokenTwoFactorRequest } from "../request/identity-token/token-two-factor.request";
 
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
@@ -10,7 +10,7 @@ export class PasswordLogInCredentials {
     public email: string,
     public masterPassword: string,
     public captchaToken?: string,
-    public twoFactor?: TokenRequestTwoFactor
+    public twoFactor?: TokenTwoFactorRequest
   ) {}
 }
 
@@ -22,7 +22,7 @@ export class SsoLogInCredentials {
     public codeVerifier: string,
     public redirectUrl: string,
     public orgId: string,
-    public twoFactor?: TokenRequestTwoFactor
+    public twoFactor?: TokenTwoFactorRequest
   ) {}
 }
 
@@ -41,6 +41,6 @@ export class PasswordlessLogInCredentials {
     public authRequestId: string,
     public decKey: SymmetricCryptoKey,
     public localPasswordHash: string,
-    public twoFactor?: TokenRequestTwoFactor
+    public twoFactor?: TokenTwoFactorRequest
   ) {}
 }

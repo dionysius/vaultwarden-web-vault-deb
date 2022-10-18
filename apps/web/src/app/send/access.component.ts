@@ -13,9 +13,9 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
 import { SendAccess } from "@bitwarden/common/models/domain/send-access";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { SendAccessRequest } from "@bitwarden/common/models/request/sendAccessRequest";
-import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
-import { SendAccessResponse } from "@bitwarden/common/models/response/sendAccessResponse";
+import { SendAccessRequest } from "@bitwarden/common/models/request/send-access.request";
+import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
+import { SendAccessResponse } from "@bitwarden/common/models/response/send-access.response";
 import { SendAccessView } from "@bitwarden/common/models/view/send-access.view";
 
 @Component({

@@ -5,8 +5,8 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { OrganizationUserBulkConfirmRequest } from "@bitwarden/common/models/request/organizationUserBulkConfirmRequest";
-import { OrganizationUserBulkRequest } from "@bitwarden/common/models/request/organizationUserBulkRequest";
+import { OrganizationUserBulkConfirmRequest } from "@bitwarden/common/models/request/organization-user-bulk-confirm.request";
+import { OrganizationUserBulkRequest } from "@bitwarden/common/models/request/organization-user-bulk.request";
 
 import { BulkUserDetails } from "./bulk-status.component";
 

@@ -6,13 +6,13 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
-import { SecretVerificationRequest } from "@bitwarden/common/models/request/secretVerificationRequest";
-import { UpdateTwoFactorWebAuthnDeleteRequest } from "@bitwarden/common/models/request/updateTwoFactorWebAuthnDeleteRequest";
-import { UpdateTwoFactorWebAuthnRequest } from "@bitwarden/common/models/request/updateTwoFactorWebAuthnRequest";
+import { SecretVerificationRequest } from "@bitwarden/common/models/request/secret-verification.request";
+import { UpdateTwoFactorWebAuthnDeleteRequest } from "@bitwarden/common/models/request/update-two-factor-web-authn-delete.request";
+import { UpdateTwoFactorWebAuthnRequest } from "@bitwarden/common/models/request/update-two-factor-web-authn.request";
 import {
   ChallengeResponse,
   TwoFactorWebAuthnResponse,
-} from "@bitwarden/common/models/response/twoFactorWebAuthnResponse";
+} from "@bitwarden/common/models/response/two-factor-web-authn.response";
 import { AuthResponse } from "@bitwarden/common/types/authResponse";
 
 import { TwoFactorBaseComponent } from "./two-factor-base.component";

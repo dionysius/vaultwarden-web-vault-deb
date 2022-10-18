@@ -4,9 +4,9 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationConnectionType } from "@bitwarden/common/enums/organizationConnectionType";
 import { BillingSyncConfigApi } from "@bitwarden/common/models/api/billing-sync-config.api";
-import { BillingSyncConfigRequest } from "@bitwarden/common/models/request/billingSyncConfigRequest";
-import { OrganizationConnectionRequest } from "@bitwarden/common/models/request/organizationConnectionRequest";
-import { OrganizationConnectionResponse } from "@bitwarden/common/models/response/organizationConnectionResponse";
+import { BillingSyncConfigRequest } from "@bitwarden/common/models/request/billing-sync-config.request";
+import { OrganizationConnectionRequest } from "@bitwarden/common/models/request/organization-connection.request";
+import { OrganizationConnectionResponse } from "@bitwarden/common/models/response/organization-connection.response";
 
 @Component({
   selector: "app-billing-sync-key",

@@ -1,5 +1,5 @@
 import { PolicyType } from "../../enums/policyType";
-import { PolicyResponse } from "../response/policyResponse";
+import { PolicyResponse } from "../response/policy.response";
 
 export class PolicyData {
   id: string;

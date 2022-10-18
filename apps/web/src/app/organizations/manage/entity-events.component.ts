@@ -5,8 +5,8 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { EventResponse } from "@bitwarden/common/models/response/eventResponse";
-import { ListResponse } from "@bitwarden/common/models/response/listResponse";
+import { EventResponse } from "@bitwarden/common/models/response/event.response";
+import { ListResponse } from "@bitwarden/common/models/response/list.response";
 
 import { EventService } from "../../core";
 

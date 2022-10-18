@@ -7,7 +7,7 @@ import { OrganizationService } from "@bitwarden/common/abstractions/organization
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/abstractions/policy/policy-api.service.abstraction";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
+import { PolicyResponse } from "@bitwarden/common/models/response/policy.response";
 
 import { PolicyListService } from "../../core";
 import { BasePolicy } from "../policies/base-policy.component";

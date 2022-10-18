@@ -15,7 +15,7 @@ import { OrganizationService } from "@bitwarden/common/abstractions/organization
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
-import { BitPayInvoiceRequest } from "@bitwarden/common/models/request/bitPayInvoiceRequest";
+import { BitPayInvoiceRequest } from "@bitwarden/common/models/request/bit-pay-invoice.request";
 
 @Component({
   selector: "app-add-credit",

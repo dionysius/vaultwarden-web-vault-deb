@@ -9,9 +9,9 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { CollectionRequest } from "@bitwarden/common/models/request/collectionRequest";
-import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selectionReadOnlyRequest";
-import { GroupResponse } from "@bitwarden/common/models/response/groupResponse";
+import { CollectionRequest } from "@bitwarden/common/models/request/collection.request";
+import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selection-read-only.request";
+import { GroupResponse } from "@bitwarden/common/models/response/group.response";
 
 @Component({
   selector: "app-collection-add-edit",

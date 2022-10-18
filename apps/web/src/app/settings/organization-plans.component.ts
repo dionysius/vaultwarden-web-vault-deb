@@ -27,11 +27,11 @@ import { PolicyType } from "@bitwarden/common/enums/policyType";
 import { ProductType } from "@bitwarden/common/enums/productType";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { OrganizationCreateRequest } from "@bitwarden/common/models/request/organizationCreateRequest";
-import { OrganizationKeysRequest } from "@bitwarden/common/models/request/organizationKeysRequest";
-import { OrganizationUpgradeRequest } from "@bitwarden/common/models/request/organizationUpgradeRequest";
-import { ProviderOrganizationCreateRequest } from "@bitwarden/common/models/request/provider/providerOrganizationCreateRequest";
-import { PlanResponse } from "@bitwarden/common/models/response/planResponse";
+import { OrganizationCreateRequest } from "@bitwarden/common/models/request/organization-create.request";
+import { OrganizationKeysRequest } from "@bitwarden/common/models/request/organization-keys.request";
+import { OrganizationUpgradeRequest } from "@bitwarden/common/models/request/organization-upgrade.request";
+import { ProviderOrganizationCreateRequest } from "@bitwarden/common/models/request/provider/provider-organization-create.request";
+import { PlanResponse } from "@bitwarden/common/models/response/plan.response";
 
 import { PaymentComponent } from "./payment.component";
 import { TaxInfoComponent } from "./tax-info.component";

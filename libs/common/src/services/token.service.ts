@@ -1,7 +1,7 @@
 import { StateService } from "../abstractions/state.service";
 import { TokenService as TokenServiceAbstraction } from "../abstractions/token.service";
 import { Utils } from "../misc/utils";
-import { IdentityTokenResponse } from "../models/response/identityTokenResponse";
+import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
 export class TokenService implements TokenServiceAbstraction {
   static decodeToken(token: string): Promise<any> {

@@ -5,7 +5,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
-import { BillingPaymentResponse } from "@bitwarden/common/models/response/billingPaymentResponse";
+import { BillingPaymentResponse } from "@bitwarden/common/models/response/billing-payment.response";
 
 @Component({
   selector: "app-payment-method",

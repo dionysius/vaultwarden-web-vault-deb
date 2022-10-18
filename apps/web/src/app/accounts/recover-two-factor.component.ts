@@ -7,7 +7,7 @@ import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { TwoFactorRecoveryRequest } from "@bitwarden/common/models/request/twoFactorRecoveryRequest";
+import { TwoFactorRecoveryRequest } from "@bitwarden/common/models/request/two-factor-recovery.request";
 
 @Component({
   selector: "app-recover-two-factor",

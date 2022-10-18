@@ -13,11 +13,11 @@ import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { EmergencyAccessStatusType } from "@bitwarden/common/enums/emergencyAccessStatusType";
 import { EmergencyAccessType } from "@bitwarden/common/enums/emergencyAccessType";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { EmergencyAccessConfirmRequest } from "@bitwarden/common/models/request/emergencyAccessConfirmRequest";
+import { EmergencyAccessConfirmRequest } from "@bitwarden/common/models/request/emergency-access-confirm.request";
 import {
   EmergencyAccessGranteeDetailsResponse,
   EmergencyAccessGrantorDetailsResponse,
-} from "@bitwarden/common/models/response/emergencyAccessResponse";
+} from "@bitwarden/common/models/response/emergency-access.response";
 
 import { EmergencyAccessAddEditComponent } from "./emergency-access-add-edit.component";
 import { EmergencyAccessConfirmComponent } from "./emergency-access-confirm.component";

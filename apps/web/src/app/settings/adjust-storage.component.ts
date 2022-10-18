@@ -6,8 +6,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { StorageRequest } from "@bitwarden/common/models/request/storageRequest";
-import { PaymentResponse } from "@bitwarden/common/models/response/paymentResponse";
+import { StorageRequest } from "@bitwarden/common/models/request/storage.request";
+import { PaymentResponse } from "@bitwarden/common/models/response/payment.response";
 
 import { PaymentComponent } from "./payment.component";
 

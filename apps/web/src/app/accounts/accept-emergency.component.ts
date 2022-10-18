@@ -5,7 +5,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { EmergencyAccessAcceptRequest } from "@bitwarden/common/models/request/emergencyAccessAcceptRequest";
+import { EmergencyAccessAcceptRequest } from "@bitwarden/common/models/request/emergency-access-accept.request";
 
 import { BaseAcceptComponent } from "../common/base.accept.component";
 

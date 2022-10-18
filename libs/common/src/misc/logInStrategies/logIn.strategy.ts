@@ -16,15 +16,15 @@ import {
   SsoLogInCredentials,
   PasswordlessLogInCredentials,
 } from "../../models/domain/log-in-credentials";
-import { DeviceRequest } from "../../models/request/deviceRequest";
-import { ApiTokenRequest } from "../../models/request/identityToken/apiTokenRequest";
-import { PasswordTokenRequest } from "../../models/request/identityToken/passwordTokenRequest";
-import { SsoTokenRequest } from "../../models/request/identityToken/ssoTokenRequest";
-import { TokenRequestTwoFactor } from "../../models/request/identityToken/tokenRequestTwoFactor";
-import { KeysRequest } from "../../models/request/keysRequest";
-import { IdentityCaptchaResponse } from "../../models/response/identityCaptchaResponse";
-import { IdentityTokenResponse } from "../../models/response/identityTokenResponse";
-import { IdentityTwoFactorResponse } from "../../models/response/identityTwoFactorResponse";
+import { DeviceRequest } from "../../models/request/device.request";
+import { ApiTokenRequest } from "../../models/request/identity-token/api-token.request";
+import { PasswordTokenRequest } from "../../models/request/identity-token/password-token.request";
+import { SsoTokenRequest } from "../../models/request/identity-token/sso-token.request";
+import { TokenTwoFactorRequest } from "../../models/request/identity-token/token-two-factor.request";
+import { KeysRequest } from "../../models/request/keys.request";
+import { IdentityCaptchaResponse } from "../../models/response/identity-captcha.response";
+import { IdentityTokenResponse } from "../../models/response/identity-token.response";
+import { IdentityTwoFactorResponse } from "../../models/response/identity-two-factor.response";
 
 export abstract class LogInStrategy {
   protected abstract tokenRequest: ApiTokenRequest | PasswordTokenRequest | SsoTokenRequest;
@@ -51,7 +51,7 @@ export abstract class LogInStrategy {
   ): Promise<AuthResult>;
 
   async logInTwoFactor(
-    twoFactor: TokenRequestTwoFactor,
+    twoFactor: TokenTwoFactorRequest,
     captchaResponse: string = null
   ): Promise<AuthResult> {
     this.tokenRequest.setTwoFactor(twoFactor);
@@ -84,17 +84,17 @@ export abstract class LogInStrategy {
     return new DeviceRequest(appId, this.platformUtilsService);
   }
 
-  protected async buildTwoFactor(userProvidedTwoFactor?: TokenRequestTwoFactor) {
+  protected async buildTwoFactor(userProvidedTwoFactor?: TokenTwoFactorRequest) {
     if (userProvidedTwoFactor != null) {
       return userProvidedTwoFactor;
     }
 
     const storedTwoFactorToken = await this.tokenService.getTwoFactorToken();
     if (storedTwoFactorToken != null) {
-      return new TokenRequestTwoFactor(TwoFactorProviderType.Remember, storedTwoFactorToken, false);
+      return new TokenTwoFactorRequest(TwoFactorProviderType.Remember, storedTwoFactorToken, false);
     }
 
-    return new TokenRequestTwoFactor();
+    return new TokenTwoFactorRequest();
   }
 
   protected async saveAccountInformation(tokenResponse: IdentityTokenResponse) {

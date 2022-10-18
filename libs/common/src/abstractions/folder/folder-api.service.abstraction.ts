@@ -1,5 +1,5 @@
 import { Folder } from "../../models/domain/folder";
-import { FolderResponse } from "../../models/response/folderResponse";
+import { FolderResponse } from "../../models/response/folder.response";
 
 export class FolderApiServiceAbstraction {
   save: (folder: Folder) => Promise<any>;

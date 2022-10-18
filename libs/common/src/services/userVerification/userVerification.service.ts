@@ -3,8 +3,8 @@ import { I18nService } from "../../abstractions/i18n.service";
 import { UserVerificationApiServiceAbstraction } from "../../abstractions/userVerification/userVerification-api.service.abstraction";
 import { UserVerificationService as UserVerificationServiceAbstraction } from "../../abstractions/userVerification/userVerification.service.abstraction";
 import { VerificationType } from "../../enums/verificationType";
-import { VerifyOTPRequest } from "../../models/request/account/verifyOTPRequest";
-import { SecretVerificationRequest } from "../../models/request/secretVerificationRequest";
+import { VerifyOTPRequest } from "../../models/request/account/verify-otp.request";
+import { SecretVerificationRequest } from "../../models/request/secret-verification.request";
 import { Verification } from "../../types/verification";
 
 /**

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { BreachAccountResponse } from "@bitwarden/common/models/response/breachAccountResponse";
+import { BreachAccountResponse } from "@bitwarden/common/models/response/breach-account.response";
 
 @Component({
   selector: "app-breach-report",

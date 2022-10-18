@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
-import { TwoFactorRecoverResponse } from "@bitwarden/common/models/response/twoFactorRescoverResponse";
+import { TwoFactorRecoverResponse } from "@bitwarden/common/models/response/two-factor-recover.response";
 
 @Component({
   selector: "app-two-factor-recovery",

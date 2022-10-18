@@ -2,7 +2,7 @@ import { Directive, ElementRef, Input, OnChanges } from "@angular/core";
 
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { ValidationService } from "@bitwarden/common/abstractions/validation.service";
-import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
+import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 
 /**
  * Provides error handling, in particular for any error returned by the server in an api call.

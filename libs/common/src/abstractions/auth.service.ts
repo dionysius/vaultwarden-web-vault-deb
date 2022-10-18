@@ -9,8 +9,8 @@ import {
   PasswordlessLogInCredentials,
 } from "../models/domain/log-in-credentials";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
-import { TokenRequestTwoFactor } from "../models/request/identityToken/tokenRequestTwoFactor";
-import { AuthRequestPushNotification } from "../models/response/notificationResponse";
+import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
+import { AuthRequestPushNotification } from "../models/response/notification.response";
 
 export abstract class AuthService {
   masterPasswordHash: string;
@@ -23,7 +23,7 @@ export abstract class AuthService {
       | PasswordlessLogInCredentials
   ) => Promise<AuthResult>;
   logInTwoFactor: (
-    twoFactor: TokenRequestTwoFactor,
+    twoFactor: TokenTwoFactorRequest,
     captchaResponse: string
   ) => Promise<AuthResult>;
   logOut: (callback: () => void) => void;

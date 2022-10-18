@@ -8,7 +8,7 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { DEFAULT_KDF_ITERATIONS, KdfType } from "@bitwarden/common/enums/kdfType";
-import { KdfRequest } from "@bitwarden/common/models/request/kdfRequest";
+import { KdfRequest } from "@bitwarden/common/models/request/kdf.request";
 
 @Component({
   selector: "app-change-kdf",

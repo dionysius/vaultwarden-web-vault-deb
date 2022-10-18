@@ -6,7 +6,7 @@ import { OrganizationService } from "../abstractions/organization/organization.s
 import { StateService } from "../abstractions/state.service";
 import { EventType } from "../enums/eventType";
 import { EventData } from "../models/data/event.data";
-import { EventRequest } from "../models/request/eventRequest";
+import { EventRequest } from "../models/request/event.request";
 
 export class EventService implements EventServiceAbstraction {
   private inited = false;

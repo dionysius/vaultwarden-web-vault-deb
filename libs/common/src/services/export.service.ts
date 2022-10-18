@@ -22,7 +22,7 @@ import { CipherWithIdExport as CipherExport } from "../models/export/cipher-with
 import { CollectionWithIdExport as CollectionExport } from "../models/export/collection-with-id.export";
 import { EventExport } from "../models/export/event.export";
 import { FolderWithIdExport as FolderExport } from "../models/export/folder-with-id.export";
-import { CollectionDetailsResponse } from "../models/response/collectionResponse";
+import { CollectionDetailsResponse } from "../models/response/collection.response";
 import { CipherView } from "../models/view/cipher.view";
 import { CollectionView } from "../models/view/collection.view";
 import { EventView } from "../models/view/event.view";

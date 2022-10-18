@@ -16,8 +16,8 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { PlanType } from "@bitwarden/common/enums/planType";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/models/domain/master-password-policy-options";
-import { ListResponse } from "@bitwarden/common/models/response/listResponse";
-import { PolicyResponse } from "@bitwarden/common/models/response/policyResponse";
+import { ListResponse } from "@bitwarden/common/models/response/list.response";
+import { PolicyResponse } from "@bitwarden/common/models/response/policy.response";
 
 import { RouterService } from "../../core";
 

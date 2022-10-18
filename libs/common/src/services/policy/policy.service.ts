@@ -12,8 +12,8 @@ import { MasterPasswordPolicyOptions } from "../../models/domain/master-password
 import { Organization } from "../../models/domain/organization";
 import { Policy } from "../../models/domain/policy";
 import { ResetPasswordPolicyOptions } from "../../models/domain/reset-password-policy-options";
-import { ListResponse } from "../../models/response/listResponse";
-import { PolicyResponse } from "../../models/response/policyResponse";
+import { ListResponse } from "../../models/response/list.response";
+import { PolicyResponse } from "../../models/response/policy.response";
 
 export class PolicyService implements InternalPolicyServiceAbstraction {
   private _policies: BehaviorSubject<Policy[]> = new BehaviorSubject([]);

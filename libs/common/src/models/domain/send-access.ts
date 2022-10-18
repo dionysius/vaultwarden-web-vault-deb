@@ -1,5 +1,5 @@
 import { SendType } from "../../enums/sendType";
-import { SendAccessResponse } from "../response/sendAccessResponse";
+import { SendAccessResponse } from "../response/send-access.response";
 import { SendAccessView } from "../view/send-access.view";
 
 import Domain from "./domain-base";

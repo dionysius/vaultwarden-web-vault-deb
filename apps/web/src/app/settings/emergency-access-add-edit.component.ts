@@ -5,8 +5,8 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { EmergencyAccessType } from "@bitwarden/common/enums/emergencyAccessType";
-import { EmergencyAccessInviteRequest } from "@bitwarden/common/models/request/emergencyAccessInviteRequest";
-import { EmergencyAccessUpdateRequest } from "@bitwarden/common/models/request/emergencyAccessUpdateRequest";
+import { EmergencyAccessInviteRequest } from "@bitwarden/common/models/request/emergency-access-invite.request";
+import { EmergencyAccessUpdateRequest } from "@bitwarden/common/models/request/emergency-access-update.request";
 
 @Component({
   selector: "emergency-access-add-edit",

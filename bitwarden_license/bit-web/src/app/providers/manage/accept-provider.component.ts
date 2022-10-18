@@ -5,7 +5,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { ProviderUserAcceptRequest } from "@bitwarden/common/models/request/provider/providerUserAcceptRequest";
+import { ProviderUserAcceptRequest } from "@bitwarden/common/models/request/provider/provider-user-accept.request";
 import { BaseAcceptComponent } from "@bitwarden/web-vault/app/common/base.accept.component";
 
 @Component({

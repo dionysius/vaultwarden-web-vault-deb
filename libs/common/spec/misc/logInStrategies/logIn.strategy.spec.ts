@@ -18,11 +18,11 @@ import { Account, AccountProfile, AccountTokens } from "@bitwarden/common/models
 import { AuthResult } from "@bitwarden/common/models/domain/auth-result";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { PasswordLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
-import { PasswordTokenRequest } from "@bitwarden/common/models/request/identityToken/passwordTokenRequest";
-import { TokenRequestTwoFactor } from "@bitwarden/common/models/request/identityToken/tokenRequestTwoFactor";
-import { IdentityCaptchaResponse } from "@bitwarden/common/models/response/identityCaptchaResponse";
-import { IdentityTokenResponse } from "@bitwarden/common/models/response/identityTokenResponse";
-import { IdentityTwoFactorResponse } from "@bitwarden/common/models/response/identityTwoFactorResponse";
+import { PasswordTokenRequest } from "@bitwarden/common/models/request/identity-token/password-token.request";
+import { TokenTwoFactorRequest } from "@bitwarden/common/models/request/identity-token/token-two-factor.request";
+import { IdentityCaptchaResponse } from "@bitwarden/common/models/response/identity-captcha.response";
+import { IdentityTokenResponse } from "@bitwarden/common/models/response/identity-token.response";
+import { IdentityTwoFactorResponse } from "@bitwarden/common/models/response/identity-two-factor.response";
 
 const email = "hello@world.com";
 const masterPassword = "password";
@@ -237,7 +237,7 @@ describe("LogInStrategy", () => {
     it("sends 2FA token provided by user to server (single step)", async () => {
       // This occurs if the user enters the 2FA code as an argument in the CLI
       apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
-      credentials.twoFactor = new TokenRequestTwoFactor(
+      credentials.twoFactor = new TokenTwoFactorRequest(
         twoFactorProviderType,
         twoFactorToken,
         twoFactorRemember
@@ -269,7 +269,7 @@ describe("LogInStrategy", () => {
       apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
 
       await passwordLogInStrategy.logInTwoFactor(
-        new TokenRequestTwoFactor(twoFactorProviderType, twoFactorToken, twoFactorRemember),
+        new TokenTwoFactorRequest(twoFactorProviderType, twoFactorToken, twoFactorRemember),
         null
       );
 

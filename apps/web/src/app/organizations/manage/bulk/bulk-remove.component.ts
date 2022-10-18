@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
-import { OrganizationUserBulkRequest } from "@bitwarden/common/models/request/organizationUserBulkRequest";
+import { OrganizationUserBulkRequest } from "@bitwarden/common/models/request/organization-user-bulk.request";
 
 import { BulkUserDetails } from "./bulk-status.component";
 

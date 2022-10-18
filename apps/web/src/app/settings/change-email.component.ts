@@ -8,8 +8,8 @@ import { MessagingService } from "@bitwarden/common/abstractions/messaging.servi
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TwoFactorProviderType } from "@bitwarden/common/enums/twoFactorProviderType";
-import { EmailRequest } from "@bitwarden/common/models/request/emailRequest";
-import { EmailTokenRequest } from "@bitwarden/common/models/request/emailTokenRequest";
+import { EmailTokenRequest } from "@bitwarden/common/models/request/email-token.request";
+import { EmailRequest } from "@bitwarden/common/models/request/email.request";
 
 @Component({
   selector: "app-change-email",

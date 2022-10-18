@@ -1,4 +1,4 @@
-import { BaseResponse } from "../response/baseResponse";
+import { BaseResponse } from "../response/base.response";
 
 export class SendFileApi extends BaseResponse {
   id: string;

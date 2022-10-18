@@ -5,7 +5,7 @@ import {
   Saml2SigningBehavior,
   SsoType,
 } from "../../enums/ssoEnums";
-import { BaseResponse } from "../response/baseResponse";
+import { BaseResponse } from "../response/base.response";
 import { SsoConfigView } from "../view/sso-config.view";
 
 export class SsoConfigApi extends BaseResponse {

@@ -9,7 +9,7 @@ import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { ProviderService } from "@bitwarden/common/abstractions/provider.service";
-import { EventResponse } from "@bitwarden/common/models/response/eventResponse";
+import { EventResponse } from "@bitwarden/common/models/response/event.response";
 import { BaseEventsComponent } from "@bitwarden/web-vault/app/common/base.events.component";
 import { EventService } from "@bitwarden/web-vault/app/core";
 

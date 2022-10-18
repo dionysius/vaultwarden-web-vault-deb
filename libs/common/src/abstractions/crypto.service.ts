@@ -4,9 +4,9 @@ import { KeySuffixOptions } from "../enums/keySuffixOptions";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
-import { ProfileOrganizationResponse } from "../models/response/profileOrganizationResponse";
-import { ProfileProviderOrganizationResponse } from "../models/response/profileProviderOrganizationResponse";
-import { ProfileProviderResponse } from "../models/response/profileProviderResponse";
+import { ProfileOrganizationResponse } from "../models/response/profile-organization.response";
+import { ProfileProviderOrganizationResponse } from "../models/response/profile-provider-organization.response";
+import { ProfileProviderResponse } from "../models/response/profile-provider.response";
 
 export abstract class CryptoService {
   setKey: (key: SymmetricCryptoKey) => Promise<any>;

@@ -12,7 +12,7 @@ import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.ab
 import { UserVerificationService } from "@bitwarden/common/abstractions/userVerification/userVerification.service.abstraction";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Organization } from "@bitwarden/common/models/domain/organization";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/models/request/organizationUserResetPasswordEnrollmentRequest";
+import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/models/request/organization-user-reset-password-enrollment.request";
 import { Verification } from "@bitwarden/common/types/verification";
 
 @Component({

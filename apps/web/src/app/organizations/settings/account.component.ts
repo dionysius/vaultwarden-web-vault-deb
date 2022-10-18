@@ -8,9 +8,9 @@ import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
-import { OrganizationKeysRequest } from "@bitwarden/common/models/request/organizationKeysRequest";
-import { OrganizationUpdateRequest } from "@bitwarden/common/models/request/organizationUpdateRequest";
-import { OrganizationResponse } from "@bitwarden/common/models/response/organizationResponse";
+import { OrganizationKeysRequest } from "@bitwarden/common/models/request/organization-keys.request";
+import { OrganizationUpdateRequest } from "@bitwarden/common/models/request/organization-update.request";
+import { OrganizationResponse } from "@bitwarden/common/models/response/organization.response";
 
 import { ApiKeyComponent } from "../../settings/api-key.component";
 import { PurgeVaultComponent } from "../../settings/purge-vault.component";

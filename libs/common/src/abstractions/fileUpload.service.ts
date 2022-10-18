@@ -1,7 +1,7 @@
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
-import { AttachmentUploadDataResponse } from "../models/response/attachmentUploadDataResponse";
-import { SendFileUploadDataResponse } from "../models/response/sendFileUploadDataResponse";
+import { AttachmentUploadDataResponse } from "../models/response/attachment-upload-data.response";
+import { SendFileUploadDataResponse } from "../models/response/send-file-upload-data.response";
 
 export abstract class FileUploadService {
   uploadSendFile: (

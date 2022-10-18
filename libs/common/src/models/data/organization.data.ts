@@ -2,7 +2,7 @@ import { OrganizationUserStatusType } from "../../enums/organizationUserStatusTy
 import { OrganizationUserType } from "../../enums/organizationUserType";
 import { ProductType } from "../../enums/productType";
 import { PermissionsApi } from "../api/permissions.api";
-import { ProfileOrganizationResponse } from "../response/profileOrganizationResponse";
+import { ProfileOrganizationResponse } from "../response/profile-organization.response";
 
 export class OrganizationData {
   id: string;

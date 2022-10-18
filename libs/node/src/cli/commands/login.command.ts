@@ -25,10 +25,10 @@ import {
   PasswordLogInCredentials,
   SsoLogInCredentials,
 } from "@bitwarden/common/models/domain/log-in-credentials";
-import { TokenRequestTwoFactor } from "@bitwarden/common/models/request/identityToken/tokenRequestTwoFactor";
-import { TwoFactorEmailRequest } from "@bitwarden/common/models/request/twoFactorEmailRequest";
-import { UpdateTempPasswordRequest } from "@bitwarden/common/models/request/updateTempPasswordRequest";
-import { ErrorResponse } from "@bitwarden/common/models/response/errorResponse";
+import { TokenTwoFactorRequest } from "@bitwarden/common/models/request/identity-token/token-two-factor.request";
+import { TwoFactorEmailRequest } from "@bitwarden/common/models/request/two-factor-email.request";
+import { UpdateTempPasswordRequest } from "@bitwarden/common/models/request/update-temp-password.request";
+import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 
 import { Response } from "../models/response";
 import { MessageResponse } from "../models/response/messageResponse";
@@ -151,7 +151,7 @@ export class LoginCommand {
     const twoFactor =
       twoFactorToken == null
         ? null
-        : new TokenRequestTwoFactor(twoFactorMethod, twoFactorToken, false);
+        : new TokenTwoFactorRequest(twoFactorMethod, twoFactorToken, false);
 
     try {
       if (this.validatedParams != null) {
@@ -255,13 +255,13 @@ export class LoginCommand {
         }
 
         response = await this.authService.logInTwoFactor(
-          new TokenRequestTwoFactor(selectedProvider.type, twoFactorToken),
+          new TokenTwoFactorRequest(selectedProvider.type, twoFactorToken),
           null
         );
       }
 
       if (response.captchaSiteKey) {
-        const twoFactorRequest = new TokenRequestTwoFactor(selectedProvider.type, twoFactorToken);
+        const twoFactorRequest = new TokenTwoFactorRequest(selectedProvider.type, twoFactorToken);
         const handledResponse = await this.handleCaptchaRequired(twoFactorRequest);
 
         // Error Response
@@ -427,7 +427,7 @@ export class LoginCommand {
   }
 
   private async handleCaptchaRequired(
-    twoFactorRequest: TokenRequestTwoFactor,
+    twoFactorRequest: TokenTwoFactorRequest,
     credentials: PasswordLogInCredentials = null
   ): Promise<AuthResult | Response> {
     const badCaptcha = Response.badRequest(

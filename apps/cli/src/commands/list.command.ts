@@ -10,8 +10,8 @@ import { Collection } from "@bitwarden/common/models/domain/collection";
 import {
   CollectionDetailsResponse as ApiCollectionDetailsResponse,
   CollectionResponse as ApiCollectionResponse,
-} from "@bitwarden/common/models/response/collectionResponse";
-import { ListResponse as ApiListResponse } from "@bitwarden/common/models/response/listResponse";
+} from "@bitwarden/common/models/response/collection.response";
+import { ListResponse as ApiListResponse } from "@bitwarden/common/models/response/list.response";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { Response } from "@bitwarden/node/cli/models/response";
 import { ListResponse } from "@bitwarden/node/cli/models/response/listResponse";

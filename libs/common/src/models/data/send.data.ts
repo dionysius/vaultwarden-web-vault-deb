@@ -1,5 +1,5 @@
 import { SendType } from "../../enums/sendType";
-import { SendResponse } from "../response/sendResponse";
+import { SendResponse } from "../response/send.response";
 
 import { SendFileData } from "./send-file.data";
 import { SendTextData } from "./send-text.data";
