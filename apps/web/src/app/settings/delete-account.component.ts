@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
-import { AccountService } from "@bitwarden/common/abstractions/account/account.service.abstraction";
+import { AccountApiService } from "@bitwarden/common/abstractions/account/account-api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -22,14 +22,14 @@ export class DeleteAccountComponent {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private formBuilder: FormBuilder,
-    private accountService: AccountService,
+    private accountApiService: AccountApiService,
     private logService: LogService
   ) {}
 
   async submit() {
     try {
       const verification = this.deleteForm.get("verification").value;
-      this.formPromise = this.accountService.delete(verification);
+      this.formPromise = this.accountApiService.deleteAccount(verification);
       await this.formPromise;
       this.platformUtilsService.showToast(
         "success",
