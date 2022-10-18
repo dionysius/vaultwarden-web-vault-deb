@@ -3,7 +3,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { BrowserApi } from "../browser/browserApi";
 import { StateService } from "../services/abstractions/state.service";
 
-import { ClearClipboard } from "./clearClipboard";
+import { ClearClipboard } from "./clear-clipboard";
 import { getClearClipboardTime, setClearClipboardTime } from "./clipboard-state";
 
 jest.mock("./clipboard-state", () => {
