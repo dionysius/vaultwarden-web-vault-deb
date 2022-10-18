@@ -12,6 +12,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      order: ["Documentation", ["Introduction", "Colors", "Icons"], "Component Library"],
+    },
+  },
   docs: { inlineStories: true },
 };
 
