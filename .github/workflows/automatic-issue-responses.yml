@@ -62,3 +62,14 @@ jobs:
             As we haven’t heard from you about this problem in some time, this issue will now be closed.
 
             If this happens again or continues to be an problem, please respond to this issue with any additional detail to assist with reproduction and root cause analysis.
+      # Translation PR / Crowdin
+      - if: github.event.label.name == 'translation-pr'
+        name: Translation-PR
+        uses: peter-evans/close-issue@849549ba7c3a595a064c4b2c56f206ee78f93515  # v2.0.0
+        with:
+          comment: |
+            We really appreciate you taking the time to improve our translations.
+            
+            However we use a translation tool called [Crowdin](https://crowdin.com/) to help manage our localization efforts across many different languages. Our translations can only be updated using Crowdin, so we'll have to close this PR, but would really appreciate if you'd consider joining our awesome translation community over at Crowdin.
+            
+            More information can be found in the [localization section](https://contributing.bitwarden.com/contributing/#localization-l10n) of our [Contribution Guidelines](https://contributing.bitwarden.com/contributing/)
