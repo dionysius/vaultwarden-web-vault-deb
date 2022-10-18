@@ -1,7 +1,22 @@
 function load(envName) {
+  const base = loadConfig("base");
+  const env = loadConfig(envName);
+  const local = loadConfig("local");
+
   return {
-    ...loadConfig(envName),
-    ...loadConfig("local"),
+    ...base,
+    ...env,
+    ...local,
+    flags: {
+      ...base.flags,
+      ...env.flags,
+      ...local.flags,
+    },
+    devFlags: {
+      ...base.devFlags,
+      ...env.devFlags,
+      ...local.devFlags,
+    },
   };
 }
 
