@@ -18,9 +18,6 @@ jobs:
   rollout:
     name: Update Rollout Percentage
     runs-on: ubuntu-22.04
-    outputs:
-      release-version: ${{ steps.version.outputs.version }}
-      release-channel: ${{ steps.release-channel.outputs.channel }}
     steps:
       - name: Login to Azure
         uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010

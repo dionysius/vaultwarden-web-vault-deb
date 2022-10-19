@@ -24,6 +24,8 @@ on:
       - '!*.md'
       - '!*.txt'
       - '.github/workflows/build-browser.yml'
+  workflow_call:
+    inputs: {}
   workflow_dispatch:
     inputs: {}
 
@@ -139,12 +141,10 @@ jobs:
         working-directory: ./
 
       - name: Build
-        run: |
-          npm run dist
+        run: npm run dist
 
       - name: Build Manifest v3
-        run: |
-          npm run dist:mv3
+        run: npm run dist:mv3
 
       - name: Gulp
         run: gulp ci
@@ -346,13 +346,13 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846  # v3.0.0
 
       - name: Login to Azure
-        uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
 
       - name: Retrieve secrets
         id: retrieve-secrets
-        uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
+        uses: bitwarden/gh-actions/get-keyvault-secrets@471ae4aec27405f16c5b796e288f54262c406e5d
         with:
           keyvault: "bitwarden-prod-kv"
           secrets: "crowdin-api-token"
@@ -369,47 +369,6 @@ jobs:
           upload_sources: true
           upload_translations: false
 
-  trigger-desktop-build:
-    name: Trigger desktop build
-    if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') || github.ref != 'refs/heads/hotfix-rc-browser' }}
-    runs-on: ubuntu-20.04
-    needs:
-      - build
-      - build-safari
-    steps:
-
-      - name: Login to Azure
-        uses: Azure/login@ec3c14589bd3e9312b3cc8c41e6860e258df9010
-        with:
-          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
-
-      - name: Retrieve secrets
-        id: retrieve-secrets
-        uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
-        with:
-          keyvault: "bitwarden-prod-kv"
-          secrets: "github-pat-bitwarden-devops-bot-repo-scope"
-
-      - name: Extract branch name
-        id: extract_branch
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-
-      - name: Call GitHub API to trigger desktop build workflow
-        env:
-          TOKEN: ${{ steps.retrieve-secrets.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
-          BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
-        run: |
-
-          JSON_STRING=$(printf '{"ref":"%s"}' "$BRANCH_NAME")
-
-          curl \
-            -X POST \
-            -i -u bitwarden-devops-bot:$TOKEN \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/bitwarden/clients/actions/workflows/build-desktop.yml/dispatches \
-            -d $JSON_STRING
-
   check-failures:
     name: Check for failures
     if: always()
@@ -421,7 +380,6 @@ jobs:
       - build
       - build-safari
       - crowdin-push
-      - trigger-desktop-build
     steps:
       - name: Check if any job failed
         if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
@@ -432,7 +390,6 @@ jobs:
           BUILD_STATUS: ${{ needs.build.result }}
           SAFARI_BUILD_STATUS: ${{ needs.build-safari.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
-          TRIGGER_DESKTOP_BUILD_STATUS: ${{ needs.trigger-desktop-build.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
@@ -446,12 +403,10 @@ jobs:
               exit 1
           elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
               exit 1
-          elif [ "$TRIGGER_DESKTOP_BUILD_STATUS" = "failure" ]; then
-              exit 1
           fi
 
       - name: Login to Azure - Prod Subscription
-        uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
+        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2
         if: failure()
         with:
           creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
@@ -459,7 +414,7 @@ jobs:
       - name: Retrieve secrets
         id: retrieve-secrets
         if: failure()
-        uses: bitwarden/gh-actions/get-keyvault-secrets@c3b3285993151c5af47cefcb3b9134c28ab479af
+        uses: bitwarden/gh-actions/get-keyvault-secrets@471ae4aec27405f16c5b796e288f54262c406e5d
         with:
           keyvault: "bitwarden-prod-kv"
           secrets: "devops-alerts-slack-webhook-url"
