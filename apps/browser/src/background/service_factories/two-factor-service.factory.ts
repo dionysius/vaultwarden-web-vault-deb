@@ -28,6 +28,6 @@ export async function twoFactorServiceFactory(
         await platformUtilsServiceFactory(cache, opts)
       )
   );
-  await service.init();
+  service.init();
   return service;
 }

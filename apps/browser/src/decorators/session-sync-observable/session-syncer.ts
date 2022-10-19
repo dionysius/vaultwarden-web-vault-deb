@@ -29,7 +29,7 @@ export class SessionSyncer {
   }
 
   init() {
-    if (chrome.runtime.getManifest().manifest_version != 3) {
+    if (BrowserApi.manifestVersion !== 3) {
       return;
     }
 

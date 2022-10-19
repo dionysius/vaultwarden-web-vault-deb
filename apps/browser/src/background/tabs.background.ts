@@ -24,7 +24,8 @@ export default class TabsBackground {
     });
 
     chrome.tabs.onActivated.addListener(async (activeInfo: chrome.tabs.TabActiveInfo) => {
-      await this.main.refreshBadgeAndMenu();
+      await this.main.refreshBadge();
+      await this.main.refreshMenu();
       this.main.messagingService.send("tabChanged");
     });
 
@@ -35,7 +36,8 @@ export default class TabsBackground {
       this.main.onReplacedRan = true;
 
       await this.notificationBackground.checkNotificationQueue();
-      await this.main.refreshBadgeAndMenu();
+      await this.main.refreshBadge();
+      await this.main.refreshMenu();
       this.main.messagingService.send("tabChanged");
     });
 
@@ -55,7 +57,8 @@ export default class TabsBackground {
         this.main.onUpdatedRan = true;
 
         await this.notificationBackground.checkNotificationQueue(tab);
-        await this.main.refreshBadgeAndMenu();
+        await this.main.refreshBadge();
+        await this.main.refreshMenu();
         this.main.messagingService.send("tabChanged");
       }
     );

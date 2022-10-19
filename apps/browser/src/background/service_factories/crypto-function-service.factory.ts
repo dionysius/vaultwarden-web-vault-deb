@@ -5,7 +5,7 @@ import { CachedServices, factory, FactoryOptions } from "./factory-options";
 
 type CryptoFunctionServiceFactoryOptions = FactoryOptions & {
   cryptoFunctionServiceOptions: {
-    win: Window | typeof global;
+    win: Window | typeof globalThis;
   };
 };
 

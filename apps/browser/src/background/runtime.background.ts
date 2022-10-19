@@ -51,7 +51,7 @@ export default class RuntimeBackground {
     };
 
     BrowserApi.messageListener("runtime.background", backgroundMessageListener);
-    if (this.main.isPrivateMode) {
+    if (this.main.popupOnlyContext) {
       (window as any).bitwardenBackgroundMessageListener = backgroundMessageListener;
     }
   }
@@ -71,8 +71,8 @@ export default class RuntimeBackground {
           }
         }
 
-        await this.main.setIcon();
-        await this.main.refreshBadgeAndMenu(false);
+        await this.main.refreshBadge();
+        await this.main.refreshMenu(false);
         this.notificationsService.updateConnection(msg.command === "unlocked");
         this.systemService.cancelProcessReload();
 
@@ -93,7 +93,10 @@ export default class RuntimeBackground {
         break;
       case "syncCompleted":
         if (msg.successfully) {
-          setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
+          setTimeout(async () => {
+            await this.main.refreshBadge();
+            await this.main.refreshMenu();
+          }, 2000);
         }
         break;
       case "openPopup":
@@ -112,7 +115,8 @@ export default class RuntimeBackground {
       case "editedCipher":
       case "addedCipher":
       case "deletedCipher":
-        await this.main.refreshBadgeAndMenu();
+        await this.main.refreshBadge();
+        await this.main.refreshMenu();
         break;
       case "bgReseedStorage":
         await this.main.reseedStorage();

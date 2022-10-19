@@ -68,13 +68,14 @@ import { PopupSearchService } from "./popup-search.service";
 import { PopupUtilsService } from "./popup-utils.service";
 import { UnauthGuardService } from "./unauth-guard.service";
 
-const isPrivateMode = BrowserApi.getBackgroundPage() == null;
-const mainBackground: MainBackground = isPrivateMode
+const needsBackgroundInit = BrowserApi.getBackgroundPage() == null;
+const isPrivateMode = needsBackgroundInit && BrowserApi.manifestVersion !== 3;
+const mainBackground: MainBackground = needsBackgroundInit
   ? createLocalBgService()
   : BrowserApi.getBackgroundPage().bitwardenMain;
 
 function createLocalBgService() {
-  const localBgService = new MainBackground(true);
+  const localBgService = new MainBackground(isPrivateMode);
   localBgService.bootstrap();
   return localBgService;
 }
@@ -108,7 +109,7 @@ function getBgService<T>(service: keyof MainBackground) {
     {
       provide: MessagingService,
       useFactory: () => {
-        return isPrivateMode
+        return needsBackgroundInit
           ? new BrowserMessagingPrivateModePopupService()
           : new BrowserMessagingService();
       },

@@ -4,6 +4,8 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 import { UriMatchType } from "@bitwarden/common/enums/uriMatchType";
 
+import { BrowserApi } from "../browser/browserApi";
+
 export default class WebRequestBackground {
   private pendingAuthRequests: any[] = [];
   private webRequest: any;
@@ -14,8 +16,7 @@ export default class WebRequestBackground {
     private cipherService: CipherService,
     private authService: AuthService
   ) {
-    const manifest = chrome.runtime.getManifest();
-    if (manifest.manifest_version === 2) {
+    if (BrowserApi.manifestVersion === 2) {
       this.webRequest = (window as any).chrome.webRequest;
     }
     this.isFirefox = platformUtilsService.isFirefox();

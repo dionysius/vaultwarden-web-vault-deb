@@ -100,28 +100,28 @@ type OperaSidebarAction = {
   onBlur: OperaEvent<Window>;
 };
 
+/**
+ * This is for firefox's sidebar action and it is based on the opera one but with a few less methods
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/sidebarAction
+ */
+type FirefoxSidebarAction = Omit<
+  OperaSidebarAction,
+  | "setBadgeText"
+  | "getBadgeText"
+  | "setBadgeBackgroundColor"
+  | "getBadgeBackgroundColor"
+  | "onFocus"
+  | "onBlur"
+>;
+
 type Opera = {
   addons: OperaAddons;
   sidebarAction: OperaSidebarAction;
 };
 
 declare namespace chrome {
-  /**
-   * This is for firefoxes sidebar action and it is based on the opera one but with a few less methods
-   *
-   * @link https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/sidebarAction
-   */
-  let sidebarAction:
-    | Omit<
-        OperaSidebarAction,
-        | "setBadgeText"
-        | "getBadgeText"
-        | "setBadgeBackgroundColor"
-        | "getBadgeBackgroundColor"
-        | "onFocus"
-        | "onBlur"
-      >
-    | undefined;
+  let sidebarAction: FirefoxSidebarAction | undefined;
 }
 
 interface Window {
