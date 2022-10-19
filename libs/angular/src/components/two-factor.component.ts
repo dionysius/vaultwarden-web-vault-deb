@@ -237,6 +237,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       request.email = this.authService.email;
       request.masterPasswordHash = this.authService.masterPasswordHash;
       request.deviceIdentifier = await this.appIdService.getAppId();
+      request.authRequestAccessCode = this.authService.accessCode;
+      request.authRequestId = this.authService.authRequestId;
       this.emailPromise = this.apiService.postTwoFactorEmail(request);
       await this.emailPromise;
       if (doToast) {
@@ -274,7 +276,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     return (
       this.authService.authingWithPassword() ||
       this.authService.authingWithSso() ||
-      this.authService.authingWithApiKey()
+      this.authService.authingWithApiKey() ||
+      this.authService.authingWithPasswordless()
     );
   }
 

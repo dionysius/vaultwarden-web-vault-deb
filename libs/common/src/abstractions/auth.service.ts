@@ -15,6 +15,9 @@ import { AuthRequestPushNotification } from "../models/response/notification.res
 export abstract class AuthService {
   masterPasswordHash: string;
   email: string;
+  accessCode: string;
+  authRequestId: string;
+
   logIn: (
     credentials:
       | ApiLogInCredentials
@@ -31,6 +34,7 @@ export abstract class AuthService {
   authingWithApiKey: () => boolean;
   authingWithSso: () => boolean;
   authingWithPassword: () => boolean;
+  authingWithPasswordless: () => boolean;
   getAuthStatus: (userId?: string) => Promise<AuthenticationStatus>;
   authResponsePushNotifiction: (notification: AuthRequestPushNotification) => Promise<any>;
 
