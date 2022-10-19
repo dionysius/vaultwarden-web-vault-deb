@@ -81,6 +81,11 @@ button {
   line-height: $line-height-base;
 }
 
+select {
+  width: 100%;
+  padding: 0.35rem;
+}
+
 button {
   border: none;
   background: transparent;

@@ -98,6 +98,11 @@ button {
   font-family: $font-family-sans-serif;
 }
 
+select {
+  width: 100%;
+  padding: 0.35rem;
+}
+
 button {
   cursor: pointer;
 }
