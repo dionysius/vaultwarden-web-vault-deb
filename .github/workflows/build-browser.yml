@@ -144,7 +144,7 @@ jobs:
 
       - name: Build Manifest v3
         run: |
-          npm run dist:chrome:mv3
+          npm run dist:mv3
 
       - name: Gulp
         run: gulp ci
@@ -177,6 +177,13 @@ jobs:
           path: apps/browser/dist/dist-opera.zip
           if-no-files-found: error
 
+      - name: Upload Opera MV3 artifact
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
+        with:
+          name: dist-opera-MV3-${{ env._BUILD_NUMBER }}.zip
+          path: apps/browser/dist/dist-opera-mv3.zip
+          if-no-files-found: error
+          
       - name: Upload Chrome artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:
@@ -188,7 +195,7 @@ jobs:
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
         with:
           name: dist-chrome-MV3-${{ env._BUILD_NUMBER }}.zip
-          path: apps/browser/dist/dist-chrome-MV3.zip
+          path: apps/browser/dist/dist-chrome-mv3.zip
           if-no-files-found: error
 
       - name: Upload Firefox artifact
@@ -203,6 +210,13 @@ jobs:
         with:
           name: dist-edge-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-edge.zip
+          if-no-files-found: error
+
+      - name: Upload Edge MV3 artifact
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535  # v3.0.0
+        with:
+          name: dist-edge-MV3-${{ env._BUILD_NUMBER }}.zip
+          path: apps/browser/dist/dist-edge-mv3.zip
           if-no-files-found: error
 
       - name: Upload browser source
