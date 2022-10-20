@@ -64,7 +64,11 @@ export class OrganizationExportComponent extends ExportComponent {
   }
 
   getExportData() {
-    return this.exportService.getOrganizationExport(this.organizationId, this.format);
+    if (this.isFileEncryptedExport) {
+      return this.exportService.getPasswordProtectedExport(this.filePassword, this.organizationId);
+    } else {
+      return this.exportService.getOrganizationExport(this.organizationId, this.format);
+    }
   }
 
   getFileName() {
