@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Pamata domēns",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Domēna vārds",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Saimniekdators",
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Mazākais pieļaujamais īpašo rakstzīmju skaits",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Izvairīties no viegli sajaucamām rakstzīmēm"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Izmantot lielos sākumburtus",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Iekļaut ciparu"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Notīrīt",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Konts atjaunināts"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Atlasīt ievietošanas datni"
   },
+  "chooseFile": {
+    "message": "Izvēlēties datni"
+  },
+  "noFileChosen": {
+    "message": "Nav izvēlēta neviena datne"
+  },
   "orCopyPasteFileContents": {
     "message": "vai ievietot starpliktuvē un ielīmēt ievietošanas datnes saturu"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Premium dalība"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Noteikt un novērst drošības nepilnības tiešsaistes kontos klikšķinot uz zemāk esošajām atskaitēm.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Nedrošu tīmekļa vietņu pārskats"
@@ -1572,7 +1578,7 @@
     "message": "Atrastie pierakstīšanās vienumi bez 2FA"
   },
   "inactive2faFoundDesc": {
-    "message": "Glabātavā tika atrasta(s) $COUNT$ tīmekļa vietne(s), kurās nav uzstādīta divfaktoru autentificēšanās (vadoties pēc twofactorauth.org). Lai labāk aizsargātu šos kontus, ir ieteicams iespējot divfaktoru autentificēšanos.",
+    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Iegūt Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Tu esi pārgājis uz Premium."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Plāns",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Mainīt plānu",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Uzlabot kontu uz citu plānu var norādot informāciju zemāk. Lūgums pārliecinieties, ka kontam ir pievienots derīgs apmaksas veids.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Rēķins #$NUMBER$",
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },

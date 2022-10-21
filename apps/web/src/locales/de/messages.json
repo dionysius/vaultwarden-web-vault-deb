@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Basisdomäne",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Domain-Name",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Host",
@@ -621,7 +621,7 @@
     "message": "Master-Passwort-Hinweis (optional)"
   },
   "masterPassHintLabel": {
-    "message": "Master-Passwort-Hinweis"
+    "message": "Master Passwort Hinweis"
   },
   "settings": {
     "message": "Einstellungen"
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Mindestanzahl Sonderzeichen",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Mehrdeutige Zeichen vermeiden"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Großschreiben",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Ziffer hinzufügen"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Löschen",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Konto aktualisiert"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Wählen Sie die Import-Datei"
   },
+  "chooseFile": {
+    "message": "Datei auswählen"
+  },
+  "noFileChosen": {
+    "message": "Keine Datei ausgewählt"
+  },
   "orCopyPasteFileContents": {
     "message": "oder fügen Sie den Inhalt Ihrer Datei hier ein"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Premium-Mitgliedschaft"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Identifiziere und schließe Sicherheitslücken in deinen Online-Konten, indem du auf die Berichte unten klickst.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Bericht über ungesicherte Websites"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Zu Premium wechseln",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Sie haben ein Premium-Abo aktiviert."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Abo",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Abo ändern",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Ändern sie ihr Konto zu einem anderen Tarif, indem Sie folgende Informationen bereitstellen. Bitte stellen Sie sicher, dass Sie eine aktive Zahlungsmethode zu ihren Konto hinzugefügt haben.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Rechnung #$NUMBER$",
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },

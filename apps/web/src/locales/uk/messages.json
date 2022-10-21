@@ -184,15 +184,15 @@
     "message": "Додати теку"
   },
   "editFolder": {
-    "message": "Редагувати теку"
+    "message": "Редагування"
   },
   "baseDomain": {
     "message": "Основний домен",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Ім'я домену",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Вузол",
@@ -369,7 +369,7 @@
     "message": "Додати запис"
   },
   "editItem": {
-    "message": "Змінити запис"
+    "message": "Редагування"
   },
   "viewItem": {
     "message": "Перегляд запису"
@@ -534,7 +534,7 @@
     "message": "Ви дійсно хочете перезаписати поточний пароль?"
   },
   "editedFolder": {
-    "message": "Тека відредагована"
+    "message": "Теку змінено"
   },
   "addedFolder": {
     "message": "Теку додано"
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Мінімум спеціальних символів",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Уникати неоднозначних символів"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Великі літери",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Включити число"
@@ -1010,13 +1010,13 @@
   },
   "clear": {
     "message": "Стерти",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
-    "message": "Обліковий запис оновлено"
+    "message": "Обліковий запис збережено"
   },
   "changeEmail": {
-    "message": "Змінити адресу е-пошти"
+    "message": "Змінити е-пошту"
   },
   "changeEmailTwoFactorWarning": {
     "message": "Продовжуючи, ви зміните адресу електронної пошти вашого облікового запису. Ця дія не змінить адресу електронної пошти, що використовується для двоетапної перевірки. Ви можете змінити цю електронну адресу в налаштуваннях двоетапної перевірки."
@@ -1052,7 +1052,7 @@
     "message": "Змінити головний пароль"
   },
   "masterPasswordChanged": {
-    "message": "Головний пароль змінено"
+    "message": "Головний пароль збережено"
   },
   "currentMasterPass": {
     "message": "Поточний головний пароль"
@@ -1094,7 +1094,7 @@
     "message": "Змінити KDF"
   },
   "encKeySettingsChanged": {
-    "message": "Налаштування ключа шифрування змінено"
+    "message": "Налаштування ключа шифрування збережено"
   },
   "dangerZone": {
     "message": "Небезпечна зона"
@@ -1103,7 +1103,7 @@
     "message": "Обережно, ці дії неможливо скасувати!"
   },
   "deauthorizeSessions": {
-    "message": "Закрити сеанси"
+    "message": "Завершити сеанси"
   },
   "deauthorizeSessionsDesc": {
     "message": "Хвилюєтесь про те, чи не виконано вхід на іншому пристрої? Перейдіть нижче, щоб закрити сеанси на всіх комп'ютерах чи інших пристроях, які ви раніше використовували. Рекомендовано використовувати цей крок, якщо ви раніше користувалися загальнодоступними комп'ютерами, або іншими чужими пристроями, на яких міг зберегтися ваш пароль входу. Ця дія також зітре всі попередньо збережені сеанси двоетапної перевірки."
@@ -1112,7 +1112,7 @@
     "message": "Продовжуючи, ви також вийдете з поточного сеансу і необхідно буде виконати вхід знову. Ви також отримаєте повторний запит двоетапної перевірки, якщо вона увімкнена. Активні сеанси на інших пристроях можуть залишатися активними протягом години."
   },
   "sessionsDeauthorized": {
-    "message": "Всі сеанси закрито"
+    "message": "Усі сеанси завершено"
   },
   "purgeVault": {
     "message": "Очистити сховище"
@@ -1121,7 +1121,7 @@
     "message": "Сховище організації очищено."
   },
   "vaultAccessedByProvider": {
-    "message": "Постачальник має доступ до сховища."
+    "message": "Постачальник отримав доступ до сховища."
   },
   "purgeVaultDesc": {
     "message": "Продовжуйте внизу для видалення всіх записів і тек у вашому сховищі. Записи, що належать до спільної організації не будуть видалені."
@@ -1133,7 +1133,7 @@
     "message": "Очищення вашого сховища є незворотною дією. Це не можна буде скасувати."
   },
   "vaultPurged": {
-    "message": "Ваше сховище було очищено."
+    "message": "Сховище очищено."
   },
   "deleteAccount": {
     "message": "Видалити обліковий запис"
@@ -1166,7 +1166,7 @@
     "message": "Під час спроби імпортування ваших даних виникла проблема. Будь ласка, виправте вказані нижче помилки у вихідному файлі та спробуйте знову."
   },
   "importSuccess": {
-    "message": "Дані успішно імпортовано до вашого сховища."
+    "message": "Дані успішно імпортовано"
   },
   "importWarning": {
     "message": "Ви імпортуєте дані до $ORGANIZATION$. Ваші дані можуть бути доступними учасникам цієї організації. Ви хочете продовжити?",
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Оберіть файл для імпорту"
   },
+  "chooseFile": {
+    "message": "Choose File"
+  },
+  "noFileChosen": {
+    "message": "No file chosen"
+  },
   "orCopyPasteFileContents": {
     "message": "або скопіюйте і вставте вміст файлу для імпорту"
   },
@@ -1215,7 +1221,7 @@
     "message": "Налаштуйте свою роботу з веб сховищем."
   },
   "preferencesUpdated": {
-    "message": "Налаштування оновлено"
+    "message": "Налаштування збережено"
   },
   "language": {
     "message": "Мова"
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Преміум",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Преміум статус"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Визначте і закрийте прогалини в безпеці у ваших облікових записах, натиснувши на звіти нижче.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Незахищені вебсайти"
@@ -1718,7 +1724,7 @@
     "message": "Вебсайт"
   },
   "affectedUsers": {
-    "message": "Впливає на користувачів"
+    "message": "Постраждалі користувачі"
   },
   "breachOccurred": {
     "message": "Стався витік даних"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Перейти на Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Ви оновилися до версії Premium."
@@ -2857,7 +2863,7 @@
     "message": "Тип користувача"
   },
   "groupAccess": {
-    "message": "Доступ до групи"
+    "message": "Доступ до груп"
   },
   "groupAccessUserDesc": {
     "message": "Змінюйте приналежність користувача до груп."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Тарифний план",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Оновити тарифний план",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Перейдіть на передплату вищого рівня, вказавши інформацію внизу. Переконайтеся, що ваш обліковий запис має актуальні дані про спосіб оплати.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Рахунок #$NUMBER$",
@@ -3387,11 +3393,11 @@
     "message": "У вашому сховищі є старі вкладені файли, які необхідно виправити перед тим, як оновлювати ключ шифрування облікового запису."
   },
   "yourAccountsFingerprint": {
-    "message": "Фраза відбитку вашого облікового запису",
+    "message": "Фраза відбитка вашого облікового запису",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintEnsureIntegrityVerify": {
-    "message": "Для забезпечення цілісності ваших ключів шифрування, будь ласка, засвідчіть фразу відбитку пальця користувача.",
+    "message": "Щоб продовжити й забезпечити цілісність ваших ключів шифрування, перевірте фразу відбитка користувача.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
@@ -3401,7 +3407,7 @@
     "message": "Фраза відбитка"
   },
   "dontAskFingerprintAgain": {
-    "message": "Ніколи не питати про засвідчення фрази відбитку для запрошених користувачів (Не рекомендовано)",
+    "message": "Ніколи не питати про перевірку фрази відбитка для запрошених користувачів (Не рекомендовано)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -3734,7 +3740,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Змінити відправлення",
+    "message": "Редагування",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },

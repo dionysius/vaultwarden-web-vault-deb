@@ -50,7 +50,7 @@
     "message": "Brugerdefinerede felter"
   },
   "cardholderName": {
-    "message": "Kortindehavers navn"
+    "message": "Kortholdernavn"
   },
   "number": {
     "message": "Nummer"
@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Grund-domæne",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Domænenavn",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Vært",
@@ -372,7 +372,7 @@
     "message": "Redigér element"
   },
   "viewItem": {
-    "message": "Vis element"
+    "message": "Vis emne"
   },
   "ex": {
     "message": "eks.",
@@ -666,7 +666,7 @@
     "message": "Der opstod en uventet fejl."
   },
   "emailAddress": {
-    "message": "E-mailadresse"
+    "message": "Emailadresse"
   },
   "yourVaultIsLocked": {
     "message": "Din boks er låst. Bekræft din hovedadgangskode for at fortsætte."
@@ -888,7 +888,7 @@
     "message": "Advarsel"
   },
   "confirmVaultExport": {
-    "message": "Bekræft eksport af boks"
+    "message": "Bekræft Boks-eksport"
   },
   "exportWarningDesc": {
     "message": "Denne eksport indeholder dine boksdata i ukrypteret form. Du bør ikke gemme eller sende den eksporterede fil over usikre kanaler (f.eks. e-mail). Slet den straks efter at du er færdig med at bruge den."
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Mindste antal specialtegn",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Undgå tvetydige tegn"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Stort begyndelsesbogstav",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Inkludér ciffer"
@@ -1010,19 +1010,19 @@
   },
   "clear": {
     "message": "Ryd",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Konto opdateret"
   },
   "changeEmail": {
-    "message": "Skift e-mail"
+    "message": "Skift email"
   },
   "changeEmailTwoFactorWarning": {
     "message": "Hvis du fortsætter, ændres din kontos e-mailadresse. Det ændrer ikke den e-mailadresse, der bruges til to-faktor-godkendelse. Du kan ændre denne e-mailadresse i indstillingerne for to-trins login."
   },
   "newEmail": {
-    "message": "Ny e-mail"
+    "message": "Ny email"
   },
   "code": {
     "message": "Kode"
@@ -1040,7 +1040,7 @@
     "message": "Ved at fortsætte vil du blive logget ud af din nuværende session, og du skal logge ind igen. Aktive sessioner på andre enheder kan fortsat forblive aktive i op til én time."
   },
   "emailChanged": {
-    "message": "E-mail ændret"
+    "message": "Email ændret"
   },
   "logBackIn": {
     "message": "Log venligst ind igen."
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Vælg importfil"
   },
+  "chooseFile": {
+    "message": "Vælg fil"
+  },
+  "noFileChosen": {
+    "message": "Ingen fil valgt"
+  },
   "orCopyPasteFileContents": {
     "message": "eller kopiér/indsæt importfilens indhold"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Premium-medlemskab"
@@ -1474,7 +1480,7 @@
     "message": "Indtast den 6-cifrede verifikationskode fra e-mailen"
   },
   "sendEmail": {
-    "message": "Send e-mail"
+    "message": "Send email"
   },
   "twoFactorU2fAdd": {
     "message": "Tilføj en FIDO U2F sikkerhedsnøgle til din konto"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Identificér og luk sikkerhedshuller i dine onlinekonti ved at klikke på rapporterne nedenfor.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Usikre hjemmesider"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Skift til Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Du har opgraderet til premium."
@@ -2869,7 +2875,7 @@
     "message": "Send invitation igen"
   },
   "resendEmail": {
-    "message": "Send e-mail igen"
+    "message": "Gensend e-mail"
   },
   "hasBeenReinvited": {
     "message": "$USER$ er blevet inviteret igen.",
@@ -2908,7 +2914,7 @@
     "message": "Slutdato"
   },
   "verifyEmail": {
-    "message": "Bekræft e-mail"
+    "message": "Bekræft email"
   },
   "verifyEmailDesc": {
     "message": "Bekræft din e-mailadresse for at låse op for adgangen til alle funktioner."
@@ -2920,7 +2926,7 @@
     "message": "Tjek din e-mail indbakke for et bekræftelseslink."
   },
   "emailVerified": {
-    "message": "Din e-mail er blevet bekræftet."
+    "message": "Din email er blevet bekræftet."
   },
   "emailVerifiedFailed": {
     "message": "Kan ikke bekræfte din e-mail. Prøv at sende en ny verifikations-email."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Abonnement",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Upgradér abonnement",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Opgradér din konto til et andet abonnement, ved at angive nedenstående oplysninger. Sørg for, at du har en aktiv betalingsmetode tilføjet til kontoen.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Faktura #$NUMBER$",
@@ -3868,7 +3874,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "emergencyAccess": {
-    "message": "Nødadgang"
+    "message": "Nødtilgang"
   },
   "emergencyAccessDesc": {
     "message": "Tildel og håndtér nødadgang for betroede kontakter. Betroede kontakter kan anmode om adgang til enten at se eller overtage din konto i nødstilfælde. Besøg vores hjælpeside for mere information og detaljer om, hvordan nul-videndeling fungerer."
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4269,7 +4275,7 @@
     "message": "Dit kodeordstip må ikke være identisk med din adgangskode."
   },
   "enrollPasswordReset": {
-    "message": "Tilmeld til Adgangskodenulstilling"
+    "message": "Tilmeld Adgangskodenulstilling"
   },
   "enrolledPasswordReset": {
     "message": "Tilmeldt Adgangskodenulstilling"
@@ -4461,7 +4467,7 @@
     "message": "Fjern brugere"
   },
   "revokeUsers": {
-    "message": "Tilbagekald brugeradgang"
+    "message": "Ophæv brugeradgang"
   },
   "restoreUsers": {
     "message": "Genetablér brugeradgang"
@@ -4497,7 +4503,7 @@
     "message": "Brugeren med den højeste adgang, der kan håndtere alle aspekter af din udbyder samt tilgå og håndtere klientorganisationer."
   },
   "serviceUser": {
-    "message": "Servicebruger"
+    "message": "Tjenestebruger"
   },
   "serviceUserDesc": {
     "message": "Servicebrugere kan få adgang til samt administrere alle klientorganisationer."
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },

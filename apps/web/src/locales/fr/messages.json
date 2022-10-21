@@ -177,7 +177,7 @@
     "message": "Non attribué"
   },
   "noneFolder": {
-    "message": "Aucun dossier",
+    "message": "Pas de dossier",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Domaine de base",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Nom de domaine",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Hôte",
@@ -223,7 +223,7 @@
     "message": "Afficher/Masquer"
   },
   "toggleCollapse": {
-    "message": "Déplier/Replier",
+    "message": "Déplier ou replier",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
@@ -272,7 +272,7 @@
     "message": "Rechercher dans la collection"
   },
   "searchFolder": {
-    "message": "Rechercher dans le dossier"
+    "message": "Rechercher dans un dossier"
   },
   "searchFavorites": {
     "message": "Rechercher dans les favoris"
@@ -443,10 +443,10 @@
     "message": "Déplacer la sélection vers l'organisation"
   },
   "deleteSelected": {
-    "message": "Supprimer les éléments sélectionnés"
+    "message": "Supprimer la sélection"
   },
   "moveSelected": {
-    "message": "Déplacer les éléments sélectionnés"
+    "message": "Déplacer la sélection"
   },
   "selectAll": {
     "message": "Tout sélectionner"
@@ -615,7 +615,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Saisissez à nouveau le mot de passe maître"
+    "message": "Saisir à nouveau le mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -694,7 +694,7 @@
     "message": "Mot de passe de fichier invalide, veuillez utiliser le mot de passe que vous avez entré lorsque vous avez créé le fichier d'exportation."
   },
   "lockNow": {
-    "message": "Verrouiller maintenant"
+    "message": "Vérrouiller maintenant"
   },
   "noItemsInList": {
     "message": "Aucun élément à afficher."
@@ -766,7 +766,7 @@
     "message": "Insérez votre clé de sécurité dans le port USB de votre ordinateur. Si elle dispose d'un bouton, appuyez dessus."
   },
   "loginUnavailable": {
-    "message": "Connexion impossible"
+    "message": "Identifiant non disponible"
   },
   "noTwoStepProviders": {
     "message": "Ce compte dispose d'une authentification en deux étapes, cependant aucun de vos services d'authentification en deux étapes n'est supporté par ce navigateur web."
@@ -951,7 +951,7 @@
     "message": "Ce fichier est protégé par mot de passe. Veuillez entrer le mot de passe du fichier pour importer des données."
   },
   "exportSuccess": {
-    "message": "Les données de votre coffre ont été exportées."
+    "message": "Les données de votre coffre-fort ont été exportées."
   },
   "passwordGenerator": {
     "message": "Générateur de mot de passe"
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Nombre minimum de caractères spéciaux",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Éviter les caractères ambigus"
@@ -997,10 +997,10 @@
   },
   "capitalize": {
     "message": "Mettre la première lettre de chaque mot en majuscule",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Inclure un chiffre"
+    "message": "Inclure un Chiffre"
   },
   "passwordHistory": {
     "message": "Historique des mots de passe"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Effacer",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Compte mis à jour"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Sélectionnez le fichier à importer"
   },
+  "chooseFile": {
+    "message": "Choisir le Fichier"
+  },
+  "noFileChosen": {
+    "message": "Aucun fichier choisi"
+  },
   "orCopyPasteFileContents": {
     "message": "ou copiez/collez le contenu du fichier à importer"
   },
@@ -1283,7 +1289,7 @@
     }
   },
   "domainsUpdated": {
-    "message": "Domaines mis à jour"
+    "message": "Nom de domaine mis à jour"
   },
   "twoStepLogin": {
     "message": "Identification en deux étapes"
@@ -1315,13 +1321,13 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Adhésion Premium"
   },
   "premiumRequired": {
-    "message": "Adhésion Premium requise"
+    "message": "Version Premium requise"
   },
   "premiumRequiredDesc": {
     "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
@@ -1513,7 +1519,7 @@
     "message": "Attente de l'appui sur le bouton de votre clé de sécurité"
   },
   "twoFactorU2fClickSave": {
-    "message": "Cliquez sur le bouton « Enregistrer » ci-dessous pour activer cette clé de sécurité pour une connexion en deux étapes."
+    "message": "Cliquez sur le bouton « Sauvegarder » ci-dessous pour activer cette clé de sécurité pour une connexion en deux étapes."
   },
   "twoFactorU2fProblemReadingTryAgain": {
     "message": "Un problème est survenu lors de la lecture de la clé de sécurité. Veuillez réessayer."
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Identifiez et fermez les trous de sécurité dans vos comptes en ligne en cliquant sur les rapports ci-dessous.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Rapport sur les sites web non sécurisés"
@@ -1572,7 +1578,7 @@
     "message": "Identifiants sans 2FA trouvés"
   },
   "inactive2faFoundDesc": {
-    "message": "Nous avons trouvé $COUNT$ site(s) web(s) dans votre coffre qui ne sont peut-être pas configurés avec une authentification à deux facteurs (d'après twofactorauth.org). Pour mieux protéger ces comptes, vous devriez activer l'authentification à deux facteurs.",
+    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1581,7 +1587,7 @@
     }
   },
   "noInactive2fa": {
-    "message": "Aucun site web n'a été trouvé dans votre coffre avec une configuration d'authentification à deux facteurs manquante."
+    "message": "Aucun site web n'a été trouvé dans votre coffre-fort avec une configuration d'authentification à deux facteurs manquante."
   },
   "instructions": {
     "message": "Instructions"
@@ -1765,13 +1771,13 @@
   },
   "goPremium": {
     "message": "Devenir Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Vous venez de passer à un compte Premium."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Mettez à niveau votre compte vers un abonnement premium et débloquez d'incroyables fonctionnalités supplémentaires."
+    "message": "Mettre à niveau votre compte vers un abonnement premium et débloquez d'incroyables fonctionnalités supplémentaires."
   },
   "premiumSignUpStorage": {
     "message": "1 Go de stockage de fichiers chiffrés."
@@ -1810,7 +1816,7 @@
     "message": "Accès premium"
   },
   "premiumAccessDesc": {
-    "message": "Vous pouvez offrir un accès premium à tous les membres de votre organisation pour $PRICE$/$INTERVAL$.",
+    "message": "Vous pouvez ajouter un accès premium à tous les membres de votre organisation pour $PRICE$/$INTERVAL$.",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2087,16 +2093,16 @@
     "message": "Nom de l'entreprise"
   },
   "chooseYourPlan": {
-    "message": "Choisissez votre offre"
+    "message": "Choisissez votre plan"
   },
   "users": {
     "message": "Utilisateurs"
   },
   "userSeats": {
-    "message": "Licences utilisateur"
+    "message": "Nombre de sièges utilisateurs"
   },
   "additionalUserSeats": {
-    "message": "Licences utilisateur supplémentaires"
+    "message": "Sièges d'utilisateurs supplémentaires"
   },
   "userSeatsDesc": {
     "message": "Nombre de licences utilisateur"
@@ -2332,7 +2338,7 @@
     "message": "Ajouter un groupe"
   },
   "editGroup": {
-    "message": "Modifier le groupe"
+    "message": "Éditer le groupe"
   },
   "deleteGroupConfirmation": {
     "message": "Êtes-vous sûr de vouloir supprimer ce groupe?"
@@ -2857,7 +2863,7 @@
     "message": "Type d'utilisateur"
   },
   "groupAccess": {
-    "message": "Accès groupe"
+    "message": "Accès groupes"
   },
   "groupAccessUserDesc": {
     "message": "Modifier les groupes auxquels appartient cet utilisateur."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -2968,10 +2974,10 @@
     "message": "Si vous ne pouvez pas accéder à votre compte grâce à vos méthodes de connexion en deux étapes habituelles, vous pouvez utiliser votre code de récupération de connexion en deux étapes pour désactiver tous les fournisseurs en deux étapes sur votre compte."
   },
   "recoverAccountTwoStep": {
-    "message": "Récupération de connexion en deux étapes"
+    "message": "Récupérer votre compte d'authentification à deux étapes"
   },
   "twoStepRecoverDisabled": {
-    "message": "L'authentification en deux étapes a été désactivée sur votre compte."
+    "message": "Ce fournisseur de connexion en deux étapes a été désactivé sur votre compte."
   },
   "learnMore": {
     "message": "En savoir plus"
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Offre",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Changer d'offre",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Mettez à niveau votre compte vers un autre plan en fournissant les informations ci-dessous. Assurez-vous qu'un mode de paiement actif a été ajouté au compte.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Facture n°$NUMBER$",
@@ -3116,11 +3122,11 @@
     "message": "Coût potentiel maximal des licences"
   },
   "addSeats": {
-    "message": "Ajouter des licences",
+    "message": "Ajouter des sièges",
     "description": "Seat = User Seat"
   },
   "removeSeats": {
-    "message": "Retirer des licences",
+    "message": "Retirer les sièges",
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
@@ -3199,10 +3205,10 @@
     }
   },
   "seatsToAdd": {
-    "message": "Licences à ajouter"
+    "message": "Sièges à ajouter"
   },
   "seatsToRemove": {
-    "message": "Licences à retirer"
+    "message": "Sièges à enlever"
   },
   "seatsAddNote": {
     "message": "L'ajout de licences utilisateur entraînera des ajustements sur vos totaux de facturation et facturera immédiatement le moyen de paiement enregistré. La première facturation sera calculée au prorata du reste du cycle de facturation en cours."
@@ -3250,13 +3256,13 @@
     "message": "Mettre à niveau"
   },
   "upgradeOrganization": {
-    "message": "Mettre à niveau l'organisation"
+    "message": "Mettre à jour l'organisation"
   },
   "upgradeOrganizationDesc": {
     "message": "Cette fonctionnalité n'est pas disponible pour les organisations gratuites. Passez à une offre payante pour débloquer plus de fonctionnalités."
   },
   "createOrganizationStep1": {
-    "message": "Créer une organisation : Étape 1"
+    "message": "Créer une organisation: Étape 1"
   },
   "createOrganizationCreatePersonalAccount": {
     "message": "Avant de créer votre organisation, vous devez d’abord créer un compte personnel gratuit."
@@ -3368,7 +3374,7 @@
     "message": "Révoquer également la clé de chiffrement de mon compte"
   },
   "rotateEncKeyTitle": {
-    "message": "Révoquer la clé de chiffrement"
+    "message": "Faire pivoter la clé de chiffrement"
   },
   "rotateEncKeyConfirmation": {
     "message": "Êtes-vous sûr de vouloir révoquer la clé de chiffrement de votre compte ?"
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },

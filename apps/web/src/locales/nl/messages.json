@@ -143,7 +143,7 @@
     "message": "Vervaljaar"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticatiecode (TOTP)"
+    "message": "Authenticatiesleutel (TOTP)"
   },
   "folder": {
     "message": "Map"
@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Basisdomein",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Domeinnaam",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Hostnaam",
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Minimum aantal speciale tekens",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Dubbelzinnige tekens vermijden"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Beginhoofdletters",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Cijfer toevoegen"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Wissen",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Account is bijgewerkt"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Kies het importbestand"
   },
+  "chooseFile": {
+    "message": "Bestand kiezen"
+  },
+  "noFileChosen": {
+    "message": "Geen bestand gekozen"
+  },
   "orCopyPasteFileContents": {
     "message": "of kopieer en plak de inhoud van het importbestand"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Premium-abonnement"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Identificeer en sluit beveiligingsgaten in je online accounts door op onderstaande rapporten te klikken.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Niet-beveiligde websites"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Neem Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Je bent opgewaardeerd naar Premium."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Abonnement",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Abonnement wijzigen",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Upgrade je account naar een ander abonnement door onderstaande informatie door te geven. Verzeker jezelf ervan dat er een actieve betaalmethode aan het account is gekoppeld.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Factuur #$NUMBER$",
@@ -3473,7 +3479,7 @@
     "message": "Organisatieleden die geen eigenaren of beheerders zijn en geen tweestapsaanmelding hebben ingeschakeld voor hun persoonlijke account worden verwijderd uit de organisatie en ontvangen een e-mail waarin ze worden geïnformeerd over de wijziging."
   },
   "twoStepLoginPolicyUserWarning": {
-    "message": "Je bent lid van een organisatie die tweestapsaanmelding vereist op je persoonlijke account. Als je tweestapsaanmelding uitschakelt wordt je automatisch uit deze organisaties verwijderd."
+    "message": "Je bent lid van een organisatie die tweestapsaanmelding vereist op je persoonlijke account. Als je tweestapsaanmelding uitschakelt verlaat je automatisch deze organisaties."
   },
   "passwordGeneratorPolicyDesc": {
     "message": "Stel minimale vereisten in voor de configuratie van het wachtwoord generator."
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },

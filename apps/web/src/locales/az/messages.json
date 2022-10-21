@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Baza domeni",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Domen adı",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Host",
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Minimum simvol",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Anlaşılmaz simvollardan çəkinin"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "İlk hərfi böyük yaz",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Rəqəm əlavə et"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Təmizlə",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Hesab güncəlləndi"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "İdxal faylını seçin"
   },
+  "chooseFile": {
+    "message": "Fayl seç"
+  },
+  "noFileChosen": {
+    "message": "Heç bir fayl seçilməyib"
+  },
   "orCopyPasteFileContents": {
     "message": "və ya idxal faylının məzmununu kopyalayın/yapışdırın"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Premium üzvlük"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Aşağıdakı hesabatlara klikləyərək onlayn hesablarınızdakı güvənlik boşluqlarına baxın və onları bağlayın.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Güvənli olmayan veb saytlar"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "\"Premium\"a keçin",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "\"Premium\"a yüksəltdiniz."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Plan",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Planı dəyişdir",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Aşağıdakı məlumatları qeyd edərək hesabınızı başqa bir plana yüksəldin. Zəhmət olmasa hesaba aktiv bir ödəniş metodu əlavə etdiyinizə əmin olun.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Faktura nömrəsi: $NUMBER$",
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },

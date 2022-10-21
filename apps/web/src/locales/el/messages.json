@@ -65,7 +65,7 @@
     "message": "Κωδικός ασφαλείας (CVV)"
   },
   "identityName": {
-    "message": "Όνομα Ταυτότητας"
+    "message": "Όνομα ταυτότητας"
   },
   "company": {
     "message": "Εταιρεία"
@@ -74,7 +74,7 @@
     "message": "ΑΜΚΑ"
   },
   "passportNumber": {
-    "message": "Αριθμός Διαβατηρίου"
+    "message": "Αριθμός διαβατηρίου"
   },
   "licenseNumber": {
     "message": "Αριθμός Άδειας"
@@ -137,19 +137,19 @@
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Μήνας Λήξης"
+    "message": "Μήνας λήξης"
   },
   "expirationYear": {
-    "message": "Έτος Λήξης"
+    "message": "Έτος λήξης"
   },
   "authenticatorKeyTotp": {
-    "message": "Κλειδί Επαλήθευσης (TOTP)"
+    "message": "Κλειδί επαλήθευσης (TOTP)"
   },
   "folder": {
     "message": "Φάκελος"
   },
   "newCustomField": {
-    "message": "Νέο Προσαρμοσμένο Πεδίο"
+    "message": "Νέο προσαρμοσμένο πεδίο"
   },
   "value": {
     "message": "Τιμή"
@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Βασικός τομέας",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Όνομα τομέα",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Διακομιστής",
@@ -303,7 +303,7 @@
     "message": "Ταυτότητα"
   },
   "typeSecureNote": {
-    "message": "Ασφαλής Σημείωση"
+    "message": "Ασφαλής σημείωση"
   },
   "typeLoginPlural": {
     "message": "Συνδέσεις"
@@ -330,7 +330,7 @@
     "message": "Μεσαίο Όνομα"
   },
   "lastName": {
-    "message": "Επώνυμο"
+    "message": "Επίθετο"
   },
   "fullName": {
     "message": "Ονοματεπώνυμο"
@@ -366,10 +366,10 @@
     "message": "Επιλογή"
   },
   "addItem": {
-    "message": "Προσθήκη Στοιχείου"
+    "message": "Προσθήκη στοιχείου"
   },
   "editItem": {
-    "message": "Επεξεργασία Στοιχείου"
+    "message": "Επεξεργασία στοιχείου"
   },
   "viewItem": {
     "message": "Προβολή Στοιχείου"
@@ -398,23 +398,23 @@
     }
   },
   "copyValue": {
-    "message": "Αντιγραφή Τιμής",
+    "message": "Αντιγραφή τιμής",
     "description": "Copy value to clipboard"
   },
   "copyPassword": {
-    "message": "Αντιγραφή Κωδικού",
+    "message": "Αντιγραφή κωδικού πρόσβασης",
     "description": "Copy password to clipboard"
   },
   "copyUsername": {
-    "message": "Αντιγραφή Ονόματος Χρήστη",
+    "message": "Αντιγραφή ονόματος χρήστη",
     "description": "Copy username to clipboard"
   },
   "copyNumber": {
-    "message": "Αντιγραφή Αριθμού",
+    "message": "Αντιγραφή αριθμού",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Αντιγραφή Κωδικού Ασφαλείας",
+    "message": "Αντιγραφή κωδικού ασφαλείας",
     "description": "Copy credit card security code (CVV)"
   },
   "copyUri": {
@@ -443,22 +443,22 @@
     "message": "Μετακίνηση Επιλεγμένων στον Οργανισμό"
   },
   "deleteSelected": {
-    "message": "Διαγραφή Επιλεγμένων"
+    "message": "Διαγραφή επιλεγμένων"
   },
   "moveSelected": {
-    "message": "Μετακίνηση Επιλεγμένων"
+    "message": "Μετακίνηση επιλεγμένων"
   },
   "selectAll": {
     "message": "Επιλογή Όλων"
   },
   "unselectAll": {
-    "message": "Αποεπιλογή Ολων"
+    "message": "Κατάργηση επιλογής όλων"
   },
   "launch": {
     "message": "Εκκίνηση"
   },
   "newAttachment": {
-    "message": "Προσθήκη Νέου Συνημμένου"
+    "message": "Προσθήκη νέας επισύναψης"
   },
   "deletedAttachment": {
     "message": "Διαγραφή επισύναψης"
@@ -513,7 +513,7 @@
     "message": "Διαγραφή στοιχείου"
   },
   "deleteFolder": {
-    "message": "Διαγραφή Φακέλου"
+    "message": "Διαγραφή φακέλου"
   },
   "deleteAttachment": {
     "message": "Διαγραφή συνημμένου"
@@ -528,13 +528,13 @@
     "message": "Διαγραμμένα στοιχεία"
   },
   "movedItems": {
-    "message": "Στοιχεία που έχουν μετακινηθεί"
+    "message": "Μετακινημένα στοιχεία"
   },
   "overwritePasswordConfirmation": {
     "message": "Είστε βέβαιοι ότι θέλετε να αντικαταστήσετε τον τρέχον κωδικό;"
   },
   "editedFolder": {
-    "message": "Επεξεργασμένος φάκελος"
+    "message": "Επεξεργασία φακέλου"
   },
   "addedFolder": {
     "message": "Προστέθηκε φάκελος"
@@ -573,7 +573,7 @@
     "message": "Log in with device"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "Log in with device must be enabled in the settings of the Bitwarden mobile app. Need another option?"
+    "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
   },
   "createAccount": {
     "message": "Δημιουργία Λογαριασμού"
@@ -582,7 +582,7 @@
     "message": "New around here?"
   },
   "startTrial": {
-    "message": "Start Trial"
+    "message": "Start trial"
   },
   "logIn": {
     "message": "Είσοδος"
@@ -694,7 +694,7 @@
     "message": "Invalid file password, please use the password you entered when you created the export file."
   },
   "lockNow": {
-    "message": "Κλείδωμα Τώρα"
+    "message": "Κλείδωμα τώρα"
   },
   "noItemsInList": {
     "message": "Δεν υπάρχουν στοιχεία στη λίστα."
@@ -915,16 +915,16 @@
     "message": "This password will be used to export and import this file"
   },
   "confirmMasterPassword": {
-    "message": "Confirm Master Password"
+    "message": "Confirm master password"
   },
   "confirmFormat": {
-    "message": "Confirm Format"
+    "message": "Confirm format"
   },
   "filePassword": {
-    "message": "File Password"
+    "message": "File password"
   },
   "confirmFilePassword": {
-    "message": "Confirm File Password"
+    "message": "Confirm file password"
   },
   "accountBackupOptionDescription": {
     "message": "Use your account encryption key to encrypt the export and restrict import to only the current Bitwarden account."
@@ -936,16 +936,16 @@
     "message": "Τύπος αρχείου"
   },
   "accountBackup": {
-    "message": "Account Backup"
+    "message": "Account backup"
   },
   "passwordProtected": {
-    "message": "Password Protected"
+    "message": "Password protected"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm File Password“ do not match."
+    "message": "“File password”  and “Confirm file password“ do not match."
   },
   "confirmVaultImport": {
-    "message": "Confirm Vault Import"
+    "message": "Confirm vault import"
   },
   "confirmVaultImportDesc": {
     "message": "This file is password-protected. Please enter the file password to import data."
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Ελάχιστο Ειδικών Χαρακτήρων",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Αποφυγή Αμφιλεγόμενων Χαρακτήρων"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Κεφαλαία",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Συμπερίληψη Αριθμών"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Εκκαθάριση",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Ο Λογαριασμός Ενημερώθηκε"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Επιλέξτε το αρχείο εισαγωγής"
   },
+  "chooseFile": {
+    "message": "Choose File"
+  },
+  "noFileChosen": {
+    "message": "No file chosen"
+  },
   "orCopyPasteFileContents": {
     "message": "ή αντιγράψτε/επικολλήστε τα περιεχόμενα του αρχείου εισαγωγής"
   },
@@ -1256,7 +1262,7 @@
     "message": "Παγκόσμιοι Tαυτόσημοι Tομείς"
   },
   "customEqDomains": {
-    "message": "Προσαρμογή Tαυτόσημων Tομέων"
+    "message": "Προσαρμογή ταυτόσημων τομέων"
   },
   "exclude": {
     "message": "Εξαίρεση"
@@ -1311,11 +1317,11 @@
     "message": "Ενεργοποιημένο"
   },
   "restoreAccess": {
-    "message": "Restore Access"
+    "message": "Restore access"
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Συνδρομή Premium"
@@ -1339,7 +1345,7 @@
     "message": "Απενεργοποίηση"
   },
   "revokeAccess": {
-    "message": "Revoke Access"
+    "message": "Revoke access"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Ο πάροχος σύνδεσης δύο βημάτων του λογαριασμού σας, είναι ενεργοποιημένος."
@@ -1384,7 +1390,7 @@
     "message": "Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε τη σύνδεση δύο βημάτων;"
   },
   "twoStepDisabled": {
-    "message": "Η σύνδεση δύο βημάτων απενεργοποιήθηκε."
+    "message": "Η σύνδεση μέσω δύο βημάτων απενεργοποιήθηκε."
   },
   "twoFactorYubikeyAdd": {
     "message": "Προσθήκη νέου YubiKey στο λογαριασμό σας"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Προσδιορίστε και κλείστε τα κενά ασφαλείας στους online λογαριασμούς σας κάνοντας κλικ στις παρακάτω αναφορές.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Αναφορά Μη-Ασφαλών Ιστοσελίδων"
@@ -1572,7 +1578,7 @@
     "message": "Βρέθηκαν Συνδέσεις Χωρίς 2FA"
   },
   "inactive2faFoundDesc": {
-    "message": "Βρήκαμε $COUNT$ ιστοσελίδα(ες) στο vault σας, που ενδέχεται να μην έχει ρυθμιστεί ο έλεγχος ταυτότητας δύο παραγόντων (σύμφωνα με το twofactorauth.org). Για επιπλέον προστασία αυτών των λογαριασμών, θα πρέπει να ενεργοποιήσετε τον έλεγχο ταυτότητας δύο παραγόντων.",
+    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1733,7 +1739,7 @@
     "message": "Χρέωση"
   },
   "billingPlanLabel": {
-    "message": "Billing Plan"
+    "message": "Billing plan"
   },
   "paymentType": {
     "message": "Τύπος πληρωμής"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Αποκτήστε Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Έχετε αναβαθμίσει σε premium."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Πακέτο",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Αλλαγή Πακέτου",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Αναβαθμίστε το λογαριασμό σας σε κάποιο άλλο πακέτο παρέχοντας τις παρακάτω πληροφορίες. Βεβαιωθείτε ότι έχετε προσθέσει έναν ενεργό τρόπο πληρωμής στο λογαριασμό.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Παραστατικό #$NUMBER$",
@@ -3325,7 +3331,7 @@
     "message": "Ο οργανισμός είναι απενεργοποιημένος."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended organizations cannot be accessed. Contact your organization owner for assistance."
   },
   "licenseIsExpired": {
     "message": "Η άδεια χρήσης έληξε."
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4643,7 +4649,7 @@
     "message": "Minimum custom timeout is 1 minute."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault Timeout is not within allowed range."
+    "message": "Vault timeout is not within allowed range."
   },
   "disablePersonalVaultExport": {
     "message": "Απενεργοποίηση Εξαγωγής Προσωπικών Vault"
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },
@@ -5015,55 +5021,55 @@
     "message": "ΔΩΡΕΑΝ με χορηγία"
   },
   "viewBillingSyncToken": {
-    "message": "View Billing Sync Token"
+    "message": "View billing sync token"
   },
   "generateBillingSyncToken": {
-    "message": "Generate Billing Sync Token"
+    "message": "Generate billing sync token"
   },
   "copyPasteBillingSync": {
-    "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
+    "message": "Copy and paste this token into the billing sync settings of your self-hosted organization."
   },
   "billingSyncCanAccess": {
-    "message": "Your Billing Sync token can access and edit this organization's subscription settings."
+    "message": "Your billing sync token can access and edit this organization's subscription settings."
   },
   "manageBillingSync": {
-    "message": "Manage Billing Sync"
+    "message": "Manage billing sync"
   },
   "setUpBillingSync": {
-    "message": "Set Up Billing Sync"
+    "message": "Set up billing sync"
   },
   "generateToken": {
-    "message": "Generate Token"
+    "message": "Generate token"
   },
   "rotateToken": {
-    "message": "Rotate Token"
+    "message": "Rotate token"
   },
   "rotateBillingSyncTokenWarning": {
     "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "Rotating the Billing Sync Token will invalidate the previous token."
+    "message": "Rotating the billing sync token will invalidate the previous token."
   },
   "selfHostingTitle": {
-    "message": "Self-Hosting"
+    "message": "Self-hosting"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
     "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
   },
   "billingSyncApiKeyRotated": {
-    "message": "Token rotated."
+    "message": "Token rotated"
   },
   "billingSync": {
-    "message": "Billing Sync"
+    "message": "Billing sync"
   },
   "billingSyncDesc": {
-    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
   },
   "billingSyncKeyDesc": {
-    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+    "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
   },
   "billingSyncKey": {
-    "message": "Billing Sync Token"
+    "message": "Billing sync token"
   },
   "active": {
     "message": "Active"
@@ -5072,13 +5078,13 @@
     "message": "Inactive"
   },
   "sentAwaitingSync": {
-    "message": "Sent (Awaiting Sync)"
+    "message": "Sent (awaiting sync)"
   },
   "sent": {
     "message": "Sent"
   },
   "requestRemoved": {
-    "message": "Removed (Awaiting Sync)"
+    "message": "Removed (awaiting sync)"
   },
   "requested": {
     "message": "Requested"
@@ -5147,10 +5153,10 @@
     }
   },
   "accessDenied": {
-    "message": "Access Denied. You do not have permission to view this page."
+    "message": "Access denied. You do not have permission to view this page."
   },
   "masterPassword": {
-    "message": "Master Password"
+    "message": "Master password"
   },
   "security": {
     "message": "Ασφάλεια"
@@ -5216,7 +5222,7 @@
     "message": "Υπηρεσία"
   },
   "unknownCipher": {
-    "message": "Unknown Item, you may need to request permission to access this item."
+    "message": "Unknown item, you may need to request permission to access this item."
   },
   "cannotSponsorSelf": {
     "message": "You cannot redeem for the active account. Enter a different email."
@@ -5249,7 +5255,7 @@
     }
   },
   "lastSync": {
-    "message": "Last Sync",
+    "message": "Last sync",
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
@@ -5269,7 +5275,7 @@
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -5279,22 +5285,22 @@
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "API access token"
   },
   "deviceVerification": {
-    "message": "Device Verification"
+    "message": "Device verification"
   },
   "enableDeviceVerification": {
-    "message": "Enable Device Verification"
+    "message": "Turn on device verification"
   },
   "deviceVerificationDesc": {
-    "message": "When enabled, verification codes are sent to your email address when logging in from an unrecognized device"
+    "message": "Verification codes are sent to your email address when logging in from an unrecognized device"
   },
   "updatedDeviceVerification": {
-    "message": "Updated Device Verification"
+    "message": "Updated device verification"
   },
   "areYouSureYouWantToEnableDeviceVerificationTheVerificationCodeEmailsWillArriveAtX": {
-    "message": "Are you sure you want to enable Device Verification? The verification code emails will arrive at: $EMAIL$",
+    "message": "Are you sure you want to turn on device verification? The verification code emails will arrive at: $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5306,7 +5312,7 @@
     "message": "Premium subscription required"
   },
   "scim": {
-    "message": "SCIM Provisioning",
+    "message": "SCIM provisioning",
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
@@ -5325,11 +5331,11 @@
     "message": "This API key has access to manage users within your organization. It should be kept secret."
   },
   "copyScimKey": {
-    "message": "Copy the SCIM API Key to your clipboard",
+    "message": "Copy the SCIM API key to your clipboard",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKey": {
-    "message": "Rotate the SCIM API Key",
+    "message": "Rotate the SCIM API key",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateScimKeyWarning": {
@@ -5337,7 +5343,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotate Key"
+    "message": "Rotate key"
   },
   "scimApiKey": {
     "message": "Κλειδί API SCIM",
@@ -5352,18 +5358,18 @@
     "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
   },
   "scimApiKeyRotated": {
-    "message": "The SCIM API Key has been successfully rotated",
+    "message": "SCIM API key successfully rotated",
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "SCIM settings have been saved successfully",
+    "message": "SCIM settings saved",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
     "message": "Input is required."
   },
   "inputEmail": {
-    "message": "Input is not an email-address."
+    "message": "Input is not an email address."
   },
   "inputMinLength": {
     "message": "Input must be at least $COUNT$ characters long.",

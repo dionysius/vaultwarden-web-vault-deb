@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Асноўны дамен",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Імя дамена",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Вузел",
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Мінімум спецыяльных сімвалаў",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Пазбягаць неадназначных сімвалаў"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Вялікія літары",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Уключыць лічбу"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Ачысціць",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Уліковы запіс абноўлены"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Выберыце файл імпартавання"
   },
+  "chooseFile": {
+    "message": "Выбраць файл"
+  },
+  "noFileChosen": {
+    "message": "Файл не выбраны"
+  },
   "orCopyPasteFileContents": {
     "message": "або скапіюйце/устаўце змесціва файла, які імпартуецца"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Прэміум",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Прэміяльны статус"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Выявіце і выпраўце недахопы ў бяспецы вашых уліковых запісаў, націснуўшы на справаздачы ніжэй.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Неабароненыя вэб-сайты"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Перайсці на прэміум",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Вы абнавіліся да прэміяльнай версіі."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Тарыфны план",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Палепшыць тарыфны план",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Палепшыце свой уліковы запіс да іншага тарыфнага плана, указаўшы інфармацыю ўнізе. Пераканайцеся, што ў вашым уліковым запісе ўжо ёсць актуальны спосаб аплаты.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Рахунак #$NUMBER$",
@@ -3314,7 +3320,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Створана",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },

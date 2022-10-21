@@ -62,7 +62,7 @@
     "message": "过期日"
   },
   "securityCode": {
-    "message": "安全码 (CVV)"
+    "message": "安全码（CVV）"
   },
   "identityName": {
     "message": "身份名称"
@@ -143,7 +143,7 @@
     "message": "过期年份"
   },
   "authenticatorKeyTotp": {
-    "message": "验证器密钥 (TOTP)"
+    "message": "验证器密钥（TOTP）"
   },
   "folder": {
     "message": "文件夹"
@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "基础域",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "域名",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "主机",
@@ -778,13 +778,13 @@
     "message": "两步登录选项"
   },
   "recoveryCodeDesc": {
-    "message": "失去访问您所有的双重身份验证设备？请使用您的恢复代码来禁用您账户中所有的两步登录提供程序。"
+    "message": "失去对您所有的双重身份验证设备的访问？请使用您的恢复代码来禁用您账户中所有的两步登录提供程序。"
   },
   "recoveryCodeTitle": {
     "message": "恢复代码"
   },
   "authenticatorAppTitle": {
-    "message": "验证器应用"
+    "message": "认证器 App"
   },
   "authenticatorAppDesc": {
     "message": "使用验证器应用（例如 Authy 或 Google Authenticator）来生成基于时间的验证码。",
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "符号最少个数",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "避免易混淆的字符"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "大写",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "包含数字"
@@ -1010,10 +1010,10 @@
   },
   "clear": {
     "message": "清除",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
-    "message": "账户已更新"
+    "message": "帐户已更新"
   },
   "changeEmail": {
     "message": "更改电子邮件"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "选择要导入的文件"
   },
+  "chooseFile": {
+    "message": "选择文件"
+  },
+  "noFileChosen": {
+    "message": "没有选择文件"
+  },
   "orCopyPasteFileContents": {
     "message": "或复制/粘贴要导入的文件内容"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "高级会员",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "高级会员"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "点击下面的报告，识别并消除您的在线账户中的安全漏洞。",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "不安全的网站"
@@ -1581,7 +1587,7 @@
     }
   },
   "noInactive2fa": {
-    "message": "没有在您的密码库发现未使用双重身份验证的网站。"
+    "message": "没有在您的密码库发现未使用双重身份认证的网站。"
   },
   "instructions": {
     "message": "说明"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "升级高级会员",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "您已升级到高级会员。"
@@ -1823,7 +1829,7 @@
     }
   },
   "additionalStorageGb": {
-    "message": "附加存储 (GB)"
+    "message": "附加存储（GB）"
   },
   "additionalStorageGbDesc": {
     "message": "# GB 附加存储"
@@ -2317,7 +2323,7 @@
     "message": "策略"
   },
   "singleSignOn": {
-    "message": "单点登录"
+    "message": "单点登录 (SSO)"
   },
   "editPolicy": {
     "message": "编辑策略"
@@ -2488,7 +2494,7 @@
     "message": "账户密码已更改。"
   },
   "enabledUpdated2fa": {
-    "message": "已启用/更新两步登录。"
+    "message": "两步登录已启用/更新。"
   },
   "disabled2fa": {
     "message": "两步登录已禁用。"
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "计划",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "升级计划",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "要将您的账户升级到另一个计划，请提供以下信息。同时请确保您账户已添加有一个有效的付款方式。",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "账单 #$NUMBER$",
@@ -3664,7 +3670,7 @@
     "message": "要使用您组织的单点登录门户登录。请首先输入您组织的标识符。"
   },
   "enterpriseSingleSignOn": {
-    "message": "企业单点登录"
+    "message": "企业单点登录（SSO）"
   },
   "ssoHandOff": {
     "message": "您现在可以在扩展中关闭此标签页并继续。"
@@ -3703,7 +3709,7 @@
     "message": "您当前的组织策略禁止您加入多个组织。请联系您的组织管理员，或从其他 Bitwarden 账户注册。"
   },
   "singleOrgPolicyWarning": {
-    "message": "非所有者或管理员并且已是其他组织成员的组织成员将从您的组织中移除。"
+    "message": "不是所有者或管理员并且已是其他组织的成员的组织成员将从您的组织中移除。"
   },
   "requireSso": {
     "message": "要求单点登录身份验证"
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4591,7 +4597,7 @@
     "message": "添加"
   },
   "updatedMasterPassword": {
-    "message": "已更新主密码"
+    "message": "已更新主密码。"
   },
   "updateMasterPassword": {
     "message": "更新主密码"
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },
@@ -5111,7 +5117,7 @@
     "message": "如果实体 ID 不是一个 URL，则必填。"
   },
   "openIdOptionalCustomizations": {
-    "message": "可选自定义"
+    "message": "可选定制"
   },
   "openIdAuthorityRequired": {
     "message": "如果授权无效，则必填。"
@@ -5288,7 +5294,7 @@
     "message": "启用设备验证"
   },
   "deviceVerificationDesc": {
-    "message": "启用后，当登录未识别的设备时，验证码会发送到您的电子邮箱"
+    "message": "启用后，在未识别的设备上登录时，验证码会发送到您的电子邮箱"
   },
   "updatedDeviceVerification": {
     "message": "设备验证已更新"

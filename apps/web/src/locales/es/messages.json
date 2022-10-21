@@ -71,10 +71,10 @@
     "message": "Empresa"
   },
   "ssn": {
-    "message": "Número de la seguridad social"
+    "message": "Nº de la seguridad social"
   },
   "passportNumber": {
-    "message": "Número de pasaporte"
+    "message": "Nº de pasaporte"
   },
   "licenseNumber": {
     "message": "Número de licencia"
@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Dominio base",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Nombre de dominio",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Servidor",
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Mínimo de caracteres especiales",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Evitar caracteres ambiguos"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Capitalizar",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Incluir número"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Limpiar",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Cuenta actualizada"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Seleccionar el fichero a importar"
   },
+  "chooseFile": {
+    "message": "Seleccionar archivo"
+  },
+  "noFileChosen": {
+    "message": "No se ha seleccionado ningún archivo"
+  },
   "orCopyPasteFileContents": {
     "message": "o copia/pega el contenido del fichero a importar"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Suscripción Premium"
@@ -1324,13 +1330,13 @@
     "message": "Premium requerido"
   },
   "premiumRequiredDesc": {
-    "message": "Se quiere membrasía Premium para poder utilizar esta característica."
+    "message": "Se quiere membresía Premium para poder utilizar esta característica."
   },
   "youHavePremiumAccess": {
-    "message": "Tienes acceso premium"
+    "message": "Usted tiene acceso premium"
   },
   "alreadyPremiumFromOrg": {
-    "message": "Ya tienes acceso a las características premium, debido a que eres miembro de una organización."
+    "message": "Ya tiene acceso a las características premium, debido a que es miembro de una organización."
   },
   "manage": {
     "message": "Gestionar"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Identifique y cierre las lagunas de seguridad en sus cuentas en línea haciendo clic en los siguientes informes.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Informes de sitios web no seguros"
@@ -1572,7 +1578,7 @@
     "message": "Inicios de sesión sin 2FA encontrados"
   },
   "inactive2faFoundDesc": {
-    "message": "Hemos encontrado $COUNT$ sitio(s) web en su caja fuerte que no pueden ser configuradas con autenticación de dos factores (según twofactorauth.org). Para proteger estas cuentas, debe habilitar autenticación de dos factores.",
+    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Hazte Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Has actualizado a premium."
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Plan",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Cambiar plan",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Actualiza tu cuenta a otro plan proporcionando la información de abajo. Por favor, asegúrate de que tienes un método de pago activo añadido a la cuenta.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Factura $NUMBER$",
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },
@@ -5060,7 +5066,7 @@
     "message": "La sincronización de facturación proveé planes Famliares gratuitos para los miembros y facilidades de facturación avanzada, conectando la bóveda autoalojada de Bitwarden al servidor en la nube de Bitwarden."
   },
   "billingSyncKeyDesc": {
-    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+    "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
   },
   "billingSyncKey": {
     "message": "Token de sincronización de facturación"
@@ -5193,14 +5199,14 @@
     "message": "Tipo de nombre de usuario"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."

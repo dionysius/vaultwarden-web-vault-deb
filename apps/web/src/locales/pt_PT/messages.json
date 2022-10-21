@@ -50,7 +50,7 @@
     "message": "Campos personalizados"
   },
   "cardholderName": {
-    "message": "Titular do cartão"
+    "message": "Titular do Cartão"
   },
   "number": {
     "message": "Número"
@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Domínio base",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Nome do Domínio",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Servidor",
@@ -269,10 +269,10 @@
     "message": "Editar"
   },
   "searchCollection": {
-    "message": "Pesquisar coleção"
+    "message": "Pesquisar Coleção"
   },
   "searchFolder": {
-    "message": "Pesquisar pasta"
+    "message": "Pesquisar Pasta"
   },
   "searchFavorites": {
     "message": "Pesquisar favoritos"
@@ -324,13 +324,13 @@
     "message": "Coleções"
   },
   "firstName": {
-    "message": "Primeiro nome"
+    "message": "Nome Próprio"
   },
   "middleName": {
-    "message": "Nome do meio"
+    "message": "Segundo Nome"
   },
   "lastName": {
-    "message": "Último nome"
+    "message": "Apelido"
   },
   "fullName": {
     "message": "Nome Completo"
@@ -425,7 +425,7 @@
     "message": "Eu"
   },
   "myVault": {
-    "message": "Meu cofre"
+    "message": "O meu Cofre"
   },
   "allVaults": {
     "message": "Todos os Cofres"
@@ -879,7 +879,7 @@
     }
   },
   "verificationCodeTotp": {
-    "message": "Código de verificação (TOTP)"
+    "message": "Código de Verificação (TOTP)"
   },
   "copyVerificationCode": {
     "message": "Copiar código de confirmação"
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Especiais mínimos",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Evitar caracteres ambíguos"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Capitalizar",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Incluir número"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Limpar",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Conta atualizada"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Selecione o ficheiro a importar"
   },
+  "chooseFile": {
+    "message": "Escolher Ficheiro"
+  },
+  "noFileChosen": {
+    "message": "Nenhum ficheiro escolhido"
+  },
   "orCopyPasteFileContents": {
     "message": "ou copie/cole o seu conteúdo"
   },
@@ -1295,7 +1301,7 @@
     "message": "Requeira início de sessão de dois passos para os utilizadores da sua organização ao configurar os provedores ao nível da organização."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "Ativar o início de sessão de dois passos pode bloquear-lhe permanentemente o acesso à sua conta Bitwarden. Um código de recuperação permite-lhe aceder à sua conta caso já não possa utilizar o seu provedor normal de início de sessão de dois passos (ex. perde o seu dispositivo). O apoio do Bitwarden não irá poder assistir-lhe se perder acesso à sua conta. Recomendamos que anote ou imprima o código de recuperação e o mantenha num local seguro."
+    "message": "Ativar o início de sessão de dois passos pode bloquear-lhe permanentemente o acesso à sua conta Bitwarden. Um código de recuperação permite-lhe aceder à sua conta caso já não possa utilizar o seu provedor normal de início de sessão de dois passos (ex. perde o seu dispositivo). O apoio do Bitwarden não o poderá ajudar se perder acesso à sua conta. Recomendamos que anote ou imprima o código de recuperação e mantenha-o em local seguro."
   },
   "viewRecoveryCode": {
     "message": "Ver código de recuperação"
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Adesão Premium"
@@ -1402,7 +1408,7 @@
     "message": "Guarde o formulário."
   },
   "twoFactorYubikeyWarning": {
-    "message": "Devido a limitações da plataforma, as YubiKeys não podem ser utilizadas em todas as aplicações Bitwarden. Deve ativar outro provedor de início de sessão de dois passos para que possa aceder à sua conta quando as YubiKeys não puderem ser utilizadas. Plataformas suportadas:"
+    "message": "Devido a limitações da plataforma, as YubiKeys não podem ser utilizadas em todas as aplicações Bitwarden. Deverá escolher outro método de início de sessão em dois passos quando as YubiKeys não puderem ser utilizadas. Plataformas suportadas:"
   },
   "twoFactorYubikeySupportUsb": {
     "message": "Cofre web, aplicação para computador, CLI e todas as extensões de navegador num dispositivo com porta USB que pode aceitar a sua YubiKey."
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Identifique e feche lacunas de segurança nas suas contas online clicando nos relatórios abaixo.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Relatório de websites inseguros"
@@ -1572,7 +1578,7 @@
     "message": "Credenciais sem 2FA encontradas"
   },
   "inactive2faFoundDesc": {
-    "message": "Encontrámos $COUNT$ website(s) no seu cofre que podem não estar configurados com autenticação de dois fatores (de acordo com twofactorauth.org). Para melhor proteger estas contas, deve ativar a autenticação de dois fatores.",
+    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1765,10 +1771,10 @@
   },
   "goPremium": {
     "message": "Tornar-se Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
-    "message": "Atualizou para premium."
+    "message": "Atualizou para Premium."
   },
   "premiumUpgradeUnlockFeatures": {
     "message": "Atualize a sua conta para uma adesão premium e desbloqueie funcionalidades adicionais fantásticas."
@@ -2332,7 +2338,7 @@
     "message": "Adicionar grupo"
   },
   "editGroup": {
-    "message": "Editar grupo"
+    "message": "Alterar grupo"
   },
   "deleteGroupConfirmation": {
     "message": "Tem certeza que pretende eliminar este grupo?"
@@ -2350,7 +2356,7 @@
     "message": "Atenção! Este utilizador requer o Key Connector para gerir a sua encriptação. Remover esse utilizador da sua organização desativará permanentemente a sua conta. Esta ação não pode ser desfeita. Você deseja continuar?"
   },
   "externalId": {
-    "message": "Id externo"
+    "message": "Id externa"
   },
   "externalIdDesc": {
     "message": "O id externo pode ser utilizado como uma referência ou para ligar este recurso a um sistema externo como um diretório de utilizadores."
@@ -2374,7 +2380,7 @@
     "message": "Adicionar coleção"
   },
   "editCollection": {
-    "message": "Editar coleção"
+    "message": "Alterar coleção"
   },
   "deleteCollectionConfirmation": {
     "message": "Tem a certeza de que pretende eliminar esta coleção?"
@@ -2488,7 +2494,7 @@
     "message": "Palavra-passe da conta alterada."
   },
   "enabledUpdated2fa": {
-    "message": "Início de sessão de dois passos ativado/atualizado."
+    "message": "Início de sessão em dois passos ativado/atualizado."
   },
   "disabled2fa": {
     "message": "Início de sessão de dois passos desativado."
@@ -2863,7 +2869,7 @@
     "message": "Edite os grupos a que este utilizador pertence."
   },
   "invitedUsers": {
-    "message": "Utilizador(es) convidado(s)."
+    "message": "Utilizador(es) inválido(s)."
   },
   "resendInvitation": {
     "message": "Reenviar convite"
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Plano",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Alterar plano",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Atualize a sua conta para outro plano fornecendo as informações abaixo. Por favor certifique-se de que tem um método de pagamento ativo adicionado na conta.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Fatura #$NUMBER$",
@@ -3056,7 +3062,7 @@
     "message": "Transferir fatura"
   },
   "verifyBankAccount": {
-    "message": "Verificar conta nancária"
+    "message": "Confirmar conta bancária"
   },
   "verifyBankAccountDesc": {
     "message": "Fizemos dois micro-depósitos na sua conta bancária (pode demorar 1-2 dias úteis a aparecer). Introduza estas quantias para verificar a conta bancária."
@@ -3068,7 +3074,7 @@
     "message": "Falha ao verificar a conta bancária irá resultar na falta de um pagamento e a sua subscrição ser desativada."
   },
   "verifiedBankAccount": {
-    "message": "A conta bancária foi confirmada."
+    "message": "Conta bancária verificada."
   },
   "bankAccount": {
     "message": "Conta bancária"
@@ -3318,7 +3324,7 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Palavra-passe atualizada",
+    "message": "Palavra-passe Atualizada",
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
@@ -3703,25 +3709,25 @@
     "message": "Your current organization has a policy that does not allow you to join more than one organization. Please contact your organization admins or sign up from a different Bitwarden account."
   },
   "singleOrgPolicyWarning": {
-    "message": "Organization members who are not Owners or Administrators and are already a member of another organization will be removed from your organization."
+    "message": "Organization members who are not owners or admins and are already a member of another organization will be removed from your organization."
   },
   "requireSso": {
     "message": "Autenticação de acesso único"
   },
   "requireSsoPolicyDesc": {
-    "message": "Require members to log in with the Enterprise Single Sign-On method."
+    "message": "Require members to log in with the Enterprise single sign-on method."
   },
   "prerequisite": {
     "message": "Pré-requisito"
   },
   "requireSsoPolicyReq": {
-    "message": "The Single Organization enterprise policy must be turned on before activating this policy."
+    "message": "The single organization Enterprise policy must be turned on before activating this policy."
   },
   "requireSsoPolicyReqError": {
     "message": "Política da Organização Única não ativada."
   },
   "requireSsoExemption": {
-    "message": "Organization Owners and Administrators are exempt from this policy's enforcement."
+    "message": "Organization owners and admins are exempt from this policy's enforcement."
   },
   "sendTypeFile": {
     "message": "Ficheiro"
@@ -3874,7 +3880,7 @@
     "message": "Grant and manage emergency access for trusted contacts. Trusted contacts may request access to either View or Takeover your account in case of an emergency. Visit our help page for more information and details into how zero knowledge sharing works."
   },
   "emergencyAccessOwnerWarning": {
-    "message": "You are an Owner of one or more organizations. If you give takeover access to an emergency contact, they will be able to use all your permissions as Owner after a takeover."
+    "message": "You are an owner of one or more organizations. If you give takeover access to an emergency contact, they will be able to use all your permissions as owner after a takeover."
   },
   "trustedEmergencyContacts": {
     "message": "Contatos de emergência confiáveis"
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4016,16 +4022,16 @@
     "message": "Require members to save items to an organization by removing the individual vault option."
   },
   "personalOwnershipExemption": {
-    "message": "Organization Owners and Administrators are exempt from this policy's enforcement."
+    "message": "Organization owners and administrators are exempt from this policy's enforcement."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an enterprise policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Due to an Enterprise policy, you are restricted from saving items to your individual vault. Change the ownership option to an organization and choose from available collections."
   },
   "disableSend": {
     "message": "Desabilitar envio"
   },
   "disableSendPolicyDesc": {
-    "message": "Do not allow members to create or edit sends.",
+    "message": "Do not allow members to create or edit Sends.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
@@ -4036,7 +4042,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Due to an Enterprise policy, you are only able to delete an existing Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptions": {
@@ -4051,7 +4057,7 @@
     "message": "Organization users that can manage the organization's policies are exempt from this policy's enforcement."
   },
   "disableHideEmail": {
-    "message": "Always show member’s email address with recipients when creating or editing a send.",
+    "message": "Always show member’s email address with recipients when creating or editing a Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4140,7 +4146,7 @@
     "message": "Gerenciar redefinição de senha"
   },
   "disableRequiredError": {
-    "message": "You must manually disable the $POLICYNAME$ policy before this policy can be disabled.",
+    "message": "You must manually turn the $POLICYNAME$ policy before this policy can be turned off.",
     "placeholders": {
       "policyName": {
         "content": "$1",
@@ -4152,7 +4158,7 @@
     "message": "Uma política de organização está a afetar as suas opções de propriedade."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has disabled importing items into your personal vault."
+    "message": "An organization policy has blocked importing items into your individual vault."
   },
   "personalOwnershipCheckboxDesc": {
     "message": "Desativar direito de propriedade para utilizadores da organização"
@@ -4374,7 +4380,7 @@
     "message": "Exigir que novos utilizadore sejam inscritos automaticamente"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "This organization has an Enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
   },
   "resetPasswordOrgKeysError": {
     "message": "Resposta das chaves da organização é nula"
@@ -4386,7 +4392,7 @@
     "message": "Os registos que tenham sido enviados para a Lixeira, por mais que %d dias serão automaticamente excluídos."
   },
   "trashCleanupWarningSelfHosted": {
-    "message": "Items that have been in Trash for a while will be automatically deleted."
+    "message": "Items that have been in trash for a while will be automatically deleted."
   },
   "passwordPrompt": {
     "message": "Redefinir senha mestra"
@@ -4470,16 +4476,16 @@
     "message": "Erro"
   },
   "resetPasswordManageUsers": {
-    "message": "Manage Users must also be enabled with the Manage Password Reset permission"
+    "message": "Manage users must also be granted with the manage password reset permission"
   },
   "setupProvider": {
     "message": "Configuração do fornecedor"
   },
   "setupProviderLoginDesc": {
-    "message": "You've been invited to setup a new provider. To continue, you need to log in or create a new Bitwarden account."
+    "message": "You've been invited to setup a new Provider. To continue, you need to log in or create a new Bitwarden account."
   },
   "setupProviderDesc": {
-    "message": "Please enter the details below to complete the provider setup. Contact Customer Support if you have any questions."
+    "message": "Please enter the details below to complete the Provider setup. Contact Customer Support if you have any questions."
   },
   "providerName": {
     "message": "Nome do Provedor"
@@ -4494,7 +4500,7 @@
     "message": "Administração de fornecedor"
   },
   "providerAdminDesc": {
-    "message": "The highest access user that can manage all aspects of your provider as well as access and manage client organizations."
+    "message": "The highest access user that can manage all aspects of your Provider as well as access and manage client organizations."
   },
   "serviceUser": {
     "message": "Utilizador do Serviço"
@@ -4503,34 +4509,34 @@
     "message": "Service users can access and manage all client organizations."
   },
   "providerInviteUserDesc": {
-    "message": "Invite a new user to your provider by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
+    "message": "Invite a new user to your Provider by entering their Bitwarden account email address below. If they do not have a Bitwarden account already, they will be prompted to create a new account."
   },
   "joinProvider": {
     "message": "Join Provider"
   },
   "joinProviderDesc": {
-    "message": "You've been invited to join the provider listed above. To accept the invitation, you need to log in or create a new Bitwarden account."
+    "message": "You've been invited to join the Provider listed above. To accept the invitation, you need to log in or create a new Bitwarden account."
   },
   "providerInviteAcceptFailed": {
-    "message": "Unable to accept invitation. Ask a provider admin to send a new invitation."
+    "message": "Unable to accept invitation. Ask a Provider admin to send a new invitation."
   },
   "providerInviteAcceptedDesc": {
-    "message": "You can access this provider once an administrator confirms your membership. We'll send you an email when that happens."
+    "message": "You can access this Provider once an administrator confirms your membership. We'll send you an email when that happens."
   },
   "providerUsersNeedConfirmed": {
-    "message": "You have users that have accepted their invitation, but still need to be confirmed. Users will not have access to the provider until they are confirmed."
+    "message": "You have users that have accepted their invitation, but still need to be confirmed. Users will not have access to the Provider until they are confirmed."
   },
   "provider": {
     "message": "Fornecedor"
   },
   "newClientOrganization": {
-    "message": "New Client Organization"
+    "message": "New client organization"
   },
   "newClientOrganizationDesc": {
-    "message": "Create a new client organization that will be associated with you as the provider. You will be able to access and manage this organization."
+    "message": "Create a new client organization that will be associated with you as the Provider. You will be able to access and manage this organization."
   },
   "addExistingOrganization": {
-    "message": "Add Existing Organization"
+    "message": "Add existing organization"
   },
   "myProvider": {
     "message": "My Provider"
@@ -4549,10 +4555,10 @@
     }
   },
   "organizationJoinedProvider": {
-    "message": "Organization was successfully added to the provider"
+    "message": "Organization was successfully added to the Provider"
   },
   "accessingUsingProvider": {
-    "message": "Accessing organization using provider $PROVIDER$",
+    "message": "Accessing organization using Provider $PROVIDER$",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -4561,13 +4567,13 @@
     }
   },
   "providerIsDisabled": {
-    "message": "Provider is disabled."
+    "message": "Provider suspended"
   },
   "providerUpdated": {
-    "message": "Provider updated"
+    "message": "Provider saved"
   },
   "yourProviderIs": {
-    "message": "Your provider is $PROVIDER$. They have administrative and billing privileges for your organization.",
+    "message": "Your Provider is $PROVIDER$. They have administrative and billing privileges for your organization.",
     "placeholders": {
       "provider": {
         "content": "$1",
@@ -4576,7 +4582,7 @@
     }
   },
   "detachedOrganization": {
-    "message": "The organization $ORGANIZATION$ has been detached from your provider.",
+    "message": "The organization $ORGANIZATION$ has been detached from your Provider.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -4585,7 +4591,7 @@
     }
   },
   "detachOrganizationConfirmation": {
-    "message": "Are you sure you want to detach this organization? The organization will continue to exist but will no longer be managed by the provider."
+    "message": "Are you sure you want to detach this organization? The organization will continue to exist but will no longer be managed by the Provider."
   },
   "add": {
     "message": "Adicionar"
@@ -4600,7 +4606,7 @@
     "message": "Sua senha mestra foi alterada recentemente por um administrador da sua organização. Para aceder ao cofre, precisa atualizar a sua senha mestra agora. O processo irá desconectá-lo da sessão atual, exigindo que inicie a novamente a sessão. Sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
   },
   "masterPasswordInvalidWarning": {
-    "message": "Your Master Password does not meet the policy requirements of this organization. In order to join the organization, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password does not meet the policy requirements of this organization. In order to join the organization, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "maximumVaultTimeout": {
     "message": "Expiração do cofre"
@@ -4609,10 +4615,10 @@
     "message": "Set a maximum vault timeout for members."
   },
   "maximumVaultTimeoutLabel": {
-    "message": "Maximum Vault Timeout"
+    "message": "Maximum vault timeout"
   },
   "invalidMaximumVaultTimeout": {
-    "message": "Invalid Maximum Vault Timeout."
+    "message": "Invalid maximum vault timeout."
   },
   "hours": {
     "message": "Horas"
@@ -4621,7 +4627,7 @@
     "message": "Minutos"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4676,7 +4682,7 @@
     "message": "Caminho de retorno"
   },
   "signedOutCallbackPath": {
-    "message": "Signed Out Callback Path"
+    "message": "Signed out callback path"
   },
   "authority": {
     "message": "Authority"
@@ -4685,55 +4691,55 @@
     "message": "Client ID"
   },
   "clientSecret": {
-    "message": "Client Secret"
+    "message": "Client secret"
   },
   "metadataAddress": {
-    "message": "Metadata Address"
+    "message": "Metadata address"
   },
   "oidcRedirectBehavior": {
-    "message": "OIDC Redirect Behavior"
+    "message": "OIDC redirect behavior"
   },
   "getClaimsFromUserInfoEndpoint": {
     "message": "Get claims from user info endpoint"
   },
   "additionalScopes": {
-    "message": "Custom Scopes"
+    "message": "Custom scopes"
   },
   "additionalUserIdClaimTypes": {
-    "message": "Custom User ID Claim Types"
+    "message": "Custom user ID claim types"
   },
   "additionalEmailClaimTypes": {
-    "message": "Email Claim Types"
+    "message": "Email claim types"
   },
   "additionalNameClaimTypes": {
-    "message": "Custom Name Claim Types"
+    "message": "Custom name claim types"
   },
   "acrValues": {
-    "message": "Requested Authentication Context Class Reference values"
+    "message": "Requested authentication context class reference values"
   },
   "expectedReturnAcrValue": {
-    "message": "Expected \"acr\" Claim Value In Response"
+    "message": "Expected \"acr\" claim value in response"
   },
   "spEntityId": {
-    "message": "SP Entity ID"
+    "message": "SP entity ID"
   },
   "spMetadataUrl": {
-    "message": "SAML 2.0 Metadata URL"
+    "message": "SAML 2.0 metadata URL"
   },
   "spAcsUrl": {
-    "message": "Assertion Consumer Service (ACS) URL"
+    "message": "Assertion consumer service (ACS) URL"
   },
   "spNameIdFormat": {
-    "message": "Name ID Format"
+    "message": "Name ID format"
   },
   "spOutboundSigningAlgorithm": {
-    "message": "Outbound Signing Algorithm"
+    "message": "Outbound signing algorithm"
   },
   "spSigningBehavior": {
-    "message": "Signing Behavior"
+    "message": "Signing behavior"
   },
   "spMinIncomingSigningAlgorithm": {
-    "message": "Minimum Incoming Signing Algorithm"
+    "message": "Minimum incoming signing algorithm"
   },
   "spWantAssertionsSigned": {
     "message": "Expect signed assertions"
@@ -4745,7 +4751,7 @@
     "message": "ID da entidade"
   },
   "idpBindingType": {
-    "message": "Binding Type"
+    "message": "Binding type"
   },
   "idpSingleSignOnServiceUrl": {
     "message": "URL de login único de serviço"
@@ -4754,10 +4760,10 @@
     "message": "URL de login único de serviço"
   },
   "idpX509PublicCert": {
-    "message": "X509 Public Certificate"
+    "message": "X509 public certificate"
   },
   "idpOutboundSigningAlgorithm": {
-    "message": "Outbound Signing Algorithm"
+    "message": "Outbound signing algorithm"
   },
   "idpAllowUnsolicitedAuthnResponse": {
     "message": "Allow unsolicited authentication response"
@@ -4769,7 +4775,7 @@
     "message": "Assinar pedidos de autenticação"
   },
   "ssoSettingsSaved": {
-    "message": "Single Sign-On configuration was saved."
+    "message": "Single sign-on configuration saved"
   },
   "sponsoredFamilies": {
     "message": "Free Bitwarden Families"
@@ -4814,17 +4820,17 @@
     "message": "Accept offer for an existing organization or create a new Families organization."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "You've been offered a free Bitwarden Families Plan Organization. To continue, you need to log in to the account that received the offer."
+    "message": "You've been offered a free Bitwarden Families plan organization. To continue, you need to log in to the account that received the offer."
   },
   "sponsoredFamiliesAcceptFailed": {
-    "message": "Unable to accept offer. Please resend the offer email from your enterprise account and try again."
+    "message": "Unable to accept offer. Please resend the offer email from your Enterprise account and try again."
   },
   "sponsoredFamiliesAcceptFailedShort": {
     "message": "Unable to accept offer. $DESCRIPTION$",
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },
@@ -4850,7 +4856,7 @@
     }
   },
   "resendEmailLabel": {
-    "message": "Resend Sponsorship email to $NAME$ sponsorship",
+    "message": "Resend sponsorship email to $NAME$ sponsorship",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -4859,22 +4865,22 @@
     }
   },
   "freeFamiliesPlan": {
-    "message": "Free Families Plan"
+    "message": "Free Families plan"
   },
   "redeemNow": {
-    "message": "Redeem Now"
+    "message": "Redeem now"
   },
   "recipient": {
     "message": "Recipient"
   },
   "removeSponsorship": {
-    "message": "Remove Sponsorship"
+    "message": "Remove sponsorship"
   },
   "removeSponsorshipConfirmation": {
     "message": "After removing a sponsorship, you will be responsible for this subscription and related invoices. Are you sure you want to continue?"
   },
   "sponsorshipCreated": {
-    "message": "Sponsorship Created"
+    "message": "Sponsorship created"
   },
   "emailSent": {
     "message": "Email enviado"
@@ -4883,7 +4889,7 @@
     "message": "After removing this account, the Families plan sponsorship will expire at the end of the billing period. You will not be able to redeem a new sponsorship offer until the existing one expires. Are you sure you want to continue?"
   },
   "removeSponsorshipSuccess": {
-    "message": "Sponsorship Removed"
+    "message": "Sponsorship removed"
   },
   "ssoKeyConnectorError": {
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
@@ -4901,7 +4907,7 @@
     "message": "Código enviado"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Verification code"
   },
   "confirmIdentity": {
     "message": "Confirm your identity to continue."
@@ -4922,13 +4928,13 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Leave organization"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Remove master password"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Master password removed"
   },
   "allowSso": {
     "message": "Allow SSO authentication"
@@ -4952,34 +4958,34 @@
     "message": "The require SSO authentication and single organization policies are required to set up Key Connector decryption."
   },
   "memberDecryptionOption": {
-    "message": "Member Decryption Options"
+    "message": "Member decryption options"
   },
   "memberDecryptionPassDesc": {
-    "message": "Once authenticated, members will decrypt vault data using their Master Passwords."
+    "message": "Once authenticated, members will decrypt vault data using their master passwords."
   },
   "keyConnector": {
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDesc": {
-    "message": "Connect Login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their Master Passwords to decrypt vault data. Contact Bitwarden Support for set up assistance."
+    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. Contact Bitwarden Support for set up assistance."
   },
   "keyConnectorPolicyRestriction": {
-    "message": "\"Login with SSO and Key Connector Decryption\" is enabled. This policy will only apply to Owners and Admins."
+    "message": "\"Login with SSO and Key Connector Decryption\" is activated. This policy will only apply to owners and admins."
   },
   "enabledSso": {
-    "message": "Enabled SSO"
+    "message": "SSO turned on"
   },
   "disabledSso": {
-    "message": "Disabled SSO"
+    "message": "SSO turned on"
   },
   "enabledKeyConnector": {
-    "message": "Enabled Key Connector"
+    "message": "Key Connector activated"
   },
   "disabledKeyConnector": {
-    "message": "Disabled Key Connector"
+    "message": "Key Connector deactivated"
   },
   "keyConnectorWarning": {
-    "message": "Once members begin using Key Connector, your Organization cannot revert to Master Password decryption. Proceed only if you are comfortable deploying and managing a key server."
+    "message": "Once members begin using Key Connector, your organization cannot revert to master password decryption. Proceed only if you are comfortable deploying and managing a key server."
   },
   "migratedKeyConnector": {
     "message": "Migrated to Key Connector"
@@ -4991,13 +4997,13 @@
     "message": "The sponsorship offer has expired. You may delete the organization you created to avoid a charge at the end of your 7 day trial. Otherwise you may close this prompt to keep the organization and assume billing responsibility."
   },
   "newFamiliesOrganization": {
-    "message": "New Families Organization"
+    "message": "New Families organization"
   },
   "acceptOffer": {
-    "message": "Accept Offer"
+    "message": "Accept offer"
   },
   "sponsoringOrg": {
-    "message": "Sponsoring Organization"
+    "message": "Sponsoring organization"
   },
   "keyConnectorTest": {
     "message": "Test"
@@ -5015,55 +5021,55 @@
     "message": "FREE with sponsorship"
   },
   "viewBillingSyncToken": {
-    "message": "View Billing Sync Token"
+    "message": "View billing sync token"
   },
   "generateBillingSyncToken": {
-    "message": "Generate Billing Sync Token"
+    "message": "Generate billing sync token"
   },
   "copyPasteBillingSync": {
-    "message": "Copy and paste this token into the Billing Sync settings of your self-hosted organization."
+    "message": "Copy and paste this token into the billing sync settings of your self-hosted organization."
   },
   "billingSyncCanAccess": {
-    "message": "Your Billing Sync token can access and edit this organization's subscription settings."
+    "message": "Your billing sync token can access and edit this organization's subscription settings."
   },
   "manageBillingSync": {
-    "message": "Manage Billing Sync"
+    "message": "Manage billing sync"
   },
   "setUpBillingSync": {
-    "message": "Set Up Billing Sync"
+    "message": "Set up billing sync"
   },
   "generateToken": {
-    "message": "Generate Token"
+    "message": "Generate token"
   },
   "rotateToken": {
-    "message": "Rotate Token"
+    "message": "Rotate token"
   },
   "rotateBillingSyncTokenWarning": {
     "message": "If you proceed, you will need to re-setup billing sync on your self-hosted server."
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "Rotating the Billing Sync Token will invalidate the previous token."
+    "message": "Rotating the billing sync token will invalidate the previous token."
   },
   "selfHostingTitle": {
-    "message": "Self-Hosting"
+    "message": "Self-hosting"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
     "message": "To set-up your organization on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up billing sync."
   },
   "billingSyncApiKeyRotated": {
-    "message": "Token rotated."
+    "message": "Token rotated"
   },
   "billingSync": {
-    "message": "Billing Sync"
+    "message": "Billing sync"
   },
   "billingSyncDesc": {
-    "message": "Billing Sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
+    "message": "Billing sync provides Free Families plans for members and advanced billing capabilities by linking your self-hosted Bitwarden to the Bitwarden cloud server."
   },
   "billingSyncKeyDesc": {
-    "message": "A Billing Sync Token from your cloud organization's subscription settings is required to complete this form."
+    "message": "A billing sync token from your cloud organization's subscription settings is required to complete this form."
   },
   "billingSyncKey": {
-    "message": "Billing Sync Token"
+    "message": "Billing sync token"
   },
   "active": {
     "message": "Ativo"
@@ -5072,13 +5078,13 @@
     "message": "Inativo"
   },
   "sentAwaitingSync": {
-    "message": "Sent (Awaiting Sync)"
+    "message": "Sent (awaiting sync)"
   },
   "sent": {
     "message": "Sent"
   },
   "requestRemoved": {
-    "message": "Removed (Awaiting Sync)"
+    "message": "Removed (awaiting sync)"
   },
   "requested": {
     "message": "Requested"
@@ -5147,10 +5153,10 @@
     }
   },
   "accessDenied": {
-    "message": "Access Denied. You do not have permission to view this page."
+    "message": "Access denied. You do not have permission to view this page."
   },
   "masterPassword": {
-    "message": "Master Password"
+    "message": "Master password"
   },
   "security": {
     "message": "Security"
@@ -5159,10 +5165,10 @@
     "message": "Keys"
   },
   "billingHistory": {
-    "message": "Billing History"
+    "message": "Billing history"
   },
   "backToReports": {
-    "message": "Back to Reports"
+    "message": "Back to reports"
   },
   "organizationPicker": {
     "message": "Organization picker"
@@ -5172,7 +5178,7 @@
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountSettings": {
-    "message": "Account Settings"
+    "message": "Account settings"
   },
   "generator": {
     "message": "Generator"
@@ -5181,26 +5187,26 @@
     "message": "What would you like to generate?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Password type"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerate username"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generate username"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Username type"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email",
+    "message": "Plus addressed email",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all email"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
@@ -5210,7 +5216,7 @@
     "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Random word"
   },
   "service": {
     "message": "Service"
@@ -5249,7 +5255,7 @@
     }
   },
   "lastSync": {
-    "message": "Last Sync",
+    "message": "Last sync",
     "Description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
@@ -5269,7 +5275,7 @@
     "description": "This text is displayed if an organization's billing is managed by a Provider. It tells the user to contact the Provider for assistance."
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."
@@ -5279,7 +5285,7 @@
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "API access token"
   },
   "deviceVerification": {
     "message": "Verificação do Dispositivo"

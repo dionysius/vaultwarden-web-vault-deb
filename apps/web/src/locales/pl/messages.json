@@ -71,7 +71,7 @@
     "message": "Firma"
   },
   "ssn": {
-    "message": "Numer PESEL"
+    "message": "PESEL"
   },
   "passportNumber": {
     "message": "Numer paszportu"
@@ -188,11 +188,11 @@
   },
   "baseDomain": {
     "message": "Domena podstawowa",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "domainName": {
     "message": "Nazwa domeny",
-    "description": "Domain name. Ex. website.com"
+    "description": "Domain name. Example: website.com"
   },
   "host": {
     "message": "Host",
@@ -410,7 +410,7 @@
     "description": "Copy username to clipboard"
   },
   "copyNumber": {
-    "message": "Kopiuj numer karty",
+    "message": "Kopiuj numer",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
@@ -458,7 +458,7 @@
     "message": "Uruchom"
   },
   "newAttachment": {
-    "message": "Dodaj załącznik"
+    "message": "Dodaj nowy załącznik"
   },
   "deletedAttachment": {
     "message": "Załącznik został usunięty"
@@ -933,7 +933,7 @@
     "message": "Utwórz hasło wygenerowane przez użytkownika, aby chronić eksport. Użyj tego, aby utworzyć eksport, który może być używany na innych kontach."
   },
   "fileTypeHeading": {
-    "message": "Rodzaj pliku"
+    "message": "Typ Pliku"
   },
   "accountBackup": {
     "message": "Kopia zapasowa konta"
@@ -964,7 +964,7 @@
   },
   "minSpecial": {
     "message": "Minimalna liczba znaków specjalnych",
-    "description": "Minimum Special Characters"
+    "description": "Minimum special characters"
   },
   "ambiguous": {
     "message": "Unikaj niejednoznacznych znaków"
@@ -997,7 +997,7 @@
   },
   "capitalize": {
     "message": "Wielkie litery",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Uwzględnij cyfry"
@@ -1010,7 +1010,7 @@
   },
   "clear": {
     "message": "Wyczyść",
-    "description": "To clear something out. example: To clear browser history."
+    "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
     "message": "Konto zostało zaktualizowane"
@@ -1192,6 +1192,12 @@
   "selectImportFile": {
     "message": "Wybierz plik do zaimportowania"
   },
+  "chooseFile": {
+    "message": "Wybierz plik"
+  },
+  "noFileChosen": {
+    "message": "Nie wybrano pliku"
+  },
   "orCopyPasteFileContents": {
     "message": "lub skopiuj/wklej treść pliku"
   },
@@ -1315,7 +1321,7 @@
   },
   "premium": {
     "message": "Premium",
-    "description": "Premium Membership"
+    "description": "Premium membership"
   },
   "premiumMembership": {
     "message": "Konto Premium"
@@ -1339,7 +1345,7 @@
     "message": "Wyłącz"
   },
   "revokeAccess": {
-    "message": "Unieważnij dostęp"
+    "message": "Odwołaj dostęp"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Ten dostawca logowania dwustopniowego jest już włączony na koncie."
@@ -1474,7 +1480,7 @@
     "message": "Wpisz 6-cyfrowy kod weryfikacyjny z wiadomości e-mail"
   },
   "sendEmail": {
-    "message": "Wyślij wiadomość"
+    "message": "Wyślij e-mail"
   },
   "twoFactorU2fAdd": {
     "message": "Dodaj klucz bezpieczeństwa FIDO U2F do swojego konta"
@@ -1539,7 +1545,7 @@
   },
   "reportsDesc": {
     "message": "Zidentyfikuj i napraw luki bezpieczeństwa na swoich kontach online, klikając raporty poniżej.",
-    "description": "Vault Health Reports can be used to evaluate the security of your Bitwarden Personal or Organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Niezabezpieczone witryny"
@@ -1572,7 +1578,7 @@
     "message": "Znaleźliśmy elementy bez włączonej opcji logowania dwustopniowego"
   },
   "inactive2faFoundDesc": {
-    "message": "Znaleźliśmy witryny w sejfie, które mogą nie korzystać z opcji logowania dwustopniowego (według 2fa.directory). Włącz logowanie dwustopniowe, aby dodatkowo zabezpieczyć te konta.",
+    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1724,7 +1730,7 @@
     "message": "Data wystąpienia naruszenia"
   },
   "breachReported": {
-    "message": "Data zgłoszenia naruszenia"
+    "message": "Naruszenie zostało zgłoszone"
   },
   "reportError": {
     "message": "Wystąpił błąd podczas próby załadowania raportu. Spróbuj ponownie"
@@ -1765,7 +1771,7 @@
   },
   "goPremium": {
     "message": "Przejdź na konto Premium",
-    "description": "Another way of saying \"Get a premium membership\""
+    "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
     "message": "Konto Premium zostało zaktualizowane."
@@ -2081,7 +2087,7 @@
     "message": "To konto jest własnością firmy."
   },
   "billingEmail": {
-    "message": "Adres rozliczeniowy"
+    "message": "E-mail rozliczeniowy"
   },
   "businessName": {
     "message": "Nazwa firmy"
@@ -2957,7 +2963,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -3029,15 +3035,15 @@
   },
   "billingPlan": {
     "message": "Plan",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
     "message": "Ulepsz plan",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
     "message": "Zaktualizuj swoje konto do innego planu, podając poniższe informacje. Upewnij się, że do konta została dodana aktywna metoda płatności.",
-    "description": "A billing plan/package. For example: families, teams, enterprise, etc."
+    "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "invoiceNumber": {
     "message": "Faktura nr $NUMBER$",
@@ -3947,7 +3953,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must enable 2FA on your user account before you can join this organization."
+        "example": "You must set up 2FA on your user account before you can join this organization."
       }
     }
   },
@@ -4824,7 +4830,7 @@
     "placeholders": {
       "description": {
         "content": "$1",
-        "example": "You must have at least one existing Families Organization."
+        "example": "You must have at least one existing Families organization."
       }
     }
   },
@@ -5021,7 +5027,7 @@
     "message": "Wygeneruj token synchronizacji płatności"
   },
   "copyPasteBillingSync": {
-    "message": "Kopiuj i wklej ten token do ustawień synchronizacji płatności swojej organizacji."
+    "message": "Skopiuj i wklej ten token do ustawień synchronizacji rozliczeniowej swojej organizacji."
   },
   "billingSyncCanAccess": {
     "message": "Twój token synchronizacji płatności może edytować ustawienia subskrypcji tej organizacji."
