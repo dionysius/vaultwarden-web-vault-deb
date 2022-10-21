@@ -2911,7 +2911,7 @@
     "message": "Startdatum"
   },
   "endDate": {
-    "message": "Endatum"
+    "message": "Enddatum"
   },
   "verifyEmail": {
     "message": "E-Mail-Adresse bestätigen"
@@ -3368,7 +3368,7 @@
     "message": "Schwaches Master-Passwort"
   },
   "weakMasterPasswordDesc": {
-    "message": "Das Master-Passwort, welches Sie gewählt haben, ist schwach. Sie sollten ein starkes Master-Passwort auswählen, um Ihr Bitwarden-Konto ausreichend zu schützen. Sind Sie sicher, dass Sie dieses Master-Passwort verwenden wollen?"
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   },
   "rotateAccountEncKey": {
     "message": "Auch den Verschlüsselungscode meines Kontos aktualisieren"

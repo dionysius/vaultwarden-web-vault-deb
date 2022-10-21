@@ -1578,7 +1578,7 @@
     "message": "Znaleźliśmy elementy bez włączonej opcji logowania dwustopniowego"
   },
   "inactive2faFoundDesc": {
-    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "Znaleźliśmy $COUNT$ witryn(y) w sejfie, które mogą nie być skonfigurowane z wykorzystaniem logowania dwustopniowego (wg 2fa.directory). Aby dodatkowo zabezpieczyć te konta, należy skonfigurować logowanie dwustopniowe.",
     "placeholders": {
       "count": {
         "content": "$1",
