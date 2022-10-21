@@ -151,7 +151,7 @@
     "message": "Код безпеки"
   },
   "identityName": {
-    "message": "Ім'я"
+    "message": "identityName"
   },
   "company": {
     "message": "Компанія"
@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "Великі літери",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Включити число"
@@ -1485,7 +1485,7 @@
     "message": "Ви дійсно хочете остаточно видалити цей запис?"
   },
   "permanentlyDeletedItem": {
-    "message": "Запис остаточно видалено"
+    "message": "Остаточно видалений запис"
   },
   "restoreItem": {
     "message": "Відновити запис"
@@ -1494,7 +1494,7 @@
     "message": "Ви дійсно хочете відновити цей запис?"
   },
   "restoredItem": {
-    "message": "Запис відновлено"
+    "message": "Відновлений запис"
   },
   "permanentlyDelete": {
     "message": "Остаточно видалити"

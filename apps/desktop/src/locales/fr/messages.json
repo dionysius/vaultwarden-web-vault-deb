@@ -151,7 +151,7 @@
     "message": "Code de sécurité"
   },
   "identityName": {
-    "message": "Identité"
+    "message": "identityName"
   },
   "company": {
     "message": "Société"
@@ -175,7 +175,7 @@
     "message": "Adresse"
   },
   "premiumRequired": {
-    "message": "Adhésion Premium requise"
+    "message": "Version Premium requise"
   },
   "premiumRequiredDesc": {
     "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
@@ -352,7 +352,7 @@
     "message": "Élément modifié"
   },
   "deleteItem": {
-    "message": "Supprimer l'élément"
+    "message": "Supprimer l'identifiant"
   },
   "deleteFolder": {
     "message": "Supprimer le dossier"
@@ -376,7 +376,7 @@
     "message": "Êtes-vous sûr de vouloir remplacer le mot de passe actuel ?"
   },
   "noneFolder": {
-    "message": "Aucun dossier",
+    "message": "Pas de dossier",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -386,10 +386,10 @@
     "message": "Modifier le dossier"
   },
   "regeneratePassword": {
-    "message": "Générer un nouveau mot de passe"
+    "message": "Re-générer un mot de passe"
   },
   "copyPassword": {
-    "message": "Copier le mot de passe"
+    "message": "Copier mot de passe"
   },
   "copyUri": {
     "message": "Copier l'URI"
@@ -420,19 +420,19 @@
   },
   "capitalize": {
     "message": "Mettre la première lettre de chaque mot en majuscule",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Inclure un chiffre"
+    "message": "Inclure le numéro"
   },
   "close": {
     "message": "Fermer"
   },
   "minNumbers": {
-    "message": "Nombre minimum de chiffres"
+    "message": "Minimum de chiffres"
   },
   "minSpecial": {
-    "message": "Nombre minimum de caractères spéciaux",
+    "message": "Minimum de caractères spéciaux",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -442,13 +442,13 @@
     "message": "Rechercher dans la collection"
   },
   "searchFolder": {
-    "message": "Rechercher dans le dossier"
+    "message": "Rechercher dans un dossier"
   },
   "searchFavorites": {
     "message": "Rechercher dans les favoris"
   },
   "searchType": {
-    "message": "Rechercher dans le type",
+    "message": "Recherche par type",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -509,7 +509,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Saisissez à nouveau le mot de passe maître"
+    "message": "Saisir à nouveau le mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -518,7 +518,7 @@
     "message": "Paramètres"
   },
   "passwordHint": {
-    "message": "Indice du mot de passe"
+    "message": "Indice mot de passe"
   },
   "enterEmailToGetHint": {
     "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
@@ -554,7 +554,7 @@
     "message": "Une erreur inattendue est survenue."
   },
   "itemInformation": {
-    "message": "Informations sur l'élément"
+    "message": "Information sur l'identifiant"
   },
   "noItemsInList": {
     "message": "Aucun élément à afficher."
@@ -659,16 +659,16 @@
     "message": "Les codes de vérification vont vous être envoyés par e-mail."
   },
   "loginUnavailable": {
-    "message": "Connexion impossible"
+    "message": "Identifiant non disponible"
   },
   "noTwoStepProviders": {
-    "message": "Ce compte dispose d'une authentification en deux étapes, cependant aucun de vos services d'authentification en deux étapes n'est supporté par cet appareil."
+    "message": "Ce compte dispose d'une authentification à deux étapes, cependant, aucun service d'authentification à deux étapes n'est supporté par ce navigateur web."
   },
   "noTwoStepProviders2": {
     "message": "Veuillez ajouter des services additionnels qui supportent une utilisation sur plusieurs appareils (comme une application d'authentification)."
   },
   "twoStepOptions": {
-    "message": "Options d'identification en deux étapes"
+    "message": "Options d'identification à deux étapes"
   },
   "selfHostedEnvironment": {
     "message": "Environnement auto-hébergé"
@@ -734,13 +734,13 @@
     "message": "Déconnexion"
   },
   "addNewLogin": {
-    "message": "Ajouter un nouvel identifiant"
+    "message": "Ajouter un site"
   },
   "addNewItem": {
     "message": "Ajouter un nouvel élément"
   },
   "addNewFolder": {
-    "message": "Ajouter un nouveau dossier"
+    "message": "Ajouter un dossier"
   },
   "view": {
     "message": "Voir"
@@ -773,7 +773,7 @@
     "message": "Suivez-nous"
   },
   "syncVault": {
-    "message": "Synchroniser le coffre"
+    "message": "Synchroniser le coffre maintenant"
   },
   "changeMasterPass": {
     "message": "Modifier le mot de passe maître"
@@ -796,7 +796,7 @@
     "message": "Télécharger l'application mobile"
   },
   "getBrowserExtension": {
-    "message": "Télécharger l'extension de navigateur"
+    "message": "Télécharger l'extension du navigateur"
   },
   "syncingComplete": {
     "message": "Synchronisation terminée"
@@ -827,10 +827,10 @@
     "message": "Mot de passe maître invalide"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'identification en deux étapes sécurise davantage votre compte en vous demandant à chaque connexion de saisir un code de sécurité obtenu depuis un autre appareil, via une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique, ou un e-mail. L'identification en deux étapes peut être activée depuis le coffre web sur bitwarden.com. Voulez-vous vous visiter le site web maintenant ?"
+    "message": "L'identification en deux étapes sécurise plus encore votre compte en vous demandant à chaque identification la saisie d'un code de sécurité obtenu depuis un autre appareil, comme une clef de sécurité, une application d'authentification, un SMS, un appel téléphonique ou encore un courriel. L'identification en deux étapes peut être activée dans le coffre web sur bitwarden.com. Voulez-vous vous rendre sur le site web maintenant ?"
   },
   "twoStepLogin": {
-    "message": "Identification en deux étapes"
+    "message": "Identification à deux facteurs"
   },
   "vaultTimeout": {
     "message": "Délai d'expiration du coffre"
@@ -1033,7 +1033,7 @@
     "message": "Inconnu"
   },
   "copyUsername": {
-    "message": "Copier le nom d'utilisateur"
+    "message": "Copier nom d'utilisateur"
   },
   "copyNumber": {
     "message": "Copier le numéro",
@@ -1137,7 +1137,7 @@
     "message": "Zoom arrière"
   },
   "resetZoom": {
-    "message": "Réinitialiser le zoom"
+    "message": "Taille réelle"
   },
   "toggleFullScreen": {
     "message": "Afficher en plein écran"
@@ -1146,7 +1146,7 @@
     "message": "Recharger"
   },
   "toggleDevTools": {
-    "message": "Afficher/cacher les outils de développement"
+    "message": "Afficher les outils de développement"
   },
   "minimize": {
     "message": "Réduire",
@@ -1239,7 +1239,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Afficher/masquer les options"
+    "message": "Options de basculement"
   },
   "organization": {
     "message": "Organisation",
@@ -1450,7 +1450,7 @@
     "message": "Êtes-vous sûr de vouloir quitter ? Si vous le faites maintenant, vos informations actuelles ne seront pas sauvegardées."
   },
   "unsavedChangesTitle": {
-    "message": "Modifications non sauvegardées"
+    "message": "Il y a des modifications non enregistrées"
   },
   "clone": {
     "message": "Cloner"

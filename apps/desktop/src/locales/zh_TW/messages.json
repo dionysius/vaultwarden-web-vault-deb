@@ -104,7 +104,7 @@
     "message": "電子郵件地址"
   },
   "verificationCodeTotp": {
-    "message": "驗證碼 (TOTP)"
+    "message": "驗證碼（TOTP）"
   },
   "website": {
     "message": "網站"
@@ -308,7 +308,7 @@
     "message": "編輯"
   },
   "authenticatorKeyTotp": {
-    "message": "驗證器金鑰 (TOTP)"
+    "message": "驗證器金鑰（TOTP）"
   },
   "folder": {
     "message": "資料夾"
@@ -376,7 +376,7 @@
     "message": "您確定要覆寫目前的使用者名稱嗎？"
   },
   "noneFolder": {
-    "message": "（未分類）",
+    "message": "預設資料夾",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -395,7 +395,7 @@
     "message": "複製 URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "複製驗證碼 (TOTP)"
+    "message": "複製驗證碼（TOTP）"
   },
   "length": {
     "message": "長度"
@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "大寫",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "包含數字"
@@ -429,10 +429,10 @@
     "message": "關閉"
   },
   "minNumbers": {
-    "message": "最少數字位數"
+    "message": "數字"
   },
   "minSpecial": {
-    "message": "最少符號位數",
+    "message": "符號",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -491,7 +491,7 @@
     "message": "登入或建立帳戶來存取您的安全密碼庫。"
   },
   "createAccount": {
-    "message": "建立帳戶"
+    "message": "新增帳戶"
   },
   "logIn": {
     "message": "登入"
@@ -626,7 +626,7 @@
     "message": "復原代碼"
   },
   "authenticatorAppTitle": {
-    "message": "驗證器應用程式"
+    "message": "認證器應用程式"
   },
   "authenticatorAppDesc": {
     "message": "使用驗證器應用程式（如 Authy 或 Google Authenticator）產生基於時間的驗證碼。",
@@ -689,7 +689,7 @@
     "message": "API 伺服器 URL"
   },
   "webVaultUrl": {
-    "message": "網頁版密碼庫伺服器 URL"
+    "message": "網路版密碼庫伺服器 URL"
   },
   "identityUrl": {
     "message": "身分伺服器 URL"
@@ -698,7 +698,7 @@
     "message": "通知伺服器 URL"
   },
   "iconsUrl": {
-    "message": "圖示伺服器 URL"
+    "message": "圖標伺服器 URL"
   },
   "environmentSaved": {
     "message": "已儲存環境 URL。"
@@ -790,7 +790,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "前往網頁版密碼庫"
+    "message": "前往網路版密碼庫"
   },
   "getMobileApp": {
     "message": "取得行動裝置應用程式"
@@ -928,7 +928,7 @@
     "message": "關閉視窗時，改為於選單列中顯示一個圖示。"
   },
   "enableTray": {
-    "message": "啟用系統匣圖示"
+    "message": "啟用系統匣圖標"
   },
   "enableTrayDesc": {
     "message": "總是在系統匣中顯示圖示。"
@@ -1040,7 +1040,7 @@
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "複製安全代碼",
+    "message": "複製安全碼",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
@@ -1256,7 +1256,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "隱藏至系統匣"
+    "message": "隱藏到系統匣"
   },
   "alwaysOnTop": {
     "message": "總在最上層",
@@ -1355,7 +1355,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "主密碼強度太弱"
+    "message": "脆弱的主密碼"
   },
   "weakMasterPasswordDesc": {
     "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼（或密碼短語）來正確保護您的 bitwarden 帳戶。仍要使用這組主密碼嗎？"
@@ -1711,7 +1711,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send 已創建",
+    "message": "已建立 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -1730,7 +1730,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "創建 Send",
+    "message": "建立 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1986,7 +1986,7 @@
     "message": "搜尋組織"
   },
   "searchMyVault": {
-    "message": "搜尋個人密碼庫"
+    "message": "搜尋密碼庫"
   },
   "forwardedEmail": {
     "message": "轉寄的電子郵件別名"

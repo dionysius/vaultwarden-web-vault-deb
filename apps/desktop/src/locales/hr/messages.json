@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "Prva slova velika",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Uključi broj"
@@ -668,7 +668,7 @@
     "message": "Dodaj dodatne pružatelje, bolje podržane na uređajima (npr. aplikacija Autentifikator)."
   },
   "twoStepOptions": {
-    "message": "Mogućnosti prijave u dva koraka"
+    "message": "Mogućnosti dvostruke autentifikacije"
   },
   "selfHostedEnvironment": {
     "message": "Vlastito hosting okruženje"
@@ -773,7 +773,7 @@
     "message": "Prati nas"
   },
   "syncVault": {
-    "message": "Odmah sinkroniziraj trezor"
+    "message": "Sinkronizraj trezor"
   },
   "changeMasterPass": {
     "message": "Promjeni glavnu lozinku"
@@ -830,7 +830,7 @@
     "message": "Prijava u dva koraka čini tvoj račun još sigurnijim tako što će zahtijevati da potvrdiš prijavu putem drugog uređaja sigurnosnim ključem, autentifikatorskom aplikacijom, SMS-om, pozivom ili e-poštom. Prijavu u dva koraka možeš omogućiti na web trezoru. Želiš li sada posjetiti bitwarden.com?"
   },
   "twoStepLogin": {
-    "message": "Prijava u dva koraka"
+    "message": "Prijava dvostrukom autentifikacijom"
   },
   "vaultTimeout": {
     "message": "Istek trezora"
@@ -1140,7 +1140,7 @@
     "message": "Poništi zumiranje"
   },
   "toggleFullScreen": {
-    "message": "Uključi/isključi prikaz preko cijelog zaslona"
+    "message": "Prikaz preko cijelog zaslona"
   },
   "reload": {
     "message": "Ponovno učitaj"
@@ -2008,10 +2008,10 @@
     "message": "Premium subscription required"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organization suspended"
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Items in suspended organizations cannot be accessed. Contact your organization owner for assistance."
   },
   "neverLockWarning": {
     "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."

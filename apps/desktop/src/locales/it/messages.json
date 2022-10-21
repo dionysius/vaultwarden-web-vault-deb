@@ -6,7 +6,7 @@
     "message": "Filtri"
   },
   "allItems": {
-    "message": "Tutti gli elementi"
+    "message": "Tutti gli Elementi"
   },
   "favorites": {
     "message": "Preferiti"
@@ -151,7 +151,7 @@
     "message": "Codice di sicurezza"
   },
   "identityName": {
-    "message": "Nome dell'identità"
+    "message": "Nome identità"
   },
   "company": {
     "message": "Azienda"
@@ -175,10 +175,10 @@
     "message": "Indirizzo"
   },
   "premiumRequired": {
-    "message": "Abbonamento Premium Richiesto"
+    "message": "Abbonamento Premium richiesto"
   },
   "premiumRequiredDesc": {
-    "message": "Un abbonamento premium è richiesto per utilizzare questa funzionalità."
+    "message": "Un abbonamento Premium è richiesto per utilizzare questa funzionalità."
   },
   "errorOccurred": {
     "message": "Si è verificato un errore."
@@ -364,7 +364,7 @@
     "message": "Sei sicuro di voler cestinare questo elemento?"
   },
   "deletedItem": {
-    "message": "Elemento cestinato"
+    "message": "Elemento eliminato"
   },
   "overwritePasswordConfirmation": {
     "message": "Sei sicuro di voler sovrascrivere la password corrente?"
@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "Rendi maiuscolo",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Includi numero"
@@ -448,7 +448,7 @@
     "message": "Cerca tra i preferiti"
   },
   "searchType": {
-    "message": "Cerca tipo",
+    "message": "Tipo di ricerca",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -512,7 +512,7 @@
     "message": "Digita nuovamente la password principale"
   },
   "masterPassHint": {
-    "message": "Suggerimento password principale (facoltativo)"
+    "message": "Suggerimento per la password principale (facoltativo)"
   },
   "settings": {
     "message": "Impostazioni"
@@ -620,7 +620,7 @@
     "message": "Inserisci la tua chiave di sicurezza nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
   },
   "recoveryCodeDesc": {
-    "message": "Hai perso l'accesso a tutti i tuoi metodi di verifica in due passaggi? Usa il tuo codice di recupero per disattivare tutti i metodi di verifica in due passaggi sul tuo account."
+    "message": "Hai perso l'accesso a tutti i tuoi metodi in due fasi? Usa il tuo codice di recupero per disattivare tutti i metodi in due fasi sul tuo account."
   },
   "recoveryCodeTitle": {
     "message": "Codice di recupero"
@@ -662,13 +662,13 @@
     "message": "Accesso non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "Questo account ha la verifica in due passaggi abilitata, ma nessuno dei provider configurati è supportato da questo browser."
+    "message": "Questo account ha abilitato la verifica in due passaggi, ma nessuno dei provider configurati è supportato da questo browser."
   },
   "noTwoStepProviders2": {
     "message": "Aggiungi altri metodi che sono supportati meglio su tutti i dispositivi (ad esempio, un'applicazione di autenticazione)."
   },
   "twoStepOptions": {
-    "message": "Opzioni di accesso in due passaggi"
+    "message": "Opzioni di verifica in due passaggi"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente self-hosted"
@@ -1428,7 +1428,7 @@
     "message": "Devi selezionare almeno una raccolta."
   },
   "premiumUpdated": {
-    "message": "Hai effettuato l'aggiornamento a premium."
+    "message": "Hai effettuato l'aggiornamento a Premium."
   },
   "restore": {
     "message": "Ripristina"
@@ -1684,7 +1684,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Conteggio accessi attuale"
+    "message": "Conteggio accessi corrente"
   },
   "disableSend": {
     "message": "Disabilita il Send per renderlo inaccessibile.",
@@ -1919,7 +1919,7 @@
     "message": "La tua sessione è scaduta. Torna indietro e riprova ad accedere."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Esportazione cassaforte personale"
+    "message": "Esportazione cassaforte personale..."
   },
   "exportingPersonalVaultDescription": {
     "message": "Saranno esportati solo gli oggetti della cassaforte personale associati a $EMAIL$. Gli oggetti della cassaforte dell'organizzazione non saranno inclusi.",

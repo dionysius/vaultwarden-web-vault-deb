@@ -175,7 +175,7 @@
     "message": "Postai cím"
   },
   "premiumRequired": {
-    "message": "Prémium verzió szükséges"
+    "message": "Prémium szükséges"
   },
   "premiumRequiredDesc": {
     "message": "A funkció használatához prémium tagság szükséges."
@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "Nagy kezdőbetű",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Szám is"
@@ -467,7 +467,7 @@
     "message": "Fájl"
   },
   "selectFile": {
-    "message": "Válasszunk egy fájlt."
+    "message": "Válassz ki egy fájlt."
   },
   "maxFileSize": {
     "message": "Maximális fájl méret 500 MB."
@@ -734,7 +734,7 @@
     "message": "Kijelentkezés"
   },
   "addNewLogin": {
-    "message": "Új bejelentkezés hozzáadása"
+    "message": "Új fiók hozzáadása"
   },
   "addNewItem": {
     "message": "Új elem hozzáadása"
@@ -770,7 +770,7 @@
     "message": "Blog"
   },
   "followUs": {
-    "message": "Követés"
+    "message": "Kövess minket"
   },
   "syncVault": {
     "message": "Széf szinkronizálása"
@@ -782,7 +782,7 @@
     "message": "A mesterjelszó megváltoztatható a bitwarden.com webes széfben. Szeretnénk felkeresni a webhelyet mos?"
   },
   "fingerprintPhrase": {
-    "message": "Ujjlenyomat kifejezés",
+    "message": "Azonosítókifejezés",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -793,7 +793,7 @@
     "message": "Ugrás a webes széfhez"
   },
   "getMobileApp": {
-    "message": "Mobil alkalmazás beszerzése"
+    "message": "Mobil app letöltése"
   },
   "getBrowserExtension": {
     "message": "Böngésző bővítmény beszerzése"
@@ -1053,13 +1053,13 @@
     "message": "Prémium tagság a bitwarden.com webes széfben kezelhető. Szeretnénk most felkeresni a webhelyet?"
   },
   "premiumRefresh": {
-    "message": "Tagság frissítése"
+    "message": "Előfizetés ellenőrzése"
   },
   "premiumNotCurrentMember": {
-    "message": "Jelenleg nincs prémium tagság."
+    "message": "Jelenleg nem vagy prémium tag."
   },
   "premiumSignUpAndGet": {
-    "message": "Regisztráció a prémium tagságra az alábbi funkciókért:"
+    "message": "Fizess elő prémiumra, hogy különféle előnyöket élvezhess:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB titkosított fájlmelléklet tárhely."
@@ -1137,7 +1137,7 @@
     "message": "Kicsinyítés"
   },
   "resetZoom": {
-    "message": "Nagyítás alaphelyzetbe"
+    "message": "Nagyítás visszaállítása"
   },
   "toggleFullScreen": {
     "message": "Teljes képernyős módra váltás"
@@ -1231,7 +1231,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Találat érzékelés",
+    "message": "Találatfelismerés",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1450,7 +1450,7 @@
     "message": "Biztos a kilépés? A kilépés esetén az aktuális információ nem kerül mentésre."
   },
   "unsavedChangesTitle": {
-    "message": "Mentetlen változások"
+    "message": "Mentetlen változtatások"
   },
   "clone": {
     "message": "Klónozás"
@@ -1503,7 +1503,7 @@
     "message": "Kijelentkezve az összes széf elérés eltávolításra kerül és webes hitelesítésre van szükség az időkifutás után. Biztosan szeretnénk használni ezt a beállítást?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Időkifutás művelet megerősítés"
+    "message": "Időkifutáskori művelet megerősítése"
   },
   "enterpriseSingleSignOn": {
     "message": "Vállalati önálló bejelentkezés"

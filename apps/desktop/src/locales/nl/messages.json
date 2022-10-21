@@ -175,7 +175,7 @@
     "message": "Adres"
   },
   "premiumRequired": {
-    "message": "Premium is vereist"
+    "message": "Premium vereist"
   },
   "premiumRequiredDesc": {
     "message": "Voor deze functionaliteit heb je een Premium-abonnement nodig."
@@ -308,7 +308,7 @@
     "message": "Bewerken"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticatiecode (TOTP)"
+    "message": "Authenticatiesleutel (TOTP)"
   },
   "folder": {
     "message": "Map"
@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "Beginhoofdletters",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Cijfer toevoegen"
@@ -734,13 +734,13 @@
     "message": "Uitloggen"
   },
   "addNewLogin": {
-    "message": "Nieuwe login"
+    "message": "Nieuwe login toevoegen"
   },
   "addNewItem": {
-    "message": "Nieuw item"
+    "message": "Nieuw item toevoegen"
   },
   "addNewFolder": {
-    "message": "Nieuwe map"
+    "message": "Nieuwe map toevoegen"
   },
   "view": {
     "message": "Beeld"
@@ -1285,7 +1285,7 @@
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load Accessibility Cookie"
+    "message": "Load accessibility cookie"
   },
   "registerAccessibilityUser": {
     "message": "Register as an accessibility user at",
@@ -1989,7 +1989,7 @@
     "message": "Kluis doorzoeken"
   },
   "forwardedEmail": {
-    "message": "Forwarded Email Alias"
+    "message": "Forwarded email alias"
   },
   "forwardedEmailDesc": {
     "message": "Generate an email alias with an external forwarding service."

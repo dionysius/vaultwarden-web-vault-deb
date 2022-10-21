@@ -148,10 +148,10 @@
     "message": "Erääntymisaika"
   },
   "securityCode": {
-    "message": "Turvakoodi (CVC/CVV)"
+    "message": "Turvakoodi"
   },
   "identityName": {
-    "message": "Henkilöllisyyden nimi"
+    "message": "Identiteetin nimi"
   },
   "company": {
     "message": "Yritys"
@@ -163,7 +163,7 @@
     "message": "Passin numero"
   },
   "licenseNumber": {
-    "message": "Ajokortin numero"
+    "message": "Rekisterinumero"
   },
   "email": {
     "message": "Sähköposti"
@@ -178,7 +178,7 @@
     "message": "Premium vaaditaan"
   },
   "premiumRequiredDesc": {
-    "message": "Käyttääksesi tätä toimintoa tarvitset Premium-jäsenyyden."
+    "message": "Tarvitset premium-jäsenyyden tämän toiminnon käyttämiseen."
   },
   "errorOccurred": {
     "message": "Tapahtui virhe."
@@ -308,7 +308,7 @@
     "message": "Muokkaa"
   },
   "authenticatorKeyTotp": {
-    "message": "Todennusmenetelmän avain (TOTP)"
+    "message": "Todennusavain (TOTP)"
   },
   "folder": {
     "message": "Kansio"
@@ -416,11 +416,11 @@
     "message": "Sanojen määrä"
   },
   "wordSeparator": {
-    "message": "Sanojen erotin"
+    "message": "Sanaerotin"
   },
   "capitalize": {
     "message": "Sanat isoilla alkukirjaimilla",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Sisällytä numero"
@@ -448,7 +448,7 @@
     "message": "Hae suosikeista"
   },
   "searchType": {
-    "message": "Hae tyypeistä",
+    "message": "Etsi tyypeistä",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -734,7 +734,7 @@
     "message": "Kirjaudu ulos"
   },
   "addNewLogin": {
-    "message": "Lisää uusi kirjautumistieto"
+    "message": "Lisää uusi käyttäjätunnus"
   },
   "addNewItem": {
     "message": "Lisää uusi kohde"
@@ -782,7 +782,7 @@
     "message": "Voit vaihtaa pääsalasanasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "fingerprintPhrase": {
-    "message": "Tunnistelauseke",
+    "message": "Todennuslauseke",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -827,7 +827,7 @@
     "message": "Virheellinen pääsalasana"
   },
   "twoStepLoginConfirmation": {
-    "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä salasanan lisäksi kirjautumisen lisätodennusta todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko käydä sivustolla nyt?"
+    "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä sinulta kirjautumisvahvistuksen todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "twoStepLogin": {
     "message": "Kaksivaiheinen kirjautuminen"
@@ -1012,7 +1012,7 @@
     }
   },
   "updateAvailable": {
-    "message": "Päivitys on saatavilla"
+    "message": "Päivitys saatavilla"
   },
   "updateAvailableDesc": {
     "message": "Päivitys löydetty. Haluatko ladata sen nyt?"
@@ -1033,7 +1033,7 @@
     "message": "Tuntematon"
   },
   "copyUsername": {
-    "message": "Kopioi käyttäjätunnus"
+    "message": "Kopioi käyttäjänimi"
   },
   "copyNumber": {
     "message": "Kopioi numero",
@@ -1056,7 +1056,7 @@
     "message": "Päivitä jäsenyys"
   },
   "premiumNotCurrentMember": {
-    "message": "Et ole tällä hetkellä Premium-jäsen."
+    "message": "Et ole tällä hetkellä premium-jäsen."
   },
   "premiumSignUpAndGet": {
     "message": "Ryhdy Premium-jäseneksi saadaksesi:"
@@ -1140,13 +1140,13 @@
     "message": "Palauta zoomaus"
   },
   "toggleFullScreen": {
-    "message": "Kytke koko näytön tila"
+    "message": "Koko näytön tila päälle/pois"
   },
   "reload": {
     "message": "Lataa uudelleen"
   },
   "toggleDevTools": {
-    "message": "Kytke kehittäjätyökalut"
+    "message": "Kehittäjätyökalut päälle/pois"
   },
   "minimize": {
     "message": "Pienennä",
@@ -1231,7 +1231,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Tunnistustapa",
+    "message": "Täsmäystapa",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1476,7 +1476,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Hae roskakorista"
+    "message": "Etsi roskakorista"
   },
   "permanentlyDeleteItem": {
     "message": "Poista kohde pysyvästi"

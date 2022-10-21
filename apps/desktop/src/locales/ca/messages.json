@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "Majúscules inicials",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Inclou número"
@@ -429,10 +429,10 @@
     "message": "Tanca"
   },
   "minNumbers": {
-    "message": "Mínim de caràcters númerics"
+    "message": "Números mínims"
   },
   "minSpecial": {
-    "message": "Mínim de caràcters especials",
+    "message": "Especial mínim",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -620,7 +620,7 @@
     "message": "Introduïu la vostra clau de seguretat al port USB de l'ordinador. Si té un botó, premeu-lo."
   },
   "recoveryCodeDesc": {
-    "message": "Heu perdut l'accés a tots els vostres proveïdors de dos factors? Utilitzeu el codi de recuperació per inhabilitar tots els proveïdors de dos factors del vostre compte."
+    "message": "Heu perdut l'accés a tots els vostres proveïdors de dos factors? Utilitzeu el vostre codi de recuperació per desactivar tots els proveïdors de dos factors del vostre compte."
   },
   "recoveryCodeTitle": {
     "message": "Codi de recuperació"
@@ -1986,7 +1986,7 @@
     "message": "Cerca organització"
   },
   "searchMyVault": {
-    "message": "Cerca la meua caixa forta"
+    "message": "Cerca en la caixa forta"
   },
   "forwardedEmail": {
     "message": "Àlies de correu electrònic reenviat"

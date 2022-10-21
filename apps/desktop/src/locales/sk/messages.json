@@ -33,7 +33,7 @@
     "message": "Zbierky"
   },
   "searchVault": {
-    "message": "Hľadať v trezore"
+    "message": "Search vault"
   },
   "addItem": {
     "message": "Pridať položku"
@@ -151,7 +151,7 @@
     "message": "Bezpečnostný kód"
   },
   "identityName": {
-    "message": "Názov identity"
+    "message": "Meno identity"
   },
   "company": {
     "message": "Spoločnosť"
@@ -389,7 +389,7 @@
     "message": "Vygenerovať nové heslo"
   },
   "copyPassword": {
-    "message": "Kopírovať heslo"
+    "message": "Skopírovať heslo"
   },
   "copyUri": {
     "message": "Kopírovať URI"
@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "Veľké prvé písmená slov",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Zahrnúť číslo"
@@ -439,16 +439,16 @@
     "message": "Vyhnúť sa zameniteľným znakom"
   },
   "searchCollection": {
-    "message": "Hľadať v zbierke"
+    "message": "Search collection"
   },
   "searchFolder": {
-    "message": "Hľadať v priečinku"
+    "message": "Search folder"
   },
   "searchFavorites": {
-    "message": "Hľadať v obľúbených"
+    "message": "Search favorites"
   },
   "searchType": {
-    "message": "Hľadať podľa typu",
+    "message": "Search type",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -698,7 +698,7 @@
     "message": "URL adresa servera pre oznámenia"
   },
   "iconsUrl": {
-    "message": "URL servera ikon"
+    "message": "URL servera ikôn"
   },
   "environmentSaved": {
     "message": "URL prostredia boli uložené."

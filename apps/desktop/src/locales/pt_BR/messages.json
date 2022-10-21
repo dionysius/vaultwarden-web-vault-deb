@@ -132,7 +132,7 @@
     "message": "Alternar Visibilidade"
   },
   "toggleCollapse": {
-    "message": "Alternar Colapso",
+    "message": "Alternar colapso",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -157,7 +157,7 @@
     "message": "Empresa"
   },
   "ssn": {
-    "message": "Cadastro de Pessoas Físicas (CPF)"
+    "message": "Número de Segurança Social"
   },
   "passportNumber": {
     "message": "Número do Passaporte"
@@ -266,7 +266,7 @@
     "message": "Nome do Meio"
   },
   "lastName": {
-    "message": "Sobrenome"
+    "message": "Último Nome"
   },
   "fullName": {
     "message": "Nome Completo"
@@ -364,7 +364,7 @@
     "message": "Você realmente deseja enviar para a lixeira?"
   },
   "deletedItem": {
-    "message": "Enviar item para lixeira"
+    "message": "Item excluído"
   },
   "overwritePasswordConfirmation": {
     "message": "Você tem certeza que deseja substituir a senha atual?"
@@ -413,14 +413,14 @@
     "message": "Caracteres Especiais (!@#$%^&*)"
   },
   "numWords": {
-    "message": "Número de Palavras"
+    "message": "Número de palavras"
   },
   "wordSeparator": {
-    "message": "Separador de Palavra"
+    "message": "Separador de palavras"
   },
   "capitalize": {
     "message": "Iniciais em Maiúsculas",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Incluir Número"
@@ -429,33 +429,33 @@
     "message": "Fechar"
   },
   "minNumbers": {
-    "message": "Mínimo de números"
+    "message": "Números Mínimos"
   },
   "minSpecial": {
-    "message": "Mínimo Especial",
+    "message": "Especiais Mínimos",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
     "message": "Evitar Caracteres Ambíguos"
   },
   "searchCollection": {
-    "message": "Pesquisar Coleção"
+    "message": "Pesquisar coleção"
   },
   "searchFolder": {
-    "message": "Pesquisar Pasta"
+    "message": "Pesquisar pasta"
   },
   "searchFavorites": {
-    "message": "Pesquisar Favoritos"
+    "message": "Pesquisar favoritos"
   },
   "searchType": {
-    "message": "Pesquisar Tipo",
+    "message": "Pesquisar tipo",
     "description": "Search item type"
   },
   "newAttachment": {
     "message": "Adicionar Novo Anexo"
   },
   "deletedAttachment": {
-    "message": "Anexo Excluído"
+    "message": "Anexo excluído"
   },
   "deleteAttachmentConfirmation": {
     "message": "Tem certeza que deseja excluir esse anexo?"
@@ -485,7 +485,7 @@
     "message": "Você tem certeza que deseja excluir esta pasta?"
   },
   "deletedFolder": {
-    "message": "Pasta excluída"
+    "message": "Pasta apagada"
   },
   "loginOrCreateNewAccount": {
     "message": "Inicie a sessão ou crie uma nova conta para acessar seu cofre seguro."
@@ -494,7 +494,7 @@
     "message": "Criar Conta"
   },
   "logIn": {
-    "message": "Iniciar Sessão"
+    "message": "Iniciar sessão"
   },
   "submit": {
     "message": "Enviar"
@@ -662,7 +662,7 @@
     "message": "Sessão Indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem a verificação em duas etapas ativada, no entanto, nenhum dos provedores de verificação em duas etapas configurados são suportados por este navegador web."
+    "message": "Esta conta tem o início de sessão em duas etapas ativada, no entanto, nenhum dos provedores de início de sessão em duas etapas configurados são suportados por este dispositivo."
   },
   "noTwoStepProviders2": {
     "message": "Por favor inclua provedores adicionais que são melhor suportados entre dispositivos (como um aplicativo de autenticação)."
@@ -671,7 +671,7 @@
     "message": "Opções de Login em Duas Etapas"
   },
   "selfHostedEnvironment": {
-    "message": "Ambiente Auto-hospedado"
+    "message": "Ambiente auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Especifique a URL de base da sua instalação local do Bitwarden."
@@ -695,13 +695,13 @@
     "message": "URL do Servidor de Identidade"
   },
   "notificationsUrl": {
-    "message": "URL do Servidor de Notificações"
+    "message": "URL do servidor de notificações"
   },
   "iconsUrl": {
     "message": "URL do Servidor de Ícones"
   },
   "environmentSaved": {
-    "message": "As URLs do ambiente foram salvas."
+    "message": "Os URLs de ambiente foram salvos."
   },
   "ok": {
     "message": "Ok"
@@ -793,10 +793,10 @@
     "message": "Ir para o Cofre Web"
   },
   "getMobileApp": {
-    "message": "Obter o Aplicativo Móvel"
+    "message": "Obter o aplicativo para celular"
   },
   "getBrowserExtension": {
-    "message": "Obter a Extensão de Navegador"
+    "message": "Obter a extensão de navegador"
   },
   "syncingComplete": {
     "message": "Sincronização completada"
@@ -1027,7 +1027,7 @@
     "message": "Não há atualizações disponíveis no momento. Você está usando a versão mais recente."
   },
   "updateError": {
-    "message": "Erro na Atualização"
+    "message": "Erro na atualização"
   },
   "unknown": {
     "message": "Desconhecido"
@@ -1056,7 +1056,7 @@
     "message": "Atualizar Assinatura"
   },
   "premiumNotCurrentMember": {
-    "message": "Você não é um membro premium atualmente."
+    "message": "Você não possui uma assinatura Premium."
   },
   "premiumSignUpAndGet": {
     "message": "Registe-se para uma assinatura premium e obtenha:"
@@ -1104,7 +1104,7 @@
     "message": "Atualização completada"
   },
   "passwordHistory": {
-    "message": "Histórico de Senha"
+    "message": "Histórico de senhas"
   },
   "clear": {
     "message": "Limpar",
@@ -1146,7 +1146,7 @@
     "message": "Recarregar"
   },
   "toggleDevTools": {
-    "message": "Alternar para Ferramentas de Desenvolvedor"
+    "message": "Alternar ferramentas de desenvolvedor"
   },
   "minimize": {
     "message": "Minimizar",
@@ -1231,7 +1231,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Detecção de Correspondência",
+    "message": "Deteção de correspondência",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1256,7 +1256,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Ocultar para a Bandeja"
+    "message": "Ocultar para a área de notificações"
   },
   "alwaysOnTop": {
     "message": "Sempre no Topo",
@@ -1271,14 +1271,14 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Senha Atualizada",
+    "message": "Senha atualizada",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Exportar Cofre"
+    "message": "Exportar cofre"
   },
   "fileFormat": {
-    "message": "Formato do Arquivo"
+    "message": "Formato do arquivo"
   },
   "hCaptchaUrl": {
     "message": "hCaptcha Url",
@@ -1355,7 +1355,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Senha Mestra Fraca"
+    "message": "Senha mestra fraca"
   },
   "weakMasterPasswordDesc": {
     "message": "A senha mestra que você selecionou está fraca. Você deve usar uma senha mestra forte (ou uma frase-passe) para proteger a sua conta Bitwarden adequadamente. Tem certeza que deseja usar esta senha mestra?"
@@ -1669,7 +1669,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Data de Validade"
+    "message": "Data de Expiração"
   },
   "expirationDateDesc": {
     "message": "Se definido, o acesso a este Send expirará na data e hora especificadas.",

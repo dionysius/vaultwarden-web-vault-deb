@@ -98,10 +98,10 @@
     "message": "Passphrase"
   },
   "editItem": {
-    "message": "Eintrag editieren"
+    "message": "Eintrag bearbeiten"
   },
   "emailAddress": {
-    "message": "E-Mail-Adresse"
+    "message": "E-Mail Adresse"
   },
   "verificationCodeTotp": {
     "message": "Verifizierungscode (TOTP)"
@@ -178,7 +178,7 @@
     "message": "Premium notwendig"
   },
   "premiumRequiredDesc": {
-    "message": "Für diese Funktion ist eine Premium-Mitgliedschaft notwendig."
+    "message": "Eine Premium-Mitgliedschaft ist für diese Funktion notwendig."
   },
   "errorOccurred": {
     "message": "Ein Fehler ist aufgetreten."
@@ -420,16 +420,16 @@
   },
   "capitalize": {
     "message": "Großschreiben",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Zahl hinzufügen"
+    "message": "Ziffer hinzufügen"
   },
   "close": {
     "message": "Schließen"
   },
   "minNumbers": {
-    "message": "Mindestanzahl Zahlen"
+    "message": "Mindestanzahl Ziffern"
   },
   "minSpecial": {
     "message": "Mindestanzahl Sonderzeichen",
@@ -461,7 +461,7 @@
     "message": "Bist du sicher, dass du diesen Anhang löschen möchtest?"
   },
   "attachmentSaved": {
-    "message": "Die Datei wurde gespeichert."
+    "message": "Der Anhang wurde gespeichert."
   },
   "file": {
     "message": "Datei"
@@ -512,7 +512,7 @@
     "message": "Master-Passwort wiederholen"
   },
   "masterPassHint": {
-    "message": "Master-Passwort-Hinweis (optional)"
+    "message": "Hinweis zum Master-Passwort (optional)"
   },
   "settings": {
     "message": "Einstellungen"
@@ -620,7 +620,7 @@
     "message": "Stecke deinen Sicherheitsschlüssel in einen USB-Anschluss deines Computers. Falls er einen Knopf hat, drücke diesen."
   },
   "recoveryCodeDesc": {
-    "message": "Zugang zu allen Zwei-Faktor-Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor-Anbieter in deinem Konto zu deaktivieren."
+    "message": "Zugang zu allen Zwei-Faktor Anbietern verloren? Benutzen Sie Ihren Wiederherstellungscode, um alle Zwei-Faktor Anbieter in Ihrem Konto zu deaktivieren."
   },
   "recoveryCodeTitle": {
     "message": "Wiederherstellungscode"
@@ -695,7 +695,7 @@
     "message": "Identitätsserver-URL"
   },
   "notificationsUrl": {
-    "message": "URL des Benachrichtigungsservers"
+    "message": "Benachrichtigungsserver-URL"
   },
   "iconsUrl": {
     "message": "Icons-Server-URL"
@@ -793,7 +793,7 @@
     "message": "Web-Tresor öffnen"
   },
   "getMobileApp": {
-    "message": "Hole dir die mobile App"
+    "message": "Mobile App laden"
   },
   "getBrowserExtension": {
     "message": "Browser-Erweiterung installieren"
@@ -961,7 +961,7 @@
     "message": "Tray deaktivieren bestätigen"
   },
   "confirmTrayDesc": {
-    "message": "Das Deaktivieren dieser Einstellung wird auch alle anderen Taskleisten-Einstellungen deaktivieren."
+    "message": "Deaktivieren dieser Einstellung wird auch alle anderen Tray-bezogenen Einstellungen deaktivieren."
   },
   "language": {
     "message": "Sprache"
@@ -1428,7 +1428,7 @@
     "message": "Du musst mindestens eine Sammlung auswählen."
   },
   "premiumUpdated": {
-    "message": "Du hast ein Premium-Abo aktiviert."
+    "message": "Du hast ein Upgrade auf Premium durchgeführt."
   },
   "restore": {
     "message": "Wiederherstellen"
@@ -1503,13 +1503,13 @@
     "message": "Nach dem Ausloggen verlierest du jeglichen Zugriff auf deinen Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchtest?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Bestätigung der Timeout-Aktion"
+    "message": "Timeout-Aktion bestätigen"
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise Single Sign-On"
   },
   "setMasterPassword": {
-    "message": "Masterpasswort festlegen"
+    "message": "Master-Passwort festlegen"
   },
   "ssoCompleteRegistration": {
     "message": "Bitte lege ein Masterpasswort für den Schutz deines Tresors fest, um die Anmeldung über SSO abzuschließen."
@@ -1703,7 +1703,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Send-Link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1719,7 +1719,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Gelöschtes Send",
+    "message": "Send gelöscht",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1946,7 +1946,7 @@
     "message": "Passworttyp"
   },
   "regenerateUsername": {
-    "message": "Benutzernamen neu generieren"
+    "message": "Benutzername neu generieren"
   },
   "generateUsername": {
     "message": "Benutzernamen generieren"
@@ -1983,7 +1983,7 @@
     "message": "Alle Tresore"
   },
   "searchOrganization": {
-    "message": "Organisation durchsuchen"
+    "message": "Organisationen durchsuchen"
   },
   "searchMyVault": {
     "message": "Meinen Tresor durchsuchen"

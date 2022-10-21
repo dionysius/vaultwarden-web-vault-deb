@@ -346,10 +346,10 @@
     "message": "Et navn er påkrevd."
   },
   "addedItem": {
-    "message": "La til gjenstanden"
+    "message": "La til objektet"
   },
   "editedItem": {
-    "message": "Redigerte gjenstanden"
+    "message": "Redigerte objektet"
   },
   "deleteItem": {
     "message": "Slett objektet"
@@ -420,7 +420,7 @@
   },
   "capitalize": {
     "message": "Stor forbokstav",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Inkluder nummer"

@@ -148,7 +148,7 @@
     "message": "Data wygaśnięcia"
   },
   "securityCode": {
-    "message": "Kod zabezpieczający"
+    "message": "Kod CVV/CVC"
   },
   "identityName": {
     "message": "Nazwa profilu"
@@ -416,11 +416,11 @@
     "message": "Liczba słów"
   },
   "wordSeparator": {
-    "message": "Separator słów"
+    "message": "Separator wyrazów"
   },
   "capitalize": {
     "message": "Wielkie litery",
-    "description": "Make the first letter of a work uppercase."
+    "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
     "message": "Uwzględnij cyfry"
@@ -686,7 +686,7 @@
     "message": "Adres URL serwera"
   },
   "apiUrl": {
-    "message": "Adres URL serwera interfejsu API"
+    "message": "Adres URL serwera API"
   },
   "webVaultUrl": {
     "message": "Adres URL serwera sejfu internetowego"
@@ -773,7 +773,7 @@
     "message": "Obserwuj nas"
   },
   "syncVault": {
-    "message": "Synchronizuj sejf"
+    "message": "Rozpocznij synchronizację sejfu"
   },
   "changeMasterPass": {
     "message": "Zmień hasło główne"
@@ -1044,10 +1044,10 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Konto Premium"
+    "message": "Członkostwo premium"
   },
   "premiumManage": {
-    "message": "Zarządzaj kontem Premium"
+    "message": "Zarządzaj członkostwem"
   },
   "premiumManageAlert": {
     "message": "Kontem Premium możesz zarządzać na stronie sejfu bitwarden.com. Czy chcesz otworzyć tę stronę?"
@@ -1798,7 +1798,7 @@
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia wysyłek."
   },
   "emailVerificationRequired": {
-    "message": "Weryfikacja adresu e-mail jest wymagana"
+    "message": "Wymagana weryfikacja adresu e-mail"
   },
   "emailVerificationRequiredDesc": {
     "message": "Musisz zweryfikować adres e-mail, aby używać tej funkcji."
