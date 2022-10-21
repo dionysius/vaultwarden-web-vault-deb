@@ -40,6 +40,7 @@
   7. Remove "some useful globals" on window
   8. Add ability to autofill span[data-bwautofill] elements
   9. Add new handler, for new command that responds with page details in response callback
+  10. Handle sandbox iframe and sandbox rule in CSP
   */
 
   function collect(document, undefined) {
@@ -641,6 +642,12 @@
                   0 == confirmResult)) ? true : false;
       }
 
+      // Detect if within an iframe, and the iframe is sandboxed
+      function isSandboxed() {
+          // self.origin is 'null' if inside a frame with sandboxed csp or iframe tag
+          return self.origin == null || self.origin === 'null';
+      }
+
       function doFill(fillScript) {
           var fillScriptOps,
               theOpIds = [],
@@ -653,7 +660,7 @@
               fillScriptProperties.delay_between_operations &&
               (operationDelayMs = fillScriptProperties.delay_between_operations);
 
-          if (urlNotSecure(fillScript.savedURL)) {
+          if (isSandboxed() || urlNotSecure(fillScript.savedURL)) {
               return;
           }
 
