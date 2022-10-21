@@ -349,7 +349,7 @@
     "message": "Kohde lisättiin"
   },
   "editedItem": {
-    "message": "Kohdetta muokattu"
+    "message": "Kohdetta muokattiin"
   },
   "deleteItem": {
     "message": "Poista kohde"
@@ -364,7 +364,7 @@
     "message": "Haluatko varmasti siirtää roskakoriin?"
   },
   "deletedItem": {
-    "message": "Kohde siirretty roskakoriin"
+    "message": "Kohde siirrettiin roskakoriin"
   },
   "overwritePasswordConfirmation": {
     "message": "Haluatko varmasti korvata nykyisen salasanan?"
@@ -455,13 +455,13 @@
     "message": "Lisää uusi tiedostoliite"
   },
   "deletedAttachment": {
-    "message": "Tiedostoliite poistettu"
+    "message": "Tiedostoliite poistettiin"
   },
   "deleteAttachmentConfirmation": {
     "message": "Haluatko varmasti poistaa liitteen?"
   },
   "attachmentSaved": {
-    "message": "Tiedostoliite tallennettu."
+    "message": "Tiedostoliite tallennettiin"
   },
   "file": {
     "message": "Tiedosto"
@@ -476,7 +476,7 @@
     "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
   },
   "editedFolder": {
-    "message": "Kansiota muokattu"
+    "message": "Kansiota muokattiin"
   },
   "addedFolder": {
     "message": "Kansio lisätty"
@@ -485,10 +485,10 @@
     "message": "Haluatko varmasti poistaa kansion?"
   },
   "deletedFolder": {
-    "message": "Kansio poistettu"
+    "message": "Kansio poistettiin"
   },
   "loginOrCreateNewAccount": {
-    "message": "Kirjaudu sisään tai luo uusi tili päästäksesi salattuun holviisi."
+    "message": "Kirjaudu tai luo uusi tili käyttääksesi salattua holviasi."
   },
   "createAccount": {
     "message": "Luo tili"
@@ -572,7 +572,7 @@
     "message": "Todennuskoodi"
   },
   "confirmIdentity": {
-    "message": "Vahvista henkilöllisyytesi jatkaaksesi."
+    "message": "Jatka vahvistamalla henkilöllisyytesi."
   },
   "verificationCodeRequired": {
     "message": "Todennuskoodi vaaditaan."
@@ -701,7 +701,7 @@
     "message": "Kuvakepalvelimen URL"
   },
   "environmentSaved": {
-    "message": "Palvelinten URL-osoitteet tallennettiin."
+    "message": "Palvelinympäristön URL-osoitteet tallennettiin."
   },
   "ok": {
     "message": "Ok"
@@ -805,7 +805,7 @@
     "message": "Synkronointi epäonnistui"
   },
   "yourVaultIsLocked": {
-    "message": "Holvisi on lukittu. Vahvista henkilöllisyytesi jatkaaksesi."
+    "message": "Holvisi on lukittu. Jatka vahvistamalla henkilöllisyytesi."
   },
   "unlock": {
     "message": "Avaa"
@@ -1101,7 +1101,7 @@
     }
   },
   "refreshComplete": {
-    "message": "Päivitys on valmis"
+    "message": "Päivitys valmistui"
   },
   "passwordHistory": {
     "message": "Salasanahistoria"
@@ -1441,7 +1441,7 @@
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Käyttöehdot"
+    "message": "Palveluehdot"
   },
   "privacyPolicy": {
     "message": "Tietosuojakäytäntö"
@@ -1485,7 +1485,7 @@
     "message": "Haluatko varmasti poistaa kohteen pysyvästi?"
   },
   "permanentlyDeletedItem": {
-    "message": "Kohde poistettu pysyvästi"
+    "message": "Kohde poistettiin pysyvästi"
   },
   "restoreItem": {
     "message": "Palauta kohde"
@@ -1494,7 +1494,7 @@
     "message": "Haluatko varmasti palauttaa kohteen?"
   },
   "restoredItem": {
-    "message": "Kohde palautettu"
+    "message": "Kohde palautettiin"
   },
   "permanentlyDelete": {
     "message": "Poista pysyvästi"
@@ -1566,7 +1566,7 @@
     "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
   },
   "acceptPoliciesRequired": {
-    "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
+    "message": "Palveluehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "enableBrowserIntegration": {
     "message": "Salli selainintegraatio"
@@ -1715,11 +1715,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Sendiä muokattu",
+    "message": "Sendiä muokattiin",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Send poistettu",
+    "message": "Send poistettiin",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1766,7 +1766,7 @@
     "message": "Kopioi Sendin linkki leikepöydälle tallennettaessa."
   },
   "sendDisabled": {
-    "message": "Send on poistettu käytöstä",
+    "message": "Send on poistettiin käytöstä",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1780,7 +1780,7 @@
     "message": "Poistettu käytöstä"
   },
   "maxAccessCountReached": {
-    "message": "Käyttökertojen enimmäismäärä saavutettu"
+    "message": "Käyttökertojen enimmäismäärä on saavutettu"
   },
   "expired": {
     "message": "Erääntynyt"
@@ -1810,7 +1810,7 @@
     "message": "Pääsalasanan vahvistus"
   },
   "passwordConfirmationDesc": {
-    "message": "Toiminto on suojattu. Jatkaaksesi, syötä pääsalasanasi uudelleen vahvistaaksesi henkilöllisyytesi."
+    "message": "Toiminto on suojattu. Jatka vahvistamalla henkilöllisyytesi syöttämällä pääsalasanasi uudelleen."
   },
   "updatedMasterPassword": {
     "message": "Pääsalasana on päivitetty"
@@ -1828,7 +1828,7 @@
     "message": "Minuuttia"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Organisaatiosi käytännöt vaikuttavat holvisi aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) ja $MINUTES$ minuutti(a)",
+    "message": "Organisaatiokäytännöt vaikuttavat holvin aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) ja $MINUTES$ minuutti(a)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1862,7 +1862,7 @@
     "message": "Poista pääsalasana"
   },
   "removedMasterPassword": {
-    "message": "Pääsalasana on poistettu."
+    "message": "Pääsalasana poistettiin"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ käyttää kertakirjautumista (SSO) itse ylläpidetyllä avainpalvelimella. Organisaation jäsenet eivät enää tarvitse pääsalasanaa kirjautumiseen.",

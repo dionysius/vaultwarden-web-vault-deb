@@ -671,10 +671,10 @@
     "message": "Настройки двухфакторной аутентификации"
   },
   "selfHostedEnvironment": {
-    "message": "Среда собственного хостинга"
+    "message": "Окружение собственного хостинга"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Укажите URL-адрес Bitwarden на вашем сервере."
+    "message": "Укажите URL Bitwarden на вашем сервере."
   },
   "customEnvironment": {
     "message": "Пользовательское окружение"
@@ -683,25 +683,25 @@
     "message": "Для опытных пользователей. Можно указать URL отдельно для каждой службы."
   },
   "baseUrl": {
-    "message": "URL-адрес сервера"
+    "message": "URL сервера"
   },
   "apiUrl": {
-    "message": "API URL-адреса сервера"
+    "message": "URL API сервера"
   },
   "webVaultUrl": {
-    "message": "URL-адрес сервера веб-хранилища"
+    "message": "URL сервера веб-хранилища"
   },
   "identityUrl": {
-    "message": "URL-адрес сервера идентификации"
+    "message": "URL сервера идентификации"
   },
   "notificationsUrl": {
-    "message": "URL-адрес сервера уведомлений"
+    "message": "URL сервера уведомлений"
   },
   "iconsUrl": {
-    "message": "URL-адрес сервера значков"
+    "message": "URL сервера значков"
   },
   "environmentSaved": {
-    "message": "URL-адреса среды сохранены."
+    "message": "URL окружения сохранены."
   },
   "ok": {
     "message": "Ok"
@@ -799,7 +799,7 @@
     "message": "Расширение для браузера"
   },
   "syncingComplete": {
-    "message": "Синхронизация завершена"
+    "message": "Синхронизация выполнена"
   },
   "syncingFailed": {
     "message": "Ошибка синхронизации"
@@ -1146,7 +1146,7 @@
     "message": "Перезагрузка"
   },
   "toggleDevTools": {
-    "message": "Переключить инструменты разработчика"
+    "message": "Вкл/выкл инструменты разработчика"
   },
   "minimize": {
     "message": "Свернуть",
@@ -1962,10 +1962,10 @@
     "message": "Используйте возможности субадресации вашей электронной почты."
   },
   "catchallEmail": {
-    "message": "Catch-all-адрес электронной почты"
+    "message": "Общий email домена"
   },
   "catchallEmailDesc": {
-    "message": "Использовать настроенную в вашем домене почту catch-all."
+    "message": "Использовать общую почту домена."
   },
   "random": {
     "message": "Случайно"

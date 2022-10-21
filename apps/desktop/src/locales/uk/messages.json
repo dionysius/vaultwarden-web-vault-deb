@@ -98,7 +98,7 @@
     "message": "Парольна фраза"
   },
   "editItem": {
-    "message": "Змінити запис"
+    "message": "Редагування"
   },
   "emailAddress": {
     "message": "Адреса е-пошти"
@@ -383,7 +383,7 @@
     "message": "Додати теку"
   },
   "editFolder": {
-    "message": "Редагувати теку"
+    "message": "Редагування"
   },
   "regeneratePassword": {
     "message": "Генерувати новий"
@@ -476,7 +476,7 @@
     "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
   },
   "editedFolder": {
-    "message": "Тека відредагована"
+    "message": "Теку змінено"
   },
   "addedFolder": {
     "message": "Теку додано"
@@ -686,7 +686,7 @@
     "message": "URL-адреса сервера"
   },
   "apiUrl": {
-    "message": "URL-адреса API"
+    "message": "URL-адреса сервера API"
   },
   "webVaultUrl": {
     "message": "URL-адреса сервера веб сховища"
@@ -695,7 +695,7 @@
     "message": "URL-адреса сервера ідентифікації"
   },
   "notificationsUrl": {
-    "message": "URL сервера сповіщень"
+    "message": "URL-адреса сервера сповіщень"
   },
   "iconsUrl": {
     "message": "URL-адреса сервера піктограм"
@@ -782,11 +782,11 @@
     "message": "Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "fingerprintPhrase": {
-    "message": "Фраза відбитку",
+    "message": "Фраза відбитка",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Фраза відбитку вашого облікового запису",
+    "message": "Фраза відбитка вашого облікового запису",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -802,7 +802,7 @@
     "message": "Синхронізацію завершено"
   },
   "syncingFailed": {
-    "message": "Не вдалося синхронізувати"
+    "message": "Збій синхронізації"
   },
   "yourVaultIsLocked": {
     "message": "Сховище заблоковано. Пройдіть ідентифікацію для продовження."
@@ -1593,7 +1593,7 @@
     "message": "На жаль, зараз інтеграція з браузером не підтримується у версії для Linux."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Вимагати підтвердження для інтеграції з браузером"
+    "message": "Вимагати перевірку для інтеграції з браузером"
   },
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Додайте ще один рівень безпеки, вимагаючи підтвердження фрази відбитка під час встановлення зв'язку між програмою на комп'ютері та браузером. Вимагатиметься дія користувача і перевірка щоразу під час встановлення зв'язку."
@@ -1605,7 +1605,7 @@
     "message": "Перевірка з'єднання з браузером"
   },
   "verifyBrowserDesc": {
-    "message": "Переконайтеся, що показаний відбиток ідентичний відбитку в розширенні браузера."
+    "message": "Переконайтеся, що ця фраза відбитка ідентична показаній у розширенні браузера."
   },
   "verifyNativeMessagingConnectionTitle": {
     "message": "$APPID$ хоче з'єднатися з Bitwarden",
@@ -1652,7 +1652,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Змінити відправлення",
+    "message": "Редагування",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {

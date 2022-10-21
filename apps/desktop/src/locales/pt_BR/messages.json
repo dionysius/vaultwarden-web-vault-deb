@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Criado",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1398,19 +1398,19 @@
     "message": "Bloquear com senha mestra ao reiniciar"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Excluir conta"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Prossiga abaixo para excluir a sua conta e todos os dados associados."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "A exclusão de sua conta é permanente. Não poderá ser desfeito."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Conta excluída"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "A sua conta foi fechada e todos os dados associados foram excluídos."
   },
   "preferences": {
     "message": "Preferências"
@@ -1575,10 +1575,10 @@
     "message": "A integração do navegador é usada para biometria no navegador."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Permitir integração ao navegador DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Use o seu cofre do Bitwarden ao navegar com DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Integração com o navegador não suportado"
@@ -1608,7 +1608,7 @@
     "message": "Por favor, certifique-se que a impressão digital mostrada é idêntica à impressão digital exibida na extensão do navegador."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ quer se conectar ao Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1617,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Gostaria de aprovar este pedido?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Se não iniciou esta solicitação, não a aprove."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometria não ativada"
@@ -2005,13 +2005,13 @@
     "message": "Chave de API"
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Assinatura Premium necessária"
   },
   "organizationIsDisabled": {
-    "message": "Organization is disabled."
+    "message": "Organização está desabilitada."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Itens em Organizações Desativadas não podem ser acessados. Entre em contato com o proprietário da sua Organização para obter ajuda."
   },
   "neverLockWarning": {
     "message": "Você tem certeza que deseja usar a opção \"Nunca\"? Definir suas opções de bloqueio para \"Nunca\" armazena a chave de criptografia do seu cofre no seu dispositivo. Se você usar esta opção, deve garantir que mantém seu dispositivo devidamente protegido."
@@ -2020,6 +2020,6 @@
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Cofre"
   }
 }

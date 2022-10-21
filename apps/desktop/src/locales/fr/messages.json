@@ -126,7 +126,7 @@
     "message": "Réduire lors de la copie dans le presse-papiers"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Réduire lors de la copie des données d'un élément dans le presse-papiers."
+    "message": "Réduire l'application lors de la copie des données d'un élément dans le presse-papiers."
   },
   "toggleVisibility": {
     "message": "Afficher/Masquer"
@@ -373,7 +373,7 @@
     "message": "Remplacer le nom d'utilisateur"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir remplacer le mot de passe actuel ?"
+    "message": "Êtes-vous sûr de vouloir remplacer le mot de passe actuel ?"
   },
   "noneFolder": {
     "message": "Aucun dossier",
@@ -539,7 +539,7 @@
     "message": "Le mot de passe maître doit être entré de nouveau."
   },
   "masterPasswordMinlength": {
-    "message": "Le mot de passe maître doit au moins contenir 8 caractères."
+    "message": "Le mot de passe maître doit comporter au moins 8 caractères."
   },
   "masterPassDoesntMatch": {
     "message": "La confirmation du mot de passe maître ne correspond pas."
@@ -790,7 +790,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Aller au coffre web"
+    "message": "Ouvrir le coffre web"
   },
   "getMobileApp": {
     "message": "Télécharger l'application mobile"
@@ -836,7 +836,7 @@
     "message": "Délai d'expiration du coffre"
   },
   "vaultTimeoutDesc": {
-    "message": "Choisissez quand votre coffre expirera et effectuera l'action sélectionnée."
+    "message": "Choisissez quand votre coffre réalisera l'action d'expiration."
   },
   "immediately": {
     "message": "Immédiatement"
@@ -898,13 +898,13 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Afficher les icônes du site web"
+    "message": "Afficher les icônes des sites web"
   },
   "faviconDesc": {
     "message": "Afficher une image reconnaissable à côté de chaque identifiant."
   },
   "enableMinToTray": {
-    "message": "Réduire dans la barre d'outils"
+    "message": "Réduire dans la zone de notification"
   },
   "enableMinToTrayDesc": {
     "message": "Lorsque la fenêtre est réduite, afficher une icône dans la zone de notification à la place."
@@ -916,7 +916,7 @@
     "message": "Lorsque la fenêtre est réduite, privilégier l'affichage d'une icône dans la barre de menu."
   },
   "enableCloseToTray": {
-    "message": "Réduire dans la zone de notifications"
+    "message": "Fermer dans la zone de notification"
   },
   "enableCloseToTrayDesc": {
     "message": "Lorsque la fenêtre est fermée, afficher une icône dans la zone de notification."
@@ -928,13 +928,13 @@
     "message": "Lorsque la fenêtre est fermée, privilégier l'affichage d'une icône dans la barre de menu."
   },
   "enableTray": {
-    "message": "Activer le raccourci dans la zone de notifications"
+    "message": "Activer le raccourci dans la zone de notification"
   },
   "enableTrayDesc": {
     "message": "Toujours afficher une icône dans la zone de notification."
   },
   "startToTray": {
-    "message": "Démarrer dans la zone de notifications"
+    "message": "Démarrer dans la zone de notification"
   },
   "startToTrayDesc": {
     "message": "Au premier démarrage de l'application, afficher uniquement une icône dans la zone de notification."
@@ -988,7 +988,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Vérifier les mises à jour"
+    "message": "Vérifier les mises à jour…"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -1213,7 +1213,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Nom du domaine",
+    "message": "Nom de domaine",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Créé",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1292,7 +1292,7 @@
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copiez et collez le lien envoyé à votre adresse e-mail ci-dessous"
+    "message": "Collez le lien envoyé à votre adresse e-mail ci-dessous"
   },
   "enterhCaptchaUrl": {
     "message": "Entrez l'URL pour charger le cookie d'accessibilité pour hCaptcha",
@@ -1312,7 +1312,7 @@
     "message": "Cookie d'accessibilité enregistré !"
   },
   "noAccessibilityCookieSaved": {
-    "message": "Aucun cookie d'accessibilité sauvegardé"
+    "message": "Aucun cookie d'accessibilité enregistré"
   },
   "warning": {
     "message": "AVERTISSEMENT",
@@ -1462,7 +1462,7 @@
     "message": "Action lors de l'expiration du délai du coffre"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Un coffre-fort verrouillé nécessite la saisie de votre mot de passe principal pour y accéder de nouveau."
+    "message": "Votre mot de passe maître ou une autre méthode de déverrouillage est nécessaire pour accéder de nouveau à votre coffre."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Un coffre déconnecté nécessite que vous vous ré-authentifiez pour y accéder de nouveau."
@@ -1819,7 +1819,7 @@
     "message": "Mettre à jour le mot de passe maître"
   },
   "updateMasterPasswordWarning": {
-    "message": "Votre mot de passe maître a récemment été modifié par un administrateur de votre organisation. Pour pouvoir accéder au coffre-fort, vous devez mettre à jour votre mot de passe maître maintenant. Poursuivre vous déconnectera de votre session actuelle, vous obligeant à vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
+    "message": "Votre mot de passe maître a récemment été modifié par un administrateur de votre organisation. Pour pouvoir accéder au coffre, vous devez mettre à jour votre mot de passe maître maintenant. Poursuivre vous déconnectera de votre session actuelle, vous obligeant à vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
   },
   "hours": {
     "message": "Heures"
@@ -1841,7 +1841,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Le délai d'expiration de votre coffre-fort dépasse les restrictions définies par votre organisation."
+    "message": "Le délai d'expiration de votre coffre dépasse les restrictions définies par votre organisation."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscription automatique"

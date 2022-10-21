@@ -370,10 +370,10 @@
     "message": "Opravdu chcete přepsat aktuální heslo?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Přepsat uživatelské jméno"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Opravdu chcete přepsat aktuální uživatelské jméno?"
   },
   "noneFolder": {
     "message": "Žádná složka",
@@ -752,7 +752,7 @@
     "message": "Načítání..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Uzamknout trezor"
   },
   "passwordGenerator": {
     "message": "Generátor hesla"
@@ -1306,7 +1306,7 @@
     "message": "Invalid Url"
   },
   "done": {
-    "message": "Done"
+    "message": "Hotovo"
   },
   "accessibilityCookieSaved": {
     "message": "Accessibility cookie saved!"
@@ -1886,7 +1886,7 @@
     "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Uzamknout všechny trezory"
   },
   "accountLimitReached": {
     "message": "No more than 5 accounts may be logged in at the same time."
@@ -1895,7 +1895,7 @@
     "message": "Nastavení"
   },
   "appPreferences": {
-    "message": "App Settings (All Accounts)"
+    "message": "Nastavení aplikace (všechny účty)"
   },
   "accountSwitcherLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."
@@ -1931,28 +1931,28 @@
     }
   },
   "locked": {
-    "message": "Locked"
+    "message": "Uzamčen"
   },
   "unlocked": {
-    "message": "Unlocked"
+    "message": "Odemčen"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Generátor"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Co chcete vygenerovat?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Typ hesla"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Znovu vygenerovat uživatelské jméno"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generovat uživatelské jméno"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Typ uživatelského jména"
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email",
@@ -1971,22 +1971,22 @@
     "message": "Random"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Náhodné slovo"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Název webu"
   },
   "service": {
-    "message": "Service"
+    "message": "Služba"
   },
   "allVaults": {
-    "message": "All Vaults"
+    "message": "Všechny trezory"
   },
   "searchOrganization": {
-    "message": "Search Organization"
+    "message": "Hledat v organizaci"
   },
   "searchMyVault": {
-    "message": "Search My Vault"
+    "message": "Hledat v mém trezoru"
   },
   "forwardedEmail": {
     "message": "Forwarded Email Alias"
@@ -2014,12 +2014,12 @@
     "message": "Items in disabled Organizations cannot be accessed. Contact your Organization owner for assistance."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Opravdu chcete použít možnost „Nikdy“? Nastavením možností uzamčení na „Nikdy“ bude šifrovací klíč k trezoru uložen přímo ve vašem zařízení. Pokud tuto možnost použijete, měli byste vaše zařízení řádně zabezpečit a chránit."
   },
   "cardBrandMir": {
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Trezor"
   }
 }

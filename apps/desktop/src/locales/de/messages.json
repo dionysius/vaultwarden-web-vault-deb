@@ -126,7 +126,7 @@
     "message": "Minimieren beim Kopieren in die Zwischenablage"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimieren, wenn Daten eines Eintrags in die Zwischenablage kopiert werden."
+    "message": "Anwendung minimieren, wenn Daten eines Eintrags in die Zwischenablage kopiert werden."
   },
   "toggleVisibility": {
     "message": "Sichtbarkeit umschalten"
@@ -1197,7 +1197,7 @@
     "message": "Überprüfe ob dein Kennwort kompromittiert ist."
   },
   "passwordExposed": {
-    "message": "Dieses Kennwort wurde $VALUE$ in öffentlichen Passwortdatenbanken gefunden. Du solltest es ändern.",
+    "message": "Dieses Passwort wurde $VALUE$ mal in öffentlichen Passwortdatenbanken gefunden. Du solltest es ändern.",
     "placeholders": {
       "value": {
         "content": "$1",
