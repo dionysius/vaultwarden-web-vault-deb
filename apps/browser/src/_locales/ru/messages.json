@@ -509,7 +509,7 @@
     "message": "Посмотрите небольшой обучающий материал, чтобы узнать, как получить максимальную отдачу от расширения браузера."
   },
   "syncingComplete": {
-    "message": "Синхронизация завершена"
+    "message": "Синхронизация выполнена"
   },
   "syncingFailed": {
     "message": "Ошибка синхронизации"
@@ -723,7 +723,7 @@
     "message": "Вы действительно хотите удалить это вложение?"
   },
   "deletedAttachment": {
-    "message": "Удаленное вложение"
+    "message": "Вложение удалено"
   },
   "newAttachment": {
     "message": "Добавить новое вложение"
@@ -753,19 +753,19 @@
     "message": "Премиум"
   },
   "premiumManage": {
-    "message": "Управление статусом"
+    "message": "Управление Премиум"
   },
   "premiumManageAlert": {
     "message": "Вы можете управлять Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumRefresh": {
-    "message": "Обновить статус"
+    "message": "Обновить Премиум"
   },
   "premiumNotCurrentMember": {
-    "message": "Сейчас вы не Премиум-участник."
+    "message": "Сейчас у вас отсутствует Премиум."
   },
   "premiumSignUpAndGet": {
-    "message": "Подпишитесь на премиум-статус и получите:"
+    "message": "Подпишитесь на Премиум и получите:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 ГБ зашифрованного хранилища для вложенных файлов."
@@ -783,16 +783,16 @@
     "message": "Приоритетная поддержка."
   },
   "ppremiumSignUpFuture": {
-    "message": "Все будущие функции премиум-статуса. Их будет больше!"
+    "message": "Все будущие функции Премиум. Их будет больше!"
   },
   "premiumPurchase": {
     "message": "Купить Премиум"
   },
   "premiumPurchaseAlert": {
-    "message": "Вы можете купить премиум-статус на bitwarden.com. Перейти на сайт сейчас?"
+    "message": "Вы можете купить Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumCurrentMember": {
-    "message": "У вас премиум-статус!"
+    "message": "У вас есть Премиум!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Благодарим вас за поддержку Bitwarden."
@@ -873,13 +873,13 @@
     "message": "Вход недоступен"
   },
   "noTwoStepProviders": {
-    "message": "У аккаунта включена двухэтапная аутентификация, но ни один из настроенных вариантов не поддерживается этим веб-браузером."
+    "message": "У этой учетной записи включена двухфакторная аутентификация, однако ни один из настроенных вариантов не поддерживается этим веб-браузером."
   },
   "noTwoStepProviders2": {
     "message": "Используйте поддерживаемый веб-браузер (например, Chrome) и/или добавьте дополнительные варианты аутентификации, которые поддерживаются в веб-браузерах (например, приложение-аутентификатор)."
   },
   "twoStepOptions": {
-    "message": "Настройки двухэтапной аутентификации"
+    "message": "Настройки двухфакторной аутентификации"
   },
   "recoveryCodeDesc": {
     "message": "Потеряли доступ ко всем вариантам двухфакторной аутентификации? Используйте код восстановления, чтобы отключить двухфакторную аутентификацию для вашей учетной записи."
@@ -912,7 +912,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Используйте любой ключ безопасности с поддержкой WebAuthn для доступа к своей учетной записи."
+    "message": "Используйте любой ключ безопасности с поддержкой WebAuthn для доступа к вашей учетной записи."
   },
   "emailTitle": {
     "message": "Email"
@@ -921,10 +921,10 @@
     "message": "Коды подтверждения будут отправлены вам по электронной почте."
   },
   "selfHostedEnvironment": {
-    "message": "Среда собственного хостинга"
+    "message": "Окружение собственного хостинга"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Укажите URL-адрес Bitwarden на вашем сервере."
+    "message": "Укажите URL Bitwarden на вашем сервере."
   },
   "customEnvironment": {
     "message": "Пользовательское окружение"
@@ -933,25 +933,25 @@
     "message": "Для опытных пользователей. Можно указать URL отдельно для каждой службы."
   },
   "baseUrl": {
-    "message": "URL-адрес сервера"
+    "message": "URL сервера"
   },
   "apiUrl": {
-    "message": "API URL-адреса сервера"
+    "message": "URL API сервера"
   },
   "webVaultUrl": {
-    "message": "URL-адрес сервера веб-хранилища"
+    "message": "URL сервера веб-хранилища"
   },
   "identityUrl": {
-    "message": "URL-адрес сервера идентификации"
+    "message": "URL сервера идентификации"
   },
   "notificationsUrl": {
-    "message": "URL-адрес сервера уведомлений"
+    "message": "URL сервера уведомлений"
   },
   "iconsUrl": {
-    "message": "URL-адрес сервера значков"
+    "message": "URL сервера значков"
   },
   "environmentSaved": {
-    "message": "URL-адреса среды сохранены."
+    "message": "URL окружения сохранены"
   },
   "enableAutoFillOnPageLoad": {
     "message": "Автозаполнение при загрузке страницы"
@@ -1434,10 +1434,10 @@
     "message": "Заполнить и сохранить"
   },
   "autoFillSuccessAndSavedUri": {
-    "message": "Автозаполненный элемент и сохраненный URI"
+    "message": "URI элемента заполнен и сохранен"
   },
   "autoFillSuccess": {
-    "message": "Автозаполненный элемент"
+    "message": "Элемент заполнен "
   },
   "setMasterPassword": {
     "message": "Задать мастер-пароль"
@@ -1509,10 +1509,10 @@
     "message": "Пожалуйста, убедитесь, что приложение для компьютера отображает этот отпечаток: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Интеграция с браузером не включена"
+    "message": "Интеграция с браузером не настроена"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Пожалуйста, включите интеграцию с браузером в настройках приложения Bitwarden  для компьютера."
+    "message": "Пожалуйста, настройте интеграцию с браузером в приложени Bitwarden для компьютера."
   },
   "startDesktopTitle": {
     "message": "Запустить приложение Bitwarden для компьютера"
@@ -1521,7 +1521,7 @@
     "message": "Перед использованием разблокировки с помощью биометрии необходимо запустить приложение Bitwarden для компьютера."
   },
   "errorEnableBiometricTitle": {
-    "message": "Не удается включить биометрию"
+    "message": "Не удается настроить биометрию"
   },
   "errorEnableBiometricDesc": {
     "message": "Действие было отменено приложением для компьютера"
@@ -1539,7 +1539,7 @@
     "message": "Несоответствие аккаунта"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Биометрия не включена"
+    "message": "Биометрия не настроена"
   },
   "biometricsNotEnabledDesc": {
     "message": "Для активации биометрии в браузере сначала необходимо включить биометрию в приложении для компьютера."
@@ -1632,7 +1632,7 @@
     "message": "Пароль удален"
   },
   "deletedSend": {
-    "message": "Удаленная Send",
+    "message": "Send удалена",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1669,14 +1669,14 @@
     "message": "Файл, который вы хотите отправить."
   },
   "deletionDate": {
-    "message": "Срок удаления"
+    "message": "Дата удаления"
   },
   "deletionDateDesc": {
     "message": "Эта Send будет окончательно удалена в указанные дату и время.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Срок истечения"
+    "message": "Дата истечения"
   },
   "expirationDateDesc": {
     "message": "Если задано, доступ к этой Send истечет в указанные дату и время.",
@@ -1713,7 +1713,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "Отключить эту Send, чтобы никто не мог получить к ней доступ.",
+    "message": "Деактивировать эту Send, чтобы никто не мог получить к ней доступ.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
@@ -1728,17 +1728,17 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Текущих обращений"
+    "message": "Счетчик текущих обращений"
   },
   "createSend": {
-    "message": "Создание новой Send",
+    "message": "Новая Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Новый пароль"
   },
   "sendDisabled": {
-    "message": "Send отключена",
+    "message": "Send удалена",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1746,11 +1746,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Созданная Send",
+    "message": "Send создана",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Измененная Send",
+    "message": "Send сохранена",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1823,7 +1823,7 @@
     "message": "Мастер-пароль недавно был изменен администратором вашей организации. Чтобы получить доступ к хранилищу, вы должны обновить его сейчас. В результате текущая сессия будет завершена, потребуется повторный вход. Активные сессии на других устройствах могут оставаться активными в течение одного часа."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Автоматическая регистрация"
+    "message": "Автоматическое развертывание"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "В этой организации действует корпоративная политика, которая автоматически зарегистрирует вас на сброс пароля. Регистрация позволит администраторам организации изменить ваш мастер-пароль."
@@ -1857,10 +1857,10 @@
     "message": "Тайм-аут вашего хранилища превышает ограничения, установленные вашей организацией."
   },
   "vaultExportDisabled": {
-    "message": "Экспорт хранилища отключен"
+    "message": "Экспорт хранилища недоступен"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Экспорт вашего личного хранилища запрещен одной или несколькими политиками организации."
+    "message": "Одна или несколько политик организации запрещают вам экспортировать личное хранилище."
   },
   "copyCustomFieldNameInvalidElement": {
     "message": "Невозможно определить элемент формы. Попробуйте вместо этого проверить HTML."
@@ -1884,7 +1884,7 @@
     "message": "Удалить мастер-пароль"
   },
   "removedMasterPassword": {
-    "message": "Мастер-пароль удален."
+    "message": "Мастер-пароль удален"
   },
   "leaveOrganizationConfirmation": {
     "message": "Вы действительно хотите покинуть эту организацию?"
@@ -1930,10 +1930,10 @@
     "message": "Используйте возможности субадресации вашей электронной почты."
   },
   "catchallEmail": {
-    "message": "Catch-all-адрес электронной почты"
+    "message": "Общий email домена"
   },
   "catchallEmailDesc": {
-    "message": "Использовать настроенную в вашем домене почту catch-all."
+    "message": "Использовать общую почту домена."
   },
   "random": {
     "message": "Случайно"

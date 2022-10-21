@@ -927,7 +927,7 @@
     "message": "A helyileg működtetett Bitwarden telepítés alap webcímének megadása."
   },
   "customEnvironment": {
-    "message": "Egyéni környezet"
+    "message": "Egyedi környezet"
   },
   "customEnvironmentFooter": {
     "message": "Haladó felhasználóknak. Minden egyes szolgáltatás alap URL-jét külön megadhatod."
@@ -954,7 +954,7 @@
     "message": "A környezeti webcímek mentésre kerültek."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Automatikus kitöltés engedélyezése oldal betöltéskor"
+    "message": "Automatikus kitöltés oldalbetöltésnél"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Ha egy bejelentkezési űrlap észlelésre került, az adatok automatikus kitöltése az oldal betöltésekor."
@@ -1278,7 +1278,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Opciók megnyitása"
+    "message": "Opciók váltása"
   },
   "toggleCurrentUris": {
     "message": "Aktuális URI elemek váltása",
@@ -1384,7 +1384,7 @@
     "message": "Legalább egy gyűjteményt ki kell választani."
   },
   "cloneItem": {
-    "message": "Tétel klónozása"
+    "message": "Elem klónozása"
   },
   "clone": {
     "message": "Klónozás"
@@ -1509,19 +1509,19 @@
     "message": "Ellenőrizzük, hogy az asztali alkalmazás megjeleníti-e ezt az ujjlenyomatot: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "A böngésző integráció nem engedélyezett."
+    "message": "A böngésző integráció nincs beüzemelve."
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "A böngésző integráció nincs engedélyezve a Bitwarden asztali alkalmazásban. Engedélyezzük az asztali alkalmazás beállításai között."
+    "message": "A böngésző integráció nincs beüzemelve a Bitwarden asztali alkalmazásban. Engedélyezzük az asztali alkalmazás beállításai között."
   },
   "startDesktopTitle": {
     "message": "A Bitwarden asztali alkalmazás indítása"
   },
   "startDesktopDesc": {
-    "message": "A funkció használatához el kell indítani a Bitwarden asztali alkalmazást."
+    "message": "A Bitwarden asztali alkalmazást el kell indítani a biometrikus adatokkal feloldás használatához."
   },
   "errorEnableBiometricTitle": {
-    "message": "Nem lehet engedélyezni a biometrikus adatokat."
+    "message": "Nem lehet beüzemelni a biometrikus adatokat."
   },
   "errorEnableBiometricDesc": {
     "message": "A műveletet az asztali alkalmazás törölte."
@@ -1539,10 +1539,10 @@
     "message": "A fiók nem egyezik."
   },
   "biometricsNotEnabledTitle": {
-    "message": "A biometrikus adatok nincsenek engedélyezve."
+    "message": "A biometrikus adatok nincsenek beüzemelve."
   },
   "biometricsNotEnabledDesc": {
-    "message": "A böngésző biometrikus adataihoz először az asztali biometrikus adatokat kell engedélyezni a beállításokban."
+    "message": "A böngésző biometrikus adataihoz először az asztali biometrikus adatokat kell beüzemelni a beállításokban."
   },
   "biometricsNotSupportedTitle": {
     "message": "A biometrikus adatok nem támogatottak."
@@ -1731,14 +1731,14 @@
     "message": "Aktuális elérési szám"
   },
   "createSend": {
-    "message": "Új Send létrehozása",
+    "message": "Új Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Új jelszó"
   },
   "sendDisabled": {
-    "message": "A  Send kikapcsolásra került",
+    "message": "A  Send eltávolításra került.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1750,7 +1750,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "A Send szerkesztésre került",
+    "message": "A Send mentésre került.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {

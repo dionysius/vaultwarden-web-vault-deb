@@ -537,13 +537,13 @@
     "message": "Element afegit"
   },
   "editedItem": {
-    "message": "Element editat"
+    "message": "Element guardat"
   },
   "deleteItemConfirmation": {
     "message": "Esteu segur que voleu suprimir aquest element?"
   },
   "deletedItem": {
-    "message": "Element suprimit"
+    "message": "Element enviat a la paperera"
   },
   "overwritePassword": {
     "message": "Sobreescriu la contrasenya"
@@ -732,13 +732,13 @@
     "message": "No hi ha cap adjunt."
   },
   "attachmentSaved": {
-    "message": "S'ha guardat el fitxer adjunt."
+    "message": "S'ha guardat el fitxer adjunt"
   },
   "file": {
     "message": "Fitxer"
   },
   "selectFile": {
-    "message": "Seleccioneu un fitxer."
+    "message": "Seleccioneu un fitxer"
   },
   "maxFileSize": {
     "message": "La mida màxima del fitxer és de 500 MB."
@@ -951,7 +951,7 @@
     "message": "URL del servidor d'icones"
   },
   "environmentSaved": {
-    "message": "S'han guardat les URL de l'entorn."
+    "message": "S'han guardat les URL de l'entorn"
   },
   "enableAutoFillOnPageLoad": {
     "message": "Habilita l'emplenament automàtic en carregar la pàgina"
@@ -1738,7 +1738,7 @@
     "message": "Contrasenya nova"
   },
   "sendDisabled": {
-    "message": "Send desactivat",
+    "message": "Send suprimit",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1750,7 +1750,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send editat",
+    "message": "Send guardat",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1857,7 +1857,7 @@
     "message": "El temps d'espera de la caixa forta supera les restriccions establertes per la vostra organització."
   },
   "vaultExportDisabled": {
-    "message": "L'exportació de la caixa forta està desactivada"
+    "message": "L'exportació de la caixa forta no està disponible"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
@@ -1976,7 +1976,7 @@
     "message": "Cal una subscripció premium"
   },
   "organizationIsDisabled": {
-    "message": "L'organització està inhabilitada."
+    "message": "L'organització està suspesa."
   },
   "disabledOrganizationFilterError": {
     "message": "No es pot accedir als elements de les organitzacions inhabilitades. Poseu-vos en contacte amb el propietari de la vostra organització per obtenir ajuda."

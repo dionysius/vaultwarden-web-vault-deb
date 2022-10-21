@@ -153,7 +153,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Фраза відбитку вашого облікового запису",
+    "message": "Фраза відбитка вашого облікового запису",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -181,7 +181,7 @@
     "message": "Назва"
   },
   "editFolder": {
-    "message": "Редагувати теку"
+    "message": "Редагування"
   },
   "deleteFolder": {
     "message": "Видалити теку"
@@ -303,7 +303,7 @@
     "message": "Нотатка"
   },
   "editItem": {
-    "message": "Редагування запису"
+    "message": "Редагування"
   },
   "folder": {
     "message": "Тека"
@@ -321,7 +321,7 @@
     "message": "Вебсайт"
   },
   "toggleVisibility": {
-    "message": "Змінити видимість"
+    "message": "Перемкнути видимість"
   },
   "manage": {
     "message": "Керування"
@@ -512,7 +512,7 @@
     "message": "Синхронізацію завершено"
   },
   "syncingFailed": {
-    "message": "Не вдалося синхронізувати"
+    "message": "Збій синхронізації"
   },
   "passwordCopied": {
     "message": "Пароль скопійовано"
@@ -537,7 +537,7 @@
     "message": "Запис додано"
   },
   "editedItem": {
-    "message": "Запис змінено"
+    "message": "Запис збережено"
   },
   "deleteItemConfirmation": {
     "message": "Ви дійсно хочете перенести до смітника?"
@@ -873,7 +873,7 @@
     "message": "Вхід недоступний"
   },
   "noTwoStepProviders": {
-    "message": "Для цього облікового запису увімкнено двоетапну перевірку. Однак, жоден з налаштованих провайдерів двоетапної перевірки не підтримується цим браузером."
+    "message": "Для цього облікового запису увімкнено двоетапну перевірку. Однак, жоден із налаштованих провайдерів не підтримується цим браузером."
   },
   "noTwoStepProviders2": {
     "message": "Будь ласка, скористайтеся підтримуваним браузером (наприклад, Chrome) та/або іншими провайдерами, що краще підтримуються браузерами (наприклад, програма авторизації)."
@@ -936,7 +936,7 @@
     "message": "URL-адреса сервера"
   },
   "apiUrl": {
-    "message": "URL-адреса API"
+    "message": "URL-адреса сервера API"
   },
   "webVaultUrl": {
     "message": "URL-адреса сервера веб сховища"
@@ -945,13 +945,13 @@
     "message": "URL-адреса сервера ідентифікації"
   },
   "notificationsUrl": {
-    "message": "URL сервера сповіщень"
+    "message": "URL-адреса сервера сповіщень"
   },
   "iconsUrl": {
     "message": "URL-адреса сервера піктограм"
   },
   "environmentSaved": {
-    "message": "URL-адреси середовища збережено."
+    "message": "URL-адреси середовища збережено"
   },
   "enableAutoFillOnPageLoad": {
     "message": "Автозаповнення на сторінці"
@@ -1375,7 +1375,7 @@
     "message": "Очікується підтвердження з комп'ютера"
   },
   "awaitDesktopDesc": {
-    "message": "Для увімкнення біометрії в браузері, будь ласка, підтвердьте це у програмі Bitwarden на комп'ютері."
+    "message": "Щоб увімкнути біометрію в браузері, спершу виконайте це у програмі Bitwarden на комп'ютері."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску браузера"
@@ -1506,13 +1506,13 @@
     "message": "Перевірка синхронізації на комп'ютері"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Перевірте, чи програма на комп'ютері показує відбиток: "
+    "message": "Перевірте, чи програма на комп'ютері показує цю фразу відбитка: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Інтеграція з браузером не увімкнена"
+    "message": "Інтеграцію з браузером не налаштовано"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Інтеграція з браузером не увімкнена в програмі Bitwarden на комп'ютері. Увімкніть її в налаштуваннях програми на комп'ютері."
+    "message": "Інтеграцію з браузером не налаштовано в Bitwarden на комп'ютері. Увімкніть її в налаштуваннях програми на комп'ютері."
   },
   "startDesktopTitle": {
     "message": "Запустіть програму Bitwarden на комп'ютері"
@@ -1521,7 +1521,7 @@
     "message": "Для можливості розблокування з біометрією необхідно запустити програму Bitwarden на комп'ютері."
   },
   "errorEnableBiometricTitle": {
-    "message": "Не вдається увімкнути біометрію"
+    "message": "Не вдається налаштувати біометрію"
   },
   "errorEnableBiometricDesc": {
     "message": "Дію було скасовано програмою на комп'ютері"
@@ -1539,10 +1539,10 @@
     "message": "Невідповідність облікових записів"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Біометрію не увімкнено"
+    "message": "Біометрію не налаштовано"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Для активації біометрії в браузері необхідно спершу увімкнути біометрію в програмі на комп'ютері."
+    "message": "Для використання біометрії в браузері необхідно спершу налаштувати її в програмі на комп'ютері."
   },
   "biometricsNotSupportedTitle": {
     "message": "Біометрія не підтримується"
@@ -1654,7 +1654,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Змінити відправлення",
+    "message": "Редагування",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeHeader": {
@@ -1731,14 +1731,14 @@
     "message": "Поточна кількість доступів"
   },
   "createSend": {
-    "message": "Створити нове відправлення",
+    "message": "Нове відправлення",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Новий пароль"
   },
   "sendDisabled": {
-    "message": "Відправлення вимкнено",
+    "message": "Відправлення вилучено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1750,7 +1750,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Відправлення змінено",
+    "message": "Відправлення збережено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1857,7 +1857,7 @@
     "message": "Час очікування сховища перевищує обмеження, встановлені вашою організацією."
   },
   "vaultExportDisabled": {
-    "message": "Експорт сховища вимкнено"
+    "message": "Експорт сховища недоступний"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Одна чи декілька організаційних політик не дозволяють вам експортувати особисте сховище."
@@ -1884,7 +1884,7 @@
     "message": "Вилучити головний пароль"
   },
   "removedMasterPassword": {
-    "message": "Головний пароль вилучено."
+    "message": "Головний пароль вилучено"
   },
   "leaveOrganizationConfirmation": {
     "message": "Ви справді хочете покинути цю організацію?"
