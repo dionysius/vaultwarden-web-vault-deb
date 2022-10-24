@@ -26,6 +26,12 @@ export default {
       ],
     }),
   ],
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/Zt3YSeb6E6lebAffrNLa0h/Tailwind-Component-Library?node-id=2070%3A17207",
+    },
+  },
   args: {
     bannerType: "warning",
   },
@@ -38,7 +44,7 @@ const Template: Story<BannerComponent> = (args: BannerComponent) => ({
   props: args,
   template: `
     <bit-banner [bannerType]="bannerType" (onClose)="onClose($event)">
-        Content Really Long Text Lorem Ipsum Ipsum Ipsum 
+        Content Really Long Text Lorem Ipsum Ipsum Ipsum
         <button>Button</button>
     </bit-banner>
   `,
