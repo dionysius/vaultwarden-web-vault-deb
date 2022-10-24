@@ -79,7 +79,7 @@ export class AccessibilityCookieComponent {
   }
 
   async submit() {
-    if (Utils.getDomain(this.accessibilityForm.value.link) !== "accounts.hcaptcha.com") {
+    if (Utils.getHostname(this.accessibilityForm.value.link) !== "accounts.hcaptcha.com") {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),

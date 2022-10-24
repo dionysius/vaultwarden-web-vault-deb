@@ -100,7 +100,7 @@ export class LoginUriView implements View {
       this.uri != null &&
       (this.uri.indexOf("http://") === 0 ||
         this.uri.indexOf("https://") === 0 ||
-        (this.uri.indexOf("://") < 0 && Utils.tldEndingRegex.test(this.uri)))
+        (this.uri.indexOf("://") < 0 && !Utils.isNullOrWhitespace(Utils.getDomain(this.uri))))
     );
   }
 
@@ -122,7 +122,7 @@ export class LoginUriView implements View {
   }
 
   get launchUri(): string {
-    return this.uri.indexOf("://") < 0 && Utils.tldEndingRegex.test(this.uri)
+    return this.uri.indexOf("://") < 0 && !Utils.isNullOrWhitespace(Utils.getDomain(this.uri))
       ? "http://" + this.uri
       : this.uri;
   }

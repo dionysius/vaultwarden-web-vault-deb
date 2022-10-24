@@ -10,7 +10,6 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
-      "tldjs": ["../../libs/common/src/misc/tldjs.noop"],
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/angular/*": ["../../libs/angular/src/*"],
       "@bitwarden/electron/*": ["../../libs/electron/src/*"]
