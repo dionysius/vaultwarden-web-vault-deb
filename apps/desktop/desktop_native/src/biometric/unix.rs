@@ -1,4 +1,4 @@
-use anyhow::{Result, bail};
+use anyhow::{bail, Result};
 
 pub fn prompt(_hwnd: Vec<u8>, _message: String) -> Result<bool> {
     bail!("platform not supported");

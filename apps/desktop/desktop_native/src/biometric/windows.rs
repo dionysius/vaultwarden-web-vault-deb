@@ -8,10 +8,10 @@ use windows::{
         System::WinRT::IUserConsentVerifierInterop,
         UI::{
             Input::KeyboardAndMouse::{
-                self, keybd_event, GetAsyncKeyState, SetFocus, KEYEVENTF_EXTENDEDKEY,
-                KEYEVENTF_KEYUP, VK_MENU,
+                keybd_event, GetAsyncKeyState, SetFocus, KEYEVENTF_EXTENDEDKEY, KEYEVENTF_KEYUP,
+                VK_MENU,
             },
-            WindowsAndMessaging::{self, SetForegroundWindow},
+            WindowsAndMessaging::SetForegroundWindow,
         },
     },
 };
@@ -75,6 +75,7 @@ mod tests {
     use super::*;
 
     #[test]
+    #[cfg(feature = "manual_test")]
     fn test_prompt() {
         prompt(
             vec![0, 0, 0, 0, 0, 0, 0, 0],
@@ -84,6 +85,7 @@ mod tests {
     }
 
     #[test]
+    #[cfg(feature = "manual_test")]
     fn test_available() {
         assert!(available().unwrap())
     }

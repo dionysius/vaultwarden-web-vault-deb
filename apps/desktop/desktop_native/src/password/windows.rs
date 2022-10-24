@@ -1,10 +1,13 @@
 use anyhow::{anyhow, Result};
 use widestring::{U16CString, U16String};
-use windows::Win32::{
-    Foundation::{GetLastError, ERROR_NOT_FOUND, FILETIME, PWSTR, WIN32_ERROR},
-    Security::Credentials::{
-        CredDeleteW, CredFree, CredReadW, CredWriteW, CREDENTIALW, CRED_FLAGS,
-        CRED_PERSIST_ENTERPRISE, CRED_TYPE_GENERIC,
+use windows::{
+    core::{PCWSTR, PWSTR},
+    Win32::{
+        Foundation::{GetLastError, ERROR_NOT_FOUND, FILETIME, WIN32_ERROR},
+        Security::Credentials::{
+            CredDeleteW, CredFree, CredReadW, CredWriteW, CREDENTIALW, CRED_FLAGS,
+            CRED_PERSIST_ENTERPRISE, CRED_TYPE_GENERIC,
+        },
     },
 };
 
@@ -18,7 +21,7 @@ pub fn get_password<'a>(service: &str, account: &str) -> Result<String> {
 
     let result = unsafe {
         CredReadW(
-            PWSTR(target_name.as_ptr()),
+            PCWSTR(target_name.as_ptr()),
             CRED_TYPE_GENERIC.0,
             CRED_FLAGS_NONE,
             credential_ptr,
@@ -53,7 +56,7 @@ pub fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
 
     let result = unsafe {
         CredReadW(
-            PWSTR(target_name.as_ptr()),
+            PCWSTR(target_name.as_ptr()),
             CRED_TYPE_GENERIC.0,
             CRED_FLAGS_NONE,
             credential_ptr,
@@ -79,8 +82,8 @@ pub fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
 }
 
 pub fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
-    let target_name = U16CString::from_str(target_name(service, account))?;
-    let user_name = U16CString::from_str(account)?;
+    let mut target_name = U16CString::from_str(target_name(service, account))?;
+    let mut user_name = U16CString::from_str(account)?;
     let last_written = FILETIME {
         dwLowDateTime: 0,
         dwHighDateTime: 0,
@@ -92,16 +95,16 @@ pub fn set_password(service: &str, account: &str, password: &str) -> Result<()> 
     let credential = CREDENTIALW {
         Flags: CRED_FLAGS(CRED_FLAGS_NONE),
         Type: CRED_TYPE_GENERIC,
-        TargetName: PWSTR(target_name.as_ptr()),
-        Comment: PWSTR::default(),
+        TargetName: PWSTR(unsafe { target_name.as_mut_ptr() }),
+        Comment: PWSTR::null(),
         LastWritten: last_written,
         CredentialBlobSize: credential_len,
         CredentialBlob: credential.as_ptr() as *mut u8,
         Persist: CRED_PERSIST_ENTERPRISE,
         AttributeCount: 0,
         Attributes: std::ptr::null_mut(),
-        TargetAlias: PWSTR::default(),
-        UserName: PWSTR(user_name.as_ptr()),
+        TargetAlias: PWSTR::null(),
+        UserName: PWSTR(unsafe { user_name.as_mut_ptr() }),
     };
 
     let result = unsafe { CredWriteW(&credential, 0) };
@@ -117,7 +120,7 @@ pub fn delete_password(service: &str, account: &str) -> Result<()> {
 
     unsafe {
         CredDeleteW(
-            PWSTR(target_name.as_ptr()),
+            PCWSTR(target_name.as_ptr()),
             CRED_TYPE_GENERIC.0,
             CRED_FLAGS_NONE,
         )
