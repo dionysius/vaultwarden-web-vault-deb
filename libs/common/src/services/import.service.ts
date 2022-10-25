@@ -22,7 +22,7 @@ import { BitwardenPasswordProtectedImporter } from "../importers/bitwardenPasswo
 import { BlackBerryCsvImporter } from "../importers/blackBerryCsvImporter";
 import { BlurCsvImporter } from "../importers/blurCsvImporter";
 import { ButtercupCsvImporter } from "../importers/buttercupCsvImporter";
-import { ChromeCsvImporter } from "../importers/chromeCsvImporter";
+import { ChromeCsvImporter } from "../importers/chrome-csv-importer";
 import { ClipperzHtmlImporter } from "../importers/clipperzHtmlImporter";
 import { CodebookCsvImporter } from "../importers/codebookCsvImporter";
 import { DashlaneCsvImporter } from "../importers/dashlaneImporters/dashlaneCsvImporter";

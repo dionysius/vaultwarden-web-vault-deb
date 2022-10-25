@@ -1,10 +1,10 @@
-import { ChromeCsvImporter as Importer } from "@bitwarden/common/importers/chromeCsvImporter";
-import { CipherView } from "@bitwarden/common/models/view/cipherView";
-import { LoginUriView } from "@bitwarden/common/models/view/loginUriView";
-import { LoginView } from "@bitwarden/common/models/view/loginView";
+import { ChromeCsvImporter as Importer } from "@bitwarden/common/importers/chrome-csv-importer";
+import { CipherView } from "@bitwarden/common/models/view/cipher.view";
+import { LoginUriView } from "@bitwarden/common/models/view/login-uri.view";
+import { LoginView } from "@bitwarden/common/models/view/login.view";
 
-import { data as androidData } from "./testData/chromeCsv/androidData.csv";
-import { data as simplePasswordData } from "./testData/chromeCsv/simplePasswordData.csv";
+import { data as androidData } from "./testData/chromeCsv/android-data.csv";
+import { data as simplePasswordData } from "./testData/chromeCsv/simple-password-data.csv";
 
 const CipherData = [
   {
