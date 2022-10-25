@@ -37,6 +37,7 @@ import { CipherBulkRestoreRequest } from "../models/request/cipher-bulk-restore.
 import { CipherBulkShareRequest } from "../models/request/cipher-bulk-share.request";
 import { CipherCollectionsRequest } from "../models/request/cipher-collections.request";
 import { CipherCreateRequest } from "../models/request/cipher-create.request";
+import { CipherPartialRequest } from "../models/request/cipher-partial.request";
 import { CipherShareRequest } from "../models/request/cipher-share.request";
 import { CipherRequest } from "../models/request/cipher.request";
 import { CipherResponse } from "../models/response/cipher.response";
@@ -157,6 +158,7 @@ export class CipherService implements CipherServiceAbstraction {
     cipher.collectionIds = model.collectionIds;
     cipher.revisionDate = model.revisionDate;
     cipher.reprompt = model.reprompt;
+    cipher.edit = model.edit;
 
     if (key == null && cipher.organizationId != null) {
       key = await this.cryptoService.getOrgKey(cipher.organizationId);
@@ -594,20 +596,29 @@ export class CipherService implements CipherServiceAbstraction {
     await this.stateService.setNeverDomains(domains);
   }
 
-  async saveWithServer(cipher: Cipher): Promise<any> {
+  async createWithServer(cipher: Cipher): Promise<any> {
     let response: CipherResponse;
-    if (cipher.id == null) {
-      if (cipher.collectionIds != null) {
-        const request = new CipherCreateRequest(cipher);
-        response = await this.apiService.postCipherCreate(request);
-      } else {
-        const request = new CipherRequest(cipher);
-        response = await this.apiService.postCipher(request);
-      }
-      cipher.id = response.id;
+    if (cipher.collectionIds != null) {
+      const request = new CipherCreateRequest(cipher);
+      response = await this.apiService.postCipherCreate(request);
     } else {
       const request = new CipherRequest(cipher);
+      response = await this.apiService.postCipher(request);
+    }
+    cipher.id = response.id;
+
+    const data = new CipherData(response, cipher.collectionIds);
+    await this.upsert(data);
+  }
+
+  async updateWithServer(cipher: Cipher): Promise<any> {
+    let response: CipherResponse;
+    if (cipher.edit) {
+      const request = new CipherRequest(cipher);
       response = await this.apiService.putCipher(cipher.id, request);
+    } else {
+      const request = new CipherPartialRequest(cipher);
+      response = await this.apiService.putPartialCipher(cipher.id, request);
     }
 
     const data = new CipherData(response, cipher.collectionIds);

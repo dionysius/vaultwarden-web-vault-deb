@@ -394,7 +394,7 @@ export default class NotificationBackground {
     }
 
     const cipher = await this.cipherService.encrypt(model);
-    await this.cipherService.saveWithServer(cipher);
+    await this.cipherService.createWithServer(cipher);
   }
 
   private async getDecryptedCipherById(cipherId: string) {
@@ -409,7 +409,7 @@ export default class NotificationBackground {
     if (cipher != null && cipher.type === CipherType.Login) {
       cipher.login.password = newPassword;
       const newCipher = await this.cipherService.encrypt(cipher);
-      await this.cipherService.saveWithServer(newCipher);
+      await this.cipherService.updateWithServer(newCipher);
     }
   }
 

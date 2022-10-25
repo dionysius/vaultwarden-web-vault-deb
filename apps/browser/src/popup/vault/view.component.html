@@ -620,7 +620,13 @@
           <span>{{ "restoreItem" | i18n }}</span>
         </div>
       </button>
-      <button type="button" class="box-content-row" appStopClick (click)="delete()">
+      <button
+        type="button"
+        class="box-content-row"
+        appStopClick
+        (click)="delete()"
+        *ngIf="cipher.edit"
+      >
         <div class="row-main text-danger">
           <div class="icon text-danger" aria-hidden="true">
             <i class="bwi bwi-trash bwi-lg bwi-fw"></i>

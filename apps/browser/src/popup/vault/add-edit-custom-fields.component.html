@@ -19,6 +19,7 @@
           appStopClick
           (click)="removeField(f)"
           appA11yTitle="{{ 'remove' | i18n }}"
+          *ngIf="!(!cipher.edit && editMode)"
         >
           <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
         </button>
@@ -33,6 +34,7 @@
             class="row-label"
             placeholder="{{ 'name' | i18n }}"
             appInputVerbatim
+            [readonly]="!cipher.edit && editMode"
           />
           <!-- Text -->
           <input
@@ -44,6 +46,7 @@
             placeholder="{{ 'value' | i18n }}"
             appInputVerbatim
             attr.aria-describedby="fieldName{{ i }}"
+            [readonly]="!cipher.edit && editMode"
           />
           <!-- Hidden -->
           <input
@@ -57,6 +60,7 @@
             placeholder="{{ 'value' | i18n }}"
             [disabled]="!cipher.viewPassword && !f.newField"
             attr.aria-describedby="fieldName{{ i }}"
+            [readonly]="!cipher.edit && editMode"
           />
           <!-- Linked -->
           <select
@@ -80,6 +84,7 @@
           trueValue="true"
           falseValue="false"
           attr.aria-describedby="fieldName{{ i }}"
+          [readonly]="!cipher.edit && editMode"
         />
         <div
           class="action-buttons"
@@ -100,13 +105,22 @@
             ></i>
           </button>
         </div>
-        <div class="drag-handle" appA11yTitle="{{ 'dragToSort' | i18n }}" cdkDragHandle>
+        <div
+          class="drag-handle"
+          appA11yTitle="{{ 'dragToSort' | i18n }}"
+          *ngIf="!(!cipher.edit && editMode)"
+          cdkDragHandle
+        >
           <i class="bwi bwi-hamburger" aria-hidden="true"></i>
         </div>
       </div>
     </div>
     <!-- Add new custom field -->
-    <div class="box-content-row box-content-row-newmulti" appBoxRow>
+    <div
+      class="box-content-row box-content-row-newmulti"
+      *ngIf="!(!cipher.edit && editMode)"
+      appBoxRow
+    >
       <button type="button" appStopClick (click)="addField()">
         <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i>
         {{ "newCustomField" | i18n }}

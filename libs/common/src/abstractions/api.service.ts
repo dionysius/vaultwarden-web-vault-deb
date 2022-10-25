@@ -8,6 +8,7 @@ import { CipherBulkRestoreRequest } from "../models/request/cipher-bulk-restore.
 import { CipherBulkShareRequest } from "../models/request/cipher-bulk-share.request";
 import { CipherCollectionsRequest } from "../models/request/cipher-collections.request";
 import { CipherCreateRequest } from "../models/request/cipher-create.request";
+import { CipherPartialRequest } from "../models/request/cipher-partial.request";
 import { CipherShareRequest } from "../models/request/cipher-share.request";
 import { CipherRequest } from "../models/request/cipher.request";
 import { CollectionRequest } from "../models/request/collection.request";
@@ -257,6 +258,7 @@ export abstract class ApiService {
   postCipherCreate: (request: CipherCreateRequest) => Promise<CipherResponse>;
   postCipherAdmin: (request: CipherCreateRequest) => Promise<CipherResponse>;
   putCipher: (id: string, request: CipherRequest) => Promise<CipherResponse>;
+  putPartialCipher: (id: string, request: CipherPartialRequest) => Promise<CipherResponse>;
   putCipherAdmin: (id: string, request: CipherRequest) => Promise<CipherResponse>;
   deleteCipher: (id: string) => Promise<any>;
   deleteCipherAdmin: (id: string) => Promise<any>;

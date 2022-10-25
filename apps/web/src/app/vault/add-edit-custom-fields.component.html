@@ -29,6 +29,7 @@
           class="form-control"
           appInputVerbatim
           [disabled]="cipher.isDeleted || viewOnly"
+          [readonly]="!cipher.edit && editMode"
         />
       </div>
       <div class="col-7 form-group">
@@ -44,6 +45,7 @@
               [(ngModel)]="f.value"
               appInputVerbatim
               [disabled]="cipher.isDeleted || viewOnly"
+              [readonly]="!cipher.edit && editMode"
               attr.aria-describedby="fieldName{{ i }}"
             />
             <div class="input-group-append">
@@ -68,6 +70,7 @@
               appInputVerbatim
               autocomplete="new-password"
               [disabled]="cipher.isDeleted || viewOnly || (!cipher.viewPassword && !f.newField)"
+              [readonly]="!cipher.edit && editMode"
               attr.aria-describedby="fieldName{{ i }}"
             />
             <div class="input-group-append">
@@ -130,7 +133,7 @@
             class="btn btn-link text-danger ml-2"
             (click)="removeField(f)"
             appA11yTitle="{{ 'remove' | i18n }}"
-            *ngIf="!cipher.isDeleted && !viewOnly"
+            *ngIf="!cipher.isDeleted && !viewOnly && !(!cipher.edit && editMode)"
           >
             <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
           </button>
@@ -138,7 +141,7 @@
             type="button"
             class="btn btn-link text-muted cursor-move"
             appA11yTitle="{{ 'dragToSort' | i18n }}"
-            *ngIf="!cipher.isDeleted && !viewOnly"
+            *ngIf="!cipher.isDeleted && !viewOnly && !(!cipher.edit && editMode)"
           >
             <i class="bwi bwi-hamburger bwi-lg" aria-hidden="true"></i>
           </button>
@@ -152,11 +155,11 @@
     appStopClick
     (click)="addField()"
     class="d-inline-block mb-2"
-    *ngIf="!cipher.isDeleted && !viewOnly"
+    *ngIf="!cipher.isDeleted && !viewOnly && !(!cipher.edit && editMode)"
   >
     <i class="bwi bwi-plus-circle bwi-fw" aria-hidden="true"></i> {{ "newCustomField" | i18n }}
   </a>
-  <div class="row" *ngIf="!cipher.isDeleted && !viewOnly">
+  <div class="row" *ngIf="!cipher.isDeleted && !viewOnly && !(!cipher.edit && editMode)">
     <div class="col-5">
       <label for="addFieldType" class="sr-only">{{ "type" | i18n }}</label>
       <select id="addFieldType" class="form-control" name="AddFieldType" [(ngModel)]="addFieldType">

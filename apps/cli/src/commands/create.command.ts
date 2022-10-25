@@ -77,7 +77,7 @@ export class CreateCommand {
   private async createCipher(req: CipherExport) {
     const cipher = await this.cipherService.encrypt(CipherExport.toView(req));
     try {
-      await this.cipherService.saveWithServer(cipher);
+      await this.cipherService.createWithServer(cipher);
       const newCipher = await this.cipherService.get(cipher.id);
       const decCipher = await newCipher.decrypt();
       const res = new CipherResponse(decCipher);

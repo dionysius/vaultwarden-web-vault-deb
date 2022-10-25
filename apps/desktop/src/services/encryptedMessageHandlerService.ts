@@ -159,7 +159,7 @@ export class EncryptedMessageHandlerService {
 
     try {
       const encrypted = await this.cipherService.encrypt(cipherView);
-      await this.cipherService.saveWithServer(encrypted);
+      await this.cipherService.createWithServer(encrypted);
 
       // Notify other clients of new login
       await this.messagingService.send("addedCipher");
@@ -198,7 +198,7 @@ export class EncryptedMessageHandlerService {
       cipherView.login.uris[0].uri = credentialUpdatePayload.uri;
       const encrypted = await this.cipherService.encrypt(cipherView);
 
-      await this.cipherService.saveWithServer(encrypted);
+      await this.cipherService.updateWithServer(encrypted);
 
       // Notify other clients of update
       await this.messagingService.send("editedCipher");

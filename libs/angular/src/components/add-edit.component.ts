@@ -363,6 +363,10 @@ export class AddEditComponent implements OnInit, OnDestroy {
     }
   }
 
+  getCardExpMonthDisplay() {
+    return this.cardExpMonthOptions.find((x) => x.value == this.cipher.card.expMonth)?.name;
+  }
+
   trackByFunction(index: number, item: any) {
     return index;
   }
@@ -580,7 +584,9 @@ export class AddEditComponent implements OnInit, OnDestroy {
   }
 
   protected saveCipher(cipher: Cipher) {
-    return this.cipherService.saveWithServer(cipher);
+    return this.cipher.id == null
+      ? this.cipherService.createWithServer(cipher)
+      : this.cipherService.updateWithServer(cipher);
   }
 
   protected deleteCipher() {
