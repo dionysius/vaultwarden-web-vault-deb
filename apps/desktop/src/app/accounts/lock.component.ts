@@ -65,13 +65,15 @@ export class LockComponent extends BaseLockComponent {
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.route.queryParams.subscribe((params) => {
-      if (this.supportsBiometric && params.promptBiometric && autoPromptBiometric) {
-        setTimeout(async () => {
-          if (await ipcRenderer.invoke("windowVisible")) {
-            this.unlockBiometric();
-          }
-        }, 1000);
-      }
+      setTimeout(async () => {
+        if (!params.promptBiometric || !this.supportsBiometric || !autoPromptBiometric) {
+          return;
+        }
+
+        if (await ipcRenderer.invoke("windowVisible")) {
+          this.unlockBiometric();
+        }
+      }, 1000);
     });
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
       this.ngZone.run(() => {
