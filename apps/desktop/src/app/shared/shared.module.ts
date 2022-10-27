@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 
+import { AvatarComponent } from "../components/avatar.component";
 import { ServicesModule } from "../services/services.module";
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ServicesModule } from "../services/services.module";
     ScrollingModule,
     ServicesModule,
   ],
+  declarations: [AvatarComponent],
   exports: [
     A11yModule,
     BrowserAnimationsModule,
@@ -37,6 +39,7 @@ import { ServicesModule } from "../services/services.module";
     ReactiveFormsModule,
     ScrollingModule,
     ServicesModule,
+    AvatarComponent,
   ],
   providers: [DatePipe],
 })

@@ -1228,27 +1228,6 @@ export class StateService<
     );
   }
 
-  async getEnableGravitars(options?: StorageOptions): Promise<boolean> {
-    return (
-      (
-        await this.getAccount(
-          this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
-        )
-      )?.settings?.enableGravitars ?? false
-    );
-  }
-
-  async setEnableGravitars(value: boolean, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
-    );
-    account.settings.enableGravitars = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions())
-    );
-  }
-
   async getEnableMinimizeToTray(options?: StorageOptions): Promise<boolean> {
     return (
       (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))

@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="col-6">
-      <app-avatar data="{{ provider.name }}" dynamic="true" size="75" fontSize="35"></app-avatar>
+      <bit-avatar [text]="provider.name" [id]="provider.id" size="large"></bit-avatar>
     </div>
   </div>
   <button type="submit" class="btn btn-primary btn-submit" [disabled]="form.loading">

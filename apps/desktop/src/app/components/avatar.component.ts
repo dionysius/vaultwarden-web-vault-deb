@@ -1,46 +1,47 @@
-import { Component, Input, OnChanges } from "@angular/core";
+import { Component, Input, OnChanges, OnInit } from "@angular/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 import { Utils } from "@bitwarden/common/misc/utils";
 
-type SizeTypes = "large" | "default" | "small";
-
-const SizeClasses: Record<SizeTypes, string[]> = {
-  large: ["tw-h-16", "tw-w-16"],
-  default: ["tw-h-12", "tw-w-12"],
-  small: ["tw-h-7", "tw-w-7"],
-};
-
 @Component({
-  selector: "bit-avatar",
-  template: `<img *ngIf="src" [src]="src" title="{{ text }}" [ngClass]="classList" />`,
+  selector: "app-avatar",
+  template: `<img
+    *ngIf="src"
+    [src]="src"
+    title="{{ data }}"
+    [ngClass]="{ 'rounded-circle': circle }"
+  />`,
 })
-export class AvatarComponent implements OnChanges {
-  @Input() border = false;
+export class AvatarComponent implements OnChanges, OnInit {
+  @Input() size = 45;
+  @Input() charCount = 2;
+  @Input() fontSize = 20;
+  @Input() dynamic = false;
+  @Input() circle = false;
+
   @Input() color?: string;
-  @Input() id?: string;
+  @Input() id?: number;
   @Input() text?: string;
-  @Input() size: SizeTypes = "default";
 
   private svgCharCount = 2;
-  private svgFontSize = 20;
   private svgFontWeight = 300;
-  private svgSize = 48;
   src: SafeResourceUrl;
 
   constructor(public sanitizer: DomSanitizer) {}
 
+  ngOnInit() {
+    if (!this.dynamic) {
+      this.generate();
+    }
+  }
+
   ngOnChanges() {
-    this.generate();
+    if (this.dynamic) {
+      this.generate();
+    }
   }
 
-  get classList() {
-    return ["tw-rounded-full"]
-      .concat(SizeClasses[this.size] ?? [])
-      .concat(this.border ? ["tw-border", "tw-border-solid", "tw-border-secondary-500"] : []);
-  }
-
-  private generate() {
+  private async generate() {
     let chars: string = null;
     const upperCaseText = this.text?.toUpperCase() ?? "";
 
@@ -58,14 +59,14 @@ export class AvatarComponent implements OnChanges {
     let svg: HTMLElement;
     let hexColor = this.color;
 
-    if (!Utils.isNullOrWhitespace(this.color)) {
-      svg = this.createSvgElement(this.svgSize, hexColor);
-    } else if (!Utils.isNullOrWhitespace(this.id)) {
+    if (this.color != null) {
+      svg = this.createSvgElement(this.size, hexColor);
+    } else if (this.id != null) {
       hexColor = Utils.stringToColor(this.id.toString());
-      svg = this.createSvgElement(this.svgSize, hexColor);
+      svg = this.createSvgElement(this.size, hexColor);
     } else {
       hexColor = Utils.stringToColor(upperCaseText);
-      svg = this.createSvgElement(this.svgSize, hexColor);
+      svg = this.createSvgElement(this.size, hexColor);
     }
 
     const charObj = this.createTextElement(chars, hexColor);
@@ -116,7 +117,7 @@ export class AvatarComponent implements OnChanges {
     );
     textTag.textContent = character;
     textTag.style.fontWeight = this.svgFontWeight.toString();
-    textTag.style.fontSize = this.svgFontSize + "px";
+    textTag.style.fontSize = this.fontSize + "px";
     return textTag;
   }
 

@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
   name: string;
   email: string;
   providers: Provider[] = [];
+  userId: string;
   organizations$: Observable<Organization[]>;
 
   constructor(
@@ -41,6 +42,7 @@ export class NavbarComponent implements OnInit {
   async ngOnInit() {
     this.name = await this.tokenService.getName();
     this.email = await this.tokenService.getEmail();
+    this.userId = await this.tokenService.getUserId();
     if (this.name == null || this.name.trim() === "") {
       this.name = this.email;
     }

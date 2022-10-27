@@ -41,14 +41,7 @@
             </thead>
             <tr *ngFor="let user of filteredUsers">
               <td width="30">
-                <app-avatar
-                  [data]="user | userName"
-                  [email]="user.email"
-                  size="25"
-                  [circle]="true"
-                  [fontSize]="14"
-                >
-                </app-avatar>
+                <bit-avatar [text]="user | userName" [id]="user.id" size="small"></bit-avatar>
               </td>
               <td>
                 {{ user.email }}
@@ -60,14 +53,7 @@
             </tr>
             <tr *ngFor="let user of excludedUsers">
               <td width="30">
-                <app-avatar
-                  [data]="user | userName"
-                  [email]="user.email"
-                  size="25"
-                  [circle]="true"
-                  [fontSize]="14"
-                >
-                </app-avatar>
+                <bit-avatar [text]="user | userName" [id]="user.id" size="small"></bit-avatar>
               </td>
               <td>
                 {{ user.email }}
@@ -89,14 +75,7 @@
             </thead>
             <tr *ngFor="let user of filteredUsers">
               <td width="30">
-                <app-avatar
-                  [data]="user | userName"
-                  [email]="user.email"
-                  size="25"
-                  [circle]="true"
-                  [fontSize]="14"
-                >
-                </app-avatar>
+                <bit-avatar [text]="user | userName" [id]="user.id" size="small"></bit-avatar>
               </td>
               <td>
                 {{ user.email }}

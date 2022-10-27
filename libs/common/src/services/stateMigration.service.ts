@@ -61,7 +61,6 @@ const v1Keys: { [key: string]: string } = {
   enableBrowserIntegrationFingerprint: "enableBrowserIntegrationFingerprint",
   enableCloseToTray: "enableCloseToTray",
   enableFullWidth: "enableFullWidth",
-  enableGravatars: "enableGravatars",
   enableMinimizeToTray: "enableMinimizeToTray",
   enableStartToTray: "enableStartToTrayKey",
   enableTray: "enableTray",
@@ -305,9 +304,6 @@ export class StateMigrationService<
       enableFullWidth:
         (await this.get<boolean>(v1Keys.enableFullWidth)) ??
         defaultAccount.settings.enableFullWidth,
-      enableGravitars:
-        (await this.get<boolean>(v1Keys.enableGravatars)) ??
-        defaultAccount.settings.enableGravitars,
       environmentUrls: globals.environmentUrls ?? defaultAccount.settings.environmentUrls,
       equivalentDomains:
         (await this.get<any>(v1Keys.equivalentDomains)) ??

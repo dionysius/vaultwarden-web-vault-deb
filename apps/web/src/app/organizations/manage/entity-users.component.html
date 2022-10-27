@@ -101,14 +101,7 @@
                   />
                 </td>
                 <td width="30" (click)="check(u)">
-                  <app-avatar
-                    [data]="u | userName"
-                    [email]="u.email"
-                    size="25"
-                    [circle]="true"
-                    [fontSize]="14"
-                  >
-                  </app-avatar>
+                  <bit-avatar [text]="u | userName" [id]="u.id" size="small"></bit-avatar>
                 </td>
                 <td>
                   {{ u.email }}

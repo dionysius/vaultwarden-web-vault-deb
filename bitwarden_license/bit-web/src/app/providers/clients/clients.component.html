@@ -59,12 +59,7 @@
       <tbody>
         <tr *ngFor="let o of searchedClients">
           <td width="30">
-            <app-avatar
-              [data]="o.organizationName"
-              size="25"
-              [circle]="true"
-              [fontSize]="14"
-            ></app-avatar>
+            <bit-avatar [text]="o.organizationName" [id]="o.id" size="small"></bit-avatar>
           </td>
           <td>
             <a [routerLink]="['/organizations', o.organizationId]">{{ o.organizationName }}</a>

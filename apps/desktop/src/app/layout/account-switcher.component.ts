@@ -1,13 +1,21 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ConnectedPosition } from "@angular/cdk/overlay";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { concatMap, Subject, takeUntil } from "rxjs";
 
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
+import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { Account } from "@bitwarden/common/models/domain/account";
+
+type ActiveAccount = {
+  id: string;
+  name: string;
+  email: string;
+};
 
 export class SwitcherAccount extends Account {
   get serverUrl() {
@@ -48,11 +56,12 @@ export class SwitcherAccount extends Account {
     ]),
   ],
 })
-// eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class AccountSwitcherComponent implements OnInit {
+export class AccountSwitcherComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject<void>();
+
   isOpen = false;
   accounts: { [userId: string]: SwitcherAccount } = {};
-  activeAccountEmail: string;
+  activeAccount?: ActiveAccount;
   serverUrl: string;
   authStatus = AuthenticationStatus;
   overlayPostition: ConnectedPosition[] = [
@@ -65,7 +74,7 @@ export class AccountSwitcherComponent implements OnInit {
   ];
 
   get showSwitcher() {
-    const userIsInAVault = !Utils.isNullOrWhitespace(this.activeAccountEmail);
+    const userIsInAVault = !Utils.isNullOrWhitespace(this.activeAccount?.email);
     const userIsAddingAnAdditionalAccount = Object.keys(this.accounts).length > 0;
     return userIsInAVault || userIsAddingAnAdditionalAccount;
   }
@@ -81,21 +90,39 @@ export class AccountSwitcherComponent implements OnInit {
   constructor(
     private stateService: StateService,
     private authService: AuthService,
-    private messagingService: MessagingService
+    private messagingService: MessagingService,
+    private tokenService: TokenService
   ) {}
 
   async ngOnInit(): Promise<void> {
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    this.stateService.accounts.subscribe(async (accounts: { [userId: string]: Account }) => {
-      for (const userId in accounts) {
-        accounts[userId].profile.authenticationStatus = await this.authService.getAuthStatus(
-          userId
-        );
-      }
+    this.stateService.accounts
+      .pipe(
+        concatMap(async (accounts: { [userId: string]: Account }) => {
+          for (const userId in accounts) {
+            accounts[userId].profile.authenticationStatus = await this.authService.getAuthStatus(
+              userId
+            );
+          }
 
-      this.accounts = await this.createSwitcherAccounts(accounts);
-      this.activeAccountEmail = await this.stateService.getEmail();
-    });
+          this.accounts = await this.createSwitcherAccounts(accounts);
+          try {
+            this.activeAccount = {
+              id: await this.tokenService.getUserId(),
+              name: (await this.tokenService.getName()) ?? (await this.tokenService.getEmail()),
+              email: await this.tokenService.getEmail(),
+            };
+          } catch {
+            this.activeAccount = undefined;
+          }
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   toggle() {

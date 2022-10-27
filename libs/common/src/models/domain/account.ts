@@ -175,6 +175,7 @@ export class AccountProfile {
   apiKeyClientId?: string;
   authenticationStatus?: AuthenticationStatus;
   convertAccountToKeyConnector?: boolean;
+  name?: string;
   email?: string;
   emailVerified?: boolean;
   entityId?: string;
@@ -219,7 +220,6 @@ export class AccountSettings {
   enableAutoFillOnPageLoad?: boolean;
   enableBiometric?: boolean;
   enableFullWidth?: boolean;
-  enableGravitars?: boolean;
   environmentUrls: EnvironmentUrls = new EnvironmentUrls();
   equivalentDomains?: any;
   minimizeOnCopyToClipboard?: boolean;

@@ -33,14 +33,7 @@
     </div>
     <div class="col-6">
       <div class="mb-3">
-        <app-avatar
-          data="{{ profile | userName }}"
-          [email]="profile.email"
-          dynamic="true"
-          size="75"
-          fontSize="35"
-        >
-        </app-avatar>
+        <bit-avatar [text]="profile | userName" [id]="profile.id" size="large"></bit-avatar>
       </div>
       <hr />
       <p *ngIf="fingerprint">

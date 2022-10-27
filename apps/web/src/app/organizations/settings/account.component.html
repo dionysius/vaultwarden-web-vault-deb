@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="col-6">
-      <app-avatar data="{{ org.name }}" dynamic="true" size="75" fontSize="35"></app-avatar>
+      <bit-avatar [text]="org.name" [id]="org.id" size="large"></bit-avatar>
     </div>
   </div>
   <button type="submit" buttonType="primary" bitButton [loading]="form.loading">

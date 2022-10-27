@@ -12,7 +12,7 @@
       <tbody>
         <tr *ngFor="let p of providers">
           <td width="30">
-            <app-avatar [data]="p.name" size="25" [circle]="true" [fontSize]="14"></app-avatar>
+            <bit-avatar [text]="p.name" [id]="p.id" size="small"></bit-avatar>
           </td>
           <td>
             <a href="#" [routerLink]="['/providers', p.id]">{{ p.name }}</a>

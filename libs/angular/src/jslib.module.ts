@@ -2,7 +2,6 @@ import { CommonModule, DatePipe } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { AvatarComponent } from "./components/avatar.component";
 import { CalloutComponent } from "./components/callout.component";
 import { ExportScopeCalloutComponent } from "./components/export-scope-callout.component";
 import { IconComponent } from "./components/icon.component";
@@ -46,7 +45,6 @@ import { PasswordStrengthComponent } from "./shared/components/password-strength
     A11yTitleDirective,
     ApiActionDirective,
     AutofocusDirective,
-    AvatarComponent,
     BoxRowDirective,
     CalloutComponent,
     ColorPasswordCountPipe,
@@ -74,7 +72,6 @@ import { PasswordStrengthComponent } from "./shared/components/password-strength
     A11yTitleDirective,
     ApiActionDirective,
     AutofocusDirective,
-    AvatarComponent,
     BitwardenToastModule,
     BoxRowDirective,
     CalloutComponent,

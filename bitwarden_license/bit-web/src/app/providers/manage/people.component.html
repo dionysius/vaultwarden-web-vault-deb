@@ -124,14 +124,7 @@
             <input type="checkbox" [(ngModel)]="u.checked" appStopProp />
           </td>
           <td width="30">
-            <app-avatar
-              [data]="u | userName"
-              [email]="u.email"
-              size="25"
-              [circle]="true"
-              [fontSize]="14"
-            >
-            </app-avatar>
+            <bit-avatar [text]="u | userName" [id]="u.userId" size="small"></bit-avatar>
           </td>
           <td>
             <a href="#" appStopClick (click)="edit(u)">{{ u.email }}</a>

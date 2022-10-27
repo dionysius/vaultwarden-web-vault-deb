@@ -105,6 +105,7 @@ export abstract class LogInStrategy {
           ...new AccountProfile(),
           ...{
             userId: accountInformation.sub,
+            name: accountInformation.name,
             email: accountInformation.email,
             hasPremiumPersonally: accountInformation.premium,
             kdfIterations: tokenResponse.kdfIterations,

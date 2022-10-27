@@ -3,7 +3,7 @@
   <div class="container d-flex">
     <div class="d-flex flex-column">
       <div class="my-auto d-flex align-items-center pl-1">
-        <app-avatar [data]="provider.name" size="45" [circle]="true"></app-avatar>
+        <bit-avatar [text]="provider.name" [id]="provider.id"></bit-avatar>
         <div class="org-name ml-3">
           <span>{{ provider.name }}</span>
           <small class="text-muted">{{ "provider" | i18n }}</small>

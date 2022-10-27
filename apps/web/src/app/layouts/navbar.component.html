@@ -54,13 +54,7 @@
               *ngIf="name"
               appStopProp
             >
-              <app-avatar
-                [data]="name"
-                [email]="email"
-                size="25"
-                fontSize="14"
-                [circle]="true"
-              ></app-avatar>
+              <bit-avatar [text]="name" [id]="userId" size="small"></bit-avatar>
               <div class="tw-ml-2 tw-block tw-overflow-hidden tw-whitespace-nowrap">
                 <span>{{ "loggedInAs" | i18n }}</span>
                 <small class="tw-block tw-overflow-hidden tw-whitespace-nowrap tw-text-muted">{{

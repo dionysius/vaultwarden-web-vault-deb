@@ -6,12 +6,7 @@
     [appA11yTitle]="'organizationPicker' | i18n"
     [bitMenuTriggerFor]="orgPickerMenu"
   >
-    <app-avatar
-      [data]="activeOrganization.name"
-      size="45"
-      [circle]="true"
-      [dynamic]="true"
-    ></app-avatar>
+    <bit-avatar [text]="activeOrganization.name" [id]="activeOrganization.id"></bit-avatar>
     <div class="tw-flex">
       <div class="org-name tw-ml-3">
         <span>{{ activeOrganization.name }}</span>

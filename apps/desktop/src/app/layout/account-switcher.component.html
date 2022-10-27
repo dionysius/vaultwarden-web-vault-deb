@@ -8,17 +8,18 @@
   aria-controls="cdk-overlay-container"
   [attr.aria-expanded]="isOpen"
 >
-  <ng-container *ngIf="activeAccountEmail != null; else noActiveAccount">
+  <ng-container *ngIf="activeAccount?.email != null; else noActiveAccount">
     <app-avatar
-      [data]="activeAccountEmail"
+      [text]="activeAccount.name"
+      [id]="activeAccount.id"
       size="25"
       [circle]="true"
       [fontSize]="14"
       [dynamic]="true"
-      *ngIf="activeAccountEmail != null"
+      *ngIf="activeAccount.email != null"
       aria-hidden="true"
     ></app-avatar>
-    <span>{{ activeAccountEmail }}</span>
+    <span>{{ activeAccount.email }}</span>
   </ng-container>
   <ng-template #noActiveAccount>
     <span>{{ "switchAccount" | i18n }}</span>
@@ -58,7 +59,8 @@
         attr.aria-label="{{ 'switchAccount' | i18n }}"
       >
         <app-avatar
-          [data]="a.value.profile.email"
+          [text]="a.value.profile.name ?? a.value.profile.email"
+          [id]="a.value.profile.userId"
           size="25"
           [circle]="true"
           [fontSize]="14"
@@ -85,7 +87,7 @@
         ></i>
       </button>
     </div>
-    <ng-container *ngIf="activeAccountEmail != null">
+    <ng-container *ngIf="activeAccount?.email != null">
       <div class="border" *ngIf="numberOfAccounts > 0"></div>
       <ng-container *ngIf="numberOfAccounts < 4">
         <button type="button" class="add" routerLink="/login" (click)="addAccount()">

@@ -37,9 +37,11 @@ const kdf = 0;
 const kdfIterations = 10000;
 const userId = Utils.newGuid();
 const masterPasswordHash = "MASTER_PASSWORD_HASH";
+const name = "NAME";
 
 const decodedToken = {
   sub: userId,
+  name: name,
   email: email,
   premium: false,
 };
@@ -122,6 +124,7 @@ describe("LogInStrategy", () => {
             ...new AccountProfile(),
             ...{
               userId: userId,
+              name: name,
               email: email,
               hasPremiumPersonally: false,
               kdfIterations: kdfIterations,
