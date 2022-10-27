@@ -10,9 +10,7 @@ import { Icon, isIcon } from "./icon";
 export class BitIconComponent {
   @Input() icon: Icon;
 
-  constructor(private domSanitizer: DomSanitizer) {}
-
-  @HostBinding("innerHtml")
+  @HostBinding()
   protected get innerHtml() {
     if (!isIcon(this.icon)) {
       return "";
@@ -21,4 +19,6 @@ export class BitIconComponent {
     const svg = this.icon.svg;
     return this.domSanitizer.bypassSecurityTrustHtml(svg);
   }
+
+  constructor(private domSanitizer: DomSanitizer) {}
 }

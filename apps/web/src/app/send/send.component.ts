@@ -11,6 +11,7 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { SendView } from "@bitwarden/common/models/view/send.view";
+import { Icons } from "@bitwarden/components";
 
 import { AddEditComponent } from "./add-edit.component";
 
@@ -23,6 +24,7 @@ const BroadcasterSubscriptionId = "SendComponent";
 export class SendComponent extends BaseSendComponent {
   @ViewChild("sendAddEdit", { read: ViewContainerRef, static: true })
   sendAddEditModalRef: ViewContainerRef;
+  noItemIcon = Icons.Search;
 
   constructor(
     sendService: SendService,

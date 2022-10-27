@@ -314,10 +314,4 @@ a i.bwi {
   justify-content: center;
   align-items: center;
   text-align: center;
-
-  .no-items-image {
-    @include themify($themes) {
-      content: url("../images/search-web" + themed("svgSuffix"));
-    }
-  }
 }
