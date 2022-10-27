@@ -1,22 +1,31 @@
-﻿body {
-  background-color: #ffffff;
+﻿@import "variables.scss";
+
+body {
   padding: 0;
   margin: 0;
   height: 100%;
   font-size: 14px;
   line-height: 16px;
-  color: #333333;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $font-family-sans-serif;
+
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("backgroundColor");
+  }
 }
 
 .outer-wrapper {
   padding: 0 10px;
-  border-bottom: 2px solid #175ddc;
+  border-bottom: 2px solid transparent;
   display: grid;
   grid-template-columns: 24px auto 55px;
   grid-column-gap: 10px;
   box-sizing: border-box;
   min-height: 42px;
+
+  @include themify($themes) {
+    border-bottom-color: themed("primaryColor");
+  }
 }
 
 .inner-wrapper {
@@ -41,40 +50,84 @@ img {
   display: block;
 }
 
-#close {
-  width: 15px;
-  height: 15px;
-  display: block;
-  padding: 5px 0;
+#close-button {
   margin-right: 10px;
 }
 
-button:not(.link),
-button:not(.neutral) {
-  background-color: #175ddc;
-  padding: 5px 15px;
-  border-radius: 3px;
-  color: #ffffff;
-  border: 0;
+#close {
+  display: block;
+  width: 17px;
+  height: 17px;
+
+  > path {
+    @include themify($themes) {
+      fill: themed("textColor");
+    }
+  }
+}
+
+#close-button:hover {
+  @include themify($themes) {
+    border-color: rgba(themed("textColor"), 0.2);
+    background-color: rgba(themed("textColor"), 0.2);
+  }
+}
+
+button {
+  padding: 0.35rem 15px;
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+button:not(.neutral):not(.link) {
+  @include themify($themes) {
+    background-color: themed("primaryColor");
+    color: themed("textContrast");
+    border-color: themed("primaryColor");
+  }
 
   &:hover {
-    cursor: pointer;
-    background-color: #1751bd;
+    @include themify($themes) {
+      background-color: darken(themed("primaryColor"), 1.5%);
+      color: darken(themed("textContrast"), 6%);
+    }
   }
 }
 
 button.link,
 button.neutral {
-  background: none;
-  padding: 5px 15px;
-  color: #175ddc;
-  border: 0;
+  @include themify($themes) {
+    background-color: transparent;
+    color: themed("primaryColor");
+  }
 
   &:hover {
-    cursor: pointer;
-    background: none;
     text-decoration: underline;
+
+    @include themify($themes) {
+      background-color: transparent;
+      color: darken(themed("primaryColor"), 6%);
+    }
   }
+}
+
+select {
+  padding: 0.35rem;
+  border: 1px solid #000000;
+  border-radius: $border-radius;
+
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("inputBackgroundColor");
+    border-color: themed("inputBorderColor");
+  }
+}
+
+select,
+button {
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
 }
 
 .select-folder[isVaultLocked="true"] {

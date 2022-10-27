@@ -7,6 +7,7 @@ import { PolicyService } from "@bitwarden/common/abstractions/policy/policy.serv
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
+import { ThemeType } from "@bitwarden/common/enums/themeType";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { LoginUriView } from "@bitwarden/common/models/view/login-uri.view";
@@ -125,13 +126,13 @@ export default class NotificationBackground {
     }
 
     if (tab != null) {
-      this.doNotificationQueueCheck(tab);
+      await this.doNotificationQueueCheck(tab);
       return;
     }
 
     const currentTab = await BrowserApi.getTabFromCurrentWindow();
     if (currentTab != null) {
-      this.doNotificationQueueCheck(currentTab);
+      await this.doNotificationQueueCheck(currentTab);
     }
   }
 
@@ -144,7 +145,7 @@ export default class NotificationBackground {
     setTimeout(() => this.cleanupNotificationQueue(), 2 * 60 * 1000); // check every 2 minutes
   }
 
-  private doNotificationQueueCheck(tab: chrome.tabs.Tab): void {
+  private async doNotificationQueueCheck(tab: chrome.tabs.Tab): Promise<void> {
     if (tab == null) {
       return;
     }
@@ -167,6 +168,7 @@ export default class NotificationBackground {
           type: "add",
           typeData: {
             isVaultLocked: this.notificationQueue[i].wasVaultLocked,
+            theme: await this.getCurrentTheme(),
           },
         });
       } else if (this.notificationQueue[i].type === NotificationQueueMessageType.ChangePassword) {
@@ -174,11 +176,24 @@ export default class NotificationBackground {
           type: "change",
           typeData: {
             isVaultLocked: this.notificationQueue[i].wasVaultLocked,
+            theme: await this.getCurrentTheme(),
           },
         });
       }
       break;
     }
+  }
+
+  private async getCurrentTheme() {
+    const theme = await this.stateService.getTheme();
+
+    if (theme !== ThemeType.System) {
+      return theme;
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? ThemeType.Dark
+      : ThemeType.Light;
   }
 
   private removeTabFromNotificationQueue(tab: chrome.tabs.Tab) {
