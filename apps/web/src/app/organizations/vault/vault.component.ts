@@ -166,10 +166,16 @@ export class VaultComponent implements OnInit, OnDestroy {
   async applyVaultFilter(vaultFilter: VaultFilter) {
     this.ciphersComponent.showAddNew = vaultFilter.status !== "trash";
     this.activeFilter = vaultFilter;
-    await this.ciphersComponent.reload(
-      this.activeFilter.buildFilter(),
-      vaultFilter.status === "trash"
-    );
+
+    // Hack to avoid calling cipherService.getAllFromApiForOrganization every time the vault filter changes.
+    // Call CiphersComponent.applyFilter directly instead of going through CiphersComponent.reload, which
+    // reloads all the ciphers unnecessarily. Will be fixed properly by EC-14.
+    this.ciphersComponent.loaded = false;
+    this.ciphersComponent.deleted = vaultFilter.status === "trash" || false;
+    await this.ciphersComponent.applyFilter(this.activeFilter.buildFilter());
+    this.ciphersComponent.loaded = true;
+    // End hack
+
     this.vaultFilterComponent.searchPlaceholder =
       this.vaultService.calculateSearchBarLocalizationString(this.activeFilter);
     this.go();
