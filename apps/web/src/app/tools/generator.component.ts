@@ -46,6 +46,11 @@ export class GeneratorComponent extends BaseGeneratorComponent {
         this.forwardOptions.findIndex((o) => o.value === "firefoxrelay"),
         1
       );
+      // Also cannot use Duck Duck Go on self hosted web vaults due to CORS issues
+      this.forwardOptions.splice(
+        this.forwardOptions.findIndex((o) => o.value === "duckduckgo"),
+        1
+      );
     }
   }
 
