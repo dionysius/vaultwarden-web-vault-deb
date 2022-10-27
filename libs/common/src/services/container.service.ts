@@ -1,11 +1,8 @@
-import { AbstractEncryptService } from "../abstractions/abstractEncrypt.service";
 import { CryptoService } from "../abstractions/crypto.service";
+import { EncryptService } from "../abstractions/encrypt.service";
 
 export class ContainerService {
-  constructor(
-    private cryptoService: CryptoService,
-    private encryptService: AbstractEncryptService
-  ) {}
+  constructor(private cryptoService: CryptoService, private encryptService: EncryptService) {}
 
   attachToGlobal(global: any) {
     if (!global.bitwardenContainerService) {
@@ -26,7 +23,7 @@ export class ContainerService {
   /**
    * @throws Will throw if EncryptService was not instantiated and provided to the ContainerService constructor
    */
-  getEncryptService(): AbstractEncryptService {
+  getEncryptService(): EncryptService {
     if (this.encryptService == null) {
       throw new Error("ContainerService.encryptService not initialized.");
     }

@@ -4,7 +4,7 @@ import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { EncryptService } from "@bitwarden/common/src/services/encrypt.service";
+import { EncryptServiceImplementation } from "@bitwarden/common/services/cryptography/encrypt.service.implementation";
 
 import BrowserLocalStorageService from "./browserLocalStorage.service";
 import BrowserMemoryStorageService from "./browserMemoryStorage.service";
@@ -12,7 +12,7 @@ import { KeyGenerationService } from "./keyGeneration.service";
 import { LocalBackedSessionStorageService } from "./localBackedSessionStorage.service";
 
 describe("Browser Session Storage Service", () => {
-  let encryptService: SubstituteOf<EncryptService>;
+  let encryptService: SubstituteOf<EncryptServiceImplementation>;
   let keyGenerationService: SubstituteOf<KeyGenerationService>;
 
   let cache: Map<string, any>;

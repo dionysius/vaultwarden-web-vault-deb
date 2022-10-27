@@ -6,7 +6,7 @@ import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
 import { EncArrayBuffer } from "@bitwarden/common/models/domain/enc-array-buffer";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { EncryptService } from "@bitwarden/common/services/encrypt.service";
+import { EncryptServiceImplementation } from "@bitwarden/common/services/cryptography/encrypt.service.implementation";
 
 import { makeStaticByteArray } from "../utils";
 
@@ -14,13 +14,13 @@ describe("EncryptService", () => {
   const cryptoFunctionService = mock<CryptoFunctionService>();
   const logService = mock<LogService>();
 
-  let encryptService: EncryptService;
+  let encryptService: EncryptServiceImplementation;
 
   beforeEach(() => {
     mockReset(cryptoFunctionService);
     mockReset(logService);
 
-    encryptService = new EncryptService(cryptoFunctionService, logService, true);
+    encryptService = new EncryptServiceImplementation(cryptoFunctionService, logService, true);
   });
 
   describe("encryptToBytes", () => {

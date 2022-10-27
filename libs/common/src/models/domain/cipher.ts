@@ -2,6 +2,8 @@ import { Jsonify } from "type-fest";
 
 import { CipherRepromptType } from "../../enums/cipherRepromptType";
 import { CipherType } from "../../enums/cipherType";
+import { Decryptable } from "../../interfaces/decryptable.interface";
+import { InitializerKey } from "../../services/cryptography/initializer-key";
 import { CipherData } from "../data/cipher.data";
 import { LocalData } from "../data/local.data";
 import { CipherView } from "../view/cipher.view";
@@ -17,7 +19,9 @@ import { Password } from "./password";
 import { SecureNote } from "./secure-note";
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
-export class Cipher extends Domain {
+export class Cipher extends Domain implements Decryptable<CipherView> {
+  readonly initializerKey = InitializerKey.Cipher;
+
   id: string;
   organizationId: string;
   folderId: string;

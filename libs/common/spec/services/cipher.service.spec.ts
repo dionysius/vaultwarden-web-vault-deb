@@ -3,6 +3,7 @@ import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { FileUploadService } from "@bitwarden/common/abstractions/fileUpload.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
@@ -27,6 +28,7 @@ describe("Cipher Service", () => {
   let i18nService: SubstituteOf<I18nService>;
   let searchService: SubstituteOf<SearchService>;
   let logService: SubstituteOf<LogService>;
+  let encryptService: SubstituteOf<EncryptService>;
 
   let cipherService: CipherService;
 
@@ -39,6 +41,7 @@ describe("Cipher Service", () => {
     i18nService = Substitute.for<I18nService>();
     searchService = Substitute.for<SearchService>();
     logService = Substitute.for<LogService>();
+    encryptService = Substitute.for<EncryptService>();
 
     cryptoService.encryptToBytes(Arg.any(), Arg.any()).resolves(ENCRYPTED_BYTES);
     cryptoService.encrypt(Arg.any(), Arg.any()).resolves(new EncString(ENCRYPTED_TEXT));
@@ -51,7 +54,8 @@ describe("Cipher Service", () => {
       i18nService,
       () => searchService,
       logService,
-      stateService
+      stateService,
+      encryptService
     );
   });
 

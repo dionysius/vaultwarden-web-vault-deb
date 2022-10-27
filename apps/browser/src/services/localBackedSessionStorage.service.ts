@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import {
   AbstractCachedStorageService,
   MemoryStorageServiceInterface,
@@ -30,7 +30,7 @@ export class LocalBackedSessionStorageService
   private sessionStorage = new BrowserMemoryStorageService();
 
   constructor(
-    private encryptService: AbstractEncryptService,
+    private encryptService: EncryptService,
     private keyGenerationService: AbstractKeyGenerationService
   ) {
     super();

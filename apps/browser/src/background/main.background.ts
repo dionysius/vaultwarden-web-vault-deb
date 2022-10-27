@@ -6,6 +6,7 @@ import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/abs
 import { CollectionService as CollectionServiceAbstraction } from "@bitwarden/common/abstractions/collection.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { EventService as EventServiceAbstraction } from "@bitwarden/common/abstractions/event.service";
 import { ExportService as ExportServiceAbstraction } from "@bitwarden/common/abstractions/export.service";
 import { FileUploadService as FileUploadServiceAbstraction } from "@bitwarden/common/abstractions/fileUpload.service";
@@ -51,7 +52,8 @@ import { CipherService } from "@bitwarden/common/services/cipher.service";
 import { CollectionService } from "@bitwarden/common/services/collection.service";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 import { ContainerService } from "@bitwarden/common/services/container.service";
-import { EncryptService } from "@bitwarden/common/services/encrypt.service";
+import { EncryptServiceImplementation } from "@bitwarden/common/services/cryptography/encrypt.service.implementation";
+import { MultithreadEncryptServiceImplementation } from "@bitwarden/common/services/cryptography/multithread-encrypt.service.implementation";
 import { EventService } from "@bitwarden/common/services/event.service";
 import { ExportService } from "@bitwarden/common/services/export.service";
 import { FileUploadService } from "@bitwarden/common/services/fileUpload.service";
@@ -82,6 +84,7 @@ import { WebCryptoFunctionService } from "@bitwarden/common/services/webCryptoFu
 
 import { BrowserApi } from "../browser/browserApi";
 import { SafariApp } from "../browser/safariApp";
+import { flagEnabled } from "../flags";
 import { UpdateBadge } from "../listeners/update-badge";
 import { Account } from "../models/account";
 import { PopupUtilsService } from "../popup/services/popup-utils.service";
@@ -215,7 +218,7 @@ export default class MainBackground {
     this.memoryStorageService =
       BrowserApi.manifestVersion === 3
         ? new LocalBackedSessionStorageService(
-            new EncryptService(this.cryptoFunctionService, this.logService, false),
+            new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
             new KeyGenerationService(this.cryptoFunctionService)
           )
         : new MemoryStorageService();
@@ -255,7 +258,13 @@ export default class MainBackground {
       window
     );
     this.i18nService = new I18nService(BrowserApi.getUILanguage(window));
-    this.encryptService = new EncryptService(this.cryptoFunctionService, this.logService, true);
+    this.encryptService = flagEnabled("multithreadDecryption")
+      ? new MultithreadEncryptServiceImplementation(
+          this.cryptoFunctionService,
+          this.logService,
+          true
+        )
+      : new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, true);
     this.cryptoService = new BrowserCryptoService(
       this.cryptoFunctionService,
       this.encryptService,
@@ -283,7 +292,8 @@ export default class MainBackground {
       this.i18nService,
       () => this.searchService,
       this.logService,
-      this.stateService
+      this.stateService,
+      this.encryptService
     );
     this.folderService = new FolderService(
       this.cryptoService,

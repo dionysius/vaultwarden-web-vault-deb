@@ -4,7 +4,7 @@
     "noImplicitAny": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "es6",
+    "module": "ES2020",
     "target": "ES2016",
     "sourceMap": true,
     "types": [],
@@ -18,5 +18,5 @@
   "angularCompilerOptions": {
     "preserveWhitespaces": true
   },
-  "include": ["src"]
+  "include": ["src", "../../libs/common/src/services/**/*.worker.ts"]
 }

@@ -7,7 +7,7 @@ import { RouterModule } from "@angular/router";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { CoreModule } from "@bitwarden/web-vault/app/core";
+import { CoreModule } from "@bitwarden/web-vault/app/core/core.module";
 import { OssRoutingModule } from "@bitwarden/web-vault/app/oss-routing.module";
 import { OssModule } from "@bitwarden/web-vault/app/oss.module";
 import { WildcardRoutingModule } from "@bitwarden/web-vault/app/wildcard-routing.module";

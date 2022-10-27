@@ -20,6 +20,7 @@ import { SecureNote } from "@bitwarden/common/models/domain/secure-note";
 import { CardView } from "@bitwarden/common/models/view/card.view";
 import { IdentityView } from "@bitwarden/common/models/view/identity.view";
 import { LoginView } from "@bitwarden/common/models/view/login.view";
+import { InitializerKey } from "@bitwarden/common/services/cryptography/initializer-key";
 
 import { mockEnc, mockFromJson } from "../../utils";
 
@@ -29,6 +30,7 @@ describe("Cipher DTO", () => {
     const cipher = new Cipher(data);
 
     expect(cipher).toEqual({
+      initializerKey: InitializerKey.Cipher,
       id: null,
       organizationId: null,
       folderId: null,
@@ -120,6 +122,7 @@ describe("Cipher DTO", () => {
       const cipher = new Cipher(cipherData);
 
       expect(cipher).toEqual({
+        initializerKey: InitializerKey.Cipher,
         id: "id",
         organizationId: "orgId",
         folderId: "folderId",
@@ -271,6 +274,7 @@ describe("Cipher DTO", () => {
       const cipher = new Cipher(cipherData);
 
       expect(cipher).toEqual({
+        initializerKey: InitializerKey.Cipher,
         id: "id",
         organizationId: "orgId",
         folderId: "folderId",
@@ -379,6 +383,7 @@ describe("Cipher DTO", () => {
       const cipher = new Cipher(cipherData);
 
       expect(cipher).toEqual({
+        initializerKey: InitializerKey.Cipher,
         id: "id",
         organizationId: "orgId",
         folderId: "folderId",
@@ -512,6 +517,7 @@ describe("Cipher DTO", () => {
       const cipher = new Cipher(cipherData);
 
       expect(cipher).toEqual({
+        initializerKey: InitializerKey.Cipher,
         id: "id",
         organizationId: "orgId",
         folderId: "folderId",

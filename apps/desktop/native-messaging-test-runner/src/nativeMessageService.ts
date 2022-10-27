@@ -6,7 +6,7 @@ import { Utils } from "@bitwarden/common/misc/utils";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
 import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
-import { EncryptService } from "@bitwarden/common/services/encrypt.service";
+import { EncryptServiceImplementation } from "@bitwarden/common/services/cryptography/encrypt.service.implementation";
 import { NodeCryptoFunctionService } from "@bitwarden/node/services/nodeCryptoFunction.service";
 
 import { DecryptedCommandData } from "../../src/models/nativeMessaging/decryptedCommandData";
@@ -32,7 +32,7 @@ const CONFIRMATION_MESSAGE_TIMEOUT = 100 * 1000; // 100 seconds
 export default class NativeMessageService {
   private ipcService: IPCService;
   private nodeCryptoFunctionService: NodeCryptoFunctionService;
-  private encryptService: EncryptService;
+  private encryptService: EncryptServiceImplementation;
 
   constructor(private apiVersion: number) {
     console.log("Starting native messaging service");
@@ -41,7 +41,7 @@ export default class NativeMessageService {
     });
 
     this.nodeCryptoFunctionService = new NodeCryptoFunctionService();
-    this.encryptService = new EncryptService(
+    this.encryptService = new EncryptServiceImplementation(
       this.nodeCryptoFunctionService,
       new ConsoleLogService(false),
       false

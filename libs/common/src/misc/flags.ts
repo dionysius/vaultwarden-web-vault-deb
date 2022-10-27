@@ -1,6 +1,8 @@
 // required to avoid linting errors when there are no flags
 /* eslint-disable @typescript-eslint/ban-types */
-export type SharedFlags = {};
+export type SharedFlags = {
+  multithreadDecryption: boolean;
+};
 
 // required to avoid linting errors when there are no flags
 /* eslint-disable @typescript-eslint/ban-types */

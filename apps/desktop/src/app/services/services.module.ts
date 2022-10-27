@@ -11,12 +11,12 @@ import {
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
-import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/abstractions/auth.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/abstractions/cipher.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/abstractions/cryptoFunction.service";
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { FileDownloadService } from "@bitwarden/common/abstractions/fileDownload/fileDownload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
 import {
@@ -115,7 +115,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
       useClass: ElectronCryptoService,
       deps: [
         CryptoFunctionServiceAbstraction,
-        AbstractEncryptService,
+        EncryptService,
         PlatformUtilsServiceAbstraction,
         LogServiceAbstraction,
         StateServiceAbstraction,

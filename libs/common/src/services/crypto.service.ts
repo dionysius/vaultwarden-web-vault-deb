@@ -1,8 +1,8 @@
 import * as bigInt from "big-integer";
 
-import { AbstractEncryptService } from "../abstractions/abstractEncrypt.service";
 import { CryptoService as CryptoServiceAbstraction } from "../abstractions/crypto.service";
 import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
+import { EncryptService } from "../abstractions/encrypt.service";
 import { LogService } from "../abstractions/log.service";
 import { PlatformUtilsService } from "../abstractions/platformUtils.service";
 import { StateService } from "../abstractions/state.service";
@@ -25,7 +25,7 @@ import { ProfileProviderResponse } from "../models/response/profile-provider.res
 export class CryptoService implements CryptoServiceAbstraction {
   constructor(
     private cryptoFunctionService: CryptoFunctionService,
-    private encryptService: AbstractEncryptService,
+    private encryptService: EncryptService,
     protected platformUtilService: PlatformUtilsService,
     protected logService: LogService,
     protected stateService: StateService

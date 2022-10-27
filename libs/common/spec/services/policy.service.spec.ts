@@ -3,6 +3,7 @@ import { Arg, Substitute, SubstituteOf } from "@fluffy-spoon/substitute";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserStatusType } from "@bitwarden/common/enums/organizationUserStatusType";
 import { PolicyType } from "@bitwarden/common/enums/policyType";
@@ -16,7 +17,6 @@ import { ResetPasswordPolicyOptions } from "@bitwarden/common/models/domain/rese
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { PolicyResponse } from "@bitwarden/common/models/response/policy.response";
 import { ContainerService } from "@bitwarden/common/services/container.service";
-import { EncryptService } from "@bitwarden/common/services/encrypt.service";
 import { PolicyService } from "@bitwarden/common/services/policy/policy.service";
 import { StateService } from "@bitwarden/common/services/state.service";
 

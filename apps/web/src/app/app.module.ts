@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 import { AppComponent } from "./app.component";
-import { CoreModule } from "./core";
+import { CoreModule } from "./core/core.module";
 import { OssRoutingModule } from "./oss-routing.module";
 import { OssModule } from "./oss.module";
 import { WildcardRoutingModule } from "./wildcard-routing.module";

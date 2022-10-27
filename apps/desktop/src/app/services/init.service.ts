@@ -2,8 +2,8 @@ import { Inject, Injectable } from "@angular/core";
 
 import { WINDOW } from "@bitwarden/angular/services/injection-tokens";
 import { AbstractThemingService } from "@bitwarden/angular/services/theming/theming.service.abstraction";
-import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/abstractions/environment.service";
 import { EventService as EventServiceAbstraction } from "@bitwarden/common/abstractions/event.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/abstractions/i18n.service";
@@ -36,7 +36,7 @@ export class InitService {
     private cryptoService: CryptoServiceAbstraction,
     private nativeMessagingService: NativeMessagingService,
     private themingService: AbstractThemingService,
-    private encryptService: AbstractEncryptService
+    private encryptService: EncryptService
   ) {}
 
   init() {

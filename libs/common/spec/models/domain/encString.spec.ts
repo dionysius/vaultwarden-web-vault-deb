@@ -2,8 +2,8 @@
 import { Substitute, Arg } from "@fluffy-spoon/substitute";
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { AbstractEncryptService } from "@bitwarden/common/abstractions/abstractEncrypt.service";
 import { CryptoService } from "@bitwarden/common/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/abstractions/encrypt.service";
 import { EncryptionType } from "@bitwarden/common/enums/encryptionType";
 import { EncString } from "@bitwarden/common/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
@@ -52,7 +52,7 @@ describe("EncString", () => {
       const cryptoService = Substitute.for<CryptoService>();
       cryptoService.getOrgKey(null).resolves(null);
 
-      const encryptService = Substitute.for<AbstractEncryptService>();
+      const encryptService = Substitute.for<EncryptService>();
       encryptService.decryptToUtf8(encString, Arg.any()).resolves("decrypted");
 
       beforeEach(() => {
@@ -157,12 +157,12 @@ describe("EncString", () => {
 
   describe("decrypt", () => {
     let cryptoService: MockProxy<CryptoService>;
-    let encryptService: MockProxy<AbstractEncryptService>;
+    let encryptService: MockProxy<EncryptService>;
     let encString: EncString;
 
     beforeEach(() => {
       cryptoService = mock<CryptoService>();
-      encryptService = mock<AbstractEncryptService>();
+      encryptService = mock<EncryptService>();
       encString = new EncString(null);
 
       (window as any).bitwardenContainerService = new ContainerService(

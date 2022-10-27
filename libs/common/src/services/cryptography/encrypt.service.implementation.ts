@@ -1,19 +1,21 @@
-import { AbstractEncryptService } from "../abstractions/abstractEncrypt.service";
-import { CryptoFunctionService } from "../abstractions/cryptoFunction.service";
-import { LogService } from "../abstractions/log.service";
-import { EncryptionType } from "../enums/encryptionType";
-import { IEncrypted } from "../interfaces/IEncrypted";
-import { Utils } from "../misc/utils";
-import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
-import { EncString } from "../models/domain/enc-string";
-import { EncryptedObject } from "../models/domain/encrypted-object";
-import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
+import { CryptoFunctionService } from "../../abstractions/cryptoFunction.service";
+import { EncryptService } from "../../abstractions/encrypt.service";
+import { LogService } from "../../abstractions/log.service";
+import { EncryptionType } from "../../enums/encryptionType";
+import { IEncrypted } from "../../interfaces/IEncrypted";
+import { Decryptable } from "../../interfaces/decryptable.interface";
+import { InitializerMetadata } from "../../interfaces/initializer-metadata.interface";
+import { Utils } from "../../misc/utils";
+import { EncArrayBuffer } from "../../models/domain/enc-array-buffer";
+import { EncString } from "../../models/domain/enc-string";
+import { EncryptedObject } from "../../models/domain/encrypted-object";
+import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
 
-export class EncryptService implements AbstractEncryptService {
+export class EncryptServiceImplementation implements EncryptService {
   constructor(
-    private cryptoFunctionService: CryptoFunctionService,
-    private logService: LogService,
-    private logMacFailures: boolean
+    protected cryptoFunctionService: CryptoFunctionService,
+    protected logService: LogService,
+    protected logMacFailures: boolean
   ) {}
 
   async encrypt(plainValue: string | ArrayBuffer, key: SymmetricCryptoKey): Promise<EncString> {
@@ -146,6 +148,17 @@ export class EncryptService implements AbstractEncryptService {
     );
 
     return result ?? null;
+  }
+
+  async decryptItems<T extends InitializerMetadata>(
+    items: Decryptable<T>[],
+    key: SymmetricCryptoKey
+  ): Promise<T[]> {
+    if (items == null || items.length < 1) {
+      return [];
+    }
+
+    return await Promise.all(items.map((item) => item.decrypt(key)));
   }
 
   private async aesEncrypt(data: ArrayBuffer, key: SymmetricCryptoKey): Promise<EncryptedObject> {
