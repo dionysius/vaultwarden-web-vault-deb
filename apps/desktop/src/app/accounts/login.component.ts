@@ -1,9 +1,11 @@
 import { Component, NgZone, OnDestroy, ViewChild, ViewContainerRef } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { LoginComponent as BaseLoginComponent } from "@bitwarden/angular/components/login.component";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
@@ -11,6 +13,7 @@ import { EnvironmentService } from "@bitwarden/common/abstractions/environment.s
 import { FormValidationErrorsService } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -29,13 +32,23 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
   @ViewChild("environment", { read: ViewContainerRef, static: true })
   environmentModal: ViewContainerRef;
 
-  showingModal = false;
+  webVaultHostname = "";
 
-  protected alwaysRememberEmail = true;
+  showingModal = false;
 
   private deferFocus: boolean = null;
 
+  get loggedEmail() {
+    return this.formGroup.value.email;
+  }
+
+  get selfHostedDomain() {
+    return this.environmentService.hasBaseUrl() ? this.environmentService.getWebVaultUrl() : null;
+  }
+
   constructor(
+    apiService: ApiService,
+    appIdService: AppIdService,
     authService: AuthService,
     router: Router,
     i18nService: I18nService,
@@ -51,9 +64,13 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     private messagingService: MessagingService,
     logService: LogService,
     formBuilder: FormBuilder,
-    formValidationErrorService: FormValidationErrorsService
+    formValidationErrorService: FormValidationErrorsService,
+    route: ActivatedRoute,
+    loginService: LoginService
   ) {
     super(
+      apiService,
+      appIdService,
       authService,
       router,
       platformUtilsService,
@@ -65,7 +82,9 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       logService,
       ngZone,
       formBuilder,
-      formValidationErrorService
+      formValidationErrorService,
+      route,
+      loginService
     );
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);
@@ -127,7 +146,23 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     this.showPassword = false;
   }
 
+  async continue() {
+    await super.validateEmail();
+    if (!this.formGroup.controls.email.valid) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccured"),
+        this.i18nService.t("invalidEmail")
+      );
+      return;
+    }
+  }
+
   async submit() {
+    if (!this.validatedEmail) {
+      return;
+    }
+
     await super.submit();
     if (this.captchaSiteKey) {
       const content = document.getElementById("content") as HTMLDivElement;

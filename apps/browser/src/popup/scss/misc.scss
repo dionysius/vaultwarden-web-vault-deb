@@ -440,3 +440,7 @@ app-vault-view .box-footer {
 html.force_redraw {
   animation: redraw 1s linear infinite;
 }
+
+.rounded-circle {
+  border-radius: 50% !important;
+}

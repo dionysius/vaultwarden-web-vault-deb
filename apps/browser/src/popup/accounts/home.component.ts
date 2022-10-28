@@ -1,63 +1,56 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 
-import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
-import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
+import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
-import { Utils } from "@bitwarden/common/misc/utils";
 
 @Component({
   selector: "app-home",
   templateUrl: "home.component.html",
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  loginInitiated = false;
+
+  formGroup = this.formBuilder.group({
+    email: ["", [Validators.required, Validators.email]],
+  });
+
   constructor(
     protected platformUtilsService: PlatformUtilsService,
-    private passwordGenerationService: PasswordGenerationService,
     private stateService: StateService,
-    private cryptoFunctionService: CryptoFunctionService,
-    private environmentService: EnvironmentService
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private i18nService: I18nService,
+    private environmentService: EnvironmentService,
+    private route: ActivatedRoute
   ) {}
+  async ngOnInit(): Promise<void> {
+    const rememberedEmail = await this.stateService.getRememberedEmail();
+    if (rememberedEmail != null) {
+      this.formGroup.patchValue({ email: await this.stateService.getRememberedEmail() });
+    }
+  }
 
-  async launchSsoBrowser() {
-    // Generate necessary sso params
-    const passwordOptions: any = {
-      type: "password",
-      length: 64,
-      uppercase: true,
-      lowercase: true,
-      numbers: true,
-      special: false,
-    };
-
-    const state =
-      (await this.passwordGenerationService.generatePassword(passwordOptions)) +
-      ":clientId=browser";
-    const codeVerifier = await this.passwordGenerationService.generatePassword(passwordOptions);
-    const codeVerifierHash = await this.cryptoFunctionService.hash(codeVerifier, "sha256");
-    const codeChallenge = Utils.fromBufferToUrlB64(codeVerifierHash);
-
-    await this.stateService.setSsoCodeVerifier(codeVerifier);
-    await this.stateService.setSsoState(state);
-
-    let url = this.environmentService.getWebVaultUrl();
-    if (url == null) {
-      url = "https://vault.bitwarden.com";
+  submit() {
+    this.formGroup.markAllAsTouched();
+    if (this.formGroup.invalid) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccured"),
+        this.i18nService.t("invalidEmail")
+      );
+      return;
     }
 
-    const redirectUri = url + "/sso-connector.html";
+    this.stateService.setRememberedEmail(this.formGroup.value.email);
 
-    // Launch browser
-    this.platformUtilsService.launchUri(
-      url +
-        "/#/sso?clientId=browser" +
-        "&redirectUri=" +
-        encodeURIComponent(redirectUri) +
-        "&state=" +
-        state +
-        "&codeChallenge=" +
-        codeChallenge
-    );
+    this.router.navigate(["login"], { queryParams: { email: this.formGroup.value.email } });
+  }
+
+  get selfHostedDomain() {
+    return this.environmentService.hasBaseUrl() ? this.environmentService.getWebVaultUrl() : null;
   }
 }

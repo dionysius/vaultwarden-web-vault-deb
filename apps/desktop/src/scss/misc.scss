@@ -310,6 +310,11 @@ form,
       margin-top: 4px;
       margin-left: -18px;
     }
+
+    &.remember-email {
+      padding-left: 20px;
+      padding-bottom: 5px;
+    }
   }
 
   .radio {
@@ -480,6 +485,10 @@ app-root > #loading,
 .password-reprompt {
   text-align: left;
   margin-top: 15px;
+}
+
+.password-hint-btn {
+  margin-bottom: 10px;
 }
 
 .set-pin-modal {

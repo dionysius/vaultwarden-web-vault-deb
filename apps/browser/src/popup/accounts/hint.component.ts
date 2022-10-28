@@ -1,10 +1,11 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { HintComponent as BaseHintComponent } from "@bitwarden/angular/components/hint.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 @Component({
@@ -17,8 +18,14 @@ export class HintComponent extends BaseHintComponent {
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
     apiService: ApiService,
-    logService: LogService
+    logService: LogService,
+    private route: ActivatedRoute,
+    loginService: LoginService
   ) {
-    super(router, i18nService, apiService, platformUtilsService, logService);
+    super(router, i18nService, apiService, platformUtilsService, logService, loginService);
+
+    super.onSuccessfulSubmit = async () => {
+      this.router.navigate([this.successRoute]);
+    };
   }
 }

@@ -6,12 +6,14 @@ import { first } from "rxjs/operators";
 
 import { LoginComponent as BaseLoginComponent } from "@bitwarden/angular/components/login.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AppIdService } from "@bitwarden/common/abstractions/appId.service";
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { CryptoFunctionService } from "@bitwarden/common/abstractions/cryptoFunction.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { FormValidationErrorsService } from "@bitwarden/common/abstractions/formValidationErrors.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
 import { PasswordGenerationService } from "@bitwarden/common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -39,15 +41,16 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
   private destroy$ = new Subject<void>();
 
   constructor(
+    apiService: ApiService,
+    appIdService: AppIdService,
     authService: AuthService,
     router: Router,
     i18nService: I18nService,
-    private route: ActivatedRoute,
+    route: ActivatedRoute,
     platformUtilsService: PlatformUtilsService,
     environmentService: EnvironmentService,
     passwordGenerationService: PasswordGenerationService,
     cryptoFunctionService: CryptoFunctionService,
-    private apiService: ApiService,
     private policyApiService: PolicyApiServiceAbstraction,
     private policyService: InternalPolicyService,
     logService: LogService,
@@ -56,9 +59,12 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
     private messagingService: MessagingService,
     private routerService: RouterService,
     formBuilder: FormBuilder,
-    formValidationErrorService: FormValidationErrorsService
+    formValidationErrorService: FormValidationErrorsService,
+    loginService: LoginService
   ) {
     super(
+      apiService,
+      appIdService,
       authService,
       router,
       platformUtilsService,
@@ -70,7 +76,9 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
       logService,
       ngZone,
       formBuilder,
-      formValidationErrorService
+      formValidationErrorService,
+      route,
+      loginService
     );
     this.onSuccessfulLogin = async () => {
       this.messagingService.send("setFullWidth");
@@ -82,9 +90,6 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
   async ngOnInit() {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
-      if (qParams.email != null && qParams.email.indexOf("@") > -1) {
-        this.formGroup.get("email")?.setValue(qParams.email);
-      }
       if (qParams.premium != null) {
         this.routerService.setPreviousUrl("/settings/premium");
       } else if (qParams.org != null) {
@@ -102,8 +107,6 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
         this.routerService.setPreviousUrl(route.toString());
       }
       await super.ngOnInit();
-      const rememberEmail = await this.stateService.getRememberEmail();
-      this.formGroup.get("rememberEmail")?.setValue(rememberEmail);
     });
 
     const invite = await this.stateService.getOrganizationInvitation();
@@ -176,6 +179,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
     if (previousUrl) {
       this.router.navigateByUrl(previousUrl);
     } else {
+      this.loginService.clearValues();
       this.router.navigate([this.successRoute]);
     }
   }

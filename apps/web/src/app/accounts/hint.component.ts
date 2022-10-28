@@ -5,6 +5,7 @@ import { HintComponent as BaseHintComponent } from "@bitwarden/angular/component
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 @Component({
@@ -17,8 +18,9 @@ export class HintComponent extends BaseHintComponent {
     i18nService: I18nService,
     apiService: ApiService,
     platformUtilsService: PlatformUtilsService,
-    logService: LogService
+    logService: LogService,
+    loginService: LoginService
   ) {
-    super(router, i18nService, apiService, platformUtilsService, logService);
+    super(router, i18nService, apiService, platformUtilsService, logService, loginService);
   }
 }

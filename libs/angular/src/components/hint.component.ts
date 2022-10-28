@@ -1,12 +1,15 @@
+import { Directive, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { PasswordHintRequest } from "@bitwarden/common/models/request/password-hint.request";
 
-export class HintComponent {
+@Directive()
+export class HintComponent implements OnInit {
   email = "";
   formPromise: Promise<any>;
 
@@ -18,8 +21,13 @@ export class HintComponent {
     protected i18nService: I18nService,
     protected apiService: ApiService,
     protected platformUtilsService: PlatformUtilsService,
-    private logService: LogService
+    private logService: LogService,
+    private loginService: LoginService
   ) {}
+
+  ngOnInit(): void {
+    this.email = this.loginService.getEmail() ?? "";
+  }
 
   async submit() {
     if (this.email == null || this.email === "") {

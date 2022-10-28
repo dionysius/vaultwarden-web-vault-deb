@@ -9,6 +9,7 @@ import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
@@ -59,7 +60,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     protected route: ActivatedRoute,
     protected logService: LogService,
     protected twoFactorService: TwoFactorService,
-    protected appIdService: AppIdService
+    protected appIdService: AppIdService,
+    protected loginService: LoginService
   ) {
     super(environmentService, i18nService, platformUtilsService);
     this.webAuthnSupported = this.platformUtilsService.supportsWebAuthn(win);
@@ -204,6 +206,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       return;
     }
     if (this.onSuccessfulLogin != null) {
+      this.loginService.clearValues();
       this.onSuccessfulLogin();
     }
     if (response.resetMasterPassword) {
@@ -213,8 +216,10 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       this.successRoute = "update-temp-password";
     }
     if (this.onSuccessfulLoginNavigate != null) {
+      this.loginService.clearValues();
       this.onSuccessfulLoginNavigate();
     } else {
+      this.loginService.clearValues();
       this.router.navigate([this.successRoute], {
         queryParams: {
           identifier: this.identifier,

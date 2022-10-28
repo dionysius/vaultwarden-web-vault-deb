@@ -189,6 +189,8 @@
 
 #login-page {
   flex-direction: column;
+  justify-content: unset;
+  padding-top: 20px;
 
   .login-header {
     align-self: flex-start;

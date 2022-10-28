@@ -1,25 +1,12 @@
 <form #form (ngSubmit)="submit()" [appApiAction]="formPromise" [formGroup]="formGroup">
   <header>
-    <div class="left">
-      <button type="button" routerLink="/home">{{ "cancel" | i18n }}</button>
-    </div>
-    <h1 class="center">
-      <span class="title">{{ "appName" | i18n }}</span>
+    <h1 class="login-center">
+      <span class="title">{{ "logIn" | i18n }}</span>
     </h1>
-    <div class="right">
-      <button type="submit" [disabled]="form.loading">
-        <span [hidden]="form.loading">{{ "login" | i18n }}</span>
-        <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
-      </button>
-    </div>
   </header>
   <main tabindex="-1">
     <div class="box">
       <div class="box-content">
-        <div class="box-content-row" appBoxRow>
-          <label for="email">{{ "emailAddress" | i18n }}</label>
-          <input id="email" type="email" formControlName="email" appInputVerbatim="false" />
-        </div>
         <div class="box-content-row box-content-row-flex" appBoxRow>
           <div class="row-main">
             <label for="masterPassword">{{ "masterPass" | i18n }}</label>
@@ -52,13 +39,27 @@
           <iframe id="hcaptcha_iframe" height="80"></iframe>
         </div>
       </div>
+      <div class="box-footer">
+        <button type="button" class="btn link" routerLink="/hint" (click)="setFormValues()">
+          <b>{{ "getMasterPasswordHint" | i18n }}</b>
+        </button>
+      </div>
     </div>
-    <p class="text-center text-muted" *ngIf="selfHostedDomain">
-      {{ "loggingInTo" | i18n: selfHostedDomain }}
-    </p>
-    <p class="text-center">
-      <button type="button" routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</button>
-    </p>
     <app-private-mode-warning></app-private-mode-warning>
+    <div class="content login-buttons">
+      <button type="submit" class="btn primary block" [disabled]="form.loading">
+        <span [hidden]="form.loading"
+          ><b>{{ "logInWithMasterPassword" | i18n }}</b></span
+        >
+        <i class="bwi bwi-spinner bwi-lg bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+      </button>
+      <button type="button" (click)="launchSsoBrowser()" class="btn block">
+        <i class="bwi bwi-bank" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
+      </button>
+      <div class="small">
+        <p class="no-margin">{{ "loggingInAs" | i18n }} {{ loggedEmail }}</p>
+        <a routerLink="/home">{{ "notYou" | i18n }}</a>
+      </div>
+    </div>
   </main>
 </form>

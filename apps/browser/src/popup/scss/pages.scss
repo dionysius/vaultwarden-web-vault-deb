@@ -88,7 +88,7 @@ app-home {
   }
 }
 
-app-private-mode-warning {
+.app-private-mode-warning {
   display: block;
   padding-top: 1rem;
 }
@@ -114,4 +114,12 @@ body.body-full {
       height: calc(100% + 80px);
     }
   }
+}
+
+.createAccountLink {
+  padding-top: 30px;
+}
+
+.login-buttons > button {
+  margin: 15px 0 15px 0;
 }

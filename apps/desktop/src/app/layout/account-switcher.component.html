@@ -90,7 +90,7 @@
     <ng-container *ngIf="activeAccount?.email != null">
       <div class="border" *ngIf="numberOfAccounts > 0"></div>
       <ng-container *ngIf="numberOfAccounts < 4">
-        <button type="button" class="add" routerLink="/login" (click)="addAccount()">
+        <button type="button" class="add" (click)="addAccount()">
           <i class="bwi bwi-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
         </button>
       </ng-container>

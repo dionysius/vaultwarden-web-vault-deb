@@ -9,6 +9,7 @@ import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/abstractions/sync/sync.service.abstraction";
@@ -41,7 +42,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     route: ActivatedRoute,
     logService: LogService,
     twoFactorService: TwoFactorService,
-    appIdService: AppIdService
+    appIdService: AppIdService,
+    loginService: LoginService
   ) {
     super(
       authService,
@@ -55,9 +57,11 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       route,
       logService,
       twoFactorService,
-      appIdService
+      appIdService,
+      loginService
     );
     super.onSuccessfulLogin = () => {
+      this.loginService.clearValues();
       return syncService.fullSync(true);
     };
   }

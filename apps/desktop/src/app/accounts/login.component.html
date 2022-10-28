@@ -22,78 +22,135 @@
     <div id="content" class="content">
       <img class="logo-image" alt="Bitwarden" />
       <p class="lead">{{ "loginOrCreateNewAccount" | i18n }}</p>
-      <div class="box last">
-        <div class="box-content">
-          <div class="box-content-row" appBoxRow>
-            <label for="email">{{ "emailAddress" | i18n }}</label>
-            <input id="email" type="email" formControlName="email" appInputVerbatim="false" />
-          </div>
-          <div class="box-content-row box-content-row-flex" appBoxRow>
-            <div class="row-main">
-              <label for="masterPassword">{{ "masterPass" | i18n }}</label>
+      <!-- start email -->
+      <ng-container *ngIf="!validatedEmail; else loginPage">
+        <div class="box last">
+          <div class="box-content">
+            <div class="box-content-row" appBoxRow>
+              <label for="email">{{ "emailAddress" | i18n }}</label>
               <input
-                id="masterPassword"
-                type="{{ showPassword ? 'text' : 'password' }}"
-                class="monospaced"
-                formControlName="masterPassword"
-                appInputVerbatim
+                id="email"
+                type="email"
+                formControlName="email"
+                appInputVerbatim="false"
+                (keyup.enter)="validateEmail()"
               />
             </div>
-            <div class="action-buttons">
+          </div>
+          <div class="box-footer" *ngIf="selfHostedDomain">
+            {{ "loggingInTo" | i18n: selfHostedDomain }}
+          </div>
+        </div>
+        <div class="checkbox remember-email">
+          <label for="rememberEmail">
+            <input
+              id="rememberEmail"
+              type="checkbox"
+              name="rememberEmail"
+              formControlName="rememberEmail"
+            />
+            {{ "rememberEmail" | i18n }}
+          </label>
+        </div>
+        <div class="buttons with-rows">
+          <div class="buttons-row">
+            <button type="button" class="btn primary block" (click)="continue()">
+              {{ "continue" | i18n }}
+            </button>
+          </div>
+        </div>
+        <div class="sub-options">
+          <p class="no-margin">{{ "newAroundHere" | i18n }}</p>
+          <button type="button" class="text text-primary" routerLink="/register">
+            {{ "createAccount" | i18n }}
+          </button>
+        </div>
+      </ng-container>
+
+      <ng-template [formGroup]="formGroup" #loginPage>
+        <div class="box last">
+          <div class="box-content">
+            <div class="box-content-row box-content-row-flex" appBoxRow>
+              <div class="row-main">
+                <label for="masterPassword">{{ "masterPass" | i18n }}</label>
+                <input
+                  id="masterPassword"
+                  type="{{ showPassword ? 'text' : 'password' }}"
+                  class="monospaced"
+                  formControlName="masterPassword"
+                  appInputVerbatim
+                />
+              </div>
+              <div class="action-buttons">
+                <button
+                  type="button"
+                  class="row-btn"
+                  appStopClick
+                  appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                  [attr.aria-pressed]="showPassword"
+                  (click)="togglePassword()"
+                >
+                  <i
+                    class="bwi bwi-lg"
+                    aria-hidden="true"
+                    [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box last" [hidden]="!showCaptcha()">
+          <div class="box-content">
+            <iframe id="hcaptcha_iframe" style="margin-top: 20px"></iframe>
+            <div class="box-content-row">
               <button
+                class="btn block"
                 type="button"
-                class="row-btn"
-                appStopClick
-                appA11yTitle="{{ 'toggleVisibility' | i18n }}"
-                [attr.aria-pressed]="showPassword"
-                (click)="togglePassword()"
+                routerLink="/accessibility-cookie"
+                (click)="setFormValues()"
               >
-                <i
-                  class="bwi bwi-lg"
-                  aria-hidden="true"
-                  [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
-                ></i>
+                <i class="bwi bwi-universal-access" aria-hidden="true"></i>
+                {{ "loadAccessibilityCookie" | i18n }}
               </button>
             </div>
           </div>
         </div>
-      </div>
-      <div class="box last" [hidden]="!showCaptcha()">
-        <div class="box-content">
-          <iframe id="hcaptcha_iframe" style="margin-top: 20px"></iframe>
-          <div class="box-content-row">
-            <button class="btn block" type="button" routerLink="/accessibility-cookie">
-              <i class="bwi bwi-universal-access" aria-hidden="true"></i>
-              {{ "loadAccessibilityCookie" | i18n }}
+        <div class="buttons with-rows">
+          <div class="buttons-row">
+            <button type="submit" class="btn primary block" [disabled]="form.loading">
+              <b [hidden]="form.loading"
+                ><i class="bwi bwi-sign-in" aria-hidden="true"></i>
+                {{ "loginWithMasterPassword" | i18n }}</b
+              >
+              <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="buttons-row">
+            <button
+              type="button"
+              (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')"
+              class="btn block"
+            >
+              <i class="bwi bwi-bank" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
             </button>
           </div>
         </div>
-      </div>
-      <div class="buttons with-rows">
-        <div class="buttons-row">
-          <button type="submit" class="btn primary block" [disabled]="form.loading">
-            <b [hidden]="form.loading"
-              ><i class="bwi bwi-sign-in" aria-hidden="true"></i> {{ "logIn" | i18n }}</b
-            >
-            <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
-          </button>
-          <button type="button" routerLink="/register" class="btn block">
-            <i class="bwi bwi-pencil-square" aria-hidden="true"></i> {{ "createAccount" | i18n }}
-          </button>
-        </div>
-        <div class="buttons-row">
+        <div class="sub-options">
           <button
             type="button"
-            (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')"
-            class="btn block"
+            class="text text-primary password-hint-btn"
+            routerLink="/hint"
+            (click)="setFormValues()"
           >
-            <i class="bwi bwi-bank" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
+            {{ "getMasterPasswordHint" | i18n }}
           </button>
+          <div>
+            <p class="no-margin">{{ "loggingInAs" | i18n }} {{ loggedEmail }}</p>
+            <a [routerLink]="[]" (click)="toggleValidateEmail(false)">{{ "notYou" | i18n }}</a>
+          </div>
         </div>
-      </div>
-      <div class="sub-options">
-        <button type="button" routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</button>
-      </div>
+      </ng-template>
     </div>
   </form>
 </div>

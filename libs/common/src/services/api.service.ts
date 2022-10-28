@@ -1518,6 +1518,12 @@ export class ApiService implements ApiServiceAbstraction {
     return new DeviceVerificationResponse(r);
   }
 
+  async getKnownDevice(email: string, deviceIdentifier: string): Promise<boolean> {
+    const path = `/devices/knowndevice/${email}/${deviceIdentifier}`;
+    const r = await this.send("GET", path, null, false, true);
+    return r as boolean;
+  }
+
   // Emergency Access APIs
 
   async getEmergencyAccessTrusted(): Promise<ListResponse<EmergencyAccessGranteeDetailsResponse>> {

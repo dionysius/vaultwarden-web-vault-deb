@@ -9,6 +9,7 @@ import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { EnvironmentService } from "@bitwarden/common/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
+import { LoginService } from "@bitwarden/common/abstractions/login.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
@@ -40,7 +41,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     logService: LogService,
     twoFactorService: TwoFactorService,
     appIdService: AppIdService,
-    private routerService: RouterService
+    private routerService: RouterService,
+    loginService: LoginService
   ) {
     super(
       authService,
@@ -54,7 +56,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       route,
       logService,
       twoFactorService,
-      appIdService
+      appIdService,
+      loginService
     );
     this.onSuccessfulLoginNavigate = this.goAfterLogIn;
   }
@@ -79,6 +82,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
   }
 
   async goAfterLogIn() {
+    this.loginService.clearValues();
     const previousUrl = this.routerService.getPreviousUrl();
     if (previousUrl) {
       this.router.navigateByUrl(previousUrl);

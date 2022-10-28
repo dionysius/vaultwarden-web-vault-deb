@@ -83,6 +83,11 @@
     margin: 5px 10px;
     font-size: $font-size-small;
 
+    button.btn {
+      font-size: $font-size-small;
+      padding: 0;
+    }
+
     @include themify($themes) {
       color: themed("mutedColor");
     }
