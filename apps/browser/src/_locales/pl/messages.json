@@ -32,7 +32,7 @@
     "message": "Wyślij"
   },
   "emailAddress": {
-    "message": "Adres email"
+    "message": "Adres e-mail"
   },
   "masterPass": {
     "message": "Hasło główne"
@@ -56,7 +56,7 @@
     "message": "Sejf"
   },
   "myVault": {
-    "message": "Mój Sejf"
+    "message": "Mój sejf"
   },
   "allVaults": {
     "message": "Wszystkie sejfy"
@@ -68,25 +68,25 @@
     "message": "Ustawienia"
   },
   "currentTab": {
-    "message": "Bieżąca karta"
+    "message": "Obecna karta"
   },
   "copyPassword": {
-    "message": "Skopiuj hasło"
+    "message": "Kopiuj hasło"
   },
   "copyNote": {
-    "message": "Skopiuj notatkę"
+    "message": "Kopiuj notatkę"
   },
   "copyUri": {
     "message": "Kopiuj URI"
   },
   "copyUsername": {
-    "message": "Skopiuj nazwę użytkownika"
+    "message": "Kopiuj nazwę użytkownika"
   },
   "copyNumber": {
-    "message": "Skopiuj numer"
+    "message": "Kopiuj numer"
   },
   "copySecurityCode": {
-    "message": "Skopiuj kod zabezpieczający"
+    "message": "Kopiuj kod zabezpieczający"
   },
   "autoFill": {
     "message": "Autouzupełnianie"
@@ -199,7 +199,7 @@
     "message": "Synchronizacja"
   },
   "syncVaultNow": {
-    "message": "Rozpocznij synchronizację sejfu"
+    "message": "Synchronizuj sejf"
   },
   "lastSync": {
     "message": "Ostatnia synchronizacja:"
@@ -224,10 +224,10 @@
     "message": "Wybierz"
   },
   "generatePassword": {
-    "message": "Generuj hasło"
+    "message": "Wygeneruj hasło"
   },
   "regeneratePassword": {
-    "message": "Wygeneruj hasło ponownie"
+    "message": "Wygeneruj ponownie hasło"
   },
   "options": {
     "message": "Opcje"
@@ -494,7 +494,7 @@
     "message": "Logowanie dwustopniowe sprawia, że konto jest bardziej bezpieczne poprzez wymuszenie potwierdzenia logowania z innego urządzenia, takiego jak z klucza bezpieczeństwa, aplikacji uwierzytelniającej, wiadomości SMS, telefonu lub adresu e-mail. Logowanie dwustopniowe możesz włączyć w sejfie internetowym bitwarden.com. Czy chcesz przejść do tej strony?"
   },
   "editedFolder": {
-    "message": "Folder został zaktualizowany"
+    "message": "Folder został zapisany"
   },
   "deleteFolderConfirmation": {
     "message": "Czy na pewno chcesz usunąć ten folder?"
@@ -537,7 +537,7 @@
     "message": "Element został dodany"
   },
   "editedItem": {
-    "message": "Element został zaktualizowany"
+    "message": "Element został zapisany"
   },
   "deleteItemConfirmation": {
     "message": "Czy na pewno chcesz to usunąć?"
@@ -726,19 +726,19 @@
     "message": "Załącznik został usunięty"
   },
   "newAttachment": {
-    "message": "Dodaj załącznik"
+    "message": "Dodaj nowy załącznik"
   },
   "noAttachments": {
     "message": "Brak załączników."
   },
   "attachmentSaved": {
-    "message": "Załącznik został zapisany."
+    "message": "Załącznik został zapisany"
   },
   "file": {
     "message": "Plik"
   },
   "selectFile": {
-    "message": "Wybierz plik."
+    "message": "Wybierz plik"
   },
   "maxFileSize": {
     "message": "Maksymalny rozmiar pliku to 500 MB."
@@ -810,7 +810,7 @@
     "message": "Odświeżanie zostało zakończone"
   },
   "enableAutoTotpCopy": {
-    "message": "Kopiuj TOTP automatycznie"
+    "message": "Kopiuj kod TOTP automatycznie"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Jeśli dane logowania posiadają dołączony klucz uwierzytelniający TOTP, kod weryfikacyjny jest automatycznie kopiowany do schowka przy każdym autouzupełnianiu danych logowania."
@@ -951,7 +951,7 @@
     "message": "Adres URL serwera ikon"
   },
   "environmentSaved": {
-    "message": "Adresy URL środowiska zostały zapisane."
+    "message": "Adresy URL środowiska zostały zapisane"
   },
   "enableAutoFillOnPageLoad": {
     "message": "Włącz autouzupełnianie po załadowaniu strony"
@@ -1199,7 +1199,7 @@
     "message": "Tożsamość"
   },
   "passwordHistory": {
-    "message": "Historia haseł"
+    "message": "Historia hasła"
   },
   "back": {
     "message": "Powrót"
@@ -1731,14 +1731,14 @@
     "message": "Obecna liczba dostępów"
   },
   "createSend": {
-    "message": "Utwórz nową wysyłkę",
+    "message": "Nowa wysyłka",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Nowe hasło"
   },
   "sendDisabled": {
-    "message": "Wysyłka została wyłączona",
+    "message": "Wysyłka została usunięta",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1750,7 +1750,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Wysyłka została zaktualizowana",
+    "message": "Wysyłka została zapisana",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1814,7 +1814,7 @@
     "message": "Musisz zweryfikować adres e-mail, aby korzystać z tej funkcji. Adres możesz zweryfikować w sejfie internetowym."
   },
   "updatedMasterPassword": {
-    "message": "Zaktualizowane hasło główne"
+    "message": "Hasło główne zostało zaktualizowane"
   },
   "updateMasterPassword": {
     "message": "Zaktualizuj hasło główne"
@@ -1884,7 +1884,7 @@
     "message": "Usuń hasło główne"
   },
   "removedMasterPassword": {
-    "message": "Hasło główne zostało usunięte."
+    "message": "Hasło główne zostało usunięte"
   },
   "leaveOrganizationConfirmation": {
     "message": "Czy na pewno chcesz opuścić tę organizację?"

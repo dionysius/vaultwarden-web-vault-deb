@@ -7,14 +7,14 @@
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Bitwarden 是一个安全且免费的跨平台密码管理器。",
+    "message": "安全且免费的跨平台密码管理器。",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "登录或新建一个账户来访问你的密码库。"
+    "message": "登录或者创建一个账户来访问您的安全密码库。"
   },
   "createAccount": {
-    "message": "新建账户"
+    "message": "创建账户"
   },
   "login": {
     "message": "登录"
@@ -119,7 +119,7 @@
     "message": "密码提示"
   },
   "enterEmailToGetHint": {
-    "message": "请输入您账户的 Email 地址来接收主密码提示。"
+    "message": "请输入您账户的电子邮件地址来接收主密码提示。"
   },
   "getMasterPasswordHint": {
     "message": "获取主密码提示"
@@ -540,7 +540,7 @@
     "message": "项目已保存"
   },
   "deleteItemConfirmation": {
-    "message": "您确定要删除此项目吗?"
+    "message": "您确定要将其发送到回收站吗？"
   },
   "deletedItem": {
     "message": "项目已发送到回收站"
@@ -882,7 +882,7 @@
     "message": "两步登录选项"
   },
   "recoveryCodeDesc": {
-    "message": "无法访问您所有的双重身份提供程序吗？请使用您的恢复代码来禁用您账户中所有的双重身份提供程序。"
+    "message": "无法访问您所有的双重身份提供程序吗？请使用您的恢复代码来停用您账户中所有的双重身份提供程序。"
   },
   "recoveryCodeTitle": {
     "message": "恢复代码"
@@ -912,7 +912,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "使用任何具有 WebAuthn 功能的安全钥匙访问您的账户。"
+    "message": "使用任何 WebAuthn 兼容的安全钥匙访问您的帐户。"
   },
   "emailTitle": {
     "message": "电子邮件"
@@ -1713,7 +1713,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
-    "message": "禁用此 Send 以阻止任何人访问它。",
+    "message": "停用此 Send 则任何人无法访问它。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendShareDesc": {
@@ -1731,14 +1731,14 @@
     "message": "当前访问次数"
   },
   "createSend": {
-    "message": "新建 Send",
+    "message": "创建 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "新建密码"
   },
   "sendDisabled": {
-    "message": "Send 已移除",
+    "message": "Send 已禁用",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1887,10 +1887,10 @@
     "message": "主密码已移除"
   },
   "leaveOrganizationConfirmation": {
-    "message": "您确定要离开该组织吗？"
+    "message": "您确定要退出该组织吗？"
   },
   "leftOrganization": {
-    "message": "您已经离开该组织。"
+    "message": "您已经退出该组织。"
   },
   "toggleCharacterCount": {
     "message": "字符计数开关"
@@ -1976,10 +1976,10 @@
     "message": "需要高级版订阅"
   },
   "organizationIsDisabled": {
-    "message": "组织已被挂起。"
+    "message": "组织已暂停。"
   },
   "disabledOrganizationFilterError": {
-    "message": "无法访问已被挂起的组织中的项目。请联系您的组织所有者获取帮助。"
+    "message": "无法访问已暂停组织中的项目。请联系您的组织所有者获取帮助。"
   },
   "cardBrandMir": {
     "message": "Mir"

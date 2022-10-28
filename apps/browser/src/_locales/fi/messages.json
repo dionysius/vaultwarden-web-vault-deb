@@ -134,7 +134,7 @@
     "message": "Lähetä koodi"
   },
   "codeSent": {
-    "message": "Koodi lähetetty"
+    "message": "Koodi lähetettiin"
   },
   "verificationCode": {
     "message": "Todennuskoodi"
@@ -765,7 +765,7 @@
     "message": "Et ole tällä hetkellä Premium-jäsen."
   },
   "premiumSignUpAndGet": {
-    "message": "Ryhdy Premium-jäseneksi saadaksesi:"
+    "message": "Liity Premium-jäseneksi saadaksesi:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
@@ -1308,7 +1308,7 @@
     "message": "Oletus"
   },
   "dateUpdated": {
-    "message": "Päivitetty",
+    "message": "Päivitettiin",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
@@ -1316,7 +1316,7 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Salasana päivitetty",
+    "message": "Salasana päivitettiin",
     "description": "ex. Date this password was updated"
   },
   "neverLockWarning": {
@@ -1563,7 +1563,7 @@
     "message": "Toimintoa ei voi suorittaa sivupalkissa, yritä toimintoa uudelleen ponnahdusvalikossa tai ponnahdusikkunassa."
   },
   "personalOwnershipSubmitError": {
-    "message": "Yrityksen asettaman käytännön johdosta et voi tallentaa kohteita henkilökohtaiseen holviisi. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
+    "message": "Yrityskäytännön johdosta kohteiden tallennus henkilökohtaiseen holviin ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Organisaatiokäytäntö vaikuttaa omistajuusvalintoihisi."
@@ -1619,7 +1619,7 @@
     "message": "Salasanasuojattu"
   },
   "copySendLink": {
-    "message": "Kopioi Sendin linkki",
+    "message": "Kopioi Send-linkki",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
@@ -1742,7 +1742,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Yrityksen käytännön vuoksi voit poistaa vain olemassa olevan Sendin.",
+    "message": "Yrityskäytännön vuoksi voit poistaa vain olemassa olevan Sendin.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1814,7 +1814,7 @@
     "message": "Sinun on vahvistettava sähköpostiosoitteesi käyttääksesi ominaisuutta. Voit vahvistaa osoitteesi verkkoholvissa."
   },
   "updatedMasterPassword": {
-    "message": "Pääsalasana vaihdettiin"
+    "message": "Pääsalasana päivitettiin"
   },
   "updateMasterPassword": {
     "message": "Vaihda pääsalasana"
@@ -1902,7 +1902,7 @@
     "message": "Henkilökohtaisen holvin vienti"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Vain tunnukselle $EMAIL$ liitetyt henkilökohtaisen holvin kohteet viedään. Organisaation kohteet eivät sisälly tähän.",
+    "message": "Vain tunnukseen $EMAIL$ liitetyt henkilökohtaisen holvin kohteet viedään. Organisaation kohteet eivät sisälly tähän.",
     "placeholders": {
       "email": {
         "content": "$1",

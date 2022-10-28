@@ -20,7 +20,7 @@
     "message": "Inloggen"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Single sign-on voor bedrijven"
   },
   "cancel": {
     "message": "Annuleren"
@@ -330,7 +330,7 @@
     "message": "Overig"
   },
   "rateExtension": {
-    "message": "Extensie beoordelen"
+    "message": "Deze extensie beoordelen"
   },
   "rateExtensionDesc": {
     "message": "Je kunt ons helpen door een goede recensie achter te laten!"
@@ -1312,7 +1312,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Aangemaakt",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -2009,7 +2009,7 @@
     "message": "Zelfgehost"
   },
   "thirdParty": {
-    "message": "Third-party"
+    "message": "van derden"
   },
   "thirdPartyServerMessage": {
     "message": "Verbonden met server implementatie van derden, $SERVERNAME$. Reproduceer bugs via de officiële server, of meld ze bij het serverproject.",
