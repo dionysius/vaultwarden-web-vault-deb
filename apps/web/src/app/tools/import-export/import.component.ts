@@ -25,7 +25,6 @@ export class ImportComponent implements OnInit, OnDestroy {
   importOptions: ImportOption[];
   format: ImportType = null;
   fileContents: string;
-  fileSelected: File;
   formPromise: Promise<ImportError>;
   loading = false;
   importBlockedByPolicy$ = this.policyService.policyAppliesToActiveUser$(
@@ -183,11 +182,6 @@ export class ImportComponent implements OnInit, OnDestroy {
         ? this.i18nService.collator.compare(a.name, b.name)
         : a.name.localeCompare(b.name);
     });
-  }
-
-  setSelectedFile(event: Event) {
-    const fileInputEl = <HTMLInputElement>event.target;
-    this.fileSelected = fileInputEl.files.length > 0 ? fileInputEl.files[0] : null;
   }
 
   private async error(error: Error) {
