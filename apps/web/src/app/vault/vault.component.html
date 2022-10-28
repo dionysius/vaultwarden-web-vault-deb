@@ -78,7 +78,12 @@
           </button>
         </div>
       </div>
-      <app-verify-email *ngIf="showVerifyEmail" class="d-block mb-4"></app-verify-email>
+      <app-verify-email
+        *ngIf="showVerifyEmail"
+        class="d-block mb-4"
+        (onVerified)="emailVerified($event)"
+      ></app-verify-email>
+
       <div class="card border-warning mb-4" *ngIf="showBrowserOutdated">
         <div class="card-header bg-warning text-white">
           <i class="bwi bwi-exclamation-triangle bwi-fw" aria-hidden="true"></i>
