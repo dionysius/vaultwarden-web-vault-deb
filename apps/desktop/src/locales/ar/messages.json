@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "أنشئ",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1575,10 +1575,10 @@
     "message": "يتم استخدام تكامل المتصفح للقياسات الحيوية في المتصفح."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "السماح بدمج متصفح DuckDuckGo"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "استخدم مخزن Bitwarden الخاص بك عند التصفح باستخدام DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "تكامل المتصفح غير مدعوم"
@@ -1608,7 +1608,7 @@
     "message": "الرجاء التأكد من أن البصمة المعروضة متطابقة مع البصمة المعروضة في ملحق المتصفح."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ يريد الاتصال بـ Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1617,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "هل ترغب في الموافقة على هذا الطلب؟"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "وإذا لم تقم بالشروع في هذا الطلب، فلا توافق عليه."
   },
   "biometricsNotEnabledTitle": {
     "message": "القياسات الحيوية غير مفعلة"
@@ -2020,6 +2020,6 @@
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "الخزنة"
   }
 }

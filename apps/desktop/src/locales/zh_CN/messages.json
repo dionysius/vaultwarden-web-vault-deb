@@ -349,7 +349,7 @@
     "message": "项目已添加"
   },
   "editedItem": {
-    "message": "项目已编辑"
+    "message": "项目已保存"
   },
   "deleteItem": {
     "message": "删除项目"
@@ -361,10 +361,10 @@
     "message": "删除附件"
   },
   "deleteItemConfirmation": {
-    "message": "您确定要删除此项目吗？"
+    "message": "您确定要将其发送到回收站吗？"
   },
   "deletedItem": {
-    "message": "项目已删除"
+    "message": "项目已发送到回收站"
   },
   "overwritePasswordConfirmation": {
     "message": "您确定要覆盖当前密码吗？"
@@ -376,7 +376,7 @@
     "message": "您确定要覆盖当前用户名吗？"
   },
   "noneFolder": {
-    "message": "没有文件夹",
+    "message": "无文件夹",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -395,7 +395,7 @@
     "message": "复制 URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "复制验证码（TOTP）"
+    "message": "复制验证码 (TOTP)"
   },
   "length": {
     "message": "长度"
@@ -429,10 +429,10 @@
     "message": "关闭"
   },
   "minNumbers": {
-    "message": "最小位数"
+    "message": "数字最少个数"
   },
   "minSpecial": {
-    "message": "最少特殊符号",
+    "message": "符号最少个数",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -461,13 +461,13 @@
     "message": "您确定要删除此附件吗？"
   },
   "attachmentSaved": {
-    "message": "附件已保存。"
+    "message": "附件已保存"
   },
   "file": {
     "message": "文件"
   },
   "selectFile": {
-    "message": "选择一个文件。"
+    "message": "选择一个文件"
   },
   "maxFileSize": {
     "message": "文件最大为 500 MB。"
@@ -476,22 +476,22 @@
     "message": "在您更新加密密钥前，您不能使用此功能。"
   },
   "editedFolder": {
-    "message": "已编辑文件夹"
+    "message": "文件夹已保存"
   },
   "addedFolder": {
-    "message": "已添加文件夹"
+    "message": "文件夹已添加"
   },
   "deleteFolderConfirmation": {
     "message": "您确定要删除此文件夹吗？"
   },
   "deletedFolder": {
-    "message": "已删除文件夹"
+    "message": "文件夹已删除"
   },
   "loginOrCreateNewAccount": {
     "message": "登录或者创建一个账户来访问您的安全密码库。"
   },
   "createAccount": {
-    "message": "创建账号"
+    "message": "创建账户"
   },
   "logIn": {
     "message": "登录"
@@ -509,10 +509,10 @@
     "message": "主密码提示可以在你忘记密码时帮你回忆。"
   },
   "reTypeMasterPass": {
-    "message": "重新输入主密码"
+    "message": "再次输入主密码"
   },
   "masterPassHint": {
-    "message": "主密码提示 (可选)"
+    "message": "主密码提示（可选）"
   },
   "settings": {
     "message": "设置"
@@ -521,7 +521,7 @@
     "message": "密码提示"
   },
   "enterEmailToGetHint": {
-    "message": "请输入您账户的电子邮件地址来接收密码提示。"
+    "message": "请输入您账户的电子邮件地址来接收主密码提示。"
   },
   "getMasterPasswordHint": {
     "message": "获取主密码提示"
@@ -620,7 +620,7 @@
     "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有按钮，请按下它。"
   },
   "recoveryCodeDesc": {
-    "message": "您丢失了所有的两步登录方式？使用您的恢复代码来为您的账户禁用所有两步登录方式。"
+    "message": "无法访问您所有的双重身份提供程序吗？请使用您的恢复代码来停用您账户中所有的双重身份提供程序。"
   },
   "recoveryCodeTitle": {
     "message": "恢复代码"
@@ -633,7 +633,7 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey NEO 安全密钥"
+    "message": "YubiKey OTP 安全钥匙"
   },
   "yubiKeyDesc": {
     "message": "使用 YubiKey 来访问您的账户。支持 YubiKey 4、4 Nano、4C 以及 NEO 设备。"
@@ -650,7 +650,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "使用任何具有 WebAuthn 功能的安全密钥来访问您的账户。"
+    "message": "使用任何 WebAuthn 兼容的安全钥匙访问您的帐户。"
   },
   "emailTitle": {
     "message": "电子邮件地址"
@@ -662,7 +662,7 @@
     "message": "登录不可用"
   },
   "noTwoStepProviders": {
-    "message": "此账户已启用两步登录，但此设备不支持任何已配置的两步登录方法。"
+    "message": "此账户已设置两步登录，但此设备不支持任何已配置的两步登录提供程序。"
   },
   "noTwoStepProviders2": {
     "message": "请添加能更好支持跨设备使用的提供程序（比如验证器应用）。"
@@ -671,7 +671,7 @@
     "message": "两步登录选项"
   },
   "selfHostedEnvironment": {
-    "message": "自我托管环境"
+    "message": "自托管环境"
   },
   "selfHostedEnvironmentFooter": {
     "message": "指定您本地托管的 Bitwarden 安装的基础 URL。"
@@ -701,7 +701,7 @@
     "message": "图标服务器 URL"
   },
   "environmentSaved": {
-    "message": "各环境 URL 已保存。"
+    "message": "环境 URL 已保存"
   },
   "ok": {
     "message": "确定"
@@ -752,7 +752,7 @@
     "message": "正在加载..."
   },
   "lockVault": {
-    "message": "解锁密码库"
+    "message": "锁定密码库"
   },
   "passwordGenerator": {
     "message": "密码生成器"
@@ -827,7 +827,7 @@
     "message": "无效的主密码"
   },
   "twoStepLoginConfirmation": {
-    "message": "两步登录要求您从其他设备（例如安全钥匙、验证器应用、短信、电话或者电子邮件）来验证你的登录，这能使您的账户更加安全。两步登录可以在 bitwarden.com 网页版密码库启用。现在要访问吗？"
+    "message": "两步登录要求您从其他设备（例如安全钥匙、验证器应用、短信、电话或者电子邮件）来验证您的登录，这能使您的账户更加安全。两步登录需要在 bitwarden.com 网页版密码中设置。您现在要访问这个网站吗？"
   },
   "twoStepLogin": {
     "message": "两步登录"
@@ -928,7 +928,7 @@
     "message": "关闭窗口后，改为在菜单栏中显示一个图标。"
   },
   "enableTray": {
-    "message": "启用托盘图标"
+    "message": "显示托盘图标"
   },
   "enableTrayDesc": {
     "message": "始终在系统托盘中显示一个图标。"
@@ -958,7 +958,7 @@
     "message": "即使已最小化到菜单栏，仍在 Dock 中显示 Bitwarden 图标。"
   },
   "confirmTrayTitle": {
-    "message": "确认禁用托盘"
+    "message": "确认隐藏到托盘"
   },
   "confirmTrayDesc": {
     "message": "禁用此设置也将禁用其他与托盘相关的设置。"
@@ -988,7 +988,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "检查更新"
+    "message": "检查更新…"
   },
   "version": {
     "message": "版本 $VERSION_NUM$",
@@ -1027,7 +1027,7 @@
     "message": "当前没有可用的更新。您使用的是最新版本。"
   },
   "updateError": {
-    "message": "更新错误"
+    "message": "更新时出错"
   },
   "unknown": {
     "message": "未知"
@@ -1447,7 +1447,7 @@
     "message": "隐私条款"
   },
   "unsavedChangesConfirmation": {
-    "message": "您确定要离开吗？如果您现在离开，您当前的信息不会被保存。"
+    "message": "您确定要退出吗？如果您现在退出，您当前的信息不会被保存。"
   },
   "unsavedChangesTitle": {
     "message": "更改未保存"
@@ -1485,7 +1485,7 @@
     "message": "您确定要永久删除此项目吗？"
   },
   "permanentlyDeletedItem": {
-    "message": "已永久删除项目"
+    "message": "项目已永久删除"
   },
   "restoreItem": {
     "message": "恢复项目"
@@ -1506,7 +1506,7 @@
     "message": "超时动作确认"
   },
   "enterpriseSingleSignOn": {
-    "message": "企业单点登录（SSO）"
+    "message": "企业单点登录"
   },
   "setMasterPassword": {
     "message": "设置主密码"
@@ -1515,10 +1515,10 @@
     "message": "要完成 SSO 登陆配置，请设置一个主密码以访问和保护您的密码库。"
   },
   "newMasterPass": {
-    "message": "新的主密码"
+    "message": "新主密码"
   },
   "confirmNewMasterPass": {
-    "message": "确认新的主密码"
+    "message": "确认新主密码"
   },
   "masterPasswordPolicyInEffect": {
     "message": "一个或多个组织策略要求您的主密码满足下列要求："
@@ -1623,13 +1623,13 @@
     "message": "如果您没有发起过此请求，请不要批准。"
   },
   "biometricsNotEnabledTitle": {
-    "message": "生物识别未启用"
+    "message": "生物识别未设置"
   },
   "biometricsNotEnabledDesc": {
-    "message": "需要先在桌面应用程序的设置中启用生物识别，才能使用浏览器中的生物识别。"
+    "message": "需要先在桌面应用程序的设置中设置生物识别，才能使用浏览器中的生物识别。"
   },
   "personalOwnershipSubmitError": {
-    "message": "由于企业策略，您被限制为保存项目到您的个人密码库。将所有权选项更改为组织，并从可用的集合中选择。"
+    "message": "由于企业策略，您被限制为保存项目到您的个人密码库。将所有权选项更改为组织，然后从可用的集合中选择。"
   },
   "hintEqualsPassword": {
     "message": "您的密码提示不能与您的密码相同。"
@@ -1656,7 +1656,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "密码库"
+    "message": "我的密码库"
   },
   "text": {
     "message": "文本"
@@ -1669,7 +1669,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "过期日期"
+    "message": "到期日期"
   },
   "expirationDateDesc": {
     "message": "设置后，对此 Send 的访问将在指定的日期和时间后过期。",
@@ -1687,7 +1687,7 @@
     "message": "当前访问次数"
   },
   "disableSend": {
-    "message": "禁用此 Send 以阻止任何人访问它。",
+    "message": "停用此 Send 则任何人无法访问它。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1707,7 +1707,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "访问 Send 时，默认隐藏文字内容",
+    "message": "访问此 Send 时，默认隐藏文本内容",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1819,7 +1819,7 @@
     "message": "更新主密码"
   },
   "updateMasterPasswordWarning": {
-    "message": "您的主密码最近被您组织的管理员更改过。要访问密码库，您必须立即更新它。继续操作将使您退出当前会话，要求您重新登录。其他设备上的活动会话可能会继续保持活动状态长达一小时。"
+    "message": "您的主密码最近被您组织的管理员更改过。要访问密码库，您必须立即更新它。继续操作将使您退出当前会话并要求您重新登录。其他设备上的活动会话可能会继续保持活动状态长达一小时。"
   },
   "hours": {
     "message": "小时"
@@ -1862,7 +1862,7 @@
     "message": "移除主密码"
   },
   "removedMasterPassword": {
-    "message": "主密码已移除。"
+    "message": "主密码已移除"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ 使用自托管密钥服务器 SSO。这个组织的成员登录时将不再需要主密码。",
@@ -1874,13 +1874,13 @@
     }
   },
   "leaveOrganization": {
-    "message": "离开组织"
+    "message": "退出组织"
   },
   "leaveOrganizationConfirmation": {
-    "message": "您确定要离开这个组织吗？"
+    "message": "您确定要退出这个组织吗？"
   },
   "leftOrganization": {
-    "message": "您已经离开该组织。"
+    "message": "您已经退出该组织。"
   },
   "ssoKeyConnectorError": {
     "message": "Key Connector 错误：请确保 Key Connector 可用且工作正常。"
@@ -1922,7 +1922,7 @@
     "message": "正在导出个人密码库"
   },
   "exportingPersonalVaultDescription": {
-    "message": "仅会导出与 $EMAIL$ 关联的个人密码库。组织密码库的项目不会导出。",
+    "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目。组织密码库的项目不会导出。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1974,7 +1974,7 @@
     "message": "随机单词"
   },
   "websiteName": {
-    "message": "网站名"
+    "message": "网站名称"
   },
   "service": {
     "message": "服务"
@@ -2008,10 +2008,10 @@
     "message": "需要高级版订阅"
   },
   "organizationIsDisabled": {
-    "message": "组织已被禁用。"
+    "message": "组织已暂停"
   },
   "disabledOrganizationFilterError": {
-    "message": "无法访问已禁用组织中的项目。请联系您的组织所有者获取协助。"
+    "message": "无法访问已暂停组织中的项目。请联系您的组织所有者获取帮助。"
   },
   "neverLockWarning": {
     "message": "确定要使用「从不」选项吗？将锁定选项设置为「从不」会将密码库的加密密钥存储在您的设备上。如果使用此选项，应确保您的设备得到妥善的保护。"

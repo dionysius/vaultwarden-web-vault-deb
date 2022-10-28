@@ -1281,25 +1281,25 @@
     "message": "Bestandsindeling"
   },
   "hCaptchaUrl": {
-    "message": "hCaptcha Url",
+    "message": "hCaptcha-URL",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "loadAccessibilityCookie": {
-    "message": "Load accessibility cookie"
+    "message": "Toegankelijkheidscookie laden"
   },
   "registerAccessibilityUser": {
-    "message": "Register as an accessibility user at",
+    "message": "Registreer als toegankelijkheidsgebruiker op",
     "description": "ex. Register as an accessibility user at hcaptcha.com"
   },
   "copyPasteLink": {
-    "message": "Copy and paste the link sent to your email below"
+    "message": "Kopieer en plak de link die naar uw e-mail is gestuurd hieronder"
   },
   "enterhCaptchaUrl": {
-    "message": "Enter URL to load accessibility cookie for hCaptcha",
+    "message": "Voer een URL in om toegankelijkheidscookie voor hCaptcha te laden",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "hCaptchaUrlRequired": {
-    "message": "hCaptcha Url is required",
+    "message": "hCaptcha-URL is vereist",
     "description": "hCaptcha is the name of a website, should not be translated"
   },
   "invalidUrl": {
@@ -1309,10 +1309,10 @@
     "message": "Klaar"
   },
   "accessibilityCookieSaved": {
-    "message": "Accessibility cookie saved!"
+    "message": "Toegankelijkheidscookie opgeslagen!"
   },
   "noAccessibilityCookieSaved": {
-    "message": "No accessibility cookie saved"
+    "message": "Geen toegankelijkheidscookie opgeslagen"
   },
   "warning": {
     "message": "WAARSCHUWING",
@@ -1575,13 +1575,13 @@
     "message": "Browserintegratie wordt gebruikt voor biometrie in de browser."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "DuckDuckGo browserintegratie toestaan"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Gebruik je Bitwardenkluis tijdens het browsen met DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Browserintegratie niet ondersteund"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Helaas wordt browserintegratie momenteel alleen ondersteund in de Mac App Store-versie."
@@ -1590,7 +1590,7 @@
     "message": "Helaas wordt browserintegratie momenteel niet ondersteund in de Windows Store-versie."
   },
   "browserIntegrationLinuxDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the linux version."
+    "message": "Helaas wordt browserintegratie in de linux versie momenteel niet ondersteund."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Vereis verificatie voor browserintegratie"
@@ -1608,7 +1608,7 @@
     "message": "Verzeker je ervan dat de getoonde vingerafdruk hetzelfde is als de vingerafdruk in de browserextensie."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ wil verbinding maken met Bitwarden",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1617,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Wil je dit verzoek goedkeuren?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Als u dit verzoek niet heeft ingediend, keur het dan niet goed."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrie niet ingeschakeld"
@@ -1989,17 +1989,17 @@
     "message": "Kluis doorzoeken"
   },
   "forwardedEmail": {
-    "message": "Forwarded email alias"
+    "message": "Doorgestuurd e-mailalias"
   },
   "forwardedEmailDesc": {
-    "message": "Generate an email alias with an external forwarding service."
+    "message": "Genereer een e-mailalias met een externe doorstuurservice."
   },
   "hostname": {
     "message": "Hostnaam",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "API-toegangstoken"
   },
   "apiKey": {
     "message": "API-sleutel"

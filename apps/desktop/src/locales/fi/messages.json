@@ -132,7 +132,7 @@
     "message": "Näytä tai piilota"
   },
   "toggleCollapse": {
-    "message": "Laajenna tai pienennä",
+    "message": "Laajenna tai supista",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -148,10 +148,10 @@
     "message": "Erääntymisaika"
   },
   "securityCode": {
-    "message": "Turvakoodi"
+    "message": "Turvakoodi (CVC/CVV)"
   },
   "identityName": {
-    "message": "Identiteetin nimi"
+    "message": "Henkilöllisyyden nimi"
   },
   "company": {
     "message": "Yritys"
@@ -163,7 +163,7 @@
     "message": "Passin numero"
   },
   "licenseNumber": {
-    "message": "Rekisterinumero"
+    "message": "Ajokortin numero"
   },
   "email": {
     "message": "Sähköposti"
@@ -178,7 +178,7 @@
     "message": "Premium vaaditaan"
   },
   "premiumRequiredDesc": {
-    "message": "Tarvitset premium-jäsenyyden tämän toiminnon käyttämiseen."
+    "message": "Käyttääksesi tätä toimintoa tarvitset Premium-jäsenyyden."
   },
   "errorOccurred": {
     "message": "Tapahtui virhe."
@@ -308,7 +308,7 @@
     "message": "Muokkaa"
   },
   "authenticatorKeyTotp": {
-    "message": "Todennusavain (TOTP)"
+    "message": "Todennusmenetelmän avain (TOTP)"
   },
   "folder": {
     "message": "Kansio"
@@ -349,7 +349,7 @@
     "message": "Kohde lisättiin"
   },
   "editedItem": {
-    "message": "Kohdetta muokattiin"
+    "message": "Kohde tallennettiin"
   },
   "deleteItem": {
     "message": "Poista kohde"
@@ -416,7 +416,7 @@
     "message": "Sanojen määrä"
   },
   "wordSeparator": {
-    "message": "Sanaerotin"
+    "message": "Sanojen erotin"
   },
   "capitalize": {
     "message": "Sanat isoilla alkukirjaimilla",
@@ -448,7 +448,7 @@
     "message": "Hae suosikeista"
   },
   "searchType": {
-    "message": "Etsi tyypeistä",
+    "message": "Hae tyypeistä",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -476,10 +476,10 @@
     "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
   },
   "editedFolder": {
-    "message": "Kansiota muokattiin"
+    "message": "Kansio tallennettiin"
   },
   "addedFolder": {
-    "message": "Kansio lisätty"
+    "message": "Kansio lisättiin"
   },
   "deleteFolderConfirmation": {
     "message": "Haluatko varmasti poistaa kansion?"
@@ -566,7 +566,7 @@
     "message": "Lähetä koodi"
   },
   "codeSent": {
-    "message": "Koodi lähetetty"
+    "message": "Koodi lähetettiin"
   },
   "verificationCode": {
     "message": "Todennuskoodi"
@@ -620,7 +620,7 @@
     "message": "Kytke todennuslaitteesi tietokoneen USB-porttiin ja jos laitteessa on painike, paina sitä."
   },
   "recoveryCodeDesc": {
-    "message": "Etkö pysty käyttämään kaksivaiheisen kirjautumisen todentajiasi? Poista kaikki tilisi todentajat käytöstä palautuskoodillasi."
+    "message": "Etkö pysty käyttämään kaksivaiheisen kirjautumisen todentajiasi? Poista kaikki tilillesi määritetyt todentajat käytöstä palautuskoodillasi."
   },
   "recoveryCodeTitle": {
     "message": "Palautuskoodi"
@@ -650,7 +650,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Käytä mitä tahansa WebAuthn‑yhteensopivaa todennuslaitetta päästäksesi käsiksi tiliisi."
+    "message": "Avaa tilisi millä tahansa WebAuthn‑yhteensopivalla todennuslaitteella."
   },
   "emailTitle": {
     "message": "Sähköposti"
@@ -662,7 +662,7 @@
     "message": "Kirjautuminen ei ole käytettävissä"
   },
   "noTwoStepProviders": {
-    "message": "Tilillä on käytössä kaksivaiheinen kirjautuminen, mutta tämä laite ei tue käytettävissä olevia todentajia."
+    "message": "Tilille on määritetty kaksivaiheinen kirjautuminen, mutta tämä selain ei tue käytettävissä olevia todentajia."
   },
   "noTwoStepProviders2": {
     "message": "Lisää muita todentajia, joita tuetaan laajemmin eri laitteilla (kuten todennussovellus)."
@@ -701,7 +701,7 @@
     "message": "Kuvakepalvelimen URL"
   },
   "environmentSaved": {
-    "message": "Palvelinympäristön URL-osoitteet tallennettiin."
+    "message": "Palvelinympäristön URL-osoitteet tallennettiin"
   },
   "ok": {
     "message": "Ok"
@@ -719,7 +719,7 @@
     "message": "Lue lisää"
   },
   "featureUnavailable": {
-    "message": "Toiminto ei ole käytettävissä"
+    "message": "Ominaisuus ei ole käytettävissä"
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos"
@@ -734,13 +734,13 @@
     "message": "Kirjaudu ulos"
   },
   "addNewLogin": {
-    "message": "Lisää uusi käyttäjätunnus"
+    "message": "Uusi kirjautumistieto"
   },
   "addNewItem": {
-    "message": "Lisää uusi kohde"
+    "message": "Uusi kohde"
   },
   "addNewFolder": {
-    "message": "Lisää uusi kansio"
+    "message": "Uusi kansio"
   },
   "view": {
     "message": "Näytä"
@@ -782,7 +782,7 @@
     "message": "Voit vaihtaa pääsalasanasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "fingerprintPhrase": {
-    "message": "Todennuslauseke",
+    "message": "Tunnistelauseke",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -827,7 +827,7 @@
     "message": "Virheellinen pääsalasana"
   },
   "twoStepLoginConfirmation": {
-    "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä sinulta kirjautumisvahvistuksen todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko käydä sivustolla nyt?"
+    "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä salasanan lisäksi kirjautumisen lisätodennusta todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvista. Haluatko avata sivuston nyt?"
   },
   "twoStepLogin": {
     "message": "Kaksivaiheinen kirjautuminen"
@@ -958,10 +958,10 @@
     "message": "Näytä Bitwardenin kuvake Dockissa myös silloin, kun se on pienennetty valikkoriville."
   },
   "confirmTrayTitle": {
-    "message": "Vahvista ilmoitusalueen käytöstä poisto"
+    "message": "Vahvista piilotus ilmoitusalueelta"
   },
   "confirmTrayDesc": {
-    "message": "Asetuksen käytöstä poisto kytkee myös kaikki muut ilmoitusalueeseen liittyvät asetukset pois käytöstä."
+    "message": "Asetuksen käytöstä poisto poistaa myös kaikki muut ilmoitusalueeseen liittyvät asetukset käytöstä."
   },
   "language": {
     "message": "Kieli"
@@ -1012,7 +1012,7 @@
     }
   },
   "updateAvailable": {
-    "message": "Päivitys saatavilla"
+    "message": "Päivitys on saatavilla"
   },
   "updateAvailableDesc": {
     "message": "Päivitys löydetty. Haluatko ladata sen nyt?"
@@ -1033,7 +1033,7 @@
     "message": "Tuntematon"
   },
   "copyUsername": {
-    "message": "Kopioi käyttäjänimi"
+    "message": "Kopioi käyttäjätunnus"
   },
   "copyNumber": {
     "message": "Kopioi numero",
@@ -1056,10 +1056,10 @@
     "message": "Päivitä jäsenyys"
   },
   "premiumNotCurrentMember": {
-    "message": "Et ole tällä hetkellä premium-jäsen."
+    "message": "Et ole tällä hetkellä Premium-jäsen."
   },
   "premiumSignUpAndGet": {
-    "message": "Ryhdy Premium-jäseneksi saadaksesi:"
+    "message": "Liity Premium-jäseneksi saadaksesi:"
   },
   "premiumSignUpStorage": {
     "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
@@ -1140,13 +1140,13 @@
     "message": "Palauta zoomaus"
   },
   "toggleFullScreen": {
-    "message": "Koko näytön tila päälle/pois"
+    "message": "Kytke koko näytön tila"
   },
   "reload": {
     "message": "Lataa uudelleen"
   },
   "toggleDevTools": {
-    "message": "Kehittäjätyökalut päälle/pois"
+    "message": "Kytke kehittäjätyökalut"
   },
   "minimize": {
     "message": "Pienennä",
@@ -1231,7 +1231,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Täsmäystapa",
+    "message": "Tunnistustapa",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1263,7 +1263,7 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Päivitetty",
+    "message": "Päivitettiin",
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
@@ -1271,7 +1271,7 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Salasana päivitetty",
+    "message": "Salasana päivitettiin",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1476,7 +1476,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Etsi roskakorista"
+    "message": "Hae roskakorista"
   },
   "permanentlyDeleteItem": {
     "message": "Poista kohde pysyvästi"
@@ -1623,13 +1623,13 @@
     "message": "Älä hyväksy pyyntöä, jos et tunnista sitä."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometria ei ole käytössä"
+    "message": "Biometriaa ei ole määritetty"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Käyttääksesi biometriaa selaimessa, on biometria otettava käyttöön työpöytäsovelluksen asetuksista."
+    "message": "Biometria selaimissa edellyttää sen määritystä työpöytäsovelluksen asetuksista."
   },
   "personalOwnershipSubmitError": {
-    "message": "Yrityksen asettaman käytännön johdosta kohteiden tallennus omaan holviisi ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
+    "message": "Yrityskäytännön johdosta kohteiden tallennus henkilökohtaiseen holviin ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
   },
   "hintEqualsPassword": {
     "message": "Salasanavihjeesi ei voi olla sama kuin salasanasi."
@@ -1676,7 +1676,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Käyttöoikeuksien enimmäismäärä",
+    "message": "Käyttökertojen enimmäismäärä",
     "description": "This text will be displayed after a Send has been accessed the maximum amount of times."
   },
   "maxAccessCountDesc": {
@@ -1711,11 +1711,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send luotu",
+    "message": "Send lisättiin",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Sendiä muokattiin",
+    "message": "Send tallennettiin",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -1730,7 +1730,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Send luotu",
+    "message": "Uusi Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1759,18 +1759,18 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Kopioi Sendin linkki leikepöydälle",
+    "message": "Kopioi Send-linkki leikepöydälle",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
     "message": "Kopioi Sendin linkki leikepöydälle tallennettaessa."
   },
   "sendDisabled": {
-    "message": "Send on poistettiin käytöstä",
+    "message": "Send poistettiin",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Yrityksen käytännön vuoksi voit poistaa vain olemassa olevan Sendin.",
+    "message": "Yrityskäytännön vuoksi voit poistaa vain olemassa olevan Sendin.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
@@ -1798,7 +1798,7 @@
     "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa Send-asetuksiisi."
   },
   "emailVerificationRequired": {
-    "message": "Sähköpostiosoitteen vahvistus vaaditaan"
+    "message": "Sähköpostiosoite on vahvistettava"
   },
   "emailVerificationRequiredDesc": {
     "message": "Sinun on vahvistettava sähköpostiosoitteesi käyttääksesi tätä ominaisuutta."
@@ -1813,10 +1813,10 @@
     "message": "Toiminto on suojattu. Jatka vahvistamalla henkilöllisyytesi syöttämällä pääsalasanasi uudelleen."
   },
   "updatedMasterPassword": {
-    "message": "Pääsalasana on päivitetty"
+    "message": "Pääsalasana päivitettiin"
   },
   "updateMasterPassword": {
-    "message": "Päivitä pääsalasana"
+    "message": "Vaihda pääsalasana"
   },
   "updateMasterPasswordWarning": {
     "message": "Organisaatiosi ylläpito on hiljattain vaihtanut pääsalasanasi. Käyttääksesi holvia, on sinun päivitettävä se nyt. Tämä uloskirjaa kaikki nykyiset istunnot pakottaen uudelleenkirjautumisen. Muiden laitteiden aktiiviset istunnot saattavat toimia vielä tunnin ajan."
@@ -1850,10 +1850,10 @@
     "message": "Organisaatiolla on käytäntö, joka liittää tilisi automaattisesti salasanan palautusapuun. Liitos sallii organisaation ylläpitäjien vaihtaa pääsalasanasi."
   },
   "vaultExportDisabled": {
-    "message": "Holvin vienti on poistettu käytöstä"
+    "message": "Holvin vienti poistettiin"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Yksi tai useampi organisaation käytäntö estää henkilökohtaisen holvisi viennin."
+    "message": "Yksi tai useampi organisaatiokäytäntö estää henkilökohtaisen holvisi viennin."
   },
   "addAccount": {
     "message": "Lisää tili"
@@ -1922,7 +1922,7 @@
     "message": "Henkilökohtaisen holvin vienti"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Vain tunnukseen $EMAIL$ liitetyt henkilökohtaiset holvin kohteet viedään. Organisaation kohteet eivät sisälly tähän.",
+    "message": "Vain tunnukseen $EMAIL$ liitetyt henkilökohtaisen holvin kohteet viedään. Organisaation kohteet eivät sisälly tähän.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2008,10 +2008,10 @@
     "message": "Premium-tilaus vaaditaan"
   },
   "organizationIsDisabled": {
-    "message": "Organisaatio on poistettu käytöstä."
+    "message": "Organisaatio on jäädytetty"
   },
   "disabledOrganizationFilterError": {
-    "message": "Käytöstä poistettujen organisaatioiden kohteet eivät ole käytettävissä. Ole yhteydessä organisaation omistajaan saadaksesi apua."
+    "message": "Jäädytettyjen organisaatioiden kohteet eivät ole käytettävissä. Ole yhteydessä organisaation omistajaan saadaksesi apua."
   },
   "neverLockWarning": {
     "message": "Haluatko varmasti käyttää asetusta \"Ei koskaan\"? Se tallentaa holvisi salausavaimen laitteellesi. Jos käytät asetusta, varmista, että laite on suojattu hyvin."

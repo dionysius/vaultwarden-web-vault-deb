@@ -148,7 +148,7 @@
     "message": "Data wygaśnięcia"
   },
   "securityCode": {
-    "message": "Kod CVV/CVC"
+    "message": "Kod zabezpieczający"
   },
   "identityName": {
     "message": "Nazwa profilu"
@@ -254,7 +254,7 @@
     "message": "Inne"
   },
   "generatePassword": {
-    "message": "Generuj hasło"
+    "message": "Wygeneruj hasło"
   },
   "type": {
     "message": "Rodzaj"
@@ -349,7 +349,7 @@
     "message": "Element został dodany"
   },
   "editedItem": {
-    "message": "Element został zaktualizowany"
+    "message": "Element został zapisany"
   },
   "deleteItem": {
     "message": "Usuń element"
@@ -386,7 +386,7 @@
     "message": "Edytuj folder"
   },
   "regeneratePassword": {
-    "message": "Wygeneruj hasło ponownie"
+    "message": "Wygeneruj ponownie hasło"
   },
   "copyPassword": {
     "message": "Kopiuj hasło"
@@ -416,7 +416,7 @@
     "message": "Liczba słów"
   },
   "wordSeparator": {
-    "message": "Separator wyrazów"
+    "message": "Separator słów"
   },
   "capitalize": {
     "message": "Wielkie litery",
@@ -461,13 +461,13 @@
     "message": "Czy na pewno chcesz usunąć ten załącznik?"
   },
   "attachmentSaved": {
-    "message": "Załącznik został zapisany."
+    "message": "Załącznik został zapisany"
   },
   "file": {
     "message": "Plik"
   },
   "selectFile": {
-    "message": "Wybierz plik."
+    "message": "Wybierz plik"
   },
   "maxFileSize": {
     "message": "Maksymalny rozmiar pliku to 500 MB."
@@ -476,7 +476,7 @@
     "message": "Nie możesz używać tej funkcji, dopóki nie zaktualizujesz klucza szyfrowania."
   },
   "editedFolder": {
-    "message": "Folder został zaktualizowany"
+    "message": "Folder został zapisany"
   },
   "addedFolder": {
     "message": "Folder został dodany"
@@ -701,7 +701,7 @@
     "message": "Adres URL serwera ikon"
   },
   "environmentSaved": {
-    "message": "Adresy URL środowiska zostały zapisane."
+    "message": "Adresy URL środowiska zostały zapisane"
   },
   "ok": {
     "message": "Ok"
@@ -737,10 +737,10 @@
     "message": "Dodaj dane logowania"
   },
   "addNewItem": {
-    "message": "Dodaj element"
+    "message": "Nowy element"
   },
   "addNewFolder": {
-    "message": "Dodaj folder"
+    "message": "Nowy folder"
   },
   "view": {
     "message": "Widok"
@@ -773,7 +773,7 @@
     "message": "Obserwuj nas"
   },
   "syncVault": {
-    "message": "Rozpocznij synchronizację sejfu"
+    "message": "Synchronizuj sejf"
   },
   "changeMasterPass": {
     "message": "Zmień hasło główne"
@@ -1036,7 +1036,7 @@
     "message": "Kopiuj nazwę użytkownika"
   },
   "copyNumber": {
-    "message": "Kopiuj numer karty",
+    "message": "Kopiuj numer",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
@@ -1044,10 +1044,10 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Członkostwo premium"
+    "message": "Konto Premium"
   },
   "premiumManage": {
-    "message": "Zarządzaj członkostwem"
+    "message": "Zarządzaj kontem Premium"
   },
   "premiumManageAlert": {
     "message": "Kontem Premium możesz zarządzać na stronie sejfu bitwarden.com. Czy chcesz otworzyć tę stronę?"
@@ -1104,7 +1104,7 @@
     "message": "Odświeżanie zostało zakończone"
   },
   "passwordHistory": {
-    "message": "Historia haseł"
+    "message": "Historia hasła"
   },
   "clear": {
     "message": "Wyczyść",
@@ -1271,7 +1271,7 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Aktualizacja hasła",
+    "message": "Hasło zostało zaktualizowane",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1711,11 +1711,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Wysyłka została utworzona",
+    "message": "Wysyłka została dodana",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Wysyłka została zaktualizowana",
+    "message": "Wysyłka została zapisana",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -1730,7 +1730,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Utwórz wysyłkę",
+    "message": "Nowa wysyłka",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1766,7 +1766,7 @@
     "message": "Po zapisaniu wysyłki, skopiuj link do schowka."
   },
   "sendDisabled": {
-    "message": "Wysyłka została wyłączona",
+    "message": "Wysyłka została usunięta",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1862,7 +1862,7 @@
     "message": "Usuń hasło główne"
   },
   "removedMasterPassword": {
-    "message": "Hasło główne zostało usunięte."
+    "message": "Hasło główne zostało usunięte"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "Organizacja $ORGANIZATION$ używa jednokrotnego logowania SSO z własnym serwerem kluczy. Użytkownicy nie muszą logować się za pomocą hasła głównego.",
