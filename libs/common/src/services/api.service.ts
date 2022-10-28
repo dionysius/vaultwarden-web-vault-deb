@@ -2360,21 +2360,25 @@ export class ApiService implements ApiServiceAbstraction {
     tokenError: boolean,
     authed: boolean
   ): Promise<ErrorResponse> {
-    if (
-      authed &&
-      ((tokenError && response.status === 400) ||
-        response.status === 401 ||
-        response.status === 403)
-    ) {
-      await this.logoutCallback(true);
-      return null;
-    }
-
     let responseJson: any = null;
     if (this.isJsonResponse(response)) {
       responseJson = await response.json();
     } else if (this.isTextResponse(response)) {
       responseJson = { Message: await response.text() };
+    }
+
+    if (authed) {
+      if (
+        response.status === 401 ||
+        response.status === 403 ||
+        (tokenError &&
+          response.status === 400 &&
+          responseJson != null &&
+          responseJson.error === "invalid_grant")
+      ) {
+        await this.logoutCallback(true);
+        return null;
+      }
     }
 
     return new ErrorResponse(responseJson, response.status, tokenError);
