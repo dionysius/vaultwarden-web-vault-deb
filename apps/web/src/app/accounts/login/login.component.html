@@ -25,6 +25,7 @@
                 bitInput
                 type="email"
                 formControlName="email"
+                appAutofocus
                 (keyup.enter)="validateEmail()"
               />
             </bit-form-field>
@@ -79,6 +80,7 @@
         bitInput
         type="{{ showPassword ? 'text' : 'password' }}"
         formControlName="masterPassword"
+        appAutofocus
       />
       <button type="button" bitSuffix bitButton (click)="togglePassword()">
         <i
