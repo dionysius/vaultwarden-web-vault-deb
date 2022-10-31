@@ -438,6 +438,19 @@ main {
   main {
     bottom: 55px;
   }
+
+  [type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+    mask-image: url("../images/close-button-white.svg");
+    -webkit-mask-image: url("../images/close-button-white.svg");
+    @include themify($themes) {
+      background-color: themed("headerInputColor");
+    }
+  }
 }
 
 .center-content,
