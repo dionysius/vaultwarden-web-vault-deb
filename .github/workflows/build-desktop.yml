@@ -8,6 +8,7 @@ on:
       - 'cf-pages'
     paths:
       - 'apps/desktop/**'
+      - 'libs/**'
       - '*'
       - '!*.md'
       - '!*.txt'
