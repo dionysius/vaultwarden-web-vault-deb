@@ -18,7 +18,7 @@ import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 
 @Injectable()
 export class VaultFilterService extends BaseVaultFilterService {
-  private _collapsedFilterNodes = new BehaviorSubject<Set<string>>(null);
+  private _collapsedFilterNodes = new BehaviorSubject<Set<string>>(new Set());
   collapsedFilterNodes$: Observable<Set<string>> = this._collapsedFilterNodes.asObservable();
 
   constructor(

@@ -8,7 +8,7 @@ export type SearchBarState = {
 
 @Injectable()
 export class SearchBarService {
-  private searchTextSubject = new BehaviorSubject<string>(null);
+  private searchTextSubject = new BehaviorSubject<string | null>(null);
   searchText$ = this.searchTextSubject.asObservable();
 
   private _state = {

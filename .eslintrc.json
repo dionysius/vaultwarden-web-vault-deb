@@ -68,6 +68,7 @@
       }
     ],
     "rxjs-angular/prefer-takeuntil": "error",
+    "rxjs/no-exposed-subjects": ["error", { "allowProtected": true }],
     "no-restricted-syntax": [
       "error",
       {

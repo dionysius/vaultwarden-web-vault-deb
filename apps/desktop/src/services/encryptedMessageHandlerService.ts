@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { AuthService } from "@bitwarden/common/abstractions/auth.service";
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
@@ -78,7 +80,7 @@ export class EncryptedMessageHandlerService {
   }
 
   private async statusCommandHandler(): Promise<AccountStatusResponse[]> {
-    const accounts = this.stateService.accounts.getValue();
+    const accounts = await firstValueFrom(this.stateService.accounts$);
     const activeUserId = await this.stateService.getUserId();
 
     if (!accounts || !Object.keys(accounts)) {

@@ -38,7 +38,7 @@ describe("browserSession decorator", () => {
     @browserSession
     class TestClass {
       @sessionSync({ initializer: (s: string) => s })
-      behaviorSubject = new BehaviorSubject("");
+      private behaviorSubject = new BehaviorSubject("");
 
       constructor(private stateService: StateService) {}
 

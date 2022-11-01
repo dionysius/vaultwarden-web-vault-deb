@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { CanActivate } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -17,7 +18,7 @@ export class LoginGuard implements CanActivate {
   ) {}
 
   async canActivate() {
-    const accounts = this.stateService.accounts.getValue();
+    const accounts = await firstValueFrom(this.stateService.accounts$);
     if (accounts != null && Object.keys(accounts).length >= maxAllowedAccounts) {
       this.platformUtilsService.showToast("error", null, this.i18nService.t("accountLimitReached"));
       return false;

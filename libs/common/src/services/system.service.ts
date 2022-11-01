@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { AuthService } from "../abstractions/auth.service";
 import { MessagingService } from "../abstractions/messaging.service";
 import { PlatformUtilsService } from "../abstractions/platformUtils.service";
@@ -19,7 +21,7 @@ export class SystemService implements SystemServiceAbstraction {
   ) {}
 
   async startProcessReload(authService: AuthService): Promise<void> {
-    const accounts = this.stateService.accounts.getValue();
+    const accounts = await firstValueFrom(this.stateService.accounts$);
     if (accounts != null) {
       const keys = Object.keys(accounts);
       if (keys.length > 0) {
@@ -56,7 +58,7 @@ export class SystemService implements SystemServiceAbstraction {
   }
 
   private async executeProcessReload() {
-    const accounts = this.stateService.accounts.getValue();
+    const accounts = await firstValueFrom(this.stateService.accounts$);
     const doRefresh =
       accounts == null ||
       Object.keys(accounts).length == 0 ||

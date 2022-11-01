@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { AuthService } from "../../abstractions/auth.service";
 import { CipherService } from "../../abstractions/cipher.service";
 import { CollectionService } from "../../abstractions/collection.service";
@@ -52,7 +54,8 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
       return;
     }
 
-    for (const userId in this.stateService.accounts.getValue()) {
+    const accounts = await firstValueFrom(this.stateService.accounts$);
+    for (const userId in accounts) {
       if (userId != null && (await this.shouldLock(userId))) {
         await this.executeTimeoutAction(userId);
       }

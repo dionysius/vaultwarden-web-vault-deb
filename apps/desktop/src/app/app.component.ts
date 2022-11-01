@@ -11,7 +11,7 @@ import {
 import { DomSanitizer } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
-import { Subject, takeUntil } from "rxjs";
+import { firstValueFrom, Subject, takeUntil } from "rxjs";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -175,7 +175,7 @@ export class AppComponent implements OnInit, OnDestroy {
             await this.vaultTimeoutService.lock(message.userId);
             break;
           case "lockAllVaults":
-            for (const userId in this.stateService.accounts.getValue()) {
+            for (const userId in await firstValueFrom(this.stateService.accounts$)) {
               if (userId != null) {
                 await this.vaultTimeoutService.lock(userId);
               }
@@ -429,7 +429,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private async updateAppMenu() {
     let updateRequest: MenuUpdateRequest;
-    const stateAccounts = this.stateService.accounts?.getValue();
+    const stateAccounts = await firstValueFrom(this.stateService.accounts$);
     if (stateAccounts == null || Object.keys(stateAccounts).length < 1) {
       updateRequest = {
         accounts: null,
@@ -593,7 +593,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private async checkForSystemTimeout(timeout: number): Promise<void> {
-    for (const userId in this.stateService.accounts.getValue()) {
+    const accounts = await firstValueFrom(this.stateService.accounts$);
+    for (const userId in accounts) {
       if (userId == null) {
         continue;
       }

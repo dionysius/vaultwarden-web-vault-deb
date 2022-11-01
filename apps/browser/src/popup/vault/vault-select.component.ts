@@ -54,12 +54,12 @@ export class VaultSelectComponent implements OnInit, OnDestroy {
   buttonRef: ElementRef<HTMLButtonElement>;
   @ViewChild("vaultSelectorTemplate", { read: TemplateRef }) templateRef: TemplateRef<HTMLElement>;
 
-  private _selectedVault = new BehaviorSubject<string>(null);
+  private _selectedVault = new BehaviorSubject<string | null>(null);
 
   isOpen = false;
   loaded = false;
   organizations$: Observable<Organization[]>;
-  selectedVault$: Observable<string> = this._selectedVault.asObservable();
+  selectedVault$: Observable<string | null> = this._selectedVault.asObservable();
 
   vaultFilter: VaultFilter = new VaultFilter();
   enforcePersonalOwnership = false;

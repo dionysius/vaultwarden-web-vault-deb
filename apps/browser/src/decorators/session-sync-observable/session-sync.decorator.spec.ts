@@ -7,7 +7,11 @@ describe("sessionSync decorator", () => {
   const ctor = String;
   class TestClass {
     @sessionSync({ ctor: ctor, initializer: initializer })
-    testProperty = new BehaviorSubject("");
+    private testProperty = new BehaviorSubject("");
+
+    complete() {
+      this.testProperty.complete();
+    }
   }
 
   it("should add __syncedItemKeys to prototype", () => {
@@ -19,7 +23,7 @@ describe("sessionSync decorator", () => {
         ctor: ctor,
         initializer: initializer,
       }),
-      testClass.testProperty.complete(),
+      testClass.complete(),
     ]);
   });
 });

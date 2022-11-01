@@ -97,7 +97,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    this.stateService.accounts
+    this.stateService.accounts$
       .pipe(
         concatMap(async (accounts: { [userId: string]: Account }) => {
           for (const userId in accounts) {
