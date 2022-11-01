@@ -65,7 +65,8 @@
 
   &.block {
     display: block;
-    width: 100%;
+    width: calc(100% - 20px);
+    margin: 0 auto;
   }
 
   &.link,
@@ -89,12 +90,24 @@
 
 button.box-content-row {
   display: block;
-  width: 100%;
+  width: calc(100% - 20px);
   text-align: left;
+  border-color: none;
+
+  @include themify($themes) {
+    background-color: themed("boxBackgroundColor");
+  }
 }
 
 button {
   border: none;
   background: transparent;
   color: inherit;
+}
+
+.login-buttons {
+  .btn.block {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

@@ -41,7 +41,7 @@
         {{ "typeLogins" | i18n }}
         <span class="flex-right">{{ loginCiphers.length }}</span>
       </h2>
-      <div class="box-content">
+      <div class="box-content no-hover">
         <app-cipher-row
           *ngFor="let loginCipher of loginCiphers"
           [cipher]="loginCipher"
