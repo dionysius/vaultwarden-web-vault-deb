@@ -156,6 +156,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       );
       return;
     }
+    this.focusInput();
   }
 
   async submit() {
@@ -168,5 +169,10 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       const content = document.getElementById("content") as HTMLDivElement;
       content.setAttribute("style", "width:335px");
     }
+  }
+
+  private focusInput() {
+    const email = this.loggedEmail;
+    document.getElementById(email == null || email === "" ? "email" : "masterPassword").focus();
   }
 }
