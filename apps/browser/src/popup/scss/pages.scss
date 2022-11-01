@@ -11,8 +11,16 @@ app-sync {
 app-generator .generated-block {
   font-size: $font-size-large;
   font-family: $font-family-monospace;
-  margin: 20px;
+  margin: 10px;
+  padding: 10px 10px 10px 0;
   display: flex;
+  border-radius: $border-radius;
+  border: 1px solid;
+
+  @include themify($themes) {
+    background-color: transparent;
+    border-color: themed("borderColorAlt");
+  }
 
   .generated-wrapper {
     text-align: left;
@@ -20,15 +28,30 @@ app-generator .generated-block {
     min-width: 0;
     white-space: pre-wrap;
     word-break: break-all;
+    padding: 15px;
+    border-radius: $border-radius;
+
+    @include themify($themes) {
+      background-color: themed("backgroundColor");
+    }
   }
 
   .action-buttons {
     display: flex;
     align-self: center;
+    height: 100%;
+    margin-left: 10px;
 
     button {
-      padding: 5px;
-      margin: -5px -5px 5px 5px;
+      padding: 6px;
+      margin: 2px;
+      border-radius: $border-radius;
+
+      &:hover {
+        @include themify($themes) {
+          background-color: themed("hoverColorTransparent");
+        }
+      }
     }
   }
 }
@@ -117,9 +140,31 @@ body.body-full {
 }
 
 .createAccountLink {
-  padding-top: 30px;
+  padding: 30px 10px 0 10px;
 }
 
 .login-buttons > button {
   margin: 15px 0 15px 0;
+}
+
+app-options {
+  .box {
+    margin: 10px 0;
+
+    & + .box {
+      margin-top: 10px;
+    }
+  }
+}
+
+app-vault-view,
+app-vault-add-edit,
+app-generator {
+  .box {
+    margin: 15px 0 25px 0;
+
+    & + .box {
+      margin-top: 25px;
+    }
+  }
 }

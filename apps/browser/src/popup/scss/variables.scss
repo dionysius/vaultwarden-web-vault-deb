@@ -6,6 +6,8 @@ $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-s
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-size-base: 14px;
 $font-size-large: 18px;
+$font-size-xlarge: 22px;
+$font-size-xxlarge: 28px;
 $font-size-small: 12px;
 $text-color: #000000;
 $border-color: #f0f0f0;
@@ -13,8 +15,9 @@ $border-color-dark: #ddd;
 $list-item-hover: #fbfbfb;
 $list-icon-color: #767679;
 $disabled-box-opacity: 1;
-$border-radius: 3px;
+$border-radius: 6px;
 $line-height-base: 1.42857143;
+$icon-hover-color: lighten($text-color, 50%);
 
 $gray: #555;
 $gray-light: #777;
@@ -32,6 +35,7 @@ $background-color: #f0f0f0;
 $box-background-color: white;
 $box-background-hover-color: $list-item-hover;
 $box-border-color: $border-color;
+$border-color-alt: #c3c5c7;
 
 $button-border-color: darken($border-color-dark, 12%);
 $button-background-color: white;
@@ -59,8 +63,10 @@ $solarizedDarkGreen: #859900;
 $themes: (
   light: (
     textColor: $text-color,
+    hoverColorTransparent: rgba($text-color, 0.15),
     borderColor: $border-color-dark,
     backgroundColor: $background-color,
+    borderColorAlt: $border-color-alt,
     backgroundColorAlt: #ffffff,
     scrollbarColor: rgba(100, 100, 100, 0.2),
     scrollbarHoverColor: rgba(100, 100, 100, 0.4),
@@ -107,11 +113,14 @@ $themes: (
     calloutBackgroundColor: $box-background-color,
     toastTextColor: #ffffff,
     svgSuffix: "-light.svg",
+    transparentColor: rgba(0, 0, 0, 0),
   ),
   dark: (
     textColor: #ffffff,
+    hoverColorTransparent: rgba($text-color, 0.15),
     borderColor: #161c26,
     backgroundColor: #161c26,
+    borderColorAlt: #6e788a,
     backgroundColorAlt: #2f343d,
     scrollbarColor: #6e788a,
     scrollbarHoverColor: #8d94a5,
@@ -158,11 +167,14 @@ $themes: (
     calloutBackgroundColor: #3c424e,
     toastTextColor: #1f242e,
     svgSuffix: "-dark.svg",
+    transparentColor: rgba(0, 0, 0, 0),
   ),
   nord: (
     textColor: $nord5,
+    hoverColorTransparent: rgba($text-color, 0.15),
     borderColor: $nord0,
     backgroundColor: $nord1,
+    borderColorAlt: $nord5,
     backgroundColorAlt: $nord2,
     scrollbarColor: $nord4,
     scrollbarHoverColor: $nord6,
@@ -209,16 +221,19 @@ $themes: (
     calloutBackgroundColor: $nord2,
     toastTextColor: #ffffff,
     svgSuffix: "-dark.svg",
+    transparentColor: rgba(0, 0, 0, 0),
   ),
   solarizedDark: (
     textColor: $solarizedDarkBase2,
+    hoverColorTransparent: rgba($text-color, 0.15),
     borderColor: $solarizedDarkBase03,
     backgroundColor: $solarizedDarkBase03,
+    borderColorAlt: $solarizedDarkBase01,
     backgroundColorAlt: $solarizedDarkBase02,
     scrollbarColor: $solarizedDarkBase0,
     scrollbarHoverColor: $solarizedDarkBase2,
-    boxBackgroundColor: $solarizedDarkBase03,
-    boxBackgroundHoverColor: $solarizedDarkBase02,
+    boxBackgroundColor: $solarizedDarkBase02,
+    boxBackgroundHoverColor: lighten($solarizedDarkBase02, 5%),
     boxBorderColor: $solarizedDarkBase02,
     tabBackgroundColor: $solarizedDarkBase02,
     tabBackgroundHoverColor: $solarizedDarkBase01,
@@ -230,7 +245,7 @@ $themes: (
     headerInputBackgroundFocusColor: $solarizedDarkBase1,
     headerInputColor: $solarizedDarkBase01,
     headerInputPlaceholderColor: $solarizedDarkBase00,
-    listItemBackgroundHoverColor: $solarizedDarkBase02,
+    listItemBackgroundHoverColor: lighten($solarizedDarkBase02, 5%),
     disabledIconColor: $solarizedDarkBase0,
     disabledBoxOpacity: 0.5,
     headingColor: $solarizedDarkBase0,
@@ -260,6 +275,7 @@ $themes: (
     calloutBackgroundColor: $solarizedDarkBase01,
     toastTextColor: #ffffff,
     svgSuffix: "-solarized.svg",
+    transparentColor: rgba(0, 0, 0, 0),
   ),
 );
 

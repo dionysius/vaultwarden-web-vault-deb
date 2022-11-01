@@ -202,6 +202,7 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 100%;
 
     @include themify($themes) {
       color: themed("headerColor");
@@ -296,6 +297,10 @@ header {
   .search + .right {
     margin-left: -10px;
   }
+}
+
+.no-bg {
+  background-color: transparent;
 }
 
 .content {
@@ -504,11 +509,14 @@ main {
   padding-left: 7px;
   .org-filter {
     @include themify($themes) {
-      background-color: themed("backgroundColor");
+      background-color: themed("buttonBackgroundColor");
     }
-    border: 1px solid;
-    padding: 7px;
     border-radius: $border-radius;
+    padding: 6px 10px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 .vault-select {

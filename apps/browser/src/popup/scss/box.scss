@@ -3,7 +3,6 @@
 .box {
   position: relative;
   width: 100%;
-  margin: 10px 0;
 
   &.first {
     margin-top: 0;
@@ -20,13 +19,14 @@
   }
 
   .box-header-expandable {
-    padding: 0 10px;
-    margin-bottom: 5px;
+    padding: 10px;
+    margin: 0 10px;
     text-transform: uppercase;
     display: flex;
-    width: 100%;
+    width: calc(100% - 20px);
     box-sizing: border-box;
     align-items: center;
+    border-radius: $border-radius;
 
     @include themify($themes) {
       color: themed("headingColor");
@@ -52,11 +52,8 @@
   }
 
   .box-content {
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-
     @include themify($themes) {
-      background-color: themed("boxBackgroundColor");
+      background-color: themed("backgroundColor");
       border-color: themed("borderColor");
     }
 
@@ -74,13 +71,16 @@
     .box-content-row.no-hover {
       &:hover,
       &:focus {
-        background-color: initial !important;
+        @include themify($themes) {
+          background-color: themed("boxBackgroundColor") !important;
+        }
       }
     }
   }
 
   .box-footer {
-    margin: 5px 10px;
+    margin: 0 10px 10px 10px;
+    padding: 0 15px 10px 15px;
     font-size: $font-size-small;
 
     button.btn {
@@ -94,18 +94,31 @@
   }
 
   &.list {
+    margin: 10px 0 20px 0;
     .box-content {
       .box-content-row {
-        padding: 3px 10px;
+        padding: 10px;
         text-decoration: none;
+        border-radius: $border-radius;
+        margin: 10px;
+        // background-color: $background-color;
 
         @include themify($themes) {
           color: themed("textColor");
+          background-color: themed("boxBackgroundColor");
         }
 
         &.padded {
           padding-top: 10px;
           padding-bottom: 10px;
+        }
+
+        &.no-hover {
+          &:hover {
+            @include themify($themes) {
+              background-color: themed("boxBackgroundColor") !important;
+            }
+          }
         }
 
         &:hover,
@@ -155,6 +168,8 @@
           display: flex;
           padding-top: 10px;
           padding-bottom: 10px;
+          margin: 10px;
+          border-radius: $border-radius;
         }
       }
     }
@@ -184,7 +199,6 @@
 
 .box-section-divider {
   border-top: 1px solid #000000;
-  padding-top: 10px;
 
   @include themify($themes) {
     border-color: themed("borderColor");
@@ -196,19 +210,15 @@
   padding: 10px 15px;
   position: relative;
   z-index: 1;
+  border-radius: $border-radius;
+  margin: 10px;
 
-  &:before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    width: calc(100% - 10px);
-    border-bottom: 1px solid #000000;
+  @include themify($themes) {
+    background-color: themed("boxBackgroundColor");
+  }
 
-    @include themify($themes) {
-      border-bottom-color: themed("boxBorderColor");
-    }
+  &.no-bg {
+    background-color: rgba(0, 0, 0, 0) !important;
   }
 
   &:last-child {
@@ -331,7 +341,7 @@
   }
 
   &.box-content-row-multi {
-    width: 100%;
+    width: calc(100% - 20px);
 
     input:not([type="checkbox"]) {
       width: 100%;
@@ -455,6 +465,7 @@
     width: 100%;
     border: 1px solid #000000;
     border-radius: $border-radius;
+    padding: 7px 4px;
 
     @include themify($themes) {
       border-color: themed("inputBorderColor");
@@ -709,4 +720,20 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+form {
+  .box {
+    .box-content {
+      .box-content-row {
+        &.no-hover {
+          &:hover {
+            @include themify($themes) {
+              background-color: themed("transparentColor") !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
