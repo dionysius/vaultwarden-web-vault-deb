@@ -23,6 +23,12 @@ html.browser_safari {
     }
   }
 
+  .content {
+    &.login-page {
+      padding-top: 100px;
+    }
+  }
+
   app-root {
     border-width: 1px;
     border-style: solid;
