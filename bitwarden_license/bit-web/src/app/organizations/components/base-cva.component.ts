@@ -1,8 +1,6 @@
 import { Directive, Input, OnInit, Self } from "@angular/core";
 import { ControlValueAccessor, UntypedFormControl, NgControl, Validators } from "@angular/forms";
 
-import { dirtyRequired } from "@bitwarden/angular/validators/dirty.validator";
-
 /** For use in the SSO Config Form only - will be deprecated by the Component Library */
 @Directive()
 export abstract class BaseCvaComponent implements ControlValueAccessor, OnInit {
@@ -15,10 +13,7 @@ export abstract class BaseCvaComponent implements ControlValueAccessor, OnInit {
   }
 
   get isRequired() {
-    return (
-      this.controlDir.control.hasValidator(Validators.required) ||
-      this.controlDir.control.hasValidator(dirtyRequired)
-    );
+    return this.controlDir.control.hasValidator(Validators.required);
   }
 
   @Input() label: string;

@@ -33,6 +33,10 @@ export class BitErrorSummary {
         return acc;
       }
 
+      if (!control.dirty && control.untouched) {
+        return acc;
+      }
+
       return acc + Object.keys(control.errors).length;
     }, 0);
   }

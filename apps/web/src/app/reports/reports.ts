@@ -4,7 +4,7 @@ import { ReportInactiveTwoFactor } from "./icons/report-inactive-two-factor.icon
 import { ReportReusedPasswords } from "./icons/report-reused-passwords.icon";
 import { ReportUnsecuredWebsites } from "./icons/report-unsecured-websites.icon";
 import { ReportWeakPasswords } from "./icons/report-weak-passwords.icon";
-import { ReportEntry } from "./models/report-entry";
+import { ReportEntry } from "./shared";
 
 export enum ReportType {
   ExposedPasswords = "exposedPasswords",

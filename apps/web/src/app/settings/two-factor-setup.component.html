@@ -1,8 +1,17 @@
 <div class="tabbed-header">
-  <h1>{{ "twoStepLogin" | i18n }}</h1>
+  <h1 *ngIf="!organizationId">{{ "twoStepLogin" | i18n }}</h1>
+  <h1 *ngIf="organizationId">{{ "twoStepLoginEnforcement" | i18n }}</h1>
 </div>
 <p *ngIf="!organizationId">{{ "twoStepLoginDesc" | i18n }}</p>
-<p *ngIf="organizationId">{{ "twoStepLoginOrganizationDesc" | i18n }}</p>
+<ng-container *ngIf="organizationId">
+  <p>
+    {{ "twoStepLoginOrganizationDescStart" | i18n }}
+    <a routerLink="../policies">{{ "twoStepLoginPolicy" | i18n }}.</a>
+    <br />
+    {{ "twoStepLoginOrganizationDuoDesc" | i18n }}
+  </p>
+  <p>{{ "twoStepLoginOrganizationSsoDesc" | i18n }}</p>
+</ng-container>
 <bit-callout type="warning" *ngIf="!organizationId">
   <p>{{ "twoStepLoginRecoveryWarning" | i18n }}</p>
   <button bitButton buttonType="secondary" (click)="recoveryCode()">

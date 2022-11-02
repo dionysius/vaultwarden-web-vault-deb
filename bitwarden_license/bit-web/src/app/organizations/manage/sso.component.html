@@ -35,6 +35,14 @@
       [helperText]="'allowSsoDesc' | i18n"
     ></app-input-checkbox>
 
+    <bit-form-field>
+      <bit-label>{{ "ssoIdentifier" | i18n }}</bit-label>
+      <input bitInput type="text" [formControl]="ssoIdentifier" />
+      <bit-hint>{{ "ssoIdentifierHint" | i18n }}</bit-hint>
+    </bit-form-field>
+
+    <hr />
+
     <div class="form-group">
       <label>{{ "memberDecryptionOption" | i18n }}</label>
       <div class="form-check form-check-block">
@@ -80,66 +88,55 @@
         {{ "keyConnectorWarning" | i18n }}
       </app-callout>
 
-      <div class="form-group">
-        <label for="keyConnectorUrl">
-          {{ "keyConnectorUrl" | i18n }}
-          <small class="text-muted form-text d-inline">({{ "required" | i18n }})</small>
-        </label>
-        <div class="input-group">
-          <input
-            class="form-control"
-            formControlName="keyConnectorUrl"
-            id="keyConnectorUrl"
-            aria-describedby="keyConnectorUrlDesc"
-            (change)="haveTestedKeyConnector = false"
-            appInputStripSpaces
-            appA11yInvalid
-          />
-          <div class="input-group-append">
-            <button
-              type="button"
-              class="btn btn-outline-secondary"
-              (click)="validateKeyConnectorUrl()"
-              [disabled]="!enableTestKeyConnector"
-            >
-              <i
-                class="bwi bwi-spinner bwi-spin"
-                title="{{ 'loading' | i18n }}"
-                aria-hidden="true"
-                *ngIf="keyConnectorUrl.pending"
-              ></i>
-              <span *ngIf="!keyConnectorUrl.pending">
-                {{ "keyConnectorTest" | i18n }}
-              </span>
-            </button>
-          </div>
-        </div>
-        <div *ngIf="haveTestedKeyConnector" id="keyConnectorUrlDesc" aria-live="polite">
-          <small
-            class="error-inline"
-            *ngIf="keyConnectorUrl.hasError('invalidUrl'); else keyConnectorSuccess"
-          >
-            <i class="bwi bwi-exclamation-circle" aria-hidden="true"></i>
-            <span class="sr-only">{{ "error" | i18n }}:</span>
-            {{ "keyConnectorTestFail" | i18n }}
+      <bit-form-field>
+        <bit-label>{{ "keyConnectorUrl" | i18n }}</bit-label>
+        <input
+          bitInput
+          type="text"
+          required
+          formControlName="keyConnectorUrl"
+          appInputStripSpaces
+          (input)="haveTestedKeyConnector = false"
+        />
+        <button
+          bitSuffix
+          bitButton
+          [disabled]="!enableTestKeyConnector"
+          type="button"
+          (click)="validateKeyConnectorUrl()"
+        >
+          <i
+            class="bwi bwi-spinner bwi-spin"
+            title="{{ 'loading' | i18n }}"
+            aria-hidden="true"
+            *ngIf="keyConnectorUrl.pending"
+          ></i>
+          <span *ngIf="!keyConnectorUrl.pending">
+            {{ "keyConnectorTest" | i18n }}
+          </span>
+        </button>
+        <bit-hint
+          aria-live="polite"
+          *ngIf="haveTestedKeyConnector && !keyConnectorUrl.hasError('invalidUrl')"
+        >
+          <small class="text-success">
+            <i class="bwi bwi-check-circle" aria-hidden="true"></i>
+            {{ "keyConnectorTestSuccess" | i18n }}
           </small>
-          <ng-template #keyConnectorSuccess>
-            <small class="text-success">
-              <i class="bwi bwi-check-circle" aria-hidden="true"></i>
-              {{ "keyConnectorTestSuccess" | i18n }}
-            </small>
-          </ng-template>
-        </div>
-      </div>
+        </bit-hint>
+      </bit-form-field>
     </ng-container>
 
-    <app-select
-      controlId="type"
-      [label]="'type' | i18n"
-      [selectOptions]="ssoTypeOptions"
-      formControlName="configType"
-    >
-    </app-select>
+    <hr />
+
+    <bit-form-field>
+      <bit-label>{{ "type" | i18n }}</bit-label>
+      <select bitInput formControlName="configType">
+        <option *ngFor="let o of ssoTypeOptions" [ngValue]="o.value" disabled="{{ o.disabled }}">
+          {{ o.name }}
+        </option>
+      </select>
+    </bit-form-field>
   </ng-container>
 
   <!-- OIDC -->
@@ -150,52 +147,67 @@
     <div class="config-section">
       <h2 class="secondary-header">{{ "openIdConnectConfig" | i18n }}</h2>
 
-      <app-input-text-readonly
-        [label]="'callbackPath' | i18n"
-        [controlValue]="callbackPath"
-      ></app-input-text-readonly>
+      <bit-form-field>
+        <bit-label>{{ "callbackPath" | i18n }}</bit-label>
+        <input bitInput disabled [value]="callbackPath" />
+        <button
+          bitButton
+          bitSuffix
+          type="button"
+          [appCopyClick]="callbackPath"
+          [appA11yTitle]="'copyValue' | i18n"
+        >
+          <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+        </button>
+      </bit-form-field>
 
-      <app-input-text-readonly
-        [label]="'signedOutCallbackPath' | i18n"
-        [controlValue]="signedOutCallbackPath"
-      ></app-input-text-readonly>
+      <bit-form-field>
+        <bit-label>{{ "signedOutCallbackPath" | i18n }}</bit-label>
+        <input bitInput disabled [value]="signedOutCallbackPath" />
+        <button
+          bitButton
+          bitSuffix
+          type="button"
+          [appCopyClick]="signedOutCallbackPath"
+          [appA11yTitle]="'copyValue' | i18n"
+        >
+          <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+        </button>
+      </bit-form-field>
 
-      <app-input-text
-        [label]="'authority' | i18n"
-        controlId="authority"
-        [stripSpaces]="true"
-        formControlName="authority"
-      ></app-input-text>
+      <bit-form-field>
+        <bit-label>{{ "authority" | i18n }}</bit-label>
+        <input bitInput type="text" formControlName="authority" appInputStripSpaces />
+      </bit-form-field>
 
-      <app-input-text
-        [label]="'clientId' | i18n"
-        controlId="clientId"
-        [stripSpaces]="true"
-        formControlName="clientId"
-      ></app-input-text>
+      <bit-form-field>
+        <bit-label>{{ "clientId" | i18n }}</bit-label>
+        <input bitInput type="text" formControlName="clientId" appInputStripSpaces />
+      </bit-form-field>
 
-      <app-input-text
-        [label]="'clientSecret' | i18n"
-        controlId="clientSecret"
-        [stripSpaces]="true"
-        formControlName="clientSecret"
-      ></app-input-text>
+      <bit-form-field>
+        <bit-label>{{ "clientSecret" | i18n }}</bit-label>
+        <input bitInput type="text" formControlName="clientSecret" appInputStripSpaces />
+      </bit-form-field>
 
-      <app-input-text
-        [label]="'metadataAddress' | i18n"
-        controlId="metadataAddress"
-        [stripSpaces]="true"
-        [helperText]="'openIdAuthorityRequired' | i18n"
-        formControlName="metadataAddress"
-      ></app-input-text>
+      <bit-form-field>
+        <bit-label>{{ "metadataAddress" | i18n }}</bit-label>
+        <input bitInput type="text" formControlName="metadataAddress" appInputStripSpaces />
+        <bit-hint>{{ "openIdAuthorityRequired" | i18n }}</bit-hint>
+      </bit-form-field>
 
-      <app-select
-        controlId="redirectBehavior"
-        [label]="'oidcRedirectBehavior' | i18n"
-        [selectOptions]="connectRedirectOptions"
-        formControlName="redirectBehavior"
-      >
-      </app-select>
+      <bit-form-field>
+        <bit-label>{{ "oidcRedirectBehavior" | i18n }}</bit-label>
+        <select bitInput formControlName="redirectBehavior">
+          <option
+            *ngFor="let o of connectRedirectOptions"
+            [ngValue]="o.value"
+            disabled="{{ o.disabled }}"
+          >
+            {{ o.name }}
+          </option>
+        </select>
+      </bit-form-field>
 
       <app-input-checkbox
         controlId="getClaimsFromUserInfoEndpoint"
@@ -231,47 +243,41 @@
         </button>
       </div>
       <div id="customizations" [hidden]="!showOpenIdCustomizations">
-        <app-input-text
-          [label]="'additionalScopes' | i18n"
-          controlId="additionalScopes"
-          [helperText]="'separateMultipleWithComma' | i18n"
-          formControlName="additionalScopes"
-        ></app-input-text>
+        <bit-form-field>
+          <bit-label>{{ "additionalScopes" | i18n }}</bit-label>
+          <input bitInput type="text" formControlName="additionalScopes" />
+          <bit-hint>{{ "separateMultipleWithComma" | i18n }}</bit-hint>
+        </bit-form-field>
 
-        <app-input-text
-          [label]="'additionalUserIdClaimTypes' | i18n"
-          controlId="additionalUserIdClaimTypes"
-          [helperText]="'separateMultipleWithComma' | i18n"
-          formControlName="additionalUserIdClaimTypes"
-        ></app-input-text>
+        <bit-form-field>
+          <bit-label>{{ "additionalUserIdClaimTypes" | i18n }}</bit-label>
+          <input bitInput type="text" formControlName="additionalUserIdClaimTypes" />
+          <bit-hint>{{ "separateMultipleWithComma" | i18n }}</bit-hint>
+        </bit-form-field>
 
-        <app-input-text
-          [label]="'additionalEmailClaimTypes' | i18n"
-          controlId="additionalEmailClaimTypes"
-          [helperText]="'separateMultipleWithComma' | i18n"
-          formControlName="additionalEmailClaimTypes"
-        ></app-input-text>
+        <bit-form-field>
+          <bit-label>{{ "additionalEmailClaimTypes" | i18n }}</bit-label>
+          <input bitInput type="text" formControlName="additionalEmailClaimTypes" />
+          <bit-hint>{{ "separateMultipleWithComma" | i18n }}</bit-hint>
+        </bit-form-field>
 
-        <app-input-text
-          [label]="'additionalNameClaimTypes' | i18n"
-          controlId="additionalNameClaimTypes"
-          [helperText]="'separateMultipleWithComma' | i18n"
-          formControlName="additionalNameClaimTypes"
-        ></app-input-text>
+        <bit-form-field>
+          <bit-label>{{ "additionalNameClaimTypes" | i18n }}</bit-label>
+          <input bitInput type="text" formControlName="additionalNameClaimTypes" />
+          <bit-hint>{{ "separateMultipleWithComma" | i18n }}</bit-hint>
+        </bit-form-field>
 
-        <app-input-text
-          [label]="'acrValues' | i18n"
-          controlId="acrValues"
-          helperText="acr_values"
-          formControlName="acrValues"
-        ></app-input-text>
+        <bit-form-field>
+          <bit-label>{{ "acrValues" | i18n }}</bit-label>
+          <input bitInput type="text" formControlName="acrValues" />
+          <bit-hint>acr_values</bit-hint>
+        </bit-form-field>
 
-        <app-input-text
-          [label]="'expectedReturnAcrValue' | i18n"
-          controlId="expectedReturnAcrValue"
-          helperText="acr_validation"
-          formControlName="expectedReturnAcrValue"
-        ></app-input-text>
+        <bit-form-field>
+          <bit-label>{{ "expectedReturnAcrValue" | i18n }}</bit-label>
+          <input bitInput type="text" formControlName="expectedReturnAcrValue" />
+          <bit-hint>acr_validaton</bit-hint>
+        </bit-form-field>
       </div>
     </div>
   </div>
@@ -282,53 +288,108 @@
     <div class="config-section">
       <h2 class="secondary-header">{{ "samlSpConfig" | i18n }}</h2>
 
-      <app-input-text-readonly
-        [label]="'spEntityId' | i18n"
-        [controlValue]="spEntityId"
-      ></app-input-text-readonly>
+      <bit-form-field>
+        <bit-label>{{ "spEntityId" | i18n }}</bit-label>
+        <input bitInput disabled [value]="spEntityId" />
+        <button
+          bitButton
+          bitSuffix
+          type="button"
+          [appCopyClick]="spEntityId"
+          [appA11yTitle]="'copyValue' | i18n"
+        >
+          <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+        </button>
+      </bit-form-field>
 
-      <app-input-text-readonly
-        [label]="'spMetadataUrl' | i18n"
-        [controlValue]="spMetadataUrl"
-        [showLaunch]="true"
-      ></app-input-text-readonly>
+      <bit-form-field>
+        <bit-label>{{ "spMetadataUrl" | i18n }}</bit-label>
+        <input bitInput disabled [value]="spMetadataUrl" />
+        <button
+          bitButton
+          bitSuffix
+          type="button"
+          [appLaunchClick]="spMetadataUrl"
+          [appA11yTitle]="'launch' | i18n"
+        >
+          <i class="bwi bwi-lg bwi-external-link" aria-hidden="true"></i>
+        </button>
+        <button
+          bitButton
+          bitSuffix
+          type="button"
+          [appCopyClick]="spMetadataUrl"
+          [appA11yTitle]="'copyValue' | i18n"
+        >
+          <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+        </button>
+      </bit-form-field>
 
-      <app-input-text-readonly
-        [label]="'spAcsUrl' | i18n"
-        [controlValue]="spAcsUrl"
-      ></app-input-text-readonly>
+      <bit-form-field>
+        <bit-label>{{ "spAcsUrl" | i18n }}</bit-label>
+        <input bitInput disabled [value]="spAcsUrl" />
+        <button
+          bitButton
+          bitSuffix
+          type="button"
+          [appCopyClick]="spAcsUrl"
+          [appA11yTitle]="'copyValue' | i18n"
+        >
+          <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+        </button>
+      </bit-form-field>
 
-      <app-select
-        controlId="spNameIdFormat"
-        [label]="'spNameIdFormat' | i18n"
-        [selectOptions]="saml2NameIdFormatOptions"
-        formControlName="spNameIdFormat"
-      >
-      </app-select>
+      <bit-form-field>
+        <bit-label>{{ "spNameIdFormat" | i18n }}</bit-label>
+        <select bitInput formControlName="spNameIdFormat">
+          <option
+            *ngFor="let o of saml2NameIdFormatOptions"
+            [ngValue]="o.value"
+            disabled="{{ o.disabled }}"
+          >
+            {{ o.name }}
+          </option>
+        </select>
+      </bit-form-field>
 
-      <app-select
-        controlId="spOutboundSigningAlgorithm"
-        [label]="'spOutboundSigningAlgorithm' | i18n"
-        [selectOptions]="samlSigningAlgorithmOptions"
-        formControlName="spOutboundSigningAlgorithm"
-      >
-      </app-select>
+      <bit-form-field>
+        <bit-label>{{ "spOutboundSigningAlgorithm" | i18n }}</bit-label>
+        <select bitInput formControlName="spOutboundSigningAlgorithm">
+          <option
+            *ngFor="let o of samlSigningAlgorithmOptions"
+            [ngValue]="o.value"
+            disabled="{{ o.disabled }}"
+          >
+            {{ o.name }}
+          </option>
+        </select>
+      </bit-form-field>
 
-      <app-select
-        controlId="spSigningBehavior"
-        [label]="'spSigningBehavior' | i18n"
-        [selectOptions]="saml2SigningBehaviourOptions"
-        formControlName="spSigningBehavior"
-      >
-      </app-select>
+      <bit-form-field>
+        <bit-label>{{ "spSigningBehavior" | i18n }}</bit-label>
+        <select bitInput formControlName="spSigningBehavior">
+          <option
+            *ngFor="let o of saml2SigningBehaviourOptions"
+            [ngValue]="o.value"
+            disabled="{{ o.disabled }}"
+          >
+            {{ o.name }}
+          </option>
+        </select>
+      </bit-form-field>
 
-      <app-select
-        controlId="spMinIncomingSigningAlgorithm"
-        [label]="'spMinIncomingSigningAlgorithm' | i18n"
-        [selectOptions]="samlSigningAlgorithmOptions"
-        formControlName="spMinIncomingSigningAlgorithm"
-      >
-      </app-select>
+      <bit-form-field>
+        <bit-label>{{ "spMinIncomingSigningAlgorithm" | i18n }}</bit-label>
+        <select bitInput formControlName="spMinIncomingSigningAlgorithm">
+          <option
+            *ngFor="let o of samlSigningAlgorithmOptions"
+            [ngValue]="o.value"
+            disabled="{{ o.disabled }}"
+          >
+            {{ o.name }}
+          </option>
+        </select>
+      </bit-form-field>
 
       <app-input-checkbox
         controlId="spWantAssertionsSigned"
@@ -347,67 +408,62 @@
     <div class="config-section">
       <h2 class="secondary-header">{{ "samlIdpConfig" | i18n }}</h2>
 
-      <app-input-text
-        [label]="'idpEntityId' | i18n"
-        controlId="idpEntityId"
-        formControlName="idpEntityId"
-      ></app-input-text>
+      <bit-form-field>
+        <bit-label>{{ "idpEntityId" | i18n }}</bit-label>
+        <input bitInput type="text" formControlName="idpEntityId" />
+      </bit-form-field>
 
-      <app-select
-        controlId="idpBindingType"
-        [label]="'idpBindingType' | i18n"
-        [selectOptions]="saml2BindingTypeOptions"
-        formControlName="idpBindingType"
-      >
-      </app-select>
+      <bit-form-field>
+        <bit-label>{{ "idpBindingType" | i18n }}</bit-label>
+        <select bitInput formControlName="idpBindingType">
+          <option
+            *ngFor="let o of saml2BindingTypeOptions"
+            [ngValue]="o.value"
+            disabled="{{ o.disabled }}"
+          >
+            {{ o.name }}
+          </option>
+        </select>
+      </bit-form-field>
 
-      <app-input-text
-        [label]="'idpSingleSignOnServiceUrl' | i18n"
-        controlId="idpSingleSignOnServiceUrl"
-        [helperText]="'idpSingleSignOnServiceUrlRequired' | i18n"
-        [stripSpaces]="true"
-        formControlName="idpSingleSignOnServiceUrl"
-      ></app-input-text>
+      <bit-form-field>
+        <bit-label>{{ "idpSingleSignOnServiceUrl" | i18n }}</bit-label>
+        <input
+          bitInput
+          type="text"
+          formControlName="idpSingleSignOnServiceUrl"
+          appInputStripSpaces
+        />
+        <bit-hint>{{ "idpSingleSignOnServiceUrlRequired" | i18n }}</bit-hint>
+      </bit-form-field>
 
-      <app-input-text
-        [label]="'idpSingleLogoutServiceUrl' | i18n"
-        controlId="idpSingleLogoutServiceUrl"
-        [stripSpaces]="true"
-        formControlName="idpSingleLogoutServiceUrl"
-      ></app-input-text>
+      <bit-form-field>
+        <bit-label>{{ "idpSingleLogoutServiceUrl" | i18n }}</bit-label>
+        <input
+          bitInput
+          type="text"
+          formControlName="idpSingleLogoutServiceUrl"
+          appInputStripSpaces
+        />
+      </bit-form-field>
 
-      <div class="form-group">
-        <label for="idpX509PublicCert">
-          {{ "idpX509PublicCert" | i18n }}
-          <small class="text-muted form-text d-inline">({{ "required" | i18n }})</small>
-        </label>
-        <textarea
-          formControlName="idpX509PublicCert"
-          class="form-control form-control-sm text-monospace"
-          rows="6"
-          id="idpX509PublicCert"
-          appA11yInvalid
-          aria-describedby="idpX509PublicCertDesc"
-        ></textarea>
-        <small
-          id="idpX509PublicCertDesc"
-          class="error-inline"
-          role="alert"
-          *ngIf="samlForm.get('idpX509PublicCert').hasError('required')"
-        >
-          <i class="bwi bwi-exclamation-circle" aria-hidden="true"></i>
-          <span class="sr-only">{{ "error" | i18n }}:</span>
-          {{ "fieldRequiredError" | i18n: ("idpX509PublicCert" | i18n) }}
-        </small>
-      </div>
+      <bit-form-field>
+        <bit-label>{{ "idpX509PublicCert" | i18n }}</bit-label>
+        <textarea bitInput rows="6" formControlName="idpX509PublicCert"></textarea>
+      </bit-form-field>
 
-      <app-select
-        controlId="idpOutboundSigningAlgorithm"
-        [label]="'idpOutboundSigningAlgorithm' | i18n"
-        [selectOptions]="samlSigningAlgorithmOptions"
-        formControlName="idpOutboundSigningAlgorithm"
-      >
-      </app-select>
+      <bit-form-field>
+        <bit-label>{{ "idpOutboundSigningAlgorithm" | i18n }}</bit-label>
+        <select bitInput formControlName="idpOutboundSigningAlgorithm">
+          <option
+            *ngFor="let o of samlSigningAlgorithmOptions"
+            [ngValue]="o.value"
+            disabled="{{ o.disabled }}"
+          >
+            {{ o.name }}
+          </option>
+        </select>
+      </bit-form-field>
 
       <!--TODO: Uncomment once Unsolicited IdP Response is supported-->
       <!-- <app-input-checkbox
@@ -430,19 +486,8 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary btn-submit" [disabled]="form.loading">
-    <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-    <span>{{ "save" | i18n }}</span>
+  <button type="submit" buttonType="primary" bitButton [loading]="form.loading">
+    {{ "save" | i18n }}
   </button>
-  <div
-    id="errorSummary"
-    class="error-summary text-danger"
-    *ngIf="this.getErrorCount(ssoConfigForm) as errorCount"
-  >
-    <i class="bwi bwi-exclamation-circle" aria-hidden="true"></i>
-    <span class="sr-only">{{ "error" | i18n }}:</span>
-    {{
-      (errorCount === 1 ? "formErrorSummarySingle" : "formErrorSummaryPlural") | i18n: errorCount
-    }}
-  </div>
+  <bit-error-summary [formGroup]="ssoConfigForm"></bit-error-summary>
 </form>

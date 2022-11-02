@@ -3,32 +3,19 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/guards/auth.guard";
 import {
-  canAccessOrgAdmin,
+  canAccessGroupsTab,
   canAccessManageTab,
-  canAccessSettingsTab,
-  canAccessToolsTab,
+  canAccessMembersTab,
+  canAccessOrgAdmin,
+  canManageCollections,
 } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { Organization } from "@bitwarden/common/models/domain/organization";
 
 import { OrganizationPermissionsGuard } from "./guards/org-permissions.guard";
 import { OrganizationLayoutComponent } from "./layouts/organization-layout.component";
 import { CollectionsComponent } from "./manage/collections.component";
-import { EventsComponent } from "./manage/events.component";
 import { GroupsComponent } from "./manage/groups.component";
 import { ManageComponent } from "./manage/manage.component";
 import { PeopleComponent } from "./manage/people.component";
-import { PoliciesComponent } from "./manage/policies.component";
-import { AccountComponent } from "./settings/account.component";
-import { OrganizationBillingComponent } from "./settings/organization-billing.component";
-import { OrganizationSubscriptionComponent } from "./settings/organization-subscription.component";
-import { SettingsComponent } from "./settings/settings.component";
-import { TwoFactorSetupComponent } from "./settings/two-factor-setup.component";
-import { ExposedPasswordsReportComponent } from "./tools/exposed-passwords-report.component";
-import { InactiveTwoFactorReportComponent } from "./tools/inactive-two-factor-report.component";
-import { ReusedPasswordsReportComponent } from "./tools/reused-passwords-report.component";
-import { ToolsComponent } from "./tools/tools.component";
-import { UnsecuredWebsitesReportComponent } from "./tools/unsecured-websites-report.component";
-import { WeakPasswordsReportComponent } from "./tools/weak-passwords-report.component";
 import { VaultModule } from "./vault/vault.module";
 
 const routes: Routes = [
@@ -46,71 +33,8 @@ const routes: Routes = [
         loadChildren: () => VaultModule,
       },
       {
-        path: "tools",
-        component: ToolsComponent,
-        canActivate: [OrganizationPermissionsGuard],
-        data: {
-          organizationPermissions: canAccessToolsTab,
-        },
-        children: [
-          {
-            path: "",
-            pathMatch: "full",
-            redirectTo: "import",
-          },
-          {
-            path: "",
-            loadChildren: () =>
-              import("./tools/import-export/org-import-export.module").then(
-                (m) => m.OrganizationImportExportModule
-              ),
-          },
-          {
-            path: "exposed-passwords-report",
-            component: ExposedPasswordsReportComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "exposedPasswordsReport",
-              organizationPermissions: (org: Organization) => org.canAccessReports,
-            },
-          },
-          {
-            path: "inactive-two-factor-report",
-            component: InactiveTwoFactorReportComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "inactive2faReport",
-              organizationPermissions: (org: Organization) => org.canAccessReports,
-            },
-          },
-          {
-            path: "reused-passwords-report",
-            component: ReusedPasswordsReportComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "reusedPasswordsReport",
-              organizationPermissions: (org: Organization) => org.canAccessReports,
-            },
-          },
-          {
-            path: "unsecured-websites-report",
-            component: UnsecuredWebsitesReportComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "unsecuredWebsitesReport",
-              organizationPermissions: (org: Organization) => org.canAccessReports,
-            },
-          },
-          {
-            path: "weak-passwords-report",
-            component: WeakPasswordsReportComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "weakPasswordsReport",
-              organizationPermissions: (org: Organization) => org.canAccessReports,
-            },
-          },
-        ],
+        path: "settings",
+        loadChildren: () => import("./settings").then((m) => m.OrganizationSettingsModule),
       },
       {
         path: "manage",
@@ -123,7 +47,7 @@ const routes: Routes = [
           {
             path: "",
             pathMatch: "full",
-            redirectTo: "people",
+            redirectTo: "members",
           },
           {
             path: "collections",
@@ -131,21 +55,7 @@ const routes: Routes = [
             canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "collections",
-              organizationPermissions: (org: Organization) =>
-                org.canCreateNewCollections ||
-                org.canEditAnyCollection ||
-                org.canDeleteAnyCollection ||
-                org.canEditAssignedCollections ||
-                org.canDeleteAssignedCollections,
-            },
-          },
-          {
-            path: "events",
-            component: EventsComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "eventLogs",
-              organizationPermissions: (org: Organization) => org.canAccessEventLogs,
+              organizationPermissions: canManageCollections,
             },
           },
           {
@@ -154,58 +64,31 @@ const routes: Routes = [
             canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "groups",
-              organizationPermissions: (org: Organization) => org.canManageGroups,
+              organizationPermissions: canAccessGroupsTab,
             },
           },
           {
-            path: "people",
+            path: "members",
             component: PeopleComponent,
             canActivate: [OrganizationPermissionsGuard],
             data: {
-              titleId: "people",
-              organizationPermissions: (org: Organization) =>
-                org.canManageUsers || org.canManageUsersPassword,
-            },
-          },
-          {
-            path: "policies",
-            component: PoliciesComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "policies",
-              organizationPermissions: (org: Organization) => org.canManagePolicies,
+              titleId: "members",
+              organizationPermissions: canAccessMembersTab,
             },
           },
         ],
       },
       {
-        path: "settings",
-        component: SettingsComponent,
-        canActivate: [OrganizationPermissionsGuard],
-        data: { organizationPermissions: canAccessSettingsTab },
-        children: [
-          { path: "", pathMatch: "full", redirectTo: "account" },
-          { path: "account", component: AccountComponent, data: { titleId: "myOrganization" } },
-          {
-            path: "two-factor",
-            component: TwoFactorSetupComponent,
-            data: { titleId: "twoStepLogin" },
-          },
-          {
-            path: "billing",
-            component: OrganizationBillingComponent,
-            canActivate: [OrganizationPermissionsGuard],
-            data: {
-              titleId: "billing",
-              organizationPermissions: (org: Organization) => org.canManageBilling,
-            },
-          },
-          {
-            path: "subscription",
-            component: OrganizationSubscriptionComponent,
-            data: { titleId: "subscription" },
-          },
-        ],
+        path: "reporting",
+        loadChildren: () =>
+          import("./reporting/organization-reporting.module").then(
+            (m) => m.OrganizationReportingModule
+          ),
+      },
+      {
+        path: "billing",
+        loadChildren: () =>
+          import("./billing/organization-billing.module").then((m) => m.OrganizationBillingModule),
       },
     ],
   },

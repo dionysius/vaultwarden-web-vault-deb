@@ -14,7 +14,6 @@ import { OrganizationResponse } from "@bitwarden/common/models/response/organiza
 
 import { ApiKeyComponent } from "../../settings/api-key.component";
 import { PurgeVaultComponent } from "../../settings/purge-vault.component";
-import { TaxInfoComponent } from "../../settings/tax-info.component";
 
 import { DeleteOrganizationComponent } from "./delete-organization.component";
 
@@ -32,7 +31,6 @@ export class AccountComponent {
   apiKeyModalRef: ViewContainerRef;
   @ViewChild("rotateApiKeyTemplate", { read: ViewContainerRef, static: true })
   rotateApiKeyModalRef: ViewContainerRef;
-  @ViewChild(TaxInfoComponent) taxInfo: TaxInfoComponent;
 
   selfHosted = false;
   canManageBilling = true;
@@ -98,12 +96,6 @@ export class AccountComponent {
     } catch (e) {
       this.logService.error(e);
     }
-  }
-
-  async submitTaxInfo() {
-    this.taxFormPromise = this.taxInfo.submitTaxInfo();
-    await this.taxFormPromise;
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("taxInfoUpdated"));
   }
 
   async deleteOrganization() {

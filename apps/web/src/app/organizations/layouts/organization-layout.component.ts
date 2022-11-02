@@ -3,11 +3,14 @@ import { ActivatedRoute } from "@angular/router";
 import { map, mergeMap, Observable, Subject, takeUntil } from "rxjs";
 
 import {
-  OrganizationService,
-  getOrganizationById,
+  canAccessBillingTab,
+  canAccessGroupsTab,
   canAccessManageTab,
+  canAccessMembersTab,
+  canAccessReportingTab,
   canAccessSettingsTab,
-  canAccessToolsTab,
+  getOrganizationById,
+  OrganizationService,
 } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
@@ -17,7 +20,6 @@ import { Organization } from "@bitwarden/common/models/domain/organization";
 })
 export class OrganizationLayoutComponent implements OnInit, OnDestroy {
   organization$: Observable<Organization>;
-  businessTokenPromise: Promise<void>;
 
   private _destroy = new Subject<void>();
 
@@ -43,45 +45,49 @@ export class OrganizationLayoutComponent implements OnInit, OnDestroy {
     this._destroy.complete();
   }
 
-  canShowManageTab(organization: Organization): boolean {
-    return canAccessManageTab(organization);
-  }
-
-  canShowToolsTab(organization: Organization): boolean {
-    return canAccessToolsTab(organization);
-  }
-
   canShowSettingsTab(organization: Organization): boolean {
     return canAccessSettingsTab(organization);
   }
 
-  getToolsRoute(organization: Organization): string {
-    return organization.canAccessImportExport ? "tools/import" : "tools/exposed-passwords-report";
+  canShowManageTab(organization: Organization): boolean {
+    return canAccessManageTab(organization);
+  }
+
+  canShowMembersTab(organization: Organization): boolean {
+    return canAccessMembersTab(organization);
+  }
+
+  canShowGroupsTab(organization: Organization): boolean {
+    return canAccessGroupsTab(organization);
+  }
+
+  canShowReportsTab(organization: Organization): boolean {
+    return canAccessReportingTab(organization);
+  }
+
+  canShowBillingTab(organization: Organization): boolean {
+    return canAccessBillingTab(organization);
+  }
+
+  getReportTabLabel(organization: Organization): string {
+    return organization.useEvents ? "reporting" : "reports";
+  }
+
+  getReportRoute(organization: Organization): string {
+    return organization.useEvents ? "reporting/events" : "reporting/reports";
   }
 
   getManageRoute(organization: Organization): string {
     let route: string;
     switch (true) {
       case organization.canManageUsers:
-        route = "manage/people";
+        route = "manage/members";
         break;
       case organization.canViewAssignedCollections || organization.canViewAllCollections:
         route = "manage/collections";
         break;
       case organization.canManageGroups:
         route = "manage/groups";
-        break;
-      case organization.canManagePolicies:
-        route = "manage/policies";
-        break;
-      case organization.canManageSso:
-        route = "manage/sso";
-        break;
-      case organization.canManageScim:
-        route = "manage/scim";
-        break;
-      case organization.canAccessEventLogs:
-        route = "manage/events";
         break;
     }
     return route;

@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { concatMap, Subject, takeUntil } from "rxjs";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -27,17 +28,13 @@ import { SubscriptionHiddenIcon } from "./subscription-hidden.icon";
   selector: "app-org-subscription",
   templateUrl: "organization-subscription.component.html",
 })
-// eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class OrganizationSubscriptionComponent implements OnInit {
+export class OrganizationSubscriptionComponent implements OnInit, OnDestroy {
   @ViewChild("setupBillingSyncTemplate", { read: ViewContainerRef, static: true })
   setupBillingSyncModalRef: ViewContainerRef;
 
   loading = false;
   firstLoaded = false;
   organizationId: string;
-  adjustSeatsAdd = true;
-  showAdjustSeats = false;
-  showAdjustSeatAutoscale = false;
   adjustStorageAdd = true;
   showAdjustStorage = false;
   showUpdateLicense = false;
@@ -61,6 +58,8 @@ export class OrganizationSubscriptionComponent implements OnInit {
 
   subscriptionHiddenIcon = SubscriptionHiddenIcon;
 
+  private destroy$ = new Subject<void>();
+
   constructor(
     private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
@@ -76,19 +75,27 @@ export class OrganizationSubscriptionComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    this.route.parent.parent.params.subscribe(async (params) => {
-      this.organizationId = params.organizationId;
-      await this.load();
-      this.firstLoaded = true;
-    });
+    this.route.params
+      .pipe(
+        concatMap(async (params) => {
+          this.organizationId = params.organizationId;
+          await this.load();
+          this.firstLoaded = true;
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async load() {
     if (this.loading) {
       return;
     }
-
     this.loading = true;
     this.userOrg = this.organizationService.get(this.organizationId);
     if (this.userOrg.canManageBilling) {
@@ -175,7 +182,7 @@ export class OrganizationSubscriptionComponent implements OnInit {
     this.showChangePlan = !this.showChangePlan;
   }
 
-  closeChangePlan(changed: boolean) {
+  closeChangePlan() {
     this.showChangePlan = false;
   }
 
@@ -192,10 +199,14 @@ export class OrganizationSubscriptionComponent implements OnInit {
         comp.hasBillingToken = this.hasBillingSyncToken;
       }
     );
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    ref.onClosed.subscribe(async () => {
-      await this.load();
-    });
+    ref.onClosed
+      .pipe(
+        concatMap(async () => {
+          await this.load();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
   }
 
   closeDownloadLicense() {

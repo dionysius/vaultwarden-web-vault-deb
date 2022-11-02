@@ -83,9 +83,10 @@ module.exports = {
         "50vw": "50vw",
         "75vw": "75vw",
       },
-      maxWidth: {
+      maxWidth: ({ theme }) => ({
+        ...theme("width"),
         "90vw": "90vw",
-      },
+      }),
     },
   },
   plugins: [],

@@ -29,7 +29,22 @@ export class TabListItemDirective implements FocusableOption {
   get classList(): string[] {
     return this.baseClassList
       .concat(this.active ? this.activeClassList : [])
-      .concat(this.disabled ? this.disabledClassList : []);
+      .concat(this.disabled ? this.disabledClassList : [])
+      .concat(this.textColorClassList);
+  }
+
+  /**
+   * Classes used for styling tab item text color.
+   * Separate text color class list required to override bootstrap classes in Web.
+   */
+  get textColorClassList(): string[] {
+    if (this.disabled) {
+      return ["!tw-text-muted", "hover:!tw-text-muted"];
+    }
+    if (this.active) {
+      return ["!tw-text-primary-500", "hover:!tw-text-primary-700"];
+    }
+    return ["!tw-text-main", "hover:!tw-text-main"];
   }
 
   get baseClassList(): string[] {
@@ -47,9 +62,7 @@ export class TabListItemDirective implements FocusableOption {
       "tw-border-transparent",
       "tw-border-solid",
       "tw-bg-transparent",
-      "tw-text-main",
       "hover:tw-underline",
-      "hover:tw-text-main",
       "focus-visible:tw-z-10",
       "focus-visible:tw-outline-none",
       "focus-visible:tw-ring-2",
@@ -58,13 +71,7 @@ export class TabListItemDirective implements FocusableOption {
   }
 
   get disabledClassList(): string[] {
-    return [
-      "!tw-bg-secondary-100",
-      "!tw-text-muted",
-      "hover:!tw-text-muted",
-      "!tw-no-underline",
-      "tw-cursor-not-allowed",
-    ];
+    return ["!tw-bg-secondary-100", "!tw-no-underline", "tw-cursor-not-allowed"];
   }
 
   get activeClassList(): string[] {
@@ -75,9 +82,7 @@ export class TabListItemDirective implements FocusableOption {
       "tw-border-b",
       "tw-border-b-background",
       "tw-bg-background",
-      "!tw-text-primary-500",
       "hover:tw-border-t-primary-700",
-      "hover:!tw-text-primary-700",
       "focus-visible:tw-border-t-primary-700",
       "focus-visible:!tw-text-primary-700",
     ];

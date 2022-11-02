@@ -34,7 +34,7 @@ export class SsoConfigView extends View {
     spNameIdFormat: Saml2NameIdFormat;
     spOutboundSigningAlgorithm: string;
     spSigningBehavior: Saml2SigningBehavior;
-    spMinIncomingSigningAlgorithm: boolean;
+    spMinIncomingSigningAlgorithm: string;
     spWantAssertionsSigned: boolean;
     spValidateCertificates: boolean;
 

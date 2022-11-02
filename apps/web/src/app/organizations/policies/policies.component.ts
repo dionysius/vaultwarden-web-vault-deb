@@ -10,7 +10,7 @@ import { Organization } from "@bitwarden/common/models/domain/organization";
 import { PolicyResponse } from "@bitwarden/common/models/response/policy.response";
 
 import { PolicyListService } from "../../core";
-import { BasePolicy } from "../policies/base-policy.component";
+import { BasePolicy } from "../policies";
 
 import { PolicyEditComponent } from "./policy-edit.component";
 

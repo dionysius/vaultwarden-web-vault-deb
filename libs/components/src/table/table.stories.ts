@@ -9,6 +9,12 @@ export default {
       imports: [TableModule],
     }),
   ],
+  argTypes: {
+    alignRowContent: {
+      options: ["top", "middle", "bottom", "baseline"],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     design: {
       type: "figma",
@@ -29,18 +35,18 @@ const Template: Story = (args) => ({
         </tr>
       </ng-container>
       <ng-container body>
-        <tr bitRow>
+        <tr bitRow [alignContent]="alignRowContent">
           <td bitCell>Cell 1</td>
-          <td bitCell>Cell 2</td>
+          <td bitCell>Cell 2 <br> Multiline Cell</td>
           <td bitCell>Cell 3</td>
         </tr>
-        <tr bitRow>
+        <tr bitRow [alignContent]="alignRowContent">
           <td bitCell>Cell 4</td>
           <td bitCell>Cell 5</td>
           <td bitCell>Cell 6</td>
         </tr>
-        <tr bitRow>
-          <td bitCell>Cell 7</td>
+        <tr bitRow [alignContent]="alignRowContent">
+          <td bitCell>Cell 7 <br> Multiline Cell</td>
           <td bitCell>Cell 8</td>
           <td bitCell>Cell 9</td>
         </tr>
@@ -51,3 +57,6 @@ const Template: Story = (args) => ({
 });
 
 export const Default = Template.bind({});
+Default.args = {
+  alignRowContent: "baseline",
+};
