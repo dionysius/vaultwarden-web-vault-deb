@@ -47,7 +47,7 @@ export class GroupsComponent implements OnInit {
 
   async ngOnInit() {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    this.route.parent.parent.params.subscribe(async (params) => {
+    this.route.parent.params.subscribe(async (params) => {
       this.organizationId = params.organizationId;
       await this.load();
       /* eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe */

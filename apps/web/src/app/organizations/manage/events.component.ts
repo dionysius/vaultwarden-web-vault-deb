@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { concatMap, Subject, takeUntil } from "rxjs";
 
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -20,13 +21,13 @@ import { EventService } from "../../core";
   selector: "app-org-events",
   templateUrl: "events.component.html",
 })
-// eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class EventsComponent extends BaseEventsComponent implements OnInit {
+export class EventsComponent extends BaseEventsComponent implements OnInit, OnDestroy {
   exportFileName = "org-events";
   organizationId: string;
   organization: Organization;
 
   private orgUsersUserIdMap = new Map<string, any>();
+  private destroy$ = new Subject<void>();
 
   constructor(
     private apiService: ApiService,
@@ -53,17 +54,20 @@ export class EventsComponent extends BaseEventsComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    this.route.parent.parent.params.subscribe(async (params) => {
-      this.organizationId = params.organizationId;
-      this.organization = await this.organizationService.get(this.organizationId);
-      if (this.organization == null || !this.organization.useEvents) {
-        this.router.navigate(["/organizations", this.organizationId]);
-        return;
-      }
-
-      await this.load();
-    });
+    this.route.params
+      .pipe(
+        concatMap(async (params) => {
+          this.organizationId = params.organizationId;
+          this.organization = await this.organizationService.get(this.organizationId);
+          if (this.organization == null || !this.organization.useEvents) {
+            await this.router.navigate(["/organizations", this.organizationId]);
+            return;
+          }
+          await this.load();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
   }
 
   async load() {
@@ -125,5 +129,10 @@ export class EventsComponent extends BaseEventsComponent implements OnInit {
     }
 
     return null;
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

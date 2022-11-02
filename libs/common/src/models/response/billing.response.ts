@@ -23,6 +23,10 @@ export class BillingResponse extends BaseResponse {
       this.invoices = invoices.map((i: any) => new BillingInvoiceResponse(i));
     }
   }
+
+  get hasNoHistory() {
+    return this.invoices.length == 0 && this.transactions.length == 0;
+  }
 }
 
 export class BillingSourceResponse extends BaseResponse {

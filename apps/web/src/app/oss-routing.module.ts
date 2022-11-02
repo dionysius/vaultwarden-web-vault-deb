@@ -28,7 +28,7 @@ import { VerifyRecoverDeleteComponent } from "./accounts/verify-recover-delete.c
 import { HomeGuard } from "./guards/home.guard";
 import { FrontendLayoutComponent } from "./layouts/frontend-layout.component";
 import { UserLayoutComponent } from "./layouts/user-layout.component";
-import { OrganizationsRoutingModule } from "./organizations/organization-routing.module";
+import { OrganizationModule } from "./organizations/organization.module";
 import { AcceptFamilySponsorshipComponent } from "./organizations/sponsorships/accept-family-sponsorship.component";
 import { FamiliesForEnterpriseSetupComponent } from "./organizations/sponsorships/families-for-enterprise-setup.component";
 import { ReportsModule } from "./reports";
@@ -251,7 +251,7 @@ const routes: Routes = [
   },
   {
     path: "organizations",
-    loadChildren: () => OrganizationsRoutingModule,
+    loadChildren: () => OrganizationModule,
   },
 ];
 

@@ -3,12 +3,14 @@ import { BaseResponse } from "../base.response";
 
 export class OrganizationSsoResponse extends BaseResponse {
   enabled: boolean;
+  identifier: string;
   data: SsoConfigApi;
   urls: SsoUrls;
 
   constructor(response: any) {
     super(response);
     this.enabled = this.getResponseProperty("Enabled");
+    this.identifier = this.getResponseProperty("Identifier");
     this.data =
       this.getResponseProperty("Data") != null
         ? new SsoConfigApi(this.getResponseProperty("Data"))

@@ -2,9 +2,8 @@ import { Component, OnInit } from "@angular/core";
 
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 
-import { ReportEntry } from "../models/report-entry";
-import { ReportVariant } from "../models/report-variant";
 import { reports, ReportType } from "../reports";
+import { ReportEntry, ReportVariant } from "../shared";
 
 @Component({
   selector: "app-reports-home",

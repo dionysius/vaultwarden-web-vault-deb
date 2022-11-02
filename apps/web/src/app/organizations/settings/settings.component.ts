@@ -1,30 +1,34 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { Subject, switchMap, takeUntil } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
-import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
+import { Organization } from "@bitwarden/common/models/domain/organization";
 
 @Component({
   selector: "app-org-settings",
   templateUrl: "settings.component.html",
 })
-// eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class SettingsComponent {
-  access2fa = false;
-  showBilling: boolean;
+export class SettingsComponent implements OnInit, OnDestroy {
+  organization: Organization;
 
-  constructor(
-    private route: ActivatedRoute,
-    private organizationService: OrganizationService,
-    private platformUtilsService: PlatformUtilsService
-  ) {}
+  private destroy$ = new Subject<void>();
+
+  constructor(private route: ActivatedRoute, private organizationService: OrganizationService) {}
 
   ngOnInit() {
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    this.route.parent.params.subscribe(async (params) => {
-      const organization = await this.organizationService.get(params.organizationId);
-      this.showBilling = !this.platformUtilsService.isSelfHost() && organization.canManageBilling;
-      this.access2fa = organization.use2fa;
-    });
+    this.route.params
+      .pipe(
+        switchMap(async (params) => await this.organizationService.get(params.organizationId)),
+        takeUntil(this.destroy$)
+      )
+      .subscribe((organization) => {
+        this.organization = organization;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

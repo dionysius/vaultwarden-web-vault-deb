@@ -10,19 +10,16 @@ import { ReportsHomeComponent } from "./pages/reports-home.component";
 import { ReusedPasswordsReportComponent } from "./pages/reused-passwords-report.component";
 import { UnsecuredWebsitesReportComponent } from "./pages/unsecured-websites-report.component";
 import { WeakPasswordsReportComponent } from "./pages/weak-passwords-report.component";
-import { ReportCardComponent } from "./report-card/report-card.component";
-import { ReportListComponent } from "./report-list/report-list.component";
 import { ReportsLayoutComponent } from "./reports-layout.component";
 import { ReportsRoutingModule } from "./reports-routing.module";
+import { ReportsSharedModule } from "./shared";
 
 @NgModule({
-  imports: [CommonModule, SharedModule, ReportsRoutingModule],
+  imports: [CommonModule, SharedModule, ReportsSharedModule, ReportsRoutingModule],
   declarations: [
     BreachReportComponent,
     ExposedPasswordsReportComponent,
     InactiveTwoFactorReportComponent,
-    ReportCardComponent,
-    ReportListComponent,
     ReportsLayoutComponent,
     ReportsHomeComponent,
     ReusedPasswordsReportComponent,

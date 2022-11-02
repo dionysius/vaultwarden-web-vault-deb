@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { BillingHistoryViewComponent } from "./billing-history-view.component";
 import { PaymentMethodComponent } from "./payment-method.component";
 import { PremiumComponent } from "./premium.component";
 import { SubscriptionComponent } from "./subscription.component";
-import { UserBillingHistoryComponent } from "./user-billing-history.component";
 import { UserSubscriptionComponent } from "./user-subscription.component";
 
 const routes: Routes = [
@@ -31,7 +31,7 @@ const routes: Routes = [
       },
       {
         path: "billing-history",
-        component: UserBillingHistoryComponent,
+        component: BillingHistoryViewComponent,
         data: { titleId: "billingHistory" },
       },
     ],

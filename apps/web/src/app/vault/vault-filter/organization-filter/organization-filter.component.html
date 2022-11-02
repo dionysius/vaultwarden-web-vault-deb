@@ -97,14 +97,6 @@
           <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
           {{ organizations[0].name }}
         </button>
-        <span class="tw-ml-auto">
-          <button [bitMenuTriggerFor]="orgMenu" class="org-options">
-            <i class="bwi bwi-ellipsis-v" aria-hidden="true"></i>
-          </button>
-          <bit-menu class="filter-organization-options" #orgMenu>
-            <app-organization-options [organization]="organizations[0]"></app-organization-options>
-          </bit-menu>
-        </span>
       </div>
     </ng-container>
     <ng-container *ngSwitchDefault>

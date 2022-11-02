@@ -10,6 +10,8 @@
           "**/app/core/*",
           "**/reports/*",
           "**/app/shared/*",
+          "**/organizations/settings/*",
+          "**/organizations/policies/*",
           "@bitwarden/web-vault/*",
           "src/**/*"
         ],

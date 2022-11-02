@@ -5,26 +5,55 @@
         <div class="card-header">{{ "settings" | i18n }}</div>
         <div class="list-group list-group-flush">
           <a routerLink="account" class="list-group-item" routerLinkActive="active">
-            {{ "myOrganization" | i18n }}
-          </a>
-          <a routerLink="subscription" class="list-group-item" routerLinkActive="active">
-            {{ "subscription" | i18n }}
+            {{ "organizationInfo" | i18n }}
           </a>
           <a
-            routerLink="billing"
+            routerLink="policies"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="showBilling"
+            *ngIf="organization?.canManagePolicies"
           >
-            {{ "billing" | i18n }}
+            {{ "policies" | i18n }}
           </a>
           <a
             routerLink="two-factor"
             class="list-group-item"
             routerLinkActive="active"
-            *ngIf="access2fa"
+            *ngIf="organization?.use2fa"
           >
             {{ "twoStepLogin" | i18n }}
+          </a>
+          <a
+            routerLink="tools/import"
+            class="list-group-item"
+            routerLinkActive="active"
+            *ngIf="organization?.canAccessImportExport"
+          >
+            {{ "importData" | i18n }}
+          </a>
+          <a
+            routerLink="tools/export"
+            class="list-group-item"
+            routerLinkActive="active"
+            *ngIf="organization?.canAccessImportExport"
+          >
+            {{ "exportVault" | i18n }}
+          </a>
+          <a
+            routerLink="sso"
+            class="list-group-item"
+            routerLinkActive="active"
+            *ngIf="organization?.canManageSso"
+          >
+            {{ "singleSignOn" | i18n }}
+          </a>
+          <a
+            routerLink="scim"
+            class="list-group-item"
+            routerLinkActive="active"
+            *ngIf="organization?.canManageScim"
+          >
+            {{ "scim" | i18n }}
           </a>
         </div>
       </div>
