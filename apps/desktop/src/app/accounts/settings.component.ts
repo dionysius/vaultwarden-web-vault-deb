@@ -171,7 +171,7 @@ export class SettingsComponent implements OnInit {
     this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
     this.openAtLogin = await this.stateService.getOpenAtLogin();
 
-    this.locale = await this.stateService.getLocale();
+    this.locale = (await this.stateService.getLocale()) ?? null;
     this.theme = await this.stateService.getTheme();
 
     if ((await this.stateService.getUserId()) == null) {
