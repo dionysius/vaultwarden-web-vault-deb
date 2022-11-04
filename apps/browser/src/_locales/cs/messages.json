@@ -571,22 +571,22 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Ptát se na přidání přihlášení"
   },
   "addLoginNotificationDesc": {
-    "message": "Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
+    "message": "Dotaz ohledně uložení údajů, pokud nebyly v trezoru nalezeny."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "Zobrazit karty na obrazovce Karta"
   },
   "showCardsCurrentTabDesc": {
-    "message": "List card items on the Tab page for easy auto-fill."
+    "message": "Zobrazit karetní položky na obrazovce Karta pro snadné vyplnění."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Show identities on Tab page"
+    "message": "Zobrazit identity na obrazovce Karta"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "List identity items on the Tab page for easy auto-fill."
+    "message": "Zobrazit položky identit na obrazovce Karta pro snadné vyplnění."
   },
   "clearClipboard": {
     "message": "Vyčistit schránku",
@@ -615,7 +615,7 @@
     "message": "Ano, aktualizovat"
   },
   "enableContextMenuItem": {
-    "message": "Show context menu options"
+    "message": "Zobrazit v kontextovém menu"
   },
   "contextMenuItemDesc": {
     "message": "Use a secondary click to access password generation and matching logins for the website. "
@@ -1312,7 +1312,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Vytvořeno",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1488,7 +1488,7 @@
     "message": "Zaškrtnutím tohoto políčka souhlasím s následujícím:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Podmínky použití a zásady ochrany osobních údajů nebyly odsouhlaseny."
   },
   "termsOfService": {
     "message": "Podmínky použití"
@@ -1854,7 +1854,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Časový limit vašeho trezoru překračuje omezení stanovená vaší organizací."
   },
   "vaultExportDisabled": {
     "message": "Export trezoru zakázán"
@@ -1923,11 +1923,11 @@
     "message": "Typ uživatelského jména"
   },
   "plusAddressedEmail": {
-    "message": "Plus addressed email",
+    "message": "E-mailová adresa s plusem",
     "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Použijte funkce podadres Vašeho poskytovatele e-mailu."
   },
   "catchallEmail": {
     "message": "E-mail pro doménový koš"
@@ -1954,13 +1954,13 @@
     "message": "Služba"
   },
   "forwardedEmail": {
-    "message": "Forwarded email alias"
+    "message": "Alias přeposílaného e-mailu"
   },
   "forwardedEmailDesc": {
     "message": "Vygenerovat e-mailový alias pomocí externí služby pro přesměrování."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Název hostitele",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
@@ -1985,7 +1985,7 @@
     "message": "Mir"
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Přihlašování do $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2021,12 +2021,27 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on: $DATE$",
+    "message": "naposledy spatřen: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
         "example": "Jun 15, 2015"
       }
     }
+  },
+  "loginWithMasterPassword": {
+    "message": "Přihlásit se pomocí hlavního hesla"
+  },
+  "loggingInAs": {
+    "message": "Jste přihlášení jako"
+  },
+  "notYou": {
+    "message": "Nejste to vy?"
+  },
+  "newAroundHere": {
+    "message": "Jste tu noví?"
+  },
+  "rememberEmail": {
+    "message": "Pamatovat si e-mail"
   }
 }

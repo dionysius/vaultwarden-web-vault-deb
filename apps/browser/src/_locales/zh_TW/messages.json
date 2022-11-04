@@ -14,7 +14,7 @@
     "message": "登入或建立帳戶以存取您的安全密碼庫。"
   },
   "createAccount": {
-    "message": "新增帳戶"
+    "message": "建立帳戶"
   },
   "login": {
     "message": "登入"
@@ -251,7 +251,7 @@
     "message": "單字數量"
   },
   "wordSeparator": {
-    "message": "單詞分隔字元"
+    "message": "單字分隔字元"
   },
   "capitalize": {
     "message": "大寫",
@@ -738,7 +738,7 @@
     "message": "檔案"
   },
   "selectFile": {
-    "message": "選擇檔案。"
+    "message": "選取檔案"
   },
   "maxFileSize": {
     "message": "檔案最大為 500MB。"
@@ -876,7 +876,7 @@
     "message": "此帳戶已設定兩步驟登入，但是本瀏覽器不支援已設定的任一個兩步驟提供程式。"
   },
   "noTwoStepProviders2": {
-    "message": "請使用受支援的瀏覽器（例如 Chrome ），及/或新增可以更好地跨瀏覽器的提供程式（例如驗證器應用程式）。"
+    "message": "請使用受支援的瀏覽器（例如 Chrome），及/或新增可以更好地支援跨瀏覽器的提供程式（例如驗證器應用程式）。"
   },
   "twoStepOptions": {
     "message": "兩步驟登入選項"
@@ -939,16 +939,16 @@
     "message": "API 伺服器 URL"
   },
   "webVaultUrl": {
-    "message": "網路版密碼庫伺服器 URL"
+    "message": "網頁版密碼庫伺服器 URL"
   },
   "identityUrl": {
-    "message": "身份伺服器 URL"
+    "message": "身分伺服器 URL"
   },
   "notificationsUrl": {
     "message": "通知伺服器 URL"
   },
   "iconsUrl": {
-    "message": "圖標伺服器 URL"
+    "message": "圖示伺服器 URL"
   },
   "environmentSaved": {
     "message": "環境 URL 已儲存"
@@ -1142,7 +1142,7 @@
     "message": "公司"
   },
   "ssn": {
-    "message": "社會安全號碼"
+    "message": "社會保險號碼"
   },
   "passportNumber": {
     "message": "護照號碼"
@@ -1884,7 +1884,7 @@
     "message": "移除主密碼"
   },
   "removedMasterPassword": {
-    "message": "主密碼已移除。"
+    "message": "主密碼已移除"
   },
   "leaveOrganizationConfirmation": {
     "message": "您確定要離開這個組織嗎？"
@@ -1899,7 +1899,7 @@
     "message": "您的登入階段已逾時，請返回並嘗試重新登入。"
   },
   "exportingPersonalVaultTitle": {
-    "message": "匯出個人密碼庫"
+    "message": "正匯出個人密碼庫"
   },
   "exportingPersonalVaultDescription": {
     "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫項目。組織密碼庫的項目不包含在內。",
@@ -2028,5 +2028,20 @@
         "example": "Jun 15, 2015"
       }
     }
+  },
+  "loginWithMasterPassword": {
+    "message": "使用主密碼登入"
+  },
+  "loggingInAs": {
+    "message": "正登入為"
+  },
+  "notYou": {
+    "message": "不是您嗎？"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
+  },
+  "rememberEmail": {
+    "message": "記住電子郵件地址"
   }
 }

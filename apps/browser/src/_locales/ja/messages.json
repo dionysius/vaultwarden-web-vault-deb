@@ -2028,5 +2028,20 @@
         "example": "Jun 15, 2015"
       }
     }
+  },
+  "loginWithMasterPassword": {
+    "message": "マスターパスワードでログイン"
+  },
+  "loggingInAs": {
+    "message": "ログイン中:"
+  },
+  "notYou": {
+    "message": "あなたではないですか？"
+  },
+  "newAroundHere": {
+    "message": "初めてですか?"
+  },
+  "rememberEmail": {
+    "message": "メールアドレスを保存"
   }
 }

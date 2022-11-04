@@ -1985,7 +1985,7 @@
     "message": "Mir"
   },
   "loggingInTo": {
-    "message": "Уваход у $DOMAIN$",
+    "message": "Увайсці ў $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2028,5 +2028,20 @@
         "example": "Jun 15, 2015"
       }
     }
+  },
+  "loginWithMasterPassword": {
+    "message": "Увайсці з асноўным паролем"
+  },
+  "loggingInAs": {
+    "message": "Увайсці як"
+  },
+  "notYou": {
+    "message": "Не вы?"
+  },
+  "newAroundHere": {
+    "message": "Упершыню тут?"
+  },
+  "rememberEmail": {
+    "message": "Запомніць электронную пошту"
   }
 }
