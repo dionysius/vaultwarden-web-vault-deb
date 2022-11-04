@@ -48,7 +48,8 @@ export function canAccessOrgAdmin(org: Organization): boolean {
     canAccessReportingTab(org) ||
     canAccessBillingTab(org) ||
     canAccessSettingsTab(org) ||
-    canAccessVaultTab(org)
+    canAccessVaultTab(org) ||
+    canAccessManageTab(org)
   );
 }
 
