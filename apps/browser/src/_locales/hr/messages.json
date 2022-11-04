@@ -264,7 +264,7 @@
     "message": "Najmanje brojeva"
   },
   "minSpecial": {
-    "message": "Najmanje specijalnih"
+    "message": "Najmanje posebnih"
   },
   "avoidAmbChar": {
     "message": "Izbjegavaj dvosmislene znakove"
@@ -494,7 +494,7 @@
     "message": "Prijava dvostrukom autentifikacijom čini tvoj račun još sigurnijim tako što će zahtijevati da potvrdiš prijavu putem drugog uređaja pomoću sigurnosnog koda, autentifikatorske aplikacije, SMS-om, pozivom ili e-poštom. Prijavu dvostrukom autentifikacijom možeš omogućiti na web trezoru. Želiš li sada posjetiti bitwarden.com?"
   },
   "editedFolder": {
-    "message": "Mapa izmijenjena"
+    "message": "Mapa spremljena"
   },
   "deleteFolderConfirmation": {
     "message": "Sigurno želiš izbrisati ovu mapu?"
@@ -555,7 +555,7 @@
     "message": "Prebriši korisničko ime"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Jesi li siguran da želiš prebrisati trenutno korisničko ime?"
+    "message": "Sigurno želiš prebrisati trenutno korisničko ime?"
   },
   "searchFolder": {
     "message": "Mapa pretraživanja"
@@ -642,7 +642,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarizirana Tamna",
+    "message": "Solarized Dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportVault": {
@@ -723,7 +723,7 @@
     "message": "Sigurno želiš izbrisati ovaj privitak?"
   },
   "deletedAttachment": {
-    "message": "Izbrisani privitak"
+    "message": "Privitak izbrisan"
   },
   "newAttachment": {
     "message": "Dodaj novi privitak"
@@ -732,7 +732,7 @@
     "message": "Nema privitaka."
   },
   "attachmentSaved": {
-    "message": "Privitak je spremljen."
+    "message": "Privitak spremljen"
   },
   "file": {
     "message": "Datoteka"
@@ -792,7 +792,7 @@
     "message": "Možeš kupiti premium članstvo na web trezoru. Želiš li sada posjetiti bitwarden.com?"
   },
   "premiumCurrentMember": {
-    "message": "Ti si Premium član!"
+    "message": "Ti si premium član!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Hvala ti što podupireš Bitwarden."
@@ -819,7 +819,7 @@
     "message": "Traži biometrijsku autentifikaciju pri pokretanju"
   },
   "premiumRequired": {
-    "message": "Potrebno Premium članstvo"
+    "message": "Potrebno premium članstvo"
   },
   "premiumRequiredDesc": {
     "message": "Za korištenje ove značajke potrebno je Premium članstvo."
@@ -1413,7 +1413,7 @@
     "message": "Želiš li zaista trajno izbrisati ovu stavku?"
   },
   "permanentlyDeletedItem": {
-    "message": "Trajno izbrisana stavka"
+    "message": "Stavka trajno izbrisana"
   },
   "restoreItem": {
     "message": "Vrati stavku"
@@ -1750,7 +1750,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send uređen",
+    "message": "Send spremljen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -1914,10 +1914,10 @@
     "message": "Pogreška"
   },
   "regenerateUsername": {
-    "message": "Ponovno kreiraj korisničko ime"
+    "message": "Ponovno generiraj korisničko ime"
   },
   "generateUsername": {
-    "message": "Kreiraj korisničko ime"
+    "message": "Generiraj korisničko ime"
   },
   "usernameType": {
     "message": "Tip korisničkog imena"
@@ -1957,7 +1957,7 @@
     "message": "Proslijeđeni pseudonim e-pošte"
   },
   "forwardedEmailDesc": {
-    "message": "Kreiraj pseudonim e-pošte s vanjskom uslugom prosljeđivanja."
+    "message": "Generiraj pseudonim e-pošte s vanjskom uslugom prosljeđivanja."
   },
   "hostname": {
     "message": "Naziv poslužitelja",
@@ -2012,7 +2012,7 @@
     "message": "Third-party"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Povezan s implementacijom poslužitelja treće strane, $SERVERNAME$. Provjeri bugove pomoću službenog poslužitelja ili ih prijavi poslužitelju treće strane.",
     "placeholders": {
       "servername": {
         "content": "$1",
