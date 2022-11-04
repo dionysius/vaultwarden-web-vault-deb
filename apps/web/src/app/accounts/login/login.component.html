@@ -72,8 +72,8 @@
 </form>
 
 <ng-template [formGroup]="formGroup" #loginPage>
-  <div class="tw-mb-3">
-    <bit-form-field>
+  <div class="tw-mb-6 tw-h-28">
+    <bit-form-field class="!tw-mb-1">
       <bit-label>{{ "masterPass" | i18n }}</bit-label>
       <input
         id="login_input_master-password"
@@ -89,10 +89,10 @@
           [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
         ></i>
       </button>
-      <bit-hint>
-        <a routerLink="/hint" (click)="setFormValues()">{{ "getMasterPasswordHint" | i18n }}</a>
-      </bit-hint>
     </bit-form-field>
+    <a class="-tw-mt-2" routerLink="/hint" (mousedown)="goToHint()" (click)="setFormValues()">{{
+      "getMasterPasswordHint" | i18n
+    }}</a>
   </div>
 
   <div [hidden]="!showCaptcha()">
