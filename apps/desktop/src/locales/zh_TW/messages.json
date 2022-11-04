@@ -104,7 +104,7 @@
     "message": "電子郵件地址"
   },
   "verificationCodeTotp": {
-    "message": "驗證碼（TOTP）"
+    "message": "驗證碼 (TOTP)"
   },
   "website": {
     "message": "網站"
@@ -308,7 +308,7 @@
     "message": "編輯"
   },
   "authenticatorKeyTotp": {
-    "message": "驗證器金鑰（TOTP）"
+    "message": "驗證器金鑰 (TOTP)"
   },
   "folder": {
     "message": "資料夾"
@@ -349,7 +349,7 @@
     "message": "項目已新增"
   },
   "editedItem": {
-    "message": "項目已編輯"
+    "message": "項目已儲存"
   },
   "deleteItem": {
     "message": "刪除項目"
@@ -364,7 +364,7 @@
     "message": "確定要刪除此項目嗎?"
   },
   "deletedItem": {
-    "message": "發送項目到垃圾桶"
+    "message": "項目已移至垃圾桶"
   },
   "overwritePasswordConfirmation": {
     "message": "您確定要覆寫目前的密碼嗎？"
@@ -395,7 +395,7 @@
     "message": "複製 URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "複製驗證碼（TOTP）"
+    "message": "複製驗證碼 (TOTP)"
   },
   "length": {
     "message": "長度"
@@ -413,10 +413,10 @@
     "message": "特殊字元 (!@#$%^&*)"
   },
   "numWords": {
-    "message": "字數"
+    "message": "單字數量"
   },
   "wordSeparator": {
-    "message": "文字分隔字元"
+    "message": "單字分隔字元"
   },
   "capitalize": {
     "message": "大寫",
@@ -429,10 +429,10 @@
     "message": "關閉"
   },
   "minNumbers": {
-    "message": "數字"
+    "message": "最少數字位數"
   },
   "minSpecial": {
-    "message": "符號",
+    "message": "最少符號位數",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -461,13 +461,13 @@
     "message": "確定要刪除此附件嗎？"
   },
   "attachmentSaved": {
-    "message": "附件已儲存。"
+    "message": "附件已儲存"
   },
   "file": {
     "message": "檔案"
   },
   "selectFile": {
-    "message": "選擇檔案。"
+    "message": "選取檔案"
   },
   "maxFileSize": {
     "message": "檔案最大為 500MB。"
@@ -476,7 +476,7 @@
     "message": "更新加密金鑰前不能使用此功能。"
   },
   "editedFolder": {
-    "message": "資料夾已編輯"
+    "message": "資料夾已儲存"
   },
   "addedFolder": {
     "message": "資料夾已新增"
@@ -491,7 +491,7 @@
     "message": "登入或建立帳戶來存取您的安全密碼庫。"
   },
   "createAccount": {
-    "message": "新增帳戶"
+    "message": "建立帳戶"
   },
   "logIn": {
     "message": "登入"
@@ -509,7 +509,7 @@
     "message": "主密碼提示可以在您忘記主密碼時幫助您回憶主密碼。"
   },
   "reTypeMasterPass": {
-    "message": "重新輸入主密碼"
+    "message": "再次輸入主密碼"
   },
   "masterPassHint": {
     "message": "主密碼提示（選用）"
@@ -620,13 +620,13 @@
     "message": "將您的安全鑰匙插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
   },
   "recoveryCodeDesc": {
-    "message": "無法使用任何雙要素提供程式嗎？請使用您的復原代碼以停用您賬戶的所有雙要素提供程式。"
+    "message": "無法使用任何雙因素提供程式嗎？請使用您的復原碼以停用您帳戶的所有雙因素提供程式。"
   },
   "recoveryCodeTitle": {
     "message": "復原代碼"
   },
   "authenticatorAppTitle": {
-    "message": "認證器應用程式"
+    "message": "驗證器應用程式"
   },
   "authenticatorAppDesc": {
     "message": "使用驗證器應用程式（如 Authy 或 Google Authenticator）產生基於時間的驗證碼。",
@@ -650,7 +650,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "使用任何具有 WebAuthn 功能的安全金鑰來存取您的帳戶。"
+    "message": "使用任何具有 WebAuthn 功能的安全鑰匙來存取您的帳戶。"
   },
   "emailTitle": {
     "message": "電子郵件"
@@ -659,7 +659,7 @@
     "message": "使用電子郵件傳送驗證碼給您。"
   },
   "loginUnavailable": {
-    "message": "登入不可用"
+    "message": "登入無法使用"
   },
   "noTwoStepProviders": {
     "message": "此帳戶已啟用兩步驟登入，但是本裝置不支援已設定的兩步驟登入方式。"
@@ -671,7 +671,7 @@
     "message": "兩步驟登入選項"
   },
   "selfHostedEnvironment": {
-    "message": "自我託管環境"
+    "message": "自我裝載環境"
   },
   "selfHostedEnvironmentFooter": {
     "message": "指定您本地托管的 Bitwarden 安裝之基礎 URL。"
@@ -689,7 +689,7 @@
     "message": "API 伺服器 URL"
   },
   "webVaultUrl": {
-    "message": "網路版密碼庫伺服器 URL"
+    "message": "網頁版密碼庫伺服器 URL"
   },
   "identityUrl": {
     "message": "身分伺服器 URL"
@@ -698,10 +698,10 @@
     "message": "通知伺服器 URL"
   },
   "iconsUrl": {
-    "message": "圖標伺服器 URL"
+    "message": "圖示伺服器 URL"
   },
   "environmentSaved": {
-    "message": "已儲存環境 URL。"
+    "message": "環境 URL 已儲存"
   },
   "ok": {
     "message": "確定"
@@ -719,7 +719,7 @@
     "message": "了解更多"
   },
   "featureUnavailable": {
-    "message": "功能無法使用"
+    "message": "功能不可用"
   },
   "loggedOut": {
     "message": "已登出"
@@ -761,7 +761,7 @@
     "message": "聯絡我們"
   },
   "getHelp": {
-    "message": "尋求協助"
+    "message": "尋求幫助"
   },
   "fileBugReport": {
     "message": "Bug 回報"
@@ -790,7 +790,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "前往網路版密碼庫"
+    "message": "前往網頁版密碼庫"
   },
   "getMobileApp": {
     "message": "取得行動裝置應用程式"
@@ -827,7 +827,7 @@
     "message": "無效的主密碼"
   },
   "twoStepLoginConfirmation": {
-    "message": "兩步驟登入需要您從其他設備（例如安全鑰匙、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的賬戶更加安全。兩步驟登入可以在 bitwarden.com 網頁版密碼庫啟用。現在要前往嗎？"
+    "message": "兩步驟登入需要您從其他裝置（例如安全鑰匙、驗證器程式、SMS、手機或電子郵件）來驗證您的登入，這使您的帳戶更加安全。兩步驟登入可以在 bitwarden.com 網頁版密碼庫啟用。現在要前往嗎？"
   },
   "twoStepLogin": {
     "message": "兩步驟登入"
@@ -928,7 +928,7 @@
     "message": "關閉視窗時，改為於選單列中顯示一個圖示。"
   },
   "enableTray": {
-    "message": "啟用系統匣圖標"
+    "message": "顯示系統匣圖示"
   },
   "enableTrayDesc": {
     "message": "總是在系統匣中顯示圖示。"
@@ -988,7 +988,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "檢查更新"
+    "message": "檢查更新…"
   },
   "version": {
     "message": "版本 $VERSION_NUM$",
@@ -1027,7 +1027,7 @@
     "message": "沒有可用的更新，您目前使用的是最新版本。"
   },
   "updateError": {
-    "message": "更新錯誤"
+    "message": "更新時出錯"
   },
   "unknown": {
     "message": "不詳"
@@ -1040,7 +1040,7 @@
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "複製安全碼",
+    "message": "複製安全代碼",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
@@ -1053,13 +1053,13 @@
     "message": "您可以在 bitwarden.com 網頁版密碼庫管理你的會員資格。現在要前往嗎？"
   },
   "premiumRefresh": {
-    "message": "刷新會員資格"
+    "message": "更新會員資格狀態"
   },
   "premiumNotCurrentMember": {
-    "message": "您目前不是進階會員。"
+    "message": "您尚未成為進階會員。"
   },
   "premiumSignUpAndGet": {
-    "message": "注冊成為進階會員並將獲得："
+    "message": "註冊成為進階會員將獲得："
   },
   "premiumSignUpStorage": {
     "message": "用於檔案附件的 1 GB 的加密檔案儲存空間。"
@@ -1256,7 +1256,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "隱藏到系統匣"
+    "message": "隱藏至系統匣"
   },
   "alwaysOnTop": {
     "message": "總在最上層",
@@ -1450,7 +1450,7 @@
     "message": "您確定要離開嗎？現在離開將不會儲存目前的資訊。"
   },
   "unsavedChangesTitle": {
-    "message": "變更未被儲存"
+    "message": "有尚未儲存的變更"
   },
   "clone": {
     "message": "複製"
@@ -1656,7 +1656,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "密碼庫"
+    "message": "我的密碼庫"
   },
   "text": {
     "message": "文字"
@@ -1687,7 +1687,7 @@
     "message": "目前存取次數"
   },
   "disableSend": {
-    "message": "停用此 Send 以阻止任何人存取它。",
+    "message": "停用此 Send 以阻止任何人存取。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1715,7 +1715,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send 已編輯",
+    "message": "Send 已儲存",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -1730,7 +1730,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "建立 Send",
+    "message": "建立新 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1862,10 +1862,10 @@
     "message": "移除主密碼"
   },
   "removedMasterPassword": {
-    "message": "主密碼已移除。"
+    "message": "主密碼已移除"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ 使用自我托管金輪伺服器 SSO。這個组织的成員登入時将不再需要主密碼。",
+    "message": "$ORGANIZATION$ 使用自我裝載金鑰伺服器 SSO。此組織的成員登入時將不再需要主密碼。",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1919,7 +1919,7 @@
     "message": "您的登入階段已逾時，請返回並嘗試重新登入。"
   },
   "exportingPersonalVaultTitle": {
-    "message": "匯出個人密碼庫"
+    "message": "正匯出個人密碼庫"
   },
   "exportingPersonalVaultDescription": {
     "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫。組織密碼庫的項目不包含在內。",
@@ -1986,7 +1986,7 @@
     "message": "搜尋組織"
   },
   "searchMyVault": {
-    "message": "搜尋密碼庫"
+    "message": "搜尋我的密碼庫"
   },
   "forwardedEmail": {
     "message": "轉寄的電子郵件別名"
@@ -2008,7 +2008,7 @@
     "message": "需要進階版訂閲"
   },
   "organizationIsDisabled": {
-    "message": "組織已停用。"
+    "message": "組織已停用"
   },
   "disabledOrganizationFilterError": {
     "message": "無法存取已停用組織中的項目。請聯絡您組織的擁有者以獲取協助。"
@@ -2021,5 +2021,32 @@
   },
   "vault": {
     "message": "密碼庫"
+  },
+  "loginWithMasterPassword": {
+    "message": "使用主密碼登入"
+  },
+  "loggingInAs": {
+    "message": "正登入為"
+  },
+  "rememberEmail": {
+    "message": "記住電子郵件地址"
+  },
+  "notYou": {
+    "message": "不是您嗎？"
+  },
+  "newAroundHere": {
+    "message": "第一次使用？"
+  },
+  "loggingInTo": {
+    "message": "正在登入至 $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "logInWithAnotherDevice": {
+    "message": "使用其他裝置登入"
   }
 }

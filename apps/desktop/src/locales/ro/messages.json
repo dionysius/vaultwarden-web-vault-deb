@@ -2021,5 +2021,32 @@
   },
   "vault": {
     "message": "Seif"
+  },
+  "loginWithMasterPassword": {
+    "message": "Autentificați-vă cu parola principală"
+  },
+  "loggingInAs": {
+    "message": "Autentificare ca"
+  },
+  "rememberEmail": {
+    "message": "Memorare e-mail"
+  },
+  "notYou": {
+    "message": "Nu sunteți dvs.?"
+  },
+  "newAroundHere": {
+    "message": "Sunteți nou pe aici?"
+  },
+  "loggingInTo": {
+    "message": "Autentificare în $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "logInWithAnotherDevice": {
+    "message": "Autentificați-vă cu un alt dispozitiv"
   }
 }

@@ -352,7 +352,7 @@
     "message": "Элемент изменен"
   },
   "deleteItem": {
-    "message": "Удаление элемента"
+    "message": "Удалить элемент"
   },
   "deleteFolder": {
     "message": "Удалить папку"
@@ -448,14 +448,14 @@
     "message": "Поиск в избранном"
   },
   "searchType": {
-    "message": "Поиск по типу",
+    "message": "Тип поиска",
     "description": "Search item type"
   },
   "newAttachment": {
     "message": "Добавить новое вложение"
   },
   "deletedAttachment": {
-    "message": "Удаленное вложение"
+    "message": "Вложение удалено"
   },
   "deleteAttachmentConfirmation": {
     "message": "Вы действительно хотите удалить это вложение?"
@@ -467,7 +467,7 @@
     "message": "Файл"
   },
   "selectFile": {
-    "message": "Выберите файл."
+    "message": "Выбрать файл"
   },
   "maxFileSize": {
     "message": "Максимальный размер файла 500 МБ."
@@ -476,7 +476,7 @@
     "message": "Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования."
   },
   "editedFolder": {
-    "message": "Папка отредактирована"
+    "message": "Папка сохранена"
   },
   "addedFolder": {
     "message": "Папка добавлена"
@@ -650,7 +650,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Используйте любой ключ безопасности с поддержкой WebAuthn для доступа к своей учетной записи."
+    "message": "Используйте любой ключ безопасности с поддержкой WebAuthn для доступа к вашей учетной записи."
   },
   "emailTitle": {
     "message": "Email"
@@ -701,7 +701,7 @@
     "message": "URL сервера значков"
   },
   "environmentSaved": {
-    "message": "URL окружения сохранены."
+    "message": "URL окружения сохранены"
   },
   "ok": {
     "message": "Ok"
@@ -734,13 +734,13 @@
     "message": "Выход"
   },
   "addNewLogin": {
-    "message": "Добавить новый логин"
+    "message": "Новый логин"
   },
   "addNewItem": {
-    "message": "Добавить новый элемент"
+    "message": "Новый элемент"
   },
   "addNewFolder": {
-    "message": "Добавить новую папку"
+    "message": "Новый папка"
   },
   "view": {
     "message": "Вид"
@@ -770,7 +770,7 @@
     "message": "Блог"
   },
   "followUs": {
-    "message": "Мы в соцсетях"
+    "message": "Подписывайтесь на нас"
   },
   "syncVault": {
     "message": "Синхронизировать хранилище"
@@ -1422,7 +1422,7 @@
     "message": "Всегда показывать значок в строке меню."
   },
   "hideToMenuBar": {
-    "message": "Скрыть в меню"
+    "message": "Скрыть в строке меню"
   },
   "selectOneCollection": {
     "message": "Необходимо выбрать хотя бы одну коллекцию."
@@ -1986,7 +1986,7 @@
     "message": "Поиск организации"
   },
   "searchMyVault": {
-    "message": "Поиск в моем хранилище"
+    "message": "Искать в моем хранилище"
   },
   "forwardedEmail": {
     "message": "Псевдоним электронной почты для пересылки"
@@ -2008,7 +2008,7 @@
     "message": "Требуется подписка Премиум"
   },
   "organizationIsDisabled": {
-    "message": "Организация отключена."
+    "message": "Организация отключена"
   },
   "disabledOrganizationFilterError": {
     "message": "Доступ к элементам в отключенных организациях невозможен. Обратитесь за помощью к владельцу организации."
@@ -2021,5 +2021,32 @@
   },
   "vault": {
     "message": "Хранилище"
+  },
+  "loginWithMasterPassword": {
+    "message": "Войти с мастер-паролем"
+  },
+  "loggingInAs": {
+    "message": "Войти как"
+  },
+  "rememberEmail": {
+    "message": "Запомнить email"
+  },
+  "notYou": {
+    "message": "Не вы?"
+  },
+  "newAroundHere": {
+    "message": "Вы здесь впервые?"
+  },
+  "loggingInTo": {
+    "message": "Вход в $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "logInWithAnotherDevice": {
+    "message": "Войти с другого устройства"
   }
 }

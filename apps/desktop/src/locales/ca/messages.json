@@ -349,7 +349,7 @@
     "message": "Element afegit"
   },
   "editedItem": {
-    "message": "Element editat"
+    "message": "Element guardat"
   },
   "deleteItem": {
     "message": "Suprimeix element"
@@ -476,7 +476,7 @@
     "message": "No podeu utilitzar aquesta característica fins que no actualitzeu la vostra clau de xifratge."
   },
   "editedFolder": {
-    "message": "Carpeta editada"
+    "message": "Carpeta guardada"
   },
   "addedFolder": {
     "message": "Carpeta afegida"
@@ -734,13 +734,13 @@
     "message": "Tanca la sessió"
   },
   "addNewLogin": {
-    "message": "Afegeix un inici de sessió nou"
+    "message": "Inici de sessió nou"
   },
   "addNewItem": {
-    "message": "Afegeix un element nou"
+    "message": "Element nou"
   },
   "addNewFolder": {
-    "message": "Afegeix una carpeta nova"
+    "message": "Carpeta nova"
   },
   "view": {
     "message": "Mostra"
@@ -958,7 +958,7 @@
     "message": "Mostra la icona Bitwarden al Dock fins i tot quan es minimitza a la barra de menú."
   },
   "confirmTrayTitle": {
-    "message": "Confirma la desactivació a la safata"
+    "message": "Confirma amagar la safata"
   },
   "confirmTrayDesc": {
     "message": "Si deshabiliteu aquesta configuració, també es deshabilitaran tots els altres paràmetres relacionats amb la safata."
@@ -1259,7 +1259,7 @@
     "message": "Amaga a la safata"
   },
   "alwaysOnTop": {
-    "message": "Sempre visible",
+    "message": "Sempre dalt de tot",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1422,7 +1422,7 @@
     "message": "Mostra sempre una icona a la barra de menú."
   },
   "hideToMenuBar": {
-    "message": "Amaga la barra de menú"
+    "message": "Amaga a la barra de menú"
   },
   "selectOneCollection": {
     "message": "Heu d'escollir com a mínim una col·lecció."
@@ -2021,5 +2021,32 @@
   },
   "vault": {
     "message": "Caixa forta"
+  },
+  "loginWithMasterPassword": {
+    "message": "Inicia sessió amb la contrasenya mestra"
+  },
+  "loggingInAs": {
+    "message": "Has iniciat sessió com"
+  },
+  "rememberEmail": {
+    "message": "Recorda el correu electronic"
+  },
+  "notYou": {
+    "message": "No sou vosaltres?"
+  },
+  "newAroundHere": {
+    "message": "Nou per ací?"
+  },
+  "loggingInTo": {
+    "message": "Inici de sessió a $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "logInWithAnotherDevice": {
+    "message": "Inicia sessió amb un altre dispositiu"
   }
 }

@@ -2021,5 +2021,32 @@
   },
   "vault": {
     "message": "Kluis"
+  },
+  "loginWithMasterPassword": {
+    "message": "Inloggen met je hoofdwachtwoord"
+  },
+  "loggingInAs": {
+    "message": "Inloggen als"
+  },
+  "rememberEmail": {
+    "message": "E-mailadres onthouden"
+  },
+  "notYou": {
+    "message": "Ben jij dit niet?"
+  },
+  "newAroundHere": {
+    "message": "Nieuw hier?"
+  },
+  "loggingInTo": {
+    "message": "Inloggen op $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "logInWithAnotherDevice": {
+    "message": "Inloggen met een ander apparaat"
   }
 }

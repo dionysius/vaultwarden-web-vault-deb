@@ -33,7 +33,7 @@
     "message": "Збірки"
   },
   "searchVault": {
-    "message": "Пошук"
+    "message": "Шукати у сховищі"
   },
   "addItem": {
     "message": "Додати запис"
@@ -67,7 +67,7 @@
     "message": "Вкладення"
   },
   "viewItem": {
-    "message": "Переглянути запис"
+    "message": "Перегляд запису"
   },
   "name": {
     "message": "Назва"
@@ -151,7 +151,7 @@
     "message": "Код безпеки"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Назва"
   },
   "company": {
     "message": "Компанія"
@@ -349,7 +349,7 @@
     "message": "Запис додано"
   },
   "editedItem": {
-    "message": "Запис змінено"
+    "message": "Запис збережено"
   },
   "deleteItem": {
     "message": "Видалити запис"
@@ -358,7 +358,7 @@
     "message": "Видалити теку"
   },
   "deleteAttachment": {
-    "message": "Видалити файл"
+    "message": "Видалити вкладення"
   },
   "deleteItemConfirmation": {
     "message": "Ви дійсно хочете перенести до смітника?"
@@ -1259,7 +1259,7 @@
     "message": "Згорнути в лоток"
   },
   "alwaysOnTop": {
-    "message": "Завжди вгорі",
+    "message": "Завжди поверх всіх вікон",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1428,7 +1428,7 @@
     "message": "Необхідно вибрати принаймні одну збірку."
   },
   "premiumUpdated": {
-    "message": "Ви оновилися до версії premium."
+    "message": "Ви оновилися до версії Premium."
   },
   "restore": {
     "message": "Відновити"
@@ -1485,7 +1485,7 @@
     "message": "Ви дійсно хочете остаточно видалити цей запис?"
   },
   "permanentlyDeletedItem": {
-    "message": "Остаточно видалений запис"
+    "message": "Запис остаточно видалено"
   },
   "restoreItem": {
     "message": "Відновити запис"
@@ -1494,7 +1494,7 @@
     "message": "Ви дійсно хочете відновити цей запис?"
   },
   "restoredItem": {
-    "message": "Відновлений запис"
+    "message": "Запис відновлено"
   },
   "permanentlyDelete": {
     "message": "Остаточно видалити"
@@ -2021,5 +2021,32 @@
   },
   "vault": {
     "message": "Сховище"
+  },
+  "loginWithMasterPassword": {
+    "message": "Увійти з головним паролем"
+  },
+  "loggingInAs": {
+    "message": "Вхід у систему як"
+  },
+  "rememberEmail": {
+    "message": "Запам'ятати е-пошту"
+  },
+  "notYou": {
+    "message": "Не ви?"
+  },
+  "newAroundHere": {
+    "message": "Виконуєте вхід вперше?"
+  },
+  "loggingInTo": {
+    "message": "Вхід до $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "logInWithAnotherDevice": {
+    "message": "Увійти з іншого пристрою"
   }
 }

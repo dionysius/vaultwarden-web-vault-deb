@@ -136,7 +136,7 @@
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Vlasnik kartice"
+    "message": "Vlasnik platne kartice"
   },
   "number": {
     "message": "Broj"
@@ -151,13 +151,13 @@
     "message": "Kontrolni broj"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Ime identiteta"
   },
   "company": {
     "message": "Tvrtka"
   },
   "ssn": {
-    "message": "Broj socijalnog osiguranja"
+    "message": "Broj zdravstvenog osiguranja"
   },
   "passportNumber": {
     "message": "Broj putovnice"
@@ -175,10 +175,10 @@
     "message": "Adresa"
   },
   "premiumRequired": {
-    "message": "Potrebno premium članstvo"
+    "message": "Potrebno Premium članstvo"
   },
   "premiumRequiredDesc": {
-    "message": "Za korištenje ove značajke potrebno je premium članstvo."
+    "message": "Za korištenje ove značajke potrebno je Premium članstvo."
   },
   "errorOccurred": {
     "message": "Došlo je do pogreške."
@@ -349,7 +349,7 @@
     "message": "Stavka dodana"
   },
   "editedItem": {
-    "message": "Stavka izmijenjena"
+    "message": "Stavka spremljena"
   },
   "deleteItem": {
     "message": "Izbriši stavku"
@@ -401,13 +401,13 @@
     "message": "Duljina"
   },
   "uppercase": {
-    "message": "Velika slova (A-Z)"
+    "message": "Velika slova (A - Z)"
   },
   "lowercase": {
-    "message": "Mala slova (a-z)"
+    "message": "Mala slova (a - z)"
   },
   "numbers": {
-    "message": "Brojevi (0-9)"
+    "message": "Brojevi (0 - 9)"
   },
   "specialCharacters": {
     "message": "Posebni znakovi (!@#$%^&*)"
@@ -533,13 +533,13 @@
     "message": "Nevažeća adresa e-pošte."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "Potrebna je glavna lozinka."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Potreban je ponovni unos glavne lozinke."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Glavna lozinka mora imati najmanje 8 znakova."
   },
   "masterPassDoesntMatch": {
     "message": "Potvrda glavne lozinke se ne podudara."
@@ -611,7 +611,7 @@
     "message": "Ponovno slanje kontrolnog koda e-poštom"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Koristiti drugi način prijave u dva koraka"
+    "message": "Koristiti drugi način prijave dvostrukom autentifikacijom"
   },
   "insertYubiKey": {
     "message": "Umetni svoj YubiKey u USB priključak računala, a zatim dodirni njegovu tipku."
@@ -662,13 +662,13 @@
     "message": "Prijava nije dostupna"
   },
   "noTwoStepProviders": {
-    "message": "Ovaj račun ima omogućenu prijavu u dva koraka, međutim, niti jedan od konfiguriranih pružatelja prijave u dva koraka ne podržava ovaj uređaj."
+    "message": "Ovaj račun ima omogućenu prijavu dvostrukom autentifikacijom, međutim, niti jedan od konfiguriranih pružatelja prijave dvostrukom autentifikacijom ne podržava ovaj uređaj."
   },
   "noTwoStepProviders2": {
     "message": "Dodaj dodatne pružatelje, bolje podržane na uređajima (npr. aplikacija Autentifikator)."
   },
   "twoStepOptions": {
-    "message": "Mogućnosti dvostruke autentifikacije"
+    "message": "Mogućnosti prijave dvostrukom autentifikacijom"
   },
   "selfHostedEnvironment": {
     "message": "Vlastito hosting okruženje"
@@ -827,7 +827,7 @@
     "message": "Neispravna glavna lozinka"
   },
   "twoStepLoginConfirmation": {
-    "message": "Prijava u dva koraka čini tvoj račun još sigurnijim tako što će zahtijevati da potvrdiš prijavu putem drugog uređaja sigurnosnim ključem, autentifikatorskom aplikacijom, SMS-om, pozivom ili e-poštom. Prijavu u dva koraka možeš omogućiti na web trezoru. Želiš li sada posjetiti bitwarden.com?"
+    "message": "Prijava dvostrukom autentifikacijom čini tvoj račun još sigurnijim tako što će zahtijevati potvrdu prijave putem drugog uređaja kao što su sigurnosni ključ, autentifikatorske aplikacije, SMS-om, pozivom ili e-poštom. Prijavu dvostrukom autentifikacijom možeš omogućiti na web trezoru. Želiš li sada posjetiti bitwarden.com?"
   },
   "twoStepLogin": {
     "message": "Prijava dvostrukom autentifikacijom"
@@ -898,10 +898,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Show website icons"
+    "message": "Prikaži ikone mrežnih mjesta"
   },
   "faviconDesc": {
-    "message": "Show a recognizable image next to each login."
+    "message": "Prikaži prepoznatljivu sliku pored svake prijave."
   },
   "enableMinToTray": {
     "message": "Minimiziraj u područje obavijesti"
@@ -1065,7 +1065,7 @@
     "message": "1 GB šifriranog prostora za pohranu podataka."
   },
   "premiumSignUpTwoStep": {
-    "message": "Dodatne mogućnosti za prijavu u dva koraka kao što su YubiKey, FIDO U2F i Duo."
+    "message": "Dodatne mogućnosti za prijavu dvostrukom autentifikacijom kao što su YubiKey, FIDO U2F i Duo."
   },
   "premiumSignUpReports": {
     "message": "Higijenu lozinki, zdravlje računa i izvještaje o krađi podatak radi zaštite svojeg trezora."
@@ -1267,7 +1267,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Stvoreno",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -1389,28 +1389,28 @@
     "message": "Otključaj trezor"
   },
   "autoPromptWindowsHello": {
-    "message": "Ask for Windows Hello on launch"
+    "message": "Zahtijevaj Windows Hello pri pokretanju"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on launch"
+    "message": "Zahtijevaj Touch ID pri pokretanju"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zaključaj glavnom lozinkom kod svakog pokretanja"
   },
   "deleteAccount": {
-    "message": "Delete account"
+    "message": "Obriši račun"
   },
   "deleteAccountDesc": {
-    "message": "Proceed below to delete your account and all vault data."
+    "message": "Nastavi za brisanje svojeg računa i SVIH podataka u trezoru."
   },
   "deleteAccountWarning": {
-    "message": "Deleting your account is permanent. It cannot be undone."
+    "message": "Brisanje računa je TRAJNO i NEPOVRATNO i naknadno ga nije moguće vratiti."
   },
   "accountDeleted": {
-    "message": "Account deleted"
+    "message": "Račun izbrisan"
   },
   "accountDeletedDesc": {
-    "message": "Your account has been closed and all associated data has been deleted."
+    "message": "Tvoj račun je zatvoren i svi povezani podaci su obrisani."
   },
   "preferences": {
     "message": "Postavke"
@@ -1566,7 +1566,7 @@
     "message": "Označavanjem ove kućice slažete se sa sljedećim:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Uvjeti korištenja i Politika privatnosti nisu prihvaćeni."
   },
   "enableBrowserIntegration": {
     "message": "Uključi integraciju s web preglednikom"
@@ -1575,10 +1575,10 @@
     "message": "Integracija s preglednikom koristi se za biometriju u pregledniku."
   },
   "enableDuckDuckGoBrowserIntegration": {
-    "message": "Allow DuckDuckGo browser integration"
+    "message": "Dozvoli integraciju s DuckDuckGo preglednikom"
   },
   "enableDuckDuckGoBrowserIntegrationDesc": {
-    "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
+    "message": "Koristi svoj Bitwarden trezor prilikom korištenje DuckDuckGo preglednika."
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Integracija preglednika nije podržana"
@@ -1608,7 +1608,7 @@
     "message": "Provjeri da je prikazana jedinstvena fraza identična onoj prikazanoj u proširenju preglednika."
   },
   "verifyNativeMessagingConnectionTitle": {
-    "message": "$APPID$ wants to connect to Bitwarden",
+    "message": "$APPID$ se želi spojiti s Bitwardenom",
     "placeholders": {
       "appid": {
         "content": "$1",
@@ -1617,10 +1617,10 @@
     }
   },
   "verifyNativeMessagingConnectionDesc": {
-    "message": "Would you like to approve this request?"
+    "message": "Želiš li odobriti ovaj zahtijev?"
   },
   "verifyNativeMessagingConnectionWarning": {
-    "message": "If you did not initiate this request, do not approve it."
+    "message": "Ako nisi pokrenuo ovaj zahtijev, nemoj ga odobriti."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrija nije omogućena"
@@ -1883,7 +1883,7 @@
     "message": "Organizacija napuštena."
   },
   "ssoKeyConnectorError": {
-    "message": "Pogreška konektora ključa: provjerite je li konektor ključa dostupan i radi ispravno."
+    "message": "Pogreška konektora ključa: provjeri je li konektor ključa dostupan i radi li ispravno."
   },
   "lockAllVaults": {
     "message": "Zaključaj sve trezore"
@@ -1898,7 +1898,7 @@
     "message": "Postavke aplikacije (svi računi)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Dosegnuto je ograničenje računa. Odjavite se s računa da dodate drugi."
+    "message": "Dosegnuto je ograničenje računa. Odjavite se s računa za dodavanje drugog."
   },
   "settingsTitle": {
     "message": "Postavke aplikacije za $EMAIL$",
@@ -1913,13 +1913,13 @@
     "message": "Promijeni račun"
   },
   "options": {
-    "message": "Opcije"
+    "message": "Mogućnosti"
   },
   "sessionTimeout": {
     "message": "Tvoja sesija je istekla. Vrati se i pokušaj s ponovnom prijavom."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Izvoz osobnog trezora"
+    "message": "Izvoz osobnog trezora u tijeku"
   },
   "exportingPersonalVaultDescription": {
     "message": "Izvest će se samo stavke osobnog trezora povezanog s $EMAIL$. Stavke organizacijskog trezora neće biti uključene.",
@@ -1940,7 +1940,7 @@
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "Što želiš kreirati?"
+    "message": "Što želiš generirati?"
   },
   "passwordType": {
     "message": "Tip lozinke"
@@ -1962,10 +1962,10 @@
     "message": "Koristi mogućnosti podadresiranja svog davatelja e-pošte."
   },
   "catchallEmail": {
-    "message": "Dohvati sve (Catch-all) e-pošta"
+    "message": "Dohvati sve (catch-all) e-pošta"
   },
   "catchallEmailDesc": {
-    "message": "Koristi konfigurirani Catch-all sandučić svoje domene."
+    "message": "Koristi konfigurirani catch-all sandučić svoje domene."
   },
   "random": {
     "message": "Nasumično"
@@ -2005,21 +2005,48 @@
     "message": "API ključ"
   },
   "premiumSubcriptionRequired": {
-    "message": "Premium subscription required"
+    "message": "Potrebna Premium pretplata"
   },
   "organizationIsDisabled": {
-    "message": "Organization suspended"
+    "message": "Organizacija suspendirana"
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in suspended organizations cannot be accessed. Contact your organization owner for assistance."
+    "message": "Stavkama u suspendiranoj Organizaciji se ne može pristupiti. Kontaktiraj vlasnika Organizacije za pomoć."
   },
   "neverLockWarning": {
-    "message": "Are you sure you want to use the \"Never\" option? Setting your lock options to \"Never\" stores your vault's encryption key on your device. If you use this option you should ensure that you keep your device properly protected."
+    "message": "Sigurno želiš koristiti opciju „Nikada”? Postavljanje opcija zaključavanja na „Nikada” pohranjuje šifru tvojeg trezora na tvom uređaju. Ako koristiš ovu opciju, trebalo bi osigurati da je uređaj pravilno zaštićen."
   },
   "cardBrandMir": {
     "message": "Mir"
   },
   "vault": {
-    "message": "Vault"
+    "message": "Trezor"
+  },
+  "loginWithMasterPassword": {
+    "message": "Prijava glavnom lozinkom"
+  },
+  "loggingInAs": {
+    "message": "Prijava kao"
+  },
+  "rememberEmail": {
+    "message": "Zapamti adresu e-pošte"
+  },
+  "notYou": {
+    "message": "Nisi ti?"
+  },
+  "newAroundHere": {
+    "message": "New around here?"
+  },
+  "loggingInTo": {
+    "message": "Prijava u $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "logInWithAnotherDevice": {
+    "message": "Prijava drugim uređajem"
   }
 }

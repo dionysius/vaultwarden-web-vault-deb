@@ -2021,5 +2021,32 @@
   },
   "vault": {
     "message": "密码库"
+  },
+  "loginWithMasterPassword": {
+    "message": "使用主密码登录"
+  },
+  "loggingInAs": {
+    "message": "正登录为"
+  },
+  "rememberEmail": {
+    "message": "记住电子邮件地址"
+  },
+  "notYou": {
+    "message": "不是你？"
+  },
+  "newAroundHere": {
+    "message": "新建在这里？"
+  },
+  "loggingInTo": {
+    "message": "正在登录到 $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "logInWithAnotherDevice": {
+    "message": "使用其他设备登录"
   }
 }
