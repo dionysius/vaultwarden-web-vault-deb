@@ -278,7 +278,7 @@
     "message": "Search favorites"
   },
   "searchType": {
-    "message": "Search Type",
+    "message": "Search type",
     "description": "Search item type"
   },
   "searchVault": {
@@ -1554,11 +1554,11 @@
   },
   "reportsDesc": {
     "message": "Identify and close security gaps in your online accounts by clicking the reports below.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden personal or organization vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
     "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden personal or organization Vault."
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Unsecure websites"
@@ -3008,7 +3008,7 @@
     "message": "My organization"
   },
   "organizationInfo": {
-    "message": "Organization Info"
+    "message": "Organization info"
   },
   "deleteOrganization": {
     "message": "Delete organization"
