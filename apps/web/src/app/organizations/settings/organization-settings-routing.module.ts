@@ -5,6 +5,7 @@ import { canAccessSettingsTab } from "@bitwarden/common/abstractions/organizatio
 import { Organization } from "@bitwarden/common/models/domain/organization";
 
 import { OrganizationPermissionsGuard } from "../guards/org-permissions.guard";
+import { OrganizationRedirectGuard } from "../guards/org-redirect.guard";
 import { PoliciesComponent } from "../policies";
 
 import { AccountComponent } from "./account.component";
@@ -18,7 +19,15 @@ const routes: Routes = [
     canActivate: [OrganizationPermissionsGuard],
     data: { organizationPermissions: canAccessSettingsTab },
     children: [
-      { path: "", pathMatch: "full", redirectTo: "account" },
+      {
+        path: "",
+        pathMatch: "full",
+        canActivate: [OrganizationRedirectGuard],
+        data: {
+          autoRedirectCallback: getSettingsRoute,
+        },
+        children: [], // This is required to make the auto redirect work,
+      },
       { path: "account", component: AccountComponent, data: { titleId: "organizationInfo" } },
       {
         path: "two-factor",
@@ -44,6 +53,25 @@ const routes: Routes = [
     ],
   },
 ];
+
+function getSettingsRoute(organization: Organization) {
+  if (organization.isOwner) {
+    return "account";
+  }
+  if (organization.canManagePolicies) {
+    return "policies";
+  }
+  if (organization.canAccessImportExport) {
+    return ["tools", "import"];
+  }
+  if (organization.canManageSso) {
+    return "sso";
+  }
+  if (organization.canManageScim) {
+    return "scim";
+  }
+  return undefined;
+}
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

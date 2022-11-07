@@ -72,24 +72,4 @@ export class OrganizationLayoutComponent implements OnInit, OnDestroy {
   getReportTabLabel(organization: Organization): string {
     return organization.useEvents ? "reporting" : "reports";
   }
-
-  getReportRoute(organization: Organization): string {
-    return organization.useEvents ? "reporting/events" : "reporting/reports";
-  }
-
-  getManageRoute(organization: Organization): string {
-    let route: string;
-    switch (true) {
-      case organization.canManageUsers:
-        route = "manage/members";
-        break;
-      case organization.canViewAssignedCollections || organization.canViewAllCollections:
-        route = "manage/collections";
-        break;
-      case organization.canManageGroups:
-        route = "manage/groups";
-        break;
-    }
-    return route;
-  }
 }

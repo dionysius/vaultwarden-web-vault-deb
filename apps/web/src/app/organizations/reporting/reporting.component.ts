@@ -22,7 +22,8 @@ export class ReportingComponent implements OnInit, OnDestroy {
       .pipe(
         concatMap(async (params) => {
           this.organization = await this.organizationService.get(params.organizationId);
-          this.showLeftNav = this.organization.canAccessEventLogs;
+          this.showLeftNav =
+            this.organization.canAccessEventLogs && this.organization.canAccessReports;
         }),
         takeUntil(this.destroy$)
       )

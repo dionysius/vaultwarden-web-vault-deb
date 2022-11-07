@@ -9,8 +9,10 @@ import {
   canAccessOrgAdmin,
   canManageCollections,
 } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
+import { Organization } from "@bitwarden/common/models/domain/organization";
 
 import { OrganizationPermissionsGuard } from "./guards/org-permissions.guard";
+import { OrganizationRedirectGuard } from "./guards/org-redirect.guard";
 import { OrganizationLayoutComponent } from "./layouts/organization-layout.component";
 import { CollectionsComponent } from "./manage/collections.component";
 import { GroupsComponent } from "./manage/groups.component";
@@ -47,7 +49,11 @@ const routes: Routes = [
           {
             path: "",
             pathMatch: "full",
-            redirectTo: "members",
+            canActivate: [OrganizationRedirectGuard],
+            data: {
+              autoRedirectCallback: getManageRoute,
+            },
+            children: [], // This is required to make the auto redirect work
           },
           {
             path: "collections",
@@ -93,6 +99,19 @@ const routes: Routes = [
     ],
   },
 ];
+
+function getManageRoute(organization: Organization): string {
+  if (organization.canManageUsers) {
+    return "members";
+  }
+  if (organization.canViewAssignedCollections || organization.canViewAllCollections) {
+    return "collections";
+  }
+  if (organization.canManageGroups) {
+    return "groups";
+  }
+  return undefined;
+}
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
