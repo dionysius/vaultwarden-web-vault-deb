@@ -8,13 +8,10 @@
       ></app-organization-switcher>
       <bit-tab-nav-bar class="-tw-mb-px">
         <bit-tab-link route="vault">{{ "vault" | i18n }}</bit-tab-link>
-        <bit-tab-link *ngIf="canShowManageTab(organization)" [route]="getManageRoute(organization)">
+        <bit-tab-link *ngIf="canShowManageTab(organization)" route="manage">
           {{ "manage" | i18n }}
         </bit-tab-link>
-        <bit-tab-link
-          *ngIf="canShowReportsTab(organization)"
-          [route]="getReportRoute(organization)"
-        >
+        <bit-tab-link *ngIf="canShowReportsTab(organization)" route="reporting">
           {{ getReportTabLabel(organization) | i18n }}
         </bit-tab-link>
         <bit-tab-link *ngIf="canShowBillingTab(organization)" route="billing">{{

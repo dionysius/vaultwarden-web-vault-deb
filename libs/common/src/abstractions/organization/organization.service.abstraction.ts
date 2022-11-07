@@ -9,7 +9,13 @@ export function canAccessVaultTab(org: Organization): boolean {
 }
 
 export function canAccessSettingsTab(org: Organization): boolean {
-  return org.isOwner;
+  return (
+    org.isOwner ||
+    org.canManagePolicies ||
+    org.canManageSso ||
+    org.canManageScim ||
+    org.canAccessImportExport
+  );
 }
 
 export function canAccessMembersTab(org: Organization): boolean {

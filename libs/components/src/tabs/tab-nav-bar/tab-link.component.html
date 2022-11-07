@@ -2,6 +2,7 @@
   bitTabListItem
   [routerLink]="disabled ? null : route"
   routerLinkActive
+  [routerLinkActiveOptions]="routerLinkMatchOptions"
   #rla="routerLinkActive"
   [active]="rla.isActive"
   [disabled]="disabled"
