@@ -467,7 +467,7 @@
     "message": "Är du säker på att du vill radera denna bilaga?"
   },
   "attachmentSaved": {
-    "message": "Bilagan har sparats."
+    "message": "Bilaga sparad"
   },
   "file": {
     "message": "Fil"
@@ -482,10 +482,10 @@
     "message": "Du kan inte använda denna funktion förrän du uppdaterar din krypteringsnyckel."
   },
   "addedItem": {
-    "message": "Lade till objekt"
+    "message": "Nytt objekt skapat"
   },
   "editedItem": {
-    "message": "Redigerade objekt"
+    "message": "Objekt sparat"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ flyttades till $ORGNAME$",
@@ -534,7 +534,7 @@
     "message": "Är du säker på att du vill skriva över det nuvarande lösenordet?"
   },
   "editedFolder": {
-    "message": "Redigerade mapp"
+    "message": "Mapp sparad"
   },
   "addedFolder": {
     "message": "Lade till mapp"
@@ -543,7 +543,7 @@
     "message": "Är du säker på att du vill radera denna mapp?"
   },
   "deletedFolder": {
-    "message": "Raderade mapp"
+    "message": "Mapp raderad"
   },
   "loggedOut": {
     "message": "Utloggad"
@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "Log in with device must be set up in the settings of the Bitwarden mobile app. Need another option?"
   },
+  "loginWithMasterPassword": {
+    "message": "Log in with master password"
+  },
   "createAccount": {
     "message": "Skapa konto"
   },
@@ -582,7 +585,7 @@
     "message": "New around here?"
   },
   "startTrial": {
-    "message": "Påbörja utvärdering"
+    "message": "Starta provversion"
   },
   "logIn": {
     "message": "Logga in"
@@ -805,7 +808,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Använd en FIDO U2F-aktiverad säkerhetsnyckel för att komma åt ditt konto."
+    "message": "Använd en FIDO U2F-kompatibel säkerhetsnyckel för att komma åt ditt konto."
   },
   "u2fTitle": {
     "message": "FIDO U2F-säkerhetsnyckel"
@@ -915,10 +918,10 @@
     "message": "This password will be used to export and import this file"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "Bekräfta huvudlösenord"
   },
   "confirmFormat": {
-    "message": "Confirm format"
+    "message": "Bekräfta format"
   },
   "filePassword": {
     "message": "File password"
@@ -933,10 +936,10 @@
     "message": "Set a password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "fileTypeHeading": {
-    "message": "File type"
+    "message": "Filtyp"
   },
   "accountBackup": {
-    "message": "Account backup"
+    "message": "Kontobackup"
   },
   "passwordProtected": {
     "message": "Password protected"
@@ -951,7 +954,7 @@
     "message": "This file is password-protected. Please enter the file password to import data."
   },
   "exportSuccess": {
-    "message": "Ditt valv har exporterats."
+    "message": "Ditt valv har exporterats"
   },
   "passwordGenerator": {
     "message": "Lösenordsgenerator"
@@ -970,7 +973,7 @@
     "message": "Undvik tvetydiga tecken"
   },
   "regeneratePassword": {
-    "message": "Skapa nytt lösenord"
+    "message": "Återskapa lösenord"
   },
   "length": {
     "message": "Längd"
@@ -1139,7 +1142,7 @@
     "message": "Radera konto"
   },
   "deleteAccountDesc": {
-    "message": "Fortsätt nedan för att radera ditt konto och all tillhörande data."
+    "message": "Fortsätt nedan för att radera ditt konto och all valvdata."
   },
   "deleteAccountWarning": {
     "message": "Att radera ditt konto är permanent. Det går inte att ångra."
@@ -1166,7 +1169,7 @@
     "message": "Det uppstod ett problem med datan du försökte importera. Lös nedanstående fel i källfilen och försök igen."
   },
   "importSuccess": {
-    "message": "Data har importerats till ditt valv."
+    "message": "Data har importerats till ditt valv"
   },
   "importWarning": {
     "message": "Du importerar data till $ORGANIZATION$. Din data kan komma att delas med medlemmar i den här organisationen. Vill du fortsätta?",
@@ -1285,13 +1288,26 @@
     "message": "Domänerna uppdaterades"
   },
   "twoStepLogin": {
-    "message": "Tvåstegsverifiering"
+    "message": "Tvåfaktorsautentisering"
+  },
+  "twoStepLoginEnforcement": {
+    "message": "Two-step Login Enforcement"
   },
   "twoStepLoginDesc": {
     "message": "Säkra ditt konto genom att kräva ett ytterligare steg vid inloggning."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Kräv tvåstegsverifiering för din organisations användare genom att konfigurera metoder på organisationsnivå."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "Two-step Login Policy"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "To enforce Two-step Login through Duo, use the options below."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Att aktivera tvåstegsverifiering kan låsa ute dig från ditt Bitwarden-konto permanent. En återställningskod låter dig komma åt ditt konto om du inte längre kan använda din vanliga metod för tvåstegsverifiering (t.ex. om du förlorar din enhet). Bitwardens kundservice kommer inte att kunna hjälpa dig om du förlorar åtkomst till ditt konto. Vi rekommenderar att du skriver ner eller skriver ut återställningskoden och förvarar den på ett säkert ställe."
@@ -1540,6 +1556,10 @@
     "message": "Identifiera och åtgärda säkerhetsluckor på dina online-konton genom att klicka på rapporterna nedan.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
+  "orgsReportsDesc": {
+    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
+  },
   "unsecuredWebsitesReport": {
     "message": "Rapport om osäkra webbplatser"
   },
@@ -1767,10 +1787,10 @@
     "description": "Another way of saying \"Get a Premium membership\""
   },
   "premiumUpdated": {
-    "message": "Du har uppgraderat till Premium."
+    "message": "Du har uppgraderat till premium."
   },
   "premiumUpgradeUnlockFeatures": {
-    "message": "Uppgradera ditt konto till ett premiummedlemskap för att låsa upp ytterligare funktioner."
+    "message": "Uppgradera ditt konto till ett premium-medlemskap och lås upp några riktigt bra extrafunktioner."
   },
   "premiumSignUpStorage": {
     "message": "1 GB krypterad lagring."
@@ -1894,7 +1914,7 @@
     "message": "Klicka på PayPal-knappen för att logga in på ditt PayPal-konto, tryck sedan på \"Skicka\"-knappen nedan för att fortsätta."
   },
   "cancelSubscription": {
-    "message": "Avbryt prenumeration"
+    "message": "Avsluta prenumeration"
   },
   "subscriptionCanceled": {
     "message": "Abonnemanget har avslutats."
@@ -1906,7 +1926,7 @@
     "message": "Abonnemanget har markerats för avslutning vid slutet av den nuvarande faktureringsperioden."
   },
   "reinstateSubscription": {
-    "message": "Återuppta abonnemang"
+    "message": "Återuppta prenumeration"
   },
   "reinstateConfirmation": {
     "message": "Är du säker att du vill ta bort den väntande avslutningsförfrågan och återuppta ditt abonnemang?"
@@ -1918,10 +1938,10 @@
     "message": "Är du säker på att du vill avsluta? Du kommer förlora tillgång till alla funktioner som abonnemanget erbjuder vid slutet av den nuvarande faktureringsperioden."
   },
   "canceledSubscription": {
-    "message": "Abonnemanget har avslutats."
+    "message": "Prenumerationen har avslutats"
   },
   "neverExpires": {
-    "message": "Går aldrig ut"
+    "message": "Upphör aldrig"
   },
   "status": {
     "message": "Status"
@@ -2086,7 +2106,7 @@
     "message": "Företagsnamn"
   },
   "chooseYourPlan": {
-    "message": "Välj din plan"
+    "message": "Välj abonnemang"
   },
   "users": {
     "message": "Användare"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Min organisation"
   },
+  "organizationInfo": {
+    "message": "Organization info"
+  },
   "deleteOrganization": {
     "message": "Radera organisation"
   },
@@ -3031,7 +3054,7 @@
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
-    "message": "Uppgradera plan",
+    "message": "Uppgradera abbonemanget",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlanUpgrade": {
@@ -3067,7 +3090,7 @@
     "message": "Om du inte verifierar bankkontot kommer det att resultera i en missad betalning och ditt abonnemang kommer inaktiveras."
   },
   "verifiedBankAccount": {
-    "message": "Bankkontot har verifierats."
+    "message": "Bankkontot har verifierats"
   },
   "bankAccount": {
     "message": "Bankkonto"
@@ -3105,7 +3128,7 @@
     "message": "Ange ditt installations-id"
   },
   "limitSubscriptionDesc": {
-    "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new users."
+    "message": "Set a seat limit for your subscription. Once this limit is reached, you will not be able to invite new members."
   },
   "maxSeatLimit": {
     "message": "Seat Limit (optional)",
@@ -3150,10 +3173,10 @@
     "message": "For additional help in managing your subscription, please contact Customer Support."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited members exceed your subscription seats, you will immediately receive a prorated charge for the additional members."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users until your $MAX$ seat limit is reached.",
+    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited members exceed your subscription seats, you will immediately receive a prorated charge for the additional members until your $MAX$ seat limit is reached.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3171,7 +3194,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "You cannot invite more than $COUNT$ users without upgrading your plan. Please contact Customer Support to upgrade.",
+    "message": "You cannot invite more than $COUNT$ members without upgrading your plan. Please contact Customer Support to upgrade.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3180,7 +3203,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Your subscription allows for a total of $COUNT$ users. Your plan is sponsored and billed to an external organization.",
+    "message": "Your subscription allows for a total of $COUNT$ members. Your plan is sponsored and billed to an external organization.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3189,7 +3212,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ users without increasing your subscription seats.",
+    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ members without increasing your subscription seats.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3321,7 +3344,7 @@
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
-    "message": "Organisationen är inaktiverad."
+    "message": "Organisationen är inaktiverad"
   },
   "disabledOrganizationFilterError": {
     "message": "Items in suspended organizations cannot be accessed. Contact your organization owner for assistance."
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "Organisationens identifierare krävs."
   },
+  "ssoIdentifier": {
+    "message": "SSO Identifier"
+  },
+  "ssoIdentifierHint": {
+    "message": "Provide this ID to your members to login with SSO."
+  },
   "unlinkSso": {
     "message": "Avlänka SSO"
   },
@@ -3823,7 +3852,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "allSends": {
-    "message": "Alla Send"
+    "message": "Alla Sends"
   },
   "maxAccessCountReached": {
     "message": "Det maximala antalet åtkomster har uppnåtts",
@@ -3994,7 +4023,7 @@
     }
   },
   "emergencyApproved": {
-    "message": "Nödåtkomst godkänd."
+    "message": "Nödåtkomst godkänd"
   },
   "emergencyRejected": {
     "message": "Nödåtkomst nekad"
@@ -4009,7 +4038,7 @@
     }
   },
   "personalOwnership": {
-    "message": "Personligt ägarskap"
+    "message": "Radera individuellt valv"
   },
   "personalOwnershipPolicyDesc": {
     "message": "Kräv att användare sparar objekt till en organisation genom att ta bort det personliga ägarskapsalternativet."
@@ -4031,7 +4060,7 @@
     "message": "Användare som kan hantera organisationens policyer är berörs inte av den här policyn."
   },
   "sendDisabled": {
-    "message": "Send inaktiverad",
+    "message": "Send borttagen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -4084,6 +4113,9 @@
   "permissions": {
     "message": "Behörigheter"
   },
+  "permission": {
+    "message": "Permission"
+  },
   "managerPermissions": {
     "message": "Manager Permissions"
   },
@@ -4109,7 +4141,7 @@
     "message": "Skapa ny samling"
   },
   "editAnyCollection": {
-    "message": "Ändra samling"
+    "message": "Redigera samling"
   },
   "deleteAnyCollection": {
     "message": "Delete any collection"
@@ -4364,13 +4396,13 @@
     "message": "Automatiskt deltagande"
   },
   "resetPasswordPolicyAutoEnrollDescription": {
-    "message": "All users will be automatically enrolled in password reset once their invite is accepted and will not be allowed to withdraw."
+    "message": "All members will be automatically enrolled in password reset once their invite is accepted and will not be allowed to withdraw."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
     "message": "Användare som redan är med i organisationen kommer inte att retroaktivt delta i lösenordsåterställning. De kommer behöva delta själva innan administratörer kan återställa sitt huvudlösenord."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "Require new users to be enrolled automatically"
+    "message": "Require new members to be enrolled automatically"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "Denna organisation har en företagspolicy som automatiskt registrerar dig för lösenordsåterställning. Deltagandet gör det möjligt för organisationsadministratörer att ändra ditt huvudlösenord."
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Klienter"
+  },
+  "client": {
+    "message": "Client",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Provider admin"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "Input must not exceed $COUNT$ characters in length.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ field(s) above need your attention.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "On"
   },
+  "members": {
+    "message": "Members"
+  },
+  "reporting": {
+    "message": "Reporting"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Antal användare"
+  },
+  "loggingInAs": {
+    "message": "Logging in as"
+  },
+  "notYou": {
+    "message": "Not you?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Type to Filter --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Clear all"
+  },
+  "from": {
+    "message": "From"
+  },
+  "to": {
+    "message": "To"
+  },
+  "member": {
+    "message": "Member"
+  },
+  "update": {
+    "message": "Update"
+  },
+  "role": {
+    "message": "Role"
+  },
+  "canView": {
+    "message": "Can view"
+  },
+  "canViewExceptPass": {
+    "message": "Can view, except passwords"
+  },
+  "canEdit": {
+    "message": "Can edit"
+  },
+  "canEditExceptPass": {
+    "message": "Can edit, except passwords"
+  },
+  "group": {
+    "message": "Group"
+  },
+  "groupAccessAll": {
+    "message": "This group can access and modify all items."
+  },
+  "memberAccessAll": {
+    "message": "This member can access and modify all items."
   }
 }

@@ -38,7 +38,7 @@
     "message": "密碼"
   },
   "newPassword": {
-    "message": "新的密碼"
+    "message": "新密碼"
   },
   "passphrase": {
     "message": "密碼短語"
@@ -137,13 +137,13 @@
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "到期月份"
+    "message": "逾期月份"
   },
   "expirationYear": {
     "message": "逾期年份"
   },
   "authenticatorKeyTotp": {
-    "message": "驗證器金鑰（TOTP）"
+    "message": "驗證器金鑰 (TOTP)"
   },
   "folder": {
     "message": "資料夾"
@@ -425,7 +425,7 @@
     "message": "我"
   },
   "myVault": {
-    "message": "密碼庫"
+    "message": "我的密碼庫"
   },
   "allVaults": {
     "message": "所有密碼庫"
@@ -440,13 +440,13 @@
     "message": "密碼庫項目"
   },
   "moveSelectedToOrg": {
-    "message": "移動選取的項目至組織"
+    "message": "移動所選至組織"
   },
   "deleteSelected": {
-    "message": "刪除已選取項目"
+    "message": "刪除所選"
   },
   "moveSelected": {
-    "message": "移動已選取項目"
+    "message": "移動所選"
   },
   "selectAll": {
     "message": "全選"
@@ -467,7 +467,7 @@
     "message": "確定要刪除此附件嗎？"
   },
   "attachmentSaved": {
-    "message": "附件已儲存。"
+    "message": "附件已儲存"
   },
   "file": {
     "message": "檔案"
@@ -485,7 +485,7 @@
     "message": "項目已新增"
   },
   "editedItem": {
-    "message": "項目已編輯"
+    "message": "項目已儲存"
   },
   "movedItemToOrg": {
     "message": "已將 $ITEMNAME$ 移動至 $ORGNAME$",
@@ -534,7 +534,7 @@
     "message": "您確定要覆寫目前的密碼嗎？"
   },
   "editedFolder": {
-    "message": "資料夾已編輯"
+    "message": "資料夾已儲存"
   },
   "addedFolder": {
     "message": "資料夾已新增"
@@ -543,7 +543,7 @@
     "message": "您確定要刪除此資料夾嗎？"
   },
   "deletedFolder": {
-    "message": "已刪除的資料夾"
+    "message": "資料夾已刪除"
   },
   "loggedOut": {
     "message": "已登出"
@@ -575,8 +575,11 @@
   "loginWithDeviceEnabledInfo": {
     "message": "裝置登入必須在 Bitwarden 行動應用程式的設定中啟用。需要其他選項嗎？"
   },
+  "loginWithMasterPassword": {
+    "message": "使用主密碼登入"
+  },
   "createAccount": {
-    "message": "新增帳戶"
+    "message": "建立帳戶"
   },
   "newAroundHere": {
     "message": "第一次使用？"
@@ -615,7 +618,7 @@
     "message": "主密碼提示可以在您忘記主密碼時幫助您回憶主密碼。"
   },
   "reTypeMasterPass": {
-    "message": "重新輸入主密碼"
+    "message": "再次輸入主密碼"
   },
   "masterPassHint": {
     "message": "主密碼提示（選用）"
@@ -763,28 +766,28 @@
     "message": "將您的 YubiKey 插入電腦的 USB 連接埠，然後按一下它的按鈕。"
   },
   "insertU2f": {
-    "message": "將您的安全金鑰插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
+    "message": "將您的安全鑰匙插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
   },
   "loginUnavailable": {
-    "message": "無法登入"
+    "message": "登入無法使用"
   },
   "noTwoStepProviders": {
     "message": "此帳戶已啟用兩步驟登入，但是本瀏覽器不支援已設定的兩步驟登入方法。"
   },
   "noTwoStepProviders2": {
-    "message": "請使用已支援的瀏覽器（例如 Chrome ），及/或新增可以更好地跨瀏覽器的兩步驟登入方法（例如驗證器應用程式）。"
+    "message": "請使用受支援的瀏覽器（例如 Chrome），及/或新增可以更好地支援跨瀏覽器的提供程式（例如驗證器應用程式）。"
   },
   "twoStepOptions": {
     "message": "兩步驟登入選項"
   },
   "recoveryCodeDesc": {
-    "message": "無法使用任何兩步驟登入方式？用復原碼停用所有兩步驟登入方式。"
+    "message": "無法使用任何兩步驟登入方式嗎？請使用您的復原碼停用所有兩步驟登入方式。"
   },
   "recoveryCodeTitle": {
     "message": "復原碼"
   },
   "authenticatorAppTitle": {
-    "message": "認證器應用程式"
+    "message": "驗證器應用程式"
   },
   "authenticatorAppDesc": {
     "message": "使用驗證器應用程式 （如 Authy 或 Google Authenticator） 產生基於時間的驗證碼。",
@@ -797,11 +800,11 @@
     "message": "使用 YubiKey 存取您的帳戶。支援 YubiKey 4 系列、5 系列以及 NEO 裝置。"
   },
   "duoDesc": {
-    "message": "使用 Duo Security 的 Duo Mobile 程式、SMS 、撥打電話或 U2F 安全金鑰進行驗證。",
+    "message": "使用 Duo Security 的 Duo Mobile 程式、SMS 、撥打電話或 U2F 安全鑰匙進行驗證。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "為您的組織使用 Duo Security 的 Duo Mobile 程式、SMS、撥打電話或 U2F 安全金鑰進行驗證。",
+    "message": "為您的組織使用 Duo Security 的 Duo Mobile 程式、SMS、撥打電話或 U2F 安全鑰匙進行驗證。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -814,7 +817,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "使用任何具有 WebAuthn 功能的安全金鑰以存取您的帳戶。"
+    "message": "使用任何具有 WebAuthn 功能的安全鑰匙來存取您的帳戶。"
   },
   "webAuthnMigrated": {
     "message": "（遷移自 FIDO）"
@@ -945,13 +948,13 @@
     "message": "「檔案密碼」與「確認檔案密碼」不一致。"
   },
   "confirmVaultImport": {
-    "message": "確認密碼庫匯入"
+    "message": "確認匯入密碼庫"
   },
   "confirmVaultImportDesc": {
     "message": "此檔案受密碼保護，請輸入檔案密碼以匯入資料。"
   },
   "exportSuccess": {
-    "message": "已匯出您的密碼庫資料。"
+    "message": "已匯出密碼庫資料"
   },
   "passwordGenerator": {
     "message": "密碼產生器"
@@ -960,10 +963,10 @@
     "message": "最小複雜度"
   },
   "minNumbers": {
-    "message": "數字"
+    "message": "最少數字位數"
   },
   "minSpecial": {
-    "message": "符號",
+    "message": "最少符號位數",
     "description": "Minimum special characters"
   },
   "ambiguous": {
@@ -987,13 +990,13 @@
     "message": "數字 (0-9)"
   },
   "specialCharacters": {
-    "message": "特殊字元（!@#$%^&*）"
+    "message": "特殊字元 (!@#$%^&*)"
   },
   "numWords": {
-    "message": "字數"
+    "message": "單字數量"
   },
   "wordSeparator": {
-    "message": "文字分隔字元"
+    "message": "單字分隔字元"
   },
   "capitalize": {
     "message": "大寫",
@@ -1013,13 +1016,13 @@
     "description": "To clear something out. Example: To clear browser history."
   },
   "accountUpdated": {
-    "message": "帳戶已更新"
+    "message": "帳戶已儲存"
   },
   "changeEmail": {
     "message": "變更電子郵件"
   },
   "changeEmailTwoFactorWarning": {
-    "message": "繼續操作將變更您的帳戶電子郵件地址。這不會變更用於雙因素驗證的電子郵件地址。您可以在雙因素登入設定中變更它。"
+    "message": "繼續操作將變更您的帳戶電子郵件位址。這不會變更用兩步驟登入的電子郵件地址。您可以在兩步驟登入設定中變更它。"
   },
   "newEmail": {
     "message": "新的電子郵件"
@@ -1040,7 +1043,7 @@
     "message": "接下來會登出目前工作階段，並要求您重新登入帳戶。其他裝置上的工作階段最多會保持一個小時。"
   },
   "emailChanged": {
-    "message": "已變更電子郵件"
+    "message": "電子郵件已儲存"
   },
   "logBackIn": {
     "message": "請重新登入。"
@@ -1052,7 +1055,7 @@
     "message": "變更主密碼"
   },
   "masterPasswordChanged": {
-    "message": "已變更主密碼"
+    "message": "主密碼已儲存"
   },
   "currentMasterPass": {
     "message": "目前主密碼"
@@ -1061,7 +1064,7 @@
     "message": "新的主密碼"
   },
   "confirmNewMasterPass": {
-    "message": "確認新密碼"
+    "message": "確認新的主密碼"
   },
   "encKeySettings": {
     "message": "加密金鑰設定"
@@ -1094,7 +1097,7 @@
     "message": "變更 KDF"
   },
   "encKeySettingsChanged": {
-    "message": "已變更加密金鑰設定"
+    "message": "加密金鑰設定已儲存"
   },
   "dangerZone": {
     "message": "危險區域"
@@ -1109,10 +1112,10 @@
     "message": "您是否擔心自己的帳戶在其他裝置上保持登入？請遵照以下步驟取消對之前使用過的所有電腦和裝置的授權。若您以前使用過公用電腦或不小心曾將密碼儲存在不屬於您的裝置上，則建議執行此安全步驟，此操作還將清除所有以前記住的兩步驟登入工作階段。"
   },
   "deauthorizeSessionsWarning": {
-    "message": "接下來會登出目前的登入階段，並要求您重新登入。若您有設定兩步驟登入，也需重新驗證。其他裝置上的登入階段最多會保持一個小時。"
+    "message": "接下來會登出目前的工作階段，並要求您重新登入。若您有設定兩步驟登入，也需重新驗證。其他裝置上的活動工作階段最多會保持一個小時。"
   },
   "sessionsDeauthorized": {
-    "message": "已取消所有登入階段授權"
+    "message": "已取消所有工作階段授權"
   },
   "purgeVault": {
     "message": "清空密碼庫"
@@ -1133,7 +1136,7 @@
     "message": "清空密碼庫是永久性的。並且無法復原。"
   },
   "vaultPurged": {
-    "message": "已清空您的密碼庫。"
+    "message": "已清空密碼庫。"
   },
   "deleteAccount": {
     "message": "刪除帳戶"
@@ -1145,7 +1148,7 @@
     "message": "刪除您的帳戶是永久性的。並且無法復原。"
   },
   "accountDeleted": {
-    "message": "已刪除帳戶"
+    "message": "帳戶已刪除"
   },
   "accountDeletedDesc": {
     "message": "您的帳戶已經關閉，所有關聯的資料也已經被刪除。"
@@ -1160,13 +1163,13 @@
     "message": "匯入資料"
   },
   "importError": {
-    "message": "匯入錯誤"
+    "message": "匯入時發生錯誤"
   },
   "importErrorDesc": {
     "message": "您嘗試匯入的資料有問題，請處理下方列出的來源檔案中的錯誤然後再試一次。"
   },
   "importSuccess": {
-    "message": "資料已經成功匯入至您的密碼庫中。"
+    "message": "資料匯入成功"
   },
   "importWarning": {
     "message": "即將匯入資料至 $ORGANIZATION$。您的資料可能會與該組織中的成員共用，確定要繼續嗎？",
@@ -1221,7 +1224,7 @@
     "message": "自訂您的網頁版密碼庫。"
   },
   "preferencesUpdated": {
-    "message": "偏好設定已更新"
+    "message": "偏好設定已儲存"
   },
   "language": {
     "message": "語言"
@@ -1282,22 +1285,35 @@
     }
   },
   "domainsUpdated": {
-    "message": "網域已更新"
+    "message": "網域已儲存"
   },
   "twoStepLogin": {
     "message": "兩步驟登入"
   },
+  "twoStepLoginEnforcement": {
+    "message": "強制兩步驟驗證"
+  },
   "twoStepLoginDesc": {
     "message": "在登入時執行額外的步驟來保護您的帳戶。"
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "可透過組織等級來設定提供方式，以要求所有使用者都必須開啟兩步驟登入。"
+  "twoStepLoginOrganizationDescStart": {
+    "message": "讓成員使用 Bitwarden 兩步驟登入，藉由 ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "兩步驟登入政策"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "要以 Duo 進行兩步驟登入，請使用以下的選項。"
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "如果您已經設定好或計畫要使用 SSO 登入，兩步驟登入可能已經由您的身份提供機關開啟。"
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "啟用兩步驟登入可能會將您永久鎖定在您的 Bitwarden 帳戶外。如果您無法正常使用兩步驟登入驗證應用程式（例如，您遺失了裝置），則可以使用復原碼存取您的帳戶。 如果您失去帳戶的存取權限，Bitwarden 也無法幫助您。所以我們建議您記下或列印復原碼，並將其妥善保存。"
+    "message": "啟用兩步驟登入可能會將您永久鎖定在您的 Bitwarden 帳戶外。如果您無法正常使用兩步驟登入方式（例如，您遺失了裝置），則可以使用復原碼存取您的帳戶。 如果您失去帳戶的存取權限，Bitwarden 也無法幫助您。所以我們建議您記下或列印復原碼，並將其妥善保存。"
   },
   "viewRecoveryCode": {
-    "message": "檢視復原代碼"
+    "message": "檢視復原碼"
   },
   "providers": {
     "message": "提供者",
@@ -1341,7 +1357,7 @@
     "message": "撤銷存取權限"
   },
   "twoStepLoginProviderEnabled": {
-    "message": "您的帳戶已啟用兩步驟登入。"
+    "message": "您的帳戶已啟用此兩步驟登入方式。"
   },
   "twoStepLoginAuthDesc": {
     "message": "輸入您的主密碼以修改兩步驟登入設定。"
@@ -1380,7 +1396,7 @@
     "message": "若您需要將其加入其他裝置，以下是您的驗證器應用程式所需要的 QR Code（或金鑰）。"
   },
   "twoStepDisableDesc": {
-    "message": "您確定要停用兩步驟驗證嗎?"
+    "message": "您確定要停用此兩步驟登入方式嗎？"
   },
   "twoStepDisabled": {
     "message": "已停用兩步驟登入方式。"
@@ -1419,7 +1435,7 @@
     }
   },
   "u2fkeyX": {
-    "message": "U2F 金鑰 $INDEX$",
+    "message": "U2F 鑰匙 $INDEX$",
     "placeholders": {
       "index": {
         "content": "$1",
@@ -1428,7 +1444,7 @@
     }
   },
   "webAuthnkeyX": {
-    "message": "WebAuthn 金鑰 $INDEX$",
+    "message": "WebAuthn 鑰匙 $INDEX$",
     "placeholders": {
       "index": {
         "content": "$1",
@@ -1440,7 +1456,7 @@
     "message": "NFC 支援"
   },
   "twoFactorYubikeySupportsNfc": {
-    "message": "我有一把金鑰支援 NFC。"
+    "message": "我有一把鑰匙支援 NFC。"
   },
   "twoFactorYubikeySupportsNfcDesc": {
     "message": "若您有一個支援 NFC 的 YubiKey（例如 YubiKey NEO），行動裝置在感應到 NFC 時將提示您。"
@@ -1476,28 +1492,28 @@
     "message": "傳送電子郵件"
   },
   "twoFactorU2fAdd": {
-    "message": "在您的帳戶中新增 FIDO U2F 安全金鑰"
+    "message": "在您的帳戶中新增 FIDO U2F 安全鑰匙"
   },
   "removeU2fConfirmation": {
-    "message": "您確定要移除這把安全金鑰嗎？"
+    "message": "您確定要移除這把安全鑰匙嗎？"
   },
   "twoFactorWebAuthnAdd": {
-    "message": "在您的帳戶中新增 WebAuthn 安全金鑰"
+    "message": "在您的帳戶中新增 WebAuthn 安全鑰匙"
   },
   "readKey": {
-    "message": "讀取金鑰"
+    "message": "讀取鑰匙"
   },
   "keyCompromised": {
-    "message": "金鑰已損壞。"
+    "message": "鑰匙已損壞。"
   },
   "twoFactorU2fGiveName": {
-    "message": "幫安全金鑰取一個易記名稱，以方便辨識。"
+    "message": "幫安全鑰匙取一個易記名稱，以方便辨識。"
   },
   "twoFactorU2fPlugInReadKey": {
-    "message": "請將安全金鑰插入您電腦的 USB 連接埠，並按下「讀取鑰匙」按鈕。"
+    "message": "請將安全鑰匙插入您電腦的 USB 連接埠，並按下「讀取鑰匙」按鈕。"
   },
   "twoFactorU2fTouchButton": {
-    "message": "若安全金鑰有按鈕，請按下它。"
+    "message": "如果安全鑰匙有按鈕，請按下它。"
   },
   "twoFactorU2fSaveForm": {
     "message": "儲存表單"
@@ -1506,22 +1522,22 @@
     "message": "由於平台限制，無法於所有 Bitwarden 應用程式中使用 FIDO U2F。請開啟另一套兩步驟登入方式，以確保 FIDO U2F 無法使用時還能存取您的帳戶。支援的平台有："
   },
   "twoFactorU2fSupportWeb": {
-    "message": "桌上型電腦/筆記型電腦上啟用了 U2F 的瀏覽器（Chrome、Opera、Vivaldi 或啟用了 FIDO U2F 的 Firefox）中的網頁版密碼庫和瀏覽器擴充套件。"
+    "message": "桌上型電腦/筆記型電腦上支援 U2F 的瀏覽器（啟用了 FIDO U2F 的 Chrome、Opera、Vivaldi 或 Firefox）中的網頁版密碼庫和瀏覽器擴充套件。"
   },
   "twoFactorU2fWaiting": {
     "message": "等待您按下安全金鑰上的按鈕"
   },
   "twoFactorU2fClickSave": {
-    "message": "點選下方的「儲存」按鈕，以啟用此安全金鑰用於兩步驟登入。"
+    "message": "點選下方的「儲存」按鈕，以啟用此安全鑰匙用於兩步驟登入。"
   },
   "twoFactorU2fProblemReadingTryAgain": {
-    "message": "讀取安全金鑰時發生問題。請再試一次。"
+    "message": "讀取安全鑰匙時發生問題。請再試一次。"
   },
   "twoFactorWebAuthnWarning": {
     "message": "由於平台限制，無法於所有 Bitwarden 應用程式中使用 WebAuthn。請設定另一套兩步驟登入方式，以確保在 WebAuthn 無法使用時還能存取您的帳戶。支援的平台有："
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "桌上型電腦/筆記型電腦上啟用了 WebAuthn 功能的瀏覽器（Chrome、Opera、Vivaldi 或啟用了 FIDO U2F 的 Firefox）上的網頁版密碼庫和瀏覽器擴充套件。"
+    "message": "桌上型電腦/筆記型電腦上支援 WebAuthn 功能的瀏覽器（啟用了 FIDO U2F 的 Chrome、Opera、Vivaldi 或 Firefox）上的網頁版密碼庫和瀏覽器擴充套件。"
   },
   "twoFactorRecoveryYourCode": {
     "message": "您的 Bitwarden 兩步驟登入復原碼"
@@ -1539,6 +1555,10 @@
   "reportsDesc": {
     "message": "點選下方的報告，識別並消除您的線上帳戶中的安全漏洞。",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "不安全的網站"
@@ -1568,10 +1588,10 @@
     "message": "兩步驟登入為您的帳戶增加了一層保護。使用 Bitwarden 驗證器或使用其他方法為這些帳戶啟用兩步驟登入。"
   },
   "inactive2faFound": {
-    "message": "發現未啟用 2FA 的登入資料"
+    "message": "發現未啟用 2FA 的登入"
   },
   "inactive2faFoundDesc": {
-    "message": "我們在您的密碼庫中找到 $COUNT$ 個可能未設定雙因素驗證的網站（依據 twofactorauth.org）。若要進一步保護這些帳戶，您應啟用雙因素驗證。",
+    "message": "我們在您的密碼庫中找到 $COUNT$ 個可能未設定兩步驟登入的網站（依據 twofactorauth.org）。若要進一步保護這些帳戶，您應啟用兩步驟登入。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1580,7 +1600,7 @@
     }
   },
   "noInactive2fa": {
-    "message": "沒有在您的密碼庫中找到未設定雙因素驗證的網站。"
+    "message": "沒有在您的密碼庫中找到未設定兩步驟登入的網站。"
   },
   "instructions": {
     "message": "說明"
@@ -1918,7 +1938,7 @@
     "message": "您確定要取消訂閱嗎？在目前計費周期結束之後，您將無法使用所有訂閲功能。"
   },
   "canceledSubscription": {
-    "message": "已取消訂閱。"
+    "message": "訂閱已取消"
   },
   "neverExpires": {
     "message": "永不逾期"
@@ -2080,7 +2100,7 @@
     "message": "此帳戶為企業所有。"
   },
   "billingEmail": {
-    "message": "電子郵件帳單"
+    "message": "帳單電子郵件"
   },
   "businessName": {
     "message": "企業名稱"
@@ -2092,7 +2112,7 @@
     "message": "使用者"
   },
   "userSeats": {
-    "message": "使用者數量"
+    "message": "使用者席位"
   },
   "additionalUserSeats": {
     "message": "附加使用者席位"
@@ -2283,7 +2303,7 @@
     "message": "您的新組織已準備好！"
   },
   "organizationUpgraded": {
-    "message": "您的組織已升級。"
+    "message": "組織已升級"
   },
   "leave": {
     "message": "離開"
@@ -2292,7 +2312,7 @@
     "message": "您確定要離開這個組織嗎？"
   },
   "leftOrganization": {
-    "message": "您已離開組織。"
+    "message": "您已離開組織"
   },
   "defaultCollection": {
     "message": "預設集合"
@@ -2316,10 +2336,10 @@
     "message": "原則"
   },
   "singleSignOn": {
-    "message": "單一登入 (SSO)"
+    "message": "單一登入"
   },
   "editPolicy": {
-    "message": "編輯策略"
+    "message": "編輯原則"
   },
   "groups": {
     "message": "群組"
@@ -2418,7 +2438,7 @@
     "message": "已確認"
   },
   "clientOwnerEmail": {
-    "message": "用戶端擁有者電子郵件"
+    "message": "用戶擁有者電子郵件"
   },
   "owner": {
     "message": "擁有者"
@@ -2481,19 +2501,19 @@
     "message": "網頁版密碼庫"
   },
   "loggedIn": {
-    "message": "已登入。"
+    "message": "已登入"
   },
   "changedPassword": {
-    "message": "已變更帳戶密碼。"
+    "message": "帳戶密碼已儲存"
   },
   "enabledUpdated2fa": {
-    "message": "已啟用 / 更新兩步驟登入。"
+    "message": "兩步驟登入已儲存"
   },
   "disabled2fa": {
-    "message": "已停用兩步驟登入。"
+    "message": "兩步驟登入已停用"
   },
   "recovered2fa": {
-    "message": "已透過兩步驟登入復原帳戶。"
+    "message": "已透過兩步驟登入復原帳戶"
   },
   "failedLogin": {
     "message": "嘗試登入失敗，密碼錯誤。"
@@ -2502,13 +2522,13 @@
     "message": "嘗試登入失敗，兩步驟登入錯誤。"
   },
   "exportedVault": {
-    "message": "已匯出密碼庫。"
+    "message": "已匯出密碼庫"
   },
   "exportedOrganizationVault": {
-    "message": "已匯出組織密碼庫。"
+    "message": "已匯出組織密碼庫"
   },
   "editedOrgSettings": {
-    "message": "已編輯組織設定。"
+    "message": "組織設定已儲存"
   },
   "createdItemId": {
     "message": "已建立項目 $ID$。",
@@ -2919,7 +2939,7 @@
     "message": "請檢查您的電子郵件收件匣以取得驗證連結。"
   },
   "emailVerified": {
-    "message": "您的電子郵件已驗證。"
+    "message": "電子郵件已驗證"
   },
   "emailVerifiedFailed": {
     "message": "無法驗證電子郵件。請嘗試傳送一封新的驗證電子郵件。"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "我的組織"
   },
+  "organizationInfo": {
+    "message": "組織資訊"
+  },
   "deleteOrganization": {
     "message": "刪除組織"
   },
@@ -3018,7 +3041,7 @@
     "message": "該組織和所有關聯資料已刪除。"
   },
   "organizationUpdated": {
-    "message": "已更新組織"
+    "message": "組織已儲存"
   },
   "taxInformation": {
     "message": "稅務資訊"
@@ -3064,10 +3087,10 @@
     "message": "只有在美國的客戶才能使用銀行帳戶付款。您必須驗證您的銀行帳戶。我們將在未來 1-2 個工作天內匯入兩筆小額款項。在組織的計費頁面上輸入款項金額以驗證銀行帳戶。"
   },
   "verifyBankAccountFailureWarning": {
-    "message": "驗證銀行帳戶失敗將會導致付款失效，而且您的訂閱將會被取消。"
+    "message": "驗證銀行帳戶失敗將會導致付款失效，並且您的訂閱將會被取消。"
   },
   "verifiedBankAccount": {
-    "message": "已驗證您的銀行帳戶。"
+    "message": "銀行帳戶已驗證"
   },
   "bankAccount": {
     "message": "銀行帳戶"
@@ -3108,14 +3131,14 @@
     "message": "為您的訂閲設定席位限制。達到此限制後，您將無法邀請新的使用者。"
   },
   "maxSeatLimit": {
-    "message": "最大席位限制（選用）",
+    "message": "席位限制（選用）",
     "description": "Upper limit of seats to allow through autoscaling"
   },
   "maxSeatCost": {
     "message": "最大潛在席位費用"
   },
   "addSeats": {
-    "message": "新增席位",
+    "message": "增加席位",
     "description": "Seat = User Seat"
   },
   "removeSeats": {
@@ -3126,7 +3149,7 @@
     "message": "調整訂閱將會依比例變更您的計費總額。若新邀請的使用者超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用。"
   },
   "subscriptionUserSeats": {
-    "message": "您的訂閱當中包含 $COUNT$ 位使用者的授權。",
+    "message": "您的訂閱當中包含最多 $COUNT$ 位使用者。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3198,7 +3221,7 @@
     }
   },
   "seatsToAdd": {
-    "message": "要新增的席位數"
+    "message": "要增加的席位數"
   },
   "seatsToRemove": {
     "message": "要移除的席位數"
@@ -3317,11 +3340,11 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "密碼已更新",
+    "message": "密碼更新於",
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
-    "message": "組織已停用。"
+    "message": "組織已停用"
   },
   "disabledOrganizationFilterError": {
     "message": "無法存取已停用組織中的項目。請聯絡您組織的所有者以獲取協助。"
@@ -3451,7 +3474,7 @@
     "message": "您必須在進行應用程式內購買的商店中管理訂閱。"
   },
   "minLength": {
-    "message": "最短長度"
+    "message": "最小長度"
   },
   "clone": {
     "message": "複製"
@@ -3523,7 +3546,7 @@
     "message": "新的主密碼不符合原則要求。"
   },
   "minimumNumberOfWords": {
-    "message": "字數下限"
+    "message": "最少單字個數"
   },
   "defaultType": {
     "message": "預設類型"
@@ -3555,7 +3578,7 @@
     "message": "永久刪除"
   },
   "permanentlyDeleteSelected": {
-    "message": "永久刪除已選取項目"
+    "message": "永久刪除所選"
   },
   "permanentlyDeleteItem": {
     "message": "永久刪除項目"
@@ -3579,7 +3602,7 @@
     }
   },
   "permanentlyDeletedItemId": {
-    "message": "已永久刪除 $ID$ 項目。",
+    "message": "已永久刪除項目 $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3591,7 +3614,7 @@
     "message": "還原"
   },
   "restoreSelected": {
-    "message": "還原已選取的項目"
+    "message": "還原所選"
   },
   "restoreItem": {
     "message": "還原項目"
@@ -3618,7 +3641,7 @@
     }
   },
   "restoredItemId": {
-    "message": "已還原項目 $ID$。",
+    "message": "已還原項目 $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "需要組織識別碼。"
   },
+  "ssoIdentifier": {
+    "message": "SSO 識別"
+  },
+  "ssoIdentifierHint": {
+    "message": "將該 ID 提供給您的成員，以便使用 SSO 登入"
+  },
   "unlinkSso": {
     "message": "取消連結 SSO"
   },
@@ -3717,7 +3746,7 @@
     "message": "必須先開啟「單一組織」企業原則，才能激活此原則。"
   },
   "requireSsoPolicyReqError": {
-    "message": "未啟用單一組織原則。"
+    "message": "單一組織原則未啟用。"
   },
   "requireSsoExemption": {
     "message": "組織擁有者與管理員不受此原則的執行影響。"
@@ -3737,11 +3766,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "已建立 Send",
+    "message": "Send 已儲存",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "已編輯 Send",
+    "message": "Send 已儲存",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -3768,7 +3797,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "到期日"
+    "message": "逾期日期"
   },
   "expirationDateDesc": {
     "message": "如果設定此選項，對此 Send 的存取將在指定的日期和時間後逾期。",
@@ -3900,10 +3929,10 @@
     "message": "透過在下方輸入他們的 Bitwarden 帳戶的電子郵件地址，來邀請新的緊急聯絡人。若他們還沒有 Bitwarden 帳戶，系統將提示他們建立新帳戶。"
   },
   "emergencyAccessRecoveryInitiated": {
-    "message": "已啟動緊急存取"
+    "message": "緊急存取已發起"
   },
   "emergencyAccessRecoveryApproved": {
-    "message": "已確認緊急存取"
+    "message": "已核准緊急存取"
   },
   "viewDesc": {
     "message": "可以檢視您擁有的密碼庫中的所有項目。"
@@ -3994,7 +4023,7 @@
     }
   },
   "emergencyApproved": {
-    "message": "緊急存取已批准。"
+    "message": "緊急存取已批准"
   },
   "emergencyRejected": {
     "message": "已拒絕緊急存取"
@@ -4050,7 +4079,7 @@
     "message": "可以管理組織原則的組織使用者豁免此原則的執行。"
   },
   "disableHideEmail": {
-    "message": "建立或編輯 Send 時，始終對收件人顯示成員的電子郵件位址。",
+    "message": "建立或編輯 Send 時，始終對收件人顯示成員的電子郵件地址。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsPolicyInEffect": {
@@ -4084,6 +4113,9 @@
   "permissions": {
     "message": "權限"
   },
+  "permission": {
+    "message": "權限"
+  },
   "managerPermissions": {
     "message": "經理權限"
   },
@@ -4103,7 +4135,7 @@
     "message": "您欠缺執行本動作必要的權限。"
   },
   "manageAllCollections": {
-    "message": "管理所有集合。"
+    "message": "管理所有集合"
   },
   "createNewCollections": {
     "message": "建立新的集合"
@@ -4154,7 +4186,7 @@
     "message": "組織原則已禁止您將項目匯入至您的個人密碼庫。"
   },
   "personalOwnershipCheckboxDesc": {
-    "message": "停用組織使用者的個人擁有權。"
+    "message": "停用組織使用者的個人擁有權"
   },
   "textHiddenByDefault": {
     "message": "存取此 Send 時，將預設隱藏文字",
@@ -4489,6 +4521,10 @@
   "clients": {
     "message": "客户"
   },
+  "client": {
+    "message": "用戶端",
+    "description": "This is used as a table header to describe which client application created an event log."
+  },
   "providerAdmin": {
     "message": "提供者管理員"
   },
@@ -4560,10 +4596,10 @@
     }
   },
   "providerIsDisabled": {
-    "message": "已停用提供者。"
+    "message": "提供者已停用"
   },
   "providerUpdated": {
-    "message": "已更新提供者"
+    "message": "提供者已儲存"
   },
   "yourProviderIs": {
     "message": "您的提供者為 $PROVIDER$。他們對您的組織具有管理和計費權限。",
@@ -4590,7 +4626,7 @@
     "message": "新增"
   },
   "updatedMasterPassword": {
-    "message": "已更新主密碼"
+    "message": "主密碼已儲存"
   },
   "updateMasterPassword": {
     "message": "更新主密碼"
@@ -4608,10 +4644,10 @@
     "message": "為成員設定最大密碼庫逾時時間。"
   },
   "maximumVaultTimeoutLabel": {
-    "message": "最大密碼庫逾時時長"
+    "message": "最大密碼庫逾時時間"
   },
   "invalidMaximumVaultTimeout": {
-    "message": "無效的最大密碼庫逾時時長。"
+    "message": "無效的最大密碼庫逾時時間。"
   },
   "hours": {
     "message": "小時"
@@ -4927,7 +4963,7 @@
     "message": "移除主密碼"
   },
   "removedMasterPassword": {
-    "message": "已移除主密碼。"
+    "message": "主密碼已移除"
   },
   "allowSso": {
     "message": "允許 SSO 身分驗證"
@@ -4990,7 +5026,7 @@
     "message": "贊助邀請已逾期，您可以刪除您建立的組織，以避免在 7 天試用期結束後被收取費用。 您也可以關閉此提示以保留該組織並承擔計費責任。"
   },
   "newFamiliesOrganization": {
-    "message": "新的家庭組織"
+    "message": "新增家庭組織"
   },
   "acceptOffer": {
     "message": "接受邀請"
@@ -5050,7 +5086,7 @@
     "message": "若要在您自己的伺服器上設定組織，您需要上傳授權檔案。若要使您的自我裝載組織支援「免費家庭」方案及進階帳單功能，您需要設定帳單同步。"
   },
   "billingSyncApiKeyRotated": {
-    "message": "權杖已輪換。"
+    "message": "權杖已輪換"
   },
   "billingSync": {
     "message": "帳單同步"
@@ -5122,10 +5158,10 @@
     "message": "您的登入階段已逾時，請返回並嘗試重新登入。"
   },
   "exportingPersonalVaultTitle": {
-    "message": "匯出個人密碼庫"
+    "message": "正匯出個人密碼庫"
   },
   "exportingOrganizationVaultTitle": {
-    "message": "匯出組織密碼庫"
+    "message": "正匯出組織密碼庫"
   },
   "exportingPersonalVaultDescription": {
     "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫。組織密碼庫的項目不包含在內。",
@@ -5287,7 +5323,7 @@
     "message": "啟用裝置驗證"
   },
   "deviceVerificationDesc": {
-    "message": "啟用後，從無法辨識的裝置登入時，驗證碼將傳送至您的電子郵件地址"
+    "message": "從無法辨識的裝置登入時，驗證碼將傳送至您的電子郵件地址"
   },
   "updatedDeviceVerification": {
     "message": "已更新裝置驗證"
@@ -5355,7 +5391,7 @@
     "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
   },
   "scimSettingsSaved": {
-    "message": "已成功儲存 SCIM 設定",
+    "message": "SCIM 設定已儲存",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
@@ -5370,6 +5406,15 @@
       "count": {
         "content": "$1",
         "example": "8"
+      }
+    }
+  },
+  "inputMaxLength": {
+    "message": "Input must not exceed $COUNT$ characters in length.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
       }
     }
   },
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "開啟"
   },
+  "members": {
+    "message": "成員"
+  },
+  "reporting": {
+    "message": "回報"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "使用者數量"
+  },
+  "loggingInAs": {
+    "message": "正登入為"
+  },
+  "notYou": {
+    "message": "不是您嗎？"
   },
   "multiSelectPlaceholder": {
     "message": "-- 輸入以進行篩選 --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "全部清除"
+  },
+  "from": {
+    "message": "從"
+  },
+  "to": {
+    "message": "至"
+  },
+  "member": {
+    "message": "成員"
+  },
+  "update": {
+    "message": "更新"
+  },
+  "role": {
+    "message": "角色"
+  },
+  "canView": {
+    "message": "可以檢視"
+  },
+  "canViewExceptPass": {
+    "message": "可以檢視（除了密碼）"
+  },
+  "canEdit": {
+    "message": "可以編輯"
+  },
+  "canEditExceptPass": {
+    "message": "可以編輯（除了密碼）"
+  },
+  "group": {
+    "message": "群組"
+  },
+  "groupAccessAll": {
+    "message": "此群組可存取及變更所有項目。"
+  },
+  "memberAccessAll": {
+    "message": "此成員可存取及變更所有項目。"
   }
 }

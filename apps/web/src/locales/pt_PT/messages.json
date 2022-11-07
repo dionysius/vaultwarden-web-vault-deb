@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "O início de sessão com o dispositivo deve ser ativado nas definições da aplicação móvel do Bitwarden. Necessita de outra opção?"
   },
+  "loginWithMasterPassword": {
+    "message": "Iniciar sessão com a palavra-passe mestra"
+  },
   "createAccount": {
     "message": "Criar conta"
   },
@@ -1287,11 +1290,24 @@
   "twoStepLogin": {
     "message": "Início de sessão de dois passos"
   },
+  "twoStepLoginEnforcement": {
+    "message": "Aplicação do Início de Sessão de Dois Passos"
+  },
   "twoStepLoginDesc": {
     "message": "Reforce a segurança da sua conta ao requerer um passo adicional para iniciar sessão."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Requeira início de sessão de dois passos para os utilizadores da sua organização ao configurar os provedores ao nível da organização."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Aplique as opções do Início de Sessão de Dois Passos do Bitwarden para membros ao utilizar as ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "Políticas do Início de Sessão de Dois Passos"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "Para aplicar o Início de Sessão de Dois Passos através do Duo, utilize as opções abaixo."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "Se tiver a configuração SSO, ou planeia tê-la, o Início de Sessão de Dois Passos já pode ser aplicado pelo seu Fornecedor de Identidade."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Ativar o início de sessão de dois passos pode bloquear-lhe permanentemente o acesso à sua conta Bitwarden. Um código de recuperação permite-lhe aceder à sua conta caso já não possa utilizar o seu provedor normal de início de sessão de dois passos (ex. perde o seu dispositivo). O apoio do Bitwarden não o poderá ajudar se perder acesso à sua conta. Recomendamos que anote ou imprima o código de recuperação e mantenha-o em local seguro."
@@ -1539,6 +1555,10 @@
   "reportsDesc": {
     "message": "Identifique e feche lacunas de segurança nas suas contas online clicando nos relatórios abaixo.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Identifique e feche lacunas de segurança nas contas da sua organização ao clicar nos relatórios abaixo.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Relatório de websites inseguros"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Minha organização"
   },
+  "organizationInfo": {
+    "message": "Informações da Organização"
+  },
   "deleteOrganization": {
     "message": "Eliminar organização"
   },
@@ -3162,7 +3185,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "You cannot invite more than $COUNT$ users without upgrading your plan.",
+    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3171,7 +3194,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "You cannot invite more than $COUNT$ users without upgrading your plan. Please contact Customer Support to upgrade.",
+    "message": "You cannot invite more than $COUNT$ members without upgrading your plan. Please contact Customer Support to upgrade.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3180,7 +3203,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Your subscription allows for a total of $COUNT$ users. Your plan is sponsored and billed to an external organization.",
+    "message": "Your subscription allows for a total of $COUNT$ members. Your plan is sponsored and billed to an external organization.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3189,7 +3212,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ users without increasing your subscription seats.",
+    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ members without increasing your subscription seats.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "Identificador da organização é requerido."
   },
+  "ssoIdentifier": {
+    "message": "Identificador SSO"
+  },
+  "ssoIdentifierHint": {
+    "message": "Forneça este ID aos seus membros para iniciar sessão com SSO."
+  },
   "unlinkSso": {
     "message": "Desligar SSO"
   },
@@ -4028,7 +4057,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
-    "message": "Organization users that can manage the organization's policies are exempt from this policy's enforcement."
+    "message": "Organization members that can manage the organization's policies are exempt from this policy's enforcement."
   },
   "sendDisabled": {
     "message": "Envio desabilitado",
@@ -4047,7 +4076,7 @@
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
-    "message": "Organization users that can manage the organization's policies are exempt from this policy's enforcement."
+    "message": "Organization members that can manage the organization's policies are exempt from this policy's enforcement."
   },
   "disableHideEmail": {
     "message": "Always show member’s email address with recipients when creating or editing a Send.",
@@ -4083,6 +4112,9 @@
   },
   "permissions": {
     "message": "Permissões"
+  },
+  "permission": {
+    "message": "Permissão"
   },
   "managerPermissions": {
     "message": "Gestão de permissões"
@@ -4358,7 +4390,7 @@
     "message": "Permitir que administradores redefinam senhas mestres dos membros."
   },
   "resetPasswordPolicyWarning": {
-    "message": "Users in the organization will need to self-enroll or be auto-enrolled before administrators can reset their master password."
+    "message": "Members in the organization will need to self-enroll or be auto-enrolled before administrators can reset their master password."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscrição Automática"
@@ -4367,7 +4399,7 @@
     "message": "Todos os utilizadores serão inscritos automaticamente na redefinição de senha assim que o convite for aceito e não será possível anular."
   },
   "resetPasswordPolicyAutoEnrollWarning": {
-    "message": "Users already in the organization will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
+    "message": "Members already in the organization will not be retroactively enrolled in password reset. They will need to self-enroll before administrators can reset their master password."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
     "message": "Exigir que novos utilizadore sejam inscritos automaticamente"
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Clientes"
+  },
+  "client": {
+    "message": "Cliente",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Administração de fornecedor"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "A entrada não pode exceder os $COUNT$ caracteres de comprimento.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ campos(s) acima precisam da sua atenção.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "Ligado"
   },
+  "members": {
+    "message": "Membros"
+  },
+  "reporting": {
+    "message": "A relatar"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Número de utilizadores"
+  },
+  "loggingInAs": {
+    "message": "A iniciar sessão como"
+  },
+  "notYou": {
+    "message": "Utilizador incorreto?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Escreva para Filtrar --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Limpar tudo"
+  },
+  "from": {
+    "message": "De"
+  },
+  "to": {
+    "message": "Para"
+  },
+  "member": {
+    "message": "Membro"
+  },
+  "update": {
+    "message": "Atualizar"
+  },
+  "role": {
+    "message": "Cargo"
+  },
+  "canView": {
+    "message": "Pode ver"
+  },
+  "canViewExceptPass": {
+    "message": "Pode ver, excepto palavras-passe"
+  },
+  "canEdit": {
+    "message": "Pode editar"
+  },
+  "canEditExceptPass": {
+    "message": "Pode editar, excepto palavras-passe"
+  },
+  "group": {
+    "message": "Grupo"
+  },
+  "groupAccessAll": {
+    "message": "Este grupo pode aceder e modificar todos os itens."
+  },
+  "memberAccessAll": {
+    "message": "Este membro pode aceder e modificar todos os itens."
   }
 }

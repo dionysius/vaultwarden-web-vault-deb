@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "Az eszközzel történő bejelentkezést engedélyezni kell a Biwarden mobilalkalmazás beállításaiban. Másik opcióra van szükség?"
   },
+  "loginWithMasterPassword": {
+    "message": "Bejelentkezés mesterjelszóval"
+  },
   "createAccount": {
     "message": "Fiók létrehozása"
   },
@@ -1287,11 +1290,24 @@
   "twoStepLogin": {
     "message": "Kétlépcsős bejelentkezés"
   },
+  "twoStepLoginEnforcement": {
+    "message": "Kétlépcsős bejelentkezés kényszerítése"
+  },
   "twoStepLoginDesc": {
     "message": "A fiók biztosítása kiegészítő lépéssel bejelentkezéskor."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Kétlépéses bejelentkezés szükséges a szervezet felhasználói számára a szolgáltatók szervezeti szintű konfigurálásával."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Ezt egy nagyobb mondat részeként használjuk fel,és hivatkozásokat tartalmaznak. A teljes mondat így fog szólni: \"Kétlépcsős bejelentkezési opciók érvényesítése a tagok számára a kétlépcsős bejelentkezési szabályzat használatával.\".",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "Kétlépcsős bejelentkezési szabályok"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "A Duón keresztüli kétlépcsős bejelentkezés kényszerítéséhez használjuk az alábbi lehetőségeket."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "Ha beállítottuk az egyszeri bejelentkezést vagy azt tervezük, a kétlépcsős bejelentkezés már érvényre juthat az azonosítás szolgáltatón keresztül."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "A kétlépcsős bejelentkezés engedélyezése véglegesen kizárhatja a felhasználót a Bitwarden fiókból. A helyreállítási kód lehetővé teszi a fiókjához való hozzáférést abban az esetben, ha már nem tudjuk használni a szokásos kétlépcsős bejelentkezési szolgáltatást (pl. készülék elvesztése). A Bitwarden támogatás nem tud segíteni abban az esetben, ha elveszítjük a hozzáférést a fiókhoz. Célszerű leírni vagy kinyomtatni a helyreállítási kódot és azt biztonságos helyen tartani."
@@ -1539,6 +1555,10 @@
   "reportsDesc": {
     "message": "Az alábbi jelentésekre kattintva azonosítsuk és zárjuk le a webes kiókjaink biztonsági hiányosságait.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Az alábbi jelentésekre kattintva azonosíthatjuk és megszüntethetjük a szervezet fiókjaiban lévő biztonsági hiányosságokat.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Nem-biztonságos webhelyek jelentés"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Saját szervezet"
   },
+  "organizationInfo": {
+    "message": "Szervezeti infó"
+  },
   "deleteOrganization": {
     "message": "Szervezet törlése"
   },
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "A szervezeti azonosító megadása szükséges."
   },
+  "ssoIdentifier": {
+    "message": "Egyszeri azonosító"
+  },
+  "ssoIdentifierHint": {
+    "message": "Adjuk meg ezt az azonosítót a tagoknak az egyszeri azonosítóval történő bejelentkezéshez."
+  },
   "unlinkSso": {
     "message": "SSO szétkapcsolása"
   },
@@ -4083,6 +4112,9 @@
   },
   "permissions": {
     "message": "Jogosultságok"
+  },
+  "permission": {
+    "message": "Jogosultság"
   },
   "managerPermissions": {
     "message": "Jogosultságok kezelése"
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Ügyfelek"
+  },
+  "client": {
+    "message": "Ügyfél",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Szolgáltató adminisztrátor"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "A bevitel nem haladhatja meg $COUNT$ karakter hosszt.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ mező fentebb figyelmet érdemel.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "Be"
   },
+  "members": {
+    "message": "Tagok"
+  },
+  "reporting": {
+    "message": "Jelentés"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Felhasználók száma"
+  },
+  "loggingInAs": {
+    "message": "Bejelentkezve mint"
+  },
+  "notYou": {
+    "message": "Ez tévedés?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Szűrendő típus --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Összes törlése"
+  },
+  "from": {
+    "message": "Feladó"
+  },
+  "to": {
+    "message": "Címzett"
+  },
+  "member": {
+    "message": "Tag"
+  },
+  "update": {
+    "message": "Frissítés"
+  },
+  "role": {
+    "message": "Szerepkör"
+  },
+  "canView": {
+    "message": "Megtekintheti"
+  },
+  "canViewExceptPass": {
+    "message": "Megtekintheti, kivéve a jelszavakat"
+  },
+  "canEdit": {
+    "message": "Szerkesztheti"
+  },
+  "canEditExceptPass": {
+    "message": "Szerkesztheti, kivéve a jelszavakat"
+  },
+  "group": {
+    "message": "Csoport"
+  },
+  "groupAccessAll": {
+    "message": "A csoport elérheti és módosíthatja az összes elemet."
+  },
+  "memberAccessAll": {
+    "message": "Ez a felhasználó minden elemhez hozzáférhet és módosíthatja az összes elemet."
   }
 }

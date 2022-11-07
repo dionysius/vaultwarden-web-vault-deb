@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "Необхідно увімкнути вхід з пристроєм у налаштуваннях мобільної програми Bitwarden. Потрібен інший варіант?"
   },
+  "loginWithMasterPassword": {
+    "message": "Увійти з головним паролем"
+  },
   "createAccount": {
     "message": "Створити обліковий запис"
   },
@@ -1287,11 +1290,24 @@
   "twoStepLogin": {
     "message": "Двоетапна перевірка"
   },
+  "twoStepLoginEnforcement": {
+    "message": "Обов'язкова двоетапна перевірка"
+  },
   "twoStepLoginDesc": {
     "message": "Захистіть обліковий запис, вимагаючи додатковий крок перевірки під час входу."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Вимагати двоетапну перевірку для користувачів вашої організації, змінивши конфігурацію провайдерів на рівні організації."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Зобов'язувати учасників використовувати двоетапну перевірку Bitwarden за допомогою ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "Політики двоетапної перевірки"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "Для застосування двоетапної перевірки з Duo, скористайтеся наведеними нижче параметрами."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "Якщо ви вже налаштували чи плануєте налаштувати SSO, двоетапна перевірка може бути вже застосована через вашого провайдера ідентифікації."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Увімкнення двоетапної перевірки може цілком заблокувати доступ до облікового запису Bitwarden. Код відновлення дає вам змогу отримати доступ до свого облікового запису у випадку, якщо ви не можете скористатися провайдером двоетапної перевірки (наприклад, якщо втрачено пристрій). Служба підтримки Bitwarden не зможе допомогти відновити доступ до вашого облікового запису. Ми радимо вам записати чи надрукувати цей код відновлення і зберігати його в надійному місці."
@@ -1537,8 +1553,12 @@
     "message": "Звіти"
   },
   "reportsDesc": {
-    "message": "Визначте і закрийте прогалини в безпеці у ваших облікових записах, натиснувши на звіти нижче.",
+    "message": "Визначте і закрийте прогалини в безпеці ваших облікових записів, натиснувши на звіти нижче.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Визначте і закрийте прогалини в безпеці облікових записів вашої організації, натиснувши на звіти нижче.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Незахищені вебсайти"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Моя організація"
   },
+  "organizationInfo": {
+    "message": "Відомості про організацію"
+  },
   "deleteOrganization": {
     "message": "Видалити організацію"
   },
@@ -3126,7 +3149,7 @@
     "message": "Коригування передплати призведе до відповідної зміни суми вашого рахунку. Якщо нові запрошені користувачі перевищать кількість передплачених місць, з вас негайно буде стягнуто пропорційну оплату за додаткових користувачів."
   },
   "subscriptionUserSeats": {
-    "message": "Ваша передплата дозволяє всього $COUNT$ користувачів.",
+    "message": "Ваша передплата дозволяє всього $COUNT$ учасників.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3162,7 +3185,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "Ви не можете запросити більше $COUNT$ користувачів без переходу на вищий тарифний план.",
+    "message": "Ви не можете запросити більш як $COUNT$ учасників, не підвищивши свій тарифний план.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3171,7 +3194,7 @@
     }
   },
   "subscriptionFamiliesPlan": {
-    "message": "Ви не можете запросити більше $COUNT$ користувачів без оновлення вашого тарифного плану. Будь ласка, зв'яжіться зі службою підтримки для оновлення.",
+    "message": "Ви не можете запросити більш як $COUNT$ учасників, не підвищивши свій тарифний план. Будь ласка, зверніться до служби підтримки для оновлення.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3180,7 +3203,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Ваша передплата дозволяє всього $COUNT$ користувачів. Ваш тарифний план спонсорується та оплачується сторонньою організацією.",
+    "message": "Ваша передплата дозволяє всього $COUNT$ учасників. Ваш тарифний план спонсорується та оплачується сторонньою організацією.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3400,7 +3423,7 @@
     "message": "Фраза відбитка"
   },
   "dontAskFingerprintAgain": {
-    "message": "Ніколи не питати про перевірку фрази відбитка для запрошених користувачів (не рекомендовано)",
+    "message": "Ніколи не вимагати перевірки фрази відбитка у запрошених користувачів (не рекомендовано)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -3618,7 +3641,7 @@
     }
   },
   "restoredItemId": {
-    "message": "Запис $ID$ відновлено.",
+    "message": "Запис $ID$ відновлено",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "Потрібен ідентифікатор організації."
   },
+  "ssoIdentifier": {
+    "message": "Ідентифікатор SSO"
+  },
+  "ssoIdentifierHint": {
+    "message": "Надайте цей ID своїм учасникам для входу з використанням SSO."
+  },
   "unlinkSso": {
     "message": "Від'єднати SSO"
   },
@@ -3708,16 +3737,16 @@
     "message": "Вимагати авторизацію через єдиний вхід (SSO)"
   },
   "requireSsoPolicyDesc": {
-    "message": "Зобов'язувати учасників входити в систему через єдиний вхід (SSO) компанії."
+    "message": "Зобов'язувати учасників входити в систему через єдиний корпоративний вхід (SSO)."
   },
   "prerequisite": {
     "message": "Передумови"
   },
   "requireSsoPolicyReq": {
-    "message": "Для активації цієї політики необхідно увімкнути політику єдиної організації компанії."
+    "message": "Для активації цієї політики необхідно увімкнути політику єдиної організації."
   },
   "requireSsoPolicyReqError": {
-    "message": "Політику єдиної організації компанії не увімкнено."
+    "message": "Політику єдиної організації не налаштовано."
   },
   "requireSsoExemption": {
     "message": "Власники організації та адміністратори звільняються від дотримання цієї політики."
@@ -3729,7 +3758,7 @@
     "message": "Текст"
   },
   "createSend": {
-    "message": "Створити нове відправлення",
+    "message": "Нове відправлення",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -3737,11 +3766,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Відправлення створено",
+    "message": "Відправлення збережено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Відправлення змінено",
+    "message": "Відправлення збережено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
@@ -3768,7 +3797,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Термін дії"
+    "message": "Дата завершення"
   },
   "expirationDateDesc": {
     "message": "Якщо встановлено, термін дії цього відправлення завершиться у вказаний час.",
@@ -3994,7 +4023,7 @@
     }
   },
   "emergencyApproved": {
-    "message": "Екстрений доступ схвалено."
+    "message": "Екстрений доступ схвалено"
   },
   "emergencyRejected": {
     "message": "Екстрений доступ відхилено"
@@ -4028,7 +4057,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "disableSendExemption": {
-    "message": "Користувачі організації, які можуть керувати політиками організації, звільняються від дотримання цієї політики."
+    "message": "Учасники організації, які можуть керувати політиками організації, звільняються від дотримання цієї політики."
   },
   "sendDisabled": {
     "message": "Відправлення вилучено",
@@ -4047,7 +4076,7 @@
     "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
-    "message": "Користувачі організації, які можуть керувати політиками організації, звільняються від дотримання цієї політики."
+    "message": "Учасники організації, які можуть керувати політиками організації, звільняються від дотримання цієї політики."
   },
   "disableHideEmail": {
     "message": "Завжди показувати отримувачам адресу е-пошти учасників під час створення чи редагування відправлень.",
@@ -4083,6 +4112,9 @@
   },
   "permissions": {
     "message": "Дозволи"
+  },
+  "permission": {
+    "message": "Дозвіл"
   },
   "managerPermissions": {
     "message": "Дозволи менеджера"
@@ -4121,7 +4153,7 @@
     "message": "Редагувати призначені збірки"
   },
   "deleteAssignedCollections": {
-    "message": "Видаляти призначені збірки"
+    "message": "Видалити призначені збірки"
   },
   "manageGroups": {
     "message": "Керування групами"
@@ -4151,10 +4183,10 @@
     "message": "Політика організації впливає на ваші параметри власності."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "Політика організації вимкнула імпортування елементів до вашого особистого сховища."
+    "message": "Політика організації заблокувала імпортування елементів до вашого особистого сховища."
   },
   "personalOwnershipCheckboxDesc": {
-    "message": "Вимкнути особисту власність для користувачів організації"
+    "message": "Вилучити особисту власність для учасників організації"
   },
   "textHiddenByDefault": {
     "message": "При доступі до відправлення типово приховувати текст",
@@ -4274,7 +4306,7 @@
     "message": "Запит на скидання пароля подано"
   },
   "withdrawPasswordReset": {
-    "message": "Відмовитись від скидання пароля"
+    "message": "Відкликати запит на скидання пароля"
   },
   "enrollPasswordResetSuccess": {
     "message": "Запит успішно подано!"
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Клієнти"
+  },
+  "client": {
+    "message": "Клієнт",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Адміністратор постачальника"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "Вхідне значення не повинно перевищувати $COUNT$ символів.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ поле (поля) вище потребують вашої уваги.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "Увімкнено"
   },
+  "members": {
+    "message": "Учасники"
+  },
+  "reporting": {
+    "message": "Звіти"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Кількість користувачів"
+  },
+  "loggingInAs": {
+    "message": "Вхід у систему як"
+  },
+  "notYou": {
+    "message": "Не ви?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Введіть для фільтрування --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Очистити все"
+  },
+  "from": {
+    "message": "Від"
+  },
+  "to": {
+    "message": "До"
+  },
+  "member": {
+    "message": "Учасник"
+  },
+  "update": {
+    "message": "Оновити"
+  },
+  "role": {
+    "message": "Роль"
+  },
+  "canView": {
+    "message": "Може переглядати"
+  },
+  "canViewExceptPass": {
+    "message": "Може переглядати, крім паролів"
+  },
+  "canEdit": {
+    "message": "Може редагувати"
+  },
+  "canEditExceptPass": {
+    "message": "Може редагувати, крім паролів"
+  },
+  "group": {
+    "message": "Група"
+  },
+  "groupAccessAll": {
+    "message": "Ця група має доступ і може редагувати всі елементи."
+  },
+  "memberAccessAll": {
+    "message": "Цей учасник має доступ і може редагувати всі елементи."
   }
 }

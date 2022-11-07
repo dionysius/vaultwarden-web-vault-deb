@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "Laitteella kirjautuminen on määritettävä Bitwardenin mobiilisovelluksen asetuksista. Tarvitsetko toisen vaihtoehdon?"
   },
+  "loginWithMasterPassword": {
+    "message": "Kirjaudu pääsalasanalla"
+  },
   "createAccount": {
     "message": "Luo uusi tili"
   },
@@ -1287,11 +1290,24 @@
   "twoStepLogin": {
     "message": "Kaksivaiheinen kirjautuminen (2FA)"
   },
+  "twoStepLoginEnforcement": {
+    "message": "Kaksivaiheisen kirjautumisen pakotus"
+  },
   "twoStepLoginDesc": {
     "message": "Suojaa tilisi vaatimalla sisäänkirjautumiseen toinen todennusvaihe."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Vaadi kaksivaiheinen kirjautuminen organisaatiosi käyttäjille määrittämällä todentajat organisaation tasolla."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Pakota Bitwardenin kaksivaiheiset kirjautumisvaihtoehdot jäsenille, jotka käyttävät ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "Kaksivaiheisen kirjautumisen käytäntö"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "Pakota kaksivaiheinen kirjautuminen Duon välityksellä alla olevilla vaihtoehdoilla."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "Jos olet määrittänyt SSO:n tai aiot määrittää sen, on kaksivaiheinen kirjautuminen saatettu jo pakottaa identiteettitoimittajasi kautta."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Kaksivaiheisen kirjautumisen käyttöönotto voi lukita sinut pysyvästi ulos Bitwaren-tililtäsi. Palautuskoodi mahdollistaa pääsyn tilillesi myös silloin, kun et voi käyttää normaaleja kaksivaiheisen kirjautumisen todentajiasi (esim. kadotat todennuslaitteesi tai se varastetaan). Myöskään Bitwardenin tuki ei voi auttaa sinua, jos menetät pääsyn tillesi. Suosittelemme, että kirjoitat palautuskoodin muistiin tai tulostat sen ja säilytät sitä turvallisessa paikassa (esim. kassakaapissa tai pankin tallelokerossa)."
@@ -1539,6 +1555,10 @@
   "reportsDesc": {
     "message": "Tunnista ja paikkaa verkkopalvelutunnustesi tietoturva-aukkoja painamalla alla olevia raportteja.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Tunnista ja sulje aukot organisaatiosi tietoturvassa alla olevien raporttien avulla.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Suojaamattomat sivustot"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Oma organisaatio"
   },
+  "organizationInfo": {
+    "message": "Organisaation tiedot"
+  },
   "deleteOrganization": {
     "message": "Poista organisaatio"
   },
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "Organisaation tunniste vaaditaan."
   },
+  "ssoIdentifier": {
+    "message": "SSO-tunniste"
+  },
+  "ssoIdentifierHint": {
+    "message": "Ilmoita jäsenillesi tämä tunniste SSO-kirjautumista varten."
+  },
   "unlinkSso": {
     "message": "Poista kertakirjautumisen (SSO) liitos"
   },
@@ -4084,6 +4113,9 @@
   "permissions": {
     "message": "Käyttöoikeudet"
   },
+  "permission": {
+    "message": "Käyttöoikeus"
+  },
   "managerPermissions": {
     "message": "Valvojan oikeudet"
   },
@@ -4370,7 +4402,7 @@
     "message": "Vanhoja organisaation käyttäjiä ei liitetä salasanan palautusapuun takautuvasti, vaan heidän on itse liityttävä siihen ennen kuin ylläpitäjät voivat palauttaa heidän pääsalasanojaan."
   },
   "resetPasswordPolicyAutoEnrollCheckbox": {
-    "message": "Vaadi uusien käyttäjien automaattinen liitos"
+    "message": "Liitä uudet käyttäjät automaattisesti"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "Organisaatiolla on käytäntö, joka liittää tilisi automaattisesti salasanan palautusapuun. Liitos sallii organisaation ylläpitäjien vaihtaa pääsalasanasi."
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Asiakkaat"
+  },
+  "client": {
+    "message": "Asiakas",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Todentajan ylläpitäjä"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "Syöte ei saa ylittää $COUNT$ merkkiä.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ yllä oleva(a) kenttä(ä) vaatii huomiotasi.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "Käytössä"
   },
+  "members": {
+    "message": "Jäsenet"
+  },
+  "reporting": {
+    "message": "Raportointi"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Käyttäjien määrä"
+  },
+  "loggingInAs": {
+    "message": "Kirjaudutaan tunnuksella"
+  },
+  "notYou": {
+    "message": "Etkö se ollut sinä?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Suodatettava tyyppi --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Tyhjennä kaikki"
+  },
+  "from": {
+    "message": "From"
+  },
+  "to": {
+    "message": "To"
+  },
+  "member": {
+    "message": "Jäsen"
+  },
+  "update": {
+    "message": "Päivitä"
+  },
+  "role": {
+    "message": "Rooli"
+  },
+  "canView": {
+    "message": "Voi tarkastella"
+  },
+  "canViewExceptPass": {
+    "message": "Voi tarkastella salasanoja lukuun ottamatta"
+  },
+  "canEdit": {
+    "message": "Voi muokata"
+  },
+  "canEditExceptPass": {
+    "message": "Voi muokata salasanoja lukuun ottamatta"
+  },
+  "group": {
+    "message": "Ryhmä"
+  },
+  "groupAccessAll": {
+    "message": "Tämä ryhmä voi käyttää ja muokata kaikkia kohteita."
+  },
+  "memberAccessAll": {
+    "message": "Tämä jäsen voi käyttää ja muokata kaikkia kohteita."
   }
 }

@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "Mit Gerät anmelden muss in den Einstellungen der Bitwarden Mobile App aktiviert sein. Brauchst du eine andere Möglichkeit?"
   },
+  "loginWithMasterPassword": {
+    "message": "Mit Master-Passwort anmelden"
+  },
   "createAccount": {
     "message": "Konto erstellen"
   },
@@ -1287,11 +1290,24 @@
   "twoStepLogin": {
     "message": "Zwei-Faktor-Authentifizierung"
   },
+  "twoStepLoginEnforcement": {
+    "message": "Two-step Login Enforcement"
+  },
   "twoStepLoginDesc": {
     "message": "Sichern Sie Ihr Konto mit Zwei-Faktor-Authentifizierung."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Zwei-Faktor-Authentifizierung für die Benutzer Ihrer Organisation verlangen, indem Sie Anbieter auf Organisationsebene konfigurieren."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "Two-step Login Policy"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "To enforce Two-step Login through Duo, use the options below."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Durch die Aktivierung der Zwei-Faktor-Authentifizierung könnten Sie sich dauerhaft aus Ihrem Bitwarden-Konto aussperren. Ein Wiederherstellungscode ermöglicht es Ihnen, auf Ihr Konto zuzugreifen, falls Sie Ihren normalen Zwei-Faktor-Anbieter nicht mehr verwenden können (z.B. wenn Sie Ihr Gerät verlieren). Der Bitwarden-Support kann Ihnen nicht helfen, wenn Sie den Zugang zu Ihrem Konto verlieren. Wir empfehlen Ihnen, den Wiederherstellungscode aufzuschreiben oder auszudrucken und an einem sicheren Ort aufzubewahren."
@@ -1539,6 +1555,10 @@
   "reportsDesc": {
     "message": "Identifiziere und schließe Sicherheitslücken in deinen Online-Konten, indem du auf die Berichte unten klickst.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Identify and close security gaps in your organization's accounts by clicking the reports below.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Bericht über ungesicherte Websites"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Meine Organisation"
   },
+  "organizationInfo": {
+    "message": "Organization info"
+  },
   "deleteOrganization": {
     "message": "Organisation löschen"
   },
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "Unternehmenskennung ist erforderlich."
   },
+  "ssoIdentifier": {
+    "message": "SSO Identifier"
+  },
+  "ssoIdentifierHint": {
+    "message": "Provide this ID to your members to login with SSO."
+  },
   "unlinkSso": {
     "message": "SSO Verknüpfung aufheben"
   },
@@ -4083,6 +4112,9 @@
   },
   "permissions": {
     "message": "Berechtigungen"
+  },
+  "permission": {
+    "message": "Permission"
   },
   "managerPermissions": {
     "message": "Manager-Berechtigungen"
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Kunden"
+  },
+  "client": {
+    "message": "Client",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Anbieter-Administrator"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "Input must not exceed $COUNT$ characters in length.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ Feld(er) oben benötigt deine Aufmerksamkeit.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "Ein"
   },
+  "members": {
+    "message": "Members"
+  },
+  "reporting": {
+    "message": "Reporting"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Anzahl der Benutzer"
+  },
+  "loggingInAs": {
+    "message": "Einloggen als"
+  },
+  "notYou": {
+    "message": "Nicht du?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Typ zum Filtern --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Alles löschen"
+  },
+  "from": {
+    "message": "From"
+  },
+  "to": {
+    "message": "To"
+  },
+  "member": {
+    "message": "Member"
+  },
+  "update": {
+    "message": "Update"
+  },
+  "role": {
+    "message": "Role"
+  },
+  "canView": {
+    "message": "Can view"
+  },
+  "canViewExceptPass": {
+    "message": "Can view, except passwords"
+  },
+  "canEdit": {
+    "message": "Can edit"
+  },
+  "canEditExceptPass": {
+    "message": "Can edit, except passwords"
+  },
+  "group": {
+    "message": "Group"
+  },
+  "groupAccessAll": {
+    "message": "This group can access and modify all items."
+  },
+  "memberAccessAll": {
+    "message": "This member can access and modify all items."
   }
 }

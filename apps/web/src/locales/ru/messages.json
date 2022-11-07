@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "Вход с устройства должен быть включен в настройках мобильного приложения Bitwarden. Нужен другой вариант?"
   },
+  "loginWithMasterPassword": {
+    "message": "Войти с мастер-паролем"
+  },
   "createAccount": {
     "message": "Создать аккаунт"
   },
@@ -1040,7 +1043,7 @@
     "message": "В случае продолжения, ваша сессия будет завершена и вам будет предложено авторизоваться повторно. Сессии на других устройствах могут оставаться активными в течение одного часа."
   },
   "emailChanged": {
-    "message": "Email изменен"
+    "message": "Email сохранен"
   },
   "logBackIn": {
     "message": "Пожалуйста, войдите снова."
@@ -1052,7 +1055,7 @@
     "message": "Изменить мастер-пароль"
   },
   "masterPasswordChanged": {
-    "message": "Мастер-пароль изменен"
+    "message": "Мастер-пароль сохранен"
   },
   "currentMasterPass": {
     "message": "Текущий мастер-пароль"
@@ -1094,16 +1097,16 @@
     "message": "Изменить KDF"
   },
   "encKeySettingsChanged": {
-    "message": "Настройки ключа шифрования изменены"
+    "message": "Настройки ключа шифрования сохранены"
   },
   "dangerZone": {
-    "message": "Опасная зона"
+    "message": "Зона опасности"
   },
   "dangerZoneDesc": {
     "message": "Осторожно, эти действия необратимы!"
   },
   "deauthorizeSessions": {
-    "message": "Деавторизовать сеансы"
+    "message": "Деавторизовать сессии"
   },
   "deauthorizeSessionsDesc": {
     "message": "Беспокоитесь о том, что ваша учетная запись авторизована на другом устройстве? Чтобы деавторизовать все ранее использовавшиеся компьютеры или устройства, выполните действие ниже. Этот шаг безопасности рекомендуется, если вы ранее использовали общедоступный компьютер или случайно сохранили свой пароль на устройстве, которое вам не принадлежит. Это действие также очистит все ранее сохраненные сессии двухфакторной аутентификации."
@@ -1221,7 +1224,7 @@
     "message": "Настройте возможности вашего веб-хранилища."
   },
   "preferencesUpdated": {
-    "message": "Настройки обновлены"
+    "message": "Настройки сохранены"
   },
   "language": {
     "message": "Язык"
@@ -1246,7 +1249,7 @@
     "message": "По умолчанию"
   },
   "domainRules": {
-    "message": "Доменные правила"
+    "message": "Правила домена"
   },
   "domainRulesDesc": {
     "message": "Если у вас есть тот же логин на нескольких разных доменах сайта, вы можете отметить сайт как \"эквивалентный\". \"Глобальные\" - это домены, созданные для вас Bitwarden."
@@ -1282,16 +1285,29 @@
     }
   },
   "domainsUpdated": {
-    "message": "Домены обновлены"
+    "message": "Домены сохранены"
   },
   "twoStepLogin": {
     "message": "Двухфакторная аутентификация"
   },
+  "twoStepLoginEnforcement": {
+    "message": "Двухэтапная аутентификация"
+  },
   "twoStepLoginDesc": {
     "message": "Защитите свою учетную запись, при помощи дополнительного шага при авторизации."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Требовать двухфакторную аутентификацию для пользователей вашей организации, путем конфигурации ее на уровне организации."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Принудительно использовать двухэтапную аутентификацию Bitwarden для участников с помощью ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "Настройки двухфакторной аутентификации"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "Для обеспечения двухэтапного входа через Duo, используйте следующие варианты."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "Если у вас есть настройка SSO или план, двухэтапный логин может уже быть введен через вашего провайдера."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "При включении двухфакторной аутентификации вы можете навсегда потерять доступ к вашей учетной записи Bitwarden. Код восстановления позволяет получить доступ к вашему аккаунту в случае, если вы больше не можете использовать свой обычный метод двухфакторной аутентификации (например, при потере устройства). Поддержка Bitwarden не сможет вам помочь, если вы потеряете доступ к своей учетной записи. Мы рекомендуем вам записать или распечатать код восстановления и сохранить его в надежном месте."
@@ -1329,7 +1345,7 @@
     "message": "У вас есть Премиум"
   },
   "alreadyPremiumFromOrg": {
-    "message": "У вас уже есть доступ к Премиум, так как вы член организации."
+    "message": "У вас уже есть доступ к Премиум, так как вы являетесь членом организации."
   },
   "manage": {
     "message": "Управление"
@@ -1539,6 +1555,10 @@
   "reportsDesc": {
     "message": "Выявите и устраните проблемы с безопасностью в ваших онлайн-аккаунтах, перейдя по ссылкам на отчеты ниже.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Выявите и устраните проблемы с безопасностью в аккаунтах вашей организации, перейдя по ссылкам на отчеты ниже.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Небезопасные сайты"
@@ -1791,7 +1811,7 @@
     "message": "Приоритетная поддержка."
   },
   "premiumSignUpFuture": {
-    "message": "Все будущие функции Премиум-статуса. Их будет больше!"
+    "message": "Все будущие функции Премиум. Их будет больше!"
   },
   "premiumPrice": {
     "message": "Всего лишь $PRICE$ /в год!",
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Моя организация"
   },
+  "organizationInfo": {
+    "message": "Информация об организации"
+  },
   "deleteOrganization": {
     "message": "Удалить организацию"
   },
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "Требуется идентификатор организации."
   },
+  "ssoIdentifier": {
+    "message": "SSO идентификатор"
+  },
+  "ssoIdentifierHint": {
+    "message": "Предоставьте этот ID участникам для входа с помощью SSO."
+  },
   "unlinkSso": {
     "message": "Отключить SSO"
   },
@@ -4082,6 +4111,9 @@
     "message": "Позволяет более гибко контролировать права пользователей для расширенных конфигураций."
   },
   "permissions": {
+    "message": "Разрешения"
+  },
+  "permission": {
     "message": "Разрешения"
   },
   "managerPermissions": {
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Клиенты"
+  },
+  "client": {
+    "message": "Клиент",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Администратор поставщика"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "Длина ввода не должна превышать $COUNT$ символов.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ поля(ей) выше требуют вашего внимания.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "Вкл"
   },
+  "members": {
+    "message": "Участники"
+  },
+  "reporting": {
+    "message": "Отчеты"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Количество пользователей"
+  },
+  "loggingInAs": {
+    "message": "Войти как"
+  },
+  "notYou": {
+    "message": "Не вы?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Тип фильтра --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Очистить все"
+  },
+  "from": {
+    "message": "От"
+  },
+  "to": {
+    "message": "Для"
+  },
+  "member": {
+    "message": "Участник"
+  },
+  "update": {
+    "message": "Обновить"
+  },
+  "role": {
+    "message": "Роль"
+  },
+  "canView": {
+    "message": "Может просматривать"
+  },
+  "canViewExceptPass": {
+    "message": "Может просматривать, кроме паролей"
+  },
+  "canEdit": {
+    "message": "Может редактировать"
+  },
+  "canEditExceptPass": {
+    "message": "Может просматривать, кроме паролей"
+  },
+  "group": {
+    "message": "Группа"
+  },
+  "groupAccessAll": {
+    "message": "Эта группа может иметь доступ и изменять все элементы."
+  },
+  "memberAccessAll": {
+    "message": "Эта пользователь может иметь доступ и изменять все элементы."
   }
 }

@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "Cihazla giriş etmə, Bitwarden mobil tətbiqinin tənzimləmələrində fəallaşdırılmalıdır. Başqa bir seçimə ehtiyacınız var?"
   },
+  "loginWithMasterPassword": {
+    "message": "Ana parolla giriş et"
+  },
   "createAccount": {
     "message": "Hesab yarat"
   },
@@ -1287,11 +1290,24 @@
   "twoStepLogin": {
     "message": "İki mərhələli giriş"
   },
+  "twoStepLoginEnforcement": {
+    "message": "İki addımlı girişə məcbur et"
+  },
   "twoStepLoginDesc": {
     "message": "Giriş edərkən əlavə bir addım tələb edərək hesabınızı qoruyun."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Provayderləri təşkilat səviyyəsində konfiqurasiya edərək təşkilatınızın istifadəçiləri üçün iki mərhələli girişi məcburi edin."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Bitwarden iki addım giriş seçimlərini aşağıdakıları istifadə edərək üzvlər üçün tətbiq et ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "İki mərhələli giriş siyasəti"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "Duo üzərindən iki mərhələli girişi tətbiq etmək üçün aşağıdakı seçimləri istifadə edin."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "SSO quraşdırması etmisinizsə və ya etmək planınız varsa, İki mərhələli giriş, artıq Kimlik Provayderiniz vasitəsilə tətbiq edilmiş ola bilər."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "İki mərhələli girişi fəallaşdırmaq, Bitwarden hesabınızı birdəfəlik kilidləyə bilər. Bərpa kodları, iki mərhələli giriş provayderinizi istifadə edə bilmədiyiniz hallarda (məs. cihazınızı itirəndə) hesabınıza müraciət etməyinizə icazə verər. Hesabınıza müraciəti itirsəniz, Bitwarden dəstəyi sizə kömək edə bilməyəcək. Bərpa kodunuzu bir yerə yazmağınızı və ya çap etməyinizi və onu etibarlı bir yerdə saxlamağı məsləhət görürük."
@@ -1539,6 +1555,10 @@
   "reportsDesc": {
     "message": "Aşağıdakı hesabatlara klikləyərək onlayn hesablarınızdakı güvənlik boşluqlarına baxın və onları bağlayın.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Aşağıdakı hesabatlara klikləyərək təşkilatınızın hesablarındakı güvənlik boşluqlarına baxın və onları bağlayın.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Güvənli olmayan veb saytlar"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Təşkilatım"
   },
+  "organizationInfo": {
+    "message": "Təşkilat məlumatı"
+  },
   "deleteOrganization": {
     "message": "Təşkilatı sil"
   },
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "Təşkilat identifikatoru tələb olunur."
   },
+  "ssoIdentifier": {
+    "message": "SSO identifikatoru"
+  },
+  "ssoIdentifierHint": {
+    "message": "SSO ilə giriş etmələri üçün bu kimliyi üzvlərinizə təqdim edin."
+  },
   "unlinkSso": {
     "message": "SSO əlaqəsini kəs"
   },
@@ -4083,6 +4112,9 @@
   },
   "permissions": {
     "message": "İcazələr"
+  },
+  "permission": {
+    "message": "İcazə"
   },
   "managerPermissions": {
     "message": "Menecer icazələri"
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Müştərilər"
+  },
+  "client": {
+    "message": "Müştəri",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Provayder admini"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "Giriş uzunluğu $COUNT$ simvolu aşmamalıdır.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "Yuxarıdakı $COUNT$ sahənin diqqətinizə ehtiyacı var.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "Açıqdır"
   },
+  "members": {
+    "message": "Üzvlər"
+  },
+  "reporting": {
+    "message": "Hesabat göndərmə"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "İstifadəçi sayı"
+  },
+  "loggingInAs": {
+    "message": "Giriş et"
+  },
+  "notYou": {
+    "message": "Siz deyilsiniz?"
   },
   "multiSelectPlaceholder": {
     "message": "-- Filtrləmək üçün yazın --"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Hamısını təmizlə"
+  },
+  "from": {
+    "message": "Kimdən"
+  },
+  "to": {
+    "message": "Kimə"
+  },
+  "member": {
+    "message": "Üzv"
+  },
+  "update": {
+    "message": "Güncəllə"
+  },
+  "role": {
+    "message": "Rol"
+  },
+  "canView": {
+    "message": "Baxa bilər"
+  },
+  "canViewExceptPass": {
+    "message": "Parollar istisna olmaqla baxa bilər"
+  },
+  "canEdit": {
+    "message": "Düzəliş edə bilər"
+  },
+  "canEditExceptPass": {
+    "message": "Parollar istisna olmaqla düzəliş edə bilər"
+  },
+  "group": {
+    "message": "Qrup"
+  },
+  "groupAccessAll": {
+    "message": "Bu qrup, bütün elementlərə müraciət edə və onları dəyişdirə bilər."
+  },
+  "memberAccessAll": {
+    "message": "Bu üzv, bütün elementlərə müraciət edə və onları dəyişdirə bilər."
   }
 }

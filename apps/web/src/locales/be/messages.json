@@ -575,6 +575,9 @@
   "loginWithDeviceEnabledInfo": {
     "message": "Неабходна ўключыць уваход з прыладай у наладах мабільнай праграмы Bitwarden. Неабходны іншы варыянт?"
   },
+  "loginWithMasterPassword": {
+    "message": "Увайсці з асноўным паролем"
+  },
   "createAccount": {
     "message": "Стварыць уліковы запіс"
   },
@@ -1287,11 +1290,24 @@
   "twoStepLogin": {
     "message": "Двухэтапны ўваход"
   },
+  "twoStepLoginEnforcement": {
+    "message": "Прымусовы двухэтапны ўваход"
+  },
   "twoStepLoginDesc": {
     "message": "Абараніце свой уліковы запіс з дапамогай дадатковага кроку праверкі падчас уваходу."
   },
-  "twoStepLoginOrganizationDesc": {
-    "message": "Патрабаваць двухэтапны ўваход для карыстальнікаў вашай арганізацыі, які сканфігураваны на ўзроўні арганізацыі."
+  "twoStepLoginOrganizationDescStart": {
+    "message": "Забяспечыць параметры двухэтапнага ўваходу Bitwarden для ўдзельнікаў выкарыстоўваючы ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+  },
+  "twoStepLoginPolicy": {
+    "message": "палітыку двухэтапнага ўваходу"
+  },
+  "twoStepLoginOrganizationDuoDesc": {
+    "message": "Для прымусовага двухэтапнага ўваходу праз Duo, скарыстайцеся параметрам ніжэй."
+  },
+  "twoStepLoginOrganizationSsoDesc": {
+    "message": "If you have setup SSO or plan to, Two-step Login may already be enforced through your Identity Provider."
   },
   "twoStepLoginRecoveryWarning": {
     "message": "Уключэнне двухэтапнага ўваходу можа цалкам заблакіраваць доступ да ўліковага запісу Bitwarden. Код аднаўлення дае магчымасць атрымаць доступ да вашага ўліковага запісу ў выпадку, калі вы не можаце скарыстацца звычайным спосабам пастаўшчыка двухэтапнага ўваходу (напрыклад, вы згубілі сваю прыладу). Падтрымка Bitwarden не зможа вам дапамагчы, калі вы згубіце доступ да свайго ўліковага запісу. Мы рэкамендуем вам запісаць або раздрукаваць код аднаўлення і захоўваць яго ў надзейным месцы."
@@ -1539,6 +1555,10 @@
   "reportsDesc": {
     "message": "Выявіце і выпраўце недахопы ў бяспецы вашых уліковых запісаў, націснуўшы на справаздачы ніжэй.",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+  },
+  "orgsReportsDesc": {
+    "message": "Выявіце і выпраўце недахопы ў бяспецы ўліковых запісаў вашай арганізацыі, націснуўшы на справаздачы ніжэй.",
+    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization Vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Неабароненыя вэб-сайты"
@@ -2987,6 +3007,9 @@
   "myOrganization": {
     "message": "Мая арганізацыя"
   },
+  "organizationInfo": {
+    "message": "Звесткі арганізацыі"
+  },
   "deleteOrganization": {
     "message": "Выдаліць арганізацыю"
   },
@@ -3683,6 +3706,12 @@
   "ssoIdentifierRequired": {
     "message": "Неабходны ідэнтыфікатар арганізацыі."
   },
+  "ssoIdentifier": {
+    "message": "Ідэнтыфікатар SSO"
+  },
+  "ssoIdentifierHint": {
+    "message": "Забяспечце гэтым ідэнтыфікатарам вашых удзельніка для ўваходу з SSO."
+  },
   "unlinkSso": {
     "message": "Адлучыць SSO"
   },
@@ -4083,6 +4112,9 @@
   },
   "permissions": {
     "message": "Дазволы"
+  },
+  "permission": {
+    "message": "Дазвол"
   },
   "managerPermissions": {
     "message": "Дазволы менеджара"
@@ -4488,6 +4520,10 @@
   },
   "clients": {
     "message": "Кліенты"
+  },
+  "client": {
+    "message": "Кліент",
+    "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
     "message": "Адміністратар пастаўшчыка"
@@ -5373,6 +5409,15 @@
       }
     }
   },
+  "inputMaxLength": {
+    "message": "Даўжыня ўведзеных даных не можа перавышаць наступную колькасць сімвалаў: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
   "fieldsNeedAttention": {
     "message": "$COUNT$ полі(-ёў) вышэй патрабуе вашай увагі.",
     "placeholders": {
@@ -5388,11 +5433,23 @@
   "on": {
     "message": "Уключана"
   },
+  "members": {
+    "message": "Удзельнікі"
+  },
+  "reporting": {
+    "message": "Reporting"
+  },
   "cardBrandMir": {
     "message": "Mir"
   },
   "numberOfUsers": {
     "message": "Колькасць карыстальнікаў"
+  },
+  "loggingInAs": {
+    "message": "Увайсці як"
+  },
+  "notYou": {
+    "message": "Не вы?"
   },
   "multiSelectPlaceholder": {
     "message": "- Увядзіце для фільтрацыі -"
@@ -5405,5 +5462,41 @@
   },
   "multiSelectClearAll": {
     "message": "Ачысціць усё"
+  },
+  "from": {
+    "message": "Ад"
+  },
+  "to": {
+    "message": "Каму"
+  },
+  "member": {
+    "message": "Удзельнік"
+  },
+  "update": {
+    "message": "Абнавіць"
+  },
+  "role": {
+    "message": "Роля"
+  },
+  "canView": {
+    "message": "Можа праглядаць"
+  },
+  "canViewExceptPass": {
+    "message": "Можа праглядаць (без пароляў)"
+  },
+  "canEdit": {
+    "message": "Можа рэдагаваць"
+  },
+  "canEditExceptPass": {
+    "message": "Можа рэдагаваць (без пароляў)"
+  },
+  "group": {
+    "message": "Група"
+  },
+  "groupAccessAll": {
+    "message": "Гэта група можа мець доступ і змяняць усе элементы."
+  },
+  "memberAccessAll": {
+    "message": "Гэты ўдзельнік можа атрымліваць доступ і змяняць усе элементы."
   }
 }
