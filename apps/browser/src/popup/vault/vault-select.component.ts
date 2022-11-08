@@ -15,7 +15,6 @@ import {
 } from "@angular/core";
 import { BehaviorSubject, concatMap, map, merge, Observable, Subject, takeUntil } from "rxjs";
 
-import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { OrganizationService } from "@bitwarden/common/abstractions/organization/organization.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
@@ -61,7 +60,6 @@ export class VaultSelectComponent implements OnInit, OnDestroy {
   organizations$: Observable<Organization[]>;
   selectedVault$: Observable<string | null> = this._selectedVault.asObservable();
 
-  vaultFilter: VaultFilter = new VaultFilter();
   enforcePersonalOwnership = false;
   overlayPostition: ConnectedPosition[] = [
     {
@@ -111,16 +109,15 @@ export class VaultSelectComponent implements OnInit, OnDestroy {
             await this.vaultFilterService.checkForPersonalOwnershipPolicy();
 
           if (this.shouldShow(organizations)) {
-            if (this.enforcePersonalOwnership && !this.vaultFilter.myVaultOnly) {
+            if (this.enforcePersonalOwnership && !this.vaultFilterService.vaultFilter.myVaultOnly) {
               const firstOrganization = organizations[0];
               this._selectedVault.next(firstOrganization.name);
               this.vaultFilterService.setVaultFilter(firstOrganization.id);
-              this.vaultFilter.selectedOrganizationId = firstOrganization.id;
-            } else if (this.vaultFilter.myVaultOnly) {
+            } else if (this.vaultFilterService.vaultFilter.myVaultOnly) {
               this._selectedVault.next(this.i18nService.t(this.vaultFilterService.myVault));
-            } else if (this.vaultFilter.selectedOrganizationId != null) {
+            } else if (this.vaultFilterService.vaultFilter.selectedOrganizationId != null) {
               const selectedOrganization = organizations.find(
-                (o) => o.id === this.vaultFilter.selectedOrganizationId
+                (o) => o.id === this.vaultFilterService.vaultFilter.selectedOrganizationId
               );
               this._selectedVault.next(selectedOrganization.name);
             } else {
