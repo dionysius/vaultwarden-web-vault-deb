@@ -248,8 +248,12 @@ export class ExportService implements ExportServiceAbstraction {
       this.apiService.getOrganizationExport(organizationId).then((exportData) => {
         const exportPromises: any = [];
         if (exportData != null) {
-          if (exportData.collections != null && exportData.collections.length > 0) {
-            exportData.collections.forEach((c) => {
+          if (
+            exportData.collections != null &&
+            exportData.collections.data != null &&
+            exportData.collections.data.length > 0
+          ) {
+            exportData.collections.data.forEach((c) => {
               const collection = new Collection(new CollectionData(c as CollectionDetailsResponse));
               exportPromises.push(
                 collection.decrypt().then((decCol) => {
@@ -258,8 +262,12 @@ export class ExportService implements ExportServiceAbstraction {
               );
             });
           }
-          if (exportData.ciphers != null && exportData.ciphers.length > 0) {
-            exportData.ciphers
+          if (
+            exportData.ciphers != null &&
+            exportData.ciphers.data != null &&
+            exportData.ciphers.data.length > 0
+          ) {
+            exportData.ciphers.data
               .filter((c) => c.deletedDate === null)
               .forEach((c) => {
                 const cipher = new Cipher(new CipherData(c));
