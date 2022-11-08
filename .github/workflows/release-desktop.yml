@@ -1,5 +1,6 @@
 ---
 name: Release Desktop
+run-name: Release Desktop ${{ inputs.release_type }}
 
 on:
   workflow_dispatch:
