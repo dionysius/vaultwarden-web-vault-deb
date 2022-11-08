@@ -175,3 +175,8 @@ jobs:
 
               ## Objective
               Automated ${{ github.event.inputs.client }} version bump to ${{ github.event.inputs.version_number }}"
+  enforce-labels:
+    name: Enforce Labels
+    needs: bump_version
+    uses: ./.github/workflows/enforce-labels.yml
+    secrets: inherit
