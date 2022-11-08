@@ -5,14 +5,6 @@ import { AbstractThemingService } from "@bitwarden/angular/services/theming/them
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { LogService } from "@bitwarden/common/abstractions/log.service";
 import { PaymentMethodType } from "@bitwarden/common/enums/paymentMethodType";
-import { ThemeType } from "@bitwarden/common/enums/themeType";
-
-import ThemeVariables from "../../scss/export.module.scss";
-
-const lightInputColor = ThemeVariables.lightInputColor;
-const lightInputPlaceholderColor = ThemeVariables.lightInputPlaceholderColor;
-const darkInputColor = ThemeVariables.darkInputColor;
-const darkInputPlaceholderColor = ThemeVariables.darkInputPlaceholderColor;
 
 @Component({
   selector: "app-payment",
@@ -96,7 +88,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
       this.hideBank = this.method !== PaymentMethodType.BankAccount;
       this.hideCredit = this.method !== PaymentMethodType.Credit;
     }
-    await this.setTheme();
+    this.subscribeToTheme();
     window.document.head.appendChild(this.stripeScript);
     if (!this.hidePaypal) {
       window.document.head.appendChild(this.btScript);
@@ -280,17 +272,17 @@ export class PaymentComponent implements OnInit, OnDestroy {
     }, 50);
   }
 
-  private async setTheme() {
-    this.themingService.theme$.pipe(takeUntil(this.destroy$)).subscribe((theme) => {
-      if (theme.effectiveTheme === ThemeType.Dark) {
-        this.StripeElementStyle.base.color = darkInputColor;
-        this.StripeElementStyle.base["::placeholder"].color = darkInputPlaceholderColor;
-        this.StripeElementStyle.invalid.color = darkInputColor;
-      } else {
-        this.StripeElementStyle.base.color = lightInputColor;
-        this.StripeElementStyle.base["::placeholder"].color = lightInputPlaceholderColor;
-        this.StripeElementStyle.invalid.color = lightInputColor;
-      }
+  private subscribeToTheme() {
+    this.themingService.theme$.pipe(takeUntil(this.destroy$)).subscribe(() => {
+      const style = getComputedStyle(document.documentElement);
+      this.StripeElementStyle.base.color = `rgb(${style.getPropertyValue("--color-text-main")})`;
+      this.StripeElementStyle.base["::placeholder"].color = `rgb(${style.getPropertyValue(
+        "--color-text-muted"
+      )})`;
+      this.StripeElementStyle.invalid.color = `rgb(${style.getPropertyValue("--color-text-main")})`;
+      this.StripeElementStyle.invalid.borderColor = `rgb(${style.getPropertyValue(
+        "--color-danger-500"
+      )})`;
     });
   }
 }
