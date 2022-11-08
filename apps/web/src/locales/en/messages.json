@@ -2513,7 +2513,7 @@
     "message": "Two-step login turned off"
   },
   "recovered2fa": {
-    "message": "Account recovered from two-step login"
+    "message": "Recovered account from two-step login."
   },
   "failedLogin": {
     "message": "Login attempt failed with incorrect password."
@@ -2525,10 +2525,10 @@
     "message": "Vault exported"
   },
   "exportedOrganizationVault": {
-    "message": "Organization vault exported"
+    "message": "Exported organization vault."
   },
   "editedOrgSettings": {
-    "message": "Organization settings saved"
+    "message": "Edited organization settings."
   },
   "createdItemId": {
     "message": "Created item $ID$.",
@@ -4315,7 +4315,7 @@
     "message": "Withdrawal success!"
   },
   "eventEnrollPasswordReset": {
-    "message": "User $ID$ enrolled in password reset assistance.",
+    "message": "User $ID$ enrolled in password reset.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4324,7 +4324,7 @@
     }
   },
   "eventWithdrawPasswordReset": {
-    "message": "User $ID$ withdrew from password reset assistance.",
+    "message": "User $ID$ withdrew from password reset.",
     "placeholders": {
       "id": {
         "content": "$1",
