@@ -163,7 +163,7 @@ export class ListCommand {
     if (!Utils.isGuid(options.organizationId)) {
       return Response.badRequest("`" + options.organizationId + "` is not a GUID.");
     }
-    const organization = await this.organizationService.get(options.organizationId);
+    const organization = await this.organizationService.getFromState(options.organizationId);
     if (organization == null) {
       return Response.error("Organization not found.");
     }
@@ -196,7 +196,7 @@ export class ListCommand {
     if (!Utils.isGuid(options.organizationId)) {
       return Response.badRequest("`" + options.organizationId + "` is not a GUID.");
     }
-    const organization = await this.organizationService.get(options.organizationId);
+    const organization = await this.organizationService.getFromState(options.organizationId);
     if (organization == null) {
       return Response.error("Organization not found.");
     }

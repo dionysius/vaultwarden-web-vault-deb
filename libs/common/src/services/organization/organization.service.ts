@@ -101,6 +101,20 @@ export class OrganizationService implements OrganizationServiceAbstraction {
     return organizations.find((organization) => organization.id === id);
   }
 
+  /**
+   * @deprecated For the CLI only
+   * @param id id of the organization
+   */
+  async getFromState(id: string): Promise<Organization> {
+    const organizationsMap = await this.stateService.getOrganizations();
+    const organization = organizationsMap[id];
+    if (organization == null) {
+      return null;
+    }
+
+    return new Organization(organization);
+  }
+
   getByIdentifier(identifier: string): Organization {
     const organizations = this._organizations.getValue();
 
