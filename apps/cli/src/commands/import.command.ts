@@ -23,7 +23,7 @@ export class ImportCommand {
   ): Promise<Response> {
     const organizationId = options.organizationid;
     if (organizationId != null) {
-      const organization = await this.organizationService.get(organizationId);
+      const organization = await this.organizationService.getFromState(organizationId);
 
       if (organization == null) {
         return Response.badRequest(

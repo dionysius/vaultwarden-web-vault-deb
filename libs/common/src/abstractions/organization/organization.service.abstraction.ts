@@ -75,6 +75,11 @@ export abstract class OrganizationService {
   get: (id: string) => Organization;
   getByIdentifier: (identifier: string) => Organization;
   getAll: (userId?: string) => Promise<Organization[]>;
+  /**
+   * @deprecated For the CLI only
+   * @param id id of the organization
+   */
+  getFromState: (id: string) => Promise<Organization>;
   canManageSponsorships: () => Promise<boolean>;
   hasOrganizations: () => boolean;
 }
