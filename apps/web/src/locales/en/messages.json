@@ -2596,6 +2596,15 @@
       }
     }
   },
+  "viewedCardNumberItemId": {
+    "message": "Viewed Card Number for item $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "viewedSecurityCodeItemId": {
     "message": "Viewed security code for item $ID$.",
     "placeholders": {

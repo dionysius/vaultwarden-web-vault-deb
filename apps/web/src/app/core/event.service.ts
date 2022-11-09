@@ -138,6 +138,13 @@ export class EventService {
           this.getShortId(ev.cipherId)
         );
         break;
+      case EventType.Cipher_ClientToggledCardNumberVisible:
+        msg = this.i18nService.t("viewedCardNumberItemId", this.formatCipherId(ev, options));
+        humanReadableMsg = this.i18nService.t(
+          "viewedCardNumberItemId",
+          this.getShortId(ev.cipherId)
+        );
+        break;
       case EventType.Cipher_ClientToggledCardCodeVisible:
         msg = this.i18nService.t("viewedSecurityCodeItemId", this.formatCipherId(ev, options));
         humanReadableMsg = this.i18nService.t(
