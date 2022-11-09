@@ -135,6 +135,11 @@ p.lead {
   border-radius: $border-radius;
 }
 
+.select-index-top {
+  position: relative;
+  z-index: 100;
+}
+
 .sr-only {
   position: absolute !important;
   width: 1px !important;

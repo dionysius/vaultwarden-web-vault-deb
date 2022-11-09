@@ -23,7 +23,10 @@
   </div>
 </header>
 <main tabindex="-1" cdk-scrollable>
-  <app-vault-select (onVaultSelectionChanged)="vaultFilterChanged()"></app-vault-select>
+  <app-vault-select
+    (onVaultSelectionChanged)="vaultFilterChanged()"
+    class="select-index-top"
+  ></app-vault-select>
   <div class="no-items" *ngIf="(!ciphers || !ciphers.length) && !showSearching()">
     <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded"></i>
     <ng-container *ngIf="loaded">
