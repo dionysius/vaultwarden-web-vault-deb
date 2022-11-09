@@ -132,12 +132,13 @@ export abstract class BaseEventsComponent {
           appIcon: eventInfo.appIcon,
           appName: eventInfo.appName,
           userId: userId,
-          userName: r.installationId != null ? `Installation: ${r.installationId}` : userName,
+          userName: userName,
           userEmail: user != null ? user.email : "",
           date: r.date,
           ip: r.ipAddress,
           type: r.type,
           installationId: r.installationId,
+          systemUser: r.systemUser,
         });
       })
     );
