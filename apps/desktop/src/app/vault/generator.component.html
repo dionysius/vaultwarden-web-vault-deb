@@ -151,7 +151,7 @@
                   type="number"
                   min="3"
                   max="20"
-                  (blur)="savePasswordOptions()"
+                  (change)="savePasswordOptions()"
                   [(ngModel)]="passwordOptions.numWords"
                 />
               </div>
@@ -268,7 +268,7 @@
                     type="number"
                     min="0"
                     max="9"
-                    (blur)="savePasswordOptions()"
+                    (change)="savePasswordOptions()"
                     [(ngModel)]="passwordOptions.minNumber"
                   />
                 </div>
@@ -279,7 +279,7 @@
                     type="number"
                     min="0"
                     max="9"
-                    (blur)="savePasswordOptions()"
+                    (change)="savePasswordOptions()"
                     [(ngModel)]="passwordOptions.minSpecial"
                   />
                 </div>
