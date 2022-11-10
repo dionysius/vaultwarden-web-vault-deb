@@ -64,8 +64,12 @@ export class Main {
     const watch = args.some((val) => val === "--watch");
 
     if (watch) {
+      const execName = process.platform === "win32" ? "electron.cmd" : "electron";
       // eslint-disable-next-line
-      require("electron-reload")(__dirname, {});
+      require("electron-reload")(__dirname, {
+        electron: path.join(__dirname, "../../../", "node_modules", ".bin", execName),
+        electronArgv: ["--inspect=5858", "--watch"],
+      });
     }
 
     this.logService = new ElectronLogService(null, app.getPath("userData"));
