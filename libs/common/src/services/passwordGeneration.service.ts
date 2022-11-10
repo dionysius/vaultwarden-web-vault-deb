@@ -1,4 +1,3 @@
-import { firstValueFrom, map } from "rxjs";
 import * as zxcvbn from "zxcvbn";
 
 import { CryptoService } from "../abstractions/crypto.service";
@@ -11,7 +10,6 @@ import { EncString } from "../models/domain/enc-string";
 import { GeneratedPasswordHistory } from "../models/domain/generated-password-history";
 import { PasswordGeneratorOptions } from "../models/domain/password-generator-options";
 import { PasswordGeneratorPolicyOptions } from "../models/domain/password-generator-policy-options";
-import { Policy } from "../models/domain/policy";
 
 const DefaultOptions: PasswordGeneratorOptions = {
   length: 14,
@@ -257,14 +255,7 @@ export class PasswordGenerationService implements PasswordGenerationServiceAbstr
   }
 
   async getPasswordGeneratorPolicyOptions(): Promise<PasswordGeneratorPolicyOptions> {
-    const policies: Policy[] =
-      this.policyService == null
-        ? null
-        : await firstValueFrom(
-            this.policyService.policies$.pipe(
-              map((p) => p.filter((policy) => policy.type === PolicyType.PasswordGenerator))
-            )
-          );
+    const policies = await this.policyService?.getAll(PolicyType.PasswordGenerator);
     let enforcedOptions: PasswordGeneratorPolicyOptions = null;
 
     if (policies == null || policies.length === 0) {
